@@ -2,8 +2,6 @@ fa:
   account:
     show:
       change_credentials_link: اعتبار من را تغییر دهید
-      email_on_comment_label: وقتی کسی در مورد پیشنهادها یا بحث های من نظر می دهد، از طریق ایمیل به من اطلاع دهید
-      email_on_comment_reply_label: وقتی کسی به نظرات من پاسخ می دهد، از طریق ایمیل به من اطلاع دهید
       erase_account_link: پاک کردن حساب
       finish_verification: تایید کامل
       notifications: اطلاعیه ها
@@ -11,7 +9,6 @@ fa:
       organization_responsible_name_placeholder: نماینده سازمان/جمعی
       personal: اطلاعات شخصی
       phone_number_label: شماره تلفن
-      public_activity_label: نگه داشتن لیست فعالیت های عمومی  من
       save_changes_submit: ذخیره تغییرات
       recommendations: توصیه ها
       title: حساب من
@@ -32,7 +29,6 @@ fa:
   comments:
     comments_closed: نظرات بسته شده اند
     verified_only: شرکت %{verify_account}
-    verify_account: "حساب کاربری خودراتایید کنید\n"
     comment:
       admin: مدیران
       author: نویسنده
@@ -78,10 +74,8 @@ fa:
         submit_button: ذخیره تغییرات
       show_link: مشاهده بحث
     form:
-      debate_text: متن اولیه بحث
       debate_title: عنوان بحث
       tags_instructions: برچسب این بحث.
-      tags_label: موضوع ها
       tags_placeholder: "برچسبهایی را که میخواهید از آن استفاده کنید، با کاما ('،') جدا کنید"
     index:
       featured_debates: "ویژه\n"
@@ -99,9 +93,6 @@ fa:
         button: جستجو
         placeholder: جستجوبحث ها ...
         title: جستجو
-      search_results_html:
-        one: "حاوی اصطلاح<strong>%{search_term}</strong>"
-        other: "حاوی اصطلاح<strong>%{search_term}</strong>"
       select_order: "سفارش توسط\n"
       start_debate: شروع بحث
       title: مباحثه
@@ -121,7 +112,6 @@ fa:
         other: "%{count} نظرات"
       comments_title: توضیحات
       edit_debate_link: ویرایش
-      login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
       share: "اشتراک گذاری\n"
       author: نویسنده
     update:
@@ -137,7 +127,6 @@ fa:
     policy: سیاست حریم خصوصی
     proposal: طرح های پیشنهادی
     proposal_notification: "اطلاعیه ها"
-    spending_proposal: هزینه های طرح
     budget/investment: سرمایه گذاری
     poll/shift: تغییر 
     poll/question/answer: پاسخ
@@ -149,7 +138,6 @@ fa:
     image: تصویر
   geozones:
     none: تمام شهر
-    all: تمام مناطق
   layouts:
     footer:
       accessibility: قابلیت دسترسی
@@ -166,7 +154,6 @@ fa:
       my_account_link: حساب من
       proposals: طرح های پیشنهادی
       budgets: بودجه مشارکتی
-      spending_proposals: هزینه های طرح ها
       notification_item:
         notifications: اطلاعیه ها
   notifications:
@@ -174,7 +161,6 @@ fa:
       title: اطلاعیه ها
   map:
     title: "نواحی"
-    select_district: حوزه عملیات
   omniauth:
     facebook:
       name: فیس بوک
@@ -190,8 +176,6 @@ fa:
     retire_options:
       unfeasible: غیر قابل پیش بینی
     form:
-      geozone: حوزه عملیات
-      proposal_title: عنوان پیشنهاد
       tag_category_label: "دسته بندی ها\n"
       tags_instructions: "برچسب این پیشنهاد. شما می توانید از دسته های پیشنهاد شده را انتخاب کنید یا خودتان را اضافه کنید"
       tags_label: برچسب ها
@@ -217,9 +201,6 @@ fa:
       search_form:
         button: جستجو
         title: جستجو
-      search_results_html:
-        one: "حاوی اصطلاح<strong>%{search_term}</strong>"
-        other: "حاوی اصطلاح<strong>%{search_term}</strong>"
       select_order: "سفارش توسط\n"
       title: طرح های پیشنهادی
       section_header:
@@ -249,7 +230,6 @@ fa:
         one: 1 نظر
         other: "%{count} نظرات"
       comments_tab: توضیحات
-      login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
       notifications_tab: اطلاعیه ها
       milestones_tab: نقطه عطف
       share: "اشتراک گذاری\n"
@@ -269,9 +249,6 @@ fa:
     show:
       cant_answer_not_logged_in: "شما باید %{signin} یا %{signup} کنید برای نظر دادن."
       comments_tab: توضیحات
-      login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
-      signin: ورود به برنامه
-      signup: ثبت نام
       verify_link: "حساب کاربری خودراتایید کنید\n"
       more_info_title: "اطلاعات بیشتر"
       documents: اسناد
@@ -283,8 +260,6 @@ fa:
   proposal_notifications:
     new:
       title: "ارسال پیام"
-      title_label: "عنوان"
-      body_label: "پیام"
       submit_button: "ارسال پیام"
   shared:
     edit: "ویرایش"
@@ -321,48 +296,6 @@ fa:
       cards: کارتها
     recommended_index:
       title: توصیه ها
-  spending_proposals:
-    form:
-      association_name: "نام انجمن"
-      description: توضیحات
-      external_url: لینک به مدارک اضافی
-      geozone: حوزه عملیات
-      submit_buttons:
-        create: ایجاد شده
-        new: ایجاد شده
-      title: عنوان هزینه های پیشنهادی 
-    index:
-      title: بودجه مشارکتی
-      unfeasible: سرمایه گذاری غیر قابل پیش بینی
-      by_geozone: "پروژه های سرمایه گذاری با دامنه:%{geozone}"
-      search_form:
-        button: جستجو
-        placeholder: پروژه سرمایه گذاری
-        title: جستجو
-      search_results:
-        one: "حاوی اصطلاح%{search_term}"
-        other: "حاوی اصطلاح%{search_term}"
-      sidebar:
-        geozones: حوزه عملیات
-        feasibility: "امکان پذیری\n"
-        unfeasible: غیر قابل پیش بینی
-      start_spending_proposal: هیچ پروژه سرمایه گذاری وجود ندارد.
-    new:
-      more_info: چگونه بودجه مشارکتی کار می کند؟
-      start_new: ایجاد  هزینه پیشنهاد
-    show:
-      author_deleted: کاربر حذف شد
-      code: "کد طرح:"
-      share: "اشتراک گذاری\n"
-    wrong_price_format: فقط اعداد صحیح 
-    spending_proposal:
-      spending_proposal: پروژه سرمایه گذاری
-      support: پشتیبانی
-      support_title: پشتیبانی از این پروژه
-      supports:
-        zero: بدون پشتیبانی 
-        one: 1 پشتیبانی
-        other: "%{count}پشتیبانی"
   stats:
     index:
       visits: بازديد
@@ -382,14 +315,8 @@ fa:
   users:
     direct_messages:
       new:
-        body_label: پیام
         submit_button: ارسال پیام
         title: ارسال پیام خصوصی به %{receiver}
-        title_label: عنوان
-        verify_account: "حساب کاربری خودراتایید کنید\n"
-        authenticate: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
-        signin: ورود به برنامه
-        signup: ثبت نام
       show:
         receiver: ارسال پیام به %{receiver}
     show:
@@ -430,27 +357,14 @@ fa:
     agree: موافقم
     disagree: مخالفم
     organizations: سازمان ها مجاز به رای دادن نیستند
-    signin: ورود به برنامه
-    signup: ثبت نام
     supports: پشتیبانی ها
-    unauthenticated: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
     verified_only: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
-    verify_account: "حساب کاربری خودراتایید کنید\n"
-    spending_proposals:
-      not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
-      not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
-      organization: سازمان ها مجاز به رای دادن نیستند
-      unfeasible: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
-      not_voting_allowed: فازانتخاب  بسته است
     budget_investments:
       not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
       not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
       organization: سازمان ها مجاز به رای دادن نیستند
       unfeasible: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
       not_voting_allowed: فازانتخاب  بسته است
-      different_heading_assigned:
-        one: "شما فقط می توانید از پروژه های سرمایه گذاری در%{count} منطقه حمایت کنید"
-        other: "شما فقط می توانید از پروژه های سرمایه گذاری در%{count} منطقه حمایت کنید"
   welcome:
     feed:
       most_active:
@@ -515,6 +429,3 @@ fa:
   admin/widget:
     header:
       title: مدیر
-  annotator:
-    help:
-      text_sign_up: ثبت نام

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin legislation questions" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -9,28 +8,20 @@ describe "Admin legislation questions" do
 
   let!(:process) { create(:legislation_process, title: "An example legislation process") }
 
-  it_behaves_like "translatable",
-                  "legislation_question",
-                  "edit_admin_legislation_process_question_path",
-                  %w[title]
-
   context "Feature flag" do
-
     before do
       Setting["process.legislation"] = nil
     end
 
     scenario "Disabled with a feature flag" do
-      expect{ visit admin_legislation_process_questions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
+      expect { visit admin_legislation_process_questions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
-
   end
 
   context "Index" do
-
     scenario "Displaying legislation process questions" do
-      question = create(:legislation_question, process: process, title: "Question 1")
-      question = create(:legislation_question, process: process, title: "Question 2")
+      create(:legislation_question, process: process, title: "Question 1")
+      create(:legislation_question, process: process, title: "Question 2")
 
       visit admin_legislation_processes_path(filter: "all")
 
@@ -68,7 +59,7 @@ describe "Admin legislation questions" do
 
   context "Update" do
     scenario "Valid legislation question", :js do
-      question = create(:legislation_question, title: "Question 2", process: process)
+      create(:legislation_question, title: "Question 2", process: process)
 
       visit admin_root_path
 
@@ -163,7 +154,7 @@ describe "Admin legislation questions" do
 
     context "Special translation behaviour" do
       before do
-        question.update_attributes(title_en: "Title in English", title_es: "Título en Español")
+        question.update!(title_en: "Title in English", title_es: "Título en Español")
       end
 
       scenario "Add translation for question option", :js do
@@ -173,7 +164,7 @@ describe "Admin legislation questions" do
 
         find("#nested_question_options input").set("Option 1")
 
-        click_link "Español"
+        select "Español", from: :select_language
 
         find("#nested_question_options input").set("Opción 1")
 
@@ -182,7 +173,7 @@ describe "Admin legislation questions" do
 
         expect(page).to have_field(field_en[:id], with: "Option 1")
 
-        click_link "Español"
+        select "Español", from: :select_language
 
         expect(page).to have_field(field_es[:id], with: "Opción 1")
       end
@@ -190,13 +181,13 @@ describe "Admin legislation questions" do
       scenario "Add new question option after changing active locale", :js do
         visit edit_question_url
 
-        click_link "Español"
+        select "Español", from: :select_language
 
         click_on "Add option"
 
         find("#nested_question_options input").set("Opción 1")
 
-        click_link "English"
+        select "English", from: :select_language
 
         find("#nested_question_options input").set("Option 1")
 
@@ -206,7 +197,7 @@ describe "Admin legislation questions" do
 
         expect(page).to have_field(field_en[:id], with: "Option 1")
 
-        click_link "Español"
+        select "Español", from: :select_language
 
         expect(page).to have_field(field_es[:id], with: "Opción 1")
       end

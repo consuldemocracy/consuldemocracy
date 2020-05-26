@@ -45,6 +45,5 @@ class Budget
     def ballot_lines_for_investment
       Budget::Ballot::Line.by_investment(id)
     end
-
   end
 end

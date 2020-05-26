@@ -17,9 +17,6 @@ val:
     letter:
       alert:
         unconfirmed_code: Encara no has introduït el codi de confirmació
-      create:
-        flash:
-          success_html: Abans de les votacions rebràs una carta amb les instruccions per a verificar el teu compte.<br> Recorda que pots estalviarte l'enviament verificante presencialment en quansevol de les %{offices}.
       edit:
         see_all: Vore propostes
         title: Carta sol·licitada
@@ -28,7 +25,6 @@ val:
       new:
         explanation: "Per a participar en les votacions finals pots:"
         go_to_index: Vore propostes
-        office: Verificarte presencialment en quansevol %{office}
         send_letter: Sol·licitar una carta per correu postal
         title: Felicitats!
         user_permission_info: Amb el teu compte ja pots...
@@ -47,20 +43,15 @@ val:
       new:
         accept_terms_text: Accepte els %{terms_url} del Padró
         accept_terms_text_title: Accepte els termes i condicions d'access al Padró
-        date_of_birth: Data de naixement
         document_number: Número de document
         document_number_help_title: Ajuda
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>Tarjeta de residència</strong>: X1234567P"
         document_type:
           passport: Passaport
           residence_card: Tarjeta de residència
           spanish_id: DNI
-        document_type_label: Tipus de document
         error_not_allowed_age: No tens l'edat mínima per a participar
         error_not_allowed_postal_code: Per a verificarte has d'estar empadronat.
-        error_verifying_census: El Padró no ha pogut verificar la teua informació. Si us plaur, confirma que les teues dades d'empadronament siguen correctes cridant a l'Ajuntament o visitant una %{offices}.
         form_errors: evitaren verificar la teua residència
-        postal_code: Codi postal
         postal_code_note: Per a verificar el teu compte has d'estar empadronat
         terms: els termes d'acces
         title: Verificar residència
@@ -70,14 +61,12 @@ val:
         flash:
           success: Introdueix el codi de confirmació que hem enviat per missatge de text
       edit:
-        confirmation_code: Introduïx el codi que has rebut en el teu mòbil
         resend_sms_link: Sol·licitar un codi nou
         resend_sms_text: No has rebut un mensatge de text amb el teu codi de confirmació?
         submit_button: Enviar
         title: SMS de confirmació
       new:
         phone: Introdueix el teu número de movil per a rebre el codi
-        phone_format_html: "<strong><em>(Ejemple: 612345678 o +34612345678)</em></strong>"
         phone_note: Només usarem el teu telèfon per a enviar-te un codi, mai et contactarem.
         phone_placeholder: "Exemple: 612345678 o +34612345678"
         submit_button: Enviar

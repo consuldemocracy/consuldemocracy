@@ -120,5 +120,4 @@ class Poll::Stats
     def stats_cache(key, &block)
       Rails.cache.fetch("polls_stats/#{poll.id}/#{key}/#{version}", &block)
     end
-
 end

@@ -18,7 +18,7 @@ end
 devise_for :organizations, class_name: "User",
            controllers: {
              registrations: "organizations/registrations",
-             sessions: "devise/sessions",
+             sessions: "devise/sessions"
            },
            skip: [:omniauth_callbacks]
 

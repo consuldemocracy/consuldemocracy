@@ -61,9 +61,6 @@ sq:
       proposal:
         one: "Propozimi qytetar"
         other: "Propozimi qytetar"
-      spending_proposal:
-        one: "Projekt investimi"
-        other: "Projekt investimi"
       site_customization/page:
         one: Faqe e personalizuar
         other: Faqet e personalizuara
@@ -164,20 +161,13 @@ sq:
         password_confirmation: "Konfirmimi i fjalëkalimit"
         password: "Fjalëkalim"
         current_password: "Fjalëkalimi aktual"
-        phone_number: "Numri i telefonit"
         official_position: "Pozicioni zyrtar"
         official_level: "Niveli zyrtar"
+        phone_number: "Numri i telefonit"
         redeemable_code: "Kodi i verifikimit është pranuar përmes postës elektronike"
       organization:
         name: "Emri i organizatës"
         responsible_name: "Personi përgjegjës për grupin"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Emri i shoqatës"
-        description: "Përshkrimi"
-        external_url: "Lidhje me dokumentacionin shtesë"
-        geozone_id: "Fusha e veprimit"
-        title: "Titull"
       poll:
         name: "Emri"
         starts_at: "Data e fillimit"
@@ -262,10 +252,10 @@ sq:
         text: Koment
       document:
         title: Titull
-        attachment: Bashkëngjitur
+        attachment: "Bashkëngjitur"
       image:
         title: Titull
-        attachment: Bashkëngjitur
+        attachment: "Bashkëngjitur"
       poll/question/answer:
         title: Përgjigje
         description: Përshkrimi
@@ -278,7 +268,7 @@ sq:
       newsletter:
         segment_recipient: Marrësit
         subject: Subjekt
-        from: Nga
+        from: "Nga"
         body: Përmbajtja e postës elektronike
       admin_notification:
         segment_recipient: Marrësit

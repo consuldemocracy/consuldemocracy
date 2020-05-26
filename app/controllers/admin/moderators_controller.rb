@@ -14,13 +14,13 @@ class Admin::ModeratorsController < Admin::BaseController
 
   def create
     @moderator.user_id = params[:user_id]
-    @moderator.save
+    @moderator.save!
 
     redirect_to admin_moderators_path
   end
 
   def destroy
-    @moderator.destroy
+    @moderator.destroy!
     redirect_to admin_moderators_path
   end
 end

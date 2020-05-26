@@ -2,7 +2,7 @@ class ProposalNotification < ApplicationRecord
   include Graphqlable
   include Notifiable
 
-  belongs_to :author, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, class_name: "User"
   belongs_to :proposal
 
   validates :title, presence: true
@@ -10,9 +10,9 @@ class ProposalNotification < ApplicationRecord
   validates :proposal, presence: true
   validate :minimum_interval
 
-  scope :public_for_api,           -> { where(proposal_id: Proposal.public_for_api.pluck(:id)) }
-  scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
-  scope :sort_by_moderated,       -> { reorder(moderated: :desc) }
+  scope :public_for_api,     -> { where(proposal_id: Proposal.public_for_api.pluck(:id)) }
+  scope :sort_by_created_at, -> { reorder(created_at: :desc) }
+  scope :sort_by_moderated,  -> { reorder(moderated: :desc) }
 
   scope :moderated, -> { where(moderated: true) }
   scope :not_moderated, -> { where(moderated: false) }
@@ -25,7 +25,8 @@ class ProposalNotification < ApplicationRecord
   after_create :set_author
 
   def minimum_interval
-    return true if proposal.try(:notifications).blank?
+    return true if proposal&.notifications.blank?
+
     interval = Setting[:proposal_notification_minimum_interval_in_days]
     minimum_interval = (Time.current - interval.to_i.days).to_datetime
     if proposal.notifications.last.created_at > minimum_interval
@@ -56,8 +57,7 @@ class ProposalNotification < ApplicationRecord
 
   private
 
-  def set_author
-    self.update(author_id: self.proposal.author_id) if self.proposal
-  end
-
+    def set_author
+      self.update(author_id: self.proposal.author_id) if self.proposal
+    end
 end

@@ -46,9 +46,6 @@ es-PE:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
-      spending_proposal:
-        one: "Propuesta de inversión"
-        other: "Propuestas de inversión"
       site_customization/page:
         one: Página
         other: Páginas
@@ -144,20 +141,13 @@ es-PE:
         password_confirmation: "Confirmación de contraseña"
         password: "Contraseña que utilizarás para acceder a este sitio web"
         current_password: "Contraseña actual"
-        phone_number: "Teléfono"
         official_position: "Cargo público"
         official_level: "Nivel del cargo"
+        phone_number: "Teléfono"
         redeemable_code: "Código de verificación por carta (opcional)"
       organization:
         name: "Nombre de la organización"
         responsible_name: "Persona responsable del colectivo"
-      spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Nombre de la asociación"
-        description: "Descripción detallada"
-        external_url: "Enlace a documentación adicional"
-        geozone_id: "Ámbito de actuación"
-        title: "Título"
       poll:
         name: "Nombre"
         starts_at: "Fecha de apertura"
@@ -238,10 +228,10 @@ es-PE:
         text: Comentario
       document:
         title: Título
-        attachment: Archivo adjunto
+        attachment: "Archivo adjunto"
       image:
         title: Título
-        attachment: Archivo adjunto
+        attachment: "Archivo adjunto"
       poll/question/answer:
         title: Respuesta
         description: Descripción detallada
@@ -252,7 +242,7 @@ es-PE:
         title: Título
         url: Video externo
       newsletter:
-        from: Desde
+        from: "Desde"
       admin_notification:
         title: Título
         link: Enlace

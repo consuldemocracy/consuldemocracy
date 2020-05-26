@@ -6,7 +6,6 @@ zh-TW:
         submit: 重新發送說明
         title: 重新發送確認說明
       show:
-        instructions_html: 用電郵%{email} 確認帳戶
         new_password_confirmation_label: 重複訪問密碼
         new_password_label: 新訪問密碼
         please_set_password: 請選擇您的新密碼 (將允許您使用上面的電郵登錄)
@@ -50,10 +49,6 @@ zh-TW:
           title: 註冊為一個組織或集體
         success:
           back_to_index: 我明白；回到主頁
-          instructions_1_html: "<b>我們會盡快與您聯繫</b>以核實您確實代表此集體。"
-          instructions_2_html: 在<b>審查您的電郵</b>的同時，我們已向您發送了<b>鏈接以確認您的帳戶</b>。
-          instructions_3_html: 一旦確認後，您可以作為未核實的集體來開始參與。
-          thank_you_html: 感謝您在網站上註冊您的集體。 現在<b>有待審核</b>。
           title: 註冊組織/集體
     passwords:
       edit:
@@ -123,7 +118,4 @@ zh-TW:
           username_note: 顯示在您的帖子旁邊的名稱
         success:
           back_to_index: 我明白；回到主頁
-          instructions_1_html: 請<b>查看您的電郵</b> - 我們已向您發送了<b>鏈接以確認您的帳戶</b>。
-          instructions_2_html: 一旦確認後，您可以開始參與。
-          thank_you_html: 感謝您在此網站註冊。 您現在必須<b>確認您的電郵地址</b>。
           title: 修改您的電郵

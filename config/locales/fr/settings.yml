@@ -76,11 +76,6 @@ fr:
       featured_proposals_description: "Affiche les propositions en vedette sur la page d'index des propositions"
       signature_sheets: "Feuilles de signature"
       signature_sheets_description: "Permet d'ajouter depuis le panneau d'Administrations les signatures recueillies sur place aux Propositions et projets d'investissement des Budgets Participatifs"
-      spending_proposals: "Propositions d'investissement"
-      spending_proposals_description: "⚠️ REMARQUE: cette fonctionnalité a été remplacée par la budgétisation participative et disparaîtra dans les nouvelles versions"
-      spending_proposal_features:
-        voting_allowed: Vote sur les projets d’investissement - phase de présélection
-        voting_allowed_description: "⚠️ REMARQUE: cette fonctionnalité a été remplacée par la budgétisation participative et disparaîtra dans les nouvelles versions"
       user:
         recommendations: "Recommandations"
         recommendations_description: "Affiche les recommandations des utilisateurs sur la page d’accueil en fonction des mots-clés des éléments suivants"

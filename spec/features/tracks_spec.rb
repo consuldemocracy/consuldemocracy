@@ -1,14 +1,12 @@
 require "rails_helper"
 
 describe "Tracking" do
-
   context "Custom variable" do
-
-     scenario "Usertype anonymous" do
+    scenario "Usertype anonymous" do
       visit proposals_path
 
       expect(page.html).to include "anonymous"
-     end
+    end
 
     scenario "Usertype level_1_user" do
       create(:geozone)

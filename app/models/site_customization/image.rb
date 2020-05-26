@@ -7,7 +7,7 @@ class SiteCustomization::Image < ApplicationRecord
     "budget_execution_no_image" => [800, 600],
     "map" => [420, 500],
     "logo_email" => [400, 80]
-  }
+  }.freeze
 
   has_attached_file :image
 
@@ -29,11 +29,11 @@ class SiteCustomization::Image < ApplicationRecord
   end
 
   def required_width
-    VALID_IMAGES[name].try(:first)
+    VALID_IMAGES[name]&.first
   end
 
   def required_height
-    VALID_IMAGES[name].try(:second)
+    VALID_IMAGES[name]&.second
   end
 
   private
@@ -46,5 +46,4 @@ class SiteCustomization::Image < ApplicationRecord
       errors.add(:image, :image_width, required_width: required_width) unless dimensions.width == required_width
       errors.add(:image, :image_height, required_height: required_height) unless dimensions.height == required_height
     end
-
 end

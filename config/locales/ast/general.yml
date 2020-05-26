@@ -2,8 +2,6 @@ ast:
   account:
     show:
       change_credentials_link: Camudar los mios datos d'accesu
-      email_on_comment_label: Recibir un corréu electrónicu cuando daquién comenta nes mios propuestes o alderiques
-      email_on_comment_reply_label: Recibir un Corréu electrónicu cuando daquién contesta a los mios comentarios
       erase_account_link: Dame de baxa
       finish_verification: Rematar verificación
       notifications: Notificaciones
@@ -11,12 +9,7 @@ ast:
       organization_responsible_name_placeholder: Representante de l'asociación/coleutivu
       personal: Datos personales
       phone_number_label: Númberu de teléfonu
-      public_activity_label: Amosar públicamente la mio llista d'actividaes
       save_changes_submit: Guardar Cambeos
-      subscription_to_website_newsletter_label: Recibir emails con información interesante sobro la web
-      email_on_direct_message_label: Recibir emails con mensaxes privaos
-      email_digest_label: Recibir resume de notificaciones sobro propuestes
-      official_position_badge_label: Amosar etiqueta de tipu d'usuariu
       title: La mio cuenta
       user_permission_debates: Participar n'alderiques
       user_permission_info: Cola to cuenta yá pues...
@@ -35,7 +28,6 @@ ast:
   comments:
     comments_closed: Los comentarios están cerrados
     verified_only: Para participar %{verify_account}
-    verify_account: verifica la to cuenta
     comment:
       admin: Alministrador
       author: Autor
@@ -82,10 +74,8 @@ ast:
         submit_button: Guardar Cambeos
       show_link: Ver debate
     form:
-      debate_text: Texto inicial del debate
       debate_title: Título del debate
       tags_instructions: Etiqueta este debate.
-      tags_label: Temas
       tags_placeholder: "Escribe les etiquetes que deseyes separaes por una coma (',')"
     index:
       featured_debates: Destacadas
@@ -102,9 +92,6 @@ ast:
         button: Atopar
         placeholder: Buscar debates...
         title: Atopar
-      search_results_html:
-        one: " que contien <strong>'%{search_term}'</strong>"
-        other: " que contien <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       start_debate: Empezar un debate
       title: Alderique
@@ -130,7 +117,6 @@ ast:
       comments_title: Comentarios
       edit_debate_link: Editar propuesta
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       share: Compartir
       author: Autor
     update:
@@ -151,7 +137,6 @@ ast:
     policy: Política de Privacidad
     proposal: la propuesta
     proposal_notification: "la notificación"
-    spending_proposal: Propuesta d'inversión
     budget/investment: Proyectu de inversión
     poll/question/answer: Respuesta
     user: la cuenta
@@ -160,7 +145,6 @@ ast:
     image: Imaxe
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
@@ -191,11 +175,10 @@ ast:
       my_account_link: La mio cuenta
       my_activity_link: Mi actividad
       open: abierto
-      open_gov: Gobierno %{open}
+      open_gov: Gobierno abiertu
       proposals: Propuestes
       poll_questions: Votaciones
       budgets: Presupuestos participativos
-      spending_proposals: Propuestas de inversión
       notification_item:
         new_notifications:
           one: Tienes una nueva notificación
@@ -223,7 +206,6 @@ ast:
   map:
     title: "Distritos"
     proposal_for_district: "Crea una propuesta para tu distrito"
-    select_district: Ámbitu d'actuación
     start_proposal: Crea una propuesta
   omniauth:
     facebook:
@@ -256,9 +238,7 @@ ast:
     retire_form:
       title: Retirar propuesta
       warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir recogiendo apoyos."
-      retired_reason_label: Razón por la que se retira la propuesta
       retired_reason_blank: Selecciona una opción
-      retired_explanation_label: Explicación
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
       submit_button: Retirar propuesta
     retire_options:
@@ -268,14 +248,8 @@ ast:
       done: Realizadas
       other: Otras
     form:
-      geozone: Ámbitu d'actuación
-      proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
-      proposal_summary: Resumen de la propuesta
       proposal_summary_note: "(máximo 200 caracteres)"
-      proposal_text: Texto desarrollado de la propuesta
-      proposal_title: Títulu
-      proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tag_category_label: "Categoríes"
       tags_instructions: "Etiqueta esta propuesta. Puedes escoyer ente les categoríes propuestes o introducir les que deseyes"
@@ -305,9 +279,6 @@ ast:
         button: Atopar
         placeholder: Buscar propuestas...
         title: Atopar
-      search_results_html:
-        one: " que contien <strong>'%{search_term}'</strong>"
-        other: " que contien <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
@@ -356,7 +327,6 @@ ast:
         other: "%{count} comentarios"
       comments_tab: Comentarios
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
       milestones_tab: Siguimientu
       retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos."
@@ -391,10 +361,6 @@ ast:
     show:
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar en el debate."
       comments_tab: Comentarios
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
-      signin: Entamar sesión
-      signup: registrarte
-      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica la to cuenta"
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
@@ -410,8 +376,6 @@ ast:
   proposal_notifications:
     new:
       title: "Enviar mensaje"
-      title_label: "Títulu"
-      body_label: "Mensaje"
       submit_button: "Enviar mensaje"
       proposal_page: "la página de la propuesta"
     show:
@@ -477,11 +441,9 @@ ast:
       districts: "Distritos"
       districts_list: "Listado de distritos"
       categories: "Categoríes"
-    target_blank_html: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
     unflag: Deshacer denuncia
     outline:
-      budget: Presupuestu participativu
       searcher: Buscador
     go_to_page: "Ir a la página de "
     share: Compartir
@@ -492,53 +454,6 @@ ast:
     whatsapp: WhatsApp
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  spending_proposals:
-    form:
-      association_name_label: "Si propones en nombre de una asociación o colectivo añade el nombre aquí"
-      association_name: "Nome de l'asociación"
-      description: Descripción detallada
-      external_url: Enllaz a documentación adicional
-      geozone: Ámbitu d'actuación
-      submit_buttons:
-        create: Crear
-        new: Crear
-      title: Título de la propuesta de gasto
-    index:
-      title: Presupuestos participativos
-      unfeasible: Propuestes d'inversión invidables
-      by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
-      search_form:
-        button: Atopar
-        placeholder: Propuestas de inversión...
-        title: Atopar
-      search_results:
-        one: " contienen el término '%{search_term}'"
-        other: " contienen el término '%{search_term}'"
-      sidebar:
-        geozones: Ámbitu d'actuación
-        feasibility: Viabilidá
-        unfeasible: Invidable
-      start_spending_proposal: Crea una propuesta de inversión
-    new:
-      more_info: '¿Cómo funcionan los presupuestos participativos?'
-      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
-      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
-      recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
-      recommendations_title: Cómo crear una propuesta de gasto
-      start_new: Crear propuesta de inversión
-    show:
-      author_deleted: Usuariu esaniciáu
-      code: "Código de la propuesta:"
-      share: Compartir
-    wrong_price_format: Solo pue incluyir calteres numbéricos
-    spending_proposal:
-      spending_proposal: Propuesta d'inversión
-      already_supported: Yá sofitasti esta propuesta. ¡compartíi!
-      support: Sofitar
-      support_title: Sofitar esta propuesta
-      supports:
-        one: 1 sofitu
-        other: "%{count} sofitos"
   stats:
     index:
       visits: Visitas
@@ -558,16 +473,10 @@ ast:
   users:
     direct_messages:
       new:
-        body_label: Mensaje
         direct_messages_bloqued: "Este usuario ha decidido no recibir mensajes privados"
         submit_button: Enviar mensaje
         title: Enviar mensaje privado a %{receiver}
-        title_label: Títulu
         verified_only: Para enviar un mensaje privado %{verify_account}
-        verify_account: verifica la to cuenta
-        authenticate: Precises %{signin} o %{signup} pa siguir.
-        signin: accesu
-        signup: rexistrate
       show:
         receiver: Mensaje enviado a %{receiver}
     show:
@@ -600,18 +509,8 @@ ast:
     comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: No estoy de acuerdo
     organizations: Les organizaciones nun puen votar
-    signin: Entamar sesión
-    signup: registrarte
     supports: Sofitos
-    unauthenticated: Precises %{signin} o %{signup} pa siguir.
     verified_only: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-    verify_account: verifica la to cuenta
-    spending_proposals:
-      not_logged_in: Precises %{signin} o %{signup} pa siguir.
-      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Les organizaciones nun puen votar
-      unfeasible: No se pueden votar propuestas inviables.
-      not_voting_allowed: El periodo de votación está cerrado.
     budget_investments:
       not_logged_in: Precises %{signin} o %{signup} pa siguir.
       organization: Les organizaciones nun puen votar
@@ -657,6 +556,4 @@ ast:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text_sign_in: iniciar sesión
-      text_sign_up: rexistrate
       title: '¿Cómo puedo comentar este documento?'

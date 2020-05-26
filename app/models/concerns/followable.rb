@@ -2,10 +2,10 @@ module Followable
   extend ActiveSupport::Concern
 
   included do
-    has_many :follows, as: :followable, dependent: :destroy
+    has_many :follows, as: :followable, inverse_of: :followable, dependent: :destroy
     has_many :followers, through: :follows, source: :user
 
-    scope :followed_by_user, ->(user){
+    scope :followed_by_user, ->(user) {
       joins(:follows).where("follows.user_id = ?", user.id)
     }
   end
@@ -13,5 +13,4 @@ module Followable
   def followed_by?(user)
     followers.include?(user)
   end
-
 end

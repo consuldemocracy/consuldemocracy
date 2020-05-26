@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "System Emails" do
-
   let(:admin) { create(:administrator) }
 
   before do
@@ -9,7 +8,6 @@ describe "System Emails" do
   end
 
   context "Index" do
-
     let(:system_emails_with_preview) { %w[proposal_notification_digest] }
     let(:system_emails) do
       %w[proposal_notification_digest budget_investment_created budget_investment_selected
@@ -19,7 +17,6 @@ describe "System Emails" do
     end
 
     context "System emails" do
-
       scenario "have 'View' button" do
         visit admin_system_emails_path
 
@@ -29,11 +26,9 @@ describe "System Emails" do
           end
         end
       end
-
     end
 
     context "System emails with preview" do
-
       scenario "have 'Preview Pending' and 'Send pending' buttons" do
         visit admin_system_emails_path
 
@@ -49,11 +44,9 @@ describe "System Emails" do
           end
         end
       end
-
     end
 
     context "System emails with info" do
-
       scenario "have information about how to edit the email templates" do
         visit admin_system_emails_path
 
@@ -69,15 +62,12 @@ describe "System Emails" do
         end
       end
     end
-
   end
 
   context "View" do
-
     let(:user)    { create(:user, :level_two, username: "John Doe") }
     let(:budget)  { create(:budget, name: "Budget for 2019") }
-    let(:group)   { create(:budget_group, budget: budget) }
-    let(:heading) { create(:budget_heading, group: group) }
+    let(:heading) { create(:budget_heading, budget: budget) }
 
     scenario "#proposal_notification_digest" do
       proposal_a = create(:proposal, title: "Proposal A")
@@ -215,8 +205,6 @@ describe "System Emails" do
 
       expect(page).to have_content "Invitation to CONSUL"
       expect(page).to have_content "Thank you for applying to join CONSUL!"
-
-      registration_url = new_user_registration_url(track_id: 172943750183759812)
       expect(page).to have_link "Complete registration"
     end
 
@@ -268,9 +256,8 @@ describe "System Emails" do
       expect(page).to have_content comment.body
 
       expect(page).to have_link "Cleaner city",
-        href: admin_budget_budget_investment_url( investment.budget, investment, anchor: "comments")
+        href: admin_budget_budget_investment_url(investment.budget, investment, anchor: "comments")
     end
-
   end
 
   context "Preview Pending" do
@@ -325,9 +312,8 @@ describe "System Emails" do
       proposal_notification = create(:proposal_notification, proposal: proposal,
                                                               title: "Proposal A Title",
                                                               body: "Proposal A Notification Body")
-      voter = create(:user, :level_two)
+      voter = create(:user, :level_two, followables: [proposal])
       create(:notification, notifiable: proposal_notification, user: voter, emailed_at: nil)
-      create(:follow, user: voter, followable: proposal)
 
       visit admin_system_emails_path
 
@@ -340,5 +326,4 @@ describe "System Emails" do
       expect(page).to have_content("Pending notifications sent succesfully")
     end
   end
-
 end

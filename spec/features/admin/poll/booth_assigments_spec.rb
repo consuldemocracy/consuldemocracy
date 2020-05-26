@@ -1,14 +1,12 @@
 require "rails_helper"
 
 describe "Admin booths assignments" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
   describe "Admin Booth Assignment management" do
-
     let!(:poll) { create(:poll) }
     let!(:booth) { create(:poll_booth) }
 
@@ -25,10 +23,26 @@ describe "Admin booths assignments" do
         click_link "Manage assignments"
       end
 
-      expect(page).to have_content "Assignments for poll "#{second_poll.name}""
+      expect(page).to have_content "Assignments for poll '#{second_poll.name}'"
 
       expect(page).to have_content(booth.name)
       expect(page).to have_content(second_booth.name)
+    end
+
+    scenario "Does not hide the Polls menu", :js do
+      visit booth_assignments_admin_polls_path
+
+      within("#admin_menu") { expect(page).to have_link "Polls" }
+    end
+
+    scenario "Index do not show polls created by users from proposals dashboard" do
+      create(:poll, name: "Poll created by admin")
+      create(:poll, name: "Poll from user's proposal", related_type: "Proposal")
+
+      visit booth_assignments_admin_polls_path
+
+      expect(page).to have_content "Poll created by admin"
+      expect(page).not_to have_content "Poll from user's proposal"
     end
 
     scenario "Assign booth to poll", :js do
@@ -46,7 +60,7 @@ describe "Admin booths assignments" do
 
       visit manage_admin_poll_booth_assignments_path(poll)
 
-      expect(page).to have_content "Assignments for poll "#{poll.name}""
+      expect(page).to have_content "Assignments for poll '#{poll.name}'"
 
       within("#poll_booth_#{booth.id}") do
         expect(page).to have_content(booth.name)
@@ -69,7 +83,7 @@ describe "Admin booths assignments" do
     end
 
     scenario "Unassign booth from poll", :js do
-      assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      create(:poll_booth_assignment, poll: poll, booth: booth)
 
       visit admin_poll_path(poll)
       within("#poll-resources") do
@@ -85,7 +99,7 @@ describe "Admin booths assignments" do
 
       visit manage_admin_poll_booth_assignments_path(poll)
 
-      expect(page).to have_content "Assignments for poll "#{poll.name}""
+      expect(page).to have_content "Assignments for poll '#{poll.name}'"
 
       within("#poll_booth_#{booth.id}") do
         expect(page).to have_content(booth.name)
@@ -108,9 +122,8 @@ describe "Admin booths assignments" do
     end
 
     scenario "Unassing booth whith associated shifts", :js do
-      assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
       officer = create(:poll_officer)
-      create(:poll_officer_assignment, officer: officer, booth_assignment: assignment)
+      create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)
       create(:poll_shift, booth: booth, officer: officer)
 
       visit manage_admin_poll_booth_assignments_path(poll)
@@ -128,8 +141,7 @@ describe "Admin booths assignments" do
     end
 
     scenario "Cannot unassing booth if poll is expired" do
-      poll_expired = create(:poll, :expired)
-      create(:poll_booth_assignment, poll: poll_expired, booth: booth)
+      poll_expired = create(:poll, :expired, booths: [booth])
 
       visit manage_admin_poll_booth_assignments_path(poll_expired)
 
@@ -139,7 +151,6 @@ describe "Admin booths assignments" do
 
         expect(page).not_to have_link "Unassign booth"
       end
-
     end
   end
 
@@ -147,13 +158,9 @@ describe "Admin booths assignments" do
     scenario "Lists all assigned poll officers" do
       poll = create(:poll)
       booth = create(:poll_booth)
-      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      officer_assignment = create(:poll_officer_assignment, booth_assignment: booth_assignment)
+      officer_assignment = create(:poll_officer_assignment, poll: poll, booth: booth)
       officer = officer_assignment.officer
-
-      booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
-      officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment_2)
-      officer_2 = officer_assignment_2.officer
+      officer_2 = create(:poll_officer, polls: [poll])
 
       visit admin_poll_path(poll)
       click_link "Booths (2)"
@@ -171,14 +178,15 @@ describe "Admin booths assignments" do
       poll = create(:poll, starts_at: 2.weeks.ago, ends_at: 1.week.ago)
       booth = create(:poll_booth)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      officer_assignment_1 = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.starts_at)
-      officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.ends_at)
-      final_officer_assignment = create(:poll_officer_assignment, :final, booth_assignment: booth_assignment, date: poll.ends_at)
+
+      create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.starts_at)
+      create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.ends_at)
+      create(:poll_officer_assignment, :final, booth_assignment: booth_assignment, date: poll.ends_at)
 
       create(:poll_voter, poll: poll, booth_assignment: booth_assignment, created_at: poll.starts_at.to_date)
       create(:poll_voter, poll: poll, booth_assignment: booth_assignment, created_at: poll.ends_at.to_date)
 
-      booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
+      create(:poll_booth_assignment, poll: poll)
 
       visit admin_poll_path(poll)
       click_link "Booths (2)"
@@ -192,16 +200,36 @@ describe "Admin booths assignments" do
       end
 
       within("#recounts_list") do
-        within("#recounting_#{poll.starts_at.to_date.strftime('%Y%m%d')}") do
+        within("#recounting_#{poll.starts_at.to_date.strftime("%Y%m%d")}") do
           expect(page).to have_content 1
         end
-        within("#recounting_#{(poll.ends_at.to_date - 5.days).strftime('%Y%m%d')}") do
+        within("#recounting_#{(poll.ends_at.to_date - 5.days).strftime("%Y%m%d")}") do
           expect(page).to have_content "-"
         end
-        within("#recounting_#{poll.ends_at.to_date.strftime('%Y%m%d')}") do
+        within("#recounting_#{poll.ends_at.to_date.strftime("%Y%m%d")}") do
           expect(page).to have_content 1
         end
       end
+    end
+
+    scenario "Doesn't show system recounts for old polls" do
+      poll = create(:poll, :old)
+      booth_assignment = create(:poll_booth_assignment, poll: poll)
+
+      create(:poll_voter, poll: poll, booth_assignment: booth_assignment)
+      create(:poll_recount, booth_assignment: booth_assignment, total_amount: 10)
+
+      visit admin_poll_booth_assignment_path(poll, booth_assignment)
+
+      within("#totals") do
+        within("#total_final") do
+          expect(page).to have_content "10"
+        end
+
+        expect(page).not_to have_selector "#total_system"
+      end
+
+      expect(page).not_to have_selector "#recounts_list"
     end
 
     scenario "Results for a booth assignment" do
@@ -209,9 +237,7 @@ describe "Admin booths assignments" do
       booth_assignment = create(:poll_booth_assignment, poll: poll)
       other_booth_assignment = create(:poll_booth_assignment, poll: poll)
 
-      question_1 = create(:poll_question, poll: poll)
-      create(:poll_question_answer, title: "Yes", question: question_1)
-      create(:poll_question_answer, title: "No", question: question_1)
+      question_1 = create(:poll_question, :yes_no, poll: poll)
 
       question_2 = create(:poll_question, poll: poll)
       create(:poll_question_answer, title: "Today", question: question_2)
@@ -302,6 +328,5 @@ describe "Admin booths assignments" do
 
       expect(page).to have_content "There are no results"
     end
-
   end
 end

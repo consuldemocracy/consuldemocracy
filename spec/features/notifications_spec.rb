@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Notifications" do
-
   let(:user) { create :user }
 
   before do
@@ -39,7 +38,7 @@ describe "Notifications" do
 
   scenario "View single notification" do
     proposal = create(:proposal)
-    notification = create(:notification, user: user, notifiable: proposal)
+    create(:notification, user: user, notifiable: proposal)
 
     click_notifications_icon
 
@@ -69,8 +68,7 @@ describe "Notifications" do
   end
 
   scenario "Mark all as read" do
-    notification1 = create(:notification, user: user)
-    notification2 = create(:notification, user: user)
+    2.times { create(:notification, user: user) }
 
     click_notifications_icon
 
@@ -129,7 +127,7 @@ describe "Notifications" do
   end
 
   scenario "Notification's notifiable model no longer includes Notifiable module" do
-    create(:notification, notifiable: create(:poll_question), user: user)
+    create(:notification, :for_poll_question, user: user)
 
     click_notifications_icon
     expect(page).to have_content("This resource is not available anymore.", count: 1)
@@ -161,7 +159,7 @@ describe "Notifications" do
     end
 
     scenario "With internal link" do
-      admin_notification.update_attributes(link: "/stats")
+      admin_notification.update!(link: "/stats")
 
       visit notifications_path
       expect(page).to have_content("Notification title")
@@ -172,7 +170,7 @@ describe "Notifications" do
     end
 
     scenario "Without a link" do
-      admin_notification.update_attributes(link: "/stats")
+      admin_notification.update!(link: "/stats")
 
       visit notifications_path
       expect(page).to have_content("Notification title")
@@ -181,22 +179,17 @@ describe "Notifications" do
     end
   end
 
-  describe "#send_pending" do
+  describe "#send_pending", :delay_jobs do
     let!(:user1) { create(:user) }
     let!(:user2) { create(:user) }
     let!(:user3) { create(:user) }
     let!(:proposal_notification) { create(:proposal_notification) }
-    let!(:notification1) { create(:notification, notifiable: proposal_notification, user: user1) }
-    let!(:notification2) { create(:notification, notifiable: proposal_notification, user: user2) }
-    let!(:notification3) { create(:notification, notifiable: proposal_notification, user: user3) }
 
     before do
+      create(:notification, notifiable: proposal_notification, user: user1)
+      create(:notification, notifiable: proposal_notification, user: user2)
+      create(:notification, notifiable: proposal_notification, user: user3)
       reset_mailer
-      Delayed::Worker.delay_jobs = true
-    end
-
-    after do
-      Delayed::Worker.delay_jobs = false
     end
 
     it "sends pending proposal notifications" do
@@ -223,6 +216,7 @@ describe "Notifications" do
       Notification.send_pending
 
       now = Notification.first_batch_run_at
+
       first_batch_run_at  = now.change(usec: 0)
       second_batch_run_at = (now + 1.second).change(usec: 0)
       third_batch_run_at  = (now + 2.seconds).change(usec: 0)
@@ -232,16 +226,15 @@ describe "Notifications" do
       expect(Delayed::Job.second.run_at.change(usec: 0)).to eq(second_batch_run_at)
       expect(Delayed::Job.third.run_at.change(usec: 0)).to eq(third_batch_run_at)
     end
-
   end
 
   def remove_users_without_pending_notifications
-    users_without_notifications.each { |user| user.destroy }
+    users_without_notifications.each(&:destroy)
   end
 
   def users_without_notifications
-    User.all.select { |user| user.notifications.not_emailed
-                             .where(notifiable_type: "ProposalNotification").blank? }
+    User.all.select do |user|
+      user.notifications.not_emailed.where(notifiable_type: "ProposalNotification").blank?
+    end
   end
-
 end

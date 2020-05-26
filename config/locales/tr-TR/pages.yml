@@ -2,58 +2,55 @@ tr:
   pages:
     conditions:
       title: Kullanım şartları ve koşulları
-      subtitle: AÇIK HÜKÜMET PORTALİNİN KİŞİSEL VERİLERİNİN KULLANIMI, GİZLİLİK VE KORUNMASI HAKKINDA YASAL BİLDİRİMİ
-      description: Kişisel bilgilerin kullanım koşulları, gizliliği ve korunması hakkındaki bilgi sayfası.
+      subtitle: AÇIK KAYNAKLI PUSULA PORTALININ KİŞİSEL VERİLERİNİN KULLANIMI, GİZLİLİĞİ VE KORUNMASI HAKKINDA YASAL BİLDİRİMİ
+      description: Kişisel bilgilerin kullanım koşulları, gizliliği ve korunması hakkında bilgi sayfası.
     help:
-      title: "%{org} vatandaş katılımı için bir platformdur"
-      guide: "Bu rehber, her bir %{org}'un ne için olduğunu ve nasıl çalıştıklarını açıklar."
+      title: "%{org} halkın kamusal kararlara doğrudan katılımını hedefleyen bir platformdur"
+      guide: "Bu rehber, %{org} Platformunun farklı bölümlerini ve nasıl kullanıldıklarını açıklar."
       menu:
         debates: "Tartışmalar"
         proposals: "Öneriler"
         budgets: "Katılımcı bütçeler"
         polls: "Anketler"
-        other: "İlgili diğer bilgi"
-        processes: "İşlemler"
+        other: "Diğer gerekli bilgiler"
+        processes: "Süreçler"
       debates:
         title: "Tartışmalar"
-        description: "%{link} bölümünde, şehirle alakalı sizi ilgilendiren konularla ilgili görüşlerinizi sunabilir ve başkalarıyla paylaşabilirsiniz. Aynı zamanda, %{org}'un diğer bölümleri aracılığıyla Belediye Meclisi tarafından somut eylemlere yol açan fikirler üretmek için de bir yerdir."
+        description: "%{link} bölümünde, şehirle alakalı sizi ilgilendiren konularla ilgili görüşlerinizi sunabilir ve başkalarıyla paylaşabilirsiniz. Aynı zamanda, %{org}'un diğer bölümleri aracılığıyla Belediye Meclisi tarafından somut eylemlere katkı koyacak fikirlerinizi paylaşabilirsiniz."
         link: "vatandaş tartışmaları"
-        feature_html: "Tartışmalar açabilir, bunları <strong>Katılıyorum</strong> veya <strong>Katılmıyorum</strong> ile yorumlayabilir ve değerlendirebilirsiniz. Bunun için %{link}'iniz var."
-        feature_link: "%{org} içinde kaydol"
-        image_alt: "Tartışmaları değerlendirme düğmeleri"
-        figcaption: 'Tartışmaları değerlendirmek için "katılıyorum" ve "katılmıyorum" düğmeleri.'
+        feature_link: "%{org}'ya kaydol"
+        image_alt: "Tartışmaları değerlendirme butonları"
+        figcaption: 'Tartışmaları değerlendirmek için "katılıyorum" ve "katılmıyorum" butonları.'
       proposals:
         title: "Öneriler"
-        description: "%{link} bölümünde, Belediye Meclisinin bunları yerine getirmesi için önerilerde bulunabilirsiniz. Öneriler destek gerektirir ve eğer yeterli desteğe ulaşırlarsa, bir halka açık oylama yapılır. Bu vatandaşların oylarında onaylanan teklifler Belediye Meclisi tarafından kabul edilir ve yerine getirilir."
+        description: "%{link} bölümünde, Pusula tarafından gerçekleştirilmesi için önerilerde bulunabilirsiniz. Öneriler destek gerektirir ve eğer yeterli desteğe ulaşırlarsa, halk oylamasına sunulur. Vatandaşlar tarafından en fazla oy alan öneri gerçekleştirilecektir."
         link: "vatandaş önerileri"
-        image_alt: "Bir öneriyi destekleme düğmesi"
-        figcaption_html: 'Bir öneriyi "Destekleme" düğmesi.'
+        image_alt: "Öneriyi destekleme butonu"
       budgets:
         title: "Katılımcı Bütçeleme"
-        description: "%{link} bölümü, insanların belediye bütçesinin hangi bölümüne harcandığı konusunda doğrudan bir karar vermelerine yardımcı olur."
+        description: "%{link} bölümü, insanların belediye bütçesinin nereye harcandığı konusunda doğrudan karar vermelerine yardımcı olur."
         link: "katılımcı bütçeler"
-        image_alt: "Bir katılımcı bütçelemenin farklı aşamaları"
-        figcaption_html: 'Katılımcı bütçelerin "Destek" ve "Oylama" aşamaları.'
+        image_alt: "Katılımcı bütçelerin farklı aşamaları"
       polls:
         title: "Anketler"
-        description: "%{link} bölümü, bir teklif %1 desteğe her ulaştığında ve oylamaya gittiğinde veya Belediye Meclisinin insanların karar vermesi için bir konu önerisinde bulunduğunda etkinleşir."
+        description: "%{link} bölümü, bir teklif 1% desteğe ulaştığında ve oylamaya gittiğinde veya Pusula'nın vatadaşlar tarafından karar verilmesi için bir konuda öneride bulunduğunda etkinleşir."
         link: "anketler"
-        feature_1: "Oylamaya katılmak için %{link}'e sahip olmanız ve hesabınızı doğrulamanız gerekir."
-        feature_1_link: "%{org_name} içinde kaydol"
+        feature_1: "Oylamaya katılmak için %{link}'e sahip olmanız ve hesabınızı doğrulamanız gerekiyor."
+        feature_1_link: "%{org_name} ya kaydol"
       processes:
-        title: "İşlemler"
-        description: "%{link} bölümünde, vatandaşlar şehri etkileyen düzenlemelerin hazırlanmasına ve değiştirilmesine katılır ve önceki tartışmalarda belediye politikaları hakkında fikirlerini verebilir."
-        link: "işlemler"
+        title: "Süreçler"
+        description: "%{link} bölümünde, vatandaşlar ülkeyi etkileyen düzenlemelerin hazırlanmasına ve değiştirilmesine katılarak, önceki tartışmalar hakkında fikirlerini paylaşabilir."
+        link: "süreçler"
       faq:
         title: "Teknik sorunlar?"
-        description: "SSS bölümünü okuyun ve problemlerinizi çözümleyin."
-        button: "Sık sorulan soruları görüntüle"
+        description: "Sıkça Sorulan Sorular bölümünde sorularınıza yanıt bulabilirsiniz."
+        button: "Sıkça sorulan soruları görüntüle"
         page:
-          title: "Sık Sorulan Sorular"
-          description: "Site kullanıcılarının ortak SSS'lerini çözmek için bu sayfayı kullanın."
+          title: "Sıkça Sorulan Sorular"
+          description: "Platform kullanıcılarının ortak SSS'ını çözmek için bu sayfayı kullanın."
       other:
         title: "İlgili diğer bilgi"
-        how_to_use: "Şehriniz içinde %{org_name} kullanın"
+        how_to_use: "%{org_name}'yı ülkeniz için kullanın"
       how_to_use:
         text: |-
           Bunu yerel idarenizde kullanın ya da geliştirmemize yardım edin, bu özgür bir yazılımdır.
@@ -65,7 +62,7 @@ tr:
         how_to_use: Yerel yönetimde kullanın
     privacy:
       title: Gizlilik Politikası
-      subtitle: "Gizlilik ile ilgili bilgi sayfası"
+      subtitle: "Gizlilikle ilgili bilgi sayfası"
     accessibility:
       title: Erişilebilirlik
       description: |-
@@ -157,14 +154,10 @@ tr:
               description_column: Metin boyutunu küçültür
       compatibility:
         title: Standartlara ve görsel tasarıma uygunluk
-        description_html: 'Bu web sitesinin tüm sayfaları, W3C''nin <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> Çalışma Grubu tarafından kurulan <strong>Erişilebilirlik Yönergeleri</strong> veya Genel Erişilebilir Tasarım İlkeleri ile uyumludur.'
     titles:
       help: "%{org} nedir? - Vatandaş katılımı"
     verify:
-      code: Mektupta aldığınız kod
-      email: E-posta
       info: "Hesabınızı doğrulamak için erişim verinizi tanıtın:"
       info_code: "Şimdi mektupta aldığınız kodu tanıtın:"
-      password: Şifre
       submit: Hesabımı doğrula
       title: Hesabınızı doğrulayın

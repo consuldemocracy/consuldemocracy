@@ -61,9 +61,6 @@ fr:
       proposal:
         one: "Proposition citoyenne"
         other: "Propositions citoyennes"
-      spending_proposal:
-        one: "Propositions d'investissement"
-        other: "Propositions d'investissement"
       site_customization/page:
         one: Page personnalisée
         other: Pages personnalisées
@@ -134,6 +131,8 @@ fr:
         organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
         image: "Image descriptive de la proposition"
         image_title: "Titre de l'image"
+      budget/investment/translation:
+        title: "Titre"
       geozone:
         name: Nom
         external_code: "Code externe (optionnel)"
@@ -172,6 +171,8 @@ fr:
         question: "Question"
         description: "Description"
         terms_of_service: "Conditions d'utilisation"
+      proposal/translation:
+        title: "Titre de la proposition"
       user:
         login: "Email ou nom d’utilisateur"
         email: "Email"
@@ -179,20 +180,13 @@ fr:
         password_confirmation: "Confirmation du mot de passe"
         password: "Mot de passe"
         current_password: "Mot de passe actuel"
-        phone_number: "Numéro de téléphone"
         official_position: "Position officielle"
         official_level: "Niveau officiel"
+        phone_number: "Numéro de téléphone"
         redeemable_code: "Vérification du code reçu par courriel"
       organization:
         name: "Nom de l'organisation"
         responsible_name: "Personne responsable pour le groupe"
-      spending_proposal:
-        administrator_id: "Administrateur"
-        association_name: "Nom de l'association"
-        description: "Description"
-        external_url: "Lien vers de la documentation supplémentaire"
-        geozone_id: "Portée de l'opération"
-        title: "Titre"
       poll:
         name: "Nom"
         starts_at: "Date de début"
@@ -288,10 +282,10 @@ fr:
         text: Commentaire
       document:
         title: Titre
-        attachment: Pièce jointe
+        attachment: "Pièce jointe"
       image:
         title: Titre
-        attachment: Pièce jointe
+        attachment: "Pièce jointe"
       poll/question/answer:
         title: Réponse
         description: Description
@@ -304,7 +298,7 @@ fr:
       newsletter:
         segment_recipient: Destinataires
         subject: Objet
-        from: Du
+        from: "Du"
         body: Contenu du courriel
       admin_notification:
         segment_recipient: Destinataires

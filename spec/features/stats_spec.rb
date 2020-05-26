@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Stats" do
-
   context "Summary" do
-
     scenario "General" do
       create(:debate)
       2.times { create(:proposal) }
@@ -19,14 +17,9 @@ describe "Stats" do
     end
 
     scenario "Votes" do
-      debate = create(:debate)
-      create(:vote, votable: debate)
-
-      proposal = create(:proposal)
-      2.times { create(:vote, votable: proposal) }
-
-      comment = create(:comment)
-      3.times { create(:vote, votable: comment) }
+      create(:debate,   voters: Array.new(1) { create(:user) })
+      create(:proposal, voters: Array.new(2) { create(:user) })
+      create(:comment,  voters: Array.new(3) { create(:user) })
 
       visit stats_path
 
@@ -46,7 +39,5 @@ describe "Stats" do
       expect(page).to have_content "Verified users 3"
       expect(page).to have_content "Unverified users 2"
     end
-
   end
-
 end

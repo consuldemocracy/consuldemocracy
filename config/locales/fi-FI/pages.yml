@@ -74,7 +74,5 @@ fi:
             - 
               browser_column: Opera
     verify:
-      email: Sähköposti
-      password: Salasana
       submit: Vahvista tilini
       title: Vahvista tilisi

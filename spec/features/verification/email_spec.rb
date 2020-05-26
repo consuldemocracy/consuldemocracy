@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Verify email" do
-
   scenario "Verify" do
     user = create(:user,
                   residence_verified_at: Time.current,
@@ -57,7 +56,7 @@ describe "Verify email" do
 
     visit verified_user_path
 
-    verified_user.destroy
+    verified_user.destroy!
     click_button "Send code"
 
     expect(page).to have_content "There was a problem with sending an email to your account"

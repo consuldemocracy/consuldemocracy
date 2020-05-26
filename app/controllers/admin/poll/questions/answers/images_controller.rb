@@ -22,7 +22,7 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
 
   def destroy
     @image = ::Image.find(params[:id])
-    @image.destroy
+    @image.destroy!
 
     respond_to do |format|
       format.js { render layout: false }

@@ -10,6 +10,6 @@
     </div>
 
     <h1><%= @direct_message.title %></h1>
-    <p><%= simple_format text_with_links(@direct_message.body), {}, sanitize: false  %></p>
+    <p><%= simple_format sanitize_and_auto_link(@direct_message.body), {}, sanitize: false %></p>
   </div>
 </div>

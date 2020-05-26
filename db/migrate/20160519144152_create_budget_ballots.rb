@@ -5,8 +5,7 @@ class CreateBudgetBallots < ActiveRecord::Migration[4.2]
       t.references :user
       t.references :budget
 
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
+      t.timestamps null: false
     end
   end
 end

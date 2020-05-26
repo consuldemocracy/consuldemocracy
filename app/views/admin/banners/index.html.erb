@@ -11,9 +11,9 @@
   <table>
     <thead>
       <tr id="<%= dom_id(banner) %>">
-        <th scope="col"><%= t("admin.banners.banner.post_started_at")%></th>
-        <th scope="col"><%= t("admin.banners.banner.post_ended_at")%></th>
-        <th scope="col" class="small-4"><%= t("admin.actions.actions")%></th>
+        <th scope="col"><%= Banner.human_attribute_name(:post_started_at) %></th>
+        <th scope="col"><%= Banner.human_attribute_name(:post_ended_at) %></th>
+        <th scope="col" class="small-4"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -35,12 +35,7 @@
       <tr>
         <td colspan="3">
           <span class="help-text"><%= t("admin.banners.index.preview") %></span>
-          <div class="banner" style="background-color:<%= banner.background_color %>">
-            <%= link_to banner.target_url do %>
-              <h2 style="color:<%= banner.font_color %>"><%= banner.title %></h2>
-              <h3 style="color:<%= banner.font_color %>"><%= banner.description %></h3>
-            <% end %>
-          </div>
+          <%= render "shared/banner", banner: banner %>
         </td>
       </tr>
     </tbody>

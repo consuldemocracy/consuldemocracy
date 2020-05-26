@@ -20,5 +20,4 @@ class Verification::VerifiedUserController < ApplicationController
 
       data
     end
-
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe GeozonesHelper do
-
   describe "#geozone_name" do
     let(:geozone) { create :geozone }
 
@@ -24,11 +23,7 @@ describe GeozonesHelper do
 
       select_options = geozone_select_options
 
-      expect(select_options.size).to eq 3
-      expect(select_options.first).to eq [g1.name, g1.id]
-      expect(select_options[1]).to eq [g2.name, g2.id]
-      expect(select_options.last).to eq [g3.name, g3.id]
+      expect(select_options).to eq [[g1.name, g1.id], [g2.name, g2.id], [g3.name, g3.id]]
     end
   end
-
 end

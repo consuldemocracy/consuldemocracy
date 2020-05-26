@@ -1,8 +1,8 @@
 el:
   milestones:
     index:
-      no_milestones: Δεν έχουν καθορισμένα ορόσημα
+      no_milestones: Δεν υπάρχουν καθορισμένα ορόσημα
       progress: Πρόοδος
     show:
-      publication_date: "Δημοσιευμένη %{publication_date}"
+      publication_date: "Δημοσιευμένο %{publication_date}"
       status_changed: Η κατάσταση άλλαξε σε

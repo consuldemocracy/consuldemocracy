@@ -18,7 +18,6 @@ pl:
         title: "Debaty"
         description: "W sekcji %{link} możesz przedstawiać swoją opinię na temat istotnych dla Ciebie kwestii związanych z miastem oraz dzielić się nią z innymi ludźmi. Jest to również miejsce do generowania pomysłów, które poprzez inne sekcje %{org} prowadzą do konkretnych działań ze strony Rady Miejskiej."
         link: "debaty obywatelskie"
-        feature_html: "Możesz otwierać debaty, komentować i oceniać je przy pomocy <strong>Zgadzam się</strong> lub <strong>Nie zgadzam się</strong>. W tym celu musisz %{link}."
         feature_link: "zarejestruj się w %{org}"
         image_alt: "Przyciski do oceny debat"
         figcaption: 'Przyciski "Zgadzam się" i "Nie zgadzam się" do oceniania debat.'
@@ -27,13 +26,11 @@ pl:
         description: "W sekcji %{link} możesz składać propozycje do Rady Miejskiej, celem ich wdrożenia przez ów organ. Takie wnioski wymagają poparcia, a jeśli osiągną wystarczający jego poziom, zostają poddane publicznemu głosowaniu. Propozycje zatwierdzone w głosowaniach są akceptowane i wykonywane przez Radę Miejską."
         link: "propozycje obywatelskie"
         image_alt: "Przycisk do popierania propozycji"
-        figcaption_html: 'Przycisk do "Popierania" propozycji.'
       budgets:
         title: "Budżetowanie Partycypacyjne"
         description: "Sekcja %{link} pomaga ludziom podjąć bezpośrednią decyzję odnośnie tego, na co zostanie wydana część budżetu gminnego."
         link: "budżety obywatelskie"
         image_alt: "Różne fazy budżetu partycypacyjnego"
-        figcaption_html: 'Fazy "Poparcie" i "Głosowanie" budżetów partycypacyjnych.'
       polls:
         title: "Sondy"
         description: "Sekcja %{link} jest aktywowana za każdym razem, gdy propozycja osiąga 1% poparcia i przechodzi do głosowania lub gdy Rada Miejska przedkłada kwestię, w której sprawie ludzie mają zadecydować."
@@ -155,14 +152,10 @@ pl:
               description_column: Zmniejsza rozmiar tekstu
       compatibility:
         title: Zgodność z normami i projektowaniem wizualnym
-        description_html: 'Wszystkie strony witryny są zgodne z <strong> Wskazówki dotyczące dostępności </strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> należącą do W3C.'
     titles:
       help: "Czym jest %{org}? - Uczestnictwem obywatelskim"
     verify:
-      code: Kod, który otrzymałeś w liście
-      email: E-mail
       info: "Aby zweryfikować konto, wprowadź swoje dane dostępu:"
       info_code: "Teraz wprowadź kod otrzymany w liście:"
-      password: Hasło
       submit: Zweryfikuj swoje konto
       title: Zweryfikuj swoje konto

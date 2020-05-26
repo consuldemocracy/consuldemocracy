@@ -11,7 +11,7 @@ class Legislation::AnswersController < Legislation::BaseController
   def create
     if @process.debate_phase.open?
       @answer.user = current_user
-      @answer.save
+      @answer.save!
       track_event
       respond_to do |format|
         format.js

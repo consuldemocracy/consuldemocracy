@@ -1,10 +1,12 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
+  include GlobalizeFallbacks
   include HasFilters
   include HasOrders
   include AccessDeniedHandler
 
+  default_form_builder ConsulFormBuilder
   protect_from_forgery with: :exception
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
@@ -13,7 +15,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :track_email_campaign
   before_action :set_return_url
-  before_action :set_fallbacks_to_all_available_locales
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
@@ -109,7 +110,7 @@ class ApplicationController < ActionController::Base
 
     def track_email_campaign
       if params[:track_id]
-        campaign = Campaign.where(track_id: params[:track_id]).first
+        campaign = Campaign.find_by(track_id: params[:track_id])
         ahoy.track campaign.name if campaign.present?
       end
     end
@@ -121,9 +122,9 @@ class ApplicationController < ActionController::Base
     end
 
     def set_default_budget_filter
-      if @budget.try(:balloting?) || @budget.try(:publishing_prices?)
+      if @budget&.balloting? || @budget&.publishing_prices?
         params[:filter] ||= "selected"
-      elsif @budget.try(:finished?)
+      elsif @budget&.finished?
         params[:filter] ||= "winners"
       end
     end
@@ -132,7 +133,10 @@ class ApplicationController < ActionController::Base
       Budget.current
     end
 
-    def set_fallbacks_to_all_available_locales
-      Globalize.set_fallbacks_to_all_available_locales
+    def redirect_with_query_params_to(options, response_status = {})
+      path_options = { controller: params[:controller] }.merge(options).merge(only_path: true)
+      path = url_for(request.query_parameters.merge(path_options))
+
+      redirect_to path, response_status
     end
 end

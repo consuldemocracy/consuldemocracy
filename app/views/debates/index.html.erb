@@ -18,7 +18,9 @@
             <p>
               <%= page_entries_info @debates %>
               <% if !@advanced_search_terms %>
-                <%= t("debates.index.search_results_html", count: @debates.size, search_term: @search_terms) %>
+                <%= sanitize(
+                  t("debates.index.search_results", count: @debates.size, search_term: @search_terms)
+                ) %>
               <% end %>
             </p>
           <% elsif @tag_filter %>
@@ -71,7 +73,7 @@
           <%= render @debates %>
         <% else %>
           <% @debates.each do |debate| %>
-            <%= render partial: "debates/debate_minimal", locals: { debate: debate } %>
+            <%= render "debates/debate_minimal", debate: debate %>
           <% end %>
         <% end %>
       <% else %>
@@ -86,8 +88,8 @@
           </p>
           <p><%= t("debates.index.section_footer.description") %></p>
           <p><%= t("debates.index.section_footer.help_text_1") %></p>
-          <p><%= t("debates.index.section_footer.help_text_2",
-                    org: link_to(setting["org_name"], new_user_registration_path)).html_safe %></p>
+          <p><%= sanitize(t("debates.index.section_footer.help_text_2",
+                    org: link_to(setting["org_name"], new_user_registration_path))) %></p>
           </p>
         </div>
       <% end %>

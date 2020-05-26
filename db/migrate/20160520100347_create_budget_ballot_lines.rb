@@ -4,8 +4,7 @@ class CreateBudgetBallotLines < ActiveRecord::Migration[4.2]
       t.integer :ballot_id, index: true
       t.integer :investment_id, index: true
 
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
+      t.timestamps null: false
     end
   end
 end

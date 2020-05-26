@@ -18,7 +18,6 @@ hr:
         title: "Rasprave"
         description: "U %{link} sekciji možete prezentirati i podijeliti svoje mišljenje o problematičnim temama u gradu s ostalim građanima. Ovo je također mjesto za stvaranje ideja uz ostale sekcije %{org} koje će voditi do konkretnih akcija od strane tijela javne vlasti."
         link: "rasprave građana"
-        feature_html: "Možete otvoriti raspravu, komentirati i evaluirati ih sa <strong> ja se slažem</strong> ili <strong> ja se ne slažem</strong>. Za to trebate %{link}."
         feature_link: "registrirajte se u %{org}"
         image_alt: "Gumbi za rangiranje rasprava"
         figcaption: '"Slažem se" i "Ne slažem se" gumbi kako biste ocijenili rasprave.'
@@ -27,17 +26,15 @@ hr:
         description: "U %{link} sekciji možete napraviti prijedlog za tijelo javne vlasti kako bi ih izvršila. Prijedlozima treba potpora te ukoliko zadobe dovoljno potpore mogu ići na javno izglasavanje. Izglasane prijedloge tijelo javne vlasti treba prihvatiti i sprovesti."
         link: "prijedlozi građana"
         image_alt: "Gumb za potporu prijedloga"
-        figcaption_html: 'Gumb za "Potporu" prijedloga.'
       budgets:
         title: "Participativno Budžetiranje"
         description: "%{link} sekcija pomaže građanima kako bi sproveli direktnu odluku o trošenju dijelova javnog budžeta."
         link: "participativni budžeti"
         image_alt: "Različite faze participativnog budžetiranja"
-        figcaption_html: '"Potpora" i "Glasanje" su faze participativnog budžetiranja.'
       polls:
-        title: "Ankete"
+        title: "Glasanje"
         description: "%{link} sekcije aktiviraju sesvaki puta kada prijedlog postigne 1% potpore i počne izglasavanje ili kada tijelo javne vlasti predlaže problem oko kojeg građani zatim odlučuju."
-        link: "ankete"
+        link: "glasanje"
         feature_1: "Kako bi sudjelovali u izglasavanju morate %{link} i potvrditi svoj račun."
         feature_1_link: "registrirajte se %{org_name}"
       processes:
@@ -157,14 +154,10 @@ hr:
               description_column: Umanjuje veličinu teksta
       compatibility:
         title: Kompatibilno sa standardima i vizualnim dizajnom
-        description_html: 'Sve stranice webstranice su u skladu s <strong> Smjernicama za Pristupačnost</strong> ili Generalnim Prinicipima Pristupa Dizajnu uspostavljenog od strane Radne Skupine <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pripada W3C.'
     titles:
       help: "Što je %{org}? - Građansko sudjelovanje"
     verify:
-      code: Šifra koju ste zaprimili u pismu
-      email: Email
       info: "Kako biste potvrdili svoju adresu koristite svoje podatke za pristup:"
       info_code: "Sada koristite šifru koju ste zaprimili u pismu:"
-      password: Zaporka
       submit: Potvrdi moj račun
       title: Potvrditi tvoj račun

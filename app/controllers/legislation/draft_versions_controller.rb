@@ -30,11 +30,10 @@ class Legislation::DraftVersionsController < Legislation::BaseController
   private
 
     def visible_draft_versions
-      if current_user && current_user.administrator?
+      if current_user&.administrator?
         @process.draft_versions
       else
         @process.draft_versions.published
       end
     end
-
 end

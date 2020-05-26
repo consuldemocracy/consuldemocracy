@@ -7,7 +7,7 @@ class CreateSiteCustomizationPages < ActiveRecord::Migration[4.2]
       t.text :content
       t.boolean :more_info_flag
       t.boolean :print_content_flag
-      t.string :status, default: 'draft'
+      t.string :status, default: "draft"
 
       t.timestamps null: false
     end

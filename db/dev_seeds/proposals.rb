@@ -18,17 +18,20 @@ def add_image_to(imageable)
     attachment: IMAGE_FILES.sample,
     user: imageable.author
   })
-  imageable.save
+  imageable.save!
 end
 
 section "Creating Proposals" do
   tags = Faker::Lorem.words(25)
   30.times do
+    title = Faker::Lorem.sentence(3).truncate(60)
+    summary = Faker::Lorem.sentence(3)
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
+
     proposal = Proposal.create!(author: author,
-                                title: Faker::Lorem.sentence(3).truncate(60),
-                                summary: Faker::Lorem.sentence(3),
+                                title: title,
+                                summary: summary,
                                 responsible_name: Faker::Name.name,
                                 description: description,
                                 created_at: rand((Time.current - 1.week)..Time.current),
@@ -36,7 +39,15 @@ section "Creating Proposals" do
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
-                                published_at: Time.now)
+                                published_at: Time.current)
+    random_locales.map do |locale|
+      Globalize.with_locale(locale) do
+        proposal.title = "Title for locale #{locale}"
+        proposal.summary = "Summary for locale #{locale}"
+        proposal.description = "<p>Description for locale #{locale}</p>"
+        proposal.save!
+      end
+    end
     add_image_to proposal
   end
 end
@@ -58,6 +69,14 @@ section "Creating Archived Proposals" do
                                 terms_of_service: "1",
                                 created_at: months_to_archive_proposals.to_i.months.ago,
                                 published_at: months_to_archive_proposals.to_i.months.ago)
+    random_locales.map do |locale|
+      Globalize.with_locale(locale) do
+        proposal.title = "Archived proposal title for locale #{locale}"
+        proposal.summary = "Archived proposal title summary for locale #{locale}"
+        proposal.description = "<p>Archived proposal description for locale #{locale}</p>"
+        proposal.save!
+      end
+    end
     add_image_to proposal
   end
 end
@@ -78,11 +97,19 @@ section "Creating Successful Proposals" do
                                 skip_map: "1",
                                 terms_of_service: "1",
                                 cached_votes_up: Setting["votes_for_proposal_success"],
-                                published_at: Time.now)
+                                published_at: Time.current)
+    random_locales.map do |locale|
+      Globalize.with_locale(locale) do
+        proposal.title = "Successful proposal title for locale #{locale}"
+        proposal.summary = "Successful proposal title summary for locale #{locale}"
+        proposal.description = "<p>Successful proposal description for locale #{locale}</p>"
+        proposal.save!
+      end
+    end
     add_image_to proposal
   end
 
-  tags = ActsAsTaggableOn::Tag.where(kind: "category")
+  tags = Tag.where(kind: "category")
   30.times do
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
@@ -96,7 +123,15 @@ section "Creating Successful Proposals" do
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
-                                published_at: Time.now)
+                                published_at: Time.current)
+    random_locales.map do |locale|
+      Globalize.with_locale(locale) do
+        proposal.title = "Tagged proposal title for locale #{locale}"
+        proposal.summary = "Tagged proposal title summary for locale #{locale}"
+        proposal.description = "<p>Tagged proposal description for locale #{locale}</p>"
+        proposal.save!
+      end
+    end
     add_image_to proposal
   end
 end

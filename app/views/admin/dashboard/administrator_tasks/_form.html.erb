@@ -17,7 +17,7 @@
           <%= administrator_task.source.action.title %>
         </td>
         <td class="text-right">
-          <%= form_for administrator_task, url: { action: 'update' } do |f| %>
+          <%= form_for administrator_task, url: { action: "update" } do |f| %>
             <%= f.submit(value: t("admin.dashboard.administrator_tasks.form.solve"),
                          class: "button") %>
           <% end %>

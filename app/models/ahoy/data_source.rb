@@ -4,13 +4,12 @@
 
 module Ahoy
   class DataSource
-
     # Adds a collection with the datasource
     # Name is the name of the collection and will be showed in the
     # chart
     def add(name, collection)
-      collections.push data:  collection, name: name
-      collection.each_key{ |key| add_key key }
+      collections.push data: collection, name: name
+      collection.each_key { |key| add_key key }
     end
 
     def build
@@ -32,18 +31,16 @@ module Ahoy
 
     private
 
-    def collections
-      @collections ||= []
-    end
+      def collections
+        @collections ||= []
+      end
 
-    def shared_keys
-      @shared_keys ||= []
-    end
+      def shared_keys
+        @shared_keys ||= []
+      end
 
-    def add_key(key)
-      shared_keys.push(key) unless shared_keys.include? key
-    end
-
+      def add_key(key)
+        shared_keys.push(key) unless shared_keys.include? key
+      end
   end
-
 end

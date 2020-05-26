@@ -1,4 +1,8 @@
 gl:
+  attributes:
+    results_enabled: "Amosar resultados"
+    stats_enabled: "Amosar estatísticas"
+    advanced_stats_enabled: "Amosar estatísticas avanzadas"
   activerecord:
     models:
       activity:
@@ -61,12 +65,12 @@ gl:
       poll/officer:
         one: "presidente de mesa"
         other: "presidentes de mesa"
+      poll/ballot_sheet:
+        one: Papeleta
+        other: Papeletas
       proposal:
         one: "Proposta cidadá"
         other: "Propostas cidadás"
-      spending_proposal:
-        one: "Proposta de investimento"
-        other: "Proxectos de investimento"
       site_customization/page:
         one: Páxina
         other: Páxinas personalizadas
@@ -76,6 +80,9 @@ gl:
       site_customization/content_block:
         one: Bloque
         other: Personalizar bloques
+      document:
+        one: Documento
+        other: Documentos
       legislation/process:
         one: "Proceso"
         other: "Procesos"
@@ -109,6 +116,18 @@ gl:
       proposal_notification:
         one: "Notificación de proposta"
         other: "Notificacións das propostas"
+      dashboard/action:
+        one: Acción do panel de control de propostas
+        other: Accións do panel de control de propostas
+      dashboard/administrator_task:
+        one: Tarefa
+        other: Tarefas
+      link:
+        one: Ligazón
+        other: Ligazóns
+      local_census_record:
+        one: Rexistro do censo local
+        other: Rexistros do censo local
     attributes:
       budget:
         name: "Nome"
@@ -131,6 +150,14 @@ gl:
         organization_name: "Se estás a propor no nome dunha organización, dun colectivo ou de mais xente, escribe o seu nome"
         image: "Imaxe descritiva da proposta"
         image_title: "Título da imaxe"
+      budget/investment/translation:
+        title: "Título"
+        description: "Descrición"
+      geozone:
+        name: Nome
+        external_code: "Código externo (opcional)"
+        census_code: "Código censal (opcional)"
+        html_map_coordinates: "Coordenadas HTML <map> (opcional)"
       milestone:
         status_id: "Estado do investimento actual (opcional)"
         title: "Título"
@@ -158,12 +185,21 @@ gl:
         description: "Opinión"
         terms_of_service: "Termos de servizo"
         title: "Título"
+      debate/translation:
+        title: "Título do debate"
+        description: "Texto inicial do debate"
       proposal:
         author: "Autoría"
         title: "Título"
         question: "Pregunta"
         description: "Descrición"
+        selected: "Marcar como seleccionado"
         terms_of_service: "Termos de servizo"
+      proposal/translation:
+        title: "Título da proposta"
+        description: "Texto da proposta"
+        summary: "Resumo da proposta"
+        retired_explanation: "Explicación"
       user:
         login: "Correo electrónico ou nome de usuaria"
         email: "O teu correo electrónico"
@@ -171,20 +207,13 @@ gl:
         password_confirmation: "Confirmación de contrasinal"
         password: "Contrasinal que empregarás para acceder a este sitio web"
         current_password: "Contrasinal actual"
-        phone_number: "Teléfono"
         official_position: "Cargo público"
         official_level: "Nivel do cargo"
+        phone_number: "Teléfono"
         redeemable_code: "Código de verificación por carta (opcional)"
       organization:
         name: "Nome de organización"
         responsible_name: "Persoa responsable do colectivo"
-      spending_proposal:
-        administrator_id: "Administración"
-        association_name: "Nome da asociación"
-        description: "Descrición"
-        external_url: "Ligazón a documentación adicional"
-        geozone_id: "Ámbitos de actuación"
-        title: "Título"
       poll:
         name: "Nome"
         starts_at: "Data de apertura"
@@ -203,6 +232,9 @@ gl:
         external_url: "Ligazón a documentación adicional"
       poll/question/translation:
         title: "Pregunta"
+      poll/ballot_sheet:
+        data: Datos CSV
+        poll_id: Votación
       signature_sheet:
         signable_type: "Tipo de sinaturas"
         signable_id: "ID de proposta cidadá/proposta de investimento"
@@ -229,6 +261,9 @@ gl:
         name: Nome
         locale: idioma
         body: Contido
+      banner:
+        background_color: Cor de fondo
+        font_color: Cor da letra
       legislation/process:
         title: Título do proceso
         summary: Resumo
@@ -273,10 +308,10 @@ gl:
         text: Comentar
       document:
         title: Título
-        attachment: Anexo
+        attachment: "Anexo"
       image:
         title: Título
-        attachment: Anexo
+        attachment: "Anexo"
       poll/question/answer:
         title: Resposta
         description: Descrición
@@ -289,7 +324,7 @@ gl:
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
-        from: Dende
+        from: "Dende"
         body: Contido da mensaxe
       admin_notification:
         segment_recipient: Destinatarios
@@ -313,6 +348,33 @@ gl:
         link_text: Texto da ligazón
       widget/feed:
         limit: Número de elementos
+      dashboard/action:
+        title: Título
+        short_description: Descrición curta
+        description: Descrición
+        link: Ligazón externa
+        request_to_administrators: Incluír no recurso un botón para solicitar o recurso aos administradores
+        day_offset: En cantos días despois da creación da proposta queres que se active?
+        required_supports: Cantos apoios ten que conseguir a proposta para que se active?
+        order: Podes introducir a posición na que se lle amosará ao usuario esta acción na lista de accións
+        active: Activo
+        action_type: Tipo
+      dashboard/administrator_task:
+        source: Orixe
+        user: Executado por
+      link:
+        label: Título
+        url: Ligazón
+      valuator:
+        description: Descrición
+        valuator_group_id: Grupo de avaliadores
+        can_comment: Pode crear comentarios
+        can_edit_dossier: Pode editar informes
+      local_census_record:
+        document_type: Tipo de documento
+        document_number: Número de documento
+        date_of_birth: Data de nacemento
+        postal_code: Código postal
     errors:
       models:
         user:
@@ -390,7 +452,9 @@ gl:
             valuation:
               cannot_comment_valuation: "Non podes comentar unha avaliación"
       messages:
+        translations_too_short: É necesaria unha tradución como mínimo
         record_invalid: "Erro de validación: %{errors}"
+        another_poll_active: Hai outra enquisa activa para este periodo
         restrict_dependent_destroy:
           has_one: "Non podes eliminar o rexistro porque existe unha %{record} dependente"
           has_many: "Non podes eliminar o rexistro porque existe %{record} dependentes"

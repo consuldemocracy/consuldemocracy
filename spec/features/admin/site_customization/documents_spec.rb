@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Documents" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -38,8 +37,9 @@ describe "Documents" do
   end
 
   scenario "Index (pagination)" do
-    per_page = Kaminari.config.default_per_page
-    (per_page + 5).times { create(:document, :admin) }
+    per_page = 3
+    allow(Document).to receive(:default_per_page).and_return(per_page)
+    (per_page + 2).times { create(:document, :admin) }
 
     visit admin_site_customization_documents_path
 
@@ -47,12 +47,12 @@ describe "Documents" do
 
     within("ul.pagination") do
       expect(page).to have_content("1")
-      expect(page).to have_link("2", href: admin_site_customization_documents_url(page: 2))
+      expect(page).to have_link("2", href: admin_site_customization_documents_path(page: 2))
       expect(page).not_to have_content("3")
       click_link "Next", exact: false
     end
 
-    expect(page).to have_selector("#documents .document", count: 5)
+    expect(page).to have_selector("#documents .document", count: 2)
   end
 
   scenario "Create" do
@@ -85,5 +85,4 @@ describe "Documents" do
     expect(page).to have_content "Document deleted succesfully"
     expect(page).not_to have_content document.title
   end
-
 end

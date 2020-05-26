@@ -6,7 +6,7 @@ de:
         submit: Erneut Anweisungen zusenden
         title: Erneut Anweisungen zur Bestätigung zusenden
       show:
-        instructions_html: Das Konto per E-Mail %{email} bestätigen 
+        instructions: Das Konto per E-Mail %{email} bestätigen
         new_password_confirmation_label: Zugangspasswort wiederholen
         new_password_label: Neues Zugangspasswort
         please_set_password: Bitte wählen Sie Ihr neues Passwort (dieses ermöglicht Ihnen die Anmeldung mit der oben genannten E-Mail-Adresse)
@@ -50,10 +50,10 @@ de:
           title: Als Organisation oder Gruppe registrieren
         success:
           back_to_index: Ich verstehe; zurück zur Hauptseite
-          instructions_1_html: "<strong>Wir werden Sie bald kontaktieren,</strong> um zu verifizieren, dass Sie tatsächlich diese Gruppe/Organisation repräsentieren."
-          instructions_2_html: Während Ihre <strong>E-Mail überprüft wird</strong>, senden wir Ihnen einen<strong>Link, um Ihr Konto zu bestätigen</strong>.
-          instructions_3_html: Nach der Bestätigung können Sie anfangen, sich als ein ungeprüftes Kollektiv zu beteiligen.
-          thank_you_html: Vielen Dank für die Registrierung Ihres Kollektivs auf der Webseite. Sie müssen jetzt <b>verifiziert</b> werden.
+          instructions_1: "<strong>Wir werden Sie bald kontaktieren,</strong> um zu verifizieren, dass Sie tatsächlich diese Gruppe/Organisation repräsentieren."
+          instructions_2: Während Ihre <strong>E-Mail überprüft wird</strong>, senden wir Ihnen einen<strong>Link, um Ihr Konto zu bestätigen</strong>.
+          instructions_3: Nach der Bestätigung können Sie anfangen, sich als ein ungeprüftes Kollektiv zu beteiligen.
+          thank_you: Vielen Dank für die Registrierung Ihres Kollektivs auf der Webseite. Die <strong> Verifizierung steht jetzt aus </strong>.
           title: Als Organisation oder Gruppe registrieren
     passwords:
       edit:
@@ -123,7 +123,7 @@ de:
           username_note: Name, der öffentlich neben ihren Beiträgen angezeigt wird
         success:
           back_to_index: Ich verstehe; zurück zur Startseite
-          instructions_1_html: Bitte <b>überprüfen Sie Ihren E-Mail-Eingang</b> - wir haben Ihnen einen <b>Link zur Bestätigung Ihres Kontos</b> geschickt.
-          instructions_2_html: Nach der Bestätigung können Sie beginnen sich zu beteiligen.
-          thank_you_html: Danke für Ihre Registrierung für diese Website. Sie müssen nun <b>Ihre E-Mail-Adresse bestätigen</b>.
+          instructions_1: Bitte <b>überprüfen Sie Ihren E-Mail-Eingang</b> - wir haben Ihnen einen <b>Link zur Bestätigung Ihres Kontos</b> geschickt.
+          instructions_2: Nach der Bestätigung können Sie beginnen sich zu beteiligen.
+          thank_you: Danke für Ihre Registrierung für diese Website. Sie müssen nun <b>Ihre E-Mail-Adresse bestätigen</b>.
           title: E-Mail-Adresse bestätigen

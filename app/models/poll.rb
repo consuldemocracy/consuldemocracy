@@ -24,11 +24,12 @@ class Poll < ApplicationRecord
   has_many :officer_assignments, through: :booth_assignments
   has_many :officers, through: :officer_assignments
   has_many :questions, inverse_of: :poll, dependent: :destroy
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, inverse_of: :commentable
   has_many :ballot_sheets
 
-  has_and_belongs_to_many :geozones
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  has_many :geozones_polls
+  has_many :geozones, through: :geozones_polls
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :polls
   belongs_to :related, polymorphic: true
   belongs_to :budget
 
@@ -39,14 +40,13 @@ class Poll < ApplicationRecord
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
 
   scope :for, ->(element) { where(related: element) }
-  scope :public_polls, -> { where(related: nil) }
   scope :current,  -> { where("starts_at <= ? and ? <= ends_at", Date.current.beginning_of_day, Date.current.beginning_of_day) }
   scope :expired,  -> { where("ends_at < ?", Date.current.beginning_of_day) }
-  scope :recounting, -> { Poll.where(ends_at: (Date.current.beginning_of_day - RECOUNT_DURATION)..Date.current.beginning_of_day) }
+  scope :recounting, -> { where(ends_at: (Date.current.beginning_of_day - RECOUNT_DURATION)..Date.current.beginning_of_day) }
   scope :published, -> { where("published = ?", true) }
-  scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
+  scope :by_geozone_id, ->(geozone_id) { where(geozones: { id: geozone_id }.joins(:geozones)) }
   scope :public_for_api, -> { all }
-  scope :not_budget,    -> { where(budget_id: nil) }
+  scope :not_budget, -> { where(budget_id: nil) }
   scope :created_by_admin, -> { where(related_type: nil) }
 
   def self.sort_for_list
@@ -81,8 +81,12 @@ class Poll < ApplicationRecord
     ends_at < timestamp
   end
 
+  def recounts_confirmed?
+    ends_at < 1.month.ago
+  end
+
   def self.current_or_recounting
-    current + recounting
+    current.or(recounting)
   end
 
   def answerable_by?(user)
@@ -94,6 +98,7 @@ class Poll < ApplicationRecord
 
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?
+
     current.joins('LEFT JOIN "geozones_polls" ON "geozones_polls"."poll_id" = "polls"."id"')
            .where("geozone_restricted = ? OR geozones_polls.geozone_id = ?", false, user.geozone_id)
   end
@@ -105,6 +110,7 @@ class Poll < ApplicationRecord
 
   def votable_by?(user)
     return false if user_has_an_online_ballot?(user)
+
     answerable_by?(user) &&
     not_voted_by?(user)
   end
@@ -153,6 +159,7 @@ class Poll < ApplicationRecord
     return unless starts_at.present?
     return unless ends_at.present?
     return unless Poll.overlaping_with(self).any?
+
     errors.add(:starts_at, I18n.t("activerecord.errors.messages.another_poll_active"))
   end
 

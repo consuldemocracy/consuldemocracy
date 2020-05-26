@@ -7,10 +7,10 @@
                   progress_proposal_dashboard_path(proposal),
                   class: "button medium #{daily_selected_class}" %>
       <%= link_to t("dashboard.progress.group_by_week"),
-                  progress_proposal_dashboard_path(proposal, group_by: 'week'),
+                  progress_proposal_dashboard_path(proposal, group_by: "week"),
                   class: "button medium #{weekly_selected_class}" %>
       <%= link_to t("dashboard.progress.group_by_month"),
-                  progress_proposal_dashboard_path(proposal, group_by: 'month'),
+                  progress_proposal_dashboard_path(proposal, group_by: "month"),
                   class: "button medium #{monthly_selected_class}" %>
     </div>
   </div>
@@ -29,13 +29,13 @@
          class="c3 proposal-graph"></div>
   </div>
 
-  <%= javascript_include_tag 'dashboard_graphs', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "dashboard_graphs", "data-turbolinks-track" => true %>
 <% end %>
 
-<%= render 'next_goal' %>
+<%= render "next_goal" %>
 
 <% if @pending_actions.any? || @done_actions.any? %>
-  <%= render 'summary_recommended_actions' %>
+  <%= render "summary_recommended_actions" %>
 <% end %>
 
-<%= render 'resources' %>
+<%= render "resources" %>

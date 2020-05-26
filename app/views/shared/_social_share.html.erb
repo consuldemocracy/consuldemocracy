@@ -13,7 +13,7 @@
                               image: local_assigns.fetch(:image_url, ""),
                               desc: description,
                               "data-twitter-title": local_assigns[:mobile],
-                              "data-telegram-title": local_assigns[:mobile])%>
+                              "data-telegram-title": local_assigns[:mobile]) %>
   <a href="whatsapp://send?text=<%= mobile_url %><%= url %>"
      class="show-for-small-only" data-action="share/whatsapp/share">
     <span class="icon-whatsapp whatsapp"></span>

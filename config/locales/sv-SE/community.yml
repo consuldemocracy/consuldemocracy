@@ -17,8 +17,6 @@ sv:
         first_theme_not_logged_in: Inga inlägg finns tillgängliga, skapa det första.
         first_theme: Skapa det första inlägget i gemenskapen
         sub_first_theme: "För att skapa ett tema behöver du %{sign_in} eller %{sign_up}."
-        sign_in: "logga in"
-        sign_up: "registrera dig"
       tab:
         participants: Deltagare
       sidebar:
@@ -37,8 +35,6 @@ sv:
       create: Skapa ett inlägg
       edit: Redigera inlägg
       form:
-        topic_title: Titel
-        topic_text: Inledande text
         new:
           submit_button: Skapa inlägg
         edit:
@@ -52,9 +48,6 @@ sv:
           comments_tab: Kommentarer
       sidebar:
         recommendations_title: Rekommendationer för att skapa inlägg
-        recommendation_one: Använd inte versaler i inläggets titel eller i hela meningar i beskrivningen. På internet betyder det att skrika, och ingen gillar när folk skriker på dem.
+        recommendation_one: Använd inte versaler i inläggets titel eller i hela meningar i beskrivningen. På internet tolkas det som att du skriker, och ingen gillar när folk skriker på dem.
         recommendation_two: Inlägg eller kommentarer som förespråkar olagliga handlingar eller försöker sabotera diskussionen kommer att raderas. Allt annat är tillåtet.
         recommendation_three: Det här är din plats, du ska kunna trivas och göra din röst hörd här.
-  topics:
-    show:
-      login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.

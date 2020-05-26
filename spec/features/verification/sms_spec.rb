@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "SMS Verification" do
-
   scenario "Verify" do
     user = create(:user, residence_verified_at: Time.current)
     login_as(user)
@@ -76,5 +75,4 @@ describe "SMS Verification" do
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
     expect(page).to have_current_path(account_path)
   end
-
 end

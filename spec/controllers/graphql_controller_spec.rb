@@ -90,4 +90,13 @@ describe GraphqlController, type: :request do
       expect(response).to have_http_status(:ok)
     end
   end
+
+  context "feature flag is set to false" do
+    before { Setting["feature.graphql_api"] = false }
+
+    it "is disabled" do
+      expect { get "/graphql" }.to raise_exception(FeatureFlags::FeatureDisabled)
+      expect { post "/graphql" }.to raise_exception(FeatureFlags::FeatureDisabled)
+    end
+  end
 end

@@ -2,31 +2,27 @@ require "rails_helper"
 
 describe "Officing Results", :with_frozen_time do
   let(:poll) { create(:poll, ends_at: 1.day.ago) }
-  let(:booth) { create(:poll_booth) }
+  let(:booth) { create(:poll_booth, polls: [poll]) }
   let(:poll_officer) { create(:poll_officer) }
+  let(:question_1) { create(:poll_question, poll: poll) }
+  let(:question_2) { create(:poll_question, poll: poll) }
 
   before do
-    create(:poll_booth_assignment, poll: poll, booth: booth)
     create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth, date: Date.current)
-    @question_1 = create(:poll_question, poll: poll)
-    create(:poll_question_answer, title: "Yes", question: @question_1, given_order: 1)
-    create(:poll_question_answer, title: "No", question: @question_1, given_order: 2)
-    @question_2 = create(:poll_question, poll: poll)
-    create(:poll_question_answer, title: "Today", question: @question_2, given_order: 1)
-    create(:poll_question_answer, title: "Tomorrow", question: @question_2, given_order: 2)
+    create(:poll_question_answer, title: "Yes", question: question_1, given_order: 1)
+    create(:poll_question_answer, title: "No", question: question_1, given_order: 2)
+
+    create(:poll_question_answer, title: "Today", question: question_2, given_order: 1)
+    create(:poll_question_answer, title: "Tomorrow", question: question_2, given_order: 2)
 
     login_as(poll_officer.user)
     set_officing_booth(booth)
   end
 
   scenario "Only polls where user is officer for results are accessible" do
-    regular_officer_assignment_1 = create(:poll_officer_assignment, officer: poll_officer)
-    regular_officer_assignment_2 = create(:poll_officer_assignment, officer: poll_officer)
-
     not_allowed_poll_1 = create(:poll, :expired)
-    not_allowed_poll_2 = regular_officer_assignment_1.booth_assignment.poll
-    not_allowed_poll_2.update(ends_at: 1.day.ago)
-    not_allowed_poll_3 = regular_officer_assignment_2.booth_assignment.poll
+    not_allowed_poll_2 = create(:poll, officers: [poll_officer], ends_at: 1.day.ago)
+    not_allowed_poll_3 = create(:poll, officers: [poll_officer])
 
     visit root_path
     click_link "Polling officers"
@@ -62,11 +58,11 @@ describe "Officing Results", :with_frozen_time do
 
     select booth.name, from: "officer_assignment_id"
 
-    fill_in "questions[#{@question_1.id}][0]", with: "100"
-    fill_in "questions[#{@question_1.id}][1]", with: "200"
+    fill_in "questions[#{question_1.id}][0]", with: "100"
+    fill_in "questions[#{question_1.id}][1]", with: "200"
 
-    fill_in "questions[#{@question_2.id}][0]", with: "333"
-    fill_in "questions[#{@question_2.id}][1]", with: "444"
+    fill_in "questions[#{question_2.id}][0]", with: "333"
+    fill_in "questions[#{question_2.id}][1]", with: "444"
 
     fill_in "whites", with: "66"
     fill_in "nulls",  with: "77"
@@ -87,22 +83,22 @@ describe "Officing Results", :with_frozen_time do
                       officer_assignment: poll_officer.officer_assignments.first,
                       booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
                       date: Date.current,
-                      question: @question_1,
-                      answer: @question_1.question_answers.first.title,
+                      question: question_1,
+                      answer: question_1.question_answers.first.title,
                       author: poll_officer.user,
                       amount: 7777)
 
     visit officing_poll_results_path(poll, date: I18n.l(partial_result.date), booth_assignment_id: partial_result.booth_assignment_id)
 
-    within("#question_#{@question_1.id}_0_result") { expect(page).to have_content("7777") }
+    within("#question_#{question_1.id}_0_result") { expect(page).to have_content("7777") }
 
     visit new_officing_poll_result_path(poll)
 
     booth_name = partial_result.booth_assignment.booth.name
     select booth_name, from: "officer_assignment_id"
 
-    fill_in "questions[#{@question_1.id}][0]", with: "5555"
-    fill_in "questions[#{@question_1.id}][1]", with: "200"
+    fill_in "questions[#{question_1.id}][0]", with: "5555"
+    fill_in "questions[#{question_1.id}][1]", with: "200"
     fill_in "whites", with: "6"
     fill_in "nulls",  with: "7"
     fill_in "total",  with: "8"
@@ -115,28 +111,33 @@ describe "Officing Results", :with_frozen_time do
       click_link "See results"
     end
 
-    expect(page).not_to have_content("7777")
+    within("#question_#{question_1.id}_0_result") do
+      expect(page).to have_content("5555")
+      expect(page).not_to have_content("7777")
+    end
+
     within("#white_results") { expect(page).to have_content("6") }
     within("#null_results")  { expect(page).to have_content("7") }
     within("#total_results") { expect(page).to have_content("8") }
-    within("#question_#{@question_1.id}_0_result") { expect(page).to have_content("5555") }
-    within("#question_#{@question_1.id}_1_result") { expect(page).to have_content("200") }
+    within("#question_#{question_1.id}_0_result") { expect(page).to have_content("5555") }
+    within("#question_#{question_1.id}_1_result") { expect(page).to have_content("200") }
   end
 
   scenario "Index lists all questions and answers" do
-    partial_result = create(:poll_partial_result,
-                      officer_assignment: poll_officer.officer_assignments.first,
-                      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
-                      date: poll.ends_at,
-                      question: @question_1,
-                      amount: 33)
-    poll_recount = create(:poll_recount,
-                      officer_assignment: poll_officer.officer_assignments.first,
-                      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
-                      date: poll.ends_at,
-                      white_amount: 21,
-                      null_amount: 44,
-                      total_amount: 66)
+    create(:poll_partial_result,
+      officer_assignment: poll_officer.officer_assignments.first,
+      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
+      date: poll.ends_at,
+      question: question_1,
+      amount: 33)
+
+    create(:poll_recount,
+      officer_assignment: poll_officer.officer_assignments.first,
+      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
+      date: poll.ends_at,
+      white_amount: 21,
+      null_amount: 44,
+      total_amount: 66)
 
     visit officing_poll_results_path(poll,
                                      date: I18n.l(poll.ends_at.to_date),
@@ -145,19 +146,18 @@ describe "Officing Results", :with_frozen_time do
     expect(page).to have_content(I18n.l(poll.ends_at.to_date, format: :long))
     expect(page).to have_content(poll_officer.officer_assignments.first.booth_assignment.booth.name)
 
-    expect(page).to have_content(@question_1.title)
-    @question_1.question_answers.each_with_index do |answer, i|
-      within("#question_#{@question_1.id}_#{i}_result") { expect(page).to have_content(answer.title) }
+    expect(page).to have_content(question_1.title)
+    question_1.question_answers.each_with_index do |answer, i|
+      within("#question_#{question_1.id}_#{i}_result") { expect(page).to have_content(answer.title) }
     end
 
-    expect(page).to have_content(@question_2.title)
-    @question_2.question_answers.each_with_index do |answer, i|
-      within("#question_#{@question_2.id}_#{i}_result") { expect(page).to have_content(answer.title) }
+    expect(page).to have_content(question_2.title)
+    question_2.question_answers.each_with_index do |answer, i|
+      within("#question_#{question_2.id}_#{i}_result") { expect(page).to have_content(answer.title) }
     end
 
     within("#white_results") { expect(page).to have_content("21") }
     within("#null_results") { expect(page).to have_content("44") }
     within("#total_results") { expect(page).to have_content("66") }
   end
-
 end
