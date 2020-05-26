@@ -58,6 +58,9 @@ ro:
         tags_label: Etichete
         tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
       index:
+        title: Bugetare participativă
+        unfeasible: Proiecte de investiții imposibile
+        unfeasible_text: "Investițiile trebuie să îndeplinească o serie de criterii (legalitate, concretitate, care să nu depășească limita bugetului) pentru a fi declarate viabile și pentru a ajunge la stadiul de vot final. Toate investițiile care nu îndeplinesc aceste criterii sunt marcate ca fiind imposibile și sunt publicate în lista aferentă, împreună cu raportul său de imposibilitate."
         search_form:
           button: Caută
           title: Caută
@@ -74,3 +77,6 @@ ro:
           random: aleatoriu
           confidence_score: cel mai bine cotat
           price: după preț
+      show:
+        author_deleted: Utilizator șters
+        price_explanation: Explicația prețurilor
