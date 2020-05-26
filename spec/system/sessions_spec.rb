@@ -17,4 +17,17 @@ describe "Sessions" do
     expect(page).to have_content("You have been signed out successfully")
     expect(page).to have_current_path(debate_path(debate))
   end
+
+  scenario "Sign in redirects keeping GET parameters" do
+    create(:user, :level_two, email: "dev@consul.dev", password: "consuldev")
+    heading = create(:budget_heading, name: "outskirts")
+
+    visit budget_investments_path(heading.budget, heading_id: "outskirts")
+    click_link "Sign in"
+    fill_in "user_login",    with: "dev@consul.dev"
+    fill_in "user_password", with: "consuldev"
+    click_button "Enter"
+
+    expect(page).to have_current_path budget_investments_path(heading.budget, heading_id: "outskirts")
+  end
 end
