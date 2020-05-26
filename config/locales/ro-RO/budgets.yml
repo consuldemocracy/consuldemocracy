@@ -57,12 +57,16 @@ ro:
         tags_instructions: "Etichetați această propunere. Puteți alege dintre categoriile propuse sau adăugați una proprie"
         tags_label: Etichete
         tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
+        map_remove_marker: "Eliminați marcatorul de hartă"
+        map_skip_checkbox: "Această investiție nu are o locație concretă sau nu o cunosc."
       index:
         title: Bugetare participativă
         unfeasible: Proiecte de investiții imposibile
         unfeasible_text: "Investițiile trebuie să îndeplinească o serie de criterii (legalitate, concretitate, care să nu depășească limita bugetului) pentru a fi declarate viabile și pentru a ajunge la stadiul de vot final. Toate investițiile care nu îndeplinesc aceste criterii sunt marcate ca fiind imposibile și sunt publicate în lista aferentă, împreună cu raportul său de imposibilitate."
+        by_heading: "Proiecte de investiții cu domeniu de aplicare: %{heading}"
         search_form:
           button: Caută
+          placeholder: Căutați proiecte de investiții...
           title: Caută
         sidebar:
           my_ballot: Votul meu
