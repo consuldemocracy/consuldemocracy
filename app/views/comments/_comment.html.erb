@@ -85,15 +85,9 @@
             </div>
           <% end %>
 
-          <% if comment.children.size > 0 %>
-            <%= link_to "", class: "js-toggle-children relative" do %>
-              <span class="far fa-minus-square"></span>
-              <span class="js-child-toggle" style="display: none;"><%= t("comments.comment.responses_show", count: comment.children.size) %></span>
-              <span class="js-child-toggle"><%= t("comments.comment.responses_collapse", count: comment.children.size) %></span>
-            <% end %>
-          <% else %>
-            <%= t("comments.comment.responses", count: 0) %>
-          <% end %>
+          <span class="responses-count">
+            <%= render "comments/responses_count", count: comment.children.size %>
+          </span>
 
           <% if user_signed_in? && !comments_closed_for_commentable?(comment.commentable) && !require_verified_resident_for_commentable?(comment.commentable, current_user) %>
             <span class="divider">&nbsp;|&nbsp;</span>

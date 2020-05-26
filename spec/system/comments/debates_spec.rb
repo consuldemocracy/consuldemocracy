@@ -91,8 +91,7 @@ describe "Commenting debates" do
   end
 
   scenario "can collapse comments after adding a reply", :js do
-    parent_comment = create(:comment, body: "Main comment", commentable: debate)
-    create(:comment, body: "First subcomment", commentable: debate, parent: parent_comment)
+    create(:comment, body: "Main comment", commentable: debate)
 
     login_as(user)
     visit debate_path(debate)
@@ -104,7 +103,7 @@ describe "Commenting debates" do
 
       expect(page).to have_content("It will be done next week.")
 
-      find(".fa-minus-square").click
+      click_link text: "1 response (collapse)"
 
       expect(page).not_to have_content("It will be done next week.")
     end
@@ -278,6 +277,38 @@ describe "Commenting debates" do
       within ".comment" do
         expect(page).to have_content "Probably if government approves."
       end
+    end
+  end
+
+  scenario "Reply update parent comment responses count", :js do
+    comment = create(:comment, commentable: debate)
+
+    login_as(create(:user))
+    visit debate_path(debate)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
+  scenario "Reply show parent comments responses when hidden", :js do
+    comment = create(:comment, commentable: debate)
+    create(:comment, commentable: debate, parent: comment)
+
+    login_as(create(:user))
+    visit debate_path(debate)
+
+    within ".comment", text: comment.body do
+      click_link text: "1 response (collapse)"
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
     end
   end
 

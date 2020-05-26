@@ -238,6 +238,38 @@ describe "Commenting proposals" do
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
+  scenario "Reply update parent comment responses count", :js do
+    comment = create(:comment, commentable: proposal)
+
+    login_as(create(:user))
+    visit proposal_path(proposal)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
+  scenario "Reply show parent comments responses when hidden", :js do
+    comment = create(:comment, commentable: proposal)
+    create(:comment, commentable: proposal, parent: comment)
+
+    login_as(create(:user))
+    visit proposal_path(proposal)
+
+    within ".comment", text: comment.body do
+      click_link text: "1 response (collapse)"
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+    end
+  end
+
   scenario "Errors on reply", :js do
     comment = create(:comment, commentable: proposal, user: user)
 
