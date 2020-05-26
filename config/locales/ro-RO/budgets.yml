@@ -1,1 +1,18 @@
 ro:
+  budgets:
+    ballots:
+      show:
+        title: Votul tău
+        amount_spent: Suma cheltuită
+        remaining: "Mai aveți <span>%{amount}</span> de investit."
+        no_balloted_group_yet: "Încă nu ați votat în acest grup, mergeți să votați!"
+        remove: Înlătură vot
+        voted:
+          one: "Ați votat <span>1</span> investiție."
+          few: "Ați votat <span>%{count}</span> investiții."
+          other: "Ați votat <span>%{count}</span> investiții."
+        voted_info: "Votul dumneavoastră este confirmat!"
+        voted_info_2: "Dar puteți modifica votul în orice moment până când această etapă se închide."
+        zero: Nu ați votat niciun proiect de investiții.
+      reasons_for_not_balloting:
+        not_logged_in: Trebuie %{signin} sau %{signup} pentru a continua.
