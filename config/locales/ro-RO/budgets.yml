@@ -76,6 +76,8 @@ ro:
           different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
           check_ballot_link: "verifică și confirmă votul"
           zero: Nu ați votat niciun proiect de investiții în acest grup.
+          verified_only: "Pentru a crea o nouă investiție bugetară %{verify}."
+          create: "Crează un buget de investiții"
           by_feasibility: După fezabilitate
           feasible: Proiecte posibile
           unfeasible: Proiecte imposibile
@@ -121,3 +123,22 @@ ro:
       link: Rezultate
       heading_selection_title: "După district"
       ballot_lines_count: Voturi
+      show_all_link: Arată tot
+      price: Preț
+      amount_available: Buget disponibil
+      accepted: "Investiție acceptată: "
+      discarded: "Investiție abandonată: "
+      incompatibles: Incompatibil
+      investment_title: Titlul proiectului
+      investment_proyects: Lista tuturor proiectelor de investiții
+      unfeasible_investment_proyects: Lista tuturor proiectelor de investiții imposibile
+      not_selected_investment_proyects: Lista tuturor proiectelor de investiții care nu sunt selectate pentru votare
+    executions:
+      link: "Repere"
+      page_title: "%{budget} - Repere"
+      heading: "Reperele bugetului participativ"
+      heading_selection_title: "După district"
+      no_winner_investments: "Nu există investiții câștigătoare în această stare"
+    phases:
+      errors:
+        next_phase_dates_invalid: "Data de încheiere trebuie să fie anterioară datei de încheiere a următoarei faze activate (%{phase_name})"
