@@ -74,6 +74,7 @@ ro:
           my_ballot: Votul meu
           voted_info_link: schimbă-ți votul
           different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
+          change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
           check_ballot_link: "verifică și confirmă votul"
           zero: Nu ați votat niciun proiect de investiții în acest grup.
           verified_only: "Pentru a crea o nouă investiție bugetară %{verify}."
@@ -121,6 +122,7 @@ ro:
       see_results: Vezi rezultatele
     results:
       link: Rezultate
+      heading: "Rezultatele bugetului participativ"
       heading_selection_title: "După district"
       ballot_lines_count: Voturi
       show_all_link: Arată tot
