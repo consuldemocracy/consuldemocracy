@@ -84,3 +84,8 @@ ro:
       show:
         author_deleted: Utilizator șters
         price_explanation: Explicația prețurilor
+        title: Proiect de investiții
+        votes: Voturi
+        comments_tab: Comentarii
+        milestones_tab: Repere
+        author: Autor
