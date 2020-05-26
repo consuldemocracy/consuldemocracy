@@ -1,6 +1,21 @@
 ro:
   seeds:
+    settings:
+      official_level_1_name: Poziția oficială 1
+      official_level_2_name: Poziția oficială 2
+      official_level_3_name: Poziția oficială 3
+      official_level_4_name: Poziția oficială 4
+      official_level_5_name: Poziția oficială 5
+    geozones:
+      north_district: Districtul de Nord
+      west_district: Districtul de Vest
+      east_district: Districtul de Est
+      central_district: Districtul Central
+    organizations:
+      human_rights: Drepturile omului
+      neighborhood_association: Asociația locatarilor
     categories:
+      associations: Asociații
       culture: Cultură
       sports: Sport
       social_rights: Drepturile sociale
@@ -11,4 +26,16 @@ ro:
       participation: Participare
       mobility: Mobilitate
       media: Mass-media
+      health: Sănătate
       transparency: Transparenţă
+      security_emergencies: Securitate și Situații de urgență
+      environment: Mediu înconjurator
+    budgets:
+      budget: Bugetare participativă
+      groups:
+        districts: Districte
+      valuator_groups:
+        culture_and_sports: Cultură & Sporturi
+    polls:
+      current_poll: "Sondaj curent"
+      expired_poll_with_stats: "Sondaj expirat cu Statistici și Rezultate"
