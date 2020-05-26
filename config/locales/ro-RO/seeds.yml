@@ -32,10 +32,23 @@ ro:
       environment: Mediu înconjurator
     budgets:
       budget: Bugetare participativă
+      currency: Ron
       groups:
+        all_city: Tot orașul
         districts: Districte
       valuator_groups:
         culture_and_sports: Cultură & Sporturi
+        gender_and_diversity: Gen și Politici de diversitate
+        urban_development: Dezvoltare urbană durabilă
+        equity_and_employment: Echitate și ocuparea forței de muncă
+      statuses:
+        studying_project: Studierea proiectului
+        bidding: Licitarea
+        executing_project: Executarea proiectului
+        executed: Executat
     polls:
       current_poll: "Sondaj curent"
+      current_poll_geozone_restricted: "Sondaj curent Geozonă Restricționată"
+      recounting_poll: "Renumărarea Sondajului"
+      expired_poll_without_stats: "Sondaj Expirat fără Statistici și Rezultate"
       expired_poll_with_stats: "Sondaj expirat cu Statistici și Rezultate"
