@@ -22,3 +22,9 @@ ro:
         not_enough_money: "Ați alocat deja bugetul disponibil.<br><small>Amintiți-vă că puteți\n %{change_ballot} în orice moment</small>"
         no_ballots_allowed: Etapa de selectare este închisă
         different_heading_assigned: "Ați votat deja o altă rubrică: %{heading_link}"
+        change_ballot: schimbă-ți voturile
+        casted_offline: Ați participat deja offline
+    groups:
+      show:
+        title: Selectați o opțiune
+        unfeasible_title: Investiții imposibile
