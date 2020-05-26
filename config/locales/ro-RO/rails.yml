@@ -1,33 +1,56 @@
 ro:
   date:
+    abbr_day_names:
+      - Dum
+      - Luni
+      - Mar
+      - Mie
+      - Joi
+      - Vin
+      - Sâm
     abbr_month_names:
       - 
-      - Jan
+      - Ian
       - Feb
       - Mar
       - Apr
-      - May
-      - Jun
-      - Jul
+      - Mai
+      - Iun
+      - Iul
       - Aug
-      - Sep
+      - Sept
       - Oct
       - Nov
       - Dec
+    day_names:
+      - Duminică
+      - Luni
+      - Marți
+      - Miercuri
+      - Joi
+      - Vineri
+      - Sâmbătă
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
+      - Ianuarie
+      - Februarie
+      - Martie
+      - Aprilie
+      - Mai
+      - Iunie
+      - Iulie
       - August
-      - September
-      - October
-      - November
-      - December
+      - Septembrie
+      - Octombrie
+      - Noiembrie
+      - Decembrie
+  datetime:
+    distance_in_words:
+      half_a_minute: jumătate de minut
   number:
     human:
       format:
