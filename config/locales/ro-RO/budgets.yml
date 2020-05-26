@@ -42,10 +42,14 @@ ro:
         icon_alt: Pictograma bugetelor participative
         title: Bugete participative
         all_phases: Vezi toate etapele
+      all_phases: Etapele bugetului de investiții
+      investment_proyects: Lista tuturor proiectelor de investiții
       unfeasible_investment_proyects: Lista tuturor proiectelor de investiții imposibile
       not_selected_investment_proyects: Lista tuturor proiectelor de investiții care nu sunt selectate pentru votare
       finished_budgets: Bugete participative terminate
       see_results: Vezi rezultatele
+      section_footer:
+        description: Odată cu bugetarea participativă, cetățenii decid căror proiecte va fi destinată o parte din buget.
       milestones: Repere
     investments:
       form:
@@ -57,6 +61,14 @@ ro:
           title: Caută
         sidebar:
           my_ballot: Votul meu
+          voted_info_link: schimbă-ți votul
+          different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
+          check_ballot_link: "verifică și confirmă votul"
+          zero: Nu ați votat niciun proiect de investiții în acest grup.
+          by_feasibility: După fezabilitate
+          feasible: Proiecte posibile
+          unfeasible: Proiecte imposibile
         orders:
           random: aleatoriu
+          confidence_score: cel mai bine cotat
           price: după preț
