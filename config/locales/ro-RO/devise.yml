@@ -32,3 +32,10 @@ ro:
       no_token: "Nu puteți accesa această pagină decât printr-un link de resetare a parolei. Dacă ați accesat-o printr-un link de resetare a parolei, verificați dacă adresa URL este completă."
       send_instructions: "În câteva minute veți primi un email care conține instrucțiuni despre cum vă puteți reseta parola."
       send_paranoid_instructions: "Dacă adresa dumneavoastră de email se află în baza noastră de date, în câteva minute veți primi un link pe care să îl utilizați pentru a vă reseta parola."
+      updated: "Parola dumneavoastră a fost schimbată cu succes. Autentificarea s-a făcut cu succes."
+      updated_not_active: "Parola dumneavoastră a fost schimbată cu succes."
+    registrations:
+      destroyed: "La revedere! Contul dumneavoastră a fost anulat. Sperăm să vă revedem curând."
+      signed_up: "Bine ați venit! Ați fost autentificat."
+      signed_up_but_inactive: "Înregistrarea dvs. a avut succes, dar nu ați putut fi conectat deoarece contul dvs. nu a fost activat."
+      signed_up_but_locked: "Înregistrarea dvs. a avut succes, dar nu ați putut fi conectat deoarece contul dvs. este blocat."
