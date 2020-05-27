@@ -82,10 +82,18 @@ ro:
         description_selecting: "Descrierea în etapa de Selectare"
         description_valuating: "Descrierea în etapa de Evaluare"
         description_balloting: "Descrierea în etapa de votare"
+        description_reviewing_ballots: "Descrierea în etapa de Revizuire a voturilor"
         description_finished: "Descriere când bugetul este terminat"
+        phase: "Etapă"
+        currency_symbol: "Monedă"
       budget/translation:
         name: "Nume"
       budget/investment:
+        heading_id: "Rubrică"
+        title: "Titlu"
+        description: "Descriere"
+        external_url: "Link către documentație suplimentară"
+        administrator_id: "Administrator"
         valuator_ids: "Grupuri"
       widget/card:
         title: Titlu
