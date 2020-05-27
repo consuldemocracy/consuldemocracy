@@ -131,8 +131,55 @@ ro:
         percentage: "Progresul actual"
       user:
         email_on_comment: "Anunță-mă prin e-mail când cineva comentează la propunerile sau dezbaterile mele"
+        email_on_comment_reply: "Anunță-mă prin e-mail când cineva răspunde la comentariile mele"
         official_position: "Poziție oficială"
         official_level: "Nivel oficial"
+        phone_number: "Număr de telefon"
+        public_activity: "Păstrează publică lista mea de activități"
+        recommended_debates: "Arată recomandări pentru dezbateri"
+        recommended_proposals: "Arată recomandări pentru propuneri"
+        redeemable_code: "Cod de verificare primit prin e-mail"
+      direct_message:
+        title: "Titlu"
+        body: "Mesaj"
+      organization:
+        name: "Numele organizaței"
+        responsible_name: "Persoană responsabilă pentru grup"
+      poll:
+        name: "Nume"
+        starts_at: "Data de început"
+        ends_at: "Data limită"
+        geozone_restricted: "Limitat de geozonă"
+        summary: "Sumar"
+        description: "Descriere"
+      active_poll/translation:
+        description: "Descriere"
+      poll/booth:
+        name: "Nume"
+        location: "Locație"
+      poll/translation:
+        name: "Nume"
+        summary: "Sumar"
+        description: "Descriere"
+      poll/question:
+        poll_id: "Sondaj"
+        title: "Întrebare"
+        summary: "Sumar"
+        description: "Descriere"
+        external_url: "Link către documentație suplimentară"
+      poll/question/translation:
+        title: "Întrebare"
+      poll/ballot_sheet:
+        poll_id: Sondaj
+      poll/shift:
+        task: "Sarcină"
+      proposal_notification:
+        body: "Mesaj"
+        title: "Titlu"
+      signature_sheet:
+        title: "Titlu"
+      site_customization/page:
+        content: Conținut
       widget/card:
         title: Titlu
         description: Descriere
