@@ -525,6 +525,39 @@ ro:
         name: Nume
         email: Email
         description: Descriere
+      administrator:
+        add: Adaugă
+        delete: Șterge
+    moderators:
+      index:
+        title: Moderatori
+        name: Nume
+        email: Email
+        no_moderators: Nu există moderatori.
+      moderator:
+        add: Adaugă
+        delete: Șterge
+    segment_recipient:
+      administrators: Administratori
+    newsletters:
+      index:
+        subject: Subiect
+        segment_recipient: Destinatari
+        sent: Trimis
+        actions: Acțiuni
+        draft: Schiță
+        edit: Editează
+        delete: Șterge
+        preview: Previzualizare
+    admin_notifications:
+      index:
+        draft: Schiță
+        edit: Editează
+        delete: Șterge
+        preview: Previzualizare
+      show:
+        title: Titlu
+        body: Text
     site_customization:
       images:
         index:
