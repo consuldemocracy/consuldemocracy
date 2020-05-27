@@ -1,1 +1,12 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 ro:
+  devise:
+    password_expired:
+      expire_password: "Parolă expirată"
+      change_required: "Parola dumneavoastră este expirată"
+      new_password: "Parola nouă"
+      updated: "Parolă actualizată cu succes"
+    confirmations:
+      confirmed: "Contul dumneavoastră a fost confirmat."
+      send_instructions: "În câteva minute veți primi un email care conține instrucțiuni despre cum vă puteți reseta parola."
+      send_paranoid_instructions: "Dacă adresa dumneavoastră de email se află în baza noastră de date, în câteva minute veți primi un email care conține instrucțiuni despre cum vă puteți reseta parola."
