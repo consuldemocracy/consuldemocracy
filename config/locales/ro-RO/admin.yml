@@ -470,6 +470,29 @@ ro:
         update:
           notice: 'Întrebare actualizată cu succes. <a href="%{link}"> Faceți clic pentru a vizita </a>'
           error: Întrebarea nu a putut fi actualizată
+        destroy:
+          notice: Întrebare ștearsă cu succes
+        edit:
+          back: Înapoi
+          title: "Editează “%{question_title}”"
+          submit_button: Salvează modificări
+        form:
+          add_option: Adaugă opțiune
+          title_placeholder: Adaugă întrebare
+          value_placeholder: Adaugă un răspuns închis
+          question_options: "Răspunsuri posibile (opțional, răspunsuri deschise implicit)"
+        index:
+          back: Înapoi
+          title: Întrebări asociate acestui proces
+          create: Crează întrebare
+          delete: Șterge
+        new:
+          back: Înapoi
+          title: Crează întrebare nouă
+          submit_button: Crează întrebare
+        table:
+          title: Titlu
+          question_options: Opțiuni de întrebări
     site_customization:
       images:
         index:
