@@ -40,3 +40,13 @@ ro:
       signed_up_but_inactive: "Înregistrarea dvs. a avut succes, dar nu ați putut fi conectat deoarece contul dvs. nu a fost activat."
       signed_up_but_locked: "Înregistrarea dvs. a avut succes, dar nu ați putut fi conectat deoarece contul dvs. este blocat."
       signed_up_but_unconfirmed: "Vi s-a trimis un mesaj care conține un link de verificare. Vă rugăm să faceți clic pe acesta pentru a vă activa contul."
+      update_needs_confirmation: "Contul dvs. a fost actualizat cu succes; cu toate acestea, trebuie să verificăm noua dvs. adresă de e-mail. Verificați adresa dvs. de e-mail și faceți clic pe link pentru a completa confirmarea noii dvs. adrese de e-mail."
+      updated: "Contul dumneavoastră a fost actualizat cu succes."
+    sessions:
+      signed_in: "Ați fost conectat cu succes."
+      signed_out: "Ați fost deconectat cu succes."
+      already_signed_out: "Ați fost deconectat cu succes."
+    unlocks:
+      send_instructions: "În câteva minute veți primi un email care conține instrucțiuni despre cum vă puteți debloca contul."
+      send_paranoid_instructions: "Dacă aveți un cont, în câteva minute veți primi un email ce conține instrucțiuni despre cum vă puteți debloca contul."
+      unlocked: "Contul dvs. a fost deblocat. Vă rugăm să vă conectați pentru a continua."
