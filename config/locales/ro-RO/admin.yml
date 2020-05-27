@@ -339,14 +339,22 @@ ro:
           description: "Resursele publicate în tabloul de bord al propunerilor pot include un buton care trebuie solicitat administratorilor. Cererile utilizatorului sunt prezentate mai jos."
           title: Resurse solicitate
           solve: Rezolvă
-          no_records: Nu există resurse cerute
+          no_records: Nu există resurse solicitate
+          source: Sursă
+          resource: Resurse solicitate
           filter: Filtru
           filters:
             pending: În așteptare
             done: Rezolvat
+        edit:
+          back: Înapoi la lista de sarcini în așteptare
+          solving: Rezolvă sarcinile în așteptare
         form:
           solve: Marchează ca rezolvat
           proposal: Propunere
+          request: Resurse solicitate
+        update:
+          success: Sarcina a fost marcată ca fiind rezolvată.
     debates:
       index:
         author: Autor
@@ -375,8 +383,50 @@ ro:
       create:
         success_notice: "Document încărcat cu succes"
         unable_notice: "Document invlid"
+      destroy:
+        success_notice: "Document șters cu succes"
+    hidden_users:
+      index:
+        filter: Filtru
+        filters:
+          all: Tot
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Utilizatori ascunși
+        user: Utilizator
+        no_hidden_users: Nu există utilizatori ascunși.
+      show:
+        email: "Email:"
+        hidden_at: "Ascuns la:"
+        registered_at: "Înregistrat la:"
+        title: Activitatea utilizatorului (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtru
+        filters:
+          all: Tot
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Bugete de investiții ascunse
+        no_hidden_budget_investments: Nu există bugete de investiții ascunse
     legislation:
       processes:
+        create:
+          notice: 'Proces creat cu succes. <a href="%{link}"> Faceți clic pentru a vizita </a>'
+          error: Procesul nu a putut fi creat
+        update:
+          notice: 'Proces actualizat cu succes. <a href="%{link}"> Faceți clic pentru a vizita </a>'
+          error: Procesul nu a putut fi actualizat
+        destroy:
+          notice: Proces șters cu succes
+        edit:
+          back: Înapoi
+          submit_button: Salvează modificări
+        form:
+          enabled: Activat
+          process: Proces
+          debate_phase: Etapa de dezbatere
+          draft_phase: Etapa de proiectare
         index:
           create: Proces nou
           delete: Șterge
