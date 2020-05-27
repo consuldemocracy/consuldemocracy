@@ -77,8 +77,16 @@ ro:
     attributes:
       budget:
         name: "Nume"
+        description_accepting: "Descrierea în etapa de Acceptare"
+        description_reviewing: "Descrierea în etapa de revizuire"
+        description_selecting: "Descrierea în etapa de Selectare"
+        description_valuating: "Descrierea în etapa de Evaluare"
+        description_balloting: "Descrierea în etapa de votare"
+        description_finished: "Descriere când bugetul este terminat"
       budget/translation:
         name: "Nume"
+      budget/investment:
+        valuator_ids: "Grupuri"
       widget/card:
         title: Titlu
         description: Descriere
