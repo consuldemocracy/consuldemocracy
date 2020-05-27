@@ -94,7 +94,45 @@ ro:
         description: "Descriere"
         external_url: "Link către documentație suplimentară"
         administrator_id: "Administrator"
+        organization_name: "Dacă propuneți în numele unui grup social/unei organizații sau în numele mai multor persoane, scrieți-le numele"
+        image: "Imagine descriptivă a propunerii"
+        image_title: "Titlul imaginii"
+        duration: "Termen limită"
+        feasibility_feasible: "Realizabil"
+        feasibility_undecided: "Nedefinit"
+        feasibility_unfeasible: "Nerealizabil"
+        incompatible: "Marchează ca incompatibil"
+        milestone_tag_list: "Etichete reper"
+        price_explanation: "Explicația prețului"
+        selected: "Marchează ca selectat"
+        selected_true: "Selectat"
+        selected_false: "Nu a fost selectat"
+        unfeasibility_explanation: "Explicație de fezabilitate"
+        valuation_finished: "Evaluare terminată"
         valuator_ids: "Grupuri"
+        valuation_tag_list: "Etichete"
+      budget/investment/translation:
+        title: "Titlu"
+        description: "Descriere"
+      geozone:
+        name: Nume
+      milestone:
+        title: "Titlu"
+        description: "Descriere (opțional dacă este un status alocat)"
+        publication_date: "Date"
+      milestone/translation:
+        description: "Descriere"
+      milestone/status:
+        name: "Nume"
+        description: "Descriere (opțional)"
+      progress_bar:
+        kind: "Tip"
+        title: "Titlu"
+        percentage: "Progresul actual"
+      user:
+        email_on_comment: "Anunță-mă prin e-mail când cineva comentează la propunerile sau dezbaterile mele"
+        official_position: "Poziție oficială"
+        official_level: "Nivel oficial"
       widget/card:
         title: Titlu
         description: Descriere
