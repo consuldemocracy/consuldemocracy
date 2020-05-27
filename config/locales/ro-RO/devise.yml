@@ -27,3 +27,6 @@ ro:
         subject: "Instrucțiuni de deblocare"
     omniauth_callbacks:
       failure: "Nu a fost posibil să vă autorizăm ca %{kind} deoarece %{reason}\"."
+      success: "Identificat cu succes ca %{kind}."
+    passwords:
+      no_token: "Nu puteți accesa această pagină decât printr-un link de resetare a parolei. Dacă ați accesat-o printr-un link de resetare a parolei, verificați dacă adresa URL este completă."
