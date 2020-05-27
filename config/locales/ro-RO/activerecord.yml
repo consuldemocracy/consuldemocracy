@@ -154,6 +154,9 @@ ro:
       user:
         login: "Email sau Nume de utilizator"
         email: "Email"
+        username: "Nume de utilizator"
+        password: "Parolă"
+        current_password: "Parolă curentă"
         email_on_comment: "Anunță-mă prin e-mail când cineva comentează la propunerile sau dezbaterile mele"
         email_on_comment_reply: "Anunță-mă prin e-mail când cineva răspunde la comentariile mele"
         official_position: "Poziție oficială"
@@ -206,6 +209,13 @@ ro:
         content: Conținut
         created_at: Creat la
         subtitle: Subtitrare
+      site_customization/image:
+        name: Nume
+        image: Imagine
+      site_customization/content_block:
+        name: Nume
+      topic:
+        title: "Titlu"
       legislation/process:
         proposals_phase_start_date: Început
         proposals_phase_end_date: Sfârșit
