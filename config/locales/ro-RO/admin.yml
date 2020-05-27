@@ -88,6 +88,9 @@ ro:
         unable_notice_polls: Nu puteți șterge un buget care are un sondaj asociat
     budget_groups:
       name: "Nume"
+      headings_name: "Rubrici"
+      headings_edit: "Editeaza Rubrici"
+      headings_manage: "Administrează rubrici"
       no_groups: "Nu există grupuri."
       amount:
         one: "Există un grup"
@@ -99,10 +102,13 @@ ro:
         notice: "Grup actualizat cu succes"
       destroy:
         success_notice: "Grup șters cu succes"
+        unable_notice: "Nu puteți șterge un grup care are rubrici asociate"
       form:
         create: "Crează grup nou"
         edit: "Editează grup"
         submit: "Salvează grup"
+      index:
+        back: "Mergi înapoi la bugete"
     budget_headings:
       no_headings: "Nu există rubrici."
       amount:
@@ -116,6 +122,9 @@ ro:
       destroy:
         success_notice: "Rubrică ștearsă cu succes"
         unable_notice: "Nu puteți șterge o Rubrică care are investiții asociate"
+      form:
+        population_info: "Rubrica de buget al populației este utilizată în scopuri statistice la sfârșitul bugetului pentru a arăta pentru fiecare rubrică care reprezintă o zonă cu populație ce procent votat. Acest câmp este opțional, așa că îl puteți lăsa gol dacă nu se aplică."
+        coordinates_info: "Dacă latitudinea și longitudinea sunt precizate, pagina de investiții pentru această rubrică va include o hartă. Această hartă va fi centrată folosind acele coordonate."
       index:
         back: "Înapoi la grupuri"
     budget_phases:
