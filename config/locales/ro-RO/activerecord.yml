@@ -209,6 +209,15 @@ ro:
         content: Conținut
         created_at: Creat la
         subtitle: Subtitrare
+        status_draft: "Schiță"
+        status_published: "Publicat"
+        title: Titlu
+        updated_at: Actualizat la
+        locale: Limbă
+      site_customization/page/translation:
+        title: Titlu
+        subtitle: Subtitrare
+        content: Conținut
       site_customization/image:
         name: Nume
         image: Imagine
@@ -216,7 +225,17 @@ ro:
         name: Nume
       topic:
         title: "Titlu"
+      banner:
+        target_url: "Link"
+      banner/translation:
+        title: "Titlu"
+        description: "Descriere"
       legislation/process:
+        title: Titlul Procesului
+        summary: Sumar
+        description: Descriere
+        additional_info: Informații adiționale
+        draft_publication_date: Data publicării schiței
         proposals_phase_start_date: Început
         proposals_phase_end_date: Sfârșit
         result_publication_date: Data publicării rezultatului final
@@ -249,6 +268,49 @@ ro:
         question_options: Opțiuni
       legislation/question/translation:
         title: Întrebare
+      legislation/question_option:
+        value: Valoare
+      legislation/annotation:
+        text: Comentariu
+      document:
+        title: Titlu
+        attachment: "Alege document"
+      image:
+        title: Titlu
+        attachment: "Alege imagine"
+      poll/question/answer:
+        title: Răspuns
+        description: Descriere
+      poll/question/answer/translation:
+        title: Răspuns
+        description: Descriere
+      poll/question/answer/video:
+        title: Titlu
+      newsletter:
+        segment_recipient: Destinatari
+        subject: Subiect
+        from: "Adresa de e-mail care va apărea ca expeditoare a newsletter-ului"
+        body: Conținut e-mail
+      admin_notification:
+        segment_recipient: Destinatari
+        title: Titlu
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Titlu
+        body: Text
       widget/card:
         title: Titlu
         description: Descriere
+        columns: Număr de coloane
+      widget/card/translation:
+        title: Titlu
+        description: Descriere
+      widget/feed:
+        limit: Număr de articole
+    errors:
+      models:
+        poll/voter:
+          attributes:
+            document_number:
+              has_voted: "Utilizatorul a votat deja"
