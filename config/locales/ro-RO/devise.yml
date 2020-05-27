@@ -30,3 +30,5 @@ ro:
       success: "Identificat cu succes ca %{kind}."
     passwords:
       no_token: "Nu puteți accesa această pagină decât printr-un link de resetare a parolei. Dacă ați accesat-o printr-un link de resetare a parolei, verificați dacă adresa URL este completă."
+      send_instructions: "În câteva minute veți primi un email care conține instrucțiuni despre cum vă puteți reseta parola."
+      send_paranoid_instructions: "Dacă adresa dumneavoastră de email se află în baza noastră de date, în câteva minute veți primi un link pe care să îl utilizați pentru a vă reseta parola."
