@@ -15,7 +15,7 @@ RSpec::Matchers.define :have_ckeditor do |label, with:|
     return false unless has_ckeditor?
 
     page.within(ckeditor_id) do
-      within_frame(0) { has_content?(with) }
+      within_frame(0) { has_content?(with, exact: true) }
     end
   end
 
