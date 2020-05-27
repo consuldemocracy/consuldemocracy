@@ -180,6 +180,41 @@ ro:
         title: "Titlu"
       site_customization/page:
         content: Conținut
+        created_at: Creat la
+        subtitle: Subtitrare
+      legislation/process:
+        proposals_phase_start_date: Început
+        proposals_phase_end_date: Sfârșit
+        result_publication_date: Data publicării rezultatului final
+        background_color: Culoare de fundal
+        font_color: Culoarea fontului
+        homepage_enabled: "Pagina de pornire activată"
+      legislation/process/translation:
+        title: Titlul Procesului
+        summary: Sumar
+        description: Descriere
+        additional_info: Informații adiționale
+        homepage: "Descriere"
+        milestones_summary: Sumar
+      legislation/proposal:
+        description: "Textul propunerii"
+        summary: "Rezumatul propunerii"
+        title: "Titlul propunerii"
+      legislation/draft_version:
+        body: Text
+        changelog: Schimbări
+        status: Status
+        status_draft: "Schiță"
+        status_published: "Publicat"
+        final_version: Versiune finală
+      legislation/draft_version/translation:
+        body: Text
+        changelog: Schimbări
+      legislation/question:
+        title: Titlu
+        question_options: Opțiuni
+      legislation/question/translation:
+        title: Întrebare
       widget/card:
         title: Titlu
         description: Descriere
