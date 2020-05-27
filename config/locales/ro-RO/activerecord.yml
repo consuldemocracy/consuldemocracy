@@ -314,3 +314,25 @@ ro:
           attributes:
             document_number:
               has_voted: "Utilizatorul a votat deja"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: trebuie să fie la data de început sau după
+            debate_end_date:
+              invalid_date_range: trebuie să fie la sau după data începerii dezbaterii
+            draft_end_date:
+              invalid_date_range: trebuie să fie la sau după data începerii schiței
+            allegations_end_date:
+              invalid_date_range: trebuie să fie la data începerii comentariilor sau după
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etichetele trebuie să fie mai mici sau egale cu %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etichetele trebuie să fie mai mici sau egale cu %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Trebuie să așteptați minimum %{interval} zile între notificări"
