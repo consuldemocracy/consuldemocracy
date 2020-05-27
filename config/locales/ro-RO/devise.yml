@@ -39,3 +39,4 @@ ro:
       signed_up: "Bine ați venit! Ați fost autentificat."
       signed_up_but_inactive: "Înregistrarea dvs. a avut succes, dar nu ați putut fi conectat deoarece contul dvs. nu a fost activat."
       signed_up_but_locked: "Înregistrarea dvs. a avut succes, dar nu ați putut fi conectat deoarece contul dvs. este blocat."
+      signed_up_but_unconfirmed: "Vi s-a trimis un mesaj care conține un link de verificare. Vă rugăm să faceți clic pe acesta pentru a vă activa contul."
