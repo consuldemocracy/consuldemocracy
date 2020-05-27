@@ -10,3 +10,20 @@ ro:
       confirmed: "Contul dumneavoastră a fost confirmat."
       send_instructions: "În câteva minute veți primi un email care conține instrucțiuni despre cum vă puteți reseta parola."
       send_paranoid_instructions: "Dacă adresa dumneavoastră de email se află în baza noastră de date, în câteva minute veți primi un email care conține instrucțiuni despre cum vă puteți reseta parola."
+    failure:
+      already_authenticated: "Sunteți deja conectat."
+      inactive: "Contul dumneavoastră nu a fost activat încă."
+      locked: "Contul dumneavoastră a fost blocat."
+      last_attempt: "Mai aveți încă o încercare înainte ca contul dumneavoastră să fie blocat."
+      timeout: "Sesiunea dumneavoastră a expirat. Vă rugăm să vă conectați din nou pentru a continua."
+      unauthenticated: "Trebuie să vă conectați sau să vă înregistrați pentru a continua."
+      unconfirmed: "Pentru a continua, vă rugăm să faceți clic pe linkul de confirmare pe care vi l-am trimis prin e-mail"
+    mailer:
+      confirmation_instructions:
+        subject: "Instrucțiuni de confirmare"
+      reset_password_instructions:
+        subject: "Instrucțiuni pentru resetarea parolei"
+      unlock_instructions:
+        subject: "Instrucțiuni de deblocare"
+    omniauth_callbacks:
+      failure: "Nu a fost posibil să vă autorizăm ca %{kind} deoarece %{reason}\"."
