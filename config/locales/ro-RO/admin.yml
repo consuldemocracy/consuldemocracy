@@ -427,6 +427,12 @@ ro:
           process: Proces
           debate_phase: Etapa de dezbatere
           draft_phase: Etapa de proiectare
+          draft_phase_description: Dacă această etapă este activă, procesul nu va fi listat în index. Permiteți previzualizarea procesului și crearea de conținut înainte de început.
+          allegations_phase: Etapa de comentarii
+          proposals_phase: Etapa de propuneri
+          title_placeholder: Titlul procesului
+          summary_placeholder: Scurt rezumat al descrierii
+          description_placeholder: Adaugă o descriere a procesului
         index:
           create: Proces nou
           delete: Șterge
@@ -453,6 +459,17 @@ ro:
       proposals:
         form:
           custom_categories: Categorii
+      draft_versions:
+        table:
+          final_version: Versiune finală
+          status: Status
+      questions:
+        create:
+          notice: 'Întrebare creată cu succes. <a href="%{link}"> Faceți clic pentru a vizita </a>'
+          error: Întrebarea nu a putut fi creată
+        update:
+          notice: 'Întrebare actualizată cu succes. <a href="%{link}"> Faceți clic pentru a vizita </a>'
+          error: Întrebarea nu a putut fi actualizată
     site_customization:
       images:
         index:
