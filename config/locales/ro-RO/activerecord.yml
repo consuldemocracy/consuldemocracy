@@ -129,7 +129,31 @@ ro:
         kind: "Tip"
         title: "Titlu"
         percentage: "Progresul actual"
+      budget/phase/translation:
+        description: "Descriere"
+        summary: "Sumar"
+      comment:
+        body: "Comentariu"
+        user: "Utilizator"
+      debate:
+        author: "Autor"
+        description: "Opinie"
+        tag_list: "Subiecte"
+        title: "Titlu"
+      proposal:
+        author: "Autor"
+        title: "Titlu"
+        question: "Întrebare"
+        description: "Descriere"
+        selected: "Marchează ca selectat"
+      proposal/translation:
+        title: "Titlul propunerii"
+        description: "Textul propunerii"
+        summary: "Rezumatul propunerii"
+        retired_explanation: "Explicație"
       user:
+        login: "Email sau Nume de utilizator"
+        email: "Email"
         email_on_comment: "Anunță-mă prin e-mail când cineva comentează la propunerile sau dezbaterile mele"
         email_on_comment_reply: "Anunță-mă prin e-mail când cineva răspunde la comentariile mele"
         official_position: "Poziție oficială"
