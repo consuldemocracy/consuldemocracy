@@ -493,6 +493,38 @@ ro:
         table:
           title: Titlu
           question_options: Opțiuni de întrebări
+        question_option_fields:
+          remove_option: Înlătură opțiune
+    managers:
+      index:
+        title: Administratori
+        name: Nume
+        email: Email
+        no_managers: Nu există administratori.
+      manager:
+        add: Adaugă
+        delete: Șterge
+    menu:
+      proposals: Propuneri
+      budgets: Bugete participative
+      geozones: Administrează geolocații
+      hidden_comments: Comentarii ascunse
+      hidden_debates: Dezbateri ascunse
+      hidden_proposals: Propuneri ascunse
+      hidden_budget_investments: Bugete de investiții ascunse
+      hidden_users: Utilizatori ascunși
+      administrators: Administratori
+      managers: Administratori
+      moderators: Moderatori
+      administrator_tasks: Resurse solicitate
+      debates: "Dezbateri"
+      comments: "Comentarii"
+    administrators:
+      index:
+        title: Administratori
+        name: Nume
+        email: Email
+        description: Descriere
     site_customization:
       images:
         index:
