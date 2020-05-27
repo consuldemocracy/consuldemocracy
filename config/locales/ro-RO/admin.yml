@@ -49,6 +49,7 @@ ro:
           on_debates: Dezbateri
           on_proposals: Propuneri
           on_users: Utilizatori
+        type: Tip
     budgets:
       index:
         title: Bugetele participative
