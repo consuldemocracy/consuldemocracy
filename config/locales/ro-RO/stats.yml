@@ -28,5 +28,8 @@ ro:
       participants_support_phase: "Faza de sprijin a participanților"
       participants_vote_phase: "Faza de votare a participanților"
       participants_every_phase: "Total participanți"
+      percent_total_participants: "% Participanți totali"
+      participatory_disclaimer: "** Numărul total de participanți de referă la persoanele care au creat, au susținut sau au votat investițiile propuse."
     polls:
       web_percentage: "%{percentage} Web"
+      letter_percentage: "%{percentage} Email"
