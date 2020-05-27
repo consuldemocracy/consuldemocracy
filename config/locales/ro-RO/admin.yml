@@ -125,13 +125,21 @@ ro:
       form:
         population_info: "Rubrica de buget al populației este utilizată în scopuri statistice la sfârșitul bugetului pentru a arăta pentru fiecare rubrică care reprezintă o zonă cu populație ce procent votat. Acest câmp este opțional, așa că îl puteți lăsa gol dacă nu se aplică."
         coordinates_info: "Dacă latitudinea și longitudinea sunt precizate, pagina de investiții pentru această rubrică va include o hartă. Această hartă va fi centrată folosind acele coordonate."
+        content_blocks_info: "Dacă este selectată opțiunea permite blocarea conținutului, veți putea crea conținut personalizat aferent acestei rubrici din secțiunea Setări> Blocuri de conținut personalizat. Acest conținut va apărea în pagina de investiții pentru această rubrică."
+        create: "Crează rubrică nouă"
+        edit: "Editeaza rubrică"
+        submit: "Salvează rubrică"
       index:
         back: "Înapoi la grupuri"
     budget_phases:
       edit:
+        summary_help_text: Acest text va informa utilizatorul despre etapă. Pentru a-l afișa chiar dacă etapa nu este activă, bifați caseta de mai jos
+        description_help_text: Acest text va apărea în antet atunci când faza este activă
+        enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
         save_changes: Salvează modificări
     budget_investments:
       index:
+        heading_filter_all: Toate rubricile
         administrator_filter_all: Toți administratorii
         valuator_filter_all: Toți evaluatorii
         tags_filter_all: Toate etichetele
@@ -158,6 +166,7 @@ ro:
         no_budget_investments: "Nu există proiecte de investiție."
         title: Proiecte de investiție
         columns: Coloane
+        assigned_admin: Administrator alocat
         no_admin_assigned: Nici un administrator atribuit
         no_valuators_assigned: Nici un evaluator atribuit
         feasibility:
@@ -167,12 +176,15 @@ ro:
         selected: "Selectat"
         select: "Selectează"
         list:
+          id: ID
           title: Titlu
           admin: Administrator
           valuator: Evaluator
           valuation_group: Grup de evaluare
+          geozone: Scopul operațiunii
           feasibility: Fezabilitate
           selected: Selectat
+          visible_to_valuators: Afișează evaluatorilor
           author_username: Numele de utilizator al autorului
           incompatible: Incompatibil
           price: Preț
@@ -306,7 +318,10 @@ ro:
           published_proposal: Propuneri publicate
           default:
             email: Email
+            polls: Sondaje
+            poster: Afiș
         new:
+          creating: Acțiune nouă pentru tabloul de bord al propunerilor
           back: Înapoi la listă
         create:
           notice: Acțiune creată cu succes
@@ -317,10 +332,14 @@ ro:
           success: Acțiune ștearsă cu succes
         form:
           submit_button: Salvează
+          help_text: Introduceți 0 astfel încât această valoare să nu fie luată în considerare
+          published_proposal_help_text: Marcați această casetă pentru a crea acțiunea numai pentru propunerile publicate
       administrator_tasks:
         index:
+          description: "Resursele publicate în tabloul de bord al propunerilor pot include un buton care trebuie solicitat administratorilor. Cererile utilizatorului sunt prezentate mai jos."
           title: Resurse solicitate
           solve: Rezolvă
+          no_records: Nu există resurse cerute
           filter: Filtru
           filters:
             pending: În așteptare
