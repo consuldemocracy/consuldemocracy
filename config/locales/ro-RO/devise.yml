@@ -4,6 +4,7 @@ ro:
     password_expired:
       expire_password: "Parolă expirată"
       change_required: "Parola dumneavoastră este expirată"
+      change_password: "Schimbați-vă parola"
       new_password: "Parola nouă"
       updated: "Parolă actualizată cu succes"
     confirmations:
@@ -13,8 +14,10 @@ ro:
     failure:
       already_authenticated: "Sunteți deja conectat."
       inactive: "Contul dumneavoastră nu a fost activat încă."
+      invalid: "%{authentication_keys} sau parolă nevalide."
       locked: "Contul dumneavoastră a fost blocat."
       last_attempt: "Mai aveți încă o încercare înainte ca contul dumneavoastră să fie blocat."
+      not_found_in_database: "%{authentication_keys} sau parolă nevalide."
       timeout: "Sesiunea dumneavoastră a expirat. Vă rugăm să vă conectați din nou pentru a continua."
       unauthenticated: "Trebuie să vă conectați sau să vă înregistrați pentru a continua."
       unconfirmed: "Pentru a continua, vă rugăm să faceți clic pe linkul de confirmare pe care vi l-am trimis prin e-mail"
@@ -50,3 +53,15 @@ ro:
       send_instructions: "În câteva minute veți primi un email care conține instrucțiuni despre cum vă puteți debloca contul."
       send_paranoid_instructions: "Dacă aveți un cont, în câteva minute veți primi un email ce conține instrucțiuni despre cum vă puteți debloca contul."
       unlocked: "Contul dvs. a fost deblocat. Vă rugăm să vă conectați pentru a continua."
+  errors:
+    messages:
+      already_confirmed: "Ați fost deja verificat; vă rugăm încercați să vă conectați."
+      confirmation_period_expired: "Trebuie să fiți verificat în %{period}; vă rugăm să faceți o solicitare repetată."
+      expired: "a expirat; vă rugăm să faceți o solicitare repetată."
+      not_found: "nu a fost găsit."
+      not_locked: "nu a fost blocat."
+      not_saved:
+        one: "O eroare a împiedicat salvarea acestei %{resource}. Vă rugăm să verificați câmpurile marcate pentru a ști cum să le corectați:"
+        few: "%{count} erori au împiedicat salvarea acestei %{resource}. Vă rugăm să verificați câmpurile marcate pentru a ști cum să le corectați:"
+        other: "%{count} erori au împiedicat salvarea acestei %{resource}. Vă rugăm să verificați câmpurile marcate pentru a ști cum să le corectați:"
+      equal_to_current_password: "trebuie să fie diferită de parola curentă."
