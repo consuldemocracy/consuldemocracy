@@ -104,6 +104,18 @@ ro:
         edit: "Editează grup"
         submit: "Salvează grup"
     budget_headings:
+      no_headings: "Nu există rubrici."
+      amount:
+        one: "Există 1 rubrică"
+        few: "Exista %{count} rubrici"
+        other: "Exista %{count} rubrici"
+      create:
+        notice: "Rubrică creată cu succes!"
+      update:
+        notice: "Rubrică actualizată cu succes"
+      destroy:
+        success_notice: "Rubrică ștearsă cu succes"
+        unable_notice: "Nu puteți șterge o Rubrică care are investiții asociate"
       index:
         back: "Înapoi la grupuri"
     budget_phases:
