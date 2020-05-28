@@ -1,0 +1,8 @@
+en:
+  legislation:
+    processes:
+      header:
+        active: "Active"
+        coming_soon: "Coming soon"
+        locked: "Locked"
+        published: "Published"

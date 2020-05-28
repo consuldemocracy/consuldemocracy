@@ -1,0 +1,88 @@
+<div class="legislation-hero" style="<%= css_for_process_header %>">
+  <div class="row">
+    <div class="small-12 column">
+
+      <% if banner_color? %>
+        <%= link_to t("shared.back"), legislation_processes_path,
+                                      class: "icon-angle-left",
+                                      style: "color:#{process.font_color};" %>
+      <% else %>
+        <%= back_link_to legislation_processes_path %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row legislation-title">
+    <div class="small-12 medium-9 column">
+      <h2><%= @process.title %></h2>
+    </div>
+
+    <div class="small-12 medium-3 column sidebar-left">
+      <%= render "shared/social_share",
+                  share_title: t("proposals.show.share"),
+                  title: @process.title,
+                  url: legislation_process_url(@process),
+                  description: @process.title,
+                  mobile: @process.title %>
+    </div>
+  </div>
+
+  <div class="legislation-content">
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <% if header == :small %>
+          <div id="legislation_info" class="is-hidden" data-toggler=".is-hidden">
+
+            <% if @process.description.present? %>
+              <p class="title"><%= t("legislation.processes.header.description") %></p>
+              <%= markdown @process.description %>
+            <% end %>
+
+            <% if @process.additional_info.present? %>
+              <hr>
+              <p class="title"><%= t("legislation.processes.header.additional_info") %></p>
+              <%= markdown @process.additional_info if @process.additional_info %>
+            <% end %>
+          </div>
+
+          <a class="button" data-toggle="legislation_info">
+            <%= t("legislation.processes.header.more_info") %>
+          </a>
+        <% else %>
+          <%= render "legislation/processes/header_full", process: @process %>
+        <% end %>
+      </div>
+
+      <aside class="small-12 medium-3 column">
+        <% if @process.image.present? %>
+          <hr>
+          <%= image_tag(@process.image_url(:large), alt: @process.title, id: "image") %>
+        <% end %>
+
+        <% if process.draft_publication.enabled? %>
+          <div class="sidebar-divider"></div>
+          <p class="sidebar-title">
+            <%= t("legislation.processes.shared.draft_publication_date") %>
+          </p>
+          <p>
+            <%= link_to draft_publication_legislation_process_path(@process) do %>
+              <strong><%= format_date(process.draft_publication_date) %></strong>
+            <% end %>
+          </p>
+        <% end %>
+
+        <% if process.result_publication.enabled? %>
+          <div class="sidebar-divider"></div>
+          <p class="sidebar-title">
+            <%= t("legislation.processes.shared.result_publication_date") %>
+          </p>
+          <p>
+            <%= link_to result_publication_legislation_process_path(@process) do %>
+              <strong><%= format_date(process.result_publication_date) %></strong>
+            <% end %>
+          </p>
+        <% end %>
+      </aside>
+    </div>
+  </div>
+</div>
