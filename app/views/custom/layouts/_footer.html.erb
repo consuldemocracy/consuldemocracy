@@ -1,0 +1,45 @@
+<footer>
+  <div class="row">
+    <div class="small-12 column">
+      <h1>
+        <%= image_tag(image_path_for("logo_header.png"), alt: "") %>
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-5 column">
+      <h2 class="footer-title"><%= t("layouts.footer.org_name") %></h2>
+
+      <p class="info">
+        <%= sanitize(content_block("footer", I18n.locale)) %>
+      </p>
+    </div>
+
+    <div class="small-12 medium-5 column social">
+      <h2 class="footer-title"><%= t("layouts.footer.contact_title") %></h2>
+
+      <p>
+        <span class="far fa-envelope"></span>
+        <%= link_to t("layouts.footer.contact_email"),
+                    "mailto:stemvangroningen@groningen.nl" %>
+      </p>
+
+      <p>
+        <span class="fab fa-facebook-f"></span>
+        <%= link_to t("layouts.footer.facebook"),
+                    "https://facebook.com/steamvangroningen",
+                    target: "_blank" %>
+      </p>
+    </div>
+  </div>
+
+  <div class="subfooter row">
+    &copy; <%= t("layouts.footer.copyright", year: Time.current.year) %> - 1.1.0
+    <ul class="no-bullet">
+      <li><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
+      <li><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
+      <li><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %>&nbsp;|</li>
+    </ul>
+  </div>
+</footer>
