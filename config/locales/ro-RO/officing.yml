@@ -1,1 +1,24 @@
 ro:
+  officing:
+    polls:
+      final:
+        select_poll: Selectează sondaj
+        add_results: Adaugă rezultate
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nume
+        ballot_sheet_author: Autor
+      new:
+        submit: Salvează
+      show:
+        author: Autor
+    results:
+      flash:
+        create: "Rezultate salvate"
+      new:
+        date: "Date"
+        submit: "Salvează"
+        results_list: "Rezultatele tale"
+        see_results: "Vezi rezultatele"
+      index:
+        results: Rezultate
