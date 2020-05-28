@@ -2859,11 +2859,24 @@ table {
     padding-left: $line-height * 1.5;
     position: relative;
 
-    &::before {
-      content: "\f03e";
-      font-family: "Font Awesome 5 Free";
-      left: 10px;
-      position: absolute;
+    &.upload-image {
+
+      &::before {
+        content: "\f03e";
+        font-family: "Font Awesome 5 Free";
+        left: 10px;
+        position: absolute;
+      }
+    }
+
+    &.upload-document {
+
+      &::before {
+        content: "\f15b";
+        font-family: "Font Awesome 5 Free";
+        left: 10px;
+        position: absolute;
+      }
     }
   }
 }
