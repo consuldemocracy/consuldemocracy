@@ -3,3 +3,1384 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+// 0. Global styles
+// 1. Header
+// 2. Homepage and custom pages
+// 3. Footer
+// 4. Budgets
+// 5. Legislation
+// 6. Comments
+// 7. Admin
+
+// 0. Global styles
+// --------------------
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.button {
+  min-height: $line-height * 2;
+}
+
+.input-group-button button {
+  min-height: 0;
+}
+
+.input-group-field,
+.subnavigation .input-group-field {
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+main {
+
+  .button {
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  .view-mode {
+
+    .button {
+      box-shadow: none;
+    }
+  }
+}
+
+.button {
+
+  &:hover {
+    background: $hover;
+  }
+
+  &.hollow {
+    border-color: $brand;
+    color: $brand;
+  }
+}
+
+aside {
+
+  .button {
+
+    &.hollow {
+      background: $brand;
+      border: 0;
+      color: #fff;
+
+      &:hover {
+        background: $brand-secondary;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.help-header {
+  border-bottom: 0;
+  margin-bottom: $line-height * 2;
+  padding-top: $line-height * 2;
+
+  a {
+    color: $brand;
+    font-weight: bold;
+  }
+
+  h1,
+  .icon {
+    font-size: rem-calc(40);
+  }
+
+  .icon {
+    padding-right: $line-height / 2;
+  }
+}
+
+.menu {
+
+  &.simple {
+    border-bottom: 4px solid $light;
+    display: inline-block;
+    margin-bottom: $line-height;
+
+    li {
+      display: inline-block;
+      margin-right: 0;
+      padding: 0 $line-height * 1.5;
+
+      &.is-active {
+        border-bottom: 0;
+        position: relative;
+
+        &::after {
+          border-bottom: 4px solid $brand;
+          bottom: -6px;
+          content: "";
+          position: absolute;
+          right: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.no-bullet.submenu {
+  border-bottom: 4px solid $light;
+  margin-bottom: $line-height;
+
+  li {
+    display: inline-block;
+    margin-right: 0;
+
+    a {
+
+      &.is-active {
+        border-bottom: 0;
+        position: relative;
+
+        &::after {
+          border-bottom: 4px solid $brand;
+          bottom: -4px;
+          content: "";
+          position: absolute;
+          right: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.section-help {
+  background: $highlight-soft;
+  margin: $line-height * 2 0;
+  padding: $line-height / 2;
+
+  .lead {
+    padding-left: $line-height * 1.5;
+    position: relative;
+
+    &::before {
+      content: "\f059";
+      font-family: "Font Awesome 5 Free";
+      font-size: rem-calc(24);
+      left: 0;
+      position: absolute;
+    }
+  }
+}
+
+.sidebar-divider {
+  display: none;
+}
+
+.sidebar-title {
+  border-top: 0;
+  color: $label;
+  font-size: rem-calc(18);
+  margin: 0 0 $line-height / 2;
+  padding-top: 0;
+}
+
+.debate-show,
+.proposal-show,
+.poll-question-show,
+.investment-project-show,
+.budget-investment-show,
+.polls-show,
+.debate-quiz,
+.budget-investment-show,
+.draft-panels,
+.debate-questions,
+.communities-show,
+.topic-show,
+.milestone-content {
+
+  aside h2 {
+    border-top: 0;
+    color: $label;
+    font-size: rem-calc(18);
+    margin: 0 0 $line-height / 2;
+    padding-top: 0;
+  }
+}
+
+.sidebar-left {
+  border-left: 2px solid $border;
+}
+
+.back {
+
+  .icon-angle-left {
+    padding-right: $line-height / 4;
+  }
+
+  &:not([class^="icon-"]) {
+    text-decoration: none;
+    font-size: $small-font-size;
+  }
+}
+
+.debate,
+.proposal,
+.investment-project,
+.budget-investment,
+.legislation,
+.communities-show {
+  margin-bottom: $line-height;
+}
+
+.budget-investments-list .budget-investment,
+.proposals-list .proposal,
+.legislation-proposals .proposal, {
+
+  .panel {
+    border: 2px solid $border;
+    border-radius: rem-calc(12);
+    box-shadow: none;
+
+    @include breakpoint(medium) {
+
+      img {
+        border-bottom-left-radius: rem-calc(12);
+        border-top-left-radius: rem-calc(12);
+      }
+    }
+
+    &.supported {
+      background: $light;
+      border-color: $light;
+
+      .truncate {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.document-divider {
+  background: none;
+  border-bottom: 0;
+}
+
+.additional-document-link {
+  background: none;
+  border: 0;
+  padding: $line-height / 2 0;
+
+  p:first-child {
+    color: $label;
+    font-size: $small-font-size;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: $brand;
+    font-weight: bold;
+  }
+
+  .icon-document::before {
+    color: $brand;
+    content: "\f2b6" !important;
+    font-family: "Font Awesome 5 Free";
+  }
+}
+
+// 1. Header
+// --------------------
+
+header {
+  background: none;
+  border-bottom: 0;
+}
+
+.top-bar {
+  background: #fff !important;
+
+  .menu > li {
+
+    a,
+    .button {
+      background: none;
+      border: 0;
+      color: $text;
+      min-height: 0;
+    }
+  }
+
+  .dropdown {
+
+    &.menu > li {
+
+      &.is-active > a {
+        color: $text;
+      }
+    }
+  }
+}
+
+.top-bar-title {
+  background: $brand;
+  margin: 0;
+  position: relative;
+
+  @include breakpoint(medium) {
+    padding-bottom: $line-height;
+    padding-top: $line-height * 2;
+  }
+
+  &::before {
+    background: $brand;
+    content: "";
+    height: 100%;
+    left: -999%;
+    position: absolute;
+    top: 0;
+    width: 999%;
+    z-index: -1;
+  }
+
+  a {
+
+    img {
+      height: 100% !important;
+    }
+  }
+}
+
+.top-bar-right {
+
+  @include breakpoint(medium) {
+    padding-top: $line-height;
+  }
+
+  a {
+    position: relative;
+
+    &.hide-for-small-only {
+
+      &::after {
+        content: "\f078" !important;
+        font-family: "Font Awesome 5 Free";
+        font-size: rem-calc(12);
+        font-weight: bold;
+        position: absolute;
+        right: 12px !important;
+        top: 10px;
+      }
+    }
+  }
+}
+
+.menu-icon {
+
+  &.dark {
+
+    &::after,
+    &:hover::after {
+      background: $brand;
+      box-shadow: 0 7px 0 $brand, 0 14px 0 $brand;
+    }
+  }
+}
+
+.menu-icon.dark::after,
+.menu-icon.dark:hover::after {
+  background: $brand;
+  box-shadow: 0 7px 0 $brand, 0 14px 0 $brand;
+}
+
+.subnavigation {
+  background: $light;
+  padding: $line-height / 2 0;
+}
+
+.subnavigation a {
+  color: $text;
+  position: relative;
+
+  @include breakpoint(medium) {
+
+    &.is-active {
+      border-bottom: 0;
+    }
+
+    &.is-active::after {
+      background: $brand;
+      bottom: -12px;
+      content: "";
+      height: 4px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  &:hover,
+  &.is-active {
+    color: $brand;
+  }
+}
+
+.additional-content .filter-subnav {
+  background: $light;
+}
+
+.submit-form-box {
+  border-color: $light;
+}
+
+// 2. Homepage and custom pages
+// ----------------------------
+
+.home-page {
+
+  .jumbo {
+    background: none;
+    background-size: 0;
+
+    @include breakpoint(large) {
+      background: none;
+      background-position: right;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-top: $line-height * 2;
+      min-height: $line-height * 30;
+    }
+
+    h1 {
+      font-size: rem-calc(90);
+    }
+  }
+
+  .lead {
+    font-weight: bold;
+    margin: $line-height * 2 0;
+  }
+
+  h3 {
+
+    &.title {
+      border-bottom: 0;
+    }
+  }
+}
+
+.home-page .card,
+.custom-page .card {
+  margin-top: $line-height;
+
+  figure {
+    border-top-left-radius: rem-calc(12);
+    border-top-right-radius: rem-calc(12);
+  }
+
+  a {
+    background: $light;
+    border: 2px solid #fff;
+    border-radius: rem-calc(12);
+    height: 100%;
+
+    &:hover {
+      border: 2px solid $border;
+      transform: translate(0, -12px);
+
+      img {
+        transform: none;
+      }
+    }
+  }
+
+  p {
+    padding: 0 $line-height / 2;
+
+    &:last-child {
+      bottom: 0;
+      color: $brand;
+      text-align: right;
+    }
+  }
+
+  .figure-card figcaption {
+
+    h3 {
+      min-height: $line-height * 2;
+      text-transform: none;
+    }
+
+    span {
+      background: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      top: -80px;
+    }
+  }
+}
+
+.feed-content-list {
+
+  .row {
+    margin: 0 auto;
+  }
+
+  .proposal {
+    border: 1px solid $border;
+    border-top: 0;
+    padding: $line-height 0;
+
+    &:first-of-type {
+      border-top: 1px solid $border;
+      border-top-left-radius: rem-calc(12);
+      border-top-right-radius: rem-calc(12);
+    }
+
+    &:last-child {
+      border-bottom-left-radius: rem-calc(12);
+      border-bottom-right-radius: rem-calc(12);
+    }
+  }
+
+  .feed-image {
+    border: 1px solid $border;
+  }
+
+  .feed-description {
+
+    a {
+      color: $brand;
+      display: inline-block;
+      margin-bottom: $line-height / 2;
+    }
+
+    p {
+      font-size: $base-font-size;
+    }
+  }
+}
+
+.home-page-steps {
+  border-bottom: 24px solid $light;
+  padding: $line-height * 2;
+
+  .number {
+    color: $brand;
+    display: block;
+    font-weight: bold;
+    font-size: rem-calc(34);
+  }
+
+  h2 {
+    font-size: rem-calc(60);
+    font-weight: normal;
+  }
+
+  h3 {
+    font-size: rem-calc(30);
+    font-weight: bold;
+    margin-bottom: $line-height;
+  }
+
+  p {
+    font-size: rem-calc(21);
+    line-height: rem-calc(30);
+  }
+
+  a {
+    color: $brand;
+    display: block;
+    font-weight: bold;
+    margin: 0 auto;
+    max-width: 60%;
+  }
+
+  .step {
+    margin-bottom: $line-height * 2;
+
+    p {
+      margin: 0 auto;
+      max-width: 80%;
+      min-height: rem-calc(180);
+    }
+  }
+}
+
+.header-homepage-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+// 3. Footer
+// --------------------
+
+footer {
+  color: #fff;
+
+  a,
+  a:active,
+  a:focus {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.footer {
+  background: #2d313b;
+  padding-top: $line-height * 3;
+
+  .footer-title {
+    margin: $line-height 0;
+  }
+
+  p {
+    font-size: rem-calc(20);
+    font-weight: bold;
+    line-height: $line-height * 1.5;
+  }
+
+  .social {
+
+    [class^="fa"] {
+      color: $footer;
+      font-size: rem-calc(40);
+      text-align: center;
+      width: rem-calc(60);
+    }
+
+    a {
+      color: $footer;
+      display: inline-block;
+      font-size: rem-calc(20);
+      line-height: rem-calc(40);
+      vertical-align: top;
+    }
+  }
+}
+
+.subfooter {
+  border-top: 2px solid $footer;
+  font-size: $base-font-size;
+  margin-top: $line-height * 6;
+  padding: $line-height 0;
+
+  ul {
+    padding-left: $line-height / 4;
+  }
+
+  ul,
+  li {
+    display: inline-block;
+  }
+
+  a {
+    padding: 0 $line-height / 2;
+  }
+}
+
+// 4. Budgets
+// --------------------
+
+.expanded {
+
+  &.budget {
+    background: $brand;
+
+    &:not(.button) .button {
+      background: rgba(0 , 0, 0, 0.5);
+      color: #fff;
+      min-width: 30%;
+    }
+  }
+}
+
+.budget-phases {
+
+  .tabs-title > a {
+
+    &.current-phase {
+      background: $brand-secondary;
+      color: #fff;
+
+      &::after {
+        border-left-color: $brand-secondary;
+      }
+
+      &:hover {
+        background: $dark;
+
+        &::after {
+          border-left-color: $dark;
+        }
+      }
+    }
+
+    &[aria-selected="true"],
+    &.is-active {
+      background: $dark;
+      color: #fff;
+
+      &::after {
+        border-left-color: $dark;
+      }
+    }
+
+    &[aria-selected="true"] {
+
+      &.current-phase {
+        background: $brand-secondary;
+
+        &::after {
+          border-left-color: $brand-secondary;
+        }
+      }
+    }
+  }
+
+  .budget-prev-phase,
+  .budget-next-phase {
+
+    &::before {
+      background: $brand;
+    }
+  }
+}
+
+.budget-subheader {
+
+  .current-phase {
+    color: $label;
+    text-transform: uppercase;
+  }
+}
+
+.groups-and-headings .heading {
+  border: 0;
+  margin-right: $line-height / 2;
+
+  a {
+    border: 2px solid $border;
+    border-radius: rem-calc(6);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    color: $brand;
+    font-weight: bold;
+    margin-top: $line-height / 4;
+
+    span {
+      font-weight: normal;
+      padding-top: $line-height / 2;
+    }
+
+    &:hover {
+      background: $light;
+      transform: translateY(-6px);
+    }
+  }
+}
+
+.jumbo-budget {
+
+  &.budget-heading {
+    background: #fff;
+    border-bottom: 2px solid $border;
+  }
+
+  h1,
+  h2,
+  h3,
+  .back,
+  .icon-angle-left,
+  p,
+  a {
+    color: $text;
+  }
+
+  .button {
+    background: $brand;
+    color: #fff;
+  }
+}
+
+.investment-project .supports .total-supports,
+.investment-project-show .supports .total-supports,
+.budget-investment .supports .total-supports,
+.budget-investment-show .supports .total-supports {
+  color: $brand;
+}
+
+.investment-project .supports .button-support,
+.investment-project-show .supports .button-support,
+.budget-investment .supports .button-support,
+.budget-investment-show .supports .button-support {
+  background: $brand;
+  box-shadow: none;
+
+  &:hover {
+    background: $brand-secondary;
+  }
+}
+
+.investment-project .supports .investment-project-amount,
+.investment-project .supports .budget-investment-amount,
+.investment-project-show .supports .investment-project-amount,
+.investment-project-show .supports .budget-investment-amount,
+.budget-investment .supports .investment-project-amount,
+.budget-investment .supports .budget-investment-amount,
+.budget-investment-show .supports .investment-project-amount,
+.budget-investment-show .supports .budget-investment-amount {
+  color: $brand;
+}
+
+.remove {
+
+  .investment-project-amount,
+  .budget-investment-amount {
+    color: $text !important;
+  }
+}
+
+.investment-project .supports .remove .icon-check-circle,
+.investment-project-show .supports .remove .icon-check-circle,
+.budget-investment .supports .remove .icon-check-circle,
+.budget-investment-show .supports .remove .icon-check-circle {
+  display: none;
+}
+
+.progress-bar-nav {
+  background: #fff;
+
+  &.is-fixed {
+    border-bottom: 2px solid $border;
+  }
+}
+
+.progress-votes {
+
+  .progress {
+    background: #bbcdd9;
+  }
+
+  .progress-meter {
+    background: $brand;
+  }
+
+  .spent-amount-text,
+  .total-amount {
+    color: $text;
+  }
+
+  .spent-amount-text::before {
+    color: $brand;
+  }
+}
+
+.amount-available span {
+  color: $brand;
+}
+
+.progress-votes .total-amount {
+  font-size: $tiny-font-size;
+
+  .amount-spent {
+    color: $brand;
+  }
+
+  .amount-spent,
+  .price {
+    font-size: $base-font-size;
+  }
+}
+
+.supported .button.button-remove-support {
+  box-shadow: none;
+  color: $brand-secondary;
+
+  &::before {
+    left: 20px;
+  }
+}
+
+aside .supported .button.button-remove-support.expanded {
+
+  &::before {
+    left: 60px;
+  }
+}
+
+.budget-phases {
+
+  h3 {
+    margin-top: $line-height;
+  }
+
+  .budget-prev-phase::before,
+  .budget-next-phase::before,
+  .budget-prev-phase-disabled::before,
+  .budget-next-phase-disabled::before {
+    font-size: rem-calc(36);
+    height: rem-calc(48);
+    width: rem-calc(48);
+  }
+
+  .budget-next-phase::before,
+  .budget-next-phase-disabled::before {
+    left: 52px;
+  }
+}
+
+.ballot-list li {
+
+  &:hover {
+    background: $brand;
+  }
+
+  .ballot-list-price {
+    color: $brand;
+  }
+}
+
+.budget-investment.index .read-more {
+  color: $brand;
+}
+
+.budget-info,
+.budget-investment-index-list {
+
+  h2 {
+    font-size: rem-calc(20);
+    margin: $line-height / 2 0;
+  }
+}
+
+.budget-investment-new .header {
+  background: $brand-secondary;
+
+  &::before {
+    background: $brand-secondary;
+  }
+
+  &::before,
+  &::after {
+    border-color: $brand-secondary;
+    color: $brand-secondary;
+  }
+}
+
+// 5. Legislation
+// --------------------
+
+.legislation-hero {
+  background: #fff;
+  margin-top: rem-calc(-24);
+  padding-top: $line-height;
+
+  .icon-angle-left {
+    font-size: $small-font-size;
+
+    &::before {
+      padding-right: $line-height / 4;
+    }
+  }
+}
+
+.legislation {
+  border: 2px solid $border;
+  border-radius: rem-calc(12);
+  box-shadow: none;
+  padding: $line-height 0 $line-height / 2;
+
+  a {
+    color: $brand;
+    font-weight: bold;
+  }
+}
+
+.legislation-text {
+  margin-bottom: $line-height;
+
+  h3 {
+    padding-left: $line-height * 2;
+    position: relative;
+
+    &::before {
+      color: $border;
+      content: "\f02d";
+      font-family: "Font Awesome 5 Free";
+      font-size: rem-calc(36);
+      left: 0;
+      position: absolute;
+      top: -8px;
+    }
+  }
+}
+
+.legislation-calendar {
+  background: none;
+
+  h4 {
+    color: $text;
+    font-size: $base-font-size;
+  }
+
+  p {
+    color: $text;
+  }
+
+  .column {
+    padding: 0 $line-height / 4;
+  }
+}
+
+.legislation-calendar-info {
+  margin-top: $line-height;
+
+  p {
+    color: $info;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.legislation-date {
+  background: $highlight-soft;
+  margin: $line-height / 4 0;
+  min-height: $line-height * 6.5;
+  padding: $line-height / 2;
+}
+
+.date-status {
+  color: $highlight-text;
+  display: block;
+  font-size: $small-font-size;
+  font-weight: bold;
+  margin-top: $line-height / 2;
+  padding: $line-height / 4 0;
+  text-transform: uppercase;
+
+  &.locked {
+    padding-left: rem-calc(18);
+    position: relative;
+
+    &::before {
+      content: "\f023";
+      font-family: "Font Awesome 5 Free";
+      font-size: $small-font-size;
+      left: 0;
+      position: absolute;
+      top: 6px;
+    }
+  }
+
+  &.active {
+    background: $brand;
+    color: #fff;
+    display: table;
+    padding: $line-height / 4 $line-height / 2;
+  }
+
+  &.published {
+    color: $brand;
+  }
+}
+
+.legislation-title {
+  margin-bottom: $line-height * 2;
+  margin-top: $line-height * 2;
+
+  h2 {
+    padding-left: $line-height * 2;
+    position: relative;
+
+    &::before {
+      color: $border;
+      content: "\f02d";
+      font-family: "Font Awesome 5 Free";
+      font-size: rem-calc(36);
+      left: 0;
+      position: absolute;
+    }
+  }
+}
+
+.legislation-content {
+  background: $light;
+  padding: $line-height;
+  margin-bottom: $line-height * 2;
+}
+
+.legislation-hero {
+
+  .title {
+    border-bottom: 0;
+    color: $label;
+    margin-top: 0;
+  }
+}
+
+.legislation-process-list {
+  border-bottom: 2px solid $border;
+
+  h3 {
+    color: $label;
+    font-size: $small-font-size;
+    text-transform: uppercase;
+  }
+}
+
+.key-dates {
+
+  .is-active {
+    background: #fff;
+    border: 2px solid $border;
+    border-bottom: 0;
+
+    &::after {
+      background: #fff;
+      bottom: -4px;
+      content: "";
+      height: 4px;
+      position: absolute;
+    }
+  }
+
+  li {
+    background: $light;
+    border: 0;
+    border-bottom: 12px solid #fff;
+    min-height: $line-height * 6;
+    padding-top: $line-height / 2;
+
+    a h4 {
+      color: $brand;
+    }
+  }
+
+  span {
+    color: $text;
+  }
+}
+
+.debate-chooser {
+
+  .debate-list {
+    border-bottom: 2px solid $border;
+  }
+
+  .debate-meta,
+  .debate-meta a {
+    color: $text;
+  }
+
+  .debate-block {
+    margin-bottom: $line-height;
+
+    .debate-title a {
+      color: $text;
+    }
+
+    .debate-type {
+      color: $brand-secondary;
+    }
+  }
+}
+
+.debate-questions {
+
+  .quiz-header {
+
+    .quiz-title {
+      background: $light;
+
+      h4 a {
+        color: $text;
+        font-size: rem-calc(24);
+      }
+    }
+
+    .quiz-next {
+      background: $light;
+    }
+  }
+
+  aside {
+    border-left: 2px solid $border;
+
+    h3 {
+      color: $label;
+      font-size: rem-calc(18);
+      margin: 0 0 $line-height / 2;
+      padding-top: 0;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// 6. Comments
+// --------------------
+
+.comments {
+
+  .comment {
+
+    p {
+      margin-bottom: $line-height;
+    }
+  }
+}
+
+.comment-info {
+
+  a {
+    color: $text;
+  }
+
+  .user-name {
+
+    a {
+      color: $link-dark;
+    }
+  }
+}
+
+.comment-body {
+
+  .reply {
+    border-bottom: 2px solid $border;
+    border-top: 0;
+    margin-bottom: $line-height / 2;
+    margin-top: $line-height;
+    padding-bottom: $line-height / 2;
+
+    a {
+      font-weight: bold;
+
+      &.add-comment {
+        color: $brand;
+      }
+
+      &.toggle-children {
+        color: $link-dark;
+      }
+    }
+
+    .icon-arrow-down::before {
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      font-size: $small-font-size;
+    }
+
+    .icon-arrow-right::before {
+      content: "\f054";
+      font-family: "Font Awesome 5 Free";
+      font-size: $small-font-size;
+    }
+  }
+}
+
+.comment-children {
+  border-left: 2px dashed $border;
+  margin-top: $line-height / 2;
+
+  .comment-body {
+    padding-left: $line-height / 2;
+  }
+}
+
+.comment-body .reply [class^="icon-arrow"],
+.notification-body .reply [class^="icon-arrow"] {
+  left: -18px;
+  top: -3px;
+}
+
+.comment-body .comment-user,
+.notification-body .comment-user {
+  margin-bottom: $line-height * 1.5;
+}
+
+.comment-votes {
+
+  .votes {
+    bottom: 6px;
+    position: absolute;
+    right: 0;
+  }
+
+  a {
+    color: $text;
+  }
+
+  .total {
+    vertical-align: bottom;
+  }
+
+  .in-favor,
+  .against {
+    background: $light;
+    display: inline-block;
+    margin-left: $line-height / 4;
+    text-align: center;
+
+    a {
+      padding: $line-height / 4 $line-height / 2;
+    }
+
+    [class^="icon-"] {
+      color: $text;
+      display: block;
+      font-size: $small-font-size;
+    }
+  }
+}
+
+.flag-disable {
+  color: $link-soft;
+}
+
+// 7. Admin
+// --------------------
+
+.admin table {
+  font-size: $small-font-size;
+
+  tr td {
+    vertical-align: top;
+  }
+}
+
+.admin .dropdown.menu > .is-dropdown-submenu-parent > a::after {
+  border-color: transparent;
+}
+
+.admin .menu.simple {
+  display: block;
+
+  .is-active {
+    border-bottom: 0;
+    color: $brand;
+  }
+}
+
+.admin .button {
+  font-size: $small-font-size;
+  min-height: 0;
+  min-width: 0;
+}
+
+.ui-datepicker-calendar thead tr th {
+  border: 1px solid $border;
+}
