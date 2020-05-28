@@ -22,3 +22,8 @@ ro:
         see_results: "Vezi rezultatele"
       index:
         results: Rezultate
+    voters:
+      show:
+        submit: Confirmă vot
+      can_vote:
+        submit_disable_with: "Așteptați, vot în curs de confirmare..."
