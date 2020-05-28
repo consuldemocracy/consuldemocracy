@@ -42,7 +42,7 @@ describe "Homepage" do
       visit root_path
 
       within("#feed_proposals") do
-        expect(page).to have_content "Most active proposals"
+        expect(page).to have_content "Featured proposals"
         expect(page).to have_css(".proposal", count: 1)
       end
 
@@ -87,7 +87,7 @@ describe "Homepage" do
       visit root_path
 
       within("#feed_proposals") do
-        expect(page).to have_content "Most active proposals"
+        expect(page).to have_content "Featured proposals"
         expect(page).to have_css(".proposal", count: 3)
       end
 
@@ -96,8 +96,8 @@ describe "Homepage" do
         expect(page).to have_css(".debate", count: 3)
       end
 
-      expect(page).to have_css("#feed_proposals.medium-8")
-      expect(page).to have_css("#feed_debates.medium-4")
+      expect(page).to have_css("#feed_proposals.small-12")
+      expect(page).to have_css("#feed_debates.small-12")
     end
 
     scenario "Processes", :js do

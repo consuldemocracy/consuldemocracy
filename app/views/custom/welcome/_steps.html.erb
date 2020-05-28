@@ -1,0 +1,32 @@
+<div class="home-page-steps">
+  <div class="row text-center">
+    <div class="small-12 column">
+      <h2><%= t("welcome.steps.title") %></h2>
+      <p><%= t("welcome.steps.subtitle") %></p>
+    </div>
+
+    <div class="small-12 medium-4 column step">
+      <%= image_tag("welcome/step_1.png", alt: "", class: "margin") %>
+      <span class="number"><%= t("welcome.steps.step_1.number") %></span>
+      <h3><%= t("welcome.steps.step_1.title") %></h3>
+      <p><%= t("welcome.steps.step_1.description") %></p>
+      <%= link_to t("welcome.steps.step_1.link"), "#" %>
+    </div>
+
+    <div class="small-12 medium-4 column step">
+      <%= image_tag("welcome/step_2.png", alt: "", class: "margin") %>
+      <span class="number"><%= t("welcome.steps.step_2.number") %></span>
+      <h3><%= t("welcome.steps.step_2.title") %></h3>
+      <p><%= t("welcome.steps.step_2.description") %></p>
+      <%= link_to t("welcome.steps.step_2.link"), "#" %>
+    </div>
+
+    <div class="small-12 medium-4 column step">
+      <%= image_tag("welcome/step_3.png", alt: "", class: "margin") %>
+      <span class="number"><%= t("welcome.steps.step_3.number") %></span>
+      <h3><%= t("welcome.steps.step_3.title") %></h3>
+      <p><%= t("welcome.steps.step_3.description") %></p>
+      <%= link_to t("welcome.steps.step_3.link"), "#" %>
+    </div>
+  </div>
+</div>
