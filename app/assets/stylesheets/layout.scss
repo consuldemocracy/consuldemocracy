@@ -2540,8 +2540,27 @@ table {
 // 22. Images
 // -----------------
 
-.images .button {
-  margin-top: $line-height / 2;
+.button {
+
+  &.upload-image {
+    @include has-fa-icon(image, solid);
+  }
+
+  &.upload-document {
+    @include has-fa-icon(file, solid);
+  }
+
+  &.upload-image,
+  &.upload-document {
+    font-weight: bold;
+    margin-bottom: $line-height * 1.5;
+
+    &::before {
+      $button-padding-left: nth($button-padding, 2);
+      margin-left: -$button-padding-left / 2;
+      margin-right: $button-padding-left / 2;
+    }
+  }
 }
 
 // 23. Maps
