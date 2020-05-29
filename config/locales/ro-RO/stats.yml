@@ -35,5 +35,7 @@ ro:
       participatory_disclaimer: "** Numărul total de participanți de referă la persoanele care au creat, au susținut sau au votat investițiile propuse."
       heading_disclaimer: "*** Datele despre rubrici se referă la rubrica în care a votat fiecare utilizator, nu neapărat cea pe care este înregistrată persoana respectivă."
     polls:
+      by_channel: "Participanți după canal"
+      vote_by_channel: "Tip vot pe canal"
       web_percentage: "%{percentage} Web"
       letter_percentage: "%{percentage} Email"
