@@ -27,6 +27,7 @@ ro:
     check: Verifică document
     dashboard:
       index:
+        title: Administrare
         info: Aici poți administra utilizatorii prin toate acțiunile listate în meniul din stânga.
     document_verifications:
       already_verified: Acest cont este deja verificat.
@@ -34,7 +35,13 @@ ro:
       in_census_has_following_permissions: "Acest utilizator poate participa pe site-ul web cu următoarele permisiuni:"
       not_in_census: Acest document nu este înregistrat.
       please_check_account_data: Vă rugăm să verificați dacă datele contului de mai sus sunt corecte.
+      verify: Verifică
+    email_label: Email
+    date_of_birth: Data nașterii
     email_verifications:
+      already_verified: Acest cont este deja verificat.
+      choose_options: "Vă rugăm alegeți una dintre următoarele opțiuni:"
+      email_placeholder: Scrieți emailul pe care această persoană l-a folosit pentru a-și crea contul
       introduce_email: "Vă rugăm introduceți adresa de email folosită la cont:"
       send_email: Trimite emailul de verificare
     menu:
@@ -43,6 +50,13 @@ ro:
       support_proposals: Sprijină propuneri
       create_budget_investment: Crează buget de investiții
       print_budget_investments: Printează buget de investiții
+      users: Administrarea utilizatorilor
+      user_invites: Trimite invitații
+      select_user: Selectează utilizator
+    permissions:
+      create_proposals: Crează propuneri
+      debates: Implicați-vă în dezbateri
+      support_proposals: Sprijină propuneri
     username_label: Nume de utilizator
     users:
       create_user: Crează cont nou
@@ -58,3 +72,9 @@ ro:
     user_invites:
       new:
         label: Emailuri
+        info: "Adăugați emailurile separate prin virgulă (',')"
+        submit: Trimite invitații
+        title: Trimite invitații
+      create:
+        success: <strong>%{count} invitații</strong> au fost trimise.
+        title: Trimite invitații
