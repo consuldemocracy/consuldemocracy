@@ -57,6 +57,27 @@ ro:
       create_proposals: Crează propuneri
       debates: Implicați-vă în dezbateri
       support_proposals: Sprijină propuneri
+      vote_proposals: Votează propuneri
+    print:
+      proposals_title: "Propuneri:"
+      budget_investments_info: Participă la http://url.consul
+    print_info: Printează această informație
+    proposals:
+      alert:
+        unverified_user: Utilizatorul nu este verificat
+      create_proposal: Crează propunere
+      print:
+        print_button: Imprimare
+      index:
+        title: Sprijină propuneri
+    budgets:
+      create_new_investment: Crează buget de investiții
+      print_investments: Imprimați investițiile bugetare
+      support_investments: Susțineți bugetul de investiții
+      table_name: Nume
+      table_phase: Etapă
+      table_actions: Acțiuni
+      no_budgets: Nu există bugete participative active.
     username_label: Nume de utilizator
     users:
       create_user: Crează cont nou
