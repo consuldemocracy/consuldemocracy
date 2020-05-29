@@ -4,7 +4,7 @@ gem "rails", "5.1.7"
 
 gem "acts-as-taggable-on", "~> 6.0.0"
 gem "acts_as_votable", "~> 0.11.1"
-gem "ahoy_matey", "~> 1.6.0"
+gem "ahoy_matey", "~> 3.0.3"
 gem "ancestry", "~> 3.0.7"
 gem "audited", "~> 4.9.0"
 gem "autoprefixer-rails", "~> 8.2.0"
