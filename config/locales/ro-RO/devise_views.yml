@@ -1,1 +1,7 @@
 ro:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Retrimite instrucțiuni
+        title: Retrimite instrucțiuni de confirmare
