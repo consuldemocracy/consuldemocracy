@@ -6,3 +6,20 @@ ro:
       poll_short_title: Sondaje
       poll_description: Descrierea sondajelor
       email_short_title: Email
+      email_description: Descrierea emailului
+      poster_short_title: Afiș
+      poster_description: Descrierea afișului
+    feature:
+      user:
+        recommendations: "Recomandări"
+    process:
+      debates: "Dezbateri"
+      proposals: "Propuneri"
+      polls: "Sondaje"
+      budgets: "Bugetare participativă"
+    uploads:
+      documents:
+        max_amount: "Numărul maxim de documente"
+        max_size: "Dimensiunea maximă a documentului"
+        max_size_description: "Dimensiunea maximă admisă pentru un document încărcat (în Megabytes / MB)"
+        content_types: "Tipuri de conținut acceptate pentru documente"
