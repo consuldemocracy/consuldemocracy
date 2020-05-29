@@ -1,5 +1,4 @@
 class Management::UsersController < Management::BaseController
-
   def new
     @user = User.new(user_params)
   end
@@ -13,11 +12,11 @@ class Management::UsersController < Management::BaseController
       user_with_email
     end
 
-    @user.terms_of_service = '1'
+    @user.terms_of_service = "1"
     @user.residence_verified_at = Time.current
     @user.verified_at = Time.current
 
-    if @user.save then
+    if @user.save
       render :show
     else
       render :new
@@ -25,14 +24,14 @@ class Management::UsersController < Management::BaseController
   end
 
   def erase
-    managed_user.erase(t("management.users.erased_by_manager", manager: current_manager['login'])) if current_manager.present?
+    managed_user.erase(t("management.users.erased_by_manager", manager: current_manager["login"])) if current_manager.present?
     destroy_session
     redirect_to management_document_verifications_path, notice: t("management.users.erased_notice")
   end
 
   def logout
     destroy_session
-    redirect_to management_root_url, notice: t("management.sessions.signed_out_managed_user")
+    redirect_to management_root_path, notice: t("management.sessions.signed_out_managed_user")
   end
 
   private
@@ -48,7 +47,7 @@ class Management::UsersController < Management::BaseController
     end
 
     def user_without_email
-      new_password = "aAbcdeEfghiJkmnpqrstuUvwxyz23456789$!".split('').sample(10).join('')
+      new_password = "aAbcdeEfghiJkmnpqrstuUvwxyz23456789$!".split("").sample(10).join("")
       @user.password = new_password
       @user.password_confirmation = new_password
 
@@ -66,5 +65,4 @@ class Management::UsersController < Management::BaseController
     def user_with_email
       @user.skip_password_validation = true
     end
-
 end

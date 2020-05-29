@@ -1,21 +1,17 @@
 require "rails_helper"
 
-feature "Valuation budgets" do
-
-  background do
-    @valuator = create(:valuator, user: create(:user, username: "Rachel", email: "rachel@valuators.org"))
-    login_as(@valuator.user)
+describe "Valuation budgets" do
+  before do
+    valuator = create(:valuator, user: create(:user, username: "Rachel", email: "rachel@valuators.org"))
+    login_as(valuator.user)
   end
 
   scenario "Disabled with a feature flag" do
-    Setting["feature.budgets"] = nil
-    expect{ visit valuation_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-
-    Setting["feature.budgets"] = true
+    Setting["process.budgets"] = nil
+    expect { visit valuation_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   context "Index" do
-
     scenario "Displaying budgets" do
       budget = create(:budget)
       visit valuation_budgets_path
@@ -41,5 +37,4 @@ feature "Valuation budgets" do
       expect(page).to have_content "There are no budgets"
     end
   end
-
 end

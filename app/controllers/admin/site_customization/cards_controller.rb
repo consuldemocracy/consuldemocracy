@@ -5,5 +5,4 @@ class Admin::SiteCustomization::CardsController < Admin::SiteCustomization::Base
     @page = ::SiteCustomization::Page.find(params[:page_id])
     @cards = @page.cards
   end
-
 end

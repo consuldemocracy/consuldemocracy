@@ -35,7 +35,7 @@ pl:
       currency: '€'
       groups:
         all_city: Całe miasto
-        districts: Dzielnice
+        districts: Podział dzielnicy
       valuator_groups:
         culture_and_sports: Kultura i sport
         gender_and_diversity: Polityki dotyczące Płci i Różnorodności

@@ -1,0 +1,15 @@
+<div id="participants_by_gender" class="stats-group">
+  <h4><%= t("stats.by_gender") %></h4>
+
+  <%= number_with_info_tags(
+    stats.total_male_participants,
+    t("stats.men_percentage", percentage: number_to_stats_percentage(stats.male_percentage)),
+    html_class: "participants male"
+  ) %>
+
+  <%= number_with_info_tags(
+    stats.total_female_participants,
+    t("stats.women_percentage", percentage: number_to_stats_percentage(stats.female_percentage)),
+    html_class: "participants female"
+  ) %>
+</div>

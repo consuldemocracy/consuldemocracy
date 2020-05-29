@@ -1,5 +1,4 @@
 class Admin::Poll::ShiftsController < Admin::Poll::BaseController
-
   before_action :load_booth
   before_action :load_officer
 
@@ -30,14 +29,14 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
       alert = t("admin.poll_shifts.flash.unable_to_destroy")
       redirect_to new_admin_booth_shift_path(@booth), alert: alert
     else
-      @shift.destroy
+      @shift.destroy!
       notice = t("admin.poll_shifts.flash.destroy")
       redirect_to new_admin_booth_shift_path(@booth), notice: notice
     end
   end
 
   def search_officers
-    @officers = User.search(params[:search]).order(username: :asc).select { |o| o.poll_officer? }
+    @officers = User.search(params[:search]).order(username: :asc).select(&:poll_officer?)
   end
 
   private

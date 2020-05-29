@@ -1,0 +1,55 @@
+<% content_for :action_title, t("dashboard.menu.community") %>
+
+<div class="row expanded dashboard-community">
+  <div class="small-12 medium-9 column">
+    <%= link_to t("dashboard.community.access_community"),
+                community_path(proposal.community),
+                class: "button hollow",
+                target: "_blank" %>
+    <% if proposal.community.latest_activity.present? %>
+      <p class="help-text">
+        <%= t("dashboard.community.latest_activity",
+            at: l(proposal.community.latest_activity.to_date)) %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="small-12 medium-1 column community-totals">
+    <span class="icon-organizations"></span>
+    <span class="community-number">
+      <%= number_with_delimiter(proposal.community.participants_count, delimiter: ".") %>
+    </span>
+    <p class="community-info">
+      <%= t("dashboard.community.participants") %>
+    </p>
+  </div>
+
+  <div class="small-12 large-1 column community-totals">
+    <span class="icon-debates"></span>
+    <span class="community-number">
+      <%= number_with_delimiter(proposal.community.debates_count, delimiter: ".") %>
+    </span>
+    <p class="community-info">
+      <%= t("dashboard.community.debates") %>
+    </p>
+  </div>
+
+  <div class="small-12 large-1 column community-totals">
+    <span class="icon-comments"></span>
+    <span class="community-number">
+      <%= number_with_delimiter(proposal.community.comments_count, delimiter: ".") %>
+    </span>
+    <p class="community-info">
+      <%= t("dashboard.community.comments") %>
+    </p>
+  </div>
+</div>
+
+<% if proposal.community.comments.any? %>
+  <h4 class="title"><%= t("dashboard.community.latest_comments") %></h5>
+
+  <ul class="topic-show">
+    <%= render partial: "comment",
+               collection: proposal.community.comments.sort_by_newest.limit(5) %>
+  </ul>
+<% end %>

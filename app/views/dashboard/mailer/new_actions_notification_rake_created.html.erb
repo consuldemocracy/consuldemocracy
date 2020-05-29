@@ -1,0 +1,73 @@
+<td style="padding-bottom: 20px;padding-left: 10px;font-size: 14px;font-weight: normal;
+           font-family:'Open Sans',arial,sans-serif;line-height: 24px; text-align: justify;">
+
+  <p><%= t("mailers.new_actions_notification_rake_created.hi", name: @proposal.author.name) %></p>
+
+  <p>
+    <%= t("mailers.new_actions_notification_rake_created.introduction",
+           created_at_day: @proposal.created_at.day,
+           created_at_month: @proposal.created_at.strftime("%B"),
+           title: @proposal.title) %>
+  </p>
+  <p>
+    <%= sanitize(t("mailers.new_actions_notification_rake_created.text_1",
+           link_to_published: link_to(proposal_dashboard_url(@proposal),
+                                      proposal_dashboard_url(@proposal)))) %>
+  </p>
+  <p><%= t("mailers.new_actions_notification_rake_created.text_2") %></p>
+  <br>
+  <p><%= t("mailers.new_actions_notification_rake_created.text_3") %></p>
+
+  <br>
+
+  <% first_resource = @new_actions.resources.first %>
+  <% if first_resource.present? %>
+    <strong><%= t("mailers.new_actions_notification_rake_created.new_resource") %></strong>
+    <ul>
+      <li><%= first_resource.title %></li>
+    </ul>
+    <br>
+  <% end %>
+
+  <% first_proposed_action = @new_actions.proposed_actions.first %>
+  <% if first_proposed_action.present? %>
+    <p><%= t("mailers.new_actions_notification_rake_created.text_4") %></p>
+    <ul>
+      <li><%= first_proposed_action.title %></li>
+      <% if first_proposed_action.description.present? %>
+        <p><%= wysiwyg(first_proposed_action.description) %></p>
+      <% end %>
+    </ul>
+    <br>
+  <% end %>
+
+  <% if @new_actions.proposed_actions.count > 1 %>
+    <% second_proposed_action = @new_actions.proposed_actions.second %>
+    <p><%= t("mailers.new_actions_notification_rake_created.text_5") %></p>
+    <ul>
+      <li><%= second_proposed_action.title %></li>
+    </ul>
+    <br>
+  <% end %>
+
+  <p><%= t("mailers.new_actions_notification_rake_created.footer_text") %></p>
+
+  <br>
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="padding-bottom: 12px; padding-top: 24px; text-align: center;">
+          <%= link_to proposal_dashboard_url(@proposal),
+                      style: "font-family: 'Open Sans',arial,sans-serif; background: #3700fd;
+                      border-radius: 6px; color: #fff !important; font-weight: bold;
+                      padding: 17px 20px; text-align: center; text-decoration: none;
+                      font-size: 20px; min-width: 200px; display: inline-block;",
+                      target: "_blank" do %>
+            <%= t("mailers.new_actions_notification_rake_created.dashboard_button") %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</td>

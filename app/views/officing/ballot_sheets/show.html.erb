@@ -1,0 +1,14 @@
+<h2 class="inline-block"><%= t("officing.poll_budgets.index.ballot_sheet", id: @ballot_sheet.id) %></h2>
+
+<div class="callout secondary float-right">
+  <%= t("officing.poll_budgets.show.created_at") %>
+  <strong><%= l(@ballot_sheet.created_at, format: :long) %></strong>
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <%= t("officing.poll_budgets.show.author") %>
+  <strong><%= @ballot_sheet.author %></strong>
+</div>
+
+<div class="callout margin-top">
+  <p><strong><%= t("officing.poll_budgets.show.data") %></strong></p>
+  <%= simple_format @ballot_sheet.data %>
+</div>

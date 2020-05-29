@@ -12,9 +12,6 @@ fi:
       hi: Hei
       subject: Joku on vastannut kommenttiisi
       title: Uusi vastaus kommenttiisi
-    unfeasible_spending_proposal:
-      hi: "Hyvä käyttäjä,"
-      sincerely: "Kunnioittaen"
     proposal_notification_digest:
       share: Jaa ehdotus
       comment: Kommentoi ehdotusta
@@ -24,7 +21,6 @@ fi:
     user_invite:
       thanks: "Kiitoksia paljon."
     budget_investment_created:
-      intro_html: "Hei <strong>%{author}</strong>,"
       sincerely: "Kunnioittaen,"
       share: "Jaa projektisi"
     budget_investment_unfeasible:
@@ -36,3 +32,5 @@ fi:
     budget_investment_unselected:
       hi: "Hyvä käyttäjä,"
       sincerely: "Kunnioittaen"
+    evaluation_comment:
+      hi: Hei

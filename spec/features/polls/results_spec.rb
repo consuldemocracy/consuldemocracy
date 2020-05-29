@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Poll Results" do
+describe "Poll Results" do
   scenario "List each Poll question", :js do
     user1 = create(:user, :level_two)
     user2 = create(:user, :level_two)
@@ -34,7 +34,7 @@ feature "Poll Results" do
     expect(Poll::Voter.count).to eq(3)
     logout
 
-    poll.update(ends_at: 1.day.ago)
+    poll.update!(ends_at: 1.day.ago)
 
     visit results_poll_path(poll)
 
@@ -51,5 +51,14 @@ feature "Poll Results" do
       expect(find("#answer_#{answer4.id}_result")).to have_content("1 (33.33%)")
       expect(find("#answer_#{answer5.id}_result")).to have_content("1 (33.33%)")
     end
+  end
+
+  scenario "Results for polls with questions but without answers" do
+    poll = create(:poll, :expired, results_enabled: true)
+    question = create(:poll_question, poll: poll)
+
+    visit results_poll_path(poll)
+
+    expect(page).to have_content question.title
   end
 end

@@ -18,7 +18,7 @@ de:
         title: "Diskussionen"
         description: "Im %{link}-Abschnitt können Sie Ihre Meinung zu Anliegen in Ihrer Stadt äußern und mit anderen Menschen teilen. Zudem ist es ein Bereich, in dem Ideen generiert werden können, die durch andere Abschnitte der %{org} zu Handlungen des Stadtrates führen."
         link: "Bürger-Debatten"
-        feature_html: "Sie können Diskussionen eröffnen, kommentieren und mit <strong> Ich stimme zu</strong> oder <strong>Ich stimme nicht zu</strong> bewerten. Hierfür müssen Sie %{link}."
+        feature: "Sie können Diskussionen eröffnen, kommentieren und mit <strong> Ich stimme zu</strong> oder <strong>Ich stimme nicht zu</strong> bewerten. Hierfür müssen Sie %{link}."
         feature_link: "registrieren für %{org}"
         image_alt: "Button, um die Diskussionen zu bewerten"
         figcaption: '"Ich stimme zu" und "Ich stimme nicht zu" Buttons, um die Diskussion zu bewerten.'
@@ -27,13 +27,13 @@ de:
         description: "Im %{link}-Abschnitt können Sie Anträge an den Stadtrat stellen. Die Anträge brauchen dann Unterstützung. Wenn Ihr Antrag ausreichend Unterstützung bekommt, wird er zur öffentlichen Wahl freigegeben. Anträge, die durch Bürgerstimmen bestätigt wurden, werden vom Stadtrat angenommen und umgesetzt."
         link: "Bürgervorschläge"
         image_alt: "Klicken Sie hier um den Vorschlag zu unterstützen"
-        figcaption_html: 'Button zur "Unterstützung" eines Vorschlags.'
+        figcaption: 'Button zur "Unterstützung" eines Vorschlags.'
       budgets:
         title: "partizipative Haushaltsmittel"
         description: "Der %{link}-Abschnitt hilft Personen eine direkte Entscheidung zu treffen, für was das kommunale Budget ausgegeben werden soll."
         link: "Bürgerhaushalte"
         image_alt: "Verschiedene Phasen eines partizipativen Haushalts"
-        figcaption_html: '"Unterstützungs-" und "Abstimmungs-"Phasen des partizipativen Haushaltes.'
+        figcaption: '"Unterstützungs-" und "Abstimmungs-"Phasen des Bürgerhaushalts.'
       polls:
         title: "Umfragen"
         description: "Der %{link}-Abschnitt wird aktiviert, wann immer ein Antrag 1% an Unterstützung erreicht und zur Abstimmung übergeht, oder wenn der Stadtrat ein Problem zur Abstimmung vorlegt."
@@ -51,8 +51,6 @@ de:
         page:
           title: "Häufig gestellte Fragen"
           description: "Benutzen Sie diese Seite um die gemeinsamen FAQs für die Benutzer der Website zu beheben."
-          faq_1_title: "Frage 1"
-          faq_1_description: "Dies ist ein Beispiel für die Beschreibung der Frage eins."
       other:
         title: "Weitere interessante Informationen"
         how_to_use: "Verwenden Sie %{org_name} in Ihrer Stadt"
@@ -67,25 +65,7 @@ de:
         how_to_use: Verwenden Sie es in Ihrer Kommunalverwaltung
     privacy:
       title: Datenschutzbestimmungen
-      subtitle: INFORMATION ZU DEN DATENSCHUTZBESTIMMUNGEN
-      info_items:
-        - 
-          text: Die Navigation durch die Informationen auf dem Open Government Portal ist anonym.
-        - 
-          text: Um die im Open Government Portal angebotenen Dienste nutzen zu können, muss sich der/die Benutzer*in registrieren und persönliche Daten bereitstellen.
-        - 
-          text: 'Die bereitgestellten Daten werden von der lokalen Stadtverwaltung aufgenommen und verarbeitet. Dies folgt in Übereinstimmung mit den Bedingungen in der folgenden Datei:'
-        - 
-          subitems:
-            - 
-              field: 'Dateiname:'
-              description: NAME DER DATEI
-            - 
-              field: 'Verwendung der Datei:'
-              description: Steuert Beteiligungsverfahren, um die Qualifikation der an ihnen beteiligten Personen sowie numerische und statistische Nachzählungen der Ergebnisse von Bürgerbeteiligungsprozessen zu kontrollieren.
-            - 
-              field: 'Für die Datei verantwortliche Institution:'
-              description: FÜR DIE DATEI VERANTWORTLICHE INSTITUTION
+      subtitle: "INFORMATION ZU DEN DATENSCHUTZBESTIMMUNGEN"
     accessibility:
       title: Zugänglichkeit
       description: |-
@@ -124,7 +104,7 @@ de:
               key_column: 5
               page_column: Gesetzgebungsverfahren
         browser_table:
-          description: 'Abhängig vom Betriebssystem und dem verwendeten Browser lautet die Tastenkombination wie folgt:'
+          description: "Abhängig vom Betriebssystem und dem verwendeten Browser lautet die Tastenkombination wie folgt:"
           caption: Tastenkombination je nach Betriebssystem und Browser
           browser_header: Browser
           key_header: Tastenkombination
@@ -147,28 +127,41 @@ de:
       textsize:
         title: Textgröße
         browser_settings_table:
+          description: Das barrierefreie Design dieser Website ermöglicht es dem Nutzer, die Größe des Textes nach Bedarf zu wählen. Diese Aktion kann je nach verwendetem Browser auf unterschiedliche Weise durchgeführt werden.
           browser_header: Browser
+          action_header: Aktion die gemacht werden muss
           rows:
             - 
               browser_column: Internet Explorer
+              action_column: Anzeige > Textgröße
             - 
               browser_column: Firefox
+              action_column: Anzeige > Größe
             - 
               browser_column: Chrome
+              action_column: Einstellungen (Symbol) > Optionen > Fortschritt > Web Inhalt > Text Größe
             - 
               browser_column: Safari
+              action_column: Anzeige > Vergrößern / Verkleinern
             - 
               browser_column: Opera
+              action_column: Anzeige > Skala
+        browser_shortcuts_table:
+          description: "Eine weitere Möglichkeit, die Textgröße zu ändern, besteht darin, die in Browsern definierten Tastenkombinationen zu verwenden, insbesondere die Tastenkombination:"
+          rows:
+            - 
+              shortcut_column: CTRL und + (CMD und + on MAC)
+              description_column: Erhöhen sie die Textgröße
+            - 
+              shortcut_column: CTRL und - (CMD und - on MAC)
+              description_column: Verringern sie die Textgröße
+      compatibility:
+        title: Kompatibilität mit Standards und visueller Gestaltung
+        description: 'Alle Seiten dieser Website entsprechen den <strong>Accessibility Guidelines</strong> oder den General Principles of Accessible Design der Arbeitsgruppe <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> des W3C.'
     titles:
-      accessibility: Zugänglichkeit
-      conditions: Nutzungsbedingungen
       help: "Was ist %{org}? -Bürgerbeteiligung"
-      privacy: Datenschutzbestimmungen
     verify:
-      code: Code, den Sie per Brief/SMS erhalten haben
-      email: E-Mail
-      info: 'Um Ihr Konto zu verifizieren, geben Sie bitte Ihre Zugangsdaten ein:'
-      info_code: 'Bitte geben Sie nun Ihren Code, den Sie per Post/SMS erhalten haben ein:'
-      password: Passwort
+      info: "Um Ihr Konto zu verifizieren, geben Sie bitte Ihre Zugangsdaten ein:"
+      info_code: "Bitte geben Sie nun Ihren Code, den Sie per Post/SMS erhalten haben ein:"
       submit: Mein Konto verifizieren
       title: Verifizieren Sie Ihr Benutzerkonto

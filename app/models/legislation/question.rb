@@ -1,4 +1,4 @@
-class Legislation::Question < ActiveRecord::Base
+class Legislation::Question < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   include Notifiable
@@ -6,20 +6,20 @@ class Legislation::Question < ActiveRecord::Base
   translates :title, touch: true
   include Globalizable
 
-  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :legislation_questions
+  belongs_to :process, foreign_key: "legislation_process_id", inverse_of: :questions
 
-  has_many :question_options, -> { order(:id) }, class_name: 'Legislation::QuestionOption', foreign_key: 'legislation_question_id',
+  has_many :question_options, -> { order(:id) }, class_name: "Legislation::QuestionOption", foreign_key: "legislation_question_id",
                                                  dependent: :destroy, inverse_of: :question
-  has_many :answers, class_name: 'Legislation::Answer', foreign_key: 'legislation_question_id', dependent: :destroy, inverse_of: :question
-  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :answers, class_name: "Legislation::Answer", foreign_key: "legislation_question_id", dependent: :destroy, inverse_of: :question
+  has_many :comments, as: :commentable, inverse_of: :commentable, dependent: :destroy
 
   accepts_nested_attributes_for :question_options, reject_if: proc { |attributes| attributes.all? { |k, v| v.blank? } }, allow_destroy: true
 
   validates :process, presence: true
   validates_translation :title, presence: true
 
-  scope :sorted, -> { order('id ASC') }
+  scope :sorted, -> { order("id ASC") }
 
   def next_question_id
     @next_question_id ||= process.questions.where("id > ?", id).sorted.limit(1).pluck(:id).first
@@ -30,7 +30,7 @@ class Legislation::Question < ActiveRecord::Base
   end
 
   def answer_for_user(user)
-    answers.where(user: user).first
+    answers.find_by(user: user)
   end
 
   def comments_for_verified_residents_only?

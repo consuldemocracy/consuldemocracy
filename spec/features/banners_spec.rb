@@ -1,7 +1,6 @@
 require "rails_helper"
 
-feature "Banner" do
-
+describe "Banner" do
   scenario "The banner is shown correctly" do
     create(:web_section, name: "homepage")
     banner = create(:banner, title: "Hello",
@@ -18,8 +17,8 @@ feature "Banner" do
 
     within(".banner") do
       expect(page).to have_content("Banner description")
-      expect(find("h2")[:style]).to eq("color:#{banner.font_color}")
-      expect(find("h3")[:style]).to eq("color:#{banner.font_color}")
+      expect(find("h2")[:style]).to eq("color:#{banner.font_color};")
+      expect(find("h3")[:style]).to eq("color:#{banner.font_color};")
     end
 
     visit debates_path

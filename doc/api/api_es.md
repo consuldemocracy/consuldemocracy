@@ -134,7 +134,7 @@ La lista de modelos es la siguiente:
 | `Comment`               | Comentarios en debates, propuestas y otros comentarios |
 | `Geozone`               | Geozonas (distritos)         |
 | `ProposalNotification`  | Notificaciones asociadas a propuestas |
-| `ActsAsTaggableOn::Tag` | Tags en debates y propuestas |
+| `Tag`                   | Tags en debates y propuestas |
 | `Vote`                  | Información sobre votos      |
 
 ## Ejemplos de consultas

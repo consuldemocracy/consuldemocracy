@@ -1,15 +1,13 @@
 require "rails_helper"
 
-feature "Stats" do
-
-  background do
+describe "Stats" do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
     visit root_path
   end
 
   context "Summary" do
-
     scenario "General" do
       create(:debate)
       2.times { create(:proposal) }
@@ -25,14 +23,9 @@ feature "Stats" do
     end
 
     scenario "Votes" do
-      debate = create(:debate)
-      create(:vote, votable: debate)
-
-      proposal = create(:proposal)
-      2.times { create(:vote, votable: proposal) }
-
-      comment = create(:comment)
-      3.times { create(:vote, votable: comment) }
+      create(:debate,   voters: Array.new(1) { create(:user) })
+      create(:proposal, voters: Array.new(2) { create(:user) })
+      create(:comment,  voters: Array.new(3) { create(:user) })
 
       visit admin_stats_path
 
@@ -41,11 +34,9 @@ feature "Stats" do
       expect(page).to have_content "Comment votes 3"
       expect(page).to have_content "Total votes 6"
     end
-
   end
 
   context "Users" do
-
     scenario "Summary" do
       1.times { create(:user, :level_three) }
       2.times { create(:user, :level_two) }
@@ -75,9 +66,9 @@ feature "Stats" do
     end
 
     scenario "Do not count hidden users" do
-      1.times { create(:user, :level_three, hidden_at: Time.current) }
-      2.times { create(:user, :level_two, hidden_at: Time.current) }
-      3.times { create(:user, hidden_at: Time.current) }
+      1.times { create(:user, :hidden, :level_three) }
+      2.times { create(:user, :hidden, :level_two) }
+      3.times { create(:user, :hidden) }
 
       visit admin_stats_path
 
@@ -97,13 +88,158 @@ feature "Stats" do
 
       visit admin_stats_path
 
-      expect(page).to have_content "Level 2 User (1)"
+      expect(page).to have_content "Level two users 1"
+    end
+  end
+
+  describe "Budget investments" do
+    context "Supporting phase" do
+      let(:budget) { create(:budget) }
+      let(:group_all_city) { create(:budget_group, budget: budget) }
+      let!(:heading_all_city) { create(:budget_heading, group: group_all_city) }
+
+      scenario "Number of supports in investment projects" do
+        group_2 = create(:budget_group, budget: budget)
+
+        create(:budget_investment, heading: create(:budget_heading, group: group_2), voters: [create(:user)])
+        create(:budget_investment, heading: heading_all_city, voters: [create(:user), create(:user)])
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Supporting phase"
+        end
+
+        expect(page).to have_content "Votes 3"
+      end
+
+      scenario "Number of users that have supported an investment project" do
+        group_2 = create(:budget_group, budget: budget)
+        investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
+        investment2 = create(:budget_investment, heading: heading_all_city)
+
+        create(:user, :level_two, votables: [investment1, investment2])
+        create(:user, :level_two, votables: [investment1])
+        create(:user, :level_two)
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Supporting phase"
+        end
+
+        expect(page).to have_content "Participants 2"
+      end
+
+      scenario "Number of users that have supported investments projects per geozone" do
+        budget = create(:budget)
+
+        group_all_city  = create(:budget_group, budget: budget)
+        group_districts = create(:budget_group, budget: budget)
+
+        all_city    = create(:budget_heading, group: group_all_city)
+        carabanchel = create(:budget_heading, group: group_districts)
+        barajas     = create(:budget_heading, group: group_districts)
+
+        create(:budget_investment, heading: all_city, voters: [create(:user)])
+        create(:budget_investment, heading: carabanchel, voters: [create(:user)])
+        create(:budget_investment, heading: carabanchel, voters: [create(:user)])
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Supporting phase"
+        end
+
+        within("#budget_heading_#{all_city.id}") do
+          expect(page).to have_content all_city.name
+          expect(page).to have_content 1
+        end
+
+        within("#budget_heading_#{carabanchel.id}") do
+          expect(page).to have_content carabanchel.name
+          expect(page).to have_content 2
+        end
+
+        within("#budget_heading_#{barajas.id}") do
+          expect(page).to have_content barajas.name
+          expect(page).to have_content 0
+        end
+      end
+
+      scenario "hide final voting link" do
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+
+        within("#budget_#{budget.id}") do
+          expect(page).not_to have_link "Final voting"
+        end
+      end
+
+      scenario "show message when accessing final voting stats" do
+        visit budget_balloting_admin_stats_path(budget_id: budget.id)
+
+        expect(page).to have_content "There isn't any data to show before the balloting phase."
+      end
     end
 
+    context "Balloting phase" do
+      let(:budget) { create(:budget, :balloting) }
+      let(:group) { create(:budget_group, budget: budget) }
+      let(:heading) { create(:budget_heading, group: group) }
+      let!(:investment) { create(:budget_investment, :feasible, :selected, heading: heading) }
+
+      scenario "Number of votes in investment projects" do
+        investment_2 = create(:budget_investment, :feasible, :selected, budget: budget)
+
+        create(:user, ballot_lines: [investment, investment_2])
+        create(:user, ballot_lines: [investment_2])
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Final voting"
+        end
+
+        expect(page).to have_content "Votes 3"
+      end
+
+      scenario "Number of users that have voted a investment project" do
+        create(:user, ballot_lines: [investment])
+        create(:user, ballot_lines: [investment])
+        create(:user)
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Final voting"
+        end
+
+        expect(page).to have_content "Participants 2"
+      end
+    end
+  end
+
+  context "graphs" do
+    scenario "event graphs", :js do
+      campaign = create(:campaign)
+
+      visit root_path(track_id: campaign.track_id)
+      visit admin_stats_path
+
+      within("#stats") do
+        click_link campaign.name
+      end
+
+      expect(page).to have_content "#{campaign.name} (1)"
+      within("#graph") do
+        event_created_at = Ahoy::Event.find_by(name: campaign.name).time
+        expect(page).to have_content event_created_at.strftime("%Y-%m-%d")
+      end
+    end
   end
 
   context "Proposal notifications" do
-
     scenario "Summary stats" do
       proposal = create(:proposal)
 
@@ -139,7 +275,7 @@ feature "Stats" do
 
     scenario "Deleted proposals" do
       proposal_notification = create(:proposal_notification)
-      proposal_notification.proposal.destroy
+      proposal_notification.proposal.destroy!
 
       visit admin_stats_path
       click_link "Proposal notifications"
@@ -150,11 +286,9 @@ feature "Stats" do
       expect(page).to have_content proposal_notification.body
       expect(page).to have_content "Proposal not available"
     end
-
   end
 
   context "Direct messages" do
-
     scenario "Summary stats" do
       sender = create(:user, :level_two)
 
@@ -173,13 +307,11 @@ feature "Stats" do
         expect(page).to have_content "2"
       end
     end
-
   end
 
   context "Polls" do
-
     scenario "Total participants by origin" do
-      oa = create(:poll_officer_assignment)
+      create(:poll_officer_assignment)
       3.times { create(:poll_voter, origin: "web") }
 
       visit admin_stats_path
@@ -210,8 +342,6 @@ feature "Stats" do
     end
 
     scenario "Participants by poll" do
-      oa = create(:poll_officer_assignment)
-
       poll1 = create(:poll)
       poll2 = create(:poll)
 
@@ -225,7 +355,6 @@ feature "Stats" do
       end
 
       within("#polls") do
-
         within("#poll_#{poll1.id}") do
           expect(page).to have_content "1"
         end
@@ -233,7 +362,6 @@ feature "Stats" do
         within("#poll_#{poll2.id}") do
           expect(page).to have_content "2"
         end
-
       end
     end
 
@@ -243,8 +371,8 @@ feature "Stats" do
 
       poll = create(:poll)
 
-      question1 = create(:poll_question, :with_answers, poll: poll)
-      question2 = create(:poll_question, :with_answers, poll: poll)
+      question1 = create(:poll_question, :yes_no, poll: poll)
+      question2 = create(:poll_question, :yes_no, poll: poll)
 
       create(:poll_answer, question: question1, author: user1)
       create(:poll_answer, question: question2, author: user1)
@@ -268,7 +396,5 @@ feature "Stats" do
         expect(page).to have_content "2"
       end
     end
-
   end
-
 end

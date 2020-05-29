@@ -1,22 +1,19 @@
 require "rails_helper"
 
-feature "Votes" do
-
-  feature "Investments" do
+describe "Votes" do
+  describe "Investments" do
     let(:manuela) { create(:user, verified_at: Time.current) }
-    let(:budget)  { create(:budget, phase: "selecting") }
+    let(:budget)  { create(:budget, :selecting) }
     let(:group)   { create(:budget_group, budget: budget) }
     let(:heading) { create(:budget_heading, group: group) }
 
-    background { login_as(manuela) }
+    before { login_as(manuela) }
 
-    feature "Index" do
-
+    describe "Index" do
       scenario "Index shows user votes on proposals" do
-        investment1 = create(:budget_investment, heading: heading)
+        investment1 = create(:budget_investment, heading: heading, voters: [manuela])
         investment2 = create(:budget_investment, heading: heading)
         investment3 = create(:budget_investment, heading: heading)
-        create(:vote, voter: manuela, votable: investment1, vote_flag: true)
 
         visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -38,8 +35,8 @@ feature "Votes" do
         end
       end
 
-      scenario "Create from spending proposal index", :js do
-        create(:budget_investment, heading: heading, budget: budget)
+      scenario "Create from investments' index", :js do
+        create(:budget_investment, heading: heading)
 
         visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -53,8 +50,8 @@ feature "Votes" do
       end
     end
 
-    feature "Single spending proposal" do
-      let(:investment) { create(:budget_investment, budget: budget, heading: heading)}
+    describe "Single investment" do
+      let(:investment) { create(:budget_investment, heading: heading) }
 
       scenario "Show no votes" do
         visit budget_investment_path(budget, investment)
@@ -72,7 +69,7 @@ feature "Votes" do
         end
       end
 
-      scenario "Create from proposal show", :js do
+      scenario "Create from investment show", :js do
         visit budget_investment_path(budget, investment)
 
         within(".supports") do
@@ -85,13 +82,12 @@ feature "Votes" do
       end
     end
 
-    scenario "Disable voting on spending proposals", :js do
+    scenario "Disable voting on investments", :js do
+      budget.update!(phase: "reviewing")
+      investment = create(:budget_investment, heading: heading)
+
       manuela = create(:user, verified_at: Time.current)
-
       login_as(manuela)
-
-      budget.update(phase: "reviewing")
-      investment = create(:budget_investment, budget: budget, heading: heading)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -107,7 +103,6 @@ feature "Votes" do
     end
 
     context "Voting in multiple headings of a single group" do
-
       let(:new_york) { heading }
       let(:san_francisco) { create(:budget_heading, group: group) }
       let(:third_heading) { create(:budget_heading, group: group) }
@@ -116,7 +111,7 @@ feature "Votes" do
       let!(:san_francisco_investment) { create(:budget_investment, heading: san_francisco) }
       let!(:third_heading_investment) { create(:budget_investment, heading: third_heading) }
 
-      background do
+      before do
         group.update(max_votable_headings: 2)
       end
 
@@ -191,6 +186,12 @@ feature "Votes" do
                                          "Share it!"
       end
 
+      scenario "Confirm message shows the right text", :js do
+        visit budget_investments_path(budget, heading_id: new_york.id)
+        find(".in-favor a").click
+
+        expect(page.driver.send(:find_modal).text).to match "You can only support investments in 2 districts."
+      end
     end
   end
 end

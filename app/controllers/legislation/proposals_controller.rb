@@ -13,8 +13,8 @@ class Legislation::ProposalsController < Legislation::BaseController
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
-  has_orders %w{confidence_score created_at}, only: :index
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w[confidence_score created_at], only: :index
+  has_orders %w[most_voted newest oldest], only: :show
 
   helper_method :resource_model, :resource_name
   respond_to :html, :js
@@ -33,7 +33,7 @@ class Legislation::ProposalsController < Legislation::BaseController
     @proposal = Legislation::Proposal.new(proposal_params.merge(author: current_user))
 
     if @proposal.save
-      redirect_to legislation_process_proposal_path(params[:process_id], @proposal), notice: I18n.t('flash.actions.create.proposal')
+      redirect_to legislation_process_proposal_path(params[:process_id], @proposal), notice: I18n.t("flash.actions.create.proposal")
     else
       render :new
     end
@@ -53,7 +53,7 @@ class Legislation::ProposalsController < Legislation::BaseController
 
     def proposal_params
       params.require(:legislation_proposal).permit(:legislation_process_id, :title,
-                    :question, :summary, :description, :video_url, :tag_list,
+                    :summary, :description, :video_url, :tag_list,
                     :terms_of_service, :geozone_id,
                     image_attributes: image_attributes,
                     documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])
@@ -64,11 +64,10 @@ class Legislation::ProposalsController < Legislation::BaseController
     end
 
     def resource_name
-      'proposal'
+      "proposal"
     end
 
     def load_successful_proposals
       @proposal_successful_exists = Legislation::Proposal.successful.exists?
     end
-
 end

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin" do
+describe "Admin" do
   let(:user) { create(:user) }
   let(:administrator) do
     create(:administrator, user: user)
@@ -47,8 +47,7 @@ feature "Admin" do
   end
 
   scenario "Access as poll officer is not authorized" do
-    create(:poll_officer, user: user)
-    login_as(user)
+    login_as(create(:poll_officer).user)
     visit admin_root_path
 
     expect(page).not_to have_current_path(admin_root_path)
@@ -65,8 +64,6 @@ feature "Admin" do
   end
 
   scenario "Admin access links" do
-    Setting["feature.spending_proposals"] = true
-
     login_as(administrator)
     visit root_path
 
@@ -74,8 +71,6 @@ feature "Admin" do
     expect(page).to have_link("Moderation")
     expect(page).to have_link("Valuation")
     expect(page).to have_link("Management")
-
-    Setting["feature.spending_proposals"] = nil
   end
 
   scenario "Admin dashboard" do
@@ -90,4 +85,16 @@ feature "Admin" do
     expect(page).not_to have_css("#valuation_menu")
   end
 
+  scenario "Admin menu does not hide active elements", :js do
+    login_as(administrator)
+    visit admin_budgets_path
+
+    within("#admin_menu") do
+      expect(page).to have_link "Participatory budgets"
+
+      click_link "Site content"
+
+      expect(page).to have_link "Participatory budgets"
+    end
+  end
 end

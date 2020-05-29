@@ -11,22 +11,6 @@ module LegislationHelper
     t("proposals.index.start_proposal")
   end
 
-  def link_to_toggle_legislation_proposal_selection(proposal)
-    if proposal.selected?
-      button_text = t("admin.legislation.proposals.index.selected")
-      html_class = 'button expanded'
-    else
-      button_text = t("admin.legislation.proposals.index.select")
-      html_class = 'button hollow expanded'
-    end
-
-    link_to button_text,
-      toggle_selection_admin_legislation_process_proposal_path(proposal.process, proposal),
-      remote: true,
-      method: :patch,
-      class:  html_class
-  end
-
   def legislation_process_tabs(process)
     {
       "info"           => edit_admin_legislation_process_path(process),
@@ -51,11 +35,11 @@ module LegislationHelper
   end
 
   def bg_color_or_default
-    @process.background_color.present? ? @process.background_color : default_bg_color
+    @process.background_color.presence || default_bg_color
   end
 
   def font_color_or_default
-    @process.font_color.present? ? @process.font_color : default_font_color
+    @process.font_color.presence || default_font_color
   end
 
   def css_for_process_header
@@ -63,5 +47,4 @@ module LegislationHelper
       "background: #{@process.background_color};color: #{@process.font_color};"
     end
   end
-
 end

@@ -1,13 +1,11 @@
 require "rails_helper"
 
-feature "Managed User" do
-
-  background do
+describe "Managed User" do
+  before do
     login_as_manager
   end
 
   context "Currently managed user" do
-
     scenario "No managed user" do
       visit management_document_verifications_path
       expect(page).not_to have_css ".account-info"
@@ -161,5 +159,4 @@ feature "Managed User" do
     expect(page).not_to have_content user.username.to_s
     expect(page).to have_current_path(management_root_path)
   end
-
 end

@@ -124,7 +124,7 @@ fr:
         other: est la longueur incorrecte (devrait être %{count} caractères)
       other_than: doit être différent de %{count}
     template:
-      body: 'Des problèmes ont été trouvés avec les champs suivants :'
+      body: "Des problèmes ont été trouvés avec les champs suivants :"
       header:
         one: Impossible d'enregistrer ce/cette %{model} car 1 erreur a été trouvée
         other: "Impossible d'enregistrer ce/cette %{model} car %{count} erreurs ont été trouvées"

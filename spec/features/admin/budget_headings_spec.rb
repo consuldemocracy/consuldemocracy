@@ -1,28 +1,17 @@
 require "rails_helper"
 
-feature "Admin budget headings" do
-
-  let(:budget) { create(:budget, phase: "drafting") }
+describe "Admin budget headings" do
+  let(:budget) { create(:budget, :drafting) }
   let(:group) { create(:budget_group, budget: budget) }
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  it_behaves_like "translatable",
-                  "budget_heading",
-                  "edit_admin_budget_group_heading_path",
-                  %w[name]
-
   context "Feature flag" do
-
-    background do
-      Setting["feature.budgets"] = nil
-    end
-
-    after do
-      Setting["feature.budgets"] = true
+    before do
+      Setting["process.budgets"] = nil
     end
 
     scenario "Disabled with a feature flag" do
@@ -30,11 +19,58 @@ feature "Admin budget headings" do
         visit admin_budget_group_headings_path(budget, group)
       end.to raise_exception(FeatureFlags::FeatureDisabled)
     end
+  end
 
+  context "Load" do
+    let!(:budget)  { create(:budget, slug: "budget_slug") }
+    let!(:group)   { create(:budget_group, slug: "group_slug", budget: budget) }
+    let!(:heading) { create(:budget_heading, slug: "heading_slug", group: group) }
+
+    scenario "finds budget, group and heading by slug" do
+      visit edit_admin_budget_group_heading_path("budget_slug", "group_slug", "heading_slug")
+      expect(page).to have_content(budget.name)
+      expect(page).to have_content(group.name)
+      expect(page).to have_field "Heading name", with: heading.name
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path("wrong_budget", group, heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(0, group, heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if group slug is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, "wrong_group", heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if group id is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, 0, heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if heading slug is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, group, "wrong_heading")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if heading id is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, group, 0)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
   end
 
   context "Index" do
-
     scenario "Displaying no headings for group" do
       visit admin_budget_group_headings_path(budget, group)
 
@@ -88,20 +124,18 @@ feature "Admin budget headings" do
     end
 
     scenario "Try to delete a heading with investments" do
-      heading = create(:budget_heading, group: group)
-      investment = create(:budget_investment, heading: heading)
+      heading = create(:budget_heading, group: group, name: "Atlantis")
+      create(:budget_investment, heading: heading)
 
       visit admin_budget_group_headings_path(budget, group)
-      within("#budget_heading_#{heading.id}") { click_link "Delete" }
+      within(".heading", text: "Atlantis") { click_link "Delete" }
 
-      expect(page).to have_content "You cannot destroy a Heading that has associated investments"
-      expect(page).to have_selector "#budget_heading_#{heading.id}"
+      expect(page).to have_content "You cannot delete a Heading that has associated investments"
+      expect(page).to have_content "Atlantis"
     end
-
   end
 
   context "New" do
-
     scenario "Create heading" do
       visit admin_budget_group_headings_path(budget, group)
       click_link "Create new heading"
@@ -125,7 +159,7 @@ feature "Admin budget headings" do
       click_button "Create new heading"
 
       expect(page).not_to have_content "Heading created successfully!"
-      expect(page).to have_css("label.error", text: "Heading name")
+      expect(page).to have_css(".is-invalid-label", text: "Heading name")
       expect(page).to have_content "can't be blank"
     end
 
@@ -134,14 +168,12 @@ feature "Admin budget headings" do
       click_button "Create new heading"
 
       expect(page).not_to have_content "Heading created successfully!"
-      expect(page).to have_css("label.error", text: "Amount")
+      expect(page).to have_css(".is-invalid-label", text: "Amount")
       expect(page).to have_content "can't be blank"
     end
-
   end
 
   context "Edit" do
-
     scenario "Show heading information" do
       heading = create(:budget_heading, group: group)
 
@@ -162,7 +194,7 @@ feature "Admin budget headings" do
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
-      select "Español", from: "translation_locale"
+      select "Español", from: :add_language
       fill_in "Heading name", with: "Spanish name"
       click_button "Save heading"
 
@@ -171,7 +203,7 @@ feature "Admin budget headings" do
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
-      click_link "English"
+      select "English", from: :select_language
       fill_in "Heading name", with: "New English Name"
       click_button "Save heading"
 
@@ -179,18 +211,19 @@ feature "Admin budget headings" do
       expect(heading.reload.slug).not_to eq old_slug
       expect(heading.slug).to eq "new-english-name"
     end
-
   end
 
   context "Update" do
-    let(:heading) { create(:budget_heading,
-                            group: group,
-                            name: "All City",
-                            price: 1000,
-                            population: 10000,
-                            longitude: 20.50,
-                            latitude: -10.50,
-                            allow_custom_content: true) }
+    let(:heading) do
+      create(:budget_heading,
+             group: group,
+             name: "All City",
+             price: 1000,
+             population: 10000,
+             longitude: 20.50,
+             latitude: -10.50,
+             allow_custom_content: true)
+    end
 
     scenario "Updates group" do
       visit edit_admin_budget_group_heading_path(budget, group, heading)
@@ -231,9 +264,8 @@ feature "Admin budget headings" do
       click_button "Save heading"
 
       expect(page).not_to have_content "Heading updated successfully"
-      expect(page).to have_css("label.error", text: "Heading name")
-      expect(page).to have_css("small.error", text: "has already been taken")
+      expect(page).to have_css(".is-invalid-label", text: "Heading name")
+      expect(page).to have_css("small.form-error", text: "has already been taken")
     end
-
   end
 end

@@ -8,18 +8,18 @@ class Verification::Email
 
   def initialize(verified_user)
     @verified_user = verified_user
-    @recipient = @verified_user.try(:email)
+    @recipient = @verified_user&.email
   end
 
   def save
     return false unless valid?
 
     generate_token
-    user.update(email_verification_token: @plain_token)
+    user.update!(email_verification_token: @plain_token)
   end
 
   def user
-    User.where(document_number: verified_user.document_number).first
+    User.find_by(document_number: verified_user.document_number)
   end
 
   def generate_token
@@ -33,5 +33,4 @@ class Verification::Email
   def self.valid_token?(user, token)
     Devise.token_generator.digest(User, :email_verification_token, user.email_verification_token) == token
   end
-
 end

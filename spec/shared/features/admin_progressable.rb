@@ -1,7 +1,7 @@
 shared_examples "admin_progressable" do |factory_name, path_name|
   let!(:progressable) { create(factory_name) }
 
-  feature "Manage progress bars" do
+  describe "Manage progress bars" do
     let(:progressable_path) { send(path_name, *resource_hierarchy_for(progressable)) }
 
     let(:path) do

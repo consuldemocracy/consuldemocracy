@@ -1,17 +1,16 @@
-class Poll::Recount < ActiveRecord::Base
+class Poll::Recount < ApplicationRecord
+  VALID_ORIGINS = %w[web booth letter].freeze
 
-  VALID_ORIGINS = %w{web booth letter}.freeze
-
-  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :poll_recounts
   belongs_to :booth_assignment
   belongs_to :officer_assignment
 
   validates :author, presence: true
-  validates :origin, inclusion: {in: VALID_ORIGINS}
+  validates :origin, inclusion: { in: VALID_ORIGINS }
 
-  scope :web,    -> { where(origin: 'web') }
-  scope :booth,  -> { where(origin: 'booth') }
-  scope :letter, -> { where(origin: 'letter') }
+  scope :web,    -> { where(origin: "web") }
+  scope :booth,  -> { where(origin: "booth") }
+  scope :letter, -> { where(origin: "letter") }
 
   scope :by_author, ->(author_id) { where(author_id: author_id) }
 
@@ -22,6 +21,7 @@ class Poll::Recount < ActiveRecord::Base
 
     [:white, :null, :total].each do |amount|
       next unless send("#{amount}_amount_changed?") && send("#{amount}_amount_was").present?
+
       self["#{amount}_amount_log"] += ":#{send("#{amount}_amount_was")}"
       amounts_changed = true
     end

@@ -1,0 +1,67 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+bs:
+  devise:
+    password_expired:
+      expire_password: "Istekla lozinka"
+      change_required: "Vaša lozinka je istekla"
+      change_password: "Promjenite vašu lozinku"
+      new_password: "Nova lozinka"
+      updated: "Lozinka uspješno ažurirana"
+    confirmations:
+      confirmed: "Vaš nalog je potvrđen."
+      send_instructions: "Za nekoliko minuta ćete dobiti email sa instrukcijama kako da promijenite svoju lozinku."
+      send_paranoid_instructions: "Ako je vaša email adresa u našoj bazi podataka, za nekoliko minuta ćete dobiti email sa instrukcijama kako da promijenite svoju lozinku."
+    failure:
+      already_authenticated: "Već ste prijavljeni."
+      inactive: "Vaš nalog još uvijek nije aktiviran."
+      invalid: "Neispravno unesene %{authentication_keys} ili neispravna lozinka."
+      locked: "Vaš nalog je zaključan."
+      last_attempt: "Imate još jedan pokušaj prije nego se blokira nalog."
+      not_found_in_database: "Neispravno unesene %{authentication_keys} ili neispravna lozinka."
+      timeout: "Vaša sesija je istekla. Prijavite se ponovo kako bi nastavili."
+      unauthenticated: "Morate se prijaviti ili registrovati kako bi nastavili."
+      unconfirmed: "Da nastavite, kliknite na link za potvrdu koji smo poslali mailom"
+    mailer:
+      confirmation_instructions:
+        subject: "Uputstvo za potvrđivanje"
+      reset_password_instructions:
+        subject: "Uputstvo za mijenjanje lozinke"
+      unlock_instructions:
+        subject: "Uputstvo se otvara"
+    omniauth_callbacks:
+      failure: "Ne može se potvrditi vaš identitet %{kind} zbog \"%{reason}\"."
+      success: "Vaš identitet %{kind} je potvrđen."
+    passwords:
+      no_token: "Možete pristupiti ovoj strani samo putem linka za promjenu lozinke. Ako je pristup ostvaren putem linka za promjenu lozinke, provjerite je li URL kompletan."
+      send_instructions: "Za nekoliko minuta ćete dobiti email sa instrukcijama kako da promijenite svoju lozinku."
+      send_paranoid_instructions: "Ako je vaša email adresa u našoj bazi podataka, za nekoliko minuta ćete dobiti link za izmjenu lozinke."
+      updated: "Vaša lozinka je uspješno promijenjena. Potvrda identiteta uspješna."
+      updated_not_active: "Vaša lozinka je uspješno promijenjena."
+    registrations:
+      destroyed: "Pozdrav! Vaš nalog je ukinut. Nadamo se skorom ponovnom susretu."
+      signed_up: "Dobrodošli! Vaš nalog je potvrđen."
+      signed_up_but_inactive: "Registracija uspješna, ali ne možete se prijaviti dok vam se ne aktivira nalog."
+      signed_up_but_locked: "Registracija uspješna, ali ne možete se prijaviti zbog zaključanog naloga."
+      signed_up_but_unconfirmed: "Poslana vam je poruka sa linkom za verifikaciju. Kliknite na link kako bi se aktivirao nalog."
+      update_needs_confirmation: "Vaš nalog je uspješno ažuriran. Međutim, moramo potvrditi vašu novu email adresu. Provjerite email, te kliknite na link kako bi se završilo potvrđivanje vaše nove email adrese."
+      updated: "Vaš nalog je uspješno ažuriran."
+    sessions:
+      signed_in: "Prijava uspješna."
+      signed_out: "Odjava uspješna."
+      already_signed_out: "Odjava uspješna."
+    unlocks:
+      send_instructions: "Za nekoliko minuta ćete dobiti email sa instrukcijama kako da otključate svoj nalog."
+      send_paranoid_instructions: "Ako imate profil, za nekoliko minuta ćete dobiti email sa instrukcijama kako da otključate svoj nalog."
+      unlocked: "Vaš nalog je otključan. Prijavite se da nastavite."
+  errors:
+    messages:
+      already_confirmed: "Već je izvršena potvrda. Pokušajte se prijaviti."
+      confirmation_period_expired: "Morate dobiti potvrdu u roku od %{period}. Ponovite zahtjev."
+      expired: "isteklo; ponovite zahtjev."
+      not_found: "nije pronađeno."
+      not_locked: "nije bio zaključan."
+      not_saved:
+        one: "1 greška je onemogućila da se spasi ovaj %{resource}. Štrihirajte označena polja da vidite kako ispraviti grešku:"
+        few: "%{count} greške/grešaka je onemogućilo da se spasi ovaj %{resource}. Štrihirajte označena polja da vidite kako ispraviti greške:"
+        other: "%{count} greške/grešaka je onemogućilo da se spasi ovaj %{resource}. Štrihirajte označena polja da vidite kako ispraviti greške:"
+      equal_to_current_password: "ne može biti ista kao i sadašnja lozinka."

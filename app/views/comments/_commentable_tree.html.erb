@@ -9,27 +9,22 @@
           <span class="js-comments-count">(<%= @investment.comments_count %>)</span>
         </h2>
 
-        <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
+        <%= render "shared/wide_order_selector", i18n_namespace: "comments" %>
 
         <% if user_signed_in? && allow_comments %>
-          <%= render 'comments/form', { commentable: @investment,
+          <%= render "comments/form", { commentable: @investment,
                                         parent_id: nil,
                                         toggeable: false,
                                         valuation: valuation } %>
         <% else %>
-        <br>
-
-        <div data-alert class="callout primary">
-          <%= t("debates.show.login_to_comment",
-              signin: link_to(t("votes.signin"), new_user_session_path),
-              signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
-          </div>
+          <br>
+          <%= render "shared/login_to_comment" %>
         <% end %>
 
         <% @comment_tree.root_comments.each do |comment| %>
-          <%= render 'comments/comment', { comment: comment,
+          <%= render "comments/comment", { comment: comment,
                                            valuation: valuation,
-                                           allow_comments: allow_comments }  %>
+                                           allow_comments: allow_comments } %>
         <% end %>
         <%= paginate @comment_tree.root_comments %>
       </div>

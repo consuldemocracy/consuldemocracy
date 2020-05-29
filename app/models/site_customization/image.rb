@@ -1,12 +1,13 @@
-class SiteCustomization::Image < ActiveRecord::Base
+class SiteCustomization::Image < ApplicationRecord
   VALID_IMAGES = {
     "logo_header" => [260, 80],
     "social_media_icon" => [470, 246],
     "social_media_icon_twitter" => [246, 246],
     "apple-touch-icon-200" => [200, 200],
     "budget_execution_no_image" => [800, 600],
-    "map" => [420, 500]
-  }
+    "map" => [420, 500],
+    "logo_email" => [400, 80]
+  }.freeze
 
   has_attached_file :image
 
@@ -28,11 +29,11 @@ class SiteCustomization::Image < ActiveRecord::Base
   end
 
   def required_width
-    VALID_IMAGES[name].try(:first)
+    VALID_IMAGES[name]&.first
   end
 
   def required_height
-    VALID_IMAGES[name].try(:second)
+    VALID_IMAGES[name]&.second
   end
 
   private
@@ -45,5 +46,4 @@ class SiteCustomization::Image < ActiveRecord::Base
       errors.add(:image, :image_width, required_width: required_width) unless dimensions.width == required_width
       errors.add(:image, :image_height, required_height: required_height) unless dimensions.height == required_height
     end
-
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
-feature "Verification path" do
-
+describe "Verification path" do
   scenario "User is an organization" do
     user = create(:user, verified_at: Time.current)
     create(:organization, user: user)
@@ -98,5 +97,4 @@ feature "Verification path" do
       expect(page).to have_content "Your account is already verified"
     end
   end
-
 end

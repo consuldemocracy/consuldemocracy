@@ -1,0 +1,118 @@
+bn:
+  activerecord:
+    models:
+      activity:
+        one: "সক্রিয়তা"
+        other: "সক্রিয়তা"
+      budget:
+        one: "আয়ব্যয়ক"
+        other: "বাজেট"
+      budget/investment:
+        one: "বিনিয়োগ"
+        other: "বিনিয়োগ"
+      milestone:
+        one: "মাইলফলক"
+        other: "মাইলফলক"
+      milestone/status:
+        one: "মাইলস্টোনের অবস্থা"
+        other: "মাইলস্টোনের অবস্থা"
+      progress_bar:
+        one: "অগ্রগতির ধাপ"
+        other: "অগ্রগতির ধাপ"
+      comment:
+        one: "মন্তব্য"
+        other: "মন্তব্য"
+      debate:
+        one: "বিতর্ক"
+        other: "বিতর্ক"
+      tag:
+        one: "সংযোজন করা"
+        other: "সংযোজন"
+      user:
+        one: "ব্যবহারকারী"
+        other: "ব্যবহারকারীদের"
+      moderator:
+        one: "নিয়ামক"
+        other: "নিয়ামকদের"
+      administrator:
+        one: "প্রশাসক"
+        other: "প্রশাসকরা"
+      valuator:
+        one: "মূল্যাবধারক"
+        other: "মূল্যাবধারকরা"
+      valuator_group:
+        one: "মূল্যাবধারক দল"
+        other: "মূল্যাবধারক দলগুলো"
+      manager:
+        one: "নিয়ন্ত্রনকারি"
+        other: "নিয়ন্ত্রনকারিরা"
+      newsletter:
+        one: "সংবাদবাহী পত্র"
+        other: "সংবাদবাহী পত্রগুলি"
+      vote:
+        one: "নির্বাচন করা"
+        other: "নির্বাচন গুলো"
+      organization:
+        one: "সংগঠন"
+        other: "বিভিন্ন সংস্থা"
+      poll/booth:
+        one: "চালাঘর"
+        other: "চালাঘরগুলো"
+      poll/officer:
+        one: "কর্মকর্তা"
+        other: "কর্মকর্তাগন"
+      proposal:
+        one: "নাগরিক প্রস্তাবনা"
+        other: "নাগরিক প্রস্তাবনা গুলো"
+      spending_proposal:
+        one: "বিনিয়োগ প্রকল্প"
+        other: "বিনিয়োগ প্রকল্প গুলো"
+      site_customization/page:
+        one: প্রচলন পৃষ্ঠা
+        other: প্রচলিত পৃষ্ঠগুলো
+      site_customization/image:
+        one: প্রচলিত ছবি
+        other: প্রচলিত ছবিগুলো
+      site_customization/content_block:
+        one: পছন্দসই বিষয়বস্তু আবদ্ধ করুন
+        other: পছন্দসই সামগ্রী অবরুদ্ধ
+      legislation/process:
+        one: "পদ্ধতি"
+        other: "পদ্ধতিসমুহ"
+      legislation/proposal:
+        one: "প্রস্তাব"
+        other: "প্রস্তাবগুলো"
+      legislation/draft_versions:
+        one: "খসড়া সংস্করণ"
+        other: "খসড়া সংস্করণগুলো"
+      legislation/questions:
+        one: "প্রশ্ন"
+        other: "প্রশ্নসমুহ"
+      legislation/question_options:
+        one: "প্রশ্নের বিকল্প"
+        other: "প্রশ্নের বিকল্পসমুহ"
+      legislation/answers:
+        one: "উত্তর"
+        other: "উত্তরসমুহ"
+      documents:
+        one: "নথি"
+        other: "নথিসমুহ"
+      images:
+        one: "ছবি"
+        other: "ছবিসমুহ"
+      topic:
+        one: "বিষয়"
+        other: "বিষয়সমুহ"
+      poll:
+        one: "জনমত জরিপ"
+        other: "জনমত জরিপসমুহ"
+      proposal_notification:
+        one: "প্রস্তাবটি প্রজ্ঞাপন"
+        other: "প্রস্তাবটি প্রজ্ঞাপনসমুহ"
+    attributes:
+      budget:
+        name: "নাম"
+        description_accepting: "বারবার পর্ব চলাকালীন বিবরণ"
+        description_reviewing: "সম্পাদনা পর্ব চলাকালীন বিবরণ"
+        description_selecting: "নির্বাচন পর্ব চলাকালীন বিবরণ"
+        description_valuating: "মান নির্ধারণকারী পর্ব চলাকালীন বিবরণ"

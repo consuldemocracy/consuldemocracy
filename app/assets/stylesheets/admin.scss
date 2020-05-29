@@ -291,8 +291,11 @@ $sidebar-active: #f4fcd0;
     margin-right: rem-calc(12);
   }
 
-  .admin-content {
+  .side-menu-and-admin-content {
+    @include side-menu-and-content;
+  }
 
+  .admin-content {
     .proposal-form {
       padding-top: 0;
     }
@@ -309,11 +312,6 @@ $sidebar-active: #f4fcd0;
 
 .for-print-only {
   display: none;
-}
-
-.admin-content {
-  overflow: scroll;
-  padding: $line-height !important;
 }
 
 @include breakpoint(medium) {
@@ -414,6 +412,15 @@ code {
   word-break: break-all;
 }
 
+.content-type {
+  white-space: nowrap;
+  padding-right: $line-height;
+
+  label {
+    margin-left: 0 !important;
+  }
+}
+
 // 02. Sidebar
 // -----------
 
@@ -421,10 +428,6 @@ code {
   background: $sidebar;
   background: linear-gradient(to bottom, #245b80 0%, #488fb5 100%);
   border-right: 1px solid $border;
-
-  @include breakpoint(medium) {
-    min-height: rem-calc(1100);
-  }
 
   ul {
     list-style-type: none;
@@ -1205,6 +1208,11 @@ table {
   .filter {
     display: inline-block;
     margin: 0 $line-height / 2;
+
+    label {
+      font-weight: normal;
+      margin: 0;
+    }
   }
 
   .button {
@@ -1241,6 +1249,44 @@ table {
       color: #000;
       content: "\76";
     }
+  }
+}
+
+.columns-selector {
+
+  span[class^="icon-"] {
+    vertical-align: middle;
+  }
+}
+
+.columns-selector-wrapper {
+  background: $light-gray;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+
+  &.hidden {
+    display: none;
+  }
+
+  .column-selector-item {
+    display: inline-block;
+
+    &.hidden {
+      display: none;
+    }
+
+    label {
+      font-size: 17px;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.column-selectable {
+
+  .hidden {
+    display: none;
   }
 }
 

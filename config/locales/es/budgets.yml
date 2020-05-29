@@ -7,20 +7,22 @@ es:
         remaining: "Te quedan <span>%{amount}</span> para invertir"
         no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
         remove: Quitar voto
-        voted_html:
+        voted:
           one: "Has votado <span>un</span> proyecto."
           other: "Has votado <span>%{count}</span> proyectos."
-        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
+        voted_info: "¡Tus votos están confirmados!"
+        voted_info_2: "Pero puedes cambiarlos en cualquier momento hasta el cierre de esta fase."
         zero: Todavía no has votado ningún proyecto de gasto.
       reasons_for_not_balloting:
         not_logged_in: Necesitas %{signin} o %{signup} para continuar.
         not_verified: Los proyectos de gasto sólo pueden ser apoyados por usuarios verificados, %{verify_account}.
         organization: Las organizaciones no pueden votar.
         not_selected: No se pueden votar proyectos inviables.
-        not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
+        not_enough_money: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
-        different_heading_assigned_html: "Ya has votado proyectos de otra partida: %{heading_link}"
+        different_heading_assigned: "Ya has votado proyectos de otra partida: %{heading_link}"
         change_ballot: cambiar tus votos
+        casted_offline: Ya has participado presencialmente
     groups:
       show:
         title: Selecciona una opción
@@ -67,37 +69,33 @@ es:
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
-        location: "Información adicional de la ubicación"
         map_skip_checkbox: "Este proyecto no tiene una ubicación concreta o no la conozco."
       index:
         title: Presupuestos participativos
         unfeasible: Proyectos de gasto no viables
-        unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declarados viables y llegar hasta la fase de votación final. Todos los proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
+        unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, no superar el tope del presupuesto) para ser declarados viables y llegar hasta la fase de votación final. Todos los proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
         by_heading: "Proyectos de gasto con ámbito: %{heading}"
         search_form:
           button: Buscar
           placeholder: Buscar proyectos de gasto...
           title: Buscar
-        search_results_html:
+        search_results:
           one: " que contiene <strong>'%{search_term}'</strong>"
           other: " que contienen <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mis votos
-          voted_html:
+          voted:
             one: "<strong>Has votado un proyecto por un valor de %{amount_spent}</strong>"
             other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
           voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
           voted_info_link: cambiar tus votos
-          different_heading_assigned_html: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
+          different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
-          check_ballot_link: "revisar mis votos"
+          check_ballot_link: "revisar y confirmar mis votos"
           zero: Todavía no has votado ningún proyecto de gasto en este ámbito del presupuesto.
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
-          verify_account: "verifica tu cuenta"
           create: "Crear proyecto de gasto"
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
-          sign_in: "iniciar sesión"
-          sign_up: "registrarte"
           by_feasibility: Por viabilidad
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables
@@ -111,9 +109,9 @@ es:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
         unfeasibility_explanation: Informe de inviabilidad
-        code_html: 'Código proyecto de gasto: <strong>%{code}</strong>'
-        location_html: 'Ubicación: <strong>%{location}</strong>'
-        organization_name_html: 'Propuesto en nombre de: <strong>%{name}</strong>'
+        code: "Código proyecto de gasto: <strong>%{code}</strong>"
+        location: "Ubicación: <strong>%{location}</strong>"
+        organization_name: "Propuesto en nombre de: <strong>%{name}</strong>"
         share: Compartir
         title: Proyecto de gasto
         supports: Apoyos
@@ -122,10 +120,10 @@ es:
         comments_tab: Comentarios
         milestones_tab: Seguimiento
         author: Autor
-        project_unfeasible_html: 'Este proyecto de gasto <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación.'
-        project_selected_html: 'Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación.'
-        project_winner: 'Proyecto de gasto ganador'
-        project_not_selected_html: 'Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación.'
+        project_unfeasible: "Este proyecto de gasto <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación."
+        project_selected: "Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación."
+        project_winner: "Proyecto de gasto ganador"
+        project_not_selected: "Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación."
         see_price_explanation: Ver informe de coste
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
@@ -142,10 +140,10 @@ es:
           other: "%{count} apoyos"
         give_support: Apoyar
       header:
-        check_ballot: Revisar mis votos
-        different_heading_assigned_html: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
+        check_ballot: Revisar y confirmar mis votos
+        different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
-        check_ballot_link: "revisar mis votos"
+        check_ballot_link: "revisar y confirmar mis votos"
         price: "Esta partida tiene un presupuesto de"
     progress_bar:
       assigned: "Has asignado: "
@@ -163,7 +161,6 @@ es:
       page_title: "%{budget} - Resultados"
       heading: "Resultados presupuestos participativos"
       heading_selection_title: "Ámbito de actuación"
-      spending_proposal: Título de la propuesta
       ballot_lines_count: Votos
       hide_discarded_link: Ocultar descartados
       show_all_link: Mostrar todos
@@ -172,6 +169,7 @@ es:
       accepted: "Proyecto de gasto aceptado: "
       discarded: "Proyecto de gasto descartado: "
       incompatibles: Incompatibles
+      investment_title: Título del proyecto de gasto
       investment_proyects: Ver lista completa de proyectos de gasto
       unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
       not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
@@ -182,8 +180,12 @@ es:
       heading_selection_title: "Ámbito de actuación"
       no_winner_investments: "No hay proyectos de gasto ganadores en este estado"
       filters:
-        label: "Estado actual del proyecto"
-        all: "Todos (%{count})"
+        status:
+          label: "Estado actual del proyecto"
+          all: "Todos (%{count})"
+        milestone_tag:
+          label: "Etiquetas de Seguimiento"
+          all: "Todos (%{count})"
     phases:
       errors:
         dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"

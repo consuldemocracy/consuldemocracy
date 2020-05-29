@@ -1,5 +1,5 @@
 class Admin::HiddenUsersController < Admin::BaseController
-  has_filters %w{without_confirmed_hide all with_confirmed_hide}, only: :index
+  has_filters %w[without_confirmed_hide all with_confirmed_hide], only: :index
 
   before_action :load_user, only: [:confirm_hide, :restore]
 
@@ -15,13 +15,13 @@ class Admin::HiddenUsersController < Admin::BaseController
 
   def confirm_hide
     @user.confirm_hide
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   def restore
     @user.restore
     Activity.log(current_user, :restore, @user)
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   private
@@ -29,5 +29,4 @@ class Admin::HiddenUsersController < Admin::BaseController
     def load_user
       @user = User.with_hidden.find(params[:id])
     end
-
 end

@@ -10,7 +10,7 @@
         <%= investment.formatted_price %>
       </p>
       <% if investment.should_show_ballots? %>
-        <%= link_to t('budgets.ballots.show.remove'),
+        <%= link_to t("budgets.ballots.show.remove"),
                     budget_ballot_line_path(id: investment.id,
                                             budget_id: investment.budget_id,
                                             investments_ids: investment_ids),
@@ -28,11 +28,11 @@
       </p>
       <% if investment.should_show_ballots? %>
         <%= link_to t("budgets.investments.investment.add"),
-                    budget_ballot_lines_url(investment_id: investment.id,
-                                            budget_id: investment.budget_id,
-                                            investments_ids: investment_ids),
+                    budget_ballot_lines_path(investment_id: investment.id,
+                                             budget_id: investment.budget_id,
+                                             investments_ids: investment_ids),
                     class: "button button-support small expanded",
-                    title: t('budgets.investments.investment.support_title'),
+                    title: t("budgets.investments.investment.support_title"),
                     method: :post,
                     remote: true %>
       <% end %>
@@ -43,23 +43,19 @@
   <% if reason.present? && !ballot.has_investment?(investment) %>
 
     <div class="js-participation-not-allowed participation-not-allowed" style="display:none">
-
-      <% verify_account = link_to(t("votes.verify_account"), verification_path) %>
-      <% signin = link_to(t("votes.signin"), new_user_session_path) %>
-      <% signup = link_to(t("votes.signup"), new_user_registration_path) %>
       <% my_heading = link_to(investment.heading.name,
                       budget_investments_path(budget_id: investment.budget_id,
                                               heading_id: investment.heading_id)) %>
       <% change_ballot = link_to(t("budgets.ballots.reasons_for_not_balloting.change_ballot"),
-                                          budget_ballot_path(@budget))%>
+                                          budget_ballot_path(@budget)) %>
 
       <p>
         <small>
-          <%= t("budgets.ballots.reasons_for_not_balloting.#{reason}",
-                verify_account: verify_account, signin: signin,
-                signup: signup, my_heading: my_heading,
+          <%= sanitize(t("budgets.ballots.reasons_for_not_balloting.#{reason}",
+                verify_account: link_to_verify_account, signin: link_to_signin,
+                signup: link_to_signup, my_heading: my_heading,
                 change_ballot: change_ballot,
-                heading_link: heading_link(@assigned_heading, @budget)).html_safe %>
+                heading_link: heading_link(@assigned_heading, @budget))) %>
         </small>
       </p>
     </div>

@@ -1,0 +1,24 @@
+da:
+  documents:
+    title: Dokumenter
+    max_documents_allowed_reached: Du har nået det maksimale antal filer! <strong>Du bliver nødt til at slette en fil før du kan uploade en ny.</strong>
+    additional: Supplerende dokumentation
+    form:
+      title: Dokumenter
+      title_placeholder: Tilføj en beskrivende titel til dokumentet
+      delete_button: Fjern fil
+      cancel_button: Annuller
+      note: "Du kan maksimalt uploade %{max_documents_allowed} filer i følgende format %{accepted_content_types}, op til %{max_file_size} MB pr. fil."
+      add_new_document: Tilføj fil
+    actions:
+      destroy:
+        notice: Filen blev slettet.
+        alert: Kan ikke fjerne filen.
+        confirm: Er du sikker på, du ønsker at fjerne filen? Denne handling kan ikke fortrydes!
+    buttons:
+      download_document: Download fil
+      destroy_document: Fjern fil
+    errors:
+      messages:
+        in_between: skal være mellem %{min} og %{max}
+        wrong_content_type: filformatet %{content_type} matcher ikke de accepterede formater %{accepted_content_types}

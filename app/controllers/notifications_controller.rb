@@ -1,6 +1,4 @@
 class NotificationsController < ApplicationController
-  include CustomUrlsHelper
-
   before_action :authenticate_user!
   skip_authorization_check
 
@@ -21,7 +19,7 @@ class NotificationsController < ApplicationController
   end
 
   def mark_all_as_read
-    current_user.notifications.unread.each { |notification| notification.mark_as_read }
+    current_user.notifications.unread.each(&:mark_as_read)
     redirect_to notifications_path
   end
 
@@ -44,5 +42,4 @@ class NotificationsController < ApplicationController
         polymorphic_hierarchy_path(notification.linkable_resource)
       end
     end
-
 end

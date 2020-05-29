@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe ReplyEmail do
-
-  let(:author)      { create(:user) }
-  let(:debate)      { create(:debate, author: author) }
+  let(:debate)      { create(:debate) }
   let(:commenter)   { create(:user, email: "email@commenter.org") }
   let(:comment)     { create(:comment, commentable: debate, user: commenter) }
   let(:replier)     { create(:user) }
@@ -35,13 +33,12 @@ describe ReplyEmail do
   end
 
   describe "#can_be_sent?" do
-
     it "returns true if comment and recipient exist" do
       expect(reply_email.can_be_sent?).to be true
     end
 
     it "returns false if the comment doesn't exist" do
-      reply.update(commentable: nil)
+      reply.commentable = nil
 
       expect(reply_email.can_be_sent?).to be false
     end
@@ -51,7 +48,5 @@ describe ReplyEmail do
 
       expect(reply_email.can_be_sent?).to be false
     end
-
   end
-
 end

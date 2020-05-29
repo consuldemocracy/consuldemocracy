@@ -6,10 +6,10 @@ class Verification::EmailController < ApplicationController
 
   def show
     if Verification::Email.find(current_user, params[:email_verification_token])
-      current_user.update(verified_at: Time.current)
-      redirect_to account_path, notice: t('verification.email.show.flash.success')
+      current_user.update!(verified_at: Time.current)
+      redirect_to account_path, notice: t("verification.email.show.flash.success")
     else
-      redirect_to verified_user_path, alert: t('verification.email.show.alert.failure')
+      redirect_to verified_user_path, alert: t("verification.email.show.alert.failure")
     end
   end
 
@@ -22,16 +22,16 @@ class Verification::EmailController < ApplicationController
                                 @email.encrypted_token,
                                 @verified_user.document_type,
                                 @verified_user.document_number).deliver_later
-      redirect_to account_path, notice: t('verification.email.create.flash.success', email: @verified_user.email)
+      redirect_to account_path, notice: t("verification.email.create.flash.success", email: @verified_user.email)
     else
-      redirect_to verified_user_path, alert: t('verification.email.create.alert.failure')
+      redirect_to verified_user_path, alert: t("verification.email.create.alert.failure")
     end
   end
 
   private
 
     def set_verified_user
-      @verified_user = VerifiedUser.by_user(current_user).where(id: verified_user_params[:id]).first
+      @verified_user = VerifiedUser.by_user(current_user).find_by(id: verified_user_params[:id])
     end
 
     def verified_user_params

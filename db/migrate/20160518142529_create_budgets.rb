@@ -1,4 +1,4 @@
-class CreateBudgets < ActiveRecord::Migration
+class CreateBudgets < ActiveRecord::Migration[4.2]
   def change
     create_table :budgets do |t|
       t.string "name", limit: 30
@@ -8,8 +8,7 @@ class CreateBudgets < ActiveRecord::Migration
       t.string "phase", default: "on_hold", limit: 15
       t.boolean "valuating", default: false
 
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
+      t.timestamps null: false
     end
   end
 end

@@ -1,0 +1,19 @@
+<%= back_link_to(admin_local_census_records_path, text = t("shared.back")) %>
+<br>
+<h2 class="inline-block"><%= t("admin.local_census_records.imports.show.title") %></h2>
+
+<%= link_to t("admin.local_census_records.imports.show.import"),
+            new_admin_local_census_records_import_path,
+            class: "button float-right hollow" %>
+
+<h3><%= t("admin.local_census_records.imports.show.subtitle") %></h3>
+
+<%= render "local_census_records",
+  title: t("admin.local_census_records.imports.show.errored"),
+  id: "invalid-local-census-records",
+  local_census_records: @import.invalid_records %>
+
+<%= render "local_census_records",
+  title: t("admin.local_census_records.imports.show.created"),
+  id: "created-local-census-records",
+  local_census_records: @import.created_records %>

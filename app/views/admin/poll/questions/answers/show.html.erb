@@ -21,7 +21,7 @@
   <tbody>
     <tr>
       <td><%= @answer.title %></td>
-      <td><%= @answer.description %></td>
+      <td><%= wysiwyg(@answer.description) %></td>
       <td class="text-center">
         (<%= @answer.images.count %>)<br>
         <%= link_to t("admin.answers.show.images_list"), admin_answer_images_path(@answer) %>

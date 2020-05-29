@@ -1,17 +1,52 @@
 require "rails_helper"
 
-feature "Welcome screen" do
+describe "Welcome screen" do
+  let(:budget) { create(:budget) }
 
-  scenario "a regular users sees it the first time he logs in" do
+  it_behaves_like "remotely_translatable",
+                  :proposal,
+                  "root_path",
+                  {}
+
+  it_behaves_like "remotely_translatable",
+                  :debate,
+                  "root_path",
+                  {}
+
+  it_behaves_like "remotely_translatable",
+                  :legislation_process,
+                  "root_path",
+                  {}
+
+  scenario "requires a logged in user" do
+    visit welcome_path
+    expect(page).to have_content "You must sign in or register to continue."
+  end
+
+  scenario "for a not verified user" do
     user = create(:user)
-
     login_through_form_as(user)
 
-    expect(page).to have_current_path(welcome_path)
+    expect(page).to have_current_path(page_path("welcome_not_verified"))
+  end
+
+  scenario "for a level two verified user" do
+    user = create(:user, :level_two)
+    login_as(user)
+
+    visit welcome_path
+    expect(page).to have_current_path(page_path("welcome_level_two_verified"))
+  end
+
+  scenario "for a level three verified user" do
+    user = create(:user, :level_three)
+    login_as(user)
+
+    visit welcome_path
+    expect(page).to have_current_path(page_path("welcome_level_three_verified"))
   end
 
   scenario "a regular user does not see it when coing to /email" do
-
     plain, encrypted = Devise.token_generator.generate(User, :email_verification_token)
 
     user = create(:user, email_verification_token: plain)
@@ -70,7 +105,6 @@ feature "Welcome screen" do
 
   scenario "a regular users sees it the first time he logs in, with all options active
             if the setting skip_verification is activated" do
-
     Setting["feature.user.skip_verification"] = "true"
 
     user = create(:user)
@@ -78,12 +112,7 @@ feature "Welcome screen" do
     login_through_form_as(user)
 
     4.times do |i|
-      expect(page).to have_css ".user-permissions > ul:nth-child(2) >
-                                li:nth-child(#{i + 1}) > span:nth-child(1)"
+      expect(page).to have_css "li:nth-child(#{i + 1})"
     end
-
-    Setting["feature.user.skip_verification"] = nil
   end
-
-
 end

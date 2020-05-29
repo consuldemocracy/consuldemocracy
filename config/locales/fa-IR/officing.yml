@@ -50,7 +50,6 @@ fa:
         submit: اعتبار سند
         error_verifying_census: "سرشماری قادر به تایید این سند نیست."
         form_errors: مانع تایید این سند شد
-        no_assignments: "شما امروز شیفت ندارید"
     voters:
       new:
         title: نظر سنجی ها

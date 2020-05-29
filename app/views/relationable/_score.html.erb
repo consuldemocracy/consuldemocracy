@@ -5,13 +5,13 @@
               score_positive_related_content_path(related),
               method: :put,
               remote: true,
-              id: "score-positive-related-#{ related.id }",
-              class: "score-positive"  %>
+              id: "score-positive-related-#{related.id}",
+              class: "score-positive" %>
 
   <%= link_to t("related_content.score_negative"),
               score_negative_related_content_path(related),
               method: :put,
               remote: true,
-              id: "score-negative-related-#{ related.id }",
+              id: "score-negative-related-#{related.id}",
               class: "score-negative" %>
 </span>

@@ -1,4 +1,4 @@
-class ChangeBudgetDescription < ActiveRecord::Migration
+class ChangeBudgetDescription < ActiveRecord::Migration[4.2]
   def change
     remove_column :budgets, :description, :text
     add_column :budgets, :description_accepting, :text

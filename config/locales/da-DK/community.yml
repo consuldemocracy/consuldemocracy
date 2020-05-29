@@ -1,0 +1,53 @@
+da:
+  community:
+    sidebar:
+      title: Fællesskab
+      description:
+        proposal: Deltag i brugerfællesskabet relateret til dette projekt.
+        investment: Deltag i brugerfællesskabet relateret til dette projekt.
+      button_to_access: Deltag i fællesskabet
+    show:
+      title:
+        proposal: Fællesskabet omkring forslaget
+        investment: Fællesskab relateret til dette projekt
+      description:
+        proposal: Deltag i fællesskabet omkring dette forslag. Et aktivt fællesskab kan bidrage til at forbedre forslagets indhold og øge dets udbredelse. Det skaber mulighed for, at flere brugere kan støtte op om forslaget.
+        investment: Deltag i fællesskabet relateret til denne projektidé. Et aktivt fællesskab kan bidrage til at forbedre projektets indhold og øge udbredelsen af din idé. Det skaber mulighed for, at flere brugere kan støtte op dit forslag.
+      create_first_community_topic:
+        first_theme_not_logged_in: Der er ingen tilgængelige indlæg - vær den første til at oprette et.
+        first_theme: Opret det første indlæg i dette fællesskab
+        sub_first_theme: "For at oprette et tema skal du %{sign_in} eller %{sign_up}."
+      tab:
+        participants: Deltagere
+      sidebar:
+        participate: Deltag
+        new_topic: Opret emne
+      topic:
+        edit: Rediger emne
+        destroy: Fjern emne
+        comments:
+          zero: Ingen kommentarer
+          one: 1 kommentar
+          other: "%{count} kommentarer"
+      author: Oprettet af
+      back: Tilbage til %{community} %{proposal}
+    topic:
+      create: Opret emne
+      edit: Rediger emne
+      form:
+        new:
+          submit_button: Opret emne
+        edit:
+          submit_button: Rediger emne
+        create:
+          submit_button: Opret emne
+        update:
+          submit_button: Opdater emne
+      show:
+        tab:
+          comments_tab: Kommentarer
+      sidebar:
+        recommendations_title: Anbefalinger til oprettelse af emne
+        recommendation_one: Skriv hverken emnetitlen eller hele sætninger med store bogstaver. På internettet anses det for at råbe. Og ingen kan lide at blive råbt af.
+        recommendation_two: Ethvert emne eller kommentar, der alluderer til en ulovlig handling vil blive fjernet. Dette gælder også for de, der har intention om at sabotere emnet. Alt andet er tilladt.
+        recommendation_three: Dette sted tilhører også dig.

@@ -8,9 +8,6 @@ describe Abilities::Everyone do
   let(:debate) { create(:debate) }
   let(:proposal) { create(:proposal) }
 
-  let(:reviewing_ballot_budget) { create(:budget, phase: "reviewing_ballots") }
-  let(:finished_budget) { create(:budget, phase: "finished") }
-
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
   it { should_not be_able_to(:edit, Debate) }
@@ -27,11 +24,28 @@ describe Abilities::Everyone do
 
   it { should be_able_to(:show, Comment) }
 
-  it { should be_able_to(:index, SpendingProposal) }
-  it { should_not be_able_to(:create, SpendingProposal) }
-
   it { should be_able_to(:index, Budget) }
 
-  it { should be_able_to(:read_results, finished_budget) }
-  it { should_not be_able_to(:read_results, reviewing_ballot_budget) }
+  it { should_not be_able_to(:manage, Dashboard::Action) }
+  it { should_not be_able_to(:manage, LocalCensusRecord) }
+  it { should_not be_able_to(:create, LocalCensusRecords::Import) }
+  it { should_not be_able_to(:show, LocalCensusRecords::Import) }
+
+  it { should be_able_to(:results, create(:poll, :expired, results_enabled: true)) }
+  it { should_not be_able_to(:results, create(:poll, :expired, results_enabled: false)) }
+  it { should_not be_able_to(:results, create(:poll, :current, results_enabled: true)) }
+  it { should_not be_able_to(:results, create(:poll, :for_budget, :expired, results_enabled: true)) }
+
+  it { should be_able_to(:stats, create(:poll, :expired, stats_enabled: true)) }
+  it { should_not be_able_to(:stats, create(:poll, :expired, stats_enabled: false)) }
+  it { should_not be_able_to(:stats, create(:poll, :current, stats_enabled: true)) }
+  it { should_not be_able_to(:stats, create(:poll, :for_budget, :expired, stats_enabled: true)) }
+
+  it { should be_able_to(:read_results, create(:budget, :finished, results_enabled: true)) }
+  it { should_not be_able_to(:read_results, create(:budget, :finished, results_enabled: false)) }
+  it { should_not be_able_to(:read_results, create(:budget, :reviewing_ballots, results_enabled: true)) }
+
+  it { should be_able_to(:read_stats, create(:budget, :valuating, stats_enabled: true)) }
+  it { should_not be_able_to(:read_stats, create(:budget, :valuating, stats_enabled: false)) }
+  it { should_not be_able_to(:read_stats, create(:budget, :selecting, stats_enabled: true)) }
 end

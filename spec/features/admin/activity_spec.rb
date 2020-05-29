@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "Admin activity" do
+describe "Admin activity" do
+  let(:admin) { create(:administrator) }
 
-  background do
-    @admin = create(:administrator)
-    login_as(@admin.user)
+  before do
+    login_as(admin.user)
   end
 
   context "Proposals" do
@@ -16,13 +16,14 @@ feature "Admin activity" do
       within("#proposal_#{proposal.id}") do
         accept_confirm { click_link "Hide" }
       end
+      expect(page).to have_css("#proposal_#{proposal.id}.faded")
 
       visit admin_activity_path
 
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(proposal.title)
         expect(page).to have_content("Hidden")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
 
@@ -64,7 +65,7 @@ feature "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(proposal.title)
         expect(page).to have_content("Restored")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
   end
@@ -78,13 +79,14 @@ feature "Admin activity" do
       within("#debate_#{debate.id}") do
         accept_confirm { click_link "Hide" }
       end
+      expect(page).to have_css("#debate_#{debate.id}.faded")
 
       visit admin_activity_path
 
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(debate.title)
         expect(page).to have_content("Hidden")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
 
@@ -115,7 +117,7 @@ feature "Admin activity" do
     scenario "Shows admin restores" do
       debate = create(:debate, :hidden)
 
-      visit admin_debates_path
+      visit admin_hidden_debates_path
 
       within("#debate_#{debate.id}") do
         click_on "Restore"
@@ -126,7 +128,7 @@ feature "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(debate.title)
         expect(page).to have_content("Restored")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
   end
@@ -140,6 +142,7 @@ feature "Admin activity" do
 
       within("#comment_#{comment.id}") do
         accept_confirm { click_link "Hide" }
+        expect(page).to have_css(".faded")
       end
 
       visit admin_activity_path
@@ -147,7 +150,7 @@ feature "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(comment.body)
         expect(page).to have_content("Hidden")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
 
@@ -178,7 +181,7 @@ feature "Admin activity" do
     scenario "Shows admin restores" do
       comment = create(:comment, :hidden)
 
-      visit admin_comments_path
+      visit admin_hidden_comments_path
 
       within("#comment_#{comment.id}") do
         click_on "Restore"
@@ -189,7 +192,7 @@ feature "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(comment.body)
         expect(page).to have_content("Restored")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
   end
@@ -202,6 +205,8 @@ feature "Admin activity" do
 
       within("#proposal_#{proposal.id}") do
         click_link "Hide author"
+
+        expect(page).to have_current_path(debates_path)
       end
 
       visit admin_activity_path
@@ -210,7 +215,7 @@ feature "Admin activity" do
         expect(page).to have_content("Blocked")
         expect(page).to have_content(proposal.author.username)
         expect(page).to have_content(proposal.author.email)
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
         expect(page).not_to have_content(proposal.title)
       end
     end
@@ -229,7 +234,7 @@ feature "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(user.username)
         expect(page).to have_content(user.email)
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
 
@@ -326,7 +331,7 @@ feature "Admin activity" do
         expect(page).to have_content(user.username)
         expect(page).to have_content(user.email)
         expect(page).to have_content("Restored")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
   end
@@ -337,16 +342,15 @@ feature "Admin activity" do
       proposal_notification = create(:proposal_notification, proposal: proposal,
                                                                title: "Proposal A Title",
                                                                body: "Proposal A Notification Body")
-      proposal_notification.moderate_system_email(@admin.user)
+      proposal_notification.moderate_system_email(admin.user)
 
       visit admin_activity_path
 
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(proposal_notification.title)
         expect(page).to have_content("Hidden")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
   end
-
 end

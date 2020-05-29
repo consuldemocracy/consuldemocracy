@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<%= I18n.locale %>">
 
   <head>
     <%= render "layouts/common_head", default_title: "Management" %>
-    <%= stylesheet_link_tag  "print", media: "print" %>
+    <%= stylesheet_link_tag "print", media: "print" %>
     <%= content_for :head %>
   </head>
 
@@ -34,7 +34,6 @@
 
               <div class="top-bar-right">
                 <ul class="menu" data-responsive-menu="medium-dropdown">
-                  <%= render "admin/shared/admin_shortcuts", current_user: manager_logged_in %>
                   <%= render "shared/admin_login_items", current_user: manager_logged_in %>
                   <%= render "devise/menu/login_items", current_user: manager_logged_in %>
                 </ul>
@@ -54,7 +53,7 @@
       <%= render "management/account_info" %>
 
       <div class="admin-content small-12 medium-9 column">
-        <%= render 'layouts/flash' %>
+        <%= render "layouts/flash" %>
         <%= yield %>
       </div>
     </main>

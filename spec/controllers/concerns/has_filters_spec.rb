@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe HasFilters do
-
   class FakeController < ActionController::Base; end
 
   controller(FakeController) do
@@ -9,7 +8,7 @@ describe HasFilters do
     has_filters ["all", "pending", "reviewed"], only: :index
 
     def index
-      render text: "#{@current_filter} (#{@valid_filters.join(' ')})"
+      render plain: "#{@current_filter} (#{@valid_filters.join(" ")})"
     end
   end
 
@@ -25,12 +24,12 @@ describe HasFilters do
     end
 
     it "can be changed by the filter param" do
-      get :index, filter: "pending"
+      get :index, params: { filter: "pending" }
       expect(response.body).to eq("pending (all pending reviewed)")
     end
 
     it "defaults to the first one on the list if given a bogus filter" do
-      get :index, filter: "foobar"
+      get :index, params: { filter: "foobar" }
       expect(response.body).to eq("all (all pending reviewed)")
     end
   end

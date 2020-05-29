@@ -1,8 +1,7 @@
 require "rails_helper"
 
-feature "User invites" do
-
-  background do
+describe "User invites" do
+  before do
     login_as_manager
   end
 
@@ -14,5 +13,4 @@ feature "User invites" do
 
     expect(page).to have_content "3 invitations have been sent."
   end
-
 end

@@ -1,19 +1,19 @@
-class Widget::Feed < ActiveRecord::Base
+class Widget::Feed < ApplicationRecord
   self.table_name = "widget_feeds"
 
-  KINDS = %w(proposals debates processes)
+  KINDS = %w[proposals debates processes].freeze
 
   def active?
     setting.value.present?
   end
 
   def setting
-    Setting.where(key: "feature.homepage.widgets.feeds.#{kind}").first
+    Setting.find_by(key: "homepage.widgets.feeds.#{kind}")
   end
 
   def self.active
-    KINDS.collect do |kind|
-      feed = find_or_create_by(kind: kind)
+    KINDS.map do |kind|
+      feed = find_or_create_by!(kind: kind)
       feed if feed.active?
     end.compact
   end
@@ -31,7 +31,6 @@ class Widget::Feed < ActiveRecord::Base
   end
 
   def processes
-    Legislation::Process.open.published.limit(limit)
+    Legislation::Process.open.published.order("created_at DESC").limit(limit)
   end
-
 end

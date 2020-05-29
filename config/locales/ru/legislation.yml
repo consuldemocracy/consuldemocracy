@@ -4,17 +4,29 @@ ru:
       comments:
         see_all: Просмотреть все
         see_complete: Посмотреть целиком
+        comments_count:
+          one: "%{count} комментарий"
+          few: "%{count} комментария(иев)"
+          many: "%{count} комментария(иев)"
+          other: "%{count} комментария(иев)"
+        replies_count:
+          one: "%{count} ответ"
+          few: "%{count} ответа"
+          many: "%{count} ответов"
+          other: "%{count} ответов"
         cancel: Отмена
         publish_comment: Опубликовать комментарий
       form:
         phase_not_open: Эта фаза не открыта
-        login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
-        signin: Войти
-        signup: Зарегистрироваться
       index:
         title: Комментарии
         comments_about: Комментарии о
         see_in_context: Посмотреть в контексте
+        comments_count:
+          one: "%{count} комментарий"
+          few: "%{count} комментария(иев)"
+          many: "%{count} комментария(иев)"
+          other: "%{count} комментария(иев)"
       show:
         title: Отзыв
       version_chooser:
@@ -72,10 +84,12 @@ ru:
         see_latest_comments_title: Прокомментировать этот процесс
       shared:
         key_dates: Ключевые даты
+        homepage: Главная страница
         debate_dates: Обсуждение
         draft_publication_date: Публикация черновика
         allegations_dates: Комментарии
         result_publication_date: Публикация конечного результата
+        milestones_date: Подписки
         proposals_dates: Заявки
     questions:
       comments:
@@ -87,6 +101,10 @@ ru:
       question:
         comments:
           zero: Нет комментариев
+          one: "%{count} комментарий"
+          few: "%{count} комментария(иев)"
+          many: "%{count} комментария(иев)"
+          other: "%{count} комментария(иев)"
         debate: Обсуждение
       show:
         answer_question: Отправить ответ
@@ -97,11 +115,8 @@ ru:
       participation:
         phase_not_open: Эта фаза не открыта
         organizations: Организациям не разрешено участвовать в дебатах
-        signin: Войти
-        signup: Зарегистрироваться
         unauthenticated: Вы должны %{signin} или %{signup} чтобы принять участие.
         verified_only: Только верифицированные пользователи могут участвовать, %{verify_account}.
-        verify_account: подтвердите ваш аккаунт
         debate_phase_not_open: Фаза дебатов окончена, и ответы больше не принимаются
     shared:
       share: Доля

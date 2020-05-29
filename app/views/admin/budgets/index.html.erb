@@ -4,7 +4,7 @@
             new_admin_budget_path,
             class: "button float-right" %>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.budgets.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
 
 <% if @budgets.any? %>
   <h3><%= page_entries_info @budgets %></h3>
@@ -17,6 +17,7 @@
         <th><%= t("admin.budgets.index.table_investments") %></th>
         <th><%= t("admin.budgets.index.table_edit_groups") %></th>
         <th><%= t("admin.budgets.index.table_edit_budget") %></th>
+        <th><%= t("admin.budgets.index.table_admin_ballots") %></th>
       </tr>
     </thead>
     <tbody>
@@ -38,6 +39,13 @@
           </td>
           <td class="small">
             <%= link_to t("admin.budgets.index.edit_budget"), edit_admin_budget_path(budget) %>
+          </td>
+          <td class="small">
+            <% if budget.poll.present? %>
+              <%= link_to t("admin.budgets.index.admin_ballots"), admin_poll_booth_assignments_path(budget.poll) %>
+            <% else %>
+              <%= link_to_create_budget_poll(budget) %>
+            <% end %>
           </td>
         </tr>
       <% end %>

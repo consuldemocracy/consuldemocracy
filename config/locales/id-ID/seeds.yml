@@ -1,9 +1,54 @@
 id:
   seeds:
+    settings:
+      official_level_1_name: Posisi resmi nomor satu
+      official_level_2_name: Posisi resmi kedua
+      official_level_3_name: Posisi resmi ketiga
+      official_level_4_name: Posisi resmi ke empat
+      official_level_5_name: Posisi resmi ke lima
+    geozones:
+      north_district: Kelurahan utara
+      west_district: Kelurahan selatan
+      east_district: Timur kelurahan
+      central_district: Kabupaten
+    organizations:
+      human_rights: Hak asasi Manusia
+      neighborhood_association: Asosiasi persaudaraan
     categories:
+      associations: Asosiasi
+      culture: Budaya
+      sports: Olahraga
+      social_rights: Hak sosial
+      economy: Ekonomi
+      employment: Pekerjaan
+      equity: Keadilan
+      sustainability: Keberlanjutan
       participation: Partisipasi
+      mobility: Mobilitas
+      media: Media
+      health: Kesehatan
       transparency: Transparansi
+      security_emergencies: Keamanan dan darurat
+      environment: Lingkungan Hidup
     budgets:
+      budget: Anggaran Partisipatif
       currency: '€'
       groups:
+        all_city: Seluruh kota
         districts: Kabupaten
+      valuator_groups:
+        culture_and_sports: Olahraga & budaya
+        gender_and_diversity: Jenis kelamin Dan keanekaragaman
+        urban_development: Pembangunan kota yang berkelanjutan
+        equity_and_employment: Ekuitas & pekerjaan
+      statuses:
+        studying_project: Mempelajari proyek
+        bidding: Menawar
+        executing_project: Menjalankan proyek
+        executed: Dieksekusi
+    polls:
+      current_poll: "Jumlah diskusi"
+      current_poll_geozone_restricted: "Geozon jajak pendapat saat ini dibatasi"
+      recounting_poll: "Perhitungan ulang"
+      expired_poll_without_stats: "Jajak pendapat yang kedaluwarsa tanpa statistik & hasil"
+      expired_poll_with_stats: "Jajak pendapat yang kedaluwarsa dengan statistik & hasil"

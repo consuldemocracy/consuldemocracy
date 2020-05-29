@@ -1,8 +1,7 @@
 require "rails_helper"
 
-feature "Admin milestone statuses" do
-
-  background do
+describe "Admin milestone statuses" do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -12,7 +11,7 @@ feature "Admin milestone statuses" do
       status1 = create(:milestone_status)
       status2 = create(:milestone_status)
 
-      status1.destroy
+      status1.destroy!
 
       visit admin_milestone_statuses_path
 
@@ -91,5 +90,4 @@ feature "Admin milestone statuses" do
       expect(page).not_to have_content status.description
     end
   end
-
 end

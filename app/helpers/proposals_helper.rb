@@ -1,5 +1,4 @@
 module ProposalsHelper
-
   def progress_bar_percentage(proposal)
     case proposal.cached_votes_up
     when 0 then 0
@@ -29,14 +28,14 @@ module ProposalsHelper
   end
 
   def retire_proposals_options
-    Proposal::RETIRE_OPTIONS.collect { |option| [ t("proposals.retire_options.#{option}"), option ] }
+    Proposal::RETIRE_OPTIONS.map { |option| [t("proposals.retire_options.#{option}"), option] }
   end
 
   def empty_recommended_proposals_message_text(user)
     if user.interests.any?
-      t('proposals.index.recommendations.without_results')
+      t("proposals.index.recommendations.without_results")
     else
-      t('proposals.index.recommendations.without_interests')
+      t("proposals.index.recommendations.without_interests")
     end
   end
 
@@ -64,4 +63,50 @@ module ProposalsHelper
     proposals_current_view == "default" ? "minimal" : "default"
   end
 
+  def link_to_toggle_proposal_selection(proposal)
+    if proposal.selected?
+      button_text = t("admin.proposals.index.selected")
+      html_class = "button expanded"
+    else
+      button_text = t("admin.proposals.index.select")
+      html_class = "button hollow expanded"
+    end
+
+    case proposal.class.to_s
+    when "Proposal"
+      path = toggle_selection_admin_proposal_path(proposal)
+    when "Legislation::Proposal"
+      path = toggle_selection_admin_legislation_process_proposal_path(proposal.process, proposal)
+    end
+
+    link_to button_text, path, remote: true, method: :patch, class: html_class
+  end
+
+  def css_for_proposal_info_row(proposal)
+    if proposal.image.present?
+      if params[:selected].present?
+        "small-12 medium-9 column"
+      else
+        "small-12 medium-6 large-7 column"
+      end
+    else
+      if params[:selected].present?
+        "small-12 column"
+      else
+        "small-12 medium-9 column"
+      end
+    end
+  end
+
+  def show_proposal_votes?
+    params[:selected].blank?
+  end
+
+  def show_featured_proposals?
+    params[:selected].blank? && @featured_proposals.present?
+  end
+
+  def show_recommended_proposals?
+    params[:selected].blank? && feature?("user.recommendations") && @recommended_proposals.present?
+  end
 end

@@ -1,5 +1,5 @@
 class Valuation::BaseController < ApplicationController
-  layout 'admin'
+  layout "admin"
 
   before_action :authenticate_user!
   before_action :verify_valuator
@@ -9,7 +9,6 @@ class Valuation::BaseController < ApplicationController
   private
 
     def verify_valuator
-      raise CanCan::AccessDenied unless current_user.try(:valuator?) || current_user.try(:administrator?)
+      raise CanCan::AccessDenied unless current_user&.valuator? || current_user&.administrator?
     end
-
 end

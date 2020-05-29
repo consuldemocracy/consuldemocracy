@@ -1,7 +1,9 @@
 class Management::Budgets::InvestmentsController < Management::BaseController
+  include Translatable
+  before_action :load_budget
 
   load_resource :budget
-  load_resource :investment, through: :budget, class: 'Budget::Investment'
+  load_resource :investment, through: :budget, class: "Budget::Investment"
 
   before_action :only_verified_users, except: :print
 
@@ -19,7 +21,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
     @investment.author = managed_user
 
     if @investment.save
-      notice = t('flash.actions.create.notice', resource_name: Budget::Investment.model_name.human, count: 1)
+      notice = t("flash.actions.create.notice", resource_name: Budget::Investment.model_name.human, count: 1)
       redirect_to management_budget_investment_path(@budget, @investment), notice: notice
     else
       load_categories
@@ -52,16 +54,19 @@ class Management::Budgets::InvestmentsController < Management::BaseController
     end
 
     def investment_params
-      params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id,
-                                                :tag_list, :organization_name, :location, :skip_map)
+      attributes = [:external_url, :heading_id, :tag_list, :organization_name, :location, :skip_map]
+      params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
     end
 
     def only_verified_users
       check_verified_user t("management.budget_investments.alert.unverified_user")
     end
 
-    def load_categories
-      @categories = ActsAsTaggableOn::Tag.category.order(:name)
+    def load_budget
+      @budget = Budget.find_by_slug_or_id! params[:budget_id]
     end
 
+    def load_categories
+      @categories = Tag.category.order(:name)
+    end
 end

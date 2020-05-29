@@ -6,7 +6,6 @@ nl:
         submit: Stuur instructies opnieuw
         title: Stuur bevestiging instructies opnieuw
       show:
-        instructions_html: Bevestig het account via %{email}
         new_password_confirmation_label: Herhaal wachtwoord
         new_password_label: Nieuw wachtwoord
         please_set_password: Kies een nieuw wachtwoord (voor login met email hierboven)
@@ -15,7 +14,7 @@ nl:
     mailer:
       confirmation_instructions:
         confirm_link: Bevestig mijn account
-        text: 'U kunt uw email adres bevestigen via de volgende link:'
+        text: "U kunt uw email adres bevestigen via de volgende link:"
         title: Welkom
         welcome: Welkom
       reset_password_instructions:
@@ -23,12 +22,12 @@ nl:
         hello: Hallo
         ignore_text: Negeer deze mail als u geen wachtwoord aanpassing heeft aangevraagd.
         info_text: Uw wachtwoord zal niet worden aangepast tot u dit via de link edit.
-        text: 'We hebben een verzoek tot wijziging van uw wachtwoord ontvangen. U kunt dit doen via de volgende link:'
+        text: "We hebben een verzoek tot wijziging van uw wachtwoord ontvangen. U kunt dit doen via de volgende link:"
         title: Pas wachtwoord aan
       unlock_instructions:
         hello: Hallo
         info_text: Uw account is geblokkeerd vanwege een te groot aantal mislukte inlogpogingen.
-        instructions_text: 'Klik deze link om uw account te de-blokkeren:'
+        instructions_text: "Klik deze link om uw account te de-blokkeren:"
         title: Uw account is geblokkeerd
         unlock_link: De-blokkeer mijn account
     menu:
@@ -50,10 +49,6 @@ nl:
           title: Als organisatie of collectief aanmelden
         success:
           back_to_index: Begrepen; terug naar hoofdpagina
-          instructions_1_html: "<b>We nemen snel contact op</b> om te verifiëren dat u dit collectief inderdaad vertegenwoordigd."
-          instructions_2_html: Terwijl uw <b>email wordt geverifiëerd</b>, hebben we u een link gestuurd <b>ter bevestiging van uw account</b>.
-          instructions_3_html: Na bevestiging kunt us deelnemen als niet-geverifiëerd collectief.
-          thank_you_html: Dank voor uw aanmelding als collectief op deze site. We wachten nu op <b>verificatie</b>.
           title: Aanmelden van organisatie of collectief
     passwords:
       edit:
@@ -103,7 +98,7 @@ nl:
           password_confirmation_label: Bevestig nieuw wachtwoord
           password_label: Nieuw wachtwoord
           update_submit: Update
-          waiting_for: 'In afwachting van bevestiging:'
+          waiting_for: "In afwachting van bevestiging:"
         new:
           cancel: Annuleren inloggen
           email_label: E-mail
@@ -123,7 +118,4 @@ nl:
           username_note: De naam bij uw bijdragen
         success:
           back_to_index: Begrepen; terug naar hoofdpagina
-          instructions_1_html: <b>Check uw email</b> - we hebben u een <b>link ter bevestiging</b> gestuurd.
-          instructions_2_html: Na bevestiging kunt u deelnemen.
-          thank_you_html: Dank voor uw aanmelding. Uw email moet nu worden <b>bevestigd</b>.
           title: Pas email adres aan

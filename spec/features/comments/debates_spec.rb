@@ -1,7 +1,7 @@
 require "rails_helper"
 include ActionView::Helpers::DateHelper
 
-feature "Commenting debates" do
+describe "Commenting debates" do
   let(:user)   { create :user }
   let(:debate) { create :debate }
 
@@ -39,6 +39,21 @@ feature "Commenting debates" do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
+  scenario "Link to comment show" do
+    comment = create(:comment, commentable: debate, user: user)
+
+    visit debate_path(debate)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
+    end
+
+    click_link comment.created_at.strftime("%Y-%m-%d %T")
+
+    expect(page).to have_link "Go back to #{debate.title}"
+    expect(page).to have_current_path(comment_path(comment))
+  end
+
   scenario "Collapsable comments", :js do
     parent_comment = create(:comment, body: "Main comment", commentable: debate)
     child_comment  = create(:comment, body: "First subcomment", commentable: debate, parent: parent_comment)
@@ -47,20 +62,25 @@ feature "Commenting debates" do
     visit debate_path(debate)
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 2)
+    expect(page).to have_content("1 response (collapse)")
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
     find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 1)
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content child_comment.body
     expect(page).not_to have_content grandchild_comment.body
   end
@@ -139,7 +159,7 @@ feature "Commenting debates" do
 
   scenario "Paginated comments" do
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: debate)}
+    (per_page + 2).times { create(:comment, commentable: debate) }
 
     visit debate_path(debate)
 
@@ -154,12 +174,12 @@ feature "Commenting debates" do
     expect(page).to have_css(".comment", count: 2)
   end
 
-  feature "Not logged user" do
+  describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: debate)
       visit debate_path(debate)
 
-      expect(page).to have_content "You must Sign in or Sign up to leave a comment"
+      expect(page).to have_content "You must sign in or sign up to leave a comment"
       within("#comments") do
         expect(page).not_to have_content "Write a comment"
         expect(page).not_to have_content "Reply"
@@ -223,7 +243,6 @@ feature "Commenting debates" do
       click_button "Publish reply"
       expect(page).to have_content "Can't be blank"
     end
-
   end
 
   scenario "N replies", :js do
@@ -312,7 +331,7 @@ feature "Commenting debates" do
     expect(page).to have_content("Testing submit button!")
   end
 
-  feature "Moderators" do
+  describe "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
@@ -368,7 +387,7 @@ feature "Commenting debates" do
     end
   end
 
-  feature "Administrators" do
+  describe "Administrators" do
     scenario "can create comment as an administrator", :js do
       admin = create(:administrator)
 
@@ -424,23 +443,23 @@ feature "Commenting debates" do
     end
   end
 
-  feature "Voting comments" do
-    background do
-      @manuela = create(:user, verified_at: Time.current)
-      @pablo = create(:user)
-      @debate = create(:debate)
-      @comment = create(:comment, commentable: @debate)
+  describe "Voting comments" do
+    let(:verified)   { create(:user, verified_at: Time.current) }
+    let(:unverified) { create(:user) }
+    let(:debate)     { create(:debate) }
+    let!(:comment)   { create(:comment, commentable: debate) }
 
-      login_as(@manuela)
+    before do
+      login_as(verified)
     end
 
     scenario "Show" do
-      create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
+      create(:vote, voter: verified, votable: comment, vote_flag: true)
+      create(:vote, voter: unverified, votable: comment, vote_flag: false)
 
-      visit debate_path(@debate)
+      visit debate_path(debate)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         within(".in_favor") do
           expect(page).to have_content "1"
         end
@@ -454,9 +473,9 @@ feature "Commenting debates" do
     end
 
     scenario "Create", :js do
-      visit debate_path(@debate)
+      visit debate_path(debate)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -472,9 +491,9 @@ feature "Commenting debates" do
     end
 
     scenario "Update", :js do
-      visit debate_path(@debate)
+      visit debate_path(debate)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -496,9 +515,9 @@ feature "Commenting debates" do
     end
 
     scenario "Trying to vote multiple times", :js do
-      visit debate_path(@debate)
+      visit debate_path(debate)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
         within(".in_favor") do
           expect(page).to have_content "1"
@@ -518,5 +537,4 @@ feature "Commenting debates" do
       end
     end
   end
-
 end

@@ -1,5 +1,5 @@
 shared_examples "progressable" do |factory_name, path_name|
-  feature "Progress bars", :js do
+  describe "Progress bars", :js do
     let!(:progressable) { create(factory_name) }
     let(:path) { send(path_name, *resource_hierarchy_for(progressable)) }
 

@@ -6,7 +6,6 @@ id:
         submit: Kirim ulang instruksi
         title: Kirim ulang instruksi konfirmasi
       show:
-        instructions_html: Mengonfirmasi akun dengan email %{email}
         new_password_confirmation_label: Ulangi kata sandi akses
         new_password_label: Kata sandi baru
         please_set_password: Silakan pilih kata sandi baru anda (ini akan memungkinkan anda masuk dengan email di atas)
@@ -15,7 +14,7 @@ id:
     mailer:
       confirmation_instructions:
         confirm_link: Konfirmasikan akun saya
-        text: 'Anda bisa mengkonfirmasi akun email anda di link berikut:'
+        text: "Anda bisa mengkonfirmasi akun email anda di link berikut:"
         title: Selamat Datang
         welcome: Selamat Datang
       reset_password_instructions:
@@ -23,12 +22,12 @@ id:
         hello: Halo
         ignore_text: Jika anda tidak meminta perubahan kata sandi, anda dapat mengabaikan email ini.
         info_text: Kata sandi anda tidak akan berubah kecuali anda mengakses link dan mensuntingnya.
-        text: 'Kami telah menerima permintaan untuk mengganti kata sandi anda. Anda dapat melakukan ini di link berikut:'
+        text: "Kami telah menerima permintaan untuk mengganti kata sandi anda. Anda dapat melakukan ini di link berikut:"
         title: Ubah kata sandi anda
       unlock_instructions:
         hello: Halo
         info_text: Akun anda telah diblokir karena banyaknya upaya masuk yang gagal.
-        instructions_text: 'Silahkan klik link ini untuk membuka kunci akun anda:'
+        instructions_text: "Silahkan klik link ini untuk membuka kunci akun anda:"
         title: Akun anda telah dikunci
         unlock_link: Buka akun saya
     menu:
@@ -50,10 +49,6 @@ id:
           title: Mendaftar sebagai organisasi atau kolektif
         success:
           back_to_index: Saya mengerti; kembali ke halaman utama
-          instructions_1_html: "<b> Kami akan menghubungi anda segera</b> untuk memverifikasi bahwa Anda sebenarnya mewakili kolektif ini."
-          instructions_2_html: Sementara anda <b>email ditinjau</b>, kami telah mengirim anda <b>link untuk mengkonfirmasi akun anda</b>.
-          instructions_3_html: Setelah dikonfirmasi, anda mungkin mulai berpartisipasi sebagai kolektif yang tidak terverifikasi.
-          thank_you_html: Terima kasih telah mendaftarkan kolektif Anda di situs web. Sekarang <b>verifikasi tertunda</b>.
           title: Pendaftaran organisasi / kolektif
     passwords:
       edit:
@@ -103,7 +98,7 @@ id:
           password_confirmation_label: Konfirmasi password baru
           password_label: Kata sandi baru
           update_submit: Memperbaharui
-          waiting_for: 'Menunggu konfirmasi dari:'
+          waiting_for: "Menunggu konfirmasi dari:"
         new:
           cancel: Batalkan masuk
           email_label: Email
@@ -123,7 +118,4 @@ id:
           username_note: Nama ini akan muncul di postingan anda selanjutnya
         success:
           back_to_index: Saya mengerti; kembali ke halaman utama
-          instructions_1_html: Silakan <b>periksa email anda</b> - kami telah mengirimi anda<b>tautan untuk mengkonfirmasi akun anda</b>.
-          instructions_2_html: Setelah dikonfirmasi, anda bisa mulai berpartisipasi.
-          thank_you_html: Terima kasih telah mendaftar untuk situs webnya. Anda sekarang harus<b>mengkonfirmasi alamat email anda</b>.
           title: Modifikasi emai anda

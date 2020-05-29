@@ -10,6 +10,11 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  # Because autoloading is disabled in production environments with Rails 5,
+  # using autoload_paths will not load needed classes from specified paths.
+  # The solution to this, is to ask Rails to eager load classes.
+  config.eager_load_paths += ["#{config.root}/lib"]
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -22,7 +27,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = Uglifier.new(harmony: true)
@@ -38,11 +43,12 @@ Rails.application.configure do
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
-  # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
+  # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for Apache
+  # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  # Configure force_ssl in secrets.yml
+  config.force_ssl = Rails.application.secrets.force_ssl
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -58,7 +64,7 @@ Rails.application.configure do
   config.cache_store = :dalli_store, { value_max_bytes: 2000000 }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  # config.action_controller.asset_host = 'http://assets.example.com'
+  # config.action_controller.asset_host = "http://assets.example.com"
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -66,21 +72,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
   config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
 
-  # SMTP configuration to deliver emails
-  # Uncomment the following block of code and add your SMTP service credentials
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   address:              'smtp.example.com',
-  #   port:                 587,
-  #   domain:               'example.com',
-  #   user_name:            '<username>',
-  #   password:             '<password>',
-  #   authentication:       'plain',
-  #   enable_starttls_auto: true }
+  # Configure your SMTP service credentials in secrets.yml
+  if Rails.application.secrets.smtp_settings
+    config.action_mailer.delivery_method = Rails.application.secrets.mailer_delivery_method || :smtp
+    config.action_mailer.smtp_settings = Rails.application.secrets.smtp_settings
+  end
 
-  # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
-  # the I18n.default_locale when a translation cannot be found).
-  config.i18n.fallbacks = true
+  # Disable locale fallbacks for I18n
+  # (prevents using fallback locales set in application.rb).
+  # config.i18n.fallbacks = false
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify

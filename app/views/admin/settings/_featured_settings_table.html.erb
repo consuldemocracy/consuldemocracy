@@ -1,0 +1,40 @@
+<table>
+  <thead>
+    <tr>
+      <th><%= t("admin.settings.setting") %></th>
+      <th><%= t("admin.settings.setting_status") %></th>
+      <th><%= t("admin.settings.setting_actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% features.each do |feature| %>
+      <tr>
+        <td class="small-8">
+          <strong><%= t("settings.#{feature.key}") %></strong>
+          <br>
+          <span class="small">
+            <%= t("settings.#{feature.key}_description", default: t("admin.settings.no_description")) %>
+          </span>
+        </td>
+
+        <td>
+          <% if feature.enabled? %>
+            <span class="enabled">
+              <strong>
+                <%= t ("admin.settings.index.features.enabled") %>
+              </strong>
+            </span>
+          <% else %>
+            <span class="disabled">
+              <%= t("admin.settings.index.features.disabled") %>
+            </span>
+          <% end %>
+        </td>
+
+        <td class="text-right">
+          <%= render "admin/settings/featured_settings_form", feature: feature, tab: tab %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

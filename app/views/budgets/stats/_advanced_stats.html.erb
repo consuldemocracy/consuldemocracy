@@ -1,0 +1,83 @@
+<div id="advanced_statistics">
+  <h3 class="section-title"><%= t("stats.advanced") %></h3>
+
+  <div id="total_investments" class="stats-group">
+    <h4><%= t("stats.budgets.total_investments") %></h4>
+
+    <%= number_with_info_tags(
+      stats.total_budget_investments,
+      t("stats.budgets.total_investments"),
+      html_class: "total-investments"
+    ) %>
+
+    <%= number_with_info_tags(stats.total_unfeasible_investments,
+                              t("stats.budgets.total_unfeasible_investments")) %>
+    <%= number_with_info_tags(stats.total_selected_investments,
+                              t("stats.budgets.total_selected_investments")) %>
+  </div>
+
+  <div id="stats_by_phase" class="stats-group">
+    <h4><%= t("stats.budgets.by_phase") %></h4>
+
+    <% stats.phases.each do |phase| %>
+      <%= number_with_info_tags(
+        stats.send("total_participants_#{phase}_phase"),
+        t("stats.budgets.participants_#{phase}_phase")
+      ) %>
+    <% end %>
+  </div>
+
+  <div id="stats_by_heading" class="stats-group">
+    <h4 class="margin-bottom"><%= t("stats.budgets.by_heading") %></h4>
+
+    <table class="stats-districts survey-districts">
+      <thead>
+        <tr>
+          <th scope="col" rowspan="2"><%= t("stats.budgets.heading") %></th>
+          <th scope="col" rowspan="2"><%= sanitize(t("stats.budgets.investments_sent")) %></th>
+
+          <% stats.all_phases.each do |phase| %>
+            <th scope="col" colspan="3">
+              <%= t("stats.budgets.participants_#{phase}_phase") %>
+            </th>
+          <% end %>
+        </tr>
+        <tr>
+          <% stats.all_phases.each do %>
+            <th scope="col" class="phase-subheader"><%= t("stats.budgets.total") %></th>
+            <th scope="col" class="phase-subheader"><%= t("stats.budgets.percent_total_participants") %></th>
+            <th scope="col" class="phase-subheader"><%= t("stats.budgets.percent_heading_census") %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody id="headings">
+        <% @headings.each do |heading| %>
+          <tr id="<%= heading.name.parameterize %>">
+            <td class="border-left">
+              <strong><%= heading.name %></strong>
+            </td>
+            <td id="total_investments_heading_<%= heading.id %>"
+                class="text-center border-left border-right">
+              <%= stats.headings[heading.id][:total_investments_count] %>
+            </td>
+
+            <% stats.all_phases.each do |phase| %>
+              <td id="total_participants_<%= phase %>_phase_heading_<%= heading.id %>"
+                  class="border-left text-center">
+                <%= stats.headings[heading.id]["total_participants_#{phase}_phase".to_sym] %>
+              </td>
+              <td id="percentage_participants_<%= phase %>_phase_heading_<%= heading.id %>"
+                  class="border-left border-right text-center">
+                <%= number_to_stats_percentage(stats.headings[heading.id]["percentage_participants_#{phase}_phase".to_sym]) %>
+              </td>
+              <td id="percentage_district_population_<%= phase %>_phase_heading_<%= heading.id %>"
+                  class="text-center border-right">
+                <%= number_to_stats_percentage(stats.headings[heading.id]["percentage_district_population_#{phase}_phase".to_sym]) %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

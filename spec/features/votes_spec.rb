@@ -1,22 +1,21 @@
 require "rails_helper"
 
-feature "Votes" do
+describe "Votes" do
+  let!(:verified)   { create(:user, verified_at: Time.current) }
+  let!(:unverified) { create(:user) }
 
-  background do
-    @manuela = create(:user, verified_at: Time.current)
-    @pablo = create(:user)
+  before do
   end
 
-  feature "Debates" do
-    background { login_as(@manuela) }
+  describe "Debates" do
+    before { login_as(verified) }
 
     scenario "Index shows user votes on debates" do
-
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
-      create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
-      create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
+      create(:vote, voter: verified, votable: debate1, vote_flag: true)
+      create(:vote, voter: verified, votable: debate3, vote_flag: false)
 
       visit debates_path
 
@@ -59,8 +58,7 @@ feature "Votes" do
       end
     end
 
-    feature "Single debate" do
-
+    describe "Single debate" do
       scenario "Show no votes" do
         visit debate_path(create(:debate))
 
@@ -123,8 +121,8 @@ feature "Votes" do
 
       scenario "Show" do
         debate = create(:debate)
-        create(:vote, voter: @manuela, votable: debate, vote_flag: true)
-        create(:vote, voter: @pablo, votable: debate, vote_flag: false)
+        create(:vote, voter: verified, votable: debate, vote_flag: true)
+        create(:vote, voter: unverified, votable: debate, vote_flag: false)
 
         visit debate_path(debate)
 
@@ -164,7 +162,6 @@ feature "Votes" do
         visit debates_path
 
         within("#debates") do
-
           find(".in-favor a").click
 
           within(".in-favor") do
@@ -184,14 +181,13 @@ feature "Votes" do
     end
   end
 
-  feature "Proposals" do
-    background { login_as(@manuela) }
+  describe "Proposals" do
+    before { login_as(verified) }
 
     scenario "Index shows user votes on proposals" do
-      proposal1 = create(:proposal)
+      proposal1 = create(:proposal, voters: [verified])
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
-      create(:vote, voter: @manuela, votable: proposal1, vote_flag: true)
 
       visit proposals_path
 
@@ -210,18 +206,16 @@ feature "Votes" do
       end
     end
 
-    feature "Single proposal" do
-      background do
-        @proposal = create(:proposal)
-      end
+    describe "Single proposal" do
+      let!(:proposal) { create(:proposal) }
 
       scenario "Show no votes" do
-        visit proposal_path(@proposal)
+        visit proposal_path(proposal)
         expect(page).to have_content "No supports"
       end
 
       scenario "Trying to vote multiple times", :js do
-        visit proposal_path(@proposal)
+        visit proposal_path(proposal)
 
         within(".supports") do
           find(".in-favor a").click
@@ -232,10 +226,10 @@ feature "Votes" do
       end
 
       scenario "Show" do
-        create(:vote, voter: @manuela, votable: @proposal, vote_flag: true)
-        create(:vote, voter: @pablo, votable: @proposal, vote_flag: true)
+        create(:vote, voter: verified, votable: proposal, vote_flag: true)
+        create(:vote, voter: unverified, votable: proposal, vote_flag: true)
 
-        visit proposal_path(@proposal)
+        visit proposal_path(proposal)
 
         within(".supports") do
           expect(page).to have_content "2 supports"
@@ -243,7 +237,7 @@ feature "Votes" do
       end
 
       scenario "Create from proposal show", :js do
-        visit proposal_path(@proposal)
+        visit proposal_path(proposal)
 
         within(".supports") do
           find(".in-favor a").click
@@ -254,10 +248,9 @@ feature "Votes" do
       end
 
       scenario "Create in listed proposal in index", :js do
-        create_featured_proposals
         visit proposals_path
 
-        within("#proposal_#{@proposal.id}") do
+        within("#proposal_#{proposal.id}") do
           find(".in-favor a").click
 
           expect(page).to have_content "1 support"
@@ -269,7 +262,7 @@ feature "Votes" do
       scenario "Create in featured proposal in index", :js do
         visit proposals_path
 
-        within("#proposal_#{@proposal.id}") do
+        within("#proposal_#{proposal.id}") do
           find(".in-favor a").click
 
           expect(page).to have_content "You have already supported this proposal. Share it!"
@@ -332,7 +325,7 @@ feature "Votes" do
     debate = create(:debate)
 
     Setting["max_ratio_anon_votes_on_debates"] = 50
-    debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
+    debate.update!(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
 
     login_as(user)
 
@@ -367,108 +360,4 @@ feature "Votes" do
       expect_message_only_verified_can_vote_proposals
     end
   end
-
-  feature "Spending Proposals" do
-    background do
-      Setting["feature.spending_proposals"] = true
-      Setting["feature.spending_proposal_features.voting_allowed"] = true
-      login_as(@manuela)
-    end
-
-    after do
-      Setting["feature.spending_proposals"] = nil
-      Setting["feature.spending_proposal_features.voting_allowed"] = nil
-    end
-
-    feature "Index" do
-      scenario "Index shows user votes on proposals" do
-        spending_proposal1 = create(:spending_proposal)
-        spending_proposal2 = create(:spending_proposal)
-        spending_proposal3 = create(:spending_proposal)
-        create(:vote, voter: @manuela, votable: spending_proposal1, vote_flag: true)
-
-        visit spending_proposals_path
-
-        within("#investment-projects") do
-          within("#spending_proposal_#{spending_proposal1.id}_votes") do
-            expect(page).to have_content "You have already supported this. Share it!"
-          end
-
-          within("#spending_proposal_#{spending_proposal2.id}_votes") do
-            expect(page).not_to have_content "You have already supported this. Share it!"
-          end
-
-          within("#spending_proposal_#{spending_proposal3.id}_votes") do
-            expect(page).not_to have_content "You have already supported this. Share it!"
-          end
-        end
-      end
-
-      scenario "Create from spending proposal index", :js do
-        spending_proposal = create(:spending_proposal)
-        visit spending_proposals_path
-
-        within(".supports") do
-          find(".in-favor a").click
-
-          expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
-        end
-      end
-    end
-
-    feature "Single spending proposal" do
-      background do
-        @proposal = create(:spending_proposal)
-      end
-
-      scenario "Show no votes" do
-        visit spending_proposal_path(@proposal)
-        expect(page).to have_content "No supports"
-      end
-
-      scenario "Trying to vote multiple times", :js do
-        visit spending_proposal_path(@proposal)
-
-        within(".supports") do
-          find(".in-favor a").click
-          expect(page).to have_content "1 support"
-
-          expect(page).not_to have_selector ".in-favor a"
-        end
-      end
-
-      scenario "Create from proposal show", :js do
-        visit spending_proposal_path(@proposal)
-
-        within(".supports") do
-          find(".in-favor a").click
-
-          expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
-        end
-      end
-    end
-
-    scenario "Disable voting on spending proposals", :js do
-      login_as(@manuela)
-      Setting["feature.spending_proposal_features.voting_allowed"] = nil
-      spending_proposal = create(:spending_proposal)
-
-      visit spending_proposals_path
-
-      within("#spending_proposal_#{spending_proposal.id}") do
-        find("div.supports").hover
-        expect_message_voting_not_allowed
-      end
-
-      visit spending_proposal_path(spending_proposal)
-
-      within("#spending_proposal_#{spending_proposal.id}") do
-        find("div.supports").hover
-        expect_message_voting_not_allowed
-      end
-    end
-  end
-
 end

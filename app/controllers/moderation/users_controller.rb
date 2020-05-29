@@ -1,5 +1,4 @@
 class Moderation::UsersController < Moderation::BaseController
-
   before_action :load_users, only: :index
 
   load_and_authorize_resource
@@ -10,7 +9,7 @@ class Moderation::UsersController < Moderation::BaseController
   def hide_in_moderation_screen
     block_user
 
-    redirect_to request.query_parameters.merge(action: :index), notice: I18n.t('moderation.users.notice_hide')
+    redirect_with_query_params_to({ action: :index }, { notice: I18n.t("moderation.users.notice_hide") })
   end
 
   def hide
@@ -29,5 +28,4 @@ class Moderation::UsersController < Moderation::BaseController
       @user.block
       Activity.log(current_user, :block, @user)
     end
-
 end

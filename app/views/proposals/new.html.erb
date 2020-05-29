@@ -5,11 +5,11 @@
 
     <h1><%= t("proposals.new.start_new") %></h1>
     <div data-alert class="callout primary">
-      <%= link_to help_path(anchor: "proposals"), title: t('shared.target_blank_html'), target: "_blank" do %>
-        <%= t("proposals.new.more_info")%>
+      <%= link_to help_path(anchor: "proposals"), title: t("shared.target_blank"), target: "_blank" do %>
+        <%= t("proposals.new.more_info") %>
       <% end %>
     </div>
-    <%= render "proposals/form", form_url: proposals_url %>
+    <%= render "proposals/form", form_url: proposals_path %>
   </div>
 
   <div class="small-12 medium-3 column">

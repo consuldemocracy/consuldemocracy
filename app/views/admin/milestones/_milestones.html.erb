@@ -4,6 +4,14 @@
             polymorphic_path([:admin, *resource_hierarchy_for(milestoneable.progress_bars.new)]),
             class: "button hollow float-right" %>
 
+<% if milestoneable.milestone_tag_list.any? %>
+  <div>
+    <strong>
+      <%= t("admin.milestones.index.milestone_tags") %>:
+    </strong> <%= milestoneable.milestone_tag_list.sort.join(", ") %>
+  </div>
+<% end %>
+
 <% if milestoneable.milestones.any? %>
   <table>
     <thead>
@@ -32,7 +40,7 @@
             <%= l(milestone.publication_date.to_date) if milestone.publication_date.present? %>
           </td>
           <td class="small">
-            <%= milestone.status.present? ? milestone.status.name : '' %>
+            <%= milestone.status.present? ? milestone.status.name : "" %>
           </td>
           <td class="small">
             <%= link_to t("admin.milestones.index.show_image"),

@@ -4,7 +4,6 @@ ca:
     form:
       title: Imatge descriptiva
       title_placeholder: Afegeix un title descriptiu per la imatge
-      attachment_label: Tria la imatge
       delete_button: Eliminar imatge
       note: "Pots pujar una imatge del següents tipus: %{accepted_content_types}, fins un màxim de %{max_file_size} MB."
       add_new_image: Afegir imatge
@@ -14,7 +13,6 @@ ca:
       destroy:
         notice: Imatge esborrada correctament.
         alert: No es pot eliminar la imatge.
-        confirm: Estàs segur que vols esborrar la imatge? Aquesta acció no es pot desfer!
     errors:
       messages:
         in_between: ha de ser entre %{min} i %{max}

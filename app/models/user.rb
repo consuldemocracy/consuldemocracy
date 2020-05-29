@@ -1,9 +1,8 @@
-class User < ActiveRecord::Base
-
+class User < ApplicationRecord
   include Verification
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
-         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable,
+         :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
          authentication_keys: [:login]
 
   acts_as_voter
@@ -21,17 +20,60 @@ class User < ActiveRecord::Base
   has_one :lock
   has_many :flags
   has_many :identities, dependent: :destroy
-  has_many :debates, -> { with_hidden }, foreign_key: :author_id
-  has_many :proposals, -> { with_hidden }, foreign_key: :author_id
-  has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: 'Budget::Investment'
-  has_many :comments, -> { with_hidden }
-  has_many :spending_proposals, foreign_key: :author_id
+  has_many :debates, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
+  has_many :proposals, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
+  has_many :activities
+  has_many :budget_investments, -> { with_hidden },
+    class_name:  "Budget::Investment",
+    foreign_key: :author_id,
+    inverse_of:  :author
+  has_many :comments, -> { with_hidden }, inverse_of: :user
   has_many :failed_census_calls
   has_many :notifications
-  has_many :direct_messages_sent,     class_name: 'DirectMessage', foreign_key: :sender_id
-  has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
-  has_many :legislation_answers, class_name: 'Legislation::Answer', dependent: :destroy, inverse_of: :user
+  has_many :direct_messages_sent,
+    class_name:  "DirectMessage",
+    foreign_key: :sender_id,
+    inverse_of:  :sender
+  has_many :direct_messages_received,
+    class_name:  "DirectMessage",
+    foreign_key: :receiver_id,
+    inverse_of:  :receiver
+  has_many :legislation_answers, class_name: "Legislation::Answer", dependent: :destroy, inverse_of: :user
   has_many :follows
+  has_many :legislation_annotations,
+    class_name:  "Legislation::Annotation",
+    foreign_key: :author_id,
+    inverse_of:  :author
+  has_many :legislation_proposals,
+    class_name:  "Legislation::Proposal",
+    foreign_key: :author_id,
+    inverse_of:  :author
+  has_many :legislation_questions,
+    class_name:  "Legislation::Question",
+    foreign_key: :author_id,
+    inverse_of:  :author
+  has_many :polls, foreign_key: :author_id, inverse_of: :author
+  has_many :poll_answers,
+    class_name:  "Poll::Answer",
+    foreign_key: :author_id,
+    inverse_of:  :author
+  has_many :poll_pair_answers,
+    class_name:  "Poll::PairAnswer",
+    foreign_key: :author_id,
+    inverse_of:  :author
+  has_many :poll_partial_results,
+    class_name:  "Poll::PartialResult",
+    foreign_key: :author_id,
+    inverse_of:  :author
+  has_many :poll_questions,
+    class_name:  "Poll::Question",
+    foreign_key: :author_id,
+    inverse_of:  :author
+  has_many :poll_recounts,
+    class_name:  "Poll::Recount",
+    foreign_key: :author_id,
+    inverse_of:  :author
+  has_many :topics, foreign_key: :author_id, inverse_of: :author
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
@@ -40,7 +82,7 @@ class User < ActiveRecord::Base
 
   validate :validate_username_length
 
-  validates :official_level, inclusion: {in: 0..5}
+  validates :official_level, inclusion: { in: 0..5 }
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   validates_associated :organization, message: false
@@ -55,6 +97,8 @@ class User < ActiveRecord::Base
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }
+  scope :male,           -> { where(gender: "male") }
+  scope :female,         -> { where(gender: "female") }
   scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    ->(document_type, document_number) do
@@ -64,11 +108,18 @@ class User < ActiveRecord::Base
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :public_for_api, -> { all }
-  scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).uniq }
+  scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).distinct }
   scope :by_authors,     ->(author_ids) { where("users.id IN (?)", author_ids) }
   scope :by_username_email_or_document_number, ->(search_string) do
     string = "%#{search_string}%"
     where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", string, string, string)
+  end
+  scope :between_ages, ->(from, to) do
+    where(
+      "date_of_birth > ? AND date_of_birth < ?",
+      to.years.ago.beginning_of_year,
+      from.years.ago.end_of_year
+    )
   end
 
   before_validation :clean_document_number
@@ -84,7 +135,7 @@ class User < ActiveRecord::Base
       email: oauth_email,
       oauth_email: oauth_email,
       password: Devise.friendly_token[0, 20],
-      terms_of_service: '1',
+      terms_of_service: "1",
       confirmed_at: oauth_email_confirmed ? DateTime.current : nil
     )
   end
@@ -108,11 +159,6 @@ class User < ActiveRecord::Base
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
-  def spending_proposal_votes(spending_proposals)
-    voted = votes.for_spending_proposals(spending_proposals)
-    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
-  end
-
   def budget_investment_votes(budget_investments)
     voted = votes.for_budget_investments(budget_investments)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
@@ -120,7 +166,7 @@ class User < ActiveRecord::Base
 
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
-    comment_flags.each_with_object({}){ |f, h| h[f.flaggable_id] = true }
+    comment_flags.each_with_object({}) { |f, h| h[f.flaggable_id] = true }
   end
 
   def voted_in_group?(group)
@@ -128,7 +174,7 @@ class User < ActiveRecord::Base
   end
 
   def headings_voted_within_group(group)
-    Budget::Heading.order("name").where(id: voted_investments.by_group(group).pluck(:heading_id))
+    Budget::Heading.where(id: voted_investments.by_group(group).pluck(:heading_id))
   end
 
   def voted_investments
@@ -160,7 +206,7 @@ class User < ActiveRecord::Base
   end
 
   def verified_organization?
-    organization && organization.verified?
+    organization&.verified?
   end
 
   def official?
@@ -169,20 +215,22 @@ class User < ActiveRecord::Base
 
   def add_official_position!(position, level)
     return if position.blank? || level.blank?
-    update official_position: position, official_level: level.to_i
+
+    update! official_position: position, official_level: level.to_i
   end
 
   def remove_official_position!
-    update official_position: nil, official_level: 0
+    update! official_position: nil, official_level: 0
   end
 
   def has_official_email?
-    domain = Setting['email_domain_for_officials']
+    domain = Setting["email_domain_for_officials"]
     email.present? && ((email.end_with? "@#{domain}") || (email.end_with? ".#{domain}"))
   end
 
   def display_official_position_badge?
     return true if official_level > 1
+
     official_position_badge? && official_level == 1
   end
 
@@ -203,7 +251,7 @@ class User < ActiveRecord::Base
   end
 
   def erase(erase_reason = nil)
-    update(
+    update!(
       erased_at: Time.current,
       erase_reason: erase_reason,
       username: nil,
@@ -225,25 +273,26 @@ class User < ActiveRecord::Base
   end
 
   def take_votes_if_erased_document(document_number, document_type)
-    erased_user = User.erased.where(document_number: document_number)
-                             .where(document_type: document_type).first
+    erased_user = User.erased.find_by(document_number: document_number,
+                                      document_type: document_type)
     if erased_user.present?
       take_votes_from(erased_user)
-      erased_user.update(document_number: nil, document_type: nil)
+      erased_user.update!(document_number: nil, document_type: nil)
     end
   end
 
   def take_votes_from(other_user)
     return if other_user.blank?
+
     Poll::Voter.where(user_id: other_user.id).update_all(user_id: id)
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
     Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
-    data_log = "id: #{other_user.id} - #{Time.current.strftime('%Y-%m-%d %H:%M:%S')}"
-    update(former_users_data_log: "#{former_users_data_log} | #{data_log}")
+    data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
+    update!(former_users_data_log: "#{former_users_data_log} | #{data_log}")
   end
 
   def locked?
-    Lock.find_or_create_by(user: self).locked?
+    Lock.find_or_create_by!(user: self).locked?
   end
 
   def self.search(term)
@@ -251,11 +300,11 @@ class User < ActiveRecord::Base
   end
 
   def self.username_max_length
-    @@username_max_length ||= columns.find { |c| c.name == 'username' }.limit || 60
+    @username_max_length ||= columns.find { |c| c.name == "username" }.limit || 60
   end
 
   def self.minimum_required_age
-    (Setting['min_age_to_participate'] || 16).to_i
+    (Setting["min_age_to_participate"] || 16).to_i
   end
 
   def show_welcome_screen?
@@ -265,6 +314,7 @@ class User < ActiveRecord::Base
 
   def password_required?
     return false if skip_password_validation
+
     super
   end
 
@@ -303,11 +353,11 @@ class User < ActiveRecord::Base
   def save_requiring_finish_signup
     begin
       self.registering_with_oauth = true
-      save(validate: false)
+      save!(validate: false)
     # Devise puts unique constraints for the email the db, so we must detect & handle that
     rescue ActiveRecord::RecordNotUnique
       self.email = nil
-      save(validate: false)
+      save!(validate: false)
     end
     true
   end
@@ -333,8 +383,8 @@ class User < ActiveRecord::Base
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     login = conditions.delete(:login)
-    where(conditions.to_hash).where(["lower(email) = ?", login.downcase]).first ||
-    where(conditions.to_hash).where(["username = ?", login]).first
+    where(conditions.to_hash).find_by(["lower(email) = ?", login.downcase]) ||
+    where(conditions.to_hash).find_by(["username = ?", login])
   end
 
   def self.find_by_manager_login(manager_login)
@@ -346,10 +396,15 @@ class User < ActiveRecord::Base
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
   end
 
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
+
   private
 
     def clean_document_number
       return unless document_number.present?
+
       self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
     end
 
@@ -359,5 +414,4 @@ class User < ActiveRecord::Base
         maximum: User.username_max_length)
       validator.validate(self)
     end
-
 end

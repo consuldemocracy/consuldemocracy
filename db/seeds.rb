@@ -1,20 +1,18 @@
-# coding: utf-8
 # Default admin user (change password after first deploy to a server!)
 if Administrator.count == 0 && !Rails.env.test?
-  admin = User.create!(username: 'admin', email: 'admin@consul.dev', password: '12345678', password_confirmation: '12345678', confirmed_at: Time.current, terms_of_service: "1")
+  admin = User.create!(username: "admin", email: "admin@consul.dev", password: "12345678",
+                       password_confirmation: "12345678", confirmed_at: Time.current,
+                       terms_of_service: "1")
   admin.create_administrator
 end
 
-# Names for the moderation console, as a hint for moderators
-# to know better how to assign users with official positions
-Setting["official_level_1_name"] = "Cargo oficial 1"
-Setting["official_level_2_name"] = "Cargo oficial 2"
-Setting["official_level_3_name"] = "Cargo oficial 3"
-Setting["official_level_4_name"] = "Cargo oficial 4"
-Setting["official_level_5_name"] = "Cargo oficial 5"
+Setting.reset_defaults
 
-# Max percentage of allowed anonymous votes on a debate
-Setting["max_ratio_anon_votes_on_debates"] = 50
+WebSection.where(name: "homepage").first_or_create!
+WebSection.where(name: "debates").first_or_create!
+WebSection.where(name: "proposals").first_or_create!
+WebSection.where(name: "budgets").first_or_create!
+WebSection.where(name: "help_page").first_or_create!
 
 # Max votes where a debate is still editable
 Setting["max_votes_for_debate_edit"] = 1000
@@ -125,3 +123,6 @@ WebSection.create(name: 'debates')
 WebSection.create(name: 'proposals')
 WebSection.create(name: 'budgets')
 WebSection.create(name: 'help_page')
+
+# Default custom pages
+load Rails.root.join("db", "pages.rb")

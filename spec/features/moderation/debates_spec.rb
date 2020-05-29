@@ -1,15 +1,12 @@
 require "rails_helper"
 
-feature "Moderate debates" do
-
+describe "Moderate debates" do
   scenario "Disabled with a feature flag" do
-    Setting["feature.debates"] = nil
+    Setting["process.debates"] = nil
     moderator = create(:moderator)
     login_as(moderator.user)
 
-    expect{ visit moderation_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-
-    Setting["feature.debates"] = true
+    expect { visit moderation_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "Hide", :js do
@@ -46,49 +43,49 @@ feature "Moderate debates" do
     end
   end
 
-  feature "/moderation/ screen" do
-
-    background do
+  describe "/moderation/ screen" do
+    before do
       moderator = create(:moderator)
       login_as(moderator.user)
     end
 
-    feature "moderate in bulk" do
-      feature "When a debate has been selected for moderation" do
-        background do
-          @debate = create(:debate)
+    describe "moderate in bulk" do
+      describe "When a debate has been selected for moderation" do
+        let!(:debate) { create(:debate) }
+
+        before do
           visit moderation_debates_path
           within(".menu.simple") do
             click_link "All"
           end
 
-          within("#debate_#{@debate.id}") do
-            check "debate_#{@debate.id}_check"
+          within("#debate_#{debate.id}") do
+            check "debate_#{debate.id}_check"
           end
 
-          expect(page).not_to have_css("debate_#{@debate.id}")
+          expect(page).not_to have_css("debate_#{debate.id}")
         end
 
         scenario "Hide the debate" do
           click_on "Hide debates"
-          expect(page).not_to have_css("debate_#{@debate.id}")
-          expect(@debate.reload).to be_hidden
-          expect(@debate.author).not_to be_hidden
+          expect(page).not_to have_css("debate_#{debate.id}")
+          expect(debate.reload).to be_hidden
+          expect(debate.author).not_to be_hidden
         end
 
         scenario "Block the author" do
           click_on "Block authors"
-          expect(page).not_to have_css("debate_#{@debate.id}")
-          expect(@debate.reload).to be_hidden
-          expect(@debate.author).to be_hidden
+          expect(page).not_to have_css("debate_#{debate.id}")
+          expect(debate.reload).to be_hidden
+          expect(debate.author).to be_hidden
         end
 
         scenario "Ignore the debate" do
           click_on "Mark as viewed"
-          expect(page).not_to have_css("debate_#{@debate.id}")
-          expect(@debate.reload).to be_ignored_flag
-          expect(@debate.reload).not_to be_hidden
-          expect(@debate.author).not_to be_hidden
+          expect(page).not_to have_css("debate_#{debate.id}")
+          expect(debate.reload).to be_ignored_flag
+          expect(debate.reload).not_to be_hidden
+          expect(debate.author).not_to be_hidden
         end
       end
 
@@ -109,7 +106,8 @@ feature "Moderate debates" do
       end
 
       scenario "remembering page, filter and order" do
-        create_list(:debate, 52)
+        stub_const("#{ModerateActions}::PER_PAGE", 2)
+        create_list(:debate, 4)
 
         visit moderation_debates_path(filter: "all", page: "2", order: "created_at")
 

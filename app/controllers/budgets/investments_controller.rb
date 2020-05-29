@@ -1,25 +1,25 @@
 module Budgets
   class InvestmentsController < ApplicationController
-
     include FeatureFlags
     include CommentableActions
     include FlagActions
     include RandomSeed
     include ImageAttributes
+    include Translatable
 
     PER_PAGE = 10
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
+    before_action :load_budget, except: :json_data
 
     load_and_authorize_resource :budget, except: :json_data
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
                                 except: :json_data
 
-    before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
     before_action :set_random_seed, only: :index
-    before_action :load_categories, only: [:index, :new, :create]
+    before_action :load_categories, only: [:index, :new, :create, :edit, :update]
     before_action :set_default_budget_filter, only: :index
     before_action :set_view, only: :index
     before_action :load_content_blocks, only: :index
@@ -28,7 +28,7 @@ module Budgets
 
     feature_flag :budgets
 
-    has_orders %w{most_voted newest oldest}, only: :show
+    has_orders %w[most_voted newest oldest], only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
 
     valid_filters = %w[not_unfeasible feasible unfeasible unselected selected winners]
@@ -47,6 +47,7 @@ module Budgets
 
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
+      @remote_translations = detect_remote_translations(@investments)
     end
 
     def new
@@ -59,6 +60,7 @@ module Budgets
       set_comment_flags(@comment_tree.comments)
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
+      @remote_translations = detect_remote_translations([@investment], @comment_tree.comments)
     end
 
     def create
@@ -67,15 +69,24 @@ module Budgets
       if @investment.save
         Mailer.budget_investment_created(@investment).deliver_later
         redirect_to budget_investment_path(@budget, @investment),
-                    notice: t('flash.actions.create.budget_investment')
+                    notice: t("flash.actions.create.budget_investment")
       else
         render :new
       end
     end
 
+    def update
+      if @investment.update(investment_params)
+        redirect_to budget_investment_path(@budget, @investment),
+                    notice: t("flash.actions.update.budget_investment")
+      else
+        render "edit"
+      end
+    end
+
     def destroy
-      @investment.destroy
-      redirect_to user_path(current_user, filter: 'budget_investments'), notice: t('flash.actions.destroy.budget_investment')
+      @investment.destroy!
+      redirect_to user_path(current_user, filter: "budget_investments"), notice: t("flash.actions.destroy.budget_investment")
     end
 
     def vote
@@ -94,7 +105,7 @@ module Budgets
     end
 
     def json_data
-      investment =  Budget::Investment.find(params[:id])
+      investment = Budget::Investment.find(params[:id])
       data = {
         investment_id: investment.id,
         investment_title: investment.title,
@@ -121,29 +132,29 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment)
-              .permit(:title, :description, :heading_id, :tag_list,
+        attributes = [:heading_id, :tag_list,
                       :organization_name, :location, :terms_of_service, :skip_map,
                       image_attributes: image_attributes,
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-                      map_location_attributes: [:latitude, :longitude, :zoom])
+                      map_location_attributes: [:latitude, :longitude, :zoom]]
+        params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
       end
 
       def load_ballot
         query = Budget::Ballot.where(user: current_user, budget: @budget)
-        @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
+        @ballot = @budget.balloting? ? query.first_or_create! : query.first_or_initialize
       end
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
-          @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+          @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
+          @assigned_heading = @ballot&.heading_for_group(@heading&.group)
           load_map
         end
       end
 
       def load_categories
-        @categories = ActsAsTaggableOn::Tag.category.order(:name)
+        @categories = Tag.category.order(:name)
       end
 
       def load_content_blocks
@@ -154,12 +165,16 @@ module Budgets
         TagCloud.new(Budget::Investment, params[:search])
       end
 
+      def load_budget
+        @budget = Budget.find_by_slug_or_id! params[:budget_id]
+      end
+
       def set_view
         @view = (params[:view] == "minimal") ? "minimal" : "default"
       end
 
       def investments
-        if @current_order == 'random'
+        if @current_order == "random"
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
                              .sort_by_random(session[:random_seed])
         else
@@ -171,7 +186,5 @@ module Budgets
       def load_map
         @map_location = MapLocation.load_from_heading(@heading)
       end
-
   end
-
 end

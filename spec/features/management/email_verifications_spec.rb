@@ -1,7 +1,6 @@
 require "rails_helper"
 
-feature "EmailVerifications" do
-
+describe "EmailVerifications" do
   scenario "Verifying a level 1 user via email" do
     login_as_manager
 
@@ -33,5 +32,4 @@ feature "EmailVerifications" do
     expect(user.reload.document_number).to eq("12345678Z")
     expect(user).to be_level_three_verified
   end
-
 end

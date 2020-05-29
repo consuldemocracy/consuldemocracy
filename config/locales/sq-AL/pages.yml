@@ -18,7 +18,6 @@ sq:
         title: "Debate"
         description: "Në seksionin %{link} ju mund të paraqisni dhe të ndani mendimin tuaj me njerëzit e tjerë për çështjet që kanë lidhje me ju në lidhje me qytetin. Është gjithashtu një vend për të krijuar ide që përmes seksioneve të tjera të %{org} të çojnë në veprime konkrete nga Këshilli i Qytetit."
         link: "debate qytetare"
-        feature_html: "Ju mund të hapni debate, komentoni dhe vlerësoni ato me<strong>Pranoj</strong>ose<strong>Nuk pranoj</strong>.Për këtë ju duhet të %{link}"
         feature_link: "regjistrohuni në %{org}"
         image_alt: "Butonat për të vlerësuar debatet"
         figcaption: 'Butonat "Unë pajtohem" dhe "Unë nuk pajtohem"  për të vlerësuar debatet.'
@@ -27,13 +26,11 @@ sq:
         description: "Në seksionin %{link} ju mund të bëni propozime për Këshillin Bashkiak për t'i kryer ato. Propozimet kërkojnë mbështetje, dhe nëse arrijnë mbështetje të mjaftueshme, ato bëhen në një votim publik. Propozimet e miratuara në votat e këtyre qytetarëve pranohen nga Këshilli i Qytetit dhe kryhen."
         link: "propozimet e qytetarëve"
         image_alt: "Butoni për të mbështetur një propozim"
-        figcaption_html: 'Butoni për të mbështetur një propozim'
       budgets:
         title: "Buxheti  pjesëmarrës"
         description: "Seksioni %{link} ndihmon njerëzit të marrin një vendim të drejtpërdrejtë mbi atë pjesë të buxhetit komunal ku shpenzohen."
         link: "buxhetet pjesëmarrëse"
         image_alt: "Faza të ndryshme të një buxheti pjesëmarrjës"
-        figcaption_html: '"Mbështet" dhe "Voto" fazat e buxheteve pjesëmarrëse.'
       polls:
         title: "Sondazhet"
         description: "Seksioni %{link} aktivizohet çdo herë që një propozim arrin 1% mbështetje dhe shkon në votim ose kur Këshilli i Qytetit propozon një çështje për njerëzit që të vendosin."
@@ -51,8 +48,6 @@ sq:
         page:
           title: "Pyetjet e bëra shpesh"
           description: "Përdorni këtë faqe për të zgjidhur FAQ e përbashkët tek përdoruesit e faqes."
-          faq_1_title: "Pyetja 1"
-          faq_1_description: "Ky është një shembull për përshkrimin e pyetjes së parë."
       other:
         title: "Informacione të tjera me interes"
         how_to_use: "Përdorni %{org_name} në qytetin tuaj"
@@ -64,25 +59,7 @@ sq:
         how_to_use: Përdoreni atë në qeverinë tuaj lokale
     privacy:
       title: Politika e privatësisë
-      subtitle: INFORMACIONE NË LIDHJE ME PRIVATËSIN E TË DHËNAVE
-      info_items:
-        - 
-          text: Navigimi përmes informacionit që gjendet në Portalin e hapur të Qeverisë  është anonime.
-        - 
-          text: Për të përdorur shërbimet e përmbajtura në Portalin e hapur të Qeverisë përdoruesi duhet të regjistrohet më parë dhe të ofrojë të dhëna personale sipas informatave specifike të përfshira në çdo lloj regjistrimi.
-        - 
-          text: 'Të dhënat e siguruara do të përfshihen dhe përpunohen nga Këshilli i Qytetit në përputhje me përshkrimin e dokumentit të mëposhtëm:'
-        - 
-          subitems:
-            - 
-              field: 'Emri i skedarit:'
-              description: EMRI I DOKUMENTAVE
-            - 
-              field: 'Qëllimi i dokumentit:'
-              description: Menaxhimi i proceseve pjesëmarrëse për të kontrolluar kualifikimin e njerëzve që marrin pjesë në to dhe thjesht numërimin numerik dhe statistikor të rezultateve të nxjerra nga proceset e pjesëmarrjes qytetare.
-            - 
-              field: 'Institucioni përgjegjës për dokumentin:'
-              description: 'Institucioni përgjegjës për dosjen:'
+      subtitle: "INFORMACIONE NË LIDHJE ME PRIVATËSIN E TË DHËNAVE"
     accessibility:
       title: Aksesueshmëria
       description: |-
@@ -119,7 +96,7 @@ sq:
               key_column: 5
               page_column: Proceset legjislative
         browser_table:
-          description: 'Në varësi të sistemit operativ dhe shfletuesit të përdorur, kombinimi kyç do të jetë si vijon:'
+          description: "Në varësi të sistemit operativ dhe shfletuesit të përdorur, kombinimi kyç do të jetë si vijon:"
           caption: Kombinimi kyç në varësi të sistemit operativ dhe shfletuesit
           browser_header: Shfletues
           key_header: Kombinim i celsave
@@ -162,7 +139,7 @@ sq:
               browser_column: Opera
               action_column: Shiko> masë
         browser_shortcuts_table:
-          description: 'Një mënyrë tjetër për të ndryshuar madhësinë e tekstit është të përdorni shkurtoret e tastierës të përcaktuara në shfletues, në veçanti kombinimin kyç:'
+          description: "Një mënyrë tjetër për të ndryshuar madhësinë e tekstit është të përdorni shkurtoret e tastierës të përcaktuara në shfletues, në veçanti kombinimin kyç:"
           rows:
             - 
               shortcut_column: CTRL dhe + (CMD dhe + në MAC)
@@ -172,17 +149,10 @@ sq:
               description_column: Zvogëlo madhësinë e tekstit
       compatibility:
         title: Pajtueshmëria me standardet dhe dizajni vizual
-        description_html: 'Të gjitha faqet nê këtë website përputhen me <strong>Udhëzimet e aksesueshmërisë</strong>ose Parimet e Përgjithshme të Dizajnit të Aksesueshëm të krijuara nga Grupi i Punës <abbr title = "Iniciativa e Web Accessibility" lang = "en"> WAI </ abbr> W3C.'
     titles:
-      accessibility: Aksesueshmëria
-      conditions: Kushtet e përdorimit
       help: "Çfarë është %{org} ? - Pjesëmarrja e qytetarëve"
-      privacy: Politika e privatësisë
     verify:
-      code: Kodi që keni marrë në letër
-      email: Email
-      info: 'Për të verifikuar llogarinë tënde, futni të dhënat e aksesit tuaj:'
-      info_code: 'Tani futni kodin që keni marrë në letër:'
-      password: Fjalëkalim
+      info: "Për të verifikuar llogarinë tënde, futni të dhënat e aksesit tuaj:"
+      info_code: "Tani futni kodin që keni marrë në letër:"
       submit: Verifikoni llogarinë time
       title: verifikoni llogarinë tuaj

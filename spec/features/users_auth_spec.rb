@@ -1,10 +1,8 @@
 require "rails_helper"
 
-feature "Users" do
-
+describe "Users" do
   context "Regular authentication" do
     context "Sign up" do
-
       scenario "Success" do
         message = "You have been sent a message containing a verification link. Please click on this link to activate your account."
         visit "/"
@@ -32,11 +30,9 @@ feature "Users" do
 
         expect(page).to have_content error_message
       end
-
     end
 
     context "Sign in" do
-
       scenario "sign in with email" do
         create(:user, email: "manuela@consul.dev", password: "judgementday")
 
@@ -75,7 +71,7 @@ feature "Users" do
 
         visit account_path
 
-        expect(page).to have_link "My activity", href: user_path(u1)
+        expect(page).to have_link "My content", href: user_path(u1)
 
         visit "/"
         click_link "Sign out"
@@ -88,7 +84,7 @@ feature "Users" do
         click_button "Enter"
 
         expect(page).not_to have_content "You have been signed in successfully."
-        expect(page).to have_content "Invalid login or password."
+        expect(page).to have_content "Invalid Email or username or password."
 
         fill_in "user_login",    with: "venom@nyc.dev"
         fill_in "user_password", with: "symbiote"
@@ -98,16 +94,15 @@ feature "Users" do
 
         visit account_path
 
-        expect(page).to have_link "My activity", href: user_path(u2)
+        expect(page).to have_link "My content", href: user_path(u2)
       end
     end
   end
 
   context "OAuth authentication" do
     context "Twitter" do
-
-      let(:twitter_hash){ {provider: "twitter", uid: "12345", info: {name: "manuela"}} }
-      let(:twitter_hash_with_email){ {provider: "twitter", uid: "12345", info: {name: "manuela", email: "manuelacarmena@example.com"}} }
+      let(:twitter_hash) { { provider: "twitter", uid: "12345", info: { name: "manuela" }} }
+      let(:twitter_hash_with_email) { { provider: "twitter", uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }} }
       let(:twitter_hash_with_verified_email) do
         {
           provider: "twitter",
@@ -221,7 +216,6 @@ feature "Users" do
 
         visit edit_user_registration_path
         expect(page).to have_field("user_email", with: user.email)
-
       end
 
       scenario "Try to register with the username of an already existing user" do
@@ -318,6 +312,83 @@ feature "Users" do
         expect(page).to have_field("user_email", with: "somethingelse@example.com")
       end
     end
+
+    context "Wordpress" do
+      let(:wordpress_hash) do
+        { provider: "wordpress",
+          uid: "12345",
+          info: {
+            name: "manuela",
+            email: "manuelacarmena@example.com" }}
+      end
+
+      before { Setting["feature.wordpress_login"] = true }
+
+      scenario "Sign up" do
+        OmniAuth.config.add_mock(:wordpress_oauth2, wordpress_hash)
+
+        visit "/"
+        click_link "Register"
+
+        click_link "Sign up with Wordpress"
+
+        expect(page).to have_current_path(new_user_session_path)
+        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+
+        confirm_email
+        expect(page).to have_content "Your account has been confirmed"
+
+        visit "/"
+        click_link "Sign in"
+        click_link "Sign in with Wordpress"
+        expect_to_be_signed_in
+
+        click_link "My account"
+        expect(page).to have_field("account_username", with: "manuela")
+
+        visit edit_user_registration_path
+        expect(page).to have_field("user_email", with: "manuelacarmena@example.com")
+      end
+
+      scenario "Try to register with username and email of an already existing user" do
+        create(:user, username: "manuela", email: "manuelacarmena@example.com", password: "judgementday")
+        OmniAuth.config.add_mock(:wordpress_oauth2, wordpress_hash)
+
+        visit "/"
+        click_link "Register"
+        click_link "Sign up with Wordpress"
+
+        expect(page).to have_current_path(finish_signup_path)
+
+        expect(page).to have_field("user_username", with: "manuela")
+
+        click_button "Register"
+
+        expect(page).to have_current_path(do_finish_signup_path)
+
+        fill_in "Username", with: "manuela2"
+        fill_in "Email", with: "manuela@consul.dev"
+        click_button "Register"
+
+        expect(page).to have_current_path(new_user_session_path)
+        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+
+        confirm_email
+        expect(page).to have_content "Your account has been confirmed"
+
+        visit "/"
+        click_link "Sign in"
+        click_link "Sign in with Wordpress"
+
+        expect_to_be_signed_in
+
+        click_link "My account"
+        expect(page).to have_field("account_username", with: "manuela2")
+
+        visit edit_user_registration_path
+        expect(page).to have_field("user_email", with: "manuela@consul.dev")
+      end
+    end
   end
 
   scenario "Sign out" do
@@ -340,9 +411,11 @@ feature "Users" do
     fill_in "user_email", with: "manuela@consul.dev"
     click_button "Send instructions"
 
-    expect(page).to have_content "In a few minutes, you will receive an email containing instructions on resetting your password."
+    expect(page).to have_content "If your email address is in our database, in a few minutes "\
+                                 "you will receive a link to use to reset your password."
 
-    sent_token = /.*reset_password_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
+    action_mailer = ActionMailer::Base.deliveries.last.body.to_s
+    sent_token = /.*reset_password_token=(.*)".*/.match(action_mailer)[1]
     visit edit_user_password_path(reset_password_token: sent_token)
 
     fill_in "user_password", with: "new password"
@@ -350,6 +423,46 @@ feature "Users" do
     click_button "Change my password"
 
     expect(page).to have_content "Your password has been changed successfully."
+  end
+
+  scenario "Reset password with unexisting email" do
+    visit "/"
+    click_link "Sign in"
+    click_link "Forgotten your password?"
+
+    fill_in "user_email", with: "fake@mail.dev"
+    click_button "Send instructions"
+
+    expect(page).to have_content "If your email address is in our database, in a few minutes "\
+                                 "you will receive a link to use to reset your password."
+  end
+
+  scenario "Re-send confirmation instructions" do
+    create(:user, email: "manuela@consul.dev")
+
+    visit "/"
+    click_link "Sign in"
+    click_link "Haven't received instructions to activate your account?"
+
+    fill_in "user_email", with: "manuela@consul.dev"
+    click_button "Re-send instructions"
+
+    expect(page).to have_content "If your email address is in our database, in a few minutes you "\
+                                 "will receive an email containing instructions on how to reset "\
+                                 "your password."
+  end
+
+  scenario "Re-send confirmation instructions with unexisting email" do
+    visit "/"
+    click_link "Sign in"
+    click_link "Haven't received instructions to activate your account?"
+
+    fill_in "user_email", with: "fake@mail.dev"
+    click_button "Re-send instructions"
+
+    expect(page).to have_content "If your email address is in our database, in a few minutes you "\
+                                 "will receive an email containing instructions on how to reset "\
+                                 "your password."
   end
 
   scenario "Sign in, admin with password expired" do
@@ -405,5 +518,4 @@ feature "Users" do
 
     expect(page).to have_content "must be different than the current password."
   end
-
 end

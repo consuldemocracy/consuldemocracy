@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Moderation" do
+describe "Moderation" do
   let(:user) { create(:user) }
 
   scenario "Access as regular user is not authorized" do
@@ -94,12 +94,8 @@ feature "Moderation" do
   end
 
   context "Moderation dashboard" do
-    background do
+    before do
       Setting["org_name"] = "OrgName"
-    end
-
-    after do
-      Setting["org_name"] = "CONSUL"
     end
 
     scenario "Contains correct elements" do

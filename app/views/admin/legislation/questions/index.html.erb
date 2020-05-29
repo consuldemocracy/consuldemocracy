@@ -7,7 +7,7 @@
 
   <h2><%= @process.title %></h2>
 
-  <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
+  <%= render "admin/legislation/processes/subnav", process: @process, active: "questions" %>
 
   <div class="small-12 column">
     <h4 class="inline-block"><%= t("admin.legislation.questions.index.title") %></h4>
@@ -42,7 +42,7 @@
               <% end %>
             </td>
             <td class="text-center"><%= question.answers_count %></td>
-            <td class="text-center"><%= link_to question.comments.count, legislation_process_question_path(@process, question, anchor: 'comments') %></td>
+            <td class="text-center"><%= link_to question.comments.count, legislation_process_question_path(@process, question, anchor: "comments") %></td>
           </tr>
         <% end %>
         </tbody>

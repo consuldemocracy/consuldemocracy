@@ -1,4 +1,4 @@
-class CreatePollRecount < ActiveRecord::Migration
+class CreatePollRecount < ActiveRecord::Migration[4.2]
   def change
     create_table :poll_recounts do |t|
       t.integer :author_id
@@ -9,11 +9,11 @@ class CreatePollRecount < ActiveRecord::Migration
       t.text    :officer_assignment_id_log,       default: ""
       t.text    :author_id_log,                   default: ""
       t.integer :white_amount
-      t.text    :white_amount_log,                default: ""
+      t.text    :white_amount_log, default: ""
       t.integer :null_amount
-      t.text    :null_amount_log,                 default: ""
+      t.text    :null_amount_log, default: ""
       t.integer :total_amount
-      t.text    :total_amount_log,                default: ""
+      t.text    :total_amount_log, default: ""
     end
 
     add_index :poll_recounts, :booth_assignment_id

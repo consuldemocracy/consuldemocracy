@@ -128,7 +128,7 @@ so:
         other: waa dherer khaldan (waa inay ahaataa%{count} xarfaha)
       other_than: waa inay ahaataa mid ka duwan%{count}
     template:
-      body: 'Waxaa jiray dhibaatooyin dhinacyada soo socda:'
+      body: "Waxaa jiray dhibaatooyin dhinacyada soo socda:"
       header:
         one: 1 qalad ayaa ka mamnuucday%{model} laga bilaabo kaydka
         other: "%{count} qalad ayaa ka mamnuucday%{model} laga bilaabo kaydka"

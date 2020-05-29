@@ -1,22 +1,14 @@
 require "rails_helper"
 
 describe Budget::Phase do
-
   let(:budget)       { create(:budget) }
   let(:first_phase)  { budget.phases.drafting }
   let(:second_phase)  { budget.phases.informing }
   let(:third_phase) { budget.phases.accepting }
   let(:fourth_phase)  { budget.phases.reviewing }
-  let(:fifth_phase) { budget.phases.selecting }
-  let(:final_phase) { budget.phases.finished}
+  let(:final_phase) { budget.phases.finished }
 
-  before do
-    first_phase.update_attributes(starts_at: Date.current - 3.days, ends_at: Date.current - 1.day)
-    second_phase.update_attributes(starts_at: Date.current - 1.days, ends_at: Date.current + 1.day)
-    third_phase.update_attributes(starts_at: Date.current + 1.days, ends_at: Date.current + 3.day)
-    fourth_phase.update_attributes(starts_at: Date.current + 3.days, ends_at: Date.current + 5.day)
-    fifth_phase.update_attributes(starts_at: Date.current + 5.days, ends_at: Date.current + 7.day)
-  end
+  it_behaves_like "globalizable", :budget_phase
 
   describe "validates" do
     it "is not valid without a budget" do
@@ -39,19 +31,19 @@ describe Budget::Phase do
 
     describe "#dates_range_valid?" do
       it "is valid when start & end dates are different & consecutive" do
-        first_phase.update_attributes(starts_at: Date.today, ends_at: Date.tomorrow)
+        first_phase.assign_attributes(starts_at: Date.current, ends_at: Date.tomorrow)
 
         expect(first_phase).to be_valid
       end
 
       it "is not valid when dates are equal" do
-        first_phase.update_attributes(starts_at: Date.today, ends_at: Date.today)
+        first_phase.assign_attributes(starts_at: Date.current, ends_at: Date.current)
 
         expect(first_phase).not_to be_valid
       end
 
       it "is not valid when start date is later than end date" do
-        first_phase.update_attributes(starts_at: Date.tomorrow, ends_at: Date.today)
+        first_phase.assign_attributes(starts_at: Date.tomorrow, ends_at: Date.current)
 
         expect(first_phase).not_to be_valid
       end
@@ -123,6 +115,18 @@ describe Budget::Phase do
     end
   end
 
+  describe "#save" do
+    it "touches the budget when it's updated" do
+      budget = create(:budget)
+
+      travel(10.seconds) do
+        budget.current_phase.update!(enabled: false)
+
+        expect(budget.updated_at).to eq Time.current
+      end
+    end
+  end
+
   describe "#adjust_date_ranges" do
     let(:prev_enabled_phase) { second_phase.prev_enabled_phase }
     let(:next_enabled_phase) { second_phase.next_enabled_phase }
@@ -139,70 +143,61 @@ describe Budget::Phase do
 
     describe "when being enabled" do
       before do
-        second_phase.update_attributes(enabled: false,
-                                       starts_at: Date.current,
-                                       ends_at:  Date.current + 2.days)
+        second_phase.update!(enabled: false,
+                             starts_at: Date.current,
+                             ends_at:  Date.current + 2.days)
       end
 
       it "adjusts previous enabled phase end date to its own start date" do
-        expect{
-          second_phase.update_attributes(enabled: true)
-        }.to change{
-          prev_enabled_phase.ends_at.to_date
-        }.to(Date.current)
+        expect { second_phase.update(enabled: true) }
+          .to change { prev_enabled_phase.ends_at.to_date }.to(Date.current)
       end
 
       it "adjusts next enabled phase start date to its own end date" do
-        expect{
-          second_phase.update_attributes(enabled: true)
-        }.to change{
-          next_enabled_phase.starts_at.to_date
-        }.to(Date.current + 2.days)
+        expect do
+          second_phase.update(enabled: true)
+        end.to change { next_enabled_phase.starts_at.to_date }.to(Date.current + 2.days)
       end
     end
 
     describe "when disabled" do
       before do
-        second_phase.update_attributes(enabled: false)
+        second_phase.update!(enabled: false)
       end
 
       it "doesn't change previous enabled phase end date" do
-        expect {
-          second_phase.update_attributes(starts_at: Date.current,
-                                         ends_at:  Date.current + 2.days)
-        }.not_to (change{ prev_enabled_phase.ends_at })
+        expect { second_phase.update(starts_at: Date.current, ends_at:  Date.current + 2.days) }
+          .not_to change { prev_enabled_phase.ends_at }
       end
 
       it "doesn't change next enabled phase start date" do
-        expect{
-          second_phase.update_attributes(starts_at: Date.current,
-                                         ends_at:  Date.current + 2.days)
-        }.not_to (change{ next_enabled_phase.starts_at })
+        expect { second_phase.update(starts_at: Date.current, ends_at:  Date.current + 2.days) }
+          .not_to change { next_enabled_phase.starts_at }
       end
     end
 
     describe "when being disabled" do
       it "doesn't adjust previous enabled phase end date to its own start date" do
-        expect {
-          second_phase.update_attributes(enabled: false,
-                                         starts_at: Date.current,
-                                         ends_at:  Date.current + 2.days)
-        }.not_to (change{ prev_enabled_phase.ends_at })
+        expect do
+          second_phase.update(enabled: false,
+                              starts_at: Date.current,
+                              ends_at:  Date.current + 2.days)
+        end.not_to change { prev_enabled_phase.ends_at }
       end
 
       it "adjusts next enabled phase start date to its own start date" do
-        expect {
-          second_phase.update_attributes(enabled: false,
-                                         starts_at: Date.current,
-                                         ends_at:  Date.current + 2.days)
-        }.to change{ next_enabled_phase.starts_at.to_date }.to(Date.current)
+        expect do
+          second_phase.update(enabled: false,
+                              starts_at: Date.current,
+                              ends_at:  Date.current + 2.days)
+        end.to change { next_enabled_phase.starts_at.to_date }.to(Date.current)
       end
     end
   end
 
   describe "next & prev enabled phases" do
     before do
-      second_phase.update_attributes(enabled: false)
+      second_phase.update(enabled: false)
     end
 
     describe "#next_enabled_phase" do
@@ -219,14 +214,6 @@ describe Budget::Phase do
         expect(third_phase.reload.prev_enabled_phase).to eq(first_phase)
         expect(fourth_phase.reload.prev_enabled_phase).to eq(third_phase)
       end
-    end
-  end
-
-  describe "#sanitize_description" do
-    it "removes not allowed html entities from the description" do
-      expect{
-        first_phase.update_attributes(description: '<p><a href="/"><b>a</b></a></p> <script>javascript</script>')
-      }.to change{ first_phase.description }.to('<p><a href="/">a</a></p> javascript')
     end
   end
 end

@@ -17,7 +17,7 @@
                 id="order-selector-participation">
           <% @valid_orders.each do |order| %>
             <% value = current_path_with_query_params(order: order, page: 1) %>
-            <option value="<%= value %>" <%= 'selected' if order == @current_order %>>
+            <option value="<%= value %>" <%= "selected" if order == @current_order %>>
               <%= t("#{i18n_namespace}.orders.#{order}") %>
             </option>
           <% end %>

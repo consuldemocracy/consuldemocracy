@@ -1,18 +1,30 @@
 class Budget
-  class Heading < ActiveRecord::Base
-    OSM_DISTRICT_LEVEL_ZOOM = 12.freeze
+  class Heading < ApplicationRecord
+    OSM_DISTRICT_LEVEL_ZOOM = 12
 
     include Sluggable
 
     translates :name, touch: true
     include Globalizable
+    translation_class_delegate :budget
+
+    class Translation
+      validate :name_uniqueness_by_budget
+
+      def name_uniqueness_by_budget
+        if budget.headings
+                 .joins(:translations)
+                 .where(name: name)
+                 .where.not("budget_heading_translations.budget_heading_id": budget_heading_id).any?
+          errors.add(:name, I18n.t("errors.messages.taken"))
+        end
+      end
+    end
 
     belongs_to :group
 
     has_many :investments
     has_many :content_blocks
-
-    before_validation :assign_model_to_translations
 
     validates_translation :name, presence: true
     validates :group_id, presence: true
@@ -26,8 +38,7 @@ class Budget
 
     delegate :budget, :budget_id, to: :group, allow_nil: true
 
-    scope :i18n,                  -> { includes(:translations) }
-    scope :allow_custom_content,  -> { i18n.where(allow_custom_content: true).order(:name) }
+    scope :allow_custom_content,  -> { where(allow_custom_content: true).sort_by(&:name) }
 
     def self.sort_by_name
       all.sort do |heading, other_heading|
@@ -45,9 +56,8 @@ class Budget
 
     private
 
-    def generate_slug?
-      slug.nil? || budget.drafting?
-    end
-
+      def generate_slug?
+        slug.nil? || budget.drafting?
+      end
   end
 end

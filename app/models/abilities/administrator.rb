@@ -51,31 +51,37 @@ module Abilities
       can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment,
                                       Legislation::Question, Legislation::Proposal, Legislation::Annotation, Topic]
 
-      can [:search, :create, :index, :destroy], ::Administrator
+      can [:search, :create, :index, :destroy, :edit, :update], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :show, :edit, :update, :create, :index, :destroy, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
       can [:search, :index], ::User
 
-      can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
+      can :manage, Dashboard::Action
+
       can [:index, :read, :new, :create, :update, :destroy, :calculate_winners], Budget
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
-      can [:hide, :update, :toggle_selection], Budget::Investment
+      can [:hide, :admin_update, :toggle_selection], Budget::Investment
       can [:valuate, :comment_valuation], Budget::Investment
+      cannot [:admin_update, :toggle_selection, :valuate, :comment_valuation],
+        Budget::Investment, budget: { phase: "finished" }
+
       can :create, Budget::ValuatorAssignment
+
+      can :read_admin_stats, Budget, &:balloting_or_later?
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
 
       can [:index, :create, :edit, :update, :destroy], Geozone
 
-      can [:read, :create, :update, :destroy, :add_question, :search_booths, :search_officers, :booth_assignments, :results, :stats], Poll
+      can [:read, :create, :update, :destroy, :add_question, :search_booths, :search_officers, :booth_assignments], Poll
       can [:read, :create, :update, :destroy, :available], Poll::Booth
       can [:search, :create, :index, :destroy], ::Poll::Officer
       can [:create, :destroy, :manage], ::Poll::BoothAssignment
       can [:create, :destroy], ::Poll::OfficerAssignment
       can [:read, :create, :update], Poll::Question
-      can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
+      can :destroy, Poll::Question
 
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image
@@ -95,6 +101,10 @@ module Abilities
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil
+      can [:manage], Dashboard::AdministratorTask
+
+      can :manage, LocalCensusRecord
+      can [:create, :read], LocalCensusRecords::Import
     end
   end
 end

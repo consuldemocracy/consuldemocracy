@@ -1,8 +1,7 @@
 require "rails_helper"
 
-feature "Account" do
-
-  background do
+describe "Account" do
+  before do
     login_as_manager
   end
 
@@ -103,5 +102,4 @@ feature "Account" do
     expect(page).to have_css("a[href='javascript:window.print();']", text: "Print password")
     expect(page).to have_css("div.for-print-only", text: "another_new_password", visible: false)
   end
-
 end

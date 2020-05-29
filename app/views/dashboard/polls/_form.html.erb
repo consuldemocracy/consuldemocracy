@@ -1,0 +1,49 @@
+<%= form_for [proposal, :dashboard, poll] do |f| %>
+  <div class="row expanded">
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :name, label: t("dashboard.polls.form.name") %>
+    </div>
+  </div>
+
+  <div class="row expanded">
+    <div class="small-12 medium-3 column">
+      <%= f.text_field :starts_at,
+                        autocomplete: "off",
+                        value: poll.starts_at.present? ? l(poll.starts_at.to_date) : nil,
+                        class: "js-calendar-full" %>
+    </div>
+
+    <div class="small-12 medium-3 column end">
+      <%= f.text_field :ends_at,
+                        autocomplete: "off",
+                        value: poll.ends_at.present? ? l(poll.ends_at.to_date) : nil,
+                        class: "js-calendar-full" %>
+    </div>
+  </div>
+
+  <div class="row expanded">
+    <div class="small-12 column">
+      <%= f.text_area :description, rows: 8 %>
+    </div>
+  </div>
+
+  <div class="js-questions">
+    <%= f.fields_for :questions do |question| %>
+      <%= render "question_fields", f: question %>
+    <% end %>
+
+    <div class="links row expanded">
+      <div class="small-12 column">
+        <%= link_to_add_association t("dashboard.polls.form.add_question"),
+                                    f, :questions, class: "button" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row expanded">
+    <div class="small-12 medium-6 large-4 column">
+      <%= f.submit t("dashboard.polls.#{admin_submit_action(poll)}.submit"),
+                   class: "button success expanded" %>
+    </div>
+  </div>
+<% end %>

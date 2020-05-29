@@ -14,7 +14,7 @@ class Admin::AdministratorsController < Admin::BaseController
 
   def create
     @administrator.user_id = params[:user_id]
-    @administrator.save
+    @administrator.save!
 
     redirect_to admin_administrators_path
   end
@@ -28,4 +28,22 @@ class Admin::AdministratorsController < Admin::BaseController
 
     redirect_to admin_administrators_path
   end
+
+  def edit
+  end
+
+  def update
+    if @administrator.update(update_administrator_params)
+      notice = t("admin.administrators.form.updated")
+      redirect_to admin_administrators_path, notice: notice
+    else
+      render :edit
+    end
+  end
+
+  private
+
+    def update_administrator_params
+      params.require(:administrator).permit(:description)
+    end
 end

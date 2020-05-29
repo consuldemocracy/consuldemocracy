@@ -3,10 +3,10 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   include Translatable
 
   load_and_authorize_resource :poll
-  load_and_authorize_resource :question, class: 'Poll::Question'
+  load_and_authorize_resource :question, class: "Poll::Question"
 
   def index
-    @polls = Poll.all
+    @polls = Poll.not_budget
     @search = search_params[:search]
 
     @questions = @questions.search(search_params).page(params[:page]).order("created_at DESC")
@@ -21,7 +21,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   end
 
   def create
-    @question.author = @question.proposal.try(:author) || current_user
+    @question.author = @question.proposal&.author || current_user
 
     if @question.save
       redirect_to admin_question_path(@question)

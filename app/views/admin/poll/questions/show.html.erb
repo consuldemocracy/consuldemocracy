@@ -1,6 +1,6 @@
 <%= back_link_to %>
 
-<%= link_to t('admin.questions.show.edit_question'), edit_admin_question_path(@question),
+<%= link_to t("admin.questions.show.edit_question"), edit_admin_question_path(@question),
             class: "button hollow float-right" %>
 
 <div class="clear"></div>
@@ -37,7 +37,7 @@
 <table class="margin-top">
   <tr>
     <th colspan="5" scope="col" class="with-button">
-      <%= t('admin.questions.show.valid_answers') %>
+      <%= t("admin.questions.show.valid_answers") %>
     </th>
   </tr>
 
@@ -53,7 +53,7 @@
     <% @question.question_answers.each do |answer| %>
       <tr id="<%= dom_id(answer) %>" class="poll_question_answer" data-answer-id="<%= answer.id %>">
         <td class="align-top"><%= link_to answer.title, admin_answer_path(answer) %></td>
-        <td class="align-top break"><%= answer.description %></td>
+        <td class="align-top break"><%= wysiwyg(answer.description) %></td>
         <td class="align-top text-center">
           (<%= answer.images.count %>)
           <br>

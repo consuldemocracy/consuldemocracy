@@ -1,8 +1,7 @@
 require "rails_helper"
 
-feature "Users" do
-
-  background do
+describe "Users" do
+  before do
     login_as_manager
   end
 
@@ -95,5 +94,4 @@ feature "Users" do
 
     expect(page).to have_content "no user account associated to it"
   end
-
 end

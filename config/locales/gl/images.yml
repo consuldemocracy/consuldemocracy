@@ -4,7 +4,6 @@ gl:
     form:
       title: Imaxe descritiva
       title_placeholder: Escribe un título descritivo para a imaxe
-      attachment_label: Escolle unha imaxe
       delete_button: Borrar imaxe
       note: "Podes subir unha imaxe nos formatos seguintes: %{accepted_content_types}, e de até %{max_file_size} MB por ficheiro."
       add_new_image: Engadir imaxe
@@ -14,7 +13,6 @@ gl:
       destroy:
         notice: A imaxe borrouse correctamente.
         alert: A imaxe non se puido borrar.
-        confirm: Tes a certeza de que queres borrar a imaxe? Esta acción non se pode desfacer!
     errors:
       messages:
         in_between: debe estar entre %{min} e %{max}

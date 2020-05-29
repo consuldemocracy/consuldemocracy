@@ -14,9 +14,6 @@ es:
         publish_comment: Publicar Comentario
       form:
         phase_not_open: Esta fase del proceso no está abierta
-        login_to_comment: Necesitas %{signin} o %{signup} para comentar.
-        signin: iniciar sesión
-        signup: registrarte
       index:
         title: Comentarios
         comments_about: Comentarios sobre
@@ -71,7 +68,7 @@ es:
           help: Ayuda sobre legislación colaborativa
         section_footer:
           title: Ayuda sobre Legislación colaborativa
-          description: Participa en los debates y procesos previos a la aprobación de una norma o de una actuación municipal. Tu opinión será tenida en cuenta por el Ayuntamiento.
+          description: Participa en los debates y procesos previos a la aprobación de nuevas normas o planes. Tu opinión será tenida en cuenta.
       phase_not_open:
         not_open: Esta fase del proceso todavía no está abierta
       phase_empty:
@@ -110,11 +107,8 @@ es:
       participation:
         phase_not_open: Esta fase no está abierta
         organizations: Las organizaciones no pueden participar en el debate
-        signin: iniciar sesión
-        signup: registrarte
         unauthenticated: Necesitas %{signin} o %{signup} para participar en el debate.
         verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
-        verify_account: verifica tu cuenta
         debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas
     shared:
       share: Compartir
@@ -123,3 +117,4 @@ es:
       form:
         tags_label: "Categorías"
       not_verified: "Para votar propuestas %{verify_account}."
+      process_title: Proceso de legislación colaborativa

@@ -1,7 +1,6 @@
 require "rails_helper"
 
-feature "Moderate comments" do
-
+describe "Moderate comments" do
   scenario "Hide", :js do
     citizen = create(:user)
     moderator = create(:moderator)
@@ -63,49 +62,49 @@ feature "Moderate comments" do
     expect(page).to have_content("This is SPAM comment on proposal")
   end
 
-  feature "/moderation/ screen" do
-
-    background do
+  describe "/moderation/ screen" do
+    before do
       moderator = create(:moderator)
       login_as(moderator.user)
     end
 
-    feature "moderate in bulk" do
-      feature "When a comment has been selected for moderation" do
-        background do
-          @comment = create(:comment)
+    describe "moderate in bulk" do
+      describe "When a comment has been selected for moderation" do
+        let!(:comment) { create(:comment) }
+
+        before do
           visit moderation_comments_path
           within(".menu.simple") do
             click_link "All"
           end
 
-          within("#comment_#{@comment.id}") do
-            check "comment_#{@comment.id}_check"
+          within("#comment_#{comment.id}") do
+            check "comment_#{comment.id}_check"
           end
 
-          expect(page).not_to have_css("comment_#{@comment.id}")
+          expect(page).not_to have_css("comment_#{comment.id}")
         end
 
         scenario "Hide the comment" do
           click_on "Hide comments"
-          expect(page).not_to have_css("comment_#{@comment.id}")
-          expect(@comment.reload).to be_hidden
-          expect(@comment.user).not_to be_hidden
+          expect(page).not_to have_css("comment_#{comment.id}")
+          expect(comment.reload).to be_hidden
+          expect(comment.user).not_to be_hidden
         end
 
         scenario "Block the user" do
           click_on "Block authors"
-          expect(page).not_to have_css("comment_#{@comment.id}")
-          expect(@comment.reload).to be_hidden
-          expect(@comment.user).to be_hidden
+          expect(page).not_to have_css("comment_#{comment.id}")
+          expect(comment.reload).to be_hidden
+          expect(comment.user).to be_hidden
         end
 
         scenario "Ignore the comment" do
           click_on "Mark as viewed"
-          expect(page).not_to have_css("comment_#{@comment.id}")
-          expect(@comment.reload).to be_ignored_flag
-          expect(@comment.reload).not_to be_hidden
-          expect(@comment.user).not_to be_hidden
+          expect(page).not_to have_css("comment_#{comment.id}")
+          expect(comment.reload).to be_ignored_flag
+          expect(comment.reload).not_to be_hidden
+          expect(comment.user).not_to be_hidden
         end
       end
 
@@ -126,7 +125,8 @@ feature "Moderate comments" do
       end
 
       scenario "remembering page, filter and order" do
-        create_list(:comment, 52)
+        stub_const("#{ModerateActions}::PER_PAGE", 2)
+        create_list(:comment, 4)
 
         visit moderation_comments_path(filter: "all", page: "2", order: "newest")
 

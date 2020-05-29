@@ -1,0 +1,21 @@
+<% content_for :action_title, dashboard_action.title %>
+
+<div class="row expanded">
+  <div class="small-12 medium-8 column">
+    <%= wysiwyg(dashboard_action.description) %>
+    <%= render "dashboard/form" %>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <%= render "documents/documents", documents: dashboard_action.documents %>
+
+    <% if dashboard_action.links.any? %>
+      <div class="margin-top">
+        <h4><%= t("dashboard.new_request.links") %></h4>
+        <% dashboard_action.links.each do |link| %>
+          <p><%= link_to link.label, link.url, target: "_blank" %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

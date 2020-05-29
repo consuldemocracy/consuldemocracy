@@ -1,10 +1,9 @@
-class MergeActivitiesAndNotifications < ActiveRecord::Migration
+class MergeActivitiesAndNotifications < ActiveRecord::Migration[4.2]
   def change
-    change_table :notifications do |t|
-      t.remove :read
-      t.remove :activity_id
-      t.references :notifiable, polymorphic: true
-    end
-  end
+    remove_column :notifications, :read, :boolean, default: false
+    remove_index :notifications, column: [:activity_id]
+    remove_column :notifications, :activity_id, :integer
 
+    add_reference :notifications, :notifiable, polymorphic: true
+  end
 end

@@ -1,7 +1,7 @@
 class Admin::BannersController < Admin::BaseController
   include Translatable
 
-  has_filters %w{all with_active with_inactive}, only: :index
+  has_filters %w[all with_active with_inactive], only: :index
 
   before_action :banner_sections, only: [:edit, :new, :create, :update]
 
@@ -31,7 +31,7 @@ class Admin::BannersController < Admin::BaseController
   end
 
   def destroy
-    @banner.destroy
+    @banner.destroy!
     redirect_to admin_banners_path
   end
 
@@ -47,13 +47,13 @@ class Admin::BannersController < Admin::BaseController
 
     def banner_styles
       @banner_styles = Setting.all.banner_style.map do |banner_style|
-                         [banner_style.value, banner_style.key.split('.')[1]]
+                         [banner_style.value, banner_style.key.split(".")[1]]
                        end
     end
 
     def banner_imgs
       @banner_imgs = Setting.all.banner_img.map do |banner_img|
-                       [banner_img.value, banner_img.key.split('.')[1]]
+                       [banner_img.value, banner_img.key.split(".")[1]]
                      end
     end
 
@@ -62,7 +62,6 @@ class Admin::BannersController < Admin::BaseController
     end
 
     def resource
-      @banner = Banner.find(params[:id]) unless @banner
-      @banner
+      @banner ||= Banner.find(params[:id])
     end
 end

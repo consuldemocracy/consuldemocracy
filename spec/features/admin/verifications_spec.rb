@@ -1,8 +1,7 @@
 require "rails_helper"
 
-feature "Incomplete verifications" do
-
-  background do
+describe "Incomplete verifications" do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -22,9 +21,9 @@ feature "Incomplete verifications" do
   end
 
   scenario "Search" do
-    verified_user = create(:user, :level_two, username: "Juan Carlos")
-    unverified_user = create(:user, :incomplete_verification, username: "Juan_anonymous")
-    unverified_user = create(:user, :incomplete_verification, username: "Isabel_anonymous")
+    create(:user, :level_two, username: "Juan Carlos")
+    create(:user, :incomplete_verification, username: "Juan_anonymous")
+    create(:user, :incomplete_verification, username: "Isabel_anonymous")
 
     visit admin_verifications_path
 
@@ -71,5 +70,4 @@ feature "Incomplete verifications" do
       expect(page).to have_content "Has not confirmed the sms code"
     end
   end
-
 end

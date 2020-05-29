@@ -9,15 +9,26 @@
       <%= f.select(:document_type,
                    [[humanize_document_type("1"), 1],
                     [humanize_document_type("2"), 2],
-                    [humanize_document_type("3"), 3]],
-                   label: t("management.document_type_label")) %>
+                    [humanize_document_type("3"), 3]]) %>
     </div>
     <div class="small-12 medium-5">
-      <%= f.text_field :document_number,
-                       placeholder: t('management.document_number'),
-                       label: t("management.document_number")
-      %>
+      <%= f.text_field :document_number %>
     </div>
+
+    <% if Setting.force_presence_date_of_birth? %>
+      <div class="date-of-birth small-12 medium-5">
+        <%= f.date_select :date_of_birth,
+                          prompt: true,
+                          start_year: 1900, end_year: minimum_required_age.years.ago.year %>
+      </div>
+    <% end %>
+
+    <% if Setting.force_presence_postal_code? %>
+      <div class="small-12 medium-5">
+        <%= f.text_field :postal_code, aria: { describedby: "postal-code-help-text" } %>
+      </div>
+    <% end %>
+
     <%= f.submit t("management.check"), class: "button" %>
   <% end %>
 </div>

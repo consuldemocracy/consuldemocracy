@@ -1,5 +1,4 @@
 class Admin::MilestoneStatusesController < Admin::BaseController
-
   before_action :load_status, only: [:edit, :update, :destroy]
 
   def index
@@ -15,7 +14,7 @@ class Admin::MilestoneStatusesController < Admin::BaseController
 
     if @status.save
       redirect_to admin_milestone_statuses_path,
-                  notice: t('admin.statuses.create.notice')
+                  notice: t("admin.statuses.create.notice")
     else
       render :new
     end
@@ -27,25 +26,25 @@ class Admin::MilestoneStatusesController < Admin::BaseController
   def update
     if @status.update(status_params)
       redirect_to admin_milestone_statuses_path,
-                  notice: t('admin.statuses.update.notice')
+                  notice: t("admin.statuses.update.notice")
     else
       render :edit
     end
   end
 
   def destroy
-    @status.destroy
+    @status.destroy!
     redirect_to admin_milestone_statuses_path,
-                notice: t('admin.statuses.delete.notice')
+                notice: t("admin.statuses.delete.notice")
   end
 
   private
 
-  def load_status
-    @status = Milestone::Status.find(params[:id])
-  end
+    def load_status
+      @status = Milestone::Status.find(params[:id])
+    end
 
-  def status_params
-    params.require(:milestone_status).permit([:name, :description])
-  end
+    def status_params
+      params.require(:milestone_status).permit([:name, :description])
+    end
 end

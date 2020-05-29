@@ -1,4 +1,4 @@
-<div class="row following margin-top" data-equalizer data-equalize-on="medium" >
+<div class="row following margin-top" data-equalizer data-equalize-on="medium">
   <div class="small-12 medium-8 column" data-equalizer-watch>
     <ul class="menu simple clear">
       <% @follows.each do |followable_type, follows| %>
@@ -22,6 +22,6 @@
   </div>
 
   <div class="small-12 medium-4 column interests" data-equalizer-watch>
-    <%= render 'interests', user: @user if valid_interests_access? %>
+    <%= render "interests", user: @user if valid_interests_access? %>
   </div>
 </div>

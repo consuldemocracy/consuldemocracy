@@ -24,6 +24,7 @@
 // 22. Images
 // 23. Maps
 // 24. Homepage
+// 25. LocalCensusRecords
 //
 
 // 01. Global styles
@@ -197,6 +198,10 @@ a {
   padding-top: $line-height;
 }
 
+.padding-top {
+  padding-top: $line-height;
+}
+
 .light {
   background: $light;
 }
@@ -341,6 +346,7 @@ a {
   clear: both;
   color: $text-medium;
   display: inline-block;
+  padding-right: $line-height / 2;
 }
 
 .back:not([class^="icon-"]) {
@@ -404,6 +410,10 @@ a {
   background: $brand;
 }
 
+.pagination li {
+  display: inline-block;
+}
+
 .truncate-horizontal-text {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -447,6 +457,11 @@ header {
   border-bottom: 1px solid $border;
   margin-bottom: $line-height;
 
+  @include breakpoint(small down) {
+    position: relative;
+    z-index: 10;
+  }
+
   .selected {
     border-bottom: 1px solid #fff;
   }
@@ -466,6 +481,26 @@ header {
       position: absolute;
       right: 2px;
       top: 9px;
+    }
+  }
+
+  .remote-translations-button {
+
+    &.callout {
+      margin: 0;
+      padding: rem-calc(6);
+
+      [type="submit"] {
+        background: none;
+        border: 0;
+        cursor: pointer;
+        font-weight: bold;
+        color: $brand;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
@@ -614,6 +649,14 @@ header {
 }
 
 .dropdown.menu > li {
+
+  a {
+    background: none;
+  }
+
+  &.is-active > a {
+    color: #fff;
+  }
 
   &.is-dropdown-submenu-parent > a::after {
     border-color: #fff transparent transparent;
@@ -1042,8 +1085,17 @@ form {
     margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
   }
 
-  .ckeditor {
-    min-height: $line-height * 13;
+  .cke {
+    margin-bottom: $line-height;
+  }
+
+  .html-area:not(.form-error) {
+    height: 272px;
+    margin-bottom: $line-height;
+
+    &.admin {
+      height: 572px;
+    }
   }
 
   .checkbox,
@@ -1053,6 +1105,19 @@ form {
     line-height: $line-height;
     vertical-align: middle;
   }
+}
+
+.translatable-fields {
+
+  &.highlight {
+    display: inline-block;
+    padding-top: $line-height;
+    width: 100%;
+  }
+}
+
+.translation-locale {
+  padding-top: $line-height;
 }
 
 // 07. Callout
@@ -1077,9 +1142,12 @@ form {
 
 .notice-container {
   min-width: $line-height * 12;
-  position: absolute;
   right: 24px;
   top: 24px;
+
+  @include breakpoint(medium) {
+    position: absolute;
+  }
 
   .notice {
     height: $line-height * 4;
@@ -1471,6 +1539,7 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
+.button.button-wordpress,
 .button.button-telegram {
   background: #fff;
   color: $text;
@@ -1607,6 +1676,23 @@ table {
   &:focus {
     background: #fff;
     color: #ce3e26;
+  }
+}
+
+.button.button-wordpress {
+  background: #dcdde3;
+  border-left: 3px solid #2f2f33;
+
+  &::before {
+    color: #2f2f33;
+    content: "J";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height * 2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
   }
 }
 
@@ -2171,7 +2257,6 @@ table {
 .flag-disable,
 .flag-active {
   line-height: 0;
-  vertical-align: sub;
 }
 
 .flag-disable {
@@ -2655,6 +2740,23 @@ table {
   }
 }
 
+.leaflet-container {
+
+  .leaflet-control-attribution {
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  a {
+    color: $link !important;
+  }
+}
+
+.leaflet-bottom,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 4 !important;
+}
+
 // 24. Homepage
 // ------------
 
@@ -2667,6 +2769,7 @@ table {
 
       &.description {
         color: $text;
+        word-wrap: break-word;
       }
     }
   }
@@ -2698,8 +2801,11 @@ table {
     }
 
     a:hover {
-      box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
       text-decoration: none;
+
+      &:not(.see-all) {
+        box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+      }
 
       img {
         transform: scale(1.1);
@@ -2766,15 +2872,15 @@ table {
   display: inline-block;
   height: rem-calc(120);
   overflow: hidden;
+  width: 100%;
 
   @include breakpoint(medium) {
     height: rem-calc(96);
   }
 
   img {
-    margin-left: rem-calc(-15);
     max-width: none;
-    width: rem-calc(120);
+    width: 100%;
   }
 }
 
@@ -2864,6 +2970,21 @@ table {
       font-weight: bold;
       margin-bottom: $line-height / 4;
       padding: rem-calc(4) rem-calc(8);
+    }
+  }
+}
+
+// 25. Local Census Records
+// ------------------------
+
+.local-census-record-new,
+.local-census-record-edit {
+
+  .date-of-birth {
+    select {
+      float: left;
+      width: 30%;
+      margin-right: $line-height / 4;
     }
   }
 }

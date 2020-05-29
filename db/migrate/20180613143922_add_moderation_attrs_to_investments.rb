@@ -1,4 +1,4 @@
-class AddModerationAttrsToInvestments < ActiveRecord::Migration
+class AddModerationAttrsToInvestments < ActiveRecord::Migration[4.2]
   def change
     change_table :budget_investments do |t|
       t.datetime :confirmed_hide_at

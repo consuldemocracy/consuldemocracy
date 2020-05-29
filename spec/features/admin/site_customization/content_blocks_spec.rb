@@ -1,8 +1,7 @@
 require "rails_helper"
 
-feature "Admin custom content blocks" do
-
-  background do
+describe "Admin custom content blocks" do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -42,7 +41,7 @@ feature "Admin custom content blocks" do
     end
 
     scenario "Invalid custom block" do
-      block = create(:site_customization_content_block)
+      create(:site_customization_content_block)
 
       visit admin_root_path
 
@@ -68,7 +67,8 @@ feature "Admin custom content blocks" do
 
   context "Update" do
     scenario "Valid custom block" do
-      block = create(:site_customization_content_block)
+      create(:site_customization_content_block)
+
       visit admin_root_path
 
       within("#side_menu") do

@@ -1,7 +1,6 @@
-class CreateBudgetInvestments < ActiveRecord::Migration
+class CreateBudgetInvestments < ActiveRecord::Migration[4.2]
   def change
     create_table :budget_investments do |t|
-
       t.references "geozone"
 
       t.integer  "author_id", index: true
@@ -24,13 +23,12 @@ class CreateBudgetInvestments < ActiveRecord::Migration
       t.datetime "hidden_at"
       t.integer  "cached_votes_up", default: 0
       t.integer  "comments_count", default: 0
-      t.integer  "confidence_score", default: 0,     null: false
+      t.integer  "confidence_score", default: 0, null: false
       t.integer  "physical_votes", default: 0
 
       t.tsvector "tsv"
 
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
+      t.timestamps null: false
     end
 
     add_index :budget_investments, :tsv, using: "gin"

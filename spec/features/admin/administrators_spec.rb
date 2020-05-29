@@ -1,11 +1,11 @@
 require "rails_helper"
 
-feature "Admin administrators" do
+describe "Admin administrators" do
   let!(:admin) { create(:administrator) }
   let!(:user) { create(:user, username: "Jose Luis Balbin") }
-  let!(:user_administrator) { create(:administrator) }
+  let!(:user_administrator) { create(:administrator, description: "admin_alias") }
 
-  background do
+  before do
     login_as(admin.user)
     visit admin_administrators_path
   end
@@ -14,6 +14,7 @@ feature "Admin administrators" do
     expect(page).to have_content user_administrator.id
     expect(page).to have_content user_administrator.name
     expect(page).to have_content user_administrator.email
+    expect(page).to have_content user_administrator.description
     expect(page).not_to have_content user.name
   end
 
@@ -39,7 +40,6 @@ feature "Admin administrators" do
   end
 
   scenario "Delete Administrator when its the current user" do
-
     within "#administrator_#{admin.id}" do
       click_on "Delete"
     end
@@ -50,15 +50,15 @@ feature "Admin administrators" do
   end
 
   context "Search" do
+    let!(:administrator1) do
+      create(:administrator, user: create(:user, username: "Bernard Sumner", email: "bernard@sumner.com"))
+    end
 
-    let!(:administrator1) { create(:administrator, user: create(:user,
-                                                                 username: "Bernard Sumner",
-                                                                 email: "bernard@sumner.com")) }
-    let!(:administrator2) { create(:administrator, user: create(:user,
-                                                                 username: "Tony Soprano",
-                                                                 email: "tony@soprano.com")) }
+    let!(:administrator2) do
+      create(:administrator, user: create(:user, username: "Tony Soprano", email: "tony@soprano.com"))
+    end
 
-    background do
+    before do
       visit admin_administrators_path
     end
 
@@ -100,4 +100,18 @@ feature "Admin administrators" do
     end
   end
 
+  context "Edit" do
+    let!(:administrator1) do
+      create(:administrator, user: create(:user, username: "Bernard Sumner", email: "bernard@sumner.com"))
+    end
+
+    scenario "admin can edit administrator1" do
+      visit(edit_admin_administrator_path(administrator1))
+      fill_in "administrator_description", with: "Admin Alias"
+      click_button "Update Administrator"
+
+      expect(page).to have_content("Administrator updated successfully")
+      expect(page).to have_content("Admin Alias")
+    end
+  end
 end

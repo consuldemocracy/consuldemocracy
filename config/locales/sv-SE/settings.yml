@@ -13,8 +13,6 @@ sv:
     votes_for_proposal_success: "Antal röster som krävs för att ett förslag ska antas"
     months_to_archive_proposals: "Antal månader innan förslag arkiveras"
     email_domain_for_officials: "E-postdomän för tjänstepersoner"
-    per_page_code_head: "Kod att inkludera på varje sida (<head>)"
-    per_page_code_body: "Kod att inkludera på varje sida (<body>)"
     twitter_handle: "Användarnamn på Twitter"
     twitter_hashtag: "Hashtag på Twitter"
     facebook_handle: "Användarnamn på Facebook"
@@ -23,41 +21,50 @@ sv:
     instagram_handle: "Användarnamn på Instagram"
     url: "Huvudsaklig webbadress"
     org_name: "Organisation"
-    place_name: "Plats"
     related_content_score_threshold: "Nivå för överensstämmelse med relaterat innehåll"
-    map_latitude: "Latitud"
-    map_longitude: "Longitud"
-    map_zoom: "Zooma"
+    mailer_from_name: "Ursprunglig e-postadress"
     meta_title: "Webbplatsens titel (SEO)"
     meta_description: "Webbplatsens beskrivning (SEO)"
     meta_keywords: "Nyckelord (SEO)"
     min_age_to_participate: Minimiålder för deltagande
-    blog_url: "Webbadress till blogg"
-    transparency_url: "Webbadress för information om transparens"
-    opendata_url: "Webbadress för information om öppen data"
-    verification_offices_url: Webbadress för verifieringskontor
-    proposal_improvement_path: Intern länk för förbättring av förslag
+    proposals:
+      successful_proposal_id: Framgångsrikt förslag
+      poll_short_title: Omröstningar
+      poll_description: Omröstningsbeskrivning
+      poll_link: Länk till ytterligare information
+      email_short_title: E-post
+      email_short_title_description: 'Kort beskrivning av e-mejl funktionen. Den tillåter användare att skicka ett mejl för att marknadsföra sitt förslag. Du kan hitta allt innehåll för detta mejl i "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: E-posts beskrivning
+      poster_short_title: Affisch
+    analytics_url: "Analytiker URL"
     feature:
-      budgets: "Medborgarbudgetar"
       twitter_login: "Twitter-inloggning"
       facebook_login: "Facebook-inloggning"
       google_login: "Google-inloggning"
-      proposals: "Förslag"
-      debates: "Debatter"
-      polls: "Omröstningar"
-      polls_description: "Medborgaromröstningar är en deltagandeprocess där röstberättigade medborgare fattar beslut genom omröstning"
       signature_sheets: "Namninsamlingar"
-      legislation: "Planering"
-      spending_proposals: "Investeringsförslag"
       user:
         recommendations: "Rekommendationer"
         skip_verification: "Hoppa över användarverifiering"
         recommendations_on_debates: "Rekommenderade debatter"
         recommendations_on_proposals: "Rekommenderade förslag"
       community: "Gemenskap kring medborgarförslag och budgetförslag"
-      map: "Geografisk plats för budgetförslag"
+      map: "Geografisk plats för förslag och budgetförslag"
       allow_images: "Tillåt uppladdning och visning av bilder"
       allow_attached_documents: "Tillåt uppladdning och visning av dokument"
       guides: "Instruktioner för att skapa budgetförslag"
       public_stats: "Offentlig statistik"
       help_page: "Hjälpsida"
+      graphql_api: "GraphQL API"
+    map:
+      latitude: "Latitud"
+      longitude: "Longitud"
+      zoom: "Zoom"
+    process:
+      debates: "Debatter"
+      proposals: "Förslag"
+      proposals_description: "Medborgarförslag är en möjlighet för grannar och föreningar att direkt bestämma över hur de vill ha sitt samhälle, genom att samla stöd för sitt förslag och vinna en omröstning"
+      polls: "Omröstningar"
+      polls_description: "Medborgaromröstningar är en deltagandeprocess där röstberättigade medborgare fattar beslut genom omröstning"
+      budgets: "Medborgarbudget"
+      budgets_description: "I medborgarbudgeten bestämmer medborgarna om en del av den kommunala budgeten genom att skapa och rösta på budgetförslag"
+      legislation: "Planering"

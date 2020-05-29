@@ -1,4 +1,4 @@
-<% provide :title do %><%= t('budgets.investments.index.title') %><% end %>
+<% provide :title do %><%= t("budgets.investments.index.title") %><% end %>
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: budget_investments_path(budget_id: @budget.id, page: 1),
@@ -18,19 +18,19 @@
 <main id="budget-investments-main">
 
   <% unless params[:search].present? %>
-    <%= render '/budgets/investments/header' %>
+    <%= render "/budgets/investments/header" %>
   <% end %>
 
-  <% if params[:search].present? || params[:advanced_search].present?  %>
+  <% if params[:search].present? || params[:advanced_search].present? %>
     <div class="highlight no-margin-top padding margin-bottom">
       <div class="row">
         <div class="small-12 column">
           <h2><%= t("shared.search_results") %></h2>
           <p>
             <%= page_entries_info @investments %>
-            <%= t("budgets.investments.index.search_results_html",
+            <%= sanitize(t("budgets.investments.index.search_results",
                    count: @investments.size,
-                   search_term: params[:search]) %>
+                   search_term: params[:search])) %>
           </p>
         </div>
       </div>
@@ -55,7 +55,7 @@
         </div>
       <% end %>
 
-      <%= render("shared/advanced_search", search_path: budget_investments_url(@budget)) %>
+      <%= render("shared/advanced_search", search_path: budget_investments_path(@budget)) %>
 
       <% if unfeasible_or_unselected_filter %>
         <ul class="no-bullet submenu">
@@ -73,19 +73,17 @@
       <% if investments_default_view? %>
 
         <% @investments.each do |investment| %>
-          <%= render partial: '/budgets/investments/investment',
-                     locals: {
-                       investment: investment,
-                       investment_ids: @investment_ids,
-                       investment_votes: @investment_votes,
-                       ballot: @ballot
-                     } %>
+          <%= render "/budgets/investments/investment",
+                     investment: investment,
+                     investment_ids: @investment_ids,
+                     investment_votes: @investment_votes,
+                     ballot: @ballot %>
         <% end %>
       <% else %>
 
         <% @investments.each do |investment| %>
-          <%= render partial: '/budgets/investments/investment_minimal',
-                     locals: { investment: investment } %>
+          <%= render "/budgets/investments/investment_minimal",
+                     investment: investment %>
         <% end %>
       <% end %>
 
@@ -95,7 +93,7 @@
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
         <div id="sidebar">
-          <%= render '/budgets/investments/sidebar' %>
+          <%= render "/budgets/investments/sidebar" %>
         </div>
       </aside>
     </div>

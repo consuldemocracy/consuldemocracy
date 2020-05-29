@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Valuation" do
+describe "Valuation" do
   let(:user) { create(:user) }
 
   context "Access" do
@@ -110,5 +110,4 @@ feature "Valuation" do
     expect(page).not_to have_css("#admin_menu")
     expect(page).not_to have_css("#moderation_menu")
   end
-
 end

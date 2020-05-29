@@ -21,18 +21,18 @@ def add_image_to(imageable)
     attachment: INVESTMENT_IMAGE_FILES.sample,
     user: imageable.author
   })
-  imageable.save
+  imageable.save!
 end
 
 section "Creating Budgets" do
-  Budget.create(
+  Budget.create!(
     name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year - 1}",
     name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year - 1}",
     currency_symbol: I18n.t("seeds.budgets.currency"),
     phase: "finished"
   )
 
-  Budget.create(
+  Budget.create!(
     name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year}",
     name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year}",
     currency_symbol: I18n.t("seeds.budgets.currency"),
@@ -121,13 +121,16 @@ section "Creating Investments" do
   100.times do
     heading = Budget::Heading.all.sample
 
-    investment = Budget::Investment.create!(
+    translation_attributes = random_locales.each_with_object({}) do |locale, attributes|
+      attributes["title_#{locale.to_s.underscore}"] = "Title for locale #{locale}"
+      attributes["description_#{locale.to_s.underscore}"] = "<p>Description for locale #{locale}</p>"
+    end
+
+    investment = Budget::Investment.create!({
       author: User.all.sample,
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
-      title: Faker::Lorem.sentence(3).truncate(60),
-      description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: %w[undecided unfeasible feasible feasible feasible feasible].sample,
       unfeasibility_explanation: Faker::Lorem.paragraph,
@@ -136,7 +139,7 @@ section "Creating Investments" do
       price: rand(1..100) * 100000,
       skip_map: "1",
       terms_of_service: "1"
-    )
+    }.merge(translation_attributes))
 
     add_image_to(investment) if Random.rand > 0.5
   end
@@ -151,9 +154,9 @@ end
 section "Geolocating Investments" do
   Budget.find_each do |budget|
     budget.investments.each do |investment|
-      MapLocation.create(latitude: Setting["map_latitude"].to_f + rand(-10..10)/100.to_f,
-                         longitude: Setting["map_longitude"].to_f + rand(-10..10)/100.to_f,
-                         zoom: Setting["map_zoom"],
+      MapLocation.create(latitude: Setting["map.latitude"].to_f + rand(-10..10) / 100.to_f,
+                         longitude: Setting["map.longitude"].to_f + rand(-10..10) / 100.to_f,
+                         zoom: Setting["map.zoom"],
                          investment_id: investment.id)
     end
   end

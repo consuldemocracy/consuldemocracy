@@ -1,8 +1,8 @@
 class Moderation::ProposalNotificationsController < Moderation::BaseController
   include ModerateActions
 
-  has_filters %w{pending_review all ignored}, only: :index
-  has_orders %w{created_at moderated}, only: :index
+  has_filters %w[pending_review all ignored], only: :index
+  has_orders %w[created_at moderated], only: :index
 
   before_action :load_resources, only: [:index, :moderate]
 
@@ -15,7 +15,7 @@ class Moderation::ProposalNotificationsController < Moderation::BaseController
   private
 
     def resource_name
-      'proposal_notification'
+      "proposal_notification"
     end
 
     def resource_model

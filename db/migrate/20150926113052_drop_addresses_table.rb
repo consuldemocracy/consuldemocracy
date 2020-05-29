@@ -1,4 +1,4 @@
-class DropAddressesTable < ActiveRecord::Migration
+class DropAddressesTable < ActiveRecord::Migration[4.2]
   def self.up
     drop_table :addresses
   end
@@ -20,8 +20,7 @@ class DropAddressesTable < ActiveRecord::Migration
       t.string   "district"
       t.string   "postal_code"
       t.string   "toponymy"
-      t.datetime "created_at",    null: false
-      t.datetime "updated_at",    null: false
+      t.timestamps null: false
     end
   end
 end

@@ -6,7 +6,6 @@ ca:
         submit: Reenviar instruccions
         title: Reenviar instruccions de confirmació
       show:
-        instructions_html: Anem a procedir a confirmar el compte amb l'email <b>%{email}</b>
         new_password_confirmation_label: Repeteix la clau de nou
         new_password_label: Nova clau d'accés
         please_set_password: Si us plau introdueix una nova clau d'accés per a la seva compte (et permetrà entrar com a usuari amb l'email de més amunt)
@@ -15,7 +14,7 @@ ca:
     mailer:
       confirmation_instructions:
         confirm_link: Confirmar el meu compte
-        text: 'Pots confirmar la teva compte de correu electrònic en el següent enllaç:'
+        text: "Pots confirmar la teva compte de correu electrònic en el següent enllaç:"
         title: Benvingut / a
         welcome: Benvingut / a
       reset_password_instructions:
@@ -23,12 +22,12 @@ ca:
         hello: Hola
         ignore_text: Si tu no ho has sol·licitat, ignoreu aquest correu electrònic.
         info_text: La contrasenya no canviarà fins que no accedeixis a l'enllaç i la modifiquis.
-        text: 'S''ha sol·licitat canviar la contrasenya, pots fer-ho al següent enllaç:'
+        text: "S'ha sol·licitat canviar la contrasenya, pots fer-ho al següent enllaç:"
         title: Canvia la teua contrasenya
       unlock_instructions:
         hello: Hola
         info_text: El teu compte ha estat bloquejat a causa d'un excessiu nombre d'intents fallits d'alta.
-        instructions_text: 'Segueix el següent enllaç per desbloquejar el teu compte:'
+        instructions_text: "Segueix el següent enllaç per desbloquejar el teu compte:"
         title: El teu compte ha estat bloquejat
         unlock_link: Desbloquejar el meu compte
     menu:
@@ -50,7 +49,6 @@ ca:
           title: Registrar-se com organització / col·lectiu
         success:
           back_to_index: Entès, tornar a la pàgina principal
-          instructions_3_html: Un cop confirmat, podràs començar a participar com a col·lectiu no verificat.
           title: Registre d'organització / col·lectiu
     passwords:
       edit:
@@ -100,7 +98,7 @@ ca:
           password_confirmation_label: Confirmar contrasenya nova
           password_label: Nova contrasenya
           update_submit: Actualitzar
-          waiting_for: 'Esperant confirmació de:'
+          waiting_for: "Esperant confirmació de:"
         new:
           email_label: El teu correu electrònic
           organization_signup: '¿Representes a una organització / col·lectiu? %{signup_link}'
@@ -119,6 +117,3 @@ ca:
           username_note: Nom públic que apareixerà en les teves publicacions
         success:
           back_to_index: Entès, tornar a la pàgina principal
-          instructions_1_html: Si us plau <b>revisa el teu correu electrònic</b> - t'hem enviat un <b>enllaç per confirmar el teu compte.</b>
-          instructions_2_html: Un cop confirmat, podràs començar a participar-hi.
-          thank_you_html: Gràcies per registrar-te al web. Ara has de <b>confirmar el teu correu.</b>

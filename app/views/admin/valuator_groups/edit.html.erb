@@ -2,8 +2,7 @@
 
 <div class="small-12 medium-6 margin-top">
   <%= form_for [:admin, @group] do |f| %>
-    <%= f.label :name, t("admin.valuator_groups.form.name") %>
-    <%= f.text_field :name, label: false %>
+    <%= f.text_field :name %>
     <%= f.submit t("admin.valuator_groups.form.edit"), class: "button success" %>
   <% end %>
 </div>

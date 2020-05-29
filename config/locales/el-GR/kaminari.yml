@@ -1,0 +1,22 @@
+el:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Καταχωρήσεις
+        one: Καταχώρηση
+        other: Καταχωρήσεις
+      more_pages:
+        display_entries: Εμφάνιση <strong>%{first}&nbsp;-&nbsp;%{last}</strong> από <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} δεν μπορεί να βρεθεί"
+          one: Υπάρχει <strong>1 %{entry_name}</strong>
+          other: Υπάρχουν <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Βρίσκεστε στη σελίδα
+      first: Πρώτη
+      last: Τελευταία
+      next: Επόμενη
+      previous: Προηγούμενη
+      truncate: "&hellip;"

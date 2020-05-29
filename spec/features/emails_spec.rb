@@ -1,13 +1,11 @@
 require "rails_helper"
 
-feature "Emails" do
-
-  background do
+describe "Emails" do
+  before do
     reset_mailer
   end
 
   context "On Staging Environment" do
-
     scenario "emails are delivered to configured recipient" do
       interceptor = RecipientInterceptor.new("recipient@consul.dev", subject_prefix: "[staging]")
       Mail.register_interceptor(interceptor)
@@ -21,7 +19,6 @@ feature "Emails" do
 
       Mail.unregister_interceptor(interceptor)
     end
-
   end
 
   scenario "Signup Email" do
@@ -63,7 +60,7 @@ feature "Emails" do
     end
 
     scenario "Do not send email about proposal comment unless set in preferences" do
-      user.update(email_on_comment: false)
+      user.update!(email_on_comment: false)
       comment_on(proposal)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -90,7 +87,7 @@ feature "Emails" do
     end
 
     scenario "Do not send email about debate comment unless set in preferences" do
-      user.update(email_on_comment: false)
+      user.update!(email_on_comment: false)
       comment_on(debate)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -117,7 +114,7 @@ feature "Emails" do
     end
 
     scenario "Do not send email about budget investment comment unless set in preferences" do
-      user.update(email_on_comment: false)
+      user.update!(email_on_comment: false)
       comment_on(investment)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -145,7 +142,7 @@ feature "Emails" do
     end
 
     scenario "Do not send email about topic comment unless set in preferences" do
-      user.update(email_on_comment: false)
+      user.update!(email_on_comment: false)
       comment_on(topic)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -172,7 +169,7 @@ feature "Emails" do
     end
 
     scenario "Do not send email about poll question comment unless set in preferences" do
-      user.update(email_on_comment: false)
+      user.update!(email_on_comment: false)
       comment_on(poll)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -199,7 +196,7 @@ feature "Emails" do
     end
 
     scenario "Do not send email about comment reply unless set in preferences", :js do
-      user.update(email_on_comment_reply: false)
+      user.update!(email_on_comment_reply: false)
       reply_to(user)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -218,36 +215,7 @@ feature "Emails" do
     expect(email).to have_subject("Instrucciones de confirmación")
   end
 
-  scenario "Email on unfeasible spending proposal" do
-    Setting["feature.spending_proposals"] = true
-
-    spending_proposal = create(:spending_proposal)
-    administrator = create(:administrator)
-    valuator = create(:valuator)
-    spending_proposal.update(administrator: administrator)
-    spending_proposal.valuators << valuator
-
-    login_as(valuator.user)
-    visit edit_valuation_spending_proposal_path(spending_proposal)
-
-    choose  "spending_proposal_feasible_false"
-    fill_in "spending_proposal_feasible_explanation", with: "This is not legal as stated in Article 34.9"
-    check "spending_proposal_valuation_finished"
-    click_button "Save changes"
-
-    expect(page).to have_content "Dossier updated"
-    spending_proposal.reload
-
-    email = open_last_email
-    expect(email).to have_subject("Your investment project '#{spending_proposal.code}' has been marked as unfeasible")
-    expect(email).to deliver_to(spending_proposal.author.email)
-    expect(email).to have_body_text(spending_proposal.feasible_explanation)
-
-    Setting["feature.spending_proposals"] = nil
-  end
-
   context "Direct Message" do
-
     scenario "Receiver email" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two)
@@ -278,26 +246,20 @@ feature "Emails" do
     end
 
     pending "In the copy sent to the sender, display the receiver's name"
-
   end
 
   context "Proposal notification digest" do
-
     scenario "notifications for proposals that I have supported" do
       user = create(:user, email_digest: true)
 
-      proposal1 = create(:proposal)
-      proposal2 = create(:proposal)
+      proposal1 = create(:proposal, voters: [user])
+      proposal2 = create(:proposal, voters: [user])
       proposal3 = create(:proposal)
-
-      create(:vote, votable: proposal1, voter: user)
-      create(:vote, votable: proposal2, voter: user)
 
       reset_mailer
 
       notification1 = create_proposal_notification(proposal1)
       notification2 = create_proposal_notification(proposal2)
-      notification3 = create_proposal_notification(proposal3)
 
       email_digest = EmailDigest.new(user)
       email_digest.deliver(Time.current)
@@ -335,13 +297,11 @@ feature "Emails" do
 
     scenario "notifications moderated are not sent" do
       user = create(:user, email_digest: true)
-      proposal = create(:proposal)
-      proposal_notification = create(:proposal_notification, proposal: proposal)
-      notification = create(:notification, notifiable: proposal_notification)
+      notification = create(:notification, :for_proposal_notification)
 
       reset_mailer
 
-      proposal_notification.moderate_system_email(create(:administrator).user)
+      notification.notifiable.moderate_system_email(create(:administrator).user)
 
       email_digest = EmailDigest.new(user)
       email_digest.deliver(Time.current)
@@ -352,11 +312,9 @@ feature "Emails" do
 
     xscenario "Delete all Notifications included in the digest after email sent" do
     end
-
   end
 
   context "User invites" do
-
     scenario "Send an invitation" do
       login_as_manager
       visit new_management_user_invite_path
@@ -374,27 +332,20 @@ feature "Emails" do
       expect(email).to have_subject("Invitation to CONSUL")
       expect(email).to have_body_text(/#{new_user_registration_path}/)
     end
-
   end
 
   context "Budgets" do
-
-    background do
-      Setting["feature.budgets"] = true
-    end
-
     let(:author)   { create(:user, :level_two) }
     let(:budget)   { create(:budget) }
-    let(:group)    { create(:budget_group, name: "Health", budget: budget) }
-    let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
+    let!(:heading) { create(:budget_heading, name: "More hospitals", budget: budget) }
 
     scenario "Investment created" do
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
       select  heading.name, from: "budget_investment_heading_id"
-      fill_in "budget_investment_title", with: "Build a hospital"
-      fill_in "budget_investment_description", with: "We have lots of people that require medical attention"
+      fill_in "Title", with: "Build a hospital"
+      fill_in "Description", with: "We have lots of people that require medical attention"
       check   "budget_investment_terms_of_service"
 
       click_button "Create Investment"
@@ -412,11 +363,9 @@ feature "Emails" do
     end
 
     scenario "Unfeasible investment" do
-      budget.update(phase: "valuating")
-      investment = create(:budget_investment, author: author, budget: budget, heading: heading)
-
+      budget.update!(phase: "valuating")
       valuator = create(:valuator)
-      investment.valuators << valuator
+      investment = create(:budget_investment, author: author, budget: budget, valuators: [valuator])
 
       login_as(valuator.user)
       visit edit_valuation_budget_budget_investment_path(budget, investment)
@@ -478,11 +427,9 @@ feature "Emails" do
       expect(email).to have_subject("Your investment project '#{investment.code}' has not been selected")
       expect(email).to deliver_to(investment.author.email)
     end
-
   end
 
   context "Polls" do
-
     scenario "Send email on poll comment reply", :js do
       user1 = create(:user, email_on_comment_reply: true)
       user2 = create(:user)
@@ -511,20 +458,14 @@ feature "Emails" do
       expect(email).to have_body_text("To stop receiving these emails change your settings in")
       expect(email).to have_body_text(account_path)
     end
-
   end
 
   context "Newsletter" do
-
     scenario "Send newsletter email to selected users" do
-      user_with_newsletter_in_segment_1 = create(:user, newsletter: true)
-      user_with_newsletter_in_segment_2 = create(:user, newsletter: true)
+      user_with_newsletter_in_segment_1 = create(:user, :with_proposal, newsletter: true)
+      user_with_newsletter_in_segment_2 = create(:user, :with_proposal, newsletter: true)
       user_with_newsletter_not_in_segment = create(:user, newsletter: true)
-      user_without_newsletter_in_segment = create(:user, newsletter: false)
-
-      create(:proposal, author: user_with_newsletter_in_segment_1)
-      create(:proposal, author: user_with_newsletter_in_segment_2)
-      create(:proposal, author: user_without_newsletter_in_segment)
+      user_without_newsletter_in_segment = create(:user, :with_proposal, newsletter: false)
 
       admin = create(:administrator)
       login_as(admin.user)
@@ -547,7 +488,6 @@ feature "Emails" do
       expect(email).to deliver_from("no-reply@consul.dev")
       expect(email.body.encoded).to include("This is a different body")
     end
-
   end
 
   context "Users without email" do
@@ -557,12 +497,11 @@ feature "Emails" do
 
       user_commenting = create(:user)
       comment = create(:comment, commentable: proposal, user: user_commenting)
-      user.update(email: nil)
+      user.update!(email: nil)
 
       Mailer.comment(comment).deliver_now
 
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
-
   end
 end

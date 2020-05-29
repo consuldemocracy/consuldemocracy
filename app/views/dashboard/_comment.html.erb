@@ -1,0 +1,10 @@
+<li>
+  <%= comment.body %>
+  <p class="topic-info">
+    <%= comment.commentable.title %>
+    &nbsp;&bullet;&nbsp;
+    <%= l(comment.updated_at.to_date) %>
+    &nbsp;&bullet;&nbsp;
+    <%= comment.author.name %>
+  </p>
+</li>

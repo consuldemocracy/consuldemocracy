@@ -128,7 +128,7 @@ sq:
         other: "është gjatësia e gabuar (duhet të jetë %{count} karaktere)\n"
       other_than: "\nduhet të jetë ndryshe nga %{count}"
     template:
-      body: 'Kishte probleme me fushat e mëposhtme:'
+      body: "Kishte probleme me fushat e mëposhtme:"
       header:
         one: 1 gabim e pengoi këtë %{model} të ruhej
         other: "%{count} gabime e penguan këtë %{model} të ruhej"

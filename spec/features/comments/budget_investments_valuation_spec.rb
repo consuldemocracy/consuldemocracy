@@ -1,27 +1,19 @@
 require "rails_helper"
 
-feature "Internal valuation comments on Budget::Investments" do
+describe "Internal valuation comments on Budget::Investments" do
   let(:user) { create(:user) }
   let(:valuator_user) { create(:valuator).user }
   let(:admin_user) { create(:administrator).user }
   let(:budget) { create(:budget, :valuating) }
-  let(:group) { create(:budget_group, budget: budget) }
-  let(:heading) { create(:budget_heading, group: group) }
-  let(:investment) { create(:budget_investment, budget: budget, group: group, heading: heading) }
+  let(:investment) { create(:budget_investment, budget: budget, valuators: [valuator_user.valuator]) }
 
-  background do
-    Setting["feature.budgets"] = true
-    investment.valuators << valuator_user.valuator
+  before do
     login_as(valuator_user)
-  end
-
-  after do
-    Setting["feature.budgets"] = nil
   end
 
   context "Show valuation comments" do
     context "Show valuation comments without public comments" do
-      background do
+      before do
         public_comment = create(:comment, commentable: investment, body: "Public comment")
         create(:comment, commentable: investment, author: valuator_user,
                          body: "Public valuator comment")
@@ -79,20 +71,25 @@ feature "Internal valuation comments on Budget::Investments" do
       visit valuation_budget_budget_investment_path(budget, investment)
 
       expect(page).to have_css(".comment", count: 3)
+      expect(page).to have_content("1 response (collapse)", count: 2)
 
       find("#comment_#{child_comment.id}_children_arrow").click
 
       expect(page).to have_css(".comment", count: 2)
+      expect(page).to have_content("1 response (collapse)")
+      expect(page).to have_content("1 response (show)")
       expect(page).not_to have_content grandchild_comment.body
 
       find("#comment_#{child_comment.id}_children_arrow").click
 
       expect(page).to have_css(".comment", count: 3)
+      expect(page).to have_content("1 response (collapse)", count: 2)
       expect(page).to have_content grandchild_comment.body
 
       find("#comment_#{parent_comment.id}_children_arrow").click
 
       expect(page).to have_css(".comment", count: 1)
+      expect(page).to have_content("1 response (show)")
       expect(page).not_to have_content child_comment.body
       expect(page).not_to have_content grandchild_comment.body
     end
@@ -171,7 +168,7 @@ feature "Internal valuation comments on Budget::Investments" do
     scenario "Create comment", :js do
       visit valuation_budget_budget_investment_path(budget, investment)
 
-      fill_in "comment-body-budget_investment_#{investment.id}", with: "Have you thought about...?"
+      fill_in "Leave your comment", with: "Have you thought about...?"
       click_button "Publish comment"
 
       within "#comments" do
@@ -199,7 +196,7 @@ feature "Internal valuation comments on Budget::Investments" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+        fill_in "Leave your comment", with: "It will be done next week."
         click_button "Publish reply"
       end
 
@@ -224,7 +221,6 @@ feature "Internal valuation comments on Budget::Investments" do
         click_button "Publish reply"
         expect(page).to have_content "Can't be blank"
       end
-
     end
 
     scenario "Multiple nested replies", :js do
@@ -256,13 +252,13 @@ feature "Internal valuation comments on Budget::Investments" do
     end
   end
 
-  feature "Administrators" do
+  describe "Administrators" do
     scenario "can create valuation comment as an administrator", :js do
       login_as(admin_user)
       visit valuation_budget_budget_investment_path(budget, investment)
 
-      fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
-      check "comment-as-administrator-budget_investment_#{investment.id}"
+      fill_in "Leave your comment", with: "I am your Admin!"
+      check "Comment as admin"
       click_button "Publish comment"
 
       within "#comments" do
@@ -282,8 +278,8 @@ feature "Internal valuation comments on Budget::Investments" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
-        check "comment-as-administrator-comment_#{comment.id}"
+        fill_in "Leave your comment", with: "Top of the world!"
+        check "Comment as admin"
         click_button "Publish reply"
       end
 
@@ -298,4 +294,24 @@ feature "Internal valuation comments on Budget::Investments" do
     end
   end
 
+  scenario "Send email notification", :js do
+    ActionMailer::Base.deliveries = []
+
+    login_as(admin_user)
+
+    expect(ActionMailer::Base.deliveries).to eq([])
+
+    visit valuation_budget_budget_investment_path(budget, investment)
+    fill_in "Leave your comment", with: "I am your Admin!"
+    check "Comment as admin"
+    click_button "Publish comment"
+
+    within "#comments" do
+      expect(page).to have_content("I am your Admin!")
+    end
+
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
+    expect(ActionMailer::Base.deliveries.first.to).to eq([valuator_user.email])
+    expect(ActionMailer::Base.deliveries.first.subject).to eq("New evaluation comment")
+  end
 end

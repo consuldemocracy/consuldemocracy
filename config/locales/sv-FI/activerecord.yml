@@ -1,5 +1,9 @@
 sv-FI:
   activerecord:
+    models:
+      vote:
+        one: "Röst"
+        other: "Röst"
     attributes:
       comment:
         body: "Kommentit"

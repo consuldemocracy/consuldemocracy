@@ -113,7 +113,7 @@ zh-TW:
         other: 是錯誤的長度 (應該是%{count} 個字元)
       other_than: 必須不是%{count}
     template:
-      body: '以下字段存在問題：'
+      body: "以下字段存在問題："
       header:
         other: "%{count} 個錯誤禁止此%{model} 被儲存"
   helpers:

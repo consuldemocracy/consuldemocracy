@@ -1,6 +1,6 @@
 <%= form_for(@video, url: form_url) do |f| %>
 
-  <%= render 'shared/errors', resource: @video %>
+  <%= render "shared/errors", resource: @video %>
 
   <%= f.hidden_field :answer_id, value: @video.answer_id || @answer.id %>
 

@@ -4,7 +4,6 @@ pt-BR:
     form:
       title: Imagem descritiva
       title_placeholder: Adicionar um título descritivo para a imagem
-      attachment_label: Escolher imagem
       delete_button: Remover imagem
       note: "Você pode carregar uma imagem dos seguintes tipos de conteúdo: %{accepted_content_types}, até %{max_file_size} MB."
       add_new_image: Adicionar imagem
@@ -14,7 +13,6 @@ pt-BR:
       destroy:
         notice: Imagem excluída com sucesso.
         alert: Não é possível destruir a imagem.
-        confirm: Tem certeza que deseja excluir esta imagem? Esta ação não pode ser desfeita!
     errors:
       messages:
         in_between: deve estar entre %{min} e %{max}

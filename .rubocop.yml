@@ -1,36 +1,189 @@
-inherit_from: .rubocop_basic.yml
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Exclude:
+    - "db/schema.rb"
+  DisabledByDefault: true
 
 Bundler/DuplicatedGem:
-  Enabled: true
-
-Bundler/InsecureProtocolSource:
   Enabled: true
 
 Bundler/OrderedGems:
   Enabled: true
 
-Gemspec/DuplicatedAssignment:
+Capybara/CurrentPathExpectation:
   Enabled: true
 
-Gemspec/OrderedDependencies:
+Capybara/FeatureMethods:
+  Enabled: true
+  EnabledMethods:
+    - scenario
+    - xscenario
+
+FactoryBot/AttributeDefinedStatically:
   Enabled: true
 
-Gemspec/RequiredRubyVersion:
+Layout/EmptyLineAfterGuardClause:
   Enabled: true
 
-Performance/Caller:
+Layout/EmptyLineBetweenDefs:
   Enabled: true
 
-Performance/CaseWhenSplat:
+Layout/EmptyLines:
   Enabled: true
 
-Performance/Casecmp:
+Layout/EmptyLinesAroundAccessModifier:
   Enabled: true
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: true
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
+Layout/ExtraSpacing:
+  Enabled: true
+
+Layout/IndentAssignment:
+  Enabled: true
+
+Layout/IndentHeredoc:
+  Enabled: true
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+Layout/IndentationWidth:
+  Enabled: true
+
+Layout/LeadingBlankLines:
+  Enabled: true
+
+Layout/MultilineBlockLayout:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAfterMethodName:
+  Enabled: true
+
+Layout/SpaceAfterNot:
+  Enabled: true
+
+Layout/SpaceAfterSemicolon:
+  Enabled: true
+
+Layout/SpaceAroundBlockParameters:
+  Enabled: true
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+Layout/SpaceBeforeComma:
+  Enabled: true
+
+Layout/SpaceBeforeComment:
+  Enabled: true
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+
+Layout/SpaceBeforeSemicolon:
+  Enabled: true
+
+Layout/SpaceInLambdaLiteral:
+  Enabled: true
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: true
+
+Layout/SpaceInsideArrayPercentLiteral:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+  EnforcedStyle: compact
+
+Layout/SpaceInsideParens:
+  Enabled: true
+
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: true
+
+Layout/SpaceInsideRangeLiteral:
+  Enabled: true
+
+Layout/SpaceInsideReferenceBrackets:
+  Enabled: true
+
+Layout/SpaceInsideStringInterpolation:
+  Enabled: true
+
+Layout/Tab:
+  Enabled: true
+
+Layout/TrailingBlankLines:
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: true
+
+Lint/DuplicateMethods:
+  Enabled: true
+
+Lint/LiteralAsCondition:
+  Enabled: true
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: true
+
+Lint/SafeNavigationChain:
+  Enabled: true
+
+Lint/ShadowingOuterLocalVariable:
+  Enabled: true
+
+Lint/StringConversionInInterpolation:
+  Enabled: true
+
+Lint/UselessAssignment:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 110
+  Severity: refactor
 
 Performance/CompareWithBlock:
-  Enabled: true
-
-Performance/Count:
   Enabled: true
 
 Performance/Detect:
@@ -42,61 +195,10 @@ Performance/DoubleStartEndWith:
 Performance/EndWith:
   Enabled: true
 
-Performance/FixedSize:
-  Enabled: true
-
-Performance/FlatMap:
-  Enabled: true
-
-Performance/LstripRstrip:
-  Enabled: true
-
-Performance/RangeInclude:
-  Enabled: true
-
-Performance/RedundantBlockCall:
-  Enabled: true
-
-Performance/RedundantMatch:
-  Enabled: true
-
-Performance/RedundantMerge:
-  Enabled: true
-
-Performance/RedundantSortBy:
-  Enabled: true
-
-Performance/RegexpMatch:
-  Enabled: true
-
-Performance/ReverseEach:
-  Enabled: true
-
-Performance/Sample:
-  Enabled: true
-
-Performance/Size:
-  Enabled: true
-
 Performance/StartWith:
   Enabled: true
 
-Performance/StringReplacement:
-  Enabled: true
-
-Performance/TimesMap:
-  Enabled: true
-
-Performance/UnfreezeString:
-  Enabled: true
-
-Performance/UriDefaultParser:
-  Enabled: true
-
 Rails/ActionFilter:
-  Enabled: true
-
-Rails/ActiveSupportAliases:
   Enabled: true
 
 Rails/ApplicationJob:
@@ -105,23 +207,18 @@ Rails/ApplicationJob:
 Rails/ApplicationRecord:
   Enabled: true
 
-Rails/Blank:
-  Enabled: true
-
 Rails/CreateTableWithTimestamps:
   Enabled: true
+  Exclude:
+    - "db/migrate/201[5-8]*"
+    - "db/migrate/*install_audited.rb"
 
 Rails/Date:
   Enabled: true
 
-Rails/Delegate:
-  Enabled: true
-
-Rails/DelegateAllowBlank:
-  Enabled: true
-
 Rails/DynamicFindBy:
   Enabled: true
+  Severity: refactor
 
 Rails/EnumUniqueness:
   Enabled: true
@@ -129,14 +226,10 @@ Rails/EnumUniqueness:
 Rails/EnvironmentComparison:
   Enabled: true
 
-Rails/Exit:
-  Enabled: true
-
-Rails/FilePath:
-  Enabled: true
-
 Rails/FindBy:
   Enabled: true
+  Include:
+    - "**/*.rb"
 
 Rails/FindEach:
   Enabled: true
@@ -146,38 +239,31 @@ Rails/HasAndBelongsToMany:
 
 Rails/HasManyOrHasOneDependent:
   Enabled: true
+  Severity: refactor
 
 Rails/HttpPositionalArguments:
   Enabled: true
 
 Rails/InverseOf:
   Enabled: true
-
-Rails/LexicallyScopedActionFilter:
-  Enabled: true
+  Exclude:
+    - "app/models/related_content.rb"
 
 Rails/NotNullColumn:
   Enabled: true
-
-Rails/Output:
-  Enabled: true
+  Exclude:
+    - "db/migrate/201[5-7]*"
 
 Rails/OutputSafety:
   Enabled: true
+  Severity: warning
+  Exclude:
+    - app/helpers/text_with_links_helper.rb
 
 Rails/PluralizationGrammar:
   Enabled: true
 
 Rails/Presence:
-  Enabled: true
-
-Rails/Present:
-  Enabled: true
-
-Rails/ReadWriteAttribute:
-  Enabled: true
-
-Rails/RedundantReceiverInWithOptions:
   Enabled: true
 
 Rails/RelativeDateConstant:
@@ -191,86 +277,55 @@ Rails/ReversibleMigration:
 
 Rails/SafeNavigation:
   Enabled: true
+  ConvertTry: true
 
 Rails/SaveBang:
   Enabled: true
-
-Rails/ScopeArgs:
-  Enabled: true
+  Severity: refactor
 
 Rails/SkipsModelValidations:
   Enabled: true
+  Blacklist:
+    - update_attribute
+  Exclude:
+    - lib/acts_as_paranoid_aliases.rb
 
 Rails/TimeZone:
   Enabled: true
 
-Rails/UniqBeforePluck:
-  Enabled: true
-
 Rails/UnknownEnv:
   Enabled: true
+  Environments:
+    - development
+    - test
+    - production
+    - preproduction
+    - staging
 
 Rails/Validation:
   Enabled: true
 
-RSpec/AlignLeftLetBrace:
-  Enabled: false
-
-RSpec/AlignRightLetBrace:
-  Enabled: false
-
-RSpec/AnyInstance:
-  Enabled: false
-
 RSpec/AroundBlock:
-  Enabled: true
-
-RSpec/BeEql:
   Enabled: true
 
 RSpec/BeforeAfterAll:
   Enabled: true
 
-Capybara/CurrentPathExpectation:
+RSpec/DescribedClass:
   Enabled: true
-
-Capybara/FeatureMethods:
-  Enabled: false
-
-RSpec/ContextWording:
-  Enabled: false
-
-RSpec/DescribeClass:
-  Enabled: true
-
-RSpec/DescribeMethod:
-  Enabled: true
-
-RSpec/DescribeSymbol:
-  Enabled: true
+  EnforcedStyle: explicit
 
 RSpec/EmptyExampleGroup:
   Enabled: true
+  Exclude:
+    - spec/factories/**/*
 
-RSpec/EmptyLineAfterSubject:
+RSpec/EmptyLineAfterExampleGroup:
   Enabled: true
-
-RSpec/ExampleLength:
-  Enabled: false
+  Exclude:
+    - spec/factories/**/*
 
 RSpec/ExampleWording:
-  Enabled: true
-
-RSpec/ExpectActual:
-  Enabled: true
-
-RSpec/ExpectInHook:
-  Enabled: true
-
-RSpec/ExpectOutput:
-  Enabled: true
-
-RSpec/FilePath:
   Enabled: true
 
 RSpec/Focus:
@@ -279,27 +334,11 @@ RSpec/Focus:
 RSpec/HookArgument:
   Enabled: true
 
-RSpec/ImplicitExpect:
-  Enabled: true
-  EnforcedStyle: should
-
-RSpec/InstanceSpy:
-  Enabled: true
-
 RSpec/InstanceVariable:
   Enabled: true
-
-RSpec/InvalidPredicateMatcher:
-  Enabled: true
-
-RSpec/ItBehavesLike:
-  Enabled: true
-
-RSpec/IteratedExpectation:
-  Enabled: true
-
-RSpec/LeadingSubject:
-  Enabled: true
+  Exclude:
+    - spec/controllers/concerns/has_filters_spec.rb
+    - spec/controllers/concerns/has_orders_spec.rb
 
 RSpec/LetBeforeExamples:
   Enabled: true
@@ -307,48 +346,13 @@ RSpec/LetBeforeExamples:
 RSpec/LetSetup:
   Enabled: true
 
-RSpec/MessageChain:
+RSpec/NotToNot:
   Enabled: true
-
-RSpec/MessageExpectation:
-  Enabled: true
-
-RSpec/MessageSpies:
-  Enabled: true
-  EnforcedStyle: receive
-
-RSpec/MultipleDescribes:
-  Enabled: true
-
-RSpec/MultipleExpectations:
-  Enabled: false
-
-RSpec/MultipleSubjects:
-  Enabled: true
-
-RSpec/NamedSubject:
-  Enabled: false
-
-RSpec/NestedGroups:
-  Enabled: true
-  Max: 4
 
 RSpec/OverwritingSetup:
   Enabled: true
 
-RSpec/PredicateMatcher:
-  Enabled: true
-
-Rails/HttpStatus:
-  Enabled: true
-
-RSpec/RepeatedDescription:
-  Enabled: true
-
 RSpec/RepeatedExample:
-  Enabled: true
-
-RSpec/ReturnFromStub:
   Enabled: true
 
 RSpec/ScatteredLet:
@@ -357,26 +361,8 @@ RSpec/ScatteredLet:
 RSpec/ScatteredSetup:
   Enabled: true
 
-RSpec/SharedContext:
-  Enabled: true
-
-RSpec/SingleArgumentMessageChain:
-  Enabled: true
-
-RSpec/SubjectStub:
-  Enabled: true
-
-RSpec/VerifiedDoubles:
-  Enabled: true
-
 RSpec/VoidExpect:
   Enabled: true
-
-FactoryBot/StaticAttributeDefinedDynamically:
-  Enabled: true
-
-FactoryBot/DynamicAttributeDefinedStatically:
-  Enabled: false
 
 Security/Eval:
   Enabled: true
@@ -384,11 +370,68 @@ Security/Eval:
 Security/JSONLoad:
   Enabled: true
 
-Security/MarshalLoad:
-  Enabled: true
-
 Security/YAMLLoad:
   Enabled: true
 
+Style/AndOr:
+  Enabled: true
+
+Style/BlockDelimiters:
+  Enabled: true
+
+Style/ClassCheck:
+  Enabled: true
+
+Style/ClassVars:
+  Enabled: true
+
+Style/CollectionMethods:
+  Enabled: true
+
+Style/HashSyntax:
+  Enabled: true
+
+Style/IdenticalConditionalBranches:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  Enabled: true
+
+Style/MutableConstant:
+  Enabled: true
+
+Style/Not:
+  Enabled: true
+
+Style/OrAssignment:
+  Enabled: true
+
 Style/PercentLiteralDelimiters:
+  Enabled: true
+
+Style/Proc:
+  Enabled: true
+
+Style/RedundantFreeze:
+  Enabled: true
+
+Style/RedundantReturn:
+  Enabled: true
+
+Style/SafeNavigation:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/SymbolProc:
+  Enabled: true
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
   Enabled: true
