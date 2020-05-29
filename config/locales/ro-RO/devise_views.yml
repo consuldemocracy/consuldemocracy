@@ -33,3 +33,41 @@ ro:
       login_items:
         login: Conectare
         logout: Deconectare
+        signup: Înregistrare
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+          organization_name_label: Numele organizaței
+          password_confirmation_label: Confirmă parola
+          password_label: Parolă
+          phone_number_label: Număr de telefon
+          submit: Înregistrare
+    passwords:
+      edit:
+        change_submit: Schimbă parola
+        password_confirmation_label: Confirmă parola
+        password_label: Parola nouă
+        title: Schimbă parola
+      new:
+        email_label: Email
+        send_submit: Trimite instrucțiuni
+    sessions:
+      new:
+        login_label: Email sau Nume de utilizator
+        password_label: Parolă
+        title: Conectare
+    shared:
+      links:
+        new_confirmation: Nu ați primit instrucțiuni pentru a va activa contul?
+    users:
+      registrations:
+        new:
+          submit: Înregistrare
+          terms_link: termeni si conditii de utilizare
+          title: Înregistrare
+          username_is_available: Nume de utilizator valabil
+          username_is_not_available: Nume de utilizator deja în uz
+          username_label: Nume de utilizator
+        success:
+          title: Confirmă adresa de email
