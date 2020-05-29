@@ -6,8 +6,9 @@ class ApplicationController < ActionController::Base
   include HasOrders
   include AccessDeniedHandler
 
-  default_form_builder ConsulFormBuilder
   protect_from_forgery with: :exception
+
+  default_form_builder ConsulFormBuilder
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
@@ -18,8 +19,6 @@ class ApplicationController < ActionController::Base
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
-
-  protect_from_forgery with: :exception
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
