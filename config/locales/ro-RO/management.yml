@@ -34,3 +34,19 @@ ro:
       in_census_has_following_permissions: "Acest utilizator poate participa pe site-ul web cu următoarele permisiuni:"
       not_in_census: Acest document nu este înregistrat.
       please_check_account_data: Vă rugăm să verificați dacă datele contului de mai sus sunt corecte.
+    email_verifications:
+      introduce_email: "Vă rugăm introduceți adresa de email folosită la cont:"
+      send_email: Trimite emailul de verificare
+    menu:
+      create_proposal: Crează propunere
+      print_proposals: Printează propunere
+      support_proposals: Sprijină propuneri
+      create_budget_investment: Crează buget de investiții
+      print_budget_investments: Printează buget de investiții
+    username_label: Nume de utilizator
+    users:
+      create_user: Crează cont nou
+      create_user_info: Vom crea un cont cu următoarele date
+      create_user_submit: Crează utilizator
+      erase_account_link: Șterge utilizator
+      erase_account_confirm: Sigur doriți să ștergeți documentul? Această acțiune nu poate fi anulată
