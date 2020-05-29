@@ -5,3 +5,31 @@ ro:
         email_label: Email
         submit: Retrimite instrucțiuni
         title: Retrimite instrucțiuni de confirmare
+      show:
+        new_password_confirmation_label: Repetă parola de acces
+        new_password_label: Parolă nouă de acces
+        submit: Confirmă
+        title: Confirmă contul
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirmă contul
+        text: "Vă puteți confirma contul de email la următorul link:"
+        title: Bine ați venit
+        welcome: Bine ați venit
+      reset_password_instructions:
+        change_link: Schimbă parola
+        hello: Bună ziua
+        ignore_text: Dacă nu ați solicitat schimbarea parolei, puteți ignora acest email.
+        info_text: Parola dumneavoastră nu va fi modificată decât dacă accesați linkul și o modificați.
+        text: "Ați primit o solicitare de modificare a parolei. Puteți face asta la următorul link:"
+        title: Schimbați-vă parola
+      unlock_instructions:
+        hello: Bună ziua
+        info_text: Contul dvs. a fost blocat din cauza unui număr excesiv de încercări de conectare eșuate.
+        instructions_text: "Vă rugăm accesați acest link pentru a vă debloca contul:"
+        title: Contul dumneavoastră a fost blocat
+        unlock_link: Deblochează contul
+    menu:
+      login_items:
+        login: Conectare
+        logout: Deconectare
