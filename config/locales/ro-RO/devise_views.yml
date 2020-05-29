@@ -60,9 +60,35 @@ ro:
     shared:
       links:
         new_confirmation: Nu ați primit instrucțiuni pentru a va activa contul?
+        new_unlock: Nu ați primit instrucțiunile de deblocare?
+        signin_with_provider: Conectare cu %{provider}
+        signup: Nu aveți un cont? %{signup_link}
+        signup_link: Deconectare
+    unlocks:
+      new:
+        email_label: Email
+        submit: Retrimite instrucțiuni de deblocare
+        title: Retrimite instrucțiuni de deblocare
     users:
       registrations:
+        delete_form:
+          erase_reason_label: Motiv
+          info: Această acțiune nu poate fi anulată. Vă rugăm să vă asigurați că asta vă doriți.
+          info_reason: Dacă doriți, lăsați-ne un motiv (opțional)
+          submit: Șterge contul
+          title: Șterge cont
+        edit:
+          current_password_label: Parolă curentă
+          edit: Editează
+          email_label: Email
+          password_confirmation_label: Confirmă noua parolă
+          password_label: Parola nouă
+          update_submit: Actualizează
         new:
+          cancel: Anulează conectare
+          email_label: Email
+          password_confirmation_label: Confirmă parolă
+          password_label: Parolă
           submit: Înregistrare
           terms_link: termeni si conditii de utilizare
           title: Înregistrare
