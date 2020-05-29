@@ -1,1 +1,8 @@
 ro:
+  settings:
+    comments_body_max_length: "Lungimea maximă a câmpului de comentarii"
+    org_name: "Numele site-ului"
+    proposals:
+      poll_short_title: Sondaje
+      poll_description: Descrierea sondajelor
+      email_short_title: Email
