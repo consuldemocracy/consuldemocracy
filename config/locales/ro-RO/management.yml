@@ -48,5 +48,13 @@ ro:
       create_user: Crează cont nou
       create_user_info: Vom crea un cont cu următoarele date
       create_user_submit: Crează utilizator
+      email_optional_label: Email (opțional)
+      erased_notice: Contul de utilizator a fost șters.
+      erased_by_manager: "Șters de administratorul: %{manager}"
       erase_account_link: Șterge utilizator
       erase_account_confirm: Sigur doriți să ștergeți documentul? Această acțiune nu poate fi anulată
+      erase_warning: Această acțiune nu poate fi anulată. Vă rugăm să vă asigurați că doriți să ștergeți acest cont.
+      erase_submit: Șterge cont
+    user_invites:
+      new:
+        label: Emailuri
