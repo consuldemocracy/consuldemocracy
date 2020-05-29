@@ -51,6 +51,41 @@ ro:
   datetime:
     distance_in_words:
       half_a_minute: jumătate de minut
+      x_minutes:
+        one: 1 minut
+        few: "%{count} minute"
+        other: "%{count} minute"
+      x_months:
+        one: 1 luna
+        few: "%{count} luni"
+        other: "%{count} luni"
+      x_years:
+        one: 1 an
+        few: "%{count} ani"
+        other: "%{count} ani"
+      x_seconds:
+        one: 1 secundă
+        few: "%{count} secunde"
+        other: "%{count} secunde"
+    prompts:
+      day: Zi
+      hour: Oră
+      minute: Minut
+      month: Lună
+      second: Secunde
+      year: An
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: trebuie acceptată
+      blank: nu poate fi gol
+      present: trebuie să fie gol
+      confirmation: nu se potrivește cu%{attribute}
+      empty: nu poate fi gol
+      equal_to: trebuie să fie egal %{count}
+      even: trebuie să fie egal
+      exclusion: este rezevat
+      greater_than: trebuie să fie mai mare decât %{count}
   number:
     human:
       decimal_units:
