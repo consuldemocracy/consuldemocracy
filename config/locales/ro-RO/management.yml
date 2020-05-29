@@ -1,1 +1,17 @@
 ro:
+  management:
+    account:
+      menu:
+        reset_password_email: Resetează parola prin email
+        reset_password_manually: Resetează parola manual
+      show:
+        title: Contul utilizatorului
+      edit:
+        back: Înapoi
+        password:
+          password: Parolă
+          send_email: Trimite noua parolă prin email
+          reset_email_send: Email trimis corect.
+          reseted: Parolă resetată cu succes
+          random: Generează parolă aleatorie
+          save: Salvează parolă
