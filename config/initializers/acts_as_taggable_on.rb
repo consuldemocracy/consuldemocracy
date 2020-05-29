@@ -40,7 +40,7 @@ module ActsAsTaggableOn
             Tagging.public_for_api.distinct.pluck("taggings.tag_id"))
     end
 
-    include PgSearch
+    include PgSearch::Model
 
     pg_search_scope :pg_search, against: :name,
                                 using: {
