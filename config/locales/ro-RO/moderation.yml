@@ -39,6 +39,47 @@ ro:
         order: Ordonează
         orders:
           created_at: Cele mai noi
+          flags: Cele mai marcate
+        title: Dezbateri
+    menu:
+      flagged_comments: Comentarii
+      flagged_debates: Dezbateri
+      flagged_investments: Buget de investiții
+      proposals: Propuneri
+      proposal_notifications: Notificări de propuneri
+      users: Blochează utilizatorii
+    proposals:
+      index:
+        block_authors: Blochează autorii
+        confirm: Sunteți sigur?
+        filter: Filtru
+        filters:
+          all: Tot
+          pending_flag_review: Revizuire în așteptare
+          with_ignored_flag: Marchează ca vizualizat
+        headers:
+          moderate: Moderează
+          proposal: Propunere
+        hide_proposals: Ascunde propuneri
+        ignore_flags: Marchează ca vizualizat
+        order: Ordonează după
+        orders:
+          created_at: Cel mai recent
+          flags: Cel mai marcat
+        title: Propuneri
+    budget_investments:
+      index:
+        block_authors: Blochează autori
+        confirm: Sunteți sigur?
+        filter: Filtru
+        filters:
+          all: Tot
+          pending_flag_review: În așteptare
+          with_ignored_flag: Marcat ca vizualizat
+        headers:
+          moderate: Moderează
+          budget_investment: Buget de investiție
+        hide_budget_investments: Ascunde buget de investiții
     proposal_notifications:
       index:
         title: Notificări
