@@ -1,5 +1,7 @@
 ro:
   officing:
+    menu:
+      voters: Validează document
     polls:
       final:
         select_poll: Selectează sondaj
@@ -8,6 +10,7 @@ ro:
       index:
         ballot_sheet_name: Nume
         ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data creării
       new:
         submit: Salvează
       show:
@@ -23,6 +26,7 @@ ro:
       index:
         results: Rezultate
         table_answer: Răspuns
+        table_votes: Voturi
         table_nulls: "Buletine de vot invalide"
         table_total: "Buletine de vot valide"
     residence:
@@ -35,6 +39,7 @@ ro:
         title: Sondaje
         table_poll: Sondaj
         table_status: Status sondaj
+        table_actions: Acțiuni
       show:
         submit: Confirmă vot
       can_vote:
