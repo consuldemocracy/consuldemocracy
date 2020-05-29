@@ -2,7 +2,7 @@ ro:
   moderation:
     comments:
       index:
-        block_authors: Blochează autorii
+        block_authors: Blochează autori
         confirm: Ești sigur?
         filter: Filtru
         filters:
@@ -41,6 +41,8 @@ ro:
           created_at: Cele mai noi
           flags: Cele mai marcate
         title: Dezbateri
+    header:
+      title: Moderare
     menu:
       flagged_comments: Comentarii
       flagged_debates: Dezbateri
@@ -80,8 +82,30 @@ ro:
           moderate: Moderează
           budget_investment: Buget de investiție
         hide_budget_investments: Ascunde buget de investiții
+        ignore_flags: Marchează ca vizualizat
+        order: Ordonează după
+        orders:
+          created_at: Cel mai recent
+          flags: Cele mai marcate
+        title: Buget de investiții
     proposal_notifications:
       index:
+        block_authors: Blochează autorii
+        confirm: Sunteți sigur?
+        filter: Filtru
+        filters:
+          all: Tot
+          pending_review: Revizuire în așteptare
+          ignored: Marchează ca vizualizat
+        headers:
+          moderate: Moderează
+          proposal_notification: Propunerea notificării
+        hide_proposal_notifications: Ascunde propuneri
+        ignore_flags: Marchează ca vizualizat
+        order: Ordonează după
+        orders:
+          created_at: Cel mai recent
+          moderated: Moderează
         title: Notificări
     users:
       index:
