@@ -4,9 +4,12 @@ ro:
       menu:
         reset_password_email: Resetează parola prin email
         reset_password_manually: Resetează parola manual
+      alert:
+        unverified_user: Nu s-a autentificat încă niciun utilizator verificat
       show:
         title: Contul utilizatorului
       edit:
+        title: "Editează contul utilizatorului: Resetează parola"
         back: Înapoi
         password:
           password: Parolă
@@ -50,6 +53,7 @@ ro:
       support_proposals: Sprijină propuneri
       create_budget_investment: Crează buget de investiții
       print_budget_investments: Printează buget de investiții
+      support_budget_investments: Susțineți bugetul de investiții
       users: Administrarea utilizatorilor
       user_invites: Trimite invitații
       select_user: Selectează utilizator
@@ -59,6 +63,7 @@ ro:
       support_proposals: Sprijină propuneri
       vote_proposals: Votează propuneri
     print:
+      proposals_info: Crează-ți propunerea pe http://url.consul
       proposals_title: "Propuneri:"
       budget_investments_info: Participă la http://url.consul
     print_info: Printează această informație
@@ -78,6 +83,19 @@ ro:
       table_phase: Etapă
       table_actions: Acțiuni
       no_budgets: Nu există bugete participative active.
+    budget_investments:
+      alert:
+        unverified_user: Utilizatorul nu este verificat
+      create: Crează un buget de investiție
+      edit: Editează buget de investiție
+      filters:
+        heading: Concept
+        unfeasible: Investiții imposibile
+      print:
+        print_button: Imprimare
+    sessions:
+      signed_out: Deconectat cu succes.
+      signed_out_managed_user: Sesiunea de utilizator s-a deconectat cu succes.
     username_label: Nume de utilizator
     users:
       create_user: Crează cont nou
