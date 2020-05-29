@@ -1,9 +1,14 @@
 ro:
   officing:
+    dashboard:
+      index:
+        info: Aici puteți valida documentele utilizatorului și stoca rezultatele votului
     menu:
       voters: Validează document
+      total_recounts: Renumărări și rezultate finale
     polls:
       final:
+        title: Sondaje pregătite pentru renumărarea finală
         select_poll: Selectează sondaj
         add_results: Adaugă rezultate
     poll_budgets:
@@ -19,7 +24,10 @@ ro:
     results:
       flash:
         create: "Rezultate salvate"
+        error_create: "Rezultatele NU au fost salvate. Eroare în baza de date."
       new:
+        title: "%{poll} - Adaugă rezulate"
+        not_allowed: "Nu aveți voie să adăugați rezultate pentru acest sondaj"
         date: "Date"
         ballots_white: "Buletinele de vot total necompletate"
         ballots_null: "Buletine de vot invalide"
@@ -32,6 +40,7 @@ ro:
         results: Rezultate
         table_answer: Răspuns
         table_votes: Voturi
+        table_whites: "Buletinele de vot total necompletate"
         table_nulls: "Buletine de vot invalide"
         table_total: "Buletine de vot valide"
     residence:
@@ -39,13 +48,18 @@ ro:
         title: Validează document
         document_number: "Numărul documentului (inclusiv litere)"
         submit: Validează document
+        form_errors: a împiedicat verificarea acestui documentului
     voters:
       new:
         title: Sondaje
         table_poll: Sondaj
         table_status: Status sondaj
         table_actions: Acțiuni
+        not_to_vote: Persoana a decis să nu voteze în acest moment
       show:
+        cannot_vote: Persoana nu poate vota deoarece nu este înregistrată în districtul (districtele) unde are loc votarea.
+        error_already_voted: A participat deja la acest sondaj
         submit: Confirmă vot
+        success: "Vot introdus!"
       can_vote:
         submit_disable_with: "Așteptați, vot în curs de confirmare..."
