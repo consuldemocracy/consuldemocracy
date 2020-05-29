@@ -86,6 +86,20 @@ ro:
       even: trebuie să fie egal
       exclusion: este rezevat
       greater_than: trebuie să fie mai mare decât %{count}
+      greater_than_or_equal_to: trebuie să fie mai mare sau egal cu %{count}
+      inclusion: nu este inclus în listă
+      invalid: nu este valid
+      less_than: trebuie să fie mai mic decât %{count}
+      less_than_or_equal_to: trebuie să fie mai mic sau egal cu %{count}
+      model_invalid: "Validarea a eșuat: %{errors}"
+      not_a_number: nu este un număr
+      not_an_integer: trebuie să fie un număr întreg
+      required: trebuie să existe
+      taken: a fost deja luat
+      too_long:
+        one: este prea lung (maxim 1 caracter)
+        few: este prea lung (maxim %{count} caractere)
+        other: este prea lung (maxim %{count} caractere)
   number:
     human:
       decimal_units:
