@@ -15,3 +15,22 @@ ro:
           reseted: Parolă resetată cu succes
           random: Generează parolă aleatorie
           save: Salvează parolă
+          print: Printează parolă
+          print_help: Veți avea posibilitatea să printați parola când aceasta va fi salvată.
+    account_info:
+      change_user: Schimbă utilizatorul
+      document_number_label: "Numărul documentului:"
+      document_type_label: "Tipul de document:"
+      email_label: "Email:"
+      identified_label: "Identificat ca:"
+      username_label: "Nume de utilizator:"
+    check: Verifică document
+    dashboard:
+      index:
+        info: Aici poți administra utilizatorii prin toate acțiunile listate în meniul din stânga.
+    document_verifications:
+      already_verified: Acest cont este deja verificat.
+      has_no_account: Pentru a crea un cont, mergeți la %{link} și faceți click în <b>"Înregistrare"</b> în partea stânga-sus a ecranului.
+      in_census_has_following_permissions: "Acest utilizator poate participa pe site-ul web cu următoarele permisiuni:"
+      not_in_census: Acest document nu este înregistrat.
+      please_check_account_data: Vă rugăm să verificați dacă datele contului de mai sus sunt corecte.
