@@ -1,0 +1,16 @@
+de:
+  pages:
+    help:
+      debates:
+        description: "Im %{link}-Abschnitt können Sie Ihre Meinung zu Ihrer Stadt äußern, eigene Anliegen einbringen und mit anderen Menschen teilen und diskutieren. Ideen, die in diesem Bereich generiert werden, können über andere Abschnitte von %{org} zu Abstimmungen führen, welche vom Stadtrat mit in die Sitzung aufgenommen werden."
+        link: "Bürger-Debatten"
+        feature: "Sie können Diskussionen eröffnen, kommentieren und mit <strong>Ich stimme zu</strong> oder <strong>Ich stimme nicht zu</strong> bewerten. Hierfür müssen Sie sich %{link}."
+        feature_link: "für %{org} registrieren"
+        image_alt: "Button, um die Diskussionen zu bewerten"
+        figcaption: '"Ich stimme zu" und "Ich stimme nicht zu" Buttons, um die Diskussion zu bewerten.'
+      proposals:
+        title: "Vorschläge"
+        description: "Im %{link}-Abschnitt können Sie Vorschläge, die Sie für den Stadtrat haben, erstellen. Die Vorschläge brauchen dann Unterstützung von Mitbürger*innen. Wenn Ihr Vorschlag ausreichend Unterstützung bekommt, wird er an den Stadtrat weitergegeben. Der Stadtrat setzt sich dann mit dem Vorschlag auseinander und prüft Möglichkeiten, den Vorschlag umzusetzen."
+        link: "Bürgervorschläge"
+        image_alt: "Klicken Sie hier um den Vorschlag zu unterstützen"
+        figcaption: 'Button zur "Unterstützung" eines Vorschlags.'
