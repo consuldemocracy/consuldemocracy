@@ -3,6 +3,50 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+//Funktioniert
+
 .top-links{
  background: white;
 }
+
+
+.top-bar{
+    background: white !important;
+  .menu > li {
+    a {
+      color: #ad0e36;
+    }
+    .button {
+      @include breakpoint(medium) {
+        background: white;
+        text: white;
+         &:hover {
+        color: #e9e8e8;
+      }
+      }
+
+           }
+         }
+
+      }
+.subnavigation{
+  background: #ad0e36;
+  a {
+    color: #fff;
+        &.is-active {
+          color: #fff;
+        }
+        &:hover {
+          color: #fff !important;
+
+        }
+  }
+}
+
+.locale-form {
+  .locale-switcher {
+    background: #ad0e36;
+  }
+}
+
+
