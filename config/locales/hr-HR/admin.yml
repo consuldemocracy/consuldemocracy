@@ -286,9 +286,9 @@ hr:
       edit:
         title: Uredi ključne ciljeve
       create:
-        notice: Novi ključni ciljevi stvoreni su uspješno!
+        notice: Novi miljokaz stvoren uspješno!
       update:
-        notice: Ključni ciljevi uspješno ažurirani
+        notice: Miljokaz uspješno ažuriran
       delete:
         notice: Ključni ciljevi uspješno obrisani
     statuses:
@@ -316,7 +316,7 @@ hr:
       index:
         title: "Trake napretka"
         no_progress_bars: "Ne postoji traka napretka"
-        new_progress_bar: "Stvori novu prazninu napretka"
+        new_progress_bar: "Stvori novu traku napretka"
         primary: "Primarna praznina napretka"
         table_id: "Identifikacijski broj"
         table_kind: "Tip"
