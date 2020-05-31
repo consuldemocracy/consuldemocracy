@@ -2,7 +2,8 @@
   "use strict";
   App.Comments = {
     add_comment: function(parent_selector, response_html) {
-      $(parent_selector + " .comment-list:first").prepend($(response_html));
+      $(parent_selector + " .comment-list:first").prepend($(response_html)).show("slow");
+      $(parent_selector + " .responses-count:first").removeClass("collapsed");
       this.update_comments_count();
     },
     update_comments_count: function() {
@@ -13,6 +14,9 @@
         });
         $(this).text(new_val);
       });
+    },
+    update_responses_count: function(comment_id, responses_count_html) {
+      $(comment_id + "_reply .responses-count").html(responses_count_html);
     },
     display_error: function(field_with_errors, error_html) {
       $(error_html).insertAfter($("" + field_with_errors));
@@ -38,8 +42,7 @@
 
       $("body").on("click", ".js-toggle-children", function() {
         $(this).closest(".comment").find(".comment-list:first").toggle("slow");
-        $(this).children(".far").toggleClass("fa-minus-square fa-plus-square");
-        $(this).children(".js-child-toggle").toggle();
+        $(this).closest(".responses-count").toggleClass("collapsed");
         return false;
       });
     }

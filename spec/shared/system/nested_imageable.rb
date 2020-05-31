@@ -182,6 +182,8 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         Rails.root.join("spec/fixtures/files/clippy.jpg")
       )
 
+      expect(page).to have_selector ".loading-bar.complete"
+
       click_on submit_button
 
       expect(page).to have_content imageable_success_notice
@@ -196,6 +198,8 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         imageable_factory_name,
         Rails.root.join("spec/fixtures/files/clippy.jpg")
       )
+
+      expect(page).to have_selector ".loading-bar.complete"
 
       click_on submit_button
       imageable_redirected_to_resource_show_or_navigate_to

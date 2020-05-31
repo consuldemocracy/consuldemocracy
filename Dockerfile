@@ -41,14 +41,8 @@ RUN gem install bundler
 # Finish establishing our Ruby environment
 RUN bundle install --full-index
 
-# Install Chromium and ChromeDriver for E2E integration tests
+# Install Chromium for E2E integration tests
 RUN apt-get update -qq && apt-get install -y chromium
-RUN wget -N http://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
-RUN unzip chromedriver_linux64.zip
-RUN chmod +x chromedriver
-RUN mv -f chromedriver /usr/local/share/chromedriver
-RUN ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-RUN ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 
 # Copy the Rails application into place
 COPY . .
