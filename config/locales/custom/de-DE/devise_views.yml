@@ -1,0 +1,5 @@
+de:
+  devise_views:
+    sessions:
+      new:
+        remember_me: Angemeldet bleiben

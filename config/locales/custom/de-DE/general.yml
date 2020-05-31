@@ -1,5 +1,21 @@
 de:
   layouts:
     footer:
-      contact_us: Für technische Unterstützung wenden Sie sich an
+      participation_text: Gestalten Sie Ihre Stadt Würzburg, damit sie für Sie lebenswerter wird.
+      consul: einer Anwendung von Consul
+      contact_us: Für technische Unterstützung wenden Sie sich bitte an das ZDI Mainfranken.
+      description: Diese Plattform basiert auf %{consul}, einer %{open_source}.
       copyright: ZDI Mainfranken, %{year}
+  debates:
+    index:
+      section_header:
+        help: Hilfe zu "Diskussionen"
+      section_footer:
+        title: Hilfe zu "Diskussionen"
+  proposals:
+    index:
+      section_header:
+        help: Hilfe zu "Vorschläge"
+      section_footer:
+        title: Hilfe zu "Vorschläge"
+        description: Die Vorschläge der Bürger*innen sind eine Möglichkeit für Nachbarn und Mitmenschen, direkt zu entscheiden, wie sie ihre Stadt gestalten wollen. Nachdem sie ausreichend Unterstützung erhalten haben, können Vorschläge vom Stadtrat zur Abstimmung freigegeben werden.
