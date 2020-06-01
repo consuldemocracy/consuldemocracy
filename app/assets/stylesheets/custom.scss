@@ -78,6 +78,10 @@ background: $secondary-brand;
 .locale-form {
   .locale-switcher {
     background: $brand;
+    
+    optgroup {
+    	background: $brand;
+    }
   }
     label {
     color: $brand;
