@@ -19,3 +19,5 @@ de:
       section_footer:
         title: Hilfe zu "Vorschläge"
         description: Die Vorschläge der Bürger*innen sind eine Möglichkeit für Nachbarn und Mitmenschen, direkt zu entscheiden, wie sie ihre Stadt gestalten wollen. Nachdem sie ausreichend Unterstützung erhalten haben, können Vorschläge vom Stadtrat zur Abstimmung freigegeben werden.
+    proposal:
+      reason_for_supports_necessary: ""
