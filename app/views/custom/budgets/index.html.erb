@@ -15,7 +15,7 @@
 
           <h1><%= current_budget.name %></h1>
           <div class="description">
-            <%= safe_html_with_links(current_budget.description) %>
+            <%= auto_link_already_sanitized_html wysiwyg(current_budget.description) %>
           </div>
           <p>
             <%=  link_to 'Presupuestos Provinciales 2019 (documento descargable)', asset_path('/docs/Folleto_Presupuestos_Participativos_2019.pdf')  %>
