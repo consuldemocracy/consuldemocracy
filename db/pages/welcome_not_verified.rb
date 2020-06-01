@@ -1,5 +1,5 @@
-if SiteCustomization::Page.find_by(slug: "welcome_not_verified").nil?
-  page = SiteCustomization::Page.new(slug: "welcome_not_verified", status: "published")
+if SiteCustomization::Page.find_by(slug: "welcome_not_verified")&.translations&.find_by(locale: I18n.locale).nil?
+  page = SiteCustomization::Page.find_by(slug: "welcome_not_verified") || SiteCustomization::Page.new(slug: "welcome_not_verified", status: "published")
   page.title = I18n.t("welcome.welcome.title")
 
   page.content = "<p>#{I18n.t("welcome.welcome.user_permission_info")}</p>
