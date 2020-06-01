@@ -87,6 +87,12 @@ background: $secondary-brand;
     color: $brand;
   }
 }
+
+.dropdown.menu>li.is-active>a {
+    color: $link;
+    text-decoration: underline;
+}
+
 .debate,
 .proposal,
 .investment-project,
