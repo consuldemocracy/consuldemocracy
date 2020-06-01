@@ -80,7 +80,7 @@ background: $secondary-brand;
     background: $brand;
     
     optgroup {
-    	background: $brand;
+    	background: darken($brand, 1%);
     }
   }
     label {
