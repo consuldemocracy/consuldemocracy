@@ -4,13 +4,7 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+// Don't know why we have to set link color here as well. Might want to change $primary-color of foundation
 $brand: #ad0e36;
-
-
-$text:              #ad0e36;
-
-
-$link:              #ad0e36;
-
-
-
+$link: $brand;
+$link-hover: darken($link, 20%);
