@@ -31,3 +31,43 @@ ro:
         Accesibilitatea web se referă la posibilitatea accesului la web și la conținutul său de către toți oamenii, indiferent de dizabilitățile (fizice, intelectuale sau tehnice) care pot apărea sau din cele care derivă din contextul de utilizare (tehnologic sau de mediu).
 
         Când site-urile web sunt proiectate cu accent pe accesibilitate, toți utilizatorii pot accesa conținutul în condiții egale, de exemplu:
+      examples:
+        - Oferind text alternativ imaginilor, utilizatorii nevăzători sau cu deficiențe de vedere pot utiliza cititori speciali pentru a accesa informațiile.
+        - When videos have subtitles, users with hearing difficulties can fully understand them.
+        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
+      keyboard_shortcuts:
+        browser_table:
+          caption: Combinație de taste în funcție de sistemul de operare și browser
+          browser_header: Browser
+          key_header: Combinație de taste
+          rows:
+            - 
+              browser_column: Explorer
+            - 
+              browser_column: Firefox
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+      textsize:
+        title: Dimensiunile textului
+        browser_settings_table:
+          description: Designul accesibil al acestui site permite utilizatorului să aleagă dimensiunea textului care i se potrivește. Această acțiune poate fi realizată în moduri diferite, în funcție de browserul utilizat.
+          browser_header: Browser
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Vizualizare > Dimensiune text
+            - 
+              browser_column: Firefox
+              action_column: Vizualizare > Dimensiune
+            - 
+              browser_column: Chrome
+              action_column: Setări (pictogramă) > Opțiuni > Avansat > Conținut Web > Dimensiune text
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
