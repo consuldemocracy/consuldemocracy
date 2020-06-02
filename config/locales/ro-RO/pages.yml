@@ -40,6 +40,18 @@ ro:
       other:
         title: "Alte informații de interes"
         how_to_use: "Folosiți %{org_name} în orașul dumneavoastră"
+      how_to_use:
+        text: |-
+          Folosiți-l în administrația locală sau ajutați-ne să îl îmbunătățim, este software gratuit.
+
+          Acest portal Open Government utilizează [aplicația CONSUL] (https://github.com/consul/consul 'consul github') care este software gratuit, cu [licență AGPLv3] (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), asta înseamnă în cuvinte simple că oricine poate utiliza codul liber, să-l copieze, să-l vadă în detaliu, să-l modifice și să-l redistribuie lumii cu modificările pe care le dorește (permițându-le altora să le facă la fel). Deoarece credem că cultura este mai bună și mai bogată atunci când este lansată.
+
+          Dacă sunteți programator, puteți vedea codul și ne puteți ajuta să îl îmbunătățim la [aplicația CONSUL] (https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Folosiți-l în administrația locală
+    privacy:
+      title: Politica de Confidențialitate
+      subtitle: "Pagina cu informații despre confidențialitate"
     accessibility:
       title: Accesibiliate
       description: |-
@@ -48,7 +60,7 @@ ro:
         Când site-urile web sunt proiectate cu accent pe accesibilitate, toți utilizatorii pot accesa conținutul în condiții egale, de exemplu:
       examples:
         - Oferind text alternativ imaginilor, utilizatorii nevăzători sau cu deficiențe de vedere pot utiliza cititori speciali pentru a accesa informațiile.
-        - When videos have subtitles, users with hearing difficulties can fully understand them.
+        - Când videoclipurile au subtitrări, utilizatorii cu dificultăți de auz le pot înțelege pe deplin.
         - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
         - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
       keyboard_shortcuts:
