@@ -25,3 +25,9 @@ ro:
       processes:
         title: "Procese"
         link: "procese"
+    accessibility:
+      title: Accesibiliate
+      description: |-
+        Accesibilitatea web se referă la posibilitatea accesului la web și la conținutul său de către toți oamenii, indiferent de dizabilitățile (fizice, intelectuale sau tehnice) care pot apărea sau din cele care derivă din contextul de utilizare (tehnologic sau de mediu).
+
+        Când site-urile web sunt proiectate cu accent pe accesibilitate, toți utilizatorii pot accesa conținutul în condiții egale, de exemplu:
