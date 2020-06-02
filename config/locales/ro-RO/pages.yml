@@ -17,3 +17,11 @@ ro:
         title: "Dezbateri"
       proposals:
         title: "Propuneri"
+        description: "În secțiunea %{link} puteți face propuneri pe care să le îndeplinească Consiliul Local. Propunerile necesită sprijin, iar dacă primesc suficient sprijin, sunt supuse votului public. Propunerile aprobate în aceste voturi ale cetățenilor sunt acceptate de către Consiliu și îndeplinite."
+        link: "propunerile cetățeanului"
+      polls:
+        title: "Sondaje"
+        link: "sondaje"
+      processes:
+        title: "Procese"
+        link: "procese"
