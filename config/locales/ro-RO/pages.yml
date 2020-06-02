@@ -69,5 +69,18 @@ ro:
               action_column: Setări (pictogramă) > Opțiuni > Avansat > Conținut Web > Dimensiune text
             - 
               browser_column: Safari
+              action_column: View > Zoom In/Zoom out
             - 
               browser_column: Opera
+              action_column: View > scale
+        browser_shortcuts_table:
+          description: "Un alt mod de a modifica dimensiunea textului este de a utiliza comenzile rapide de la tastatură definite în browsere, în special combinația de taste:"
+          rows:
+            - 
+              shortcut_column: CTRL și + (CMD și + pe MAC)
+              description_column: Crește dimensiunea textului
+            - 
+              shortcut_column: CTRL și - (CMD și - pe MAC)
+              description_column: Scade dimensiunea textului
+      compatibility:
+        title: Compatibilitatea cu standardele și designul vizual
