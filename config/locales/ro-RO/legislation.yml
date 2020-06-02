@@ -1,1 +1,13 @@
 ro:
+  legislation:
+    annotations:
+      comments:
+        see_all: Vezi tot
+        cancel: Anulare
+        publish_comment: Publică comentariu
+      form:
+        phase_not_open: Această etapă nu este deschisă
+      index:
+        title: Comentarii
+        comments_about: Comentarii despre
+        see_in_context: Vezi în context
