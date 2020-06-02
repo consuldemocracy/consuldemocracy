@@ -27,13 +27,19 @@ ro:
       polls:
         title: "Sondaje"
         link: "sondaje"
+        feature_1_link: "înregistrați-vă în %{org_name}"
       processes:
         title: "Procese"
         link: "procese"
       faq:
         title: "Probleme tehnice?"
+        button: "Vezi întrebări frecvente"
         page:
           title: "Întrebări Frecvente"
+          description: "Utilizați această pagină pentru a rezolva întrebările frecvente pentru utilizatorii site-ului."
+      other:
+        title: "Alte informații de interes"
+        how_to_use: "Folosiți %{org_name} în orașul dumneavoastră"
     accessibility:
       title: Accesibiliate
       description: |-
