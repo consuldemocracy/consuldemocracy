@@ -1,6 +1,9 @@
 en:
   legislation:
     processes:
+      index:
+        section_header:
+          description: "These are the ongoing plans going on the city. Depending on the plan, you can leave comments on the documentation and start debates or proposals."
       header:
         active: "Active"
         coming_soon: "Coming soon"

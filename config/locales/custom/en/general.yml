@@ -1,0 +1,31 @@
+en:
+  welcome:
+    feed:
+      proposals_description: "Citizen proposals that gather enough suppport will go to a voting phase, so you can get all the citizens of Groningen to decide how they want their city to be."
+      most_active:
+        proposals: "Featured proposals"
+      see_all_proposals: "See all"
+    steps:
+      title: "Participate in 3 steps"
+      subtitle: "Optional secondary text."
+      step_1:
+        number: "1"
+        title: "Sign-up"
+        description: "Short text describing some of the data that is expected to be asked when making an account."
+        link: "Make an account in 5 minutes"
+      step_2:
+        number: "2"
+        title: "Decide"
+        description: "Share your ideas and vote on the changes you want to see in the city."
+        link: "See what's happening around the city right now"
+      step_3:
+        number: "3"
+        title: "Share"
+        description: "Keep up with the ideas that matter to you the most, and share them through social media."
+        link: "Another optional call to action"
+  layouts:
+    footer:
+      org_name: "Stem van Groningen"
+      contact_title: "Neem contact met ons:"
+      contact_email: "stemvangroningen@groningen.nl"
+      facebook: "facebook/steamvangroningen"
