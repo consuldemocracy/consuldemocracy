@@ -38,4 +38,5 @@ ro:
       by_channel: "Participanți după canal"
       vote_by_channel: "Tip vot pe canal"
       web_percentage: "%{percentage} Web"
+      booth_percentage: "%{percentage} Cabine"
       letter_percentage: "%{percentage} Email"
