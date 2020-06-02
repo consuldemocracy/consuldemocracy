@@ -44,8 +44,15 @@ ro:
     url_description: "URL-ul principal al site-ului dumneavoastră"
     org_name: "Numele site-ului"
     org_name_description: "Acest nume va apărea pe subiectul mailers în paginile de ajutor..."
+    related_content_score_threshold_description: "În funcție de ratingul voturilor într-un conținut asociat, ascunde conținutul pe care utilizatorii îl marchează fără legătură"
+    hot_score_period_in_days: "Perioada (zile) folosită de filtrul „cel mai activ”"
+    hot_score_period_in_days_description: "Filtrul „cel mai activ” utilizat în mai multe secțiuni va fi bazat pe voturi în ultimele X zile"
+    mailer_from_name: "Adresa de e-mail a expeditorului"
+    mailer_from_name_description: "Acest nume va apărea ca nume expeditor în e-mailurile trimise din aplicație"
     mailer_from_address: "Adresa de e-mail a expeditorului"
+    mailer_from_address_description: "Acest email va apărea în e-mailurile trimise din aplicație"
     meta_title: "Titlul site-ului (SEO)"
+    meta_title_description: "Titlul site-ului <title>, utilizat pentru îmbunătățirea SEO"
     meta_description: "Descrierea site-ului (SEO)"
     proposals:
       poll_short_title: Sondaje
