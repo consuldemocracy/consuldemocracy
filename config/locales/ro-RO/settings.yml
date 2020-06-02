@@ -69,7 +69,9 @@ ro:
       poll_link: Link de informații suplimentare
       poll_link_description: Adaugă un link de informații suplimentare la funcția de sondaj
       email_short_title: Email
+      email_short_title_description: 'Scurtă descriere a funcției de e-mail. Permite utilizatorilor să trimită un e-mail pentru a-și promova propunerea. Puteți găsi întreg conținutul acestui e-mail în „/app/views/dashboard/mailer/forward.html.erb”'
       email_description: Descrierea emailului
+      email_description_description: Descrierea detaliată a funcției de e-mail
       poster_short_title: Afiș
       poster_description: Descrierea afișului
     feature:
