@@ -81,11 +81,29 @@ ro:
       facebook_login: "Autentificare pe Facebook"
       google_login: "Autentificare pe Google"
       wordpress_login: "Autentificare pe Wordpress"
+      wordpress_login_description: "Permiteți utilizatorilor să se înscrie cu contul Wordpress"
       user:
         recommendations: "Recomandări"
+      public_stats: "Statistici publice"
+      help_page: "Pagina de ajutor"
+      remote_census_description: "Permite configurarea conexiunii la recensământul de la distanță al fiecărei instituții"
+    remote_census:
+      request:
+        document_number: "Calea pentru Numărul Documentului"
+        date_of_birth: "Calea către Data nașterii"
+      response:
+        gender: "Calea pentru Gen"
+        name: "Calea pentru Nume"
+    map:
+      latitude: "Latitudine"
+      longitude: "Longitudine"
+      zoom: "Zoom"
+      zoom_description: "Zoom pentru a afișa poziția hărții"
     process:
       debates: "Dezbateri"
+      debates_description: "Spațiul de dezbatere al cetățenilor se adresează oricui poate prezenta probleme care îi preocupă și pentru cei care doresc să-și împărtășească opiniile cu ceilalți"
       proposals: "Propuneri"
+      proposals_description: "Propunerile cetățenilor sunt o oportunitate pentru vecini și grupuri de a decide direct cum vor să fie societatea lor, după ce au primit suficient sprijin și s-au prezentat la votul cetățenilor"
       polls: "Sondaje"
       budgets: "Bugetare participativă"
     uploads:
