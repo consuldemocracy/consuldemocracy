@@ -3,6 +3,14 @@ ro:
     annotations:
       comments:
         see_all: Vezi tot
+        comments_count:
+          one: "%{count} comentariu"
+          few: "%{count} comentarii"
+          other: "%{count} comentarii"
+        replies_count:
+          one: "%{count} răspuns"
+          few: "%{count} răspunsuri"
+          other: "%{count} răspunsuri"
         cancel: Anulare
         publish_comment: Publică comentariu
       form:
@@ -17,10 +25,14 @@ ro:
           other: "%{count} comentarii"
       show:
         title: Comentariu
+      version_chooser:
+        see_text: Vezi schița text
     draft_versions:
       changes:
         title: Modificări
+        see_text: Vezi schița text
       show:
+        select_draft_version: Selecteaza schița
         select_version_submit: vezi
         updated_at: actualizat la %{date}
         see_comments: Vezi toate comentariile
@@ -60,3 +72,14 @@ ro:
         see_latest_comments_title: Comentați la acest proces
       shared:
         key_dates: Etape de participare
+        homepage: Pagina principală
+        debate_dates: Dezbatere
+        draft_publication_date: Publicarea schiței
+        allegations_dates: Comentarii
+        result_publication_date: Publicarea rezultatului final
+        proposals_dates: Propuneri
+    questions:
+      comments:
+        comment_button: Publicați răspunsul
+        comments_title: Deschide răspunsuri
+        comments_closed: Etapa aleasă
