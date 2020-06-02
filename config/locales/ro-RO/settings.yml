@@ -54,8 +54,16 @@ ro:
     meta_title: "Titlul site-ului (SEO)"
     meta_title_description: "Titlul site-ului <title>, utilizat pentru îmbunătățirea SEO"
     meta_description: "Descrierea site-ului (SEO)"
+    meta_description_description: 'Descrierea site-ului <meta name="description">, utilizat pentru îmbunătățirea SEO'
+    meta_keywords: "Cuvinte cheie (SEO)"
+    meta_keywords_description: 'Cuvinte cheie <meta name="keywords">, utilizat pentru îmbunătățierea SEO'
+    min_age_to_participate: Vârsta minimă neceară pentru a participa
+    min_age_to_participate_description: "Utilizatorii peste această vârstă pot participa în toate procesele unde este necesar un cont verificat"
     proposals:
+      successful_proposal_id: Propunere de succes
+      successful_proposal_id_description: Această propunere este utilizată ca referință pentru o propunere de succes în numărul de voturi și va fi afișată în graficul de bord.
       poll_short_title: Sondaje
+      poll_short_title_description: Scurta descriere a caracteristicii sondajului. Permite utilizatorilor să creeze sondaje la o propunere
       poll_description: Descrierea sondajelor
       email_short_title: Email
       email_description: Descrierea emailului
