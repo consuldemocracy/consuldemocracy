@@ -87,6 +87,7 @@ ro:
           leave_comment: Lasă-ți răspunsul
       question:
         comments:
+          zero: Nu există comentarii
           one: "%{count} comentariu"
           few: "%{count} comentarii"
           other: "%{count} comentarii"
@@ -94,3 +95,17 @@ ro:
       show:
         answer_question: Publicați răspunsul
         next_question: Întrebarea următoare
+        first_question: Prima întrebare
+        share: Distribuie
+        title: Procesul legislației colaborative
+      participation:
+        phase_not_open: Această etapă nu este deschisă
+        organizations: Organizațiile nu au voie să participe la dezbatere
+        unauthenticated: Trebuie %{signin} sau %{signup} pentru a participa.
+    shared:
+      share: Distribuie
+    proposals:
+      form:
+        tags_label: "Categorii"
+      not_verified: "Pentru a vota propunerile %{verify_account}."
+      process_title: Procesul legislației colaborative
