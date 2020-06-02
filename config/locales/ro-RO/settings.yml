@@ -16,6 +16,10 @@ ro:
     max_ratio_anon_votes_on_debates_description: "Voturile anonime se fac de către utilizatorii înregistrați cu un cont neverificat"
     max_votes_for_proposal_edit: "Numărul de suporturi de la care o Propunere nu mai poate fi modificată"
     max_votes_for_proposal_edit_description: "Din acest număr de suporturi, autorul unei propuneri nu o mai poate edita"
+    max_votes_for_debate_edit: "Numărul de voturi de la care o Dezbatere nu mai poate fi modificată"
+    max_votes_for_debate_edit_description: "După acest număr de voturi autorul unei dezbateri nu o mai poate edita"
+    proposal_code_prefix: "Prefix pentru coduri de propunere"
+    proposal_code_prefix_description: "Acest prefix va apărea în Propuneri înainte de data creării și ID-ul său"
     org_name: "Numele site-ului"
     proposals:
       poll_short_title: Sondaje
