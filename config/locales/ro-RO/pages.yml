@@ -16,6 +16,7 @@ ro:
         processes: "Procese"
       debates:
         title: "Dezbateri"
+        description: "În secțiunea %{link} puteți prezenta și împărtăși opinia cu alte persoane cu privire la probleme care vă privesc legate de oraș. Este, de asemenea, un loc pentru a genera idei care prin celelalte secțiuni din %{org} duc la acțiuni concrete ale Primăriei."
       proposals:
         title: "Propuneri"
         description: "În secțiunea %{link} puteți face propuneri pe care să le îndeplinească Consiliul Local. Propunerile necesită sprijin, iar dacă primesc suficient sprijin, sunt supuse votului public. Propunerile aprobate în aceste voturi ale cetățenilor sunt acceptate de către Consiliu și îndeplinite."
@@ -63,9 +64,12 @@ ro:
         - Oferind text alternativ imaginilor, utilizatorii nevăzători sau cu deficiențe de vedere pot utiliza cititori speciali pentru a accesa informațiile.
         - Când videoclipurile au subtitrări, utilizatorii cu dificultăți de auz le pot înțelege pe deplin.
         - Dacă conținutul este scris într-un limbaj simplu și ilustrat, utilizatorii cu probleme de învățare sunt mai capabili să-l înțeleagă.
-        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
+        - Dacă utilizatorul are probleme de mobilitate și este dificil de utilizat mouse-ul, alternativele cu ajutorul tastaturii ajută în navigare.
       keyboard_shortcuts:
+        title: Comenzile rapide de la tastatură
         navigation_table:
+          description: Pentru a putea naviga prin acest site într-un mod accesibil, a fost programat un grup de chei de acces rapid care adună secțiunile principale de interes general în care este organizat site-ul.
+          caption: Comenzile rapide de la tastatură pentru meniul de navigare
           page_header: Pagină
           rows:
             - 
@@ -87,6 +91,7 @@ ro:
               key_column: 5
               page_column: Procese legislative
         browser_table:
+          description: "În funcție de sistemul de operare și de browserul utilizat, combinația de taste va fi următoarea:"
           caption: Combinație de taste în funcție de sistemul de operare și browser
           browser_header: Browser
           key_header: Combinație de taste
