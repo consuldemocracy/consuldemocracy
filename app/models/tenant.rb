@@ -10,7 +10,7 @@ class Tenant < ApplicationRecord
   after_destroy :destroy_schema
 
   def self.excluded_subdomains
-    Apartment::Elevators::Subdomain.excluded_subdomains + %w[mail]
+    Apartment::Elevators::Subdomain.excluded_subdomains + %w[mail shared_extensions]
   end
 
   def self.switch(...)
