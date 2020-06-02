@@ -12,6 +12,7 @@ ro:
         proposals: "Propuneri"
         budgets: "Bugete participative"
         polls: "Sondaje"
+        other: "Alte informații de interes"
         processes: "Procese"
       debates:
         title: "Dezbateri"
@@ -19,12 +20,20 @@ ro:
         title: "Propuneri"
         description: "În secțiunea %{link} puteți face propuneri pe care să le îndeplinească Consiliul Local. Propunerile necesită sprijin, iar dacă primesc suficient sprijin, sunt supuse votului public. Propunerile aprobate în aceste voturi ale cetățenilor sunt acceptate de către Consiliu și îndeplinite."
         link: "propunerile cetățeanului"
+      budgets:
+        title: "Bugetare participativă"
+        link: "bugete participative"
+        image_alt: "Diferite etape ale bugetării participative"
       polls:
         title: "Sondaje"
         link: "sondaje"
       processes:
         title: "Procese"
         link: "procese"
+      faq:
+        title: "Probleme tehnice?"
+        page:
+          title: "Întrebări Frecvente"
     accessibility:
       title: Accesibiliate
       description: |-
@@ -37,6 +46,27 @@ ro:
         - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
         - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
       keyboard_shortcuts:
+        navigation_table:
+          page_header: Pagină
+          rows:
+            - 
+              key_column: 0
+              page_column: Acasă
+            - 
+              key_column: 1
+              page_column: Dezbateri
+            - 
+              key_column: 2
+              page_column: Propuneri
+            - 
+              key_column: 3
+              page_column: Voturi
+            - 
+              key_column: 4
+              page_column: Bugete participative
+            - 
+              key_column: 5
+              page_column: Procese legislative
         browser_table:
           caption: Combinație de taste în funcție de sistemul de operare și browser
           browser_header: Browser
