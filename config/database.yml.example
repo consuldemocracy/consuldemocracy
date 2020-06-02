@@ -3,6 +3,7 @@ default: &default
   encoding: unicode
   host: localhost
   pool: 5
+  schema_search_path: "public,shared_extensions"
   username:
   password:
 
