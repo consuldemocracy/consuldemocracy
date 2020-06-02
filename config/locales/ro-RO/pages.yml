@@ -84,3 +84,10 @@ ro:
               description_column: Scade dimensiunea textului
       compatibility:
         title: Compatibilitatea cu standardele și designul vizual
+        description: 'Toate paginile acestui site web respectă <strong>Instrucțiuni de accesibilitate</strong> sau Principiile generale ale proiectării accesibile stabilite de Grupul de lucru <abbr title="Web Accessibility Initiative" lang="en"> WAI</abbr> aparținând W3C.'
+    titles:
+      help: "Ce este %{org}? - Participarea cetățenilor"
+    verify:
+      info: "Pentru a vă verifica contul, introduceți datele dvs. de acces:"
+      info_code: "Acum introduceți codul primit în scrisoare:"
+      submit: Verifică-mi contul
