@@ -19,7 +19,7 @@ describe Tenant do
     end
 
     it "is not valid with an excluded subdomain" do
-      %w[mail public www].each do |subdomain|
+      %w[mail public shared_extensions www].each do |subdomain|
         tenant.subdomain = subdomain
         expect(tenant).not_to be_valid
       end
