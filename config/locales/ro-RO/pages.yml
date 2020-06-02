@@ -4,3 +4,16 @@ ro:
       title: Termeni si conditii de utilizare
       subtitle: AVIZ JURIDIC PRIVIND CONDIȚIILE DE UTILIZARE, PRIVATE ȘI PROTECȚIA DATELOR PERSONALE ALE PORTALULUI DE GUVERN DESCHIS
       description: Pagina de informare cu privire la condițiile de utilizare, confidențialitate și protecția datelor cu caracter personal.
+    help:
+      title: "%{org} este o patformă pentru participarea cetățenilor"
+      guide: "Acest ghid explică ce reprezintă fiecare dintre secțiunile %{org} și cum funcționează."
+      menu:
+        debates: "Dezbateri"
+        proposals: "Propuneri"
+        budgets: "Bugete participative"
+        polls: "Sondaje"
+        processes: "Procese"
+      debates:
+        title: "Dezbateri"
+      proposals:
+        title: "Propuneri"
