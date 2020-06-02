@@ -144,7 +144,7 @@ ka:
         different_heading_assigned: "თქვენ უკვე მიეცით ხმა სხვა რუბრიკაზე: %{heading_link}"
         change_ballot: "თუ გადაწყვეტთ, შეგიძლიათ %{check_ballot}-ში ხმის გაუქმება და ხელახლა დაწყება."
         check_ballot_link: "მონიშნეთ და დაადასტურეთ ბიულეტენი"
-        price: "ამ რუბრიკას აქვს ბიუჯეტი"
+        price: "ამ რუბრიკის ბიუჯეტია"
     progress_bar:
       assigned: "თქვენ გამოყავით: "
       available: "ხელმისაწვდომი ბიუჯეტი: "
