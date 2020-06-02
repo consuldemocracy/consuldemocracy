@@ -23,6 +23,17 @@ ro:
     featured_proposals_number: "Număr de propuneri prezentate"
     featured_proposals_number_description: "Număr de propuneri prezentate care vor fi afișate dacă funcția Propuneri recomandate este activă"
     votes_for_proposal_success: "Numărul de voturi necesare pentru aprobarea unei Propuneri"
+    votes_for_proposal_success_description: "Atunci când o propunere atinge acest număr de voturi, ea nu va mai putea primi voturi și este considerată de succes"
+    months_to_archive_proposals: "Luni pentru arhivarea Propunerilor"
+    months_to_archive_proposals_description: "După acest număr de luni, propunerile vor fi arhivate și nu vor mai putea primi voturi"
+    email_domain_for_officials: "Domeniul de e-mail pentru funcționarii publici"
+    email_domain_for_officials_description: "Toți utilizatorii înregistrați în acest domeniu vor avea contul verificat la înregistrare"
+    twitter_handle: "Twitter"
+    twitter_handle_description: "Dacă este completat, va apărea în subsol"
+    twitter_hashtag: "Hashtag Twitter"
+    twitter_hashtag_description: "Hashtag care va apărea la partajarea conținutului pe Twitter"
+    facebook_handle: "Facebook"
+    facebook_handle_description: "Dacă este completat, va apărea în subsol"
     org_name: "Numele site-ului"
     proposals:
       poll_short_title: Sondaje
