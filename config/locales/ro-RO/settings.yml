@@ -20,6 +20,8 @@ ro:
     max_votes_for_debate_edit_description: "După acest număr de voturi autorul unei dezbateri nu o mai poate edita"
     proposal_code_prefix: "Prefix pentru coduri de propunere"
     proposal_code_prefix_description: "Acest prefix va apărea în Propuneri înainte de data creării și ID-ul său"
+    featured_proposals_number: "Număr de propuneri prezentate"
+    featured_proposals_number_description: "Număr de propuneri prezentate care vor fi afișate dacă funcția Propuneri recomandate este activă"
     org_name: "Numele site-ului"
     proposals:
       poll_short_title: Sondaje
