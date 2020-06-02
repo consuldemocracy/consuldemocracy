@@ -34,6 +34,13 @@ ro:
     twitter_hashtag_description: "Hashtag care va apărea la partajarea conținutului pe Twitter"
     facebook_handle: "Facebook"
     facebook_handle_description: "Dacă este completat, va apărea în subsol"
+    youtube_handle: "Youtube"
+    youtube_handle_description: "Dacă este completat, va apărea în subsol"
+    telegram_handle: "Telegram"
+    telegram_handle_description: "Dacă este completat, va apărea în subsol"
+    instagram_handle: "Instagram"
+    instagram_handle_description: "Dacă este completat, va apărea în subsol"
+    url: "URL-ul principal"
     org_name: "Numele site-ului"
     proposals:
       poll_short_title: Sondaje
