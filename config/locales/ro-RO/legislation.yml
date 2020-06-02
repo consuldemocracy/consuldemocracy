@@ -11,3 +11,52 @@ ro:
         title: Comentarii
         comments_about: Comentarii despre
         see_in_context: Vezi în context
+        comments_count:
+          one: "%{count} comentariu"
+          few: "%{count} comentarii"
+          other: "%{count} comentarii"
+      show:
+        title: Comentariu
+    draft_versions:
+      changes:
+        title: Modificări
+      show:
+        select_version_submit: vezi
+        updated_at: actualizat la %{date}
+        see_comments: Vezi toate comentariile
+        text_body: Text
+        text_comments: Comentarii
+    processes:
+      header:
+        additional_info: Informații suplimentare
+        description: Descriere
+      proposals:
+        empty_proposals: Nu există propuneri
+        filters:
+          random: Aleatoriu
+          winners: Selectat
+      debate:
+        empty_questions: Nu sunt întrebări
+        participate: Participați la dezbateri
+      index:
+        filter: Filtru
+        filters:
+          open: Procese deschise
+        no_open_processes: Nu sunt procese deschise
+        no_past_processes: Nu există procese anterioare
+        section_header:
+          icon_alt: Pictograma legislației colaborative
+          title: Legislație colaborativă
+          help: Ajutor despre legislația de colaborare
+        section_footer:
+          title: Ajutor despre legislația de colaborare
+          description: Participați la dezbateri și procese înainte de aprobarea noilor reglementări sau strategii. Opinia dvs. va fi luată în considerare.
+      phase_not_open:
+        not_open: Această etapă nu este deschisă încă
+      phase_empty:
+        empty: Nimic publicat încă
+      process:
+        see_latest_comments: Vezi ultimele comentarii
+        see_latest_comments_title: Comentați la acest proces
+      shared:
+        key_dates: Etape de participare
