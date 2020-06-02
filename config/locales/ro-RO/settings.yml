@@ -65,6 +65,9 @@ ro:
       poll_short_title: Sondaje
       poll_short_title_description: Scurta descriere a caracteristicii sondajului. Permite utilizatorilor să creeze sondaje la o propunere
       poll_description: Descrierea sondajelor
+      poll_description_description: Descrierea detaliată a sondajului
+      poll_link: Link de informații suplimentare
+      poll_link_description: Adaugă un link de informații suplimentare la funcția de sondaj
       email_short_title: Email
       email_description: Descrierea emailului
       poster_short_title: Afiș
