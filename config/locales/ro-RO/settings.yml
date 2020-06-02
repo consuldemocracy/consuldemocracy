@@ -22,6 +22,7 @@ ro:
     proposal_code_prefix_description: "Acest prefix va apărea în Propuneri înainte de data creării și ID-ul său"
     featured_proposals_number: "Număr de propuneri prezentate"
     featured_proposals_number_description: "Număr de propuneri prezentate care vor fi afișate dacă funcția Propuneri recomandate este activă"
+    votes_for_proposal_success: "Numărul de voturi necesare pentru aprobarea unei Propuneri"
     org_name: "Numele site-ului"
     proposals:
       poll_short_title: Sondaje
