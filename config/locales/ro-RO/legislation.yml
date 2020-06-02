@@ -83,3 +83,14 @@ ro:
         comment_button: Publicați răspunsul
         comments_title: Deschide răspunsuri
         comments_closed: Etapa aleasă
+        form:
+          leave_comment: Lasă-ți răspunsul
+      question:
+        comments:
+          one: "%{count} comentariu"
+          few: "%{count} comentarii"
+          other: "%{count} comentarii"
+        debate: Dezbate
+      show:
+        answer_question: Publicați răspunsul
+        next_question: Întrebarea următoare
