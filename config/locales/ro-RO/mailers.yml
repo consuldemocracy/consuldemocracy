@@ -1,1 +1,8 @@
 ro:
+  mailers:
+    comment:
+      title: Comentariu nou
+    config:
+      manage_email_subscriptions: Pentru a nu mai primi aceste e-mailuri, schimbați setările în
+    email_verification:
+      click_here_to_verify: acest link
