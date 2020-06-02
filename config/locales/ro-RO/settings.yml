@@ -73,8 +73,14 @@ ro:
       email_description: Descrierea emailului
       email_description_description: Descrierea detaliată a funcției de e-mail
       poster_short_title: Afiș
+      poster_short_title_description: 'Scurta descriere a funcției de afiș. Permite utilizatorilor să descarce un afiș în format PDF pentru a-și promova propunerea. Puteți găsi întregul conținut al acestui afiș în „/app/views/dashboard/poster/index.pdf.erb”'
       poster_description: Descrierea afișului
+      poster_description_description: Descrierea detaliată a funcției de afiș
     feature:
+      twitter_login: "Autentificare pe Twitter"
+      facebook_login: "Autentificare pe Facebook"
+      google_login: "Autentificare pe Google"
+      wordpress_login: "Autentificare pe Wordpress"
       user:
         recommendations: "Recomandări"
     process:
