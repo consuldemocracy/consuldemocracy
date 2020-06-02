@@ -62,7 +62,7 @@ ro:
       examples:
         - Oferind text alternativ imaginilor, utilizatorii nevăzători sau cu deficiențe de vedere pot utiliza cititori speciali pentru a accesa informațiile.
         - Când videoclipurile au subtitrări, utilizatorii cu dificultăți de auz le pot înțelege pe deplin.
-        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - Dacă conținutul este scris într-un limbaj simplu și ilustrat, utilizatorii cu probleme de învățare sunt mai capabili să-l înțeleagă.
         - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
       keyboard_shortcuts:
         navigation_table:
