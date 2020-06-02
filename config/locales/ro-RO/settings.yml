@@ -41,7 +41,12 @@ ro:
     instagram_handle: "Instagram"
     instagram_handle_description: "Dacă este completat, va apărea în subsol"
     url: "URL-ul principal"
+    url_description: "URL-ul principal al site-ului dumneavoastră"
     org_name: "Numele site-ului"
+    org_name_description: "Acest nume va apărea pe subiectul mailers în paginile de ajutor..."
+    mailer_from_address: "Adresa de e-mail a expeditorului"
+    meta_title: "Titlul site-ului (SEO)"
+    meta_description: "Descrierea site-ului (SEO)"
     proposals:
       poll_short_title: Sondaje
       poll_description: Descrierea sondajelor
