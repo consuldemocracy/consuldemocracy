@@ -45,3 +45,18 @@ ro:
         other: "%{count} răspunsuri (afișează)"
       responses_collapse:
         zero: Nici un răspuns
+        one: "1 răspuns (închide)"
+        few: "%{count} răspunsuri (închide)"
+        other: "%{count} răspunsuri (închide)"
+      user_deleted: Utilizator șters
+      votes:
+        zero: Nu există voturi
+        one: 1 vot
+        few: "%{count} voturi"
+        other: "%{count} voturi"
+    form:
+      comment_as_admin: Comentează ca administrator
+      comment_as_moderator: Comentează ca moderator
+      leave_comment: Lasă un comentariu
+    orders:
+      most_voted: Cel mai votat
