@@ -17,24 +17,36 @@ ro:
       debates:
         title: "Dezbateri"
         description: "În secțiunea %{link} puteți prezenta și împărtăși opinia cu alte persoane cu privire la probleme care vă privesc legate de oraș. Este, de asemenea, un loc pentru a genera idei care prin celelalte secțiuni din %{org} duc la acțiuni concrete ale Primăriei."
+        link: "dezbaterile cetățenilor"
+        feature: "Puteți deschide dezbateri, le puteți comenta și evalua cu ajutorul <strong>Sunt de acord</strong> sau <strong>Nu sunt de acord</strong>. Pentru asta, trebuie să %{link}."
+        feature_link: "înregistrați-vă în %{org}"
+        image_alt: "Butoane pentru a evalua dezbaterile"
+        figcaption: 'Butoanele „Sunt de acord” și „Nu sunt de acord” pentru a evalua dezbaterile.'
       proposals:
         title: "Propuneri"
         description: "În secțiunea %{link} puteți face propuneri pe care să le îndeplinească Consiliul Local. Propunerile necesită sprijin, iar dacă primesc suficient sprijin, sunt supuse votului public. Propunerile aprobate în aceste voturi ale cetățenilor sunt acceptate de către Consiliu și îndeplinite."
         link: "propunerile cetățeanului"
+        image_alt: "Buton pentru a susține o propunere"
+        figcaption: 'Buton pentru „Susține” o propunere.'
       budgets:
         title: "Bugetare participativă"
         description: "Secțiunea %{link} ajută oamenii să ia o decizie directă cu privire la ce parte a bugetului municipal este cheltuit."
         link: "bugete participative"
         image_alt: "Diferite etape ale bugetării participative"
+        figcaption: 'Fazele de „Susținere” și „Votare” ale bugetelor participative.'
       polls:
         title: "Sondaje"
+        description: "Secțiunea %{link} este activată de fiecare dată când o propunere primește un sprijin de 1% și merge la vot sau când Consiliul Local propune o problemă pentru ca oamenii să decidă."
         link: "sondaje"
+        feature_1: "Pentru a participa la vot, trebuie să %{link} și să-ți verifici contul."
         feature_1_link: "înregistrați-vă în %{org_name}"
       processes:
         title: "Procese"
+        description: "În secțiunea %{link}, cetățenii participă la elaborarea și modificarea regulamentelor care afectează orașul și își pot oferi părerea asupra politicilor municipale în dezbaterile anterioare."
         link: "procese"
       faq:
         title: "Probleme tehnice?"
+        description: "Citiți întrebările frecvente și rezolvați-vă întrebările."
         button: "Vezi întrebări frecvente"
         page:
           title: "Întrebări Frecvente"
