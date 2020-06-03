@@ -227,7 +227,13 @@ fr:
         data: Données CSV
         poll_id: Sondage
         officer_assignment_id: Affectation de l’agent
+      poll/shift:
+        task: "Tâche"
+      proposal_notification:
+        body: "Message"
+        title: "Titre"
       signature_sheet:
+        title: "Titre"
         signable_type: "Type de signature"
         signable_id: "Identifiant de la signature"
         document_numbers: "Nombre de documents"
@@ -256,6 +262,10 @@ fr:
       banner:
         background_color: Couleur de l'arrière-plan
         font_color: Couleur de la police
+        post_ended_at: "Poste a fini à"
+        post_started_at: "Post a commencé à"
+      banner/translation:
+        title: "Titre"
       legislation/process:
         title: Titre du processus
         summary: Résumé
@@ -294,6 +304,8 @@ fr:
       legislation/question:
         title: Titre
         question_options: Options
+      legislation/question/translation:
+        title: Question
       legislation/question_option:
         value: Valeur
       legislation/annotation:
@@ -357,6 +369,8 @@ fr:
       link:
         label: Titre
         url: Lien
+      local_census_record:
+        date_of_birth: Date de naissance
     errors:
       models:
         user:
@@ -434,6 +448,7 @@ fr:
             valuation:
               cannot_comment_valuation: "Vous ne pouvez pas commenter une évaluation"
       messages:
+        translations_too_short: Être obligatoire de fournir au moins un translation
         record_invalid: "La validation omise : %{errors}"
         another_poll_active: Il y a un autre sondage actif sur la période donnée
         restrict_dependent_destroy:
