@@ -10,3 +10,9 @@ ro:
       public_interests_user_title_list: Tag-urile elementelor pe care acest utilizator le folosește
       save_changes_submit: Salvează modificări
       recommendations: Recomandări
+      title: Contul meu
+      user_permission_debates: Participă la dezbateri
+      user_permission_info: Cu contul dumneavoastră puteți...
+      user_permission_proposal: Crează noi propuneri
+      user_permission_support_proposal: Sprijină propuneri
+      user_permission_title: Participare
