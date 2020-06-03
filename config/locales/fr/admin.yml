@@ -200,6 +200,7 @@ fr:
           author_username: Nom de l'auteur
           incompatible: Incompatibles
           price: Prix
+          author: Auteur
         cannot_calculate_winners: Le budget doit rester sur la phase "Vote des projets", "Dépouillage du bulletin de vote" ou "Budget terminé" afin de calculer les projets gagnants
         see_results: "Voir les résultats"
       show:
@@ -241,11 +242,13 @@ fr:
       search_unfeasible: Recherche impossible
     milestones:
       index:
+        table_id: "ID"
         table_title: "Titre"
         table_publication_date: "Date de publication"
         table_status: Statut
         delete: "Supprimer le jalon"
         no_milestones: "Aucun jalon défini"
+        image: "Image"
         show_image: "Afficher l'image"
         milestone: Jalon
         new_milestone: Créer nouveau jalon
@@ -289,6 +292,8 @@ fr:
         no_progress_bars: "Il n'y a pas de barres de progrès"
         new_progress_bar: "Créer une nouvelle barre de progrès"
         primary: "Barre de progrès primaire"
+        table_id: "ID"
+        table_kind: "Type"
         table_title: "Titre"
         table_percentage: "Progrès actuel"
       new:
@@ -305,6 +310,9 @@ fr:
         notice: "Barre de progrès supprimée avec succès"
     comments:
       index:
+        id: "ID"
+        author: "Auteur"
+        commentable_type: "Type"
         title: Commentaires masqués
     dashboard:
       index:
@@ -368,6 +376,8 @@ fr:
           success: La tâche a été marquée comme résolue.
     debates:
       index:
+        id: ID
+        author: Auteur
         title: Débats masqués
     documents:
       new:
