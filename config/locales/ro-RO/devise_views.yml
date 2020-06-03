@@ -6,8 +6,10 @@ ro:
         submit: Retrimite instrucțiuni
         title: Retrimite instrucțiuni de confirmare
       show:
+        instructions: Se confirmă contului prin e-mail %{email}
         new_password_confirmation_label: Repetă parola de acces
         new_password_label: Parolă nouă de acces
+        please_set_password: Vă rugăm să alegeți noua parolă (vă va permite să vă autentificați cu e-mailul de mai sus)
         submit: Confirmă
         title: Confirmă contul
     mailer:
@@ -42,7 +44,14 @@ ro:
           password_confirmation_label: Confirmă parola
           password_label: Parolă
           phone_number_label: Număr de telefon
+          responsible_name_label: Numele complet al persoanei responsabile de colectiv
+          responsible_name_note: Aceasta ar fi persoana care reprezintă asociația/colectivul în numele căruia sunt prezentate propunerile
           submit: Înregistrare
+          title: Înregistrează-te ca organizație sau colectiv
+        success:
+          back_to_index: Înțeleg; mergi înapoi în pagina principală
+          instructions_1: "<strong>Vă vom contacta curând</strong> pentru a verifica dacă de fapt reprezentați acest colectiv."
+          instructions_2: În timp ce <strong>email dumneavoastră este analizat</strong>, v-am trimis un <strong>link pentru a vă confirma contul</strong>.
     passwords:
       edit:
         change_submit: Schimbă parola
