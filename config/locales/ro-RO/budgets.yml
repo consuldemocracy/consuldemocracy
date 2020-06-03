@@ -86,6 +86,7 @@ ro:
             one: "<strong>Ați votat o propunere de proiect în valoare de %{amount_spent}</strong>"
             few: "<strong>Ați votat %{count} propuneri de proiect în valoare de %{amount_spent}</strong>"
             other: "<strong>Ați votat %{count} propuneri de proiect în valoare de %{amount_spent}</strong>"
+          voted_info: Puteți %{link} oricând până la închiderea acestei etape. Nu trebuie să cheltuiți toți banii valabili.
           voted_info_link: schimbă-ți votul
           different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
           change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
@@ -93,6 +94,7 @@ ro:
           zero: Nu ați votat niciun proiect de investiții în acest grup.
           verified_only: "Pentru a crea o nouă investiție bugetară %{verify}."
           create: "Crează un buget de investiții"
+          not_logged_in: "Pentru a crea un nou buget de investiții trebuie să %{sign_in} sau %{sign_up}."
           by_feasibility: După fezabilitate
           feasible: Proiecte posibile
           unfeasible: Proiecte imposibile
@@ -100,10 +102,15 @@ ro:
           random: aleatoriu
           confidence_score: cel mai bine cotat
           price: după preț
+      share:
+        message: "Am creat proiectul de investiții %{title} în %{handle}. Creați și un proiect de investiții!"
       show:
         author_deleted: Utilizator șters
         price_explanation: Explicația prețurilor
         unfeasibility_explanation: Explicație de imposibilitate
+        code: "Codul proiectului de investiții: <strong>%{code}</strong>"
+        location: "Locație: <strong>%{location}</strong>"
+        organization_name: "Propus din partea: <strong>%{name}</strong>"
         share: Distribuie
         title: Proiect de investiții
         votes: Voturi
@@ -111,6 +118,9 @@ ro:
         comments_tab: Comentarii
         milestones_tab: Repere
         author: Autor
+        project_unfeasible: "Acest proiect de investiții <strong>a fost marcat ca ne fiind posibil</strong> și nu va trece la faza de votare."
+        project_selected: "Acest proiect de investiții <strong>a fost selectat</strong> pentru faza de votare."
+        project_winner: "Proiectul de investiții câștigător"
         see_price_explanation: Vezi explicația prețurilor
       wrong_price_format: Numai numere întregi
       investment:
