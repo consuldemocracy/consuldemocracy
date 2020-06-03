@@ -111,3 +111,35 @@ ro:
     poll/question/answer: Răspuns
     user: Cont
     verification/sms: telefon
+    signature_sheet: Foaie de semnături
+    document: Document
+    topic: Subiect
+    image: Imagine
+    local_census_record: Registrul local al recensământului
+    local_census_records/import: Import de date
+    site_customization/content_block: bloc de conținut
+    site_customization/page: pagină
+  geozones:
+    none: Tot orașul
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+    header:
+      notification_item:
+        no_notifications: "Nu aveți notificări noi"
+    admin:
+      watch_form_message: "Aveți modificări nesalvate. Sunteți sigur că doriți să părăsiți pagina?"
+  notifications:
+    index:
+      empty_notifications: Nu aveți notificări noi.
+      mark_all_as_read: Marchează totul ca fiind citit
+      read: Citește
+      title: Notificări
+      unread: Necitit
+    notification:
+      action:
+        proposal_notification:
+          one: Există o notificare nouă la
+          few: Există %{count} notificări noi la
+          other: Există %{count} notificări noi la
