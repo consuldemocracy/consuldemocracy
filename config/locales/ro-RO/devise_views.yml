@@ -54,6 +54,7 @@ ro:
           instructions_2: În timp ce <strong>email dumneavoastră este analizat</strong>, v-am trimis un <strong>link pentru a vă confirma contul</strong>.
           instructions_3: Odată confirmat, puteți începe să participați ca un colectiv neverificat.
           thank_you: Vă mulțumim pentru înregistrarea colectivului dumneavoastră pe site. Acum este <strong>în curs de verificare</strong>.
+          title: Înregistrarea organizației / colectivului
     passwords:
       edit:
         change_submit: Schimbă parola
@@ -119,4 +120,7 @@ ro:
           username_note: Numele care apare în dreptul postărilor dumneavoastră
         success:
           back_to_index: Înțeleg; mergi înapoi în pagina principală
+          instructions_1: Vă rugăm <b>verificați-vă emailul</b> - noi v-am trimis <b>un link de confirmare pentru contul dumneavoastră</b>.
+          instructions_2: Odată confirmat, puteți începe să participați.
+          thank_you: Vă mulțumim pentru înregistrare. Acum trebuie să <b>confirmați adresa dvs. de e-mail</b>.
           title: Confirmă adresa de email
