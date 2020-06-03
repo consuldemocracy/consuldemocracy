@@ -74,6 +74,10 @@ ro:
         one: "Imagine"
         few: "Imagini"
         other: "%{count} imagini"
+      local_census_record:
+        one: Registrul local al recensământului
+        few: Registrele local al recensământului
+        other: Registrele local al recensământului
     attributes:
       budget:
         name: "Nume"
@@ -94,6 +98,7 @@ ro:
         description: "Descriere"
         external_url: "Link către documentație suplimentară"
         administrator_id: "Administrator"
+        location: "Informații suplimentare despre locație"
         organization_name: "Dacă propuneți în numele unui grup social/unei organizații sau în numele mai multor persoane, scrieți-le numele"
         image: "Imagine descriptivă a propunerii"
         image_title: "Titlul imaginii"
@@ -129,6 +134,9 @@ ro:
         kind: "Tip"
         title: "Titlu"
         percentage: "Progresul actual"
+      budget/phase:
+        ends_at: "Data de sfârșit"
+        starts_at: "Data de început"
       budget/phase/translation:
         description: "Descriere"
         summary: "Sumar"
@@ -223,9 +231,17 @@ ro:
         image: Imagine
       site_customization/content_block:
         name: Nume
+        locale: local
+      tag:
+        name: "Scrie numele subiectului"
       topic:
         title: "Titlu"
+        description: "Text inițial"
       banner:
+        background_color: Culoare de fundal
+        font_color: Culoarea fontului
+        post_ended_at: "Postarea s-a încheiat la"
+        post_started_at: "Postarea a început la"
         target_url: "Link"
       banner/translation:
         title: "Titlu"
