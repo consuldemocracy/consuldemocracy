@@ -16,3 +16,32 @@ ro:
       user_permission_proposal: Crează noi propuneri
       user_permission_support_proposal: Sprijină propuneri
       user_permission_title: Participare
+      user_permission_verify: Pentru a efectua toate acțiunile, verificați contul.
+      user_permission_verify_info: "* Numai pentru utilizatorii aflați pe recensământ."
+      user_permission_votes: Participă la votarea finală
+      username_label: Nume de utilizator
+      verified_account: Cont verificat
+      verify_my_account: Verifică-mi contul
+  application:
+    close: Închis
+    menu: Meniu
+  comments:
+    comments_closed: Comentariile sunt închise
+    verified_only: Pentru a participa %{verify_account}
+    comment:
+      admin: Administrator
+      author: Autor
+      deleted: Acest comentariu a fost șters
+      moderator: Moderator
+      responses:
+        zero: Nici un răspuns
+        one: 1 răspuns
+        few: "%{count} răspunsuri"
+        other: "%{count} răspunsuri"
+      responses_show:
+        zero: Nici un răspuns
+        one: "1 răspuns (afișează)"
+        few: "%{count} răspunsuri (afișează)"
+        other: "%{count} răspunsuri (afișează)"
+      responses_collapse:
+        zero: Nici un răspuns
