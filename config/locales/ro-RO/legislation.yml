@@ -30,20 +30,24 @@ ro:
     draft_versions:
       changes:
         title: Modificări
+        seeing_changelog_version: Rezumatul modificărilor revizuirii
         see_text: Vezi schița text
       show:
+        loading_comments: Se încarcă comentariile
         seeing_version: Vedeți versiunea schiță
         select_draft_version: Selecteaza schița
         select_version_submit: vezi
         updated_at: actualizat la %{date}
         see_changes: vezi sumarul schimbărilor
         see_comments: Vezi toate comentariile
+        text_toc: Cuprins
         text_body: Text
         text_comments: Comentarii
     processes:
       header:
         additional_info: Informații suplimentare
         description: Descriere
+        more_info: Mai multe informații și context
       proposals:
         empty_proposals: Nu există propuneri
         filters:
@@ -56,6 +60,7 @@ ro:
         filter: Filtru
         filters:
           open: Procese deschise
+          past: Anterior
         no_open_processes: Nu sunt procese deschise
         no_past_processes: Nu există procese anterioare
         section_header:
@@ -79,6 +84,7 @@ ro:
         draft_publication_date: Publicarea schiței
         allegations_dates: Comentarii
         result_publication_date: Publicarea rezultatului final
+        milestones_date: Următorul
         proposals_dates: Propuneri
     questions:
       comments:
@@ -104,8 +110,11 @@ ro:
         phase_not_open: Această etapă nu este deschisă
         organizations: Organizațiile nu au voie să participe la dezbatere
         unauthenticated: Trebuie %{signin} sau %{signup} pentru a participa.
+        verified_only: Doar utilizatorii verificați pot participa, %{verify_account}.
+        debate_phase_not_open: Etapa de dezbateri s-a încheiat iar răspunsurile nu mai sunt acceptate
     shared:
       share: Distribuie
+      share_comment: Comentează la %{version_name} din schița procesului %{process_name}
     proposals:
       form:
         tags_label: "Categorii"
