@@ -349,7 +349,15 @@ ro:
         summary: Sumar
         description: Descriere
         additional_info: Informații adiționale
+        start_date: Început
+        end_date: Sfârșit
+        debate_start_date: Început
+        debate_end_date: Sfârșit
+        draft_start_date: Început
+        draft_end_date: Sfârșit
         draft_publication_date: Data publicării schiței
+        allegations_start_date: Început
+        allegations_end_date: Sfârșit
         proposals_phase_start_date: Început
         proposals_phase_end_date: Sfârșit
         result_publication_date: Data publicării rezultatului final
