@@ -228,6 +228,8 @@ ro:
         percentage: "Progresul actual"
       budget/group/translation:
         name: "Numele grupului"
+      budget/heading:
+        population: "Populație (opțional)"
       budget/phase:
         enabled: "Etapă activată"
         ends_at: "Data de sfârșit"
