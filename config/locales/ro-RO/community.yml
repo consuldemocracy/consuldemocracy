@@ -2,8 +2,19 @@ ro:
   community:
     sidebar:
       title: Comunitate
+      description:
+        proposal: Participați la comunitatea utilizatorilor acestei propuneri.
+        investment: Participați la comunitatea utilizatorilor acestei investiții.
       button_to_access: Accesează comunitatea
     show:
+      title:
+        proposal: Comunitatea propunerii
+        investment: Comunitate Buget de Investiții
+      description:
+        proposal: Participați la comunitatea acestei propuneri. O comunitate activă poate contribui la îmbunătățirea conținutului propunerii și poate stimula diseminarea acesteia pentru a obține mai mult sprijin.
+        investment: Participați la comunitatea acestui investiții bugetare. O comunitate activă poate contribui la îmbunătățirea conținutului investiții bugetare și poate stimula diseminarea acesteia pentru a obține mai mult sprijin.
+      create_first_community_topic:
+        first_theme_not_logged_in: Nu există nicio problemă disponibilă, participați la crearea primei.
       tab:
         participants: Participanți
       sidebar:
@@ -38,3 +49,4 @@ ro:
         recommendations_title: Recomandări pentru crearea unui subiect
         recommendation_one: Nu scrieți titlul subiectului sau propozițiile întregi cu majuscule. Pe internet acest lucru este considerat strigat. Și nimănui nu îi place să i se țipe în față.
         recommendation_two: Orice subiect sau comentariu care implică o acțiune ilegală vor fi eliminate, de asemenea, cele care intenționează să saboteze spațiile subiectului, orice altceva este permis.
+        recommendation_three: Bucurați-vă de acest spațiu, de vocile care îl umplu, este și al vostru.
