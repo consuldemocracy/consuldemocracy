@@ -1,6 +1,7 @@
 ro:
   mailers:
     comment:
+      hi: Bună
       title: Comentariu nou
     config:
       manage_email_subscriptions: Pentru a nu mai primi aceste e-mailuri, schimbați setările în
@@ -12,5 +13,10 @@ ro:
       hi: Bună
       new_reply_by: Acesta este un nou răspuns de la <strong>%{commenter}</strong> la comentariul dumneavoastră
       subject: Cineva a răspuns comentariului dumneavoastră
+      title: Răspuns nou la comentariul dumneavoastră
     proposal_notification_digest:
       share: Partajează propunere
+      unsubscribe_account: Contul meu
+    direct_message_for_receiver:
+      subject: "Ați primit un mesaj privat"
+      reply: Răspunde-i lui %{sender}
