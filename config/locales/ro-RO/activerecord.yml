@@ -22,6 +22,14 @@ ro:
         one: "reper"
         few: "repere"
         other: "%{count} repere"
+      milestone/status:
+        one: "Status reper"
+        few: "Stări reper"
+        other: "Stări reper"
+      progress_bar:
+        one: "Progres"
+        few: "Progres"
+        other: "Progres"
       comment:
         one: "Comentariu"
         few: "Comentarii"
@@ -38,30 +46,90 @@ ro:
         one: "Etichetă"
         few: "Etichete"
         other: "Utilizatori"
+      moderator:
+        one: "Moderator"
+        few: "Moderator"
+        other: "Moderatori"
       administrator:
         one: "Administrator"
         few: "Administratori"
         other: "Administratori"
+      valuator:
+        one: "Evaluator"
+        few: "Evaluatori"
+        other: "Evaluatori"
+      valuator_group:
+        one: "Grup de evaluare"
+        few: "Grupuri de evaluare"
+        other: "Grupuri de evaluare"
       manager:
         one: "Administrator"
         few: "Administratori"
         other: "%{count} administratori"
+      newsletter:
+        one: "Newsletter"
+        few: "Newsletters"
+        other: "Newsletter"
       vote:
         one: "Vot"
         few: "Voturi"
         other: "%{count} voturi"
+      organization:
+        one: "Organizație"
+        few: "Organizații"
+        other: "Organizații"
+      poll/booth:
+        one: "cabină vot"
+        few: "cabine vot"
+        other: "cabine vot"
+      poll/officer:
+        one: "funcționar public"
+        few: "funcționari publici"
+        other: "funcționari publici"
+      poll/ballot_sheet:
+        one: Buletin de vot
+        few: Buletine de vot
+        other: Buletine de vot
+      proposal:
+        one: "Propunerea cetățeanului"
+        few: "Propunerile cetățeanului"
+        other: "Propunerile cetățeanului"
+      site_customization/page:
+        one: Pagină personalizate
+        few: Pagini personalizate
+        other: Pagini personalizate
+      site_customization/image:
+        one: Imagine personalizată
+        few: Imagini personalizate
+        other: Imagini personalizate
+      site_customization/content_block:
+        one: Conținut personalizat
+        few: Conținut personalizat
+        other: Conținut personalizat
       document:
         one: Document
         few: Documente
         other: '%{count} documente'
+      legislation/process:
+        one: "Proces"
+        few: "Procese"
+        other: "Procese"
       legislation/proposal:
         one: "Propunere"
         few: "Propuneri"
         other: "%{count} propuneri"
+      legislation/draft_versions:
+        one: "Versiune schiță"
+        few: "Versiuni schiță"
+        other: "Versiuni schiță"
       legislation/questions:
         one: "Întrebare"
         few: "Întrebări"
         other: "%{count} intrebări"
+      legislation/question_options:
+        one: "Opțiune de întrebare"
+        few: "Opțiuni de întrebări"
+        other: "Opțiuni de întrebări"
       legislation/answers:
         one: "Răspuns"
         few: "Răspunsuri"
@@ -74,6 +142,14 @@ ro:
         one: "Imagine"
         few: "Imagini"
         other: "%{count} imagini"
+      topic:
+        one: "Subiect"
+        few: "Subiecte"
+        other: "Subiecte"
+      poll:
+        one: "Sondaj"
+        few: "Sondaje"
+        other: "Sondaje"
       local_census_record:
         one: Registrul local al recensământului
         few: Registrele local al recensământului
