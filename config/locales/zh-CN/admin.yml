@@ -260,6 +260,10 @@ zh-CN:
         back: 返回%{org}
         title: 管理
         description: 欢迎使用%{org} 管理面板。
+      actions:
+        index:
+          active: '是'
+          inactive: '不是'
     debates:
       index:
         title: 隐藏的辩论
