@@ -80,6 +80,10 @@ ro:
           button: Caută
           placeholder: Căutați proiecte de investiții...
           title: Caută
+        search_results:
+          one: " conține termenul <strong>'%{search_term}'</strong>"
+          few: " conține termenii <strong>'%{search_term}'</strong>"
+          other: " conține termenii <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Votul meu
           voted:
@@ -121,12 +125,14 @@ ro:
         project_unfeasible: "Acest proiect de investiții <strong>a fost marcat ca ne fiind posibil</strong> și nu va trece la faza de votare."
         project_selected: "Acest proiect de investiții <strong>a fost selectat</strong> pentru faza de votare."
         project_winner: "Proiectul de investiții câștigător"
+        project_not_selected: "Acest proiect de investiții <strong>nu a fost selectat</strong> pentru faza de votare."
         see_price_explanation: Vezi explicația prețurilor
       wrong_price_format: Numai numere întregi
       investment:
         add: Vot
         already_added: Ați adăugat deja acest proiect de investiții
         already_supported: Ați susținut deja acest proiect de investiții. Distribuiți-l!
+        support_title: Sprijină acest proiect
       header:
         check_ballot: Verifică și confirmă votul
         different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
@@ -165,6 +171,10 @@ ro:
       heading: "Reperele bugetului participativ"
       heading_selection_title: "După district"
       no_winner_investments: "Nu există investiții câștigătoare în această stare"
+      filters:
+        milestone_tag:
+          label: "Etichete reper"
     phases:
       errors:
+        dates_range_invalid: "Data de început nu poate fi egală sau după data de încheiere"
         next_phase_dates_invalid: "Data de încheiere trebuie să fie anterioară datei de încheiere a următoarei faze activate (%{phase_name})"
