@@ -101,6 +101,10 @@ ro:
         unfeasible: Investiții imposibile
       print:
         print_button: Imprimare
+      search_results:
+        one: " care conține termenul \"%{search_term}\""
+        few: " care conțin termenii \"%{search_term}\""
+        other: " care conțin termenii \"%{search_term}\""
     sessions:
       signed_out: Deconectat cu succes.
       signed_out_managed_user: Sesiunea de utilizator s-a deconectat cu succes.
