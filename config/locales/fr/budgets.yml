@@ -147,6 +147,7 @@ fr:
       accepted: "Proposition de dépense acceptée : "
       discarded: "Proposition de dépense rejetée : "
       incompatibles: Incompatibles
+      investment_title: Titre de projet
       investment_proyects: Liste des projets d'investissement
       unfeasible_investment_proyects: Liste des projets d'investissement irréalisables
       not_selected_investment_proyects: Liste des projets d'investissement non sélectionnés pour le vote
