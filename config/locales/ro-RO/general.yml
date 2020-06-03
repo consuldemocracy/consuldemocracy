@@ -91,3 +91,23 @@ ro:
       invalid_date_range: "Interval de timp invalid"
   form:
     accept_terms: Sunt de acord cu %{policy} și cu %{conditions}
+    accept_terms_title: Sunt de acord cu Politica de confidențialitate și cu Termenii și condițiile de utilizare
+    conditions: Termeni și condiții de utilizare
+    debate: Dezbate
+    direct_message: mesaj privat
+    error: eroare
+    errors: erori
+    not_saved: "a prevenit această %{resource} din a fi salvată. <br>Vă rugăm să verificați câmpurile marcate pentru a ști cum să le corectați:"
+    policy: Politica de Confidențialitate
+    banner: afiș
+    proposal: Propunere
+    proposal_notification: "Notificare"
+    budget/investment: Investiție
+    budget/group: Grupul Bugetar
+    legislation/draft_version: schiță
+    legislation/process: proces
+    legislation/question: întrebare
+    poll/shift: Schimb
+    poll/question/answer: Răspuns
+    user: Cont
+    verification/sms: telefon
