@@ -1,5 +1,6 @@
 fr:
   mailers:
+    title: "Ouvrir Gouvernement"
     no_reply: "Ce message a été envoyé d'une adresse qui n'accepte pas les réponses."
     comment:
       hi: Bonjour
@@ -42,6 +43,7 @@ fr:
     budget_investment_created:
       subject: "Merci d'avoir créer une proposition !"
       title: "Merci d'avoir créer une proposition !"
+      intro: "Bonjour <strong>%{author}</strong>"
       follow_link: "Budgets participatifs"
       sincerely: "Cordialement,"
       share: "Partager votre projet"
@@ -63,6 +65,8 @@ fr:
       hi: "Cher(e) utilisateur(trice),"
       thanks: "Merci de nouveau pour votre participation."
       sincerely: "Cordialement,"
+    evaluation_comment:
+      hi: Bonjour
     new_actions_notification_rake_created:
       subject: "Plus de nouveautés à propos de votre propositions citoyenne"
       hi: "Bonjour %{name},\n"
