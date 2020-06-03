@@ -311,6 +311,7 @@ ro:
         title: "Titlu"
       signature_sheet:
         title: "Titlu"
+        document_numbers: "Numerele documentelor"
       site_customization/page:
         content: Conținut
         created_at: Creat la
