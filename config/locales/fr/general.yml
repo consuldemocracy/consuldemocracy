@@ -160,6 +160,7 @@ fr:
     proposal_notification: "Notification"
     budget/investment: Projet d'investissement
     budget/heading: Rubrique
+    legislation/question: question
     poll/shift: Période de travail
     poll/question/answer: Réponse
     user: Compte
@@ -168,6 +169,7 @@ fr:
     document: Document
     topic: Sujet
     image: Image
+    site_customization/page: page
   geozones:
     none: Toute la ville
   layouts:
@@ -265,6 +267,8 @@ fr:
     create:
       form:
         submit_button: Créer la proposition
+    share:
+      dashboard: Voir plus d’information
     edit:
       editing: Modifier la proposition
       form:
@@ -395,6 +399,28 @@ fr:
     update:
       form:
         submit_button: Sauvegarder des changements
+  dashboard:
+    menu:
+      messages: Message aux utilisateurs
+    progress:
+      new_action: Nouveau
+    resource:
+      and: et
+    recommended_actions:
+      done_title: Fini
+    polls:
+      poll:
+        view_results: Inspecter les résultats
+      form:
+        add_question: Ajouter une question
+      question_fields:
+        add_answer: Ajouter une réponse
+    poster:
+      options:
+        download: Télécharger
+    mailer:
+      forward:
+        hi: "Bonjour!"
   polls:
     all: "Toutes"
     no_dates: "aucune date fixée"
@@ -543,6 +569,12 @@ fr:
       title: Recommandations
       see_more: Voir plus de recommandations
       hide: Masquer les recommandations
+    translations:
+      select_language_prompt: Choisir la langue
+      remove_language: Supprimer la langue
+      add_language: Ajouter la langue
+      languages_in_use:
+        zero: "0 langues en service"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
