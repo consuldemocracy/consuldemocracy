@@ -52,6 +52,8 @@ ro:
           back_to_index: Înțeleg; mergi înapoi în pagina principală
           instructions_1: "<strong>Vă vom contacta curând</strong> pentru a verifica dacă de fapt reprezentați acest colectiv."
           instructions_2: În timp ce <strong>email dumneavoastră este analizat</strong>, v-am trimis un <strong>link pentru a vă confirma contul</strong>.
+          instructions_3: Odată confirmat, puteți începe să participați ca un colectiv neverificat.
+          thank_you: Vă mulțumim pentru înregistrarea colectivului dumneavoastră pe site. Acum este <strong>în curs de verificare</strong>.
     passwords:
       edit:
         change_submit: Schimbă parola
@@ -61,6 +63,7 @@ ro:
       new:
         email_label: Email
         send_submit: Trimite instrucțiuni
+        title: Parolă uitată?
     sessions:
       new:
         login_label: Email sau Nume de utilizator
@@ -69,6 +72,7 @@ ro:
     shared:
       links:
         new_confirmation: Nu ați primit instrucțiuni pentru a va activa contul?
+        new_password: V-ați uitat parola?
         new_unlock: Nu ați primit instrucțiunile de deblocare?
         signin_with_provider: Conectare cu %{provider}
         signup: Nu aveți un cont? %{signup_link}
@@ -90,19 +94,29 @@ ro:
           current_password_label: Parolă curentă
           edit: Editează
           email_label: Email
+          leave_blank: Lăsați gol dacă nu doriți să modificați
+          need_current: Avem nevoie de parola actuală pentru a confirma schimbările
           password_confirmation_label: Confirmă noua parolă
           password_label: Parola nouă
           update_submit: Actualizează
+          waiting_for: "Se așeaptă confirmarea:"
         new:
           cancel: Anulează conectare
           email_label: Email
+          organization_signup: Reprezentați o organizație sau un colectiv? %{signup_link}
+          organization_signup_link: Înregistrați-vă aici
           password_confirmation_label: Confirmă parolă
           password_label: Parolă
+          redeemable_code: Cod de verificare primit prin e-mail (optional)
           submit: Înregistrare
+          terms: Înregistrându-vă acceptați %{terms}
           terms_link: termeni si conditii de utilizare
+          terms_title: Înregistrându-vă acceptați termenii și condițiile de utilizare
           title: Înregistrare
           username_is_available: Nume de utilizator valabil
           username_is_not_available: Nume de utilizator deja în uz
           username_label: Nume de utilizator
+          username_note: Numele care apare în dreptul postărilor dumneavoastră
         success:
+          back_to_index: Înțeleg; mergi înapoi în pagina principală
           title: Confirmă adresa de email
