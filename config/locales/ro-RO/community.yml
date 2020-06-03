@@ -15,6 +15,8 @@ ro:
         investment: Participați la comunitatea acestui investiții bugetare. O comunitate activă poate contribui la îmbunătățirea conținutului investiții bugetare și poate stimula diseminarea acesteia pentru a obține mai mult sprijin.
       create_first_community_topic:
         first_theme_not_logged_in: Nu există nicio problemă disponibilă, participați la crearea primei.
+        first_theme: Creați primul subiect al comunității
+        sub_first_theme: "Pentru a crea o temă trebuie să %{sign_in} sau să %{sign_up}."
       tab:
         participants: Participanți
       sidebar:
