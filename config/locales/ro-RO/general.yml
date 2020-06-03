@@ -60,3 +60,9 @@ ro:
       leave_comment: Lasă un comentariu
     orders:
       most_voted: Cel mai votat
+      newest: Cele mai noi primele
+      oldest: Cele mai vechi primele
+      most_commented: Cel mai comentat
+    select_order: Sortează după
+    show:
+      return_to_commentable: "Mergi înapoi la "
