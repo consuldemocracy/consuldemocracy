@@ -66,3 +66,28 @@ ro:
     select_order: Sortează după
     show:
       return_to_commentable: "Mergi înapoi la "
+  debates:
+    new:
+      recommendation_one: Nu folosiți majuscule pentru titlul dezbaterii sau pentru propoziții întregi. Pe internet, acest lucru este considerat strigăt. Și nimănui nu-i place să-i fie strigat în față.
+      start_new: Începe o dezbatere
+    show:
+      author_deleted: Utilizator șters
+      comments:
+        zero: Nu există comentarii
+        one: 1 comentariu
+        few: "%{count} comentarii"
+        other: "%{count} comentarii"
+      comments_title: Comentarii
+      edit_debate_link: Editează
+      flag: Această dezbatere a fost semnalizată ca fiind inadecvată de mai mulți utilizatori.
+      share: Partajează
+      author: Autor
+    update:
+      form:
+        submit_button: Salvează modificări
+  errors:
+    messages:
+      user_not_found: Utilizatorul nu a fost găsit
+      invalid_date_range: "Interval de timp invalid"
+  form:
+    accept_terms: Sunt de acord cu %{policy} și cu %{conditions}
