@@ -1,1 +1,12 @@
 ro:
+  account:
+    show:
+      erase_account_link: Șterge contul
+      notifications: Notificări
+      organization_name_label: Numele organizaței
+      personal: Detalii personale
+      phone_number_label: Număr de telefon
+      public_interests_my_title_list: Tag-urile elementelor pe care le urmărești
+      public_interests_user_title_list: Tag-urile elementelor pe care acest utilizator le folosește
+      save_changes_submit: Salvează modificări
+      recommendations: Recomandări
