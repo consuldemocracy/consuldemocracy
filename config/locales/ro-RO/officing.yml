@@ -3,12 +3,14 @@ ro:
     dashboard:
       index:
         info: Aici puteți valida documentele utilizatorului și stoca rezultatele votului
+        no_shifts: Nu ai schimburi oficiale astăzi.
     menu:
       voters: Validează document
       total_recounts: Renumărări și rezultate finale
     polls:
       final:
         title: Sondaje pregătite pentru renumărarea finală
+        no_polls: Nu efectuați oficializați renumărarea finale în niciun sondaj activ
         select_poll: Selectează sondaj
         add_results: Adaugă rezultate
     poll_budgets:
@@ -59,10 +61,12 @@ ro:
     residence:
       flash:
         create: "Document verificat cu recensământul"
+        not_allowed: "Nu ai schimburi oficiale astăzi"
       new:
         title: Validează document
         document_number: "Numărul documentului (inclusiv litere)"
         submit: Validează document
+        error_verifying_census: "Baza de date a recensământului nu a putut verifica acest document."
         form_errors: a împiedicat verificarea acestui documentului
     voters:
       new:
@@ -72,6 +76,7 @@ ro:
         table_actions: Acțiuni
         not_to_vote: Persoana a decis să nu voteze în acest moment
       show:
+        can_vote: Puteți vota
         cannot_vote: Persoana nu poate vota deoarece nu este înregistrată în districtul (districtele) unde are loc votarea.
         error_already_voted: A participat deja la acest sondaj
         submit: Confirmă vot
