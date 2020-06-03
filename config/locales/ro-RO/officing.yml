@@ -12,23 +12,36 @@ ro:
         select_poll: Selectează sondaj
         add_results: Adaugă rezultate
     poll_budgets:
+      see_ballot_sheets: Consultați lista buletinelor de vot
       index:
+        title: "%{poll_budget} - Buletinelor de vot"
+        ballot_sheet: "Buletin de vot %{id}"
         ballot_sheet_name: Nume
         ballot_sheet_author: Autor
         ballot_sheet_creation_date: Data creării
+        empty_results: Nu există buletine de vot pentru acest sondaj încă
       new:
+        title: "%{poll_budget} - Noi buletine de vot"
+        booth: Cabină vot
+        select_booth: Selectează cabină de vot
         submit: Salvează
       show:
         created_at: Data creării
         author: Autor
+    booth:
+      new:
+        title: "Alege cabină de vot"
     results:
       flash:
         create: "Rezultate salvate"
         error_create: "Rezultatele NU au fost salvate. Eroare în baza de date."
+        error_wrong_booth: "Cabină de vot greșită. Rezultatele nu au fost salvate."
       new:
         title: "%{poll} - Adaugă rezulate"
         not_allowed: "Nu aveți voie să adăugați rezultate pentru acest sondaj"
+        booth: "Cabină vot"
         date: "Date"
+        select_booth: "Selectează cabină de vot"
         ballots_white: "Buletinele de vot total necompletate"
         ballots_null: "Buletine de vot invalide"
         ballots_total: "Buletine de vot valide"
@@ -44,6 +57,8 @@ ro:
         table_nulls: "Buletine de vot invalide"
         table_total: "Buletine de vot valide"
     residence:
+      flash:
+        create: "Document verificat cu recensământul"
       new:
         title: Validează document
         document_number: "Numărul documentului (inclusiv litere)"
