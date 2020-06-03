@@ -32,9 +32,11 @@ ro:
         title: Modificări
         see_text: Vezi schița text
       show:
+        seeing_version: Vedeți versiunea schiță
         select_draft_version: Selecteaza schița
         select_version_submit: vezi
         updated_at: actualizat la %{date}
+        see_changes: vezi sumarul schimbărilor
         see_comments: Vezi toate comentariile
         text_body: Text
         text_comments: Comentarii
