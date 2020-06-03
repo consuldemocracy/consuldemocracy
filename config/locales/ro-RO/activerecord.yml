@@ -150,6 +150,22 @@ ro:
         one: "Sondaj"
         few: "Sondaje"
         other: "Sondaje"
+      proposal_notification:
+        one: "Notificare"
+        few: "Notificări"
+        other: "Notificări"
+      dashboard/action:
+        one: Panou de control - propunere
+        few: Panou de control - propuneri
+        other: Panou de control - propuneri
+      dashboard/administrator_task:
+        one: Sarcină
+        few: Sarcini
+        other: Sarcini
+      link:
+        one: Link
+        few: Link-uri
+        other: Link-uri
       local_census_record:
         one: Registrul local al recensământului
         few: Registrele local al recensământului
@@ -210,7 +226,10 @@ ro:
         kind: "Tip"
         title: "Titlu"
         percentage: "Progresul actual"
+      budget/group/translation:
+        name: "Numele grupului"
       budget/phase:
+        enabled: "Etapă activată"
         ends_at: "Data de sfârșit"
         starts_at: "Data de început"
       budget/phase/translation:
@@ -224,11 +243,14 @@ ro:
         description: "Opinie"
         tag_list: "Subiecte"
         title: "Titlu"
+      debate/translation:
+        title: "Titlul dezbaterii"
       proposal:
         author: "Autor"
         title: "Titlu"
         question: "Întrebare"
         description: "Descriere"
+        retired_reason: "Motiv pentru a retrage propunerea"
         selected: "Marchează ca selectat"
       proposal/translation:
         title: "Titlul propunerii"
@@ -428,3 +450,6 @@ ro:
           attributes:
             minimum_interval:
               invalid: "Trebuie să așteptați minimum %{interval} zile între notificări"
+      messages:
+        record_invalid: "Validarea a eșuat: %{errors}"
+        another_poll_active: Este încă un sondaj activ pentru perioada aleasă
