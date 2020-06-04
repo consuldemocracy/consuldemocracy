@@ -44,6 +44,7 @@ ro:
     url_description: "URL-ul principal al site-ului dumneavoastră"
     org_name: "Numele site-ului"
     org_name_description: "Acest nume va apărea pe subiectul mailers în paginile de ajutor..."
+    related_content_score_threshold: "Prag de scor pentru continut"
     related_content_score_threshold_description: "În funcție de ratingul voturilor într-un conținut asociat, ascunde conținutul pe care utilizatorii îl marchează fără legătură"
     hot_score_period_in_days: "Perioada (zile) folosită de filtrul „cel mai activ”"
     hot_score_period_in_days_description: "Filtrul „cel mai activ” utilizat în mai multe secțiuni va fi bazat pe voturi în ultimele X zile"
@@ -76,12 +77,21 @@ ro:
       poster_short_title_description: 'Scurta descriere a funcției de afiș. Permite utilizatorilor să descarce un afiș în format PDF pentru a-și promova propunerea. Puteți găsi întregul conținut al acestui afiș în „/app/views/dashboard/poster/index.pdf.erb”'
       poster_description: Descrierea afișului
       poster_description_description: Descrierea detaliată a funcției de afiș
+    analytics_url: "Informatii statistice"
+    proposal_notification_minimum_interval_in_days: "Intervalul minim (de zile) pentru ca autorii sa trimita notificari noi"
+    proposal_notification_minimum_interval_in_days_description: "Numarul de zile in care utilizatorul poate trimite notificari pentru cei care urmaresc propunerea"
+    direct_message_max_per_day: "Numarul maxim de mesaje directe pe zi"
+    direct_message_max_per_day_description: "Numarul maxim de mesaje pe care un utilizator le poate trimite intr-o zi"
     feature:
       twitter_login: "Autentificare pe Twitter"
+      twitter_login_description: "Permiteți utilizatorilor să se înscrie cu contul Twitter"
       facebook_login: "Autentificare pe Facebook"
+      facebook_login_description: "Permiteți utilizatorilor să se înscrie cu contul Facebook"
       google_login: "Autentificare pe Google"
+      google_login_description: "Permiteți utilizatorilor să se înscrie cu contul Google"
       wordpress_login: "Autentificare pe Wordpress"
       wordpress_login_description: "Permiteți utilizatorilor să se înscrie cu contul Wordpress"
+      featured_proposals: "Propuneri recomandate"
       user:
         recommendations: "Recomandări"
       public_stats: "Statistici publice"
