@@ -214,6 +214,7 @@ ro:
       geozone:
         name: Nume
       milestone:
+        status_id: "Starea curentă (optional)"
         title: "Titlu"
         description: "Descriere (opțional dacă este un status alocat)"
         publication_date: "Date"
@@ -229,6 +230,7 @@ ro:
       budget/group/translation:
         name: "Numele grupului"
       budget/heading:
+        price: "Sumă"
         population: "Populație (opțional)"
       budget/phase:
         enabled: "Etapă activată"
