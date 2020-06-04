@@ -82,6 +82,7 @@ ro:
         navigation_table:
           description: Pentru a putea naviga prin acest site într-un mod accesibil, a fost programat un grup de chei de acces rapid care adună secțiunile principale de interes general în care este organizat site-ul.
           caption: Comenzile rapide de la tastatură pentru meniul de navigare
+          key_header: Tastă
           page_header: Pagină
           rows:
             - 
@@ -110,19 +111,25 @@ ro:
           rows:
             - 
               browser_column: Explorer
+              key_column: ALT + shortcut după care ENTER
             - 
               browser_column: Firefox
+              key_column: ALT + CAPS + shortcut
             - 
               browser_column: Chrome
+              key_column: ALT + shortcut (CTRL + ALT + shortcuts pentru MAC OS)
             - 
               browser_column: Safari
+              key_column: ALT + shortcut (CMD + shortcut pentru MAC OS)
             - 
               browser_column: Opera
+              key_column: CAPS + ESC + shortcut
       textsize:
         title: Dimensiunile textului
         browser_settings_table:
           description: Designul accesibil al acestui site permite utilizatorului să aleagă dimensiunea textului care i se potrivește. Această acțiune poate fi realizată în moduri diferite, în funcție de browserul utilizat.
           browser_header: Browser
+          action_header: Acțiune ce trebuie întreprinsă
           rows:
             - 
               browser_column: Explorer
