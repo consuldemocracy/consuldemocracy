@@ -227,6 +227,7 @@ ro:
         by: De
         sent: Trimis
         group: Grup
+        heading: Rubrică
         dossier: Dosar
         edit_dossier: Editează dosar
         tags: Etichete
@@ -248,8 +249,10 @@ ro:
         compatibility: Compatibilitate
         selection: Selecție
         assigned_valuators: Evaluatori
+        select_heading: Selectează rubrică
         submit_button: Actualizează
         user_tags: Etichete atribuite utilizatorului
+        tags_placeholder: "Scrieți etichetele pe care le doriți separate prin virgule (,)"
         undefined: Nedefinit
       search_unfeasible: Căutarea este imposibilă
     milestones:
@@ -309,6 +312,7 @@ ro:
         primary: "Bară de progres primară"
         table_kind: "Tip"
         table_title: "Titlu"
+        table_percentage: "Progresul actual"
       new:
         creating: "Crează bară de progres"
       edit:
@@ -326,6 +330,7 @@ ro:
         id: "ID"
         content: "Conținut"
         author: "Autor"
+        commentable_type: "Tip"
         title: Comentarii
         no_comments: Nu există comentarii.
     hidden_comments:
@@ -337,10 +342,19 @@ ro:
           without_confirmed_hide: În așteptare
         hidden_debate: Dezbateri ascunse
         hidden_proposal: Propuneri ascunse
+        title: Comentarii ascunse
     dashboard:
       actions:
         index:
+          edit: Editează
+          delete: Șterge
+          active: 'Da'
+          action_title: Titlu
+          action_type: Tip
+          required_supports: Suporturi necesare
+          day_offset: Zile necesare
           action_active: Activ
+          order: Ordonează
           published_proposal: Propuneri publicate
           default:
             email: Email
