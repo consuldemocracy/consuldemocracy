@@ -59,6 +59,7 @@ ro:
           on_users: Utilizatori
         title: Activitatea moderatorului
         type: Tip
+        no_activity: Nu există activitate efectuată de moderatori.
     budgets:
       index:
         title: Bugetele participative
@@ -71,12 +72,19 @@ ro:
         table_name: Nume
         table_phase: Etapă
         table_investments: Investiții
+        table_edit_groups: Grupuri de rubrici
         table_edit_budget: Editează
+        table_admin_ballots: Buletine de vot
+        edit_groups: Editați grupurile de rubrici
         edit_budget: Editează buget
+        admin_ballots: Gestionați buletinele de vot
         no_budgets: "Nu există bugete."
+      create:
+        notice: Buget participativ creat cu succes!
       update:
         notice: Bugetul Participativ a fost actualizat cu succes
       edit:
+        title: Editează Buget participativ
         delete: Șterge buget
         phase: Etapă
         enabled: Activat
