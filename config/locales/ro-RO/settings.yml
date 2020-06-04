@@ -160,9 +160,13 @@ ro:
         name_description: "In what path of the response is the user's Name?"
         surname: "Path for the Last Name"
         surname_description: "In what path of the response is the user's Last Name?"
+        valid: "Condition for detecting a valid response"
+        valid_description: "What response path has to come informed to be considered a valid response and user verified"
     map:
       latitude: "Latitudine"
+      latitude_description: "Latitude to show the map position"
       longitude: "Longitudine"
+      longitude_description: "Longitude to show the position of the map"
       zoom: "Zoom"
       zoom_description: "Zoom pentru a afișa poziția hărții"
     process:
@@ -171,10 +175,30 @@ ro:
       proposals: "Propuneri"
       proposals_description: "Propunerile cetățenilor sunt o oportunitate pentru vecini și grupuri de a decide direct cum vor să fie societatea lor, după ce au primit suficient sprijin și s-au prezentat la votul cetățenilor"
       polls: "Sondaje"
+      polls_description: "Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions"
       budgets: "Bugetare participativă"
+      budgets_description: "With participatory budgets, citizens decide which projects presented by their neighbours will receive a part of the budget"
+      legislation: "Legislație colaborativă"
+      legislation_description: "In participatory processes, citizens are offered the opportunity to participate in the drafting and modification of regulations that affect the society and to give their opinion on certain actions that are planned to be carried out"
+    html:
+      per_page_code_head: "Code to be included on every page (<head>)"
+      per_page_code_head_description: "This code will appear inside the <head> label. Useful for entering custom scripts, analytics..."
+      per_page_code_body: "Code to be included on every page (<body>)"
+      per_page_code_body_description: "This code will appear inside the <body> label. Useful for entering custom scripts, analytics..."
     uploads:
       images:
+        min_width: "Image minimum width"
+        min_width_description: "Minimum width allowed for an uploaded image (in pixels)"
+        min_height: "Image minimum height"
+        min_height_description: "Minimum height allowed for an uploaded image (in pixels)"
+        max_size: "Image maximum size"
+        max_size_description: "Dimensiunea maximă admisă pentru o imagine încărcată (în Megabytes / MB)"
+        content_types: "Tipuri de conținut acceptate pentru imagini"
+        content_types_description: "Selectează toate tipurile de conținut acceptat pentru imaginile încărcate"
         title:
+          min_length: "Image title minimum length"
+          min_length_description: "Title provided by the user when uploading an image (used as alt HTML attribute)"
+          max_length: "Image title maximum length"
           max_length_description: "Title provided by the user when uploading an image (used as alt HTML attribute)"
       documents:
         max_amount: "Numărul maxim de documente"
