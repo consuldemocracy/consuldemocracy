@@ -87,11 +87,13 @@ ro:
         title: Editează Buget participativ
         delete: Șterge buget
         phase: Etapă
+        dates: Date
         enabled: Activat
         actions: Acțiuni
         edit_phase: Editează etapă
         active: Activ
         administrators:
+          zero: "Selectează administratori"
           one: "1 administrator selectat"
           few: "%{count} administratori selectați"
           other: "%{count} administratori selectați"
