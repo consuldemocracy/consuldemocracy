@@ -1,14 +1,21 @@
 ro:
   admin:
+    header:
+      title: Administrare
     actions:
       actions: Acțiuni
       confirm: Sunteți sigur?
+      confirm_hide: Confirmați modificarea
       hide: Ascunde
       hide_author: Ascunde autor
       restore: Restabilire
+      mark_featured: Recomandată
+      unmark_featured: Anulați marcarea caracteristicii
       edit: Editează
       configure: Configurează
       delete: Șterge
+    officing_booth:
+      title: "Oficiați cabina situată la %{booth}. Dacă acest lucru nu este corect, nu continuați și apelați numărul de telefon de ajutor. Mulțumim."
     banners:
       index:
         title: Bannere
@@ -21,6 +28,7 @@ ro:
           with_inactive: Inactiv
         preview: Previzualizare
       banner:
+        sections_label: Secțiuni unde va apărea
         sections:
           homepage: Pagina principală
           debates: Dezbateri
@@ -49,6 +57,7 @@ ro:
           on_debates: Dezbateri
           on_proposals: Propuneri
           on_users: Utilizatori
+        title: Activitatea moderatorului
         type: Tip
     budgets:
       index:
