@@ -483,6 +483,10 @@ ro:
               invalid_date_range: trebuie să fie la sau după data începerii schiței
             allegations_end_date:
               invalid_date_range: trebuie să fie la data începerii comentariilor sau după
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: nu este inclusă în listă, valorile permise sunt 1 pentru CI, 2 pentru pașaport și 3 pentru cardul de reședință.
         proposal:
           attributes:
             tag_list:
@@ -495,6 +499,29 @@ ro:
           attributes:
             minimum_interval:
               invalid: "Trebuie să așteptați minimum %{interval} zile între notificări"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Nu este verificat de Recensământ"
+              already_voted: "Ați votat deja această propunere"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "trebuie să conțină litere, numere, _ și -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Lățimea trebuie să fie %{required_width}px"
+              image_height: "Înălțimea trebuie să fie %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Nu puteți adăuga comentarii la o evaluare"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Resursă deja tradusă
       messages:
+        translations_too_short: Este obligatoriu să furnizați cel puțin o traducere
         record_invalid: "Validarea a eșuat: %{errors}"
         another_poll_active: Este încă un sondaj activ pentru perioada aleasă
