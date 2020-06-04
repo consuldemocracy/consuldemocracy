@@ -67,6 +67,8 @@ ro:
     show:
       return_to_commentable: "Mergi înapoi la "
   debates:
+    form:
+      debate_title: Titlul dezbaterii
     new:
       recommendation_one: Nu folosiți majuscule pentru titlul dezbaterii sau pentru propoziții întregi. Pe internet, acest lucru este considerat strigăt. Și nimănui nu-i place să-i fie strigat în față.
       start_new: Începe o dezbatere
