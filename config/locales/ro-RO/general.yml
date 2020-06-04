@@ -323,3 +323,44 @@ ro:
     show:
       author_deleted: Utilizator șters
       code: "Codul propunerii:"
+      comments:
+        zero: Nu există comentarii
+        one: 1 comentariu
+        few: "%{count} comentarii"
+        other: "%{count} comentarii"
+      comments_tab: Comentarii
+      dashboard_proposal_link: Tablou de bord
+      flag: Această propunere a fost semnalizată ca fiind inadecvată de mai mulți utilizatori.
+      notifications_tab: Notificări
+      milestones_tab: Repere
+      retired_warning: "Autorul consideră că această propunere nu ar trebui să mai primească susțineri."
+      retired_warning_link_to_explanation: Citiți explicația înainte de a vota.
+      retired: Propunere retrasă de către autor
+      share: Distribuie
+      no_notifications: "Această propunere nu are notificări."
+      embed_video_title: "Video pentru %{proposal}"
+      title_video_url: "Video extern"
+      author: Autor
+      draft: Propunere în schițe. Încă nu poate primi suport și nici nu apare în lista de propuneri.
+    update:
+      form:
+        submit_button: Salvează modificări
+  dashboard:
+    menu:
+      my_proposal: Editează propunere
+      progress: Progres
+      resources: Resurse
+      community: Comunitate
+      polls: Sondaje
+      mailing: E-mail
+      poster: Afiș
+      recommended_actions: Acțiuni recomandate
+    messages:
+      previous_notifications: Vezi notificările anterioare
+    polls:
+      index:
+        title: Sondaje
+        create: Crează sondaj
+        additiontal_information: Informații suplimentare
+      new:
+        title: Sondaj nou
