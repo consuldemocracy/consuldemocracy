@@ -298,3 +298,28 @@ ro:
       created: "Ați creat o propunere!"
       share:
         guide: "Acum îl puteți împărtăși pentru ca oamenii să poată îl poată susține."
+        edit: "Înainte de a fi distribuit, veți putea modifica textul după cum doriți."
+        view_proposal: Nu acum, mergeți la propunerea mea
+      already_supported: Ați susținut deja această propunere. Distribuiți-o!
+      comments:
+        zero: Nu există comentarii
+        one: 1 comentariu
+        few: "%{count} comentarii"
+        other: "%{count} comentarii"
+      support: Sprijină
+      support_title: Sprijină această propunere
+      supports:
+        zero: Fără susțineri
+      votes:
+        zero: Nu există voturi
+        one: 1 vot
+        few: "%{count} voturi"
+        other: "%{count} voturi"
+      supports_necessary: "%{number} suporturi necesare"
+      total_percent: 100%
+      archived: "Această propunere a fost arhivată și nu poate colecta susțineri."
+      successful: "Această propunere a ajuns la numărul de susțineri necesare."
+      selected: "Propunere selectată"
+    show:
+      author_deleted: Utilizator șters
+      code: "Codul propunerii:"
