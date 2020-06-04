@@ -126,6 +126,7 @@ ro:
       model_invalid: "Validarea a eșuat: %{errors}"
       not_a_number: nu este un număr
       not_an_integer: trebuie să fie un număr întreg
+      odd: trebuie să fie impar
       required: trebuie să existe
       taken: a fost deja luat
       too_long:
