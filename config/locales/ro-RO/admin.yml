@@ -487,6 +487,7 @@ ro:
           orders:
             title: Titlu
         process:
+          title: Proces
           comments: Comentarii
           status: Status
           status_open: Deschide
@@ -500,7 +501,26 @@ ro:
         form:
           custom_categories: Categorii
       draft_versions:
+        edit:
+          back: Înapoi
+          submit_button: Salvează modificări
+        form:
+          launch_text_editor: Deschide editorul text
+          close_text_editor: Închide editorul text
+          hints:
+            final_version: Această versiune va fi publicată ca Rezultat Final pentru acest proces. Comentariile nu vor fi permise în această versiune.
+        index:
+          create: Crează versiune
+          delete: Șterge
+          preview: Previzualizare
+        new:
+          back: Înapoi
+          title: Crează versiune nouă
+          submit_button: Crează versiune
         table:
+          title: Titlu
+          created_at: Creat la
+          comments: Comentarii
           final_version: Versiune finală
           status: Status
       questions:
@@ -544,7 +564,11 @@ ro:
       manager:
         add: Adaugă
         delete: Șterge
+      search:
+        title: "Manageri: Căutare utilizator"
     menu:
+      activity: Activitatea moderatorului
+      banner: Gestionați bannere
       proposals: Propuneri
       budgets: Bugete participative
       geozones: Administrează geolocații
@@ -552,10 +576,15 @@ ro:
       hidden_debates: Dezbateri ascunse
       hidden_proposals: Propuneri ascunse
       hidden_budget_investments: Bugete de investiții ascunse
+      hidden_proposal_notifications: Notificări ascunse
       hidden_users: Utilizatori ascunși
       administrators: Administratori
       managers: Administratori
       moderators: Moderatori
+      admin_notifications: Notificări
+      valuators: Evaluatori
+      polls: Sondaje
+      poll_booths: Locația cabinelor
       administrator_tasks: Resurse solicitate
       debates: "Dezbateri"
       comments: "Comentarii"
