@@ -32,6 +32,7 @@ ro:
       participants_vote_phase: "Faza de votare a participanților"
       participants_every_phase: "Total participanți"
       percent_total_participants: "% Participanți totali"
+      percent_heading_census: "% Recensământul rubricii"
       participatory_disclaimer: "** Numărul total de participanți de referă la persoanele care au creat, au susținut sau au votat investițiile propuse."
       heading_disclaimer: "*** Datele despre rubrici se referă la rubrica în care a votat fiecare utilizator, nu neapărat cea pe care este înregistrată persoana respectivă."
     polls:
