@@ -1,7 +1,10 @@
 ro:
   officing:
+    header:
+      title: Votare
     dashboard:
       index:
+        title: Birou de votare
         info: Aici puteți valida documentele utilizatorului și stoca rezultatele votului
         no_shifts: Nu ai schimburi oficiale astăzi.
     menu:
@@ -26,10 +29,12 @@ ro:
         title: "%{poll_budget} - Noi buletine de vot"
         booth: Cabină vot
         select_booth: Selectează cabină de vot
+        csv_data: CSV data
         submit: Salvează
       show:
         created_at: Data creării
         author: Autor
+        data: CSV data
     booth:
       new:
         title: "Alege cabină de vot"
