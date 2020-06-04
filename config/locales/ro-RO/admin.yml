@@ -105,6 +105,12 @@ ro:
         success_notice: Buget șters cu succes
         unable_notice: Nu puteți șterge un buget care are investiții asociate
         unable_notice_polls: Nu puteți șterge un buget care are un sondaj asociat
+      new:
+        title: Buget participativ nou
+      winners:
+        calculate: Calculați Investițiile Câștigătoare
+        calculated: Se calculează câștigatorii, poate dura un minut.
+        recalculate: Recalculați Investițiile Câștigătoare
     budget_groups:
       name: "Nume"
       headings_name: "Rubrici"
@@ -215,6 +221,7 @@ ro:
         assigned_admin: Administrator alocat
         assigned_valuators: Evaluatori alocați
         classification: Clasificare
+        info: "%{budget_name} - Grup: %{group_name} - Proiect de investiții %{id}"
         edit: Editează
         edit_classification: Editează clasificarea
         by: De
