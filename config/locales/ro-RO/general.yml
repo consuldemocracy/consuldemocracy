@@ -4,6 +4,7 @@ ro:
       erase_account_link: Șterge contul
       notifications: Notificări
       organization_name_label: Numele organizaței
+      organization_responsible_name_placeholder: Reprezentant al organizației/colectivului
       personal: Detalii personale
       phone_number_label: Număr de telefon
       public_interests_my_title_list: Tag-urile elementelor pe care le urmărești
@@ -66,10 +67,76 @@ ro:
     select_order: Sortează după
     show:
       return_to_commentable: "Mergi înapoi la "
+  comments_helper:
+    comment_button: Publică comentariu
+    comment_link: Comentariu
+    comments_title: Comentarii
+    reply_button: Publică răspuns
+    reply_link: Răspunde
   debates:
+    create:
+      form:
+        submit_button: Începe o dezbatere
+    debate:
+      comments:
+        zero: Nu există comentarii
+        one: 1 comentariu
+        few: "%{count} comentarii"
+        other: "%{count} comentarii"
+      votes:
+        zero: Nu există voturi
+        one: 1 vot
+        few: "%{count} voturi"
+        other: "%{count} voturi"
+    edit:
+      editing: Editează dezbatere
+      form:
+        submit_button: Salvează modificări
+      show_link: Vezi dezbatere
     form:
       debate_title: Titlul dezbaterii
+      tags_instructions: Etichetează această dezbatere.
+      tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
+    index:
+      featured_debates: Recomandată
+      orders:
+        confidence_score: cel mai bine cotat
+        created_at: cele mai noi
+        hot_score: cel mai activ
+        most_commented: cel mai comentat
+        relevance: relevanță
+        recommendations: recomandări
+      recommendations:
+        without_results: Nu există dezbateri legate de interesele dumneavoastră
+        without_interests: Urmați propunerile pentru a vă putea oferi recomandări
+        disable: "Recomandările dezbaterilor nu vor mai apărea dacă le respingeți. Le puteți activa din nou în pagina „Contul meu”"
+        actions:
+          success: "Recomandările pentru dezbateri sunt acum dezactivate pentru acest cont"
+          error: "A aparut o eroare. Vă rugăm să accesați pagina „Contul meu” pentru a dezactiva manual recomandările pentru dezbateri"
+      search_form:
+        button: Caută
+        placeholder: Caută dezbateri...
+        title: Caută
+      search_results:
+        one: " conține termenul <strong>'%{search_term}'</strong>"
+        few: " conține termenul <strong>'%{search_term}'</strong>"
+        other: " conține termenul <strong>'%{search_term}'</strong>"
+      select_order: Ordonează după
+      start_debate: Începe o dezbatere
+      title: Dezbateri
+      section_header:
+        title: Dezbateri
+      section_footer:
+        description: Începeți o dezbatere pentru a împărtăși opinii cu alții despre subiectele care vă preocupă.
+        help_text_1: "Spațiul pentru dezbaterile cetățenilor se adresează oricui își poate expune problemele și celor care vor să își împărtășească opiniile cu alte persoane."
+        help_text_2: 'Pentru a deschide o dezbatere, trebuie să vă înscrieți la %{org}. Utilizatorii pot, de asemenea, să comenteze dezbaterile deschise și să le evalueze cu butoanele „Sunt de acord” sau „Nu sunt de acord”.'
     new:
+      form:
+        submit_button: Începe o dezbatere
+      info: Dacă doriți să faceți o propunere, aceasta este secțiunea greșită, introduceți %{info_link}.
+      info_link: crează o propunere nouă
+      more_info: Mai multe informații
+      recommendation_four: Bucurați-vă de acest spațiu, de vocile care îl umplu, este și al vostru.
       recommendation_one: Nu folosiți majuscule pentru titlul dezbaterii sau pentru propoziții întregi. Pe internet, acest lucru este considerat strigăt. Și nimănui nu-i place să-i fie strigat în față.
       start_new: Începe o dezbatere
     show:
