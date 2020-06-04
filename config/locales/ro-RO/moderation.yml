@@ -2,7 +2,7 @@ ro:
   moderation:
     comments:
       index:
-        block_authors: Blochează autori
+        block_authors: Blochează autorii
         confirm: Ești sigur?
         filter: Filtru
         filters:
