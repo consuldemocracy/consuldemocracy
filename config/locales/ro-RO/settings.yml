@@ -117,14 +117,49 @@ ro:
       public_stats: "Statistici publice"
       public_stats_description: "Afiseaza informatii statistice in panoul de administrare"
       help_page: "Pagina de ajutor"
+      help_page_description: 'Afiseaza un meniul de ajutor ce contine o patina cu informatii despre fiecare functionalitati disponibile. Deasemenea pot fi create pagini si meniuri, personalizate, sub meniul "Pagini personalizate" si "Zone cu continut personalizat"'
+      remote_translations: "Traducere la distanta"
+      remote_translations_description: "Afiseaza un buton ce permite utilizatorilor sa solicite o traducere atunci cand nu exista continut in limba vorbita de acestia."
+      translation_interface: "Interfata de traducere"
+      translation_interface_description: "Displays the manual translation interface that allows users to enter their content in all application available languages. This option only affects user application forms and independently will always be active in the administration panel."
+      remote_census: "Configure connection to remote census (SOAP)"
       remote_census_description: "Permite configurarea conexiunii la recensământul de la distanță al fiecărei instituții"
+      valuation_comment_notification: "Valuation comment notification"
+      valuation_comment_notification_description: "Send an email to all associated users except valuation commenter to budget investment when a new valuation comment is created"
+      graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "Panoul cu privire la notificarile trimise prin email"
+        notification_emails_description: "Permite trimitea de notificari pe email catre autorii propunerilor"
     remote_census:
+      general:
+        endpoint: "Punct final"
+        endpoint_description: "Gazda unde serviciul de recensamant este disponibil (wdl)"
       request:
+        method_name: "Solicita denumirea metodei"
+        method_name_description: "Solicita denumire metodei acceptata de administrator."
+        structure: "Solicita o structura"
+        structure_description: 'Request Structure that receives the Census WebService of the City council. The "static" values of this request should be filled. Values related to Document Type, Document Number, Date of Birth and Postal Code should be null. Example of a valid format: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Calea tipului de document"
+        document_type_description: "Path in the request structure that sends the Document Type. DO NOT FILL IN if the WebService does not require the Document Type to verify a user."
         document_number: "Calea pentru Numărul Documentului"
+        document_number_description: "Path in the request structure that sends the Document Number. DO NOT FILL IN if the WebService does not require the Document Number to verify a user."
         date_of_birth: "Calea către Data nașterii"
+        date_of_birth_description: "Path in the request structure that sends the Date of Birth. DO NOT FILL IN if the WebService does not require the Date of Birth to verify a user."
+        postal_code: "Path for Postal Code"
+        postal_code_description: "Path in the request structure that sends the Postal Code. DO NOT FILL IN if the WebService does not require the Postal Code to verify a user."
       response:
+        date_of_birth: "Path for Date of Birth"
+        date_of_birth_description: "In what path of the response is the user's Date of Birth?"
+        postal_code: "Path for Postal Code"
+        postal_code_description: "In what path of the response is the user's Postal Code?"
+        district: "Path for District"
+        district_description: "In what path of the response is the user's District?"
         gender: "Calea pentru Gen"
+        gender_description: "In what path of response is the user's Gender?"
         name: "Calea pentru Nume"
+        name_description: "In what path of the response is the user's Name?"
+        surname: "Path for the Last Name"
+        surname_description: "In what path of the response is the user's Last Name?"
     map:
       latitude: "Latitudine"
       longitude: "Longitudine"
@@ -138,8 +173,12 @@ ro:
       polls: "Sondaje"
       budgets: "Bugetare participativă"
     uploads:
+      images:
+        title:
+          max_length_description: "Title provided by the user when uploading an image (used as alt HTML attribute)"
       documents:
         max_amount: "Numărul maxim de documente"
+        max_amount_description: "Maximum number of documents that can be attached to a proposal, investment..."
         max_size: "Dimensiunea maximă a documentului"
         max_size_description: "Dimensiunea maximă admisă pentru un document încărcat (în Megabytes / MB)"
         content_types: "Tipuri de conținut acceptate pentru documente"
