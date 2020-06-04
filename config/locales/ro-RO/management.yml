@@ -40,6 +40,7 @@ ro:
       not_in_census: Acest document nu este înregistrat.
       not_in_census_info: "Cetățenii care nu sunt în recensământ pot participa pe site-ul web cu următoarele permisiuni:"
       please_check_account_data: Vă rugăm să verificați dacă datele contului de mai sus sunt corecte.
+      title: Administrarea utilizatorilor
       under_age: "Nu aveți vârsta necesară pentru a vă verifica contul."
       verify: Verifică
     email_label: Email
