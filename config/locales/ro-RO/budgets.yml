@@ -117,6 +117,7 @@ ro:
         organization_name: "Propus din partea: <strong>%{name}</strong>"
         share: Distribuie
         title: Proiect de investiții
+        supports: Susținători
         votes: Voturi
         price: Preț
         comments_tab: Comentarii
@@ -133,6 +134,9 @@ ro:
         already_added: Ați adăugat deja acest proiect de investiții
         already_supported: Ați susținut deja acest proiect de investiții. Distribuiți-l!
         support_title: Sprijină acest proiect
+        supports:
+          zero: Fără susținători
+        give_support: Sprijină
       header:
         check_ballot: Verifică și confirmă votul
         different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
@@ -152,9 +156,11 @@ ro:
       see_results: Vezi rezultatele
     results:
       link: Rezultate
+      page_title: "%{budget} - Rezultate"
       heading: "Rezultatele bugetului participativ"
       heading_selection_title: "După district"
       ballot_lines_count: Voturi
+      hide_discarded_link: Ascundeți proiectele neselectate
       show_all_link: Arată tot
       price: Preț
       amount_available: Buget disponibil
@@ -172,9 +178,14 @@ ro:
       heading_selection_title: "După district"
       no_winner_investments: "Nu există investiții câștigătoare în această stare"
       filters:
+        status:
+          label: "Statusul proiectului"
+          all: "Toate (%{count})"
         milestone_tag:
           label: "Etichete reper"
+          all: "Toate (%{count})"
     phases:
       errors:
         dates_range_invalid: "Data de început nu poate fi egală sau după data de încheiere"
+        prev_phase_dates_invalid: "Data de încheiere trebuie să fie după data de încheiere a următoarei faze activate (%{phase_name})"
         next_phase_dates_invalid: "Data de încheiere trebuie să fie anterioară datei de încheiere a următoarei faze activate (%{phase_name})"
