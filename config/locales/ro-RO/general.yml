@@ -254,3 +254,36 @@ ro:
       form:
         submit_button: Salvează modificări
       show_link: Afișează propunere
+    retire_form:
+      title: Retrage propunere
+      warning: "Dacă retrageți propunerea, aceasta ar accepta în continuare suport, dar va fi eliminată din lista principală și un mesaj va fi vizibil pentru toți utilizatorii afirmând că autorul consideră că propunerea nu ar trebui să mai fie susținută"
+      retired_reason_blank: Alege o opțiune
+      retired_explanation_placeholder: Explicați pe scurt de ce credeți că această propunere nu ar trebui să primească mai multe sprijin
+      submit_button: Retrage propunere
+    retire_options:
+      duplicated: Duplicată
+      unfeasible: Nerealizabil
+      done: Gata
+      other: Alta
+    form:
+      tag_category_label: "Categorii"
+      tags_label: Etichete
+      map_location: "Localizare pe hartă"
+    index:
+      featured_proposals: Recomandată
+      orders:
+        confidence_score: cel mai bine cotat
+        created_at: cele mai noi
+        hot_score: cel mai activ
+        most_commented: cel mai comentat
+        relevance: relevanță
+        archival_date: arhivat
+        recommendations: recomandări
+      recommendations:
+        without_results: Nu există dezbateri legate de interesele dumneavoastră
+        without_interests: Urmați propunerile pentru a vă putea oferi recomandări
+        disable: "Recomandările dezbaterilor nu vor mai apărea dacă le respingeți. Le puteți activa din nou în pagina „Contul meu”"
+        actions:
+          success: "Recomandările pentru dezbateri sunt acum dezactivate pentru acest cont"
+          error: "A aparut o eroare. Vă rugăm să accesați pagina „Contul meu” pentru a dezactiva manual recomandările pentru dezbateri"
+      retired_proposals: Retrage propunere
