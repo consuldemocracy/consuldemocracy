@@ -213,8 +213,11 @@ ro:
         description: "Descriere"
       geozone:
         name: Nume
+        external_code: "Cod extern (opțional)"
+        census_code: "Cod de recensământ (opțional)"
+        html_map_coordinates: "HTML <map> Coordonate (opțional)"
       milestone:
-        status_id: "Starea curentă (optional)"
+        status_id: "Starea curentă (opțional)"
         title: "Titlu"
         description: "Descriere (opțional dacă este un status alocat)"
         publication_date: "Date"
@@ -227,11 +230,22 @@ ro:
         kind: "Tip"
         title: "Titlu"
         percentage: "Progresul actual"
+      progress_bar/kind:
+        primary: "Primar"
+        secondary: "Secundar"
+      budget/group:
+        max_votable_headings: "Numărul maxim de rubrici în care poate vota un utilizator"
       budget/group/translation:
         name: "Numele grupului"
       budget/heading:
+        allow_custom_content: "Permiteți blocarea conținutului"
+        latitude: "Latitudine (opțional)"
+        longitude: "Longitudine (opțional)"
+        name: "Nume rubrică"
         price: "Sumă"
         population: "Populație (opțional)"
+      budget/heading/translation:
+        name: "Nume rubrică"
       budget/phase:
         enabled: "Etapă activată"
         ends_at: "Data de sfârșit"
@@ -249,11 +263,13 @@ ro:
         title: "Titlu"
       debate/translation:
         title: "Titlul dezbaterii"
+        description: "Textul dezbaterii inițiale"
       proposal:
         author: "Autor"
         title: "Titlu"
         question: "Întrebare"
         description: "Descriere"
+        responsible_name: "Numele întreg al persoanei care depune propunerea"
         retired_reason: "Motiv pentru a retrage propunerea"
         selected: "Marchează ca selectat"
       proposal/translation:
@@ -320,10 +336,13 @@ ro:
         content: Conținut
         created_at: Creat la
         subtitle: Subtitrare
+        status: Status
         status_draft: "Schiță"
         status_published: "Publicat"
         title: Titlu
         updated_at: Actualizat la
+        more_info_flag: Afișează în pagina de ajutor
+        print_content_flag: Butonul de printare a conținutului
         locale: Limbă
       site_customization/page/translation:
         title: Titlu
@@ -435,6 +454,10 @@ ro:
         description: Descriere
       widget/feed:
         limit: Număr de articole
+      dashboard/action:
+        title: Titlu
+        short_description: Scurtă descriere
+        description: Descriere
     errors:
       models:
         poll/voter:
