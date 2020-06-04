@@ -69,9 +69,12 @@ ro:
       new:
         login_label: Email sau Nume de utilizator
         password_label: Parolă
+        remember_me: Ține minte datele mele
+        submit: Enter
         title: Conectare
     shared:
       links:
+        login: Enter
         new_confirmation: Nu ați primit instrucțiuni pentru a va activa contul?
         new_password: V-ați uitat parola?
         new_unlock: Nu ați primit instrucțiunile de deblocare?
