@@ -138,6 +138,9 @@ ro:
       more_info: Mai multe informații
       recommendation_four: Bucurați-vă de acest spațiu, de vocile care îl umplu, este și al vostru.
       recommendation_one: Nu folosiți majuscule pentru titlul dezbaterii sau pentru propoziții întregi. Pe internet, acest lucru este considerat strigăt. Și nimănui nu-i place să-i fie strigat în față.
+      recommendation_three: Critica nemiloasă este foarte binevenită. Acesta este un spațiu de reflecție. Dar vă recomandăm să comentați cu eleganță și inteligență. Lumea este un loc mai bun, cu aceste virtuți în ea.
+      recommendation_two: Orice dezbatere sau comentariu care sugerează acțiuni ilegale vor fi șterse, precum și cele care intenționează să saboteze spațiile de dezbatere. Orice altceva este permis.
+      recommendations_title: Recomandări pentru crearea unei dezbateri
       start_new: Începe o dezbatere
     show:
       author_deleted: Utilizator șters
@@ -173,6 +176,8 @@ ro:
     proposal_notification: "Notificare"
     budget/investment: Investiție
     budget/group: Grupul Bugetar
+    budget/heading: Titlul bugetului
+    geozone: zonă geo
     legislation/draft_version: schiță
     legislation/process: proces
     legislation/question: întrebare
@@ -194,7 +199,35 @@ ro:
     application:
       chrome: Google Chrome
       firefox: Firefox
+      ie: Am detectat că utilizați Internet Explorer. Pentru o experiență îmbunătățită, vă recomandăm să folosiți %{firefox} sau %{chrome}.
+      ie_title: Acest site web nu este optimizat pentru browserul dumnevoastră
+    dashboard:
+      proposal_header:
+        published: Publicat
+        draft: Schiță
+        retired: Retras
+      proposal_totals:
+        active_resources: Resurse active
+        community: Participanți din comunitatea dumneavoastră
+        show_proposal: Afișează propunere
+        preview_proposal: Previzualizează propunere
+        current_goal: Scopul actual
+        supports:
+          zero: Fără susținători
+    footer:
+      accessibility: Accesibiliate
+      conditions: Termeni si conditii de utilizare
+      consul_url: https://github.com/consul/consul
+      copyright: CONSUL, %{year}
+      description: Acest portal folosește %{consul} care este %{open_source}.
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Decide cum să modelezi orașul în care vrei să trăiești.
+      participation_title: Participare
+      privacy: Politica de Confidențialitate
     header:
+      administration_menu: Meniu
+      administration: Administrare
+      available_locales: Limbi disponibile
       notification_item:
         no_notifications: "Nu aveți notificări noi"
     admin:
@@ -212,3 +245,12 @@ ro:
           one: Există o notificare nouă la
           few: Există %{count} notificări noi la
           other: Există %{count} notificări noi la
+  proposals:
+    create:
+      form:
+        submit_button: Crează propunere
+    edit:
+      editing: Editează propunere
+      form:
+        submit_button: Salvează modificări
+      show_link: Afișează propunere
