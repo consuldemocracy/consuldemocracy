@@ -3,6 +3,7 @@ ro:
     annotations:
       comments:
         see_all: Vezi tot
+        see_complete: Vizualizare completă
         comments_count:
           one: "%{count} comentariu"
           few: "%{count} comentarii"
@@ -26,6 +27,7 @@ ro:
       show:
         title: Comentariu
       version_chooser:
+        seeing_version: Comentarii despre versiune
         see_text: Vezi schița text
     draft_versions:
       changes:
