@@ -538,3 +538,35 @@ ro:
       budget_investment:
         create:
           notice: "Acum urmăriți acest proiect de investiții! <br> Vă vom anunța modificările pe măsură ce apar, astfel încât să fiți la curent."
+        destroy:
+          notice: "Nu mai urmăriți acest proiect de investiții! <br> Nu veți mai primi notificări legate de acest proiect."
+      proposal:
+        create:
+          notice: "Acum urmăriți propunerea acestui cetățean! <br> Vă vom anunța modificările pe măsură ce apar, astfel încât să fiți la curent."
+        destroy:
+          notice: "Nu mai urmăriți propunerea acestui cetățean! <br> Nu veți mai primi notificări legate de această propunere."
+    print:
+      print_button: Printează această informație
+    search: Caută
+    show: Afișează
+    suggest:
+      debate:
+        see_all: "Vezi tot"
+      budget_investment:
+        see_all: "Vezi tot"
+      proposal:
+        see_all: "Vezi tot"
+    tags_cloud:
+      districts: "Districte"
+      districts_list: "Lista de districte"
+      categories: "Categorii"
+  users:
+    login_to_continue: "Trebuie %{signin} sau %{signup} pentru a continua."
+    signin: "conectare"
+    signup: "înregistrare"
+    verify_account: "verifică-ți contul"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "Acest utilizator a decis să nu primească mesaje directe"
+        submit_button: Trimite mesaj
+        title: Trimite mesaj privat către %{receiver}
