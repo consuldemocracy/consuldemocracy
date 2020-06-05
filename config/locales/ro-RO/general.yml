@@ -614,3 +614,33 @@ ro:
       retired_help_text: Panoul de control nu este valabil pentru propunerile retrase
   votes:
     agree: Sunt de acord
+    anonymous: Prea multe voturi anonime pentru a aproba votul %{verify_account}.
+    comment_unauthenticated: Trebuie %{signin} sau %{signup} pentru a vota.
+    disagree: Nu sunt de acord
+    organizations: Organizațiile nu au voie să voteze
+    verified_only: Doar utilizatorii verificați pot vota propunerile; %{verify_account}.
+    budget_investments:
+      not_logged_in: Trebuie %{signin} sau %{signup} pentru a continua.
+      not_verified: Doar utilizatorii verificați pot vota investițiile; %{verify_account}.
+      organization: Organizațiile nu au voie să voteze
+      unfeasible: Proiectele de investiții nerealizabile nu pot fi susținute
+      not_voting_allowed: Etapa de votare este închisă
+      different_heading_assigned:
+        one: "Puteți susține proiecte de investiții doar în %{count} district. Ați susținut deja investiții în %{supported_headings}."
+        few: "Puteți susține proiecte de investiții doar în %{count} districte. Ați susținut deja investiții în %{supported_headings}."
+        other: "Puteți susține proiecte de investiții doar în %{count} districte. Ați susținut deja investiții în %{supported_headings}."
+  welcome:
+    feed:
+      most_active:
+        debates: "Dezbaterile cele mai active"
+        proposals: "Propunerile cele mai active"
+  admin/widget:
+    header:
+      title: Administrare
+  links:
+    form:
+      delete_button: Șterge
+      cancel_button: Anulare
+    nested_links:
+      title: Link-uri
+      add_new_link: Adaugă un link nou
