@@ -23,3 +23,4 @@ ro:
     direct_message_for_receiver:
       subject: "Ați primit un mesaj privat"
       reply: Răspunde-i lui %{sender}
+      unsubscribe_account: Contul meu
