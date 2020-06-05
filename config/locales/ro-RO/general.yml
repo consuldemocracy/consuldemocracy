@@ -460,3 +460,43 @@ ro:
     poster:
       index:
         title: Previzualizare afiș
+        intro_text: "<strong>Particip în %{org}</strong> cu propria propunere și numai dacă vă adăugați, puteți obține sprijinul necesar pentru a face orașul pe care îl dorim cu toții."
+        proposal_code: "Codul propunerii: %{code}"
+        support: Sprijină propunerea
+        footer: "<strong> Accesează %{link} și susține această propunere.</strong>Cu cât mai multe, cu atât mai bine. Mulțumim!"
+      new:
+        title: Afișul propunerii dumneavoastră
+      options:
+        preview: Previzualizare
+        download: Descarcă
+    mailing:
+      index:
+        title: Previzualizare email
+      mailing_options:
+        send: Trimite la %{address}
+        preview: Previzualizare
+      create:
+        sent: Emailul a fost trimit
+    mailer:
+      forward:
+        support_button: Sprijină această propunere
+        share_in: Distribuie în
+        hi: "Bună ziua!"
+        introduction: Scriu pentru a vă anunța că particip la %{org}, platforma pe care putem decide ce oraș dorim să avem. Și pentru asta, mi-am creat propria propunere în calitate de cetățean și acum voi avea nevoie de sprijinul tău! Dar nu vă faceți griji, deoarece este foarte simplu.
+        support: "Trebuie doar să faceți clic pe butonul pe care îl veți vedea mai jos „Sprijină această propunere” și vă puteți informa înainte de a o promova. Doar propunerile care vor obține sprijinul maxim vor fi trimise de către Primărie și am crezut că dumneavoastră sunt sigur că mă veți ajuta!"
+        share: "Și dacă, de asemenea, îmi faci o mare favoare a-mi distribui propunerea cu prietenii, familia și persoanele de contact, ar fi perfect!"
+  polls:
+    all: "Tot"
+    no_dates: "nu există date atribuite"
+    dates: "De la %{open_at} către %{closed_at}"
+    final_date: "Renumărări/ Rezultate finale"
+    index:
+      filters:
+        current: "Deschide"
+        expired: "Expirat"
+      title: "Sondaje"
+      participate_button: "Participă în acest sondaj"
+      participate_button_expired: "Sondaj terminat"
+      no_geozone_restricted: "Tot orașul"
+      geozone_restricted: "Districte"
+      geozone_info: "Pot participa persoane la Recensământul din: "
