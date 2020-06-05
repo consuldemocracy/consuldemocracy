@@ -570,3 +570,4 @@ ro:
         direct_messages_bloqued: "Acest utilizator a decis să nu primească mesaje directe"
         submit_button: Trimite mesaj
         title: Trimite mesaj privat către %{receiver}
+        verified_only: Pentru a trimite mesaj privat %{verify_account}
