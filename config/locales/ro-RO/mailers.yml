@@ -7,6 +7,7 @@ ro:
       manage_email_subscriptions: Pentru a nu mai primi aceste e-mailuri, schimbați setările în
     email_verification:
       click_here_to_verify: acest link
+      subject: Confirmă adresa de email
       thanks: Vă mulțumim foarte mult.
       title: Confirmați contul utilizând următorul link
     reply:
@@ -15,7 +16,9 @@ ro:
       subject: Cineva a răspuns comentariului dumneavoastră
       title: Răspuns nou la comentariul dumneavoastră
     proposal_notification_digest:
+      title: "Notificările propunerilor în %{org_name}"
       share: Partajează propunere
+      comment: Comentează propunerea
       unsubscribe_account: Contul meu
     direct_message_for_receiver:
       subject: "Ați primit un mesaj privat"
