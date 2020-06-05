@@ -571,3 +571,46 @@ ro:
         submit_button: Trimite mesaj
         title: Trimite mesaj privat către %{receiver}
         verified_only: Pentru a trimite mesaj privat %{verify_account}
+      show:
+        receiver: Mesaj trimis către%{receiver}
+    show:
+      deleted: Șters
+      deleted_debate: Această dezbatere a fost ștearsă
+      deleted_proposal: Această propunere a fost ștearsă
+      deleted_budget_investment: Acest proiect de investiții a fost șters
+      proposals: Propuneri
+      proposals_status: Status
+      debates: Dezbateri
+      budget_investments: Buget de investiții
+      comments: Comentarii
+      actions: Acțiuni
+      filters:
+        comments:
+          one: 1 comentariu
+          few: "%{count} comentarii"
+          other: "%{count} comentarii"
+        debates:
+          one: 1 Dezbatere
+          few: "%{count} Dezbateri"
+          other: "%{count} Dezbateri"
+        proposals:
+          one: 1 Propunere
+          few: "%{count} Propuneri"
+          other: "%{count} Propuneri"
+        budget_investments:
+          one: 1 Investiție
+          few: "%{count} Investiții"
+          other: "%{count} Investiții"
+      no_activity: Acest utilizator nu are activitate publică
+      no_private_messages: "Acest utilizator nu acceptă mesaje private."
+      private_activity: Acest utilizator a decis să își mențină activitatea privată.
+      send_private_message: "Trimite mesaj privat"
+    proposals:
+      retired: "Propunere retrasă"
+      draft: Schiță
+      published: Publicat
+      see: "Vezi propunere"
+      actions: Acțiuni
+      retired_help_text: Panoul de control nu este valabil pentru propunerile retrase
+  votes:
+    agree: Sunt de acord
