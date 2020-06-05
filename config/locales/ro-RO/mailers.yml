@@ -24,3 +24,8 @@ ro:
       subject: "Ați primit un mesaj privat"
       reply: Răspunde-i lui %{sender}
       unsubscribe_account: Contul meu
+    direct_message_for_sender:
+      subject: "Ați trimis un nou mesaj privat"
+      title: "Ați trimis un mesaj privat către<strong>%{receiver}</strong> cu următorul conținut:"
+    user_invite:
+      thanks: "Vă mulțumim foarte mult."
