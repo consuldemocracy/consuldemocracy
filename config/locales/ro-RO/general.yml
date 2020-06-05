@@ -128,6 +128,7 @@ ro:
         title: Dezbateri
         help: Ajutor pentru dezbateri
       section_footer:
+        title: Ajutor pentru dezbateri
         description: Începeți o dezbatere pentru a împărtăși opinii cu alții despre subiectele care vă preocupă.
         help_text_1: "Spațiul pentru dezbaterile cetățenilor se adresează oricui își poate expune problemele și celor care vor să își împărtășească opiniile cu alte persoane."
         help_text_2: 'Pentru a deschide o dezbatere, trebuie să vă înscrieți la %{org}. Utilizatorii pot, de asemenea, să comenteze dezbaterile deschise și să le evalueze cu butoanele „Sunt de acord” sau „Nu sunt de acord”.'
@@ -218,7 +219,9 @@ ro:
     footer:
       accessibility: Accesibiliate
       conditions: Termeni si conditii de utilizare
+      consul: Cerere CONSUL
       consul_url: https://github.com/consul/consul
+      contact_us: Pentru ajutor tehnic mergeți la
       copyright: CONSUL, %{year}
       description: Acest portal folosește %{consul} care este %{open_source}.
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -229,7 +232,27 @@ ro:
       administration_menu: Meniu
       administration: Administrare
       available_locales: Limbi disponibile
+      collaborative_legislation: Legislație colaborativă
+      debates: Dezbateri
+      locale: "Limbă:"
+      logo: Logo CONSUL
+      management: Administrare
+      moderation: Moderare
+      valuation: Evaluare
+      officing: Ofițerii de votare
+      help: Ajutor
+      my_account_link: Contul meu
+      my_activity_link: Conținutul meu
+      open: deschide
+      proposals: Propuneri
+      poll_questions: Votare
+      budgets: Bugetare participativă
       notification_item:
+        new_notifications:
+          one: Aveți o notificare nouă
+          few: Aveți %{count} notificări noi
+          other: Aveți %{count} notificări noi
+        notifications: Notificări
         no_notifications: "Nu aveți notificări noi"
     admin:
       watch_form_message: "Aveți modificări nesalvate. Sunteți sigur că doriți să părăsiți pagina?"
@@ -242,10 +265,46 @@ ro:
       unread: Necitit
     notification:
       action:
+        comments_on:
+          one: Cineva a comentat la
+          few: Există %{count} notificări noi la
+          other: Există %{count} notificări noi la
         proposal_notification:
           one: Există o notificare nouă la
           few: Există %{count} notificări noi la
           other: Există %{count} notificări noi la
+        replies_to:
+          one: Aveți un răspuns la comentariu dumneavoastră de la
+          few: Aveți %{count} răspunsuri la comentariu dumneavoastră de la
+          other: Aveți %{count} răspunsuri la comentariu dumneavoastră de la
+      mark_as_read: Marchează ca citit
+      mark_as_unread: Marchează ca necitit
+      notifiable_hidden: Această resursă nu mai este valabilă.
+  map:
+    title: "Districte"
+    proposal_for_district: "Începeți o propunere pentru districtul dumneavoastră"
+    start_proposal: Crează propunere
+  omniauth:
+    facebook:
+      sign_in: Conectează-te cu Facebook
+      sign_up: Înregistrează-te cu Facebook
+      name: Facebook
+    finish_signup:
+      title: "Detalii adiționale"
+      username_warning: "Datorită schimbării modului în care interacționăm cu rețelele de socializare, este posibil ca numele dvs. de utilizator să apară acum ca „deja în uz”. Dacă pățiți asta, vă rugăm să alegeți un nume de utilizator diferit."
+    google_oauth2:
+      sign_in: Conectează-te cu Google
+      sign_up: Înregistrează-te cu Google
+      name: Google
+    wordpress_oauth2:
+      sign_in: Conectează-te cu Wordpress
+      sign_up: Înregistrează-te cu Wordpress
+      name: Wordpress
+    twitter:
+      sign_in: Conectează-te cu Twitter
+      sign_up: Înregistrează-te cu Twitter
+      name: Twitter
+    info_sign_in: "Conectează-te cu:"
   proposals:
     create:
       form:
@@ -356,6 +415,25 @@ ro:
       mailing: E-mail
       poster: Afiș
       recommended_actions: Acțiuni recomandate
+    recommended_actions:
+      pending_title: În așteptare
+      show_description: Afișează descriere
+      without_pending_actions: Nici o acțiune recomandată în așteptare
+      done_title: Gata
+      without_done_actions: Nici o acțiune recomandată în așteptare
+    next_goal:
+      title: Scop
+      see_complete_course: Vezi cursul complet
+      hide_course: Ascunde curs
+    goal:
+      days:
+        one: "%{count} zi"
+        few: "%{count} zile"
+        other: "%{count} zile"
+      locked_resource: Resursă blocată
+    community:
+      access_community: Accesează comunitatea
+      latest_activity: "Activitatate recentă a comunității: %{at}"
     messages:
       previous_notifications: Vezi notificările anterioare
     polls:
@@ -365,3 +443,20 @@ ro:
         additiontal_information: Informații suplimentare
       new:
         title: Sondaj nou
+      poll:
+        show_results_help: Dacă bifați această casetă, rezultatele vor fi publice și toți utilizatorii vor putea să le vadă
+        delete: Șterge chestionar
+        alert_notice: Această acțiune va elimina chestionar și toate întrebările asociate.
+        success_notice: Chestionar șters cu succes
+        unable_notice: Nu puteți șterge un chestionar care are răspunsuri
+      form:
+        name: Titlul chestionarului
+        add_question: Adaugă întrebare
+      question_fields:
+        remove_question: Înlătură întrebare
+        add_answer: Adaugă întrebare
+      question_answer_fields:
+        remove_answer: Înlătură răspuns
+    poster:
+      index:
+        title: Previzualizare afiș
