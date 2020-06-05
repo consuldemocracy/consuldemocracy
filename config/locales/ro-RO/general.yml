@@ -500,3 +500,41 @@ ro:
       no_geozone_restricted: "Tot orașul"
       geozone_restricted: "Districte"
       geozone_info: "Pot participa persoane la Recensământul din: "
+      already_answer: "Ați participat deja în acest sondaj"
+      not_logged_in: "Trebuie să vă conectați sau să vă înscrieți pentru a participa"
+      unverified: "Trebuie să vă verificați contul pentru a participa"
+      cant_answer: "Acest sondaj nu este valabil în geo zona dumneavoastră"
+  shared:
+    "yes": "Da"
+    "no": "Nu"
+    search_results: "Rezultatele căutării"
+    advanced_search:
+      author_type: "Pe categorii de autor"
+      author_type_blank: "Selectează o categorie"
+      date: "După dată"
+      date_placeholder: "ZZ/LL/AAAA"
+      date_range_blank: "Alege o dată"
+      date_1: "Ultimele 24 ore"
+      date_2: "Ultima săptămână"
+      date_3: "Ultima lună"
+      date_4: "Ultimul an"
+      date_5: "Personalizabile"
+      from: "De la"
+      general: "Cu textul"
+      general_placeholder: "Scrie textul"
+      search: "Filtru"
+      title: "Căutare avansată"
+      to: "La"
+    author_info:
+      author_deleted: Utilizator șters
+      email_deleted: Email șters
+    back: Mergi înapoi
+    check: Selectează
+    check_all: Tot
+    check_none: Nici unul
+    collective: Colectiv
+    flag: Semnalați ca necorespunzător
+    followable:
+      budget_investment:
+        create:
+          notice: "Acum urmăriți acest proiect de investiții! <br> Vă vom anunța modificările pe măsură ce apar, astfel încât să fiți la curent."
