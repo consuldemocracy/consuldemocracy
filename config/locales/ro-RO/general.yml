@@ -126,6 +126,7 @@ ro:
       title: Dezbateri
       section_header:
         title: Dezbateri
+        help: Ajutor pentru dezbateri
       section_footer:
         description: Începeți o dezbatere pentru a împărtăși opinii cu alții despre subiectele care vă preocupă.
         help_text_1: "Spațiul pentru dezbaterile cetățenilor se adresează oricui își poate expune problemele și celor care vor să își împărtășească opiniile cu alte persoane."
