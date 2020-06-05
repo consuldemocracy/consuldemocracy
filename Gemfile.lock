@@ -594,7 +594,7 @@ GEM
       selenium-webdriver (>= 3.0, < 4.0)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     whenever (0.10.0)
       chronic (>= 0.6.3)
     wicked_pdf (1.1.0)
