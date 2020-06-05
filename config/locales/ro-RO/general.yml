@@ -347,6 +347,17 @@ ro:
           success: "Recomandările pentru dezbateri sunt acum dezactivate pentru acest cont"
           error: "A aparut o eroare. Vă rugăm să accesați pagina „Contul meu” pentru a dezactiva manual recomandările pentru dezbateri"
       retired_proposals: Retrage propunere
+      retired_proposals_link: "Propunere retrasă de către autor"
+      selected_proposals: Propuneri selectate
+      selected_proposals_link: Vezi propuneri selectate
+      archived_proposals: Propuneri arhivate
+      proposals_lists: Lista propunerilor
+      retired_links:
+        all: Tot
+        duplicated: Duplicată
+        unfeasible: Nerealizabil
+        other: Alta
+      select_order: Ordonează după
     new:
       recommendation_two: Orice dezbatere sau comentariu care sugerează acțiuni ilegale vor fi șterse, precum și cele care intenționează să saboteze spațiile de dezbatere. Orice altceva este permis.
       recommendations_title: Recomandări pentru crearea o propunere
@@ -644,3 +655,15 @@ ro:
     nested_links:
       title: Link-uri
       add_new_link: Adaugă un link nou
+    link_fields:
+      label_placeholder: Link către titlu
+  communities:
+    show:
+      surveys: Chestionare
+      complete_survey: Completează chestionarul
+    subnav:
+      surveys: Chestionare
+  remote_translations:
+    text: Conținutul acestei pagini nu este valabil în limba dumneavoastră
+    all_remote_translations_enqueued_text: Într-o perioadă scurtă de timp dacă veți reîmprospăta pagina, veți putea vedea tot conținutul în limba dumneavoastră.
+    button: Tradu pagina
