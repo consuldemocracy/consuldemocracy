@@ -469,6 +469,17 @@ ro:
         day_offset: La câte zile după crearea propunerii doriți ca aceasta să fie activată?
         required_supports: Cât suport trebuie să primească o propunere pentru a fi activată?
         order: Puteți introduce poziția în care această acțiune va fi afișată utilizatorului în lista de acțiuni
+        action_type_resource: "Resursă"
+        published_proposal: "Pentru propuneri publicate?"
+      dashboard/administrator_task:
+        source: Sursă
+        user: Executat de
+      link:
+        label: Titlu
+        url: Link
+      valuator:
+        description: Descriere
+        valuator_group_id: Grup de evaluare
     errors:
       models:
         map_location:
