@@ -356,8 +356,17 @@ ro:
         all: Tot
         duplicated: Duplicată
         unfeasible: Nerealizabil
+        done: Gata
         other: Alta
+      search_form:
+        button: Caută
+        placeholder: Caută propuneri...
+        title: Caută
       select_order: Ordonează după
+      start_proposal: Crează propunere
+      title: Propuneri
+      section_header:
+        title: Propuneri
     new:
       recommendation_two: Orice dezbatere sau comentariu care sugerează acțiuni ilegale vor fi șterse, precum și cele care intenționează să saboteze spațiile de dezbatere. Orice altceva este permis.
       recommendations_title: Recomandări pentru crearea o propunere
