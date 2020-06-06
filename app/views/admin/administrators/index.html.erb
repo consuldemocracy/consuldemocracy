@@ -29,13 +29,7 @@
             <%= administrator.description %>
           </td>
           <td>
-            <%= link_to t("admin.actions.edit"),
-                        edit_admin_administrator_path(administrator),
-                        class: "button hollow" %>
-            <%= link_to t("admin.administrators.administrator.delete"),
-                        admin_administrator_path(administrator),
-                        method: :delete,
-                        class: "button hollow alert" %>
+            <%= render "shared/table_actions", record: administrator, actions: [:edit, :destroy] %>
           </td>
         </tr>
       <% end %>

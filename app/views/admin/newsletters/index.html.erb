@@ -29,18 +29,10 @@
           <% end %>
         </td>
         <td>
-          <div class="small-4 column">
-          <%= link_to t("admin.newsletters.index.edit"), edit_admin_newsletter_path(newsletter),
-                                                         class: "button hollow expanded" %>
-          </div>
-          <div class="small-4 column">
-          <%= link_to t("admin.newsletters.index.delete"), admin_newsletter_path(newsletter),
-                                                           method: :delete, class: "button hollow alert expanded" %>
-          </div>
-          <div class="small-4 column">
+          <%= render "shared/table_actions", record: newsletter, actions: [:edit, :destroy] %>
+
           <%= link_to t("admin.newsletters.index.preview"), admin_newsletter_path(newsletter),
-                                                            class: "button expanded" %>
-          </div>
+                                                            class: "button" %>
         </td>
       </tr>
     <% end %>

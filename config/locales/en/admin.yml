@@ -297,8 +297,6 @@ en:
         table_name: Name
         table_description: Description
         table_actions: Actions
-        delete: Delete
-        edit: Edit
       edit:
         title: Edit milestone status
       update:
@@ -362,7 +360,6 @@ en:
           description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
           create: Create resource or action
           edit: Edit
-          delete: Delete
           active: 'Yes'
           inactive: 'No'
           title: Resources and actions
@@ -497,7 +494,6 @@ en:
           banner_title: Header colors
         index:
           create: New process
-          delete: Delete
           title: Collaborative legislation
           filters:
             active: Active
@@ -629,7 +625,6 @@ en:
         no_managers: There are no managers.
       manager:
         add: Add
-        delete: Delete
       search:
         title: "Managers: User search"
     menu:
@@ -709,7 +704,6 @@ en:
         no_administrators: There are no administrators.
       administrator:
         add: Add
-        delete: Delete
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
         title: "Administrators: User search"
@@ -724,7 +718,6 @@ en:
         no_moderators: There are no moderators.
       moderator:
         add: Add
-        delete: Delete
       search:
         title: "Moderators: User search"
     segment_recipient:
@@ -751,8 +744,6 @@ en:
         sent: Sent
         actions: Actions
         draft: Draft
-        edit: Edit
-        delete: Delete
         preview: Preview
         empty_newsletters: There are no newsletters to show
       new:
@@ -788,8 +779,6 @@ en:
         sent: Sent
         actions: Actions
         draft: Draft
-        edit: Edit
-        delete: Delete
         preview: Preview
         view: View
         empty_notifications: There are no notifications to show
@@ -887,7 +876,6 @@ en:
         can_edit_dossier: "Can edit dossier"
       valuator:
         add: Add to valuators
-        delete: Delete
       search:
         title: "Valuators: User search"
       form:
@@ -1309,8 +1297,6 @@ en:
       index:
         title: Geozone
         create: Create geozone
-        edit: Edit
-        delete: Delete
       geozone:
         name: Name
         external_code: External code

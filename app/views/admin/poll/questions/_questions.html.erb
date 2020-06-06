@@ -27,12 +27,7 @@
             <% end %>
           </td>
           <td>
-            <div class="small-6 column">
-              <%= link_to t("shared.edit"), edit_admin_question_path(question), class: "button hollow expanded" %>
-            </div>
-            <div class="small-6 column">
-              <%= link_to t("shared.delete"), admin_question_path(question), class: "button hollow alert expanded", method: :delete %>
-            <div class="small-6 column">
+            <%= render "shared/table_actions", record: question, actions: [:edit, :destroy] %>
           </td>
         </tr>
       <% end %>

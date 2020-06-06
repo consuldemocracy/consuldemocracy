@@ -29,15 +29,7 @@
           <td><%= video.title %></td>
           <td><%= link_to "#{video.url}", video.url %></td>
           <td class="text-right">
-
-            <%= link_to t("shared.edit"),
-                          edit_admin_video_path(video),
-                          class: "button hollow" %>
-
-            <%= link_to t("shared.delete"),
-                        admin_video_path(video),
-                        class: "button hollow alert",
-                        method: :delete %>
+            <%= render "shared/table_actions", record: video, actions: [:edit, :destroy] %>
           </td>
         </tr>
       <% end %>

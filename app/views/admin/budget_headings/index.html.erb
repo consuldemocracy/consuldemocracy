@@ -34,13 +34,7 @@
             <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
           </td>
           <td>
-            <%= link_to t("admin.actions.edit"),
-                        edit_admin_budget_group_heading_path(@budget, @group, heading),
-                        class: "button hollow" %>
-            <%= link_to t("admin.actions.delete"),
-                        admin_budget_group_heading_path(@budget, @group, heading),
-                        method: :delete,
-                        class: "button hollow alert" %>
+            <%= render "shared/table_actions", record: heading, actions: [:edit, :destroy] %>
           </td>
         </tr>
       <% end %>

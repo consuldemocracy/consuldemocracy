@@ -29,13 +29,7 @@
           <td><%= link_to t("admin.budget_groups.headings_manage"),
                           admin_budget_group_headings_path(@budget, group) %></td>
           <td>
-            <%= link_to t("admin.actions.edit"),
-                        edit_admin_budget_group_path(@budget, group),
-                        class: "button hollow" %>
-            <%= link_to t("admin.actions.delete"),
-                        admin_budget_group_path(@budget, group),
-                        method: :delete,
-                        class: "button hollow alert" %>
+            <%= render "shared/table_actions", record: group, actions: [:edit, :destroy] %>
           </td>
         </tr>
       <% end %>

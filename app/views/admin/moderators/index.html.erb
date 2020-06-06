@@ -24,10 +24,7 @@
               <%= moderator.email %>
             </td>
             <td>
-              <%= link_to t("admin.moderators.moderator.delete"),
-                          admin_moderator_path(moderator),
-                          method: :delete,
-                          class: "button hollow alert expanded" %>
+              <%= render "shared/table_actions", record: moderator, actions: [:destroy] %>
             </td>
           </tr>
         <% end %>

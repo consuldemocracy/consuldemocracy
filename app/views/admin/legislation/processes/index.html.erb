@@ -35,9 +35,7 @@
           <td class="text-center"><%= I18n.l process.end_date %></td>
           <td class="text-center"><%= process.total_comments %></td>
           <td>
-            <%= link_to t("admin.legislation.processes.index.delete"), admin_legislation_process_path(process),
-                        method: :delete,
-                        class: "button hollow alert expanded" %>
+            <%= render "shared/table_actions", record: process, actions: [:destroy] %>
           </td>
         </tr>
       <% end %>

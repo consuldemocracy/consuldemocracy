@@ -22,17 +22,7 @@
         <td><%= geozone.census_code %></td>
         <td class="break"><%= geozone.html_map_coordinates %></td>
         <td>
-          <div class="small-6 column">
-            <%= link_to t("admin.geozones.index.edit"),
-                        edit_admin_geozone_path(geozone),
-                        class: "button hollow expanded" %>
-          </div>
-          <div class="small-6 column">
-            <%= link_to t("admin.geozones.index.delete"),
-                        admin_geozone_path(geozone),
-                        method: :delete,
-                        class: "button hollow alert expanded" %>
-          </div>
+          <%= render "shared/table_actions", record: geozone, actions: [:edit, :destroy] %>
         </td>
       </tr>
     <% end %>
