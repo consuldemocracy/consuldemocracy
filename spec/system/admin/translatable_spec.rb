@@ -17,7 +17,7 @@ describe "Admin edit translatable records" do
   context "Add a translation", :js do
     context "Input fields" do
       let(:translatable) { create(:budget_heading) }
-      let(:path) { edit_admin_budget_group_heading_path(translatable.budget, translatable.group, translatable) }
+      let(:path) { admin_polymorphic_path(translatable, action: :edit) }
 
       scenario "Maintains existing translations" do
         visit path

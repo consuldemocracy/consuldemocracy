@@ -265,3 +265,23 @@ end
 resolve "Audit" do |audit|
   [*resource_hierarchy_for(audit.associated || audit.auditable), audit]
 end
+
+resolve "Budget::Group" do |group, options|
+  [group.budget, :group, options.merge(id: group)]
+end
+
+resolve "Budget::Heading" do |heading, options|
+  [heading.budget, :group, :heading, options.merge(group_id: heading.group, id: heading)]
+end
+
+resolve "Poll::Booth" do |booth, options|
+  [:booth, options.merge(id: booth)]
+end
+
+resolve "Poll::Officer" do |officer, options|
+  [:officer, options.merge(id: officer)]
+end
+
+resolve "Poll::Question::Answer::Video" do |video, options|
+  [:video, options.merge(id: video)]
+end
