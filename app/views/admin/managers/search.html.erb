@@ -19,7 +19,7 @@
           <td><%= user.email %></td>
           <td>
             <% if user.manager? && user.manager.persisted? %>
-              <%= render "shared/table_actions", record: user.manager, actions: [:destroy] %>
+              <%= render Admin::TableActionsComponent.new(user.manager, actions: [:destroy]) %>
             <% else %>
               <%= link_to t("admin.managers.manager.add"),
                           { controller: "admin/managers",

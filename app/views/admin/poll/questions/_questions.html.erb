@@ -27,7 +27,7 @@
             <% end %>
           </td>
           <td>
-            <%= render "shared/table_actions", record: question, actions: [:edit, :destroy] %>
+            <%= render Admin::TableActionsComponent.new(question) %>
           </td>
         </tr>
       <% end %>

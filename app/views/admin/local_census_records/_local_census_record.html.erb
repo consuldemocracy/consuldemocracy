@@ -12,6 +12,6 @@
     <%= local_census_record.postal_code %>
   </td>
   <td>
-    <%= render "shared/table_actions", record: local_census_record, actions: [:edit, :destroy] %>
+    <%= render Admin::TableActionsComponent.new(local_census_record) %>
   </td>
 </tr>

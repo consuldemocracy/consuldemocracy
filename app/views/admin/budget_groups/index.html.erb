@@ -29,7 +29,7 @@
           <td><%= link_to t("admin.budget_groups.headings_manage"),
                           admin_budget_group_headings_path(@budget, group) %></td>
           <td>
-            <%= render "shared/table_actions", record: group, actions: [:edit, :destroy] %>
+            <%= render Admin::TableActionsComponent.new(group) %>
           </td>
         </tr>
       <% end %>

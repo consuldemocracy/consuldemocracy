@@ -23,7 +23,7 @@
             <%= status.description %>
           </td>
           <td>
-            <%= render "shared/table_actions", record: status, actions: [:edit, :destroy] %>
+            <%= render Admin::TableActionsComponent.new(status) %>
           </td>
         </tr>
       <% end %>

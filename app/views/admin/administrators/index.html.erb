@@ -29,7 +29,7 @@
             <%= administrator.description %>
           </td>
           <td>
-            <%= render "shared/table_actions", record: administrator, actions: [:edit, :destroy] %>
+            <%= render Admin::TableActionsComponent.new(administrator) %>
           </td>
         </tr>
       <% end %>

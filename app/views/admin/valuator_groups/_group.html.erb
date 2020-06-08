@@ -6,6 +6,6 @@
     <%= group.valuators.count %>
   </td>
   <td>
-    <%= render "shared/table_actions", record: group, actions: [:edit, :destroy] %>
+    <%= render Admin::TableActionsComponent.new(group) %>
   </td>
 </tr>

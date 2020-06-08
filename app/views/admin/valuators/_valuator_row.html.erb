@@ -19,6 +19,6 @@
     <%= valuator_abilities(valuator) %>
   </td>
   <td>
-    <%= render "shared/table_actions", record: valuator, actions: [:edit, :destroy] %>
+    <%= render Admin::TableActionsComponent.new(valuator) %>
   </td>
 </tr>

@@ -35,7 +35,7 @@
           <td class="text-center"><%= I18n.l process.end_date %></td>
           <td class="text-center"><%= process.total_comments %></td>
           <td>
-            <%= render "shared/table_actions", record: process, actions: [:destroy] %>
+            <%= render Admin::TableActionsComponent.new(process, actions: [:destroy]) %>
           </td>
         </tr>
       <% end %>

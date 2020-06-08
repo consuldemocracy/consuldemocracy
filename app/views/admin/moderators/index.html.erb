@@ -24,7 +24,7 @@
               <%= moderator.email %>
             </td>
             <td>
-              <%= render "shared/table_actions", record: moderator, actions: [:destroy] %>
+              <%= render Admin::TableActionsComponent.new(moderator, actions: [:destroy]) %>
             </td>
           </tr>
         <% end %>

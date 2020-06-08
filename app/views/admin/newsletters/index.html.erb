@@ -29,7 +29,7 @@
           <% end %>
         </td>
         <td>
-          <%= render "shared/table_actions", record: newsletter, actions: [:edit, :destroy] %>
+          <%= render Admin::TableActionsComponent.new(newsletter) %>
 
           <%= link_to t("admin.newsletters.index.preview"), admin_newsletter_path(newsletter),
                                                             class: "button" %>

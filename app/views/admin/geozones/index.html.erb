@@ -22,7 +22,7 @@
         <td><%= geozone.census_code %></td>
         <td class="break"><%= geozone.html_map_coordinates %></td>
         <td>
-          <%= render "shared/table_actions", record: geozone, actions: [:edit, :destroy] %>
+          <%= render Admin::TableActionsComponent.new(geozone) %>
         </td>
       </tr>
     <% end %>

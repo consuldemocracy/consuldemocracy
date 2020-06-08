@@ -17,6 +17,6 @@
     <% end %>
   </td>
   <td>
-    <%= render "shared/table_actions", record: card, actions: [:edit, :destroy] %>
+    <%= render Admin::TableActionsComponent.new(card) %>
   </td>
 </tr>

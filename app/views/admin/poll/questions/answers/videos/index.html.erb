@@ -29,7 +29,7 @@
           <td><%= video.title %></td>
           <td><%= link_to "#{video.url}", video.url %></td>
           <td class="text-right">
-            <%= render "shared/table_actions", record: video, actions: [:edit, :destroy] %>
+            <%= render Admin::TableActionsComponent.new(video) %>
           </td>
         </tr>
       <% end %>

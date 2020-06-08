@@ -30,7 +30,7 @@
         </td>
         <td>
           <% if admin_notification.draft? %>
-            <%= render "shared/table_actions", record: admin_notification, actions: [:edit, :destroy] %>
+            <%= render Admin::TableActionsComponent.new(admin_notification) %>
             <%= link_to t("admin.admin_notifications.index.preview"),
                         admin_admin_notification_path(admin_notification),
                         class: "button" %>

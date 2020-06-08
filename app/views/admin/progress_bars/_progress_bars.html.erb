@@ -36,7 +36,7 @@
             <%= number_to_percentage(progress_bar.percentage, strip_insignificant_zeros: true) %>
           </td>
           <td>
-            <%= render "shared/table_actions", record: progress_bar, actions: [:edit, :destroy] %>
+            <%= render Admin::TableActionsComponent.new(progress_bar) %>
           </td>
         </tr>
       <% end %>

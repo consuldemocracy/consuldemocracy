@@ -22,7 +22,7 @@
               <%= manager.email %>
             </td>
             <td>
-              <%= render "shared/table_actions", record: manager, actions: [:destroy] %>
+              <%= render Admin::TableActionsComponent.new(manager, actions: [:destroy]) %>
             </td>
           </tr>
         <% end %>

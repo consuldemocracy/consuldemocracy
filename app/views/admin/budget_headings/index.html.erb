@@ -34,7 +34,7 @@
             <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
           </td>
           <td>
-            <%= render "shared/table_actions", record: heading, actions: [:edit, :destroy] %>
+            <%= render Admin::TableActionsComponent.new(heading) %>
           </td>
         </tr>
       <% end %>

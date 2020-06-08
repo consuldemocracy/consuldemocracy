@@ -32,7 +32,7 @@
         <td>
           <%= link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
                                                             class: "button hollow" %>
-          <%= render "shared/table_actions", record: question, actions: [:edit, :destroy] %>
+          <%= render Admin::TableActionsComponent.new(question) %>
         </td>
       </tr>
     <% end %>
