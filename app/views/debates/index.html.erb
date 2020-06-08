@@ -34,7 +34,9 @@
       </div>
     </div>
   <% else %>
-    <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
+    <%= render "shared/section_header",
+               i18n_namespace: "debates.index.section_header",
+               image: "far fa-comment-alt" %>
   <% end %>
 
   <% if feature?("user.recommendations") && @recommended_debates.present? %>

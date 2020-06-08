@@ -29,3 +29,14 @@ en:
       contact_title: "Neem contact met ons:"
       contact_email: "stemvangroningen@groningen.nl"
       facebook: "facebook/steamvangroningen"
+  debates:
+    index:
+      section_header:
+        description: "Start a debate to share your views on topics you consider important."
+      orders:
+        confidence_score: "Highest rated"
+        created_at: "Newest"
+        hot_score: "Most active"
+        most_commented: "Most commented"
+        relevance: "Relevance"
+        recommendations: "Recommendations"

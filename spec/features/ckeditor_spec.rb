@@ -9,7 +9,10 @@ describe "CKEditor" do
 
     expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"
 
-    click_link "Debates"
+    within(".subnavigation") do
+      click_link "Debates"
+    end
+
     click_link "Start a debate"
 
     expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"

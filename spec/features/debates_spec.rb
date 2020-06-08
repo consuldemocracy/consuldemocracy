@@ -404,9 +404,9 @@ describe "Debates" do
       medium_debate.update_column(:confidence_score, 5)
 
       visit debates_path
-      click_link "highest rated"
+      click_link "Highest rated"
 
-      expect(page).to have_selector("a.is-active", text: "highest rated")
+      expect(page).to have_selector("a.is-active", text: "Highest rated")
 
       within "#debates" do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -423,9 +423,9 @@ describe "Debates" do
       worst_debate = create(:debate, title: "Worst", created_at: Time.current - 1.day)
 
       visit debates_path
-      click_link "newest"
+      click_link "Newest"
 
-      expect(page).to have_selector("a.is-active", text: "newest")
+      expect(page).to have_selector("a.is-active", text: "Newest")
 
       within "#debates" do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -467,7 +467,7 @@ describe "Debates" do
         login_as(user)
         visit debates_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
         expect(page).to have_content "There are no debates related to your interests"
       end
@@ -478,7 +478,7 @@ describe "Debates" do
         login_as(user)
         visit debates_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
         expect(page).to have_content "Follow proposals so we can give you recommendations"
       end
@@ -490,9 +490,9 @@ describe "Debates" do
         login_as(user)
         visit debates_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
-        expect(page).to have_selector("a.is-active", text: "recommendations")
+        expect(page).to have_selector("a.is-active", text: "Recommendations")
 
         within "#debates" do
           expect(best_debate.title).to appear_before(medium_debate.title)
@@ -911,7 +911,7 @@ describe "Debates" do
       fill_in "search", with: "Show you got"
       click_button "Search"
 
-      expect(page).to have_selector("a.is-active", text: "relevance")
+      expect(page).to have_selector("a.is-active", text: "Relevance")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -929,8 +929,8 @@ describe "Debates" do
       visit debates_path
       fill_in "search", with: "Show you got"
       click_button "Search"
-      click_link "newest"
-      expect(page).to have_selector("a.is-active", text: "newest")
+      click_link "Newest"
+      expect(page).to have_selector("a.is-active", text: "Newest")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -953,8 +953,8 @@ describe "Debates" do
       visit debates_path
       fill_in "search", with: "Show you got"
       click_button "Search"
-      click_link "recommendations"
-      expect(page).to have_selector("a.is-active", text: "recommendations")
+      click_link "Recommendations"
+      expect(page).to have_selector("a.is-active", text: "Recommendations")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"

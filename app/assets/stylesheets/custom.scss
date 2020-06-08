@@ -11,6 +11,9 @@
 // 5. Legislation
 // 6. Comments
 // 7. Admin
+// 8. Debates
+// 9. Related content
+//
 
 // 0. Global styles
 // --------------------
@@ -31,8 +34,25 @@ a {
   min-height: $line-height * 2;
 }
 
-.input-group-button button {
-  min-height: 0;
+.input-group-button {
+
+  button,
+  .button {
+    border-bottom-right-radius: rem-calc(4) !important;
+    border-top-right-radius: rem-calc(4) !important;
+    max-height: $line-height * 2;
+    min-height: 0;
+  }
+}
+
+.input-group,
+.input-group-field {
+
+  input {
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-right: 0 !important;
+  }
 }
 
 .input-group-field,
@@ -181,6 +201,11 @@ aside {
       position: absolute;
     }
   }
+
+  a {
+    color: $brand;
+    font-weight: bold;
+  }
 }
 
 .sidebar-divider {
@@ -243,6 +268,12 @@ aside {
   margin-bottom: $line-height;
 }
 
+.debate,
+.proposal,
+.investment-project,
+.budget-investment,
+.legislation,
+.communities-show,
 .budget-investments-list .budget-investment,
 .proposals-list .proposal,
 .legislation-proposals .proposal, {
@@ -1235,6 +1266,14 @@ aside .supported .button.button-remove-support.expanded {
 
 .comments {
 
+  h3 {
+    border-bottom: 4px solid $brand;
+    color: $brand;
+    display: table;
+    font-size: $base-font-size;
+    padding: $line-height / 2 $line-height;
+  }
+
   .comment {
 
     p {
@@ -1383,4 +1422,180 @@ aside .supported .button.button-remove-support.expanded {
 
 .ui-datepicker-calendar thead tr th {
   border: 1px solid $border;
+}
+
+// 8. Debates
+// --------------------
+
+.debate-new .header {
+  background: $brand-secondary;
+
+  &::before {
+    background: $brand-secondary;
+  }
+
+  &::before,
+  &::after {
+    border-color: $brand-secondary;
+    color: $brand-secondary;
+  }
+}
+
+.debate .votes {
+  padding-top: $line-height;
+}
+
+.debate .votes,
+.debate-show .votes {
+  border-left: 0;
+}
+
+.debate-show .votes {
+  text-align: left;
+}
+
+.debate,
+.debate-show,
+.proposal-show,
+.legislation-proposals {
+
+  .votes {
+
+    .divider {
+      display: none;
+    }
+
+    .percentage,
+    .total-votes {
+      font-size: $small-font-size;
+    }
+
+    .icon-like,
+    .icon-unlike {
+      background: none;
+      border: 0;
+      color: $text;
+      font-size: $base-font-size;
+    }
+
+    .no-voted {
+
+      .icon-like,
+      .icon-unlike {
+        opacity: 1;
+      }
+    }
+
+    .like,
+    .unlike {
+      background: $light;
+      display: block;
+      padding: $line-height / 4;
+      padding-top: $line-height / 2;
+      width: rem-calc(48);
+
+      &.voted {
+
+        .percentage {
+          color: #fff;
+        }
+      }
+    }
+
+    .like {
+
+      &:hover {
+        background: $like;
+
+        .percentage,
+        .icon-like {
+          color: #fff;
+        }
+      }
+
+      &.voted {
+        background: $like;
+      }
+    }
+
+    .unlike {
+
+      &:hover {
+        background: $unlike;
+
+        .percentage,
+        .icon-unlike {
+          color: #fff;
+        }
+      }
+
+      &.voted {
+        background: $unlike;
+      }
+    }
+  }
+}
+
+// 9. Related content
+// --------------------
+
+.related-content-list {
+
+  li {
+    border-bottom: 2px solid $border;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+
+  .related-content-title {
+    color: $text;
+    padding-left: rem-calc(18);
+    position: relative;
+
+    &.debate,
+    &.proposal,
+    &.budget-investment {
+
+      &::before {
+        font-family: "Font Awesome 5 Free";
+        font-size: $small-font-size;
+        left: 0;
+        position: absolute;
+        top: -3px;
+      }
+    }
+
+    &.debate::before {
+      content: "\f27a";
+    }
+
+    &.proposal::before {
+      content: "\f0eb";
+    }
+
+    &.budget-investment::before {
+      content: "\f200";
+      font-weight: bold;
+    }
+  }
+}
+
+.related-content {
+
+  h2,
+  h2 span {
+    color: $label;
+    font-size: $small-font-size;
+    text-transform: uppercase;
+  }
+
+  .add-related-content {
+    font-size: $small-font-size;
+  }
+
+  a {
+    color: $text;
+  }
 }

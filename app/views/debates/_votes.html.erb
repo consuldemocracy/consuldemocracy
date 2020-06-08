@@ -4,17 +4,17 @@
     <% if user_signed_in? %>
       <%= link_to vote_debate_path(debate, value: "yes"),
           class: "like #{voted_classes[:in_favor]}", title: t("votes.agree"), method: "post", remote: true do %>
+        <span class="percentage"><%= votes_percentage("likes", debate) %></span>
         <span class="icon-like">
           <span class="show-for-sr"><%= t("votes.agree") %></span>
         </span>
-        <span class="percentage"><%= votes_percentage("likes", debate) %></span>
       <% end %>
     <% else %>
       <div class="like">
+        <span class="percentage"><%= votes_percentage("likes", debate) %></span>
         <span class="icon-like">
           <span class="show-for-sr"><%= t("votes.agree") %></span>
         </span>
-        <span class="percentage"><%= votes_percentage("likes", debate) %></span>
       </div>
     <% end %>
   </div>
@@ -24,17 +24,17 @@
   <div class="against inline-block">
     <% if user_signed_in? %>
       <%= link_to vote_debate_path(debate, value: "no"), class: "unlike #{voted_classes[:against]}", title: t("votes.disagree"), method: "post", remote: true do %>
+        <span class="percentage"><%= votes_percentage("dislikes", debate) %></span>
         <span class="icon-unlike">
           <span class="show-for-sr"><%= t("votes.disagree") %></span>
         </span>
-        <span class="percentage"><%= votes_percentage("dislikes", debate) %></span>
       <% end %>
     <% else %>
       <div class="unlike">
+        <span class="percentage"><%= votes_percentage("dislikes", debate) %></span>
         <span class="icon-unlike">
           <span class="show-for-sr"><%= t("votes.disagree") %></span>
         </span>
-        <span class="percentage"><%= votes_percentage("dislikes", debate) %></span>
       </div>
     <% end %>
   </div>
