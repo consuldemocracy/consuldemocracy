@@ -12,7 +12,7 @@
   </td>
   <td>
     <%= link_to t("admin.booth_assignments.manage.actions.unassign"),
-                admin_poll_booth_assignment_path(@poll, booth_assignment, booth_id: booth.id),
+                admin_poll_booth_assignment_path(@poll, booth_assignment),
                 method: :delete,
                 remote: true,
                 title: t("admin.booth_assignments.manage.actions.unassign"),
