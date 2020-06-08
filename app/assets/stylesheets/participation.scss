@@ -244,18 +244,12 @@
 // 02. New participation
 // ---------------------
 
-.debate-new,
 .proposal-new {
 
-  .icon-debates,
   .icon-proposals {
     font-size: rem-calc(50);
     line-height: $line-height;
     opacity: 0.5;
-  }
-
-  .icon-debates {
-    color: $debates;
   }
 
   .icon-proposals {
@@ -276,13 +270,6 @@
       content: "l ";
       font-family: "icons" !important;
     }
-  }
-}
-
-.debate-new {
-
-  .recommendations li::before {
-    color: $debates;
   }
 }
 

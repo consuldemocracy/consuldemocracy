@@ -1,8 +1,3 @@
 .debate-form {
-
-  .globalize-languages,
-  .translatable-fields {
-    @include grid-row-nest;
-    @include grid-column-gutter;
-  }
+  @extend %public-form;
 }
