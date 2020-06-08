@@ -2,7 +2,11 @@ bg:
   activemodel:
     models:
       verification:
+        residence: "Местожителство"
         sms: "СМС"
+      local_census_records/import:
+        one: Въвеждане запис на местното преброяване
+        other: Въведени записи на местното преброяване
     attributes:
       verification:
         residence:
@@ -40,3 +44,4 @@ bg:
           attributes:
             file:
               extension: "Файловият формат е грешен. Разрешеният файлов формат е: %{valid_extensions}."
+              headers: "Зададените файлови заглавки са грешни. Файловите заглавки трябва да имат следните имена: %{required_headers}."
