@@ -348,7 +348,7 @@
   @include direct-uploads;
 }
 
-
+.debate-new,
 .budget-investment-new {
 
   .header {
@@ -356,7 +356,7 @@
     border-bottom-right-radius: rem-calc(12);
     border-top-right-radius: rem-calc(12);
     color: #fff;
-    margin-top: $line-height * 2;
+    margin-top: $line-height;
     padding: $line-height * 2 0;
     position: relative;
 

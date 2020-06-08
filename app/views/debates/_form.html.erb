@@ -4,36 +4,52 @@
 
   <%= render "shared/errors", resource: @debate %>
 
-  <div class="row column">
-    <%= f.translatable_fields do |translations_form| %>
+  <div class="light expand">
+    <div class="row">
       <div class="small-12 column">
-        <%= translations_form.text_field :title,
-              maxlength: Debate.title_max_length,
-              placeholder: t("debates.form.debate_title"),
-              data: { js_suggest_result: "js_suggest_result",
-                      js_suggest: ".js-suggest",
-                      js_url: suggest_debates_path } %>
+        <p class="subtitle-form"><%= t("shared.required") %></p>
       </div>
-      <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
-      <div class="small-12 column">
-        <%= translations_form.text_area :description,
-              maxlength: Debate.description_max_length,
-              class: "html-area" %>
-      </div>
-    <% end %>
+      <%= f.translatable_fields do |translations_form| %>
+        <div class="small-12 column required">
+          <%= translations_form.text_field :title,
+                maxlength: Debate.title_max_length,
+                placeholder: t("debates.form.debate_title"),
+                data: { js_suggest_result: "js_suggest_result",
+                        js_suggest: ".js-suggest",
+                        js_url: suggest_debates_path } %>
+        </div>
+        <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
+
+        <div class="small-12 column required">
+          <%= translations_form.text_area :description,
+                maxlength: Debate.description_max_length,
+                class: "html-area" %>
+        </div>
+      <% end %>
+    </div>
 
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <%= f.text_field :tag_list, value: @debate.tag_list.to_s,
-                        hint: t("debates.form.tags_instructions"),
-                        placeholder: t("debates.form.tags_placeholder"),
-                        data: { js_url: suggest_tags_path },
-                        class: "tag-autocomplete" %>
+      <p class="subtitle-form"><%= t("shared.optional") %></p>
     </div>
-    <div class="small-12 column">
+  </div>
+
+  <div class="small-12 column">
+    <%= f.text_field :tag_list, value: @debate.tag_list.to_s,
+                      hint: t("debates.form.tags_instructions"),
+                      placeholder: t("debates.form.tags_placeholder"),
+                      data: { js_url: suggest_tags_path },
+                      class: "tag-autocomplete" %>
+  </div>
+
+  <div class="clear"></div>
+  <div class="submit-form-container">
+    <div class="small-12 medium-9 small-centered submit-form-box required">
       <% if @debate.new_record? %>
+        <p class="form-label"><%= t("shared.required_fields") %></p>
+
         <%= f.check_box :terms_of_service,
           title: t("form.accept_terms_title"),
           label: t("form.accept_terms",
@@ -41,10 +57,8 @@
                    conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
                   ) %>
       <% end %>
-    </div>
 
-    <div class="actions small-12 column">
-      <%= f.submit(class: "button", value: t("debates.#{action_name}.form.submit_button")) %>
+      <%= f.submit(class: "button large margin-top", value: t("debates.#{action_name}.form.submit_button")) %>
     </div>
   </div>
 <% end %>
