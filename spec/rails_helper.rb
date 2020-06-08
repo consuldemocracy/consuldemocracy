@@ -11,6 +11,11 @@ require "spec_helper"
 require "capybara/rails"
 require "capybara/rspec"
 require "selenium/webdriver"
+require "view_component/test_helpers"
+
+RSpec.configure do |config|
+  config.include ViewComponent::TestHelpers, type: :component
+end
 
 Rails.application.load_tasks if Rake::Task.tasks.empty?
 
