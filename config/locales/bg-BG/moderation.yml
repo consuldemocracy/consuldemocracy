@@ -1,1 +1,117 @@
 bg:
+  moderation:
+    comments:
+      index:
+        block_authors: Блокиране на автори
+        confirm: Сигурни ли сте?
+        filter: Филтър
+        filters:
+          all: Всички
+          pending_flag_review: Изчакване
+          with_ignored_flag: Маркиран като гледан
+        headers:
+          comment: Коментар
+          moderate: Модериране
+        hide_comments: Скриване на коментари
+        ignore_flags: Маркиран като гледан
+        order: Подреждане
+        orders:
+          flags: Най-маркирани
+          newest: Най-нови
+        title: Коментари
+    dashboard:
+      index:
+        title: Модерация
+    debates:
+      index:
+        block_authors: Блокиране на автори
+        confirm: Сигурни ли сте?
+        filter: Филтър
+        filters:
+          all: Всички
+          pending_flag_review: Изчакване
+          with_ignored_flag: Маркиран като гледан
+        headers:
+          debate: Дебат
+          moderate: Модериране
+        hide_debates: Скриване на дебати
+        ignore_flags: Маркиран като гледан
+        order: Подреждане
+        orders:
+          created_at: Най-нови
+          flags: Най-маркирани
+        title: Дебати
+    header:
+      title: Модерация
+    menu:
+      flagged_comments: Коментари
+      flagged_debates: Дебати
+      flagged_investments: Бюджетни инвестиции
+      proposals: Предложения
+      proposal_notifications: Известия за предложения
+      users: Блокиране на потребители
+    proposals:
+      index:
+        block_authors: Блокиране на автори
+        confirm: Сигурни ли сте?
+        filter: Филтър
+        filters:
+          all: Всички
+          pending_flag_review: Изчакване на преглед
+          with_ignored_flag: Маркиран като гледан
+        headers:
+          moderate: Модериране
+          proposal: Предложение
+        hide_proposals: Скриване на предложенията
+        ignore_flags: Маркиран като гледан
+        order: Подреждане по
+        orders:
+          created_at: Най-новите
+          flags: Най-маркирани
+        title: Предложения
+    budget_investments:
+      index:
+        block_authors: Блокиране на автори
+        confirm: Сигурни ли сте?
+        filter: Филтър
+        filters:
+          all: Всички
+          pending_flag_review: Изчакване
+          with_ignored_flag: Маркиран като гледан
+        headers:
+          moderate: Модериране
+          budget_investment: Бюджетна инвестиция
+        hide_budget_investments: Скриване на бюджетните инвестиции
+        ignore_flags: Маркиран като гледан
+        order: Подреждане по
+        orders:
+          created_at: Най-скорошни
+          flags: Най-маркирани
+        title: Бюджетни инвестиции
+    proposal_notifications:
+      index:
+        block_authors: Блокиране на автори
+        confirm: Сигурни ли сте?
+        filter: Филтър
+        filters:
+          all: Всички
+          pending_review: Изчакване на преглед
+          ignored: Маркиран като гледан
+        headers:
+          moderate: Модериране
+          proposal_notification: Известия за предложения
+        hide_proposal_notifications: Скриване на предложения
+        ignore_flags: Маркиран като гледан
+        order: Подреждане по
+        orders:
+          created_at: Най-скорошни
+          moderated: Модерирано
+        title: Известия за предложения
+    users:
+      index:
+        hidden: Блокиран
+        hide: Блокиране
+        search: Търсене
+        search_placeholder: имейл или име на потребителя
+        title: Блокиране на потребители
+      notice_hide: Потребителят е блокиран. Всички дебати и коментари на този потребител са скрити.
