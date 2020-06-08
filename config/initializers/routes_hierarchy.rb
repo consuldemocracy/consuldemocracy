@@ -16,7 +16,7 @@ module ActionDispatch::Routing::UrlFor
   end
 
   def admin_polymorphic_path(resource, options = {})
-    if %w[Budget::Group Budget::Heading Poll::Booth Poll::Officer
+    if %w[Budget::Group Budget::Heading Poll::Booth Poll::BoothAssignment Poll::Officer
           Poll::Question Poll::Question::Answer::Video].include?(resource.class.name)
       resolve = resolve_for(resource)
       resolve_options = resolve.pop

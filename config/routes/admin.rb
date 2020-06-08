@@ -278,6 +278,10 @@ resolve "Poll::Booth" do |booth, options|
   [:booth, options.merge(id: booth)]
 end
 
+resolve "Poll::BoothAssignment" do |assignment, options|
+  [assignment.poll, :booth_assignment, options.merge(id: assignment)]
+end
+
 resolve "Poll::Officer" do |officer, options|
   [:officer, options.merge(id: officer)]
 end

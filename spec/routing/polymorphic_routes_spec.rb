@@ -148,6 +148,15 @@ describe "Polymorphic routes" do
       )
     end
 
+    it "routes booth assignments" do
+      poll = create(:poll)
+      assignment = create(:poll_booth_assignment, poll: poll)
+
+      expect(admin_polymorphic_path(assignment)).to eq(
+        admin_poll_booth_assignment_path(poll, assignment)
+      )
+    end
+
     it "supports routes for actions like edit" do
       proposal = create(:proposal)
       milestone = create(:milestone, milestoneable: proposal)
