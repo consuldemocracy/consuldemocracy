@@ -358,6 +358,7 @@ ro:
           delete: Șterge
           active: 'Da'
           inactive: 'Nu'
+          title: Resurse și acțiuni
           action_title: Titlu
           action_type: Tip
           required_supports: Suporturi necesare
@@ -500,15 +501,20 @@ ro:
           title: Proces
           comments: Comentarii
           status: Status
+          start_date: Data de început
+          end_date: Data de sfârșit
           status_open: Deschide
           status_closed: Închis
           status_planned: Planificat
         subnav:
+          info: Informație
           homepage: Pagina principală
           questions: Dezbate
           proposals: Propuneri
       proposals:
         index:
+          title: Titlu
+          back: Înapoi
           supports: Total susțineri
         form:
           custom_categories: Categorii
@@ -606,6 +612,7 @@ ro:
       valuators: Evaluatori
       polls: Sondaje
       poll_booths: Locația cabinelor
+      organizations: Organizații
       signature_sheets: Foi cu semnaturi
       site_customization:
         documents: Documente personalizate
