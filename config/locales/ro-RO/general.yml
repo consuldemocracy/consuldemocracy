@@ -322,6 +322,7 @@ ro:
     share:
       improve_it: Îmbunătățiți-vă campania și veți primi mai mult suport.
       dashboard: Vezi mai multe informații
+      message: "Am susținut propunerea %{title} în%{handle}. Dacă sunteți interesat, o puteți susține și dumneavoastră!"
     edit:
       editing: Editează propunere
       form:
@@ -339,9 +340,13 @@ ro:
       done: Gata
       other: Alta
     form:
+      proposal_summary_note: "(maxim 200 de caractere)"
+      proposal_video_url_note: Puteși adăuga un link către YouTube sau Vimeo
       tag_category_label: "Categorii"
+      tags_instructions: "Etichetați această propunere. Puteți alege dintre categoriile propuse sau adăugați una proprie"
       tags_label: Etichete
       map_location: "Localizare pe hartă"
+      map_remove_marker: "Eliminați marcatorul de hartă"
     index:
       featured_proposals: Recomandată
       orders:
@@ -381,6 +386,8 @@ ro:
       section_header:
         title: Propuneri
     new:
+      form:
+        submit_button: Crează propunere
       recommendation_two: Orice dezbatere sau comentariu care sugerează acțiuni ilegale vor fi șterse, precum și cele care intenționează să saboteze spațiile de dezbatere. Orice altceva este permis.
       recommendations_title: Recomandări pentru crearea o propunere
       start_new: Crează propunere nouă
