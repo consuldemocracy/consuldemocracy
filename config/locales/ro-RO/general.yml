@@ -837,6 +837,14 @@ ro:
     verification:
       i_dont_have_an_account: Nu am un cont
       i_have_an_account: Am deja un cont
+      question: Aveți deja un cont în %{org_name}?
+    welcome:
+      go_to_index: Nu acum, mergeți la pagina index
+      start_using_consul: Mergeți la pagina index
+      title: Participă
+      user_permission_debates: Participă la dezbateri
+      user_permission_info: Cu contul dumneavoastră puteți...
+      user_permission_proposal: Crează noi propuneri
   related_content:
     placeholder: "%{url}"
     score_positive: "Da"
