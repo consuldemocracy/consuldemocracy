@@ -496,6 +496,7 @@ ro:
         proposals:
           select_order: Sortează după
           orders:
+            id: Id
             title: Titlu
             supports: Total susțineri
         process:
@@ -516,6 +517,7 @@ ro:
         index:
           title: Titlu
           back: Înapoi
+          id: Id
           supports: Total susțineri
         form:
           custom_categories: Categorii
@@ -539,6 +541,8 @@ ro:
             status:
               published: Vizibil pentru toată lumea
           title_placeholder: Scrieți titlul versiunii schiță
+          changelog_placeholder: Adăugați principalele modificări din versiunea anterioară
+          body_placeholder: Scrie textul pentru schiță
         index:
           title: Versiuni schiță
           create: Crează versiune
@@ -620,17 +624,25 @@ ro:
       polls: Sondaje
       poll_booths: Locația cabinelor
       organizations: Organizații
+      stats: Statistici
       signature_sheets: Foi cu semnaturi
       site_customization:
         documents: Documente personalizate
         homepage: Pagina principală
         pages: Pagini personalizate
         images: Imagini personalizate
+        content_blocks: Conținut personalizat
         information_texts_menu:
           debates: "Dezbateri"
           community: "Comunitate"
           proposals: "Propuneri"
           polls: "Sondaje"
+          management: "Administrare"
+          welcome: "Bine ați venit"
+        buttons:
+          save: "Salvează"
+      title_settings: Setări
+      title_booths: Cabine de votare
       administrator_tasks: Resurse solicitate
       debates: "Dezbateri"
       comments: "Comentarii"
