@@ -537,6 +537,7 @@ ro:
       comments: Comentarii
       latest_comments: Ultimele mesaje
     messages:
+      send_notification: Trimite mesaj urmăritorilor propunerii
       previous_notifications: Vezi notificările anterioare
     polls:
       index:
@@ -623,6 +624,8 @@ ro:
       section_header:
         title: Votare
     show:
+      comments_tab: Comentarii
+      verify_link: "verifică-ți contul"
       cant_answer_expired: "Acest sondaj s-a încheiat."
       cant_answer_wrong_geozone: "Această întrebare nu este valabilă în geo zona dumneavoastră."
       more_info_title: "Mai multe informații"
@@ -752,6 +755,9 @@ ro:
       debates: Dezbateri
       proposals: Propuneri
       comments: Comentarii
+      votes: Voturi totale
+      verified_users: Utilizatori verificați
+      unverified_users: Utilizatori neverificați
   users:
     login_to_continue: "Trebuie %{signin} sau %{signup} pentru a continua."
     signin: "conectare"
