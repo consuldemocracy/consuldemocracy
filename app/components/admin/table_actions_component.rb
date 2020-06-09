@@ -27,4 +27,8 @@ class Admin::TableActionsComponent < ApplicationComponent
     def destroy_path
       options[:destroy_path] || admin_polymorphic_path(record)
     end
+
+    def destroy_confirmation
+      options[:destroy_confirmation] || t("admin.actions.confirm")
+    end
 end

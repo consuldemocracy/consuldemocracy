@@ -42,4 +42,10 @@ describe Admin::TableActionsComponent, type: :component do
     expect(page).to have_link "Edit", href: "/myedit"
     expect(page).to have_link "Delete", href: "/mydestroy"
   end
+
+  it "allows custom confirmation text" do
+    render_inline Admin::TableActionsComponent.new(record, destroy_confirmation: "Are you mad? Be careful!")
+
+    expect(page).to have_css "a[data-confirm='Are you mad? Be careful!']"
+  end
 end
