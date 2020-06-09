@@ -81,3 +81,7 @@ ro:
     new_actions_notification_on_published:
       subject: "Propunerea dumneavoastră este deja publicată!"
       hi: "Felicitări %{name}! Propunerea %{title} a fost creată cu succes."
+      text_2: "De ce 100?"
+      text_3: "Experiența noastră ne spune că prima zi este fundamentală. Pentru că, pe lângă faptul că ai energie pentru a lansa ceva nou, fiind o propunere recent publicată, vei avea vizibilitatea importantă de a fi printre noile propuneri evidențiate."
+      list_1: "Vino în fiecare zi pentru a vedea progresul tău și folosește sfaturile și resursele pe care le vom împărtăși cu tine. Sunt idei și soluții practice pentru a obține sprijinul de care ai nevoie."
+      text_10: "Cu siguranță ai mai multe resurse de utilizat!"
