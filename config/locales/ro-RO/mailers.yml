@@ -84,6 +84,8 @@ ro:
       text_1: "De câte ori doriți, puteți publica pe acest link: %{link_to_published}. Dacă încă nu ești sigur..."
       text_2: "Profită de acest moment! Aflați și adăugați alți oameni cu aceleași interese și pregătiți publicul de care veți avea nevoie atunci când publicați definitiv propunerea."
       text_3: "Și pentru a vă însoți în această provocare, iată noutățile..."
+      text_4: "Aruncați o privire la această ACȚIUNE nouă recomandată:"
+      text_5: "Următoarea acțiune recomandată este:"
     new_actions_notification_rake_published:
       hi: "Bună %{name},"
     new_actions_notification_on_create:
