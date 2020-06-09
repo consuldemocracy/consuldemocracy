@@ -80,6 +80,7 @@ ro:
     new_actions_notification_rake_created:
       subject: "Mai multe știri despre propunerea dumneavoastră"
       hi: "Bună %{name},"
+      new_resource: "RESURSĂ NOUĂ DEBLOCATĂ"
       introduction: "După cum știți, în %{created_at_day} din %{created_at_month} ați creat o propunere în schițe %{title}."
       text_1: "De câte ori doriți, puteți publica pe acest link: %{link_to_published}. Dacă încă nu ești sigur..."
       text_2: "Profită de acest moment! Aflați și adăugați alți oameni cu aceleași interese și pregătiți publicul de care veți avea nevoie atunci când publicați definitiv propunerea."
@@ -87,6 +88,7 @@ ro:
       text_4: "Aruncați o privire la această ACȚIUNE nouă recomandată:"
       text_5: "Următoarea acțiune recomandată este:"
       footer_text: "Ca întotdeauna, intrați în Panoul de Propuneri și vă vom spune în detaliu cum să folosiți aceste resurse la maximum."
+      dashboard_button: "Mergeți să le descoperiți!"
     new_actions_notification_rake_published:
       subject: "Mai multe știri despre propunerea dumneavoastră"
       hi: "Bună %{name},"
@@ -96,7 +98,9 @@ ro:
       text_2: "Astfel, aveți la dispoziție o nouă resursă care vă poate ajuta să continuați mai departe."
       text_3: "Mai aveți %{days_count} zile înainte ca propunerea să primească suporturile %{max_votes_count} și să meargă la referendum. Continuați să distribuți propunerea. Nu aveți idei?"
       text_4: "NOUĂ ACȚIUNE DE DISTRIBUIRE RECOMANDATĂ"
+      text_5: "Asta nu este tot, vedeți acțiunea următoare:"
       footer_text: "Ca întotdeauna, intrați în Panoul de Propuneri și vă vom spune în detaliu cum să folosiți aceste resurse la maximum."
+      dashboard_button: "Mergeți să le descoperiți!"
     new_actions_notification_on_create:
       subject: "Schița propunerii dumneavoastră a fost creată"
       hi: "Bună %{name}!"
@@ -111,12 +115,15 @@ ro:
       list_4: "Aveți %{max_month} luni de când ați publicat propunerea pentru a primi %{max_votes} suport și propunerea dvs. poate deveni realitate. Dar primele zile sunt cele mai importante. Este o provocare. Pregătiți-vă!"
       text_5: "Și pentru dumneavoastră să începeți cu toată motivația,"
       text_6: "aici aveți mai multe resurse și o listă întreagă de sfaturi care vă vor veni în fiecare zi pentru a pregăti transmisia!"
+      dashboard_button: "Mergeți să le descoperiți!"
     new_actions_notification_on_published:
       subject: "Propunerea dumneavoastră este deja publicată!"
       hi: "Felicitări %{name}! Propunerea %{title} a fost creată cu succes."
+      text_1: "Și acum, trebuie să strângeți primele 100 de suporturi!"
       text_2: "De ce 100?"
       text_3: "Experiența noastră ne spune că prima zi este fundamentală. Pentru că, pe lângă faptul că ai energie pentru a lansa ceva nou, fiind o propunere recent publicată, vei avea vizibilitatea importantă de a fi printre noile propuneri evidențiate."
       text_4: "Obțineți 100 de suporturi în prima zi și veți avea o primă comunitate care vă va ajuta."
+      text_5: "Acesta este motivul pentru care vă provocăm să îl obțineți, dar nu fără ajutor!"
       text_6: "Nu uitați că în panoul dvs. de propuneri aveți la dispoziție noi resurse și recomandări pentru acțiuni de diseminare."
       list_1: "Vino în fiecare zi pentru a vedea progresul tău și folosește sfaturile și resursele pe care le vom împărtăși cu tine. Sunt idei și soluții practice pentru a obține sprijinul de care ai nevoie."
       list_2: "Pe măsură ce vei primi mai mult sprijin, vei debloca resurse noi și mai bune. Nu încetați să adăugați suport și nu vom înceta să vă recompensăm și să vă ajutăm!"
@@ -124,3 +131,4 @@ ro:
       text_8: "Iată o resursă excelentă la dispoziția dumneavoastră!"
       text_9: "Veți găsi, de asemenea, această nouă acțiune de diseminare recomandată..."
       text_10: "Cu siguranță ai mai multe resurse de utilizat!"
+      dashboard_button: "Mergeți să le descoperiți!"
