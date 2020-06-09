@@ -810,6 +810,7 @@ ro:
     comment_unauthenticated: Trebuie %{signin} sau %{signup} pentru a vota.
     disagree: Nu sunt de acord
     organizations: Organizațiile nu au voie să voteze
+    supports: Susținători
     verified_only: Doar utilizatorii verificați pot vota propunerile; %{verify_account}.
     budget_investments:
       not_logged_in: Trebuie %{signin} sau %{signup} pentru a continua.
@@ -845,16 +846,33 @@ ro:
       user_permission_debates: Participă la dezbateri
       user_permission_info: Cu contul dumneavoastră puteți...
       user_permission_proposal: Crează noi propuneri
+      user_permission_support_proposal: Sprijină propunerile*
+      user_permission_verify: "Pentru a efectua toate acțiunile, verificați-vă contul."
+      user_permission_verify_info: "* Numai pentru utilizatorii aflați pe recensământ."
+      user_permission_verify_my_account: Verifică-mi contul
+      user_permission_votes: Participă la votarea finală
+  invisible_captcha:
+    sentence_for_humans: "Dacă sunteți om, ignorați acest câmp"
+    timestamp_error_message: "Ne cerem scuze, a fost prea rapid! Vă rugăm să retrimiteți."
   related_content:
+    title: "Continut asemanator"
+    add: "Adăugați conținut asemănător"
+    label: "Link către conținut asemănător"
     placeholder: "%{url}"
+    submit: "Adaugă"
+    is_related: "Este acesta conținut asemănător?"
     score_positive: "Da"
     score_negative: "Nu"
     content_title:
       proposal: "Propunere"
       debate: "Dezbatere"
+      budget_investment: "Buget de investiție"
   admin/widget:
     header:
       title: Administrare
+  annotator:
+    help:
+      title: Cum pot comenta la acest document?
   links:
     form:
       delete_button: Șterge
