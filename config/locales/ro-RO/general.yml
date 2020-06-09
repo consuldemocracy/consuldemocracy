@@ -636,14 +636,24 @@ ro:
         help: Ajutor pentru votare
       section_footer:
         title: Ajutor pentru votare
+        description: Sondajele cetățenilor sunt un mecanism participativ prin care cetățenii cu drept de vot pot lua decizii directe
+      no_polls: "Nu sunt votări deschise."
     show:
+      already_voted_in_booth: "Ați participat deja la o cabină de vot fizică. Nu puteți participa din nou."
+      already_voted_in_web: "Ați participat deja la acest sondaj. Dacă votați din nou, va fi suprascris."
+      back: Înapoi la votare
       comments_tab: Comentarii
       verify_link: "verifică-ți contul"
       cant_answer_expired: "Acest sondaj s-a încheiat."
       cant_answer_wrong_geozone: "Această întrebare nu este valabilă în geo zona dumneavoastră."
       more_info_title: "Mai multe informații"
       documents: Documente
+      zoom_plus: Extindeți imaginea
+      read_more: "Citiți mai multe despre %{answer}"
+      read_less: "Citiți mai puține despre %{answer}"
+      videos: "Video extern"
       info_menu: "Informație"
+      stats_menu: "Statistici de participare"
       results_menu: "Rezultatele sondajului"
       stats:
         total_votes: "Număr total de voturi date"
@@ -706,6 +716,7 @@ ro:
     collective: Colectiv
     flag: Semnalați ca necorespunzător
     follow: "Urmăriți"
+    follow_entity: "Urmărește %{entity}"
     followable:
       budget_investment:
         create:
