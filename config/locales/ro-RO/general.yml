@@ -337,6 +337,7 @@ ro:
       submit_button: Retrage propunere
     retire_options:
       duplicated: Duplicată
+      started: Deja în curs
       unfeasible: Nerealizabil
       done: Gata
       other: Alta
@@ -391,6 +392,7 @@ ro:
       start_proposal: Crează propunere
       title: Propuneri
       top: Top săptămânal
+      top_link_proposals: Cea mai susținută propunere după categorie
       section_header:
         title: Propuneri
         help: Ajutor pentru propuneri
@@ -477,6 +479,9 @@ ro:
       related_content: Continut asemanator
     form:
       request: Cerere
+    create_request:
+      success: Cererea fost trimisă cu succes. Vă vom contacta cât de curând pentru a va informa despre aceasta.
+      archived: Această propunere a fost arhivată și nu poate colecta susțineri.
     progress:
       title: Grafic
       group_by_month: Lunar
@@ -485,7 +490,26 @@ ro:
       progress: Progresul acumulat
       supports: Suporturi
       success: Progres ideal
+      new_action: Nou
+    index:
+      edit_proposal_link: Editează propunere
+      publish: Publică propunere
+      retire: Retrage propunere
+    new_request:
+      links: Link-uri
+    resources:
+      available_resources: Resurse disponibile
+    resource:
+      required_days: "%{days} zile necesare"
+      required_supports: "%{supports} suporturi necesare"
+      and: și
+      view_resource: Vezi resursă
+      resource_requested: Resursă deja solicitată
     recommended_actions:
+      title: Acțiuni recomandate
+      goto_proposed_actions: Mergi la acțiuni recomandate
+      see_proposed_actions: Vezi acțiuni recomandate
+      hide_proposed_actions: Ascunde acțiuni recomandate
       pending_title: În așteptare
       show_description: Afișează descriere
       without_pending_actions: Nici o acțiune recomandată în așteptare
@@ -501,18 +525,31 @@ ro:
         few: "%{count} zile"
         other: "%{count} zile"
       locked_resource: Resursă blocată
+      ideal_time: Timp ideal
     community:
       access_community: Accesează comunitatea
       latest_activity: "Activitatate recentă a comunității: %{at}"
+      participants: Participanți
+      debates: Dezbateri
+      comments: Comentarii
+      latest_comments: Ultimele mesaje
     messages:
       previous_notifications: Vezi notificările anterioare
     polls:
       index:
         title: Sondaje
         create: Crează sondaj
+        count:
+          one: Ați creat %{count} sondaj.
+          few: Ați creat %{count} sondaje.
+          other: Ați creat %{count} sondaje.
+        links: Link
         additiontal_information: Informații suplimentare
       new:
         title: Sondaj nou
+        submit: Crează sondaj
+      edit:
+        submit: Actualizează sondaj
       poll:
         edit_poll: Editează chestionar
         show_results_help: Dacă bifați această casetă, rezultatele vor fi publice și toți utilizatorii vor putea să le vadă
