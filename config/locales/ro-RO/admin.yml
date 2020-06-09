@@ -486,6 +486,7 @@ ro:
         index:
           create: Proces nou
           delete: Șterge
+          title: Legislație colaborativă
           filters:
             active: Activ
             all: Toate
@@ -518,6 +519,8 @@ ro:
           supports: Total susțineri
         form:
           custom_categories: Categorii
+          custom_categories_description: Categorii pe care utilizatorii le pot selecta la crearea propunerii. Max 160 caractere.
+          custom_categories_placeholder: Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (,) și între ghilimele (" ")
       draft_versions:
         create:
           error: Schița nu a putut fi creată
@@ -535,6 +538,7 @@ ro:
             final_version: Această versiune va fi publicată ca Rezultat Final pentru acest proces. Comentariile nu vor fi permise în această versiune.
             status:
               published: Vizibil pentru toată lumea
+          title_placeholder: Scrieți titlul versiunii schiță
         index:
           title: Versiuni schiță
           create: Crează versiune
@@ -597,6 +601,7 @@ ro:
       activity: Activitatea moderatorului
       banner: Gestionați bannere
       proposals: Propuneri
+      proposals_topics: Subiecte de propuneri
       budgets: Bugete participative
       geozones: Administrează geolocații
       hidden_comments: Comentarii ascunse
@@ -608,6 +613,8 @@ ro:
       administrators: Administratori
       managers: Administratori
       moderators: Moderatori
+      messaging_users: Mesaj către utilizatori
+      newsletters: Newsletters
       admin_notifications: Notificări
       valuators: Evaluatori
       polls: Sondaje
