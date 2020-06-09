@@ -10,6 +10,8 @@ ro:
       manage_email_subscriptions: Pentru a nu mai primi aceste e-mailuri, schimbați setările în
     email_verification:
       click_here_to_verify: acest link
+      instructions_2: Acest e-mail vă va verifica contul cu <b>%{document_type}%{document_number}</b>. Dacă acestea nu vă aparțin, nu faceți clic pe linkul anterior și ignorați acest e-mail.
+      instructions: Pentru a finaliza verificarea contului de utilizator trebuie să faceți clic pe %{verification_link}.
       subject: Confirmă adresa de email
       thanks: Vă mulțumim foarte mult.
       title: Confirmați contul utilizând următorul link
@@ -19,6 +21,7 @@ ro:
       subject: Cineva a răspuns comentariului dumneavoastră
       title: Răspuns nou la comentariul dumneavoastră
     proposal_notification_digest:
+      info: "Iată noile notificări care au fost publicate de către autorii propunerilor pe care le-ați susținut în %{org_name}."
       title: "Notificările propunerilor în %{org_name}"
       share: Partajează propunere
       comment: Comentează propunerea
@@ -35,4 +38,20 @@ ro:
       title: "Ați trimis un mesaj privat către<strong>%{receiver}</strong> cu următorul conținut:"
     user_invite:
       ignore: "Dacă nu ați solicitat această invitație, nu vă faceți griji, puteți ignora acest email."
+      text: "Vă mulțumim că ați solicitat să vă alăturați %{org}! În câteva secunde puteți începe să participați, trebuie doar să completați formularul de mai jos:"
       thanks: "Vă mulțumim foarte mult."
+      title: "Bine ați venit în %{org}"
+      button: Înregistrare completă
+      subject: "Invitație la %{org_name}"
+    budget_investment_created:
+      subject: "Mulțumim că ați creat o investiție!"
+      title: "Mulțumim că ați creat o investiție!"
+      intro: "Buna ziua <strong>%{author}</strong>,"
+      text: "Vă mulțumim că ați creat investiția <strong>%{investment}</strong> pentru Bugetele Participative <strong>%{budget}</strong>."
+      follow: "Vă vom informa despre cum progresează procesul, pe care îl puteți urmări și pe <strong>%{link}</strong>."
+      follow_link: "Bugete participative"
+      sincerely: "Cu sinceritate,"
+      share: "Împărtășiți-vă proiectul"
+    budget_investment_unfeasible:
+      hi: "Dragă utilizator,"
+      new: "Pentru toate acestea, vă invităm să elaborați o <strong> investiție nouă </strong> care să se adapteze condițiilor acestui proces. Puteți face acest lucru urmând acest link: %{url}."
