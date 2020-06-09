@@ -35,4 +35,11 @@ describe Admin::TableActionsComponent, type: :component do
     expect(page).not_to have_link "Delete"
     expect(page).not_to have_link "Edit"
   end
+
+  it "allows custom URLs" do
+    render_inline Admin::TableActionsComponent.new(edit_path: "/myedit", destroy_path: "/mydestroy")
+
+    expect(page).to have_link "Edit", href: "/myedit"
+    expect(page).to have_link "Delete", href: "/mydestroy"
+  end
 end

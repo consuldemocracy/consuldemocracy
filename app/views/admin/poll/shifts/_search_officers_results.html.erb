@@ -25,9 +25,11 @@
           <%= user.email %>
         </td>
         <td class="text-right">
-          <%= link_to t("admin.poll_shifts.new.edit_shifts"),
-                      new_admin_booth_shift_path(officer_id: user.poll_officer.id),
-                      class: "button hollow" %>
+          <%= render Admin::TableActionsComponent.new(
+            actions: [:edit],
+            edit_text: t("admin.poll_shifts.new.edit_shifts"),
+            edit_path: new_admin_booth_shift_path(officer_id: user.poll_officer.id)
+          ) %>
         </td>
       </tr>
       <% end %>

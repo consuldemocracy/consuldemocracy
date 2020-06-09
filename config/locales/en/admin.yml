@@ -359,7 +359,6 @@ en:
         index:
           description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
           create: Create resource or action
-          edit: Edit
           active: 'Yes'
           inactive: 'No'
           title: Resources and actions
@@ -1289,7 +1288,6 @@ en:
       author: Author
       content: Content
       created_at: Created at
-      delete: Delete
       color_help: Hexadecimal format
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."

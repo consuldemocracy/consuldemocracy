@@ -42,11 +42,10 @@
                         rel: "nofollow",
                         class: "button hollow" %>
 
-            <%= link_to t("admin.shared.delete"),
-                          document_path(document),
-                          method: :delete,
-                          class: "button hollow alert",
-                          data: { confirm: t("admin.actions.confirm") } %>
+            <%= render Admin::TableActionsComponent.new(document,
+              actions: [:destroy],
+              destroy_path: document_path(document)
+            ) %>
           </td>
         </tr>
       <% end %>

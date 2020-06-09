@@ -359,7 +359,6 @@ es:
         index:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
           create: Crear recurso o acción
-          edit: Editar
           active: 'Si'
           inactive: 'No'
           title: Recursos y acciones
@@ -1288,7 +1287,6 @@ es:
       author: Autor
       content: Contenido
       created_at: Fecha de creación
-      delete: Eliminar
       color_help: Formato hexadecimal
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
