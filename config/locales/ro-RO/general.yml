@@ -417,6 +417,9 @@ ro:
       support_title: Sprijină această propunere
       supports:
         zero: Fără susțineri
+        one: 1 suport
+        few: "%{count} suporturi"
+        other: "%{count} suporturi"
       votes:
         zero: Nu există voturi
         one: 1 vot
@@ -462,6 +465,15 @@ ro:
       mailing: E-mail
       poster: Afiș
       recommended_actions: Acțiuni recomandate
+      messages: Mesaj către utilizatori
+      related_content: Continut asemanator
+    progress:
+      title: Grafic
+      group_by_month: Lunar
+      group_by_week: Săptămânal
+      group_by_date: Zilnic
+      progress: Progresul acumulat
+      supports: Suporturi
     recommended_actions:
       pending_title: În așteptare
       show_description: Afișează descriere
