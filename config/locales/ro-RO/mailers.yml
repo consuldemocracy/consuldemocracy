@@ -55,3 +55,29 @@ ro:
     budget_investment_unfeasible:
       hi: "Dragă utilizator,"
       new: "Pentru toate acestea, vă invităm să elaborați o <strong> investiție nouă </strong> care să se adapteze condițiilor acestui proces. Puteți face acest lucru urmând acest link: %{url}."
+      new_href: "nou proiect de investiții"
+      sincerely: "Cu sinceritate"
+      sorry: "Ne pare rău pentru inconvenient și vă mulțumim din nou pentru participare."
+      subject: "Proiectul dvs. de investiții „%{code}” a fost marcat ca fiind imposibil"
+    budget_investment_selected:
+      subject: "Acest proiect de investiții \"%{code}\" a fost selectat"
+      hi: "Dragă utilizator,"
+      thanks: "Vă mulțumim din nou pentru participare."
+      sincerely: "Cu sinceritate"
+    budget_investment_unselected:
+      subject: "Acest proiect de investiții \"%{code}\" nu a fost selectat"
+      hi: "Dragă utilizator,"
+      thanks: "Vă mulțumim din nou pentru participare."
+      sincerely: "Cu sinceritate"
+    evaluation_comment:
+      hi: Bună
+      commenter_info: "%{commenter},%{time}:"
+    new_actions_notification_rake_created:
+      hi: "Bună %{name},"
+    new_actions_notification_rake_published:
+      hi: "Bună %{name},"
+    new_actions_notification_on_create:
+      hi: "Bună %{name}!"
+    new_actions_notification_on_published:
+      subject: "Propunerea dumneavoastră este deja publicată!"
+      hi: "Felicitări %{name}! Propunerea %{title} a fost creată cu succes."
