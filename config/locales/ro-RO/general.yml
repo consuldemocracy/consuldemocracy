@@ -785,6 +785,9 @@ ro:
       add_language: Adaugă limbă
       languages_in_use:
         zero: "0 limbi utilizate"
+        one: "1 limbă utilizată"
+        few: "%{count} limbi utilizate"
+        other: "%{count} limbi utilizate"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -799,12 +802,17 @@ ro:
       proposals: Propuneri
       comments: Comentarii
       proposal_votes: Votează propuneri
+      debate_votes: Votează dezbateri
+      comment_votes: Votează pe comentarii
       votes: Voturi totale
       verified_users: Utilizatori verificați
       unverified_users: Utilizatori neverificați
   unauthorized:
     default: Nu aveți permisiune să accesați această pagină.
+    manage:
+      all: "Nu aveți permisiunea de a efectua acțiunea „%{action}” pe %{subject}."
   users:
+    login_to_comment: "Trebuie %{signin} sau %{signup} pentru a lasa un comentariu."
     login_to_continue: "Trebuie %{signin} sau %{signup} pentru a continua."
     signin: "conectare"
     signup: "înregistrare"
@@ -849,6 +857,7 @@ ro:
       no_private_messages: "Acest utilizator nu acceptă mesaje private."
       private_activity: Acest utilizator a decis să își mențină activitatea privată.
       send_private_message: "Trimite mesaj privat"
+      delete_alert: "Sigur doriți să ștergeți proiectul de investiții? Această acțiune nu poate fi anulată"
     proposals:
       retired: "Propunere retrasă"
       draft: Schiță
@@ -885,7 +894,10 @@ ro:
       see_all_processes: Vezi toate procesele
       process_label: Proces
       see_process: Vezi proces
+    cards:
+      title: Recomandată
     recommended:
+      title: Recomandări care v-ar putea interesa
       debates:
         btn_text_link: Toate dezbaterile recomandate
       proposals:
