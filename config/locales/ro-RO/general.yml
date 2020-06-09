@@ -707,6 +707,25 @@ ro:
       list: Listă
     recommended_index:
       title: Recomandări
+      see_more: Vezi mai multe recomandări
+      hide: Ascunde recomandări
+    translations:
+      select_language_prompt: Alege limba
+      remove_language: Șterge limbă
+      add_language: Adaugă limbă
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  stats:
+    index:
+      visits: Vizite
+      debates: Dezbateri
+      proposals: Propuneri
+      comments: Comentarii
   users:
     login_to_continue: "Trebuie %{signin} sau %{signup} pentru a continua."
     signin: "conectare"
