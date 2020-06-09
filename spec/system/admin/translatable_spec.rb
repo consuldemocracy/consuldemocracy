@@ -155,7 +155,7 @@ describe "Admin edit translatable records" do
 
         select "Français", from: :select_language
 
-        expect(page). to have_ckeditor "Description", with: ""
+        expect(page).to have_ckeditor "Description", with: ""
       end
     end
 

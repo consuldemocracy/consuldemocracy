@@ -104,6 +104,9 @@ Layout/SpaceAroundBlockParameters:
 Layout/SpaceAroundEqualsInParameterDefault:
   Enabled: true
 
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
 Layout/SpaceAroundOperators:
   Enabled: true
 
