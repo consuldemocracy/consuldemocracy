@@ -551,6 +551,11 @@ ro:
       edit:
         submit: Actualizează sondaj
       poll:
+        responses:
+          one: "%{count} răspuns"
+          few: "%{count} răspunsuri"
+          other: "%{count} răspunsuri"
+        view_results: Vezi rezultatele
         edit_poll: Editează chestionar
         show_results_help: Dacă bifați această casetă, rezultatele vor fi publice și toți utilizatorii vor putea să le vadă
         delete: Șterge chestionar
@@ -612,7 +617,23 @@ ro:
       not_logged_in: "Trebuie să vă conectați sau să vă înscrieți pentru a participa"
       unverified: "Trebuie să vă verificați contul pentru a participa"
       cant_answer: "Acest sondaj nu este valabil în geo zona dumneavoastră"
+      section_header:
+        title: Votare
+  poll_questions:
+    show:
+      voted: "Ați votat %{answer}"
+  proposal_notifications:
+    new:
+      title: "Trimite mesaj"
+      submit_button: "Trimite mesaj"
+      info_about_receivers: "Acest mesaj va fi trimis către <strong>%{count} persoane </strong> și va fi vizibil în %{proposal_page}.<br> Mesajele nu sunt trimise imediat, utilizatorii vor primi periodic un e-mail cu toate notificările propunerii."
+      proposal_page: "pagina propunerii"
+    show:
+      back: "Mergi înapoi la conținutul meu"
   shared:
+    edit: "Editează"
+    save: "Salvează"
+    delete: "Șterge"
     "yes": "Da"
     "no": "Nu"
     search_results: "Rezultatele căutării"
@@ -642,6 +663,7 @@ ro:
     check_none: Nici unul
     collective: Colectiv
     flag: Semnalați ca necorespunzător
+    follow: "Urmăriți"
     followable:
       budget_investment:
         create:
@@ -665,9 +687,26 @@ ro:
       proposal:
         see_all: "Vezi tot"
     tags_cloud:
+      tags: În tendință
       districts: "Districte"
       districts_list: "Lista de districte"
       categories: "Categorii"
+    you_are_in: "Sunteți în"
+    unflag: Anulați semnalarea
+    unfollow_entity: "Nu mai urmăriți %{entity}"
+    outline:
+      searcher: Căutător
+    share: Distribuie
+    orbit:
+      previous_slide: Diapozitiv anterior
+      next_slide: Următorul diapozitiv
+    documentation: Documente adiționale
+    view_mode:
+      title: Vezi mod
+      cards: Carduri
+      list: Listă
+    recommended_index:
+      title: Recomandări
   users:
     login_to_continue: "Trebuie %{signin} sau %{signup} pentru a continua."
     signin: "conectare"
