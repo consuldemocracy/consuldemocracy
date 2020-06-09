@@ -315,6 +315,7 @@ ro:
         submit_button: Crează propunere
     created:
       title: Felicitări! Ați făcut primul pas.
+      motivation: "Este important să pregătiți campania de lansare pentru ca propunerea dvs. să aibă succes. Primele zile sunt decisive."
       motivation_2: "<strong> Dacă doriți recomandări pentru a pregăti publicarea, lăsați propunerea ca o schiță de proiect și vă vom îndruma. </strong>"
       publish: Nu, vreau să public propunerea
       dashboard: Da, vreau ajutor și o voi publica mai târziu
@@ -340,13 +341,17 @@ ro:
       done: Gata
       other: Alta
     form:
+      proposal_responsible_name_note: "(individual sau ca reprezentant al unui colectiv; nu va fi afișat public)"
       proposal_summary_note: "(maxim 200 de caractere)"
       proposal_video_url_note: Puteși adăuga un link către YouTube sau Vimeo
       tag_category_label: "Categorii"
       tags_instructions: "Etichetați această propunere. Puteți alege dintre categoriile propuse sau adăugați una proprie"
       tags_label: Etichete
+      tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
       map_location: "Localizare pe hartă"
+      map_location_instructions: "Navigați pe hartă până la locație și plasați marcatorul."
       map_remove_marker: "Eliminați marcatorul de hartă"
+      map_skip_checkbox: "Această propunere nu are o locație concretă sau nu o cunosc."
     index:
       featured_proposals: Recomandată
       orders:
@@ -373,6 +378,7 @@ ro:
       retired_links:
         all: Tot
         duplicated: Duplicată
+        started: În curs
         unfeasible: Nerealizabil
         done: Gata
         other: Alta
@@ -381,8 +387,10 @@ ro:
         placeholder: Caută propuneri...
         title: Caută
       select_order: Ordonează după
+      select_order_long: "Vizionați propuneri conform:"
       start_proposal: Crează propunere
       title: Propuneri
+      top: Top săptămânal
       section_header:
         title: Propuneri
         help: Ajutor pentru propuneri
@@ -467,6 +475,8 @@ ro:
       recommended_actions: Acțiuni recomandate
       messages: Mesaj către utilizatori
       related_content: Continut asemanator
+    form:
+      request: Cerere
     progress:
       title: Grafic
       group_by_month: Lunar
@@ -474,6 +484,7 @@ ro:
       group_by_date: Zilnic
       progress: Progresul acumulat
       supports: Suporturi
+      success: Progres ideal
     recommended_actions:
       pending_title: În așteptare
       show_description: Afișează descriere
@@ -503,6 +514,7 @@ ro:
       new:
         title: Sondaj nou
       poll:
+        edit_poll: Editează chestionar
         show_results_help: Dacă bifați această casetă, rezultatele vor fi publice și toți utilizatorii vor putea să le vadă
         delete: Șterge chestionar
         alert_notice: Această acțiune va elimina chestionar și toate întrebările asociate.
