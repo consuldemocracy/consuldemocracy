@@ -99,6 +99,9 @@ ro:
       subject: "Schița propunerii dumneavoastră a fost creată"
       hi: "Bună %{name}!"
       introduction: "Propunerea %{title} a fost creată cu succes."
+      text_1: "Profitați de faptul că propunerea dvs. nu este încă publică și pregătiți-vă să contactați cât mai mulți oameni."
+      text_2: "Când sunteți gata, puteți publica propunerea de pe următorul <a href='%{link}'>link</a>."
+      text_3: "Știm că crearea unei propuneri și obținerea suportului necesar poate părea complicată. Dar nu vă faceți griji, pentru că vă vom ajuta!"
     new_actions_notification_on_published:
       subject: "Propunerea dumneavoastră este deja publicată!"
       hi: "Felicitări %{name}! Propunerea %{title} a fost creată cu succes."
