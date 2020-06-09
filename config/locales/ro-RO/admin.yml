@@ -508,9 +508,17 @@ ro:
           questions: Dezbate
           proposals: Propuneri
       proposals:
+        index:
+          supports: Total susțineri
         form:
           custom_categories: Categorii
       draft_versions:
+        create:
+          error: Schița nu a putut fi creată
+        update:
+          error: Schița nu a putut fi actualizată
+        destroy:
+          notice: Schița a fost ștearsă cu succes
         edit:
           back: Înapoi
           submit_button: Salvează modificări
