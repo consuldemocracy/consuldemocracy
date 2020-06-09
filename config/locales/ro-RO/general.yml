@@ -502,6 +502,7 @@ ro:
       success: Progres ideal
       new_action: Nou
     index:
+      title: Ediție
       edit_proposal_link: Editează propunere
       publish: Publică propunere
       retire: Retrage propunere
@@ -586,6 +587,8 @@ ro:
     poster:
       index:
         title: Previzualizare afiș
+        poster_title: "Nu te uita,"
+        poster_subtitle: "susține-mă! ;)"
         intro_text: "<strong>Particip în %{org}</strong> cu propria propunere și numai dacă vă adăugați, puteți obține sprijinul necesar pentru a face orașul pe care îl dorim cu toții."
         proposal_code: "Codul propunerii: %{code}"
         support: Sprijină propunerea
@@ -598,6 +601,8 @@ ro:
     mailing:
       index:
         title: Previzualizare email
+      new:
+        title: Model de e-mail pentru a partaja
       mailing_options:
         send: Trimite la %{address}
         preview: Previzualizare
@@ -605,6 +610,7 @@ ro:
         sent: Emailul a fost trimit
     mailer:
       forward:
+        subtitle: "Dacă mă sprijiniți, <br> îl vom realiza."
         support_button: Sprijină această propunere
         share_in: Distribuie în
         hi: "Bună ziua!"
@@ -940,6 +946,7 @@ ro:
     submit: "Adaugă"
     error: "Link-ul nu este valid. Amintiți-vă să începeți cu %{url}."
     error_itself: "Link-ul nu este valid. Nu puteți raporta un conținut cu el însuși."
+    success: "Ați adăugat un conținut asemănător"
     is_related: "Este acesta conținut asemănător?"
     score_positive: "Da"
     score_negative: "Nu"
