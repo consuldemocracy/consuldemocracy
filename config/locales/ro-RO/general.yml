@@ -385,9 +385,16 @@ ro:
       title: Propuneri
       section_header:
         title: Propuneri
+        help: Ajutor pentru propuneri
+      section_footer:
+        title: Ajutor pentru propuneri
+        description: Propunerile cetățenilor sunt o oportunitate pentru vecini și grupuri de a decide direct cum vor să fie societatea lor, după ce au primit suficient sprijin și s-au prezentat la votul cetățenilor.
     new:
       form:
         submit_button: Crează propunere
+      more_info: Cum funcționează propunerile cetățenilor?
+      recommendation_one: Nu scrieți titlul subiectului sau propozițiile întregi cu majuscule. Pe internet acest lucru este considerat strigat. Și nimănui nu îi place să i se țipe în față.
+      recommendation_three: Bucurați-vă de acest spațiu, de vocile care îl umplu, este și al vostru.
       recommendation_two: Orice dezbatere sau comentariu care sugerează acțiuni ilegale vor fi șterse, precum și cele care intenționează să saboteze spațiile de dezbatere. Orice altceva este permis.
       recommendations_title: Recomandări pentru crearea o propunere
       start_new: Crează propunere nouă
