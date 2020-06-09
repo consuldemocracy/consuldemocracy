@@ -4,6 +4,10 @@ ro:
       verification:
         residence: "Adresă de reședință"
         sms: "SMS"
+      local_census_records/import:
+        one: Import de date
+        few: Import de date
+        other: Import de date
     attributes:
       verification:
         residence:
