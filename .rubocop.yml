@@ -186,9 +186,6 @@ Lint/UselessAssignment:
 Performance/CompareWithBlock:
   Enabled: true
 
-Performance/Detect:
-  Enabled: true
-
 Performance/DoubleStartEndWith:
   Enabled: true
 
