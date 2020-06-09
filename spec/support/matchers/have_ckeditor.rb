@@ -14,8 +14,12 @@ RSpec::Matchers.define :have_ckeditor do |label, with:|
   match do
     return false unless has_ckeditor?
 
+    until page.execute_script("return CKEDITOR.instances.#{textarea_id}.status === 'ready';") do
+      sleep 0.01
+    end
+
     page.within(ckeditor_id) do
-      within_frame(0) { has_content?(with) }
+      within_frame(0) { has_content?(with, exact: true) }
     end
   end
 
