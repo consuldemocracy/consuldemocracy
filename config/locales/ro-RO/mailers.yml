@@ -1,7 +1,10 @@
 ro:
   mailers:
+    no_reply: "Acest mesaj a fost trimis de la o adresă de e-mail care nu acceptă răspunsuri."
     comment:
       hi: Bună
+      new_comment_by: Comentariu nou de la <strong>%{commenter}</strong>
+      subject: Cineva a comentat la %{commentable} dumneavoastră
       title: Comentariu nou
     config:
       manage_email_subscriptions: Pentru a nu mai primi aceste e-mailuri, schimbați setările în
@@ -25,9 +28,11 @@ ro:
     direct_message_for_receiver:
       subject: "Ați primit un mesaj privat"
       reply: Răspunde-i lui %{sender}
+      unsubscribe: "Dacă nu doriți să primiți mesaje directe, accesați %{account} și debifați „Primește e-mailuri despre mesaje directe”."
       unsubscribe_account: Contul meu
     direct_message_for_sender:
       subject: "Ați trimis un nou mesaj privat"
       title: "Ați trimis un mesaj privat către<strong>%{receiver}</strong> cu următorul conținut:"
     user_invite:
+      ignore: "Dacă nu ați solicitat această invitație, nu vă faceți griji, puteți ignora acest email."
       thanks: "Vă mulțumim foarte mult."
