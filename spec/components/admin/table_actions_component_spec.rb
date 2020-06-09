@@ -26,4 +26,13 @@ describe Admin::TableActionsComponent, type: :component do
       expect(page).not_to have_link "Edit"
     end
   end
+
+  it "allows custom texts for actions" do
+    render_inline Admin::TableActionsComponent.new(record, edit_text: "change", destroy_text: "annihilate")
+
+    expect(page).to have_link "annihilate"
+    expect(page).to have_link "change"
+    expect(page).not_to have_link "Delete"
+    expect(page).not_to have_link "Edit"
+  end
 end

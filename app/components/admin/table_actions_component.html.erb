@@ -1,11 +1,11 @@
 <% if actions.include?(:edit) %>
-  <%= link_to t("admin.actions.edit"),
+  <%= link_to edit_text,
               admin_polymorphic_path(record, action: :edit),
               class: "button hollow" %>
 <% end %>
 
 <% if actions.include?(:destroy) %>
-  <%= link_to t("admin.actions.delete"),
+  <%= link_to destroy_text,
               admin_polymorphic_path(record),
               method: :delete,
               class: "button hollow alert",

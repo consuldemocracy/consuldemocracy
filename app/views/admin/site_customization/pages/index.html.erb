@@ -35,20 +35,17 @@
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
         <td>
-          <div class="small-6 column">
-            <% if page.status == "published" %>
-              <%= link_to t("admin.site_customization.pages.index.see_page"),
-                          page.url,
-                          target: "_blank",
-                          class: "button hollow expanded" %>
-            <% end %>
-          </div>
-          <div class="small-6 column end">
-            <%= link_to t("admin.site_customization.pages.index.delete"),
-                        admin_site_customization_page_path(page),
-                        method: :delete,
-                        class: "button hollow alert expanded" %>
-          </div>
+          <% if page.status == "published" %>
+            <%= link_to t("admin.site_customization.pages.index.see_page"),
+                        page.url,
+                        target: "_blank",
+                        class: "button hollow" %>
+          <% end %>
+
+          <%= render Admin::TableActionsComponent.new(page,
+            actions: [:destroy],
+            destroy_text: t("admin.site_customization.pages.index.delete")
+          ) %>
         </td>
       </tr>
     <% end %>

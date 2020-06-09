@@ -21,15 +21,10 @@
         <td><%= banner.post_started_at %></td>
         <td><%= banner.post_ended_at %></td>
         <td>
-          <div class="small-12 medium-6 column">
-            <%= link_to t("admin.banners.index.edit"), edit_admin_banner_path(banner),
-                        class: "button hollow expanded" %>
-          </div>
-          <div class="small-12 medium-6 column">
-            <%= link_to t("admin.banners.index.delete"), admin_banner_path(banner),
-                        method: :delete,
-                        class: "button hollow alert expanded" %>
-          </div>
+          <%= render Admin::TableActionsComponent.new(banner,
+            edit_text: t("admin.banners.index.edit"),
+            destroy_text: t("admin.banners.index.delete")
+          ) %>
         </td>
       </tr>
       <tr>

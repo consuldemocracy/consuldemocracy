@@ -1,8 +1,22 @@
 class Admin::TableActionsComponent < ApplicationComponent
-  attr_reader :record, :actions
+  attr_reader :record, :options
 
-  def initialize(record, actions: [:edit, :destroy])
+  def initialize(record, **options)
     @record = record
-    @actions = actions
+    @options = options
   end
+
+  private
+
+    def actions
+      options[:actions] || [:edit, :destroy]
+    end
+
+    def edit_text
+      options[:edit_text] || t("admin.actions.edit")
+    end
+
+    def destroy_text
+      options[:destroy_text] || t("admin.actions.delete")
+    end
 end

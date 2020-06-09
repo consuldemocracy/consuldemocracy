@@ -30,11 +30,10 @@
         </td>
         <td>
           <% if officer.persisted? %>
-            <%= link_to t("admin.poll_officers.officer.delete"),
-                        admin_officer_path(officer),
-                        method: :delete,
-                        class: "button hollow alert expanded"
-            %>
+            <%= render Admin::TableActionsComponent.new(officer,
+              actions: [:destroy],
+              destroy_text: t("admin.poll_officers.officer.delete")
+            ) %>
           <% else %>
             <%= link_to t("admin.poll_officers.officer.add"),
                         { controller: "admin/poll/officers", action: :create,
