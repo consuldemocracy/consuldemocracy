@@ -218,6 +218,9 @@ ro:
         current_goal: Scopul actual
         supports:
           zero: Fără susținători
+          one: 1 suport
+          few: "Suporturi"
+          other: "Suporturi"
     footer:
       accessibility: Accesibiliate
       conditions: Termeni si conditii de utilizare
@@ -619,8 +622,31 @@ ro:
       cant_answer: "Acest sondaj nu este valabil în geo zona dumneavoastră"
       section_header:
         title: Votare
+    show:
+      cant_answer_expired: "Acest sondaj s-a încheiat."
+      cant_answer_wrong_geozone: "Această întrebare nu este valabilă în geo zona dumneavoastră."
+      more_info_title: "Mai multe informații"
+      documents: Documente
+      info_menu: "Informație"
+      results_menu: "Rezultatele sondajului"
+      stats:
+        total_votes: "Număr total de voturi date"
+        votes: "VOTURI"
+        web: "WEB"
+        mail: "MAIL"
+        booth: "CABINĂ DE VOT"
+        total: "TOTAL"
+        valid: "Valid"
+        white: "Absolut gol"
+        null_votes: "Invalid"
+      results:
+        title: "Întrebări"
+        most_voted_answer: "Cel mai votat răspuns: "
+    poll_header:
+      back_to_proposal: Înapoi la propunere
   poll_questions:
     show:
+      vote_answer: "Votează %{answer}"
       voted: "Ați votat %{answer}"
   proposal_notifications:
     new:
@@ -800,6 +826,24 @@ ro:
       most_active:
         debates: "Dezbaterile cele mai active"
         proposals: "Propunerile cele mai active"
+        processes: "Procese deschise"
+      see_all_debates: Vezi toate dezbaterile
+      see_all_proposals: Vezi propuneri
+      see_all_processes: Vezi toate procesele
+      process_label: Proces
+      see_process: Vezi proces
+    recommended:
+      slide: "Vezi %{title}"
+    verification:
+      i_dont_have_an_account: Nu am un cont
+      i_have_an_account: Am deja un cont
+  related_content:
+    placeholder: "%{url}"
+    score_positive: "Da"
+    score_negative: "Nu"
+    content_title:
+      proposal: "Propunere"
+      debate: "Dezbatere"
   admin/widget:
     header:
       title: Administrare
