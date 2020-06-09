@@ -62,6 +62,8 @@ ro:
     budget_investment_selected:
       subject: "Acest proiect de investiții \"%{code}\" a fost selectat"
       hi: "Dragă utilizator,"
+      share: "Începeți să împărtășiți proiectul dvs. pe rețelele de socializare pentru a obține voturi. Partajarea este esențială pentru a deveni realitate."
+      share_button: "Partajează-ți proiectul de investiții"
       thanks: "Vă mulțumim din nou pentru participare."
       sincerely: "Cu sinceritate"
     budget_investment_unselected:
@@ -70,10 +72,18 @@ ro:
       thanks: "Vă mulțumim din nou pentru participare."
       sincerely: "Cu sinceritate"
     evaluation_comment:
+      subject: "Nou comentariu de evaluare"
+      title: Nou comentariu de evaluare pentru %{investment}
       hi: Bună
+      new_comment_by: Există un nou comentariu de evaluare de la <strong>%{commenter}</strong> la investiția bugetară %{investment}
       commenter_info: "%{commenter},%{time}:"
     new_actions_notification_rake_created:
+      subject: "Mai multe știri despre propunerea dumneavoastră"
       hi: "Bună %{name},"
+      introduction: "După cum știți, în %{created_at_day} din %{created_at_month} ați creat o propunere în schițe %{title}."
+      text_1: "De câte ori doriți, puteți publica pe acest link: %{link_to_published}. Dacă încă nu ești sigur..."
+      text_2: "Profită de acest moment! Aflați și adăugați alți oameni cu aceleași interese și pregătiți publicul de care veți avea nevoie atunci când publicați definitiv propunerea."
+      text_3: "Și pentru a vă însoți în această provocare, iată noutățile..."
     new_actions_notification_rake_published:
       hi: "Bună %{name},"
     new_actions_notification_on_create:
