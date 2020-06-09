@@ -642,7 +642,9 @@ ro:
       already_voted_in_booth: "Ați participat deja la o cabină de vot fizică. Nu puteți participa din nou."
       already_voted_in_web: "Ați participat deja la acest sondaj. Dacă votați din nou, va fi suprascris."
       back: Înapoi la votare
+      cant_answer_not_logged_in: "Trebuie %{signin} sau %{signup} pentru a participa."
       comments_tab: Comentarii
+      cant_answer_verify: "Trebuie să %{verify_link} pentru a participa."
       verify_link: "verifică-ți contul"
       cant_answer_expired: "Acest sondaj s-a încheiat."
       cant_answer_wrong_geozone: "Această întrebare nu este valabilă în geo zona dumneavoastră."
@@ -716,6 +718,7 @@ ro:
     collective: Colectiv
     flag: Semnalați ca necorespunzător
     follow: "Urmăriți"
+    following: "Următorul"
     follow_entity: "Urmărește %{entity}"
     followable:
       budget_investment:
@@ -898,7 +901,9 @@ ro:
       title: Recomandată
     recommended:
       title: Recomandări care v-ar putea interesa
+      help: "Aceste recomandări sunt generate de etichetele dezbaterilor și propunerilor pe care le urmăriți."
       debates:
+        title: Dezbateri recomandate
         btn_text_link: Toate dezbaterile recomandate
       proposals:
         title: Propuneri recomandate
@@ -947,6 +952,8 @@ ro:
       title: Administrare
   annotator:
     help:
+      alt: Selectați textul pe care doriți să îl comentați și apăsați butonul cu creionul.
+      text: Pentru a comenta acest document trebuie %{sign_in} sau %{sign_up}. Apoi selectați textul pe care doriți să îl comentați și apoi apăsași butonul cu creionul.
       title: Cum pot comenta la acest document?
   links:
     form:
@@ -954,16 +961,22 @@ ro:
       cancel_button: Anulare
     nested_links:
       title: Link-uri
+      note: Adăugați linkurile care sunt de interes pentru dumneavoastră
       add_new_link: Adaugă un link nou
     link_fields:
       label_placeholder: Link către titlu
+      url_placeholder: Adresa link
   communities:
     show:
       surveys: Chestionare
       complete_survey: Completează chestionarul
     subnav:
       surveys: Chestionare
+    poll:
+      take_part: Participă de la %{from} la %{to}
   remote_translations:
     text: Conținutul acestei pagini nu este valabil în limba dumneavoastră
     all_remote_translations_enqueued_text: Într-o perioadă scurtă de timp dacă veți reîmprospăta pagina, veți putea vedea tot conținutul în limba dumneavoastră.
+    create:
+      enqueue_remote_translation: Traducerea a fost solicitată corect.
     button: Tradu pagina
