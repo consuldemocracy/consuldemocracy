@@ -734,21 +734,38 @@ ro:
     show: Afișează
     suggest:
       debate:
+        found:
+          one: "Există o dezbatere cu termenul „%{query}”, puteți participa la aceasta în loc să deschideți una nouă."
+          few: "Există dezbateri cu termenul „%{query}”, puteți participa la acestea în loc să deschideți una nouă."
+          other: "Există dezbateri cu termenul „%{query}”, puteți participa la acestea în loc să deschideți una nouă."
+        message: "Vedeți %{limit} din %{count} dezbateri care conțin termenul „%{query}”"
         see_all: "Vezi tot"
       budget_investment:
+        found:
+          one: "Există o investiție cu termenul „%{query}”, puteți participa la ea în loc să deschideți una nouă."
+          few: "Există investiții cu termenul „%{query}”, puteți participa la acestea în loc să deschideți una nouă."
+          other: "Există investiții cu termenul „%{query}”, puteți participa la acestea în loc să deschideți una nouă."
+        message: "Vedeți %{limit} din %{count} investiții care conțin termenul „%{query}”"
         see_all: "Vezi tot"
       proposal:
+        found:
+          one: "Există o propunere cu termenul „%{query}”, puteți contribui la aceasta în loc să creați una nouă"
+          few: "Există o propuneri cu termenul „%{query}”, puteți contribui la acestea în loc să creați una nouă"
+          other: "Există o propuneri cu termenul „%{query}”, puteți contribui la acestea în loc să creați una nouă"
+        message: "Vedeți %{limit} din %{count} propuneri care conțin termenul „%{query}”"
         see_all: "Vezi tot"
     tags_cloud:
       tags: În tendință
       districts: "Districte"
       districts_list: "Lista de districte"
       categories: "Categorii"
+    target_blank: " (linkul se deschide într-o fereastră nouă)"
     you_are_in: "Sunteți în"
     unflag: Anulați semnalarea
     unfollow_entity: "Nu mai urmăriți %{entity}"
     outline:
       searcher: Căutător
+    go_to_page: "Accesați pagina "
     share: Distribuie
     orbit:
       previous_slide: Diapozitiv anterior
@@ -766,6 +783,8 @@ ro:
       select_language_prompt: Alege limba
       remove_language: Șterge limbă
       add_language: Adaugă limbă
+      languages_in_use:
+        zero: "0 limbi utilizate"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
