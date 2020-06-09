@@ -1,7 +1,9 @@
 ro:
   account:
     show:
+      change_credentials_link: Schimbă-mi datele
       erase_account_link: Șterge contul
+      finish_verification: Verificare completă
       notifications: Notificări
       organization_name_label: Numele organizaței
       organization_responsible_name_placeholder: Reprezentant al organizației/colectivului
@@ -305,10 +307,21 @@ ro:
       sign_up: Înregistrează-te cu Twitter
       name: Twitter
     info_sign_in: "Conectează-te cu:"
+    info_sign_up: "Înregistrează-te cu:"
+    or_fill: "Sau completați următorul formular:"
   proposals:
     create:
       form:
         submit_button: Crează propunere
+    created:
+      title: Felicitări! Ați făcut primul pas.
+      motivation_2: "<strong> Dacă doriți recomandări pentru a pregăti publicarea, lăsați propunerea ca o schiță de proiect și vă vom îndruma. </strong>"
+      publish: Nu, vreau să public propunerea
+      dashboard: Da, vreau ajutor și o voi publica mai târziu
+      preview_title: Propunerea dumneavoastră va arăta astfel după ce o veți publica
+    share:
+      improve_it: Îmbunătățiți-vă campania și veți primi mai mult suport.
+      dashboard: Vezi mai multe informații
     edit:
       editing: Editează propunere
       form:
