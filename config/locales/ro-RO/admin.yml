@@ -257,6 +257,7 @@ ro:
       search_unfeasible: Căutarea este imposibilă
     milestones:
       index:
+        table_id: "ID"
         table_title: "Titlu"
         table_description: "Descriere"
         table_publication_date: "Data publicării"
@@ -310,6 +311,7 @@ ro:
         no_progress_bars: "Nu există bare de progres"
         new_progress_bar: "Creați o nouă bară de progres"
         primary: "Bară de progres primară"
+        table_id: "ID"
         table_kind: "Tip"
         table_title: "Titlu"
         table_percentage: "Progresul actual"
@@ -407,6 +409,7 @@ ro:
           success: Sarcina a fost marcată ca fiind rezolvată.
     debates:
       index:
+        id: ID
         author: Autor
         title: Dezbateri
         no_debates: Nu există dezbateri.
@@ -543,6 +546,7 @@ ro:
           hints:
             final_version: Această versiune va fi publicată ca Rezultat Final pentru acest proces. Comentariile nu vor fi permise în această versiune.
             status:
+              draft: Puteți previzualiza ca administrator, nimeni altcineva nu poate vedea
               published: Vizibil pentru toată lumea
           title_placeholder: Scrieți titlul versiunii schiță
           changelog_placeholder: Adăugați principalele modificări din versiunea anterioară
@@ -647,6 +651,7 @@ ro:
           save: "Salvează"
       title_settings: Setări
       title_booths: Cabine de votare
+      legislation: Legislație colaborativă
       administrator_tasks: Resurse solicitate
       debates: "Dezbateri"
       comments: "Comentarii"
