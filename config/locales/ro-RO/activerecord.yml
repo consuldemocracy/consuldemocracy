@@ -469,6 +469,9 @@ ro:
         day_offset: La câte zile după crearea propunerii doriți ca aceasta să fie activată?
         required_supports: Cât suport trebuie să primească o propunere pentru a fi activată?
         order: Puteți introduce poziția în care această acțiune va fi afișată utilizatorului în lista de acțiuni
+        active: Activ
+        action_type: Tip
+        action_type_proposed_action: "Acțiune propusă"
         action_type_resource: "Resursă"
         published_proposal: "Pentru propuneri publicate?"
       dashboard/administrator_task:
@@ -480,8 +483,27 @@ ro:
       valuator:
         description: Descriere
         valuator_group_id: Grup de evaluare
+      valuator_group:
+        name: "Numele grupului"
+      local_census_record:
+        document_type: Tipul de document
+        document_number: Numărul documentului
+        date_of_birth: Data nașterii
+        postal_code: Cod poștal
     errors:
       models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Acest utilizator are deja o parolă"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etichetele trebuie să fie mai mici sau egale cu %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Ați atins numărul maxim de mesaje private pe zi"
         map_location:
           attributes:
             map:
