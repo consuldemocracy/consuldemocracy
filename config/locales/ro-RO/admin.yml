@@ -661,9 +661,14 @@ ro:
         name: Nume
         email: Email
         description: Descriere
+        id: ID-ul Administratorului
+        no_administrators: Nu există administratori.
       administrator:
         add: Adaugă
         delete: Șterge
+        restricted_removal: "Ne pare rău, nu vă puteți scoate din lista de administratori"
+      form:
+        edit_title: "Editează administratori"
     moderators:
       index:
         title: Moderatori
