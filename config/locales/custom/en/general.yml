@@ -40,3 +40,15 @@ en:
         most_commented: "Most commented"
         relevance: "Relevance"
         recommendations: "Recommendations"
+  proposals:
+    index:
+      section_header:
+        description: "Support ideas and if they get enough support they will be voted."
+      orders:
+        confidence_score: "Highest rated"
+        created_at: "Newest"
+        hot_score: "Most active"
+        most_commented: "Most commented"
+        relevance: "Relevance"
+        archival_date: "Archived"
+        recommendations: "Recommendations"

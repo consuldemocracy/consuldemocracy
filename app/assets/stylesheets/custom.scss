@@ -13,6 +13,7 @@
 // 7. Admin
 // 8. Debates
 // 9. Related content
+// 10. Proposals
 //
 
 // 0. Global styles
@@ -288,6 +289,14 @@ aside {
       img {
         border-bottom-left-radius: rem-calc(12);
         border-top-left-radius: rem-calc(12);
+        max-width: none;
+      }
+    }
+
+    .supported {
+
+      &.callout {
+        padding: $line-height / 4;
       }
     }
 
@@ -327,6 +336,15 @@ aside {
     color: $brand;
     content: "\f2b6" !important;
     font-family: "Font Awesome 5 Free";
+  }
+}
+
+.filter-subnav .tabs .tabs-title > a {
+
+  &[aria-selected="true"]::after,
+  .is-active::after {
+    border-bottom: 4px solid $brand;
+    bottom: -4px;
   }
 }
 
@@ -1598,4 +1616,117 @@ aside .supported .button.button-remove-support.expanded {
   a {
     color: $text;
   }
+}
+
+// 10. Proposals
+// --------------------
+
+.proposals-sidebar {
+
+  .small {
+
+    &:not(.button) {
+      display: block;
+      color: $link;
+      position: relative;
+
+      &::after {
+        content: "\f054";
+        font-family: "Font Awesome 5 Free";
+        font-size: $small-font-size;
+        font-weight: bold;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
+
+.supports-container {
+  border-left: 0;
+}
+
+.proposal-show .supports,
+.proposal .supports {
+
+  .total-supports {
+    font-size: $small-font-size;
+    text-align: right;
+
+    span {
+      color: $text;
+    }
+  }
+
+  .button-support {
+    background: $brand;
+    color: #fff;
+    font-weight: bold;
+    margin-top: $line-height * 2;
+  }
+
+  .progress {
+    background: $highlight-soft;
+    border: 1px solid $highlight-soft;
+
+    .meter {
+      background: $brand-secondary;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  .percentage {
+    color: $brand-secondary;
+    font-size: $small-font-size;
+    font-weight: bold;
+    top: -24px;
+  }
+}
+
+.proposal-show {
+
+  .supports .percentage {
+    font-size: $base-font-size;
+  }
+
+  blockquote {
+    border: 4px solid $light;
+    border-radius: rem-calc(12);
+    color: $text;
+    font-size: $base-font-size;
+    margin: $line-height 0;
+    padding: $line-height / 2;
+  }
+
+  figcaption,
+  .video-link {
+    display: none;
+  }
+
+  .medium-7.small-centered {
+    background: $light;
+  }
+}
+
+.additional-content {
+
+  .filter-subnav {
+    background: none;
+  }
+
+  .tabs {
+    border-bottom: 4px solid $light;
+  }
+}
+
+.followable-content {
+  font-weight: bold;
+}
+
+.follow-switch {
+  display: inline-block;
+  font-size: rem-calc(48);
+  margin-bottom: $line-height;
 }

@@ -201,7 +201,7 @@ describe "Proposals" do
         expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
-      select "newest", from: "order-selector"
+      select "Newest", from: "order-selector"
 
       expect(page).to have_selector(".js-order-selector[data-order='created_at']")
 

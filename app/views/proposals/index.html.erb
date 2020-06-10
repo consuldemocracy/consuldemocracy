@@ -44,7 +44,9 @@
       </div>
     </div>
   <% else %>
-    <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
+    <%= render "shared/section_header",
+               i18n_namespace: "proposals.index.section_header",
+               image: "far fa-lightbulb" %>
   <% end %>
 
   <% if show_recommended_proposals? %>
@@ -123,7 +125,7 @@
       </div>
     </div>
 
-    <div class="small-12 medium-3 column">
+    <div class="small-12 medium-3 column proposals-sidebar">
       <aside class="margin-bottom">
         <%= link_to t("proposals.index.start_proposal"),
                     new_proposal_path,
@@ -132,8 +134,10 @@
         <div class="sidebar-divider"></div>
         <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
         <br>
-        <p class="small">
-          <%= link_to t("proposals.index.selected_proposals_link"), proposals_path(selected: "all") %>
+        <p>
+          <%= link_to t("proposals.index.selected_proposals_link"),
+                      proposals_path(selected: "all"),
+                      class: "small" %>
         </p>
 
         <% if params[:retired].blank? %>

@@ -8,7 +8,7 @@
     <% if proposal.image.present? %>
       <div class="row">
         <div class="small-12 medium-3 large-2 column text-center">
-          <%= image_tag proposal.image_url(:thumb),
+          <%= image_tag proposal.image_url(:medium),
                         alt: proposal.image.title.unicode_normalize %>
         </div>
 
