@@ -718,9 +718,22 @@ ro:
       new:
         section_title: Notificare nouă
         submit_button: Crează notificare
+      edit:
+        section_title: Editează notificare
+        submit_button: Actualizează notificare
       show:
+        section_title: Previzualizează notificare
+        send: Trimite notificare
+        will_get_notified: (%{n} utilizatorii vor fi anunțați)
+        got_notified: (%{n} utilizatorii au fost anunțați)
+        sent_at: Trimis la
         title: Titlu
         body: Text
+        link: Link
+        segment_recipient: Destinatari
+        preview_guide: "Așa vor fi anunțați utilizatorii:"
+        sent_guide: "Așa văd utilizatorii notificările:"
+        send_alert: Sunteți sigur că doriți să trimiteți această notificare către %{n} utilizatori?
     site_customization:
       images:
         index:
