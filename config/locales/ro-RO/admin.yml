@@ -778,10 +778,24 @@ ro:
           enable: "Activează"
           disable: "Dezactivează"
         map:
+          title: Configurarea hărții
+          help: Aici puteți personaliza modul în care este afișată harta utilizatorilor. Trageți marcatorul de hartă sau faceți click oriunde peste hartă, setați zoom-ul dorit și faceți click pe butonul „Actualizare”.
+          flash:
+            update: Configurarea hărții actualizată cu succes.
           form:
             submit: Actualizează
         dashboard:
           title: Tablou de bord propuneri
+      remote_census_general_name: Informații Generale
+      setting_actions: Acțiuni
+      setting_name: Setări
+    geozones:
+      index:
+        edit: Editează
+        delete: Șterge
+      geozone:
+        name: Nume
+        coordinates: Coordonate
     site_customization:
       images:
         index:
