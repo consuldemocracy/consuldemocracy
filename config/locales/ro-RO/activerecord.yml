@@ -272,6 +272,7 @@ ro:
         responsible_name: "Numele întreg al persoanei care depune propunerea"
         retired_reason: "Motiv pentru a retrage propunerea"
         selected: "Marchează ca selectat"
+        video_url: "URL video extern"
       proposal/translation:
         title: "Titlul propunerii"
         description: "Textul propunerii"
@@ -455,6 +456,8 @@ ro:
       widget/card:
         title: Titlu
         description: Descriere
+        link_text: Link
+        link_url: URL Link-ului
         columns: Număr de coloane
       widget/card/translation:
         title: Titlu
@@ -504,6 +507,11 @@ ro:
           attributes:
             max_per_day:
               invalid: "Ați atins numărul maxim de mesaje private pe zi"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Lățimea imaginii trebuie să fie %{required_min_width}px"
+              min_image_height: "Înalțimea imaginii trebuie să fie %{required_min_height}px"
         map_location:
           attributes:
             map:
