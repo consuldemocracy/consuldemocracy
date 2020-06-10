@@ -689,6 +689,7 @@ ro:
         delete: Șterge
     segment_recipient:
       administrators: Administratori
+      proposal_authors: Autorii propunerii
     newsletters:
       index:
         subject: Subiect
@@ -699,6 +700,12 @@ ro:
         edit: Editează
         delete: Șterge
         preview: Previzualizare
+      new:
+        image_link: "imagini personalizate"
+      show:
+        send: Trimite
+        sent_at: Trimis la
+        subject: Subiect
     admin_notifications:
       create_success: Notificare creată cu succes
       update_success: Notificare actualizată cu succes
@@ -740,6 +747,8 @@ ro:
         action: Previzualizare în așteptare
         preview_of: Previzualizare a %{name}
         pending_to_be_sent: Acesta este conținutul în așteptare care va fi trimis
+      reply:
+        title: "Răspunde"
     proposals:
       index:
         author: Autor
