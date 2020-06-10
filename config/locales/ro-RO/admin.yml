@@ -483,6 +483,7 @@ ro:
           title_placeholder: Titlul procesului
           summary_placeholder: Scurt rezumat al descrierii
           description_placeholder: Adaugă o descriere a procesului
+          additional_info_placeholder: Adăugați informații suplimentare pe care le considerați utile
         index:
           create: Proces nou
           delete: Șterge
@@ -513,6 +514,9 @@ ro:
           homepage: Pagina principală
           questions: Dezbate
           proposals: Propuneri
+      homepage:
+        edit:
+          title: Configurați pagina de pornire a procesului
       proposals:
         index:
           title: Titlu
