@@ -92,6 +92,7 @@ ro:
         actions: Acțiuni
         edit_phase: Editează etapă
         active: Activ
+        blank_dates: Datele nu sunt completate
         administrators:
           zero: "Selectează administratori"
           one: "1 administrator selectat"
@@ -203,6 +204,7 @@ ro:
         list:
           id: ID
           title: Titlu
+          supports: Susținători
           admin: Administrator
           valuator: Evaluator
           valuation_group: Grup de evaluare
@@ -645,14 +647,20 @@ ro:
           community: "Comunitate"
           proposals: "Propuneri"
           polls: "Sondaje"
+          mailers: "Emailuri"
           management: "Administrare"
           welcome: "Bine ați venit"
         buttons:
           save: "Salvează"
+          content_block:
+            update: "Actualizează bloc"
+      title_moderated_content: Conținut modificat
       title_settings: Setări
       title_booths: Cabine de votare
       legislation: Legislație colaborativă
+      dashboard: Tablou de bord propuneri
       administrator_tasks: Resurse solicitate
+      dashboard_actions: Resurse și acțiuni
       debates: "Dezbateri"
       comments: "Comentarii"
     administrators:
@@ -691,11 +699,25 @@ ro:
         delete: Șterge
         preview: Previzualizare
     admin_notifications:
+      create_success: Notificare creată cu succes
+      update_success: Notificare actualizată cu succes
+      send_success: Notificare trimisă cu succes
+      delete_success: Notificare ștearsă cu succes
       index:
+        section_title: Notificări
+        new_notification: Notificări noi
+        title: Titlu
+        sent: Trimis
+        actions: Acțiuni
         draft: Schiță
         edit: Editează
         delete: Șterge
         preview: Previzualizare
+        view: Vizualizare
+        empty_notifications: Nu există notificări
+      new:
+        section_title: Notificare nouă
+        submit_button: Crează notificare
       show:
         title: Titlu
         body: Text
