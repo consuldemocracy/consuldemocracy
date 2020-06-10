@@ -349,6 +349,7 @@
 }
 
 .debate-new,
+.proposal-form,
 .budget-investment-new {
 
   .header {
@@ -366,6 +367,10 @@
       @include breakpoint(large) {
         font-size: rem-calc(44);
       }
+    }
+
+    a {
+      color: #fff;
     }
 
     &::before {

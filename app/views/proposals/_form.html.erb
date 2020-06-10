@@ -4,97 +4,112 @@
 
   <%= render "shared/errors", resource: @proposal %>
 
-  <div class="row column">
-    <%= f.translatable_fields do |translations_form| %>
+  <div class="light expand">
+    <div class="row">
       <div class="small-12 column">
-        <%= translations_form.text_field :title,
-              maxlength: Proposal.title_max_length,
-              data: { js_suggest_result: "js_suggest_result",
-                      js_suggest: ".js-suggest",
-                      js_url: suggest_proposals_path } %>
-      </div>
-      <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
-
-      <div class="small-12 column">
-        <%= translations_form.text_area :summary,
-                                        rows: 4, maxlength: 200,
-                                        hint: t("proposals.form.proposal_summary_note") %>
+        <p class="subtitle-form"><%= t("shared.required") %></p>
       </div>
 
-      <div class="small-12 column">
-        <%= translations_form.text_area :description,
-                                        maxlength: Proposal.description_max_length,
-                                        class: "html-area" %>
-      </div>
-    <% end %>
+      <%= f.translatable_fields do |translations_form| %>
+        <div class="small-12 column required">
+          <%= translations_form.text_field :title,
+                maxlength: Proposal.title_max_length,
+                data: { js_suggest_result: "js_suggest_result",
+                        js_suggest: ".js-suggest",
+                        js_url: suggest_proposals_path } %>
+        </div>
+        <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
+
+        <div class="small-12 column required">
+          <%= translations_form.text_area :summary,
+                                          rows: 4, maxlength: 200,
+                                          hint: t("proposals.form.proposal_summary_note") %>
+        </div>
+
+        <div class="small-12 column required">
+          <%= translations_form.text_area :description,
+                                          maxlength: Proposal.description_max_length,
+                                          class: "html-area" %>
+        </div>
+      <% end %>
+    </div>
 
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <%= f.text_field :video_url, hint: t("proposals.form.proposal_video_url_note") %>
+      <p class="subtitle-form"><%= t("shared.optional") %></p>
     </div>
+  </div>
 
-    <% if feature?(:allow_images) %>
-      <div class="images small-12 column">
-        <%= render "images/nested_image", imageable: @proposal, f: f %>
-      </div>
-    <% end %>
+  <div class="small-12 column">
+    <%= f.text_field :video_url, hint: t("proposals.form.proposal_video_url_note") %>
+  </div>
 
-    <% if feature?(:allow_attached_documents) %>
-      <div class="documents small-12 column">
-        <%= render "documents/nested_documents", documentable: @proposal, f: f %>
-      </div>
-    <% end %>
-
-    <div class="small-12 medium-6 column">
-      <%= f.select :geozone_id, geozone_select_options,
-        include_blank: t("geozones.none") %>
+  <% if feature?(:allow_images) %>
+    <div class="images small-12 column">
+      <%= render "images/nested_image", imageable: @proposal, f: f %>
     </div>
+  <% end %>
 
-    <% if feature?(:map) %>
-      <div class="small-12 column">
+  <% if feature?(:allow_attached_documents) %>
+    <div class="documents small-12 column">
+      <%= render "documents/nested_documents", documentable: @proposal, f: f %>
+    </div>
+  <% end %>
 
-        <%= render "map_locations/form_fields",
-                   form:     f,
-                   map_location: @proposal.map_location || MapLocation.new,
-                   label:    t("proposals.form.map_location"),
-                   help:     t("proposals.form.map_location_instructions"),
-                   remove_marker_label: t("proposals.form.map_remove_marker"),
-                   parent_class: "proposal",
-                   i18n_namespace: "proposals" %>
+  <div class="small-12 medium-6 column">
+    <%= f.select :geozone_id, geozone_select_options,
+      include_blank: t("geozones.none") %>
+  </div>
 
-      </div>
-    <% end %>
-
+  <% if feature?(:map) %>
     <div class="small-12 column">
-      <%= f.label :tag_list, t("proposals.form.tags_label") %>
-      <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
 
-      <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("proposals.form.tag_category_label") %>
-        <% @categories.each do |tag| %>
-          <a class="js-add-tag-link"><%= tag.name %></a>
-        <% end %>
-      </div>
+      <%= render "map_locations/form_fields",
+                 form:     f,
+                 map_location: @proposal.map_location || MapLocation.new,
+                 label:    t("proposals.form.map_location"),
+                 help:     t("proposals.form.map_location_instructions"),
+                 remove_marker_label: t("proposals.form.map_remove_marker"),
+                 parent_class: "proposal",
+                 i18n_namespace: "proposals" %>
 
-      <br>
-      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
-                        label: false,
-                        placeholder: t("proposals.form.tags_placeholder"),
-                        class: "js-tag-list tag-autocomplete",
-                        aria: { describedby: "tag-list-help-text" },
-                        data: { js_url: suggest_tags_path } %>
+    </div>
+  <% end %>
+
+  <div class="small-12 column">
+    <%= f.label :tag_list, t("proposals.form.tags_label") %>
+    <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
+
+    <div id="category_tags" class="tags">
+      <%= f.label :category_tag_list, t("proposals.form.tag_category_label") %>
+      <% @categories.each do |tag| %>
+        <a class="js-add-tag-link"><%= tag.name %></a>
+      <% end %>
     </div>
 
-    <% if current_user.unverified? %>
-      <div class="small-12 column">
-        <%= f.text_field :responsible_name,
-          hint: t("proposals.form.proposal_responsible_name_note") %>
-      </div>
-    <% end %>
+    <br>
+    <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
+                      label: false,
+                      placeholder: t("proposals.form.tags_placeholder"),
+                      class: "js-tag-list tag-autocomplete",
+                      aria: { describedby: "tag-list-help-text" },
+                      data: { js_url: suggest_tags_path } %>
+  </div>
 
-    <div class="small-12 column">
+  <% if current_user.unverified? %>
+    <div class="small-12 column required">
+      <%= f.text_field :responsible_name,
+        hint: t("proposals.form.proposal_responsible_name_note") %>
+    </div>
+  <% end %>
+
+  <div class="clear"></div>
+  <div class="submit-form-container">
+    <div class="small-12 medium-9 small-centered submit-form-box required">
       <% if @proposal.new_record? %>
+        <p class="form-label"><%= t("shared.required_fields") %></p>
+
         <%= f.check_box :terms_of_service,
           title: t("form.accept_terms_title"),
           label: t("form.accept_terms",
@@ -102,10 +117,9 @@
                    conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
                   ) %>
       <% end %>
-    </div>
 
-    <div class="actions small-12 column">
-      <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>
+      <%= f.submit(class: "button large margin-top",
+                   value: t("proposals.#{action_name}.form.submit_button")) %>
     </div>
   </div>
 <% end %>
