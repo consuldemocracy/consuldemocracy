@@ -734,6 +734,40 @@ ro:
         preview_guide: "Așa vor fi anunțați utilizatorii:"
         sent_guide: "Așa văd utilizatorii notificările:"
         send_alert: Sunteți sigur că doriți să trimiteți această notificare către %{n} utilizatori?
+    system_emails:
+      preview_pending:
+        action: Previzualizare în așteptare
+        preview_of: Previzualizare a %{name}
+        pending_to_be_sent: Acesta este conținutul în așteptare care va fi trimis
+    proposals:
+      index:
+        author: Autor
+        select: Selectează
+        selected: Selectat
+        milestones: Repere
+        no_proposals: Nu există propuneri.
+      form:
+        update: Actualizează popunere
+      update:
+        notice: Propunere actualizată cu succes
+    hidden_proposals:
+      index:
+        filter: Filtru
+        filters:
+          all: Tot
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Propuneri ascunse
+        no_hidden_proposals: Nu există propuneri ascunse.
+    proposal_notifications:
+      index:
+        filter: Filtru
+        filters:
+          all: Tot
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Notificări ascunse
+        no_hidden_proposals: Nu există notificări ascunse.
     site_customization:
       images:
         index:
