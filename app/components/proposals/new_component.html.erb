@@ -1,25 +1,21 @@
-<div class="proposal-new">
+<main class="proposal-new">
+  <%= back_link_to proposals_path, t("proposals.index.section_header.title") %>
 
-  <div class="small-12 medium-9 column">
-    <%= back_link_to %>
+  <%= header do %>
+    <%= link_to help_path(anchor: "proposals"), title: t("shared.target_blank"), target: "_blank" do %>
+      <%= t("proposals.new.more_info") %>
+    <% end %>
+  <% end %>
 
-    <h1><%= t("proposals.new.start_new") %></h1>
-    <div data-alert class="callout primary">
-      <%= link_to help_path(anchor: "proposals"), title: t("shared.target_blank"), target: "_blank" do %>
-        <%= t("proposals.new.more_info") %>
-      <% end %>
-    </div>
-
-    <%= render Proposals::FormComponent.new(proposal, url: proposals_path) %>
-  </div>
-
-  <div class="small-12 medium-3 column">
-    <span class="icon-proposals float-right"></span>
+  <aside>
     <h2><%= t("proposals.new.recommendations_title") %></h2>
+
     <ul class="recommendations">
       <li><%= t("proposals.new.recommendation_one") %></li>
       <li><%= t("proposals.new.recommendation_two") %></li>
       <li><%= t("proposals.new.recommendation_three") %></li>
     </ul>
-  </div>
-</div>
+  </aside>
+
+  <%= render Proposals::FormComponent.new(proposal, url: proposals_path) %>
+</main>

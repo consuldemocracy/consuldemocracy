@@ -244,19 +244,6 @@
 // 02. New participation
 // ---------------------
 
-.proposal-new {
-
-  .icon-proposals {
-    font-size: rem-calc(50);
-    line-height: $line-height;
-    opacity: 0.5;
-  }
-
-  .icon-proposals {
-    color: $proposals;
-  }
-}
-
 .recommendations {
   list-style-type: none;
   margin-left: 0;
@@ -270,13 +257,6 @@
       content: "l ";
       font-family: "icons" !important;
     }
-  }
-}
-
-.proposal-new {
-
-  .recommendations li::before {
-    color: $proposals;
   }
 }
 

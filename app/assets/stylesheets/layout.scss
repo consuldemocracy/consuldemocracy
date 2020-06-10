@@ -69,6 +69,7 @@ main {
 
   &.budget-investment-new,
   &.debate-new,
+  &.proposal-new,
   &.sdg-goals-index,
   &.sdg-goal-show {
     @include grid-column-gutter;
