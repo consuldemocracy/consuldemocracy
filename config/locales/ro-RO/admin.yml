@@ -749,6 +749,19 @@ ro:
         pending_to_be_sent: Acesta este conținutul în așteptare care va fi trimis
       reply:
         title: "Răspunde"
+      edit_info: "Puteți edita acest email din"
+      alert:
+        no_investments: "Nu s-au creat investiții bugetare. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
+        no_comments: "Nu s-au creat comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
+    valuators:
+      index:
+        group: "Grup"
+      valuator:
+        delete: Șterge
+      show:
+        description: "Descriere"
+        email: "Email"
+        group: "Grup"
     proposals:
       index:
         author: Autor
