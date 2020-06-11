@@ -78,16 +78,18 @@ Rails.application.configure do
   #
   # Ips de acceso de gestion, ellas pasaran directamente al sign_in, en otro caso serán redirigidas
   # a la URL de negociación, se pueden separar por ";" en caso de existir varias
-  config.participacion_management_ip = "192.168.10.1; 127.0.0.1;"
+  config.participacion_management_ip = Rails.application.secrets.participacion_management_ip
 
   # URL de renegociacion en el caso de que la IP no sea valida, para que se gestione una renegociacion
   # de sesion, en cualquier caso siempre entra por aqui, sera el portal de participacion el que se
   # encarga de comprobar si el resultado es valido
-  config.participacion_renegotiation = "https://localhost:8443/cm/participacion-api/renegotiate?alias=consul"
+  config.participacion_renegotiation = Rails.application.secrets.participacion_renegotiation
 
   # Mantiene el token seguro que se negocia con la aplicacion para la conexión remota
-  config.participacion_xauth_secret = "@78il!!po00!@###^^[["
+  config.participacion_xauth_secret = Rails.application.secrets.participacion_xauth_secret
 
   # Mantiene las IPs de acceso remoto para la autenticacion
-  config.participacion_xauth_origin = "127.0.0.1; ::1"
+  config.participacion_xauth_origin = Rails.application.secrets.participacion_xauth_origin
+
+
 end
