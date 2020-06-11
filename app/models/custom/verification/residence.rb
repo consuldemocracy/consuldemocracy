@@ -41,7 +41,8 @@ class Verification::Residence
       document_type: document_type,
       date_of_birth: @census_api_response.census_date_of_birth,
       residence_verified_at: Time.now,
-      verified_at: Time.now
+      verified_at: Time.now,
+      geozone: Geozone.find_by(external_code: @census_api_response.geozone_external_code)
     )
   end
 
