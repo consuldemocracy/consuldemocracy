@@ -31,15 +31,10 @@
     }
   }
 
-  > section:first-child h2 {
-    @include has-fa-icon(thumbs-up, regular, after);
-
-    &::after {
-      display: block;
-      color: $brand;
-      font-size: 2em;
-      margin: $line-height * 1.5 auto;
-    }
+  > section:first-child h2::after {
+    content: image-url("budgets/budgets_support.png");
+    display: block;
+    margin-top: $line-height;
   }
 
   section + section p {
