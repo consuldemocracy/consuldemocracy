@@ -2,4 +2,5 @@ es:
   verification:
     residence:
       new:
+        postal_code: Código postal
         error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando a la Diputación o visitando una oficina de Atención al ciudadano.
