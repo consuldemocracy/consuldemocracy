@@ -1546,13 +1546,15 @@
 }
 
 .current-phase-timeline {
-  display: block;
   font-size: $small-font-size;
   font-weight: bold;
-  margin-left: $line-height / 4;
+  left: 50%;
+  margin-left: rem-calc(10);
   position: absolute;
   text-transform: uppercase;
+  transform: translateX(-50%);
   top: 24px;
+  width: 100%;
 }
 
 .phase-number {
@@ -1592,6 +1594,7 @@
   .tabs-title {
     margin: $line-height / 6;
     margin-left: 0;
+    min-width: rem-calc(170);
     position: relative;
     text-align: center;
 
