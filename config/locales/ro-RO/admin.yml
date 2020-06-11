@@ -688,6 +688,7 @@ ro:
         add: Adaugă
         delete: Șterge
     segment_recipient:
+      all_users: Toți utilizatorii
       administrators: Administratori
       proposal_authors: Autorii propunerii
     newsletters:
