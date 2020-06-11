@@ -52,7 +52,7 @@ Rails.application.routes.draw do
     draw :verification
     draw :consultation
     draw :restriction
-
+    draw :external_user
     root "welcome#index"
     get "/welcome", to: "welcome#welcome"
     get "/consul.json", to: "installation#details"
