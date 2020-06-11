@@ -241,27 +241,27 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
-  config.omniauth :facebook, Rails.application.secrets.facebook_key, Rails.application.secrets.facebook_secret, scope: "email", info_fields: "email,name,verified"
-  config.omniauth :google_oauth2, Rails.application.secrets.google_oauth2_key, Rails.application.secrets.google_oauth2_secret
-  config.omniauth :wordpress_oauth2,
-                  Rails.application.secrets.wordpress_oauth2_key,
-                  Rails.application.secrets.wordpress_oauth2_secret,
-                  strategy_class: OmniAuth::Strategies::Wordpress,
-                  client_options: { site: Rails.application.secrets.wordpress_oauth2_site }
-  config.omniauth :ldap,
-                  title: "ldap",
-                  host: Rails.application.secrets.ldap_host,
-                  port: Rails.application.secrets.ldap_port,
-                  method: :plain,
-                  base: Rails.application.secrets.ldap_base,
-                  uid: Rails.application.secrets.ldap_attribute,
-                  password: Rails.application.secrets.ldap_password,
-                  bind_dn: Rails.application.secrets.ldap_bind_dn,
-                  url: Rails.application.secrets.ldap_url
-  config.omniauth :codigo,
-                  url_api: Rails.application.secrets.codigo_url_api,
-                  url_formulario: Rails.application.secrets.codigo_url_formulario
+  #config.omniauth :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
+  #config.omniauth :facebook, Rails.application.secrets.facebook_key, Rails.application.secrets.facebook_secret, scope: "email", info_fields: "email,name,verified"
+  #config.omniauth :google_oauth2, Rails.application.secrets.google_oauth2_key, Rails.application.secrets.google_oauth2_secret
+  #config.omniauth :wordpress_oauth2,
+  #                Rails.application.secrets.wordpress_oauth2_key,
+  #                Rails.application.secrets.wordpress_oauth2_secret,
+  #                strategy_class: OmniAuth::Strategies::Wordpress,
+  #                client_options: { site: Rails.application.secrets.wordpress_oauth2_site }
+  #config.omniauth :ldap,
+  #                title: "ldap",
+  #                host: Rails.application.secrets.ldap_host,
+  #                port: Rails.application.secrets.ldap_port,
+  #                method: :plain,
+  #                base: Rails.application.secrets.ldap_base,
+  #                uid: Rails.application.secrets.ldap_attribute,
+  #                password: Rails.application.secrets.ldap_password,
+  #                bind_dn: Rails.application.secrets.ldap_bind_dn,
+  #                url: Rails.application.secrets.ldap_url
+  #config.omniauth :codigo,
+  #                url_api: Rails.application.secrets.codigo_url_api,
+  #                url_formulario: Rails.application.secrets.codigo_url_formulario
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
