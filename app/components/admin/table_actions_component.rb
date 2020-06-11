@@ -20,12 +20,24 @@ class Admin::TableActionsComponent < ApplicationComponent
       options[:edit_path] || admin_polymorphic_path(record, action: :edit)
     end
 
+    def edit_options
+      { class: "button hollow" }.merge(options[:edit_options] || {})
+    end
+
     def destroy_text
       options[:destroy_text] || t("admin.actions.delete")
     end
 
     def destroy_path
       options[:destroy_path] || admin_polymorphic_path(record)
+    end
+
+    def destroy_options
+      {
+        method: :delete,
+        class: "button hollow alert",
+        data: { confirm: destroy_confirmation }
+      }.merge(options[:destroy_options] || {})
     end
 
     def destroy_confirmation

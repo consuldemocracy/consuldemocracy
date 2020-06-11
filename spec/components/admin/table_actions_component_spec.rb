@@ -48,4 +48,10 @@ describe Admin::TableActionsComponent, type: :component do
 
     expect(page).to have_css "a[data-confirm='Are you mad? Be careful!']"
   end
+
+  it "allows custom options" do
+    render_inline Admin::TableActionsComponent.new(record, edit_options: { id: "edit_me" })
+
+    expect(page).to have_css "a#edit_me"
+  end
 end
