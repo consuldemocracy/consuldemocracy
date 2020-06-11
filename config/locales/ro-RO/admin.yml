@@ -704,9 +704,19 @@ ro:
       new:
         image_link: "imagini personalizate"
       show:
+        title: Previzualizare newsletter
         send: Trimite
+        affected_users: (%{n} utilizatori afectați)
+        sent_emails:
+          one: 1 email trimis
+          few: "%{count} email-uri trimise"
+          other: "%{count} email-uri trimise"
         sent_at: Trimis la
         subject: Subiect
+        segment_recipient: Destinatari
+        from: Adresa de e-mail care va apărea ca expeditoare a newsletter-ului
+        body_help_text: Așa vor vedea utilizatorii vedea e-mailul.
+        send_alert: Sunteți sigur că doriți să trimiteți acest newsletter către %{n} utilizatori?
     admin_notifications:
       create_success: Notificare creată cu succes
       update_success: Notificare actualizată cu succes
@@ -716,6 +726,7 @@ ro:
         section_title: Notificări
         new_notification: Notificări noi
         title: Titlu
+        segment_recipient: Destinatari
         sent: Trimis
         actions: Acțiuni
         draft: Schiță
