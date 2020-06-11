@@ -27,8 +27,14 @@ class Users::SessionsController < Devise::SessionsController
       # del portal de participacion.. siempre y cuando el usuario no este conectado ya, claro...
       unless user_signed_in?
         @ip = request.remote_ip
-        @managementIps = Rails.application.config.participacion_management_ip
-        @redirect      = Rails.application.config.participacion_renegotiation
+        @managementIps = nil
+        if(Rails.application.config.respond_to?(:participacion_management_ip))
+            @managementIps = Rails.application.config.participacion_management_ip
+        end
+        if(Rails.application.config.respond_to?(:participacion_renegotiation))
+          @redirect = Rails.application.config.participacion_renegotiation
+        end
+
 
         if(@redirect!=nil && @managementIps!=nil)
           if(@managementIps.split(';').none?{|m| m.strip == @ip })
