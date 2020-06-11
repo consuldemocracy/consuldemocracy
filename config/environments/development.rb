@@ -74,7 +74,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  #
+
   #
   # Ips de acceso de gestion, ellas pasaran directamente al sign_in, en otro caso serán redirigidas
   # a la URL de negociación, se pueden separar por ";" en caso de existir varias
@@ -84,4 +84,10 @@ Rails.application.configure do
   # de sesion, en cualquier caso siempre entra por aqui, sera el portal de participacion el que se
   # encarga de comprobar si el resultado es valido
   config.participacion_renegotiation = "https://localhost:8443/cm/participacion-api/renegotiate?alias=consul"
+
+  # Mantiene el token seguro que se negocia con la aplicacion para la conexión remota
+  config.participacion_xauth_secret = "@78il!!po00!@###^^[["
+
+  # Mantiene las IPs de acceso remoto para la autenticacion
+  config.participacion_xauth_origin = "127.0.0.1; ::1"
 end
