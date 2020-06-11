@@ -80,5 +80,15 @@ describe "Admin managers" do
       expect(page).to have_content(manager2.email)
       expect(page).not_to have_content(manager1.email)
     end
+
+    scenario "Delete after searching" do
+      fill_in "Search user by name or email", with: manager2.email
+      click_button "Search"
+
+      click_link "Delete"
+
+      expect(page).to have_content(manager1.email)
+      expect(page).not_to have_content(manager2.email)
+    end
   end
 end
