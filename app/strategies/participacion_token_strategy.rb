@@ -4,11 +4,9 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
   end
 
   def authenticate!
-    puts "Hola"
     # El usuario externo que tenemos registrado...
     eu = ExternalUser.get(token)
     # Deberíamos localizar el usuario por email y si no existe.. es cuando lo crearíamos
-    puts eu
     if(eu)
       u = User.find_by(email: eu.email)
       if(u)
@@ -21,6 +19,15 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
           u.verified_at = DateTime.current
           hasChanges = true
         end
+        if(eu.organization)
+          u.organization= toOrganization(eu)
+          hasChanges = true
+        end
+        if(!eu.organization && u.organization?)
+          u.organization.destroy
+          u.organization=nil
+          hasChanges = true
+        end
         u.save! if(hasChanges)
       else
         u = User.new(
@@ -28,14 +35,20 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
                     email: eu.email,
                     confirmed_at: DateTime.current,
                     password: Devise.friendly_token[0, 20],
+                    origin_participacion: true,
                     terms_of_service: "1"
                 )
+        # Podria ser una asociacion de vecinos en cuyo caso le damos de alta como tal.
+        if(eu.organization)
+          u.organization = toOrganization(eu)
+        end
 
         if(eu.validated)
             u.verified_at = DateTime.current
         end
 
         u.save!
+
       end
       # Autenticaríamos a este usuario
       success!(u)
@@ -47,7 +60,16 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
   end
 
   private
-    def token
+
+   def toOrganization(eu)
+     return Organization.new(
+        name: eu.fullname,
+        verified_at: DateTime.current,
+        responsible_name: eu.fullname
+     )
+   end
+
+  def token
       params['authToken']
     end
 end

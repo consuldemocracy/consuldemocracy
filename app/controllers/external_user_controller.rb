@@ -6,17 +6,18 @@ class ExternalUserController < ApplicationController
   before_action :verify_participacion_token
 
   def authorize()
-    if(params[:validated]==nil || !params[:fullname] || !params[:email])
+    if(params[:validated]==nil || !params[:fullname] || !params[:email] || params[:association]==nil)
       render plain: 'invalid request', status: :bad_request
       return
     end
     uuid = SecureRandom.hex
-    eu = ExternalUser.new(uuid:uuid, fullname: params[:fullname],email:params[:email],validated:params[:validated])
+    eu = ExternalUser.new(uuid:uuid, fullname: params[:fullname],email:params[:email],validated:params[:validated],organization:params[:association])
     ## Almacenamos de forma persistente... seria mejor con un IPC; pero.
     eu.save!
 
     # Debemos devolver la URL de validacion del usuario
-    render json: uuid
+    puts "#{participacion_logon_url}?authToken=#{uuid}"
+    render json: "#{participacion_logon_url}?authToken=#{uuid}"
   end
 
   private
