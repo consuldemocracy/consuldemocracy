@@ -838,6 +838,13 @@ ro:
         submit_button: "Crează sondaj"
       edit:
         title: "Editează sondaj"
+        submit_button: "Actualizează sondaj"
+      show:
+        questions_tab: Întrebări
+        booths_tab: Cabine de vot
+        officers_tab: Funcționari publici
+        recounts_tab: Renumărare
+        results_tab: Rezultate
     proposals:
       index:
         author: Autor
