@@ -659,6 +659,7 @@ ro:
           content_block:
             update: "Actualizează bloc"
       title_moderated_content: Conținut modificat
+      title_profiles: Profile
       title_settings: Setări
       title_site_customization: Conținutul site-ul
       title_booths: Cabine de votare
@@ -669,6 +670,7 @@ ro:
       dashboard_actions: Resurse și acțiuni
       debates: "Dezbateri"
       comments: "Comentarii"
+      local_census_records: Administrează datele locale
     administrators:
       index:
         title: Administratori
@@ -683,6 +685,7 @@ ro:
         restricted_removal: "Ne pare rău, nu vă puteți scoate din lista de administratori"
       form:
         edit_title: "Editează administratori"
+        updated: "Administrator actualizat cu succes"
     moderators:
       index:
         title: Moderatori
@@ -849,8 +852,104 @@ ro:
         officers_tab: Funcționari publici
         recounts_tab: Renumărare
         results_tab: Rezultate
+      destroy:
+        alert: "Această acțiune va elimina chestionarul și întrebările asociate acestuia."
+        success_notice: "Chestionar șters cu succes"
+        unable_notice: "Nu puteți șterge un chestionar care are voturi"
+    questions:
+      index:
+        title: "Întrebări"
+        create: "Crează întrebare"
+        no_questions: "Nu există întrebări."
+        filter_poll: Filtrează după Chestionar
+        select_poll: Selectează chestionar
+        questions_tab: "Întrebări"
+        successful_proposals_tab: "Propunere de succes"
+        create_question: "Crează întrebare"
+        table_proposal: "Propunere"
+        table_question: "Întrebare"
+        table_poll: "Sondaj"
+      edit:
+        title: "Editează Întrebare"
+      new:
+        title_proposal: "Crează întrebare"
+      answers:
+        images:
+          add_image: "Adaugă imagine"
+          save_image: "Salvează imagine"
+      show:
+        proposal: Propunere originală
+        author: Autor
+        question: Întrebare
+        edit_question: Editează întrebare
+        valid_answers: Întrebări valide
+        add_answer: Adaugă răspuns
+        video_url: Video extern
+        answers:
+          title: Răspuns
+          description: Descriere
+          videos: Videoclipuri
+          images: Imagini
+          documents: Documente
+          document_title: Titlu
+          document_actions: Acțiuni
+    answers:
+      new:
+        title: Răspuns nou
+      show:
+        title: Titlu
+        description: Descriere
+        images: Imagini
+        edit: Editează răspuns
+      edit:
+        title: Editează răspuns
+      videos:
+        index:
+          title: Videoclipuri
+          add_video: Adaugă videoclip
+          video_title: Titlu
+          video_url: Video extern
+        new:
+          title: Videoclip nou
+        edit:
+          title: Editează video
+    officials:
+      level_2: Nivel 2
+      level_3: Nivel 3
+      level_4: Nivel 5
+      level_5: Nivel 5
+      search:
+        edit_official: Editează funcționar public
+        make_official: Crează funcționar public
+    organizations:
+      index:
+        filter: Filtru
+        filters:
+          all: Tot
+          pending: În așteptare
+          rejected: Respins
+          verified: Verificat
+        name: Nume
+        email: Email
+        phone_number: Telefon
+        responsible_name: Responsabil
+        status: Status
+        no_organizations: Nu există organizații.
+        reject: Respinge
+        rejected: Respins
+        search: Caută
+        search_placeholder: Nume, email sau număr de telefon
+        title: Organizații
+        verified: Verificat
+        verify: Verifică
+        pending: În așteptare
+      search:
+        title: Caută organizații
+        no_results: Nu a fost găsită nici o organizație.
     proposals:
       index:
+        title: Propuneri
+        id: ID
         author: Autor
         select: Selectează
         selected: Selectat
@@ -881,9 +980,12 @@ ro:
         title: Notificări ascunse
         no_hidden_proposals: Nu există notificări ascunse.
     settings:
+      flash:
+        updated: Valoare actualizată
       index:
         title: Setări
         update_setting: Actualizează
+        images_and_documents: "Imagini și documente"
         features:
           enable: "Activează"
           disable: "Dezactivează"
@@ -899,6 +1001,12 @@ ro:
       remote_census_general_name: Informații Generale
       setting_actions: Acțiuni
       setting_name: Setări
+      setting_status: Status
+      setting_value: Valoare
+      no_description: "Nu există descriere"
+    shared:
+      true_value: "Da"
+      false_value: "Nu"
     geozones:
       index:
         edit: Editează
