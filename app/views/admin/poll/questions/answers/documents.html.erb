@@ -36,16 +36,17 @@
             <%= link_to document.title, document.attachment.url %>
           </td>
           <td class="text-right">
-            <%= link_to t("documents.buttons.download_document"),
-                        document.attachment.url,
-                        target: "_blank",
-                        rel: "nofollow",
-                        class: "button hollow" %>
-
             <%= render Admin::TableActionsComponent.new(document,
               actions: [:destroy],
               destroy_path: document_path(document)
-            ) %>
+            ) do |actions| %>
+              <%= actions.link_to t("documents.buttons.download_document"),
+                                  document.attachment.url,
+                                  target: "_blank",
+                                  rel: "nofollow",
+                                  class: "button hollow" %>
+
+            <% end %>
           </td>
         </tr>
       <% end %>

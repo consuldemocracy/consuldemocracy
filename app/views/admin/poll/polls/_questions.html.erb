@@ -30,9 +30,10 @@
           <% end %>
         </td>
         <td>
-          <%= link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
-                                                            class: "button hollow" %>
-          <%= render Admin::TableActionsComponent.new(question) %>
+          <%= render Admin::TableActionsComponent.new(question) do |actions| %>
+            <%= actions.link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
+                                                                    class: "button hollow" %>
+          <% end %>
         </td>
       </tr>
     <% end %>

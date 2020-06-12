@@ -21,9 +21,11 @@
             destroy_text: t("admin.poll_officers.officer.delete")
           ) %>
         <% else %>
-          <%= link_to t("admin.poll_officers.officer.add"), { controller: "admin/poll/officers", action: :create, user_id: officer.user_id },
-                      method: :post,
-                      class: "button success expanded" %>
+          <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+            <%= actions.link_to t("admin.poll_officers.officer.add"), { controller: "admin/poll/officers", action: :create, user_id: officer.user_id },
+                                method: :post,
+                                class: "button success expanded" %>
+          <% end %>
         <% end %>
       </td>
     </tr>

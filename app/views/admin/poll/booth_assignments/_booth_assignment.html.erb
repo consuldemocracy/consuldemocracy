@@ -25,11 +25,15 @@
     <span class="disabled"><%= t("admin.booth_assignments.manage.status.unassigned") %></span>
   </td>
   <td>
-    <%= link_to t("admin.booth_assignments.manage.actions.assign"),
-                admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
-                method: :post,
-                remote: true,
-                title: t("admin.booth_assignments.manage.actions.assign"),
-                class: "button hollow expanded" if !@poll.expired? %>
+    <% unless @poll.expired? %>
+      <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+        <%= actions.link_to t("admin.booth_assignments.manage.actions.assign"),
+                            admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
+                            method: :post,
+                            remote: true,
+                            title: t("admin.booth_assignments.manage.actions.assign"),
+                            class: "button hollow expanded" %>
+      <% end %>
+    <% end %>
   </td>
 <% end %>

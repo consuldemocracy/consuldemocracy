@@ -72,10 +72,6 @@ es:
         budget_investments: Gestionar proyectos de gasto
         table_name: Nombre
         table_phase: Fase
-        table_investments: Proyectos de gasto
-        table_edit_groups: Grupos de partidas
-        table_edit_budget: Editar
-        table_admin_ballots: Urnas
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
@@ -117,7 +113,6 @@ es:
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
-      headings_edit: "Editar Partidas"
       headings_manage: "Gestionar partidas"
       no_groups: "No hay grupos."
       amount:

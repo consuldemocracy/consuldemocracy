@@ -72,10 +72,6 @@ en:
         budget_investments: Manage projects
         table_name: Name
         table_phase: Phase
-        table_investments: Investments
-        table_edit_groups: Headings groups
-        table_edit_budget: Edit
-        table_admin_ballots: Ballots
         edit_groups: Edit headings groups
         edit_budget: Edit budget
         admin_ballots: Admin ballots
@@ -117,7 +113,6 @@ en:
     budget_groups:
       name: "Name"
       headings_name: "Headings"
-      headings_edit: "Edit Headings"
       headings_manage: "Manage headings"
       no_groups: "There are no groups."
       amount:

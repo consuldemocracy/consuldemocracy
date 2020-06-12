@@ -54,4 +54,15 @@ describe Admin::TableActionsComponent, type: :component do
 
     expect(page).to have_css "a#edit_me"
   end
+
+  it "allows custom content" do
+    render_inline Admin::TableActionsComponent.new(record) do
+      "<a href='/'>Main</a>".html_safe
+    end
+
+    expect(page).to have_css "a", count: 3
+    expect(page).to have_link "Main", href: "/"
+    expect(page).to have_link "Edit"
+    expect(page).to have_link "Delete"
+  end
 end

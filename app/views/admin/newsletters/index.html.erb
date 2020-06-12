@@ -29,10 +29,11 @@
           <% end %>
         </td>
         <td>
-          <%= render Admin::TableActionsComponent.new(newsletter) %>
-
-          <%= link_to t("admin.newsletters.index.preview"), admin_newsletter_path(newsletter),
-                                                            class: "button" %>
+          <%= render Admin::TableActionsComponent.new(newsletter) do |actions| %>
+            <%= actions.link_to t("admin.newsletters.index.preview"),
+                                admin_newsletter_path(newsletter),
+                                class: "button" %>
+          <% end %>
         </td>
       </tr>
     <% end %>

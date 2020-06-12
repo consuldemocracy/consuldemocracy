@@ -30,14 +30,17 @@
         </td>
         <td>
           <% if admin_notification.draft? %>
-            <%= render Admin::TableActionsComponent.new(admin_notification) %>
-            <%= link_to t("admin.admin_notifications.index.preview"),
-                        admin_admin_notification_path(admin_notification),
-                        class: "button" %>
+            <%= render Admin::TableActionsComponent.new(admin_notification) do |actions| %>
+              <%= actions.link_to t("admin.admin_notifications.index.preview"),
+                                  admin_admin_notification_path(admin_notification),
+                                  class: "button" %>
+            <% end %>
           <% else %>
-            <%= link_to t("admin.admin_notifications.index.view"),
-                        admin_admin_notification_path(admin_notification),
-                        class: "button" %>
+            <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+              <%= actions.link_to t("admin.admin_notifications.index.view"),
+                                  admin_admin_notification_path(admin_notification),
+                                  class: "button" %>
+            <% end %>
           <% end %>
         </td>
       </tr>

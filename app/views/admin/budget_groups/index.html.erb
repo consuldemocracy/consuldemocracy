@@ -16,7 +16,6 @@
         <th><%= t("admin.budget_groups.name") %></th>
         <th><%= Budget::Group.human_attribute_name(:max_votable_headings) %></th>
         <th><%= t("admin.budget_groups.headings_name") %></th>
-        <th><%= t("admin.budget_groups.headings_edit") %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -26,10 +25,11 @@
           <td><%= link_to group.name, edit_admin_budget_group_path(@budget, group) %></td>
           <td><%= group.max_votable_headings %></td>
           <td><%= group.headings.count %></td>
-          <td><%= link_to t("admin.budget_groups.headings_manage"),
-                          admin_budget_group_headings_path(@budget, group) %></td>
           <td>
-            <%= render Admin::TableActionsComponent.new(group) %>
+            <%= render Admin::TableActionsComponent.new(group) do |actions| %>
+              <%= actions.link_to t("admin.budget_groups.headings_manage"),
+                                  admin_budget_group_headings_path(@budget, group) %>
+            <% end %>
           </td>
         </tr>
       <% end %>

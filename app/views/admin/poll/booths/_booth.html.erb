@@ -7,9 +7,11 @@
   </td>
   <td class="text-right">
     <% if controller_name == "shifts" || controller_name == "booths" && action_name == "available" %>
-      <%= link_to t("admin.booths.booth.shifts"),
-                  new_admin_booth_shift_path(booth),
-                  class: "button hollow" %>
+      <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+        <%= actions.link_to t("admin.booths.booth.shifts"),
+                            new_admin_booth_shift_path(booth),
+                            class: "button hollow" %>
+      <% end %>
     <% else %>
       <%= render Admin::TableActionsComponent.new(booth,
         actions: [:edit],
