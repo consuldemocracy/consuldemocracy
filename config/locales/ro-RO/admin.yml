@@ -1014,6 +1014,49 @@ ro:
       geozone:
         name: Nume
         coordinates: Coordonate
+      edit:
+        back: Mergi înapoi
+      new:
+        back: Mergi înapoi
+        creating: Crează district
+    signature_sheets:
+      author: Autor
+      created_at: Data creării
+      name: Nume
+      new:
+        text_help:
+          example_text: "Exemplu: "
+      show:
+        created_at: Creat
+        author: Autor
+        users: Utilizatori
+        signature_count: "Număr de semnături:"
+        verified:
+          one: "Există %{count} semnătură validă"
+          few: "Există %{count} semnături valide"
+          other: "Există %{count} semnături valide"
+        unverified:
+          one: "Există %{count} semnătură invalidă"
+          few: "Există %{count} semnături invalide"
+          other: "Există %{count} semnături invalide"
+        unverified_error: (Nu este verificat de Recensământ)
+    stats:
+      show:
+        stats_title: Statistici
+        summary:
+          comment_votes: Comentează voturi
+          comments: Comentarii
+          debate_votes: Dezbate voturi
+          debates: Dezbateri
+          proposals: Propuneri
+          budgets: Deschide bugete
+          budget_investments: Proiecte de investiție
+          unverified_users: Utilizatori neverificați
+          user_level_three: Utilizatori de nivelul trei
+          user_level_two: Utilizatori de nivelul doi
+          users: Total utilizatori
+          verified_users: Utilizatori verificați
+          verified_users_who_didnt_vote_proposals: Utilizatori verificați care nu au votat propuneri
     site_customization:
       images:
         index:
