@@ -90,7 +90,7 @@ class Setting < ApplicationRecord
         "feature.user.recommendations": true,
         "feature.user.recommendations_on_debates": true,
         "feature.user.recommendations_on_proposals": true,
-        "feature.user.skip_verification": "true",
+        "feature.user.skip_verification": false,
         "feature.community": true,
         "feature.map": nil,
         "feature.allow_attached_documents": true,
