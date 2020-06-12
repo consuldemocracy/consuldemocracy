@@ -1,5 +1,15 @@
 class Users::SessionsController < Devise::SessionsController
   before_action :verify_ip, only: [:new]
+  before_action :authenticate_user!, only: [:participacion]
+
+  def participacion
+    if(current_user)
+      redirect_to after_sign_in_path_for(current_user)
+    else
+      redirect_to new_user_session_url
+    end
+  end
+
   private
 
     def after_sign_in_path_for(resource)
