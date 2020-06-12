@@ -808,8 +808,36 @@ ro:
         user_not_found: Utilizatorul nu a fost găsit
     poll_officer_assignments:
       index:
+        officers_title: "Lista funcționarilor publici"
+        no_officers: "Nu sunt funcționari publici atribuiți acestui sondaj."
         table_name: "Nume"
         table_email: "Email"
+      by_officer:
+        date: "Dată"
+        booth: "Cabină vot"
+    poll_shifts:
+      new:
+        date: "Dată"
+        officer: "Funcționar public"
+        remove_shift: "Înlătură"
+        search_officer_button: Caută
+        search_officer_placeholder: Caută funcționar public
+        select_date: "Selectează ziua"
+        no_voting_days: "Perioada de votare s-a încheiat"
+        table_email: "Email"
+        table_name: "Nume"
+      flash:
+        date_missing: "Trebuie să selectați o dată"
+    poll_booth_assignments:
+      show:
+        location: "Locație"
+        officers: "Funcționari publici"
+        no_officers: "Nu există funcționari publici pentru această cabină de vot"
+    polls:
+      new:
+        submit_button: "Crează sondaj"
+      edit:
+        title: "Editează sondaj"
     proposals:
       index:
         author: Autor
