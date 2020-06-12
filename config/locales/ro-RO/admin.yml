@@ -1057,7 +1057,45 @@ ro:
           users: Total utilizatori
           verified_users: Utilizatori verificați
           verified_users_who_didnt_vote_proposals: Utilizatori verificați care nu au votat propuneri
+          visits: Vizite
+          votes: Voturi totale
+        budgets_title: Bugetare participativă
+        participatory_budgets: Bugete participative
+        direct_messages: Mesaje directe
+      polls:
+        table:
+          poll_name: Sondaj
+          question_name: Întrebare
+          origin_web: Participanți online
+          origin_total: Total participanți
+    tags:
+      create: Crează subiect
+      destroy: Șterge subiect
+      index:
+        add_tag: Adaugă o nouă propunere de subiect
+        title: Subiecte de propunere
+        topic: Subiect
+        help: "Când un utilizator crează o propunere, următoarele subiecte sunt sugerate ca etichete implicite."
+    users:
+      columns:
+        name: Nume
+        email: Email
+        document_number: Numărul documentului
+        roles: Roluri
+      index:
+        title: Utilizator
+        no_users: Nu există utilizatori.
+      search:
+        placeholder: Caută utilizator după email, nume sau numărul documentului
+        search: Caută
+    verifications:
+      index:
+        phone_not_given: Numărul de telefon nu a fost pus la dispoziție
+        sms_code_not_confirmed: Nu a confirmat codul sms
+        title: Verificări incomplete
     site_customization:
+      content_blocks:
+        information: Informații despre blocurile de conținut
       images:
         index:
           update: Actualizează
