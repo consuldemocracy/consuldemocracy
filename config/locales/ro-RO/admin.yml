@@ -723,6 +723,7 @@ ro:
         subject: Subiect
         segment_recipient: Destinatari
         from: Adresa de e-mail care va apărea ca expeditoare a newsletter-ului
+        body: Conținut e-mail
         body_help_text: Așa vor vedea utilizatorii vedea e-mailul.
         send_alert: Sunteți sigur că doriți să trimiteți acest newsletter către %{n} utilizatori?
     admin_notifications:
@@ -1096,6 +1097,22 @@ ro:
     site_customization:
       content_blocks:
         information: Informații despre blocurile de conținut
+        no_blocks: "Nu există blocuri de conținut."
+        create:
+          notice: Bloc de conținut creat cu succes
+          error: Blocul de conținut nu a putut fi creat
+        update:
+          notice: Bloc de conținut actualizat cu succes
+          error: Blocul de conținut nu a putut fi actualizat
+        destroy:
+          notice: Bloc de conținut șters cu succes
+        index:
+          delete: Șterge bloc
+          title: Bloc de conținut
+        new:
+          title: Crează un nou bloc de conținut
+        content_block:
+          name: Nume
       images:
         index:
           update: Actualizează
@@ -1122,7 +1139,20 @@ ro:
           delete: Șterge pagină
           title: Pagini personalizate
           see_page: Vezi pagina
+        page:
+          created_at: Creat la
+          status: Status
+          updated_at: Actualizat la
+          title: Titlu
+          cards_title: Carduri
         cards:
+          cards_title: carduri
+          create_card: Crează card
+          no_cards: Nu există carduri.
+          title: Titlu
+          description: Descriere
+          link_text: Link
+          link_url: URL-ul Link-ului
           create:
             notice: "Card creat cu succes!"
           update:
@@ -1130,6 +1160,7 @@ ro:
           destroy:
             notice: "Card șters cu succes"
     homepage:
+      title: Pagina principală
       cards_title: Carduri
       create_card: Crează card
       no_cards: Nu există carduri.
@@ -1138,6 +1169,8 @@ ro:
         description: Descriere
       feeds:
         proposals: Propuneri
+        debates: Dezbateri
+        processes: Procese
       new:
         card_title: Card nou
         submit_card: Crează card
@@ -1165,6 +1198,8 @@ ro:
           placeholder: Caută după numărul documentului
           search: Caută
         import: Importă CSV
+      new:
+        creating: Crează o nouă înregistrare de date locale
       edit:
         editing: Editează înregistrarea de date locale
       update:
