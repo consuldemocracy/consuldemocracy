@@ -788,6 +788,7 @@ ro:
       alert:
         no_investments: "Nu s-au creat investiții bugetare. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
         no_comments: "Nu s-au creat comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
+        no_replies: "Nu s-au creat răspunsuri la comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
     emails_download:
       index:
         download_emails_button: Descarcă listă de emailuri
@@ -813,10 +814,22 @@ ro:
         email: "Email"
         group: "Grup"
         abilities: "Abilități"
+        no_description: "Fără descriere"
+        no_group: "Fără grup"
+        no_abilities: "Fără abilități"
     valuator_groups:
       index:
+        title: "Grupuri de evaluare"
+        new: "Crează grup de evaluatori"
         name: "Nume"
         members: "Membri"
+        no_groups: "Nu există grupuri evaluatori"
+      show:
+        title: "Grup de evaluatori: %{group}"
+        no_valuators: "Nu sunt evaluatori atribuiți acestui grup"
+      form:
+        new: "Crează grup de evaluatori"
+        edit: "Salvează grup de evaluatori"
     poll_officers:
       index:
         title: Ofițerii de votare
@@ -830,6 +843,7 @@ ro:
         email_placeholder: Caută utilizator după email
         search: Caută
         user_not_found: Utilizatorul nu a fost găsit
+        help: "Pentru a adăuga sau elimina ofițerii de sondaj utilizați formularul de căutare de mai jos."
     poll_officer_assignments:
       index:
         officers_title: "Lista funcționarilor publici"
@@ -857,6 +871,7 @@ ro:
         location: "Locație"
         officers: "Funcționari publici"
         no_officers: "Nu există funcționari publici pentru această cabină de vot"
+        date: "Date"
       index:
         table_name: "Nume"
         table_location: "Locație"
@@ -925,7 +940,9 @@ ro:
           description: Descriere
           videos: Videoclipuri
           images: Imagini
+          images_list: Listă de imagini
           documents: Documente
+          documents_list: Listă de documente
           document_title: Titlu
           document_actions: Acțiuni
     answers:
@@ -935,6 +952,7 @@ ro:
         title: Titlu
         description: Descriere
         images: Imagini
+        images_list: Listă de imagini
         edit: Editează răspuns
       edit:
         title: Editează răspuns
@@ -948,8 +966,19 @@ ro:
           title: Videoclip nou
         edit:
           title: Editează video
+    recounts:
+      index:
+        title: "Renumărare"
+        total_final: "Renumărare finală"
+        total_system: "Voturi (automatic)"
+        table_booth_name: "Cabină vot"
+        table_system_count: "Voturi (automatic)"
     results:
+      index:
+        title: "Rezultate"
+        no_results: "Nu există rezultate"
       result:
+        table_whites: "Buletinele de vot total necompletate"
         table_nulls: "Buletine de vot invalide"
         table_total: "Buletine de vot valide"
         table_answer: Răspuns
