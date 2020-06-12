@@ -768,6 +768,10 @@ ro:
         action: Previzualizare în așteptare
         preview_of: Previzualizare a %{name}
         pending_to_be_sent: Acesta este conținutul în așteptare care va fi trimis
+      proposal_notification_digest:
+        preview_detail: "Utilizatorii vor primi notificări doar de la propunerile pe care le urmăresc"
+      budget_investment_created:
+        title: "Buget de investiții creat"
       budget_investment_selected:
         title: "Buget de investiții selectat"
       budget_investment_unfeasible:
@@ -841,8 +845,21 @@ ro:
         location: "Locație"
         officers: "Funcționari publici"
         no_officers: "Nu există funcționari publici pentru această cabină de vot"
+      index:
+        table_name: "Nume"
+        table_location: "Locație"
+    active_polls:
+      edit:
+        title: "Descrierea sondajelor"
     polls:
+      index:
+        create: "Crează sondaj"
+        name: "Nume"
+        dates: "Date"
+        start_date: "Data de început"
+        closing_date: "Data limită"
       new:
+        title: "Sondaj nou"
         submit_button: "Crează sondaj"
       edit:
         title: "Editează sondaj"
@@ -853,6 +870,11 @@ ro:
         officers_tab: Funcționari publici
         recounts_tab: Renumărare
         results_tab: Rezultate
+        no_questions: "Nu sunt întrebări atribuite acestui sondaj."
+        questions_title: "Lista întrebărilor"
+        table_title: "Titlu"
+        edit_answers: Editează răspunsuri
+        see_proposal: "(Vezi propunere)"
       destroy:
         alert: "Această acțiune va elimina chestionarul și întrebările asociate acestuia."
         success_notice: "Chestionar șters cu succes"
@@ -914,6 +936,19 @@ ro:
           title: Videoclip nou
         edit:
           title: Editează video
+    results:
+      result:
+        table_nulls: "Buletine de vot invalide"
+        table_total: "Buletine de vot valide"
+        table_answer: Răspuns
+        table_votes: Voturi
+      results_by_booth:
+        booth: Cabină vot
+        results: Rezultate
+        see_results: Vezi rezultatele
+    booths:
+      index:
+        title: "Lista cabinelor de vot active"
     officials:
       level_2: Nivel 2
       level_3: Nivel 3
