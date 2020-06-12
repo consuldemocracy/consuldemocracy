@@ -27,7 +27,6 @@ class User < ApplicationRecord
   # externos... que la clave es una de mentira...
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
-    puts conditions
     login = conditions.delete(:login)
     where(conditions.to_hash).find_by(["lower(email) = ? AND origin_participacion is NULL",login.downcase]) ||
     where(conditions.to_hash).find_by(["username = ? AND origin_participacion is NULL", login])
