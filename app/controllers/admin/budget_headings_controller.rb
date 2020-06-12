@@ -6,6 +6,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   before_action :load_budget
   before_action :load_group
   before_action :load_heading, except: [:index, :new, :create]
+  before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   def index
     @headings = @group.headings.order(:id)
@@ -46,6 +47,10 @@ class Admin::BudgetHeadingsController < Admin::BaseController
 
   private
 
+    def load_geozones
+      @geozones = Geozone.all.order(:name)
+    end
+
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:budget_id]
     end
@@ -63,7 +68,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
     end
 
     def budget_heading_params
-      valid_attributes = [:price, :population, :allow_custom_content, :latitude, :longitude]
+      valid_attributes = [:price, :population, :allow_custom_content, :latitude, :longitude, :geozone_id]
       params.require(:budget_heading).permit(*valid_attributes, translation_params(Budget::Heading))
     end
 end
