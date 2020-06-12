@@ -8,6 +8,7 @@ devise_for :users, controllers: {
 # vinculada una precondición para dirigir a la página inicial del portal.
 devise_scope :user do
   get "users/sign_up", to: "users/sessions#new",as: :new_user_registration
+  get "users/participacion", to: "users/sessions#participacion", as: :participacion_logon
 end
 
 
