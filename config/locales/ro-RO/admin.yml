@@ -822,6 +822,7 @@ ro:
         title: Ofițerii de votare
       officer:
         add: Adaugă
+        delete: Șterge poziție
         name: Nume
         email: Email
         entry_name: funcționar public
