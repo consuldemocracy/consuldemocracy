@@ -760,21 +760,56 @@ ro:
         action: Previzualizare în așteptare
         preview_of: Previzualizare a %{name}
         pending_to_be_sent: Acesta este conținutul în așteptare care va fi trimis
+      budget_investment_selected:
+        title: "Buget de investiții selectat"
+      budget_investment_unfeasible:
+        title: "Buget de investiții nerealizabil"
+      budget_investment_unselected:
+        title: "Bugetul de investiții nu este selectat"
+      comment:
+        title: "Comentariu"
       reply:
         title: "Răspunde"
+      evaluation_comment:
+        title: "Nou comentariu de evaluare"
       edit_info: "Puteți edita acest email din"
       alert:
         no_investments: "Nu s-au creat investiții bugetare. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
         no_comments: "Nu s-au creat comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
+    emails_download:
+      index:
+        download_emails_button: Descarcă listă de emailuri
     valuators:
       index:
+        title: Evaluatori
+        name: Nume
+        email: Email
+        description: Descriere
+        no_description: Fără descriere
+        no_valuators: Nu există evaluatori.
+        valuator_groups: "Grupuri de evaluare"
         group: "Grup"
+        no_group: "Nu există grupuri"
+        abilities: "Abilități"
       valuator:
+        add: Adaugă la evaluatori
         delete: Șterge
+      form:
+        updated: "Evaluator actualizat cu succes"
       show:
         description: "Descriere"
         email: "Email"
         group: "Grup"
+    poll_officers:
+      officer:
+        email: Email
+      search:
+        search: Caută
+        user_not_found: Utilizatorul nu a fost găsit
+    poll_officer_assignments:
+      index:
+        table_name: "Nume"
+        table_email: "Email"
     proposals:
       index:
         author: Autor
