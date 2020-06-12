@@ -949,7 +949,28 @@ ro:
     booths:
       index:
         title: "Lista cabinelor de vot active"
+        add_booth: "Adaugă cabină de vot"
+        name: "Nume"
+        location: "Locație"
+        no_location: "Fără locație"
+      new:
+        title: "Cabină de vot nouă"
+        submit_button: "Crează cabină de vot"
+      edit:
+        title: "Editează cabină de vot"
+        submit_button: "Actualizează cabină de vot"
+      show:
+        location: "Locație"
+      booth:
+        edit: "Editează cabină de vot"
     officials:
+      index:
+        title: Funcționari publici
+        no_officials: Nu există funcționari publici.
+        name: Nume
+        official_position: Poziție oficială
+        official_level: Nivel
+      level_1: Nivel 1
       level_2: Nivel 2
       level_3: Nivel 3
       level_4: Nivel 5
@@ -1022,7 +1043,10 @@ ro:
         title: Setări
         update_setting: Actualizează
         images_and_documents: "Imagini și documente"
+        feature_flags: Caracteristici
         features:
+          enabled: "Caracteristici activate"
+          disabled: "Caracteristici dezactivate"
           enable: "Activează"
           disable: "Dezactivează"
         map:
@@ -1035,6 +1059,7 @@ ro:
         dashboard:
           title: Tablou de bord propuneri
       remote_census_general_name: Informații Generale
+      setting: Caracteristică
       setting_actions: Acțiuni
       setting_name: Setări
       setting_status: Status
@@ -1043,6 +1068,10 @@ ro:
     shared:
       true_value: "Da"
       false_value: "Nu"
+      booths_search:
+        button: Caută
+      poll_officers_search:
+        button: Caută
     geozones:
       index:
         edit: Editează
