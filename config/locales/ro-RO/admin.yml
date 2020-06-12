@@ -489,6 +489,7 @@ ro:
           summary_placeholder: Scurt rezumat al descrierii
           description_placeholder: Adaugă o descriere a procesului
           additional_info_placeholder: Adăugați informații suplimentare pe care le considerați utile
+          homepage_description: Aici puteți explica conținutul procesului
         index:
           create: Proces nou
           delete: Șterge
@@ -534,8 +535,10 @@ ro:
           custom_categories_placeholder: Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (,) și între ghilimele (" ")
       draft_versions:
         create:
+          notice: 'Schiță creată cu succes.<a href="%{link}">Click pentru a vizita</a>'
           error: Schița nu a putut fi creată
         update:
+          notice: 'Schiță actualizată cu succes.<a href="%{link}">Click pentru a vizita</a>'
           error: Schița nu a putut fi actualizată
         destroy:
           notice: Schița a fost ștearsă cu succes
@@ -633,6 +636,7 @@ ro:
       valuators: Evaluatori
       polls: Sondaje
       poll_booths: Locația cabinelor
+      officials: Funcționari publici
       organizations: Organizații
       stats: Statistici
       signature_sheets: Foi cu semnaturi
