@@ -1,4 +1,5 @@
 require 'securerandom'
+require 'base64'
 
 class ExternalUserController < ApplicationController
   skip_before_action :verify_authenticity_token
@@ -15,9 +16,13 @@ class ExternalUserController < ApplicationController
     ## Almacenamos de forma persistente... seria mejor con un IPC; pero.
     eu.save!
 
+    ## Debemos madnar el token de acceso... nos vamos a asegurar de que el usuario no nos manda nada que no sepamos que es invalido, para
+    ## ello generamos un token JSON con dos partes
+    hexdigest = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'),Rails.application.secrets.secret_key_base,uuid)
+    token = Base64.urlsafe_encode64({uuid: uuid, mac: hexdigest}.to_json)
+
     # Debemos devolver la URL de validacion del usuario
-    puts "#{participacion_logon_url}?authToken=#{uuid}"
-    render json: "#{participacion_logon_url}?authToken=#{uuid}"
+    render json: "#{participacion_logon_url}?authToken=#{token}"
   end
 
   private

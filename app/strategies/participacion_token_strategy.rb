@@ -1,3 +1,6 @@
+require 'base64'
+require 'json'
+
 class ParticipacionTokenStrategy < Warden::Strategies::Base
   def valid?
     token.present?
@@ -20,7 +23,12 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
           hasChanges = true
         end
         if(eu.organization)
-          u.organization= toOrganization(eu)
+          if(!u.organization?)
+            u.organization= toOrganization(eu)
+          else
+            u.organization.name = eu.fullname
+            u.organization.responsible_name = eu.fullname
+          end
           hasChanges = true
         end
         if(!eu.organization && u.organization?)
@@ -70,6 +78,14 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
    end
 
   def token
-      params['authToken']
+      t = params['authToken']
+      if(t)
+        my_object = JSON.parse(Base64.urlsafe_decode64(t))
+        # Verificamos el digest
+        if(my_object["uuid"] && my_object["mac"])
+           hexdigest = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'),Rails.application.secrets.secret_key_base,my_object["uuid"])
+           my_object["uuid"] if(my_object["mac"] == hexdigest)
+        end
+      end
     end
 end
