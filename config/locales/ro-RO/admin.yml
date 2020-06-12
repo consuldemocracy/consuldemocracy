@@ -812,10 +812,21 @@ ro:
         description: "Descriere"
         email: "Email"
         group: "Grup"
+        abilities: "Abilități"
+    valuator_groups:
+      index:
+        name: "Nume"
+        members: "Membri"
     poll_officers:
+      index:
+        title: Ofițerii de votare
       officer:
+        add: Adaugă
+        name: Nume
         email: Email
+        entry_name: funcționar public
       search:
+        email_placeholder: Caută utilizator după email
         search: Caută
         user_not_found: Utilizatorul nu a fost găsit
     poll_officer_assignments:
@@ -1072,6 +1083,29 @@ ro:
         button: Caută
       poll_officers_search:
         button: Caută
+      poll_questions_search:
+        button: Caută
+      proposal_search:
+        button: Caută
+        placeholder: Caută propunere după titlu, cod, descriere ori întrebare
+      debate_search:
+        button: Caută
+      user_search:
+        button: Caută
+        placeholder: Caută utilizator după nume sau email
+      search_results: "Caută rezultate"
+      no_search_results: "Nu a fost găsită niciun rezultat."
+      actions: Acțiuni
+      title: Titlu
+      description: Descriere
+      image: Imagine
+      show_image: Arată imagine
+      view: Vizualizare
+      proposal: Propunere
+      author: Autor
+      content: Conținut
+      created_at: Creat la
+      delete: Șterge
     geozones:
       index:
         edit: Editează
@@ -1127,7 +1161,32 @@ ro:
         budgets_title: Bugetare participativă
         participatory_budgets: Bugete participative
         direct_messages: Mesaje directe
+        incomplete_verifications: Verificări incomplete
+        polls: Sondaje
+      graph:
+        debate_created: Dezbateri
+        visit: Vizite
+        level_2_user: Utilizatori de nivelul doi
+        proposal_created: Propunerile cetățeanului
+      budget_balloting:
+        vote_count: Voturi
+        participant_count: Participanți
+      budget_supporting:
+        headings: Rubrici
+        users: Utilizatori
+        vote_count: Voturi
+        participant_count: Participanți
+      direct_messages:
+        title: Mesaje directe
+        total: Total
+      proposal_notifications:
+        total: Total
+        proposals_with_notifications: Propuneri cu notificări
       polls:
+        title: Status sondaj
+        all: Sondaje
+        web_participants: Participanți online
+        total_participants: Total participanți
         table:
           poll_name: Sondaj
           question_name: Întrebare
@@ -1179,12 +1238,15 @@ ro:
           name: Nume
       images:
         index:
+          title: Imagini personalizate
           update: Actualizează
           delete: Șterge
           image: Imagine
         update:
           notice: Imagine actualizată cu succes
           error: Imaginea nu a putut fi actualizată
+        destroy:
+          notice: Imagine ștearsă cu succes
       pages:
         create:
           notice: Pagina creată cu succes
