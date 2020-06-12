@@ -41,7 +41,7 @@
       <div class="row">
         <div class="small-12 medium-8">
           <div class="small-12 medium-3 column">
-          <%= f.label t("verification.residence.new.document_type_label") %>
+          <%= f.label t("management.account_info.document_type_label") %>
           <%= f.select :document_type, document_types, prompt: "", label: false %>
           </div>
           <div class="small-12 medium-5 column end">
@@ -66,7 +66,7 @@
       </div>
 
       <div class="date-of-birth small-12 medium-6 clear">
-      <%= f.label t("verification.residence.new.date_of_birth") %>
+      <%= f.label t("management.date_of_birth") %>
       <%= f.date_select :date_of_birth,
                         prompt: true,
                         start_year: 1900, end_year: 16.years.ago.year,
@@ -87,7 +87,7 @@
           <span class="checkbox">
             <%= t("verification.residence.new.accept_terms_text",
                 terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
-                title: t('shared.target_blank_html'),
+                title: t('shared.target_blank'),
                 target: "_blank")).html_safe
             %>
           </span>

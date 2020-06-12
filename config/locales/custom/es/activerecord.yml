@@ -1,0 +1,5 @@
+es:
+  activerecord:
+    attributes:
+      budget/heading:
+        geozone_id: "Ámbito de actuación (opcional)"

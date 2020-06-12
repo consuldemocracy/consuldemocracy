@@ -22,6 +22,7 @@
 /config/deploy-secrets.yml
 /config/maintenance.yml
 /config/entidades_censo.csv
+/config/census_geozones.csv
 
 /coverage
 
