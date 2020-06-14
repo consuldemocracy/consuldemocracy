@@ -1,6 +1,6 @@
 require "csv"
 
-class CensusApi
+class CustomCensusApi
 
   def call(document_type, document_number, postal_code)
     response = Response.new(nil, nil)
