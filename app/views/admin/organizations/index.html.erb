@@ -48,17 +48,7 @@
         <% end %>
       </td>
       <td>
-        <% if can? :verify, organization %>
-          <%= link_to t("admin.organizations.index.verify"),
-                  verify_admin_organization_path(organization, request.query_parameters),
-                  method: :put, class: "button success small-5" %>
-        <% end %>
-
-        <% if can? :reject, organization %>
-          <%= link_to t("admin.organizations.index.reject"),
-                  reject_admin_organization_path(organization, request.query_parameters),
-                  method: :put, class: "button hollow alert small-5" %>
-        <% end %>
+        <%= render Admin::Organizations::TableActionsComponent.new(organization) %>
       </td>
     </tr>
     <% end %>
