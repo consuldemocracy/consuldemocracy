@@ -73,7 +73,7 @@ class Verification::Residence
     end
 
     def call_census_api
-      @census_api_response = CensusApi.new.call(document_type, document_number, postal_code)
+      @census_api_response = CustomCensusApi.new.call(document_type, document_number, postal_code)
 
       if Rails.env.production? && !user_is_citizen?
         store_failed_attempt
