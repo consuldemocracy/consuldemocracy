@@ -63,8 +63,8 @@ ro:
       leave_comment: Lasă un comentariu
     orders:
       most_voted: Cel mai votat
-      newest: Cele mai noi primele
-      oldest: Cele mai vechi primele
+      newest: Cel mai nou
+      oldest: Cel mai vechi
       most_commented: Cel mai comentat
     select_order: Sortează după
     show:
@@ -102,9 +102,9 @@ ro:
     index:
       featured_debates: Recomandată
       orders:
-        confidence_score: cel mai bine cotat
+        confidence_score: cel mai bine cotată
         created_at: cele mai noi
-        hot_score: cel mai activ
+        hot_score: cea mai activă
         most_commented: cel mai comentat
         relevance: relevanță
         recommendations: recomandări
