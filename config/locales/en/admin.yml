@@ -1218,7 +1218,7 @@ en:
           without_confirmed_hide: Pending
         title: Hidden proposals
         no_hidden_proposals: There are no hidden proposals.
-    proposal_notifications:
+    hidden_proposal_notifications:
       index:
         filter: Filter
         filters:
