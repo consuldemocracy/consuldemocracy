@@ -1025,8 +1025,11 @@ ro:
       show:
         location: "Locație"
       booth:
+        shifts: "Administrează ture"
         edit: "Editează cabină de vot"
     officials:
+      edit:
+        title: "Funcționari publici: Editează utilizator"
       index:
         title: Funcționari publici
         help: Conturile de utilizatori marcați ca oficiali vor avea evidențiate intervențiile lor pe platformă. Puteți defini eticheta care apare lângă numele de utilizator ale acestor conturi de la cele mai importante (nivel 1) la cele mai puțin importante (nivel 5).
