@@ -633,6 +633,7 @@ ro:
       messaging_users: Mesaj către utilizatori
       newsletters: Newsletters
       admin_notifications: Notificări
+      emails_download: Descarcă emailuri
       valuators: Evaluatori
       poll_officers: Ofițerii de votare
       polls: Sondaje
