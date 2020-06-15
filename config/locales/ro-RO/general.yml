@@ -103,7 +103,7 @@ ro:
       featured_debates: Recomandată
       orders:
         confidence_score: cel mai bine cotată
-        created_at: cele mai noi
+        created_at: cea mai nouă
         hot_score: cea mai activă
         most_commented: cel mai comentat
         relevance: relevanță
