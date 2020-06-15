@@ -6,6 +6,7 @@ class ExternalUserController < ApplicationController
   skip_authorization_check
   before_action :verify_participacion_token
 
+
   def authorize()
     if(params[:validated]==nil || !params[:fullname] || !params[:email] || params[:association]==nil)
       render plain: 'invalid request', status: :bad_request
@@ -22,7 +23,7 @@ class ExternalUserController < ApplicationController
     token = Base64.urlsafe_encode64({uuid: uuid, mac: hexdigest}.to_json)
 
     # Debemos devolver la URL de validacion del usuario
-    render json: "#{participacion_logon_url}?authToken=#{token}"
+    render json: "#{participacion_logon_path}?authToken=#{token}"
   end
 
   private
