@@ -408,7 +408,9 @@ ro:
         description: "Textul propunerii"
         summary: "Rezumatul propunerii"
         title: "Titlul propunerii"
+        video_url: "Link-ul către video-ul extern"
       legislation/draft_version:
+        title: Titlul versiunii
         body: Text
         changelog: Schimbări
         status: Status
@@ -416,6 +418,7 @@ ro:
         status_published: "Publicat"
         final_version: Versiune finală
       legislation/draft_version/translation:
+        title: Titlul versiunii
         body: Text
         changelog: Schimbări
       legislation/question:
@@ -441,6 +444,7 @@ ro:
         description: Descriere
       poll/question/answer/video:
         title: Titlu
+        url: Video extern
       newsletter:
         segment_recipient: Destinatari
         subject: Subiect
@@ -463,12 +467,14 @@ ro:
       widget/card/translation:
         title: Titlu
         description: Descriere
+        link_text: Link
       widget/feed:
         limit: Număr de articole
       dashboard/action:
         title: Titlu
         short_description: Scurtă descriere
         description: Descriere
+        link: Link extern
         request_to_administrators: Includeți în resursă un buton pentru a solicita administratorilor resursa
         day_offset: La câte zile după crearea propunerii doriți ca aceasta să fie activată?
         required_supports: Cât suport trebuie să primească o propunere pentru a fi activată?
@@ -487,6 +493,8 @@ ro:
       valuator:
         description: Descriere
         valuator_group_id: Grup de evaluare
+        can_comment: Puteți crea comentarii
+        can_edit_dossier: Puteți edita dosare
       valuator_group:
         name: "Numele grupului"
       local_census_record:
