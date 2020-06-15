@@ -533,6 +533,10 @@ ro:
       see_complete_course: Vezi cursul complet
       hide_course: Ascunde curs
     goal:
+      target_supports:
+        one: Obțineți susținere %{count} pentru propunerea dumneavoastră
+        few: Obțineți susțineri %{count} pentru propunerea dumneavoastră
+        other: Obțineți susținere %{count} pentru propunerea dumneavoastră
       days:
         one: "%{count} zi"
         few: "%{count} zile"
@@ -862,6 +866,10 @@ ro:
           one: 1 Investiție
           few: "%{count} Investiții"
           other: "%{count} Investiții"
+        follows:
+          one: 1 Urmăritor
+          few: "%{count} Urmăritori"
+          other: "%{count} Urmăritori"
       no_activity: Acest utilizator nu are activitate publică
       no_private_messages: "Acest utilizator nu acceptă mesaje private."
       private_activity: Acest utilizator a decis să își mențină activitatea privată.
