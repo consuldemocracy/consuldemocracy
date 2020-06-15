@@ -826,6 +826,7 @@ ro:
         group: "Grup"
         no_group: "Nu există grupuri"
         abilities: "Abilități"
+        can_edit_dossier: "Puteți edita dosar"
       valuator:
         add: Adaugă la evaluatori
         delete: Șterge
@@ -1164,14 +1165,18 @@ ro:
       content: Conținut
       created_at: Creat la
       delete: Șterge
+      show_results_and_stats: "Afișează rezultate și statistici"
     geozones:
       index:
         edit: Editează
         delete: Șterge
       geozone:
         name: Nume
+        external_code: Cod extern
         coordinates: Coordonate
       edit:
+        form:
+          submit_button: Salvează modificări
         back: Mergi înapoi
       new:
         back: Mergi înapoi
@@ -1180,7 +1185,13 @@ ro:
       author: Autor
       created_at: Data creării
       name: Nume
+      no_signature_sheets: "Nu există foi de semnături"
+      index:
+        title: Foi cu semnături
+        new: Foaie nouă de semnături
       new:
+        title: Foaie nouă de semnături
+        submit: Crează foaie cu semnături
         text_help:
           example_text: "Exemplu: "
       show:
