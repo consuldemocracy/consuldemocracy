@@ -100,7 +100,7 @@ ro:
       tags_instructions: Etichetează această dezbatere.
       tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
     index:
-      featured_debates: Recomandată
+      featured_debates: Recomandări
       orders:
         confidence_score: cel mai bine cotată
         created_at: cea mai nouă
@@ -359,7 +359,7 @@ ro:
       map_remove_marker: "Eliminați marcatorul de hartă"
       map_skip_checkbox: "Această propunere nu are o locație concretă sau nu o cunosc."
     index:
-      featured_proposals: Recomandată
+      featured_proposals: Recomandări
       orders:
         confidence_score: cel mai bine cotat
         created_at: cele mai noi
@@ -912,7 +912,7 @@ ro:
       process_label: Proces
       see_process: Vezi proces
     cards:
-      title: Recomandată
+      title: Recomandări
     recommended:
       title: Recomandări care v-ar putea interesa
       help: "Aceste recomandări sunt generate de etichetele dezbaterilor și propunerilor pe care le urmăriți."
