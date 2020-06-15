@@ -700,7 +700,12 @@ ro:
       administrators: Administratori
       proposal_authors: Autorii propunerii
     newsletters:
+      create_success: Newsletter creat cu succes
+      update_success: Newsletter actualizat cu succes
+      send_success: Newsletter trimis cu succes
+      delete_success: Newsletter șters cu succes
       index:
+        title: Newslettere
         subject: Subiect
         segment_recipient: Destinatari
         sent: Trimis
