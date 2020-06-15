@@ -332,6 +332,7 @@ ro:
       poll/ballot_sheet:
         data: Date CSV
         poll_id: Sondaj
+        officer_assignment_id: Distribuirea funcționarilor publici
       poll/shift:
         task: "Sarcină"
       proposal_notification:
