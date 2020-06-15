@@ -634,10 +634,14 @@ ro:
       newsletters: Newsletters
       admin_notifications: Notificări
       valuators: Evaluatori
+      poll_officers: Ofițerii de votare
       polls: Sondaje
       poll_booths: Locația cabinelor
+      poll_booth_assignments: Repartizări pe cabine de vot
+      poll_shifts: Administrează ture
       officials: Funcționari publici
       organizations: Organizații
+      settings: Setări generale
       stats: Statistici
       signature_sheets: Foi cu semnaturi
       site_customization:
@@ -646,11 +650,14 @@ ro:
         pages: Pagini personalizate
         images: Imagini personalizate
         content_blocks: Conținut personalizat
+        information_texts: Texte informative personalizate
         information_texts_menu:
+          basic: "Personalizare de bază"
           debates: "Dezbateri"
           community: "Comunitate"
           proposals: "Propuneri"
           polls: "Sondaje"
+          layouts: "Amplasări"
           mailers: "Emailuri"
           management: "Administrare"
           welcome: "Bine ați venit"
@@ -706,6 +713,7 @@ ro:
       delete_success: Newsletter șters cu succes
       index:
         title: Newslettere
+        new_newsletter: Newsletter nou
         subject: Subiect
         segment_recipient: Destinatari
         sent: Trimis
@@ -714,8 +722,12 @@ ro:
         edit: Editează
         delete: Șterge
         preview: Previzualizare
+        empty_newsletters: Nu există newslettere
       new:
+        title: Newsletter nou
         image_link: "imagini personalizate"
+      edit:
+        title: Editează newsletter
       show:
         title: Previzualizare newsletter
         send: Trimite
