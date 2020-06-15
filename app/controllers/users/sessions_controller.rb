@@ -1,4 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
+  protect_from_forgery except: :participacion
   before_action :verify_ip, only: [:new]
   before_action :authenticate_user!, only: [:participacion]
 
