@@ -814,6 +814,7 @@ ro:
         no_replies: "Nu s-au creat răspunsuri la comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
     emails_download:
       index:
+        title: Descarcă emailuri
         download_emails_button: Descarcă listă de emailuri
     valuators:
       index:
