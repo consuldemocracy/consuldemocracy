@@ -1137,8 +1137,10 @@ ro:
       false_value: "Nu"
       booths_search:
         button: Caută
+        placeholder: Caută cabină de vot după nume sau locație
       poll_officers_search:
         button: Caută
+        placeholder: Caută funcționar public
       poll_questions_search:
         button: Caută
       proposal_search:
