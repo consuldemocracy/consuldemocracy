@@ -1,7 +1,7 @@
-shared_examples "progressable" do |factory_name, path_name|
+shared_examples "progressable" do |factory_name|
   describe "Progress bars", :js do
     let!(:progressable) { create(factory_name) }
-    let(:path) { send(path_name, *resource_hierarchy_for(progressable)) }
+    let(:path) { polymorphic_path(progressable) }
 
     scenario "With main progress bar" do
       create(:progress_bar, progressable: progressable)

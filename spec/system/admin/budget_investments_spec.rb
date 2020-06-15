@@ -8,7 +8,7 @@ describe "Admin budget investments" do
 
   it_behaves_like "admin_milestoneable",
                   :budget_investment,
-                  "admin_budget_budget_investment_path"
+                  "admin_polymorphic_path"
 
   before do
     login_as(create(:administrator).user)

@@ -8,9 +8,7 @@ describe "Budget Investments" do
   let(:group) { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", price: 666666, group: group) }
 
-  it_behaves_like "milestoneable",
-                  :budget_investment,
-                  "budget_investment_path"
+  it_behaves_like "milestoneable", :budget_investment
 
   context "Concerns" do
     it_behaves_like "notifiable in-app", :budget_investment

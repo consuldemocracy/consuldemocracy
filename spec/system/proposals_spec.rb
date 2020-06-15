@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Proposals" do
-  it_behaves_like "milestoneable",
-                  :proposal,
-                  "proposal_path"
+  it_behaves_like "milestoneable", :proposal
 
   scenario "Disabled with a feature flag" do
     Setting["process.proposals"] = nil

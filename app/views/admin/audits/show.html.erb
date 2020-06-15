@@ -1,7 +1,7 @@
 <% provide(:title) do %>
   <%= t("admin.audits.title") %>
 <% end %>
-<%= back_link_to polymorphic_path([:admin, *resource_hierarchy_for(@audit.associated || @audit.auditable)]) %>
+<%= back_link_to admin_polymorphic_path(@audit.associated || @audit.auditable) %>
 
 <h2><%= t("admin.audits.title") %></h2>
 

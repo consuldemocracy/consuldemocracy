@@ -1,10 +1,10 @@
-shared_examples "milestoneable" do |factory_name, path_name|
-  it_behaves_like "progressable", factory_name, path_name
+shared_examples "milestoneable" do |factory_name|
+  it_behaves_like "progressable", factory_name
 
   let!(:milestoneable) { create(factory_name) }
 
   describe "Show milestones" do
-    let(:path) { send(path_name, *resource_hierarchy_for(milestoneable)) }
+    let(:path) { polymorphic_path(milestoneable) }
 
     scenario "Show milestones", :js do
       create(:milestone, milestoneable: milestoneable,
