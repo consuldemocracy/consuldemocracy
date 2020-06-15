@@ -690,6 +690,8 @@ ro:
         add: Adaugă
         delete: Șterge
         restricted_removal: "Ne pare rău, nu vă puteți scoate din lista de administratori"
+      search:
+        title: "Administratori: Căutare utilizator"
       form:
         edit_title: "Editează administratori"
         updated: "Administrator actualizat cu succes"
@@ -702,9 +704,12 @@ ro:
       moderator:
         add: Adaugă
         delete: Șterge
+      search:
+        title: "Moderatori: Căutare utilizator"
     segment_recipient:
       all_users: Toți utilizatorii
       administrators: Administratori
+      all_proposal_authors: Autori propuneri (inclusiv pentru propuneri activate sau retrase)
       proposal_authors: Autorii propunerii
     newsletters:
       create_success: Newsletter creat cu succes
