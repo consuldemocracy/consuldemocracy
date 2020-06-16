@@ -1091,15 +1091,6 @@ fr:
           without_confirmed_hide: Indécis
         title: Propositions masquées
         no_hidden_proposals: Il n’y a aucune proposition masquée.
-    proposal_notifications:
-      index:
-        filter: Filtre
-        filters:
-          all: Toutes
-          with_confirmed_hide: Confirmé
-          without_confirmed_hide: Indécis
-        title: Notifications masquées
-        no_hidden_proposals: Il n'y a pas de notifications masquées.
     settings:
       flash:
         updated: Valeur mise-à-jour
