@@ -142,7 +142,7 @@ describe "Admin polls" do
       expect(page).not_to have_content("Do you support CONSUL?")
 
       expect(Poll::Question.count).to eq(0)
-      expect(Poll::Question::Answer.count). to eq(0)
+      expect(Poll::Question::Answer.count).to eq(0)
     end
 
     scenario "Can't destroy poll with votes", :js do
