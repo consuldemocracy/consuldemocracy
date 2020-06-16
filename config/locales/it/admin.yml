@@ -1036,15 +1036,6 @@ it:
           without_confirmed_hide: In sospeso
         title: Proposte nascoste
         no_hidden_proposals: Non ci sono proposte nascoste.
-    proposal_notifications:
-      index:
-        filter: Filtra
-        filters:
-          all: Tutti
-          with_confirmed_hide: Confermato
-          without_confirmed_hide: In sospeso
-        title: Notififiche nascoste
-        no_hidden_proposals: Non ci sono notifiche nascoste.
     settings:
       flash:
         updated: Valore aggiornato
