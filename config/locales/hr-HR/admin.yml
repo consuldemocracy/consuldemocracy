@@ -1223,6 +1223,15 @@ hr:
           without_confirmed_hide: U tijeku
         title: Sakriveni prijedlozi
         no_hidden_proposals: Ne postoje skriveni prijedlozi.
+    hidden_proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: Svi
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U tijeku
+        title: Skrivene obavijesti
+        no_hidden_proposals: Nema skrivenih obavijesti.
     settings:
       flash:
         updated: Vrijednost ažurirana
