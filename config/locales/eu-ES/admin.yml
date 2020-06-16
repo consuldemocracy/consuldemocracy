@@ -795,15 +795,6 @@ eu:
     proposals:
       index:
         title: Ezkutatutako proposamenak
-    proposal_notifications:
-      index:
-        filter: Iragazkia
-        filters:
-          all: Guztiak
-          with_confirmed_hide: Baieztutakoak
-          without_confirmed_hide: Egiteke
-        title: Ezkutatutako jakinarazpenak
-        no_hidden_proposals: Ez dago ezkutatutako jakinarazpenik.
     settings:
       flash:
         updated: Balorea eguneratuta
