@@ -1217,15 +1217,6 @@ ka:
           without_confirmed_hide: მოლოდინის რეჟიმშია
         title: დამალული ინიციატივები
         no_hidden_proposals: დამალული ინიციატივები არ მოიძებნა.
-    proposal_notifications:
-      index:
-        filter: ფილტრი
-        filters:
-          all: ყველა
-          with_confirmed_hide: დადასტურებულია
-          without_confirmed_hide: მოლოდინის რეჟიმშია
-        title: დამალული შეტყობინებები
-        no_hidden_proposals: დამალული შეტყობინებები არ მოიძებნა.
     settings:
       flash:
         updated: ღირებულება განახლდა
