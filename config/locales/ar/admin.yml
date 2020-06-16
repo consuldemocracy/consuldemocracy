@@ -1226,15 +1226,6 @@ ar:
           without_confirmed_hide: معلق
         title: الإقتراحات المخفية
         no_hidden_proposals: لا توجد أي إقتراحات مخفية.
-    proposal_notifications:
-      index:
-        filter: ترشيح
-        filters:
-          all: الكل
-          with_confirmed_hide: مؤكد
-          without_confirmed_hide: معلق
-        title: الإشعارات المخفية
-        no_hidden_proposals: لايوجد إشعارات مخفية.
     settings:
       flash:
         updated: تم تحديث القيمة
