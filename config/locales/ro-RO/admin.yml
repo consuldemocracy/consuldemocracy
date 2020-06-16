@@ -1097,15 +1097,6 @@ ro:
           without_confirmed_hide: În așteptare
         title: Propuneri ascunse
         no_hidden_proposals: Nu există propuneri ascunse.
-    proposal_notifications:
-      index:
-        filter: Filtru
-        filters:
-          all: Tot
-          with_confirmed_hide: Confirmat
-          without_confirmed_hide: În așteptare
-        title: Notificări ascunse
-        no_hidden_proposals: Nu există notificări ascunse.
     settings:
       flash:
         updated: Valoare actualizată
