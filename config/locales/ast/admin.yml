@@ -670,13 +670,6 @@ ast:
           with_confirmed_hide: Confirmaos
           without_confirmed_hide: Pindios
         title: Propuestes ocultes
-    proposal_notifications:
-      index:
-        filter: Filtru
-        filters:
-          all: Toes
-          with_confirmed_hide: Confirmaos
-          without_confirmed_hide: Pindios
     settings:
       flash:
         updated: Valor actualizado
