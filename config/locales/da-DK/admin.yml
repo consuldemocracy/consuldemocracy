@@ -1215,15 +1215,6 @@ da:
           without_confirmed_hide: Under behandling
         title: Skjulte forslag
         no_hidden_proposals: Der er ingen skjulte forslag.
-    proposal_notifications:
-      index:
-        filter: Filter
-        filters:
-          all: Alle
-          with_confirmed_hide: Bekræftet
-          without_confirmed_hide: Under behandling
-        title: Skjulte notifikationer
-        no_hidden_proposals: Der er ingen skjulte notifikationer.
     settings:
       flash:
         updated: Pris opdateret
