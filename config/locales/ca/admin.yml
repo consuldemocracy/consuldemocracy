@@ -647,13 +647,6 @@ ca:
           with_confirmed_hide: Confirmades
           without_confirmed_hide: Sense decidir
         title: Propostes ocultes
-    proposal_notifications:
-      index:
-        filter: Filtrar
-        filters:
-          all: tots
-          with_confirmed_hide: Confirmades
-          without_confirmed_hide: Sense decidir
     settings:
       flash:
         updated: Valor actualitzat
