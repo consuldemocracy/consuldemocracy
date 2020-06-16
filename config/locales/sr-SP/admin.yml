@@ -1223,15 +1223,6 @@ sr:
           without_confirmed_hide: У процесу
         title: Сакривени предлози
         no_hidden_proposals: Нема сакривених предлога.
-    proposal_notifications:
-      index:
-        filter: Филтер
-        filters:
-          all: Све
-          with_confirmed_hide: Одобрено
-          without_confirmed_hide: Необрађено
-        title: Сакривена обавештења
-        no_hidden_proposals: Нема сакривених обавештења.
     settings:
       flash:
         updated: Вредност ажурирана
