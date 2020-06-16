@@ -1053,15 +1053,6 @@ pl:
           without_confirmed_hide: Oczekujące
         title: Ukryte propozycje
         no_hidden_proposals: Brak ukrytych wniosków.
-    proposal_notifications:
-      index:
-        filter: Filtruj
-        filters:
-          all: Wszystkie
-          with_confirmed_hide: Potwierdzone
-          without_confirmed_hide: Oczekujące
-        title: Ukryte powiadomienia
-        no_hidden_proposals: Nie ma ukrytych powiadomień.
     settings:
       flash:
         updated: Wartość zaktualizowana
