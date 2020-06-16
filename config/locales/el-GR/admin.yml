@@ -1141,15 +1141,6 @@ el:
           without_confirmed_hide: Σε εκκρεμότητα
         title: Κρυφές προτάσεις
         no_hidden_proposals: Δεν υπάρχουν κρυφές προτάσεις.
-    proposal_notifications:
-      index:
-        filter: Φίλτρο
-        filters:
-          all: Όλα
-          with_confirmed_hide: Επιβεβαιωμένο
-          without_confirmed_hide: Σε εκκρεμότητα
-        title: Κρυφές ειδοποιήσεις
-        no_hidden_proposals: Δεν υπάρχουν κρυφές ειδοποιήσεις.
     settings:
       flash:
         updated: Η αξία ανανεώθηκε
