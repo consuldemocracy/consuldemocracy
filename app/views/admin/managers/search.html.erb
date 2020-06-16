@@ -20,7 +20,7 @@
           <td>
             <% if user.manager? && user.manager.persisted? %>
               <%= link_to t("admin.managers.manager.delete"),
-                          admin_manager_path(user),
+                          admin_manager_path(user.manager),
                           method: :delete,
                           class: "button hollow alert expanded" %>
             <% else %>
