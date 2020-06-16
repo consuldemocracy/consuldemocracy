@@ -1200,15 +1200,6 @@ bg:
           without_confirmed_hide: Изчакване
         title: Скрити предложения
         no_hidden_proposals: Няма скрити предложения.
-    proposal_notifications:
-      index:
-        filter: Филтър
-        filters:
-          all: Всички
-          with_confirmed_hide: Потвърдено
-          without_confirmed_hide: Изчакване
-        title: Скрити известия
-        no_hidden_proposals: Няма скрити известия.
     settings:
       flash:
         updated: Стойността е актуализирана
