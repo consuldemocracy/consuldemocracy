@@ -1217,15 +1217,6 @@ sv:
           without_confirmed_hide: Väntande
         title: Dolda förslag
         no_hidden_proposals: Det finns inga dolda förslag.
-    proposal_notifications:
-      index:
-        filter: Filtrera
-        filters:
-          all: Alla
-          with_confirmed_hide: Godkända
-          without_confirmed_hide: Väntande
-        title: Dolda aviseringar
-        no_hidden_proposals: Det finns inga dolda aviseringar.
     settings:
       flash:
         updated: Uppdaterad värde
