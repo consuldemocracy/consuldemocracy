@@ -44,7 +44,7 @@ namespace :admin do
     end
   end
 
-  resources :proposal_notifications, only: :index do
+  resources :hidden_proposal_notifications, only: :index do
     member do
       put :restore
       put :confirm_hide

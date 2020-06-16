@@ -1,4 +1,4 @@
-class Admin::ProposalNotificationsController < Admin::BaseController
+class Admin::HiddenProposalNotificationsController < Admin::BaseController
   has_filters %w[without_confirmed_hide all with_confirmed_hide], only: :index
 
   before_action :load_proposal, only: [:confirm_hide, :restore]

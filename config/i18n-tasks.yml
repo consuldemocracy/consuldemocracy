@@ -137,7 +137,7 @@ ignore_unused:
   - "admin.banners.index.filters.*"
   - "admin.hidden_debates.index.filter*"
   - "admin.hidden_proposals.index.filter*"
-  - "admin.proposal_notifications.index.filter*"
+  - "admin.hidden_proposal_notifications.index.filter*"
   - "admin.budgets.index.filter*"
   - "admin.budgets.edit.(administrators|valuators).*"
   - "admin.budget_investments.index.filter*"
