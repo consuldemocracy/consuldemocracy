@@ -939,15 +939,6 @@ zh-CN:
           without_confirmed_hide: 有待
         title: 隐藏的提议
         no_hidden_proposals: 没有隐藏的提议。
-    proposal_notifications:
-      index:
-        filter: 过滤器
-        filters:
-          all: 所有
-          with_confirmed_hide: 已确认
-          without_confirmed_hide: 有待
-        title: 隐藏的通知
-        no_hidden_proposals: 没有隐藏的通知。
     settings:
       flash:
         updated: 价值已更新
