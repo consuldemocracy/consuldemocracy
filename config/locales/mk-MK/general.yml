@@ -53,6 +53,39 @@ mk:
         zero: Нема гласови
         one: 1 глас
         other: "%{count} гласови"
+    form:
+      comment_as_admin: Коментирај како администратор
+      comment_as_moderator: Коментирај како модератор
+      leave_comment: Остави коментар
+    orders:
+      most_voted: Најгласано
+      newest: Прво најново
+      oldest: Прво најстаро
+      most_commented: Најкоментирано
+    select_order: Сортирај по
+    show:
+      return_to_commentable: "Врати се до "
+  comments_helper:
+    comment_button: Објави коментар
+    comment_link: Коментар
+  debates:
+    show:
+      author_deleted: Избришан корисник
+      comments:
+        zero: Нема коментари
+        one: 1 коментар
+        other: "%{count} коментари"
+      comments_title: Коментари
+      edit_debate_link: Измени
+      flag: Оваа дебата беше посочена како несоодветна од повеќе корисници.
+      share: Сподели
+      author: Автор
+    update:
+      form:
+        submit_button: Зачувај промени
+  errors:
+    messages:
+      user_not_found: Корисникот не е пронајден
   form:
     proposal: Предлог
   layouts:
