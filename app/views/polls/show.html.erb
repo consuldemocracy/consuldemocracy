@@ -31,8 +31,6 @@
         <% end %>
       <% end %>
 
-      <% @questions.each do |question| %>
-        <%= render "polls/questions/question", question: question, token: @token %>
       <% end %>
     </div>
   </div>
@@ -49,6 +47,8 @@
           <div class="sidebar-divider"></div>
           <h2><%= t("polls.show.documents") %></h2>
         </aside>
+      <% @questions.each_with_index do |question, index| %>
+        <%= render "polls/questions/question", question: question, index: index, token: @token %>
       <% end %>
     </div>
   </div>

@@ -34,6 +34,18 @@ describe "Polls" do
       end
     end
 
+    scenario "Polls display list of questions" do
+      poll = create(:poll, :with_image)
+      question1 = create(:poll_question, :yes_no, poll: poll)
+      question2 = create(:poll_question, :yes_no, poll: poll)
+
+      visit polls_path
+
+      expect(page).to have_content(poll.name)
+      expect(page).to have_content("Question 1 #{question1.title}")
+      expect(page).to have_content("Question 2 #{question2.title}")
+    end
+
     scenario "Proposal polls won't be listed" do
       proposal = create(:proposal)
       _poll = create(:poll, related: proposal)
@@ -157,8 +169,8 @@ describe "Polls" do
       expect(page).to have_content(poll.summary)
       expect(page).to have_content(poll.description)
 
-      expect(page).to have_content(normal_question.title)
-      expect(page).to have_content(proposal_question.title)
+      expect(page).to have_content("Question 1 #{proposal_question.title}", normalize_ws: true)
+      expect(page).to have_content("Question 2 #{normal_question.title}", normalize_ws: true)
     end
 
     scenario "Question answers appear in the given order" do

@@ -612,6 +612,7 @@ en:
     no_dates: "no date assigned"
     dates: "From %{open_at} to %{closed_at}"
     final_date: "Final recounts/Results"
+    question: "Question"
     index:
       filters:
         current: "Open"
