@@ -57,3 +57,27 @@ mk:
         filter: Филтрирај
         filters:
           all: Сите
+          pending_flag_review: Во очекување на извештај
+          with_ignored_flag: Означи како прегледано
+        headers:
+          moderate: Модерирај
+          proposal: Предлог
+        hide_proposals: Скриј предлози
+        ignore_flags: Означи како прегледано
+        order: Подреди според
+        orders:
+          created_at: Најново
+          flags: Најобележано
+        title: Предлози
+    budget_investments:
+      index:
+        block_authors: Блокирај автори
+        confirm: Дали сте сигурни?
+        filter: Филтрирај
+        filters:
+          all: Сите
+          pending_flag_review: Во исчекување
+          with_ignored_flag: Означи како прегледано
+        headers:
+          moderate: Модерирај
+          budget_investment: Буџетски инвестиции
