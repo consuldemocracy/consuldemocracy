@@ -1,1 +1,52 @@
 mk:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Е-пошта
+        submit: Повторно испрати инструкции
+        title: Повторно испрати инструкции за потврда
+      show:
+        instructions: Потврди го профилот со електронска адреса %{email}
+        new_password_confirmation_label: Повтори лозинка
+        new_password_label: Нова лозинка
+        please_set_password: Ве молам изберете нова лозинка (ќе ви дозволи да се логирате со електронската адреса погоре)
+        submit: Потврди
+        title: Потврди го мојот профил
+    mailer:
+      confirmation_instructions:
+        confirm_link: Потврди го мојот профил
+        text: "Можете да ја потврдите вашата мејл адреса на следниот линк:"
+        title: Добредојдовте
+        welcome: Добредојдовте
+      reset_password_instructions:
+        change_link: Промени ја лозинката
+        hello: Здраво
+        ignore_text: Ако не побаравте промена на лозинката, можете да го игнорирате овој мејл.
+        info_text: Вашата лозинка нема да биде променета освен ако влезете на линкот и ја промените.
+        text: "Добивме барање за промена на вашата лозинка. Можете да го направите тоа на следниот линк:"
+        title: Промени ја лозинката
+      unlock_instructions:
+        hello: Здраво
+        info_text: Вашиот профил е блокиран поради преголем број на неуспешни обиди за логирање.
+        instructions_text: "Ве молиме кликнете на овој линк за да го отклучите вашиот профил:"
+        title: Вашиот профил е заклучен
+        unlock_link: Отклучи го мојот профил
+    menu:
+      login_items:
+        login: Логирај се
+        logout: Одлогирај се
+        signup: Регистрирај се
+    organizations:
+      registrations:
+        new:
+          email_label: Електронска адреса
+          organization_name_label: Име на организацијата
+          password_confirmation_label: Потврди лозинка
+          password_label: Лозинка
+          phone_number_label: Телефонски број
+          responsible_name_label: Цело име на личноста одговорна за колективот
+          responsible_name_note: Ова е личноста која ја претставува асоцијацијата/колективот во чие име предлозите се презентирани
+          submit: Регистрирај се
+          title: Регистрирај се како организација или колектив
+        success:
+          back_to_index: Разбирам; врати се на главната страница
