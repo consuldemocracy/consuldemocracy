@@ -1,1 +1,10 @@
 mk:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} успешно создадено."
+        debate: "Успешно создадена дебата."
+        direct_message: "Пораката беше успешно испратена."
+        poll: "Успешно создадена анкета."
+        poll_booth: "Успешно создадена кабина."
+        poll_question_answer: "Успешно направен одговор"
