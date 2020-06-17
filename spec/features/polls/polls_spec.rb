@@ -197,6 +197,21 @@ describe "Polls" do
       end
     end
 
+    scenario "Read more button appears only in long answer descriptions" do
+      question = create(:poll_question, poll: poll)
+      create(:poll_question_answer, title: "Long answer", question: question,
+             description: Faker::Lorem.characters(700))
+      create(:poll_question_answer, title: "Short answer", question: question,
+             description: Faker::Lorem.characters(100))
+
+      visit poll_path(poll)
+
+      within "#poll_more_info_answers" do
+        expect(page).to have_content "Read more about Long answer"
+        expect(page).not_to have_content "Read more about Short answer"
+      end
+    end
+
     scenario "Non-logged in users" do
       create(:poll_question, :yes_no, poll: poll)
 

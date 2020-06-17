@@ -2366,7 +2366,7 @@
     height: 100%;
 
     &.short {
-      height: rem-calc(300);
+      height: $line-height * 13;
       overflow: hidden;
     }
   }

@@ -54,19 +54,26 @@
               <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
                 <%= wysiwyg(answer.description) %>
               </div>
-              <div class="margin">
-                <a id="read_more_<%= answer.id %>"
-                   data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                   data-toggler="hide">
-                  <%= t("polls.show.read_more", answer: answer.title) %>
-                </a>
-                <a id="read_less_<%= answer.id %>"
-                   data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                   data-toggler="hide"
-                   class="hide">
-                  <%= t("polls.show.read_less", answer: answer.title) %>
-                </a>
-              </div>
+              <% if answer.description.length > 600 %>
+                <div class="margin">
+                  <a id="read_more_<%= answer.id %>"
+                     data-toggle="answer_description_<%= answer.id %>
+                                  read_more_<%= answer.id %>
+                                  read_less_<%= answer.id %>"
+                     data-toggler="hide"
+                     class="button primary">
+                    <%= t("polls.show.read_more", answer: answer.title) %>
+                  </a>
+                  <a id="read_less_<%= answer.id %>"
+                     data-toggle="answer_description_<%= answer.id %>
+                                  read_more_<%= answer.id %>
+                                  read_less_<%= answer.id %>"
+                     data-toggler="hide"
+                     class="hide button primary">
+                    <%= t("polls.show.read_less", answer: answer.title) %>
+                  </a>
+                </div>
+              <% end %>
             </div>
           <% end %>
 
