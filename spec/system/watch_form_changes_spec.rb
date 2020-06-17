@@ -45,6 +45,33 @@ describe "Watch form changes", :js do
         expect(page).to have_text(:h2, "Proposals")
       end
     end
+
+    context "should not ask for confirmation before leaving the current page" do
+      scenario "when users restores original form data" do
+        visit path
+
+        expect(page).to have_ckeditor("Content", with: "This page is about...")
+
+        fill_in_ckeditor("Content", with: "New content for editor.")
+        accept_confirm(prompt) do
+          click_link "Proposals", match: :first
+        end
+
+        expect(page).to have_text(:h2, "Proposals")
+
+        go_back
+
+        expect(page).to have_ckeditor("Content", with: "New content for editor.")
+
+        fill_in_ckeditor("Content", with: "This page is about...")
+
+        expect(page).to have_ckeditor("Content", with: "This page is about...")
+
+        click_link "Proposals", match: :first
+
+        expect(page).to have_text(:h2, "Proposals")
+      end
+    end
   end
 
   describe "when form does not include html editor" do

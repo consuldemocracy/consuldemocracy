@@ -85,5 +85,10 @@
     }
   };
 
-  $(document).on("turbolinks:before-visit", App.WatchFormChanges.checkChanges);
+  $(document).on("turbolinks:before-visit", function() {
+    // Ckeditor updates textarea input only on form submit. This patch will
+    // force the update of textarea input right before navigating to other pages
+    App.WatchFormChanges.update_editor_form_elements();
+    return App.WatchFormChanges.checkChanges();
+  });
 }).call(this);
