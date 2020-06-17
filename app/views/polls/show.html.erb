@@ -31,11 +31,6 @@
         <% end %>
       <% end %>
 
-      <% if false %>
-        <aside class="small-12 medium-3 column">
-          <div class="sidebar-divider"></div>
-          <h2><%= t("polls.show.documents") %></h2>
-        </aside>
       <% @questions.each_with_index do |question, index| %>
         <%= render "polls/questions/question", question: question, index: index, token: @token %>
       <% end %>
