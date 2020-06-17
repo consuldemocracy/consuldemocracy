@@ -8,6 +8,45 @@ describe "Watch form changes", :js do
     login_as(admin.user)
   end
 
+  describe "when form includes html editor" do
+    let(:custom_page) { create(:site_customization_page, title: "Original title") }
+    let(:path) { edit_admin_site_customization_page_path(custom_page) }
+
+    context "should ask for confirmation before leaving the current page" do
+      scenario "when any form input was modified" do
+        visit path
+
+        fill_in "Title", with: "Unsaved title"
+        dismiss_confirm(prompt) do
+          click_link "Proposals", match: :first
+        end
+
+        expect(page).to have_current_path(path)
+      end
+
+      scenario "when any form input was modified and page was restored from browser history" do
+        visit path
+
+        fill_in "Title", with: "Unsaved title"
+        accept_confirm(prompt) do
+          click_link "Proposals", match: :first
+        end
+
+        expect(page).to have_text(:h2, "Proposals")
+
+        go_back
+
+        expect(page).to have_field("Title", with: "Unsaved title")
+
+        accept_confirm(prompt) do
+          click_link "Proposals", match: :first
+        end
+
+        expect(page).to have_text(:h2, "Proposals")
+      end
+    end
+  end
+
   describe "when form does not include html editor" do
     let(:legislation_process) { create(:legislation_process, title: "An example legislation process") }
     let(:legislation_draft_version) do
