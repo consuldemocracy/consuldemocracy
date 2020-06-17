@@ -25,6 +25,10 @@
     },
     serialize: function(form) {
       var id = App.WatchFormChanges.trackInputId(form);
+      if ($("#" + id).length > 0) {
+        return;
+      }
+
       var input = $("<input>").attr({ id: id, type: "hidden", value: $(form).serialize() });
       $(input).insertBefore(form);
     },
