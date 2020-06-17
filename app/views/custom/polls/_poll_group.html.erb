@@ -1,0 +1,78 @@
+<% poll_group.each do |poll| %>
+  <div class="poll with-image">
+    <div class="row" data-equalizer data-equalize-on="medium">
+      <div class="small-12 medium-3 column">
+        <div class="image-container" data-equalizer-watch>
+          <% if poll.image.present? %>
+            <%= image_tag poll.image_url(:large), alt: poll.image.title.unicode_normalize %>
+          <% end %>
+        </div>
+      </div>
+      <div class="small-12 medium-6 column" data-equalizer-watch>
+        <div class="dates"></div>
+        <% if poll.questions.one? %>
+          <h4><%= link_to_poll poll.questions.first.title, poll %></h4>
+          <small><%= poll_dates(poll) %></small>
+        <% else %>
+          <h4><%= link_to_poll poll.name, poll %></h4>
+          <small><%= poll_dates(poll) %></small>
+
+          <ul class="question-list no-bullet margin-top">
+            <% poll.questions.each_with_index do |question, index| %>
+              <li>
+                <span class="question-list-label"><%= t("polls.question") %> <%= index + 1 %></span>
+                <%= question.title %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+        <% if poll.geozones.any? %>
+          <p>
+            <small><%= t("polls.index.geozone_info") %></small>
+          </p>
+        <% end %>
+        <ul class="no-bullet inline-block tags">
+          <% poll.geozones.each do |g| %>
+            <li class="inline-block"><span><%= g.name %></span></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="small-12 medium-3 column table relative" data-equalizer-watch>
+        <div class="small-12 column message">
+          <% if !user_signed_in? %>
+            <div class="callout primary">
+              <span class="fas fa-user"></span>
+              <%= t("polls.index.not_logged_in") %>
+            </div>
+          <% elsif user_signed_in? %>
+            <% if current_user.unverified? %>
+              <div class="callout warning">
+                <span class="fas fa-user"></span>
+                <%= t("polls.index.unverified") %>
+              </div>
+            <% elsif cannot?(:answer, poll) %>
+              <div class="callout warning">
+                <span class="fas fa-globe"></span>
+                <%= t("polls.index.cant_answer") %>
+              </div>
+            <% elsif !poll.votable_by?(current_user) %>
+              <div class="callout success">
+                <span class="far fa-check-circle"></span>
+                <%= t("polls.index.already_answer") %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="table-cell align-bottom">
+          <%= link_to poll_path(id: poll.slug || poll.id), class: "button expanded" do %>
+            <% if poll.expired? %>
+              <%= t("polls.index.participate_button_expired") %>
+            <% else %>
+              <%= t("polls.index.participate_button") %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

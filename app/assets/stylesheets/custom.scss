@@ -14,6 +14,7 @@
 // 8. Debates
 // 9. Related content
 // 10. Proposals
+// 11. Polls
 //
 
 // 0. Global styles
@@ -90,6 +91,14 @@ main {
     border-color: $brand;
     color: $brand;
   }
+
+  &.primary {
+    background: $brand-secondary;
+
+    &:hover {
+      background: $hover-secondary;
+    }
+  }
 }
 
 aside {
@@ -143,11 +152,12 @@ aside {
 
       &.is-active {
         border-bottom: 0;
+        display: inline-block;
         position: relative;
 
         &::after {
           border-bottom: 4px solid $brand;
-          bottom: -6px;
+          bottom: -4px;
           content: "";
           position: absolute;
           right: 0;
@@ -277,7 +287,7 @@ aside {
 .communities-show,
 .budget-investments-list .budget-investment,
 .proposals-list .proposal,
-.legislation-proposals .proposal, {
+.legislation-proposals .proposal {
 
   .panel {
     border: 2px solid $border;
@@ -339,13 +349,25 @@ aside {
   }
 }
 
-.filter-subnav .tabs .tabs-title > a {
+.tabs {
+  border-bottom: 4px solid $light;
 
-  &[aria-selected="true"]::after,
-  .is-active::after {
-    border-bottom: 4px solid $brand;
-    bottom: -4px;
+  .tabs-title {
+    margin-bottom: 0;
+
+    > a {
+
+      &[aria-selected="true"]::after,
+      .is-active::after {
+        border-bottom: 4px solid $brand;
+        bottom: -4px;
+      }
+    }
   }
+}
+
+.align-bottom {
+  vertical-align: bottom;
 }
 
 // 1. Header
@@ -1729,4 +1751,111 @@ aside .supported .button.button-remove-support.expanded {
   display: inline-block;
   font-size: rem-calc(48);
   margin-bottom: $line-height;
+}
+
+// 11. Polls
+// --------------------
+
+.poll,
+.poll-question {
+  border: 2px solid $border;
+  border-radius: rem-calc(12);
+  box-shadow: none;
+  overflow: hidden;
+
+  @include breakpoint(medium) {
+
+    img {
+      border-bottom-left-radius: rem-calc(12);
+      border-top-left-radius: rem-calc(12);
+      max-width: none;
+    }
+  }
+
+  .question-list {
+    font-size: $small-font-size;
+
+    li {
+      margin-bottom: $line-height;
+    }
+  }
+
+  .message {
+    position: absolute;
+    left: 0;
+    top: 12px;
+
+    span {
+      float: left;
+      font-size: rem-calc(36);
+      margin-right: $line-height / 2;
+    }
+  }
+
+  .button {
+    margin-bottom: $line-height;
+  }
+}
+
+.section-title-divider {
+  border-bottom: 4px solid $light;
+  color: $brand;
+
+  span {
+    border-bottom: 0;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      border-bottom: 4px solid $brand;
+      bottom: -4px;
+      content: "";
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+.poll-question {
+  padding-top: $line-height;
+
+  h3 {
+    padding-top: 0;
+  }
+}
+
+.poll-question-answers {
+
+  .button {
+
+    &.hollow {
+
+      &.secondary,
+      &.secondary.disabled,
+      &.secondary[disabled],
+      &.secondary.disabled:hover,
+      &.secondary[disabled]:hover,
+      &.secondary.disabled:focus,
+      &.secondary[disabled]:focus {
+        border: 2px solid $text;
+        color: $text;
+        font-weight: bold;
+      }
+    }
+
+    &.answered {
+      background: $brand;
+      border: 2px solid $brand;
+      color: #fff;
+
+      &::after {
+        background: $brand;
+        border: 2px solid #fff;
+        color: #fff;
+        right: -8px;
+        top: -12px;
+      }
+    }
+  }
 }

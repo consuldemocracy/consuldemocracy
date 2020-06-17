@@ -72,7 +72,7 @@ describe "Polls" do
 
       visit polls_path
 
-      expect(page).to have_css(".not-logged-in", count: 3)
+      expect(page).to have_css(".message .callout .fa-user", count: 3)
       expect(page).to have_content("You must sign in or sign up to participate")
 
       user = create(:user)
@@ -80,7 +80,7 @@ describe "Polls" do
 
       visit polls_path
 
-      expect(page).to have_css(".unverified", count: 3)
+      expect(page).to have_css(".message .callout .fa-user", count: 3)
       expect(page).to have_content("You must verify your account to participate")
     end
 
@@ -90,7 +90,7 @@ describe "Polls" do
       login_as(create(:user, :level_two))
       visit polls_path
 
-      expect(page).to have_css(".cant-answer", count: 1)
+      expect(page).to have_css(".message .callout .fa-globe", count: 1)
       expect(page).to have_content("This poll is not available on your geozone")
     end
 
@@ -105,7 +105,7 @@ describe "Polls" do
 
       visit polls_path
 
-      expect(page).to have_css(".already-answer", count: 1)
+      expect(page).to have_css(".message .callout .fa-check-circle", count: 1)
       expect(page).to have_content("You already have participated in this poll")
     end
 

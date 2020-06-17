@@ -52,3 +52,7 @@ en:
         relevance: "Relevance"
         archival_date: "Archived"
         recommendations: "Recommendations"
+  polls:
+    index:
+      section_header:
+        description: "Give your opinion on specific topics"
