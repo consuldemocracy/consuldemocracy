@@ -8,3 +8,15 @@ mk:
         poll: "Успешно создадена анкета."
         poll_booth: "Успешно создадена кабина."
         poll_question_answer: "Успешно направен одговор"
+        poll_question_answer_video: "Успешно создадено видео"
+        poll_question_answer_image: "Успешно поставување на слика"
+        proposal: "Успешно создаден предлог."
+        proposal_notification: "Вашата порака беше коректно испратена."
+        budget_investment: "Успешно создадена буџетска инвестиција."
+        signature_sheet: "Успешно создаден лист со потпис"
+        topic: "Успешно создадена тема."
+        valuator_group: "Успешно создадена група за вреднување"
+      save_changes:
+        notice: Промените се зачувани
+      update:
+        notice: "%{resource_name} успешно ажуриран."
