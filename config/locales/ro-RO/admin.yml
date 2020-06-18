@@ -57,6 +57,7 @@ ro:
           on_debates: Dezbateri
           on_proposals: Propuneri
           on_users: Utilizatori
+          on_system_emails: Emailuri de sistem
         title: Activitatea moderatorului
         type: Tip
         no_activity: Nu există activitate efectuată de moderatori.
@@ -210,6 +211,7 @@ ro:
           valuation_group: Grup de evaluare
           geozone: Scopul operațiunii
           feasibility: Fezabilitate
+          valuation_finished: Evaluare terminată
           selected: Selectat
           visible_to_valuators: Afișează evaluatorilor
           author_username: Numele de utilizator al autorului
@@ -485,11 +487,13 @@ ro:
           draft_phase_description: Dacă această etapă este activă, procesul nu va fi listat în index. Permiteți previzualizarea procesului și crearea de conținut înainte de început.
           allegations_phase: Etapa de comentarii
           proposals_phase: Etapa de propuneri
+          use_markdown: Folosiți Markdown pentru a formata textul
           title_placeholder: Titlul procesului
           summary_placeholder: Scurt rezumat al descrierii
           description_placeholder: Adaugă o descriere a procesului
           additional_info_placeholder: Adăugați informații suplimentare pe care le considerați utile
           homepage_description: Aici puteți explica conținutul procesului
+          banner_title: Culoarea antetului
         index:
           create: Proces nou
           delete: Șterge
@@ -499,6 +503,7 @@ ro:
             all: Toate
         new:
           back: Înapoi
+          title: Crearea unui nou proces legislativ de colaborare
           submit_button: Crează proces
         proposals:
           select_order: Sortează după
@@ -518,6 +523,7 @@ ro:
         subnav:
           info: Informație
           homepage: Pagina principală
+          draft_versions: Redactare
           questions: Dezbate
           proposals: Propuneri
       homepage:
