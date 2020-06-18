@@ -836,6 +836,7 @@ ro:
         description: "Trimite autorului atunci când investiția sa bugetară nu a fost selectată pentru faza de vot."
       comment:
         title: "Comentariu"
+        description: "Trimite autorului când primește un comentariu."
       reply:
         title: "Răspunde"
       evaluation_comment:
