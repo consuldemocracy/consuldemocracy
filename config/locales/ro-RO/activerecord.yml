@@ -260,6 +260,7 @@ ro:
         author: "Autor"
         description: "Opinie"
         tag_list: "Subiecte"
+        terms_of_service: "Termenii serviciului"
         title: "Titlu"
       debate/translation:
         title: "Titlul dezbaterii"
@@ -272,6 +273,7 @@ ro:
         responsible_name: "Numele întreg al persoanei care depune propunerea"
         retired_reason: "Motiv pentru a retrage propunerea"
         selected: "Marchează ca selectat"
+        terms_of_service: "Termenii serviciului"
         video_url: "URL video extern"
       proposal/translation:
         title: "Titlul propunerii"
