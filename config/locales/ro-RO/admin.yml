@@ -854,7 +854,10 @@ ro:
         description: "Trimis către persoana care a fost invitată să înregistreze un cont."
       evaluation_comment:
         title: "Nou comentariu de evaluare"
+        description: "Trimise administratorilor și evaluatorilor în legătură cu investițiile comentate"
       edit_info: "Puteți edita acest email din"
+      message_title: "Titlul mesajului"
+      message_body: "Acesta este un exemplu de conținut al mesajului."
       alert:
         no_investments: "Nu s-au creat investiții bugetare. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
         no_comments: "Nu s-au creat comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
