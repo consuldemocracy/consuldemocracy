@@ -22,8 +22,18 @@
         });
         editor = $(this);
         editor.on("input", function() {
+          var textarea, warning;
+
+          textarea = editor.find("textarea")[0];
+          warning = $(this).closest(".translatable-fields").find(".warning");
+
           App.MarkdownEditor.refresh_preview($(this), md);
-          $(".legislation-draft-versions-edit .warning").show();
+
+          if (textarea.value === textarea.defaultValue) {
+            warning.hide();
+          } else {
+            warning.show();
+          }
         });
         editor.find("textarea").on("scroll", function() {
           editor.find(".markdown-preview").scrollTop($(this).scrollTop());
