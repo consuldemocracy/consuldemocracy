@@ -55,4 +55,13 @@ module Verifications
       within_frame(0) { find("body").set(with) }
     end
   end
+
+  def fill_in_markdown_editor(label, with:)
+    click_link "Launch text editor"
+    fill_in label, with: with
+
+    within(".fullscreen") do
+      click_link "Close text editor"
+    end
+  end
 end
