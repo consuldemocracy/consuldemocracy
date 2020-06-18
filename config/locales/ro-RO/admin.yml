@@ -866,6 +866,8 @@ ro:
     emails_download:
       index:
         title: Descarcă emailuri
+        download_segment: Descărcați adrese de e-mail
+        download_segment_help_text: Descărcați în format CSV
         download_emails_button: Descarcă listă de emailuri
     valuators:
       index:
@@ -879,11 +881,15 @@ ro:
         group: "Grup"
         no_group: "Nu există grupuri"
         abilities: "Abilități"
+        can_comment: "Poate comenta"
         can_edit_dossier: "Puteți edita dosar"
       valuator:
         add: Adaugă la evaluatori
         delete: Șterge
+      search:
+        title: "Moderatori: Căutare utilizator"
       form:
+        edit_title: "Evaluatori: editați evaluatorul"
         updated: "Evaluator actualizat cu succes"
       show:
         description: "Descriere"
@@ -929,6 +935,8 @@ ro:
       by_officer:
         date: "Dată"
         booth: "Cabină vot"
+        assignments: "Funcționarea schimburilor în acest sondaj"
+        no_assignments: "Acest utilizator nu are schimbări oficiale în acest sondaj."
     poll_shifts:
       new:
         date: "Dată"
