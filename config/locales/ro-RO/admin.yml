@@ -729,6 +729,12 @@ ro:
       administrators: Administratori
       all_proposal_authors: Autori propuneri (inclusiv pentru propuneri activate sau retrase)
       proposal_authors: Autorii propunerii
+      investment_authors: Operatorii de investiții în bugetul curent
+      feasible_and_undecided_investment_authors: "Autorii unor investiții în bugetul curent care nu respectă: [evaluarea terminată este imposibilă]"
+      selected_investment_authors: Autori ai investițiilor selectate în bugetul curent
+      winner_investment_authors: Autori ai investițiilor câștigătoare în bugetul curent
+      not_supported_on_current_budget: Utilizatorii care nu au sprijinit investiții pe bugetul actual
+      invalid_recipients_segment: "Segmentul de utilizatori destinatari este invalid"
     newsletters:
       create_success: Newsletter creat cu succes
       update_success: Newsletter actualizat cu succes
