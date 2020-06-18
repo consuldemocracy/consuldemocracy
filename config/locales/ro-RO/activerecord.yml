@@ -342,11 +342,14 @@ ro:
         title: "Titlu"
       signature_sheet:
         title: "Titlu"
+        signable_type: "Tip semnnătură"
+        signable_id: "Semnatar"
         document_numbers: "Numerele documentelor"
       site_customization/page:
         content: Conținut
         created_at: Creat la
         subtitle: Subtitrare
+        slug: Slug
         status: Status
         status_draft: "Schiță"
         status_published: "Publicat"
@@ -365,6 +368,7 @@ ro:
       site_customization/content_block:
         name: Nume
         locale: local
+        body: Corpul paginii
       tag:
         name: "Scrie numele subiectului"
       topic:
@@ -461,12 +465,14 @@ ro:
         title: Titlu
         body: Text
       widget/card:
+        label: Etichetă (opțional)
         title: Titlu
         description: Descriere
         link_text: Link
         link_url: URL Link-ului
         columns: Număr de coloane
       widget/card/translation:
+        label: Etichetă (opțional)
         title: Titlu
         description: Descriere
         link_text: Link
