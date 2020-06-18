@@ -90,4 +90,61 @@ describe "Admin legislation draft versions" do
       expect(page).to have_content "Version 1b"
     end
   end
+
+  context "Changing content with the markdown editor", :js do
+    let(:prompt) { "You've edited the text without saving it. Do you confirm to leave the page?" }
+    let(:version) { create(:legislation_draft_version, body: "Version 1") }
+    let(:path) do
+      edit_admin_legislation_process_draft_version_path(version.process, version)
+    end
+
+    scenario "asks for confimation when the content is modified" do
+      visit path
+      fill_in_markdown_editor "Text", with: "Version 1b"
+
+      dismiss_confirm(prompt) do
+        click_link "Proposals", match: :first
+      end
+
+      expect(page).to have_current_path(path)
+    end
+
+    scenario "asks for confimation after the page is restored from browser history" do
+      visit path
+      fill_in_markdown_editor "Text", with: "Version 1b"
+
+      accept_confirm(prompt) do
+        click_link "Proposals", match: :first
+      end
+
+      expect(page).to have_css("h2", text: "Proposals")
+
+      go_back
+
+      expect(page).to have_content version.process.title
+
+      accept_confirm(prompt) do
+        click_link "Proposals", match: :first
+      end
+
+      expect(page).to have_css("h2", text: "Proposals")
+    end
+
+    scenario "does not ask for confirmation when restoring the original content" do
+      visit path
+      fill_in_markdown_editor "Text", with: "Version 1b"
+
+      accept_confirm(prompt) do
+        click_link "Proposals", match: :first
+      end
+
+      expect(page).to have_css("h2", text: "Proposals")
+
+      go_back
+      fill_in_markdown_editor "Text", with: "Version 1"
+      click_link "Proposals", match: :first
+
+      expect(page).to have_css("h2", text: "Proposals")
+    end
+  end
 end

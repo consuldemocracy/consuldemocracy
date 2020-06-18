@@ -552,6 +552,7 @@ es:
           back: Volver
           submit_button: Guardar cambios
           warning: Ojo, has editado el texto. Para conservar de forma permanente los cambios, no te olvides de hacer click en Guardar.
+          markdown_changes_message: "Ojo, has editado el texto; perderás los cambios si abandonas la página. ¿Seguro que quieres continuar?"
         form:
           title: 'Editando <span class="strong">%{draft_version_title}</span> del proceso <span class="strong">%{process_title}</span>'
           launch_text_editor: Lanzar editor de texto

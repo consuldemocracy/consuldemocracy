@@ -553,6 +553,7 @@ en:
           back: Back
           submit_button: Save changes
           warning: You've edited the text, don't forget to click on Save to permanently save the changes.
+          markdown_changes_message: "You've edited the text without saving it. Do you confirm to leave the page?"
         form:
           title: 'Editing <span class="strong">%{draft_version_title}</span> from the process <span class="strong">%{process_title}</span>'
           launch_text_editor: Launch text editor

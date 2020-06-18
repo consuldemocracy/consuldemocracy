@@ -87,7 +87,7 @@
 //= require legislation
 //= require legislation_allegations
 //= require legislation_annotatable
-//= require watch_form_changes
+//= require legislation_draft_versions
 //= require followable
 //= require flaggable
 //= require documentable
@@ -145,7 +145,6 @@ var initialize_modules = function() {
   if ($(".legislation-annotatable").length) {
     App.LegislationAnnotatable.initialize();
   }
-  App.WatchFormChanges.initialize();
   App.TreeNavigator.initialize();
   App.Documentable.initialize();
   App.Imageable.initialize();
