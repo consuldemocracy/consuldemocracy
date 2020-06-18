@@ -56,3 +56,4 @@ en:
     index:
       section_header:
         description: "Give your opinion on specific topics"
+      remaining: "Remaining <strong>%{days}</strong> to participate"

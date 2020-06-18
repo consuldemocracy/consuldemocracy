@@ -64,6 +64,10 @@
           <% end %>
         </div>
         <div class="table-cell align-bottom">
+          <p class="small text-right">
+            <%= sanitize(t("polls.index.remaining",
+                            days: distance_of_time_in_words(Time.current, poll.ends_at))) %>
+          </p>
           <%= link_to poll_path(id: poll.slug || poll.id), class: "button expanded" do %>
             <% if poll.expired? %>
               <%= t("polls.index.participate_button_expired") %>

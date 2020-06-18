@@ -46,6 +46,17 @@ describe "Polls" do
       expect(page).to have_content("Question 2 #{question2.title}")
     end
 
+    scenario "Polls display remaining days to participate" do
+      travel_to "10/06/2020".to_date
+      create(:poll, starts_at: "01/06/2020", ends_at: "20/06/2020")
+
+      visit polls_path
+
+      within(".poll") do
+        expect(page).to have_content("Remaining 10 days to participate")
+      end
+    end
+
     scenario "Proposal polls won't be listed" do
       proposal = create(:proposal)
       _poll = create(:poll, related: proposal)
