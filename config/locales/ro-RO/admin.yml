@@ -862,6 +862,7 @@ ro:
         no_investments: "Nu s-au creat investiții bugetare. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
         no_comments: "Nu s-au creat comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
         no_replies: "Nu s-au creat răspunsuri la comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
+        no_evaluation_comments: "Nu s-au creat comentarii de evaluare. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
     emails_download:
       index:
         title: Descarcă emailuri
