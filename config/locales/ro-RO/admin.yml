@@ -526,6 +526,7 @@ ro:
           draft_versions: Redactare
           questions: Dezbate
           proposals: Propuneri
+          milestones: Urmărirea
       homepage:
         edit:
           title: Configurați pagina de pornire a procesului
@@ -551,9 +552,12 @@ ro:
         edit:
           back: Înapoi
           submit_button: Salvează modificări
+          warning: Ați editat textul, nu uitați să faceți clic pe Salvați pentru a salva modificările.
         form:
+          title: 'Editare <span class="strong">%{draft_version_title}</span> din procese <span class="strong">%{process_title}</span>'
           launch_text_editor: Deschide editorul text
           close_text_editor: Închide editorul text
+          use_markdown: Folosiți Markdown pentru a formata textul
           hints:
             final_version: Această versiune va fi publicată ca Rezultat Final pentru acest proces. Comentariile nu vor fi permise în această versiune.
             status:
@@ -607,8 +611,13 @@ ro:
         table:
           title: Titlu
           question_options: Opțiuni de întrebări
+          answers_count: Numărul de răspunsuri
+          comments_count: Numărul de comentarii
         question_option_fields:
           remove_option: Înlătură opțiune
+      milestones:
+        index:
+          title: Urmărirea
     managers:
       index:
         title: Administratori
@@ -622,6 +631,7 @@ ro:
         title: "Manageri: Căutare utilizator"
     menu:
       activity: Activitatea moderatorului
+      admin: Meniul de administrare
       banner: Gestionați bannere
       proposals: Propuneri
       proposals_topics: Subiecte de propuneri
@@ -639,6 +649,7 @@ ro:
       messaging_users: Mesaj către utilizatori
       newsletters: Newsletters
       admin_notifications: Notificări
+      system_emails: Emailuri de sistem
       emails_download: Descarcă emailuri
       valuators: Evaluatori
       poll_officers: Ofițerii de votare
