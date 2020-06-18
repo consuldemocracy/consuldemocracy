@@ -83,14 +83,7 @@ describe "Admin legislation draft versions" do
       click_link "Version 1"
 
       fill_in "Version title", with: "Version 1b"
-
-      click_link "Launch text editor"
-
-      fill_in "Text", with: "# Version 1 body\r\n\r\nParagraph\r\n\r\n>Quote"
-
-      within(".fullscreen") do
-        click_link "Close text editor"
-      end
+      fill_in_markdown_editor "Text", with: "# Version 1 body\r\n\r\nParagraph\r\n\r\n>Quote"
 
       click_button "Save changes"
 
