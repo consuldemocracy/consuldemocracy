@@ -939,6 +939,9 @@ ro:
         no_assignments: "Acest utilizator nu are schimbări oficiale în acest sondaj."
     poll_shifts:
       new:
+        add_shift: "Adăugați tura"
+        shift: "Misiune"
+        shifts: "Schimbări în acest stand"
         date: "Dată"
         officer: "Funcționar public"
         remove_shift: "Înlătură"
@@ -950,6 +953,16 @@ ro:
         table_name: "Nume"
       flash:
         date_missing: "Trebuie să selectați o dată"
+      vote_collection: Colectați voturi
+      recount_scrutiny: Renumărare & Analizare
+    booth_assignments:
+      manage_assignments: Gestionați misiunile
+      manage:
+        assignments_list: "Atribuții pentru sondajul „%{poll}”"
+        status:
+          assign_status: Misiune
+          assigned: Atribuit
+          unassigned: Neatribuit
     poll_booth_assignments:
       show:
         location: "Locație"
