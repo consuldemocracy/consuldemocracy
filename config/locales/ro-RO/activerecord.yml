@@ -529,6 +529,14 @@ ro:
             attachment:
               min_image_width: "Lățimea imaginii trebuie să fie %{required_min_width}px"
               min_image_height: "Înalțimea imaginii trebuie să fie %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Segmentul destinatarilor este incorect"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Segmentul destinatarilor este incorect"
         map_location:
           attributes:
             map:
