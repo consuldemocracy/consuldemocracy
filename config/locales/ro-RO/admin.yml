@@ -840,6 +840,18 @@ ro:
       reply:
         title: "Răspunde"
         description: "Trimiteți autorului comentariului când acesta primește un răspuns."
+      direct_message_for_receiver:
+        title: "Primitor al mesajului privat"
+        description: "Trimis la receptorul mesajului privat."
+      direct_message_for_sender:
+        title: "Primitor al mesajului privat"
+        description: "Trimis expeditorului mesajului privat."
+      email_verification:
+        title: "Verificarea emailului"
+        description: "Trimis unui utilizator nou pentru a își verifica contul."
+      user_invite:
+        title: "Invitație pentru utilizator"
+        description: "Trimis către persoana care a fost invitată să înregistreze un cont."
       evaluation_comment:
         title: "Nou comentariu de evaluare"
       edit_info: "Puteți edita acest email din"
