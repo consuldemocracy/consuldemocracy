@@ -14,7 +14,7 @@ class Poll
     validates :booth_assignment_id, presence: true, if: ->(voter) { voter.origin == "booth" }
     validates :officer_assignment_id, presence: true, if: ->(voter) { voter.origin == "booth" }
 
-    validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
+    validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }, unless: :skip_user_verification?
     validates :origin, inclusion: { in: VALID_ORIGINS }
 
     before_validation :set_demographic_info, :set_document_info, :set_denormalized_booth_assignment_id
@@ -36,6 +36,10 @@ class Poll
 
       self.document_type   = user.document_type
       self.document_number = user.document_number
+    end
+
+    def skip_user_verification?
+      Setting["feature.user.skip_verification"].present?
     end
 
     private

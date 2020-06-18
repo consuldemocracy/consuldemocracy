@@ -172,5 +172,14 @@ describe Poll::Voter do
       expect(voter.document_type).to eq("1")
       expect(voter.token).to eq("1234abcd")
     end
+
+    it "sets user info with skip verification enabled" do
+      Setting["feature.user.skip_verification"] = true
+      user = create(:user)
+      voter = build(:poll_voter, user: user, token: "1234abcd")
+      voter.save!
+
+      expect(voter.token).to eq("1234abcd")
+    end
   end
 end
