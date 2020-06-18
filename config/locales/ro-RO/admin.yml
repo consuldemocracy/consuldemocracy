@@ -754,6 +754,7 @@ ro:
         empty_newsletters: Nu există newslettere
       new:
         title: Newsletter nou
+        header_footer_help_text: "Antetul și subsolul sunt aceleași pentru toate e-mailurile, le puteți modifica pe <code> app / views / layouts / mailer_header </code> și <code> app / views / layouts / mailer_footer </code>.<br> Puteți înlocui imaginea antetului pe%{link}."
         image_link: "imagini personalizate"
       edit:
         title: Editează newsletter
@@ -814,16 +815,25 @@ ro:
         action: Previzualizare în așteptare
         preview_of: Previzualizare a %{name}
         pending_to_be_sent: Acesta este conținutul în așteptare care va fi trimis
+        moderate_pending: Trimiterea moderată a notificării
+        send_pending: Trimitere în așteptare
+        send_pending_notification: Notificare trimisă cu succes
       proposal_notification_digest:
+        title: "Notificări de propuneri"
+        description: "Adună toate notificările de propuneri pentru un utilizator într-un singur mesaj, pentru a evita prea multe e-mailuri."
         preview_detail: "Utilizatorii vor primi notificări doar de la propunerile pe care le urmăresc"
       budget_investment_created:
         title: "Buget de investiții creat"
+        description: "Trimite când un utilizator creează o investiție bugetară."
       budget_investment_selected:
         title: "Buget de investiții selectat"
+        description: "Trimite autorului atunci când investiția sa bugetară a fost selectată."
       budget_investment_unfeasible:
         title: "Buget de investiții nerealizabil"
+        description: "Trimite autorului când investiția sa bugetară a fost marcată ca fiind nefezabilă."
       budget_investment_unselected:
         title: "Bugetul de investiții nu este selectat"
+        description: "Trimite autorului atunci când investiția sa bugetară nu a fost selectată pentru faza de vot."
       comment:
         title: "Comentariu"
       reply:
