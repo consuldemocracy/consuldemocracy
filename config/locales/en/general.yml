@@ -646,6 +646,7 @@ en:
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "This question is not available on your geozone."
       more_info_title: "More information"
+      more_info_options: "More information about the options"
       documents: Documents
       zoom_plus: Expand image
       read_more: "Read more about %{answer}"

@@ -196,6 +196,25 @@ describe "Polls" do
       end
     end
 
+    scenario "Show link to more info about answers" do
+      question = create(:poll_question, poll: poll)
+      question2 = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, description: "Answer with a description")
+      create(:poll_question_answer, question: question, description: "")
+      create(:poll_question_answer, question: question2, description: "")
+      create(:poll_question_answer, question: question2, description: "")
+
+      visit poll_path(poll)
+
+      within("#poll_question_#{question.id}") do
+        expect(page).to have_link("More information about the options", href: "#answer_#{answer1.id}")
+      end
+
+      within("#poll_question_#{question2.id}") do
+        expect(page).not_to have_link("More information about the options")
+      end
+    end
+
     scenario "More info answers appear in the given order" do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, title: "First", question: question, given_order: 2)
