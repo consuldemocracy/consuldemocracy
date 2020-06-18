@@ -102,6 +102,8 @@ describe "Admin legislation draft versions" do
       visit path
       fill_in_markdown_editor "Text", with: "Version 1b"
 
+      expect(page).to have_content "You've edited the text"
+
       dismiss_confirm(prompt) do
         click_link "Proposals", match: :first
       end
@@ -141,7 +143,11 @@ describe "Admin legislation draft versions" do
       expect(page).to have_css("h2", text: "Proposals")
 
       go_back
+
       fill_in_markdown_editor "Text", with: "Version 1"
+
+      expect(page).not_to have_content "You've edited the text"
+
       click_link "Proposals", match: :first
 
       expect(page).to have_css("h2", text: "Proposals")
