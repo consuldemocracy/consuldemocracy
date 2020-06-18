@@ -839,6 +839,7 @@ ro:
         description: "Trimite autorului când primește un comentariu."
       reply:
         title: "Răspunde"
+        description: "Trimiteți autorului comentariului când acesta primește un răspuns."
       evaluation_comment:
         title: "Nou comentariu de evaluare"
       edit_info: "Puteți edita acest email din"
