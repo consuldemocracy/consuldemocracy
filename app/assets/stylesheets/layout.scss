@@ -851,6 +851,17 @@ header {
     font-weight: bold;
     text-decoration: underline;
   }
+
+  .avatar {
+    margin-right: $line-height * 1.5;
+    position: relative;
+
+    .avatar-image {
+      position: absolute;
+      right: -48px;
+      top: -10px;
+    }
+  }
 }
 
 .submenu {

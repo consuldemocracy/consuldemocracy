@@ -7,6 +7,22 @@ describe "Account" do
     login_as(user)
   end
 
+  scenario "Can access from header avatar" do
+    visit root_path
+
+    within("#responsive-menu") do
+      expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
+      find(".avatar-image").click
+    end
+
+    expect(page).to have_current_path(account_path, ignore_query: true)
+
+    within(".account") do
+      expect(page).to have_selector("input[value='Manuela Colau']")
+      expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
+    end
+  end
+
   scenario "Show" do
     visit root_path
 
@@ -14,8 +30,10 @@ describe "Account" do
 
     expect(page).to have_current_path(account_path, ignore_query: true)
 
-    expect(page).to have_selector("input[value='Manuela Colau']")
-    expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
+    within(".account") do
+      expect(page).to have_selector("input[value='Manuela Colau']")
+      expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
+    end
   end
 
   scenario "Show organization" do
@@ -23,10 +41,12 @@ describe "Account" do
 
     visit account_path
 
-    expect(page).to have_selector("input[value='Manuela Corp']")
-    expect(page).not_to have_selector("input[value='Manuela Colau']")
+    within(".account") do
+      expect(page).to have_selector("input[value='Manuela Corp']")
+      expect(page).not_to have_selector("input[value='Manuela Colau']")
 
-    expect(page).to have_selector(avatar("Manuela Corp"), count: 1)
+      expect(page).to have_selector(avatar("Manuela Corp"), count: 1)
+    end
   end
 
   scenario "Edit" do
