@@ -1363,6 +1363,9 @@ ro:
         unverified_error: (Nu este verificat de Recensământ)
         voted:
           zero: "Nu există voturi create din semnăturile verificate."
+          one: "Există%{count} vot creat din semnăturile verificate."
+          few: "Există %{count} voturi create din semnăturile verificate."
+          other: "Există %{count} voturi create din semnăturile verificate."
         loading: "Încă există semnături care sunt verificate de recensământ, vă rugăm să actualizați pagina în câteva momente"
     stats:
       show:
