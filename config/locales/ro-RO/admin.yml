@@ -1052,6 +1052,7 @@ ro:
       edit:
         title: "Editează Întrebare"
       new:
+        title: "Creați întrebare pentru a sonda%{poll}"
         title_proposal: "Crează întrebare"
       answers:
         images:
@@ -1069,6 +1070,7 @@ ro:
           title: Răspuns
           description: Descriere
           videos: Videoclipuri
+          video_list: Listă videoclipuri
           images: Imagini
           images_list: Listă de imagini
           documents: Documente
@@ -1099,9 +1101,12 @@ ro:
     recounts:
       index:
         title: "Renumărare"
+        no_recounts: "Nu este nimic de renumărat"
+        all_booths_total: "Total cumulat din toate standurile:"
         total_final: "Renumărare finală"
         total_system: "Voturi (automatic)"
         table_booth_name: "Cabină vot"
+        table_total_recount: "Renumărarea totală (de ofițer)"
         table_system_count: "Voturi (automatic)"
     results:
       index:
@@ -1117,6 +1122,7 @@ ro:
         booth: Cabină vot
         results: Rezultate
         see_results: Vezi rezultatele
+        title: "Rezultate pe stand"
     booths:
       index:
         title: "Lista cabinelor de vot active"
