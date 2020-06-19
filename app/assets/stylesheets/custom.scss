@@ -876,6 +876,8 @@ footer {
 }
 
 .jumbo-budget {
+  background: #fff;
+  border-bottom: 2px solid $border;
 
   &.budget-heading {
     background: #fff;
@@ -1023,6 +1025,10 @@ aside .supported .button.button-remove-support.expanded {
   .budget-next-phase-disabled::before {
     left: 52px;
   }
+}
+
+.ballot .subtitle {
+  border-left: 2px solid $brand;
 }
 
 .ballot-list li {
