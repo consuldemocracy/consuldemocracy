@@ -29,11 +29,13 @@
       <% if process.debate_phase.enabled? %>
         <div class="small-6 medium-<%= column_width %> column end">
           <div class="legislation-date">
-            <h4><%= t("legislation.processes.shared.debate_dates") %></h4>
-            <p>
-              <%= format_date(process.debate_start_date) %> -
-              <%= format_date(process.debate_end_date) %>
-            </p>
+            <div class="legislation-date-title">
+              <h4><%= t("legislation.processes.shared.debate_dates") %></h4>
+              <p>
+                <%= format_date(process.debate_start_date) %> -
+                <%= format_date(process.debate_end_date) %>
+              </p>
+            </div>
             <% debate_phase_status = phase_status(process, "debate") %>
             <span class="date-status <%= debate_phase_status %>"><%= debate_phase_status %></span>
           </div>
@@ -43,8 +45,10 @@
       <% if process.draft_publication.enabled? %>
         <div class="small-6 medium-<%= column_width %> column end">
           <div class="legislation-date">
-            <h4><%= t("legislation.processes.shared.draft_publication_date") %></h4>
-            <p><%= format_date(process.draft_publication_date) %></p>
+            <div class="legislation-date-title">
+              <h4><%= t("legislation.processes.shared.draft_publication_date") %></h4>
+              <p><%= format_date(process.draft_publication_date) %></p>
+            </div>
             <% draft_publication_status = publication_status(process, "draft") %>
             <span class="date-status <%= draft_publication_status.parameterize %>">
               <%= draft_publication_status %>
@@ -56,11 +60,13 @@
       <% if process.proposals_phase.enabled? %>
         <div class="small-6 medium-<%= column_width %> column end">
           <div class="legislation-date">
-            <h4><%= t("legislation.processes.shared.proposals_dates") %></h4>
-            <p>
-              <%= format_date(process.proposals_phase_start_date) %> -
-              <%= format_date(process.proposals_phase_end_date) %>
-            </p>
+            <div class="legislation-date-title">
+              <h4><%= t("legislation.processes.shared.proposals_dates") %></h4>
+              <p>
+                <%= format_date(process.proposals_phase_start_date) %> -
+                <%= format_date(process.proposals_phase_end_date) %>
+              </p>
+            </div>
             <% proposals_phase_status = phase_status(process, "proposals") %>
             <span class="date-status <%= proposals_phase_status %>"><%= proposals_phase_status %></span>
           </div>
@@ -70,11 +76,13 @@
       <% if process.allegations_phase.enabled? %>
         <div class="small-6 medium-<%= column_width %> column end">
           <div class="legislation-date">
-            <h4><%= t("legislation.processes.shared.allegations_dates") %></h4>
-            <p>
-              <%= format_date(process.allegations_start_date) %> -
-              <%= format_date(process.allegations_end_date) %>
-            </p>
+            <div class="legislation-date-title">
+              <h4><%= t("legislation.processes.shared.allegations_dates") %></h4>
+              <p>
+                <%= format_date(process.allegations_start_date) %> -
+                <%= format_date(process.allegations_end_date) %>
+              </p>
+            </div>
             <% allegations_phase_status = phase_status(process, "allegations") %>
             <span class="date-status <%= allegations_phase_status %>"><%= allegations_phase_status %></span>
           </div>
@@ -84,8 +92,10 @@
       <% if process.result_publication.enabled? %>
         <div class="small-6 medium-<%= column_width %> column end">
           <div class="legislation-date">
-            <h4><%= t("legislation.processes.shared.result_publication_date") %></h4>
-            <p><%= format_date(process.result_publication_date) %></p>
+            <div class="legislation-date-title">
+              <h4><%= t("legislation.processes.shared.result_publication_date") %></h4>
+              <p><%= format_date(process.result_publication_date) %></p>
+            </div>
             <% result_publication_status = publication_status(process, "result") %>
             <span class="date-status <%= result_publication_status.parameterize %>">
               <%= result_publication_status %>

@@ -1116,11 +1116,11 @@ aside .supported .button.button-remove-support.expanded {
 
   h4 {
     color: $text;
-    font-size: $base-font-size;
   }
 
   p {
     color: $text;
+    font-size: $small-font-size;
   }
 
   .column {
@@ -1142,13 +1142,17 @@ aside .supported .button.button-remove-support.expanded {
   background: $highlight-soft;
   margin: $line-height / 4 0;
   min-height: $line-height * 6.5;
-  padding: $line-height / 2;
+  padding: $line-height / 2 $line-height / 4;
+
+  .legislation-date-title {
+    min-height: $line-height * 4;
+  }
 }
 
 .date-status {
   color: $highlight-text;
   display: block;
-  font-size: $small-font-size;
+  font-size: $tiny-font-size;
   font-weight: bold;
   margin-top: $line-height / 2;
   padding: $line-height / 4 0;
