@@ -1491,6 +1491,8 @@ ro:
           names:
             top_links: Link-uri de top
             footer: Subsol
+            subnavigation_left: Navigarea principală spre stânga
+            subnavigation_right: Navigarea principală spre dreapta
       images:
         index:
           title: Imagini personalizate
@@ -1502,6 +1504,7 @@ ro:
           error: Imaginea nu a putut fi actualizată
         destroy:
           notice: Imagine ștearsă cu succes
+          error: Imaginea nu a putut fi ștearsă
       pages:
         create:
           notice: Pagina creată cu succes
@@ -1520,6 +1523,8 @@ ro:
           delete: Șterge pagină
           title: Pagini personalizate
           see_page: Vezi pagina
+        new:
+          title: Creați o nouă pagină personalizată
         page:
           created_at: Creat la
           status: Status
