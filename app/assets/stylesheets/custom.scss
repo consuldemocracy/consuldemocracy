@@ -1587,6 +1587,15 @@ aside .supported .button.button-remove-support.expanded {
     &:first-child {
       border-top: 0;
     }
+
+    .related-content-link {
+      display: block;
+      width: 80%;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
   .related-content-title {

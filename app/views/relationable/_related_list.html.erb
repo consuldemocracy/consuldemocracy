@@ -7,12 +7,14 @@
           <%= render "relationable/score", related: related_content %>
         </span>
       <% end %>
-      <span class="related-content-title <%= "#{related.model_name}".parameterize %>">
-        <%= t("related_content.content_title.#{related.model_name.singular}") %>
-      </span><br>
-      <h3 class="inline-block">
-        <%= link_to related.title, related.url %>
-      </h3>
+      <%= link_to related.url, class: "related-content-link" do %>
+        <span class="related-content-title <%= "#{related.model_name}".parameterize %>">
+          <%= t("related_content.content_title.#{related.model_name.singular}") %>
+        </span><br>
+        <h3 class="inline-block">
+          <%= related.title %>
+        </h3>
+      <% end %>
     </li>
   <% end %>
 </ul>
