@@ -953,9 +953,14 @@ ro:
         search_officer_text: Căutați un ofițer care să atribuie o nou schimb
         select_date: "Selectează ziua"
         no_voting_days: "Perioada de votare s-a încheiat"
+        select_task: "Selectați sarcina"
+        table_shift: "Sarcină"
         table_email: "Email"
         table_name: "Nume"
       flash:
+        create: "Sarcină adăugată"
+        destroy: "Sarcină eliminată"
+        unable_to_destroy: "Sarcinile asociate cu rezultate sau recuperări nu pot fi șterse"
         date_missing: "Trebuie să selectați o dată"
       vote_collection: Colectați voturi
       recount_scrutiny: Renumărare & Analizare
@@ -967,22 +972,39 @@ ro:
           assign_status: Misiune
           assigned: Atribuit
           unassigned: Neatribuit
+        actions:
+          assign: Atribuie ambele
+          unassign: Neatribuie ambele
     poll_booth_assignments:
+      alert:
+        shifts: "Există schimburi asociate acestui stand. Dacă eliminați atribuirea standului, schimburile vor fi șterse. Continua?"
       show:
         location: "Locație"
         officers: "Funcționari publici"
+        officers_list: "Lista de ofițeri pentru acest stand"
         no_officers: "Nu există funcționari publici pentru această cabină de vot"
+        recounts: "Renumărare"
+        recounts_list: "Renumărare pentru acest stand"
         results: "Rezultate"
         date: "Date"
+        count_final: "Renumărarea finală (de ofițer)"
+        count_by_system: "Voturi (automatic)"
+        total_system: Total voturi (automat)
       index:
+        booths_title: "Lista de sondaje"
+        no_booths: "Nu există cabine alocate acestui sondaj."
         table_name: "Nume"
         table_location: "Locație"
     active_polls:
       edit:
         title: "Descrierea sondajelor"
+      form:
+        description:
+          help_text: "Acest text va apărea în antetul paginii de sondaje. Poate fi folosit pentru a adăuga un context la sondajele deschise."
     polls:
       index:
         title: "Lista de sondaje"
+        no_polls: "Nu există sondaje."
         create: "Crează sondaj"
         name: "Nume"
         dates: "Date"
