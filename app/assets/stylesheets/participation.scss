@@ -937,8 +937,11 @@
         padding: $line-height / 4 $line-height / 2;
 
         &:first-child {
-          border-right: 1px solid $border;
           position: relative;
+        }
+
+        &:nth-child(2) {
+          border-left: 1px solid $border;
         }
       }
     }
@@ -957,13 +960,13 @@
     &:first-child {
 
       &::after {
-        content: "\f559";
-        font-family: "Font Awesome 5 Free";
-        font-size: rem-calc(30);
-        font-weight: bold;
+        background-image: image-url("budgets/budget_medal.png");
+        content: "";
+        height: 38px;
         position: absolute;
         right: 12px;
-        top: 6px;
+        top: 12px;
+        width: 34px;
       }
     }
   }
