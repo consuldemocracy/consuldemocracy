@@ -1252,7 +1252,7 @@ ro:
             update: Configurarea hărții actualizată cu succes.
           form:
             submit: Actualizează
-          how_to_enable: 'Pentru a arăta harta utilizatorilor, trebuie să activați „Propunerea și geolocalizarea investițiilor bugetare” din fila „Caracteristici”.'
+          how_to_enable: 'Pentru a afișa harta utilizatorilor, trebuie să activați „Geolocalizarea propunerilor și investițiilor bugetare” din fila „Caracteristici”.'
         dashboard:
           title: Tablou de bord propuneri
         remote_census:
@@ -1321,10 +1321,14 @@ ro:
       edit:
         form:
           submit_button: Salvează modificări
+        editing: Editați Geozonă
         back: Mergi înapoi
       new:
         back: Mergi înapoi
         creating: Crează district
+      delete:
+        success: Geozonă ștearsă cu succes
+        error: Această geozonă nu poate fi ștearsă, deoarece există elemente atașate la ea
     signature_sheets:
       author: Autor
       created_at: Data creării
@@ -1335,8 +1339,13 @@ ro:
         new: Foaie nouă de semnături
       new:
         title: Foaie nouă de semnături
+        document_numbers_note: "Scrieți numerele separate prin punct și virgulă (;)"
         submit: Crează foaie cu semnături
         text_help:
+          required_fields_note: "Pentru a verifica un utilizator, cererea dvs. are nevoie de: Numărul documentului"
+          date_of_birth_note: ", Ziua nașterii (dd / mm / aaaa)"
+          postal_code_note: "și cod poștal"
+          required_fields_structure_note: "Câmpurile obligatorii pentru fiecare utilizator trebuie separate prin virgule și fiecare utilizator trebuie separat prin punct și virgulă."
           example_text: "Exemplu: "
       show:
         created_at: Creat
