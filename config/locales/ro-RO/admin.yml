@@ -1126,6 +1126,7 @@ ro:
     booths:
       index:
         title: "Lista cabinelor de vot active"
+        no_booths: "Nu există cabine active pentru sondajele viitoare."
         add_booth: "Adaugă cabină de vot"
         name: "Nume"
         location: "Locație"
@@ -1143,7 +1144,11 @@ ro:
         edit: "Editează cabină de vot"
     officials:
       edit:
+        destroy: Eliminați statutul „oficial”
         title: "Funcționari publici: Editează utilizator"
+      flash:
+        official_destroyed: "Detalii salvate: utilizatorul nu mai este oficial"
+        official_updated: Detalii despre oficial salvat
       index:
         title: Funcționari publici
         help: Conturile de utilizatori marcați ca oficiali vor avea evidențiate intervențiile lor pe platformă. Puteți defini eticheta care apare lângă numele de utilizator ale acestor conturi de la cele mai importante (nivel 1) la cele mai puțin importante (nivel 5).
@@ -1151,6 +1156,7 @@ ro:
         name: Nume
         official_position: Poziție oficială
         official_level: Nivel
+      level_0: Nu este funcționar
       level_1: Nivel 1
       level_2: Nivel 2
       level_3: Nivel 3
@@ -1159,6 +1165,8 @@ ro:
       search:
         edit_official: Editează funcționar public
         make_official: Crează funcționar public
+        title: "Poziții oficiale: Căutare utilizator"
+        no_results: Pozițiile oficiale nu au fost găsite.
     organizations:
       index:
         filter: Filtru
@@ -1210,7 +1218,9 @@ ro:
         no_hidden_proposals: Nu există propuneri ascunse.
     hidden_proposal_notifications:
       index:
+        filter: Filtru
         filters:
+          all: Toate
           with_confirmed_hide: Confirmat
           without_confirmed_hide: În așteptare
         title: Notificări ascunse
@@ -1222,6 +1232,7 @@ ro:
         title: Setări
         general: Setări de configurare
         update_setting: Actualizează
+        participation_processes: "Proces de participare"
         images_and_documents: "Imagini și documente"
         feature_flags: Caracteristici
         features:
@@ -1236,8 +1247,11 @@ ro:
             update: Configurarea hărții actualizată cu succes.
           form:
             submit: Actualizează
+          how_to_enable: 'Pentru a arăta harta utilizatorilor, trebuie să activați „Propunerea și geolocalizarea investițiilor bugetare” din fila „Caracteristici”.'
         dashboard:
           title: Tablou de bord propuneri
+        remote_census:
+          title: Configurarea recensământului de la distanță
       remote_census_general_name: Informații Generale
       setting: Caracteristică
       setting_actions: Acțiuni
