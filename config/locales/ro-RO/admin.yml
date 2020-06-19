@@ -968,6 +968,7 @@ ro:
         location: "Locație"
         officers: "Funcționari publici"
         no_officers: "Nu există funcționari publici pentru această cabină de vot"
+        results: "Rezultate"
         date: "Date"
       index:
         table_name: "Nume"
@@ -977,6 +978,7 @@ ro:
         title: "Descrierea sondajelor"
     polls:
       index:
+        title: "Lista de sondaje"
         create: "Crează sondaj"
         name: "Nume"
         dates: "Date"
@@ -1169,11 +1171,18 @@ ro:
           without_confirmed_hide: În așteptare
         title: Propuneri ascunse
         no_hidden_proposals: Nu există propuneri ascunse.
+    hidden_proposal_notifications:
+      index:
+        filters:
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Notificări ascunse
     settings:
       flash:
         updated: Valoare actualizată
       index:
         title: Setări
+        general: Setări de configurare
         update_setting: Actualizează
         images_and_documents: "Imagini și documente"
         feature_flags: Caracteristici
