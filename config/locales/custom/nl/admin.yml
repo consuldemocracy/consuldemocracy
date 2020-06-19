@@ -1,43 +1,481 @@
 nl:
   admin:
+    header:
+      title: "Beheerderspagina"
+    actions:
+      actions: "Acties"
+      hide: "Verbergen"
+      hide_author: "Verbergen auteur"
+      restore: "Terugzetten"
+      edit: "Bewerk"
+      configure: "Configureren"
+      delete: "Verwijder"
+    banners:
+      index:
+        create: "Banner maken"
+        edit: "Banner bewerken"
+        delete: "Banner verwijderen"
+        filters:
+          all: "Alle"
+          with_active: "Actief"
+          with_inactive: "Inactief/verlopen"
+      banner:
+        sections:
+          proposals: "Initiatieven"
+    activity:
+      show:
+        filters:
+          all: "Alle"
+          on_comments: "Reacties"
+          on_debates: "Discussies"
+          on_proposals: "Initiatieven"
+          on_users: "Gebruikers"
+          on_system_emails: "Notificaties"
+        title: "Moderator activiteit"
+        no_activity: "Geen moderator activiteit."
+    debates:
+      index:
+        author: "Auteur"
+        title: "Verborgen discussies"
+        no_debates: "Geen discussies."
+    hidden_debates:
+      index:
+        filters:
+          all: "Alle"
+          with_confirmed_hide: "Bevestigd"
+          without_confirmed_hide: "In afwachting"
+        title: "Verborgen discussies"
+        no_hidden_debates: "Geen verborgen discussies."
+    documents:
+      new:
+        title: "Document uploaden"
+      index:
+        new_link: "Nieuw document"
+        no_documents: "Geen documenten."
+        title: "Documenten"
+        size: "Grootte"
+      create:
+        success_notice: "Uploaden succesvol"
+    organizations:
+      index:
+        filters:
+          all: "Alle"
+          rejected: "Afgewezen"
+          verified: "Geaccepteerd"
+        name: "Naam"
+        reject: "Afwijzen"
+        rejected: "Afgewezen"
+        search: "Zoek"
+        title: "Organisaties"
+        verified: "Geaccepteerd"
+        verify: "Accepteren"
+    proposals:
+      index:
+        title: "Initiatieven"
+    hidden_proposals:
+      index:
+        filters:
+          all: "Alle"
+        title: "Verborgen initiatieven"
+        no_hidden_proposals: "Geen verborgen initiatieven."
+    proposal_notifications:
+      index:
+        filters:
+          all: "Alle"
     budgets:
       index:
-        title: Participatory budgets
-        title_budget_type: Participatory budget type
-        new_button: Create new budget
+        title: "Burgerbegroting"
         new_single_title_html: "<strong>Enkel </strong> budget"
         new_single_description: "Hier creëer je een proces met één groep, wijk of thema. Je hebt als het ware één zak geld. Bijvoorbeeld 25.000 euro voor de \"Oosterparkwijk\", of 10.000 voor cultuur."
-        new_single_button: Create single heading budget
         new_multiple_title_html: "<strong>Meervoudig</strong> budget"
         new_multiple_description: "Hier creëer je een proces met meerdere groepen, wijken of thema's. Je hebt als het ware meerdere zakken geld. Bijvoorbeeld 25.000 voor \"Oosterparkwijk\", 30.000 voor het \"Centrum\", 28.000 voor de \"Westerparkwijk\" en de hele stad. Of voor verschillende thema's zoals sport, cultuur of gezondheid."
-        new_multiple_button: Create multiple headings budget
+        table_name: "Titel"
+        table_phase: "Fase"
+        table_duration: "Periode"
+        table_preview: "Preview"
+        filters:
+          all: "Alle"
+          open: "Actief"
+          finished: "Afgesloten"
       new:
-        title_single: Nieuw enkel budget
-        title_multiple: Nieuw meervoudig budget
+        title_single: "Nieuw enkel budget"
+        title_multiple: "Nieuw meervoudig budget"
       edit:
+        title: "Bewerk begroting"
+        drafting: 'Deze burgerbegroting is in concept. Alleen admins kunnen het bekijken. Wanneer het proces is gepubliceerd, is het zichtbaar voor alle gebruikers. Het is dan niet mogelijk het weer terug te zetten naar concept. Klik op “Publiceer” rechtsboven om de begroting te publiceren.'
+        preview: "Preview"
+        publish: "Publiceer"
+        administrators:
+          zero: "Selecteer admin"
+        valuators:
+          zero: "Selecteer beoordelaar"
+        empty_administrators: "Geen admins."
+        empty_valuators: "Geen beoordelaars."
         name_description: "Dit wordt de naam van je proces. Dit is straks zichtbaar op de site."
+        main_call_to_action: "Call to action (optioneel)"
+        main_call_to_action_description: "Deze knop verschijnt op de voorpagina van deze begroting. Een call to action moedigt de gebruiker aan om iets te doen, zoals een idee indienen, stemmen of meer leren over het proces."
         info:
           budget_settings: "Algemene instellingen"
           heading_settings: "Heading settings"
           phases_settings: "Phases settings"
           results_settings: "Instellingen voor resultaten en statistieken"
           staff_settings: "Voeg admins en beoordelaars toe"
-        main_call_to_action: "Call to action (optioneel)"
-        main_call_to_action_description: "Deze knop verschijnt op de voorpagina van deze begroting. Een call to action moedigt de gebruiker aan om iets te doen, zoals een idee indienen, stemmen of meer leren over het proces."
-        administrators:
-          zero: "Selecteer admin"
-        valuators:
-          zero: "Selecteer beoordelaar"
-          empty_valuators: "Er zijn geen beoordelaars."
-        button:
-          continue: "Verder naar"
+          groups_and_headings_settings: "Instellingen voor  groepen en koppen"
+        groups_and_headings:
+          headings: "Koppen"
+          max_number_headings: "Maximaal aantal rubrieken waarop een gebruiker kan stemmen:"
+          add_group: "Groep toevoegen"
+          add_heading: "Kop toevoegen"
+      winners:
+        calculate: "Tel de stemmen"
     budget_phases:
       edit:
+        duration: "Duur fase"
         main_call_to_action: "Call to action (optioneel)"
         main_call_to_action_description: "Deze knop verschijnt op de voorpagina van deze begroting. Een call to action moedigt de gebruiker aan om iets te doen, zoals een idee indienen, stemmen of meer leren over het proces."
-    shared:
-      show_results_and_stats: "laat resultaat en statistieken zien"
+    budget_groups:
+      max_votable_headings: "Maximaal aantal rubrieken waarop een gebruiker kan stemmen"
     budget_headings:
+      price: "Budget"
+      population: "Populatie"
+      allow_custom_content: "Contentblokken toestaan"
       form:
         population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus je kunt het leeg laten als het niet van toepassing is."
         content_blocks_info: "Als dit is aangevinkt, kun je op maat gemaakte content toevoegen. Via Instellingen Costum content blocks. Deze content zal dan verschijnen bij de ideeën pagina."
+    polls:
+      index:
+        title: "Alle peilingen"
+        no_polls: "Gein peilingen"
+        create: "Maak peiling"
+        name: "Titel peiling"
+        dates: "Periode"
+    active_polls:
+      edit:
+        title: "Peiling omschrijving"
+    hidden_budget_investments:
+      index:
+        filters:
+          all: "Alle"
+        title: "Verborgen ideeën"
+        no_hidden_budget_investments: "Geen verborgen ideeën."
+    hidden_users:
+      index:
+        filters:
+          all: "Alle"
+        no_hidden_users: "Geen verborgen gebruikers."
+    legislation:
+      processes:
+        create:
+          notice: 'Plan aangemaakt. <a href="%{link}">Klik om te zien</a>'
+        form:
+          process: "Totale proces"
+          debate_phase: "Discussiefase"
+        index:
+          filters:
+            all: "Alle"
+        subnav:
+          proposals: "Initiatieven"
+    hidden_comments:
+      index:
+        filters:
+          all: "Alle"
+          with_confirmed_hide: "Bevestigd"
+          without_confirmed_hide: "In afwachting"
+        title: "Verborgen reacties"
+        no_hidden_comments: "Geen verborgen reacties."
+    poll_officers:
+      index:
+        title: "Stemmenteller"
+      search:
+        help: "Gebruik de onderstaande zoekbalk om een teller toe te voegen of te verwijderen."
+    booths:
+      index:
+        add_booth: "Stemhokje toevoegen"
+    booth_assignments:
+      manage_assignments: "Locatie wijzigen"
+    geozones:
+      index:
+        title: "Regio"
+        create: "Creëer regio"
+        edit: "Bewerken"
+        delete: "Verwijder"
+      geozone:
+        name: "Naam"
+        external_code: "Externe code"
+        census_code: "Censuscode"
+        coordinates: "Coördinaten"
+      edit:
+        form:
+          submit_button: "Opslaan"
+    signature_sheets:
+      no_signature_sheets: "Geen handtekeninglijsten."
+      index:
+        title: "Handtekeninglijsten"
+        new: "Nieuwe handtekeninglijst"
+      new:
+        document_numbers_note: "Voer de nummers in, gescheiden door een komma (,)"
+        submit: "Creëer handtekeningenlijst"
+        text_help:
+          example_text: "Bijvoorbeeld: "
+    admin_notifications:
+      index:
+        new_notification: "Nieuwe notificatie"
+        empty_notifications: "Geen meldingen weergegeven."
+      new:
+        section_title: "Nieuwe notificatie"
+    segment_recipient:
+      all_proposal_authors: "Initiatiefnemers (verwijderd en gearchiveerd)"
+      proposal_authors: "Initiatiefnemers"
+      investment_authors: "Initiatiefnemers in huidige burgerbegroting"
+      feasible_and_undecided_investment_authors: "Indieners ideeën in huidige burgerbegroting die niet voldoen (beoordeling is onhaalbaar)"
+      selected_investment_authors: "Indieners geselecteerde ideeën huidige burgerbegroting"
+      winner_investment_authors: "Indieners winnende ideeën huidige burgerbegroting"
+      not_supported_on_current_budget: "Gebruikers die geen initiatieven hebben gesteund in huidige burgerbegroting"
+    system_emails:
+      budget_investment_created:
+        title: "Idee burgerbegroting ingediend"
+      budget_investment_selected:
+        title: "Idee burgerbegroting geselecteerd"
+      budget_investment_unfeasible:
+        title: "Idee burgerbegroting onhaalbaar"
+      budget_investment_unselected:
+        title: "Idee burgerbegroting teruggetrokken"
+      evaluation_comment:
+        title: "Nieuwe reactie op beoordeling"
+    emails_download:
+      index:
+        title: "Download email adressen"
+        download_segment_help_text: "Wordt gedownload in .CSV format"
+        download_emails_button: "Download"
+    valuators:
+      index:
+        no_valuators: "Geen beoordelaars."
+    verifications:
+      index:
+        title: "Onvoltooide profiel registraties"
+    site_customization:
+      content_blocks:
+        information: "Informatie over contentblokken"
+        about: "Je kan HTML contentblokken creëren, die in de header of footer van de website worden getoond."
+        html_format: "Een contentblok is een groep van snelkoppelingen die er als volgt uitziet:"
+        no_blocks: "Geen contentblokken."
+        index:
+          create: "Nieuw contentblok"
+          title: "Contentblok"
+      images:
+        index:
+          title: "Afbeeldingen huisstijl"
+          update: "Bewerk"
+      pages:
+        edit:
+          title: "Bewerken"
+        index:
+          create: "Nieuwe pagina maken"
+          delete: "Verwijder"
+          see_page: "Preview"
+        new:
+          slug_help: "Tekst die aangeeft waar de gebruiker zich op de website bevindt. Bijvoorbeeld: <br><code>https://consulproject.org/landingspagina</code>"
+        page:
+          title: "Titel"
+          slug: "Landingspagina"
+        cards:
+          create_card: "Tegel maken"
+    homepage:
+      header_title: "Header"
+      create_header: "Header maken"
+      create_card: "Tegel maken"
+      cards:
+        title: "Titel"
+      feeds:
+        proposals: "Initiatieven"
+        debates: "Discussies"
+      new:
+        submit_header: "Header maken"
+        submit_card: "Tegeltje maken"
+      edit:
+        submit_header: "Header opslaan"
+        submit_card: "Tegeltje opslaan"
+    managers:
+      index:
+        no_managers: "Geen managers."
+    menu:
+      banner: "Banners beheren"
+      proposals: "Initiatieven"
+      debates: "Discussies"
+      comments: "Reacties"
+      polls: "Peilingen"
+      budgets: "Burgerbegroting"
+      title_moderated_content: "Gemodereerd"
+      title_profiles: "Gebruikers / profielen"
+      stats: "Statistieken"
+      hidden_comments: "Verborgen reacties"
+      hidden_debates: "Verborgen discussies"
+      hidden_proposals: "Verborgen initiatieven"
+      hidden_budget_investments: "Verborgen ideeën"
+      hidden_users: "Verborgen gebruikers"
+      poll_officers: "Stemmentellers"
+      poll_booths: "Locatie stemhokje"
+      poll_booth_assignments: "Locatie stemhokje wijzigen"
+      signature_sheets: "Handtekeninglijsten"
+      emails_download: "Download email adressen"
+      organizations: "Organisaties"
+      settings: "Algemene instellingen"
+      site_customization:
+        images: "(Afbeeldingen) huisstijl"
+        content_blocks: "Aangepaste blokken"
+        information_texts: "Informatie teksten"
+        information_texts_menu:
+          basic: "Systeemmeldingen"
+          proposals: "Initiatieven"
+          polls: "Peilingen"
+          layouts: "Website lay-out"
+      users: "Gebruikers"
+      dashboard: "Campagnepagina"
+      administrator_tasks: "Aangevraagde promotiemiddelen"
+      dashboard_actions: "Promotiemiddelen"
+      local_census_records: "Lokale volkstelling"
+    administrators:
+      index:
+        name: "Naam"
+        description: "Omschrijving"
+        id: "Admin ID"
+        no_administrators: "Geen admins."
+      administrator:
+        delete: "Verwijder"
+    moderators:
+      index:
+        name: "Naam"
+        no_moderators: "Geen moderators."
+      moderator:
+        delete: "Verwijder"
+    settings:
+      flash:
+        updated: "Waarde succesvol aangepast"
+      index:
+        title: "Instellingen"
+        general: "Algemene instellingen"
+        update_setting: "Bewerk"
+        participation_processes: "Modules"
+        images_and_documents: "Afbeeldingen en documenten"
+        feature_flags: "Opties"
+        features:
+          enable: "Inschakelen"
+          disable: "Uitschakelen"
+        map:
+          title: "Instellingen kaart"
+          help: "Hier kun je aanpassen hoe de kaart aan de website gebruikers wordt getoond. Verplaats  het locatielabel door deze te verslepen of ergens te klikken op de kaart. Stel het gewenste zoomniveau in en klik op 'Bewerk'."
+          form:
+            submit: "Bewerk"
+        remote_census:
+          how_to_enable: "Om deze instellingen te kunnen bewerken moet je de optie 'Configure connection to remote census (SOAP)' inschakelen in de 'Opties'-tab."
+      setting_actions: "Acties"
+    shared:
+      title: "Titel"
+      show_results_and_stats: "laat resultaat en statistieken zien"
+      results_and_stats_reminder: "Door deze te selecteren zullen de resultaten en statistieken."
+      booths_search:
+        button: "Zoek"
+      poll_officers_search:
+        button: "Zoek"
+      poll_questions_search:
+        button: "Zoek"
+      proposal_search:
+        button: "Zoek"
+      debate_search:
+        button: "Zoek"
+      user_search:
+        button: "Zoek"
+      actions: "Acties"
+      delete: "Verwijder"
+    dashboard:
+      index:
+        title: "Admin"
+        description: "Welkom op het beheerder gedeelte van %{org}"
+      actions:
+        index:
+          description: "Wanneer een gebruiker een initiatief of idee  indient, kan hij op een aparte pagina verschillende middelen  krijgen waarmee hij campagne kan voeren voor zijn initiatief of idee."
+          create: "Creëer promotie"
+          edit: "Bewerk"
+          delete: "Verwijder"
+          active: "Ja"
+          inactive: "Nee"
+          title: "Promotiemiddelen"
+          action_title: "Titel"
+          required_supports: "Benodigde middelen"
+          day_offset: "Benodigde dagen"
+          action_active: "Actief"
+          order: "Volgorde"
+          published_proposal: "Ingediend initiatief"
+        new:
+          creating: "Nieuw hulp"
+          back: "Ga terug"
+        edit:
+          back: "Ga terug"
+        form:
+          submit_button: "Opslaan"
+          help_text: "Deze voorwaarde wordt niet meegenomen wanneer '0' wordt ingevoerd"
+          published_proposal_help_text: "Vink aan om promotiemiddel  alleen mogelijk te maken voor ingediende initiatieven"
+      administrator_tasks:
+        index:
+          description: "Promotiemiddelen van gebruikers moeten soms worden aangevraagd bij beheerders. Onderstaand zie je de aangevraagde middelen."
+          title: "Aangevraagde promotiemiddelen"
+          no_records: "Geen promotiemiddelen aangevraagd."
+          filters:
+            pending: "In afwachting"
+            done: "Opgelost"
+    stats:
+      show:
+        stats_title: "Statistieken"
+        summary:
+          comment_votes: "Stemmen reacties"
+          comments: "Reacties"
+          debate_votes: "Stemmen discussie"
+          proposal_votes: "Stemmen initiatieven"
+          proposals: "Initiatieven"
+          budgets: "Actieve burgerbegrotingen"
+          users: "Gebruikers totaal"
+          verified_users_who_didnt_vote_proposals: "Geverifieerde gebruikers die niet stemmen"
+          visits: "Bezoeken"
+          votes: "Stemmen totaal"
+        participatory_budgets: "Burgerbegroting"
+        direct_messages: "Privéberichten"
+        proposal_notifications: "Notificaties initiatieven"
+        incomplete_verifications: "Onvoltooide profiel registraties"
+        polls: "Peilingen"
+      budgets:
+        title: "Burgerbegrotingen - Participation stats"
+        balloting_phase: "Stemfase"
+      direct_messages:
+        users_who_have_sent_message: "Gebruikers"
+      proposal_notifications:
+        title: "Notificaties initiatieven"
+        proposals_with_notifications: "Voorstellen met notificaties"
+      polls:
+        all: "Peilingen"
+        table:
+          poll_name: "Peiling"
+    tags:
+      create: "Creeër categorie"
+      destroy: "Verwijder"
+      index:
+        help: "Wanneer een gebruiker een initiatief of idee indient, worden de volgende categorieën voorgesteld."
+    users:
+      columns:
+        name: "Naam"
+      index:
+        title: "Gebruikers"
+    local_census_records:
+      index:
+        title: "Lokale volkstelling"
+        create: "Creëer nieuwe volkstelling"
+        no_local_census_records: "Geen volkstellingen."
+        document_number: "Documentnummer"
+        date_of_birth: "Geboortedatum"
+        postal_code: "Postcode"
+        search:
+          search: "Zoek"
+        import: "Importeer CSV"
+      new:
+        creating: "Nieuwe volkstelling maken"
+      destroy:
+        notice: "Volkstelling succesvol verwijderd!"

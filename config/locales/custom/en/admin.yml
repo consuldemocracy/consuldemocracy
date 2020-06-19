@@ -1,0 +1,5 @@
+en:
+  admin:
+    budgets:
+      edit:
+        drafting: "This participatory budget is in draft mode, only administrators can see it in the public site. Once it's published it cannot be changed to draft mode again. Click on “Publish budget” to publish."

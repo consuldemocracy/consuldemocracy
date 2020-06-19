@@ -1,11 +1,95 @@
 nl:
   budgets:
+    ballots:
+      show:
+        title: "Jouw keuze"
+        no_balloted_group_yet: "Je hebt nog niet gestemd"
+        voted:
+          one: "Je hebt op <span>1</span> ideeën gestemd"
+          other: "Je hebt op <span>%{count}</span> ideeën gestemd"
+        voted_info: "Je stem is bevestigd"
+        voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten"
+    phase:
+      drafting: "Concept (niet publiekelijk zichtbaar)"
+      informing: "Informatie"
+      accepting: "Ideeën delen"
+      reviewing: "Ideeën beoordelen"
+      selecting: "Steun de ideeën"
+      valuating: "Haalbaarheidscheck en inschatting kosten"
+      publishing_prices: "Publiceren beoordeling"
+      balloting: "Stemmen op ideeën"
+      reviewing_ballots: "Stemmen tellen"
+      finished: "De uitslag"
+    index:
+      title: "Burgerbegroting"
+      map: "Alle ideeën op de kaart"
+      current_phase: "Huidige fase"
+      section_header:
+        help: "Toelichting"
+      section_footer:
+        title: "Over dit proces"
+        description: "Beslis mee over de verdeling van geld tussen verschillende ideeën en projecten."
+      supports_info:
+        title: "Je kunt nu ideeën <strong>steunen</strong>!"
+        next: "Steun de ideeën die jij graag uitgevoerd wil zien."
+        remember: "Je mag zoveel verschillende ideeën steunen als je wilt."
+        different: "Maar... je kunt ieder idee slechts één keer steunen. En je steun is definitief."
+        supported: "Tot nu toe heb je <strong>%{count} ideeën</strong> gesteund."
+        supported_one: "Tot nu toe heb je <strong>1 idee</strong> gesteund."
+        time: "Je kunt nog tot %{phase_end_date} ideeën steunen."
+        share: "Je kunt ideeën die je hebt gesteund delen op social media. Zo krijgen de ideeën meer aandacht én wellicht meer steun!"
+        scrolling: "Blijf scrollen om alle ideeën te zien"
     investments:
       index:
-        read_more: "Lees meer"
+        by_heading: "Ideeën voor de %{heading}"
+        sidebar:
+          voted_info: "Tot het einde van de fase kun je %{link}. Het is niet nodig om al het geld te besteden."
+          voted_info_link: "je stem wijzigen"
+          create: "Nieuw idee delen"
+          zero: "Je hebt nog niet op een idee gestemd"
+        search_results:
+          one: " met de tekst <strong>'%{search_term}'</strong>"
+          other: " met de tekst <strong>'%{search_term}'</strong>"
+        filter: "Filter ideeën op"
+        filters:
+          not_unfeasible: "Nog te beoordelen"
+          feasible: "Haalbaar"
+          unfeasible: "Niet haalbaar"
+          unselected: "Niet geselecteerd"
+          selected: "Geselecteerd"
+          winners: "Winnende"
+        orders:
+          confidence_score: "best beoordeeld"
+        read_more: "Bekijk idee"
+      show:
+        title: "Idee"
+        supports: "Steun"
+        code: ""
+        location: "Locatie: <strong>%{location}</strong>"
+        author: "Auteur"
+        comments_tab: "Reacties"
+        project_not_selected: "Dit idee is niet geselecteerd voor de stemfase."
+      form:
+        title: "Deel een idee"
+        map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
+        map_skip_checkbox: "Dit idee heeft geen eigen locatie of ik ken de locatie niet"
+        tags_instructions: "Je kunt categorieën toevoegen aan je idee. Je kunt je eigen categorieën toevoegen, of de bestaande gebruiken"
       investment:
         price_title: "Prijs"
         support_title: "Stemmen"
+        give_support: "Steun"
+      header:
+        check_ballot: "Bekijk mijn stemmen"
+        price: "Dit proces heeft een budget van"
     show:
       see_all_investments: "Bekijk alle ideeën"
-      investments_list: "Ideeën lijst"
+      investments_list: "Ideeën"
+    executions:
+      heading: "Mijlpalen burgerbegroting"
+      heading_selection_title: "Per gebied"
+      filters:
+        status:
+          label: "Projectstatus"
+        milestone_tag:
+          label: "Label mijlpaal"
+          all: "Alle (%{count})"

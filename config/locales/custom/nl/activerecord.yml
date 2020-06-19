@@ -1,12 +1,95 @@
 nl:
+  attributes:
+    geozone_id: "Gebied"
+    results_enabled: "Toon resultaten"
+    stats_enabled: "Toon statistieken"
+    advanced_stats_enabled: "Toon geavanceerde statistieken"
   activerecord:
+    models:
+      budget/investment:
+        one: "Idee"
+        other: "Ideeën"
+      proposal:
+        one: "Initiatief"
+        other: "Initiatieven"
+      legislation/process:
+        one: "Plan"
+        other: "Plannen"
+      administrator:
+        one: "Admin"
+        other: "Admins"
+      local_census_record:
+        one: "volkstelling"
+        other: "volkstellingen"
     attributes:
+      debate:
+        tag_list: "Onderwerpen/labels"
+      debate/translation:
+        title: "Titel discussie"
+        description: "Omschrijving"
+      proposal:
+        video_url: "Link naar video"
+      proposal/translation:
+        title: "Titel initiatief"
+        description: "Omschrijving"
+        summary: "Samenvatting initiatief"
       budget:
-        name: "Naam"
-        main_button_text: "Tekst op de knop"
-        main_button_url: "Als je op de knop klikt, ga je naar (voeg een link toe)"
+        main_button_text: "Tekst knop"
+        main_button_url: "Link knop"
+      budget/translation:
+        name: "Titel"
+      budget/phase:
+        enabled: "Fase ingeschakeld"
+        ends_at: "Einddatum"
+        starts_at: "Startdatum"
+        main_button_text: "Tekst knop"
+        main_button_url: "Link knop"
+      budget/phase/translation:
+        name: "Naam fase"
+        description: "Omschrijving"
+      budget/group:
+        max_votable_headings: "Maximaal aantal rubrieken waarop een gebruiker kan stemmen"
       budget/heading:
         allow_custom_content: "Sta contentblok toe"
         latitude: "Breedtegraad (optioneel)"
         longitude: "Lengtegraad (optioneel)"
         price: "Kosten hoeveel geld beschikbaar is"
+      budget/investment:
+        location: "Hier kun je meer vertellen over de locatie"
+        organization_name: "Als je een voorstel doet uit naam van een stichting, coöperatie of organisatie, voer dan hier de naam in"
+      budget/investment/translation:
+        title: "Titel van het idee"
+        description: "Omschrijving"
+      legislation/process/translation:
+        homepage: "Omschrijving"
+      legislation/proposal:
+        title: "Titel voorstel"
+        description: "Omschrijving"
+        summary: "Samenvatting voorstel"
+        video_url: "Link naar video"
+      signature_sheet:
+        signable_type: "Voor tekenen van"
+        required_fields_to_verify: "Vereiste invulvelden"
+      site_customization/page:
+        slug: "Landingspagina"
+        status_draft: "Concept"
+        status_published: "Gepubliceerd"
+      tag:
+        name: "Vul de naam van de categorie toe"
+      topic:
+        title: "Titel"
+        description: "Bericht"
+      dashboard/action:
+        title: "Titel"
+        description: "Omschrijving"
+        day_offset: "Na hoeveel dagen na het indienen van het initiatief wordt de promotie actief?"
+        required_supports: "Na hoeveel steunbetuigingen voor het initiatief wordt de promotie  actief?"
+        order: "Op welke positie moet deze promotie  staan, in de gebruiker zijn lijst van promotiemiddel?"
+        active: "Actief"
+        action_type_proposed_action: "Voorgestelde actie"
+        action_type_resource: "Tool"
+        published_proposal: "Voor ingediende initiatieven?"
+      local_census_record:
+        document_number: "Documentnummer"
+        date_of_birth: "Geboortedatum"
+        postal_code: "Postcode"

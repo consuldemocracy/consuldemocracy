@@ -1,0 +1,4 @@
+nl:
+  helpers:
+    submit:
+      update: "Bewerk %{model}"
