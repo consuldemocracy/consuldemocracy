@@ -1525,12 +1525,15 @@ ro:
           see_page: Vezi pagina
         new:
           title: Creați o nouă pagină personalizată
+          slug_help: "Text pentru a identifica această pagină pe URL, de exemplu <code> https://consulproject.org/page-slug </code>"
         page:
           created_at: Creat la
           status: Status
           updated_at: Actualizat la
           title: Titlu
+          slug: Slug
           cards_title: Carduri
+          see_cards: Vedeți cărți
         cards:
           cards_title: carduri
           create_card: Crează card
@@ -1539,6 +1542,7 @@ ro:
           description: Descriere
           link_text: Link
           link_url: URL-ul Link-ului
+          columns_help: "Lățimea cărții în număr de coloane. Pe ecranele mobile este întotdeauna o lățime de 100%."
           create:
             notice: "Card creat cu succes!"
           update:
@@ -1547,24 +1551,37 @@ ro:
             notice: "Card șters cu succes"
     homepage:
       title: Pagina principală
+      description: Modulele active apar în pagina principală în aceeași ordine ca aici.
+      header_title: Antet
+      no_header: Nu există antete.
+      create_header: Creați antet
       cards_title: Carduri
       create_card: Crează card
       no_cards: Nu există carduri.
       cards:
         title: Titlu
         description: Descriere
+        link_text: Link text
+        link_url: Link URL
       feeds:
         proposals: Propuneri
         debates: Dezbateri
         processes: Procese
       new:
+        header_title: Antet nou
+        submit_header: Creați antet
         card_title: Card nou
         submit_card: Crează card
       edit:
+        header_title: Editați antet
+        submit_header: Salvați antet
         card_title: Editează card
         submit_card: Salvează card
     audits:
+      title: "Log schimbări"
       changes: "Lista modificărilor"
+      id: "ID"
+      field: "Câmp"
       new_value: "Valoare nouă"
       old_value: "Valoare veche"
       edited_at: "Editat la"
@@ -1586,6 +1603,8 @@ ro:
         import: Importă CSV
       new:
         creating: Crează o nouă înregistrare de date locale
+      create:
+        notice: Registru nou de recensământ local creat cu succes!
       edit:
         editing: Editează înregistrarea de date locale
       update:
