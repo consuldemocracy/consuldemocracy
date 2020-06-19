@@ -10,11 +10,10 @@ ro:
       hide_author: Ascunde autor
       restore: Restabilire
       mark_featured: Recomandată
+      unmark_featured: Recomandare nemarcată
       edit: Editează
       configure: Configurează
       delete: Șterge
-    officing_booth:
-      title: "Oficiați cabina situată la %{booth}. Dacă acest lucru nu este corect, nu continuați și apelați numărul de telefon de ajutor. Mulțumim."
     banners:
       index:
         title: Bannere
@@ -1177,6 +1176,10 @@ ro:
           pending: În așteptare
           rejected: Respins
           verified: Verificat
+        hidden_count:
+          one: Există, de asemenea, <strong> o organizație </strong> fără utilizatori sau cu un utilizator ascuns.
+          few: Există <strong>%{count} organizații </strong> fără utilizatori sau cu un utilizator ascuns.
+          other: Există <strong>%{count} organizații </strong> fără utilizatori sau cu un utilizator ascuns.
         name: Nume
         email: Email
         phone_number: Telefon
@@ -1254,7 +1257,10 @@ ro:
           title: Tablou de bord propuneri
         remote_census:
           title: Configurarea recensământului de la distanță
+          how_to_enable: 'Pentru a configura recensământul la distanță (SOAP), trebuie să activați „Configurarea conexiunii la recensământul la distanță (SOAP)” din fila „Caracteristici”.'
       remote_census_general_name: Informații Generale
+      remote_census_request_name: Solicitare date
+      remote_census_response_name: Date de răspuns
       setting: Caracteristică
       setting_actions: Acțiuni
       setting_name: Setări
