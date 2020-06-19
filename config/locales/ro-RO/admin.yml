@@ -1467,6 +1467,7 @@ ro:
       content_blocks:
         information: Informații despre blocurile de conținut
         about: "Puteți crea blocuri de conținut HTML care pot fi inserate în diferite locuri ale site-ului dumneavoastră web."
+        html_format: "Un bloc de conținut este un grup de legături și trebuie să aibă următorul format:"
         no_blocks: "Nu există blocuri de conținut."
         create:
           notice: Bloc de conținut creat cu succes
@@ -1476,13 +1477,20 @@ ro:
           error: Blocul de conținut nu a putut fi actualizat
         destroy:
           notice: Bloc de conținut șters cu succes
+        edit:
+          title: Editați conținutul blocului
         index:
+          create: Creați un bloc de conținut nou
           delete: Șterge bloc
           title: Bloc de conținut
         new:
           title: Crează un nou bloc de conținut
         content_block:
+          body: Corp
           name: Nume
+          names:
+            top_links: Link-uri de top
+            footer: Subsol
       images:
         index:
           title: Imagini personalizate
