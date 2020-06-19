@@ -1395,6 +1395,8 @@ ro:
         visit: Vizite
         level_2_user: Utilizatori de nivelul doi
         proposal_created: Propunerile cetățeanului
+      budgets:
+        no_data_before_balloting_phase: "Nu există date care să fie afișate înainte de faza de votare."
       budget_balloting:
         vote_count: Voturi
         participant_count: Participanți
