@@ -1010,6 +1010,7 @@ ro:
         dates: "Date"
         start_date: "Data de început"
         closing_date: "Data limită"
+        geozone_restricted: "Limitat la districte"
       new:
         title: "Sondaj nou"
         submit_button: "Crează sondaj"
@@ -1027,6 +1028,9 @@ ro:
         table_title: "Titlu"
         edit_answers: Editează răspunsuri
         see_proposal: "(Vezi propunere)"
+      flash:
+        question_added: "Întrebare adăugată la acest sondaj"
+        error_on_question_added: "Întrebarea nu a putut fi atribuită acestui sondaj"
       destroy:
         alert: "Această acțiune va elimina chestionarul și întrebările asociate acestuia."
         success_notice: "Chestionar șters cu succes"
@@ -1044,6 +1048,7 @@ ro:
         table_proposal: "Propunere"
         table_question: "Întrebare"
         table_poll: "Sondaj"
+        poll_not_assigned: "Sondajul nu este atribuit"
       edit:
         title: "Editează Întrebare"
       new:
