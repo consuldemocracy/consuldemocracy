@@ -1361,6 +1361,9 @@ ro:
           few: "Există %{count} semnături invalide"
           other: "Există %{count} semnături invalide"
         unverified_error: (Nu este verificat de Recensământ)
+        voted:
+          zero: "Nu există voturi create din semnăturile verificate."
+        loading: "Încă există semnături care sunt verificate de recensământ, vă rugăm să actualizați pagina în câteva momente"
     stats:
       show:
         stats_title: Statistici
@@ -1369,6 +1372,7 @@ ro:
           comments: Comentarii
           debate_votes: Dezbate voturi
           debates: Dezbateri
+          proposal_votes: Propunere voturi
           proposals: Propuneri
           budgets: Deschide bugete
           budget_investments: Proiecte de investiție
@@ -1383,6 +1387,7 @@ ro:
         budgets_title: Bugetare participativă
         participatory_budgets: Bugete participative
         direct_messages: Mesaje directe
+        proposal_notifications: Notificări propuneri
         incomplete_verifications: Verificări incomplete
         polls: Sondaje
       graph:
