@@ -10,7 +10,7 @@
       <span class="number"><%= t("welcome.steps.step_1.number") %></span>
       <h3><%= t("welcome.steps.step_1.title") %></h3>
       <p><%= t("welcome.steps.step_1.description") %></p>
-      <%= link_to t("welcome.steps.step_1.link"), "#" %>
+      <%= link_to t("welcome.steps.step_1.link"), new_user_registration_path %>
     </div>
 
     <div class="small-12 medium-4 column step">
@@ -18,7 +18,7 @@
       <span class="number"><%= t("welcome.steps.step_2.number") %></span>
       <h3><%= t("welcome.steps.step_2.title") %></h3>
       <p><%= t("welcome.steps.step_2.description") %></p>
-      <%= link_to t("welcome.steps.step_2.link"), "#" %>
+      <%= link_to t("welcome.steps.step_2.link"), "#welcome_cards", data: { smooth_scroll: true } %>
     </div>
 
     <div class="small-12 medium-4 column step">
