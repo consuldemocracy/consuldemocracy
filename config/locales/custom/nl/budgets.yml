@@ -64,7 +64,6 @@ nl:
       show:
         title: "Idee"
         supports: "Steun"
-        code: ""
         location: "Locatie: <strong>%{location}</strong>"
         author: "Auteur"
         comments_tab: "Reacties"

@@ -52,12 +52,6 @@
 
         <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
 
-        <br>
-        <p>
-          <%= t("proposals.show.code") %>
-          <strong><%= @proposal.code %></strong>
-        </p>
-
         <blockquote><%= @proposal.summary %></blockquote>
 
         <% if @proposal.video_url.present? %>
