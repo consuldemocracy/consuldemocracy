@@ -93,3 +93,6 @@ nl:
         milestone_tag:
           label: "Label mijlpaal"
           all: "Alle (%{count})"
+    progress_bar:
+      you_have_assigned: "Je hebt"
+      assigned: "toegewezen"
