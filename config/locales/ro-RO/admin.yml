@@ -943,10 +943,14 @@ ro:
         shift: "Misiune"
         shifts: "Schimbări în acest stand"
         date: "Dată"
+        edit_shifts: Editează schimburi
+        new_shift: "Shimb nou"
+        no_shifts: "Această cabină nu are schimburi"
         officer: "Funcționar public"
         remove_shift: "Înlătură"
         search_officer_button: Caută
         search_officer_placeholder: Caută funcționar public
+        search_officer_text: Căutați un ofițer care să atribuie o nou schimb
         select_date: "Selectează ziua"
         no_voting_days: "Perioada de votare s-a încheiat"
         table_email: "Email"
