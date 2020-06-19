@@ -10,7 +10,6 @@ ro:
       hide_author: Ascunde autor
       restore: Restabilire
       mark_featured: Recomandată
-      unmark_featured: Anulați marcarea caracteristicii
       edit: Editează
       configure: Configurează
       delete: Șterge
@@ -101,6 +100,9 @@ ro:
           other: "%{count} administratori selectați"
         valuators:
           zero: "Selectează evaluatori"
+          one: "1 evaluator selectat"
+          few: "%{count} evaluatori selectați"
+          other: "%{count} evaluatori selectați"
         empty_administrators: "Nu există administratori"
         empty_valuators: "Nu există evaluatori"
       destroy:
