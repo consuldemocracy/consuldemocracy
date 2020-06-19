@@ -14,6 +14,8 @@ ro:
       edit: Editează
       configure: Configurează
       delete: Șterge
+    officing_booth:
+      title: "Oficiați cabina situată la%{booth}. Dacă acest lucru nu este corect, nu continuați și apelați numărul de telefon de ajutor. Mulțumesc."
     banners:
       index:
         title: Bannere
@@ -1400,10 +1402,17 @@ ro:
         proposal_created: Propunerile cetățeanului
       budgets:
         no_data_before_balloting_phase: "Nu există date care să fie afișate înainte de faza de votare."
+        title: "Bugete participativă - statistici de participare"
+        supporting_phase: Faza de suport
+        balloting_phase: Vot final
       budget_balloting:
+        title: "Statistici vot final"
         vote_count: Voturi
         participant_count: Participanți
+        votes_per_heading: Voturi pe rubrică
+        participants_per_district: Participanți după district
       budget_supporting:
+        title: "Statistici faza suport"
         headings: Rubrici
         users: Utilizatori
         vote_count: Voturi
@@ -1411,14 +1420,18 @@ ro:
       direct_messages:
         title: Mesaje directe
         total: Total
+        users_who_have_sent_message: Utilizatorii care au trimis un mesaj privat
       proposal_notifications:
+        title: Notificări propuneri
         total: Total
         proposals_with_notifications: Propuneri cu notificări
+        not_available: "Propunere invalidă"
       polls:
         title: Status sondaj
         all: Sondaje
         web_participants: Participanți online
         total_participants: Total participanți
+        poll_questions: "Întrebări din sondaj:%{poll}"
         table:
           poll_name: Sondaj
           question_name: Întrebare
@@ -1438,6 +1451,7 @@ ro:
         email: Email
         document_number: Numărul documentului
         roles: Roluri
+        verification_level: Nivel verificare
       index:
         title: Utilizator
         no_users: Nu există utilizatori.
@@ -1452,6 +1466,7 @@ ro:
     site_customization:
       content_blocks:
         information: Informații despre blocurile de conținut
+        about: "Puteți crea blocuri de conținut HTML care pot fi inserate în diferite locuri ale site-ului dumneavoastră web."
         no_blocks: "Nu există blocuri de conținut."
         create:
           notice: Bloc de conținut creat cu succes
