@@ -55,7 +55,6 @@ class ApplicationController < ActionController::Base
       end
 
       I18n.locale = locale
-      Globalize.locale = I18n.locale
     end
 
     def set_layout
