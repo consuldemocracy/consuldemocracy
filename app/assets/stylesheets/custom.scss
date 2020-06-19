@@ -220,13 +220,14 @@ aside {
 }
 
 .sidebar-divider {
-  display: none;
+  border-top: 2px solid $border;
+  padding-bottom: $line-height / 2;
 }
 
 .sidebar-title {
   border-top: 0;
   color: $label;
-  font-size: rem-calc(18);
+  font-size: $small-font-size;
   margin: 0 0 $line-height / 2;
   padding-top: 0;
 }
@@ -248,14 +249,10 @@ aside {
   aside h2 {
     border-top: 0;
     color: $label;
-    font-size: rem-calc(18);
+    font-size: $small-font-size;
     margin: 0 0 $line-height / 2;
     padding-top: 0;
   }
-}
-
-.sidebar-left {
-  border-left: 2px solid $border;
 }
 
 .back {
