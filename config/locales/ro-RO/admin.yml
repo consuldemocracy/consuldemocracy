@@ -1278,11 +1278,13 @@ ro:
         placeholder: Caută funcționar public
       poll_questions_search:
         button: Caută
+        placeholder: Căutați întrebări la sondaj
       proposal_search:
         button: Caută
         placeholder: Caută propunere după titlu, cod, descriere ori întrebare
       debate_search:
         button: Caută
+        placeholder: Căutați dezbateri după titlu sau descriere
       user_search:
         button: Caută
         placeholder: Caută utilizator după nume sau email
@@ -1293,21 +1295,29 @@ ro:
       description: Descriere
       image: Imagine
       show_image: Arată imagine
+      moderated_content: "Verificați conținutul moderat de moderatori și confirmați dacă moderația a fost făcută corect."
       view: Vizualizare
       proposal: Propunere
       author: Autor
       content: Conținut
       created_at: Creat la
       delete: Șterge
+      color_help: Format hexadecimal
       show_results_and_stats: "Afișează rezultate și statistici"
+      results_and_stats_reminder: "Marcarea acestor căsuțe de selectare a rezultatelor și / sau statisticilor va fi disponibilă publicului și fiecare utilizator le va vedea."
     geozones:
       index:
+        title: Geozone
+        create: Crează geozonă
         edit: Editează
         delete: Șterge
       geozone:
         name: Nume
         external_code: Cod extern
+        census_code: Cod recensământ
+        code_help: Cod de răspuns pentru această geozonă pe API-ul de recensământ
         coordinates: Coordonate
+        coordinates_help: Coordonate care vor genera o zonă cu care se poate face clic pe o hartă a imaginii HTML
       edit:
         form:
           submit_button: Salvează modificări
