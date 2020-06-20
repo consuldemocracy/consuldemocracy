@@ -57,4 +57,12 @@ class Admin::MenuComponent < ApplicationComponent
       controller_name == "local_census_records" ||
         (controller_name == "imports" && controller.class.parent == Admin::LocalCensusRecords)
     end
+
+    def messages_menu_active?
+      messages_sections.include?(controller_name)
+    end
+
+    def messages_sections
+      %w[newsletters emails_download admin_notifications system_emails]
+    end
 end
