@@ -6,6 +6,7 @@ sv:
         submit: Skicka instruktioner igen
         title: Skicka bekräftelseinstruktioner igen
       show:
+        instructions: Bekräftar kontot med e-postadressen %{email}
         new_password_confirmation_label: Upprepa ditt lösenord
         new_password_label: Nytt lösenord
         please_set_password: Ställ in ditt nya lösenord (för e-postadressen ovan)
@@ -49,6 +50,10 @@ sv:
           title: Registrera er som organisation eller grupp
         success:
           back_to_index: Jag förstår; gå tillbaka till startsidan
+          instructions_1: "<strong>Vi kommer snart att kontakta dig</strong> för att bekräfta att du representerar den här gruppen."
+          instructions_2: Medan din <strong>e-postadress granskas</strong>, har vi skickat en <strong>länk för att bekräfta ditt konto</strong>.
+          instructions_3: När bekräftelsen är klar kan du börja delta som en overifierad grupp.
+          thank_you: Tack för att du har registrerat en grupp på webbplatsen. Den <strong>inväntar nu granskning</strong>.
           title: Registrering av organisation/grupp
     passwords:
       edit:
@@ -118,4 +123,7 @@ sv:
           username_note: Namn som visas vid dina inlägg
         success:
           back_to_index: Jag förstår; gå tillbaka till startsidan
+          instructions_1: <b>Kontrollera din e-postadress</b> - vi har skickat en <b>länk för att bekräfta ditt konto</b>.
+          instructions_2: När ditt konto är bekräftat kan du börja delta.
+          thank_you: Tack för att du har registrerat dig. Nu behöver du <b>bekräfta din e-postadress</b>.
           title: Bekräfta din e-postadress

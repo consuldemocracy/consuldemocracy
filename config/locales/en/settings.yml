@@ -68,7 +68,7 @@ en:
       poll_description: Polls description
       poll_description_description: Detailed description of the survey feature
       poll_link: Additional information link
-      poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
+      poll_link_description: Adds an additional information link to survey feature
       email_short_title: Email
       email_short_title_description: 'Short description of the email feature. Allows users to send an email to promote their proposal. You can find all the content of this email in "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Email description
@@ -79,7 +79,7 @@ en:
       poster_description_description: Detailed description of the poster feature
     analytics_url: "Analytics URL"
     proposal_notification_minimum_interval_in_days: "Minimum interval (in days) for authors of proposals to send new proposal notifications"
-    proposal_notification_minimum_interval_in_days_description: "The number of days user can send a notification for all supporters of their proposal"
+    proposal_notification_minimum_interval_in_days_description: "The number of days user can send a notification for all followers of their proposal"
     direct_message_max_per_day: "Direct Message max number per day"
     direct_message_max_per_day_description: "Number max of direct messages one user can send per day"
     feature:

@@ -1,1 +1,24 @@
 sr:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Уноси
+        one: Унос
+        few: Уноси
+        other: Уноси
+      more_pages:
+        display_entries: Приказивање <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} не може бити нађен"
+          one: Постоји <strong>1 %{entry_name}</strong>
+          few: Постоје <strong>%{count} %{entry_name}</strong>
+          other: Постоје <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Ви сте на страници
+      first: Прва
+      last: Последња
+      next: Следећа
+      previous: Претходна
+      truncate: "&hellip;"

@@ -539,7 +539,7 @@ en:
       comments: Comments
       latest_comments: Latest messages
     messages:
-      send_notification: Send message to proposal supporters
+      send_notification: Send message to proposal followers
       previous_notifications: See previous notifications
     polls:
       index:

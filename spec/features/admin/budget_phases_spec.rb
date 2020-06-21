@@ -14,8 +14,8 @@ describe "Admin budget phases" do
 
       fill_in "start_date", with: Date.current + 1.day
       fill_in "end_date", with: Date.current + 12.days
-      fill_in_translatable_ckeditor "summary", :en, with: "New summary of the phase."
-      fill_in_translatable_ckeditor "description", :en, with: "New description of the phase."
+      fill_in_ckeditor "Summary", with: "New summary of the phase."
+      fill_in_ckeditor "Description", with: "New description of the phase."
       uncheck "budget_phase_enabled"
       click_button "Save changes"
 

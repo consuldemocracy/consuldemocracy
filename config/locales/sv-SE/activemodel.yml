@@ -16,10 +16,25 @@ sv:
           confirmation_code: "Bekräftelsekod"
         email:
           recipient: "E-post"
+      verification/letter:
+        email: "E-post"
+        password: "Lösenord"
+        verification_code: "Koden du fick i ett brev"
+      verification/management/document:
+        document_type: "Dokumenttyp:"
+        document_number: "Dokumentnummer"
+      verification/residence:
+        date_of_birth: "Födelsedatum"
+        document_type: "Dokumenttyp"
+        postal_code: "Postnummer"
+      verification/sms:
+        confirmation_code: "Fyll i koden som skickats till din mobiltelefon"
       officing/residence:
         document_type: "Identitetshandling"
         document_number: "Identitetshandlingens nummer (inklusive bokstäver)"
         year_of_birth: "Födelseår"
+      local_census_records/import:
+        file: Fil
     errors:
       models:
         local_census_records/import:

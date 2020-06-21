@@ -24,7 +24,10 @@ sv:
       by_heading: "Deltagare efter fas och område"
       total: "Totalt"
       heading: "Område"
+      participants_every_phase: "Totalt antal deltagare"
+      percent_total_participants: "% Totalt antal deltagare"
     polls:
+      by_channel: "Deltagare efter kanal"
       web_percentage: "%{percentage} digital"
       booth_percentage: "%{percentage} röststationer"
       letter_percentage: "%{percentage} mejl"

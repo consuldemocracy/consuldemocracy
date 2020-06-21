@@ -7,6 +7,10 @@ tr:
         remaining: "Şu an itibariyle yatırım yapabileceğiniz miktar <span>%{amount}</span>."
         no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
         remove: Oyu geri çek
+        voted:
+          one: "<span> bir </span> yatırımına oy verdiniz."
+          other: "<span>%{count}</span> yatırımına oy verdiniz."
+        voted_info: "Oyunuz onaylandı!"
         voted_info_2: "Ancak bu aşama tamamlanana kadar oyunuzu istediğiniz zaman değiştirebilirsiniz."
         zero: Herhangi bir yatırım projesine oy vermediniz.
       reasons_for_not_balloting:
@@ -14,7 +18,9 @@ tr:
         not_verified: Yalnızca doğrulanan kullanıcılar yatırımlara oy verebilir; %{verify_account}.
         organization: Kuruluşların oylama aşamasına katılması mümkün değil
         not_selected: Seçilmeyen yatırım projeleri desteklenemez
+        not_enough_money: "Mevcut bütçeyi zaten atadınız. <br> <small> İstediğiniz zaman%{change_ballot} yapabileceğinizi unutmayın </small>"
         no_ballots_allowed: Seçim aşaması tamamlanmıştır
+        different_heading_assigned: "Zaten farklı bir başlık seçtiniz:%{heading_link}"
         change_ballot: oylarınızı değiştirin
         casted_offline: Daha önce çevrimdışı olarak katıldınız
     groups:
@@ -73,6 +79,9 @@ tr:
           button: Ara
           placeholder: Yatırım projelerini ara...
           title: Ara
+        search_results:
+          one: " <strong> '%{search_term}' </strong> terimini içeren\n Diğer"
+          other: " <strong> '%{search_term}' </strong> terimini içeren"
         sidebar:
           my_ballot: Oyum
           voted_info: Bu aşama tamamlanana kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanız gerekmiyor.
