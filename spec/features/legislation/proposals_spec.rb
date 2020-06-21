@@ -72,12 +72,12 @@ describe "Legislation Proposals" do
 
       click_link "Next"
 
-      expect(page).to have_content "You're on page 2"
+      expect(page).to have_content "You're on page\n2"
       expect(first_page_proposals_order & legislation_proposals_order).to eq([])
 
       click_link "Previous"
 
-      expect(page).to have_content "You're on page 1"
+      expect(page).to have_content "You're on page\n1"
       expect(legislation_proposals_order).to eq(first_page_proposals_order)
     end
 

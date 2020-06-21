@@ -142,7 +142,7 @@ describe "Poll budget ballot sheets" do
       set_officing_booth(booth)
     end
 
-    scenario "Ballot sheet information is displayed" do
+    scenario "Ballot sheet information is displayed", :js do
       officer_assignment = create(:poll_officer_assignment, officer: poll_officer)
       ballot_sheet = create(:poll_ballot_sheet, poll: poll, officer_assignment: officer_assignment)
 

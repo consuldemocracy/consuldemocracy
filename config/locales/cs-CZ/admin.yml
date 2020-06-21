@@ -236,13 +236,11 @@ cs:
         table_actions: "Akce"
         delete: "Odstranit milník"
         no_milestones: "Milníky nejsou definovány"
+        image: "Obrázek"
         show_image: "Zobrazit obrázek"
         documents: "Dokumenty"
         milestone: Milník
         new_milestone: Vytvořit nový milník
-      form:
-        admin_statuses: Admin investment statuses
-        no_statuses_defined: There are no defined investment statuses yet
       new:
         creating: Vytvořit milník
       edit:
@@ -280,6 +278,7 @@ cs:
         no_progress_bars: "Neexistují žádné ukazatele průběhu"
         new_progress_bar: "Vytvořit nový ukazatel průběhu"
         primary: "Hlavní ukazatel průběhu"
+        table_id: "ID"
         table_kind: "Typ"
         table_title: "Předmět"
         table_percentage: "Aktuální pokrok"
@@ -297,15 +296,72 @@ cs:
         notice: "Ukazatel průběhu byl smazán"
     comments:
       index:
+        id: "ID"
+        content: "Obsah"
+        author: "Autor"
+        commentable_type: "Typ"
         title: Skrýt komentáře
+        no_comments: Nejsou žádné komentáře.
+        table_link: "Odkaz"
+    hidden_comments:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          with_confirmed_hide: Potvrzeno
+          without_confirmed_hide: Nevyřízeno
+        hidden_debate: Skryté debaty
+        hidden_proposal: Skryté návrhy
+        title: Skryté komentáře
     dashboard:
       index:
         back: Přejít zpět na %{org}
         title: Administrace
         description: Vítejte v admin panelu portálu %{org}.
+      actions:
+        index:
+          edit: Upravit
+          delete: Smazat
+          active: 'Ano'
+          inactive: 'Ne'
+          action_title: Název
+          action_type: Typ
+          action_active: Aktivní
+          order: Pořadí
+          default:
+            email: Email
+            polls: Průzkumy
+        form:
+          submit_button: Uložit
+      administrator_tasks:
+        index:
+          filter: Filtr
+          filters:
+            pending: Nevyřízeno
+        form:
+          solve: Označit jako vyřízené
+          proposal: Návrh
     debates:
       index:
+        id: ID
+        author: Autor
         title: Skryté debaty
+    hidden_debates:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          with_confirmed_hide: Potvrzeno
+          without_confirmed_hide: Nevyřízeno
+        title: Skryté debaty
+        no_hidden_debates: Nejsou žádné skryté debaty.
+    documents:
+      index:
+        new_link: "Přidat nový dokument"
+        title: "Dokumenty"
+        url: "URL"
+      destroy:
+        success_notice: "Dokument byl úspěšně smazán"
     hidden_users:
       index:
         filter: Filtr
@@ -551,11 +607,14 @@ cs:
       title_booths: Hlasovací informační stánky
       legislation: Participativní legislativní proces
       users: Uživatelé
+      debates: "Debaty"
+      comments: "Komentáře"
     administrators:
       index:
         title: Administrátoři
         name: Název
         email: Email
+        description: Popis
         id: Administrátor ID
         no_administrators: Neexistují žádní administrátoři.
       administrator:
@@ -604,6 +663,7 @@ cs:
         empty_newsletters: Žádné informační bulletiny k zobrazení
       new:
         title: Nový informační bulletin
+        image_link: "vlastní obrázky"
       edit:
         title: Upravit informační bulletin
       show:
@@ -823,6 +883,8 @@ cs:
         no_questions: "Nemáte žádné otázky přiřazené k této anketě."
         questions_title: "Seznam otázek"
         table_title: "Předmět"
+        edit_answers: Upravit odpovědi
+        see_proposal: "(Zobrazit návrh)"
       flash:
         question_added: "Otázka přidána k této anketě"
         error_on_question_added: "Otázku nelze přiřadit k této anketě"
@@ -842,6 +904,8 @@ cs:
         poll_not_assigned: "Anketa není přiřazena"
       edit:
         title: "Upravit dotaz"
+      new:
+        title_proposal: "Vytvořit otázku"
       answers:
         images:
           add_image: "Přidat obrázek"
@@ -1041,6 +1105,8 @@ cs:
       proposal_search:
         button: Vyhledat
         placeholder: Vyhledat návrhy podle názvu, kódu, popisu nebo otázky
+      debate_search:
+        button: Hledat
       user_search:
         button: Vyhledat
         placeholder: Vyhledat uživatele podle jména nebo e-mailu
@@ -1058,6 +1124,9 @@ cs:
       content: Obsah
       created_at: Vytvořeno v
       delete: Smazat
+      color_help: Hexadecimální formát
+      show_results_and_stats: "Zobrazit výsledky a statistiky"
+      results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
     geozones:
       index:
         title: Geozóna
@@ -1095,6 +1164,7 @@ cs:
       show:
         created_at: Vytvořen
         author: Autor
+        users: Uživatelé
         unverified_error: (Není ověřeno statistickým úřadem)
         loading: "Stále existují podpisy, které nejsou ověřeny základními datovými registry, prosíme aktualizujte stránku za pár okamžiků"
     stats:
@@ -1118,10 +1188,24 @@ cs:
           visits: Návštěvy
           votes: Hlasů celkem
         budgets_title: Participativní rozpočtování
+        participatory_budgets: Participativní rozpočty
         direct_messages: Soukromé zprávy
         proposal_notifications: Upozornění k návrhům
         incomplete_verifications: Neúplné ověření
         polls: Průzkum
+      graph:
+        debate_created: Debaty
+        visit: Návštěvy
+        level_2_user: Počet uživatelů druhé úrovně
+        proposal_created: Návrhy občanů
+      budget_balloting:
+        vote_count: Hlasů
+        participant_count: Účastníci
+      budget_supporting:
+        headings: Kapitoly
+        users: Uživatelé
+        vote_count: Hlasů
+        participant_count: Účastníků
       direct_messages:
         title: Soukromé zprávy
         total: Celkem
@@ -1281,3 +1365,9 @@ cs:
         submit_header: Uložit záhlaví
         card_title: Upravit kartu
         submit_card: Uložit kartu
+    audits:
+      id: "ID"
+    local_census_records:
+      imports:
+        local_census_records:
+          no_records_found: Nenalezeny žádné záznamy.

@@ -41,6 +41,8 @@ da:
     budget_investment_created:
       subject: "Tak fordi du oprettede en idé!"
       title: "Tak fordi du har oprettet en idé!"
+      text: "Tak fordi du oprettede din idé <strong>%{investment}</strong> for Deltagerbudgettet <strong>%{budget}</strong>."
+      follow: "Vi vil løbende informere dig om processens forløb, som du også kan følge på <strong>%{link}</strong>."
       follow_link: "Deltagerbudgetter"
       sincerely: "Med venlig hilsen"
       share: "Del dit projekt"

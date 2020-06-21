@@ -88,4 +88,17 @@ describe "Admin tags" do
       expect(Tag.category.where(name: "wow_category")).to exist
     end
   end
+
+  scenario "Upgrade tag to category" do
+    create(:tag, name: "Soon a category")
+
+    visit admin_tags_path
+
+    within("form.new_tag") do
+      fill_in "tag_name", with: "Soon a category"
+      click_button "Create topic"
+    end
+
+    expect(page).to have_content "Soon a category"
+  end
 end

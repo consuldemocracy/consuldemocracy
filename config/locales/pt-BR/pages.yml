@@ -18,6 +18,7 @@ pt-BR:
         title: "Debates"
         description: "Na seção %{link} você pode apresentar e compartilhar sua opinião com outras pessoas sobre questões de seu interesse relacionadas à cidade. É também um lugar para gerar ideias que através de outras seções de %{org} levam a ações concretas pela Prefeitura."
         link: "debates de cidadãos"
+        feature: "Você pode abrir debates, comentar e avaliá-los com o <strong>concordo</strong> ou <strong>não concordo</strong>. Para isso, basta %{link}."
         feature_link: "registre-se em %{org}"
         image_alt: "Botões para classificar os debates"
         figcaption: '"Eu concordo" e "Discordo" botões para classificar os debates.'
@@ -26,11 +27,13 @@ pt-BR:
         description: "Na seção %{link} você pode fazer propostas para a Prefeitura realizá-los. As propostas necessitam de apoio, e se alcançam o apoio suficiente, são colocadas em votação pública. As propostas aprovadas nestas votações pelos cidadãos são aceitas pela Prefeitura e realizadas."
         link: "propostas dos cidadãos"
         image_alt: "Botão para apoiar uma proposta"
+        figcaption: 'Botão para "apoiar" uma proposta.'
       budgets:
         title: "Orçamento participativo"
         description: "A seção %{link} auxilia às pessoas a decidirem diretamente qual o destino de uma parte do orçamento municipal."
         link: "orçamentos participativos"
         image_alt: "Diferentes fases de um orçamento participativo"
+        figcaption: 'Fases de "Apoio" e "Votação" dos orçamentos participativos.'
       polls:
         title: "Votações"
         description: "A seção %{link} é ativada toda vez que uma proposta atinge 1% de apoio e vai para votação, ou quando a Prefeitura propõe uma questão para as pessoas decidirem."
@@ -154,6 +157,7 @@ pt-BR:
               description_column: Diminui o tamanho do texto
       compatibility:
         title: Compatibilidade com padrões e design visual
+        description: 'Todas as páginas deste site estão de acordo com <strong>Diretrizes de Acessibilidade</strong> ou com os Princípios Gerais de Design Acessível estabelecidos pelo grupo de trabalho <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pertencentes a W3C.'
     titles:
       help: "O que é %{org}? -Participação cidadã"
     verify:

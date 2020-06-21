@@ -4,7 +4,8 @@ class RemoteTranslation < ApplicationRecord
   validates :remote_translatable_id, presence: true
   validates :remote_translatable_type, presence: true
   validates :locale, presence: true
-
+  validates :locale, inclusion: { in: RemoteTranslations::Microsoft::AvailableLocales.available_locales }
+  validate :already_translated_resource
   after_create :enqueue_remote_translation
 
   def enqueue_remote_translation
@@ -16,5 +17,11 @@ class RemoteTranslation < ApplicationRecord
           remote_translatable_type: remote_translation["remote_translatable_type"],
           locale: remote_translation["locale"],
           error_message: nil).any?
+  end
+
+  def already_translated_resource
+    if remote_translatable&.translations&.where(locale: locale).present?
+      errors.add(:locale, :already_translated)
+    end
   end
 end

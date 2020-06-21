@@ -42,8 +42,12 @@ sv:
         other: "%{count} svar"
       responses_show:
         zero: Inga svar
+        one: "1 svar (visa)"
+        other: "%{count} svar (visa)"
       responses_collapse:
         zero: Inga svar
+        one: "1 svar (göm)"
+        other: "%{count} svar (göm)"
       user_deleted: Användaren är borttagen
       votes:
         zero: Inga röster
@@ -112,6 +116,9 @@ sv:
         button: Sök
         placeholder: Sök debatter...
         title: Sök
+      search_results:
+        one: " som innehåller <strong>'%{search_term}'</strong>"
+        other: " som innehåller <strong>'%{search_term}'</strong>"
       select_order: Sortera efter
       start_debate: Starta en debatt
       title: Debatter
@@ -162,12 +169,18 @@ sv:
     direct_message: privat meddelande
     error: fel
     errors: fel
+    not_saved: "gjorde att %{resource} inte kunde sparas. <br>Kontrollera och rätta till de markerade fälten:"
     policy: Sekretesspolicy
+    banner: banner
     proposal: Förslag
     proposal_notification: "Avisering"
     budget/investment: Budgetförslag
     budget/group: Budgetgrupp
     budget/heading: Budgetrubrik
+    geozone: geografiska områden
+    legislation/draft_version: utkast
+    legislation/process: process
+    legislation/question: fråga
     poll/shift: Arbetspass
     poll/question/answer: Svar
     user: Konto
@@ -176,6 +189,8 @@ sv:
     document: Dokument
     topic: Ämne
     image: Bild
+    site_customization/content_block: innehållsblock
+    site_customization/page: sida
   geozones:
     none: Hela staden
   layouts:
@@ -286,6 +301,11 @@ sv:
     create:
       form:
         submit_button: Skapa förslag
+    created:
+      publish: Nej, jag vill publicera medborgarförslaget
+    share:
+      improve_it: Få mer stöd genom att förbättra ditt förslag.
+      dashboard: Visa mer information
     edit:
       editing: Redigera förslag
       form:
@@ -337,6 +357,9 @@ sv:
           error: "Ett fel har uppstått. Var vänlig och gå till \"Mitt konto\" för att manuellt inaktivera rekommenderade förslag"
       retired_proposals: Förslag som dragits tillbaka
       retired_proposals_link: "Förslag som dragits tillbaka av förslagslämnaren"
+      selected_proposals: Valda förslag
+      selected_proposals_link: Visa valda förslag
+      archived_proposals: Arkiverade förslag
       proposals_lists: Förslagslista
       retired_links:
         all: Alla
@@ -398,6 +421,7 @@ sv:
       total_percent: 100%
       archived: "Förslaget har arkiverats och kan inte längre stödjas."
       successful: "Förslaget har fått tillräckligt med stöd."
+      selected: "Valt förslag"
     show:
       author_deleted: Användaren är borttagen
       code: "Förslagskod:"
@@ -424,16 +448,25 @@ sv:
   dashboard:
     menu:
       my_proposal: Redigera mitt förslag
+      progress: Framsteg
       resources: Resurser
       community: Gemenskap
       polls: Omröstningar
       mailing: E-post
+      poster: Affisch
       recommended_actions: Rekommenderade åtgärder
+      messages: Meddelande till användare
+      related_content: Relaterat innehåll
+    form:
+      request: Begäran
     progress:
+      group_by_month: Månadsvis
+      group_by_week: Veckovis
       group_by_date: Daglig
       supports: Stöd
       new_action: Ny
     index:
+      title: Redigering
       edit_proposal_link: Redigera förslag
       publish: Publicera förslag
       retire: Ta tillbaka förslaget
@@ -444,8 +477,12 @@ sv:
     resource:
       and: och
       view_resource: Se resurs
+      resource_requested: Resurser redan begärt
+      request_resource: Begär resurs
     recommended_actions:
       title: Rekommenderade åtgärder
+      goto_proposed_actions: Gå till rekommenderade åtgärder
+      pending_title: Väntande
       show_description: Visa beskrivning
       done_title: Genomfört
     next_goal:
@@ -455,6 +492,7 @@ sv:
         one: "%{count} dag"
         other: "%{count} dagar"
     community:
+      access_community: Gå med i gemenskapen
       participants: Deltagare
       debates: Debatter
       comments: Kommentarer
@@ -464,6 +502,7 @@ sv:
         title: Omröstningar
         create: Skapa omröstning
         links: Länkar
+        additiontal_information: Ytterligare information
       new:
         title: Ny omröstning
         submit: Skapa omröstning
@@ -480,6 +519,7 @@ sv:
         name: Enkättitel
         add_question: Lägg till fråga
       question_fields:
+        remove_question: Ta bort fråga
         add_answer: Lägg till svar
       question_answer_fields:
         remove_answer: Ta bort svar
@@ -494,6 +534,7 @@ sv:
         preview: Förhandsvisning
     mailer:
       forward:
+        support_button: Stöd förslaget
         share_in: Dela på
         hi: "Hej!"
   polls:
@@ -529,6 +570,7 @@ sv:
       back: Tillbaka till omröstningar
       cant_answer_not_logged_in: "Du behöver %{signin} eller %{signup} för att kunna delta."
       comments_tab: Kommentarer
+      cant_answer_verify: "Du måste %{verify_link} för att svara."
       verify_link: "verifiera ditt konto"
       cant_answer_expired: "Omröstningen är avslutad."
       cant_answer_wrong_geozone: "Den här frågan är inte tillgänglig i ditt område."
@@ -564,6 +606,7 @@ sv:
     new:
       title: "Skicka meddelande"
       submit_button: "Skicka meddelande"
+      info_about_receivers: "Det här meddelandet kommer att skickas till <strong>%{count} personer</strong> och visas på %{proposal_page}.<br> Meddelanden skickas inte på en gång, utan som regelbundna e-postmeddelanden med aviseringar om förslagen."
       proposal_page: "förslagets sida"
     show:
       back: "Gå tillbaka till min aktivitet"
@@ -603,6 +646,12 @@ sv:
     follow: "Följ"
     following: "Följer"
     follow_entity: "Följ %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Du följer nu det här budgetförslaget! <br> Vi meddelar dig om alla ändringar så att du kan hålla dig uppdaterad."
+        destroy:
+          notice: "Du har slutat följa det här budgetförslaget! <br> Vi kommer inte längre skicka aviseringar om förslaget."
     hide: Dölj
     print:
       print_button: Skriv ut informationen
@@ -632,6 +681,7 @@ sv:
       districts: "Stadsdelar"
       districts_list: "Lista över stadsdelar"
       categories: "Kategorier"
+    target_blank: " (länken öppnas i ett nytt fönster)"
     you_are_in: "Du är på"
     unflag: Ta bort flagga
     unfollow_entity: "Sluta följa %{entity}"
@@ -651,6 +701,10 @@ sv:
       title: Rekommendationer
       see_more: Visa fler rekommendationer
       hide: Dölj rekommendationer
+    translations:
+      select_language_prompt: Välj språk
+      remove_language: Ta bort språk
+      add_language: Lägg till språk
   social:
     facebook: "%{org} på Facebook"
     twitter: "%{org} på Twitter"
@@ -675,6 +729,11 @@ sv:
     manage:
       all: "Du har inte behörighet att utföra åtgärden '%{action}' på %{subject}."
   users:
+    login_to_comment: "Du behöver %{signin} eller %{signup} för att kunna kommentera."
+    login_to_continue: "Du behöver %{signin} eller %{signup} för att fortsätta."
+    signin: "logga in"
+    signup: "registrera dig"
+    verify_account: "verifiera ditt konto"
     direct_messages:
       new:
         direct_messages_bloqued: "Användaren tar inte emot direkta meddelanden"
@@ -823,3 +882,5 @@ sv:
       surveys: Enkäter
     subnav:
       surveys: Enkäter
+  remote_translations:
+    button: Översätta sida

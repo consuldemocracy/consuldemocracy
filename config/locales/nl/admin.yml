@@ -261,7 +261,7 @@ nl:
       edit:
         title: Bewerk mijlpaal
       create:
-        notice: Nieuwe mijlpaal aangemaakt
+        notice: Nieuwe mijlpaal aangemaakt!
       update:
         notice: Mijlpaal opgeslagen
       delete:
@@ -301,22 +301,16 @@ nl:
           primary: "Primaire voortgangsbalk bewerken"
           secondary: "Voortgangsbalk %{title} bewerken"
       create:
-        notice: "Voortgangsbalk aangemaakt"
+        notice: "Voortgangsbalk aangemaakt!"
       update:
         notice: "Voortgangsbalk bijgewerkt"
       delete:
         notice: "Voortgangsbalk verwijderd"
-    comments:
-      index:
-        title: Hidden comments
     dashboard:
       index:
         back: Terug naar %{org}
         title: Administration
         description: Welkom op de %{org} beheers pagina.
-    debates:
-      index:
-        title: Hidden debates
     hidden_users:
       index:
         filter: Filter

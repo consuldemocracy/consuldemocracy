@@ -22,16 +22,21 @@ sv:
     url: "Huvudsaklig webbadress"
     org_name: "Organisation"
     related_content_score_threshold: "Nivå för överensstämmelse med relaterat innehåll"
+    mailer_from_name: "Ursprunglig e-postadress"
     meta_title: "Webbplatsens titel (SEO)"
     meta_description: "Webbplatsens beskrivning (SEO)"
     meta_keywords: "Nyckelord (SEO)"
     min_age_to_participate: Minimiålder för deltagande
     proposals:
+      successful_proposal_id: Framgångsrikt förslag
       poll_short_title: Omröstningar
       poll_description: Omröstningsbeskrivning
+      poll_link: Länk till ytterligare information
       email_short_title: E-post
       email_short_title_description: 'Kort beskrivning av e-mejl funktionen. Den tillåter användare att skicka ett mejl för att marknadsföra sitt förslag. Du kan hitta allt innehåll för detta mejl i "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: E-posts beskrivning
+      poster_short_title: Affisch
+    analytics_url: "Analytiker URL"
     feature:
       twitter_login: "Twitter-inloggning"
       facebook_login: "Facebook-inloggning"
@@ -49,11 +54,17 @@ sv:
       guides: "Instruktioner för att skapa budgetförslag"
       public_stats: "Offentlig statistik"
       help_page: "Hjälpsida"
+      graphql_api: "GraphQL API"
     map:
       latitude: "Latitud"
       longitude: "Longitud"
       zoom: "Zoom"
     process:
+      debates: "Debatter"
       proposals: "Förslag"
+      proposals_description: "Medborgarförslag är en möjlighet för grannar och föreningar att direkt bestämma över hur de vill ha sitt samhälle, genom att samla stöd för sitt förslag och vinna en omröstning"
       polls: "Omröstningar"
+      polls_description: "Medborgaromröstningar är en deltagandeprocess där röstberättigade medborgare fattar beslut genom omröstning"
+      budgets: "Medborgarbudget"
+      budgets_description: "I medborgarbudgeten bestämmer medborgarna om en del av den kommunala budgeten genom att skapa och rösta på budgetförslag"
       legislation: "Planering"

@@ -1,5 +1,6 @@
 sv:
   mailers:
+    title: "Open Government"
     no_reply: "Det går inte att svara till den här e-postadressen."
     comment:
       hi: Hej
@@ -10,6 +11,8 @@ sv:
       manage_email_subscriptions: För att sluta få e-postmeddelanden kan du ändra dina inställningar med
     email_verification:
       click_here_to_verify: den här länken
+      instructions_2: Det här e-postmeddelandet är för att verifiera ditt konto med <b>%{document_type} %{document_number}</b>. Klicka inte på länken ovan om de inte tillhör dig.
+      instructions: Du måste klicka på %{verification_link} för att slutföra verifieringen av ditt användarkonto.
       subject: Bekräfta din e-postadress
       thanks: Tack så mycket.
       title: Bekräfta kontot via länken nedan
@@ -42,11 +45,15 @@ sv:
     budget_investment_created:
       subject: "Tack för att du skapat ett budgetförslag!"
       title: "Tack för att du skapat ett budgetförslag!"
+      intro: "Hej <strong>%{author}</strong>,"
+      text: "Tack för att du skapat budgetförslaget <strong>%{investment}</strong> för medborgarbudgeten <strong>%{budget}</strong>."
+      follow: "Du kommer att få löpande information om hur processen går, och du kan också följa den på <strong>%{link}</strong>."
       follow_link: "Medborgarbudgetar"
       sincerely: "Vänliga hälsningar,"
       share: "Dela ditt projekt"
     budget_investment_unfeasible:
       hi: "Kära användare,"
+      new: "Med anledning av det ber vi dig att skapa ett <strong>nytt budgetförslag</strong> som uppfyller kraven för den här processen. Du kan göra det med följande länk: %{url}."
       new_href: "nytt budgetförslag"
       sincerely: "Vänliga hälsningar"
       sorry: "Ledsen för besväret och tack för din ovärderliga medverkan."
@@ -67,9 +74,13 @@ sv:
       subject: "Ny kommentar kring utvärdering"
       title: Ny kommentar kring utvärdering för %{investment}
       hi: Hej
+      new_comment_by: Det finns en nya kommentar kring utvärdering från <strong>%{commenter}</strong> för budgetförslaget %{investment}
     new_actions_notification_rake_created:
       hi: "Hej %{name},"
     new_actions_notification_rake_published:
       hi: "Hej %{name},"
+    new_actions_notification_on_create:
+      hi: "Hej %{name}!"
+      introduction: "Ditt förslag %{title} har skapats."
     new_actions_notification_on_published:
       text_2: "Varför 100?"

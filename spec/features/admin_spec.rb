@@ -84,4 +84,17 @@ describe "Admin" do
     expect(page).not_to have_css("#moderation_menu")
     expect(page).not_to have_css("#valuation_menu")
   end
+
+  scenario "Admin menu does not hide active elements", :js do
+    login_as(administrator)
+    visit admin_budgets_path
+
+    within("#admin_menu") do
+      expect(page).to have_link "Participatory budgets"
+
+      click_link "Site content"
+
+      expect(page).to have_link "Participatory budgets"
+    end
+  end
 end

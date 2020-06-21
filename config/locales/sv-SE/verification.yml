@@ -17,6 +17,9 @@ sv:
     letter:
       alert:
         unconfirmed_code: Du har inte angett bekräftelsekoden ännu
+      create:
+        flash:
+          success: Tack för att du begärt din <b>säkerhetskod (krävs endast för slutomröstningar) </b>. Vi skickar koden inom några dagar till den adress som du registrerat. Kom ihåg att du även kan få din kod från ett medborgarkontor.
       edit:
         see_all: Visa förslag
         title: Brev begärt
@@ -69,6 +72,7 @@ sv:
         title: Bekräfta säkerhetskod
       new:
         phone: Ange ditt mobilnummer för att ta emot koden
+        phone_format: "<strong><em>(Till exempel: 0712345678 eller +46712345678)</em></strong>"
         phone_note: Vi använder bara ditt telefonnummer till att skicka bekräftelsekoden, aldrig för att kontakta dig.
         phone_placeholder: "Till exempel: 0712345678 eller +46712345678"
         submit_button: Skicka

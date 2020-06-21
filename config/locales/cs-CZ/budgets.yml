@@ -7,13 +7,16 @@ cs:
         remaining: "Ještě můžete investovat částku <span>%{amount}</span>."
         no_balloted_group_yet: "Dosud jste o této skupině nehlasovali, hlasujte!"
         remove: Odstranit hlas
+        voted_info_2: "Hlas však můžete kdykoli změnit, dokud nebude tato fáze uzavřena."
         zero: Nehlasoval jste pro žádný investiční projekt.
       reasons_for_not_balloting:
         not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
         not_verified: O investicích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
         organization: Organizacím není dovoleno hlasovat
         not_selected: Nevybrané investiční projekty nelze podpořit
+        not_enough_money: "Již jste rozdělili dostupný rozpočet. <br> <small>Pamatujte, že můžete kdykoli %{change_ballot}</small>"
         no_ballots_allowed: Fáze výběru byla ukončena
+        different_heading_assigned: "Už jste hlasovali v jiné kapitole: %{heading_link}"
         change_ballot: změnit své hlasování
     groups:
       show:
@@ -75,6 +78,7 @@ cs:
           my_ballot: Moje hlasování
           voted_info: Můžete %{link} kdykoli před ukončením této fáze. Není třeba utrácet všechny dostupné peníze.
           voted_info_link: změnit své hlasování
+          different_heading_assigned: "Už jste hlasoval v jiné kapitole: %{heading_link}"
           change_ballot: "Pokud změníte názor, můžete odebrat své hlasy v %{check_ballot} a začít znovu."
           check_ballot_link: "kontrola mého hlasování"
           zero: V této skupině jste nehlasovali pro žádný investiční projekt.
@@ -94,6 +98,9 @@ cs:
         author_deleted: Uživatel
         price_explanation: Vysvětlení nákladů
         unfeasibility_explanation: Vysvětlení neproveditelnosti
+        code: "Kód investičního projektu: <strong>%{code}</strong>"
+        location: "Umístění: <strong>%{location}</strong>"
+        organization_name: "Navrhované jménem: <strong>%{name}</strong>"
         share: Sdílet
         title: Investiční projekt
         supports: Podpora
@@ -115,6 +122,7 @@ cs:
         give_support: Podpořte!
       header:
         check_ballot: Kontrola mého hlasování
+        different_heading_assigned: "Už jste hlasovali v jiné kapitole: %{heading_link}"
         change_ballot: "Pokud změníte názor, můžete odebrat své hlasy v %{check_ballot} a začít znovu."
         check_ballot_link: "kontrola mého hlasování"
         price: "Tato položka má rozpočet"
@@ -142,6 +150,7 @@ cs:
       accepted: "Přijatelné výdaje návrhu: "
       discarded: "Vyřazené náklady návrhu: "
       incompatibles: Nekompatibilní
+      investment_title: Název projektu
       investment_proyects: Seznam všech investičních projektů
       unfeasible_investment_proyects: Seznam všech nerealizovatelných investičních projektů
       not_selected_investment_proyects: Seznam všech nerealizovatelných investičních projektů odmítnutých pro hlasování
@@ -151,6 +160,12 @@ cs:
       heading: "Participatory Milníky rozpočtu"
       heading_selection_title: "Podle městských částí"
       no_winner_investments: "V tomto stavu není žádná vítězná investice"
+      filters:
+        status:
+          label: "Aktuální stav projektu"
+          all: "Vše (%{count})"
+        milestone_tag:
+          all: "Všech (%{count})"
     phases:
       errors:
         dates_range_invalid: "Počáteční datum nemůže být stejné nebo pozdější než koncové datum"

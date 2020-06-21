@@ -304,7 +304,7 @@ pl:
           primary: "Edytuj główny pasek postępu"
           secondary: "Edytuj pasek postępu %{title}"
       create:
-        notice: "Pasek postępu utworzony."
+        notice: "Pasek postępu utworzony!"
       update:
         notice: "Pasek postępu pomyśle zaktualizowany"
       delete:

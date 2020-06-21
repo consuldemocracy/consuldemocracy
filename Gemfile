@@ -41,7 +41,7 @@ gem "paperclip", "~> 5.2.1"
 gem "paranoia", "~> 2.4.2"
 gem "pg", "~> 0.21.0"
 gem "pg_search", "~> 2.0.1"
-gem "puma", "~> 4.3.1"
+gem "puma", "~> 4.3.3"
 gem "recipient_interceptor", "~> 0.2.0"
 gem "redcarpet", "~> 3.4.0"
 gem "responders", "~> 2.4.0"
@@ -79,7 +79,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara", "~> 2.17.0"
+  gem "capybara", "~> 3.29.0"
   gem "capybara-webmock", "~> 0.5.3"
   gem "coveralls", "~> 0.8.22", require: false
   gem "database_cleaner", "~> 1.7.0"

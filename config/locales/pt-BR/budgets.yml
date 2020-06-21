@@ -7,14 +7,22 @@ pt-BR:
         remaining: "Você ainda tem <span>%{amount}</span> para investir."
         no_balloted_group_yet: "Você ainda não votou neste grupo, vote!"
         remove: Remover voto
+        voted:
+          one: "Você votou em <span>um</span> investimento."
+          other: "Você votou em <span>%{count}</span> investimentos."
+        voted_info: "Seu voto foi confirmado!"
+        voted_info_2: "Mas você pode alterar o seu voto a qualquer momento antes da conclusão desta fase."
         zero: Você não votou em um projeto de investimento.
       reasons_for_not_balloting:
         not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
         not_verified: Somente usuários verificados podem votar em investimentos; %{verify_account}.
         organization: Organizações não tem permissão de voto
         not_selected: Projetos de investimento não selecionados não podem ser apoiados
+        not_enough_money: "Você já atribuiu o orçamento disponível.<br><small>Lembre-se que pode %{change_ballot} a qualquer momento</small>"
         no_ballots_allowed: A fase de seleção está fechada
+        different_heading_assigned: "Você já votou em um título diferente: %{heading_link}"
         change_ballot: mudar seus votos
+        casted_offline: Você já participou presencialmente
     groups:
       show:
         title: Selecione uma opção
@@ -71,10 +79,17 @@ pt-BR:
           button: Buscar
           placeholder: Buscar projetos de investimento...
           title: Buscar
+        search_results:
+          one: " contendo o termo <strong>'%{search_term}'</strong>"
+          other: " contendo o termo <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Minha cédula
+          voted:
+            one: "<strong>Você votou em uma proposta com o custo de %{amount_spent}</strong>"
+            other: "<strong>Você votou em %{count} propostas com o custo de %{amount_spent}</strong>"
           voted_info: Você pode %{link} a qualquer momento até o encerramento desta fase. Não há necessidade de gastar todo o dinheiro disponível.
           voted_info_link: mudar seu voto
+          different_heading_assigned: "Você tem votos ativos num título diferente: %{heading_link}"
           change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
           check_ballot_link: "verificar minha cédula"
           zero: Você não votou em um projeto de investimento neste grupo.
@@ -88,10 +103,15 @@ pt-BR:
           random: aleatório
           confidence_score: melhor avaliado
           price: por preço
+      share:
+        message: "Eu criei o projeto de investimento %{title} em %{handle}. Crie um projeto você também!"
       show:
         author_deleted: Usuário excluído
         price_explanation: Explicação do preço
         unfeasibility_explanation: Explanação da inviabilidade
+        code: "Código do projeto de investimento: <strong>%{code}</strong>"
+        location: "Localização: <strong>%{location}</strong>"
+        organization_name: "Proposta em nome de: <strong>%{name}</strong>"
         share: Compartilhar
         title: Projeto de investimento
         supports: Apoios
@@ -100,7 +120,11 @@ pt-BR:
         comments_tab: Comentários
         milestones_tab: Marcos
         author: Autor
+        project_unfeasible: "Este projeto de investimento <strong>foi marcado como não viável</strong> e não vai à fase de votação."
+        project_selected: "Este projeto de investimento <strong>está selecionado</strong> para a fase de votação."
         project_winner: "Projeto de investimento ganhando"
+        project_not_selected: "Este projeto de investimento <strong>não foi selecionado</strong> para a fase de votação."
+        see_price_explanation: Exposição de custos
       wrong_price_format: Apenas números inteiros
       investment:
         add: Voto
@@ -117,6 +141,7 @@ pt-BR:
         give_support: Apoiar
       header:
         check_ballot: Verificar minha cédula
+        different_heading_assigned: "Você tem votos ativos num título diferente: %{heading_link}"
         change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
         check_ballot_link: "verificar minha cédula"
         price: "Este título tem um orçamento de"
@@ -150,12 +175,16 @@ pt-BR:
       not_selected_investment_proyects: Lista de todos os projetos de investimento não selecionados para votação
     executions:
       link: "Marcos"
+      page_title: "%{budget} - Andamento do(s) projeto(s)"
+      heading: "Orçamento participativo (Marcos)"
       heading_selection_title: "Por distrito"
+      no_winner_investments: "Não há projetos de investimentos ganhadores neste estado"
       filters:
         status:
           label: "Estado atual do projeto"
           all: "Todo (%{count})"
         milestone_tag:
+          label: "Status de andamento"
           all: "Todo (%{count})"
     phases:
       errors:

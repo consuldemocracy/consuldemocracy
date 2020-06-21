@@ -29,7 +29,7 @@ describe "Moderate proposals" do
     expect(page).to have_css(".proposal", count: 0)
   end
 
-  scenario "Can not hide own proposal" do
+  scenario "Can hide own proposal" do
     moderator = create(:moderator)
     proposal = create(:proposal, author: moderator.user)
 
@@ -37,7 +37,7 @@ describe "Moderate proposals" do
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      expect(page).not_to have_link("Hide")
+      expect(page).to have_link("Hide")
       expect(page).not_to have_link("Block author")
     end
   end

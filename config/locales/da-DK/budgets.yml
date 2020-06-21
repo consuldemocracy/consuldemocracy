@@ -17,10 +17,10 @@ da:
         not_logged_in: Du skal %{signin} eller %{signup} for at kunne fortsætte.
         not_verified: Kun verificerede brugere kan stemme på projekter; %{verify_account}.
         organization: Det er ikke tilladt for organisationer at stemme
-        not_selected: Du kan ikke støtte op om projektidéer, der ikke kan gennemføres
+        not_selected: Du kan ikke støtte op om idéer, der ikke kan gennemføres
         not_enough_money: "Du har allerede fordelt det mulige budget.<br><small>Husk at du %{change_ballot} til enhver tid</small>"
         no_ballots_allowed: Støttefasen er slut
-        different_heading_assigned: "Du har allerede stemt i en anden post: %{heading_link}"
+        different_heading_assigned: "Du har allerede stemt i et andet budget: %{heading_link}"
         change_ballot: ændre din stemme
         casted_offline: Du har allerede deltaget, da du var offline
     groups:
@@ -33,14 +33,14 @@ da:
     phase:
       drafting: Udkast (Ikke offentligt)
       informing: Information
-      accepting: Modtagelse af projektidéer
-      reviewing: Gennemgangsfasen
-      selecting: Støttefasen
-      valuating: Evalueringsfasen
-      publishing_prices: Publicering af prisvurderinger
+      accepting: Opret dit forslag
+      reviewing: Vi gennemgår projekterne
+      selecting: Støt de forslag der skal gå videre
+      valuating: Vi evaluerer jeres forslag
+      publishing_prices: Se vores vurdering af jeres forslag
       balloting: Afstemningsfasen
-      reviewing_ballots: Gennemgang af afstemningsresultatet
-      finished: Budgettet er afsluttet
+      reviewing_ballots: Vi tæller stemmerne
+      finished: Se resultat af afstemning
     index:
       title: Deltagerbudgetter
       empty_budgets: Der er ingen budgetter.
@@ -49,16 +49,16 @@ da:
         title: Deltagerbudgetter
         help: Hvad er et deltagerbudget?
         all_phases: Se alle faser
-      all_phases: Deltagerbudgettets faseforløb
+      all_phases: Tidslinje
       map: Projekternes geografiske placering
       investment_proyects: Alle projekter
       unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
-      not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemningsfasen
+      not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemning
       finished_budgets: Afsluttede deltagerbudgetter
       see_results: Se resultat
       section_footer:
         title: Hvad er et deltagerbudget?
-        description: Med et deltagerbudget får borgerne selv lov til at bestemme, hvad en given, uddelt sum penge skal bruges til. Det er borgerne, der kommer med idéerne, stemmer på idéerne og på den måde deltager og inddrages i budgetprocessen.
+        description: Med et deltagerbudget får borgerne selv lov til at bestemme, hvad en given, uddelt sum penge skal bruges til. Det er borgerne, der kommer med idéerne, stemmer på idéerne og dermed uddeler penge.
       milestones: Proces
     investments:
       form:
@@ -72,9 +72,9 @@ da:
         map_skip_checkbox: "Denne investering har ikke en konkret lokation"
       index:
         title: Deltagerbudgetter
-        unfeasible: Investeringer, der ikke er mulige at gennemføre
+        unfeasible: Projekter, der ikke er mulige at gennemføre
         unfeasible_text: "Projektidéerne skal imødekomme en række kriterier for at kunne indgå i den endelige afstemningsfase. De projektidéer, der ikke opfylder kriterierne bliver fravalgt og er at finde på listen nedenunder sammen med en rapport, der begrunder projektets manglende opfyldelse af de angivede krav. "
-        by_heading: "Projektidéer tilknyttet: %{heading}"
+        by_heading: "Forslag tilknyttet: %{heading}"
         search_form:
           button: Søg
           placeholder: Søg efter projekter...
@@ -89,27 +89,27 @@ da:
             other: "<strong>Du har stemt på %{count} forslag med en værdi af %{amount_spent}</strong>"
           voted_info: Du kan %{link} på ethvert tidspunkt inden denne fase afsluttes. Det er ikke nødvendigt at bruge alle de penge, der er til rådighed.
           voted_info_link: ændre din stemme
-          different_heading_assigned: "Du har aktive stemmer i en anden post: %{heading_link}"
+          different_heading_assigned: "Du har aktive stemmer i et andet budget: %{heading_link}"
           change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
           check_ballot_link: "kontroller og bekræft min afstemning"
-          zero: Du har endnu ikke stemt på projektidéer i denne gruppe.
-          verified_only: "For at oprette en projektidé til det aktuelle deltagerbudget %{verify}."
+          zero: Du har endnu ikke stemt på forslag i denne gruppe.
+          verified_only: "For at oprette et forslag til det aktuelle deltagerbudget %{verify}."
           create: "Opret din projektidé"
-          not_logged_in: "For at oprette en projektidé skal du %{sign_in} eller %{sign_up}."
-          by_feasibility: Efter gennemførlighed
-          feasible: Mulige projekter
-          unfeasible: Umulige projekter
+          not_logged_in: "For at oprette et forslag skal du %{sign_in} eller %{sign_up}."
+          by_feasibility: Kan gennemføres
+          feasible: Mulige forslag
+          unfeasible: Ikke mulige forslag
         orders:
           random: Alle idéer
           confidence_score: højest rangeret
           price: pris
       share:
-        message: "Jeg har oprettet en projektidé %{title} i %{handle}. Du kan gøre det samme!"
+        message: "Jeg har oprettet et forslag %{title} i %{handle}. Du kan gøre det samme!"
       show:
         author_deleted: Bruger slettet
-        price_explanation: Prisforklaring
+        price_explanation: Forklaring på pris
         unfeasibility_explanation: Forklaring på, hvorfor projektet ikke kan gennemføres
-        code: "Kode for investeringsprojekt: <strong>%{code}</strong>"
+        code: "Kode for forslag: <strong>%{code}</strong>"
         location: "Lokation: <strong>%{location}</strong>"
         organization_name: "Oprettet på vegne af: <strong>%{name}</strong>"
         share: Del
@@ -120,10 +120,10 @@ da:
         comments_tab: Kommentarer
         milestones_tab: Processer
         author: Forfatter
-        project_unfeasible: "Vi har desværre vurderet, at det <strong>ikke er muligt at gennemføre din projektidé</strong>, og den vil derfor ikke gå videre til afstemningsfasen."
-        project_selected: "Projektet <strong>er gået videre </strong> til afstemningsfasen."
+        project_unfeasible: "Vi har desværre vurderet, at det <strong>ikke er muligt at gennemføre dit forslag</strong>, og den vil derfor ikke gå videre til afstemning."
+        project_selected: "Forslaget <strong>er gået videre </strong> til afstemning."
         project_winner: "Projekt med flest stemmer"
-        project_not_selected: "Projektet <strong>er ikke gået videre </strong> til afstemningsfasen."
+        project_not_selected: "Forslaget <strong>er ikke gået videre </strong> til afstemning."
         see_price_explanation: Se prisforklaring
       wrong_price_format: Kun hele tal
       investment:
@@ -132,7 +132,7 @@ da:
         already_supported: Du har allerede støttet dette forslag. Del det!
         support_title: Støt forslaget
         confirm_group:
-          one: "Du kan kun støtte op om projektidéer i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
+          one: "Du kan kun støtte op om forslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
           other: "Du kan kun støtte op om projektidéer i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
         supports:
           zero: Ingen støtte
@@ -147,14 +147,14 @@ da:
         price: "Denne post har et budget på"
     progress_bar:
       assigned: "Du har tildelt: "
-      available: "Tilgængeligt budget: "
+      available: "Penge der kan fordeles: "
     show:
       group: Gruppe
-      phase: Aktuelle fase
+      phase: Aktuel fase
       unfeasible_title: Projekter, der ikke kan gennemføres
       unfeasible: Se projekter, der ikke kan gennemføres
-      unselected_title: Projekter, der ikke er udvalgt til afstemningsfasen
-      unselected: Se projekter, der ikke er udvalgt til afstemningsfasen
+      unselected_title: Projekter, der ikke er udvalgt til afstemning
+      unselected: Se projekter, der ikke er udvalgt til afstemning
       see_results: Se resultat
     results:
       link: Resultater
@@ -165,20 +165,20 @@ da:
       hide_discarded_link: Skjul fravalgte projekter
       show_all_link: Vis alle
       price: Pris
-      amount_available: Tilgængeligt budget
-      accepted: "Accepterede udgiftsforslag: "
-      discarded: "Kasserede udgiftsforslag: "
+      amount_available: 'Penge der kan fordeles: '
+      accepted: "Accepterede forslag: "
+      discarded: "Kasserede forslag: "
       incompatibles: Uforeneligede
-      investment_title: Titel på projekt
-      investment_proyects: Alle projekter
+      investment_title: Titel på forslag
+      investment_proyects: Alle forslag
       unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
-      not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemningsfasen
+      not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemning
     executions:
       link: "Processer"
-      page_title: "%{budget} - Proces"
+      page_title: "%{budget} - Milepæle"
       heading: "Processer i deltagerbudgettet"
       heading_selection_title: "Efter distrikt"
-      no_winner_investments: "Ingen vinder investeringer i denne tilstand"
+      no_winner_investments: "Ingen vinderforslag"
       filters:
         status:
           label: "Status"

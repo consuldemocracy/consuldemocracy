@@ -79,7 +79,7 @@ es:
       poster_description_description: Descripción detallada de la funcionalidad de póster
     analytics_url: "URL de estadísticas externas"
     proposal_notification_minimum_interval_in_days: "Intervalo mínimo (en días) para que los autores de propuestas puedan enviar nuevas notificaciones de propuesta"
-    proposal_notification_minimum_interval_in_days_description: "El número de días en los que un usuario puede enviar una notificación a todos los que apoyan su propuesta"
+    proposal_notification_minimum_interval_in_days_description: "El número de días en los que un usuario puede enviar una notificación a todos los que siguen su propuesta"
     direct_message_max_per_day: "Mensajes directos máximos por día"
     direct_message_max_per_day_description: "Número de mensajes directos máximos que un usuario puede enviar por día"
     feature:
