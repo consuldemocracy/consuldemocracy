@@ -31,3 +31,6 @@ de:
   dashboard:
     community:
       debates: Diskussionen
+  shared:
+    follow_entity: "%{entity} folgen"
+    unfollow_entity: "%{entity} nicht länger folgen"
