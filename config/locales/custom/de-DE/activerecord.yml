@@ -1,0 +1,19 @@
+de:
+  attributes:
+    geozone_id: "Rahmen der Operation"
+  activerecord:
+    models:
+      debate:
+        one: "Diskussion"
+        other: "Diskussionen"
+      topic:
+        one: "Thema"
+        other: "Themen"
+    attributes:
+      debate:
+        tag_list: "Tags"
+      debate/translation:
+        title: "Titel der Diskussion"
+        description: "Initialer Diskussionsbeitrag"
+      user:
+        recommended_debates: "Diskussions-Empfehlungen anzeigen"
