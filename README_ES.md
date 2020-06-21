@@ -56,8 +56,6 @@ Para ejecutar la aplicación en local:
 bin/rails s
 ```
 
-Prerequisitos para los tests: tener instalado ChromeDriver >= 2.33
-
 Para ejecutar los tests:
 
 ```

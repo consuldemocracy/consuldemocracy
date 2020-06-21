@@ -19,6 +19,7 @@ describe "CKEditor" do
     login_as(create(:administrator).user)
 
     visit new_admin_site_customization_page_path
+    fill_in_ckeditor "Content", with: "Filling in to make sure CKEditor is loaded"
     find(".cke_button__image").click
     click_link "Upload"
 
