@@ -12,6 +12,8 @@ de:
         help: Hilfe zu "Diskussionen"
       section_footer:
         title: Hilfe zu "Diskussionen"
+    new:
+      recommendation_one: Verwenden Sie bitte nicht ausschließlich Großbuchstaben für die Überschrift oder für komplette Sätze. Im Internet gilt das als schreien. Und niemand möchte angeschrien werden.
   proposals:
     index:
       section_header:
@@ -34,3 +36,4 @@ de:
   shared:
     follow_entity: "%{entity} folgen"
     unfollow_entity: "%{entity} nicht länger folgen"
+   
