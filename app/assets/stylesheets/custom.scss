@@ -44,6 +44,7 @@ background: $secondary-brand;
 
 .top-bar{
     background: white !important;
+    color: #000;
   .menu > li {
     a {
       color: $brand;
@@ -101,6 +102,18 @@ background: $secondary-brand;
 .communities-show {
     p {
     color: #222;
+  }
+}
+
+.menu-icon {
+
+  &.dark {
+
+    &:hover::after,
+    &::after {
+      background: #000;
+      box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+    }
   }
 }
 
