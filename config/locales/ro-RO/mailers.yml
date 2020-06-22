@@ -1,5 +1,6 @@
 ro:
   mailers:
+    title: "Open Government"
     no_reply: "Acest mesaj a fost trimis de la o adresă de e-mail care nu acceptă răspunsuri."
     comment:
       hi: Bună
