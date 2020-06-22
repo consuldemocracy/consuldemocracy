@@ -127,11 +127,10 @@ end
 # PERSONALIZACIÓN DE LA WEB
 
 section "Añadiendo enlaces en la cabecera" do
-  SiteCustomization::ContentBlock.create!(
-    name: "top_links",
-    locale: "es",
-    body: "<li><a href=\"http://www.valladolid.es/es/ayuntamiento/portal-transparencia\">Transparencia</a></li>\r\n<li><a href=\"http://www.valladolid.es/es/temas/hacemos/open-data-datos-abiertos\">Datos abiertos</a></li>\r\n<li><a href=\"https://www.valladolid.es/es/ciudad/participacion-ciudadana/servicios/presupuestos-participativos-informes-anuales\">Informes de gestión anuales</a></li>"
-  )
+  site_customization_content_block_header_links = SiteCustomization::ContentBlock.where(name: "top_links").first_or_create
+  site_customization_content_block_header_links.locale = "es"
+  site_customization_content_block_header_links.body = "<li><a href=\"http://www.valladolid.es/es/ayuntamiento/portal-transparencia\">Transparencia</a></li>\r\n<li><a href=\"http://www.valladolid.es/es/temas/hacemos/open-data-datos-abiertos\">Datos abiertos</a></li>\r\n<li><a href=\"https://www.valladolid.es/es/ciudad/participacion-ciudadana/servicios/presupuestos-participativos-informes-anuales\">Informes de gestión anuales</a></li>"
+  site_customization_content_block_header_links.save
 end
 
 section "Añadiendo contenido por defecto de la página de inicio" do
