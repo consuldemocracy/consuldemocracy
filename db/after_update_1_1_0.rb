@@ -21,9 +21,9 @@ end
 
 section "Creando usuario administrador para realizar las migraciones" do
   admin_password = SecureRandom.base64(15)
-  @admin = User.create!(username: "Valladolid", email: "no-reply@ava.es", password: admin_password,
+  @admin = User.create!(username: "Valladolid", email: "noreply@ava.es", password: admin_password,
                          password_confirmation: admin_password, confirmed_at: Time.current,
-                         terms_of_service: "1", document_number: "000000000", document_type: "1",
+                         terms_of_service: "1", document_number: "00000001Z", document_type: "1",
                          verified_at: Time.now)
   @admin.create_administrator
 end
