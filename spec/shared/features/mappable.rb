@@ -213,7 +213,8 @@ def fill_in_proposal_form
 end
 
 def submit_proposal_form
-  check :proposal_terms_of_service
+  # Check terms of service by default
+  # check :proposal_terms_of_service
   click_button "Create proposal"
 
   if page.has_content?("Not now, go to my proposal")
@@ -231,11 +232,13 @@ end
 def fill_in_budget_investment_form
   fill_in "Title", with: "Budget investment title"
   fill_in_ckeditor "Description", with: "Budget investment description"
-  check :budget_investment_terms_of_service
+  # Check terms of service by default
+  # check :budget_investment_terms_of_service
 end
 
 def submit_budget_investment_form
-  check :budget_investment_terms_of_service
+  # Check terms of service by default
+  # check :budget_investment_terms_of_service
   click_button "Create Investment"
 end
 

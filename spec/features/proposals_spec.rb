@@ -266,7 +266,8 @@ describe "Proposals" do
     fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_tag_list", with: "Refugees, Solidarity"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -299,7 +300,8 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "This is the summary"
     fill_in "Proposal text", with: "This is the description"
     fill_in "proposal_responsible_name", with: "Some other robot"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -319,7 +321,8 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "This is the summary"
     fill_in "Proposal text", with: "This is the description"
     fill_in "proposal_responsible_name", with: "Some other robot"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -338,7 +341,8 @@ describe "Proposals" do
     fill_in "Proposal text", with: "This is very important because..."
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -359,7 +363,8 @@ describe "Proposals" do
     fill_in "Proposal title", with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: "This is very important because..."
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
     expect(page).to have_content "Proposal created successfully."
@@ -388,7 +393,8 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: "<p>This is <script>alert('an attack');</script></p>"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -411,7 +417,8 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: "<p>This is a link www.example.org</p>"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -433,7 +440,8 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: js_injection_string
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -490,7 +498,8 @@ describe "Proposals" do
       fill_in "Proposal text", with: "This is very important because..."
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
       fill_in "proposal_responsible_name", with: "Isabel Garcia"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
 
       select("California", from: "proposal_geozone_id")
       click_button "Create proposal"
@@ -1708,7 +1717,8 @@ describe "Proposals" do
       login_as(create(:user))
       visit new_proposal_path
       fill_in "Proposal title", with: "search"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
 
       within("div.js-suggest") do
         expect(page).to have_content "You are seeing 5 of 6 proposals containing the term 'search'"
@@ -1722,7 +1732,8 @@ describe "Proposals" do
       login_as(create(:user))
       visit new_proposal_path
       fill_in "Proposal title", with: "debate"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
 
       within("div.js-suggest") do
         expect(page).not_to have_content "You are seeing"
@@ -1895,7 +1906,8 @@ describe "Successful proposals" do
       fill_in "Proposal text", with: "This is very important because..."
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
       fill_in "proposal_tag_list", with: "Refugees, Solidarity"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
 
       click_button "Create proposal"
 

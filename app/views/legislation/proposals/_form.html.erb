@@ -60,12 +60,7 @@
 
     <div class="small-12 column">
       <% if @proposal.new_record? %>
-        <%= f.check_box :terms_of_service,
-          title: t("form.accept_terms_title"),
-          label: t("form.accept_terms",
-                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
-                  ) %>
+        <%= f.hidden_field :terms_of_service, value: 1 %>
       <% end %>
     </div>
 

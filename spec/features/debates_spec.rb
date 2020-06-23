@@ -178,7 +178,8 @@ describe "Debates" do
     visit new_debate_path
     fill_in "Debate title", with: "A title for a debate"
     fill_in "Initial debate text", with: "This is very important because..."
-    check "debate_terms_of_service"
+    # Check terms of service by default
+    # check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -197,7 +198,8 @@ describe "Debates" do
     fill_in "Debate title", with: "I am a bot"
     fill_in "debate_subtitle", with: "This is a honeypot field"
     fill_in "Initial debate text", with: "This is the description"
-    check "debate_terms_of_service"
+    # Check terms of service by default
+    # check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -215,7 +217,8 @@ describe "Debates" do
     visit new_debate_path
     fill_in "Debate title", with: "I am a bot"
     fill_in "Initial debate text", with: "This is the description"
-    check "debate_terms_of_service"
+    # Check terms of service by default
+    # check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -240,7 +243,8 @@ describe "Debates" do
     visit new_debate_path
     fill_in "Debate title", with: "Testing an attack"
     fill_in "Initial debate text", with: "<p>This is <script>alert('an attack');</script></p>"
-    check "debate_terms_of_service"
+    # Check terms of service by default
+    # check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -258,7 +262,8 @@ describe "Debates" do
     visit new_debate_path
     fill_in "Debate title", with: "Testing auto link"
     fill_in "Initial debate text", with: "<p>This is a link www.example.org</p>"
-    check "debate_terms_of_service"
+    # Check terms of service by default
+    # check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -275,7 +280,8 @@ describe "Debates" do
     visit new_debate_path
     fill_in "Debate title", with: "Testing auto link"
     fill_in "Initial debate text", with: js_injection_string
-    check "debate_terms_of_service"
+    # Check terms of service by default
+    # check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -1078,7 +1084,8 @@ describe "Debates" do
       login_as(create(:user))
       visit new_debate_path
       fill_in "Debate title", with: "debate"
-      check "debate_terms_of_service"
+      # Check terms of service by default
+      # check "debate_terms_of_service"
 
       within("div.js-suggest") do
         expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
@@ -1092,7 +1099,8 @@ describe "Debates" do
       login_as(create(:user))
       visit new_debate_path
       fill_in "Debate title", with: "proposal"
-      check "debate_terms_of_service"
+      # Check terms of service by default
+      # check "debate_terms_of_service"
 
       within("div.js-suggest") do
         expect(page).not_to have_content "You are seeing"

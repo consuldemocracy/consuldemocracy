@@ -50,12 +50,7 @@
       <% if @debate.new_record? %>
         <p class="form-label"><%= t("shared.required_fields") %></p>
 
-        <%= f.check_box :terms_of_service,
-          title: t("form.accept_terms_title"),
-          label: t("form.accept_terms",
-                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
-                  ) %>
+        <%= f.hidden_field :terms_of_service, value: 1 %>
       <% end %>
 
       <%= f.submit(class: "button large margin-top", value: t("debates.#{action_name}.form.submit_button")) %>

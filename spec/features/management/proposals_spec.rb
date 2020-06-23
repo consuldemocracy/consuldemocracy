@@ -23,7 +23,8 @@ describe "Proposals" do
       fill_in "Proposal summary", with: "In summary, what we want is..."
       fill_in "Proposal text", with: "This is very important because..."
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yRYFKcMa_Ek"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
 
       click_button "Create proposal"
 
