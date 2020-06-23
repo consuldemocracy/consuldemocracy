@@ -3,7 +3,7 @@ $("#comments-box-<%= annotation.id %> a.publish-comment").on({
     e.preventDefault();
     $("a.publish-comment").hide();
     $("#js-comment-form-annotation-<%= annotation.id %>").toggle();
-    $("#js-comment-form-annotation-<%= annotation.id %> textarea").focus();
+    $("#js-comment-form-annotation-<%= annotation.id %> textarea").trigger("focus");
     return;
   }
 });
@@ -11,5 +11,5 @@ $("#comments-box-<%= annotation.id %> a.publish-comment").on({
 <% if comment.errors.any? %>
   $("#comments-box-<%= @annotation.id %> a.publish-comment").hide();
   $("#js-comment-form-annotation-<%= annotation.id %>").toggle();
-  $("#js-comment-form-annotation-<%= annotation.id %> textarea").focus();
+  $("#js-comment-form-annotation-<%= annotation.id %> textarea").trigger("focus");
 <% end %>
