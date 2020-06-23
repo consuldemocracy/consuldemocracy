@@ -1777,10 +1777,16 @@ aside .supported .button.button-remove-support.expanded {
   font-weight: bold;
 }
 
+.followable-text {
+  display: inline-block;
+  max-width: 75%;
+}
+
 .follow-switch {
   display: inline-block;
+  float: right;
   font-size: rem-calc(48);
-  margin-bottom: $line-height;
+  line-height: $line-height * 2;
 }
 
 // 11. Polls
