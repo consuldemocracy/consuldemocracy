@@ -74,6 +74,7 @@ nl:
         map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
         map_skip_checkbox: "Dit idee heeft geen eigen locatie of ik ken de locatie niet"
         tags_instructions: "Je kunt categorieën toevoegen aan je idee. Je kunt je eigen categorieën toevoegen, of de bestaande gebruiken"
+        tags_label: "Onderwerpen/labels"
       investment:
         price_title: "Prijs"
         support_title: "Stemmen"
