@@ -1828,6 +1828,10 @@ footer {
   .button {
     margin-bottom: $line-height;
   }
+
+  .image-container {
+    min-height: $line-height * 10;
+  }
 }
 
 .section-title-divider {
