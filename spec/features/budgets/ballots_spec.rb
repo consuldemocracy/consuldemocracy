@@ -467,9 +467,9 @@ describe "Ballots" do
 
     expect(page).to have_content("You have voted 0 investments")
 
-    click_link "Go back"
+    click_link "Go back to budgets"
 
-    expect(page).to have_current_path(budget_investments_path(budget, heading_id: new_york.id))
+    expect(page).to have_current_path(budgets_path)
   end
 
   context "Permissions" do

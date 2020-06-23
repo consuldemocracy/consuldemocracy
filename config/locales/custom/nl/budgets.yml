@@ -9,6 +9,7 @@ nl:
           other: "Je hebt op <span>%{count}</span> ideeën gestemd"
         voted_info: "Je stem is bevestigd"
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten"
+        back: "Ga terug de Burgerbegroting"
     phase:
       drafting: "Concept (niet publiekelijk zichtbaar)"
       informing: "Informatie"
