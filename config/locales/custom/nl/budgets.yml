@@ -10,6 +10,8 @@ nl:
         voted_info: "Je stem is bevestigd"
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten"
         back: "Ga terug de Burgerbegroting"
+      reasons_for_not_balloting:
+        not_enough_money: "You have already assigned the available budget. Remember you can change your votes at any time."
     phase:
       drafting: "Concept (niet publiekelijk zichtbaar)"
       informing: "Informatie"
