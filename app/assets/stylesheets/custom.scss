@@ -109,11 +109,11 @@ aside {
     &.hollow {
       background: $brand;
       border: 0;
-      color: #fff;
+      color: #fff !important;
 
       &:hover {
-        background: $brand-secondary;
-        color: #fff;
+        background: $hover;
+        color: #fff !important;
       }
     }
   }
