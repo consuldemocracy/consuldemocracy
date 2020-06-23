@@ -1,0 +1,177 @@
+nl:
+  debates:
+    create:
+      form:
+        submit_button: "Discussie starten"
+    form:
+      tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
+    index:
+      start_debate: "Discussie starten"
+      recommendations:
+        without_interests: "Volg initiatieven zodat wij"
+      search_results:
+        one: " met de tekst <strong>'%{search_term}'</strong>"
+        other: " met de tekst <strong>'%{search_term}'</strong>"
+      orders:
+        confidence_score: "Best beoordeeld"
+        created_at: "Nieuwste"
+        hot_score: "Meest actief"
+      section_header:
+        title: "Discussies"
+        description: "Start een discussie en deel je mening met anderen over onderwerpen die jij belangrijk vindt."
+        help: "Hulp bij discussies"
+      section_footer:
+        title: "Hulp bij discussies"
+        help_text_1: "Deel je mening over allerlei onderwerpen, kansen of knelpunten die jij belangrijk vindt."
+        help_text_2: "Om een discussie te starten of er aan deel te nemen, moet je je aanmelden op %{org}."
+    new:
+      form:
+        submit_button: "Discussie starten"
+      info: "Dit is niet de plek om een initiatief in te dienen. Ga daarvoor naar %{info_link}"
+      info_link: "deze pagina"
+      start_new: "Discussie starten"
+    show:
+      author: "Auteur"
+      comments_title: "Reacties"
+  form:
+    not_saved: "zorgden ervoor dat je %{resource} niet geplaatst kan worden. <br>Bekijk de rode tekst om te zien wat aangepast moet worden."
+    budget/investment: "idee"
+  proposals:
+    form:
+      proposal_summary_note: "(maximaal 200 karakters)"
+      proposal_video_url_note: "Je kunt een link van een Youtube of Vimeo - video toevoegen"
+      tag_category_label: "Onderwerpen/labels"
+      tags_instructions: "Label dit voorstel. Je kunt eigen labels bedenken of kiezen voor één van de bestaande"
+      map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
+      tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
+    index:
+      start_proposal: "Nieuw initiatief indienen"
+      proposals_lists: "Initiatieven"
+      top_link_proposals: "Meest gesteunde initiatieven"
+      archived_proposals: "Initiatief archief"
+      retired_proposals: "Teruggetrokken initiatieven"
+      retired_proposals_link: "Teruggetrokken initiatieven"
+      selected_proposals: "Geselecteerde initiatieven"
+      selected_proposals_link: "Bekijk de geselecteerde initiatieven"
+      section_header:
+        title: "Initiatieven"
+        description: "Steun de initiatieven die jouw enthousiast maken. Bij voldoende steun wordt een referendum gehouden."
+        help: "Hulp bij initiatieven"
+      section_footer:
+        title: "Hulp bij initiatieven"
+        description: "Steun lokale of regionale initiatieven. BIj voldoende steun, wordt een referendum gehouden."
+      recommendations:
+        without_interests: "Volg een initiatief om op de hoogte te blijven"
+      orders:
+        confidence_score: "best beoordeeld"
+        created_at: "nieuw"
+        hot_score: "actief"
+        recommendations: "aanbevolen"
+      search_results:
+        one: " met de tekst <strong>'%{search_term}'</strong>"
+        other: " met de tekst <strong>'%{search_term}'</strong>"
+    new:
+      form:
+        submit_button: "Voorstel indienen"
+      more_info: "Hoe werken initiatieven?"
+      start_new: "Voorstel indienen"
+      recommendations_title: "Advies bij het indienen  van een initiatief"
+    show:
+      author: "Auteur"
+      comments_tab: "Reacties"
+  polls:
+    index:
+      no_polls: "Geen peilingen"
+      filters:
+        expired: "Afgerond"
+      participate_button: "Deelnemen"
+      geozone_restricted: "Gebied"
+      section_header:
+        description: "Geef je mening en voorkeuren voor specifieke onderwerpen."
+        help: "Hulp bij peilingen"
+      section_footer:
+        description: "Geef je mening over specifieke onderwerpen"
+    show:
+      cant_answer_not_logged_in: "Je moet %{signin} of je %{signup} om verder te gaan"
+      comments_tab: "Reacties"
+  comments:
+    comment:
+      author: "Auteur"
+      responses_show:
+        one: "1 reactie (tonen)"
+        other: "%{count} reacties (tonen)"
+        zero: "Geen reacties"
+      responses_collapse:
+        one: "1 reactie (verbergen)"
+        other: "%{count} reacties (verbergen)"
+        zero: "Geen reacties"
+  comments_helper:
+    comments_title: "Reacties"
+  users:
+    signin: "inloggen"
+    signup: "aanmelden"
+  layouts:
+    header:
+      collaborative_legislation: "Inspraak"
+      budgets: "Burgerbegroting"
+      proposals: "Initiatieven"
+      debates: "Discussies"
+      poll_questions: "Peilingen"
+      my_account_link: "Mijn profiel"
+      administration_menu: "Menu"
+      administration: "Admin"
+      moderation: "Modereren"
+      valuation: "Evalueren"
+      open_gov: "Open Overheid"
+  votes:
+    supports: "Steun"
+  welcome:
+    steps:
+      title: "Doe mee in drie stappen"
+      subtitle: ""
+      step_1:
+        title: "Aanmelden"
+        description: "Gebruik Twitter, Facebook,Google, of jouw mailadres om in te loggen."
+        link: "Meld je binnen vijf minuten aan"
+      step_2:
+        title: "Stem"
+        description: "Deel en stem op ideeën voor de stad."
+        link: "Bekijk wat er in de gemeente gebeurt"
+      step_3:
+        title: "Deel"
+        description: "Blijf betrokken bij ideeën die jij belangrijk vindt en deel ze via social media."
+        link: ""
+    feed:
+      proposals_description: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van Groningen bepalen hoe de stad eruit komt te zien."
+      most_active:
+        debates: "Actieve discussies"
+        proposals: "Initiatieven"
+    cards:
+      title: "Uitgelicht"
+  shared:
+    edit: "Bewerken"
+    save: "Opslaan"
+    optional: "Optioneel"
+    required: "Verplicht"
+    required_fields: "Alle velden gemarkeerd met een (*) zijn verplicht"
+    back: "Ga terug"
+    search_results: "Zoekresultaten"
+    advanced_search:
+      author_type: "Type indiener"
+      date: "Periode"
+      date_range_blank: "Selecteer een periode"
+      general: "Tekst"
+      general_placeholder: "Filter op tekst"
+    tags_cloud:
+      districts: "Gebied"
+      categories: "Onderwerpen/Labels"
+    translations:
+      remove_language: "Taal verwijderen"
+      languages_in_use:
+        zero: "0 Taalinstelling"
+        one: "1 Taalinstelling"
+        other: "%{count} Taalinstelling"
+  links:
+    nested_links:
+      note: "Voeg relevante links toe"
+      add_new_link: "Link toevoegen"

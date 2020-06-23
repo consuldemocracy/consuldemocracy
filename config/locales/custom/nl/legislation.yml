@@ -1,0 +1,31 @@
+nl:
+  legislation:
+    processes:
+      header:
+        active: "Actief"
+        locked: "Gesloten"
+      debate:
+        participate: "Neem deel aan discussie"
+      index:
+        filters:
+          open: "Inspraak"
+          past: "Afgerond"
+        section_header:
+          description: "Dit zijn de huidige plannen van de gemeente. Afhankelijk van het soort plan kan je opmerkingen maken op het document, discussies starten of voorstellen indienen."
+      process:
+        see_latest_comments: "Bekijk plan"
+      shared:
+        key_dates: "Activiteiten"
+        debate_dates: "Discussies"
+        allegations_dates: "Reacties"
+    annotations:
+      index:
+        title: "Reacties"
+    draft_versions:
+      show:
+        seeing_version: "Je bekijkt nu de conceptversie"
+        text_comments: "Reacties"
+    proposals:
+      form:
+        tags_label: "Onderwerpen/labels"
+      process_title: "Inspraakproces"

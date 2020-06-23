@@ -1,7 +1,9 @@
 <span class="total-amount">
-  <%= t("budgets.progress_bar.assigned") %>
-  <span id="amount_spent"><%= @ballot.formatted_amount_spent(@heading) %></span> /
-  <%= t("budgets.investments.header.price") %> <%= @budget.formatted_heading_price(@heading) %>
+  <%= t("budgets.progress_bar.you_have_assigned") %>
+  <span id="amount_spent" class="amount-spent"><%= @ballot.formatted_amount_spent(@heading) %></span>
+  <%= t("budgets.progress_bar.assigned") %> /
+  <%= t("budgets.investments.header.price") %>
+  <span class="price"><%= @budget.formatted_heading_price(@heading) %></span>
 </span>
 
 <div class="progress progress-bar-indicator" role="progressbar" tabindex="0"

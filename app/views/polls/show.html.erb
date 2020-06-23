@@ -31,24 +31,8 @@
         <% end %>
       <% end %>
 
-      <% @questions.each do |question| %>
-        <%= render "polls/questions/question", question: question, token: @token %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="expanded poll-more-info">
-    <div class="row margin">
-      <div class="small-12 medium-9 column">
-        <h3><%= t("polls.show.more_info_title") %></h3>
-        <%= auto_link_already_sanitized_html simple_format(@poll.description) %>
-      </div>
-
-      <% if false %>
-        <aside class="small-12 medium-3 column">
-          <div class="sidebar-divider"></div>
-          <h2><%= t("polls.show.documents") %></h2>
-        </aside>
+      <% @questions.each_with_index do |question, index| %>
+        <%= render "polls/questions/question", question: question, index: index, token: @token %>
       <% end %>
     </div>
   </div>
@@ -70,19 +54,26 @@
               <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
                 <%= wysiwyg(answer.description) %>
               </div>
-              <div class="margin">
-                <a id="read_more_<%= answer.id %>"
-                   data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                   data-toggler="hide">
-                  <%= t("polls.show.read_more", answer: answer.title) %>
-                </a>
-                <a id="read_less_<%= answer.id %>"
-                   data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                   data-toggler="hide"
-                   class="hide">
-                  <%= t("polls.show.read_less", answer: answer.title) %>
-                </a>
-              </div>
+              <% if answer.description.length > 600 %>
+                <div class="margin">
+                  <a id="read_more_<%= answer.id %>"
+                     data-toggle="answer_description_<%= answer.id %>
+                                  read_more_<%= answer.id %>
+                                  read_less_<%= answer.id %>"
+                     data-toggler="hide"
+                     class="button primary">
+                    <%= t("polls.show.read_more", answer: answer.title) %>
+                  </a>
+                  <a id="read_less_<%= answer.id %>"
+                     data-toggle="answer_description_<%= answer.id %>
+                                  read_more_<%= answer.id %>
+                                  read_less_<%= answer.id %>"
+                     data-toggler="hide"
+                     class="hide button primary">
+                    <%= t("polls.show.read_less", answer: answer.title) %>
+                  </a>
+                </div>
+              <% end %>
             </div>
           <% end %>
 

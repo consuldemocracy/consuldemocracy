@@ -1,0 +1,6 @@
+nl:
+  devise_views:
+    menu:
+      login_items:
+        login: "Inloggen"
+        logout: "Uitloggen"

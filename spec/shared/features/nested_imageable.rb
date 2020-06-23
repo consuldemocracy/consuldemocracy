@@ -310,5 +310,5 @@ def expect_image_has_cached_attachment(extension)
 end
 
 def show_caption_for?(imageable_factory_name)
-  imageable_factory_name != "budget"
+  imageable_factory_name != "budget" && imageable_factory_name != "proposal"
 end

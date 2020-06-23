@@ -61,6 +61,7 @@ describe "Localization" do
       visit "/"
       expect(page).not_to have_content("Language")
       expect(page).not_to have_css("div.locale")
+      expect(page).not_to have_css(".top-links")
     end
   end
 

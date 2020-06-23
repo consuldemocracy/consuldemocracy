@@ -11,7 +11,8 @@
   <%= link_to_add_association t("documents.form.add_new_document"), f, :documents,
                               partial: "documents/document_fields",
                               id: "new_document_link",
-                              class: "button hollow  #{"hide" if documentable.documents.count >= documentable.class.max_documents_allowed}",
+                              class: "button direct-upload-button upload-document
+                                      #{"hide" if max_documents_allowed?(documentable)}",
                               data: {
                                 association_insertion_node: "#nested-documents",
                                 association_insertion_method: "append"

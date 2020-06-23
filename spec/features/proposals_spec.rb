@@ -701,8 +701,8 @@ describe "Proposals" do
       medium_proposal.update_column(:confidence_score, 5)
 
       visit proposals_path
-      click_link "highest rated"
-      expect(page).to have_selector("a.is-active", text: "highest rated")
+      click_link "Highest rated"
+      expect(page).to have_selector("a.is-active", text: "Highest rated")
 
       within "#proposals" do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -719,8 +719,8 @@ describe "Proposals" do
       worst_proposal = create(:proposal, title: "Worst proposal", created_at: Time.current - 1.day)
 
       visit proposals_path
-      click_link "newest"
-      expect(page).to have_selector("a.is-active", text: "newest")
+      click_link "Newest"
+      expect(page).to have_selector("a.is-active", text: "Newest")
 
       within "#proposals" do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -762,7 +762,7 @@ describe "Proposals" do
         login_as(user)
         visit proposals_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
         expect(page).to have_content "There are not proposals related to your interests"
       end
@@ -773,7 +773,7 @@ describe "Proposals" do
         login_as(user)
         visit proposals_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
         expect(page).to have_content "Follow proposals so we can give you recommendations"
       end
@@ -785,9 +785,9 @@ describe "Proposals" do
         login_as(user)
         visit proposals_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
-        expect(page).to have_selector("a.is-active", text: "recommendations")
+        expect(page).to have_selector("a.is-active", text: "Recommendations")
 
         within "#proposals-list" do
           expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -1005,16 +1005,16 @@ describe "Proposals" do
       visit proposals_path
 
       expect(page).to have_css  "ul.submenu"
-      expect(page).to have_link "most active"
-      expect(page).to have_link "highest rated"
-      expect(page).to have_link "newest"
+      expect(page).to have_link "Most active"
+      expect(page).to have_link "Highest rated"
+      expect(page).to have_link "Newest"
 
       click_link "View selected proposals"
 
       expect(page).not_to have_css  "ul.submenu"
-      expect(page).not_to have_link "most active"
-      expect(page).not_to have_link "highest rated"
-      expect(page).not_to have_link "newest"
+      expect(page).not_to have_link "Most active"
+      expect(page).not_to have_link "Highest rated"
+      expect(page).not_to have_link "Newest"
     end
 
     scenario "show archived proposals in selected proposals list" do
@@ -1419,7 +1419,7 @@ describe "Proposals" do
       fill_in "search", with: "Show what you got"
       click_button "Search"
 
-      expect(page).to have_selector("a.is-active", text: "relevance")
+      expect(page).to have_selector("a.is-active", text: "Relevance")
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show what you got"
@@ -1440,9 +1440,9 @@ describe "Proposals" do
 
       expect(page).to have_content "Search results"
 
-      click_link "newest"
+      click_link "Newest"
 
-      expect(page).to have_selector("a.is-active", text: "newest")
+      expect(page).to have_selector("a.is-active", text: "Newest")
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show you got"
@@ -1465,8 +1465,8 @@ describe "Proposals" do
       visit proposals_path
       fill_in "search", with: "Show you got"
       click_button "Search"
-      click_link "recommendations"
-      expect(page).to have_selector("a.is-active", text: "recommendations")
+      click_link "Recommendations"
+      expect(page).to have_selector("a.is-active", text: "Recommendations")
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show you got"
