@@ -1418,6 +1418,32 @@ aside .supported .button.button-remove-support.expanded {
     bottom: 6px;
     position: absolute;
     right: 0;
+
+    .like {
+
+      &:hover,
+      &.voted {
+        background: $like;
+        color: #fff;
+
+        .icon-like {
+          color: #fff;
+        }
+      }
+    }
+
+    .unlike {
+
+      &:hover,
+      &.voted {
+        background: $unlike;
+        color: #fff;
+
+        .icon-unlike {
+          color: #fff;
+        }
+      }
+    }
   }
 
   a {
