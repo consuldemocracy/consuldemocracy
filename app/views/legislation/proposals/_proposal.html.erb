@@ -7,8 +7,11 @@
     <% if proposal.image.present? %>
       <div class="row">
         <div class="small-12 medium-3 large-2 column text-center">
-          <%= image_tag proposal.image_url(:thumb),
-                        alt: proposal.image.title.unicode_normalize %>
+          <%= link_to legislation_process_proposal_path(proposal.legislation_process_id, proposal),
+                      id: "image" do %>
+            <%= image_tag proposal.image_url(:thumb),
+                          alt: proposal.image.title.unicode_normalize %>
+          <% end %>
         </div>
         <div class="small-12 medium-6 large-7 column margin-top">
     <% else %>

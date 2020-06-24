@@ -6,8 +6,10 @@
 
       <div class="small-12 medium-3 large-2 column text-center">
         <div data-equalizer-watch>
-          <%= image_tag investment.image_url(:thumb),
-                        alt: investment.image.title.unicode_normalize %>
+          <%= link_to namespaced_budget_investment_path(investment), id: "image" do %>
+            <%= image_tag investment.image_url(:thumb),
+                          alt: investment.image.title.unicode_normalize %>
+          <% end %>
         </div>
       </div>
 
