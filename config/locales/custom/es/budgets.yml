@@ -86,7 +86,7 @@ es:
         sign_up2: "registrarte"
     investments:
       index:
-        unfeasible_text: "Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad."
+        unfeasible_text: "Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad."
         unfeasible_text_definitions: ver definiciones aquí
         sidebar:
           create: "Realizar propuesta de gasto"
