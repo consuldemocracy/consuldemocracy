@@ -49,6 +49,11 @@ RSpec.describe Legislation::Process::Phase, type: :model do
       process.update!(debate_start_date: Date.current - 2.days,
                       debate_end_date: Date.current - 1.day)
       expect(process.debate_phase.started?).to be true
+
+      # nil
+      process.update!(debate_start_date: nil,
+                      debate_end_date: nil)
+      expect(process.debate_phase.started?).to be false
     end
 
     it "checks draft phase" do
