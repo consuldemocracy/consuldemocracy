@@ -164,6 +164,11 @@ class User < ApplicationRecord
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
+  def comment_votes(comments)
+    voted = votes.for_comments(comments)
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
     comment_flags.each_with_object({}) { |f, h| h[f.flaggable_id] = true }
