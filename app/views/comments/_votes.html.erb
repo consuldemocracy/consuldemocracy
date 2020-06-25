@@ -1,10 +1,12 @@
 <div class="votes">
   <% if user_signed_in? %>
+    <% voted_classes = css_classes_for_vote(current_user.comment_votes(comment), comment) %>
     <span class="total"><%= t("comments.comment.votes", count: comment.total_votes) %></span>
 
     <span class="in-favor in_favor">
       <% if can?(:vote, comment) %>
         <%= link_to vote_comment_path(comment, value: "yes"),
+            class: "like #{voted_classes[:in_favor]}",
             method: "post", remote: true, title: t("votes.agree") do %>
             <%= comment.total_likes %>
             <span class="icon-like">
@@ -24,6 +26,7 @@
     <span class="against">
       <% if can?(:vote, comment) %>
         <%= link_to vote_comment_path(comment, value: "no"),
+            class: "unlike #{voted_classes[:against]}",
             method: "post", remote: true, title: t("votes.disagree") do %>
             <%= comment.total_dislikes %>
             <span class="icon-unlike">

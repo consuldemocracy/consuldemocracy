@@ -462,10 +462,12 @@ describe "Commenting debates" do
       within("#comment_#{comment.id}_votes") do
         within(".in_favor") do
           expect(page).to have_content "1"
+          expect(page).to have_css "a.like.voted"
         end
 
         within(".against") do
           expect(page).to have_content "1"
+          expect(page).to have_css "a.unlike.no-voted"
         end
 
         expect(page).to have_content "2 votes"
@@ -498,16 +500,19 @@ describe "Commenting debates" do
 
         within(".in_favor") do
           expect(page).to have_content "1"
+          expect(page).to have_css "a.like.voted"
         end
 
         find(".against a").click
 
         within(".in_favor") do
           expect(page).to have_content "0"
+          expect(page).to have_css "a.like.no-voted"
         end
 
         within(".against") do
           expect(page).to have_content "1"
+          expect(page).to have_css "a.unlike.voted"
         end
 
         expect(page).to have_content "1 vote"
