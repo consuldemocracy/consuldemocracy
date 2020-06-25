@@ -500,6 +500,21 @@ describe "Admin budgets" do
       end
     end
 
+    scenario "Remove groups and headings from edit view", :js do
+      visit edit_admin_budget_path(budget)
+
+      budget.groups.each do |group|
+        group.headings.each do |heading|
+          accept_confirm { click_link "Delete heading #{heading.name}" }
+        end
+
+        accept_confirm { click_link "Delete group #{group.name}" }
+      end
+
+      expect(budget.groups.count).to eq(0)
+      expect(budget.headings.count).to eq(0)
+    end
+
     scenario "Show CTA button in public site if added" do
       visit edit_admin_budget_path(budget)
       expect(page).to have_content("Main call to action (optional)")

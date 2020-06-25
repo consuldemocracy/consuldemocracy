@@ -8,7 +8,8 @@
 <% end %>
 
 <%= link_to admin_budget_group_heading_path(@budget, group, heading), method: :delete,
-            class: "icon-link delete", id: "delete_heading_#{heading.id}" do %>
+            class: "icon-link delete", id: "delete_heading_#{heading.id}",
+            data: { confirm: t("admin.actions.confirm") } do %>
   <span data-tooltip tabindex="1" data-position="bottom" data-alignment="center"
     title="<%= t("admin.budgets.edit.groups_and_headings.delete_heading", name: heading.name) %>">
     <span class="far fa-trash-alt"></span>
