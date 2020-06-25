@@ -58,4 +58,18 @@ describe "Answers" do
 
     expect("Another title").to appear_before("New title")
   end
+
+  context "Delete" do
+    scenario "Will delete related videos" do
+      poll = create(:poll)
+      question = create(:poll_question, poll: poll)
+      answer = create(:poll_question_answer, question: question, title: "Answer with video")
+      create(:poll_answer_video, answer: answer)
+
+      visit admin_polls_path
+      within("#poll_#{poll.id}") { click_link "Delete" }
+
+      expect(page).to have_content "Poll deleted successfully"
+    end
+  end
 end
