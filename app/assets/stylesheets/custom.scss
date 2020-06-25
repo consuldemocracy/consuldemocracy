@@ -109,11 +109,11 @@ aside {
     &.hollow {
       background: $brand;
       border: 0;
-      color: #fff;
+      color: #fff !important;
 
       &:hover {
-        background: $brand-secondary;
-        color: #fff;
+        background: $hover;
+        color: #fff !important;
       }
     }
   }
@@ -379,6 +379,10 @@ aside {
   .hide-recommendations {
     top: -24px;
   }
+}
+
+.tags label {
+  display: none;
 }
 
 // 1. Header
@@ -996,13 +1000,6 @@ footer {
 
   &::before {
     left: 20px;
-  }
-}
-
-aside .supported .button.button-remove-support.expanded {
-
-  &::before {
-    left: 60px;
   }
 }
 
@@ -1803,10 +1800,16 @@ aside .supported .button.button-remove-support.expanded {
   font-weight: bold;
 }
 
+.followable-text {
+  display: inline-block;
+  max-width: 75%;
+}
+
 .follow-switch {
   display: inline-block;
+  float: right;
   font-size: rem-calc(48);
-  margin-bottom: $line-height;
+  line-height: $line-height * 2;
 }
 
 // 11. Polls
@@ -1850,6 +1853,10 @@ aside .supported .button.button-remove-support.expanded {
 
   .button {
     margin-bottom: $line-height;
+  }
+
+  .image-container {
+    min-height: $line-height * 10;
   }
 }
 

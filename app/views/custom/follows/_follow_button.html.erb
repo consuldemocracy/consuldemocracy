@@ -1,7 +1,7 @@
 <div class="js-follow">
   <span class="followable-content">
     <% if follow.followable.followed_by?(current_user) %>
-      <%= t("shared.following") %><br>
+      <span class="followable-text"><%= t("shared.following") %></span>
       <%= link_to follow_path(follow),
                   method: :delete, remote: true,
                   title: unfollow_text(follow.followable),
@@ -10,7 +10,7 @@
         <span class="fas fa-toggle-on"></span>
       <% end %>
     <% else %>
-      <%= follow_text(follow.followable) %><br>
+      <span class="followable-text"><%= follow_text(follow.followable) %></span>
       <%= link_to follows_path(followable_id: follow.followable.id,
                                followable_type: follow.followable.class.name),
                   method: :post, remote: true,

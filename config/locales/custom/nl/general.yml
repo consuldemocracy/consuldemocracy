@@ -40,7 +40,7 @@ nl:
     form:
       proposal_summary_note: "(maximaal 200 karakters)"
       proposal_video_url_note: "Je kunt een link van een Youtube of Vimeo - video toevoegen"
-      tag_category_label: "Onderwerpen/labels"
+      tags_label: "Onderwerpen/labels"
       tags_instructions: "Label dit voorstel. Je kunt eigen labels bedenken of kiezen voor één van de bestaande"
       map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
       tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"

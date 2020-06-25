@@ -9,6 +9,9 @@ nl:
           other: "Je hebt op <span>%{count}</span> ideeën gestemd"
         voted_info: "Je stem is bevestigd"
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten"
+        back: "Ga terug de Burgerbegroting"
+      reasons_for_not_balloting:
+        not_enough_money: "You have already assigned the available budget. Remember you can change your votes at any time."
     phase:
       drafting: "Concept (niet publiekelijk zichtbaar)"
       informing: "Informatie"
@@ -73,6 +76,7 @@ nl:
         map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
         map_skip_checkbox: "Dit idee heeft geen eigen locatie of ik ken de locatie niet"
         tags_instructions: "Je kunt categorieën toevoegen aan je idee. Je kunt je eigen categorieën toevoegen, of de bestaande gebruiken"
+        tags_label: "Onderwerpen/labels"
       investment:
         price_title: "Prijs"
         support_title: "Stemmen"

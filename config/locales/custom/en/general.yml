@@ -52,6 +52,8 @@ en:
         relevance: "Relevance"
         archival_date: "Archived"
         recommendations: "Recommendations"
+    form:
+      tags_label: "Onderwerpen/labels"
   polls:
     index:
       section_header:
