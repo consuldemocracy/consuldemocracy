@@ -21,7 +21,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
 
   def check_box(attribute, options = {})
     if options[:label] != false
-      label = tag.span sanitize(label_text(object, attribute, options[:label])), class: "checkbox"
+      label = tag.span sanitize(label_text(attribute, options[:label])), class: "checkbox"
 
       super(attribute, options.merge(label: label, label_options: label_options_for(options)))
     else
@@ -41,7 +41,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
       if text == false
         super
       else
-        super(attribute, sanitize(label_text(object, attribute, text)), options)
+        super(attribute, sanitize(label_text(attribute, text)), options)
       end
     end
 
@@ -50,7 +50,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
         help_text(attribute, options)
     end
 
-    def label_text(object, attribute, text)
+    def label_text(attribute, text)
       if text.nil? || text == true
         default_label_text(object, attribute)
       else
