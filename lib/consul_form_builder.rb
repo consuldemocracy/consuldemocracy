@@ -13,7 +13,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
     define_method field do |attribute, options = {}|
       label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
         super(attribute, options.merge(
-          label: false, hint: false,
+          label: false, hint: nil,
           aria: { describedby: help_text_id(attribute, options) }
         ))
     end
