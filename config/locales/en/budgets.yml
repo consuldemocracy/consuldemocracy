@@ -172,6 +172,8 @@ en:
         confirm_group:
           one: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
           other: "You can only support investments in %{count} districts. If you continue you cannot change the election of your district. Are you sure?"
+        remove_support: "Remove your support"
+        remove_support_label: "Remove your support to %{investment}"
         support: "Support"
         support_label: "Support %{investment}"
     investments_list:
@@ -186,7 +188,6 @@ en:
     supports_info:
       different: "You may support on as many different projects as you would like."
       next: "Support the projects you would like to see move on to the next phase."
-      remember: "<strong>Remember!</strong> You can only cast your support <strong>once</strong> for each project and each support is <strong>irreversible</strong>."
       scrolling: "Keep scrolling to see all ideas"
       share: "You can share the projects you have supported on through social media and attract more attention and support to them!"
       supported:

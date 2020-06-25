@@ -172,6 +172,8 @@ es:
         confirm_group:
           one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
           other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
+        remove_support: "Eliminar apoyo"
+        remove_support_label: "Eliminar tu apoyo a %{investment}"
         support: "Apoyar"
         support_label: "Apoyar %{investment}"
     investments_list:
@@ -186,7 +188,6 @@ es:
     supports_info:
       different: "Puedes apoyar tantos proyectos diferentes como quieras."
       next: "Apoya proyectos que te gustaría ver en la siguiente fase."
-      remember: "<strong>¡Recuerda!</strong> Solo puedes emitir tu apoyo <strong>una vez</strong> por cada proyecto y cada apoyo es <strong>irreversible</strong>."
       scrolling: "Sigue desplazándote para ver todas las ideas"
       share: "Puedes compartir los proyectos que has apoyado en las redes sociales y ¡atraer más atención y apoyos para ellos!"
       supported:

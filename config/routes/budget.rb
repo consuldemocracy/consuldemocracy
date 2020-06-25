@@ -8,7 +8,7 @@ resources :budgets, only: [:show, :index] do
 
     collection { get :suggest }
 
-    resources :votes, controller: "budgets/investments/votes", only: :create
+    resources :votes, controller: "budgets/investments/votes", only: [:create, :destroy]
   end
 
   resource :ballot, only: :show, controller: "budgets/ballots" do

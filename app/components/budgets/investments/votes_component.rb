@@ -7,12 +7,23 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
     @investment = investment
   end
 
-  def vote_path
+  def support_path
     case namespace
     when "management"
       management_budget_investment_votes_path(investment.budget, investment)
     else
       budget_investment_votes_path(investment.budget, investment)
+    end
+  end
+
+  def remove_support_path
+    vote = investment.votes_for.find_by!(voter: current_user)
+
+    case namespace
+    when "management"
+      management_budget_investment_vote_path(investment.budget, investment, vote)
+    else
+      budget_investment_vote_path(investment.budget, investment, vote)
     end
   end
 
@@ -43,5 +54,9 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
 
     def support_aria_label
       t("budgets.investments.votes.support_label", investment: investment.title)
+    end
+
+    def remove_support_aria_label
+      t("budgets.investments.votes.remove_support_label", investment: investment.title)
     end
 end

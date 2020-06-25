@@ -333,6 +333,56 @@ describe "Budget Investments" do
       expect(page).to have_content "CONSUL\nMANAGEMENT"
     end
 
+    scenario "Remove support on behalf of someone else in index view" do
+      create(:budget_investment, heading: heading)
+
+      login_managed_user(user)
+      login_as_manager(manager)
+
+      visit management_budget_investments_path(budget)
+      click_button "Support"
+
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
+      expect(page).not_to have_button "Support"
+
+      click_button "Remove your support"
+
+      expect(page).to have_content "No supports"
+      expect(page).to have_button "Support"
+      expect(page).not_to have_button "Remove your support"
+    end
+
+    scenario "Remove support on behalf of someone else in show view" do
+      create(:budget_investment, heading: heading, title: "Don't support me!")
+
+      login_managed_user(user)
+      login_as_manager(manager)
+
+      visit management_budget_investments_path(budget)
+      click_link "Don't support me!"
+
+      expect(page).to have_css "h1", exact_text: "Don't support me!"
+
+      click_button "Support"
+
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
+      expect(page).not_to have_button "Support"
+
+      click_button "Remove your support"
+
+      expect(page).to have_content "No supports"
+      expect(page).to have_button "Support"
+      expect(page).not_to have_button "Remove your support"
+
+      refresh
+
+      expect(page).to have_content "No supports"
+      expect(page).to have_button "Support"
+      expect(page).not_to have_button "Remove your support"
+    end
+
     scenario "Should not allow unverified users to vote proposals" do
       login_managed_user(create(:user))
       create(:budget_investment, budget: budget)

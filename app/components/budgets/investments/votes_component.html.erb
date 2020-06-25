@@ -5,19 +5,28 @@
   </span>
 
   <div class="in-favor">
-    <% if user_voted_for? %>
-      <div class="supported callout success">
-        <%= t("budgets.investments.votes.already_supported") %>
-      </div>
-    <% elsif investment.should_show_votes? %>
-      <%= button_to t("budgets.investments.votes.support"), vote_path,
-          class: "button button-support small expanded",
-          title: t("budgets.investments.investment.support_title"),
-          method: "post",
-          remote: !display_support_alert?,
-          data: ({ confirm: confirm_vote_message } if display_support_alert?),
-          disabled: !current_user,
-          "aria-label": support_aria_label %>
+    <% if investment.should_show_votes? %>
+      <% if user_voted_for? %>
+        <div class="supported">
+          <div class="callout success">
+            <%= t("budgets.investments.votes.already_supported") %>
+          </div>
+          <%= button_to t("budgets.investments.votes.remove_support"), remove_support_path,
+              class: "button button-remove-support expanded",
+              method: "delete",
+              remote: true,
+              "aria-label": remove_support_aria_label %>
+        </div>
+      <% else %>
+        <%= button_to t("budgets.investments.votes.support"), support_path,
+            class: "button button-support expanded",
+            title: t("budgets.investments.investment.support_title"),
+            method: "post",
+            remote: !display_support_alert?,
+            data:   ({ confirm: confirm_vote_message } if display_support_alert?),
+            disabled: !current_user,
+            "aria-label": support_aria_label %>
+      <% end %>
     <% end %>
   </div>
 

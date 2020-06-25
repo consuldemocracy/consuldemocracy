@@ -41,7 +41,7 @@ namespace :management do
     resources :investments, only: [:index, :new, :create, :show, :destroy], controller: "budgets/investments" do
       get :print, on: :collection
 
-      resources :votes, controller: "budgets/investments/votes", only: :create
+      resources :votes, controller: "budgets/investments/votes", only: [:create, :destroy]
     end
   end
 end
