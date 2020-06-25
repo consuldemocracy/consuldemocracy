@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200309112812) do
+ActiveRecord::Schema.define(version: 20200625133207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -273,8 +273,12 @@ ActiveRecord::Schema.define(version: 20200309112812) do
     t.datetime "ignored_flag_at"
     t.integer  "flags_count",                                 default: 0
     t.integer  "original_heading_id"
+    t.integer  "cached_votes_down",                           default: 0
+    t.integer  "cached_votes_total",                          default: 0
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
     t.index ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
+    t.index ["cached_votes_down"], name: "index_budget_investments_on_cached_votes_down", using: :btree
+    t.index ["cached_votes_total"], name: "index_budget_investments_on_cached_votes_total", using: :btree
     t.index ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
     t.index ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
     t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
