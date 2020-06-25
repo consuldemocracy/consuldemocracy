@@ -4,9 +4,10 @@ describe ConsulFormBuilder do
   before do
     dummy_model = Class.new do
       include ActiveModel::Model
-      attr_accessor :title, :quality, :summary
+      attr_accessor :title, :quality, :summary, :terms_of_service, :awesome
 
       validates :title, presence: true
+      validates :terms_of_service, acceptance: true
     end
 
     stub_const("DummyModel", dummy_model)
@@ -68,6 +69,20 @@ describe ConsulFormBuilder do
 
     it "does not generate a required attribute for optional fields" do
       render builder.text_field(:summary)
+
+      expect(page).not_to have_css "label.required"
+      expect(page).not_to have_css "input[required]"
+    end
+
+    it "generates a required attribute for checkboxes validating acceptance" do
+      render builder.check_box(:terms_of_service)
+
+      expect(page).to have_css "label.required"
+      expect(page).to have_css "input[required]"
+    end
+
+    it "does not generate a required attribute for optional check boxes" do
+      render builder.check_box(:awesome)
 
       expect(page).not_to have_css "label.required"
       expect(page).not_to have_css "input[required]"
