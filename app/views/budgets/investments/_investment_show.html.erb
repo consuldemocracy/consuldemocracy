@@ -34,8 +34,8 @@
                 <%= render "/budgets/investments/votes",
                   investment: investment,
                   investment_votes: investment_votes,
-                  vote_url: vote_budget_investment_path(investment.budget, investment, value: "yes")
-                %>
+                  vote_up_url: vote_budget_investment_path(investment.budget, investment, value: "yes"),
+                  vote_down_url: vote_budget_investment_path(investment.budget, investment, value: "no") %>
               </div>
             </div>
           <% elsif investment.should_show_vote_count? %>

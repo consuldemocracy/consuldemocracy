@@ -81,6 +81,7 @@ nl:
         price_title: "Prijs"
         support_title: "Stemmen"
         give_support: "Steun"
+        remove_support: "Steun verwijderen"
       header:
         check_ballot: "Bekijk mijn stemmen"
         price: "Dit proces heeft een budget van"

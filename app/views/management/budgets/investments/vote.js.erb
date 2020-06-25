@@ -1,4 +1,5 @@
 $("#<%= dom_id(@investment) %>_votes").html("<%= j render("/budgets/investments/votes",
                                                           investment: @investment,
                                                           investment_votes: @investment_votes,
-                                                          vote_url: namespaced_budget_investment_vote_path(@investment, value: "yes")) %>");
+                                                          vote_up_url: namespaced_budget_investment_vote_path(@investment, value: "yes"),
+                                                          vote_down_url: namespaced_budget_investment_vote_path(@investment, value: "no")) %>");

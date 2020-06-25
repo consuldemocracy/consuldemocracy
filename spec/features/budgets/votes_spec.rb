@@ -62,10 +62,10 @@ describe "Votes" do
         visit budget_investment_path(budget, investment)
 
         within(".supports") do
-          find(".in-favor a").click
+          click_link "Support"
           expect(page).to have_content "1 support"
 
-          expect(page).not_to have_selector ".in-favor a"
+          expect(page).not_to have_link "Support"
         end
       end
 
