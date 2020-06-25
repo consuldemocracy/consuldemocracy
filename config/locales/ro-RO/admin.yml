@@ -506,7 +506,7 @@ ro:
             all: Toate
         new:
           back: Înapoi
-          title: Crearea unui nou proces legislativ de colaborare
+          title: Crează unui nou proces legislativ de colaborare
           submit_button: Crează proces
         proposals:
           select_order: Sortează după
