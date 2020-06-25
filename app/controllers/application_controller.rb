@@ -42,21 +42,23 @@ class ApplicationController < ActionController::Base
     end
 
     def set_locale
-      if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
-        session[:locale] = params[:locale]
+      I18n.locale = current_locale
+
+      if current_user && current_user.locale != I18n.locale.to_s
+        current_user.update(locale: I18n.locale)
       end
 
-      if session[:locale] && I18n.available_locales.include?(session[:locale].to_sym)
-        locale = session[:locale]
+      session[:locale] = I18n.locale
+    end
+
+    def current_locale
+      if I18n.available_locales.include?(params[:locale]&.to_sym)
+        params[:locale]
+      elsif I18n.available_locales.include?(session[:locale]&.to_sym)
+        session[:locale]
       else
-        locale = I18n.default_locale
+        I18n.default_locale
       end
-
-      if current_user && current_user.locale != locale.to_s
-        current_user.update(locale: locale)
-      end
-
-      I18n.locale = locale
     end
 
     def set_layout
