@@ -99,14 +99,14 @@ ro:
           ignored: Marchează ca vizualizat
         headers:
           moderate: Moderează
-          proposal_notification: Propunerea notificării
+          proposal_notification: Notificări propunere
         hide_proposal_notifications: Ascunde propuneri
         ignore_flags: Marchează ca vizualizat
         order: Ordonează după
         orders:
           created_at: Cel mai recent
           moderated: Moderează
-        title: Notificări
+        title: Notificări propunere
     users:
       index:
         hidden: Blocat
