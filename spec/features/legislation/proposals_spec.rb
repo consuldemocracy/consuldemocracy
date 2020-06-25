@@ -155,6 +155,18 @@ describe "Legislation Proposals" do
     expect(page).to have_css("img[alt='#{Legislation::Proposal.last.image.title}']")
   end
 
+  scenario "Can visit a legislation proposal from image link" do
+    proposal = create(:legislation_proposal, :with_image, process: process)
+
+    visit legislation_process_proposals_path(process)
+
+    within("#legislation_proposal_#{proposal.id}") do
+      find("#image").click
+    end
+
+    expect(page).to have_current_path(legislation_process_proposal_path(proposal.process, proposal))
+  end
+
   scenario "Show votes score on index and show" do
     legislation_proposal_positive = create(:legislation_proposal,
                                            legislation_process_id: process.id,

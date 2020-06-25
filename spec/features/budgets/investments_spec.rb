@@ -136,6 +136,18 @@ describe "Budget Investments" do
     end
   end
 
+  scenario "Can visit an investment from image link" do
+    investment = create(:budget_investment, :with_image, heading: heading)
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    within("#budget_investment_#{investment.id}") do
+      find("#image").click
+    end
+
+    expect(page).to have_current_path(budget_investment_path(budget, id: investment.id))
+  end
+
   scenario "Index should show a map if heading has coordinates defined", :js do
     create(:budget_investment, heading: heading)
     visit budget_investments_path(budget, heading_id: heading.id)

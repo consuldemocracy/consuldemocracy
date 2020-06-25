@@ -123,6 +123,18 @@ describe "Proposals" do
         expect(page).to have_css("img[alt='#{proposal_with_image.image.title}']")
       end
     end
+
+    scenario "Can visit a proposal from image link" do
+      proposal = create(:proposal, :with_image)
+
+      visit proposals_path
+
+      within("#proposal_#{proposal.id}") do
+        find("#image").click
+      end
+
+      expect(page).to have_current_path(proposal_path(proposal))
+    end
   end
 
   scenario "Show" do
