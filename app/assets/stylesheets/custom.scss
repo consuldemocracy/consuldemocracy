@@ -385,6 +385,12 @@ aside {
   display: none;
 }
 
+.label-title {
+  color: $label;
+  font-size: $small-font-size;
+  text-transform: uppercase;
+}
+
 // 1. Header
 // --------------------
 
@@ -1920,6 +1926,52 @@ footer {
         top: -12px;
       }
     }
+  }
+}
+
+.poll-more-info-answers-divider {
+  border-top: 4px solid $border;
+}
+
+.poll-more-info-answers {
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .column:nth-child(odd),
+  .columns:nth-child(odd) {
+    border-right: 0;
+  }
+}
+
+.answer-question h2 {
+  font-size: rem-calc(24);
+}
+
+.answer {
+
+  a,
+  img {
+    outline: 0;
+  }
+
+  img {
+    border: 2px solid $border;
+  }
+
+  .icon-search-plus::before,
+  .icon-search-minus::before {
+    position: absolute;
+    right: 12px;
+    top: 0;
+  }
+
+  .zoom-link,
+  .orbit-caption,
+  .orbit-controls {
+    display: none;
   }
 }
 

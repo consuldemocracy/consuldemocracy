@@ -38,79 +38,91 @@
   </div>
 
   <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
-    <div class="row padding">
-      <% @poll_questions_answers.each do |answer| %>
-        <div class="small-12 medium-6 column end answer <%= cycle("first", "") %>" id="answer_<%= answer.id %>">
-          <% if answer.description.present? %>
-            <h3><%= answer.title %></h3>
-          <% end %>
-
-          <% if answer.images.any? %>
-            <%= render "gallery", answer: answer %>
-          <% end %>
-
-          <% if answer.description.present? %>
-            <div class="margin-top">
-              <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
-                <%= wysiwyg(answer.description) %>
-              </div>
-              <% if answer.description.length > 600 %>
-                <div class="margin">
-                  <a id="read_more_<%= answer.id %>"
-                     data-toggle="answer_description_<%= answer.id %>
-                                  read_more_<%= answer.id %>
-                                  read_less_<%= answer.id %>"
-                     data-toggler="hide"
-                     class="button primary">
-                    <%= t("polls.show.read_more", answer: answer.title) %>
-                  </a>
-                  <a id="read_less_<%= answer.id %>"
-                     data-toggle="answer_description_<%= answer.id %>
-                                  read_more_<%= answer.id %>
-                                  read_less_<%= answer.id %>"
-                     data-toggler="hide"
-                     class="hide button primary">
-                    <%= t("polls.show.read_less", answer: answer.title) %>
-                  </a>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-
-          <% if answer.documents.present? %>
-            <div class="document-link">
-              <p>
-                <span class="icon-document"></span>&nbsp;
-                <strong><%= t("polls.show.documents") %></strong>
-              </p>
-
-              <% answer.documents.each do |document| %>
-                  <%= link_to document.title,
-                              document.attachment.url,
-                              target: "_blank",
-                              rel: "nofollow" %><br>
-              <% end %>
-            </div>
-          <% end %>
-
-          <% if answer.videos.present? %>
-            <div class="video-link">
-              <p>
-                <span class="icon-video"></span>&nbsp;
-                <strong><%= t("polls.show.videos") %></strong>
-              </p>
-
-              <% answer.videos.each do |video| %>
-                  <%= link_to video.title,
-                              video.url,
-                              target: "_blank",
-                              rel: "nofollow" %><br>
-              <% end %>
-            </div>
-          <% end %>
+    <% @poll.questions_with_answer_descriptions.each do |question| %>
+      <div class="poll-more-info-answers-divider"></div>
+      <div class="row">
+        <div class="small-12 column padding answer-question">
+          <span class="label-title"><%= t("polls.show.more_info_title") %></span>
+          <h2 id="answer_<%= question.answers_with_description.first.id %>">
+            <%= question.title %>
+          </h2>
         </div>
-      <% end %>
-    </div>
+      </div>
+      <div class="row padding">
+        <% question.answers_with_description.each do |answer| %>
+          <div class="small-12 medium-6 column end answer <%= cycle("first", "float-right") %>">
+
+            <% if answer.description.present? %>
+              <h3><%= answer.title %></h3>
+            <% end %>
+
+            <% if answer.images.any? %>
+              <%= render "gallery", answer: answer %>
+            <% end %>
+
+            <% if answer.description.present? %>
+              <div class="margin-top">
+                <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
+                  <%= wysiwyg(answer.description) %>
+                </div>
+                <% if answer.description.length > 600 %>
+                  <div class="margin">
+                    <a id="read_more_<%= answer.id %>"
+                       data-toggle="answer_description_<%= answer.id %>
+                                    read_more_<%= answer.id %>
+                                    read_less_<%= answer.id %>"
+                       data-toggler="hide"
+                       class="button primary">
+                      <%= t("polls.show.read_more", answer: answer.title) %>
+                    </a>
+                    <a id="read_less_<%= answer.id %>"
+                       data-toggle="answer_description_<%= answer.id %>
+                                    read_more_<%= answer.id %>
+                                    read_less_<%= answer.id %>"
+                       data-toggler="hide"
+                       class="hide button primary">
+                      <%= t("polls.show.read_less", answer: answer.title) %>
+                    </a>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+
+            <% if answer.documents.present? %>
+              <div class="document-link">
+                <p>
+                  <span class="icon-document"></span>&nbsp;
+                  <strong><%= t("polls.show.documents") %></strong>
+                </p>
+
+                <% answer.documents.each do |document| %>
+                    <%= link_to document.title,
+                                document.attachment.url,
+                                target: "_blank",
+                                rel: "nofollow" %><br>
+                <% end %>
+              </div>
+            <% end %>
+
+            <% if answer.videos.present? %>
+              <div class="video-link">
+                <p>
+                  <span class="icon-video"></span>&nbsp;
+                  <strong><%= t("polls.show.videos") %></strong>
+                </p>
+
+                <% answer.videos.each do |video| %>
+                    <%= link_to video.title,
+                                video.url,
+                                target: "_blank",
+                                rel: "nofollow" %><br>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
   <div class="tabs-content" data-tabs-content="polls_tabs">
