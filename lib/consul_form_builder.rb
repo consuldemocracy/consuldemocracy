@@ -11,9 +11,9 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
 
   %i[text_field text_area date_field number_field password_field email_field].each do |field|
     define_method field do |attribute, options = {}|
-      label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
+      label_with_hint(attribute, options.merge(label_options: label_options_for(attribute, options))) +
         super(attribute, options.merge(
-          label: false, hint: nil,
+          label: false, hint: nil, required: required?(attribute),
           aria: { describedby: help_text_id(attribute, options) }
         ))
     end
@@ -23,7 +23,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
     if options[:label] != false
       label = tag.span sanitize(label_text(attribute, options[:label])), class: "checkbox"
 
-      super(attribute, options.merge(label: label, label_options: label_options_for(options)))
+      super(attribute, options.merge(label: label, label_options: label_options_for(attribute, options)))
     else
       super
     end
@@ -36,7 +36,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
   end
 
   def select(attribute, choices, options = {}, html_options = {})
-    label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
+    label_with_hint(attribute, options.merge(label_options: label_options_for(attribute, options))) +
       super(attribute, choices, options.merge(label: false, hint: nil), html_options.merge({
         aria: { describedby: help_text_id(attribute, options) }
       }))
@@ -65,8 +65,29 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
       end
     end
 
-    def label_options_for(options)
-      label_options = options[:label_options] || {}
+    def required?(attribute)
+      validators = object.class.validators_on(attribute).select do |validator|
+        validator.kind == :presence && validator.options.slice(:if, :unless).empty?
+      end.select do |validator|
+        case validator.options[:on]
+        when :create
+          object.new_record?
+        when :update
+          !object.new_record?
+        else
+          true
+        end
+      end
+
+      validators.any?
+    end
+
+    def label_options_for(attribute, options)
+      label_options = options[:label_options].dup || {}
+
+      if required?(attribute)
+        label_options[:class] = "required #{label_options[:class]}"
+      end
 
       if options[:id]
         { for: options[:id] }.merge(label_options)
