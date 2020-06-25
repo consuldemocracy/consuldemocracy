@@ -134,41 +134,48 @@ describe "Debates" do
     end
   end
 
-  scenario "Show votes score on index and show" do
-    debate_positive = create(:debate, title: "Debate positive")
-    debate_zero = create(:debate, title: "Debate zero")
-    debate_negative = create(:debate, title: "Debate negative")
+  scenario "Show total votes on index and show" do
+    debate_with_postive_votes = create(:debate, title: "Liked Debate")
+    2.times { create(:vote, votable: debate_with_postive_votes, vote_flag: true) }
 
-    10.times { create(:vote, votable: debate_positive, vote_flag: true) }
-    3.times  { create(:vote, votable: debate_positive, vote_flag: false) }
+    debate_with_negative_votes = create(:debate, title: "Unliked Debate")
+    3.times { create(:vote, votable: debate_with_negative_votes, vote_flag: false) }
 
-    5.times { create(:vote, votable: debate_zero, vote_flag: true) }
-    5.times  { create(:vote, votable: debate_zero, vote_flag: false) }
+    debate_with_both_votes = create(:debate, title: "Voted Debate")
+    3.times { create(:vote, votable: debate_with_both_votes, vote_flag: true) }
+    2.times { create(:vote, votable: debate_with_both_votes, vote_flag: false) }
 
-    6.times  { create(:vote, votable: debate_negative, vote_flag: false) }
+    debate_without_votes = create(:debate, title: "Unvoted Debate")
 
     visit debates_path
 
-    within "#debate_#{debate_positive.id}" do
-      expect(page).to have_content("7 votes")
+    within "#debate_#{debate_with_postive_votes.id}" do
+      expect(page).to have_content("2 votes")
     end
 
-    within "#debate_#{debate_zero.id}" do
+    within "#debate_#{debate_with_negative_votes.id}" do
+      expect(page).to have_content("3 votes")
+    end
+
+    within "#debate_#{debate_with_both_votes.id}" do
+      expect(page).to have_content("5 votes")
+    end
+
+    within "#debate_#{debate_without_votes.id}" do
       expect(page).to have_content("No votes")
     end
 
-    within "#debate_#{debate_negative.id}" do
-      expect(page).to have_content("-6 votes")
-    end
+    visit debate_path(debate_with_postive_votes)
+    expect(page).to have_content("2 votes")
 
-    visit debate_path(debate_positive)
-    expect(page).to have_content("7 votes")
+    visit debate_path(debate_with_negative_votes)
+    expect(page).to have_content("3 votes")
 
-    visit debate_path(debate_zero)
+    visit debate_path(debate_with_both_votes)
+    expect(page).to have_content("5 votes")
+
+    visit debate_path(debate_without_votes)
     expect(page).to have_content("No votes")
-
-    visit debate_path(debate_negative)
-    expect(page).to have_content("-6 votes")
   end
 
   scenario "Create" do

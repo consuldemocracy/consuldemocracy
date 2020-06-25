@@ -40,7 +40,7 @@
   </div>
 
   <span class="total-votes">
-    <%= t("debates.debate.votes", count: debate.votes_score) %>
+    <%= t("debates.debate.votes", count: debate.total_votes) %>
   </span>
 
   <% if user_signed_in? && current_user.organization? %>
