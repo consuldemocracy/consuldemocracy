@@ -842,7 +842,8 @@ describe "Budget Investments" do
       fill_in "Title", with: "I am a bot"
       fill_in "budget_investment_subtitle", with: "This is the honeypot"
       fill_in "Description", with: "This is the description"
-      check   "I agree to the Privacy Policy and the Terms and conditions of use"
+      # Check terms of service by default
+      # check "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create Investment"
 
@@ -862,7 +863,8 @@ describe "Budget Investments" do
 
       fill_in "Title", with: "I am a bot"
       fill_in "Description", with: "This is the description"
-      check   "I agree to the Privacy Policy and the Terms and conditions of use"
+      # Check terms of service by default
+      # check "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create Investment"
 
@@ -886,7 +888,8 @@ describe "Budget Investments" do
       fill_in "If you are proposing in the name of a collective/organization, "\
               "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
-      check   "I agree to the Privacy Policy and the Terms and conditions of use"
+      # Check terms of service by default
+      # check "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create Investment"
 
@@ -923,7 +926,8 @@ describe "Budget Investments" do
       fill_in "budget_investment_location", with: "City center"
       fill_in "budget_investment_organization_name", with: "T.I.A."
       fill_in "budget_investment_tag_list", with: "Towers"
-      check   "budget_investment_terms_of_service"
+      # Check terms of service by default
+      # check "budget_investment_terms_of_service"
 
       click_button "Create Investment"
 
@@ -950,7 +954,8 @@ describe "Budget Investments" do
 
       click_link("Edit", match: :first)
       fill_in "Title", with: "Park improvements"
-      check "budget_investment_terms_of_service"
+      # Check terms of service by default
+      # check "budget_investment_terms_of_service"
 
       click_button "Update Investment"
 
@@ -968,7 +973,8 @@ describe "Budget Investments" do
       visit user_path(daniel, filter: "budget_investments")
       click_link("Edit", match: :first)
       fill_in "Title", with: ""
-      check "budget_investment_terms_of_service"
+      # Check terms of service by default
+      # check "budget_investment_terms_of_service"
 
       click_button "Update Investment"
 
