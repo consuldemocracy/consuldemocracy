@@ -1,6 +1,6 @@
 require "csv"
 
-class CensusApi
+class CustomCensusApi
 
   def call(document_type, document_number, postal_code)
     response = Response.new(nil, nil)
@@ -14,6 +14,7 @@ class CensusApi
         get_response_body(document_type, document_number, nonce, entity_id(entity_code)),
         nonce
       )
+      response.geozone_external_code = census_geozone_external_code(entity_code)
 
       break if response.is_citizen?
     end
@@ -25,8 +26,12 @@ class CensusApi
     CENSUS_DICTIONARY[postal_code] || []
   end
 
+  def census_geozone_external_code(entity_code)
+    GEOZONES_DICTIONARY[entity_code]
+  end
+
   def entity_id(id)
-    Rails.env.production? ? id : 999
+    Rails.env.development? ? 999 : id
   end
 
   class Response
@@ -37,7 +42,8 @@ class CensusApi
       :response_nonce,
       :census_birth_time,
       :census_date_of_birth,
-      :census_age
+      :census_age,
+      :geozone_external_code
     )
 
     def initialize(body, request_nonce)

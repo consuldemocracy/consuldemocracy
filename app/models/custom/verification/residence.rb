@@ -5,7 +5,8 @@ class Verification::Residence
   include ActiveModel::Dates
   include ActiveModel::Validations::Callbacks
 
-  attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
+  attr_accessor :user, :document_type, :date_of_birth, :postal_code, :terms_of_service
+  attr_writer :document_number
 
   before_validation :call_census_api
 
@@ -17,6 +18,7 @@ class Verification::Residence
   validates :terms_of_service, acceptance: { allow_nil: false }
   validates :postal_code, length: { is: 5 }
 
+  validate :document_number_format
   validate :successful_census_request
   validate :user_is_citizen?
   validate :valid_age?
@@ -41,23 +43,38 @@ class Verification::Residence
       document_type: document_type,
       date_of_birth: @census_api_response.census_date_of_birth,
       residence_verified_at: Time.now,
-      verified_at: Time.now
+      verified_at: Time.now,
+      geozone: Geozone.find_by(external_code: @census_api_response.geozone_external_code)
     )
+  end
+
+  def document_number
+    @document_number&.strip
   end
 
   private
 
+    def document_number_format
+      return if document_number.length == 9 || ["1", "3"].exclude?(document_type.to_s)
+
+      errors.add(:document_number, "Número de documento inválido") if document_number.length != 9
+    end
+
     def document_number_uniqueness
-      if document_type.to_s == "1" || document_type.to_s == 3
-        errors.add(:document_number, "Numero de documento inválido") if document_number.length != 9
-      elsif (document_type.to_s == "1" || document_type.to_s == "3") && document_number.length >= 8
-        errors.add(:document_number, I18n.t('errors.messages.taken')) if User.where("document_number like '" + document_number.to_s.first(8) + "%'" ).where("id != ?", user.id).any?
-      elsif User.where(document_number: document_number).where("id != ?", user.id).any?
-        errors.add(:document_number, I18n.t('errors.messages.taken'))
-      end
+      return if errors.include?(:document_number)
+
+      taken = if document_number.length >= 8
+                User.where("document_number like '" + document_number.to_s.first(8) + "%'").where("id != ?", user.id).exists?
+              else
+                User.where(document_number: document_number).where("id != ?", user.id).exists?
+              end
+
+      errors.add(:document_number, I18n.t('errors.messages.taken')) if taken
     end
 
     def successful_census_request
+      return if errors.include?(:document_number)
+
       unless @census_api_response.valid?
         errors.add(:document_number, "Ha habido un error al consultar el censo")
       end
@@ -72,7 +89,7 @@ class Verification::Residence
     end
 
     def call_census_api
-      @census_api_response = CensusApi.new.call(document_type, document_number, postal_code)
+      @census_api_response = CustomCensusApi.new.call(document_type, document_number, postal_code)
 
       if Rails.env.production? && !user_is_citizen?
         store_failed_attempt

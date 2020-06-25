@@ -3,6 +3,7 @@ es:
     ballots:
       reasons_for_not_balloting:
         different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+        invalid_geozone: Solo puedes votar proyectos de tu zona.
     phase:
       accepting: Presentación de propuestas
     index:
