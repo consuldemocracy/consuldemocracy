@@ -1396,7 +1396,7 @@ ka:
       budget_supporting:
         title: "მხარდაჭერის ფაზის სტატისტიკა"
         headings: რუბრიკები
-        users: მომხმარებლები
+        users: მომხმარებელი
         vote_count: ხმები
         participant_count: მონაწილეები
       direct_messages:
