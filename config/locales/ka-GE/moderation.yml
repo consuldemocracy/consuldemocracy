@@ -8,7 +8,7 @@ ka:
         filters:
           all: ყველა
           pending_flag_review: მოლოდინის რეჟიმშია
-          with_ignored_flag: მონიშნული, როგორც ნანახი
+          with_ignored_flag: მონიშნულია, როგორც ნანახი
         headers:
           comment: კომენტარი
           moderate: მოდერაცია
@@ -30,7 +30,7 @@ ka:
         filters:
           all: ყველა
           pending_flag_review: მოლოდინის რეჟიმშია
-          with_ignored_flag: მონიშნული, როგორც ნანახი
+          with_ignored_flag: მონიშნულია, როგორც ნანახი
         headers:
           debate: დებატები
           moderate: მოდერაცია
@@ -77,7 +77,7 @@ ka:
         filters:
           all: ყველა
           pending_flag_review: მოლოდინის რეჟიმშია
-          with_ignored_flag: მონიშნული, როგორც ნანახი
+          with_ignored_flag: მონიშნულია, როგორც ნანახი
         headers:
           moderate: მოდერაცია
           budget_investment: საბიუჯეტო ინვესტიცია
