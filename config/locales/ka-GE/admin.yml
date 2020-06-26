@@ -1358,7 +1358,7 @@ ka:
           comment_votes: კომენტარებზე მიცემული ხმები
           comments: კომენტარები
           debate_votes: დებატებზე მიცემული ხმები
-          debates: დებატები
+          debates: დებატი
           proposal_votes: ინიციატივებზე მიცემული ხმები
           proposals: ინიციატივები
           budgets: ღია ბიუჯეტები
@@ -1378,7 +1378,7 @@ ka:
         incomplete_verifications: ნაწილობრივ ვერიფიცირებული
         polls: გამოკითხვები
       graph:
-        debate_created: დებატები
+        debate_created: დებატი
         visit: ვიზიტები
         level_2_user: მე-2 დონის მომხმარებლები
         proposal_created: მოქალაქის წინადადება
