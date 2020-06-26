@@ -35,7 +35,7 @@ ka:
       currency: '€'
       groups:
         all_city: მთელი ქალაქი
-        districts: რაიონები
+        districts: ოლქები
       valuator_groups:
         culture_and_sports: კულტურა და სპორტი
         gender_and_diversity: გენდერი და მრავალფეროვნების პოლიტიკა
