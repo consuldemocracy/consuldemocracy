@@ -1302,9 +1302,9 @@ ka:
         name: სახელი
         external_code: გარეშე კოდი
         census_code: აღწერის კოდი
-        code_help: აღწერის API-ში ინიცირებული გეოგრ. ზონის პასუხის კოდი
+        code_help: აღწერის API-ში ინიცირებული გეოგრ. ზონის საიდენტიფიკაციო კოდი
         coordinates: კოორდინატები
-        coordinates_help: კოორდინატები, რომელთა საშუალებითაც HTML რუკაზე გენერირდება ტერიტორია, რომელიც ირეაგირებს შეხებაზე
+        coordinates_help: კოორდინატები, რომელთა საშუალებითაც HTML რუკაზე გენერირდება ტერიტორია, რომელიც ირეაგირებს მაუსით დაწკაპებაზე
       edit:
         form:
           submit_button: ცვლილებების შენახვა
@@ -1375,7 +1375,7 @@ ka:
         participatory_budgets: მონაწილეობითი ბიუჯეტები
         direct_messages: პირდაპირი გზავნილები
         proposal_notifications: შეტყობინებები ინიციატივის თაობაზე
-        incomplete_verifications: ნაწილობრივ ვერიფიცირებული
+        incomplete_verifications: ნაწილობრივ გადამოწმებული
         polls: გამოკითხვები
       graph:
         debate_created: დებატი
@@ -1412,13 +1412,13 @@ ka:
         title: გამოკითხვის სტატისტიკა
         all: გამოკითხვები
         web_participants: ქსელის წევრები
-        total_participants: მონაწილეთა საერთო ჯამი
+        total_participants: მონაწილეთა საერთო რაოდენობა
         poll_questions: "შეკითხვები გამოკითხვიდან: %{poll}"
         table:
           poll_name: გამოკითხვა
           question_name: კითხვა
           origin_web: ქსელის წევრები
-          origin_total: მონაწილეთა საერთო ჯამი
+          origin_total: მონაწილეთა საერთო რაოდენობა
     tags:
       create: თემის შექმნა
       destroy: თემის წაშლა
@@ -1444,7 +1444,7 @@ ka:
       index:
         phone_not_given: ტელეფონი მითითებული არ არის
         sms_code_not_confirmed: არ არის დადასტურებული სმს კოდით
-        title: ნაწილობრივ ვერიფიცირებული
+        title: ნაწილობრივ გადამოწმებული
     site_customization:
       content_blocks:
         information: ინფორმაცია შინაარსის ბლოკებზე
