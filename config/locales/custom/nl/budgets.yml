@@ -11,7 +11,7 @@ nl:
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten"
         back: "Ga terug de Burgerbegroting"
       reasons_for_not_balloting:
-        not_enough_money: "You have already assigned the available budget. Remember you can change your votes at any time."
+        not_enough_money: "Je kunt dit geld nu niet meer besteden. Als je wilt kun je je stem altijd aanpassen tijdens de stemfase. "
     phase:
       drafting: "Concept (niet publiekelijk zichtbaar)"
       informing: "Informatie"
@@ -44,8 +44,11 @@ nl:
         scrolling: "Blijf scrollen om alle ideeën te zien"
     investments:
       index:
-        by_heading: "Ideeën voor de %{heading}"
+        by_heading: "Ideeën voor %{heading}"
         sidebar:
+          voted:
+            one: "Je hebt op <strong>1 idee</strong> gestemd die in totaal %{amount_spent} kosten."
+            other: "Je hebt op <strong>%{count} ideeën</strong> gestemd die in totaal %{amount_spent} kosten."
           voted_info: "Tot het einde van de fase kun je %{link}. Het is niet nodig om al het geld te besteden."
           voted_info_link: "je stem wijzigen"
           create: "Nieuw idee delen"
@@ -70,6 +73,7 @@ nl:
         location: "Locatie: <strong>%{location}</strong>"
         author: "Auteur"
         comments_tab: "Reacties"
+        project_selected: "Dit idee <strong>is geselecteerd</strong> voor de stemfase."
         project_not_selected: "Dit idee is niet geselecteerd voor de stemfase."
       form:
         title: "Deel een idee"

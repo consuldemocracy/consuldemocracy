@@ -33,6 +33,13 @@ nl:
         title: "Titel initiatief"
         description: "Omschrijving"
         summary: "Samenvatting initiatief"
+      user:
+        public_activity: "Maak mijn activiteit openbaar"
+        email_on_comment: "Stuur mij een mail wanneer iemand reageert op mijn initiatieven of discussies"
+        email_on_comment_reply: "Stuur mij een mail wanneer iemand op mijn reactie reageert"
+        email_on_direct_message: "Ontvang emails over privéberichten"
+        recommended_debates: "Toon aanbevelingen voor discussie"
+        recommended_proposals: "Toon aanbevelingen voor voorstellen"
       budget:
         main_button_text: "Tekst knop"
         main_button_url: "Link knop"

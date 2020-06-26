@@ -386,6 +386,7 @@ nl:
       user_search:
         button: "Zoek"
       actions: "Acties"
+      moderated_content: "Deze inhoud is door de moderators gemarkeerd en verborgen. Controleer hier of dit klopt."
       delete: "Verwijder"
     dashboard:
       index:
