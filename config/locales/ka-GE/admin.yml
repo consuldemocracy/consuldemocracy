@@ -1381,7 +1381,7 @@ ka:
         debate_created: დებატები
         visit: ვიზიტები
         level_2_user: მე-2 დონის მომხმარებლები
-        proposal_created: მოქალაქის წინადადებები
+        proposal_created: მოქალაქის წინადადება
       budgets:
         no_data_before_balloting_phase: "კენჭისყრის ფაზამდე საჩვენებელი მონაცემები არ მოიძებნა."
         title: "მონაწილეობითი ბიუჯეტები - მონაწილეობის სტატისტიკა"
