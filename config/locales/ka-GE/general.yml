@@ -276,8 +276,8 @@ ka:
       mark_as_unread: მოვნიშნოთ, როგორც წასაკითხი
       notifiable_hidden: ეს რესურსი ხელმისაწვდომი აღარ არის.
   map:
-    title: "რაიონები"
-    proposal_for_district: "ინიციატივის დაწყება თქვენი რაიონისთვის"
+    title: "ოლქები"
+    proposal_for_district: "ინიციატივის დაწყება თქვენი ოლქისთვის"
     start_proposal: ახალი ინიციატივის შექმნა
   omniauth:
     facebook:
@@ -613,7 +613,7 @@ ka:
       participate_button: "ამ გამოკითხვაში მონაწილეობა"
       participate_button_expired: "გამოკითხვა დასრულდა"
       no_geozone_restricted: "მთელი ქალაქი"
-      geozone_restricted: "რაიონები"
+      geozone_restricted: "ოლქები"
       geozone_info: "შუაძლია მონაწილეობა მიაღებინოს ადამიანებს შემდეგი გეო. ზონის საყოველთაო აღწერაში: "
       already_answer: "თქვენ უკვე მიიღეთ მონაწილეობა ამ გამოკითხვაში"
       not_logged_in: "მონაწილეობის მისაღებად თქვენ უნდა გაიაროთ ავტორიზაცია ან რეგისტრაცია"
@@ -745,8 +745,8 @@ ka:
         see_all: "ყველას ნახვა"
     tags_cloud:
       tags: ფართოდ განხილული
-      districts: "რაიონები"
-      districts_list: "რაიონების ჩამონათვალი"
+      districts: "ოლქები"
+      districts_list: "ოლქების ჩამონათვალი"
       categories: "კატეგორიები"
     target_blank: " (ბმული გაიხსნება ახალ ფანჯარაში)"
     you_are_in: "შესული ხართ"
@@ -867,7 +867,7 @@ ka:
       unfeasible: არაგანხორციელებად საინვესტიციო პროექტებზე ხმის მიცემა შეუძლებელია
       not_voting_allowed: ხმის მიცემის ფაზა დასრულებულია
       different_heading_assigned:
-        one: "საინვესტიციო პროექტებზე ხმის მიცემა მხოლოდ %{count} რაიონში შეგიძლიათ. თქვენ უკვე მეიცით ხმა %{supported_headings}-ში."
+        one: "საინვესტიციო პროექტებზე ხმის მიცემა მხოლოდ %{count} ოლქში შეგიძლიათ. თქვენ უკვე მეიცით ხმა %{supported_headings}-ში."
         other: "საინვესტიციო პროექტებზე ხმის მიცემა მხოლოდ %{count} რაიონში შეგიძლიათ. თქვენ უკვე მეიცით ხმა %{supported_headings}-ში."
   welcome:
     feed:
