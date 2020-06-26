@@ -1008,7 +1008,7 @@ ka:
         dates: "თარიღები"
         start_date: "დაწყების თარიღი"
         closing_date: "დასრულების თარიღი"
-        geozone_restricted: "შეზღუდულია უბნების მიხედვით"
+        geozone_restricted: "შეზღუდულია ოლქების მიხედვით"
       new:
         title: "ახალი გამოკითხვა"
         submit_button: "გამოკითხვის შექმნა"
@@ -1312,7 +1312,7 @@ ka:
         back: უკან დაბრუნება
       new:
         back: უკან დაბრუნება
-        creating: უბნის შექმნა
+        creating: ოლქის შექმნა
       delete:
         success: გეოგრაფიული ზონა წარმატებით წაიშალა
         error: ეს გეოგრაფიული ზონა ვერ წაიშლება, რადგანაც მასზე მიმაგრებულია სხვა ელემენტები
@@ -1392,7 +1392,7 @@ ka:
         vote_count: ხმები
         participant_count: მონაწილეები
         votes_per_heading: თითოეულ რუბრიკაზე მიღებული ხმა
-        participants_per_district: მონაწილეთა რაოდენობა თითოეულ უბანზე
+        participants_per_district: მონაწილეთა რაოდენობა თითოეულ ოლქზე
       budget_supporting:
         title: "მხარდაჭერის ფაზის სტატისტიკა"
         headings: რუბრიკები
