@@ -5,9 +5,8 @@
     <%= question.title %>
   </h3>
 
-  <% answers_with_description = question.question_answers.select { |answer| answer.description.present? } %>
-  <% if answers_with_description.any? %>
-    <a href="#answer_<%= "#{answers_with_description.first.id}" %>" class="small" data-smooth-scroll>
+  <% if question.answers_with_description.any? %>
+    <a href="#answer_<%= "#{question.answers_with_description.first.id}" %>" class="small" data-smooth-scroll>
       <%= t("polls.show.more_info_options") %>
     </a>
   <% end %>

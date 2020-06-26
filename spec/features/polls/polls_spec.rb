@@ -242,6 +242,26 @@ describe "Polls" do
       end
     end
 
+    scenario "Show orbit bullets only when there is more than one image" do
+      poll = create(:poll)
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, title: "Answer with one image", question: question)
+      answer2 = create(:poll_question_answer, title: "Answer with two images", question: question)
+      create(:image, imageable: answer1)
+      create(:image, imageable: answer2)
+      create(:image, imageable: answer2)
+
+      visit poll_path(poll)
+
+      within("#answer_#{answer1.id}_gallery") do
+        expect(page).not_to have_css "nav.orbit-bullets"
+      end
+
+      within("#answer_#{answer2.id}_gallery") do
+        expect(page).to have_css "nav.orbit-bullets"
+      end
+    end
+
     scenario "Non-logged in users" do
       create(:poll_question, :yes_no, poll: poll)
 
