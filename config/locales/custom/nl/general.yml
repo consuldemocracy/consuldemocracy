@@ -1,4 +1,12 @@
 nl:
+  account:
+    show:
+      change_credentials_link: "Inloggegevens aanpassen"
+      save_changes_submit: "Opslaan"
+      title: "Mijn profiel"
+      user_permission_info: "Met dit profiel kun je..."
+      user_permission_debates: "Deelnemen in debatten"
+      user_permission_votes: "Deelnemen aan stemrondes"
   debates:
     create:
       form:
@@ -41,7 +49,7 @@ nl:
       proposal_summary_note: "(maximaal 200 karakters)"
       proposal_video_url_note: "Je kunt een link van een Youtube of Vimeo - video toevoegen"
       tags_label: "Onderwerpen/labels"
-      tags_instructions: "Label dit voorstel. Je kunt eigen labels bedenken of kiezen voor één van de bestaande"
+      tags_instructions: "Label dit voorstel. Je kunt eigen labels bedenken of kiezen voor bestaande"
       map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
       tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
     index:
@@ -135,7 +143,7 @@ nl:
         link: "Meld je binnen vijf minuten aan"
       step_2:
         title: "Stem"
-        description: "Deel en stem op ideeën voor de stad."
+        description: "Deel en stem op ideeën voor de gemeente."
         link: "Bekijk wat er in de gemeente gebeurt"
       step_3:
         title: "Deel"
