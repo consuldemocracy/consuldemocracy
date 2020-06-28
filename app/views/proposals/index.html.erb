@@ -130,16 +130,6 @@
         <%= link_to t("proposals.index.start_proposal"),
                     new_proposal_path,
                     class: "button expanded" %>
-
-        <div class="sidebar-divider"></div>
-        <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
-        <br>
-        <p>
-          <%= link_to t("proposals.index.selected_proposals_link"),
-                      proposals_path(selected: "all"),
-                      class: "small" %>
-        </p>
-
         <% if params[:retired].blank? %>
           <%= render "categories" %>
           <%= render "shared/tag_cloud", taggable: "proposal" %>
