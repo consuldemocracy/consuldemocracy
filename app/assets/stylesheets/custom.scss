@@ -1345,6 +1345,94 @@ footer {
   }
 }
 
+.draft-panels .comments-on .calc-comments .comment-box {
+  background: #fff;
+  border: 0;
+
+  .comment-input {
+    border-bottom: 0;
+  }
+}
+
+.draft-panels .comment-box {
+
+  .icon-like,
+  .icon-unlike {
+    color: $text !important;
+  }
+
+  .like:hover .icon-like,
+  .unlike:hover .icon-unlike {
+    color: #fff !important;
+  }
+}
+
+.draft-panels .comments-on .calc-comments .comments-box-container {
+  margin-top: $line-height * 2;
+  position: initial;
+}
+
+.comment-box {
+
+  .button {
+    float: right;
+    line-height: $line-height * 2;
+    margin-top: $line-height / 4;
+    padding: 0 $line-height / 2;
+  }
+
+  .comment-header {
+    border-bottom: 0 !important;
+    color: $text !important;
+    margin-bottom: 0 !important;
+
+    .icon-comment {
+      display: none;
+    }
+  }
+
+  .cancel-comment {
+    color: $brand !important;
+    text-decoration: none !important;
+  }
+
+  .comment {
+    background: $light !important;
+    border: 1px solid $border !important;
+    margin-bottom: $line-height / 6 !important;
+    padding: $line-height / 2 !important;
+
+    .comment-meta {
+
+      .comment-more-info {
+        display: table-cell !important;
+        height: $line-height * 2 !important;
+        vertical-align: bottom !important;
+      }
+
+      .comment-replies a {
+        color: $brand !important;
+      }
+    }
+
+    .comment-meta .comment-votes {
+      color: $text !important;
+    }
+
+    .votes {
+      right: 12px !important;
+    }
+
+    .voted {
+
+      .icon-like,
+      .icon-unlike {
+        color: #fff !important;
+      }
+    }
+  }
+}
+
 // 6. Comments
 // --------------------
 
