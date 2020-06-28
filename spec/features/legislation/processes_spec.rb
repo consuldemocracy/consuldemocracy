@@ -240,6 +240,7 @@ describe "Legislation" do
         visit legislation_process_path(process)
 
         expect(page).to have_content("Additional information")
+        expect(page).to have_content("Less information")
         expect(page).to have_content("Text for additional info of the process")
       end
 
@@ -249,6 +250,7 @@ describe "Legislation" do
         visit legislation_process_path(process)
 
         expect(page).not_to have_content("Additional information")
+        expect(page).not_to have_content("Less information")
       end
 
       scenario "Shows another translation when the default locale isn't available" do
