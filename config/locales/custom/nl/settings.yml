@@ -18,6 +18,8 @@ nl:
     telegram_handle_description: "Als de accountnaam van dit medium is ingevuld, verschijnt het in te voettekst"
     instagram_handle: "Instagram accountnaam"
     instagram_handle_description: "Als de accountnaam van dit medium is ingevuld, verschijnt het in te voettekst"
+    url: "Homepage URL"
+    url_description: "De URL van de homepage"
     org_name: "Organisatie"
     hot_score_period_in_days: "Aantal dagen 'meest actief' filter"
     mailer_from_name: "Afzender naam"
@@ -51,6 +53,7 @@ nl:
       map_description: "Toont de locatie van een initiatief of idee op een kaart, mits deze is opgegeven  door de indiener"
       allow_attached_documents: "Uploaden en tonen van bestanden"
       allow_attached_documents_description: "Gebruikers kunnen documenten uploaden bij hun initiatief of idee"
+      help_page_description: "Toont informatie over de gebruikte functionaliteiten"
       remote_translations: "Automatisch vertalen"
       remote_translations_description: "Toont een knop die voorstelt de pagina te vertalen wanneer er geen informatie in de eigen taal beschikbaar is"
       translation_interface: "Vertaal interface"
@@ -59,6 +62,8 @@ nl:
       valuation_comment_notification_description: "Stuurt een email naar alle betrokken gebruikers wanneer een beoordeling aan een initiatief is gegeven. De beoordelaar zelf ontvangt deze mail niet"
       link_to_top: "Link naar bovenkant pagina"
       link_to_top_description: "Toont na het scrollen naar beneden op de pagina een knop, om weer terug te gaan naar de bovenkant van de pagina"
+      dashboard:
+        notification_emails_description: "Maak het mogelijk om dashboard notificatie emails te sturen naar de auteurs van initiatieven"
     process:
       debates_description: "De discussie module is bedoeld voor iedereen die over verschillende beleidskwesties zijn mening wil geven of afstemmen met anderen"
       proposals: "Initiatieven"
