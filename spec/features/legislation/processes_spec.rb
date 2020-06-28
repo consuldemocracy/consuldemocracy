@@ -96,11 +96,11 @@ describe "Legislation" do
 
       visit legislation_processes_path
 
-      within(".legislation-calendar") do
-        expect(page).to have_content "Debate 01 May 2020 - 30 May 2020 Locked", normalize_ws: true
+      within("#legislation_process_#{process.id} .legislation-calendar") do
+        expect(page).to have_content "Debate (0) 01 May 2020 - 30 May 2020 Locked", normalize_ws: true
         expect(page).to have_content "Draft publication 20 May 2020 Published", normalize_ws: true
-        expect(page).to have_content "Proposals 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
-        expect(page).to have_content "Comments 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
+        expect(page).to have_content "Proposals (0) 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
+        expect(page).to have_content "Comments (0) 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
         expect(page).to have_content "Final result publication 01 Jul 2020 Coming soon", normalize_ws: true
       end
 
@@ -112,9 +112,33 @@ describe "Legislation" do
       end
 
       within(".legislation-process-list") do
-        expect(page).to have_content "Debate 01 May 2020 - 30 May 2020 Locked", normalize_ws: true
-        expect(page).to have_content "Proposals 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
-        expect(page).to have_content "Comments 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
+        expect(page).to have_content "Debate (0) 01 May 2020 - 30 May 2020 Locked", normalize_ws: true
+        expect(page).to have_content "Proposals (0) 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
+        expect(page).to have_content "Comments (0) 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
+      end
+
+      create(:legislation_question, process: process)
+      create(:legislation_question, process: process)
+      create(:legislation_proposal, legislation_process_id: process.id)
+      create(:legislation_proposal, legislation_process_id: process.id)
+      draft_version = create(:legislation_draft_version, :published, process: process)
+      create(:legislation_annotation, draft_version: draft_version)
+      create(:legislation_annotation, draft_version: draft_version)
+
+      visit legislation_processes_path
+
+      within("#legislation_process_#{process.id} .legislation-calendar") do
+        expect(page).to have_content "Debate (2) 01 May 2020 - 30 May 2020 Locked", normalize_ws: true
+        expect(page).to have_content "Proposals (2) 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
+        expect(page).to have_content "Comments (2) 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
+      end
+
+      visit legislation_process_path(process)
+
+      within(".legislation-process-list") do
+        expect(page).to have_content "Debate (2) 01 May 2020 - 30 May 2020 Locked", normalize_ws: true
+        expect(page).to have_content "Proposals (2) 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
+        expect(page).to have_content "Comments (2) 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
       end
     end
 

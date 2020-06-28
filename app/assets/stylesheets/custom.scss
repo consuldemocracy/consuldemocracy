@@ -1145,6 +1145,10 @@ footer {
 
   h4 {
     color: $text;
+
+    span {
+      color: $brand;
+    }
   }
 
   p {
@@ -1281,7 +1285,11 @@ footer {
     padding-top: $line-height / 2;
 
     a h4 {
-      color: $brand;
+      color: $text;
+
+      span {
+        color: $brand;
+      }
     }
   }
 
