@@ -397,6 +397,20 @@ aside {
   text-transform: uppercase;
 }
 
+.wide-order-selector {
+
+  label {
+    float: none;
+    font-size: $small-font-size;
+    text-transform: uppercase;
+  }
+
+  select {
+    color: $label;
+    width: auto;
+  }
+}
+
 // 1. Header
 // --------------------
 
