@@ -1,12 +1,21 @@
 <% provide :title do %><%= t("devise_views.sessions.new.title") %><% end %>
-<h2><%= t("devise_views.sessions.new.title") %></h2>
+
+<ul class="no-bullet submenu">
+  <li class="inline-block">
+    <%= link_to new_session_path(resource_name), class: "is-active" do %>
+      <h2><%= t("devise_views.shared.sign_in") %></h2>
+    <% end %>
+  </li>
+  <li class="inline-block">
+    <%= link_to t("devise_views.shared.sign_up"), new_user_registration_path %>
+  </li>
+</ul>
+
+<div class="auth-title">
+  <h2><%= t("devise_views.sessions.new.title") %></h2>
+</div>
 
 <%= render "devise/omniauth_form" %>
-
-<p>
-  <%= sanitize(t("devise_views.shared.links.signup",
-      signup_link: link_to(t("devise_views.shared.links.signup_link"), new_user_registration_path))) %>
-</p>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row">
@@ -16,7 +25,8 @@
 
     <div class="small-12 column">
       <%= f.password_field :password, autocomplete: "off", placeholder: t("devise_views.sessions.new.password_label") %>
-      <%= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name), class: "float-right" %>
+      <%= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name),
+                  class: "float-right no-margin-top" %>
     </div>
 
     <% if devise_mapping.rememberable? -%>
@@ -25,8 +35,8 @@
       </div>
     <% end -%>
 
-    <div class="small-12 medium-6 small-centered">
-      <%= f.submit(t("devise_views.sessions.new.submit"), class: "button expanded") %>
+    <div class="small-12 column">
+      <%= f.submit(t("devise_views.sessions.new.submit"), class: "button expanded large") %>
     </div>
   </div>
 <% end %>

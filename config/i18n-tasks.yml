@@ -217,6 +217,9 @@ ignore_unused:
   - "admin.budget_groups.index.*.help_block"
   - "admin.budget_headings.index.*.help_block"
   - "admin.budget_phases.index.help_block"
+  - "devise_views.shared.links.login"
+  - "devise_views.shared.links.signup"
+  - "devise_views.shared.links.signup_link"
 ####
 ## Exclude these keys from the `i18n-tasks eq-base" report:
 # ignore_eq_base:
