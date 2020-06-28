@@ -95,6 +95,7 @@ nl:
     executions:
       heading: "Mijlpalen burgerbegroting"
       heading_selection_title: "Per gebied"
+      no_winner_investments: "Er zijn geen geaccepteerde ideeën"
       filters:
         status:
           label: "Projectstatus"

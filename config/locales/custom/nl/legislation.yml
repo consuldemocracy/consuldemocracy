@@ -4,14 +4,16 @@ nl:
       header:
         active: "Actief"
         locked: "Gesloten"
+      proposals:
+        empty_proposals: "Er zijn geen initiatieven"
       debate:
-        participate: "Neem deel aan discussie"
+        participate: "Deelnemen"
       index:
         filters:
           open: "Inspraak"
           past: "Afgerond"
         section_header:
-          description: "Dit zijn de huidige plannen van de gemeente. Afhankelijk van het soort plan kan je opmerkingen maken op het document, discussies starten of voorstellen indienen."
+          description: "Dit zijn de huidige plannen van de gemeente. Afhankelijk van het soort plan kan je reageren op het document, discussies starten of voorstellen indienen."
       process:
         see_latest_comments: "Bekijk plan"
       shared:

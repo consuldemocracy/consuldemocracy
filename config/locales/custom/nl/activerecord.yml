@@ -34,10 +34,12 @@ nl:
         description: "Omschrijving"
         summary: "Samenvatting initiatief"
       user:
-        public_activity: "Maak mijn activiteit openbaar"
+        email_digest: "Ontvang een samenvatting van notificaties van initiatieven"
         email_on_comment: "Stuur mij een mail wanneer iemand reageert op mijn initiatieven of discussies"
         email_on_comment_reply: "Stuur mij een mail wanneer iemand op mijn reactie reageert"
         email_on_direct_message: "Ontvang emails over privéberichten"
+        newsletter: "Ontvang emails over website gerelateerde informatie"
+        public_activity: "Maak mijn activiteit openbaar"
         recommended_debates: "Toon aanbevelingen voor discussie"
         recommended_proposals: "Toon aanbevelingen voor voorstellen"
       budget:
@@ -67,6 +69,8 @@ nl:
       budget/investment/translation:
         title: "Titel van het idee"
         description: "Omschrijving"
+      active_poll/translation:
+        description: "Omschrijving"
       legislation/process/translation:
         homepage: "Omschrijving"
       legislation/proposal:
@@ -74,6 +78,11 @@ nl:
         description: "Omschrijving"
         summary: "Samenvatting voorstel"
         video_url: "Link naar video"
+      legislation/question/translation:
+        title: "Vraag"
+      legislation/draft_version:
+        status_draft: "Concept"
+        status_published: "Gepubliceerd"
       signature_sheet:
         signable_type: "Voor tekenen van"
         required_fields_to_verify: "Vereiste invulvelden"
@@ -91,7 +100,7 @@ nl:
         description: "Omschrijving"
         day_offset: "Na hoeveel dagen na het indienen van het initiatief wordt de promotie actief?"
         required_supports: "Na hoeveel steunbetuigingen voor het initiatief wordt de promotie  actief?"
-        order: "Op welke positie moet deze promotie  staan, in de gebruiker zijn lijst van promotiemiddel?"
+        order: "Op welke positie moet deze promotie staan, in de gebruiker zijn lijst van promotiemiddelen?"
         active: "Actief"
         action_type_proposed_action: "Voorgestelde actie"
         action_type_resource: "Tool"

@@ -3,6 +3,7 @@ nl:
     form:
       title: "Hoofdafbeelding"
       note: "Je kunt een %{accepted_content_types} bestand uploaden met een maximale grootte van %{max_file_size} MB"
+      add_new_image: "Afbeelding toevoegen"
     errors:
       messages:
         wrong_content_type: "type bestand komt niet overeen met toegestane typen"

@@ -42,14 +42,17 @@ nl:
       author: "Auteur"
       comments_title: "Reacties"
   form:
+    debate: "discussie"
+    proposal: "initiatief"
+    budget/investment: "idee"
     not_saved: "zorgden ervoor dat je %{resource} niet geplaatst kan worden. <br>Bekijk de rode tekst om te zien wat aangepast moet worden."
     budget/investment: "idee"
   proposals:
     form:
       proposal_summary_note: "(maximaal 200 karakters)"
-      proposal_video_url_note: "Je kunt een link van een Youtube of Vimeo - video toevoegen"
+      proposal_video_url_note: "Je kunt een link van een Youtube of Vimeo  video toevoegen"
       tags_label: "Onderwerpen/labels"
-      tags_instructions: "Label dit voorstel. Je kunt eigen labels bedenken of kiezen voor bestaande"
+      tags_instructions: "Je kunt dit voorstel een label geven. Je kunt je eigen categorie kiezen, of één van de bestaande"
       map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
       tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
     index:
@@ -93,6 +96,7 @@ nl:
       filters:
         expired: "Afgerond"
       participate_button: "Deelnemen"
+      no_geozone_restricted: "Hele gemeente"
       geozone_restricted: "Gebied"
       section_header:
         description: "Geef je mening en voorkeuren voor specifieke onderwerpen."
@@ -150,7 +154,7 @@ nl:
         description: "Blijf betrokken bij ideeën die jij belangrijk vindt en deel ze via social media."
         link: ""
     feed:
-      proposals_description: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van Groningen bepalen hoe de stad eruit komt te zien."
+      proposals_description: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van stad bepalen hoe de gemeente eruit komt te zien."
       most_active:
         debates: "Actieve discussies"
         proposals: "Initiatieven"
@@ -159,6 +163,7 @@ nl:
   shared:
     edit: "Bewerken"
     save: "Opslaan"
+    delete: "Verwijderen"
     optional: "Optioneel"
     required: "Verplicht"
     required_fields: "Alle velden gemarkeerd met een (*) zijn verplicht"
@@ -170,6 +175,19 @@ nl:
       date_range_blank: "Selecteer een periode"
       general: "Tekst"
       general_placeholder: "Filter op tekst"
+    suggest:
+      debate:
+        found:
+          one: "Er bestaat al een discussie met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
+          other: "Er bestaat al discussies met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
+      budget_investment:
+        found:
+          one: "Er bestaat al een idee met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
+          other: "Er bestaat al ideeën met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
+      proposal:
+        found:
+          one: "Er bestaat al een initiatief met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
+          other: "Er bestaat al initiatieven met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
     tags_cloud:
       districts: "Gebied"
       categories: "Onderwerpen/Labels"

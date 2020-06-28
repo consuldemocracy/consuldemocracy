@@ -131,8 +131,11 @@ nl:
     budget_phases:
       edit:
         duration: "Duur fase"
+        duration_description: "In deze periode is de fase actief."
+        image_description: "Als je een afbeelding upload zal deze te zien in de header van de burgerbegroting. Wanneer je niks upload worden de standaard kleuren gebruikt."
         main_call_to_action: "Call to action (optioneel)"
         main_call_to_action_description: "Deze knop verschijnt op de voorpagina van deze begroting. Een call to action moedigt de gebruiker aan om iets te doen, zoals een idee indienen, stemmen of meer leren over het proces."
+        phase_name_help_text: "Dit is de titel van de fase die gebruikers zullen zien in de header wanneer de fase actief is."
     budget_groups:
       max_votable_headings: "Maximaal aantal rubrieken waarop een gebruiker kan stemmen"
     budget_headings:
@@ -149,9 +152,22 @@ nl:
         create: "Maak peiling"
         name: "Titel peiling"
         dates: "Periode"
+      show:
+        questions_tab: "Vragen"
+        questions_title: "Alle vragen"
+        booths_tab: "Stemhokjes"
+        recounts_tab: "Hertellingen"
+        results_tab: "Resultaten"
+        table_title: "Titel"
+      edit:
+        title: "Peiling bewerken"
+        submit_button: "Opslaan"
     active_polls:
       edit:
         title: "Peiling omschrijving"
+    poll_booth_assignments:
+      index:
+        booths_title: "Stemhokjes"
     hidden_budget_investments:
       index:
         filters:
@@ -171,10 +187,22 @@ nl:
           process: "Totale proces"
           debate_phase: "Discussiefase"
         index:
+          delete: "Verwijderen"
           filters:
             all: "Alle"
         subnav:
           proposals: "Initiatieven"
+      questions:
+        form:
+          add_option: "Voeg antwoord toe"
+          question_options: "Antwoordmogelijkheden (optioneel, standaard open vraag)"
+    comments:
+      index:
+        title: "Reacties"
+    questions:
+      answers:
+        images:
+          add_image: "Afbeelding toevoegen"
     hidden_comments:
       index:
         filters:
@@ -186,7 +214,11 @@ nl:
     poll_officers:
       index:
         title: "Stemmenteller"
+      officer:
+        name: "Gebruikersnaam"
+        delete: "Verwijderen"
       search:
+        email_placeholder: "Zoek op mailadres"
         help: "Gebruik de onderstaande zoekbalk om een teller toe te voegen of te verwijderen."
     booths:
       index:
@@ -195,8 +227,8 @@ nl:
       manage_assignments: "Locatie wijzigen"
     geozones:
       index:
-        title: "Regio"
-        create: "Creëer regio"
+        title: "Gedbied"
+        create: "Creëer gebied"
         edit: "Bewerken"
         delete: "Verwijder"
       geozone:
@@ -207,6 +239,9 @@ nl:
       edit:
         form:
           submit_button: "Opslaan"
+        editing: "Gebied bewerken"
+      new:
+        creating: "Gebied aanmaken"
     signature_sheets:
       no_signature_sheets: "Geen handtekeninglijsten."
       index:
@@ -216,6 +251,8 @@ nl:
         document_numbers_note: "Voer de nummers in, gescheiden door een komma (,)"
         submit: "Creëer handtekeningenlijst"
         text_help:
+          required_fields_note: "Om een gebruiker te verifiëren hebben wij het volgende nodig: documentnummer"
+          required_fields_structure_note: "Elke gebruiker moet worden gescheiden door puntkomma’s, de vereiste velden voor elke gebruiker met komma’s."
           example_text: "Bijvoorbeeld: "
     admin_notifications:
       index:
@@ -242,6 +279,7 @@ nl:
         title: "Idee burgerbegroting teruggetrokken"
       evaluation_comment:
         title: "Nieuwe reactie op beoordeling"
+        description: "Verzonden naar de beheerders en beoordelaars wanneer er gereageerd wordt op een (beoordeeld) idee"
     emails_download:
       index:
         title: "Download email adressen"
@@ -290,6 +328,7 @@ nl:
         proposals: "Initiatieven"
         debates: "Discussies"
       new:
+        card_title: "Nieuwe tegel"
         submit_header: "Header maken"
         submit_card: "Tegeltje maken"
       edit:
@@ -301,6 +340,7 @@ nl:
     menu:
       banner: "Banners beheren"
       proposals: "Initiatieven"
+      proposals_topics: "Voorgestelde categorieën"
       debates: "Discussies"
       comments: "Reacties"
       polls: "Peilingen"
@@ -316,11 +356,13 @@ nl:
       poll_officers: "Stemmentellers"
       poll_booths: "Locatie stemhokje"
       poll_booth_assignments: "Locatie stemhokje wijzigen"
+      officials: "Bijzondere rollen"
       signature_sheets: "Handtekeninglijsten"
       emails_download: "Download email adressen"
       organizations: "Organisaties"
       settings: "Algemene instellingen"
       site_customization:
+        documents: "Documenten"
         images: "(Afbeeldingen) huisstijl"
         content_blocks: "Aangepaste blokken"
         information_texts: "Informatie teksten"
@@ -329,6 +371,8 @@ nl:
           proposals: "Initiatieven"
           polls: "Peilingen"
           layouts: "Website lay-out"
+        buttons:
+          save: "Opslaan"
       users: "Gebruikers"
       dashboard: "Campagnepagina"
       administrator_tasks: "Aangevraagde promotiemiddelen"
@@ -336,7 +380,7 @@ nl:
       local_census_records: "Lokale volkstelling"
     administrators:
       index:
-        name: "Naam"
+        name: "Gebruikersnaam"
         description: "Omschrijving"
         id: "Admin ID"
         no_administrators: "Geen admins."
@@ -359,6 +403,8 @@ nl:
         images_and_documents: "Afbeeldingen en documenten"
         feature_flags: "Opties"
         features:
+          enabled: "Ingeschakeld"
+          disabled: "Uitgeschakeld"
           enable: "Inschakelen"
           disable: "Uitschakelen"
         map:
@@ -366,6 +412,8 @@ nl:
           help: "Hier kun je aanpassen hoe de kaart aan de website gebruikers wordt getoond. Verplaats  het locatielabel door deze te verslepen of ergens te klikken op de kaart. Stel het gewenste zoomniveau in en klik op 'Bewerk'."
           form:
             submit: "Bewerk"
+        dashboard:
+          title: "Initiatieven dashboard"
         remote_census:
           how_to_enable: "Om deze instellingen te kunnen bewerken moet je de optie 'Configure connection to remote census (SOAP)' inschakelen in de 'Opties'-tab."
       setting_actions: "Acties"
@@ -375,6 +423,7 @@ nl:
       results_and_stats_reminder: "Door deze te selecteren zullen de resultaten en statistieken."
       booths_search:
         button: "Zoek"
+        placeholder: "Zoek op naam stemhokje"
       poll_officers_search:
         button: "Zoek"
       poll_questions_search:
@@ -385,6 +434,7 @@ nl:
         button: "Zoek"
       user_search:
         button: "Zoek"
+        placeholder: "Zoek op naam of email"
       actions: "Acties"
       moderated_content: "Deze inhoud is door de moderators gemarkeerd en verborgen. Controleer hier of dit klopt."
       delete: "Verwijder"
@@ -445,6 +495,7 @@ nl:
         polls: "Peilingen"
       budgets:
         title: "Burgerbegrotingen - Participation stats"
+        supporting_phase: "Steunfase"
         balloting_phase: "Stemfase"
       direct_messages:
         users_who_have_sent_message: "Gebruikers"
@@ -459,12 +510,17 @@ nl:
       create: "Creeër categorie"
       destroy: "Verwijder"
       index:
+        title: "Voorgestelde categorieën"
         help: "Wanneer een gebruiker een initiatief of idee indient, worden de volgende categorieën voorgesteld."
     users:
       columns:
         name: "Naam"
       index:
         title: "Gebruikers"
+    officials:
+      index:
+        title: "Bijzondere rollen"
+        help: "Het is mogelijk om account een bepaalde rol te geven. , die voor gebruikers zichtbaar is. Een ambtenaar, projectleider, wethouder of welke rol je wilt definiëren meedoen in het gesprek. Je kunt het label dat naast de gebruikersnamen van deze accounts verschijnt definiëren van belangrijk (niveau 1) tot minst belangrijk (niveau 5). Je kunt deze rollen definiëren in dit menu:"
     local_census_records:
       index:
         title: "Lokale volkstelling"
