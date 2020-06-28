@@ -220,6 +220,7 @@ ignore_unused:
   - "devise_views.shared.links.login"
   - "devise_views.shared.links.signup"
   - "devise_views.shared.links.signup_link"
+  - "budgets.investments.show.code"
 ####
 ## Exclude these keys from the `i18n-tasks eq-base" report:
 # ignore_eq_base:
