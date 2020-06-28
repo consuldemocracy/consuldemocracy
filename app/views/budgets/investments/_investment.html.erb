@@ -1,6 +1,7 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
-  <div class="panel <%= ("with-image" if feature?(:allow_images) && investment.image.present?) %>">
-
+  <div class="panel
+              <%= "with-image" if feature?(:allow_images) && investment.image.present? %>
+              <%= "supported" if voted_for?(investment_votes, investment) %>">
     <% if feature?(:allow_images) && investment.image.present? %>
     <div class="row" data-equalizer>
 
