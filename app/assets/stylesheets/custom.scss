@@ -255,6 +255,10 @@ aside {
     margin: 0 0 $line-height / 2;
     padding-top: 0;
   }
+
+  .author a {
+    color: $link-dark !important;
+  }
 }
 
 .back {
