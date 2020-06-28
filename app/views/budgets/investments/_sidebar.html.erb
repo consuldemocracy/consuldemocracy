@@ -58,7 +58,7 @@
   <p>
     <%= sanitize(t("budgets.investments.index.sidebar.voted_info",
         link: link_to(t("budgets.investments.index.sidebar.voted_info_link"), budget_ballot_path(@budget)),
-        phase_end_date: l(@budget.current_phase.ends_at.to_date, format: :long))) %>
+        phase_end_date: l(@budget.current_phase.ends_at.to_date))) %>
   </p>
 
   <ul class="ballot-list">

@@ -49,7 +49,7 @@ nl:
           voted:
             one: "Je hebt op <strong>1 idee</strong> gestemd die in totaal %{amount_spent} kosten."
             other: "Je hebt op <strong>%{count} ideeën</strong> gestemd die in totaal %{amount_spent} kosten."
-          voted_info: "Tot het einde van de fase kun je %{link}. Het is niet nodig om al het geld te besteden."
+          voted_info: "Je kunt %{link} tot %{phase_end_date}. Het is niet verplicht al het budget te besteden."
           voted_info_link: "je stem wijzigen"
           create: "Nieuw idee delen"
           zero: "Je hebt nog niet op een idee gestemd"
