@@ -2,7 +2,7 @@ require "factory_bot_rails"
 require "database_cleaner"
 require "email_spec"
 require "devise"
-require "knapsack_pro"
+require "knapsack"
 
 Dir["./spec/models/concerns/*.rb"].each { |f| require f }
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
@@ -163,4 +163,4 @@ RSpec.configure do |config|
 end
 
 # Parallel build helper configuration for travis
-KnapsackPro::Adapters::RSpecAdapter.bind
+Knapsack::Adapters::RSpecAdapter.bind
