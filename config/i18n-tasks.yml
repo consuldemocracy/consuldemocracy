@@ -122,6 +122,7 @@ ignore_missing:
   - "devise.password_expired.*"
   - "seeds.settings.*"
   - "budgets.progress_bar.you_have_assigned"
+  - "admin.officials.index.help_link"
 
 ## Consider these keys used:
 ignore_unused:
