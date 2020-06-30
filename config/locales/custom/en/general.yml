@@ -54,6 +54,8 @@ en:
         recommendations: "Recommendations"
     form:
       tags_label: "Onderwerpen/labels"
+    shared:
+      confirm_support: "Are you sure? You will support the proposal \"%{proposal}\" and this action cannot be undone."
   polls:
     index:
       section_header:
