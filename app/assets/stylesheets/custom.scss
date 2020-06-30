@@ -16,6 +16,7 @@
 // 10. Proposals
 // 11. Polls
 // 12. Icons
+// 13. Users
 //
 
 // 0. Global styles
@@ -2046,5 +2047,75 @@ footer {
 
   &::before {
     top: 7px;
+  }
+}
+
+// 13. Users
+// --------------------
+
+.auth-page {
+
+  .auth-title {
+    margin: $line-height * 2 0;
+    text-align: center;
+  }
+
+  .auth-form {
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+      padding-bottom: $line-height * 10;
+    }
+
+    a,
+    p,
+    a h2,
+    .checkbox {
+      font-size: $base-font-size;
+    }
+
+    .checkbox {
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: rem-calc(48);
+    }
+
+    img {
+      padding-top: rem-calc(100);
+    }
+  }
+
+  .auth-image {
+    background: $brand image-url("auth_bg.png");
+
+    @include breakpoint(medium) {
+      min-height: rem-calc(1390);
+    }
+  }
+
+  .submenu h2 {
+    margin: 0;
+    margin-bottom: $line-height / 2;
+  }
+
+  .footer {
+
+    @include breakpoint(medium) {
+      position: relative;
+
+      &::before {
+        background-image: image-url("auth_bg_footer.png");
+        background-repeat: no-repeat;
+        content: "";
+        height: 240px;
+        position: absolute;
+        right: 15%;
+        top: -240px;
+        width: 800px;
+        z-index: -1;
+      }
+    }
   }
 }
