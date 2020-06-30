@@ -1820,6 +1820,14 @@ footer {
   line-height: $line-height * 2;
 }
 
+.fixed-mobile-content {
+  top: 0 !important;
+
+  &.is-stuck {
+    top: auto !important;
+  }
+}
+
 // 11. Polls
 // --------------------
 
