@@ -97,18 +97,6 @@ module BudgetsHelper
     investment.group.headings.count > 1
   end
 
-  def link_to_create_budget_poll(budget)
-    balloting_phase = budget.phases.find_by(kind: "balloting")
-
-    link_to t("admin.budgets.index.admin_ballots"),
-            admin_polls_path(poll: {
-                              name:      budget.name,
-                              budget_id: budget.id,
-                              starts_at: balloting_phase.starts_at,
-                              ends_at:   balloting_phase.ends_at }),
-            method: :post
-  end
-
   def budget_subnav_items_for(budget)
     {
       results:    t("budgets.results.link"),

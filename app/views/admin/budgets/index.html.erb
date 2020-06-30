@@ -27,17 +27,7 @@
             <%= t("budgets.phase.#{budget.phase}") %>
           </td>
           <td>
-            <%= render Admin::TableActionsComponent.new(budget, actions: [:edit], edit_text: t("admin.budgets.index.edit_budget")) do |actions| %>
-              <%= actions.link_to t("admin.budgets.index.budget_investments"),
-                             admin_budget_budget_investments_path(budget_id: budget.id),
-                             class: "button hollow medium" %>
-              <%= actions.link_to t("admin.budgets.index.edit_groups"), admin_budget_groups_path(budget) %>
-              <% if budget.poll.present? %>
-                <%= actions.link_to t("admin.budgets.index.admin_ballots"), admin_poll_booth_assignments_path(budget.poll) %>
-              <% else %>
-                <%= link_to_create_budget_poll(budget) %>
-              <% end %>
-            <% end %>
+            <%= render Admin::Budgets::TableActionsComponent.new(budget) %>
           </td>
         </tr>
       <% end %>
