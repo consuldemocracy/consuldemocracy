@@ -1,4 +1,5 @@
 class Admin::TableActionsComponent < ApplicationComponent
+  include TableActionLink
   attr_reader :record, :options
 
   def initialize(record = nil, **options)

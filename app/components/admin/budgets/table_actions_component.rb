@@ -1,4 +1,5 @@
 class Admin::Budgets::TableActionsComponent < ApplicationComponent
+  include TableActionLink
   attr_reader :budget
 
   def initialize(budget)
