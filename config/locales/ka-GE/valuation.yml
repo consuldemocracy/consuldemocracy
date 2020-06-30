@@ -13,7 +13,7 @@ ka:
           finished: დასრულებული
         table_name: სახელი
         table_phase: ფაზა
-        table_assigned_investments_valuation_open: ღია შეფასებასთან დაკავშირებული საინვესტიციო პროექტები
+        table_assigned_investments_valuation_open: საინვესტიციო პროექტები, რომელთა ღიად შეფასება შესაძლებელია
         table_actions: მოქმედებები
         evaluate: შეფასება
         no_budgets: "ბიუჯეტები არ მოიძებნა"
