@@ -25,44 +25,6 @@
       <aside class="small-12 medium-3 column">
         <%= render "/budgets/investments/author_actions", investment: investment %>
 
-        <% if investment.should_show_aside? %>
-          <% if investment.should_show_votes? %>
-            <div class="sidebar-divider"></div>
-            <h2><%= t("budgets.investments.show.supports") %></h2>
-            <div class="text-center">
-              <div id="<%= dom_id(investment) %>_votes">
-                <%= render "/budgets/investments/votes",
-                  investment: investment,
-                  investment_votes: investment_votes,
-                  vote_up_url: vote_budget_investment_path(investment.budget, investment, value: "yes"),
-                  vote_down_url: vote_budget_investment_path(investment.budget, investment, value: "no") %>
-              </div>
-            </div>
-          <% elsif investment.should_show_vote_count? %>
-            <div class="sidebar-divider"></div>
-            <h2><%= t("budgets.investments.show.supports") %></h2>
-            <div class="text-center">
-              <span class="total-supports">
-                <strong>
-                  <%= t("budgets.investments.investment.supports",
-                      count: investment.total_votes) %>
-                </strong>
-              </span>
-            </div>
-          <% elsif investment.should_show_ballots? %>
-            <div class="sidebar-divider"></div>
-            <h2><%= t("budgets.investments.show.votes") %></h2>
-            <div class="text-center">
-              <div id="<%= dom_id(investment) %>_ballot">
-                <%= render "ballot",
-                  investment: investment,
-                  investment_ids: investment_ids,
-                  ballot: ballot %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-
         <% if investment.unfeasible? && investment.valuation_finished? %>
           <div class="callout warning">
             <%= sanitize(t("budgets.investments.show.project_unfeasible")) %>
@@ -100,6 +62,44 @@
             <div class="text-center" data-magellan>
               <%= link_to t("budgets.investments.show.see_price_explanation"),
                             "#price_explanation", class: "small" %>
+            </div>
+          <% end %>
+        <% end %>
+
+        <% if investment.should_show_aside? %>
+          <% if investment.should_show_votes? %>
+            <div class="sidebar-divider"></div>
+            <h2><%= t("budgets.investments.show.supports") %></h2>
+            <div class="text-center">
+              <div id="<%= dom_id(investment) %>_votes">
+                <%= render "/budgets/investments/votes",
+                  investment: investment,
+                  investment_votes: investment_votes,
+                  vote_up_url: vote_budget_investment_path(investment.budget, investment, value: "yes"),
+                  vote_down_url: vote_budget_investment_path(investment.budget, investment, value: "no") %>
+              </div>
+            </div>
+          <% elsif investment.should_show_vote_count? %>
+            <div class="sidebar-divider"></div>
+            <h2><%= t("budgets.investments.show.supports") %></h2>
+            <div class="text-center">
+              <span class="total-supports">
+                <strong>
+                  <%= t("budgets.investments.investment.supports",
+                      count: investment.total_votes) %>
+                </strong>
+              </span>
+            </div>
+          <% elsif investment.should_show_ballots? %>
+            <div class="sidebar-divider"></div>
+            <h2><%= t("budgets.investments.show.votes") %></h2>
+            <div class="text-center">
+              <div id="<%= dom_id(investment) %>_ballot">
+                <%= render "ballot",
+                  investment: investment,
+                  investment_ids: investment_ids,
+                  ballot: ballot %>
+              </div>
             </div>
           <% end %>
         <% end %>
