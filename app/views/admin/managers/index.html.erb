@@ -22,7 +22,7 @@
               <%= manager.email %>
             </td>
             <td>
-              <%= render Admin::TableActionsComponent.new(manager, actions: [:destroy]) %>
+              <%= render Admin::Roles::TableActionsComponent.new(manager) %>
             </td>
           </tr>
         <% end %>

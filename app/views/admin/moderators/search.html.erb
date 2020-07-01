@@ -18,16 +18,7 @@
           <td><%= user.name %></td>
           <td><%= user.email %></td>
           <td>
-            <% if user.moderator? && user.moderator.persisted? %>
-              <%= render Admin::TableActionsComponent.new(user.moderator, actions: [:destroy]) %>
-            <% else %>
-              <%= link_to t("admin.moderators.moderator.add"),
-                          { controller: "admin/moderators",
-                            action: :create,
-                            user_id: user },
-                          method: :post,
-                          class: "button success expanded" %>
-            <% end %>
+            <%= render Admin::Roles::TableActionsComponent.new(user.moderator || user.build_moderator) %>
           </td>
         </tr>
       <% end %>

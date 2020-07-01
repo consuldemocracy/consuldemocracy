@@ -29,7 +29,10 @@
             <%= administrator.description %>
           </td>
           <td>
-            <%= render Admin::TableActionsComponent.new(administrator) %>
+            <%= render Admin::Roles::TableActionsComponent.new(
+              administrator,
+              actions: [:edit, :destroy]
+            ) %>
           </td>
         </tr>
       <% end %>

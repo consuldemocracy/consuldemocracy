@@ -24,7 +24,7 @@
               <%= moderator.email %>
             </td>
             <td>
-              <%= render Admin::TableActionsComponent.new(moderator, actions: [:destroy]) %>
+              <%= render Admin::Roles::TableActionsComponent.new(moderator) %>
             </td>
           </tr>
         <% end %>
