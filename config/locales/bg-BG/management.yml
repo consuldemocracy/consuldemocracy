@@ -1,1 +1,36 @@
 bg:
+  management:
+    account:
+      menu:
+        reset_password_email: Нулиране на парола чрез имейл
+        reset_password_manually: Нулиране на паролата ръчно
+      alert:
+        unverified_user: Все още не е вписан проверен потребител
+      show:
+        title: Потребителски акаунт
+      edit:
+        title: "Редактиране на потребителски акаунт: Нулиране на парола"
+        back: Обратно
+        password:
+          password: Парола
+          send_email: Изпращане на имейл за нулиране на паролата
+          reset_email_send: Имейлът е изпратен правилно.
+          reseted: Паролата е нулирана успешно
+          random: Генериране на случайна парола
+          save: Запазете паролата
+          print: Отпечатайте парола
+          print_help: Ще можете да отпечатате паролата, когато е запазена.
+    account_info:
+      change_user: Промяна на потребителя
+      document_number_label: "Номер на документ:"
+      document_type_label: "Вид документ:"
+      email_label: "Имейл:"
+      identified_label: "Идентифициран като:"
+      username_label: "Потребител:"
+    check: Проверка на документ
+    dashboard:
+      index:
+        title: Управление
+        info: Тук можете да управлявате потребителите чрез всички действия, изброени в лявото меню.
+    document_verifications:
+      already_verified: Този потребителски акаунт вече е потвърден.
