@@ -22,7 +22,7 @@
     <%= render Admin::TableActionsComponent.new(valuator) do |actions| %>
       <%= actions.link_to t("admin.shared.view"),
         admin_valuator_path(valuator),
-        class: "button hollow" %>
+        class: "show-link" %>
     <% end %>
   </td>
 </tr>

@@ -31,8 +31,7 @@
                             admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
                             method: :post,
                             remote: true,
-                            title: t("admin.booth_assignments.manage.actions.assign"),
-                            class: "button hollow expanded" %>
+                            class: "assign-booth-link" %>
       <% end %>
     <% end %>
   </td>

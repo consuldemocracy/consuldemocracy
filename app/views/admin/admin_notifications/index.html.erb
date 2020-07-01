@@ -9,7 +9,7 @@
         <th><%= t("admin.admin_notifications.index.title") %></th>
         <th><%= t("admin.admin_notifications.index.segment_recipient") %></th>
         <th><%= t("admin.admin_notifications.index.sent") %></th>
-        <th class="small-5"><%= t("admin.admin_notifications.index.actions") %></th>
+        <th><%= t("admin.admin_notifications.index.actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -33,13 +33,13 @@
             <%= render Admin::TableActionsComponent.new(admin_notification) do |actions| %>
               <%= actions.link_to t("admin.admin_notifications.index.preview"),
                                   admin_admin_notification_path(admin_notification),
-                                  class: "button" %>
+                                  class: "preview-link" %>
             <% end %>
           <% else %>
             <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
               <%= actions.link_to t("admin.admin_notifications.index.view"),
                                   admin_admin_notification_path(admin_notification),
-                                  class: "button" %>
+                                  class: "show-link" %>
             <% end %>
           <% end %>
         </td>

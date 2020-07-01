@@ -16,7 +16,7 @@
         <th><%= t("admin.site_customization.pages.page.created_at") %></th>
         <th><%= t("admin.site_customization.pages.page.updated_at") %></th>
         <th><%= t("admin.site_customization.pages.page.status") %></th>
-        <th class="small-4"><%= t("admin.actions.actions") %></th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -31,13 +31,13 @@
           <%= render Admin::TableActionsComponent.new(page) do |actions| %>
             <%= actions.link_to t("admin.site_customization.pages.page.see_cards"),
                                 admin_site_customization_page_cards_path(page),
-                                class: "button hollow expanded" %>
+                                class: "cards-link" %>
 
             <% if page.status == "published" %>
               <%= actions.link_to t("admin.site_customization.pages.index.see_page"),
                                   page.url,
                                   target: "_blank",
-                                  class: "button hollow" %>
+                                  class: "show-link" %>
             <% end %>
           <% end %>
         </td>

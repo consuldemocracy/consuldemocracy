@@ -3,7 +3,7 @@
     <tr>
       <th><%= t("admin.poll_officers.officer.name") %></th>
       <th><%= t("admin.poll_officers.officer.email") %></th>
-      <th class="small-3"><%= t("admin.actions.actions") %></th>
+      <th><%= t("admin.actions.actions") %></th>
     </tr>
   </thead>
   <tbody>
@@ -19,14 +19,15 @@
           <% if officer.persisted? %>
             <%= render Admin::TableActionsComponent.new(officer,
               actions: [:destroy],
-              destroy_text: t("admin.poll_officers.officer.delete")
+              destroy_text: t("admin.poll_officers.officer.delete"),
+              destroy_options: { class: "destroy-officer-link" }
             ) %>
           <% else %>
             <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
               <%= actions.link_to t("admin.poll_officers.officer.add"),
                                   add_user_path(officer),
                                   method: :post,
-                                  class: "button success expanded" %>
+                                  class: "create-officer-link" %>
             <% end %>
           <% end %>
         </td>

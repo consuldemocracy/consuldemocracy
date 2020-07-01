@@ -9,4 +9,17 @@
   > p {
     align-self: flex-start;
   }
+
+  a {
+    @include button($style: hollow);
+    border-color: $link !important;
+    color: $link !important;
+    font-size: $base-font-size;
+    margin-bottom: 0;
+
+    &.destroy-link {
+      border-color: $alert-color !important;
+      color: $alert-color !important;
+    }
+  }
 }

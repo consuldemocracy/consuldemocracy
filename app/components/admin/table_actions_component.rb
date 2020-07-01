@@ -22,7 +22,7 @@ class Admin::TableActionsComponent < ApplicationComponent
     end
 
     def edit_options
-      { class: "button hollow" }.merge(options[:edit_options] || {})
+      { class: "edit-link" }.merge(options[:edit_options] || {})
     end
 
     def destroy_text
@@ -36,7 +36,7 @@ class Admin::TableActionsComponent < ApplicationComponent
     def destroy_options
       {
         method: :delete,
-        class: "button hollow alert",
+        class: "destroy-link",
         data: { confirm: destroy_confirmation }
       }.merge(options[:destroy_options] || {})
     end

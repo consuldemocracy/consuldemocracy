@@ -7,12 +7,12 @@
     <%= t("admin.questions.index.no_questions") %>
   </div>
 <% else %>
-  <table class="fixed">
+  <table>
     <thead>
       <tr>
         <th><%= t("admin.questions.index.table_question") %></th>
         <th><%= t("admin.questions.index.table_poll") %></th>
-        <th class="small-4"><%= t("admin.actions.actions") %></th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -29,7 +29,7 @@
           <td>
             <%= render Admin::TableActionsComponent.new(question) do |actions| %>
               <%= actions.link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
-                                                                      class: "button hollow" %>
+                                                                      class: "answers-link" %>
             <% end %>
           </td>
         </tr>
