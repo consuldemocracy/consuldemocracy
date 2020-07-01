@@ -31,13 +31,12 @@
     <div class="row">
       <div class="small-12 medium-9 column">
         <% if header == :small %>
-          <div id="legislation_info" class="is-hidden" data-toggler=".is-hidden">
+          <% if @process.description.present? %>
+            <p class="title"><%= t("legislation.processes.header.description") %></p>
+            <%= markdown @process.description %>
+          <% end %>
 
-            <% if @process.description.present? %>
-              <p class="title"><%= t("legislation.processes.header.description") %></p>
-              <%= markdown @process.description %>
-            <% end %>
-
+          <div id="legislation_info" class="hide" data-toggler="hide">
             <% if @process.additional_info.present? %>
               <hr>
               <p class="title"><%= t("legislation.processes.header.additional_info") %></p>
@@ -45,8 +44,14 @@
             <% end %>
           </div>
 
-          <a class="button" data-toggle="legislation_info">
+          <a id="read_more" class="button" data-toggler="hide"
+             data-toggle="legislation_info read_more read_less">
             <%= t("legislation.processes.header.more_info") %>
+          </a>
+
+          <a id="read_less" class="button hide" data-toggler="hide"
+             data-toggle="legislation_info read_more read_less">
+            <%= t("legislation.processes.header.less_info") %>
           </a>
         <% else %>
           <%= render "legislation/processes/header_full", process: @process %>

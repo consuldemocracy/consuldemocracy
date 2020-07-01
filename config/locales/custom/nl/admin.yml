@@ -520,7 +520,8 @@ nl:
     officials:
       index:
         title: "Bijzondere rollen"
-        help: "Het is mogelijk om account een bepaalde rol te geven. , die voor gebruikers zichtbaar is. Een ambtenaar, projectleider, wethouder of welke rol je wilt definiëren meedoen in het gesprek. Je kunt het label dat naast de gebruikersnamen van deze accounts verschijnt definiëren van belangrijk (niveau 1) tot minst belangrijk (niveau 5). Je kunt deze rollen definiëren in dit menu:"
+        help: "Het is mogelijk om account een bepaalde rol te geven, die voor gebruikers zichtbaar is. Een ambtenaar, projectleider, wethouder of welke rol je wilt definiëren meedoen in het gesprek. Je kunt het label dat naast de gebruikersnamen van deze accounts verschijnt definiëren van belangrijk (niveau 1) tot minst belangrijk (niveau 5). %{link}."
+        help_link: "Je kunt deze rollen definiëren in dit menu"
     local_census_records:
       index:
         title: "Lokale volkstelling"

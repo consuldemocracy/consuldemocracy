@@ -82,6 +82,8 @@ describe "Proposals" do
     end
 
     scenario "Index view mode is not shown with selected filter" do
+      create(:proposal, :selected)
+
       visit proposals_path
 
       click_link "View selected proposals"
@@ -596,6 +598,49 @@ describe "Proposals" do
 
       expect(page).to have_content retired.title
       expect(page).not_to have_content not_retired.title
+    end
+
+    scenario "Index sidebar only show links with proposals" do
+      visit proposals_path
+
+      within("aside") do
+        expect(page).not_to have_link "View selected proposals"
+        expect(page).not_to have_link "Archived proposals"
+        expect(page).not_to have_link "Proposals retired by the author"
+      end
+
+      create(:proposal, :selected)
+      create(:proposal, :retired)
+      create(:proposal, :archived)
+
+      visit proposals_path
+
+      within("aside") do
+        expect(page).to have_link "View selected proposals"
+        expect(page).to have_link "Archived proposals"
+        expect(page).to have_link "Proposals retired by the author"
+      end
+    end
+
+    scenario "Tags cloud sidebar only show with tags" do
+      visit proposals_path
+
+      within("aside") do
+        expect(page).not_to have_content "Trending"
+      end
+
+      create(:proposal, tag_list: "participation")
+      create(:proposal, tag_list: "city")
+      create(:proposal, tag_list: "world")
+
+      visit proposals_path
+
+      within("aside") do
+        expect(page).to have_content "Trending"
+        expect(page).to have_link "participation"
+        expect(page).to have_link "city"
+        expect(page).to have_link "world"
+      end
     end
 
     scenario "Retired proposals index interface elements" do

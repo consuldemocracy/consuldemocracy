@@ -30,7 +30,10 @@
         <div class="small-6 medium-<%= column_width %> column end">
           <div class="legislation-date">
             <div class="legislation-date-title">
-              <h4><%= t("legislation.processes.shared.debate_dates") %></h4>
+              <h4>
+                <%= t("legislation.processes.shared.debate_dates") %>
+                <span>(<%= process.questions.count %>)</span>
+              </h4>
               <p>
                 <%= format_date(process.debate_start_date) %> -
                 <%= format_date(process.debate_end_date) %>
@@ -61,7 +64,10 @@
         <div class="small-6 medium-<%= column_width %> column end">
           <div class="legislation-date">
             <div class="legislation-date-title">
-              <h4><%= t("legislation.processes.shared.proposals_dates") %></h4>
+              <h4>
+                <%= t("legislation.processes.shared.proposals_dates") %>
+                <span>(<%= process.proposals.count %>)</span>
+              </h4>
               <p>
                 <%= format_date(process.proposals_phase_start_date) %> -
                 <%= format_date(process.proposals_phase_end_date) %>
@@ -77,7 +83,14 @@
         <div class="small-6 medium-<%= column_width %> column end">
           <div class="legislation-date">
             <div class="legislation-date-title">
-              <h4><%= t("legislation.processes.shared.allegations_dates") %></h4>
+              <h4>
+                <%= t("legislation.processes.shared.allegations_dates") %>
+                <% if process.draft_versions.any? %>
+                  <span>(<%= process.draft_versions.last.total_comments %>)</span>
+                <% else %>
+                  <span>(0)</span>
+                <% end %>
+              </h4>
               <p>
                 <%= format_date(process.allegations_start_date) %> -
                 <%= format_date(process.allegations_end_date) %>

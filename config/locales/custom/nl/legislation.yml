@@ -6,6 +6,7 @@ nl:
         locked: "Gesloten"
       proposals:
         empty_proposals: "Er zijn geen initiatieven"
+        less_info: "Minder informatie"
       debate:
         participate: "Deelnemen"
       index:
