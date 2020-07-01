@@ -66,6 +66,7 @@ nl:
         reject: "Afwijzen"
         rejected: "Afgewezen"
         search: "Zoek"
+        search_placeholder: "Zoek op naam, mailadres of telefoonnummer"
         title: "Organisaties"
         verified: "Geaccepteerd"
         verify: "Accepteren"
@@ -218,6 +219,7 @@ nl:
         name: "Gebruikersnaam"
         delete: "Verwijderen"
       search:
+        search: "Zoek"
         email_placeholder: "Zoek op mailadres"
         help: "Gebruik de onderstaande zoekbalk om een teller toe te voegen of te verwijderen."
     booths:
@@ -227,7 +229,7 @@ nl:
       manage_assignments: "Locatie wijzigen"
     geozones:
       index:
-        title: "Gedbied"
+        title: "Gebied"
         create: "Creëer gebied"
         edit: "Bewerken"
         delete: "Verwijder"
@@ -434,17 +436,17 @@ nl:
         button: "Zoek"
       user_search:
         button: "Zoek"
-        placeholder: "Zoek op naam of email"
+        placeholder: "Zoek op naam of mailadres"
       actions: "Acties"
       moderated_content: "Deze inhoud is door de moderators gemarkeerd en verborgen. Controleer hier of dit klopt."
       delete: "Verwijder"
     dashboard:
       index:
         title: "Admin"
-        description: "Welkom op het beheerder gedeelte van %{org}"
+        description: 'Welkom op het beheerder gedeelte van %{org}<br>Kom je er niet uit? Aarzel niet om je vraag te stellen op de Slack omgeving (<a href="https://consul.slack.com">https://consul.slack.com</a>) van CONSUL of om de admin guide te lezen (<a href="https://consulproject.org/docs/consul_administration_guide_en.pdf">https://consulproject.org/docs/consul_administration_guide_en.pdf</a>)'
       actions:
         index:
-          description: "Wanneer een gebruiker een initiatief of idee  indient, kan hij op een aparte pagina verschillende middelen  krijgen waarmee hij campagne kan voeren voor zijn initiatief of idee."
+          description: "Wanneer een gebruiker een initiatief of idee indient, kan hij op een aparte pagina verschillende middelen  krijgen waarmee hij campagne kan voeren voor zijn initiatief of idee."
           create: "Creëer promotie"
           edit: "Bewerk"
           delete: "Verwijder"
@@ -510,6 +512,7 @@ nl:
       create: "Creeër categorie"
       destroy: "Verwijder"
       index:
+        add_tag: "Nieuwe voorgestelde categorie creëeren"
         title: "Voorgestelde categorieën"
         help: "Wanneer een gebruiker een initiatief of idee indient, worden de volgende categorieën voorgesteld."
     users:

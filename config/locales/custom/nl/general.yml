@@ -97,7 +97,8 @@ nl:
         expired: "Afgerond"
       participate_button: "Deelnemen"
       no_geozone_restricted: "Hele gemeente"
-      geozone_restricted: "Gebied"
+      geozone_restricted: "Per gebied"
+      cant_answer: "Deze stemronde is niet beschikbaar in jouw gebied"
       section_header:
         description: "Geef je mening en voorkeuren voor specifieke onderwerpen."
         help: "Hulp bij peilingen"
