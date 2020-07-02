@@ -615,7 +615,7 @@ ro:
         sent: Emailul a fost trimit
     mailer:
       forward:
-        subtitle: "Dacă mă sprijiniți, <br> îl vom realiza."
+        subtitle: "Dacă sprijiniți această propunere, <br> va deveni realitate."
         support_button: Sprijină această propunere
         share_in: Distribuie în
         hi: "Bună ziua!"
