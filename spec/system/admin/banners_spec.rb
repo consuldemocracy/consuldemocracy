@@ -190,6 +190,20 @@ describe "Admin banners magement" do
     expect(page).to have_field "Post started at", with: "22/02/2002"
   end
 
+  scenario "when date picker is opened and click on browser history back datepicker should be closed", :js do
+    banner = create(:banner)
+    visit admin_banners_path(banner)
+    click_link "Edit banner"
+    find_field("Post started at").click
+
+    expect(page).to have_css "#ui-datepicker-div"
+
+    go_back
+
+    expect(page).to have_content("Banners")
+    expect(page).not_to have_css "#ui-datepicker-div"
+  end
+
   scenario "Delete a banner" do
     create(:banner, title: "Ugly banner",
                     description: "Bad text",

@@ -111,6 +111,7 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
+//= require datepicker
 
 var initialize_modules = function() {
   "use strict";
