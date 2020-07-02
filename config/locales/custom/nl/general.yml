@@ -159,6 +159,8 @@ nl:
       most_active:
         debates: "Actieve discussies"
         proposals: "Initiatieven"
+        budgets: "Burgerbegroting"
+      see_budget: "Bekijk burgerbegroting"
     cards:
       title: "Uitgelicht"
   shared:

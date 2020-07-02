@@ -5,6 +5,7 @@ describe "Homepage" do
     Setting["homepage.widgets.feeds.proposals"] = false
     Setting["homepage.widgets.feeds.debates"] = false
     Setting["homepage.widgets.feeds.processes"] = false
+    Setting["homepage.widgets.feeds.budgets"] = false
     Setting["feature.user.recommendations"] = false
 
     admin = create(:administrator).user
@@ -14,6 +15,7 @@ describe "Homepage" do
   let!(:proposals_feed)    { create(:widget_feed, kind: "proposals") }
   let!(:debates_feed)      { create(:widget_feed, kind: "debates") }
   let!(:processes_feed)    { create(:widget_feed, kind: "processes") }
+  let!(:budgets_feed)      { create(:widget_feed, kind: "budgets") }
 
   let(:user_recommendations) { Setting.find_by(key: "feature.user.recommendations") }
   let(:user)                 { create(:user) }
@@ -113,6 +115,24 @@ describe "Homepage" do
 
       expect(page).to have_content "Open processes"
       expect(page).to have_css(".legislation_process", count: 3)
+    end
+
+    scenario "Budgets", :js do
+      5.times { create(:budget) }
+
+      visit admin_homepage_path
+
+      within("#widget_feed_#{budgets_feed.id}") do
+        select "2", from: "widget_feed_limit"
+        click_button "Enable"
+      end
+
+      visit root_path
+
+      within("#feed_budgets") do
+        expect(page).to have_content "Participatory budgets"
+        expect(page).to have_css(".budget", count: 2)
+      end
     end
 
     xscenario "Deactivate"

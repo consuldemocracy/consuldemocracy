@@ -329,6 +329,7 @@ nl:
       feeds:
         proposals: "Initiatieven"
         debates: "Discussies"
+        budgets: "Burgerbegroting"
       new:
         card_title: "Nieuwe tegel"
         submit_header: "Header maken"

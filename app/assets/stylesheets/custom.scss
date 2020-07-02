@@ -616,6 +616,7 @@ header {
     }
   }
 
+  h4,
   p {
     padding: 0 $line-height / 2;
 
@@ -626,17 +627,62 @@ header {
     }
   }
 
+  .figure-card {
+
+    @include breakpoint(medium) {
+      max-height: $line-height * 10;
+    }
+  }
+
   .figure-card figcaption {
+    height: 100%;
 
     h3 {
+      bottom: 0;
+      font-size: rem-calc(24);
       min-height: $line-height * 2;
+      position: absolute;
       text-transform: none;
     }
 
     span {
       background: rgba(255, 255, 255, 0.5);
       position: absolute;
-      top: -80px;
+      top: 24px;
+    }
+  }
+
+  h4,
+  .dates {
+    color: $text;
+    margin-bottom: 0;
+  }
+
+  .phase {
+    color: $brand;
+    font-size: $tiny-font-size;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .dates {
+    font-size: $tiny-font-size;
+  }
+
+  .completed {
+    color: $highlight-text;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+
+    &::after {
+      content: "\f023";
+      font-family: "Font Awesome 5 Free";
+      font-size: $base-font-size;
+      right: -12px;
+      position: absolute;
+      top: -1px;
     }
   }
 }
