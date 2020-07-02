@@ -111,6 +111,7 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
+//= require datepicker
 
 var initialize_modules = function() {
   "use strict";
@@ -169,6 +170,7 @@ var initialize_modules = function() {
 var destroy_non_idempotent_modules = function() {
   "use strict";
 
+  App.Datepicker.destroy();
   App.HTMLEditor.destroy();
 };
 
