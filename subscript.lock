@@ -1,2 +1,4 @@
 dev-setup
 dev-setup script/dev-setup.d/00_utils.sh e0460ea0c9e19d72adb1627253a5f2812ebf4406
+dev-setup-asdf
+dev-setup-asdf script/dev-setup.d/01_asdf.sh 0f316e2f3cd2c56cebad949187e83132a1a95009
