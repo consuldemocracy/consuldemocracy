@@ -112,7 +112,7 @@ ka:
         one: "საკითხი"
         other: "საკითხები"
       poll:
-        one: "გამოკითხვა"
+        one: "ხმის მიცემა"
         other: "გამოკითხვები"
       proposal_notification:
         one: "შეტყობინება ინიციატივის თაობაზე"
@@ -283,7 +283,7 @@ ka:
         summary: "შეჯამება"
         description: "აღწერა"
       poll/question:
-        poll_id: "გამოკითხვა"
+        poll_id: "ხმის მიცემა"
         title: "კითხვა"
         summary: "შეჯამება"
         description: "აღწერა"
@@ -292,7 +292,7 @@ ka:
         title: "კითხვა"
       poll/ballot_sheet:
         data: CSV მონაცემები
-        poll_id: გამოკითხვა
+        poll_id: ხმის მიცემა
         officer_assignment_id: დამკვირვებლის დანიშვნა
       poll/shift:
         task: "ამოცანა"
