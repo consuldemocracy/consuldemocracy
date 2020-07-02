@@ -22,4 +22,7 @@ trap "on-exit" EXIT
 
 info "Install dev dependencies"
 
+add-asdf-plugin ruby https://github.com/asdf-vm/asdf-ruby.git
+install-asdf-plugins
+
 echo -e "${GREEN}>> You're all set up!${DEFAULT}"
