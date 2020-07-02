@@ -47,8 +47,8 @@ ka:
         executing_project: პროექტის აღსრულება
         executed: შემსრულებელი
     polls:
-      current_poll: "მიმდინარე გამოკითხვა"
-      current_poll_geozone_restricted: "მიმდინარე გამოკითხვის გეოგრაფიული ზონა შეზღუდულია"
-      recounting_poll: "გამოკითხვის გადათვლა"
-      expired_poll_without_stats: "დასრულებული გამოკითხვა (სტატისტიკისა და შედეგების გარეშე)"
-      expired_poll_with_stats: "დასრულებული გამოკითხვა (სტატისტიკითა და შედეგებით)"
+      current_poll: "მიმდინარე კენჭისყრა"
+      current_poll_geozone_restricted: "მიმდინარე კენჭისყრის გეოგრაფიული ზონა შეზღუდულია"
+      recounting_poll: "კენჭისყრის შედეგების გადათვლა"
+      expired_poll_without_stats: "დასრულებული კენჭისყრა (სტატისტიკისა და შედეგების გარეშე)"
+      expired_poll_with_stats: "დასრულებული კენჭისყრა (სტატისტიკითა და შედეგებით)"
