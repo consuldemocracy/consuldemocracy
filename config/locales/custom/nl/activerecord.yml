@@ -40,6 +40,7 @@ nl:
         email_on_direct_message: "Ontvang emails over privéberichten"
         newsletter: "Ontvang emails over website gerelateerde informatie"
         public_activity: "Maak mijn activiteit openbaar"
+        public_interests: "Maak de onderwerpen en categorieën die ik volg openbaar"
         recommended_debates: "Toon aanbevelingen voor discussie"
         recommended_proposals: "Toon aanbevelingen voor voorstellen"
       budget:

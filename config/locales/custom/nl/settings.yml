@@ -21,6 +21,7 @@ nl:
     url: "Homepage URL"
     url_description: "De URL van de homepage"
     org_name: "Organisatie"
+    related_content_score_threshold: "Scorelimiet voorgestelde gerelateerde inhoud"
     hot_score_period_in_days: "Aantal dagen 'meest actief' filter"
     mailer_from_name: "Afzender naam"
     mailer_from_address: "Afzender e-mail"
@@ -31,7 +32,9 @@ nl:
     meta_keywords_description: "Keywords, gebruikt voor zoekmachineoptimalisatie"
     min_age_to_participate: "Min. leeftijd deelname"
     proposals:
+      successful_proposal_id: "Succesvol initiatief"
       poll_short_title: "Peilingen"
+      poster_short_title_description: 'Gebruikers kunnen een poster downloaden (PDF) om hun initiatief te promoten. Je kunt alle informatie over deze poster vinden in "/app/views/dashboard/poster/index.pdf.erb"'
     proposal_notification_minimum_interval_in_days: "Min. aantal dagen voordat notificaties initiatieven kunnen worden verstuurd"
     proposal_notification_minimum_interval_in_days_description: "Min. aantal dagen voordat notificaties initiatieven kunnen worden verstuurd"
     direct_message_max_per_day: "Max. aantal privéberichten per dag"
@@ -42,6 +45,7 @@ nl:
       wordpress_login_description: "Sta gebruikers toe om in te loggen met een Wordpress account"
       featured_proposals: "Uitgelichte initiatieven"
       featured_proposals_description: "Toon uitgelichte initiatieven op de initiatieven-pagina"
+      signature_sheets_description: "Hiermee kunnen handtekeningen voor initiatieven of burgerbegrotingen ter plaatse worden verzameld en worden ingevoerd"
       user:
         recommendations_description: "Toont gebruikers aanbevelingen op de homepage op basis van gevolgde initiatieven"
         recommendations_on_debates: "Aanbevelingen voor discussies"
