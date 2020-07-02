@@ -965,7 +965,7 @@ ka:
     booth_assignments:
       manage_assignments: განაწილების მართვა
       manage:
-        assignments_list: "'%{poll}' - გამოკითხვაზე მიმაგრებული დავალებები"
+        assignments_list: "'%{poll}' - ხმის მიცემასთან დაკავშირებული დავალებები"
         status:
           assign_status: სტატუსის მინიჭება
           assigned: მინიჭებულია
@@ -1050,7 +1050,7 @@ ka:
       edit:
         title: "შეკითხვის რედაქტირება"
       new:
-        title: "შეკითხვის შექმნა გამოკითხვისთვის %{poll}"
+        title: "შეკითხვის შექმნა ხმის მიცემისთვის %{poll}"
         title_proposal: "შეკითხვის შექმნა"
       answers:
         images:
@@ -1124,7 +1124,7 @@ ka:
     booths:
       index:
         title: "აქტიური კაბინების ჩამონათვალი"
-        no_booths: "უახლოესი გამოკითხვისთვის გამოყოფილი კაბინა არ მოიძებნა."
+        no_booths: "უახლოესი კენჭისყრისთვის გამოყოფილი კაბინა არ მოიძებნა."
         add_booth: "კაბინის დამატება"
         name: "სახელი"
         location: "მდებარეობა"
@@ -1409,13 +1409,13 @@ ka:
         proposals_with_notifications: შეტყობინების მქონე ინიციატივები
         not_available: "ინიციატივა ხელმისაწვდომი არ არის"
       polls:
-        title: გამოკითხვის სტატისტიკა
-        all: გამოკითხვები
+        title: ხმის მიცემის სტატისტიკა
+        all: ხმის მიცემა
         web_participants: ქსელის წევრები
         total_participants: მონაწილეთა საერთო რაოდენობა
         poll_questions: "ხმის მიცემის შეკითხვები: %{poll}"
         table:
-          poll_name: გამოკითხვა
+          poll_name: ხმის მიცემა
           question_name: კითხვა
           origin_web: ქსელის წევრები
           origin_total: მონაწილეთა საერთო რაოდენობა
