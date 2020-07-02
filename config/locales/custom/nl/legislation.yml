@@ -26,7 +26,7 @@ nl:
         title: "Reacties"
     draft_versions:
       show:
-        seeing_version: "Je bekijkt nu de conceptversie"
+        seeing_version: "Je bekijkt nu"
         text_comments: "Reacties"
     questions:
       question:

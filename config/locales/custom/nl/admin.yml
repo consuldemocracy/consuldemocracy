@@ -355,6 +355,7 @@ nl:
       hidden_proposals: "Verborgen initiatieven"
       hidden_budget_investments: "Verborgen ideeën"
       hidden_users: "Verborgen gebruikers"
+      managers: "Managers"
       poll_officers: "Stemmentellers"
       poll_booths: "Locatie stemhokje"
       poll_booth_assignments: "Locatie stemhokje wijzigen"
@@ -417,6 +418,7 @@ nl:
         dashboard:
           title: "Initiatieven dashboard"
         remote_census:
+          title: "Verificatie instellingen"
           how_to_enable: "Om deze instellingen te kunnen bewerken moet je de optie 'Configure connection to remote census (SOAP)' inschakelen in de 'Opties'-tab."
       setting_actions: "Acties"
     shared:
@@ -525,6 +527,7 @@ nl:
         title: "Bijzondere rollen"
         help: "Het is mogelijk om account een bepaalde rol te geven, die voor gebruikers zichtbaar is. Een ambtenaar, projectleider, wethouder of welke rol je wilt definiëren meedoen in het gesprek. Je kunt het label dat naast de gebruikersnamen van deze accounts verschijnt definiëren van belangrijk (niveau 1) tot minst belangrijk (niveau 5). %{link}."
         help_link: "Je kunt deze rollen definiëren in dit menu"
+        no_officials: "Geen bijzondere rollen"
     local_census_records:
       index:
         title: "Lokale volkstelling"
