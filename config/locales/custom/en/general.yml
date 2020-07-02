@@ -2,9 +2,12 @@ en:
   welcome:
     feed:
       proposals_description: "Citizen proposals that gather enough suppport will go to a voting phase, so you can get all the citizens of Groningen to decide how they want their city to be."
+      budgets_description: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. The most supported projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council."
       most_active:
         proposals: "Featured proposals"
+        budgets: "Participatory budgets"
       see_all_proposals: "See all"
+      see_budget: "See this budget"
     steps:
       title: "Participate in 3 steps"
       subtitle: "Optional secondary text."

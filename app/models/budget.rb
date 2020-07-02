@@ -164,8 +164,20 @@ class Budget < ApplicationRecord
     first_enabled_phase_position.present? ? first_enabled_phase_position + 1 : 0
   end
 
+  def start_date
+    phases.enabled.first.starts_at
+  end
+
+  def end_date
+    phases.enabled.last.ends_at
+  end
+
   def heading_price(heading)
     heading_ids.include?(heading.id) ? heading.price : -1
+  end
+
+  def total_headings_price
+    headings.map(&:price).inject(:+)
   end
 
   def translated_phase
@@ -177,6 +189,10 @@ class Budget < ApplicationRecord
                                                       precision: 0,
                                                       locale: I18n.locale,
                                                       unit: currency_symbol)
+  end
+
+  def formatted_total_headings_price
+    formatted_amount(total_headings_price)
   end
 
   def formatted_heading_price(heading)

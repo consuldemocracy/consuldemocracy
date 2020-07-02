@@ -47,5 +47,39 @@
       </div>
     <% end %>
 
+    <% if feed_budgets?(feed) %>
+      <div id="feed_budgets" class="small-12 column margin-top">
+        <div class="feed-content" data-equalizer-watch>
+          <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
+
+          <div class="row">
+            <div class="column">
+              <p><%= t("welcome.feed.budgets_description") %></p>
+            </div>
+          </div>
+
+          <% feed.items.each do |item| %>
+            <div class="<%= item.class.to_s.parameterize(separator: "_") %>">
+              <%= item.name %>
+              <% if item.image.present? %>
+                <img src="<%= item.image_url(:medium) %>"></img>
+              <% else %>
+                <%= image_tag "budget_no_image.jpg", alt: item.name, style: "width: 300px;" %>
+              <% end %>
+              <%= item.formatted_total_headings_price %>
+              <% if item.finished? %>
+                <%= t("admin.budgets.index.table_budget_completed") %>
+              <% else %>
+                <%= t("budgets.index.current_phase") %>: <%= item.current_phase.name %>(<%= item.current_enabled_phase_number %>/<%= item.enabled_phases_amount %>)
+              <% end %>
+              <%= item.start_date.to_date %> <%= item.end_date.to_date %>
+              <%= sanitize(item.description) %>
+              <%= link_to t("welcome.feed.see_budget"), url_for(item) %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
   <% end %>
 </div>
