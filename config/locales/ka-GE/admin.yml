@@ -1265,7 +1265,7 @@ ka:
         placeholder: დამკვირვებლის ძებნა
       poll_questions_search:
         button: ძებნა
-        placeholder: გამოკითხვის კითხვების ძიება
+        placeholder: კენჭისყრის კითხვების ძიება
       proposal_search:
         button: ძებნა
         placeholder: ინიციატივათა ძიება დასახელებით, კოდით, აღწერით ან შეკითხვით
@@ -1376,7 +1376,7 @@ ka:
         direct_messages: პირდაპირი გზავნილები
         proposal_notifications: შეტყობინებები ინიციატივის თაობაზე
         incomplete_verifications: ნაწილობრივ გადამოწმებული
-        polls: გამოკითხვები
+        polls: ხმის მიცემა
       graph:
         debate_created: დებატი
         visit: ვიზიტები
