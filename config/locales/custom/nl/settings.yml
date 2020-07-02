@@ -6,8 +6,12 @@ nl:
     max_ratio_anon_votes_on_debates_description: "Stemmen van geregistreerde gebruikers met een niet-geverifieerd profiel"
     max_votes_for_debate_edit: "Aantal stemmen waarna een discussie niet meer aangepast kan worden"
     max_votes_for_debate_edit_description: "Vanaf dit aantal steunbetuigingen kan een de auteur zijn initiatief niet meer bewerken"
+    proposal_code_prefix: "Prefix for proposal codes"
+    proposal_code_prefix_description: "Dit voorzetsel wordt weergegeven in de initiatieven, vóór de aanmaakdatum en bijbehorend id"
     featured_proposals_number: "Aantal uitgelichte initiatieven"
+    months_to_archive_proposals_description: "Na dit aantal maanden worden de voorstellen gearchiveerd en kunnen ze geen ondersteuning meer ontvangen"
     months_to_archive_proposals: "Aantal actieve maanden initiatief"
+    email_domain_for_officials: "Emaildomein bijzondere rollen"
     twitter_handle: "Twitter accountnaam"
     twitter_handle_description: "Als de accountnaam van dit medium is ingevuld, verschijnt het in te voettekst"
     facebook_handle: "Facebook accountnaam"
@@ -67,6 +71,7 @@ nl:
       link_to_top: "Link naar bovenkant pagina"
       link_to_top_description: "Toont na het scrollen naar beneden op de pagina een knop, om weer terug te gaan naar de bovenkant van de pagina"
       dashboard:
+        notification_emails: "Notificatiemails campagnepagina"
         notification_emails_description: "Maak het mogelijk om dashboard notificatie emails te sturen naar de auteurs van initiatieven"
     process:
       debates_description: "De discussie module is bedoeld voor iedereen die over verschillende beleidskwesties zijn mening wil geven of afstemmen met anderen"
