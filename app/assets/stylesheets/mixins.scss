@@ -148,3 +148,18 @@
     transition: none;
   }
 }
+
+@mixin has-fa-icon($icon, $style) {
+  @extend .fa-#{$icon};
+
+  &::before {
+    @extend %fa-icon;
+    font-family: "Font Awesome 5 Free";
+
+    @if $style == "r" {
+      font-weight: normal;
+    } @else {
+      font-weight: bold;
+    }
+  }
+}
