@@ -62,10 +62,10 @@ ka:
         other: "ორგანიზაციები"
       poll/booth:
         one: "კენჭისყრის კაბინა"
-        other: "კენჭისყრის კაბინები"
+        other: "კენჭისყრის კაბინა"
       poll/officer:
-        one: "დამკვირვებელი"
-        other: "დამკვირვებლები"
+        one: "კენჭისყრის ადმინისტრატორი"
+        other: "კენჭისყრის ადმინისტრატორი"
       poll/ballot_sheet:
         one: საარჩევნო ბიულეტენი
         other: საარჩევნო ბიულეტენები
@@ -293,7 +293,7 @@ ka:
       poll/ballot_sheet:
         data: CSV მონაცემები
         poll_id: ხმის მიცემა
-        officer_assignment_id: დამკვირვებლის დანიშვნა
+        officer_assignment_id: ადმინისტრატორის დანიშვნა
       poll/shift:
         task: "ამოცანა"
       proposal_notification:
