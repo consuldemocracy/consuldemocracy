@@ -17,7 +17,7 @@
           <tr>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
-            <td class="text-right">
+            <td>
               <% if user.administrator? && user.administrator.persisted? %>
                 <%= render Admin::TableActionsComponent.new(user.administrator, actions: [:destroy]) %>
               <% else %>

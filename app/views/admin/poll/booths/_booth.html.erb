@@ -5,7 +5,7 @@
   <td>
     <%= booth.location %>
   </td>
-  <td class="text-right">
+  <td>
     <% if controller_name == "shifts" || controller_name == "booths" && action_name == "available" %>
       <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
         <%= actions.link_to t("admin.booths.booth.shifts"),

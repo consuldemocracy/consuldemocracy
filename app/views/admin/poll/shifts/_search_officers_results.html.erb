@@ -10,9 +10,7 @@
       <tr>
         <th><%= t("admin.poll_shifts.new.table_name") %></th>
         <th><%= t("admin.poll_shifts.new.table_email") %></th>
-        <th class="text-right">
-          <%= t("admin.poll_shifts.new.table_shift") %>
-        </th>
+        <th><%= t("admin.poll_shifts.new.table_shift") %></th>
       </tr>
     </thead>
     <tbody>
@@ -24,7 +22,7 @@
         <td>
           <%= user.email %>
         </td>
-        <td class="text-right">
+        <td>
           <%= render Admin::TableActionsComponent.new(
             actions: [:edit],
             edit_text: t("admin.poll_shifts.new.edit_shifts"),

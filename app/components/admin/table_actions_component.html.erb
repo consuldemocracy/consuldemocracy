@@ -1,9 +1,11 @@
-<%= content %>
+<div class="table-actions">
+  <%= content %>
 
-<% if actions.include?(:edit) %>
-  <%= link_to edit_text, edit_path, edit_options %>
-<% end %>
+  <% if actions.include?(:edit) %>
+    <%= link_to edit_text, edit_path, edit_options %>
+  <% end %>
 
-<% if actions.include?(:destroy) %>
-  <%= link_to destroy_text, destroy_path, destroy_options %>
-<% end %>
+  <% if actions.include?(:destroy) %>
+    <%= link_to destroy_text, destroy_path, destroy_options %>
+  <% end %>
+</div>
