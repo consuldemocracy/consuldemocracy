@@ -1,5 +1,7 @@
 ---
 linters:
+  ClosingErbTagIndent:
+    enabled: true
   ErbSafety:
     enabled: true
   ExtraNewline:
