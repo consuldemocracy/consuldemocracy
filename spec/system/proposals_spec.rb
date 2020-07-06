@@ -204,7 +204,7 @@ describe "Proposals" do
     let!(:window_size) { Capybara.current_window.size }
 
     before do
-      Capybara.current_window.resize_to(640, 480)
+      Capybara.current_window.resize_to(480, 640)
     end
 
     after do

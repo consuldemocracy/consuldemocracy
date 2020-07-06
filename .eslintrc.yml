@@ -10,6 +10,7 @@ globals:
   CKEDITOR: readonly
   L: readonly
   Turbolinks: readonly
+  Foundation: readonly
 parserOptions:
   ecmaVersion: 5
 rules:

@@ -3,26 +3,29 @@
   App.FoundationExtras = {
     clearSticky: function() {
       if ($("[data-sticky]").length) {
-        $("[data-sticky]").foundation("destroy");
+        $("[data-sticky],[data-stick-to]").foundation("destroy");
       }
     },
-    mobile_ui_init: function() {
-      $(window).trigger("load.zf.sticky");
-    },
-    desktop_ui_init: function() {
-      $(window).trigger("init.zf.sticky");
-    },
     initialize: function() {
-      $(document).foundation();
-      $(window).trigger("resize");
-      window.addEventListener("popstate", this.clearSticky, false);
-      $(function() {
-        if ($(window).width() < 620) {
-          App.FoundationExtras.mobile_ui_init();
-        } else {
-          App.FoundationExtras.desktop_ui_init();
+      // Fix sticky elements restored from browser cache before Foundation initialization
+      // Now data-sticky-to property is mandatory to make this patch to work
+      if ($("[data-sticky]").length !== $("[data-stick-to]").length) {
+        $("[data-stick-to]").attr("data-sticky", "true");
+      }
+
+      $("[data-sticky]").each(function(_, sticky) {
+        var breakpoints = $(sticky).data("sticky-on") || "small medium large xlarge xxlarge";
+        breakpoints = breakpoints.split(" ");
+        if (breakpoints.indexOf(Foundation.MediaQuery.current) > -1) {
+          return;
         }
+        $("[data-sticky]").removeAttr("data-sticky");
       });
+      $(document).foundation();
     }
   };
+
+  // Destroy always sticky elements to remove window scroll listener that will fail
+  // at all other pages loaded through turbolinks
+  $(document).on("turbolinks:before-cache", App.FoundationExtras.clearSticky);
 }).call(this);
