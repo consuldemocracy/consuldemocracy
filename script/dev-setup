@@ -52,4 +52,28 @@ fi
 info "Install gems (if necessary)"
 bundle install
 
+info "Copying database.yml.example to database.yml (if necessary)"
+if [ ! -f "config/database.yml" ]; then
+  cp config/database.yml.example config/database.yml
+  warn "You're going to want to edit config/database.yml for your particular setup"
+fi
+
+info "Copying secrets.yml.example to secrets.yml (if necessary)"
+if [ ! -f "config/secrets.yml" ]; then
+  cp config/secrets.yml.example config/secrets.yml
+  warn "You're going to want to edit config/secrets.yml for your particular setup"
+fi
+
+info "Creating the database (if necessary)"
+bin/rake db:create
+
+info "Migrating the database (if necessary)"
+bin/rake db:migrate
+
+info "Adding seeds to the database (if necessary)"
+bin/rake db:dev_seed
+
+info "Setting up the database for test (if necessary)"
+RAILS_ENV=test rake db:setup
+
 echo -e "${GREEN}>> You're all set up!${DEFAULT}"
