@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+YARN_VERSION=1.19.1
+BUNDLER_VERSION="~>2.1.0"
+
 cd "$(dirname "$0")/.." || exit 1
 DIR=$(pwd)
 
@@ -22,7 +25,11 @@ trap "on-exit" EXIT
 
 info "Install dev dependencies"
 
+info "Installing ruby (if necessary)"
 add-asdf-plugin ruby https://github.com/asdf-vm/asdf-ruby.git
 install-asdf-plugins
+
+info "Installing bundler (if necessary)"
+gem install bundler --conservative --version "$BUNDLER_VERSION"
 
 echo -e "${GREEN}>> You're all set up!${DEFAULT}"
