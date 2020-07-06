@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to valuator.name, admin_valuator_path(valuator) %></td>
+  <td><%= valuator.name %></td>
   <td><%= valuator.email %></td>
   <td>
     <% if valuator.description.present? %>
@@ -19,6 +19,10 @@
     <%= valuator_abilities(valuator) %>
   </td>
   <td>
-    <%= render Admin::TableActionsComponent.new(valuator) %>
+    <%= render Admin::TableActionsComponent.new(valuator) do |actions| %>
+      <%= actions.link_to t("admin.shared.view"),
+        admin_valuator_path(valuator),
+        class: "button hollow" %>
+    <% end %>
   </td>
 </tr>

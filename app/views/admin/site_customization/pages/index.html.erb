@@ -13,7 +13,6 @@
       <tr>
         <th><%= t("admin.site_customization.pages.page.title") %></th>
         <th><%= t("admin.site_customization.pages.page.slug") %></th>
-        <th><%= t("admin.site_customization.pages.page.cards_title") %></th>
         <th><%= t("admin.site_customization.pages.page.created_at") %></th>
         <th><%= t("admin.site_customization.pages.page.updated_at") %></th>
         <th><%= t("admin.site_customization.pages.page.status") %></th>
@@ -23,22 +22,17 @@
     <tbody>
     <% @pages.each do |page| %>
       <tr id="<%= dom_id(page) %>">
-        <td>
-          <%= link_to page.title, edit_admin_site_customization_page_path(page) %>
-        </td>
+        <td><%= page.title %></td>
         <td><%= page.slug %></td>
-        <td>
-          <%= link_to t("admin.site_customization.pages.page.see_cards"), admin_site_customization_page_cards_path(page),
-                                      class: "button hollow expanded" %>
-        </td>
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
         <td>
-          <%= render Admin::TableActionsComponent.new(page,
-            actions: [:destroy],
-            destroy_text: t("admin.site_customization.pages.index.delete")
-          ) do |actions| %>
+          <%= render Admin::TableActionsComponent.new(page) do |actions| %>
+            <%= actions.link_to t("admin.site_customization.pages.page.see_cards"),
+                                admin_site_customization_page_cards_path(page),
+                                class: "button hollow expanded" %>
+
             <% if page.status == "published" %>
               <%= actions.link_to t("admin.site_customization.pages.index.see_page"),
                                   page.url,

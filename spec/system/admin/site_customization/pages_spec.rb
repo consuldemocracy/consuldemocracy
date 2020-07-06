@@ -70,7 +70,7 @@ describe "Admin custom pages" do
         click_link "Custom pages"
       end
 
-      click_link "An example custom page"
+      within("tr", text: "An example custom page") { click_link "Edit" }
 
       expect(page).to have_selector("h2", text: "An example custom page")
       expect(page).to have_selector("input[value='custom-example-page']")

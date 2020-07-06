@@ -18,7 +18,7 @@
     <tbody>
       <% @questions.each do |question| %>
         <tr id="<%= dom_id(question) %>">
-          <td><%= link_to question.title, admin_question_path(question) %></td>
+          <td><%= question.title %></td>
           <td>
             <% if question.poll.present? %>
               <%= question.poll.name %>
@@ -27,7 +27,10 @@
             <% end %>
           </td>
           <td>
-            <%= render Admin::TableActionsComponent.new(question) %>
+            <%= render Admin::TableActionsComponent.new(question) do |actions| %>
+              <%= actions.link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
+                                                                      class: "button hollow" %>
+            <% end %>
           </td>
         </tr>
       <% end %>

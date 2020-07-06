@@ -1511,7 +1511,6 @@ es:
           updated_at: Última actualización
           title: Título
           slug: Slug
-          cards_title: Tarjetas
           see_cards: Ver tarjetas
         cards:
           cards_title: tarjetas

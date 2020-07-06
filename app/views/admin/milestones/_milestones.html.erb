@@ -30,9 +30,7 @@
       <% milestoneable.milestones.order_by_publication_date.each do |milestone| %>
         <tr id="<%= dom_id(milestone) %>" class="milestone">
           <td class="text-center"><%= milestone.id %></td>
-          <td>
-            <%= link_to milestone.title, admin_polymorphic_path(milestone, action: :edit) %>
-          </td>
+          <td><%= milestone.title %></td>
           <td class="small small-5"><%= milestone.description %></td>
           <td class="small">
             <%= l(milestone.publication_date.to_date) if milestone.publication_date.present? %>
@@ -57,7 +55,6 @@
           </td>
           <td class="small-2">
             <%= render Admin::TableActionsComponent.new(milestone,
-              actions: [:destroy],
               destroy_text: t("admin.milestones.index.delete")
             ) %>
           </td>
