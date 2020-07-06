@@ -49,4 +49,7 @@ if ! cmd psql; then
   brew-install postgresql
 fi
 
+info "Install gems (if necessary)"
+bundle install
+
 echo -e "${GREEN}>> You're all set up!${DEFAULT}"
