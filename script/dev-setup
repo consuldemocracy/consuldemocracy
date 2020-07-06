@@ -32,4 +32,21 @@ install-asdf-plugins
 info "Installing bundler (if necessary)"
 gem install bundler --conservative --version "$BUNDLER_VERSION"
 
+info "Installing yarn (if necessary)"
+if ! yarn -v > /dev/null 2>&1; then
+  install-package yarn
+fi
+
+if [ "$(yarn --version)" != "$YARN_VERSION" ]; then
+  error "Please use yarn version $YARN_VERSION or update the version requirement"
+  error "in 'script/dev-setup', '.circleci/config.yml' and 'package.json'."
+  error "You can upgrade yarn on macOS with 'brew upgrade yarn'."
+  exit 1
+fi
+
+info "Installing postgres (if necessary)"
+if ! cmd psql; then
+  brew-install postgresql
+fi
+
 echo -e "${GREEN}>> You're all set up!${DEFAULT}"
