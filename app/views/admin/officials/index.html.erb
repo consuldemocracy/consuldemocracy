@@ -16,9 +16,7 @@
     <tbody>
       <% @officials.each do |official| %>
         <tr>
-          <td>
-            <%= link_to official.name, edit_admin_official_path(official) %>
-          </td>
+          <td><%= official.name %></td>
           <td>
             <span class="label level-<%= official.official_level %>">
               <%= official.official_position %>

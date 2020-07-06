@@ -148,7 +148,7 @@ describe "Admin budget headings" do
       click_button "Create new heading"
 
       expect(page).to have_content "Heading created successfully!"
-      expect(page).to have_link "All City"
+      expect(page).to have_content "All City"
       expect(page).to have_content "€1,000"
       expect(page).to have_content "10000"
       expect(page).to have_content "Yes"

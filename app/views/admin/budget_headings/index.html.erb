@@ -24,7 +24,7 @@
     <tbody>
       <% @headings.each do |heading| %>
         <tr id="<%= dom_id(heading) %>" class="heading">
-          <td><%= link_to heading.name, edit_admin_budget_group_heading_path(@budget, @group, heading) %></td>
+          <td><%= heading.name %></td>
           <td><%= @budget.formatted_heading_price(heading) %></td>
           <% if @budget.approval_voting? %>
             <td><%= heading.max_ballot_lines %></td>

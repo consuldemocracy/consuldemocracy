@@ -22,7 +22,7 @@
     <tbody>
       <% @groups.each do |group| %>
         <tr id="<%= dom_id(group) %>">
-          <td><%= link_to group.name, edit_admin_budget_group_path(@budget, group) %></td>
+          <td><%= group.name %></td>
           <td><%= group.max_votable_headings %></td>
           <td><%= group.headings.count %></td>
           <td>

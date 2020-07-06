@@ -18,9 +18,7 @@
     <% @poll.questions.each do |question| %>
       <tr id="<%= dom_id(question) %>">
         <td>
-          <strong>
-            <%= link_to question.title, admin_question_path(question) %>
-          </strong>
+          <strong><%= question.title %></strong>
           <% if question.proposal.present? %>
             <small>
               <%= link_to t("admin.polls.show.see_proposal"),

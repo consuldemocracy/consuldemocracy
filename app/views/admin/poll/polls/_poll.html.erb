@@ -1,8 +1,6 @@
 <tr id="<%= dom_id(poll) %>" class="poll">
   <td>
-    <strong>
-      <%= link_to poll.name, admin_poll_path(poll) %>
-    </strong>
+    <strong><%= poll.name %></strong>
   </td>
   <td class="text-center">
     <%= l poll.starts_at.to_date %>
