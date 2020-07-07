@@ -2,7 +2,7 @@
   <%= t("admin.header.title") %> - <%= t("admin.menu.debates") %> - <%= @debate.title %>
 <% end %>
 
-<div class="debate-show">
+<div id="<%= dom_id(@debate) %>" class="debate-show">
   <h2><%= @debate.title %></h2>
 
   <% if @debate.conflictive? %>

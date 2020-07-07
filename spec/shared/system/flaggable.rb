@@ -1,12 +1,21 @@
-shared_examples "flaggable" do |factory_name|
+shared_examples "flaggable" do |factory_name, admin: false|
   include ActionView::RecordIdentifier
 
-  let(:user) { create(:user, :level_two) }
   let(:flaggable) { create(factory_name) }
+
+  let(:user) do
+    if admin
+      create(:administrator).user
+    else
+      create(:user, :level_two)
+    end
+  end
 
   let(:path) do
     if flaggable.is_a?(Comment)
       polymorphic_path(flaggable.commentable)
+    elsif admin
+      admin_polymorphic_path(flaggable)
     else
       polymorphic_path(flaggable)
     end
