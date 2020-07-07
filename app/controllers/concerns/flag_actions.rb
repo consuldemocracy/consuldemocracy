@@ -4,13 +4,13 @@ module FlagActions
   def flag
     Flag.flag(current_user, flaggable)
 
-    render "_refresh_flag_actions"
+    render "shared/_refresh_flag_actions", locals: { flaggable: flaggable }
   end
 
   def unflag
     Flag.unflag(current_user, flaggable)
 
-    render "_refresh_flag_actions"
+    render "shared/_refresh_flag_actions", locals: { flaggable: flaggable }
   end
 
   private
