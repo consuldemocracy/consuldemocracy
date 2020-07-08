@@ -2,7 +2,7 @@ hr:
   management:
     account:
       menu:
-        reset_password_email: Obnovi zaporku putem emaila
+        reset_password_email: Obnovi lozinku putem e-maila
         reset_password_manually: Obnovi lozinku ručno
       alert:
         unverified_user: Nema ulogiranih verificiranih korisnika
