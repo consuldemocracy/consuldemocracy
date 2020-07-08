@@ -1,0 +1,5 @@
+nl:
+  flash:
+    actions:
+      create:
+        proposal_notification: "Bericht verzonden"
