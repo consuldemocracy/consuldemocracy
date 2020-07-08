@@ -270,27 +270,27 @@ hr:
         table_publication_date: "Datum objave"
         table_status: Stanje
         table_actions: "Akcije"
-        delete: "Obriši ključni cilj"
-        no_milestones: "Nemate definirane ključne ciljeve"
+        delete: "Obriši miljokaz"
+        no_milestones: "Nemate definirane miljokaze"
         image: "Slika"
         show_image: "Pogledaj sliku"
         documents: "Dokumenti"
-        milestone: Ključni ciljevi
-        new_milestone: Stvori novi ključni cilj
+        milestone: Miljokazi
+        new_milestone: Stvori novi miljokaz
         milestone_tags: Oznake miljokaza
       form:
         admin_statuses: Upravljaj statusima
         no_statuses_defined: Još ne postoji definirani status
       new:
-        creating: Stvori ključni cilj
+        creating: Stvori miljokaz
       edit:
-        title: Uredi ključne ciljeve
+        title: Uredi miljokaz
       create:
         notice: Novi miljokaz stvoren uspješno!
       update:
         notice: Miljokaz uspješno ažuriran
       delete:
-        notice: Ključni ciljevi uspješno obrisani
+        notice: Miljokaz uspješno obrisan
     statuses:
       index:
         title: Status ključnih ciljeva
@@ -312,21 +312,21 @@ hr:
       delete:
         notice: Ključni ciljevi uspješno obrisani
     progress_bars:
-      manage: "Upravljaj trakom progresa"
+      manage: "Upravljaj trakom napretka"
       index:
         title: "Trake napretka"
         no_progress_bars: "Ne postoji traka napretka"
         new_progress_bar: "Stvori novu traku napretka"
-        primary: "Primarna praznina napretka"
+        primary: "Primarna traka napretka"
         table_id: "Identifikacijski broj"
         table_kind: "Tip"
         table_title: "Naziv"
-        table_percentage: "Trenutni progres"
+        table_percentage: "Trenutni napredak"
       new:
         creating: "Stvori novu traku napretka"
       edit:
         title:
-          primary: "Uredi primarniu traku napretka"
+          primary: "Uredi primarnu traku napretka"
           secondary: "Uredi traku napretka %{title}"
       create:
         notice: "Traka napretka je stvorena uspješno!"
