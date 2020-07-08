@@ -12,6 +12,7 @@ de:
         help: Hilfe zu "Diskussionen"
       section_footer:
         title: Hilfe zu "Diskussionen"
+        help_text_1: "Bringen Sie Ihre eigenen Ideen zur Gestaltung der Stadt Würzburg ein. Teilen Sie Ihre Meinung mit Mitbürger*innen in einer Diskussion über Themen, die Sie interessieren und tauschen Sie sich über die Ideen und Anliegen aus."
     new:
       recommendation_one: Verwenden Sie bitte nicht ausschließlich Großbuchstaben für die Überschrift oder für komplette Sätze. Im Internet gilt das als schreien. Und niemand möchte angeschrien werden.
   proposals:
@@ -20,7 +21,7 @@ de:
         help: Hilfe zu "Vorschläge"
       section_footer:
         title: Hilfe zu "Vorschläge"
-        description: Die Vorschläge der Bürger*innen sind eine Möglichkeit für Nachbarn und Mitmenschen, direkt zu entscheiden, wie sie ihre Stadt gestalten wollen. Nachdem sie ausreichend Unterstützung erhalten haben, können Vorschläge vom Stadtrat zur Abstimmung freigegeben werden.
+        description: Die Vorschläge der Bürger*innen sind eine Möglichkeit für Sie, direkten Einfluss auf die Gestaltung der Stadt zu nehmen. Sie können die einzelnen Vorschläge unterstützen und unter den Vorschlägen diskutieren.
     proposal:
       reason_for_supports_necessary: ""
   welcome:
