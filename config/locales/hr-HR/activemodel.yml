@@ -19,7 +19,7 @@ hr:
           phone: "Telefon"
           confirmation_code: "Kod potvrde"
         email:
-          recipient: "Email"
+          recipient: "E-mail"
       verification/letter:
         email: "E-mail"
         password: "Zaporka"
