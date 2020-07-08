@@ -579,7 +579,7 @@ hr:
         show_results_help: Ako označite taj okvir, rezultati će biti javni i svi će ih korisnici moći vidjeti
         delete: Obriši pregled
         alert_notice: Akcija će se ukloniti s pregleda i svih povezanih pitanja.
-        success_notice: Pregled je uspješno obrisan
+        success_notice: Istraživanje je uspješno obrisano
         unable_notice: Ne možete uništiti pregled koji ima odgovore
       form:
         name: Naziv pregleda
@@ -651,7 +651,7 @@ hr:
       no_polls: "Ne postoji otvoreno izglasavanje."
     show:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
-      already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan preko."
+      already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan."
       back: Nazad na glasanje
       cant_answer_not_logged_in: "Vi morate %{signin} ili %{signup} kako biste sudjelovali."
       comments_tab: Komentari
