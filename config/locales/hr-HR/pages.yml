@@ -2,7 +2,7 @@ hr:
   pages:
     conditions:
       title: Odredbe i uvjeti korištenja
-      subtitle: PRAVNA OBAVIJEST O UVJETIMA UPORABE, PRIVATNOSTI I ZAŠTITE OSOBNIH PODATAKA O PORTALU OTVORENE VLADE
+      subtitle: PRAVNA OBAVIJEST O UVJETIMA KORIŠTENJA, PRIVATNOSTI I ZAŠTITE OSOBNIH PODATAKA NA PORTALU OTVORENE UPRAVE
       description: Informativna strana za uvjete korištenja, privatnost i zaštitu osobnih podataka.
     help:
       title: "%{org} je platforma za građansko sudjelovanje"
@@ -69,9 +69,9 @@ hr:
     accessibility:
       title: Dostupnost
       description: |-
-        Dostubnost internetu se odnosi na mogućnost pristupu internetu i sadržaju svim ljudima, bez obzira na moguće smenje (fizičke, intelektualne i tehničke) koji mogu nastati ili od onih koji proizlaze iz konteksta uporabe (tehnološke ili okolišne).
+        Pristupačnost na webu se odnosi na mogućnost pristupu internetu i sadržaju svim ljudima, bez obzira na moguće nemogućnosti (fizičke, intelektualne i tehničke) koji mogu nastati ili od onih koji proizlaze iz konteksta uporabe (tehnološke ili okolišne).
 
-        Kada su web-mjesta osmišljena s obzirom na pristupačnost, svi korisnici mogu pristupiti sadržaju pod jednakim uvjetima, na primjer:
+        Kada su web sjedišta osmišljena s obzirom na pristupačnost, svi korisnici mogu pristupiti sadržaju pod jednakim uvjetima, na primjer:
       examples:
         - Pružanjem alternativni tekst da zamijene slike, slijepi ili slabovidni korisnici mogu koristiti posebne čitače za pristup informacijama.
         - Kada videozapisi imaju titlove, korisnici s poteškoćama u slušanju mogu u potpunosti razumjeti video.
