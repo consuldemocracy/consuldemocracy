@@ -17,7 +17,7 @@ hr:
           postal_code: "Poštanski broj"
         sms:
           phone: "Telefon"
-          confirmation_code: "Kod potvrde"
+          confirmation_code: "Potvrdni kôd"
         email:
           recipient: "E-mail"
       verification/letter:
