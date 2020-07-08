@@ -48,7 +48,7 @@ hr:
         executed: Izvršeno
     polls:
       current_poll: "Trenutna anketa"
-      current_poll_geozone_restricted: "Trenutna Ankeata Nije Dopuštena Za Ovu Geozonu"
-      recounting_poll: "Ponovno Izbrojavanje Ankete"
+      current_poll_geozone_restricted: "Trenutna anketa nije dopuštena za ovu geozonu"
+      recounting_poll: "Ponovno prebrojavanje ankete"
       expired_poll_without_stats: "Istekla anketa bez statusa i rezultata"
       expired_poll_with_stats: "Istekla anketa sa statusom i rezultatima"
