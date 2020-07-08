@@ -12,7 +12,7 @@ hr:
       total_recounts: Ukupno prebrojavanja i rezultata
     polls:
       final:
-        title: Glasovanje je spremljeno za finalno prebrojavanje
+        title: Ankee spremne za finalno prebrojavanje
         no_polls: Nemate službeno prebrojavanje u nijednoj aktivnoj anketi
         select_poll: Odaberi anketu
         add_results: Dodaj rezultate
@@ -45,7 +45,7 @@ hr:
         error_wrong_booth: "Pogrešno glasačko mjesto. Rezultati nisu spremljeni."
       new:
         title: "%{poll} - Dodaj rezultate"
-        not_allowed: "Nije vam doušteno da dodate rezultate za ovo glasovanje"
+        not_allowed: "Nije vam dopušteno dodavati rezultate za ovu anketu"
         booth: "Glasačko mjesto"
         date: "Datum"
         select_booth: "Odaberi glasačko mjesto"
