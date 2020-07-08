@@ -35,13 +35,15 @@ class CommentsController < ApplicationController
   def flag
     Flag.flag(current_user, @comment)
     set_comment_flags(@comment)
-    respond_with @comment, template: "comments/_refresh_flag_actions"
+
+    render "shared/_refresh_flag_actions", locals: { flaggable: @comment, divider: true }
   end
 
   def unflag
     Flag.unflag(current_user, @comment)
     set_comment_flags(@comment)
-    respond_with @comment, template: "comments/_refresh_flag_actions"
+
+    render "shared/_refresh_flag_actions", locals: { flaggable: @comment, divider: true }
   end
 
   private

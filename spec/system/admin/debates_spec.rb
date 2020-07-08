@@ -6,6 +6,8 @@ describe "Admin debates" do
     login_as(admin.user)
   end
 
+  it_behaves_like "flaggable", :debate, admin: true
+
   scenario "Index" do
     create(:debate, title: "Best beaches")
 

@@ -2,7 +2,7 @@
   <%= t("admin.header.title") %> - <%= t("admin.menu.debates") %> - <%= @debate.title %>
 <% end %>
 
-<div class="debate-show">
+<div id="<%= dom_id(@debate) %>" class="debate-show">
   <h2><%= @debate.title %></h2>
 
   <% if @debate.conflictive? %>
@@ -21,8 +21,8 @@
     <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
     <span class="bullet">&nbsp;&bull;&nbsp;</span>
     <span class="js-flag-actions">
-            <%= render "debates/flag_actions", debate: @debate %>
-          </span>
+      <%= render "shared/flag_actions", flaggable: @debate %>
+    </span>
   </div>
 
   <%= auto_link_already_sanitized_html wysiwyg(@debate.description) %>

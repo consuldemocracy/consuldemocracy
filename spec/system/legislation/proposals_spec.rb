@@ -8,6 +8,7 @@ describe "Legislation Proposals" do
 
   context "Concerns" do
     it_behaves_like "notifiable in-app", :legislation_proposal
+    it_behaves_like "flaggable", :legislation_proposal
   end
 
   scenario "Only one menu element has 'active' CSS selector" do

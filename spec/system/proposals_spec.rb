@@ -19,6 +19,7 @@ describe "Proposals" do
                     :proposal,
                     "proposal_path",
                     { "id": "id" }
+    it_behaves_like "flaggable", :proposal
   end
 
   context "Index" do
@@ -1499,69 +1500,6 @@ describe "Proposals" do
 
     visit proposal_path(good_proposal)
     expect(page).not_to have_content "This proposal has been flagged as inappropriate by several users."
-  end
-
-  scenario "Flagging", :js do
-    user = create(:user)
-    proposal = create(:proposal)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    within "#proposal_#{proposal.id}" do
-      page.find("#flag-expand-proposal-#{proposal.id}").click
-      page.find("#flag-proposal-#{proposal.id}").click
-
-      expect(page).to have_css("#unflag-expand-proposal-#{proposal.id}")
-    end
-
-    expect(Flag.flagged?(user, proposal)).to be
-  end
-
-  scenario "Unflagging", :js do
-    user = create(:user)
-    proposal = create(:proposal)
-    Flag.flag(user, proposal)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    within "#proposal_#{proposal.id}" do
-      page.find("#unflag-expand-proposal-#{proposal.id}").click
-      page.find("#unflag-proposal-#{proposal.id}").click
-
-      expect(page).to have_css("#flag-expand-proposal-#{proposal.id}")
-    end
-
-    expect(Flag.flagged?(user, proposal)).not_to be
-  end
-
-  scenario "Flagging/Unflagging AJAX", :js do
-    user = create(:user)
-    proposal = create(:proposal)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    # Flagging
-    within "#proposal_#{proposal.id}" do
-      page.find("#flag-expand-proposal-#{proposal.id}").click
-      page.find("#flag-proposal-#{proposal.id}").click
-
-      expect(page).to have_css("#unflag-expand-proposal-#{proposal.id}")
-    end
-
-    expect(Flag.flagged?(user, proposal)).to be
-
-    # Unflagging
-    within "#proposal_#{proposal.id}" do
-      page.find("#unflag-expand-proposal-#{proposal.id}").click
-      page.find("#unflag-proposal-#{proposal.id}").click
-
-      expect(page).to have_css("#flag-expand-proposal-#{proposal.id}")
-    end
-
-    expect(Flag.flagged?(user, proposal)).not_to be
   end
 
   it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
