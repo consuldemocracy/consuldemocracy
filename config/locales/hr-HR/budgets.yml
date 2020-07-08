@@ -5,7 +5,7 @@ hr:
         title: Vaš glas
         amount_spent: Potrošena količina
         remaining: "Vi još morate<span>%{amount}</span> investirati."
-        no_balloted_group_yet: "Vi niste glasali na temu ove grupe, glasajte!"
+        no_balloted_group_yet: "Još niste glasovali u ovoj grupi, glasujte!"
         remove: Ukloni glas
         voted:
           one: "Vi ste glasovali za <span>jednu</span> investiciju."
@@ -13,38 +13,38 @@ hr:
           other: "Vi ste glasovali za <span>%{count}</span> investicija."
         voted_info: "Vaše je glasovanje potvrđeno!"
         voted_info_2: "Možete promjeniti svoj glas u bilo koje vrijeme do završetka ove faze."
-        zero: Vi niste glasali niti za jedan projetk.
+        zero: Niste glasali niti za jedan investicijski projekt.
       reasons_for_not_balloting:
         not_logged_in: Vi morate %{signin} ili %{signup} kako biste nastavili.
         not_verified: Samo potvrđeni korisnici mogu glasati za investicije, %{verify_account}.
         organization: Organizacijama nije dozvoljeno glasanje
-        not_selected: Projekti koji nisu odabrani ne mogu dobiti podršku
+        not_selected: Investicijski projekti koji nisu odabrani ne mogu dobiti podršku
         not_enough_money: "Već ste odabrali dostupan proračun.<br><small>Možete %{change_ballot} u bilo kojem trenutku</small>"
         no_ballots_allowed: Faza odabira je zatvorena
         different_heading_assigned: "Već ste glasovali za drugu temu: %{heading_link}"
-        change_ballot: promjeni svoj glas
-        casted_offline: Vi ste sudjelovali offline
+        change_ballot: promijeni svoj glas
+        casted_offline: Već ste sudjelovali offline
     groups:
       show:
         title: Odaberite opciju
-        unfeasible_title: Neizvediva investicija
+        unfeasible_title: Neizvedive investicije
         unfeasible: Pregledajte neizvedive investicije
         unselected_title: Investicije nisu odabrane za glasačku fazu
         unselected: Pregledajte investicije koje nisu odabrane za fazu glasanja
     phase:
-      drafting: Draf (Nije vidljiv javnosti)
+      drafting: Nacrt (Nije vidljiv javnosti)
       informing: Informacija
-      accepting: Prihvaćanje projekta
-      reviewing: Pregled projekta
-      selecting: Odabir projekta
-      valuating: Vrednovanje projekta
+      accepting: Prihvaćanje projekata
+      reviewing: Pregled projekata
+      selecting: Odabir projekata
+      valuating: Vrednovanje projekata
       publishing_prices: Objavljivanje cijena projekata
-      balloting: Izglasavanje projekta
+      balloting: Izglasavanje projekata
       reviewing_ballots: Pregled glasanja
-      finished: Finaliziran budžet
+      finished: Finalizirani proračun
     index:
-      title: Participativni budžet
-      empty_budgets: Ne postoji budžeti.
+      title: Participativni proračun
+      empty_budgets: Ne postoji proračuni.
       section_header:
         icon_alt: Participativni budžeti ikona
         title: Participativni budžeti
