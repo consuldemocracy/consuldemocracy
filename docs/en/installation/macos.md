@@ -14,19 +14,11 @@ To install *git* you'll first need to install *Xcode* (download it from the Mac 
 
 You can download git from: [git-scm.com/download/mac](https://git-scm.com/download/mac)
 
-## Ruby and rbenv
+## Ruby version manager
 
-OS X already comes with a preinstalled Ruby version, but it's quite old and we need a newer one (2.4.9). One of the multiple ways of installing Ruby in OS X is through *rbenv*. The installation instructions are in its GitHub repository and are pretty straight-forward:
+OS X already comes with a preinstalled Ruby version, but it's quite old and we need a newer one. One of the multiple ways of installing Ruby in OS X is through *rbenv*. The installation instructions are in its GitHub repository and are pretty straight-forward:
 
 [github.com/rbenv/rbenv](https://github.com/rbenv/rbenv)
-
-Then install Ruby version 2.4.9
-
-## Bundler
-
-```
-gem install bundler
-```
 
 ## Node.js
 
@@ -108,4 +100,4 @@ brew install chromedriver
 brew install imagemagick
 ```
 
-Now that we have all the dependencies installed we can download the project: [installed](local_installation.md)
+Now that we have all the dependencies installed we can go ahead and [install Consul](local_installation.md).

@@ -27,7 +27,7 @@ El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://gith
 
 **NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://consul_docs.gitbooks.io/docs/content/es/getting_started/prerequisites/)
 
-Prerequisitos: tener instalado git, Ruby 2.4.9, la gema `bundler`, Node.js y PostgreSQL (9.4 o superior).
+Prerequisitos: tener instalado git, Ruby (versión definida en el fichero `.ruby-version` del repositorio de CONSUL), la gema `bundler`, Node.js y PostgreSQL (9.4 o superior).
 
 ```
 

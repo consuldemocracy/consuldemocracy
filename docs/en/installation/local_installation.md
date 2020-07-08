@@ -2,20 +2,41 @@
 
 Before installing Consul and having it up and running make sure you all [prerequisites](prerequisites.md) installed.
 
-1. First, clone the [Consul Github repository](https://github.com/consul/consul/):
+1. First, clone the [Consul Github repository](https://github.com/consul/consul/) and enter the project folder:
 
 ```bash
 git clone https://github.com/consul/consul.git
+cd consul
 ```
 
-2. Go to the project folder and install the gems stack using [Bundler](http://bundler.io/):
+2. Install the Ruby version we need with your Ruby version manager. Here are some examples:
 
 ```bash
-cd consul
+rvm install `cat .ruby-version` # If you're using RVM
+rbenv install `cat .ruby-version` # If you're using rbenv
+asdf install ruby `cat .ruby-version` # If you're using asdf
+```
+
+3. Check we're using the Ruby version we've just installed:
+
+```bash
+ruby -v
+=> # (it should be the same as the version in the .ruby-version file)
+```
+
+4. Install [Bundler](http://bundler.io/):
+
+```bash
+gem install bundler --version 1.17.1
+```
+
+5. Install the required gems using Bundler:
+
+```bash
 bundle
 ```
 
-3. Copy the environment example configuration files inside new readable ones:
+6. Copy the environment example configuration files inside new readable ones:
 
 ```bash
 cp config/database.yml.example config/database.yml
@@ -24,7 +45,7 @@ cp config/secrets.yml.example config/secrets.yml
 
 And setup database credentials with your `consul` user in your new `database.yml` file.
 
-4. Run the following [Rake tasks](https://github.com/ruby/rake) to create and fill your local database with the minimum data to run the application:
+7. Run the following [Rake tasks](https://github.com/ruby/rake) to create and fill your local database with the minimum data needed to run the application:
 
 ```bash
 rake db:create
@@ -33,13 +54,13 @@ rake db:dev_seed
 rake db:test:prepare
 ```
 
-5. Check everything is fine by running the test suite (beware it might take more than an hour):
+8. Check everything is fine by running the test suite (beware it might take more than an hour):
 
 ```bash
 bin/rspec
 ```
 
-6. Now you have all set, run the application:
+9. Now you have all set, run the application:
 
 ```bash
 bin/rails s

@@ -119,10 +119,10 @@ As recommended by Heroku, you can add the gem rails\_12factor and specify the ve
 ```
 gem 'rails_12factor'
 
-ruby '2.4.9'
+ruby 'x.y.z'
 ```
 
-in the file _Gemfile\_custom_. Don't forget to run
+in the file _Gemfile\_custom_, where `x.y.z` is the version defined in the `.ruby-version` file in the CONSUL repository. Don't forget to run
 
 ```
 bundle install
