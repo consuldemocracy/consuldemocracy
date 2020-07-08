@@ -5,7 +5,7 @@ hr:
         reset_password_email: Obnovi lozinku putem e-maila
         reset_password_manually: Obnovi lozinku ručno
       alert:
-        unverified_user: Nema ulogiranih verificiranih korisnika
+        unverified_user: Nema prijavljenih verificiranih korisnika
       show:
         title: Korisnički račun
       edit:
@@ -13,13 +13,13 @@ hr:
         back: Nazad
         password:
           password: Lozinka
-          send_email: Pošalji obnovljenu zaporku emal-om
+          send_email: Pošalji e-mail za obnovu lozinke
           reset_email_send: E-mail poslan ispravno.
           reseted: Lozinka je uspješno obnovljena
           random: Stvori nasumičnu lozinku
           save: Spremi lozinku
-          print: Printaj zaporku
-          print_help: Moći ćete printati zaporku kada ju spremite.
+          print: Ispiši zaporku
+          print_help: Moći ćete ispisati zaporku kada ju spremite.
     account_info:
       change_user: Promijeni korisnika
       document_number_label: "Broj dokumenta:"
@@ -108,7 +108,7 @@ hr:
         other: " sadrži termine '%{search_term}'"
     sessions:
       signed_out: Uspješna odjava.
-      signed_out_managed_user: Krisnička sesija je uspješno odjavljena.
+      signed_out_managed_user: Korisnička sjednica je uspješno odjavljena.
     username_label: Korisničko ime
     users:
       create_user: Stvori novi račun
