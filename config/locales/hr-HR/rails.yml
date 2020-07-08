@@ -10,8 +10,8 @@ hr:
       - Sub
     abbr_month_names:
       - 
-      - Siječ
-      - Velj
+      - Siječanj
+      - Veljača
       - Ožuj
       - Trav
       - Svib
@@ -51,7 +51,7 @@ hr:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: oko 1 sata
+        one: oko 1 sat
         few: oko %{count} sati
         other: oko %{count} sati
       about_x_months:
