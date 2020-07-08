@@ -43,15 +43,15 @@ hr:
     url: "Glavni URL"
     url_description: "Glavni URL vaše stranice"
     org_name: "Ime stranice"
-    org_name_description: "Ovo ime pojavit će se na temi emaila, pomoćne stranice..."
+    org_name_description: "Ovo ime pojavit će se na temi e-maila, pomoćnim stranicama..."
     related_content_score_threshold: "Prag srodnih sadržaja"
     related_content_score_threshold_description: "Prema ocjeni glasova u srodnom sadržaju, sakriva sadržaj koji korisnici označuju kao nepovezan"
     hot_score_period_in_days: "Period (dana) koji se koristi po filtru 'najviše aktivan'"
     hot_score_period_in_days_description: "Filter 'najviše aktivan' koji se koristi u više sekcija biti će baziran na glasovima tokom zadnjih X dana"
-    mailer_from_name: "Ime pošiljatelja emaila"
-    mailer_from_name_description: "Ovo ime pojavit će se kao ime pošiljatelja u emailu poslanom s aplikacije"
+    mailer_from_name: "Ime pošiljatelja e-maila"
+    mailer_from_name_description: "Ovo ime pojavit će se kao ime pošiljatelja u e-mailu poslanom s aplikacije"
     mailer_from_address: "Email adresa pošiljatelja"
-    mailer_from_address_description: "Ova email adresa će se pojaviti u email-ovima poslanim od strane aplikacije"
+    mailer_from_address_description: "Ova e-mail adresa će se pojaviti u porukama koje pošalje aplikacija"
     meta_title: "Naziv stranice (SEO)"
     meta_title_description: "Naziv stranice <title>, korišten kako bi se poboljšao SEO"
     meta_description: "Opis stranice (SEO)"
@@ -65,21 +65,21 @@ hr:
       successful_proposal_id_description: Ovaj prijedlog se koristi kao referenca za uspješni prijedlog u potpornom broju te će biti prikazan u grafu na upravljačkoj ploči.
       poll_short_title: Glasovanje
       poll_short_title_description: Kratki opis značajke istraživanja. Dopušta korisnicima da stvore istraživanje o prijedlogu
-      poll_description: Opis glovanja
+      poll_description: Opis glasovanja
       poll_description_description: Detaljni opis značajki istraživanja
       poll_link: Dodatna poveznica s informacijama
       poll_link_description: Dodajte vezu za dodatne informacije u upravljačku ploču
       email_short_title: Email
-      email_short_title_description: 'Kratki opis o sadržaju email-a. Dopušta korisnicima da pošalju email kako bi promovirali svoj prijedlog. Možete pronaći sadržaj emaila u "/app/views/dashboard/mailer/forward.html.erb"'
+      email_short_title_description: 'Kratki opis o sadržaju e-maila. Dopušta korisnicima da pošalju e-mail kako bi promovirali svoj prijedlog. Možete pronaći sadržaj e-maila u "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Opis email-a
       email_description_description: Detaljan opis značajki email-a
       poster_short_title: Poster
-      poster_short_title_description: 'Kratki opis o sadržaju postera. Dopušta korisnicima da preuzmu postar u PDF formatu kako bi promovirali svoj prijedlog. Možete pronaći sadržaj postera u "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_short_title_description: 'Kratki opis o sadržaju postera. Dopušta korisnicima da preuzmu poster u PDF formatu kako bi promovirali svoj prijedlog. Možete pronaći sadržaj postera u "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Opis postera
       poster_description_description: Detaljni opis značajki postera
     analytics_url: "Analitika URL-a"
     proposal_notification_minimum_interval_in_days: "Minimalni interval (u danima) za autore prijedloga da pošalju nove obavijesti prijedloga"
-    proposal_notification_minimum_interval_in_days_description: "Broj dana u kojima korisnik može poslati obavijest za sve one koji podupiru prijelog"
+    proposal_notification_minimum_interval_in_days_description: "Broj dana u kojima korisnik može poslati obavijest za sve one koji podupiru prijedlog"
     direct_message_max_per_day: "Izravna Poruka je dostigla maksimalan broj po danu"
     direct_message_max_per_day_description: "Maksimalni broj izravnih poruka koje jedan korisnik može poslati po danu"
     feature:
@@ -94,7 +94,7 @@ hr:
       featured_proposals: "Istaknuti prijedlozi"
       featured_proposals_description: "Prikaži istaknute prijedloge na indeksnoj stranici prijedloga"
       signature_sheets: "Potpisne liste"
-      signature_sheets_description: "Dopušta dodavanje Administracijskog panela potpisa koji se sakupljaju na stranicu Prijedloga i investicijskih projekata Participativnih Budžeta"
+      signature_sheets_description: "Dopušta dodavanje Administracijskog panela potpisa koji se sakupljaju na stranicu Prijedloga i investicijskih projekata Participativnog proračuna"
       user:
         recommendations: "Preporuke"
         recommendations_description: "Prikaži korisničke preporuke na glavnoj stranici koji su bazirani na oznakama sljedećih stavaka"
@@ -109,7 +109,7 @@ hr:
       map: "Geolokacija prijedloga i investicijskih budžeta"
       map_description: "Omogućuje geolokaciju prijedloga i investicijskih projekata"
       allow_images: "Dopustite učitavanje i prikazivanje slika"
-      allow_images_description: "Dopušta korisnicima učitavanje slika kada žele stvoriti prijedloge i investicijske projekte iz Participativnog Budžeta"
+      allow_images_description: "Dopušta korisnicima učitavanje slika kada žele stvoriti prijedloge i investicijske projekte iz Participativnog proračuna"
       allow_attached_documents: "Dopusti učitavanje i prikazivanje priloženih dokumenata"
       allow_attached_documents_description: "Dopušta korisnicima učitavanje dokumenata kada žele stvoriti prijedloge i investicijske projekte iz Participativnog Budžeta"
       guides: "Priručnik za stvaranje prijedloga ili investicijskih projekata"
