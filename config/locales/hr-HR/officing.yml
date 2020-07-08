@@ -61,7 +61,7 @@ hr:
         table_answer: Odgovor
         table_votes: Glasovi
         table_whites: "Ukupno praznih glasova"
-        table_nulls: "Nevažeči glasovi"
+        table_nulls: "Nevažeći glasovi"
         table_total: "Ukupno glasova"
     residence:
       flash:
