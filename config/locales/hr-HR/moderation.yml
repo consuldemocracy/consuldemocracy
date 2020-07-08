@@ -16,43 +16,43 @@ hr:
         ignore_flags: Označi kao pogledano
         order: Poredak
         orders:
-          flags: Većina označena
-          newest: Najnoviji
+          flags: Najviše označeno
+          newest: Najnovije
         title: Komentari
     dashboard:
       index:
         title: Uređivanje
     debates:
       index:
-        block_authors: Blok autori
+        block_authors: Blokiraj autore
         confirm: Jeste li sigurni?
-        filter: Filter
+        filter: Filtriraj
         filters:
           all: Svi
           pending_flag_review: U tijeku
           with_ignored_flag: Označi kao pogledano
         headers:
-          debate: Rasprave
+          debate: Rasprava
           moderate: Uredi
-        hide_debates: Sakrij debate
+        hide_debates: Sakrij rasprave
         ignore_flags: Označi kao pogledano
         order: Poredak
         orders:
           created_at: Najnovije
-          flags: Označena većina
+          flags: Najviše označeno
         title: Rasprave
     header:
       title: Uređivanje
     menu:
       flagged_comments: Komentari
       flagged_debates: Rasprave
-      flagged_investments: Investicije budžeta
+      flagged_investments: Proračunske investicije
       proposals: Prijedlozi
-      proposal_notifications: Obavijesti prijedloga
-      users: Blokirani korisnici
+      proposal_notifications: Obavijesti o prijedlozima
+      users: Blokiraj korisnike
     proposals:
       index:
-        block_authors: Blokirani autori
+        block_authors: Blokiraj autore
         confirm: Jeste li sigurni?
         filter: Filter
         filters:
