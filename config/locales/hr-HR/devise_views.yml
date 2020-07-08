@@ -40,11 +40,11 @@ hr:
       registrations:
         new:
           email_label: E-mail
-          organization_name_label: Ime organizacije
-          password_confirmation_label: Potvrdi zaporku
-          password_label: Zaporka
+          organization_name_label: Naziv organizacije
+          password_confirmation_label: Potvrdi lozinku
+          password_label: Lozinka
           phone_number_label: Broj telefona
-          responsible_name_label: Puno ime osobe odgovorne za skupinu
+          responsible_name_label: Puno ime osobe odgovorne za kolektiv
           responsible_name_note: To bi bila osoba koja predstavlja udrugu / kolektiv u čije ime su predstavljeni prijedlozi
           submit: Registriraj se
           title: Registriraj organizaciju ili kolektiv
@@ -57,12 +57,12 @@ hr:
           title: Registracija organizacije / kolektiva
     passwords:
       edit:
-        change_submit: Izmjeni moju zaporku
-        password_confirmation_label: Potvrdi novu zaporku
-        password_label: Nova zaporka
-        title: Izmijeni vašu zaporku
+        change_submit: Promijeni moju lozinku
+        password_confirmation_label: Potvrdi novu lozinku
+        password_label: Nova lozinka
+        title: Promijeni vašu lozinku
       new:
-        email_label: Email
+        email_label: E-mail
         send_submit: Pošalji upute
         title: Zaboravnjena zaporka?
     sessions:
