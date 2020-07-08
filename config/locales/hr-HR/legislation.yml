@@ -68,9 +68,9 @@ hr:
         section_header:
           icon_alt: Ikona javnog savjetovanja
           title: Javno savjetovanje
-          help: Pomoć oko kolaborativne legislative
+          help: Pomoć oko javnog savjetovanja
         section_footer:
-          title: Pomoć oko kolaborativne legislative
+          title: Pomoć oko javnog savjetovanja
           description: Sudjelujte u raspravama i procesima prije odobravanja novih propisa ili strategija. Vaše mišljenje će se razmotriti.
       phase_not_open:
         not_open: Ova faza još uvijek nije otvorena
