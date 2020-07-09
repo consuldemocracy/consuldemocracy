@@ -10,6 +10,7 @@ end
 
 describe GraphqlController, type: :request do
   let(:proposal) { create(:proposal) }
+  before { Setting["feature.graphql_api"] = true }
 
   describe "handles GET request" do
     specify "with query string inside query params" do
