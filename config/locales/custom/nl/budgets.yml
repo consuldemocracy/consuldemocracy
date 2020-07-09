@@ -11,7 +11,7 @@ nl:
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten"
         back: "Ga terug de Burgerbegroting"
       reasons_for_not_balloting:
-        not_enough_money: "Je kunt dit geld nu niet meer besteden. Als je wilt kun je je stem altijd aanpassen tijdens de stemfase. "
+        not_enough_money: "Je kunt dit geld nu niet meer besteden. Als je wilt kun je je stem altijd aanpassen tijdens de stemfase."
     phase:
       drafting: "Concept (niet publiekelijk zichtbaar)"
       informing: "Informatie"

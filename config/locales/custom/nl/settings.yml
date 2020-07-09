@@ -37,8 +37,18 @@ nl:
     min_age_to_participate: "Min. leeftijd deelname"
     proposals:
       successful_proposal_id: "Succesvol initiatief"
+      poster_description: "Uitgebreide omschrijving poster"
+      poster_description_description: "Deze uitgebreide omschrijvingen verschijnt op poster-pagina van de campagnepagina."
+      poster_short_title_description: 'Korte omschrijving van de poster-functie, die verschijnt op de campagnepagina. De functie maakt het mogelijk voor gebruikers om een poster te downloaden en daarmee hun initiatief te promoten. De content van de poster kun je hier vinden: "/app/views/dashboard/poster/index.pdf.erb"'
       poll_short_title: "Peilingen"
-      poster_short_title_description: 'Gebruikers kunnen een poster downloaden (PDF) om hun initiatief te promoten. Je kunt alle informatie over deze poster vinden in "/app/views/dashboard/poster/index.pdf.erb"'
+      poll_short_title_description: "Korte omschrijving van de peiling-functie, die verschijnt op de campagnepagina. Deze functie maakt het mogelijk voor gebruikers om een peiling bij hun initiatief te voegen."
+      poll_description: "Uitgebreide omschrijving peiling."
+      poll_description_description: "Deze uitgebreide omschrijvingen verschijnt op peiling-pagina van de campagnepagina."
+      poll_link: "Aanvullende informatie poll-functie"
+      poll_link_description: "Wanneer de peilingen-functie is geactiveerd op de campagnepagina kunnen admins een link toevoegen waarbij zij meer uitleg of aanvullende informatie geven over deze functie."
+      email_short_title_description: 'Korte omschrijving van de email-functie, die verschijnt op de campagnepagina. De functie maakt het mogelijk voor gebruikers om emails te verzenden om hun initiatief te promoten. De content van de mail kun je hier vinden: "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: "Uitgebreide omschrijving email"
+      email_description_description: "Deze uitgebreide omschrijvingen verschijnt op email-pagina van de campagnepagina."
     proposal_notification_minimum_interval_in_days: "Min. aantal dagen voordat notificaties initiatieven kunnen worden verstuurd"
     proposal_notification_minimum_interval_in_days_description: "Min. aantal dagen voordat notificaties initiatieven kunnen worden verstuurd"
     direct_message_max_per_day: "Max. aantal privéberichten per dag"

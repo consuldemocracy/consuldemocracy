@@ -417,7 +417,7 @@ nl:
           form:
             submit: "Bewerk"
         dashboard:
-          title: "Initiatieven dashboard"
+          title: "Initiatieven campagnepagina"
         remote_census:
           title: "Verificatie instellingen"
           how_to_enable: "Om deze instellingen te kunnen bewerken moet je de optie 'Configure connection to remote census (SOAP)' inschakelen in de 'Opties'-tab."
@@ -512,12 +512,12 @@ nl:
         table:
           poll_name: "Peiling"
     tags:
-      create: "Creeër categorie"
+      create: "Toevoegen"
       destroy: "Verwijder"
       index:
-        add_tag: "Nieuwe voorgestelde categorie creëeren"
-        title: "Voorgestelde categorieën"
-        help: "Wanneer een gebruiker een initiatief of idee indient, worden de volgende categorieën voorgesteld."
+        add_tag: "Nieuwe voorgestelde labels of onderwerpen toevoegen"
+        title: "Voorgestelde onderwerpen/labels"
+        help: "Wanneer een gebruiker een initiatief of idee indient, worden de volgende onderwerpen/labels voorgesteld."
     users:
       columns:
         name: "Naam"

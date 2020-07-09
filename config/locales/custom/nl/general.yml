@@ -90,6 +90,22 @@ nl:
     show:
       author: "Auteur"
       comments_tab: "Reacties"
+      dashboard_proposal_link: "Campagnepagina"
+    created:
+      title: "Gefeliciteerd! Je hebt de eerste stap gezet"
+      motivation: "Voordat je je initiatief publiceert op de website, is het slim om een campagne op te zetten. Dit helpt je om voldoende steun voor je initiatief te krijgen."
+      motivation_2: "<strong>Wanneer je niet zo goed weet hoe je die campagne op moet zetten, kunnen wij je begeleiden. Je kunt er nu voor kiezen om eerst met onze hulp een campagne op te zetten en het concept van je initiatief op te slaan. Je kunt nu ook je initiatief direct publiceren op de website.</strong>"
+      publish: "Nee, ik wil mijn initiatief direct publiceren"
+      dashboard: "Ja, ik wil hulp en ik publiceer mijn initiatief later"
+      preview_title: "Dit is hoe je initiatief eruit ziet wanneer je het nu publiceert."
+    notice:
+      published: "Initiatief gepubliceerd"
+    retire_form:
+      warning: "Als je het initiatief terugtrekt, kan het nog steeds gesteund worden. Het initiatief verdwijnt uit de lijst met initiatieven en alle gebruikers zullen een bericht zien waarin staat dat je het initiatief terug hebt getrokken."
+    retire_options:
+      started: "In uitvoering"
+      unfeasible: "Onhaalbaar"
+      done: "Gerealiseerd"
   polls:
     index:
       no_polls: "Geen peilingen"
@@ -123,6 +139,15 @@ nl:
   users:
     signin: "inloggen"
     signup: "aanmelden"
+    show:
+      proposals: "Initiatieven"
+      actions: "Acties"
+      filters:
+        follows:
+          one: "1 Volgend"
+          other: "%{count} Volgend"
+    proposals:
+      draft: "Concept"
   layouts:
     header:
       collaborative_legislation: "Inspraak"
@@ -136,6 +161,22 @@ nl:
       moderation: "Modereren"
       valuation: "Evalueren"
       open_gov: "Open Overheid"
+    footer:
+      contact_title: "Neem contact met ons op"
+    dashboard:
+      proposal_header:
+        published: "Published"
+        draft: "Concept"
+        retired: "Retired"
+      proposal_totals:
+        active_resources: "Actieve"
+        community: "Deelnemers in community"
+        preview_proposal: "Preview"
+        current_goal: "Huidige doel"
+        supports:
+          zero: "Geen steun"
+          one: "1 steunbetuiging"
+          other: "%{count} steunbetuigingen"
   votes:
     supports: "Steun"
   welcome:
@@ -155,6 +196,7 @@ nl:
         description: "Blijf betrokken bij ideeën die jij belangrijk vindt en deel ze via social media."
         link: ""
     feed:
+      budgets_description: "Participatiebegrotingen zijn processen waarbij burgers direct beslissen over wat er wordt gedaan met een deel van de gemeentelijke begroting. De meest gesteunde ideeën worden geëvalueerd. In de stemfase die daarop volgt beslissen welke ideeën uitgevoerd moeten worden."
       proposals_description: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van stad bepalen hoe de gemeente eruit komt te zien."
       most_active:
         debates: "Actieve discussies"
@@ -181,16 +223,16 @@ nl:
     suggest:
       debate:
         found:
-          one: "Er bestaat al een discussie met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
-          other: "Er bestaat al discussies met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
+          one: "Er bestaat al een discussie met de term '%{query}'. Je kunt deelnemen aan die discussie in plaats van een nieuwe discussie te delen."
+          other: "Er bestaan al discussies met de term '%{query}'. Je kunt deelnemen aan die discussies in plaats van een nieuwe discussie te delen."
       budget_investment:
         found:
           one: "Er bestaat al een idee met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
-          other: "Er bestaat al ideeën met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
+          other: "Er bestaan al ideeën met de term '%{query}'. Je kunt meedoen met die ideeën in plaats van een nieuw idee delen."
       proposal:
         found:
-          one: "Er bestaat al een initiatief met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
-          other: "Er bestaat al initiatieven met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
+          one: "Er bestaat al een initiatief met de term '%{query}'. Je kunt meedoen met dat initiatief  in plaats van een nieuw initiatief te delen."
+          other: "Er bestaan al initiatieven met de term '%{query}'. Je kunt meedoen met die initiatieven  in plaats van een nieuw initiatief te delen."
     tags_cloud:
       districts: "Gebied"
       categories: "Onderwerpen/Labels"
@@ -204,3 +246,73 @@ nl:
     nested_links:
       note: "Voeg relevante links toe"
       add_new_link: "Link toevoegen"
+  dashboard:
+    menu:
+      my_proposal: "Initiatief aanpassen"
+      progress: "Voortgang"
+      polls: "Peilingen"
+      messages: "Berichten naar gebruikers"
+      related_content: "Gerelateerde inhoud"
+    progress:
+      title: "Grafiek"
+      group_by_month: "Maandelijks"
+      group_by_week: "Wekelijks"
+      group_by_date: "Dagelijks"
+      progress: "Voortgang (opgeteld)"
+      supports: "Steunbetuigingen"
+      success: "Ideale vooruitgang"
+    index:
+      title: "Initiatief bewerken"
+      edit_proposal_link: "Bewerken"
+      publish: "Publiceren"
+      retire: "Terugtrekken"
+    resources:
+      available_resources: "Beschikbare promotiemiddelen"
+    resource:
+      view_resource: "Bekijk"
+    community:
+      access_community: "Naar community pagina"
+      latest_activity: "Latest activity of the community: %{at}"
+      participants: "Deelnemers"
+      debates: "Discussies"
+      comments: "Reacties"
+    messages:
+      send_notification: "Stuur berichten naar volgers van mijn initiatief"
+      previous_notifications: "Bekijk eerdere meldingen"
+    polls:
+      index:
+        title: "Peilingen"
+        create: "Peiling maken"
+        count:
+          zero: "Je hebt 0 peilingen gecreëerd"
+          one: "Je hebt 1 peiling gecreëerd"
+          other: "Je hebt %{count} peiling gecreëerd"
+      new:
+        title: "Nieuwe peiling"
+      poll:
+        responses:
+          one: "%{count} reactie"
+          other: "%{count} reacties"
+        edit_poll: "Bewerk"
+        show_results_help: "Als je dit vak aanvinkt worden de resultaten openbaar gemaakt en kunnen alle gebruikers deze zien"
+        delete: "Peiling verwijderen"
+      form:
+        name: "Titel"
+        add_question: "Vraag toevoegen"
+      question_fields:
+        remove_question: "Verwijderen"
+        add_answer: "Antwoordmogelijkheid toevoegen"
+      question_answer_fields:
+        remove_answer: "Antwoordmogelijkheid verwijderen"
+    poster:
+      new:
+        title: "Poster van jouw initiatief"
+    mailing:
+      mailing_options:
+        send: "Verzenden naar %{address}"
+      create:
+        sent: "Mail verzonden"
+  proposal_notifications:
+    new:
+      info_about_receivers: "Dit bericht wordt naar <strong>%{count} mensen</strong> gestuurd en is zichtbaar op de %{proposal_page}.<br> Berichten worden niet direct gestuurd, maar de gebruikers ontvangen periodiek een email met alle notificaties omtrent jouw initiatief."
+      proposal_page: "pagina van je initiatief"

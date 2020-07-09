@@ -29,10 +29,12 @@ nl:
         description: "Omschrijving"
       proposal:
         video_url: "Link naar video"
+        retired_reason: "Reden om initiatief terug te trekken"
       proposal/translation:
         title: "Titel initiatief"
         description: "Omschrijving"
         summary: "Samenvatting initiatief"
+        retired_explanation: "Toelichting"
       user:
         email_digest: "Ontvang een samenvatting van notificaties van initiatieven"
         email_on_comment: "Stuur mij een mail wanneer iemand reageert op mijn initiatieven of discussies"
@@ -110,3 +112,8 @@ nl:
         document_number: "Documentnummer"
         date_of_birth: "Geboortedatum"
         postal_code: "Postcode"
+      organization:
+        name: "Naam organisatie of collectief"
+      proposal_notification:
+        body: "Bericht"
+        title: "Titel"
