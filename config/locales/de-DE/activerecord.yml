@@ -300,6 +300,7 @@ de:
         body: "Nachricht"
         title: "Titel"
       signature_sheet:
+        title: "Titel"
         signable_type: "Unterschriftentyp"
         signable_id: "ID des Bürgervorschlags/Ausgabenvorschlags"
         document_numbers: "Dokumentennummern"
