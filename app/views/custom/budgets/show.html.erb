@@ -80,6 +80,16 @@
 </div>
 
 <% if @budget.balloting_or_later? %>
+  <% if @current_filter == "unfeasible" || @current_filter == "unselected" %>
+    <div class="row">
+      <div class="small-12 column">
+        <%= link_to budget_path(current_budget) do %>
+          <small><%= t("budgets.index.investment_proyects") %></small>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
   <% unless @current_filter == "unfeasible" %>
     <div class="row">
       <div class="small-12 column">
