@@ -31,7 +31,8 @@ nl:
       section_footer:
         title: "Hulp bij discussies"
         help_text_1: "Deel je mening over allerlei onderwerpen, kansen of knelpunten die jij belangrijk vindt."
-        help_text_2: "Om een discussie te starten of er aan deel te nemen, moet je je aanmelden op %{org}."
+        help_text_2: "Om een discussie te starten of om deel te nemen aan een discussie moet je je %{org}."
+        help_text_link: "aanmelden"
     new:
       form:
         submit_button: "Discussie starten"
@@ -48,6 +49,35 @@ nl:
     not_saved: "zorgden ervoor dat je %{resource} niet geplaatst kan worden. <br>Bekijk de rode tekst om te zien wat aangepast moet worden."
     budget/investment: "idee"
   proposals:
+    proposal:
+      reason_for_supports_necessary: ""
+      already_supported: "Je hebt dit voorstel al geliked."
+      archived: "Dit voorstel is gearchiveerd."
+      share:
+        guide: "Nu kun je jouw voorstel delen zodat mensen hun steun kunnen betuigen."
+      successful: "Dit voorstel heeft de benodigde likes."
+      support: "Like"
+      support_title: "Steun op dit voorstel"
+      supports:
+        one: "1 like"
+        other: "%{count} likes"
+        zero: "Geen likes"
+      supports_necessary: "%{number} likes nodig"
+      retire_form:
+        retired_explanation_label: "Reden"
+        retired_explanation_placeholder: "Geef een reden waarom dit voorstel kan worden ingetrokken"
+        retired_reason_blank: "Kies één van de redenen"
+        retired_reason_label: "Reden om het voorstel in te trekken"
+        submit_button: "Voorstel intrekken"
+        title: "Voorstel intrekken"
+        warning: "Als een voorstel is ingetrokken kan het nog wel gesteund worden, maar het wordt niet meer getoond in de overzichten en er wordt een melding getoond waarin wordt aangegeven dat het voorstel is ingetrokken met een verwijzing naar de reden."
+      retire_options:
+        duplicated: "Dubbel"
+        unfeasible: "Niet haalbaar"
+      show:
+        retired: "Voorstel ingetrokken"
+        retired_warning: "Dit voorstel is ingetrokken."
+        retired_warning_link_to_explanation: "Lees waarom."
     form:
       proposal_summary_note: "(maximaal 200 karakters)"
       proposal_video_url_note: "Je kunt een link van een Youtube of Vimeo  video toevoegen"
@@ -137,6 +167,7 @@ nl:
   comments_helper:
     comments_title: "Reacties"
   users:
+    login_to_continue: "Je moet %{signin} of je %{signup} om verder te gaan."
     signin: "inloggen"
     signup: "aanmelden"
     show:
@@ -162,7 +193,11 @@ nl:
       valuation: "Evalueren"
       open_gov: "Open Overheid"
     footer:
+      org_name: "Stem van Groningen"
       contact_title: "Neem contact met ons op"
+      privacy: "Privacy verklaring"
+      contact_email: "stemvangroningen@groningen.nl"
+      facebook: "facebook/stemvangroningen"
     dashboard:
       proposal_header:
         published: "Published"
@@ -177,6 +212,8 @@ nl:
           zero: "Geen steun"
           one: "1 steunbetuiging"
           other: "%{count} steunbetuigingen"
+    link_to_top:
+      title: "Go back to the top of the page"
   votes:
     supports: "Steun"
   welcome:
@@ -189,7 +226,7 @@ nl:
         link: "Meld je binnen vijf minuten aan"
       step_2:
         title: "Stem"
-        description: "Deel en stem op ideeën voor de gemeente."
+        description: "Deel en stem op ideeën voor de gemeente Groningen."
         link: "Bekijk wat er in de gemeente gebeurt"
       step_3:
         title: "Deel"
@@ -197,7 +234,7 @@ nl:
         link: ""
     feed:
       budgets_description: "Participatiebegrotingen zijn processen waarbij burgers direct beslissen over wat er wordt gedaan met een deel van de gemeentelijke begroting. De meest gesteunde ideeën worden geëvalueerd. In de stemfase die daarop volgt beslissen welke ideeën uitgevoerd moeten worden."
-      proposals_description: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van stad bepalen hoe de gemeente eruit komt te zien."
+      proposals_description: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van Groningen bepalen hoe de gemeente eruit komt te zien."
       most_active:
         debates: "Actieve discussies"
         proposals: "Initiatieven"

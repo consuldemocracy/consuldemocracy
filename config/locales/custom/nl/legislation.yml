@@ -14,7 +14,7 @@ nl:
           open: "Inspraak"
           past: "Afgerond"
         section_header:
-          description: "Dit zijn de huidige plannen van de gemeente. Afhankelijk van het soort plan kan je reageren op het document, discussies starten of voorstellen indienen."
+          description: "Dit zijn de huidige plannen van de gemeente Groningen. Afhankelijk van het soort plan kan je opmerkingen maken op het document, discussies starten of voorstellen indienen."
       process:
         see_latest_comments: "Bekijk plan"
       shared:
