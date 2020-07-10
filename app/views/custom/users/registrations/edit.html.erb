@@ -1,4 +1,7 @@
-<%= back_link_to %>
+<%= link_to  account_path do %>
+  <span class="icon-angle-left"></span>
+  <%= t("account.show.back") %>
+<% end %>
 
 <h2><%= t("devise_views.users.registrations.edit.edit") %></h2>
 
