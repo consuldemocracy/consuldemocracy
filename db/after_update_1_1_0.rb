@@ -29,8 +29,10 @@ section "Creando usuario administrador para realizar las migraciones" do
 end
 
 section "Creando y personalizando configuraciones nuevas" do
-  # Reiniciamos el contador de la clave primaria para evitar problemas
-  ActiveRecord::Base.connection.reset_pk_sequence!(:settings)
+  # Reiniciamos el contador de las claves primarias de todas las tablas
+  ActiveRecord::Base.connection.tables.each do |t|
+    ActiveRecord::Base.connection.reset_pk_sequence!(t)
+  end
 
   # Funcionalidades custom
   Setting["feature.comments"] = true
