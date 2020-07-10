@@ -226,6 +226,15 @@
           });
         });
       });
+
+      $("body").on("click", ".comment-box a.publish-comment", function(e) {
+        e.preventDefault();
+        var annotation_id = $(this).closest(".comment-box").data("id");
+        $("a.publish-comment").hide();
+        $("#js-comment-form-annotation-" + annotation_id).toggle();
+        $("#js-comment-form-annotation-" + annotation_id + " textarea").trigger("focus");
+        return;
+      });
     }
   };
 
