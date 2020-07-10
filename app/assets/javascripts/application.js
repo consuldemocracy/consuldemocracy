@@ -172,6 +172,7 @@ var destroy_non_idempotent_modules = function() {
 
   App.Datepicker.destroy();
   App.HTMLEditor.destroy();
+  App.LegislationAnnotatable.destroy();
 };
 
 $(document).on("turbolinks:load", initialize_modules);
