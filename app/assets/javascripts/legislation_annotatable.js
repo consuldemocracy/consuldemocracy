@@ -228,4 +228,11 @@
       });
     }
   };
+
+  $(document).on("turbolinks:before-cache", function() {
+    if ($(".legislation-annotatable").length === 0) {
+      return;
+    }
+    App.LegislationAnnotatable.app.destroy();
+  });
 }).call(this);
