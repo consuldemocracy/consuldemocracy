@@ -1,0 +1,32 @@
+nl:
+  devise_views:
+    menu:
+      login_items:
+        login: "Inloggen"
+        logout: "Uitloggen"
+    shared:
+      sign_in: "Inloggen bestaand account"
+      sign_up: "Aanmelden nieuw account"
+      not_organization: "Vertegenwoordig je geen organisatie of collectief? Meld je dan %{link} aan."
+      not_organization_link: "hier"
+      links:
+        new_confirmation: "Geen activeringsinstructies voor je account ontvangen?"
+    organizations:
+      registrations:
+        new:
+          organization_name_label: "Naam van organisatie of collectief"
+    users:
+      registrations:
+        new:
+          title: "Aanmelden"
+          organization_signup: "Vertegenwoordig je een organisatie of collectief? Meld je dan %{signup_link} aan."
+          organization_signup_link: "hier"
+          username_note: "De opgegeven naam zal zichtbaar zijn voor andere gebruikers"
+          terms: "Ik ben een inwoner van de gemeente Groningen en ik accepteer de %{terms}."
+          terms_link: "gebruiksvoorwaarden"
+          terms_title: "Ik ben een inwoner van de gemeente Groningen en ik accepteer de gebruiksvoorwaarden"
+        success:
+          title: "Verifieer je email adres"
+          instructions_1: "Bekijk je mailbox - we hebben een mail gestuurd met een link om je account te verifiëren. "
+          instructions_2: "Wanneer je je profiel hebt geverifieerd , kun je beginnen met participeren."
+          thank_you: "Bedankt voor het invullen van je gegevens. Om je aanmelding te voltooien moet je je mailadres verifiëren."

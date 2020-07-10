@@ -6,7 +6,6 @@ FactoryBot.define do
     video_url            { "https://youtu.be/nhuNb0XtRhQ" }
     responsible_name     { "John Snow" }
     terms_of_service     { "1" }
-    skip_map             { "1" }
     published_at         { Time.current }
 
     association :author, factory: :user

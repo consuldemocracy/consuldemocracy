@@ -417,7 +417,9 @@ describe "Admin edit translatable records" do
       let(:translatable) { create(:budget).phases.last }
 
       scenario "Shows first available fallback" do
-        translatable.update!({ description_fr: "Phase en Français", summary_fr: "Phase résumé" })
+        translatable.update!({
+                               name_fr: "Name en Français",
+                               description_fr: "Phase en Français" })
 
         visit edit_admin_budget_budget_phase_path(translatable.budget, translatable)
 
@@ -429,8 +431,9 @@ describe "Admin edit translatable records" do
         click_button "Save changes"
 
         visit budgets_path
+        click_link "9 Name en Français"
 
-        expect(page).to have_content "Phase résumé"
+        expect(page).to have_content "Phase en Français"
       end
     end
 

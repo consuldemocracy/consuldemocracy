@@ -1,0 +1,11 @@
+nl:
+  mailers:
+    budget_investment_created:
+      subject: "Bedankt voor het delen van je idee!"
+      title: "Bedankt voor het delen van je idee!"
+      intro: "Beste <strong>%{author}</strong>,"
+      text: "Bedankt voor het delen van je idee <strong>%{investment}</strong> voor de burgerbegroting <strong>%{budget}</strong>."
+      follow: "We houden je op de hoogte van het proces. Je kunt dit ook volgen op <strong>%{link}</strong>."
+      follow_link: "Burgerbegroting"
+      sincerely: ""
+      share: "Deel"

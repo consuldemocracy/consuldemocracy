@@ -1,9 +1,0 @@
-#!/bin/bash
-if [ "$KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC" = "" ]; then
-  KNAPSACK_PRO_ENDPOINT=https://api-disabled-for-fork.knapsackpro.com \
-    KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC=disabled-for-fork \
-    bundle exec rake knapsack_pro:rspec # use Regular Mode here always
-else
-  # Queue Mode - dynamic tests allocation across CI nodes
-  bundle exec rake knapsack_pro:queue:rspec
-fi

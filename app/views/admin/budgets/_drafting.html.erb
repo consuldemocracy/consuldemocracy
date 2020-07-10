@@ -1,0 +1,16 @@
+<% if @budget.drafting? %>
+  <%= link_to t("admin.budgets.edit.publish"),
+              publish_admin_budget_path(@budget),
+              method: :patch, class: "button float-right",
+              data: { confirm: t("admin.actions.confirm") } %>
+<% end %>
+
+<%= link_to budget_path(@budget), class: "button hollow float-right", target: "_blank" do %>
+  <span class="far fa-eye"></span><%= t("admin.budgets.edit.preview") %>
+<% end %>
+
+<% if @budget.drafting? %>
+  <div class="callout warning">
+    <strong><%= t("admin.budgets.edit.drafting") %></strong>
+  </div>
+<% end %>

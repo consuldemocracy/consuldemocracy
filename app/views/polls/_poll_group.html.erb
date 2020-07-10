@@ -37,8 +37,11 @@
           <%= poll_dates(poll) %>
 
           <ul class="margin-top">
-            <% poll.questions.each do |question| %>
-              <li><%= question.title %></li>
+            <% poll.questions.each_with_index do |question, index| %>
+              <li>
+                <span class="question-list-label"><%= t("polls.question") %> <%= index + 1 %></span>
+                <%= question.title %>
+              </li>
             <% end %>
           </ul>
         <% end %>

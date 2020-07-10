@@ -14,6 +14,7 @@ es:
       edit: Editar
       configure: Configurar
       delete: Borrar
+      confirm_delete: "¿Estás seguro? Esta acción borrará %{resource_name} '%{name}' y no se puede deshacer."
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
@@ -64,34 +65,51 @@ es:
     budgets:
       index:
         title: Presupuestos participativos
-        new_link: Crear nuevo presupuesto
+        title_budget_type: Tipo de presupuesto participativo
+        new_button: Crear nuevo presupuesto
+        new_single_title_html: "Presupuesto de <strong>partida única</strong>"
+        new_single_description: "Crea un proceso con un grupo, distrito o tema. Tienes algo como una bolsa de dinero. Por ejemplo, 25.000€ para un distrito, o 10.000€ para cultura."
+        new_single_button: Crear presupuesto de partida única
+        new_multiple_title_html: "Presupuesto de <strong>múltiples partidas</strong>"
+        new_multiple_description: "Crea un proceso con múltiples grupos, distritos o temas. Tienes algo como varias bolsas de dinero. Por ejemplo, 25.000€ para \"Distrito norte\", 30.000€ para \"Distrito centro\", 28.000€ para \"Distrito sur\" y toda la ciudad. O para varios temas como deporte, cultura o salud."
+        new_multiple_button: Crear presupuesto de múltiples partidas
         filter: Filtro
         filters:
+          all: Todos
           open: Abiertos
           finished: Terminados
         budget_investments: Gestionar proyectos de gasto
         table_name: Nombre
-        table_phase: Fase
-        table_investments: Proyectos de gasto
-        table_edit_groups: Grupos de partidas
-        table_edit_budget: Editar
-        table_admin_ballots: Urnas
-        edit_groups: Editar grupos de partidas
+        table_phase: Fasea actual
+        table_budget_type: Tipo
+        table_budget_completed: Completado
+        table_duration: Duración
+        table_preview: Previsualizar presupuesto
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
+        help_block: "Los presupuestos participativos permiten que los ciudadanos propongan y decidan de manera directa cómo gastar parte del presupuesto, con un seguimiento y evaluación riguroso de las propuestas por parte de la institución."
+        type_single: Partida única
+        type_multiple: Múltiples partidas
+        delete: "Eliminar presupuesto"
       create:
+        button:
+          continue: "Continuar a grupos"
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
         notice: Presupuestos participativos actualizados
+      publish:
+        notice: "Presupuestos participativos actualizados"
       edit:
         title: Editar presupuestos participativos
+        drafting: "Este presupuesto participativo está en modo borrador, sólo los administradores pueden verlo desde la parte pública de la página. Una vez se haya publicado, no se podrá volver a poner en modo borrador otra vez."
+        preview: "Previsualizar presupuesto"
+        publish: "Publicar presupuesto"
         delete: Eliminar presupuesto
         phase: Fase
-        dates: Fechas
-        enabled: Habilitada
-        actions: Acciones
-        edit_phase: Editar fase
+        duration: "Duración"
+        enabled: "Fase habilitada"
+        phase_content: "Editar contenido"
         active: Activa
         blank_dates: Sin fechas
         administrators:
@@ -104,27 +122,57 @@ es:
           other: "%{count} evaluadores seleccionados"
         empty_administrators: "No hay administradores"
         empty_valuators: "No hay evaluadores"
+        name_description: "Este es el nombre del presupuesto participativo usado en la cabecera y tarjetas cuando éste está activo"
+        image_description: "Si se proporciona una imagen será usada como fondo del presupuesto, si no el fondo será del color por defecto para los presupuestos."
+        main_call_to_action: "Botón de acción principal (opcional)"
+        main_call_to_action_description: "Este botón aparecerá en la cabecera de este presupuesto participativo y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
+        info:
+          budget_settings: "Configuración genérica del presupuesto participativo"
+          heading_settings: "Configuración de la partida"
+          phases_settings: "Configuración de las fases"
+          results_settings: "Configuración de resultados y estadísticas"
+          staff_settings: "Administradores y Evaluadores asigandos al presupuesto"
+          groups_and_headings_settings: "Configuración de grupos y partidas"
+        groups_and_headings:
+          edit_group: "Editar grupo %{name}"
+          delete_group: "Eliminar grupo %{name}"
+          headings: "Partidas"
+          edit_heading: "Editar partida %{name}"
+          delete_heading: "Eliminar partida %{name}"
+          max_number_headings: "Máximo número de partidas en que un usuario puede votar"
+          add_group: "Añadir grupo"
+          add_heading: "Añadir partida"
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
         unable_notice_polls: No se puede eliminar un presupuesto con una votación asociada
       new:
-        title: Nuevo presupuesto ciudadano
+        title_single: Nuevo presupuesto de partida única
+        title_multiple: Nuevo presupuesto de múltiples partidas
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
         recalculate: Recalcular proyectos ganadores
+      shared:
+        timeline_budget: Presupuesto
+        timeline_groups: Grupos
+        timeline_headings: Partidas
+        timeline_phases: Fases
+        resource_name: "el presupuesto"
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
       headings_edit: "Editar Partidas"
       headings_manage: "Gestionar partidas"
       no_groups: "No hay grupos."
+      max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
       amount:
         one: "Hay 1 grupo de partidas presupuestarias"
         other: "Hay %{count} grupos de partidas presupuestarias"
       create:
         notice: "¡Grupo creado con éxito!"
+        button:
+          continue: "Continuar a grupos"
       update:
         notice: "Grupo actualizado"
       destroy:
@@ -135,14 +183,25 @@ es:
         edit: "Editar grupo"
         submit: "Guardar grupo"
       index:
-        back: "Volver a presupuestos"
+        back: "Volver al presupuesto"
+        new_button: "Añadir un grupo nuevo"
+        single:
+          help_block: "Los grupos sirven para organizar las partidas del presupuesto, como este presupuesto sólo contendrá una partida, se puede usar el mismo nombre y éste no aparecerá en ninguna parte. Puedes continuar con el siguiente paso."
+        multiple:
+          help_block: "Los grupos sirven para organizar las partidas del presupuesto. Después de que un grupo sea creado y éste contenga partidas, es posible determinar el número de partidas a las que un usuario puede votar por grupo."
     budget_headings:
+      name: Nombre de la partida
+      price: Cantidad de dinero
+      population: Población
+      allow_custom_content: Permitir bloque de contenidos
       no_headings: "No hay partidas."
       amount:
         one: "Hay 1 partida presupuestarias"
         other: "Hay %{count} partidas presupuestarias"
       create:
         notice: "¡Partida presupuestaria creada con éxito!"
+        button:
+          continue: "Continuar a fases"
       update:
         notice: "Partida presupuestaria actualizada"
       destroy:
@@ -157,12 +216,28 @@ es:
         submit: "Guardar partida"
       index:
         back: "Volver a grupos"
+        showing_headings_from_group: "Mostrando las partidas del grupo:"
+        new_button: "Añadir una partida nueva"
+        single:
+          help_block: "Las partidas sirven para dividir el dinero del presupuesto participativo. Como este presupuesto solo tendrá una partida aquí podrás establecer la cantidad de dinero que se gastará en este presupuesto participativo."
+        multiple:
+          help_block: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
     budget_phases:
       edit:
-        summary_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
+        title: "Editar fase"
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
         save_changes: Guardar cambios
+        duration: "Duración de la fase"
+        duration_description: "El período de tiempo que esta fase estará activa."
+        image_description: "Si se proporciona una imagen será usada como fondo del presupuesto cuando esta fase esté activa, si no el fondo será del color por defecto para los presupuestos."
+        main_call_to_action: "Botón de acción principal (opcional)"
+        main_call_to_action_description: "Este botón aparecerá en la cabecera de este presupuesto participativo cuando esta fase esté activa y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
+        phase_name_help_text: "Este es el título de la fase que los usuarios leerán en el encabezado cuando la fase esté activa."
+      index:
+        help_block: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
+        button:
+          continue: "Finalizar"
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
@@ -1301,6 +1376,9 @@ es:
       color_help: Formato hexadecimal
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
+      close_modal: Cerrar ventana emergente
+      learn_more: Saber más
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Zonas

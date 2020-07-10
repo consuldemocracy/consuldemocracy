@@ -62,7 +62,9 @@ describe "Budget Investments" do
         expect(page).to have_content user.document_number
       end
 
-      select "Health", from: "budget_investment_heading_id"
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                     visible: false)
+
       fill_in "Title", with: "Build a park in my neighborhood"
       fill_in "Description", with: "There is no parks here..."
       fill_in "budget_investment_location", with: "City center"

@@ -1,8 +1,4 @@
 module BudgetsHelper
-  def show_links_to_budget_investments(budget)
-    ["balloting", "reviewing_ballots", "finished"].include? budget.phase
-  end
-
   def heading_name_and_price_html(heading, budget)
     content_tag :div do
       concat(heading.name + " ")
@@ -65,13 +61,13 @@ module BudgetsHelper
     !budget.drafting? || current_user&.administrator?
   end
 
-  def current_budget_map_locations
-    return unless current_budget.present?
+  def budget_map_locations(budget)
+    return unless budget.present?
 
-    if current_budget.publishing_prices_or_later? && current_budget.investments.selected.any?
-      investments = current_budget.investments.selected
+    if budget.publishing_prices_or_later? && budget.investments.selected.any?
+      investments = budget.investments.selected
     else
-      investments = current_budget.investments
+      investments = budget.investments
     end
 
     MapLocation.where(investment_id: investments).map(&:json_data)
@@ -119,5 +115,35 @@ module BudgetsHelper
         active: controller_name == section.to_s
       }
     end
+  end
+
+  def budget_phase_name(phase)
+    phase.name.presence || t("budgets.phase.#{phase.kind}")
+  end
+
+  def budget_new_step_phases?(step)
+    step == "phases"
+  end
+
+  def budget_new_step_group?(step)
+    step == "groups" || step == "headings" || step == "phases"
+  end
+
+  def budget_new_step_headings?(step)
+    step == "headings" || step == "phases"
+  end
+
+  def budget_single?(budget)
+    budget.groups.headings.count == 1
+  end
+
+  def class_for_form(resource)
+    unless @mode == "single" || resource.errors.any?
+      "hide"
+    end
+  end
+
+  def budget_investments_total_supports(user)
+    Vote.where(votable_type: "Budget::Investment", voter_id: user.id).count
   end
 end

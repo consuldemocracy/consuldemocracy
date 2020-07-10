@@ -82,6 +82,8 @@ describe "Proposals" do
     end
 
     scenario "Index view mode is not shown with selected filter" do
+      create(:proposal, :selected)
+
       visit proposals_path
 
       click_link "View selected proposals"
@@ -122,6 +124,18 @@ describe "Proposals" do
       within("#proposal_#{proposal_with_image.id}") do
         expect(page).to have_css("img[alt='#{proposal_with_image.image.title}']")
       end
+    end
+
+    scenario "Can visit a proposal from image link" do
+      proposal = create(:proposal, :with_image)
+
+      visit proposals_path
+
+      within("#proposal_#{proposal.id}") do
+        find("#image").click
+      end
+
+      expect(page).to have_current_path(proposal_path(proposal))
     end
   end
 
@@ -266,7 +280,8 @@ describe "Proposals" do
     fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_tag_list", with: "Refugees, Solidarity"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -299,7 +314,8 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "This is the summary"
     fill_in "Proposal text", with: "This is the description"
     fill_in "proposal_responsible_name", with: "Some other robot"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -319,7 +335,8 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "This is the summary"
     fill_in "Proposal text", with: "This is the description"
     fill_in "proposal_responsible_name", with: "Some other robot"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -338,7 +355,8 @@ describe "Proposals" do
     fill_in "Proposal text", with: "This is very important because..."
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -359,7 +377,8 @@ describe "Proposals" do
     fill_in "Proposal title", with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: "This is very important because..."
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
     expect(page).to have_content "Proposal created successfully."
@@ -388,7 +407,8 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: "<p>This is <script>alert('an attack');</script></p>"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -411,7 +431,8 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: "<p>This is a link www.example.org</p>"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -433,7 +454,8 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: js_injection_string
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -490,7 +512,8 @@ describe "Proposals" do
       fill_in "Proposal text", with: "This is very important because..."
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
       fill_in "proposal_responsible_name", with: "Isabel Garcia"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
 
       select("California", from: "proposal_geozone_id")
       click_button "Create proposal"
@@ -575,6 +598,49 @@ describe "Proposals" do
 
       expect(page).to have_content retired.title
       expect(page).not_to have_content not_retired.title
+    end
+
+    scenario "Index sidebar only show links with proposals" do
+      visit proposals_path
+
+      within("aside") do
+        expect(page).not_to have_link "View selected proposals"
+        expect(page).not_to have_link "Archived proposals"
+        expect(page).not_to have_link "Proposals retired by the author"
+      end
+
+      create(:proposal, :selected)
+      create(:proposal, :retired)
+      create(:proposal, :archived)
+
+      visit proposals_path
+
+      within("aside") do
+        expect(page).to have_link "View selected proposals"
+        expect(page).to have_link "Archived proposals"
+        expect(page).to have_link "Proposals retired by the author"
+      end
+    end
+
+    scenario "Tags cloud sidebar only show with tags" do
+      visit proposals_path
+
+      within("aside") do
+        expect(page).not_to have_content "Trending"
+      end
+
+      create(:proposal, tag_list: "participation")
+      create(:proposal, tag_list: "city")
+      create(:proposal, tag_list: "world")
+
+      visit proposals_path
+
+      within("aside") do
+        expect(page).to have_content "Trending"
+        expect(page).to have_link "participation"
+        expect(page).to have_link "city"
+        expect(page).to have_link "world"
+      end
     end
 
     scenario "Retired proposals index interface elements" do
@@ -701,8 +767,8 @@ describe "Proposals" do
       medium_proposal.update_column(:confidence_score, 5)
 
       visit proposals_path
-      click_link "highest rated"
-      expect(page).to have_selector("a.is-active", text: "highest rated")
+      click_link "Highest rated"
+      expect(page).to have_selector("a.is-active", text: "Highest rated")
 
       within "#proposals" do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -719,8 +785,8 @@ describe "Proposals" do
       worst_proposal = create(:proposal, title: "Worst proposal", created_at: Time.current - 1.day)
 
       visit proposals_path
-      click_link "newest"
-      expect(page).to have_selector("a.is-active", text: "newest")
+      click_link "Newest"
+      expect(page).to have_selector("a.is-active", text: "Newest")
 
       within "#proposals" do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -762,7 +828,7 @@ describe "Proposals" do
         login_as(user)
         visit proposals_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
         expect(page).to have_content "There are not proposals related to your interests"
       end
@@ -773,7 +839,7 @@ describe "Proposals" do
         login_as(user)
         visit proposals_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
         expect(page).to have_content "Follow proposals so we can give you recommendations"
       end
@@ -785,9 +851,9 @@ describe "Proposals" do
         login_as(user)
         visit proposals_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
-        expect(page).to have_selector("a.is-active", text: "recommendations")
+        expect(page).to have_selector("a.is-active", text: "Recommendations")
 
         within "#proposals-list" do
           expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -1005,16 +1071,16 @@ describe "Proposals" do
       visit proposals_path
 
       expect(page).to have_css  "ul.submenu"
-      expect(page).to have_link "most active"
-      expect(page).to have_link "highest rated"
-      expect(page).to have_link "newest"
+      expect(page).to have_link "Most active"
+      expect(page).to have_link "Highest rated"
+      expect(page).to have_link "Newest"
 
       click_link "View selected proposals"
 
       expect(page).not_to have_css  "ul.submenu"
-      expect(page).not_to have_link "most active"
-      expect(page).not_to have_link "highest rated"
-      expect(page).not_to have_link "newest"
+      expect(page).not_to have_link "Most active"
+      expect(page).not_to have_link "Highest rated"
+      expect(page).not_to have_link "Newest"
     end
 
     scenario "show archived proposals in selected proposals list" do
@@ -1419,7 +1485,7 @@ describe "Proposals" do
       fill_in "search", with: "Show what you got"
       click_button "Search"
 
-      expect(page).to have_selector("a.is-active", text: "relevance")
+      expect(page).to have_selector("a.is-active", text: "Relevance")
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show what you got"
@@ -1440,9 +1506,9 @@ describe "Proposals" do
 
       expect(page).to have_content "Search results"
 
-      click_link "newest"
+      click_link "Newest"
 
-      expect(page).to have_selector("a.is-active", text: "newest")
+      expect(page).to have_selector("a.is-active", text: "Newest")
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show you got"
@@ -1465,8 +1531,8 @@ describe "Proposals" do
       visit proposals_path
       fill_in "search", with: "Show you got"
       click_button "Search"
-      click_link "recommendations"
-      expect(page).to have_selector("a.is-active", text: "recommendations")
+      click_link "Recommendations"
+      expect(page).to have_selector("a.is-active", text: "Recommendations")
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show you got"
@@ -1708,7 +1774,8 @@ describe "Proposals" do
       login_as(create(:user))
       visit new_proposal_path
       fill_in "Proposal title", with: "search"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
 
       within("div.js-suggest") do
         expect(page).to have_content "You are seeing 5 of 6 proposals containing the term 'search'"
@@ -1722,7 +1789,8 @@ describe "Proposals" do
       login_as(create(:user))
       visit new_proposal_path
       fill_in "Proposal title", with: "debate"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
 
       within("div.js-suggest") do
         expect(page).not_to have_content "You are seeing"
@@ -1895,7 +1963,8 @@ describe "Successful proposals" do
       fill_in "Proposal text", with: "This is very important because..."
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
       fill_in "proposal_tag_list", with: "Refugees, Solidarity"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
 
       click_button "Create proposal"
 

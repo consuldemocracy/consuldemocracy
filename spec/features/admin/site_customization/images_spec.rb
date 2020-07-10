@@ -104,6 +104,54 @@ describe "Admin custom images" do
     expect(page).to have_content("Height must be 246px")
   end
 
+  scenario "Upload image with more than required dimensions is valid" do
+    visit admin_root_path
+
+    within("#side_menu") do
+      click_link "Custom images"
+    end
+
+    within("tr#image_header_homepage") do
+      attach_file "site_customization_image_image", "spec/fixtures/files/header_homepage_large.jpg"
+      click_button "Update"
+    end
+
+    expect(page).to have_css("tr#image_header_homepage img[src*='header_homepage_large.jpg']")
+    expect(page).to have_css("img[src*='header_homepage_large.jpg']", count: 1)
+  end
+
+  scenario "Upload image with same required dimensions is valid" do
+    visit admin_root_path
+
+    within("#side_menu") do
+      click_link "Custom images"
+    end
+
+    within("tr#image_header_homepage") do
+      attach_file "site_customization_image_image", "spec/fixtures/files/header_homepage.jpg"
+      click_button "Update"
+    end
+
+    expect(page).to have_css("tr#image_header_homepage img[src*='header_homepage.jpg']")
+    expect(page).to have_css("img[src*='header_homepage.jpg']", count: 1)
+  end
+
+  scenario "Upload an image with less required dimensions is invalid" do
+    visit admin_root_path
+
+    within("#side_menu") do
+      click_link "Custom images"
+    end
+
+    within("tr#image_header_homepage") do
+      attach_file "site_customization_image_image", "spec/fixtures/files/header_homepage_small.jpg"
+      click_button "Update"
+    end
+
+    expect(page).to have_content("Width must be 500px")
+    expect(page).to have_content("Height must be 400px")
+  end
+
   scenario "Delete image" do
     visit admin_root_path
 

@@ -1,0 +1,18 @@
+<% if header.present? %>
+  <div class="jumbo highlight" style="background-image: url(<%= image_path_for("header_homepage.png") %>)">
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <span><%= header.label %></span>
+        <h1><%= header.title %></h1>
+        <p class="lead"><%= header.description %></p>
+        <div class="small-12 medium-6 <%= "small-centered" unless header.image.present? %>">
+          <%= link_to header.link_text, header.link_url, class: "button expanded large" %>
+        </div>
+      </div>
+
+      <div class="small-12 column hide-for-large">
+        <%= image_tag(image_path_for("header_homepage.png")) %>
+      </div>
+    </div>
+  </div>
+<% end %>

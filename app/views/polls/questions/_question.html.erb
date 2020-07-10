@@ -1,7 +1,15 @@
 <div id="<%= dom_id(question) %>" class="poll-question">
-  <h3>
+  <span class="question-list-label"><%= t("polls.question") %> <%= index + 1 %></span>
+
+  <h3 class="inline-block">
     <%= question.title %>
   </h3>
+
+  <% if question.answers_with_description.any? %>
+    <a href="#answer_<%= "#{question.answers_with_description.first.id}" %>" class="small" data-smooth-scroll>
+      <%= t("polls.show.more_info_options") %>
+    </a>
+  <% end %>
 
   <div id="<%= dom_id(question) %>_answers" class="padding">
     <%= render "polls/questions/answers", question: question, token: token %>

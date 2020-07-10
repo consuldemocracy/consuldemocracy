@@ -1,3 +1,13 @@
-<h2><%= t("admin.budgets.new.title") %></h2>
+<%= back_link_to admin_budgets_path %>
+
+<h2>
+  <% if @mode == "single" %>
+    <%= t("admin.budgets.new.title_single") %>
+  <% else %>
+    <%= t("admin.budgets.new.title_multiple") %>
+  <% end %>
+</h2>
+
+<%= render "/admin/budgets/creation_timeline", step: "budget" %>
 
 <%= render "/admin/budgets/form" %>
