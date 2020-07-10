@@ -62,23 +62,9 @@ describe Budget do
     expect(budget.published).to be false
   end
 
-  it "changes the phase to the first enabled phase" do
+  it "changes the phase to informing phase" do
     budget = create(:budget)
     budget.update_columns(phase: "drafting")
-    budget.phases.informing.update!(enabled: false)
-
-    expect(budget.phase).to eq "drafting"
-
-    run_update_drafting_budgets_task
-    budget.reload
-
-    expect(budget.phase).to eq "accepting"
-  end
-
-  it "enables and select the informing phase if there are not any enabled phases" do
-    budget = create(:budget)
-    budget.update_columns(phase: "drafting")
-    budget.phases.each { |phase| phase.update!(enabled: false) }
 
     expect(budget.phase).to eq "drafting"
 
@@ -86,6 +72,5 @@ describe Budget do
     budget.reload
 
     expect(budget.phase).to eq "informing"
-    expect(budget.phases.informing.enabled).to be true
   end
 end
