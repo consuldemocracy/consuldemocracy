@@ -2,8 +2,9 @@ require "rails_helper"
 
 describe "Welcome page" do
   context "Feeds" do
-    scenario "Show budgets info" do
+    scenario "Show published budgets info" do
       budget = create(:budget)
+      draft = create(:budget, :drafting, :informing)
 
       visit root_path
 
@@ -17,6 +18,9 @@ describe "Welcome page" do
         expect(page).to have_content budget.description
         expect(page).to have_content "See this budget"
         expect(page).to have_link href: budget_path(budget)
+        expect(page).not_to have_content draft.name
+        expect(page).not_to have_content draft.description
+        expect(page).not_to have_link href: budget_path(draft)
       end
     end
   end
