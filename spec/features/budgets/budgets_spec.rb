@@ -54,12 +54,14 @@ describe "Budgets" do
       within("#budget_info") do
         expect(page).to have_content(group1.name)
         expect(page).to have_content(group2.name)
-        expect(page).to have_content(heading1.name)
-        expect(page).to have_content(budget.formatted_heading_price(heading1))
-        expect(page).to have_content(heading2.name)
-        expect(page).to have_content(budget.formatted_heading_price(heading2))
+        # expect(page).to have_content(heading1.name)
+        # expect(page).to have_content(budget.formatted_heading_price(heading1))
+        # expect(page).to have_content(heading2.name)
+        # expect(page).to have_content(budget.formatted_heading_price(heading2))
+        # expect(page).to have_link("Go to ideas", count: 2)
       end
 
+      expect(page).to have_link("See all investments")
       expect(page).not_to have_content("#finished_budgets")
     end
 
