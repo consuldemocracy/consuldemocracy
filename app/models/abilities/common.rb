@@ -4,6 +4,7 @@ module Abilities
 
     def initialize(user)
       merge Abilities::Everyone.new(user)
+      merge Abilities::CustomVerified.new(user)
 
       can [:read, :update], User, id: user.id
 
@@ -46,7 +47,6 @@ module Abilities
 
       can :create, Comment
       can :create, Debate
-      can [:create, :created], Proposal
       can :create, Legislation::Proposal
 
       can :suggest, Debate

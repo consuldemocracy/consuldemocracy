@@ -1,4 +1,7 @@
 es:
+  account:
+    show:
+      user_permission_proposal: Crear nuevas propuestas*
   debates:
     index:
       section_header:
