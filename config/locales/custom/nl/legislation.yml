@@ -4,6 +4,9 @@ nl:
       header:
         active: "Actief"
         locked: "Gesloten"
+        coming_soon: "Coming soon"
+        published: "Published"
+        less_info: "Less information"
       proposals:
         empty_proposals: "Er zijn geen initiatieven"
         less_info: "Minder informatie"

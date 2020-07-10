@@ -36,8 +36,6 @@ nl:
     new:
       form:
         submit_button: "Discussie starten"
-      info: "Dit is niet de plek om een initiatief in te dienen. Ga daarvoor naar %{info_link}"
-      info_link: "deze pagina"
       start_new: "Discussie starten"
     show:
       author: "Auteur"
@@ -85,6 +83,8 @@ nl:
       tags_instructions: "Je kunt dit voorstel een label geven. Je kunt je eigen categorie kiezen, of één van de bestaande"
       map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
       tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
+    shared:
+      confirm_support: "Are you sure? You will support the proposal \"%{proposal}\" and this action cannot be undone."
     index:
       start_proposal: "Nieuw initiatief indienen"
       proposals_lists: "Initiatieven"
@@ -137,6 +137,7 @@ nl:
       unfeasible: "Onhaalbaar"
       done: "Gerealiseerd"
   polls:
+    question: "Question"
     index:
       no_polls: "Geen peilingen"
       filters:
@@ -150,9 +151,11 @@ nl:
         help: "Hulp bij peilingen"
       section_footer:
         description: "Geef je mening over specifieke onderwerpen"
+      remaining: "Remaining <strong>%{days}</strong> to participate"
     show:
       cant_answer_not_logged_in: "Je moet %{signin} of je %{signup} om verder te gaan"
       comments_tab: "Reacties"
+      more_info_options: "More information about the options"
   comments:
     comment:
       author: "Auteur"
@@ -221,14 +224,17 @@ nl:
       title: "Doe mee in drie stappen"
       subtitle: ""
       step_1:
+        number: "1"
         title: "Aanmelden"
         description: "Gebruik Twitter, Facebook,Google, of jouw mailadres om in te loggen."
         link: "Meld je binnen vijf minuten aan"
       step_2:
+        number: "2"
         title: "Stem"
         description: "Deel en stem op ideeën voor de gemeente Groningen."
         link: "Bekijk wat er in de gemeente gebeurt"
       step_3:
+        number: "3"
         title: "Deel"
         description: "Blijf betrokken bij ideeën die jij belangrijk vindt en deel ze via social media."
         link: ""
@@ -274,12 +280,16 @@ nl:
       districts: "Gebied"
       categories: "Onderwerpen/Labels"
     translations:
+      select_language_prompt: "Choose language"
+      add_language: "Add language"
       remove_language: "Taal verwijderen"
       languages_in_use:
         zero: "0 Taalinstelling"
         one: "1 Taalinstelling"
         other: "%{count} Taalinstelling"
   links:
+    form:
+      cancel_button: "Cancel"
     nested_links:
       note: "Voeg relevante links toe"
       add_new_link: "Link toevoegen"
