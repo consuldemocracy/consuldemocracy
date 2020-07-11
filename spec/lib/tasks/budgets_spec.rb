@@ -50,7 +50,7 @@ describe Budget do
     expect(budget.published).to be true
   end
 
-  it "changes the published attribut to false" do
+  it "changes the published attribute to false" do
     budget = create(:budget)
     budget.update_columns(phase: "drafting")
 
