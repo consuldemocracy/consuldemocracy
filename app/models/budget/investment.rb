@@ -268,7 +268,7 @@ class Budget
       return :not_selected               unless selected?
       return :no_ballots_allowed         unless budget.balloting?
       return :different_heading_assigned unless ballot.valid_heading?(heading)
-      return :not_enough_money           unless enough_money?(ballot)
+      return :not_enough_money           unless ballot.enough_money?(self)
       return :casted_offline             if ballot.casted_offline?
     end
 
@@ -299,11 +299,6 @@ class Budget
 
     def voted_in?(heading, user)
       user.headings_voted_within_group(group).where(id: heading.id).exists?
-    end
-
-    def enough_money?(ballot)
-      available_money = ballot.amount_available(heading)
-      price.to_i <= available_money
     end
 
     def register_selection(user)

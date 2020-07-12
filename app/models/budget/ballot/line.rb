@@ -20,7 +20,7 @@ class Budget
 
       def check_sufficient_funds
         ballot.lock!
-        errors.add(:money, "insufficient funds") if ballot.amount_available(investment.heading) < investment.price.to_i
+        errors.add(:money, "insufficient funds") unless ballot.enough_money?(investment)
       end
 
       def check_valid_heading

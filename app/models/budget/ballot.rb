@@ -33,6 +33,10 @@ class Budget
       budget.formatted_amount(amount_available(heading))
     end
 
+    def enough_money?(investment)
+      investment.price.to_i <= amount_available(investment.heading)
+    end
+
     def has_lines_in_group?(group)
       groups.include?(group)
     end
