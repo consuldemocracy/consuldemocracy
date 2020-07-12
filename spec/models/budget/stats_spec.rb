@@ -10,11 +10,13 @@ describe Budget::Stats do
     let!(:author_and_voter) { create(:user, :hidden, votables: [investment]) }
     let!(:voter) { create(:user, votables: [investment]) }
     let!(:voter_and_balloter) { create(:user, votables: [investment], ballot_lines: [investment]) }
-    let!(:balloter) { create(:user, :hidden, ballot_lines: [investment]) }
+    let!(:balloter) { create(:user, ballot_lines: [investment]) }
     let!(:poll_balloter) { create(:user, :level_two) }
     let!(:non_participant) { create(:user, :level_two) }
 
     before do
+      balloter.hide
+
       create(:budget_investment, :selected, budget: budget, author: author_and_voter)
 
       create(:poll_voter, :from_booth, user: poll_balloter, budget: budget)
