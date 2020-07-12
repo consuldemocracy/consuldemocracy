@@ -17,24 +17,8 @@ class Budget
       investments.sum(:price).to_i
     end
 
-    def amount_spent(heading)
-      investments.by_heading(heading.id).sum(:price).to_i
-    end
-
     def formatted_amount_spent(heading)
       budget.formatted_amount(amount_spent(heading))
-    end
-
-    def amount_available(heading)
-      budget.heading_price(heading) - amount_spent(heading)
-    end
-
-    def formatted_amount_available(heading)
-      budget.formatted_amount(amount_available(heading))
-    end
-
-    def enough_money?(investment)
-      investment.price.to_i <= amount_available(investment.heading)
     end
 
     def has_lines_in_group?(group)
@@ -79,5 +63,17 @@ class Budget
     def casted_offline?
       budget.poll&.voted_by?(user)
     end
+
+    def voting_style
+      @voting_style ||= voting_style_class.new(self)
+    end
+    delegate :amount_available, :amount_spent, :enough_money?, :formatted_amount_available,
+             to: :voting_style
+
+    private
+
+      def voting_style_class
+        Budget::VotingStyles::Knapsack
+      end
   end
 end
