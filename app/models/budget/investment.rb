@@ -301,10 +301,6 @@ class Budget
       user.headings_voted_within_group(group).where(id: heading.id).exists?
     end
 
-    def ballotable_by?(user)
-      reason_for_not_being_ballotable_by(user).blank?
-    end
-
     def enough_money?(ballot)
       available_money = ballot.amount_available(heading)
       price.to_i <= available_money
