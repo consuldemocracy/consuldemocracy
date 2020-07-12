@@ -2,7 +2,7 @@ module Budgets
   class BallotsController < ApplicationController
     before_action :authenticate_user!
     before_action :load_budget
-    load_and_authorize_resource :budget
+    authorize_resource :budget
     before_action :load_ballot
     after_action :store_referer, only: [:show]
 
