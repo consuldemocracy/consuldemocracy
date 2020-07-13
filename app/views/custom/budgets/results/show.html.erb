@@ -71,5 +71,9 @@
         <small><%= t("budgets.results.not_selected_investment_proyects") %></small>
       <% end %>
     </p>
+
+    <% if @budget.result_text.present? %>
+      <%= raw @budget.result_text %>
+    <% end %>
   </div>
 </div>
