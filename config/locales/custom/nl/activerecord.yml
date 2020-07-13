@@ -94,7 +94,7 @@ nl:
         status_draft: "Concept"
         status_published: "Gepubliceerd"
       tag:
-        name: "Vul de naam van de categorie toe"
+        name: "Vul de naam van het onderwerp/label toe"
       topic:
         title: "Titel"
         description: "Bericht"

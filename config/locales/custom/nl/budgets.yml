@@ -51,7 +51,6 @@ nl:
       all_phases: "Participatory budgets phases"
       next_phase: "Next phase"
       prev_phase: "Previous phase"
-      current_phase: "Current phase"
     investments:
       index:
         by_heading: "Ideeën voor %{heading}"
