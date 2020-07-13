@@ -1,5 +1,5 @@
 <span class="total-amount">
-  <%= @budget.formatted_heading_price(@heading) %>
+  <%= sanitize(@ballot.amount_limit_info(@heading)) %>
 </span>
 
 <div class="progress" role="progressbar" tabindex="0"

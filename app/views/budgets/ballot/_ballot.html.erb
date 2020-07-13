@@ -26,14 +26,12 @@
           <h3>
             <%= group.name %> - <%= heading.name %>
           </h3>
-          <%= link_to sanitize(t("budgets.ballots.show.remaining",
-                      amount: @ballot.formatted_amount_available(heading))),
+          <%= link_to sanitize(@ballot.amount_available_info(heading)),
                       budget_group_path(@budget, group) %>
         </div>
         <% if @ballot.has_lines_in_group?(group) %>
           <h4 class="amount-spent text-right">
-            <%= sanitize(t("budgets.ballots.show.amount_spent",
-                           amount: @ballot.formatted_amount_spent(heading))) %>
+            <%= sanitize(@ballot.amount_spent_info(heading)) %>
           </h4>
         <% else %>
           <p>

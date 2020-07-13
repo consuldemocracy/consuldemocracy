@@ -14,7 +14,7 @@
 
 <% if @heading && can?(:show, @ballot) %>
   <p class="callout">
-    <%= sanitize(t("budgets.investments.index.sidebar.change_vote_info",
+    <%= sanitize(@ballot.change_vote_info(
         link: link_to(t("budgets.investments.index.sidebar.change_vote_link"),
             budget_ballot_path(@budget)))) %>
   </p>
@@ -39,11 +39,7 @@
 
   <% if @ballot.investments.by_heading(@heading.id).count > 0 %>
     <p>
-      <em>
-        <%= sanitize(t("budgets.investments.index.sidebar.voted",
-            count: @ballot.investments.by_heading(@heading.id).count,
-            amount_spent: @ballot.formatted_amount_spent(@heading))) %>
-      </em>
+      <em><%= sanitize(@ballot.voted_info(@heading)) %></em>
     </p>
   <% elsif @assigned_heading.present? %>
     <p>

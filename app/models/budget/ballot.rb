@@ -17,10 +17,6 @@ class Budget
       investments.sum(:price).to_i
     end
 
-    def formatted_amount_spent(heading)
-      budget.formatted_amount(amount_spent(heading))
-    end
-
     def has_lines_in_group?(group)
       groups.include?(group)
     end
@@ -67,7 +63,9 @@ class Budget
     def voting_style
       @voting_style ||= voting_style_class.new(self)
     end
-    delegate :amount_available, :amount_spent, :enough_money?, :formatted_amount_available,
+    delegate :amount_available, :amount_available_info, :amount_spent, :amount_spent_info,
+             :amount_limit_info, :change_vote_info, :enough_money?, :formatted_amount_available,
+             :formatted_amount_limit, :formatted_amount_spent, :voted_info,
              to: :voting_style
 
     private

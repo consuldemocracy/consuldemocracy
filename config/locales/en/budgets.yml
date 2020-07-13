@@ -3,8 +3,12 @@ en:
     ballots:
       show:
         title: Your ballot
-        amount_spent: "Amount spent <span>%{amount}</span>"
-        remaining: "You still have <span>%{amount}</span> to invest."
+        amount_available:
+          knapsack: "You still have <span>%{amount}</span> to invest."
+        amount_spent:
+          knapsack: "Amount spent <span>%{amount}</span>"
+        amount_limit:
+          knapsack: "%{amount}"
         no_balloted_group_yet: "You have not voted on this group yet, go vote!"
         remove: Remove vote
         voted:
@@ -84,10 +88,12 @@ en:
           other: " containing the term <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: My ballot
-          voted:
-            one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
-            other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
-          change_vote_info: "You can %{link} at any time until the close of this phase. No need to spend all the money available."
+          voted_info:
+            knapsack:
+              one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
+              other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+          change_vote_info:
+            knapsack: "You can %{link} at any time until the close of this phase. No need to spend all the money available."
           change_vote_link: "change your vote"
           different_heading_assigned: "You have active votes in another heading: %{heading_link}"
           change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
