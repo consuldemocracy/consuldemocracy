@@ -638,3 +638,13 @@ body.management .admin-content {
 .draft-panels a strong {
   color: #FFF;
 }
+
+// 15. IE 10 & 11
+
+// Error de visualización en IE 11, parece que en ciertas circustancias tiene
+// problemas al especificar las medidas de las unidades con rem
+@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ssb-whatsapp_web::before, .ssb-facebook::before, .ssb-twitter::before, .ssb-telegram::before {
+    line-height: 50px;
+  }
+}
