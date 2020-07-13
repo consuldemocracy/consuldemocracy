@@ -32,10 +32,8 @@
         </div>
         <% if @ballot.has_lines_in_group?(group) %>
           <h4 class="amount-spent text-right">
-            <%= t("budgets.ballots.show.amount_spent") %>
-            <span>
-              <%= @ballot.formatted_amount_spent(heading) %>
-            </span>
+            <%= sanitize(t("budgets.ballots.show.amount_spent",
+                           amount: @ballot.formatted_amount_spent(heading))) %>
           </h4>
         <% else %>
           <p>
