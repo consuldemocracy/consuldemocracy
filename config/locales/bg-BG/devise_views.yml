@@ -33,7 +33,7 @@ bg:
         unlock_link: Отключете акаунта ми
     menu:
       login_items:
-        login: Запишете се
+        login: Впишете се
         logout: Отпишете се
         signup: Регистрирайте се
     organizations:
@@ -71,7 +71,7 @@ bg:
         password_label: Парола
         remember_me: Запомнете ме
         submit: Въведете
-        title: Запишете се
+        title: Впишете се
     shared:
       links:
         login: Въведете
