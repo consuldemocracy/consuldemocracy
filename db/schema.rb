@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191108173350) do
+ActiveRecord::Schema.define(version: 20200519120717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1407,12 +1407,12 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.integer "debates_count", default: 0
     t.integer "proposals_count", default: 0
     t.string "kind"
-    t.integer "budget/investments_count", default: 0
-    t.integer "legislation/proposals_count", default: 0
-    t.integer "legislation/processes_count", default: 0
+    t.integer "budget_investments_count", default: 0
+    t.integer "legislation_proposals_count", default: 0
+    t.integer "legislation_processes_count", default: 0
     t.index ["debates_count"], name: "index_tags_on_debates_count"
-    t.index ["legislation/processes_count"], name: "index_tags_on_legislation/processes_count"
-    t.index ["legislation/proposals_count"], name: "index_tags_on_legislation/proposals_count"
+    t.index ["legislation_processes_count"], name: "index_tags_on_legislation_processes_count"
+    t.index ["legislation_proposals_count"], name: "index_tags_on_legislation_proposals_count"
     t.index ["name"], name: "index_tags_on_name", unique: true
     t.index ["proposals_count"], name: "index_tags_on_proposals_count"
   end
