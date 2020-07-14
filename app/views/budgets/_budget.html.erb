@@ -1,7 +1,7 @@
 <% if budget.image.present? %>
 <div id="budget_heading"
      class="expanded budget with-background-image no-margin-top"
-     style="background-image: url(<%= asset_url budget.image.attachment.url(:large) %>);">
+     style="background-image: url(<%= asset_url budget.image.attachment.url(:original) %>);">
 <% else %>
 <div id="budget_heading" class="expanded budget no-margin-top">
 <% end %>
