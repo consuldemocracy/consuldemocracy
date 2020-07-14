@@ -7,16 +7,33 @@ nl:
       user_permission_info: "Met dit profiel kun je..."
       user_permission_debates: "Deelnemen in debatten"
       user_permission_votes: "Deelnemen aan stemrondes"
+      email_on_comment_label: "Stuur me een email als iemand op mijn voorstel of discussie reageert"
+      email_on_comment_reply_label: "Stuur me een email wanneer iemand op mijn voorstel reageert"
+      email_digest_label: "Stuur me een samenvatting van meldingen met betrekking tot voorstellen"
+      email_on_direct_message_label: "Stuur me een mail als ik een privébericht krijg"
+      subscription_to_website_newsletter_label: "Stuur me een email met relevante informatie over de website"
+      public_activity_label: "Mijn activiteit is publiek"
+      user_permission_proposal: "Nieuwe voorstellen inbrengen"
+      user_permission_support_proposal: "Op voorstellen stemmen"
+      user_permission_verify_info: "* Alleen voor inwoners in het gebied."
+      username_label: "Gebruikersnaam"
+      organization_responsible_name_placeholder: "Vertegenwoordiger van de organisatie of groep"
   debates:
     create:
       form:
         submit_button: "Discussie starten"
     form:
+      tags_instructions: "Voeg steekwoorden toe"
+      tags_label: "Steekwoorden"
       tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
     index:
       start_debate: "Discussie starten"
       recommendations:
         without_interests: "Volg initiatieven zodat wij"
+        disable: "Aanbevelingen voor discussies worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'"
+        without_results: "Er zijn geen discussies die aansluiten bij jouw interesses"
+        actions:
+          success: "Aanbevelingen voor discussies zijn nu uitgeschakeld voor dit account"
       search_results:
         one: " met de tekst <strong>'%{search_term}'</strong>"
         other: " met de tekst <strong>'%{search_term}'</strong>"
@@ -30,9 +47,14 @@ nl:
         help: "Hulp bij discussies"
       section_footer:
         title: "Hulp bij discussies"
+        description: "Start een discussie om je mening met anderen te delen over onderwerpen die jij belangrijk vindt."
         help_text_1: "Deel je mening over allerlei onderwerpen, kansen of knelpunten die jij belangrijk vindt."
         help_text_2: "Om een discussie te starten of om deel te nemen aan een discussie moet je je %{org}."
         help_text_link: "aanmelden"
+      title: "Discussies"
+      search_form:
+        title: "Zoek"
+        placeholder: "Zoek in discussies..."
     new:
       recommendations_title: "Advies bij het starten van een discussie"
       form:
@@ -41,12 +63,16 @@ nl:
     show:
       author: "Auteur"
       comments_title: "Reacties"
+    edit:
+      editing: "Discussie bewerken"
+      show_link: "Discussie bekijken"
   form:
     debate: "discussie"
     proposal: "initiatief"
     budget/investment: "idee"
     not_saved: "zorgden ervoor dat je %{resource} niet geplaatst kan worden. <br>Bekijk de rode tekst om te zien wat aangepast moet worden."
     budget/investment: "idee"
+    accept_terms: "Ik begrijp dat ik een idee indien voor de Oosterparkwijk"
   proposals:
     proposal:
       reason_for_supports_necessary: ""
@@ -54,6 +80,8 @@ nl:
       archived: "Dit voorstel is gearchiveerd."
       share:
         guide: "Nu kun je jouw voorstel delen zodat mensen hun steun kunnen betuigen."
+        view_proposal: "Bekijk mijn idee"
+        edit: "Deel het hieronder op social media"
       successful: "Dit voorstel heeft de benodigde likes."
       support: "Like"
       support_title: "Steun op dit voorstel"
@@ -77,13 +105,18 @@ nl:
         retired: "Voorstel ingetrokken"
         retired_warning: "Dit voorstel is ingetrokken."
         retired_warning_link_to_explanation: "Lees waarom."
+      improve_info: "Verbeter je campagne en krijg meer likes"
+      created: "Bedankt voor je idee!"
     form:
       proposal_summary_note: "(maximaal 200 karakters)"
+      proposal_video_url: "Video toevoegen"
       proposal_video_url_note: "Je kunt een link van een Youtube of Vimeo  video toevoegen"
       tags_label: "Onderwerpen/labels"
       tags_instructions: "Je kunt dit voorstel een label geven. Je kunt je eigen categorie kiezen, of één van de bestaande"
       map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
       tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
+      proposal_responsible_name: "Volledige naam van persoon die het idee indient"
+      proposal_text: "Uitgebreide omschrijving"
     shared:
       confirm_support: "Are you sure? You will support the proposal \"%{proposal}\" and this action cannot be undone."
     index:
@@ -104,6 +137,10 @@ nl:
         description: "Steun lokale of regionale initiatieven. BIj voldoende steun, wordt een referendum gehouden."
       recommendations:
         without_interests: "Volg een initiatief om op de hoogte te blijven"
+        without_results: "Er zijn geen ideeën die aan je interesses voldoen"
+        disable: "Aanbevelingen van ideeën worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'"
+        actions:
+          success: "Aanbevelingen voor ideeën zijn nu uitgeschakeld voor dit account"
       orders:
         confidence_score: "best beoordeeld"
         created_at: "nieuw"
@@ -112,12 +149,27 @@ nl:
       search_results:
         one: " met de tekst <strong>'%{search_term}'</strong>"
         other: " met de tekst <strong>'%{search_term}'</strong>"
+      search_form:
+        placeholder: "Zoek ideeën..."
+      title: "Initiatieven"
+      filter_topic:
+        one: " met onderwerp '%{topic}'"
+        other: " met onderwerp '%{topic}'"
     new:
       form:
-        submit_button: "Voorstel indienen"
+        submit_button: "Idee indienen"
       more_info: "Hoe werken initiatieven?"
       start_new: "Voorstel indienen"
       recommendations_title: "Advies bij het indienen  van een initiatief"
+      recommendation_one: "Vul alle informatie in die je wil vertellen over je idee"
+      recommendation_two: "Waarom is dit een goed idee?Wat wil je met dit idee?Is het eenmalig of voor een lange periode? Hoeveel geld is er voor nodig? Wie doet er mee? Wie organiseert het? Wie zijn fan van het idee? Wat is het? Met wat voor regels krijg je te maken? Wat kan er wel en wat kan er niet? Wat zijn de belangen? Wat heb je nodig?"
+      recommendation_three: "Ben je al wat verder met je idee? Een plan van aanpak en een begroting zijn belangrijke stappen in het maken van een plan. Ook een video, website of een plaatje of foto doen het altijd goed voor de likes! Bezoekers kunnen namelijk reageren op je idee. Ook kan je likes verzamelen. Let op: dit zijn nog geen stemmen."
+    create:
+      form:
+        submit_button: "Idee indienen"
+    edit:
+      editing: "Idee bewerken"
+      show_link: "Bekijk idee"
     show:
       author: "Auteur"
       comments_tab: "Reacties"
@@ -157,6 +209,7 @@ nl:
       cant_answer_not_logged_in: "Je moet %{signin} of je %{signup} om verder te gaan"
       comments_tab: "Reacties"
       more_info_options: "More information about the options"
+      info_menu: "Vragen?"
   comments:
     comment:
       author: "Auteur"
@@ -168,6 +221,7 @@ nl:
         one: "1 reactie (verbergen)"
         other: "%{count} reacties (verbergen)"
         zero: "Geen reacties"
+      user_deleted: "Deelnemer verwijderd"
   comments_helper:
     comments_title: "Reacties"
   users:
@@ -176,6 +230,7 @@ nl:
     signup: "aanmelden"
     show:
       proposals: "Initiatieven"
+      budget_investments: "Ideeën"
       actions: "Acties"
       filters:
         follows:
@@ -184,10 +239,19 @@ nl:
         proposals:
           one: "1 Initiatief"
           other: "%{count} Initiatieven"
+        budget_investments:
+          one: "1 Idee"
+          other: "%{count} Ideeën"
+      delete_alert: "Weet je zeker dat je jouw idee wilt verwijderen? Dit kan niet ongedaan gemaakt worden."
+      deleted_budget_investment: "Het idee is verwijderd"
     proposals:
       draft: "Concept"
       published: "Gepubliceerd"
       retired: "Teruggetrokken"
+    direct_messages:
+      new:
+        signin: "Inloggen"
+        authenticate: "Je moet %{signin} of %{signup} om verder te gaan."
   layouts:
     header:
       collaborative_legislation: "Inspraak"
@@ -201,6 +265,14 @@ nl:
       moderation: "Modereren"
       valuation: "Evalueren"
       open_gov: "Open Overheid"
+      notification_item:
+        new_notifications:
+          one: "Je hebt een nieuwe melding"
+          other: "Je hebt %{count} nieuwe meldingen"
+        notifications: Notificaties
+        no_notifications: "Je hebt geen nieuwe meldingen"
+    admin:
+      watch_form_message: "Je hebt niet-opgeslagen wijzigingen. Verlaat de pagina?"
     footer:
       org_name: "Stem van Groningen"
       contact_title: "Neem contact met ons op"
@@ -226,6 +298,8 @@ nl:
       title: "Go back to the top of the page"
   votes:
     supports: "Steun"
+    budget_investments:
+      not_verified: "Alleen geverifieerde gebruikers mogen stemmen op ideeën; %{verify_account}."
   welcome:
     steps:
       title: "Doe mee in drie stappen"
@@ -294,6 +368,14 @@ nl:
         zero: "0 Taalinstelling"
         one: "1 Taalinstelling"
         other: "%{count} Taalinstelling"
+    print:
+      print_button: "Afdrukken"
+    followable:
+      budget_investment:
+        create:
+          notice: "Je volgt nu dit idee.<br>We brengen je op de hoogte als er updates zijn."
+        destroy:
+          notice: "Je volgt dit idee niet meer.<br>Je zult geen updates over dit idee meer ontvangen."
   links:
     form:
       cancel_button: "Cancel"
@@ -397,3 +479,14 @@ nl:
       surveys: "Peilingen"
     subnav:
       surveys: "Peilingen"
+  related_content:
+    content_title:
+      proposal: "Initiatieven"
+      budget_investment: "Idee"
+  unauthorized:
+    default: "Je hebt geen toestemming deze pagina te bezoeken."
+    manage:
+      all: "Je hebt geen toestemming '%{action' op %{subject uit te voeren."
+  poll_questions:
+    show:
+      voted: "Je hebt %{answer} gestemd"

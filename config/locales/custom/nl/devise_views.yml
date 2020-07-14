@@ -38,3 +38,5 @@ nl:
     confirmations:
       new:
         title: "Stuur verificatie instructies opnieuw"
+      show:
+        submit: "Bevestig"
