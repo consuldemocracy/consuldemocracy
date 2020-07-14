@@ -214,7 +214,7 @@ bg:
     footer:
       accessibility: Достъпност
       conditions: Условия за ползване
-      consul: CONSUL приложение
+      consul: приложението CONSUL
       contact_us: За посещение на техническа помощ
       description: Този портал използва %{consul} , който е %{open_source}.
       open_source: софтуер с отворен код
@@ -237,7 +237,7 @@ bg:
       my_account_link: Моят акаунт
       my_activity_link: Моето съдържание
       open: отворено
-      open_gov: Отворено правителство
+      open_gov: Отворено управление
       proposals: Предложения
       poll_questions: Гласуване
       budgets: Бюджетиране с участие
