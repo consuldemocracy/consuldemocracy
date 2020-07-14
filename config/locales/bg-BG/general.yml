@@ -782,7 +782,7 @@ bg:
     login_to_continue: "Вие трябва да %{signin} или да %{signup}, за да продължите."
     signin: "Впишете се"
     signup: "Регистрирайте се"
-    verify_account: "Потвърдете акаунта си"
+    verify_account: "потвърдете акаунта си"
     direct_messages:
       new:
         direct_messages_bloqued: "Този потребител е решил да не получава директни съобщения"
