@@ -1409,21 +1409,21 @@ describe "Proposals" do
       end
     end
 
-    scenario "Order by relevance by default", :spanish_search, :js do
-      create(:proposal, title: "Show you got",      cached_votes_up: 10)
-      create(:proposal, title: "Show what you got", cached_votes_up: 1)
-      create(:proposal, title: "Show you got",      cached_votes_up: 100)
+    scenario "Order by relevance by default", :js do
+      create(:proposal, title: "In summary", summary: "Title content too", cached_votes_up: 10)
+      create(:proposal, title: "Title content", summary: "Summary", cached_votes_up: 1)
+      create(:proposal, title: "Title here", summary: "Content here", cached_votes_up: 100)
 
       visit proposals_path
-      fill_in "search", with: "Show what you got"
+      fill_in "search", with: "Title content"
       click_button "Search"
 
       expect(page).to have_selector("a.is-active", text: "relevance")
 
       within("#proposals") do
-        expect(all(".proposal")[0].text).to match "Show what you got"
-        expect(all(".proposal")[1].text).to match "Show you got"
-        expect(all(".proposal")[2].text).to match "Show you got"
+        expect(all(".proposal")[0].text).to match "Title content"
+        expect(all(".proposal")[1].text).to match "Title here"
+        expect(all(".proposal")[2].text).to match "In summary"
       end
     end
 

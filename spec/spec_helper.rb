@@ -99,10 +99,6 @@ RSpec.configure do |config|
     allow(Time).to receive(:zone).and_return(application_zone)
   end
 
-  config.before(:each, :spanish_search) do |example|
-    allow(SearchDictionarySelector).to receive(:call).and_return("spanish")
-  end
-
   # Allows RSpec to persist some state between runs in order to support
   # the `--only-failures` and `--next-failure` CLI options.
   config.example_status_persistence_file_path = "spec/examples.txt"
