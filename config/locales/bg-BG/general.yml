@@ -485,6 +485,7 @@ bg:
     resource:
       required_days: "%{days} необходими дни"
       required_supports: "%{supports} необходима подкрепа"
+      and: и
       view_resource: Вижте ресурс
       resource_requested: Ресурсът вече е заявен
       request_resource: Заявете ресурс
@@ -720,6 +721,9 @@ bg:
         message: "Виждате % {limit} от % {count} дебати, съдържащи термина „% {query}“"
         see_all: "Вижте всички"
       budget_investment:
+        found:
+          one: "Има инвестиция с термина '%{query}', можете да участвате в нея, вместо да отваряте нова."
+          other: "Има инвестиции с термина '%{query}', можете да участвате в тях, вместо да отваряте нова."
         message: "Виждате %{limit} на %{count} инвестиции, съдържащи термина „%{query}“"
         see_all: "Вижте всички"
       proposal:
