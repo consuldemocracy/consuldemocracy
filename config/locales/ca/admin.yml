@@ -18,6 +18,7 @@ ca:
       title: "Podeu oficialitzar l'estand situat a %{booth}. Si això no és correcte, no continueu i truqueu al número de telèfon d’ajuda. Gràcies."
     banners:
       index:
+        title: Banners
         create: crear banner
         edit: Edita banner
         delete: eliminar banner
@@ -201,6 +202,7 @@ ca:
         selected: "seleccionada"
         select: "Seleccionar"
         list:
+          id: ID
           title: Títol
           supports: Avals
           admin: Administrador
@@ -212,6 +214,7 @@ ca:
           selected: seleccionada
           visible_to_valuators: Espectacle als valoradors
           author_username: Nom d'usuari de l'autor
+          incompatible: Incompatible
           price: Preu
           author: Autor
         cannot_calculate_winners: El pressupost ha de romandre en fase "Projectes de votació", "Revisar les paperetes" o "Pressupost acabat" per calcular els projectes guanyadors
@@ -234,11 +237,14 @@ ca:
         undefined: Sense definir
         compatibility:
           title: Compatibilitat
+          "true": Incompatible
+          "false": Compatible
         selection:
           title: selecció
         winner:
           title: Guanyador
           "true": "Sí"
+          "false": "No"
         valuator_groups: "Grups de valoració"
         preview: Vista prèvia de la inversió
       edit:
@@ -254,6 +260,7 @@ ca:
       search_unfeasible: Cercar inviables
     milestones:
       index:
+        table_id: "ID"
         table_title: "Títol"
         table_description: "Descripció detallada"
         table_publication_date: "Data de publicació"
@@ -263,6 +270,7 @@ ca:
         no_milestones: "No heu definit fites"
         image: "imatge"
         show_image: "Mostra la imatge"
+        documents: "Documents"
         milestone: Fita
         new_milestone: Crea una fita nova
         milestone_tags: Etiquetes de fita
@@ -306,6 +314,7 @@ ca:
         no_progress_bars: "No hi ha barres de progrés"
         new_progress_bar: "Creeu una nova barra de progrés"
         primary: "Barra de progrés primària"
+        table_id: "ID"
         table_kind: "tipus"
         table_title: "Títol"
         table_percentage: "Avenços actuals"
@@ -323,6 +332,7 @@ ca:
         notice: "La barra de progrés s'ha suprimit correctament"
     comments:
       index:
+        id: "ID"
         content: "Contingut"
         author: "Autor"
         commentable_type: "Tipus"
@@ -352,6 +362,7 @@ ca:
           edit: Edita
           delete: Suprimeix
           active: 'Sí'
+          inactive: 'No'
           title: Recursos i accions
           action_title: Títol
           action_type: Tipus
@@ -401,6 +412,7 @@ ca:
           success: La tasca s'ha marcat com a resolt.
     debates:
       index:
+        id: ID
         author: Autor
         title: Debats ocults
         no_debates: No hi ha debats.
@@ -420,7 +432,10 @@ ca:
       index:
         new_link: "Afegeix un document nou"
         no_documents: "No hi ha documents."
+        title: "Documents"
+        format: "Format"
         size: "Mida"
+        url: "URL"
       create:
         success_notice: "S'ha carregat document correctament"
         unable_notice: "Document no vàlid"
@@ -492,6 +507,7 @@ ca:
         proposals:
           select_order: Ordenar per
           orders:
+            id: Id
             title: Títol
             supports: Avals
         process:
@@ -517,8 +533,10 @@ ca:
         index:
           title: Títol
           back: Tornar
+          id: Id
           supports: Avals
         form:
+          custom_categories: Categories
           custom_categories_description: Categories que els usuaris poden seleccionar creant la proposta. Màxim 160 caràcters.
           custom_categories_placeholder: Introduïu les etiquetes que voleu utilitzar, separades per comes (,) i entre cometes ("")
       draft_versions:
@@ -1053,6 +1071,7 @@ ca:
           video_list: Llista de vídeos
           images: Imatges
           images_list: Llista d’imatges
+          documents: Documents
           documents_list: Llista de documents
           document_title: Títol
           document_actions: Accions
@@ -1177,6 +1196,7 @@ ca:
     proposals:
       index:
         title: Propostes ciutadanes
+        id: ID
         author: Autor
         select: Selecciona
         selected: Seleccionat
@@ -1236,6 +1256,7 @@ ca:
       no_description: "Sense descripció"
     shared:
       true_value: "Sí"
+      false_value: "No"
       booths_search:
         button: Buscar
         placeholder: Cercar bústia per nom
@@ -1369,6 +1390,7 @@ ca:
       budget_balloting:
         title: "Estadístiques de votació definitiva"
         vote_count: Vots
+        participant_count: Participants
         votes_per_heading: Vots per partida
         participants_per_district: Participants per districte
       budget_supporting:
@@ -1376,6 +1398,7 @@ ca:
         headings: Rúbriques
         users: Usuaris
         vote_count: Vots
+        participant_count: Participants
       direct_messages:
         title: missatges directes
         total: total
@@ -1539,6 +1562,7 @@ ca:
     audits:
       title: "Canviar el registre"
       changes: "Llista de canvis"
+      id: "ID"
       field: "Camp"
       new_value: "Nou valor"
       old_value: "Valor antic"
