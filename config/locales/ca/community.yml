@@ -17,6 +17,8 @@ ca:
         first_theme_not_logged_in: No hi ha cap problema disponible i participa en la creació del primer.
         first_theme: Creeu el primer tema de la comunitat
         sub_first_theme: "Per crear un tema heu de ser %{sign_in} o %{sign_up}."
+      tab:
+        participants: Participants
       sidebar:
         participate: Col·labora en l'elaboració de la normativa sobre
         new_topic: Crea tema
