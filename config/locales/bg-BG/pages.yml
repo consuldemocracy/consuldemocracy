@@ -146,6 +146,17 @@ bg:
             - 
               browser_column: Opera
               action_column: View > scale
+        browser_shortcuts_table:
+          description: "Друг начин за промяна на размера на текста е да се използват бързите клавишни комбинации, както са определени в браузърите, по-специално комбинацията:"
+          rows:
+            - 
+              shortcut_column: CTRL и + (CMD и + на MAC)
+              description_column: Увеличава размера на текста
+            - 
+              shortcut_column: CTRL и - (CMD и - на MAC)
+              description_column: Намалява размера на текста
+      compatibility:
+        title: Съвместимост със стандартите и визуалния дизайн
     titles:
       help: "Какво е %{org}? - Гражданско участие"
     verify:
