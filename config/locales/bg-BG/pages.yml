@@ -157,6 +157,7 @@ bg:
               description_column: Намалява размера на текста
       compatibility:
         title: Съвместимост със стандартите и визуалния дизайн
+        description: 'Всички страници на този уебсайт отговарят на <strong>Насоките за достъпност</strong> или на Общите принципи на достъпния дизайн, установени от работната група <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> към W3C.'
     titles:
       help: "Какво е %{org}? - Гражданско участие"
     verify:
