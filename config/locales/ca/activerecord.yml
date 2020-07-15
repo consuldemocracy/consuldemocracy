@@ -81,6 +81,9 @@ ca:
       site_customization/content_block:
         one: bloc
         other: Personalitzar blocs
+      document:
+        one: Document
+        other: Documents
       legislation/process:
         one: "procés"
         other: "processos"
@@ -99,6 +102,9 @@ ca:
       legislation/answers:
         one: "Resposta"
         other: "respostes"
+      documents:
+        one: "Document"
+        other: "Documents"
       images:
         one: "Imatge"
         other: "Imatges"
@@ -232,6 +238,7 @@ ca:
         title: "Títol de la proposta"
         description: "Text de la proposta"
         summary: "Resum de la proposta"
+        retired_explanation: "Explanation"
       user:
         login: "E-mail o nom d'usuari"
         email: "El teu correu electrònic"
