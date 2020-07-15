@@ -39,7 +39,7 @@ namespace :migrations do
       if phase.summary.present?
         phase.description << "<br>"
         phase.description << phase.summary
-        phase.save!
+        phase.update!(summary: nil) if phase.save
       end
     end
   end

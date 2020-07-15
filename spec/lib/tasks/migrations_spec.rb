@@ -107,6 +107,7 @@ describe "Migration tasks" do
       budget_phase.reload
       expect(budget_phase.description_en).to eq "English description<br>English summary"
       expect(budget_phase.description_es).to eq "Spanish description"
+      expect(budget_phase.summary_en).to eq nil
     end
   end
 end
