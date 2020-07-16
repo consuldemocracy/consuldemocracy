@@ -91,7 +91,7 @@
                     <h4><%= item.current_phase.name %></h4>
                   <% end %>
                   <p class="dates"><%= item.start_date.to_date %> / <%= item.end_date.to_date %></p>
-                  <p class="description"><%= sanitize(item.description) %></p>
+                  <span class="description"><%= sanitize(item.description) %></span>
                   <p><%= t("welcome.feed.see_budget") %></p>
                 <% end %>
               </div>

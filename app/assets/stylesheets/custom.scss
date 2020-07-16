@@ -604,6 +604,7 @@ header {
     background: $light;
     border: 2px solid #fff;
     border-radius: rem-calc(12);
+    color: $text;
     height: 100%;
 
     &:hover {
@@ -683,6 +684,30 @@ header {
       right: -12px;
       position: absolute;
       top: -1px;
+    }
+  }
+
+  &.budget .description {
+    display: block;
+    max-height: $line-height * 5;
+    overflow: hidden;
+    padding: 0 $line-height / 2;
+    position: relative;
+
+    &::after {
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0), $light 50%);
+      bottom: 0;
+      content: "";
+      height: 24px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    p {
+      color: $text;
+      padding: 0;
+      text-align: left;
     }
   }
 }
