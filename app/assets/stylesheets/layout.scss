@@ -2375,7 +2375,6 @@ table {
 
   @include breakpoint(medium) {
     float: right;
-    margin-top: rem-calc(-24);
   }
 
   label {
