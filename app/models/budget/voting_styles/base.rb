@@ -21,21 +21,37 @@ class Budget::VotingStyles::Base
 
   def amount_available_info(heading)
     I18n.t("budgets.ballots.show.amount_available.#{name}",
-           amount: formatted_amount_available(heading))
+           count: formatted_amount_available(heading))
   end
 
   def amount_spent_info(heading)
     I18n.t("budgets.ballots.show.amount_spent.#{name}",
-           amount: formatted_amount_spent(heading))
+           count: formatted_amount_spent(heading))
   end
 
   def amount_limit_info(heading)
     I18n.t("budgets.ballots.show.amount_limit.#{name}",
-           amount: formatted_amount_limit(heading))
+           count: formatted_amount_limit(heading))
+  end
+
+  def amount_available(heading)
+    amount_limit(heading) - amount_spent(heading)
   end
 
   def percentage_spent(heading)
     100.0 * amount_spent(heading) / amount_limit(heading)
+  end
+
+  def formatted_amount_available(heading)
+    format(amount_available(heading))
+  end
+
+  def formatted_amount_spent(heading)
+    format(amount_spent(heading))
+  end
+
+  def formatted_amount_limit(heading)
+    format(amount_limit(heading))
   end
 
   private

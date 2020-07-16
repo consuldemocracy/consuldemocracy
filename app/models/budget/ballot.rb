@@ -63,7 +63,7 @@ class Budget
     def voting_style
       @voting_style ||= voting_style_class.new(self)
     end
-    delegate :amount_available, :amount_available_info, :amount_spent, :amount_spent_info,
+    delegate :amount_available, :amount_available_info, :amount_spent, :amount_spent_info, :amount_limit,
              :amount_limit_info, :change_vote_info, :enough_resources?, :formatted_amount_available,
              :formatted_amount_limit, :formatted_amount_spent, :not_enough_resources_error,
              :percentage_spent, :reason_for_not_being_ballotable, :voted_info,
@@ -72,7 +72,7 @@ class Budget
     private
 
       def voting_style_class
-        Budget::VotingStyles::Knapsack
+        "Budget::VotingStyles::#{budget.voting_style.camelize}".constantize
       end
   end
 end

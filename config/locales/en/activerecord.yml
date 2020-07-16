@@ -141,6 +141,9 @@ en:
         description_finished: "Description when the budget is finished"
         phase: "Phase"
         currency_symbol: "Currency"
+        voting_style: "Final voting style"
+        voting_style_knapsack: "Knapsack"
+        voting_style_approval: "Approval"
       budget/translation:
         name: "Name"
       budget/investment:
@@ -203,6 +206,7 @@ en:
         name: "Heading name"
         price: "Amount"
         population: "Population (optional)"
+        max_ballot_lines: "Votes allowed"
       budget/heading/translation:
         name: "Heading name"
       budget/phase:

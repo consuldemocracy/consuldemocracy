@@ -3,6 +3,12 @@ module BudgetsHelper
     ["balloting", "reviewing_ballots", "finished"].include? budget.phase
   end
 
+  def budget_voting_styles_select_options
+    Budget::VOTING_STYLES.map do |style|
+      [Budget.human_attribute_name("voting_style_#{style}"), style]
+    end
+  end
+
   def heading_name_and_price_html(heading, budget)
     tag.div do
       concat(heading.name + " ")
