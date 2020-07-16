@@ -184,6 +184,15 @@ describe "Polls" do
       expect(page).to have_content("Question 2 #{normal_question.title}", normalize_ws: true)
     end
 
+    scenario "Do not show question number in polls with one question" do
+      question = create(:poll_question, poll: poll)
+
+      visit poll_path(poll)
+
+      expect(page).to have_content question.title
+      expect(page).not_to have_content("Question 1")
+    end
+
     scenario "Question answers appear in the given order" do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, title: "First", question: question, given_order: 2)
