@@ -6,7 +6,7 @@ nl:
         locked: "Gesloten"
         coming_soon: "Coming soon"
         published: "Published"
-        less_info: "Less information"
+        less_info: "Minder informatie"
       proposals:
         empty_proposals: "Er zijn geen initiatieven"
         less_info: "Minder informatie"
@@ -24,9 +24,21 @@ nl:
         key_dates: "Activiteiten"
         debate_dates: "Discussies"
         allegations_dates: "Reacties"
+        proposals_dates: "Initiatieven"
+      phase_empty:
+        empty: "Nog niets gepubliceerd"
     annotations:
       index:
         title: "Reacties"
+        comments_count:
+          one: "%{count} reactie"
+          other: "%{count} reacties"
+      comments:
+        cancel: "Annuleren"
+        publish_comment: "Publiceer reactie"
+        comments_count:
+          one: "%{count} reactie"
+          other: "%{count} reacties"
     draft_versions:
       show:
         seeing_version: "Je bekijkt nu"

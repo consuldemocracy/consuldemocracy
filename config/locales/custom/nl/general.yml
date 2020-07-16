@@ -190,7 +190,7 @@ nl:
       unfeasible: "Onhaalbaar"
       done: "Gerealiseerd"
   polls:
-    question: "Question"
+    question: "Vraag"
     index:
       no_polls: "Geen peilingen"
       filters:
@@ -204,11 +204,12 @@ nl:
         help: "Hulp bij peilingen"
       section_footer:
         description: "Geef je mening over specifieke onderwerpen"
-      remaining: "Remaining <strong>%{days}</strong> to participate"
+      remaining: "Deelname nog <strong>%{days}</strong> mogelijk"
     show:
       cant_answer_not_logged_in: "Je moet %{signin} of je %{signup} om verder te gaan"
+      cant_answer_wrong_geozone: "Deze peiling is niet actief voor jouw gebied"
       comments_tab: "Reacties"
-      more_info_options: "More information about the options"
+      more_info_options: "Meer informatie over de antwoordmogelijkheden"
       info_menu: "Vragen?"
   comments:
     comment:
@@ -327,6 +328,7 @@ nl:
         proposals: "Initiatieven"
         budgets: "Burgerbegroting"
       see_budget: "Bekijk burgerbegroting"
+      see_all_proposals: "Alle initiatieven"
     cards:
       title: "Uitgelicht"
   shared:
@@ -373,9 +375,14 @@ nl:
     followable:
       budget_investment:
         create:
-          notice: "Je volgt nu dit idee.<br>We brengen je op de hoogte als er updates zijn."
+          notice: "Je volgt nu dit idee!<br>We houden je via notificaties op de hoogte van alle wijzigingen."
         destroy:
           notice: "Je volgt dit idee niet meer.<br>Je zult geen updates over dit idee meer ontvangen."
+      proposal:
+        create:
+          notice: "Je volgt nu dit initiatieven!<br>We houden je via notificaties op de hoogte van alle wijzigingen."
+        destroy:
+          notice: "Je volgt dit initiatieven niet meer.<br>Je zult geen updates over dit initiatieven meer ontvangen."
   links:
     form:
       cancel_button: "Cancel"

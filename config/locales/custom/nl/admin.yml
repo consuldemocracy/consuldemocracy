@@ -209,6 +209,7 @@ nl:
         create: "Maak peiling"
         name: "Titel peiling"
         dates: "Periode"
+        geozone_restricted: "Beperkt tot gebieden"
       show:
         questions_tab: "Vragen"
         questions_title: "Alle vragen"
