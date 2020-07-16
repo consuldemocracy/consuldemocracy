@@ -712,6 +712,13 @@ header {
   }
 }
 
+.welcome-cards {
+
+  @include breakpoint(medium) {
+    display: flex;
+  }
+}
+
 .feed-content-list {
 
   .row {
