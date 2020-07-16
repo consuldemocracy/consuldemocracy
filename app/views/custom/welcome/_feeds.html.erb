@@ -26,7 +26,7 @@
                 <% if item.image.present? %>
                   <div class="small-12 medium-6 large-3 column">
                     <div class="feed-image">
-                      <%= image_tag item.image_url(:thumb),
+                      <%= image_tag item.image_url(:medium),
                                     alt: item.image.title.unicode_normalize %>
                     </div>
                   </div>
