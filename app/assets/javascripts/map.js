@@ -83,6 +83,7 @@
       };
       mapCenterLatLng = new L.LatLng(mapCenterLatitude, mapCenterLongitude);
       map = L.map(element.id).setView(mapCenterLatLng, zoom);
+      map.scrollWheelZoom.disable();
       L.tileLayer(mapTilesProvider, {
         attribution: mapAttribution
       }).addTo(map);
