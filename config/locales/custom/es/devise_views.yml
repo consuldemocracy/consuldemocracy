@@ -13,3 +13,5 @@ es:
       registrations:
         delete_form:
           info: "Durante la fase de votación, si se quiere dar de baja la persona interesada, podrá ejercer sus derechos de acceso, rectificación, cancelación y oposición, ante el Ayuntamiento de Valladolid , haciendo referencia a la plataforma de Presupuestos Participativos, lo que se informa para el cumplimiento del artículo 5 de la Ley orgánica 15/1999, del 13 de diciembre, de protección de datos de carácter personal."
+        edit:
+          edit: "Editar datos de acceso"

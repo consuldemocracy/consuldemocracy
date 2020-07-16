@@ -1,0 +1,50 @@
+<%= render "shared/globalize_locales", resource: @debate %>
+
+<%= translatable_form_for(@debate) do |f| %>
+
+  <%= render "shared/errors", resource: @debate %>
+
+  <div class="row column">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 column">
+        <%= translations_form.text_field :title,
+              maxlength: Debate.title_max_length,
+              placeholder: t("debates.form.debate_title"),
+              data: { js_suggest_result: "js_suggest_result",
+                      js_suggest: ".js-suggest",
+                      js_url: suggest_debates_path } %>
+      </div>
+      <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
+
+      <div class="small-12 column">
+        <%= translations_form.text_area :description,
+              maxlength: Debate.description_max_length,
+              class: "html-area" %>
+      </div>
+    <% end %>
+
+    <%= f.invisible_captcha :subtitle %>
+
+    <div class="small-12 column">
+      <%= f.text_field :tag_list, value: @debate.tag_list.to_s,
+                        hint: t("debates.form.tags_instructions"),
+                        placeholder: t("debates.form.tags_placeholder"),
+                        data: { js_url: suggest_tags_path },
+                        class: "tag-autocomplete" %>
+    </div>
+    <div class="small-12 column">
+      <% if @debate.new_record? %>
+        <%= f.check_box :terms_of_service,
+          title: t("form.accept_terms_title"),
+          label: t("form.accept_terms",
+                   policy: link_to(t("form.policy"), page_path("privacy"), target: "blank"),
+                   conditions: link_to(t("form.conditions"), page_path("conditions"), target: "blank")
+                  ) %>
+      <% end %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button", value: t("debates.#{action_name}.form.submit_button")) %>
+    </div>
+  </div>
+<% end %>
