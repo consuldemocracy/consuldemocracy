@@ -97,6 +97,12 @@ class Legislation::ProcessesController < Legislation::BaseController
     @phase = :milestones
   end
 
+  def summary
+    @phase = :summary
+    @proposals = @process.proposals.selected
+    @comments = @process.draft_versions.published.last&.best_comments || Comment.none
+  end
+
   def proposals
     set_process
     @phase = :proposals_phase

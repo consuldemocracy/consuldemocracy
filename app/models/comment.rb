@@ -49,6 +49,7 @@ class Comment < ApplicationRecord
 
   scope :sort_by_most_voted, -> { order(confidence_score: :desc, created_at: :desc) }
   scope :sort_descendants_by_most_voted, -> { order(confidence_score: :desc, created_at: :asc) }
+  scope :sort_by_supports, -> { order("cached_votes_up - cached_votes_down DESC") }
 
   scope :sort_by_newest, -> { order(created_at: :desc) }
   scope :sort_descendants_by_newest, -> { order(created_at: :desc) }
@@ -127,6 +128,10 @@ class Comment < ApplicationRecord
   def calculate_confidence_score
     self.confidence_score = ScoreCalculator.confidence_score(cached_votes_total,
                                                              cached_votes_up)
+  end
+
+  def votes_score
+    cached_votes_up - cached_votes_down
   end
 
   private

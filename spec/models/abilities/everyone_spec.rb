@@ -48,4 +48,8 @@ describe Abilities::Everyone do
   it { should be_able_to(:read_stats, create(:budget, :valuating, stats_enabled: true)) }
   it { should_not be_able_to(:read_stats, create(:budget, :valuating, stats_enabled: false)) }
   it { should_not be_able_to(:read_stats, create(:budget, :selecting, stats_enabled: true)) }
+
+  it { should be_able_to(:summary, create(:legislation_process, :past)) }
+  it { should_not be_able_to(:summary, create(:legislation_process, :open)) }
+  it { should_not be_able_to(:summary, create(:legislation_process, :past, :not_published)) }
 end

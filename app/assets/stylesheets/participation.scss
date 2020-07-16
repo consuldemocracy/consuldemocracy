@@ -612,6 +612,45 @@
   }
 }
 
+%panel {
+  background: #fff;
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  border-radius: 0;
+  box-shadow: 0 1px 3px 0 $border;
+  margin-bottom: rem-calc(12);
+  min-height: rem-calc(192);
+  padding: rem-calc(12) rem-calc(12) 0;
+
+  @include breakpoint(medium) {
+    margin-bottom: rem-calc(-1);
+    padding-bottom: rem-calc(12);
+  }
+
+  @include breakpoint(medium) {
+    .divider {
+      display: inline-block;
+    }
+  }
+
+  h3 {
+    font-weight: bold;
+    margin-top: $line-height / 2;
+
+    a {
+      color: $text;
+    }
+  }
+
+  &.past-budgets {
+    min-height: 0;
+
+    .button ~ .button {
+      margin-left: $line-height / 2;
+    }
+  }
+}
+
 .debate,
 .proposal,
 .investment-project,
@@ -621,42 +660,7 @@
   margin: $line-height / 4 0;
 
   .panel {
-    background: #fff;
-    border: 1px solid;
-    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
-    border-radius: 0;
-    box-shadow: 0 1px 3px 0 $border;
-    margin-bottom: rem-calc(12);
-    min-height: rem-calc(192);
-    padding: rem-calc(12) rem-calc(12) 0;
-
-    @include breakpoint(medium) {
-      margin-bottom: rem-calc(-1);
-      padding-bottom: rem-calc(12);
-    }
-
-    @include breakpoint(medium) {
-      .divider {
-        display: inline-block;
-      }
-    }
-
-    h3 {
-      font-weight: bold;
-      margin-top: $line-height / 2;
-
-      a {
-        color: $text;
-      }
-    }
-
-    &.past-budgets {
-      min-height: 0;
-
-      .button ~ .button {
-        margin-left: $line-height / 2;
-      }
-    }
+    @extend %panel;
   }
 
   .debate-content,
