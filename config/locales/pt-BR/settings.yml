@@ -1,4 +1,4 @@
-pt-BR:
+pt:
   settings:
     comments_body_max_length: "Tamanho máximo dos comentários"
     comments_body_max_length_description: "Número de caracteres"
