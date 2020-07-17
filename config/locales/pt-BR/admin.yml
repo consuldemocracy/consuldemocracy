@@ -1217,6 +1217,15 @@ pt:
           without_confirmed_hide: Pendente
         title: Propostas ocultas
         no_hidden_proposals: Não há propostas ocultas.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendentes
+        title: Notificações ocultas
+        no_hidden_proposals: Não há notificações ocultas.
     settings:
       flash:
         updated: Valor atualizado
@@ -1429,6 +1438,8 @@ pt:
         help: "Quando um usuário criar uma proposta, os tópicos a seguir são sugeridos como etiquetas padrão."
     users:
       columns:
+        id: ID
+        erase_reason: Apagar razão
         name: Nome
         email: Email
         document_number: Número do documento
@@ -1437,6 +1448,10 @@ pt:
       index:
         title: Usuário
         no_users: Não há usuários.
+        filter: Filtro
+        filters:
+          active: Ativos
+          erased: Apagados
       search:
         placeholder: Buscar usuário por e-mail, nome ou número do documento
         search: Buscar
