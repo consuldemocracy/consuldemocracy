@@ -95,7 +95,7 @@ describe "Debates" do
     expect(page.html).to include "<title>#{debate.title}</title>"
 
     within(".social-share-button") do
-      expect(page.all("a").count).to be(4) # Twitter, Facebook, Google+, Telegram
+      expect(page.all("a").count).to be(3) # Twitter, Facebook, Telegram
     end
   end
 
