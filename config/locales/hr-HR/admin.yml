@@ -1447,6 +1447,8 @@ hr:
         help: "Kada korisnik stvori prijedlog, sljedeće teme biti će preporučene kao različite oznake."
     users:
       columns:
+        id: Identifikator
+        erase_reason: Razlog uklanjanja
         name: Ime
         email: Email
         document_number: Broj dokumenta
@@ -1455,6 +1457,10 @@ hr:
       index:
         title: Korisnik
         no_users: Ne postoje korisnici.
+        filter: Filter
+        filters:
+          active: Aktivni
+          erased: Uklonjeni
       search:
         placeholder: Pretražite korisnike putem emaila, ime ili broj dokumenta
         search: Pretraga
