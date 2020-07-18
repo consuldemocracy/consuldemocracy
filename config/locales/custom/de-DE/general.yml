@@ -1,4 +1,9 @@
 de:
+  account:
+    show:
+      user_permission_votes: An finaler Abstimmung teilnehmen *
+      user_permission_support_proposal:  Neuen Vorschlag erstellen *
+      user_permission_verify_info: "* Nur für bei der Stadt Würzburg gemeldete Bürger*innen möglich."
   layouts:
     footer:
       participation_text: Gestalten Sie Ihre Stadt Würzburg, damit sie für Sie lebenswerter wird.
