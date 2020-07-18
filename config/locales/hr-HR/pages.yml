@@ -44,6 +44,8 @@ hr:
         title: "Procesi"
         description: "U %{link} sekciji građani sudjeluju u stvaranju i modifikaciji propisa koji utječu na područne javnog djelovanja i mogu ponuditi mišljenje na temu propisa u prošlim raspravama."
         link: "procesi"
+        feature: "Kako biste sudjelovali u izglasavanju kliknite na %{link} i potvrdite svoj račun."
+        feature_link: "registrirajte se u %{org_name}"
       faq:
         title: "Tehnički problemi?"
         description: "Pročitajte FAQ kako biste dobili odgovore na svoja pitanja."
