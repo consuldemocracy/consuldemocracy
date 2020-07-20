@@ -300,6 +300,7 @@ da:
         body: "Besked"
         title: "Titel"
       signature_sheet:
+        title: "Titel"
         signable_type: "Underskriftstype"
         signable_id: "ID"
         document_numbers: "Dokumentnummer"
