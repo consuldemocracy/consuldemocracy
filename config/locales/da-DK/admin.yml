@@ -1398,6 +1398,8 @@ da:
         help: "Når en bruger opretter et forslag vil følgende standard tags blive foreslået."
     users:
       columns:
+        id: ID
+        erase_reason: Fjern forklaring
         name: Navn
         email: E-mail
         document_number: Dokumentnummer
