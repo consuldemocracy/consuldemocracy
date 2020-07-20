@@ -44,6 +44,8 @@ da:
         title: "Processer"
         description: "I sektionen %{link} deltager borgerne i udarbejdelsen og ændringer af bestemmelser, der har indflydelse på byen, og de kan tilkendegive deres mening vedrørende kommunalpolitik, der tidligere har været til debat."
         link: "processer"
+        feature: "For at deltage i processen skal du gå til %{link} og bekræfte din konto."
+        feature_link: "registrer med %{org_name}"
       faq:
         title: "Tekniske problemer?"
         description: "Læs de ofte stillede spørgsmål og find svar på dine egne."
