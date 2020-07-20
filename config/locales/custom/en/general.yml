@@ -67,3 +67,5 @@ en:
   poll_questions:
     show:
       vote_registered: "Your vote has been registered correctly."
+  shared:
+    expired: "Expired"

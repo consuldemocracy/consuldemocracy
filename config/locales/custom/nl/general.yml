@@ -383,6 +383,7 @@ nl:
           notice: "Je volgt nu dit initiatieven!<br>We houden je via notificaties op de hoogte van alle wijzigingen."
         destroy:
           notice: "Je volgt dit initiatieven niet meer.<br>Je zult geen updates over dit initiatieven meer ontvangen."
+    expired: "Proces afgerond"
   links:
     form:
       cancel_button: "Cancel"
