@@ -497,3 +497,4 @@ nl:
   poll_questions:
     show:
       voted: "Je hebt %{answer} gestemd"
+      vote_registered: "Je stem is opgeslagen."
