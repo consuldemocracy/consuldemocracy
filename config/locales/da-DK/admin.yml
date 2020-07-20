@@ -1408,6 +1408,10 @@ da:
       index:
         title: Bruger
         no_users: Der er ingen brugere.
+        filter: Filter
+        filters:
+          active: Aktive
+          erased: Slettede
       search:
         placeholder: Søg bruger via e-mail, navn eller dokumentnummer
         search: Søg
