@@ -157,6 +157,9 @@ describe "Admin collaborative legislation" do
     end
 
     scenario "Create a legislation process with an image", :js do
+      original_window_size = Capybara.current_window.size
+      Capybara.current_window.resize_to(1600, 1200)
+
       visit new_admin_legislation_process_path
       fill_in "Process Title", with: "An example legislation process"
       fill_in "Summary", with: "Summary of the process"
@@ -176,6 +179,8 @@ describe "Admin collaborative legislation" do
       expect(page).to have_content "An example legislation process"
       expect(page).not_to have_content "Summary of the process"
       expect(page).to have_css("img[alt='#{Legislation::Process.last.title}']")
+
+      Capybara.current_window.resize_to(*original_window_size)
     end
 
     scenario "Default colors are present" do
