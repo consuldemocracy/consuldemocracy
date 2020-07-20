@@ -949,6 +949,10 @@ footer {
       background: $brand;
     }
   }
+
+  img {
+    margin-top: rem-calc(100);
+  }
 }
 
 .budget-subheader {
