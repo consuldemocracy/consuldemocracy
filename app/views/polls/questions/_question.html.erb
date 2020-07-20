@@ -8,6 +8,7 @@
   </h3>
 
   <% if question.answers_with_description.any? %>
+    <br>
     <a href="#answer_<%= "#{question.answers_with_description.first.id}" %>" class="small" data-smooth-scroll>
       <%= t("polls.show.more_info_options") %>
     </a>
