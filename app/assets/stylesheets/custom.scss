@@ -1953,7 +1953,14 @@ footer {
     background: $brand;
     color: #fff;
     font-weight: bold;
+    line-height: $line-height * 2;
     margin-top: $line-height * 2;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    &:hover {
+      background: $hover;
+    }
   }
 
   .progress {
