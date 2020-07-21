@@ -15,7 +15,7 @@ class Consultation::CodesController < Consultation::BaseController
     if document_type.present? && document_number.present? && postal_code.present? && date_of_birth.present? && terms_of_service == "1"
       @census_api_response = CensusvaApi.new.call(residence_params[:document_type], document_number)
 
-      if postal_code.start_with?("47") && @census_api_response.valid? && @census_api_response.postal_code == postal_code && @census_api_response.date_of_birth == date_of_birth.strftime("%Y%m%d%H%M%S")
+      if postal_code.start_with?("47") && @census_api_response.valid? && @census_api_response.postal_code == postal_code && @census_api_response.date_of_birth == date_of_birth
         @codigo = Codigo.find_by(clave: document_number)&.valor
 
         @error = t("codigos.errors.not_found") if @codigo.blank?
