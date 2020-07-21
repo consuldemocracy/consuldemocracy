@@ -1653,32 +1653,6 @@ table {
   }
 }
 
-[class^="ssb-icon ssb-google"] {
-  background: #de4c34;
-  background-image: none !important;
-  color: #fff;
-  height: $line-height * 2 !important;
-  position: relative;
-  width: $line-height * 2 !important;
-
-  &::before {
-    content: "B";
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 50%;
-    line-height: $line-height * 2;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
-  }
-
-  &:hover,
-  &:focus {
-    background: #fff;
-    color: #ce3e26;
-  }
-}
-
 .button.button-wordpress {
   background: #dcdde3;
   border-left: 3px solid #2f2f33;
@@ -1814,31 +1788,6 @@ table {
     &:focus {
       background: #fff;
       color: #354f88;
-    }
-  }
-
-  [class^="ssb-icon ssb-google"] {
-    background: #de4c34;
-    color: #fff;
-    height: rem-calc(24);
-    position: relative;
-    width: rem-calc(48);
-
-    &::before {
-      content: "B";
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
-      left: 50%;
-      line-height: $line-height * 2;
-      margin-left: rem-calc(-11);
-      position: absolute;
-      top: 0;
-    }
-
-    &:hover,
-    &:focus {
-      background: #fff;
-      color: #ce3e26;
     }
   }
 
