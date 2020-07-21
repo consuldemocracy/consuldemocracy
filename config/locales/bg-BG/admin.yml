@@ -1095,6 +1095,7 @@ bg:
         all_booths_total: "Обща сума от всички кабинки:"
         total_final: "Окончателни изчисления"
         total_system: "Гласувания (автоматично)\ntable_booth_name: \"Кабинка"
+        table_booth_name: "Кабинка"
         table_total_recount: "Общо преброяване (от служител)"
         table_system_count: "Гласувания (автоматично)"
     results:
@@ -1152,6 +1153,7 @@ bg:
       level_4: Ниво 4
       level_5: Ниво 5
       search:
+        edit_official: Редактиране на служебно лице
         make_official: Make official/ Направете официално
         title: "Официални позиции: Търсене на потребители"
         no_results: Официални позиции не са намерени.
@@ -1206,6 +1208,15 @@ bg:
           without_confirmed_hide: Изчакване
         title: Скрити предложения
         no_hidden_proposals: Няма скрити предложения.
+    hidden_proposal_notifications:
+      index:
+        filter: Филтър
+        filters:
+          all: Всички
+          with_confirmed_hide: Потвърдени
+          without_confirmed_hide: Изчакващи
+        title: Скрити известия
+        no_hidden_proposals: Няма скрити известия.
     settings:
       flash:
         updated: Стойността е актуализирана
