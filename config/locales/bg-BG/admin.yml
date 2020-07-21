@@ -905,6 +905,12 @@ bg:
     poll_officers:
       index:
         title: Анкетни служители
+      officer:
+        add: Добави
+        delete: Изтрий позицията
+        name: Име
+        email: Електронна поща
+        entry_name: служител
       search:
         email_placeholder: Търсене на потребител по имейл
         search: Търсене
@@ -1412,6 +1418,7 @@ bg:
         help: "Когато потребителят създава предложение, следните теми се предлагат като тагове по подразбиране."
     users:
       columns:
+        erase_reason: Причина за изтриване
         name: Име
         email: Имейл
         document_number: Номер на документ
@@ -1420,6 +1427,10 @@ bg:
       index:
         title: Потребител
         no_users: Няма потребители.
+        filter: Филтриране
+        filters:
+          active: Активен
+          erased: Изтрит
       search:
         placeholder: Търсене на потребител по имейл, име или номер на документ
         search: Търсене
