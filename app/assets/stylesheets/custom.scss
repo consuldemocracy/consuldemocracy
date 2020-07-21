@@ -1893,7 +1893,14 @@ footer {
   }
 
   .add-related-content {
+    color: $link;
     font-size: $small-font-size;
+
+    &:hover {
+      color: $link-hover;
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 
   a {
