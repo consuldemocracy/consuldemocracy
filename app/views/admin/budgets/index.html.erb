@@ -26,8 +26,13 @@
     <tbody>
       <% @budgets.each do |budget| %>
         <tr id="<%= dom_id(budget) %>" class="budget">
-          <td class="<%= "budget-completed" if budget.finished? %>">
-            <% if budget.finished? %>
+          <td class="<%= "budget-completed" if budget.finished? %>
+                     <%= "budget-draft" if budget.drafting? %>">
+            <% if budget.drafting? %>
+              <span>
+                <%= t("admin.budgets.index.table_budget_draft") %>
+              </span>
+            <% elsif budget.finished? %>
               <span>
                 <%= t("admin.budgets.index.table_budget_completed") %>
               </span>

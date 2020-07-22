@@ -99,6 +99,7 @@ nl:
         table_phase: "Fase"
         table_budget_type: "Budget Type"
         table_budget_completed: "Completed"
+        table_budget_draft: "Concept"
         table_duration: "Periode"
         table_preview: "Preview"
         admin_ballots: "Admin ballots"

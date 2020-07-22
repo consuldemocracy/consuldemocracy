@@ -62,6 +62,8 @@ describe "Admin budgets" do
     scenario "Displaying budget information" do
       budget_single = create(:budget, :accepting)
       budget_multiple = create(:budget, :balloting)
+      budget_draft = create(:budget, :drafting)
+      budget_finised = create(:budget, :finished)
 
       create(:budget_heading, budget: budget_single)
       create(:budget_heading, budget: budget_multiple)
@@ -87,6 +89,16 @@ describe "Admin budgets" do
         expect(page).to have_content("9 months")
         expect(page).to have_content("#{budget_multiple.phases.first.starts_at.to_date} 00:00 - "\
                                      "#{budget_multiple.phases.last.ends_at.to_date - 1} 23:59")
+      end
+
+      within "#budget_#{budget_draft.id}" do
+        expect(page).to have_content(budget_draft.name)
+        expect(page).to have_content("Draft")
+      end
+
+      within "#budget_#{budget_finised.id}" do
+        expect(page).to have_content(budget_finised.name)
+        expect(page).to have_content("Completed")
       end
     end
 

@@ -1524,6 +1524,7 @@ table {
   }
 }
 
+.budget-draft,
 .budget-completed {
   position: relative;
 
@@ -1544,6 +1545,20 @@ table {
     font-weight: bold;
     line-height: rem-calc(12);
     text-transform: uppercase;
+  }
+}
+
+.budget-draft {
+
+  &::before {
+    content: "\f303";
+  }
+}
+
+.budget-completed {
+
+  &::before {
+    content: "\f023";
   }
 }
 
