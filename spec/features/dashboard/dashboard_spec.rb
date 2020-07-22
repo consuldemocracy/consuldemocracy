@@ -336,7 +336,15 @@ describe "Proposal's dashboard" do
     expect(page).to have_content("This proposal is archived and can not request resources.")
   end
 
-  scenario "Dashboard has a link to dashboard community", js: true do
+  scenario "Dashboard has a link to dashboard community if setting is enabled", js: true do
+    Setting["feature.community"] = nil
+
+    visit proposal_dashboard_path(proposal)
+    expect(page).not_to have_link("Community")
+
+    Setting["feature.community"] = true
+
+    visit proposal_dashboard_path(proposal)
     expect(page).to have_link("Community")
     click_link "Community"
 
