@@ -16,8 +16,8 @@ da:
         one: "Projekt"
         other: "Projekter"
       milestone:
-        one: "proces"
-        other: "processer"
+        one: "Milepæl"
+        other: "Milepæle"
       milestone/status:
         one: "Status for milepæl"
         other: "Status for milepæle"
