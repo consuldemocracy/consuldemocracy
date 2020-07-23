@@ -101,3 +101,20 @@ mk:
       show:
         answer_question: Објави одговор
         next_question: Следно прашање
+        first_question: Прво прашање
+        share: Сподели
+        title: Колаборативен легислативен процес
+      participation:
+        phase_not_open: Оваа фаза не е започната
+        organizations: Организациите немаат дозвола да учествуваат во дебатата
+        unauthenticated: Неопходно е %{signin} или %{signup} за учество.
+        verified_only: Само верификувани корисници можат да учествуваат, %{verify_account}.
+        debate_phase_not_open: Фазата на дебата е завршена и одговори повеќе не се прифаќаат
+    shared:
+      share: Сподели
+      share_comment: Коментирај на %{version_name} од нацрт текстот за процесот %{process_name}
+    proposals:
+      form:
+        tags_label: "Категории"
+      not_verified: "За предлози за гласање %{verify_account}."
+      process_title: Колаборативен легислативен процес
