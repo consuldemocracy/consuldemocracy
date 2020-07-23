@@ -1,1 +1,25 @@
 mk:
+  valuation:
+    header:
+      title: Вредност
+    menu:
+      title: Вредност
+      budgets: Партиципативни буџети
+    budgets:
+      index:
+        title: Партиципативни буџети
+        filters:
+          current: Отворено
+          finished: Завршено
+        table_name: Име
+        table_phase: Фаза
+        table_assigned_investments_valuation_open: Проекти за инвестирање означени со вредност отворено
+        table_actions: Акции
+        evaluate: Евалуирај
+        no_budgets: "Нема буџети"
+    budget_investments:
+      index:
+        headings_filter_all: Сите наслови
+        filters:
+          valuation_open: Отворено
+          valuating: Подлежи на вреднување
