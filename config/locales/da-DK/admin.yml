@@ -267,11 +267,11 @@ da:
         table_status: Status
         table_actions: "Handlinger"
         delete: "Slet proces"
-        no_milestones: "Har ingen definerede processer"
+        no_milestones: "Har ingen definerede milepæle"
         image: "Billede"
         show_image: "Vis billede"
         documents: "Dokumenter"
-        milestone: Processer
+        milestone: Milepæle
         new_milestone: Opret ny proces
         milestone_tags: Tags (proces)
       form:
