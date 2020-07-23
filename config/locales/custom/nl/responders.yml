@@ -2,4 +2,4 @@ nl:
   flash:
     actions:
       create:
-        proposal_notification: "Bericht verzonden"
+        proposal_notification: "Melding verzonden"

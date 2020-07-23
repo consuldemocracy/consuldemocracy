@@ -53,7 +53,7 @@ nl:
         different: "Maar... je kunt ieder idee slechts één keer steunen. En je steun is definitief."
         supported: "Tot nu toe heb je <strong>%{count} ideeën</strong> gesteund."
         supported_one: "Tot nu toe heb je <strong>1 idee</strong> gesteund."
-        supported_not_logged_in: "Log in to start <strong>supporting projects</strong>."
+        supported_not_logged_in: "Log in om <strong>projecten te steunen</strong>."
         time: "Je kunt nog tot %{phase_end_date} ideeën steunen."
         share: "Je kunt ideeën die je hebt gesteund delen op social media. Zo krijgen de ideeën meer aandacht én wellicht meer steun!"
         scrolling: "Blijf scrollen om alle ideeën te zien"
@@ -62,9 +62,9 @@ nl:
       not_selected_investment_proyects: "Niet voor stemmen geselecteerde ideeën bekijken"
       see_results: "Bekijk de uitslag"
       finished_budgets: "Afgeronde processen"
-      all_phases: "Wanneer gebeurt er wat?"
-      next_phase: "Next phase"
-      prev_phase: "Previous phase"
+      all_phases: "Fases burgerbegroting"
+      next_phase: "Volgende fase"
+      prev_phase: "Vorige fase"
       empty_budgets: "Er zijn geen budgetten"
     investments:
       index:

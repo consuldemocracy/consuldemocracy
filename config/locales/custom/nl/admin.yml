@@ -10,7 +10,7 @@ nl:
       edit: "Bewerk"
       configure: "Configureren"
       delete: "Verwijder"
-      confirm_delete: "Are you sure? This action will delete %{resource_name} '%{name}' and can't be undone."
+      confirm_delete: "Weet je zeker dat je %{resource_name} '%{name}' wilt verwijderen? Dit kan niet ongedaan worden gemaakt."
     banners:
       index:
         create: "Banner maken"
@@ -86,19 +86,19 @@ nl:
           all: "Alle"
     budgets:
       index:
-        title: "Burgerbegroting"
-        title_budget_type: "Participatory budget type"
-        new_button: "Create new budget"
-        new_single_title_html: "<strong>Enkel </strong> budget"
+        title: "Ideeën"
+        title_budget_type: "Type burgerbegroting"
+        new_button: "Creëer nieuwe begroting"
+        new_single_title_html: "<strong>Enkelvoudig</strong> budget"
         new_single_description: "Hier creëer je een proces met één groep, wijk of thema. Je hebt als het ware één zak geld. Bijvoorbeeld 25.000 euro voor de \"Oosterparkwijk\", of 10.000 voor cultuur."
-        new_single_button: "Create single heading budget"
+        new_single_button: "Creëer enkelvoudig budget"
         new_multiple_title_html: "<strong>Meervoudig</strong> budget"
         new_multiple_description: "Hier creëer je een proces met meerdere groepen, wijken of thema's. Je hebt als het ware meerdere zakken geld. Bijvoorbeeld 25.000 voor \"Oosterparkwijk\", 30.000 voor het \"Centrum\", 28.000 voor de \"Westerparkwijk\" en de hele stad. Of voor verschillende thema's zoals sport, cultuur of gezondheid."
-        new_multiple_button: "Create multiple headings budget"
+        new_multiple_button: "Creeër meervoudig budget"
         table_name: "Titel"
         table_phase: "Fase"
-        table_budget_type: "Budget Type"
-        table_budget_completed: "Completed"
+        table_budget_type: "Budget type"
+        table_budget_completed: "Afgerond"
         table_budget_draft: "Concept"
         table_duration: "Periode"
         table_preview: "Preview"
@@ -108,9 +108,9 @@ nl:
           open: "Actief"
           finished: "Afgesloten"
         delete: "Verwijderen"
-        help_block: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
-        type_single: "Single heading"
-        type_multiple: "Multiple headings"
+        help_block: "Dankzij begrotingen kunnen de burgers rechtstreeks voorstellen doen en beslissen hoe zij een deel van de begroting willen besteden, waarbij de gemeente toezicht houdt op de voorstellen en deze streng evalueert."
+        type_single: "Enkele rubriek"
+        type_multiple: "Meerdere rubrieken"
       new:
         title_single: "Nieuw enkel budget"
         title_multiple: "Nieuw meervoudig budget"
@@ -128,42 +128,43 @@ nl:
         name_description: "Dit wordt de naam van je proces. Dit is straks zichtbaar op de site."
         main_call_to_action: "Call to action (optioneel)"
         main_call_to_action_description: "Deze knop verschijnt op de voorpagina van deze begroting. Een call to action moedigt de gebruiker aan om iets te doen, zoals een idee indienen, stemmen of meer leren over het proces."
-        image_description: "If an image is uplodaded it will be used as the banner on top of this participatory budget, otherwise the default color for budgets will be used."
+        image_description: "Wanneer een afbeelding is geüpload, wordt deze gebruikt als banner voor de burgerbegroting gebruikt. Zoniet, dan wordt de standaard kleur gebruikt als banner."
         info:
           budget_settings: "Algemene instellingen"
-          heading_settings: "Heading settings"
-          phases_settings: "Phases settings"
+          heading_settings: "Instellingen rubriek"
+          phases_settings: "Instellingen fases"
           results_settings: "Instellingen voor resultaten en statistieken"
           staff_settings: "Voeg admins en beoordelaars toe"
-          groups_and_headings_settings: "Instellingen voor  groepen en koppen"
+          groups_and_headings_settings: "Instellingen voor groepen en rubrieken"
         groups_and_headings:
-          edit_group: "Edit group %{name}"
-          delete_group: "Delete group %{name}"
-          headings: "Koppen"
-          edit_heading: "Edit heading %{name}"
-          delete_heading: "Delete heading %{name}"
+          edit_group: "Bewerk groep %{name}"
+          delete_group: "Verwijder groep %{name}"
+          headings: "Rubrieken"
+          edit_heading: "Bewerk rubriek %{name}"
+          delete_heading: "Verwijder rubriek %{name}"
           max_number_headings: "Maximaal aantal rubrieken waarop een gebruiker kan stemmen:"
           add_group: "Groep toevoegen"
-          add_heading: "Kop toevoegen"
-        image_description: "If an image is uplodaded it will be used as the banner on top of this participatory budget, otherwise the default color for budgets will be used."
-        duration: "Duration"
-        phase_content: "Edit content"
+          add_heading: "Rubriek toevoegen"
+        image_description: "Wanneer een afbeelding is geüpload, wordt deze gebruikt als banner voor de burgerbegroting gebruikt. Zoniet, dan wordt de standaard kleur gebruikt als banner."
+        duration: "Periode"
+        phase: "Fase"
+        phase_content: "Bewerk inhoud"
       winners:
         calculate: "Tel de stemmen"
       shared:
         timeline_budget: "Budget"
-        timeline_groups: "Groups"
-        timeline_headings: "Headings"
-        timeline_phases: "Phases"
-        resource_name: "the budget"
+        timeline_groups: "Groepen"
+        timeline_headings: "Rubrieken"
+        timeline_phases: "Fases"
+        resource_name: "De begroting"
       create:
         button:
-          continue: "Continue to groups"
+          continue: "Door naar groepen"
       publish:
-        notice: "Participatory budget published successfully"
+        notice: "Burgerbegroting succesvol gepubliceerd"
     budget_phases:
       edit:
-        title: "Edit phase"
+        title: "Bewerk fase"
         duration: "Duur fase"
         duration_description: "In deze periode is de fase actief."
         image_description: "Als je een afbeelding upload zal deze te zien in de header van de burgerbegroting. Wanneer je niks upload worden de standaard kleuren gebruikt."
@@ -171,22 +172,22 @@ nl:
         main_call_to_action_description: "Deze knop verschijnt op de voorpagina van deze begroting. Een call to action moedigt de gebruiker aan om iets te doen, zoals een idee indienen, stemmen of meer leren over het proces."
         phase_name_help_text: "Dit is de titel van de fase die gebruikers zullen zien in de header wanneer de fase actief is."
       index:
-        help_block: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
+        help_block: "Een burgerbegroting bestaat uit verschillende fases. Hier kun je fases aan-en uitzetten en iedere fase aanpassen."
         button:
-          continue: "Finalize"
+          continue: "Voltooien"
     budget_groups:
       index:
-        new_button: "Add new group"
+        new_button: "Nieuwe groep toevoegen"
         single:
-          help_block: "Groups are meant to organize headings, since this budget will only contain one heading, the same name can be used because it will not appear anywhere. You can just continue with the next step."
+          help_block: "Groepen organiseren rubrieken. Dit budget heeft slechts één rubriek en hier kan dezelfde naam worden gebruikt als voor  de groep. Deze naam van de rubriek  verschijnt nergens op de website. Je kunt daarom gewoon doorgaan naar de volgende stap."
         multiple:
-          help_block: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
+          help_block: "Groepen organiseren rubrieken. Nadat een groep  is aangemaakt en deze verschillende rubrieken  bevat, kan bepaalt worden in hoeveel rubrieken een gebruiker per groep  kan stemmen."
       max_votable_headings: "Maximaal aantal rubrieken waarop een gebruiker kan stemmen"
       create:
         button:
-          continue: "Continue to headings"
+          continue: "Door naar rubrieken"
     budget_headings:
-      name: "Heading name"
+      name: "Naam kop"
       price: "Budget"
       population: "Populatie"
       allow_custom_content: "Contentblokken toestaan"
@@ -195,14 +196,14 @@ nl:
         content_blocks_info: "Als dit is aangevinkt, kun je op maat gemaakte content toevoegen. Via Instellingen Costum content blocks. Deze content zal dan verschijnen bij de ideeën pagina."
       create:
         button:
-          continue: "Continue to phases"
+          continue: "Door naar fases"
       index:
-        showing_headings_from_group: "Currently showing headings from the group:"
-        new_button: "Add new heading"
+        showing_headings_from_group: "Alle rubrieken in de groep:"
+        new_button: "Nieuwe rubriek toevoegen"
         single:
-          help_block: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
+          help_block: "Rubrieken verdelen het geld van de burgerbegroting. Dit budget heeft slechts één rubriek . Daarom is vooraf al bepaalt waar het geld in deze begroting aan wordt uitgegeven."
         multiple:
-          help_block: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
+          help_block: "Rubrieken verdelen het geld van de burgerbegroting. Hier kun je rubrieken voor de groep  toevoegen en het te besteden bedrag voor elke rubriek toewijzen."
     polls:
       index:
         title: "Alle peilingen"
@@ -387,7 +388,7 @@ nl:
       feeds:
         proposals: "Initiatieven"
         debates: "Discussies"
-        budgets: "Burgerbegroting"
+        budgets: "Ideeën"
       new:
         card_title: "Nieuwe tegel"
         submit_header: "Header maken"
@@ -405,7 +406,7 @@ nl:
       debates: "Discussies"
       comments: "Reacties"
       polls: "Peilingen"
-      budgets: "Burgerbegroting"
+      budgets: "Ideeën"
       title_moderated_content: "Gemodereerd"
       title_profiles: "Gebruikers / profielen"
       stats: "Statistieken"
@@ -501,8 +502,8 @@ nl:
       actions: "Acties"
       moderated_content: "Deze inhoud is door de moderators gemarkeerd en verborgen. Controleer hier of dit klopt."
       delete: "Verwijder"
-      close_modal: "Close modal"
-      learn_more: "Learn more"
+      close_modal: "Venster sluiten"
+      learn_more: "Meer informatie"
       example_url: "https://consulproject.org"
     dashboard:
       index:

@@ -4,14 +4,19 @@ nl:
       header:
         active: "Actief"
         locked: "Gesloten"
-        coming_soon: "Coming soon"
+        coming_soon: "Binnenkort"
         published: "Published"
         less_info: "Minder informatie"
       proposals:
         empty_proposals: "Er zijn geen initiatieven"
         less_info: "Minder informatie"
       debate:
-        participate: "Deelnemen"
+        participate: "Actief"
+        icon_alt: "Plannen icoon"
+        help: "Help"
+        section_footer:
+          title: "Over plannen"
+          description: "Help mee met het beoordelen en schrijven van plannen voorafgaand aan de totstandkoming van verordeningen, beleid en uitvoering. Jouw mening telt en heeft invloed."
       index:
         filters:
           open: "Inspraak"

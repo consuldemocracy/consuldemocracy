@@ -118,7 +118,7 @@ nl:
       proposal_responsible_name: "Volledige naam van persoon die het idee indient"
       proposal_text: "Uitgebreide omschrijving"
     shared:
-      confirm_support: "Are you sure? You will support the proposal \"%{proposal}\" and this action cannot be undone."
+      confirm_support: "Weet je zeker dat je het initiatief \"%{proposal}\" wilt steunen? Dit kan niet ongedaan worden gemaakt."
     index:
       start_proposal: "Nieuw initiatief indienen"
       proposals_lists: "Initiatieven"
@@ -174,6 +174,7 @@ nl:
       author: "Auteur"
       comments_tab: "Reacties"
       dashboard_proposal_link: "Campagnepagina"
+      no_notifications: "Dit initiatief heeft geen meldingen."
     created:
       title: "Gefeliciteerd! Je hebt de eerste stap gezet"
       motivation: "Voordat je je initiatief publiceert op de website, is het slim om een campagne op te zetten. Dit helpt je om voldoende steun voor je initiatief te krijgen."
@@ -204,7 +205,7 @@ nl:
         help: "Hulp bij peilingen"
       section_footer:
         description: "Geef je mening over specifieke onderwerpen"
-      remaining: "Deelname nog <strong>%{days}</strong> mogelijk"
+      remaining: "Je kunt nog <strong>%{days}</strong> meedoen"
     show:
       cant_answer_not_logged_in: "Je moet %{signin} of je %{signup} om verder te gaan"
       cant_answer_wrong_geozone: "Deze peiling is niet actief voor jouw gebied"
@@ -249,10 +250,13 @@ nl:
       draft: "Concept"
       published: "Gepubliceerd"
       retired: "Teruggetrokken"
+      actions: "Acties"
+      retired_help_text: "Campagnepagina is niet beschikbaar voor teruggetrokken initiatieven"
     direct_messages:
       new:
         signin: "Inloggen"
         authenticate: "Je moet %{signin} of %{signup} om verder te gaan."
+        submit_button: "Stuur melding"
   layouts:
     header:
       collaborative_legislation: "Inspraak"
@@ -270,15 +274,15 @@ nl:
         new_notifications:
           one: "Je hebt een nieuwe melding"
           other: "Je hebt %{count} nieuwe meldingen"
-        notifications: Notificaties
+        notifications: "Meldingen"
         no_notifications: "Je hebt geen nieuwe meldingen"
     admin:
       watch_form_message: "Je hebt niet-opgeslagen wijzigingen. Verlaat de pagina?"
     footer:
       org_name: "Stem van Groningen"
       contact_title: "Neem contact met ons op"
-      privacy: "Privacy verklaring"
-      contact_email: "stemvangroningen@groningen.nl"
+      privacy: "Privacyverklaring"
+      contact_email: "destemvan@groningen.nl"
       facebook: "facebook/stemvangroningen"
     dashboard:
       proposal_header:
@@ -321,7 +325,7 @@ nl:
         description: "Blijf betrokken bij ideeën die jij belangrijk vindt en deel ze via social media."
         link: ""
     feed:
-      budgets_description: "Participatiebegrotingen zijn processen waarbij burgers direct beslissen over wat er wordt gedaan met een deel van de gemeentelijke begroting. De meest gesteunde ideeën worden geëvalueerd. In de stemfase die daarop volgt beslissen welke ideeën uitgevoerd moeten worden."
+      budgets_description: "Burgerbegrotingen zijn processen waarbij burgers bepalen wat er met een deel van de gemeentelijke begroting gebeurt. De gemeente onderzoekt of de meest gesteunde ideeën haalbaar zijn. In de stem fase die daarop volgt beslissen de burgers welke ideeën de gemeente gaat uitvoeren."
       proposals_description: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van Groningen bepalen hoe de gemeente eruit komt te zien."
       most_active:
         debates: "Actieve discussies"
@@ -363,8 +367,8 @@ nl:
       districts: "Gebied"
       categories: "Onderwerpen/Labels"
     translations:
-      select_language_prompt: "Choose language"
-      add_language: "Add language"
+      select_language_prompt: "Taal kiezen"
+      add_language: "Taal toevoegen"
       remove_language: "Taal verwijderen"
       languages_in_use:
         zero: "0 Taalinstelling"
@@ -375,7 +379,7 @@ nl:
     followable:
       budget_investment:
         create:
-          notice: "Je volgt nu dit idee!<br>We houden je via notificaties op de hoogte van alle wijzigingen."
+          notice: "Je volgt nu dit idee!<br>We houden je via meldingen op de hoogte van alle ontwikkelingen."
         destroy:
           notice: "Je volgt dit idee niet meer.<br>Je zult geen updates over dit idee meer ontvangen."
       proposal:
@@ -386,7 +390,7 @@ nl:
     expired: "Proces afgerond"
   links:
     form:
-      cancel_button: "Cancel"
+      cancel_button: "Annuleren"
     nested_links:
       note: "Voeg relevante links toe"
       add_new_link: "Link toevoegen"
@@ -395,7 +399,7 @@ nl:
       my_proposal: "Initiatief aanpassen"
       progress: "Voortgang"
       polls: "Peilingen"
-      messages: "Berichten naar gebruikers"
+      messages: "Meldingen sturen naar gebruikers"
       related_content: "Gerelateerde inhoud"
       resources: "Campagnemiddelen"
     progress:
@@ -422,8 +426,8 @@ nl:
       debates: "Discussies"
       comments: "Reacties"
     messages:
-      send_notification: "Stuur berichten naar volgers van mijn initiatief"
-      previous_notifications: "Bekijk eerdere berichten"
+      send_notification: "Stuur meldingen naar volgers van mijn initiatief"
+      previous_notifications: "Bekijk eerdere meldingen"
     polls:
       index:
         title: "Peilingen"
@@ -462,7 +466,7 @@ nl:
         title: "E-mail om te delen"
   proposal_notifications:
     new:
-      info_about_receivers: "Dit bericht wordt naar <strong>%{count} mensen</strong> gestuurd en is zichtbaar op de %{proposal_page}.<br> Berichten worden niet direct gestuurd, maar de gebruikers ontvangen periodiek een email met alle notificaties omtrent jouw initiatief."
+      info_about_receivers: "Dit bericht wordt naar <strong>%{count} mensen</strong> gestuurd en is zichtbaar op de %{proposal_page}.<br>Meldingen worden niet direct gestuurd, maar de gebruikers ontvangen periodiek een email met alle meldingen omtrent jouw initiatief."
       proposal_page: "pagina van je initiatief"
   omniauth:
     facebook:
@@ -491,6 +495,7 @@ nl:
     content_title:
       proposal: "Initiatieven"
       budget_investment: "Idee"
+    help: "Voeg hier gerelateerde discussies, initiatieven of ideeën toe door de URL hieronder te plakken."
   unauthorized:
     default: "Je hebt geen toestemming deze pagina te bezoeken."
     manage:
@@ -499,3 +504,7 @@ nl:
     show:
       voted: "Je hebt %{answer} gestemd"
       vote_registered: "Je stem is opgeslagen."
+  proposal_notifications:
+    new:
+      title: "Stuur melding"
+      submit_button: "Stuur melding"

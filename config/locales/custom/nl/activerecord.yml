@@ -61,11 +61,15 @@ nl:
         description: "Omschrijving"
       budget/group:
         max_votable_headings: "Maximaal aantal rubrieken waarop een gebruiker kan stemmen"
+      budget/group/translation:
+        name: "Naam groep"
       budget/heading:
         allow_custom_content: "Sta contentblok toe"
         latitude: "Breedtegraad (optioneel)"
         longitude: "Lengtegraad (optioneel)"
         price: "Kosten hoeveel geld beschikbaar is"
+      budget/heading/translation:
+        name: "Naam rubriek"
       budget/investment:
         location: "Hier kun je meer vertellen over de locatie"
         organization_name: "Als je een voorstel doet uit naam van een stichting, coöperatie of organisatie, voer dan hier de naam in"

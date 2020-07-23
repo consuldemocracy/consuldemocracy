@@ -8,8 +8,8 @@ nl:
       unlock_instructions:
         subject: "Instructies voor ontgrendelen account"
     sessions:
-      signed_in: "U bent aangemeld."
-      signed_out: "U bent afgemeld."
+      signed_in: "Je bent ingelogd."
+      signed_out: "Je bent uitgelogd."
       already_signed_out: "Je bent afgemeld"
     passwords:
       send_instructions: "Je ontvangt via e-mail instructies hoe je jouw account kunt ontgrendelen."
