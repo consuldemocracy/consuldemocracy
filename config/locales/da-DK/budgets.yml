@@ -118,7 +118,7 @@ da:
         votes: Stemmer
         price: Pris
         comments_tab: Kommentarer
-        milestones_tab: Processer
+        milestones_tab: Følg projekter
         author: Forfatter
         project_unfeasible: "Vi har desværre vurderet, at det <strong>ikke er muligt at gennemføre dit forslag</strong>, og den vil derfor ikke gå videre til afstemning."
         project_selected: "Forslaget <strong>er gået videre </strong> til afstemning."
@@ -174,9 +174,9 @@ da:
       unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
       not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemning
     executions:
-      link: "Processer"
+      link: "Følg projekterne"
       page_title: "%{budget} - Milepæle"
-      heading: "Processer i deltagerbudgettet"
+      heading: "Milepæle i deltagerbudgettet"
       heading_selection_title: "Efter distrikt"
       no_winner_investments: "Ingen vinderforslag"
       filters:
