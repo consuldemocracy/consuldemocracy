@@ -36,6 +36,48 @@ describe "Account" do
     end
   end
 
+  scenario "Show info about participation" do
+    user_regular = create(:user)
+    user_verified = create(:user, :level_three)
+
+    login_as(user_regular)
+    visit account_path
+
+    expect(page).to have_content("Participate on debates")
+    expect(page).to have_content("Create new proposals")
+    expect(page).to have_content("Support proposals")
+    expect(page).to have_content("Participate on final voting")
+    expect(page).to have_content("* Only for users on Census.")
+    expect(page).to have_content("To perform all the actions verify your account.")
+    expect(page).to have_link("Verify my account")
+
+    login_as(user_verified)
+    visit account_path
+
+    expect(page).to have_content("Participate on debates")
+    expect(page).to have_content("Create new proposals")
+    expect(page).to have_content("Support proposals")
+    expect(page).to have_content("Participate on final voting")
+    expect(page).to have_content("* Only for users on Census.")
+    expect(page).to have_content("To perform all the actions verify your account.")
+    expect(page).to have_content("Account verified")
+  end
+
+  scenario "Do not show verify account with skip verification enabled" do
+    Setting["feature.user.skip_verification"] = true
+
+    visit account_path
+
+    expect(page).to have_content("Participate on debates")
+    expect(page).to have_content("Create new proposals")
+    expect(page).to have_content("Support proposals")
+    expect(page).to have_content("Participate on final voting")
+    expect(page).not_to have_content("* Only for users on Census.")
+    expect(page).not_to have_content("To perform all the actions verify your account.")
+    expect(page).not_to have_content("Account verified")
+    expect(page).not_to have_link("Verify my account")
+  end
+
   scenario "Show organization" do
     create(:organization, user: user, name: "Manuela Corp")
 
