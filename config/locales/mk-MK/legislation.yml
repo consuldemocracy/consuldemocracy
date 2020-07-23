@@ -3,3 +3,6 @@ mk:
     annotations:
       comments:
         see_all: Види ги сите
+        comments_count:
+          one: "%{count} коментари"
+          other: "%{count} коментари"
