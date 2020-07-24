@@ -744,6 +744,12 @@ header {
 
   .feed-image {
     border: 1px solid $border;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: -50%;
+    }
   }
 
   .feed-description {
