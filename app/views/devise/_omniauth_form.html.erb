@@ -1,4 +1,4 @@
-<% if feature?(:twitter_login) || feature?(:facebook_login) || feature?(:google_login) %>
+<% if oauth_logins.any? %>
   <div class="row">
     <div class="small-12 column">
       <div class="margin-bottom">
