@@ -25,7 +25,7 @@ nl:
       new: "De Coöperatieve Wijkraad heeft naar je idee gekeken. Helaas blijkt dat je idee niet haalbaar is. We leggen ook uit waarom. Je kunt je idee eventueel aanpassen: %{url}."
       new_href: "dat kan hier"
       contact: "Heb je vragen of wil je hulp bij je idee? Mail dan naar %{email}, we denken graag met je mee."
-      email: "cooperatieve.wijkraad@groningen.nl"
+      email: "noreply@consul.dev"
       sincerely: "Groeten van de Coöperatieve Wijkraad"
     budget_investment_unselected:
       subject: "Helaas heeft je idee het niet gehaald"
@@ -52,7 +52,7 @@ nl:
     user_invite:
       subject: "Welkom op de %{org_name}"
       title: "Welkom op de %{org}"
-      text: "Je kunt je inschrijven voor de Stem van Groningen! Klik hiervoor op de volgende link:"
+      text: "Je kunt je inschrijven voor de gemeente! Klik hiervoor op de volgende link:"
       button: "Schrijf je in"
       ignore: "Heb je deze uitnodiging ongevraagd ontvangen? Geen zorgen, dan kun je deze mail negeren.  "
       thanks: "Bedankt!"
