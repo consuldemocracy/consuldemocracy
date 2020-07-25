@@ -1167,4 +1167,45 @@ describe "Debates" do
       expect(page).not_to have_content("Featured")
     end
   end
+
+  scenario "Mark and unmark as featured", :js do
+    debate = create(:debate, title: "Featured debate")
+    admin = create(:administrator)
+
+    login_as(admin.user)
+    visit debate_path(debate)
+
+    within("#debate_#{debate.id}") do
+      click_link "Featured"
+    end
+
+    page.driver.browser.switch_to.alert do
+      expect(page).to have_content "Are you sure? This action will mark this debate as featured and "\
+                                   "will be displayed on the main debates page."
+    end
+
+    accept_confirm
+    visit debates_path
+
+    within("#featured-debates") do
+      expect(page).to have_content("Featured debate")
+    end
+
+    visit debate_path(debate)
+
+    within("#debate_#{debate.id}") do
+      expect(page).not_to have_link("Featured")
+      click_link "Unmark featured"
+    end
+
+    page.driver.browser.switch_to.alert do
+      expect(page).to have_content "Are you sure? This action will unmark this debate as featured and "\
+                                   "will be hidden from the main debates page."
+    end
+
+    accept_confirm
+    visit debates_path
+
+    expect(page).not_to have_selector("#featured-debates")
+  end
 end
