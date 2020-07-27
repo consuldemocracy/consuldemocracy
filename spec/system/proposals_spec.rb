@@ -198,6 +198,19 @@ describe "Proposals" do
         expect(page).not_to have_link("No comments", href: "#comments")
       end
     end
+
+    scenario "when restoring the page from browser history social share buttons should
+              render screen readers only once", :js do
+      proposal = create(:proposal)
+      visit proposal_path(proposal)
+      click_link "Help"
+
+      expect(page).to have_content "CONSUL is a platform for citizen participation"
+
+      go_back
+
+      expect(page).to have_css "span.show-for-sr", text: "twitter", count: 1
+    end
   end
 
   context "Show on mobile screens" do
