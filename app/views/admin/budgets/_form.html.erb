@@ -69,7 +69,7 @@
     <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.phases_settings") %></span></p>
 
     <div class="small-12 medium-6 column">
-      <%= f.select :phase, budget_phases_select_options %>
+      <%= f.select :phase, budget_phases_select_options(@budget) %>
     </div>
   <% end %>
 

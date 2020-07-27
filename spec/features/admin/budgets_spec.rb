@@ -562,6 +562,15 @@ describe "Admin budgets" do
       expect(budget.reload.slug).not_to eq old_slug
       expect(budget.slug).to eq "new-english-name"
     end
+
+    scenario "Phases selector only show enabled phases" do
+      budget.phases.each { |phase| phase.update!(enabled: false) }
+      budget.phases.accepting.update!(enabled: true)
+      budget.phases.balloting.update!(enabled: true)
+
+      visit edit_admin_budget_path(budget)
+      expect(page).to have_select("budget_phase", options: ["Accepting projects", "Voting projects"])
+    end
   end
 
   context "Update" do
