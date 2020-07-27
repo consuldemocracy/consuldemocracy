@@ -69,14 +69,14 @@
       $("#comments-box").html("");
       App.LegislationAllegations.show_comments();
       $("#comments-box").show();
-      $.event.trigger({
+      $("body").trigger({
         type: "renderLegislationAnnotation",
         annotation_id: target.data("annotation-id"),
         annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url"),
         offset: target.offset().top
       });
       parents_ids.each(function(i, pid) {
-        $.event.trigger({
+        $("body").trigger({
           type: "renderLegislationAnnotation",
           annotation_id: pid,
           annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
@@ -144,7 +144,7 @@
                 $("html,body").animate({
                   scrollTop: el.offset().top
                 });
-                $.event.trigger({
+                $("body").trigger({
                   type: "renderLegislationAnnotation",
                   annotation_id: ann_id,
                   annotation_url: el.closest(".legislation-annotatable").data("legislation-annotatable-base-url"),
@@ -188,9 +188,9 @@
     },
     initialize: function() {
       var current_user_id;
-      $(document).off("renderLegislationAnnotation").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments);
-      $(document).off("click", "[data-annotation-id]").on("click", "[data-annotation-id]", App.LegislationAnnotatable.onClick);
-      $(document).off("click", "[data-cancel-annotation]").on("click", "[data-cancel-annotation]", function(e) {
+      $("body").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments);
+      $("body").on("click", "[data-annotation-id]", App.LegislationAnnotatable.onClick);
+      $("body").on("click", "[data-cancel-annotation]", function(e) {
         e.preventDefault();
         $("#comments-box").html("");
         $("#comments-box").hide();
