@@ -1,7 +1,7 @@
 ro:
   pages:
     conditions:
-      title: Termeni si conditii de utilizare
+      title: Termeni și condiții de utilizare
       subtitle: AVIZ JURIDIC PRIVIND CONDIȚIILE DE UTILIZARE, PRIVATE ȘI PROTECȚIA DATELOR PERSONALE ALE PORTALULUI DE GUVERN DESCHIS
       description: Pagina de informare cu privire la condițiile de utilizare, confidențialitate și protecția datelor cu caracter personal.
     help:
@@ -44,6 +44,8 @@ ro:
         title: "Procese"
         description: "În secțiunea %{link}, cetățenii participă la elaborarea și modificarea regulamentelor care afectează orașul și își pot oferi părerea asupra politicilor municipale în dezbaterile anterioare."
         link: "procese"
+        feature: "Pentru a participa la procese, trebuie să accesați %{link} și să vă verificați contul."
+        feature_link: "înregistrați-vă în %{org_name}"
       faq:
         title: "Probleme tehnice?"
         description: "Citiți întrebările frecvente și rezolvați-vă întrebările."
