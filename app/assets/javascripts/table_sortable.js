@@ -17,7 +17,7 @@
       };
     },
     initialize: function() {
-      $("table.sortable th").on("click", function() {
+      $(".table-sortable th").on("click", function() {
         var rows, table;
         table = $(this).parents("table").eq(0);
         rows = table.find("tbody tr").toArray().sort(App.TableSortable.comparer($(this).index()));
