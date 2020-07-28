@@ -1877,5 +1877,27 @@ describe "Admin budget investments" do
         expect(page).not_to have_content "Don't display me, please!"
       end
     end
+
+    scenario "When restoring the page from browser history renders columns selectors only once ", :js do
+      visit admin_budget_budget_investments_path(budget)
+
+      click_link "Proposals"
+
+      expect(page).to have_content("There are no proposals.")
+
+      go_back
+
+      within("#js-columns-selector") do
+        find("strong", text: "Columns").click
+      end
+
+      within("#js-columns-selector-wrapper") do
+        selectable_columns.each do |column|
+          check_text = I18n.t("admin.budget_investments.index.list.#{column}")
+
+          expect(page).to have_content(check_text, count: 1)
+        end
+      end
+    end
   end
 end

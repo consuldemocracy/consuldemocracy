@@ -85,6 +85,11 @@
       $(".column-selectable").on("inserted", function() {
         App.ColumnsSelector.initColumns();
       });
+    },
+    reset: function() {
+      $("#js-columns-selector-wrapper").children(":not(#column_selector_item_template)").remove();
     }
   };
+
+  $(document).on("turbolinks:before-cache", App.ColumnsSelector.reset);
 }).call(this);
