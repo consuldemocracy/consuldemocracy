@@ -100,6 +100,40 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
           expect(page).to have_css(".leaflet-map-pane", count: 1)
         end
       end
+
+      scenario "keeps marker and zoom defined by the user", :js do
+        do_login_for user
+        visit send(mappable_new_path, arguments)
+
+        within ".map_location" do
+          expect(page).not_to have_css(".map-icon")
+        end
+        expect(page.execute_script("return App.Map.maps[0].getZoom();")).to eq(10)
+
+        map_zoom_in
+        find("#new_map_location").click
+
+        within ".map_location" do
+          expect(page).to have_css(".map-icon")
+        end
+
+        if management
+          click_link "Select user"
+
+          expect(page).to have_content "User management"
+        else
+          click_link "Help"
+
+          expect(page).to have_content "CONSUL is a platform for citizen participation"
+        end
+
+        go_back
+
+        within ".map_location" do
+          expect(page).to have_css(".map-icon")
+          expect(page.execute_script("return App.Map.maps[0].getZoom();")).to eq(11)
+        end
+      end
     end
 
     scenario "Skip map", :js do
@@ -291,5 +325,13 @@ end
 def set_arguments(arguments, mappable, mappable_path_arguments)
   mappable_path_arguments&.each do |argument_name, path_to_value|
     arguments.merge!("#{argument_name}": mappable.send(path_to_value))
+  end
+end
+
+def map_zoom_in
+  initial_zoom = page.execute_script("return App.Map.maps[0].getZoom();")
+  find(".leaflet-control-zoom-in").click
+  until page.execute_script("return App.Map.maps[0].getZoom() === #{initial_zoom + 1};") do
+    sleep 0.01
   end
 end

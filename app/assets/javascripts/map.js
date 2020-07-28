@@ -20,18 +20,36 @@
       App.Map.maps = [];
     },
     initializeMap: function(element) {
-      var addMarkerInvestments, clearFormfields, createMarker, editable, getPopupContent, latitudeInputSelector, longitudeInputSelector, map, mapAttribution, mapCenterLatLng, mapCenterLatitude, mapCenterLongitude, mapTilesProvider, marker, markerIcon, markerLatitude, markerLongitude, moveOrPlaceMarker, openMarkerPopup, removeMarker, removeMarkerSelector, updateFormfields, zoom, zoomInputSelector;
+      var addMarkerInvestments, clearFormfields, createMarker, editable, formCoordinates, getPopupContent,
+        latitudeInputSelector, longitudeInputSelector, map, mapAttribution, mapCenterLatLng,
+        mapCenterLatitude, mapCenterLongitude, mapTilesProvider, marker, markerIcon, markerLatitude,
+        markerLongitude, moveOrPlaceMarker, openMarkerPopup, removeMarker, removeMarkerSelector,
+        updateFormfields, zoom, zoomInputSelector;
       App.Map.cleanInvestmentCoordinates(element);
       mapCenterLatitude = $(element).data("map-center-latitude");
       mapCenterLongitude = $(element).data("map-center-longitude");
-      markerLatitude = $(element).data("marker-latitude");
-      markerLongitude = $(element).data("marker-longitude");
-      zoom = $(element).data("map-zoom");
       mapTilesProvider = $(element).data("map-tiles-provider");
       mapAttribution = $(element).data("map-tiles-provider-attribution");
       latitudeInputSelector = $(element).data("latitude-input-selector");
       longitudeInputSelector = $(element).data("longitude-input-selector");
       zoomInputSelector = $(element).data("zoom-input-selector");
+      formCoordinates = {
+        lat: $(latitudeInputSelector).val(),
+        long: $(longitudeInputSelector).val(),
+        zoom: $(zoomInputSelector).val()
+      };
+      if (App.Map.validCoordinates(formCoordinates)) {
+        markerLatitude = formCoordinates.lat;
+        markerLongitude = formCoordinates.long;
+      } else {
+        markerLatitude = $(element).data("marker-latitude");
+        markerLongitude = $(element).data("marker-longitude");
+      }
+      if (App.Map.validZoom(formCoordinates.zoom)) {
+        zoom = formCoordinates.zoom;
+      } else {
+        zoom = $(element).data("map-zoom");
+      }
       removeMarkerSelector = $(element).data("marker-remove-selector");
       addMarkerInvestments = $(element).data("marker-investments-coordinates");
       editable = $(element).data("marker-editable");
@@ -133,6 +151,9 @@
         clean_markers = markers.replace(/-?(\*+)/g, null);
         $(element).attr("data-marker-investments-coordinates", clean_markers);
       }
+    },
+    validZoom: function(zoom) {
+      return App.Map.isNumeric(zoom);
     },
     validCoordinates: function(coordinates) {
       return App.Map.isNumeric(coordinates.lat) && App.Map.isNumeric(coordinates.long);
