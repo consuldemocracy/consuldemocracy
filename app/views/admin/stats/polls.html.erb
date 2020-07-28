@@ -25,7 +25,7 @@
 </div>
 
 <h2><%= t("admin.stats.polls.all") %></h2>
-<table id="polls" class="stack sortable">
+<table id="polls" class="stack table-sortable">
   <thead>
     <tr>
       <th><%= t("admin.stats.polls.table.poll_name") %></th>
@@ -52,7 +52,7 @@
   <h3 id="<%= dom_id(poll) %>_questions">
     <%= t("admin.stats.polls.poll_questions", poll: poll.name) %>
   </h3>
-  <table class="stack sortable">
+  <table class="stack table-sortable">
     <thead>
       <tr>
         <th><%= t("admin.stats.polls.table.question_name") %></th>
