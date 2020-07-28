@@ -170,6 +170,7 @@ var initialize_modules = function() {
 var destroy_non_idempotent_modules = function() {
   "use strict";
 
+  App.ColumnsSelector.destroy();
   App.Datepicker.destroy();
   App.HTMLEditor.destroy();
   App.LegislationAnnotatable.destroy();
