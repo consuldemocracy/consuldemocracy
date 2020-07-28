@@ -17,13 +17,13 @@
       App.Map.cleanInvestmentCoordinates(element);
       mapCenterLatitude = $(element).data("map-center-latitude");
       mapCenterLongitude = $(element).data("map-center-longitude");
-      markerLatitude = $(element).data("marker-latitude");
-      markerLongitude = $(element).data("marker-longitude");
       zoom = $(element).data("map-zoom");
       mapTilesProvider = $(element).data("map-tiles-provider");
       mapAttribution = $(element).data("map-tiles-provider-attribution");
       latitudeInputSelector = $(element).data("latitude-input-selector");
       longitudeInputSelector = $(element).data("longitude-input-selector");
+      markerLatitude = $(latitudeInputSelector).val() || $(element).data("marker-latitude");
+      markerLongitude = $(longitudeInputSelector).val() || $(element).data("marker-longitude");
       zoomInputSelector = $(element).data("zoom-input-selector");
       removeMarkerSelector = $(element).data("marker-remove-selector");
       addMarkerInvestments = $(element).data("marker-investments-coordinates");

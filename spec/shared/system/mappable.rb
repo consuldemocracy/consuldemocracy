@@ -79,6 +79,38 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_content "Map location can't be blank"
     end
 
+    scenario "When restoring the page from browser history where marker was added
+              should show marker at latest location defined by user", :js do
+      do_login_for user
+      visit send(mappable_new_path, arguments)
+
+      within ".map_location" do
+        expect(page).not_to have_css(".map-icon")
+      end
+
+      find("#new_map_location").click
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon")
+      end
+
+      if management
+        click_link "Select user"
+
+        expect(page).to have_content "User management"
+      else
+        click_link "Help"
+
+        expect(page).to have_content "CONSUL is a platform for citizen participation"
+      end
+
+      go_back
+
+      within ".map_location" do
+        expect(page).to have_css(".map-icon")
+      end
+    end
+
     scenario "Skip map", :js do
       do_login_for user
       visit send(mappable_new_path, arguments)
