@@ -5,16 +5,16 @@ nl:
       save_changes_submit: "Opslaan"
       title: "Mijn profiel"
       user_permission_info: "Met dit profiel kun je..."
-      user_permission_debates: "Deelnemen in debatten"
-      user_permission_votes: "Deelnemen aan stemrondes"
+      user_permission_debates: "Deelnemen aan discussies"
+      user_permission_votes: "Stemmen op ideeën"
       email_on_comment_label: "Stuur me een email als iemand op mijn voorstel of discussie reageert"
       email_on_comment_reply_label: "Stuur me een email wanneer iemand op mijn voorstel reageert"
       email_digest_label: "Stuur me een samenvatting van meldingen met betrekking tot voorstellen"
       email_on_direct_message_label: "Stuur me een mail als ik een privébericht krijg"
       subscription_to_website_newsletter_label: "Stuur me een email met relevante informatie over de website"
       public_activity_label: "Mijn activiteit is publiek"
-      user_permission_proposal: "Nieuwe voorstellen inbrengen"
-      user_permission_support_proposal: "Op voorstellen stemmen"
+      user_permission_proposal: "Initiatieven indienen"
+      user_permission_support_proposal: "Reageren op peilingen"
       user_permission_verify_info: "* Alleen voor inwoners in het gebied."
       username_label: "Gebruikersnaam"
       organization_responsible_name_placeholder: "Vertegenwoordiger van de organisatie of groep"
@@ -27,6 +27,7 @@ nl:
       tags_label: "Steekwoorden"
       tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
     index:
+      featured_debates: "Uitgelicht"
       start_debate: "Discussie starten"
       recommendations:
         without_interests: "Volg initiatieven zodat wij"
@@ -76,20 +77,20 @@ nl:
   proposals:
     proposal:
       reason_for_supports_necessary: ""
-      already_supported: "Je hebt dit voorstel al geliked."
+      already_supported: "Je hebt al op dit voorstel gestemd."
       archived: "Dit voorstel is gearchiveerd."
       share:
         guide: "Nu kun je jouw voorstel delen zodat mensen hun steun kunnen betuigen."
         view_proposal: "Bekijk mijn idee"
         edit: "Deel het hieronder op social media"
-      successful: "Dit voorstel heeft de benodigde likes."
-      support: "Like"
+      successful: "Dit voorstel heeft de benodigde steunbetuigingen."
+      support: "Steun"
       support_title: "Steun op dit voorstel"
       supports:
-        one: "1 like"
-        other: "%{count} likes"
-        zero: "Geen likes"
-      supports_necessary: "%{number} likes nodig"
+        one: "1 steunbetuiging"
+        other: "%{count} steunbetuigingen"
+        zero: "nog geen steun"
+      supports_necessary: "%{number} steunbetuigingen nodig"
       retire_form:
         retired_explanation_label: "Reden"
         retired_explanation_placeholder: "Geef een reden waarom dit voorstel kan worden ingetrokken"
@@ -105,7 +106,7 @@ nl:
         retired: "Voorstel ingetrokken"
         retired_warning: "Dit voorstel is ingetrokken."
         retired_warning_link_to_explanation: "Lees waarom."
-      improve_info: "Verbeter je campagne en krijg meer likes"
+      improve_info: "Verbeter je campagne en krijg meer steunbetuigingen"
       created: "Bedankt voor je idee!"
     form:
       proposal_summary_note: "(maximaal 200 karakters)"
@@ -120,6 +121,7 @@ nl:
     shared:
       confirm_support: "Weet je zeker dat je het initiatief \"%{proposal}\" wilt steunen? Dit kan niet ongedaan worden gemaakt."
     index:
+      featured_proposals: "Uitgelicht"
       start_proposal: "Nieuw initiatief indienen"
       proposals_lists: "Initiatieven"
       top_link_proposals: "Meest gesteunde initiatieven"
@@ -163,7 +165,7 @@ nl:
       recommendations_title: "Advies bij het indienen  van een initiatief"
       recommendation_one: "Vul alle informatie in die je wil vertellen over je idee"
       recommendation_two: "Waarom is dit een goed idee?Wat wil je met dit idee?Is het eenmalig of voor een lange periode? Hoeveel geld is er voor nodig? Wie doet er mee? Wie organiseert het? Wie zijn fan van het idee? Wat is het? Met wat voor regels krijg je te maken? Wat kan er wel en wat kan er niet? Wat zijn de belangen? Wat heb je nodig?"
-      recommendation_three: "Ben je al wat verder met je idee? Een plan van aanpak en een begroting zijn belangrijke stappen in het maken van een plan. Ook een video, website of een plaatje of foto doen het altijd goed voor de likes! Bezoekers kunnen namelijk reageren op je idee. Ook kan je likes verzamelen. Let op: dit zijn nog geen stemmen."
+      recommendation_three: "Ben je al wat verder met je idee? Een plan van aanpak en een begroting zijn belangrijke stappen in het maken van een plan. Ook een video, website of een plaatje of foto doen het altijd goed voor de steunbetuigingen! Bezoekers kunnen namelijk reageren op je idee. Ook kan je likes verzamelen. Let op: dit zijn nog geen stemmen."
     create:
       form:
         submit_button: "Idee indienen"
@@ -175,6 +177,8 @@ nl:
       comments_tab: "Reacties"
       dashboard_proposal_link: "Campagnepagina"
       no_notifications: "Dit initiatief heeft geen meldingen."
+      retired_warning: "De auteur heeft dit initiatief teruggetrokken."
+      retired_warning_link_to_explanation: "Lees de uitleg voordat je het initiatief alsnog steunt."
     created:
       title: "Gefeliciteerd! Je hebt de eerste stap gezet"
       motivation: "Voordat je je initiatief publiceert op de website, is het slim om een campagne op te zetten. Dit helpt je om voldoende steun voor je initiatief te krijgen."
@@ -227,6 +231,7 @@ nl:
   comments_helper:
     comments_title: "Reacties"
   users:
+    login_to_comment: "Je moet %{signin} of je %{signup} om te kunnen reageren."
     login_to_continue: "Je moet %{signin} of je %{signup} om verder te gaan."
     signin: "inloggen"
     signup: "aanmelden"
@@ -260,7 +265,7 @@ nl:
   layouts:
     header:
       collaborative_legislation: "Inspraak"
-      budgets: "Burgerbegroting"
+      budgets: "Ideeën"
       proposals: "Initiatieven"
       debates: "Discussies"
       poll_questions: "Peilingen"
@@ -312,7 +317,7 @@ nl:
       step_1:
         number: "1"
         title: "Aanmelden"
-        description: "Gebruik Twitter, Facebook,Google, of jouw mailadres om in te loggen."
+        description: "Gebruik Twitter, Facebook, Google, of jouw mailadres om in te loggen."
         link: "Meld je binnen vijf minuten aan"
       step_2:
         number: "2"
@@ -381,13 +386,13 @@ nl:
         create:
           notice: "Je volgt nu dit idee!<br>We houden je via meldingen op de hoogte van alle ontwikkelingen."
         destroy:
-          notice: "Je volgt dit idee niet meer.<br>Je zult geen updates over dit idee meer ontvangen."
+          notice: "Je volgt dit idee niet meer.<br>Je zult geen meldingen meer ontvangen van dit idee."
       proposal:
         create:
           notice: "Je volgt nu dit initiatieven!<br>We houden je via notificaties op de hoogte van alle wijzigingen."
         destroy:
           notice: "Je volgt dit initiatieven niet meer.<br>Je zult geen updates over dit initiatieven meer ontvangen."
-    expired: "Proces afgerond"
+    expired: "Alleen aan te passen in de fase 'ideeën delen'"
   links:
     form:
       cancel_button: "Annuleren"
@@ -470,19 +475,19 @@ nl:
       proposal_page: "pagina van je initiatief"
   omniauth:
     facebook:
-      sign_in: "Log in via Facebook"
-      sign_up: "Registreer via Facebook"
+      sign_in: "Inloggen via Facebook"
+      sign_up: "Aanmelden via Facebook"
       name: "Facebook"
     finish_signup:
       title: "Verdere details"
       username_warning: "Door een verandering in de manier waarop we met sociale netwerken communiceren, is het mogelijk dat uw gebruikersnaam nu als 'al in gebruik' verschijnt. Kiest u dan een andere gebruikersnaam, aub."
     google_oauth2:
-      sign_in: "Log in via Google"
-      sign_up: "Registreer met Google"
+      sign_in: "Inloggen via Google"
+      sign_up: "Aanmelden met Google"
       name: "Google"
-    info_sign_in: "Aanmelden via sociale media"
-    info_sign_up: "Registreren via sociale media"
-    or_fill: "Direct aanmelden"
+    info_sign_in: "Inloggen via sociale media"
+    info_sign_up: "Aanmelden via sociale media"
+    or_fill: "Of vul het formulier in"
   stats:
     index:
       comments: "Reacties"
@@ -499,7 +504,7 @@ nl:
   unauthorized:
     default: "Je hebt geen toestemming deze pagina te bezoeken."
     manage:
-      all: "Je hebt geen toestemming '%{action' op %{subject uit te voeren."
+      all: "Je hebt geen toestemming '%{action}' op %{subject} uit te voeren."
   poll_questions:
     show:
       voted: "Je hebt %{answer} gestemd"
@@ -508,3 +513,5 @@ nl:
     new:
       title: "Stuur melding"
       submit_button: "Stuur melding"
+      info_about_receivers: "Deze melding stuur je naar <strong>%{count} mensen</strong> en is te zien op %{proposal_page}.<br> Meldingen worden niet direct gestuurd, maar de gebruikers ontvangen periodiek een email met alle meldingen omtrent jouw initiatief."
+      proposal_page: "de pagina van het initiatief"

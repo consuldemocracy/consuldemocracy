@@ -3,3 +3,5 @@ nl:
     actions:
       create:
         proposal_notification: "Melding verzonden"
+      update:
+        proposal: "Initiatief is bijgewerkt."

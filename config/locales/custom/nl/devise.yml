@@ -13,7 +13,7 @@ nl:
       already_signed_out: "Je bent afgemeld"
     passwords:
       send_instructions: "Je ontvangt via e-mail instructies hoe je jouw account kunt ontgrendelen."
-      send_paranoid_instructions: "Als je e-mailadres bij ons bekend is, ontvangt je via e-mail instructies hoe je jouw account kan ontgrendelen"
+      send_paranoid_instructions: "Als je e-mailadres bij ons bekend is, ontvang je instructies over hoe je weer met jouw account kan inloggen"
       no_token: "Je kunt deze pagina niet benaderen zonder een \"wachtwoord reset e-mail\"."
       updated: "Je wachtwoord is gewijzigd. Je bent aangemeld!"
       updated_not_active: "Je wachtwoord is gewijzigd"
@@ -30,7 +30,7 @@ nl:
       locked: "Je account is vergrendeld"
       last_attempt: "Je hebt nog één poging over voordat jouw account wordt geblokkeerd."
       timeout: "Oeps! Je sessie is verlopen. Meld je opnieuw aan om verder te gaan"
-      unauthenticated: "Meld je aan om verder te gaan. Nog geen account? Maak deze eenvoudig aan via 'registreren'"
+      unauthenticated: "Log in om verder te gaan. Nog geen account? Maak deze eenvoudig aan via 'aanmelden’"
       unconfirmed: "Je account is nog niet geactiveerd. Klik op de link in je e-mail om jouw account te activeren "
     registrations:
       destroyed: "Jammer dat je gaat! Je account is succesvol verwijderd. Wij hopen je nog een keer terug te zien"

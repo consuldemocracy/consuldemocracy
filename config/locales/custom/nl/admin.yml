@@ -4,17 +4,19 @@ nl:
       title: "Beheerderspagina"
     actions:
       actions: "Acties"
+      confirm: "Weet je dit zeker? Je kunt deze actie niet ongedaan maken."
       hide: "Verbergen"
       hide_author: "Verbergen auteur"
       restore: "Terugzetten"
+      unmark_featured: "Uitgelicht uitschakelen"
       edit: "Bewerk"
       configure: "Configureren"
       delete: "Verwijder"
       confirm_delete: "Weet je zeker dat je %{resource_name} '%{name}' wilt verwijderen? Dit kan niet ongedaan worden gemaakt."
-      confirm_hide_content: "Are you sure? This action will hide this content. You can undo this action from the moderation panel."
-      confirm_hide_author: "Are you sure? This action will hide all content created by the author and the author will be blocked and not be able to sign in. You can undo this action from the moderation panel."
-      confirm_mark_featured: "Are you sure? This action will mark this debate as featured and will be displayed on the main debates page."
-      confirm_unmark_featured: "Are you sure? This action will unmark this debate as featured and will be hidden from the main debates page."
+      confirm_hide_content: "Weet je dit zeker? Deze actie verbergt deze content. Je kunt deze actie niet ongedaan maken."
+      confirm_hide_author: "Weet je dit zeker? Deze actie verbergt alle content van deze auteur. Ook zal de auteur geblokkeerd worden en niet meer kunnen inloggen. Je kan deze actie niet ongedaan maken."
+      confirm_mark_featured: "Weet je dit zeker? Deze actie markeert deze discussie als uitgelicht. Hierdoor wordt het vastgepind aan de bovenkant van de discussie-pagina."
+      confirm_unmark_featured: "Weet je dit zeker? Deze actie schakelt de uitgelicht-markering van deze discussie uit. Hierdoor verdwijnt deze tussen alle bestaande discussies."
     banners:
       index:
         create: "Banner maken"
@@ -106,7 +108,8 @@ nl:
         table_budget_draft: "Concept"
         table_duration: "Periode"
         table_preview: "Preview"
-        admin_ballots: "Admin ballots"
+        edit_budget: "Bewerk begroting"
+        admin_ballots: "Papieren stemmen"
         filters:
           all: "Alle"
           open: "Actief"

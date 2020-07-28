@@ -5,7 +5,7 @@ nl:
         active: "Actief"
         locked: "Gesloten"
         coming_soon: "Binnenkort"
-        published: "Published"
+        published: "Gepubliceerd"
         less_info: "Minder informatie"
       proposals:
         empty_proposals: "Er zijn geen initiatieven"
