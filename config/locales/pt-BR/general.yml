@@ -42,8 +42,12 @@ pt-BR:
         other: "%{count} respostas"
       responses_show:
         zero: Nenhuma resposta
+        one: "1 resposta (mostrar)"
+        other: "%{count} respostas (mostrar)"
       responses_collapse:
         zero: Nenhuma resposta
+        one: "1 respuesta (recolher)"
+        other: "%{count} respostas (recolher)"
       user_deleted: Usuário apagado
       votes:
         zero: Nenhum voto
@@ -112,6 +116,9 @@ pt-BR:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
+      search_results:
+        one: " contendo o termo <strong>'%{search_term}'</strong>"
+        other: " contendo o termo <strong>'%{search_term}'</strong>"
       select_order: Ordenado por
       start_debate: Iniciar um debate
       title: Debates
@@ -162,11 +169,18 @@ pt-BR:
     direct_message: mensagem privada
     error: erro
     errors: erros
+    not_saved: "impediu que esse %{resource} fosse salvo. <br>Verifique os campos marcados para saber como corrigi-los:"
     policy: Política de privacidade
+    banner: banner
     proposal: Proposta
     proposal_notification: "Notificação"
     budget/investment: Investimento
+    budget/group: Grupo de orçamentos
     budget/heading: Rubrica Orçamental
+    geozone: zona
+    legislation/draft_version: rascunho
+    legislation/process: processo
+    legislation/question: pergunta
     poll/shift: Turno
     poll/question/answer: Resposta
     user: Conta
@@ -175,6 +189,10 @@ pt-BR:
     document: Documento
     topic: Tópico
     image: Imagem
+    local_census_record: Registro de censo local
+    local_census_records/import: Importações de registros do censo local
+    site_customization/content_block: bloco de conteúdo
+    site_customization/page: página
   geozones:
     none: Toda a cidade
   layouts:
@@ -187,7 +205,13 @@ pt-BR:
       proposal_header:
         published: Publicado
         draft: Rascunho
+        retired: Retirada
       proposal_totals:
+        active_resources: Recursos ativos
+        community: Participantes da sua comunidade
+        show_proposal: Ver proposta
+        preview_proposal: Pré-visualizar proposta
+        current_goal: Meta atual
         supports:
           zero: Nenhum apoio
           one: 1 Apoio
@@ -281,9 +305,17 @@ pt-BR:
     create:
       form:
         submit_button: Criar proposta
+    created:
+      title: Parabéns! Você deu o primeiro passo.
+      motivation: "É importante preparar a campanha de lançamento da sua proposta para que ela tenha êxito. Os primeiros dias são decisivos."
+      motivation_2: "<strong>Se desejar recomendações para preparar a publicação, deixe a proposta como rascunho e guiaremos você.</strong>"
+      publish: Não, quero publicar a proposta
+      dashboard: Sim, quero ajuda e publicarei mais tarde
+      preview_title: Sua proposta ficará assim quando for publicada
     share:
       improve_it: Melhore sua campanha e obtenha mais apoio.
       dashboard: Mais informações
+      message: "Apoiei a proposta %{title} em %{handle}. Se achar interessante, apoie-a também!"
     edit:
       editing: Editar proposta
       form:
@@ -335,7 +367,10 @@ pt-BR:
           error: "Ocorreu um erro. Por favor, vá à página 'Sua conta' para desativar manualmente recomendações de propostas"
       retired_proposals: Propostas retiradas
       retired_proposals_link: "Propostas retiradas pelo autor"
+      selected_proposals: Propostas selecionadas
+      selected_proposals_link: Ver propostas selecionadas
       archived_proposals: Propostas arquivadas
+      proposals_lists: Listas de propostas
       retired_links:
         all: Todos
         duplicated: Duplicado
@@ -347,6 +382,9 @@ pt-BR:
         button: Buscar
         placeholder: Buscar propostas...
         title: Buscar
+      search_results:
+        one: " contendo o termo <strong>'%{search_term}'</strong>"
+        other: " contendo o termo <strong>'%{search_term}'</strong>"
       select_order: Ordenado por
       select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Criar proposta
@@ -371,6 +409,7 @@ pt-BR:
       start_new: Criar nova proposta
     notice:
       retired: Proposta retirada
+      published: A proposta foi publicada
     proposal:
       created: "Você criou uma proposta!"
       share:
@@ -396,6 +435,7 @@ pt-BR:
       total_percent: 100%
       archived: "Esta proposta foi arquivada e não é possível angariar suporte."
       successful: "Esta proposta tem alcançado os suportes necessários."
+      selected: "Proposta selecionada"
     show:
       author_deleted: Usuário excluído
       code: "Código da proposta:"
@@ -404,6 +444,7 @@ pt-BR:
         one: 1 comentário
         other: "%{count} comentários"
       comments_tab: Comentários
+      dashboard_proposal_link: Painel de controle
       flag: Esta proposta já foi marcada como inadequada por vários usuários.
       notifications_tab: Notificações
       milestones_tab: Marcos
@@ -415,40 +456,93 @@ pt-BR:
       embed_video_title: "Vídeo em %{proposal}"
       title_video_url: "Vídeo externo"
       author: Autor
+      draft: A proposta é um rascunho. Ainda não é possível obter apoios, também não aparece na lista de propostas.
     update:
       form:
         submit_button: Salvar alterações
   dashboard:
     menu:
+      my_proposal: Editar minha proposta
+      progress: Progresso
       resources: Recursos
       community: Comunidade
       polls: Votações
       mailing: E-mail
+      poster: Pôster
+      recommended_actions: Acções recomendadas
       messages: Mensagem para os usuários
+      related_content: Conteúdo relacionado
+    form:
+      request: Solicitar
+    create_request:
+      success: A solicitação foi enviada corretamente. Entraremos em contato o mais rápido possível com mais informações.
+      archived: Esta proposta foi arquivada e não pode solicitar recursos.
     progress:
       title: Gráfico
       group_by_month: Mensal
       group_by_week: Semanal
       group_by_date: Diário
+      progress: Progresso acumulado
+      supports: Apoios
+      success: Progresso ideal
+      new_action: Novo
+    index:
+      title: Edição
+      edit_proposal_link: Editar proposta
+      publish: Publicar proposta
+      retire: Retirar proposta
+    new_request:
+      links: Links
+    resources:
+      available_resources: Recursos disponíveis
+    resource:
+      required_days: "%{days} dias necessários"
+      required_supports: "%{supports} apoios necessários"
+      and: e
+      view_resource: Ver recurso
+      resource_requested: Recurso já solicitado
+      request_resource: Solicitar recurso
+      resource_locked: Recurso bloqueado
     recommended_actions:
+      title: Acções recomendadas
+      goto_proposed_actions: Ir para ações recomendadas
+      see_proposed_actions: Ver as ações recomendadas
+      hide_proposed_actions: Ocultar ações recomendadas
       pending_title: Pendente
+      show_description: Mostrar descrição
+      without_pending_actions: Não há ações recomendadas pendentes
       done_title: Feito
+      without_done_actions: Não foram feitas as ações recomendadas
     next_goal:
       title: Objetivo
+      see_complete_course: Ver caminho completo
+      hide_course: Ocultar caminho
     goal:
+      target_supports:
+        one: Obtenha %{count} de apoio para a sua proposta
+        other: Obtenha %{count} de apoio para a sua proposta
       days:
         one: "%{count} dia"
         other: "%{count} dias"
       locked_resource: Recurso bloqueado
+      ideal_time: Tempo ideal
     community:
+      access_community: Acesse a comunidade
+      latest_activity: "Última atividade da comunidade: %{at}"
       participants: Participantes
       debates: Debates
       comments: Comentários
       latest_comments: Últimas mensagens
+    messages:
+      send_notification: Enviar mensagem a quem apoiou a proposta
+      previous_notifications: Ver notificações anteriores
     polls:
       index:
         title: Votações
         create: Criar votação
+        count:
+          one: Você criou %{count} pesquisa.
+          other: Você criou %{count} pesquisas.
         links: Links
         additiontal_information: Informação adicional
       new:
@@ -457,14 +551,57 @@ pt-BR:
       edit:
         submit: Atualizar votação
       poll:
+        responses:
+          one: "%{count} resposta"
+          other: "%{count} respostas"
         view_results: Exibir resultados
+        edit_poll: Editar pesquisa
+        show_results_help: Se você marcar esta opção, os resultados ficarão públicos, e todos os usuários poderão vê-los
+        delete: Excluir pesquisa
+        alert_notice: Esta ação excluirá a pesquisa e todas as perguntas associadas a ela.
+        success_notice: Pesquisa excluída com sucesso
+        unable_notice: Não é possível eliminar propostas com respostas
       form:
+        name: Título de la pesquisa
         add_question: Adicionar pergunta
       question_fields:
+        remove_question: Remover pergunta
         add_answer: Adicionar resposta
+      question_answer_fields:
+        remove_answer: Apagar resposta
     poster:
       index:
+        title: Pré-visualização do pôster
+        poster_title: "Não fique olhando,"
+        poster_subtitle: "apoie-me! ;-)"
+        intro_text: "<strong>Estou participando de %{org}</strong> com a minha própria proposta cidadã, e conseguirei obter o apoio necessário para fazer a cidade que todos queremos apenas se você se juntar a ela."
+        proposal_code: "Código da proposta: %{code}"
         support: Apoiar minha proposta
+        footer: "<strong>Acesse %{link} e apoie esta proposta.</strong> Precisamos ser muitos. Faça parte você também. Obrigado!"
+      new:
+        title: Pôster da tua proposta
+      options:
+        preview: Pré-visualizar
+        download: Download
+    mailing:
+      index:
+        title: Pré-visualização do email
+      new:
+        title: Modelo do email a enviar
+      mailing_options:
+        send: Enviar para %{address}
+        preview: Pré-visualizar
+      create:
+        sent: O email foi enviado
+    mailer:
+      forward:
+        subtitle: "Se você me apoiar, <br>vamos conseguir."
+        support_button: Apoiar esta proposta
+        share_in: Compartilhar em
+        hi: "Olá!"
+        introduction: Estou escrevendo para comunicar que estou participando da %{org}, a plataforma em que podemos decidir a cidade que queremos. E para isso eu criei a minha própria proposta cidadã, e agora vou precisar do seu apoio! Mas não se preocupe, pois é muito simples.
+        support: "Você apenas precisa clicar no botão 'Apoiar esta proposta' logo abaixo para se informar sobre ela antes de apoiá-la. Somente as propostas que conseguirem o máximo de apoio serão executadas pela Prefeitura. Assim, tenho certeza que você me ajudará!"
+        share: "E se você fizer o grande favor de compartilhar a minha proposta com seus amigos, familiares e contatos, vai ser ótimo!"
   polls:
     all: "Tudo"
     no_dates: "nenhuma data atribuída"
@@ -498,6 +635,7 @@ pt-BR:
       back: Voltar à votação
       cant_answer_not_logged_in: "Você precisa %{signin} ou %{signup} para participar."
       comments_tab: Comentários
+      cant_answer_verify: "Você deve %{verify_link} para poder responder."
       verify_link: "verifique sua conta"
       cant_answer_expired: "Esta votação já foi encerrada."
       cant_answer_wrong_geozone: "Esta questão não está disponível na sua geozona."
@@ -514,6 +652,7 @@ pt-BR:
         total_votes: "Quantidade total de votos emitidos"
         votes: "VOTOS"
         web: "WEB"
+        mail: "ENVIAR"
         booth: "URNA"
         total: "TOTAL"
         valid: "Válido"
@@ -522,6 +661,8 @@ pt-BR:
       results:
         title: "Perguntas"
         most_voted_answer: "Resposta mais votada: "
+    poll_header:
+      back_to_proposal: Voltar à proposta
   poll_questions:
     show:
       vote_answer: "Votar %{answer}"
@@ -530,6 +671,7 @@ pt-BR:
     new:
       title: "Enviar mensagem"
       submit_button: "Enviar mensagem"
+      info_about_receivers: "Esta mensagem será enviada para <strong>%{count} pessoas</strong> e ficará visível em %{proposal_page}.<br> As mensagens não são enviadas imediatamente, os usuários receberão periodicamente um email com todas as notificações da proposta."
       proposal_page: "a página da proposta"
     show:
       back: "Voltar para minha atividade"
@@ -559,6 +701,7 @@ pt-BR:
       to: "Para"
     author_info:
       author_deleted: Usuário excluído
+      email_deleted: Email excluído
     back: Voltar
     check: Selecionar
     check_all: Tudo
@@ -568,6 +711,17 @@ pt-BR:
     follow: "Seguir"
     following: "Seguindo"
     follow_entity: "Seguir %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Você está seguindo este projeto de investimento! </br>Para que esteja a par de tudo, vamos notificar você sobre alterações assim que elas ocorrerem."
+        destroy:
+          notice: "Você parou de seguir este projeto de investimento! </br> Você não receberá mais notificações relacionadas a ele."
+      proposal:
+        create:
+          notice: "Agora você está seguindo esta proposta cidadã! </br> Para que esteja a par de tudo, vamos notificar você sobre alterações assim que elas ocorrerem."
+        destroy:
+          notice: "Você parou de seguir esta proposta cidadã! </br> Você não receberá mais notificações relacionadas a ela."
     hide: Esconder
     print:
       print_button: Imprimir esta informação
@@ -597,6 +751,7 @@ pt-BR:
       districts: "Distritos"
       districts_list: "Lista de distritos"
       categories: "Categorias"
+    target_blank: " (link abre em nova janela)"
     you_are_in: "Você está em"
     unflag: Desmarcar
     unfollow_entity: "Deixar de seguir %{entity}"
@@ -616,6 +771,14 @@ pt-BR:
       title: Recomendações
       see_more: Ver mais recomendações
       hide: Ocultar recomendações
+    translations:
+      select_language_prompt: Selecionar idioma
+      remove_language: Remover idioma
+      add_language: E o idioma
+      languages_in_use:
+        zero: "0 idiomas em uso"
+        one: "1 idioma em uso"
+        other: "%{count} idiomas em uso"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -640,6 +803,11 @@ pt-BR:
     manage:
       all: "Você não possui permissão para executar esta ação '%{action}' em %{subject}."
   users:
+    login_to_comment: "Você precisa %{signin} ou %{signup} para fazer um comentário."
+    login_to_continue: "Você precisa %{signin} ou %{signup} para continuar."
+    signin: "iniciar sessão"
+    signup: "registre-se"
+    verify_account: "verifique sua conta"
     direct_messages:
       new:
         direct_messages_bloqued: "Este usuário decidiu não receber mensagens diretas"
@@ -654,6 +822,7 @@ pt-BR:
       deleted_proposal: Esta proposta foi apagado
       deleted_budget_investment: Este projeto de investimento foi deletado
       proposals: Propostas
+      proposals_status: Status
       debates: Debates
       budget_investments: Proposta de investimento
       comments: Comentários
@@ -685,6 +854,7 @@ pt-BR:
       published: Publicado
       see: "Ver proposta"
       actions: Ações
+      retired_help_text: Dashboard não disponível para propostas retiradas
   votes:
     agree: Eu concordo
     anonymous: Excesso de votos anônimos para admitir voto %{verify_account}
@@ -734,6 +904,7 @@ pt-BR:
       title: Verificação de conta
     welcome:
       go_to_index: Veja propostas e debates
+      start_using_consul: Ir para o índice
       title: Participar
       user_permission_debates: Participar nos debates
       user_permission_info: Com sua conta, você pode...
@@ -777,3 +948,22 @@ pt-BR:
       cancel_button: Cancelar
     nested_links:
       title: Links
+      note: Adicione links que sejam que sejam de interesse
+      add_new_link: Adicionar novo link
+    link_fields:
+      label_placeholder: Título do link
+      url_placeholder: Endereço do link
+  communities:
+    show:
+      surveys: Pesquisas
+      complete_survey: Complete a pesquisa
+    subnav:
+      surveys: Pesquisas
+    poll:
+      take_part: Participe de %{from} a %{to}
+  remote_translations:
+    text: O conteúdo desta página não está disponível no seu idioma
+    all_remote_translations_enqueued_text: Em alguns minutos, atualize a página para ver todo o conteúdo no seu idioma.
+    create:
+      enqueue_remote_translation: As traduções foram solicitadas corretamente.
+    button: Traduzir página

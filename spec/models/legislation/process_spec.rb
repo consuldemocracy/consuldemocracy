@@ -218,7 +218,7 @@ describe Legislation::Process do
       let(:process) { create(:legislation_process, :with_milestone_tags) }
 
       it "has milestone_tags" do
-        expect(process.milestone_tag_list.count).to eq(1)
+        expect(process.reload.milestone_tag_list.count).to eq(1)
       end
     end
   end

@@ -9,7 +9,7 @@
 <% end %>
 
 <main>
-  <% if @search_terms || @advanced_search_terms || @tag_filter %>
+  <% if @search_terms || @advanced_search_terms %>
     <div class="highlight no-margin-top padding margin-bottom">
       <div class="row">
         <div class="small-12 column">
@@ -22,12 +22,6 @@
                   t("debates.index.search_results", count: @debates.size, search_term: @search_terms)
                 ) %>
               <% end %>
-            </p>
-          <% elsif @tag_filter %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @debates %>
-              <%= t("debates.index.filter_topic", count: @debates.size, topic: @tag_filter) %>
             </p>
           <% end %>
         </div>
@@ -46,11 +40,9 @@
   <div class="row">
     <div id="debates" class="debates-list small-12 medium-9 column">
 
-      <% if has_banners? %>
-        <%= render "shared/banner" %>
-      <% end %>
+      <%= render "shared/banner" %>
 
-      <% unless @tag_filter || @search_terms || !has_featured? %>
+      <% unless @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
       <% end %>
 
@@ -81,7 +73,7 @@
       <% end %>
       <%= paginate @debates %>
 
-      <% unless @search_terms || @advanced_search_terms || @tag_filter %>
+      <% unless @search_terms || @advanced_search_terms %>
         <div id="section_help" class="margin" data-magellan-target="section_help">
           <p class="lead">
             <strong><%= t("debates.index.section_footer.title") %></strong>

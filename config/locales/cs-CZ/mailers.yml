@@ -1,19 +1,24 @@
 cs:
   mailers:
+    title: "Otevřený úřad"
     no_reply: "Tato zpráva byla odeslána z e-mailové adresy, která nepřijímá odpovědi."
     comment:
       hi: Dobrý den
+      new_comment_by: K dispozici je nový komentář od <strong>%{commenter}</strong>
       subject: Někdo komentoval váš příspěvek %{commentable}
       title: Nový komentář
     config:
       manage_email_subscriptions: Chcete-li tyto e-maily přestat přijímat, změňte nastavení v
     email_verification:
       click_here_to_verify: tento odkaz
+      instructions_2: Tento e-mail ověří váš účet pomocí <b>%{document_type} %{document_number} </b>. Pokud Vám email nepatří, prosím, neklikejte na předchozí odkaz a ignorujte tento e-mail.
+      instructions: K dokončení ověření uživatelského účtu musíte kliknout na %{verification_link}.
       subject: Potvrďte svoji emailovou adresu
       thanks: Mockrát děkujeme.
       title: Potvrďte svůj účet pomocí následujícího odkazu
     reply:
       hi: Dobrý den
+      new_reply_by: Nová odpověď od <b>%{commenter} </b> na Váš komentář
       subject: Někdo odpověděl na váš komentář
       title: Nová odpověď na váš komentář
     proposal_notification_digest:
@@ -30,6 +35,7 @@ cs:
       unsubscribe_account: Můj účet
     direct_message_for_sender:
       subject: "Odeslali jste novou soukromou zprávu"
+      title: "Do <strong>%{receiver} </strong> jste odeslali novou soukromou zprávu s obsahem:"
     user_invite:
       ignore: "Pokud jste o tuto pozvánku nepožádali, nemusíte se obávat a můžete tento e-mail ignorovat."
       text: "Děkujeme za žádost o připojení k %{org}! Za pár vteřin se můžete zapojit, stačí vyplnit formulář níže:"
@@ -40,11 +46,15 @@ cs:
     budget_investment_created:
       subject: "Děkujeme za vytvoření investice!"
       title: "Děkujeme za vytvoření investice!"
+      intro: "Zdravíme uživatele <strong>%{author}</strong>,"
+      text: "Děkujeme za vytvoření <strong>%{investment} </strong> v rámci participativního rozpočtu <strong>%{budget}</strong>."
+      follow: "Budeme vás informovat o tom jak postup probíhá a můžete ho také sledovat prostřednictvím tohoto odkazu <strong>%{link}</strong>."
       follow_link: "Prticipativní rozpočty"
       sincerely: "S pozdravem,"
       share: "Sdílet projekt"
     budget_investment_unfeasible:
       hi: "Vážený uživateli,"
+      new: "Kvůli těmto skutečnostem Vás vyzýváme k vypracování <strong>nového návrhu</strong>, který se přizpůsobí podmínkám tohoto procesu. Můžete to udělat prostřednictvím tohoto odkazu: %{url}."
       new_href: "nový investiční projekt"
       sincerely: "S pozdravem"
       sorry: "Omlouváme se za nepříjemnost a opět vám děkujeme za neocenitelnou účast."
@@ -61,3 +71,12 @@ cs:
       hi: "Vážený uživateli,"
       thanks: "Ještě jednou děkujeme za vaši účast."
       sincerely: "S pozdravem"
+    evaluation_comment:
+      hi: Dobrý den
+      commenter_info: "%{commenter}, %{time}:"
+    new_actions_notification_rake_created:
+      hi: "Dobrý den %{name},"
+    new_actions_notification_rake_published:
+      hi: "Dobrý den %{name},"
+    new_actions_notification_on_create:
+      hi: "Ahoj %{name}!"

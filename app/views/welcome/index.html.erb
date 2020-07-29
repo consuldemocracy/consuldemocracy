@@ -4,9 +4,7 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<% if has_banners? %>
-  <%= render "shared/banner" %>
-<% end %>
+<%= render "shared/banner" %>
 
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
@@ -21,7 +19,9 @@
   <div class="row">
     <% if @cards.any? %>
       <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
-        <%= render "cards" %>
+        <h3 class="title"><%= t("welcome.cards.title") %></h3>
+
+        <%= render "shared/cards" %>
       </div>
     <% end %>
 

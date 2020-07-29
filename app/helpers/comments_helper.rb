@@ -40,7 +40,7 @@ module CommentsHelper
   end
 
   def commentable_path(comment)
-    polymorphic_hierarchy_path(comment.commentable)
+    polymorphic_path(comment.commentable)
   end
 
   def user_level_class(comment)

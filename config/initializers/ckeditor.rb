@@ -8,7 +8,7 @@ Ckeditor.setup do |config|
   config.authorize_with :cancan
 
   config.assets_languages = Rails.application.config.i18n.available_locales.map { |l| l.to_s.downcase }
-  config.assets_plugins = %w[balloonpanel balloontoolbar copyformatting image
-                             link magicline scayt table tableselection wsc]
-  config.assets.reject! { |asset| asset =~ /\Ackeditor\/samples\// }
+  config.assets_plugins = %w[image link magicline pastefromword table tableselection
+                             tabletools]
+  config.assets.reject! { |asset| asset.starts_with?("ckeditor/samples/") }
 end

@@ -95,9 +95,6 @@ en:
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_debates: Featured
-      filter_topic:
-        one: " with topic '%{topic}'"
-        other: " with topic '%{topic}'"
       orders:
         confidence_score: highest rated
         created_at: newest
@@ -351,9 +348,6 @@ en:
       map_skip_checkbox: "This proposal doesn't have a concrete location or I'm not aware of it."
     index:
       featured_proposals: Featured
-      filter_topic:
-        one: " with topic '%{topic}'"
-        other: " with topic '%{topic}'"
       orders:
         confidence_score: highest rated
         created_at: newest
@@ -539,7 +533,7 @@ en:
       comments: Comments
       latest_comments: Latest messages
     messages:
-      send_notification: Send message to proposal supporters
+      send_notification: Send message to proposal followers
       previous_notifications: See previous notifications
     polls:
       index:
@@ -584,7 +578,7 @@ en:
           necessary support to make the city we all want."
         proposal_code: "Code of the proposal: %{code}"
         support: Support my proposal
-        footer: "<strong>Visit %{link} and support this proposal.</strong> We need to be many. Decide your too. Thank you!"
+        footer: "<strong>Visit %{link} and support this proposal.</strong> The more, the better. Let's do our bit. Thank you!"
       new:
         title: Poster of your proposal
       options:
@@ -729,7 +723,6 @@ en:
             notice: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
           destroy:
             notice: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
-    hide: Hide
     print:
       print_button: Print this info
     search: Search

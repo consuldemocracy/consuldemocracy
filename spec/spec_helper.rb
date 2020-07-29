@@ -1,5 +1,4 @@
 require "factory_bot_rails"
-require "database_cleaner"
 require "email_spec"
 require "devise"
 require "knapsack_pro"
@@ -9,7 +8,7 @@ Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 
 RSpec.configure do |config|
-  config.use_transactional_fixtures = false
+  config.use_transactional_fixtures = true
 
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
@@ -22,49 +21,25 @@ RSpec.configure do |config|
   config.include(ActiveSupport::Testing::TimeHelpers)
 
   config.before(:suite) do
-    DatabaseCleaner.clean_with :truncation
-  end
-
-  config.before(:suite) do
-    if config.use_transactional_fixtures?
-      raise(<<-MSG)
-        Delete line `config.use_transactional_fixtures = true` from rails_helper.rb
-        (or set it to false) to prevent uncommitted transactions being used in
-        JavaScript-dependent specs.
-
-        During testing, the app-under-test that the browser driver connects to
-        uses a different database connection to the database connection used by
-        the spec. The app's database connection would not be able to access
-        uncommitted transaction data setup over the spec's database connection.
-      MSG
-    end
-
-    DatabaseCleaner.clean_with(:truncation)
+    Rails.application.load_seed
   end
 
   config.before do |example|
-    DatabaseCleaner.strategy = :transaction
     I18n.locale = :en
-    Globalize.locale = nil
     Globalize.set_fallbacks_to_all_available_locales
-    load Rails.root.join("db", "seeds.rb").to_s
     Setting["feature.user.skip_verification"] = nil
   end
 
-  config.before(:each, type: :feature) do
-    # :rack_test driver's Rack app under test shares database connection
-    # with the specs, so continue to use transaction strategy for speed.
-    driver_shares_db_connection_with_specs = Capybara.current_driver == :rack_test
+  config.around(:each, :race_condition) do |example|
+    self.use_transactional_tests = false
+    example.run
+    self.use_transactional_tests = true
 
-    unless driver_shares_db_connection_with_specs
-      # Driver is probably for an external browser with an app
-      # under test that does *not* share a database connection with the
-      # specs, so use truncation strategy.
-      DatabaseCleaner.strategy = :truncation
-    end
+    DatabaseCleaner.clean_with(:truncation)
+    Rails.application.load_seed
   end
 
-  config.before(:each, type: :feature) do
+  config.before(:each, type: :system) do
     Capybara::Webmock.start
   end
 
@@ -76,20 +51,20 @@ RSpec.configure do |config|
     page.driver.reset!
   end
 
-  config.before do
-    DatabaseCleaner.start
+  config.before(:each, type: :system) do |example|
+    driven_by :rack_test
   end
 
-  config.append_after do
-    DatabaseCleaner.clean
+  config.before(:each, type: :system, js: true) do
+    driven_by :headless_chrome
   end
 
-  config.before(:each, type: :feature) do
+  config.before(:each, type: :system) do
     Bullet.start_request
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(0)
   end
 
-  config.after(:each, type: :feature) do
+  config.after(:each, type: :system) do
     Bullet.perform_out_of_channel_notifications if Bullet.notification?
     Bullet.end_request
   end
@@ -100,6 +75,11 @@ RSpec.configure do |config|
 
   config.after(:each, :delay_jobs) do
     Delayed::Worker.delay_jobs = false
+  end
+
+  config.before(:each, :remote_translations) do
+    allow(RemoteTranslations::Microsoft::AvailableLocales)
+      .to receive(:available_locales).and_return(I18n.available_locales.map(&:to_s))
   end
 
   config.before(:each, :with_frozen_time) do

@@ -6,6 +6,7 @@ cs:
         submit: Opětovné odeslání pokynů
         title: Opětovné zaslání pokynů k potvrzení
       show:
+        instructions: Potvrzení účtu e-mailem %{email}
         new_password_confirmation_label: kontrola přístupového hesla
         new_password_label: Nové přístupové heslo
         please_set_password: Zvolte prosím nové heslo (umožní vám přihlásit se výše uvedeným e-mailem)
@@ -49,6 +50,10 @@ cs:
           title: Zaregistrujte se jako organizace nebo kolektiv
         success:
           back_to_index: Rozumím, jít zpět na hlavní stránku
+          instructions_1: "<strong>Budeme vás brzy kontaktovat</strong>, abychom ověřili, že skutečně zastupujete tento kolektiv."
+          instructions_2: Po zkontrolování vašeho <strong>e-mailu </strong> jsme vám poslali <strong>odkaz a potvrdili tak váš účet </strong>.
+          instructions_3: Po potvrzení se můžete začít účastnit jako neověřený kolektiv.
+          thank_you: Děkujeme, že jste zaregistrovali svůj kolektiv na webových stránkách. Nyní vyčkejte <strong> na ověření</strong>.
           title: Registrace organizace / kolektivu
     passwords:
       edit:
@@ -118,4 +123,7 @@ cs:
           username_note: Název, který se zobrazí vedle vašich příspěvků
         success:
           back_to_index: Rozumím; jít zpět na hlavní stránku
+          instructions_1: Prosím, <b>zkontrolujte e-mail</b> - poslali jsme vám <b>odkaz pro potvrzení vašeho účtu</b>.
+          instructions_2: Po potvrzení můžete začít účastnit se.
+          thank_you: Děkujeme za registraci na webových stránkách. Musíte nyní <b>potvrdit svou e-mailovou adresu</b>.
           title: Potvrďte svou emailovou adresu

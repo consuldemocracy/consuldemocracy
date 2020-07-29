@@ -1,17 +1,17 @@
 class AddProposalsTranslations < ActiveRecord::Migration[4.2]
-  def self.up
-    Proposal.create_translation_table!(
-      {
-        title:               :string,
-        description:         :text,
-        summary:             :text,
-        retired_explanation: :text
-      },
-      { migrate_data: true }
-    )
-  end
+  def change
+    create_table :proposal_translations do |t|
+      t.integer :proposal_id, null: false
+      t.string :locale, null: false
+      t.timestamps null: false
 
-  def self.down
-    Proposal.drop_translation_table!
+      t.string :title
+      t.text :description
+      t.text :summary
+      t.text :retired_explanation
+
+      t.index :locale
+      t.index :proposal_id
+    end
   end
 end

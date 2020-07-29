@@ -31,6 +31,6 @@ class TagCloud
   end
 
   def table_name
-    resource_model.to_s.downcase.pluralize.gsub("::", "/")
+    resource_model.to_s.tableize.tr("/", "_")
   end
 end

@@ -259,6 +259,7 @@ it:
       search_unfeasible: Ricerca irrealizzabile
     milestones:
       index:
+        table_id: "ID"
         table_title: "Titolo"
         table_description: "Descrizione"
         table_publication_date: "Data di pubblicazione"

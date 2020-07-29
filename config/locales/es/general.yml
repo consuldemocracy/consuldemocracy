@@ -95,9 +95,6 @@ es:
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
       featured_debates: Destacar
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
       orders:
         confidence_score: Mejor valorados
         created_at: Nuevos
@@ -351,9 +348,6 @@ es:
       map_skip_checkbox: "Esta propuesta no tiene una ubicación concreta o no la conozco."
     index:
       featured_proposals: Destacadas
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
       orders:
         confidence_score: Más apoyadas
         created_at: Nuevas
@@ -539,7 +533,7 @@ es:
       comments: Comentarios
       latest_comments: Últimos mensajes
     messages:
-      send_notification: Enviar mensaje a los que han apoyado la propuesta
+      send_notification: Enviar mensaje a los que siguen la propuesta
       previous_notifications: Ver notificaciones anteriores
     polls:
       index:
@@ -727,7 +721,6 @@ es:
           notice: "¡Ahora estás siguiendo esta propuesta ciudadana! <br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
         destroy:
           notice: "¡Has dejado de seguir esta propuesta ciudadana! <br> Ya no recibirás más notificaciones relacionadas con esta propuesta."
-    hide: Ocultar
     print:
       print_button: Imprimir esta información
     search: Buscar

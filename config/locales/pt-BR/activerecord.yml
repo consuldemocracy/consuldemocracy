@@ -1,5 +1,6 @@
 pt-BR:
   attributes:
+    geozone_id: "Escopo da operação"
     results_enabled: "Exibir resultados"
     stats_enabled: "Exibir estatísticas"
     advanced_stats_enabled: "Exibir estatísticas avançadas"
@@ -20,6 +21,9 @@ pt-BR:
       milestone/status:
         one: "Status de investimento"
         other: "Status dos investimentos"
+      progress_bar:
+        one: "Barra de progresso"
+        other: "Barras de progresso"
       comment:
         one: "Comentar"
         other: "Comentários"
@@ -62,6 +66,9 @@ pt-BR:
       poll/officer:
         one: "presidente"
         other: "presidentes"
+      poll/ballot_sheet:
+        one: Cédula de votação
+        other: Cédulas de votação
       proposal:
         one: "Proposta dos cidadãos"
         other: "Propostas dos cidadãos"
@@ -110,12 +117,18 @@ pt-BR:
       proposal_notification:
         one: "Notificação da proposta"
         other: "Notificações de proposta"
+      dashboard/action:
+        one: Ação do painel de propostas
+        other: Ações do painel de propostas
       dashboard/administrator_task:
         one: Tarefa
         other: Tarefas
       link:
         one: Link
         other: Links
+      local_census_record:
+        one: Registro de censo local
+        other: Registros de censo local
     attributes:
       budget:
         name: "Nome"
@@ -128,6 +141,8 @@ pt-BR:
         description_finished: "Descrição quando o orçamento for concluído."
         phase: "Estágio"
         currency_symbol: "Moeda"
+      budget/translation:
+        name: "Nome"
       budget/investment:
         heading_id: "Título"
         title: "Título"
@@ -138,41 +153,92 @@ pt-BR:
         organization_name: "Se você está propondo em nome de um coletivo / organização, ou em nome de mais pessoas, escreva seu nome"
         image: "Imagem descritiva da proposta"
         image_title: "Título da imagem"
+        duration: "Prazo"
+        feasibility_feasible: "Viável"
+        feasibility_undecided: "Não definido"
+        feasibility_unfeasible: "Inviável"
+        incompatible: "Marcar como incompatível"
+        milestone_tag_list: "Status de andamento"
+        price_explanation: "Exposição de custos"
+        selected: "Marcar como selecionado"
+        selected_true: "Selecionado"
+        selected_false: "Não selecionado"
+        unfeasibility_explanation: "Exposição de viabilidade"
+        valuation_finished: "Avaliação concluída"
+        valuator_ids: "Grupos"
+        valuation_tag_list: "Tags"
+      budget/investment/translation:
+        title: "Título"
+        description: "Descrição"
       geozone:
         name: Nome
+        external_code: "Código externo (opcional)"
+        census_code: "Código do censo (opcional)"
+        html_map_coordinates: "Coordenadas HTML <map> (opcional)"
       milestone:
         status_id: "Status atual do investimento (opcional)"
         title: "Título"
         description: "Descrição (opcional, se houver uma condição atribuída)"
         publication_date: "Data de publicação"
+      milestone/translation:
+        description: "Descrição"
       milestone/status:
         name: "Nome"
         description: "Descrição (opcional)"
       progress_bar:
         kind: "Tipo"
         title: "Título"
+        percentage: "Posição atual"
       progress_bar/kind:
         primary: "Primário"
         secondary: "Secundário"
+      budget/group:
+        max_votable_headings: "Número máximo de títulos em que um usuário pode votar"
+      budget/group/translation:
+        name: "Nome do grupo"
       budget/heading:
+        allow_custom_content: "Permitir bloqueio de contúdos"
+        latitude: "Latitude (optional)"
+        longitude: "Longitude (optional)"
         name: "Nome do título"
         price: "Preço"
         population: "População"
+      budget/heading/translation:
+        name: "Título"
+      budget/phase:
+        enabled: "Fase habilitada"
+        ends_at: "Data final"
+        starts_at: "Data de início"
+      budget/phase/translation:
+        description: "Descrição"
+        summary: "Resumo"
       comment:
         body: "Comentar"
         user: "Usuário"
       debate:
         author: "Autor"
         description: "Opinião"
+        tag_list: "Tópicos"
         terms_of_service: "Termos de serviço"
         title: "Título"
+      debate/translation:
+        title: "Título do debate"
+        description: "Texto inicial do debate"
       proposal:
         author: "Autor"
         title: "Título"
         question: "Questão"
         description: "Descrição"
+        responsible_name: "Nome completo da pessoa que está submetendo a proposta"
+        retired_reason: "Motivo para retirar a proposta"
         selected: "Marcar como selecionado"
         terms_of_service: "Termos de serviço"
+        video_url: "Endereço do vídeo"
+      proposal/translation:
+        title: "Título da proposta"
+        description: "Texto da proposta"
+        summary: "Resumo da proposta"
+        retired_explanation: "Explicação"
       user:
         login: "E-mail ou nome de usuário"
         email: "Email"
@@ -180,10 +246,23 @@ pt-BR:
         password_confirmation: "Confirmação de senha"
         password: "Senha"
         current_password: "Senha atual"
+        email_digest: "Receber resumo de notificações sobre propostas"
+        email_on_comment: "Notificar-me por email quando alguém comentar sobre minhas propostas ou debates"
+        email_on_comment_reply: "Notificar-me por email quando alguém responder meus comentários"
+        email_on_direct_message: "Receber emails concernentes a mensagens diretas"
+        newsletter: "Receber por email informações relevantes deste site"
         official_position: "Cargo público"
+        official_position_badge: "Mostrar etiqueta da posição oficial"
         official_level: "Nível do cargo"
         phone_number: "Números de telefone"
+        public_activity: "Manter pública minha lista de atividades"
+        public_interests: "Tornar públicos os rótulos dos elementos que sigo"
+        recommended_debates: "Mostrar recomendações de debates"
+        recommended_proposals: "Mostrar recomendações de debates"
         redeemable_code: "Código de verificação recebido via e-mail"
+      direct_message:
+        title: "Título"
+        body: "Mensagem"
       organization:
         name: "Nome da organização"
         responsible_name: "Pessoa responsável pelo grupo"
@@ -194,11 +273,17 @@ pt-BR:
         geozone_restricted: "Restrito por geozona"
         summary: "Resumo"
         description: "Descrição"
+      active_poll/translation:
+        description: "Descrição"
+      poll/booth:
+        name: "Nome"
+        location: "Localização"
       poll/translation:
         name: "Nome"
         summary: "Resumo"
         description: "Descrição"
       poll/question:
+        poll_id: "Votação"
         title: "Questão"
         summary: "Resumo"
         description: "Descrição"
@@ -206,7 +291,14 @@ pt-BR:
       poll/question/translation:
         title: "Questão"
       poll/ballot_sheet:
+        data: dados CSV
         poll_id: Votação
+        officer_assignment_id: Pessoal designado
+      poll/shift:
+        task: "Tarefa"
+      proposal_notification:
+        body: "Mensagem"
+        title: "Título"
       signature_sheet:
         signable_type: "Tipo Significável"
         signable_id: "Identificação Signável"
@@ -217,6 +309,8 @@ pt-BR:
         subtitle: Legenda
         slug: área de informações
         status: Status
+        status_draft: "Rascunho"
+        status_published: "Publicado"
         title: Título
         updated_at: Atualizado em
         more_info_flag: Mostrar na página de ajuda
@@ -233,9 +327,20 @@ pt-BR:
         name: Nome
         locale: localidade
         body: Corpo
+      tag:
+        name: "Digite o nome do tópico"
+      topic:
+        title: "Título"
+        description: "Texto inicial"
       banner:
         background_color: Cor de fundo
         font_color: Cor da fonte
+        post_ended_at: "Publicação finalizada em"
+        post_started_at: "Publicação iniciada em"
+        target_url: "Link"
+      banner/translation:
+        title: "Título"
+        description: "Descrição"
       legislation/process:
         title: Título do processo
         summary: Resumo
@@ -255,17 +360,26 @@ pt-BR:
         result_publication_date: Data de publicação do resultado final
         background_color: Cor de fundo
         font_color: Cor da fonte
+        homepage_enabled: "Homepage habilitada"
       legislation/process/translation:
         title: Título do processo
         summary: Resumo
         description: Descrição
         additional_info: Informação adicional
+        homepage: "Descrição"
         milestones_summary: Resumo
+      legislation/proposal:
+        description: "Texto da proposta"
+        summary: "Resumo da proposta"
+        title: "Título da proposta"
+        video_url: "Link para vídeo externo"
       legislation/draft_version:
         title: Version title
         body: Texto
         changelog: Alterações
         status: Status
+        status_draft: "Rascunho"
+        status_published: "Publicado"
         final_version: Versão final
       legislation/draft_version/translation:
         title: Version title
@@ -327,8 +441,15 @@ pt-BR:
         short_description: Descrição curta
         description: Descrição
         link: Link externo
+        request_to_administrators: Incluir no recurso um botão para solicitar o auxílio dos administradores
+        day_offset: Quer que a proposta seja ativada em quantos dias após a sua criação?
+        required_supports: Quantos apoios são necessários para que a proposta seja ativada?
+        order: Você pode informar a posição a ser mostrada ao usuário na lista de ações
         active: Ativo
         action_type: Tipo
+        action_type_proposed_action: "Ação proposta"
+        action_type_resource: "Recurso"
+        published_proposal: "Para propostas publicadas?"
       dashboard/administrator_task:
         source: Fonte
         user: Executado por
@@ -338,6 +459,15 @@ pt-BR:
       valuator:
         description: Descrição
         valuator_group_id: Grupo de avaliação
+        can_comment: Pode comentar
+        can_edit_dossier: Pode editar relatórios
+      valuator_group:
+        name: "Nome do grupo"
+      local_census_record:
+        document_type: Tipo de documento
+        document_number: Número do documento
+        date_of_birth: Data de nascimento
+        postal_code: CEP
     errors:
       models:
         user:
@@ -380,8 +510,14 @@ pt-BR:
               invalid_date_range: deve ser em ou após a data de início
             debate_end_date:
               invalid_date_range: deve ser em ou após a data de início do debate
+            draft_end_date:
+              invalid_date_range: deve ser igual ou posterior à data de início
             allegations_end_date:
               invalid_date_range: deve ser igual ou posterior à data de início das alegações
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: não está incluído na lista, os números permitidos são 1 para RG, 2 para passaporte e 3 para RNE.
         proposal:
           attributes:
             tag_list:
@@ -413,7 +549,9 @@ pt-BR:
             valuation:
               cannot_comment_valuation: "Você não pode comentar uma avaliação"
       messages:
+        translations_too_short: É obrigatório oferecer no mínimo uma tradução
         record_invalid: "Validação falhou: %{errors}"
+        another_poll_active: Há outra votação ativa para o período em questão
         restrict_dependent_destroy:
           has_one: "Não é possível excluir registro, porque existe %{record} dependente"
           has_many: "Não é possível excluir registro porque existe %{record} dependente"

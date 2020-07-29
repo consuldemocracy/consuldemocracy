@@ -6,6 +6,7 @@ pt-BR:
         submit: Reenviar instruções
         title: Reenviar instruções de confirmação
       show:
+        instructions: Confirmando a conta para o email %{email}
         new_password_confirmation_label: Repita a senha de acesso
         new_password_label: Nova senha de acesso
         please_set_password: Por favor, escolha sua nova senha (isso permitirá que você faça o login com o e-mail acima)
@@ -49,6 +50,10 @@ pt-BR:
           title: Registar-se como uma organização ou coletivo
         success:
           back_to_index: Eu entendo; voltar à página principal
+          instructions_1: "<strong>Entraremos em contato em breve</strong> para confirmar que você realmente representa este coletivo."
+          instructions_2: Enquanto seu email <strong>é revisado</strong>, enviamos um link <strong>para confirmar sua conta</strong>.
+          instructions_3: Uma vez confirmado, você pode começar a participar como um coletivo não verificado.
+          thank_you: Obrigado por registrar seu coletivo no site. Agora ele ainda <strong>precisa ser verificado</strong>.
           title: Registro de organização / coletivo
     passwords:
       edit:
@@ -118,4 +123,7 @@ pt-BR:
           username_note: Nome que aparece junto a seus posts
         success:
           back_to_index: Eu entendo; voltar à página principal
+          instructions_1: <b>Verifique seu email</b>. Enviamos um <b>link para confirmar sua conta</b>.
+          instructions_2: Depois de confirmar, você pode começar a participar.
+          thank_you: Obrigado por se registrar no site. Agora é preciso <b>confirmar seu email</b>.
           title: Modifique seu email

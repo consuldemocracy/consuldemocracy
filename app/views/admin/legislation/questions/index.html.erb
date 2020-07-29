@@ -33,13 +33,11 @@
               <%= link_to question.title, edit_admin_legislation_process_question_path(@process, question) %>
             </td>
             <td>
-              <%= content_tag :ul do %>
+              <ul>
                 <% question.question_options.each do |question_option| %>
-                  <%= content_tag :li do %>
-                    <%= question_option.value %> (<%= question_option.answers_count %>)
-                  <% end %>
+                  <li><%= "#{question_option.value} (#{question_option.answers_count})" %></li>
                 <% end %>
-              <% end %>
+              </ul>
             </td>
             <td class="text-center"><%= question.answers_count %></td>
             <td class="text-center"><%= link_to question.comments.count, legislation_process_question_path(@process, question, anchor: "comments") %></td>
