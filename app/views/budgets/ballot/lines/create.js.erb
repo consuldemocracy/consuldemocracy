@@ -1,4 +1,4 @@
-$("#progress_bar").html("<%= j render("/budgets/ballot/progress_bar", ballot: @ballot) %>");
+$("#progress_bar").html("<%= j render("/budgets/ballot/progress_bar", ballot: @ballot, heading: @heading) %>");
 $("#sidebar").html("<%= j render("/budgets/investments/sidebar") %>");
 
 <%= render "refresh_ballots",
