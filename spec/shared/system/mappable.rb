@@ -79,6 +79,29 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_content "Map location can't be blank"
     end
 
+    describe "When restoring the page from browser history" do
+      scenario "map should not be duplicated", :js do
+        do_login_for user
+        visit send(mappable_new_path, arguments)
+
+        if management
+          click_link "Select user"
+
+          expect(page).to have_content "User management"
+        else
+          click_link "Help"
+
+          expect(page).to have_content "CONSUL is a platform for citizen participation"
+        end
+
+        go_back
+
+        within ".map_location" do
+          expect(page).to have_css(".leaflet-map-pane", count: 1)
+        end
+      end
+    end
+
     scenario "Skip map", :js do
       do_login_for user
       visit send(mappable_new_path, arguments)
