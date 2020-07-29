@@ -1,5 +1,6 @@
 sv:
   attributes:
+    geozone_id: "Område"
     results_enabled: "Visa resultat"
     stats_enabled: "Visa statistik"
     advanced_stats_enabled: "Visa avancerad statistik"
@@ -20,6 +21,9 @@ sv:
       milestone/status:
         one: "Budgetförslagets status"
         other: "Budgetförslagens status"
+      progress_bar:
+        one: "Förloppsindikator"
+        other: "Förloppsindikatorer"
       comment:
         one: "Kommentar"
         other: "Kommentarer"
@@ -131,6 +135,8 @@ sv:
         description_finished: "Beskrivning för när budgeten är avslutad"
         phase: "Fas"
         currency_symbol: "Valuta"
+      budget/translation:
+        name: "Namn"
       budget/investment:
         heading_id: "Område"
         title: "Titel"
@@ -141,6 +147,20 @@ sv:
         organization_name: "Organisation eller grupp i vars namn du lämnar förslaget"
         image: "Förklarande bild till förslaget"
         image_title: "Bildtext"
+        duration: "Tidsram"
+        feasibility_feasible: "Genomförbart"
+        feasibility_undecided: "Odefinierat"
+        feasibility_unfeasible: "Ej genomförbart"
+        incompatible: "Markera som oförenligt"
+        milestone_tag_list: "Milstolpe taggar"
+        price_explanation: "Kostnadsförklaring"
+        selected: "Markera som valda"
+        selected_true: "Vald"
+        selected_false: "Ej vald"
+        unfeasibility_explanation: "Förklaring av genomförbarhet"
+        valuation_finished: "Kostnadsberäkning avslutad"
+        valuator_ids: "Grupper"
+        valuation_tag_list: "Taggar"
       budget/investment/translation:
         title: "Titel"
         description: "Beskrivning"
@@ -151,36 +171,62 @@ sv:
         title: "Titel"
         description: "Beskrivning (frivilligt fält om projektets status har ställts in)"
         publication_date: "Publiceringsdatum"
+      milestone/translation:
+        description: "Beskrivning"
       milestone/status:
         name: "Namn"
         description: "Beskrivning (valfritt)"
       progress_bar:
         kind: "Typ"
         title: "Titel"
+        percentage: "Aktuellt framsteg"
       progress_bar/kind:
+        primary: "Primär"
         secondary: "Sekundär"
+      budget/group:
+        max_votable_headings: "Högst antal områden som användare kan rösta inom"
+      budget/group/translation:
+        name: "Gruppnamn"
       budget/heading:
+        latitude: "Latitud (frivilligt fält)"
+        longitude: "Longitud (frivilligt fält)"
         name: "Område"
         price: "Kostnad"
         population: "Befolkning"
+      budget/heading/translation:
+        name: "Områdes namn"
+      budget/phase:
+        enabled: "Fasen är aktiverad"
+        ends_at: "Slutdatum"
+        starts_at: "Startdatum"
+      budget/phase/translation:
+        description: "Beskrivning"
+        summary: "Sammanfattning"
       comment:
         body: "Kommentar"
         user: "Användare"
       debate:
         author: "Skribent"
         description: "Inlägg"
+        tag_list: "Ämnen"
         terms_of_service: "Användarvillkor"
         title: "Titel"
       debate/translation:
+        title: "Debatt-titel"
         description: "Inledande debatt-text"
       proposal:
         author: "Skribent"
         title: "Titel"
         question: "Fråga"
         description: "Beskrivning"
+        responsible_name: "Förslagslämnarens fullständiga namn"
+        selected: "Markera som valda"
         terms_of_service: "Användarvillkor"
+        video_url: "Extern video URL"
       proposal/translation:
+        title: "Förslagets titel"
         description: "Förslagstext"
+        summary: "Sammanfattning av förslaget"
         retired_explanation: "Förklaring"
       user:
         login: "E-postadress eller användarnamn"
@@ -189,10 +235,22 @@ sv:
         password_confirmation: "Bekräfta lösenord"
         password: "Lösenord"
         current_password: "Nuvarande lösenord"
+        email_digest: "Få en sammanfattning av aviseringar om förslag"
+        email_on_comment: "Meddela mig via e-post när någon kommenterar mina förslag eller debatter"
+        email_on_comment_reply: "Meddela mig via e-post när någon svarar på mina kommentarer"
+        email_on_direct_message: "Få e-post om direkta meddelanden"
+        newsletter: "Få relevanta uppdateringar om webbplatsen med e-post"
         official_position: "Titel"
+        official_position_badge: "Visa etikett för representant för staden"
         official_level: "Tjänstepersonnivå"
         phone_number: "Telefonnummer"
+        public_activity: "Visa min lista över aktiviteter offentligt"
+        public_interests: "Visa etiketterna för de ämnen jag följer offentligt"
+        recommended_debates: "Visa rekommenderade debatter"
         redeemable_code: "Mottagen bekräftelsekod"
+      direct_message:
+        title: "Titel"
+        body: "Meddelande"
       organization:
         name: "Organisationsnamn"
         responsible_name: "Representant för gruppen"
@@ -203,11 +261,17 @@ sv:
         geozone_restricted: "Begränsat till område"
         summary: "Sammanfattning"
         description: "Beskrivning"
+      active_poll/translation:
+        description: "Beskrivning"
+      poll/booth:
+        name: "Namn"
+        location: "Plats"
       poll/translation:
         name: "Namn"
         summary: "Sammanfattning"
         description: "Beskrivning"
       poll/question:
+        poll_id: "Omröstning"
         title: "Fråga"
         summary: "Sammanfattning"
         description: "Beskrivning"
@@ -217,6 +281,11 @@ sv:
       poll/ballot_sheet:
         data: CSV data
         poll_id: Omröstning
+      poll/shift:
+        task: "Åtgärd"
+      proposal_notification:
+        body: "Meddelande"
+        title: "Titel"
       signature_sheet:
         signable_type: "Typ av underskrifter"
         signable_id: "Förslagets ID"
@@ -227,6 +296,8 @@ sv:
         subtitle: Underrubrik
         slug: URL
         status: Status
+        status_draft: "Utkast"
+        status_published: "Publicerad"
         title: Titel
         updated_at: Uppdaterad
         more_info_flag: Visa i hjälpsidor
@@ -243,9 +314,20 @@ sv:
         name: Namn
         locale: språk
         body: Innehåll
+      tag:
+        name: "Skriv namnet på ämnet"
+      topic:
+        title: "Titel"
+        description: "Inledande text"
       banner:
         background_color: Bakgrundsfärg
         font_color: Teckenfärg
+        post_ended_at: "Slutdatum"
+        post_started_at: "Startdatum"
+        target_url: "Länk"
+      banner/translation:
+        title: "Titel"
+        description: "Beskrivning"
       legislation/process:
         title: Processens titel
         summary: Sammanfattning
@@ -265,17 +347,26 @@ sv:
         result_publication_date: Publiceringsdatum för resultat
         background_color: Bakgrundsfärg
         font_color: Teckenfärg
+        homepage_enabled: "Hemsida aktiverad"
       legislation/process/translation:
         title: Processens titel
         summary: Sammanfattning
         description: Beskrivning
         additional_info: Ytterligare information
+        homepage: "Beskrivning"
         milestones_summary: Sammanfattning
+      legislation/proposal:
+        description: "Förslagets text"
+        summary: "Sammanfattning av förslaget"
+        title: "Förslagets titel"
+        video_url: "Länk till extern video"
       legislation/draft_version:
         title: Titel på versionen
         body: Text
         changelog: Ändringar
         status: Status
+        status_draft: "Utkast"
+        status_published: "Publicerad"
         final_version: Slutversion
       legislation/draft_version/translation:
         title: Titel på versionen
@@ -284,6 +375,8 @@ sv:
       legislation/question:
         title: Titel
         question_options: Alternativ
+      legislation/question/translation:
+        title: Fråga
       legislation/question_option:
         value: Värde
       legislation/annotation:
@@ -322,6 +415,7 @@ sv:
         description: Beskrivning
         link_text: Länktext
         link_url: Länk-URL
+        columns: Antal kolumner
       widget/card/translation:
         label: Etikett (frivilligt fält)
         title: Titel
@@ -336,15 +430,21 @@ sv:
         link: Extern länk
         active: Aktiv
         action_type: Typ
+        action_type_resource: "Resurs"
       dashboard/administrator_task:
         source: Källa
+        user: Genomfört av
       link:
         label: Titel
         url: Länk
       valuator:
         description: Beskrivning
+        valuator_group_id: Bedömningsgrupp
+      valuator_group:
+        name: "Gruppnamn"
       local_census_record:
         document_type: Dokumenttyp
+        document_number: Dokumentnummer
         date_of_birth: Födelsedatum
         postal_code: Postkod
     errors:

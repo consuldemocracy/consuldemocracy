@@ -17,6 +17,9 @@ pt-BR:
     letter:
       alert:
         unconfirmed_code: Você ainda não inseriu o código de confirmação.
+      create:
+        flash:
+          success: Agradecemos por solicitar o <b>código de segurança máxima (necessário apenas para as votações finais)</b>. Em alguns dias, o enviaremos para o endereço registrado. Lembre-se que, se preferir, pode retirar seu código em qualquer %{offices}.
       edit:
         see_all: Ver propostas
         title: Carta solicitada
@@ -46,6 +49,7 @@ pt-BR:
         accept_terms_text_title: Eu aceito os termos e as condições de acesso ao Censo
         document_number: Número do documento
         document_number_help_title: Ajuda
+        document_number_help_text: "<strong>RG</strong>: 1234567890<br> <strong>Passaporte</strong>: XX123456<br> <strong>RNE</strong>: V565371-S"
         document_type:
           passport: Passaporte
           residence_card: Cartão de residência
@@ -69,6 +73,7 @@ pt-BR:
         title: Confirmação do código de segurança
       new:
         phone: Digite seu número de telefone para receber o código
+        phone_format: "<strong><em>(Exemplo: 6132345678 ou +556132345678)</em></strong>"
         phone_note: Nós apenas usamos seu número de telefone para enviá-lo um código, nunca para entrar em contato com você.
         phone_placeholder: "Exemplo: 612345678 ou +34612345678"
         submit_button: Enviar

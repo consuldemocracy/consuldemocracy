@@ -22,20 +22,10 @@
               <%= manager.email %>
             </td>
             <td>
-              <% if manager.persisted? %>
-                <%= link_to t("admin.managers.manager.delete"),
-                  admin_manager_path(manager),
-                  method: :delete,
-                  class: "button hollow alert expanded"
-                %>
-              <% else %>
-                <%= link_to t("admin.managers.manager.add"),
-                             { controller: "admin/managers",
-                               action: :create,
-                               user_id: manager.user_id },
-                               method: :post,
-                               class: "button success expanded" %>
-              <% end %>
+              <%= link_to t("admin.managers.manager.delete"),
+                admin_manager_path(manager),
+                method: :delete,
+                class: "button hollow alert expanded" %>
             </td>
           </tr>
         <% end %>

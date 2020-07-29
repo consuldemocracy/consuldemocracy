@@ -796,6 +796,14 @@ describe Budget::Investment do
 
         expect(investment.valuation_tag_list).to match_array(%w[Code Test Refactor])
       end
+
+      describe ".by_tag" do
+        it "does not return duplicate records for tags in different contexts" do
+          investment = create(:budget_investment, tag_list: ["Same"], valuation_tag_list: ["Same"])
+
+          expect(Budget::Investment.by_tag("Same")).to eq [investment]
+        end
+      end
     end
   end
 
@@ -1088,29 +1096,29 @@ describe Budget::Investment do
     let(:heading1) { create(:budget_heading, group: group) }
     let(:heading2) { create(:budget_heading, group: group) }
 
-    describe "heading_changed?" do
+    describe "saved_change_to_heading?" do
       it "returns true if budget is in balloting phase and heading has changed" do
         investment = create(:budget_investment, heading: heading1)
-        investment.heading = heading2
+        investment.update!(heading: heading2)
 
-        expect(investment.heading_changed?).to eq(true)
+        expect(investment.saved_change_to_heading?).to eq(true)
       end
 
       it "returns false if heading has not changed" do
-        investment = create(:budget_investment)
-        investment.heading = investment.heading
+        investment = create(:budget_investment, heading: heading1)
+        investment.update!(heading: heading1)
 
-        expect(investment.heading_changed?).to eq(false)
+        expect(investment.saved_change_to_heading?).to eq(false)
       end
 
       it "returns false if budget is not balloting phase" do
         Budget::Phase::PHASE_KINDS.reject { |phase| phase == "balloting" }.each do |phase|
           budget.update!(phase: phase)
-          investment = create(:budget_investment, budget: budget)
+          investment = create(:budget_investment, heading: heading1)
 
-          investment.heading = heading2
+          investment.update!(heading: heading2)
 
-          expect(investment.heading_changed?).to eq(false)
+          expect(investment.saved_change_to_heading?).to eq(false)
         end
       end
     end
@@ -1319,7 +1327,7 @@ describe Budget::Investment do
       let(:investment) { create(:budget_investment, :with_milestone_tags) }
 
       it "has milestone_tags" do
-        expect(investment.milestone_tag_list.count).to eq(1)
+        expect(investment.reload.milestone_tag_list.count).to eq(1)
       end
     end
   end

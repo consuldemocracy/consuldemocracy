@@ -48,6 +48,15 @@
                     <% end %>
                   </td>
                 </tr>
+                <tr>
+                  <td>
+                    <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; margin: 0; padding-bottom: 20px;">
+                      <%= sanitize(link_to(t("mailers.proposal_notification_digest.unfollow"),
+                          proposal_url(notification.notifiable.proposal),
+                          style: "color: #2895F1; text-decoration: none;")) %>
+                    </p>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </td>

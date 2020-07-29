@@ -1,5 +1,4 @@
 shared_examples "document validations" do |documentable_factory|
-  include DocumentsHelper
   include DocumentablesHelper
 
   let!(:document)               { build(:document, documentable_factory.to_sym) }

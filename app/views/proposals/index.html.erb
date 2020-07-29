@@ -12,7 +12,6 @@
   <% if [
           @search_terms,
           @advanced_search_terms,
-          @tag_filter,
           params[:retired].present?,
           params[:selected].present?
         ].any? %>
@@ -29,12 +28,6 @@
                 ) %>
               <% end %>
             <p>
-          <% elsif @tag_filter %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @proposals %>
-              <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
-            </p>
           <% elsif params[:retired].present? %>
             <h2><%= t("proposals.index.retired_proposals") %></h2>
           <% elsif params[:selected].present? %>
@@ -56,9 +49,7 @@
   <div class="row">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
-      <% if has_banners? %>
-        <%= render "shared/banner" %>
-      <% end %>
+      <%= render "shared/banner" %>
 
       <% if show_featured_proposals? %>
         <div id="featured-proposals" class="row featured-proposals">
@@ -112,7 +103,7 @@
         <% end %>
         <%= paginate @proposals %>
 
-        <% unless @search_terms || @advanced_search_terms || @tag_filter %>
+        <% unless @search_terms || @advanced_search_terms %>
           <div id="section_help" class="margin" data-magellan-target="section_help">
             <p class="lead">
               <strong><%= t("proposals.index.section_footer.title") %></strong>

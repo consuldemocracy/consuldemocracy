@@ -68,7 +68,7 @@ class Budget
         if enabled?
           next_enabled_phase&.update_column(:starts_at, ends_at)
           prev_enabled_phase&.update_column(:ends_at, starts_at)
-        elsif enabled_changed?
+        elsif saved_change_to_enabled?
           next_enabled_phase&.update_column(:starts_at, starts_at)
         end
       end

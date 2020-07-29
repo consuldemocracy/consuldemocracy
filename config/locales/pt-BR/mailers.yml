@@ -1,5 +1,6 @@
 pt-BR:
   mailers:
+    title: "Governo aberto"
     no_reply: "Esta mensagem foi enviada de um endereço de e-mail que não aceita respostas."
     comment:
       hi: Oi
@@ -10,6 +11,8 @@ pt-BR:
       manage_email_subscriptions: Para parar de receber esses e-mails altere suas configurações no
     email_verification:
       click_here_to_verify: este link
+      instructions_2: Este email visa verificar sua conta com <b>%{document_type} %{document_number}</b>. Se isto não lhe diz respeito, não clique no link anterior e ignore este email.
+      instructions: Para completar a verificação da sua conta de usuário, você deve clicar em %{verification_link}.
       subject: Confirme seu email
       thanks: Muito Obrigado.
       title: Confirme sua conta usando o seguinte link
@@ -32,6 +35,7 @@ pt-BR:
       unsubscribe_account: Minha conta
     direct_message_for_sender:
       subject: "Você recebeu uma nova mensagem privada"
+      title: "Você enviou uma nova mensagem particular para <strong>%{receiver}</strong> com o conteúdo:"
     user_invite:
       ignore: "Se você não solicitou este convite, não se preocupe, você pode ignorar este e-mail."
       text: "Obrigado por se inscrever para participar do %{org}! Em segundos você pode começar a participar das decisões de sua cidade, basta preencher o formulário abaixo:"
@@ -42,11 +46,15 @@ pt-BR:
     budget_investment_created:
       subject: "Obrigado por criar um investimento!"
       title: "Obrigado por criar um investimento!"
+      intro: "Olá, <strong>%{author}</strong>,"
+      text: "Obrigado por criar o seu investimento <strong>%{investment}</strong> para Orçamentos Participativos <strong>%{budget}</strong>."
+      follow: "Informaremos você sobre como o processo avança, o que você também pode acompanhar em <strong>%{link}</strong>."
       follow_link: "Orçamentos participativos"
       sincerely: "Atenciosamente"
       share: "Compartilhe seu projeto"
     budget_investment_unfeasible:
       hi: "Caro usuário,"
+      new: "Por tudo isso, nós convidamos você a elaborar um <strong>novo investimento</strong> que se ajuste às condições deste processo. Para isso, clique no link: %{url}."
       new_href: "novo projeto de investimento"
       sincerely: "Atenciosamente"
       sorry: "Desculpe o inconveniente e nós mais uma vez agradecemos pela sua valiosa participação."
@@ -64,12 +72,56 @@ pt-BR:
       thanks: "Obrigada novamente por participar."
       sincerely: "Atenciosamente"
     evaluation_comment:
+      subject: "Novo comentário de avaliação"
+      title: Novo comentário de avaliação para %{investment}
       hi: Oi
+      new_comment_by: Há um novo comentário de avaliação de <strong>%{commenter}</strong> no orçamento participativo %{investment}
+      commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
+      subject: "Mais novidades da sua proposta cidadã"
       hi: "Olá %{name},"
+      new_resource: "NOVO RECURSO DESBLOQUEADO"
+      introduction: "Como já sabe, no dia %{created_at_day} de %{created_at_month} você criou a proposta no modo rascunho %{title}."
+      text_1: "Sempre que quiser, você pode publicar neste link: %{link_to_published}. Caso ainda não saiba…"
+      text_2: "Aproveite a oportunidade! Aprenda, adicione outras pessoas com os mesmos interesses e prepare como difundir o que precisar para publicar definitivamente a sua proposta."
+      text_3: "E para acompanhar você neste desafio, temos novidades..."
+      text_4: "Dê uma olhada nesta NOVA AÇÃO recomendada:"
+      text_5: "A próxima ação recomendada é:"
+      footer_text: "Como sempre, entre no Painel de Propostas, e lhe diremos detalhadamente como utilizar esses recursos da melhor maneira."
+      dashboard_button: "Vá em frente. Descubra!"
     new_actions_notification_rake_published:
+      subject: "Mais novidades sobre sua proposta cidadã"
       hi: "Olá %{name},"
+      new_resource: "NOVO RECURSO DESBLOQUEADO"
+      introduction: "Como já sabe, no dia %{published_at_day} de %{published_at_month} você publicou a sua proposta %{title}."
+      text_1: "Você conseguiu %{votes_count} apoios até este momento Parabéns!"
+      text_2: "E agora você tem um novo recurso disponível para ir em frente."
+      text_3: "Faltam %{days_count} dias para que a sua proposta consiga os %{max_votes_count} apoios e vá à votação. Anime-se y continue anunciando. Ainda faltam ideias?"
+      text_4: "NOVA AÇÃO RECOMENDADA"
+      text_5: "Pois há mais. Veja a seguinte ação:"
+      footer_text: "Como sempre, entre no Painel de Propostas, e lhe diremos detalhadamente como utilizar esses recursos da melhor maneira."
+      dashboard_button: "Vá em frente. Descubra!"
     new_actions_notification_on_create:
+      subject: "O rascunho da sua proposta cidadã foi criado"
       hi: "Oi %{name}!"
+      introduction: "Sua proposta %{title} foi criada com sucesso."
+      text_1: "Aproveite que a sua proposta ainda não foi publicada e prepare-se para contatar muita gente."
+      text_2: "Quando a sua proposta cidadã estiver pronta para ser publicada, use este <a href='%{link}'>link</a>."
+      text_3: "Sabemos que criar uma proposta cativante para conseguir os apoios necessários pode ser complicado. Mas não se preocupe, pois podemos ajudar!"
+      text_4: "Você tem uma ferramenta que será a sua melhor aliada: o painel de Propostas Cidadãs."
+      list_1: "Acesse diariamente o painel da sua proposta para aproveitar os nossos recursos e dicas."
+      list_2: "Essas dicas, ações e recursos trarão ideias e também soluções práticas para conseguir lograr mais apoios e contar com uma comunidade mais ampla. Não se esqueça disso!"
+      text_5: "E para começar com motivação total,"
+      text_6: "aqui há vários recursos e toda uma lista de dicas que chegarão diariamente para preparar a divulgação!"
+      dashboard_button: "Vá em frente. Descubra!"
     new_actions_notification_on_published:
+      subject: "A sua proposta cidadã já foi publicada Continue divulgando!"
+      hi: "Parabéns, %{name}! A sua proposta %{title} foi criada com sucesso."
+      text_1: "E agora, obtenha os seus 100 apoios!"
       text_2: "Por que 100?"
+      text_3: "Nossa experiência nos diz que o primeiro dia é fundamental, pois além de ter a energia de lançar algo novo, por ser uma proposta recém-publicada, você contará com a importante visibilidade de estar entre as novas propostas em destaque."
+      text_4: "Consiga 100 apoios no primeiro dia, e você terá uma primeira comunidade para lhe dar respaldo."
+      text_7: "E para que você comece com todo o gás..."
+      text_8: "Aqui há um grande recurso à sua disposição!"
+      text_10: "Com certeza, há mais recursos disponíveis!"
+      dashboard_button: "Vá em frente. Descubra!"

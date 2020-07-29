@@ -83,16 +83,22 @@ ru:
           page_header: Страница
           rows:
             - 
+              key_column: 0
               page_column: Домой
             - 
+              key_column: 1
               page_column: Обсуждения проблем
             - 
+              key_column: 2
               page_column: Заявки
             - 
+              key_column: 3
               page_column: Голоса
             - 
+              key_column: 4
               page_column: Партисипаторные бюджеты
             - 
+              key_column: 5
               page_column: Законотворческие процессы
         browser_table:
           description: "В зависимости от используемых операционной системы и браузера, комбинация клавиш будет следующей:"
@@ -101,14 +107,19 @@ ru:
           key_header: Комбинация клавич
           rows:
             - 
+              browser_column: Explorer
               key_column: ALT + клавиша, затем ENTER
             - 
+              browser_column: Firefox
               key_column: ALT + CAPS + клавиша
             - 
+              browser_column: Chrome
               key_column: ALT + клавиша (CTRL + ALT + клавиша для MAC)
             - 
+              browser_column: Safari
               key_column: ALT + клавиша (CMD + клавиша для MAC)
             - 
+              browser_column: Opera
               key_column: CAPS + ESC + клавиша
       textsize:
         title: Размер текста
@@ -118,14 +129,19 @@ ru:
           action_header: Нужное действие
           rows:
             - 
+              browser_column: Explorer
               action_column: Вид > Размер текста
             - 
+              browser_column: Firefox
               action_column: Вид > Размер
             - 
+              browser_column: Chrome
               action_column: Настройки (картинка) > Опции > Расширенные > Веб содержимое > Размер текста
             - 
+              browser_column: Safari
               action_column: Вид > Приближение/Отдаление
             - 
+              browser_column: Opera
               action_column: Вид > масштаб
         browser_shortcuts_table:
           description: "Другой способ изменить размер текста - это использовать горячие клавиши, определенные в браузерах, в частности комбинация клавиш:"

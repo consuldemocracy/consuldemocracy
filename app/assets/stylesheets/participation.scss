@@ -1121,8 +1121,7 @@
   .share-supported {
 
     .ssb-twitter,
-    .ssb-facebook,
-    [class^="ssb-icon ssb-google"] {
+    .ssb-facebook {
       background: none;
       color: $text;
       height: rem-calc(33) !important;
@@ -1242,10 +1241,6 @@
 
     &.social-share-button-facebook:hover {
       color: #354f88;
-    }
-
-    &[class^="social-share-button-google"] {
-      color: #ce3e26;
     }
 
     &.social-share-button-telegram:hover {

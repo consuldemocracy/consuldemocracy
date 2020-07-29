@@ -1319,7 +1319,7 @@ da:
         incomplete_verifications: Ufærdige verificeringer
         polls: Afstemninger
       budgets:
-        supporting_phase: Støttefasen
+        supporting_phase: Støt de forslag der skal gå videre
         balloting_phase: Endelig afstemning
       budget_balloting:
         title: "Statistik over den endelige afstemning"

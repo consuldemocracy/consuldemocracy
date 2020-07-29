@@ -4,6 +4,9 @@ pt-BR:
       verification:
         residence: "Residência"
         sms: "SMS"
+      local_census_records/import:
+        one: Importação de registros do censo local
+        other: Importações de registros do censo local
     attributes:
       verification:
         residence:
@@ -16,7 +19,29 @@ pt-BR:
           confirmation_code: "Código de confirmação"
         email:
           recipient: "Email"
+      verification/letter:
+        email: "Email"
+        password: "Senha"
+        verification_code: "Código recebido por carta"
+      verification/management/document:
+        document_type: "Tipo de documento:"
+        document_number: "Número do documento"
+      verification/residence:
+        date_of_birth: "Data de nascimento"
+        document_type: "Tipo de documento"
+        postal_code: "CEP"
+      verification/sms:
+        confirmation_code: "Informe o código recebido pelo celular"
       officing/residence:
         document_type: "Tipo de documento"
         document_number: "Número do documento (incluindo as letras)"
         year_of_birth: "Ano de nascimento"
+      local_census_records/import:
+        file: Arquivo
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Formato de arquivo inválido. O formato permitido é: %{valid_extensions}."
+              headers: "Headers dos arquivos inválidos. Os headers devem ter os seguintes nomes: %{required_headers}."

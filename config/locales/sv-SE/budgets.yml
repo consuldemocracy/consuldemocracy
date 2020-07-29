@@ -7,6 +7,10 @@ sv:
         remaining: "Du har fortfarande <span>%{amount}</span> att spendera."
         no_balloted_group_yet: "Du har inte röstat i den här delen av budgeten än, rösta nu!"
         remove: Dra tillbaka din röst
+        voted:
+          one: "Du har röstat på <span>ett</span> budgetförslag."
+          other: "Du har röstat på <span>%{count}</span> budgetförslag."
+        voted_info: "Din röst är bekräftad!"
         voted_info_2: "Men du kan ändra din röst när som helst fram till att denna fasen stängt."
         zero: Du har inte röstat på några budgetförslag.
       reasons_for_not_balloting:
@@ -14,7 +18,9 @@ sv:
         not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
         organization: Organisationer kan inte rösta
         not_selected: Omarkerade budgetförslag kan inte stödjas
+        not_enough_money: "Du har redan använt hela din budget.<br><small>Kom ihåg att du kan %{change_ballot} när som helst</small>"
         no_ballots_allowed: Urvalsfasen är stängd
+        different_heading_assigned: "Du har redan röstat inom ett annat område: %{heading_link}"
         change_ballot: ändra dina röster
         casted_offline: Du har redan deltagit offline
     groups:
@@ -73,10 +79,17 @@ sv:
           button: Sök
           placeholder: Sök budgetförslag...
           title: Sök
+        search_results:
+          one: " som innehåller <strong>'%{search_term}'</strong>"
+          other: " som innehåller <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mina röster
+          voted:
+            one: "<strong>Du har röstat på ett förslag som kostar %{amount_spent}</strong>"
+            other: "<strong>Du har röstat på %{count} förslag som kostar %{amount_spent}</strong>"
           voted_info: Du kan %{link} när som helst under den här fasen. Du behöver inte spendera hela din budget.
           voted_info_link: ändra din röst
+          different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
           check_ballot_link: "kontrollera min omröstning"
           zero: Du har inte röstat på några budgetförslag i den här delen av budgeten.
@@ -96,6 +109,9 @@ sv:
         author_deleted: Användaren är borttagen
         price_explanation: Kostnadsförklaring
         unfeasibility_explanation: Förklaring till varför det inte är genomförbart
+        code: "Kod för budgetförslag: <strong>%{code}</strong>"
+        location: "Plats: <strong>%{location}</strong>"
+        organization_name: "Föreslås på uppdrag av: <strong>%{name}</strong>"
         share: Dela
         title: Budgetförslag
         supports: Stöd
@@ -104,7 +120,10 @@ sv:
         comments_tab: Kommentarer
         milestones_tab: Milstolpar
         author: Skribent
+        project_unfeasible: "Det här budgetförslaget <strong>har markerats som ej genomförbart</strong> och kommer inte gå vidare till omröstning."
+        project_selected: "Det här budgetförslaget <strong>har gått vidare</strong> till omröstning."
         project_winner: "Vinnande budgetförslag"
+        project_not_selected: "Det här budgetförslaget <strong>har inte gått vidare</strong> till omröstning."
         see_price_explanation: Kostnadsförklaring
       wrong_price_format: Endast heltal
       investment:
@@ -122,6 +141,7 @@ sv:
         give_support: Stöd
       header:
         check_ballot: Kontrollera min omröstning
+        different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
         change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
         check_ballot_link: "kontrollera min röster"
         price: "Det här området har en budget på"

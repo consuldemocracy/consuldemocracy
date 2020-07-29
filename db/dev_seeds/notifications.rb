@@ -4,10 +4,10 @@ section "Creating comment notifications" do
                             title: Faker::Lorem.sentence(3).truncate(60),
                             description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
                             tag_list: Tag.all.sample(3).join(","),
-                            geozone: Geozone.reorder("RANDOM()").first,
+                            geozone: Geozone.sample,
                             terms_of_service: "1")
 
-    comment = Comment.create!(user: User.reorder("RANDOM()").first,
+    comment = Comment.create!(user: User.sample,
                               body: Faker::Lorem.sentence,
                               commentable: debate)
 

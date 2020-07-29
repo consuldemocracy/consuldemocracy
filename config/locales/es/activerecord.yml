@@ -302,6 +302,7 @@ es:
         body: "Mensaje"
         title: "Título"
       signature_sheet:
+        title: "Título"
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
         document_numbers: "Números de documentos"
