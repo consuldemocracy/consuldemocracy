@@ -42,6 +42,15 @@ describe "Admin settings" do
 
       expect(page).not_to have_css("#admin-map.leaflet-container", visible: false)
     end
+
+    scenario "When `Map settings` tab content is shown map should be initialized" do
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#map-tab").click
+
+      expect(page).to have_css("#admin-map.leaflet-container", visible: true)
+    end
   end
 
   describe "Update map" do

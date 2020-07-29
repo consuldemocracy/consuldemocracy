@@ -1,6 +1,7 @@
 (function() {
   "use strict";
   App.Map = {
+    maps: [],
     initialize: function() {
       $("*[data-map]:visible").each(function() {
         App.Map.initializeMap(this);
@@ -88,6 +89,7 @@
       };
       mapCenterLatLng = new L.LatLng(mapCenterLatitude, mapCenterLongitude);
       map = L.map(element.id).setView(mapCenterLatLng, zoom);
+      App.Map.maps.push(map);
       L.tileLayer(mapTilesProvider, {
         attribution: mapAttribution
       }).addTo(map);
@@ -130,6 +132,18 @@
     },
     isNumeric: function(n) {
       return !isNaN(parseFloat(n)) && isFinite(n);
+    },
+    removeMaps: function() {
+      if (App.Map.maps.length === 0) {
+        return;
+      }
+      $.each(App.Map.maps, function(_, map) {
+        map.off();
+        map.remove();
+      });
+      App.Map.maps = [];
     }
   };
+
+  $(document).on("turbolinks:before-visit", App.Map.removeMaps);
 }).call(this);
