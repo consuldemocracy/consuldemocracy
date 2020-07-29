@@ -2,7 +2,7 @@
   "use strict";
   App.Map = {
     initialize: function() {
-      $("*[data-map]").each(function() {
+      $("*[data-map]:visible").each(function() {
         App.Map.initializeMap(this);
       });
       $(".js-toggle-map").on({

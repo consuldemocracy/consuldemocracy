@@ -30,6 +30,20 @@ describe "Admin settings" do
     expect(page).to have_content "Value updated"
   end
 
+  describe "Map settings initialization", :js do
+    before do
+      Setting["feature.map"] = true
+    end
+
+    scenario "When `Map settings` tab content is hidden map should not be initialized" do
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+
+      expect(page).not_to have_css("#admin-map.leaflet-container", visible: false)
+    end
+  end
+
   describe "Update map" do
     scenario "Should not be able when map feature deactivated" do
       Setting["feature.map"] = false
