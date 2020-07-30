@@ -3,8 +3,6 @@ ka:
     ballots:
       show:
         title: თქვენი ბიულეტენი
-        amount_spent: დახარჯული თანხის რაოდენობა
-        remaining: "თქვენ დაგრჩათ <span>%{amount}</span> დასაბანდებლად."
         no_balloted_group_yet: "ამ ჯგუფისთვის ჯერ ხმა არ მიგიციათ, ამის გაკეთება ახლა შეგიძლიათ!"
         remove: ხმის წაშლა
         voted:
@@ -84,11 +82,6 @@ ka:
           other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: ჩემი ბიულეტენი
-          voted:
-            one: "<strong>თქვენ ხმა მიეცით ერთ ინიციატივას ღირებულებით %{amount_spent}</strong>"
-            other: "<strong>თქვენ ხმა მიეცით %{count} ინიციატივას ღირებულებით %{amount_spent}</strong>"
-          voted_info: თქვენ შეგიძლიათ %{link} ნებისმიერ დროს, სანამ ფაზა არ დაიხურება. საჭირო არ არის მთელი თანხის დახარჯვა.
-          voted_info_link: ხმის შეცვლა
           different_heading_assigned: "თქვენ უკვე მიეცით ხმა სხვა რუბრიკაზე: %{heading_link}"
           change_ballot: "თუ გადაწყვეტილებას შეცვლით, შეგიძლიათ %{check_ballot}-ში ხმების გაუქმება და თავიდან დაწყება."
           check_ballot_link: "მონიშნეთ და დაადასტურეთ ბიულეტენი"
