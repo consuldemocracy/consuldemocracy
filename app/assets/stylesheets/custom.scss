@@ -2138,6 +2138,11 @@ footer {
 
 .poll-question-answers {
 
+  span,
+  a {
+    width: 100%;
+  }
+
   .button {
 
     &.hollow {
