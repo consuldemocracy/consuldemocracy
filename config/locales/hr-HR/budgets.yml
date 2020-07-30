@@ -3,8 +3,6 @@ hr:
     ballots:
       show:
         title: Vaš glas
-        amount_spent: Potrošena količina
-        remaining: "Vi još morate<span>%{amount}</span> investirati."
         no_balloted_group_yet: "Još niste glasovali u ovoj grupi, glasujte!"
         remove: Ukloni glas
         voted:
@@ -86,12 +84,6 @@ hr:
           other: " sadrži termine <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Moj glas
-          voted:
-            one: "<strong>Glasovali ste za prijedlog u iznosu od %{amount_spent}</strong>"
-            few: "<strong>Glasovali ste za %{count} prijedloga u iznosu od %{amount_spent}</strong>"
-            other: "<strong>Glasovali ste za %{count} prijedloga u iznosu od %{amount_spent}</strong>"
-          voted_info: Vi možete %{link} u bilo koje vrijeme dok se ne završi ova faza. Nema potrebe da se potroši sav dostupan novac.
-          voted_info_link: izmjeni svoj glas
           different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
           change_ballot: "Ako se predomislite možete ukloniti vaš glas u %{check_ballot} i započeti ponovno."
           check_ballot_link: "provjeri i potvrdi moj glas"
