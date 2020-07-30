@@ -34,6 +34,10 @@ class Budget::VotingStyles::Base
            amount: formatted_amount_limit(heading))
   end
 
+  def percentage_spent(heading)
+    100.0 * amount_spent(heading) / amount_limit(heading)
+  end
+
   private
 
     def investments(heading)
