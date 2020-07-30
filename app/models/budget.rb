@@ -163,10 +163,6 @@ class Budget < ApplicationRecord
     formatted_amount(heading_price(heading))
   end
 
-  def formatted_heading_amount_spent(heading)
-    formatted_amount(amount_spent(heading))
-  end
-
   def investments_orders
     case phase
     when "accepting", "reviewing"

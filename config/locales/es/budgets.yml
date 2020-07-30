@@ -3,8 +3,12 @@ es:
     ballots:
       show:
         title: Mis votos
-        amount_spent: Coste total
-        remaining: "Te quedan <span>%{amount}</span> para invertir"
+        amount_available:
+          knapsack: "Te quedan <span>%{amount}</span> para invertir"
+        amount_spent:
+          knapsack: "Coste total <span>%{amount}</span>"
+        amount_limit:
+          knapsack: "%{amount}"
         no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
         remove: Quitar voto
         voted:
@@ -84,11 +88,13 @@ es:
           other: " que contienen <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mis votos
-          voted:
-            one: "<strong>Has votado un proyecto por un valor de %{amount_spent}</strong>"
-            other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
-          voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
-          voted_info_link: cambiar tus votos
+          voted_info:
+            knapsack:
+              one: "<strong>Has votado un proyecto por un valor de %{amount_spent}</strong>"
+              other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
+          change_vote_info:
+            knapsack: "Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible."
+          change_vote_link: "cambiar tus votos"
           different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
           check_ballot_link: "revisar y confirmar mis votos"
