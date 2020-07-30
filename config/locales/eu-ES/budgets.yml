@@ -3,8 +3,6 @@ eu:
     ballots:
       show:
         title: Nire bozkak
-        amount_spent: Kostu guztia
-        remaining: "Inbertitzeko <span>%{amount}</span> falta zazizkizu"
         no_balloted_group_yet: "Oraindik ez duzu talde honetako proiekturik bozkatu, bozka ezazu!"
         remove: Bozka kendu
         zero: Oraindik ez duzu gastu proiekturik bozkatu.
@@ -72,8 +70,6 @@ eu:
           title: Bilatu
         sidebar:
           my_ballot: Nire bozkak
-          voted_info: Fasea hau itxi arte, edozein momentutan %{link} dezakezu. Ez da beharrezkoa eskuragarri duzun diru guztia gastatzea.
-          voted_info_link: zure bozkak aldatu
           change_ballot: "Iritzia aldatu ezkero zure bozkak aldatu ditzakezu %{check_ballot}-(e)n eta berriz hasi zaitezke."
           check_ballot_link: "Nire bozkak berrikusi"
           zero: Oraindik ez duzu arrekontu sail honetako gastu proiekturik bozkatu.
