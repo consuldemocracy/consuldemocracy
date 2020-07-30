@@ -3,8 +3,6 @@ sq:
     ballots:
       show:
         title: Votimi juaj
-        amount_spent: Shuma e shpenzuar
-        remaining: "Ju keni ende <span>%{amount}</span> për të investuar."
         no_balloted_group_yet: "Ju nuk keni votuar ende për këtë grup, shkoni të votoni!"
         remove: Hiq voten
         zero: Ju nuk keni votuar në asnjë projekt investimi.
@@ -73,8 +71,6 @@ sq:
           title: Kërko
         sidebar:
           my_ballot: Votimi im
-          voted_info: Ti mundesh %{link}  në çdo kohë deri në fund të kësaj faze. Nuk ka nevojë të harxhoni të gjitha paratë në dispozicion.
-          voted_info_link: Ndryshoni votat tuaja
           change_ballot: "Nëse ndryshoni mendjen tuaj, ju mund të hiqni votat tuaja në %{check_ballot} dhe të filloni përsëri."
           check_ballot_link: "Kontrolloni votimin tim"
           zero: Ju nuk keni votuar në asnjë projekt investimi në këtë grup
