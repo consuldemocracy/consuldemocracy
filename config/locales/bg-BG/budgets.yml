@@ -3,8 +3,6 @@ bg:
     ballots:
       show:
         title: Вашата бюлетина
-        amount_spent: Изразходвана сума
-        remaining: "Все още имате <span>%{amount}</span> да инвестирате."
         no_balloted_group_yet: "Все още не сте гласували за тази група, отидете да гласувате!"
         remove: Премахване на вота
         voted:
@@ -84,11 +82,6 @@ bg:
           other: "съдържащи термина <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Моята бюлетина
-          voted:
-            one: "<strong>Гласувахте за едно предложение с цена от %{amount_spent}</strong>"
-            other: "<strong>Гласувахте %{count} предложения с цена %{amount_spent}</strong>"
-          voted_info: Можете да% {link} по всяко време до края на тази фаза. Няма нужда да харчите всички налични пари.
-          voted_info_link: променете гласа си
           different_heading_assigned: "Имате активни гласове в друга рубрика: %{heading_link}"
           change_ballot: "Ако промените решението си, можете да премахнете гласовете си в% {check_ballot} и да започнете отново."
           check_ballot_link: "провери и потвърди моята бюлетина"
