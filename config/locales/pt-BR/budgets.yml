@@ -3,6 +3,12 @@ pt:
     ballots:
       show:
         title: Sua cédula
+        amount_available:
+          knapsack: "Você ainda tem <span>%{amount}</span> para investir."
+        amount_spent:
+          knapsack: "Total gasto <span>%{amount}</span>"
+        amount_limit:
+          knapsack: "%{amount}"
         no_balloted_group_yet: "Você ainda não votou neste grupo, vote!"
         remove: Remover voto
         voted:
@@ -82,6 +88,13 @@ pt:
           other: " contendo o termo <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Minha cédula
+          voted_info:
+            knapsack:
+              one: "<strong>Você votou em uma proposta com um custo de %{amount_spent}</strong>"
+              other: "<strong>Você votou em %{count} propostas com um custo de %{amount_spent}</strong>"
+          change_vote_info:
+            knapsack: "Você pode %{link} a qualquer momento até o encerramento desta fase. Não há necessidade de gastar todo o dinheiro disponível."
+          change_vote_link: "mudar seu voto"
           different_heading_assigned: "Você tem votos ativos num título diferente: %{heading_link}"
           change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
           check_ballot_link: "verificar minha cédula"
