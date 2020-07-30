@@ -3,8 +3,6 @@ da:
     ballots:
       show:
         title: Din stemme
-        amount_spent: Opbrugt beløb
-        remaining: "Du har stadig <span>%{amount}</span> at investere for."
         no_balloted_group_yet: "Du har ikke stemt på denne gruppe endnu, så stem stem stem!"
         remove: Fjern din stemme
         voted:
@@ -84,11 +82,6 @@ da:
           other: " som indeholder <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Min stemme
-          voted:
-            one: "<strong>Du har stemt på et forslag med en værdi af %{amount_spent}</strong>"
-            other: "<strong>Du har stemt på %{count} forslag med en værdi af %{amount_spent}</strong>"
-          voted_info: Du kan %{link} på ethvert tidspunkt inden denne fase afsluttes. Det er ikke nødvendigt at bruge alle de penge, der er til rådighed.
-          voted_info_link: ændre din stemme
           different_heading_assigned: "Du har aktive stemmer i et andet budget: %{heading_link}"
           change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
           check_ballot_link: "kontroller og bekræft min afstemning"
