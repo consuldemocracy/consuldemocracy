@@ -3,8 +3,6 @@ sr:
     ballots:
       show:
         title: Ваш глас
-        amount_spent: Потрошена количина
-        remaining: "Ви још морате <span>%{amount}</span> инвестирати."
         no_balloted_group_yet: "Још увек нисте гласали за ову групу, гласајте!"
         remove: Уклоните глас
         voted:
@@ -86,12 +84,6 @@ sr:
           other: " садржи термине <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Моје гласање
-          voted:
-            one: "<strong>Гласали сте један предлог са ценом од %{amount_spent}</strong>"
-            few: "<strong>Гласали сте %{count} предлога са ценом од %{amount_spent}</strong>"
-            other: "<strong>Изгласали сте %{count} предлога у износу од of %{amount_spent}</strong>"
-          voted_info: Можете %{link} у било које време све до затварања ове фазе. Нема потребе да трошите сав преостали новац.
-          voted_info_link: промените Ваш глас
           different_heading_assigned: "Имате активна гласања у другом наслову: %{heading_link}"
           change_ballot: "Уколико промените Ваше мишљење можете променити свој глас у %{check_ballot} и започети поново."
           check_ballot_link: "провери и потврди моје гласање"
