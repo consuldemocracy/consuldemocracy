@@ -3,8 +3,6 @@ oc:
     ballots:
       show:
         title: Los mieus vòts
-        amount_spent: Còst total
-        remaining: "Te demòran <span>%{amount}</span> per invertir"
         no_balloted_group_yet: "As votat pas encara de projèctes d'aquel grop, vòta!"
         remove: Levar vòt
         voted:
@@ -84,11 +82,6 @@ oc:
           other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Los mieus vòts
-          voted:
-            one: "<strong>Avètz votat una proposicion amb un còst de %{amount_spent}</strong>"
-            other: "<strong>As votat %{count} de proposicions amb un còst de %{amount_spent}</strong>"
-          voted_info: Pòdes %{link} en quin moment que siá fins al barrament d'aquela fasa. Fa pas fauta que gastas totes los sòus disponibles.
-          voted_info_link: cambiar los tieus vòts
           different_heading_assigned: "Avètz de vòts actius en un autre títol: %{heading_link}"
           change_ballot: "Se càmbias d'opinion pòdes esborrar los tieus vòts en %{check_ballot} e tornar a començar."
           check_ballot_link: "revisar los mieus vòts"
