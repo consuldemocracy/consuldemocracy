@@ -3,8 +3,6 @@ it:
     ballots:
       show:
         title: Il tuo voto
-        amount_spent: Importo speso
-        remaining: "Hai ancora <span>%{amount}</span> da investire."
         no_balloted_group_yet: "Non hai ancora votato in questo gruppo, vota!"
         remove: Rimuovere il voto
         voted:
@@ -81,8 +79,6 @@ it:
           title: Ricercare
         sidebar:
           my_ballot: I miei voti
-          voted_info: È possibile %{link} in qualsiasi momento fino alla fine di questa fase. Non è necessario spendere tutti i fondi disponibili.
-          voted_info_link: cambiare il tuo voto
           change_ballot: "Se cambi idea è possibile cancellare il tuo voto in %{check_ballot} e ricominciare da capo."
           check_ballot_link: "controllare il mio voto"
           zero: Non hai ancora votato nessun progetto di investimento in questo gruppo.
