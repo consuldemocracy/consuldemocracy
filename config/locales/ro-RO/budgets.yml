@@ -3,8 +3,6 @@ ro:
     ballots:
       show:
         title: Votul tău
-        amount_spent: Suma cheltuită
-        remaining: "Mai aveți <span>%{amount}</span> de investit."
         no_balloted_group_yet: "Încă nu ați votat în acest grup, mergeți să votați!"
         remove: Înlătură vot
         voted:
@@ -86,12 +84,6 @@ ro:
           other: " conține termenii <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Votul meu
-          voted:
-            one: "<strong>Ați votat o propunere de proiect în valoare de %{amount_spent}</strong>"
-            few: "<strong>Ați votat %{count} propuneri de proiect în valoare de %{amount_spent}</strong>"
-            other: "<strong>Ați votat %{count} propuneri de proiect în valoare de %{amount_spent}</strong>"
-          voted_info: Puteți %{link} oricând până la închiderea acestei etape. Nu trebuie să cheltuiți toți banii valabili.
-          voted_info_link: schimbă-ți votul
           different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
           change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
           check_ballot_link: "verifică și confirmă votul"
