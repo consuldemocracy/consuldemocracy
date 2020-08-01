@@ -22,7 +22,12 @@ nl:
           open: "Inspraak"
           past: "Afgerond"
         section_header:
+          icon_alt: "Inspraak icoon"
+          title: "Inspraak"
+          help: "Hulp bij inspraak"
           description: "Dit zijn de huidige plannen van de gemeente. Afhankelijk van het soort plan kan je opmerkingen maken op het document, discussies starten of voorstellen indienen."
+        section_footer:
+          title: "Hulp bij inspraak"
       process:
         see_latest_comments: "Bekijk plan"
       shared:
