@@ -200,7 +200,7 @@ describe "Proposals" do
     end
   end
 
-  context "Show on mobile screens" do
+  describe "Show sticky support button on mobile screens", :js do
     let!(:window_size) { Capybara.current_window.size }
 
     before do
@@ -211,9 +211,22 @@ describe "Proposals" do
       Capybara.current_window.resize_to(*window_size)
     end
 
-    scenario "Show support button sticky at bottom", :js do
+    scenario "On a first visit" do
       proposal = create(:proposal)
       visit proposal_path(proposal)
+
+      within("#proposal_sticky") do
+        expect(page).to have_css(".is-stuck")
+        expect(page).not_to have_css(".is-anchored")
+      end
+    end
+
+    scenario "After visiting another page" do
+      proposal = create(:proposal)
+
+      visit proposal_path(proposal)
+      click_link "Go back"
+      click_link proposal.title
 
       within("#proposal_sticky") do
         expect(page).to have_css(".is-stuck")
