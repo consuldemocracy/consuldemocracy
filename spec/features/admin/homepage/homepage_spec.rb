@@ -135,6 +135,27 @@ describe "Homepage" do
       end
     end
 
+    scenario "Budget phase do not show links on phase description", :js do
+      budget = create(:budget)
+
+      visit admin_homepage_path
+
+      within("#widget_feed_#{budgets_feed.id}") do
+        select "1", from: "widget_feed_limit"
+        click_button "Enable"
+      end
+
+      budget.current_phase.update!(description: "<p>Description of the phase with a link to "\
+                                                "<a href=\"https://consul.dev\">CONSUL website</a>.</p>")
+
+      visit root_path
+
+      within("#feed_budgets") do
+        expect(page).to have_content("Description of the phase with a link to CONSUL website")
+        expect(page).not_to have_link("CONSUL website")
+      end
+    end
+
     xscenario "Deactivate"
   end
 
