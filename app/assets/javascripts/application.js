@@ -166,4 +166,11 @@ var initialize_modules = function() {
   App.BudgetEditAssociations.initialize();
 };
 
+var destroy_non_idempotent_modules = function() {
+  "use strict";
+
+  App.HTMLEditor.destroy();
+};
+
 $(document).on("turbolinks:load", initialize_modules);
+$(document).on("turbolinks:before-cache", destroy_non_idempotent_modules);
