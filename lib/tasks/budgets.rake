@@ -27,7 +27,7 @@ namespace :budgets do
     Budget.where(phase: "drafting").each do |budget|
       budget.update!(phase: "informing", published: false)
     end
-    if Budget.where(phase: "drafting").empty?
+    if Budget.where(phase: "drafting").present?
       Budget::Phase.where(kind: "drafting").destroy_all
     end
   end
