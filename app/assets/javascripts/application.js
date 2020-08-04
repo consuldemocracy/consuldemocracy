@@ -170,7 +170,6 @@ $(function() {
   "use strict";
 
   Turbolinks.enableProgressBar();
-
-  $(document).ready(initialize_modules);
-  $(document).on("page:load", initialize_modules);
 });
+$(document).ready(initialize_modules);
+$(document).on("page:load", initialize_modules);
