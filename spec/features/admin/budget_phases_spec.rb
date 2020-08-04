@@ -42,7 +42,7 @@ describe "Admin budget phases" do
 
       within "#budget_phase_#{phase.id}" do
         expect(page).to have_content "My phase custom name"
-        expect(page).not_to have_content "Accepting projects"
+        expect(page).to have_content "(Accepting projects)"
       end
     end
 

@@ -12,7 +12,8 @@
       <tr id="<%= dom_id(phase) %>" class="phase">
         <td>
           <% if phase.name.present? %>
-            <%= phase.name %>
+            <strong><%= phase.name %></strong><br>
+            <small>(<%= t("budgets.phase.#{phase.kind}") %>)</small>
           <% else %>
             <%= t("budgets.phase.#{phase.kind}") %>
           <% end %>
