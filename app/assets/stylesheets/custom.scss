@@ -2348,23 +2348,4 @@ footer {
     margin: 0;
     margin-bottom: $line-height / 2;
   }
-
-  .footer {
-
-    @include breakpoint(medium) {
-      position: relative;
-
-      &::before {
-        background-image: image-url("auth_bg_footer.png");
-        background-repeat: no-repeat;
-        content: "";
-        height: 240px;
-        position: absolute;
-        right: 15%;
-        top: -240px;
-        width: 800px;
-        z-index: -1;
-      }
-    }
-  }
 }
