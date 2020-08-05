@@ -38,7 +38,7 @@ nl:
       reviewing_ballots: "Stemmen tellen"
       finished: "De uitslag"
     index:
-      title: "Burgerbegroting"
+      title: "Ideeën"
       map: "Alle ideeën op de kaart"
       current_phase: "Huidige fase"
       section_header:
@@ -62,7 +62,7 @@ nl:
       not_selected_investment_proyects: "Niet voor stemmen geselecteerde ideeën bekijken"
       see_results: "Bekijk de uitslag"
       finished_budgets: "Afgeronde processen"
-      all_phases: "Fases burgerbegroting"
+      all_phases: "Fases"
       next_phase: "Volgende fase"
       prev_phase: "Vorige fase"
       empty_budgets: "Er zijn geen budgetten"
