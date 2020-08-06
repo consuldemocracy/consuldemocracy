@@ -312,8 +312,6 @@ hr:
       sign_in: Ulogiraj se s Twitterom
       sign_up: Prijavi se s Twitterom
       name: Twitter
-    info_sign_in: "Ulogiraj se s:"
-    info_sign_up: "Prijavi se s:"
     or_fill: "Ili ispunite sljedeći obrazac:"
   proposals:
     create:
