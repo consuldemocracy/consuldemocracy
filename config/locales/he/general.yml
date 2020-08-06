@@ -306,8 +306,6 @@ he:
       sign_in: התחברות באמצעות טוויטר
       sign_up: הרשמה באמצעות טוויטר
       name: טוויטר
-    info_sign_in: "התחברות באמצעות:"
-    info_sign_up: "הרשמה באמצעות:"
     or_fill: "או דרך מילוי הטופס הבא:"
   proposals:
     create:
