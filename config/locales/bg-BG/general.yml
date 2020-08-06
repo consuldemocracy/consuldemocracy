@@ -289,8 +289,6 @@ bg:
       sign_up: Влезте с Wordpress
     twitter:
       sign_in: Влезте с Twitter
-    info_sign_in: "Влезте с:"
-    info_sign_up: "Влезте с:"
     or_fill: "или попълнете следния формуляр:"
   proposals:
     create:
