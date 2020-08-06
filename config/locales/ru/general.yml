@@ -301,8 +301,6 @@ ru:
       sign_in: Войти при помощи Twitter
       sign_up: Зарегистрироваться при помощи Twitter
       name: Twitter
-    info_sign_in: "Войти при помощи:"
-    info_sign_up: "Зарегистрироваться при помощи:"
     or_fill: "Или заполните следующую форму:"
   proposals:
     create:
