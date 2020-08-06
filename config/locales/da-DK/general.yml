@@ -299,8 +299,6 @@ da:
       sign_in: Log ind med Twitter
       sign_up: Tilmeld dig via Twitter
       name: Twitter
-    info_sign_in: "Log ind med:"
-    info_sign_up: "Tilmeld dig med:"
     or_fill: "Eller udfyld nedenstående formular:"
   proposals:
     create:
