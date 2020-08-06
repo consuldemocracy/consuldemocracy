@@ -237,8 +237,6 @@ es-PE:
     twitter:
       sign_in: Iniciar sessão com o Twitter
       sign_up: Inscrever-se com o Twitter
-    info_sign_in: "Entra con:"
-    info_sign_up: "Regístrate con:"
     or_fill: "O rellena el siguiente formulario:"
   proposals:
     create:
