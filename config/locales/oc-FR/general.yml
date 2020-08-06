@@ -299,8 +299,6 @@ oc:
       sign_in: Dintra amb Twitter
       sign_up: Enregistra-te amb Twitter
       name: Twitter
-    info_sign_in: "Dintra amb:"
-    info_sign_up: "Enregistra-te amb:"
     or_fill: "O ramplís lo seguent formulari:"
   proposals:
     create:
