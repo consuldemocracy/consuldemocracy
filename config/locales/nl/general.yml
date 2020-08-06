@@ -259,8 +259,6 @@ nl:
       sign_in: Log in via Twitter
       sign_up: Registreer via Twitter
       name: Twitter
-    info_sign_in: "Log in via:"
-    info_sign_up: "Registreer via:"
     or_fill: "Of vul het volgende in:"
   proposals:
     create:
