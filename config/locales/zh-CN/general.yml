@@ -249,8 +249,6 @@ zh-CN:
       sign_in: 用Twitter登录
       sign_up: 用Twitter注册
       name: Twitter
-    info_sign_in: "登录用："
-    info_sign_up: "注册用："
     or_fill: "或者填写以下表格："
   proposals:
     create:
