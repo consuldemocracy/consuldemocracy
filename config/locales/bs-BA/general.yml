@@ -284,8 +284,6 @@ bs:
       sign_in: Prijava preko Twittera
       sign_up: Otvori nalog preko Twittera
       name: Twitter
-    info_sign_in: "Prijavi se preko:"
-    info_sign_up: "Otvori nalog preko:"
     or_fill: "Ili ispuni ovaj formular:"
   proposals:
     create:
