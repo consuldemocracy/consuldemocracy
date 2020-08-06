@@ -1,522 +1,320 @@
-el:
-  attributes:
-    geozone_id: "Πεδίο Δράσεως"
-    results_enabled: "Εμφάνιση αποτελεσμάτων"
-    stats_enabled: "Εμφάνιση στατιστικών στοιχείων"
-    advanced_stats_enabled: "Εμφάνιση σύνθετων στατιστικών στοιχείων"
+eu:
   activerecord:
     models:
       activity:
-        one: "Δραστηριότητα"
-        other: "Δραστηριότητα"
+        one: "jarduera"
+        other: "jarduerak"
       budget:
-        one: "Προϋπολογισμός"
-        other: "Προϋπολογισμός"
+        one: "Partaidetzazko aurrekontua"
+        other: "Partaidetzazko aurrekontuak"
       budget/investment:
-        one: "Επένδυση"
-        other: "Επένδυση"
-      milestone:
-        one: "Ορόσημο"
-        other: "Ορόσημο"
-      milestone/status:
-        one: "Κατάσταση Ορόσημου"
-        other: "Κατάσταση Ορόσημου"
-      progress_bar:
-        one: "Γραμμή προόδου"
-        other: "Γραμμή προόδου"
+        one: "Gastu proiektua"
+        other: "Gastu proiektuak"
       comment:
-        one: "Σχόλιο"
-        other: "Σχόλιο"
+        one: "Iruzkina"
+        other: "Iruzkinak"
       debate:
-        one: "Συζήτηση"
-        other: "Συζήτηση"
+        one: "Eztabaida"
+        other: "Eztabaidak"
       tag:
-        one: "Ετικέτα"
-        other: "Ετικέτα"
+        one: "Gaia"
+        other: "Gaiak"
       user:
-        one: "Χρήστης"
-        other: "Χρήστης"
+        one: "Erabiltzailea"
+        other: "Erabiltzaileak"
       moderator:
-        one: "Συντονιστής"
-        other: "Συντονιστές"
+        one: "Moderatzailea"
+        other: "Moderatzaileak"
       administrator:
-        one: "Διαχειριστής"
-        other: "Διαχειριστές"
+        one: "Administratzailea"
+        other: "Administratzaileak"
       valuator:
-        one: "Αξιολογητής"
-        other: "Αξιολογητής"
+        one: "Ebaluatzailea"
+        other: "Ebaluatzaileak"
       valuator_group:
-        one: "Ομάδα αξιολόγησης"
-        other: "Ομάδες αξιολόγησης"
+        one: "Ebaluatzaile taldea"
+        other: "Ebaluatzaile taldeak"
       manager:
-        one: "Υπεύθυνος"
-        other: "Υπεύθυνος"
+        one: " Kudeatzaile"
+        other: " Kudeatzaileak"
       newsletter:
-        one: "Ενημερωτικό δελτίο"
-        other: "Ενημερωτικό δελτίο"
+        one: "Albiste-berria"
+        other: "Albiste-berriak"
       vote:
-        one: "Ψήφος"
-        other: "Ψήφος"
+        one: "Bozka"
+        other: "Bozkak"
       organization:
-        one: "Οργανισμός"
-        other: "Οργανισμός"
+        one: "Erakunde"
+        other: "Erakundeak"
       poll/booth:
-        one: "Περίπτερο"
-        other: "Περίπτερο"
+        one: "hautetsontzia"
+        other: "hautetsontziak"
       poll/officer:
-        one: "Λειτουργός"
-        other: "Λειτουργός"
-      poll/ballot_sheet:
-        one: Φύλλο ψηφοφορίας
-        other: Φύλλα ψηφοφορίας
+        one: "mahaiburua"
+        other: "mahaiburuak"
       proposal:
-        one: "Πρόταση πολίτη"
-        other: "Προτάσεις πολιτών"
+        one: "Herri proposamena"
+        other: "Herri proposamenak"
       site_customization/page:
-        one: Προσαρμοσμένη σελίδα
-        other: Προσαρμοσμένες σελίδες
+        one: Orria
+        other: Orriak
       site_customization/image:
-        one: Προσαρμοσμένη εικόνα
-        other: Προσαρμοσμένες εικόνες
+        one: Irudia
+        other: Irudiak
       site_customization/content_block:
-        one: Προσαρμοσμένο μπλοκ περιεχομένου
-        other: Προσαρμοσμένο περιεχόμενο μπλοκς
-      document:
-        one: Έγγραφο
-        other: Έγγραφο
+        one: Bloke
+        other: Blokeak
       legislation/process:
-        one: "Διαδικασία"
-        other: "Διαδικασίες"
-      legislation/proposal:
-        one: "Πρόταση"
-        other: "Προτάσεις"
+        one: "Prozesu"
+        other: "Prozesuak"
       legislation/draft_versions:
-        one: "Προσχέδιο"
-        other: "Εκδοχές του σχεδίου"
+        one: "Zirriborro bertsioa"
+        other: "Zirriborro bertsioak"
       legislation/questions:
-        one: "Ερώτηση"
-        other: "Ερωτήσεις"
+        one: "Galdera"
+        other: "Galderak"
       legislation/question_options:
-        one: "Επιλογή ερώτησης"
-        other: "Ερώτημα επιλογών"
+        one: "Erantzuk itxiko aukera"
+        other: "Erantzuk itxiko aukerak"
       legislation/answers:
-        one: "Απάντηση"
-        other: "Απαντήσεις"
+        one: "Erantzuna"
+        other: "Erantzunak"
       documents:
-        one: "Έγγραφο"
-        other: "Έγγραφα"
+        one: "Dokumentua"
+        other: "Dokumentuak"
       images:
-        one: "Εικόνα"
-        other: "Εικόνες"
+        one: "Irudia"
+        other: "Irudiak"
       topic:
-        one: "Θέμα"
-        other: "Θέματα"
+        one: "Gaia"
+        other: "Gaiak"
       poll:
-        one: "Ψηφοφορία"
-        other: "Δημοσκοπήσεις"
+        one: "Bozkaketa"
+        other: "Bozkaketak"
       proposal_notification:
-        one: "Ειδοποίηση πρότασης"
-        other: "Κοινοποιήσεις της πρότασης"
-      dashboard/action:
-        one: Δράση πίνακα εργαλείων προτάσεων
-        other: Δράσεις πίνακα εργαλείων προτάσεων
-      dashboard/administrator_task:
-        one: Εργασία
-        other: Εργασίες
-      link:
-        one: Σύνδεσμος
-        other: Σύνδεσμοι
-      local_census_record:
-        one: Τοπικά αρχεία
-        other: Τίτλος
+        one: "Proposamen jakinarazpena"
+        other: "Proposamen jakinarazpenak"
     attributes:
       budget:
-        name: "Όνομα"
-        description_accepting: "Περιγραφή κατά τη φάση Αποδοχής"
-        description_reviewing: "Περιγραφή κατά τη φάση Επιθεώρησης"
-        description_selecting: "Περιγραφή κατά τη φάση Επιλογής"
-        description_valuating: "Περιγραφή κατά τη φάση Αξιολόγησης"
-        description_balloting: "Περιγραφή κατά τη φάση Ψηφοφορίας"
-        description_reviewing_ballots: "Περιγραφή κατά τη διάρκεια της φάσης Επιθεώρησης Ψηφοδελτίων"
-        description_finished: "Περιγραφή με την ολοκληρωση του προϋπολογισμού"
-        phase: "Φάση"
-        currency_symbol: "Συνάλλαγμα"
-      budget/translation:
-        name: "Όνομα"
+        name: "Izena"
+        description_accepting: "Proiektu aurkezpen faseko deskribapena"
+        description_reviewing: "Barne berrikusketa faseko deskribapena"
+        description_selecting: "Babes faseko deskribapena"
+        description_valuating: "Ebaluaketa faseko deskribapena"
+        description_balloting: "Bozkaketa faseko deskribapena"
+        description_reviewing_ballots: "Bozka berrikusketa faseko deskribapena"
+        description_finished: "Aurrekontua amaitu/emaitza faseko deskribapena"
+        phase: "Faseaa"
+        currency_symbol: "Dibisa"
       budget/investment:
-        heading_id: "Επικεφαλίδα"
-        title: "Τίτλος"
-        description: "Περιγραφή"
-        external_url: "Σύνδεσμος πρόσθετης τεκμηρίωσης"
-        administrator_id: "Διαχειριστής"
-        location: "Τοποθεσία (προαιρετικό)"
-        organization_name: "Εάν υποβάλετε πρόταση εκ μέρους ομάδας, οργανισμού ή άλλων προσώπων, παρακαλείσθε όπως αναφέρετε την ονομάσία τους"
-        image: "Εικόνα πρότασης"
-        image_title: "Τίτλος εικόνας"
-        duration: "Χρονικό πλαίσιο"
-        feasibility_feasible: "Εφικτό"
-        feasibility_undecided: "Απροσδιόριστο"
-        feasibility_unfeasible: "Ανέφικτο"
-        incompatible: "Σημειώστε ως μη συμβατό"
-        milestone_tag_list: "Ετικέτες οροσήμου"
-        price_explanation: "Επεξήγηση τιμής"
-        selected: "Σημείωστε ως επιλεγμένο"
-        selected_true: "Επιλεγμένο"
-        selected_false: "Δεν επιλέχθηκε"
-        unfeasibility_explanation: "Εξήγηση της σκοπιμότητας"
-        valuation_finished: "Η αξιολόγηση ολοκληρώθηκε"
-        valuator_ids: "Ομάδες"
-        valuation_tag_list: "Ετικέτες"
-      budget/investment/translation:
-        title: "Τίτλος"
-        description: "Περιγραφή"
-      geozone:
-        name: Όνομα
-        external_code: "Εξωτερικός κώδικας (προαιρετικό)"
-        census_code: "Κωδικός απογραφής (προαιρετικό)"
-        html_map_coordinates: "Συντεταγμένες HTML <map> (προαιρετικό)"
-      milestone:
-        status_id: "Τρέχουσα κατάσταση (προαιρετικό)"
-        title: "Τίτλος"
-        description: "Περιγραφή (προαιρετικό έαν έχει ανατεθεί μια κατάσταση)"
-        publication_date: "Ημερομηνία δημοσίευσης"
-      milestone/translation:
-        description: "Περιγραφή"
+        heading_id: "Aurrekontu saila"
+        title: "Izenbrua"
+        description: "Beskribapena"
+        external_url: "Gehigarrizko agirietara lotura"
+        administrator_id: "Administratzailea"
+        location: "Kokapena (aukerkoa)"
+        organization_name: "Erakunde/kolektibo edo beste pertsona batzuen izenean proposatzen ari bazara, beraien izenak idatzi"
+        image: "Gastu proiektuaren irudi deskriptiboa"
+        image_title: "Irudiaren izenburua"
       milestone/status:
-        name: "Όνομα"
-        description: "Περιγραφή (προαιρετικό)"
-      progress_bar:
-        kind: "Τύπος"
-        title: "Τίτλος"
-        percentage: "Τρέχουσα πρόοδος"
-      progress_bar/kind:
-        primary: "Στοιχειώδης"
-        secondary: "Δευτερεύων"
-      budget/group:
-        max_votable_headings: "Μέγιστος αριθμός επικεφαλίδων στις οποίες μπορεί να ψηφίσει ένας χρήστης\n"
-      budget/group/translation:
-        name: "Όνομα ομάδας"
+        name: "Izena"
       budget/heading:
-        allow_custom_content: "Επιτρέψτε αποκλεισμό περιεχομένου"
-        latitude: "Γεωγραφικό πλάτος (προαιρετικό)"
-        longitude: "Γεωγραφικό μήκος (προαιρετικό)"
-        name: "Όνομα επικεφαλίδας"
-        price: "Τιμή"
-        population: "Πληθυσμός"
-      budget/heading/translation:
-        name: "Όνομα επικεφαλίδας"
-      budget/phase:
-        enabled: "Ενεργοποιημένη Φάση"
-        ends_at: "Ημερομηνία ολοκλήρωσης"
-        starts_at: "Ημερομηνία έναρξης"
-      budget/phase/translation:
-        description: "Περιγραφή"
-        summary: "Περίληψη"
+        name: "Aurrekontu sailaren izenburua"
+        price: "Kantitatea"
+        population: "Biztanleak"
       comment:
-        body: "Σχόλιο"
-        user: "Χρήστης"
+        body: "Iruzkin"
+        user: "Erabiltzailea"
       debate:
-        author: "Δημιουργός"
-        description: "Γνώμη"
-        tag_list: "Θέματα"
-        terms_of_service: "Όροι υπηρεσίας"
-        title: "Τίτλος"
-      debate/translation:
-        title: "Τίτλος συζήτησης"
-        description: "Αρχικό κείμενο συζήτησης"
+        author: "Sortzailea"
+        description: "Iritzia"
+        terms_of_service: "Zerbitzu baldintzak"
+        title: "Izenburua"
       proposal:
-        author: "Δημιουργός"
-        title: "Τίτλος"
-        question: "Ερώτηση"
-        description: "Περιγραφή"
-        responsible_name: "Πλήρες όνομα του ατόμου που υποβάλλει την πρόταση"
-        retired_reason: "Λόγος για να αποσυρθεί η πρόταση"
-        selected: "Σημείωστε ως επιλεγμένο"
-        terms_of_service: "Όροι υπηρεσίας"
-        video_url: "Εξωτερικό βίντεο URL"
-      proposal/translation:
-        title: "Τίτλος πρότασης"
-        description: "Κείμενο πρότασης"
-        summary: "Περίληψη πρότασης"
-        retired_explanation: "Επεξήγηση"
+        author: "Sortzailea"
+        title: "Izenburua"
+        question: "Galdera"
+        description: "Deskribapena"
+        terms_of_service: "Zerbitzu baldintzak"
       user:
-        login: "E-mail ή όνομα χρήστη"
-        email: "E-Mail"
-        username: "Όνομα χρήστη"
-        password_confirmation: "Επιβεβαίωση κωδικού πρόσβασης"
-        password: "Κωδικός πρόσβασης"
-        current_password: "Υφιστάμενος κωδικός πρόσβασης"
-        email_digest: "Αποστολή περίληψης των ειδοποιήσεων σχετικά με την πρόταση"
-        email_on_comment: "Ειδοποιείστε με μέσω email όταν κάποιος σχολιάζει τις προτάσεις ή τις συζητήσεις μου"
-        email_on_comment_reply: "Ειδοποιείστε με μέσω email όταν κάποιος απαντά σε σχόλιά μου"
-        email_on_direct_message: "Λήψη E-mail για τα άμεσα μηνύματα"
-        newsletter: "Λήψη μέσω E-mail των σχετικών με το website πληροφοριών"
-        official_position: "Επίσημη θέση"
-        official_position_badge: "Εμφάνιση του συμβόλου της επίσημης θέσης"
-        official_level: "Επίσημο επίπεδο"
-        phone_number: "Αριθμός τηλεφώνου"
-        public_activity: "Κρατήστε δημόσια τη λίστα των δραστηριοτήτων μου"
-        public_interests: "Κρατήστε τις ετικέτες των στοιχείων που ακολουθώ δημόσια"
-        recommended_debates: "Εμφάνιση προτάσεων για δημόσιες συζητήσεις"
-        recommended_proposals: "Εμφάνιση συστάσεων για προτάσεις"
-        redeemable_code: "Κωδικός επαλήθευσης που λάβατε μέσω email"
-      direct_message:
-        title: "Τίτλος"
-        body: "Μήνυμα"
+        login: "Erabiltzaile izena edo emaila"
+        email: "E-mail"
+        username: "Erabiltzaile izena"
+        password_confirmation: "Pasahitz berrespenea"
+        password: "Pasahitza"
+        current_password: "Oraingo pasahitza"
+        official_position: "Kargu publikoa"
+        official_level: "Kargu maila"
+        phone_number: "Telefonoa"
+        redeemable_code: "Eskutitz bidezko egiaztapen kodea (aukerakoa)"
       organization:
-        name: "Επωνυμία οργανισμού"
-        responsible_name: "Υπεύθυνος ομάδας"
+        name: "Erakundearen izena"
+        responsible_name: "Kolektibo/talde arduraduna"
       poll:
-        name: "Όνομα"
-        starts_at: "Ημερομηνία έναρξης"
-        ends_at: "Καταληκτική ημερομηνία"
-        geozone_restricted: "Περιορίζεται από το geozone"
-        summary: "Περίληψη"
-        description: "Περιγραφή"
-      active_poll/translation:
-        description: "Περιγραφή"
-      poll/booth:
-        name: "Όνομα"
-        location: "Τοποθεσία"
+        name: "Izena"
+        starts_at: "Irekiera data"
+        ends_at: "Itxiera data"
+        geozone_restricted: "Zonaldeka mugatuta"
+        summary: "Laburpena"
+        description: "Deskribapena"
       poll/translation:
-        name: "Όνομα"
-        summary: "Περίληψη"
-        description: "Περιγραφή"
+        name: "Izena"
       poll/question:
-        poll_id: "Ψηφοφορία"
-        title: "Ερώτηση"
-        summary: "Περίληψη"
-        description: "Περιγραφή"
-        external_url: "Σύνδεσμος σε πρόσθετη τεκμηρίωση"
+        title: "Galdera"
+        summary: "Laburpena"
+        description: "Deskribapena"
+        external_url: "Gehigarrizko agirietara lotura"
       poll/question/translation:
-        title: "Ερώτηση"
-      poll/ballot_sheet:
-        data: Στοιχεία CSV
-        poll_id: Ψηφοφορία
-        officer_assignment_id: Εργασία Λειτουργού
-      poll/shift:
-        task: "Εργασία"
+        title: "Galdera"
       signature_sheet:
-        title: "Τίτλος"
-        signable_type: "Τύπος με δυνατότητα υπογραφής"
-        signable_id: "ID με δυνατότητα υπογραφής "
-        document_numbers: "Αριθμοί εγγράφων"
+        signable_type: "Firma orri mota"
+        signable_id: "Herri proposamen/Gastu proiektu ID-a"
+        document_numbers: "Agiri zenbakiak"
       site_customization/page:
-        content: Περιεχόμενο
-        created_at: Δημιουργήθηκε στις
-        subtitle: Υπότιτλος
+        content: Edukia
+        created_at: Sortuta
+        subtitle: Azpititulua
         slug: Slug
-        status: Κατάσταση
-        title: Τίτλος
-        updated_at: Ενημερώθηκε στις
-        more_info_flag: Εμφάνιση στη σελίδα βοήθειας
-        print_content_flag: Κουμπί εκτύπωσης περιεχομένου
-        locale: Γλώσσα
-      site_customization/page/translation:
-        title: Τίτλος
-        subtitle: Υπότιτλος
-        content: Περιεχόμενο
+        status: Egoera
+        title: Izenburua
+        updated_at: Azken eguneraketa
+        more_info_flag: Laguntza orrian erakutsi
+        print_content_flag: Edukia inprimitzeko botoia
+        locale: Hizkuntza
       site_customization/image:
-        name: Όνομα
-        image: Εικόνα
+        name: Izena
+        image: Irudia
       site_customization/content_block:
-        name: Όνομα
-        locale: Τοπικές ρυθμίσεις
-        body: Περιεχόμενο
-      banner:
-        background_color: Χρώμα φόντου
-        font_color: Χρώμα γραμματοσειράς
+        name: Izena
+        locale: Hizkuntza
+        body: Edukia
       legislation/process:
-        title: Τίτλος διαδικασίας
-        summary: Περίληψη
-        description: Περιγραφή
-        additional_info: Πρόσθετες πληροφορίες
-        start_date: Έναρξη
-        end_date: Λήξη
-        debate_start_date: Έναρξη
-        debate_end_date: Λήξη
-        draft_start_date: Έναρξη
-        draft_end_date: Λήξη
-        draft_publication_date: Ημερομηνία δημοσίευσης προσχέδιου
-        allegations_start_date: Έναρξη
-        allegations_end_date: Λήξη
-        proposals_phase_start_date: Έναρξη
-        proposals_phase_end_date: Λήξη
-        result_publication_date: Ημερομηνία δημοσίευσης τελικών αποτελέσματων
-        background_color: Χρώμα φόντου
-        font_color: Χρώμα γραμματοσειράς
-      legislation/process/translation:
-        title: Τίτλος διαδικασίας
-        summary: Περίληψη
-        description: Περιγραφή
-        additional_info: Πρόσθετες πληροφορίες
-        milestones_summary: Περίληψη
+        title: Prosezu izenburua
+        summary: Laburpena
+        description: Zertan datza
+        additional_info: Gehigarrizko informazioa
+        start_date: Prosezuaren hasiera data
+        end_date: Prosezuaren amaiera data
+        debate_start_date: Eztabaidaren hasiera data
+        debate_end_date: Eztabaidaren amaiera data
+        draft_publication_date: Zirriborroaren argitarapen data
+        allegations_start_date: Alegazioen hasiera data
+        allegations_end_date: Alegazioen amaiera data
+        proposals_phase_start_date: Hasi
+        proposals_phase_end_date: Amaitu
+        result_publication_date: Azken emaitzen argitarapen data
       legislation/draft_version:
-        title: Τίτλος έκδοσης
-        body: Κείμενο
-        changelog: Αλλαγές
-        status: Κατάσταση
-        final_version: Τελική μορφή
-      legislation/draft_version/translation:
-        title: Τίτλος έκδοσης
-        body: Κείμενο
-        changelog: Αλλαγές
+        title: Bertsio izenburua
+        body: Testua
+        changelog: Aldaketak
+        status: Egoera
+        final_version: Azken bertsioa
       legislation/question:
-        title: Τίτλος
-        question_options: Επιλογές
+        title: Izenburua
+        question_options: Erantzunak
       legislation/question_option:
-        value: Τιμή
+        value: Balorea
       legislation/annotation:
-        text: Σχόλιο
+        text: Iruzkin
       document:
-        title: Τίτλος
-        attachment: "Επισύναψη"
+        title: Izenburua
+        attachment: "Itsatsitako fitxategia"
       image:
-        title: Τίτλος
-        attachment: "Επισύναψη"
+        title: Izenburua
+        attachment: "Itsatsitako fitxategia"
       poll/question/answer:
-        title: Απάντηση
-        description: Περιγραφή
+        title: Erantzuna
+        description: Deskribapena
       poll/question/answer/translation:
-        title: Απάντηση
-        description: Περιγραφή
+        title: Erantzuna
       poll/question/answer/video:
-        title: Τίτλος
-        url: Εξωτερικό βίντεο
+        title: Izenburua
+        url: Kanpo bideoa
       newsletter:
-        segment_recipient: Παραλήπτες
-        subject: Θέμα
-        from: "Από"
-        body: Περιεχόμενο email
-      admin_notification:
-        segment_recipient: Παραλήπτες
-        title: Τίτλος
-        link: Σύνδεσμος
-        body: Κείμενο
-      admin_notification/translation:
-        title: Τίτλος
-        body: Κείμενο
+        segment_recipient: Hartzaileak
+        subject: Gaia
+        from: "Bidaltzailea"
+        body: Emailaren edukia
       widget/card:
-        label: Ετικέτα (προαιρετικό)
-        title: Τίτλος
-        description: Περιγραφή
-        link_text: Σύνδεσμος κειμένου
-        link_url: Σύνδεσμος URL
-        columns: Αριθμός στηλών
-      widget/card/translation:
-        label: Ετικέτα (προαιρετικό)
-        title: Τίτλος
-        description: Περιγραφή
-        link_text: Σύνδεσμος κειμένου
+        label: Etiketa (aukerakoa)
+        title: Izenburua
+        description: Deskribapena
+        link_text: Loturaren testua
+        link_url: URL lotura
       widget/feed:
-        limit: Αριθμός στοιχείων
-      dashboard/action:
-        title: Τίτλος
-        short_description: Σύντομη περιγραφή
-        description: Περιγραφή
-        link: Εξωτερικός σύνδεσμος
-        request_to_administrators: Συμπεριλάβετε ένα κουμπί για να ζητήθέι ο πόρος από τους διαχειριστές
-        day_offset: Πόσες ημέρες μετά τη δημιουργία της πρότασης επιθυμείτε να ενεργοποιηθεί;
-        required_supports: Πόση στήριξη πρέπει να λάβει η πρόταση προκειμένου να ενεργοποιηθεί;
-        order: Μπορείτε να εισαγάγετε τη θέση στη λίστα δράσεων στην οποία επιθυμείτε να εμφανίζετε αυτή η δράση για τους χρήστες
-        active: Ενεργό
-        action_type: Τύπος
-      dashboard/administrator_task:
-        source: Πηγή
-        user: Εκτελέστηκε από
-      link:
-        label: Τίτλος
-        url: Σύνδεσμος
-      valuator:
-        description: Περιγραφή
-        valuator_group_id: Ομάδα αξιολόγησης
-        can_comment: Μπορεί να εισάγει σχόλιο
-        can_edit_dossier: Μπορεί να επεξεργαστεί φακέλους
-      local_census_record:
-        document_type: Τύπος εγγράφου
-        document_number: Αριθμός εγγράφου
-        date_of_birth: Ημερομηνία γέννησης
-        postal_code: Ταχυδρομικός κώδικας
+        limit: Elementu kopurua
     errors:
       models:
         user:
           attributes:
             email:
-              password_already_set: "Ο χρήστης έχει ήδη κωδικό πρόσβασης"
+              password_already_set: "Erabiltzaile honek kodea elkartua du jada"
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "Οι ετικέτες πρέπει να είναι μικρότερες ή ίσες με %{count}"
+              less_than_or_equal_to: "gaiak %{count} ala %{count} baino gutxiago izan behar dira"
         direct_message:
           attributes:
             max_per_day:
-              invalid: "Έχετε φτάσει το μέγιστο ημερίσιο αριθμό προσωπικών μηνυμάτων "
+              invalid: "Eguneko mezu pribatu gehiengora heldu zara."
         image:
           attributes:
             attachment:
-              min_image_width: "Το πλάτος της εικόνας πρέπει να είναι τουλάχιστον %{required_min_width}px"
-              min_image_height: "Το ύψος της εικόνας πρέπει να είναι τουλάχιστον %{required_min_height}px"
+              min_image_width: "Irudiak gutxienez %{required_min_width}px izan behar ditu luzeran"
+              min_image_height: "Irudiak gutxienez %{required_min_height}px izan behar ditu altueran"
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "Το τμήμα παραληπτών του χρήστη δεν είναι έγκυρο"
-        admin_notification:
-          attributes:
-            segment_recipient:
-              invalid: "Το τμήμα παραληπτών του χρήστη δεν είναι έγκυρο"
+              invalid: "Erabiltzaile segmentua baliogabekoa da"
         map_location:
           attributes:
             map:
-              invalid: Ο χάρτης τοποθεσίας δεν μπορεί να είναι κενός. Τοποθετήστε ένα δείκτη ή επιλέξτε το πλαίσιο ελέγχου εάν ο εντοπισµός "geolocalization' δεν είναι απαραίτητος
+              invalid: Mapa ezin da hutsik gelditu. Puntu bat gehitu mapan edo maparik ez dela behar markatu.
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Έγγραφο το οποίο δεν υπάρχει στην απογραφή"
-              has_voted: "Ο χρήστης έχει ήδη ψηφίσει"
+              not_in_census: "Agiri hau ez da erroldan ageri"
+              has_voted: "Erabiltzailea honek bozkatu du"
         legislation/process:
           attributes:
             end_date:
-              invalid_date_range: πρέπει να είναι κατά ή μετά την ημερομηνία έναρξης
+              invalid_date_range: Hasiera dataren bardina ala beranduagokoa izan behar du
             debate_end_date:
-              invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης
-            draft_end_date:
-              invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης 
+              invalid_date_range: Eztabaida hasiera dataren bardina ala beranduagokoa izan behar du
             allegations_end_date:
-              invalid_date_range: πρέπει να είναι κατά ή μετά την ημερομηνία έναρξης των σχολίων
+              invalid_date_range: Alegazio hasiera dataren bardina ala beranduagokoa izan behar du
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "οι ετικέτες πρέπει να είναι μικρότερες ή ίσες με %{count}"
+              less_than_or_equal_to: "gaiak %{count} ala %{count} baino gutxiago izan behar dira"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "οι ετικέτες πρέπει να είναι μικρότερες ή ίσες με %{count}"
+              less_than_or_equal_to: "gaiak %{count} ala %{count} baino gutxiago izan behar dira"
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "Πρέπει να περιμένετε τουλάχιστον %{interval} ημέρες μεταξύ των ειδοποιήσεων"
+              invalid: "Jakinarazpen artean %{interval} egun itxaron behar dituzu gutxienez"
         signature:
           attributes:
             document_number:
-              not_in_census: "Μη επαληθευμένο από το Census"
-              already_voted: "Έχετε ήδη ψηφίσει αυτήν την πρόταση"
+              not_in_census: "Erroldan egiaztatu gabe."
+              already_voted: "Proposamen hau bozkatu dizi jada"
         site_customization/page:
           attributes:
             slug:
-              slug_format: "πρέπει να είναι γράμματα, αριθμοί, _ και -"
+              slug_format: "letrak, zenbakiak, _ eta - izan behar dira"
         site_customization/image:
           attributes:
             image:
-              image_width: "Το πλάτος πρέπει να είναι %{required_width}px"
-              image_height: "Το ύψος πρέπει να είναι %{required_height}px"
+              image_width: "Gutxienez %{required_min_width}px izan behar ditu zabaleran"
+              image_height: "Gutxienez %{required_min_width}px izan behar ditu altueran"
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: "Δεν μπορείτε να σχολιάσετε μια αξιολόγηση"
+              cannot_comment_valuation: "Ezin dezkazezu ebaluaketa iruzkindu"
       messages:
-        translations_too_short: Υποχρεούται να παρέχετε τουλάχιστον μία μετάφραση
-        record_invalid: "Η επικύρωση απέτυχε: %{errors}"
-        another_poll_active: Υπάρχει άλλη ενεργή δημοσκόπηση για την δεδομένη περίοδο
+        record_invalid: "Egiaztapenaren errorea: %{errors}"
         restrict_dependent_destroy:
-          has_one: "Δεν μπορείτε να σβήσετε την εγγραφή λόγο του εξαρτημένου πεδίου %{record} "
-          has_many: "Δεν μπορείτε να σβήσετε την εγγραφή λόγο του εξαρτημένου πεδίου %{record} "
+          has_one: "Ezin daiteke erregiztroa ezabatu menpeko %{record} bat baitago"
+          has_many: "Ezin daiteke erregiztroa ezabatu menpeko %{record} baitaude"
