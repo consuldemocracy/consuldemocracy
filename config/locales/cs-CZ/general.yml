@@ -242,8 +242,6 @@ cs:
       sign_in: Přihlásit se pomocí služby Twitter
       sign_up: Přihlásit se pomocí služby Twitter
       name: Twitter
-    info_sign_in: "Přihlásit se pomocí:"
-    info_sign_up: "Přihlásit se pomocí:"
     or_fill: "Nebo vyplňte následující formulář:"
   proposals:
     create:
