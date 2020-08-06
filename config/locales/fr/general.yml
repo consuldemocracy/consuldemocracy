@@ -260,8 +260,6 @@ fr:
       sign_in: S'enregistrer avec Twitter
       sign_up: S'enregistrer avec Twitter
       name: Twitter
-    info_sign_in: "Se connecter avec :"
-    info_sign_up: "S'inscrire avec :"
     or_fill: "Ou remplissez le formulaire suivant :"
   proposals:
     create:
