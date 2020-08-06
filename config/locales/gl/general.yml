@@ -284,8 +284,6 @@ gl:
       sign_in: Entra con Twitter
       sign_up: Rexístrate con Twitter
       name: Twitter
-    info_sign_in: "Entra con:"
-    info_sign_up: "Rexístrate con:"
     or_fill: "Ou cubre o formulario seguinte:"
   proposals:
     create:
