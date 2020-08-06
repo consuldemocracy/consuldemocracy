@@ -217,8 +217,6 @@ sl:
     twitter:
       sign_in: Vpiši se s Twitterjem
       sign_up: Vpiši se s Twitterjem
-    info_sign_in: "Vpiši se z:"
-    info_sign_up: "Registriraj se z:"
     or_fill: "Ali izpolni ta obrazec:"
   proposals:
     create:
