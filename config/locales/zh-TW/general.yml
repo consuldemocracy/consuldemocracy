@@ -249,8 +249,6 @@ zh-TW:
       sign_in: 用Twitter登錄
       sign_up: 用Twitter登記
       name: Twitter
-    info_sign_in: "登錄用："
-    info_sign_up: "登記用："
     or_fill: "或填寫以下表格："
   proposals:
     create:
