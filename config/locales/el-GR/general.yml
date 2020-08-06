@@ -282,8 +282,6 @@ el:
       sign_in: Σύνδεση μέσω Twitter
       sign_up: Εγγραφή μέσω Twitter
       name: Twitter
-    info_sign_in: "Σύνδεση με:"
-    info_sign_up: "Εγγραφή με:"
     or_fill: "Ή συμπληρώστε την παρακάτω φόρμα:"
   proposals:
     create:
