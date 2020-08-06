@@ -294,8 +294,6 @@ nn:
       sign_in: Logg inn via Twitter
       sign_up: Registrer deg med Twitter
       name: Twitter
-    info_sign_in: "Logg på med:"
-    info_sign_up: "Registrer deg med:"
     or_fill: "Eller fyll ut følgende skjema:"
   proposals:
     create:
