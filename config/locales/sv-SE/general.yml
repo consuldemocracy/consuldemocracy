@@ -299,8 +299,6 @@ sv:
       sign_in: Logga in med Twitter
       sign_up: Registrera dig med Twitter
       name: Twitter
-    info_sign_in: "Logga in med:"
-    info_sign_up: "Registrera dig med:"
     or_fill: "Eller fyll i följande formulär:"
   proposals:
     create:
