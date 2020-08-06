@@ -258,8 +258,6 @@ sq:
       sign_in: Identifikohu me Twitter
       sign_up: Regjistrohuni me Twitter
       name: Twitter
-    info_sign_in: "Identifikohu me:"
-    info_sign_up: "Regjistrohuni me:"
     or_fill: "Ose plotësoni formularin e mëposhtëm:"
   proposals:
     create:
