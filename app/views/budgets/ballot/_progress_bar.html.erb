@@ -10,9 +10,5 @@
 </div>
 
 <p id="amount-spent" class="spent-amount-text" style="width: <%= ballot.percentage_spent(heading) %>%">
-  <small><%= t("budgets.progress_bar.assigned") %></small><%= ballot.formatted_amount_spent(heading) %>
-  <span id="amount-available" class="amount-available">
-    <small><%= t("budgets.progress_bar.available") %></small>
-    <span><%= ballot.formatted_amount_available(heading) %></span>
-  </span>
+  <%= render "budgets/ballot/progress_bar/#{ballot.budget.voting_style}", ballot: ballot, heading: heading %>
 </p>

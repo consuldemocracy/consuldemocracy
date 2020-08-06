@@ -4,11 +4,22 @@ en:
       show:
         title: Your ballot
         amount_available:
-          knapsack: "You still have <span>%{amount}</span> to invest."
+          knapsack: "You still have <span>%{count}</span> to invest."
+          approval:
+            zero: "You can still cast <span>%{count}</span> votes."
+            one: "You can still cast <span>%{count}</span> vote."
+            other: "You can still cast <span>%{count}</span> votes."
         amount_spent:
-          knapsack: "Amount spent <span>%{amount}</span>"
+          knapsack: "Amount spent <span>%{count}</span>"
+          approval:
+            zero: "Votes cast: <span>%{count}</span>"
+            one: "Votes cast: <span>%{count}</span>"
+            other: "Votes cast: <span>%{count}</span>"
         amount_limit:
-          knapsack: "%{amount}"
+          knapsack: "%{count}"
+          approval:
+            one: "You can vote <span>1</span> project"
+            other: "You can vote up to <span>%{count}</span> projects"
         no_balloted_group_yet: "You have not voted on this group yet, go vote!"
         remove: Remove vote
         voted:
@@ -25,6 +36,7 @@ en:
         not_enough_money: "You have already assigned the available budget.<br><small>Remember you can %{change_ballot} at any time</small>"
         no_ballots_allowed: Selecting phase is closed
         different_heading_assigned: "You have already voted a different heading: %{heading_link}"
+        not_enough_available_votes: "You have reached the maximum number of votes allowed"
         change_ballot: change your votes
         casted_offline: You have already participated offline
     groups:
@@ -92,8 +104,12 @@ en:
             knapsack:
               one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
               other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+            approval:
+              one: "<strong>You voted one proposal</strong>"
+              other: "<strong>You voted %{count} proposals</strong>"
           change_vote_info:
             knapsack: "You can %{link} at any time until the close of this phase. No need to spend all the money available."
+            approval: "You can %{link} at any time until the close of this phase."
           change_vote_link: "change your vote"
           different_heading_assigned: "You have active votes in another heading: %{heading_link}"
           change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
@@ -154,6 +170,10 @@ en:
     progress_bar:
       assigned: "You have assigned: "
       available: "Available budget: "
+      votes:
+        zero: "You have selected <strong>0</strong> projects out of <strong>%{limit}</strong>"
+        one: "You have selected <strong>1</strong> project out of <strong>%{limit}</strong>"
+        other: "You have selected <strong>%{count}</strong> projects out of <strong>%{limit}</strong>"
     show:
       group: Group
       phase: Actual phase
