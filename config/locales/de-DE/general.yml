@@ -295,8 +295,6 @@ de:
       sign_in: Anmelden mit Twitter
       sign_up: Registrierung mit Twitter
       name: Twitter
-    info_sign_in: "Anmelden mit:"
-    info_sign_up: "Registrieren mit:"
     or_fill: "Oder folgendes Formular ausfüllen:"
   proposals:
     create:
