@@ -305,8 +305,6 @@ sr:
       sign_in: Приступите користећи Twitter
       sign_up: Пријавите се користећи Twitter
       name: Twitter
-    info_sign_in: "Приступите користећи:"
-    info_sign_up: "Пријавите се користећи:"
     or_fill: "Или попуните следећи образац:"
   proposals:
     create:
