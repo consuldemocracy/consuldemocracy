@@ -14,7 +14,8 @@ class Poll
     validates :booth_assignment_id, presence: true, if: ->(voter) { voter.origin == "booth" }
     validates :officer_assignment_id, presence: true, if: ->(voter) { voter.origin == "booth" }
 
-    validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }, unless: :skip_user_verification?
+    validates :document_number, presence: true, unless: :skip_user_verification?
+    validates :user_id, uniqueness: { scope: [:poll_id], message: :has_voted }
     validates :origin, inclusion: { in: VALID_ORIGINS }
 
     before_validation :set_demographic_info, :set_document_info, :set_denormalized_booth_assignment_id
