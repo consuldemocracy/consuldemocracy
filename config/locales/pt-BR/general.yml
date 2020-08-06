@@ -1,4 +1,4 @@
-pt-BR:
+pt:
   account:
     show:
       change_credentials_link: Alterar meus dados pessoais
@@ -299,8 +299,6 @@ pt-BR:
       sign_in: Iniciar sessão com o Twitter
       sign_up: Inscrever-se com o Twitter
       name: Twitter
-    info_sign_in: "Iniciar sessão com:"
-    info_sign_up: "Inscrever-se com:"
     or_fill: "Ou preencha o seguinte formulário:"
   proposals:
     create:
