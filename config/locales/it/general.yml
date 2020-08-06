@@ -258,8 +258,6 @@ it:
       sign_in: Accedi con Twitter
       sign_up: Registrati con Twitter
       name: Twitter
-    info_sign_in: "Accedi con:"
-    info_sign_up: "Registrati con:"
     or_fill: "Oppure compila il seguente modulo:"
   proposals:
     create:
