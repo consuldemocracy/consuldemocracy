@@ -282,8 +282,6 @@ tr:
       sign_in: Twitter ile oturum aç
       sign_up: Twitter ile kaydol
       name: Twitter
-    info_sign_in: "Bununla oturum aç:"
-    info_sign_up: "Bununla kaydol:"
     or_fill: "Veya aşağıdaki formu doldur:"
   proposals:
     create:
