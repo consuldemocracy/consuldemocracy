@@ -299,8 +299,9 @@ es:
       sign_in: Entra con Twitter
       sign_up: Regístrate con Twitter
       name: Twitter
-    info_sign_in: "Entra con:"
-    info_sign_up: "Regístrate con:"
+    info:
+      sign_in: "Entra con:"
+      sign_up: "Regístrate con:"
     or_fill: "O rellena el siguiente formulario:"
   proposals:
     create:
