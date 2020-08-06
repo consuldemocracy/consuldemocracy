@@ -299,8 +299,6 @@ ka:
       sign_in: Twitter-ით შესვლა
       sign_up: Twitter-ით რეგისტრაცია
       name: Twitter
-    info_sign_in: "ავტორიზაცია:"
-    info_sign_up: "რეგისტრაცია:"
     or_fill: "ან შეავსეთ წინამდებარე ფორმა:"
   proposals:
     create:
