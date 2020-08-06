@@ -258,8 +258,6 @@ eu:
       sign_in: Twitter erabiliz sartu
       sign_up: Twitter erabiliz erregistratu
       name: Twitter
-    info_sign_in: "Hauetakoren bat erabiliz sartu:"
-    info_sign_up: "Hauetakoren bat erabiliz erregistratu:"
     or_fill: "Edo hurrengo formularioa bete:"
   proposals:
     create:
