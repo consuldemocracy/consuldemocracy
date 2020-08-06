@@ -12,7 +12,7 @@ module Budgets
     before_action :authenticate_user!, except: [:index, :show, :json_data]
     before_action :load_budget, except: :json_data
 
-    load_and_authorize_resource :budget, except: :json_data
+    authorize_resource :budget, except: :json_data
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
                                 except: :json_data
 
