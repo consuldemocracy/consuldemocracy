@@ -141,6 +141,8 @@ pt:
         description_finished: "Descrição quando o orçamento for concluído."
         phase: "Estágio"
         currency_symbol: "Moeda"
+        voting_style: "Estilo final de votação"
+        voting_style_approval: "Aprovação"
       budget/translation:
         name: "Nome"
       budget/investment:
@@ -197,12 +199,13 @@ pt:
       budget/group/translation:
         name: "Nome do grupo"
       budget/heading:
-        allow_custom_content: "Permitir bloqueio de contúdos"
+        allow_custom_content: "Permitir bloqueio de conteúdos"
         latitude: "Latitude (optional)"
         longitude: "Longitude (optional)"
         name: "Nome do título"
         price: "Preço"
         population: "População"
+        max_ballot_lines: "Votos permitidos"
       budget/heading/translation:
         name: "Título"
       budget/phase:
