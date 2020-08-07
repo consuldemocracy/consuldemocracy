@@ -504,7 +504,6 @@ mk:
           attributes:
             document_number:
               not_in_census: "Документот не е во цензусот"
-              has_voted: "Корисникот веќе гласал"
         legislation/process:
           attributes:
             end_date:
