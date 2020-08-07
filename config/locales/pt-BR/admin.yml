@@ -149,6 +149,7 @@ pt:
         success_notice: "Título excluído com sucesso"
         unable_notice: "Não é possível excluir um título com investimentos associados"
       form:
+        max_ballot_lines_info: 'Número máximo de projetos em que um usuário pode votar neste título durante a fase de "Votação de projetos". Apenas para orçamentos com votação aprovada.'
         population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
         coordinates_info: "Se houver dados de latitude e longitude, aparecerá um mapa na página de investimentos deste título, cujo centro estará ajustado a essas coordenadas."
         content_blocks_info: "Se a opção de \"bloquear conteúdo\" estiver marcada, haverá a possibilidade de criar conteúdo personalizado na seção Configurações > Personalizar blocos de conteúdo. Esse conteúdo aparecerá na página de projetos dessa rubrica."
