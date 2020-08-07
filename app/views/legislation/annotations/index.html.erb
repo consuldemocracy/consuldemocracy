@@ -1,4 +1,6 @@
-<% provide :title do %><%= "#{t(".title")} - #{@draft_version.title} - #{@process.title}" %><% end %>
+<% provide :title do %>
+  <%= "#{t("legislation.annotations.index.title")} - #{@draft_version.title} - #{@process.title}" %>
+<% end %>
 
 <%= render "legislation/processes/header", process: @process, header: :small %>
 
@@ -15,17 +17,21 @@
 
     <% @annotations.each do |annotation| %>
       <div class="comment">
-        <strong><%= t(".comments_about") %></strong>
+        <strong><%= t("legislation.annotations.index.comments_about") %></strong>
         <span class="float-right">
           <%= link_to legislation_process_draft_version_path(@process, @draft_version, anchor: "annotation-id-#{annotation.id}") do %>
-            <span><%= t(".see_in_context") %></span> <span class="icon-expand" aria-hidden="true"></span>
+            <span><%= t("legislation.annotations.index.see_in_context") %></span>
+            <span class="icon-expand" aria-hidden="true"></span>
           <% end %>
         </span>
         <div class="comment-section">
           <%= sanitize(annotation.context).presence || annotation.quote %>
         </div>
         <%= link_to legislation_process_draft_version_annotation_path(@process, @draft_version, annotation) do %>
-          <span class="icon-comments" aria-hidden="true"></span> <span><%= t(".comments_count", count: annotation.comments_count) %></span></a>
+          <span class="icon-comments" aria-hidden="true"></span>
+          <span>
+            <%= t("legislation.annotations.index.comments_count", count: annotation.comments_count) %>
+          </span>
         <% end %>
       </div>
     <% end %>

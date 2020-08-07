@@ -1,6 +1,6 @@
 <div class="row draft-chooser">
   <div class="small-12 medium-9 column">
-    <h3><%= t(".seeing_version") %></h3>
+    <h3><%= t("legislation.annotations.version_chooser.seeing_version") %></h3>
     <div class="select-box">
       <%= form_tag go_to_version_legislation_process_draft_versions_path(process), method: :get, id: "draft_version_go_to_version" do %>
         <%= select_tag "draft_version_id", options_from_collection_for_select(process.draft_versions.published, "id", "display_title", draft_version.id), "aria-label": t("legislation.draft_versions.show.select_draft_version") %>
@@ -11,8 +11,9 @@
     <span><%= t("legislation.draft_versions.show.updated_at", date: format_date(@draft_version.updated_at)) %></span>
   </div>
   <div class="small-12 medium-3 column">
-    <%= link_to legislation_process_draft_version_path(process, draft_version), title: t(".see_text"), class: "button" do %>
-      <%= t(".see_text") %>
+    <%= link_to legislation_process_draft_version_path(process, draft_version),
+                title: t("legislation.annotations.version_chooser.see_text"), class: "button" do %>
+      <%= t("legislation.annotations.version_chooser.see_text") %>
     <% end %>
   </div>
 </div>
