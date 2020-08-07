@@ -13,6 +13,8 @@ pt:
           knapsack: "Total gasto <span>%{amount}</span>"
           approval:
             zero: "Votos realizados: <span>%{count}</span>"
+            one: "Votos realizados: <span>%{count}</span>"
+            other: "Votos realizados: <span>%{count}</span>"
         amount_limit:
           knapsack: "%{amount}"
           approval:
@@ -168,6 +170,10 @@ pt:
     progress_bar:
       assigned: "Você atribuiu: "
       available: "Orçamento disponível: "
+      votes:
+        zero: "Você selecionou <strong>0</strong> projetos de um total de <strong>%{limit}</strong>"
+        one: "Você selecionou <strong>1</strong> projeto de um total de <strong>%{limit}</strong>"
+        other: "Você selecionou <strong>%{count}</strong> projetos de um total de <strong>%{limit}</strong>"
     show:
       group: Grupo
       phase: Fase atual
