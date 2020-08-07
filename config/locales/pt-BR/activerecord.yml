@@ -142,6 +142,7 @@ pt:
         phase: "Estágio"
         currency_symbol: "Moeda"
         voting_style: "Estilo final de votação"
+        voting_style_knapsack: "Mochila"
         voting_style_approval: "Aprovação"
       budget/translation:
         name: "Nome"
