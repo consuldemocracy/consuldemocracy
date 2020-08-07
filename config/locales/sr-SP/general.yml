@@ -301,10 +301,17 @@ sr:
       sign_in: Приступите користећи Google
       sign_up: Пријавите се користећи Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Пријава на "Wordpress"
+      sign_up: Нови "Wordpress" налог
+      name: '"Wordpress"'
     twitter:
       sign_in: Приступите користећи Twitter
       sign_up: Пријавите се користећи Twitter
       name: Twitter
+    info:
+      sign_in: "Пријавите се користећи:"
+      sign_up: "Направите нови налог помоћу:"
     or_fill: "Или попуните следећи образац:"
   proposals:
     create:
@@ -384,6 +391,10 @@ sr:
         button: Тражите
         placeholder: Тражите предлоге...
         title: Тражите
+      search_results:
+        one: " који садржи термин <strong>'%{search_term}'</strong>"
+        few: " који садржи термин <strong>'%{search_term}'</strong>"
+        other: " који садржи термин <strong>'%{search_term}'</strong>"
       select_order: Наручено по
       start_proposal: Креирајте предлог
       title: Предлози
