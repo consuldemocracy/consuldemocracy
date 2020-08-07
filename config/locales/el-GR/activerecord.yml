@@ -472,7 +472,6 @@ el:
           attributes:
             document_number:
               not_in_census: "Έγγραφο το οποίο δεν υπάρχει στην απογραφή"
-              has_voted: "Ο χρήστης έχει ήδη ψηφίσει"
         legislation/process:
           attributes:
             end_date:
