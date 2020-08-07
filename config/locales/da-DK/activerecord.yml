@@ -504,7 +504,6 @@ da:
           attributes:
             document_number:
               not_in_census: "Findes ikke i adresseregistret"
-              has_voted: "Brugeren har allerede stemt"
         legislation/process:
           attributes:
             end_date:
