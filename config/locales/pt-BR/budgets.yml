@@ -5,10 +5,19 @@ pt:
         title: Sua cédula
         amount_available:
           knapsack: "Você ainda tem <span>%{amount}</span> para investir."
+          approval:
+            zero: "Você ainda pode votar <span>%{count}</span> vezes."
+            one: "Você ainda pode votar <span>%{count}</span> vez."
+            other: "Você ainda pode votar <span>%{count}</span> vezes."
         amount_spent:
           knapsack: "Total gasto <span>%{amount}</span>"
+          approval:
+            zero: "Votos realizados: <span>%{count}</span>"
         amount_limit:
           knapsack: "%{amount}"
+          approval:
+            one: "Você pode votar em <span>1</span> projeto"
+            other: "Você pode votar em até <span>%{count}</span> projetos"
         no_balloted_group_yet: "Você ainda não votou neste grupo, vote!"
         remove: Remover voto
         voted:
@@ -25,6 +34,7 @@ pt:
         not_enough_money: "Você já atribuiu o orçamento disponível.<br><small>Lembre-se que pode %{change_ballot} a qualquer momento</small>"
         no_ballots_allowed: A fase de seleção está fechada
         different_heading_assigned: "Você já votou em um título diferente: %{heading_link}"
+        not_enough_available_votes: "Você atingiu o número máximo de votos permitidos"
         change_ballot: mudar seus votos
         casted_offline: Você já participou presencialmente
     groups:
@@ -92,8 +102,12 @@ pt:
             knapsack:
               one: "<strong>Você votou em uma proposta com um custo de %{amount_spent}</strong>"
               other: "<strong>Você votou em %{count} propostas com um custo de %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Você votou em uma proposta</strong>"
+              other: "<strong>Você votou em %{count} propostas</strong>"
           change_vote_info:
             knapsack: "Você pode %{link} a qualquer momento até o encerramento desta fase. Não há necessidade de gastar todo o dinheiro disponível."
+            approval: "Você pode %{link} a qualquer momento até o final desta fase."
           change_vote_link: "mudar seu voto"
           different_heading_assigned: "Você tem votos ativos num título diferente: %{heading_link}"
           change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
