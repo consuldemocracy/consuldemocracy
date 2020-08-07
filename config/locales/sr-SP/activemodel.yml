@@ -33,7 +33,7 @@ sr:
         document_number: "Број исправе"
         year_of_birth: "Година рођења"
       local_census_records/import:
-        file: Фолдер
+        file: Фајл
     errors:
       models:
         local_census_records/import:
