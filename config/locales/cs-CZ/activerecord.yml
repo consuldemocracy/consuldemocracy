@@ -391,7 +391,6 @@ cs:
           attributes:
             document_number:
               not_in_census: "Document not in census"
-              has_voted: "User has already voted"
         legislation/process:
           attributes:
             end_date:
