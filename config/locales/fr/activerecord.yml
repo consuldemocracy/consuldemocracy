@@ -406,7 +406,6 @@ fr:
           attributes:
             document_number:
               not_in_census: "Ce document n'est pas dans le recensement"
-              has_voted: "L'utilisateur a déjà voté"
         legislation/process:
           attributes:
             end_date:
