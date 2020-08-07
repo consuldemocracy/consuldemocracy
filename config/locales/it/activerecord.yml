@@ -503,7 +503,6 @@ it:
           attributes:
             document_number:
               not_in_census: "Il documento non è presente negli archivi istituzionali"
-              has_voted: "L'utente ha già votato"
         legislation/process:
           attributes:
             end_date:
