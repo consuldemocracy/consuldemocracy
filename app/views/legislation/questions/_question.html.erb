@@ -1,11 +1,14 @@
 <div class="debate-block">
   <div class="debate-type">
-    <%= t(".debate") %> <span class="icon-debates" aria-hidden="true"></span>
+    <%= t("legislation.questions.question.debate") %> <span class="icon-debates" aria-hidden="true"></span>
   </div>
   <div class="debate-title">
     <h4><%= link_to question.title, legislation_process_question_path(question.process, question) %></h4>
   </div>
   <div class="debate-meta">
-    <span class="icon-comments" aria-hidden="true"></span> <span class="debate-comments"><%= link_to t(".comments", count: question.comments.count), legislation_process_question_path(question.process, question) %></span> · <span class="debate-date"><%= format_date question.created_at %></span>
+    <span class="icon-comments" aria-hidden="true"></span> <span class="debate-comments">
+      <%= link_to t("legislation.questions.question.comments", count: question.comments.count),
+                  legislation_process_question_path(question.process, question) %>
+    </span> · <span class="debate-date"><%= format_date question.created_at %></span>
   </div>
 </div>
