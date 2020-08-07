@@ -371,7 +371,6 @@ nl:
           attributes:
             document_number:
               not_in_census: "Niet geverifieerd"
-              has_voted: "Gebruiker heeft al gestemd"
         legislation/process:
           attributes:
             end_date:
