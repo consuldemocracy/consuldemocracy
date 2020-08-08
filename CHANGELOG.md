@@ -1063,7 +1063,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Fixed bug causing errors on user deletion
 
-## [0.7.0] - 2016-04-25
+## 0.7.0 - 2016-04-25
 
 ### Added
 
