@@ -396,8 +396,10 @@ sr:
         few: " који садржи термин <strong>'%{search_term}'</strong>"
         other: " који садржи термин <strong>'%{search_term}'</strong>"
       select_order: Наручено по
+      select_order_long: "Предлози су приказани на основу:"
       start_proposal: Креирајте предлог
       title: Предлози
+      top: Најпопуларнији у току недеље
       top_link_proposals: Предлози са највише подршке по категорији
       section_header:
         icon_alt: Икона предлога
