@@ -119,8 +119,7 @@ Sure you can use any HTTP library available for most programming languages.
 
 `User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36`
 
-
-## Available information:
+## Available information
 
 The [config/api.yml](../../config/api.yml) file contains a complete list of all the models (and their attributes) which are currently being exposed in the API.
 

@@ -180,9 +180,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Verification:** Remove duplicated local census records on deployment [\#3829](https://github.com/consul/consul/pull/3829)
 
 ## [1.0.0](https://github.com/consul/consul/tree/1.0.0) (2019-06-10)
+
 [Full Changelog](https://github.com/consul/consul/compare/1.0.0-beta...1.0.0)
 
 ### Added
+
 - **Accounts:** Add description field to administrator users like evaluators description [\#3389](https://github.com/consul/consul/pull/3389)
 - **Admin:** Add document uploads from admin section [\#3466](https://github.com/consul/consul/pull/3466)
 - **Admin:** Images and documents settings [\#3585](https://github.com/consul/consul/pull/3585)
@@ -201,6 +203,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Statistics:** Add options to show advanced stats [\#3520](https://github.com/consul/consul/pull/3520)
 
 ### Changed
+
 - **Accounts:** Change devise configuration [\#3561](https://github.com/consul/consul/pull/3561)
 - **Admin:** Show count of votes associated to verified signatures [\#2616](https://github.com/consul/consul/pull/2616)
 - **Budgets:** Don't destroy budgets with an associated poll [\#3492](https://github.com/consul/consul/pull/3492)
@@ -231,6 +234,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **UX/UI:** Add help texs, links and new message section to improve UX [\#3573](https://github.com/consul/consul/pull/3573)
 
 ### Fixed
+
 - **Budgets:** Don't show links to disabled budget results [\#3592](https://github.com/consul/consul/pull/3592)
 - **Legislations:** Fix order in annotation comments with same score [\#3565](https://github.com/consul/consul/pull/3565)
 - **Maintenance:** Fix obsolete `respond\_with\_bip` usage [\#3483](https://github.com/consul/consul/pull/3483)
@@ -248,6 +252,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **UX/UI:** Always use map image from admin site customization images [\#3472](https://github.com/consul/consul/pull/3472)
 
 ### Removed
+
 - **Maintenance-Deprecated:** Delete spending proposals [\#3569](https://github.com/consul/consul/pull/3569)
 
 ## [1.0.0-beta](https://github.com/consul/consul/compare/v0.19...1.0.0-beta) (2019-04-29)
@@ -316,6 +321,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Maintenance-gems:** Add lib folder path to eager_load_paths [\#3465](https://github.com/consul/consul/pull/3465)
 
 ### Removed
+
 - **Maintenance-Deprecated:** Remove obsolete rake tasks [\#3401](https://github.com/consul/consul/pull/3401)
 - **Maintenance-Deprecated:** Add rake task to check for spending proposals [\#3441](https://github.com/consul/consul/pull/3441)
 
@@ -538,6 +544,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.17.0](https://github.com/consul/consul/compare/v0.16...v0.17) - 2018-10-31
 
 ### Added
+
 - **Multi-language:** Migrate globalize data [\#2986](https://github.com/consul/consul/pull/2986)
 - **Multi-language:** Update custom pages translations [\#2952](https://github.com/consul/consul/pull/2952)
 - **Multi-language:** Make homepage content translatable [\#2924](https://github.com/consul/consul/pull/2924)
@@ -572,6 +579,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Installation:** Add placeholder configuration for SMTP [\#2900](https://github.com/consul/consul/pull/2900)
 
 ### Changed
+
 - **Newsletters:** Newsletter updates [\#2992](https://github.com/consul/consul/pull/2992)
 - **Maintenance-Gems:** \[Security\] Bump rubyzip from 1.2.1 to 1.2.2 [\#2879](https://github.com/consul/consul/pull/2879)
 - **Maintenance-Gems:** \[Security\] Bump nokogiri from 1.8.2 to 1.8.4 [\#2878](https://github.com/consul/consul/pull/2878)
@@ -603,6 +611,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Social-Share:** Improves social share messages for proposals [\#2994](https://github.com/consul/consul/pull/2994)
 
 ### Fixed
+
 - **Maintenance-Specs:** Fix flaky specs: proposals and legislation Voting comments Update [\#2989](https://github.com/consul/consul/pull/2989)
 - **Maintenance-Specs:** Fix flaky spec: Admin legislation questions Update Valid legislation question [\#2976](https://github.com/consul/consul/pull/2976)
 - **Maintenance-Specs:** Fix flaky spec: Admin feature flags Enable a disabled feature  [\#2967](https://github.com/consul/consul/pull/2967)
@@ -619,6 +628,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.16.0](https://github.com/consul/consul/compare/v0.15...v0.16) - 2018-07-16
 
 ### Added
+
 - **Budgets:** Budgets investment show messages https://github.com/consul/consul/pull/2766
 - **Budgets:** Add Valuator Group name validation & related specs https://github.com/consul/consul/pull/2576
 - **Budgets:** Investment milestone's project status https://github.com/consul/consul/pull/2706
@@ -642,6 +652,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Design/UX:** Legislation help gif https://github.com/consul/consul/pull/2732
 
 ### Changed
+
 - **Budgets:** Add valuator groups assigned to investments to admin tables & csv export https://github.com/consul/consul/pull/2592
 - **Design/UX:** Adds ballot booths menu on admin https://github.com/consul/consul/pull/2716
 - **Design/UX:** Polls UI https://github.com/consul/consul/pull/2765
@@ -662,6 +673,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Docker:** Docker/docker-compose enhancements https://github.com/consul/consul/pull/2661
 
 ### Fixed
+
 - **Budgets:** Fix valuation heading filters https://github.com/consul/consul/pull/2578
 - **Budgets:** Budgets homepage map fixes https://github.com/consul/consul/pull/2654
 - **Budgets:** Display message in budget's index when there are no budgets https://github.com/consul/consul/pull/2575
@@ -688,6 +700,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.15.0](https://github.com/consul/consul/compare/v0.14...v0.15) - 2018-05-23
 
 ### Added
+
 - **Budgets:** Show 'See Results' button in budget admin panel https://github.com/consul/consul/pull/2632
 - **Budgets:** Add valuator groups  assigned to investments to admin tables & csv export https://github.com/consul/consul/pull/2592
 - **Budgets:** Add Valuator Group name validation & related specs https://github.com/consul/consul/pull/2576
@@ -711,6 +724,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Maintenance:** Add Node.js as requirement on README \(spanish\) https://github.com/consul/consul/pull/2550
 
 ### Changed
+
 - **Budgets:** Display unfeasibility explanation only when valuation has finished https://github.com/consul/consul/pull/2570
 - **Budgets:** Admin budget investment info https://github.com/consul/consul/pull/2539
 - **Budgets:** Restrict valuators access to edit/valute only on valuating phase https://github.com/consul/consul/pull/2535
@@ -730,6 +744,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Maintenance:** Rubocop & rubocop-rspec gem & config updates https://github.com/consul/consul/pull/2524
 
 ### Fixed
+
 - **Budgets:** Fix valuation heading filters https://github.com/consul/consul/pull/2578
 - **Budgets:** Fixes budgets ui for all phases https://github.com/consul/consul/pull/2537
 - **Budgets:** Fixes Issue \#2604 https://github.com/consul/consul/pull/2614
@@ -765,6 +780,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.14.0](https://github.com/consul/consul/compare/v0.13...v0.14) - 2018-03-08
 
 ### Added
+
 - Admin newsletter emails https://github.com/consul/consul/pull/2462
 - Admin emails list download https://github.com/consul/consul/pull/2466
 - Alert message when a user deletes an investment project from "My activity" https://github.com/consul/consul/pull/2385
@@ -773,6 +789,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Docs\(readme\): Include Node.js as requirement https://github.com/consul/consul/pull/2486
 
 ### Changed
+
 - Improved Document lists https://github.com/consul/consul/pull/2490
 - Valuators cannot reopen finished valuations https://github.com/consul/consul/pull/2518
 - Show investment links only on phase balloting or later https://github.com/consul/consul/pull/2386
@@ -782,9 +799,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Budgets map improvements https://github.com/consul/consul/pull/2552
 
 ### Deprecated
+
 - Totally remove investment's internal_comments https://github.com/consul/consul/pull/2406
 
 ### Fixed
+
 - Fixes social share buttons: https://github.com/consul/consul/pull/2525
 - Heading link on budgets message: https://github.com/consul/consul/pull/2528
 - Improve spec boot time and clean up of test logs https://github.com/consul/consul/pull/2444
@@ -805,6 +824,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.13.0](https://github.com/consul/consul/compare/v0.12...v0.13) - 2018-02-05
 
 ### Added
+
 - Added Drafting phase to Budgets https://github.com/consul/consul/pull/2285
 - Added 'Publish investments price' phase to Budgets https://github.com/consul/consul/pull/2296
 - Allow admins to destroy budgets without investments https://github.com/consul/consul/pull/2283
@@ -822,6 +842,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added Capistrano task to automate maintenance mode https://github.com/consul/consul/pull/1932
 
 ### Changed
+
 - Display proposal and investment image when sharing in social networks https://github.com/consul/consul/pull/2202
 - Redirect admin to budget lists after edit https://github.com/consul/consul/pull/2284
 - Improve budget investment form https://github.com/consul/consul/pull/2280
@@ -850,13 +871,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Updated rubocop version and ignored all cops by default
 
 ### Deprecated
+
 - Budget's `description_*` columns will be erased from database in next release. Please run rake task `budgets:phases:generate_missing` to migrate them. Details at Warning section of https://github.com/consul/consul/pull/2323
 - Budget::Investment's `internal_comments` attribute usage was removed, because of https://github.com/consul/consul/pull/2403, run rake task `investments:internal_comments:migrate_to_thread` to migrate existing values to the new internal comments thread. In next release database column will be removed.
 
 ### Removed
+
 - Spending Proposals urls from sitemap, that model is getting entirely deprecated soon.
 
 ### Fixed
+
 - Fix Budget Investment's milestones order https://github.com/consul/consul/pull/2431
 - Only change budget slugs if its on draft phase https://github.com/consul/consul/pull/2434
 - Fixed an internal bug that allowed users to remove documents from other user's Proposals & Investments https://github.com/consul/consul/commit/97ec551178591ea9f59744f53c7aadcaad5e679a#diff-bc7e874fa3fd44e4b6f941b434d1d921
@@ -866,12 +890,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Links to hidden comments on admin & moderation https://github.com/consul/consul/pull/2395
 
 ### Security
+
 - Upgraded Paperclip version up to 5.2.1 to fix security problem https://github.com/consul/consul/pull/2393
 - Upgraded nokogiri: 1.8.1 → 1.8.2 https://github.com/consul/consul/pull/2413
 
 ## [0.12.0](https://github.com/consul/consul/compare/v0.11...v0.12) - 2018-01-03
 
 ### Added
+
 - Added Images to Budget Investment's Milestones https://github.com/consul/consul/pull/2186
 - Added Documents to Budget Investment's Milestones https://github.com/consul/consul/pull/2191
 - Added Publication Date Budget Investment's Milestones https://github.com/consul/consul/pull/2188
@@ -882,6 +908,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Adds timestamps to polls https://github.com/consul/consul/pull/2180 (Run `rake polls:initialize_timestamps` to initialize attributes created_at and updated_at with the current time for all existing polls, or manually through console set correct values)
 
 ### Changed
+
 - Some general Design improvements https://github.com/consul/consul/pull/2170 https://github.com/consul/consul/pull/2198
 - Improved Communities design https://github.com/consul/consul/pull/1904
 - Made Milestones description required & hided title usage https://github.com/consul/consul/pull/2195
@@ -889,6 +916,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improved Sitemap for SEO https://github.com/consul/consul/pull/2215
 
 ### Fixed
+
 - Notifications for hidden resources https://github.com/consul/consul/pull/2172
 - Notifications exceptions https://github.com/consul/consul/pull/2187
 - Fixed map location update https://github.com/consul/consul/pull/2213
@@ -896,6 +924,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.11.0](https://github.com/consul/consul/compare/v0.10...v0.11) - 2017-12-05
 
 ### Added
+
 - Allow social media image meta tags to be overwritten https://github.com/consul/consul/pull/1756 & https://github.com/consul/consul/pull/2153
 - Allow users to verify their account against a local Census https://github.com/consul/consul/pull/1752
 - Make Proposals & Budgets Investments followable by users https://github.com/consul/consul/pull/1727
@@ -933,6 +962,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added a `/consul.json` route that returns installation details (current release version and feature flags status) for a future dashboard app https://github.com/consul/consul/pull/2164
 
 ### Changed
+
 - Gem versions locked & cleanup https://github.com/consul/consul/pull/1730
 - Upgraded many minor versions https://github.com/consul/consul/pull/1747
 - Rails 4.2.10 https://github.com/consul/consul/pull/2128
@@ -949,6 +979,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Comment count now updates live after publishing a new one https://github.com/consul/consul/pull/2090
 
 ### Removed
+
 - Removed Tolk gem usage, we've moved to Crowdin service https://github.com/consul/consul/pull/1729
 - Removed Polls manual recounts (model Poll::FinalRecount) https://github.com/consul/consul/pull/1764
 - Skipped specs for deprecated Spending Proposal model https://github.com/consul/consul/pull/1773
@@ -958,6 +989,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove deprecated Poll::Question valid_answers attribute & usage https://github.com/consul/consul/pull/2073 https://github.com/consul/consul/pull/2074
 
 ### Fixed
+
 - Foundation settings stylesheet https://github.com/consul/consul/pull/1766
 - Budget milestone date localization https://github.com/consul/consul/pull/1734
 - Return datetime format for en locale https://github.com/consul/consul/pull/1795
@@ -977,18 +1009,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Lots of small UI/UX/SEO/SEM improvements
 
 ## [0.10.0](https://github.com/consul/consul/compare/v0.9...v0.10) - 2017-07-05
+
 ### Added
+
 - Milestones on Budget Investment's
 - Feature flag to enable/disable Legislative Processes
 - Locale site pages customization
 - Incompatible investments
 
 ### Changed
+
 - Localization files reorganization. Check migration instruction at https://github.com/consul/consul/releases/tag/v0.10
 - Rails 4.2.9
 
 ## [0.9.0](https://github.com/consul/consul/compare/v0.8...v0.9) - 2017-06-15
+
 ### Added
+
 - Budgets
 - Basic polls
 - Collaborative legistlation
@@ -997,35 +1034,45 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improved admin section
 
 ### Changed
+
 - Improved admin section
 - Rails 4.2.8
 - Ruby 2.3.2
 
 ### Deprecated
+
 - SpendingProposals are deprecated now in favor of Budgets
 
 ### Fixed
+
 - CKEditor locale compilation fixed
 - Fixed bugs in mobile layouts
 
 ## [0.8.0](https://github.com/consul/consul/compare/v0.7...v0.8)- 2016-07-21
+
 ### Added
+
 - Support for customization schema, vía specific custom files, assets and folders
 
 ### Changed
+
 - Rails 4.2.7
 - Ruby 2.3.1
 
 ### Fixed
+
 - Fixed bug causing errors on user deletion
 
 ## [0.7.0] - 2016-04-25
+
 ### Added
+
 - Debates
 - Proposals
 - Basic Spending Proposals
 
 ### Changed
+
 - Rails 4.2.6
 - Ruby 2.2.3
 
