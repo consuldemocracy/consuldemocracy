@@ -122,7 +122,7 @@ sr:
       search_results:
         one: " која садржи појам<strong>%{search_term}</strong>"
         few: " који садрже појам <strong>%{search_term}</strong> "
-        other: "који садржи појам <strong>%{search_term}</strong>"
+        other: " који садржи појам <strong>%{search_term}</strong>"
       select_order: Наручено по
       start_debate: Започните расправу
       title: Расправе
@@ -750,6 +750,7 @@ sr:
       proposal:
         see_all: "Видите све"
     tags_cloud:
+      tags: Најпопуларније
       districts: "Дистрикти"
       districts_list: "Листа дистрикта"
       categories: "Категорије"
@@ -759,12 +760,14 @@ sr:
     unfollow_entity: "Одпратити%{entity}"
     outline:
       searcher: Претраживач
+    go_to_page: "Иди на страну "
     share: Подели
     orbit:
       previous_slide: Претходни слајд
       next_slide: Наредни слајд
     documentation: Додатна документација
     view_mode:
+      title: Режим прегледа
       cards: Картице
       list: Листа
     recommended_index:
@@ -799,6 +802,8 @@ sr:
       votes: Укупни гласови
       verified_users: Потврђени корисници
       unverified_users: Непотврђени корисници
+  unauthorized:
+    default: Немате дозволу да приступите овој страни.
   users:
     signin: "пријавите се"
     signup: "упиши се"
@@ -837,6 +842,10 @@ sr:
           one: 1 Инвестиција
           few: "%{count} Инвестиције"
           other: "%{count} Инвестиције"
+        follows:
+          one: 1 праћење
+          few: "%{count} праћења"
+          other: "%{count} праћења"
       no_private_messages: "Овај корисник не прихвата приватне поруке."
       send_private_message: "Пошаљите приватну поруку"
       delete_alert: "Да ли сте сигурни да желите да обришете инвестициони пројект? Ова радња се не може поништити"
@@ -858,7 +867,7 @@ sr:
       not_logged_in: Морате %{signin} или %{signup} да бисте наставили.
       not_verified: Само потврђени корисници могу гласати за инвестиционе пројекте; %{verify_account}.
       organization: Организацијама није дозвољено гласање
-      unfeasible: Неизабрани инвестициони пројекти не могу бити подржани
+      unfeasible: Неизводљиви инвестициони пројекти не могу бити подржани
       not_voting_allowed: Фаза гласања је затворена
   welcome:
     feed:
@@ -909,7 +918,32 @@ sr:
     score_negative: "Не"
     content_title:
       proposal: "Предлог"
+      debate: "Дебате"
+      budget_investment: "Буџетске инвестиције"
+  admin/widget:
+    header:
+      title: Администрација
+  links:
+    form:
+      delete_button: Обриши
+      cancel_button: Откажи
+    nested_links:
+      title: Линкови
+      note: Додајте линкове који су од интереса
+      add_new_link: Додај нови линк
+    link_fields:
+      label_placeholder: Назив линка
+      url_placeholder: Адреса линка
+  communities:
+    show:
+      surveys: Анкете
+      complete_survey: Одговорите на анкету
+    subnav:
+      surveys: Анкете
+    poll:
+      take_part: Учествуј од %{from} до %{to}
   remote_translations:
+    text: Садржај ове стране није доступан на Вашем језику
     all_remote_translations_enqueued_text: Ускоро ћете поновним учитавањем стране моћи ћете да видите сав садржај на Вашем језику.
     create:
       enqueue_remote_translation: Захтев за преводом је успешно послат.
