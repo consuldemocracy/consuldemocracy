@@ -2287,6 +2287,13 @@ table {
 // 18. Banners
 // -----------
 
+.banner {
+
+  + .budget.expanded,
+  + .jumbo {
+    margin-top: 0;
+  }
+}
 
 // 19. Recommendations
 // -------------------
