@@ -909,6 +909,8 @@
 .help-header {
   background: #fafafa;
   border-bottom: 1px solid #eee;
+  margin-top: -$line-height;
+  margin-bottom: $line-height;
   padding-bottom: $line-height / 2;
   padding-top: $line-height;
 
@@ -1142,6 +1144,7 @@
 
   &.budget {
     background: $budget;
+    margin-top: -$line-height;
 
     h1,
     h2,
