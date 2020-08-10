@@ -2289,6 +2289,11 @@ table {
 
 .banner {
 
+  a > * {
+    @include grid-row;
+    padding: 0 rem-calc(16);
+  }
+
   + .budget.expanded,
   + .jumbo {
     margin-top: 0;
