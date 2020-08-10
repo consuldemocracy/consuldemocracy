@@ -57,7 +57,7 @@
 
         <div data-sticky-container>
           <div data-sticky data-anchor="sticky-panel" class="draft-index sticky" data-tree-navigator>
-            <%= sanitize(@draft_version.toc_html) %>
+            <%= AdminLegislationSanitizer.new.sanitize(@draft_version.toc_html) %>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@
                    data-legislation-annotatable-base-url="<%= legislation_process_draft_version_path(@process, @draft_version) %>"
                    data-legislation-open-phase="<%= @process.allegations_phase.open? %>">
           <% end %>
-            <%= sanitize(@draft_version.body_html, { attributes: ["id"] }) %>
+            <%= AdminLegislationSanitizer.new.sanitize(@draft_version.body_html) %>
           </section>
         </div>
       </div>
