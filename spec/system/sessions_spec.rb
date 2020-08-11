@@ -45,4 +45,19 @@ describe "Sessions" do
 
     expect(page).to have_current_path "/"
   end
+
+  scenario "Sign out does not redirect to POST requests URLs" do
+    login_as(create(:user))
+
+    visit account_path
+    click_link "Verify my account"
+    click_button "Verify residence"
+
+    expect(page).to have_content(/errors prevented the verification of your residence/)
+
+    click_link "Sign out"
+
+    expect(page).to have_content "You must sign in or register to continue."
+    expect(page).to have_current_path new_user_session_path
+  end
 end
