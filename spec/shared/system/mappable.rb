@@ -134,6 +134,38 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
           expect(page.execute_script("return App.Map.maps[0].getZoom();")).to eq(11)
         end
       end
+
+      scenario "shows marker at map center", :js do
+        do_login_for user
+        visit send(mappable_new_path, arguments)
+
+        within ".map_location" do
+          expect(page).not_to have_css(".map-icon")
+        end
+
+        place_map_at(-68.592487, -62.391357)
+        find("#new_map_location").click
+
+        within ".map_location" do
+          expect(page).to have_css(".map-icon")
+        end
+
+        if management
+          click_link "Select user"
+
+          expect(page).to have_content "User management"
+        else
+          click_link "Help"
+
+          expect(page).to have_content "CONSUL is a platform for citizen participation"
+        end
+
+        go_back
+
+        within ".map_location" do
+          expect(page).to have_css(".map-icon")
+        end
+      end
     end
 
     scenario "Skip map", :js do
@@ -332,6 +364,14 @@ def map_zoom_in
   initial_zoom = page.execute_script("return App.Map.maps[0].getZoom();")
   find(".leaflet-control-zoom-in").click
   until page.execute_script("return App.Map.maps[0].getZoom() === #{initial_zoom + 1};") do
+    sleep 0.01
+  end
+end
+
+def place_map_at(latitude, longitude)
+  page.execute_script("App.Map.maps[0].setView(new L.LatLng(#{latitude}, #{longitude}))")
+
+  until page.execute_script("return App.Map.maps[0].getCenter().lat === #{latitude};") do
     sleep 0.01
   end
 end

@@ -20,14 +20,12 @@
       App.Map.maps = [];
     },
     initializeMap: function(element) {
-      var addMarkerInvestments, clearFormfields, createMarker, editable, formCoordinates, getPopupContent,
-        latitudeInputSelector, longitudeInputSelector, map, mapAttribution, mapCenterLatLng,
+      var addMarkerInvestments, clearFormfields, createMarker, dataCoordinates, editable, formCoordinates,
+        getPopupContent, latitudeInputSelector, longitudeInputSelector, map, mapAttribution, mapCenterLatLng,
         mapCenterLatitude, mapCenterLongitude, mapTilesProvider, marker, markerIcon, markerLatitude,
         markerLongitude, moveOrPlaceMarker, openMarkerPopup, removeMarker, removeMarkerSelector,
         updateFormfields, zoom, zoomInputSelector;
       App.Map.cleanInvestmentCoordinates(element);
-      mapCenterLatitude = $(element).data("map-center-latitude");
-      mapCenterLongitude = $(element).data("map-center-longitude");
       mapTilesProvider = $(element).data("map-tiles-provider");
       mapAttribution = $(element).data("map-tiles-provider-attribution");
       latitudeInputSelector = $(element).data("latitude-input-selector");
@@ -38,12 +36,23 @@
         long: $(longitudeInputSelector).val(),
         zoom: $(zoomInputSelector).val()
       };
+      dataCoordinates = {
+        lat: $(element).data("marker-latitude"),
+        long: $(element).data("marker-longitude")
+      };
       if (App.Map.validCoordinates(formCoordinates)) {
         markerLatitude = formCoordinates.lat;
         markerLongitude = formCoordinates.long;
+        mapCenterLatitude = formCoordinates.lat;
+        mapCenterLongitude = formCoordinates.long;
+      } else if (App.Map.validCoordinates(dataCoordinates)) {
+        markerLatitude = dataCoordinates.lat;
+        markerLongitude = dataCoordinates.long;
+        mapCenterLatitude = dataCoordinates.lat;
+        mapCenterLongitude = dataCoordinates.lat;
       } else {
-        markerLatitude = $(element).data("marker-latitude");
-        markerLongitude = $(element).data("marker-longitude");
+        mapCenterLatitude = $(element).data("map-center-latitude");
+        mapCenterLongitude = $(element).data("map-center-longitude");
       }
       if (App.Map.validZoom(formCoordinates.zoom)) {
         zoom = formCoordinates.zoom;
