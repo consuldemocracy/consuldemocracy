@@ -6,6 +6,11 @@ describe "Admin polls" do
     login_as(admin.user)
   end
 
+  scenario "Disabled with a feature flag" do
+    Setting["process.polls"] = nil
+    expect { visit admin_polls_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+  end
+
   scenario "Index empty", :js do
     visit admin_root_path
 
