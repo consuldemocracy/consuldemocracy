@@ -252,8 +252,6 @@ da:
           other: Du har %{count} nye notifikationer
         notifications: Notifikationer
         no_notifications: "Du har ingen nye notifikationer"
-    admin:
-      watch_form_message: "Du har ændringer, der ikke er gemt. Ønsker du stadig at forlade denne side?"
   notifications:
     index:
       empty_notifications: Du har ingen nye notifikationer.
