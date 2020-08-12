@@ -187,8 +187,6 @@ sl:
       notification_item:
         notifications: Obvestila
         no_notifications: "Nimaš novih obvestil"
-    admin:
-      watch_form_message: "Imaš neshranjene spremembe. Res želiš zapustiti to stran?"
   notifications:
     index:
       empty_notifications: Nimaš novih obvestil.
