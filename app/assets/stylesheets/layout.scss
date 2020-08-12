@@ -2287,6 +2287,22 @@ table {
 // 18. Banners
 // -----------
 
+.banner {
+
+  a > * {
+    @include grid-row;
+    padding: 0 rem-calc(16);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  + .budget.expanded,
+  + .jumbo {
+    margin-top: 0;
+  }
+}
 
 // 19. Recommendations
 // -------------------
