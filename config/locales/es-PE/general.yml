@@ -201,8 +201,6 @@ es-PE:
           other: Tienes %{count} notificaciones nuevas
         notifications: Notificaciones
         no_notifications: "No tienes notificaciones nuevas"
-    admin:
-      watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
   notifications:
     index:
       empty_notifications: Você não possui novas notificações
