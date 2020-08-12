@@ -239,8 +239,6 @@ tr:
           other: '%{count} yeni bildirimleriniz var'
         notifications: Bildirimler
         no_notifications: "Yeni bildiriminiz yok"
-    admin:
-      watch_form_message: "Değişiklikleri kaydetmediniz. Sayfadan ayrılmayı onaylıyor musunuz?"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
