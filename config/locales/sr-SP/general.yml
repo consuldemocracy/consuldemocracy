@@ -262,8 +262,6 @@ sr:
           other: Имате %{count} нових обавештења
         notifications: Обавештења
         no_notifications: "Немате нових обавештења"
-    admin:
-      watch_form_message: "Имате несачуване промене. Да ли желите да напустите страницу?"
   notifications:
     index:
       empty_notifications: Немате нових обавештења.
