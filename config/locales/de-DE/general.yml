@@ -252,8 +252,6 @@ de:
           other: Sie haben %{count} neue Benachrichtigungen
         notifications: Benachrichtigungen
         no_notifications: "Sie haben keine neuen Benachrichtigungen"
-    admin:
-      watch_form_message: "Sie haben die Änderungen nicht gespeichert. Möchten Sie die Seite dennoch verlassen?"
   notifications:
     index:
       empty_notifications: Sie haben keine neuen Benachrichtigungen.
