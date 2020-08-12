@@ -241,8 +241,6 @@ gl:
           other: Tes %{count} notificacións novas
         notifications: Notificacións
         no_notifications: "Non tes notificacións novas"
-    admin:
-      watch_form_message: "Realizaches cambios que aínda non se gardaron. Tes a certeza de que queres deixar a páxina?"
   notifications:
     index:
       empty_notifications: Non tes notificacións novas.
