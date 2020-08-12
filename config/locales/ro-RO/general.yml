@@ -262,8 +262,6 @@ ro:
           other: Aveți %{count} notificări noi
         notifications: Notificări
         no_notifications: "Nu aveți notificări noi"
-    admin:
-      watch_form_message: "Aveți modificări nesalvate. Sunteți sigur că doriți să părăsiți pagina?"
   notifications:
     index:
       empty_notifications: Nu aveți notificări noi.
