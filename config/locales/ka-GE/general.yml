@@ -252,8 +252,6 @@ ka:
           other: თქვენ გაქვთ %{count} შეტყობინება
         notifications: შეტყობინებები
         no_notifications: "თქვენ არ გაქვთ შეტყობინება"
-    admin:
-      watch_form_message: "თქვენ არ შეგინახავთ განხორციელებული ცვლილებები. გსურთ გვერდის დატოვება?"
   notifications:
     index:
       empty_notifications: თქვენ არ გაქვთ შეტყობინება.
