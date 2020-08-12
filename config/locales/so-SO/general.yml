@@ -215,8 +215,6 @@ so:
           other: Waxaad heysataa%{count} ogeysiis cusub
         notifications: Ogaysiisyo
         no_notifications: "Ma haysatid wargelin cusub"
-    admin:
-      watch_form_message: "Waxaad leedahay isbedel aan la badbaadin. Ma xaqiijinaysaa inaad ka tagto bogga?"
   notifications:
     index:
       empty_notifications: Ma haysatid wargelin cusub,.
