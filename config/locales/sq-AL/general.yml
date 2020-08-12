@@ -215,8 +215,6 @@ sq:
           other: Ju keni %{count} njoftim të reja
         notifications: Njoftimet
         no_notifications: "Ju nuk keni njoftime të reja"
-    admin:
-      watch_form_message: "Ju keni ndryshime të paruajtura. A konfirmoni të dilni nga faqja?"
   notifications:
     index:
       empty_notifications: Ju nuk keni njoftime të reja
