@@ -252,8 +252,6 @@ oc:
           other: As %{count} notificacions nòvas
         notifications: De notificacions
         no_notifications: "As pas de notificacions nòvas"
-    admin:
-      watch_form_message: "As fach de cambiaments que son pas estats gardats. ¿Segur que vòles abandonar la pagina?"
   notifications:
     index:
       empty_notifications: As pas de notificacions nòvas.
