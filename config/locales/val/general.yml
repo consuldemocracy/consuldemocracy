@@ -215,8 +215,6 @@ val:
           other: Tens %{count} notificacions
         notifications: Notificacions
         no_notifications: "No tens noves notificacions"
-    admin:
-      watch_form_message: "Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?"
   notifications:
     index:
       empty_notifications: No tens noves notificacions.
