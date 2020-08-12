@@ -217,8 +217,6 @@ fr:
           other: Vous avez %{count} nouvelles notifications
         notifications: Notifications
         no_notifications: "Vous n'avez pas de nouvelles notifications"
-    admin:
-      watch_form_message: "Vous avez des modifications non sauvegardées. Êtes-vous sûr(e) de vouloir quitter cette page ?"
   notifications:
     index:
       empty_notifications: Vous n'avez pas de nouvelles notifications
