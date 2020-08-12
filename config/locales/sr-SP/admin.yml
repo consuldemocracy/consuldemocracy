@@ -557,6 +557,7 @@ sr:
           back: Назад
           submit_button: Сачувај измене
           warning: Изменио си текст, не заборави да стиснеш дугме Сачувај како би сачувао измене.
+          markdown_changes_message: "Унели сте измене у тексту без да га снимите. Да ли заиста желите да напустите страницу?"
         form:
           title: 'Уредити <span class="strong">%{draft_version_title}</span> од процеса <span class="strong">%{process_title}</span>'
           launch_text_editor: Покрени уређивач текста
