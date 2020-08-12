@@ -228,8 +228,6 @@ pl:
           other: Masz %{count} nowe powiadomienia
         notifications: Powiadomienia
         no_notifications: "Nie masz nowych powiadomień"
-    admin:
-      watch_form_message: "Posiadasz niezapisane zmiany. Czy potwierdzasz opuszczenie strony?"
   notifications:
     index:
       empty_notifications: Nie masz nowych powiadomień.
