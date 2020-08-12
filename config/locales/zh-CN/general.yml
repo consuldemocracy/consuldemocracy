@@ -209,8 +209,6 @@ zh-CN:
           other: 您有%{count} 个新通知
         notifications: 通知
         no_notifications: "您没有新的通知"
-    admin:
-      watch_form_message: "您有未保存的更改。是否确认要离开此页面？"
   notifications:
     index:
       empty_notifications: 您没有新的通知。
