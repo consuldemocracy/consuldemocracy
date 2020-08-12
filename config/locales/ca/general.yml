@@ -252,8 +252,6 @@ ca:
           other: Tens %{count} notificacions noves
         notifications: Notificacions
         no_notifications: "No tens notificacions noves"
-    admin:
-      watch_form_message: "Has fet canvis que no han estat guardats. ¿Segur que vols abandonar la pàgina?"
   notifications:
     index:
       empty_notifications: No tens notificacions noves.
