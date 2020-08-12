@@ -215,8 +215,6 @@ it:
           other: Hai %{count} nuove notifiche
         notifications: Notifiche
         no_notifications: "Non hai nuove notifiche"
-    admin:
-      watch_form_message: "Non sono state salvate le modifiche. Confermate per uscire dalla pagina?"
   notifications:
     index:
       empty_notifications: Non hai nuove notifiche.
