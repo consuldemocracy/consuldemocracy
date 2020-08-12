@@ -248,8 +248,6 @@ nn:
           other: Du har %{count} nye varsler
         notifications: Varsler
         no_notifications: "Du har ingen nye varsler"
-    admin:
-      watch_form_message: "Du har gjort endringer som ikke er lagret. Ønsker du fortsatt å forlate siden?"
   notifications:
     index:
       empty_notifications: Du har ingen nye varsler.
