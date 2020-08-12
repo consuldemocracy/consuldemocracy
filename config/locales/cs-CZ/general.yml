@@ -207,8 +207,6 @@ cs:
       notification_item:
         notifications: Upozornění
         no_notifications: "Nemáte žádná nová upozornění"
-    admin:
-      watch_form_message: "Máte neuložené změny. Potvrdíte opuštění stránky?"
   notifications:
     index:
       empty_notifications: Nemáte nová upozornění.
