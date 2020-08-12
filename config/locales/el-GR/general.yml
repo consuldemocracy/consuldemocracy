@@ -239,8 +239,6 @@ el:
           other: Έχετε %{count} νέες ειδοποιήσεις
         notifications: Ειδοποιήσεις
         no_notifications: "Δεν έχετε νέες ειδοποιήσεις"
-    admin:
-      watch_form_message: "Έχετε μη αποθηκευμένες αλλαγές. Επιβεβαιώνετε οτι επιθυμείτε να φύγετε από τη σελίδα;"
   notifications:
     index:
       empty_notifications: Δεν έχετε νέες ειδοποιήσεις.
