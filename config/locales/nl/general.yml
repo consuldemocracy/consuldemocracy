@@ -216,8 +216,6 @@ nl:
           other: U heeft %{count} nieuwe meldingen
         notifications: Notificaties
         no_notifications: "U heeft geen nieuwe meldingen"
-    admin:
-      watch_form_message: "U hebt niet-opgeslagen wijzigingen. Verlaat de pagina?"
   notifications:
     index:
       empty_notifications: U heeft geen nieuwe meldingen.
