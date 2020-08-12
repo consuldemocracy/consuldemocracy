@@ -238,8 +238,6 @@ bs:
           other: Imate %{count} nove/novih obavijesti
         notifications: Obavijesti
         no_notifications: "Nemate novih obavijesti"
-    admin:
-      watch_form_message: "Niste spasili izmjene. Ipak napuštate stranicu?"
   notifications:
     index:
       empty_notifications: Nemate novih obavijesti.
