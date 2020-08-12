@@ -17,10 +17,14 @@
       $("#user_password").prop("type", type);
     },
     initialize: function() {
-      $(".generate-random-value").on("click", function() {
+      $(".generate-random-value").on("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         $("#user_password").val(App.Managers.generatePassword());
       });
-      $(".show-password").on("click", function() {
+      $(".show-password").on("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         if ($("#user_password").is("input[type='password']")) {
           App.Managers.togglePassword("text");
         } else {

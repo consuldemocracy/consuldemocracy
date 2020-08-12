@@ -42,6 +42,7 @@
 //= require jquery-fileupload/basic
 //= require foundation
 //= require turbolinks
+//= require turbolinks_anchors
 //= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
@@ -86,7 +87,7 @@
 //= require legislation
 //= require legislation_allegations
 //= require legislation_annotatable
-//= require watch_form_changes
+//= require legislation_draft_versions
 //= require followable
 //= require flaggable
 //= require documentable
@@ -110,6 +111,7 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
+//= require datepicker
 
 var initialize_modules = function() {
   "use strict";
@@ -144,7 +146,6 @@ var initialize_modules = function() {
   if ($(".legislation-annotatable").length) {
     App.LegislationAnnotatable.initialize();
   }
-  App.WatchFormChanges.initialize();
   App.TreeNavigator.initialize();
   App.Documentable.initialize();
   App.Imageable.initialize();
@@ -166,10 +167,16 @@ var initialize_modules = function() {
   App.BudgetEditAssociations.initialize();
 };
 
-$(function() {
+var destroy_non_idempotent_modules = function() {
   "use strict";
 
-  Turbolinks.enableProgressBar();
-});
-$(document).ready(initialize_modules);
-$(document).on("page:load", initialize_modules);
+  App.ColumnsSelector.destroy();
+  App.Datepicker.destroy();
+  App.HTMLEditor.destroy();
+  App.LegislationAnnotatable.destroy();
+  App.Map.destroy();
+  App.SocialShare.destroy();
+};
+
+$(document).on("turbolinks:load", initialize_modules);
+$(document).on("turbolinks:before-cache", destroy_non_idempotent_modules);
