@@ -262,8 +262,6 @@ hr:
           other: Vi imate %{count} nove obavijesti
         notifications: Obavijesti
         no_notifications: "Nemate novu obavijest"
-    admin:
-      watch_form_message: "Imate promjene koje niste spremili. Želite li izaći iz stranice?"
   notifications:
     index:
       empty_notifications: Nemate nove obavijesti.
