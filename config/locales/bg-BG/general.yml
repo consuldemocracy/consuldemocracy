@@ -247,8 +247,6 @@ bg:
           other: Имате %{count} нови известия
         notifications: Известия
         no_notifications: "Нямате нови известия"
-    admin:
-      watch_form_message: "Имате незапазени промени. Потвърждавате ли, че напускате страницата?"
   notifications:
     index:
       empty_notifications: Нямате нови известия.
