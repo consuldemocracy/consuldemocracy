@@ -844,7 +844,9 @@ sr:
           one: 1 праћење
           few: "%{count} праћења"
           other: "%{count} праћења"
+      no_activity: Корисник нема јавних активности
       no_private_messages: "Овај корисник не прихвата приватне поруке."
+      private_activity: Листа активности овог корисника је приватна.
       send_private_message: "Пошаљите приватну поруку"
       delete_alert: "Да ли сте сигурни да желите да обришете инвестициони пројект? Ова радња се не може поништити"
     proposals:
@@ -853,6 +855,7 @@ sr:
       published: Објављено
       see: "Погледајте предлоге"
       actions: Радње
+      retired_help_text: Контролна табла није доступна за истекле предлоге
   votes:
     agree: Слажем се
     anonymous: Превише анонимних гласова да призна гласање%{verify_account}.
@@ -881,6 +884,10 @@ sr:
     cards:
       title: Истакнуте
     recommended:
+      title: Препоруке за које ћете можда бити заинтересовани
+      debates:
+        title: Препоручене дебате
+        btn_text_link: Све препоручене дебате
       proposals:
         title: Препоручени предлози
         btn_text_link: Сви препоручени предлози
@@ -906,12 +913,15 @@ sr:
       user_permission_votes: Учествујте у завршном гласању
   invisible_captcha:
     sentence_for_humans: "Ако сте човек, игноришите ово поље"
+    timestamp_error_message: "Превише брзо! Молимо Вас да пошаљете поново."
   related_content:
     title: "Повезани садржај"
     add: "Додајте повезани садржај"
     label: "Линк за повезани садржај"
     placeholder: "%{url}"
     submit: "Додати"
+    success: "Додали сте нови повезани садржај"
+    is_related: "Да ли је садржај повезан?"
     score_positive: "Да"
     score_negative: "Не"
     content_title:
@@ -921,6 +931,9 @@ sr:
   admin/widget:
     header:
       title: Администрација
+  annotator:
+    help:
+      title: Како могу да коментаришем овај документ?
   links:
     form:
       delete_button: Обриши
