@@ -215,8 +215,6 @@ eu:
           other: '%{count} jakinarazpen berri dituzu'
         notifications: Jakinarazpenak
         no_notifications: "Ez duzu jakinarazpen berririk"
-    admin:
-      watch_form_message: "Gorde ez diren aldaketak egin dituzu. Ziur zaude orritik joan nahi duzula?"
   notifications:
     index:
       empty_notifications: Ez duzu jakinarazpen berririk.
