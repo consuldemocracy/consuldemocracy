@@ -809,6 +809,7 @@ sr:
     direct_messages:
       new:
         submit_button: Пошаљите поруку
+        title: Пошаљите приватну поруку %{receiver}
         verified_only: Да пошаљете приватне поруке%{verify_account}
       show:
         receiver: Порука послата %{receiver}
@@ -885,6 +886,7 @@ sr:
       title: Истакнуте
     recommended:
       title: Препоруке за које ћете можда бити заинтересовани
+      help: "Ове препоруке су генерисане на основу ознака дебата и предлога које пратите."
       debates:
         title: Препоручене дебате
         btn_text_link: Све препоручене дебате
