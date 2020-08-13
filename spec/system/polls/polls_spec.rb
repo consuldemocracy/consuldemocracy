@@ -190,6 +190,33 @@ describe "Polls" do
       end
     end
 
+    scenario "Answer images are shown", :js do
+      question = create(:poll_question, :yes_no, poll: poll)
+      create(:image, imageable: question.question_answers.first, title: "The yes movement")
+
+      visit poll_path(poll)
+
+      expect(page).to have_css "img[alt='The yes movement']"
+    end
+
+    scenario "Buttons to slide through images work back and forth", :js do
+      question = create(:poll_question, :yes_no, poll: poll)
+      create(:image, imageable: question.question_answers.last, title: "The no movement")
+      create(:image, imageable: question.question_answers.last, title: "No movement planning")
+
+      visit poll_path(poll)
+
+      within(".orbit-bullets") do
+        find("[data-slide='1']").click
+
+        expect(page).to have_css ".is-active[data-slide='1']"
+
+        find("[data-slide='0']").click
+
+        expect(page).to have_css ".is-active[data-slide='0']"
+      end
+    end
+
     scenario "Non-logged in users" do
       create(:poll_question, :yes_no, poll: poll)
 
