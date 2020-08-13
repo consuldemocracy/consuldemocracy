@@ -553,6 +553,7 @@ pt:
           back: Voltar
           submit_button: Salvar alterações
           warning: Você editou o texto. Não esqueça de clicar em Salvar para salvar permanentemente as mudanças.
+          markdown_changes_message: "Você editou o texto sem salvá-lo. Deseja mesmo sair da página?"
         form:
           title: 'Editando <span class="strong">%{draft_version_title}</span> do processo <span class="strong">%{process_title}</span>'
           launch_text_editor: Iniciar o editor de texto
