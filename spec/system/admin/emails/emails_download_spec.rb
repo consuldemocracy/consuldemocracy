@@ -38,4 +38,11 @@ describe "Admin download user emails" do
       expect(file_contents).to match_array ["admin_news1@consul.dev", "admin_news2@consul.dev"]
     end
   end
+
+  scenario "Download button is not disabled after being clicked", :js do
+    visit admin_emails_download_index_path
+    click_button "Download emails list"
+
+    expect(page).to have_button "Download emails list", disabled: false
+  end
 end
