@@ -3,6 +3,12 @@ hr:
     ballots:
       show:
         title: Vaš glas
+        amount_available:
+          knapsack: "Još morate <span>%{count}</span> investirati."
+        amount_spent:
+          knapsack: "Iznos utrošen <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
         no_balloted_group_yet: "Još niste glasovali u ovoj grupi, glasujte!"
         remove: Ukloni glas
         voted:
@@ -84,6 +90,8 @@ hr:
           other: " sadrži termine <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Moj glas
+          change_vote_info:
+            knapsack: "Možete %{link} u bilo koje vrijeme do zatvaranja ove faze. Nema potrebe utrošiti sav dostupan novac."
           different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
           change_ballot: "Ako se predomislite možete ukloniti vaš glas u %{check_ballot} i započeti ponovno."
           check_ballot_link: "provjeri i potvrdi moj glas"
