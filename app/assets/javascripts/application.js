@@ -60,7 +60,6 @@
 //= require moderator_budget_investments
 //= require moderator_proposal_notifications
 //= require moderator_legislation_proposals
-//= require prevent_double_submission
 //= require gettext
 //= require annotator
 //= require tags
@@ -126,7 +125,6 @@ var initialize_modules = function() {
   App.FoundationExtras.initialize();
   App.LocationChanger.initialize();
   App.CheckAllNone.initialize();
-  App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
