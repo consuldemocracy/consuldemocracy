@@ -556,6 +556,7 @@ hr:
           back: Nazad
           submit_button: Spremi promjene
           warning: Možete urediti tekst, nemojte zaboraviti klinuti Spremi kako bi trajno spremili promjene.
+          markdown_changes_message: "Uređivali ste tekst koji niste pohranili. Potvrđujete li napuštanje ove stranice?"
         form:
           title: 'Uređivanje <span class="strong">%{draft_version_title}</span> od postupka <span class="strong">%{process_title}</span>'
           launch_text_editor: Upali uređivač teksta
