@@ -431,7 +431,7 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.1.7)
       sprockets-rails (>= 2.0.0)
-    rails-assets-leaflet (1.2.0)
+    rails-assets-leaflet (1.5.1)
     rails-assets-markdown-it (8.2.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
