@@ -240,6 +240,44 @@ describe "Admin collaborative legislation" do
       expect(page).not_to have_content "Draft publication"
     end
 
+    scenario "Enabling/disabling a phase enables/disables its date fields", :js do
+      process.update!(published: false)
+
+      visit edit_admin_legislation_process_path(process)
+
+      expect(page).to have_field "start_date", disabled: true
+      expect(page).to have_field "end_date", disabled: true
+
+      check "legislation_process[published]"
+      fill_in "start_date", with: "07/07/2007"
+      fill_in "end_date", with: "08/08/2008"
+      uncheck "legislation_process[published]"
+
+      expect(page).to have_field "start_date", disabled: true
+      expect(page).to have_field "end_date", disabled: true
+
+      check "legislation_process[published]"
+
+      expect(page).to have_field "start_date", disabled: false, with: "07/07/2007"
+      expect(page).to have_field "end_date", disabled: false, with: "08/08/2008"
+    end
+
+    scenario "Enabling/disabling a phase does not enable/disable another phase date fields", :js do
+      process.update!(draft_phase_enabled: false, draft_publication_enabled: false)
+
+      visit edit_admin_legislation_process_path(process)
+
+      expect(page).to have_field "draft_start_date", disabled: true
+      expect(page).to have_field "draft_end_date", disabled: true
+      expect(page).to have_field "draft_publication_date", disabled: true
+
+      check "legislation_process[draft_phase_enabled]"
+
+      expect(page).to have_field "draft_start_date", disabled: false
+      expect(page).to have_field "draft_end_date", disabled: false
+      expect(page).to have_field "draft_publication_date", disabled: true
+    end
+
     scenario "Change proposal categories" do
       visit edit_admin_legislation_process_path(process)
       within(".admin-content") { click_link "Proposals" }
