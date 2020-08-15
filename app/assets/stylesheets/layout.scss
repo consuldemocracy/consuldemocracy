@@ -1074,6 +1074,10 @@ form {
     &.error {
       margin-bottom: rem-calc(1);
     }
+
+    &:disabled {
+      background-color: $input-background-disabled;
+    }
   }
 
   [type="checkbox"] + label,

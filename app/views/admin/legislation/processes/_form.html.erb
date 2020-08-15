@@ -1,14 +1,14 @@
 <%= render "shared/globalize_locales", resource: @process %>
 
-<%= translatable_form_for [:admin, @process] do |f| %>
+<%= translatable_form_for [:admin, @process], html: { class: "legislation-process-form" } do |f| %>
 
   <%= render "shared/errors", resource: @process %>
 
-  <div class="row">
-    <div class="small-12 medium-4 column">
-      <label><%= t("admin.legislation.processes.form.draft_phase") %></label>
-      <p class="help-text"><%= t("admin.legislation.processes.form.draft_phase_description") %></p>
-    </div>
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.draft_phase") %>
+      <span class="help-text"><%= t("admin.legislation.processes.form.draft_phase_description") %></span>
+    </legend>
 
     <div class="small-12 medium-3 column">
       <%= f.text_field :draft_start_date,
@@ -26,14 +26,12 @@
     <div class="small-12 medium-2 column margin-top">
       <%= f.check_box :draft_phase_enabled, checked: @process.draft_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
     </div>
+  </fieldset>
 
-    <div class="small-12 column">
-      <hr>
-    </div>
-
-    <div class="small-12 medium-4 column">
-      <label><%= t("admin.legislation.processes.form.process") %></label>
-    </div>
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.process") %>
+    </legend>
 
     <div class="small-12 medium-3 column">
       <%= f.text_field :start_date,
@@ -51,14 +49,12 @@
     <div class="small-12 medium-2 column margin-top">
       <%= f.check_box :published, checked: @process.published?, label: t("admin.legislation.processes.form.enabled") %>
     </div>
+  </fieldset>
 
-    <div class="small-12 column">
-      <hr>
-    </div>
-
-    <div class="small-12 medium-4 column">
-      <label><%= t("admin.legislation.processes.form.debate_phase") %></label>
-    </div>
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.debate_phase") %>
+    </legend>
 
     <div class="small-12 medium-3 column">
       <%= f.text_field :debate_start_date,
@@ -76,14 +72,12 @@
     <div class="small-12 medium-2 column margin-top">
       <%= f.check_box :debate_phase_enabled, checked: @process.debate_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
     </div>
+  </fieldset>
 
-    <div class="small-12 column">
-      <hr>
-    </div>
-
-    <div class="small-12 medium-4 column">
-      <label><%= t("admin.legislation.processes.form.proposals_phase") %></label>
-    </div>
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.proposals_phase") %>
+    </legend>
 
     <div class="small-12 medium-3 column">
       <%= f.text_field :proposals_phase_start_date,
@@ -101,14 +95,12 @@
     <div class="small-12 medium-2 column margin-top">
       <%= f.check_box :proposals_phase_enabled, checked: @process.proposals_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
     </div>
+  </fieldset>
 
-    <div class="small-12 column">
-      <hr>
-    </div>
-
-    <div class="small-12 medium-4 column">
-      <label><%= t("admin.legislation.processes.form.allegations_phase") %></label>
-    </div>
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.allegations_phase") %>
+    </legend>
 
     <div class="small-12 medium-3 column">
       <%= f.text_field :allegations_start_date,
@@ -126,11 +118,9 @@
     <div class="small-12 medium-2 column margin-top">
       <%= f.check_box :allegations_phase_enabled, checked: @process.allegations_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
     </div>
+  </fieldset>
 
-    <div class="small-12 column">
-      <hr>
-    </div>
-
+  <fieldset>
     <div class="small-12 medium-3 column end">
       <%= f.text_field :draft_publication_date,
                         value: format_date_for_calendar_form(@process.draft_publication_date),
@@ -140,11 +130,9 @@
     <div class="small-12 medium-2 column margin-top">
       <%= f.check_box :draft_publication_enabled, checked: @process.draft_publication.enabled?, label: t("admin.legislation.processes.form.enabled") %>
     </div>
+  </fieldset>
 
-    <div class="small-12 column">
-      <hr>
-    </div>
-
+  <fieldset>
     <div class="small-12 medium-3 column end">
       <%= f.text_field :result_publication_date,
                         value: format_date_for_calendar_form(@process.result_publication_date),
@@ -154,11 +142,9 @@
     <div class="small-12 medium-2 column margin-top">
       <%= f.check_box :result_publication_enabled, checked: @process.result_publication.enabled?, label: t("admin.legislation.processes.form.enabled") %>
     </div>
+  </fieldset>
 
-    <div class="small-12 column">
-      <hr>
-    </div>
-
+  <div class="row">
     <div class="documents small-12 column">
       <%= render "documents/nested_documents", documentable: @process, f: f %>
     </div>
