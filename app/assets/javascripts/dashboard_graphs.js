@@ -286,7 +286,7 @@
     return this.groupBy === undefined || this.groupBy === "" || this.groupBy === null;
   };
 
-  $(document).ready(function() {
+  $(function() {
     $("[data-proposal-graph-url]").each(function() {
       var graph = new ProposalGraph($(this).data("proposal-graph-url"));
       graph.successfulProposalDataUrl = $(this).data("successful-proposal-graph-url");
