@@ -103,7 +103,7 @@ group :development do
   gem "rubocop-rails", "~> 2.3.2", require: false
   gem "rubocop-rspec", "~> 1.35.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
-  gem "scss_lint", "~> 0.55.0", require: false
+  gem "scss_lint", "~> 0.59.0", require: false
   gem "web-console", "~> 3.3.0"
 end
 
