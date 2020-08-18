@@ -3,6 +3,8 @@ bg:
     ballots:
       show:
         title: Вашата бюлетина
+        amount_available:
+          knapsack: "Все още имате <span>%{count}</span> да инвестирате."
         no_balloted_group_yet: "Все още не сте гласували за тази група, отидете да гласувате!"
         remove: Премахване на вота
         voted:
