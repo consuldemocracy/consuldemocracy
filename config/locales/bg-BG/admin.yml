@@ -545,6 +545,7 @@ bg:
           back: Назад
           submit_button: Запазване на промените
           warning: Редактирахте текста, не забравяйте да кликнете върху Запазване, за да запазите трайно промените.
+          markdown_changes_message: "Вие редактирахте текста, но не сте запазили промените. Искате ли да напуснете страницата?"
         form:
           title: 'Редактиране <span class="strong">%{draft_version_title}</span> от процеса <span class="strong">%{process_title}</span>'
           launch_text_editor: Стартиране на текстов редактор
