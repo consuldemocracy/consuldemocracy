@@ -252,8 +252,6 @@ en:
           other: You have %{count} new notifications
         notifications: Notifications
         no_notifications: "You don't have new notifications"
-    admin:
-      watch_form_message: "You have unsaved changes. Do you confirm to leave the page?"
   notifications:
     index:
       empty_notifications: You don't have new notifications.
@@ -299,8 +297,9 @@ en:
       sign_in: Sign in with Twitter
       sign_up: Sign up with Twitter
       name: Twitter
-    info_sign_in: "Sign in with:"
-    info_sign_up: "Sign up with:"
+    info:
+      sign_in: "Sign in with:"
+      sign_up: "Sign up with:"
     or_fill: "Or fill the following form:"
   proposals:
     create:

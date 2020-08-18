@@ -4,7 +4,7 @@
   <div class="quiz-header row small-collapse">
     <div class="small-12 medium-9 column">
       <div class="quiz-title">
-        <p class="quiz-header-title"><%= t(".title") %></p>
+        <p class="quiz-header-title"><%= t("legislation.questions.show.title") %></p>
         <h4><%= link_to @process.title, @process %></h4>
       </div>
     </div>
@@ -12,14 +12,14 @@
       <% if @question.next_question_id %>
         <%= link_to legislation_process_question_path(@process, @question.next_question_id), class: "quiz-next-link" do %>
           <div class="quiz-next">
-            <%= t(".next_question") %>
+            <%= t("legislation.questions.show.next_question") %>
             <span class="icon-angle-right" aria-hidden="true">
           </div>
         <% end %>
       <% elsif @question.first_question_id %>
         <%= link_to legislation_process_question_path(@process, @question.first_question_id), class: "quiz-next-link" do %>
           <div class="quiz-next">
-            <%= t(".first_question") %>
+            <%= t("legislation.questions.show.first_question") %>
             <span class="icon-angle-right" aria-hidden="true">
           </div>
         <% end %>
@@ -37,7 +37,7 @@
 
     <aside class="small-12 medium-3 column">
       <div id="social-share" class="sidebar-divider"></div>
-      <h3><%= t(".share") %></h3>
+      <h3><%= t("legislation.questions.show.share") %></h3>
       <%= render "/shared/social_share", title: @question.title, url: legislation_process_question_url(@question.process, @question) %>
     </aside>
   </div>

@@ -339,11 +339,9 @@ describe "Commenting legislation questions" do
     fill_in "Leave your answer", with: "Testing submit button!"
     click_button "Publish answer"
 
-    # The button's text should now be "..."
-    # This should be checked before the Ajax request is finished
-    expect(page).not_to have_button "Publish answer"
-
-    expect(page).to have_content("Testing submit button!")
+    expect(page).to have_button "Publish answer", disabled: true
+    expect(page).to have_content "Testing submit button!"
+    expect(page).to have_button "Publish answer", disabled: false
   end
 
   describe "Moderators" do

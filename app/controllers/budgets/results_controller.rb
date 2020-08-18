@@ -3,7 +3,7 @@ module Budgets
     before_action :load_budget
     before_action :load_heading
 
-    load_and_authorize_resource :budget
+    authorize_resource :budget
 
     def show
       authorize! :read_results, @budget

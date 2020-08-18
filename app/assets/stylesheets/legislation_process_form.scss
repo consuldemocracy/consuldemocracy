@@ -1,0 +1,35 @@
+.legislation-process-form {
+  fieldset {
+    margin: $fieldset-padding 0;
+    padding-bottom: $fieldset-padding;
+    position: relative;
+
+    &::after {
+      border-bottom: $fieldset-border;
+      bottom: 0;
+      content: "";
+      display: block;
+      margin-left: rem-calc(16);
+      position: absolute;
+      width: calc(100% - #{2 * rem-calc(16)});
+
+      @include breakpoint(small only) {
+        margin-left: rem-calc(10);
+        width: calc(100% - #{2 * rem-calc(10)});
+      }
+    }
+
+    > :last-child {
+      float: left !important;
+    }
+
+    legend {
+      margin-bottom: 0;
+
+      > * {
+        display: block;
+        font-weight: normal;
+      }
+    }
+  }
+}

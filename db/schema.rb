@@ -214,6 +214,7 @@ ActiveRecord::Schema.define(version: 20200519120717) do
     t.boolean "allow_custom_content", default: false
     t.text "latitude"
     t.text "longitude"
+    t.integer "max_ballot_lines", default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["group_id"], name: "index_budget_headings_on_group_id"
@@ -360,6 +361,7 @@ ActiveRecord::Schema.define(version: 20200519120717) do
     t.text "description_drafting"
     t.text "description_publishing_prices"
     t.text "description_informing"
+    t.string "voting_style", default: "knapsack"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|

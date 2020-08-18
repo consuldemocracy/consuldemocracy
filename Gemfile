@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "rails", "5.1.7"
 
-gem "acts-as-taggable-on", "~> 6.0.0"
+gem "acts-as-taggable-on", "~> 6.5.0"
 gem "acts_as_votable", "~> 0.11.1"
 gem "ahoy_matey", "~> 1.6.0"
 gem "ancestry", "~> 3.0.7"
@@ -10,8 +10,8 @@ gem "audited", "~> 4.9.0"
 gem "autoprefixer-rails", "~> 8.2.0"
 gem "cancancan", "~> 2.3.0"
 gem "ckeditor", "~> 4.3.0"
-gem "cocoon", "~> 1.2.9"
-gem "daemons", "~> 1.2.4"
+gem "cocoon", "~> 1.2.14"
+gem "daemons", "~> 1.3.1"
 gem "dalli", "~> 2.7.6"
 gem "delayed_job_active_record", "~> 4.1.3"
 gem "devise", "~> 4.7.1"
@@ -24,7 +24,7 @@ gem "globalize", "~> 5.2.0"
 gem "globalize-accessors", "~> 0.2.1"
 gem "graphiql-rails", "~> 1.4.1"
 gem "graphql", "~> 1.7.8"
-gem "groupdate", "~> 3.2.0"
+gem "groupdate", "~> 5.1.0"
 gem "initialjs-rails", "~> 0.2.0.8"
 gem "invisible_captcha", "~> 0.10.0"
 gem "jquery-fileupload-rails"
@@ -32,12 +32,12 @@ gem "jquery-rails", "~> 4.3.3"
 gem "jquery-ui-rails", "~> 6.0.1"
 gem "kaminari", "~> 1.2.1"
 gem "newrelic_rpm", "~> 4.1.0.333"
-gem "omniauth", "~> 1.9.0"
+gem "omniauth", "~> 1.9.1"
 gem "omniauth-facebook", "~> 4.0.0"
 gem "omniauth-google-oauth2", "~> 0.4.0"
 gem "omniauth-rails_csrf_protection", "~> 0.1.2"
 gem "omniauth-twitter", "~> 1.4.0"
-gem "paperclip", "~> 5.2.1"
+gem "paperclip", "~> 6.1.0"
 gem "paranoia", "~> 2.4.2"
 gem "pg", "~> 0.21.0"
 gem "pg_search", "~> 2.3.0"
@@ -53,16 +53,16 @@ gem "sitemap_generator", "~> 6.0.2"
 gem "social-share-button", "~> 1.1"
 gem "sprockets", "~> 3.7.2"
 gem "translator-text", "~> 0.1.0"
-gem "turbolinks", "~> 2.5.3"
+gem "turbolinks", "~> 5.2.1"
 gem "turnout", "~> 2.4.0"
 gem "uglifier", "~> 4.1.2"
 gem "whenever", "~> 0.10.0", require: false
-gem "wicked_pdf", "~> 1.1.0"
+gem "wicked_pdf", "~> 2.1.0"
 gem "wkhtmltopdf-binary", "~> 0.12.4"
 
 source "https://rails-assets.org" do
   gem "rails-assets-leaflet"
-  gem "rails-assets-markdown-it", "~> 8.2.1"
+  gem "rails-assets-markdown-it", "~> 9.0.1"
 end
 
 group :development, :test do
@@ -93,11 +93,11 @@ group :development do
   gem "capistrano", "~> 3.10.1", require: false
   gem "capistrano-bundler", "~> 1.2", require: false
   gem "capistrano-rails", "~> 1.4.0", require: false
-  gem "capistrano3-delayed-job", "~> 1.7.3"
+  gem "capistrano3-delayed-job", "~> 1.7.6"
   gem "capistrano3-puma", "~> 4.0.0"
   gem "erb_lint", require: false
   gem "github_changelog_generator", "~> 1.15.0"
-  gem "mdl", "~> 0.5.0", require: false
+  gem "mdl", "~> 0.10.0", require: false
   gem "rubocop", "~> 0.83.0", require: false
   gem "rubocop-performance", "~> 1.6.1", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false

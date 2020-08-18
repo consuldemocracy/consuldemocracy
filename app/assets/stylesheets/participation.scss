@@ -909,6 +909,8 @@
 .help-header {
   background: #fafafa;
   border-bottom: 1px solid #eee;
+  margin-top: -$line-height;
+  margin-bottom: $line-height;
   padding-bottom: $line-height / 2;
   padding-top: $line-height;
 
@@ -1142,6 +1144,7 @@
 
   &.budget {
     background: $budget;
+    margin-top: -$line-height;
 
     h1,
     h2,
@@ -1285,6 +1288,7 @@
   .progress {
     background: #212033;
     clear: both;
+    margin-bottom: 0;
   }
 
   .progress-meter {
@@ -1293,29 +1297,20 @@
     transition: width 2s;
   }
 
-  .spent-amount-progress,
-  .spent-amount-meter {
-    background: none !important;
-  }
-
   .spent-amount-text {
-    color: #fff;
-    font-size: $base-font-size;
-    font-weight: normal;
-    position: absolute;
-    right: 0;
+    margin-bottom: 0;
+    position: relative;
     text-align: right;
-    top: 16px;
-    width: 100%;
+    white-space: nowrap;
 
     &::before {
       color: #a5a1ff;
       content: "\57";
       font-family: "icons";
       font-size: $small-font-size;
+      line-height: 0;
       position: absolute;
-      right: -6px;
-      top: -17px;
+      right: -0.5em;
     }
   }
 
@@ -1328,7 +1323,6 @@
 
   .amount-available {
     display: block;
-    text-align: right;
 
     span {
       font-size: rem-calc(24);
@@ -1486,6 +1480,7 @@
       height: auto;
       left: 0;
       padding: $line-height;
+      padding-bottom: $line-height / 2;
       position: fixed;
       top: 0;
       width: 100%;
@@ -1777,6 +1772,7 @@
 
 .orbit-slide {
   max-height: none !important;
+  position: relative;
 }
 
 .orbit-caption {

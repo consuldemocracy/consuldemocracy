@@ -25,7 +25,7 @@ module ApplicationHelper
       superscript:        true
     }
 
-    sanitize(Redcarpet::Markdown.new(renderer, extensions).render(text))
+    AdminLegislationSanitizer.new.sanitize(Redcarpet::Markdown.new(renderer, extensions).render(text))
   end
 
   def wysiwyg(text)

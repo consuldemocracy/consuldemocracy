@@ -1,12 +1,7 @@
-$("#progress_bar").html("<%= j render("/budgets/ballot/progress_bar", ballot: @ballot) %>");
+$("#progress_bar").html("<%= j render("/budgets/ballot/progress_bar", ballot: @ballot, heading: @heading) %>");
 $("#sidebar").html("<%= j render("/budgets/investments/sidebar") %>");
-$("#<%= dom_id(@investment) %>_ballot").html("<%= j render("/budgets/investments/ballot",
-                                                           investment: @investment,
-                                                           investment_ids: @investment_ids,
-                                                           ballot: @ballot) %>");
 
 <%= render "refresh_ballots",
-            investment: @investment,
             investment_ids: @investment_ids,
             ballot: @ballot %>
 

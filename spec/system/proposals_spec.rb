@@ -198,9 +198,21 @@ describe "Proposals" do
         expect(page).not_to have_link("No comments", href: "#comments")
       end
     end
+
+    scenario "After using the browser's back button, social buttons will have one screen reader", :js do
+      proposal = create(:proposal)
+      visit proposal_path(proposal)
+      click_link "Help"
+
+      expect(page).to have_content "CONSUL is a platform for citizen participation"
+
+      go_back
+
+      expect(page).to have_css "span.show-for-sr", text: "twitter", count: 1
+    end
   end
 
-  context "Show on mobile screens" do
+  describe "Show sticky support button on mobile screens", :js do
     let!(:window_size) { Capybara.current_window.size }
 
     before do
@@ -211,9 +223,58 @@ describe "Proposals" do
       Capybara.current_window.resize_to(*window_size)
     end
 
-    scenario "Show support button sticky at bottom", :js do
+    scenario "On a first visit" do
       proposal = create(:proposal)
       visit proposal_path(proposal)
+
+      within("#proposal_sticky") do
+        expect(page).to have_css(".is-stuck")
+        expect(page).not_to have_css(".is-anchored")
+      end
+    end
+
+    scenario "After visiting another page" do
+      proposal = create(:proposal)
+
+      visit proposal_path(proposal)
+      click_link "Go back"
+      click_link proposal.title
+
+      within("#proposal_sticky") do
+        expect(page).to have_css(".is-stuck")
+        expect(page).not_to have_css(".is-anchored")
+      end
+    end
+
+    scenario "After using the browser's back button" do
+      proposal = create(:proposal)
+
+      visit proposal_path(proposal)
+      click_link "Go back"
+
+      expect(page).to have_link proposal.title
+
+      go_back
+
+      within("#proposal_sticky") do
+        expect(page).to have_css(".is-stuck")
+        expect(page).not_to have_css(".is-anchored")
+      end
+    end
+
+    scenario "After using the browser's forward button" do
+      proposal = create(:proposal)
+
+      visit proposals_path
+      click_link proposal.title
+
+      expect(page).not_to have_link proposal.title
+
+      go_back
+
+      expect(page).to have_link proposal.title
+
+      go_forward
 
       within("#proposal_sticky") do
         expect(page).to have_css(".is-stuck")
