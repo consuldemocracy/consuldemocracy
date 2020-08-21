@@ -525,7 +525,7 @@ da:
           draft_versions: Udarbejdelse
           questions: Debat
           proposals: Forslag
-          milestones: Følger
+          milestones: Tidslinje
       homepage:
         edit:
           title: Konfigurer din hjemmeside
@@ -616,7 +616,7 @@ da:
           remove_option: Fjern valgmulighed
       milestones:
         index:
-          title: Følger
+          title: Tidslinje
     managers:
       index:
         title: Managers
