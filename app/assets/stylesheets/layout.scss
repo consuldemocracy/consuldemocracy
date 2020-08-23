@@ -1571,7 +1571,8 @@ table {
 
 .ssb-facebook,
 .ssb-telegram,
-.ssb-twitter {
+.ssb-twitter,
+.ssb-whatsapp_app {
   background-image: none !important;
   color: #fff;
   height: $line-height * 2 !important;
@@ -1673,10 +1674,24 @@ table {
   }
 }
 
+.ssb-whatsapp_app {
+  background: #43d854;
+
+  &::before {
+    content: "P";
+  }
+
+  &:hover,
+  &:focus {
+    color: #43d854;
+  }
+}
+
 @include breakpoint(medium) {
 
   .button.button-telegram,
-  .ssb-telegram {
+  .ssb-telegram,
+  .ssb-whatsapp_app {
     display: none !important;
   }
 }
