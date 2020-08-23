@@ -1569,8 +1569,9 @@ table {
   }
 }
 
+.ssb-facebook,
+.ssb-telegram,
 .ssb-twitter {
-  background: #45b0e3;
   background-image: none !important;
   color: #fff;
   height: $line-height * 2 !important;
@@ -1578,7 +1579,6 @@ table {
   width: $line-height * 2 !important;
 
   &::before {
-    content: "f";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
@@ -1591,6 +1591,18 @@ table {
   &:hover,
   &:focus {
     background: #fff;
+  }
+}
+
+.ssb-twitter {
+  background: #45b0e3;
+
+  &::before {
+    content: "f";
+  }
+
+  &:hover,
+  &:focus {
     color: #40a2d1;
   }
 }
@@ -1607,26 +1619,13 @@ table {
 
 .ssb-facebook {
   background: #3b5998;
-  background-image: none !important;
-  color: #fff;
-  height: rem-calc(48) !important;
-  position: relative;
-  width: rem-calc(48) !important;
 
   &::before {
     content: "A";
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 50%;
-    line-height: $line-height * 2;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
   }
 
   &:hover,
   &:focus {
-    background: #fff;
     color: #354f88;
   }
 }
@@ -1663,26 +1662,13 @@ table {
 
 .ssb-telegram {
   background: #08c;
-  background-image: none !important;
-  color: #fff;
-  height: $line-height * 2 !important;
-  position: relative;
-  width: $line-height * 2 !important;
 
   &::before {
     content: "1";
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 50%;
-    line-height: $line-height * 2;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
   }
 
   &:hover,
   &:focus {
-    background: #fff;
     color: #40a2d1;
   }
 }
