@@ -50,7 +50,6 @@ namespace :deploy do
 
   after :updating, "rvm1:install:rvm"
   after :updating, "rvm1:install:ruby"
-  after :updating, "install_bundler_gem"
 
   after "deploy:migrate", "add_new_settings"
 
@@ -67,14 +66,6 @@ namespace :deploy do
   task :upgrade do
     after "add_new_settings", "execute_release_tasks"
     invoke "deploy"
-  end
-end
-
-task :install_bundler_gem do
-  on roles(:app) do
-    within release_path do
-      execute :rvm, fetch(:rvm1_ruby_version), "do", "gem install bundler --version 1.17.1"
-    end
   end
 end
 
