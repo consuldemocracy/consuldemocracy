@@ -164,6 +164,13 @@ describe "Legislation" do
       expect(page).to have_link "Comment 2"
       expect(page).to have_link "Comment 3"
     end
+
+    scenario "excel download" do
+      visit summary_legislation_process_path(process)
+      click_link "Download summary"
+
+      expect(page.response_headers["Content-Type"]).to match(/officedocument.spreadsheetml/)
+    end
   end
 
   def annotation_ranges(start_offset, end_offset)

@@ -1086,4 +1086,11 @@
       padding: rem-calc(12);
     }
   }
+
+  .download-button {
+    margin-bottom: 0;
+    margin-left: 50%;
+    margin-top: $line-height;
+    transform: translateX(-50%);
+  }
 }

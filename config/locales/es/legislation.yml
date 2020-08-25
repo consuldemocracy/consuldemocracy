@@ -139,6 +139,7 @@ es:
         zero: "No hay comentarios"
         one: "%{count} comentario"
         other: "%{count} comentarios"
+      download: "Descargar resumen"
       top_comments:
         zero: "No hay comentarios"
         one: "%{count} comentario"

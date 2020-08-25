@@ -139,6 +139,7 @@ en:
         zero: "No comments"
         one: "%{count} comment"
         other: "%{count} comments"
+      download: "Download summary"
       top_comments:
         zero: "No comments"
         one: "%{count} comment"

@@ -101,6 +101,11 @@ class Legislation::ProcessesController < Legislation::BaseController
     @phase = :summary
     @proposals = @process.proposals.selected
     @comments = @process.draft_versions.published.last&.best_comments || Comment.none
+
+    respond_to do |format|
+      format.html
+      format.xlsx { render xlsx: "summary", filename: "summary-#{Date.current}.xlsx" }
+    end
   end
 
   def proposals
