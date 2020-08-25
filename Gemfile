@@ -97,7 +97,7 @@ group :development do
   gem "capistrano3-puma", "~> 4.0.0"
   gem "erb_lint", require: false
   gem "github_changelog_generator", "~> 1.15.0"
-  gem "mdl", "~> 0.10.0", require: false
+  gem "mdl", "~> 0.11.0", require: false
   gem "rubocop", "~> 0.83.0", require: false
   gem "rubocop-performance", "~> 1.6.1", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
