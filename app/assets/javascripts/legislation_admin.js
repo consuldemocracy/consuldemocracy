@@ -7,7 +7,7 @@
           var checkbox;
           checkbox = $(this);
 
-          checkbox.closest("fieldset").find("input[type='text']").each(function() {
+          checkbox.closest("fieldset").find("input[type='date']").each(function() {
             if (checkbox.is(":checked")) {
               $(this).removeAttr("disabled");
             } else {

@@ -24,8 +24,20 @@
         maxDate: "+0d"
       });
       $(".js-calendar-full").datepicker();
+
+      if (!App.AdvancedSearch.browser_supports_date_field()) {
+        $("input[type='date']").datepicker();
+      }
+
       $.datepicker.setDefaults($.datepicker.regional[locale]);
       $.datepicker.setDefaults({ dateFormat: "dd/mm/yy" });
+    },
+    browser_supports_date_field: function() {
+      var datefield;
+
+      datefield = document.createElement("input");
+      datefield.setAttribute("type", "date");
+      return datefield.type === "date";
     },
     initialize: function() {
       App.AdvancedSearch.init_calendar();
