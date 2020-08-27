@@ -163,3 +163,6 @@ bg:
     formats:
       datetime: "%d.%m.%Y %H:%M:%S"
       default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%d.%m.%Y %H"
