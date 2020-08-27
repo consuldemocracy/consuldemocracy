@@ -30,6 +30,10 @@ bg:
       - Четвъртък
       - Петък
       - Събота
+    formats:
+      default: "%d.%m.%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
     month_names:
       - 
       - Януари
@@ -155,3 +159,7 @@ bg:
     array:
       last_word_connector: ", и "
       two_words_connector: " и "
+  time:
+    formats:
+      datetime: "%d.%m.%Y %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
