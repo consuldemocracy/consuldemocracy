@@ -17,30 +17,7 @@
         $(".js-calendar").datepicker("option", "disabled", true);
       }
     },
-    init_calendar: function() {
-      var locale;
-      locale = $("#js-locale").data("current-locale");
-      $(".js-calendar").datepicker({
-        maxDate: "+0d"
-      });
-      $(".js-calendar-full").datepicker();
-
-      if (!App.AdvancedSearch.browser_supports_date_field()) {
-        $("input[type='date']").datepicker();
-      }
-
-      $.datepicker.setDefaults($.datepicker.regional[locale]);
-      $.datepicker.setDefaults({ dateFormat: "dd/mm/yy" });
-    },
-    browser_supports_date_field: function() {
-      var datefield;
-
-      datefield = document.createElement("input");
-      datefield.setAttribute("type", "date");
-      return datefield.type === "date";
-    },
     initialize: function() {
-      App.AdvancedSearch.init_calendar();
       if (App.AdvancedSearch.advanced_search_terms()) {
         $("#js-advanced-search").show();
         App.AdvancedSearch.toggle_date_options();
