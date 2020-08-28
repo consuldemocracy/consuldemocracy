@@ -58,9 +58,9 @@ da:
       index:
         filter: Filtrere
         filters:
-          open: Åbne processer
-          past: Fortid
-        no_open_processes: Ingen åbne processer
+          open: Aktive dialoger
+          past: Tidligere dialoger
+        no_open_processes: Ingen aktive dialoger
         no_past_processes: Ingen tidligere processer
         section_header:
           icon_alt: Skærmikon for borgerdialog
