@@ -163,6 +163,7 @@ var initialize_modules = function() {
     App.ColumnsSelector.initialize();
   }
   App.BudgetEditAssociations.initialize();
+  App.Datepicker.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {

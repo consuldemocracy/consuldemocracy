@@ -41,6 +41,44 @@ describe "Polls" do
     expect(page).to have_content I18n.l(start_date.to_date)
   end
 
+  describe "Datepicker", :js do
+    scenario "displays the expected format when changing the date field" do
+      visit new_proposal_dashboard_poll_path(proposal)
+
+      fill_in "Start Date", with: "20/02/2002"
+      find_field("Start Date").click
+      within(".ui-datepicker") { click_link "22" }
+
+      expect(page).to have_field "Start Date", with: "22/02/2002"
+    end
+
+    scenario "is closed after using the browser back button" do
+      visit proposal_dashboard_polls_path(proposal)
+
+      click_link "Create poll"
+      find_field("Start Date").click
+
+      expect(page).to have_css "#ui-datepicker-div"
+
+      go_back
+
+      expect(page).to have_link "Create poll"
+      expect(page).not_to have_css "#ui-datepicker-div"
+    end
+
+    scenario "works after using the browser back button" do
+      visit new_proposal_dashboard_poll_path(proposal)
+      click_link "Polls"
+
+      expect(page).to have_link "Create poll"
+
+      go_back
+      find_field("Start Date").click
+
+      expect(page).to have_css "#ui-datepicker-div"
+    end
+  end
+
   scenario "Create a poll redirects back to form when invalid data", js: true do
     click_link "Polls"
     click_link "Create poll"

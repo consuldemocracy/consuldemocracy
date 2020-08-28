@@ -7,16 +7,14 @@
   <div class="row">
     <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>
     <div class="small-12 medium-3 column">
-      <%= f.text_field :post_started_at,
+      <%= f.date_field :post_started_at,
                         value: date_started_at,
-                        class: "js-calendar-full",
                         id: "post_started_at" %>
     </div>
     <% date_ended_at = @banner.post_ended_at.present? ? I18n.localize(@banner.post_ended_at) : "" %>
     <div class="small-12 medium-3 column end">
-      <%= f.text_field  :post_ended_at,
+      <%= f.date_field  :post_ended_at,
                         value: date_ended_at,
-                        class: "js-calendar-full",
                         id: "post_ended_at" %>
     </div>
   </div>

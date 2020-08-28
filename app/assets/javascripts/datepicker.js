@@ -15,6 +15,21 @@
 (function() {
   "use strict";
   App.Datepicker = {
+    initialize: function() {
+      var locale;
+      locale = $("#js-locale").data("current-locale");
+      $(".js-calendar").datepicker({
+        maxDate: "+0d"
+      });
+      $(".js-calendar-full").datepicker();
+
+      if (!App.Datepicker.browser_supports_date_field()) {
+        $("input[type='date']").datepicker();
+      }
+
+      $.datepicker.setDefaults($.datepicker.regional[locale]);
+      $.datepicker.setDefaults({ dateFormat: "dd/mm/yy" });
+    },
     destroy: function() {
       $.datepicker.dpDiv.remove();
 
@@ -22,6 +37,13 @@
         $(input).datepicker("hide");
         $(input).datepicker("destroy");
       });
+    },
+    browser_supports_date_field: function() {
+      var datefield;
+
+      datefield = document.createElement("input");
+      datefield.setAttribute("type", "date");
+      return datefield.type === "date";
     }
   };
 
