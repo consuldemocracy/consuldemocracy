@@ -48,7 +48,7 @@ da:
       title: "Tak fordi du har oprettet en idé!"
       intro: "Hej <strong>%{author}</strong>,"
       text: "Tak fordi du oprettede din idé <strong>%{investment}</strong> for Deltagerbudgettet <strong>%{budget}</strong>."
-      follow: "Vi vil løbende informere dig om processens forløb, som du også kan følge på <strong>%{link}</strong>."
+      follow: "Vi vil løbende informere dig om deltagerbudgettets forløb, som du også kan følge på <strong>%{link}</strong>."
       follow_link: "Deltagerbudgetter"
       sincerely: "Med venlig hilsen"
       share: "Del dit projekt"
