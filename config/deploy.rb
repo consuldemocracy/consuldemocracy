@@ -60,12 +60,6 @@ namespace :deploy do
 
   before :finished, "execute_release_tasks"
   after :finished, "refresh_sitemap"
-
-  desc "Deploys and runs the tasks needed to upgrade to a new release"
-  task :upgrade do
-    after "add_new_settings", "execute_release_tasks"
-    invoke "deploy"
-  end
 end
 
 task :install_bundler_gem do
