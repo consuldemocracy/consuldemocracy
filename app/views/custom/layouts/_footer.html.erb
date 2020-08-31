@@ -21,14 +21,15 @@
 
       <p>
         <span class="far fa-envelope"></span>
-        <%= link_to t("layouts.footer.contact_email"),
-                    "mailto:noreploy@consul.dev" %>
+        <a href="mailto:<%= t("layouts.footer.contact_email") %>">
+         <%= t("layouts.footer.contact") %>
+        </a>
       </p>
 
       <p>
         <span class="fab fa-facebook-f"></span>
         <%= link_to t("layouts.footer.facebook"),
-                    "https://facebook.com/consul",
+                    t("layouts.footer.facebook_url"),
                     target: "_blank" %>
       </p>
     </div>
