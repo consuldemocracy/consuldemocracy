@@ -49,7 +49,7 @@
         markerLatitude = dataCoordinates.lat;
         markerLongitude = dataCoordinates.long;
         mapCenterLatitude = dataCoordinates.lat;
-        mapCenterLongitude = dataCoordinates.lat;
+        mapCenterLongitude = dataCoordinates.long;
       } else {
         mapCenterLatitude = $(element).data("map-center-latitude");
         mapCenterLongitude = $(element).data("map-center-longitude");
