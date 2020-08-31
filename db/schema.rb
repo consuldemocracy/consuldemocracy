@@ -480,8 +480,6 @@ ActiveRecord::Schema.define(version: 20200908084257) do
   end
 
   create_table "debates", id: :serial, force: :cascade do |t|
-    t.string "deprecated_title", limit: 80
-    t.text "deprecated_description"
     t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
