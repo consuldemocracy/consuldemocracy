@@ -134,8 +134,7 @@
       <p class="help-text"><%= t("admin.shared.color_help") %></p>
       <div class="row collapse">
         <div class="small-12 medium-6 column">
-          <%= f.text_field :background_color, label: false, type: :color,
-                                              value: bg_color_or_default %>
+          <%= f.text_field :background_color, label: false, type: :color %>
         </div>
         <div class="small-12 medium-6 column">
           <%= f.text_field :background_color, label: false, id: "background_color_input" %>
@@ -148,7 +147,7 @@
       <p class="help-text"><%= t("admin.shared.color_help") %></p>
       <div class="row collapse">
         <div class="small-12 medium-6 column">
-          <%= f.text_field :font_color, label: false, type: :color, value: font_color_or_default %>
+          <%= f.text_field :font_color, label: false, type: :color %>
         </div>
         <div class="small-12 medium-6 column">
           <%= f.text_field :font_color, label: false, id: "font_color_input" %>
