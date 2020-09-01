@@ -82,7 +82,7 @@ eu:
           proposal_notification: Proposamen jakinarazpena
         hide_proposal_notifications: Jakinarazpenal ezkutatu
         ignore_flags: Berrikusitzat markatu
-        order: 'Ordena:'
+        order: Ordena
         orders:
           created_at: Berrienak
           moderated: Moderatutakoak
