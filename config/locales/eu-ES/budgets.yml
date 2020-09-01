@@ -9,9 +9,9 @@ eu:
       reasons_for_not_balloting:
         not_logged_in: Jarraitzeko %{signin} edo %{signup} egin behar zara.
         not_verified: Gastu proiektuak egiaztatutako erabiltzaileek soilik babes ditzakete, %{verify_account}.
-        organization: Erakundeek ezin dute bozkatu.
-        not_selected: Ezin dira bozkatu proiektu bideragarriezinak .
-        no_ballots_allowed: Bozka sasoia itxita dago.
+        organization: Erakundeek ezin dute bozkatu
+        not_selected: Ezin dira bozkatu proiektu bideragarriezinak
+        no_ballots_allowed: Bozka sasoia itxita dago
         change_ballot: zure bozkak aldatu
     groups:
       show:
@@ -52,7 +52,7 @@ eu:
     investments:
       form:
         tag_category_label: "Kategoriak"
-        tags_instructions: "Proposamen hau etiketatu. Proosatutako kategorietatik bat aukeratu edo berri bat sartu dezakezu."
+        tags_instructions: "Proposamen hau etiketatu. Proosatutako kategorietatik bat aukeratu edo berri bat sartu dezakezu"
         tags_label: Etiketak
         tags_placeholder: "Nahi dituzun etiketak koma artean idatzi behar dituzu (',')"
         map_location: "Kokapena mapan"
