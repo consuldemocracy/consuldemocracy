@@ -1346,7 +1346,7 @@ ro:
         text_help:
           required_fields_note: "Pentru a verifica un utilizator, cererea dvs. are nevoie de: Numărul documentului"
           date_of_birth_note: ", Ziua nașterii (dd / mm / aaaa)"
-          postal_code_note: "și cod poștal"
+          postal_code_note: " și cod poștal"
           required_fields_structure_note: "Câmpurile obligatorii pentru fiecare utilizator trebuie separate prin virgule și fiecare utilizator trebuie separat prin punct și virgulă."
           example_text: "Exemplu: "
       show:
