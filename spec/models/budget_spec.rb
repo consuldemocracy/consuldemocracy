@@ -84,6 +84,28 @@ describe Budget do
     end
   end
 
+  describe "main_button_url" do
+    it "is not required if main_button_text is not provided" do
+      valid_budget = build(:budget,
+                           name_en: "object name",
+                           main_button_text: "button text",
+                           main_button_url: "http://domain.com")
+
+      expect(valid_budget).to be_valid
+    end
+
+    it "is required if main_button_text is provided" do
+      invalid_budget = build(:budget,
+                             name_en: "object name",
+                             main_button_text: "button text")
+
+      expect(invalid_budget).not_to be_valid
+      expect(invalid_budget.errors.count).to be 1
+      expect(invalid_budget.errors[:main_button_url].count).to be 1
+      expect(invalid_budget.errors[:main_button_url].first).to eq "can't be blank"
+    end
+  end
+
   describe "phase" do
     it "is validated" do
       Budget::Phase::PHASE_KINDS.each do |phase|
@@ -96,9 +118,6 @@ describe Budget do
     end
 
     it "produces auxiliary methods" do
-      budget.phase = "drafting"
-      expect(budget).to be_drafting
-
       budget.phase = "accepting"
       expect(budget).to be_accepting
 
@@ -246,7 +265,6 @@ describe Budget do
   end
 
   describe "#generate_phases" do
-    let(:drafting_phase)          { budget.phases.drafting }
     let(:informing_phase)         { budget.phases.informing }
     let(:accepting_phase)         { budget.phases.accepting }
     let(:reviewing_phase)         { budget.phases.reviewing }
@@ -260,7 +278,6 @@ describe Budget do
     it "generates all phases linked in correct order" do
       expect(budget.phases.count).to eq(Budget::Phase::PHASE_KINDS.count)
 
-      expect(drafting_phase.next_phase).to eq(informing_phase)
       expect(informing_phase.next_phase).to eq(accepting_phase)
       expect(accepting_phase.next_phase).to eq(reviewing_phase)
       expect(reviewing_phase.next_phase).to eq(selecting_phase)
@@ -271,8 +288,7 @@ describe Budget do
       expect(reviewing_ballots_phase.next_phase).to eq(finished_phase)
       expect(finished_phase.next_phase).to eq(nil)
 
-      expect(drafting_phase.prev_phase).to eq(nil)
-      expect(informing_phase.prev_phase).to eq(drafting_phase)
+      expect(informing_phase.prev_phase).to eq(nil)
       expect(accepting_phase.prev_phase).to eq(informing_phase)
       expect(reviewing_phase.prev_phase).to eq(accepting_phase)
       expect(selecting_phase.prev_phase).to eq(reviewing_phase)
@@ -353,6 +369,51 @@ describe Budget do
       budget.investments << investment3
 
       expect(budget.investments_milestone_tags).to eq(["tag1"])
+    end
+  end
+
+  describe "#investments_preview_list" do
+    let(:budget)               { create(:budget, :accepting) }
+    let(:group)                { create(:budget_group, budget: budget) }
+    let(:heading)              { create(:budget_heading, group: group) }
+
+    before do
+      create_list(:budget_investment, 4, heading: heading)
+      create_list(:budget_investment, 4, :feasible, heading: heading)
+      create_list(:budget_investment, 4, :selected, heading: heading)
+    end
+
+    it "returns an empty array if phase is informing or finished" do
+      %w[informing finished].each do |phase_name|
+        budget.phase = phase_name
+
+        expect(budget.investments_preview_list).to eq([])
+      end
+    end
+
+    it "returns a maximum 9 investments" do
+      expect(Budget::Investment.count). to be 12
+      expect(budget.investments_preview_list.count).to be 9
+    end
+
+    it "returns a different random array of investments every time" do
+      expect(budget.investments_preview_list(3)).not_to eq budget.investments_preview_list(3)
+    end
+
+    it "returns only feasible investments if phase is selecting, valuating or publishing_prices" do
+      %w[selecting valuating publishing_prices].each do |phase_name|
+        budget.phase = phase_name
+
+        expect(budget.investments_preview_list.count).to be budget.investments.feasible.count
+      end
+    end
+
+    it "returns only selected investments if phase is balloting or reviewing_ballots" do
+      %w[balloting reviewing_ballots].each do |phase_name|
+        budget.phase = phase_name
+
+        expect(budget.investments_preview_list.count).to be budget.investments.selected.count
+      end
     end
   end
 end

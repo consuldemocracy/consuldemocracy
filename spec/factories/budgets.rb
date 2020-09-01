@@ -15,7 +15,7 @@ FactoryBot.define do
     description_finished { "This budget is finished" }
 
     trait :drafting do
-      phase { "drafting" }
+      published { false }
     end
 
     trait :informing do
@@ -96,7 +96,6 @@ FactoryBot.define do
     description          { "Spend money on this" }
     price                { 10 }
     unfeasibility_explanation { "" }
-    skip_map             { "1" }
     terms_of_service     { "1" }
     incompatible         { false }
 

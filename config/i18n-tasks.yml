@@ -121,10 +121,14 @@ ignore_missing:
   - "devise.registrations.destroyed"
   - "devise.password_expired.*"
   - "seeds.settings.*"
+  - "budgets.progress_bar.you_have_assigned"
+  - "admin.officials.index.help_link"
+  - "debates.index.section_footer.help_text_link"
 
 ## Consider these keys used:
 ignore_unused:
   - "budgets.phase.*"
+  - "budgets.investments.index.filter*"
   - "budgets.investments.index.orders.*"
   - "budgets.index.section_header.*"
   - "activerecord.*"
@@ -139,6 +143,7 @@ ignore_unused:
   - "admin.hidden_proposals.index.filter*"
   - "admin.proposal_notifications.index.filter*"
   - "admin.budgets.index.filter*"
+  - "admin.budgets.index.help_block"
   - "admin.budgets.edit.(administrators|valuators).*"
   - "admin.budget_investments.index.filter*"
   - "admin.organizations.index.filter*"
@@ -211,6 +216,13 @@ ignore_unused:
   - landings.cambia_tu_ciudad.*
   - "seeds.settings.*"
   - "dashboard.polls.*.submit"
+  - "admin.budget_groups.index.*.help_block"
+  - "admin.budget_headings.index.*.help_block"
+  - "admin.budget_phases.index.help_block"
+  - "devise_views.shared.links.login"
+  - "devise_views.shared.links.signup"
+  - "devise_views.shared.links.signup_link"
+  - "budgets.investments.show.code"
 ####
 ## Exclude these keys from the `i18n-tasks eq-base" report:
 # ignore_eq_base:

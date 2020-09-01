@@ -346,7 +346,8 @@ end
 def documentable_fill_new_valid_proposal
   fill_in "Proposal title", with: "Proposal title #{rand(9999)}"
   fill_in "Proposal summary", with: "Proposal summary"
-  check :proposal_terms_of_service
+  # Check terms of service by default
+  # check :proposal_terms_of_service
 end
 
 def documentable_fill_new_valid_dashboard_action
@@ -355,8 +356,8 @@ def documentable_fill_new_valid_dashboard_action
 end
 
 def documentable_fill_new_valid_budget_investment
-  page.select documentable.heading.name_scoped_by_group, from: :budget_investment_heading_id
   fill_in "Title", with: "Budget investment title"
   fill_in_ckeditor "Description", with: "Budget investment description"
-  check :budget_investment_terms_of_service
+  # Check terms of service by default
+  # check :budget_investment_terms_of_service
 end

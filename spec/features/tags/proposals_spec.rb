@@ -69,7 +69,8 @@ describe "Tags" do
     fill_in "Proposal text", with: "This is very important because..."
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_tag_list", with: "Economía, Hacienda"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     click_button "Create proposal"
 
@@ -93,7 +94,8 @@ describe "Tags" do
     fill_in_ckeditor "Proposal text", with: "A description with enough characters"
     fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=Ae6gQmhaMn4"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     find(".js-add-tag-link", text: "Education").click
     click_button "Create proposal"
@@ -115,7 +117,8 @@ describe "Tags" do
     visit new_proposal_path
     fill_in "Proposal title", with: "Title"
     fill_in "Proposal text", with: "Description"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     fill_in "proposal_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
@@ -135,7 +138,8 @@ describe "Tags" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: "A description suitable for this test"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
 
     fill_in "proposal_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
 

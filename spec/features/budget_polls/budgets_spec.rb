@@ -33,6 +33,7 @@ describe "Admin Budgets" do
       visit admin_budgets_path
       select("Français", from: "locale-switcher")
 
+      find(".fas.fa-ellipsis-v").hover
       click_link "Bulletins de l’admin"
 
       expect(page).to have_current_path(/admin\/polls\/\d+/)

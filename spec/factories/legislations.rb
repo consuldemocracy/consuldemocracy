@@ -164,5 +164,9 @@ FactoryBot.define do
     terms_of_service { "1" }
     process factory: :legislation_process
     author factory: :user
+
+    trait :with_image do
+      after(:create) { |legislation_proposal| create(:image, imageable: legislation_proposal) }
+    end
   end
 end

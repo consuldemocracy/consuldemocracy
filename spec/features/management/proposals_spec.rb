@@ -23,7 +23,8 @@ describe "Proposals" do
       fill_in "Proposal summary", with: "In summary, what we want is..."
       fill_in "Proposal text", with: "This is very important because..."
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yRYFKcMa_Ek"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
 
       click_button "Create proposal"
 
@@ -137,7 +138,7 @@ describe "Proposals" do
       click_link "Support proposals"
 
       within(".proposals-list") do
-        click_link("Support")
+        accept_confirm { click_link "Support" }
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this proposal. Share it!"
       end
@@ -153,7 +154,10 @@ describe "Proposals" do
 
       within(".proposals-list") { click_link proposal.title }
       expect(page).to have_content proposal.code
-      within("#proposal_#{proposal.id}_votes") { click_link("Support") }
+
+      within("#proposal_#{proposal.id}_votes") do
+        accept_confirm { click_link "Support" }
+      end
 
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this proposal. Share it!"
@@ -201,7 +205,7 @@ describe "Proposals" do
         expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
-      select "newest", from: "order-selector"
+      select "Newest", from: "order-selector"
 
       expect(page).to have_selector(".js-order-selector[data-order='created_at']")
 

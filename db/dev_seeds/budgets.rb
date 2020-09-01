@@ -43,6 +43,7 @@ section "Creating Budgets" do
     budget.phases.each do |phase|
       random_locales.map do |locale|
         Globalize.with_locale(locale) do
+          phase.name = "Name for locale #{locale}"
           phase.description = "Description for locale #{locale}"
           phase.summary = "Summary for locale #{locale}"
           phase.save!
@@ -137,7 +138,6 @@ section "Creating Investments" do
       valuation_finished: [false, true].sample,
       tag_list: tags.sample(3).join(","),
       price: rand(1..100) * 100000,
-      skip_map: "1",
       terms_of_service: "1"
     }.merge(translation_attributes))
 
@@ -184,7 +184,6 @@ section "Winner Investments" do
       valuation_finished: true,
       selected: true,
       price: rand(10000..heading.price),
-      skip_map: "1",
       terms_of_service: "1"
     )
     add_image_to(investment) if Random.rand > 0.3

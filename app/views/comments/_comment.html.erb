@@ -91,7 +91,7 @@
           <% end %>
 
           <% if comment.children.size > 0 %>
-            <%= link_to "", class: "js-toggle-children relative", data: { "id": "#{dom_id(comment)}" } do %>
+            <%= link_to "", class: "js-toggle-children toggle-children relative", data: { "id": "#{dom_id(comment)}" } do %>
               <span class="show-for-sr js-child-toggle" style="display: none;"><%= t("shared.show") %></span>
               <span class="show-for-sr js-child-toggle"><%= t("shared.hide") %></span>
               <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span>
@@ -105,7 +105,7 @@
           <% if user_signed_in? && !comments_closed_for_commentable?(comment.commentable) && !require_verified_resident_for_commentable?(comment.commentable, current_user) %>
             <span class="divider">&nbsp;|&nbsp;</span>
             <%= link_to(comment_link_text(comment), "",
-                        class: "js-add-comment-link", data: { "id": dom_id(comment) }) %>
+                        class: "js-add-comment-link add-comment", data: { "id": dom_id(comment) }) %>
 
             <% if allow_actions %>
               <%= render "comments/actions", { comment: comment } %>

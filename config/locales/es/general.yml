@@ -216,6 +216,8 @@ es:
           zero: Sin apoyos
           one: 1 Apoyo
           other: "Apoyos"
+    link_to_top:
+      title: "Volver a la parte superior de la página"
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
@@ -348,7 +350,6 @@ es:
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       map_remove_marker: "Eliminar el marcador"
-      map_skip_checkbox: "Esta propuesta no tiene una ubicación concreta o no la conozco."
     index:
       featured_proposals: Destacadas
       filter_topic:
@@ -612,6 +613,7 @@ es:
     no_dates: "sin fecha asignada"
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
+    question: "Pregunta"
     index:
       filters:
         current: "Abiertas"
@@ -645,6 +647,7 @@ es:
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       more_info_title: "Más información"
+      more_info_options: "Más información sobre las opciones"
       documents: Documentos
       zoom_plus: Ampliar imagen
       read_more: "Leer más sobre %{answer}"
@@ -784,6 +787,9 @@ es:
         zero: "0 idiomas en uso"
         one: "1 idioma en uso"
         other: "%{count} idiomas en uso"
+    optional: "Opcional"
+    required: "Obligatorio"
+    required_fields: "Todos los campos marcados con un (*) son obligatorios"
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"

@@ -139,8 +139,10 @@ en:
         description_balloting: "Description during Balloting phase"
         description_reviewing_ballots: "Description during Reviewing Ballots phase"
         description_finished: "Description when the budget is finished"
-        phase: "Phase"
+        phase: "Active phase"
         currency_symbol: "Currency"
+        main_button_text: "Text on the button"
+        main_button_url: "The button takes you to (add a link)"
       budget/translation:
         name: "Name"
       budget/investment:
@@ -201,7 +203,7 @@ en:
         latitude: "Latitude (optional)"
         longitude: "Longitude (optional)"
         name: "Heading name"
-        price: "Amount"
+        price: "Money amount"
         population: "Population (optional)"
       budget/heading/translation:
         name: "Heading name"
@@ -209,7 +211,10 @@ en:
         enabled: "Phase enabled"
         ends_at: "End date"
         starts_at: "Start date"
+        main_button_text: "Text on the button"
+        main_button_url: "The button takes you to (add a link)"
       budget/phase/translation:
+        name: "Phase's Name"
         description: "Description"
         summary: "Summary"
       comment:
@@ -495,10 +500,6 @@ en:
           attributes:
             segment_recipient:
               invalid: "The user recipients segment is invalid"
-        map_location:
-          attributes:
-            map:
-              invalid: Map location can't be blank. Place a marker or select the checkbox if geolocalization is not needed
         poll/voter:
           attributes:
             document_number:

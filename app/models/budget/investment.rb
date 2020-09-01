@@ -310,8 +310,8 @@ class Budget
       price.to_i <= available_money
     end
 
-    def register_selection(user)
-      vote_by(voter: user, vote: "yes") if selectable_by?(user)
+    def register_selection(user, vote)
+      vote_by(voter: user, vote: vote) if selectable_by?(user)
     end
 
     def calculate_confidence_score

@@ -3,6 +3,7 @@ class Budget < ApplicationRecord
   include Sluggable
   include StatsVersionable
   include Reportable
+  include Imageable
 
   translates :name, touch: true
   include Globalizable
@@ -25,6 +26,7 @@ class Budget < ApplicationRecord
   validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
+  validates :main_button_url, presence: true, if: -> { main_button_text.present? }
 
   has_many :investments, dependent: :destroy
   has_many :ballots, dependent: :destroy
@@ -41,7 +43,8 @@ class Budget < ApplicationRecord
 
   after_create :generate_phases
 
-  scope :drafting, -> { where(phase: "drafting") }
+  scope :drafting,  -> { where(published: false) }
+  scope :published, -> { where(published: true) }
   scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
@@ -57,7 +60,7 @@ class Budget < ApplicationRecord
   scope :open, -> { where.not(phase: "finished") }
 
   def self.current
-    where.not(phase: "drafting").order(:created_at).last
+    published.order(:created_at).last
   end
 
   def current_phase
@@ -84,8 +87,12 @@ class Budget < ApplicationRecord
     80
   end
 
+  def publish!
+    update!(published: true)
+  end
+
   def drafting?
-    phase == "drafting"
+    published == false
   end
 
   def informing?
@@ -144,8 +151,33 @@ class Budget < ApplicationRecord
     current_phase&.balloting_or_later?
   end
 
+  def single_heading?
+    groups.count == 1 && headings.count == 1
+  end
+
+  def enabled_phases_amount
+    phases.enabled.count
+  end
+
+  def current_enabled_phase_number
+    first_enabled_phase_position = phases.enabled.order(:id).find_index { |phase| phase.kind == self.phase }
+    first_enabled_phase_position.present? ? first_enabled_phase_position + 1 : 0
+  end
+
+  def start_date
+    phases.enabled.first.starts_at
+  end
+
+  def end_date
+    phases.enabled.last.ends_at
+  end
+
   def heading_price(heading)
     heading_ids.include?(heading.id) ? heading.price : -1
+  end
+
+  def total_headings_price
+    headings.map(&:price).inject(:+)
   end
 
   def translated_phase
@@ -157,6 +189,10 @@ class Budget < ApplicationRecord
                                                       precision: 0,
                                                       locale: I18n.locale,
                                                       unit: currency_symbol)
+  end
+
+  def formatted_total_headings_price
+    formatted_amount(total_headings_price)
   end
 
   def formatted_heading_price(heading)
@@ -200,6 +236,19 @@ class Budget < ApplicationRecord
     investments.winners.map(&:milestone_tag_list).flatten.uniq.sort
   end
 
+  def investments_preview_list(limit = 9)
+    case phase
+    when "accepting", "reviewing"
+      investments.sample(limit)
+    when "selecting", "valuating", "publishing_prices"
+      investments.feasible.sample(limit)
+    when "balloting", "reviewing_ballots"
+      investments.selected.sample(limit)
+    else
+      []
+    end
+  end
+
   private
 
     def generate_phases
@@ -207,6 +256,7 @@ class Budget < ApplicationRecord
         Budget::Phase.create(
           budget: self,
           kind: phase,
+          name: I18n.t("budgets.phase.#{phase}"),
           prev_phase: phases&.last,
           starts_at: phases&.last&.ends_at || Date.current,
           ends_at: (phases&.last&.ends_at || Date.current) + 1.month

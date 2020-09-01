@@ -7,6 +7,22 @@ describe "Account" do
     login_as(user)
   end
 
+  scenario "Can access from header avatar" do
+    visit root_path
+
+    within("#responsive-menu") do
+      expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
+      find(".avatar-image").click
+    end
+
+    expect(page).to have_current_path(account_path, ignore_query: true)
+
+    within(".account") do
+      expect(page).to have_selector("input[value='Manuela Colau']")
+      expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
+    end
+  end
+
   scenario "Show" do
     visit root_path
 
@@ -14,8 +30,52 @@ describe "Account" do
 
     expect(page).to have_current_path(account_path, ignore_query: true)
 
-    expect(page).to have_selector("input[value='Manuela Colau']")
-    expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
+    within(".account") do
+      expect(page).to have_selector("input[value='Manuela Colau']")
+      expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
+    end
+  end
+
+  scenario "Show info about participation" do
+    user_regular = create(:user)
+    user_verified = create(:user, :level_three)
+
+    login_as(user_regular)
+    visit account_path
+
+    expect(page).to have_content("Participate on debates")
+    expect(page).to have_content("Create new proposals")
+    expect(page).to have_content("Support proposals")
+    expect(page).to have_content("Participate on final voting")
+    expect(page).to have_content("* Only for users on Census.")
+    expect(page).to have_content("To perform all the actions verify your account.")
+    expect(page).to have_link("Verify my account")
+
+    login_as(user_verified)
+    visit account_path
+
+    expect(page).to have_content("Participate on debates")
+    expect(page).to have_content("Create new proposals")
+    expect(page).to have_content("Support proposals")
+    expect(page).to have_content("Participate on final voting")
+    expect(page).to have_content("* Only for users on Census.")
+    expect(page).to have_content("To perform all the actions verify your account.")
+    expect(page).to have_content("Account verified")
+  end
+
+  scenario "Do not show verify account with skip verification enabled" do
+    Setting["feature.user.skip_verification"] = true
+
+    visit account_path
+
+    expect(page).to have_content("Participate on debates")
+    expect(page).to have_content("Create new proposals")
+    expect(page).to have_content("Support proposals")
+    expect(page).to have_content("Participate on final voting")
+    expect(page).not_to have_content("* Only for users on Census.")
+    expect(page).not_to have_content("To perform all the actions verify your account.")
+    expect(page).not_to have_content("Account verified")
+    expect(page).not_to have_link("Verify my account")
   end
 
   scenario "Show organization" do
@@ -23,10 +83,12 @@ describe "Account" do
 
     visit account_path
 
-    expect(page).to have_selector("input[value='Manuela Corp']")
-    expect(page).not_to have_selector("input[value='Manuela Colau']")
+    within(".account") do
+      expect(page).to have_selector("input[value='Manuela Corp']")
+      expect(page).not_to have_selector("input[value='Manuela Colau']")
 
-    expect(page).to have_selector(avatar("Manuela Corp"), count: 1)
+      expect(page).to have_selector(avatar("Manuela Corp"), count: 1)
+    end
   end
 
   scenario "Edit" do

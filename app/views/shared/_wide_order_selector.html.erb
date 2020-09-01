@@ -4,14 +4,12 @@
 %>
 
 <% if @valid_orders.present? && @valid_orders.count > 1 %>
-  <div class="wide-order-selector small-12 medium-8">
+  <div class="wide-order-selector small-12">
     <form>
-      <div class="small-12 medium-6 float-left">
+      <div class="small-12 medium-6 large-4">
         <label for="order-selector-participation">
           <%= t("#{i18n_namespace}.select_order") %>
         </label>
-      </div>
-      <div class="small-12 medium-6 float-left">
         <select class="js-location-changer js-order-selector select-order"
                 data-order="<%= @current_order %>" name="order-selector"
                 id="order-selector-participation">

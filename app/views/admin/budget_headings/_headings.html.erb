@@ -1,0 +1,37 @@
+<% if @headings.any? %>
+  <h3><%= t("admin.budget_headings.amount", count: @headings.count) %></h3>
+  <table>
+    <thead>
+      <tr id="<%= dom_id(@group) %>">
+        <th><%= t("admin.budget_headings.name") %></th>
+        <th class="text-center"><%= t("admin.budget_headings.price") %></th>
+        <th class="text-center"><%= t("admin.budget_headings.population") %></th>
+        <th class="text-center"><%= t("admin.budget_headings.allow_custom_content") %></th>
+        <% unless @mode.present? %>
+          <th class="text-right"><%= t("admin.actions.actions") %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @headings.each do |heading| %>
+        <tr id="<%= dom_id(heading) %>" class="heading">
+          <td><%= heading.name %></td>
+          <td class="text-center"><%= @budget.formatted_heading_price(heading) %></td>
+          <td class="text-center"><%= heading.population %></td>
+          <td class="text-center">
+            <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
+          </td>
+          <% unless @mode.present? %>
+            <td class="text-right">
+              <%= render "headings_actions", heading: heading %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary clear">
+    <%= t("admin.budget_headings.no_headings") %>
+  </div>
+<% end %>

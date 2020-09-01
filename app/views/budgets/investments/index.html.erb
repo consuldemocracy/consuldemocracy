@@ -70,6 +70,8 @@
         <%= render("shared/order_links", i18n_namespace: "budgets.investments.index") %>
       <% end %>
 
+      <%= render "shared/filter_selector", i18n_namespace: "budgets.investments.index" %>
+
       <% if investments_default_view? %>
 
         <% @investments.each do |investment| %>

@@ -1,27 +1,32 @@
 class Admin::BudgetsController < Admin::BaseController
   include Translatable
   include ReportAttributes
+  include ImageAttributes
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters %w[open finished], only: :index
+  has_filters %w[all open finished], only: :index
 
   before_action :load_budget, except: [:index, :new, :create]
+  before_action :load_staff, only: [:new, :edit]
+  before_action :set_budget_mode, only: [:new, :create, :switch_group]
   load_and_authorize_resource
+
+  def new
+    @mode ||= "multiple"
+  end
 
   def index
     @budgets = Budget.send(@current_filter).order(created_at: :desc).page(params[:page])
   end
 
   def show
+    render :edit
   end
 
-  def new
-    load_staff
-  end
-
-  def edit
-    load_staff
+  def publish
+    @budget.publish!
+    redirect_to admin_budget_path(@budget), notice: t("admin.budgets.publish.notice")
   end
 
   def calculate_winners
@@ -34,9 +39,13 @@ class Admin::BudgetsController < Admin::BaseController
                 notice: I18n.t("admin.budgets.winners.calculated")
   end
 
+  def switch_group
+    redirect_to admin_budget_group_headings_path(@budget, selected_group_id, url_params)
+  end
+
   def update
     if @budget.update(budget_params)
-      redirect_to admin_budgets_path, notice: t("admin.budgets.update.notice")
+      redirect_to admin_budget_path(@budget), notice: t("admin.budgets.update.notice")
     else
       load_staff
       render :edit
@@ -45,8 +54,9 @@ class Admin::BudgetsController < Admin::BaseController
 
   def create
     @budget = Budget.new(budget_params)
+
     if @budget.save
-      redirect_to admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
+      redirect_to admin_budget_groups_path(@budget, mode: @mode), notice: t("admin.budgets.create.notice")
     else
       load_staff
       render :new
@@ -68,12 +78,16 @@ class Admin::BudgetsController < Admin::BaseController
 
     def budget_params
       descriptions = Budget::Phase::PHASE_KINDS.map { |p| "description_#{p}" }.map(&:to_sym)
-      valid_attributes = [:phase,
-                          :currency_symbol,
-                          administrator_ids: [],
-                          valuator_ids: []
+      valid_attributes = [:phase, :currency_symbol, :published,
+                          :main_button_text, :main_button_url,
+                          administrator_ids: [], valuator_ids: [],
+                          image_attributes: image_attributes
       ] + descriptions
       params.require(:budget).permit(*valid_attributes, *report_attributes, translation_params(Budget))
+    end
+
+    def budget_heading_params
+      params.require(:heading).permit(:mode) if params.key?(:heading)
     end
 
     def load_budget
@@ -83,5 +97,23 @@ class Admin::BudgetsController < Admin::BaseController
     def load_staff
       @admins = Administrator.includes(:user)
       @valuators = Valuator.includes(:user).order(description: :asc).order("users.email ASC")
+    end
+
+    def url_params
+      @mode.present? ? { mode: @mode } : {}
+    end
+
+    def selected_group_params
+      params.require(:budget).permit(:group_id) if params.key?(:budget)
+    end
+
+    def selected_group_id
+      selected_group_params[:group_id]
+    end
+
+    def set_budget_mode
+      if params[:mode] || budget_heading_params.present?
+        @mode = params[:mode] || budget_heading_params[:mode]
+      end
     end
 end

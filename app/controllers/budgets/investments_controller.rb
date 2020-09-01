@@ -90,7 +90,7 @@ module Budgets
     end
 
     def vote
-      @investment.register_selection(current_user)
+      @investment.register_selection(current_user, vote_value)
       load_investment_votes(@investment)
       respond_to do |format|
         format.html { redirect_to budget_investments_path(heading_id: @investment.heading.id) }
@@ -133,7 +133,7 @@ module Budgets
 
       def investment_params
         attributes = [:heading_id, :tag_list,
-                      :organization_name, :location, :terms_of_service, :skip_map,
+                      :organization_name, :location, :terms_of_service,
                       image_attributes: image_attributes,
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       map_location_attributes: [:latitude, :longitude, :zoom]]
@@ -185,6 +185,10 @@ module Budgets
 
       def load_map
         @map_location = MapLocation.load_from_heading(@heading)
+      end
+
+      def vote_value
+        params[:value] || "yes"
       end
   end
 end

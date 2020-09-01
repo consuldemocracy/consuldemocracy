@@ -47,4 +47,20 @@ module LegislationHelper
       "background: #{@process.background_color};color: #{@process.font_color};"
     end
   end
+
+  def phase_status(process, phase)
+    if process.send("#{phase}_phase").open?
+      t("legislation.processes.header.active")
+    else
+      t("legislation.processes.header.locked")
+    end
+  end
+
+  def publication_status(process, phase)
+    if process.send("#{phase}_publication").started?
+      t("legislation.processes.header.published")
+    else
+      t("legislation.processes.header.coming_soon")
+    end
+  end
 end

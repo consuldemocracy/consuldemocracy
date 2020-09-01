@@ -14,6 +14,7 @@ en:
       edit: Edit
       configure: Configure
       delete: Delete
+      confirm_delete: "Are you sure? This action will delete %{resource_name} '%{name}' and can't be undone."
     officing_booth:
       title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
@@ -64,34 +65,51 @@ en:
     budgets:
       index:
         title: Participatory budgets
-        new_link: Create new budget
+        title_budget_type: Participatory budget type
+        new_button: Create new budget
+        new_single_title_html: "<strong>Single heading</strong> budget"
+        new_single_description: "Create a process with a group, district or topic. You have something like a bag of money. For example, 25,000€ for the district, or 10,000€ for culture."
+        new_single_button: Create single heading budget
+        new_multiple_title_html: "<strong>Multiple headings</strong> budget"
+        new_multiple_description: "Create a process with multiple groups, districts or topics. You have something like several bags of money. For example, 25,000€ for \"North District\", 30,000€ for \"Center District\", 28,000€ for \"South District\" and the whole city. Or for several themes like sport, culture or health."
+        new_multiple_button: Create multiple headings budget
         filter: Filter
         filters:
+          all: All
           open: Open
           finished: Finished
         budget_investments: Manage projects
         table_name: Name
-        table_phase: Phase
-        table_investments: Investments
-        table_edit_groups: Headings groups
-        table_edit_budget: Edit
-        table_admin_ballots: Ballots
-        edit_groups: Edit headings groups
+        table_phase: Current phase
+        table_budget_type: Budget Type
+        table_budget_completed: Completed
+        table_duration: Duration
+        table_preview: Preview budget
         edit_budget: Edit budget
         admin_ballots: Admin ballots
         no_budgets: "There are no budgets."
+        help_block: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
+        type_single: Single heading
+        type_multiple: Multiple headings
+        delete: "Delete budget"
       create:
+        button:
+          continue: "Continue to groups"
         notice: New participatory budget created successfully!
       update:
         notice: Participatory budget updated successfully
+      publish:
+        notice: "Participaroty budget published successfully"
       edit:
         title: Edit Participatory budget
+        drafting: "This participatory budget is in draft mode, only administrators can see it in the public site. Once it's published it cannot be changed to draft mode again."
+        preview: "Preview budget"
+        publish: "Publish budget"
         delete: Delete budget
         phase: Phase
-        dates: Dates
-        enabled: Enabled
-        actions: Actions
-        edit_phase: Edit phase
+        duration: "Duration"
+        enabled: "Phase enabled"
+        phase_content: "Edit content"
         active: Active
         blank_dates: Dates are blank
         administrators:
@@ -104,27 +122,57 @@ en:
           other: "%{count} valuators selected"
         empty_administrators: "There are no administrators"
         empty_valuators: "There are no valuators"
+        name_description: "This is the name of the participatory budget used on the header and cards whenever it is active"
+        image_description: "If an image is uplodaded it will be used as the banner on top of this participatory budget, otherwise the default color for budgets will be used."
+        main_call_to_action: "Main call to action (optional)"
+        main_call_to_action_description: "This button will appear on main banner of this participatory budget and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
+        info:
+          budget_settings: "General participatory budget settings"
+          heading_settings: "Heading settings"
+          phases_settings: "Phases settings"
+          results_settings: "Results and statistics settings"
+          staff_settings: "Administrators and Valuators assigned to the budget"
+          groups_and_headings_settings: "Groups and headings settings"
+        groups_and_headings:
+          edit_group: "Edit group %{name}"
+          delete_group: "Delete group %{name}"
+          headings: "Headings"
+          edit_heading: "Edit heading %{name}"
+          delete_heading: "Delete heading %{name}"
+          max_number_headings: "Maximum number of headings in which a user can vote"
+          add_group: "Add group"
+          add_heading: "Add heading"
       destroy:
         success_notice: Budget deleted successfully
         unable_notice: You cannot delete a budget that has associated investments
         unable_notice_polls: You cannot delete a budget that has an associated poll
       new:
-        title: New participatory budget
+        title_single: New single heading budget
+        title_multiple: New multiple headings budget
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
         recalculate: Recalculate Winner Investments
+      shared:
+        timeline_budget: Budget
+        timeline_groups: Groups
+        timeline_headings: Headings
+        timeline_phases: Phases
+        resource_name: "the budget"
     budget_groups:
       name: "Name"
       headings_name: "Headings"
       headings_edit: "Edit Headings"
       headings_manage: "Manage headings"
       no_groups: "There are no groups."
+      max_votable_headings: "Maximum number of headings in which a user can vote"
       amount:
         one: "There is 1 group"
         other: "There are %{count} groups"
       create:
         notice: "Group created successfully!"
+        button:
+          continue: "Continue to headings"
       update:
         notice: "Group updated successfully"
       destroy:
@@ -135,14 +183,25 @@ en:
         edit: "Edit group"
         submit: "Save group"
       index:
-        back: "Go back to budgets"
+        back: "Go back to budget"
+        new_button: "Add new group"
+        single:
+          help_block: "Groups are meant to organize headings, since this budget will only contain one heading, the same name can be used because it will not appear anywhere. You can just continue with the next step."
+        multiple:
+          help_block: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
     budget_headings:
+      name: Heading name
+      price: Money amount
+      population: Population
+      allow_custom_content: Allow content block
       no_headings: "There are no headings."
       amount:
         one: "There is 1 heading"
         other: "There are %{count} headings"
       create:
         notice: "Heading created successfully!"
+        button:
+          continue: "Continue to phases"
       update:
         notice: "Heading updated successfully"
       destroy:
@@ -157,12 +216,28 @@ en:
         submit: "Save heading"
       index:
         back: "Go back to groups"
+        showing_headings_from_group: "Currently showing headings from the group:"
+        new_button: "Add new heading"
+        single:
+          help_block: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
+        multiple:
+          help_block: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
     budget_phases:
       edit:
-        summary_help_text: This text will inform the user about the phase. To show it even if the phase is not active, select the checkbox below
+        title: "Edit phase"
         description_help_text: This text will appear in the header when the phase is active
         enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
         save_changes: Save changes
+        duration: "Phase's duration"
+        duration_description: "The period of time this phase will be active."
+        image_description: "If an image is uplodaded it will be used as the banner on top of this participatory budget when this phase is enabled, otherwise the default color for budgets will be used."
+        main_call_to_action: "Main call to action (optional)"
+        main_call_to_action_description: "This button will appear on main banner of this participatory budget when this phase is enabled and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
+        phase_name_help_text: "This is the title of the phase users will read on the header whenever this phase is active."
+      index:
+        help_block: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
+        button:
+          continue: "Finalize"
     budget_investments:
       index:
         heading_filter_all: All headings
@@ -1302,6 +1377,9 @@ en:
       color_help: Hexadecimal format
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
+      close_modal: Close modal
+      learn_more: Learn more
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Geozone

@@ -1,6 +1,6 @@
 <li id="<%= dom_id(investment) %>_sidebar">
-  <%= investment.title %>
-  <span><%= investment.formatted_price %></span>
+  <span class="ballot-list-title"><%= investment.title %></span>
+  <span class="ballot-list-price"><%= investment.formatted_price %></span>
 
   <% if @budget.balloting? %>
     <%= link_to budget_ballot_line_path(id: investment.id,
@@ -10,7 +10,7 @@
                 method: :delete,
                 remote: true do %>
       <span class="show-for-sr"><%= t("budgets.ballots.show.remove") %></span>
-      <span class="icon-x"></span>
+      <span class="fas fa-times" title="<%= t("budgets.ballots.show.remove") %>"></span>
     <% end %>
   <% end %>
 </li>

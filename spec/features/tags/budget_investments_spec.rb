@@ -66,10 +66,13 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  heading.name, from: "budget_investment_heading_id"
+    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                   visible: false)
+
     fill_in "Title", with: "Build a skyscraper"
     fill_in "Description", with: "I want to live in a high tower over the clouds"
-    check   "budget_investment_terms_of_service"
+    # Check terms of service by default
+    # check "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "#{tag_medio_ambiente.name}, #{tag_economia.name}"
 
@@ -85,10 +88,13 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  heading.name, from: "budget_investment_heading_id"
+    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                   visible: false)
+
     fill_in "Title", with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
-    check "budget_investment_terms_of_service"
+    # Check terms of service by default
+    # check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: tag_economia.name).click
     click_button "Create Investment"
@@ -109,10 +115,13 @@ describe "Tags" do
     visit budget_path(budget)
     click_link "Create a budget investment"
 
-    select  heading.name, from: "budget_investment_heading_id"
+    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                   visible: false)
+
     fill_in "Title", with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
-    check "budget_investment_terms_of_service"
+    # Check terms of service by default
+    # check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: "Education").click
     click_button "Create Investment"
@@ -133,10 +142,13 @@ describe "Tags" do
     visit budget_investments_path(budget, heading_id: heading.id)
     click_link "Create a budget investment"
 
-    select  heading.name, from: "budget_investment_heading_id"
+    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                   visible: false)
+
     fill_in "Title", with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
-    check "budget_investment_terms_of_service"
+    # Check terms of service by default
+    # check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: "Education").click
     click_button "Create Investment"
@@ -154,10 +166,13 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  heading.name, from: "budget_investment_heading_id"
+    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                   visible: false)
+
     fill_in "Title", with: "Build a skyscraper"
     fill_in "Description", with: "I want to live in a high tower over the clouds"
-    check   "budget_investment_terms_of_service"
+    # Check terms of service by default
+    # check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
@@ -172,10 +187,13 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  heading.name, from: "budget_investment_heading_id"
+    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                   visible: false)
+
     fill_in "Title", with: "Build a skyscraper"
     fill_in "Description", with: "I want to live in a high tower over the clouds"
-    check   "budget_investment_terms_of_service"
+    # Check terms of service by default
+    # check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
 
@@ -257,7 +275,11 @@ describe "Tags" do
 
         login_as(admin) if budget.drafting?
         visit budget_path(budget)
-        click_link group.name
+        if budget.informing?
+          visit budget_investments_path(budget, heading: heading.id)
+        else
+          click_link "See all investments"
+        end
 
         within "#tag-cloud" do
           click_link new_tag
@@ -306,7 +328,11 @@ describe "Tags" do
 
         login_as(admin) if budget.drafting?
         visit budget_path(budget)
-        click_link group.name
+        if budget.informing?
+          visit budget_investments_path(budget, heading: heading.id)
+        else
+          click_link "See all investments"
+        end
 
         within "#categories" do
           click_link tag_medio_ambiente.name

@@ -5,8 +5,10 @@ class SiteCustomization::Image < ApplicationRecord
     "social_media_icon_twitter" => [246, 246],
     "apple-touch-icon-200" => [200, 200],
     "budget_execution_no_image" => [800, 600],
+    "budget_no_image" => [400, 300],
     "map" => [420, 500],
-    "logo_email" => [400, 80]
+    "logo_email" => [400, 80],
+    "header_homepage" => [500, 400]
   }.freeze
 
   has_attached_file :image
@@ -43,7 +45,12 @@ class SiteCustomization::Image < ApplicationRecord
 
       dimensions = Paperclip::Geometry.from_file(image.queued_for_write[:original].path)
 
-      errors.add(:image, :image_width, required_width: required_width) unless dimensions.width == required_width
-      errors.add(:image, :image_height, required_height: required_height) unless dimensions.height == required_height
+      unless dimensions.width >= required_width
+        errors.add(:image, :image_width, required_width: required_width)
+      end
+
+      unless dimensions.height >= required_height
+        errors.add(:image, :image_height, required_height: required_height)
+      end
     end
 end

@@ -25,6 +25,7 @@ describe "Voter" do
       within("#poll_question_#{question.id}_answers") do
         click_link answer_yes.title
         expect(page).not_to have_link(answer_yes.title)
+        expect(page).to have_content("Your vote has been registered correctly.")
       end
 
       expect(Poll::Voter.count).to eq(1)
@@ -174,6 +175,7 @@ describe "Voter" do
         expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
         within("#poll_question_#{question.id}_answers") do
           expect(page).not_to have_link(answer_yes.title)
+          expect(page).to have_content("Your vote has been registered correctly.")
         end
 
         travel_back
@@ -186,6 +188,7 @@ describe "Voter" do
         within("#poll_question_#{question.id}_answers") do
           expect(page).to have_link(answer_yes.title)
           expect(page).to have_link(answer_no.title)
+          expect(page).not_to have_content("Your vote has been registered correctly.")
         end
       end
     end
@@ -210,6 +213,7 @@ describe "Voter" do
 
       within("#poll_question_#{question.id}_answers") do
         expect(page).not_to have_link(answer_yes.title)
+        expect(page).not_to have_content("Your vote has been registered correctly.")
       end
 
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
