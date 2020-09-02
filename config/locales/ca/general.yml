@@ -297,6 +297,9 @@ ca:
       sign_in: Entra amb Twitter
       sign_up: Registra't amb Twitter
       name: Twitter
+    info:
+      sign_in: "Inicieu la sessió amb:"
+      sign_up: "Registra't amb:"
     or_fill: "O emplena el següent formulari:"
   proposals:
     create:
