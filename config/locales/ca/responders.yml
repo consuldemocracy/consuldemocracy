@@ -27,7 +27,7 @@ ca:
         proposal: "Proposta actualitzada correctament."
         budget_investment: "Proposta d'inversió actualitzada correctament."
         topic: "El tema s'ha actualitzat correctament."
-        valuator_group: "S'ha actualitzat correctament el grup de valoritzadors"
+        valuator_group: "S'ha actualitzat correctament el grup de avaluadors"
         translation: "La traducció s’ha actualitzat correctament"
       destroy:
         budget_investment: "Proposta d'inversió eliminada."
