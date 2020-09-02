@@ -18,7 +18,7 @@ cs:
       title: Potvrďte svůj účet pomocí následujícího odkazu
     reply:
       hi: Dobrý den
-      new_reply_by: Nová odpověď od <b>%{commenter} </b> na Váš komentář
+      new_reply_by: Nová odpověď od <strong>%{commenter}</strong> na Váš komentář
       subject: Někdo odpověděl na váš komentář
       title: Nová odpověď na váš komentář
     proposal_notification_digest:
