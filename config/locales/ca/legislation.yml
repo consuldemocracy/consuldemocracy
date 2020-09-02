@@ -44,7 +44,7 @@ ca:
         text_comments: Comentarios
     processes:
       header:
-        additional_info: Informació adicional
+        additional_info: Informació addicional
         description: Descripció detallada
         more_info: Més informació i context
       proposals:
