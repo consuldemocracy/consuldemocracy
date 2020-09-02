@@ -798,8 +798,8 @@ ca:
   users:
     login_to_comment: "Cal %{signin} o %{signup} per deixar un comentari."
     login_to_continue: "Cal %{signin} o %{signup} per continuar."
-    signin: "Iniciar la sessió"
-    signup: "Registra't"
+    signin: "iniciar la sessió"
+    signup: "registra't"
     verify_account: "verifica el teu compte"
     direct_messages:
       new:
