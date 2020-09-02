@@ -48,7 +48,7 @@ ca:
         executed: Executat
     polls:
       current_poll: "Enquesta actual"
-      current_poll_geozone_restricted: "Enquesta actual Geozona restringida"
+      current_poll_geozone_restricted: "Enquesta actual restringida per geozona"
       recounting_poll: "Conta enquesta"
       expired_poll_without_stats: "Enquesta expirada sense estadístiques & Resultats"
       expired_poll_with_stats: "Enquesta en vigor amb estadístiques & Resultats"
