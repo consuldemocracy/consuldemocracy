@@ -100,10 +100,10 @@ ca:
           other: "%{count} administradors seleccionats"
         valuators:
           zero: "Selecciona les valoracions"
-          one: "S'ha seleccionat 1 valorador"
-          other: "%{count} valoradors seleccionats"
+          one: "S'ha seleccionat 1 avaluador"
+          other: "%{count} avaluadors seleccionats"
         empty_administrators: "No hi ha administradors"
-        empty_valuators: "No hi ha valoradors"
+        empty_valuators: "No hi ha avaluadors"
       destroy:
         success_notice: El pressupost s'ha suprimit correctament
         unable_notice: No podeu suprimir un pressupost que tingui inversions associades
@@ -212,7 +212,7 @@ ca:
           feasibility: Viabilitat
           valuation_finished: Ev. Fi.
           selected: seleccionada
-          visible_to_valuators: Espectacle als valoradors
+          visible_to_valuators: Espectacle als avaluadors
           author_username: Nom d'usuari de l'autor
           incompatible: Incompatible
           price: Preu
@@ -268,7 +268,7 @@ ca:
         table_actions: "Accions"
         delete: "Elimina la fita"
         no_milestones: "No heu definit fites"
-        image: "imatge"
+        image: "Imatge"
         show_image: "Mostra la imatge"
         documents: "Documents"
         milestone: Fita
@@ -282,7 +282,7 @@ ca:
       edit:
         title: Edita la fita
       create:
-        notice: Nova fita creada amb èxit
+        notice: Nova fita creada amb èxit!
       update:
         notice: Fita actualitzada correctament
       delete:
@@ -315,7 +315,7 @@ ca:
         new_progress_bar: "Creeu una nova barra de progrés"
         primary: "Barra de progrés primària"
         table_id: "ID"
-        table_kind: "tipus"
+        table_kind: "Tipus"
         table_title: "Títol"
         table_percentage: "Avenços actuals"
       new:
@@ -667,7 +667,7 @@ ca:
         pages: Pàgines
         images: Imatges
         content_blocks: Personalitzar blocs
-        information_texts: Textos d’informació personalitzada
+        information_texts: Textos informatius personalitzats
         information_texts_menu:
           basic: "Personalització bàsica"
           debates: "Debats"
@@ -729,7 +729,7 @@ ca:
       all_proposal_authors: Autors de la proposta (inclosos arxivats i jubilats)
       proposal_authors: Autors de la proposta
       investment_authors: Autors de la inversió en el pressupost actual
-      feasible_and_undecided_investment_authors: "Autors d'alguna inversió del pressupost actual que no compleix: [valuation finished unfesasible]"
+      feasible_and_undecided_investment_authors: "Autors d'alguna inversió del pressupost actual que no compleix: [avaluació finalitzada inviable]"
       selected_investment_authors: Autors de les inversions seleccionades del pressupost actual
       winner_investment_authors: Autors de les inversions guanyadores del pressupost actual
       not_supported_on_current_budget: Els usuaris que no hagin acceptat inversions en el pressupost actual
@@ -874,7 +874,7 @@ ca:
         email: El teu correu electrònic
         description: Descripció detallada
         no_description: Sense descripció
-        no_valuators: No hi ha valoradors.
+        no_valuators: No hi ha avaluadors.
         valuator_groups: "Grups de valoració"
         group: "Grup"
         no_group: "Sense grup"
@@ -906,7 +906,7 @@ ca:
         no_groups: "No hi ha grups avaluadors"
       show:
         title: "Grup de taxadors: %{group}"
-        no_valuators: "No hi ha assignadors d’avaluació assignats a aquest grup"
+        no_valuators: "No hi ha avaluadors assignats a aquest grup"
       form:
         new: "Crear grup d’avaluadors"
         edit: "Desa el grup de taxadors"
@@ -1590,15 +1590,15 @@ ca:
       edit:
         editing: Edició de registre de cens local
       update:
-        notice: S'ha actualitzat correctament el registre de cens local.
+        notice: S'ha actualitzat correctament el registre de cens local!
       destroy:
-        notice: El registre de cens local s'ha suprimit correctament.
+        notice: El registre de cens local s'ha suprimit correctament!
       imports:
         new:
           title: Registres locals de cens
           subtitle: Importa fitxer CSV
         create:
-          notice: El procés d'importació dels registres de cens local s'ha executat correctament.
+          notice: El procés d'importació dels registres de cens local s'ha executat correctament!
         show:
           title: Gestiona el cens local
           subtitle: Importa els resultats del procés
