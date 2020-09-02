@@ -161,7 +161,7 @@ pt:
         surname: "Caminho para o Sobrenome"
         surname_description: "Em que caminho da resposta está o Sobrenome do usuário?"
         valid: "Condição para detectar uma resposta válida"
-        valid_description: "Que caminho de resposta deve vir informado para que a resposta seja válida?"
+        valid_description: "Que caminho de resposta deve vir informado para que a resposta seja válida"
     map:
       latitude: "Latitude"
       latitude_description: "Latitude para mostrar a posição no mapa"
