@@ -174,7 +174,7 @@ mk:
         name: Име
         external_code: "Надворешен код (опционално)"
         census_code: "Цензус код (опционално)"
-        html_map_coordinates: "ХТМЛ <мапа> Координати (опционално)"
+        html_map_coordinates: "ХТМЛ <map> Координати (опционално)"
       milestone:
         status_id: "Моментален статус (опционално)"
         title: "Наслов"
