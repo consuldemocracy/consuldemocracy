@@ -4,11 +4,11 @@ it:
       show:
         title: Il tuo voto
         amount_available:
-          knapsack: "Hai ancora <span>%{amount}</span> da investire."
+          knapsack: "Hai ancora <span>%{count}</span> da investire."
         amount_spent:
-          knapsack: "Importo speso <span>%{amount}</span>"
+          knapsack: "Importo speso <span>%{count}</span>"
         amount_limit:
-          knapsack: "%{amount}"
+          knapsack: "%{count}"
         no_balloted_group_yet: "Non hai ancora votato in questo gruppo, vota!"
         remove: Rimuovere il voto
         voted:
