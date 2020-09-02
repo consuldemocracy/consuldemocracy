@@ -141,6 +141,9 @@ ca:
         description_finished: "Descripció quan el pressupost ha finalitzat"
         phase: "fase"
         currency_symbol: "Divisa"
+        voting_style: "Estil de la votació final"
+        voting_style_knapsack: "Borsa de diners"
+        voting_style_approval: "Per aprovació"
       budget/translation:
         name: "Nom"
       budget/investment:
