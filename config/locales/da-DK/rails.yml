@@ -31,7 +31,7 @@ da:
       - Fredag
       - Lørdag
     formats:
-      default: "%Y-%b-%d"
+      default: "%Y-%m-%d"
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
