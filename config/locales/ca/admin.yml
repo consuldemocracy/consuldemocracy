@@ -75,7 +75,7 @@ ca:
         table_investments: Propostes d'inversió
         table_edit_groups: Grups de partides
         table_edit_budget: Editar proposta
-        table_admin_ballots: ' Paperetes'
+        table_admin_ballots: Paperetes
         edit_groups: Edita grups de partides
         edit_budget: Edita pressupost
         admin_ballots: Paperetes d’administració
@@ -325,7 +325,7 @@ ca:
           primary: "Edita la barra de progrés principal"
           secondary: "Edita la barra de progrés %{title}"
       create:
-        notice: "La barra de progrés es va crear correctament"
+        notice: "La barra de progrés es va crear correctament!"
       update:
         notice: "La barra de progrés s'ha actualitzat correctament"
       delete:
