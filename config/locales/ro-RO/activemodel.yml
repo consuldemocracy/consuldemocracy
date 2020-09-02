@@ -44,5 +44,5 @@ ro:
         local_census_records/import:
           attributes:
             file:
-              extension: "Formatul fișierului este greșit. Fișierele de tipul %{valid_extensions} sunt acceptate"
+              extension: "Formatul fișierului este greșit. Fișierele de tipul %{valid_extensions} sunt acceptate."
               headers: "Formatul fișierului este greșit. Fișierele de tipul %{required_headers} sunt acceptate."
