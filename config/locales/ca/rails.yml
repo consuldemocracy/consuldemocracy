@@ -125,7 +125,7 @@ ca:
         other: és massa curt (mínim és %{count} personatges)
       wrong_length:
         one: és la longitud incorrecta (hauria de tenir un caràcter)
-        other: és la longitud incorrecta (hauria de ser) %{count} personatges)
+        other: és la longitud incorrecta (hauria de tenir %{count} caràcters)
       other_than: ha de ser diferent %{count}
     template:
       body: "Hi ha hagut problemes amb els següents camps:"
