@@ -71,7 +71,7 @@ ca:
       index:
         title: Pressupostos ciutadans
         unfeasible: Propostes d'inversió no viables
-        unfeasible_text: "Les inversions han de complir diversos criteris (legalitat, concreció, que no superin el límit del pressupost) per ser declarats viables i arribar a la fase de votació final. Totes les inversions que no compleixen aquests criteris es marquen com a inviables i es publiquen a la llista següent, juntament amb el seu informe de inviabilitat.."
+        unfeasible_text: "Les inversions han de complir diversos criteris (legalitat, concreció, que no superin el límit del pressupost) per ser declarats viables i arribar a la fase de votació final. Totes les inversions que no compleixen aquests criteris es marquen com a inviables i es publiquen a la llista següent, juntament amb el seu informe de inviabilitat."
         by_heading: "Propostes d'inversió amb àmbit: %{heading}"
         search_form:
           button: Buscar
@@ -97,7 +97,7 @@ ca:
           confidence_score: Més avalades
           price: Per cost
       share:
-        message: "Vaig crear el projecte d’inversió %{title} a %{handle}.	Crea també un projecte d’inversió."
+        message: "Vaig crear el projecte d’inversió %{title} a %{handle}. Crea també un projecte d’inversió!"
       show:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost <small>(opcional, dada pública)</small>
