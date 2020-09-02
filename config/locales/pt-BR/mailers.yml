@@ -1,4 +1,4 @@
-pt-BR:
+pt:
   mailers:
     title: "Governo aberto"
     no_reply: "Esta mensagem foi enviada de um endereço de e-mail que não aceita respostas."
@@ -83,7 +83,7 @@ pt-BR:
       hi: "Olá %{name},"
       new_resource: "NOVO RECURSO DESBLOQUEADO"
       introduction: "Como já sabe, no dia %{created_at_day} de %{created_at_month} você criou a proposta no modo rascunho %{title}."
-      text_1: "Sempre que quiser, você pode publicar neste link: %{link_to_published}. Caso ainda não saiba…"
+      text_1: "Sempre que quiser, você pode publicar neste link: %{link_to_published}. Caso ainda não saiba..."
       text_2: "Aproveite a oportunidade! Aprenda, adicione outras pessoas com os mesmos interesses e prepare como difundir o que precisar para publicar definitivamente a sua proposta."
       text_3: "E para acompanhar você neste desafio, temos novidades..."
       text_4: "Dê uma olhada nesta NOVA AÇÃO recomendada:"
@@ -130,6 +130,6 @@ pt-BR:
       list_2: "À medida que conseguir mais apoios, você desbloqueará novos e melhores recursos. Continue obtendo apoios, e vamos premiar e ajudar você!"
       text_7: "E para que você comece com todo o gás..."
       text_8: "Aqui há um grande recurso à sua disposição!"
-      text_9: "Você também encontrará esta nova ação de difusão recomendada…"
+      text_9: "Você também encontrará esta nova ação de difusão recomendada..."
       text_10: "Com certeza, há mais recursos disponíveis!"
       dashboard_button: "Vá em frente. Descubra!"
