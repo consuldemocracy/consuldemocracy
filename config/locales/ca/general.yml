@@ -127,7 +127,7 @@ ca:
         title: Ajuda sobre debats
         description: Inicieu un debat per compartir opinions amb altres persones sobre els temes que us preocupa.
         help_text_1: "L’espai per als debats ciutadans s’adreça a qualsevol persona que pugui exposar temes de la seva preocupació i a aquells que vulguin compartir opinions amb altres persones."
-        help_text_2: 'Per obrir un debat, us heu de registrar %{org}. Els usuaris també poden comentar els debats oberts i valorar - los amb el programa "estic dacord" o "no hi estic d''acord" botons que es troben a cadascun d’ells.'
+        help_text_2: 'Per obrir un debat, us heu de registrar %{org}. Els usuaris també poden comentar els debats oberts i valorar - los amb el programa "estic d''acord" o "no hi estic d''acord" botons que es troben a cadascun d’ells.'
     new:
       form:
         submit_button: Comença un nou debat
@@ -271,7 +271,7 @@ ca:
           one: Hi ha una resposta nova al teu comentari en
           other: Hi ha %{count} noves respostes al teu comentari en
       mark_as_read: Marcar com llegit
-      mark_as_unread: marcar com no llegit
+      mark_as_unread: Marcar com no llegit
       notifiable_hidden: Aquest recurs ja no està disponible.
   map:
     title: "Districtes"
@@ -438,7 +438,7 @@ ca:
         one: 1 Comentari
         other: "%{count} comentaris"
       comments_tab: Comentarios
-      dashboard_proposal_link: panell
+      dashboard_proposal_link: Panell
       flag: Aquesta proposta ha sigut marcada com a inadequada per diversos usuaris.
       notifications_tab: Notificacions
       milestones_tab: Fites
@@ -538,7 +538,7 @@ ca:
           one: Heu creat %{count} enquesta.
           other: Heu creat %{count} urnes.
         links: Enllaços
-        additiontal_information: Informació adicional
+        additiontal_information: Informació addicional
       new:
         title: Nova enquesta
         submit: Crea un sondeig
@@ -566,7 +566,7 @@ ca:
     poster:
       index:
         title: Vista prèvia del pòster
-        poster_title: "No continuis buscant,"
+        poster_title: "No continuïs buscant,"
         poster_subtitle: "recolza'm! ;)"
         intro_text: "<strong>Hi participo %{org}</strong> amb la meva pròpia proposta ciutadana i només si hi afegeixes també, puc aconseguir el suport necessari per fer que la ciutat que tots desitgem."
         proposal_code: "Codi de la proposta: %{code}"
@@ -576,7 +576,7 @@ ca:
         title: Cartell de la teva proposta
       options:
         preview: Vista prèvia
-        download: descarregar
+        download: Descarregar
     mailing:
       index:
         title: Vista prèvia del correu electrònic
