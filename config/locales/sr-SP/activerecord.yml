@@ -218,7 +218,7 @@ sr:
         name: Име
         external_code: "Екстерни код (необавезно)"
         census_code: "Код цензуса (необавезно)"
-        html_map_coordinates: "ХТМЛ <мап> Координате (необавезно)"
+        html_map_coordinates: "ХТМЛ <map> Координате (необавезно)"
       milestone:
         status_id: "Тренутни статус (необавезно)"
         title: "Назив"
