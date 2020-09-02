@@ -4,19 +4,19 @@ pt:
       show:
         title: Sua cédula
         amount_available:
-          knapsack: "Você ainda tem <span>%{amount}</span> para investir."
+          knapsack: "Você ainda tem <span>%{count}</span> para investir."
           approval:
             zero: "Você ainda pode votar <span>%{count}</span> vezes."
             one: "Você ainda pode votar <span>%{count}</span> vez."
             other: "Você ainda pode votar <span>%{count}</span> vezes."
         amount_spent:
-          knapsack: "Total gasto <span>%{amount}</span>"
+          knapsack: "Total gasto <span>%{count}</span>"
           approval:
             zero: "Votos realizados: <span>%{count}</span>"
             one: "Votos realizados: <span>%{count}</span>"
             other: "Votos realizados: <span>%{count}</span>"
         amount_limit:
-          knapsack: "%{amount}"
+          knapsack: "%{count}"
           approval:
             one: "Você pode votar em <span>1</span> projeto"
             other: "Você pode votar em até <span>%{count}</span> projetos"
