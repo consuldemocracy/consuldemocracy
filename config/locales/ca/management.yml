@@ -13,7 +13,7 @@ ca:
         back: Tornar
         password:
           password: Clau
-          send_email: Enviar reenvia un correu electrònic amb la contrasenya
+          send_email: Envia un correu electrònic de restabliment de la contrasenya
           reset_email_send: S'ha enviat un correu electrònic correctament.
           reseted: Contrasenya restablerta amb èxit
           random: Generar una contrasenya aleatòria
