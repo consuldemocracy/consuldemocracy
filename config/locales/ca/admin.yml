@@ -149,6 +149,7 @@ ca:
         success_notice: "S'ha eliminat l'encapçalament correctament"
         unable_notice: "No podeu suprimir un encapçalament que tingui inversions associades"
       form:
+        max_ballot_lines_info: 'Nombre màxim de projectes que un usuari pot votar sobre aquest encapçalament durant la fase "Votar projectes". Només per als pressupostos que fan servir votació d''aprovació.'
         population_info: "El camp de població de la partida de pressupost s’utilitza amb finalitats estadístiques al final del pressupost per mostrar per a cada encapçalament que representa una zona amb població quin percentatge va votar. El camp és opcional, de manera que podeu deixar-lo buit si no s'aplica."
         coordinates_info: "Si es proporcionen latitud i longitud, la pàgina d'inversions d'aquest títol inclourà un mapa. Aquest mapa se centrarà mitjançant aquestes coordenades."
         content_blocks_info: "Si està activat el bloc de contingut, podreu crear contingut personalitzat relacionat amb aquest encapçalament a la secció Configuració; Blocs de contingut personalitzats Aquest contingut apareixerà a la pàgina d'inversions d'aquest títol."
@@ -552,6 +553,7 @@ ca:
           back: Tornar
           submit_button: Guardar canvis
           warning: Ull, has editat el text. Per conservar de manera permanent els canvis, no t'oblidis de fer clic a Desa.
+          markdown_changes_message: "Heu editat el text sense desar-lo. Confirmeu sortir de la pàgina?"
         form:
           title: 'Edició <span class="strong">%{draft_version_title}</span> del procés <span class="strong">%{process_title}</span>'
           launch_text_editor: Llançar editor de text
@@ -1217,6 +1219,15 @@ ca:
           without_confirmed_hide: Sense decidir
         title: Propostes ocultes
         no_hidden_proposals: No hi ha propostes ocultes.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtre
+        filters:
+          all: Tot
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: Pendent
+        title: Notificacions ocultes
+        no_hidden_proposals: No hi ha notificacions ocultes.
     settings:
       flash:
         updated: Valor actualitzat
@@ -1429,6 +1440,8 @@ ca:
         help: "Quan un usuari crea una proposta, els temes següents es suggereixen com a etiquetes predeterminades."
     users:
       columns:
+        id: ID
+        erase_reason: Raó de l'esborrat
         name: Nome
         email: El teu correu electrònic
         document_number: Número de document
@@ -1437,6 +1450,10 @@ ca:
       index:
         title: usuaris bloquejats
         no_users: No hi ha usuaris.
+        filter: Filtre
+        filters:
+          active: Actiu
+          erased: Esborrat
       search:
         placeholder: Cercar usuari per email, nom o DNI
         search: Buscar
