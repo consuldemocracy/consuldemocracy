@@ -8,7 +8,7 @@ ca:
         voted:
           one: "Heu votat <span>one</span> inversió."
           other: "Heu votat <span>%{count}</span> inversions."
-        voted_info: "La vostra votació està confirmada."
+        voted_info: "La vostra votació està confirmada!"
         voted_info_2: "Però podeu canviar el vostre vot en qualsevol moment fins que es tanqui aquesta fase."
         zero: Encara no has votat cap proposta d'inversió.
       reasons_for_not_balloting:
