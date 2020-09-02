@@ -203,6 +203,7 @@ ca:
         name: "Nom de la partida"
         price: "Cost"
         population: "Població (opcional)"
+        max_ballot_lines: "Vots permessos"
       budget/heading/translation:
         name: "Nom de la capçalera"
       budget/phase:
@@ -504,6 +505,8 @@ ca:
           attributes:
             document_number:
               not_in_census: "Este documento no aparece en el censo"
+            user_id:
+              has_voted: "L'usuari ja ha votat"
         legislation/process:
           attributes:
             end_date:
