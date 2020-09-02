@@ -1,6 +1,6 @@
 da:
   attributes:
-    geozone_id: "Projektets omfang"
+    geozone_id: "Område"
     results_enabled: "Vis resultater"
     stats_enabled: "Vis statistik"
     advanced_stats_enabled: "Vis avanceret statistik"
