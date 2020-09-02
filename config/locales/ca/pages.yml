@@ -3,7 +3,7 @@ ca:
     conditions:
       title: Condicions d'ús
       subtitle: AVÍS LEGAL SOBRE LES CONDICIONS D'ÚS, PRIVACITAT I PROTECCIÓ DE DADES PERSONALS DEL PORTAL OBERT DE GOVERN
-      description: Pàgina d’informació sobre les condicions d’ús, privacitat i protecció de dades personals.
+      description: Pàgina d’informació sobre les condicions d’ús, privadesa i protecció de dades personals.
     help:
       title: "%{org} és una plataforma de participació ciutadana"
       guide: "Aquesta guia explica què és cadascun dels %{org} seccions són per a i com funcionen."
@@ -18,7 +18,7 @@ ca:
         title: "Debats"
         description: "A la %{link} a la secció podeu presentar i compartir la vostra opinió amb altres persones sobre problemes que us preocupin relacionats amb la ciutat. També és un lloc per generar idees que a través de les altres seccions de %{org} conduir a accions concretes per part de l’Ajuntament."
         link: "debats ciutadans"
-        feature: "Podeu obrir debats, comentar-los i avaluar-los amb el programa <strong>estic dacord</strong> o <strong>No estic d'acord</strong>. Per això has de fer-ho %{link}."
+        feature: "Podeu obrir debats, comentar-los i avaluar-los amb el programa <strong>estic d'acord</strong> o <strong>No estic d'acord</strong>. Per això has de fer-ho %{link}."
         feature_link: "registrar-se %{org}"
         image_alt: "Botons per valorar els debats"
         figcaption: 'Botons "Estic d''acord" i "No estic d''acord" per valorar els debats.'
@@ -80,7 +80,7 @@ ca:
       keyboard_shortcuts:
         title: Dreceres de teclat
         navigation_table:
-          description: Per poder navegar per aquest lloc web d’una manera accessible, s’ha programat un grup de claus d’accés ràpid que recullen les seccions principals d’interès general en què s’organitza el lloc..
+          description: Per poder navegar per aquest lloc web d’una manera accessible, s’ha programat un grup de claus d’accés ràpid que recullen les seccions principals d’interès general en què s’organitza el lloc.
           caption: Dreceres de teclat per al menú de navegació
           key_header: Clau
           page_header: Pàg
