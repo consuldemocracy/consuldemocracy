@@ -295,7 +295,7 @@ pt:
       poll/question/translation:
         title: "Questão"
       poll/ballot_sheet:
-        data: dados CSV
+        data: Dados CSV
         poll_id: Votação
         officer_assignment_id: Pessoal designado
       poll/shift:
