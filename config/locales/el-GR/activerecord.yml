@@ -193,7 +193,7 @@ el:
         primary: "Στοιχειώδης"
         secondary: "Δευτερεύων"
       budget/group:
-        max_votable_headings: "Μέγιστος αριθμός επικεφαλίδων στις οποίες μπορεί να ψηφίσει ένας χρήστης\n"
+        max_votable_headings: "Μέγιστος αριθμός επικεφαλίδων στις οποίες μπορεί να ψηφίσει ένας χρήστης"
       budget/group/translation:
         name: "Όνομα ομάδας"
       budget/heading:
