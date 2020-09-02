@@ -44,7 +44,7 @@ da:
         title: "Borgerdialog"
         description: "I %{link} deltager borgerne i udarbejdelsen af kommunale politikker eller handlingsplaner. Det kan være igennem debat, udvikling af forslag eller kommentering af udkast til tekster."
         link: "Borgerdialoger"
-        feature: "For at deltage i processen skal du gå til %{link} og bekræfte din konto."
+        feature: "For at deltage skal du gå til %{link} og bekræfte din konto."
         feature_link: "registrer med %{org_name}"
       faq:
         title: "Tekniske problemer?"
