@@ -3,6 +3,21 @@ ca:
     ballots:
       show:
         title: Els meus vots
+        amount_available:
+          knapsack: "Et queden <span>%{count}</span> per a invertir."
+          approval:
+            zero: "Encara pots emetre <span>%{count}</span> vots."
+        amount_spent:
+          knapsack: "Import gastat <span>%{count}</span>"
+          approval:
+            zero: "Vots emesos: <span>%{count}</span>"
+            one: "Vots emesos: <span>%{count}</span>"
+            other: "Vots emesos: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Pots votar <span>1</span> projecte"
+            other: "Pots votar fins a <span>%{count}</span> projectes"
         no_balloted_group_yet: "Encara no has votat projectes d'aquest grup, ¡vota!"
         remove: Llevar vot
         voted:
@@ -19,6 +34,7 @@ ca:
         not_enough_money: "Ja heu assignat el pressupost disponible.<br><small>Recordeu que podeu %{change_ballot} a qualsevol hora</small>"
         no_ballots_allowed: El període de votació està tancat.
         different_heading_assigned: "Ja heu votat un títol diferent: %{heading_link}"
+        not_enough_available_votes: "Ha assolit el màxim nombre de vots permesos"
         change_ballot: canviar els teus vots
         casted_offline: Ja heu participat fora de línia
     groups:
