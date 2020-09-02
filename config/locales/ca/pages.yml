@@ -45,6 +45,7 @@ ca:
         description: "A la %{link} la secció, els ciutadans participen en la redacció i modificació de les regulacions que afecten la ciutat i poden opinar sobre les polítiques municipals en els debats anteriors."
         link: "processos"
         feature: "Per participar en els processos has de %{link} i verificar el teu compte."
+        feature_link: "registrar-se %{org_name}"
       faq:
         title: "¿Problemes tècnics?"
         description: "Llegeix les preguntes freqüents i resol els teus dubtes."
