@@ -1360,7 +1360,7 @@ pt:
         voted:
           zero: "Não há votos associados às assinaturas verificadas."
           one: "Há %{count} voto associado à assinatura verificada."
-          other: "Há %{count} votso associados à assinatura verificada."
+          other: "Há %{count} votos associados à assinatura verificada."
         loading: "Existem ainda as assinaturas que estão sendo verificadas pelo censo, por favor, atualize a página em alguns momentos"
     stats:
       show:
