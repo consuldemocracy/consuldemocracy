@@ -711,14 +711,14 @@ pt:
     followable:
       budget_investment:
         create:
-          notice: "Você está seguindo este projeto de investimento! </br>Para que esteja a par de tudo, vamos notificar você sobre alterações assim que elas ocorrerem."
+          notice: "Você está seguindo este projeto de investimento! <br>Para que esteja a par de tudo, vamos notificar você sobre alterações assim que elas ocorrerem."
         destroy:
-          notice: "Você parou de seguir este projeto de investimento! </br> Você não receberá mais notificações relacionadas a ele."
+          notice: "Você parou de seguir este projeto de investimento! <br> Você não receberá mais notificações relacionadas a ele."
       proposal:
         create:
-          notice: "Agora você está seguindo esta proposta cidadã! </br> Para que esteja a par de tudo, vamos notificar você sobre alterações assim que elas ocorrerem."
+          notice: "Agora você está seguindo esta proposta cidadã! <br> Para que esteja a par de tudo, vamos notificar você sobre alterações assim que elas ocorrerem."
         destroy:
-          notice: "Você parou de seguir esta proposta cidadã! </br> Você não receberá mais notificações relacionadas a ela."
+          notice: "Você parou de seguir esta proposta cidadã! <br> Você não receberá mais notificações relacionadas a ela."
     print:
       print_button: Imprimir esta informação
     search: Buscar
