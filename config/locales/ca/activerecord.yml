@@ -558,4 +558,4 @@ ca:
         another_poll_active: Hi ha un altre sondeig actiu per al període determinat
         restrict_dependent_destroy:
           has_one: "No es pot suprimir el registre perquè és un dependent %{record} existeix"
-          has_many: "No es pot eliminar el registre perquè depèn %{record} existeix"
+          has_many: "No es pot eliminar el registre perquè existeix un %{record} dependent"
