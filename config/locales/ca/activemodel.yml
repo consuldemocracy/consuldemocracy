@@ -6,7 +6,7 @@ ca:
         sms: "SMS"
       local_census_records/import:
         one: Importació del registre de cens local
-        other: Registre de censos locals importacions
+        other: Importació de registres de cens local
     attributes:
       verification:
         residence:
