@@ -7,6 +7,8 @@ ca:
           knapsack: "Et queden <span>%{count}</span> per a invertir."
           approval:
             zero: "Encara pots emetre <span>%{count}</span> vots."
+            one: "Encara pots emetre <span>%{count}</span> vot."
+            other: "Encara pots emetre <span>%{count}</span> vots."
         amount_spent:
           knapsack: "Import gastat <span>%{count}</span>"
           approval:
@@ -98,6 +100,17 @@ ca:
           other: " que conté el terme <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Els meus vots
+          voted_info:
+            knapsack:
+              one: "<strong> Ha votat una proposta amb un cost de %{amount_spent}</strong>"
+              other: "<strong> Ha votat %{count} propostes amb un cost de %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Ha votat una proposta</strong>"
+              other: "<strong>Ha votat %{count} propostes</strong>"
+          change_vote_info:
+            knapsack: "Pot %{link} en qualsevol moment fins al tancament d’aquesta fase. No hi ha necessitat de gastar tot el diner disponible."
+            approval: "Pots %{link} en qualsevol moment fins al final d'aquesta fase."
+          change_vote_link: "canvia el teu vot"
           different_heading_assigned: "Teniu vots actius en un altre títol: %{heading_link}"
           change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
           check_ballot_link: "revisar els meus vots"
@@ -157,6 +170,10 @@ ca:
     progress_bar:
       assigned: "Heu assignat: "
       available: "Pressupost disponible: "
+      votes:
+        zero: "Ha seleccionat <strong>0</strong> projectes de <strong>%{limit}</strong>"
+        one: "Ha seleccionat <strong>1</strong> projecte de <strong>%{limit}</strong>"
+        other: "Ha seleccionat <strong>%{count}</strong> projectes de <strong>%{limit}</strong>"
     show:
       group: Grup
       phase: Fase actual
