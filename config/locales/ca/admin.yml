@@ -1239,7 +1239,7 @@ ca:
             update: La configuració del mapa s'ha actualitzat correctament.
           form:
             submit: Actualitzar
-          how_to_enable: 'Per mostrar el mapa als usuaris, heu d''activar-lo "Propostes i geolocalització d’inversions pressupostàries" endavant "Característiques" fitxa'
+          how_to_enable: 'Per mostrar el mapa als usuaris, heu d''activar-lo "Propostes i geolocalització d’inversions pressupostàries" endavant "Característiques" fitxa.'
         dashboard:
           title: Tauler de comandes de propostes
         remote_census:
@@ -1586,7 +1586,7 @@ ca:
       new:
         creating: Creació d'un registre de cens local
       create:
-        notice: S'ha creat un nou registre de cens local amb èxit.
+        notice: S'ha creat un nou registre de cens local amb èxit!
       edit:
         editing: Edició de registre de cens local
       update:
