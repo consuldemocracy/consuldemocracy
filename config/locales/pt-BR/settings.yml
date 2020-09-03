@@ -27,7 +27,7 @@ pt:
     months_to_archive_proposals: "Meses para arquivar Propostas"
     months_to_archive_proposals_description: "Depois desse número de meses as propostas serão arquivadas e não vão mais receber suportes"
     email_domain_for_officials: "Dominio de email para cargos públicos"
-    email_domain_for_officials_description: "Todos os usuários registrados nesse domínio vão ter seuas contas verificasda no registro"
+    email_domain_for_officials_description: "Todos os usuários registrados nesse domínio vão ter suas contas verificadas no registro"
     twitter_handle: "Usuário do Twitter"
     twitter_handle_description: "Se preenchido vai aparecer no rodapé"
     twitter_hashtag: "Hashtag para Twitter"
