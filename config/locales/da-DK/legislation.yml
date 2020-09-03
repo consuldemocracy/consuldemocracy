@@ -44,7 +44,7 @@ da:
         text_comments: Kommentar
     processes:
       header:
-        additional_info: Hvordan bliver borgernes bidrag brugt?
+        additional_info: Hvordan bliver dit bidrag brugt?
         description: Beskrivelse
         more_info: Mere information og kontekst
       proposals:
