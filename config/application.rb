@@ -8,9 +8,14 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.load_defaults 5.0
+
+    # Overwrite Rails 5.0 defaults and use the options we used in Rails 4
+    config.action_controller.per_form_csrf_tokens = nil
+    config.action_controller.forgery_protection_origin_check = nil
+    ActiveSupport.to_time_preserves_timezone = false
+    config.active_record.belongs_to_required_by_default = false
+    config.ssl_options = {}
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
