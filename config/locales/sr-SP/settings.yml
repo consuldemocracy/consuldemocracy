@@ -64,14 +64,22 @@ sr:
       successful_proposal_id: Успешни предлози
       successful_proposal_id_description: Овај предлог се користи као референца за успешан предлог у смислу подршке и биће приказан на glavnoj tabli.
       poll_short_title: Гласање
+      poll_short_title_description: Кратак опис функције упитника. Омогућава корисницима да креирају упитнике везане за предлог
       poll_description: Опис анкете
+      poll_description_description: Детаљан опис функције упитника
       poll_link: Линк за додатне информације
+      poll_link_description: Додаје додатни линк за информације функцији упитника
       email_short_title: Емаил
       email_short_title_description: 'Кратак опис функције слања електронске поште. Омогућава корисницима да шаљу електронску пошту у сврху промоције својих предлога. Садржај ове поруке се налази на локацији "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Опис емаила
+      email_description_description: Детаљан опис функције електронске поште
       poster_short_title: Постер
       poster_short_title_description: 'Кратак опис функције за постер. Омогућава корисницима да преузму постер у PDF формату у циљу промоције свог предлога. Садржај постера је на локацији "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Опис анкете
+      poster_description_description: Детаљан опис функције за постер
+    analytics_url: "Аналитички URL"
+    proposal_notification_minimum_interval_in_days: "Најмањи временски интервал (у данима) у коме аутори предлога могу да шаљу обавештења о новим предлозима"
+    proposal_notification_minimum_interval_in_days_description: "Број дана у којима корисник може да шаље обавештења свим пратиоцима предлога"
     feature:
       twitter_login: "Twitter приступ"
       facebook_login: "Facebook приступ"
