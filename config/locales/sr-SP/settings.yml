@@ -51,6 +51,7 @@ sr:
     mailer_from_name: "Име пошиљаоца поруке"
     mailer_from_name_description: "Име онако како ће се појављивати као име пошиљаоца у електронској пошти послатој из апликације"
     mailer_from_address: "Адреса пошиљаоца електронске поште"
+    mailer_from_address_description: "Ова адреса електронске поште ће се појављивати у порукама послатим из апликације"
     proposals:
       successful_proposal_id: Успешни предлози
       poll_short_title: Гласање
