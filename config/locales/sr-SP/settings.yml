@@ -46,6 +46,9 @@ sr:
     org_name_description: "Ово име ће се појавити у наслову мејлова, страницама за помоћ..."
     related_content_score_threshold: "Граница вредновања повезаног садржаја"
     related_content_score_threshold_description: "Према скалирању гласова у сродним садржајима, скрива се садржај који корисници означавају као неповезан"
+    hot_score_period_in_days: "Период (у данима) за филтер \"најактивнији\""
+    hot_score_period_in_days_description: "Филтер \"најактивнији\" коришћен у више области ће бити заснован на гласовима у последњих Х дана"
+    mailer_from_name: "Име пошиљаоца поруке"
     proposals:
       successful_proposal_id: Успешни предлози
       poll_short_title: Гласање
