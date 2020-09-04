@@ -58,6 +58,8 @@ sr:
     meta_description_description: 'Опис сајта <meta name="description">, коришћен да би се побољшала SEO'
     meta_keywords: "Кључне речи (SEO)"
     meta_keywords_description: 'Кључне речи <meta name="keywords">, коришћене да се побољша SEO'
+    min_age_to_participate: Доња старосна граница за регистрацију
+    min_age_to_participate_description: "Старосна граница корисника за учествовање у свим процесима где је неопходна верификација"
     proposals:
       successful_proposal_id: Успешни предлози
       poll_short_title: Гласање
