@@ -11,7 +11,6 @@ module Consul
     config.load_defaults 5.0
 
     # Overwrite Rails 5.0 defaults and use the options we used in Rails 4
-    config.action_controller.per_form_csrf_tokens = nil
     config.action_controller.forgery_protection_origin_check = nil
     ActiveSupport.to_time_preserves_timezone = false
     config.active_record.belongs_to_required_by_default = false
