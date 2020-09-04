@@ -80,6 +80,8 @@ sr:
     analytics_url: "Аналитички URL"
     proposal_notification_minimum_interval_in_days: "Најмањи временски интервал (у данима) у коме аутори предлога могу да шаљу обавештења о новим предлозима"
     proposal_notification_minimum_interval_in_days_description: "Број дана у којима корисник може да шаље обавештења свим пратиоцима предлога"
+    direct_message_max_per_day: "Највећи број дозвољених директних порука дневно"
+    direct_message_max_per_day_description: "Највећи број директних порука које корисник може дневно да пошаље"
     feature:
       twitter_login: "Twitter приступ"
       facebook_login: "Facebook приступ"
