@@ -1,7 +1,7 @@
-pt:
+pt-BR:
   date:
     abbr_day_names:
-      - Dom
+      - Testing Portuguese Brazilian post processor
       - Seg
       - Ter
       - Qua
