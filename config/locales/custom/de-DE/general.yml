@@ -11,6 +11,8 @@ de:
       contact_us: Für technische Unterstützung wenden Sie sich bitte an das ZDI Mainfranken.
       description: Diese Plattform basiert auf %{consul}, einer %{open_source}.
       copyright: ZDI Mainfranken, %{year}
+    header:
+      collaborative_legislation: Katzenbergtunnel
   debates:
     index:
       section_header:
