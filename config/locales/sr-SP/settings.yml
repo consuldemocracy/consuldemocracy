@@ -62,12 +62,15 @@ sr:
     min_age_to_participate_description: "Старосна граница корисника за учествовање у свим процесима где је неопходна верификација"
     proposals:
       successful_proposal_id: Успешни предлози
+      successful_proposal_id_description: Овај предлог се користи као референца за успешан предлог у смислу подршке и биће приказан на glavnoj tabli.
       poll_short_title: Гласање
       poll_description: Опис анкете
       poll_link: Линк за додатне информације
       email_short_title: Емаил
+      email_short_title_description: 'Кратак опис функције слања електронске поште. Омогућава корисницима да шаљу електронску пошту у сврху промоције својих предлога. Садржај ове поруке се налази на локацији "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Опис емаила
       poster_short_title: Постер
+      poster_short_title_description: 'Кратак опис функције за постер. Омогућава корисницима да преузму постер у PDF формату у циљу промоције свог предлога. Садржај постера је на локацији "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Опис анкете
     feature:
       twitter_login: "Twitter приступ"
