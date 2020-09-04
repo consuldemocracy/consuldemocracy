@@ -84,8 +84,12 @@ sr:
     direct_message_max_per_day_description: "Највећи број директних порука које корисник може дневно да пошаље"
     feature:
       twitter_login: "Twitter приступ"
+      twitter_login_description: "Дозволи корисницима да се региструју својим Twitter налогом"
       facebook_login: "Facebook приступ"
+      facebook_login_description: "Дозволи корисницима да се региструју својим Facebook налогом"
       google_login: "Google приступ"
+      google_login_description: "Дозволи корисницима да се региструју својим Google налогом"
+      wordpress_login: "Пријава Wordpress налогом"
       featured_proposals: "Истакнути предлози"
       signature_sheets: "Поље за потпис"
       user:
