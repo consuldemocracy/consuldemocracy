@@ -49,6 +49,8 @@ sr:
     hot_score_period_in_days: "Период (у данима) за филтер \"најактивнији\""
     hot_score_period_in_days_description: "Филтер \"најактивнији\" коришћен у више области ће бити заснован на гласовима у последњих Х дана"
     mailer_from_name: "Име пошиљаоца поруке"
+    mailer_from_name_description: "Име онако како ће се појављивати као име пошиљаоца у електронској пошти послатој из апликације"
+    mailer_from_address: "Адреса пошиљаоца електронске поште"
     proposals:
       successful_proposal_id: Успешни предлози
       poll_short_title: Гласање
