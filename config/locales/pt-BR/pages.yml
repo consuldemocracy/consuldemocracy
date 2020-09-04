@@ -1,4 +1,4 @@
-pt:
+pt-BR:
   pages:
     conditions:
       title: Termos e condições de uso
@@ -87,22 +87,22 @@ pt:
           key_header: Chave
           page_header: Página
           rows:
-            - 
+            -
               key_column: 0
               page_column: Início
-            - 
+            -
               key_column: 1
               page_column: Debates
-            - 
+            -
               key_column: 2
               page_column: Propostas
-            - 
+            -
               key_column: 3
               page_column: Votos
-            - 
+            -
               key_column: 4
               page_column: Orçamentos participativos
-            - 
+            -
               key_column: 5
               page_column: Processos legislativos
         browser_table:
@@ -111,19 +111,19 @@ pt:
           browser_header: Navegador
           key_header: Combinação de teclas
           rows:
-            - 
+            -
               browser_column: Explorer
               key_column: ALT + atalho, em seguida, ENTER
-            - 
+            -
               browser_column: Firefox
               key_column: ALT + CAPS + atalho
-            - 
+            -
               browser_column: Chrome
               key_column: ALT + atalho (CTRL + ALT + atalhos para MAC)
-            - 
+            -
               browser_column: Safari
               key_column: ALT + atalho (CMD + atalho para MAC)
-            - 
+            -
               browser_column: Opera
               key_column: CAPS + ESC + atalho
       textsize:
@@ -133,28 +133,28 @@ pt:
           browser_header: Navegador
           action_header: Ação a ser tomada
           rows:
-            - 
+            -
               browser_column: Explorer
               action_column: Exibir > Tamanho do texto
-            - 
+            -
               browser_column: Firefox
               action_column: Exibir > Tamanho
-            - 
+            -
               browser_column: Chrome
               action_column: Configurações (ícone) > Opções > Avançado > Conteúdo Web > Tamanho do texto
-            - 
+            -
               browser_column: Safari
               action_column: Exibir > Aumentar Zoom / Diminuir Zoom
-            - 
+            -
               browser_column: Opera
               action_column: Exibir > escala
         browser_shortcuts_table:
           description: "Outra maneira de modificar o tamanho do texto é utilizar os atalhos de teclado definidos em navegadores, em especial a combinação de teclas:"
           rows:
-            - 
+            -
               shortcut_column: CTRL e + (CMD e + no MAC)
               description_column: Aumenta o tamanho do texto
-            - 
+            -
               shortcut_column: CTRL e - (CMD e - no MAC)
               description_column: Diminui o tamanho do texto
       compatibility:
