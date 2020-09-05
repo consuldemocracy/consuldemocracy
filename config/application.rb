@@ -14,7 +14,7 @@ module Consul
     # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
 
-    # Overwrite Rails 5.1 defaults and use the options we used in Rails 5.0
+    # Use local forms with `form_with`, so it works like `form_for`
     config.action_view.form_with_generates_remote_forms = false
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
