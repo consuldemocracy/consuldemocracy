@@ -8,11 +8,15 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
-    config.load_defaults 5.0
+    config.load_defaults 5.1
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
+
+    # Overwrite Rails 5.1 defaults and use the options we used in Rails 5.0
+    config.action_view.form_with_generates_remote_forms = false
+    config.assets.unknown_asset_fallback = true
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
