@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
-    config.load_defaults 5.1
+    config.load_defaults 5.2
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
@@ -16,6 +16,14 @@ module Consul
 
     # Use local forms with `form_with`, so it works like `form_for`
     config.action_view.form_with_generates_remote_forms = false
+
+    # Keep disabling cache versioning until we verify it's compatible
+    # with `:dalli_store` and with the way we cache stats
+    config.active_record.cache_versioning = false
+
+    # Keep using AES-256-CBC for message encryption in case it's used
+    # in any CONSUL installations
+    config.active_support.use_authenticated_message_encryption = false
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
