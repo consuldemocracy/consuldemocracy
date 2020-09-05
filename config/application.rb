@@ -10,7 +10,8 @@ module Consul
   class Application < Rails::Application
     config.load_defaults 5.0
 
-    # Overwrite Rails 5.0 defaults and use the options we used in Rails 4
+    # Keep belongs_to fields optional by default, because that's the way
+    # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
