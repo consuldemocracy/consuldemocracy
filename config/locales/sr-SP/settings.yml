@@ -90,7 +90,11 @@ sr:
       google_login: "Google приступ"
       google_login_description: "Дозволи корисницима да се региструју својим Google налогом"
       wordpress_login: "Пријава Wordpress налогом"
+      wordpress_login_description: "Дозволи корисницима да се региструју својим Wordpress налогом"
       featured_proposals: "Истакнути предлози"
       signature_sheets: "Поље за потпис"
       user:
         recommendations: "Препоруке"
+        skip_verification: "Прескочи верификацију корисника"
+        recommendations_on_debates: "Препоруке о дебатама"
+        recommendations_on_proposals: "Препоруке о предлозима"
