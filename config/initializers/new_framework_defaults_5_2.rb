@@ -27,10 +27,6 @@
 # ApplicationController.
 # Rails.application.config.action_controller.default_protect_from_forgery = true
 
-# Store boolean values are in sqlite3 databases as 1 and 0 instead of 't' and
-# 'f' after migrating old data.
-# Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
-
 # Use SHA-1 instead of MD5 to generate non-sensitive digests, such as the ETag header.
 # Rails.application.config.active_support.use_sha1_digests = true
 
