@@ -126,3 +126,17 @@ sr:
       remote_census_description: "Омогућава подешавање везе ка удаљеном попису сваке институције"
       valuation_comment_notification: "Обавештење о коментару за оцењивање"
       valuation_comment_notification_description: "Слање електронске поште свим повезаним корисницима изузев оцењивачу за буџетско инвестирање када се креира нови оцењивачки коментар"
+      graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "Обавештења електронском поштом на главној табли"
+        notification_emails_description: "Омогућава слање обавештења електронском поштом на главној табли ауторима предлога"
+    remote_census:
+      general:
+        endpoint: "Крајња тачка"
+        endpoint_description: "Назив хоста на коме се налази сервис пописа (wsdl)"
+      request:
+        method_name: "Назив метода захтева"
+        method_name_description: "Назив метода захтева који прихвата веб сервис пописа."
+        structure: "Структура захтева"
+        structure_description: 'Структура захтева коју прихвата веб сервис пописа. "Статичке" вредности овог захтева би требало бити попуњене. Вредности које се односе на Тип документа, Број документа, Датум рођења и Поштански број би требало да буду "null". Пример исправног формата: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Путања за тип документа"
