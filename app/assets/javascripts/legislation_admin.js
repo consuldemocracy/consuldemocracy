@@ -8,11 +8,7 @@
           checkbox = $(this);
 
           checkbox.closest("fieldset").find("input[type='date']").each(function() {
-            if (checkbox.is(":checked")) {
-              $(this).removeAttr("disabled");
-            } else {
-              $(this).prop("disabled", true);
-            }
+            $(this).prop("disabled", !checkbox.is(":checked"));
           });
         }
       }).trigger("change");
