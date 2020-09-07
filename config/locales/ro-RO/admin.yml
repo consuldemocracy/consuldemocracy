@@ -302,7 +302,7 @@ ro:
         delete: Șterge
         edit: Edit
       edit:
-        title: Editează statusul reperului
+        title: Editați statusul reperului
       update:
         notice: Status de reper actualizat cu succes
       new:
@@ -442,7 +442,7 @@ ro:
         url: "URL"
       create:
         success_notice: "Document încărcat cu succes"
-        unable_notice: "Document invlid"
+        unable_notice: "Document invalid"
       destroy:
         success_notice: "Document șters cu succes"
     hidden_users:
@@ -564,7 +564,7 @@ ro:
           hints:
             final_version: Această versiune va fi publicată ca Rezultat Final pentru acest proces. Comentariile nu vor fi permise în această versiune.
             status:
-              draft: Puteți previzualiza ca administrator, nimeni altcineva nu poate vedea
+              draft: Puteți pre-vizualiza ca administrator, nimeni altcineva nu poate vedea
               published: Vizibil pentru toată lumea
           title_placeholder: Scrieți titlul versiunii schiță
           changelog_placeholder: Adăugați principalele modificări din versiunea anterioară
@@ -639,7 +639,7 @@ ro:
       proposals: Propuneri
       proposals_topics: Subiecte de propuneri
       budgets: Bugete participative
-      geozones: Administrează geolocații
+      geozones: Administrează locații
       hidden_comments: Comentarii ascunse
       hidden_debates: Dezbateri ascunse
       hidden_proposals: Propuneri ascunse
@@ -664,7 +664,7 @@ ro:
       organizations: Organizații
       settings: Setări generale
       stats: Statistici
-      signature_sheets: Foi cu semnaturi
+      signature_sheets: Foi cu semnături
       site_customization:
         documents: Documente personalizate
         homepage: Pagina principală
@@ -744,7 +744,7 @@ ro:
       send_success: Newsletter trimis cu succes
       delete_success: Newsletter șters cu succes
       index:
-        title: Newslettere
+        title: Newsletters
         new_newsletter: Newsletter nou
         subject: Subiect
         segment_recipient: Destinatari
@@ -801,7 +801,7 @@ ro:
         section_title: Editează notificare
         submit_button: Actualizează notificare
       show:
-        section_title: Previzualizează notificare
+        section_title: Pre-vizualizează notificare
         send: Trimite notificare
         will_get_notified: (%{n} utilizatorii vor fi anunțați)
         got_notified: (%{n} utilizatorii au fost anunțați)
@@ -862,7 +862,7 @@ ro:
       message_title: "Titlul mesajului"
       message_body: "Acesta este un exemplu de conținut al mesajului."
       alert:
-        no_investments: "Nu s-au creat investiții bugetare. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
+        no_investments: "Nu s-au creat investiții bugetare. Sunt necesare câteva exemple de date pentru a pre-vizualiza e-mailul."
         no_comments: "Nu s-au creat comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
         no_replies: "Nu s-au creat răspunsuri la comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
         no_evaluation_comments: "Nu s-au creat comentarii de evaluare. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
