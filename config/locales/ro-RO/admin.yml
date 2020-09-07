@@ -1209,9 +1209,9 @@ ro:
         milestones: Repere
         no_proposals: Nu există propuneri.
       show:
-        create_question: Adaugă această popunere într-un sondaj pentru a fi votată
+        create_question: Adaugă această propunere într-un sondaj pentru a fi votată
       form:
-        update: Actualizează popunere
+        update: Actualizează propunere
       update:
         notice: Propunere actualizată cu succes
     hidden_proposals:
@@ -1254,7 +1254,7 @@ ro:
             update: Configurarea hărții actualizată cu succes.
           form:
             submit: Actualizează
-          how_to_enable: 'Pentru a afișa harta utilizatorilor, trebuie să activați „Geolocalizarea propunerilor și investițiilor bugetare” din fila „Caracteristici”.'
+          how_to_enable: 'Pentru a afișa harta utilizatorilor, trebuie să activați „Localizarea propunerilor și investițiilor bugetare” din fila „Caracteristici”.'
         dashboard:
           title: Tablou de bord propuneri
         remote_census:
