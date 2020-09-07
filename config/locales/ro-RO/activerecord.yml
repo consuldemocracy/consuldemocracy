@@ -540,7 +540,7 @@ ro:
         map_location:
           attributes:
             map:
-              invalid: Locația nu poate fi goală. Plasați un marker sau bifați caseta dacă nu este necesară geolocalizarea
+              invalid: Locația nu poate fi goală. Plasați un marker sau bifați caseta dacă nu este necesară localizarea
         poll/voter:
           attributes:
             document_number:
