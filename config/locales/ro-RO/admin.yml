@@ -114,12 +114,12 @@ ro:
         title: Buget participativ nou
       winners:
         calculate: Calculați Investițiile Câștigătoare
-        calculated: Se calculează câștigatorii, poate dura un minut.
+        calculated: Se calculează câștigătorii, poate dura un minut.
         recalculate: Recalculați Investițiile Câștigătoare
     budget_groups:
       name: "Nume"
       headings_name: "Rubrici"
-      headings_edit: "Editeaza Rubrici"
+      headings_edit: "Editează Rubrici"
       headings_manage: "Administrează rubrici"
       no_groups: "Nu există grupuri."
       amount:
@@ -157,7 +157,7 @@ ro:
         coordinates_info: "Dacă latitudinea și longitudinea sunt precizate, pagina de investiții pentru această rubrică va include o hartă. Această hartă va fi centrată folosind acele coordonate."
         content_blocks_info: "Dacă este selectată opțiunea permite blocarea conținutului, veți putea crea conținut personalizat aferent acestei rubrici din secțiunea Setări> Blocuri de conținut personalizat. Acest conținut va apărea în pagina de investiții pentru această rubrică."
         create: "Crează rubrică nouă"
-        edit: "Editeaza rubrică"
+        edit: "Editează rubrică"
         submit: "Salvează rubrică"
       index:
         back: "Înapoi la grupuri"
