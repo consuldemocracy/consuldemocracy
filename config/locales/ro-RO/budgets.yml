@@ -57,7 +57,7 @@ ro:
       see_results: Vezi rezultatele
       section_footer:
         title: Ajutor cu procesele de bugetare participativă
-        description: Odată cu bugetarea participativă, cetățenii decid căror proiecte va fi destinată o parte din buget.
+        description: Odată cu bugetele participative, cetățenii decid căror proiecte va fi destinată o parte din buget.
       milestones: Repere
     investments:
       form:
@@ -72,7 +72,7 @@ ro:
       index:
         title: Bugetare participativă
         unfeasible: Proiecte de investiții imposibile
-        unfeasible_text: "Investițiile trebuie să îndeplinească o serie de criterii (legalitate, concretitate, care să nu depășească limita bugetului) pentru a fi declarate viabile și pentru a ajunge la stadiul de vot final. Toate investițiile care nu îndeplinesc aceste criterii sunt marcate ca fiind imposibile și sunt publicate în lista aferentă, împreună cu raportul său de imposibilitate."
+        unfeasible_text: "Investițiile trebuie să îndeplinească o serie de criterii (legalitate, concretitudine, care să nu depășească limita bugetului) pentru a fi declarate viabile și pentru a ajunge la stadiul de vot final. Toate investițiile care nu îndeplinesc aceste criterii sunt marcate ca fiind imposibile și sunt publicate în lista aferentă, împreună cu raportul său de imposibilitate."
         by_heading: "Proiecte de investiții cu domeniu de aplicare: %{heading}"
         search_form:
           button: Caută
