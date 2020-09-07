@@ -32,7 +32,7 @@ ro:
         title: "Bugetare participativă"
         description: "Secțiunea %{link} ajută oamenii să ia o decizie directă cu privire la ce parte a bugetului municipal este cheltuit."
         link: "bugete participative"
-        image_alt: "Diferite etape ale bugetării participative"
+        image_alt: "Diferite etape ale bugetului participativ"
         figcaption: 'Fazele de „Susținere” și „Votare” ale bugetelor participative.'
       polls:
         title: "Sondaje"
