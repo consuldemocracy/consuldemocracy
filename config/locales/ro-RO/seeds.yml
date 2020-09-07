@@ -29,7 +29,7 @@ ro:
       health: Sănătate
       transparency: Transparenţă
       security_emergencies: Securitate și Situații de urgență
-      environment: Mediu înconjurator
+      environment: Mediu înconjurător
     budgets:
       budget: Bugetare participativă
       currency: Ron
@@ -48,7 +48,7 @@ ro:
         executed: Executat
     polls:
       current_poll: "Sondaj curent"
-      current_poll_geozone_restricted: "Sondaj curent Geozonă Restricționată"
+      current_poll_geozone_restricted: "Sondaj curent Locație Restricționată"
       recounting_poll: "Renumărarea Sondajului"
       expired_poll_without_stats: "Sondaj Expirat fără Statistici și Rezultate"
       expired_poll_with_stats: "Sondaj expirat cu Statistici și Rezultate"
