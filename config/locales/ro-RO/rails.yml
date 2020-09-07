@@ -116,7 +116,7 @@ ro:
       empty: nu poate fi gol
       equal_to: trebuie să fie egal %{count}
       even: trebuie să fie egal
-      exclusion: este rezevat
+      exclusion: este rezervat
       greater_than: trebuie să fie mai mare decât %{count}
       greater_than_or_equal_to: trebuie să fie mai mare sau egal cu %{count}
       inclusion: nu este inclus în listă
