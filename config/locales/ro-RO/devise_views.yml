@@ -103,7 +103,7 @@ ro:
           password_confirmation_label: Confirmă noua parolă
           password_label: Parola nouă
           update_submit: Actualizează
-          waiting_for: "Se așeaptă confirmarea:"
+          waiting_for: "Se așteaptă confirmarea:"
         new:
           cancel: Anulează conectare
           email_label: Email
@@ -114,7 +114,7 @@ ro:
           redeemable_code: Cod de verificare primit prin e-mail (optional)
           submit: Înregistrare
           terms: Înregistrându-vă acceptați %{terms}
-          terms_link: termeni si conditii de utilizare
+          terms_link: termeni și condiții de utilizare
           terms_title: Înregistrându-vă acceptați termenii și condițiile de utilizare
           title: Înregistrare
           username_is_available: Nume de utilizator valabil
