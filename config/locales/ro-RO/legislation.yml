@@ -37,7 +37,7 @@ ro:
       show:
         loading_comments: Se încarcă comentariile
         seeing_version: Vedeți versiunea schiță
-        select_draft_version: Selecteaza schița
+        select_draft_version: Selectează schița
         select_version_submit: vezi
         updated_at: actualizat la %{date}
         see_changes: vezi sumarul schimbărilor
