@@ -57,8 +57,8 @@ ro:
     meta_description: "Descrierea site-ului (SEO)"
     meta_description_description: 'Descrierea site-ului <meta name="description">, utilizat pentru îmbunătățirea SEO'
     meta_keywords: "Cuvinte cheie (SEO)"
-    meta_keywords_description: 'Cuvinte cheie <meta name="keywords">, utilizat pentru îmbunătățierea SEO'
-    min_age_to_participate: Vârsta minimă neceară pentru a participa
+    meta_keywords_description: 'Cuvinte cheie <meta name="keywords">, utilizat pentru îmbunătățirea SEO'
+    min_age_to_participate: Vârsta minimă necesară pentru a participa
     min_age_to_participate_description: "Utilizatorii peste această vârstă pot participa în toate procesele unde este necesar un cont verificat"
     proposals:
       successful_proposal_id: Propunere de succes
