@@ -97,7 +97,7 @@ ro:
       introduction: "După cum știți, în data de %{published_at_day} %{published_at_month} ați postat propunerea %{title}."
       text_1: "Până acum aveți %{votes_count} voturi de suport. Felicitări!"
       text_2: "Astfel, aveți la dispoziție o nouă resursă care vă poate ajuta să continuați mai departe."
-      text_3: "Mai aveți %{days_count} zile înainte ca propunerea să primească suporturile %{max_votes_count} și să meargă la referendum. Continuați să distribuți propunerea. Nu aveți idei?"
+      text_3: "Mai aveți %{days_count} zile înainte ca propunerea să primească suporturile %{max_votes_count} și să meargă la referendum. Continuați să distribuiți propunerea. Nu aveți idei?"
       text_4: "NOUĂ ACȚIUNE DE DISTRIBUIRE RECOMANDATĂ"
       text_5: "Asta nu este tot, vedeți acțiunea următoare:"
       footer_text: "Ca întotdeauna, intrați în Panoul de Propuneri și vă vom spune în detaliu cum să folosiți aceste resurse la maximum."
