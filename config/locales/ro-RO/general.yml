@@ -457,7 +457,7 @@ ro:
         other: "%{count} comentarii"
       comments_tab: Comentarii
       dashboard_proposal_link: Tablou de bord
-      flag: Această propunere a fost semnalizată ca fiind inadecvată de mai mulți utilizatori.
+      flag: Această propunere a fost semnalată ca fiind inadecvată de mai mulți utilizatori.
       notifications_tab: Notificări
       milestones_tab: Repere
       retired_warning: "Autorul consideră că această propunere nu ar trebui să mai primească susțineri."
@@ -483,7 +483,7 @@ ro:
       poster: Afiș
       recommended_actions: Acțiuni recomandate
       messages: Mesaj către utilizatori
-      related_content: Continut asemanator
+      related_content: Conținut asemănător
     form:
       request: Cerere
     create_request:
@@ -542,7 +542,7 @@ ro:
       ideal_time: Timp ideal
     community:
       access_community: Accesează comunitatea
-      latest_activity: "Activitatate recentă a comunității: %{at}"
+      latest_activity: "Activitate recentă a comunității: %{at}"
       participants: Participanți
       debates: Dezbateri
       comments: Comentarii
@@ -708,7 +708,7 @@ ro:
       date_2: "Ultima săptămână"
       date_3: "Ultima lună"
       date_4: "Ultimul an"
-      date_5: "Personalizabile"
+      date_5: "Personalizat"
       from: "De la"
       general: "Cu textul"
       general_placeholder: "Scrie textul"
@@ -822,7 +822,7 @@ ro:
     manage:
       all: "Nu aveți permisiunea de a efectua acțiunea „%{action}” pe %{subject}."
   users:
-    login_to_comment: "Trebuie %{signin} sau %{signup} pentru a lasa un comentariu."
+    login_to_comment: "Trebuie %{signin} sau %{signup} pentru a lăsa un comentariu."
     login_to_continue: "Trebuie %{signin} sau %{signup} pentru a continua."
     signin: "conectare"
     signup: "înregistrare"
@@ -943,7 +943,7 @@ ro:
     sentence_for_humans: "Dacă sunteți om, ignorați acest câmp"
     timestamp_error_message: "Ne cerem scuze, a fost prea rapid! Vă rugăm să retrimiteți."
   related_content:
-    title: "Continut asemanator"
+    title: "Conținut asemănător"
     add: "Adăugați conținut asemănător"
     label: "Link către conținut asemănător"
     placeholder: "%{url}"
