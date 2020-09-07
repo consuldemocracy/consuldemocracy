@@ -215,7 +215,7 @@ ro:
         active_resources: Resurse active
         community: Participanți din comunitatea dumneavoastră
         show_proposal: Afișează propunere
-        preview_proposal: Previzualizează propunere
+        preview_proposal: Previzualizare propunere
         current_goal: Scopul actual
         supports:
           zero: Fără susținători
@@ -223,8 +223,8 @@ ro:
           few: "Suporturi"
           other: "Suporturi"
     footer:
-      accessibility: Accesibiliate
-      conditions: Termeni si conditii de utilizare
+      accessibility: Accesibilitate
+      conditions: Termeni și condiții de utilizare
       consul: Cerere CONSUL
       consul_url: https://github.com/consul/consul
       contact_us: Pentru ajutor tehnic mergeți la
@@ -346,7 +346,7 @@ ro:
     form:
       proposal_responsible_name_note: "(individual sau ca reprezentant al unui colectiv; nu va fi afișat public)"
       proposal_summary_note: "(maxim 200 de caractere)"
-      proposal_video_url_note: Puteși adăuga un link către YouTube sau Vimeo
+      proposal_video_url_note: Puteți adăuga un link către YouTube sau Vimeo
       tag_category_label: "Categorii"
       tags_instructions: "Etichetați această propunere. Puteți alege dintre categoriile propuse sau adăugați una proprie"
       tags_label: Etichete
@@ -371,7 +371,7 @@ ro:
         disable: "Recomandările dezbaterilor nu vor mai apărea dacă le respingeți. Le puteți activa din nou în pagina „Contul meu”"
         actions:
           success: "Recomandările pentru dezbateri sunt acum dezactivate pentru acest cont"
-          error: "A aparut o eroare. Vă rugăm să accesați pagina „Contul meu” pentru a dezactiva manual recomandările pentru dezbateri"
+          error: "A apărut o eroare. Vă rugăm să accesați pagina „Contul meu” pentru a dezactiva manual recomandările pentru dezbateri"
       retired_proposals: Retrage propunere
       retired_proposals_link: "Propunere retrasă de către autor"
       selected_proposals: Propuneri selectate
