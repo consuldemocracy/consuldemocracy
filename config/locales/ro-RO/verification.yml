@@ -40,7 +40,7 @@ ro:
       email_already_sent: V-am trimis deja un e-mail cu un link de confirmare. Dacă nu puteți localiza e-mailul, puteți solicita din nou aici
     residence:
       alert:
-        unconfirmed_residency: Nu v-ați confirmat încă adresa de reședintă
+        unconfirmed_residency: Nu v-ați confirmat încă adresa de reședință
       create:
         flash:
           success: Adresă verificată
