@@ -1,14 +1,14 @@
 ro:
   documents:
     title: Documente
-    max_documents_allowed_reached: Ați atins numărul maxim de documente permise! <strong>Trebuie să stergeți unul înainte să puteți adăuga altul.</strong>
+    max_documents_allowed_reached: Ați atins numărul maxim de documente permise! <strong>Trebuie să ștergeți unul înainte să puteți adăuga altul.</strong>
     additional: Documente adiționale
     form:
       title: Documente
       title_placeholder: Adăugați un titlu descriptiv pentru document
       delete_button: Înlătură document
       cancel_button: Anulare
-      note: "Puteți încărca până la un maxim de %{max_documents_allowed} ducumente pentru următoarele tipuri de conținut: %{accepted_content_types}, până la %{max_file_size} MB per fișier."
+      note: "Puteți încărca până la un maxim de %{max_documents_allowed} documente pentru următoarele tipuri de conținut: %{accepted_content_types}, până la %{max_file_size} MB per fișier."
       add_new_document: Adaugă document nou
     actions:
       destroy:
