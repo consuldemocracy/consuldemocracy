@@ -5,7 +5,7 @@ ro:
       erase_account_link: Șterge contul
       finish_verification: Verificare completă
       notifications: Notificări
-      organization_name_label: Numele organizaței
+      organization_name_label: Numele organizației
       organization_responsible_name_placeholder: Reprezentant al organizației/colectivului
       personal: Detalii personale
       phone_number_label: Număr de telefon
@@ -114,7 +114,7 @@ ro:
         disable: "Recomandările dezbaterilor nu vor mai apărea dacă le respingeți. Le puteți activa din nou în pagina „Contul meu”"
         actions:
           success: "Recomandările pentru dezbateri sunt acum dezactivate pentru acest cont"
-          error: "A aparut o eroare. Vă rugăm să accesați pagina „Contul meu” pentru a dezactiva manual recomandările pentru dezbateri"
+          error: "A apărut o eroare. Vă rugăm să accesați pagina „Contul meu” pentru a dezactiva manual recomandările pentru dezbateri"
       search_form:
         button: Caută
         placeholder: Caută dezbateri...
