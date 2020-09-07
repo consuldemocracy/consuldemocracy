@@ -305,13 +305,13 @@ ro:
         title: "Titlu"
         body: "Mesaj"
       organization:
-        name: "Numele organizaței"
+        name: "Numele organizației"
         responsible_name: "Persoană responsabilă pentru grup"
       poll:
         name: "Nume"
         starts_at: "Data de început"
         ends_at: "Data limită"
-        geozone_restricted: "Limitat de geozonă"
+        geozone_restricted: "Limitat de locație"
         summary: "Sumar"
         description: "Descriere"
       active_poll/translation:
@@ -528,7 +528,7 @@ ro:
           attributes:
             attachment:
               min_image_width: "Lățimea imaginii trebuie să fie %{required_min_width}px"
-              min_image_height: "Înalțimea imaginii trebuie să fie %{required_min_height}px"
+              min_image_height: "Înălțimea imaginii trebuie să fie %{required_min_height}px"
         newsletter:
           attributes:
             segment_recipient:
