@@ -44,7 +44,7 @@ ro:
         error_create: "Rezultatele NU au fost salvate. Eroare în baza de date."
         error_wrong_booth: "Cabină de vot greșită. Rezultatele nu au fost salvate."
       new:
-        title: "%{poll} - Adaugă rezulate"
+        title: "%{poll} - Adaugă rezultate"
         not_allowed: "Nu aveți voie să adăugați rezultate pentru acest sondaj"
         booth: "Cabină vot"
         date: "Date"
