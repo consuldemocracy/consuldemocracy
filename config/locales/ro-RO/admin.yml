@@ -1594,7 +1594,7 @@ ro:
         create: Crează o nouă înregistrare de date locale
         no_local_census_records: Nu există înregistrări de date locale.
         document_type: Tipul documentului
-        document_number: Numarul documentului
+        document_number: Numărul documentului
         date_of_birth: Data nașterii
         postal_code: Cod poștal
         search:
@@ -1610,7 +1610,7 @@ ro:
       update:
         notice: Datele locale au fost actualizate cu succes!
       destroy:
-        notice: Datele locale au fost elimitate cu succes!
+        notice: Datele locale au fost eliminate cu succes!
       imports:
         new:
           title: Date locale
