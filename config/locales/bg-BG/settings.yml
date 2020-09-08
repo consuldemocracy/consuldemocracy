@@ -41,8 +41,8 @@ bg:
     instagram_handle: "Instagram поддръжка"
     instagram_handle_description: "Ако се попълни, ще се появи в долния колонтитул"
     url: "Основен URL адрес"
-    url_description: "Основен URL адрес или уебсайт"
-    org_name: "Име на уебсайт"
+    url_description: "Основен адрес на уеб сайта"
+    org_name: "Име на уеб сайт"
     org_name_description: "Това име ще се появи на тематични и помощни страници на имейлите..."
     related_content_score_threshold: "Праг за оценка на свързано съдържание"
     related_content_score_threshold_description: "Според оценката на гласовете в свързано съдържание, крие съдържание, което потребителите маркират като несвързано"
@@ -57,7 +57,7 @@ bg:
     meta_description: "Описание на сайта (SEO)"
     meta_description_description: 'Описание на сайта <meta name="description">, използвано за подобряване на SEO'
     meta_keywords: "Ключови думи (SEO)"
-    meta_keywords_description: 'Ключови думи <meta name="keywords">, използвани за подобряване наSEO'
+    meta_keywords_description: 'Ключови думи <meta name="keywords">, използвани за подобряване на SEO'
     min_age_to_participate: Минимална възраст, необходима за участие
     min_age_to_participate_description: "Потребители над тази възраст могат да участват във всички процеси, където е необходим потвърден от потребителя акаунт"
     proposals:
@@ -134,7 +134,7 @@ bg:
         endpoint_description: "Име на домакин, където се предлага услугата за преброяване (wsdl)"
       request:
         method_name: "Име на метода на заявка"
-        method_name_description: "Име на метода на заявка, прието от WebService за преброяване на града."
+        method_name_description: "Име на метода на заявка, прието от WebService за преброяване."
         structure: "Структура на заявката"
         structure_description: 'Заявете структура, която получава Услугата за преброяване на Общинския съвет. "Статичните" стойности на тази заявка трябва да бъдат попълнени. Стойностите, свързани с вида на документа, номера на документа, датата на раждане и пощенския код, трябва да бъдат нулеви. Пример за валиден формат: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
         document_type: "Път за вида на документа"
