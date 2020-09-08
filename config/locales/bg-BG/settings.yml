@@ -81,7 +81,7 @@ bg:
     proposal_notification_minimum_interval_in_days: "Минимален интервал (в дни) за авторите на предложенията да изпращат известия за нови предложения"
     proposal_notification_minimum_interval_in_days_description: "Броят дни, в които потребителят може да изпрати известие за всички поддръжници на своето предложение"
     direct_message_max_per_day: "Максимален брой на директно съобщение на ден"
-    direct_message_max_per_day_description: "Макс. Брой директни съобщения, които един потребител може да изпраща на ден"
+    direct_message_max_per_day_description: "Максимален брой директни съобщения, които един потребител може да изпраща на ден"
     feature:
       twitter_login: "Вход в Twitter"
       twitter_login_description: "Позволява на потребителите да се регистрират със своя Twitter акаунт"
@@ -131,7 +131,7 @@ bg:
         notification_emails_description: "Активирайте изпращането на имейл съобщения на таблото за управление до авторите на предложението"
     remote_census:
       general:
-        endpoint: "\"Endpoint\" / Крайна точка??"
+        endpoint: "Крайна точка"
         endpoint_description: "Име на домакин, където се предлага услугата за преброяване (wsdl)"
       request:
         method_name: "Име на метода на заявка"
