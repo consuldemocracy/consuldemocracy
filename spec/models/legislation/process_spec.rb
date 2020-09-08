@@ -10,6 +10,13 @@ describe Legislation::Process do
     expect(process).to be_valid
   end
 
+  it "assigns default values to new processes" do
+    process = Legislation::Process.new
+
+    expect(process.background_color).to be_present
+    expect(process.font_color).to be_present
+  end
+
   describe "dates validations" do
     it "is invalid if debate_start_date is present but debate_end_date is not" do
       process = build(:legislation_process, debate_start_date: Date.current, debate_end_date: "")
