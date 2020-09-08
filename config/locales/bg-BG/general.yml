@@ -735,11 +735,11 @@ bg:
       categories: "Категории"
     target_blank: " (връзката се отваря в нов прозорец)"
     you_are_in: "Влезли сте"
-    unflag: Демаркиране
+    unflag: Размаркиране
     unfollow_entity: "Спиране на следване %{entity}"
     outline:
       searcher: Търсач
-    go_to_page: "Отидете на страницата на"
+    go_to_page: "Отидете на страницата на "
     share: Споделете
     orbit:
       previous_slide: Предишен слайд
@@ -780,8 +780,8 @@ bg:
   users:
     login_to_comment: "Вие трябва да %{signin} или да %{signup}, за да оставите коментар."
     login_to_continue: "Вие трябва да %{signin} или да %{signup}, за да продължите."
-    signin: "Впишете се"
-    signup: "Регистрирайте се"
+    signin: "впишете се"
+    signup: "регистрирайте се"
     verify_account: "потвърдете акаунта си"
     direct_messages:
       new:
@@ -895,7 +895,7 @@ bg:
   related_content:
     title: "Свързано съдържание"
     add: "Добавете свързано съдържание"
-    label: "Линк към свързано съдържание"
+    label: "Връзка към свързано съдържание"
     help: "Можете да добавите връзки на %{models} в%{org}."
     submit: "Добавете"
     error: "Връзката не е валидна. Не забравяйте да започнете с %{url}."
