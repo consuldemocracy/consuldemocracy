@@ -287,6 +287,10 @@ bg:
       sign_up: Регистрирайте се с Wordpress
     twitter:
       sign_in: Влезте с Twitter
+      sign_up: Регистрирайте се с Twitter
+    info:
+      sign_in: "Влезте с:"
+      sign_up: "Регистрирайте се с:"
     or_fill: "или попълнете следния формуляр:"
   proposals:
     create:
