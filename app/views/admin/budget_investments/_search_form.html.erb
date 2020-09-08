@@ -34,12 +34,12 @@
 
   <div class="small-12 medium-3 column">
     <%= select_tag :administrator_id,
-                   options_for_select(admin_select_options, params[:administrator_id]),
+                   options_for_select(admin_select_options(@budget), params[:administrator_id]),
                    { prompt: t("admin.budget_investments.index.administrator_filter_all") } %>
   </div>
   <div class="small-12 medium-3 column">
     <%= select_tag :valuator_or_group_id,
-                   options_for_select(valuator_or_group_select_options, params[:valuator_or_group_id]),
+                   options_for_select(valuator_or_group_select_options(@budget), params[:valuator_or_group_id]),
                    { prompt: t("admin.budget_investments.index.valuator_filter_all") } %>
   </div>
   <div class="small-12 medium-3 column">
