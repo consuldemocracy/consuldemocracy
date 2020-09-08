@@ -206,7 +206,7 @@ bg:
         name: "Име на заглавието"
         price: "Сума"
         population: "Население (незадължително)"
-        max_ballot_lines: "Разрешени гасове"
+        max_ballot_lines: "Разрешени гласове"
       budget/heading/translation:
         name: "Име на заглавието"
       budget/phase:
@@ -330,7 +330,7 @@ bg:
         image: Изображение
       site_customization/content_block:
         name: Име
-        locale: Място
+        locale: място
         body: Тяло
       tag:
         name: "Въведете името на темата"
