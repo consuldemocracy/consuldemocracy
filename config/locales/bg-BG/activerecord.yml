@@ -142,6 +142,8 @@ bg:
         phase: "Фаза"
         currency_symbol: "Валута"
         voting_style: "Стил на финалното гласуване"
+        voting_style_knapsack: "Раница"
+        voting_style_approval: "Одобрение"
       budget/translation:
         name: "Име"
       budget/investment:
@@ -204,6 +206,7 @@ bg:
         name: "Име на заглавието"
         price: "Сума"
         population: "Население (незадължително)"
+        max_ballot_lines: "Разрешени гасове"
       budget/heading/translation:
         name: "Име на заглавието"
       budget/phase:
