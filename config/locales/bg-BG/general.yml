@@ -216,7 +216,7 @@ bg:
       conditions: Условия за ползване
       consul: приложението CONSUL
       contact_us: За посещение на техническа помощ
-      description: Този портал използва %{consul} , който е %{open_source}.
+      description: Този портал използва %{consul}, който е %{open_source}.
       open_source: софтуер с отворен код
       participation_text: Решете как да оформите града, в който искате да живеете.
       participation_title: Участие
@@ -291,7 +291,7 @@ bg:
     info:
       sign_in: "Влезте с:"
       sign_up: "Регистрирайте се с:"
-    or_fill: "или попълнете следния формуляр:"
+    or_fill: "Или попълнете следния формуляр:"
   proposals:
     create:
       form:
