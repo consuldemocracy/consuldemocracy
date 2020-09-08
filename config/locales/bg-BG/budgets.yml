@@ -172,6 +172,8 @@ bg:
       available: "Наличен бюджет: "
       votes:
         zero: "Вие избрахте <strong>0</strong> проекта от <strong>%{limit}</strong>"
+        one: "Вие избрахте <strong>1</strong> проект от <strong>%{limit}</strong>"
+        other: "Вие избрахте <strong>%{count}</strong> проекта от <strong>%{limit}</strong>"
     show:
       group: Група
       phase: Актуална фаза
