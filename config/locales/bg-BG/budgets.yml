@@ -24,7 +24,7 @@ bg:
         not_selected: Неизбраните инвестиционни проекти не могат да бъдат подкрепени
         not_enough_money: "Вече сте посочили наличния бюджет. <br> <small> Не забравяйте, че можете да %{change_ballot} по всяко време </small>"
         no_ballots_allowed: Изборната фаза е затворена
-        different_heading_assigned: "Вече сте гласували различно заглавие:% {header_link}"
+        different_heading_assigned: "Вече сте гласували различно заглавие: %{heading_link}"
         change_ballot: променете гласовете си
         casted_offline: Вече сте участвали офлайн
     groups:
