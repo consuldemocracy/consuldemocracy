@@ -118,3 +118,30 @@ bg:
         tags_label: "Категории"
       not_verified: "За предложения за гласуване %{verify_account}."
       process_title: Процес на съвместно законодателство
+    summary:
+      votes:
+        zero: "%{count} гласа"
+        one: "%{count} глас"
+        other: "%{count} гласа"
+      debate_phase: "Фаза на дебат"
+      proposals_phase: "Фаза на предложенията"
+      allegations_phase: "Фаза на коментари"
+      debates:
+        zero: "Няма дебати"
+        one: "%{count} дебат"
+        other: "%{count} дебата"
+      proposals:
+        zero: "Няма предложения"
+        one: "%{count} предложение"
+        other: "%{count} предложения"
+      comments:
+        zero: "Няма коментари"
+        one: "%{count} коментар"
+        other: "%{count} коментара"
+      download: "Изтеглете резюме"
+      top_comments:
+        zero: "Без коментари"
+        one: "%{count} коментар"
+        other: "Най-харесвани коментари"
+      most_voted_comments: "Коментари с най-много гласове"
+      no_allegation: "Няма коментари"
