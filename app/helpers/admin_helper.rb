@@ -84,10 +84,6 @@ module AdminHelper
     options
   end
 
-  def admin_select_options
-    Administrator.with_user.map { |v| [v.description_or_name, v.id] }.sort_by { |a| a[0] }
-  end
-
   def admin_submit_action(resource)
     resource.persisted? ? "edit" : "new"
   end
