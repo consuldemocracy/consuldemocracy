@@ -7,10 +7,19 @@ bg:
           knapsack: "Все още имате <span>%{count}</span> да инвестирате."
           approval:
             zero: "Все още можете да гласувате <span>%{count}</span> пъти."
+            one: "Все още можете да гласувате <span>%{count}</span> път."
+            other: "Все още можете да гласувате <span>%{count}</span> пъти."
         amount_spent:
           knapsack: "Похарчена сума <span>%{count}</span>"
+          approval:
+            zero: "Подадени гласове: <span>%{count}</span>"
+            one: "Подадени гласове: <span>%{count}</span>"
+            other: "Подадени гласове: <span>%{count}</span>"
         amount_limit:
           knapsack: "%{count}"
+          approval:
+            one: "Можете да гласувате за <span>1</span> проект"
+            other: "Можете да гласувате за до <span>%{count}</span> проекта"
         no_balloted_group_yet: "Все още не сте гласували за тази група, отидете да гласувате!"
         remove: Премахване на вота
         voted:
@@ -27,6 +36,7 @@ bg:
         not_enough_money: "Вече сте посочили наличния бюджет. <br> <small> Не забравяйте, че можете да %{change_ballot} по всяко време </small>"
         no_ballots_allowed: Изборната фаза е затворена
         different_heading_assigned: "Вече сте гласували различно заглавие: %{heading_link}"
+        not_enough_available_votes: "Достигнахте максималния брой от разрешени гласувания"
         change_ballot: променете гласовете си
         casted_offline: Вече сте участвали офлайн
     groups:
@@ -94,8 +104,12 @@ bg:
             knapsack:
               one: "<strong>Гласувахте за едно предложение с цена от %{amount_spent}</strong>"
               other: "<strong>Гласувахте за %{count} предложения с цена %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Вие гласувахте за едно предложение</strong>"
+              other: "<strong>Вие гласувахте за %{count} предложения</strong>"
           change_vote_info:
             knapsack: "Можете да %{link} по всяко време до края на тази фаза. Няма нужда да харчите всички налични пари."
+            approval: "Вие можете да %{link} по всяко време до приключването на тази фаза."
           change_vote_link: "променете Вашето гласуване"
           different_heading_assigned: "Имате активни гласове в друга рубрика: %{heading_link}"
           change_ballot: "Ако промените решението си, можете да премахнете гласовете си в %{check_ballot} и да започнете отново."
@@ -156,6 +170,8 @@ bg:
     progress_bar:
       assigned: "Вие сте определили: "
       available: "Наличен бюджет: "
+      votes:
+        zero: "Вие избрахте <strong>0</strong> проекта от <strong>%{limit}</strong>"
     show:
       group: Група
       phase: Актуална фаза
