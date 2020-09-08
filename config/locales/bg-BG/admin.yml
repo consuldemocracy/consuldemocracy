@@ -723,7 +723,7 @@ bg:
       all_proposal_authors: Автори на предложения (включително архивирани и оттеглили се)
       proposal_authors: Автори на предложения
       investment_authors: Инвестиционни автори в текущия бюджет
-      feasible_and_undecided_investment_authors: "Автори на някаква инвестиция в текущия бюджет, която не отговаря на: [valuation finished unfesasible]"
+      feasible_and_undecided_investment_authors: "Авторите на някои инвестиции в текущия бюджет, който не отговарят на изискванията: [невъзможност за завършване на оценката]"
       selected_investment_authors: Автори на избрани инвестиции в текущия бюджет
       winner_investment_authors: Автори на печеливши инвестиции в текущия бюджет
       not_supported_on_current_budget: Потребители, които не са подкрепили инвестиции за текущия бюджет
@@ -747,7 +747,7 @@ bg:
         empty_newsletters: Няма бюлетини за показване
       new:
         title: Нов бюлетин
-        header_footer_help_text: "Заглавието и долния колонтитул са еднакви за всички имейли. Можете да ги промените в <code>app/views/layouts/mailer_header</code> и <code>app/views/layouts/mailer_footer</code>.<br>Можете да замените заглавното изображение на %{link}."
+        header_footer_help_text: "Заглавието и долния колонтитул са еднакви за всички имейли. Можете да ги промените в <code>app/views/layouts/mailer_header</code> и <code>app/views/layouts/mailer_footer</code>.<br> Можете да замените заглавното изображение на %{link}."
         image_link: "персонализирани изображения"
       edit:
         title: Редактиране на бюлетин
@@ -800,13 +800,13 @@ bg:
         segment_recipient: Получатели
         preview_guide: "Така потребителите ще виждат известието:"
         sent_guide: "Така потребителите виждат известието:"
-        send_alert: Сигурни ли сте, че искате да изпратите това известие до% {n} потребители?
+        send_alert: Сигурни ли сте, че искате да изпратите това известие до%{n} потребители?
     system_emails:
       preview_pending:
         action: Визуализация в очакване
         preview_of: Визуализация на %{name}
         pending_to_be_sent: Това е съдържанието, което чака да бъде изпратено
-        moderate_pending: Moderate notification send/ Медерирано изпращане на известие
+        moderate_pending: Модерирано изпращане на известие
         send_pending: Изпращане в очакване
         send_pending_notification: Изчакващите известия са изпратени успешно
       proposal_notification_digest:
@@ -1030,7 +1030,7 @@ bg:
       index:
         title: "Въпроси"
         create: "Създайте въпрос"
-        no_questions: "Няма въпроси"
+        no_questions: "Няма въпроси."
         filter_poll: Филтриране по анкета
         select_poll: Избиране на анкета
         questions_tab: "Въпроси"
@@ -1126,13 +1126,13 @@ bg:
         title: "Нова кабинка"
         submit_button: "Създаване на кабинка"
       edit:
-        title: "Редакритане на кабинка"
+        title: "Редактиране на кабинка"
         submit_button: "Актуализиране на кабинка"
       show:
         location: "Местоположение"
       booth:
         shifts: "Управление на смените"
-        edit: "Редакритане на кабинка"
+        edit: "Редактиране на кабинка"
     officials:
       edit:
         destroy: Премахнете състоянието „Длъжностно лице“
@@ -1185,7 +1185,7 @@ bg:
         pending: Изчакване
       search:
         title: Търсене на организации
-        no_results: Не са намерени организации
+        no_results: Не са намерени организации.
     proposals:
       index:
         title: Предложения
@@ -1303,7 +1303,7 @@ bg:
         name: Име
         external_code: Външен код
         census_code: Код на преброяване
-        code_help: Код на отговора за тази геозона за преброяване API
+        code_help: Код на отговора за тази геозона в API на ГРАО
         coordinates: Координати
         coordinates_help: Координати, които ще генерират зона с възможност за кликване върху карта с изображение на HTML
       edit:
