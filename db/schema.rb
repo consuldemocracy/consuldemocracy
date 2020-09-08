@@ -236,8 +236,6 @@ ActiveRecord::Schema.define(version: 20200908084257) do
   create_table "budget_investments", id: :serial, force: :cascade do |t|
     t.integer "author_id"
     t.integer "administrator_id"
-    t.string "deprecated_title"
-    t.text "deprecated_description"
     t.string "external_url"
     t.bigint "price"
     t.string "feasibility", limit: 15, default: "undecided"
@@ -399,7 +397,6 @@ ActiveRecord::Schema.define(version: 20200908084257) do
   create_table "comments", id: :serial, force: :cascade do |t|
     t.integer "commentable_id"
     t.string "commentable_type"
-    t.text "deprecated_body"
     t.string "subject"
     t.integer "user_id", null: false
     t.datetime "created_at"
@@ -483,8 +480,6 @@ ActiveRecord::Schema.define(version: 20200908084257) do
   end
 
   create_table "debates", id: :serial, force: :cascade do |t|
-    t.string "deprecated_title", limit: 80
-    t.text "deprecated_description"
     t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -1224,8 +1219,6 @@ ActiveRecord::Schema.define(version: 20200908084257) do
   end
 
   create_table "proposals", id: :serial, force: :cascade do |t|
-    t.string "deprecated_title", limit: 80
-    t.text "deprecated_description"
     t.integer "author_id"
     t.datetime "hidden_at"
     t.integer "flags_count", default: 0
@@ -1238,13 +1231,11 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "responsible_name", limit: 60
-    t.text "deprecated_summary"
     t.string "video_url"
     t.tsvector "tsv"
     t.integer "geozone_id"
     t.datetime "retired_at"
     t.string "retired_reason"
-    t.text "deprecated_retired_explanation"
     t.integer "community_id"
     t.datetime "published_at"
     t.boolean "selected", default: false
