@@ -67,7 +67,7 @@ bg:
         flash:
           success: Въведете кода за потвърждение, изпратен ви чрез текстово съобщение
       edit:
-        resend_sms_link: Кликнете тук, за да го изпратите отново
+        resend_sms_link: Кликнете тук, за изпращане отново
         resend_sms_text: Не получихте текст с кода за потвърждение?
         submit_button: Изпратете
         title: Потвърждение на защитен код
@@ -84,12 +84,12 @@ bg:
           level_three:
             success: Кодът е правилен. Вашият акаунт вече е потвърден
           level_two:
-            success: Кодът е правилен.
+            success: Кодът е правилен
     step_1: Местожителство
     step_2: Код за потвърждение
     step_3: Окончателна проверка
     user_permission_debates: Участвайте в дебати
-    user_permission_info: Чрез потвърждаване на вашата информация, ще можете да...
+    user_permission_info: Чрез потвърждаване на Вашата информация, ще можете да...
     user_permission_proposal: Създавате нови предложения
     user_permission_support_proposal: Подкрепяте предложения*
     user_permission_votes: Участвате в окончателното гласуване*
