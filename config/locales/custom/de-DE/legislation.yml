@@ -3,8 +3,8 @@ de:
     processes:
       index:
         section_header:
-          icon_alt: Katzenbergtunnel Icon
-          title: Katzenbergtunnel
-          help: Hilfe zu Katzenbergtunnel
+          icon_alt: Bürgerbeteiligungsverfahren Icon
+          title: Bürgerbeteiligungsverfahren
+          help: Hilfe zu Bürgerbeteiligungsverfahren
         section_footer:
-          title: Hilfe zu Katzenbergtunnel
+          title: Hilfe zu Bürgerbeteiligungsverfahren

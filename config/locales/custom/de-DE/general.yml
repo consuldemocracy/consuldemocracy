@@ -12,7 +12,7 @@ de:
       description: Diese Plattform basiert auf %{consul}, einer %{open_source}.
       copyright: ZDI Mainfranken, %{year}
     header:
-      collaborative_legislation: Katzenbergtunnel
+      collaborative_legislation: Bürgerbeteiligungsverfahren
   debates:
     index:
       section_header:
