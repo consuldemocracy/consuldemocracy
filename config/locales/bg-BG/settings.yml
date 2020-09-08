@@ -85,6 +85,7 @@ bg:
     feature:
       twitter_login: "Вход в Twitter"
       twitter_login_description: "Позволява на потребителите да се регистрират със своя Twitter акаунт"
+      facebook_login: "Facebook вписване"
       facebook_login_description: "Позволява на потребителите да се регистрират със своя Facebook акаунт"
       google_login: "Вход в Google"
       google_login_description: "Позволява на потребителите да се регистрират с профила си в Google"
