@@ -1,6 +1,5 @@
 <% if count > 0 %>
-  <%= link_to "", class: "js-toggle-children relative" do %>
-    <span class="far"></span>
+  <%= link_to "", class: "js-toggle-children" do %>
     <span class="show-children"><%= t("comments.comment.responses_show", count: count) %></span>
     <span class="collapse-children"><%= t("comments.comment.responses_collapse", count: count) %></span>
   <% end %>

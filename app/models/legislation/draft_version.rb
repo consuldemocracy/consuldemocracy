@@ -40,4 +40,8 @@ class Legislation::DraftVersion < ApplicationRecord
   def total_comments
     annotations.sum(:comments_count)
   end
+
+  def best_comments
+    Comment.where(commentable: annotations, ancestry: nil).sort_by_supports.limit(10)
+  end
 end

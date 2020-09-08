@@ -118,3 +118,32 @@ es:
         tags_label: "Categorías"
       not_verified: "Para votar propuestas %{verify_account}."
       process_title: Proceso de legislación colaborativa
+    summary:
+      title: "Resumen"
+      votes:
+        zero: "%{count} votos"
+        one: "%{count} voto"
+        other: "%{count} votos"
+      debate_phase: "Fase de debate"
+      proposals_phase: "Fase de propuestas"
+      allegations_phase: "Fase de comentarios"
+      debates:
+        zero: "No hay debates"
+        one: "%{count} debate"
+        other: "%{count} debates"
+      proposals:
+        zero: "No hay propuestas"
+        one: "%{count} propuesta"
+        other: "%{count} propuestas"
+      comments:
+        zero: "No hay comentarios"
+        one: "%{count} comentario"
+        other: "%{count} comentarios"
+      download: "Descargar resumen"
+      top_comments:
+        zero: "No hay comentarios"
+        one: "%{count} comentario"
+        other: "Los más votados"
+      most_voted_comments: "Comentarios más votados"
+      no_allegation: "No hay comentarios"
+      process_empty: "Este proceso no ha tenido fases de participación"

@@ -2045,10 +2045,6 @@ table {
     padding: $line-height / 4;
     position: relative;
 
-    .relative {
-      padding-left: rem-calc(18);
-    }
-
     .divider {
       color: $text-light;
       display: inline-block;
@@ -2060,23 +2056,22 @@ table {
   }
 
   .responses-count {
-    .far {
-      @extend .fa-minus-square;
-      font-size: $small-font-size;
-      left: 0;
-      position: absolute;
-      text-decoration: none;
-      top: 2px;
-    }
-
     .show-children {
+      @include has-fa-icon(plus-square, r);
       display: none;
     }
 
+    .collapse-children {
+      @include has-fa-icon(minus-square, r);
+    }
+
+    .show-children::before,
+    .collapse-children::before {
+      margin-right: rem-calc(6);
+      transform: translateY(1px);
+    }
+
     &.collapsed {
-      .far {
-        @extend .fa-plus-square;
-      }
 
       .collapse-children {
         display: none;
