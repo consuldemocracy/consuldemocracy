@@ -5,6 +5,8 @@ bg:
         title: Вашата бюлетина
         amount_available:
           knapsack: "Все още имате <span>%{count}</span> да инвестирате."
+          approval:
+            zero: "Все още можете да гласувате <span>%{count}</span> пъти."
         amount_spent:
           knapsack: "Похарчена сума <span>%{count}</span>"
         amount_limit:
