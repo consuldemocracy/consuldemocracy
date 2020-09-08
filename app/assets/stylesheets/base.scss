@@ -839,6 +839,13 @@ header {
   top: 0;
 }
 
+.figure-card {
+
+  &.legislation-process img {
+    min-height: rem-calc(185);
+  }
+}
+
 // 3. Footer
 // --------------------
 
@@ -1552,6 +1559,10 @@ footer {
 
 .draft-panels .comments-on .calc-index .draft-index-rotated {
   margin-top: $line-height * 5;
+}
+
+.legislation-list .legislation p {
+  word-break: break-all;
 }
 
 // 6. Comments
