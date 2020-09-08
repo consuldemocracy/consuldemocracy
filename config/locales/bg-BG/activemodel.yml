@@ -31,7 +31,7 @@ bg:
         document_type: "Вид на документа"
         postal_code: "Пощенски код"
       verification/sms:
-        confirmation_code: "Въведете кода, който сте получили на Вашете мобилно устройство"
+        confirmation_code: "Въведете кода, който сте получили на Вашето мобилно устройство"
       officing/residence:
         document_type: "Вид на документа"
         document_number: "Номер на документа (включително букви)"
