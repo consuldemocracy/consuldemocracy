@@ -35,9 +35,9 @@ bg:
         loading_comments: Зареждане на коментари
         seeing_version: Виждате чернова версия
         select_draft_version: Изберете чернова
-        select_version_submit: Вижте
+        select_version_submit: вижте
         updated_at: актуализирано на %{date}
-        see_changes: Вижте резюме на промените
+        see_changes: вижте резюме на промените
         see_comments: Вижте всички коментари
         text_toc: Съдържание
         text_body: Текст
