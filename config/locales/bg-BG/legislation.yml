@@ -119,6 +119,7 @@ bg:
       not_verified: "За предложения за гласуване %{verify_account}."
       process_title: Процес на съвместно законодателство
     summary:
+      title: "Резюме"
       votes:
         zero: "%{count} гласа"
         one: "%{count} глас"
@@ -145,3 +146,4 @@ bg:
         other: "Най-харесвани коментари"
       most_voted_comments: "Коментари с най-много гласове"
       no_allegation: "Няма коментари"
+      process_empty: "Този процес не е включвал фази на участие"
