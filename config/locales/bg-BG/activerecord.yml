@@ -141,6 +141,7 @@ bg:
         description_finished: "Описание при изчерпване на бюджета"
         phase: "Фаза"
         currency_symbol: "Валута"
+        voting_style: "Стил на финалното гласуване"
       budget/translation:
         name: "Име"
       budget/investment:
