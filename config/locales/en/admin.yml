@@ -133,6 +133,7 @@ en:
       form:
         create: "Create new group"
         edit: "Edit group"
+        max_votable_headings_info: "Only applies to the selecting projects phase. During the voting projects phase users can only vote in one heading per group."
         submit: "Save group"
       index:
         back: "Go back to budgets"
