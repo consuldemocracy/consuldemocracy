@@ -1,4 +1,4 @@
-pt:
+pt-BR:
   account:
     show:
       change_credentials_link: Alterar meus dados pessoais
@@ -466,7 +466,7 @@ pt:
       polls: Votações
       mailing: E-mail
       poster: Pôster
-      recommended_actions: Acções recomendadas
+      recommended_actions: Ações recomendadas
       messages: Mensagem para os usuários
       related_content: Conteúdo relacionado
     form:
@@ -501,7 +501,7 @@ pt:
       request_resource: Solicitar recurso
       resource_locked: Recurso bloqueado
     recommended_actions:
-      title: Acções recomendadas
+      title: Ações recomendadas
       goto_proposed_actions: Ir para ações recomendadas
       see_proposed_actions: Ver as ações recomendadas
       hide_proposed_actions: Ocultar ações recomendadas
