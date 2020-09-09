@@ -3,7 +3,8 @@ require "rails_helper"
 describe ConsulFormBuilder do
   class DummyModel
     include ActiveModel::Model
-    attr_accessor :title
+    OPTIONS = %w[Good Bad Ugly].freeze
+    attr_accessor :title, :quality
   end
 
   let(:builder) { ConsulFormBuilder.new(:dummy, DummyModel.new, ActionView::Base.new, {}) }
@@ -27,6 +28,27 @@ describe ConsulFormBuilder do
       render builder.text_field(:title)
 
       expect(page).not_to have_css "input[hint]"
+    end
+  end
+
+  describe "#select" do
+    it "renders the label and the select with the given options" do
+      render builder.select(:quality, DummyModel::OPTIONS)
+
+      expect(page).to have_css "label", count: 1
+      expect(page).to have_css "label", text: "Quality"
+      expect(page).to have_css "select", count: 1
+      expect(page).to have_css "option", count: 3
+      expect(page).to have_css "option", text: "Good"
+      expect(page).to have_css "option", text: "Bad"
+      expect(page).to have_css "option", text: "Ugly"
+    end
+
+    it "accepts hints" do
+      render builder.select(:quality, DummyModel::OPTIONS, hint: "Ugly is neither good nor bad")
+
+      expect(page).to have_css ".help-text", text: "Ugly is neither good nor bad"
+      expect(page).to have_css "select[aria-describedby='dummy_quality-help-text']"
     end
   end
 
