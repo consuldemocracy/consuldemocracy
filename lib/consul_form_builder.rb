@@ -35,6 +35,13 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
     super(attribute, tag_value, { label: default_label }.merge(options))
   end
 
+  def select(attribute, choices, options = {}, html_options = {})
+    label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
+      super(attribute, choices, options.merge(label: false, hint: nil), html_options.merge({
+        aria: { describedby: help_text_id(attribute, options) }
+      }))
+  end
+
   private
 
     def custom_label(attribute, text, options)
