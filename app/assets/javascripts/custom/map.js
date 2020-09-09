@@ -75,7 +75,7 @@
         $(zoomInputSelector).val("");
       };
       openMarkerPopup = function(e) {
-		let route = (process == "proposals" ? "/proposals/" + marker.options.id + "/json_data" : "/investments/" + marker.options.id + "/json_data");     
+		var route = (process == "proposals" ? "/proposals/" + marker.options.id + "/json_data" : "/investments/" + marker.options.id + "/json_data");     
 		marker = e.target;
 	      $.ajax(route, {
 		  type: "GET",
