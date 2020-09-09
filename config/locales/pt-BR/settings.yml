@@ -1,4 +1,4 @@
-pt:
+pt-BR:
   settings:
     comments_body_max_length: "Tamanho máximo dos comentários"
     comments_body_max_length_description: "Número de caracteres"
@@ -70,7 +70,7 @@ pt:
       poll_link: Links de informações adicionais
       poll_link_description: Inclua um link de informações adicionais à funcionalidade de enquetes do painel de control
       email_short_title: Email
-      email_short_title_description: 'Breve descrição da funcionalidade de email. Permite que os usuáios enviem um email para promover a sua proposta. Você pode encontrar todo o conteúdo desse mail em "/app/views/dashboard/mailer/forward.html.erb"'
+      email_short_title_description: 'Breve descrição da funcionalidade de email. Permite que os usuários enviem um email para promover a sua proposta. Você pode encontrar todo o conteúdo desse mail em "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Descrição do email
       email_description_description: Descrição detalhada da funcionalidade de email
       poster_short_title: Pôster
@@ -123,8 +123,8 @@ pt:
       translation_interface: "Interface de tradução"
       translation_interface_description: "Exibe a interface de tradução manual permitindo que os usuários informem seus conteúdos em todos os idiomas disponíveis da aplicação, se desejarem. Esta opção afeta apenas as telas dos usuários da aplicação, porém no painel de administração estará sempre ativa."
       remote_census: "Configurar conexão ao censo remoto (SOAP)"
-      remote_census_description: "Permite configurar a conexão ao censo remoto de cada institução"
-      valuation_comment_notification: "Notificação de comentários de avaliación"
+      remote_census_description: "Permite configurar a conexão ao censo remoto de cada instituição"
+      valuation_comment_notification: "Notificação de comentários de avaliação"
       valuation_comment_notification_description: "Envia um email a todos os usuários, exceto a quem tiver comentários associados a um orçamento participativo quando se crie um novo comentário de avaliação"
       graphql_api: "API GraphQL"
       dashboard:
@@ -138,7 +138,7 @@ pt:
         method_name: "Nome do método da Solicitação"
         method_name_description: "Nome do método aceito pelo WebService do Censo Municipal."
         structure: "Estrutura da Solicitação"
-        structure_description: 'Estrutura de Solicitações que recebe o WebService do Censo Municipal. Os valores "fixos" desta solicitação devem ser informados. Os valores relacionados com Tipo de Documento, Número de Documento, Data de Nascimento e CEP devem ficar com valor null. Exemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        structure_description: 'Estrutura de Solicitações que recebe o WebService do Censo Municipal. Os valores "fixos" desta solicitação devem ser informados. Os valores relacionados com Tipo de Documento, Número de Documento, Data de Nascimento e CEP devem ficar com valor null. Exemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nível": 3 } }'
         document_type: "Caminho para o Tipo do Documento"
         document_type_description: "Caminho na estrutura de solicitações que envia o Tipo de Documento. NÃO PREENCHER se o WebService não exigir o Tipo de Documento para verificar o usuário."
         document_number: "Caminho para o Número do Documento"
