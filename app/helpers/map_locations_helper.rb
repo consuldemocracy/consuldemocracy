@@ -42,8 +42,9 @@ module MapLocationsHelper
 
   private
 
-    def prepare_map_settings(map_location, editable, parent_class, investments_coordinates = nil)
+    def prepare_map_settings(map_location, editable, parent_class, process_coordinates = nil)
       options = {
+      parent_class: parent_class,
         map: "",
         map_center_latitude: map_location_latitude(map_location),
         map_center_longitude: map_location_longitude(map_location),
@@ -55,7 +56,7 @@ module MapLocationsHelper
         latitude_input_selector: "##{map_location_input_id(parent_class, "latitude")}",
         longitude_input_selector: "##{map_location_input_id(parent_class, "longitude")}",
         zoom_input_selector: "##{map_location_input_id(parent_class, "zoom")}",
-        marker_investments_coordinates: investments_coordinates
+        marker_process_coordinates: process_coordinates
       }
       options[:marker_latitude] = map_location.latitude if map_location.latitude.present?
       options[:marker_longitude] = map_location.longitude if map_location.longitude.present?
