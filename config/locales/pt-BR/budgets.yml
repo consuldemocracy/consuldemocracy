@@ -1,4 +1,4 @@
-pt:
+pt-BR:
   budgets:
     ballots:
       show:
@@ -201,8 +201,8 @@ pt:
       not_selected_investment_proyects: Lista de todos os projetos de investimento não selecionados para votação
     executions:
       link: "Marcos"
-      page_title: "%{budget} - Andamento do(s) projeto(s)"
-      heading: "Orçamento participativo (Marcos)"
+      page_title: "%{budget} - Andamento do/s projeto/s"
+      heading: "Andamento do orçamento participativo"
       heading_selection_title: "Por distrito"
       no_winner_investments: "Não há projetos de investimentos ganhadores neste estado"
       filters:
