@@ -142,3 +142,8 @@ pt-BR:
       download: "Resumo do download"
       top_comments:
         zero: "Nenhum comentário"
+        one: "%{count} comentários"
+        other: "Melhores comentários"
+      most_voted_comments: "Comentários mais votados"
+      no_allegation: "Não há comentários"
+      process_empty: "Este processo não teve fases de participação"
