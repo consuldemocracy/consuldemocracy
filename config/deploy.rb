@@ -45,6 +45,9 @@ set(:config_files, %w[
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
+  Rake::Task["delayed_job:default"].clear_actions
+  Rake::Task["puma:smart_restart"].clear_actions
+
   after :updating, "rvm1:install:rvm"
   after :updating, "rvm1:install:ruby"
   after :updating, "install_bundler_gem"
@@ -54,8 +57,9 @@ namespace :deploy do
   after  :publishing, "setup_puma"
 
   after :published, "deploy:restart"
-  before "deploy:restart", "puma:smart_restart"
+  before "deploy:restart", "puma:restart"
   before "deploy:restart", "delayed_job:restart"
+  before "deploy:restart", "puma:start"
 
   after :finished, "refresh_sitemap"
 
