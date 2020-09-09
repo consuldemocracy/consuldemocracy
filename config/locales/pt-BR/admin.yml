@@ -133,6 +133,7 @@ pt-BR:
       form:
         create: "Criar novo grupo"
         edit: "Editar grupo"
+        max_votable_headings_info: "Aplica-se apenas à fase de seleção de projetos. Durante a fase de votação de projetos, os usuários podem apenas votar em um cabeçalho por grupo."
         submit: "Salvar grupo"
       index:
         back: "Voltar aos orçamentos"
@@ -755,7 +756,7 @@ pt-BR:
         empty_newsletters: Não há nenhum boletins informativos para mostrar
       new:
         title: Novo boletim informativo
-        header_footer_help_text: "O cabeçalho e o roda-pé são os mesmos em todos os emails. Você pode modificá-los em <code>app/views/layouts/mailer_header</code> e <code>app/views/layouts/mailer_footer</code>.<br>É possível sustituir a imagem do cabeçalho em %{link}."
+        header_footer_help_text: "O cabeçalho e o rodapé são os mesmos em todos os emails. Você pode modificá-los em <code>app/views/layouts/mailer_header</code> e <code>app/views/layouts/mailer_footer</code>.<br>É possível substituir a imagem do cabeçalho em %{link}."
         image_link: "imagens personalizadas"
       edit:
         title: Editar boletim informativo
@@ -1343,7 +1344,7 @@ pt-BR:
           required_fields_note: "Para verificar um usuário, sua aplicação precisa de: Número de documento"
           date_of_birth_note: ", Dia de nascimento (dd/mm/aaaa)"
           postal_code_note: " e CEP"
-          required_fields_structure_note: "Os campos necessários para cada usuário devem estar separados por vírgulas, e cada usuário debe estar separado por punto-e-vírgula."
+          required_fields_structure_note: "Os campos necessários para cada usuário devem estar separados por vírgulas, e cada usuário debe estar separado por ponto e vírgula."
           example_text: "Exemplo: "
       show:
         created_at: Criado em
