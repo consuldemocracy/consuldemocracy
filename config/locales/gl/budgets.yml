@@ -3,6 +3,8 @@ gl:
     ballots:
       show:
         title: Os teus votos
+        amount_available:
+          knapsack: "Quédanche <span>%{count}</span> para investir."
         no_balloted_group_yet: "Aínda non votaches proxectos deste grupo. Vota!"
         remove: Retirar voto
         voted_info_2: "Mais podes cambiar o teu voto en calquera momento ata o peche desta fase."
