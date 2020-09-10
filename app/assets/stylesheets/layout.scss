@@ -2113,12 +2113,12 @@ table {
 
   .responses-count {
     .show-children {
-      @include has-fa-icon(plus-square, r);
+      @include has-fa-icon(plus-square, regular);
       display: none;
     }
 
     .collapse-children {
-      @include has-fa-icon(minus-square, r);
+      @include has-fa-icon(minus-square, regular);
     }
 
     .show-children::before,

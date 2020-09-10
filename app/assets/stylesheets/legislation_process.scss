@@ -1060,7 +1060,7 @@
   }
 
   .comments-count {
-    @include has-fa-icon(comments, r);
+    @include has-fa-icon(comments, regular);
   }
 
   .question-title:not(:only-child) {

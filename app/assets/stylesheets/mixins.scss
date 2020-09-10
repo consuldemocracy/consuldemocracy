@@ -150,7 +150,7 @@
     @extend %fa-icon;
     font-family: "Font Awesome 5 Free";
 
-    @if $style == "r" {
+    @if $style == "regular" {
       font-weight: normal;
     } @else {
       font-weight: bold;
