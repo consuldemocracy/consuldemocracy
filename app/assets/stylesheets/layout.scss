@@ -2114,7 +2114,6 @@ table {
   .responses-count {
     .show-children {
       @include has-fa-icon(plus-square, regular);
-      display: none;
     }
 
     .collapse-children {
@@ -2132,9 +2131,12 @@ table {
       .collapse-children {
         display: none;
       }
+    }
+
+    &:not(.collapsed) {
 
       .show-children {
-        display: inline;
+        display: none;
       }
     }
   }
