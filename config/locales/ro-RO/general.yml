@@ -310,6 +310,9 @@ ro:
       sign_in: Conectează-te cu Twitter
       sign_up: Înregistrează-te cu Twitter
       name: Twitter
+    info:
+      sign_in: "Conectează-te cu:"
+      sign_up: "Înregistrează-te cu:"
     or_fill: "Sau completați următorul formular:"
   proposals:
     create:
