@@ -3,6 +3,11 @@ ro:
     ballots:
       show:
         title: Votul tău
+        amount_limit:
+          approval:
+            one: "Puteți vota <span> 1 </span> proiect"
+            few: "Puteți vota până la <span>%{count}</span> proiecte"
+            other: "Puteți vota până la <span>%{count}</span> proiecte"
         no_balloted_group_yet: "Încă nu ați votat în acest grup, mergeți să votați!"
         remove: Înlătură vot
         voted:
@@ -20,6 +25,7 @@ ro:
         not_enough_money: "Ați alocat deja bugetul disponibil.<br><small>Amintiți-vă că puteți\n %{change_ballot} în orice moment</small>"
         no_ballots_allowed: Etapa de selectare este închisă
         different_heading_assigned: "Ați votat deja o altă rubrică: %{heading_link}"
+        not_enough_available_votes: "Ați atins numărul maxim de voturi permise pe zi"
         change_ballot: schimbă-ți voturile
         casted_offline: Ați participat deja offline
     groups:
@@ -84,6 +90,15 @@ ro:
           other: " conține termenii <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Votul meu
+          voted_info:
+            knapsack:
+              one: "<strong>Ați votat o propunere de proiect în valoare de %{amount_spent}</strong>"
+              few: "<strong>Ați votat %{count} propuneri de proiect în valoare de %{amount_spent}</strong>"
+              other: "<strong>Ați votat %{count} propuneri de proiect în valoare de %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Ați votat o propunere</strong>"
+              few: "<strong>Ați votat %{count} propuneri</strong>"
+              other: "<strong>Ați votat %{count} propuneri</strong>"
           change_vote_link: "schimbă-ți votul"
           different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
           change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
