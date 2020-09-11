@@ -122,3 +122,10 @@ ro:
         tags_label: "Categorii"
       not_verified: "Pentru a vota propunerile %{verify_account}."
       process_title: Procesul legislației colaborative
+    summary:
+      title: "Sumar"
+      votes:
+        zero: "%{count} voturi"
+        one: "%{count} vot"
+        few: "%{count} voturi"
+        other: "%{count} voturi"
