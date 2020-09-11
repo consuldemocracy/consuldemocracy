@@ -1447,6 +1447,7 @@ ro:
         help: "Când un utilizator crează o propunere, următoarele subiecte sunt sugerate ca etichete implicite."
     users:
       columns:
+        id: ID
         name: Nume
         email: Email
         document_number: Numărul documentului
@@ -1455,6 +1456,9 @@ ro:
       index:
         title: Utilizator
         no_users: Nu există utilizatori.
+        filter: Filtru
+        filters:
+          active: Activ
       search:
         placeholder: Caută utilizator după email, nume sau numărul documentului
         search: Caută
