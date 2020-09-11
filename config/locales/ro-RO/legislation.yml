@@ -129,3 +129,16 @@ ro:
         one: "%{count} vot"
         few: "%{count} voturi"
         other: "%{count} voturi"
+      debate_phase: "Etapa de dezbatere"
+      proposals_phase: "Etapa de propuneri"
+      allegations_phase: "Etapa de comentarii"
+      debates:
+        zero: "Nu există dezbateri"
+        one: "%{count} dezbatere"
+        few: "%{count} dezbateri"
+        other: "%{count} dezbateri"
+      proposals:
+        zero: "Nici o propunere"
+        one: "%{count} propunere"
+        few: "%{count} propuneri"
+        other: "%{count} propuneri"
