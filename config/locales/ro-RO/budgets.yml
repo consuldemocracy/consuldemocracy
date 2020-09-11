@@ -3,7 +3,12 @@ ro:
     ballots:
       show:
         title: Votul tău
+        amount_available:
+          knapsack: "Mai aveți <span>%{count}</span> de investit."
+        amount_spent:
+          knapsack: "Sumă cheltuită <span>%{count}</span>"
         amount_limit:
+          knapsack: "%{count}"
           approval:
             one: "Puteți vota <span> 1 </span> proiect"
             few: "Puteți vota până la <span>%{count}</span> proiecte"
