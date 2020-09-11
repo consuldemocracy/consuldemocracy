@@ -138,7 +138,20 @@ ro:
         few: "%{count} dezbateri"
         other: "%{count} dezbateri"
       proposals:
-        zero: "Nici o propunere"
+        zero: "Nu există propuneri"
         one: "%{count} propunere"
         few: "%{count} propuneri"
         other: "%{count} propuneri"
+      comments:
+        zero: "Nu există comentarii"
+        one: "%{count} comentariu"
+        few: "%{count} comentarii"
+        other: "%{count} comentarii"
+      download: "Descarcă sumar"
+      top_comments:
+        zero: "Nu există comentarii"
+        one: "%{count} comentariu"
+        few: "Top comentarii"
+        other: "Top comentarii"
+      most_voted_comments: "Cele mai votate comentarii"
+      no_allegation: "Nu există comentarii"
