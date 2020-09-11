@@ -556,6 +556,7 @@ ro:
           back: Înapoi
           submit_button: Salvează modificări
           warning: Ați editat textul, nu uitați să faceți clic pe Salvați pentru a salva modificările.
+          markdown_changes_message: "Ați editat textul fără să îl salvați. Confirmați?"
         form:
           title: 'Editare <span class="strong">%{draft_version_title}</span> din procese <span class="strong">%{process_title}</span>'
           launch_text_editor: Deschide editorul text
