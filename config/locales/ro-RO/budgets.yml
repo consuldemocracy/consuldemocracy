@@ -84,6 +84,7 @@ ro:
           other: " conține termenii <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Votul meu
+          change_vote_link: "schimbă-ți votul"
           different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
           change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
           check_ballot_link: "verifică și confirmă votul"
