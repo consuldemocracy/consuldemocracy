@@ -169,6 +169,11 @@ ro:
     progress_bar:
       assigned: "Ați atribuit: "
       available: "Buget disponibil: "
+      votes:
+        zero: "Ați selectat <strong>0</strong> proiecte din <strong>%{limit}</strong>"
+        one: "Ați selectat <strong>1</strong> proiect din <strong>%{limit}</strong>"
+        few: "Ați selectat <strong>%{count}</strong> proiecte din <strong>%{limit}</strong>"
+        other: "Ați selectat <strong>%{count}</strong> proiecte din <strong>%{limit}</strong>"
     show:
       group: Grup
       phase: Etapa actuală
