@@ -1170,7 +1170,7 @@ bg:
           verified: Потвърдено
         hidden_count:
           one: Има и <strong> една организация </strong> без потребители или със скрит потребител.
-          other: Има <strong>% {count} организации </strong> без потребители или със скрит потребител.
+          other: Има <strong>%{count} организации </strong> без потребители или със скрит потребител.
         name: Име
         email: Имейл
         phone_number: Телефон
