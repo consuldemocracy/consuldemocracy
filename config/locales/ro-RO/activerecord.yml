@@ -182,6 +182,7 @@ ro:
         description_finished: "Descriere când bugetul este terminat"
         phase: "Etapă"
         currency_symbol: "Monedă"
+        voting_style: "Votare finală"
         voting_style_approval: "Aprobare"
       budget/translation:
         name: "Nume"
