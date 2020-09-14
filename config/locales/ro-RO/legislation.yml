@@ -155,3 +155,4 @@ ro:
         other: "Top comentarii"
       most_voted_comments: "Cele mai votate comentarii"
       no_allegation: "Nu există comentarii"
+      process_empty: "Acest proces nu are nici o etapă de participare"
