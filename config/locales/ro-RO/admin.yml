@@ -136,6 +136,7 @@ ro:
       form:
         create: "Crează grup nou"
         edit: "Editează grup"
+        max_votable_headings_info: "Se aplică numai fazei de selectare a proiectelor. În timpul fazei de votare a proiectelor, utilizatorii pot vota doar într-o singură rubrică per grup."
         submit: "Salvează grup"
       index:
         back: "Mergi înapoi la bugete"
