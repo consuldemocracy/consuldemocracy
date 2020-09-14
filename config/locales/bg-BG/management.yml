@@ -102,7 +102,7 @@ bg:
       print:
         print_button: Печат
       search_results:
-        one: "съдържащи термина '%{search_term}'"
+        one: " съдържащи термина '%{search_term}'"
         other: " съдържащи термина '%{search_term}'"
     sessions:
       signed_out: Успешно излизане.
