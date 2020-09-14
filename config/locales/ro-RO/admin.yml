@@ -1460,6 +1460,7 @@ ro:
         filter: Filtru
         filters:
           active: Activ
+          erased: Șters
       search:
         placeholder: Caută utilizator după email, nume sau numărul documentului
         search: Caută
