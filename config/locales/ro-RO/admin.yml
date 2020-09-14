@@ -154,6 +154,7 @@ ro:
         success_notice: "Rubrică ștearsă cu succes"
         unable_notice: "Nu puteți șterge o Rubrică care are investiții asociate"
       form:
+        max_ballot_lines_info: 'Numărul maxim de proiecte pe care un utilizator le poate vota din această rubrică în timpul fazei „Votarea proiectelor”. Numai pentru bugetele care utilizează votul de aprobare.'
         population_info: "Rubrica de buget al populației este utilizată în scopuri statistice la sfârșitul bugetului pentru a arăta pentru fiecare rubrică care reprezintă o zonă cu populație ce procent votat. Acest câmp este opțional, așa că îl puteți lăsa gol dacă nu se aplică."
         coordinates_info: "Dacă latitudinea și longitudinea sunt precizate, pagina de investiții pentru această rubrică va include o hartă. Această hartă va fi centrată folosind acele coordonate."
         content_blocks_info: "Dacă este selectată opțiunea permite blocarea conținutului, veți putea crea conținut personalizat aferent acestei rubrici din secțiunea Setări> Blocuri de conținut personalizat. Acest conținut va apărea în pagina de investiții pentru această rubrică."
@@ -1450,6 +1451,7 @@ ro:
     users:
       columns:
         id: ID
+        erase_reason: Șterge motiv
         name: Nume
         email: Email
         document_number: Numărul documentului
