@@ -283,12 +283,14 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for(user) if management
     end
 
-    scenario "Should display map on #{mappable_factory_name} show page", :js do
+    scenario "Should display map and marker on #{mappable_factory_name} show page", :js do
       arguments[:id] = mappable.id
 
       visit send(mappable_show_path, arguments)
 
-      expect(page).to have_css(".map_location")
+      within ".map_location" do
+        expect(page).to have_css(".map-icon")
+      end
     end
 
     scenario "Should not display map on #{mappable_factory_name} show when marker is not defined", :js do
