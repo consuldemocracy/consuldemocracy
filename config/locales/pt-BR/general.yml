@@ -46,7 +46,7 @@ pt-BR:
         other: "%{count} respostas (mostrar)"
       responses_collapse:
         zero: Nenhuma resposta
-        one: "1 respuesta (recolher)"
+        one: "1 resposta (recolher)"
         other: "%{count} respostas (recolher)"
       user_deleted: Usuário apagado
       votes:
