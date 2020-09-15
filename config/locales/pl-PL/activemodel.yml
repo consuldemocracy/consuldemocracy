@@ -16,7 +16,29 @@ pl:
           confirmation_code: "Kod potwierdzający"
         email:
           recipient: "E-mail"
+      verification/letter:
+        email: "E-mail"
+        password: "Hasło"
+        verification_code: "Kod otrzymany listem"
+      verification/management/document:
+        document_type: "Rodzaj dokumentu:"
+        document_number: "Numer dokumentu:"
+      verification/residence:
+        date_of_birth: "Data urodzenia"
+        document_type: "Rodzaj dokumentu"
+        postal_code: "Kod pocztowy"
+      verification/sms:
+        confirmation_code: "Wpisz kod otrzymany na telefon"
       officing/residence:
         document_type: "Rodzaj dokumentu"
         document_number: "Numer dokumentu (zawierając litery)"
         year_of_birth: "Rok urodzenia"
+      local_census_records/import:
+        file: Plik
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Podany format pliku jest nieprawidłowy. Dozwolony format pliku to: %{valid_extensions}."
+              headers: "Podane nagłówki plików są nieprawidłowe. Nagłówki plików muszą mieć następujące nazwy: %{required_headers}."

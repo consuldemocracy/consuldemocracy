@@ -1,1 +1,47 @@
 mk:
+  activemodel:
+    models:
+      verification:
+        residence: "Живеалиште"
+        sms: "СМС"
+      local_census_records/import:
+        one: Увоз на досие од локален попис
+        other: Увози на досиеja од локален попис
+    attributes:
+      verification:
+        residence:
+          document_type: "Вид на документ"
+          document_number: "Број на документ (вклучувајќи и букви)"
+          date_of_birth: "Датум на раѓање"
+          postal_code: "Поштенски број"
+        sms:
+          phone: "Телефон"
+          confirmation_code: "Код за потврда"
+        email:
+          recipient: "Е-пошта"
+      verification/letter:
+        email: "Е-пошта"
+        password: "Лозинка"
+        verification_code: "Кодот што го добивте"
+      verification/management/document:
+        document_type: "Вид на документ:"
+        document_number: "Број на документ"
+      verification/residence:
+        date_of_birth: "Датум на раѓање"
+        document_type: "Вид на документ"
+        postal_code: "Поштенски број"
+      verification/sms:
+        confirmation_code: "Внесете го кодот кој го добивте на вашиот телефон"
+      officing/residence:
+        document_type: "Вид на документ"
+        document_number: "Број на документ (вклучувајќи и букви)"
+        year_of_birth: "Година на раѓање"
+      local_census_records/import:
+        file: Датотека
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Бидејќи форматот на датотеката не е точен. Дозволениот формат е: %{valid_extensions}."
+              headers: "Бидејќи заглавјата на датотеката не се точни. Тие мора да го содржат следните имиња: %{required_headers}."

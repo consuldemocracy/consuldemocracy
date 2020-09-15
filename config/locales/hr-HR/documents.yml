@@ -1,18 +1,19 @@
 hr:
   documents:
     title: Dokumenti
+    max_documents_allowed_reached: Dosegli ste najveći broj odobrenih dokumenata! <strong>Morate jedan obrisati prije nego učitate drugi.</strong>
     additional: Dodatna dokumentacija
     form:
       title: Dokumenti
       title_placeholder: Dodaj opisni naziv dokumenta
       delete_button: Ukloni dokument
-      cancel_button: Otkazati
-      note: "Možete učitati maksimalno %{max_documents_allowed} dokumenata sljdećih tipova sadržaja:%{accepted_content_types}, do veličine %{max_file_size} MB po folderu."
+      cancel_button: Otkaži
+      note: "Možete učitati maksimalno %{max_documents_allowed} dokumenata sljdećih tipova sadržaja:%{accepted_content_types}, do veličine %{max_file_size} MB po datoteci."
       add_new_document: Dodaj novi dokument
     actions:
       destroy:
         notice: Dokument je uspješno obrisan.
-        alert: Ne možete obirsati dokument.
+        alert: Ne možete obrisati dokument.
         confirm: Jeste li sigurni da želite obrisati dokument? Akcija se ne može poništiti!
     buttons:
       download_document: Preuzmi dokument

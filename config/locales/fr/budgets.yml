@@ -3,8 +3,6 @@ fr:
     ballots:
       show:
         title: Votre vote
-        amount_spent: Montant dépensé
-        remaining: "Il vous reste <span>%{amount}</span> à investir."
         no_balloted_group_yet: "Vous n'avez pas encore voté dans ce groupe, allez voter !"
         remove: Supprimer le vote
         zero: Vous n'avez voté pour aucune des propositions d'investissement.
@@ -73,8 +71,6 @@ fr:
           title: Chercher
         sidebar:
           my_ballot: Mon vote
-          voted_info: Vous pouvez %{link} à tout moment jusqu'à la clôture de cette phase. Vous n'avez pas besoin de dépenser tout le budget disponible.
-          voted_info_link: modifier votre vote
           change_ballot: "Si vous changez d'avis, vous pouvez supprimer vos votes dans %{check_ballot} et recommencer."
           check_ballot_link: "vérifier mon vote"
           zero: Vous n'avez voté pour aucune proposition d'investissement dans ce groupe.
@@ -147,6 +143,7 @@ fr:
       accepted: "Proposition de dépense acceptée : "
       discarded: "Proposition de dépense rejetée : "
       incompatibles: Incompatibles
+      investment_title: Titre de projet
       investment_proyects: Liste des projets d'investissement
       unfeasible_investment_proyects: Liste des projets d'investissement irréalisables
       not_selected_investment_proyects: Liste des projets d'investissement non sélectionnés pour le vote

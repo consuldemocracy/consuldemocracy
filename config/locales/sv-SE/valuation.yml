@@ -53,6 +53,7 @@ sv:
         responsibles: Ansvariga
         assigned_admin: Ansvarig administratör
         assigned_valuators: Ansvariga bedömare
+        preview: Budgetförhandsvisning
       edit:
         dossier: Rapport
         price: "Kostnad (%{currency})"

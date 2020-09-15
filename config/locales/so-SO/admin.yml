@@ -932,15 +932,6 @@ so:
           without_confirmed_hide: Joojin
         title: Soojedino qarsoon
         no_hidden_proposals: Majiraan soojedino qarsoon.
-    proposal_notifications:
-      index:
-        filter: Sifeeyee
-        filters:
-          all: Dhamaan
-          with_confirmed_hide: Xaqiijiyey
-          without_confirmed_hide: Joojin
-        title: Ogaysiisaka Qarsodiga ah
-        no_hidden_proposals: Majiraan Ogaysiisyo Qarsoon.
     settings:
       flash:
         updated: Cusboneysii Qimaha

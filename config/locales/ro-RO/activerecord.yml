@@ -1,1 +1,607 @@
 ro:
+  attributes:
+    geozone_id: "Scopul operațiunii"
+    results_enabled: "Se arată rezultatele"
+    stats_enabled: "Statistici"
+    advanced_stats_enabled: "Statistici avansate"
+  activerecord:
+    models:
+      activity:
+        one: "activitate"
+        few: "activități"
+        other: "%{count} activități"
+      budget:
+        one: "Buget"
+        few: "Bugete"
+        other: "%{count} Bugete"
+      budget/investment:
+        one: "Investiție"
+        few: "Investiții"
+        other: "%{count} Investiții"
+      milestone:
+        one: "reper"
+        few: "repere"
+        other: "%{count} repere"
+      milestone/status:
+        one: "Status reper"
+        few: "Stări reper"
+        other: "Stări reper"
+      progress_bar:
+        one: "Progres"
+        few: "Progres"
+        other: "Progres"
+      comment:
+        one: "Comentariu"
+        few: "Comentarii"
+        other: "Comentarii"
+      debate:
+        one: "Dezbatere"
+        few: "Dezbateri"
+        other: "Dezbateri"
+      tag:
+        one: "Etichetă"
+        few: "Etichete"
+        other: "%{count} Etichete"
+      user:
+        one: "Etichetă"
+        few: "Etichete"
+        other: "Utilizatori"
+      moderator:
+        one: "Moderator"
+        few: "Moderator"
+        other: "Moderatori"
+      administrator:
+        one: "Administrator"
+        few: "Administratori"
+        other: "Administratori"
+      valuator:
+        one: "Evaluator"
+        few: "Evaluatori"
+        other: "Evaluatori"
+      valuator_group:
+        one: "Grup de evaluare"
+        few: "Grupuri de evaluare"
+        other: "Grupuri de evaluare"
+      manager:
+        one: "Administrator"
+        few: "Administratori"
+        other: "%{count} administratori"
+      newsletter:
+        one: "Newsletter"
+        few: "Newsletters"
+        other: "Newsletter"
+      vote:
+        one: "Vot"
+        few: "Voturi"
+        other: "%{count} voturi"
+      organization:
+        one: "Organizație"
+        few: "Organizații"
+        other: "Organizații"
+      poll/booth:
+        one: "cabină vot"
+        few: "cabine vot"
+        other: "cabine vot"
+      poll/officer:
+        one: "funcționar public"
+        few: "funcționari publici"
+        other: "funcționari publici"
+      poll/ballot_sheet:
+        one: Buletin de vot
+        few: Buletine de vot
+        other: Buletine de vot
+      proposal:
+        one: "Propunerea cetățeanului"
+        few: "Propunerile cetățeanului"
+        other: "Propunerile cetățeanului"
+      site_customization/page:
+        one: Pagină personalizate
+        few: Pagini personalizate
+        other: Pagini personalizate
+      site_customization/image:
+        one: Imagine personalizată
+        few: Imagini personalizate
+        other: Imagini personalizate
+      site_customization/content_block:
+        one: Conținut personalizat
+        few: Conținut personalizat
+        other: Conținut personalizat
+      document:
+        one: Document
+        few: Documente
+        other: '%{count} documente'
+      legislation/process:
+        one: "Proces"
+        few: "Procese"
+        other: "Procese"
+      legislation/proposal:
+        one: "Propunere"
+        few: "Propuneri"
+        other: "%{count} propuneri"
+      legislation/draft_versions:
+        one: "Versiune schiță"
+        few: "Versiuni schiță"
+        other: "Versiuni schiță"
+      legislation/questions:
+        one: "Întrebare"
+        few: "Întrebări"
+        other: "Întrebări"
+      legislation/question_options:
+        one: "Opțiune de întrebare"
+        few: "Opțiuni de întrebări"
+        other: "Opțiuni de întrebări"
+      legislation/answers:
+        one: "Răspuns"
+        few: "Răspunsuri"
+        other: "%{count} răspunsuri"
+      documents:
+        one: "Document"
+        few: "Documente"
+        other: "%{count} documente"
+      images:
+        one: "Imagine"
+        few: "Imagini"
+        other: "%{count} imagini"
+      topic:
+        one: "Subiect"
+        few: "Subiecte"
+        other: "Subiecte"
+      poll:
+        one: "Sondaj"
+        few: "Sondaje"
+        other: "Sondaje"
+      proposal_notification:
+        one: "Notificare"
+        few: "Notificări"
+        other: "Notificări"
+      dashboard/action:
+        one: Panou de control - propunere
+        few: Panou de control - propuneri
+        other: Panou de control - propuneri
+      dashboard/administrator_task:
+        one: Sarcină
+        few: Sarcini
+        other: Sarcini
+      link:
+        one: Link
+        few: Link-uri
+        other: Link-uri
+      local_census_record:
+        one: Registrul local al recensământului
+        few: Registrele local al recensământului
+        other: Registrele local al recensământului
+    attributes:
+      budget:
+        name: "Nume"
+        description_accepting: "Descrierea în etapa de Acceptare"
+        description_reviewing: "Descrierea în etapa de revizuire"
+        description_selecting: "Descrierea în etapa de Selectare"
+        description_valuating: "Descrierea în etapa de Evaluare"
+        description_balloting: "Descrierea în etapa de votare"
+        description_reviewing_ballots: "Descrierea în etapa de Revizuire a voturilor"
+        description_finished: "Descriere când bugetul este terminat"
+        phase: "Etapă"
+        currency_symbol: "Monedă"
+        voting_style: "Votare finală"
+        voting_style_approval: "Aprobare"
+      budget/translation:
+        name: "Nume"
+      budget/investment:
+        heading_id: "Rubrică"
+        title: "Titlu"
+        description: "Descriere"
+        external_url: "Link către documentație suplimentară"
+        administrator_id: "Administrator"
+        location: "Informații suplimentare despre locație"
+        organization_name: "Dacă propuneți în numele unui grup social/unei organizații sau în numele mai multor persoane, scrieți-le numele"
+        image: "Imagine descriptivă a propunerii"
+        image_title: "Titlul imaginii"
+        duration: "Termen limită"
+        feasibility_feasible: "Realizabil"
+        feasibility_undecided: "Nedefinit"
+        feasibility_unfeasible: "Nerealizabil"
+        incompatible: "Marchează ca incompatibil"
+        milestone_tag_list: "Etichete reper"
+        price_explanation: "Explicația prețului"
+        selected: "Marchează ca selectat"
+        selected_true: "Selectat"
+        selected_false: "Nu a fost selectat"
+        unfeasibility_explanation: "Explicație de fezabilitate"
+        valuation_finished: "Evaluare terminată"
+        valuator_ids: "Grupuri"
+        valuation_tag_list: "Etichete"
+      budget/investment/translation:
+        title: "Titlu"
+        description: "Descriere"
+      geozone:
+        name: Nume
+        external_code: "Cod extern (opțional)"
+        census_code: "Cod de recensământ (opțional)"
+        html_map_coordinates: "HTML <map> Coordonate (opțional)"
+      milestone:
+        status_id: "Starea curentă (opțional)"
+        title: "Titlu"
+        description: "Descriere (opțional dacă este un status alocat)"
+        publication_date: "Date"
+      milestone/translation:
+        description: "Descriere"
+      milestone/status:
+        name: "Nume"
+        description: "Descriere (opțional)"
+      progress_bar:
+        kind: "Tip"
+        title: "Titlu"
+        percentage: "Progresul actual"
+      progress_bar/kind:
+        primary: "Primar"
+        secondary: "Secundar"
+      budget/group:
+        max_votable_headings: "Numărul maxim de rubrici în care poate vota un utilizator"
+      budget/group/translation:
+        name: "Numele grupului"
+      budget/heading:
+        allow_custom_content: "Permiteți blocarea conținutului"
+        latitude: "Latitudine (opțional)"
+        longitude: "Longitudine (opțional)"
+        name: "Nume rubrică"
+        price: "Sumă"
+        population: "Populație (opțional)"
+        max_ballot_lines: "Voturi permise"
+      budget/heading/translation:
+        name: "Nume rubrică"
+      budget/phase:
+        enabled: "Etapă activată"
+        ends_at: "Data de sfârșit"
+        starts_at: "Data de început"
+      budget/phase/translation:
+        description: "Descriere"
+        summary: "Sumar"
+      comment:
+        body: "Comentariu"
+        user: "Utilizator"
+      debate:
+        author: "Autor"
+        description: "Opinie"
+        tag_list: "Subiecte"
+        terms_of_service: "Termenii serviciului"
+        title: "Titlu"
+      debate/translation:
+        title: "Titlul dezbaterii"
+        description: "Textul dezbaterii inițiale"
+      proposal:
+        author: "Autor"
+        title: "Titlu"
+        question: "Întrebare"
+        description: "Descriere"
+        responsible_name: "Numele întreg al persoanei care depune propunerea"
+        retired_reason: "Motiv pentru a retrage propunerea"
+        selected: "Marchează ca selectat"
+        terms_of_service: "Termenii serviciului"
+        video_url: "URL video extern"
+      proposal/translation:
+        title: "Titlul propunerii"
+        description: "Textul propunerii"
+        summary: "Rezumatul propunerii"
+        retired_explanation: "Explicație"
+      user:
+        login: "Email sau Nume de utilizator"
+        email: "Email"
+        username: "Nume de utilizator"
+        password_confirmation: "Confirmarea propunerii"
+        password: "Parolă"
+        current_password: "Parolă curentă"
+        email_digest: "Primiți un rezumat al notificărilor propunerilor"
+        email_on_comment: "Anunță-mă prin e-mail când cineva comentează la propunerile sau dezbaterile mele"
+        email_on_comment_reply: "Anunță-mă prin e-mail când cineva răspunde la comentariile mele"
+        email_on_direct_message: "Primiți emailuri despre mesajele directe"
+        newsletter: "Primește pe email informații relevante despre site"
+        official_position: "Poziție oficială"
+        official_position_badge: "Afișează ecusonul de poziție oficială"
+        official_level: "Nivel oficial"
+        phone_number: "Număr de telefon"
+        public_activity: "Păstrează publică lista mea de activități"
+        public_interests: "Păstrați publice etichetele elementelor pe care le urmăresc"
+        recommended_debates: "Arată recomandări pentru dezbateri"
+        recommended_proposals: "Arată recomandări pentru propuneri"
+        redeemable_code: "Cod de verificare primit prin e-mail"
+      direct_message:
+        title: "Titlu"
+        body: "Mesaj"
+      organization:
+        name: "Numele organizației"
+        responsible_name: "Persoană responsabilă pentru grup"
+      poll:
+        name: "Nume"
+        starts_at: "Data de început"
+        ends_at: "Data limită"
+        geozone_restricted: "Limitat de locație"
+        summary: "Sumar"
+        description: "Descriere"
+      active_poll/translation:
+        description: "Descriere"
+      poll/booth:
+        name: "Nume"
+        location: "Locație"
+      poll/translation:
+        name: "Nume"
+        summary: "Sumar"
+        description: "Descriere"
+      poll/question:
+        poll_id: "Sondaj"
+        title: "Întrebare"
+        summary: "Sumar"
+        description: "Descriere"
+        external_url: "Link către documentație suplimentară"
+      poll/question/translation:
+        title: "Întrebare"
+      poll/ballot_sheet:
+        data: Date CSV
+        poll_id: Sondaj
+        officer_assignment_id: Distribuirea funcționarilor publici
+      poll/shift:
+        task: "Sarcină"
+      proposal_notification:
+        body: "Mesaj"
+        title: "Titlu"
+      signature_sheet:
+        title: "Titlu"
+        signable_type: "Tip semnnătură"
+        signable_id: "Semnatar"
+        document_numbers: "Numerele documentelor"
+      site_customization/page:
+        content: Conținut
+        created_at: Creat la
+        subtitle: Subtitrare
+        slug: Slug
+        status: Status
+        status_draft: "Schiță"
+        status_published: "Publicat"
+        title: Titlu
+        updated_at: Actualizat la
+        more_info_flag: Afișează în pagina de ajutor
+        print_content_flag: Butonul de printare a conținutului
+        locale: Limbă
+      site_customization/page/translation:
+        title: Titlu
+        subtitle: Subtitrare
+        content: Conținut
+      site_customization/image:
+        name: Nume
+        image: Imagine
+      site_customization/content_block:
+        name: Nume
+        locale: local
+        body: Corpul paginii
+      tag:
+        name: "Scrie numele subiectului"
+      topic:
+        title: "Titlu"
+        description: "Text inițial"
+      banner:
+        background_color: Culoare de fundal
+        font_color: Culoarea fontului
+        post_ended_at: "Postarea s-a încheiat la"
+        post_started_at: "Postarea a început la"
+        target_url: "Link"
+      banner/translation:
+        title: "Titlu"
+        description: "Descriere"
+      legislation/process:
+        title: Titlul Procesului
+        summary: Sumar
+        description: Descriere
+        additional_info: Informații adiționale
+        start_date: Început
+        end_date: Sfârșit
+        debate_start_date: Început
+        debate_end_date: Sfârșit
+        draft_start_date: Început
+        draft_end_date: Sfârșit
+        draft_publication_date: Data publicării schiței
+        allegations_start_date: Început
+        allegations_end_date: Sfârșit
+        proposals_phase_start_date: Început
+        proposals_phase_end_date: Sfârșit
+        result_publication_date: Data publicării rezultatului final
+        background_color: Culoare de fundal
+        font_color: Culoarea fontului
+        homepage_enabled: "Pagina de pornire activată"
+      legislation/process/translation:
+        title: Titlul Procesului
+        summary: Sumar
+        description: Descriere
+        additional_info: Informații adiționale
+        homepage: "Descriere"
+        milestones_summary: Sumar
+      legislation/proposal:
+        description: "Textul propunerii"
+        summary: "Rezumatul propunerii"
+        title: "Titlul propunerii"
+        video_url: "Link-ul către video-ul extern"
+      legislation/draft_version:
+        title: Titlul versiunii
+        body: Text
+        changelog: Schimbări
+        status: Status
+        status_draft: "Schiță"
+        status_published: "Publicat"
+        final_version: Versiune finală
+      legislation/draft_version/translation:
+        title: Titlul versiunii
+        body: Text
+        changelog: Schimbări
+      legislation/question:
+        title: Titlu
+        question_options: Opțiuni
+      legislation/question/translation:
+        title: Întrebare
+      legislation/question_option:
+        value: Valoare
+      legislation/annotation:
+        text: Comentariu
+      document:
+        title: Titlu
+        attachment: "Alege document"
+      image:
+        title: Titlu
+        attachment: "Alege imagine"
+      poll/question/answer:
+        title: Răspuns
+        description: Descriere
+      poll/question/answer/translation:
+        title: Răspuns
+        description: Descriere
+      poll/question/answer/video:
+        title: Titlu
+        url: Video extern
+      newsletter:
+        segment_recipient: Destinatari
+        subject: Subiect
+        from: "Adresa de e-mail care va apărea ca expeditoare a newsletter-ului"
+        body: Conținut e-mail
+      admin_notification:
+        segment_recipient: Destinatari
+        title: Titlu
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Titlu
+        body: Text
+      widget/card:
+        label: Etichetă (opțional)
+        title: Titlu
+        description: Descriere
+        link_text: Link
+        link_url: URL Link-ului
+        columns: Număr de coloane
+      widget/card/translation:
+        label: Etichetă (opțional)
+        title: Titlu
+        description: Descriere
+        link_text: Link
+      widget/feed:
+        limit: Număr de articole
+      dashboard/action:
+        title: Titlu
+        short_description: Scurtă descriere
+        description: Descriere
+        link: Link extern
+        request_to_administrators: Includeți în resursă un buton pentru a solicita administratorilor resursa
+        day_offset: La câte zile după crearea propunerii doriți ca aceasta să fie activată?
+        required_supports: Cât suport trebuie să primească o propunere pentru a fi activată?
+        order: Puteți introduce poziția în care această acțiune va fi afișată utilizatorului în lista de acțiuni
+        active: Activ
+        action_type: Tip
+        action_type_proposed_action: "Acțiune propusă"
+        action_type_resource: "Resursă"
+        published_proposal: "Pentru propuneri publicate?"
+      dashboard/administrator_task:
+        source: Sursă
+        user: Executat de
+      link:
+        label: Titlu
+        url: Link
+      valuator:
+        description: Descriere
+        valuator_group_id: Grup de evaluare
+        can_comment: Puteți crea comentarii
+        can_edit_dossier: Puteți edita dosare
+      valuator_group:
+        name: "Numele grupului"
+      local_census_record:
+        document_type: Tipul de document
+        document_number: Numărul documentului
+        date_of_birth: Data nașterii
+        postal_code: Cod poștal
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Acest utilizator are deja o parolă"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etichetele trebuie să fie mai mici sau egale cu %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Ați atins numărul maxim de mesaje private pe zi"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Lățimea imaginii trebuie să fie %{required_min_width}px"
+              min_image_height: "Înălțimea imaginii trebuie să fie %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Segmentul destinatarilor este incorect"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Segmentul destinatarilor este incorect"
+        map_location:
+          attributes:
+            map:
+              invalid: Locația nu poate fi goală. Plasați un marker sau bifați caseta dacă nu este necesară localizarea
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Acest document nu apare în recensământ"
+            user_id:
+              has_voted: "Utilizatorul a votat deja"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: trebuie să fie la data de început sau după
+            debate_end_date:
+              invalid_date_range: trebuie să fie la sau după data începerii dezbaterii
+            draft_end_date:
+              invalid_date_range: trebuie să fie la sau după data începerii schiței
+            allegations_end_date:
+              invalid_date_range: trebuie să fie la data începerii comentariilor sau după
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: nu este inclusă în listă, valorile permise sunt 1 pentru CI, 2 pentru pașaport și 3 pentru cardul de reședință.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etichetele trebuie să fie mai mici sau egale cu %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "etichetele trebuie să fie mai mici sau egale cu %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Trebuie să așteptați minimum %{interval} zile între notificări"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Nu este verificat de Recensământ"
+              already_voted: "Ați votat deja această propunere"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "trebuie să conțină litere, numere, _ și -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Lățimea trebuie să fie %{required_width}px"
+              image_height: "Înălțimea trebuie să fie %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Nu puteți adăuga comentarii la o evaluare"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Resursă deja tradusă
+      messages:
+        translations_too_short: Este obligatoriu să furnizați cel puțin o traducere
+        record_invalid: "Validarea a eșuat: %{errors}"
+        another_poll_active: Este încă un sondaj activ pentru perioada aleasă
+        restrict_dependent_destroy:
+          has_one: "Nu se poate șterge înregistrarea, deoarece există %{record} dependentă"
+          has_many: "Nu se poate șterge înregistrarea, deoarece există %{record} dependentă"

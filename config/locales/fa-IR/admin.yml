@@ -846,13 +846,6 @@ fa:
           without_confirmed_hide: انتظار
         title: طرح های پنهان
         no_hidden_proposals: پیشنهادات مخفی وجود ندارد.
-    proposal_notifications:
-      index:
-        filter: فیلتر
-        filters:
-          all: همه
-          with_confirmed_hide: تایید
-          without_confirmed_hide: انتظار
     settings:
       flash:
         updated: ارزش به روز شد

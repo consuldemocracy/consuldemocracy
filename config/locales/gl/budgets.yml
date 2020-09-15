@@ -3,8 +3,8 @@ gl:
     ballots:
       show:
         title: Os teus votos
-        amount_spent: Custo total
-        remaining: "Quédanche <span>%{amount}</span> para investir."
+        amount_available:
+          knapsack: "Quédanche <span>%{count}</span> para investir."
         no_balloted_group_yet: "Aínda non votaches proxectos deste grupo. Vota!"
         remove: Retirar voto
         voted_info_2: "Mais podes cambiar o teu voto en calquera momento ata o peche desta fase."
@@ -75,8 +75,6 @@ gl:
           title: Procurar
         sidebar:
           my_ballot: Os meus votos
-          voted_info: Podes %{link} en calquera momento ata o peche desta fase. Non é necesario gastares todo o diñeiro dispoñible.
-          voted_info_link: cambiar o teu voto
           change_ballot: "Se cambiares de opinión, podes borrar os teus votos en %{check_ballot} e comezar de novo."
           check_ballot_link: "revisar os meus votos"
           zero: Añinda non votaches ningunha proposta de investimento neste ámbito do orzamento.

@@ -1,20 +1,24 @@
 da:
   mailers:
-    title: "Åben regering"
+    title: "Åben Kommune"
     no_reply: "Denne meddelelse blev sendt fra en e-mail-adresse, der ikke kan besvares."
     comment:
       hi: Hej
+      new_comment_by: Der er en ny kommentar fra <strong>%{commenter}</strong>
       subject: Nogen har kommenteret på din %{commentable}
       title: Ny kommentar
     config:
       manage_email_subscriptions: Afmeld e-mails ved at gå til dine indstillinger
     email_verification:
       click_here_to_verify: dette link
+      instructions_2: Denne e-mail vil verificere din konto med <b>%{document_type} %{document_number}</b>. Hvis disse ikke tilhører dig, vær sød ikke at klikke på det tidligere link og ignorere denne e-mail.
+      instructions: For at færdiggøre verifikationen af din brugerkonto klik på %{verification_link}.
       subject: Bekræft din e-mail
       thanks: Mange tak.
       title: Bekræft din konto ved hjælp af følgende link
     reply:
       hi: Hej
+      new_reply_by: Der er et nyt svar fra <strong>%{commenter}</strong> på din kommentar
       subject: Nogen har reageret på din kommentar
       title: Nyt svar til din kommentar
     proposal_notification_digest:
@@ -31,6 +35,7 @@ da:
       unsubscribe_account: Min konto
     direct_message_for_sender:
       subject: "Du har sendt en ny privat besked"
+      title: "Du har sendt en ny privat besked til <strong>%{receiver}</strong>:"
     user_invite:
       ignore: "Hvis du ikke har anmodet om denne invitation, skal du ikke bekymre dig. Du kan ignorere denne e-mail."
       text: "Tak for din ansøgning til %{org}! Du kan påbegynde din deltagelse om få sekunder, du skal blot udfylde nedenstående formular:"
@@ -41,13 +46,15 @@ da:
     budget_investment_created:
       subject: "Tak fordi du oprettede en idé!"
       title: "Tak fordi du har oprettet en idé!"
+      intro: "Hej <strong>%{author}</strong>,"
       text: "Tak fordi du oprettede din idé <strong>%{investment}</strong> for Deltagerbudgettet <strong>%{budget}</strong>."
-      follow: "Vi vil løbende informere dig om processens forløb, som du også kan følge på <strong>%{link}</strong>."
+      follow: "Vi vil løbende informere dig om deltagerbudgettets forløb, som du også kan følge på <strong>%{link}</strong>."
       follow_link: "Deltagerbudgetter"
       sincerely: "Med venlig hilsen"
       share: "Del dit projekt"
     budget_investment_unfeasible:
       hi: "Kære bruger,"
+      new: "På trods af dette, opfordrer vi dig til at udforme en <strong>ny projektidé</strong>, der er tilpasset forholdene i denne proces. Klik på følgende link:%{url}."
       new_href: "ny projektidé"
       sincerely: "Med venlig hilsen"
       sorry: "Undskyld ulejligheden og vi takker endnu engang for din deltagelse."
@@ -68,6 +75,7 @@ da:
       subject: "Ny kommentar"
       title: Ny kommentar til projektidéen %{investment}
       hi: Hej
+      new_comment_by: Der er en ny kommentar på din evaluering fra <strong>%{commenter}</strong> til dit budget forslag %{investment}
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Flere nyheder vedrørende dit borgerforslag"

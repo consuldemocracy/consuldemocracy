@@ -44,7 +44,7 @@ da:
         text_comments: Kommentar
     processes:
       header:
-        additional_info: Yderligere oplysninger
+        additional_info: Hvordan bliver dit bidrag brugt?
         description: Beskrivelse
         more_info: Mere information og kontekst
       proposals:
@@ -58,16 +58,16 @@ da:
       index:
         filter: Filtrere
         filters:
-          open: Åbne processer
-          past: Fortid
-        no_open_processes: Ingen åbne processer
+          open: Aktive dialoger
+          past: Tidligere dialoger
+        no_open_processes: Ingen aktive dialoger
         no_past_processes: Ingen tidligere processer
         section_header:
-          icon_alt: Skærmikon for høringer
-          title: Høringsportal
-          help: Hjælp til høringer
+          icon_alt: Skærmikon for borgerdialog
+          title: Borgerdialoger
+          help: Hjælp til borgerdialoger
         section_footer:
-          title: Hjælp til høringer
+          title: Hjælp til borgerdialoger
           description: Deltag i debat om og processer forud for godkendelsen af nye reglementer eller strategier. Din mening vil blive taget i betragtning.
       phase_not_open:
         not_open: Denne fase er ikke igangsat endnu
@@ -83,7 +83,7 @@ da:
         draft_publication_date: Udkast til publikation
         allegations_dates: Kommentarer
         result_publication_date: Offentliggørelse af endeligt resultat
-        milestones_date: Følger
+        milestones_date: Tidslinje
         proposals_dates: Forslag
     questions:
       comments:
@@ -103,7 +103,7 @@ da:
         next_question: Næste spørgsmål
         first_question: Første spørgsmål
         share: Del
-        title: Høringsproces
+        title: Borgerproces
       participation:
         phase_not_open: Fasen er ikke åben
         organizations: Organisationer har ikke tilladelse til at deltage i debatten
@@ -117,4 +117,4 @@ da:
       form:
         tags_label: "Kategorier"
       not_verified: "For at stemme på borgerforslag %{verify_account}."
-      process_title: Høringsproces
+      process_title: Borgerproces

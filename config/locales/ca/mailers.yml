@@ -1,5 +1,6 @@
 ca:
   mailers:
+    title: "Govern Obert"
     no_reply: "Aquest missatge s'ha enviat des d'una adreça de correu electrònic que no admet respostes."
     comment:
       hi: Hola
@@ -10,6 +11,8 @@ ca:
       manage_email_subscriptions: Pots deixar de rebre aquests emails canviant la teua configuració en
     email_verification:
       click_here_to_verify: en aquest enllaç
+      instructions_2: Aquest correu electrònic verificarà el vostre compte <b>%{document_type} %{document_number}</b>. Si aquests no us pertanyen, no feu clic a l’enllaç anterior i ignorau aquest correu electrònic.
+      instructions: Per completar la verificació del compte d’usuari, heu de fer clic %{verification_link}.
       subject: Verifica el teu email
       thanks: Moltes gràcies.
       title: Verifica el teu compte amb el següent enllaç
@@ -23,13 +26,20 @@ ca:
       title: "Notificacions de propostes en %{org_name}"
       share: Compartir proposta
       comment: Comentar proposta
+      unsubscribe: "Si no voleu rebre cap notificació de proposta, visit %{account} i desmarqueu \"Rep un resum de les notificacions de les propostes\"."
       unsubscribe_account: El meu compte
+      unfollow: "Visita aquesta proposta i deixa-la sense deixar de rebre notificacions."
     direct_message_for_receiver:
       subject: "Has rebut un nou missatge privat"
       reply: Respondre a %{sender}
+      unsubscribe: "Si no voleu rebre missatges directes, visiteu %{account} i desmarqueu \"Rep missatges de correu electrònic sobre missatges directes\"."
       unsubscribe_account: El meu compte
+    direct_message_for_sender:
+      subject: "Heu enviat un missatge privat nou"
+      title: "Heu enviat un missatge privat nou a <strong>%{receiver}</strong> amb el contingut:"
     user_invite:
       ignore: "Si no has sol·licitat aquesta invitació no et preocupes, pots ignorar aquest correu."
+      text: "Gràcies per sol·licitar la inscripció %{org}! En segons pots començar a participar, només has d’omplir el formulari següent:"
       thanks: "Moltes gràcies."
       title: "Benvingut a %{org}"
       button: Completar registre
@@ -37,10 +47,15 @@ ca:
     budget_investment_created:
       subject: "Gràcies per crear una proposta d'inversió!"
       title: "Gràcies per crear una proposta d'inversió!"
+      intro: "Hola <strong>%{author}</strong>,"
+      text: "Gràcies per crear la vostra inversió <strong>%{investment}</strong> dels pressupostos participatius <strong>%{budget}</strong>."
+      follow: "T’informarem sobre com avança el procés, que també pots seguir <strong>%{link}</strong>."
       follow_link: "Pressupostos participatius"
       sincerely: "Atentament,"
+      share: "Comparteix el teu projecte"
     budget_investment_unfeasible:
       hi: "Benvolgut usuari,"
+      new: "Per tots aquests, us convidem a elaborar un <strong>nova inversió</strong> que s’ajusta a les condicions d’aquest procés. Podeu fer-ho seguint aquest enllaç: %{url}."
       new_href: "nova proposta d'inversió"
       sincerely: "Atentament"
       sorry: "Sentim les molèsties ocasionades i tornem a donar-te les gràcies per la teua inestimable participació."
@@ -57,3 +72,64 @@ ca:
       hi: "Benvolgut usuari,"
       thanks: "Gràcies de nou per la teva participació."
       sincerely: "atentament"
+    evaluation_comment:
+      subject: "Nou comentari d’avaluació"
+      title: Nou comentari d'avaluació per a %{investment}
+      hi: Hola
+      new_comment_by: Hi ha un nou comentari d'avaluació de <strong>%{commenter}</strong> a la inversió pressupostària %{investment}
+      commenter_info: "%{commenter}, %{time}:"
+    new_actions_notification_rake_created:
+      subject: "Més notícies sobre la vostra proposta ciutadana"
+      hi: "Hola %{name},"
+      new_resource: "NOU RECURS SENSE BLOC"
+      introduction: "Com ja sabeu, a la web %{created_at_day} dia de la %{created_at_month} heu creat la proposta en mode d'esborrany %{title}."
+      text_1: "Sempre que vulgueu, podeu publicar en aquest enllaç: %{link_to_published}. Si encara no esteu segur..."
+      text_2: "Aprofiteu aquest moment! Apreneu, afegiu altres persones amb els mateixos interessos i prepareu la difusió que necessitareu quan publiqueu definitivament la vostra proposta."
+      text_3: "I per acompanyar-vos en aquest repte, aquí teniu les novetats..."
+      text_4: "Doneu un cop d'ull a aquesta NOVA ACCIÓ recomanada:"
+      text_5: "La següent acció que recomanem és:"
+      footer_text: "Com sempre, entra al tauler de propostes i t’explicarem amb detall com utilitzar aquests recursos i com treure’n el màxim partit."
+      dashboard_button: "Endavant, descobreix-los!"
+    new_actions_notification_rake_published:
+      subject: "Més notícies sobre la vostra proposta ciutadana"
+      hi: "Hola %{name},"
+      new_resource: "NOU RECURS SENSE BLOC"
+      introduction: "Com ja sabeu, a la web %{published_at_day} dia de la %{published_at_month} vas publicar la proposta %{title}."
+      text_1: "Bé, tens %{votes_count} suport fins ara Felicitats!"
+      text_2: "Així doncs, teniu disponible un nou recurs que us ajudarà a seguir endavant."
+      text_3: "Et trobes a faltar %{days_count} dies abans de la proposta %{max_votes_count} recolza i va a referèndum. Animar-se i seguir estenent. Et falten idees?"
+      text_4: "NOVA ACCIÓ DE DIFUSIÓ RECOMANADA"
+      text_5: "Encara n’hi ha més, consulteu l’acció següent:"
+      footer_text: "Com sempre, entra al tauler de propostes i t’explicarem amb detall com utilitzar aquests recursos i com treure’n el màxim partit."
+      dashboard_button: "Endavant, descobreix-los!"
+    new_actions_notification_on_create:
+      subject: "La proposta de ciutadà del projecte es crea"
+      hi: "Hola %{name}!"
+      introduction: "La seva %{title} la proposta s'ha creat correctament."
+      text_1: "Aprofiteu que la vostra proposta encara no és pública i prepareu-vos per contactar amb molta gent."
+      text_2: "Quan estiguis llest, publiqui la teva proposta ciutadana a partir d’aquesta <a href='%{link}'>link</a>."
+      text_3: "Sabem que crear una proposta amb ganxo i obtenir el suport necessari ens pot semblar complicat. Però no us preocupeu perquè us ajudarem!"
+      text_4: "Teniu una eina que serà el vostre nou millor aliat: el tauler de propostes ciutadanes."
+      list_1: "Introduïu cada dia al tauler de la vostra proposta per utilitzar els consells i recursos que compartirem amb vosaltres."
+      list_2: "Aquests consells, accions i recursos us donaran idees i també solucions pràctiques per obtenir més suport i una comunitat més àmplia. No els oblideu!"
+      list_3: "A mesura que vagi guanyant més assistència, desbloquejareu recursos nous i millors. De moment, teniu una plantilla de correu electrònic per enviar massivament a tots els vostres contactes, un pòster per imprimir, entre altres funcions i beneficis que descobrireu. No deixeu d’afegir suport i no deixarem de recompensar-vos i ajudar-vos!"
+      list_4: "Tu tens %{max_month} mesos des que publiqueu la proposta per obtenir-la %{max_votes} el suport i la vostra proposta poden esdevenir una realitat. Però els primers dies són els més importants. És un repte. Prepareu-vos!"
+      text_5: "I perquè comenceu amb tota la motivació,"
+      text_6: "aquí teniu diversos recursos i tota una llista de consells que us vindran cada dia per preparar l’emissió!"
+      dashboard_button: "Endavant, descobreix-los!"
+    new_actions_notification_on_published:
+      subject: "La vostra proposta ciutadana ja està publicada. No deixeu de propagar-se!"
+      hi: "Felicitats %{name}! La seva proposta %{title} s'ha creat correctament."
+      text_1: "I ara, aneu a buscar els vostres primers 100 suports!"
+      text_2: "Per què 100?"
+      text_3: "La nostra experiència ens explica que el primer dia és fonamental. Perquè a més de tenir l’energia per llançar alguna cosa nova, en ser una proposta recentment publicada, tindreu l’important visibilitat d’estar entre les noves propostes destacades."
+      text_4: "Obteniu 100 assistències el primer dia i tindreu una primera comunitat que us realitzarà una còpia de seguretat."
+      text_5: "Per això, us reptem a obtenir-lo, però no sense molta ajuda!"
+      text_6: "Recordeu que al vostre Tauler de Propostes teniu a la vostra disposició nous recursos i recomanacions per a accions de difusió."
+      list_1: "Entra cada dia per veure el teu progrés i utilitza els consells i recursos que compartirem amb tu. Són idees i també solucions pràctiques per obtenir el suport que necessiteu."
+      list_2: "A mesura que obtinguis més suport, desbloquejareu recursos nous i millors. No deixeu d’afegir suport i no deixarem de recompensar-vos i ajudar-vos!"
+      text_7: "I perquè comenceu a tota velocitat..."
+      text_8: "Aquí teniu un gran recurs a la vostra disposició!"
+      text_9: "També trobareu aquesta nova acció de difusió recomanada..."
+      text_10: "Segur que teniu més recursos per utilitzar!"
+      dashboard_button: "Endavant, descobreix-los!"

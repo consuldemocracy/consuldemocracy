@@ -1216,15 +1216,6 @@ de:
           without_confirmed_hide: Ausstehend
         title: Verborgene Vorschläge
         no_hidden_proposals: Keine verborgenen Vorschläge vorhanden.
-    proposal_notifications:
-      index:
-        filter: Filter
-        filters:
-          all: Alle
-          with_confirmed_hide: Bestätigt
-          without_confirmed_hide: Ausstehend
-        title: Verborgene Benachrichtigungen
-        no_hidden_proposals: Keine verborgenen Benachrichtigungen vorhanden.
     settings:
       flash:
         updated: Wert aktualisiert

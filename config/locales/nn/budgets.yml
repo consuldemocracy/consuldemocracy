@@ -3,8 +3,6 @@ nn:
     ballots:
       show:
         title: Dine stemmer
-        amount_spent: Benyttet beløp
-        remaining: "Du har fortsatt <span>%{amount}</span> å investere."
         no_balloted_group_yet: "Du har ikke stemt i denne gruppen enda, stem nå!"
         remove: Fjern stemme
         voted_info_2: "Men du kan endre stemmen din når som helst frem til denne fasen lukkes."

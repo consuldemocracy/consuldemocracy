@@ -1048,15 +1048,6 @@ nl:
           without_confirmed_hide: In afwachting
         title: Verborgen voorstellen
         no_hidden_proposals: Er zijn geen verborgen voorstellen.
-    proposal_notifications:
-      index:
-        filter: Filter
-        filters:
-          all: All
-          with_confirmed_hide: Bevestigd
-          without_confirmed_hide: In afwachting
-        title: Verborgen notificaties
-        no_hidden_proposals: Er is geen verborgen meldingen.
     settings:
       flash:
         updated: Value updated

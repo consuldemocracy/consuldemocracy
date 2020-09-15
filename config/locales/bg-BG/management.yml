@@ -1,1 +1,132 @@
 bg:
+  management:
+    account:
+      menu:
+        reset_password_email: Промяна на парола чрез имейл
+        reset_password_manually: Промяна на парола ръчно
+      alert:
+        unverified_user: Все още не е вписан проверен потребител
+      show:
+        title: Потребителски акаунт
+      edit:
+        title: "Редактиране на потребителски акаунт: Промяна на парола"
+        back: Обратно
+        password:
+          password: Парола
+          send_email: Изпращане на имейл за промяна на паролата
+          reset_email_send: Имейлът е изпратен правилно.
+          reseted: Паролата е променена успешно
+          random: Генериране на случайна парола
+          save: Запазете паролата
+          print: Отпечатайте парола
+          print_help: Ще можете да отпечатате паролата, когато е запазена.
+    account_info:
+      change_user: Промяна на потребителя
+      document_number_label: "Номер на документ:"
+      document_type_label: "Вид документ:"
+      email_label: "Имейл:"
+      identified_label: "Идентифициран като:"
+      username_label: "Потребител:"
+    check: Проверка на документ
+    dashboard:
+      index:
+        title: Управление
+        info: Тук можете да управлявате потребителите чрез всички действия, изброени в лявото меню.
+    document_verifications:
+      already_verified: Този потребителски акаунт вече е потвърден.
+      has_no_account: За да създадете акаунт, отидете на %{link} и кликнете в <b> "Регистрация" </b> в горната лява част на екрана.
+      in_census_has_following_permissions: "Този потребител може да участва в уеб сайта със следните права:"
+      not_in_census: Този документ не е регистриран.
+      not_in_census_info: "Гражданите, които не са в регистър ГРАО, могат да участват в уеб сайта със следните права:"
+      please_check_account_data: Моля, проверете дали данните на акаунта по-горе са верни.
+      title: Управление на потребители
+      under_age: "Нямате необходимата възраст, за да потвърдите акаунта си."
+      verify: Потвърдете
+    email_label: Имейл
+    date_of_birth: Дата на раждане
+    email_verifications:
+      already_verified: Този потребителски акаунт вече е потвърден.
+      choose_options: "Моля, изберете една от следните опции:"
+      document_found_in_census: Този документ бе намерен в преброяването, но той няма потребителски акаунт, свързан с него.
+      document_mismatch: "Този имейл принадлежи на потребител, който вече има асоцииран идентификационен номер: %{document_number}(%{document_type})"
+      email_placeholder: Напишете имейла, който този човек използва за създаването на акаунта си
+      email_sent_instructions: За да се потвърди напълно този потребител, е необходимо потребителят да кликне върху връзка, която сме изпратили до имейл адреса по-горе. Тази стъпка е необходима, за да се потвърди, че адресът му принадлежи.
+      if_existing_account: Ако лицето вече има потребителски акаунт, създаден в уеб сайта,
+      if_no_existing_account: Ако този човек все още не е създал акаунт
+      introduce_email: "Моля, въведете имейла, използван в акаунта:"
+      send_email: Изпратете имейл за потвърждение
+    menu:
+      create_proposal: Създайте предложение
+      print_proposals: Печат на предложения
+      support_proposals: Предложения за подкрепа
+      create_budget_investment: Създайте бюджетна инвестиция
+      print_budget_investments: Печат на бюджетни инвестиции
+      support_budget_investments: Подкрепете бюджетни инвестиции
+      users: Управление на потребителите
+      user_invites: Изпратете покани
+      select_user: Изберете потребител
+    permissions:
+      create_proposals: Създавайте предложения
+      debates: Участвайте в дебати
+      support_proposals: Предложения за подкрепа
+      vote_proposals: Предложения за гласуване
+    print:
+      proposals_info: Създайте предложението си на http://url.consul
+      proposals_title: "Предложения:"
+      budget_investments_info: Участвайте на http://url.consul
+    print_info: Разпечатайте тази информация
+    proposals:
+      alert:
+        unverified_user: Потребителят не е потвърден
+      create_proposal: Създайте предложение
+      print:
+        print_button: Печат
+      index:
+        title: Предложения за подкрепа
+    budgets:
+      create_new_investment: Създайте бюджетна инвестиция
+      print_investments: Отпечатайте бюджетни инвестиции
+      support_investments: Подкрепете бюджетни инвестиции
+      table_name: Име
+      table_phase: Фаза
+      table_actions: Действия
+      no_budgets: Няма активни бюджети с участие.
+    budget_investments:
+      alert:
+        unverified_user: Потребителят не е потвърден
+      create: Създаване на бюджетна инвестиция
+      edit: Редактиране на бюджетна инвестиция
+      filters:
+        heading: Концепция
+        unfeasible: Невъзможна инвестиция
+      print:
+        print_button: Печат
+      search_results:
+        one: " съдържащи термина '%{search_term}'"
+        other: " съдържащи термина '%{search_term}'"
+    sessions:
+      signed_out: Успешно излизане.
+      signed_out_managed_user: Потребителската сесия е излязла успешно.
+    username_label: Потребителско име
+    users:
+      create_user: Създаване на нов акаунт
+      create_user_info: Ще създадем акаунт със следните данни
+      create_user_submit: Създаване на потребител
+      create_user_success: Изпратихме имейл на имейл адреса <b>%{email}</b> in order to verify that it belongs to this user. It contains a link they have to click. Then they will have to set their access password before being able to log in to the website
+      autogenerated_password: "Автоматично генерирана парола е <b>%{password}</b>, you can change it in the 'My account' section of the web"
+      email_optional_label: Имейл (незадължително)
+      erased_notice: Потребителският акаунт е изтрит.
+      erased_by_manager: "Изтрит от мениджъра: %{manager}"
+      erase_account_link: Изтриване на потребител
+      erase_account_confirm: Наистина ли искате да изтриете акаунта? Това действие не може да бъде отменено
+      erase_warning: Това действие не може да бъде отменено. Моля, уверете се, че искате да изтриете този акаунт.
+      erase_submit: Изтриване на акаунта
+    user_invites:
+      new:
+        label: Имейли
+        info: "Въведете имейлите, разделени със запетаи (',')"
+        submit: Изпратете покани
+        title: Изпратете покани
+      create:
+        success: <strong>%{count} покани </strong> бяха изпратени.
+        title: Изпратете покани

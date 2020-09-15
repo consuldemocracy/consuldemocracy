@@ -200,6 +200,7 @@ fr:
           author_username: Nom de l'auteur
           incompatible: Incompatibles
           price: Prix
+          author: Auteur
         cannot_calculate_winners: Le budget doit rester sur la phase "Vote des projets", "Dépouillage du bulletin de vote" ou "Budget terminé" afin de calculer les projets gagnants
         see_results: "Voir les résultats"
       show:
@@ -241,11 +242,13 @@ fr:
       search_unfeasible: Recherche impossible
     milestones:
       index:
+        table_id: "ID"
         table_title: "Titre"
         table_publication_date: "Date de publication"
         table_status: Statut
         delete: "Supprimer le jalon"
         no_milestones: "Aucun jalon défini"
+        image: "Image"
         show_image: "Afficher l'image"
         milestone: Jalon
         new_milestone: Créer nouveau jalon
@@ -289,6 +292,8 @@ fr:
         no_progress_bars: "Il n'y a pas de barres de progrès"
         new_progress_bar: "Créer une nouvelle barre de progrès"
         primary: "Barre de progrès primaire"
+        table_id: "ID"
+        table_kind: "Type"
         table_title: "Titre"
         table_percentage: "Progrès actuel"
       new:
@@ -305,6 +310,9 @@ fr:
         notice: "Barre de progrès supprimée avec succès"
     comments:
       index:
+        id: "ID"
+        author: "Auteur"
+        commentable_type: "Type"
         title: Commentaires masqués
     dashboard:
       index:
@@ -368,6 +376,8 @@ fr:
           success: La tâche a été marquée comme résolue.
     debates:
       index:
+        id: ID
+        author: Auteur
         title: Débats masqués
     documents:
       new:
@@ -753,6 +763,10 @@ fr:
         description: "Envoyé à l'auteur lorque son investissement budgétaire a été selectionné."
       budget_investment_unfeasible:
         title: "Investissement budgétaire irréalisable"
+      reply:
+        title: "Répondre"
+      user_invite:
+        title: "Invitation d'utilisateur"
     emails_download:
       index:
         title: Téléchargement des courriels
@@ -770,6 +784,7 @@ fr:
         valuator_groups: "Groupes de l’évaluateur"
         group: "Groupe"
         no_group: "Aucun groupe"
+        abilities: "Pouvoirs"
       valuator:
         add: Ajouter un évaluateur
         delete: Supprimer
@@ -782,8 +797,10 @@ fr:
         description: "Description"
         email: "Email"
         group: "Groupe"
+        abilities: "Pouvoirs"
         no_description: "Pas de description"
         no_group: "Pas de groupe"
+        no_abilities: "Sans pouvoirs"
     valuator_groups:
       index:
         title: "Groupes d’évaluateurs"
@@ -1062,6 +1079,8 @@ fr:
         title: Propositions
         id: ID
         author: Auteur
+        select: Sélecter
+        selected: Sélecté
         milestones: Jalons
     hidden_proposals:
       index:
@@ -1072,15 +1091,6 @@ fr:
           without_confirmed_hide: Indécis
         title: Propositions masquées
         no_hidden_proposals: Il n’y a aucune proposition masquée.
-    proposal_notifications:
-      index:
-        filter: Filtre
-        filters:
-          all: Toutes
-          with_confirmed_hide: Confirmé
-          without_confirmed_hide: Indécis
-        title: Notifications masquées
-        no_hidden_proposals: Il n'y a pas de notifications masquées.
     settings:
       flash:
         updated: Valeur mise-à-jour
@@ -1100,6 +1110,7 @@ fr:
             update: Configuration de la carte mise à jour avec succès.
           form:
             submit: Mettre-à-jour
+      remote_census_response_name: Données de Réponse
       setting: Fonctionnalité
       setting_actions: Actions
       setting_name: Paramètres
@@ -1121,6 +1132,8 @@ fr:
       proposal_search:
         button: Chercher
         placeholder: Rechercher des propositions par titre, code, description ou question
+      debate_search:
+        button: Rechercher
       user_search:
         button: Chercher
         placeholder: Rechercher un utilisateur par nom ou courriel
@@ -1172,9 +1185,12 @@ fr:
         title: Nouvelle feuilles de signature
         document_numbers_note: "Saisir les numéros séparés par des points-virgules (;)"
         submit: Créer la feuille de signature
+        text_help:
+          example_text: "Exemple: "
       show:
         created_at: Créé le
         author: Auteur
+        users: Utilisateurs
         verified:
           one: "Il y a %{count} signature valide"
           other: "Il y a %{count} signatures valides"
@@ -1340,7 +1356,9 @@ fr:
           title: Titre
           slug: Slug
           cards_title: Mosaïque
+          see_cards: Voir les Cartes
         cards:
+          cards_title: cartes
           create_card: Créer un encart
           no_cards: Il n'y a pas d'encarts.
           title: Titre
@@ -1375,3 +1393,13 @@ fr:
         submit_header: Sauvegarder l'entête
         card_title: Modifier l'encart
         submit_card: Sauvegarder l'encart
+    audits:
+      changes: "Liste de changements"
+      id: "ID"
+      new_value: "Valeur nouveau"
+      old_value: "Vieux Valeur"
+    local_census_records:
+      index:
+        date_of_birth: Date de naissance
+        search:
+          search: Rechercher

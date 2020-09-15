@@ -1,1 +1,8 @@
 bg:
+  milestones:
+    index:
+      no_milestones: Не сте дефинирали основни етапи
+      progress: Напредък
+    show:
+      publication_date: "Публикувано %{publication_date}"
+      status_changed: Статусът е променен на

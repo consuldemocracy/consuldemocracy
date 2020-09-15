@@ -1,8 +1,91 @@
 mk:
   account:
     show:
+      change_credentials_link: Смени ги моите податоци
+      erase_account_link: Избриши ја мојата корисничка сметка
+      finish_verification: Комплетирај верификација
+      notifications: Нотификации
+      organization_name_label: Име на организацијата
+      organization_responsible_name_placeholder: Претставник на организација/колектив
+      personal: Лични детали
+      phone_number_label: Телефонски број
+      public_interests_my_title_list: Тагови на елементи кои ги следиш
+      public_interests_user_title_list: Тагови на елементи кои овој корисник ги следи
+      save_changes_submit: Зачувај промени
+      recommendations: Препораки
+      title: Мој профил
+      user_permission_debates: Учествувај во дебати
+      user_permission_info: Со својот профил можеш...
       user_permission_proposal: Направи нови предлози
       user_permission_support_proposal: Поддржи предлози
+      user_permission_title: Партиципација
+      user_permission_verify: За да ги извршиш сите акции верифицирај го твојот профил.
+      user_permission_verify_info: "* Само за корисници на Цензус."
+      user_permission_votes: Учествувај во конечно гласање
+      username_label: Корисничко име
+      verified_account: Верификуван профил
+      verify_my_account: Потврди го мојот профил
+  application:
+    close: Затвори
+    menu: Мени
+  comments:
+    comments_closed: Коментарите се затворени
+    verified_only: За да учествуваш %{verify_account}
+    comment:
+      admin: Администратор
+      author: Автор
+      deleted: Овој коментар беше избришан
+      moderator: Модератор
+      responses:
+        zero: Нема одговори
+        one: 1 одговор
+        other: "%{count} одговори"
+      responses_show:
+        zero: Нема одговори
+        one: "1 одговор (покажи)"
+        other: "%{count} одговори (покажи)"
+      responses_collapse:
+        zero: Нема одговори
+        one: "1 одговор (спушти)"
+        other: "%{count} одговори (спушти)"
+      user_deleted: Избришан корисник
+      votes:
+        zero: Нема гласови
+        one: 1 глас
+        other: "%{count} гласови"
+    form:
+      comment_as_admin: Коментирај како администратор
+      comment_as_moderator: Коментирај како модератор
+      leave_comment: Остави коментар
+    orders:
+      most_voted: Најгласано
+      newest: Прво најново
+      oldest: Прво најстаро
+      most_commented: Најкоментирано
+    select_order: Сортирај по
+    show:
+      return_to_commentable: "Врати се до "
+  comments_helper:
+    comment_button: Објави коментар
+    comment_link: Коментар
+  debates:
+    show:
+      author_deleted: Избришан корисник
+      comments:
+        zero: Нема коментари
+        one: 1 коментар
+        other: "%{count} коментари"
+      comments_title: Коментари
+      edit_debate_link: Измени
+      flag: Оваа дебата беше посочена како несоодветна од повеќе корисници.
+      share: Сподели
+      author: Автор
+    update:
+      form:
+        submit_button: Зачувај промени
+  errors:
+    messages:
+      user_not_found: Корисникот не е пронајден
   form:
     proposal: Предлог
   layouts:

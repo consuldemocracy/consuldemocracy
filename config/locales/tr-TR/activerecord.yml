@@ -403,7 +403,6 @@ tr:
           attributes:
             document_number:
               not_in_census: "Belge sayımda değil"
-              has_voted: "Kullanıcı zaten oylanmış"
         legislation/process:
           attributes:
             end_date:

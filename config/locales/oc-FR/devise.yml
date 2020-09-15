@@ -1,0 +1,66 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+oc:
+  devise:
+    password_expired:
+      expire_password: "Contrasenya caducada"
+      change_required: "La tiá contrasenya a caducat"
+      change_password: "Càmbia la tiá contrasenya"
+      new_password: "Nòva contrasenya"
+      updated: "Contrasenya actualizada amb succès"
+    confirmations:
+      confirmed: "Lo tieu compte es estat confirmat. Per favor autentica't amb lo tieu usatgièr e contrasenya"
+      send_instructions: "Recebràs un corrièr electronic en unas minutas amb instruccions sus coma restablir la tiá contrasenya."
+      send_paranoid_instructions: "Se lo tieu corrièr electronic existís en la nòstra basa de donadas recebràs un corrièr electronic en unas minutas amb instruccions sus coma restablir la tiá contrasenya."
+    failure:
+      already_authenticated: "As ja iniciat session."
+      inactive: "Lo tieu compte es estat pas encara activat."
+      invalid: "%{authentication_keys} o contrasenya invàlids."
+      locked: "Lo tieu compte es estat bloquejat."
+      last_attempt: "As un darrièr assag abans que lo tieu compte siá bloquejat."
+      not_found_in_database: "%{authentication_keys} o contrasenya invàlids."
+      timeout: "La tiá session a expirat, per favor inícia session nauament per contunhar."
+      unauthenticated: "As de besonh iniciar session o t'enregistrar per contunhar."
+      unconfirmed: "Per contunhar, per favor prem en lo ligam de confirmacion qu'avèm enviat a lo tieu compte de corrièr."
+    mailer:
+      confirmation_instructions:
+        subject: "d'Instruccions de confirmacion"
+      reset_password_instructions:
+        subject: "d'Instruccions per restablir la tiá contrasenya"
+      unlock_instructions:
+        subject: "d'Instruccions de desblocatge"
+    omniauth_callbacks:
+      failure: "Se te es pas pogut identificar via %{kind} pel seguent motiu: \"%{reason}\"."
+      success: "Identificat corrèctament via %{kind}."
+    passwords:
+      no_token: "Pòdes pas accedir a aquela pagina s'es pas a travèrs d'un ligam per restablir la contrasenya. S'as accedit dempuèi lo ligam per restablir la contrasenya, assegura-te que l'URL siatz completa."
+      send_instructions: "Recebràs un corrièr electronic amb instruccions sus coma restablir la tiá contrasenya en unas minutas."
+      send_paranoid_instructions: "Se lo tieu corrièr electronic existís en la nòstra basa de donadas, recebràs un ligam per restablir la contrasenya en unas minutas."
+      updated: "La tiá contrasenya a cambiat corrèctament. Ès estat identificat corrèctament."
+      updated_not_active: "La tiá contrasenya s'es cambiat corrèctament."
+    registrations:
+      destroyed: "Adieu! Lo vòstre compte s'es anullat. Esperam vos tornar a veire lèu."
+      signed_up: "Benvengut! Ès estat identificat."
+      signed_up_but_inactive: "T'as registrado correctamente, pero as pas podido iniciar sesión porque tu cuenta a pas sido activada."
+      signed_up_but_locked: "T'ès enregistrat corrèctament, mas as pas pogut iniciar session perque lo tieu compte es bloquejat."
+      signed_up_but_unconfirmed: "Se te es enviat un messatge amb un ligam de confirmacion. Per favor visita lo ligam per activar lo tieu compte."
+      update_needs_confirmation: "As actualizat lo tieu compte corrèctament, malgrat tot aquò avèm de besonh verificar lo tieu nòu compte de corrièr. Per favor revisa lo tieu corrièr electronic e visita lo ligam per finalizar la confirmacion de la tiá nòva adreça de corrièr electronic."
+      updated: "As actualizat lo tieu compte corrèctament."
+    sessions:
+      signed_in: "As iniciat session corrèctament."
+      signed_out: "As barrat la session corrèctament."
+      already_signed_out: "As barrat la session corrèctament."
+    unlocks:
+      send_instructions: "Recebràs un corrièr electronic en unas minutas amb instruccions sus coma desblocar lo tieu compte."
+      send_paranoid_instructions: "Se lo tieu compte existís, recebràs un corrièr electronic en unas minutas amb instruccions sus coma desblocar lo tieu compte."
+      unlocked: "Lo tieu compte es estat desblocat. Per favor inícia session per contunhar."
+  errors:
+    messages:
+      already_confirmed: "Sètz ja estats verificats; ensajatz iniciar la session."
+      confirmation_period_expired: "vos cal èsser verificat dins %{period}; fasètz una sollicitud de repeticion."
+      expired: "A expirat; fasètz una sollicitud de repeticion."
+      not_found: "pas trobat."
+      not_locked: "èra pas bloquejat."
+      not_saved:
+        one: "S'es empedit un error %{resource} d'èsser gardat Consultatz los camps marcats per los saber corregir:"
+        other: "%{count} los errors o empediguèron %{resource} d'èsser gardat Consultatz los camps marcats per los saber corregir:"
+      equal_to_current_password: "li cal èsser desparièr de la contrasenya actuala."

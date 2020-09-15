@@ -48,4 +48,7 @@ sr:
         executed: Извршено
     polls:
       current_poll: "Тренутно Гласање"
+      current_poll_geozone_restricted: "Тренутно гласање ограничено по географској зони"
       recounting_poll: "Пребројавање гласова"
+      expired_poll_without_stats: "Гласање истекло без статистике и резултата"
+      expired_poll_with_stats: "Гласање истекло са статистиком и резултатима"

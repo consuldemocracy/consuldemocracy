@@ -3,8 +3,26 @@ sr:
     ballots:
       show:
         title: Ваш глас
-        amount_spent: Потрошена количина
-        remaining: "Ви још морате <span>%{amount}</span> инвестирати."
+        amount_available:
+          knapsack: "Преостало је још <span>%{count}</span> за инвестирање."
+          approval:
+            zero: "Можете дати још <span>%{count}</span> глас(а)."
+            one: "Можете дати још <span>%{count}</span> глас."
+            few: "Можете дати још <span>%{count}</span> гласа."
+            other: "Можете дати још <span>%{count}</span> гласа."
+        amount_spent:
+          knapsack: "Потрошено <span>%{count}</span>"
+          approval:
+            zero: "Дати гласови: <span>%{count}</span>"
+            one: "Дати гласови: <span>%{count}</span>"
+            few: "Дати гласови: <span>%{count}</span>"
+            other: "Дати гласови: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Можете гласати за <span>1</span> пројекат"
+            few: "Можете гласати за <span>%{count}</span> пројекта"
+            other: "Можете гласати за <span>%{count}</span> пројекта"
         no_balloted_group_yet: "Још увек нисте гласали за ову групу, гласајте!"
         remove: Уклоните глас
         voted:
@@ -22,6 +40,7 @@ sr:
         not_enough_money: "Већ сте доделили расположиви буџет.<br><small>Подсетите се да можете %{change_ballot} у сваком моменту</small>"
         no_ballots_allowed: Фаза одабира је затворена
         different_heading_assigned: "Већ сте изгласали другачији наслов: %{heading_link}"
+        not_enough_available_votes: "Дали сте максимално дозвољени број гласова"
         change_ballot: промените свој глас
         casted_offline: Већ сте учествовали ван мреже
     groups:
@@ -86,12 +105,19 @@ sr:
           other: " садржи термине <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Моје гласање
-          voted:
-            one: "<strong>Гласали сте један предлог са ценом од %{amount_spent}</strong>"
-            few: "<strong>Гласали сте %{count} предлога са ценом од %{amount_spent}</strong>"
-            other: "<strong>Изгласали сте %{count} предлога у износу од of %{amount_spent}</strong>"
-          voted_info: Можете %{link} у било које време све до затварања ове фазе. Нема потребе да трошите сав преостали новац.
-          voted_info_link: промените Ваш глас
+          voted_info:
+            knapsack:
+              one: "<strong>Гласали сте за један предлог са вредношћу од %{amount_spent}</strong>"
+              few: "<strong>Гласали сте за %{count} предлога са вредношћу од %{amount_spent}</strong>"
+              other: "<strong>Гласали сте за %{count} предлога са вредношћу од %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Гласали сте за један предлог</strong>"
+              few: "<strong>Гласали сте за %{count} предлога</strong>"
+              other: "<strong>Гласали сте за %{count} предлога</strong>"
+          change_vote_info:
+            knapsack: "Можете да %{link} било када све до затварања ове фазе. Није потребно да потрошите сав преостали новац."
+            approval: "Можете да %{link} било када све до затварања ове фазе."
+          change_vote_link: "промените Ваш глас"
           different_heading_assigned: "Имате активна гласања у другом наслову: %{heading_link}"
           change_ballot: "Уколико промените Ваше мишљење можете променити свој глас у %{check_ballot} и започети поново."
           check_ballot_link: "провери и потврди моје гласање"
@@ -153,6 +179,11 @@ sr:
     progress_bar:
       assigned: "Одредили сте: "
       available: "Расположиви буџети: "
+      votes:
+        zero: "Одабрали сте <strong>0</strong> пројеката од <strong>%{limit}</strong>"
+        one: "Одабрали сте <strong>1</strong> пројекат од <strong>%{limit}</strong>"
+        few: "Одабрали сте <strong>%{count}</strong> пројекта од <strong>%{limit}</strong>"
+        other: "Одабрали сте <strong>%{count}</strong> пројеката од <strong>%{limit}</strong>"
     show:
       group: Група
       phase: Актуелна фаза

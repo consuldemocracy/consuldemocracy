@@ -1,1 +1,169 @@
 ro:
+  pages:
+    conditions:
+      title: Termeni și condiții de utilizare
+      subtitle: AVIZ JURIDIC PRIVIND CONDIȚIILE DE UTILIZARE, PRIVATE ȘI PROTECȚIA DATELOR PERSONALE ALE PORTALULUI DE GUVERN DESCHIS
+      description: Pagina de informare cu privire la condițiile de utilizare, confidențialitate și protecția datelor cu caracter personal.
+    help:
+      title: "%{org} este o platformă pentru participarea cetățenilor"
+      guide: "Acest ghid explică ce reprezintă fiecare dintre secțiunile %{org} și cum funcționează."
+      menu:
+        debates: "Dezbateri"
+        proposals: "Propuneri"
+        budgets: "Bugete participative"
+        polls: "Sondaje"
+        other: "Alte informații de interes"
+        processes: "Procese"
+      debates:
+        title: "Dezbateri"
+        description: "În secțiunea %{link} puteți prezenta și împărtăși opinia cu alte persoane cu privire la probleme care vă privesc legate de oraș. Este, de asemenea, un loc pentru a genera idei care prin celelalte secțiuni din %{org} duc la acțiuni concrete ale Primăriei."
+        link: "dezbaterile cetățenilor"
+        feature: "Puteți deschide dezbateri, le puteți comenta și evalua cu ajutorul <strong>Sunt de acord</strong> sau <strong>Nu sunt de acord</strong>. Pentru asta, trebuie să %{link}."
+        feature_link: "înregistrați-vă în %{org}"
+        image_alt: "Butoane pentru a evalua dezbaterile"
+        figcaption: 'Butoanele „Sunt de acord” și „Nu sunt de acord” pentru a evalua dezbaterile.'
+      proposals:
+        title: "Propuneri"
+        description: "În secțiunea %{link} puteți face propuneri pe care să le îndeplinească Consiliul Local. Propunerile necesită sprijin, iar dacă primesc suficient sprijin, sunt supuse votului public. Propunerile aprobate în aceste voturi ale cetățenilor sunt acceptate de către Consiliu și îndeplinite."
+        link: "propunerile cetățeanului"
+        image_alt: "Buton pentru a susține o propunere"
+        figcaption: 'Buton pentru „Susține” o propunere.'
+      budgets:
+        title: "Bugetare participativă"
+        description: "Secțiunea %{link} ajută oamenii să ia o decizie directă cu privire la ce parte a bugetului municipal este cheltuit."
+        link: "bugete participative"
+        image_alt: "Diferite etape ale bugetului participativ"
+        figcaption: 'Fazele de „Susținere” și „Votare” ale bugetelor participative.'
+      polls:
+        title: "Sondaje"
+        description: "Secțiunea %{link} este activată de fiecare dată când o propunere primește un sprijin de 1% și merge la vot sau când Consiliul Local propune o problemă pentru ca oamenii să decidă."
+        link: "sondaje"
+        feature_1: "Pentru a participa la vot, trebuie să %{link} și să-ți verifici contul."
+        feature_1_link: "înregistrați-vă în %{org_name}"
+      processes:
+        title: "Procese"
+        description: "În secțiunea %{link}, cetățenii participă la elaborarea și modificarea regulamentelor care afectează orașul și își pot oferi părerea asupra politicilor municipale în dezbaterile anterioare."
+        link: "procese"
+        feature: "Pentru a participa la procese, trebuie să accesați %{link} și să vă verificați contul."
+        feature_link: "înregistrați-vă în %{org_name}"
+      faq:
+        title: "Probleme tehnice?"
+        description: "Citiți întrebările frecvente și rezolvați-vă întrebările."
+        button: "Vezi întrebări frecvente"
+        page:
+          title: "Întrebări Frecvente"
+          description: "Utilizați această pagină pentru a rezolva întrebările frecvente pentru utilizatorii site-ului."
+      other:
+        title: "Alte informații de interes"
+        how_to_use: "Folosiți %{org_name} în orașul dumneavoastră"
+      how_to_use:
+        text: |-
+          Folosiți-l în administrația locală sau ajutați-ne să îl îmbunătățim, este software gratuit.
+
+          Acest portal Open Government utilizează [aplicația CONSUL] (https://github.com/consul/consul 'consul github') care este software gratuit, cu [licență AGPLv3] (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), asta înseamnă în cuvinte simple că oricine poate utiliza codul liber, să-l copieze, să-l vadă în detaliu, să-l modifice și să-l redistribuie lumii cu modificările pe care le dorește (permițându-le altora să le facă la fel). Deoarece credem că cultura este mai bună și mai bogată atunci când este lansată.
+
+          Dacă sunteți programator, puteți vedea codul și ne puteți ajuta să îl îmbunătățim la [aplicația CONSUL] (https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Folosiți-l în administrația locală
+    privacy:
+      title: Politica de Confidențialitate
+      subtitle: "Pagina cu informații despre confidențialitate"
+    accessibility:
+      title: Accesibilitate
+      description: |-
+        Accesibilitatea web se referă la posibilitatea accesului la web și la conținutul său de către toți oamenii, indiferent de dizabilități(fizice, intelectuale sau tehnice) care pot apărea sau din cele care derivă din contextul de utilizare (tehnologic sau de mediu).
+
+        Când site-urile web sunt proiectate cu accent pe accesibilitate, toți utilizatorii pot accesa conținutul în condiții egale, de exemplu:
+      examples:
+        - Oferind text alternativ imaginilor, utilizatorii nevăzători sau cu deficiențe de vedere pot utiliza cititori speciali pentru a accesa informațiile.
+        - Când videoclipurile au subtitrări, utilizatorii cu dificultăți de auz le pot înțelege pe deplin.
+        - Dacă conținutul este scris într-un limbaj simplu și ilustrat, utilizatorii cu probleme de învățare sunt mai capabili să-l înțeleagă.
+        - Dacă utilizatorul are probleme de mobilitate și este dificil de utilizat mouse-ul, alternativele cu ajutorul tastaturii ajută în navigare.
+      keyboard_shortcuts:
+        title: Comenzile rapide de la tastatură
+        navigation_table:
+          description: Pentru a putea naviga prin acest site într-un mod accesibil, a fost programat un grup de chei de acces rapid care adună secțiunile principale de interes general în care este organizat site-ul.
+          caption: Comenzile rapide de la tastatură pentru meniul de navigare
+          key_header: Tastă
+          page_header: Pagină
+          rows:
+            - 
+              key_column: 0
+              page_column: Acasă
+            - 
+              key_column: 1
+              page_column: Dezbateri
+            - 
+              key_column: 2
+              page_column: Propuneri
+            - 
+              key_column: 3
+              page_column: Voturi
+            - 
+              key_column: 4
+              page_column: Bugete participative
+            - 
+              key_column: 5
+              page_column: Procese legislative
+        browser_table:
+          description: "În funcție de sistemul de operare și de browserul utilizat, combinația de taste va fi următoarea:"
+          caption: Combinație de taste în funcție de sistemul de operare și browser
+          browser_header: Browser
+          key_header: Combinație de taste
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + shortcut după care ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + shortcut
+            - 
+              browser_column: Chrome
+              key_column: ALT + shortcut (CTRL + ALT + shortcuts pentru MAC OS)
+            - 
+              browser_column: Safari
+              key_column: ALT + shortcut (CMD + shortcut pentru MAC OS)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + shortcut
+      textsize:
+        title: Dimensiunile textului
+        browser_settings_table:
+          description: Designul accesibil al acestui site permite utilizatorului să aleagă dimensiunea textului care i se potrivește. Această acțiune poate fi realizată în moduri diferite, în funcție de browserul utilizat.
+          browser_header: Browser
+          action_header: Acțiune ce trebuie întreprinsă
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Vizualizare > Dimensiune text
+            - 
+              browser_column: Firefox
+              action_column: Vizualizare > Dimensiune
+            - 
+              browser_column: Chrome
+              action_column: Setări (pictogramă) > Opțiuni > Avansat > Conținut Web > Dimensiune text
+            - 
+              browser_column: Safari
+              action_column: View > Zoom In/Zoom out
+            - 
+              browser_column: Opera
+              action_column: View > scale
+        browser_shortcuts_table:
+          description: "Un alt mod de a modifica dimensiunea textului este de a utiliza comenzile rapide de la tastatură definite în browsere, în special combinația de taste:"
+          rows:
+            - 
+              shortcut_column: CTRL și + (CMD și + pe MAC)
+              description_column: Crește dimensiunea textului
+            - 
+              shortcut_column: CTRL și - (CMD și - pe MAC)
+              description_column: Scade dimensiunea textului
+      compatibility:
+        title: Compatibilitatea cu standardele și designul vizual
+        description: 'Toate paginile acestui site web respectă <strong>Instrucțiuni de accesibilitate</strong> sau Principiile generale ale proiectării accesibile stabilite de Grupul de lucru <abbr title="Web Accessibility Initiative" lang="en"> WAI</abbr> aparținând W3C.'
+    titles:
+      help: "Ce este %{org}? - Participarea cetățenilor"
+    verify:
+      info: "Pentru a vă verifica contul, introduceți datele dvs. de acces:"
+      info_code: "Acum introduceți codul primit în scrisoare:"
+      submit: Verifică-mi contul
+      title: Verifică-ți contul

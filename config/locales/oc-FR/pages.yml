@@ -1,0 +1,167 @@
+oc:
+  pages:
+    conditions:
+      title: de Condicions d'usatge
+      subtitle: AVÍS LEGAL SUS LAS CONDICIONS D'USATGE, PRIVADANÇA E PROTECCION DE DONADAS PERSONALAS DEL PORTAL DOBÈRT DE GOVÈRN
+      description: Pagina d’informacion sus las condicions d’usatge, privadança e proteccion de donadas personalas.
+    help:
+      title: "%{org} es una plataforma de participacion ciutadana"
+      guide: "Aquela guida explica qué es cadun de detlos %{org} de seccions son per e coma foncionan."
+      menu:
+        debates: "de Debats"
+        proposals: "de Proposicions ciutadanas"
+        budgets: "de Budgèts participatius"
+        polls: "de votacions"
+        other: "d'Autra informacion d'interès"
+        processes: "de procèsses"
+      debates:
+        title: "de Debats"
+        description: "A la %{link} a la seccion podètz presentar e partejar la vòstra opinion amb autras personas sus problèmas que vos preocupen ligats dins la vila. Es tanben un luòc per generar d'idèas qu'a travèrs de las autras seccions de %{org} condusir a accions concrètas de la part de l’Comuna."
+        link: "debates de ciutadans"
+        feature: "Podètz dobrir de debats, los comentar e los avalorar amb lo programa <strong>soi dacord</strong> o <strong>Soi pas d'acòrdi</strong>. te Cal per aquò o far %{link}."
+        feature_link: "s'enregistrar %{org}"
+        image_alt: "de Botons per avalorar los debats"
+        figcaption: 'de Botons "Soi d''acòrdi" i "Soi pas d''acòrdi" per avalorar los debats.'
+      proposals:
+        title: "de Proposicions ciutadanas"
+        description: "A la %{link} seccion podètz far de proposicions perque l’Comuna las mene a tèrme. Las proposicions requerisson supòrt e, s'atenhon lo supòrt sufisent, se someton a votacion publica. Las proposicions aprovadas en aqueles vòts dels ciutadans son acceptadas per la Comuna e menadas a tèrme."
+        link: "de proposicions ciutadanas"
+        image_alt: "Boton per sosténer a una proposicion"
+        figcaption: 'Boton per "Assisténcia" una proposicion.'
+      budgets:
+        title: "de Budgèts participatius"
+        description: "Çò %{link} l’escartada ajuda las gents a prene una decision dirècta sus quina part del budgèt municipal se gasta."
+        link: "de budgèts participatius"
+        image_alt: "de Desparièras fasas d'un budgèt participatiu"
+        figcaption: '"Assisténcia" i "Votacion" de fasas dels budgèts participatius.'
+      polls:
+        title: "de votacions"
+        description: "Çò %{link} la seccion s’activa cada còp qu'una proposicion atenh l’1% de supòrt e se vòta a vòt o quand l’Comuna prepausa un problèma perque las gents decidisca."
+        link: "d'urnas"
+        feature_1: "Per participar a la votacion vos cal o far %{link} e verificatz lo vòstre compte."
+        feature_1_link: "s'enregistrar %{org_name}"
+      processes:
+        title: "de procèsses"
+        description: "A la %{link} la seccion, los ciutadans participan a la redaccion e modificacion de las regulacions qu'afèctan la vila e pòdon opinar sus las politicas municipalas en los debats anteriors."
+        link: "de procèsses"
+      faq:
+        title: "de Problèmas tecnics?"
+        description: "Legís las questions frequentas e resòlv los tieus dobtes."
+        button: "Veire de questions frequentas"
+        page:
+          title: "Questions mai frequentas"
+          description: "Utiliza aquela pagina per resòlvre las questions mai frencuentes als usatgièrs del luòc."
+      other:
+        title: "d'Autra informacion d'interès"
+        how_to_use: "Utiliza %{org_name} a la tiá municipalitat"
+      how_to_use:
+        text: |-
+          Utilizatz-lo dins lo vòstre govèrn local o ajudatz-nos a lo melhorar, es un logicial gratuit.
+
+          Aquel portal de govèrn dubèrt utiliza çò [CONSUL app](https://github.com/consul/consul 'consul github') es a dire, lo logicial liure[licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), aiçò vòl dire, amb paraulas simplas, que qui que siá pòt utilizar lo còdi liurament, lo copiar, lo veire en detalh, lo modificar e redistribuir-lo dins lo mond amb las modificacions que vòlga (en permetent que d'autras fagan lo meteis). Perque pensam que la cultura es melhora e mai rica quand s’estrea.
+
+          Se sètz un programaire, podètz veire lo còdi e nos ajudar a lo melhorar [CONSUL app](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Utiliza-o a la tiá municipalitat
+    privacy:
+      title: Politica de Privadança
+      subtitle: "Pagina d'informacion sus privadança"
+    accessibility:
+      title: Accessibilitat
+      description: |-
+        L’accessibilitat web fa referéncia a la facha possible d’accedir a la web e als sieus contenguts de la part de totas las personas, independentament dels andicapats (fisicas, intellectualas o de tecnicianas) que pòscan sorgir o derivadas del contèxt d’usatge (tecnologic o ambiental) .
+
+        Se se dessenhan de luòcs web en prenent en compte l'accessibilitat, totes los usatgièrs pòdon accedir al contengut en egalitat de condicions, per exemple:
+      examples:
+        - Quand se porg tèxt alternatiu a las images, los usatgièrs cècs o amb deficiéncias visualas pòdon utilizar de lectors especiales per accedir a l'informacion.
+        - Quand los vidèos an de sostítols, los usatgièrs amb dificultats auditives los pòdon comprene entièrament.
+        - Se los contenguts son escriches en un lengatge simple e illustrat, los usatgièrs amb problèmas d’aprendissatge son capabla d’comprene’ls melhora.
+        - Se l’usatgièr a de problèmas de mobilitat e es malaisida utilizar lo ratolí, las alternativas amb lo teclat ajudan a la navegacion.
+      keyboard_shortcuts:
+        title: Dreceres de teclat
+        navigation_table:
+          description: Per poder navegar per aquel luòc web d’una manièra accessibla, s’a programat un grop de clau d’accès rapid que recuèlhon las seccions principalas d’interès general que s’organiza lo luòc..
+          caption: Dreceres de teclat pel menu de navegacion
+          key_header: Clau
+          page_header: Pàg
+          rows:
+            - 
+              key_column: 0
+              page_column: Inici
+            - 
+              key_column: 1
+              page_column: de Debats
+            - 
+              key_column: 2
+              page_column: de Proposicions ciutadanas
+            - 
+              key_column: 1
+              page_column: de Votacions
+            - 
+              key_column: 4
+              page_column: de Budgèts participatius
+            - 
+              key_column: 5
+              page_column: de Procèsses legislatius
+        browser_table:
+          description: "Segon lo sistèma operatiu e lo navigador utilizat, la combinacion de tecles serà la seguenta:"
+          caption: Combinacion de claus en foncion del sistèma operatiu e del navigador
+          browser_header: Navigador
+          key_header: Combinacion de claus
+          rows:
+            - 
+              browser_column: Combinacion de claus
+              key_column: ALT + drecera i ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + Drecera
+            - 
+              browser_column: Chrome
+              key_column: ALT + dreceres (CTRL + ALT + dreceres per a MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + dreceres (CMD + dreceres per a MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + dreceres
+      textsize:
+        title: Mesura del tèxt
+        browser_settings_table:
+          description: Lo dessenh accessible d’aquel luòc web permet a l’usatgièr escuélher la mesura del tèxt que li conven. Aquela accion se pòt menar a tèrme de desparièras manièras en foncion del navigador utilizat.
+          browser_header: Navegador
+          action_header: d'Accions a menar a tèrme
+          rows:
+            - 
+              browser_column: Explorador
+              action_column: Veire > Mida del text
+            - 
+              browser_column: Firefox
+              action_column: Veire > Mesura
+            - 
+              browser_column: Chrome
+              action_column: Configuracion (icòna) > d'Opcions > Avançat > Contengut web > Mesura del tèxt
+            - 
+              browser_column: Safari
+              action_column: Veire > Aluenha / Aluenha
+            - 
+              browser_column: Opera
+              action_column: Veire > escalièr
+        browser_shortcuts_table:
+          description: "Una autra manièra de modificar la mesura del tèxt es utilizar las dreceres de teclat definidas als navigadors, en particular la combinacion de tecles:"
+          rows:
+            - 
+              shortcut_column: CTRL i + (CMD i + endavant MAC)
+              description_column: Aumenta la mesura del tèxt
+            - 
+              shortcut_column: CTRL i - (CMD i - endavant MAC)
+              description_column: Amendrís la mesura del tèxt
+      compatibility:
+        title: Compatibilitat amb estandards e dessenh visual
+        description: 'Totas las paginas d’aquel luòc web complisson el <strong>de Directrises d’accessibilitat</strong> o de Principis generales de dessenh accessible e establit pel grop de trabalh<abbr title="Iniciativa d’accessibilitat web" lang="en">WAI</abbr> apertenent a W3C.'
+    titles:
+      help: "Qué es %{org}? - Participacion ciutadana"
+    verify:
+      info: "Per verificar lo compte, introdusissètz las donadas d’accès:"
+      info_code: "Introdusís ara lo còdi qu'as recebut a la tiá carta:"
+      submit: Verificar lo mieu compte
+      title: Verifica lo tieu compte

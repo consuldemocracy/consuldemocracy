@@ -1,0 +1,19 @@
+oc:
+  images:
+    remove_image: Eliminar image
+    form:
+      title: Image descriptiva
+      title_placeholder: Apond un title descriptiu per l'image
+      delete_button: Eliminar image
+      note: "Pòdes pujar una image dels seguents tipes: %{accepted_content_types}, fins un maximal de %{max_file_size} MB."
+      add_new_image: Apondre image
+      admin_title: "image"
+      admin_alt_text: "Tèxt alternatiu per l'image"
+    actions:
+      destroy:
+        notice: Image esborrada corrèctament.
+        alert: Se pòt pas eliminar lo image.
+    errors:
+      messages:
+        in_between: li cal èsser dintratz %{min} i %{max}
+        wrong_content_type: lo tipe de contengut %{content_type} coincidís pas amb cap dels tipes de contengut acceptat %{accepted_content_types}

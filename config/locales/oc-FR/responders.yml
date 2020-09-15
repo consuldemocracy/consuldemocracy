@@ -1,0 +1,37 @@
+oc:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} creat corrèctament."
+        debate: "Debat creat corrèctament."
+        direct_message: "Lo tieu messatge es estat enviat corrèctament."
+        poll: "Votacion creada corrèctament."
+        poll_booth: "Urna creada corrèctament."
+        poll_question_answer: "La responsa s'es creada corrèctament"
+        poll_question_answer_video: "Lo vidèo s'es creat corrèctament"
+        poll_question_answer_image: "L'image se carguèt corrèctament"
+        proposal: "Proposicion creada corrèctament."
+        proposal_notification: "Lo tieu message es estat enviat corrèctament."
+        budget_investment: "Proposicion d'inversion creada corrèctament."
+        signature_sheet: "Fuèlha de signaturas creadas corrèctament"
+        topic: "Lo tèma s'es creat corrèctament."
+        valuator_group: "S'es creat un grop de taxadors corrèctament"
+      save_changes:
+        notice: de cambiaments gardats
+      update:
+        notice: "%{resource_name} actualizat corrèctament."
+        debate: "Debat actualizat corrèctament."
+        poll: "Votacion actualizada corrèctament."
+        poll_booth: "Urna actualizada corrèctament."
+        active_poll: "La descripcion de las enquèstas s'es actualizada corrèctament."
+        proposal: "Proposicion actualizada corrèctament."
+        budget_investment: "Proposicion d'inversion actualizada corrèctament."
+        topic: "Lo tèma s'es actualizat corrèctament."
+        valuator_group: "S'es actualizat corrèctament lo grop de valoritzadors"
+        translation: "La traduccion s’a actualizat corrèctament"
+      destroy:
+        budget_investment: "Proposicion d'inversion eliminada."
+        error: "S'es pas pogut esborrar"
+        topic: "Lo tèma s'es suprimit corrèctament."
+        poll_question_answer_video: "Respondre al vidèo suprimit corrèctament."
+        valuator_group: "Lo grop de la valor s'es suprimit corrèctament"

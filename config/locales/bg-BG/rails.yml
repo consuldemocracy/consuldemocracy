@@ -1,35 +1,170 @@
 bg:
   date:
+    abbr_day_names:
+      - Нд
+      - Пн
+      - Вт
+      - Ср
+      - Чт
+      - Пт
+      - Сб
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - Ян
+      - Февр
+      - Март
+      - Апр
+      - Май
+      - Юни
+      - Юли
+      - Авг
+      - Септ
+      - Окт
+      - Ноем
+      - Дек
+    day_names:
+      - Неделя
+      - Понеделник
+      - Вторник
+      - Сряда
+      - Четвъртък
+      - Петък
+      - Събота
+    formats:
+      default: "%d.%m.%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Януари
+      - Февруари
+      - Март
+      - Април
+      - Май
+      - Юни
+      - Юли
+      - Август
+      - Септември
+      - Октомври
+      - Ноември
+      - Декември
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: около 1 час
+        other: около %{count} часа
+      about_x_months:
+        one: около 1 месец
+        other: около %{count} месеца
+      about_x_years:
+        one: около 1 година
+        other: около %{count} години
+      almost_x_years:
+        one: почти 1 година
+        other: почти %{count} години
+      half_a_minute: половин минута
+      less_than_x_minutes:
+        one: по-малко от минута
+        other: по-малко от %{count} минути
+      less_than_x_seconds:
+        one: по-малко от 1 секунда
+        other: по-малко от %{count} секунди
+      over_x_years:
+        one: над 1 година
+        other: над %{count} години
+      x_days:
+        one: 1 ден
+        other: "%{count} дни"
+      x_minutes:
+        one: 1 минута
+        other: "%{count} минути"
+      x_months:
+        one: 1 месец
+        other: "%{count} месеци"
+      x_years:
+        one: 1 година
+        other: "%{count} години"
+      x_seconds:
+        one: 1 секунда
+        other: "%{count} секунди"
+    prompts:
+      day: Ден
+      hour: Час
+      minute: Минута
+      month: Месец
+      second: Секунди
+      year: Година
+  errors:
+    messages:
+      accepted: трябва да бъде прието
+      blank: не може да бъде непопълнено
+      present: трябва да е непопълнено
+      confirmation: не съвпада %{attribute}
+      empty: не може да бъде празно
+      equal_to: трябва да е равно на %{count}
+      even: трябва да е четно
+      exclusion: запазено е
+      greater_than: трябва да е по-голямо от %{count}
+      greater_than_or_equal_to: трябва да е по-голямо или равно на %{count}
+      inclusion: не е включено в списъка
+      invalid: невалидно е
+      less_than: трябва да е по-малко от %{count}
+      less_than_or_equal_to: трябва да е по-малко или равно на %{count}
+      model_invalid: "Проверката бе неуспешна: %{errors}"
+      not_a_number: не е число
+      not_an_integer: трябва да е цяло число
+      odd: трябва да е нечетно
+      required: трябва да съществува
+      taken: вече е заето
+      too_long:
+        one: твърде дълго е (максимумът е 1 знак)
+        other: твърде дълго е (максимумът е %{count} знака)
+      too_short:
+        one: твърде кратко е (минимумът е 1 знак)
+        other: твърде кратко е (минимумът е %{count} знака)
+      wrong_length:
+        one: грешна дължина е (трябва да е 1 знак)
+        other: грешна дължина е (трябва да е %{count} знака)
+      other_than: трябва да е различно от %{count}
+    template:
+      body: "Имаше проблеми със следните полета:"
+      header:
+        one: 1 грешка забрани това %{model} да бъде запазено
+        other: "%{count} грешки забраниха това %{model} да бъде запазено"
+  helpers:
+    select:
+      prompt: Моля изберете
+    submit:
+      create: Създайте %{model}
+      submit: Запазете %{model}
+      update: Актуализирайте %{model}
   number:
     human:
+      decimal_units:
+        units:
+          billion: Милиард
+          million: Милион
+          quadrillion: Квадрилион
+          thousand: Хиляда
+          trillion: Трилион
       format:
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        units:
+          byte:
+            one: Байт
+            other: Байта
+  support:
+    array:
+      last_word_connector: ", и "
+      two_words_connector: " и "
+  time:
+    am: сутринта
+    formats:
+      datetime: "%d.%m.%Y %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%d.%m.%Y %H"
+    pm: след обяд

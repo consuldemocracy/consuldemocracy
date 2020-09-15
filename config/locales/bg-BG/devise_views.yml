@@ -1,1 +1,129 @@
 bg:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Имейл
+        submit: Изпратете отново инструкции
+        title: Изпратете отново инструкции за потвърждение
+      show:
+        instructions: Потвърждаване на акаунта с имейл %{email}
+        new_password_confirmation_label: Повторете паролата за достъп
+        new_password_label: Нова парола за достъп
+        please_set_password: Моля, изберете новата си парола (тя ще Ви позволи да влезете с имейла по-горе)
+        submit: Потвърдете
+        title: Потвърдете акаунта ми
+    mailer:
+      confirmation_instructions:
+        confirm_link: Потвърдете акаунта ми
+        text: "Можете да потвърдите имейл акаунта си на следната връзка:"
+        title: Добре дошли
+        welcome: Добре дошли
+      reset_password_instructions:
+        change_link: Променете паролата ми
+        hello: Здравейте
+        ignore_text: Ако не сте поискали промяна на паролата, можете да игнорирате този имейл.
+        info_text: Вашата парола няма да бъде променена, освен ако не получите достъп до връзката и не я редактирате.
+        text: "Получихме заявка за промяна на паролата ви. Можете да направите това на следната връзка:"
+        title: Променете паролата си
+      unlock_instructions:
+        hello: Здравейте
+        info_text: Вашият акаунт е блокиран поради прекалено голям брой неуспешни опити за влизане.
+        instructions_text: "Моля, кликнете върху тази връзка, за да отключите акаунта си:"
+        title: Вашият акаунт е заключен
+        unlock_link: Отключете акаунта ми
+    menu:
+      login_items:
+        login: Впишете се
+        logout: Отпишете се
+        signup: Регистрирайте се
+    organizations:
+      registrations:
+        new:
+          email_label: Имейл
+          organization_name_label: Име на организация
+          password_confirmation_label: Потвърдете парола
+          password_label: Парола
+          phone_number_label: Телефонен номер
+          responsible_name_label: Пълно име на лицето, отговорно за колектива
+          responsible_name_note: Това ще бъде лицето, представляващо сдружението / колектива, от чието име са представени предложенията
+          submit: Регистрирайте се
+          title: Регистрирайте се като организация или колектив
+        success:
+          back_to_index: Разбирам, върнете се на главната страница
+          instructions_1: "<strong>Ще се свържем с вас скоро </strong>, за да потвърдим, че действително представлявате този колектив."
+          instructions_2: Докато <strong> Вашият имейл се преглежда </strong>, изпратихме <strong> връзка, за да потвърдите акаунта си </strong>.
+          instructions_3: След като бъде потвърдено, може да започнете да участвате като непроверен колектив.
+          thank_you: Благодарим ви, че регистрирахте своя колектив в уеб сайта. В момента е <strong> в очакване на верифициране</strong>.
+          title: Регистриране на организация / колектив
+    passwords:
+      edit:
+        change_submit: Променете паролата ми
+        password_confirmation_label: Потвърдете новата парола
+        password_label: Нова парола
+        title: Променете паролата си
+      new:
+        email_label: Имейл
+        send_submit: Изпратете инструкции
+        title: Забравена парола?
+    sessions:
+      new:
+        login_label: Имейл или потребителско име
+        password_label: Парола
+        remember_me: Запомнете ме
+        submit: Въведете
+        title: Впишете се
+    shared:
+      links:
+        login: Въведете
+        new_confirmation: Не сте получили инструкции за активиране на вашия акаунт?
+        new_password: Забравили сте паролата си?
+        new_unlock: Не сте получили инструкции за отключване?
+        signin_with_provider: Влезте с %{provider}
+        signup: Нямате акаунт? %{signup_link}
+        signup_link: Регистрирайте се
+    unlocks:
+      new:
+        email_label: Имейл
+        submit: Изпратете отново инструкции за отключване
+        title: Изпратете отново инструкции за отключване
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Причина
+          info: Това действие не може да бъде отменено. Моля, уверете се, че това е, което искате.
+          info_reason: Ако желаете, назовете причина (незадължително)
+          submit: Изтриване на акаунта ми
+          title: Изтриване на акаунт
+        edit:
+          current_password_label: Текуща парола
+          edit: Редактирайте
+          email_label: Имейл
+          leave_blank: Оставете празно, ако не желаете да променяте
+          need_current: Имаме нужда от текущата ви парола, за да потвърдим промените
+          password_confirmation_label: Потвърдете новата парола
+          password_label: Нова парола
+          update_submit: Актуализация
+          waiting_for: "Очаква се потвърждение на:"
+        new:
+          cancel: Отказ за вход
+          email_label: Имейл
+          organization_signup: Представлявате ли организация или колектив? %{signup_link}
+          organization_signup_link: Регистрирайте се тук
+          password_confirmation_label: Потвърдете парола
+          password_label: Парола
+          redeemable_code: Код за потвърждение, получен по имейл (незадължително)
+          submit: Регистрирайте
+          terms: С регистрацията си приемате %{terms}
+          terms_link: начини и условия за употреба
+          terms_title: С регистрацията си приемате начините и условията за употреба
+          title: Регистрирайте
+          username_is_available: Налично потребителско име
+          username_is_not_available: Потребителско име вече се използва
+          username_label: Потребителско име
+          username_note: Име, което се показва до вашите публикации
+        success:
+          back_to_index: Разбирам, върнете се на главната страница
+          instructions_1: Моля, <b> проверете имейла си </b> - изпратихме Ви <b> връзка, за да потвърдите акаунта си </b>.
+          instructions_2: След като бъде потвърдено, може да започнете участие.
+          thank_you: Благодарим ви, че се регистрирахте за уеб сайта. Сега трябва да <b> потвърдите имейл адреса си</b>.
+          title: Потвърдете имейл адреса си

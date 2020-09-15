@@ -4,6 +4,9 @@ ca:
       verification:
         residence: "Residència"
         sms: "SMS"
+      local_census_records/import:
+        one: Importació del registre de cens local
+        other: Importació de registres de cens local
     attributes:
       verification:
         residence:
@@ -16,7 +19,29 @@ ca:
           confirmation_code: "SMS de confirmació"
         email:
           recipient: "El teu correu electrònic"
+      verification/letter:
+        email: "Correu electrònic"
+        password: "Contrasenya"
+        verification_code: "Codi que heu rebut a la carta"
+      verification/management/document:
+        document_type: "Tipus de document:"
+        document_number: "Número de Document"
+      verification/residence:
+        date_of_birth: "Data de naixement"
+        document_type: "Tipus de document"
+        postal_code: "Codi postal"
+      verification/sms:
+        confirmation_code: "Introduïu el codi que heu rebut al mòbil"
       officing/residence:
         document_type: "Tipus de document"
         document_number: "Número de document (incloent-hi lletres)"
         year_of_birth: "Any de naixement"
+      local_census_records/import:
+        file: Dossier
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "El format del fitxer és incorrecte. El format de fitxer permès és: %{valid_extensions}."
+              headers: "Les capçaleres de fitxer donades són incorrectes. Les capçaleres del fitxer han de tenir els noms següents: %{required_headers}."

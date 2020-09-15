@@ -1,1 +1,90 @@
 bg:
+  officing:
+    header:
+      title: Polling/ Изборно анкетиране
+    dashboard:
+      index:
+        title: Обслужване на анкета
+        info: Тук можете да валидирате потребителски документи и да съхранявате резултати от гласуването
+        no_shifts: Днес нямате служебни смени.
+    menu:
+      voters: Валидиране на документа
+      total_recounts: Общо преброяване и резултати
+    polls:
+      final:
+        title: Анкети, готови за окончателно преброяване
+        no_polls: Вие не обслужвате окончателно преброяване в нито една активна анкета
+        select_poll: Изберете анкета
+        add_results: Добавете резултати
+    poll_budgets:
+      see_ballot_sheets: Вижте списъка с бюлетини
+      index:
+        title: "%{poll_budget} - Списък с бюлетини"
+        ballot_sheet: "Бюлетина %{id}"
+        ballot_sheet_name: Име
+        ballot_sheet_author: Автор
+        ballot_sheet_creation_date: Дата на създаване
+        empty_results: Все още няма бюлетини за тази анкета
+      new:
+        title: "%{poll_budget} - Нова бюлетина"
+        booth: Кабинка
+        select_booth: Изберете кабинка
+        csv_data: CSV данни
+        submit: Запазете
+      show:
+        created_at: Дата на създаване
+        author: Автор
+        data: CSV данни
+    booth:
+      new:
+        title: "Изберете кабинка"
+    results:
+      flash:
+        create: "Резултатите са запазени"
+        error_create: "Резултатите на са запазени. Грешка в данните."
+        error_wrong_booth: "Грешна кабинка. Резултатите НЕ са запазени."
+      new:
+        title: "%{poll} - Добавете резултати"
+        not_allowed: "Нямате право да добавяте резултати за тази анкета"
+        booth: "Кабинка"
+        date: "Дата"
+        select_booth: "Изберете кабинка"
+        ballots_white: "Напълно празни бюлетини"
+        ballots_null: "Невалидни бюлетини"
+        ballots_total: "Валидни бюлетини"
+        submit: "Запазете"
+        results_list: "Вашите резултати"
+        see_results: "Вижте резултати"
+      index:
+        no_results: "Няма резултати"
+        results: Резултати
+        table_answer: Отговор
+        table_votes: Гласове
+        table_whites: "Напълно празни бюлетини"
+        table_nulls: "Невалидни бюлетини"
+        table_total: "Валидни бюлетини"
+    residence:
+      flash:
+        create: "Документ потвърден с преброяване/ Document verified with Census"
+        not_allowed: "Днес нямате служебни смени"
+      new:
+        title: Валидиране на документа
+        document_number: "Номер на документа (включително букви)"
+        submit: Валидиране на документа
+        error_verifying_census: "Преброяването не успя да потвърди този документ."
+        form_errors: предотвратена проверката на този документ
+    voters:
+      new:
+        title: Анкети
+        table_poll: Анкета
+        table_status: Състояние на анкетите
+        table_actions: Действия
+        not_to_vote: Лицето е решило да не гласува за сега
+      show:
+        can_vote: Може да гласувате
+        cannot_vote: Лицето не може да гласува, защото не е регистрирано в района(ите), където се провежда гласуването.
+        error_already_voted: Вече е участвал/а в тази анкета
+        submit: Потвърдете гласуването
+        success: "Гласуването бе въведено!"
+      can_vote:
+        submit_disable_with: "Чакайте, потвърждаване на вота..."

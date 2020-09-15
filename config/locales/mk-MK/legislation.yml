@@ -1,1 +1,120 @@
 mk:
+  legislation:
+    annotations:
+      comments:
+        see_all: Види ги сите
+        see_complete: Види комплетно
+        comments_count:
+          one: "%{count} коментари"
+          other: "%{count} коментари"
+        replies_count:
+          one: "%{count} одговори"
+          other: "%{count} одговори"
+        cancel: Откажи
+        publish_comment: Објави коментар
+      form:
+        phase_not_open: Оваа фаза не е започната
+      index:
+        title: Коментари
+        comments_about: Коментари за
+        see_in_context: Види контекст
+        comments_count:
+          one: "%{count} коментари"
+          other: "%{count} коментари"
+      show:
+        title: Коментар
+      version_chooser:
+        seeing_version: Коментари за верзијата
+        see_text: Види нацрт текст
+    draft_versions:
+      changes:
+        title: Промени
+        seeing_changelog_version: Сума на промени при ревизија
+        see_text: Види нацрт текст
+      show:
+        loading_comments: Вчитување на коментари
+        seeing_version: Ја гледате нацрт верзијата
+        select_draft_version: Избери нацрт текст
+        select_version_submit: види
+        updated_at: ажурирано на %{date}
+        see_changes: види преглед на промените
+        see_comments: Погледни ги сите коментари
+        text_toc: Табела на содржини
+        text_body: Текст
+        text_comments: Коментари
+    processes:
+      header:
+        additional_info: Додатни информации
+        description: Опис
+        more_info: Повеќе информации и контекст
+      proposals:
+        empty_proposals: Нема предлози
+        filters:
+          random: Разно
+          winners: Селектирано
+      debate:
+        empty_questions: Нема ниедно прашање
+        participate: Учествувај во дебата
+      index:
+        filter: Филтер
+        filters:
+          open: Отворени процеси
+          past: Минато
+        no_open_processes: Нема отворени процеси
+        no_past_processes: Нема минати процеси
+        section_header:
+          icon_alt: Икона за колаборативна легислатива
+          title: Колаборативна легислатива
+          help: Помош за колаборативна легислатива
+        section_footer:
+          title: Помош за колаборативна легислатива
+          description: Учествувај во дебати и процеси пред одобрувањето на нови правила или стратегии. Твоето мислење ќе биде земено во предвид.
+      phase_not_open:
+        not_open: Оваа фаза не е започната
+      phase_empty:
+        empty: Ништо не е се уште објавено
+      process:
+        see_latest_comments: Види ги последните коментари
+        see_latest_comments_title: Коментирај на овој процес
+      shared:
+        key_dates: Фази на партиципација
+        homepage: Почетна страница
+        debate_dates: Дебата
+        draft_publication_date: Објавување на нацрт текстот
+        allegations_dates: Коментари
+        result_publication_date: Конечно објавување на резултати
+        milestones_date: Следи
+        proposals_dates: Предлози
+    questions:
+      comments:
+        comment_button: Објави одговор
+        comments_title: Отворени одговори
+        comments_closed: Затворена фаза
+        form:
+          leave_comment: Остави одговор
+      question:
+        comments:
+          zero: Нема коментари
+          one: "%{count} коментари"
+          other: "%{count} коментари"
+        debate: Дебата
+      show:
+        answer_question: Објави одговор
+        next_question: Следно прашање
+        first_question: Прво прашање
+        share: Сподели
+        title: Колаборативен легислативен процес
+      participation:
+        phase_not_open: Оваа фаза не е започната
+        organizations: Организациите немаат дозвола да учествуваат во дебатата
+        unauthenticated: Неопходно е %{signin} или %{signup} за учество.
+        verified_only: Само верификувани корисници можат да учествуваат, %{verify_account}.
+        debate_phase_not_open: Фазата на дебата е завршена и одговори повеќе не се прифаќаат
+    shared:
+      share: Сподели
+      share_comment: Коментирај на %{version_name} од нацрт текстот за процесот %{process_name}
+    proposals:
+      form:
+        tags_label: "Категории"
+      not_verified: "За предлози за гласање %{verify_account}."
+      process_title: Колаборативен легислативен процес
