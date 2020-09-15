@@ -572,9 +572,7 @@ en:
         title: Poster preview
         poster_title: "Do not keep looking,"
         poster_subtitle: "back me up! ;)"
-        intro_text:
-          "<strong>I am participating in %{org}</strong> with my own citizen proposal and only if you also add you can I achieve the
-          necessary support to make the city we all want."
+        intro_text: "<strong>I am participating in %{org}</strong> with my own citizen proposal and only with your support can we make the city we all want"
         proposal_code: "Code of the proposal: %{code}"
         support: Support my proposal
         footer: "<strong>Visit %{link} and support this proposal.</strong> The more, the better. Let's do our bit. Thank you!"
