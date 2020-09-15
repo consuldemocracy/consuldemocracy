@@ -38,6 +38,7 @@ es:
       open_city_title: Decide cómo quieres que sea tu provincia
       presupuestos_provinciales_title: Presupuestos Provinciales 2019
       presupuestos_provinciales_description: La Diputación de Valladolid destinará 1,2 millones de euros a Presupuestos Participativos para el ejercicio de 2019. ¡Anímate y participa! Eleva propuestas y selecciona entre ellas las que considera prioritarias.
+      poll_questions: Encuestas
   notifications:
     index:
       comments_on:
