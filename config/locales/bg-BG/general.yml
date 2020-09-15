@@ -673,7 +673,7 @@ bg:
       author_type: "По категория на автора"
       author_type_blank: "Изберете категория"
       date: "По дата"
-      date_placeholder: "ден/месец/година"
+      date_placeholder: "DD/MM/YYYY"
       date_range_blank: "Изберете дата"
       date_1: "Последни 24 часа"
       date_2: "Последна седмица"
