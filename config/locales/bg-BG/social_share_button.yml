@@ -1,1 +1,3 @@
 bg:
+  social_share_button:
+    share_to: "Споделяне с %{name}"

@@ -4,6 +4,9 @@ el:
       verification:
         residence: "Τόπος Κατοικίας"
         sms: "SMS"
+      local_census_records/import:
+        one: Εισαγωγή
+        other: Εισαγωγή αρχείων τοπικών απογραφών
     attributes:
       verification:
         residence:
@@ -16,14 +19,29 @@ el:
           confirmation_code: "Κωδικός επιβεβαίωσης"
         email:
           recipient: "E-Mail"
+      verification/letter:
+        email: "E-Mails"
+        password: "Κωδικός πρόσβασης"
+        verification_code: "Κωδικός τον οποίο έχετε λάβει μέσω επιστολής"
+      verification/management/document:
+        document_type: "Τύπος εγγράφου:"
+        document_number: "Αριθμός εγγράφου"
+      verification/residence:
+        date_of_birth: "Ημερομηνία γέννησης"
+        document_type: "Τύπος εγγράφου"
+        postal_code: "Ταχυδρομικός κώδικας"
+      verification/sms:
+        confirmation_code: "Εισάγετε τον κωδικό που λάβατε στο κινητό σας"
       officing/residence:
         document_type: "Τύπος εγγράφου"
-        document_number: "Αριθμός εγγράφου (περιλαμβανομένων χαρακτήρων)"
-        year_of_birth: "Χρονολογία γέννησης"
+        document_number: "Αριθμός εγγράφου (συμπεριλαμβανομένων γραμμάτων)"
+        year_of_birth: "Έτος γέννησης"
+      local_census_records/import:
+        file: Αρχείο
     errors:
       models:
         local_census_records/import:
           attributes:
             file:
-              extension: "Λανθασμένη μορφή αρχείου. Eπιτρεπόμενη μορφή: %{valid_extensions}."
+              extension: "Λανθασμένη μορφή αρχείου. Η επιτρεπόμενη μορφή του αρχείου είναι: %{valid_extensions}."
               headers: "Λανθασμένες επικεφαλίδες αρχείου. Eπιτρεπόμενες επικεφαλίδες: %{required_headers}."

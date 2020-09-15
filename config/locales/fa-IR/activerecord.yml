@@ -315,7 +315,6 @@ fa:
           attributes:
             document_number:
               not_in_census: "سند در سرشماری نیست."
-              has_voted: "کاربر قبلا رای داده است"
         legislation/process:
           attributes:
             end_date:

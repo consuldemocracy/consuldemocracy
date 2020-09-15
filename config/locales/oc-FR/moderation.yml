@@ -1,0 +1,117 @@
+oc:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquejar d'autors
+        confirm: '¿Estás segur?'
+        filter: Filtrar
+        filters:
+          all: totes
+          pending_flag_review: Sens decidir
+          with_ignored_flag: Marcats coma revisats
+        headers:
+          comment: Comentar
+          moderate: Moderar
+        hide_comments: Amagar de comentaris
+        ignore_flags: Marcar como revisadas
+        order: Òrdre
+        orders:
+          flags: Mai denonciadas
+          newest: Mai nòus
+        title: Comentarios
+    dashboard:
+      index:
+        title: Moderación
+    debates:
+      index:
+        block_authors: Bloquejar d'autors
+        confirm: '¿Estás segur?'
+        filter: Filtrar
+        filters:
+          all: totes
+          pending_flag_review: Sens decidir
+          with_ignored_flag: Marcats coma revisats
+        headers:
+          debate: debat prealable
+          moderate: Moderar
+        hide_debates: Amagar de debats
+        ignore_flags: Marcar como revisadas
+        order: Òrdre
+        orders:
+          created_at: Mai nòus
+          flags: Mai denonciadas
+        title: de Debats
+    header:
+      title: Moderación
+    menu:
+      flagged_comments: Comentarios
+      flagged_debates: de Debats
+      flagged_investments: d'Inversions budgetàrias
+      proposals: de Proposicions ciutadanas
+      proposal_notifications: de Proposicions de notificacions
+      users: Bloquejar d'usatgièrs
+    proposals:
+      index:
+        block_authors: Bloquejar d'autors
+        confirm: '¿Estás segur?'
+        filter: Filtrar
+        filters:
+          all: totes
+          pending_flag_review: Pendentes de revision
+          with_ignored_flag: Marcar como revisadas
+        headers:
+          moderate: Moderar
+          proposal: la proposicion
+        hide_proposals: Amagar de Proposicions
+        ignore_flags: Marcar como revisadas
+        order: Ordenar per
+        orders:
+          created_at: Mai recents
+          flags: Mai denonciadas
+        title: de Proposicions ciutadanas
+    budget_investments:
+      index:
+        block_authors: Bloquejar d'autors
+        confirm: '¿Estás segur?'
+        filter: Filtrar
+        filters:
+          all: totes
+          pending_flag_review: Sens decidir
+          with_ignored_flag: Marcats coma revisats
+        headers:
+          moderate: Moderar
+          budget_investment: Inversion budgetària
+        hide_budget_investments: Amagatz las inversions budgetàrias
+        ignore_flags: Marcar como revisadas
+        order: Ordenar per
+        orders:
+          created_at: Mai recents
+          flags: Mai denonciadas
+        title: d'Inversions budgetàrias
+    proposal_notifications:
+      index:
+        block_authors: Bloquejar d'autors
+        confirm: '¿Estás segur?'
+        filter: Filtrar
+        filters:
+          all: totes
+          pending_review: Pendentes de revision
+          ignored: Marcar como revisadas
+        headers:
+          moderate: Moderar
+          proposal_notification: Notificacion de la proposicion
+        hide_proposal_notifications: Amagar de Proposicions
+        ignore_flags: Marcar como revisadas
+        order: Ordenar per
+        orders:
+          created_at: Mai recents
+          moderated: Moderada
+        title: de Notificacions de proposicions
+    users:
+      index:
+        hidden: Bloquejat
+        hide: Bloquejar
+        search: Cercar
+        search_placeholder: email o nom d'usatgièr
+        title: Bloquejar d'usatgièrs
+      notice_hide: Usatgièr bloquejat. Se son amagats totes los sieus debats e de comentaris.

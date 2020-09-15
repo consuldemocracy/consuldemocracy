@@ -4,9 +4,78 @@ eu:
       activity:
         one: "jarduera"
         other: "jarduerak"
+      budget:
+        one: "Partaidetzazko aurrekontua"
+        other: "Partaidetzazko aurrekontuak"
+      budget/investment:
+        one: "Gastu proiektua"
+        other: "Gastu proiektuak"
+      comment:
+        one: "Iruzkina"
+        other: "Iruzkinak"
+      debate:
+        one: "Eztabaida"
+        other: "Eztabaidak"
+      tag:
+        one: "Gaia"
+        other: "Gaiak"
+      user:
+        one: "Erabiltzailea"
+        other: "Erabiltzaileak"
+      moderator:
+        one: "Moderatzailea"
+        other: "Moderatzaileak"
+      administrator:
+        one: "Administratzailea"
+        other: "Administratzaileak"
+      valuator:
+        one: "Ebaluatzailea"
+        other: "Ebaluatzaileak"
+      valuator_group:
+        one: "Ebaluatzaile taldea"
+        other: "Ebaluatzaile taldeak"
+      manager:
+        one: " Kudeatzaile"
+        other: " Kudeatzaileak"
+      newsletter:
+        one: "Albiste-berria"
+        other: "Albiste-berriak"
+      vote:
+        one: "Bozka"
+        other: "Bozkak"
+      organization:
+        one: "Erakunde"
+        other: "Erakundeak"
+      poll/booth:
+        one: "hautetsontzia"
+        other: "hautetsontziak"
+      poll/officer:
+        one: "mahaiburua"
+        other: "mahaiburuak"
+      proposal:
+        one: "Herri proposamena"
+        other: "Herri proposamenak"
+      site_customization/page:
+        one: Orria
+        other: Orriak
+      site_customization/image:
+        one: Irudia
+        other: Irudiak
+      site_customization/content_block:
+        one: Bloke
+        other: Blokeak
+      legislation/process:
+        one: "Prozesu"
+        other: "Prozesuak"
+      legislation/draft_versions:
+        one: "Zirriborro bertsioa"
+        other: "Zirriborro bertsioak"
       legislation/questions:
         one: "Galdera"
         other: "Galderak"
+      legislation/question_options:
+        one: "Erantzuk itxiko aukera"
+        other: "Erantzuk itxiko aukerak"
       legislation/answers:
         one: "Erantzuna"
         other: "Erantzunak"
@@ -16,37 +85,235 @@ eu:
       images:
         one: "Irudia"
         other: "Irudiak"
+      topic:
+        one: "Gaia"
+        other: "Gaiak"
+      poll:
+        one: "Bozkaketa"
+        other: "Bozkaketak"
+      proposal_notification:
+        one: "Proposamen jakinarazpena"
+        other: "Proposamen jakinarazpenak"
     attributes:
       budget:
         name: "Izena"
+        description_accepting: "Proiektu aurkezpen faseko deskribapena"
+        description_reviewing: "Barne berrikusketa faseko deskribapena"
+        description_selecting: "Babes faseko deskribapena"
+        description_valuating: "Ebaluaketa faseko deskribapena"
+        description_balloting: "Bozkaketa faseko deskribapena"
+        description_reviewing_ballots: "Bozka berrikusketa faseko deskribapena"
+        description_finished: "Aurrekontua amaitu/emaitza faseko deskribapena"
+        phase: "Faseaa"
+        currency_symbol: "Dibisa"
+      budget/investment:
+        heading_id: "Aurrekontu saila"
+        title: "Izenbrua"
+        description: "Beskribapena"
+        external_url: "Gehigarrizko agirietara lotura"
+        administrator_id: "Administratzailea"
+        location: "Kokapena (aukerkoa)"
+        organization_name: "Erakunde/kolektibo edo beste pertsona batzuen izenean proposatzen ari bazara, beraien izenak idatzi"
+        image: "Gastu proiektuaren irudi deskriptiboa"
+        image_title: "Irudiaren izenburua"
       milestone/status:
         name: "Izena"
+      budget/heading:
+        name: "Aurrekontu sailaren izenburua"
+        price: "Kantitatea"
+        population: "Biztanleak"
       comment:
         body: "Iruzkin"
         user: "Erabiltzailea"
+      debate:
+        author: "Sortzailea"
+        description: "Iritzia"
+        terms_of_service: "Zerbitzu baldintzak"
+        title: "Izenburua"
       proposal:
+        author: "Sortzailea"
+        title: "Izenburua"
         question: "Galdera"
+        description: "Deskribapena"
+        terms_of_service: "Zerbitzu baldintzak"
       user:
+        login: "Erabiltzaile izena edo emaila"
         email: "E-mail"
+        username: "Erabiltzaile izena"
+        password_confirmation: "Pasahitz berrespenea"
+        password: "Pasahitza"
+        current_password: "Oraingo pasahitza"
+        official_position: "Kargu publikoa"
+        official_level: "Kargu maila"
+        phone_number: "Telefonoa"
+        redeemable_code: "Eskutitz bidezko egiaztapen kodea (aukerakoa)"
+      organization:
+        name: "Erakundearen izena"
+        responsible_name: "Kolektibo/talde arduraduna"
       poll:
         name: "Izena"
+        starts_at: "Irekiera data"
+        ends_at: "Itxiera data"
+        geozone_restricted: "Zonaldeka mugatuta"
+        summary: "Laburpena"
+        description: "Deskribapena"
       poll/translation:
         name: "Izena"
       poll/question:
         title: "Galdera"
+        summary: "Laburpena"
+        description: "Deskribapena"
+        external_url: "Gehigarrizko agirietara lotura"
       poll/question/translation:
         title: "Galdera"
+      signature_sheet:
+        signable_type: "Firma orri mota"
+        signable_id: "Herri proposamen/Gastu proiektu ID-a"
+        document_numbers: "Agiri zenbakiak"
+      site_customization/page:
+        content: Edukia
+        created_at: Sortuta
+        subtitle: Azpititulua
+        slug: Slug
+        status: Egoera
+        title: Izenburua
+        updated_at: Azken eguneraketa
+        more_info_flag: Laguntza orrian erakutsi
+        print_content_flag: Edukia inprimitzeko botoia
+        locale: Hizkuntza
       site_customization/image:
         name: Izena
         image: Irudia
       site_customization/content_block:
         name: Izena
+        locale: Hizkuntza
+        body: Edukia
       legislation/process:
+        title: Prosezu izenburua
+        summary: Laburpena
+        description: Zertan datza
+        additional_info: Gehigarrizko informazioa
+        start_date: Prosezuaren hasiera data
+        end_date: Prosezuaren amaiera data
+        debate_start_date: Eztabaidaren hasiera data
+        debate_end_date: Eztabaidaren amaiera data
+        draft_publication_date: Zirriborroaren argitarapen data
+        allegations_start_date: Alegazioen hasiera data
+        allegations_end_date: Alegazioen amaiera data
         proposals_phase_start_date: Hasi
         proposals_phase_end_date: Amaitu
+        result_publication_date: Azken emaitzen argitarapen data
+      legislation/draft_version:
+        title: Bertsio izenburua
+        body: Testua
+        changelog: Aldaketak
+        status: Egoera
+        final_version: Azken bertsioa
+      legislation/question:
+        title: Izenburua
+        question_options: Erantzunak
+      legislation/question_option:
+        value: Balorea
       legislation/annotation:
         text: Iruzkin
+      document:
+        title: Izenburua
+        attachment: "Itsatsitako fitxategia"
+      image:
+        title: Izenburua
+        attachment: "Itsatsitako fitxategia"
       poll/question/answer:
         title: Erantzuna
+        description: Deskribapena
       poll/question/answer/translation:
         title: Erantzuna
+      poll/question/answer/video:
+        title: Izenburua
+        url: Kanpo bideoa
+      newsletter:
+        segment_recipient: Hartzaileak
+        subject: Gaia
+        from: "Bidaltzailea"
+        body: Emailaren edukia
+      widget/card:
+        label: Etiketa (aukerakoa)
+        title: Izenburua
+        description: Deskribapena
+        link_text: Loturaren testua
+        link_url: URL lotura
+      widget/feed:
+        limit: Elementu kopurua
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Erabiltzaile honek kodea elkartua du jada"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "gaiak %{count} ala %{count} baino gutxiago izan behar dira"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Eguneko mezu pribatu gehiengora heldu zara."
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Irudiak gutxienez %{required_min_width}px izan behar ditu luzeran"
+              min_image_height: "Irudiak gutxienez %{required_min_height}px izan behar ditu altueran"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Erabiltzaile segmentua baliogabekoa da"
+        map_location:
+          attributes:
+            map:
+              invalid: Mapa ezin da hutsik gelditu. Puntu bat gehitu mapan edo maparik ez dela behar markatu.
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Agiri hau ez da erroldan ageri"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: Hasiera dataren bardina ala beranduagokoa izan behar du
+            debate_end_date:
+              invalid_date_range: Eztabaida hasiera dataren bardina ala beranduagokoa izan behar du
+            allegations_end_date:
+              invalid_date_range: Alegazio hasiera dataren bardina ala beranduagokoa izan behar du
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "gaiak %{count} ala %{count} baino gutxiago izan behar dira"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "gaiak %{count} ala %{count} baino gutxiago izan behar dira"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Jakinarazpen artean %{interval} egun itxaron behar dituzu gutxienez"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Erroldan egiaztatu gabe."
+              already_voted: "Proposamen hau bozkatu dizi jada"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "letrak, zenbakiak, _ eta - izan behar dira"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Gutxienez %{required_min_width}px izan behar ditu zabaleran"
+              image_height: "Gutxienez %{required_min_width}px izan behar ditu altueran"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Ezin dezkazezu ebaluaketa iruzkindu"
+      messages:
+        record_invalid: "Egiaztapenaren errorea: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Ezin daiteke erregiztroa ezabatu menpeko %{record} bat baitago"
+          has_many: "Ezin daiteke erregiztroa ezabatu menpeko %{record} baitaude"

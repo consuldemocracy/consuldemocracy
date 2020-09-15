@@ -1,0 +1,186 @@
+oc:
+  budgets:
+    ballots:
+      show:
+        title: Los mieus vòts
+        no_balloted_group_yet: "As votat pas encara de projèctes d'aquel grop, vòta!"
+        remove: Levar vòt
+        voted:
+          one: "Avètz votat <span>one</span> inversion."
+          other: "Avètz votat <span>%{count}</span> d'inversions."
+        voted_info: "La vòstra votacion es confirmada."
+        voted_info_2: "Mas podètz cambiar lo vòstre vòt en quin moment que siá fins que se barre aquela fasa."
+        zero: As votat pas encara cap de proposicion d'inversion.
+      reasons_for_not_balloting:
+        not_logged_in: As de besonh %{signin} o %{signup}.
+        not_verified: Las proposicions d'inversion pòdon solament èsser avaladas per usatgièrs verificats, %{verify_account}.
+        organization: Las associacions pòdon pas avalar
+        not_selected: Se pòdon pas votar de proposicions inviables.
+        not_enough_money: "Avètz ja assignat lo budgèt disponible.<br><small>Remembratz que podètz %{change_ballot} a quina ora que siá</small>"
+        no_ballots_allowed: Lo periòde de votacion es barrat.
+        different_heading_assigned: "Avètz ja votat un títol desparièr: %{heading_link}"
+        change_ballot: cambiar los tieus vòts
+        casted_offline: Avètz ja participat defòra de linha
+    groups:
+      show:
+        title: Selecciona una opcion
+        unfeasible_title: de Proposicions inviables
+        unfeasible: Veire las proposicions inviables
+        unselected_title: Proposicions pas seleccionadas per la votacion finala
+        unselected: Veire las proposicions pas seleccionadas per la votacion finala
+    phase:
+      drafting: Borrolhon (Pas visible pel public)
+      informing: informacion
+      accepting: en Acceptant de proposicions
+      reviewing: en Revisant de proposicions
+      selecting: Seleccion de proposicions
+      valuating: Avaloracion de proposicions
+      publishing_prices: de Prèses dels projèctes de publicacion
+      balloting: de Projèctes de votacion
+      reviewing_ballots: Revisar la votacion
+      finished: Presupost finalizat
+    index:
+      title: de Budgèts participatius
+      empty_budgets: I a pas de budgèts.
+      section_header:
+        icon_alt: Icòna dels budgèts participatius
+        title: de Budgèts participatius
+        help: Ajuda amb budgèts participatius
+        all_phases: Veire totas las fasas
+      all_phases: de Fasas de l'inversion budgetària
+      map: de Proposicions d’inversions budgetàrias situadas geogràficament
+      investment_proyects: Lista de totes los projèctes d’inversion
+      unfeasible_investment_proyects: Lista de totes los projèctes d'inversion inviable
+      not_selected_investment_proyects: Lista de totes los projèctes d'inversion pas seleccionada per las votacions
+      finished_budgets: Budgèts participatius finalizats
+      see_results: veire de resultats
+      section_footer:
+        title: Ajuda amb budgèts participatius
+        description: Amb los budgèts participatius, los ciutadans decidisson a quines projèctes se destina una part del budgèt.
+      milestones: de Hitas
+    investments:
+      form:
+        tag_category_label: "de Categorias"
+        tags_instructions: "Etiqueta aquela proposicion. Pòdes escuélher entre las categorias prepausadas o introdusir las que desiras"
+        tags_label: d'Etiquetas
+        tags_placeholder: "Escriu las etiquetas que desiras separadas per coma (',')"
+        map_location: "Ubicacion de la mapa"
+        map_location_instructions: "Desplaçatz-vos a la mapa fins a l'ubicacion e metètz-i lo mercado."
+        map_remove_marker: "Elimina lo mercador de mapa"
+        map_skip_checkbox: "Aquela inversion a pas una ubicacion concrèta o ne sabi pas."
+      index:
+        title: de Budgèts ciutadans
+        unfeasible: de Proposicions d'inversion pas viabla
+        unfeasible_text: "Las inversions lor cal complir de divèrses critèris (legalitat, concrecion, que supèren pas lo limit del budgèt) per èsser declarats viables e arribar a la fasa de votacion finala. Totas las inversions que complisson pas aqueles critèris se marcan coma inviables e se publican a la lista seguenta, amassa amb lo sieu informe de inviabilitat.."
+        by_heading: "de Proposicions d'inversion amb domeni: %{heading}"
+        search_form:
+          button: Cercar
+          placeholder: Cercar de proposicions d'inversion...
+          title: Cercar
+        search_results:
+          one: " que conten lo tèrme <strong>'%{search_term}'</strong>"
+          other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
+        sidebar:
+          my_ballot: Los mieus vòts
+          different_heading_assigned: "Avètz de vòts actius en un autre títol: %{heading_link}"
+          change_ballot: "Se càmbias d'opinion pòdes esborrar los tieus vòts en %{check_ballot} e tornar a començar."
+          check_ballot_link: "revisar los mieus vòts"
+          zero: As votat pas encara cap de proposicion d'inversion.
+          verified_only: "Per crear una nòva proposicion d'inversion %{verify}."
+          create: "Crear una inversion budgetària"
+          not_logged_in: "Per crear una nòva proposicion d'inversion te cal %{sign_in} o %{sign_up}."
+          by_feasibility: Per viabilitat
+          feasible: Veire las proposicions d'inversion viabla
+          unfeasible: Veire las proposicions d'inversion inviable
+        orders:
+          random: Aleatòries
+          confidence_score: Mai avaladas
+          price: Per còst
+      share:
+        message: "Creèri lo projècti d’inversion %{title} a %{handle}.	Crèa tanben un projècti d’inversion."
+      show:
+        author_deleted: Usatgièr eliminat
+        price_explanation: Informe de còst <small>(opcional, dada pública)</small>
+        unfeasibility_explanation: Informe de inviabilitat
+        code: "Còdi del projècte d'inversion: <strong>%{code}</strong>"
+        location: "Ubicacion: <strong>%{location}</strong>"
+        organization_name: "Proposicion en nom de: <strong>%{name}</strong>"
+        share: partejar
+        title: Proposicion d'inversion
+        supports: d'Avals
+        votes: de Votacions
+        price: Còst
+        comments_tab: Comentarios
+        milestones_tab: de Hitas
+        author: Autor
+        project_unfeasible: "Aquel projècti d’inversion <strong>s'es marcat coma pas factible</strong> e passarà pas a la fasa de votacions."
+        project_selected: "Aquel projècti d’inversion <strong>es estat seleccionada</strong> per fasa de votacion."
+        project_winner: "Projècti d’inversion ganhanta"
+        project_not_selected: "Aquel projècti d’inversion <strong>es pas estat seleccionat</strong> per fasa de votacion."
+        see_price_explanation: Consultatz l’explicacion de prèses
+      wrong_price_format: Pòt solament comprene de caractèrs numèrics
+      investment:
+        add: Votacion
+        already_added: As ja apondut aquela proposicion d'inversion
+        already_supported: Avètz ja sostengut a aquel projècte d'inversion. Parteja-o!
+        support_title: Avalar aquela proposicion d'inversion
+        confirm_group:
+          one: "Podètz solament suportar d'inversions a %{count} districte. Se contunhatz, podètz pas cambiar l’eleccion de lo vòstre districte. Ès segur?"
+          other: "Podètz solament suportar d'inversions a %{count} de districtes. Se contunhatz, podètz pas cambiar l’eleccion de lo vòstre districte. Ès segur?"
+        supports:
+          zero: Sens supòrts
+          one: 1 aval
+          other: "%{count} d'avals"
+        give_support: Avalar
+      header:
+        check_ballot: Revisar los mieus vòts
+        different_heading_assigned: "Avètz de vòts actius en un autre títol: %{heading_link}"
+        change_ballot: "Se càmbias d'opinion pòdes esborrar los tieus vòts en %{check_ballot} e tornar a començar."
+        check_ballot_link: "revisar los mieus vòts"
+        price: "Aquela partida a un budgèt de"
+    progress_bar:
+      assigned: "Avètz assignat: "
+      available: "Budgèt disponible: "
+    show:
+      group: Nom d'usatgièr
+      phase: Fasa actuala
+      unfeasible_title: de Proposicions inviables
+      unfeasible: Veire las proposicions inviables
+      unselected_title: Proposicions pas seleccionadas per la votacion finala
+      unselected: Veire las proposicions pas seleccionadas per la votacion finala
+      see_results: veire de resultats
+    results:
+      link: de resultats
+      page_title: "%{budget} - de Resultats"
+      heading: "de Resultats budgèts participatius"
+      heading_selection_title: "Domeni d'accion"
+      ballot_lines_count: de Votacions
+      hide_discarded_link: Amaga escartadas
+      show_all_link: Mòstra totas
+      price: Còst
+      amount_available: budgèt disponible
+      accepted: "Proposicion d'inversion acceptada:"
+      discarded: "Proposicion d'inversion escartada:"
+      incompatibles: Incompatibles
+      investment_title: Títol del Projècte
+      investment_proyects: Lista de totes los projèctes d’inversion
+      unfeasible_investment_proyects: Lista de totes los projèctes d'inversion inviable
+      not_selected_investment_proyects: Lista de totes los projèctes d'inversion pas seleccionada per las votacions
+    executions:
+      link: "de Hitas"
+      page_title: "%{budget} - de Hitas"
+      heading: "Budgèt participatiu Hitas"
+      heading_selection_title: "Domeni d'accion"
+      no_winner_investments: "I a pas d'inversions ganhantas dins aquel estat"
+      filters:
+        status:
+          label: "Estat actual del projècte"
+          all: "Totes (%{count})"
+        milestone_tag:
+          label: "Etiqueta hita"
+          all: "Totes (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "La data d’inici pòt pas èsser parièr o posterior a la de finalizacion"
+        prev_phase_dates_invalid: "La data d’inici li cal èsser posterior a la data d’inici de la fasa abilitada anteriora (%{phase_name})"
+        next_phase_dates_invalid: "La data de finalizacion li cal èsser anteriora a la data de finalizacion de la seguenta fasa abilitada (%{phase_name})"

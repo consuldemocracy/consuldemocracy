@@ -1,1 +1,53 @@
 eu:
+  community:
+    sidebar:
+      title: Erkidegoa
+      description:
+        proposal: Proposamen honen erabiltzailearen erkidegoan parte hartu ezazu.
+        investment: Gastu proiektu honen erabiltzailearen erkidegoan parte hartu ezazu.
+      button_to_access: Erkidegoan sartu
+    show:
+      title:
+        proposal: Proposmenaren erkidegoa
+        investment: Partaidetzazko erkidegoaren erkidegoa
+      description:
+        proposal: Proposamen honen erkidegoan parte hartu ezazu. Erkidego bizi eta gogotsu batek proposamenaren edukia hobetzen edota babes gehiago lortzeko asmoz, proposamena herritarren artean hedatzen lagundu dezake.
+        investment: Gastu proiektu honen erkidegoan parte hartu ezazu. Erkidego bizi eta gogotsu batek gastu proiektuaren edukia hobetzen edota babes gehiago lortzeko asmoz, gastu proiektua herritarren artean hedatzen lagundu dezake.
+      create_first_community_topic:
+        first_theme_not_logged_in: Ez dago gairik eskuragarri, lehenengoa sortuz pate hartu ezazu.
+        first_theme: Erkidegoaren lehen gaia sortu ezazu
+        sub_first_theme: "Gaia sortezko %{sign_in} edo %{sign_up} egin behar duzu."
+      tab:
+        participants: Partehartzaileak
+      sidebar:
+        participate: Parte hartu ezazu
+        new_topic: Gai bat sortu ezazu
+      topic:
+        edit: Gaia editatu
+        destroy: Gaia ezabatu
+        comments:
+          zero: Iruzkin gabe
+          one: Iruzkin 1
+          other: "%{count} iruzkin"
+      author: Sortzailea
+      back: '%{community} %{proposal}-(e)ra itzuli'
+    topic:
+      create: Gai bat sortu
+      edit: Gai bat editatu
+      form:
+        new:
+          submit_button: Gaia sortu
+        edit:
+          submit_button: Aldaketak gorde
+        create:
+          submit_button: Gaia sortu
+        update:
+          submit_button: Gaia eguneratu
+      show:
+        tab:
+          comments_tab: Iruzkinak
+      sidebar:
+        recommendations_title: Gai bat sortzeko gomendioak
+        recommendation_one: Ez idatzi maiuskuletan esaldi osoak edo gaiaren izenburua. Internetan txilioka ari zarela ematen du. Eta inori ez zaio gustatzen ohiu egin diezaioten.
+        recommendation_two: Edozein gai edo iruzkin legez kanpoko ekintza bat badakar ezabatuta izango da. Eztabaidak saboteatzeko intentzioa dituztenak ere ezabatu egingo dira. Horretaz gain, beste guztia onartuta dago..
+        recommendation_three: Espazio honetaz gozatu, betetzen duten ahotsetaz, zurea ere bada.

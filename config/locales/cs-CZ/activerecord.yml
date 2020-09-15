@@ -100,11 +100,31 @@ cs:
         image: "Proposal názorný obrázek"
         image_title: "Nadpis obrázku"
         duration: "Časový rozsah"
+        feasibility_feasible: "Proveditelný"
+        feasibility_undecided: "Nedefinováno"
+        feasibility_unfeasible: "Neproveditelné"
+        incompatible: "Označit jako nekompatibilní"
+        price_explanation: "Vysvětlení nákladů"
+        selected: "Označit jako vybrané"
+        selected_true: "Vybrané"
+        selected_false: "Není vybráno"
+        unfeasibility_explanation: "Vysvětlení proveditelnosti"
+        valuation_finished: "Naceňování bylo ukončeno"
+        valuator_ids: "Skupiny"
+        valuation_tag_list: "Štítky"
+      budget/investment/translation:
+        title: "Předmět"
+        description: "Popis"
+      geozone:
+        name: Název
+        external_code: "Externí kód (volitelný)"
       milestone:
         status_id: "Aktuální stav (volitelné)"
         title: "Předmět"
         description: "Popis (volitelné, jestliže je stav přiřazen)"
         publication_date: "Datum publikace"
+      milestone/translation:
+        description: "Popis"
       milestone/status:
         name: "Název"
         description: "Popis (volitelné)"
@@ -115,10 +135,19 @@ cs:
       progress_bar/kind:
         primary: "Primární"
         secondary: "Sekundární"
+      budget/group:
+        max_votable_headings: "Maximální počet kapitol, ve kterých uživatel může hlasovat"
+      budget/group/translation:
+        name: "Název skupiny"
       budget/heading:
+        allow_custom_content: "Povolit blok obsahu"
+        latitude: "Zeměpisná šířka (volitelné)"
+        longitude: "Zeměpisná délka (volitelné)"
         name: "Název záhlaví"
         price: "Cena"
         population: "Population"
+      budget/heading/translation:
+        name: "Název záhlaví"
       comment:
         body: "Komentář"
         user: "User"
@@ -144,6 +173,9 @@ cs:
         official_level: "Official level"
         phone_number: "Telefon"
         redeemable_code: "Verification code received via email"
+      direct_message:
+        title: "Předmět"
+        body: "Zpráva"
       organization:
         name: "Název organizace"
         responsible_name: "Osoba zodpovědná za organizaci či skupinu"
@@ -154,18 +186,33 @@ cs:
         geozone_restricted: "Restricted by geozone"
         summary: "Souhrn"
         description: "Description"
+      active_poll/translation:
+        description: "Popis"
+      poll/booth:
+        name: "Název"
+        location: "Umístění"
       poll/translation:
         name: "Název"
         summary: "Souhrn"
         description: "Description"
       poll/question:
+        poll_id: "Průzkum"
         title: "Question"
         summary: "Souhrn"
         description: "Description"
         external_url: "Odkaz na další dokumenty"
       poll/question/translation:
         title: "Question"
+      poll/ballot_sheet:
+        data: CSV data
+        poll_id: Průzkum
+      poll/shift:
+        task: "Úkol"
+      proposal_notification:
+        body: "Zpráva"
+        title: "Předmět"
       signature_sheet:
+        title: "Předmět"
         signable_type: "Signable type"
         signable_id: "Signable ID"
         document_numbers: "Documents numbers"
@@ -175,6 +222,8 @@ cs:
         subtitle: Titulek
         slug: Slug
         status: Status
+        status_draft: "Pracovní verze"
+        status_published: "Publikováno"
         title: Předmět
         updated_at: Aktualizováno dne
         more_info_flag: Show in help page
@@ -191,6 +240,20 @@ cs:
         name: Název
         locale: locale
         body: Body
+      tag:
+        name: "Zadejte název tématu"
+      topic:
+        title: "Předmět"
+        description: "Úvodní text"
+      banner:
+        background_color: Barva pozadí
+        font_color: Barva písma
+        post_ended_at: "Příspěvek byl ukončen v"
+        post_started_at: "Příspěvek byl zahájen v"
+        target_url: "Odkaz"
+      banner/translation:
+        title: "Předmět"
+        description: "Popis"
       legislation/process:
         title: Název procesu
         summary: Souhrn
@@ -205,20 +268,31 @@ cs:
         draft_publication_date: Datum návrhu publikace
         allegations_start_date: Allegations start date
         allegations_end_date: Allegations end date
+        proposals_phase_start_date: Zahájení
+        proposals_phase_end_date: Konec
         result_publication_date: Publikace konečného výsledku
         background_color: Barva pozadí
         font_color: Barva písma
+        homepage_enabled: "Úvodní stránka povolena"
       legislation/process/translation:
         title: Název procesu
         summary: Souhrn
         description: Description
         additional_info: Additional info
+        homepage: "Popis"
         milestones_summary: Souhrn
+      legislation/proposal:
+        description: "Popis návrhu"
+        summary: "Shrnutí návrhu"
+        title: "Název návrhu"
+        video_url: "Odkaz na externí video"
       legislation/draft_version:
         title: Název pracovní verze
         body: Text
         changelog: Změny
         status: Status
+        status_draft: "Pracovní verze"
+        status_published: "Publikováno"
         final_version: Konečná verze
       legislation/draft_version/translation:
         title: Název pracovní verze
@@ -227,6 +301,8 @@ cs:
       legislation/question:
         title: Předmět
         question_options: Options
+      legislation/question/translation:
+        title: Otázka
       legislation/question_option:
         value: Value
       legislation/annotation:
@@ -273,6 +349,13 @@ cs:
         link_text: Link text
       widget/feed:
         limit: Number of items
+      dashboard/action:
+        title: Předmět
+        short_description: Krátký popis
+        description: Popis
+        link: Externí odkaz
+        active: Aktivní
+        action_type: Typ
     errors:
       models:
         user:
@@ -308,7 +391,6 @@ cs:
           attributes:
             document_number:
               not_in_census: "Document not in census"
-              has_voted: "User has already voted"
         legislation/process:
           attributes:
             end_date:

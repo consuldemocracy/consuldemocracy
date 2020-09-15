@@ -1,1 +1,135 @@
 ro:
+  mailers:
+    title: "Open Government"
+    no_reply: "Acest mesaj a fost trimis de la o adresă de e-mail care nu acceptă răspunsuri."
+    comment:
+      hi: Bună
+      new_comment_by: Comentariu nou de la <strong>%{commenter}</strong>
+      subject: Cineva a comentat la %{commentable} dumneavoastră
+      title: Comentariu nou
+    config:
+      manage_email_subscriptions: Pentru a nu mai primi aceste e-mailuri, schimbați setările în
+    email_verification:
+      click_here_to_verify: acest link
+      instructions_2: Acest e-mail vă va verifica contul cu <b>%{document_type}%{document_number}</b>. Dacă acestea nu vă aparțin, nu faceți clic pe linkul anterior și ignorați acest e-mail.
+      instructions: Pentru a finaliza verificarea contului de utilizator trebuie să faceți clic pe %{verification_link}.
+      subject: Confirmă adresa de email
+      thanks: Vă mulțumim foarte mult.
+      title: Confirmați contul utilizând următorul link
+    reply:
+      hi: Bună
+      new_reply_by: Acesta este un nou răspuns de la <strong>%{commenter}</strong> la comentariul dumneavoastră
+      subject: Cineva a răspuns comentariului dumneavoastră
+      title: Răspuns nou la comentariul dumneavoastră
+    proposal_notification_digest:
+      info: "Iată noile notificări care au fost publicate de către autorii propunerilor pe care le-ați susținut în %{org_name}."
+      title: "Notificările propunerilor în %{org_name}"
+      share: Partajează propunere
+      comment: Comentează propunerea
+      unsubscribe: "Dacă nu doriți să primiți notificări la propunere, mergeți la %{account} și debifați „Primește un rezumat al notificărilor de propuneri”."
+      unsubscribe_account: Contul meu
+      unfollow: "Mergeți la această propunere și nu o mai urmăriți pentru a nu mai primi notificări despre aceasta."
+    direct_message_for_receiver:
+      subject: "Ați primit un mesaj privat"
+      reply: Răspunde-i lui %{sender}
+      unsubscribe: "Dacă nu doriți să primiți mesaje directe, accesați %{account} și debifați „Primește e-mailuri despre mesaje directe”."
+      unsubscribe_account: Contul meu
+    direct_message_for_sender:
+      subject: "Ați trimis un nou mesaj privat"
+      title: "Ați trimis un mesaj privat către<strong>%{receiver}</strong> cu următorul conținut:"
+    user_invite:
+      ignore: "Dacă nu ați solicitat această invitație, nu vă faceți griji, puteți ignora acest email."
+      text: "Vă mulțumim că ați solicitat să vă alăturați %{org}! În câteva secunde puteți începe să participați, trebuie doar să completați formularul de mai jos:"
+      thanks: "Vă mulțumim foarte mult."
+      title: "Bine ați venit în %{org}"
+      button: Înregistrare completă
+      subject: "Invitație la %{org_name}"
+    budget_investment_created:
+      subject: "Mulțumim că ați creat o investiție!"
+      title: "Mulțumim că ați creat o investiție!"
+      intro: "Buna ziua <strong>%{author}</strong>,"
+      text: "Vă mulțumim că ați creat investiția <strong>%{investment}</strong> pentru Bugetele Participative <strong>%{budget}</strong>."
+      follow: "Vă vom informa despre cum progresează procesul, pe care îl puteți urmări și pe <strong>%{link}</strong>."
+      follow_link: "Bugete participative"
+      sincerely: "Cu sinceritate,"
+      share: "Împărtășiți-vă proiectul"
+    budget_investment_unfeasible:
+      hi: "Dragă utilizator,"
+      new: "Pentru toate acestea, vă invităm să elaborați o <strong> investiție nouă </strong> care să se adapteze condițiilor acestui proces. Puteți face acest lucru urmând acest link: %{url}."
+      new_href: "nou proiect de investiții"
+      sincerely: "Cu sinceritate"
+      sorry: "Ne pare rău pentru inconvenient și vă mulțumim din nou pentru participare."
+      subject: "Proiectul dvs. de investiții „%{code}” a fost marcat ca fiind imposibil"
+    budget_investment_selected:
+      subject: "Acest proiect de investiții \"%{code}\" a fost selectat"
+      hi: "Dragă utilizator,"
+      share: "Începeți să împărtășiți proiectul dvs. pe rețelele de socializare pentru a obține voturi. Partajarea este esențială pentru a deveni realitate."
+      share_button: "Partajează-ți proiectul de investiții"
+      thanks: "Vă mulțumim din nou pentru participare."
+      sincerely: "Cu sinceritate"
+    budget_investment_unselected:
+      subject: "Acest proiect de investiții \"%{code}\" nu a fost selectat"
+      hi: "Dragă utilizator,"
+      thanks: "Vă mulțumim din nou pentru participare."
+      sincerely: "Cu sinceritate"
+    evaluation_comment:
+      subject: "Nou comentariu de evaluare"
+      title: Nou comentariu de evaluare pentru %{investment}
+      hi: Bună
+      new_comment_by: Există un nou comentariu de evaluare de la <strong>%{commenter}</strong> la investiția bugetară %{investment}
+      commenter_info: "%{commenter},%{time}:"
+    new_actions_notification_rake_created:
+      subject: "Mai multe știri despre propunerea dumneavoastră"
+      hi: "Bună %{name},"
+      new_resource: "RESURSĂ NOUĂ DEBLOCATĂ"
+      introduction: "După cum știți, în %{created_at_day} din %{created_at_month} ați creat o propunere în schițe %{title}."
+      text_1: "De câte ori doriți, puteți publica pe acest link: %{link_to_published}. Dacă încă nu ești sigur..."
+      text_2: "Profită de acest moment! Aflați și adăugați alți oameni cu aceleași interese și pregătiți publicul de care veți avea nevoie atunci când publicați definitiv propunerea."
+      text_3: "Și pentru a vă însoți în această provocare, iată noutățile..."
+      text_4: "Aruncați o privire la această ACȚIUNE nouă recomandată:"
+      text_5: "Următoarea acțiune recomandată este:"
+      footer_text: "Ca întotdeauna, intrați în Panoul de Propuneri și vă vom spune în detaliu cum să folosiți aceste resurse la maximum."
+      dashboard_button: "Mergeți să le descoperiți!"
+    new_actions_notification_rake_published:
+      subject: "Mai multe știri despre propunerea dumneavoastră"
+      hi: "Bună %{name},"
+      new_resource: "RESURSĂ NOUĂ DEBLOCATĂ"
+      introduction: "După cum știți, în data de %{published_at_day} %{published_at_month} ați postat propunerea %{title}."
+      text_1: "Până acum aveți %{votes_count} voturi de suport. Felicitări!"
+      text_2: "Astfel, aveți la dispoziție o nouă resursă care vă poate ajuta să continuați mai departe."
+      text_3: "Mai aveți %{days_count} zile înainte ca propunerea să primească suporturile %{max_votes_count} și să meargă la referendum. Continuați să distribuiți propunerea. Nu aveți idei?"
+      text_4: "NOUĂ ACȚIUNE DE DISTRIBUIRE RECOMANDATĂ"
+      text_5: "Asta nu este tot, vedeți acțiunea următoare:"
+      footer_text: "Ca întotdeauna, intrați în Panoul de Propuneri și vă vom spune în detaliu cum să folosiți aceste resurse la maximum."
+      dashboard_button: "Mergeți să le descoperiți!"
+    new_actions_notification_on_create:
+      subject: "Schița propunerii dumneavoastră a fost creată"
+      hi: "Bună %{name}!"
+      introduction: "Propunerea %{title} a fost creată cu succes."
+      text_1: "Profitați de faptul că propunerea dvs. nu este încă publică și pregătiți-vă să contactați cât mai mulți oameni."
+      text_2: "Când sunteți gata, puteți publica propunerea de pe următorul <a href='%{link}'>link</a>."
+      text_3: "Știm că crearea unei propuneri și obținerea suportului necesar poate părea complicată. Dar nu vă faceți griji, pentru că vă vom ajuta!"
+      text_4: "Aveți un instrument care va fi noul tău aliat: Panoul de Propuneri pentru cetățeni."
+      list_1: "Intrați în fiecare zi în panoul propunerii pentru a utiliza sfaturile și resursele pe care le vom împărtăși cu dvs."
+      list_2: "Nu uita! Aceste sfaturi, acțiuni și resurse vă vor oferi idei și soluții practice pentru a obține mai mult sprijin și o comunitate mai largă."
+      list_3: "Pe măsură ce vei primi mai mult sprijin, vei debloca resurse noi, mai bune. În momentul de față, aveți un șablon de e-mail pentru a trimite masiv la toate contactele dvs., un poster pentru a-l tipări, printre alte funcții și recompense pe care le veți descoperi. Nu încetați să adăugați suport și nu vom înceta să vă recompensăm și să vă ajutăm!"
+      list_4: "Aveți %{max_month} luni de când ați publicat propunerea pentru a primi %{max_votes} suport și propunerea dvs. poate deveni realitate. Dar primele zile sunt cele mai importante. Este o provocare. Pregătiți-vă!"
+      text_5: "Și pentru dumneavoastră să începeți cu toată motivația,"
+      text_6: "aici aveți mai multe resurse și o listă întreagă de sfaturi care vă vor veni în fiecare zi pentru a pregăti transmisia!"
+      dashboard_button: "Mergeți să le descoperiți!"
+    new_actions_notification_on_published:
+      subject: "Propunerea dumneavoastră este deja publicată!"
+      hi: "Felicitări %{name}! Propunerea %{title} a fost creată cu succes."
+      text_1: "Și acum, trebuie să strângeți primele 100 de suporturi!"
+      text_2: "De ce 100?"
+      text_3: "Experiența noastră ne spune că prima zi este fundamentală. Pentru că, pe lângă faptul că ai energie pentru a lansa ceva nou, fiind o propunere recent publicată, vei avea vizibilitatea importantă de a fi printre noile propuneri evidențiate."
+      text_4: "Obțineți 100 de suporturi în prima zi și veți avea o primă comunitate care vă va ajuta."
+      text_5: "Acesta este motivul pentru care vă provocăm să îl obțineți, dar nu fără ajutor!"
+      text_6: "Nu uitați că în panoul dvs. de propuneri aveți la dispoziție noi resurse și recomandări pentru acțiuni de diseminare."
+      list_1: "Vino în fiecare zi pentru a vedea progresul tău și folosește sfaturile și resursele pe care le vom împărtăși cu tine. Sunt idei și soluții practice pentru a obține sprijinul de care ai nevoie."
+      list_2: "Pe măsură ce vei primi mai mult sprijin, vei debloca resurse noi și mai bune. Nu încetați să adăugați suport și nu vom înceta să vă recompensăm și să vă ajutăm!"
+      text_7: "Și pentru dumneavoastră să începeți cu viteză maximă..."
+      text_8: "Iată o resursă excelentă la dispoziția dumneavoastră!"
+      text_9: "Veți găsi, de asemenea, această nouă acțiune de diseminare recomandată..."
+      text_10: "Cu siguranță ai mai multe resurse de utilizat!"
+      dashboard_button: "Mergeți să le descoperiți!"

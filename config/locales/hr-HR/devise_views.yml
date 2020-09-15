@@ -2,28 +2,29 @@ hr:
   devise_views:
     confirmations:
       new:
-        email_label: Email
+        email_label: E-mail
         submit: Ponovno pošalji upute
         title: Ponovno pošalji upute za potvrđivanje
       show:
+        instructions: Potvrda računa putem e-mail adrese %{email}
         new_password_confirmation_label: Ponovi zaporku za pristup
-        new_password_label: Nova zaporka za pristup
-        please_set_password: Molimo vas stvorite novu zaporku (ovo će Vam omogućiti prijavu putem gornjeg emaila)
+        new_password_label: Nova lozinka za pristup
+        please_set_password: Molimo vas stvorite novu lozinku (ovo će Vam omogućiti prijavu putem gornjeg e-maila)
         submit: Potvrdi
         title: Potvrdi moj račun
     mailer:
       confirmation_instructions:
         confirm_link: Potvrdi moj račun
-        text: "Račun e-pošte možete potvrditi na sljedećoj vezi:"
+        text: "Račun e-pošte možete potvrditi na sljedećoj poveznici:"
         title: Dobrodošli
         welcome: Dobrodošli
       reset_password_instructions:
-        change_link: Promjeni moju zaporku
+        change_link: Promijeni moju lozinku
         hello: Pozdrav
-        ignore_text: Ukoliko niste zatražili izmjenu zaporke, možete zanemariti ovaj email.
-        info_text: Vaša zaporka se neće mijenjati ukoliko pristupite poveznici i ponovno ju unesete.
-        text: "Zadobili smo zahtjev za izmjenu zaporke. Izmjenu možete napraviti na sljedećoj poveznici:"
-        title: Izmijeni svoju zaporku
+        ignore_text: Ukoliko niste zatražili izmjenu lozinke, možete zanemariti ovaj e-mail.
+        info_text: Vaša lozinka se neće mijenjati ukoliko pristupite poveznici i ponovno ju unesete.
+        text: "Zaprimili smo zahtjev za izmjenu zaporke. Izmjenu možete napraviti na sljedećoj poveznici:"
+        title: Izmijeni svoju lozinku
       unlock_instructions:
         hello: Pozdrav
         info_text: Vaš račun je blokiran zbog višestrukih neuspješnih prijava.
@@ -32,32 +33,36 @@ hr:
         unlock_link: Otključaj moj račun
     menu:
       login_items:
-        login: Prijavi me
-        logout: Odjavi me
-        signup: Registriraj se
+        login: Prijavi se
+        logout: Odjavi se
+        signup: Registriraj me
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Ime organizacije
-          password_confirmation_label: Potvrdi zaporku
-          password_label: Zaporka
+          email_label: E-mail
+          organization_name_label: Naziv organizacije
+          password_confirmation_label: Potvrdi lozinku
+          password_label: Lozinka
           phone_number_label: Broj telefona
-          responsible_name_label: Puno ime osobe odgovorne za skupinu
+          responsible_name_label: Puno ime osobe odgovorne za kolektiv
           responsible_name_note: To bi bila osoba koja predstavlja udrugu / kolektiv u čije ime su predstavljeni prijedlozi
           submit: Registriraj se
           title: Registriraj organizaciju ili kolektiv
         success:
           back_to_index: Razumijem; idi natrag na glavnu stranicu
+          instructions_1: "<strong>Uskoro ćemo vas kontaktirati</strong> radi potvrde vašeg zastupanja ove zajednice."
+          instructions_2: Dok se vaša <strong> e-mail adresa provjerava</strong>, poslali smo vam <strong>poveznicu za potvrdu vašeg računa</strong>.
+          instructions_3: Kada dobijete potvrdu, možete sudjelovati kao nepotvrđena zajednica.
+          thank_you: Hvala što ste registrirali vašu zajednicu na stranici. U tijeku je <strong> provjera</strong>.
           title: Registracija organizacije / kolektiva
     passwords:
       edit:
-        change_submit: Izmjeni moju zaporku
-        password_confirmation_label: Potvrdi novu zaporku
-        password_label: Nova zaporka
-        title: Izmijeni vašu zaporku
+        change_submit: Promijeni moju lozinku
+        password_confirmation_label: Potvrdi novu lozinku
+        password_label: Nova lozinka
+        title: Promijeni vašu lozinku
       new:
-        email_label: Email
+        email_label: E-mail
         send_submit: Pošalji upute
         title: Zaboravnjena zaporka?
     sessions:
@@ -118,4 +123,7 @@ hr:
           username_note: Ime koje se pojavljuje pored Vaše objave
         success:
           back_to_index: Razumijem; idi nazad na glavnu stranicu
+          instructions_1: Molimo vas, <b>provjerite vaš e-poštu</b> - poslali smo vam <b>poveznicu za potvrdu vašega računa</b>.
+          instructions_2: Nakon potvrde, možete sudjelovati.
+          thank_you: Hvala vam na registraciji na stranici. Sada morate <b>potvrditi vašu e-mail adresu</b>.
           title: Potvrdite vašu email adresu

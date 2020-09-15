@@ -264,7 +264,6 @@ ast:
           attributes:
             document_number:
               not_in_census: "Esti documentu nun apaez nel censu"
-              has_voted: "Esti usuariu yá votó"
         legislation/process:
           attributes:
             end_date:

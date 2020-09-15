@@ -1,1 +1,68 @@
 ro:
+  valuation:
+    header:
+      title: Evaluare
+    menu:
+      title: Evaluare
+      budgets: Bugete participative
+    budgets:
+      index:
+        title: Bugete participative
+        filters:
+          current: Deschide
+          finished: Terminat
+        table_name: Nume
+        table_phase: Etapă
+        table_assigned_investments_valuation_open: Proiectele de investiții evaluate sunt deschise
+        table_actions: Acțiuni
+        evaluate: Evaluează
+        no_budgets: "Nu există bugete"
+    budget_investments:
+      index:
+        headings_filter_all: Toate pozițiile
+        filters:
+          valuation_open: Deschide
+          valuating: În curs de evaluare
+          valuation_finished: Evaluare terminată
+        assigned_to: "Atribuit %{valuator}"
+        title: Proiecte de investiție
+        edit: Editează dosar
+        table_id: ID
+        table_title: Titlu
+        table_heading_name: Nume poziție
+        table_actions: Acțiuni
+        no_investments: "Nu există nici un proiect de investiții."
+      show:
+        back: Înapoi
+        title: Proiect de investiții
+        info: Informații despre autor
+        by: Trimis de
+        sent: Trimis la
+        heading: Poziție
+        dossier: Dosar
+        edit_dossier: Editează dosar
+        price: Preț
+        price_first_year: Costul pe parcursul primului an
+        currency: "Lei"
+        feasibility: Fezabilitate
+        feasible: Realizabil
+        unfeasible: Nerealizabil
+        undefined: Nedefinit
+        valuation_finished: Evaluare terminată
+        duration: Termen limită
+        responsibles: Responsabilități
+        assigned_admin: Administratorul atribuit
+        assigned_valuators: Evaluatori alocați
+        preview: Previzualizare investiție
+      edit:
+        dossier: Dosar
+        price: "Cost (%{currency})"
+        price_first_year: "Cost în primul an (%{currency}) <small>(opțional, datele nu sunt publice)</small>"
+        feasibility: Fezabilitate
+        valuation_finished_alert: "Sunteți sigur că doriți să marcați acest raport ca fiind complet? Raportul nu va mai putea fi modificat după această acțiune."
+        not_feasible_alert: "Se trimite un email către persoana care a propus proiectul, cu privire la ne-fezabilitatea acestuia."
+        save: Salvează modificări
+      notice:
+        valuate: "Dosar actualizat"
+      valuation_comments: Validarea comentariilor
+      not_in_valuating_phase: Investițiile pot fi evaluate doar în momentul în care Bugetul este în etapa de evaluare

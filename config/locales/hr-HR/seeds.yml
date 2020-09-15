@@ -12,15 +12,15 @@ hr:
       east_district: Istočni Distrikt
       central_district: Središnji Distrikt
     organizations:
-      human_rights: Ljudska Prava
+      human_rights: Ljudska prava
       neighborhood_association: Udruga Susjedstva
     categories:
-      associations: Udruga
+      associations: Udruge
       culture: Kultura
       sports: Sport
-      social_rights: Društvena Prava
+      social_rights: Socijalna prava
       economy: Ekonomija
-      employment: Zaposlenje
+      employment: Zapošljavanje
       equity: Jednakost
       sustainability: Održivost
       participation: Sudjelovanje
@@ -28,27 +28,27 @@ hr:
       media: Mediji
       health: Zdravlje
       transparency: Transparentnost
-      security_emergencies: Sigurnost i Hitni slučajevi
+      security_emergencies: Sigurnost i hitni slučajevi
       environment: Okoliš
     budgets:
-      budget: Paritcipativni Budžet
+      budget: Participativni proračun
       currency: '€'
       groups:
         all_city: Cijeli Grad
-        districts: Distrikti
+        districts: Četvrti
       valuator_groups:
-        culture_and_sports: Kultura & Sportovi
-        gender_and_diversity: Spol & Politika Raznolikosti
-        urban_development: Održivi Urbani Razvoj
-        equity_and_employment: Jednakost & Zaposlenje
+        culture_and_sports: Kultura i sport
+        gender_and_diversity: Politike ravnopravnosti spolova
+        urban_development: Održivi urbani razvoj
+        equity_and_employment: Jednakost i zapošljavanje
       statuses:
         studying_project: Proučavanje projekta
         bidding: Natječaj
         executing_project: Izvršenje projekta
         executed: Izvršeno
     polls:
-      current_poll: "Trenutno Glasovanje"
-      current_poll_geozone_restricted: "Trenutna Ankeata Nije Dopuštena Za Ovu Geozonu"
-      recounting_poll: "Ponovno Izbrojavanje Ankete"
-      expired_poll_without_stats: "Isteklo Glasanje bez Statusa & Rezultata"
-      expired_poll_with_stats: "Isteklo Glasanje sa Statusom & Rezultatima"
+      current_poll: "Trenutna anketa"
+      current_poll_geozone_restricted: "Trenutna anketa nije dopuštena za ovu geozonu"
+      recounting_poll: "Ponovno prebrojavanje ankete"
+      expired_poll_without_stats: "Istekla anketa bez statusa i rezultata"
+      expired_poll_with_stats: "Istekla anketa sa statusom i rezultatima"

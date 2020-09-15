@@ -1,1 +1,129 @@
 ro:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Retrimite instrucțiuni
+        title: Retrimite instrucțiuni de confirmare
+      show:
+        instructions: Se confirmă contului prin e-mail %{email}
+        new_password_confirmation_label: Repetă parola de acces
+        new_password_label: Parolă nouă de acces
+        please_set_password: Vă rugăm să alegeți noua parolă (vă va permite să vă autentificați cu e-mailul de mai sus)
+        submit: Confirmă
+        title: Confirmă contul
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirmă contul
+        text: "Vă puteți confirma contul de email la următorul link:"
+        title: Bine ați venit
+        welcome: Bine ați venit
+      reset_password_instructions:
+        change_link: Schimbă parola
+        hello: Bună ziua
+        ignore_text: Dacă nu ați solicitat schimbarea parolei, puteți ignora acest email.
+        info_text: Parola dumneavoastră nu va fi modificată decât dacă accesați linkul și o modificați.
+        text: "Ați primit o solicitare de modificare a parolei. Puteți face asta la următorul link:"
+        title: Schimbați-vă parola
+      unlock_instructions:
+        hello: Bună ziua
+        info_text: Contul dvs. a fost blocat din cauza unui număr excesiv de încercări de conectare eșuate.
+        instructions_text: "Vă rugăm accesați acest link pentru a vă debloca contul:"
+        title: Contul dumneavoastră a fost blocat
+        unlock_link: Deblochează contul
+    menu:
+      login_items:
+        login: Conectare
+        logout: Deconectare
+        signup: Înregistrare
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+          organization_name_label: Numele organizației
+          password_confirmation_label: Confirmă parola
+          password_label: Parolă
+          phone_number_label: Număr de telefon
+          responsible_name_label: Numele complet al persoanei responsabile de colectiv
+          responsible_name_note: Aceasta ar fi persoana care reprezintă asociația/colectivul în numele căruia sunt prezentate propunerile
+          submit: Înregistrare
+          title: Înregistrează-te ca organizație sau colectiv
+        success:
+          back_to_index: Înțeleg; mergi înapoi în pagina principală
+          instructions_1: "<strong>Vă vom contacta curând</strong> pentru a verifica dacă de fapt reprezentați acest colectiv."
+          instructions_2: În timp ce <strong>email dumneavoastră este analizat</strong>, v-am trimis un <strong>link pentru a vă confirma contul</strong>.
+          instructions_3: Odată confirmat, puteți începe să participați ca un colectiv neverificat.
+          thank_you: Vă mulțumim pentru înregistrarea colectivului dumneavoastră pe site. Acum este <strong>în curs de verificare</strong>.
+          title: Înregistrarea organizației / colectivului
+    passwords:
+      edit:
+        change_submit: Schimbă parola
+        password_confirmation_label: Confirmă parola
+        password_label: Parola nouă
+        title: Schimbă parola
+      new:
+        email_label: Email
+        send_submit: Trimite instrucțiuni
+        title: Parolă uitată?
+    sessions:
+      new:
+        login_label: Email sau Nume de utilizator
+        password_label: Parolă
+        remember_me: Ține minte datele mele
+        submit: Enter
+        title: Conectare
+    shared:
+      links:
+        login: Enter
+        new_confirmation: Nu ați primit instrucțiuni pentru a va activa contul?
+        new_password: V-ați uitat parola?
+        new_unlock: Nu ați primit instrucțiunile de deblocare?
+        signin_with_provider: Conectare cu %{provider}
+        signup: Nu aveți un cont? %{signup_link}
+        signup_link: Deconectare
+    unlocks:
+      new:
+        email_label: Email
+        submit: Retrimite instrucțiuni de deblocare
+        title: Retrimite instrucțiuni de deblocare
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Motiv
+          info: Această acțiune nu poate fi anulată. Vă rugăm să vă asigurați că asta vă doriți.
+          info_reason: Dacă doriți, lăsați-ne un motiv (opțional)
+          submit: Șterge contul
+          title: Șterge cont
+        edit:
+          current_password_label: Parolă curentă
+          edit: Editează
+          email_label: Email
+          leave_blank: Lăsați gol dacă nu doriți să modificați
+          need_current: Avem nevoie de parola actuală pentru a confirma schimbările
+          password_confirmation_label: Confirmă noua parolă
+          password_label: Parola nouă
+          update_submit: Actualizează
+          waiting_for: "Se așteaptă confirmarea:"
+        new:
+          cancel: Anulează conectare
+          email_label: Email
+          organization_signup: Reprezentați o organizație sau un colectiv? %{signup_link}
+          organization_signup_link: Înregistrați-vă aici
+          password_confirmation_label: Confirmă parolă
+          password_label: Parolă
+          redeemable_code: Cod de verificare primit prin e-mail (optional)
+          submit: Înregistrare
+          terms: Înregistrându-vă acceptați %{terms}
+          terms_link: termeni și condiții de utilizare
+          terms_title: Înregistrându-vă acceptați termenii și condițiile de utilizare
+          title: Înregistrare
+          username_is_available: Nume de utilizator valabil
+          username_is_not_available: Nume de utilizator deja în uz
+          username_label: Nume de utilizator
+          username_note: Numele care apare în dreptul postărilor dumneavoastră
+        success:
+          back_to_index: Înțeleg; mergi înapoi în pagina principală
+          instructions_1: Vă rugăm <b>verificați-vă emailul</b> - noi v-am trimis <b>un link de confirmare pentru contul dumneavoastră</b>.
+          instructions_2: Odată confirmat, puteți începe să participați.
+          thank_you: Vă mulțumim pentru înregistrare. Acum trebuie să <b>confirmați adresa dvs. de e-mail</b>.
+          title: Confirmă adresa de email

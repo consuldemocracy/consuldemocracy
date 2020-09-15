@@ -2,7 +2,7 @@ hr:
   pages:
     conditions:
       title: Odredbe i uvjeti korištenja
-      subtitle: PRAVNA OBAVIJEST O UVJETIMA UPORABE, PRIVATNOSTI I ZAŠTITE OSOBNIH PODATAKA O PORTALU OTVORENE VLADE
+      subtitle: PRAVNA OBAVIJEST O UVJETIMA KORIŠTENJA, PRIVATNOSTI I ZAŠTITE OSOBNIH PODATAKA NA PORTALU OTVORENE UPRAVE
       description: Informativna strana za uvjete korištenja, privatnost i zaštitu osobnih podataka.
     help:
       title: "%{org} je platforma za građansko sudjelovanje"
@@ -18,6 +18,7 @@ hr:
         title: "Rasprave"
         description: "U %{link} sekciji možete prezentirati i podijeliti svoje mišljenje o problematičnim temama u gradu s ostalim građanima. Ovo je također mjesto za stvaranje ideja uz ostale sekcije %{org} koje će voditi do konkretnih akcija od strane tijela javne vlasti."
         link: "rasprave građana"
+        feature: "Možete otvarati rasprave, komentirati i ocjenjivati ih sa <strong>Slažem se</strong> ili <strong>Ne slažem se</strong>. Za to trebate %{link}."
         feature_link: "registrirajte se u %{org}"
         image_alt: "Gumbi za rangiranje rasprava"
         figcaption: '"Slažem se" i "Ne slažem se" gumbi kako biste ocijenili rasprave.'
@@ -26,11 +27,13 @@ hr:
         description: "U %{link} sekciji možete napraviti prijedlog za tijelo javne vlasti kako bi ih izvršila. Prijedlozima treba potpora te ukoliko zadobe dovoljno potpore mogu ići na javno izglasavanje. Izglasane prijedloge tijelo javne vlasti treba prihvatiti i sprovesti."
         link: "prijedlozi građana"
         image_alt: "Gumb za potporu prijedloga"
+        figcaption: 'Dugme za "Potporu" prijedloga.'
       budgets:
         title: "Participativno Budžetiranje"
         description: "%{link} sekcija pomaže građanima kako bi sproveli direktnu odluku o trošenju dijelova javnog budžeta."
         link: "participativni budžeti"
         image_alt: "Različite faze participativnog budžetiranja"
+        figcaption: '"Potpora" i "Glasovanje" faze sudioničkih proračuna.'
       polls:
         title: "Glasanje"
         description: "%{link} sekcije aktiviraju sesvaki puta kada prijedlog postigne 1% potpore i počne izglasavanje ili kada tijelo javne vlasti predlaže problem oko kojeg građani zatim odlučuju."
@@ -41,6 +44,8 @@ hr:
         title: "Procesi"
         description: "U %{link} sekciji građani sudjeluju u stvaranju i modifikaciji propisa koji utječu na područne javnog djelovanja i mogu ponuditi mišljenje na temu propisa u prošlim raspravama."
         link: "procesi"
+        feature: "Kako biste sudjelovali u izglasavanju kliknite na %{link} i potvrdite svoj račun."
+        feature_link: "registrirajte se u %{org_name}"
       faq:
         title: "Tehnički problemi?"
         description: "Pročitajte FAQ kako biste dobili odgovore na svoja pitanja."
@@ -66,9 +71,9 @@ hr:
     accessibility:
       title: Dostupnost
       description: |-
-        Dostubnost internetu se odnosi na mogućnost pristupu internetu i sadržaju svim ljudima, bez obzira na moguće smenje (fizičke, intelektualne i tehničke) koji mogu nastati ili od onih koji proizlaze iz konteksta uporabe (tehnološke ili okolišne).
+        Pristupačnost na webu se odnosi na mogućnost pristupu internetu i sadržaju svim ljudima, bez obzira na moguće nemogućnosti (fizičke, intelektualne i tehničke) koji mogu nastati ili od onih koji proizlaze iz konteksta uporabe (tehnološke ili okolišne).
 
-        Kada su web-mjesta osmišljena s obzirom na pristupačnost, svi korisnici mogu pristupiti sadržaju pod jednakim uvjetima, na primjer:
+        Kada su web sjedišta osmišljena s obzirom na pristupačnost, svi korisnici mogu pristupiti sadržaju pod jednakim uvjetima, na primjer:
       examples:
         - Pružanjem alternativni tekst da zamijene slike, slijepi ili slabovidni korisnici mogu koristiti posebne čitače za pristup informacijama.
         - Kada videozapisi imaju titlove, korisnici s poteškoćama u slušanju mogu u potpunosti razumjeti video.
@@ -154,6 +159,7 @@ hr:
               description_column: Umanjuje veličinu teksta
       compatibility:
         title: Kompatibilno sa standardima i vizualnim dizajnom
+        description: 'Sve stranice ove internetske stranice u skladu su sa <strong>Smjernicama o pristupačnosti</strong> ili Općim Uvjetima dostupnog dizajna koje je utemeljila Radna skupina <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> koja pripada W3C.'
     titles:
       help: "Što je %{org}? - Građansko sudjelovanje"
     verify:

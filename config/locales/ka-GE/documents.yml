@@ -1,0 +1,24 @@
+ka:
+  documents:
+    title: დოკუმენტები
+    max_documents_allowed_reached: ახალი დოკუმენტის ასატვირთად საჭიროა ერთ-ერთი ძველი დოკუმენტის წაშლა.
+    additional: დამატებითი დოკუმენტაცია
+    form:
+      title: დოკუმენტები
+      title_placeholder: აღწერილობითი სათაურის დამატება დოკუმენტზე
+      delete_button: დოკუმენტის წაშლა
+      cancel_button: გაუქმება
+      note: "დასაშვებია მაქსიმუმ %{max_documents_allowed} შემდეგი ტიპის დოკუმენტის ატვირთვა: %{accepted_content_types}, რომელთაგან თითოეული არ აღემატება %{max_file_size} მეგაბაიტს."
+      add_new_document: ახალი დოკუმენტის დამატება
+    actions:
+      destroy:
+        notice: დოკუმენტი წარმატებით წაიშალა.
+        alert: დოკუმენტის წაშლა ვერ მოხერხდა.
+        confirm: ნამდვილად გსურთ დოკუმენტის წაშლა?
+    buttons:
+      download_document: ფაილის ჩამოტვირთვა
+      destroy_document: დოკუმენტის წაშლა
+    errors:
+      messages:
+        in_between: უნდა მერყეობდეს %{min} და %{max}-ს შორის
+        wrong_content_type: დოკუმენტის ტიპი %{content_type} არ შეესაბამება ნებადართულ ტიპებს %{accepted_content_types}

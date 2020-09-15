@@ -6,14 +6,38 @@ ca:
       index:
         title: Presidir taula de votacions
         info: Aquí pots validar documents de ciutadans i guardar els resultats de les urnes
+        no_shifts: No teniu torns oficials avui.
     menu:
       voters: validar document
+      total_recounts: Total recomptes i resultats
     polls:
       final:
         title: Llistat de votacions finalitzades
         no_polls: No tens permís per recompte final a cap votació recent
         select_poll: Selecciona votació
         add_results: Afegir resultats
+    poll_budgets:
+      see_ballot_sheets: Vegeu la llista de les paperetes
+      index:
+        title: "%{poll_budget} - Llista de paperetes"
+        ballot_sheet: "Butlleta de vot %{id}"
+        ballot_sheet_name: Nom
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data de creació
+        empty_results: Encara no hi ha butlletes de vot per a aquesta enquesta
+      new:
+        title: "%{poll_budget} - Nova urna"
+        booth: Cabina
+        select_booth: Seleccionar estand
+        csv_data: Dades CSV
+        submit: Desa
+      show:
+        created_at: Data de creació
+        author: Autor
+        data: Dades CSV
+    booth:
+      new:
+        title: "Trieu el vostre estand"
     results:
       flash:
         create: "dades guardats"
@@ -21,10 +45,13 @@ ca:
         error_wrong_booth: "Urna incorrecta. Resultats NO guardats."
       new:
         title: "%{poll} - Afegir resultats"
+        not_allowed: "No teniu permís d’afegir resultats per a aquest sondeig"
         booth: "urna"
         date: "data"
         select_booth: "Tria urna"
+        ballots_white: "Paperetes totalment en blanc"
         ballots_null: "paperetes nul·les"
+        ballots_total: "Paperetes vàlides"
         submit: "Desar"
         results_list: "Els teus resultats"
         see_results: "veure resultats"
@@ -33,7 +60,9 @@ ca:
         results: resultats
         table_answer: Resposta
         table_votes: Votacions
+        table_whites: "Paperetes totalment en blanc"
         table_nulls: "paperetes nul·les"
+        table_total: "Paperetes vàlides"
     residence:
       flash:
         create: "Document verificat amb el Padró"
@@ -50,8 +79,12 @@ ca:
         table_poll: votació
         table_status: Estat de les votacions
         table_actions: Accions
+        not_to_vote: La persona ha decidit no votar en aquest moment
       show:
         can_vote: pot votar
+        cannot_vote: La persona no pot votar perquè no està registrada al districte(s) on es fa la votació.
         error_already_voted: Ja ha participat en aquesta votació.
         submit: Confirma vot
         success: "¡Vot introduït!"
+      can_vote:
+        submit_disable_with: "Espereu, confirmeu el vot..."

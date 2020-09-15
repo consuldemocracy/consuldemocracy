@@ -1056,15 +1056,6 @@ cs:
           without_confirmed_hide: Nevyřízený
         title: Skryté návrhy
         no_hidden_proposals: Nemáte žádné skryté návrhy.
-    proposal_notifications:
-      index:
-        filter: Filtr
-        filters:
-          all: Vše
-          with_confirmed_hide: Potvrzeno
-          without_confirmed_hide: Nevyřízený
-        title: Skrytá upozornění
-        no_hidden_proposals: Nemáte žádná skrytá upozornění.
     settings:
       flash:
         updated: Hodnota aktualizována

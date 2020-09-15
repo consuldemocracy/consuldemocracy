@@ -63,3 +63,9 @@ zh-TW:
       hi: "親愛的用戶，"
       thanks: "再次感謝您的參與。"
       sincerely: "真誠的"
+    evaluation_comment:
+      hi: 您好
+    new_actions_notification_rake_published:
+      hi: "你好 %{name}"
+    new_actions_notification_on_create:
+      hi: "你好 %{name}！"

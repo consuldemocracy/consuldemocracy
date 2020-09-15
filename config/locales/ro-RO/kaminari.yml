@@ -1,1 +1,24 @@
 ro:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Intrări
+        one: Intrare
+        few: Intrări
+        other: Intrări
+      more_pages:
+        display_entries: Se afișează <strong>%{first}&nbsp;-&nbsp;%{last}</strong> din <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} nu a putut fi găsit"
+          one: Există <strong> 1 %{entry_name}</strong>
+          few: Există <strong> %{count} %{entry_name}</strong>
+          other: Există <strong> %{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Ești la pagina
+      first: Prima
+      last: Ultima
+      next: Următorul
+      previous: Anterior
+      truncate: "&hellip;"

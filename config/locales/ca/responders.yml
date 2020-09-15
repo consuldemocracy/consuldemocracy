@@ -7,10 +7,15 @@ ca:
         direct_message: "El teu missatge ha estat enviat correctament."
         poll: "Votació creada correctament."
         poll_booth: "Urna creada correctament."
+        poll_question_answer: "La resposta s'ha creat correctament"
+        poll_question_answer_video: "El vídeo s'ha creat correctament"
+        poll_question_answer_image: "La imatge es va carregar correctament"
         proposal: "Proposta creada correctament."
         proposal_notification: "El teu message ha estat enviat correctament."
         budget_investment: "Proposta d'inversió creat correctament."
         signature_sheet: "Full de signatures creada correctament"
+        topic: "El tema s'ha creat correctament."
+        valuator_group: "S'ha creat un grup de taxadors correctament"
       save_changes:
         notice: canvis guardats
       update:
@@ -18,8 +23,15 @@ ca:
         debate: "Debat actualitzat correctament."
         poll: "Votació actualitzada correctament."
         poll_booth: "Urna actualitzada correctament."
+        active_poll: "La descripció de les enquestes s'ha actualitzat correctament."
         proposal: "Proposta actualitzada correctament."
         budget_investment: "Proposta d'inversió actualitzada correctament."
+        topic: "El tema s'ha actualitzat correctament."
+        valuator_group: "S'ha actualitzat correctament el grup de avaluadors"
+        translation: "La traducció s’ha actualitzat correctament"
       destroy:
         budget_investment: "Proposta d'inversió eliminada."
         error: "No s'ha pogut esborrar"
+        topic: "El tema s'ha suprimit correctament."
+        poll_question_answer_video: "Respondre al vídeo suprimit correctament."
+        valuator_group: "El grup del valor s'ha suprimit correctament"

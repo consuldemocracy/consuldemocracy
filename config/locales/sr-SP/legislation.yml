@@ -122,3 +122,37 @@ sr:
         tags_label: "Категорије"
       not_verified: "За гласање предлога %{verify_account}."
       process_title: Заједнички законодавни процес
+    summary:
+      title: "Сажетак"
+      votes:
+        zero: "%{count} гласова"
+        one: "%{count} глас"
+        few: "%{count} гласова"
+        other: "%{count} гласова"
+      debate_phase: "Фаза дебате"
+      proposals_phase: "Фаза предлога"
+      allegations_phase: "Фаза коментара"
+      debates:
+        zero: "Нема дебата"
+        one: "%{count} дебата"
+        few: "%{count} дебате"
+        other: "%{count} дебате"
+      proposals:
+        zero: "Нема предлога"
+        one: "%{count} предлог"
+        few: "%{count} предлога"
+        other: "%{count} предлога"
+      comments:
+        zero: "Нема коментара"
+        one: "%{count} коментар"
+        few: "%{count} коментара"
+        other: "%{count} коментара"
+      download: "Преузмите сажетак"
+      top_comments:
+        zero: "Нема коментара"
+        one: "%{count} коментар"
+        few: "%{count} коментара"
+        other: "%{count} коментара"
+      most_voted_comments: "Коментари са највише гласова"
+      no_allegation: "Нема коментара"
+      process_empty: "Овај процес није прошао кроз партиципативне фазе"

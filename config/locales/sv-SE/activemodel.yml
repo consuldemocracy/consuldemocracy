@@ -4,6 +4,9 @@ sv:
       verification:
         residence: "Adress"
         sms: "SMS"
+      local_census_records/import:
+        one: Importera lokalt adressregister
+        other: Importera lokala adressregister
     attributes:
       verification:
         residence:

@@ -1,0 +1,53 @@
+oc:
+  community:
+    sidebar:
+      title: Comunitat
+      description:
+        proposal: Participa a la comunitat d’usatgièrs d’aquela proposicion.
+        investment: Participa a la comunitat d’usatgièrs d’aquela inversion.
+      button_to_access: Accedissètz a la comunitat
+    show:
+      title:
+        proposal: Proposicion comunitat
+        investment: Budgèt Comunitat d’inversions
+      description:
+        proposal: Participa a la comunitat d’aquela proposicion. Una comunitat activa pòt ajudar a melhorar lo contengut de la proposicion e potenciar la siá difusion per obténer mai supòrt.
+        investment: Participa a la comunitat d’aquela inversion budgetària. Una comunitat activa pòt ajudar a melhorar lo contengut de l'inversion budgetària e n'impulsar la difusion per obténer mai supòrt.
+      create_first_community_topic:
+        first_theme_not_logged_in: I a pas cap de problèma disponible e participa a la creacion del primièr.
+        first_theme: Creatz lo primièr tèma de la comunitat
+        sub_first_theme: "Per crear un tèma vos cal èsser %{sign_in} o %{sign_up}."
+      tab:
+        participants: de Participants
+      sidebar:
+        participate: Collabòra en l'elaboracion de la nòrma dessús
+        new_topic: Crèa tèma
+      topic:
+        edit: Edita lo tèma
+        destroy: Suprimís lo tèma
+        comments:
+          zero: Sens comentaris
+          one: 1 Comentari
+          other: "%{count} de comentaris"
+      author: Autor
+      back: Tornar %{community} %{proposal}
+    topic:
+      create: Crèa un tèma
+      edit: Edita lo tèma
+      form:
+        new:
+          submit_button: Crèa tèma
+        edit:
+          submit_button: Edita lo tèma
+        create:
+          submit_button: Crèa tèma
+        update:
+          submit_button: Actualizar lo tèma
+      show:
+        tab:
+          comments_tab: Comentarios
+      sidebar:
+        recommendations_title: de Recomandacions per crear un tèma
+        recommendation_one: Escrivètz pas lo títol del tèma ni las frasas completas en majusculas. dins internet que se considèra en cridant. E a degun li agrada que li criden.
+        recommendation_two: S'eliminaràn quin tèma que siá o comentari qu'implique una accion illegala, tanben aqueles que pretenon sabotejar los espacis del subjècte, tot çò que siatz permés.
+        recommendation_three: Gaudís d’aquel espaci, de las voses que l’emplisson, es tanben tieu.

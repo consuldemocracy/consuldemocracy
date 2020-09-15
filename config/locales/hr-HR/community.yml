@@ -1,7 +1,7 @@
 hr:
   community:
     sidebar:
-      title: Zajednicom
+      title: Zajednica
       description:
         proposal: Sudjelujte u zajednici korisnika za ovaj prijedlog.
         investment: Sudjelujte u zajednici korisnika za ovu investiciju.
@@ -9,10 +9,10 @@ hr:
     show:
       title:
         proposal: Prijedlog zajednice
-        investment: Investicijski Budžet zajednice
+        investment: Zajednica investicijskog proračuna
       description:
         proposal: Sudjelujte u zajednici ovog prijedloga. Aktivna zajednica može pomoći u poboljšanju sadržaja prijedloga i potaknuti njegovo širenje kako bi prijedlog dobio više podrške.
-        investment: Sudjelujte u zajednici ove investicije iz budžeta. Aktivna zajednica može pomoći u poboljšanju sadržaja budžetne investicije i potaknuti njegovo širenje kako bi prijedlog dobio više podrške.
+        investment: Sudjelujte u zajednici ove proračunske investicije. Aktivna zajednica može pomoći u poboljšanju sadržaja proračunske investicije i potaknuti njegovo širenje kako bi prijedlog dobio više podrške.
       create_first_community_topic:
         first_theme_not_logged_in: Nema dostupnog izdanja, sudjelujte u stvaranju prvog izdanja.
         first_theme: Stvorite prvu temu u vašoj zajednici
@@ -20,7 +20,7 @@ hr:
       tab:
         participants: Sudionici
       sidebar:
-        participate: Sudjelovati
+        participate: Sudjeluj
         new_topic: Stvori temu
       topic:
         edit: Uredi temu
@@ -39,7 +39,7 @@ hr:
         new:
           submit_button: Stvori temu
         edit:
-          submit_button: Uredit temu
+          submit_button: Uredi temu
         create:
           submit_button: Stvori temu
         update:
@@ -51,4 +51,4 @@ hr:
         recommendations_title: Prijedlozi za stvaranje teme
         recommendation_one: Izbjegavajte pisanje naslova teme ili cijele rečenice velikim slovima. Na internetu se to smatra vikanjem. Nitko ne voli kada se na njega viče.
         recommendation_two: Bilo koja tema ili komentar koji implicira ilegalno djelovanje bit će eliminiran, kao i oni koji namjeravaju sabotirati mjesto subjekta, sve ostalo je dopušteno.
-        recommendation_three: Uživajte na ovom mjestu vaš glas će se također popuniti.
+        recommendation_three: Uživajte na ovom mjestu, nek se i vaš glas čuje.

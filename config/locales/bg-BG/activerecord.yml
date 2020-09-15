@@ -1,1 +1,567 @@
 bg:
+  attributes:
+    geozone_id: "Обхват на операцията"
+    results_enabled: "Показване на резултати"
+    stats_enabled: "Показване на статистики"
+    advanced_stats_enabled: "Показване на разширени статистики"
+  activerecord:
+    models:
+      activity:
+        one: "дейност"
+        other: "дейности"
+      budget:
+        one: "Бюджет"
+        other: "Бюджети"
+      budget/investment:
+        one: "Инвестиция"
+        other: "Инвестиции"
+      milestone:
+        one: "ключово събитие"
+        other: "ключови събития"
+      milestone/status:
+        one: "Статус на ключовото събитие"
+        other: "Статус на ключовите събития"
+      progress_bar:
+        one: "Лента за напредък"
+        other: "Ленти за напредък"
+      comment:
+        one: "Коментар"
+        other: "Коментари"
+      debate:
+        one: "Дебат"
+        other: "Дебати"
+      tag:
+        one: "Таг"
+        other: "Тагове"
+      user:
+        one: "Потребител"
+        other: "Потребители"
+      moderator:
+        one: "Модератор"
+        other: "Модератори"
+      administrator:
+        one: "Администратор"
+        other: "Администратори"
+      valuator:
+        one: "Оценител"
+        other: "Оценители"
+      valuator_group:
+        one: "Оценителна група"
+        other: "Оценителни групи"
+      manager:
+        one: "Ръководител"
+        other: "Ръководители"
+      newsletter:
+        one: "Бюлетин"
+        other: "Бюлетини"
+      vote:
+        one: "Гласуване"
+        other: "Гласувания"
+      organization:
+        one: "Организация"
+        other: "Организации"
+      poll/booth:
+        one: "кабина"
+        other: "кабини"
+      poll/officer:
+        one: "сътрудник"
+        other: "сътрудници"
+      poll/ballot_sheet:
+        one: Бюлетина
+        other: Бюлетини
+      proposal:
+        one: "Гражданско предложение"
+        other: "Граждански предложения"
+      site_customization/page:
+        one: Персонализирана страница
+        other: Персонализирани страници
+      site_customization/image:
+        one: Персонализирано изображение
+        other: Персонализирани изображения
+      site_customization/content_block:
+        one: Персонализиран блок за съдържание
+        other: Персонализирани блокове за съдържание
+      document:
+        one: Документ
+        other: Документи
+      legislation/process:
+        one: "Процес"
+        other: "Процеси"
+      legislation/proposal:
+        one: "Предложение"
+        other: "Предложения"
+      legislation/draft_versions:
+        one: "Чернова"
+        other: "Чернови"
+      legislation/questions:
+        one: "Въпрос"
+        other: "Въпроси"
+      legislation/question_options:
+        one: "Вариант на въпроса"
+        other: "Варианти на въпроса"
+      legislation/answers:
+        one: "Въпрос"
+        other: "Въпроси"
+      documents:
+        one: "Документ"
+        other: "Документи"
+      images:
+        one: "Изображение"
+        other: "Изображения"
+      topic:
+        one: "Тема"
+        other: "Теми"
+      poll:
+        one: "Гласуване"
+        other: "Гласувания"
+      proposal_notification:
+        one: "Известие за предложение"
+        other: "Известия за предложения"
+      dashboard/action:
+        one: Действие на таблото за предложения
+        other: Действия на таблото за предложения
+      dashboard/administrator_task:
+        one: Задача
+        other: Задачи
+      link:
+        one: Връзка
+        other: Връзки
+      local_census_record:
+        one: Запис на местното преброяване
+        other: Записи на местното преброяване
+    attributes:
+      budget:
+        name: "Име"
+        description_accepting: "Описание по време на фазата на приемане"
+        description_reviewing: "Описание по време на фазата на преглед"
+        description_selecting: "Описание по време на фазата на избор"
+        description_valuating: "Описание по време на фазата на оценка"
+        description_balloting: "Описание по време на фазата на гласуване"
+        description_reviewing_ballots: "Описание по време на фазата на преглед на гласуването"
+        description_finished: "Описание при изчерпване на бюджета"
+        phase: "Фаза"
+        currency_symbol: "Валута"
+        voting_style: "Стил на финалното гласуване"
+        voting_style_knapsack: "Раница"
+        voting_style_approval: "Одобрение"
+      budget/translation:
+        name: "Име"
+      budget/investment:
+        heading_id: "Заглавие"
+        title: "Надпис"
+        description: "Описание"
+        external_url: "Връзка към допълнителна документация"
+        administrator_id: "Администратор"
+        location: "Местоположение допълнителна информация"
+        organization_name: "Ако предлагате от името на колектив / организация или от името на повече хора, напишете наименованието"
+        image: "Описателно изображение на предложението"
+        image_title: "Надпис на изображение"
+        duration: "Времеви обхват"
+        feasibility_feasible: "Осъществим"
+        feasibility_undecided: "Неопределен"
+        feasibility_unfeasible: "Неосъществим"
+        incompatible: "Маркиране като несъвместим"
+        milestone_tag_list: "Тагове на основни етапи/ събития"
+        price_explanation: "Обяснение на цената"
+        selected: "Маркиране като избран"
+        selected_true: "Избран"
+        selected_false: "Не е избран"
+        unfeasibility_explanation: "Обяснение за осъществимост"
+        valuation_finished: "Приключила оценката"
+        valuator_ids: "Групи"
+        valuation_tag_list: "Тагове"
+      budget/investment/translation:
+        title: "Заглавие"
+        description: "Описание"
+      geozone:
+        name: Име
+        external_code: "Външен код (незадължително)"
+        census_code: "Код на преброяване (незадължително)"
+        html_map_coordinates: "HTML <map> Координати (незадължително)"
+      milestone:
+        status_id: "Текущо състояние (незадължително)"
+        title: "Заглавие"
+        description: "Описание (незадължително, ако има зададен статус)"
+        publication_date: "Дата"
+      milestone/translation:
+        description: "Описание"
+      milestone/status:
+        name: "Име"
+        description: "Описание (незадължително)"
+      progress_bar:
+        kind: "Вид"
+        title: "Заглавие"
+        percentage: "Текущ напредък"
+      progress_bar/kind:
+        primary: "Първичен"
+        secondary: "Вторичен"
+      budget/group:
+        max_votable_headings: "Максимален брой заглавия, в които потребителят може да гласува"
+      budget/group/translation:
+        name: "Име на групата"
+      budget/heading:
+        allow_custom_content: "Разрешаване на съдържателен блок"
+        latitude: "Ширина (незадължително)"
+        longitude: "Дължина (незадължително)"
+        name: "Име на заглавието"
+        price: "Сума"
+        population: "Население (незадължително)"
+        max_ballot_lines: "Разрешени гласове"
+      budget/heading/translation:
+        name: "Име на заглавието"
+      budget/phase:
+        enabled: "Фаза активирана"
+        ends_at: "Крайна дата"
+        starts_at: "Начална дата"
+      budget/phase/translation:
+        description: "Описание"
+        summary: "Резюме"
+      comment:
+        body: "Коментар"
+        user: "Потребител"
+      debate:
+        author: "Автор"
+        description: "Мнение"
+        tag_list: "Теми"
+        terms_of_service: "Условия за ползване"
+        title: "Заглавие"
+      debate/translation:
+        title: "Заглавие на дебата"
+        description: "Начален текст на дебата"
+      proposal:
+        author: "Автор"
+        title: "Заглавие"
+        question: "Въпрос"
+        description: "Описание"
+        responsible_name: "Пълно име на лицето, което внася предложението"
+        retired_reason: "Причина да се оттегли предложението"
+        selected: "Маркиране като избрано"
+        terms_of_service: "Условия за ползване"
+        video_url: "Външен URL адрес на видео клип"
+      proposal/translation:
+        title: "Заглавие на предложението"
+        description: "Текст на предложението"
+        summary: "Резюме на предложението"
+        retired_explanation: "Обяснение"
+      user:
+        login: "Имейл или потребителско име"
+        email: "Имейл"
+        username: "Потребителско име"
+        password_confirmation: "Потвърждение на парола"
+        password: "Парола"
+        current_password: "Текуща парола"
+        email_digest: "Получаване на обобщение на известията за предложения"
+        email_on_comment: "Известявайте ме по имейл, когато някой коментира моите предложения или дебати"
+        email_on_comment_reply: "Известявайте ме по имейл, когато някой отговори на моите коментари"
+        email_on_direct_message: "Получаване на имейли за директни съобщения"
+        newsletter: "Получаване по имейл на подходяща информация за уеб сайта"
+        official_position: "Официална позиция"
+        official_position_badge: "Показване на означение за официална позиция"
+        official_level: "Официално ниво"
+        phone_number: "Телефонен номер"
+        public_activity: "Запазване списъка ми с дейности публично"
+        public_interests: "Запазване етикетите на елементите, които следя публично"
+        recommended_debates: "Показване на препоръки за дебати"
+        recommended_proposals: "Показване на препоръки за предложения"
+        redeemable_code: "Код за потвърждение, получен по имейл"
+      direct_message:
+        title: "Заглавие"
+        body: "Съобщение"
+      organization:
+        name: "Име на организацията"
+        responsible_name: "Лице, отговорно за групата"
+      poll:
+        name: "Име"
+        starts_at: "Дата на започване"
+        ends_at: "Дата на закриване"
+        geozone_restricted: "Ограничено от геозона"
+        summary: "Резюме"
+        description: "Описание"
+      active_poll/translation:
+        description: "Описание"
+      poll/booth:
+        name: "Име"
+        location: "Местоположение"
+      poll/translation:
+        name: "Име"
+        summary: "Резюме"
+        description: "Описание"
+      poll/question:
+        poll_id: "Анкета"
+        title: "Въпрос"
+        summary: "Резюме"
+        description: "Описание"
+        external_url: "Връзка към допълнителна документация"
+      poll/question/translation:
+        title: "Въпрос"
+      poll/ballot_sheet:
+        data: CSV данни
+        poll_id: Анкета
+        officer_assignment_id: Назначаване на сътрудник
+      poll/shift:
+        task: "Задача"
+      proposal_notification:
+        body: "Съобщение"
+        title: "Заглавие"
+      signature_sheet:
+        title: "Заглавие"
+        signable_type: "Тип подписване"
+        signable_id: "Подписващ идентификационен номер"
+        document_numbers: "Номера на документи"
+      site_customization/page:
+        content: Съдържание
+        created_at: Създадено в
+        subtitle: Подзаглавие
+        slug: Линотипен ред
+        status: Състояние
+        status_draft: "Чернова"
+        status_published: "Публикувано"
+        title: Заглавие
+        updated_at: Актуализирано в
+        more_info_flag: Показване на помощната страница
+        print_content_flag: Бутон за печат на съдържанието
+        locale: Език
+      site_customization/page/translation:
+        title: Заглавие
+        subtitle: Подзаглавие
+        content: Съдържание
+      site_customization/image:
+        name: Име
+        image: Изображение
+      site_customization/content_block:
+        name: Име
+        locale: място
+        body: Тяло
+      tag:
+        name: "Въведете името на темата"
+      topic:
+        title: "Заглавие"
+        description: "Начален текст"
+      banner:
+        background_color: Цвят на фона
+        font_color: Цвят на шрифта
+        post_ended_at: "Публикуването приключи в"
+        post_started_at: "Публикуването започна в"
+        target_url: "Връзка"
+      banner/translation:
+        title: "Заглавие"
+        description: "Описание"
+      legislation/process:
+        title: Заглавие на процеса
+        summary: Резюме
+        description: Описание
+        additional_info: Допълнителна информация
+        start_date: Начало
+        end_date: Край
+        debate_start_date: Начало
+        debate_end_date: Край
+        draft_start_date: Начало
+        draft_end_date: Край
+        draft_publication_date: Дата на публикуване на черновата
+        allegations_start_date: Начало
+        allegations_end_date: Край
+        proposals_phase_start_date: Начало
+        proposals_phase_end_date: Край
+        result_publication_date: Дата на публикуване на крайния резултат
+        background_color: Цвят на фона
+        font_color: Цвят на шрифта
+        homepage_enabled: "Началната страница е активирана"
+      legislation/process/translation:
+        title: Заглавие на процеса
+        summary: Резюме
+        description: Описание
+        additional_info: Допълнителна информация
+        homepage: "Описание"
+        milestones_summary: Резюме
+      legislation/proposal:
+        description: "Текст на предложението"
+        summary: "Резюме на предложението"
+        title: "Заглавие на предложението"
+        video_url: "Връзка към външно видео"
+      legislation/draft_version:
+        title: Заглавие на версията
+        body: Текст
+        changelog: Промени
+        status: Състояние
+        status_draft: "Чернова"
+        status_published: "Публикувано"
+        final_version: Окончателна версия
+      legislation/draft_version/translation:
+        title: Заглавие на версията
+        body: Текст
+        changelog: Промени
+      legislation/question:
+        title: Заглавие
+        question_options: Опции
+      legislation/question/translation:
+        title: Въпрос
+      legislation/question_option:
+        value: Стойност
+      legislation/annotation:
+        text: Коментар
+      document:
+        title: Заглавие
+        attachment: "Изберете документ"
+      image:
+        title: Заглавие
+        attachment: "Изберете изображение"
+      poll/question/answer:
+        title: Въпрос
+        description: Описание
+      poll/question/answer/translation:
+        title: Отговор
+        description: Описание
+      poll/question/answer/video:
+        title: Заглавие
+        url: Външно видео
+      newsletter:
+        segment_recipient: Получатели
+        subject: Предмет
+        from: "Имейл адрес, който ще се появи при изпращане на бюлетина"
+        body: Съдържание на имейл
+      admin_notification:
+        segment_recipient: Получатели
+        title: Заглавие
+        link: Връзка
+        body: Текст
+      admin_notification/translation:
+        title: Заглавие
+        body: Текст
+      widget/card:
+        label: Етикет (незадължително)
+        title: Заглавие
+        description: Описание
+        link_text: Текст на връзката
+        link_url: URL адрес на връзката
+        columns: Брой на колоните
+      widget/card/translation:
+        label: Етикет (незадължително)
+        title: Заглавие
+        description: Описание
+        link_text: Текст на връзката
+      widget/feed:
+        limit: Брой артикули
+      dashboard/action:
+        title: Заглавие
+        short_description: Кратко описание
+        description: Описание
+        link: Външна връзка
+        request_to_administrators: Включете в ресурса бутон, за да поискате ресурса от администраторите
+        day_offset: Колко дни след създаването на предложението искате то да се активира?
+        required_supports: Колко подкрепа трябва да получи предложението, за да бъде активирано?
+        order: Можете да въведете позицията, в която това действие ще бъде показано на потребителя в списъка с действия
+        active: Активен
+        action_type: Вид
+        action_type_proposed_action: "Предложено действие"
+        action_type_resource: "Ресурс"
+        published_proposal: "За публикувани предложения?"
+      dashboard/administrator_task:
+        source: Източник
+        user: Изпълнено от
+      link:
+        label: Заглавие
+        url: Връзка
+      valuator:
+        description: Описание
+        valuator_group_id: Група за оценка
+        can_comment: Може да създава коментари
+        can_edit_dossier: Може да редактира досиета
+      valuator_group:
+        name: "Име на групата"
+      local_census_record:
+        document_type: Вид на документа
+        document_number: Номер на документа
+        date_of_birth: Дата на раждане
+        postal_code: Пощенски код
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Този потребител вече има парола"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "таговете трябва да са по-малки или равни на %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Достигнахте максималния брой лични съобщения на ден"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Ширината на изображението трябва да бъде най-малко %{required_min_width}px"
+              min_image_height: "Височината на изображението трябва да бъде най-малко %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Сегментът на получателите на потребители е невалиден"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Сегментът на получателите на потребители е невалиден"
+        map_location:
+          attributes:
+            map:
+              invalid: Местоположението на картата не може да бъде празно. Поставете маркер или поставете отметка в квадратчето, ако не е необходима геолокализация
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Документът не е в преброяване"
+            user_id:
+              has_voted: "Потребителят вече е гласувал"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: трябва да бъде на или след началната дата
+            debate_end_date:
+              invalid_date_range: трябва да бъде на или след началната дата на дебата
+            draft_end_date:
+              invalid_date_range: трябва да бъде на или след началната дата на първоначалния проект
+            allegations_end_date:
+              invalid_date_range: трябва да бъде на или след датата на започване на коментарите
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: не е включен в списъка, допустимите стойности са 1 за DNI, 2 за паспорт и 3 за карта за пребиваване.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "таговете трябва да са по-малко или равно на %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "таговете трябва да са по-малко или равно на %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Трябва да изчакате минимум %{interval} дни между известията"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Не е потвърдено от преброяването"
+              already_voted: "Вече гласувах това предложение"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "трябва да са букви, цифри, _ и -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Ширината трябва да бъде %{required_width}px"
+              image_height: "Височината трябва да бъде %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Не можете да коментирате оценка"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Вече преведен ресурс
+      messages:
+        translations_too_short: Задължително е да предоставите поне един превод
+        record_invalid: "Валидирането е неуспешно: %{errors}"
+        another_poll_active: Има още една анкета, активна за дадения период
+        restrict_dependent_destroy:
+          has_one: "Не можете да изтриете записа, защото съществува %{record} зависим"
+          has_many: "Не можете да изтриете записа, защото съществуват %{record} зависими"
