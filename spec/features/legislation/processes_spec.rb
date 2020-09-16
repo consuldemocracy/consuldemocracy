@@ -140,6 +140,8 @@ describe "Legislation" do
         expect(page).to have_content "Proposals (2) 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
         expect(page).to have_content "Comments (2) 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
       end
+
+      travel_back
     end
 
     scenario "Filtering processes" do
