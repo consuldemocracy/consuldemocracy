@@ -55,6 +55,7 @@ describe "Polls" do
       within(".poll") do
         expect(page).to have_content("Remaining 10 days to participate")
       end
+      travel_back
     end
 
     scenario "Proposal polls won't be listed" do
