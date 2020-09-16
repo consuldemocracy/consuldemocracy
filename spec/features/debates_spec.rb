@@ -1185,7 +1185,8 @@ describe "Debates" do
     end
 
     accept_confirm
-    visit debates_path
+    expect(page).to have_current_path(debates_path)
+    expect(debate.reload.featured?).to be true
 
     within("#featured-debates") do
       expect(page).to have_content("Featured debate")
@@ -1204,7 +1205,8 @@ describe "Debates" do
     end
 
     accept_confirm
-    visit debates_path
+    expect(page).to have_current_path(debates_path)
+    expect(debate.reload.featured?).to be false
 
     expect(page).not_to have_selector("#featured-debates")
   end
