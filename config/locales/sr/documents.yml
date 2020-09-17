@@ -1,0 +1,24 @@
+sr:
+  documents:
+    title: Документа
+    max_documents_allowed_reached: Достигли сте максималан број дозвољених докумената! <strong>Морате обрисати један пре него што унесете други. </strong>
+    additional: Додатна документација
+    form:
+      title: Документа
+      title_placeholder: Додајте описни наслов за документ
+      delete_button: Уклоните документ
+      cancel_button: Одбите
+      note: "Можете унети максимум %{max_documents_allowed} документа следећег садржаја:%{accepted_content_types}, до %{max_file_size} МБ по датотеци."
+      add_new_document: Додајте нови документ
+    actions:
+      destroy:
+        notice: Документ је успешно обрисан.
+        alert: Не можете да обришете документ.
+        confirm: Да ли сте сигурни да желите да обришете документ? Ова радња се не може поништити!
+    buttons:
+      download_document: Преузмите датотеку
+      destroy_document: Обришите документ
+    errors:
+      messages:
+        in_between: мора бити између %{min} и %{max}
+        wrong_content_type: тип садржаја %{content_type} се не поклапа са прихваћеним типовима садржаја %{accepted_content_types}
