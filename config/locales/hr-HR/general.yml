@@ -250,7 +250,6 @@ hr:
       help: Pomoć
       my_account_link: Moj račun
       my_activity_link: Moje aktivnosti
-      open: otvoren
       open_gov: Otvorena vlada
       proposals: Prijedlozi
       poll_questions: Glasanje
@@ -310,6 +309,9 @@ hr:
       sign_in: Ulogiraj se s Twitterom
       sign_up: Prijavi se s Twitterom
       name: Twitter
+    info:
+      sign_in: "Prijavi se s:"
+      sign_up: "Registriraj se s:"
     or_fill: "Ili ispunite sljedeći obrazac:"
   proposals:
     create:
