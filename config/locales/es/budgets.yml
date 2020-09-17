@@ -16,7 +16,6 @@ es:
             one: "Votos: <span>%{count}</span>"
             other: "Votos: <span>%{count}</span>"
         amount_limit:
-          knapsack: "%{count}"
           approval:
             one: "Puedes votar <span>1</span> proyecto"
             other: "Puedes votar hasta <span>%{count}</span> proyectos"
