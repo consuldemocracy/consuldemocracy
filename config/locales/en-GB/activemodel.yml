@@ -1,1 +1,11 @@
 en-GB:
+  activemodel:
+    models:
+      verification:
+        residence: "Громадянство"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Тип документу"
+          document_number: "Серійний номер документу (вкл.літери)"
