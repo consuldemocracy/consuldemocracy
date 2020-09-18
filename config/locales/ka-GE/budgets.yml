@@ -93,6 +93,10 @@ ka:
           other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: ჩემი ბიულეტენი
+          change_vote_info:
+            knapsack: "თქვენ შეგიძლიათ %{link} ნებისმიერ დროს, სანამ ფაზა არ დაიხურება. საჭირო არ არის მთელი თანხის დახარჯვა."
+            approval: "თქვენ შეგიძლიათ %{link} ნებისმიერ დროს, სანამ ფაზა არ დაიხურება."
+          change_vote_link: "ხმის შეცვლა"
           different_heading_assigned: "თქვენ უკვე მიეცით ხმა სხვა რუბრიკაზე: %{heading_link}"
           change_ballot: "თუ გადაწყვეტილებას შეცვლით, შეგიძლიათ %{check_ballot}-ში ხმების გაუქმება და თავიდან დაწყება."
           check_ballot_link: "მონიშნეთ და დაადასტურეთ ბიულეტენი"
@@ -152,6 +156,8 @@ ka:
     progress_bar:
       assigned: "თქვენ გამოყავით: "
       available: "ხელმისაწვდომი ბიუჯეტი: "
+      votes:
+        zero: "თქვენ შეარჩეთ <strong>0</strong> პროექტი <strong>%{limit}</strong> პროექტიდან"
     show:
       group: ჯგუფი
       phase: მიმდინარე ფაზა
