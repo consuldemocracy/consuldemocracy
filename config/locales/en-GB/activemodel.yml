@@ -9,3 +9,5 @@ en-GB:
         residence:
           document_type: "Тип документу"
           document_number: "Серійний номер документу (вкл.літери)"
+          date_of_birth: "Дата народження"
+          postal_code: "Поштовий індекс"
