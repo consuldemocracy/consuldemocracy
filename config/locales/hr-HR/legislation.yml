@@ -150,3 +150,9 @@ hr:
       download: "Preuzmi sažetak"
       top_comments:
         zero: "Nema komentara"
+        one: "%{count} komentar"
+        few: "%{count} komentara"
+        other: "Najbolji komentari"
+      most_voted_comments: "Komentari s najviše glasova"
+      no_allegation: "Nema komentara"
+      process_empty: "Ovaj proces nije imao nikakve faze sudjelovanja"
