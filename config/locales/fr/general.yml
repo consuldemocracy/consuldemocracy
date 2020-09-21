@@ -40,6 +40,8 @@ fr:
         zero: Aucune réponse
         one: 1 réponse
         other: "%{count} réponses"
+      responses_show:
+        zero: Aucune réponse
       user_deleted: Utilisateur effacé
       votes:
         zero: Aucun vote
