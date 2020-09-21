@@ -1,0 +1,120 @@
+oc:
+  legislation:
+    annotations:
+      comments:
+        see_all: veire totas
+        see_complete: veire complet
+        comments_count:
+          one: "%{count} comentari"
+          other: "%{count} de comentaris"
+        replies_count:
+          one: "%{count} responsa"
+          other: "%{count} de responsas"
+        cancel: Cancel · lar
+        publish_comment: publicar Comentari
+      form:
+        phase_not_open: Aquela fasa se pas dobèrta
+      index:
+        title: Comentarios
+        comments_about: de comentaris dessús
+        see_in_context: Veire en contèxt
+        comments_count:
+          one: "%{count} comentari"
+          other: "%{count} de comentaris"
+      show:
+        title: Comentar
+      version_chooser:
+        seeing_version: de Comentaris per la version
+        see_text: Veire borrolhon del tèxt
+    draft_versions:
+      changes:
+        title: de cambiaments
+        seeing_changelog_version: Resumit de cambiaments de la revision
+        see_text: Veire borrolhon del tèxt
+      show:
+        loading_comments: en cargant de comentaris
+        seeing_version: veses la revision
+        select_draft_version: seleccionar borrolhon
+        select_version_submit: veire
+        updated_at: actualizada çò %{date}
+        see_changes: veire resumit de cambiaments
+        see_comments: Veire totas los comentaris
+        text_toc: indèx
+        text_body: tèxt
+        text_comments: Comentarios
+    processes:
+      header:
+        additional_info: Informacion adicional
+        description: Descripcion detalhada
+        more_info: Jamai informacion e contèxt
+      proposals:
+        empty_proposals: E a passatge de proposicions
+        filters:
+          random: L’azard
+          winners: seleccionada
+      debate:
+        empty_questions: E a passatge de questions
+        participate: de Fes las aportacions al debat prealable participant en los seguents tèmas.
+      index:
+        filter: Filtrar
+        filters:
+          open: de procèsses actius
+          past: acabats
+        no_open_processes: E a passatge de procèsses actius
+        no_past_processes: E a passatge de procèsses acabats
+        section_header:
+          icon_alt: Icòna de legislacion col·laborativa
+          title: de procèsses legislatius
+          help: Ajuda sus legislacion col·laborativa
+        section_footer:
+          title: Ajuda sus legislacion col·laborativa
+          description: Participa als debats e procèsses prealables a l’aprobacion de nòvas nòrmas o estrategias. Se considerarà la vòstra opinion.
+      phase_not_open:
+        not_open: Aquela fasa del procès s'encara pas dobèrta
+      phase_empty:
+        empty: E a pas res publicat encara
+      process:
+        see_latest_comments: Veire de darrièras d'aportacions
+        see_latest_comments_title: Aportar a aquel procès
+      shared:
+        key_dates: de Fasas de participacion
+        homepage: Pagina iniciala
+        debate_dates: debat prealable
+        draft_publication_date: publicacion borrolhon
+        allegations_dates: Comentarios
+        result_publication_date: publicacion resultada
+        milestones_date: De contunh
+        proposals_dates: de Proposicions ciutadanas
+    questions:
+      comments:
+        comment_button: Publica responsa
+        comments_title: de responsas dubèrtas
+        comments_closed: fasa barrada
+        form:
+          leave_comment: Daissa la tiá responsa
+      question:
+        comments:
+          zero: Sens comentaris
+          one: "%{count} comentari"
+          other: "%{count} de comentaris"
+        debate: debat prealable
+      show:
+        answer_question: Enviar responsa
+        next_question: seguenta question
+        first_question: primièra question
+        share: partejar
+        title: Procès de legislacion col·laborativa
+      participation:
+        phase_not_open: Aquela fasa es pas dobèrta
+        organizations: Las organizacions pòdon pas participar al debat
+        unauthenticated: As de besonh %{signin} o %{signup} per participar al debat.
+        verified_only: Solament los usatgièrs verificats pòdon participar al debat, %{verify_account}.
+        debate_phase_not_open: La fasa de debat prealable a ja finalizat e en aquel moment s'accèptan pas responsas
+    shared:
+      share: partejar
+      share_comment: Comentari sus detla %{version_name} del borrolhon del procès %{process_name}
+    proposals:
+      form:
+        tags_label: "de Categorias"
+      not_verified: "Per proposicions de vòt %{verify_account}."
+      process_title: Procès de legislacion col·laborativa

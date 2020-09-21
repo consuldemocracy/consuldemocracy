@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-ar
@@ -163,6 +163,7 @@ var initialize_modules = function() {
     App.ColumnsSelector.initialize();
   }
   App.BudgetEditAssociations.initialize();
+  App.Datepicker.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {

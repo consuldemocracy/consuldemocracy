@@ -7,12 +7,8 @@
           var checkbox;
           checkbox = $(this);
 
-          checkbox.closest("fieldset").find("input[type='text']").each(function() {
-            if (checkbox.is(":checked")) {
-              $(this).removeAttr("disabled");
-            } else {
-              $(this).prop("disabled", true);
-            }
+          checkbox.closest("fieldset").find("input[type='date']").each(function() {
+            $(this).prop("disabled", !checkbox.is(":checked"));
           });
         }
       }).trigger("change");

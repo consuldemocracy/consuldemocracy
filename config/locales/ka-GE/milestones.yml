@@ -1,0 +1,8 @@
+ka:
+  milestones:
+    index:
+      no_milestones: ეტაპები განსაზღვრული არ არის
+      progress: მიმდინარეობა
+    show:
+      publication_date: "გამოქვეყნების თარიღი %{publication_date}"
+      status_changed: სტატუსი შეიცვალა და გახდა

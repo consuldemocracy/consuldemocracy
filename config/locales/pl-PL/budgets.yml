@@ -3,8 +3,6 @@ pl:
     ballots:
       show:
         title: Twój tajny głos
-        amount_spent: Łączna wartość wybranych projektów
-        remaining: "Wciąż masz <span>%{amount}</span> do zainwestowania."
         no_balloted_group_yet: "Jeszcze nie zagłosowałeś na tej grupie, oddaj swój głos!"
         remove: Usuń głos
         voted_info_2: "Ale możesz zmienić swój głos w dowolnym momencie, dopóki ta faza jest zamknięta."
@@ -74,8 +72,6 @@ pl:
           title: Szukaj
         sidebar:
           my_ballot: Moje głosowanie
-          voted_info: Możesz %{link} w każdej chwili aż do zamknięcia tej fazy. Nie ma potrzeby wydawania wszystkich dostępnych pieniędzy.
-          voted_info_link: zmień swój głos
           change_ballot: "Jeśli zmienisz zdanie, możesz usunąć swoje głosy w %{check_ballot} i zacząć od nowa."
           check_ballot_link: "sprawdź moje głosowanie"
           zero: Nie zagłosowałeś na żaden z projektów inwestycyjnych w tej grupie.

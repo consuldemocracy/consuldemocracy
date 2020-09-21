@@ -59,10 +59,6 @@ module BudgetsHelper
     Budget::Ballot.find_by(user: current_user, budget: @budget)
   end
 
-  def investment_tags_select_options(budget, context)
-    budget.investments.tags_on(context).order(:name).pluck(:name)
-  end
-
   def unfeasible_or_unselected_filter
     ["unselected", "unfeasible"].include?(@current_filter)
   end

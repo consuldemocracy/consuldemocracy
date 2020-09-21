@@ -133,6 +133,7 @@ es:
       form:
         create: "Crear nuevo grupo"
         edit: "Editar grupo"
+        max_votable_headings_info: "Solo se aplica en la fase de apoyos. Durante la votación final un usuario solo puede votar en una partida por grupo."
         submit: "Guardar grupo"
       index:
         back: "Volver a presupuestos"

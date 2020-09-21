@@ -1,0 +1,10 @@
+<% if comments.any? %>
+  <span><%= t("legislation.summary.most_voted_comments") %></span>
+
+  <% comments.each do |comment| %>
+    <div class="comment-summary">
+      <%= link_to simple_format(sanitize(comment.body, tags: [])), comment_path(comment) %>
+      <p><%= t("legislation.summary.votes", count: comment.votes_score) %></p>
+    </div>
+  <% end %>
+<% end %>

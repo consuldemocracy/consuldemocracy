@@ -212,6 +212,19 @@ describe "Proposals" do
     end
   end
 
+  describe "Sticky support button on medium and up screens", :js do
+    scenario "is shown anchored to top" do
+      proposal = create(:proposal)
+      visit proposals_path
+
+      click_link proposal.title
+
+      within("#proposal_sticky") do
+        expect(find(".is-anchored")).to match_style(top: "0px")
+      end
+    end
+  end
+
   describe "Show sticky support button on mobile screens", :js do
     let!(:window_size) { Capybara.current_window.size }
 

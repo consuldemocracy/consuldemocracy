@@ -166,6 +166,10 @@ sr:
         one: Веза
         few: Везе
         other: Везе
+      local_census_record:
+        one: Запис локалног пописа
+        few: Записи локалног пописа
+        other: Записи локалног пописа
     attributes:
       budget:
         name: "Име"
@@ -178,6 +182,9 @@ sr:
         description_finished: "Опис када се финализира буџет"
         phase: "Фаза"
         currency_symbol: "Валута"
+        voting_style: "Завршни начин гласања"
+        voting_style_knapsack: "\"Ранац\""
+        voting_style_approval: "Одобрење"
       budget/translation:
         name: "Име"
       budget/investment:
@@ -190,6 +197,7 @@ sr:
         organization_name: "Уколико предлажете име колектива/организација онда у име више људи напишите име колектива/организације"
         image: "Описна слика предлога"
         image_title: "Назив слике"
+        duration: "Временски оквир"
         feasibility_feasible: "Изводљиво"
         feasibility_undecided: "Недефинисано"
         feasibility_unfeasible: "Неизводљиво"
@@ -210,7 +218,7 @@ sr:
         name: Име
         external_code: "Екстерни код (необавезно)"
         census_code: "Код цензуса (необавезно)"
-        html_map_coordinates: "ХТМЛ <мап> Координате (необавезно)"
+        html_map_coordinates: "ХТМЛ <map> Координате (необавезно)"
       milestone:
         status_id: "Тренутни статус (необавезно)"
         title: "Назив"
@@ -239,6 +247,7 @@ sr:
         name: "Име наслова"
         price: "Износ"
         population: "Популација (необавезно)"
+        max_ballot_lines: "Дозвољени гласови"
       budget/heading/translation:
         name: "Име наслова"
       budget/phase:
@@ -336,6 +345,7 @@ sr:
         body: "Порука"
         title: "Наслов"
       signature_sheet:
+        title: "Наслов"
         signable_type: "Тип који се може уписати"
         signable_id: "ИД за пријављивање"
         document_numbers: "Бројеви докумената"
@@ -371,6 +381,8 @@ sr:
       banner:
         background_color: Боја позадине
         font_color: Боја фонта
+        post_ended_at: "Објава се завршила у"
+        post_started_at: "Објава започета у"
         target_url: "Веза"
       banner/translation:
         title: "Наслов"
@@ -537,6 +549,7 @@ sr:
           attributes:
             document_number:
               not_in_census: "Документ није у попису"
+            user_id:
               has_voted: "Корисник је већ гласао"
         legislation/process:
           attributes:
@@ -582,6 +595,10 @@ sr:
           attributes:
             valuation:
               cannot_comment_valuation: "Не можете коментарисати вредновање"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Ресурс је већ преведен
       messages:
         translations_too_short: Обавезно је да обезбедите један превод
         record_invalid: "Провера ваљаности није успела %{errors}"

@@ -1,1 +1,90 @@
 mk:
+  officing:
+    header:
+      title: Анкета
+    dashboard:
+      index:
+        title: Администрирање на анкета
+        info: Тука можете да ги потврдите корисничките документи и да ги зачувате резултатите од гласањето
+        no_shifts: Немате административни смени денеска.
+    menu:
+      voters: Потврди документ
+      total_recounts: Конечни пребројувања и резултати
+    polls:
+      final:
+        title: Анкети подготвени за конечно пребројување
+        no_polls: Не администрирате конечни пребројувања во ниедна активна анкета
+        select_poll: Избери анкета
+        add_results: Додади резултати
+    poll_budgets:
+      see_ballot_sheets: Погледни ја листата на гласачки ливчиња
+      index:
+        title: "%{poll_budget} листа на гласачки ливчиња"
+        ballot_sheet: "Гласачко ливче %{id}"
+        ballot_sheet_name: Име
+        ballot_sheet_author: Автор
+        ballot_sheet_creation_date: Дата на создавање
+        empty_results: Се уште нема гласачки ливчиња за оваа анкета
+      new:
+        title: "%{poll_budget} - Ново гласачко ливче"
+        booth: Кабина
+        select_booth: Избери кабина
+        csv_data: ЦСВ податоци
+        submit: Зачувај
+      show:
+        created_at: Дата на создавање
+        author: Автор
+        data: ЦСВ податоци
+    booth:
+      new:
+        title: "Избери кабина"
+    results:
+      flash:
+        create: "Зачувани резултати"
+        error_create: "Резултатите НЕ се зачувани. Грешка во податоците."
+        error_wrong_booth: "Погрешна кабина. Резултатите НЕ се зачувани."
+      new:
+        title: "%{poll} - Додади резултати"
+        not_allowed: "Не е дозволено додавање резултати за оваа анкета"
+        booth: "Кабина"
+        date: "Датум"
+        select_booth: "Избери кабина"
+        ballots_white: "Целосно празни ливчиња"
+        ballots_null: "Невалидни ливчиња"
+        ballots_total: "Валидни ливчиња"
+        submit: "Зачувај"
+        results_list: "Твои резултати"
+        see_results: "Види резултати"
+      index:
+        no_results: "Нема резултати"
+        results: Резултати
+        table_answer: Одговор
+        table_votes: Гласови
+        table_whites: "Целосно празни ливчиња"
+        table_nulls: "Невалидни ливчиња"
+        table_total: "Валидни ливчиња"
+    residence:
+      flash:
+        create: "Документ верификуван со Цензус"
+        not_allowed: "Немате административни смени денеска"
+      new:
+        title: Потврди документ
+        document_number: "Број на документ (вклучувајќи и букви)"
+        submit: Потврди документ
+        error_verifying_census: "Цензусот не успеа да го верификува овој документ."
+        form_errors: спречено верификување на овој документ
+    voters:
+      new:
+        title: Анкети
+        table_poll: Анкета
+        table_status: Статус на анкета
+        table_actions: Акции
+        not_to_vote: Личноста реши да не гласа овој пат
+      show:
+        can_vote: Може да гласа
+        cannot_vote: Оваа личност не може да гласа затоа што не е регистрирана во областа каде гласањето се одвива.
+        error_already_voted: Веќе учествувано во оваа анкета
+        submit: Потврди глас
+        success: "Најавен глас!"
+      can_vote:
+        submit_disable_with: "Момент, гласот се потврдува..."

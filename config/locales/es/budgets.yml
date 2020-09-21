@@ -6,8 +6,8 @@ es:
         amount_available:
           knapsack: "Te quedan <span>%{count}</span> para invertir"
           approval:
-            zero: "Te quedan <span>0</span> votos disponibles"
-            one: "Te queda <span>1</span> voto disponible"
+            zero: "Te quedan <span>%{count}</span> votos disponibles"
+            one: "Te queda <span>%{count}</span> voto disponible"
             other: "Te quedan <span>%{count}</span> votos disponibles"
         amount_spent:
           knapsack: "Coste total <span>%{count}</span>"

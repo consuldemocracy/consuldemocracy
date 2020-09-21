@@ -933,15 +933,6 @@ sq:
           without_confirmed_hide: Në pritje
         title: Propozime të fshehura
         no_hidden_proposals: Nuk ka propozime të fshehura.
-    proposal_notifications:
-      index:
-        filter: Filtër
-        filters:
-          all: Të gjithë
-          with_confirmed_hide: Konfirmuar
-          without_confirmed_hide: Në pritje
-        title: Njoftime të fshehura
-        no_hidden_proposals: Nuk ka njoftime të fshehura.
     settings:
       flash:
         updated: Vlera e përditësuar

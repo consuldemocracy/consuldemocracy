@@ -1,0 +1,54 @@
+oc:
+  seeds:
+    settings:
+      official_level_1_name: Posicion oficiala 1
+      official_level_2_name: Posicion oficiala 2
+      official_level_3_name: Posicion oficiala 3
+      official_level_4_name: Posicion oficiala 4
+      official_level_5_name: Posicion oficiala 5
+    geozones:
+      north_district: Districte nòrd
+      west_district: Districte Oèst
+      east_district: Districte Èst
+      central_district: Districte Central
+    organizations:
+      human_rights: de Dreches umans
+      neighborhood_association: Associacion de vesins
+    categories:
+      associations: d'Associacions
+      culture: Cultura
+      sports: d'Espòrts
+      social_rights: de Dreches Socials
+      economy: Economia
+      employment: Aucupacion
+      equity: Equitat
+      sustainability: Sostenibilitat
+      participation: Participacion
+      mobility: Mobilitat
+      media: de Mejans de comunicacion
+      health: Salut
+      transparency: Transparéncia
+      security_emergencies: Seguretat e d'Emergéncias
+      environment: Mitan ambient
+    budgets:
+      budget: Budgèt participatiu
+      currency: '€'
+      groups:
+        all_city: Tota la vila
+        districts: de Districtes
+      valuator_groups:
+        culture_and_sports: Cultura & Esports
+        gender_and_diversity: Genre & de Politicas de diversitat
+        urban_development: Desvolopament Urban Sostenible
+        equity_and_employment: Equitat & Employment
+      statuses:
+        studying_project: Estudiar lo projècte
+        bidding: Licitacion
+        executing_project: en Executant lo projècte
+        executed: Executat
+    polls:
+      current_poll: "Enquèsta actuala"
+      current_poll_geozone_restricted: "Enquèsta actuala Geozona restringida"
+      recounting_poll: "Conta enquèsta"
+      expired_poll_without_stats: "Enquèsta expirada sens estatisticas & de Resultats"
+      expired_poll_with_stats: "Enquèsta en vigor amb estatisticas & de Resultats"

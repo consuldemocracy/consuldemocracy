@@ -198,7 +198,7 @@ es:
         primary: "Principal"
         secondary: "Secundaria"
       budget/group:
-        max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
+        max_votable_headings: "Máximo número de partidas en que un usuario puede seleccionar proyectos"
       budget/group/translation:
         name: "Nombre del grupo"
       budget/heading:

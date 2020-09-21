@@ -1,0 +1,68 @@
+ka:
+  valuation:
+    header:
+      title: შეფასება
+    menu:
+      title: შეფასება
+      budgets: მონაწილეობითი ბიუჯეტები
+    budgets:
+      index:
+        title: მონაწილეობითი ბიუჯეტები
+        filters:
+          current: მიმდინარე
+          finished: დასრულებული
+        table_name: სახელი
+        table_phase: ფაზა
+        table_assigned_investments_valuation_open: საინვესტიციო პროექტები, რომელთა ღიად შეფასება შესაძლებელია
+        table_actions: მოქმედებები
+        evaluate: შეფასება
+        no_budgets: "ბიუჯეტები არ მოიძებნა"
+    budget_investments:
+      index:
+        headings_filter_all: ყველა რუბრიკა
+        filters:
+          valuation_open: მიმდინარე
+          valuating: მიმდინარეობს შეფასება
+          valuation_finished: შეფასება დასრულებულია
+        assigned_to: "მიმაგრებულია %{valuator}"
+        title: საინვესტიციო პროექტები
+        edit: დოსიეს რედაქტირება
+        table_id: ID
+        table_title: სათაური
+        table_heading_name: რუბრიკის დასახელება
+        table_actions: მოქმედებები
+        no_investments: "საინვესტიციო პროექტები არ მოიძებნა."
+      show:
+        back: უკან
+        title: საინვესტიციო პროექტი
+        info: ინფორმაცია ავტორზე
+        by: გამგზავნი
+        sent: გაგზავნის თარიღი
+        heading: რუბრიკა
+        dossier: დოსიე
+        edit_dossier: დოსიეს რედაქტირება
+        price: ფასი
+        price_first_year: ღირებულება პირველი წლის მანძილზე
+        currency: "€"
+        feasibility: შესრულების შესაძლებლობა
+        feasible: განხორციელებადი
+        unfeasible: შეუძლებელი
+        undefined: განუსაზღვრელი
+        valuation_finished: შეფასება დასრულებულია
+        duration: დროის ფარგლები
+        responsibles: პასუხისმგებელი პირები
+        assigned_admin: გამოყოფილი ადმინისტრატორი
+        assigned_valuators: გამოყოფილი შემფასებლები
+        preview: ინვესტიციის ესკიზი
+      edit:
+        dossier: დოსიე
+        price: "ფასი (%{currency})"
+        price_first_year: "ღირებულება პირველი წლის მანძილზე (%{currency}) <small>(არასავალდებულო, მონაცემები არ საჯაროვდება)</small>"
+        feasibility: განხორციელებადობა
+        valuation_finished_alert: "ნამდვილად გსურთ, მონიშნოთ ეს ინიციატივა როგორც დასრულებული? თუ ამას გააკეთებთ, მისი რედაქტირება შეუძლებელი გახდება."
+        not_feasible_alert: "პროექტის ავტორს დაუყოვნებლივ ეგზავნება ელ.ფოსტა, რომელსაც თან ახლავს შეუსაბამობის ანგარიში."
+        save: ცვლილებების შენახვა
+      notice:
+        valuate: "დოსიე განახლდა"
+      valuation_comments: შეფასების კომენტარები
+      not_in_valuating_phase: ინვესტიციების შეფასება შესაძლებელია მხოლოდ მაშინ, როდესაც ბიუჯეტი შეფასების ეტაპზეა

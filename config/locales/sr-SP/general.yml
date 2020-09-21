@@ -43,6 +43,9 @@ sr:
         other: "%{count} одговора"
       responses_show:
         zero: Нема одговора
+        one: "1 одговор (прикажи)"
+        few: "%{count} одговора (прикажи)"
+        other: "%{count} одговора (прикажи)"
       responses_collapse:
         zero: Нема одговора
         one: "1 одговор (слом)"
@@ -98,10 +101,6 @@ sr:
       tags_placeholder: "Унесите ознаке које желите да користите, одвојене зарезима (',')"
     index:
       featured_debates: Истакнуто
-      filter_topic:
-        one: " са темом %{topic}"
-        few: " са темама %{topic}"
-        other: " са темама %{topic}"
       orders:
         confidence_score: највиша ознака
         created_at: најновије
@@ -122,8 +121,8 @@ sr:
         title: Тражите
       search_results:
         one: " која садржи појам<strong>%{search_term}</strong>"
-        few: " који садрже појам <strong>%{search_term}</strong> "
-        other: "који садржи појам <strong>%{search_term}</strong>"
+        few: " који садрже појам <strong>%{search_term}</strong>"
+        other: " који садржи појам <strong>%{search_term}</strong>"
       select_order: Наручено по
       start_debate: Започните расправу
       title: Расправе
@@ -263,8 +262,6 @@ sr:
           other: Имате %{count} нових обавештења
         notifications: Обавештења
         no_notifications: "Немате нових обавештења"
-    admin:
-      watch_form_message: "Имате несачуване промене. Да ли желите да напустите страницу?"
   notifications:
     index:
       empty_notifications: Немате нових обавештења.
@@ -305,12 +302,17 @@ sr:
       sign_in: Приступите користећи Google
       sign_up: Пријавите се користећи Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Пријава на "Wordpress"
+      sign_up: Нови "Wordpress" налог
+      name: '"Wordpress"'
     twitter:
       sign_in: Приступите користећи Twitter
       sign_up: Пријавите се користећи Twitter
       name: Twitter
-    info_sign_in: "Приступите користећи:"
-    info_sign_up: "Пријавите се користећи:"
+    info:
+      sign_in: "Пријавите се користећи:"
+      sign_up: "Направите нови налог помоћу:"
     or_fill: "Или попуните следећи образац:"
   proposals:
     create:
@@ -358,10 +360,6 @@ sr:
       map_skip_checkbox: "Ова инвестиција не поседује одређену локацију или ја тога нисам свестан."
     index:
       featured_proposals: Истакнуто
-      filter_topic:
-        one: " са темом %{topic}"
-        few: " са темама %{topic}"
-        other: " са темама %{topic}"
       orders:
         confidence_score: највише котирани
         created_at: најновије
@@ -394,9 +392,15 @@ sr:
         button: Тражите
         placeholder: Тражите предлоге...
         title: Тражите
+      search_results:
+        one: " који садржи термин <strong>'%{search_term}'</strong>"
+        few: " који садржи термин <strong>'%{search_term}'</strong>"
+        other: " који садржи термин <strong>'%{search_term}'</strong>"
       select_order: Наручено по
+      select_order_long: "Предлози су приказани на основу:"
       start_proposal: Креирајте предлог
       title: Предлози
+      top: Најпопуларнији у току недеље
       top_link_proposals: Предлози са највише подршке по категорији
       section_header:
         icon_alt: Икона предлога
@@ -404,6 +408,7 @@ sr:
         help: Помоћ у вези предлога
       section_footer:
         title: Помоћ у вези предлога
+        description: Предлози грађана су прилика за комшилуке и заједнице да директно одлуче какав ће њихов град бити, након добијања довољно подршке и подношења на гласање грађанима.
     new:
       form:
         submit_button: Креирајте предлог
@@ -588,7 +593,10 @@ sr:
         title: Преглед постера
         poster_title: "Немојте да тражите,"
         poster_subtitle: "направите резервну копију! ;)"
+        intro_text: "<strong>Учествујем у %{org}</strong> са сопственим грађанским предлогом и само уз Вашу подршку могу достићи жељену подршку неопходну да би град променили онако како желимо."
+        proposal_code: "Шифра предлога: %{code}"
         support: Подржите мој предлог
+        footer: "<strong>Посетите %{link} и подржите овај предлог.</strong> Што више, то боље. Урадимо наш део. Хвала Вам!"
       new:
         title: Постер вашег предлога
       options:
@@ -611,6 +619,8 @@ sr:
         share_in: Поделите у
         hi: "Поздрав!"
         introduction: Пишем вам да вас обавестим да ја учествујем у %{org}, платформи на коју можемо да одлучимо који град желимо. И зато сам створио свој сопствени грађански предлог и сада ће ми требати ваша подршка! Али не брините зато што је то веома једноставно.
+        support: "Кликните на дугме испод, \"Подржи овај предлог\", да би сазнали више о њему. Шансу да буду имплементирани могу добити само предлози који добију највећу подршку грађана и надам се да ћу добити и вашу!"
+        share: "Пуно би ми значило и ако бисте поделили овај предлог са својим пријатељима, породицом и контактима!"
   polls:
     all: "Све"
     no_dates: "није додељен датум"
@@ -625,6 +635,7 @@ sr:
       participate_button_expired: "Анкета завршена"
       no_geozone_restricted: "Цео град"
       geozone_restricted: "Дистрикти"
+      geozone_info: "Могу учествовати особе из пописа: "
       already_answer: "Већ сте учествовали у овој анкети"
       not_logged_in: "Морате приступити или се одјавити да бисте учествовали"
       unverified: "Морате потврдити ваш налог да бисте учествовали"
@@ -635,15 +646,18 @@ sr:
         help: Помоћ око гласања
       section_footer:
         title: Помоћ око гласања
+        description: Грађанска гласања су механизам за партиципацију путем којег грађани са правом гласа могу да доносе директне одлуке
       no_polls: "Нема отворених гласова."
     show:
       already_voted_in_booth: "Назад на гласање."
+      already_voted_in_web: "Већ сте учествовали у овом гласању. Ако гласате поново, претходни глас неће важити."
       back: Назад на гласање
       cant_answer_not_logged_in: "Морате %{signin} или %{signup} да бисте учествовали."
       comments_tab: Коментари
       cant_answer_verify: "Морате %{verify_link} да бисте одговорили."
       verify_link: "потврди твој налог"
       cant_answer_expired: "Ово гласање је завршено."
+      cant_answer_wrong_geozone: "Ово питање није доступно у вашој зони."
       more_info_title: "Још информација"
       documents: Документа
       zoom_plus: Проширите слику
@@ -676,6 +690,7 @@ sr:
     new:
       title: "Пошаљите поруку"
       submit_button: "Пошаљите поруку"
+      info_about_receivers: "Ова порука ће бити послата ка <strong>%{count} особа</strong> и биће видљива у %{proposal_page}.<br> Поруке се не шаљу одмах већ корисници периодично добијају поруку путем електронске поште са свим обавештењима везаним за предлог."
       proposal_page: "страница предлога"
     show:
       back: "Вратите се на мој садржај"
@@ -715,19 +730,45 @@ sr:
     follow: "Прати"
     following: "Пратити"
     follow_entity: "Прати %{entity}"
-    hide: Сакрите
+    followable:
+      budget_investment:
+        create:
+          notice: "Сада пратите овај инвестициони пројекат! <br> Обавештаваћемо Вас о било каквим променама везаним за њега."
+        destroy:
+          notice: "Престали сте да пратите овај инвестициони пројекат! <br> Више нећете добијати обавештења о њему."
+      proposal:
+        create:
+          notice: "Сада пратите овај грађански предлог! <br> Обавештаваћемо Вас о било каквим променама везаним за њега."
+        destroy:
+          notice: "Престали сте да пратите овај грађански предлог! <br> Више нећете добијати обавештења о њему."
     print:
       print_button: Штампајте ову информацију
     search: Тражите
     show: Покажи
     suggest:
       debate:
+        found:
+          one: "Постоји дебата са термином '%{query}' у којој можете учествовати уместо да покрећете нову."
+          few: "Постоје дебате са термином '%{query}' у којима можете учествовати уместо да покрећете нову."
+          other: "Постоје дебате са термином '%{query}' у којима можете учествовати уместо да покрећете нову."
+        message: "Приказује Вам се %{limit} од %{count} дебата које садрже термин '%{query}'"
         see_all: "Видите све"
       budget_investment:
+        found:
+          one: "Постоји инвестиција са термином '%{query}' у којој можете учествовати уместо да покрећете нову."
+          few: "Постоје инвестиције са термином '%{query}' у којима можете учествовати уместо да покрећете нову."
+          other: "Постоје инвестиције са термином '%{query}' у којима можете учествовати уместо да покрећете нову."
+        message: "Приказује Вам се %{limit} од %{count} инвестиција које садрже термин '%{query}'"
         see_all: "Видите све"
       proposal:
+        found:
+          one: "Постоји предлог са термином '%{query}' у којем можете учествовати уместо да покрећете нов"
+          few: "Постоје предлози са термином '%{query}' у којима можете учествовати уместо да покрећете нов"
+          other: "Постоје предлози са термином '%{query}' у којима можете учествовати уместо да покрећете нов"
+        message: "Приказује Вам се %{limit} од %{count} предлога који садрже термин '%{query}'"
         see_all: "Видите све"
     tags_cloud:
+      tags: Најпопуларније
       districts: "Дистрикти"
       districts_list: "Листа дистрикта"
       categories: "Категорије"
@@ -737,12 +778,14 @@ sr:
     unfollow_entity: "Одпратити%{entity}"
     outline:
       searcher: Претраживач
+    go_to_page: "Иди на страну "
     share: Подели
     orbit:
       previous_slide: Претходни слајд
       next_slide: Наредни слајд
     documentation: Додатна документација
     view_mode:
+      title: Режим прегледа
       cards: Картице
       list: Листа
     recommended_index:
@@ -777,13 +820,21 @@ sr:
       votes: Укупни гласови
       verified_users: Потврђени корисници
       unverified_users: Непотврђени корисници
+  unauthorized:
+    default: Немате дозволу да приступите овој страни.
+    manage:
+      all: "Немате дозволу да урадите '%{action}' на %{subject}."
   users:
+    login_to_comment: "Морате да се пријавите %{signin} или направите налог %{signup} да би оставили коментар."
+    login_to_continue: "Морате да се пријавите %{signin} или направите налог %{signup} да би наставили."
     signin: "пријавите се"
     signup: "упиши се"
     verify_account: "потврди твој налог"
     direct_messages:
       new:
+        direct_messages_bloqued: "Овај корисник не жели да добија директне поруке"
         submit_button: Пошаљите поруку
+        title: Пошаљите приватну поруку %{receiver}
         verified_only: Да пошаљете приватне поруке%{verify_account}
       show:
         receiver: Порука послата %{receiver}
@@ -811,7 +862,17 @@ sr:
           one: 1 Предлог
           few: "%{count} Предлога"
           other: "%{count} Предлога"
+        budget_investments:
+          one: 1 Инвестиција
+          few: "%{count} Инвестиције"
+          other: "%{count} Инвестиције"
+        follows:
+          one: 1 праћење
+          few: "%{count} праћења"
+          other: "%{count} праћења"
+      no_activity: Корисник нема јавних активности
       no_private_messages: "Овај корисник не прихвата приватне поруке."
+      private_activity: Листа активности овог корисника је приватна.
       send_private_message: "Пошаљите приватну поруку"
       delete_alert: "Да ли сте сигурни да желите да обришете инвестициони пројект? Ова радња се не може поништити"
     proposals:
@@ -820,6 +881,7 @@ sr:
       published: Објављено
       see: "Погледајте предлоге"
       actions: Радње
+      retired_help_text: Контролна табла није доступна за истекле предлоге
   votes:
     agree: Слажем се
     anonymous: Превише анонимних гласова да призна гласање%{verify_account}.
@@ -832,8 +894,12 @@ sr:
       not_logged_in: Морате %{signin} или %{signup} да бисте наставили.
       not_verified: Само потврђени корисници могу гласати за инвестиционе пројекте; %{verify_account}.
       organization: Организацијама није дозвољено гласање
-      unfeasible: Неизабрани инвестициони пројекти не могу бити подржани
+      unfeasible: Неизводљиви инвестициони пројекти не могу бити подржани
       not_voting_allowed: Фаза гласања је затворена
+      different_heading_assigned:
+        one: "Можете подржавати само инвестиционе пројекте из %{count} округа. Већ сте подржали инвестиције у %{supported_headings}."
+        few: "Можете подржавати само инвестиционе пројекте из %{count} округа. Већ сте подржали инвестиције у %{supported_headings}."
+        other: "Можете подржавати само инвестиционе пројекте из %{count} округа. Већ сте подржали инвестиције у %{supported_headings}."
   welcome:
     feed:
       most_active:
@@ -848,6 +914,11 @@ sr:
     cards:
       title: Истакнуте
     recommended:
+      title: Препоруке за које ћете можда бити заинтересовани
+      help: "Ове препоруке су генерисане на основу ознака дебата и предлога које пратите."
+      debates:
+        title: Препоручене дебате
+        btn_text_link: Све препоручене дебате
       proposals:
         title: Препоручени предлози
         btn_text_link: Сви препоручени предлози
@@ -873,13 +944,54 @@ sr:
       user_permission_votes: Учествујте у завршном гласању
   invisible_captcha:
     sentence_for_humans: "Ако сте човек, игноришите ово поље"
+    timestamp_error_message: "Превише брзо! Молимо Вас да пошаљете поново."
   related_content:
     title: "Повезани садржај"
     add: "Додајте повезани садржај"
     label: "Линк за повезани садржај"
     placeholder: "%{url}"
+    help: "Можете додавати линкове %{models} унутар %{org}."
     submit: "Додати"
+    error: "Линк није исправан. Требало би да почне са %{url}."
+    error_itself: "Линк није исправан. Не би требало да повезујете садржај са истим."
+    success: "Додали сте нови повезани садржај"
+    is_related: "Да ли је садржај повезан?"
     score_positive: "Да"
     score_negative: "Не"
     content_title:
       proposal: "Предлог"
+      debate: "Дебате"
+      budget_investment: "Буџетске инвестиције"
+  admin/widget:
+    header:
+      title: Администрација
+  annotator:
+    help:
+      alt: Одаберите текст за који желите да оставите коментар и кликните на дугме са оловком.
+      text: Да би оставили коментар на овај документ морате да се пријавите %{sign_in} или направите налог %{sign_up}. Након тога, означите текст на који желите да оставите коментар и кликните на дугме са оловком.
+      title: Како могу да коментаришем овај документ?
+  links:
+    form:
+      delete_button: Обриши
+      cancel_button: Откажи
+    nested_links:
+      title: Линкови
+      note: Додајте линкове који су од интереса
+      add_new_link: Додај нови линк
+    link_fields:
+      label_placeholder: Назив линка
+      url_placeholder: Адреса линка
+  communities:
+    show:
+      surveys: Анкете
+      complete_survey: Одговорите на анкету
+    subnav:
+      surveys: Анкете
+    poll:
+      take_part: Учествуј од %{from} до %{to}
+  remote_translations:
+    text: Садржај ове стране није доступан на Вашем језику
+    all_remote_translations_enqueued_text: Ускоро ћете поновним учитавањем стране моћи ћете да видите сав садржај на Вашем језику.
+    create:
+      enqueue_remote_translation: Захтев за преводом је успешно послат.
+    button: Преведи страну

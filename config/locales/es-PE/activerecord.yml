@@ -283,7 +283,6 @@ es-PE:
           attributes:
             document_number:
               not_in_census: "Este documento no aparece en el censo"
-              has_voted: "Este usuario ya ha votado"
         legislation/process:
           attributes:
             end_date:

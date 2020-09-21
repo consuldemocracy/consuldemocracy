@@ -4,6 +4,10 @@ sr:
       verification:
         residence: "Пребивалиште"
         sms: "Смс"
+      local_census_records/import:
+        one: Увоз записа локалног пописа
+        few: Увоз записа локалног пописа
+        other: Увози записа локалног пописа
     attributes:
       verification:
         residence:
@@ -19,6 +23,7 @@ sr:
       verification/letter:
         email: "Емаил"
         password: "Лозинка"
+        verification_code: "Код који сте добили у писму"
       verification/management/document:
         document_type: "Тип документа:"
         document_number: "Број документа"
@@ -33,11 +38,11 @@ sr:
         document_number: "Број исправе"
         year_of_birth: "Година рођења"
       local_census_records/import:
-        file: Фолдер
+        file: Фајл
     errors:
       models:
         local_census_records/import:
           attributes:
             file:
-              extension: "Дати формат фолдера је погрешан. Дозвољени формат фолдера је: %{valid_extensions}."
-              headers: "Дати наслови фолдера су погрешни. Наслов фолдера мора садржати следећа имена: %{required_headers}."
+              extension: "Дати формат фајла је погрешан. Дозвољени формат фајла је: %{valid_extensions}."
+              headers: "Дати наслови фајла су погрешни. Наслови фајла морају садржати следећа имена: %{required_headers}."

@@ -162,8 +162,8 @@ describe "Admin collaborative legislation" do
       fill_in "Summary", with: "Summary of the process"
 
       base_date = Date.current
-      fill_in "legislation_process[start_date]", with: base_date.strftime("%d/%m/%Y")
-      fill_in "legislation_process[end_date]", with: (base_date + 5.days).strftime("%d/%m/%Y")
+      fill_in "legislation_process[start_date]", with: base_date
+      fill_in "legislation_process[end_date]", with: base_date + 5.days
       imageable_attach_new_file(create(:image), Rails.root.join("spec/fixtures/files/clippy.jpg"))
 
       click_button "Create process"
@@ -258,8 +258,8 @@ describe "Admin collaborative legislation" do
 
       check "legislation_process[published]"
 
-      expect(page).to have_field "start_date", disabled: false, with: "07/07/2007"
-      expect(page).to have_field "end_date", disabled: false, with: "08/08/2008"
+      expect(page).to have_field "start_date", disabled: false, with: "2007-07-07"
+      expect(page).to have_field "end_date", disabled: false, with: "2008-08-08"
     end
 
     scenario "Enabling/disabling a phase does not enable/disable another phase date fields", :js do

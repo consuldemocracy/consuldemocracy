@@ -196,7 +196,7 @@ en:
         primary: "Primary"
         secondary: "Secondary"
       budget/group:
-        max_votable_headings: "Maximum number of headings in which a user can vote"
+        max_votable_headings: "Maximum number of headings in which a user can select projects"
       budget/group/translation:
         name: "Group name"
       budget/heading:

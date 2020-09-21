@@ -8,6 +8,9 @@ class Legislation::Process < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs
 
+  attribute :background_color, default: "#e7f2fc"
+  attribute :font_color, default: "#222222"
+
   translates :title,              touch: true
   translates :summary,            touch: true
   translates :description,        touch: true
