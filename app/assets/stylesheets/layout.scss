@@ -436,10 +436,6 @@ a {
   display: table-cell;
 }
 
-.off-canvas-content {
-  box-shadow: none;
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -447,6 +443,66 @@ a {
 .help-text {
   line-height: rem-calc(20);
   margin-top: 0;
+}
+
+.menu-and-content {
+  $side-menu-min-width: 250px;
+
+  @include breakpoint(medium) {
+    display: flex;
+
+    > nav {
+      flex: 25%;
+      min-width: $side-menu-min-width;
+
+      + * {
+        flex: 75%;
+        padding: $line-height !important;
+      }
+    }
+
+    [for="show_menu"] {
+      display: none;
+    }
+  }
+
+  @include breakpoint(small only) {
+    > nav {
+      height: 100%;
+      left: -$side-menu-min-width;
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      transition: left 0.5s ease;
+      width: $side-menu-min-width;
+      z-index: 12;
+
+      + * {
+        padding: $line-height !important;
+      }
+    }
+
+    [name="show_menu"]:checked + nav,
+    > nav:focus-within {
+      left: 0;
+
+      + * {
+        overflow-x: hidden;
+
+        [for="show_menu"]::after {
+          @include reveal-overlay;
+          content: "";
+          cursor: pointer;
+          display: block;
+          z-index: 11;
+        }
+      }
+    }
+  }
+
+  [name="show_menu"] {
+    display: none;
+  }
 }
 
 // 02. Header
