@@ -75,6 +75,15 @@ describe "Proposals" do
       expect(page).not_to have_current_path(old_path)
       expect(page).to have_current_path(right_path)
     end
+
+    scenario "Successful proposal", :js do
+      proposal = create(:proposal, :successful, title: "Success!")
+
+      login_managed_user(create(:user, :level_two))
+      visit management_proposal_path(proposal)
+
+      expect(page).to have_content("Success!")
+    end
   end
 
   scenario "Searching" do
