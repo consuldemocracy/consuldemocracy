@@ -16,6 +16,10 @@
 // 01. Dashboard global
 // --------------------
 
+.proposal-dashboard {
+  @include admin-layout;
+}
+
 .proposal-title {
   display: inline-block;
 
