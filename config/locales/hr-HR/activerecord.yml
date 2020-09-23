@@ -1,6 +1,6 @@
 hr:
   attributes:
-    geozone_id: "Opseg djelovanja"
+    geozone_id: "Djelokrug postupka"
     results_enabled: "Prikaži rezultate"
     stats_enabled: "Prikaži statistike"
     advanced_stats_enabled: "Prikaži napredne statistike"
