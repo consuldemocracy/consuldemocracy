@@ -141,6 +141,9 @@ ka:
         description_finished: "აღწერა ბიუჯეტის დამტკიცებისას"
         phase: "ფაზა"
         currency_symbol: "ვალუტა"
+        voting_style: "საბოლოო ხმის მიცემის ფორმა"
+        voting_style_knapsack: "ქისა"
+        voting_style_approval: "დამტკიცება"
       budget/translation:
         name: "სახელი"
       budget/investment:
@@ -203,6 +206,7 @@ ka:
         name: "სათაურის დასახელება"
         price: "თანხის მოცულობა"
         population: "მოსახლეობა (არასავალდებულო)"
+        max_ballot_lines: "ხმები დაშვებულია"
       budget/heading/translation:
         name: "სათაურის დასახელება"
       budget/phase:
@@ -504,6 +508,8 @@ ka:
           attributes:
             document_number:
               not_in_census: "დოკუმენტი არ შედის აღწერაში"
+            user_id:
+              has_voted: "მომხმარებელმა უკვე მისცა ხმა"
         legislation/process:
           attributes:
             end_date:

@@ -11,7 +11,7 @@ hr:
     attributes:
       verification:
         residence:
-          document_type: "Tip dokumenta"
+          document_type: "Vrsta dokumenta"
           document_number: "Broj dokumenta (uključujuči slova)"
           date_of_birth: "Datum rođenja"
           postal_code: "Poštanski broj"
@@ -34,7 +34,7 @@ hr:
       verification/sms:
         confirmation_code: "Unesite kod koji ste primili na svoj mobilni uređaj"
       officing/residence:
-        document_type: "Tip dokumenta"
+        document_type: "Vrsta dokumenta"
         document_number: "Broj dokumenta (uključujući slova)"
         year_of_birth: "Godina rođenja"
       local_census_records/import:

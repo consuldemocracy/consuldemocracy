@@ -241,7 +241,6 @@ ka:
       help: დახმარება
       my_account_link: ჩემი ანგარიში
       my_activity_link: ჩემი აქტივობა
-      open: გახსნა
       open_gov: ღია მმართველობა
       proposals: ინიციატივები
       poll_questions: ხმის მიცემა
@@ -297,6 +296,9 @@ ka:
       sign_in: Twitter-ით შესვლა
       sign_up: Twitter-ით რეგისტრაცია
       name: Twitter
+    info:
+      sign_in: "შესვლა:"
+      sign_up: "რეგისტრაციის გავლა:"
     or_fill: "ან შეავსეთ წინამდებარე ფორმა:"
   proposals:
     create:
@@ -463,7 +465,7 @@ ka:
       polls: ხმის მიცემა
       mailing: ელ. ფოსტა
       poster: პოსტერი
-      recommended_actions: რეკომენდირებული მოქმედებები
+      recommended_actions: რეკომენდებული მოქმედებები
       messages: მომხმარებლებთან შეტყობინების გაგზავნა
       related_content: მსგავსი ინფორმაცია
     form:
