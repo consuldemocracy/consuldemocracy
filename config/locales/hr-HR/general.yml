@@ -1,64 +1,64 @@
 hr:
   account:
     show:
-      change_credentials_link: Izmjeni moje kreditacije
+      change_credentials_link: Izmjeni moje vjerodajnice
       erase_account_link: Obriši moj račun
-      finish_verification: Završena potvrda
+      finish_verification: Završi provjeru
       notifications: Obavijesti
       organization_name_label: Ime organizacije
-      organization_responsible_name_placeholder: Predstavnik organizacije/kolektiva
-      personal: Osobni detalji
+      organization_responsible_name_placeholder: Predstavnik organizacije/skupine
+      personal: Osobni podaci
       phone_number_label: Broj telefona
-      public_interests_my_title_list: Oznake elemenate koje pratite
+      public_interests_my_title_list: Oznake elemenata koje pratite
       public_interests_user_title_list: Oznake elemenata koje ovaj korisnik prati
       save_changes_submit: Spremi promjene
       recommendations: Preporuke
       title: Moj račun
-      user_permission_debates: Sudjeluj u raspravi
-      user_permission_info: S vašim računom možete...
+      user_permission_debates: Sudjelovati u raspravama
+      user_permission_info: Sa svojim računom možete...
       user_permission_proposal: Izrađivati nove prijedloge
-      user_permission_support_proposal: Podupri prijedlog
+      user_permission_support_proposal: Podupirati prijedloge
       user_permission_title: Sudjelovanje
-      user_permission_verify: Kako biste izveli ove radnje potvrdite svoj račun.
-      user_permission_verify_info: "*Samo za korisnike Cenzusa."
-      user_permission_votes: Sudjelujte u finalnom glasanju
+      user_permission_verify: Kako biste izvodili ove aktivnosti, potvrdite svoj račun.
+      user_permission_verify_info: "* Samo za korisnike Cenzusa."
+      user_permission_votes: Sudjelovati u završnom glasanju
       username_label: Korisničko ime
-      verified_account: Račun potvrđen
+      verified_account: Račun provjeren
       verify_my_account: Potvrdi moj račun
   application:
     close: Zatvori
-    menu: Meni
+    menu: Izbornik
   comments:
     comments_closed: Komentari su zatvoreni
     verified_only: Kako bi sudjelovali %{verify_account}
     comment:
       admin: Administrator
       author: Autor
-      deleted: Komentari moraju biti izbrisani
+      deleted: Ovaj komentar je obrisan
       moderator: Moderator
       responses:
         zero: Bez odgovora
         one: 1 odgovor
-        few: "%{count} odgovore"
-        other: "%{count} odgovore"
+        few: "%{count} odgovora"
+        other: "%{count} odgovora"
       responses_show:
         zero: Bez odgovora
         one: "1 odgovor (prikaži)"
-        few: "%{count} odgovore (prikaži)"
-        other: "%{count} odgovore (prikaži)"
+        few: "%{count} odgovora (prikaži)"
+        other: "%{count} odgovora (prikaži)"
       responses_collapse:
         zero: Bez odgovora
-        one: "1 odgovor (slom)"
-        few: "%{count} odgovore (slom)"
-        other: "%{count} odgovore (slom)"
+        one: "1 odgovor (sažmi)"
+        few: "%{count} odgovora (sažmi)"
+        other: "%{count} odgovora (sažmi)"
       user_deleted: Korisnik obrisan
       votes:
         zero: Nema glasova
         one: 1 glas
-        few: "%{count} glasove"
-        other: "%{count} glasove"
+        few: "%{count} glasa"
+        other: "%{count} glasova"
     form:
-      comment_as_admin: Komentiraj kao admin
+      comment_as_admin: Komentiraj kao administrator
       comment_as_moderator: Komentiraj kako moderator
       leave_comment: Ostavi svoj komentar
     orders:
@@ -68,13 +68,13 @@ hr:
       most_commented: Najviše komentirani
     select_order: Sortiraj po
     show:
-      return_to_commentable: "Idi nazad na "
+      return_to_commentable: "Vrati se na "
   comments_helper:
     comment_button: Objavi komentar
     comment_link: Komentar
     comments_title: Komentari
     reply_button: Objavi odgovor
-    reply_link: Odgovor
+    reply_link: Odgovori
   debates:
     create:
       form:
@@ -83,7 +83,7 @@ hr:
       comments:
         zero: Nema komentara
         one: 1 komentar
-        few: "%{count} komentare"
+        few: "%{count} komentara"
         other: "%{count} komentare"
       votes:
         zero: Nema glasova
