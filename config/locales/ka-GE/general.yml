@@ -297,7 +297,7 @@ ka:
       sign_up: Twitter-ით რეგისტრაცია
       name: Twitter
     info:
-      sign_in: "შესვლა: "
+      sign_in: "შესვლა:"
       sign_up: "რეგისტრაციის გავლა:"
     or_fill: "ან შეავსეთ წინამდებარე ფორმა:"
   proposals:
