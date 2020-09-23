@@ -34,7 +34,7 @@ describe Poll::Voter do
       voter = build(:poll_voter, user: user, poll: poll)
 
       expect(voter).not_to be_valid
-      expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
+      expect(voter.errors.messages[:user_id]).to eq(["User has already voted"])
     end
 
     it "is not valid if the user has already voted in the same poll/booth" do
@@ -43,7 +43,7 @@ describe Poll::Voter do
       voter = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
 
       expect(voter).not_to be_valid
-      expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
+      expect(voter.errors.messages[:user_id]).to eq(["User has already voted"])
     end
 
     it "is not valid if the user has already voted in different booth in the same poll" do
@@ -52,7 +52,7 @@ describe Poll::Voter do
       voter = build(:poll_voter, :from_booth, user: user, poll: poll, booth: booth)
 
       expect(voter).not_to be_valid
-      expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
+      expect(voter.errors.messages[:user_id]).to eq(["User has already voted"])
     end
 
     it "is valid if the user has already voted in the same booth in different poll" do
@@ -69,7 +69,31 @@ describe Poll::Voter do
 
       voter = build(:poll_voter, poll: answer.question.poll, user: answer.author)
       expect(voter).not_to be_valid
-      expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
+      expect(voter.errors.messages[:user_id]).to eq(["User has already voted"])
+    end
+
+    context "Skip verification is enabled" do
+      before do
+        Setting["feature.user.skip_verification"] = true
+        user.update!(document_number: nil, document_type: nil)
+      end
+
+      it "is not valid if the user has already voted in the same poll" do
+        create(:poll_voter, user: user, poll: poll)
+
+        voter = build(:poll_voter, user: user, poll: poll)
+
+        expect(voter).not_to be_valid
+      end
+
+      it "is valid if other users have voted in the same poll" do
+        another_user = create(:user, :level_two, document_number: nil, document_type: nil)
+        create(:poll_voter, user: another_user, poll: poll)
+
+        voter = build(:poll_voter, user: user, poll: poll)
+
+        expect(voter).to be_valid
+      end
     end
 
     context "origin" do
@@ -170,6 +194,15 @@ describe Poll::Voter do
 
       expect(voter.document_number).to eq("1234A")
       expect(voter.document_type).to eq("1")
+      expect(voter.token).to eq("1234abcd")
+    end
+
+    it "sets user info with skip verification enabled" do
+      Setting["feature.user.skip_verification"] = true
+      user = create(:user)
+      voter = build(:poll_voter, user: user, token: "1234abcd")
+      voter.save!
+
       expect(voter.token).to eq("1234abcd")
     end
   end
