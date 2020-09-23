@@ -28,7 +28,7 @@
       <% @proposals.each do |proposal| %>
         <tr id="proposal_<%= proposal.id %>">
           <td>
-            <span title="<%= proposal.tag_list_with_limit(10).to_sentence(last_word_connector: ', ') %>">
+            <span title="<%= proposal.tag_list_with_limit().to_sentence(last_word_connector: ', ') %>">
               <%= link_to proposal.title, proposal, target: "_blank" %>
             </span>
             <br>
