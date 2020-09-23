@@ -3,25 +3,25 @@ hr:
     header:
       title: Administracija
     actions:
-      actions: Djelovanja
+      actions: Akcije
       confirm: Jeste li sigurni?
       confirm_hide: Potvrdi izmjene
       hide: Sakrij
       hide_author: Sakrij autora
-      restore: Obnovi
+      restore: Vrati
       mark_featured: Istaknuto
-      unmark_featured: Neoznačeno istaknuto
+      unmark_featured: Odznači istaknuto
       edit: Uredi
-      configure: Konfiguriraj
-      delete: Izbriši
+      configure: Podesi
+      delete: Obriši
     officing_booth:
-      title: "Odjavljujete glasačko mjesto locirano na %{booth}. Ako ovo nije točno molimo vas da nastavite i nazovete pomoćni broj. Hvala vam."
+      title: "Nadzirete glasačko mjesto koje se nalazi u/na %{booth}. Ako ovo nije točno, molimo vas da ne nastavljate dalje i nazovete telefonski broj za pomoć. Hvala vam."
     banners:
       index:
-        title: Zastave
+        title: Transparenti
         create: Stvori zastave
-        edit: Uredi zastavu
-        delete: Obriši zastavu
+        edit: Uredi transparent
+        delete: Obriši transparent
         filters:
           all: Svi
           with_active: Aktivirati
@@ -30,41 +30,41 @@ hr:
       banner:
         sections_label: Odjeljci gdje će se pojaviti
         sections:
-          homepage: Glavna stranica
+          homepage: Početna stranica
           debates: Rasprave
           proposals: Prijedlozi
-          budgets: Participativno budžetiranje
+          budgets: Participativno određivanje proračuna
           help_page: Stranica za pomoć
       edit:
-        editing: Uredi zastavu
+        editing: Uredi transparent
         form:
           submit_button: Spremi promjene
       new:
-        creating: Stvori zastavu
+        creating: Stvori transparent
     activity:
       show:
         action: Akcija
         actions:
           block: Blokirano
           hide: Skriveno
-          restore: Obnovljeno
-        by: Uređeno od
+          restore: Vraćeno
+        by: Uredio
         content: Sadržaj
         filter: Prikaži
         filters:
-          all: Svi
+          all: Sve
           on_comments: Komentari
           on_debates: Rasprave
           on_proposals: Prijedlozi
-          on_users: Krosnici
-          on_system_emails: Emailovi sustava
+          on_users: Korisnici
+          on_system_emails: E-mailovi sustava
         title: Aktivnosti moderatora
-        type: Tip
-        no_activity: Ne postoje moderatorske aktivnosti.
+        type: Vrsta
+        no_activity: Ne postoje aktivnosti moderatora.
     budgets:
       index:
-        title: Participativni budžeti
-        new_link: Stvori novi budžet
+        title: Participativni proračuni
+        new_link: Stvori novi proračun
         filter: Filter
         filters:
           open: Otvoreno
@@ -123,9 +123,9 @@ hr:
       headings_manage: "Upravljaj naslovima"
       no_groups: "Nema grupa."
       amount:
-        one: "Postoji 1 grupa"
-        few: "Postoje %{count} grupa"
-        other: "Postoje %{count} grupa"
+        one: "Postoji 1 skupina"
+        few: "Postoje %{count} skupine"
+        other: "Postoje %{count} skupina"
       create:
         notice: "Grupa je uspješno stvorena!"
       update:
@@ -136,6 +136,7 @@ hr:
       form:
         create: "Stvori novu grupu"
         edit: "Uredi grupu"
+        max_votable_headings_info: "Odnosi se samo na fazu odabira projekata. Tijekom faze glasovanja o projektima korisnici će moći glasovati samo za jedan naslov po skupini."
         submit: "Spremi grupu"
       index:
         back: "Idi nazad na budžet"
@@ -143,8 +144,8 @@ hr:
       no_headings: "Ne postoje naslovi."
       amount:
         one: "Postoji 1 naslov"
-        few: "Postoje %{count} naslovi"
-        other: "Postoje %{count} naslovi"
+        few: "Postoje %{count} naslova"
+        other: "Postoje %{count} naslova"
       create:
         notice: "Naslov je uspješno stvoren!"
       update:
@@ -153,6 +154,7 @@ hr:
         success_notice: "Naslov je uspješno obrisan"
         unable_notice: "Ne možete obrisati Naslov koji ima povezane investicije"
       form:
+        max_ballot_lines_info: 'Maksimalan broj projekata na kojima korisnik može glasati pod ovim naslovom tijekom faze "Glasovanje o projektima". Samo za proračune koji koriste potvrdno glasovanje.'
         population_info: "Naslov Budžeta kod populacijskog polja koje se koristi za Statističke svrhe je na kraju budžeta kako bi se pokazao svaki Naslov koji predstavlja područje s postotkom populacije koja je glasala. Polje je neobavezno, pa ga možete ostaviti praznom ako se ne odnosi."
         coordinates_info: "Ako je visina i širina dostupna stranica investicija za ovaj naslov će uključiti mapu. Ova mapa će biti centrirana uz korištenje ovih koordinata."
         content_blocks_info: "Ako je omogućeno blokiranje sadržaja, vi ćete moći stvoriti poseban sadržaj je povezan s ovim naslovom od sekcije Postave > Prilagodi blokove sadržaja. Ovaj sadržaj će se pojaviti na investicijskoj stranici ovog naslova."
@@ -500,13 +502,13 @@ hr:
         index:
           create: Novi proces
           delete: Izbriši
-          title: Kolaborativna legislativa
+          title: Javno savjetovanje
           filters:
             active: Aktivirati
             all: Svi
         new:
           back: Nazad
-          title: Svori novi proces za kolaborativnu legislativu
+          title: Izradi novi poziv za javno savjetovanje
           submit_button: Stvori proces
         proposals:
           select_order: Sortiraj po
@@ -692,7 +694,7 @@ hr:
       title_settings: Postavke
       title_site_customization: Sadržaj stranice
       title_booths: Glasačke kabine
-      legislation: Kolaborativna Legislativa
+      legislation: Javno savjetovanje
       users: Krosnici
       dashboard: Glavni izbornik prijedloga
       administrator_tasks: Zatraženi resursi

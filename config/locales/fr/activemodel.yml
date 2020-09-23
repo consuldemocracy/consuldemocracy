@@ -17,7 +17,16 @@ fr:
         email:
           recipient: "Email"
       verification/letter:
+        email: "Email"
         password: "Mot de passe"
+        verification_code: "Code que vous avez reçu par lettre"
+      verification/management/document:
+        document_type: "Type de document :"
+        document_number: "Numéro de document"
+      verification/residence:
+        date_of_birth: "Date de naissance"
+        document_type: "Type de document"
+        postal_code: "Code postal"
       verification/sms:
         confirmation_code: "Entrez le code que vous avez reçu sur votre portable"
       officing/residence:

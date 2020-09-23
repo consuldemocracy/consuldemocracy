@@ -118,3 +118,22 @@ ka:
         tags_label: "კატეგორიები"
       not_verified: "ინიციატივაზე ხმის მისაცემად %{verify_account}."
       process_title: ერთობლივ სამოქალაქო ინიციატივაზე მუშაობის პროცესი
+    summary:
+      title: "შეჯამება"
+      votes:
+        zero: "%{count} ხმა"
+      debate_phase: "დებატების ფაზა"
+      proposals_phase: "ინიციატივების ფაზა"
+      allegations_phase: "კომენტირების ფაზა"
+      debates:
+        zero: "დებატები არ მოიძებნა"
+      proposals:
+        zero: "ინიციატივა არ მოიძებნა"
+      comments:
+        zero: "კომენტარები არ მოიძებნა"
+      download: "შეჯამების ჩამოტვირთვა"
+      top_comments:
+        zero: "კომენტარები არ მოიძებნა"
+      most_voted_comments: "ყველაზე მეტი ხმის მქონე კომენტარი"
+      no_allegation: "კომენტარები არ მოიძებნა"
+      process_empty: "აღნიშნული პროცესი არ მოიცავდა მონაწილეობის ფაზებს"
