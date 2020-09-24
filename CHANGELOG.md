@@ -127,7 +127,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Translations:** Get search dictionary based on I18n.default\_locale [\#3856](https://github.com/consul/consul/pull/3856) and [\#4050](https://github.com/consul/consul/pull/4050)
 - **Verification:** Fix redirect with GET params of after POST requests [\#4079](https://github.com/consul/consul/pull/4079)
 
-## [1.1.0](https://github.com/consul/consul/tree/1.1.0) (2019-12-31)
+## [1.1.0](https://github.com/consul/consul/tree/1.1.0) (2020-03-11)
 
 [Full Changelog](https://github.com/consul/consul/compare/1.0.0...1.1.0)
 
