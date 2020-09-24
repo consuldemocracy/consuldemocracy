@@ -1940,6 +1940,20 @@ table {
     }
   }
 
+  .delete-comment {
+    @include has-fa-icon(trash-alt, regular);
+    color: $delete;
+
+    &:hover,
+    &:active {
+      color: $link-hover;
+    }
+
+    &::before {
+      transform: translateY(-1px);
+    }
+  }
+
   .comment-user {
     margin-top: $line-height / 4;
     padding: $line-height / 4 0;
