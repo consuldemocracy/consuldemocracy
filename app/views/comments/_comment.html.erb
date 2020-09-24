@@ -3,7 +3,7 @@
   <div id="<%= dom_id(comment) %>" class="comment small-12">
     <div class="comment-body">
       <% if comment.hidden? || comment.user.hidden? %>
-        <% if comment.children.size > 0 %>
+        <% unless all_descendants_hidden?(comment) %>
           <div class="callout secondary">
             <p><%= t("comments.comment.deleted") %></p>
           </div>

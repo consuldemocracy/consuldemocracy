@@ -5,8 +5,17 @@
 <span class="js-moderation-actions">
   <% if can? :hide, comment %>
     <span class="divider">&nbsp;&bull;&nbsp;</span>
-    <%= link_to t("admin.actions.hide").capitalize, hide_moderation_comment_path(comment),
-                method: :put, remote: true, data: { confirm: t("admin.actions.confirm_hide_content") } %>
+    <% if is_author?(comment) %>
+      <%= link_to hide_comment_path(comment),
+                  method: :put, remote: true, class: "delete-comment",
+                  data: { confirm: t("comments.confirm_delete_comment") } do %>
+        <span class="far fa-trash-alt"></span>
+        <%= t("comments.delete_comment") %>
+      <% end %>
+    <% else %>
+      <%= link_to t("admin.actions.hide").capitalize, hide_moderation_comment_path(comment),
+                  method: :put, remote: true, data: { confirm: t("admin.actions.confirm_hide_content") } %>
+    <% end %>
   <% end %>
 
   <% if can? :hide, comment.user %>
