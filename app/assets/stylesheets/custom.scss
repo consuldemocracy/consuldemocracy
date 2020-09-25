@@ -436,12 +436,214 @@ body.management .admin-content {
   }
 }
 .expanded.budget, .budget-heading {
-  background-image: image-url("header_va_proposals.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  background-color: $bg-gray-content;
+  .row {
+    h1 {
+      color: $gray-darker;
+    }
+    .column:not(.info) {
+      a {
+        color: $tertiary-contrast;
+        font-weight: 600;
+        font-size: $font-size-largest;
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus,
+        &:active:hover,
+        &:active:focus {
+          color: $secondary;
+          text-decoration: inherit;
+        }
+        .icon-angle-left {
+          color: inherit;
+        }
+      }
+    }
+    .info {
+      background-color: transparent;
+      .pre-title {
+        font-size: $small-font-size;
+        text-transform: uppercase;
+      }
+      h2 {
+        font-size: $font-size-h5;
+        color: $gray-darker;
+      }
+      a.see-all-budgets {
+        color: $tertiary-contrast;
+        font-weight: 600;
+        font-size: $font-size-base-small;
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus,
+        &:active:hover,
+        &:active:focus {
+          color: $secondary;
+          text-decoration: inherit;
+        }
+      }
+      .button {
+        background-color: $brand-secondary;
+        color: white;
+        border-radius: 0px;
+        font-size: $font-size-base-small;
+      }
+
+      @media screen and (min-width: 64em) {
+        .decorated-on-large {
+          max-width: 50%;
+        }
+        background-image: image-url("background-budgets.jpg");
+        background-repeat: no-repeat;
+        background-position: 100%;
+        background-size: 50%;
+        .decorated-on-large {
+          padding-right: 10px;
+        }
+        @supports (background-size: contain) {
+          .decorated-on-large {
+            padding-right: 0px;
+          }
+          background-size: contain;
+        }
+
+      }
+    }
+  }
+}
+/**
+ * Zona de destacados principal
+ */
+.budget-info {
+  // El mapa de las zonas, tal y como es la imagen de valladolid es mejor un posicionameinto
+  // absoluto del texto para qeu visualmente quede atractivo
+  .map-areas {
+    position: relative;
+    @media screen and (min-width: 64em) {
+      h3 {
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: $font-size-h5;
+    }
+  }
+
+  .show-large {
+    @media screen and (min-width: 64em) {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+    }
+    color: $tertiary-contrast;
+    font-weight: 600;
+    font-size: $small-font-size;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+      color: $secondary;
+      text-decoration: inherit;
+    }
+  }
+
+  .current-budgets {
+    padding-left: 0px;
+
+    h2 {
+      font-size: $font-size-h4;
+      color: $brand-secondary;
+
+      &:not(:first-child) {
+        padding-top: 15px;
+      }
+    }
+
+    h3 {
+      font-size: $font-size-largest;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+
+      > li {
+        display: inline-block;
+        border: 1px solid #979797;
+        padding: 6px 15px;
+        font-size: $font-size-base-small;
+        font-weight: 600;
+      }
+    }
+  }
+
+  h3 {
+    font-size: $font-size-h4;
+  }
+
+  .extra-links {
+    a {
+      color: $tertiary-contrast;
+      font-weight: 600;
+      font-size: $small-font-size;
+      text-decoration: none;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:active:hover,
+      &:active:focus {
+        color: $secondary;
+        text-decoration: inherit;
+      }
+    }
+  }
+
+  .budget-timeline li.phase {
+    &::before {
+      border-color: #FBCFE0;
+    }
+    h3 {
+      font-size: $font-size-h6;
+    }
+    &.is-active {
+      h3 {
+        background-color: transparent;
+        color: $secondary;
+      }
+    }
+  }
+
+  .budget-investment {
+    h3 {
+      font-size: $font-size-h6;
+    }
+
+    .button {
+      background-color: $brand-secondary;
+      color: white;
+      border-radius: 0px;
+      font-size: $font-size-base-small;
+    }
+  }
+}
+
+ul.recommendations {
+  color: $gray-base;
+}
+
+.advanced-search-form input.button {
+  margin-top:$line-height;
+  height: 2*$line-height;
 }
 
 // Eliminar margen de la cabecera en los presupuestos participativos
