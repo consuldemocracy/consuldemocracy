@@ -1,4 +1,5 @@
 require Rails.root.join("lib", "omniauth_wordpress")
+require Rails.root.join("lib", "devise_custom_failure_app")
 
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
@@ -269,6 +270,11 @@ Devise.setup do |config|
   #
   config.warden do |manager|
      manager.default_strategies(scope: :user).unshift :participacion_token
+  end
+
+  # Fix unauthorized redirect
+  config.warden do |manager|
+    manager.failure_app = DeviseCustomFailureApp
   end
 
   # ==> Mountable engine configurations

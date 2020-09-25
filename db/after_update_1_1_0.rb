@@ -21,16 +21,18 @@ end
 
 section "Creando usuario administrador para realizar las migraciones" do
   admin_password = SecureRandom.base64(15)
-  @admin = User.create!(username: "Valladolid", email: "no-reply@ava.es", password: admin_password,
+  @admin = User.create!(username: "Valladolid", email: "noreply@ava.es", password: admin_password,
                          password_confirmation: admin_password, confirmed_at: Time.current,
-                         terms_of_service: "1", document_number: "000000000", document_type: "1",
+                         terms_of_service: "1", document_number: "00000001Z", document_type: "1",
                          verified_at: Time.now)
   @admin.create_administrator
 end
 
 section "Creando y personalizando configuraciones nuevas" do
-  # Reiniciamos el contador de la clave primaria para evitar problemas
-  ActiveRecord::Base.connection.reset_pk_sequence!(:settings)
+  # Reiniciamos el contador de las claves primarias de todas las tablas
+  ActiveRecord::Base.connection.tables.each do |t|
+    ActiveRecord::Base.connection.reset_pk_sequence!(t)
+  end
 
   # Funcionalidades custom
   Setting["feature.comments"] = true
@@ -127,11 +129,10 @@ end
 # PERSONALIZACIÓN DE LA WEB
 
 section "Añadiendo enlaces en la cabecera" do
-  SiteCustomization::ContentBlock.create!(
-    name: "top_links",
-    locale: "es",
-    body: "<li><a href=\"http://www.valladolid.es/es/ayuntamiento/portal-transparencia\">Transparencia</a></li>\r\n<li><a href=\"http://www.valladolid.es/es/temas/hacemos/open-data-datos-abiertos\">Datos abiertos</a></li>\r\n<li><a href=\"https://www.valladolid.es/es/ciudad/participacion-ciudadana/servicios/presupuestos-participativos-informes-anuales\">Informes de gestión anuales</a></li>"
-  )
+  site_customization_content_block_header_links = SiteCustomization::ContentBlock.where(name: "top_links").first_or_create
+  site_customization_content_block_header_links.locale = "es"
+  site_customization_content_block_header_links.body = "<li><a href=\"http://www.valladolid.es/es/ayuntamiento/portal-transparencia\">Transparencia</a></li>\r\n<li><a href=\"http://www.valladolid.es/es/temas/hacemos/open-data-datos-abiertos\">Datos abiertos</a></li>\r\n<li><a href=\"https://www.valladolid.es/es/ciudad/participacion-ciudadana/servicios/presupuestos-participativos-informes-anuales\">Informes de gestión anuales</a></li>"
+  site_customization_content_block_header_links.save
 end
 
 section "Añadiendo contenido por defecto de la página de inicio" do
