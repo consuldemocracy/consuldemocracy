@@ -983,7 +983,7 @@ hr:
   communities:
     show:
       surveys: Ankete
-      complete_survey: Dovrši aneketu
+      complete_survey: Dovrši anketu
     subnav:
       surveys: Ankete
     poll:
