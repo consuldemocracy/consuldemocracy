@@ -252,7 +252,7 @@ hr:
       my_activity_link: Moje aktivnosti
       open_gov: Otvorena vlada
       proposals: Prijedlozi
-      poll_questions: Glasovanje
+      poll_questions: Glasanje
       budgets: Participativno budžetiranje
       notification_item:
         new_notifications:
@@ -629,7 +629,7 @@ hr:
       filters:
         current: "Otvoreno"
         expired: "Isteklo"
-      title: "Glasovanje"
+      title: "Ankete"
       participate_button: "Sudjelujte u ovoj anketi"
       participate_button_expired: "Anketa završena"
       no_geozone_restricted: "Svi gradovi"
