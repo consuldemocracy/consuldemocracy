@@ -699,10 +699,14 @@ ul.recommendations {
   border-radius: 2px;
 }
 
-.budget-heading a.back span {
-  color: #000000;
-  font-weight: 100;
+
+.categories a:hover, .categories a.is-active,
+.geozone a:hover,
+.geozone a.is-active {
+  background-color: $secondary;
 }
+
+
 
 
 // Color de fondo de la barra de progreso en
