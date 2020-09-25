@@ -77,6 +77,27 @@ strong, b, a, .ava-link {
     text-decoration: inherit;
   }
 }
+
+a.back {
+  color: $tertiary-contrast;
+  font-weight: 600;
+  font-size: $base-font-size;
+  text-decoration: none;
+  &:not([class^="icon-"]) {
+    text-decoration: none;
+  }
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover,
+  &:active:focus {
+    color: $secondary;
+    text-decoration: inherit;
+  }
+  .icon-angle-left {
+    color: inherit;
+  }
+}
 // 02. Header
 
 // Color de fondo de la cabecera
