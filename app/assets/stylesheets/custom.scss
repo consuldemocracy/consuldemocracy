@@ -668,22 +668,35 @@ ul.recommendations {
     color: $brand !important;
 }
 
-// Botón de volver atrás
-.budget-heading a.back {
-  color: black !important;
-  background: #FFDB0A !important;
-  border: 1px solid #FFDB0A !important;
-  text-decoration: none;
-  display: inline-block;
-  line-height: 1;
-  cursor: pointer;
-  -webkit-appearance: none;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  vertical-align: middle;
-  border: 1px solid #000000;
-  border-radius: 0.1875rem;
-  padding: 1em 1em;
-  font-size: 0.9rem;
+
+
+// Mostramos una propuesta de gasto.
+.budget-investment-show {
+  .budget-investment-info {
+    font-size: $font-size-base-small;
+    display: flex;
+    align-items: center;
+    span:not(.author) {
+      color: #ABABAB
+    }
+  }
+  p#investment_code,
+  p.in-name-of,
+  p.location {
+    font-size: $font-size-base-small;
+  }
+
+  .related-content h2,
+  h2#price_explanation {
+    font-size: $font-size-h5;
+  }
+
+
+}
+
+.tags li a,
+.categories a {
+  border-radius: 2px;
 }
 
 .budget-heading a.back span {
