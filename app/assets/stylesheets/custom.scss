@@ -711,14 +711,34 @@ ul.recommendations {
 
 // Color de fondo de la barra de progreso en
 // la votación final
-.progress-bar-nav { 
-  @include breakpoint(medium) { 
-    background-color: transparent;
+.progress-votes {
+  .progress-bar-nav {
+    color: $gray-base;
 
-    &.is-fixed { 
-      background-color: $budget; 
-    } 
-  } 
+    .total-amount,
+    .spent-amount-text {
+      color: inherit !important;
+    }
+
+    .spent-amount-text:before {
+      color: $orange-hover-menu;
+    }
+
+    .progress {
+      background-color: $bg-gray-light;
+      .progress-meter {
+        background-color: $secondary;
+      }
+    }
+
+    @include breakpoint(medium) {
+      background-color: transparent;
+
+      &.is-fixed {
+        background-color: $budget;
+      }
+    }
+  }
 }
 
 // 09. Propuestas
