@@ -22,6 +22,61 @@ strong, b, a, .ava-link {
   background: $tertiary-contrast;
 }
 
+.button {
+  color: white;
+  background-color: $secondary;
+  border: 0px;
+  border-radius: 0px;
+  font-size: $font-size-base-small;
+
+  &.expanded {
+    border-radius: 0px;
+    background-color: $secondary !important;
+    &:not(.hollow) {
+      &:hover,
+      &:active,
+      &:focus,
+      &:active:hover,
+      &:active:focus {
+        background-color: lighten(saturate($secondary, 60%), 10%) !important;
+        text-decoration: inherit;
+      }
+    }
+  }
+
+  &.hollow {
+    border-radius: 0px;
+    background: transparent !important;
+    border-color: #979797;
+    font-size: $font-size-base-small;
+    font-weight: bold;
+    color: $secondary;
+  }
+  &:not(.hollow):not(.success) {
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+      background-color: lighten(saturate($secondary, 60%),10%) !important;
+      text-decoration: inherit;
+    }
+  }
+}
+
+.view-mode .button {
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover,
+  &:active:focus {
+    background-color: $gray-base !important;
+    &:before {
+      color: white !important;
+    }
+    text-decoration: inherit;
+  }
+}
 // 02. Header
 
 // Color de fondo de la cabecera
