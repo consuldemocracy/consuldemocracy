@@ -154,7 +154,7 @@ hr:
         success_notice: "Naslov je uspješno obrisan"
         unable_notice: "Ne možete obrisati Naslov koji ima povezane investicije"
       form:
-        max_ballot_lines_info: 'Maksimalan broj projekata na kojima korisnik može glasati pod ovim naslovom tijekom faze "Glasovanje o projektima". Samo za proračune koji koriste potvrdno glasovanje.'
+        max_ballot_lines_info: 'Maksimalan broj projekata na kojima korisnik može glasati pod ovim naslovom tijekom faze "Glasovanje o projektima". Samo za proračune koji koriste potvrdno glasanje.'
         population_info: "Naslov Budžeta kod populacijskog polja koje se koristi za Statističke svrhe je na kraju budžeta kako bi se pokazao svaki Naslov koji predstavlja područje s postotkom populacije koja je glasala. Polje je neobavezno, pa ga možete ostaviti praznom ako se ne odnosi."
         coordinates_info: "Ako je visina i širina dostupna stranica investicija za ovaj naslov će uključiti mapu. Ova mapa će biti centrirana uz korištenje ovih koordinata."
         content_blocks_info: "Ako je omogućeno blokiranje sadržaja, vi ćete moći stvoriti poseban sadržaj je povezan s ovim naslovom od sekcije Postave > Prilagodi blokove sadržaja. Ovaj sadržaj će se pojaviti na investicijskoj stranici ovog naslova."
@@ -958,7 +958,7 @@ hr:
         search_officer_placeholder: Pretraži činovnike
         search_officer_text: Pretraži činovnike koji su pripisani novoj smjeni
         select_date: "Odaberi dan"
-        no_voting_days: "Glasovanje je dovršeno"
+        no_voting_days: "Glasanje je dovršeno"
         select_task: "Odaberi zadatak"
         table_shift: "Smjena"
         table_email: "Email"
@@ -1397,7 +1397,7 @@ hr:
         direct_messages: Izravne poruke
         proposal_notifications: Obavijesti prijedloga
         incomplete_verifications: Nedovršene verifikacije
-        polls: Glasovanje
+        polls: Glasanja
       graph:
         debate_created: Rasprave
         visit: Broj posjeta
@@ -1431,7 +1431,7 @@ hr:
         not_available: "Prijedlozi nisu dostupni"
       polls:
         title: Statstike Glasanja
-        all: Glasovanje
+        all: Glasanja
         web_participants: Web sudionici
         total_participants: Ukupno Sudionika
         poll_questions: "Pitanja iz glasanja: %{poll}"
