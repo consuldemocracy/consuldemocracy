@@ -2,6 +2,8 @@
 es:
   activerecord:
     attributes:
+      budget:
+        result_text: "Texto en la fase de resultados"
       budget/heading:
         long_name: "Nombre ampliado de la partida"
       budget/heading/translation:

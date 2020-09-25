@@ -1,0 +1,51 @@
+<%= link_to  account_path do %>
+  <span class="icon-angle-left"></span>
+  <%= t("account.show.back") %>
+<% end %>
+
+<h2><%= t("devise_views.users.registrations.edit.edit") %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "shared/errors", resource: resource %>
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.email_field :email,
+        label: t("devise_views.users.registrations.edit.email_label"),
+        autofocus: true,
+        placeholder: t("devise_views.users.registrations.edit.email_label") %>
+    </div>
+
+    <div class="small-12 column">
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div><%= t("devise_views.users.registrations.edit.waiting_for") %> <%= resource.unconfirmed_email %></div>
+      <% end %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.password_field :password,
+        autocomplete: "off",
+        label: t("devise_views.users.registrations.edit.password_label"),
+        placeholder: t("devise_views.users.registrations.edit.password_label"),
+        hint: t("devise_views.users.registrations.edit.leave_blank") %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.password_field :password_confirmation,
+        label: t("devise_views.users.registrations.edit.password_confirmation_label"),
+        autocomplete: "off",
+        placeholder: t("devise_views.users.registrations.edit.password_confirmation_label") %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.password_field :current_password,
+        label: t("devise_views.users.registrations.edit.current_password_label"),
+        autocomplete: "off",
+        placeholder: t("devise_views.users.registrations.edit.current_password_label"),
+        hint: t("devise_views.users.registrations.edit.need_current") %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.submit t("devise_views.users.registrations.edit.update_submit"), class: "button" %>
+    </div>
+  </div>
+<% end %>
