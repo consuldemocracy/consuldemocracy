@@ -641,7 +641,7 @@ hr:
       cant_answer: "Ova anketa nije dostupna za vašu geozonu"
       section_header:
         icon_alt: Ikona glasanja
-        title: Glasovanje
+        title: Glasanje
         help: Pomoć oko glasanja
       section_footer:
         title: Pomoć oko glasanja
@@ -650,7 +650,7 @@ hr:
     show:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
       already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan."
-      back: Nazad na glasovanje
+      back: Nazad na glasanje
       cant_answer_not_logged_in: "Morate se %{signin} ili %{signup} da biste sudjelovali."
       comments_tab: Komentari
       cant_answer_verify: "Morate %{verify_link} da biste odgovorili."
@@ -886,13 +886,13 @@ hr:
     anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
     comment_unauthenticated: Vi morate %{signin} ili %{signup} kako bi glasali.
     disagree: Ne slažem se
-    organizations: Organizacijama nije dopušteno glasovanje
+    organizations: Organizacijama nije dopušteno glasanje
     supports: Potpore
-    verified_only: Samo potvrđenim korisnicima dozvoljeno je glasovanje za prijedloge; %{verify_account}.
+    verified_only: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
     budget_investments:
       not_logged_in: Morate %{signin} ili %{signup} da biste nastavili.
       not_verified: Samo potvrđeni korisnici mogu glasati za investicijske projekte, %{verify_account}.
-      organization: Organizacijama nije dopušteno glasovanje
+      organization: Organizacijama nije dopušteno glasanje
       unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
       not_voting_allowed: Faza glasanja je zatvorena
       different_heading_assigned:
