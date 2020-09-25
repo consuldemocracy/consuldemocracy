@@ -839,7 +839,7 @@ hr:
         description: "Pošalji autoru kad je njegov investicijski budžet označen kao neizvediv."
       budget_investment_unselected:
         title: "Investicijski budžet nije odabran"
-        description: "Pošalji kada je autorov budžet nije odabran za glasačku fazu."
+        description: "Pošalji autorici/autoru kada njezino/njegovo proračunsko financiranje nije odabrano za fazu glasanja."
       comment:
         title: "Komentar"
         description: "Pošalji autoru kada dobije komentar."
@@ -1409,7 +1409,7 @@ hr:
         supporting_phase: Faza potpore
         balloting_phase: Finalno glasanje
       budget_balloting:
-        title: "Statistika finalnog glasanja"
+        title: "Statistika završnog glasanja"
         vote_count: Glasovi
         participant_count: Sudionici
         votes_per_heading: Glasova po naslovu
