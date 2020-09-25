@@ -32,13 +32,13 @@
 <% end %>
 
 <% if investment.location.present? %>
-  <p>
+  <p class="location">
     <%= sanitize(t("budgets.investments.show.location", location: investment.location)) %>
   </p>
 <% end %>
 
 <% if investment.organization_name.present? %>
-  <p>
+  <p class="in-name-of">
     <%= sanitize(t("budgets.investments.show.organization_name", name: investment.organization_name)) %>
   </p>
 <% end %>
