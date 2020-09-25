@@ -132,7 +132,7 @@ header, .top-bar {
 
 // Color de fondo de los enlaces en la parte superior de la cabecera
 .top-links {
-  background-color: #E6118F;
+  background-color: $brand-secondary;
 }
 
 // Eliminado margen en la cabecera
@@ -275,7 +275,7 @@ header, .top-bar {
 }
 
 .tabla-puntos-encuentro {
-  
+
   background: #fff1f9;
   overflow: auto;
 
@@ -342,7 +342,7 @@ header, .top-bar {
   height: rem-calc(48) !important;
   position: relative;
   width: rem-calc(48) !important;
-  
+
   &:before{
     content: "A";
     font-family: "icons" !important;
