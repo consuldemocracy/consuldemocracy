@@ -379,7 +379,7 @@ hr:
           published_proposal: Objavljeni prijedlozi
           default:
             email: Email
-            polls: Glasanje
+            polls: Ankete
             poster: Poster
         new:
           creating: Nova akcija za glavni izbornik prijedloga
@@ -659,7 +659,7 @@ hr:
       emails_download: Prezumi emailove
       valuators: Procjenitelji
       poll_officers: Službenici za bilježenje glasova
-      polls: Glasanje
+      polls: Ankete
       poll_booths: Položaj glasačkih mjesta
       poll_booth_assignments: Zadaci Glasačkih Mjesta
       poll_shifts: Upravljaj smjenama
@@ -680,7 +680,7 @@ hr:
           debates: "Rasprave"
           community: "Zajednica"
           proposals: "Prijedlozi"
-          polls: "Glasanje"
+          polls: "Ankete"
           layouts: "Slojevi"
           mailers: "Email-ovi"
           management: "Menadžment"
@@ -695,7 +695,7 @@ hr:
       title_site_customization: Sadržaj stranice
       title_booths: Glasačke kabine
       legislation: Javno savjetovanje
-      users: Krosnici
+      users: Korisnici
       dashboard: Glavni izbornik prijedloga
       administrator_tasks: Zatraženi resursi
       dashboard_actions: Resursi i djelovanja
@@ -958,7 +958,7 @@ hr:
         search_officer_placeholder: Pretraži činovnike
         search_officer_text: Pretraži činovnike koji su pripisani novoj smjeni
         select_date: "Odaberi dan"
-        no_voting_days: "Glasanje je dovršeno"
+        no_voting_days: "Glasovanje je dovršeno"
         select_task: "Odaberi zadatak"
         table_shift: "Smjena"
         table_email: "Email"
@@ -1021,8 +1021,8 @@ hr:
         title: "Novo glasanje"
         submit_button: "Stvori glasanje"
       edit:
-        title: "Uredi glasanje"
-        submit_button: "Ažuriraj glasanje"
+        title: "Uredi anketu"
+        submit_button: "Ažuriraj anketu"
       show:
         questions_tab: Pitanja
         booths_tab: Glasačka mjesta
@@ -1039,7 +1039,7 @@ hr:
         error_on_question_added: "Pitanja nisu mogla biti pripisana ovom glasanju"
       destroy:
         alert: "Akcija će se ukloniti s glasanja i svih povezanih pitanja."
-        success_notice: "Glasanje uspješno obrisano"
+        success_notice: "Anketa uspješno obrisana"
         unable_notice: "Ne možete obrisati glasanje koje ima zabilježene glasove"
     questions:
       index:
