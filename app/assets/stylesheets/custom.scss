@@ -102,6 +102,27 @@ a.back {
 .callout {
   color: $gray-base !important;
 }
+
+.debate-show aside h2,
+.proposal-show aside h2,
+.poll-question-show aside h2,
+.investment-project-show aside h2,
+.budget-investment-show aside h2,
+.polls-show aside h2,
+.debate-quiz aside h2,
+.budget-investment-show aside h2,
+.draft-panels aside h2,
+.debate-questions aside h2,
+.communities-show aside h2,
+.topic-show aside h2,
+.milestone-content aside h2,
+.sidebar-title {
+  border-top-color: $secondary;
+  & + p {
+    font-size: $font-size-base-small;
+  }
+}
+
 // 02. Header
 
 // Color de fondo de la cabecera
