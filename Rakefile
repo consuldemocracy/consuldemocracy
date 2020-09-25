@@ -12,8 +12,8 @@ if Rails.env.development?
   GitHubChangelogGenerator::RakeTask.new :changelog do |config|
     config.user = "consul"
     config.project = "consul"
-    config.since_tag = "1.0.0"
-    config.future_release = "1.1.0"
+    config.since_tag = "1.1.0"
+    config.future_release = "1.2.0"
     config.base = "#{Rails.root}/CHANGELOG.md"
     config.token = Rails.application.secrets.github_changelog_token
     config.issues = false
