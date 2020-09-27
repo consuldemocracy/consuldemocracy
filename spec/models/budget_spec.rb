@@ -217,6 +217,7 @@ describe Budget do
       budget.phase = "reviewing"
       expect(budget.investments_orders).to eq(["random"])
     end
+
     it "is random and price when ballotting and reviewing ballots" do
       budget.phase = "publishing_prices"
       expect(budget.investments_orders).to eq(["random", "price"])
@@ -225,6 +226,7 @@ describe Budget do
       budget.phase = "reviewing_ballots"
       expect(budget.investments_orders).to eq(["random", "price"])
     end
+
     it "is random and confidence_score in all other cases" do
       budget.phase = "selecting"
       expect(budget.investments_orders).to eq(["random", "confidence_score"])
