@@ -14,7 +14,7 @@ FactoryBot.define do
 
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, "0")}X" }
 
-  factory :verification_residence, class: Verification::Residence do
+  factory :verification_residence, class: "Verification::Residence" do
     user
     document_number
     document_type    { "1" }
@@ -35,11 +35,11 @@ FactoryBot.define do
     postal_code { "28000" }
   end
 
-  factory :verification_sms, class: Verification::Sms do
+  factory :verification_sms, class: "Verification::Sms" do
     phone { "699999999" }
   end
 
-  factory :verification_letter, class: Verification::Letter do
+  factory :verification_letter, class: "Verification::Letter" do
     user
     email { "user@consul.dev" }
     password { "1234" }
@@ -57,7 +57,7 @@ FactoryBot.define do
     document_type { "dni" }
   end
 
-  factory :verification_document, class: Verification::Management::Document do
+  factory :verification_document, class: "Verification::Management::Document" do
     document_number
     document_type { "1" }
     date_of_birth { Date.new(1980, 12, 31) }

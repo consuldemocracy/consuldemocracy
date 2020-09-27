@@ -29,6 +29,9 @@ Capybara/FeatureMethods:
 FactoryBot/AttributeDefinedStatically:
   Enabled: true
 
+FactoryBot/FactoryClassName:
+  Enabled: true
+
 Layout/AssignmentIndentation:
   Enabled: true
 
