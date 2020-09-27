@@ -136,7 +136,7 @@ hr:
       form:
         create: "Stvori novu grupu"
         edit: "Uredi grupu"
-        max_votable_headings_info: "Odnosi se samo na fazu odabira projekata. Tijekom faze glasovanja o projektima korisnici će moći glasovati samo za jedan naslov po skupini."
+        max_votable_headings_info: "Odnosi se samo na fazu odabira projekata. Tijekom faze glasanja o projektima korisnici će moći glasati samo za jedan naslov po skupini."
         submit: "Spremi grupu"
       index:
         back: "Idi nazad na budžet"
@@ -154,7 +154,7 @@ hr:
         success_notice: "Naslov je uspješno obrisan"
         unable_notice: "Ne možete obrisati Naslov koji ima povezane investicije"
       form:
-        max_ballot_lines_info: 'Maksimalan broj projekata na kojima korisnik može glasati pod ovim naslovom tijekom faze "Glasovanje o projektima". Samo za proračune koji koriste potvrdno glasovanje.'
+        max_ballot_lines_info: 'Maksimalan broj projekata na kojima korisnik može glasati pod ovim naslovom tijekom faze "Glasanje o projektima". Samo za proračune koji koriste potvrdno glasanje.'
         population_info: "Naslov Budžeta kod populacijskog polja koje se koristi za Statističke svrhe je na kraju budžeta kako bi se pokazao svaki Naslov koji predstavlja područje s postotkom populacije koja je glasala. Polje je neobavezno, pa ga možete ostaviti praznom ako se ne odnosi."
         coordinates_info: "Ako je visina i širina dostupna stranica investicija za ovaj naslov će uključiti mapu. Ova mapa će biti centrirana uz korištenje ovih koordinata."
         content_blocks_info: "Ako je omogućeno blokiranje sadržaja, vi ćete moći stvoriti poseban sadržaj je povezan s ovim naslovom od sekcije Postave > Prilagodi blokove sadržaja. Ovaj sadržaj će se pojaviti na investicijskoj stranici ovog naslova."
@@ -379,7 +379,7 @@ hr:
           published_proposal: Objavljeni prijedlozi
           default:
             email: Email
-            polls: Glasanje
+            polls: Ankete
             poster: Poster
         new:
           creating: Nova akcija za glavni izbornik prijedloga
@@ -659,7 +659,7 @@ hr:
       emails_download: Prezumi emailove
       valuators: Procjenitelji
       poll_officers: Službenici za bilježenje glasova
-      polls: Glasanje
+      polls: Ankete
       poll_booths: Položaj glasačkih mjesta
       poll_booth_assignments: Zadaci Glasačkih Mjesta
       poll_shifts: Upravljaj smjenama
@@ -680,7 +680,7 @@ hr:
           debates: "Rasprave"
           community: "Zajednica"
           proposals: "Prijedlozi"
-          polls: "Glasanje"
+          polls: "Ankete"
           layouts: "Slojevi"
           mailers: "Email-ovi"
           management: "Menadžment"
@@ -695,7 +695,7 @@ hr:
       title_site_customization: Sadržaj stranice
       title_booths: Glasačke kabine
       legislation: Javno savjetovanje
-      users: Krosnici
+      users: Korisnici
       dashboard: Glavni izbornik prijedloga
       administrator_tasks: Zatraženi resursi
       dashboard_actions: Resursi i djelovanja
@@ -839,7 +839,7 @@ hr:
         description: "Pošalji autoru kad je njegov investicijski budžet označen kao neizvediv."
       budget_investment_unselected:
         title: "Investicijski budžet nije odabran"
-        description: "Pošalji kada je autorov budžet nije odabran za glasačku fazu."
+        description: "Pošalji autorici/autoru kada njezino/njegovo proračunsko financiranje nije odabrano za fazu glasanja."
       comment:
         title: "Komentar"
         description: "Pošalji autoru kada dobije komentar."
@@ -1021,8 +1021,8 @@ hr:
         title: "Novo glasanje"
         submit_button: "Stvori glasanje"
       edit:
-        title: "Uredi glasanje"
-        submit_button: "Ažuriraj glasanje"
+        title: "Uredi anketu"
+        submit_button: "Ažuriraj anketu"
       show:
         questions_tab: Pitanja
         booths_tab: Glasačka mjesta
@@ -1039,7 +1039,7 @@ hr:
         error_on_question_added: "Pitanja nisu mogla biti pripisana ovom glasanju"
       destroy:
         alert: "Akcija će se ukloniti s glasanja i svih povezanih pitanja."
-        success_notice: "Glasanje uspješno obrisano"
+        success_notice: "Anketa uspješno obrisana"
         unable_notice: "Ne možete obrisati glasanje koje ima zabilježene glasove"
     questions:
       index:
@@ -1397,7 +1397,7 @@ hr:
         direct_messages: Izravne poruke
         proposal_notifications: Obavijesti prijedloga
         incomplete_verifications: Nedovršene verifikacije
-        polls: Glasovanje
+        polls: Glasanja
       graph:
         debate_created: Rasprave
         visit: Broj posjeta
@@ -1409,7 +1409,7 @@ hr:
         supporting_phase: Faza potpore
         balloting_phase: Finalno glasanje
       budget_balloting:
-        title: "Statistika finalnog glasanja"
+        title: "Statistika završnog glasanja"
         vote_count: Glasovi
         participant_count: Sudionici
         votes_per_heading: Glasova po naslovu
@@ -1431,7 +1431,7 @@ hr:
         not_available: "Prijedlozi nisu dostupni"
       polls:
         title: Statstike Glasanja
-        all: Glasovanje
+        all: Glasanja
         web_participants: Web sudionici
         total_participants: Ukupno Sudionika
         poll_questions: "Pitanja iz glasanja: %{poll}"
