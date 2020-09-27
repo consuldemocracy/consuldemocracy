@@ -28,7 +28,7 @@ describe Poll::BallotSheet do
     end
   end
 
-  context "#author" do
+  describe "#author" do
     it "returns the officer's name" do
       expect(ballot_sheet.author).to be(ballot_sheet.officer_assignment.officer.user.name)
     end

@@ -312,6 +312,9 @@ RSpec/AroundBlock:
 RSpec/BeforeAfterAll:
   Enabled: true
 
+RSpec/ContextMethod:
+  Enabled: true
+
 RSpec/DescribedClass:
   Enabled: true
   EnforcedStyle: explicit
