@@ -365,6 +365,9 @@ RSpec/OverwritingSetup:
 RSpec/RepeatedExample:
   Enabled: true
 
+RSpec/RepeatedExampleGroupBody:
+  Enabled: true
+
 RSpec/ScatteredLet:
   Enabled: true
 
