@@ -4,9 +4,6 @@ describe "Votes" do
   let!(:verified)   { create(:user, verified_at: Time.current) }
   let!(:unverified) { create(:user) }
 
-  before do
-  end
-
   describe "Debates" do
     before { login_as(verified) }
 

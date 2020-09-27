@@ -327,6 +327,9 @@ RSpec/EmptyExampleGroup:
   Exclude:
     - spec/factories/**/*
 
+RSpec/EmptyHook:
+  Enabled: true
+
 RSpec/EmptyLineAfterExample:
   Enabled: true
 
