@@ -23,7 +23,7 @@ gem "devise_security_extension", git: "https://github.com/phatworx/devise_securi
 gem "font-awesome-sass", "~> 5.13.0"
 gem "foundation-rails", "~> 6.6.1.0"
 gem "foundation_rails_helper", "~> 3.0.0"
-gem "globalize", "~> 5.2.0"
+gem "globalize", "~> 5.3.0"
 gem "globalize-accessors", "~> 0.2.1"
 gem "graphiql-rails", "~> 1.4.1"
 gem "graphql", "~> 1.7.8"
