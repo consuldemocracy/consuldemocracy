@@ -368,6 +368,9 @@ RSpec/RepeatedExample:
 RSpec/RepeatedExampleGroupBody:
   Enabled: true
 
+RSpec/RepeatedExampleGroupDescription:
+  Enabled: true
+
 RSpec/ScatteredLet:
   Enabled: true
 
