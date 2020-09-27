@@ -617,7 +617,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    whenever (0.10.0)
+    whenever (1.0.0)
       chronic (>= 0.6.3)
     wicked_pdf (2.1.0)
       activesupport
@@ -722,7 +722,7 @@ DEPENDENCIES
   uglifier (~> 4.1.2)
   web-console (~> 3.7.0)
   webdrivers (~> 4.3.0)
-  whenever (~> 0.10.0)
+  whenever (~> 1.0.0)
   wicked_pdf (~> 2.1.0)
   wkhtmltopdf-binary (~> 0.12.4)
 
