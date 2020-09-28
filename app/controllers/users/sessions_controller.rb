@@ -11,6 +11,14 @@ class Users::SessionsController < Devise::SessionsController
     end
   end
 
+  def me
+    if(current_user)
+      redirect_to user_path (current_user.id)
+    else
+      redirect_to new_user_session_url
+    end
+  end
+
   private
 
     def after_sign_in_path_for(resource)

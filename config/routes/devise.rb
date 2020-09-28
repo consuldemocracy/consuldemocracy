@@ -9,6 +9,7 @@ devise_for :users, controllers: {
 devise_scope :user do
   get "users/sign_up", to: "users/sessions#new",as: :new_user_registration
   get "users/participacion", to: "users/sessions#participacion", as: :participacion_logon
+  get "users/me", to: "users/sessions#me", as: :participacion_me
 end
 
 
