@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "rails", "5.1.7"
 
 gem "acts-as-taggable-on", "~> 6.5.0"
-gem "acts_as_votable", "~> 0.11.1"
+gem "acts_as_votable", "~> 0.12.1"
 gem "ahoy_matey", "~> 1.6.0"
 gem "airbrake", "~> 5.0"
 gem "ancestry", "~> 3.2.1"
