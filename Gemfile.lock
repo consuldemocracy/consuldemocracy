@@ -146,7 +146,7 @@ GEM
       orm_adapter (~> 0.5.0)
       terrapin
     climate_control (0.2.0)
-    cocoon (1.2.14)
+    cocoon (1.2.15)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -650,7 +650,7 @@ DEPENDENCIES
   caxlsx (~> 3.0.2)
   caxlsx_rails (~> 0.6.2)
   ckeditor (~> 4.3.0)
-  cocoon (~> 1.2.14)
+  cocoon (~> 1.2.15)
   coveralls (~> 0.8.23)
   daemons (~> 1.3.1)
   dalli (~> 2.7.6)
