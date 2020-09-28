@@ -80,7 +80,7 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.16)
-    better_html (1.0.13)
+    better_html (1.0.15)
       actionview (>= 4.0)
       activesupport (>= 4.0)
       ast (~> 2.0)
@@ -208,12 +208,13 @@ GEM
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
       mail (~> 2.7)
-    erb_lint (0.0.28)
+    erb_lint (0.0.35)
       activesupport
       better_html (~> 1.0.7)
       html_tokenizer
+      parser (>= 2.7.1.4)
       rainbow
-      rubocop (~> 0.51)
+      rubocop (~> 0.79)
       smart_properties
     errbase (0.0.3)
     erubi (1.9.0)
@@ -555,7 +556,7 @@ GEM
     simplecov-html (0.10.2)
     sitemap_generator (6.1.2)
       builder (~> 3.0)
-    smart_properties (1.13.1)
+    smart_properties (1.15.0)
     social-share-button (1.1.0)
       coffee-rails
     socksify (1.7.1)
