@@ -15,6 +15,7 @@ Bundler/DuplicatedGem:
 
 Bundler/OrderedGems:
   Enabled: true
+  ConsiderPunctuation: true
 
 Capybara/CurrentPathExpectation:
   Enabled: true
