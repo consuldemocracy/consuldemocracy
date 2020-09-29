@@ -602,7 +602,7 @@ hr:
       messages:
         translations_too_short: Obvezatno je priložiti barem jedan prijevod
         record_invalid: "Valicaija nije uspjela: %{errors}"
-        another_poll_active: Postoji još jedno aktivno glasovanje za dat period
+        another_poll_active: Postoji još jedno aktivno glasanje za dani period
         restrict_dependent_destroy:
           has_one: "Nemožete obrisati zapis jer ovisi o postojećem %{record}"
           has_many: "Nemožete obrisati zapis jer ovisi o postojećem %{record}"
