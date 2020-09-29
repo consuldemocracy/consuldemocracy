@@ -63,7 +63,7 @@ hr:
     proposals:
       successful_proposal_id: Uspješni prijedlog
       successful_proposal_id_description: Ovaj prijedlog se koristi kao referenca za uspješni prijedlog u potpornom broju te će biti prikazan u grafu na upravljačkoj ploči.
-      poll_short_title: Glasovanje
+      poll_short_title: Glasanja
       poll_short_title_description: Kratki opis značajke istraživanja. Dopušta korisnicima da stvore istraživanje o prijedlogu
       poll_description: Opis glasovanja
       poll_description_description: Detaljni opis značajki istraživanja
