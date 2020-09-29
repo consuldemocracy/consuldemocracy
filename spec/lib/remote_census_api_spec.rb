@@ -3,7 +3,7 @@ require "rails_helper"
 describe RemoteCensusApi do
   let(:api) { RemoteCensusApi.new }
 
-  describe "#call" do
+  describe "#call", :remote_census do
     let(:invalid_body) { { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}}}} }
     let(:valid_body) do
       {
@@ -17,14 +17,6 @@ describe RemoteCensusApi do
           }
         }
       }
-    end
-
-    before do
-      access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
-      access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
-      Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
-      Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
-      Setting["remote_census.response.valid"] = access_user_data
     end
 
     it "returns the response for the first valid variant" do
@@ -184,20 +176,7 @@ describe RemoteCensusApi do
     end
   end
 
-  describe "RemoteCensusApi::Response" do
-    before do
-      Setting["feature.remote_census"] = true
-      access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
-      access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
-      Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
-      Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
-      Setting["remote_census.response.district"] = "#{access_residence_data}.codigo_distrito"
-      Setting["remote_census.response.gender"] = "#{access_user_data}.descripcion_sexo"
-      Setting["remote_census.response.name"] = "#{access_user_data}.nombre"
-      Setting["remote_census.response.surname"] = "#{access_user_data}.apellido1"
-      Setting["remote_census.response.valid"] = access_user_data
-    end
-
+  describe "RemoteCensusApi::Response", :remote_census do
     it "return expected response methods with default values" do
       document_type = "1"
       document_number = "12345678Z"

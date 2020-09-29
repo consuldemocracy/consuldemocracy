@@ -34,13 +34,7 @@ describe CensusCaller do
       end
     end
 
-    describe "RemoteCensusApi" do
-      before do
-        Setting["feature.remote_census"] = true
-        access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
-        Setting["remote_census.response.valid"] = access_user_data
-      end
-
+    describe "RemoteCensusApi", :remote_census do
       it "returns remote census api response when it's available and response is valid" do
         remote_census_api_response = RemoteCensusApi::Response.new(valid_body)
         allow_any_instance_of(RemoteCensusApi).to receive(:call).and_return(remote_census_api_response)

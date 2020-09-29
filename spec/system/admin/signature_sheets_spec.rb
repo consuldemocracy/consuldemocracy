@@ -76,18 +76,7 @@ describe "Signature sheets" do
     end
   end
 
-  context "Create throught all required_fields_to_verify of custom census api" do
-    before do
-      Setting["feature.remote_census"] = true
-      Setting["remote_census.request.date_of_birth"] = "some.value"
-      Setting["remote_census.request.postal_code"] = "some.value"
-      access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
-      access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
-      Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
-      Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
-      Setting["remote_census.response.valid"] = access_user_data
-    end
-
+  context "Create throught all required_fields_to_verify of custom census api", :remote_census do
     scenario "Proposal" do
       proposal = create(:proposal)
       visit new_admin_signature_sheet_path

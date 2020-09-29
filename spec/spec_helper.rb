@@ -105,6 +105,38 @@ RSpec.configure do |config|
     allow(Time).to receive(:zone).and_return(application_zone)
   end
 
+  config.before(:each, :remote_census) do |example|
+    Setting["remote_census.request.method_name"] = "get_habita_datos"
+    Setting["remote_census.request.document_type"] = "request.tipo_documento"
+    Setting["remote_census.request.document_number"] = "request.documento"
+    Setting["remote_census.request.date_of_birth"] = "request.fecha_nacimiento"
+    Setting["remote_census.request.postal_code"] = "request.codigo_postal"
+    Setting["remote_census.request.structure"] = '{ "request":
+      {
+        "codigo_institucion": 1,
+        "codigo_portal": 1,
+        "codigo_usuario": 1,
+        "documento": "nil",
+        "tipo_documento": "null",
+        "fecha_nacimiento": "null",
+        "codigo_postal": "nil",
+        "codigo_idioma": 102,
+        "nivel": 3
+      }
+    }'
+
+    access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
+    access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
+    Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
+    Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
+    Setting["remote_census.response.district"] = "#{access_residence_data}.codigo_distrito"
+    Setting["remote_census.response.gender"] = "#{access_user_data}.descripcion_sexo"
+    Setting["remote_census.response.name"] = "#{access_user_data}.nombre"
+    Setting["remote_census.response.surname"] = "#{access_user_data}.apellido1"
+    Setting["remote_census.response.valid"] = access_user_data
+    Setting["feature.remote_census"] = true
+  end
+
   # Allows RSpec to persist some state between runs in order to support
   # the `--only-failures` and `--next-failure` CLI options.
   config.example_status_persistence_file_path = "spec/examples.txt"
