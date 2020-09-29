@@ -54,7 +54,7 @@ namespace :deploy do
 
   after "deploy:migrate", "add_new_settings"
 
-  after  :publishing, "setup_puma"
+  after :publishing, "setup_puma"
 
   after :published, "deploy:restart"
   before "deploy:restart", "puma:restart"
