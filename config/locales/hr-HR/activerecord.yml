@@ -328,7 +328,7 @@ hr:
         summary: "Sažetak"
         description: "Opis"
       poll/question:
-        poll_id: "Glasovanje"
+        poll_id: "Anketa"
         title: "Pitanje"
         summary: "Sažetak"
         description: "Opis"
