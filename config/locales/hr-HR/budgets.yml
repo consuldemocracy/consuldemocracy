@@ -26,6 +26,7 @@ hr:
         not_enough_money: "Već ste odabrali dostupan proračun.<br><small>Možete %{change_ballot} u bilo kojem trenutku</small>"
         no_ballots_allowed: Faza odabira je zatvorena
         different_heading_assigned: "Već ste glasovali za drugu temu: %{heading_link}"
+        not_enough_available_votes: "Dostigli ste maksimalno dozvoljeni broj glasova"
         change_ballot: promijeni svoj glas
         casted_offline: Već ste sudjelovali offline
     groups:
