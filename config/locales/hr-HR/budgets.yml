@@ -15,7 +15,7 @@ hr:
           one: "Vi ste glasovali za <span>jednu</span> investiciju."
           few: "Vi ste glasovali za <span>%{count}</span> investicije."
           other: "Vi ste glasovali za <span>%{count}</span> investicija."
-        voted_info: "Vaše je glasovanje potvrđeno!"
+        voted_info: "Vaš je glasački listić potvrđen!"
         voted_info_2: "Možete promjeniti svoj glas u bilo koje vrijeme do završetka ove faze."
         zero: Niste glasali niti za jedan investicijski projekt.
       reasons_for_not_balloting:
@@ -59,7 +59,7 @@ hr:
       map: Prijedlozi investiranja budžeta prema geografskoj lokaciji
       investment_proyects: Lista svih investicijskih projekata
       unfeasible_investment_proyects: Lista svih neizvedivih investicijskih projekata
-      not_selected_investment_proyects: Lista svih investicijskih projekata koji nisu odabrani za glasovanje
+      not_selected_investment_proyects: Popis svih investicijskih projekata koji nisu odabrani za glasanje
       finished_budgets: Dovršeni participativni budžeti
       see_results: Pogledaj rezultate
       section_footer:
