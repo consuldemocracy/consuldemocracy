@@ -129,7 +129,11 @@ class ApplicationController < ActionController::Base
     end
 
     def all_proposals
-      Proposal.all
+     	if params[:search]
+    		Proposal.search(params[:search])
+    	else
+      		Proposal.all
+	end
     end
 
 end
