@@ -33,7 +33,7 @@ hr:
         description: "%{link} sekcija pomaže građanima kako bi sproveli direktnu odluku o trošenju dijelova javnog budžeta."
         link: "participativni budžeti"
         image_alt: "Različite faze participativnog budžetiranja"
-        figcaption: '"Potpora" i "Glasovanje" faze sudioničkih proračuna.'
+        figcaption: 'Faze "Potpore" i "Glasanja" sudioničkih proračuna.'
       polls:
         title: "Glasanje"
         description: "%{link} sekcije aktiviraju sesvaki puta kada prijedlog postigne 1% potpore i počne izglasavanje ili kada tijelo javne vlasti predlaže problem oko kojeg građani zatim odlučuju."
