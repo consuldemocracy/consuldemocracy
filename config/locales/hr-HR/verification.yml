@@ -8,7 +8,7 @@ hr:
         alert:
           failure: Došlo je do problema sa slanjem e-maila na vaš račun
         flash:
-          success: "Poslali smo vam potvrdu vašeg računa na e-mail: %{email}"
+          success: "Poslali smo vam potvrdu Vašeg računa na e-mail: %{email}"
       show:
         alert:
           failure: Potvrdni kôd netočan
