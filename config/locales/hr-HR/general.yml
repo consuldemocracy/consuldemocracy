@@ -142,9 +142,9 @@ hr:
       info_link: izradi novi prijedlog
       more_info: Više informacija
       recommendation_four: Uživajte na ovom mjestu, nek se i vaš glas čuje.
-      recommendation_one: Ne koristite velika početna slova za naslove rasprave ili cijele rečenice. Na internetu ovo se može procijeniti kao vikanje, a nitko ne želi da se na njega viče.
-      recommendation_three: Iskreni kriticizam je dobrodošao. Ovo je mjesto za dobivanje povratnih informacija. Mi predlažemo da se stavljate drugima komentare kakve smatrate da ih želite primiti (na inteligentan i elegentan način).
-      recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju na ilegalne aktivnosti biti će obrisani, kao i oni koji sabotiraju prostor za rasprave. Sve ostalo je dozvoljeno.
+      recommendation_one: Ne koristite velika početna slova za naslove rasprave niti cijele rečenice. Na internetu se takav način može shvatiti kao vikanje, a nitko ne želi da se na njega viče.
+      recommendation_three: Nemilosrdna i iskrena kritika je dobrodošla. Ovo je mjesto za refleksiju i skupljanje povratnih informacija. Ipak, predlažemo da se sastavljate komentare drugima kakve bi ste ih i sami željeli primiti, na inteligentan i profinjen način.
+      recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju ilegalne aktivnosti bit će obrisani, kao i oni koji ometaju prostor rasprave. Sve je ostalo dozvoljeno.
       recommendations_title: Preporuke za stvaranje rasprave
       start_new: Započni raspravu
     show:
@@ -412,9 +412,9 @@ hr:
       form:
         submit_button: Stvorite prijedlog
       more_info: Kako prijedlozi građana funkcioniraju?
-      recommendation_one: Ne koristite velika početna slova za naslove prijedloge ili cijele rečenice. Na internetu ovo se može procijeniti kao vikanje, a nitko ne želi da se na njega viče.
+      recommendation_one: Ne koristite velika početna slova za naslove prijedloga niti cijele rečenice. Na internetu se takav način može shvatiti kao vikanje, a nitko ne želi da se na njega viče.
       recommendation_three: Uživajte na ovom mjestu, nek se i vaš glas čuje.
-      recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju na ilegalne aktivnosti biti će obrisani, kao i oni koji sabotiraju prostor za prijedloge. Sve ostalo je dozvoljeno.
+      recommendation_two: Bilo koji prijedlog ili komentar koji sugerira ilegalne aktivnosti bit će obrisan, kao i onaj koji ometa prostor rasprave. Sve je ostalo dozvoljeno.
       recommendations_title: Preporuke za stvaranje rasprave
       start_new: Stvori novi prijedlog
     notice:
