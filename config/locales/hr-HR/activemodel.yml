@@ -23,7 +23,7 @@ hr:
       verification/letter:
         email: "E-mail"
         password: "Zaporka"
-        verification_code: "Šifra koju ste primili u pismu"
+        verification_code: "Kôd koji ste primili u pismu"
       verification/management/document:
         document_type: "Vrsta dokumenta:"
         document_number: "Broj dokumenta"
