@@ -35,7 +35,7 @@ hr:
       login_items:
         login: Prijavi se
         logout: Odjavi se
-        signup: Registriraj me
+        signup: Registriraj se
     organizations:
       registrations:
         new:
