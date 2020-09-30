@@ -13,7 +13,7 @@ hr:
           few: "%{count} odgovore"
           other: "%{count} odgovore"
         cancel: Otkaži
-        publish_comment: Objavi komentar
+        publish_comment: Objavite komentar
       form:
         phase_not_open: Ova faza još nije otvorena
       index:
@@ -90,7 +90,7 @@ hr:
         proposals_dates: Prijedlozi
     questions:
       comments:
-        comment_button: Objavi odgovor
+        comment_button: Objavite odgovor
         comments_title: Otvoreni odgovori
         comments_closed: Zatvorena faza
         form:
@@ -106,7 +106,7 @@ hr:
         answer_question: Pošalji odgovor
         next_question: Sljedeće pitanje
         first_question: Prvo pitanje
-        share: Dijeli
+        share: Podijeli
         title: Proces javnog savjetovanja
       participation:
         phase_not_open: Ova faza još nije otvorena
@@ -115,7 +115,7 @@ hr:
         verified_only: Samo potvrđeni korisnici mogu sudjelovati, %{verify_account}.
         debate_phase_not_open: Faza rasprava je završila i odgovori se više ne primaju
     shared:
-      share: Dijeli
+      share: Podijeli
       share_comment: Komentiraj %{version_name} iz drafta procesa %{process_name}
     proposals:
       form:
