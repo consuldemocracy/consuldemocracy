@@ -52,7 +52,7 @@ hr:
     unlocks:
       send_instructions: "Za nekoliko minuta zaprimiti ćete e-mail s uputama za otključavanje Vašeg računa."
       send_paranoid_instructions: "Ukoliko imate račun, za nekoliko minuta ćete zaprimiti e-mail s uputama za otključavanje vašeg računa."
-      unlocked: "Vaš je račun otključan. Ponovno se prijavite kako biste nastavili."
+      unlocked: "Vaš je račun otključan. Ponovno se prijavite da biste nastavili."
   errors:
     messages:
       already_confirmed: "Vaš je račun već potvrđen; molimo vas da se pokušate prijaviti."
