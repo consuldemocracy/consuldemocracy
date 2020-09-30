@@ -7,4 +7,24 @@
 <%= csrf_meta_tags %>
 <%= favicon_link_tag "favicon.ico" %>
 <%= render "layouts/disable_animations_in_tests" if Rails.env.test? %>
-<%= "<!--[consume:proxia-links-header-script]-->" if request.headers['X-Proxy-Management']=='proxy' %>
+<% if request.headers['X-Proxy-Management']=='proxy' %>
+<script type="text/javascript">
+  if(window.parent && window.postMessage && typeof(window.postMessage) === 'function') {
+    // Controlamos cambios en altura y el cambio de página, mediante un chequeo de intervalos
+    // cada segundo, tal y como funciona no se produce una navegación "física" con una recarga
+    // completa del documento, sino una navegación virtual vía JavaScript
+    var _currentHeight = 0;
+    var _href=false;
+    setInterval(function(){
+      console.log(document.body.scrollHeight);
+      if(document.body.scrollHeight != _currentHeight) {
+        _currentHeight = document.body.scrollHeight;
+        window.parent.postMessage('h:'+document.body.scrollHeight,'<%=Rails.application.config.participacion_push_target_origin %>');
+      }
+      if(window.location.href != _href) {
+        window.parent.postMessage('l:' + window.location.href, '<%=Rails.application.config.participacion_push_target_origin %>');
+      }
+    },1000);
+  }
+</script>
+<% end %>

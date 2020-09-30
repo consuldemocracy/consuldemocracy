@@ -117,4 +117,7 @@ Rails.application.configure do
 
   # Mantiene las IPs de acceso remoto para la autenticacion
   config.participacion_xauth_origin = Rails.application.secrets.participacion_xauth_origin
+
+  # targetOrigin para los pushmessage cuando se embebe como iframe
+  config.participacion_push_target_origin = Rails.application.secrets.participacion_push_target_origin
 end

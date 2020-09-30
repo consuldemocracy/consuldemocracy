@@ -44,11 +44,11 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  config.assets.debug = false
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
-  config.assets.digest = true
+  config.assets.digest = false
 
   # We allow connecting from our localhost supporting different VMBOX (Vagrant NAT; e.g)
   config.web_console.whitelisted_ips = ['10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16']
@@ -93,6 +93,9 @@ Rails.application.configure do
 
   # Mantiene las IPs de acceso remoto para la autenticacion
   config.participacion_xauth_origin = Rails.application.secrets.participacion_xauth_origin
+
+  # targetOrigin para los pushmessage cuando se embebe como iframe
+  config.participacion_push_target_origin = Rails.application.secrets.participacion_push_target_origin
 
 
 end
