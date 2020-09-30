@@ -35,7 +35,7 @@ hr:
       login_items:
         login: Prijavi se
         logout: Odjavi se
-        signup: Registriraj se
+        signup: Registrirajte se
     organizations:
       registrations:
         new:
@@ -80,7 +80,7 @@ hr:
         new_unlock: Jeste li primili upute za otključavanje?
         signin_with_provider: Prijavi se s %{provider}
         signup: Nemate račun? %{signup_link}
-        signup_link: Registriraj se
+        signup_link: Registrirajte se
     unlocks:
       new:
         email_label: Email
@@ -108,7 +108,7 @@ hr:
           cancel: Odustani od prijave
           email_label: Email
           organization_signup: Predstavljate li organizaciju ili kolektiv? %{signup_link}
-          organization_signup_link: Registriraj se ovdje
+          organization_signup_link: Registrirajte se ovdje
           password_confirmation_label: Potvrdi zaporku
           password_label: Zaporka
           redeemable_code: Verifikacijski kod ćete primiti putem emaila (neobavezno)
