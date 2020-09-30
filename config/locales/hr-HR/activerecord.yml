@@ -119,9 +119,9 @@ hr:
         few: "Prijedlozi"
         other: "Prijedlozi"
       legislation/draft_versions:
-        one: "Draft verzija"
-        few: "Draft verzije"
-        other: "Draft verzije"
+        one: "Nacrtna verzija"
+        few: "Nacrtne verzije"
+        other: "Nacrtne verzije"
       legislation/questions:
         one: "Pitanje"
         few: "Pitanja"
@@ -355,7 +355,7 @@ hr:
         subtitle: Podnaslov
         slug: Žeton
         status: Status
-        status_draft: "Skica"
+        status_draft: "Nacrt"
         status_published: "Objavljeno"
         title: Naziv
         updated_at: Ažurirano u
@@ -558,7 +558,7 @@ hr:
             debate_end_date:
               invalid_date_range: mora biti na datum debate ili nakon početnog datuma
             draft_end_date:
-              invalid_date_range: mora biti na datum drafta ili nakon početnog datuma
+              invalid_date_range: mora biti na datum nacrta ili nakon njegovog početnog datuma
             allegations_end_date:
               invalid_date_range: mora biti na datum komentara ili nakon početnog datuma
         local_census_record:
