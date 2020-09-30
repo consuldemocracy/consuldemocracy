@@ -2,11 +2,11 @@
 hr:
   devise:
     password_expired:
-      expire_password: "Istekla lozinka"
-      change_required: "Vaša lozinka je istekla"
+      expire_password: "Istekla zaporka"
+      change_required: "Vaša je zaporka istekla"
       change_password: "Izmjenite zaporku"
-      new_password: "Nova lozinka"
-      updated: "Lozinka je uspješno ažurirana"
+      new_password: "Nova zaporka"
+      updated: "Zaporka je uspješno ažurirana"
     confirmations:
       confirmed: "Vaš račun je potvrđen."
       send_instructions: "U nekoliko minuta ćete prihvatiti email koji sadrži upute za ponovno postavljanje lozinke."
@@ -14,7 +14,7 @@ hr:
     failure:
       already_authenticated: "Već ste prijavljeni."
       inactive: "Vaš račun još nije aktiviran."
-      invalid: "Nevažeći %{authentication_keys} ili lozinka."
+      invalid: "Nevažeći %{authentication_keys} ili zaporka."
       locked: "Vaš račun je zaključan."
       last_attempt: "Preostao vam je još jedan pokušaj prije nego što se račun blokira."
       not_found_in_database: "Nevažeći %{authentication_keys} ili lozinka."
@@ -35,8 +35,8 @@ hr:
       no_token: "Ne možete pristupiti ovoj stranici osim putem linka za obnovu lozinke. Ukoliko ste probali pristupiti preko linka za obnovu lozinke, molimo vas provjerite cjelovitost URL-a."
       send_instructions: "Za nekoliko minuta dobit ćete e-mail s uputama za obnovu lozinke."
       send_paranoid_instructions: "Ako je Vaš e-mail u našoj bazi podataka u nekoliko minuta ćete dobiti link za obnovu lozinke."
-      updated: "Vaša lozinka je uspješno promijenjena. Autentifikacija uspješna."
-      updated_not_active: "Vaša lozinka je uspješno promijenjena."
+      updated: "Vaša je zaporka uspješno promijenjena. Potvrda autentičnosti uspješna."
+      updated_not_active: "Vaša je zaporka uspješno promijenjena."
     registrations:
       destroyed: "Doviđenja! Vaš račun je poništen. Nadamo se da ćemo vas ponovno vidjeti."
       signed_up: "Dobrodošli! Potvrđena je vaša autentičnost."
