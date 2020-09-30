@@ -12,10 +12,10 @@ hr:
         title: "Uredi korisnički račun: Obnovi lozinku"
         back: Nazad
         password:
-          password: Lozinka
+          password: Zaporka
           send_email: Pošalji e-mail za obnovu lozinke
           reset_email_send: E-mail poslan ispravno.
-          reseted: Lozinka je uspješno obnovljena
+          reseted: Zaporka je uspješno obnovljena
           random: Stvori nasumičnu lozinku
           save: Spremi lozinku
           print: Ispiši zaporku
