@@ -176,8 +176,7 @@ header, .top-bar {
   }
 
   a:hover, a:active, a.is-active {
-    color: #FFFFFF;
-    text-decoration: underline;
+    color: $orange-hover-menu;
   }
 }
 
