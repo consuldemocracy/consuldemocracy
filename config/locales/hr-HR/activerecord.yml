@@ -398,7 +398,7 @@ hr:
         debate_end_date: Kraj
         draft_start_date: Početak
         draft_end_date: Kraj
-        draft_publication_date: Datum objave publikacije
+        draft_publication_date: Datum objave nacrta
         allegations_start_date: Početak
         allegations_end_date: Kraj
         proposals_phase_start_date: Početak
@@ -420,11 +420,11 @@ hr:
         title: "Naziv prijedloga"
         video_url: "Poveznica na vanjski video"
       legislation/draft_version:
-        title: Naziv Verzije
+        title: Naslov verzije
         body: Tekst
         changelog: Izmjene
         status: Status
-        status_draft: "Skica"
+        status_draft: "Nacrt"
         status_published: "Objavljeno"
         final_version: Finalna verzija
       legislation/draft_version/translation:
