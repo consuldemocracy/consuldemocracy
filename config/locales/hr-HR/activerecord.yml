@@ -119,9 +119,9 @@ hr:
         few: "Prijedlozi"
         other: "Prijedlozi"
       legislation/draft_versions:
-        one: "Nacrtna verzija"
-        few: "Nacrtne verzije"
-        other: "Nacrtne verzije"
+        one: "Verzija nacrta"
+        few: "Verzije nacrta"
+        other: "Verzija nacrta"
       legislation/questions:
         one: "Pitanje"
         few: "Pitanja"
