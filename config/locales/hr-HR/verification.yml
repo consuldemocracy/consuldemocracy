@@ -65,7 +65,7 @@ hr:
     sms:
       create:
         flash:
-          success: Unesi potvrdni kôd koji smo vam poslali tekstualnom porukom
+          success: Unesite potvrdni kôd koji smo Vam poslali tekstualnom porukom
       edit:
         resend_sms_link: Klinknite ovdje da bi ga poslali ponovno
         resend_sms_text: Niste dobili poruku s potvrdnim kôdom?
