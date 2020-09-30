@@ -34,7 +34,7 @@ hr:
     menu:
       login_items:
         login: Prijavite se
-        logout: Odjavi se
+        logout: Odjavite se
         signup: Registrirajte se
     organizations:
       registrations:
@@ -51,7 +51,7 @@ hr:
         success:
           back_to_index: Razumijem; idi natrag na glavnu stranicu
           instructions_1: "<strong>Uskoro ćemo vas kontaktirati</strong> radi potvrde vašeg zastupanja ove zajednice."
-          instructions_2: Dok se vaša <strong> e-mail adresa provjerava</strong>, poslali smo vam <strong>poveznicu za potvrdu vašeg računa</strong>.
+          instructions_2: Dok se vaša <strong> e-mail adresa provjerava</strong>, poslali smo vam <strong>poveznicu za potvrdu Vašeg računa</strong>.
           instructions_3: Kada dobijete potvrdu, možete sudjelovati kao nepotvrđena zajednica.
           thank_you: Hvala što ste registrirali vašu zajednicu na stranici. U tijeku je <strong> provjera</strong>.
           title: Registracija organizacije / kolektiva
@@ -75,7 +75,7 @@ hr:
     shared:
       links:
         login: Prijavite se
-        new_confirmation: Niste primili upute za aktivaciju vašeg računa?
+        new_confirmation: Niste primili upute za aktivaciju Vašeg računa?
         new_password: Zaboravili ste zaporku?
         new_unlock: Jeste li primili upute za otključavanje?
         signin_with_provider: Prijavi se s %{provider}
