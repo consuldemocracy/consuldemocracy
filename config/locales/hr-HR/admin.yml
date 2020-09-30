@@ -139,7 +139,7 @@ hr:
         max_votable_headings_info: "Odnosi se samo na fazu odabira projekata. Tijekom faze glasanja o projektima korisnici će moći glasati samo za jedan naslov po skupini."
         submit: "Spremi grupu"
       index:
-        back: "Idi nazad na budžet"
+        back: "Vrati se na proračune"
     budget_headings:
       no_headings: "Ne postoje naslovi."
       amount:
@@ -162,7 +162,7 @@ hr:
         edit: "Uredi naslov"
         submit: "Spremi naslov"
       index:
-        back: "Idi nazad na grupu"
+        back: "Vrati se na grupe"
     budget_phases:
       edit:
         summary_help_text: Ovaj tekst će vas informirati korisnika o fazi. Kako biste to mogući tokom faze koja nije aktivirana odaberite kućicu dolje
@@ -358,7 +358,7 @@ hr:
         no_hidden_comments: Ne postoje sakriveni komentari.
     dashboard:
       index:
-        back: Idi nazad na %{org}
+        back: Vrati se na %{org}
         title: Administracija
         description: Dobrodošli na %{org} ploču admina.
       actions:
@@ -1327,9 +1327,9 @@ hr:
         form:
           submit_button: Spremi promjene
         editing: Uredi geozonu
-        back: Idi nazad
+        back: Vrati se
       new:
-        back: Idi nazad
+        back: Vrati se
         creating: Stvori distrikt
       delete:
         success: Geozona je uspješno obrisana
