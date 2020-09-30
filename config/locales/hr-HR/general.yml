@@ -62,7 +62,7 @@ hr:
       comment_as_moderator: Komentiraj kako moderator
       leave_comment: Ostavi svoj komentar
     orders:
-      most_voted: Najviše izlasano
+      most_voted: Najviše izglasano
       newest: Prvo najnoviji
       oldest: Najstariji prvo
       most_commented: Najviše komentirani
