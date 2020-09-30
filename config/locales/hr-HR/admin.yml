@@ -1389,7 +1389,7 @@ hr:
           user_level_two: Razina dva korisnika
           users: Ukupno korisnika
           verified_users: Potvrđeni korisnici
-          verified_users_who_didnt_vote_proposals: Potvrđeni korisnici koji nemaju prijedloge za izglasavanje
+          verified_users_who_didnt_vote_proposals: Potvrđeni korisnici koji nisu glasali za prijedloge
           visits: Broj posjeta
           votes: Ukupno glasova
         budgets_title: Participativno budžetiranje
