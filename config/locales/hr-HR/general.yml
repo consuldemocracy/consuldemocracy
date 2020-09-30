@@ -940,7 +940,7 @@ hr:
       user_permission_verify: "Kako biste izveli sljedeće radnje potvrdite svoj račun."
       user_permission_verify_info: "*Samo za korisnike Cenzusa."
       user_permission_verify_my_account: Potvrdi moj račun
-      user_permission_votes: Sudjelujte u finalnom glasanju
+      user_permission_votes: Sudjelovati u završnom glasanju
   invisible_captcha:
     sentence_for_humans: "Ako ste fizička osoba, ignorirajte ovo polje"
     timestamp_error_message: "Žao nam je, ovo je bilo prebrzo! Molimo vas ponovno podnesite."
