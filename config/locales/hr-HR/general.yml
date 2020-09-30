@@ -63,17 +63,17 @@ hr:
       leave_comment: Ostavi svoj komentar
     orders:
       most_voted: Najviše izglasano
-      newest: Prvo najnoviji
+      newest: Najnoviji prvo
       oldest: Najstariji prvo
       most_commented: Najviše komentirani
     select_order: Sortiraj po
     show:
       return_to_commentable: "Vrati se na "
   comments_helper:
-    comment_button: Objavi komentar
+    comment_button: Objavite komentar
     comment_link: Komentar
     comments_title: Komentari
-    reply_button: Objavi odgovor
+    reply_button: Objavite odgovor
     reply_link: Odgovori
   debates:
     create:
@@ -141,7 +141,7 @@ hr:
       info: Ako želite napraviti prijedlog, onda je ova pogrešna sekcija, slijedite %{info_link}.
       info_link: izradi novi prijedlog
       more_info: Više informacija
-      recommendation_four: Uživajte na ovom mjestu vaš glas će se također popuniti.
+      recommendation_four: Uživajte na ovom mjestu, nek se i vaš glas čuje.
       recommendation_one: Ne koristite velika početna slova za naslove rasprave ili cijele rečenice. Na internetu ovo se može procijeniti kao vikanje, a nitko ne želi da se na njega viče.
       recommendation_three: Iskreni kriticizam je dobrodošao. Ovo je mjesto za dobivanje povratnih informacija. Mi predlažemo da se stavljate drugima komentare kakve smatrate da ih želite primiti (na inteligentan i elegentan način).
       recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju na ilegalne aktivnosti biti će obrisani, kao i oni koji sabotiraju prostor za rasprave. Sve ostalo je dozvoljeno.
@@ -157,7 +157,7 @@ hr:
       comments_title: Kometari
       edit_debate_link: Uredi
       flag: Rasprava je označena kao neprimjerena od strane više korisnika.
-      share: Dijeli
+      share: Podijeli
       author: Autor
     update:
       form:
@@ -321,8 +321,8 @@ hr:
       title: Čestitamo! Napravili ste prvi korak.
       motivation: "Važno je spremiti početak kampanje za vaš prijedlog kako bi bio uspješan. Prvih par dana su odlučujuča."
       motivation_2: "<strong>Ako želite preporuke za pripremu objave, ostavite svoj prijedlog kao skicu i mi ćemo vas voditi.</strong>"
-      publish: Ne, ja želim objaviti svoj prijedlog
-      dashboard: Da, želim pomoć i objaviti ću kasnije
+      publish: Ne, želim objaviti svoj prijedlog
+      dashboard: Da, želim pomoć i objaviti ću ga kasnije
       preview_title: Ovako će izgledati vaš prijedlog kada ga objavite
     share:
       improve_it: Poboljšajte svoju kampanju i dobijte više potpore.
@@ -413,7 +413,7 @@ hr:
         submit_button: Stvorite prijedlog
       more_info: Kako prijedlozi građana funkcioniraju?
       recommendation_one: Ne koristite velika početna slova za naslove prijedloge ili cijele rečenice. Na internetu ovo se može procijeniti kao vikanje, a nitko ne želi da se na njega viče.
-      recommendation_three: Uživajte na ovom mjestu vaš glas će se također popuniti.
+      recommendation_three: Uživajte na ovom mjestu, nek se i vaš glas čuje.
       recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju na ilegalne aktivnosti biti će obrisani, kao i oni koji sabotiraju prostor za prijedloge. Sve ostalo je dozvoljeno.
       recommendations_title: Preporuke za stvaranje rasprave
       start_new: Stvori novi prijedlog
@@ -503,7 +503,7 @@ hr:
     index:
       title: Izdanje
       edit_proposal_link: Uredi prijedlog
-      publish: Objavi prijedlog
+      publish: Objavite prijedlog
       retire: Povuci prijedlog
     new_request:
       links: Poveznice
@@ -778,7 +778,7 @@ hr:
     outline:
       searcher: Pretraživač
     go_to_page: "Idi na stranicu od "
-    share: Dijeli
+    share: Podijeli
     orbit:
       previous_slide: Prošla Stranica
       next_slide: Sljedeća Stranica
