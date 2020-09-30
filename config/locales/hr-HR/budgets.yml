@@ -19,7 +19,7 @@ hr:
         voted_info_2: "Možete promjeniti svoj glas u bilo koje vrijeme do završetka ove faze."
         zero: Niste glasali niti za jedan investicijski projekt.
       reasons_for_not_balloting:
-        not_logged_in: Vi morate %{signin} ili %{signup} kako biste nastavili.
+        not_logged_in: '%{signin} ili %{signup} da bi nastavili.'
         not_verified: Samo potvrđeni korisnici mogu glasati za investicije, %{verify_account}.
         organization: Organizacijama nije dozvoljeno glasanje
         not_selected: Investicijski projekti koji nisu odabrani ne mogu dobiti podršku
@@ -100,7 +100,7 @@ hr:
           zero: Vi niste glasali u niti jedan investicijski projekt u ovoj grupi.
           verified_only: "Kako bi se stvorio nova investcijski budžet %{verify}."
           create: "Stvori investicijski budžet"
-          not_logged_in: "Kako bi stvorili novi investicijski budžet morate %{sign_in} ili %{sign_up}."
+          not_logged_in: "%{sign_in} ili %{sign_up} da bi izradili novo proračunsko ulaganje."
           by_feasibility: Po izvedivosti
           feasible: Izvedivi projekti
           unfeasible: Neizvedivi projekti
