@@ -71,7 +71,7 @@ hr:
           help: Pomoć oko javnog savjetovanja
         section_footer:
           title: Pomoć oko javnog savjetovanja
-          description: Sudjelujte u raspravama i procesima prije odobravanja novih propisa ili strategija. Vaše mišljenje će se razmotriti.
+          description: Sudjelujte u raspravama i procesima prije odobravanja novih propisa ili strategija. Vaše će se mišljenje uzeti u obzir.
       phase_not_open:
         not_open: Ova faza još uvijek nije otvorena
       phase_empty:
