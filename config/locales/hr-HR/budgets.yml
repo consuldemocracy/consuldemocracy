@@ -114,7 +114,7 @@ hr:
         author_deleted: Korisnik obrisan
         price_explanation: Objašnjenje cijene
         unfeasibility_explanation: Objašnjenje neizvedivosti
-        code: "Lozinka investicijskog projekta: <strong>%{code}</strong>"
+        code: "Kôd ulagačkog projekta: <strong>%{code}</strong>"
         location: "Lokacija: <strong>%{location}</strong>"
         organization_name: "Predložio: <strong>%{name}</strong>"
         share: Podijeli
