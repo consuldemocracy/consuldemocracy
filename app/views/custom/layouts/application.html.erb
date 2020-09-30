@@ -22,8 +22,6 @@
       <%# Si viene de un proxy eliminamos la información de cabecera e incluimos un [consume:proxy-header] para que el proxy introduzca su cabecera %>
       <% unless request.headers['X-Proxy-Management'] == 'proxy' %>
       <%= render "layouts/header", with_subnavigation: true %>
-      <% else %>
-      <!--[consume:proxy-header]-->
       <% end %>
 
       <% if request.headers["User-Agent"] =~ /MSIE/ && cookies["ie_alert_closed"] != "true" %>
@@ -59,8 +57,6 @@
       <%= render "layouts/footer" %>
     </div>
     <% else %>
-    <!--[consume:proxia-links-footer-script]-->
-    <!--[consume:proxy-footer]-->
     <% end %>
   </body>
 </html>
