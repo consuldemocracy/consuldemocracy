@@ -40,8 +40,8 @@ hr:
     registrations:
       destroyed: "Doviđenja! Vaš račun je poništen. Nadamo se da ćemo vas ponovno vidjeti."
       signed_up: "Dobrodošli! Potvrđena je vaša autentičnost."
-      signed_up_but_inactive: "Vaša registracija je uspješna, ali ne možete se prijaviti dok ne aktivirate Vaš račun."
-      signed_up_but_locked: "Vaša registracija je uspješna, ali ne možete se prijaviti zato što je Vaš račnun zaključan."
+      signed_up_but_inactive: "Vaša je registracija uspjela, ali ne možete se prijaviti jer Vaš račun nije aktiviran."
+      signed_up_but_locked: "Vaša je registracija uspjela, ali ne možete se prijaviti jer je Vaš račun zaključan."
       signed_up_but_unconfirmed: "Poslana Vam je poruka s verifikacijskom poveznicom. Molim Vas da pronađete poveznicu kako biste aktivirali Vaš račun."
       update_needs_confirmation: "Vaš račun je uspješno ažuriran; sada još moramo potvrditi Vašu novu e-mail adresu. Molimo Vas da provjerite e-mail i krenete na poveznicu kako biste potvrdili novu e-mail adresu."
       updated: "Vaš račun je uspješno ažuriran."
