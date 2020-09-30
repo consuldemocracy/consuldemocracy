@@ -22,12 +22,23 @@ strong, b, a, .ava-link {
   background: $tertiary-contrast;
 }
 
+.resource-card .button,
+.featured-proposals .supports .button-support {
+  color: white;
+}
+
 .button {
   color: white;
   background-color: $secondary;
   border: 0px;
   border-radius: 0px;
   font-size: $font-size-base-small;
+  &.success, &.button-support {
+    color: white;
+    &:hover {
+      color: inherit;
+    }
+  }
 
   &.expanded {
     border-radius: 0px;
@@ -156,7 +167,7 @@ header, .top-bar {
 
 // Menú principal de la página
 .subnavigation {
-  background-color: $brand;
+  background-color: $brand-secondary;
 }
 
 .subnavigation {
@@ -165,7 +176,8 @@ header, .top-bar {
   }
 
   a:hover, a:active, a.is-active {
-    color: $brand_secondary;
+    color: #FFFFFF;
+    text-decoration: underline;
   }
 }
 
@@ -227,12 +239,16 @@ header, .top-bar {
 
 // Contenido debajo de la cabecera
 .homepage-tu-voz {
-  background: $brand;
+  background: $brand-secondary;
   position: relative;
   top: 48px;
 
   h4 {
     color: #FFF;
+  }
+
+  .color-brand-secondary {
+    color: $orange-hover-menu;
   }
 }
 
@@ -957,5 +973,37 @@ ul.recommendations {
 @media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .ssb-whatsapp_web::before, .ssb-facebook::before, .ssb-twitter::before, .ssb-telegram::before {
     line-height: 50px;
+  }
+}
+
+// 16. Dentro de un iframe
+body.iframed {
+  > div.wrapper {
+    > section {
+      > div.row {
+        > .column:first-child {
+          padding-left: 0px;
+        }
+        > .column:last-child {
+          padding-right: 0px;
+        }
+      }
+    }
+    > div.row {
+      > .column:first-child {
+        padding-left: 0px;
+      }
+      > .column:last-child {
+        padding-right: 0px;
+      }
+    }
+    padding-top: 15px;
+    height: auto !important;
+    min-height: unset;
+    min-height: auto;
+  }
+
+  #featured-proposals {
+    margin-bottom: 15px;
   }
 }
