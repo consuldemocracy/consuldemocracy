@@ -111,7 +111,7 @@ hr:
       participation:
         phase_not_open: Ova faza još nije otvorena
         organizations: Organizacijama nije dozvoljeno sudjelovanje u raspravama
-        unauthenticated: Vi morate %{signin} ili %{signup} kako biste sudjelovali.
+        unauthenticated: '%{signin} ili %{signup} da bi sudjelovali.'
         verified_only: Samo potvrđeni korisnici mogu sudjelovati, %{verify_account}.
         debate_phase_not_open: Faza rasprava je završila i odgovori se više ne primaju
     shared:
