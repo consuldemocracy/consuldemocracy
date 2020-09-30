@@ -62,7 +62,7 @@ hr:
         filter: Filter
         filters:
           open: Otvoreni procesi
-          past: Prošle
+          past: Prošli
         no_open_processes: Nema otvorenih procesa
         no_past_processes: Nema prošlih procesa
         section_header:
