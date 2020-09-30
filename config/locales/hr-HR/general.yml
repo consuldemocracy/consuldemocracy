@@ -933,10 +933,10 @@ hr:
       go_to_index: Ne sada, idite na indeksnu stranicu
       start_using_consul: Idi na indeksnu stranicu
       title: Sudjelovati
-      user_permission_debates: Sudjeluj u raspravi
+      user_permission_debates: Sudjelovati u raspravama
       user_permission_info: Sa svojim računom možete...
-      user_permission_proposal: Kreiraj novi prijedlog
-      user_permission_support_proposal: Potpora prijedloga*
+      user_permission_proposal: Izrađivati nove prijedloge
+      user_permission_support_proposal: Podupirati prijedloge*
       user_permission_verify: "Kako biste izveli sljedeće radnje potvrdite svoj račun."
       user_permission_verify_info: "*Samo za korisnike Cenzusa."
       user_permission_verify_my_account: Potvrdi moj račun
