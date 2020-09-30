@@ -9,7 +9,7 @@ class DeviseCustomFailureApp < Devise::FailureApp
       opts[:script_name] = nil
 
       # Custom route
-      route = :new_codigo_url
+      route = :new_user_session_url
 
       opts[:format] = request_format unless skip_format?
 
