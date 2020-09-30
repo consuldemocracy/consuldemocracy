@@ -1,5 +1,5 @@
 <% provide :title do %>
-  <%= t("admin.header.title") %> - <%= t("admin.menu.site_customization.content_blocks") %> - <%= @content_block.try(:name) || @content_block.heading.try(:name) %> (<%= @content_block.locale %>)
+  <%= t("admin.header.title") %> - <%= t("admin.menu.site_customization.content_blocks") %> - <%= @content_block.name %> (<%= @content_block.locale %>)
 <% end %>
 
 <%= back_link_to admin_site_customization_content_blocks_path %>
