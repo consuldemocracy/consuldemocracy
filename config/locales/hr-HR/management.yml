@@ -126,7 +126,7 @@ hr:
     user_invites:
       new:
         label: Email-ovi
-        info: "Unesite email odvojem s zarezima (',')"
+        info: "Unesite email adrese odvojem s zarezima (',')"
         submit: Pošalji pozivnice
         title: Pošalji pozivnice
       create:
