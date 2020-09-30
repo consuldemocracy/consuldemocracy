@@ -60,7 +60,7 @@ hr:
         change_submit: Promijeni moju lozinku
         password_confirmation_label: Potvrdi novu lozinku
         password_label: Nova lozinka
-        title: Promijeni vašu lozinku
+        title: Promijenite Vašu zaporku
       new:
         email_label: E-mail
         send_submit: Pošalji upute
@@ -70,13 +70,13 @@ hr:
         login_label: Email ili korisničko ime
         password_label: Zaporka
         remember_me: Zapamti me
-        submit: Unesi
+        submit: Prijavite se
         title: Prijavite se
     shared:
       links:
-        login: Unesi
+        login: Prijavite se
         new_confirmation: Niste primili upute za aktivaciju vašeg računa?
-        new_password: Jeste li zaboravili vašu zaporku?
+        new_password: Zaboravili ste zaporku?
         new_unlock: Jeste li primili upute za otključavanje?
         signin_with_provider: Prijavi se s %{provider}
         signup: Nemate račun? %{signup_link}
@@ -113,7 +113,7 @@ hr:
           password_label: Zaporka
           redeemable_code: Verifikacijski kod ćete primiti putem emaila (neobavezno)
           submit: Registriraj se
-          terms: Registracijom prihvačate %{terms}
+          terms: Registracijom se prihvaćaju %{terms}
           terms_link: uvjeti korištenja
           terms_title: Registracijom prihvaćate uvjete korištenja
           title: Registriraj se
