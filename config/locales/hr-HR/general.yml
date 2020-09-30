@@ -291,26 +291,26 @@ hr:
     start_proposal: Stvori prijedlog
   omniauth:
     facebook:
-      sign_in: Prijavi se Facebookom
+      sign_in: Prijavite se putem Facebooka
       sign_up: Registrirajte se putem Facebooka
       name: Facebook
     finish_signup:
       title: "Dodatni detalji"
       username_warning: "Zbog promjene načina na koji radimo s društvenim mrežama, moguće je da se vaše korisničko ime sada prikazuje kao \"već se koristi\". Ako je to vaš slučaj, odaberite drugo korisničko ime."
     google_oauth2:
-      sign_in: Prijavi se Googleom
+      sign_in: Prijavite se putem Googlea
       sign_up: Registrirajte se putem Googlea
       name: Google
     wordpress_oauth2:
-      sign_in: Prijavi se putem Wordpressa
+      sign_in: Prijavite se putem Wordpressa
       sign_up: Registrirajte se putem Wordpressa
       name: Wordpress
     twitter:
-      sign_in: Prijavi se Twitterom
+      sign_in: Prijavite se putem Twittera
       sign_up: Registrirajte se putem Twittera
       name: Twitter
     info:
-      sign_in: "Prijavi se s:"
+      sign_in: "Prijavite se putem:"
       sign_up: "Registrirajte se putem:"
     or_fill: "Ili ispunite sljedeći obrazac:"
   proposals:
@@ -826,7 +826,7 @@ hr:
   users:
     login_to_comment: "%{signin} ili %{signup} da biste ostavili komentar."
     login_to_continue: "%{signin} ili %{signup} da biste nastavili."
-    signin: "prijavi se"
+    signin: "prijavite se"
     signup: "registrirajte se"
     verify_account: "potvrdite svoj račun"
     direct_messages:
@@ -884,7 +884,7 @@ hr:
   votes:
     agree: Slažem se
     anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
-    comment_unauthenticated: Vi morate %{signin} ili %{signup} kako bi glasali.
+    comment_unauthenticated: '%{signin} ili %{signup} da biste glasali.'
     disagree: Ne slažem se
     organizations: Organizacijama nije dopušteno glasanje
     supports: Potpore
