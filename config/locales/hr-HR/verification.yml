@@ -92,7 +92,7 @@ hr:
     user_permission_info: Potvrđivanjem osobnih podataka moći ćete...
     user_permission_proposal: Izraživati nove prijedloge
     user_permission_support_proposal: Podupirati prijedloge*
-    user_permission_votes: Sudjelovati u završnom glasovanju*
+    user_permission_votes: Sudjelovati u završnom glasanju*
     verified_user:
       form:
         submit_button: Pošalji kôd
