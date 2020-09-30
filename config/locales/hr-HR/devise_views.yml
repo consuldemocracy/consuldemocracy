@@ -33,7 +33,7 @@ hr:
         unlock_link: Otključaj moj račun
     menu:
       login_items:
-        login: Prijavi se
+        login: Prijavite se
         logout: Odjavi se
         signup: Registrirajte se
     organizations:
@@ -71,7 +71,7 @@ hr:
         password_label: Zaporka
         remember_me: Zapamti me
         submit: Unesi
-        title: Prijavi
+        title: Prijavite se
     shared:
       links:
         login: Unesi
