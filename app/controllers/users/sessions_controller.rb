@@ -1,24 +1,4 @@
 class Users::SessionsController < Devise::SessionsController
-  protect_from_forgery prepend: true, except: :participacion
-  before_action :verify_ip, only: [:new]
-  before_action :authenticate_user!, only: [:participacion]
-
-  def participacion
-    if(current_user)
-      redirect_to after_sign_in_path_for(current_user)
-    else
-      redirect_to new_user_session_url
-    end
-  end
-
-  def me
-    if(current_user)
-      redirect_to user_path (current_user.id)
-    else
-      redirect_to new_user_session_url
-    end
-  end
-
   private
 
     def after_sign_in_path_for(resource)
@@ -38,28 +18,5 @@ class Users::SessionsController < Devise::SessionsController
 
       stored_path = session[stored_location_key_for(resource)] || ""
       stored_path[0..5] == "/email"
-    end
-
-    def verify_ip
-      # Simplemente verificamos si la IP remota es una de las IPs de gestion
-      # en caso negativo redirigimos la petición a la de renegociacion
-      # del portal de participacion.. siempre y cuando el usuario no este conectado ya, claro...
-      unless user_signed_in?
-        @ip = request.remote_ip
-        @managementIps = nil
-        if(Rails.application.config.respond_to?(:participacion_management_ip))
-            @managementIps = Rails.application.config.participacion_management_ip
-        end
-        if(Rails.application.config.respond_to?(:participacion_renegotiation))
-          @redirect = Rails.application.config.participacion_renegotiation
-        end
-
-
-        if(@redirect!=nil && @managementIps!=nil)
-          if(@managementIps.split(';').none?{|m| m.strip == @ip })
-            redirect_to @redirect, :status => 302
-          end
-        end
-      end
     end
 end
