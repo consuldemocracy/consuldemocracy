@@ -2,37 +2,44 @@
   <% @feeds.each do |feed| %>
 
     <% if feed_proposals?(feed) %>
-      <div id="feed_proposals" class="small-12 column margin-top
-                                      <%= "medium-8" if feed_debates_and_proposals_enabled? %>">
+      <div id="feed_proposals" class="small-12 column margin-top">
         <div class="feed-content" data-equalizer-watch>
           <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
 
-          <% feed.items.each do |item| %>
-            <div class="<%= item.class.to_s.parameterize(separator: "_") %> row">
-              <div class="feed-description small-12 column
-                         <%= "medium-6 large-9" if item.image.present? %>">
-                <strong><%= link_to item.title, url_for(item) %></strong><br>
-                <p><%= item.summary %></p>
-              </div>
-              <% if item.image.present? %>
-                <div class="small-12 medium-6 large-3 column">
-                  <div class="feed-image">
-                    <%= image_tag item.image_url(:thumb),
-                                  alt: item.image.title.unicode_normalize %>
-                  </div>
-                </div>
-              <% end %>
+          <div class="row">
+            <div class="small-12 medium-9 column">
+              <p><%= t("welcome.feed.proposals_description") %></p>
             </div>
-          <% end %>
-        </div>
+            <div class="small-12 medium-3 column">
+              <%= link_to t("welcome.feed.see_all_proposals"), proposals_path, class: "button expanded" %>
+            </div>
+          </div>
 
-        <%= link_to t("welcome.feed.see_all_proposals"), proposals_path, class: "see-all" %>
+          <div class="feed-content-list">
+            <% feed.items.each do |item| %>
+              <div class="<%= item.class.to_s.parameterize(separator: "_") %> row">
+                <div class="feed-description small-12 column
+                           <%= "medium-6 large-9" if item.image.present? %>">
+                  <strong><%= link_to item.title, url_for(item) %></strong><br>
+                  <p><%= item.summary %></p>
+                </div>
+                <% if item.image.present? %>
+                  <div class="small-12 medium-6 large-3 column">
+                    <div class="feed-image">
+                      <%= image_tag item.image_url(:medium),
+                                    alt: item.image.title.unicode_normalize %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     <% end %>
 
     <% if feed_debates?(feed) %>
-      <div id="feed_debates" class="small-12 column margin-top
-                                    <%= "medium-4" if feed_debates_and_proposals_enabled? %>">
+      <div id="feed_debates" class="small-12 column margin-top">
         <div class="feed-content" data-equalizer-watch>
           <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
 
@@ -84,7 +91,7 @@
                     <h4><%= item.current_phase.name %></h4>
                   <% end %>
                   <p class="dates"><%= item.start_date.to_date %> / <%= item.end_date.to_date %></p>
-                  <p class="description"><%= sanitize(item.description) %></p>
+                  <span class="description"><%= sanitize(strip_links(item.description)) %></span>
                   <p><%= t("welcome.feed.see_budget") %></p>
                 <% end %>
               </div>

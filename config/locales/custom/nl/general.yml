@@ -313,24 +313,6 @@ nl:
     budget_investments:
       not_verified: "Alleen geverifieerde gebruikers mogen stemmen op ideeën; %{verify_account}."
   welcome:
-    steps:
-      title: "Doe mee in drie stappen"
-      subtitle: ""
-      step_1:
-        number: "1"
-        title: "Aanmelden"
-        description: "Gebruik Twitter, Facebook, Google, of jouw mailadres om in te loggen."
-        link: "Meld je binnen vijf minuten aan"
-      step_2:
-        number: "2"
-        title: "Stem"
-        description: "Deel en stem op ideeën voor de gemeente."
-        link: "Bekijk wat er in de gemeente gebeurt"
-      step_3:
-        number: "3"
-        title: "Deel"
-        description: "Blijf betrokken bij ideeën die jij belangrijk vindt en deel ze via social media."
-        link: ""
     feed:
       budgets_description: "Burgerbegrotingen zijn processen waarbij burgers bepalen wat er met een deel van de gemeentelijke begroting gebeurt. De gemeente onderzoekt of de meest gesteunde ideeën haalbaar zijn. In de stem fase die daarop volgt beslissen de burgers welke ideeën de gemeente gaat uitvoeren."
       proposals_description: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van stad bepalen hoe de gemeente eruit komt te zien."

@@ -1,29 +1,19 @@
 <footer>
   <div class="row">
-    <div class="small-12 large-4 column">
+    <div class="small-12 medium-6 column">
       <h1 class="logo">
-        <%= link_to t("layouts.header.open_gov", open: t("layouts.header.open")), root_path %>
+        <%= image_tag(image_path_for("logo_header.png"), alt: "") %>
       </h1>
 
       <p class="info">
-        <%= sanitize(t("layouts.footer.description",
-          open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
-          consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow"))) %>
-        <%= t("layouts.footer.contact_us") %>
+        <%= sanitize(content_block("footer", I18n.locale)) %>
       </p>
-    </div>
-
-    <div class="footer-sections small-12 large-8 column">
-      <div class="small-12 medium-4 column">
-        <%= link_to t("layouts.footer.participation_title"), root_path, class: "title" %>
-        <p><%= t("layouts.footer.participation_text") %></p>
-      </div>
     </div>
   </div>
 
   <div class="subfooter row">
     <div class="small-12 medium-8 column">
-      <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
+      <%= t("layouts.footer.copyright", year: Time.current.year) %> - 1.1.0
       <ul class="no-bullet inline-block">
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
@@ -33,7 +23,7 @@
 
     <div class="small-12 medium-4 column social">
       <div class="text-right">
-        <ul>
+        <ul class="no-bullet">
           <% if setting["twitter_handle"] %>
             <li class="inline-block">
               <%= link_to "https://twitter.com/#{setting["twitter_handle"]}", target: "_blank",

@@ -6,10 +6,10 @@
       </div>
     </div>
 
-    <div class="small-12 medium-4 column">
-      <%= link_to process, class: "button hollow big expanded", title:  t(".see_latest_comments_title") do %>
-        <span class="icon-comments"></span>&nbsp; <%= t(".see_latest_comments") %>
-      <% end %>
+    <div class="small-12 medium-4 column text-right">
+      <%= link_to t("legislation.processes.process.see_latest_comments"),
+                  process,
+                  title: t("legislation.processes.process.see_latest_comments_title") %>
     </div>
 
     <div class="small-12 medium-11 column end">
@@ -27,37 +27,93 @@
 
     <div class="column row small-collapse medium-uncollapse legislation-calendar">
       <% if process.debate_phase.enabled? %>
-        <div class="small-6 medium-<%= column_width %> column">
-          <h4><%= t("legislation.processes.shared.debate_dates") %></h4>
-          <p><%= format_date(process.debate_start_date) %> - <%= format_date(process.debate_end_date) %></p>
+        <div class="small-6 medium-<%= column_width %> column end">
+          <div class="legislation-date">
+            <div class="legislation-date-title">
+              <h4>
+                <%= t("legislation.processes.shared.debate_dates") %>
+                <span>(<%= process.questions.count %>)</span>
+              </h4>
+              <p>
+                <%= format_date(process.debate_start_date) %> -
+                <%= format_date(process.debate_end_date) %>
+              </p>
+            </div>
+            <% debate_phase_status = phase_status(process, "debate") %>
+            <span class="date-status <%= debate_phase_status %>"><%= debate_phase_status %></span>
+          </div>
         </div>
       <% end %>
 
       <% if process.draft_publication.enabled? %>
-        <div class="small-6 medium-<%= column_width %> column">
-          <h4><%= t("legislation.processes.shared.draft_publication_date") %></h4>
-          <p><%= format_date(process.draft_publication_date) %></p>
+        <div class="small-6 medium-<%= column_width %> column end">
+          <div class="legislation-date">
+            <div class="legislation-date-title">
+              <h4><%= t("legislation.processes.shared.draft_publication_date") %></h4>
+              <p><%= format_date(process.draft_publication_date) %></p>
+            </div>
+            <% draft_publication_status = publication_status(process, "draft") %>
+            <span class="date-status <%= draft_publication_status.parameterize %>">
+              <%= draft_publication_status %>
+            </span>
+          </div>
         </div>
       <% end %>
 
       <% if process.proposals_phase.enabled? %>
-        <div class="small-6 medium-<%= column_width %> column">
-          <h4><%= t("legislation.processes.shared.proposals_dates") %></h4>
-          <p><%= format_date(process.proposals_phase_start_date) %> - <%= format_date(process.proposals_phase_end_date) %></p>
+        <div class="small-6 medium-<%= column_width %> column end">
+          <div class="legislation-date">
+            <div class="legislation-date-title">
+              <h4>
+                <%= t("legislation.processes.shared.proposals_dates") %>
+                <span>(<%= process.proposals.count %>)</span>
+              </h4>
+              <p>
+                <%= format_date(process.proposals_phase_start_date) %> -
+                <%= format_date(process.proposals_phase_end_date) %>
+              </p>
+            </div>
+            <% proposals_phase_status = phase_status(process, "proposals") %>
+            <span class="date-status <%= proposals_phase_status %>"><%= proposals_phase_status %></span>
+          </div>
         </div>
       <% end %>
 
       <% if process.allegations_phase.enabled? %>
-        <div class="small-6 medium-<%= column_width %> column">
-          <h4><%= t("legislation.processes.shared.allegations_dates") %></h4>
-          <p><%= format_date(process.allegations_start_date) %> - <%= format_date(process.allegations_end_date) %></p>
+        <div class="small-6 medium-<%= column_width %> column end">
+          <div class="legislation-date">
+            <div class="legislation-date-title">
+              <h4>
+                <%= t("legislation.processes.shared.allegations_dates") %>
+                <% if process.draft_versions.any? %>
+                  <span>(<%= process.draft_versions.last.total_comments %>)</span>
+                <% else %>
+                  <span>(0)</span>
+                <% end %>
+              </h4>
+              <p>
+                <%= format_date(process.allegations_start_date) %> -
+                <%= format_date(process.allegations_end_date) %>
+              </p>
+            </div>
+            <% allegations_phase_status = phase_status(process, "allegations") %>
+            <span class="date-status <%= allegations_phase_status %>"><%= allegations_phase_status %></span>
+          </div>
         </div>
       <% end %>
 
       <% if process.result_publication.enabled? %>
-        <div class="small-6 medium-<%= column_width %> column">
-          <h4><%= t("legislation.processes.shared.result_publication_date") %></h4>
-          <p><%= format_date(process.result_publication_date) %></p>
+        <div class="small-6 medium-<%= column_width %> column end">
+          <div class="legislation-date">
+            <div class="legislation-date-title">
+              <h4><%= t("legislation.processes.shared.result_publication_date") %></h4>
+              <p><%= format_date(process.result_publication_date) %></p>
+            </div>
+            <% result_publication_status = publication_status(process, "result") %>
+            <span class="date-status <%= result_publication_status.parameterize %>">
+              <%= result_publication_status %>
+            </span>
+          </div>
         </div>
       <% end %>
     </div>

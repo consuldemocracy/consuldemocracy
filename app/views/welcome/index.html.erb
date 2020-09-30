@@ -16,20 +16,18 @@
 <%= render "header", header: @header %>
 
 <main>
-  <%= render "steps" %>
-
   <%= render "feeds" %>
 
   <div id="welcome_cards" class="row">
-    <% if @cards.any? %>
-      <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
-        <%= render "cards" %>
+    <% if feed_processes_enabled? %>
+      <div class="small-12 column">
+        <%= render "processes" %>
       </div>
     <% end %>
 
-    <% if feed_processes_enabled? %>
-      <div class="small-12 large-4 column">
-        <%= render "processes" %>
+    <% if @cards.any? %>
+      <div class="small-12 column margin-top">
+        <%= render "cards" %>
       </div>
     <% end %>
   </div>
