@@ -183,7 +183,7 @@ hr:
     budget/group: Grupa za budžet
     budget/heading: Naslov Budžeta
     geozone: geozona
-    legislation/draft_version: skica
+    legislation/draft_version: nacrt
     legislation/process: proces
     legislation/question: pitanje
     poll/shift: Izmjeni
@@ -209,7 +209,7 @@ hr:
     dashboard:
       proposal_header:
         published: Objavljeno
-        draft: Draft
+        draft: Nacrt
         retired: Povućeno
       proposal_totals:
         active_resources: Aktivni resursi
@@ -320,7 +320,7 @@ hr:
     created:
       title: Čestitamo! Napravili ste prvi korak.
       motivation: "Važno je spremiti početak kampanje za vaš prijedlog kako bi bio uspješan. Prvih par dana su odlučujuča."
-      motivation_2: "<strong>Ako želite preporuke za pripremu objave, ostavite svoj prijedlog kao skicu i mi ćemo vas voditi.</strong>"
+      motivation_2: "<strong>Ako želite preporuke za pripremu objave, ostavite svoj prijedlog kao nacrt i mi ćemo vas voditi.</strong>"
       publish: Ne, želim objaviti svoj prijedlog
       dashboard: Da, želim pomoć i objaviti ću ga kasnije
       preview_title: Ovako će izgledati vaš prijedlog kada ga objavite
@@ -470,7 +470,7 @@ hr:
       embed_video_title: "Video je na %{proposal}"
       title_video_url: "Vanjski video"
       author: Autor
-      draft: Prijedlog je u draft verziji. Nemožete više dobiti potporu, niti se pojavljuje u listi prijedloga.
+      draft: Prijedlog je u nacrtnoj verziji. Još ne možete dobiti potporu za njega, niti se pojavljuje u popisu prijedloga.
     update:
       form:
         submit_button: Spremi promjene
@@ -876,7 +876,7 @@ hr:
       delete_alert: "Jeste li sigurni da želite obrisati svoj investicijski projekt? Ova akcija se ne može poništiti"
     proposals:
       retired: "Povučeni prijedlog"
-      draft: Draft
+      draft: Nacrt
       published: Objavljeno
       see: "Vidi prijedlog"
       actions: Djelovanja
