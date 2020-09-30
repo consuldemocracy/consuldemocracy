@@ -393,7 +393,7 @@ hr:
           success: Akcija uspješno obrisana
         form:
           submit_button: Spremi
-          help_text: Unesi 0 kako ova vrijednost ne bi bila uračunata
+          help_text: Unesite 0 da ova vrijednost ne bi bila uzeta u obzir
           published_proposal_help_text: Označi ovu kućicu kako bi stvorili akciju samo za objavljene prijedloge
       administrator_tasks:
         index:
@@ -544,7 +544,7 @@ hr:
         form:
           custom_categories: Kategorije
           custom_categories_description: Kategorije koje korisnik može odabrati pri stvaranju prijedloga. Maksimalno 160 znakova.
-          custom_categories_placeholder: Unesi oznake koje bi htio koristiti, odvojene zarezima (,) i između navodnim znakovima ("")
+          custom_categories_placeholder: Unesite oznake koje biste željeli koristiti, odvojene zarezima (,) i između navodnika ("")
       draft_versions:
         create:
           notice: 'Draft uspješno stvoren. <a href="%{link}">Kliknite ovdje da posjetite</a>'
