@@ -178,7 +178,7 @@ hr:
       polls_description: "Građansko glasanje su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke"
       budgets: "Participativno budžetiranje"
       budgets_description: "S participativnim budžetima građani odlučuju koje projekti će dobiti financiranje u njihovom susjedstvu"
-      legislation: "Kolaborativna Legislativa"
+      legislation: "Javno savjetovanje"
       legislation_description: "U participativnim procesima građanima se nudi prilika za sudjelovanjem i pripremi zakona koji utječu na društvo i daju svoje mišljenje na određene akcije koje su u planu"
     html:
       per_page_code_head: "Kod se mora uključiti na svakoj stranici (<head>)"
