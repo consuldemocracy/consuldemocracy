@@ -59,7 +59,7 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
 
       end
       # Autenticaríamos a este usuario
-      success!(u)
+      success! u
     else
       # Ha fallado el proceso de autenticación con este usuario, no informamos de nada... dejamos
       # que continue el proceso normal de autenticacion
