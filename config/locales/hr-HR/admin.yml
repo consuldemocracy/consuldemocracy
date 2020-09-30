@@ -488,7 +488,7 @@ hr:
           enabled: Omogućeno
           process: Proces
           debate_phase: Faza rasprave
-          draft_phase: Faza drafta
+          draft_phase: Faza nacrta
           draft_phase_description: Ukoliko je ova faza aktivna, proces neće biti naveden na indeksu precesa. Dopustite pregled procesa i stvorite sadržaj prije početka.
           allegations_phase: Faza komentara
           proposals_phase: Faza prijedloga
@@ -528,7 +528,7 @@ hr:
         subnav:
           info: Informacija
           homepage: Glavna stranica
-          draft_versions: Skiciranje
+          draft_versions: Izrada nacrta
           questions: Rasprava
           proposals: Prijedlozi
           milestones: Pratiti
@@ -547,11 +547,11 @@ hr:
           custom_categories_placeholder: Unesite oznake koje biste željeli koristiti, odvojene zarezima (,) i između navodnika ("")
       draft_versions:
         create:
-          notice: 'Draft uspješno stvoren. <a href="%{link}">Kliknite ovdje da posjetite</a>'
-          error: Draft nije uspješno stvoren
+          notice: 'Nacrt uspješno izrađen. <a href="%{link}">Kliknite ovdje da ga posjetite</a>'
+          error: Nacrt nije bilo moguće izraditi
         update:
-          notice: 'Draft uspješno ažuriran. <a href="%{link}">Kliknite ovdje kako bi posjetili</a>'
-          error: Draft se nemože ažurirati
+          notice: 'Nacrt uspješno ažuriran. <a href="%{link}">Kliknite ovdje kako bi ga posjetili</a>'
+          error: Nacrt nije bilo moguće ažurirati
         destroy:
           notice: Draft je uspješno obrisan
         edit:
@@ -563,17 +563,17 @@ hr:
           title: 'Uređivanje <span class="strong">%{draft_version_title}</span> od postupka <span class="strong">%{process_title}</span>'
           launch_text_editor: Upali uređivač teksta
           close_text_editor: Zatvori uređivač teksta
-          use_markdown: Koristi Smanjenje kako bi formatirali tekst
+          use_markdown: Koristite Markdown kako bi ste oblikovali tekst
           hints:
             final_version: Ova verzija će se objaviti kao Konačni rezultat ovog procesa. Komentari neće biti dopušteni u ovoj verziji.
             status:
               draft: Ovo možete pregledati kao admin, nitko drugi nema uvid
               published: Vidljivo svima
-          title_placeholder: Napiši naziv draft verzije
+          title_placeholder: Napiši naziv nacrtne verzije
           changelog_placeholder: Dodaj glavne promejene od prošle verzije
-          body_placeholder: Napiši tekst drafta
+          body_placeholder: Zapišite tekst nacrta
         index:
-          title: Draft verzije
+          title: Verzije nacrta
           create: Stvori verziju
           delete: Izbriši
           preview: Pregled
@@ -753,7 +753,7 @@ hr:
         segment_recipient: Primatelji
         sent: Pošalji
         actions: Akcije
-        draft: Draft
+        draft: Nacrt
         edit: Uredi
         delete: Izbriši
         preview: Pregled
@@ -791,7 +791,7 @@ hr:
         segment_recipient: Primatelji
         sent: Poslano
         actions: Akcije
-        draft: Draft
+        draft: Nacrt
         edit: Uredi
         delete: Izbriši
         preview: Pregled
