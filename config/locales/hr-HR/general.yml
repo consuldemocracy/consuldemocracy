@@ -292,26 +292,26 @@ hr:
   omniauth:
     facebook:
       sign_in: Prijavi se Facebookom
-      sign_up: Registriraj se putem Facebooka
+      sign_up: Registrirajte se putem Facebooka
       name: Facebook
     finish_signup:
       title: "Dodatni detalji"
       username_warning: "Zbog promjene načina na koji radimo s društvenim mrežama, moguće je da se vaše korisničko ime sada prikazuje kao \"već se koristi\". Ako je to vaš slučaj, odaberite drugo korisničko ime."
     google_oauth2:
       sign_in: Prijavi se Googleom
-      sign_up: Registriraj se putem Googlea
+      sign_up: Registrirajte se putem Googlea
       name: Google
     wordpress_oauth2:
       sign_in: Prijavi se putem Wordpressa
-      sign_up: Registriraj se putem Wordpressa
+      sign_up: Registrirajte se putem Wordpressa
       name: Wordpress
     twitter:
       sign_in: Prijavi se Twitterom
-      sign_up: Registriraj se putem Twittera
+      sign_up: Registrirajte se putem Twittera
       name: Twitter
     info:
       sign_in: "Prijavi se s:"
-      sign_up: "Registriraj se s:"
+      sign_up: "Registrirajte se putem:"
     or_fill: "Ili ispunite sljedeći obrazac:"
   proposals:
     create:
@@ -827,7 +827,7 @@ hr:
     login_to_comment: "Morate %{signin} ili %{signup} da biste ostavili komentar."
     login_to_continue: "Morate %{signin} ili %{signup} da biste nastavili."
     signin: "prijavi se"
-    signup: "registriraj se"
+    signup: "registrirajte se"
     verify_account: "potvrdite svoj račun"
     direct_messages:
       new:
