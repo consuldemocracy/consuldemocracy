@@ -134,7 +134,7 @@ hr:
         title: Pomoć oko rasprava
         description: Započnite raspravu kako biste s drugima podijelili mišljenja o temama za koje mislite da su važne.
         help_text_1: "Prostor za građanske rasprave usmjeren je na svakoga tko može otkriti pitanja koja ih zanimaju i one koji žele podijeliti mišljenja s drugim ljudima."
-        help_text_2: 'Kako bi otvorili raspravu morate se registrirati na %{org}. Registrirani korisnici također mogu komentirati otvorene rasprave i ocjenjivati ih s gumbima "Slažem se" ili "Ne slažem se" koji se nalaze u svakoj od njih.'
+        help_text_2: 'Morate se registrirati na %{org} da biste otvorili raspravu. Registrirani korisnici također mogu komentirati otvorene rasprave i ocjenjivati ih s gumbima "Slažem se" ili "Ne slažem se" koji se nalaze u svakoj od njih.'
     new:
       form:
         submit_button: Započni raspravu
@@ -636,7 +636,7 @@ hr:
       geozone_restricted: "Distrikti"
       geozone_info: "Mogu sudjelovati građani u Cenzusu od: "
       already_answer: "Vi ste već sudjelovali u ovom glasanju"
-      not_logged_in: "Morate biti prijavljeni ili registrirani da bi sudjelovali"
+      not_logged_in: "Morate biti prijavljeni ili registrirani da biste sudjelovali"
       unverified: "Morate potvrditi svoj račun da sudjelujete"
       cant_answer: "Ova anketa nije dostupna za vašu geozonu"
       section_header:
@@ -651,7 +651,7 @@ hr:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
       already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan."
       back: Nazad na glasanje
-      cant_answer_not_logged_in: "Morate se %{signin} ili %{signup} da biste sudjelovali."
+      cant_answer_not_logged_in: "%{signin} ili %{signup} da biste sudjelovali."
       comments_tab: Komentari
       cant_answer_verify: "Morate %{verify_link} da biste odgovorili."
       verify_link: "potvrdi svoj račun"
@@ -824,8 +824,8 @@ hr:
     manage:
       all: "Nemate pristup za ovo djelovanje %{action} za %{subject}."
   users:
-    login_to_comment: "Morate %{signin} ili %{signup} da biste ostavili komentar."
-    login_to_continue: "Morate %{signin} ili %{signup} da biste nastavili."
+    login_to_comment: "%{signin} ili %{signup} da biste ostavili komentar."
+    login_to_continue: "%{signin} ili %{signup} da biste nastavili."
     signin: "prijavi se"
     signup: "registrirajte se"
     verify_account: "potvrdite svoj račun"
@@ -890,13 +890,13 @@ hr:
     supports: Potpore
     verified_only: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
     budget_investments:
-      not_logged_in: Morate %{signin} ili %{signup} da biste nastavili.
+      not_logged_in: '%{signin} ili %{signup} da biste nastavili.'
       not_verified: Samo potvrđeni korisnici mogu glasati za investicijske projekte, %{verify_account}.
       organization: Organizacijama nije dopušteno glasanje
       unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
       not_voting_allowed: Faza glasanja je zatvorena
       different_heading_assigned:
-        one: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
+        one: "Možete samo podržati ulagačke projekte u %{count} okrugu. Već ste podržali ulaganja u %{supported_headings}."
         few: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
         other: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
   welcome:
@@ -967,7 +967,7 @@ hr:
   annotator:
     help:
       alt: Odaberi tekst koji želiš komentirati i pritisni gumb s olovkom.
-      text: Da biste komentirali ovaj dokument morate %{sign_in} ili %{sign_up}. Kako bi odabrali tekst koji želite komentirati pritisnite gumb s olovkom.
+      text: '%{sign_in} ili %{sign_up} da bi ste komentirali ovaj dokument. Tada odaberite tekst koji želite komentirati i pritisnite gumb s olovkom.'
       title: Kako mogu komentirati ovaj dokument?
   links:
     form:
