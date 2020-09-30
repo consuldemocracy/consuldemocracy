@@ -78,7 +78,7 @@ hr:
   debates:
     create:
       form:
-        submit_button: Započni raspravu
+        submit_button: Započnite raspravu
     debate:
       comments:
         zero: Nema komentara
@@ -124,7 +124,7 @@ hr:
         few: " sadrži termine <strong>%{search_term}</strong>"
         other: " sadrži termine <strong>%{search_term}</strong>"
       select_order: Naruči po
-      start_debate: Započni raspravu
+      start_debate: Započnite raspravu
       title: Rasprave
       section_header:
         icon_alt: Ikona rasprave
@@ -132,12 +132,12 @@ hr:
         help: Pomoć oko rasprava
       section_footer:
         title: Pomoć oko rasprava
-        description: Započnite raspravu kako biste s drugima podijelili mišljenja o temama za koje mislite da su važne.
+        description: Započnite raspravu da biste s drugima podijelili mišljenja o temama za koje mislite da su važne.
         help_text_1: "Prostor za građanske rasprave usmjeren je na svakoga tko može otkriti pitanja koja ih zanimaju i one koji žele podijeliti mišljenja s drugim ljudima."
         help_text_2: 'Morate se registrirati na %{org} da biste otvorili raspravu. Registrirani korisnici također mogu komentirati otvorene rasprave i ocjenjivati ih s gumbima "Slažem se" ili "Ne slažem se" koji se nalaze u svakoj od njih.'
     new:
       form:
-        submit_button: Započni raspravu
+        submit_button: Započnite raspravu
       info: Ako želite napraviti prijedlog, onda je ova pogrešna sekcija, slijedite %{info_link}.
       info_link: izradi novi prijedlog
       more_info: Više informacija
@@ -146,7 +146,7 @@ hr:
       recommendation_three: Nemilosrdna i iskrena kritika je dobrodošla. Ovo je mjesto za refleksiju i skupljanje povratnih informacija. Ipak, predlažemo da se sastavljate komentare drugima kakve bi ste ih i sami željeli primiti, na inteligentan i profinjen način.
       recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju ilegalne aktivnosti bit će obrisani, kao i oni koji ometaju prostor rasprave. Sve je ostalo dozvoljeno.
       recommendations_title: Preporuke za stvaranje rasprave
-      start_new: Započni raspravu
+      start_new: Započnite raspravu
     show:
       author_deleted: Korisnik obrisan
       comments:
@@ -741,7 +741,7 @@ hr:
         destroy:
           notice: "Prestali ste pratiti ovaj građanski prijedlog! <br> Više neće primati obavijesti vezane za taj prijedlog."
     print:
-      print_button: Printaj ove informacije
+      print_button: Ispiši ove informacije
     search: Pretraga
     show: Prikaži
     suggest:
