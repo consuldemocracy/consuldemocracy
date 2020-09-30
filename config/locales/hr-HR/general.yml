@@ -645,7 +645,7 @@ hr:
         help: Pomoć oko glasanja
       section_footer:
         title: Pomoć oko glasanja
-        description: Građanske ankete su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke
+        description: Građansko glasanje predstavlja participativan mehanizam pomoću kojeg građani s glasačkim pravima mogu neposredno odlučivati
       no_polls: "Ne postoji otvoreno glasanje."
     show:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
