@@ -16,4 +16,4 @@ jobs:
       - name: Setup pronto
         run: gem install pronto pronto-rubocop rubocop-performance rubocop-rspec rubocop-rails pronto-erb_lint pronto-eslint pronto-scss
       - name: Run Pronto
-        run: PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ github.token }}" pronto run -f github_status github_pr -c origin/${{ github.base_ref }}
+        run: PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ github.token }}" pronto run -f github_status github_pr_review -c origin/${{ github.base_ref }}
