@@ -3,7 +3,7 @@ require_dependency Rails.root.join("app", "controllers", "users", "sessions_cont
 class Users::SessionsController < Devise::SessionsController
   protect_from_forgery prepend: true, except: :participacion
   before_action :verify_ip, only: [:new]
-  before_action :store_user_location!, if: :storable_location?, only: [:me]
+  before_action :store_user_location!,  only: [:me]
   before_action :authenticate_user!, only: [:participacion]
 
   def participacion
