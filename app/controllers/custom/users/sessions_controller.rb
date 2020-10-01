@@ -3,6 +3,7 @@ require_dependency Rails.root.join("app", "controllers", "users", "sessions_cont
 class Users::SessionsController < Devise::SessionsController
   protect_from_forgery prepend: true, except: :participacion
   before_action :verify_ip, only: [:new]
+  before_action :store_user_location!, if: :storable_location?, only: [:me]
   before_action :authenticate_user!, only: [:participacion]
 
   def participacion
@@ -32,6 +33,15 @@ class Users::SessionsController < Devise::SessionsController
 
     def after_sign_out_path_for(resource)
       request.referer.present? && !request.referer.match("management") ? root_path : super
+    end
+
+    def storable_location?
+      request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
+    end
+
+    def store_user_location!
+      # :user is the scope we are authenticating
+      store_location_for(:user, request.fullpath)
     end
 
     def verify_ip
