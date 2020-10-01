@@ -1,0 +1,19 @@
+ka:
+  images:
+    remove_image: სურათის წაშლა
+    form:
+      title: აღწერილობითი სურათი
+      title_placeholder: აღწერილობითი სათაურის დამატება სურათზე
+      delete_button: სურათის წაშლა
+      note: "დასაშვებია მაქსიმუმ %{max_file_size} მეგაბაიტის ზომის შემდეგი ტიპის ფოტოების ატვირთვა: %{accepted_content_types}"
+      add_new_image: ფოტოსურათის დამატება
+      admin_title: "ფოტოსურათი"
+      admin_alt_text: "სურათის ალტერნატიული ტექსტი"
+    actions:
+      destroy:
+        notice: ფოტოსურათი წარმატებით წაიშალა.
+        alert: სურათის წაშლა ვერ მოხერხდა.
+    errors:
+      messages:
+        in_between: უნდა მერყეობდეს %{min} და %{max}-ის შორის
+        wrong_content_type: 'ნებადართულია შემდეგი ტიპები: %{accepted_content_types}, თქვენი ფაილის ტიპია %{content_type}'

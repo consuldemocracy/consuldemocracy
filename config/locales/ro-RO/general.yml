@@ -1,1 +1,996 @@
 ro:
+  account:
+    show:
+      change_credentials_link: Schimbă-mi datele
+      erase_account_link: Șterge contul
+      finish_verification: Verificare completă
+      notifications: Notificări
+      organization_name_label: Numele organizației
+      organization_responsible_name_placeholder: Reprezentant al organizației/colectivului
+      personal: Detalii personale
+      phone_number_label: Număr de telefon
+      public_interests_my_title_list: Tag-urile elementelor pe care le urmărești
+      public_interests_user_title_list: Tag-urile elementelor pe care acest utilizator le folosește
+      save_changes_submit: Salvează modificări
+      recommendations: Recomandări
+      title: Contul meu
+      user_permission_debates: Participă la dezbateri
+      user_permission_info: Cu contul dumneavoastră puteți...
+      user_permission_proposal: Crează noi propuneri
+      user_permission_support_proposal: Sprijină propuneri
+      user_permission_title: Participare
+      user_permission_verify: Pentru a efectua toate acțiunile, verificați contul.
+      user_permission_verify_info: "* Numai pentru utilizatorii aflați pe recensământ."
+      user_permission_votes: Participă la votarea finală
+      username_label: Nume de utilizator
+      verified_account: Cont verificat
+      verify_my_account: Verifică-mi contul
+  application:
+    close: Închis
+    menu: Meniu
+  comments:
+    comments_closed: Comentariile sunt închise
+    verified_only: Pentru a participa %{verify_account}
+    comment:
+      admin: Administrator
+      author: Autor
+      deleted: Acest comentariu a fost șters
+      moderator: Moderator
+      responses:
+        zero: Nici un răspuns
+        one: 1 răspuns
+        few: "%{count} răspunsuri"
+        other: "%{count} răspunsuri"
+      responses_show:
+        zero: Nici un răspuns
+        one: "1 răspuns (afișează)"
+        few: "%{count} răspunsuri (afișează)"
+        other: "%{count} răspunsuri (afișează)"
+      responses_collapse:
+        zero: Nici un răspuns
+        one: "1 răspuns (închide)"
+        few: "%{count} răspunsuri (închide)"
+        other: "%{count} răspunsuri (închide)"
+      user_deleted: Utilizator șters
+      votes:
+        zero: Nu există voturi
+        one: 1 vot
+        few: "%{count} voturi"
+        other: "%{count} voturi"
+    form:
+      comment_as_admin: Comentează ca administrator
+      comment_as_moderator: Comentează ca moderator
+      leave_comment: Lasă un comentariu
+    orders:
+      most_voted: Cel mai votat
+      newest: Cel mai nou
+      oldest: Cel mai vechi
+      most_commented: Cel mai comentat
+    select_order: Sortează după
+    show:
+      return_to_commentable: "Mergi înapoi la "
+  comments_helper:
+    comment_button: Publică comentariu
+    comment_link: Comentariu
+    comments_title: Comentarii
+    reply_button: Publică răspuns
+    reply_link: Răspunde
+  debates:
+    create:
+      form:
+        submit_button: Începe o dezbatere
+    debate:
+      comments:
+        zero: Nu există comentarii
+        one: 1 comentariu
+        few: "%{count} comentarii"
+        other: "%{count} comentarii"
+      votes:
+        zero: Nu există voturi
+        one: 1 vot
+        few: "%{count} voturi"
+        other: "%{count} voturi"
+    edit:
+      editing: Editează dezbatere
+      form:
+        submit_button: Salvează modificări
+      show_link: Vezi dezbatere
+    form:
+      debate_title: Titlul dezbaterii
+      tags_instructions: Etichetează această dezbatere.
+      tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
+    index:
+      featured_debates: Recomandări
+      orders:
+        confidence_score: cel mai bine cotată
+        created_at: cea mai nouă
+        hot_score: cea mai activă
+        most_commented: cel mai comentat
+        relevance: relevanță
+        recommendations: recomandări
+      recommendations:
+        without_results: Nu există dezbateri legate de interesele dumneavoastră
+        without_interests: Urmați propunerile pentru a vă putea oferi recomandări
+        disable: "Recomandările dezbaterilor nu vor mai apărea dacă le respingeți. Le puteți activa din nou în pagina „Contul meu”"
+        actions:
+          success: "Recomandările pentru dezbateri sunt acum dezactivate pentru acest cont"
+          error: "A apărut o eroare. Vă rugăm să accesați pagina „Contul meu” pentru a dezactiva manual recomandările pentru dezbateri"
+      search_form:
+        button: Caută
+        placeholder: Caută dezbateri...
+        title: Caută
+      search_results:
+        one: " conține termenul <strong>'%{search_term}'</strong>"
+        few: " conține termenul <strong>'%{search_term}'</strong>"
+        other: " conține termenul <strong>'%{search_term}'</strong>"
+      select_order: Ordonează după
+      start_debate: Începe o dezbatere
+      title: Dezbateri
+      section_header:
+        icon_alt: Pictograma dezbaterilor
+        title: Dezbateri
+        help: Ajutor pentru dezbateri
+      section_footer:
+        title: Ajutor pentru dezbateri
+        description: Începeți o dezbatere pentru a împărtăși opinii cu alții despre subiectele care vă preocupă.
+        help_text_1: "Spațiul pentru dezbaterile cetățenilor se adresează oricui își poate expune problemele și celor care vor să își împărtășească opiniile cu alte persoane."
+        help_text_2: 'Pentru a deschide o dezbatere, trebuie să vă înscrieți la %{org}. Utilizatorii pot, de asemenea, să comenteze dezbaterile deschise și să le evalueze cu butoanele „Sunt de acord” sau „Nu sunt de acord”.'
+    new:
+      form:
+        submit_button: Începe o dezbatere
+      info: Dacă doriți să faceți o propunere, aceasta este secțiunea greșită, introduceți %{info_link}.
+      info_link: crează o propunere nouă
+      more_info: Mai multe informații
+      recommendation_four: Bucurați-vă de acest spațiu, de vocile care îl umplu, este și al vostru.
+      recommendation_one: Nu folosiți majuscule pentru titlul dezbaterii sau pentru propoziții întregi. Pe internet, acest lucru este considerat strigăt. Și nimănui nu-i place să-i fie strigat în față.
+      recommendation_three: Critica nemiloasă este foarte binevenită. Acesta este un spațiu de reflecție. Dar vă recomandăm să comentați cu eleganță și inteligență. Lumea este un loc mai bun, cu aceste virtuți în ea.
+      recommendation_two: Orice dezbatere sau comentariu care sugerează acțiuni ilegale vor fi șterse, precum și cele care intenționează să saboteze spațiile de dezbatere. Orice altceva este permis.
+      recommendations_title: Recomandări pentru crearea unei dezbateri
+      start_new: Începe o dezbatere
+    show:
+      author_deleted: Utilizator șters
+      comments:
+        zero: Nu există comentarii
+        one: 1 comentariu
+        few: "%{count} comentarii"
+        other: "%{count} comentarii"
+      comments_title: Comentarii
+      edit_debate_link: Editează
+      flag: Această dezbatere a fost semnalizată ca fiind inadecvată de mai mulți utilizatori.
+      share: Partajează
+      author: Autor
+    update:
+      form:
+        submit_button: Salvează modificări
+  errors:
+    messages:
+      user_not_found: Utilizatorul nu a fost găsit
+      invalid_date_range: "Interval de timp invalid"
+  form:
+    accept_terms: Sunt de acord cu %{policy} și cu %{conditions}
+    accept_terms_title: Sunt de acord cu Politica de confidențialitate și cu Termenii și condițiile de utilizare
+    conditions: Termeni și condiții de utilizare
+    debate: Dezbate
+    direct_message: mesaj privat
+    error: eroare
+    errors: erori
+    not_saved: "a prevenit această %{resource} din a fi salvată. <br>Vă rugăm să verificați câmpurile marcate pentru a ști cum să le corectați:"
+    policy: Politica de Confidențialitate
+    banner: afiș
+    proposal: Propunere
+    proposal_notification: "Notificare"
+    budget/investment: Investiție
+    budget/group: Grupul Bugetar
+    budget/heading: Titlul bugetului
+    geozone: zonă geo
+    legislation/draft_version: schiță
+    legislation/process: proces
+    legislation/question: întrebare
+    poll/shift: Schimb
+    poll/question/answer: Răspuns
+    user: Cont
+    verification/sms: telefon
+    signature_sheet: Foaie de semnături
+    document: Document
+    topic: Subiect
+    image: Imagine
+    local_census_record: Registrul local al recensământului
+    local_census_records/import: Import de date
+    site_customization/content_block: bloc de conținut
+    site_customization/page: pagină
+  geozones:
+    none: Tot orașul
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Am detectat că utilizați Internet Explorer. Pentru o experiență îmbunătățită, vă recomandăm să folosiți %{firefox} sau %{chrome}.
+      ie_title: Acest site web nu este optimizat pentru browserul dumnevoastră
+    dashboard:
+      proposal_header:
+        published: Publicat
+        draft: Schiță
+        retired: Retras
+      proposal_totals:
+        active_resources: Resurse active
+        community: Participanți din comunitatea dumneavoastră
+        show_proposal: Afișează propunere
+        preview_proposal: Previzualizare propunere
+        current_goal: Scopul actual
+        supports:
+          zero: Fără susținători
+          one: 1 suport
+          few: "Suporturi"
+          other: "Suporturi"
+    footer:
+      accessibility: Accesibilitate
+      conditions: Termeni și condiții de utilizare
+      consul: Cerere CONSUL
+      consul_url: https://github.com/consul/consul
+      contact_us: Pentru ajutor tehnic mergeți la
+      copyright: CONSUL, %{year}
+      description: Acest portal folosește %{consul} care este %{open_source}.
+      open_source: software open-source
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Decide cum să modelezi orașul în care vrei să trăiești.
+      participation_title: Participare
+      privacy: Politica de Confidențialitate
+    header:
+      administration_menu: Meniu
+      administration: Administrare
+      available_locales: Limbi disponibile
+      collaborative_legislation: Legislație colaborativă
+      debates: Dezbateri
+      locale: "Limbă:"
+      logo: Logo CONSUL
+      management: Administrare
+      moderation: Moderare
+      valuation: Evaluare
+      officing: Ofițerii de votare
+      help: Ajutor
+      my_account_link: Contul meu
+      my_activity_link: Conținutul meu
+      open_gov: Deschideți guvern
+      proposals: Propuneri
+      poll_questions: Votare
+      budgets: Bugetare participativă
+      notification_item:
+        new_notifications:
+          one: Aveți o notificare nouă
+          few: Aveți %{count} notificări noi
+          other: Aveți %{count} notificări noi
+        notifications: Notificări
+        no_notifications: "Nu aveți notificări noi"
+  notifications:
+    index:
+      empty_notifications: Nu aveți notificări noi.
+      mark_all_as_read: Marchează totul ca fiind citit
+      read: Citește
+      title: Notificări
+      unread: Necitit
+    notification:
+      action:
+        comments_on:
+          one: Cineva a comentat la
+          few: Există %{count} notificări noi la
+          other: Există %{count} notificări noi la
+        proposal_notification:
+          one: Există o notificare nouă la
+          few: Există %{count} notificări noi la
+          other: Există %{count} notificări noi la
+        replies_to:
+          one: Aveți un răspuns la comentariu dumneavoastră de la
+          few: Aveți %{count} răspunsuri la comentariu dumneavoastră de la
+          other: Aveți %{count} răspunsuri la comentariu dumneavoastră de la
+      mark_as_read: Marchează ca citit
+      mark_as_unread: Marchează ca necitit
+      notifiable_hidden: Această resursă nu mai este valabilă.
+  map:
+    title: "Districte"
+    proposal_for_district: "Începeți o propunere pentru districtul dumneavoastră"
+    start_proposal: Crează propunere
+  omniauth:
+    facebook:
+      sign_in: Conectează-te cu Facebook
+      sign_up: Înregistrează-te cu Facebook
+      name: Facebook
+    finish_signup:
+      title: "Detalii adiționale"
+      username_warning: "Datorită schimbării modului în care interacționăm cu rețelele de socializare, este posibil ca numele dvs. de utilizator să apară acum ca „deja în uz”. Dacă pățiți asta, vă rugăm să alegeți un nume de utilizator diferit."
+    google_oauth2:
+      sign_in: Conectează-te cu Google
+      sign_up: Înregistrează-te cu Google
+      name: Google
+    wordpress_oauth2:
+      sign_in: Conectează-te cu Wordpress
+      sign_up: Înregistrează-te cu Wordpress
+      name: Wordpress
+    twitter:
+      sign_in: Conectează-te cu Twitter
+      sign_up: Înregistrează-te cu Twitter
+      name: Twitter
+    info:
+      sign_in: "Conectează-te cu:"
+      sign_up: "Înregistrează-te cu:"
+    or_fill: "Sau completați următorul formular:"
+  proposals:
+    create:
+      form:
+        submit_button: Crează propunere
+    created:
+      title: Felicitări! Ați făcut primul pas.
+      motivation: "Este important să pregătiți campania de lansare pentru ca propunerea dvs. să aibă succes. Primele zile sunt decisive."
+      motivation_2: "<strong> Dacă doriți recomandări pentru a pregăti publicarea, lăsați propunerea ca o schiță de proiect și vă vom îndruma. </strong>"
+      publish: Nu, vreau să public propunerea
+      dashboard: Da, vreau ajutor și o voi publica mai târziu
+      preview_title: Propunerea dumneavoastră va arăta astfel după ce o veți publica
+    share:
+      improve_it: Îmbunătățiți-vă campania și veți primi mai mult suport.
+      dashboard: Vezi mai multe informații
+      message: "Am susținut propunerea %{title} în%{handle}. Dacă sunteți interesat, o puteți susține și dumneavoastră!"
+    edit:
+      editing: Editează propunere
+      form:
+        submit_button: Salvează modificări
+      show_link: Afișează propunere
+    retire_form:
+      title: Retrage propunere
+      warning: "Dacă retrageți propunerea, aceasta ar accepta în continuare suport, dar va fi eliminată din lista principală și un mesaj va fi vizibil pentru toți utilizatorii afirmând că autorul consideră că propunerea nu ar trebui să mai fie susținută"
+      retired_reason_blank: Alege o opțiune
+      retired_explanation_placeholder: Explicați pe scurt de ce credeți că această propunere nu ar trebui să primească mai multe sprijin
+      submit_button: Retrage propunere
+    retire_options:
+      duplicated: Duplicată
+      started: Deja în curs
+      unfeasible: Nerealizabil
+      done: Gata
+      other: Alta
+    form:
+      proposal_responsible_name_note: "(individual sau ca reprezentant al unui colectiv; nu va fi afișat public)"
+      proposal_summary_note: "(maxim 200 de caractere)"
+      proposal_video_url_note: Puteți adăuga un link către YouTube sau Vimeo
+      tag_category_label: "Categorii"
+      tags_instructions: "Etichetați această propunere. Puteți alege dintre categoriile propuse sau adăugați una proprie"
+      tags_label: Etichete
+      tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
+      map_location: "Localizare pe hartă"
+      map_location_instructions: "Navigați pe hartă până la locație și plasați marcatorul."
+      map_remove_marker: "Eliminați marcatorul de hartă"
+      map_skip_checkbox: "Această propunere nu are o locație concretă sau nu o cunosc."
+    index:
+      featured_proposals: Recomandări
+      orders:
+        confidence_score: cel mai bine cotat
+        created_at: cele mai noi
+        hot_score: cel mai activ
+        most_commented: cel mai comentat
+        relevance: relevanță
+        archival_date: arhivat
+        recommendations: recomandări
+      recommendations:
+        without_results: Nu există dezbateri legate de interesele dumneavoastră
+        without_interests: Urmați propunerile pentru a vă putea oferi recomandări
+        disable: "Recomandările dezbaterilor nu vor mai apărea dacă le respingeți. Le puteți activa din nou în pagina „Contul meu”"
+        actions:
+          success: "Recomandările pentru dezbateri sunt acum dezactivate pentru acest cont"
+          error: "A apărut o eroare. Vă rugăm să accesați pagina „Contul meu” pentru a dezactiva manual recomandările pentru dezbateri"
+      retired_proposals: Retrage propunere
+      retired_proposals_link: "Propunere retrasă de către autor"
+      selected_proposals: Propuneri selectate
+      selected_proposals_link: Vezi propuneri selectate
+      archived_proposals: Propuneri arhivate
+      proposals_lists: Lista propunerilor
+      retired_links:
+        all: Tot
+        duplicated: Duplicată
+        started: În curs
+        unfeasible: Nerealizabil
+        done: Gata
+        other: Alta
+      search_form:
+        button: Caută
+        placeholder: Caută propuneri...
+        title: Caută
+      search_results:
+        one: " conține termenul <strong>'%{search_term}'</strong>"
+        few: " conține termenii <strong>'%{search_term}'</strong>"
+        other: " conține termenii <strong>'%{search_term}'</strong>"
+      select_order: Ordonează după
+      select_order_long: "Vizionați propuneri conform:"
+      start_proposal: Crează propunere
+      title: Propuneri
+      top: Top săptămânal
+      top_link_proposals: Cea mai susținută propunere după categorie
+      section_header:
+        icon_alt: Pictograma propunerilor
+        title: Propuneri
+        help: Ajutor pentru propuneri
+      section_footer:
+        title: Ajutor pentru propuneri
+        description: Propunerile cetățenilor sunt o oportunitate pentru vecini și grupuri de a decide direct cum vor să fie societatea lor, după ce au primit suficient sprijin și s-au prezentat la votul cetățenilor.
+    new:
+      form:
+        submit_button: Crează propunere
+      more_info: Cum funcționează propunerile cetățenilor?
+      recommendation_one: Nu scrieți titlul subiectului sau propozițiile întregi cu majuscule. Pe internet acest lucru este considerat strigat. Și nimănui nu îi place să i se țipe în față.
+      recommendation_three: Bucurați-vă de acest spațiu, de vocile care îl umplu, este și al vostru.
+      recommendation_two: Orice dezbatere sau comentariu care sugerează acțiuni ilegale vor fi șterse, precum și cele care intenționează să saboteze spațiile de dezbatere. Orice altceva este permis.
+      recommendations_title: Recomandări pentru crearea o propunere
+      start_new: Crează propunere nouă
+    notice:
+      retired: Propunere retrasă
+      published: Propunerea a fost publicată
+    proposal:
+      created: "Ați creat o propunere!"
+      share:
+        guide: "Acum îl puteți împărtăși pentru ca oamenii să poată îl poată susține."
+        edit: "Înainte de a fi distribuit, veți putea modifica textul după cum doriți."
+        view_proposal: Nu acum, mergeți la propunerea mea
+      already_supported: Ați susținut deja această propunere. Distribuiți-o!
+      comments:
+        zero: Nu există comentarii
+        one: 1 comentariu
+        few: "%{count} comentarii"
+        other: "%{count} comentarii"
+      support: Sprijină
+      support_title: Sprijină această propunere
+      supports:
+        zero: Fără susțineri
+        one: 1 suport
+        few: "%{count} suporturi"
+        other: "%{count} suporturi"
+      votes:
+        zero: Nu există voturi
+        one: 1 vot
+        few: "%{count} voturi"
+        other: "%{count} voturi"
+      supports_necessary: "%{number} suporturi necesare"
+      total_percent: 100%
+      archived: "Această propunere a fost arhivată și nu poate colecta susțineri."
+      successful: "Această propunere a ajuns la numărul de susțineri necesare."
+      selected: "Propunere selectată"
+    show:
+      author_deleted: Utilizator șters
+      code: "Codul propunerii:"
+      comments:
+        zero: Nu există comentarii
+        one: 1 comentariu
+        few: "%{count} comentarii"
+        other: "%{count} comentarii"
+      comments_tab: Comentarii
+      dashboard_proposal_link: Tablou de bord
+      flag: Această propunere a fost semnalată ca fiind inadecvată de mai mulți utilizatori.
+      notifications_tab: Notificări
+      milestones_tab: Repere
+      retired_warning: "Autorul consideră că această propunere nu ar trebui să mai primească susțineri."
+      retired_warning_link_to_explanation: Citiți explicația înainte de a vota.
+      retired: Propunere retrasă de către autor
+      share: Distribuie
+      no_notifications: "Această propunere nu are notificări."
+      embed_video_title: "Video pentru %{proposal}"
+      title_video_url: "Video extern"
+      author: Autor
+      draft: Propunere în schițe. Încă nu poate primi suport și nici nu apare în lista de propuneri.
+    update:
+      form:
+        submit_button: Salvează modificări
+  dashboard:
+    menu:
+      my_proposal: Editează propunere
+      progress: Progres
+      resources: Resurse
+      community: Comunitate
+      polls: Sondaje
+      mailing: E-mail
+      poster: Afiș
+      recommended_actions: Acțiuni recomandate
+      messages: Mesaj către utilizatori
+      related_content: Conținut asemănător
+    form:
+      request: Cerere
+    create_request:
+      success: Cererea fost trimisă cu succes. Vă vom contacta cât de curând pentru a va informa despre aceasta.
+      archived: Această propunere a fost arhivată și nu poate colecta susțineri.
+    progress:
+      title: Grafic
+      group_by_month: Lunar
+      group_by_week: Săptămânal
+      group_by_date: Zilnic
+      progress: Progresul acumulat
+      supports: Suporturi
+      success: Progres ideal
+      new_action: Nou
+    index:
+      title: Ediție
+      edit_proposal_link: Editează propunere
+      publish: Publică propunere
+      retire: Retrage propunere
+    new_request:
+      links: Link-uri
+    resources:
+      available_resources: Resurse disponibile
+    resource:
+      required_days: "%{days} zile necesare"
+      required_supports: "%{supports} suporturi necesare"
+      and: și
+      view_resource: Vezi resursă
+      resource_requested: Resursă deja solicitată
+      request_resource: Solicită resurse
+      resource_locked: Resursă blocată
+    recommended_actions:
+      title: Acțiuni recomandate
+      goto_proposed_actions: Mergi la acțiuni recomandate
+      see_proposed_actions: Vezi acțiuni recomandate
+      hide_proposed_actions: Ascunde acțiuni recomandate
+      pending_title: În așteptare
+      show_description: Afișează descriere
+      without_pending_actions: Nici o acțiune recomandată în așteptare
+      done_title: Gata
+      without_done_actions: Nici o acțiune recomandată în așteptare
+    next_goal:
+      title: Scop
+      see_complete_course: Vezi cursul complet
+      hide_course: Ascunde curs
+    goal:
+      target_supports:
+        one: Obțineți susținere %{count} pentru propunerea dumneavoastră
+        few: Obțineți susțineri %{count} pentru propunerea dumneavoastră
+        other: Obțineți susținere %{count} pentru propunerea dumneavoastră
+      days:
+        one: "%{count} zi"
+        few: "%{count} zile"
+        other: "%{count} zile"
+      locked_resource: Resursă blocată
+      ideal_time: Timp ideal
+    community:
+      access_community: Accesează comunitatea
+      latest_activity: "Activitate recentă a comunității: %{at}"
+      participants: Participanți
+      debates: Dezbateri
+      comments: Comentarii
+      latest_comments: Ultimele mesaje
+    messages:
+      send_notification: Trimite mesaj urmăritorilor propunerii
+      previous_notifications: Vezi notificările anterioare
+    polls:
+      index:
+        title: Sondaje
+        create: Crează sondaj
+        count:
+          one: Ați creat %{count} sondaj.
+          few: Ați creat %{count} sondaje.
+          other: Ați creat %{count} sondaje.
+        links: Link
+        additiontal_information: Informații suplimentare
+      new:
+        title: Sondaj nou
+        submit: Crează sondaj
+      edit:
+        submit: Actualizează sondaj
+      poll:
+        responses:
+          one: "%{count} răspuns"
+          few: "%{count} răspunsuri"
+          other: "%{count} răspunsuri"
+        view_results: Vezi rezultatele
+        edit_poll: Editează chestionar
+        show_results_help: Dacă bifați această casetă, rezultatele vor fi publice și toți utilizatorii vor putea să le vadă
+        delete: Șterge chestionar
+        alert_notice: Această acțiune va elimina chestionar și toate întrebările asociate.
+        success_notice: Chestionar șters cu succes
+        unable_notice: Nu puteți șterge un chestionar care are răspunsuri
+      form:
+        name: Titlul chestionarului
+        add_question: Adaugă întrebare
+      question_fields:
+        remove_question: Înlătură întrebare
+        add_answer: Adaugă întrebare
+      question_answer_fields:
+        remove_answer: Înlătură răspuns
+    poster:
+      index:
+        title: Previzualizare afiș
+        poster_title: "Nu te uita,"
+        poster_subtitle: "susține-mă! ;)"
+        intro_text: "<strong>Particip în %{org}</strong> cu propria propunere și numai dacă vă adăugați, puteți obține sprijinul necesar pentru a face orașul pe care îl dorim cu toții."
+        proposal_code: "Codul propunerii: %{code}"
+        support: Sprijină propunerea
+        footer: "<strong> Accesează %{link} și susține această propunere.</strong>Cu cât mai multe, cu atât mai bine. Mulțumim!"
+      new:
+        title: Afișul propunerii dumneavoastră
+      options:
+        preview: Previzualizare
+        download: Descarcă
+    mailing:
+      index:
+        title: Previzualizare email
+      new:
+        title: Model de e-mail pentru a partaja
+      mailing_options:
+        send: Trimite la %{address}
+        preview: Previzualizare
+      create:
+        sent: Emailul a fost trimit
+    mailer:
+      forward:
+        subtitle: "Dacă sprijiniți această propunere, <br> va deveni realitate."
+        support_button: Sprijină această propunere
+        share_in: Distribuie în
+        hi: "Bună ziua!"
+        introduction: Scriu pentru a vă anunța că particip la %{org}, platforma pe care putem decide ce oraș dorim să avem. Și pentru asta, mi-am creat propria propunere în calitate de cetățean și acum voi avea nevoie de sprijinul tău! Dar nu vă faceți griji, deoarece este foarte simplu.
+        support: "Trebuie doar să faceți clic pe butonul pe care îl veți vedea mai jos „Sprijină această propunere” și vă puteți informa înainte de a o promova. Doar propunerile care vor obține sprijinul maxim vor fi trimise de către Primărie și am crezut că dumneavoastră sunt sigur că mă veți ajuta!"
+        share: "Și dacă, de asemenea, îmi faci o mare favoare a-mi distribui propunerea cu prietenii, familia și persoanele de contact, ar fi perfect!"
+  polls:
+    all: "Tot"
+    no_dates: "nu există date atribuite"
+    dates: "De la %{open_at} către %{closed_at}"
+    final_date: "Renumărări/ Rezultate finale"
+    index:
+      filters:
+        current: "Deschide"
+        expired: "Expirat"
+      title: "Sondaje"
+      participate_button: "Participă în acest sondaj"
+      participate_button_expired: "Sondaj terminat"
+      no_geozone_restricted: "Tot orașul"
+      geozone_restricted: "Districte"
+      geozone_info: "Pot participa persoane la Recensământul din: "
+      already_answer: "Ați participat deja în acest sondaj"
+      not_logged_in: "Trebuie să vă conectați sau să vă înscrieți pentru a participa"
+      unverified: "Trebuie să vă verificați contul pentru a participa"
+      cant_answer: "Acest sondaj nu este valabil în geo zona dumneavoastră"
+      section_header:
+        icon_alt: Pictograma de votare
+        title: Votare
+        help: Ajutor pentru votare
+      section_footer:
+        title: Ajutor pentru votare
+        description: Sondajele cetățenilor sunt un mecanism participativ prin care cetățenii cu drept de vot pot lua decizii directe
+      no_polls: "Nu sunt votări deschise."
+    show:
+      already_voted_in_booth: "Ați participat deja la o cabină de vot fizică. Nu puteți participa din nou."
+      already_voted_in_web: "Ați participat deja la acest sondaj. Dacă votați din nou, va fi suprascris."
+      back: Înapoi la votare
+      cant_answer_not_logged_in: "Trebuie %{signin} sau %{signup} pentru a participa."
+      comments_tab: Comentarii
+      cant_answer_verify: "Trebuie să %{verify_link} pentru a participa."
+      verify_link: "verifică-ți contul"
+      cant_answer_expired: "Acest sondaj s-a încheiat."
+      cant_answer_wrong_geozone: "Această întrebare nu este valabilă în geo zona dumneavoastră."
+      more_info_title: "Mai multe informații"
+      documents: Documente
+      zoom_plus: Extindeți imaginea
+      read_more: "Citiți mai multe despre %{answer}"
+      read_less: "Citiți mai puține despre %{answer}"
+      videos: "Video extern"
+      info_menu: "Informație"
+      stats_menu: "Statistici de participare"
+      results_menu: "Rezultatele sondajului"
+      stats:
+        total_votes: "Număr total de voturi date"
+        votes: "VOTURI"
+        web: "WEB"
+        mail: "MAIL"
+        booth: "CABINĂ DE VOT"
+        total: "TOTAL"
+        valid: "Valid"
+        white: "Absolut gol"
+        null_votes: "Invalid"
+      results:
+        title: "Întrebări"
+        most_voted_answer: "Cel mai votat răspuns: "
+    poll_header:
+      back_to_proposal: Înapoi la propunere
+  poll_questions:
+    show:
+      vote_answer: "Votează %{answer}"
+      voted: "Ați votat %{answer}"
+  proposal_notifications:
+    new:
+      title: "Trimite mesaj"
+      submit_button: "Trimite mesaj"
+      info_about_receivers: "Acest mesaj va fi trimis către <strong>%{count} persoane </strong> și va fi vizibil în %{proposal_page}.<br> Mesajele nu sunt trimise imediat, utilizatorii vor primi periodic un e-mail cu toate notificările propunerii."
+      proposal_page: "pagina propunerii"
+    show:
+      back: "Mergi înapoi la conținutul meu"
+  shared:
+    edit: "Editează"
+    save: "Salvează"
+    delete: "Șterge"
+    "yes": "Da"
+    "no": "Nu"
+    search_results: "Rezultatele căutării"
+    advanced_search:
+      author_type: "Pe categorii de autor"
+      author_type_blank: "Selectează o categorie"
+      date: "După dată"
+      date_placeholder: "ZZ/LL/AAAA"
+      date_range_blank: "Alege o dată"
+      date_1: "Ultimele 24 ore"
+      date_2: "Ultima săptămână"
+      date_3: "Ultima lună"
+      date_4: "Ultimul an"
+      date_5: "Personalizat"
+      from: "De la"
+      general: "Cu textul"
+      general_placeholder: "Scrie textul"
+      search: "Filtru"
+      title: "Căutare avansată"
+      to: "La"
+    author_info:
+      author_deleted: Utilizator șters
+      email_deleted: Email șters
+    back: Mergi înapoi
+    check: Selectează
+    check_all: Tot
+    check_none: Nici unul
+    collective: Colectiv
+    flag: Semnalați ca necorespunzător
+    follow: "Urmăriți"
+    following: "Următorul"
+    follow_entity: "Urmărește %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Acum urmăriți acest proiect de investiții! <br> Vă vom anunța modificările pe măsură ce apar, astfel încât să fiți la curent."
+        destroy:
+          notice: "Nu mai urmăriți acest proiect de investiții! <br> Nu veți mai primi notificări legate de acest proiect."
+      proposal:
+        create:
+          notice: "Acum urmăriți propunerea acestui cetățean! <br> Vă vom anunța modificările pe măsură ce apar, astfel încât să fiți la curent."
+        destroy:
+          notice: "Nu mai urmăriți propunerea acestui cetățean! <br> Nu veți mai primi notificări legate de această propunere."
+    print:
+      print_button: Printează această informație
+    search: Caută
+    show: Afișează
+    suggest:
+      debate:
+        found:
+          one: "Există o dezbatere cu termenul „%{query}”, puteți participa la aceasta în loc să deschideți una nouă."
+          few: "Există dezbateri cu termenul „%{query}”, puteți participa la acestea în loc să deschideți una nouă."
+          other: "Există dezbateri cu termenul „%{query}”, puteți participa la acestea în loc să deschideți una nouă."
+        message: "Vedeți %{limit} din %{count} dezbateri care conțin termenul „%{query}”"
+        see_all: "Vezi tot"
+      budget_investment:
+        found:
+          one: "Există o investiție cu termenul „%{query}”, puteți participa la ea în loc să deschideți una nouă."
+          few: "Există investiții cu termenul „%{query}”, puteți participa la acestea în loc să deschideți una nouă."
+          other: "Există investiții cu termenul „%{query}”, puteți participa la acestea în loc să deschideți una nouă."
+        message: "Vedeți %{limit} din %{count} investiții care conțin termenul „%{query}”"
+        see_all: "Vezi tot"
+      proposal:
+        found:
+          one: "Există o propunere cu termenul „%{query}”, puteți contribui la aceasta în loc să creați una nouă"
+          few: "Există o propuneri cu termenul „%{query}”, puteți contribui la acestea în loc să creați una nouă"
+          other: "Există o propuneri cu termenul „%{query}”, puteți contribui la acestea în loc să creați una nouă"
+        message: "Vedeți %{limit} din %{count} propuneri care conțin termenul „%{query}”"
+        see_all: "Vezi tot"
+    tags_cloud:
+      tags: În tendință
+      districts: "Districte"
+      districts_list: "Lista de districte"
+      categories: "Categorii"
+    target_blank: " (linkul se deschide într-o fereastră nouă)"
+    you_are_in: "Sunteți în"
+    unflag: Anulați semnalarea
+    unfollow_entity: "Nu mai urmăriți %{entity}"
+    outline:
+      searcher: Căutător
+    go_to_page: "Accesați pagina "
+    share: Distribuie
+    orbit:
+      previous_slide: Diapozitiv anterior
+      next_slide: Următorul diapozitiv
+    documentation: Documente adiționale
+    view_mode:
+      title: Vezi mod
+      cards: Carduri
+      list: Listă
+    recommended_index:
+      title: Recomandări
+      see_more: Vezi mai multe recomandări
+      hide: Ascunde recomandări
+    translations:
+      select_language_prompt: Alege limba
+      remove_language: Șterge limbă
+      add_language: Adaugă limbă
+      languages_in_use:
+        zero: "0 limbi utilizate"
+        one: "1 limbă utilizată"
+        few: "%{count} limbi utilizate"
+        other: "%{count} limbi utilizate"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  stats:
+    index:
+      visits: Vizite
+      debates: Dezbateri
+      proposals: Propuneri
+      comments: Comentarii
+      proposal_votes: Votează propuneri
+      debate_votes: Votează dezbateri
+      comment_votes: Votează pe comentarii
+      votes: Voturi totale
+      verified_users: Utilizatori verificați
+      unverified_users: Utilizatori neverificați
+  unauthorized:
+    default: Nu aveți permisiune să accesați această pagină.
+    manage:
+      all: "Nu aveți permisiunea de a efectua acțiunea „%{action}” pe %{subject}."
+  users:
+    login_to_comment: "Trebuie %{signin} sau %{signup} pentru a lăsa un comentariu."
+    login_to_continue: "Trebuie %{signin} sau %{signup} pentru a continua."
+    signin: "conectare"
+    signup: "înregistrare"
+    verify_account: "verifică-ți contul"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "Acest utilizator a decis să nu primească mesaje directe"
+        submit_button: Trimite mesaj
+        title: Trimite mesaj privat către %{receiver}
+        verified_only: Pentru a trimite mesaj privat %{verify_account}
+      show:
+        receiver: Mesaj trimis către%{receiver}
+    show:
+      deleted: Șters
+      deleted_debate: Această dezbatere a fost ștearsă
+      deleted_proposal: Această propunere a fost ștearsă
+      deleted_budget_investment: Acest proiect de investiții a fost șters
+      proposals: Propuneri
+      proposals_status: Status
+      debates: Dezbateri
+      budget_investments: Buget de investiții
+      comments: Comentarii
+      actions: Acțiuni
+      filters:
+        comments:
+          one: 1 comentariu
+          few: "%{count} comentarii"
+          other: "%{count} comentarii"
+        debates:
+          one: 1 Dezbatere
+          few: "%{count} Dezbateri"
+          other: "%{count} Dezbateri"
+        proposals:
+          one: 1 Propunere
+          few: "%{count} Propuneri"
+          other: "%{count} Propuneri"
+        budget_investments:
+          one: 1 Investiție
+          few: "%{count} Investiții"
+          other: "%{count} Investiții"
+        follows:
+          one: 1 Urmăritor
+          few: "%{count} Urmăritori"
+          other: "%{count} Urmăritori"
+      no_activity: Acest utilizator nu are activitate publică
+      no_private_messages: "Acest utilizator nu acceptă mesaje private."
+      private_activity: Acest utilizator a decis să își mențină activitatea privată.
+      send_private_message: "Trimite mesaj privat"
+      delete_alert: "Sigur doriți să ștergeți proiectul de investiții? Această acțiune nu poate fi anulată"
+    proposals:
+      retired: "Propunere retrasă"
+      draft: Schiță
+      published: Publicat
+      see: "Vezi propunere"
+      actions: Acțiuni
+      retired_help_text: Panoul de control nu este valabil pentru propunerile retrase
+  votes:
+    agree: Sunt de acord
+    anonymous: Prea multe voturi anonime pentru a aproba votul %{verify_account}.
+    comment_unauthenticated: Trebuie %{signin} sau %{signup} pentru a vota.
+    disagree: Nu sunt de acord
+    organizations: Organizațiile nu au voie să voteze
+    supports: Susținători
+    verified_only: Doar utilizatorii verificați pot vota propunerile; %{verify_account}.
+    budget_investments:
+      not_logged_in: Trebuie %{signin} sau %{signup} pentru a continua.
+      not_verified: Doar utilizatorii verificați pot vota investițiile; %{verify_account}.
+      organization: Organizațiile nu au voie să voteze
+      unfeasible: Proiectele de investiții nerealizabile nu pot fi susținute
+      not_voting_allowed: Etapa de votare este închisă
+      different_heading_assigned:
+        one: "Puteți susține proiecte de investiții doar în %{count} district. Ați susținut deja investiții în %{supported_headings}."
+        few: "Puteți susține proiecte de investiții doar în %{count} districte. Ați susținut deja investiții în %{supported_headings}."
+        other: "Puteți susține proiecte de investiții doar în %{count} districte. Ați susținut deja investiții în %{supported_headings}."
+  welcome:
+    feed:
+      most_active:
+        debates: "Dezbaterile cele mai active"
+        proposals: "Propunerile cele mai active"
+        processes: "Procese deschise"
+      see_all_debates: Vezi toate dezbaterile
+      see_all_proposals: Vezi propuneri
+      see_all_processes: Vezi toate procesele
+      process_label: Proces
+      see_process: Vezi proces
+    cards:
+      title: Recomandări
+    recommended:
+      title: Recomandări care v-ar putea interesa
+      help: "Aceste recomandări sunt generate de etichetele dezbaterilor și propunerilor pe care le urmăriți."
+      debates:
+        title: Dezbateri recomandate
+        btn_text_link: Toate dezbaterile recomandate
+      proposals:
+        title: Propuneri recomandate
+        btn_text_link: Toate propunerile recomandate
+      budget_investments:
+        title: Investiții recomandate
+      slide: "Vezi %{title}"
+    verification:
+      i_dont_have_an_account: Nu am un cont
+      i_have_an_account: Am deja un cont
+      question: Aveți deja un cont în %{org_name}?
+      title: Verificarea contului
+    welcome:
+      go_to_index: Nu acum, mergeți la pagina index
+      start_using_consul: Mergeți la pagina index
+      title: Participă
+      user_permission_debates: Participă la dezbateri
+      user_permission_info: Cu contul dumneavoastră puteți...
+      user_permission_proposal: Crează noi propuneri
+      user_permission_support_proposal: Sprijină propunerile*
+      user_permission_verify: "Pentru a efectua toate acțiunile, verificați-vă contul."
+      user_permission_verify_info: "* Numai pentru utilizatorii aflați pe recensământ."
+      user_permission_verify_my_account: Verifică-mi contul
+      user_permission_votes: Participă la votarea finală
+  invisible_captcha:
+    sentence_for_humans: "Dacă sunteți om, ignorați acest câmp"
+    timestamp_error_message: "Ne cerem scuze, a fost prea rapid! Vă rugăm să retrimiteți."
+  related_content:
+    title: "Conținut asemănător"
+    add: "Adăugați conținut asemănător"
+    label: "Link către conținut asemănător"
+    placeholder: "%{url}"
+    help: "Puteți adăuga link-uri de %{models} în %{org}."
+    submit: "Adaugă"
+    error: "Link-ul nu este valid. Amintiți-vă să începeți cu %{url}."
+    error_itself: "Link-ul nu este valid. Nu puteți raporta un conținut cu el însuși."
+    success: "Ați adăugat un conținut asemănător"
+    is_related: "Este acesta conținut asemănător?"
+    score_positive: "Da"
+    score_negative: "Nu"
+    content_title:
+      proposal: "Propunere"
+      debate: "Dezbatere"
+      budget_investment: "Buget de investiție"
+  admin/widget:
+    header:
+      title: Administrare
+  annotator:
+    help:
+      alt: Selectați textul pe care doriți să îl comentați și apăsați butonul cu creionul.
+      text: Pentru a comenta acest document trebuie %{sign_in} sau %{sign_up}. Apoi selectați textul pe care doriți să îl comentați și apoi apăsași butonul cu creionul.
+      title: Cum pot comenta la acest document?
+  links:
+    form:
+      delete_button: Șterge
+      cancel_button: Anulare
+    nested_links:
+      title: Link-uri
+      note: Adăugați linkurile care sunt de interes pentru dumneavoastră
+      add_new_link: Adaugă un link nou
+    link_fields:
+      label_placeholder: Link către titlu
+      url_placeholder: Adresa link
+  communities:
+    show:
+      surveys: Chestionare
+      complete_survey: Completează chestionarul
+    subnav:
+      surveys: Chestionare
+    poll:
+      take_part: Participă de la %{from} la %{to}
+  remote_translations:
+    text: Conținutul acestei pagini nu este valabil în limba dumneavoastră
+    all_remote_translations_enqueued_text: Într-o perioadă scurtă de timp dacă veți reîmprospăta pagina, veți putea vedea tot conținutul în limba dumneavoastră.
+    create:
+      enqueue_remote_translation: Traducerea a fost solicitată corect.
+    button: Tradu pagina

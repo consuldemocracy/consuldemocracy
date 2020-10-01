@@ -3,41 +3,52 @@ hr:
     ballots:
       show:
         title: Vaš glas
-        amount_spent: Potrošena količina
-        remaining: "Vi još morate<span>%{amount}</span> investirati."
-        no_balloted_group_yet: "Vi niste glasali na temu ove grupe, glasajte!"
+        amount_available:
+          knapsack: "Još morate <span>%{count}</span> investirati."
+        amount_spent:
+          knapsack: "Iznos utrošen <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+        no_balloted_group_yet: "Još niste glasovali u ovoj grupi, glasujte!"
         remove: Ukloni glas
+        voted:
+          one: "Vi ste glasovali za <span>jednu</span> investiciju."
+          few: "Vi ste glasovali za <span>%{count}</span> investicije."
+          other: "Vi ste glasovali za <span>%{count}</span> investicija."
+        voted_info: "Vaše je glasovanje potvrđeno!"
         voted_info_2: "Možete promjeniti svoj glas u bilo koje vrijeme do završetka ove faze."
-        zero: Vi niste glasali niti za jedan projetk.
+        zero: Niste glasali niti za jedan investicijski projekt.
       reasons_for_not_balloting:
         not_logged_in: Vi morate %{signin} ili %{signup} kako biste nastavili.
         not_verified: Samo potvrđeni korisnici mogu glasati za investicije, %{verify_account}.
         organization: Organizacijama nije dozvoljeno glasanje
-        not_selected: Projekti koji nisu odabrani ne mogu dobiti podršku
+        not_selected: Investicijski projekti koji nisu odabrani ne mogu dobiti podršku
+        not_enough_money: "Već ste odabrali dostupan proračun.<br><small>Možete %{change_ballot} u bilo kojem trenutku</small>"
         no_ballots_allowed: Faza odabira je zatvorena
-        change_ballot: promjeni svoj glas
-        casted_offline: Vi ste sudjelovali offline
+        different_heading_assigned: "Već ste glasovali za drugu temu: %{heading_link}"
+        change_ballot: promijeni svoj glas
+        casted_offline: Već ste sudjelovali offline
     groups:
       show:
         title: Odaberite opciju
-        unfeasible_title: Neizvediva investicija
+        unfeasible_title: Neizvedive investicije
         unfeasible: Pregledajte neizvedive investicije
         unselected_title: Investicije nisu odabrane za glasačku fazu
         unselected: Pregledajte investicije koje nisu odabrane za fazu glasanja
     phase:
-      drafting: Draf (Nije vidljiv javnosti)
+      drafting: Nacrt (Nije vidljiv javnosti)
       informing: Informacija
-      accepting: Prihvaćanje projekta
-      reviewing: Pregled projekta
-      selecting: Odabir projekta
-      valuating: Vrednovanje projekta
+      accepting: Prihvaćanje projekata
+      reviewing: Pregled projekata
+      selecting: Odabir projekata
+      valuating: Vrednovanje projekata
       publishing_prices: Objavljivanje cijena projekata
-      balloting: Izglasavanje projekta
+      balloting: Izglasavanje projekata
       reviewing_ballots: Pregled glasanja
-      finished: Finaliziran budžet
+      finished: Finalizirani proračun
     index:
-      title: Participativni budžet
-      empty_budgets: Ne postoji budžeti.
+      title: Participativni proračun
+      empty_budgets: Ne postoji proračuni.
       section_header:
         icon_alt: Participativni budžeti ikona
         title: Participativni budžeti
@@ -73,10 +84,16 @@ hr:
           button: Pretraga
           placeholder: Pretraga investicijskih projekata...
           title: Pretraga
+        search_results:
+          one: " sadrži termin <strong>'%{search_term}'</strong>"
+          few: " sadrži termine <strong>%{search_term}</strong>"
+          other: " sadrži termine <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Moj glas
-          voted_info: Vi možete %{link} u bilo koje vrijeme dok se ne završi ova faza. Nema potrebe da se potroši sav dostupan novac.
-          voted_info_link: izmjeni svoj glas
+          change_vote_info:
+            knapsack: "Možete %{link} u bilo koje vrijeme do zatvaranja ove faze. Nema potrebe utrošiti sav dostupan novac."
+          change_vote_link: "izmijeni svoj glas"
+          different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
           change_ballot: "Ako se predomislite možete ukloniti vaš glas u %{check_ballot} i započeti ponovno."
           check_ballot_link: "provjeri i potvrdi moj glas"
           zero: Vi niste glasali u niti jedan investicijski projekt u ovoj grupi.
@@ -96,6 +113,9 @@ hr:
         author_deleted: Korisnik obrisan
         price_explanation: Objašnjenje cijene
         unfeasibility_explanation: Objašnjenje neizvedivosti
+        code: "Lozinka investicijskog projekta: <strong>%{code}</strong>"
+        location: "Lokacija: <strong>%{location}</strong>"
+        organization_name: "Predložio: <strong>%{name}</strong>"
         share: Podijeli
         title: Investicijski projekt
         supports: Potpora
@@ -104,7 +124,10 @@ hr:
         comments_tab: Komentari
         milestones_tab: Ključni ciljevi
         author: Autor
+        project_unfeasible: "Ovaj je investicijski projekt <strong>označen kao neizvediv</strong> i neće ići u fazu izglasavanja."
+        project_selected: "Ovaj je investicijski projekt <strong>odabran</strong> za fazu izglasavanja."
         project_winner: "Pobjednički investicijski projekti"
+        project_not_selected: "Ovaj investicijski projekt <strong>nije odabran</strong> za fazu izglasavanja."
         see_price_explanation: Vidi objašnjenje cijene
       wrong_price_format: Samo cijeli brojevi
       investment:
@@ -124,6 +147,7 @@ hr:
         give_support: Potpora
       header:
         check_ballot: Provjeri i potvrdi moj glas
+        different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
         change_ballot: "Ako izmijenite mišljenje možete ukloniti svoj glas u %{check_ballot} i započeti ponovno."
         check_ballot_link: "provjeri i potvrdi moj glas"
         price: "Ova tema ima budžet od"
@@ -161,6 +185,13 @@ hr:
       heading: "Ključni ciljevi participativnog budžetiranja"
       heading_selection_title: "Po distriktu"
       no_winner_investments: "Nema pobjedničkih investicija u ovom stadiju"
+      filters:
+        status:
+          label: "Trenutno stanje projekta"
+          all: "Svi (%{count})"
+        milestone_tag:
+          label: "Oznaka miljokaza"
+          all: "Svi (%{count})"
     phases:
       errors:
         dates_range_invalid: "Datum početka ne može biti jedank ili kasnije od Datuma završetka"

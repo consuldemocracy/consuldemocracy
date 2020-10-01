@@ -2,6 +2,9 @@ class Banner < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  attribute :background_color, default: "#e7f2fc"
+  attribute :font_color, default: "#222222"
+
   translates :title,       touch: true
   translates :description, touch: true
   include Globalizable

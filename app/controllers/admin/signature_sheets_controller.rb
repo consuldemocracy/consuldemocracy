@@ -26,6 +26,11 @@ class Admin::SignatureSheetsController < Admin::BaseController
   private
 
     def signature_sheet_params
-      params.require(:signature_sheet).permit(:signable_type, :signable_id, :required_fields_to_verify)
+      params.require(:signature_sheet).permit(
+        :signable_type,
+        :signable_id,
+        :title,
+        :required_fields_to_verify
+      )
     end
 end

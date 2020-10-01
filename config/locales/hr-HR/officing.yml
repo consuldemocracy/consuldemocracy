@@ -1,7 +1,7 @@
 hr:
   officing:
     header:
-      title: Bilježenje glasova
+      title: Anketiranje
     dashboard:
       index:
         title: Službeno prebrojavanje
@@ -12,10 +12,10 @@ hr:
       total_recounts: Ukupno prebrojavanja i rezultata
     polls:
       final:
-        title: Glasovanje je spremljeno za finalno prebrojavanje
-        no_polls: Nemate službeno prebrojavanje u niti jednom aktivnom glasanju
-        select_poll: Odaberi glasanje
-        add_results: Vidi rezultate
+        title: Ankee spremne za finalno prebrojavanje
+        no_polls: Nemate službeno prebrojavanje u nijednoj aktivnoj anketi
+        select_poll: Odaberi anketu
+        add_results: Dodaj rezultate
     poll_budgets:
       see_ballot_sheets: Vidi glasačke liste
       index:
@@ -24,7 +24,7 @@ hr:
         ballot_sheet_name: Ime
         ballot_sheet_author: Autor
         ballot_sheet_creation_date: Datum stvaranja
-        empty_results: Ne postoje glasačke liste za ovo glasovanje
+        empty_results: Ne postoje glasačke liste za ovu anketu
       new:
         title: "%{poll_budget} - Nove glasačke liste"
         booth: Glasačko mjesto
@@ -45,12 +45,12 @@ hr:
         error_wrong_booth: "Pogrešno glasačko mjesto. Rezultati nisu spremljeni."
       new:
         title: "%{poll} - Dodaj rezultate"
-        not_allowed: "Nije vam doušteno da dodate rezultate za ovo glasovanje"
+        not_allowed: "Nije vam dopušteno dodavati rezultate za ovu anketu"
         booth: "Glasačko mjesto"
         date: "Datum"
         select_booth: "Odaberi glasačko mjesto"
         ballots_white: "Ukupno praznih glasova"
-        ballots_null: "Nevažeči glasovi"
+        ballots_null: "Nevažeći glasovi"
         ballots_total: "Ukupno glasova"
         submit: "Spremi"
         results_list: "Vaši rezultati"
@@ -61,7 +61,7 @@ hr:
         table_answer: Odgovor
         table_votes: Glasovi
         table_whites: "Ukupno praznih glasova"
-        table_nulls: "Nevažeči glasovi"
+        table_nulls: "Nevažeći glasovi"
         table_total: "Ukupno glasova"
     residence:
       flash:

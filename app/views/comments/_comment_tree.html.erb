@@ -1,8 +1,6 @@
 <% commentable = comment_tree.commentable %>
 <% valuation = local_assigns.fetch(:valuation, false) %>
-<% allow_comments = local_assigns.fetch(:allow_comments, true) %>
-<% admin_layout = local_assigns.fetch(:admin_layout, false) %>
-<% cache [locale_and_user_status, comment_tree.order, commentable_cache_key(commentable), comment_tree.comments, comment_tree.comment_authors, commentable.comments_count, comment_flags, admin_layout] do %>
+<% cache [locale_and_user_status, comment_tree.order, commentable_cache_key(commentable), comment_tree.comments, comment_tree.comment_authors, commentable.comments_count] do %>
   <section class="expanded comments">
     <div class="row">
       <div id="comments" class="small-12 column">
@@ -26,10 +24,9 @@
             <div data-alert class="callout primary">
               <%= sanitize(t("comments.verified_only", verify_account: link_to_verify_account)) %>
             </div>
-          <% elsif allow_comments %>
+          <% elsif !valuation || can?(:comment_valuation, commentable) %>
             <%= render "comments/form", { commentable: commentable,
                                           parent_id: nil,
-                                          toggeable: false,
                                           valuation: valuation } %>
           <% end %>
         <% else %>
@@ -37,15 +34,7 @@
           <%= render "shared/login_to_comment" %>
         <% end %>
 
-        <% comment_tree.root_comments.each do |comment| %>
-          <%= render "comments/comment", { comment: comment,
-                                           comment_flags: comment_flags,
-                                           valuation: valuation,
-                                           allow_votes: !valuation,
-                                           allow_actions: !valuation,
-                                           allow_comments: allow_comments,
-                                           admin_layout: admin_layout } %>
-        <% end %>
+        <%= render "comments/comment_list", comments: comment_tree.root_comments, valuation: valuation %>
         <%= paginate comment_tree.root_comments %>
       </div>
     </div>

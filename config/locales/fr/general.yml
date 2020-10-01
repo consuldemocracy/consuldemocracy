@@ -40,6 +40,8 @@ fr:
         zero: Aucune réponse
         one: 1 réponse
         other: "%{count} réponses"
+      responses_show:
+        zero: Aucune réponse
       user_deleted: Utilisateur effacé
       votes:
         zero: Aucun vote
@@ -87,9 +89,6 @@ fr:
       tags_placeholder: "Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')"
     index:
       featured_debates: Mis en avant
-      filter_topic:
-        one: " avec sujet '%{topic}'"
-        other: " avec sujet '%{topic}'"
       orders:
         confidence_score: la plus votée
         created_at: la plus récente
@@ -163,6 +162,7 @@ fr:
     proposal_notification: "Notification"
     budget/investment: Projet d'investissement
     budget/heading: Rubrique
+    legislation/question: question
     poll/shift: Période de travail
     poll/question/answer: Réponse
     user: Compte
@@ -171,6 +171,7 @@ fr:
     document: Document
     topic: Sujet
     image: Image
+    site_customization/page: page
   geozones:
     none: Toute la ville
   layouts:
@@ -207,7 +208,6 @@ fr:
       help: Aide
       my_account_link: Mon compte
       my_activity_link: Mon activité
-      open: ouvert
       open_gov: Gouvernement ouvert
       proposals: Propositions
       poll_questions: Vote
@@ -218,8 +218,6 @@ fr:
           other: Vous avez %{count} nouvelles notifications
         notifications: Notifications
         no_notifications: "Vous n'avez pas de nouvelles notifications"
-    admin:
-      watch_form_message: "Vous avez des modifications non sauvegardées. Êtes-vous sûr(e) de vouloir quitter cette page ?"
   notifications:
     index:
       empty_notifications: Vous n'avez pas de nouvelles notifications
@@ -261,13 +259,13 @@ fr:
       sign_in: S'enregistrer avec Twitter
       sign_up: S'enregistrer avec Twitter
       name: Twitter
-    info_sign_in: "Se connecter avec :"
-    info_sign_up: "S'inscrire avec :"
     or_fill: "Ou remplissez le formulaire suivant :"
   proposals:
     create:
       form:
         submit_button: Créer la proposition
+    share:
+      dashboard: Voir plus d’information
     edit:
       editing: Modifier la proposition
       form:
@@ -299,9 +297,6 @@ fr:
       map_skip_checkbox: "Cette proposition n'a pas d'emplacement associé à ma connaissance."
     index:
       featured_proposals: Mis en avant
-      filter_topic:
-        one: " avec sujet '%{topic}'"
-        other: " avec sujet '%{topic}'"
       orders:
         confidence_score: la plus votée
         created_at: la plus récente
@@ -401,6 +396,28 @@ fr:
     update:
       form:
         submit_button: Sauvegarder des changements
+  dashboard:
+    menu:
+      messages: Message aux utilisateurs
+    progress:
+      new_action: Nouveau
+    resource:
+      and: et
+    recommended_actions:
+      done_title: Fini
+    polls:
+      poll:
+        view_results: Inspecter les résultats
+      form:
+        add_question: Ajouter une question
+      question_fields:
+        add_answer: Ajouter une réponse
+    poster:
+      options:
+        download: Télécharger
+    mailer:
+      forward:
+        hi: "Bonjour!"
   polls:
     all: "Toutes"
     no_dates: "aucune date fixée"
@@ -502,7 +519,6 @@ fr:
     follow: "Suivre"
     following: "Suivent"
     follow_entity: "Suivre %{entity}"
-    hide: Cacher
     print:
       print_button: Imprimer cette info
     search: Chercher
@@ -550,6 +566,12 @@ fr:
       title: Recommandations
       see_more: Voir plus de recommandations
       hide: Masquer les recommandations
+    translations:
+      select_language_prompt: Choisir la langue
+      remove_language: Supprimer la langue
+      add_language: Ajouter la langue
+      languages_in_use:
+        zero: "0 langues en service"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"

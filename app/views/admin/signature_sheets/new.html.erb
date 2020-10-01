@@ -7,6 +7,10 @@
               resource: @signature_sheet %>
 
   <div class="small-12 medium-6 large-4">
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="small-12 medium-6 large-4">
     <%= f.select :signable_type, signable_options %>
   </div>
 

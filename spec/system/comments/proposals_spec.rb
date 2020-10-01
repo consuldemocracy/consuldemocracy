@@ -1,9 +1,10 @@
 require "rails_helper"
-include ActionView::Helpers::DateHelper
 
 describe "Commenting proposals" do
   let(:user) { create :user }
   let(:proposal) { create :proposal }
+
+  it_behaves_like "flaggable", :proposal_comment
 
   scenario "Index" do
     3.times { create(:comment, commentable: proposal) }
@@ -21,21 +22,21 @@ describe "Commenting proposals" do
   end
 
   scenario "Show" do
-    parent_comment = create(:comment, commentable: proposal)
-    first_child    = create(:comment, commentable: proposal, parent: parent_comment)
-    second_child   = create(:comment, commentable: proposal, parent: parent_comment)
+    parent_comment = create(:comment, commentable: proposal, body: "Parent")
+    create(:comment, commentable: proposal, parent: parent_comment, body: "First subcomment")
+    create(:comment, commentable: proposal, parent: parent_comment, body: "Last subcomment")
 
     visit comment_path(parent_comment)
 
     expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content parent_comment.body
-    expect(page).to have_content first_child.body
-    expect(page).to have_content second_child.body
+    expect(page).to have_content "Parent"
+    expect(page).to have_content "First subcomment"
+    expect(page).to have_content "Last subcomment"
     expect(page).to have_link "Go back to #{proposal.title}", href: proposal_path(proposal)
 
-    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
-    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
-    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
+    within ".comment", text: "Parent" do
+      expect(page).to have_selector(".comment", count: 2)
+    end
   end
 
   scenario "Link to comment show" do
@@ -63,20 +64,26 @@ describe "Commenting proposals" do
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (collapse)"
+    end
 
     expect(page).to have_css(".comment", count: 2)
     expect(page).to have_content("1 response (collapse)")
     expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (show)"
+    end
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").click
+    within ".comment", text: "Main comment" do
+      click_link text: "1 response (collapse)", match: :first
+    end
 
     expect(page).to have_css(".comment", count: 1)
     expect(page).to have_content("1 response (show)")
@@ -190,7 +197,7 @@ describe "Commenting proposals" do
     login_as(user)
     visit proposal_path(proposal)
 
-    fill_in "comment-body-proposal_#{proposal.id}", with: "Have you thought about...?"
+    fill_in "Leave your comment", with: "Have you thought about...?"
     click_button "Publish comment"
 
     within "#comments" do
@@ -222,7 +229,7 @@ describe "Commenting proposals" do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      fill_in "Leave your comment", with: "It will be done next week."
       click_button "Publish reply"
     end
 
@@ -231,6 +238,38 @@ describe "Commenting proposals" do
     end
 
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+  end
+
+  scenario "Reply update parent comment responses count", :js do
+    comment = create(:comment, commentable: proposal)
+
+    login_as(create(:user))
+    visit proposal_path(proposal)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
+  scenario "Reply show parent comments responses when hidden", :js do
+    comment = create(:comment, commentable: proposal)
+    create(:comment, commentable: proposal, parent: comment)
+
+    login_as(create(:user))
+    visit proposal_path(proposal)
+
+    within ".comment", text: comment.body do
+      click_link text: "1 response (collapse)"
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+    end
   end
 
   scenario "Errors on reply", :js do
@@ -259,53 +298,6 @@ describe "Commenting proposals" do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
-    comment = create(:comment, commentable: proposal)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    comment = create(:comment, commentable: proposal)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    proposal = create(:proposal, title: "Should we change the world?")
-    comment = create(:comment, commentable: proposal)
-
-    login_as(user)
-    visit proposals_path
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
-  end
-
   scenario "Erasing a comment's author" do
     proposal = create(:proposal)
     comment = create(:comment, commentable: proposal, body: "this should be visible")
@@ -325,7 +317,7 @@ describe "Commenting proposals" do
       login_as(moderator.user)
       visit proposal_path(proposal)
 
-      fill_in "comment-body-proposal_#{proposal.id}", with: "I am moderating!"
+      fill_in "Leave your comment", with: "I am moderating!"
       check "comment-as-moderator-proposal_#{proposal.id}"
       click_button "Publish comment"
 
@@ -349,7 +341,7 @@ describe "Commenting proposals" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        fill_in "Leave your comment", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -381,7 +373,7 @@ describe "Commenting proposals" do
       login_as(admin.user)
       visit proposal_path(proposal)
 
-      fill_in "comment-body-proposal_#{proposal.id}", with: "I am your Admin!"
+      fill_in "Leave your comment", with: "I am your Admin!"
       check "comment-as-administrator-proposal_#{proposal.id}"
       click_button "Publish comment"
 
@@ -405,7 +397,7 @@ describe "Commenting proposals" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+        fill_in "Leave your comment", with: "Top of the world!"
         check "comment-as-administrator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -506,6 +498,11 @@ describe "Commenting proposals" do
 
       within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
+
+        within(".in_favor") do
+          expect(page).to have_content "1"
+        end
+
         find(".in_favor a").click
 
         within(".in_favor") do

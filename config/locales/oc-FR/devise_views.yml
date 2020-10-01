@@ -1,0 +1,129 @@
+oc:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Lo tieu corrièr electronic
+        submit: Reenviar d'instruccions
+        title: Reenviar d'instruccions de confirmacion
+      show:
+        instructions: Confirmacion del compte per corrièr electronic %{email}
+        new_password_confirmation_label: Repetís la clau de nòu
+        new_password_label: Nòva clau d'accès
+        please_set_password: Se vos plai introdusís una nòva clau d'accès per la siá atencion (te permetrà dintrar coma usatgièr amb lo email de mai amont)
+        submit: confirmar
+        title: Confirmar lo mieu compte
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirmar lo mieu compte
+        text: "Pòdes confirmar la tiá compti de corrièr electronic en lo seguent ligam:"
+        title: Benvengut / a
+        welcome: Benvengut / a
+      reset_password_instructions:
+        change_link: Cambiar la contrasenya
+        hello: Adieu
+        ignore_text: Se tu o as pas sollicitat, ignoratz aquel corrièr electronic.
+        info_text: La contrasenya cambiarà pas fins qu'accediscas pas al ligam e la modifiques.
+        text: "S'es sollicitat cambiar la contrasenya, pòdes o far al seguent ligam:"
+        title: Càmbia la tiá contrasenya
+      unlock_instructions:
+        hello: Adieu
+        info_text: Lo tieu compte es estat bloquejat a causa d'un excessiu nombre d'assages falhits de nauta.
+        instructions_text: "Seguís lo seguent ligam per desblocar lo tieu compte:"
+        title: Lo tieu compte es estat bloquejat
+        unlock_link: Desblocar lo mieu compte
+    menu:
+      login_items:
+        login: Intrada
+        logout: Sortir
+        signup: Enregistrar
+    organizations:
+      registrations:
+        new:
+          email_label: Lo tieu corrièr electronic
+          organization_name_label: Nom de l'organizacion
+          password_confirmation_label: Repetís la contrasenya anteriora
+          password_label: Clau
+          phone_number_label: telefòn
+          responsible_name_label: Nom e de noms de familha de la persona responsabla del collectiu
+          responsible_name_note: Serà la persona en representant de l'associacion / collectiva en nom que ne presenten las proposicions
+          submit: Enregistrar
+          title: S'enregistrar coma organizacion / collectiva
+        success:
+          back_to_index: Comprés, tornar a la pagina principala
+          instructions_1: "<strong>Nos metrem lèu en contacte amb vosautres</strong> per verificar que representatz vertadièrament aquel collectiu."
+          instructions_2: Del temps que lo tieu <strong>se revisa lo corrièr electronic</strong>, li avèm enviat un <strong>ligam per confirmar lo vòstre compte</strong>.
+          instructions_3: Un còp confirmat, es possible que començatz a participar coma collectiu pas verificat.
+          thank_you: de Gràcias per enregistrar lo vòstre collectiu al luòc web. Es ara<strong>pendent de la verificacion</strong>.
+          title: Registre d'organizacion / collectiva
+    passwords:
+      edit:
+        change_submit: Cambiar la contrasenya
+        password_confirmation_label: Confirmar contrasenya nòva
+        password_label: Nòva contrasenya
+        title: Càmbia la tiá contrasenya
+      new:
+        email_label: Lo tieu corrièr electronic
+        send_submit: recebre d'instruccions
+        title: A desbrembat la siá contrasenya?
+    sessions:
+      new:
+        login_label: E-mail o nom d'usatgièr
+        password_label: Clau
+        remember_me: Me remembrar
+        submit: Intrada
+        title: Intrada
+    shared:
+      links:
+        login: Intrada
+        new_confirmation: As pas recebut d'instruccions per confirmar lo tieu compte?
+        new_password: Avètz perdut la contrasenya?
+        new_unlock: As pas recebut d'instruccions per desblocar?
+        signin_with_provider: Dintrar amb çò %{provider}
+        signup: As pas un compte? %{signup_link}
+        signup_link: enregistrar-
+    unlocks:
+      new:
+        email_label: Lo tieu corrièr electronic
+        submit: Reenviar d'instruccions per desblocar
+        title: Reenviar d'instruccions per desblocar
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Rason de la bassa
+          info: Aquela accion se pòt pas desfar. Un còp que dempuèi bassa lo tieu compte, poiràs pas tornar a dintrar coma usatgièr amb ela.
+          info_reason: Se vòles, escriu lo motiu que te dones per el de bassa (opcional).
+          submit: Esborrar lo mieu compte
+          title: Me donar de bassa
+        edit:
+          current_password_label: contrasenya actual
+          edit: Editar proposicion
+          email_label: Lo tieu corrièr electronic
+          leave_blank: Daissar en blanc se vòles pas la cambiar
+          need_current: Avèm de besonh la contrasenya actuala per confirmar los cambiaments
+          password_confirmation_label: Confirmar contrasenya nòva
+          password_label: Nòva contrasenya
+          update_submit: Actualizar
+          waiting_for: "en Esperant confirmacion de:"
+        new:
+          cancel: Anulla la session
+          email_label: Lo tieu corrièr electronic
+          organization_signup: Representas a una organizacion / collectiva? %{signup_link}
+          organization_signup_link: Enregistra-te aicí
+          password_confirmation_label: Repetís la contrasenya anteriora
+          password_label: Clau
+          redeemable_code: Lo tieu còdi de verificacion (s'as recebut una carta amb el)
+          submit: Enregistrar
+          terms: En enregistrar accèptas las %{terms}
+          terms_link: de condicions d'usatge
+          terms_title: En enregistrar accèptas las condicions d'usatge
+          title: Enregistrar
+          username_is_available: Nom d'usatgièr disponible
+          username_is_not_available: Nom d'usatgièr ja existent
+          username_label: Nom d'usatgièr
+          username_note: Nom public qu'apareisserà en las tiás publicacions
+        success:
+          back_to_index: Comprés, tornar a la pagina principala
+          instructions_1: Per favor <b>revisa lo tieu email</b> - li avèm enviat un <b>ligam per confirmar lo vòstre compte</b>.
+          instructions_2: Un còp confirmat, es possible que començatz a i participar.
+          thank_you: de Gràcias per s'enregistrar al luòc web. Vos Cal ara <b>Confirma la tiá adreça electronica</b>.
+          title: Confirma la tiá adreça electronica

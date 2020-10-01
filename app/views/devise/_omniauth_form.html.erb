@@ -1,103 +1,22 @@
-<% if feature?(:twitter_login) || feature?(:facebook_login) || feature?(:google_login) %>
-
-  <% if current_page?(new_user_session_path) %>
-    <div class="row">
-      <div class="small-12 column">
-        <div class="margin-bottom">
-          <strong><%= t("omniauth.info_sign_in") %></strong>
-        </div>
-      </div>
-
-      <% if feature? :twitter_login %>
-        <div class="small-12 medium-6 large-4 column end">
-          <%= link_to t("omniauth.twitter.name"), user_twitter_omniauth_authorize_path,
-                      title: t("omniauth.twitter.sign_in"),
-                      class: "button-twitter button expanded",
-                      method: :post %>
-        </div>
-      <% end %>
-
-      <% if feature? :facebook_login %>
-        <div class="small-12 medium-6 large-4 column end">
-          <%= link_to t("omniauth.facebook.name"), user_facebook_omniauth_authorize_path,
-                      title: t("omniauth.facebook.sign_in"),
-                      class: "button-facebook button expanded",
-                      method: :post %>
-        </div>
-      <% end %>
-
-      <% if feature? :google_login %>
-        <div class="small-12 medium-6 large-4 column end">
-          <%= link_to t("omniauth.google_oauth2.name"), user_google_oauth2_omniauth_authorize_path,
-                      title: t("omniauth.google_oauth2.sign_in"),
-                      class: "button-google button expanded",
-                      method: :post %>
-        </div>
-      <% end %>
-
-      <% if feature? :wordpress_login %>
-        <div class="small-12 medium-6 large-4 column end">
-          <%= link_to t("omniauth.wordpress_oauth2.name"), user_wordpress_oauth2_omniauth_authorize_path,
-                      title: t("omniauth.wordpress_oauth2.sign_in"),
-                      class: "button-wordpress button expanded",
-                      method: :post %>
-        </div>
-      <% end %>
-
-      <div class="small-12 column auth-divider">
-        <span><%= t("omniauth.or_fill") %></span>
+<% if oauth_logins.any? %>
+  <div class="row">
+    <div class="small-12 column">
+      <div class="margin-bottom">
+        <strong><%= t("omniauth.info.#{action}") %></strong>
       </div>
     </div>
 
-  <% elsif current_page?(new_user_registration_path) %>
-    <div class="row">
-      <div class="small-12 column">
-        <div class="margin-bottom">
-          <strong><%= t("omniauth.info_sign_up") %></strong>
-        </div>
+    <% oauth_logins.each do |login| %>
+      <div class="small-12 medium-6 large-4 column end">
+        <%= link_to t("omniauth.#{login}.name"), send("user_#{login}_omniauth_authorize_path"),
+                    title: t("omniauth.#{login}.#{action}"),
+                    class: "button-#{login.to_s.delete_suffix("_oauth2")} button expanded",
+                    method: :post %>
       </div>
+    <% end %>
 
-      <% if feature? :twitter_login %>
-        <div class="small-12 medium-6 large-4 column end">
-          <%= link_to t("omniauth.twitter.name"), user_twitter_omniauth_authorize_path,
-                      title: t("omniauth.twitter.sign_up"),
-                      class: "button-twitter button expanded",
-                      method: :post %>
-        </div>
-      <% end %>
-
-      <% if feature? :facebook_login %>
-        <div class="small-12 medium-6 large-4 column end">
-          <%= link_to t("omniauth.facebook.name"), user_facebook_omniauth_authorize_path,
-                      title: t("omniauth.facebook.sign_up"),
-                      class: "button-facebook button expanded",
-                      method: :post %>
-        </div>
-      <% end %>
-
-      <% if feature? :google_login %>
-        <div class="small-12 medium-6 large-4 column end">
-          <%= link_to t("omniauth.google_oauth2.name"), user_google_oauth2_omniauth_authorize_path,
-                      title: t("omniauth.google_oauth2.sign_up"),
-                      class: "button-google button expanded",
-                      method: :post %>
-
-        </div>
-      <% end %>
-
-      <% if feature? :wordpress_login %>
-        <div class="small-12 medium-6 large-4 column end">
-          <%= link_to t("omniauth.wordpress_oauth2.name"), user_wordpress_oauth2_omniauth_authorize_path,
-                      title: t("omniauth.wordpress_oauth2.sign_up"),
-                      class: "button-wordpress button expanded",
-                      method: :post %>
-        </div>
-      <% end %>
-
-      <div class="small-12 column auth-divider">
-        <span><%= t("omniauth.or_fill") %></span>
-      </div>
+    <div class="small-12 column auth-divider">
+      <span><%= t("omniauth.or_fill") %></span>
     </div>
-  <% end %>
-
+  </div>
 <% end %>

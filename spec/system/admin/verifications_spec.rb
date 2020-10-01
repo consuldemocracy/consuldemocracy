@@ -37,12 +37,13 @@ describe "Incomplete verifications" do
 
   scenario "Residence unverified" do
     incompletely_verified_user = create(:user, :incomplete_verification)
+    failed_census_call = incompletely_verified_user.failed_census_calls.first
 
     visit admin_verifications_path
 
     within "#user_#{incompletely_verified_user.id}" do
       expect(page).to have_content "DNI"
-      expect(page).to have_content incompletely_verified_user.document_number
+      expect(page).to have_content failed_census_call.document_number
       expect(page).to have_content Date.new(1900, 1, 1)
       expect(page).to have_content "28000"
     end

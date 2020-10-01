@@ -1,9 +1,10 @@
 require "rails_helper"
-include ActionView::Helpers::DateHelper
 
 describe "Commenting topics from proposals" do
   let(:user)     { create :user }
   let(:proposal) { create :proposal }
+
+  it_behaves_like "flaggable", :topic_with_community_comment
 
   scenario "Index" do
     community = proposal.community
@@ -68,20 +69,26 @@ describe "Commenting topics from proposals" do
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (collapse)"
+    end
 
     expect(page).to have_css(".comment", count: 2)
     expect(page).to have_content("1 response (collapse)")
     expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (show)"
+    end
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").click
+    within ".comment", text: "Main comment" do
+      click_link text: "1 response (collapse)", match: :first
+    end
 
     expect(page).to have_css(".comment", count: 1)
     expect(page).to have_content("1 response (show)")
@@ -211,7 +218,7 @@ describe "Commenting topics from proposals" do
     login_as(user)
     visit community_topic_path(community, topic)
 
-    fill_in "comment-body-topic_#{topic.id}", with: "Have you thought about...?"
+    fill_in "Leave your comment", with: "Have you thought about...?"
     click_button "Publish comment"
 
     within "#comments" do
@@ -248,7 +255,7 @@ describe "Commenting topics from proposals" do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      fill_in "Leave your comment", with: "It will be done next week."
       click_button "Publish reply"
     end
 
@@ -257,6 +264,42 @@ describe "Commenting topics from proposals" do
     end
 
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+  end
+
+  scenario "Reply update parent comment responses count", :js do
+    community = proposal.community
+    topic = create(:topic, community: community)
+    comment = create(:comment, commentable: topic)
+
+    login_as(create(:user))
+    visit community_topic_path(community, topic)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
+  scenario "Reply show parent comments responses when hidden", :js do
+    community = proposal.community
+    topic = create(:topic, community: community)
+    comment = create(:comment, commentable: topic)
+    create(:comment, commentable: topic, parent: comment)
+
+    login_as(create(:user))
+    visit community_topic_path(community, topic)
+
+    within ".comment", text: comment.body do
+      click_link text: "1 response (collapse)"
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+    end
   end
 
   scenario "Errors on reply", :js do
@@ -289,58 +332,6 @@ describe "Commenting topics from proposals" do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    community = proposal.community
-    topic = create(:topic, community: community, title: "Should we change the world?")
-    comment = create(:comment, commentable: topic)
-
-    login_as(user)
-    visit community_path(community)
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
-  end
-
   scenario "Erasing a comment's author" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -364,7 +355,7 @@ describe "Commenting topics from proposals" do
       login_as(moderator.user)
       visit community_topic_path(community, topic)
 
-      fill_in "comment-body-topic_#{topic.id}", with: "I am moderating!"
+      fill_in "Leave your comment", with: "I am moderating!"
       check "comment-as-moderator-topic_#{topic.id}"
       click_button "Publish comment"
 
@@ -390,7 +381,7 @@ describe "Commenting topics from proposals" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        fill_in "Leave your comment", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -426,7 +417,7 @@ describe "Commenting topics from proposals" do
       login_as(admin.user)
       visit community_topic_path(community, topic)
 
-      fill_in "comment-body-topic_#{topic.id}", with: "I am your Admin!"
+      fill_in "Leave your comment", with: "I am your Admin!"
       check "comment-as-administrator-topic_#{topic.id}"
       click_button "Publish comment"
 
@@ -452,7 +443,7 @@ describe "Commenting topics from proposals" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+        fill_in "Leave your comment", with: "Top of the world!"
         check "comment-as-administrator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -556,6 +547,11 @@ describe "Commenting topics from proposals" do
 
       within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
+
+        within(".in_favor") do
+          expect(page).to have_content "1"
+        end
+
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -621,17 +617,23 @@ describe "Commenting topics from budget investments" do
 
     expect(page).to have_css(".comment", count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (collapse)"
+    end
 
     expect(page).to have_css(".comment", count: 2)
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (show)"
+    end
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").click
+    within ".comment", text: "Main comment" do
+      click_link text: "1 response (collapse)", match: :first
+    end
 
     expect(page).to have_css(".comment", count: 1)
     expect(page).not_to have_content child_comment.body
@@ -760,7 +762,7 @@ describe "Commenting topics from budget investments" do
     login_as(user)
     visit community_topic_path(community, topic)
 
-    fill_in "comment-body-topic_#{topic.id}", with: "Have you thought about...?"
+    fill_in "Leave your comment", with: "Have you thought about...?"
     click_button "Publish comment"
 
     within "#comments" do
@@ -797,7 +799,7 @@ describe "Commenting topics from budget investments" do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      fill_in "Leave your comment", with: "It will be done next week."
       click_button "Publish reply"
     end
 
@@ -838,58 +840,6 @@ describe "Commenting topics from budget investments" do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
-    community = investment.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    community = investment.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    community = investment.community
-    topic = create(:topic, community: community, title: "Should we change the world?")
-    comment = create(:comment, commentable: topic)
-
-    login_as(user)
-    visit community_path(community)
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
-  end
-
   scenario "Erasing a comment's author" do
     community = investment.community
     topic = create(:topic, community: community)
@@ -913,7 +863,7 @@ describe "Commenting topics from budget investments" do
       login_as(moderator.user)
       visit community_topic_path(community, topic)
 
-      fill_in "comment-body-topic_#{topic.id}", with: "I am moderating!"
+      fill_in "Leave your comment", with: "I am moderating!"
       check "comment-as-moderator-topic_#{topic.id}"
       click_button "Publish comment"
 
@@ -939,7 +889,7 @@ describe "Commenting topics from budget investments" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        fill_in "Leave your comment", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -975,7 +925,7 @@ describe "Commenting topics from budget investments" do
       login_as(admin.user)
       visit community_topic_path(community, topic)
 
-      fill_in "comment-body-topic_#{topic.id}", with: "I am your Admin!"
+      fill_in "Leave your comment", with: "I am your Admin!"
       check "comment-as-administrator-topic_#{topic.id}"
       click_button "Publish comment"
 
@@ -1001,7 +951,7 @@ describe "Commenting topics from budget investments" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+        fill_in "Leave your comment", with: "Top of the world!"
         check "comment-as-administrator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -1105,6 +1055,11 @@ describe "Commenting topics from budget investments" do
 
       within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
+
+        within(".in_favor") do
+          expect(page).to have_content "1"
+        end
+
         find(".in_favor a").click
 
         within(".in_favor") do

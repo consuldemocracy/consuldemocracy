@@ -1,5 +1,64 @@
 eu:
   valuation:
+    header:
+      title: Ebaluaketa
+    menu:
+      title: Ebaluaketa
+      budgets: Partaidetzazko aurrekontuak
     budgets:
       index:
+        title: Partaidetzazko aurrekontuak
+        filters:
+          current: Zabalik
+          finished: Amaituta
         table_name: Izena
+        table_phase: Faseaa
+        table_assigned_investments_valuation_open: Aur. Inb. ebaluaketan esleituta
+        table_actions: Ekintzak
+        evaluate: Ebaluatu
+    budget_investments:
+      index:
+        headings_filter_all: Elementu guztiak
+        filters:
+          valuation_open: Zabalik
+          valuating: Ebaluatzen
+          valuation_finished: Ebaluaketa amaituta
+        assigned_to: "%{valuator}-ri esleituta"
+        title: Gastu proiektuak
+        edit: Txostena editatu
+        table_id: ID
+        table_title: Izenburua
+        table_heading_name: Elementuaren izenburua
+        table_actions: Ekintzak
+        no_investments: "Ez dago gastu proiekturik."
+      show:
+        back: Itzuli
+        title: Gastu proiektua
+        info: Bidalketa datuak
+        by: '-gaitik bidalita'
+        sent: Sortze data
+        heading: Elementua
+        dossier: Txostena
+        edit_dossier: Txostena editatu
+        price: Kostua
+        price_first_year: Lehen urteko kostua
+        currency: "€"
+        feasibility: Bideragarritasuna
+        feasible: Bideragarria
+        unfeasible: Bideragabezina
+        undefined: Definitu gabe
+        valuation_finished: Txostena amaituta
+        duration: Exekuzio epea
+        responsibles: Arduradunak
+        assigned_admin: Esleitutako administratzailea
+        assigned_valuators: Esleitutako ebaluatzaileak
+      edit:
+        dossier: Txostena
+        feasibility: Bideragarritasuna
+        valuation_finished_alert: "Ziur zaude txosten hau beteta dagoela markatu nahi duzula? Behin markatuta, ezin da atzera bota."
+        not_feasible_alert: "Proiektua aurkeztu duenari bideragarriezin txostena itsatsita duen email bat bialduko zaio berehala."
+        save: Aldaketak gorde
+      notice:
+        valuate: "Dossierra eguneratuuta"
+      valuation_comments: Ebaluaketaren iruzkinak
+      not_in_valuating_phase: Aurrekontuak ebaluaketa fasean daudenean soilik ebaluatu ahal dira proiektuak

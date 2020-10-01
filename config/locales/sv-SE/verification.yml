@@ -49,6 +49,7 @@ sv:
         accept_terms_text_title: Jag accepterar villkoren för tillgång till adressregistret
         document_number: Dokumentnummer
         document_number_help_title: Hjälp
+        document_number_help_text: "<strong>Legitimation</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Övrig identitetshandling</strong>: X1234567P"
         document_type:
           passport: Pass
           residence_card: Övrig identitetshandling

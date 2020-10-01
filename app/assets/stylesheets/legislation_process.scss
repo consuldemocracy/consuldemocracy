@@ -1006,3 +1006,91 @@
     font-weight: bold;
   }
 }
+
+// 10. Legislation summary
+// -------------------------
+
+.process-summary {
+  > section {
+    @include grid-row;
+    margin-top: $line-height * 1.5;
+    padding: 0 rem-calc(16);
+
+    > header {
+      background: none;
+      border: 0;
+      margin: 0;
+    }
+  }
+
+  h4,
+  p {
+    margin-bottom: 0;
+  }
+
+  > section > header,
+  .question-title,
+  .annotation-title,
+  .comment-summary,
+  .proposal-summary {
+    @include breakpoint(medium) {
+      align-items: center;
+      display: flex;
+
+      > :first-child {
+        $margin: rem-calc(map-get($grid-column-gutter, "medium"));
+
+        margin-right: $margin;
+        width: calc(75% - #{$margin});
+      }
+    }
+  }
+
+  .debate-summary,
+  .proposal-summary,
+  .annotation-summary {
+    @extend %panel;
+    min-height: auto;
+    padding-bottom: rem-calc(16);
+    padding-top: rem-calc(16);
+
+    &:not(:last-child) {
+      margin-bottom: $line-height / 2;
+    }
+  }
+
+  .comments-count {
+    @include has-fa-icon(comments, r);
+  }
+
+  .question-title:not(:only-child) {
+    margin-bottom: $line-height / 2;
+  }
+
+  .annotation-title {
+    margin-bottom: $line-height / 2;
+    margin-top: $line-height / 2;
+  }
+
+  .annotation-quote {
+    border: 1px solid $black;
+    padding: rem-calc(10);
+  }
+
+  .comment-summary {
+    margin-bottom: $line-height / 2;
+
+    > :first-child {
+      background-color: rgba(217, 216, 243, 0.2);
+      border-radius: rem-calc(10);
+      padding: rem-calc(12);
+    }
+  }
+
+  .download-button {
+    margin-bottom: 0;
+    margin-left: 50%;
+    margin-top: $line-height;
+    transform: translateX(-50%);
+  }
+}

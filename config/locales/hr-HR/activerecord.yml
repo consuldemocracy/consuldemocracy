@@ -1,5 +1,6 @@
 hr:
   attributes:
+    geozone_id: "Djelokrug postupka"
     results_enabled: "Prikaži rezultate"
     stats_enabled: "Prikaži statistike"
     advanced_stats_enabled: "Prikaži napredne statistike"
@@ -165,6 +166,10 @@ hr:
         one: Poveznica
         few: Poveznice
         other: Poveznice
+      local_census_record:
+        one: Lokalni zapis o cenzusu
+        few: Lokalna zapisa o cenzusu
+        other: Lokalni zapisi o cenzusu
     attributes:
       budget:
         name: "Ime"
@@ -177,6 +182,11 @@ hr:
         description_finished: "Opis kada se finalizira budžet"
         phase: "Faza"
         currency_symbol: "Valuta"
+        voting_style: "Stil završnog glasovanja"
+        voting_style_knapsack: "\"Knapsack\""
+        voting_style_approval: "Odobravanje"
+      budget/translation:
+        name: "Ime"
       budget/investment:
         heading_id: "Naslov"
         title: "Naziv"
@@ -187,6 +197,23 @@ hr:
         organization_name: "Ukoliko predlažete ime kolektiva/organizacija onda u ime više ljudi napišite ime kolektiva/organizacije"
         image: "Opsina slika prijedloga"
         image_title: "Naziv slike"
+        duration: "Vremenski raspon"
+        feasibility_feasible: "Izvedivo"
+        feasibility_undecided: "Nedefinirano"
+        feasibility_unfeasible: "Neizvedivo"
+        incompatible: "Označite kao neusklađeno"
+        milestone_tag_list: "Oznake miljokaza"
+        price_explanation: "Obrazloženje cijene"
+        selected: "Označite kao odabrano"
+        selected_true: "Odabrano"
+        selected_false: "Nije odabrano"
+        unfeasibility_explanation: "Obrazloženje izvedivosti"
+        valuation_finished: "Procjena dovršena"
+        valuator_ids: "Grupe"
+        valuation_tag_list: "Oznake"
+      budget/investment/translation:
+        title: "Naziv"
+        description: "Opis"
       geozone:
         name: Ime
         external_code: "Vanjski kod (neobavezno)"
@@ -197,6 +224,8 @@ hr:
         title: "Naziv"
         description: "Opis (neobavezno ukoliko je pripisan status)"
         publication_date: "Datum objave"
+      milestone/translation:
+        description: "Opis"
       milestone/status:
         name: "Ime"
         description: "Opis (neobavezno)"
@@ -207,25 +236,54 @@ hr:
       progress_bar/kind:
         primary: "Primarno"
         secondary: "Sekundarno"
+      budget/group:
+        max_votable_headings: "Najveći broj naslova u kojima korisnik može glasovati"
+      budget/group/translation:
+        name: "Naziv grupe"
       budget/heading:
+        allow_custom_content: "Dopustite blokiranje sadržaja"
+        latitude: "Visina (neobvezatno)"
+        longitude: "Širina (neobvezatno)"
         name: "Ime naslova"
         price: "Cijena"
         population: "Populacija"
+        max_ballot_lines: "Dopušteno glasova"
+      budget/heading/translation:
+        name: "Naziv naslova"
+      budget/phase:
+        enabled: "Faza omogućena"
+        ends_at: "Datum završetka"
+        starts_at: "Datum početka"
+      budget/phase/translation:
+        description: "Opis"
+        summary: "Sažetak"
       comment:
         body: "Komentar"
         user: "Korisnik"
       debate:
         author: "Autor"
         description: "Mišljenje"
+        tag_list: "Teme"
         terms_of_service: "Uvjeti usluge"
         title: "Naziv"
+      debate/translation:
+        title: "Naziv rasprave"
+        description: "Početni tekst rasprave"
       proposal:
         author: "Autor"
         title: "Naziv"
         question: "Pitanje"
         description: "Opis"
+        responsible_name: "Puno ime osobe koja upućuje prijedlog"
+        retired_reason: "Razlog povlačenja prijedloga"
         selected: "Označi kao odabrano"
         terms_of_service: "Uvjeti usluge"
+        video_url: "URL vanjskog videa"
+      proposal/translation:
+        title: "Naziv prijedloga"
+        description: "Tekst prijedloga"
+        summary: "Sažetak prijedloga"
+        retired_explanation: "Obrazloženje"
       user:
         login: "Email ili korisničko ime"
         email: "Email"
@@ -233,10 +291,23 @@ hr:
         password_confirmation: "Potvrđena zaporka"
         password: "Zaporka"
         current_password: "Trenutna zaporka"
+        email_digest: "Primite sažetak obavijesti o prijedlogu"
+        email_on_comment: "Obavijesti me putem e-mail poruke kada netko komentira moje prijedloge ili rasprave"
+        email_on_comment_reply: "Obavijesti me putem e-mail poruke kada netko odgovori na moje komentare"
+        email_on_direct_message: "Primite e-mail poruku o izravnim porukama"
+        newsletter: "Primite putem e-mail poruke važne informacije stranice"
         official_position: "Službena pozicija"
+        official_position_badge: "Prikaži oznaku službenog položaja"
         official_level: "Službena razina"
         phone_number: "Broj telefona"
+        public_activity: "Javno prikaži popis mojih aktivnosti"
+        public_interests: "Javno prikaži oznake elemenata koje pratim"
+        recommended_debates: "Prikaži preporuke za rasprave"
+        recommended_proposals: "Prikaži preporuke za prijedloge"
         redeemable_code: "Verifikacijski kod primljen preko emaila"
+      direct_message:
+        title: "Naziv"
+        body: "Poruka"
       organization:
         name: "Ime organizacije"
         responsible_name: "Osoba odgovorna za grupu"
@@ -247,11 +318,17 @@ hr:
         geozone_restricted: "Ograničeno geozonom"
         summary: "Sažetak"
         description: "Opis"
+      active_poll/translation:
+        description: "Opis"
+      poll/booth:
+        name: "Ime"
+        location: "Lokacija"
       poll/translation:
         name: "Ime"
         summary: "Sažetak"
         description: "Opis"
       poll/question:
+        poll_id: "Glasovanje"
         title: "Pitanje"
         summary: "Sažetak"
         description: "Opis"
@@ -262,7 +339,13 @@ hr:
         data: CSV podaci
         poll_id: Glas
         officer_assignment_id: Pripisani činovnik
+      poll/shift:
+        task: "Zadatak"
+      proposal_notification:
+        body: "Poruka"
+        title: "Naziv"
       signature_sheet:
+        title: "Naziv"
         signable_type: "Tip potpisa"
         signable_id: "Potpis ID"
         document_numbers: "Broj dukumenata"
@@ -272,6 +355,8 @@ hr:
         subtitle: Podnaslov
         slug: Žeton
         status: Status
+        status_draft: "Skica"
+        status_published: "Objavljeno"
         title: Naziv
         updated_at: Ažurirano u
         more_info_flag: Prikaži na stranici pomoći
@@ -288,9 +373,20 @@ hr:
         name: Ime
         locale: lokal
         body: Tijelo
+      tag:
+        name: "Upišite naslov teme"
+      topic:
+        title: "Naslov"
+        description: "Početni tekst"
       banner:
         background_color: Boja pozadine
         font_color: Boja fonta
+        post_ended_at: "Post je završio"
+        post_started_at: "Post je započeo"
+        target_url: "Poveznica"
+      banner/translation:
+        title: "Naziv"
+        description: "Opis"
       legislation/process:
         title: Naslov procesa
         summary: Sažetak
@@ -310,17 +406,26 @@ hr:
         result_publication_date: Finalni rezultat datuma objave
         background_color: Pozadinska boja
         font_color: Boja fonta
+        homepage_enabled: "Glavna stranica omogućena"
       legislation/process/translation:
         title: Naslov Procesa
         summary: Sažetak
         description: Opis
         additional_info: Dodatne informacije
+        homepage: "Opis"
         milestones_summary: Sažetak
+      legislation/proposal:
+        description: "Tekst prijedloga"
+        summary: "Sažetak prijedloga"
+        title: "Naziv prijedloga"
+        video_url: "Poveznica na vanjski video"
       legislation/draft_version:
         title: Naziv Verzije
         body: Tekst
         changelog: Izmjene
         status: Status
+        status_draft: "Skica"
+        status_published: "Objavljeno"
         final_version: Finalna verzija
       legislation/draft_version/translation:
         title: Naziv verzije
@@ -329,6 +434,8 @@ hr:
       legislation/question:
         title: Naziv
         question_options: Opcije
+      legislation/question/translation:
+        title: Upit
       legislation/question_option:
         value: Vrijednost
       legislation/annotation:
@@ -386,12 +493,27 @@ hr:
         order: Možete unijeti položaj na kojem će se ova radnja prikazati korisniku popis radnji
         active: Aktivirati
         action_type: Tip
+        action_type_proposed_action: "Predložena radnja"
+        action_type_resource: "Sredstvo"
+        published_proposal: "Za objavljene prijedloge?"
       dashboard/administrator_task:
         source: Izvor
         user: Izvršeno od
       link:
         label: Naziv
         url: Poveznica
+      valuator:
+        description: Opis
+        valuator_group_id: Grupa procjenitelja
+        can_comment: Može komentirati
+        can_edit_dossier: Može uređivati spise
+      valuator_group:
+        name: "Naziv grupe"
+      local_census_record:
+        document_type: Vrsta dokumenta
+        document_number: Broj dokumenta
+        date_of_birth: Datum rođenja
+        postal_code: Poštanski broj
     errors:
       models:
         user:
@@ -427,7 +549,8 @@ hr:
           attributes:
             document_number:
               not_in_census: "Dokument nije u cenzusu"
-              has_voted: "Korisnik je već glasao"
+            user_id:
+              has_voted: "Korisnik je već glasovao"
         legislation/process:
           attributes:
             end_date:
@@ -438,6 +561,10 @@ hr:
               invalid_date_range: mora biti na datum drafta ili nakon početnog datuma
             allegations_end_date:
               invalid_date_range: mora biti na datum komentara ili nakon početnog datuma
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: nije uključen u popis, dopuštene vrijednosti su 1 za DNI, 2 za putovnicu i 3 za boravišnu iskaznicu.
         proposal:
           attributes:
             tag_list:
@@ -468,7 +595,12 @@ hr:
           attributes:
             valuation:
               cannot_comment_valuation: "Ne možete komentirati procjenu"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Već preveden izvor
       messages:
+        translations_too_short: Obvezatno je priložiti barem jedan prijevod
         record_invalid: "Valicaija nije uspjela: %{errors}"
         another_poll_active: Postoji još jedno aktivno glasovanje za dat period
         restrict_dependent_destroy:

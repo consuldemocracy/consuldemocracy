@@ -1146,15 +1146,6 @@ bs:
           without_confirmed_hide: U toku
         title: Skriveni prijedlozi
         no_hidden_proposals: Nema skrivenih prijedloga.
-    proposal_notifications:
-      index:
-        filter: Filter (suzi pretragu)
-        filters:
-          all: Sve
-          with_confirmed_hide: Potvrđeno
-          without_confirmed_hide: U toku
-        title: Skrivene obavijesti
-        no_hidden_proposals: Nema skrivenih obavijesti.
     settings:
       flash:
         updated: Vrijednost ažurirana

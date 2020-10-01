@@ -160,7 +160,7 @@ describe "Admin budget groups" do
       within("#budget_group_#{group.id}") { click_link "Edit" }
 
       expect(page).to have_field "Group name", with: group.name
-      expect(page).to have_field "Maximum number of headings in which a user can vote", with: "2"
+      expect(page).to have_field "Maximum number of headings in which a user can select projects", with: "2"
     end
 
     scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
@@ -198,14 +198,14 @@ describe "Admin budget groups" do
       expect(page).to have_field "Group name", with: "All City"
 
       fill_in "Group name", with: "Districts"
-      select "2", from: "Maximum number of headings in which a user can vote"
+      select "2", from: "Maximum number of headings in which a user can select projects"
       click_button "Save group"
 
       expect(page).to have_content "Group updated successfully"
 
       visit edit_admin_budget_group_path(budget, group)
       expect(page).to have_field "Group name", with: "Districts"
-      expect(page).to have_field "Maximum number of headings in which a user can vote", with: "2"
+      expect(page).to have_field "Maximum number of headings in which a user can select projects", with: "2"
     end
 
     scenario "Group name is already used" do

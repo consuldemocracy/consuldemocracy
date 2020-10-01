@@ -3,19 +3,119 @@ eu:
     confirmations:
       new:
         email_label: E-mail
+        submit: Argibideak berbidali
+        title: Baieztapen argibideak berbidali
+      show:
+        new_password_confirmation_label: Pasahitza errepikatu
+        new_password_label: Pasahitz berria
+        please_set_password: Mesedez, pasahitz berri bat idatzi zure kontuarentzako (goiko emailarekin batera logeatzeko beharko duzu)
+        submit: Baieztatu
+        title: Nire kontua baieztatu
+    mailer:
+      confirmation_instructions:
+        confirm_link: Nire kontua baieztatu
+        text: "Posta elektroniko kontua hurrengo loturan baieztatu dezakezu:"
+        title: Ondo etorri Gobernu Irekiaren atarira
+        welcome: Ondo etorri
+      reset_password_instructions:
+        change_link: Nire pasahitza aldatu
+        hello: Kaixo
+        ignore_text: Zuk ez baduzu eskatu, email hau ez ikusiarena egin.
+        info_text: Zure pasahitza ez da aldatuko loturan sartu eta aldatu arte.
+        text: "Zure pasahitza aldatzea eskatu da, hurrengo loturan egin dezakezu:"
+        title: Zure pasahitza aldatu
+      unlock_instructions:
+        hello: Kaixo
+        info_text: Alta ematerakoan saiakera ugarik huts egin dutenez, zure kontua blokeatu egin da.
+        instructions_text: "Hurrengo lotura jarraitu zure kontua desblokeatzeko:"
+        title: Zure kontua blokeatua izan da
+        unlock_link: Nire kontua desblokeatu
+    menu:
+      login_items:
+        login: Sartu
+        logout: Irten
+        signup: Erregistratu
     organizations:
       registrations:
         new:
           email_label: E-mail
+          organization_name_label: Erakundearen izena
+          password_confirmation_label: Aurreko pasahitza errepikatu
+          password_label: Web orri honetara sartzeko erabiliko duzun pasahitza
+          phone_number_label: Telefonoa
+          responsible_name_label: Kolektiboaren arduradunaren izen eta abizenak
+          responsible_name_note: Elkarte/kolektibo arduradunaren izenean aurkeztuko dira proposamenak
+          submit: Erregistratzea
+          title: Elkarte/kolektibo gisa erregistratzea
+        success:
+          back_to_index: Ulertuta, orri nagusira itzuli
+          title: Elkarte/kolektibo erregistroa
     passwords:
+      edit:
+        change_submit: Nire pasahitza aldatu
+        password_confirmation_label: Pasahitz berria egiaztatu
+        password_label: Pasahitz berria
+        title: Zure pasahitza aldatu
       new:
         email_label: E-mail
+        send_submit: Argibideak jaso
+        title: Zure pasahitza ahaztu duzu?
+    sessions:
+      new:
+        login_label: Erabiltzaile izena edo emaila
+        password_label: Web orrian sartzeko erabiliko duzun pasahitza
+        remember_me: Gogorarazi
+        submit: Sartu
+        title: Saioa hasi
+    shared:
+      links:
+        login: Sartu
+        new_confirmation: Ez duzu zure kontua egiaztatzeko argibiderik jaso?
+        new_password: Pasahitza ahaztu duzu?
+        new_unlock: Ez duzu desblokeatzeko argibiderik jaso?
+        signin_with_provider: '%{provider} erabiliz sartu'
+        signup: Ez duzu konturik? %{signup_link}
+        signup_link: Erregistratu zaitez
     unlocks:
       new:
         email_label: E-mail
+        submit: Desblokeatzeko argibideak berbidali
+        title: Desblokeatzeko argibideak berbidali
     users:
       registrations:
+        delete_form:
+          erase_reason_label: Bajaren arrazoia
+          info: Ekintza hau ezin da desegin. Zure kontuari baja eman ezkero ezingo duzu sartzeko berriz erabili.
+          info_reason: Nahi baldin baduzu, Baja ematearen arrazoia idatzi (aukerakoa)
+          submit: Baja eman
+          title: Baja eman
         edit:
+          current_password_label: Egungo pasahitza
+          edit: Proposamena editatu
           email_label: E-mail
+          leave_blank: Hutsik utzi ez bada aldatu nahi
+          need_current: Zure oraingo pasahitza behar dugu aldaketak baieztatzeko.
+          password_confirmation_label: Pasahitz berria baieztatu
+          password_label: Pasahitz berria
+          update_submit: Eguneratu
+          waiting_for: "Konfirmazioa itxaroten:"
         new:
+          cancel: Ezeztatu logina
           email_label: E-mail
+          organization_signup: Elkarte/kolektibo bat ordezkatzen duzu? %{signup_link}
+          organization_signup_link: Hemen erregistratu zaitez
+          password_confirmation_label: Aurreko pasahitza errepikatu
+          password_label: Web orri honetara sartzeko erabiliko duzun pasahitza
+          redeemable_code: Zure egiaztatze kodea (berarekin eskutitz bat jaso baduzu)
+          submit: Erregistratzea
+          terms: Erregistratzerakoan %{terms} onartzen dituzu
+          terms_link: erabilera baldintzak
+          terms_title: Erregistratzerakoan erabilera baldintzak onartzen dituzu
+          title: Erregistratzea
+          username_is_available: Erabiltzailea izena eskuragarri
+          username_is_not_available: Erabiltzailea izen hori erabiltzen ari da
+          username_label: Erabiltzaile izena
+          username_note: Zure argitarapenetan agertuko den izen publikoa
+        success:
+          back_to_index: Ulertuta, orri nagusira itzuli
+          title: Zure korreoa begiratu

@@ -1,1 +1,53 @@
 bg:
+  seeds:
+    settings:
+      official_level_1_name: Официална позиция 1
+      official_level_2_name: Официална позиция 2
+      official_level_3_name: Официална позиция 3
+      official_level_4_name: Официална позиция 4
+      official_level_5_name: Официална позиция 5
+    geozones:
+      north_district: Северен район
+      west_district: Западен район
+      east_district: Източен район
+      central_district: Централен район
+    organizations:
+      human_rights: Човешки права
+      neighborhood_association: Местна асоциация
+    categories:
+      associations: Асоциации
+      culture: Култура
+      sports: Спорт
+      social_rights: Социални права
+      economy: Икономика
+      employment: Заетост
+      equity: Капитал
+      sustainability: Устойчивост
+      participation: Участие
+      mobility: Мобилност
+      media: Медии
+      health: Здраве
+      transparency: Прозрачност
+      security_emergencies: Сигурност и извънредни ситуации
+      environment: Околна среда
+    budgets:
+      budget: Бюджетиране чрез участие
+      groups:
+        all_city: Всички градове
+        districts: Райони
+      valuator_groups:
+        culture_and_sports: Култура и спорт
+        gender_and_diversity: Политики за равенство между половете и многообразие
+        urban_development: Устойчиво градско развитие
+        equity_and_employment: Капитал и заетост
+      statuses:
+        studying_project: Изучаване на проекта
+        bidding: Наддаване
+        executing_project: Изпълнение на проекта
+        executed: Изпълнен
+    polls:
+      current_poll: "Текуща анкета"
+      current_poll_geozone_restricted: "Текуща геозона на анкетата е ограничена"
+      recounting_poll: "Преизчисляване на анкета"
+      expired_poll_without_stats: "Изтекла анкета без статистически данни и резултати"
+      expired_poll_with_stats: "Изтекла анкета със статистически данни и резултати"

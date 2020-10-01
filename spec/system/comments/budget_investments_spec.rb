@@ -1,9 +1,10 @@
 require "rails_helper"
-include ActionView::Helpers::DateHelper
 
 describe "Commenting Budget::Investments" do
   let(:user) { create :user }
   let(:investment) { create :budget_investment }
+
+  it_behaves_like "flaggable", :budget_investment_comment
 
   scenario "Index" do
     3.times { create(:comment, commentable: investment) }
@@ -24,22 +25,22 @@ describe "Commenting Budget::Investments" do
   end
 
   scenario "Show" do
-    parent_comment = create(:comment, commentable: investment)
-    first_child    = create(:comment, commentable: investment, parent: parent_comment)
-    second_child   = create(:comment, commentable: investment, parent: parent_comment)
+    parent_comment = create(:comment, commentable: investment, body: "Parent")
+    create(:comment, commentable: investment, parent: parent_comment, body: "First subcomment")
+    create(:comment, commentable: investment, parent: parent_comment, body: "Last subcomment")
 
     visit comment_path(parent_comment)
 
     expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content parent_comment.body
-    expect(page).to have_content first_child.body
-    expect(page).to have_content second_child.body
+    expect(page).to have_content "Parent"
+    expect(page).to have_content "First subcomment"
+    expect(page).to have_content "Last subcomment"
 
     expect(page).to have_link "Go back to #{investment.title}", href: budget_investment_path(investment.budget, investment)
 
-    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
-    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
-    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
+    within ".comment", text: "Parent" do
+      expect(page).to have_selector(".comment", count: 2)
+    end
   end
 
   scenario "Link to comment show" do
@@ -67,20 +68,26 @@ describe "Commenting Budget::Investments" do
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (collapse)"
+    end
 
     expect(page).to have_css(".comment", count: 2)
     expect(page).to have_content("1 response (collapse)")
     expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (show)"
+    end
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").click
+    within ".comment", text: "Main comment" do
+      click_link text: "1 response (collapse)", match: :first
+    end
 
     expect(page).to have_css(".comment", count: 1)
     expect(page).to have_content("1 response (show)")
@@ -194,7 +201,7 @@ describe "Commenting Budget::Investments" do
     login_as(user)
     visit budget_investment_path(investment.budget, investment)
 
-    fill_in "comment-body-budget_investment_#{investment.id}", with: "Have you thought about...?"
+    fill_in "Leave your comment", with: "Have you thought about...?"
     click_button "Publish comment"
 
     within "#tab-comments-label" do
@@ -226,7 +233,7 @@ describe "Commenting Budget::Investments" do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      fill_in "Leave your comment", with: "It will be done next week."
       click_button "Publish reply"
     end
 
@@ -235,6 +242,38 @@ describe "Commenting Budget::Investments" do
     end
 
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+  end
+
+  scenario "Reply update parent comment responses count", :js do
+    comment = create(:comment, commentable: investment)
+
+    login_as(create(:user))
+    visit budget_investment_path(investment.budget, investment)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
+  scenario "Reply show parent comments responses when hidden", :js do
+    comment = create(:comment, commentable: investment)
+    create(:comment, commentable: investment, parent: comment)
+
+    login_as(create(:user))
+    visit budget_investment_path(investment.budget, investment)
+
+    within ".comment", text: comment.body do
+      click_link text: "1 response (collapse)"
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+    end
   end
 
   scenario "Errors on reply", :js do
@@ -263,53 +302,6 @@ describe "Commenting Budget::Investments" do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
-    comment = create(:comment, commentable: investment)
-
-    login_as(user)
-    visit budget_investment_path(investment.budget, investment)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    comment = create(:comment, commentable: investment)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit budget_investment_path(investment.budget, investment)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    investment = create(:budget_investment, title: "Should we change the world?")
-    comment = create(:comment, commentable: investment)
-
-    login_as(user)
-    visit budget_investments_path(investment.budget)
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
-  end
-
   scenario "Erasing a comment's author" do
     investment = create(:budget_investment)
     comment = create(:comment, commentable: investment, body: "this should be visible")
@@ -329,7 +321,7 @@ describe "Commenting Budget::Investments" do
       login_as(moderator.user)
       visit budget_investment_path(investment.budget, investment)
 
-      fill_in "comment-body-budget_investment_#{investment.id}", with: "I am moderating!"
+      fill_in "Leave your comment", with: "I am moderating!"
       check "comment-as-moderator-budget_investment_#{investment.id}"
       click_button "Publish comment"
 
@@ -353,7 +345,7 @@ describe "Commenting Budget::Investments" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        fill_in "Leave your comment", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -386,7 +378,7 @@ describe "Commenting Budget::Investments" do
         login_as(admin.user)
         visit budget_investment_path(investment.budget, investment)
 
-        fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
+        fill_in "Leave your comment", with: "I am your Admin!"
         check "comment-as-administrator-budget_investment_#{investment.id}"
         click_button "Publish comment"
 
@@ -405,7 +397,7 @@ describe "Commenting Budget::Investments" do
 
         visit admin_budget_budget_investment_path(investment.budget, investment)
 
-        fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
+        fill_in "Leave your comment", with: "I am your Admin!"
         check "comment-as-administrator-budget_investment_#{investment.id}"
         click_button "Publish comment"
 
@@ -429,7 +421,7 @@ describe "Commenting Budget::Investments" do
         login_as(admin.user)
         visit admin_budget_budget_investment_path(investment.budget, investment)
 
-        fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
+        fill_in "Leave your comment", with: "I am your Admin!"
         check "comment-as-administrator-budget_investment_#{investment.id}"
         click_button "Publish comment"
 
@@ -453,7 +445,7 @@ describe "Commenting Budget::Investments" do
         click_link "Reply"
 
         within "#js-comment-form-comment_#{comment.id}" do
-          fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+          fill_in "Leave your comment", with: "Top of the world!"
           check "comment-as-administrator-comment_#{comment.id}"
           click_button "Publish reply"
         end
@@ -574,6 +566,11 @@ describe "Commenting Budget::Investments" do
 
       within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
+
+        within(".in_favor") do
+          expect(page).to have_content "1"
+        end
+
         find(".in_favor a").click
 
         within(".in_favor") do

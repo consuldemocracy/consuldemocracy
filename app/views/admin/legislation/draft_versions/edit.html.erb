@@ -12,12 +12,6 @@
     <%= render "admin/legislation/processes/subnav", process: @process, active: "draft_versions" %>
 
     <div class="small-12 column">
-      <div class="callout warning" style="display: none;">
-        <%= t("admin.legislation.draft_versions.edit.warning") %>
-      </div>
-    </div>
-
-    <div class="small-12 column">
       <h3 class="inline-block"><%= @draft_version.title %></h3>
 
       <div class="float-right">

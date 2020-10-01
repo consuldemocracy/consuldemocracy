@@ -101,10 +101,6 @@ nn:
       tags_placeholder: "Skriv tag'ene du vil bruke, avgrenset med komma (',')"
     index:
       featured_debates: Utvalgte
-      filter_topic:
-        zero: " med emne '%{topic}'"
-        one: " med emne '%{topic}'"
-        other: " med emne '%{topic}'"
       orders:
         confidence_score: mest populære
         created_at: nyeste
@@ -240,7 +236,6 @@ nn:
       help: Hjelp
       my_account_link: Min konto
       my_activity_link: Min aktivitet
-      open: åpen
       open_gov: Open Government
       proposals: Forslag
       poll_questions: Avstemming
@@ -252,8 +247,6 @@ nn:
           other: Du har %{count} nye varsler
         notifications: Varsler
         no_notifications: "Du har ingen nye varsler"
-    admin:
-      watch_form_message: "Du har gjort endringer som ikke er lagret. Ønsker du fortsatt å forlate siden?"
   notifications:
     index:
       empty_notifications: Du har ingen nye varsler.
@@ -298,8 +291,6 @@ nn:
       sign_in: Logg inn via Twitter
       sign_up: Registrer deg med Twitter
       name: Twitter
-    info_sign_in: "Logg på med:"
-    info_sign_up: "Registrer deg med:"
     or_fill: "Eller fyll ut følgende skjema:"
   proposals:
     create:
@@ -346,10 +337,6 @@ nn:
       map_skip_checkbox: "Det finnes ingen konkret geografisk plassering for forslaget, eller jeg kjenner ikke til plasseringen."
     index:
       featured_proposals: Utvalgte
-      filter_topic:
-        zero: " med emne '%{topic}'"
-        one: " med emnet '%{topic}'"
-        other: " med emnene '%{topic}'"
       orders:
         confidence_score: populære
         created_at: nyeste
@@ -710,7 +697,6 @@ nn:
     follow: "Følg"
     following: "Følger"
     follow_entity: "Følg %{entity}"
-    hide: Skjul
     print:
       print_button: Skriv ut denne informasjonen
     search: Søk

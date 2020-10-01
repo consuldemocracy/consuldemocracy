@@ -24,19 +24,10 @@
               <%= moderator.email %>
             </td>
             <td>
-              <% if moderator.persisted? %>
-                <%= link_to t("admin.moderators.moderator.delete"),
-                            admin_moderator_path(moderator),
-                            method: :delete,
-                            class: "button hollow alert expanded"
-                %>
-              <% else %>
-                <%= link_to t("admin.moderators.moderator.add"),
-                            { controller: "admin/moderators", action: :create,
-                              user_id: moderator.user_id },
-                              method: :post,
-                              class: "button success expanded" %>
-              <% end %>
+              <%= link_to t("admin.moderators.moderator.delete"),
+                          admin_moderator_path(moderator),
+                          method: :delete,
+                          class: "button hollow alert expanded" %>
             </td>
           </tr>
         <% end %>

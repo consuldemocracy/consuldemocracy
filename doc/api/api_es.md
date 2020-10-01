@@ -119,7 +119,6 @@ Por supuesto es posible utilizar cualquier librería HTTP de lenguajes de progra
 
 `User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36`
 
-
 ## Información disponible
 
 El fichero [config/api.yml](../../config/api.yml) contiene una lista completa de los modelos (y sus campos) que están expuestos actualmente en la API.

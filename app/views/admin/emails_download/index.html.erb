@@ -12,6 +12,8 @@
 
     <%= select_tag :users_segment, options_for_select(user_segments_options) %>
 
-    <%= submit_tag t("admin.emails_download.index.download_emails_button"), class: "button" %>
+    <%= submit_tag t("admin.emails_download.index.download_emails_button"),
+      class: "button",
+      data: { disable_with: false } %>
   <% end %>
 </div>

@@ -67,6 +67,6 @@ class Admin::MilestonesController < Admin::BaseController
     end
 
     def milestoneable_path
-      polymorphic_path([:admin, *resource_hierarchy_for(@milestone.milestoneable)])
+      admin_polymorphic_path(@milestone.milestoneable)
     end
 end

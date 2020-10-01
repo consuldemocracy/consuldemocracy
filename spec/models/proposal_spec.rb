@@ -558,7 +558,7 @@ describe Proposal do
     end
 
     context "case" do
-      it "searches case insensite" do
+      it "searches case insensitive" do
         proposal = create(:proposal, title: "SHOUT")
 
         results = Proposal.search("shout")
@@ -1045,7 +1045,7 @@ describe Proposal do
       let(:proposal) { create(:proposal, :with_milestone_tags) }
 
       it "has milestone_tags" do
-        expect(proposal.milestone_tag_list.count).to eq(1)
+        expect(proposal.reload.milestone_tag_list.count).to eq(1)
       end
     end
   end

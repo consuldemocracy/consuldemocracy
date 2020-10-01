@@ -3,8 +3,12 @@ it:
     ballots:
       show:
         title: Il tuo voto
-        amount_spent: Importo speso
-        remaining: "Hai ancora <span>%{amount}</span> da investire."
+        amount_available:
+          knapsack: "Hai ancora <span>%{count}</span> da investire."
+        amount_spent:
+          knapsack: "Importo speso <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
         no_balloted_group_yet: "Non hai ancora votato in questo gruppo, vota!"
         remove: Rimuovere il voto
         voted:
@@ -81,8 +85,13 @@ it:
           title: Ricercare
         sidebar:
           my_ballot: I miei voti
-          voted_info: È possibile %{link} in qualsiasi momento fino alla fine di questa fase. Non è necessario spendere tutti i fondi disponibili.
-          voted_info_link: cambiare il tuo voto
+          voted_info:
+            knapsack:
+              one: "<strong>Hai votato una proposta con un costo di %{amount_spent}</strong>"
+              other: "<strong>Hai votato %{count} proposte con un costo di %{amount_spent}</strong>"
+          change_vote_info:
+            knapsack: "Puoi %{link} quando vuoi fino alla chiusura di questa fase. Non c'è bisogno di spendere tutte le monete disponibili."
+          change_vote_link: "cambia il tuo voto"
           change_ballot: "Se cambi idea è possibile cancellare il tuo voto in %{check_ballot} e ricominciare da capo."
           check_ballot_link: "controllare il mio voto"
           zero: Non hai ancora votato nessun progetto di investimento in questo gruppo.

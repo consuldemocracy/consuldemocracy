@@ -1,14 +1,14 @@
 class AddBudgetGroupTranslations < ActiveRecord::Migration[4.2]
-  def self.up
-    Budget::Group.create_translation_table!(
-      {
-        name: :string
-      },
-      { migrate_data: true }
-    )
-  end
+  def change
+    create_table :budget_group_translations do |t|
+      t.integer :budget_group_id, null: false
+      t.string :locale, null: false
+      t.timestamps null: false
 
-  def self.down
-    Budget::Group.drop_translation_table!
+      t.string :name
+
+      t.index :budget_group_id
+      t.index :locale
+    end
   end
 end

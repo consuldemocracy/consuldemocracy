@@ -1,1 +1,561 @@
 mk:
+  attributes:
+    geozone_id: "Опсег на операцијата"
+    results_enabled: "Покажи резултати"
+    stats_enabled: "Покажи статистики"
+    advanced_stats_enabled: "Покажи напредни статистики"
+  activerecord:
+    models:
+      activity:
+        one: "активност"
+        other: "активности"
+      budget:
+        one: "Буџет"
+        other: "Буџет"
+      budget/investment:
+        one: "Инвестиции"
+        other: "Инвестиции"
+      milestone:
+        one: "пресвртница"
+        other: "пресвртница"
+      milestone/status:
+        one: "Статус на пресвртница"
+        other: "Статус на пресвртница"
+      progress_bar:
+        one: "Стапка на прогрес"
+        other: "Стапка на прогрес"
+      comment:
+        one: "Коментар"
+        other: "Коментирај"
+      debate:
+        one: "Дебата"
+        other: "Дебати"
+      tag:
+        one: "Таг"
+        other: "Тагови"
+      user:
+        one: "Корисник"
+        other: "Корисници"
+      moderator:
+        one: "Модератор"
+        other: "Модератори"
+      administrator:
+        one: "Администратор"
+        other: "Администратори"
+      valuator:
+        one: "Вреднувач"
+        other: "Вреднувач"
+      valuator_group:
+        one: "Група на вреднувачи"
+        other: "Група на вреднувачи"
+      manager:
+        one: "Менаџер"
+        other: "Менаџер"
+      newsletter:
+        one: "Билтен"
+        other: "Билтен"
+      vote:
+        one: "Гласања"
+        other: "Гласање"
+      organization:
+        one: "Организација"
+        other: "Органзација"
+      poll/booth:
+        one: "кабина"
+        other: "кабина"
+      poll/officer:
+        one: "офицер"
+        other: "офицер"
+      poll/ballot_sheet:
+        one: Гласачко ливче
+        other: Гласачко ливче
+      proposal:
+        one: "Граѓански предлог"
+        other: "Граѓански предлог"
+      site_customization/page:
+        one: Стилизирана страница
+        other: Стилизирана страница
+      site_customization/image:
+        one: Стилизирана слика
+        other: Стилизирана слика
+      site_customization/content_block:
+        one: Стилизиран блок на содржини
+        other: Стилизиран блок на содржини
+      document:
+        one: Документ
+        other: Документ
+      legislation/process:
+        one: "Процес"
+        other: "Процес"
+      legislation/proposal:
+        one: "Предлог"
+        other: "Предлог"
+      legislation/draft_versions:
+        one: "Нацрт верзија"
+        other: "Нацрт верзија"
+      legislation/questions:
+        one: "Прашање"
+        other: "Прашање"
+      legislation/question_options:
+        one: "Опции за прашање"
+        other: "Опции за прашање"
+      legislation/answers:
+        one: "Одговор"
+        other: "Одговори"
+      documents:
+        one: "Документ"
+        other: "Документи"
+      images:
+        one: "Слика"
+        other: "Слики"
+      topic:
+        one: "Тема"
+        other: "Теми"
+      poll:
+        one: "Анкета"
+        other: "Анкети"
+      proposal_notification:
+        one: "Предлог нотификација"
+        other: "Предлог нотификации"
+      dashboard/action:
+        one: Табла на акции за предлог
+        other: Табла на акции за предлози
+      dashboard/administrator_task:
+        one: Задача
+        other: Задачи
+      link:
+        one: Линк
+        other: Линкови
+      local_census_record:
+        one: Досие од локален попис
+        other: Досиеjа од локален попис
+    attributes:
+      budget:
+        name: "Име"
+        description_accepting: "Опис при фаза на прифаќање"
+        description_reviewing: "Опис при фаза на ревизија"
+        description_selecting: "Опис при фаза на селекција"
+        description_valuating: "Опис при фаза на вреднување"
+        description_balloting: "Опис при фаза на вреднување"
+        description_reviewing_ballots: "Опис при фаза на ревизија"
+        description_finished: "Опис кога буџетот е потрошен"
+        phase: "Фаза"
+        currency_symbol: "Валута"
+      budget/translation:
+        name: "Име"
+      budget/investment:
+        heading_id: "Наслов"
+        title: "Наслов"
+        description: "Опис"
+        external_url: "Линк до дополнителна документација"
+        administrator_id: "Администратор"
+        location: "Дополнително инфо за локациј"
+        organization_name: "Ако предлагате во име на колектив/организација, или во име на повеќе луѓе, наведете име на колективот"
+        image: "Описна слика на предлогот"
+        image_title: "Наслов на слика"
+        duration: "Временски рок"
+        feasibility_feasible: "Изводливо"
+        feasibility_undecided: "Недефинирано"
+        feasibility_unfeasible: "Неизводливо"
+        incompatible: "Обележи како некомпатибилно"
+        milestone_tag_list: "Статус на пресвртница"
+        price_explanation: "Објаснување на цена"
+        selected: "Обележи како селектирано"
+        selected_true: "Селектирано"
+        selected_false: "Неселектирано"
+        unfeasibility_explanation: "Објаснување за изводливост"
+        valuation_finished: "Завршено вреднување"
+        valuator_ids: "Групи"
+        valuation_tag_list: "Тагови"
+      budget/investment/translation:
+        title: "Наслов"
+        description: "Опис"
+      geozone:
+        name: Име
+        external_code: "Надворешен код (опционално)"
+        census_code: "Цензус код (опционално)"
+        html_map_coordinates: "ХТМЛ <map> Координати (опционално)"
+      milestone:
+        status_id: "Моментален статус (опционално)"
+        title: "Наслов"
+        description: "Опис (опционално ако има назначен статус)"
+        publication_date: "Датум"
+      milestone/translation:
+        description: "Опис"
+      milestone/status:
+        name: "Име"
+        description: "Опис (опционално)"
+      progress_bar:
+        kind: "Тип"
+        title: "Наслов"
+        percentage: "Моментален прогрес"
+      progress_bar/kind:
+        primary: "Примарен"
+        secondary: "Секундарен"
+      budget/group:
+        max_votable_headings: "Максимум на наслови во кои корисникот може да гласа"
+      budget/group/translation:
+        name: "Име на група"
+      budget/heading:
+        allow_custom_content: "Дозволи блокирање на содржини"
+        latitude: "Ширина (по избор)"
+        longitude: "Должина (по избор)"
+        name: "Име на наслов"
+        price: "Количина"
+        population: "Популација (по избор)"
+      budget/heading/translation:
+        name: "Име на наслов"
+      budget/phase:
+        enabled: "Овозможена фаза"
+        ends_at: "Краен датум"
+        starts_at: "Почетен датум"
+      budget/phase/translation:
+        description: "Опис"
+        summary: "Краток опис"
+      comment:
+        body: "Коментирај"
+        user: "Корисник"
+      debate:
+        author: "Автор"
+        description: "Став"
+        tag_list: "Теми"
+        terms_of_service: "Правила на користење"
+        title: "Наслов"
+      debate/translation:
+        title: "Наслов на дебата"
+        description: "Почетен текст за дебата"
+      proposal:
+        author: "Автор"
+        title: "Наслов"
+        question: "Прашање"
+        description: "Опис"
+        responsible_name: "Целосно име на личноста што го поднесува предлогот"
+        retired_reason: "Причина за затварање на предлогот"
+        selected: "Обележи како селектирано"
+        terms_of_service: "Правила на користење"
+        video_url: "УРЛ на надворешно видео"
+      proposal/translation:
+        title: "Наслов на предлогот"
+        description: "Текст на предлогот"
+        summary: "Краток опис на предлогот"
+        retired_explanation: "Објаснување"
+      user:
+        login: "Електронска адреса или корисничко име"
+        email: "Електронска адреса"
+        username: "Корисничко име"
+        password_confirmation: "Потврда на лозинка"
+        password: "Лозинка"
+        current_password: "Сегашна лозинка"
+        email_digest: "Прими краток опис на нотификации за предлози"
+        email_on_comment: "Прати ми нотификација на електронска адреса кога некој коментира на моите предлози или дебати"
+        email_on_comment_reply: "Прати ми нотификација на електронска адреса кога некој реплицира на моите коментари"
+        email_on_direct_message: "Доби мејл за директни пораки"
+        newsletter: "Доби релевантни информации за вебсајтот преку електронска пошта"
+        official_position: "Официјална позиција"
+        official_position_badge: "Покажи беџ на официјална позиција"
+        official_level: "Официјално ниво"
+        phone_number: "Телефонски број"
+        public_activity: "Одржувај ја јавно мојата листа на активности"
+        public_interests: "Зачувај ги јавни назнаките на елементите кои ги следам"
+        recommended_debates: "Покажи препораки за дебати"
+        recommended_proposals: "Покажи препораки за предлози"
+        redeemable_code: "Верификациски код примен преку електронска пошта"
+      direct_message:
+        title: "Наслов"
+        body: "Порака"
+      organization:
+        name: "Име на организацијата"
+        responsible_name: "Личност одговорна за групата"
+      poll:
+        name: "Име"
+        starts_at: "Почетен датум"
+        ends_at: "Краен датум"
+        geozone_restricted: "Ограничено од геозона"
+        summary: "Краток опис"
+        description: "Опис"
+      active_poll/translation:
+        description: "Опис"
+      poll/booth:
+        name: "Име"
+        location: "Локација"
+      poll/translation:
+        name: "Име"
+        summary: "Краток опис"
+        description: "Опис"
+      poll/question:
+        poll_id: "Анкета"
+        title: "Прашање"
+        summary: "Краток опис"
+        description: "Опис"
+        external_url: "Линк до дополнителна документација"
+      poll/question/translation:
+        title: "Прашање"
+      poll/ballot_sheet:
+        data: ЦСВ податоци
+        poll_id: Анкета
+        officer_assignment_id: Одреди офицер
+      poll/shift:
+        task: "Задача"
+      proposal_notification:
+        body: "Порака"
+        title: "Наслов"
+      signature_sheet:
+        title: "Наслов"
+        signable_type: "Тип за потпис"
+        signable_id: "Идентификација за потпис"
+        document_numbers: "Број на документ"
+      site_customization/page:
+        content: Содржина
+        created_at: Креирано на
+        subtitle: Превод
+        slug: Опис на дел од УРЛ
+        status: Статус
+        status_draft: "Нацрт текст"
+        status_published: "Објавено"
+        title: Наслов
+        updated_at: Ажурирано на
+        more_info_flag: Покажи на страната за помош
+        print_content_flag: Испечати копче за содржина
+        locale: Јазик
+      site_customization/page/translation:
+        title: Наслов
+        subtitle: Превод
+        content: Содржина
+      site_customization/image:
+        name: Име
+        image: Слика
+      site_customization/content_block:
+        name: Име
+        locale: локал
+        body: Тело на текстот
+      tag:
+        name: "Напиши име на темата"
+      topic:
+        title: "Наслов"
+        description: "Првичен текст"
+      banner:
+        background_color: Боја на позадина
+        font_color: Боја на фонт
+        post_ended_at: "Пост завршува на"
+        post_started_at: "Пост започнува на"
+        target_url: "Линк"
+      banner/translation:
+        title: "Наслов"
+        description: "Опис"
+      legislation/process:
+        title: Наслов на процес
+        summary: Краток опис
+        description: Опис
+        additional_info: Дополнително инфо
+        start_date: Почеток
+        end_date: Крај
+        debate_start_date: Почеток
+        debate_end_date: Крај
+        draft_start_date: Почеток
+        draft_end_date: Крај
+        draft_publication_date: Датум за објавување на нацрт текстот
+        allegations_start_date: Почеток
+        allegations_end_date: Крај
+        proposals_phase_start_date: Почеток
+        proposals_phase_end_date: Крај
+        result_publication_date: Датум за конечно објавување на резултати
+        background_color: Боја на позадина
+        font_color: Боја на фонт
+        homepage_enabled: "Почетна страница овозможена"
+      legislation/process/translation:
+        title: Наслов на процес
+        summary: Краток опис
+        description: Опис
+        additional_info: Дополнително инфо
+        homepage: "Опис"
+        milestones_summary: Краток опис
+      legislation/proposal:
+        description: "Текст на предлогот"
+        summary: "Краток опис на предлогот"
+        title: "Наслов на предлогот"
+        video_url: "Линк до надворешно видео"
+      legislation/draft_version:
+        title: Наслов на верзија
+        body: Текст
+        changelog: Промени
+        status: Статус
+        status_draft: "Нацрт текст"
+        status_published: "Објавено"
+        final_version: Конечна верзија
+      legislation/draft_version/translation:
+        title: Наслов на верзија
+        body: Текст
+        changelog: Промени
+      legislation/question:
+        title: Наслов
+        question_options: Опции
+      legislation/question/translation:
+        title: Прашање
+      legislation/question_option:
+        value: Вредност
+      legislation/annotation:
+        text: Коментар
+      document:
+        title: Наслов
+        attachment: "Избери документ"
+      image:
+        title: Наслов
+        attachment: "Избери слика"
+      poll/question/answer:
+        title: Одговор
+        description: Опис
+      poll/question/answer/translation:
+        title: Одговор
+        description: Опис
+      poll/question/answer/video:
+        title: Наслов
+        url: Надворешно видео
+      newsletter:
+        segment_recipient: Примачи
+        subject: Предмет
+        from: "Електронска адреса која ќе се појави при испраќање на билтен"
+        body: Содржина на електронска пошта
+      admin_notification:
+        segment_recipient: Примачи
+        title: Наслов
+        link: Линк
+        body: Текст
+      admin_notification/translation:
+        title: Наслов
+        body: Текст
+      widget/card:
+        label: Назнака (опционално)
+        title: Наслов
+        description: Опис
+        link_text: Текст на линк
+        link_url: УРЛ на линк
+        columns: Број на колони
+      widget/card/translation:
+        label: Назнака (опционално)
+        title: Наслов
+        description: Опис
+        link_text: Текст на линк
+      widget/feed:
+        limit: Број на предмети
+      dashboard/action:
+        title: Наслов
+        short_description: Краток опис
+        description: Опис
+        link: Надворешен линк
+        request_to_administrators: Вклучи во ресурсот копче за барање на ресурс од администратори
+        day_offset: Колку денови по креирање на предлогот сакате да биде активиран?
+        required_supports: Колку поддршка треба предлогот да добие за да биде активиран?
+        order: Можете да ја додадете позицијата каде оваа акција ќе му биде покажана на корисникот на листата на акции
+        active: Активно
+        action_type: Тип
+        action_type_proposed_action: "Предлог акција"
+        action_type_resource: "Ресурси"
+        published_proposal: "За објавени предлози?"
+      dashboard/administrator_task:
+        source: Извор
+        user: Извршено од страна на
+      link:
+        label: Наслов
+        url: Линк
+      valuator:
+        description: Опис
+        valuator_group_id: Група на вреднувачи
+        can_comment: Може да коментира
+        can_edit_dossier: Може да променува досиеа
+      valuator_group:
+        name: "Име на група"
+      local_census_record:
+        document_type: Вид на документ
+        document_number: Број на документ
+        date_of_birth: Датум на раѓање
+        postal_code: Поштенски код
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Корисникот веќе има лозинка"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "таговите мораат да бидат помали или еднакви на %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Ја достигнавте максималната бројка на приватни пораки на ден"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Ширината на сликата мора да биде најмалку %{required_min_width}"
+              min_image_height: "Висината на сликата мора да биде најмалку %{required_min_height}"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Сегментот на корисници што примаат не е валиден"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Сегментот на корисници што примаат не е валиден"
+        map_location:
+          attributes:
+            map:
+              invalid: Локацијата на мапата не може да биде празна. Поставете означувач или изберете од опциите ако геолокализација не е потребна
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Документот не е во цензусот"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: мора да биде на или по почетниот датум
+            debate_end_date:
+              invalid_date_range: мора да биде на или по почетниот датум на дебата
+            draft_end_date:
+              invalid_date_range: мора да биде на или по почетниот датум на нацрт текстот
+            allegations_end_date:
+              invalid_date_range: мора да биде на или по почетниот датум на коментарите
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: не е вклучен на листата, дозволени вредности се 1 за лична карта, 2 за пасош и 3 за резиденциска картичка.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "таговите мораат да бидат помалку или еднакви на %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "таговите мораат да бидат помалку или еднакви на %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Мора да почекате минимум %{interval} денови помеѓу нотификациите"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Не е верификувано од Цензус"
+              already_voted: "Веќе гласано околу предлогот"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "мора да биде букви, бројки _ и -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Ширината мора да биде %{required_width}пиксели"
+              image_height: "Висината мора да биде %{required_height} пиксели"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Не може да коментирате вреднување"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Ресурсот е веќе преведен
+      messages:
+        translations_too_short: Задолжително е потребен барем еден превод
+        record_invalid: "Неуспешна валидација: %{errors}"
+        another_poll_active: Уште една анкета е активна за овој период
+        restrict_dependent_destroy:
+          has_one: "Досието не може да се избрише затоа што постои поврзано%{record}"
+          has_many: "Досието не може да се избрише затоа што постои поврзано%{record}"

@@ -9,6 +9,7 @@ ca:
         display_entries: Mostrant <b>%{first}&nbsp;-&nbsp;%{last}</b> de un total de <b>%{total}</b> %{entry_name}
       one_page:
         display_entries:
+          zero: "%{entry_name} no es pot trobar"
           one: Hi ha <b>1</b> %{entry_name}
           other: Hi ha <b> %{count}</b> %{entry_name}
   views:
@@ -18,3 +19,4 @@ ca:
       last: Última
       next: Seguent
       previous: Anterior
+      truncate: "&hellip;"

@@ -1,113 +1,1041 @@
 eu:
   admin:
+    header:
+      title: Administrazioa
+    actions:
+      actions: Ekintzak
+      confirm: Ziur zaude?
+      confirm_hide: Baieztatu moderaketa
+      hide: Ezkutatu
+      hide_author: Sortzailea blokeatu
+      restore: Berriz erakutsi
+      mark_featured: Nabarmendu
+      unmark_featured: Nabarmendutakoa kendu
+      edit: Editatu
+      configure: Configurar
+      delete: Ezabatu
+    banners:
+      index:
+        title: Bannerrak
+        create: Bannerra
+        edit: Bannerra editatu
+        delete: Bannerra ezabatu
+        filters:
+          all: Guztiak
+          with_active: Aktiboak
+          with_inactive: Ez aktiboak
+        preview: Aurreikuspena
+      banner:
+        sections_label: Agertzen diren sailak
+        sections:
+          homepage: Homepage
+          debates: Eztabaidak
+          proposals: Proposamenak
+          budgets: Partaidetzazko aurrekontuak
+          help_page: Laguntza orria
+      edit:
+        editing: Bannerra editatu
+        form:
+          submit_button: Aldaketak gorde
+      new:
+        creating: Bannerra sortu
+    activity:
+      show:
+        action: Ekintza
+        actions:
+          block: Blokeatuta
+          hide: Ezkutatuta
+          restore: Zaharberrituta
+        by: 'Moderatzailea:'
+        content: Edukia
+        filter: Erakutsi
+        filters:
+          all: Guztia
+          on_comments: Iruzkinak
+          on_debates: Eztabaidak
+          on_proposals: Proposamenak
+          on_users: Erabiltzaileak
+        title: Moderatzaileen aktibitatea
+        type: Mota
+        no_activity: Ez dago moderatzaileen jarduerarik.
     budgets:
       index:
+        title: Partaidetzazko aurrekontuak
+        new_link: Aurrekontu berria sortu
+        filter: Iragazkia
+        filters:
+          open: Irekiak
+          finished: Amaitutakoak
+        budget_investments: Gastu proiektuak kudeatu
         table_name: Izena
+        table_phase: Fasea
+        table_investments: Gastu proiektuak
+        table_edit_groups: Sail taldeak
+        table_edit_budget: Editatu
+        edit_groups: Sail taldeak editatu
+        edit_budget: Aurrekontua editatu
+      create:
+        notice: Partaidetzazko aurrekontuak ondo sortuta!
+      update:
+        notice: Partaidetzazko aurrekontuak eguneratuta
+      edit:
+        title: Partaidetzazko aurrekontuak editatu
+        delete: Aurrekontua ezabatu
+        phase: Fasea
+        dates: Datak
+        enabled: Gaituta
+        actions: Ekintzak
+        edit_phase: Editatu fasea
+        active: Aktibatuta
+        blank_dates: Data gabe
+      destroy:
+        success_notice: Aurrekontua ondo ezabatuta
+        unable_notice: Ezin da ezabatu proiektuak elkartuta dituen aurrekonturik.
+      new:
+        title: Herri aurrekontu berria
+      winners:
+        calculate: Proposamen irabazleak kalkulatu
+        calculated: Irabazleak kalkulatzen, minutu bat tarda dezake.
+        recalculate: Proposamen irabazleak berriz kalkulatu
     budget_groups:
       name: "Izena"
+    budget_phases:
+      edit:
+        summary_help_text: Testu honek erabiltzailea faseari buruz informatuko du. Erakuzteko, nahiz eta aktibatuta ez egon, beheko aukera markatu.
+        description_help_text: Testu hau goiburuan agertuko da fasea aktibatuta dagoenenan.
+        enabled_help_text: Fase hau aurrekontu faseen egutegian publikoa izango da eta beste asmo batzuentzako aktibatuta egongo da.
+        save_changes: Aldaketak gorde
+    budget_investments:
+      index:
+        heading_filter_all: Aurrekontu sail guztiak
+        administrator_filter_all: Administratzaile guztiak
+        valuator_filter_all: Ebaluatzaile guztiak
+        tags_filter_all: Etiketa guztiak
+        advanced_filters: Iragazki aurreratuak
+        placeholder: Proiektuak bilatu
+        filters:
+          all: Guztiak
+          without_admin: Administratzaile gabe
+          without_valuator: Ebaluatzaile gabe
+          under_valuation: Ebaluazioan
+          valuation_finished: Ebaluaketa amaituta
+          feasible: Bideragarriak
+          selected: Hautatutakoak
+          undecided: Erabaki gabe
+          unfeasible: Bideraezinak
+          winners: Irabazleak
+        buttons:
+          filter: Iragazi
+        download_current_selection: "Hautatutakoa deskargatu"
+        no_budget_investments: "Ez dago gastu proiekturik."
+        title: Gastu proiektuak
+        assigned_admin: Administratzailea esleituta
+        no_admin_assigned: Administratzailea esleitu gabe
+        no_valuators_assigned: Ebaluatzaile gabe
+        feasibility:
+          feasible: "Bideragarria (%{price})"
+          unfeasible: "Bideraezina"
+          undecided: "Erabaki gabe"
+        selected: "Aukeratuta"
+        select: "Aukeratu"
+        cannot_calculate_winners: Irabazi duten aurrekontuak kalkulatzeko, aurrekontuak "Azken bozkaketa", Bozkaketa amaituta" ala "Emaitzak" fasean egon behar dira.
+        see_results: "Emaitzak ikusi"
+      show:
+        assigned_admin: Administratzailea esleituta
+        assigned_valuators: Ebaluatzaileak esleituta
+        classification: Sailkapena
+        info: "%{budget_name} - Taldea: %{group_name} - %{id} gastu proiektua"
+        edit: Editatu
+        edit_classification: Sailkapena editatu
+        by: Sortzailea
+        sent: Data
+        group: Taldea
+        heading: Aurrekontu saila
+        dossier: Txostena
+        edit_dossier: Txostena editatu
+        tags: Etiketak
+        undefined: Zehaztu gabe
+        compatibility:
+          title: Bateragarritasuna
+          "true": Bateraezina
+          "false": Compatible
+        selection:
+          title: Aukera
+        winner:
+          title: Irabazlea
+          "true": "Bai"
+          "false": "Ez"
+        valuator_groups: "Ebaluatzaile taldeak"
+      edit:
+        classification: Sailkapena
+        compatibility: Bateragarritasuna
+        selection: Aukeraketa
+        assigned_valuators: Ebaluatzaileak
+        select_heading: Aurrekontu saila aukertu
+        submit_button: Eguneratu
+        user_tags: Erabiltzaileak esleitutako etiketak
+        tags_placeholder: "Nahi dituzun etiketak koma artean idatzi behar dituzu (',')"
+        undefined: Zehaztu gabe
+      search_unfeasible: Bideragarriezinak bilatu
     milestones:
       index:
+        table_id: "ID"
+        table_title: "Izenburua"
+        table_description: "Deskribapena"
+        table_publication_date: "Argitaratze data"
+        table_status: Egoera
+        table_actions: "Ekintzak"
+        delete: "Une gogoangarria ezabatu"
+        no_milestones: "Ez dira une gogoangarririk zehaztu"
         image: "Irudia"
+        show_image: "Irudia erakutsi"
         documents: "Dokumentuak"
+      form:
+        admin_statuses: Proiektu egoerak kudeatu
+        no_statuses_defined: Ez da egoerarik definitu
+      new:
+        creating: Une gogoangarria sortu
+      edit:
+        title: Une gogoangarria editatu
+      create:
+        notice: Une gogoangarri berria ondo sortu da!
+      update:
+        notice: Une gogoangarria eguneratuta
+      delete:
+        notice: Une gogoangarria ondo ezabatu da
     statuses:
       index:
+        title: Proiektu egoerak
+        empty_statuses: Oraindik ez da proiektu egoerarik sortu
+        new_status: Proiektu egoera berria sortu
         table_name: Izena
+        table_description: Deskribapena
+        table_actions: Ekintzak
+        delete: Ezabatu
+        edit: Editatu
+      edit:
+        title: Proiektu egoera editatu
+      update:
+        notice: Proiektu egoera ondo editatu da
+      new:
+        title: Proiektu egoera sortu
+      create:
+        notice: Proiektu egoera ondo sortu da
+      delete:
+        notice: Proiektu egoera ondo ezabatu da
+    comments:
+      index:
+        title: Ezkutatutako iruzkinak
+    dashboard:
+      index:
+        back: '%{org}-(e)ra itzuli'
+        title: Administrazioa
+        description: Ondo etorri %{org} administrazio panelera.
+    debates:
+      index:
+        title: Ezkutatutako eztabaidak
     hidden_users:
       index:
+        filter: Iragazkia
+        filters:
+          all: Guztiak
+          with_confirmed_hide: Baieztatukoak
+          without_confirmed_hide: Egiteke
+        title: Bloketautako erabiltzaileak
         user: Erabiltzailea
+        no_hidden_users: Ez dago blokeatutako erabiltzailerik.
+      show:
+        email: "Emaila:"
+        hidden_at: "Blokeatuta:"
+        registered_at: "Alta data:"
+        title: Erabiltzailearen jarduera (%{user})
     legislation:
       processes:
+        create:
+          notice: 'Prosezua ondo sortuta. <a href="%{link}">Klikatu hemen ikusteko</a>'
+          error: Ezin izan da prosezua sortu
+        update:
+          notice: 'Prosezua ondo eguneratuta. <a href="%{link}">Klikatu hemen ikusteko</a>'
+          error: Ezin izan da prosezua eguneratu
+        destroy:
+          notice: Prosezua ondo ezabatuta
+        edit:
+          back: Itzuli
+          submit_button: Aldaketak gorde
+        form:
+          enabled: Habilitado
+          process: Prosezua
+          debate_phase: Eztabaida fasea
+          allegations_phase: Idazketa fasea
+          proposals_phase: Proposamen fasea
+          use_markdown: Markdown erabili testua formateatzeko
+          title_placeholder: Prosezuaren izenburua idatzi ezazu
+          summary_placeholder: Azalpenaren laburpen laburra
+          description_placeholder: Prosezuaren azalpen bat gehitu
+          additional_info_placeholder: Interesgarria izan daitekeen edozein informazio gehitu ezazu
+        index:
+          create: Prosezu berria
+          delete: Ezabatu
+          title: Partaidetzazko legegintza prosezuak
+          filters:
+            all: Guztiak
+        new:
+          back: Itzuli
+          title: Partaidetzazko legegintza prosezu berria sortu
+          submit_button: Prosezua sortu
+        process:
+          title: Prosezua
+          comments: Iruzkinak
+          status: Egoera
+          status_open: Irekita
+          status_closed: Itxita
+          status_planned: Lazter
         subnav:
+          info: Informazioa
           questions: Eztabaida
+          proposals: Proposamenak
+      proposals:
+        index:
+          title: Proposamenak
+          back: Itzuli
+        form:
+          custom_categories: Kategoriak
+          custom_categories_description: Erabiltzaileak proposamena sortzerakoan aukeratu ditzakeen kategoriak.
+      draft_versions:
+        create:
+          notice: 'Zirriborroa ondo sortuta. <a href="%{link}">Klikatu hemen ikusteko</a>'
+          error: No se ha podido crear el borrador
+        update:
+          notice: 'Borrador ondo eguneratuta. <a href="%{link}">Klikatu hemen ikusteko</a>'
+          error: Ezin izan da zirriborroa eguneratu
+        destroy:
+          notice: Zirriborroa ondo ezabatuta
+        edit:
+          back: Itzuli
+          submit_button: Aldaketak gorde
+          warning: Kontuz, testua editatu duzu. Aldaketak betirako baldin badira, ez ahaztu "Gorde" botoia sakatzea
+        form:
+          launch_text_editor: Testu editorea abiarazi
+          close_text_editor: Testu editorea itxi
+          use_markdown: Markdown erabili testua formateatzeko
+          hints:
+            final_version: Emaitzak argitaratzekoan erabiliko den bertsioa da. Bertsio hau ezin daiteke iruzkindu
+            status:
+              draft: Logeatu ezkero ikus dezakezu, inork gehiagok ezin dezake ikusi
+              published: Denek ikusi ahal izango dute
+          title_placeholder: Zirriborro bertsio honen izenburua idatzi ezazu
+          changelog_placeholder: Aurreko bertsiorekin alderatuta dagozan aldaketa nagusiak idatz itzazu
+          body_placeholder: Zirriborroaren testua idatz ezazu
+        index:
+          title: Zirriborroaren bertsioak
+          create: Bertsioa sortu
+          delete: Ezabatu
+          preview: Aurreikusi
+        new:
+          back: Itzuli
+          title: Bertsio berria sortu
+          submit_button: Bertsioa sortu
+        table:
+          title: Izenburua
+          created_at: Sortuta
+          comments: Iruzkinak
+          final_version: Azken bertsioa
+          status: Egoera
+      questions:
+        create:
+          notice: 'Galdera ondo sortuta. <a href="%{link}">Klikatu ikusteko</a>'
+          error: No se ha podido crear la pregunta
+        update:
+          notice: 'Galdera ondo eguneratuta. <a href="%{link}">Klikatu ikusteko</a>'
+          error: Ezin izan da galdera eguneratu
+        destroy:
+          notice: Galdera ondo ezabatuta
+        edit:
+          back: Itzuli
+          title: "“%{question_title}” editatu"
+          submit_button: Aldaketak gorde
+        form:
+          add_option: Erantzun itxia gehitu
+          title_placeholder: Galderaren izenburua idatz ezazu
+          value_placeholder: Erantzun itxia idatz ezazu
+          question_options: "Erantzun posibleak (aukerakoa, lehenespenez erantzun irekiak)"
+        index:
+          back: Itzuli
+          title: Prosezu honi esleitutako galderak
+          create: Galdera sortu
+          delete: Ezabatu
+        new:
+          back: Itzuli
+          title: Galder berria sortu
+          submit_button: Galdera sortu
+        table:
+          title: Izenburua
+          question_options: Erantzun aukerak
+          answers_count: Erantzun kopurua
+          comments_count: Iruzkin kopuerua
+        question_option_fields:
+          remove_option: Ezabatu
     managers:
       index:
+        title: Kudeatzaileak
         name: Izena
         email: E-mail
+        no_managers: Ez dago kudeatzailerik.
+      manager:
+        add: Kudeatzaile gisa gehitu
+        delete: Ezabatu
+      search:
+        title: "Kudeatzaileak: Erabiltzaileak bilatu"
+    menu:
+      activity: Moderatzaileen jarduera
+      admin: Administrazio menua
+      banner: Bannerrak kudeatu
+      proposals_topics: Proposatutako gaiak
+      budgets: Partaidetzazko aurrekontuak
+      geozones: Auzoak kudeatu
+      hidden_comments: Ezkutatutako iruzkinak
+      hidden_debates: Ezkutatutako eztabaidak
+      hidden_proposals: Ezkutatutako proposamenak
+      hidden_proposal_notifications: Ezkutatutako proposamen jakinarazpenak
+      hidden_users: Bloketatutako erabiltzaileak
+      administrators: Administratzaileak
+      managers: Kudeatzaileak
+      moderators: Moderatzaileak
+      newsletters: Albiste-berriak
+      emails_download: Emailak deskargatu
+      valuators: Ebaluatzaileak
+      poll_officers: Mahaiburua
+      polls: Bozkaketak
+      poll_booths: Hautetsontzien kokalekua
+      poll_booth_assignments: Hautetsontzien esleipena
+      poll_shifts: Txandak esleitu
+      officials: Kargu publikoak
+      organizations: Erakundeak
+      settings: Konfigurazio osoa
+      stats: Estatistikak
+      signature_sheets: Firma orriak
+      site_customization:
+        homepage: Orri nagusia
+        pages: Orriak pertsonalizatu
+        images: Irudiak pertsonalizatu
+        content_blocks: Blokeak pertsonalizatu
+      title_moderated_content: Moderatutako edukia
+      title_profiles: Perfilak
+      title_settings: Ezarpenak
+      title_site_customization: Lekuaren edukia
+      title_booths: Hautetsontziak
+      legislation: Partaidetzazko legeak
+      users: Erabiltzaileak
     administrators:
       index:
+        title: Administratzaileak
         name: Izena
         email: E-mail
+        no_administrators: Ez dago administratzailerik.
+      administrator:
+        add: Administratzaile gisa gehitu
+        delete: Ezabatu
+        restricted_removal: "Barkatu, baina zu (zuri) ezin zara listatik ezabatu"
+      search:
+        title: "Administratzaileak: Erabiltzaileak bilatu"
     moderators:
       index:
+        title: Moderatzaileak
         name: Izena
         email: E-mail
+        no_moderators: Ez dago moderatzailerik.
+      moderator:
+        add: Moderatzaile gisa gehitu
+        delete: Ezabatu
+      search:
+        title: "Moderatzaileak: Erabiltzaileak bilatu"
+    segment_recipient:
+      all_users: Erabiltzaile guztiak
+      administrators: Administratzaileak
+      proposal_authors: Proposamen sortzaile erabiltzaileak
+      investment_authors: Oraingo aurrekontuetako gastu proiektu sortzaile erabiltzaileak
+      feasible_and_undecided_investment_authors: "Oraingo aurrekontuetan gastu proiekturen batean baldintzak betetzen ez dituzten sortzaile erabiltzaileak: [ebaluaketa bideragarriezin amaituta]"
+      selected_investment_authors: Oraingo aurrekontuetan aukeratutako gastu proiektu sortzaile erabiltzaileak
+      winner_investment_authors: Oraingo aurrekontuetan irabazi duten gastu proiektu sortzaile erabiltzaileak
+      not_supported_on_current_budget: Oraingo aurrekontuetan proiekturik babestu ez dituzten erabiltzaileak
+      invalid_recipients_segment: "Hartzaile segmentuak ez du balio"
+    newsletters:
+      create_success: Albiste-berria ondo sortuta
+      update_success: Albiste-berria ondo eguneratuta
+      send_success: Albiste-berria ondo bidalita
+      delete_success: Albiste-berria ondo ezabatuta
+      index:
+        title: Albiste-berri bidalketa
+        new_newsletter: Albiste-berria sortu
+        subject: Gaia
+        segment_recipient: Hartzaileak
+        sent: Bidalita
+        actions: Ekintzak
+        draft: Zirriborroa
+        edit: Editatu
+        delete: Ezabatu
+        preview: Aurreikusi
+        empty_newsletters: Ez dago albiste berririk erakusteko.
+      new:
+        title: Albiste-berri berria
+      edit:
+        title: Albiste-berria editatu
+      show:
+        title: Albiste-berria aurreikusi
+        send: Bidali
+        affected_users: (%{n} erabiltzaile kaltetuta)
+        sent_at: Bidalita
+        subject: Gaia
+        segment_recipient: Hartzaileak
+        from: Albiste-berrietan bidaltzaile moduan agertuko den helbide elektronikoa
+        body: Emailaren edukia
+        body_help_text: Honela ikusiko dute emaila erabiltzaileek
+        send_alert: '¿Ziuir zauze albiste-berri hau %{n} erabiltzaileri bidali nahi diezula?'
+    emails_download:
+      index:
+        title: Emailak deskargatu
+        download_segment: Posta elektroniko helbideak deskargatu
+        download_segment_help_text: CSV formatuan deskargatu
+        download_emails_button: Email zerrenda deskargatu
     valuators:
       index:
+        title: Ebaluatzaileak
         name: Izena
         email: E-mail
+        description: Deskribapena
+        no_description: Deskribapen gabe
+        no_valuators: Ez dago ebaluatzailerik.
+        valuator_groups: "Ebaluatzaile taldea"
+        group: "Taldea"
+        no_group: "Talde gabe"
+      valuator:
+        add: Ebaluatzaile gisa gehitu
+        delete: Ezabatu
+      search:
+        title: "Ebaluatzaileak: Erabiltzaileak bilatu"
+      form:
+        edit_title: "Ebaluatzaileak: Ebaluatzailea editatu"
+        updated: "Ebaluatzailea ondo eguneratuta"
       show:
+        description: "Deskribapena"
         email: "E-mail"
+        group: "Taldea"
+        no_description: "Deskribapen gabe"
+        no_group: "Talde gabe"
     valuator_groups:
       index:
+        title: "Ebaluatzaile taldeak"
+        new: "Ebaluatzaile taldea sortu"
         name: "Izena"
+        members: "Kideak"
+        no_groups: "Ez dago ebaluatzaile talderik"
+      show:
+        title: "Ebaluatzaile taldea: %{group}"
+        no_valuators: "Ez dago talde honetara esleitutako ebaluatzailerik"
+      form:
+        new: "Ebaluatzaile taldea sortu"
+        edit: "Ebaluatzaile taldea gorde"
     poll_officers:
+      index:
+        title: Mahaiburua
       officer:
+        add: Mahaiburu gisa gehitu
+        delete: Ezabatu cargo
         name: Izena
         email: E-mail
+        entry_name: Mahaiburua
+      search:
+        email_placeholder: Email bidez erabiltzailea bilatu
+        search: Bilatu
+        user_not_found: Ez da erabiltzailerik bilatu
     poll_officer_assignments:
       index:
+        officers_title: "Esleitutako mahaiburu zerrenda"
+        no_officers: "Bozkaktea honetarako ez da mahaibururik esleitu."
         table_name: "Izena"
         table_email: "E-mail"
+      by_officer:
+        date: "Data"
+        booth: "Hautetsontzia"
+        assignments: "Bozkaktea honetarako mahaiburu txandak"
+        no_assignments: "Ez duzu mahaiburu txandarik bozkaktea honetarako."
     poll_shifts:
       new:
+        add_shift: "Txanda gehitu"
+        shift: "Esleipena"
+        shifts: "Hautetsontzi honetarako txandak"
+        date: "Data"
+        edit_shifts: Txanda esleitu
+        new_shift: "txanda berria"
+        no_shifts: "Hautetsontzi honek ez du txandarik esleituta"
+        officer: "Mahaiburua"
+        remove_shift: "Txanda ezabatu"
+        search_officer_button: Bilatu
+        search_officer_placeholder: Mahaiburuak bilatu
+        search_officer_text: Txanda esleitzeko mahaiburua bilatu
+        select_date: "Eguna aukeratu"
+        no_voting_days: "Bozka egunak amaitu dira"
+        select_task: "Zeregina aukeratu"
+        table_shift: "Txanda"
         table_email: "E-mail"
         table_name: "Izena"
+      flash:
+        create: "Mahaiburu txanda gehituta"
+        destroy: "Mahaiburu txanda ezabatuta"
+        date_missing: "Data bat aukeratu behar da"
+      vote_collection: Bozkak jaso
+      recount_scrutiny: Zenbaketa eta eskrutinioa
+    booth_assignments:
+      manage_assignments: Esleipenak kudeatu
+      manage:
+        assignments_list: "Bozka esleipenak '%{poll}'"
+        status:
+          assign_status: Esleipenak
+          assigned: Esleituta
+          unassigned: Esleitu gabe
+        actions:
+          assign: Hautetsontzia esleipenak
+          unassign: Hautetsontzia esleitu
     poll_booth_assignments:
+      alert:
+        shifts: "Hautetsontzi honek txandak esleituta ditu. Esleitu ezkero, txanda horrek ezabatu egingo dira. Jarraitu nahi duzu?"
+      show:
+        location: "Kokapena"
+        officers: "Mahaiburua"
+        officers_list: "Hatetontsi honetan esleitutako mahaiburu zerrenda"
+        no_officers: "Hatetontsi honetarako ez dago mahaibururik"
+        recounts: "Zenbaketak"
+        recounts_list: "Hatetontsi honetako zenbaketa zerrenda"
+        results: "Emaitzak"
+        date: "Data"
+        count_final: "Azken zenbaketa (mahaiburua)"
+        count_by_system: "Bozkak (automatikoa)"
+        total_system: Metatutako bozkak guztira (automatikoa)
       index:
+        booths_title: "Esleitutako hautetsontzi zerrenda"
+        no_booths: "Bozkaketa honetan ez da hautetsontzirik esleitu."
         table_name: "Izena"
+        table_location: "Kokapena"
     polls:
       index:
+        title: "Bozkaketa aktiboen zerrenda"
+        no_polls: "Ez dago bozkaketarik lazter."
+        create: "Bozkaketa sortu"
         name: "Izena"
+        dates: "Datak"
+        geozone_restricted: "Auzoetara mugatuta"
+      new:
+        title: "Bozkaketa berria"
+        submit_button: "Bozkaketa sortu"
+      edit:
+        title: "Bozkaketa editatu"
+        submit_button: "Bozkaketa eguneratu"
       show:
         questions_tab: Galderak
+        booths_tab: Hautetsontziak
+        officers_tab: Mahaiburua
+        recounts_tab: Zenbaketak
+        results_tab: Emaitzak
+        no_questions: "Bozkaketa honi ez zaio galderarik esleitu."
+        questions_title: "Esleitutako galdera zerrenda"
+        table_title: "Izenburua"
+      flash:
+        question_added: "Bozkaketa honi gehitutako galdera"
+        error_on_question_added: "Ezin izan da galdera esleitu"
     questions:
       index:
         title: "Galderak"
+        create: "Herri galdera sortu"
+        no_questions: "Ez dago herri galderarik."
+        filter_poll: Bozkaketaz iragazi
+        select_poll: Bozkaketa aukeratu
         questions_tab: "Galderak"
+        successful_proposals_tab: "Atalasea gainditu duten proposamenak"
+        create_question: "Galdera bat sortu bozkaketarako"
+        table_proposal: "Proposamena"
         table_question: "Galdera"
+      edit:
+        title: "Herri galdera editatu"
+      new:
+        title: "Herri galdera sortu"
+      answers:
+        images:
+          add_image: "Irudia gehitu"
+          save_image: "Irudia gorde"
       show:
+        proposal: Jatorrizko herri proposamena
+        author: Sortzailea
         question: Galdera
+        edit_question: Galdera editatu
+        valid_answers: Erantzun onargarriak
+        add_answer: Erantzuna gehitu
+        video_url: Kanpo bideoa
         answers:
           title: Erantzuna
+          description: Deskribapena
+          videos: Bideoak
+          video_list: Bideo zerrenda
           images: Irudiak
+          images_list: Irudi zerrenda
           documents: Dokumentuak
+          documents_list: Agiri zerrenda
+          document_title: Izenburua
+          document_actions: Ekintzak
     answers:
+      new:
+        title: Erantzun berria
       show:
+        title: Izenburua
+        description: Deskribapena
         images: Irudiak
+        images_list: Irudi zerrenda
+        edit: Erantzuna editatu
+      edit:
+        title: Erantzuna editatu
+      videos:
+        index:
+          title: Bideoak
+          add_video: Bideoa gehitu
+          video_title: Izenburua
+          video_url: Kanpo bideoa
+        new:
+          title: Bideo berria
+        edit:
+          title: Bideoa editatatu
+    recounts:
+      index:
+        title: "Zenbaketak"
+        no_recounts: "Ez dago zebatzeko ezer"
+        table_booth_name: "Hautetsontzia"
+        table_total_recount: "Zenbaketa guztira (mahaiburua)"
+        table_system_count: "Bozkak (automatikoa)"
     results:
+      index:
+        title: "Emaitzak"
+        no_results: "Ez dago emaitzik"
       result:
+        table_whites: "Bozka zuriak"
+        table_nulls: "Baliogabeko bozkak"
+        table_total: "Bozkak guztira"
         table_answer: Erantzuna
+        table_votes: Bozkak
+      results_by_booth:
+        booth: Hautetsontzia
+        results: Emaitzak
+        see_results: Emaitzak ikusi
+        title: "hautetsontzia bakoitzeko emaitzak"
     booths:
       index:
+        title: "Hautetsontzi aktiboen zerrenda"
+        no_booths: "Ez dago hautetsontzi aktiborik hureengo bozkaketarako."
+        add_booth: "Hautetsontzia gehitu"
         name: "Izena"
+        location: "Kokapena"
+        no_location: "Kokapen gabe"
+      new:
+        title: "Hautetsontzi berria"
+        submit_button: "Hautetsontzia sortu"
+      edit:
+        title: "Hautetsontzia editatu"
+        submit_button: "Hautetsontzia eguneratu"
+      show:
+        location: "Kokapena"
+      booth:
+        shifts: "Txandak esleitu"
+        edit: "Hautetsontzia editatu"
     officials:
+      edit:
+        destroy: '''Kargu publiko'' kondizioa ezabatu'
+        title: "Kargu publikoak: Erabiltzailea editatu"
+      flash:
+        official_destroyed: "Datuak gordeta: Erabiltzailea jada ez da kargu publikoa"
+        official_updated: Kargu publikoaren datuak gordeta
       index:
+        title: Kargu publikoak
+        no_officials: Ez dago kargu publikorik.
         name: Izena
+        official_position: Kargu publikoa
+        official_level: Maila
+      level_0: Ez da kargu publikoa
+      level_1: 1.go maila
+      level_2: 2. maila
+      level_3: 3. maila
+      level_4: 4. maila
+      level_5: 5. maila
+      search:
+        edit_official: Kargu publikoa editatu
+        make_official: Kargu publikoan bilakatu
+        title: "Kargu publikoak: Erabiltzaileen bilaketa"
+        no_results: Ez da kargu publikorik bilatu.
     organizations:
       index:
+        filter: Iragazkia
+        filters:
+          all: Guztiak
+          pending: Egiteke
+          rejected: Baztertutakoak
+          verified: Egiaztatuak
         name: Izena
         email: E-mail
+        phone_number: Telefonoa
+        responsible_name: Arduraduna
+        status: Egoera
+        no_organizations: Ez dago erakunderik.
+        reject: Baztertu
+        rejected: Baztertuta
+        search: Bilatu
+        search_placeholder: Izena, emaila edo telefonoa
+        title: Erakundeak
+        verified: Egiaztatuta
+        verify: Egiaztatu
+        pending: Pendiente
+      search:
+        title: Erakundeak bilatu
+        no_results: Ez da erakunderik bilatu.
+    proposals:
+      index:
+        title: Ezkutatutako proposamenak
+    settings:
+      flash:
+        updated: Balorea eguneratuta
+      index:
+        title: Konfigurazio osoa
+        update_setting: Eguneratu
+        feature_flags: Funtzionaltasunak
+        features:
+          enabled: "Funtzionaltasuna aktibatuta"
+          disabled: "Funtzionaltasuna aktibatu gabe"
+          enable: "Aktibatu"
+          disable: "Aktibagabetu"
+        map:
+          title: Mapa konfigurazioa
+          help: Hemen mapa erabiltzaileei erakusten den modua pertsonalizatu dezakezu. Markatzailea arrastatu edo maparen edozein lekutan sakatu, zooma doitu eta 'Eguneratu' botoia sakatu.
+          flash:
+            update: Mapa konfigurazioa ondo gorde da.
+          form:
+            submit: Eguneratu
     shared:
+      booths_search:
+        button: Bilatu
+        placeholder: Bilatu hautetsontzia izenagaitik
+      poll_officers_search:
+        button: Bilatu
+        placeholder: Mahaiburuak bilatu
+      poll_questions_search:
+        button: Bilatu
+        placeholder: Galderak bilatu
+      proposal_search:
+        button: Bilatu
+        placeholder: Proposamenak izenburua, kodea, deskribapena edo galderagaitik bilatu
+      user_search:
+        button: Bilatu
+        placeholder: Erabiltzailea izena edo emailagaitik bilatu
+      search_results: "Bilaketaren emaitzak"
+      no_search_results: "Ez da emaitzik bilatu."
+      actions: Ekintzak
+      title: Izenburua
+      description: Deskribapena
       image: Irudia
+      show_image: Irudia erakutsi
+      moderated_content: "Moderatzaileek moderatutako edukia berrikus ezazu. Moderazioa egoki egin dala ziurta zaitez."
     geozones:
+      index:
+        title: Auzoak
+        create: Auzo bat sortu
+        edit: Editatu
+        delete: Ezabatu
       geozone:
         name: Izena
+        external_code: Kanpo kodea
+        census_code: Errolda kodea
+        coordinates: koordenadak
+      edit:
+        form:
+          submit_button: Aldaketak gorde
+        editing: Auzoa editatzen
+        back: Itzuli
+      new:
+        back: Itzuli
+        creating: Auzoa sortu
+      delete:
+        success: Auzoa ondoo ezabatuta
+        error: Elementuak esleituta dituenez ezin da auzoa ezabatu
     signature_sheets:
+      author: Sortzailea
+      created_at: Sortze data
       name: Izena
+      no_signature_sheets: "Ez da firma orririk existitzen"
+      index:
+        title: Firma orriak
+        new: Firma orri berria
+      new:
+        title: Firma orri berria
+        document_numbers_note: "Zenbakiak koma artean idatzi behar dituzu (',')"
+        submit: Firma orria sortu
+      show:
+        created_at: Sortuta
+        author: Sortzailea
+        verified:
+          one: "Baliodun firma 1 dago"
+          other: "Baliodun %{count} firma daude"
+        unverified:
+          one: "Baliogabeko firma 1 dago"
+          other: "Baliogabeko %{count} firma daude"
+        unverified_error: (Erroldak ez egiaztatuta)
+        loading: "Oraindik erroldak firmak egiaztatzen ari da. Mesedez, orria errefresca denbora gutxi barru"
     stats:
+      show:
+        stats_title: Estatistikak
+        summary:
+          comment_votes: Iruzkin bozkak
+          comments: Iruzkinak
+          debate_votes: Eztabaida bozkak
+          debates: Eztabaidak
+          proposal_votes: Proposamen bozkak
+          proposals: Proposamenak
+          budgets: Aurrekontu irekiak
+          budget_investments: Gastu proiektuak
+          unverified_users: Egiaztatu gabeko erabiltzaileak
+          user_level_three: 3. mailako erabiltzaileak
+          user_level_two: 2. mailako erabiltzaileak
+          users: Erabiltzaileak
+          verified_users: Egiaztatutako erabiltzaileak
+          verified_users_who_didnt_vote_proposals: Proposamenak bozkatu ez duten egiaztatutako erabiltzaileak
+          visits: Bisitak
+          votes: Bozkak
+        budgets_title: Partaidetzazko aurrekontuak
+        direct_messages: Mezu zuzenak
+        proposal_notifications: Proposamen jakinarazpenak
+        incomplete_verifications: Bukatugabeko baieztapenak
+        polls: Bozkaketak
+      direct_messages:
+        title: Mezu zuzenak
+        total: Guztira
+        users_who_have_sent_message: Mezu pribatua bidali duten erabiltzaileak
+      proposal_notifications:
+        title: Proposamen jakinarazpenak
+        total: Guztira
+        proposals_with_notifications: Jakinarazpendun proposamenak
       polls:
+        title: Bozka estatistikak
+        all: Bozkaketak
+        web_participants: Web partehartzaileak
+        total_participants: Partehartzaileak guztira
+        poll_questions: "Bozka galderak: %{poll}"
         table:
+          poll_name: Bozkaketa
           question_name: Galdera
+          origin_web: Web partehartzaileak
+          origin_total: Partehartzaileak guztira
+    tags:
+      create: Gaia sortu
+      destroy: Gaia ezabatu
+      index:
+        add_tag: Proposamen gai berri bat sortu
+        title: Proposamen gaiak
+        topic: Gaia
+        help: "Erabiltzaile batek porposamen bat sortzerakoan hurrengo gaiak eskeintzen zaizkio etiketa moduan."
     users:
       columns:
         name: Izena
         email: E-mail
+        document_number: NAN/Pasaportea/Egoitza txartela
+        roles: Rolak
+        verification_level: Baieztapen maila
       index:
         title: Erabiltzailea
+        no_users: Ez dago erabiltzailerik.
+      search:
+        placeholder: Erabiltzailea emaila, izena edo NANagaitik bilatu
+        search: Bilatu
+    verifications:
+      index:
+        phone_not_given: Ez du telefonoa eman
+        sms_code_not_confirmed: Ez du bere segurtasun kodea sartu
+        title: Bukatugabeko egiaztapenak
     site_customization:
       content_blocks:
+        create:
+          notice: Blokea ondo sortuta
+          error: Ezin izan da blokea sortu
+        update:
+          notice: Blokea ondo eguneratuta
+          error: Ezin izan da blokea eguneratu
+        destroy:
+          notice: Blokea ondo ezabatuta
+        edit:
+          title: Blokea editatu
+        index:
+          create: Bloke berria sortu
+          delete: Blokea ezabatu
+          title: Blokeak
+        new:
+          title: Bloke berria sortu
         content_block:
+          body: Edukia
           name: Izena
       images:
         index:
+          title: Irudiak pertsonalizatu
+          update: Eguneratu
+          delete: Ezabatu
           image: Irudia
+        update:
+          notice: Irudia ondo eguneratuta
+          error: Ezin izan da irudia eguneratu
+        destroy:
+          notice: Irudia borrada correctamente
+          error: Ezin izan da irudia ezabatu
+      pages:
+        create:
+          notice: Orria ondo sortuta
+          error: Ezin izan da orria sortu
+        update:
+          notice: Orria ondo eguneratuta
+          error: Ezin izan da orria eguneratu
+        destroy:
+          notice: Orria ondo ezabatuta
+        edit:
+          title: '%{page_title} editatu'
+        form:
+          options: Aukerak
+        index:
+          create: Orri berri bat sortu
+          delete: Orria ezabatu
+          title: Orriak
+          see_page: Orria ikusi
+        new:
+          title: Orri berria
+        page:
+          created_at: Sortuta
+          status: Egoera
+          updated_at: Azken eguneraketa
+          title: Izenburua
+    homepage:
+      title: Orri nagusia
+      description: Aktibatuta dauden moduluak, hemen dauden orden bardinean agertuko dira orri nagusian.
+      header_title: Goiburua
+      no_header: Ez dago goibururik.
+      create_header: Goiburua sortu
+      cards_title: Txartelak
+      create_card: Txartela sortu
+      no_cards: Ez dago txartelik.
+      cards:
+        title: Izenburua
+        description: Deskribapena
+        link_text: Lotura testua
+        link_url: Lotura URLa
+      feeds:
+        proposals: Proposamenak
+        debates: Eztabaidak
+        processes: Prosezuak
+      new:
+        header_title: Goiburu berria
+        submit_header: Goiburua sortu
+        card_title: Txartel berria
+        submit_card: Txartela sortu
+      edit:
+        header_title: Goiburua editatu
+        submit_header: Goiburua gorde
+        card_title: Txartela editatu
+        submit_card: Txartela gorde

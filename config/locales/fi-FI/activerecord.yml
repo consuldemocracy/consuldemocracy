@@ -184,10 +184,6 @@ fi:
         link_text: Linkin teksti
     errors:
       models:
-        poll/voter:
-          attributes:
-            document_number:
-              has_voted: "Käyttäjä on jo äänestänyt"
         site_customization/image:
           attributes:
             image:

@@ -467,7 +467,6 @@ ru:
           attributes:
             document_number:
               not_in_census: "Документ не в переписи"
-              has_voted: "Пользователь уже проголосовал"
         legislation/process:
           attributes:
             end_date:

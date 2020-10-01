@@ -3,8 +3,6 @@ da:
     ballots:
       show:
         title: Din stemme
-        amount_spent: Opbrugt beløb
-        remaining: "Du har stadig <span>%{amount}</span> at investere for."
         no_balloted_group_yet: "Du har ikke stemt på denne gruppe endnu, så stem stem stem!"
         remove: Fjern din stemme
         voted:
@@ -59,7 +57,7 @@ da:
       section_footer:
         title: Hvad er et deltagerbudget?
         description: Med et deltagerbudget får borgerne selv lov til at bestemme, hvad en given, uddelt sum penge skal bruges til. Det er borgerne, der kommer med idéerne, stemmer på idéerne og dermed uddeler penge.
-      milestones: Proces
+      milestones: Milepæle
     investments:
       form:
         tag_category_label: "Kategorier"
@@ -84,11 +82,6 @@ da:
           other: " som indeholder <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Min stemme
-          voted:
-            one: "<strong>Du har stemt på et forslag med en værdi af %{amount_spent}</strong>"
-            other: "<strong>Du har stemt på %{count} forslag med en værdi af %{amount_spent}</strong>"
-          voted_info: Du kan %{link} på ethvert tidspunkt inden denne fase afsluttes. Det er ikke nødvendigt at bruge alle de penge, der er til rådighed.
-          voted_info_link: ændre din stemme
           different_heading_assigned: "Du har aktive stemmer i et andet budget: %{heading_link}"
           change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
           check_ballot_link: "kontroller og bekræft min afstemning"
@@ -118,7 +111,7 @@ da:
         votes: Stemmer
         price: Pris
         comments_tab: Kommentarer
-        milestones_tab: Processer
+        milestones_tab: Følg projekterne
         author: Forfatter
         project_unfeasible: "Vi har desværre vurderet, at det <strong>ikke er muligt at gennemføre dit forslag</strong>, og den vil derfor ikke gå videre til afstemning."
         project_selected: "Forslaget <strong>er gået videre </strong> til afstemning."
@@ -174,9 +167,9 @@ da:
       unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
       not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemning
     executions:
-      link: "Processer"
+      link: "Følg projekterne"
       page_title: "%{budget} - Milepæle"
-      heading: "Processer i deltagerbudgettet"
+      heading: "Milepæle i deltagerbudgettet"
       heading_selection_title: "Efter distrikt"
       no_winner_investments: "Ingen vinderforslag"
       filters:

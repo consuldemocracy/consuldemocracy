@@ -114,14 +114,9 @@ describe "Admin banners magement" do
 
     fill_in "Title", with: "En Français"
     fill_in "Description", with: "Link en Français"
-
     fill_in "Link", with: "https://www.url.com"
-
-    last_week = Time.current - 1.week
-    next_week = Time.current + 1.week
-
-    fill_in "Post started at", with: last_week.strftime("%d/%m/%Y")
-    fill_in "Post ended at", with: next_week.strftime("%d/%m/%Y")
+    fill_in "Post started at", with: Time.current - 1.week
+    fill_in "Post ended at", with: Time.current + 1.week
 
     click_button "Save changes"
     click_link "Edit banner"
@@ -177,17 +172,6 @@ describe "Admin banners magement" do
 
     expect(page).not_to have_content "Hello"
     expect(page).not_to have_content "Wrong text"
-  end
-
-  scenario "when change date field on edit banner page display expected format", :js do
-    banner = create(:banner)
-    visit edit_admin_banner_path(banner)
-
-    fill_in "Post started at", with: "20/02/2002"
-    find_field("Post started at").click
-    within(".ui-datepicker") { click_link "22" }
-
-    expect(page).to have_field "Post started at", with: "22/02/2002"
   end
 
   scenario "Delete a banner" do

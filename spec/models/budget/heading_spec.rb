@@ -323,4 +323,13 @@ describe Budget::Heading do
       expect(Budget::Heading.allow_custom_content).to eq [translated_heading]
     end
   end
+
+  describe "#max_ballot_lines" do
+    it "must be at least 1" do
+      expect(build(:budget_heading, max_ballot_lines: 1)).to be_valid
+      expect(build(:budget_heading, max_ballot_lines: 10)).to be_valid
+      expect(build(:budget_heading, max_ballot_lines: -1)).not_to be_valid
+      expect(build(:budget_heading, max_ballot_lines: 0)).not_to be_valid
+    end
+  end
 end

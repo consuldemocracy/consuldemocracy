@@ -133,6 +133,7 @@ en:
       form:
         create: "Create new group"
         edit: "Edit group"
+        max_votable_headings_info: "Only applies to the selecting projects phase. During the voting projects phase users can only vote in one heading per group."
         submit: "Save group"
       index:
         back: "Go back to budgets"
@@ -149,6 +150,7 @@ en:
         success_notice: "Heading deleted successfully"
         unable_notice: "You cannot delete a Heading that has associated investments"
       form:
+        max_ballot_lines_info: 'Maximum number of projects a user can vote on this heading during the "Voting projects" phase. Only for budgets using approval voting.'
         population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
         coordinates_info: "If latitude and longitude are provided, the investments page for this heading will include a map. This map will be centered using those coordinates."
         content_blocks_info: "If allow content block is checked, you will be able to create custom content related to this heading from the section Settings > Custom content blocks. This content will appear on the investments page for this heading."
@@ -553,6 +555,7 @@ en:
           back: Back
           submit_button: Save changes
           warning: You've edited the text, don't forget to click on Save to permanently save the changes.
+          markdown_changes_message: "You've edited the text without saving it. Do you confirm to leave the page?"
         form:
           title: 'Editing <span class="strong">%{draft_version_title}</span> from the process <span class="strong">%{process_title}</span>'
           launch_text_editor: Launch text editor
@@ -1218,7 +1221,7 @@ en:
           without_confirmed_hide: Pending
         title: Hidden proposals
         no_hidden_proposals: There are no hidden proposals.
-    proposal_notifications:
+    hidden_proposal_notifications:
       index:
         filter: Filter
         filters:
@@ -1439,6 +1442,8 @@ en:
         help: "When a user creates a proposal, the following topics are suggested as default tags."
     users:
       columns:
+        id: ID
+        erase_reason: Erase reason
         name: Name
         email: Email
         document_number: Document number
@@ -1447,6 +1452,10 @@ en:
       index:
         title: User
         no_users: There are no users.
+        filter: Filter
+        filters:
+          active: Active
+          erased: Erased
       search:
         placeholder: Search user by email, name or document number
         search: Search

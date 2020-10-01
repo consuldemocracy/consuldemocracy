@@ -28,7 +28,7 @@
             <%= t("admin.officials.level_#{official.official_level}") %>
           </td>
           <td>
-            <%= link_to official.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"),
+            <%= link_to t("admin.officials.search.edit_official"),
                         edit_admin_official_path(official), class: "button hollow expanded" %>
           </td>
         </tr>

@@ -1,1 +1,134 @@
 ro:
+  management:
+    account:
+      menu:
+        reset_password_email: Resetează parola prin email
+        reset_password_manually: Resetează parola manual
+      alert:
+        unverified_user: Nu s-a autentificat încă niciun utilizator verificat
+      show:
+        title: Contul utilizatorului
+      edit:
+        title: "Editează contul utilizatorului: Resetează parola"
+        back: Înapoi
+        password:
+          password: Parolă
+          send_email: Trimite noua parolă prin email
+          reset_email_send: Email trimis corect.
+          reseted: Parolă resetată cu succes
+          random: Generează parolă aleatorie
+          save: Salvează parolă
+          print: Printează parolă
+          print_help: Veți avea posibilitatea să printați parola când aceasta va fi salvată.
+    account_info:
+      change_user: Schimbă utilizatorul
+      document_number_label: "Numărul documentului:"
+      document_type_label: "Tipul de document:"
+      email_label: "Email:"
+      identified_label: "Identificat ca:"
+      username_label: "Nume de utilizator:"
+    check: Verifică document
+    dashboard:
+      index:
+        title: Administrare
+        info: Aici poți administra utilizatorii prin toate acțiunile listate în meniul din stânga.
+    document_verifications:
+      already_verified: Acest cont este deja verificat.
+      has_no_account: Pentru a crea un cont, mergeți la %{link} și faceți click în <b>"Înregistrare"</b> în partea stânga-sus a ecranului.
+      link: CONSUL
+      in_census_has_following_permissions: "Acest utilizator poate participa pe site-ul web cu următoarele permisiuni:"
+      not_in_census: Acest document nu este înregistrat.
+      not_in_census_info: "Cetățenii care nu sunt în recensământ pot participa pe site-ul web cu următoarele permisiuni:"
+      please_check_account_data: Vă rugăm să verificați dacă datele contului de mai sus sunt corecte.
+      title: Administrarea utilizatorilor
+      under_age: "Nu aveți vârsta necesară pentru a vă verifica contul."
+      verify: Verifică
+    email_label: Email
+    date_of_birth: Data nașterii
+    email_verifications:
+      already_verified: Acest cont este deja verificat.
+      choose_options: "Vă rugăm alegeți una dintre următoarele opțiuni:"
+      document_found_in_census: Acest document a fost găsit în recensământ, dar nu este nici un cont de utilizator asociat acestuia.
+      document_mismatch: "Acest email aparține unui utilizator care deja are asociat un id: %{document_number}(%{document_type})"
+      email_placeholder: Scrieți emailul pe care această persoană l-a folosit pentru a-și crea contul
+      email_sent_instructions: Pentru a verifica complet acest utilizator, este necesar ca utilizatorul să facă clic pe un link pe care l-am trimis la adresa de e-mail de mai sus. Acest pas este necesar pentru a confirma că adresa îi aparține.
+      if_existing_account: Dacă persoana are deja un cont de utilizator creat în site,
+      if_no_existing_account: Dacă această persoană nu a creat un cont încă
+      introduce_email: "Vă rugăm introduceți adresa de email folosită la cont:"
+      send_email: Trimite emailul de verificare
+    menu:
+      create_proposal: Crează propunere
+      print_proposals: Printează propunere
+      support_proposals: Sprijină propuneri
+      create_budget_investment: Crează buget de investiții
+      print_budget_investments: Printează buget de investiții
+      support_budget_investments: Susțineți bugetul de investiții
+      users: Administrarea utilizatorilor
+      user_invites: Trimite invitații
+      select_user: Selectează utilizator
+    permissions:
+      create_proposals: Crează propuneri
+      debates: Implicați-vă în dezbateri
+      support_proposals: Sprijină propuneri
+      vote_proposals: Votează propuneri
+    print:
+      proposals_info: Crează-ți propunerea pe http://url.consul
+      proposals_title: "Propuneri:"
+      budget_investments_info: Participă la http://url.consul
+    print_info: Printează această informație
+    proposals:
+      alert:
+        unverified_user: Utilizatorul nu este verificat
+      create_proposal: Crează propunere
+      print:
+        print_button: Imprimare
+      index:
+        title: Sprijină propuneri
+    budgets:
+      create_new_investment: Crează buget de investiții
+      print_investments: Imprimați investițiile bugetare
+      support_investments: Susțineți bugetul de investiții
+      table_name: Nume
+      table_phase: Etapă
+      table_actions: Acțiuni
+      no_budgets: Nu există bugete participative active.
+    budget_investments:
+      alert:
+        unverified_user: Utilizatorul nu este verificat
+      create: Crează un buget de investiție
+      edit: Editează buget de investiție
+      filters:
+        heading: Concept
+        unfeasible: Investiții imposibile
+      print:
+        print_button: Imprimare
+      search_results:
+        one: " care conține termenul \"%{search_term}\""
+        few: " care conțin termenii \"%{search_term}\""
+        other: " care conțin termenii \"%{search_term}\""
+    sessions:
+      signed_out: Deconectat cu succes.
+      signed_out_managed_user: Sesiunea de utilizator s-a deconectat cu succes.
+    username_label: Nume de utilizator
+    users:
+      create_user: Crează cont nou
+      create_user_info: Vom crea un cont cu următoarele date
+      create_user_submit: Crează utilizator
+      create_user_success: Am trimis un e-mail la adresa de e-mail <b>%{email}</b> pentru a verifica dacă aparține acestui utilizator. Acesta conține un link pe care trebuie să facă clic. Apoi, vor trebui să își stabilească parola de acces înainte de a se putea conecta la site-ul web
+      autogenerated_password: "Parola auto-generată este <b>%{password}</b>, o puteți schimba în \"Contul meu\""
+      email_optional_label: Email (opțional)
+      erased_notice: Contul de utilizator a fost șters.
+      erased_by_manager: "Șters de administratorul: %{manager}"
+      erase_account_link: Șterge utilizator
+      erase_account_confirm: Sigur doriți să ștergeți documentul? Această acțiune nu poate fi anulată
+      erase_warning: Această acțiune nu poate fi anulată. Vă rugăm să vă asigurați că doriți să ștergeți acest cont.
+      erase_submit: Șterge cont
+    user_invites:
+      new:
+        label: Emailuri
+        info: "Adăugați emailurile separate prin virgulă (',')"
+        submit: Trimite invitații
+        title: Trimite invitații
+      create:
+        success: <strong>%{count} invitații</strong> au fost trimise.
+        title: Trimite invitații

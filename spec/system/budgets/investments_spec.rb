@@ -8,9 +8,7 @@ describe "Budget Investments" do
   let(:group) { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", price: 666666, group: group) }
 
-  it_behaves_like "milestoneable",
-                  :budget_investment,
-                  "budget_investment_path"
+  it_behaves_like "milestoneable", :budget_investment
 
   context "Concerns" do
     it_behaves_like "notifiable in-app", :budget_investment
@@ -24,6 +22,7 @@ describe "Budget Investments" do
                     :budget_investment,
                     "budget_investment_path",
                     { "budget_id": "budget_id", "id": "id" }
+    it_behaves_like "flaggable", :budget_investment
   end
 
   context "Load" do
@@ -1795,70 +1794,6 @@ describe "Budget Investments" do
         expect(page).to have_content("You have voted 0 investment")
       end
     end
-  end
-
-  scenario "Flagging an investment as innapropriate", :js do
-    user       = create(:user)
-    investment = create(:budget_investment, heading: heading)
-
-    login_as(user)
-
-    visit budget_investment_path(budget, investment)
-
-    within "#budget_investment_#{investment.id}" do
-      find("#flag-expand-investment-#{investment.id}").click
-      find("#flag-investment-#{investment.id}").click
-
-      expect(page).to have_css("#unflag-expand-investment-#{investment.id}")
-    end
-
-    expect(Flag.flagged?(user, investment)).to be
-  end
-
-  scenario "Unflagging an investment", :js do
-    user       = create(:user)
-    investment = create(:budget_investment, heading: heading)
-    Flag.flag(user, investment)
-
-    login_as(user)
-
-    visit budget_investment_path(budget, investment)
-
-    within "#budget_investment_#{investment.id}" do
-      find("#unflag-expand-investment-#{investment.id}").click
-      find("#unflag-investment-#{investment.id}").click
-
-      expect(page).to have_css("#flag-expand-investment-#{investment.id}")
-    end
-
-    expect(Flag.flagged?(user, investment)).not_to be
-  end
-
-  scenario "Flagging an investment updates the DOM properly", :js do
-    user       = create(:user)
-    investment = create(:budget_investment, heading: heading)
-
-    login_as(user)
-
-    visit budget_investment_path(budget, investment)
-
-    within "#budget_investment_#{investment.id}" do
-      find("#flag-expand-investment-#{investment.id}").click
-      find("#flag-investment-#{investment.id}").click
-
-      expect(page).to have_css("#unflag-expand-investment-#{investment.id}")
-    end
-
-    expect(Flag.flagged?(user, investment)).to be
-
-    within "#budget_investment_#{investment.id}" do
-      find("#unflag-expand-investment-#{investment.id}").click
-      find("#unflag-investment-#{investment.id}").click
-
-      expect(page).to have_css("#flag-expand-investment-#{investment.id}")
-    end
-
-    expect(Flag.flagged?(user, investment)).not_to be
   end
 
   context "sidebar map" do

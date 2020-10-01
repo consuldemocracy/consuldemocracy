@@ -1,0 +1,22 @@
+ka:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: ჩანაწერები
+        one: ჩანაწერი
+        other: ჩანაწერები
+      more_pages:
+        display_entries: ნაჩვენებია <strong>%{first}&nbsp;-&nbsp;%{last}</strong> / <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} არ მოიძებნა"
+          one: მოიძებნა <strong>1 %{entry_name}</strong>
+          other: მოიძებნა <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: თქვენ იმყოფებით გვერდზე
+      first: პირველი
+      last: ბოლო
+      next: შემდეგი
+      previous: წინა
+      truncate: "&hellip;"

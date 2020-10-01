@@ -39,7 +39,7 @@ class NotificationsController < ApplicationController
       if notification.linkable_resource.is_a?(AdminNotification)
         notification.linkable_resource.link || notifications_path
       else
-        polymorphic_hierarchy_path(notification.linkable_resource)
+        polymorphic_path(notification.linkable_resource)
       end
     end
 end
