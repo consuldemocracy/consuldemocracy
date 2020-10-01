@@ -2,9 +2,10 @@ name: Pronto
 on: [pull_request]
 
 jobs:
-  linters:
-    name: Linters
+  pronto:
+
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -12,17 +13,7 @@ jobs:
           git fetch --no-tags --prune --depth=10 origin +refs/heads/*:refs/remotes/origin/*
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
-      - name: Ruby gem cache
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - name: Install gems
-        run: |
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
+      - name: Setup pronto
+        run: gem install pronto pronto-rubocop rubocop-performance rubocop-rspec rubocop-rails pronto-erb_lint pronto-eslint pronto-scss
       - name: Run Pronto
-        run: |
-          PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ github.token }}" bundle exec pronto run -f github_status github_pr_review -c origin/${{ github.base_ref }}
+        run: PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ github.token }}" pronto run -f github_status github_pr -c origin/${{ github.base_ref }}
