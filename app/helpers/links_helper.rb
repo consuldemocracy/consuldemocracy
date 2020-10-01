@@ -5,12 +5,8 @@ module LinksHelper
                                                      builder, class: "delete remove-element"
   end
 
-  def link_to_signin(options = {})
-    link_to t("users.signin"), user_codigo_omniauth_authorize_path, options.merge(method: :post)
-  end
-
   def link_to_signup(options = {})
-    link_to t("users.signup"), new_user_registration_path, options
+    link_to t("users.signin"), new_user_registration_path, options
   end
 
   def link_to_verify_account
