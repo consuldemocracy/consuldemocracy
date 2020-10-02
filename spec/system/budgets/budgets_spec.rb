@@ -531,6 +531,28 @@ describe "Budgets" do
 
       expect(page).to have_content "So far you supported 4 projects."
     end
+
+    scenario "Show supports only for current budget" do
+      voter = create(:user, :level_two)
+
+      first_budget = create(:budget, phase: "selecting")
+      first_group = create(:budget_group, budget: first_budget)
+      first_heading = create(:budget_heading, group: first_group)
+      create_list(:budget_investment, 2, :selected, heading: first_heading, voters: [voter])
+
+      second_budget = create(:budget, phase: "selecting")
+      second_group = create(:budget_group, budget: second_budget)
+      second_heading = create(:budget_heading, group: second_group)
+      create_list(:budget_investment, 3, :selected, heading: second_heading, voters: [voter])
+
+      login_as(voter)
+
+      visit budget_path(first_budget)
+      expect(page).to have_content "So far you supported 2 projects."
+
+      visit budget_path(second_budget)
+      expect(page).to have_content "So far you supported 3 projects."
+    end
   end
 
   context "In Drafting phase" do
