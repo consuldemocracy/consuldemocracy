@@ -34,7 +34,7 @@ strong, b, a, .ava-link {
   border-radius: 0px;
   font-size: $font-size-base-small;
   &.success, &.button-support {
-    color: white;
+    color: white !important;
     &:hover {
       color: inherit;
     }
