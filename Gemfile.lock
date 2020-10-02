@@ -6,6 +6,14 @@ GIT
       devise (>= 3.0.0, < 5.0)
       railties (>= 3.2.6, < 6.0)
 
+GIT
+  remote: https://github.com/prontolabs/pronto-rubocop.git
+  revision: 170abfe959f5f267cee658a325be1aa79aba0cd0
+  specs:
+    pronto-rubocop (0.10.0)
+      pronto (~> 0.10.0)
+      rubocop (>= 0.49.1)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -430,9 +438,6 @@ GEM
       pronto (> 0.9.0)
     pronto-eslint_npm (0.10.1)
       pronto (~> 0.10.0)
-    pronto-rubocop (0.10.0)
-      pronto (~> 0.10.0)
-      rubocop (~> 0.50, >= 0.49.1)
     pronto-scss (0.10.0)
       pronto (~> 0.10.0)
       scss_lint (~> 0.43, >= 0.43.0)
@@ -719,7 +724,7 @@ DEPENDENCIES
   pronto (~> 0.10.0)
   pronto-erb_lint (~> 0.1.5)
   pronto-eslint_npm (~> 0.10.1)
-  pronto-rubocop (~> 0.10.0)
+  pronto-rubocop!
   pronto-scss (~> 0.10.0)
   puma (~> 4.3.5)
   rails (= 5.1.7)
