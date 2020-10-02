@@ -260,8 +260,9 @@ GEM
       request_store (~> 1.0)
     globalize-accessors (0.2.1)
       globalize (~> 5.0, >= 5.0.0)
-    graphiql-rails (1.4.8)
-      rails
+    graphiql-rails (1.7.0)
+      railties
+      sprockets-rails
     graphql (1.7.8)
     groupdate (5.2.1)
       activesupport (>= 5)
@@ -668,7 +669,7 @@ DEPENDENCIES
   github_changelog_generator (~> 1.15.2)
   globalize (~> 5.3.0)
   globalize-accessors (~> 0.2.1)
-  graphiql-rails (~> 1.4.1)
+  graphiql-rails (~> 1.7.0)
   graphql (~> 1.7.8)
   groupdate (~> 5.2.1)
   i18n-tasks (~> 0.9.31)
