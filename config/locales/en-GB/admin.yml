@@ -137,3 +137,65 @@ en-GB:
     hidden_budget_investments:
       index:
         filter: Filter
+    legislation:
+      questions:
+        edit:
+          back: Назад
+          submit_button: Зберегти зміни
+        form:
+          title_placeholder: Додати запитання
+        index:
+          back: Назад
+          create: Створити запитання
+          delete: Видалити
+        new:
+          back: Назад
+          title: Створити нове запитання
+          submit_button: Створити запитання
+    managers:
+      index:
+        email: Електронна адреса
+        no_managers: Менеджерів немає.
+      manager:
+        add: Додати
+        delete: Видалити
+    menu:
+      site_customization:
+        information_texts_menu:
+          mailers: "Електронні адреси"
+      users: Користувачі
+      comments: "Коментарі"
+    administrators:
+      index:
+        email: Електронна адреса
+      administrator:
+        add: Додати
+        delete: Видалити
+        restricted_removal: "Вибачте, ви не можете видалити себе з переліку адміністраторів"
+      form:
+        edit_title: "Редагувати адміністратора"
+    moderators:
+      index:
+        title: Модератори
+        name: Ім'я
+        email: Електронна адреса
+      moderator:
+        add: Додати
+        delete: Видалити
+    segment_recipient:
+      all_users: Усі користувачі
+      administrators: Адміністратори
+    newsletters:
+      index:
+        segment_recipient: Отримувачі
+        sent: Відправлені
+        actions: Дії
+        edit: Редагувати
+        delete: Видалити
+    admin_notifications:
+      index:
+        edit: Редагувати
+        delete: Видалити
+    valuators:
+      valuator:
+        delete: Видалити
