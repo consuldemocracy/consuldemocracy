@@ -1,1 +1,7 @@
 en-GB:
+  images:
+    remove_image: Видалити зображення
+    form:
+      delete_button: Видалити зображення
+      add_new_image: Додати зображення
+      admin_title: "Зображення"
