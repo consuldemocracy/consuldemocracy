@@ -2,6 +2,7 @@
 en-GB:
   devise:
     password_expired:
+      expire_password: "Термін дії паролю збіг"
       change_required: "Термін дії паролю закінчився"
       change_password: "Змініть пароль"
       new_password: "Новий пароль"
