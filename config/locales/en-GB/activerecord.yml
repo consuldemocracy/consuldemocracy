@@ -1,1 +1,8 @@
 en-GB:
+  activerecord:
+    attributes:
+      budget:
+        currency_symbol: "Валюта"
+      budget/investment:
+        description: "Опис"
+        administrator_id: "Адміністратор"
