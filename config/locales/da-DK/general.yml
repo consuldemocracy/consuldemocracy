@@ -46,6 +46,8 @@ da:
         other: "%{count} svar (vis)"
       responses_collapse:
         zero: Ingen svar
+        one: "1 respons (Vis/skjul)"
+        other: "%{count} svar (vis/skjul)"
       user_deleted: Bruger slettet
       votes:
         zero: Ingen stemmer
@@ -93,9 +95,6 @@ da:
       tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
     index:
       featured_debates: Vist
-      filter_topic:
-        one: " med emnet '%{topic}'"
-        other: " med emnerne '%{topic}'"
       orders:
         confidence_score: højest rangeret
         created_at: nyeste
@@ -187,6 +186,8 @@ da:
     document: Dokument
     topic: Emne
     image: Billede
+    local_census_record: Lokal census data
+    local_census_records/import: Lokal census data import
     site_customization/content_block: indholdsblok
     site_customization/page: side
   geozones:
@@ -240,7 +241,6 @@ da:
       help: Hjælp
       my_account_link: Min konto
       my_activity_link: Min aktivitet
-      open: åben
       open_gov: Open government
       proposals: Forslag
       poll_questions: Afstemning
@@ -251,8 +251,6 @@ da:
           other: Du har %{count} nye notifikationer
         notifications: Notifikationer
         no_notifications: "Du har ingen nye notifikationer"
-    admin:
-      watch_form_message: "Du har ændringer, der ikke er gemt. Ønsker du stadig at forlade denne side?"
   notifications:
     index:
       empty_notifications: Du har ingen nye notifikationer.
@@ -290,12 +288,14 @@ da:
       sign_in: Log ind med Google
       sign_up: Tilmeld dig via Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Log ind med Wordpress
+      sign_up: Tilmeld med Wordpress
+      name: Wordpress
     twitter:
       sign_in: Log ind med Twitter
       sign_up: Tilmeld dig via Twitter
       name: Twitter
-    info_sign_in: "Log ind med:"
-    info_sign_up: "Tilmeld dig med:"
     or_fill: "Eller udfyld nedenstående formular:"
   proposals:
     create:
@@ -343,9 +343,6 @@ da:
       map_skip_checkbox: "Dette forslag omhandler ikke en specifik lokation, eller også kender jeg ikke til den."
     index:
       featured_proposals: Vist
-      filter_topic:
-        one: " med emnet '%{topic}'"
-        other: " med emnerne '%{topic}'"
       orders:
         confidence_score: mest populære
         created_at: nyeste
@@ -558,6 +555,7 @@ da:
         success_notice: Undersøgelsen blev slettet
         unable_notice: Du kan ikke slettet en undersøgelse der har respons
       form:
+        name: Titel på undersøgelse
         add_question: Tilføj et spørgsmål
       question_fields:
         remove_question: Slet spørgsmål
@@ -567,10 +565,12 @@ da:
     poster:
       index:
         title: Forhåndsvisning af plakat
-        poster_title: "Stop med at lede,"
+        poster_title: "Hjælp med at gøre en forskel,"
         poster_subtitle: "støt mig! :-)"
+        intro_text: "<strong>Jeg deltager i %{org}</strong> med et borgerforslag, og kun hvis du også opretter dig som bruger kan jeg modtage den nødvendige støtte, der skal til, for at forme den by vi alle ønsker at leve i."
         proposal_code: "Forslagets kode: %{code}"
         support: Støt mit forslag
+        footer: "<strong>Gå til %{link} og støt forslaget.</strong> Vi er nødt til at være mange. Din beslutning tæller. Tak!"
       new:
         title: Plakat med dit forslag
       options:
@@ -588,11 +588,12 @@ da:
         sent: E-mailen blev sendt
     mailer:
       forward:
+        subtitle: "Hvis du støtter mig, <br> kan vi gøre en forskel."
         support_button: Støt forslaget
         share_in: Del i
         hi: "Hej!"
         introduction: Jeg skriver til dig for at fortælle dig, at jeg deltager på %{org}, platformen hvor vi kan beslutte, hvordan vores by skal være. Derfor har jeg nu oprettet mit eget borgerforslag, hvor jeg har brug for din støtte! Men fortvivl ikke, det er meget simpelt.
-        support: "Alt du skal gøre er at klikke på knappen 'Støt forslag'. Kun forslag, der modtager den maksimale støtte, vil blive udført af Byrådet, og jeg er sikker på, at du kan hjælpe mig med at nå det!"
+        support: "Alt du skal gøre er at klikke på knappen 'Støt forslag'. Kun forslag, der modtager den nødvendige støtte, vil blive taget op af Byrådet, og jeg er sikker på, at du kan hjælpe mig med at nå det!"
         share: "Og hvis du også gør mig den store tjeneste at dele mit forslag med venner, familie og andet netværk, vil det være helt perfekt!"
   polls:
     all: "Alle"
@@ -627,6 +628,7 @@ da:
       back: Tilbage til afstemningen
       cant_answer_not_logged_in: "Du skal %{signin} eller %{signup} for at deltage."
       comments_tab: Kommentarer
+      cant_answer_verify: "Du skal %{verify_link} for at kunne svare."
       verify_link: "verificer din konto"
       cant_answer_expired: "Afstemningen er slut."
       cant_answer_wrong_geozone: "Spørgsmålet er ikke tilgængeligt i dit geografiske område."
@@ -643,6 +645,7 @@ da:
         total_votes: "Samlet antal stemmer"
         votes: "STEMMER"
         web: "WEB"
+        mail: "MAIL"
         booth: "STEMMEBOKS"
         total: "I ALT"
         valid: "Gyldig"
@@ -661,6 +664,7 @@ da:
     new:
       title: "Send besked"
       submit_button: "Send besked"
+      info_about_receivers: "Denne besked vil blive sendt til <strong>%{count} personer</strong> og den vil være synlig i %{proposal_page}."
       proposal_page: "forslagets side"
     show:
       back: "Gå tilbage til min aktivitet"
@@ -700,7 +704,17 @@ da:
     follow: "Følg"
     following: "Følger"
     follow_entity: "Følg %{entity}"
-    hide: Skjul
+    followable:
+      budget_investment:
+        create:
+          notice: "Du følger nu forslaget! <br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
+        destroy:
+          notice: "Du er stoppet med at følge forslaget <br> Du vil ikke længere modtage notifikationer relateret til projektet."
+      proposal:
+        create:
+          notice: "Du følger nu borgerforslaget! <br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
+        destroy:
+          notice: "Du er stoppet med at følge borgerforslaget! <br> Du vil ikke længere modtage notifikationer relateret til forslaget."
     print:
       print_button: Udskriv information
     search: Søg
@@ -729,6 +743,7 @@ da:
       districts: "Distrikter"
       districts_list: "Liste over distrikter"
       categories: "Kategorier"
+    target_blank: " (linket åbner i et nyt vindue)"
     you_are_in: "Du er inde"
     unflag: Fjern flag
     unfollow_entity: "Følg ikke længere %{entity}"
@@ -739,7 +754,7 @@ da:
     orbit:
       previous_slide: Forrige side
       next_slide: Næste side
-    documentation: Yderligere dokumentation
+    documentation: Dokumenter
     view_mode:
       title: Visning
       cards: Informationsbokse
@@ -748,6 +763,14 @@ da:
       title: Anbefalinger
       see_more: Se flere anbefalinger
       hide: Skjul anbefalinger
+    translations:
+      select_language_prompt: Vælg sprog
+      remove_language: Fjern sprog
+      add_language: Tilføj sprog
+      languages_in_use:
+        zero: "0 sprog i brug"
+        one: "1 sprog i brug"
+        other: "%{count} sprog i brug"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -846,7 +869,7 @@ da:
       most_active:
         debates: "Mest aktive debatindlæg"
         proposals: "Mest aktive forslag"
-        processes: "Åbne processer"
+        processes: "Aktive dialoger"
       see_all_debates: Se alle debatindlæg
       see_all_proposals: Se alle forslag
       see_all_processes: Se alle processer
@@ -932,4 +955,7 @@ da:
       take_part: Forløber fra %{from} til %{to}
   remote_translations:
     text: Indholdet på denne sider er ikke tilgængeligt på dit sprog
+    all_remote_translations_enqueued_text: Indenfor en kort periode vil sidens indhold være tilgængeligt i dit sprog.
+    create:
+      enqueue_remote_translation: Oversættelser er blevet korrekt anmodet.
     button: Oversæt side

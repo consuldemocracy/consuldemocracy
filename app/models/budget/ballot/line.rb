@@ -10,7 +10,7 @@ class Budget
       validates :ballot_id, :investment_id, :heading_id, :group_id, :budget_id, presence: true
 
       validate :check_selected
-      validate :check_sufficient_funds
+      validate :check_enough_resources
       validate :check_valid_heading
 
       scope :by_investment, ->(investment_id) { where(investment_id: investment_id) }
@@ -18,8 +18,12 @@ class Budget
       before_validation :set_denormalized_ids
       after_save :store_user_heading
 
-      def check_sufficient_funds
-        errors.add(:money, "insufficient funds") if ballot.amount_available(investment.heading) < investment.price.to_i
+      def check_enough_resources
+        ballot.lock!
+
+        unless ballot.enough_resources?(investment)
+          errors.add(:resources, ballot.not_enough_resources_error)
+        end
       end
 
       def check_valid_heading

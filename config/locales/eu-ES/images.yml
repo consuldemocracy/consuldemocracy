@@ -1,4 +1,19 @@
 eu:
   images:
+    remove_image: Irudia ezabatu
     form:
+      title: irudi descriptiboa
+      title_placeholder: Izenburu deskriptibo bat gehitu irudiarentzako
+      delete_button: Irudia ezabatu
+      note: "Irudia formatu hauetan igo dezakezu: %{accepted_content_types}, eta %{max_file_size} MB fitxategi bakoitzeko."
+      add_new_image: Irudia gehitu
       admin_title: "Irudia"
+      admin_alt_text: "Ordezko testua irudiarentzako"
+    actions:
+      destroy:
+        notice: Irudia ondo ezabatu da.
+        alert: Irudia ezin izan da ezabatu.
+    errors:
+      messages:
+        in_between: '%{min} eta %{max} artean egon behar da'
+        wrong_content_type: Irudiaren %{content_type} eduki mota baimendutako mota bat berarekin ere ez dator bat %{accepted_content_types}

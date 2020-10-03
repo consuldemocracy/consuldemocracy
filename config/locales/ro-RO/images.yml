@@ -1,1 +1,19 @@
 ro:
+  images:
+    remove_image: Șterge imagine
+    form:
+      title: Imagine descriptivă
+      title_placeholder: Adăugați un titlu descriptiv pentru imagine
+      delete_button: Șterge imagine
+      note: "Puteți încărca o imagine cu următoarele tipuri de conținut: %{accepted_content_types}, până la %{max_file_size} MB."
+      add_new_image: Adaugă imagine
+      admin_title: "Imagine"
+      admin_alt_text: "Text alternativ pentru imagine"
+    actions:
+      destroy:
+        notice: Imaginea a fost ștearsă cu succes.
+        alert: Imaginea nu se poate șterge.
+    errors:
+      messages:
+        in_between: trebuie să fie între %{min} și %{max}
+        wrong_content_type: tipul de conținut %{content_type} nu se potrivește cu niciunul dintre tipurile de conținut acceptate %{accepted_content_types}

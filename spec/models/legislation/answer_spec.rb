@@ -41,6 +41,7 @@ RSpec.describe Legislation::Answer, type: :model do
     user = legislation_answer.user
 
     legislation_answer.destroy!
-    expect(user.hidden_at).to be nil
+
+    expect(user).not_to be_hidden
   end
 end

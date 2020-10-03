@@ -98,7 +98,7 @@ class Budget
     scope :by_group,          ->(group_id)    { where(group_id: group_id) }
     scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
     scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
-    scope :by_tag,            ->(tag_name)    { tagged_with(tag_name) }
+    scope :by_tag,            ->(tag_name)    { tagged_with(tag_name).distinct }
 
     scope :for_render, -> { includes(:heading) }
 
@@ -167,7 +167,7 @@ class Budget
       ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?("selected")
       ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?("undecided")
       ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?("unfeasible")
-      results = results.where("budget_investments.id IN (?)", ids) if ids.any?
+      results = results.where(id: ids) if ids.any?
       results
     end
 
@@ -194,7 +194,7 @@ class Budget
         ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
       end
 
-      results.where("budget_investments.id IN (?)", ids)
+      results.where(id: ids)
     end
 
     def self.search_by_title_or_id(title_or_id)
@@ -268,8 +268,9 @@ class Budget
       return :not_selected               unless selected?
       return :no_ballots_allowed         unless budget.balloting?
       return :different_heading_assigned unless ballot.valid_heading?(heading)
-      return :not_enough_money           if ballot.present? && !enough_money?(ballot)
       return :casted_offline             if ballot.casted_offline?
+
+      ballot.reason_for_not_being_ballotable(self)
     end
 
     def permission_problem(user)
@@ -301,15 +302,6 @@ class Budget
       user.headings_voted_within_group(group).where(id: heading.id).exists?
     end
 
-    def ballotable_by?(user)
-      reason_for_not_being_ballotable_by(user).blank?
-    end
-
-    def enough_money?(ballot)
-      available_money = ballot.amount_available(heading)
-      price.to_i <= available_money
-    end
-
     def register_selection(user)
       vote_by(voter: user, vote: "yes") if selectable_by?(user)
     end
@@ -319,7 +311,7 @@ class Budget
     end
 
     def recalculate_heading_winners
-      Budget::Result.new(budget, heading).calculate_winners if incompatible_changed?
+      Budget::Result.new(budget, heading).calculate_winners if saved_change_to_incompatible?
     end
 
     def set_responsible_name
@@ -396,7 +388,7 @@ class Budget
     private
 
       def set_denormalized_ids
-        self.group_id = heading&.group_id if heading_id_changed?
+        self.group_id = heading&.group_id if will_save_change_to_heading_id?
         self.budget_id ||= heading&.group&.budget_id
       end
 

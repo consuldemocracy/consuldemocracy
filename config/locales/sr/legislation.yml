@@ -1,0 +1,158 @@
+sr:
+  legislation:
+    annotations:
+      comments:
+        see_all: Видите све
+        see_complete: Видите потпуно
+        comments_count:
+          one: "%{count} коментар"
+          few: "%{count} коментари"
+          other: "%{count} коментари"
+        replies_count:
+          one: "%{count} одговор"
+          few: "%{count} одговори"
+          other: "%{count} одговори"
+        cancel: Отказати
+        publish_comment: Објавите коментар
+      form:
+        phase_not_open: Ова фаза није отворена
+      index:
+        title: Коментари
+        comments_about: Коментари изнад
+        see_in_context: Видите у контексту
+        comments_count:
+          one: "%{count} коментар"
+          few: "%{count} коментара"
+          other: "%{count} коментара"
+      show:
+        title: Коментар
+      version_chooser:
+        seeing_version: Коментари за верзију
+        see_text: Видите нацрт
+    draft_versions:
+      changes:
+        title: Промене
+        seeing_changelog_version: Резиме промена ревизије
+        see_text: Видите нацрт текста
+      show:
+        loading_comments: Учитавање коментара
+        seeing_version: Видите нацрт верзије
+        select_draft_version: Одредите нацрт
+        select_version_submit: види
+        updated_at: ажурирано у %{date}
+        see_changes: видите сажетак промена
+        see_comments: Видите све коментаре
+        text_toc: Садржај
+        text_body: Текст
+        text_comments: Коментари
+    processes:
+      header:
+        additional_info: Додатне информације
+        description: Опис
+        more_info: Више информација и контекст
+      proposals:
+        empty_proposals: Нема предлога
+        filters:
+          random: Насумично
+          winners: Одређено
+      debate:
+        empty_questions: Нема никаквих питања
+        participate: Учествујте у дебати
+      index:
+        filter: Филтер
+        filters:
+          open: Отворите процесе
+          past: Прошлост
+        no_open_processes: Нема отворених процеса
+        no_past_processes: Нема прошлих процеса
+        section_header:
+          icon_alt: Икона заједнички закони
+          title: Заједнички закон
+          help: Помоћ око заједничког закона
+        section_footer:
+          title: Помоћ око заједничког закона
+          description: Учествујте у дебатама и процесима пре одобрења нових прописа или стратегија. Ваше мишљење ће бити размотрено.
+      phase_not_open:
+        not_open: Ова фаза још увек није отворена
+      phase_empty:
+        empty: Ништа још увек није објављено
+      process:
+        see_latest_comments: Видите последње коменатре
+        see_latest_comments_title: Коментари о овом процесу
+      shared:
+        key_dates: Партиципативна фаза
+        homepage: Почетна страна
+        debate_dates: Расправа
+        draft_publication_date: Датум објављивања радне верзије
+        allegations_dates: Коментари
+        result_publication_date: Датум последње публикације резултата
+        milestones_date: Пратити
+        proposals_dates: Предлози
+    questions:
+      comments:
+        comment_button: Објавите одговор
+        comments_title: Отворите одговоре
+        comments_closed: Затворена фаза
+        form:
+          leave_comment: Оставите ваш одговор
+      question:
+        comments:
+          zero: Нема коментара
+          one: "%{count} коментар"
+          few: "%{count} коментара"
+          other: "%{count} коментара"
+        debate: Расправа
+      show:
+        answer_question: Објавите одговор
+        next_question: Наредно питање
+        first_question: Прво питање
+        share: Подели
+        title: Заједнички законодавни процес
+      participation:
+        phase_not_open: Ова фаза није отворена
+        organizations: Организацијама није дозвољено да учествују у дебатама
+        unauthenticated: Морате %{signin} или %{signup} да бисте наставили.
+        verified_only: Само потврђени корисници могу учествовати, %{verify_account}.
+        debate_phase_not_open: Фаза расправе се завршила и одговори се више не прихватају
+    shared:
+      share: Подели
+      share_comment: Коментаришите на %{version_name} од нацрта процеса %{process_name}
+    proposals:
+      form:
+        tags_label: "Категорије"
+      not_verified: "За гласање предлога %{verify_account}."
+      process_title: Заједнички законодавни процес
+    summary:
+      title: "Сажетак"
+      votes:
+        zero: "%{count} гласова"
+        one: "%{count} глас"
+        few: "%{count} гласова"
+        other: "%{count} гласова"
+      debate_phase: "Фаза дебате"
+      proposals_phase: "Фаза предлога"
+      allegations_phase: "Фаза коментара"
+      debates:
+        zero: "Нема дебата"
+        one: "%{count} дебата"
+        few: "%{count} дебате"
+        other: "%{count} дебате"
+      proposals:
+        zero: "Нема предлога"
+        one: "%{count} предлог"
+        few: "%{count} предлога"
+        other: "%{count} предлога"
+      comments:
+        zero: "Нема коментара"
+        one: "%{count} коментар"
+        few: "%{count} коментара"
+        other: "%{count} коментара"
+      download: "Преузмите сажетак"
+      top_comments:
+        zero: "Нема коментара"
+        one: "%{count} коментар"
+        few: "%{count} коментара"
+        other: "%{count} коментара"
+      most_voted_comments: "Коментари са највише гласова"
+      no_allegation: "Нема коментара"
+      process_empty: "Овај процес није прошао кроз партиципативне фазе"

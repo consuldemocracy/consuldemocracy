@@ -1,0 +1,53 @@
+ka:
+  community:
+    sidebar:
+      title: საზოგადოება
+      description:
+        proposal: ამ ინიციატივის ირგვლივ შეკრებილ საზოგადოებაში მონაწილეობა.
+        investment: ამ ინვესტიციის ირგვლივ შეკრებილ საზოგადოებაში მონაწილეობა.
+      button_to_access: წევრებთან წვდომა
+    show:
+      title:
+        proposal: ინიციატივის საზოგადოება
+        investment: საბიუჯეტო ინვესტიციის საზოგადოება
+      description:
+        proposal: მიიღეთ მონაწილეობა ამ ინიციატივის წარმდგენ საზოგადოებაში. აქტიურ საზოგადოებას ინიციატივის შინაარსის გაუმჯობესება და მეტი მხარდაჭერის მოპოვება შეუძლია.
+        investment: მიიღეთ მონაწილეობა ამ საბიუჯეტო ინვესტიციის წარმდგენ საზოგადოებაში. აქტიურ საზოგადოებას ინვესტიციის შინაარსის გაუმჯობესება და მეტი მხარდაჭერის მოპოვება შეუძლია.
+      create_first_community_topic:
+        first_theme_not_logged_in: საკითხი არ მოიძებნა, შექმენი პირველმა.
+        first_theme: პირველი საზოგადოებრივი თემის შექმნა
+        sub_first_theme: "თემის შესაქმნელად საჭიროა %{sign_in} ან %{sign_up}."
+      tab:
+        participants: მონაწილეები
+      sidebar:
+        participate: მონაწილეობა
+        new_topic: თემის შექმნა
+      topic:
+        edit: თემის რედაქტირება
+        destroy: თემის წაშლა
+        comments:
+          zero: კომენტარები არ მოიძებნა
+          one: 1 კომენტარი
+          other: "%{count} კომენტარი"
+      author: ავტორი
+      back: '%{community} %{proposal}-ში დაბრუნება'
+    topic:
+      create: თემის შექმნა
+      edit: თემის რედაქტირება
+      form:
+        new:
+          submit_button: თემის შექმნა
+        edit:
+          submit_button: თემის რედაქტირება
+        create:
+          submit_button: თემის შექმნა
+        update:
+          submit_button: თემის რედაქტირება
+      show:
+        tab:
+          comments_tab: კომენტარები
+      sidebar:
+        recommendations_title: რეკომენდაციები თემის შექმნისთვის
+        recommendation_one: არ დაწეროთ თემის დასახელება ან წინადადებები დიდი ასოებით.
+        recommendation_two: ნებისმიერი თემა ან კომენტარი, რომელიც არაკანონიერი ქმედების პროვოცირებას ახდენს, წაიშლება.
+        recommendation_three: გამოიყენეთ ეს სივრცე საკუთარი აზრის გამოსახატად.

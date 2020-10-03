@@ -64,7 +64,7 @@
                             budget_investments_path(@budget,
                               heading_id: group.headings.first.id,
                               filter: @current_filter),
-                            data: { no_turbolink: true } %>
+                            data: { turbolinks: false } %>
               <% else %>
                 <%= link_to group.name,
                             budget_group_path(@budget, group,

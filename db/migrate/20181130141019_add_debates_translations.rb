@@ -1,15 +1,15 @@
 class AddDebatesTranslations < ActiveRecord::Migration[4.2]
-  def self.up
-    Debate.create_translation_table!(
-      {
-        title:               :string,
-        description:         :text
-       },
-      { migrate_data: true }
-    )
-  end
+  def change
+    create_table :debate_translations do |t|
+      t.integer :debate_id, null: false
+      t.string :locale, null: false
+      t.timestamps null: false
 
-  def self.down
-    Debate.drop_translation_table!
+      t.string :title
+      t.text :description
+
+      t.index :debate_id
+      t.index :locale
+    end
   end
 end

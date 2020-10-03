@@ -44,6 +44,8 @@ pt-BR:
         title: "Processos"
         description: "Na seção %{link}, os cidadãos participam da redação e modificação dos regulamentos que afetam a cidade e podem opinar sobre as políticas municipais em debates anteriores."
         link: "processos"
+        feature: "Para participar dos processos, você precisa %{link} e verificar sua conta."
+        feature_link: "registre-se %{org_name}"
       faq:
         title: "Problemas técnicos?"
         description: "Leia o FAQ e resolva suas dúvidas."

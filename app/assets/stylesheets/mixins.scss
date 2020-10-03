@@ -1,9 +1,9 @@
 // Table of Contents
 //
 // 01. Logo
-// 02. Side menu and content
-// 03. Orbit bullets
-// 04. Direct uploads
+// 02. Orbit bullets
+// 03. Direct uploads
+// 04. Admin layout
 // ------------------
 
 // 01. Logo
@@ -22,30 +22,8 @@
   }
 }
 
-// 02. Side menu and content
-// -------------------------
-
-@mixin side-menu-and-content {
-  display: flex;
-
-  > :first-child {
-    flex: 25%;
-    min-width: 250px;
-
-    > :first-child {
-      height: 100%;
-    }
-  }
-
-  > :last-child {
-    flex: 75%;
-    overflow-x: auto;
-    padding: $line-height !important;
-  }
-}
-
-// 03. Orbit bullet
-// ----------------
+// 02. Orbit bullets
+// -----------------
 
 @mixin orbit-bullets {
   @include disable-mouse-outline;
@@ -72,7 +50,7 @@
   }
 }
 
-// 04. Direct uploads
+// 03. Direct uploads
 // ------------------
 
 @mixin direct-uploads {
@@ -146,5 +124,36 @@
 
   .loading-bar.no-transition {
     transition: none;
+  }
+}
+
+// 04. Admin layout
+// ----------------
+
+@mixin admin-layout {
+  display: flex;
+  flex-direction: column;
+
+  > header {
+    margin-bottom: 0;
+  }
+
+  > .menu-and-content {
+    flex: 1;
+  }
+}
+
+@mixin has-fa-icon($icon, $style) {
+  @extend .fa-#{$icon};
+
+  &::before {
+    @extend %fa-icon;
+    font-family: "Font Awesome 5 Free";
+
+    @if $style == "r" {
+      font-weight: normal;
+    } @else {
+      font-weight: bold;
+    }
   }
 }

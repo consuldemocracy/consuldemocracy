@@ -13,7 +13,7 @@ section "Creating polls" do
                starts_at: 5.days.ago,
                ends_at:   5.days.from_now,
                geozone_restricted: true,
-               geozones: Geozone.reorder("RANDOM()").limit(3))
+               geozones: Geozone.sample(3))
 
   Poll.create!(name: I18n.t("seeds.polls.recounting_poll"),
                slug: I18n.t("seeds.polls.recounting_poll").parameterize,

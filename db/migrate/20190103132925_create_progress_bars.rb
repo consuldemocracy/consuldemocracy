@@ -1,23 +1,23 @@
 class CreateProgressBars < ActiveRecord::Migration[4.2]
   def change
-    create_table :progress_bars do |t|
+    create_table :progress_bars, id: :serial do |t|
       t.integer :kind
       t.integer :percentage
-      t.references :progressable, polymorphic: true
+      t.string :progressable_type
+      t.integer :progressable_id
 
       t.timestamps null: false
     end
 
-    reversible do |change|
-      change.up do
-        ProgressBar.create_translation_table!({
-          title: :string
-        })
-      end
+    create_table :progress_bar_translations do |t|
+      t.integer :progress_bar_id, null: false
+      t.string :locale, null: false
+      t.timestamps null: false
 
-      change.down do
-        ProgressBar.drop_translation_table!
-      end
+      t.string :title
+
+      t.index :locale
+      t.index :progress_bar_id
     end
   end
 end

@@ -1,8 +1,67 @@
 eu:
   officing:
-    results:
+    header:
+      title: Bozkaketak
+    dashboard:
       index:
-        table_answer: Erantzuna
-    residence:
+        title: Bozka mahaiburua
+        info: Hemen herri agiriak egiaztatu eta hautetsontzien emaitzak gorde ditzakezu
+        no_shifts: Gaur ez duzu mahaiburu txandarik esleituta.
+    menu:
+      voters: Agiria egiaztatu eta bozkatu
+      total_recounts: Zenbaketa
+    polls:
+      final:
+        title: Amaitutako bozkaketen zerrenda
+        no_polls: Ez duzu baimenik duela gutxi amaitutako bozkaketen azken zenbaketak ikusteko.
+        select_poll: Bozkaketa aukeratu
+        add_results: Emaitzak gehitu
+    results:
+      flash:
+        create: "Datuak gordeta"
+        error_create: "Emaitzak EZ dira gehitu. Errorea datuetan."
+        error_wrong_booth: "Hautetsontzi okerra. Emaitzak ez dira gorde."
       new:
+        title: "%{poll} - Emaitzak gehitu"
+        not_allowed: "Ez duzu baimenik emaitzak sartzeko"
+        booth: "Hautetsontzia"
+        date: "Eguna"
+        select_booth: "Hautetsontzia aukeratu"
+        ballots_white: "Bozka zuriak"
+        ballots_null: "Baliogabeko bozkak"
+        ballots_total: "Bozkak guztira"
+        submit: "Gorde"
+        results_list: "Zure emaitzak"
+        see_results: "Emaitzak ikusi"
+      index:
+        no_results: "Ez dago emaitzik"
+        results: Emaitzak
+        table_answer: Erantzuna
+        table_votes: Bozkak
+        table_whites: "Bozka zuriak"
+        table_nulls: "Baliogabeko bozkak"
+        table_total: "Bozkak guztira"
+    residence:
+      flash:
+        create: "Erroldarekin egiaztatutako agiria"
+        not_allowed: "Gaur ez duzu mahaiburu izateko txandarik"
+      new:
+        title: Agiria egiaztatu
         document_number: "Dokumentu zenbakia (letrak barne)"
+        submit: Agiria egiaztatu
+        error_verifying_census: "Erroldak ezin izan du agiri hau egiaztatu."
+        form_errors: agiri hau egiaztatzea ekidin zuten
+    voters:
+      new:
+        title: Bozkaketak
+        table_poll: Bozkaketa
+        table_status: Bozkaketen egoera
+        table_actions: Ekintzak
+        not_to_vote: Pertsonak momentuz ez bozkatzea erabaki du
+      show:
+        can_vote: Bozka dezakezu
+        error_already_voted: Jadanik bozkaketa honetan parte hartu duzu.
+        submit: Bozka baieztatu
+        success: "Bozkatuta!"
+      can_vote:
+        submit_disable_with: "Itxaron, bozka baieztatzen..."

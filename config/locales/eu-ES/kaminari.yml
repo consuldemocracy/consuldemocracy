@@ -1,1 +1,22 @@
 eu:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Sarrerak
+        one: sarrera
+        other: sarrerak
+      more_pages:
+        display_entries: Erakuzten <strong>%{first}&nbsp;-&nbsp;%{last}</strong> guztira <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} ez dira aurkitu"
+          one: <strong>1 %{entry_name}</strong> dago
+          other: <strong>%{count} %{entry_name}</strong> daude
+  views:
+    pagination:
+      current: Orrian zaude
+      first: Lehenengoa
+      last: Azkena
+      next: Hurrengoa
+      previous: Aurrekoa
+      truncate: "&hellip;"

@@ -7,10 +7,6 @@ module DocumentsHelper
     document.errors[:attachment].join(", ") if document.errors.key?(:attachment)
   end
 
-  def bytes_to_mega(bytes)
-    bytes / Numeric::MEGABYTE
-  end
-
   def render_destroy_document_link(builder, document)
     if !document.persisted? && document.cached_attachment.present?
       link_to t("documents.form.delete_button"),
@@ -49,7 +45,7 @@ module DocumentsHelper
   def document_item_link(document)
     info_text = "#{document.humanized_content_type} | #{number_to_human_size(document.attachment_file_size)}"
 
-    link_to safe_join([document.title, content_tag(:small, "(#{info_text})")], " "),
+    link_to safe_join([document.title, tag.small("(#{info_text})")], " "),
             document.attachment.url,
             target: "_blank",
             title: t("shared.target_blank")

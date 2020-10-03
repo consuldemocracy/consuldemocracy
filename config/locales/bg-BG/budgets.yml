@@ -1,1 +1,219 @@
 bg:
+  budgets:
+    ballots:
+      show:
+        title: Вашата бюлетина
+        amount_available:
+          knapsack: "Все още имате <span>%{count}</span> да инвестирате."
+          approval:
+            zero: "Все още можете да гласувате <span>%{count}</span> пъти."
+            one: "Все още можете да гласувате <span>%{count}</span> път."
+            other: "Все още можете да гласувате <span>%{count}</span> пъти."
+        amount_spent:
+          knapsack: "Похарчена сума <span>%{count}</span>"
+          approval:
+            zero: "Подадени гласове: <span>%{count}</span>"
+            one: "Подадени гласове: <span>%{count}</span>"
+            other: "Подадени гласове: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Можете да гласувате за <span>1</span> проект"
+            other: "Можете да гласувате за до <span>%{count}</span> проекта"
+        no_balloted_group_yet: "Все още не сте гласували за тази група, отидете да гласувате!"
+        remove: Премахване на вота
+        voted:
+          one: "Гасувахте <span>one</span> инвестиция."
+          other: "Гласувахте <span>%{count}</span> инвестиции."
+        voted_info: "Вашата бюлетина е потвърдена!"
+        voted_info_2: "Но можете да промените гласа си по всяко време, докато тази фаза не бъде закрита."
+        zero: Не сте гласували нито един инвестиционен проект.
+      reasons_for_not_balloting:
+        not_logged_in: Трябва да %{signin} или %{signup}, за да продължите.
+        not_verified: Само проверени потребители могат да гласуват за инвестиции; %{verify_account}.
+        organization: Организациите нямат право да гласуват
+        not_selected: Неизбраните инвестиционни проекти не могат да бъдат подкрепени
+        not_enough_money: "Вече сте посочили наличния бюджет. <br> <small> Не забравяйте, че можете да %{change_ballot} по всяко време </small>"
+        no_ballots_allowed: Изборната фаза е затворена
+        different_heading_assigned: "Вече сте гласували различно заглавие: %{heading_link}"
+        not_enough_available_votes: "Достигнахте максималния брой от разрешени гласувания"
+        change_ballot: променете гласовете си
+        casted_offline: Вече сте участвали офлайн
+    groups:
+      show:
+        title: Изберете опция
+        unfeasible_title: Невъзможни инвестиции
+        unfeasible: Вижте невъзможни инвестиции
+        unselected_title: Инвестиции, които не са избрани за фаза на гласуване
+        unselected: Вижте инвестициите, които не са избрани за фаза на гласуване
+    phase:
+      drafting: Чернова (не се вижда от обществеността)
+      informing: Информация
+      accepting: Приемане на проекти
+      reviewing: Преглеждане на проекти
+      selecting: Избиране на проекти
+      valuating: Оценяване на проекти
+      publishing_prices: Цени за публикуване на проекти
+      balloting: Проекти за гласуване
+      reviewing_ballots: Преглед на гласуването
+      finished: Приключил бюджет
+    index:
+      title: Бюджети с участие
+      empty_budgets: Няма бюджети.
+      section_header:
+        icon_alt: Икона за бюджети с участие
+        title: Бюджети с участие
+        help: Помощ при бюджети с участие
+        all_phases: Вижте всички фази
+      all_phases: Фази на бюджетните инвестиции
+      map: Предложения за бюджетни инвестиции, разположени географски
+      investment_proyects: Списък на всички инвестиционни проекти
+      unfeasible_investment_proyects: Списък на всички неизпълними инвестиционни проекти
+      not_selected_investment_proyects: Списък на всички инвестиционни проекти, които не са избрани за гласуване
+      finished_budgets: Приключили бюджети с участие
+      see_results: Вижте резултатите
+      section_footer:
+        title: Помощ при бюджети с участие
+        description: При бюджетите с участие гражданите решават към кои проекти да насочат част от бюджета.
+      milestones: Основни етапи
+    investments:
+      form:
+        tag_category_label: "Категории"
+        tags_instructions: "Маркирайте това предложение. Можете да изберете от предложените категории или да добавите своя собствена"
+        tags_label: Тагове
+        tags_placeholder: "Въведете таговете, които искате да използвате, разделени със запетаи (',')"
+        map_location: "Местоположение на картата"
+        map_location_instructions: "Навигирайте картата до местоположението и поставете маркера."
+        map_remove_marker: "Премахване на маркера на картата"
+        map_skip_checkbox: "Тази инвестиция няма конкретно местоположение или не съм наясно с него."
+      index:
+        title: Бюджетиране с участие
+        unfeasible: Невъзможни инвестиционни проекти
+        unfeasible_text: "Инвестициите трябва да отговарят на редица критерии (законност, конкретност, да не надвишават ограничението на бюджета), за да бъдат обявени за жизнеспособни и да достигнат етапа на окончателно гласуване. Всички инвестиции, които не отговарят на тези критерии, са маркирани като невъзможни и публикувани в следващия списък, заедно с неговия доклад за неизпълнимост."
+        by_heading: "Инвестиционни проекти с обхват: %{heading}"
+        search_form:
+          button: Търсене
+          placeholder: Търсене на инвестиционни проекти...
+          title: Търсене
+        search_results:
+          one: " съдържащи термина <strong>'%{search_term}'</strong>"
+          other: " съдържащи термина <strong>'%{search_term}'</strong>"
+        sidebar:
+          my_ballot: Моята бюлетина
+          voted_info:
+            knapsack:
+              one: "<strong>Гласувахте за едно предложение с цена от %{amount_spent}</strong>"
+              other: "<strong>Гласувахте за %{count} предложения с цена %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Вие гласувахте за едно предложение</strong>"
+              other: "<strong>Вие гласувахте за %{count} предложения</strong>"
+          change_vote_info:
+            knapsack: "Можете да %{link} по всяко време до края на тази фаза. Няма нужда да харчите всички налични пари."
+            approval: "Вие можете да %{link} по всяко време до приключването на тази фаза."
+          change_vote_link: "променете Вашето гласуване"
+          different_heading_assigned: "Имате активни гласове в друга рубрика: %{heading_link}"
+          change_ballot: "Ако промените решението си, можете да премахнете гласовете си в %{check_ballot} и да започнете отново."
+          check_ballot_link: "провери и потвърди моята бюлетина"
+          zero: Не сте гласували нито един инвестиционен проект в тази група.
+          verified_only: "За създаване на нова бюджетна инвестиция %{verify}."
+          create: "Създайте бюджетна инвестиция"
+          not_logged_in: "За да създадете нова бюджетна инвестиция, трябва да %{sign_in} или %{sign_up}."
+          by_feasibility: По изпълнимост
+          feasible: Изпълними проекти
+          unfeasible: Неизпълними проекти
+        orders:
+          random: случаен
+          confidence_score: най-високо оценени
+          price: по цена
+      share:
+        message: "Създадох инвестиционния проект %{title} в %{handle}. Създайте инвестиционен проект също!"
+      show:
+        author_deleted: Потребителят е изтрит
+        price_explanation: Обяснение на цената
+        unfeasibility_explanation: Обяснение на неизпълнимостта
+        code: "Код на инвестиционния проект: <strong>%{code}</strong>"
+        location: "Местоположение: <strong>%{location}</strong>"
+        organization_name: "Предложено от името на: <strong>%{name}</strong>"
+        share: Споделете
+        title: Инвестиционен проект
+        supports: Подкрепа
+        votes: Гласове
+        price: Цена
+        comments_tab: Коментари
+        milestones_tab: Основни етапи
+        author: Автор
+        project_unfeasible: "Този инвестиционен проект <strong> е означен като неизпълним </strong> и няма да премине към фаза на гласуване."
+        project_selected: "Този инвестиционен проект <strong> е избран </strong> за фаза на гласуване."
+        project_winner: "Печеливш инвестиционен проект"
+        project_not_selected: "Този инвестиционен проект <strong> не е избран </strong> за фаза на гласуване."
+        see_price_explanation: Вижте обяснението на цената
+      wrong_price_format: Само цели числа
+      investment:
+        add: Гласуване
+        already_added: Вече сте добавили този инвестиционен проект
+        already_supported: Вече сте подкрепили този инвестиционен проект. Споделете го!
+        support_title: Подкрепете този проект
+        confirm_group:
+          one: "Можете да подкрепяте инвестиции само в %{count} район. Ако продължите, не можете да промените избора на вашия район. Сигурни ли сте?"
+          other: "Можете да подкрепяте инвестиции само в %{count} района. Ако продължите, не можете да промените избора на вашия район. Сигурни ли сте?"
+        supports:
+          zero: Без гласове за подкрепа
+          one: 1 глас за подкрепа
+          other: "%{count} гласове за подкрепа"
+        give_support: Подкрепа
+      header:
+        check_ballot: Проверете и потвърдете моята бюлетина
+        different_heading_assigned: "Имате активни гласове в друга рубрика: %{heading_link}"
+        change_ballot: "Ако промените решението си, можете да премахнете гласовете си в %{check_ballot} и да започнете отново."
+        check_ballot_link: "провери и потвърди моята бюлетина"
+        price: "В тази рубрика има бюджет от"
+    progress_bar:
+      assigned: "Вие сте определили: "
+      available: "Наличен бюджет: "
+      votes:
+        zero: "Вие избрахте <strong>0</strong> проекта от <strong>%{limit}</strong>"
+        one: "Вие избрахте <strong>1</strong> проект от <strong>%{limit}</strong>"
+        other: "Вие избрахте <strong>%{count}</strong> проекта от <strong>%{limit}</strong>"
+    show:
+      group: Група
+      phase: Актуална фаза
+      unfeasible_title: Невъзможни инвестиции
+      unfeasible: Вижте невъзможни инвестиции
+      unselected_title: Инвестиции, които не са избрани за фаза на гласуване
+      unselected: Вижте инвестициите, които не са избрани за фаза на гласуване
+      see_results: Вижте резултатите
+    results:
+      link: Резултати
+      page_title: "%{budget} - Резултати"
+      heading: "Резултати от бюджета с участие"
+      heading_selection_title: "По райони"
+      ballot_lines_count: Гласове
+      hide_discarded_link: Скриване на отхвърлените
+      show_all_link: Показване на всички
+      price: Цена
+      amount_available: Наличен бюджет
+      accepted: "Приета инвестиция: "
+      discarded: "Отхвърлена инвестиция: "
+      incompatibles: Несъвместими
+      investment_title: Заглавие на Проекта
+      investment_proyects: Списък на всички инвестиционни проекти
+      unfeasible_investment_proyects: Списък на всички неизпълними инвестиционни проекти
+      not_selected_investment_proyects: Списък на всички инвестиционни проекти, които не са избрани за гласуване
+    executions:
+      link: "Основни етапи"
+      page_title: "%{budget} - Основни етапи"
+      heading: "Основни етапи в бюджета с участие"
+      heading_selection_title: "По район"
+      no_winner_investments: "Няма печеливши инвестиции на този етап"
+      filters:
+        status:
+          label: "Текущ етап на проекта"
+          all: "Всички (%{count})"
+        milestone_tag:
+          label: "Маркер на Основен етап"
+          all: "Всички (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Началната дата не може да бъде равна или по-късна от Крайната дата"
+        prev_phase_dates_invalid: "Началната дата трябва да бъде по-късна от началната дата на предишната активирана фаза(%{phase_name})"
+        next_phase_dates_invalid: "Крайната дата трябва да бъде по-ранна от крайната дата на следващата активирана фаза(%{phase_name})"

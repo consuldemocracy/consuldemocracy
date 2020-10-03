@@ -1,0 +1,964 @@
+ka:
+  account:
+    show:
+      change_credentials_link: პირადი მონაცემების შეცვლა
+      erase_account_link: ჩემი ანგარიშის წაშლა
+      finish_verification: ვერიფიკაციის დასრულება
+      notifications: შეტყობინებები
+      organization_name_label: ორგანიზაციის დასახელება
+      organization_responsible_name_placeholder: ორგანიზაციის/ჯგუფის წარმომადგენელი
+      personal: პერსონალური მონაცემები
+      phone_number_label: ტელეფონის ნომერი
+      public_interests_my_title_list: იმ ელემენტების ტეგები, რომლებსაც თქვენ მიჰყვებით
+      public_interests_user_title_list: იმ ელემენტების ტეგები, რომლებსაც ეს მომხმარებელი მიჰყვება
+      save_changes_submit: ცვლილებების შენახვა
+      recommendations: რეკომენდაციები
+      title: ჩემი პროფილი
+      user_permission_debates: დებატებში მონაწილეობა
+      user_permission_info: თქვენი ანგარიშით თქვენ შეგიძლიათ...
+      user_permission_proposal: ახალი ინიციატივის შექმნა
+      user_permission_support_proposal: ინიციატივებზე ხმის მიცემა
+      user_permission_title: მონაწილეობა
+      user_permission_verify: ყველა ფუნქციით სარგებლობისთვის, გაიარეთ ანგარიშის გადამოწმება.
+      user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
+      user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
+      username_label: მომხმარებლის სახელი
+      verified_account: ანგარიში გადამოწმებულია
+      verify_my_account: ჩემი ანგარიშის დადასტურება
+  application:
+    close: დახურვა
+    menu: მენიუ
+  comments:
+    comments_closed: კომენტარები დახურულია
+    verified_only: მონაწილეობისთვის %{verify_account}
+    comment:
+      admin: ადმინისტრატორი
+      author: ავტორი
+      deleted: კომენტარი წაშლილია
+      moderator: მოდერატორი
+      responses:
+        zero: პასუხები არ მოიძებნა
+        one: 1 პასუხი
+        other: "%{count} პასუხი"
+      responses_show:
+        zero: პასუხები არ მოიძებნა
+        one: "1 პასუხი (ჩვენება)"
+        other: "%{count} პასუხი (ჩვენება)"
+      responses_collapse:
+        zero: პასუხები არ მოიძებნა
+        one: "1 პასუხი (აკეცვა)"
+        other: "%{count} პასუხი (დახურვა)"
+      user_deleted: მომხმარებელი წაშლილია
+      votes:
+        zero: ხმები არ მოიძებნა
+        one: 1 ხმა
+        other: "%{count} ხმა"
+    form:
+      comment_as_admin: დატოვეთ კომენტარი, როგორც ადმინისტრატორმა
+      comment_as_moderator: დატოვეთ კომენტარი, როგორც მოდერატორმა
+      leave_comment: კომენტარის დატოვება
+    orders:
+      most_voted: ყველაზე მეტი ხმის მქონე
+      newest: უახლესი პირველ რიგში
+      oldest: უძველესი პირველ რიგში
+      most_commented: ყველაზე მეტი კომენტარის მქონე
+    select_order: დალაგება
+    show:
+      return_to_commentable: "უკან დაბრუნება "
+  comments_helper:
+    comment_button: კომენტარის გამოქვეყნება
+    comment_link: კომენტარი
+    comments_title: კომენტარები
+    reply_button: პასუხის გამოქვეყნება
+    reply_link: პასუხი
+  debates:
+    create:
+      form:
+        submit_button: დებატის დაწყება
+    debate:
+      comments:
+        zero: კომენტარები არ მოიძებნა
+        one: 1 კომენტარი
+        other: "%{count} კომენტარი"
+      votes:
+        zero: ხმები არ მოიძებნა
+        one: 1 ხმა
+        other: "%{count} ხმა"
+    edit:
+      editing: დებატის რედაქტირება
+      form:
+        submit_button: ცვლილებების შენახვა
+      show_link: დებატის ნახვა
+    form:
+      debate_title: დებატების დასახელება
+      tags_instructions: დებატის მონიშვნა.
+      tags_placeholder: "შეიყვანეთ ის ტეგები, რომელთა გამოყენებაც გსურთ, გამოყავით ისინი მძიმით (',')"
+    index:
+      featured_debates: გამორჩეული
+      orders:
+        confidence_score: მაღალი შეფასების მქონე
+        created_at: უახლესი
+        hot_score: ყველაზე აქტიური
+        most_commented: ყველაზე მეტი კომენტარის მქონე
+        relevance: შესაბამისობა
+        recommendations: რეკომენდაციები
+      recommendations:
+        without_results: თქვენს ინტერესებთან ახლოს მყოფი არცერთი დებატი არ მოიძებნა
+        without_interests: მიჰყევით ინიციატივებს, რათა შევძლოთ რეკომენდაციების შემუშავება/გაწევა
+        disable: "დებატებთან დაკავშირებული რეკომენდაციები აღარ გამოჩნდება, თუ გააქრობთ მათ. მათი ხელახლა ჩართვა 'ჩემი ანგარიშის' გვერდიდან შეგიძლიათ"
+        actions:
+          success: "დებატებთან დაკავშირებული რეკომენდაციები გამორთულია"
+          error: "შეცდომა! გთხოვთ, გადახვიდეთ 'ჩემი ანგარიშის' გვერდზე და ხელით გამორთოთ რეკომენდაციები"
+      search_form:
+        button: ძებნა
+        placeholder: დებატების ძებნა...
+        title: ძებნა
+      search_results:
+        one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
+        other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
+      select_order: დალაგება
+      start_debate: დებატის დაწყება
+      title: დებატები
+      section_header:
+        icon_alt: დებატის ნიშანი
+        title: დებატები
+        help: ინფორმაცია დებატების შესახებ
+      section_footer:
+        title: ინფორმაცია დებატების შესახებ
+        description: დაიწყეთ დებატები და გაუზიარეთ სხვებს მოსაზრებები მნიშვნელოვან საკითხებზე.
+        help_text_1: "დებატების სივრცე საშუალებას აძლევს ნებისმიერ დაინტერესებულ მხარეს გააზიაროს საკუთარი შეხედულებები და მოისმინოს სხვისი აზრი. "
+        help_text_2: 'დებატებში მონაწილეობისთვის გაიარეთ რეგისტრაცია %{org}-ზე. ამით შესაძლებლობა გექნებათ, დააფიქსიროთ მოსაზრება მოცემულ საკითხზე  და შეაფასონ ისინი "ვეთანხმები" ან "არ ვეთანხმები" ღილაკებზე დაჭერით.'
+    new:
+      form:
+        submit_button: დებატის დაწყება
+      info: 'თუ გსურთ ინიციატივის გაკეთება, თქვენ არასწორ ადგილას აღმოჩნდით, გადადით შემდეგ ბმულზე: %{info_link}.'
+      info_link: ახალი ინიციატივის შექმნა
+      more_info: დამატებითი ინფორმაცია
+      recommendation_four: გამოიყენეთ ეს სივრცე საკუთარი აზრის გამოსახატავად.
+      recommendation_one: ნუ გამოიყენებთ მხოლოდ დიდ ასოებს დებატის დასასათაურებლად ან წინადადებების შესადგენად.
+      recommendation_three: მწვავე კრიტიკა მისასალმებელია. ეს არის სივრცე საკუთარი აზრის გამოსახატავად. თუმცა, ჩვენ გირჩევთ, რომ დაიცვათ თავაზიანობა და საზრიანობა. მსოფლიო გაცილებით უკეთესი ადგილია ამ ღირსებებით.
+      recommendation_two: ნებისმიერი დებატი, ან კომენტარი, რომელიც არაკანონიერი ქმედების პროვოცირებას ახდენს, წაიშლება. დაუშვებელია სადებატო სივრცის საბოტაჟიც. ყველა სხვა დანარჩენი დაშვებულია.
+      recommendations_title: რეკომენდაციები დებატების შესაქმნელად
+      start_new: დებატების დაწყება
+    show:
+      author_deleted: მომხმარებელი წაშლილია
+      comments:
+        zero: კომენტარები არ მოიძებნა
+        one: 1 კომენტარი
+        other: "%{count} კომენტარი"
+      comments_title: კომენტარები
+      edit_debate_link: რედაქტირება
+      flag: მომხმარებელთა გარკვეულმა ნაწილმა ეს დებატები გაასაჩივრა.
+      share: გაზიარება
+      author: ავტორი
+    update:
+      form:
+        submit_button: ცვლილებების შენახვა
+  errors:
+    messages:
+      user_not_found: მომხმარებელი არ მოიძებნა
+      invalid_date_range: "თარიღთა დიაპაზონი არასწორია"
+  form:
+    accept_terms: ვეთანხმები %{policy} და %{conditions}
+    accept_terms_title: ვეთანხმები კონფიდენციალურობის პოლიტიკას და გამოყენების წესებსა და პირობებს
+    conditions: გამოყენების წესები და პირობები
+    debate: დებატები
+    direct_message: პირადი შეტყობინება
+    error: შეცდომა
+    errors: შეცდომები
+    not_saved: "%{resource}-ის დამახსოვრება ვერ მოხერხდა. <br>გთხოვთ, შეამოწმოთ მონიშნული ველები:"
+    policy: კონფიდენციალურობის პოლიტიკა
+    banner: ბანერი
+    proposal: ინიციატივა
+    proposal_notification: "შეტყობინება"
+    budget/investment: ინვესტიცია
+    budget/group: საბიუჯეტო ჯგუფი
+    budget/heading: საბიუჯეტო რუბრიკა
+    geozone: გეოგრაფიული ზონა
+    legislation/draft_version: მონახაზი
+    legislation/process: პროცესი
+    legislation/question: შეკითხვა
+    poll/shift: ცვლა
+    poll/question/answer: პასუხი
+    user: ანგარიში
+    verification/sms: ტელეფონი
+    signature_sheet: ხელმოწერის ფურცელი
+    document: დოკუმენტი
+    topic: საკითხი
+    image: ფოტოსურათი
+    local_census_record: ადგილობრივი მოსახლეობის აღწერის ჩანაწერი
+    local_census_records/import: ადგილობრივი მოსახლეობის აღწერის ჩანაწერების ატვირთვა
+    site_customization/content_block: შინაარსის ბლოკი
+    site_customization/page: გვერდი
+  geozones:
+    none: მთელი ქალაქი
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: როგორც ჩანს თქვენ Internet Explorer-ს იყენებთ. გაცილებით სწრაფი გამოცდილების მისაღებად გამოიყენეთ %{firefox} ან %{chrome}.
+      ie_title: ეს ვებ–გვერდი არ არის ოპტიმიზებული თქვენი ბრაუზერისთვის
+    dashboard:
+      proposal_header:
+        published: გამოქვეყნებული
+        draft: მონახაზი
+        retired: დეაქტივირებული
+      proposal_totals:
+        active_resources: აქტიური რესურსები
+        community: თქვენი გაერთიანების წევრები
+        show_proposal: ინიციატივის ნახვა
+        preview_proposal: ინიციატივის წინასწარი გადახედვა
+        current_goal: დასახული მიზანი
+        supports:
+          zero: მხარდამჭერები არ მოიძებნა
+          one: 1 მხარდამჭერი
+          other: "ხმები"
+    footer:
+      accessibility: ხელმისაწვდომობა
+      conditions: გამოყენების წესები და პირობები
+      consul: CONSUL-ის აპლიკაცია
+      consul_url: https://github.com/consul/consul
+      contact_us: ტექნიკური მხარდაჭერის მისაღებად ეწვიეთ
+      copyright: CONSUL, %{year}
+      description: აღნიშნული პორტალი იყენებს %{consul}, რომელიც არის %{open_source}.
+      open_source: ღია წყაროების პროგრამული უზრუნველყოფა
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: გადაწყვიტეთ, როგორ გსურთ იყოს თქვენი ქალაქი მოწყობილი.
+      participation_title: მონაწილეობა
+      privacy: კონფიდენციალურობის პოლიტიკა
+    header:
+      administration_menu: მენიუ
+      administration: ადმინისტრაცია
+      available_locales: ხელმისაწვდომი ენები
+      collaborative_legislation: ერთობლივი სამოქალაქო ინიციატივა
+      debates: დებატები
+      locale: "ენა:"
+      logo: CONSUL-ის ლოგო
+      management: მენეჯმენტი
+      moderation: მოდერაცია
+      valuation: შეფასება
+      officing: კენჭისყრის ოფიცრები
+      help: დახმარება
+      my_account_link: ჩემი ანგარიში
+      my_activity_link: ჩემი აქტივობა
+      open_gov: ღია მმართველობა
+      proposals: ინიციატივები
+      poll_questions: ხმის მიცემა
+      budgets: მონაწილეობითი ბიუჯეტირება
+      notification_item:
+        new_notifications:
+          one: თქვენ გაქვთ ერთი შეტყობინება
+          other: თქვენ გაქვთ %{count} შეტყობინება
+        notifications: შეტყობინებები
+        no_notifications: "თქვენ არ გაქვთ შეტყობინება"
+  notifications:
+    index:
+      empty_notifications: თქვენ არ გაქვთ შეტყობინება.
+      mark_all_as_read: მოვნიშნოთ ყველა, როგორც წაკითხული
+      read: წაკითხული
+      title: შეტყობინებები
+      unread: წასაკითხი
+    notification:
+      action:
+        comments_on:
+          one: ვიღაცამ დააკომენტარა
+          other: ვიღაცამ დატოვა %{count} ახალი კომენტარი
+        proposal_notification:
+          one: თქვენ გაქვთ ერთი ახალი შეტყობინება
+          other: თქვენ გაქვთ %{count} ახალი შეტყობინება
+        replies_to:
+          one: ვიღაცამ უპასუხა თქვენს კომენტარს
+          other: თქვენ გაქვთ %{count} ახალი პასუხი თქვენს კომენტარზე
+      mark_as_read: მოვნიშნოთ, როგორც წაკითხული
+      mark_as_unread: მოვნიშნოთ, როგორც წასაკითხი
+      notifiable_hidden: ეს რესურსი ხელმისაწვდომი აღარ არის.
+  map:
+    title: "ოლქები"
+    proposal_for_district: "ინიციატივის დაწყება თქვენი ოლქისთვის"
+    start_proposal: ახალი ინიციატივის შექმნა
+  omniauth:
+    facebook:
+      sign_in: Facebook-ით შესვლა
+      sign_up: Facebook-ით რეგისტრაცია
+      name: Facebook
+    finish_signup:
+      title: "დამატებითი დეტალები"
+      username_warning: "ჩვენი და სოც. ქსელების ურთიერთობიდან გამომდინარე, შესაძლებელია თქვენი მომხმარებლის სახელი გამოჩნდეს, როგორც 'უკვე დაკავებული'. ასეთ შემთხვევაში, გთხოვთ, შეარჩიოთ მომხმარებლის სხვა სახელი."
+    google_oauth2:
+      sign_in: Google-ით შესვლა
+      sign_up: Google-ით რეგისტრაცია
+      name: Google
+    wordpress_oauth2:
+      sign_in: Wordpress-ით შესვლა
+      sign_up: Wordpress-ით რეგისტრაცია
+      name: Wordpress
+    twitter:
+      sign_in: Twitter-ით შესვლა
+      sign_up: Twitter-ით რეგისტრაცია
+      name: Twitter
+    info:
+      sign_in: "შესვლა:"
+      sign_up: "რეგისტრაციის გავლა:"
+    or_fill: "ან შეავსეთ წინამდებარე ფორმა:"
+  proposals:
+    create:
+      form:
+        submit_button: ინიციატივის შექმნა
+    created:
+      title: გილოცავთ! თქვენ გაიარეთ პირველი ეტაპი.
+      motivation: "თქვენი ინიციატივისთვის მნიშვნელოვანია კამპანიის მომზადება. პირველი დღეები გადამწყვეტია."
+      motivation_2: "<strong>თუ გსურთ გამოქვეყნებამდე რეკომენდაციების მიღება, დატოვეთ თქვენი ინიციატივა მონახაზის ფორმატში და ჩვენ აღმოგიჩენთ დამატებით დახმარებას.</strong>"
+      publish: არა, მსურს ინიციატივის გამოქვეყნება
+      dashboard: დიახ, გამოქვეყნებამდე მსურს დახმარება
+      preview_title: გამოქვეყნების შემდეგ, თქვენს ინიციატივას შემდეგნაირი სახე ექნება
+    share:
+      improve_it: გააუმჯობესეთ თქვენი კამპანია და მიიღეთ დამატებითი მხარდაჭერა.
+      dashboard: დამატებითი ინფორმაციის ნახვა
+      message: "მე ხმა მივეცი ინიციატივას სახელად: %{title} %{handle}-ში. თუ შენც ხარ დაინტერესებული, დაუჭირე მხარი!"
+    edit:
+      editing: ინიციატივის რედაქტირება
+      form:
+        submit_button: ცვლილებების შენახვა
+      show_link: ინიციატივის ნახვა
+    retire_form:
+      title: დეაქტივირებული ინიციატივა
+      warning: "თუ მოახდენთ ინიციატივის დეაქტივიზაციას, ის მაინც მიიღებს ხმებს, მაგრამ აღარ იქნება მთავარ ჩამონათვალში და ყველა მომხმარებელთან გამოჩნდება შეტყობინება იმის თაობაზე, რომ ავტორს აღარ სურს მისმა ინიციატივამ ხმები დააგროვოს"
+      retired_reason_blank: აირჩიეთ სასურველი ვარიანტი
+      retired_explanation_placeholder: მოკლედ განმარტეთ, რატომ არ გსურთ, ამ ინიციატივამ დამატებითი ხმები მიიღოს
+      submit_button: ინიციატივის დეაქტივაცია
+    retire_options:
+      duplicated: დუბლირებული
+      started: უკვე მიმდინარეობს
+      unfeasible: შეუძლებელი
+      done: შესრულებული
+      other: სხვა
+    form:
+      proposal_responsible_name_note: "(ინდივიდუალურად, ან როგორც გუნდის ერთ-ერთი წარმომადგენელი; არ გამოჩნდება საჯაროდ)"
+      proposal_summary_note: "(მაქსიმუმ 200 სიმბოლო)"
+      proposal_video_url_note: შეგიძლიათ დაამატოთ YouTube-ის ან Vimeo-ის ბმული
+      tag_category_label: "კატეგორიები"
+      tags_instructions: "შეგიძლიათ შეარჩიოთ შემოთავაზებული კატეგორიებიდან ან შექმნათ საკუთარი"
+      tags_label: ტეგები
+      tags_placeholder: "შეიყვანეთ ის ტეგები, რომელთა გამოყენებაც გსურთ, გამოყავით ისინი მძიმით (',')"
+      map_location: "ლოკაცია რუკაზე"
+      map_location_instructions: "დასვით მარკერი რუკის სასურველ პოზიციაზე."
+      map_remove_marker: "მარკერის წაშლა"
+      map_skip_checkbox: "ამ ინიციატივას არ აქვს ზუსტად განსაზღვრული ლოკაცია, ან მე მის შესახებ ინფორმაციას არ ვფლობ."
+    index:
+      featured_proposals: გამორჩეული
+      orders:
+        confidence_score: მაღალი შეფასების მქონე
+        created_at: უახლესი
+        hot_score: ყველაზე აქტიური
+        most_commented: ყველაზე მეტი კომენტარის მქონე
+        relevance: შესაბამისობა
+        archival_date: დაარქივებული
+        recommendations: რეკომენდაციები
+      recommendations:
+        without_results: თქვენს ინტერესებთან ახლოს მყოფი არცერთი ინიციატივა არ მოიძებნა
+        without_interests: მიჰყევით ინიციატივებს, რათა შევძლოთ რეკომენდაციების შემუშავება/გაწევა
+        disable: "ინიციატივებთან დაკავშირებული რეკომენდაციები აღარ გამოჩნდება, თუ გააქრობთ მათ. მათი ხელახლა ჩართვა 'ჩემი ანგარიშის' გვერდიდან შეგიძლიათ"
+        actions:
+          success: "ინიციატივებთან დაკავშირებული რეკომენდაციები გამორთულია"
+          error: "შეცდომა! გთხოვთ, გადახვიდეთ 'ჩემი ანგარიშის' გვერდზე და ხელით გამორთოთ რეკომენდაციები"
+      retired_proposals: დეაქტივირებული ინიციატივები
+      retired_proposals_link: "ავტორის მიერ დეაქტივირებული ინიციატივები"
+      selected_proposals: შერჩეული ინიციატივები
+      selected_proposals_link: შერჩეული ინიციატივების ნახვა
+      archived_proposals: დაარქივებული ინიციატივები
+      proposals_lists: ინიციატივების ჩამონათვალი
+      retired_links:
+        all: ყველა
+        duplicated: დუბლირებული
+        started: მიმდინარე
+        unfeasible: შეუძლებელი
+        done: შესრულებული
+        other: სხვა
+      search_form:
+        button: ძებნა
+        placeholder: ინიციატივების ძებნა...
+        title: ძებნა
+      search_results:
+        one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
+        other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
+      select_order: დალაგება
+      select_order_long: "ინიციატივები ნაჩვენებია:"
+      start_proposal: ახალი ინიციატივის შექმნა
+      title: ინიციატივები
+      top: კვირის მოწინავე
+      top_link_proposals: კატეგორიის მიხედვით ყველაზე მეტი ხმის მქონე ინიციატივები
+      section_header:
+        icon_alt: ინიციატივების ნიშანი
+        title: ინიციატივები
+        help: ინფორმაცია ინიციატივების შესახებ
+      section_footer:
+        title: ინფორმაცია ინიციატივების შესახებ
+        description: მოქალაქეთა ჯგუფებს შეუძლიათ კოლექტიურად შეიმუშაონ ინიციატივები თავიანთი ქალაქის შესახებ და მიიღონ სხვების მხარდაჭერა.
+    new:
+      form:
+        submit_button: ახალი ინიციატივის შექმნა
+      more_info: როგორ მუშაობს მოქალაქეთა ინიციატივები?
+      recommendation_one: ნუ გამოიყენებთ მხოლოდ დიდ ასოებს ინიციატივის დასასათაურებლად ან წინადადებების შესადგენად.
+      recommendation_three: გამოიყენეთ ეს სივრცე საკუთარი აზრის გამოსახატად.
+      recommendation_two: ნებისმიერი ინიციატივა ან კომენტარი, რომელიც არაკანონიერი ქმედების პროვოცირებას ახდენს, წაიშლება. დაუშვებელია სადებატო სივრცის საბოტაჟიც. სხვა ყველაფერი ნებადართულია.
+      recommendations_title: რეკომენდაციები ინიციატივის შექმნისთვის
+      start_new: ახალი ინიციატივის შექმნა
+    notice:
+      retired: ინიციატივა დეაქტივირებულია
+      published: ინიციატივა გამოქვეყნდა
+    proposal:
+      created: "თქვენ შექმენით ინიციატივა!"
+      share:
+        guide: "ახლა მისი გაზიარება სხვებისთვისაც შეგიძლიათ."
+        edit: "გაზიარებამდე ტექსტის შეცვლა შესაძლებელია."
+        view_proposal: ახლა არა, გადავიდეთ ჩემს ინიციატივაზე
+      already_supported: თქვენ უკვე მიეცით ხმა ამ ინიციატივას. შეგიძლიათ მისი გაზიარება!
+      comments:
+        zero: კომენტარები არ მოიძებნა
+        one: 1 კომენტარი
+        other: "%{count} კომენტარი"
+      support: ხმის მიცემა
+      support_title: ინიციატივაზე ხმის მიცემა
+      supports:
+        zero: მხარდამჭერები არ მოიძებნა
+        one: 1 მხარდამჭერი
+        other: "%{count} მხარდამჭერი"
+      votes:
+        zero: ხმები არ მოიძებნა
+        one: 1 ხმა
+        other: "%{count} ხმა"
+      supports_necessary: "საჭიროა %{number} ხმა"
+      total_percent: 100%
+      archived: "ეს ინიციატივა გადატანილია არქივში და მასზე ხმის მიცემა შეუძლებელია."
+      successful: "ამ ინიციატივამ მიაღწია მხარდამჭერთა საჭირო რაოდენობას."
+      selected: "შერჩეული ინიციატივა"
+    show:
+      author_deleted: მომხმარებელი წაშლილია
+      code: "ინიციატივის კოდი:"
+      comments:
+        zero: კომენტარები არ მოიძებნა
+        one: 1 კომენტარი
+        other: "%{count} კომენტარი"
+      comments_tab: კომენტარები
+      dashboard_proposal_link: მოქმედებათა დაფა
+      flag: მომხმარებელთა გარკვეულმა ნაწილმა ეს ინიციატივა გაასაჩივრა.
+      notifications_tab: შეტყობინებები
+      milestones_tab: ეტაპები
+      retired_warning: "ავტორის აზრით, ამ ინიციატივას აღარ ესაჭიროება დამატებითი მხარდამჭერები."
+      retired_warning_link_to_explanation: ხმის მიცემამდე, გაეცანით ახსნა-განმარტებას.
+      retired: ავტორის მიერ დეაქტივირებული ინიციატივა
+      share: გაზიარება
+      no_notifications: "ამ ინიციატივისთვის შეტყობინებები არ მოიძებნა."
+      embed_video_title: "ვიდეო %{proposal}-თვის"
+      title_video_url: "სხვა სერვერზე განთავსებული ვიდეო"
+      author: ავტორი
+      draft: ინიციატივა შექმნის პროცესშია. ამ ეტაპზე იგი არ ჩანს ინიციატივათა ჩამონათვალში და შეუძლებელია მასზე ხმის მიცემა.
+    update:
+      form:
+        submit_button: ცვლილებების შენახვა
+  dashboard:
+    menu:
+      my_proposal: ჩემი ინიციატივის რედაქტირება
+      progress: მიმდინარეობა
+      resources: რესურსები
+      community: საზოგადოება
+      polls: ხმის მიცემა
+      mailing: ელ. ფოსტა
+      poster: პოსტერი
+      recommended_actions: რეკომენდებული მოქმედებები
+      messages: მომხმარებლებთან შეტყობინების გაგზავნა
+      related_content: მსგავსი ინფორმაცია
+    form:
+      request: მოთხოვნა
+    create_request:
+      success: მოთხოვნა წარმატებით გაიგზავნა. დამატებით ინფორმაციას უახლოეს მომავალში მოგაწვდით.
+      archived: ეს ინიციატივა არქივშია გადატანილი და შეუძლებელია რესურსების მოთხოვნა.
+    progress:
+      title: გრაფიკული
+      group_by_month: ყოველთვიურად
+      group_by_week: ყოველკვირეულად
+      group_by_date: ყოველდღიურად
+      progress: მიღწეული პროგრესი
+      supports: მხარდამჭერები
+      success: პროგრესის სასურველი ნიშნული
+      new_action: ახალი
+    index:
+      title: გამოცემა
+      edit_proposal_link: ინიციატივის რედაქტირება
+      publish: ინიციატივის გამოქვეყნება
+      retire: ინიციატივის დეაქტივაცია
+    new_request:
+      links: ბმულები
+    resources:
+      available_resources: ხელმისაწვდომი რესურსები
+    resource:
+      required_days: "საჭიროა %{days} დღე"
+      required_supports: "საჭიროა %{supports} მხარდამჭერი"
+      and: და
+      view_resource: რესურსის ნახვა
+      resource_requested: რესურსი უკვე მოთხოვნილია
+      request_resource: რესურსის მოთხოვნა
+      resource_locked: რესურსი დაბლოკილია
+    recommended_actions:
+      title: რეკომენდირებული მოქმედებები
+      goto_proposed_actions: რეკომენდირებულ მოქმედებებში გადასვლა
+      see_proposed_actions: რეკომენდირებული მოქმედებების ნახვა
+      hide_proposed_actions: რეკომენდირებული მოქმედებების დამალვა
+      pending_title: მოლოდინის რეჟიმშია
+      show_description: აღწერის ნახვა
+      without_pending_actions: მოლოდინის რეჟიმში მყოფი რეკომენდაციები არ მოიძებნა
+      done_title: შესრულებული
+      without_done_actions: შესრულებული რეკომენდაციები არ მოიძებნა
+    next_goal:
+      title: მიზანი
+      see_complete_course: დასრულებული კურსის ნახვა
+      hide_course: კურსის დამალვა
+    goal:
+      target_supports:
+        one: მიიღეთ %{count} მხარდამჭერი ამ ინიციატივისათვის
+        other: მიიღეთ %{count} მხარდამჭერი ამ ინიციატივისათვის
+      days:
+        one: "%{count} დღე"
+        other: "%{count} დღე"
+      locked_resource: რესურსი დაბლოკილია
+      ideal_time: სასურველი დრო
+    community:
+      access_community: წევრებთან წვდომა
+      latest_activity: "წევრების ბოლო აქტივობა: %{at}"
+      participants: მონაწილეები
+      debates: დებატები
+      comments: კომენტარები
+      latest_comments: უახლესი შეტყობინებები
+    messages:
+      send_notification: გავუგზავნოთ შეტყობინებები ინიციატივის მიმდევრებს
+      previous_notifications: წინა შეტყობინებების ნახვა
+    polls:
+      index:
+        title: ხმის მიცემა
+        create: ხმის მიცემის შექმნა
+        count:
+          one: თქვენ შექმენით %{count} ხმის მიცემა
+          other: თქვენ შექმენით %{count} გამოკითხვა.
+        links: ბმულები
+        additiontal_information: დამატებითი ინფორმაცია
+      new:
+        title: ახალ საკითხზე ხმის მიცემა
+        submit: ხმის მიცემის შექმნა
+      edit:
+        submit: ხმის მიცემის განახლება
+      poll:
+        responses:
+          one: "%{count} პასუხი"
+          other: "%{count} პასუხი"
+        view_results: შედეგების ნახვა
+        edit_poll: გამოკითხვის რედაქტირება
+        show_results_help: ამ უჯრედის მონიშვნით შედეგები საჯარო გახდება და მათი ნახვა ყველა მომხმარებელს შეეძლება
+        delete: გამოკითხვის წაშლა
+        alert_notice: ამ მოქმედებით წაიშლება გამოკითხვა და მასთან დაკავშირებული შეკითხვები.
+        success_notice: გამოკითხვა წარმატებით წაიშალა
+        unable_notice: გამოკითხვის წაშლა შეუძლებელია, რადგან მასში უკვე მიიღეს მონაწილეობა
+      form:
+        name: გამოკითხვის დასახელება
+        add_question: კითხვის დამატება
+      question_fields:
+        remove_question: შეკითხვის წაშლა
+        add_answer: პასუხის დამატება
+      question_answer_fields:
+        remove_answer: პასუხის წაშლა
+    poster:
+      index:
+        title: პოსტერის ესკიზი
+        poster_title: "ნუ ხარ გაოცებული,"
+        poster_subtitle: "დამეხმარე! ;)"
+        intro_text: "<strong>მე მონაწილეობას ვიღებ %{org}-ში</strong> ჩემი სამოქალაქო ინიციატივით. თუ შენც ჩაერთვები, მაქსიმუმს გავაკეთებ იმისათვის, რომ ჩვენი ქალაქი გახდეს ისეთი, როგორიც გვსურს."
+        proposal_code: "ინიციატივის კოდი: %{code}"
+        support: ჩემი ინიციატივის მხარდაჭერა
+        footer: "<strong>დააჭირეთ %{link} და მხარი დაუჭირეთ ამ ინიციატივას.</strong> რაც მეტი ვიქნებით, მით უკეთესი. მადლობა!"
+      new:
+        title: თქვენი ინიციატივის პოსტერი
+      options:
+        preview: ესკიზი
+        download: ჩამოტვირთვა
+    mailing:
+      index:
+        title: ელ. წერილის ნახვა
+      new:
+        title: გასაზიარებელი ელ. წერილი
+      mailing_options:
+        send: გაეგზავნოს %{address}
+        preview: წინასწარ გადახედვა
+      create:
+        sent: წერილი გაიგზავნა
+    mailer:
+      forward:
+        subtitle: "თუ მხარს დამიჭერ,<br>ერთად გამოგვივა."
+        support_button: ინიციატივაზე ხმის მიცემა
+        share_in: გაზიარება
+        hi: "გამარჯობა!"
+        introduction: გწერთ, რათა გაცნობოთ, რომ მონაწილეობას ვიღებ %{org}-ში. ეს არის პლატფორმა, რომლის საშუალებითაც შეგვიძლია გადავწყვიტოთ, როგორი ქალაქი გვინდა რომ გვქონდეს. ამ მიზნით, შევქმენი პირადი სამოქალაქო ინიციატივა და ამჟამად, თქვენი მხარდაჭერა მესაჭიროება! ნუ ღელავთ, ძალიან მარტივია და ბევრ დროს არ წაგართმევთ.
+        support: "უბრალოდ დააჭირე 'ამ ინიციატივაზე ხმის მიცემის' ღილაკს. სანამ ღილაკს დააწვები და ამით ინიციატივას დააწინაურებ, შეგიძლია მის შესახებ ინფორმაციასაც გაეცნო. საკრებულოს მიერ განხორციელდება მხოლოდ ის ინიციატივები, რომლებიც მხარდამჭერთა მაქსიმალურ რაოდენობას მოაგროვებს. იმედი მაქვს, ამის მიღწევაში დამეხმარები!"
+        share: "და თუკი ჩემს ინიციატივას მეგობრებს და ახლობლებსაც გაუზიარებ, კიდევ უფრო დამეხმარები!"
+  polls:
+    all: "ყველა"
+    no_dates: "თარიღი განსაზღვრული არ არის"
+    dates: "%{open_at}-დან %{closed_at}-მდე"
+    final_date: "საბოლოო შედეგები"
+    index:
+      filters:
+        current: "მიმდინარე"
+        expired: "დასრულებული"
+      title: "ხმის მიცემა"
+      participate_button: "ამ ხმის მიცემაში მონაწილეობა"
+      participate_button_expired: "ხმის მიცემა დასრულდა"
+      no_geozone_restricted: "მთელი ქალაქი"
+      geozone_restricted: "ოლქები"
+      geozone_info: "მონაწილეობის მიღება შეუძლიათ შემდეგი გეო. ზონის საყოველთაო აღწერაში: "
+      already_answer: "თქვენ უკვე მიიღეთ მონაწილეობა ამ ხმის მიცემაში"
+      not_logged_in: "მონაწილეობის მისაღებად თქვენ უნდა გაიაროთ ავტორიზაცია ან რეგისტრაცია"
+      unverified: "მონაწილეობის მისაღებად საჭიროა თქვენი ანგარიში გადამოწმებული იყოს"
+      cant_answer: "ეს ხმის მიცემა არ არის თქვენი გეოგრაფიული ზონისთვის"
+      section_header:
+        icon_alt: ხმის მიცემის ნიშანი
+        title: ხმის მიცემა
+        help: ინფორმაცია ხმის მიცემის შესახებ
+      section_footer:
+        title: ინფორმაცია ხმის მიცემის შესახებ
+        description: ხმის მიცემა არის მოქალაქეთა ჩართულობის მექანიზმი, რომლის მეშვეობითაც ხმის მიცემის უფლების მქონე პირებს შეუძლიათ გადაწყვეტილებების მიღების პროცესში მონაწილეობა
+      no_polls: "ღია ხმის მიცემა არ მოიძებნა."
+    show:
+      already_voted_in_booth: "თქვენ უკვე მიიღეთ მონაწილეობა რეალურ კაბინაში. ხელმეორედ მონაწილეობა შეუძლებელია."
+      already_voted_in_web: "თქვენ უკვე მიიღეთ მონაწილეობა ამ ხმის მიცემაში. ხელახალი მონაწილეობა პირვანდელ არჩევანს ჩაანაცვლებს."
+      back: კენჭისყრაში დაბრუნება
+      cant_answer_not_logged_in: "მონაწილეობის მისაღებად თქვენ უნდა გაიაროთ %{signin} ან %{signup}."
+      comments_tab: კომენტარები
+      cant_answer_verify: "პასუხის დასაფიქსირებლად თქვენ უნდა მოახდინოთ %{verify_link}."
+      verify_link: "ანგარიშის დადასტურება"
+      cant_answer_expired: "ხმის მიცემა დასრულდა."
+      cant_answer_wrong_geozone: "ეს შეკითხვა არ არის თქვენი გეოგრაფიული ზონისთვის."
+      more_info_title: "დამატებითი ინფორმაცია"
+      documents: დოკუმენტები
+      zoom_plus: სურათის გადიდება
+      read_more: "%{answer}-ის შესახებ მეტის გაგება"
+      read_less: "%{answer}-ის შესახებ ნაკლების გაგება"
+      videos: "სხვა სერვერზე განთავსებული ვიდეო"
+      info_menu: "ინფორმაცია"
+      stats_menu: "მონაწილეთა სტატისტიკა"
+      results_menu: "ხმის მიცემის შედეგები"
+      stats:
+        total_votes: "გაცემული ხმების საერთო რაოდენობა"
+        votes: "ხმები"
+        web: "WEB"
+        mail: "MAIL"
+        booth: "კაბინა"
+        total: "ჯამში"
+        valid: "მოქმედი"
+        white: "სრულიად ცარიელი"
+        null_votes: "ბათილი"
+      results:
+        title: "კითხვები"
+        most_voted_answer: "ყველაზე მეტი ხმის მქონე პასუხი: "
+    poll_header:
+      back_to_proposal: ინიციატივაში დაბრუნება
+  poll_questions:
+    show:
+      vote_answer: "%{answer}-ზე ხმის მიცემა"
+      voted: "%{answer}-ზე თქვენ უკვე მიეცით ხმა"
+  proposal_notifications:
+    new:
+      title: "შეტყობინების გაგზავნა"
+      submit_button: "შეტყობინების გაგზავნა"
+      info_about_receivers: "ეს შეტყობინება გაიგზავნება <strong>%{count} ადამიანთან</strong> და მისი ნახვა შესაძლებელი იქნება %{proposal_page}.<br>შეტყობინებების გაგზავნა არ ხდება მომენტალურად. მომხმარებლები პერიოდულად მიიღებენ შეტყობინებებს ელ.ფოსტის მეშვეობით."
+      proposal_page: "ინიციატივათა გვერდი"
+    show:
+      back: "'ჩემს აქტივობაში' დაბრუნება"
+  shared:
+    edit: "რედაქტირება"
+    save: "დამახსოვრება"
+    delete: "წაშლა"
+    "yes": "დიახ"
+    "no": "არა"
+    search_results: "ძებნის შედეგები"
+    advanced_search:
+      author_type: "კატეგორიის ავტორის მიხედვით"
+      author_type_blank: "კატეგორიის შერჩევა"
+      date: "თარიღის მიხედვით"
+      date_placeholder: "DD/MM/YYYY"
+      date_range_blank: "თარიღის არჩევა"
+      date_1: "ბოლო 24 საათში"
+      date_2: "გასულ კვირაში"
+      date_3: "გასულ თვეს"
+      date_4: "გასულ წელს"
+      date_5: "პერსონალიზებული"
+      from: "დან"
+      general: "ტექსტით"
+      general_placeholder: "ტექსტის დაწერა"
+      search: "ფილტრი"
+      title: "დეტალური ძებნა"
+      to: "მდე"
+    author_info:
+      author_deleted: მომხმარებელი წაშლილია
+      email_deleted: ელ.ფოსტა წაშლილია
+    back: უკან დაბრუნება
+    check: შერჩევა
+    check_all: ყველა
+    check_none: არცერთი
+    collective: კოლექტიური
+    flag: გასაჩივრება
+    follow: "გამოწერა"
+    following: "გამომწერი"
+    follow_entity: "%{entity} გამომწერი"
+    followable:
+      budget_investment:
+        create:
+          notice: "თქვენ გახდით ამ საინვესტიციო პროექტის გამომწერი! <br> ამიერიდან ყველა ცვლილების შესახებ მოგაწვდით ინფორმაციას."
+        destroy:
+          notice: "თქვენ აღარ ხართ ამ საინვესტიციო პროექტის გამომწერი! <br> თქვენ ვეღარ მიიღებთ ინფორმაციას ამ პროექტთან დაკავშირებული სიახლეების შესახებ."
+      proposal:
+        create:
+          notice: "თქვენ გახდით ამ სამოქალაქო ინიციატივის გამომწერი! <br> ამიერიდან ყველა ცვლილების შესახებ მოგაწვდით ინფორმაციას."
+        destroy:
+          notice: "თქვენ აღარ ხართ ამ სამოქალაქო ინიციატივის გამომწერი! <br> თქვენ ვეღარ მიიღებთ ინფორმაციას ამ ინიციატივასთან დაკავშირებული სიახლეების შესახებ."
+    print:
+      print_button: ინფორმაციის ბეჭდვა
+    search: ძებნა
+    show: ჩვენება
+    suggest:
+      debate:
+        found:
+          one: "საძიებო სიტყვა %{query}-თან დაკავავშირებული ერთი დებატი მოვიძიეთ. ახლის გახსნის ნაცვლად, შეგიძლიათ არსებულში მიიღოთ მონაწილეობა."
+          other: "საძიებო სიტყვა %{query}-თან დაკავავშირებული არსებული დებატები მოვიძიეთ. ახლის გახსნის სანაცვლოდ შეგიძლიათ არსებულში მიიღოთ მონაწილეობა."
+        message: "თქვენ ხედავთ %{limit} დებატს (სულ %{count}), საძიებო სიტყვის %{query}' შემცველობით"
+        see_all: "ყველას ნახვა"
+      budget_investment:
+        found:
+          one: "%{query} - საძიებო სიტყვასთან დაკავავშირებული ერთი ინვესტიცია მოვიძიეთ. ახლის გახსნის ნაცვლად, შეგიძლიათ არსებულში მიიღოთ მონაწილეობა."
+          other: "საძიებო სიტყვა %{query}-თან დაკავავშირებული არსებული ინიციატივები მოვიძიეთ. ახლის გახსნის სანაცვლოდ შეგიძლიათ არსებულში მიიღოთ მონაწილეობა."
+        message: "'%{query}'- საძიებო სიტყვის შემცველობით, ჯამში %{count} ინვესტიცია მოიძებნა. ნაჩვენებია %{limit}"
+        see_all: "ყველას ნახვა"
+      proposal:
+        found:
+          one: "%{query} - საძიებო სიტყვასთან დაკავავშირებული ერთი ინიციატივა მოვიძიეთ. ახლის გახსნის ნაცვლად, შეგიძლიათ არსებულში მიიღოთ მონაწილეობა"
+          other: "საძიებო სიტყვა %{query}-თან დაკავავშირებული არსებული ინიციატივები მოვიძიეთ. ახლის გახსნის სანაცვლოდ შეგიძლიათ არსებულში მიიღოთ მონაწილეობა"
+        message: "თქვენ ხედავთ %{limit} ინიციატივას (სულ %{count}), რომლებიც შეიცავენ საძიებო სიტყვას '%{query}'"
+        see_all: "ყველას ნახვა"
+    tags_cloud:
+      tags: ფართოდ განხილული
+      districts: "ოლქები"
+      districts_list: "ოლქების ჩამონათვალი"
+      categories: "კატეგორიები"
+    target_blank: " (ბმული გაიხსნება ახალ ფანჯარაში)"
+    you_are_in: "შესული ხართ"
+    unflag: მონიშვნის მოხსნა
+    unfollow_entity: "%{entity} გამოწერის გაუქმება"
+    outline:
+      searcher: მაძიებელი
+    go_to_page: "გადასვლა "
+    share: გაზიარება
+    orbit:
+      previous_slide: წინა სლაიდი
+      next_slide: შემდეგი სლაიდი
+    documentation: დამატებითი დოკუმენტაცია
+    view_mode:
+      title: ნახვის რეჟიმი
+      cards: ბარათები
+      list: ჩამონათვალი
+    recommended_index:
+      title: რეკომენდაციები
+      see_more: სხვა რეკომენდაციების ნახვა
+      hide: რეკომენდაციების დამალვა
+    translations:
+      select_language_prompt: ენის არჩევა
+      remove_language: ენის წაშლა
+      add_language: ენის დამატება
+      languages_in_use:
+        zero: "გამოყენებაშია 0 ენა"
+        one: "გამოყენებაშია 1 ენა"
+        other: "გამოყენებაშია %{count} ენა"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  stats:
+    index:
+      visits: ვიზიტები
+      debates: დებატები
+      proposals: ინიციატივები
+      comments: კომენტარები
+      proposal_votes: ინიციატივებზე მიცემული ხმები
+      debate_votes: დებატებზე მიცემული ხმები
+      comment_votes: კომენტარებზე მიცემული ხმები
+      votes: ხმების საერთო რაოდენობა
+      verified_users: გადამოწმებული მომხმარებლები
+      unverified_users: გადაუმოწმებელი მომხმარებლები
+  unauthorized:
+    default: ამ გვერდის ნახვის უფლება არ გაქვთ.
+    manage:
+      all: "%{subject}-ზე %{action} მოქმედების უფლება არ გაქვთ."
+  users:
+    login_to_comment: "კომენტარის დასატოვებლად თქვენ უნდა გაიაროთ %{signin} ან %{signup}."
+    login_to_continue: "გასაგრძელებლად თქვენ უნდა გაიაროთ %{signin} ან %{signup}."
+    signin: "ავტორიზაცია"
+    signup: "რეგისტრაცია"
+    verify_account: "ანგარიშის დადასტურება"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "ამ მომხმარებელს არ სურს პირადი გზავნილების მიღება"
+        submit_button: შეტყობინების გაგზავნა
+        title: პირადი შეტყობინების გაგზავნა %{receiver}-თან
+        verified_only: პირადი შეტყობინების გასაგზავნად მოახდინეთ %{verify_account}
+      show:
+        receiver: შეტყობინება გაიგზავნა %{receiver}-თან
+    show:
+      deleted: წაშლილი
+      deleted_debate: ეს დებატი წაშლილია
+      deleted_proposal: ეს ინიციატივა წაშლილია
+      deleted_budget_investment: ეს საინვესტიციო პროექტი წაშლილია
+      proposals: ინიციატივები
+      proposals_status: სტატუსი
+      debates: დებატები
+      budget_investments: საბიუჯეტო ინვესტიციები
+      comments: კომენტარები
+      actions: მოქმედებები
+      filters:
+        comments:
+          one: 1 კომენტარი
+          other: "%{count} კომენტარი"
+        debates:
+          one: 1 დებატი
+          other: "%{count} დებატი"
+        proposals:
+          one: 1 ინიციატივა
+          other: "%{count} ინიციატივა"
+        budget_investments:
+          one: 1 ინვესტიცია
+          other: "%{count} ინვესტიცია"
+        follows:
+          one: '%{count} გამომწერი'
+          other: "%{count} გამომწერი"
+      no_activity: მომხმარებელს არ განუხორციელებია რაიმე სახის საჯარო აქტივობა
+      no_private_messages: "ამ მომხმარებელს არ სურს პირადი შეტყობინებების მიღება."
+      private_activity: ამ მომხმარებელს არ სურს აქტივობის ჩამონათვალის გასაჯაროება.
+      send_private_message: "პირადი შეტყობინების გაგზავნა"
+      delete_alert: "ნამდვილად გსურთ საინვესტიციო პროექტის წაშლა? მისი აღდგენა შეუძლებელი იქნება"
+    proposals:
+      retired: "დეაქტივირებული ინიციატივა"
+      draft: მონახაზი
+      published: გამოქვეყნებული
+      see: "ინიციატივის ნახვა"
+      actions: მოქმედებები
+      retired_help_text: მოქმედებათა დაფა ხელმისაწვდომი არ არის დეაქტივირებული ინიციატივებისთვის
+  votes:
+    agree: ვეთანხმები
+    anonymous: ზედმეტად ბევრი ანონიმური ხმაა იმისათვის, რომ ეს ხმა ჩაითვალოს %{verify_account}.
+    comment_unauthenticated: ხმის მისაცემად გაიარეთ %{signin} ან %{signup}.
+    disagree: არ ვეთანხმები
+    organizations: ორგანიზაციებს ხმის მიცემა არ შეუძლიათ
+    supports: მხარდამჭერები
+    verified_only: მხოლოდ გადამოწმებული ანგარიშის მქონე მომხმარებლებს შეუძლიათ ინიციატივაზე ხმის მიცემა; %{verify_account}.
+    budget_investments:
+      not_logged_in: გასაგრძელებლად თქვენ უნდა გაიაროთ %{signin} ან %{signup}.
+      not_verified: მხოლოდ გადამოწმებული ანგარიშის მქონე მომხმარებლებს შეუძლიათ საინვესტიციო პროექტებზე ხმის მიცემა; %{verify_account}.
+      organization: ორგანიზაციებს ხმის მიცემა არ შეუძლიათ
+      unfeasible: არაგანხორციელებად საინვესტიციო პროექტებზე ხმის მიცემა შეუძლებელია
+      not_voting_allowed: ხმის მიცემის ფაზა დასრულებულია
+      different_heading_assigned:
+        one: "საინვესტიციო პროექტებზე ხმის მიცემა მხოლოდ %{count} ოლქში შეგიძლიათ. თქვენ უკვე მეიცით ხმა %{supported_headings}-ში."
+        other: "საინვესტიციო პროექტებზე ხმის მიცემა მხოლოდ %{count} რაიონში შეგიძლიათ. თქვენ უკვე მეიცით ხმა %{supported_headings}-ში."
+  welcome:
+    feed:
+      most_active:
+        debates: "ყველაზე აქტიური დებატები"
+        proposals: "ყველაზე აქტიური ინიციატივები"
+        processes: "ღია პროცესები"
+      see_all_debates: ყველა დებატის ნახვა
+      see_all_proposals: ყველა ინიციატივის ნახვა
+      see_all_processes: ყველა პროცესის ნახვა
+      process_label: პროცესი
+      see_process: პროცესის ნახვა
+    cards:
+      title: გამორჩეული
+    recommended:
+      title: თქვენთვის საინტერესო რეკომენდაციები
+      help: "რეკომენდაციების შედგენა ხდება იმ ინიციატივებისა და დებატების ტეგების მიხედვით, რომელთა გამომწერიც თქვენ ხართ."
+      debates:
+        title: რეკომენდირებული დებატები
+        btn_text_link: ყველა რეკომენდირებული დებატი
+      proposals:
+        title: რეკომენდირებული ინიციატივები
+        btn_text_link: ყველა რეკომენდირებული ინიციატივა
+      budget_investments:
+        title: რეკომენდირებული ინვესტიციები
+      slide: "იხილეთ %{title}"
+    verification:
+      i_dont_have_an_account: არ მაქვს ანგარიში
+      i_have_an_account: უკვე მაქვს ანგარიში
+      question: უკვე გაქვთ ანგარი შექმნილი %{org_name}-ში?
+      title: ანგარიშის ვერიფიკაცია
+    welcome:
+      go_to_index: ახლა არა, გადადით მთავარ გვერდზე
+      start_using_consul: მთავარ გვერდზე გადასვლა
+      title: მონაწილეობა
+      user_permission_debates: დებატებში მონაწილეობა
+      user_permission_info: თქვენი ანგარიშით თქვენ შეგიძლიათ...
+      user_permission_proposal: ახალი ინიციატივების შექმნა
+      user_permission_support_proposal: ინიციატივებზე ხმის მიცემა*
+      user_permission_verify: "ამ ფუნქციებით სარგებლობისათვის, დაადასტურეთ თქვენი ანგარიში."
+      user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
+      user_permission_verify_my_account: ჩემი ანგარიშის დადასტურება
+      user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
+  invisible_captcha:
+    sentence_for_humans: "თუ რობოტი არ ხართ, არ მიაქციოთ ამ ველს ყურადღება"
+    timestamp_error_message: "ძალიან იჩქარეთ, გთხოვთ სცადოთ ხელახლა."
+  related_content:
+    title: "მსგავსი ინფორმაცია"
+    add: "მსგავსი ინფორმაციის დამატება"
+    label: "ბმული მსგავს ინფორმაციასთან"
+    placeholder: "%{url}"
+    help: "შეგიძლიათ %{models}-ის ბმულების დამატება %{org}-ის ქოლგის ქვეშ."
+    submit: "დამატება"
+    error: "ბმული არ არის მოქმედი. დასაწყისში გამოიყენეთ %{url}."
+    error_itself: "ბმული არ არის მოქმედი. ინფორმაციები იდენტურია."
+    success: "მსგავსი ინფორმაცია დაემატა"
+    is_related: "ეს ინფორმაცია კავშირშია ძირითად შინაარსთან?"
+    score_positive: "დიახ"
+    score_negative: "არა"
+    content_title:
+      proposal: "ინიციატივა"
+      debate: "დებატები"
+      budget_investment: "საბიუჯეტო ინვესტიცია"
+  admin/widget:
+    header:
+      title: ადმინისტრაცია
+  annotator:
+    help:
+      alt: შეარჩიეთ ტექსტი, რომელზეც გსურთ კომენტარის გაკეთება და დააჭირეთ ღილაკს ფანქრის ნიშნით.
+      text: კომენტარის გასაკეთებლად გაიარეთ %{sign_in} ან %{sign_up}. შემდეგ მონიშნეთ ტექსტი, რომლის კომენტირებაც გსურთ და დააწექით ღილაკს ფანქრის გამოსახულებით. 
+      title: როგორ გავაკეთო კომენტარი ამ დოკუმენტზე?
+  links:
+    form:
+      delete_button: წაშლა
+      cancel_button: გაუქმება
+    nested_links:
+      title: ბმულები
+      note: საინტერესო ბმულების დამატება
+      add_new_link: ახალი ბმულის დამატება
+    link_fields:
+      label_placeholder: ბმულის დასახელება
+      url_placeholder: ბმულის მისამართი
+  communities:
+    show:
+      surveys: გამოკითხვები
+      complete_survey: გამოკითხვის დასრულება
+    subnav:
+      surveys: გამოკითხვები
+    poll:
+      take_part: მონაწილეობა %{from}-დან %{to}-მდე
+  remote_translations:
+    text: ეს ინფორმაცია თქვენს ენაზე ხელმისაწვდომი არ არის
+    all_remote_translations_enqueued_text: განაახლეთ ეს გვერდი პერიოდულად, რათა მასზე არსებული ინფორმაციის ნახვა სასურველ ენაზე შეძლოთ.
+    create:
+      enqueue_remote_translation: თარგმანები მოთხოვნილ იქნა.
+    button: გვერდის თარგმნა

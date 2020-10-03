@@ -1,1 +1,19 @@
 bg:
+  images:
+    remove_image: Премахване на изображението
+    form:
+      title: Описателно изображение
+      title_placeholder: Добавете описателно заглавие на изображението
+      delete_button: Изтриване на изображението
+      note: "Можете да качите едно изображение от следните типове съдържание: %{accepted_content_types}, до %{max_file_size} MB."
+      add_new_image: Добавяне на изображение
+      admin_title: "Изображение"
+      admin_alt_text: "Алтернативен текст за изображението"
+    actions:
+      destroy:
+        notice: Изображението бе изтрито успешно.
+        alert: Изображението не може да се изтрие.
+    errors:
+      messages:
+        in_between: трябва да е между %{min} и %{max}
+        wrong_content_type: видът съдържание %{content_type} не съответства на нито един от приетите видове съдържание %{accepted_content_types}

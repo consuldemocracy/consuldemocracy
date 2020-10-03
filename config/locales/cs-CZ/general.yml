@@ -167,6 +167,10 @@ cs:
       firefox: Firefox
       ie: Zjistili jsme, že prohlížíte aplikaci Internet Explorer. Pro rozšířené zkušenosti doporučujeme použít %{firefox} nebo %{chrome}.
       ie_title: Tato webová stránka není optimalizována pro váš prohlížeč
+    dashboard:
+      proposal_totals:
+        supports:
+          zero: Žádná podpora
     footer:
       accessibility: Přístupnost
       conditions: Podmínky používání
@@ -195,7 +199,6 @@ cs:
       help: Nápověda
       my_account_link: Můj účet
       my_activity_link: Moje aktivity
-      open: otevřené
       open_gov: Otevřený úřad
       proposals: Návrhy
       poll_questions: Průzkumy
@@ -203,8 +206,6 @@ cs:
       notification_item:
         notifications: Upozornění
         no_notifications: "Nemáte žádná nová upozornění"
-    admin:
-      watch_form_message: "Máte neuložené změny. Potvrdíte opuštění stránky?"
   notifications:
     index:
       empty_notifications: Nemáte nová upozornění.
@@ -232,18 +233,19 @@ cs:
       sign_in: Přihlásit se pomocí služby Google
       sign_up: Přihlásit se pomocí služby Google
       name: Google
+    wordpress_oauth2:
+      name: Wordpress
     twitter:
       sign_in: Přihlásit se pomocí služby Twitter
       sign_up: Přihlásit se pomocí služby Twitter
       name: Twitter
-    info_sign_in: "Přihlásit se pomocí:"
-    info_sign_up: "Přihlásit se pomocí:"
     or_fill: "Nebo vyplňte následující formulář:"
   proposals:
     create:
       form:
         submit_button: Vytvořit návrh
     share:
+      dashboard: Další informace
       message: "Podpořil jsem návrh %{title} v %{handle}. Pokud máte zájem, podporují jej také!"
     edit:
       editing: Upravit návrh
@@ -368,6 +370,22 @@ cs:
       form:
         submit_button: Uložit změny
   dashboard:
+    menu:
+      my_proposal: Upravit můj návrh
+      progress: Průběh
+      community: Komunita
+      polls: Průzkumy
+      mailing: E-mail
+      poster: Plakát
+      recommended_actions: Doporučené akce
+      messages: Zpráva uživatelům
+      related_content: Související obsah
+    form:
+      request: Požadavek
+    progress:
+      group_by_month: Měsíčně
+      group_by_week: Týdně
+      group_by_date: Denně
     index:
       edit_proposal_link: Upravit návrh
       retire: Pozastavený návrh
@@ -503,7 +521,6 @@ cs:
     follow: "Sledování"
     following: "Sledované"
     follow_entity: "Sledovat %{entity}"
-    hide: Skrýt
     print:
       print_button: Vytisknout tuto informaci
     search: Vyhledat

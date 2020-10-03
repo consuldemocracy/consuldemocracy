@@ -1182,15 +1182,6 @@ ru:
           without_confirmed_hide: На рассмотрении
         title: Скрытые предложения
         no_hidden_proposals: Нет скрытых предложений.
-    proposal_notifications:
-      index:
-        filter: Фильтровать
-        filters:
-          all: Все
-          with_confirmed_hide: Подтвержденные
-          without_confirmed_hide: Ожидают
-        title: Скрытые уведомления
-        no_hidden_proposals: Нет скрытых уведомлений.
     settings:
       flash:
         updated: Значение обновлено

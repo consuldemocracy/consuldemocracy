@@ -1,0 +1,8 @@
+oc:
+  milestones:
+    index:
+      no_milestones: Avètz pas definit de hitas
+      progress: Progrés, progressar
+    show:
+      publication_date: "Publicat %{publication_date}"
+      status_changed: L'estat a cambiat a

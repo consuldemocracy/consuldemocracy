@@ -95,11 +95,6 @@ pl:
       tags_placeholder: "Wprowadź oznaczenia, których chciałbyś użyć, rozdzielone przecinkami (',')"
     index:
       featured_debates: Opisany
-      filter_topic:
-        one: " z tematami %{topic}"
-        few: " z tematami %{topic}"
-        many: " z tematami %{topic}"
-        other: " z tematami %{topic}"
       orders:
         confidence_score: najwyżej oceniane
         created_at: najnowsze
@@ -220,7 +215,6 @@ pl:
       help: Pomoc
       my_account_link: Moje konto
       my_activity_link: Moja aktywność
-      open: otwórz
       open_gov: Otwarty rząd
       proposals: Zrealizowane projekty
       poll_questions: Sondaż
@@ -233,8 +227,6 @@ pl:
           other: Masz %{count} nowe powiadomienia
         notifications: Powiadomienia
         no_notifications: "Nie masz nowych powiadomień"
-    admin:
-      watch_form_message: "Posiadasz niezapisane zmiany. Czy potwierdzasz opuszczenie strony?"
   notifications:
     index:
       empty_notifications: Nie masz nowych powiadomień.
@@ -282,8 +274,6 @@ pl:
       sign_in: Zaloguj się przez Twitter
       sign_up: Zarejestruj się przez Twitter
       name: Twitter
-    info_sign_in: "Zaloguj się przez:"
-    info_sign_up: "Zarejestruj się przez:"
     or_fill: "Lub wypełnij formularz:"
   proposals:
     create:
@@ -322,11 +312,6 @@ pl:
       map_skip_checkbox: "Niniejszy wniosek nie ma konkretnej lokalizacji lub o niej nie wiem."
     index:
       featured_proposals: Opisany
-      filter_topic:
-        one: " z tematem '%{topic}'"
-        few: " z tematem '%{topic}'"
-        many: " z tematem '%{topic}'"
-        other: " z tematem '%{topic}'"
       orders:
         confidence_score: najwyżej oceniane
         created_at: najnowsze
@@ -537,7 +522,6 @@ pl:
     follow: "Obserwuj"
     following: "Obserwowane"
     follow_entity: "Obserwuj %{entity}"
-    hide: Ukryj
     print:
       print_button: Wydrukuj tę informację
     search: Szukaj
