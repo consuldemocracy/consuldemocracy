@@ -1,1 +1,39 @@
 en-GB:
+  admin:
+    actions:
+      actions: Дії
+      confirm: Ви впевнені?
+      hide: Приховати
+      hide_author: Приховати автора
+      restore: Відновити
+      edit: Редагувати
+      delete: Видалити
+    banners:
+      index:
+        title: Банери
+        create: Створити банер
+        edit: Редагувати банер
+        delete: Видалити банер
+        preview: Попередній перегляд
+      edit:
+        editing: Редагувати банер
+        form:
+          submit_button: Зберегти зміни
+    activity:
+      show:
+        action: Дія
+        filters:
+          on_comments: Коментарі
+          on_users: Користувачі
+        type: Тип
+    budgets:
+      index:
+        filter: Фільтр
+        filters:
+          open: Відкрити
+      edit:
+        actions: Дії
+        valuators:
+          zero: "Обрати оцінювачів"
+        empty_administrators: "Адміністратори відсутні"
+        empty_valuators: "Оцінювачі відсутні"
