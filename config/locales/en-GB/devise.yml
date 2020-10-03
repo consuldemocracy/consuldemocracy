@@ -1,1 +1,12 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 en-GB:
+  devise:
+    password_expired:
+      change_required: "Термін дії паролю закінчився"
+      change_password: "Змініть пароль"
+      new_password: "Новий пароль"
+      updated: "Пароль успішно оновлений"
+    confirmations:
+      confirmed: "Ваш обліковий запис підтверджено."
+      send_instructions: "Через кілька хвилин на вашу адресу надійде електронний лист з інструкцією щодо скидання паролю."
+      send_paranoid_instructions: "Якщо ваша електронна адреча міститься у нашій базі даних, через кілька хвилин на неї надійде електронний лист з інструкцією щодо скидання паролю."
