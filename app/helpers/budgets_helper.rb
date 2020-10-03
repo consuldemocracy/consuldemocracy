@@ -152,6 +152,7 @@ module BudgetsHelper
   def budget_investments_total_supports(user, budget)
     Vote.where(votable_type: "Budget::Investment",
                votable_id: budget.investments.map(&:id),
+               vote_flag: true,
                voter_id: user.id).count
   end
 end
