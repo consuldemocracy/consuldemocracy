@@ -37,3 +37,34 @@ en-GB:
           zero: "Обрати оцінювачів"
         empty_administrators: "Адміністратори відсутні"
         empty_valuators: "Оцінювачі відсутні"
+    budget_groups:
+      form:
+        create: "Створити нову групу"
+        edit: "Редагувати групу"
+        submit: "Зберегти групу"
+      index:
+        back: "Повернутися до бюджетів"
+    budget_headings:
+      no_headings: "Заголовки відсутні."
+      form:
+        create: "Створити новий заголовок"
+        edit: "Редагувати заголовок"
+        submit: "Зберегти заголовок"
+      index:
+        back: "Повернутися до груп"
+    budget_phases:
+      edit:
+        save_changes: Зберегти зміни
+    budget_investments:
+      index:
+        heading_filter_all: Усі заголовки
+        administrator_filter_all: Усі адміністратори
+        valuator_filter_all: Усі оцінювачі
+        placeholder: Пошук проектів
+        filters:
+          all: Усі
+          under_valuation: В процесі оцінювання
+          valuation_finished: Оцінювання завершено
+          selected: Вибрані
+        buttons:
+          filter: Фільтр
