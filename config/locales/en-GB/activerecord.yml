@@ -31,3 +31,75 @@ en-GB:
         password_confirmation: "Підтвердження пароля"
         password: "Пароль"
         current_password: "Поточний пароль"
+        phone_number: "Номер телефону"
+      direct_message:
+        title: "Назва"
+        body: "Повідомлення"
+      organization:
+        name: "Назва організації"
+      proposal_notification:
+        title: "Назва"
+      signature_sheet:
+        title: "Назва"
+      site_customization/page:
+        title: Назва
+        locale: Мова
+      site_customization/page/translation:
+        title: Назва
+      topic:
+        title: "Назва"
+      banner:
+        background_color: Колір фону
+        font_color: Колір шрифту
+        target_url: "Посилання"
+      banner/translation:
+        title: "Назва"
+      legislation/process:
+        description: Опис
+        additional_info: Додаткова інформація
+      legislation/draft_version:
+        status: Статус
+      legislation/draft_version/translation:
+        body: Текст
+      legislation/question:
+        title: Назва
+      legislation/question/translation:
+        title: Запитання
+      legislation/annotation:
+        text: Коментар
+      document:
+        title: Назва
+        attachment: "Оберіть документ"
+      image:
+        title: Назва
+      poll/question/answer:
+        title: Відповідь
+      poll/question/answer/translation:
+        title: Відповідь
+        description: Опис
+      poll/question/answer/video:
+        title: Назва
+      admin_notification:
+        title: Назва
+      admin_notification/translation:
+        title: Назва
+      widget/card:
+        title: Назва
+      widget/card/translation:
+        title: Назва
+      dashboard/action:
+        title: Назва
+        action_type: Тип
+      dashboard/administrator_task:
+        source: Джерело
+        user: Виконавець
+      link:
+        label: Назва
+        url: Посилання
+      valuator:
+        description: Опис
+      local_census_record:
+        document_type: Тип документа
+        document_number: Номер документа
+        date_of_birth: Дата народження
+        postal_code: Поштовий індекс
