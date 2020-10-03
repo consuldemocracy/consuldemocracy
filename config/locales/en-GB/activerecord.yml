@@ -19,8 +19,10 @@ en-GB:
       comment:
         user: "Користувач"
       debate:
+        author: "Автор"
         title: "Назва"
       proposal:
+        author: "Автор"
         title: "Назва"
         question: "Запитання"
         description: "Опис"
@@ -37,11 +39,25 @@ en-GB:
         body: "Повідомлення"
       organization:
         name: "Назва організації"
+      poll:
+        starts_at: "Дата початку"
+        ends_at: "Дата завершення"
+      poll/booth:
+        location: "Місцезнаходження"
+      poll/translation:
+        description: "Опис"
+      poll/question:
+        title: "Запитання"
+      poll/shift:
+        task: "Завдання"
       proposal_notification:
+        body: "Повідомлення"
         title: "Назва"
       signature_sheet:
         title: "Назва"
+        document_numbers: "Номери документів"
       site_customization/page:
+        status: Статус
         title: Назва
         locale: Мова
       site_customization/page/translation:
