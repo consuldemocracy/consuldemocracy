@@ -68,3 +68,72 @@ en-GB:
           selected: Вибрані
         buttons:
           filter: Фільтр
+        download_current_selection: "Завантажити поточний вибір"
+        no_budget_investments: "Інвестиційні проекти відсутні."
+        title: Інвестиційні проекти
+        columns: Колонки
+        assigned_admin: Призначений адміністратор
+        no_admin_assigned: Адміністратора не призначено
+        no_valuators_assigned: Оцінювачів не призначено
+        list:
+          admin: Адміністратор
+          valuator: Оцінювач
+          price: Ціна
+          author: Автор
+        see_results: "Див. результати"
+      show:
+        assigned_admin: Призначений адміністратор
+        assigned_valuators: Призначені оцінювачі
+        edit: Редагувати
+        winner:
+          "true": "Так"
+          "false": "Ні"
+      edit:
+        submit_button: Оновити
+    statuses:
+      index:
+        table_description: Опис
+        table_actions: Дії
+        delete: Видалити
+        edit: Редагувати
+    progress_bars:
+      index:
+        table_kind: "Тип"
+    comments:
+      index:
+        author: "Автор"
+        commentable_type: "Тип"
+        title: Коментарі
+        no_comments: Коментарів немає.
+        table_link: "Посилання"
+    hidden_comments:
+      index:
+        filter: Фільтр
+    dashboard:
+      actions:
+        index:
+          edit: Редагувати
+          delete: Видалити
+          active: 'Так'
+          inactive: 'Ні'
+          action_type: Тип
+          default:
+            email: Електронна адреса
+        form:
+          submit_button: Зберегти
+      administrator_tasks:
+        index:
+          source: Джерело
+          filter: Фільтр
+    debates:
+      index:
+        author: Автор
+    hidden_debates:
+      index:
+        filter: Фільтр
+    hidden_users:
+      index:
+        filter: Filter
+    hidden_budget_investments:
+      index:
+        filter: Filter
