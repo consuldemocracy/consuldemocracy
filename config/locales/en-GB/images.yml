@@ -5,3 +5,7 @@ en-GB:
       delete_button: Видалити зображення
       add_new_image: Додати зображення
       admin_title: "Зображення"
+    actions:
+      destroy:
+        notice: Зображення успішно видалене.
+        alert: Не вдається видалити зображення.
