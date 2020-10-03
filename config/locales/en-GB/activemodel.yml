@@ -3,3 +3,21 @@ en-GB:
     models:
       verification:
         sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Тип документа"
+          date_of_birth: "Дата народження"
+          postal_code: "Поштовий індекс"
+        sms:
+          phone: "Телефон"
+        email:
+          recipient: "Електронна адреса"
+      verification/letter:
+        email: "Електронна адреса"
+        password: "Пароль"
+      verification/residence:
+        date_of_birth: "Дата народження"
+        postal_code: "Поштовий індекс"
+      officing/residence:
+        year_of_birth: "Рік народження"
