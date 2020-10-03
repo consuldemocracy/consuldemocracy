@@ -4,5 +4,30 @@ en-GB:
       budget:
         currency_symbol: "Валюта"
       budget/investment:
+        title: "Назва"
         description: "Опис"
         administrator_id: "Адміністратор"
+      budget/investment/translation:
+        title: "Назва"
+        description: "Опис"
+      milestone:
+        title: "Назва"
+        publication_date: "Дата"
+      progress_bar:
+        kind: "Тип"
+        title: "Назва"
+      comment:
+        user: "Користувач"
+      debate:
+        title: "Назва"
+      proposal:
+        title: "Назва"
+        question: "Запитання"
+        description: "Опис"
+      user:
+        login: "Електронна адреса або ім'я користувача"
+        email: "Електронна адреса"
+        username: "Ім'я користувача"
+        password_confirmation: "Підтвердження пароля"
+        password: "Пароль"
+        current_password: "Поточний пароль"
