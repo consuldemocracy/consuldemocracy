@@ -11,8 +11,17 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
     eu = ExternalUser.get(token)
     # Deberíamos localizar el usuario por email y si no existe.. es cuando lo crearíamos
     if(eu)
-      u = User.find_by(email: eu.email)
+      # No podemos tener emails duplicados en consul, asi que buscamos primero por el email,
+      # si es que la cuenta externa tiene email, si no lo tiene intentamos buscar por
+      # el id de participación que ese seguro si lo tenemos; y sino creamos la cuenta
+      if(eu.email != nil)
+        u = User.find_by(email: eu.email)
+      else
+        u = User.find_by(participacion_id: eu.participacion_id)
+      end
+
       if(u)
+        u.participacion_id = eu.participacion_id
         hasChanges = false
         if(eu.fullname != u.username)
           u.username = eu.fullname
@@ -44,6 +53,7 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
                     confirmed_at: DateTime.current,
                     password: Devise.friendly_token[0, 20],
                     origin_participacion: true,
+                    participacion_id: eu.participacion_id,
                     terms_of_service: "1"
                 )
         # Podria ser una asociacion de vecinos en cuyo caso le damos de alta como tal.

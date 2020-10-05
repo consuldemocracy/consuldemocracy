@@ -8,12 +8,12 @@ class ExternalUserController < ApplicationController
 
 
   def authorize()
-    if(params[:validated]==nil || !params[:fullname] || !params[:email] || params[:association]==nil)
+    if(params[:validated]==nil || !params[:fullname] || !params[:userId] || params[:association]==nil)
       render plain: 'invalid request', status: :bad_request
       return
     end
     uuid = SecureRandom.hex
-    eu = ExternalUser.new(uuid:uuid, fullname: params[:fullname],email:params[:email],validated:params[:validated],organization:params[:association])
+    eu = ExternalUser.new(uuid:uuid, participacion_id: params[:userId], fullname: params[:fullname],email:params[:email],validated:params[:validated],organization:params[:association])
     ## Almacenamos de forma persistente... seria mejor con un IPC; pero.
     eu.save!
 
