@@ -17,7 +17,34 @@ en-GB:
       show:
         loading_comments: Завантаження коментарів
         select_version_submit: переглянути
+        text_toc: Зміст
         text_body: Текст
+        text_comments: Коментарі
     processes:
       header:
         description: Опис
+      index:
+        filter: Фільтр
+      process:
+        see_latest_comments: Переглянути останні коментарі
+      shared:
+        homepage: Домашня сторінка
+        allegations_dates: Коментарі
+    questions:
+      question:
+        comments:
+          zero: Коментарі відсутні
+      show:
+        next_question: Наступне запитання
+        first_question: Перше запитання
+        share: Поділитися
+    shared:
+      share: Поділитися
+    summary:
+      proposals:
+        zero: "Пропозиції відсутні"
+      comments:
+        zero: "Коментарі відсутні"
+      top_comments:
+        zero: "Коментарі відсутні"
+      no_allegation: "Коментарі відсутні"
