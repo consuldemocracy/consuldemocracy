@@ -101,3 +101,16 @@ en-GB:
         title: Обговорення
       section_footer:
         description: Розпочніть обговорення, щоб поділитися з іншими думками щодо тем, які вас турбують.
+    new:
+      form:
+        submit_button: Розпочати обговорення
+      info_link: подати нову пропозицію
+      more_info: Більше інформації
+      recommendations_title: Рекомендації щодо створення обоворень
+      start_new: Розпочати обговорення
+    show:
+      author_deleted: Користувач видалений
+      comments:
+        zero: Коментарі відсутні
+      comments_title: Коментарі
+      edit_debate_link: Редагувати
