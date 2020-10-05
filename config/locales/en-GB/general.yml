@@ -190,5 +190,65 @@ en-GB:
       mark_as_unread: Позначити як непрочитане
       notifiable_hidden: Цей ресурс більше не доступний.
   omniauth:
+    facebook:
+      sign_in: Реєстрація через Facebook
+      sign_up: Вхід через Facebook
+      name: Facebook
     finish_signup:
       title: "Додаткові деталі"
+    google_oauth2:
+      sign_in: Реєстрація через Google
+      sign_up: Вхід через Google
+      name: Google
+    wordpress_oauth2:
+      sign_in: Реєстрація через Wordpress
+      sign_up: Вхід через Wordpress
+      name: Wordpress
+    twitter:
+      sign_in: Реєстрація через Twitter
+      sign_up: Увійти через Twitter
+      name: Twitter
+    info:
+      sign_in: "Реєстрація через:"
+      sign_up: "Вхід через:"
+    or_fill: "Або заповніть форму нижче:"
+  proposals:
+    created:
+      title: Вітаємо! Ви виконали перший крок.
+    share:
+      dashboard: Отримати більше інформації
+    edit:
+      editing: Редагувати пропозицію
+      form:
+        submit_button: Зберегти зміни
+      show_link: Переглянути пропозицію
+    retire_form:
+      retired_reason_blank: Обрати варіант
+    proposal:
+      created: "Ви створили пропозицію!"
+      share:
+        view_proposal: Не зараз, перейти до моєї пропозиції
+      already_supported: Ви вже підтримали цю пропозицію. Поділіться нею!
+      comments:
+        zero: Коментарі відсутні
+      votes:
+        zero: Голоси відсутні
+      total_percent: 100%
+    show:
+      author_deleted: Користувача видалено
+      comments:
+        zero: Коментарі відсутні
+      comments_tab: Коментарі
+      notifications_tab: Сповіщення
+      share: Поділитися
+      author: Автор
+    update:
+      form:
+        submit_button: Зберегти зміни
+  dashboard:
+    menu:
+      my_proposal: Редагувати мою пропозицію
+      resources: Ресурси
+      mailing: Електронна адреса
+      recommended_actions: Рекомендовані дії
+      messages: Повідомлення користувачам
