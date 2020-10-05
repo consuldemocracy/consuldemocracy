@@ -252,3 +252,77 @@ en-GB:
       mailing: Електронна адреса
       recommended_actions: Рекомендовані дії
       messages: Повідомлення користувачам
+      related_content: Пов'язаний вміст
+    form:
+      request: Запит
+    progress:
+      title: Графік
+      group_by_month: Щомісяця
+      group_by_week: Щотижня
+      group_by_date: Щодня
+    index:
+      edit_proposal_link: Редагувати пропозицію
+      publish: Опублікувати пропозицію
+    new_request:
+      links: Посилання
+    resources:
+      available_resources: Доступні ресурси
+    resource:
+      view_resource: Переглянути ресурс
+    recommended_actions:
+      title: Рекомендовані дії
+      goto_proposed_actions: Перейти до рекомендованих дій
+      see_proposed_actions: Перевірити рекомендовані дії
+      hide_proposed_actions: Приховати рекомендовані дії
+      pending_title: В очікуванні
+      show_description: Показати опис
+    community:
+      participants: Учасники
+      comments: Коментарі
+      latest_comments: Останні повідомлення
+    messages:
+      previous_notifications: Переглянути попередні сповіщення
+    polls:
+      index:
+        title: Опитування
+        create: Створити опитування
+        links: Посилання
+        additiontal_information: Додаткова інформація
+      new:
+        title: Нове опитування
+        submit: Створити опитування
+      edit:
+        submit: Оновити опитування
+      poll:
+        view_results: Переглянути результати
+        edit_poll: Редагувати опитування
+        delete: Видалити опитування
+        success_notice: Опитування успішно видалене
+      form:
+        name: Назва опитування
+        add_question: Додати запитання
+      question_fields:
+        remove_question: Видалити запитання
+        add_answer: Додати відповідь
+      question_answer_fields:
+        remove_answer: Видалити відповідь
+    poster:
+      options:
+        preview: Попередній перегляд
+        download: Завантажити
+    mailing:
+      mailing_options:
+        preview: Попередній перегляд
+    mailer:
+      forward:
+        hi: "Привіт!"
+  polls:
+    index:
+      title: "Опитування"
+      participate_button: "Взяти участь у цьому опитуванні"
+      participate_button_expired: "Опитування завершено"
+      no_geozone_restricted: "Все місто"
+      geozone_restricted: "Райони"
+      already_answer: "Ви вже взяли участь у цьому опитуванні"
+      not_logged_in: "Зареєструйтеся або увійдіть у свій обліковий запис, щоб взяти участь"
+      unverified: "Підтвердіть свій обліковий запис, щоб взяти участь"
