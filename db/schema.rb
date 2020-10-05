@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200713184213) do
+ActiveRecord::Schema.define(version: 20201005064927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -586,13 +586,14 @@ ActiveRecord::Schema.define(version: 20200713184213) do
   end
 
   create_table "external_users", force: :cascade do |t|
-    t.string   "uuid",         limit: 128
-    t.string   "fullname",     limit: 512
-    t.string   "email",        limit: 256
+    t.string   "uuid",             limit: 128
+    t.string   "fullname",         limit: 512
+    t.string   "email",            limit: 256
     t.boolean  "validated"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.boolean  "organization"
+    t.integer  "participacion_id"
     t.index ["uuid"], name: "index_external_users_on_uuid", unique: true, using: :btree
   end
 
@@ -1543,6 +1544,7 @@ ActiveRecord::Schema.define(version: 20200713184213) do
     t.integer  "created_by"
     t.string   "postal_code",                    limit: 10
     t.boolean  "origin_participacion"
+    t.integer  "participacion_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
