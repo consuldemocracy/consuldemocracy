@@ -1,1 +1,23 @@
 en-GB:
+  legislation:
+    annotations:
+      comments:
+        see_all: Переглянути все
+        see_complete: Переглянути повністю
+        cancel: Скасувати
+        publish_comment: Опублікувати коментар
+      index:
+        title: Коментарі
+        comments_about: Коментарі щодо
+      show:
+        title: Коментар
+    draft_versions:
+      changes:
+        title: Зміни
+      show:
+        loading_comments: Завантаження коментарів
+        select_version_submit: переглянути
+        text_body: Текст
+    processes:
+      header:
+        description: Опис
