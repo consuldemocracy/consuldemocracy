@@ -37,3 +37,27 @@ en-GB:
       moderator: Модератор
       responses:
         zero: Відповіді відсутні
+      responses_show:
+        zero: Відповіді відсутні
+      responses_collapse:
+        zero: Відповіді відсутні
+      user_deleted: Користувача видалено
+      votes:
+        zero: Голоси відсутні
+    form:
+      comment_as_admin: Коментувати як адміністратор
+      comment_as_moderator: Коментувати як модератор
+      leave_comment: Залиште свій коментар
+    orders:
+      most_voted: Найбільша кількість голосів
+      newest: Спочатку останні (найновіші)
+      oldest: Спочатку перші (найстаріші)
+      most_commented: Найбільша кількість коментарів
+    select_order: Сортувати за
+    show:
+      return_to_commentable: "Повернутися до "
+  comments_helper:
+    comment_button: Опублікувати коментар
+    comment_link: Коментар
+    comments_title: Коментарі
+    reply_button: Опублікувати відповідь
