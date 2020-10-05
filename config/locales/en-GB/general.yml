@@ -6,3 +6,34 @@ en-GB:
       finish_verification: Повна перевірка
       notifications: Сповіщення
       organization_name_label: Назва організації
+      organization_responsible_name_placeholder: Представник організації/колективу
+      personal: Персональні дані
+      phone_number_label: Номер телефону
+      public_interests_my_title_list: Теги елементів, за якими ви стежите
+      public_interests_user_title_list: Теги елементів, за якими стежить даний користувач
+      save_changes_submit: Зберегти зміни
+      recommendations: Рекомендації
+      title: Мій обліковий запис
+      user_permission_debates: Взяти участь в обговоренні
+      user_permission_info: З вашим обліковим записом можна...
+      user_permission_proposal: Подати нові пропозиції
+      user_permission_support_proposal: Підтримати пропозиції
+      user_permission_title: Участь
+      user_permission_verify: Для виконання дій підтвердіть свій обліковий запис.
+      user_permission_votes: Взяти участь у підсумковому голосуванні
+      username_label: Ім'я користувача
+      verified_account: Обліковий запис підтверджено
+      verify_my_account: Підтвердити мій обліковий запис
+  application:
+    close: Закрити
+    menu: Меню
+  comments:
+    comments_closed: Коментарі недоступні
+    verified_only: Щоб взяти участь, %{verify_account}
+    comment:
+      admin: Адміністратор
+      author: Автор
+      deleted: Цей коментар видалено
+      moderator: Модератор
+      responses:
+        zero: Відповіді відсутні
