@@ -440,4 +440,31 @@ en-GB:
       title: Підтвердження облікового запису
     welcome:
       title: Взяти участь
-      user_permission_proposal: Подати нову пропозицію
+      user_permission_proposal: Подати нові пропозиції
+      user_permission_support_proposal: Підтримати пропозиції
+      user_permission_verify_my_account: Підтвердити мій обліковий запис
+      user_permission_votes: Взяти участь у підсумковому голосуванні
+  related_content:
+    score_positive: "Так"
+    score_negative: "Ні"
+    content_title:
+      proposal: "Пропозиція"
+  links:
+    form:
+      delete_button: Видалити
+      cancel_button: Скасувати
+    nested_links:
+      title: Посилання
+      add_new_link: Додати нове посилання
+    link_fields:
+      label_placeholder: Назва посилання
+  communities:
+    show:
+      surveys: Опитування
+      complete_survey: Заповнити опитування
+    subnav:
+      surveys: Опитування
+  remote_translations:
+    text: Вміст цієї сторінки недоступний вашою мовою
+    all_remote_translations_enqueued_text: Згодом після оновлення сторінки її вміст буде доступним вашою мовою.
+    button: Перекласти сторінку
