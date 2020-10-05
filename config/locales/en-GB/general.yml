@@ -1,1 +1,8 @@
 en-GB:
+  account:
+    show:
+      change_credentials_link: Змінити мої облікові дані
+      erase_account_link: Видалити мій обліковий запис
+      finish_verification: Повна перевірка
+      notifications: Сповіщення
+      organization_name_label: Назва організації
