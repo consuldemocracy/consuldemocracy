@@ -154,3 +154,41 @@ en-GB:
         show_proposal: Показати пропозицію
         preview_proposal: Попередній перегляд пропозиції
         current_goal: Поточна ціль
+    footer:
+      conditions: Правила та умови користування
+      consul: Додаток CONSUL
+      consul_url: https://github.com/consul/consul
+      participation_title: Участь
+      privacy: Політика конфіденційності
+    header:
+      administration_menu: Меню
+      available_locales: Доступні мови
+      debates: Обговорення
+      locale: "Мова:"
+      logo: Логотип CONSUL
+      management: Управління
+      moderation: Модерування
+      valuation: Оцінка
+      help: Допомога
+      my_account_link: Мій обліковий запис
+      open_gov: Відкритий уряд
+      proposals: Пропозиції
+      poll_questions: Голосування
+      budgets: Партисипативний бюджет
+      notification_item:
+        notifications: Сповіщення
+        no_notifications: "Нових сповіщень немає"
+  notifications:
+    index:
+      empty_notifications: Нових сповіщень немає.
+      mark_all_as_read: Позначити все як прочитане
+      read: Прочитане
+      title: Сповіщення
+      unread: Непрочитане
+    notification:
+      mark_as_read: Позначити як прочитане
+      mark_as_unread: Позначити як непрочитане
+      notifiable_hidden: Цей ресурс більше не доступний.
+  omniauth:
+    finish_signup:
+      title: "Додаткові деталі"
