@@ -61,3 +61,26 @@ en-GB:
     comment_link: Коментар
     comments_title: Коментарі
     reply_button: Опублікувати відповідь
+    reply_link: Відповідь
+  debates:
+    create:
+      form:
+        submit_button: Розпочати обговорення
+    debate:
+      comments:
+        zero: Коментарі відсутні
+      votes:
+        zero: Голоси відсутні
+    edit:
+      editing: Редагувати обговорення
+      form:
+        submit_button: Зберегти зміни
+      show_link: Переглянути обговорення
+    form:
+      debate_title: Назва обговорення
+    index:
+      featured_debates: Рекомендовані
+      orders:
+        confidence_score: найвищий рейтинг
+        created_at: найновіші
+        hot_score: найактивніші
