@@ -1,1 +1,6 @@
 en-GB:
+  views:
+    pagination:
+      first: Перший
+      last: Останній
+      next: Наступний
