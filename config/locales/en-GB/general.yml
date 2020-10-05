@@ -326,3 +326,67 @@ en-GB:
       already_answer: "Ви вже взяли участь у цьому опитуванні"
       not_logged_in: "Зареєструйтеся або увійдіть у свій обліковий запис, щоб взяти участь"
       unverified: "Підтвердіть свій обліковий запис, щоб взяти участь"
+      section_header:
+        title: Голосування
+      no_polls: "Відкриті голосування відсутні."
+    show:
+      back: Повернутися до голосування
+      comments_tab: Коментарі
+      verify_link: "підтвердіть свій обліковий запис"
+      cant_answer_expired: "Опитування завершено."
+      more_info_title: "Більше інформації"
+      documents: Документи
+      zoom_plus: Збільшити зображення
+      info_menu: "Інформація"
+      stats_menu: "Статистика участі"
+      results_menu: "Результати голосування"
+      stats:
+        total_votes: "Загальна кількість голосів"
+      results:
+        title: "Запитання"
+    poll_header:
+      back_to_proposal: Повернутися до пропозиції
+  proposal_notifications:
+    new:
+      title: "Надіслати повідомлення"
+      submit_button: "Надіслати повідомлення"
+  shared:
+    edit: "Редагувати"
+    save: "Зберегти"
+    delete: "Видалити"
+    "yes": "Так"
+    "no": "Ні"
+    search_results: "Результати пошуку"
+    advanced_search:
+      date_range_blank: "Обрати дату"
+      date_1: "Останні 24 години"
+      date_2: "Останній тиждень"
+      date_3: "Останній місяць"
+      date_4: "Останній рік"
+      from: "Від"
+      search: "Фільтр"
+      title: "Розширений пошук"
+      to: "До"
+    author_info:
+      author_deleted: Користувача видалено
+      email_deleted: Електронну адресу видалено
+    back: Повернутися
+    check: Обрати
+    check_all: Все
+    check_none: Жодного
+    tags_cloud:
+      districts: "Райони"
+      districts_list: "Перелік районів"
+    share: Поділитися
+    orbit:
+      previous_slide: Попередній слайд
+      next_slide: Наступний слайд
+    documentation: Додаткова документація
+    view_mode:
+      list: Перелік
+    recommended_index:
+      title: Рекомендації
+      see_more: Переглянути більше рекомендацій
+      hide: Приховати рекомендації
+    translations:
+      select_language_prompt: Обрати мову
