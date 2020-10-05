@@ -390,3 +390,54 @@ en-GB:
       hide: Приховати рекомендації
     translations:
       select_language_prompt: Обрати мову
+      remove_language: Видалити мову
+      add_language: Додати мову
+  stats:
+    index:
+      proposals: Пропозиції
+      comments: Коментарі
+  users:
+    signin: "реєстрація"
+    signup: "вхід"
+    direct_messages:
+      new:
+        submit_button: Надіслати повідомлення
+        title: Надіслати приватне повідомлення %{receiver}
+        verified_only: Щоб надіслати приватне повідомлення, %{verify_account}
+      show:
+        receiver: Повідомлення надіслане %{receiver}
+    show:
+      deleted: Видалено
+      deleted_proposal: Пропозицію видалено
+      deleted_budget_investment: Інвестиційний проект видалено
+      proposals: Пропозиції
+      proposals_status: Статус
+      comments: Коментарі
+      actions: Дії
+      no_private_messages: "Користувач не приймає приватні повідомлення."
+      send_private_message: "Надіслати приватне повідомлення"
+      delete_alert: "Ви впевнені, що хочете видалити свій інвестиційний проект? Цю дію неможливо скасувати"
+    proposals:
+      draft: Чернетка
+      published: Опубліковано
+      see: "Переглянути пропозицію"
+      actions: Дії
+  votes:
+    agree: Я погоджуюсь
+    disagree: Я не погоджуюсь
+    verified_only: Тільки користувачі, які підтвердили свій обліковий запис, можуть віддавати голоси за пропозиції; %{verify_account}.
+    budget_investments:
+      not_logged_in: Щоб продовжити, %{signin} або %{signup}.
+  welcome:
+    feed:
+      see_all_proposals: Переглянути всі пропозиції
+      see_all_processes: Переглянути всі процеси
+      process_label: Процес
+      see_process: Переглянути процес
+    recommended:
+      title: Рекомендації, які можуть вас зацікавити
+    verification:
+      title: Підтвердження облікового запису
+    welcome:
+      title: Взяти участь
+      user_permission_proposal: Подати нову пропозицію
