@@ -133,6 +133,7 @@ tr:
       form:
         create: "Yeni grup oluştur"
         edit: "Grup düzenle"
+        max_votable_headings_info: "Sadece proje secim aşama döneminde geçerli. Proje secim aşamasında kullanıcılar grup başı sadece bir bölümden secebilirler."
         submit: "Grubu kaydet"
       index:
         back: "Bütçelere geri dön"
