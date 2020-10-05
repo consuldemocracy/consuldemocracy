@@ -84,3 +84,20 @@ en-GB:
         confidence_score: найвищий рейтинг
         created_at: найновіші
         hot_score: найактивніші
+        most_commented: найбільш коментоване
+        relevance: актуальність
+        recommendations: рекомендації
+      recommendations:
+        without_results: Відсутні обговорення, пов'язані зі сферою ваших інтересів
+      search_form:
+        button: Пошук
+        placeholder: Пошук обговорень...
+        title: Пошук
+      select_order: Сортувати за
+      start_debate: Розпочати обговорення
+      title: Обговорення
+      section_header:
+        icon_alt: Значок обговорення
+        title: Обговорення
+      section_footer:
+        description: Розпочніть обговорення, щоб поділитися з іншими думками щодо тем, які вас турбують.
