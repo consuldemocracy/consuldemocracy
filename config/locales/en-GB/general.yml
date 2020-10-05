@@ -131,3 +131,26 @@ en-GB:
     direct_message: приватне повідомлення
     error: помилка
     errors: помилки
+    policy: Політика конфіденційності
+    banner: банер
+    proposal: Пропозиція
+    proposal_notification: "Сповіщення"
+    legislation/process: процес
+    legislation/question: запитання
+    poll/question/answer: Відповідь
+    user: Обліковий запис
+    verification/sms: телефон
+    document: Документ
+    image: Зображення
+    site_customization/page: сторінка
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+    dashboard:
+      proposal_header:
+        published: Опубліковано
+      proposal_totals:
+        show_proposal: Показати пропозицію
+        preview_proposal: Попередній перегляд пропозиції
+        current_goal: Поточна ціль
