@@ -7,7 +7,7 @@ hr:
       budgets: Participativni budžet
     budgets:
       index:
-        title: Participativni budžet
+        title: Participativni proračun
         filters:
           current: Otvoreno
           finished: Dovršeno
@@ -16,7 +16,7 @@ hr:
         table_assigned_investments_valuation_open: Pripisani investicijski projekti su otvoreni s procjenom
         table_actions: Djelovanja
         evaluate: Procijeniti
-        no_budgets: "Ne postoje budžeti"
+        no_budgets: "Ne postoje proračuni"
     budget_investments:
       index:
         headings_filter_all: Svi naslovi
@@ -40,21 +40,24 @@ hr:
         sent: Poslano u
         heading: Naslov
         dossier: Dosje
-        edit_dossier: Uredi dojse
+        edit_dossier: Uredi dosje
         price: Cijena
-        price_first_year: Troškovi tokom prve godine
+        price_first_year: Trošak tijekom prve godine
         currency: "€"
         feasibility: Izvodljivost
         feasible: Izvodljivo
         unfeasible: Neizvodljivo
         undefined: Nedefinirano
-        valuation_finished: Valuacija dovršena
+        valuation_finished: Ocjena dovršena
         duration: Vremenski opseg
         responsibles: Odgovornosti
-        assigned_admin: Pripisani admin
-        assigned_valuators: Pripisani procjenitelji
+        assigned_admin: Dodijeljeni admin
+        assigned_valuators: Dodijeljeni ocjenitelji
+        preview: Pregled ulaganja
       edit:
         dossier: Dosje
+        price: "Cijena (%{currency})"
+        price_first_year: "Troškovi tijekom prve godine (%{currency}) <small>(neobvezan, podaci nisu javni)</small>"
         feasibility: Izvodljivost
         valuation_finished_alert: "Jeste li sigurni da želite označiti ovaj izvještaj kao dovršen? Ako da, više se ne može urediti."
         not_feasible_alert: "Email će se odmah poslati autoru projekta s izvješćem o neizvedivosti."

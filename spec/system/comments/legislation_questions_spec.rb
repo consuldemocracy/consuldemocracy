@@ -1,5 +1,4 @@
 require "rails_helper"
-include ActionView::Helpers::DateHelper
 
 describe "Commenting legislation questions" do
   let(:user) { create :user, :level_two }
@@ -8,6 +7,7 @@ describe "Commenting legislation questions" do
 
   context "Concerns" do
     it_behaves_like "notifiable in-app", :legislation_question
+    it_behaves_like "flaggable", :legislation_question_comment
   end
 
   scenario "Index" do
@@ -26,23 +26,23 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Show" do
-    parent_comment = create(:comment, commentable: legislation_question)
-    first_child    = create(:comment, commentable: legislation_question, parent: parent_comment)
-    second_child   = create(:comment, commentable: legislation_question, parent: parent_comment)
     href           = legislation_process_question_path(legislation_question.process, legislation_question)
+    parent_comment = create(:comment, commentable: legislation_question, body: "Parent")
+    create(:comment, commentable: legislation_question, parent: parent_comment, body: "First subcomment")
+    create(:comment, commentable: legislation_question, parent: parent_comment, body: "Last subcomment")
 
     visit comment_path(parent_comment)
 
     expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content parent_comment.body
-    expect(page).to have_content first_child.body
-    expect(page).to have_content second_child.body
+    expect(page).to have_content "Parent"
+    expect(page).to have_content "First subcomment"
+    expect(page).to have_content "Last subcomment"
 
     expect(page).to have_link "Go back to #{legislation_question.title}", href: href
 
-    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
-    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
-    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
+    within ".comment", text: "Parent" do
+      expect(page).to have_selector(".comment", count: 2)
+    end
   end
 
   scenario "Link to comment show" do
@@ -70,20 +70,26 @@ describe "Commenting legislation questions" do
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (collapse)"
+    end
 
     expect(page).to have_css(".comment", count: 2)
     expect(page).to have_content("1 response (collapse)")
     expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (show)"
+    end
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").click
+    within ".comment", text: "Main comment" do
+      click_link text: "1 response (collapse)", match: :first
+    end
 
     expect(page).to have_css(".comment", count: 1)
     expect(page).to have_content("1 response (show)")
@@ -197,7 +203,7 @@ describe "Commenting legislation questions" do
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "Have you thought about...?"
+    fill_in "Leave your answer", with: "Have you thought about...?"
     click_button "Publish answer"
 
     within "#comments" do
@@ -244,7 +250,7 @@ describe "Commenting legislation questions" do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      fill_in "Leave your answer", with: "It will be done next week."
       click_button "Publish reply"
     end
 
@@ -253,6 +259,40 @@ describe "Commenting legislation questions" do
     end
 
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+  end
+
+  scenario "Reply update parent comment responses count", :js do
+    manuela = create(:user, :level_two, username: "Manuela")
+    comment = create(:comment, commentable: legislation_question)
+
+    login_as(manuela)
+    visit legislation_process_question_path(legislation_question.process, legislation_question)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in "Leave your answer", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
+  scenario "Reply show parent comments responses when hidden", :js do
+    manuela = create(:user, :level_two, username: "Manuela")
+    comment = create(:comment, commentable: legislation_question)
+    create(:comment, commentable: legislation_question, parent: comment)
+
+    login_as(manuela)
+    visit legislation_process_question_path(legislation_question.process, legislation_question)
+
+    within ".comment", text: comment.body do
+      click_link text: "1 response (collapse)"
+      click_link "Reply"
+      fill_in "Leave your answer", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+    end
   end
 
   scenario "Errors on reply", :js do
@@ -281,53 +321,6 @@ describe "Commenting legislation questions" do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
-    comment = create(:comment, commentable: legislation_question)
-
-    login_as(user)
-    visit legislation_process_question_path(legislation_question.process, legislation_question)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    comment = create(:comment, commentable: legislation_question)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit legislation_process_question_path(legislation_question.process, legislation_question)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    legislation_question = create(:legislation_question, process: process, title: "Should we change the world?")
-    comment = create(:comment, commentable: legislation_question)
-
-    login_as(user)
-    visit legislation_process_path(legislation_question.process)
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
-  end
-
   scenario "Erasing a comment's author" do
     comment = create(:comment, commentable: legislation_question, body: "this should be visible")
     comment.user.erase
@@ -343,14 +336,12 @@ describe "Commenting legislation questions" do
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "Testing submit button!"
+    fill_in "Leave your answer", with: "Testing submit button!"
     click_button "Publish answer"
 
-    # The button's text should now be "..."
-    # This should be checked before the Ajax request is finished
-    expect(page).not_to have_button "Publish answer"
-
-    expect(page).to have_content("Testing submit button!")
+    expect(page).to have_button "Publish answer", disabled: true
+    expect(page).to have_content "Testing submit button!"
+    expect(page).to have_button "Publish answer", disabled: false
   end
 
   describe "Moderators" do
@@ -360,7 +351,7 @@ describe "Commenting legislation questions" do
       login_as(moderator.user)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-      fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I am moderating!"
+      fill_in "Leave your answer", with: "I am moderating!"
       check "comment-as-moderator-legislation_question_#{legislation_question.id}"
       click_button "Publish answer"
 
@@ -384,7 +375,7 @@ describe "Commenting legislation questions" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        fill_in "Leave your answer", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -416,7 +407,7 @@ describe "Commenting legislation questions" do
       login_as(admin.user)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-      fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I am your Admin!"
+      fill_in "Leave your answer", with: "I am your Admin!"
       check "comment-as-administrator-legislation_question_#{legislation_question.id}"
       click_button "Publish answer"
 
@@ -440,7 +431,7 @@ describe "Commenting legislation questions" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+        fill_in "Leave your answer", with: "Top of the world!"
         check "comment-as-administrator-comment_#{comment.id}"
         click_button "Publish reply"
       end

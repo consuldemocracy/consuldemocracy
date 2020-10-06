@@ -1,0 +1,117 @@
+ka:
+  moderation:
+    comments:
+      index:
+        block_authors: ავტორების დაბლოკვა
+        confirm: დარწმუნებული ხართ?
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          pending_flag_review: მოლოდინის რეჟიმშია
+          with_ignored_flag: მონიშნულია, როგორც ნანახი
+        headers:
+          comment: კომენტარი
+          moderate: მოდერაცია
+        hide_comments: კომენტარების დამალვა
+        ignore_flags: მოვნიშნოთ, როგორც ნანახი
+        order: თანმიმდევრობა
+        orders:
+          flags: ყველაზე მეტი საჩივრის მქონე
+          newest: უახლესი
+        title: კომენტარები
+    dashboard:
+      index:
+        title: მოდერაცია
+    debates:
+      index:
+        block_authors: ავტორების დაბლოკვა
+        confirm: დარწმუნებული ხართ?
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          pending_flag_review: მოლოდინის რეჟიმშია
+          with_ignored_flag: მონიშნულია, როგორც ნანახი
+        headers:
+          debate: დებატები
+          moderate: მოდერაცია
+        hide_debates: დებატების დამალვა
+        ignore_flags: მოვნიშნოთ, როგორც ნანახი
+        order: თანმიმდევრობა
+        orders:
+          created_at: უახლესი
+          flags: ყველაზე მეტი საჩივრის მქონე
+        title: დებატები
+    header:
+      title: მოდერაცია
+    menu:
+      flagged_comments: კომენტარები
+      flagged_debates: დებატები
+      flagged_investments: საბიუჯეტო ინვესტიციები
+      proposals: ინიციატივები
+      proposal_notifications: შეტყობინებები ინიციატივების თაობაზე
+      users: მომხმარებლების დაბლოკვა
+    proposals:
+      index:
+        block_authors: ავტორების დაბლოკვა
+        confirm: დარწმუნებული ხართ?
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          pending_flag_review: მიმდინარეობს განხილვა
+          with_ignored_flag: მოვნიშნოთ, როგორც ნანახი
+        headers:
+          moderate: მოდერაცია
+          proposal: ინიციატივა
+        hide_proposals: ინიციატივების დამალვა
+        ignore_flags: მოვნიშნოთ, როგორც ნანახი
+        order: დალაგება
+        orders:
+          created_at: უახლესი
+          flags: ყველაზე ხშირად მონიშვნადი
+        title: ინიციატივები
+    budget_investments:
+      index:
+        block_authors: ავტორების დაბლოკვა
+        confirm: დარწმუნებული ხართ?
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          pending_flag_review: მოლოდინის რეჟიმშია
+          with_ignored_flag: მონიშნულია, როგორც ნანახი
+        headers:
+          moderate: მოდერაცია
+          budget_investment: საბიუჯეტო ინვესტიცია
+        hide_budget_investments: საბიუჯეტო ინვესტიციების დამალვა
+        ignore_flags: მოვნიშნოთ, როგორც ნანახი
+        order: დალაგება
+        orders:
+          created_at: უახლესი
+          flags: ყველაზე მეტჯერ მონიშნული
+        title: საბიუჯეტო ინვესტიციები
+    proposal_notifications:
+      index:
+        block_authors: ავტორების დაბლოკვა
+        confirm: დარწმუნებული ხართ?
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          pending_review: მიმდინარეობს განხილვა
+          ignored: მოვნიშნოთ, როგორც ნანახი
+        headers:
+          moderate: მოდერაცია
+          proposal_notification: შეტყობინება ინიციატივის თაობაზე
+        hide_proposal_notifications: ინიციატივების დამალვა
+        ignore_flags: მოვნიშნოთ, როგორც ნანახი
+        order: დალაგება
+        orders:
+          created_at: უახლესი
+          moderated: მოდერირებული
+        title: შეტყობინებები ინიციატივის თაობაზე
+    users:
+      index:
+        hidden: დაბლოკილი
+        hide: დაბლოკვა
+        search: ძებნა
+        search_placeholder: ელ. ფოსტა ან მომხმარებლის სახელი
+        title: მომხმარებლების დაბლოკვა
+      notice_hide: მომხმარებელი დაიბლოკა. მისი ყველა კომენტარი, ან დებატები დამალულია.

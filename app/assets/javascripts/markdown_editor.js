@@ -22,14 +22,26 @@
         });
         editor = $(this);
         editor.on("input", function() {
+          var textarea, warning;
+
+          textarea = editor.find("textarea")[0];
+          warning = $(this).closest(".translatable-fields").find(".warning");
+
           App.MarkdownEditor.refresh_preview($(this), md);
-          $(".legislation-draft-versions-edit .warning").show();
+
+          if (textarea.value === textarea.defaultValue) {
+            warning.hide();
+          } else {
+            warning.show();
+          }
         });
         editor.find("textarea").on("scroll", function() {
           editor.find(".markdown-preview").scrollTop($(this).scrollTop());
         });
-        editor.find(".fullscreen-toggle").on("click", function() {
+        editor.find(".fullscreen-toggle").on("click", function(e) {
           var span;
+          e.preventDefault();
+          e.stopPropagation();
           editor.toggleClass("fullscreen");
           $(".fullscreen-container").toggleClass("medium-8", "medium-12");
           span = $(this).find("span");

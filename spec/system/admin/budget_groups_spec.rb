@@ -151,7 +151,7 @@ describe "Admin budget groups" do
       click_link "edit_group_#{group.id}"
 
       expect(page).to have_field "Group name", with: group.name
-      expect(page).to have_field "Maximum number of headings in which a user can vote", with: "2"
+      expect(page).to have_field "Maximum number of headings in which a user can select projects", with: "2"
     end
 
     scenario "Hide select for maxium number of headings to vote if there are no headings for the group" do
@@ -160,10 +160,10 @@ describe "Admin budget groups" do
       create(:budget_heading, group: group_with_headings)
 
       visit edit_admin_budget_group_path(budget, group_with_headings)
-      expect(page).to have_field "Maximum number of headings in which a user can vote"
+      expect(page).to have_field "Maximum number of headings in which a user can select projects"
 
       visit edit_admin_budget_group_path(budget, group_without_headings)
-      expect(page).not_to have_field "Maximum number of headings in which a user can vote"
+      expect(page).not_to have_field "Maximum number of headings in which a user select projects"
     end
 
     scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
@@ -201,14 +201,14 @@ describe "Admin budget groups" do
       expect(page).to have_field "Group name", with: "All City"
 
       fill_in "Group name", with: "Districts"
-      select "2", from: "Maximum number of headings in which a user can vote"
+      select "2", from: "Maximum number of headings in which a user can select projects"
       click_button "Save group"
 
       expect(page).to have_content "Group updated successfully"
 
       visit edit_admin_budget_group_path(budget, group)
       expect(page).to have_field "Group name", with: "Districts"
-      expect(page).to have_field "Maximum number of headings in which a user can vote", with: "2"
+      expect(page).to have_field "Maximum number of headings in which a user can select projects", with: "2"
     end
 
     scenario "Group name is already used" do

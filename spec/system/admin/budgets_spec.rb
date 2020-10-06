@@ -193,6 +193,33 @@ describe "Admin budgets" do
   end
 
   context "New" do
+    scenario "Create budget - Knapsack voting (default)" do
+      visit admin_budgets_path
+      click_button "Create new budget"
+      click_link "Create multiple headings budget"
+
+      fill_in "Name", with: "M30 - Summer campaign"
+      click_button "Continue to groups"
+
+      expect(page).to have_content "New participatory budget created successfully!"
+      expect(page).to have_content "M30 - Summer campaign"
+      expect(Budget.last.voting_style).to eq "knapsack"
+    end
+
+    scenario "Create budget - Approval voting", :js do
+      visit admin_budgets_path
+      click_button "Create new budget"
+      click_link "Create multiple headings budget"
+
+      fill_in "Name", with: "M30 - Summer campaign"
+      select "Approval", from: "Final voting style"
+      click_button "Continue to groups"
+
+      expect(page).to have_content "New participatory budget created successfully!"
+      expect(page).to have_content "M30 - Summer campaign"
+      expect(Budget.last.voting_style).to eq "approval"
+    end
+
     scenario "Name is mandatory" do
       visit new_admin_budget_path
       click_button "Continue to groups"

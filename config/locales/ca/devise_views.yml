@@ -6,6 +6,7 @@ ca:
         submit: Reenviar instruccions
         title: Reenviar instruccions de confirmació
       show:
+        instructions: Confirmació del compte per correu electrònic %{email}
         new_password_confirmation_label: Repeteix la clau de nou
         new_password_label: Nova clau d'accés
         please_set_password: Si us plau introdueix una nova clau d'accés per a la seva compte (et permetrà entrar com a usuari amb l'email de més amunt)
@@ -49,6 +50,10 @@ ca:
           title: Registrar-se com organització / col·lectiu
         success:
           back_to_index: Entès, tornar a la pàgina principal
+          instructions_1: "<strong>Aviat ens posarem en contacte amb vosaltres</strong> per verificar que realment representeu aquest col·lectiu."
+          instructions_2: Mentre que el teu <strong>es revisa el correu electrònic</strong>, li hem enviat un <strong>enllaç per confirmar el vostre compte</strong>.
+          instructions_3: Un cop confirmat, és possible que comenceu a participar com a col·lectiu no verificat.
+          thank_you: Gràcies per registrar el vostre col·lectiu al lloc web. És ara<strong>pendent de la verificació</strong>.
           title: Registre d'organització / col·lectiu
     passwords:
       edit:
@@ -100,6 +105,7 @@ ca:
           update_submit: Actualitzar
           waiting_for: "Esperant confirmació de:"
         new:
+          cancel: Cancel·la la sessió
           email_label: El teu correu electrònic
           organization_signup: '¿Representes a una organització / col·lectiu? %{signup_link}'
           organization_signup_link: Registra't aquí
@@ -117,3 +123,7 @@ ca:
           username_note: Nom públic que apareixerà en les teves publicacions
         success:
           back_to_index: Entès, tornar a la pàgina principal
+          instructions_1: Per favor <b>revisa el teu email</b> - li hem enviat un <b>enllaç per confirmar el vostre compte</b>.
+          instructions_2: Un cop confirmat, és possible que comenceu a participar-hi.
+          thank_you: Gràcies per registrar-se al lloc web. Ara heu de <b>Confirma la teva adreça electrònica</b>.
+          title: Confirma la teva adreça electrònica

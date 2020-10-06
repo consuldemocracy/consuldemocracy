@@ -7,8 +7,8 @@
     <div id="budget-investments" class="budget-investments-list small-12 medium-9 column">
 
       <div class="small-12 search-results">
-        <%= content_tag(:h2, t("management.budget_investments.filters.unfeasible")) if params[:unfeasible].present? %>
-        <%= content_tag(:h2, t("management.budget_investments.filters.heading", heading: @heading.name)) if @heading.present? %>
+        <%= tag.h2 t("management.budget_investments.filters.unfeasible") if params[:unfeasible].present? %>
+        <%= tag.h2 t("management.budget_investments.filters.heading", heading: @heading.name) if @heading.present? %>
         <% if params[:search].present? %>
           <h2>
             <%= page_entries_info @investments %>

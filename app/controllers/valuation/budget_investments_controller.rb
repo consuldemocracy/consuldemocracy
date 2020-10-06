@@ -87,7 +87,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
         filters << {
                      name: heading.name,
                      id: heading.id,
-                     count: investments.select { |i| i.heading_id == heading.id }.size
+                     count: investments.count { |i| i.heading_id == heading.id }
                    }
       end
     end

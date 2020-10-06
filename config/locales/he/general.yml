@@ -107,11 +107,6 @@ he:
       tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
     index:
       featured_debates: מומלצים
-      filter_topic:
-        one: " הכולל נושא '%{topic}'"
-        two: " הכולל את הנושאים '%{topic}'"
-        many: " הכולל את הנושאים '%{topic}'"
-        other: " הכולל את הנושאים '%{topic}'"
       orders:
         confidence_score: הכי נתמכת
         created_at: הכי חדשה
@@ -249,7 +244,6 @@ he:
       help: עזרה
       my_account_link: החשבון שלי
       my_activity_link: הפעילות שלי
-      open: פתוח
       open_gov: ממשל זמין
       proposals: הצעות
       poll_questions: הצבעות
@@ -262,8 +256,6 @@ he:
           other: יש לך %{count} התרעות חדשות
         notifications: התראות
         no_notifications: "אין לך התראות חדשות"
-    admin:
-      watch_form_message: "יש שינויים שלא נשמרו. האם אתה מאשר לעזוב את הדף?"
   notifications:
     index:
       empty_notifications: אין לך תגובות חדשות
@@ -311,8 +303,6 @@ he:
       sign_in: התחברות באמצעות טוויטר
       sign_up: הרשמה באמצעות טוויטר
       name: טוויטר
-    info_sign_in: "התחברות באמצעות:"
-    info_sign_up: "הרשמה באמצעות:"
     or_fill: "או דרך מילוי הטופס הבא:"
   proposals:
     create:
@@ -359,11 +349,6 @@ he:
       map_skip_checkbox: "להשקעה זו אין מיקום מדויק או שאיני מודע למיקום."
     index:
       featured_proposals: מומלצים
-      filter_topic:
-        one: " הכולל את הנושא '%{topic}'"
-        two: " הכולל את הנושאים '%{topic}'"
-        many: " הכולל את הנושאים '%{topic}'"
-        other: " הכולל את הנושאים '%{topic}'"
       orders:
         confidence_score: הכי נתמכת
         created_at: הכי חדשה
@@ -732,7 +717,6 @@ he:
     follow: "עקוב"
     following: "עוקבים"
     follow_entity: "עקוב %{entity}"
-    hide: הסתר
     print:
       print_button: הדפסת מידע זה
     search: חיפוש

@@ -1,0 +1,90 @@
+ka:
+  officing:
+    header:
+      title: კენჭისყრა
+    dashboard:
+      index:
+        title: კენჭისყრის ადმინისტრირება
+        info: აქ შეგიძლიათ შეამოწმოთ მომხმარებლის დოკუმენტები და შეინახოთ კენჭისყრის შედეგები
+        no_shifts: დღეს თქვენი ცვლა არ არის.
+    menu:
+      voters: დოკუმენტის შემოწმება
+      total_recounts: სრული გადათვლები და შედეგები
+    polls:
+      final:
+        title: საბოლოო გადათვლისთვის გამზადებული ხმის მიცემის შედეგები
+        no_polls: თქვენ არ ადმინისტრირებთ ხმების საბოლოო დათვლის პროცესს არცერთ აქტიურ კენჭისყრაში
+        select_poll: კენჭისყრის შერჩევა
+        add_results: შედეგების დამატება
+    poll_budgets:
+      see_ballot_sheets: იხილეთ საარჩევნო ბიულეტენების სია
+      index:
+        title: "%{poll_budget} - საარჩევნო ბიულეტენების სია"
+        ballot_sheet: "საარჩევნო ბიულეტენი %{id}"
+        ballot_sheet_name: სახელი
+        ballot_sheet_author: ავტორი
+        ballot_sheet_creation_date: შექმნის თარიღი
+        empty_results: მოცემული ხმის მიცემისთვის ბიულეტენები არ მოიძებნა
+      new:
+        title: "%{poll_budget} - ახალი ბიულეტენი"
+        booth: კენჭისყრის კაბინა
+        select_booth: კაბინის შერჩევა
+        csv_data: CSV მონაცემები
+        submit: შენახვა
+      show:
+        created_at: შექმნის თარიღი
+        author: ავტორი
+        data: CSV მონაცემები
+    booth:
+      new:
+        title: "შეარჩიეთ კაბინა"
+    results:
+      flash:
+        create: "შედეგები შენახულია"
+        error_create: "შედეგების შენახვა ვერ მოხერხდა. მონაცემებში შეცდომაა."
+        error_wrong_booth: "კაბინა არასწორია. შედეგების შენახვა ვერ მოხერხდა."
+      new:
+        title: "%{poll} - შედეგების დამატება"
+        not_allowed: "ამ კენჭისყრაზე შედეგების დამატების უფლება არ გაქვთ"
+        booth: "ხმის მიცემის კაბინა"
+        date: "თარიღი"
+        select_booth: "კაბინის შერჩევა"
+        ballots_white: "სრულიად ცარიელი ბიულეტენები"
+        ballots_null: "ბათილი ბიულეტენები"
+        ballots_total: "მოქმედი ბიულეტინები"
+        submit: "დამახსოვრება"
+        results_list: "თქვენი შედეგები"
+        see_results: "შედეგების ნახვა"
+      index:
+        no_results: "შედეგები არ მოიძებნა"
+        results: შედეგები
+        table_answer: პასუხი
+        table_votes: ხმები
+        table_whites: "სრულიად ცარიელი ბიულეტენები"
+        table_nulls: "ბათილი ბიულეტენები"
+        table_total: "მოქმედი ბიულეტინები"
+    residence:
+      flash:
+        create: "დოკუმენტი გადამოწმებულია აღწერის საფუძველზე"
+        not_allowed: "დღეს თქვენი ცვლა არ არის"
+      new:
+        title: დოკუმენტის შემოწმება
+        document_number: "დოკუმენტის ნომერი (მათ შორის, ასოებიც)"
+        submit: დოკუმენტის შემოწმება
+        error_verifying_census: "აღწერის შედეგად დოკუმენტის დადასტურება ვერ მოხერხდა."
+        form_errors: დოკუმენტის დადასტურება ვერ მოხერხდა
+    voters:
+      new:
+        title: გამოკითხვები
+        table_poll: ხმის მიცემა
+        table_status: ხმის მიცემის სტატუსი
+        table_actions: მოქმედებები
+        not_to_vote: ამ პიროვნებას არ სურს ამჯერად ხმის მიცემა
+      show:
+        can_vote: შეუძლია ხმის მიცემა
+        cannot_vote: მომხმარებელს არ შეუძლია ხმის მიცემა, რადგან იგი არ არის რეგისტრირებული კენჭისყრის ოლქში.
+        error_already_voted: უკვე მიიღო მონაწილეობა ამ კენჭისყრაში
+        submit: ხმის დადასტურება
+        success: "ხმა მიღებულია!"
+      can_vote:
+        submit_disable_with: "გთხოვთ, მოიცადოთ, მიმდინარეობს ხმის დადასტურება..."

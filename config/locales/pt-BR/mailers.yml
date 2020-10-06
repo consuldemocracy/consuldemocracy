@@ -28,6 +28,7 @@ pt-BR:
       comment: Comentar proposta
       unsubscribe: "Se você não quiser receber uma notificação de proposta, acesse %{account} e desmarque \"Receber um resumo das notificações da proposta\"."
       unsubscribe_account: Minha conta
+      unfollow: "Reveja esta proposta e deixe de segui-la para não receber mais notificações."
     direct_message_for_receiver:
       subject: "Você recebeu uma nova mensagem privada"
       reply: Responder para %{sender}
@@ -82,7 +83,7 @@ pt-BR:
       hi: "Olá %{name},"
       new_resource: "NOVO RECURSO DESBLOQUEADO"
       introduction: "Como já sabe, no dia %{created_at_day} de %{created_at_month} você criou a proposta no modo rascunho %{title}."
-      text_1: "Sempre que quiser, você pode publicar neste link: %{link_to_published}. Caso ainda não saiba…"
+      text_1: "Sempre que quiser, você pode publicar neste link: %{link_to_published}. Caso ainda não saiba..."
       text_2: "Aproveite a oportunidade! Aprenda, adicione outras pessoas com os mesmos interesses e prepare como difundir o que precisar para publicar definitivamente a sua proposta."
       text_3: "E para acompanhar você neste desafio, temos novidades..."
       text_4: "Dê uma olhada nesta NOVA AÇÃO recomendada:"
@@ -111,6 +112,8 @@ pt-BR:
       text_4: "Você tem uma ferramenta que será a sua melhor aliada: o painel de Propostas Cidadãs."
       list_1: "Acesse diariamente o painel da sua proposta para aproveitar os nossos recursos e dicas."
       list_2: "Essas dicas, ações e recursos trarão ideias e também soluções práticas para conseguir lograr mais apoios e contar com uma comunidade mais ampla. Não se esqueça disso!"
+      list_3: "À medida que conseguir mais apoios, você desbloqueará novos e melhores recursos. No momento, você tem um modelo mensagem para enviar emails em massa a todos os seus contatos, além de um pôster para imprimir, entre outras funcionalidades e recompensas, que você vai descobrir. Continue obtendo apoios, e vamos premiar e ajudar você!"
+      list_4: "Você tem %{max_month} meses a partir da publicação da proposta para obter %{max_votes} apoios e para que a sua proposta possa tornar-se realidade. Mas os primeiros dias são os mai importantes. Prepare-se para este desafio!"
       text_5: "E para começar com motivação total,"
       text_6: "aqui há vários recursos e toda uma lista de dicas que chegarão diariamente para preparar a divulgação!"
       dashboard_button: "Vá em frente. Descubra!"
@@ -121,7 +124,12 @@ pt-BR:
       text_2: "Por que 100?"
       text_3: "Nossa experiência nos diz que o primeiro dia é fundamental, pois além de ter a energia de lançar algo novo, por ser uma proposta recém-publicada, você contará com a importante visibilidade de estar entre as novas propostas em destaque."
       text_4: "Consiga 100 apoios no primeiro dia, e você terá uma primeira comunidade para lhe dar respaldo."
+      text_5: "Por isso, desafiamos você a conseguir, mas não sem uma grande ajuda!"
+      text_6: "Lembre-se de que no seu Painel de propostas há novos recursos disponíveis de ações de difusão."
+      list_1: "Volte todo dia para ver o seu progresso e para aproveitar os conselhos e recursos que ofereceremos. São ideias e também soluções práticas para conseguir os apoios de que você precisa."
+      list_2: "À medida que conseguir mais apoios, você desbloqueará novos e melhores recursos. Continue obtendo apoios, e vamos premiar e ajudar você!"
       text_7: "E para que você comece com todo o gás..."
       text_8: "Aqui há um grande recurso à sua disposição!"
+      text_9: "Você também encontrará esta nova ação de difusão recomendada..."
       text_10: "Com certeza, há mais recursos disponíveis!"
       dashboard_button: "Vá em frente. Descubra!"

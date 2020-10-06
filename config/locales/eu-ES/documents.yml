@@ -3,3 +3,20 @@ eu:
     title: Dokumentuak
     form:
       title: Dokumentuak
+      title_placeholder: Deskribapen izenburu bat idatzi agiriarentzako
+      delete_button: Agiria ezabatu
+      cancel_button: Ezeztatu
+      note: "Gehienez %{max_documents_allowed} agiri igo ditzakezu. Hurengo formatuan izan behar dira: %{accepted_content_types}, eta gehienez %{max_file_size} MB fitxategi bakoitzeko."
+      add_new_document: Agiri berria gehitu
+    actions:
+      destroy:
+        notice: Agiria ondo ezabatu da.
+        alert: Ezin izan da agiria ezabatu.
+        confirm: Ziur zaude agiria ezabatu nahi duzula? Ekintza hau ezin da atzera bota!
+    buttons:
+      download_document: Fitxategia deskargatu
+      destroy_document: Agiria ezabatu
+    errors:
+      messages:
+        in_between: '%{min} eta %{max} artean egon behar da'
+        wrong_content_type: Fitxategiaren %{content_type} eduki mota ez dator bat %{accepted_content_types} onartutako eduki motekin.

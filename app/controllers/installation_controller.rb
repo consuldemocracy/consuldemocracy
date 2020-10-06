@@ -11,7 +11,7 @@ class InstallationController < ApplicationController
 
     def consul_installation_details
       {
-        release: "1.1.0"
+        release: "1.2.0"
       }.merge(features: settings_feature_flags)
     end
 

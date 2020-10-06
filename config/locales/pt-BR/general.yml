@@ -46,7 +46,7 @@ pt-BR:
         other: "%{count} respostas (mostrar)"
       responses_collapse:
         zero: Nenhuma resposta
-        one: "1 respuesta (recolher)"
+        one: "1 resposta (recolher)"
         other: "%{count} respostas (recolher)"
       user_deleted: Usuário apagado
       votes:
@@ -95,9 +95,6 @@ pt-BR:
       tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
     index:
       featured_debates: Destacado
-      filter_topic:
-        one: " com tópico '%{topic}'"
-        other: " com tópico '%{topic}'"
       orders:
         confidence_score: melhor avaliado
         created_at: mais recente
@@ -244,7 +241,6 @@ pt-BR:
       help: Ajuda
       my_account_link: Minha conta
       my_activity_link: Minha atividade
-      open: aberto
       open_gov: Governo aberto
       proposals: Propostas
       poll_questions: Votação
@@ -255,8 +251,6 @@ pt-BR:
           other: Você tem %{count} novas notificações
         notifications: Notificações
         no_notifications: "Vocie nnao possui novas notificações"
-    admin:
-      watch_form_message: "Você possui alterações não salvas. Tem certeza que deseja sair da página?"
   notifications:
     index:
       empty_notifications: Você não possui novas notificações
@@ -294,12 +288,17 @@ pt-BR:
       sign_in: Iniciar sessão com o Google
       sign_up: Inscrever-se com o Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Entrar com o Wordpress
+      sign_up: Cadastrar-se com o Wordpress
+      name: Wordpress
     twitter:
       sign_in: Iniciar sessão com o Twitter
       sign_up: Inscrever-se com o Twitter
       name: Twitter
-    info_sign_in: "Iniciar sessão com:"
-    info_sign_up: "Inscrever-se com:"
+    info:
+      sign_in: "Iniciar sessão com:"
+      sign_up: "Inscrever-se com:"
     or_fill: "Ou preencha o seguinte formulário:"
   proposals:
     create:
@@ -347,9 +346,6 @@ pt-BR:
       map_skip_checkbox: "Esta proposta não tem uma localização concreta ou não a conheço."
     index:
       featured_proposals: Destacado
-      filter_topic:
-        one: " com tópico '%{topic}'"
-        other: " com tópico '%{topic}'"
       orders:
         confidence_score: melhor avaliado
         created_at: mais recente
@@ -469,7 +465,7 @@ pt-BR:
       polls: Votações
       mailing: E-mail
       poster: Pôster
-      recommended_actions: Acções recomendadas
+      recommended_actions: Ações recomendadas
       messages: Mensagem para os usuários
       related_content: Conteúdo relacionado
     form:
@@ -504,7 +500,7 @@ pt-BR:
       request_resource: Solicitar recurso
       resource_locked: Recurso bloqueado
     recommended_actions:
-      title: Acções recomendadas
+      title: Ações recomendadas
       goto_proposed_actions: Ir para ações recomendadas
       see_proposed_actions: Ver as ações recomendadas
       hide_proposed_actions: Ocultar ações recomendadas
@@ -714,15 +710,14 @@ pt-BR:
     followable:
       budget_investment:
         create:
-          notice: "Você está seguindo este projeto de investimento! </br>Para que esteja a par de tudo, vamos notificar você sobre alterações assim que elas ocorrerem."
+          notice: "Você está seguindo este projeto de investimento! <br>Para que esteja a par de tudo, vamos notificar você sobre alterações assim que elas ocorrerem."
         destroy:
-          notice: "Você parou de seguir este projeto de investimento! </br> Você não receberá mais notificações relacionadas a ele."
+          notice: "Você parou de seguir este projeto de investimento! <br> Você não receberá mais notificações relacionadas a ele."
       proposal:
         create:
-          notice: "Agora você está seguindo esta proposta cidadã! </br> Para que esteja a par de tudo, vamos notificar você sobre alterações assim que elas ocorrerem."
+          notice: "Agora você está seguindo esta proposta cidadã! <br> Para que esteja a par de tudo, vamos notificar você sobre alterações assim que elas ocorrerem."
         destroy:
-          notice: "Você parou de seguir esta proposta cidadã! </br> Você não receberá mais notificações relacionadas a ela."
-    hide: Esconder
+          notice: "Você parou de seguir esta proposta cidadã! <br> Você não receberá mais notificações relacionadas a ela."
     print:
       print_button: Imprimir esta informação
     search: Buscar

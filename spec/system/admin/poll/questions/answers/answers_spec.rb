@@ -59,17 +59,19 @@ describe "Answers" do
     expect("Another title").to appear_before("New title")
   end
 
-  context "Delete" do
-    scenario "Will delete related videos" do
-      poll = create(:poll)
-      question = create(:poll_question, poll: poll)
-      answer = create(:poll_question_answer, question: question, title: "Answer with video")
-      create(:poll_answer_video, answer: answer)
+  scenario "Reorder", :js do
+    question = create(:poll_question)
+    create(:poll_question_answer, question: question, title: "First", given_order: 1)
+    create(:poll_question_answer, question: question, title: "Last", given_order: 2)
 
-      visit admin_polls_path
-      within("#poll_#{poll.id}") { click_link "Delete" }
+    visit admin_question_path(question)
 
-      expect(page).to have_content "Poll deleted successfully"
+    within("tbody.sortable") do
+      expect("First").to appear_before("Last")
+
+      find("tr", text: "Last").drag_to(find("tr", text: "First"))
+
+      expect("Last").to appear_before("First")
     end
   end
 end

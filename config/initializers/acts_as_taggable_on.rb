@@ -37,10 +37,10 @@ module ActsAsTaggableOn
     scope :public_for_api, -> do
       where("(tags.kind IS NULL or tags.kind = ?) and tags.id in (?)",
             "category",
-            Tagging.public_for_api.pluck("DISTINCT taggings.tag_id"))
+            Tagging.public_for_api.distinct.pluck("taggings.tag_id"))
     end
 
-    include PgSearch
+    include PgSearch::Model
 
     pg_search_scope :pg_search, against: :name,
                                 using: {
@@ -79,7 +79,7 @@ module ActsAsTaggableOn
     private
 
       def custom_counter_field_name_for(taggable_type)
-        "#{taggable_type.underscore.pluralize}_count"
+        "#{taggable_type.tableize.tr("/", "_")}_count"
       end
   end
 end

@@ -1,1 +1,48 @@
 ro:
+  activemodel:
+    models:
+      verification:
+        residence: "Adresă de reședință"
+        sms: "SMS"
+      local_census_records/import:
+        one: Import de date
+        few: Import de date
+        other: Import de date
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipul de document"
+          document_number: "Numărul documentului"
+          date_of_birth: "Data nașterii"
+          postal_code: "Cod poștal"
+        sms:
+          phone: "Telefon"
+          confirmation_code: "Cod de confirmare"
+        email:
+          recipient: "Email"
+      verification/letter:
+        email: "Email"
+        password: "Parolă"
+        verification_code: "Cod trimis pe email"
+      verification/management/document:
+        document_type: "Tipul de document:"
+        document_number: "Numărul documentului"
+      verification/residence:
+        date_of_birth: "Data nașterii"
+        document_type: "Tipul de document"
+        postal_code: "Cod poștal"
+      verification/sms:
+        confirmation_code: "Introduceți codul primit pe telefonul mobil"
+      officing/residence:
+        document_type: "Tipul de document"
+        document_number: "Numărul documentului"
+        year_of_birth: "Anul nașterii"
+      local_census_records/import:
+        file: Fișier
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Formatul fișierului este greșit. Fișierele de tipul %{valid_extensions} sunt acceptate."
+              headers: "Formatul fișierului este greșit. Fișierele de tipul %{required_headers} sunt acceptate."

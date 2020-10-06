@@ -1,0 +1,9 @@
+// Overrides styles of foundation-sticky
+
+// Patch authored by shashabeep
+// Check https://github.com/foundation/foundation-sites/issues/11098#issuecomment-528363771
+.proposal-show {
+  .sticky.is-anchored {
+    top: 0 !important;
+  }
+}

@@ -1,0 +1,567 @@
+ka:
+  attributes:
+    geozone_id: "მოქმედების არეალი"
+    results_enabled: "შედეგების ჩვენება"
+    stats_enabled: "სტატისტიკის ჩვენება"
+    advanced_stats_enabled: "მოწინავე სტატისტიკის ჩვენება"
+  activerecord:
+    models:
+      activity:
+        one: "აქტივობა"
+        other: "აქტივობები"
+      budget:
+        one: "ბიუჯეტი"
+        other: "ბიუჯეტები"
+      budget/investment:
+        one: "ინვესტიცია"
+        other: "ინვესტიციები"
+      milestone:
+        one: "ეტაპი"
+        other: "ეტაპები"
+      milestone/status:
+        one: "ეტაპის მიმდინარე სტატუსი"
+        other: "ეტაპის მიმდინარე სტატუსები"
+      progress_bar:
+        one: "მიმდინარეობის ინდიკატორი"
+        other: "მიმდინარეობის ინდიკატორები"
+      comment:
+        one: "კომენტარი"
+        other: "კომენტარები"
+      debate:
+        one: "დებატები"
+        other: "დებატები"
+      tag:
+        one: "ტეგი"
+        other: "ტეგები"
+      user:
+        one: "მომხმარებელი"
+        other: "მომხმარებლები"
+      moderator:
+        one: "მოდერატორი"
+        other: "მოდერატორები"
+      administrator:
+        one: "ადმინისტრატორი"
+        other: "ადმინისტრატორები"
+      valuator:
+        one: "შემფასებელი"
+        other: "შემფასებლები"
+      valuator_group:
+        one: "შემფასებელთა ჯგუფი"
+        other: "შემფასებელთა ჯგუფები"
+      manager:
+        one: "მენეჯერი"
+        other: "მენეჯერები"
+      newsletter:
+        one: "საინფორმაციო ბიულეტენი"
+        other: "საინფორმაციო ბიულეტენები"
+      vote:
+        one: "ხმა"
+        other: "ხმები"
+      organization:
+        one: "ორგანიზაცია"
+        other: "ორგანიზაციები"
+      poll/booth:
+        one: "კენჭისყრის კაბინა"
+        other: "კენჭისყრის კაბინა"
+      poll/officer:
+        one: "კენჭისყრის ადმინისტრატორი"
+        other: "კენჭისყრის ადმინისტრატორი"
+      poll/ballot_sheet:
+        one: საარჩევნო ბიულეტენი
+        other: საარჩევნო ბიულეტენები
+      proposal:
+        one: "მოქალაქის წინადადება"
+        other: "მოქალაქის წინადადებები"
+      site_customization/page:
+        one: პირადი გვერდი
+        other: პირადი გვერდები
+      site_customization/image:
+        one: პერსონალური სურათი
+        other: პერსონალური სურათები
+      site_customization/content_block:
+        one: პერსონალური შინაარსის ბლოკი
+        other: პერსონალური შინაარსის ბლოკები
+      document:
+        one: დოკუმენტი
+        other: დოკუმენტები
+      legislation/process:
+        one: "პროცესი"
+        other: "პროცესები"
+      legislation/proposal:
+        one: "ინიციატივა"
+        other: "ინიციატივები"
+      legislation/draft_versions:
+        one: "კანონპროექტი"
+        other: "კანონპროექტები"
+      legislation/questions:
+        one: "კითხვა"
+        other: "კითხვები"
+      legislation/question_options:
+        one: "კითხვის ვარიანტი"
+        other: "კითხვის ვარიანტები"
+      legislation/answers:
+        one: "პასუხი"
+        other: "პასუხები"
+      documents:
+        one: "დოკუმენტი"
+        other: "დოკუმენტები"
+      images:
+        one: "ფოტოსურათი"
+        other: "ფოტოსურათები"
+      topic:
+        one: "საკითხი"
+        other: "საკითხები"
+      poll:
+        one: "ხმის მიცემა"
+        other: "გამოკითხვები"
+      proposal_notification:
+        one: "შეტყობინება ინიციატივის თაობაზე"
+        other: "შეტყობინებები ინიციატივის თაობაზე"
+      dashboard/action:
+        one: მოქმედება ინიციატივის დაფაზე
+        other: მოქმედებები ინიციატივის დაფაზე
+      dashboard/administrator_task:
+        one: ამოცანა
+        other: ამოცანები
+      link:
+        one: ბმული
+        other: ბმულები
+      local_census_record:
+        one: ადგილობრივი მოსახლეობის აღწერის ჩანაწერი
+        other: ადგილობრივი მოსახლეობის აღწერის ჩანაწერები
+    attributes:
+      budget:
+        name: "სახელი"
+        description_accepting: "აღწერა მიღების ფაზის განმავლობაში"
+        description_reviewing: "აღწერა განხილვის ფაზის განმავლობაში"
+        description_selecting: "აღწერა შერჩევის ფაზის განმავლობაში"
+        description_valuating: "აღწერა შეფასების ფაზის განმავლობაში"
+        description_balloting: "აღწერა კენჭისყრის ფაზის განმავლობაში"
+        description_reviewing_ballots: "აღწერა საარჩევნო ბიულეტენების განხილვის ფაზის დროს"
+        description_finished: "აღწერა ბიუჯეტის დამტკიცებისას"
+        phase: "ფაზა"
+        currency_symbol: "ვალუტა"
+        voting_style: "საბოლოო ხმის მიცემის ფორმა"
+        voting_style_knapsack: "ქისა"
+        voting_style_approval: "დამტკიცება"
+      budget/translation:
+        name: "სახელი"
+      budget/investment:
+        heading_id: "რუბრიკა"
+        title: "სათაური"
+        description: "აღწერა"
+        external_url: "დამატებით დოკუმენტებზე გადასვლის ბმული"
+        administrator_id: "ადმინისტრატორი"
+        location: "დამატებითი ინფორმაცია ლოკაციაზე"
+        organization_name: "თუ ინიცირებას აკეთებთ კოლექტიურად/ორგანიზაციის, ან სხვა ადამაინების ჯგუფის სახელით, მიუთითეთ შესაბამისი დასახელება"
+        image: "ინიციატივის აღწერილობითი ფოტოსურათი"
+        image_title: "ფოტოსურათის დასახელება"
+        duration: "დროის ფარგლები"
+        feasibility_feasible: "განხორციელებადი"
+        feasibility_undecided: "განუსაზღვრელი"
+        feasibility_unfeasible: "შეუძლებელი"
+        incompatible: "შეუთავსებლად მონიშვნა"
+        milestone_tag_list: "მიმდინარე ეტაპის ტეგები"
+        price_explanation: "ფასის განმარტება"
+        selected: "შერჩეულად მონიშვნა"
+        selected_true: "შერჩეული"
+        selected_false: "შერჩეული არ არის"
+        unfeasibility_explanation: "განხორციელების შესაძლებლობის განმარტება"
+        valuation_finished: "შეფასება დასრულებულია"
+        valuator_ids: "ჯგუფები"
+        valuation_tag_list: "ტეგები"
+      budget/investment/translation:
+        title: "სათაური"
+        description: "აღწერა"
+      geozone:
+        name: სახელი
+        external_code: "გარე კოდი (არასავალდებულო)"
+        census_code: "აღწერის კოდი (არასავალდებულო)"
+        html_map_coordinates: "HTML <map> კოორდინატები (არასავალდებულო)"
+      milestone:
+        status_id: "მიმდინარე სტატუსი (არასავალდებულო)"
+        title: "სათაური"
+        description: "აღწერა (სურვილამებრ, თუ სტატუსი მინიჭებულია)"
+        publication_date: "თარიღი"
+      milestone/translation:
+        description: "აღწერა"
+      milestone/status:
+        name: "სახელი"
+        description: "აღწერა (არასავალდებულო)"
+      progress_bar:
+        kind: "ტიპი"
+        title: "სათაური"
+        percentage: "მიმდინარე პროცესი"
+      progress_bar/kind:
+        primary: "თავდაპირველი"
+        secondary: "მეორეხარისხოვანი"
+      budget/group:
+        max_votable_headings: "სათაურების მაქსიმალური რაოდენობა, რომელშიც მომხმარებელს შეუძლია ხმა მისცეს"
+      budget/group/translation:
+        name: "ჯგუფის დასახელება"
+      budget/heading:
+        allow_custom_content: "შინაარსის ბლოკის გამოჩენა"
+        latitude: "განედი (არასავალდებულო)"
+        longitude: "გრძედი (არასავალდებულო)"
+        name: "სათაურის დასახელება"
+        price: "თანხის მოცულობა"
+        population: "მოსახლეობა (არასავალდებულო)"
+        max_ballot_lines: "ხმები დაშვებულია"
+      budget/heading/translation:
+        name: "სათაურის დასახელება"
+      budget/phase:
+        enabled: "ფაზა ნებადართულია"
+        ends_at: "დასრულების თარიღი"
+        starts_at: "დაწყების თარიღი"
+      budget/phase/translation:
+        description: "აღწერა"
+        summary: "შეჯამება"
+      comment:
+        body: "კომენტარი"
+        user: "მომხმარებელი"
+      debate:
+        author: "ავტორი"
+        description: "აზრი"
+        tag_list: "საკითხები"
+        terms_of_service: "მომსახურების პირობები"
+        title: "სათაური"
+      debate/translation:
+        title: "დებატების დასახელება"
+        description: "დებატების პირვანდელი ტექსტი"
+      proposal:
+        author: "ავტორი"
+        title: "სათაური"
+        question: "კითხვა"
+        description: "აღწერა"
+        responsible_name: "ინიციატივის წარმდგენი პიროვნების სახელი და გვარი"
+        retired_reason: "ინიციატივის გამოხმობის მიზეზი"
+        selected: "შერჩეულად მონიშვნა"
+        terms_of_service: "მომსახურების პირობები"
+        video_url: "სხვა სერვერზე განთავსებული ვიდეოს ბმული"
+      proposal/translation:
+        title: "ინიციატივის დასახელება"
+        description: "ინიციატივის ტექსტი"
+        summary: "ინიციატივის მოკლე შინაარსი"
+        retired_explanation: "ახსნა-განმარტება"
+      user:
+        login: "ელ.ფოსტა ან მომხმარებლის სახელი"
+        email: "ელ.ფოსტა"
+        username: "მომხმარებლის სახელი"
+        password_confirmation: "პაროლის დადასტურება"
+        password: "პაროლი"
+        current_password: "მიმდინარე პაროლი"
+        email_digest: "ინიციატივის შესახებ შეტყობინებების ანგარიშის მიღება"
+        email_on_comment: "მეცნობოს ელ.ფოსტით, როდესაც ვინმე ჩემს ინიციატივაზე ან დებატებზე გააკეთებს კომენტარს"
+        email_on_comment_reply: "მეცნობოს ელ.ფოსტით, როდესაც ვინმე ჩემს კომენტარებს უპასუხებს"
+        email_on_direct_message: "მეცნობოს ელ.ფოსტით, როდესაც ვინმე პირად შეტყობინებას გამომიგზავნის"
+        newsletter: "ვებგვერდზე განთავსებული ღირებული ინფორმაციის ელ.ფოსტით მიღება"
+        official_position: "ოფიციალური თანამდებობა"
+        official_position_badge: "ოფიციალური თანამდებობის სამკერდე ნიშნის გამოჩენა"
+        official_level: "ოფიციალური დონე"
+        phone_number: "ტელეფონის ნომერი"
+        public_activity: "ჩემი აქტივობების სიის გასაჯაროება"
+        public_interests: "იმ ელემენტების კვალიფიკაციების გასაჯაროება, რომელთაც მე მივყვები"
+        recommended_debates: "დებატების ირგვლივ არსებული რეკომენდაციების ჩვენება"
+        recommended_proposals: "ინიციატივების ირგვლივ არსებული რეკომენდაციების ჩვენება"
+        redeemable_code: "ელ.ფოსტით მიღებული დადასტურების კოდი"
+      direct_message:
+        title: "სათაური"
+        body: "გზავნილი"
+      organization:
+        name: "ორგანიზაციის დასახელება"
+        responsible_name: "ჯგუფზე პასუხისმგებელი პირი"
+      poll:
+        name: "სახელი"
+        starts_at: "დაწყების თარიღი"
+        ends_at: "დასრულების თარიღი"
+        geozone_restricted: "შეზღუდულია გეოგრაფიული ზონით"
+        summary: "შეჯამება"
+        description: "აღწერა"
+      active_poll/translation:
+        description: "აღწერა"
+      poll/booth:
+        name: "სახელი"
+        location: "მდებარეობა"
+      poll/translation:
+        name: "სახელი"
+        summary: "შეჯამება"
+        description: "აღწერა"
+      poll/question:
+        poll_id: "ხმის მიცემა"
+        title: "კითხვა"
+        summary: "შეჯამება"
+        description: "აღწერა"
+        external_url: "დამატებით დოკუმენტებზე გადასვლის ბმული"
+      poll/question/translation:
+        title: "კითხვა"
+      poll/ballot_sheet:
+        data: CSV მონაცემები
+        poll_id: ხმის მიცემა
+        officer_assignment_id: ადმინისტრატორის დანიშვნა
+      poll/shift:
+        task: "ამოცანა"
+      proposal_notification:
+        body: "გზავნილი"
+        title: "სათაური"
+      signature_sheet:
+        title: "სათაური"
+        signable_type: "ხელმოსაწერი ფურცლის ტიპი"
+        signable_id: "ხელმოსაწერი ფურცლის ID"
+        document_numbers: "დოკუმენტების ნომრები"
+      site_customization/page:
+        content: შინაარსი
+        created_at: შექმნილია
+        subtitle: ქვესათაური
+        slug: მოკლე დასახელება
+        status: სტატუსი
+        status_draft: "პროექტი"
+        status_published: "გამოქვეყნებული"
+        title: სათაური
+        updated_at: განახლებულია
+        more_info_flag: გამოჩნდეს დახმარების გვერდზე
+        print_content_flag: ბეჭდვის ღილაკი
+        locale: ენა
+      site_customization/page/translation:
+        title: სათაური
+        subtitle: ქვესათაური
+        content: შინაარსი
+      site_customization/image:
+        name: სახელი
+        image: ფოტოსურათი
+      site_customization/content_block:
+        name: სახელი
+        locale: ენა
+        body: ტექსტის მთავარი ნაწილი
+      tag:
+        name: "შეიყვანეთ საკითხის დასახელება"
+      topic:
+        title: "სათაური"
+        description: "პირვანდელი ტექსტი"
+      banner:
+        background_color: ფონის ფერი
+        font_color: შრიფტის ფერი
+        post_ended_at: "პოსტი დასრულდა"
+        post_started_at: "პოსტი გამოჩნდა"
+        target_url: "ბმული"
+      banner/translation:
+        title: "სათაური"
+        description: "აღწერა"
+      legislation/process:
+        title: პროცესის სათაური
+        summary: შეჯამება
+        description: აღწერა
+        additional_info: დამატებითი ინფორმაცია
+        start_date: დაწყება
+        end_date: დასრულება
+        debate_start_date: დაწყება
+        debate_end_date: დასრულება
+        draft_start_date: დაწყება
+        draft_end_date: დასრულება
+        draft_publication_date: პროექტის გამოქვეყნების თარიღი
+        allegations_start_date: დაწყება
+        allegations_end_date: დასრულება
+        proposals_phase_start_date: დაწყება
+        proposals_phase_end_date: დასრულება
+        result_publication_date: საბოლოო შედეგების გამოქვეყნების თარიღი
+        background_color: ფონის ფერი
+        font_color: შრიფტის ფერი
+        homepage_enabled: "მთავარი გვერდი ხელმისაწვდომია"
+      legislation/process/translation:
+        title: პროცესის სათაური
+        summary: შეჯამება
+        description: აღწერა
+        additional_info: დამატებითი ინფორმაცია
+        homepage: "აღწერა"
+        milestones_summary: შეჯამება
+      legislation/proposal:
+        description: "ინიციატივის ტექსტი"
+        summary: "ინიციატივის მოკლე შინაარსი"
+        title: "ინიციატივის დასახელება"
+        video_url: "სხვა სერვერზე განთავსებული ვიდეოს ბმული"
+      legislation/draft_version:
+        title: ვერსიის დასახელება
+        body: ტექსტი
+        changelog: ცვლილებები
+        status: სტატუსი
+        status_draft: "პროექტი"
+        status_published: "გამოქვეყნებული"
+        final_version: საბოლოო ვერსია
+      legislation/draft_version/translation:
+        title: ვერსიის დასახელება
+        body: ტექსტი
+        changelog: ცვლილებები
+      legislation/question:
+        title: სათაური
+        question_options: შესაძლო ვარიანტები
+      legislation/question/translation:
+        title: კითხვა
+      legislation/question_option:
+        value: ღირებულება
+      legislation/annotation:
+        text: კომენტარი
+      document:
+        title: სათაური
+        attachment: "აირჩიეთ დოკუმენტი"
+      image:
+        title: სათაური
+        attachment: "აირჩიეთ ფოტოსურათი"
+      poll/question/answer:
+        title: პასუხი
+        description: აღწერა
+      poll/question/answer/translation:
+        title: პასუხი
+        description: აღწერა
+      poll/question/answer/video:
+        title: სათაური
+        url: სხვა სერვერზე განთავსებული ვიდეოს ბმული
+      newsletter:
+        segment_recipient: მიმღებები
+        subject: თემა
+        from: "ელ.ფოსტის მისამართი, რომელიც გამოჩნდება საინფორმაციო ბიულეტენების გაგზავნის დროს"
+        body: ელ.ფოსტის გზავნილის შინაარსი
+      admin_notification:
+        segment_recipient: მიმღებები
+        title: სათაური
+        link: ბმული
+        body: ტექსტი
+      admin_notification/translation:
+        title: სათაური
+        body: ტექსტი
+      widget/card:
+        label: ტეგი (არასავალდებულო)
+        title: სათაური
+        description: აღწერა
+        link_text: ბმულის დასახელება
+        link_url: ბმულის მისამართი (URL)
+        columns: სვეტების რაოდენობა
+      widget/card/translation:
+        label: ნიშანდება (არასავალდებულო)
+        title: სათაური
+        description: აღწერა
+        link_text: ბმულის დასახელება
+      widget/feed:
+        limit: პუნქტების რაოდენობა
+      dashboard/action:
+        title: სათაური
+        short_description: მოკლე აღწერა
+        description: აღწერა
+        link: სხვა სერვერზე განთავსებულ მასალასთან წვდომის ბმული
+        request_to_administrators: რესურსის ადმინისტრატორებისგან მოთხოვნის ღილაკის ჩასმა რესურსში
+        day_offset: შექმნიდან რამდენი დღის შემდეგ გსურთ ინიციატივის გააქტიურება?
+        required_supports: რა რაოდენობის მხარდაჭერაა საჭირო ინიციატივის გასააქტიურებლად?
+        order: შეგიძლიათ მიუთითოთ პოზიცია, სადაც ეს მოქმედება სხვა მოქმედებათა ჩამონათვალში გამოჩნდება მომხმარებლისთვის
+        active: აქტიური
+        action_type: ტიპი
+        action_type_proposed_action: "შემოთავაზებული მოქმედება"
+        action_type_resource: "რესურსი"
+        published_proposal: "გამოქვეყნებული ინიციატივებისთვის?"
+      dashboard/administrator_task:
+        source: წყარო
+        user: შემსრულებელი
+      link:
+        label: სათაური
+        url: ბმული
+      valuator:
+        description: აღწერა
+        valuator_group_id: შემფასებელთა ჯგუფი
+        can_comment: შეეძლოს კომენტარების შექმნა
+        can_edit_dossier: შეეძლოს დოსიეების რედაქტირება
+      valuator_group:
+        name: "ჯგუფის დასახელება"
+      local_census_record:
+        document_type: დოკუმენტის ტიპი
+        document_number: დოკუმენტის ნომერი
+        date_of_birth: დაბადების თარიღი
+        postal_code: საფოსტო ინდექსი
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "ამ მომხმარებელს უკვე აქვს პაროლი"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "ტეგები უნდა იყოს არაუმეტეს %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "თქვენ მიაღწიეთ პირადი შეტყობინებების ყოველდღიურ მაქსიმალურ რაოდენობას"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "ფოტოსურათის სიგანე უნდა იყოს მინიმუმ %{required_min_width} პიქსელი"
+              min_image_height: "ფოტოსურათის სიმაღლე უნდა იყოს მინიმუმ %{required_min_height} პიქსელი"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "მიმღები მომხმარებლების სეგმენტი არასწორია"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "მიმღები მომხმარებლების სეგმენტი არასწორია"
+        map_location:
+          attributes:
+            map:
+              invalid: რუკის ადგილმდებარეობა ცარიელი ვერ იქნება. დასვით მარკერი ან მონიშნეთ უჯრედი, იმ შემთხვევაში თუ გეოლოკალიზაცია საჭირო არ არის
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "დოკუმენტი არ შედის აღწერაში"
+            user_id:
+              has_voted: "მომხმარებელმა უკვე მისცა ხმა"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: უნდა ემთხვეოდეს ან უნდა მოსდევდეს დაწყების თარიღს
+            debate_end_date:
+              invalid_date_range: უნდა ემთხვეოდეს ან უნდა მოსდევდეს დებატების დაწყების თარიღს
+            draft_end_date:
+              invalid_date_range: უნდა ემთხვეოდეს ან უნდა მოსდევდეს პროექტის დაწყების თარიღს
+            allegations_end_date:
+              invalid_date_range: უნდა ემთხვეოდეს ან უნდა მოსდევდეს კომენტარების დაწყების თარიღს
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: არ შედის სიაში, ნებადართული ცვლადებია 1 DNI- სთვის, 2 პასპორტისთვის და 3 ბინადრობის მოწმობისთვის.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "ტეგები უნდა იყოს არაუმეტეს %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "ტეგები უნდა იყოს არაუმეტეს %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "შეტყობინებათა შორის მოლოდინი მინიმუმ %{interval} დღეა"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "არ არის დამოწმებული აღწერის შედეგად"
+              already_voted: "უკვე მისცა ხმა ამ ინიციატივას"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "უნდა შეიცავდეს ასოებს, რიცხვებს, _ და -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "სიგანე უნდა იყოს %{required_width} პიქსელი"
+              image_height: "სიმაღლე უნდა იყოს %{required_height} პიქსელი"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "შეფასებაზე კომენტარის გაკეთება შეუძლებელია"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: უკვე თარგმნილი რესურსი
+      messages:
+        translations_too_short: სავალდებულოა სულ მცირე ერთი თარგმანი
+        record_invalid: "დადასტურება ვერ მოხერხდა: %{errors}"
+        another_poll_active: მოცემული პერიოდისთვის აქტიურია სხვა კენჭისყრა
+        restrict_dependent_destroy:
+          has_one: "ჩანაწერის წაშლა შეუძლებელია, რადგანაც არსებობს მასზე დამოკიდებული ქვეჩანაწერი: %{record}"
+          has_many: "ჩანაწერის წაშლა შეუძლებელია, რადგანაც არსებობს მასზე დამოკიდებული %{record}"

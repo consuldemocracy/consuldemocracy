@@ -1,0 +1,104 @@
+oc:
+  verification:
+    alert:
+      lock: ès arribat a la mÃ xim nombre d'assages. Per favor ensaja-o de nòu més tard.
+    back: Tornar a lo mieu compte
+    email:
+      create:
+        alert:
+          failure: I aguèt un problèma en t'enviant un email a lo tieu compte
+        flash:
+          success: "T'avèm enviat un email de confirmacion a lo tieu compte: %{email}"
+      show:
+        alert:
+          failure: Còdi de verificacion incorrècta
+        flash:
+          success: Èras un usatgièr verificat
+    letter:
+      alert:
+        unconfirmed_code: Encara no has introduït el codi de confirmació
+      create:
+        flash:
+          success: de Gràcias per sollicitar lo vòstre còdi de <b>seguretat màxima (només cal pels vòts finales)</b>. Dins unes jorns l’enviarem a l’adreça qu'apareis a las donadas qu'avèm al fichièr. Remembratz que, s'o preferissètz, podètz reculhir lo vòstre còdi a quinsevolhe dels Burèus d’Atencion Ciutadana.
+      edit:
+        see_all: Veire de proposicions
+        title: Carta sollicitada
+      errors:
+        incorrect_code: Codi de verificació incorrècte
+      new:
+        explanation: "Per participar a las votacions finalas pòdes:"
+        go_to_index: Veire de proposicions
+        office: Te verificar presencialment en quin burèu que siá d'atencion al ciutadá
+        send_letter: Sollicitar una carta per corrièr postal
+        title: de Felicitats!
+        user_permission_info: Amb lo tieu compte pòdes ja...
+      update:
+        flash:
+          success: Còdi corrècte. Lo tieu compte es ja verificat
+    redirect_notices:
+      already_verified: Lo tieu compte es ja verificat
+      email_already_sent: T'enviam ja un email amb un ligam de confirmacion, s'o tròbas pas pòdes sollicitar aquí que te o reexpedim
+    residence:
+      alert:
+        unconfirmed_residency: As verificat pas encara la tiá residéncia
+      create:
+        flash:
+          success: Residéncia verificada
+      new:
+        accept_terms_text: Accèpti %{terms_url} al Padró
+        accept_terms_text_title: Accèpti los tèrmes d'accès al Padró
+        document_number: Numèro de document
+        document_number_help_title: Ajuda
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Passapòrt</strong>: AAA000001<br> <strong>Carta de residéncia</strong>: X1234567P"
+        document_type:
+          passport: Passapòrt
+          residence_card: Carta de residéncia
+          spanish_id: DNI
+        error_not_allowed_age: As pas l'edat minima per participar
+        error_not_allowed_postal_code: Per poder èsser verificat, aja d’èsser enregistrat.
+        error_verifying_census: Lo Cens a pas pogut verificar l'informacion. Confirmatz que las donadas de lo vòstre cens son corrèctas en trucant dins la Comuna o visitatz un Burèu d'Atencion Ciutadana.
+        form_errors: evitèron verificar la tiá residéncia
+        postal_code_note: Per verificar las tiás donadas te cal èsser empadronat
+        terms: els termes d'accés
+        title: Verificar residéncia
+        verify_residence: Verificar residència
+    sms:
+      create:
+        flash:
+          success: Introdusís lo còdi de confirmacion que t'avèm enviat per messatge de tèxt
+      edit:
+        resend_sms_link: Sollicitar un nòu còdi
+        resend_sms_text: As pas recebut un messatge de tèxt amb lo tieu còdi de confirmacion?
+        submit_button: Enviar
+        title: SMS de confirmación
+      new:
+        phone: Introduce tu teléfono móvil para recibir el código
+        phone_format: "<strong><em>(Exemple: 612345678 o +34612345678)</em></strong>"
+        phone_note: Utilizam solament lo vòstre telefòn per vos enviar un còdi, jamai per vos contactar.
+        phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
+        submit_button: Enviar
+        title: SMS de confirmacion
+      update:
+        error: Còdi de confirmacion incorrècta
+        flash:
+          level_three:
+            success: Còdi corrècte. Lo tieu compte es ja verificat
+          level_two:
+            success: Còdi corrècte
+    step_1: Abitança
+    step_2: SMS de confirmacion
+    step_3: Verificacion finala
+    user_permission_debates: Participar a debats
+    user_permission_info: en Verificant l'informacion que poiretz ...
+    user_permission_proposal: Crear de nòvas proposicions
+    user_permission_support_proposal: Avalar de proposicions
+    user_permission_votes: Participar a las votacions finalas
+    verified_user:
+      form:
+        submit_button: Enviar còdi
+      show:
+        email_title: emails
+        explanation: Dispausam a l'ora d'ara de las seguentas donadas en lo Padró, selecciona ont vòles qu'enviam lo còdi de confirmacion.
+        phone_title: de Telefòns
+        title: Informacion disponibla
+        use_another_phone: Utilizar un autre telefòn

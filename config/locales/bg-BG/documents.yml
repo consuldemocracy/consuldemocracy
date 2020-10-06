@@ -1,1 +1,24 @@
 bg:
+  documents:
+    title: Документи
+    max_documents_allowed_reached: Достигнахте максималния разрешен брой документи! <strong> Трябва да изтриете един, преди да можете да качите друг.</strong>
+    additional: Допълнителна документация
+    form:
+      title: Документи
+      title_placeholder: Добавете описателно заглавие на документа
+      delete_button: Премахване на документ
+      cancel_button: Отказ
+      note: "Можете да качите до максимум %{max_documents_allowed} документи от следните типове съдържание: %{accepted_content_types}, до %{max_file_size} MB на файл."
+      add_new_document: Добавяне на нов документ
+    actions:
+      destroy:
+        notice: Документът бе изтрит успешно.
+        alert: Документът на може да се изтрие.
+        confirm: Сигурни ли сте, че искате да изтриете документа? Това действие не може да бъде отменено!
+    buttons:
+      download_document: Изтегляне на файл
+      destroy_document: Изтриване на документ
+    errors:
+      messages:
+        in_between: трябва да е между %{min} и %{max}
+        wrong_content_type: тип съдържание %{content_type} не съответства на нито един от приетите типове съдържание %{accepted_content_types}

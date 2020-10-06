@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title><%= content_for?(:title) ? yield(:title) : default_title %></title>
 <%= stylesheet_link_tag "application" %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
 <%= csrf_meta_tags %>
 <%= favicon_link_tag "favicon.ico" %>
 <%= render "layouts/disable_animations_in_tests" if Rails.env.test? %>

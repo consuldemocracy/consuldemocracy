@@ -22,7 +22,7 @@
             </div>
           <% elsif proposal.successful? %>
             <div class="supports text-center">
-              <%= render "supports", proposal: proposal %>
+              <%= render "proposals/supports", proposal: proposal %>
             </div>
           <% elsif proposal.archived? %>
             <div class="padding text-center">

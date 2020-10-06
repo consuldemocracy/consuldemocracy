@@ -20,5 +20,5 @@ hr:
       first: Prva
       last: Posljednja
       next: Sljedeća
-      previous: Prošla
+      previous: Prethodna
       truncate: "&hellip;"

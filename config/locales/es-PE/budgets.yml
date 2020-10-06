@@ -3,8 +3,6 @@ es-PE:
     ballots:
       show:
         title: Mis votos
-        amount_spent: Coste total
-        remaining: "Te quedan <span>%{amount}</span> para invertir"
         no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
         remove: Quitar voto
         zero: Todavía no has votado ninguna propuesta de inversión.
@@ -64,8 +62,6 @@ es-PE:
           title: Buscar
         sidebar:
           my_ballot: Mis votos
-          voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
-          voted_info_link: cambiar tus votos
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
           check_ballot_link: "revisar mis votos"
           zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.

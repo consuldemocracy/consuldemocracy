@@ -4,19 +4,45 @@ hr:
       verification:
         residence: "Prebivalište"
         sms: "SMS"
+      local_census_records/import:
+        one: Uvoz lokalnog zapisa o cenzusu
+        few: Uvoz zapisa o lokalnim cenzusima
+        other: Uvoz zapisa o lokalnim cenzusima
     attributes:
       verification:
         residence:
-          document_type: "Tip dokumenta"
+          document_type: "Vrsta dokumenta"
           document_number: "Broj dokumenta (uključujuči slova)"
           date_of_birth: "Datum rođenja"
           postal_code: "Poštanski broj"
         sms:
           phone: "Telefon"
-          confirmation_code: "Kod potvrde"
+          confirmation_code: "Potvrdni kôd"
         email:
-          recipient: "Email"
+          recipient: "E-mail"
+      verification/letter:
+        email: "E-mail"
+        password: "Zaporka"
+        verification_code: "Šifra koju ste primili u pismu"
+      verification/management/document:
+        document_type: "Vrsta dokumenta:"
+        document_number: "Broj dokumenta"
+      verification/residence:
+        date_of_birth: "Datum rođenja"
+        document_type: "Vrsta dokumenta"
+        postal_code: "Poštanski broj"
+      verification/sms:
+        confirmation_code: "Unesite kod koji ste primili na svoj mobilni uređaj"
       officing/residence:
-        document_type: "Tip dokumenta"
+        document_type: "Vrsta dokumenta"
         document_number: "Broj dokumenta (uključujući slova)"
         year_of_birth: "Godina rođenja"
+      local_census_records/import:
+        file: Datoteka
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Format datoteke nije ispravan. Dopušten format datoteke: %{valid_extensions}."
+              headers: "Naslovi datoteke nisu ispravni. Naslovi datoteke moraju imati sljedeće nazive: %{required_headers}."

@@ -1,1 +1,8 @@
 ca:
+  milestones:
+    index:
+      no_milestones: No heu definit fites
+      progress: Progrés, progressar
+    show:
+      publication_date: "Publicat %{publication_date}"
+      status_changed: L'estat ha canviat a

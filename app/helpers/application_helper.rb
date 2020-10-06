@@ -25,7 +25,7 @@ module ApplicationHelper
       superscript:        true
     }
 
-    sanitize(Redcarpet::Markdown.new(renderer, extensions).render(text))
+    AdminLegislationSanitizer.new.sanitize(Redcarpet::Markdown.new(renderer, extensions).render(text))
   end
 
   def wysiwyg(text)
@@ -40,7 +40,7 @@ module ApplicationHelper
 
   def back_link_to(destination = :back, text = t("shared.back"))
     link_to destination, class: "back" do
-      content_tag(:span, nil, class: "icon-angle-left") + text
+      tag.span(class: "icon-angle-left") + text
     end
   end
 

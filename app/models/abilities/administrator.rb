@@ -90,7 +90,9 @@ module Abilities
       can :access, :ckeditor
       can :manage, Ckeditor::Picture
 
-      can [:manage], ::Legislation::Process
+      can [:read, :debate, :draft_publication, :allegations, :result_publication,
+           :milestones], Legislation::Process
+      can [:create, :update, :destroy], Legislation::Process
       can [:manage], ::Legislation::DraftVersion
       can [:manage], ::Legislation::Question
       can [:manage], ::Legislation::Proposal

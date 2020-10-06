@@ -38,7 +38,8 @@ describe "Public area translatable records" do
     end
 
     scenario "Add multiple translations at once" do
-      budget = create(:budget_heading, name: "Everywhere").group.budget
+      heading = create(:budget_heading, name: "Everywhere")
+      budget = heading.group.budget
 
       visit new_budget_investment_path(budget)
 
@@ -49,7 +50,7 @@ describe "Public area translatable records" do
       fill_in "Title", with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{budget.id}\"]",
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
                                      visible: false)
 
       # Check terms of service by default
@@ -74,7 +75,8 @@ describe "Public area translatable records" do
     end
 
     scenario "Add a translation for a locale with non-underscored name" do
-      budget = create(:budget_heading, name: "Everywhere").group.budget
+      heading = create(:budget_heading, name: "Everywhere")
+      budget = heading.group.budget
 
       visit new_budget_investment_path(budget)
       click_link "Remove language"
@@ -82,7 +84,7 @@ describe "Public area translatable records" do
       fill_in "Title", with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{budget.id}\"]",
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
                                      visible: false)
 
       # Check terms of service by default
@@ -104,12 +106,13 @@ describe "Public area translatable records" do
     end
 
     scenario "Shows errors when submiting without any active translations" do
-      budget = create(:budget_heading, name: "Everywhere").group.budget
+      heading = create(:budget_heading, name: "Everywhere")
+      budget = heading.group.budget
 
       visit new_budget_investment_path(budget)
       click_link "Remove language"
 
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{budget.id}\"]",
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
                                      visible: false)
 
       # Check terms of service by default

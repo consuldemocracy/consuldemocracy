@@ -1,1 +1,37 @@
 mk:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} успешно создадено."
+        debate: "Успешно создадена дебата."
+        direct_message: "Пораката беше успешно испратена."
+        poll: "Успешно создадена анкета."
+        poll_booth: "Успешно создадена кабина."
+        poll_question_answer: "Успешно направен одговор"
+        poll_question_answer_video: "Успешно создадено видео"
+        poll_question_answer_image: "Успешно поставување на слика"
+        proposal: "Успешно создаден предлог."
+        proposal_notification: "Вашата порака беше коректно испратена."
+        budget_investment: "Успешно создадена буџетска инвестиција."
+        signature_sheet: "Успешно создаден лист со потпис"
+        topic: "Успешно создадена тема."
+        valuator_group: "Успешно создадена група за вреднување"
+      save_changes:
+        notice: Промените се зачувани
+      update:
+        notice: "%{resource_name} успешно ажуриран."
+        debate: "Успешно ажурирана дебата."
+        poll: "Успешно ажурирана анкета."
+        poll_booth: "Успешно ажурирана кабина."
+        active_poll: "Опис на анкетата успешно ажуриран."
+        proposal: "Успешно ажуриран предлог."
+        budget_investment: "Успешно ажуриран проект за инвестиција."
+        topic: "Успешно ажурирана тема."
+        valuator_group: "Успешно ажурирана група за вреднување"
+        translation: "Успешно ажуриран превод"
+      destroy:
+        budget_investment: "Успешно избришан проект за инвестиција."
+        error: "Бришење не е можно"
+        topic: "Успешно избришана тема."
+        poll_question_answer_video: "Видео одговор успешно избришан."
+        valuator_group: "Успешно избришана група за вреднување"

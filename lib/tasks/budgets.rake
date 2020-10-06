@@ -11,17 +11,6 @@ namespace :budgets do
     end
   end
 
-  desc "Update investments original_heading_id with current heading_id"
-  task set_original_heading_id: :environment do
-    ApplicationLogger.new.info "Setting original_heading_id to investments"
-    Budget::Investment.find_each do |investment|
-      unless investment.original_heading_id.present?
-        investment.update_column(:original_heading_id, investment.heading_id)
-      end
-      print "."
-    end
-  end
-
   desc "Update existing budgets in drafting phase"
   task update_drafting_budgets: :environment do
     Budget.where(phase: "drafting").each do |budget|

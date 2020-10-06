@@ -35,9 +35,7 @@
 
   <% if @ballot.investments.by_heading(@heading.id).count > 0 %>
     <p>
-      <%= sanitize(t("budgets.investments.index.sidebar.voted",
-          count: @ballot.investments.by_heading(@heading.id).count,
-          amount_spent: @ballot.formatted_amount_spent(@heading))) %>
+      <%= sanitize(@ballot.voted_info(@heading)) %>
     </p>
   <% elsif @assigned_heading.present? %>
     <p>
@@ -47,7 +45,7 @@
       <br>
       <small>
         <%= sanitize(t("budgets.investments.index.sidebar.change_ballot",
-            check_ballot: link_to(t("budgets.investments.index.sidebar.check_ballot_link"),
+            check_ballot: link_to(t("budgets.investments.index.sidebar.change_vote_link"),
                           budget_ballot_path(@budget)))) %>
       </small>
     </p>
@@ -56,8 +54,8 @@
   <% end %>
 
   <p>
-    <%= sanitize(t("budgets.investments.index.sidebar.voted_info",
-        link: link_to(t("budgets.investments.index.sidebar.voted_info_link"), budget_ballot_path(@budget)),
+    <%= sanitize(@ballot.change_vote_info(
+        link: link_to(t("budgets.investments.index.sidebar.change_vote_link"), budget_ballot_path(@budget)),
         phase_end_date: l(@budget.current_phase.ends_at.to_date))) %>
   </p>
 

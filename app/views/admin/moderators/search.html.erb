@@ -20,7 +20,7 @@
           <td>
             <% if user.moderator? && user.moderator.persisted? %>
               <%= link_to t("admin.moderators.moderator.delete"),
-                          admin_moderator_path(user),
+                          admin_moderator_path(user.moderator),
                           method: :delete,
                           class: "button hollow alert expanded" %>
             <% else %>

@@ -1141,15 +1141,6 @@ el:
           without_confirmed_hide: Σε εκκρεμότητα
         title: Κρυφές προτάσεις
         no_hidden_proposals: Δεν υπάρχουν κρυφές προτάσεις.
-    proposal_notifications:
-      index:
-        filter: Φίλτρο
-        filters:
-          all: Όλα
-          with_confirmed_hide: Επιβεβαιωμένο
-          without_confirmed_hide: Σε εκκρεμότητα
-        title: Κρυφές ειδοποιήσεις
-        no_hidden_proposals: Δεν υπάρχουν κρυφές ειδοποιήσεις.
     settings:
       flash:
         updated: Η αξία ανανεώθηκε
@@ -1336,6 +1327,8 @@ el:
         help: "Όταν ένας χρήστης δημιουργεί μια πρόταση, προτείνονται τα ακόλουθα θέματα ως προεπιλεγμένες ετικέτες."
     users:
       columns:
+        id: Ταυτότητα
+        erase_reason: Λόγοι Διαγραφής
         name: Όνομα
         email: E-Mail
         document_number: Αριθμός εγγράφου
@@ -1344,6 +1337,10 @@ el:
       index:
         title: Χρήστης
         no_users: Δεν υπάρχουν χρήστες.
+        filter: Φίλτρο
+        filters:
+          active: Ενεργό
+          erased: Αίτημα
       search:
         placeholder: Αναζήτηση χρήστη με μήνυμα ηλεκτρονικού ταχυδρομείου, το όνομα ή τον αριθμό εγγράφου
         search: Αναζήτηση

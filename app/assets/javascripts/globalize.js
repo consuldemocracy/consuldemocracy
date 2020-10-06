@@ -7,7 +7,7 @@
     display_locale: function(locale) {
       App.Globalize.enable_locale(locale);
       App.Globalize.add_language(locale);
-      $(".js-add-language option:selected").removeAttr("selected");
+      $(".js-add-language option:selected").prop("selected", false);
     },
     display_translations: function(locale) {
       $(".js-select-language option[value=" + locale + "]").prop("selected", true);

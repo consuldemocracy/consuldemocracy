@@ -13,7 +13,11 @@ class SignatureSheet < ApplicationRecord
   validate  :signable_found
 
   def name
-    "#{signable_name} #{signable_id}"
+    if title.present?
+      "#{signable_name} #{signable_id}: #{title}"
+    else
+      "#{signable_name} #{signable_id}"
+    end
   end
 
   def signable_name
