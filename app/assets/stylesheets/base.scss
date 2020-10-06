@@ -2366,7 +2366,8 @@ footer {
   }
 
   .auth-image {
-    background: $brand image-url("auth_bg.png");
+    background-color: transparent;
+    background-size: auto;
 
     @include breakpoint(medium) {
       min-height: rem-calc(1390);
