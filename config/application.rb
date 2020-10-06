@@ -8,9 +8,14 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.load_defaults 5.1
+
+    # Keep belongs_to fields optional by default, because that's the way
+    # Rails 4 models worked
+    config.active_record.belongs_to_required_by_default = false
+
+    # Use local forms with `form_with`, so it works like `form_for`
+    config.action_view.form_with_generates_remote_forms = false
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
