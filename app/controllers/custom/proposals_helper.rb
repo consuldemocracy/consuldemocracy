@@ -64,7 +64,7 @@ module ProposalsHelper
   end
 
   def all_proposal_map_locations
-    MapLocation.where(proposal_id: all_proposals).map(&:json_data)
+    MapLocation.where(proposal_id: all_active_proposals).map(&:json_data)
   end
 
   def link_to_toggle_proposal_selection(proposal)

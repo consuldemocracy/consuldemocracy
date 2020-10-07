@@ -128,11 +128,11 @@ class ApplicationController < ActionController::Base
       redirect_to path, response_status
     end
 
-    def all_proposals
+    def all_active_proposals
      	if params[:search]
-    		Proposal.search(params[:search])
+    		Proposal.published().not_retired().not_archived().search(params[:search])
     	else
-      		Proposal.all
+      		Proposal.published().not_retired().not_archived().all
 	end
     end
 
