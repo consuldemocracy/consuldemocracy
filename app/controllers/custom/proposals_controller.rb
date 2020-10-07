@@ -41,6 +41,7 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
     if @proposal.save
+      proposal_created_email(@proposal)
       redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
     else
       render :new
@@ -197,6 +198,17 @@ class ProposalsController < ApplicationController
     def proposals_recommendations
       if Setting["feature.user.recommendations_on_proposals"] && current_user.recommended_proposals
         @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
+      end
+    end
+    
+    def proposal_created_email(proposal)
+      @proposal = proposal
+      @project = @proposal.tag_list_with_limit(1)
+      if !@project.empty?
+        @officials_by_project = User.officials_by_project(@project.first)
+        @officials_by_project.each do |official|
+          Mailer.proposal_created(@proposal, official).deliver_later
+        end
       end
     end
 end

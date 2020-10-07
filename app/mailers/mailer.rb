@@ -27,6 +27,17 @@ class Mailer < ApplicationMailer
       mail(to: @email_to, subject: subject) if @commentable.present? && official.present?
     end
   end  
+
+  def proposal_created(proposal, official)
+    @proposal = proposal
+    @official = official
+    @email_to = official.email
+    
+    with_user(official) do
+      subject = "Neuer Vorschlag wurde erstellt."
+      mail(to: @email_to, subject: subject) if @proposal.present? && official.present?
+    end
+  end  
     
   def reply(reply)
     @email = ReplyEmail.new(reply)
