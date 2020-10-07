@@ -23,11 +23,13 @@ class CommentNotifier
     end
     
     def send_comment_email_to_officials
-      @project = @comment.commentable.tag_list_with_limit(1)
-      if !@project.empty?
-        @officials_by_project = User.officials_by_project(@project.first)
-        @officials_by_project.each do |official|
-          Mailer.commentForOfficial(@comment, official).deliver_later
+      if @comment.commentable.is_a?(Taggable)
+        @project = @comment.commentable.tag_list_with_limit(1)
+        if !@project.empty?
+          @officials_by_project = User.officials_by_project(@project.first)
+          @officials_by_project.each do |official|
+            Mailer.commentForOfficial(@comment, official).deliver_later
+          end
         end
       end
     end
