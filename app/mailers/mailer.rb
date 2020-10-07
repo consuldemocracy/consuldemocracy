@@ -16,6 +16,18 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def commentForOfficial(comment, official)
+    @comment = comment
+    @commentable = comment.commentable
+    @official = official
+    @email_to = official.email
+    
+    with_user(official) do
+      subject = t("mailers.comment.subject", commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
+      mail(to: @email_to, subject: subject) if @commentable.present? && official.present?
+    end
+  end  
+    
   def reply(reply)
     @email = ReplyEmail.new(reply)
     @email_to = @email.to
