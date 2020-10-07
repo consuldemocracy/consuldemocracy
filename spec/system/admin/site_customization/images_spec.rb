@@ -6,6 +6,14 @@ describe "Admin custom images" do
     login_as(admin.user)
   end
 
+  scenario "List of customizable images" do
+    valid_images = SiteCustomization::Image::VALID_IMAGES
+    %w[logo_header social_media_icon social_media_icon_twitter apple-touch-icon-200 budget_execution_no_image
+       budget_no_image map logo_email header_homepage auth_bg].each do |image_name|
+      expect(valid_images.keys).to include(image_name)
+    end
+  end
+
   scenario "Upload valid png image" do
     visit admin_root_path
 
