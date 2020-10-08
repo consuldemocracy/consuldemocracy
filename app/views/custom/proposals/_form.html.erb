@@ -78,7 +78,7 @@
       </div>
 
       <br>
-      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s + if params[:project] then params[:project] else "" end,
+      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s + if (params[:project] && (!params[:project].downcase().include? "bischofshut")) then params[:project] else "" end,
                         label: false,
                         placeholder: t("proposals.form.tags_placeholder"),
                         class: "js-tag-list tag-autocomplete",
