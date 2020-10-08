@@ -66,7 +66,7 @@
       </div>
     <% end %>
 
-    <div class="small-12 column">
+    <div class="small-12 column <% if !(current_user.present? && (current_user.moderator? || current_user.administrator?)) %>hide<% end %>">
       <%= f.label :tag_list, t("proposals.form.tags_label") %>
       <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
 

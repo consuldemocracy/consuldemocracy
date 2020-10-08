@@ -9,43 +9,8 @@
 <% end %>
 
 <main>
-  <% if [
-          @search_terms,
-          @advanced_search_terms,
-          @tag_filter,
-          params[:retired].present?,
-          params[:selected].present?
-        ].any? %>
-    <div class="highlight no-margin-top padding margin-bottom">
-      <div class="row">
-        <div class="small-12 column">
-          <% if @search_terms || @advanced_search_terms %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @proposals %>
-              <% if !@advanced_search_terms %>
-                <%= sanitize(
-                  t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms)
-                ) %>
-              <% end %>
-            <p>
-          <% elsif @tag_filter %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @proposals %>
-              <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
-            </p>
-          <% elsif params[:retired].present? %>
-            <h2><%= t("proposals.index.retired_proposals") %></h2>
-          <% elsif params[:selected].present? %>
-            <h2><%= t("proposals.index.selected_proposals") %></h2>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% else %>
-    <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
-  <% end %>
+  
+  <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
 
   <% if show_recommended_proposals? %>
     <%= render "shared/recommended_index", recommended: @recommended_proposals,
@@ -97,7 +62,10 @@
         <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
       <% end %>
 
-      <% if @proposals.any? %>
+      <% if (@proposals.any? && 
+      (current_user.present? && (current_user.moderator? || current_user.administrator?)) ||
+           (@search_terms.present? && (!@search_terms.downcase().include? "bischofshut"))) %>
+        
         <div class="show-for-small-only">
           <%= link_to t("proposals.index.start_proposal"),
                     (new_proposal_path + (if @search_terms then ("?project="+@search_terms) else "" end)),
@@ -132,11 +100,14 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <%= link_to t("proposals.index.start_proposal"),
-                    (new_proposal_path + (if @search_terms then ("?project="+@search_terms) else "" end)),
-                    class: "button expanded" %>
+        <% if (current_user.present? && (current_user.moderator? || current_user.administrator?)) ||
+           (@search_terms.present? && (!@search_terms.downcase().include? "bischofshut")) %>
+          <%= link_to t("proposals.index.start_proposal"),
+                      (new_proposal_path + (if @search_terms then ("?project="+@search_terms) else "" end)),
+                      class: "button expanded" %>
 
-        <div class="sidebar-divider"></div>
+          <div class="sidebar-divider"></div>
+        <% end %>
         <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
         <br>
         <p class="small">
