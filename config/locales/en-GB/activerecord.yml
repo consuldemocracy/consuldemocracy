@@ -3,7 +3,48 @@ en-GB:
     geozone_id: "Сфера діяльності"
     results_enabled: "Переглянути результати"
     stats_enabled: "Переглянути статистику"
+    advanced_stats_enabled: "Переглянути розширену статистику"
   activerecord:
+    models:
+      activity:
+        one: "дія"
+        other: "дії"
+      budget:
+        one: "Бюджет"
+        other: "Бюджети"
+      budget/investment:
+        one: "Інвестиція"
+        other: "Інвестиції"
+      milestone:
+        one: "етап"
+        other: "етапи"
+      milestone/status:
+        one: "Статус етапу"
+        other: "Статуси етапу"
+      progress_bar:
+        one: "Індикатор виконання"
+        other: "Індикатори виконання"
+      comment:
+        one: "Коментар"
+        other: "Коментарі"
+      debate:
+        one: "Обговорення"
+        other: "Обговорення"
+      tag:
+        one: "Тег"
+        other: "Теги"
+      user:
+        one: "Користувач"
+        other: "Користувачі"
+      moderator:
+        one: "Модератор"
+        other: "Модератори"
+      administrator:
+        one: "Адміністратор"
+        other: "Адміністратори"
+      valuator:
+        one: "Оцінювач"
+        other: "Оцінювачі"
     attributes:
       budget:
         currency_symbol: "Валюта"
