@@ -162,13 +162,46 @@ en-GB:
       geozone:
         name: Ім'я
         external_code: "Зовнішній код (за бажанням)"
+        html_map_coordinates: "Координати HTML <map> (за бажанням)"
       milestone:
+        status_id: "Поточний статус (за бажанням)"
         title: "Назва"
+        description: "Опис (за бажанням, якщо присвоєно статус)"
         publication_date: "Дата"
+      milestone/translation:
+        description: "Опис"
+      milestone/status:
+        name: "Ім'я"
+        description: "Опис (за бажанням)"
       progress_bar:
         kind: "Тип"
         title: "Назва"
+        percentage: "Поточний прогрес"
+      progress_bar/kind:
+        primary: "Початковий"
+        secondary: "Другорядний"
+      budget/group:
+        max_votable_headings: "Максимальна кількість рубрик, за якими користувач може обирати проєкти"
+      budget/group/translation:
+        name: "Назва групи"
+      budget/heading:
+        allow_custom_content: "Дозволити блокування вмісту"
+        latitude: "Широта (за бажанням)"
+        longitude: "Довгота (за бажанням)"
+        name: "Назва рубрики"
+        price: "Кількість"
+        population: "Населення (за бажанням)"
+        max_ballot_lines: "Голосування передбачено"
+      budget/heading/translation:
+        name: "Назва рубрики"
+      budget/phase:
+        ends_at: "Дата закінчення"
+        starts_at: "Дата початку"
+      budget/phase/translation:
+        description: "Опис"
+        summary: "Підсумок"
       comment:
+        body: "Коментар"
         user: "Користувач"
       debate:
         author: "Автор"
