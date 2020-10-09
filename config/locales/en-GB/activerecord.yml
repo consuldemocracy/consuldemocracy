@@ -102,8 +102,27 @@ en-GB:
       documents:
         one: "Документ"
         other: "Документи"
+      topic:
+        one: "Тема"
+        other: "Теми"
+      poll:
+        one: "Опитування"
+        other: "Опитування"
+      proposal_notification:
+        one: "Сповіщення щодо пропозицій"
+        other: "Сповіщення щодо пропозицій"
+      dashboard/administrator_task:
+        one: Завдання
+        other: Завдання
+      link:
+        one: Посилання
+        other: Посилання
     attributes:
       budget:
+        name: "Ім'я"
+        description_accepting: "Опис на стадії прийняття"
+        description_reviewing: "Опис на стадії перегляду"
+        description_selecting: "Опис на стадії відбору"
         currency_symbol: "Валюта"
       budget/investment:
         title: "Назва"
