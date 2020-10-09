@@ -16,7 +16,7 @@ en-GB:
           success: Ви - підтверджений користувач
     letter:
       alert:
-        unconfirmed_code: Ви ще не ввели код підтвердження
+        unconfirmed_code: Ви не ввели код підтвердження
       edit:
         see_all: Переглянути пропозиції
         title: Необхідний лист
@@ -33,3 +33,20 @@ en-GB:
           success: Код неправильний. Ваш обліковий запис не підтверджено
     redirect_notices:
       already_verified: Ваш обліковий запис вже підтверджено
+      email_already_sent: Ми надіслали електронний лист з посиланням для підтвердження. Якщо ви не отримали цей лист, попросіть надіслати його ще раз
+    residence:
+      alert:
+        unconfirmed_residency: Ви не підтвердили своє місце проживання
+      create:
+        flash:
+          success: Місце проживання підтверджено
+      new:
+        accept_terms_text: Я приймаю %{terms_url} Census
+        accept_terms_text_title: Я приймаю правила та умови доступу до Census
+        document_number: Номер документа
+        document_number_help_title: Допомога
+        document_type:
+          passport: Паспорт
+          residence_card: Вид на проживання
+          spanish_id: Номер ID
+        error_not_allowed_postal_code: Щоб підтвердити обліковий запис, ви маєте зареєструватись.
