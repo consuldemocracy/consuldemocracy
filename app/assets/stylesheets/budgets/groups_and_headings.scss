@@ -1,5 +1,5 @@
 .groups-and-headings {
-  $spacing: rem-calc(4);
+  $spacing: $line-height / 2;
 
   .headings-list {
     display: flex;
@@ -9,10 +9,12 @@
   }
 
   .heading {
-    border: 1px solid $border;
-    border-radius: rem-calc(3);
+    border: 2px solid $border;
+    border-radius: rem-calc(6);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     margin-bottom: $line-height / 2;
     margin-left: $spacing;
+    margin-top: $line-height / 4;
     padding: $line-height / 2;
     position: relative;
     width: 100%;
@@ -34,6 +36,7 @@
     }
 
     a {
+      font-weight: bold;
 
       &::after,
       &::before {
@@ -58,6 +61,7 @@
     span {
       display: block;
       font-size: $small-font-size;
+      padding-top: $line-height / 2;
     }
   }
 }
