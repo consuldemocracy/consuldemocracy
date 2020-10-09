@@ -205,12 +205,28 @@ en-GB:
         user: "Користувач"
       debate:
         author: "Автор"
+        description: "Думка"
+        tag_list: "Теми"
+        terms_of_service: "Умови користування"
         title: "Назва"
+      debate/translation:
+        title: "Назва обговорення"
+        description: "Початковий текст обговорення"
       proposal:
         author: "Автор"
         title: "Назва"
         question: "Запитання"
         description: "Опис"
+        responsible_name: "Повне ім'я особи, яка подає пропозицію"
+        retired_reason: "Причина скасування пропозиції"
+        selected: "Прзначити як вибране"
+        terms_of_service: "Умови користування"
+        video_url: "Посилання на зовнішнє відео"
+      proposal/translation:
+        title: "Назва пропозиції"
+        description: "Текст пропозиції"
+        summary: "Короткий виклад пропозиції"
+        retired_explanation: "Пояснення"
       user:
         login: "Електронна адреса або ім'я користувача"
         email: "Електронна адреса"
@@ -218,6 +234,11 @@ en-GB:
         password_confirmation: "Підтвердження пароля"
         password: "Пароль"
         current_password: "Поточний пароль"
+        email_on_comment: "Отримувати на електронну пошту сповіщення про коментарі до моїх пропозицій та обговорень"
+        email_on_comment_reply: "Отримувати на електронну пошту сповіщення про відповіді на мої коментарі"
+        email_on_direct_message: "Отримувати на електронну пошту сповіщення про вхідні повідомлення"
+        newsletter: "Отримувати на електронну пошту актуальну інформацію про вебсайт"
+        official_position: "Офіційна посада"
         phone_number: "Номер телефону"
       direct_message:
         title: "Назва"
