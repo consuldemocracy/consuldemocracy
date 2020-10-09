@@ -120,9 +120,13 @@ en-GB:
     attributes:
       budget:
         name: "Ім'я"
-        description_accepting: "Опис на стадії прийняття"
-        description_reviewing: "Опис на стадії перегляду"
-        description_selecting: "Опис на стадії відбору"
+        description_accepting: "Опис на етапі прийняття"
+        description_reviewing: "Опис на етапі перегляду"
+        description_selecting: "Опис на етапі відбору"
+        description_valuating: "Опис на етапі оцінки"
+        description_balloting: "Опис на етапі голосування"
+        description_finished: "Опис після виконання бюджету"
+        phase: "Етап"
         currency_symbol: "Валюта"
       budget/investment:
         title: "Назва"
