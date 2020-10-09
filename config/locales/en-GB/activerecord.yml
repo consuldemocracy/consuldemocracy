@@ -45,6 +45,33 @@ en-GB:
       valuator:
         one: "Оцінювач"
         other: "Оцінювачі"
+      valuator_group:
+        one: "Група оцінювачів"
+        other: "Групи оцінювачів"
+      manager:
+        one: "Керівник"
+        other: "Керівники"
+      newsletter:
+        one: "Інформаційна розсилка"
+        other: "Інформаційні розсилки"
+      vote:
+        one: "Голос"
+        other: "Голоси"
+      organization:
+        one: "Організація"
+        other: "Організації"
+      poll/booth:
+        one: "кабінка"
+        other: "кабінки"
+      poll/ballot_sheet:
+        one: Бюлетень
+        other: Бюлетені
+      proposal:
+        one: "Пропозиція громадянина"
+        other: "Пропозиції громадянина"
+      site_customization/page:
+        one: Користувацька сторінка
+        other: Користувацькі сторінки
     attributes:
       budget:
         currency_symbol: "Валюта"
