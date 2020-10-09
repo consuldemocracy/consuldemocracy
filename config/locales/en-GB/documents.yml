@@ -1,1 +1,17 @@
 en-GB:
+  documents:
+    title: Документи
+    additional: Додаткова документація
+    form:
+      title: Документи
+      delete_button: Видалити документ
+      cancel_button: Відмінити
+      add_new_document: Додати новий документ
+    actions:
+      destroy:
+        notice: Документ успішно видалений.
+        alert: Неможливо видалити документ.
+        confirm: Ви впевнені, що хочете видалити документ? Цю дію неможливо відмінити!
+    buttons:
+      download_document: Завантажити файл
+      destroy_document: Видалити документ
