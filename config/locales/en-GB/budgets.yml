@@ -30,3 +30,16 @@ en-GB:
         not_logged_in: Для продовження %{signin} або %{signup}.
         not_verified: Тільки підтверджені користувачі можуть віддавати голоси за інвестиції; %{verify_account}.
         organization: Організації не допускаються до голосування
+        no_ballots_allowed: Фазу відбору завершено
+        not_enough_available_votes: "Ви віддали максимально дозволену кількість голосів"
+        change_ballot: змінити голоси
+        casted_offline: Ви вже взяли участь в офлайн-режимі
+    groups:
+      show:
+        title: Обрати варіант
+    phase:
+      informing: Інформація
+    index:
+      section_header:
+        all_phases: Переглянути всі етапи
+      investment_proyects: Перелік усіх інвестиційних проєктів
