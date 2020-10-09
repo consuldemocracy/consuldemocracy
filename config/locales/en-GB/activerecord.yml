@@ -102,6 +102,9 @@ en-GB:
       documents:
         one: "Документ"
         other: "Документи"
+      images:
+        one: "Зображення"
+        other: "Зображення"
       topic:
         one: "Тема"
         other: "Теми"
