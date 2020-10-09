@@ -20,7 +20,7 @@
   }
 
   .ballot-list-price {
-    color: $budget;
+    @include brand-text;
     display: block;
     font-weight: bold;
     margin-top: $line-height / 2;
@@ -40,8 +40,7 @@
   }
 
   &:hover {
-    background: $budget;
-    color: #fff;
+    @include brand-background;
 
     a,
     span {

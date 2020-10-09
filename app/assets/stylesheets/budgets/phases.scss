@@ -102,7 +102,8 @@
     }
 
     &.current-phase-tab a {
-      @include brand-background;
+      background: $brand-secondary;
+      color: $white;
       padding-top: $line-height / 2;
 
       &:hover {

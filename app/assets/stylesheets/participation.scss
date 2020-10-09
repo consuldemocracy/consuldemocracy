@@ -1130,7 +1130,7 @@
 // -----------
 
 .budget-header {
-  background: $budget;
+  @extend %brand-background;
   margin-top: -$line-height;
   padding-bottom: $line-height;
   padding-top: $line-height;
@@ -1165,8 +1165,8 @@
 }
 
 .jumbo-budget {
-  background: $budget;
-  border-bottom: 1px solid $budget;
+  background: $white;
+  border-bottom: 2px solid $border;
 
   &.budget-heading {
     min-height: $line-height * 10;
@@ -1194,7 +1194,7 @@
   .icon-angle-left,
   p,
   a {
-    color: #fff;
+    color: $text;
   }
 
   .tagline {
@@ -1216,8 +1216,7 @@
   }
 
   .button {
-    @include brand-text;
-    background: #fff;
+    @extend %brand-background;
     margin-bottom: rem-calc(3);
     text-decoration: none;
   }
@@ -1231,7 +1230,7 @@
   position: relative;
 
   .progress {
-    background: #212033;
+    background: #bbcdd9;
     border-radius: rem-calc(12);
     clear: both;
     margin-bottom: 0;
@@ -1239,7 +1238,7 @@
   }
 
   .progress-meter {
-    background: #fdcb10;
+    background: $brand;
     border-radius: rem-calc(12);
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
@@ -1261,6 +1260,7 @@
     }
 
     span {
+      @include brand-text;
       font-size: $base-font-size;
     }
   }
@@ -1274,7 +1274,7 @@
     white-space: nowrap;
 
     &::before {
-      color: #a5a1ff;
+      color: $brand;
       content: "\57";
       font-family: "icons";
       font-size: $small-font-size;
@@ -1285,6 +1285,7 @@
     }
 
     span {
+      @include brand-text;
       font-size: rem-calc(24);
     }
   }
@@ -1320,7 +1321,7 @@
   }
 
   .subtitle {
-    border-left: 2px solid $budget;
+    border-left: 2px solid $brand;
     margin: $line-height / 2 0;
     padding-left: $line-height / 2;
   }
@@ -1375,10 +1376,11 @@
   z-index: 3;
 
   @include breakpoint(medium) {
-    background-color: $budget;
     transition: height 0.3s;
 
     &.is-fixed {
+      background: $white;
+      border-bottom: 2px solid $border;
       height: auto;
       left: 0;
       padding: $line-height;
