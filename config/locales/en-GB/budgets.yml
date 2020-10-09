@@ -1,1 +1,14 @@
 en-GB:
+  budgets:
+    ballots:
+      show:
+        title: Ваш бюлетень
+        amount_available:
+          approval:
+            zero: "Ви можете віддати ще <span>%{count}</span> голосів."
+            one: "Ви можете віддати ще <span>%{count}</span> голос."
+            other: "Ви можете віддати ще <span>%{count}</span> голосів."
+        amount_spent:
+          knapsack: "Використана кількість <span>%{count}</span>"
+          approval:
+            zero: "Віддано голосів: <span>%{count}</span>"
