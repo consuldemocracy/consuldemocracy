@@ -265,9 +265,20 @@ en-GB:
         name: "Ім'я"
         location: "Місцезнаходження"
       poll/translation:
+        name: "Ім'я"
+        summary: "Підсумок"
         description: "Опис"
       poll/question:
+        poll_id: "Опитування"
         title: "Запитання"
+        summary: "Підсумок"
+        description: "Опис"
+        external_url: "Посилання на додаткову документацію"
+      poll/question/translation:
+        title: "Запитання"
+      poll/ballot_sheet:
+        data: Дані CSV
+        poll_id: Опитування
       poll/shift:
         task: "Завдання"
       proposal_notification:
@@ -277,8 +288,15 @@ en-GB:
         title: "Назва"
         document_numbers: "Номери документів"
       site_customization/page:
+        content: Вміст
+        created_at: Створено
+        subtitle: Підзаголовок
+        slug: Блок
         status: Статус
+        status_draft: "Чернетка"
+        status_published: "Опубліковано"
         title: Назва
+        updated_at: Оновлено
         locale: Мова
       site_customization/page/translation:
         title: Назва
