@@ -1,4 +1,8 @@
 en-GB:
+  attributes:
+    geozone_id: "Сфера діяльності"
+    results_enabled: "Переглянути результати"
+    stats_enabled: "Переглянути статистику"
   activerecord:
     attributes:
       budget:
