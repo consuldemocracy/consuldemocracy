@@ -12,3 +12,21 @@ en-GB:
           knapsack: "Використана кількість <span>%{count}</span>"
           approval:
             zero: "Віддано голосів: <span>%{count}</span>"
+            one: "Віддано голосів: <span>%{count}</span>"
+            other: "Віддано голосів: <span>%{count}</span>"
+        amount_limit:
+          approval:
+            one: "Ви можете проголосувати за <span>1</span> проект"
+            other: "Ви можете проголосувати за <span>%{count}</span> проектів"
+        no_balloted_group_yet: "Ви ще не голосували у цій групі. Вперед!"
+        remove: Скасувати голос
+        voted:
+          one: "Ви віддали голос за <span>одну</span> інвестицію."
+          other: "Ви віддали голоси за <span>%{count}</span> інвестицій."
+        voted_info: "Ваш бюлетень підтверджено!"
+        voted_info_2: "Ви маєте можливість змінити свій вибір в будь-який час до завершення етапу."
+        zero: Ви не проголосували за жоден інвестиційний проєкт.
+      reasons_for_not_balloting:
+        not_logged_in: Для продовження %{signin} або %{signup}.
+        not_verified: Тільки підтверджені користувачі можуть віддавати голоси за інвестиції; %{verify_account}.
+        organization: Організації не допускаються до голосування
