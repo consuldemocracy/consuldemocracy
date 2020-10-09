@@ -688,6 +688,19 @@
     position: absolute;
     width: 100%;
   }
+
+  h2 {
+    font-size: $base-font-size;
+  }
+}
+
+.budget-info,
+.budget-investment-index-list {
+
+  h2 {
+    font-size: rem-calc(20);
+    margin: $line-height / 2 0;
+  }
 }
 
 .divider {
