@@ -372,6 +372,8 @@ en-GB:
         question_options: Опції
       legislation/question/translation:
         title: Запитання
+      legislation/question_option:
+        value: Важливість
       legislation/annotation:
         text: Коментар
       document:
@@ -379,24 +381,51 @@ en-GB:
         attachment: "Оберіть документ"
       image:
         title: Назва
+        attachment: "Вибрати зображення"
       poll/question/answer:
         title: Відповідь
+        description: Опис
       poll/question/answer/translation:
         title: Відповідь
         description: Опис
       poll/question/answer/video:
         title: Назва
+      newsletter:
+        segment_recipient: Отримувачі
+        subject: Предмет
+        body: Вміст листа
       admin_notification:
+        segment_recipient: Отримувачі
         title: Назва
+        link: Посилання
+        body: Текст
       admin_notification/translation:
         title: Назва
+        body: Текст
       widget/card:
+        label: Мітка (за бажанням)
         title: Назва
+        description: Опис
+        link_text: Текст посилання
+        link_url: URL-адреса посилання
+        columns: Кількість колонок
       widget/card/translation:
+        label: Мітка (за бажанням)
         title: Назва
+        description: Опис
+        link_text: Текст посилання
+      widget/feed:
+        limit: Кількість пунктів
       dashboard/action:
         title: Назва
+        short_description: Короткий опис
+        description: Опис
+        link: Зовнішнє посилання
+        active: Активний
         action_type: Тип
+        action_type_proposed_action: "Пропонована дія"
+        action_type_resource: "Ресурс"
+        published_proposal: "Для опублікованих пропозицій?"
       dashboard/administrator_task:
         source: Джерело
         user: Виконавець
@@ -405,8 +434,23 @@ en-GB:
         url: Посилання
       valuator:
         description: Опис
+        valuator_group_id: Група оцінювачів
+        can_comment: Може коментувати
+        can_edit_dossier: Може редагувати досьє
+      valuator_group:
+        name: "Назва групи"
       local_census_record:
         document_type: Тип документа
         document_number: Номер документа
         date_of_birth: Дата народження
         postal_code: Поштовий індекс
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Цей користувач вже має пароль"
+        poll/voter:
+          attributes:
+            user_id:
+              has_voted: "Користувач вже проголосував"
