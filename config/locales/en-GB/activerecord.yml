@@ -239,16 +239,30 @@ en-GB:
         email_on_direct_message: "Отримувати на електронну пошту сповіщення про вхідні повідомлення"
         newsletter: "Отримувати на електронну пошту актуальну інформацію про вебсайт"
         official_position: "Офіційна посада"
+        official_position_badge: "Показати посвідчення, що засвідчує посаду"
+        official_level: "Офіціний рівень"
         phone_number: "Номер телефону"
+        public_activity: "Зробити список моїх дій загальнодоступним"
+        recommended_debates: "Показати рекомендовані обговорення"
+        recommended_proposals: "Показати рекомендовані пропозиції"
+        redeemable_code: "Код підтвердження надіслано на електронну адресу"
       direct_message:
         title: "Назва"
         body: "Повідомлення"
       organization:
         name: "Назва організації"
+        responsible_name: "Особа, відповідальна за групу"
       poll:
+        name: "Ім'я"
         starts_at: "Дата початку"
         ends_at: "Дата завершення"
+        geozone_restricted: "Обмеження за географічною зоною"
+        summary: "Підсумок"
+        description: "Опис"
+      active_poll/translation:
+        description: "Опис"
       poll/booth:
+        name: "Ім'я"
         location: "Місцезнаходження"
       poll/translation:
         description: "Опис"
