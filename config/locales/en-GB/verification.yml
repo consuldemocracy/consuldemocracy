@@ -78,6 +78,11 @@ en-GB:
             success: Код правильний. Ваш обліковий запис підтверджено
           level_two:
             success: Код правильний
+    step_1: Місце проживання
+    step_2: Код підтвердження
+    step_3: Остаточне підтвердження
+    user_permission_debates: Взяти участь в обговоренні
+    user_permission_info: Підтверження інформації дасть змогу...
     user_permission_proposal: Подати нові пропозиції
     user_permission_support_proposal: Підтримати пропозиції*
     user_permission_votes: Взяти участь в остаточному голосуванні*
@@ -86,6 +91,7 @@ en-GB:
         submit_button: Відправити код
       show:
         email_title: Електронні адреси
+        explanation: Деталі збережено у реєстрі; будь ласка, оберіть спосіб, яким ви бажаєте отримати код підтвердження.
         phone_title: Телефонні номери
         title: Доступна інформація
         use_another_phone: Використати інший телефон
