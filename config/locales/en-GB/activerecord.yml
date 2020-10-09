@@ -297,26 +297,79 @@ en-GB:
         status_published: "Опубліковано"
         title: Назва
         updated_at: Оновлено
+        more_info_flag: Показати на сторінці довідки
+        print_content_flag: Кнопка друку вмісту
         locale: Мова
       site_customization/page/translation:
         title: Назва
+        subtitle: Підзаголовок
+        content: Вміст
+      site_customization/image:
+        name: Ім'я
+        image: Зображення
+      site_customization/content_block:
+        name: Ім'я
+        locale: локалізація
+        body: Орган
+      tag:
+        name: "Введіть назву теми"
       topic:
         title: "Назва"
+        description: "Початковий текст"
       banner:
         background_color: Колір фону
         font_color: Колір шрифту
+        post_ended_at: "Пост закінчено о"
+        post_started_at: "Пост розпочато о"
         target_url: "Посилання"
       banner/translation:
         title: "Назва"
+        description: "Опис"
       legislation/process:
+        title: Назва процесу
+        summary: Підсумок
         description: Опис
         additional_info: Додаткова інформація
+        start_date: Початок
+        end_date: Кінець
+        debate_start_date: Початок
+        debate_end_date: Кінець
+        draft_start_date: Початок
+        draft_end_date: Кінець
+        draft_publication_date: Дата публікування чорнової версії
+        allegations_end_date: Кінець
+        proposals_phase_end_date: Кінець
+        result_publication_date: Дата публікування остаточного результату
+        background_color: Колір фону
+        font_color: Колір шрифту
+        homepage_enabled: "Домашня сторінка ввімкнена"
+      legislation/process/translation:
+        title: Назва процесу
+        summary: Підсумок
+        description: Опис
+        additional_info: Додаткова інформація
+        homepage: "Опис"
+        milestones_summary: Підсумок
+      legislation/proposal:
+        description: "Текст пропозиції"
+        summary: "Короткий виклад пропозиції"
+        title: "Назва пропозиції"
+        video_url: "Посилання на зовнішнє відео"
       legislation/draft_version:
-        status: Статус
-      legislation/draft_version/translation:
+        title: Назва версії
         body: Текст
+        changelog: Зміни
+        status: Статус
+        status_draft: "Чернетка"
+        status_published: "Опубліковано"
+        final_version: Остаточна версія
+      legislation/draft_version/translation:
+        title: Назва версії
+        body: Текст
+        changelog: Зміни
       legislation/question:
         title: Назва
+        question_options: Опції
       legislation/question/translation:
         title: Запитання
       legislation/annotation:
