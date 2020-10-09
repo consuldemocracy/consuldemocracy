@@ -72,6 +72,36 @@ en-GB:
       site_customization/page:
         one: Користувацька сторінка
         other: Користувацькі сторінки
+      site_customization/image:
+        one: Користувацьке зображення
+        other: Користувацькі зображення
+      site_customization/content_block:
+        one: Блок користувацького контенту
+        other: Блоки користувацького контенту
+      document:
+        one: Документ
+        other: Документи
+      legislation/process:
+        one: "Процес"
+        other: "Процеси"
+      legislation/proposal:
+        one: "Пропозиція"
+        other: "Пропозиції"
+      legislation/draft_versions:
+        one: "Чорнова версія"
+        other: "Чорнові версії"
+      legislation/questions:
+        one: "Запитання"
+        other: "Запитання"
+      legislation/question_options:
+        one: "Варіант запитання"
+        other: "Варіанти запитань"
+      legislation/answers:
+        one: "Відповідь"
+        other: "Відповіді"
+      documents:
+        one: "Документ"
+        other: "Документи"
     attributes:
       budget:
         currency_symbol: "Валюта"
