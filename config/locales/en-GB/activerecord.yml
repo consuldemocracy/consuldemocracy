@@ -128,10 +128,17 @@ en-GB:
         description_finished: "Опис після виконання бюджету"
         phase: "Етап"
         currency_symbol: "Валюта"
+        voting_style: "Вид остаточного голосування"
+        voting_style_approval: "Затвердження"
+      budget/translation:
+        name: "Ім'я"
       budget/investment:
+        heading_id: "Заголовок"
         title: "Назва"
         description: "Опис"
+        external_url: "Посилання на додаткову документацію"
         administrator_id: "Адміністратор"
+        location: "Розміщення додаткової інформації"
       budget/investment/translation:
         title: "Назва"
         description: "Опис"
