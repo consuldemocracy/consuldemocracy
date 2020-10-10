@@ -4,31 +4,75 @@ en-GB:
       comments:
         see_all: Переглянути все
         see_complete: Переглянути повністю
+        comments_count:
+          one: "%{count} коментар"
+          other: "%{count} коментарів"
+        replies_count:
+          one: "%{count} відповідь"
+          other: "%{count} відповідей"
         cancel: Скасувати
         publish_comment: Опублікувати коментар
+      form:
+        phase_not_open: Цей етап не відкрито
       index:
         title: Коментарі
         comments_about: Коментарі щодо
+        see_in_context: Переглянути в контексті
+        comments_count:
+          one: "%{count} коментар"
+          other: "%{count} коментарів"
       show:
         title: Коментар
+      version_chooser:
+        seeing_version: Коментарі до версії
+        see_text: Переглянути чернетку тексту
     draft_versions:
       changes:
         title: Зміни
+        seeing_changelog_version: Короткий виклад змін
+        see_text: Переглянути чернетку тексту
       show:
         loading_comments: Завантаження коментарів
+        seeing_version: Ви переглядаєте чорнову версію
+        select_draft_version: Обрати чернетку
         select_version_submit: переглянути
+        updated_at: оновлено %{date}
+        see_changes: переглянути короткий виклад змін
+        see_comments: Переглянути всі коментарі
         text_toc: Зміст
         text_body: Текст
         text_comments: Коментарі
     processes:
       header:
+        additional_info: Додаткова інформація
         description: Опис
+      proposals:
+        empty_proposals: Пропозиції відсутні
+        filters:
+          random: Випадково
+          winners: Вибране
+      debate:
+        empty_questions: Запитання відсутні
+        participate: Взяти участь в обговоренні
       index:
         filter: Фільтр
+        filters:
+          open: Відкриті процеси
+          past: Минулі
+        no_open_processes: Відкриті процеси відсутні
+        no_past_processes: Минулі процеси відсутні
+      phase_not_open:
+        not_open: Цей етап ще не відкрито
+      phase_empty:
+        empty: Ще не опубліковано
       process:
         see_latest_comments: Переглянути останні коментарі
+        see_latest_comments_title: Коментувати цей процес
       shared:
+        key_dates: Етапи участі
         homepage: Домашня сторінка
+        debate_dates: Обговорення
+        draft_publication_date: Проект публікації
         allegations_dates: Коментарі
     questions:
       question:
