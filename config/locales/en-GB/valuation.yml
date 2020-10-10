@@ -9,13 +9,23 @@ en-GB:
       index:
         title: Партисипативний бюджет
         filters:
-          current: Відкрити
+          current: Відкриті
+          finished: Завершені
+        table_name: Назва
+        table_phase: Етап
+        table_assigned_investments_valuation_open: Інвестиційні проекти з відкритою оцінкою
         table_actions: Дії
         evaluate: Оцінити
         no_budgets: "Бюджети відсутні"
     budget_investments:
       index:
+        headings_filter_all: Всі розділи
         filters:
           valuation_open: Відкрити
           valuating: В процесі оцінювання
           valuation_finished: Оцінювання завершено
+        assigned_to: "Доручено %{valuator}"
+        title: Інвестиційні проекти
+        edit: Редагувати досьє
+        table_id: ID
+        table_title: Назва
