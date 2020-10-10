@@ -1,1 +1,5 @@
 en-GB:
+  settings:
+    comments_body_max_length: "Максимальна довжина коментаря"
+    comments_body_max_length_description: "Кількість знаків"
+    official_level_1_name: "Рівень 1 офіційної посади"
