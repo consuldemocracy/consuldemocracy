@@ -51,3 +51,18 @@ en-GB:
         valuation_finished: Оцінку завершено
         duration: Часовий діапазон
         responsibles: Відповідальні
+        assigned_admin: Призначений адміністратор
+        assigned_valuators: Призначені оцінювачі
+        preview: Попередній перегляд інвестиції
+      edit:
+        dossier: Досьє
+        price: "Варість (%{currency})"
+        price_first_year: "Вартість впродовж першого року (%{currency}) <small>(за бажанням, дані не є загальнодоступними)</small>"
+        feasibility: Доцільність
+        valuation_finished_alert: "Ви впервнені, що хочете позначити цей звіт як завершений? Якщо ви зробите це, його неможливо буде змінити."
+        not_feasible_alert: "Автору проекту буде негайно надіслане повідомлення про недоцільність його виконання."
+        save: Зберегти зміни
+      notice:
+        valuate: "Досьє оновлено"
+      valuation_comments: Коментарі до оцінки
+      not_in_valuating_phase: Інвестиції можна оцінювати тільки на етапі оцінки бюджету
