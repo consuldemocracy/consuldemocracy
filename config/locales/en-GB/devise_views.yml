@@ -45,6 +45,7 @@ en-GB:
           password_label: Пароль
           phone_number_label: Номер телефону
           responsible_name_label: Повне ім'я особи, відповідальної за колектив
+          responsible_name_note: Ця особа представлятиме спілку/колектив, від імені якого подаватимуться пропозиції
           submit: Зареєструватися
           title: Зареєструватися як організація або колектив
         success:
@@ -102,6 +103,7 @@ en-GB:
           password_confirmation_label: Підтвердити новий пароль
           password_label: Новий пароль
           update_submit: Оновити
+          waiting_for: "Очікується підтвердження:"
         new:
           cancel: Скасувати вхід
           email_label: Електронна адреса
