@@ -307,10 +307,18 @@ en-GB:
       question_answer_fields:
         remove_answer: Видалити відповідь
     poster:
+      index:
+        proposal_code: "Код пропозиції: %{code}"
+        support: Підтримати мою пропозицію
+        footer: "<strong>Перейдіть %{link} та підтримайте цю пропозицію.</strong> Чим більше, тим краще. Зробіть свій внесок. Дякуємо!"
+      new:
+        title: Афіша вашої пропозиції
       options:
         preview: Попередній перегляд
         download: Завантажити
     mailing:
+      index:
+        title: Попередній перегляд електронною поштою
       mailing_options:
         preview: Попередній перегляд
     mailer:
