@@ -46,6 +46,7 @@ en-GB:
       header:
         additional_info: Додаткова інформація
         description: Опис
+        more_info: Більше інформації та контексту
       proposals:
         empty_proposals: Пропозиції відсутні
         filters:
