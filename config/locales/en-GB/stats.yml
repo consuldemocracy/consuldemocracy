@@ -30,3 +30,10 @@ en-GB:
       participants_vote_phase: "Етап голосування учасників"
       participants_every_phase: "Загалом учасників"
       percent_total_participants: "% від учасників загалом"
+      participatory_disclaimer: "** Загальна кількість учасників означає тих, хто подав, підтримав або проголосував за інвестиційні пропозиції."
+    polls:
+      by_channel: "Учасники за каналами"
+      vote_by_channel: "Типи голосування за каналами"
+      web_percentage: "%{percentage} Сайт"
+      booth_percentage: "%{percentage} Кабінки"
+      letter_percentage: "%{percentage} Пошта"
