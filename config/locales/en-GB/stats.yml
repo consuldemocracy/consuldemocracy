@@ -1,1 +1,15 @@
 en-GB:
+  stats:
+    title: "Дані щодо участі"
+    advanced: "Розширена статистика"
+    total_participants: "Учасники"
+    by_gender: "Учасники за статтю"
+    by_age: "Учасники за віком"
+    by_geozone: "Учасники за районами"
+    men_percentage: "%{percentage} чоловіків"
+    women_percentage: "%{percentage} жінок"
+    age: "Вік"
+    age_more_than: "%{start} років і більше"
+    age_range: "%{start} - %{finish} років"
+    total: "Загалом"
+    geozone: "Район"
