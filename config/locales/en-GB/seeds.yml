@@ -44,3 +44,8 @@ en-GB:
       statuses:
         studying_project: Вивчення проекту
         bidding: Подання заявок
+        executing_project: Виконання проекту
+        executed: Виконано
+    polls:
+      expired_poll_without_stats: "Завершене опитування без статистики та результатів"
+      expired_poll_with_stats: "Завершене опитування зі статистикою та результатами"
