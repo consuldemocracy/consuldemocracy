@@ -62,3 +62,62 @@ en-GB:
         title: Змініть пароль
       new:
         email_label: Електронна адреса
+        send_submit: Надіслати інструкції
+        title: Забули пароль?
+    sessions:
+      new:
+        login_label: Електронна адреса або ім'я користувача
+        password_label: Пароль
+        remember_me: Запам'ятати мене
+        submit: Увійти
+        title: Увійти в обліковий запис
+    shared:
+      links:
+        login: Увійти
+        new_confirmation: Не отримали інструкції щодо активації вашого облікового запису?
+        new_password: Забули пароль?
+        new_unlock: Не отримали інструкції щодо розблокування?
+        signin_with_provider: Увійдіть з %{provider}
+        signup: Не маєте облікового запису? %{signup_link}
+        signup_link: Увійти
+    unlocks:
+      new:
+        email_label: Електронна адреса
+        submit: Повторно надіслати інструкції щодо розблокування
+        title: Повторно надіслані інструкції щодо розблокування
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Причина
+          info: Цю дію неможливо скасувати. Будь ласка, переконайтесь, що бажаєте її здійснити.
+          info_reason: Вкажіть причину (за бажанням)
+          submit: Видалити мій обліковий запис
+          title: Видалити обліковий запис
+        edit:
+          current_password_label: Поточний пароль
+          edit: Редагувати
+          email_label: Електронна адреса
+          leave_blank: Залиште поле порожнім, якщо не бажаєте корегувати його
+          need_current: Нам потрібен ваш поточний пароль, щоб підтвердити зміни
+          password_confirmation_label: Підтвердити новий пароль
+          password_label: Новий пароль
+          update_submit: Оновити
+        new:
+          cancel: Скасувати вхід
+          email_label: Електронна адреса
+          organization_signup: Ви представляєте організацію або колектив? %{signup_link}
+          organization_signup_link: Зареєструйтесь тут
+          password_confirmation_label: Підтвердити пароль
+          password_label: Пароль
+          redeemable_code: Код підтвердження, надісланий на електронну адресу (за бажанням)
+          submit: Зареєструватися
+          terms: Реєструючись ви приймаєте %{terms}
+          terms_link: правила та умови користування
+          terms_title: Реєструючись ви приймаєте правила та умови користування
+          title: Зареєструватися
+          username_is_available: Доступне ім'я користувача
+          username_is_not_available: Ім'я користувача вже використовується
+          username_label: Ім'я користувача
+          username_note: Ім'я, яке з'являтиметься поруч із вашими публікаціями
+        success:
+          back_to_index: Все зрозуміло; повернутися на головну сторінку
