@@ -59,7 +59,22 @@ en-GB:
         empty_valuators: "Оцінювачі відсутні"
       destroy:
         success_notice: Бюджет успішно видалений
+        unable_notice: Ви не можете видалити бюджет, який має пов'язані інвестиції
+        unable_notice_polls: Ви не можете видалити бюджет, який має пов'язане опитування
+      new:
+        title: Новий партисипативний бюджет
     budget_groups:
+      name: "Назва"
+      no_groups: "Групи відсутні."
+      amount:
+        one: "Є 1 група"
+        other: "Є %{count} груп"
+      create:
+        notice: "Групу створено!"
+      update:
+        notice: "Групу оновлено"
+      destroy:
+        success_notice: "Групу видалено"
       form:
         create: "Створити нову групу"
         edit: "Редагувати групу"
@@ -68,6 +83,9 @@ en-GB:
         back: "Повернутися до бюджетів"
     budget_headings:
       no_headings: "Заголовки відсутні."
+      amount:
+        one: "Є 1 заголовок"
+        other: "Є %{count} заголовків"
       form:
         create: "Створити новий заголовок"
         edit: "Редагувати заголовок"
