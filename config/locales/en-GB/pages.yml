@@ -75,4 +75,45 @@ en-GB:
               key_column: 5
               page_column: Законодавчі процеси
         browser_table:
-          browser_header: Браузер
+          browser_header: Веб-переглядач
+          key_header: Комбінація клавіш
+          rows:
+            - 
+              browser_column: Explorer
+            - 
+              browser_column: Firefox
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+      textsize:
+        title: Розмір тексту
+        browser_settings_table:
+          browser_header: Веб-переглядач
+          action_header: Дія, яку потрібно виконати
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Переглянути > Розмір тексту
+            - 
+              browser_column: Firefox
+              action_column: Переглянути > Розмір
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+              action_column: Переглянути > Масштаб
+        browser_shortcuts_table:
+          rows:
+            - 
+              description_column: Збільшує розмір тексту
+            - 
+              shortcut_column: CTRL і - (CMD і - на MAC)
+              description_column: Зменшує розмір тексту
+    verify:
+      submit: Підтвердити мій обліковий запис
+      title: Підтвердіть свій обліковий запис
