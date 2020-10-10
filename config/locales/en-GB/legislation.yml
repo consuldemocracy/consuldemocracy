@@ -74,21 +74,57 @@ en-GB:
         debate_dates: Обговорення
         draft_publication_date: Проект публікації
         allegations_dates: Коментарі
+        milestones_date: Наступне
+        proposals_dates: Пропозиції
     questions:
+      comments:
+        comment_button: Опублікувати відповідь
+        comments_title: Відкрити відповіді
+        comments_closed: Закритий етап
+        form:
+          leave_comment: Залишити відповідь
       question:
         comments:
           zero: Коментарі відсутні
+          one: "%{count} коментар"
+          other: "%{count} коментарів"
+        debate: Обговорення
       show:
+        answer_question: Надіслати відповідь
         next_question: Наступне запитання
         first_question: Перше запитання
         share: Поділитися
     shared:
       share: Поділитися
+    proposals:
+      form:
+        tags_label: "Категорії"
     summary:
+      title: "Підсумок"
+      votes:
+        zero: "%{count} голосів"
+        one: "%{count} голос"
+        other: "%{count} голосів"
+      debate_phase: "Етап обговорення"
+      proposals_phase: "Етап пропозицій"
+      allegations_phase: "Етап коментування"
+      debates:
+        zero: "Обговорень немає"
+        one: "%{count} обговорення"
+        other: "%{count} обговорень"
       proposals:
         zero: "Пропозиції відсутні"
+        one: "%{count} пропозиція"
+        other: "%{count} пропозицій"
       comments:
         zero: "Коментарі відсутні"
+        one: "%{count} коментар"
+        other: "%{count} коментарів"
+      download: "Завантажити підсумок"
       top_comments:
         zero: "Коментарі відсутні"
+        one: "%{count} коментар"
+        other: "Найкращі коментарі"
+      most_voted_comments: "Коментарі, які отрмали найбільшу кількість голосів"
       no_allegation: "Коментарі відсутні"
+      process_empty: "Цей процес не мав етапів участі"
