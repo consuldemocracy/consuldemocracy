@@ -1,1 +1,21 @@
 en-GB:
+  valuation:
+    header:
+      title: Оцінка
+    menu:
+      title: Оцінка
+      budgets: Партисипативні бюджети
+    budgets:
+      index:
+        title: Партисипативний бюджет
+        filters:
+          current: Відкрити
+        table_actions: Дії
+        evaluate: Оцінити
+        no_budgets: "Бюджети відсутні"
+    budget_investments:
+      index:
+        filters:
+          valuation_open: Відкрити
+          valuating: В процесі оцінювання
+          valuation_finished: Оцінювання завершено
