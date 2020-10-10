@@ -410,6 +410,9 @@ Style/PercentLiteralDelimiters:
 Style/Proc:
   Enabled: true
 
+Style/RedundantFileExtensionInRequire:
+  Enabled: true
+
 Style/RedundantFreeze:
   Enabled: true
 
