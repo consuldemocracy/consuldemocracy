@@ -4,3 +4,44 @@ en-GB:
       menu:
         reset_password_email: Відновити пароль електронною поштою
         reset_password_manually: Відновити пароль власноруч
+      alert:
+        unverified_user: Жоден підтверджений користувач ще не ввійшов
+      show:
+        title: Обліковий запис користувача
+      edit:
+        title: "Редагувати обліковий запис користувача: Відновити пароль"
+        back: Назад
+        password:
+          password: Пароль
+          send_email: Надіслати лист для відновлення паролю
+          reset_email_send: Лист надіслано.
+          reseted: Пароль відновлено
+          random: Згенерувати випадковий пароль
+          save: Зберегти пароль
+          print: Роздрукувати пароль
+          print_help: Ви змоежете роздрукувати пароль, коли він буде збережений.
+    account_info:
+      change_user: Змінити користувача
+      document_number_label: "Номер документа:"
+      document_type_label: "Тип документа:"
+      email_label: "Електронна адреса:"
+      identified_label: "Визначено як:"
+      username_label: "Ім'я користувача:"
+    check: Перевірити документ
+    dashboard:
+      index:
+        title: Управління
+        info: Тут ви можете управляти користувачами за допомогою дій у меню зліва.
+    document_verifications:
+      already_verified: Обліковий запис цього користувача вже підтверджено.
+      link: CONSUL
+      not_in_census: Цей документ не зареєстровано.
+      please_check_account_data: Будь ласка, переконайтесь, що дані облікового запису правильні.
+      title: Управління користувачами
+      under_age: "Ваш обліковий запис не можу бути підтверджений, оскільки ви не досягли достатнього віку."
+      verify: Підтвердити
+    email_label: Електронна адреса
+    date_of_birth: Дата народження
+    email_verifications:
+      already_verified: Обліковий запис цього користувача вже підтверджено.
+      choose_options: "Будь ласка, оберуть одну з цих опцій:"
