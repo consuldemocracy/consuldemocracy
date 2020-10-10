@@ -36,3 +36,43 @@ en-GB:
       processes:
         title: "Процеси"
         link: "процеси"
+      faq:
+        title: "Технічні труднощі?"
+        description: "Ознайомтеся з поширеними запитаннями та вирішіть ваше питання."
+        button: "Переглянути поширені запитання"
+        page:
+          title: "Поширені запитання"
+      other:
+        title: "Інша цікава інформація"
+    privacy:
+      title: Політика конфіденційності
+      subtitle: "Інформація про конфіденційність"
+    accessibility:
+      title: Доступність
+      keyboard_shortcuts:
+        title: Гарячі клавіші
+        navigation_table:
+          caption: Гарячі клавіші для меню навігації
+          key_header: Клавіша
+          page_header: Сторінка
+          rows:
+            - 
+              key_column: 0
+              page_column: Повернутися
+            - 
+              key_column: 1
+              page_column: Обговорення
+            - 
+              key_column: 2
+              page_column: Пропозиції
+            - 
+              key_column: 3
+              page_column: Голоси
+            - 
+              key_column: 4
+              page_column: Партисипативні бюджети
+            - 
+              key_column: 5
+              page_column: Законодавчі процеси
+        browser_table:
+          browser_header: Браузер
