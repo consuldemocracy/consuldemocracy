@@ -19,23 +19,91 @@ en-GB:
       - Лип.
       - Серп.
       - Вер.
-      - Oct
-      - Nov
-      - Dec
+      - Жовт.
+      - Лист.
+      - Груд.
+    day_names:
+      - Неділя
+      - Понеділок
+      - Вівторок
+      - Середа
+      - Четвер
+      - П'ятниця
+      - Субота
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Січень
+      - Лютий
+      - Березень
+      - Квітень
+      - Травень
+      - Червень
+      - Липень
+      - Серпень
+      - Вересень
+      - Жовтень
+      - Листопад
+      - Грудень
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: близько 1 години
+        other: близько %{count} годин
+      about_x_months:
+        one: близько 1 місяця
+        other: близько %{count} місяців
+      about_x_years:
+        one: близько 1 року
+        other: близько %{count} років
+      almost_x_years:
+        one: майже 1 рік
+        other: майже %{count} років
+      half_a_minute: півхвилини
+      less_than_x_minutes:
+        one: менше хвилини
+        other: менше %{count} хвилин
+      less_than_x_seconds:
+        one: менше 1 секунди
+        other: менше %{count} секунд
+      over_x_years:
+        one: понад 1 рік
+        other: понад %{count} років
+      x_days:
+        one: 1 день
+        other: "%{count} днів"
+      x_minutes:
+        one: 1 хвилина
+        other: "%{count} хвилин"
+      x_months:
+        one: 1 місяць
+        other: "%{count} місяців"
+      x_years:
+        one: 1 рік
+        other: "%{count} років"
+      x_seconds:
+        one: 1 секунда
+        other: "%{count} секунд"
+    prompts:
+      day: День
+      hour: Година
+      minute: Хвилина
+      month: Місяць
+      second: Секунди
+      year: Рік
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: повинно бути прийнято
+      blank: не має бути порожнім
+      present: має бути порожнім
+      confirmation: не співпадає з %{attribute}
+      empty: не може бути порожнім
+      equal_to: має становити %{count}
+      even: має дорівнювати
   number:
     human:
       format:
