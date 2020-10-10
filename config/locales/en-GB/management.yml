@@ -1,1 +1,6 @@
 en-GB:
+  management:
+    account:
+      menu:
+        reset_password_email: Відновити пароль електронною поштою
+        reset_password_manually: Відновити пароль власноруч
