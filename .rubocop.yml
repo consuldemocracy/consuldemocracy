@@ -374,6 +374,9 @@ Style/AccessorGrouping:
 Style/AndOr:
   Enabled: true
 
+Style/ArrayCoercion:
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: true
 
