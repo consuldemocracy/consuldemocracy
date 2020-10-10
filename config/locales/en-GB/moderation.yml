@@ -75,3 +75,35 @@ en-GB:
           with_ignored_flag: Позначити як переглянуте
         headers:
           budget_investment: Бюджетна інвестиція
+        hide_budget_investments: Приховати бюджетні інвестиції
+        ignore_flags: Позначити як переглянуте
+        order: Сортувати за
+        orders:
+          created_at: Найновіші
+          flags: З найбільшою кількістю відміток
+        title: Бюджетні інвестиції
+    proposal_notifications:
+      index:
+        block_authors: Заблокувати авторів
+        confirm: Ви впевнені?
+        filter: Фільтр
+        filters:
+          all: Усі
+          pending_review: Очікують на розгляд
+          ignored: Позначити як переглянуте
+        headers:
+          proposal_notification: Сповіщення щодо пропозицій
+        hide_proposal_notifications: Приховати пропозиції
+        ignore_flags: Позначити як переглянуте
+        order: Сортувати за
+        orders:
+          created_at: Найновіші
+        title: Сповіщення щодо пропозицій
+    users:
+      index:
+        hidden: Заблоковані
+        hide: Заблокувати
+        search: Пошук
+        search_placeholder: email або ім'я користувача
+        title: Заблокувати користувачів
+      notice_hide: Користувача заблоковано. Усі обговорення та коментарі цього користувача приховано.
