@@ -28,15 +28,37 @@ en-GB:
         type: Тип
     budgets:
       index:
+        new_link: Створити новий бюджет
         filter: Фільтр
         filters:
           open: Відкрити
+          finished: Завершено
+        budget_investments: Управляти проектами
+        table_name: Назва
+        table_phase: Етап
+        table_investments: Інвестиції
+        table_edit_budget: Редагувати
+        table_admin_ballots: Бюлетені
+        no_budgets: "Бюджети відсутні."
       edit:
+        delete: Видалити бюджет
+        phase: Етап
+        dates: Дати
         actions: Дії
+        edit_phase: Редагувати етап
+        blank_dates: Дати порожні
+        administrators:
+          zero: "Обрати адміністраторів"
+          one: "Вибрано 1 адміністратора"
+          other: "Вибрано %{count} адміністраторів"
         valuators:
           zero: "Обрати оцінювачів"
+          one: "Вибрано 1 оцінювача"
+          other: "Вибрано %{count} оцінювачів"
         empty_administrators: "Адміністратори відсутні"
         empty_valuators: "Оцінювачі відсутні"
+      destroy:
+        success_notice: Бюджет успішно видалений
     budget_groups:
       form:
         create: "Створити нову групу"
