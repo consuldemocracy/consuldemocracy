@@ -1,1 +1,37 @@
 en-GB:
+  community:
+    sidebar:
+      title: Спільнота
+      button_to_access: Отримати доступ до спільноти
+    show:
+      title:
+        proposal: Пропозиція спільноти
+      sidebar:
+        participate: Взяти участь
+        new_topic: Створити тему
+      topic:
+        edit: Редагувати тему
+        destroy: Видалити тему
+        comments:
+          zero: Коментарі відсутні
+          one: 1 коментар
+          other: "%{count} коментарів"
+      author: Автор
+      back: Повернутися до %{community} %{proposal}
+    topic:
+      create: Створити тему
+      edit: Редагувати тему
+      form:
+        new:
+          submit_button: Створити тему
+        edit:
+          submit_button: Редагувати тему
+        create:
+          submit_button: Створити тему
+        update:
+          submit_button: Оновити тему
+      show:
+        tab:
+          comments_tab: Коментарі
+      sidebar:
+        recommendations_title: Рекомендації щодо створення тем
