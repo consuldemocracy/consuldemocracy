@@ -1,1 +1,33 @@
 en-GB:
+  mailers:
+    title: "Відкритий уряд"
+    no_reply: "Це повідомлення надіслане з електронної адреси, яка не приймає відповідей."
+    comment:
+      hi: Привіт
+      new_comment_by: Є новий коментар від <strong>%{commenter}</strong>
+      subject: Хтось прокоментував %{commentable}
+      title: Новий коментар
+    config:
+      manage_email_subscriptions: Щоб не отримувати ці листи, змініть налаштування
+    email_verification:
+      click_here_to_verify: це посилання
+      subject: Підтвердити електронну пошту
+      thanks: Дякуємо.
+      title: Підтвердіть свій обліковий запис, перейшовши за посиланням
+    reply:
+      hi: Привіт
+      new_reply_by: Є нова відповідь від <strong>%{commenter}</strong> на ваш коментар щодо
+      subject: Хтось відповів на ваш коментар
+      title: Нова відповідь на ваш коментар
+    proposal_notification_digest:
+      share: Поділитися пропозицією
+      comment: Прокоментувати пропозицію
+      unsubscribe_account: Мій обліковий запис
+    direct_message_for_receiver:
+      reply: Відповісти %{sender}
+      unsubscribe_account: Мій обліковий запис
+    direct_message_for_sender:
+      subject: "Ви надіслали нове приватне повідомлення"
+      title: "Ви надіслали нове приватне повідомлення <strong>%{receiver}</strong> наступного змісту:"
+    user_invite:
+      ignore: "Якщо ви не отримали запрошення, можете проігнорувати цей лист."
