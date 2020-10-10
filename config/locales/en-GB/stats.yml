@@ -19,6 +19,7 @@ en-GB:
     budgets:
       link: "Статистика"
       page_title: "%{budget} - Статистика участі"
+      total_investments: "Усі інвестиційні проекти"
       total_selected_investments: "Проєкти на етапі остаточного голосування"
       total_unfeasible_investments: "Недоцільні проєкти"
       by_phase: "Учасники за фазами"
