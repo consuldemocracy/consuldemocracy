@@ -3,22 +3,22 @@ en-GB:
     abbr_day_names:
       - Sun
       - Mon
-      - Tue
-      - Wed
-      - Thu
-      - Fri
-      - Sat
+      - Вт
+      - Ср
+      - Чт
+      - Пт
+      - Сб
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
+      - Січ.
+      - Лют.
+      - Бер.
+      - Квіт.
+      - Трав.
+      - Черв.
+      - Лип.
+      - Серп.
+      - Вер.
       - Oct
       - Nov
       - Dec
