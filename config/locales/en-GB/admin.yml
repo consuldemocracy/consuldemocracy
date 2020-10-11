@@ -629,20 +629,57 @@ en-GB:
       poll_booth_assignments: Призначення кабінок
       poll_shifts: Керувати змінами
       organizations: Організації
+      settings: Глобальні налаштування
+      stats: Статистика
+      signature_sheets: Аркуші підписів
       site_customization:
+        documents: Особисті документи
+        homepage: Домашня сторінка
+        pages: Особисті сторінки
+        images: Особисті зображення
+        content_blocks: Особисті блоки контенту
+        information_texts: Особисті інформаційні тексти
         information_texts_menu:
+          basic: "Базові налаштування"
+          debates: "Обговорення"
+          community: "Спільнота"
+          proposals: "Пропозиції"
+          polls: "Опитування"
+          layouts: "Макети"
           mailers: "Електронні адреси"
+          management: "Управління"
+          welcome: "Ласкаво просимо"
+        buttons:
+          save: "Зберегти"
+          content_block:
+            update: "Оновити блок"
+      title_moderated_content: Модерований контент
+      title_profiles: Профілі
+      title_settings: Налаштування
+      title_site_customization: Зміст сайту
+      title_booths: Кабінки для голосування
+      legislation: Спільне законодавство
       users: Користувачі
+      dashboard: Інформаційна панель пропозицій
+      administrator_tasks: Запитувані ресурси
+      dashboard_actions: Ресурси та дії
+      debates: "Обговорення"
       comments: "Коментарі"
     administrators:
       index:
+        title: Адміністратори
+        name: Ім'я
         email: Електронна адреса
+        description: Опис
+        id: ID адміністратора
+        no_administrators: Адміністратори відсутні.
       administrator:
         add: Додати
         delete: Видалити
         restricted_removal: "Вибачте, ви не можете видалити себе з переліку адміністраторів"
       form:
         edit_title: "Редагувати адміністратора"
+        updated: "Адміністатор оновлений"
     moderators:
       index:
         title: Модератори
@@ -651,9 +688,15 @@ en-GB:
       moderator:
         add: Додати
         delete: Видалити
+      search:
+        title: "Модератори відсутні"
     segment_recipient:
       all_users: Усі користувачі
       administrators: Адміністратори
+      all_proposal_authors: Автори пропозицій (в тому числі заархівовані та ті, що вибули)
+      proposal_authors: Автори пропозицій
+      investment_authors: Автори інвестицій у поточному бюджеті
+      feasible_and_undecided_investment_authors: "Автори деяких інвестицій у поточному бюджеті не відповідають: [valuation finished unfesasible]"
     newsletters:
       index:
         segment_recipient: Отримувачі
