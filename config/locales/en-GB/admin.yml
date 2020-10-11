@@ -334,17 +334,40 @@ en-GB:
         title: Приховані коментарі
         no_hidden_comments: Приховані коментарі відсутні.
     dashboard:
+      index:
+        back: Повернутися до %{org}
+        title: Адміністрування
+        description: Ласкаво просимо до %{org} панелі адміністратора.
       actions:
         index:
+          description: "Коли користувачі подають пропозиції, вони отримують доступ до інформаційної панелі своєї пропозиції, де ви можете пропонувати ресурси та надавати рекомендації для підтримки їхньої ідеї."
+          create: Створити ресурс або дію
           edit: Редагувати
           delete: Видалити
           active: 'Так'
           inactive: 'Ні'
+          title: Ресурси та дії
           action_type: Тип
+          required_supports: Необхідна підтримка
+          day_offset: Необхідна кількість днів
+          action_active: Активні
+          order: Порядок
+          published_proposal: Опублікувана пропозиція
           default:
             email: Електронна адреса
+            polls: Опитування
+        new:
+          back: Назад до списку
+        create:
+          notice: Дію створено
+        edit:
+          editing: Редагувати дію для інформаційної панелі пропозицій
+          back: Назад до списку
+        delete:
+          success: Дію видалено
         form:
           submit_button: Зберегти
+          help_text: Введіть 0, щоб цю оцінку не було враховано
       administrator_tasks:
         index:
           source: Джерело
