@@ -169,6 +169,9 @@ Lint/AmbiguousRegexpLiteral:
 Lint/DuplicateMethods:
   Enabled: true
 
+Lint/EmptyFile:
+  Enabled: true
+
 Lint/LiteralAsCondition:
   Enabled: true
 
