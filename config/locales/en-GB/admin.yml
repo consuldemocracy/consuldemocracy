@@ -468,6 +468,68 @@ en-GB:
           summary_placeholder: Короткий виклад опису
           description_placeholder: Додати опис процесу
           additional_info_placeholder: Додати додаткову інформацію, яку ви вважаєте корисною
+          homepage_description: Тут ви можете пояснити зміст процесу
+        index:
+          create: Новий процес
+          delete: Видалити
+          title: Спільне законодавство
+          filters:
+            active: Активні
+            all: Усі
+        new:
+          back: Назад
+          title: Створити новий спільний законодавчий процес
+          submit_button: Створити процес
+        proposals:
+          select_order: Сортувати за
+          orders:
+            id: Id
+            title: Назва
+            supports: Загальна підтримка
+        process:
+          title: Процес
+          comments: Коментарі
+          status: Статус
+          start_date: Дата початку
+          end_date: Дата закінчення
+          status_open: Відкриті
+          status_closed: Закриті
+          status_planned: Заплановані
+        subnav:
+          info: Інформація
+          homepage: Домашня сторінка
+          draft_versions: Розробка
+          questions: Обговорення
+          proposals: Пропозиції
+      proposals:
+        index:
+          title: Назва
+          back: Назад
+          id: Id
+          supports: Загальна підтримка
+        form:
+          custom_categories: Категорії
+          custom_categories_description: Категорії, які можуть обирати користувачі, подаючи пропозицію. Макс. 160 символів.
+          custom_categories_placeholder: Введіть теги, які хочете використовувати, розділивши їх комами (,) і поставивши лапки ("")
+      draft_versions:
+        create:
+          notice: 'Чернетку створено. <a href="%{link}">Click to visit</a>'
+          error: Не вдалося створити чернетку
+        update:
+          notice: 'Чернетку оновлено. <a href="%{link}">Click to visit</a>'
+          error: Не вдалося оновити чернетку
+        destroy:
+          notice: Чернетку видалено
+        edit:
+          back: Назад
+          submit_button: Зберегти зміни
+          warning: Ви відредагувати текст, не забудьте натистути "Зберегти" для остаточного збереження.
+          markdown_changes_message: "Ви відредагували текст, не зберігши його. Ви дійсно хочете залишити сторінку?"
+        form:
+          title: 'Редагувати <span class="strong">%{draft_version_title}</span> з процесу <span class="strong">%{process_title}</span>'
+          launch_text_editor: Запустити текстовий редактор
+          close_text_editor: Закрити текстовий редактор
+          use_markdown: Використовуйте Markdown, щоб відформатувати текст
       questions:
         edit:
           back: Назад
