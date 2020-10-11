@@ -443,7 +443,31 @@ en-GB:
           with_confirmed_hide: Підтверджені
           without_confirmed_hide: В очікуванні
         title: Приховані бюджетні інвестиції
+        no_hidden_budget_investments: Немає прихованих бюджетних інвестицій
     legislation:
+      processes:
+        create:
+          notice: 'Процес створено. <a href="%{link}">Click to visit</a>'
+          error: Неможливо створити процес
+        update:
+          notice: 'Процес оновлено. <a href="%{link}">Click to visit</a>'
+          error: Немоливо оновити процес
+        destroy:
+          notice: Процес видалено
+        edit:
+          back: Назад
+          submit_button: Зберегти зміни
+        form:
+          process: Процес
+          debate_phase: Етап обговорення
+          draft_phase: Етап розробки проєкту
+          allegations_phase: Етап коментування
+          proposals_phase: Етап пропозицій
+          use_markdown: Використовуйте Markdown, щоб відформатувати текст
+          title_placeholder: Назва процесу
+          summary_placeholder: Короткий виклад опису
+          description_placeholder: Додати опис процесу
+          additional_info_placeholder: Додати додаткову інформацію, яку ви вважаєте корисною
       questions:
         edit:
           back: Назад
