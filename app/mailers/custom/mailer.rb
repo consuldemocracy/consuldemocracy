@@ -20,9 +20,9 @@ class Mailer
     @email_to = official.email
 
     with_user(official) do
-      subject = "Neuer Vorschlag wurde erstellt."
+      subject = t("mailers.proposal_created.subject")
       mail(to: @email_to, subject: subject) if @proposal.present? && official.present?
     end
   end
-    
+
 end
