@@ -31,8 +31,9 @@ class Management::ProposalsController < Management::BaseController
   def show
     super
     @notifications = @proposal.notifications
-    related_contents_without_retired_proposals = @proposal.relationed_contents.select { |rel| rel[:retired_at] == nil }
-    @related_contents = Kaminari.paginate_array(related_contents_without_retired_proposals)
+    related_without_retired_proposals = @proposal.relationed_contents
+                                                  .select { |rel| rel[:retired_at] == nil }
+    @related_contents = Kaminari.paginate_array(related_without_retired_proposals)
                                 .page(params[:page]).per(5)
 
     redirect_to management_proposal_path(@proposal), status: :moved_permanently if request.path != management_proposal_path(@proposal)

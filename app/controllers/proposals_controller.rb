@@ -27,8 +27,9 @@ class ProposalsController < ApplicationController
     super
     @notifications = @proposal.notifications
     @notifications = @proposal.notifications.not_moderated
-    related_contents_without_retired_proposals = @proposal.relationed_contents.select { |rel| rel[:retired_at] == nil }
-    @related_contents = Kaminari.paginate_array(related_contents_without_retired_proposals)
+    related_without_retired_proposals = @proposal.relationed_contents
+                                                  .select { |rel| rel[:retired_at] == nil }
+    @related_contents = Kaminari.paginate_array(related_without_retired_proposals)
                                 .page(params[:page]).per(5)
 
     if request.path != proposal_path(@proposal)

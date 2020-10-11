@@ -25,8 +25,10 @@ class DebatesController < ApplicationController
 
   def show
     super
-    related_contents_without_retired_proposals = @debate.relationed_contents.select { |p| p[:retired_at] == nil }
-    @related_contents = Kaminari.paginate_array(related_contents_without_retired_proposals).page(params[:page]).per(5)
+    related_without_retired_proposals = @debate.relationed_contents
+                                                .select { |p| p[:retired_at] == nil }
+    @related_contents = Kaminari.paginate_array(related_without_retired_proposals)
+                                .page(params[:page]).per(5)
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
   end
 
