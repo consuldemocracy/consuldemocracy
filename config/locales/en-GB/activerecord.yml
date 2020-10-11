@@ -417,6 +417,7 @@ en-GB:
       newsletter:
         segment_recipient: Отримувачі
         subject: Предмет
+        from: "Електронна адреса, що відображатиметься як відправник інформаційного бюлетеня"
         body: Вміст листа
       admin_notification:
         segment_recipient: Отримувачі
