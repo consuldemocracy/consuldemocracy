@@ -482,6 +482,19 @@ en-GB:
           attributes:
             tag_list:
               less_than_or_equal_to: "кількість тегів має бути меншою або дорвінювати %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Ви досягли максимально дозволеної кількості особистих повідомлень на день"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Ширина зображення повинна становити принаймні %{required_min_width}пікселів"
+              min_image_height: "Висота зображення повинна становити принаймні %{required_min_height}пікселів"
+        map_location:
+          attributes:
+            map:
+              invalid: Місцезнаходження не можу бути відсутнім. Зробіть відмітку чи встановіть прапорець, якщо геолокалізація не потрібна
         poll/voter:
           attributes:
             user_id:
