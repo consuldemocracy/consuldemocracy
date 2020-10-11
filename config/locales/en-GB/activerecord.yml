@@ -499,3 +499,47 @@ en-GB:
           attributes:
             user_id:
               has_voted: "Користувач вже проголосував"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: на дату початку або після неї
+            debate_end_date:
+              invalid_date_range: на дату початку обговорення або після неї
+            draft_end_date:
+              invalid_date_range: на дату створення чернетки або після неї
+            allegations_end_date:
+              invalid_date_range: на дату початку коментування або після неї
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "кількість тегів має бути меншою або дорвінювати %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "кількість тегів має бути меншою або дорвінювати %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Ви маєте зачекати принаймні %{interval} днів між сповіщеннями"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Не перевірено Census"
+              already_voted: "За цю пропозицію вже віддано голос"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "мають бути літери, цифри, _ та -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Ширина має становити %{required_width}пікселів"
+              image_height: "Висота має становити %{required_height}пікселів"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Ви не можете коментувати оцінювання"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Уже перекладений ресурс
