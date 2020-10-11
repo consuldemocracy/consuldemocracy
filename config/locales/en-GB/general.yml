@@ -582,38 +582,70 @@ en-GB:
     index:
       filters:
         current: "Відкриті"
+        expired: "З завершеним терміном"
       title: "Опитування"
       participate_button: "Взяти участь у цьому опитуванні"
       participate_button_expired: "Опитування завершено"
       no_geozone_restricted: "Все місто"
-      geozone_restricted: "Райони"
+      geozone_restricted: "Дільниці"
       already_answer: "Ви вже взяли участь у цьому опитуванні"
       not_logged_in: "Зареєструйтеся або увійдіть у свій обліковий запис, щоб взяти участь"
       unverified: "Підтвердіть свій обліковий запис, щоб взяти участь"
+      cant_answer: "Це опитування недоступне у вашій геозоні"
       section_header:
+        icon_alt: Значок голосування
         title: Голосування
+        help: Допомога з голосуванням
+      section_footer:
+        title: Допомога з голосуванням
+        description: Опитування громадян - це механізм залучення, завдяки якому громадяни з правом голосу можуть приймати безпосередні рішення
       no_polls: "Відкриті голосування відсутні."
     show:
+      already_voted_in_booth: "Ви вже взяли участь у фізичній кабінці. Ви не можете брати участь знову."
+      already_voted_in_web: "Ви вже взяли участь в цьому опитуванні. Якщо ви проголосуєте знову, ваш голос буде перезаписаний."
       back: Повернутися до голосування
+      cant_answer_not_logged_in: "Для продовження %{signin} або %{signup}."
       comments_tab: Коментарі
+      cant_answer_verify: "Щоб дати відповідь, необхідно %{verify_link}."
       verify_link: "підтвердіть свій обліковий запис"
       cant_answer_expired: "Опитування завершено."
+      cant_answer_wrong_geozone: "Це питання недоступне у вашій геозоні."
       more_info_title: "Більше інформації"
       documents: Документи
       zoom_plus: Збільшити зображення
+      read_more: "Читати більше про %{answer}"
+      read_less: "Читати менше про %{answer}"
+      videos: "Зовнішнє відео"
       info_menu: "Інформація"
       stats_menu: "Статистика участі"
       results_menu: "Результати голосування"
       stats:
         total_votes: "Загальна кількість голосів"
+        votes: "ГОЛОСИ"
+        web: "WEB"
+        mail: "ЕЛЕКТРОННОЮ ПОШТОЮ"
+        booth: "ЧЕРЕЗ КАБІНКУ"
+        total: "ЗАГАЛОМ"
+        valid: "Дійсні"
+        white: "Порожні"
+        null_votes: "Недійсні"
       results:
         title: "Запитання"
+        most_voted_answer: "Запитання, яке отримало найбільше голосів: "
     poll_header:
       back_to_proposal: Повернутися до пропозиції
+  poll_questions:
+    show:
+      vote_answer: "Голосувати за %{answer}"
+      voted: "Ми проголосували за%{answer}"
   proposal_notifications:
     new:
       title: "Надіслати повідомлення"
       submit_button: "Надіслати повідомлення"
+      info_about_receivers: "Це повідомлення буде надіслане <strong>%{count} людям</strong> і його можна буде переглянути %{proposal_page}.<br> Повідомлення не надсилаються негайно, користувачі перодично отримують листи з усіма сповіщеннями щодо пропозицій."
+      proposal_page: "сторінка пропозицій"
+    show:
+      back: "Повернутися до мого контенту"
   shared:
     edit: "Редагувати"
     save: "Зберегти"
@@ -622,12 +654,19 @@ en-GB:
     "no": "Ні"
     search_results: "Результати пошуку"
     advanced_search:
+      author_type: "За категоріями авторів"
+      author_type_blank: "Вибрати категорію"
+      date: "За датою"
+      date_placeholder: "ДД/ММ/РРРР"
       date_range_blank: "Обрати дату"
       date_1: "Останні 24 години"
       date_2: "Останній тиждень"
       date_3: "Останній місяць"
       date_4: "Останній рік"
+      date_5: "Індивідуальні"
       from: "Від"
+      general: "З текстом"
+      general_placeholder: "Написати текст"
       search: "Фільтр"
       title: "Розширений пошук"
       to: "До"
@@ -636,7 +675,7 @@ en-GB:
       email_deleted: Електронну адресу видалено
     back: Повернутися
     check: Обрати
-    check_all: Все
+    check_all: Усі
     check_none: Жодного
     tags_cloud:
       districts: "Райони"
