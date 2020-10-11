@@ -1180,8 +1180,64 @@ en-GB:
         map:
           title: Налаштування мапи
           flash:
-            update: Конфігурацію мапи оновлено.
+            update: Налаштування мапи оновлено.
           form:
             submit: Оновити
         dashboard:
           title: Інформаційна панель пропозицій
+      remote_census_general_name: Загальна інформація
+      remote_census_request_name: Запит даних
+      remote_census_response_name: Надання даних
+      setting: Функція
+      setting_actions: Дії
+      setting_name: Налаштування
+      setting_status: Статус
+      setting_value: Важливість
+      no_description: "Опис відсутній"
+    shared:
+      true_value: "Так"
+      false_value: "Ні"
+      booths_search:
+        button: Пошук
+        placeholder: Шукати кабінку за назвою або розташуванням
+      poll_officers_search:
+        button: Пошук
+        placeholder: Шукати інспекторів опитувань
+      poll_questions_search:
+        button: Пошук
+        placeholder: Шукати запитання опитувань
+      proposal_search:
+        button: Пошук
+        placeholder: Шукати пропозиції за назвою, кодом, описом або запитанням
+      debate_search:
+        button: Пошук
+        placeholder: Шукати обговорення за назвою або описом
+      user_search:
+        button: Пошук
+        placeholder: Шукати користувача за ім'ям або електронною адресою
+      search_results: "Результати пошуку"
+      no_search_results: "Результатів не знайдено."
+      actions: Дії
+      title: Назва
+      description: Опис
+      image: Зображення
+      show_image: Показати зображення
+      view: Переглянути
+      proposal: Пропозиція
+      author: Автор
+      content: Вміст
+      created_at: Створено
+      delete: Видалити
+      color_help: Шістнадцятковий формат
+      show_results_and_stats: "Показати результати і статистику"
+    geozones:
+      index:
+        title: Геозона
+        create: Створити геозону
+        edit: Редагувати
+        delete: Видалити
+      geozone:
+        name: Назва
+        external_code: Зовнішній код
+        census_code: Код перепису
+        coordinates: Координати
