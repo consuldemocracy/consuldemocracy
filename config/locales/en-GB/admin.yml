@@ -764,6 +764,48 @@ en-GB:
       show:
         section_title: Попередній перегляд сповіщення
         send: Надіслати сповіщення
+        will_get_notified: (%{n} користувачів отримають сповіщення)
+        got_notified: (%{n} користувачів отримали сповіщення)
+        sent_at: Надіслано о
+        title: Назва
+        body: Текст
+        link: Посилання
+        segment_recipient: Отримувачі
+        preview_guide: "Ось як виглядатиме сповіщення для отримувачів:"
+        sent_guide: "Ось як виглядатиме сповіщення для отримувачів:"
+        send_alert: Ви впевнені, що хочете надіслати це сповіщення %{n} користувачам?
+    system_emails:
+      preview_pending:
+        action: Очікування попереднього перегляду
+        preview_of: Попередній перегляд %{name}
+        pending_to_be_sent: Цей вміст очікує надсилання
+        moderate_pending: Модерувати надіслане сповіщення
+        send_pending_notification: Очікуване сповіщення надіслано
+      proposal_notification_digest:
+        preview_detail: "Користувачі отримуватимуть лише сповіщення щодо пропозицій, за якими вони слідкують"
+      budget_investment_created:
+        title: "Створена бюджетна пропозиція"
+        description: "Надсилається, коли користувач створює бюджетну інвестицію."
+      budget_investment_selected:
+        title: "Відібрана бюджетна пропозиція"
+        description: "Надсилається автору, коли його бюджетну інвестицію відбирають."
+      budget_investment_unfeasible:
+        title: "Недоцільна бюджетна інвестиція"
+        description: "Надсилається автору, коли його бюджетну інвестицію позначають як недоцільну."
+      budget_investment_unselected:
+        title: "Невідібрана бюджетна пропозиція"
+        description: "Надсилається автору, коли його бюджетну інвестицію не відбирають для голосування."
+      comment:
+        title: "Коментар"
+        description: "Надсилається автору, коли отримано коментар."
+      reply:
+        title: "Відповідь"
+        description: "Надсилається автору коментаря, коли з'являється відповідь."
+      direct_message_for_receiver:
+        title: "Отримувач приватного повідомлення"
+        description: "Надіслати отримувачу приватного повідомлення."
+      direct_message_for_sender:
+        title: "Відправник приватного повідомлення"
     valuators:
       valuator:
         delete: Видалити
