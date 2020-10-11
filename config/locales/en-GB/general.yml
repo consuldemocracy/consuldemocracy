@@ -421,36 +421,62 @@ en-GB:
         other: "%{count} коментарів"
       comments_tab: Коментарі
       dashboard_proposal_link: Інформаційна панель
+      flag: Цю пропозицію позначено як недоречну кількома користувачами.
       notifications_tab: Сповіщення
+      milestones_tab: Віхи
+      retired_warning: "Автор вважає, що ця пропозиція більше не повинна отримувати підтримку."
+      retired_warning_link_to_explanation: Прочитайте появнення перед тим як віддавати голос.
+      retired: Пропозиція вилучена автором
       share: Поділитися
+      no_notifications: "Щодо даної пропозиції немає сповіщень."
+      embed_video_title: "Відео щодо %{proposal}"
+      title_video_url: "Зовнішнє відео"
       author: Автор
+      draft: Пропозиція на стадії чернетки. Вона не з'являється в переліку пропозицій і не збирає підтримку.
     update:
       form:
         submit_button: Зберегти зміни
   dashboard:
     menu:
       my_proposal: Редагувати мою пропозицію
+      progress: Прогрес
       resources: Ресурси
+      community: Спільнота
+      polls: Опитування
       mailing: Електронна адреса
       recommended_actions: Рекомендовані дії
       messages: Повідомлення користувачам
       related_content: Пов'язаний вміст
     form:
       request: Запит
+    create_request:
+      success: Запит надіслано. Найближчим часом ми зв'яжемося з вами, щоб повідомити про результати.
+      archived: Цю пропозицію заархівовано; для неї неможливо призначити ресурси.
     progress:
       title: Графік
       group_by_month: Щомісяця
       group_by_week: Щотижня
       group_by_date: Щодня
+      progress: Досягнутий прогрес
+      supports: Підтримання
+      success: Оптимальний прогрес
+      new_action: Новий
     index:
+      title: Версія
       edit_proposal_link: Редагувати пропозицію
       publish: Опублікувати пропозицію
+      retire: Вилучити пропозицію
     new_request:
       links: Посилання
     resources:
       available_resources: Доступні ресурси
     resource:
+      required_days: "%{days} днів потрібно"
+      required_supports: "%{supports} підтримань потрібно"
+      and: і
       view_resource: Переглянути ресурс
+      resource_requested: Ресурси, на які вже був запит
+      request_resource: Здійснити запит ресурсів
     recommended_actions:
       title: Рекомендовані дії
       goto_proposed_actions: Перейти до рекомендованих дій
