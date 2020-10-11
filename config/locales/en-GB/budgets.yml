@@ -85,3 +85,61 @@ en-GB:
           button: Пошук
           placeholder: Шукати інвестиційні проєкти...
           title: Пошук
+        search_results:
+          one: " що містить термін<strong>'%{search_term}'</strong>"
+          other: " що містять термін<strong>'%{search_term}'</strong>"
+        sidebar:
+          my_ballot: Мій бюлетень
+          voted_info:
+            knapsack:
+              one: "<strong> Ви проголосували за одну пропозицію вартістю в %{amount_spent}</strong>"
+              other: "<strong> Ви проголосували за %{count} пропозицій вартістю в %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Ви проголосували за одну пропозицію</strong>"
+              other: "<strong>Ви проголосували за %{count} пропозицій</strong>"
+          change_vote_info:
+            knapsack: "Ви можете %{link} у будь-який час до завершення цього етапу. Немає потреби витрачати всі наявні кошти."
+            approval: "Ви можете %{link} у будь-який час до завершення цього етапу."
+          change_vote_link: "змінити голос"
+          different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
+          change_ballot: "Якщо ви передумали, ви можете видалити свої голоси в %{check_ballot} і розпочати знову."
+          check_ballot_link: "перевірити і підтвердити моє голосування"
+          zero: Ви не проголосували за жоден інвестиційний проєкт у цій групі.
+          verified_only: "Для створення нової бюджетної інвестиції %{verify}."
+          create: "Створити бюджетну інвестицію"
+          not_logged_in: "Щоб створити нову бюджетну інвестицію, потрібно %{sign_in} або %{sign_up}."
+          by_feasibility: За доцільністю
+          feasible: Доцільні проєкти
+          unfeasible: Недоцільні проєкти
+        orders:
+          random: випадково
+          confidence_score: найвищий рейтинг
+          price: за вартістю
+      share:
+        message: "Я створив інвестиційний проект %{title} у %{handle}. Створіть теж інвестиційний проект!"
+      show:
+        author_deleted: Користувача видалено
+        price_explanation: Обгрунтування вартості
+        unfeasibility_explanation: Обгрунтування недоцільності
+        code: "Код інвестиційного проєкту:<strong>%{code}</strong>"
+        location: "Розташування: <strong>%{location}</strong>"
+        organization_name: "Запропоновано від імені: <strong>%{name}</strong>"
+        share: Поділитися
+        title: Інвестиційний проект
+        supports: Підтримка
+        votes: Голоси
+        price: Вартість
+        comments_tab: Коментарі
+        milestones_tab: Віхи
+        author: Автор
+        project_unfeasible: "Цей інвестиційний проєкт <strong> був позначений як недоцільний </strong> і не перейде до фази голосування."
+        project_selected: "Цей інвестиційний проєкт <strong> був відібраний </strong> для фази голосування."
+        project_winner: "Інвестиційний проєкт, який отримав перемогу"
+        project_not_selected: "Цей інвестиційний проєкт <strong> не був відібраний </strong> для фази голосування."
+        see_price_explanation: Переглянути обгрунтування вартості
+      wrong_price_format: Тільки цілі числа
+      investment:
+        add: Голосувати
+        already_added: Ви вже додали цей інвестиційний проєкт
+        already_supported: Ви вже підтримали цей інвестиційний проєкт. Поділіться ним!
+        support_title: Підтримати цей проєкт
