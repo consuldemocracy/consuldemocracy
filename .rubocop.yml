@@ -300,6 +300,9 @@ Rails/SkipsModelValidations:
 Rails/TimeZone:
   Enabled: true
 
+Rails/UniqBeforePluck:
+  Enabled: true
+
 Rails/UniqueValidationWithoutIndex:
   Enabled: true
   Severity: refactor
