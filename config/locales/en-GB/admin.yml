@@ -151,18 +151,33 @@ en-GB:
         back: "Повернутися до груп"
     budget_phases:
       edit:
+        summary_help_text: Цей текст інформуватиме коритувача щодо етапу. Щоб показувати його навіть за умови, що етап не є активним, встановіть прапорець нижче
+        description_help_text: Цей текст зв'являтиметься у заголовку, якщо етап є активним
+        enabled_help_text: Цей етап буде загальнодоступним на часовій шкалі етапів бюджету та активним для будь-яких інших цілей
         save_changes: Зберегти зміни
     budget_investments:
       index:
         heading_filter_all: Усі заголовки
         administrator_filter_all: Усі адміністратори
         valuator_filter_all: Усі оцінювачі
+        tags_filter_all: Усі теги
+        advanced_filters: Розширені фільтри
         placeholder: Пошук проектів
         filters:
           all: Усі
+          without_admin: Без призначеного адміністратора
+          without_valuator: Без призначеного оцінювача
           under_valuation: В процесі оцінювання
           valuation_finished: Оцінювання завершено
-          selected: Вибрані
+          feasible: Доцільно
+          selected: Вибрано
+          undecided: Не вирішено
+          unfeasible: Недоцільно
+          min_total_supports: Найменше підтримки
+          max_total_supports: Найбільше підтримки
+          winners: Переможці
+          one_filter: "Застосовані фільтри: <b><em>%{filter}</em></b>"
+          two_filters: "Застосовані фільтри: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Фільтр
         download_current_selection: "Завантажити поточний вибір"
@@ -172,9 +187,24 @@ en-GB:
         assigned_admin: Призначений адміністратор
         no_admin_assigned: Адміністратора не призначено
         no_valuators_assigned: Оцінювачів не призначено
+        feasibility:
+          feasible: "Доцільно"
+          unfeasible: "Недоцільно"
+          undecided: "Не вирішено"
+        selected: "Вибране"
+        select: "Обрати"
         list:
+          id: ID
+          title: Назва
+          supports: Підтримка
           admin: Адміністратор
           valuator: Оцінювач
+          geozone: Сфера діяльності
+          feasibility: Доцільність
+          selected: Вибрано
+          visible_to_valuators: Представити оцінювачам
+          author_username: Ім'я користувача автора
+          incompatible: Несумісно
           price: Ціна
           author: Автор
         see_results: "Див. результати"
