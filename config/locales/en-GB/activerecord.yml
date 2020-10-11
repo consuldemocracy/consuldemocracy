@@ -543,3 +543,10 @@ en-GB:
           attributes:
             locale:
               already_translated: Уже перекладений ресурс
+      messages:
+        translations_too_short: Необхідно зробити принаймні один переклад
+        record_invalid: "Помилка перевірки: %{errors}"
+        another_poll_active: Є інше активне опитування, яке охоплює цей проміжок часу
+        restrict_dependent_destroy:
+          has_one: "Неможливо видалити запис, оскільки існує залежний %{record}"
+          has_many: "Неможливо видалити запис, оскільки існує залежний %{record}"
