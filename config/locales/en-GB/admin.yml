@@ -14,13 +14,23 @@ en-GB:
       edit: Редагувати
       configure: Налаштувати
       delete: Видалити
+    officing_booth:
+      title: "Ви призначені в кабінку, розташовану в %{booth}. Якщо це не так, не продовжуйте і зателефонуйте в службу підтримки. Дякуємо."
     banners:
       index:
         title: Банери
         create: Створити банер
         edit: Редагувати банер
         delete: Видалити банер
+        filters:
+          all: Усі
+          with_active: Активні
+          with_inactive: Неактивні
         preview: Попередній перегляд
+      banner:
+        sections_label: Розділи, у яких він з'явиться
+        sections:
+          homepage: Домашня сторінка
       edit:
         editing: Редагувати банер
         form:
