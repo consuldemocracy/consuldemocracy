@@ -1,5 +1,6 @@
 tr:
   attributes:
+    geozone_id: "İşlem kapsamı"
     results_enabled: "Sonuçları göster"
     stats_enabled: "İstatistikleri göster"
     advanced_stats_enabled: "Gelişmiş istatistikleri göster"
@@ -137,6 +138,8 @@ tr:
         description_finished: "Bütçe tamamlandığı zaman belirtilen tanım"
         phase: "Aşama"
         currency_symbol: "Para Birimi"
+        voting_style: "Son oylama şekli"
+        voting_style_knapsack: "Sırt çantası"
       budget/investment:
         heading_id: "Başlık"
         title: "İsim"
