@@ -1103,3 +1103,85 @@ en-GB:
         edit_official: Редагувати інспектора
         make_official: Зробити інспектором
         title: "Офіційна посада: Користувацький пошук"
+        no_results: Офіційних посад не знайдено.
+    organizations:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          pending: В очікуванні
+          rejected: Відхилені
+          verified: Перевірені
+        name: Ім'я
+        email: Електронна адреса
+        phone_number: Телефон
+        responsible_name: Відповідальний
+        status: Статус
+        no_organizations: Організації відсутні.
+        reject: Відхилити
+        rejected: Відхилені
+        search: Пошук
+        search_placeholder: Ім'я, електронна адреса і номер телефону
+        title: Організації
+        verified: Перевірені
+        verify: Перевірити
+        pending: В очікуванні
+      search:
+        title: Шукати організації
+        no_results: Організацій не знайдено.
+    proposals:
+      index:
+        title: Пропозиції
+        id: ID
+        author: Автор
+        select: Обрати
+        selected: Вибране
+        milestones: Віхи
+        no_proposals: Пропозиції відсутні.
+      show:
+        create_question: Додати пропозицію в опитування для голосування
+      form:
+        update: Оновити пропозицію
+      update:
+        notice: Пропозицію оновлено
+    hidden_proposals:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані пропозиції
+        no_hidden_proposals: Приховані пропозиції відсутні.
+    hidden_proposal_notifications:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані сповіщення
+        no_hidden_proposals: Приховані сповіщення відсутні.
+    settings:
+      flash:
+        updated: Оновлене значення
+      index:
+        title: Налаштування
+        general: Налаштування
+        update_setting: Оновити
+        participation_processes: "Процеси участі"
+        images_and_documents: "Зображення та документи"
+        feature_flags: Функції
+        features:
+          enabled: "Функцію ввімкнено"
+          disabled: "Функцію вимкнено"
+          enable: "Увімкнути"
+          disable: "Вимкнути"
+        map:
+          title: Налаштування мапи
+          flash:
+            update: Конфігурацію мапи оновлено.
+          form:
+            submit: Оновити
+        dashboard:
+          title: Інформаційна панель пропозицій
