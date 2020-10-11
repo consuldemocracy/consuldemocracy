@@ -104,6 +104,41 @@ en-GB:
       empty: не може бути порожнім
       equal_to: має становити %{count}
       even: має дорівнювати
+      exclusion: зарезервовано
+      greater_than: має бути більше %{count}
+      greater_than_or_equal_to: має бути більше або дорівнювати %{count}
+      inclusion: не входить до списку
+      invalid: недійсний
+      less_than: має бути менше %{count}
+      less_than_or_equal_to: має бути менше або дорівнювати %{count}
+      model_invalid: "Помилка перевірки: %{errors}"
+      not_a_number: не є числом
+      not_an_integer: має бути цілим числом
+      odd: має бути непарним
+      required: має існувати
+      taken: вже взято
+      too_long:
+        one: занадто довгий (максимум - 1 символ)
+        other: занадто довгий (максимум %{count} символів)
+      too_short:
+        one: занадто короткий (мінімум - 1 символ)
+        other: занадто короткий (мінімум %{count} символів)
+      wrong_length:
+        one: неправильна довжина (має бути 1 символ)
+        other: неправильна довжина (має складати %{count} символів)
+      other_than: має бути іншим, ніж %{count}
+    template:
+      body: "Виникли проблеми з такими полями:"
+      header:
+        one: Помилка 1 не дає змоги зберегти цю %{model}
+        other: "%{count} помилок не дають змоги зберегти цю %{model}"
+  helpers:
+    select:
+      prompt: Будь даска, оберіть
+    submit:
+      create: Створити %{model}
+      submit: Зберегти %{model}
+      update: Оновити %{model}
   number:
     currency:
       format:
