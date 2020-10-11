@@ -1375,3 +1375,76 @@ en-GB:
       search:
         placeholder: Шукати користувача за електронною адресою, ім'ям або номером документа
         search: Пошук
+    verifications:
+      index:
+        phone_not_given: Телефона немає
+        sms_code_not_confirmed: Не підтверджено кодом з sms
+        title: Незавершені перевірки
+    site_customization:
+      content_blocks:
+        information: Інформація про блоки контенту
+        about: "Ви можете створити блоки контенту в форматі HTML, які можна вставити у різних місцях на вашому сайті."
+        html_format: "Блок контенту - це група посилань, яка повинна мати наступний формат:"
+        no_blocks: "Блоків контенту немає."
+        create:
+          notice: Блок контенту створено
+          error: Не вдалося створити блок контенту
+        update:
+          notice: Блок контенту оновлено
+          error: Не вдалося оновити блок контенту
+        destroy:
+          notice: Блок контенту видалено
+        edit:
+          title: Редагування блоку контенту
+        index:
+          create: Створити новий блок контенту
+          delete: Видалити блок
+          title: Блоки контенту
+        new:
+          title: Створити новий блок контенту
+        content_block:
+          body: Орган
+          name: Назва
+          names:
+            top_links: Найпопулярніші посилання
+            footer: Нижній колонтитул
+            subnavigation_left: Головна навігація ліворуч
+            subnavigation_right: Головна навігація праворуч
+      images:
+        index:
+          title: Особисті зображення
+          update: Оновити
+          delete: Видалити
+          image: Зображення
+        update:
+          notice: Зображення оновлено
+          error: Не вдалося оновити зображення
+        destroy:
+          notice: Зображення видалено
+          error: Не вдалося видалити зображення
+      pages:
+        create:
+          notice: Сторінку створено
+          error: Не вдалося створити сторінку
+        update:
+          notice: Сторінку оновлено
+          error: Не вдалося оновити сторінку
+        destroy:
+          notice: Сторінку видалено
+        edit:
+          title: Редагування %{page_title}
+        form:
+          options: Опції
+        index:
+          create: Створити нову сторінку
+          delete: Видалити сторінку
+          title: Особисті сторінки
+          see_page: Переглянути сторінку
+        new:
+          title: Створити нову особисту сторінку
+          slug_help: "Текст для ідентифікації цієї сторінки через URL-адресу, наприклад <code>https://consulproject.org/page-slug</code>"
+        page:
+          created_at: Створено
+          status: Статус
+          updated_at: Завантажено
+          title: Назва
