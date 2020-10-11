@@ -946,3 +946,33 @@ en-GB:
     polls:
       index:
         title: "Список опитувань"
+        no_polls: "Опитування відсутні."
+        create: "Створити опитування"
+        name: "Назва"
+        dates: "Дати"
+        start_date: "Дата початку"
+        closing_date: "Дата завершення"
+        geozone_restricted: "Обмежено районами"
+      new:
+        title: "Нове опитування"
+        submit_button: "Створити опитування"
+      edit:
+        title: "Редагувати опитування"
+        submit_button: "Оновити опитування"
+      show:
+        questions_tab: Запитання
+        booths_tab: Кабінки
+        officers_tab: Інспектори
+        recounts_tab: Перерахунок
+        results_tab: Результати
+        no_questions: "Для цього обговорення немає призначених запитань."
+        questions_title: "Перелік запитань"
+        table_title: "Назва"
+        edit_answers: Редагувати відповіді
+        see_proposal: "(Переглянути пропозицію)"
+      flash:
+        question_added: "До опитування додане запитання"
+        error_on_question_added: "Запитання не вдалося призначити для цього опитування"
+      destroy:
+        alert: "Ця дія видалить опитування і всі пов'язані запитання."
+        success_notice: "Опитування видалено"
