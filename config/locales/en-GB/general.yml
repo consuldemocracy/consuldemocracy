@@ -723,12 +723,19 @@ en-GB:
       categories: "Категорії"
     target_blank: " (посилання відкривається у новому вікні)"
     you_are_in: "Ви знаходитеся в"
+    unflag: Зняти позначку
+    unfollow_entity: "Не слідкувати за %{entity}"
+    outline:
+      searcher: Шукач
+    go_to_page: "Перейти до сторінки "
     share: Поділитися
     orbit:
       previous_slide: Попередній слайд
       next_slide: Наступний слайд
     documentation: Додаткова документація
     view_mode:
+      title: Режим перегляду
+      cards: Картки
       list: Перелік
     recommended_index:
       title: Рекомендації
@@ -738,15 +745,42 @@ en-GB:
       select_language_prompt: Обрати мову
       remove_language: Видалити мову
       add_language: Додати мову
+      languages_in_use:
+        zero: "Використовуються 0 мов"
+        one: "Використовується 1 мова"
+        other: "використовується %{count} мов"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   stats:
     index:
+      visits: Відвідування
+      debates: Обговорення
       proposals: Пропозиції
       comments: Коментарі
+      proposal_votes: Голоси за пропозиції
+      debate_votes: Голоси за обговорення
+      comment_votes: Голоси за коментарі
+      votes: Усі голоси
+      verified_users: Перевірені користувачі
+      unverified_users: Неперевірені користувачі
+  unauthorized:
+    default: Ви не маєте дозволу на відвідання цієї сторінки.
+    manage:
+      all: "Ви не маєте дозволу для виконання дії %{action} з %{subject}."
   users:
+    login_to_comment: "Щоб залишити коментар, необхідно %{signin} або %{signup}."
+    login_to_continue: "Щоб продовжити, необхідно %{signin} або %{signup}."
     signin: "реєстрація"
     signup: "вхід"
+    verify_account: "підтвердіть свій обліковий запис"
     direct_messages:
       new:
+        direct_messages_bloqued: "Цей користувач вирішив не отримувати особистих повідомлень"
         submit_button: Надіслати повідомлення
         title: Надіслати приватне повідомлення %{receiver}
         verified_only: Щоб надіслати приватне повідомлення, %{verify_account}
@@ -754,20 +788,43 @@ en-GB:
         receiver: Повідомлення надіслане %{receiver}
     show:
       deleted: Видалено
+      deleted_debate: Це обговорення видалено
       deleted_proposal: Пропозицію видалено
       deleted_budget_investment: Інвестиційний проект видалено
       proposals: Пропозиції
       proposals_status: Статус
+      debates: Обговорення
+      budget_investments: Бюджетні інвестиції
       comments: Коментарі
       actions: Дії
+      filters:
+        comments:
+          one: 1 коментар
+          other: "%{count} коментарів"
+        debates:
+          one: 1 обговорення
+          other: "%{count} обговорень"
+        proposals:
+          one: 1 пропозиція
+          other: "%{count} пропозицій"
+        budget_investments:
+          one: 1 інвестиція
+          other: "%{count} інвестицій"
+        follows:
+          one: 1 відслідковується
+          other: "%{count} відслідковуються"
+      no_activity: У користувача немає публісної активності
       no_private_messages: "Користувач не приймає приватні повідомлення."
+      private_activity: Цей користувач вирішив залишити список дій приватним.
       send_private_message: "Надіслати приватне повідомлення"
       delete_alert: "Ви впевнені, що хочете видалити свій інвестиційний проект? Цю дію неможливо скасувати"
     proposals:
+      retired: "Вилучена пропозиція"
       draft: Чернетка
       published: Опубліковано
       see: "Переглянути пропозицію"
       actions: Дії
+      retired_help_text: Для вилучених пропозицій немає інформаційної панелі
   votes:
     agree: Я погоджуюсь
     disagree: Я не погоджуюсь
