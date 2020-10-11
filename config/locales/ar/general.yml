@@ -119,13 +119,6 @@ ar:
       tags_placeholder: "ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',')"
     index:
       featured_debates: مميز
-      filter_topic:
-        zero: " حول موضوع '%{topic}'"
-        one: " حول موضوع '%{topic}'"
-        two: " حول موضوع '%{topic}'"
-        few: " حول موضوع '%{topic}'"
-        many: " حول موضوع '%{topic}'"
-        other: " حول موضوع '%{topic}'"
       orders:
         confidence_score: اعلى تقييم
         created_at: أحدث
@@ -267,7 +260,6 @@ ar:
       help: المساعدة
       my_account_link: حسابي
       my_activity_link: نشاطي
-      open: فتح
       open_gov: حكومة مفتوحة
       proposals: إقتراحات
       poll_questions: التصويت
@@ -282,8 +274,6 @@ ar:
           other: لديك %{count} إشعارات الجديدة
         notifications: إشعارات
         no_notifications: "لا يوجد إشعارات جديدة"
-    admin:
-      watch_form_message: "لم يتم حفظ التغيرات ، هل أنت متأكد من مغادرة الصفحة وتجاهل التغيرات ؟"
   notifications:
     index:
       empty_notifications: لا يوجد إشعارات جديدة.
@@ -337,8 +327,6 @@ ar:
       sign_in: تسجيل الدخول باستخدام Twitter
       sign_up: تسجيل باستخدام Twitter
       name: Twitter
-    info_sign_in: "تسجيل الدخول باستخدام:"
-    info_sign_up: "تسجيل الدخول باستخدام:"
     or_fill: "أو املأ النموذج التالي:"
   proposals:
     create:
@@ -385,13 +373,6 @@ ar:
       map_skip_checkbox: "هذا المقترح لا يملك موقع ملموس أو لست على دراية به."
     index:
       featured_proposals: مميز
-      filter_topic:
-        zero: " حول موضوع '%{topic}'"
-        one: " حول موضوع '%{topic}'"
-        two: " حول موضوع '%{topic}'"
-        few: " حول موضوع '%{topic}'"
-        many: " حول موضوع '%{topic}'"
-        other: " حول موضوع '%{topic}'"
       orders:
         confidence_score: اعلى تقييم
         created_at: أحدث
@@ -776,7 +757,6 @@ ar:
     follow: "تابع"
     following: "التالية"
     follow_entity: "تابع %{entity}"
-    hide: إخفاء
     print:
       print_button: طباعة هذه المعلومات
     search: بحث

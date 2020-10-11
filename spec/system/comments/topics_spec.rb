@@ -4,6 +4,8 @@ describe "Commenting topics from proposals" do
   let(:user)     { create :user }
   let(:proposal) { create :proposal }
 
+  it_behaves_like "flaggable", :topic_with_community_comment
+
   scenario "Index" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -328,58 +330,6 @@ describe "Commenting topics from proposals" do
 
     visit community_topic_path(community, topic)
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
-  scenario "Flagging as inappropriate", :js do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    community = proposal.community
-    topic = create(:topic, community: community, title: "Should we change the world?")
-    comment = create(:comment, commentable: topic)
-
-    login_as(user)
-    visit community_path(community)
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
   end
 
   scenario "Erasing a comment's author" do
@@ -888,58 +838,6 @@ describe "Commenting topics from budget investments" do
 
     visit community_topic_path(community, topic)
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
-  scenario "Flagging as inappropriate", :js do
-    community = investment.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    community = investment.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    community = investment.community
-    topic = create(:topic, community: community, title: "Should we change the world?")
-    comment = create(:comment, commentable: topic)
-
-    login_as(user)
-    visit community_path(community)
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
   end
 
   scenario "Erasing a comment's author" do

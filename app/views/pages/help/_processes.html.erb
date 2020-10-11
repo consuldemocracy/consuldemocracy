@@ -10,7 +10,9 @@
     </p>
     <ul class="features">
       <li>
-        <% link = link_to(t("pages.help.processes.link"), legislation_processes_path) %>
+        <%= sanitize(t("pages.help.processes.feature",
+              link: link_to(t("pages.help.processes.feature_link", org_name: setting["org_name"]),
+                               new_user_registration_path))) %>
       </li>
     </ul>
   </div>

@@ -1,0 +1,24 @@
+oc:
+  documents:
+    title: de Documents
+    max_documents_allowed_reached: sètz arribats al nombre maximal de documents permeses. <strong>vos cal ne suprimir un abans de ne pujar un autre.</strong>
+    additional: Documentacion addicionala
+    form:
+      title: de Documents
+      title_placeholder: Apondètz un títol descriptiu pel document
+      delete_button: Elimina lo document
+      cancel_button: Cancel · lar
+      note: "Podètz penjar fins a un maximal de %{max_documents_allowed} de documents dels tipes de contengut seguent: %{accepted_content_types}, Fins a %{max_file_size} MB per fichièr."
+      add_new_document: Apond un document nòu
+    actions:
+      destroy:
+        notice: Lo document s'es suprimit corrèctament.
+        alert: Se pòt pas eliminar lo document.
+        confirm: Sètz segur que volètz suprimir lo document? Aquela accion se pòt pas desfar!
+    buttons:
+      download_document: Descarga l'archiu
+      destroy_document: Suprimís lo document
+    errors:
+      messages:
+        in_between: li cal èsser dintratz %{min} i %{max}
+        wrong_content_type: lo tipe de contengut %{content_type} coincidís pas amb cap dels tipes de contengut acceptat %{accepted_content_types}

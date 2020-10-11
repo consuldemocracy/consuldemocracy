@@ -346,7 +346,6 @@ id:
           attributes:
             document_number:
               not_in_census: "Dokumen tidak dalam sensus"
-              has_voted: "Pengguna yang telah terpilih"
         legislation/process:
           attributes:
             end_date:

@@ -7,7 +7,7 @@ describe "Admin proposals" do
 
   it_behaves_like "admin_milestoneable",
                   :proposal,
-                  "admin_proposal_path"
+                  "admin_polymorphic_path"
 
   context "Index" do
     scenario "Search" do

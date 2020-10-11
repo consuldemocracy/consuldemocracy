@@ -17,7 +17,7 @@ describe "Admin edit translatable records" do
   context "Add a translation", :js do
     context "Input fields" do
       let(:translatable) { create(:budget_heading) }
-      let(:path) { edit_admin_budget_group_heading_path(*resource_hierarchy_for(translatable)) }
+      let(:path) { admin_polymorphic_path(translatable, action: :edit) }
 
       scenario "Maintains existing translations" do
         visit path
@@ -155,7 +155,7 @@ describe "Admin edit translatable records" do
 
         select "Français", from: :select_language
 
-        expect(page). to have_ckeditor "Description", with: ""
+        expect(page).to have_ckeditor "Description", with: ""
       end
     end
 
@@ -356,7 +356,7 @@ describe "Admin edit translatable records" do
     let(:translatable) { create(:milestone) }
 
     scenario "Shows an error message" do
-      visit edit_admin_budget_budget_investment_milestone_path(*resource_hierarchy_for(translatable))
+      visit admin_polymorphic_path(translatable, action: :edit)
 
       click_link "Remove language"
       click_link "Remove language"
@@ -493,6 +493,7 @@ describe "Admin edit translatable records" do
       select "Français", from: :add_language
 
       expect_to_have_language_selected "Français"
+      expect(page).to have_select :add_language, selected: "Add language"
       expect(page).to have_field "contents_content_#{content.key}values_value_fr"
     end
 

@@ -7,6 +7,7 @@ describe "Commenting legislation questions" do
 
   context "Concerns" do
     it_behaves_like "notifiable in-app", :legislation_question
+    it_behaves_like "flaggable", :legislation_question_comment
   end
 
   scenario "Index" do
@@ -320,53 +321,6 @@ describe "Commenting legislation questions" do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
-    comment = create(:comment, commentable: legislation_question)
-
-    login_as(user)
-    visit legislation_process_question_path(legislation_question.process, legislation_question)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    comment = create(:comment, commentable: legislation_question)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit legislation_process_question_path(legislation_question.process, legislation_question)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    legislation_question = create(:legislation_question, process: process, title: "Should we change the world?")
-    comment = create(:comment, commentable: legislation_question)
-
-    login_as(user)
-    visit legislation_process_path(legislation_question.process)
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
-  end
-
   scenario "Erasing a comment's author" do
     comment = create(:comment, commentable: legislation_question, body: "this should be visible")
     comment.user.erase
@@ -385,11 +339,9 @@ describe "Commenting legislation questions" do
     fill_in "Leave your answer", with: "Testing submit button!"
     click_button "Publish answer"
 
-    # The button's text should now be "..."
-    # This should be checked before the Ajax request is finished
-    expect(page).not_to have_button "Publish answer"
-
-    expect(page).to have_content("Testing submit button!")
+    expect(page).to have_button "Publish answer", disabled: true
+    expect(page).to have_content "Testing submit button!"
+    expect(page).to have_button "Publish answer", disabled: false
   end
 
   describe "Moderators" do

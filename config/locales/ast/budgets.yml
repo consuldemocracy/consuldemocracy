@@ -3,8 +3,6 @@ ast:
     ballots:
       show:
         title: Los mios votos
-        amount_spent: Costu total
-        remaining: "Te queden <span>%{amount}</span> para invertir."
         no_balloted_group_yet: "Inda nun votasti proyectos d'esti grupu, ¡vota!"
         remove: Quitar votu
         zero: Entovía nun votasti nenguna propuesta d'inversión.
@@ -51,8 +49,6 @@ ast:
           title: Atopar
         sidebar:
           my_ballot: Los mios votos
-          voted_info: Puedes %{link} en cualesquier momentu hasta'l zarru d'esta fase. Nun fai falta que gastes tol dineru disponible.
-          voted_info_link: camudar los tos votos
           change_ballot: "Si camudes d'opinión pues borrar los tos votos en %{check_ballot} y volver principiar."
           check_ballot_link: "revisar los mios votos"
           zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.

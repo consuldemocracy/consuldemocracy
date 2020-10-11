@@ -4,6 +4,8 @@ describe "Commenting legislation questions" do
   let(:user) { create :user }
   let(:legislation_annotation) { create :legislation_annotation, author: user }
 
+  it_behaves_like "flaggable", :legislation_annotation_comment
+
   scenario "Index" do
     3.times { create(:comment, commentable: legislation_annotation) }
 
@@ -349,58 +351,6 @@ describe "Commenting legislation questions" do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
-    comment = create(:comment, commentable: legislation_annotation)
-
-    login_as(user)
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    comment = create(:comment, commentable: legislation_annotation)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    legislation_annotation = create(:legislation_annotation, text: "Should we change the world?")
-    comment = create(:comment, commentable: legislation_annotation)
-
-    login_as(user)
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
-  end
-
   scenario "Erasing a comment's author" do
     legislation_annotation = create(:legislation_annotation)
     comment = create(:comment, commentable: legislation_annotation, body: "this should be visible")
@@ -427,11 +377,9 @@ describe "Commenting legislation questions" do
     fill_in "Leave your comment", with: "Testing submit button!"
     click_button "Publish comment"
 
-    # The button's text should now be "..."
-    # This should be checked before the Ajax request is finished
-    expect(page).not_to have_button "Publish comment"
-
-    expect(page).to have_content("Testing submit button!")
+    expect(page).to have_button "Publish comment", disabled: true
+    expect(page).to have_content "Testing submit button!"
+    expect(page).to have_button "Publish comment", disabled: false
   end
 
   describe "Moderators" do

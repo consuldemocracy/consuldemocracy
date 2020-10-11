@@ -2,7 +2,7 @@ module Searchable
   extend ActiveSupport::Concern
 
   included do
-    include PgSearch
+    include PgSearch::Model
     include SearchCache
 
     pg_search_scope :pg_search, ->(query) do

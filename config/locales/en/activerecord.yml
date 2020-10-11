@@ -141,6 +141,9 @@ en:
         description_finished: "Description when the budget is finished"
         phase: "Phase"
         currency_symbol: "Currency"
+        voting_style: "Final voting style"
+        voting_style_knapsack: "Knapsack"
+        voting_style_approval: "Approval"
       budget/translation:
         name: "Name"
       budget/investment:
@@ -193,7 +196,7 @@ en:
         primary: "Primary"
         secondary: "Secondary"
       budget/group:
-        max_votable_headings: "Maximum number of headings in which a user can vote"
+        max_votable_headings: "Maximum number of headings in which a user can select projects"
       budget/group/translation:
         name: "Group name"
       budget/heading:
@@ -203,6 +206,7 @@ en:
         name: "Heading name"
         price: "Amount"
         population: "Population (optional)"
+        max_ballot_lines: "Votes allowed"
       budget/heading/translation:
         name: "Heading name"
       budget/phase:
@@ -504,6 +508,7 @@ en:
           attributes:
             document_number:
               not_in_census: "Document not in census"
+            user_id:
               has_voted: "User has already voted"
         legislation/process:
           attributes:

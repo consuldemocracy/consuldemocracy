@@ -22,6 +22,28 @@ describe "Admin users" do
     expect(page).to have_current_path(user_path(user))
   end
 
+  scenario "Show active or erased users using filters" do
+    erased_user = create(:user, username: "Erased")
+    erased_user.erase("I don't like this site.")
+
+    visit admin_users_path
+
+    expect(page).not_to have_link("#{erased_user.id}", href: user_path(erased_user))
+    expect(page).to have_link("Erased")
+
+    click_link "Erased"
+
+    expect(page).to have_link("Active")
+    expect(page).to have_link("#{erased_user.id}", href: user_path(erased_user))
+    expect(page).to have_content "I don't like this site."
+    expect(page).to have_content("Erased")
+
+    fill_in :search, with: "Erased"
+    click_button "Search"
+
+    expect(page).to have_content "There are no users."
+  end
+
   scenario "Search" do
     fill_in :search, with: "Luis"
     click_button "Search"

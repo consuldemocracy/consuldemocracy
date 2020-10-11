@@ -10,12 +10,16 @@ module GraphQL
       string: GraphQL::STRING_TYPE
     }.freeze
 
-    def self.create(api_types_definitions)
+    def self.create
       created_types = {}
       api_types_definitions.each do |model, info|
         create_type(model, info[:fields], created_types)
       end
       created_types
+    end
+
+    def self.api_types_definitions
+      @api_types_definitions ||= parse_api_config_file(YAML.load_file(Rails.root.join("config/api.yml")))
     end
 
     def self.type_kind(type)

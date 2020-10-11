@@ -51,14 +51,17 @@ module Verifications
       sleep 0.01
     end
 
-    # Fill the editor content
-    page.execute_script <<-SCRIPT
-        var ckeditor = CKEDITOR.instances.#{locator}
-        ckeditor.setData("#{with}")
-        ckeditor.focus()
-        ckeditor.updateElement()
-    SCRIPT
+    within("#cke_#{locator}") do
+      within_frame(0) { find("body").set(with) }
+    end
+  end
 
-    expect(page).to have_ckeditor label, with: with
+  def fill_in_markdown_editor(label, with:)
+    click_link "Launch text editor"
+    fill_in label, with: with
+
+    within(".fullscreen") do
+      click_link "Close text editor"
+    end
   end
 end

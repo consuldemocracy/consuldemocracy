@@ -1,5 +1,8 @@
 class PollsController < ApplicationController
+  include FeatureFlags
   include PollsHelper
+
+  feature_flag :polls
 
   before_action :load_poll, except: [:index]
   before_action :load_active_poll, only: :index
@@ -8,8 +11,6 @@ class PollsController < ApplicationController
 
   has_filters %w[current expired]
   has_orders %w[most_voted newest oldest], only: :show
-
-  ::Poll::Answer # trigger autoload
 
   def index
     @polls = Kaminari.paginate_array(

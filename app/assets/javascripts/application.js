@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-ar
@@ -42,6 +42,7 @@
 //= require jquery-fileupload/basic
 //= require foundation
 //= require turbolinks
+//= require turbolinks_anchors
 //= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
@@ -59,7 +60,6 @@
 //= require moderator_budget_investments
 //= require moderator_proposal_notifications
 //= require moderator_legislation_proposals
-//= require prevent_double_submission
 //= require gettext
 //= require annotator
 //= require tags
@@ -86,7 +86,7 @@
 //= require legislation
 //= require legislation_allegations
 //= require legislation_annotatable
-//= require watch_form_changes
+//= require legislation_draft_versions
 //= require followable
 //= require flaggable
 //= require documentable
@@ -110,6 +110,7 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
+//= require datepicker
 
 var initialize_modules = function() {
   "use strict";
@@ -124,7 +125,6 @@ var initialize_modules = function() {
   App.FoundationExtras.initialize();
   App.LocationChanger.initialize();
   App.CheckAllNone.initialize();
-  App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
@@ -144,7 +144,6 @@ var initialize_modules = function() {
   if ($(".legislation-annotatable").length) {
     App.LegislationAnnotatable.initialize();
   }
-  App.WatchFormChanges.initialize();
   App.TreeNavigator.initialize();
   App.Documentable.initialize();
   App.Imageable.initialize();
@@ -164,13 +163,19 @@ var initialize_modules = function() {
     App.ColumnsSelector.initialize();
   }
   App.BudgetEditAssociations.initialize();
+  App.Datepicker.initialize();
 };
 
-$(function() {
+var destroy_non_idempotent_modules = function() {
   "use strict";
 
-  Turbolinks.enableProgressBar();
+  App.ColumnsSelector.destroy();
+  App.Datepicker.destroy();
+  App.HTMLEditor.destroy();
+  App.LegislationAnnotatable.destroy();
+  App.Map.destroy();
+  App.SocialShare.destroy();
+};
 
-  $(document).ready(initialize_modules);
-  $(document).on("page:load", initialize_modules);
-});
+$(document).on("turbolinks:load", initialize_modules);
+$(document).on("turbolinks:before-cache", destroy_non_idempotent_modules);

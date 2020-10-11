@@ -143,6 +143,9 @@ es:
         description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
         phase: "Fase"
         currency_symbol: "Divisa"
+        voting_style: "Estilo de la votación final"
+        voting_style_knapsack: Bolsa de dinero
+        voting_style_approval: Por aprobación
       budget/translation:
         name: "Nombre"
       budget/investment:
@@ -195,7 +198,7 @@ es:
         primary: "Principal"
         secondary: "Secundaria"
       budget/group:
-        max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
+        max_votable_headings: "Máximo número de partidas en que un usuario puede seleccionar proyectos"
       budget/group/translation:
         name: "Nombre del grupo"
       budget/heading:
@@ -205,6 +208,7 @@ es:
         name: "Nombre de la partida"
         price: "Cantidad"
         population: "Población (opcional)"
+        max_ballot_lines: "Votos permitidos"
       budget/heading/translation:
         name: "Nombre de la partida"
       budget/phase:
@@ -506,6 +510,7 @@ es:
           attributes:
             document_number:
               not_in_census: "Este documento no aparece en el censo"
+            user_id:
               has_voted: "Este usuario ya ha votado"
         legislation/process:
           attributes:

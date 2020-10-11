@@ -44,6 +44,8 @@ es:
         title: "Legislación colaborativa"
         description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en debates previos."
         link: "legislación colaborativa"
+        feature: "Para participar en la legislación colaborativa tienes que %{link} y verificar tu cuenta."
+        feature_link: "registrarte en %{org_name}"
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."

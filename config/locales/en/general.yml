@@ -241,7 +241,6 @@ en:
       help: Help
       my_account_link: My account
       my_activity_link: My content
-      open: open
       open_gov: Open government
       proposals: Proposals
       poll_questions: Voting
@@ -252,8 +251,6 @@ en:
           other: You have %{count} new notifications
         notifications: Notifications
         no_notifications: "You don't have new notifications"
-    admin:
-      watch_form_message: "You have unsaved changes. Do you confirm to leave the page?"
   notifications:
     index:
       empty_notifications: You don't have new notifications.
@@ -299,8 +296,9 @@ en:
       sign_in: Sign in with Twitter
       sign_up: Sign up with Twitter
       name: Twitter
-    info_sign_in: "Sign in with:"
-    info_sign_up: "Sign up with:"
+    info:
+      sign_in: "Sign in with:"
+      sign_up: "Sign up with:"
     or_fill: "Or fill the following form:"
   proposals:
     create:
@@ -573,9 +571,7 @@ en:
         title: Poster preview
         poster_title: "Do not keep looking,"
         poster_subtitle: "back me up! ;)"
-        intro_text:
-          "<strong>I am participating in %{org}</strong> with my own citizen proposal and only if you also add you can I achieve the
-          necessary support to make the city we all want."
+        intro_text: "<strong>I am participating in %{org}</strong> with my own citizen proposal and only with your support can we make the city we all want"
         proposal_code: "Code of the proposal: %{code}"
         support: Support my proposal
         footer: "<strong>Visit %{link} and support this proposal.</strong> The more, the better. Let's do our bit. Thank you!"

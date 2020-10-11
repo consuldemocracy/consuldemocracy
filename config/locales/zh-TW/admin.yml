@@ -925,15 +925,6 @@ zh-TW:
           without_confirmed_hide: 有待
         title: 隱藏的建議
         no_hidden_proposals: 沒有隱藏的建議。
-    proposal_notifications:
-      index:
-        filter: 篩選器
-        filters:
-          all: 所有
-          with_confirmed_hide: 確認
-          without_confirmed_hide: 有待
-        title: 隱藏通知
-        no_hidden_proposals: 沒有隱藏的通知。
     settings:
       flash:
         updated: 價值已更新

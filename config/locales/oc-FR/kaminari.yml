@@ -1,0 +1,22 @@
+oc:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: d'intradas
+        one: intrada
+        other: d'intradas
+      more_pages:
+        display_entries: en Mostrant <b>%{first}&nbsp;-&nbsp;%{last}</b> d'un total de <b>%{total}</b> %{entry_name}
+      one_page:
+        display_entries:
+          zero: "%{entry_name} se pòt pas trobar"
+          one: I a <b>1</b> %{entry_name}
+          other: I a <b> %{count}</b> %{entry_name}
+  views:
+    pagination:
+      current: Ès en la pagina
+      first: Primièra
+      last: Última
+      next: Seguent
+      previous: Anterior
+      truncate: "&hellip;"

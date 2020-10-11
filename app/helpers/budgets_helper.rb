@@ -3,6 +3,12 @@ module BudgetsHelper
     ["balloting", "reviewing_ballots", "finished"].include? budget.phase
   end
 
+  def budget_voting_styles_select_options
+    Budget::VOTING_STYLES.map do |style|
+      [Budget.human_attribute_name("voting_style_#{style}"), style]
+    end
+  end
+
   def heading_name_and_price_html(heading, budget)
     tag.div do
       concat(heading.name + " ")
@@ -51,10 +57,6 @@ module BudgetsHelper
 
   def current_ballot
     Budget::Ballot.find_by(user: current_user, budget: @budget)
-  end
-
-  def investment_tags_select_options(budget, context)
-    budget.investments.tags_on(context).order(:name).pluck(:name)
   end
 
   def unfeasible_or_unselected_filter

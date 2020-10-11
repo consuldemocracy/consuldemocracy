@@ -1,9 +1,10 @@
 require "rails_helper"
 
 describe "Votes" do
-  describe "Investments" do
-    let(:manuela) { create(:user, verified_at: Time.current) }
-    let(:budget)  { create(:budget, :selecting) }
+  let(:manuela) { create(:user, verified_at: Time.current) }
+
+  context "Investments - Knapsack" do
+    let(:budget)  { create(:budget, phase: "selecting") }
     let(:group)   { create(:budget_group, budget: budget) }
     let(:heading) { create(:budget_heading, group: group) }
 
@@ -192,6 +193,35 @@ describe "Votes" do
 
         expect(page.driver.send(:find_modal).text).to match "You can only support investments in 2 districts."
       end
+    end
+  end
+
+  context "Investments - Approval" do
+    let(:budget) { create(:budget, :balloting, :approval) }
+    before { login_as(manuela) }
+
+    scenario "Budget limit is ignored", :js do
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group, max_ballot_lines: 2)
+      investment1 = create(:budget_investment, :selected, heading: heading, price: heading.price)
+      investment2 = create(:budget_investment, :selected, heading: heading, price: heading.price)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      add_to_ballot(investment1.title)
+
+      expect(page).to have_content("Remove vote")
+      expect(page).to have_content("You have selected 1 project out of 2")
+
+      within(".budget-investment", text: investment2.title) do
+        find("div.ballot").hover
+
+        expect(page).not_to have_content("You have already assigned the available budget")
+      end
+
+      visit budget_ballot_path(budget)
+
+      expect(page).to have_content("you can change your vote at any time until this phase is closed")
     end
   end
 end

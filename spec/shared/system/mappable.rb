@@ -79,6 +79,95 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_content "Map location can't be blank"
     end
 
+    describe "When restoring the page from browser history" do
+      scenario "map should not be duplicated", :js do
+        do_login_for user
+        visit send(mappable_new_path, arguments)
+
+        if management
+          click_link "Select user"
+
+          expect(page).to have_content "User management"
+        else
+          click_link "Help"
+
+          expect(page).to have_content "CONSUL is a platform for citizen participation"
+        end
+
+        go_back
+
+        within ".map_location" do
+          expect(page).to have_css(".leaflet-map-pane", count: 1)
+        end
+      end
+
+      scenario "keeps marker and zoom defined by the user", :js do
+        do_login_for user
+        visit send(mappable_new_path, arguments)
+
+        within ".map_location" do
+          expect(page).not_to have_css(".map-icon")
+        end
+        expect(page.execute_script("return App.Map.maps[0].getZoom();")).to eq(10)
+
+        map_zoom_in
+        find("#new_map_location").click
+
+        within ".map_location" do
+          expect(page).to have_css(".map-icon")
+        end
+
+        if management
+          click_link "Select user"
+
+          expect(page).to have_content "User management"
+        else
+          click_link "Help"
+
+          expect(page).to have_content "CONSUL is a platform for citizen participation"
+        end
+
+        go_back
+
+        within ".map_location" do
+          expect(page).to have_css(".map-icon")
+          expect(page.execute_script("return App.Map.maps[0].getZoom();")).to eq(11)
+        end
+      end
+
+      scenario "shows marker at map center", :js do
+        do_login_for user
+        visit send(mappable_new_path, arguments)
+
+        within ".map_location" do
+          expect(page).not_to have_css(".map-icon")
+        end
+
+        place_map_at(-68.592487, -62.391357)
+        find("#new_map_location").click
+
+        within ".map_location" do
+          expect(page).to have_css(".map-icon")
+        end
+
+        if management
+          click_link "Select user"
+
+          expect(page).to have_content "User management"
+        else
+          click_link "Help"
+
+          expect(page).to have_content "CONSUL is a platform for citizen participation"
+        end
+
+        go_back
+
+        within ".map_location" do
+          expect(page).to have_css(".map-icon")
+        end
+      end
+    end
+
     scenario "Skip map", :js do
       do_login_for user
       visit send(mappable_new_path, arguments)
@@ -194,12 +283,14 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for(user) if management
     end
 
-    scenario "Should display map on #{mappable_factory_name} show page", :js do
+    scenario "Should display map and marker on #{mappable_factory_name} show page", :js do
       arguments[:id] = mappable.id
 
       visit send(mappable_show_path, arguments)
 
-      expect(page).to have_css(".map_location")
+      within ".map_location" do
+        expect(page).to have_css(".map-icon")
+      end
     end
 
     scenario "Should not display map on #{mappable_factory_name} show when marker is not defined", :js do
@@ -268,5 +359,21 @@ end
 def set_arguments(arguments, mappable, mappable_path_arguments)
   mappable_path_arguments&.each do |argument_name, path_to_value|
     arguments.merge!("#{argument_name}": mappable.send(path_to_value))
+  end
+end
+
+def map_zoom_in
+  initial_zoom = page.execute_script("return App.Map.maps[0].getZoom();")
+  find(".leaflet-control-zoom-in").click
+  until page.execute_script("return App.Map.maps[0].getZoom() === #{initial_zoom + 1};") do
+    sleep 0.01
+  end
+end
+
+def place_map_at(latitude, longitude)
+  page.execute_script("App.Map.maps[0].setView(new L.LatLng(#{latitude}, #{longitude}))")
+
+  until page.execute_script("return App.Map.maps[0].getCenter().lat === #{latitude};") do
+    sleep 0.01
   end
 end

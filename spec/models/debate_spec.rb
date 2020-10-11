@@ -503,7 +503,8 @@ describe Debate do
     end
 
     context "stemming" do
-      it "searches word stems in Spanish", :spanish_search do
+      it "searches word stems in Spanish" do
+        allow(SearchDictionarySelector).to receive(:call).and_return("spanish")
         debate = create(:debate, title: "limpiar")
 
         results = Debate.search("limpiará")

@@ -237,6 +237,45 @@ describe "Legislation Draft Versions" do
 
       expect(page).to have_content "Comment can't be blank"
     end
+
+    scenario "When page is restored from browser cache do not duplicate annotation handlers" do
+      create(:legislation_annotation, draft_version: draft_version, text: "my annotation")
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      expect(page).to have_css(".annotator-hl", count: 1)
+
+      click_link "Help"
+
+      expect(page).to have_content "CONSUL is a platform for citizen participation"
+
+      go_back
+
+      expect(page).to have_content "A collaborative legislation process"
+      expect(page).to have_css(".annotator-hl", count: 1)
+    end
+
+    scenario "When page is restored from browser cache publish comment button keeps working" do
+      create(:legislation_annotation, draft_version: draft_version, text: "my annotation")
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      find(:css, ".annotator-hl").click
+
+      click_link "Help"
+
+      expect(page).to have_content "CONSUL is a platform for citizen participation"
+
+      go_back
+
+      expect(page).to have_content "A collaborative legislation process"
+
+      click_link "Publish Comment"
+      fill_in "comment[body]", with: "My interesting comment"
+      click_button "Publish comment"
+
+      expect(page).to have_content "My interesting comment"
+    end
   end
 
   context "Merged annotations", :js do

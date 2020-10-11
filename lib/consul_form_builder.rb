@@ -9,11 +9,11 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
     select attribute, choices, options, html_options
   end
 
-  %i[text_field text_area number_field password_field email_field].each do |field|
+  %i[text_field text_area date_field number_field password_field email_field].each do |field|
     define_method field do |attribute, options = {}|
       label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
         super(attribute, options.merge(
-          label: false, hint: false,
+          label: false, hint: nil,
           aria: { describedby: help_text_id(attribute, options) }
         ))
     end
@@ -21,7 +21,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
 
   def check_box(attribute, options = {})
     if options[:label] != false
-      label = tag.span sanitize(label_text(object, attribute, options[:label])), class: "checkbox"
+      label = tag.span sanitize(label_text(attribute, options[:label])), class: "checkbox"
 
       super(attribute, options.merge(label: label, label_options: label_options_for(options)))
     else
@@ -35,13 +35,20 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
     super(attribute, tag_value, { label: default_label }.merge(options))
   end
 
+  def select(attribute, choices, options = {}, html_options = {})
+    label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
+      super(attribute, choices, options.merge(label: false, hint: nil), html_options.merge({
+        aria: { describedby: help_text_id(attribute, options) }
+      }))
+  end
+
   private
 
     def custom_label(attribute, text, options)
       if text == false
         super
       else
-        super(attribute, sanitize(label_text(object, attribute, text)), options)
+        super(attribute, sanitize(label_text(attribute, text)), options)
       end
     end
 
@@ -50,7 +57,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
         help_text(attribute, options)
     end
 
-    def label_text(object, attribute, text)
+    def label_text(attribute, text)
       if text.nil? || text == true
         default_label_text(object, attribute)
       else

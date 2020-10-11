@@ -12,13 +12,13 @@ hr:
           one: "%{count} odgovor"
           few: "%{count} odgovore"
           other: "%{count} odgovore"
-        cancel: Otkazati
-        publish_comment: Objavi Komentar
+        cancel: Otkaži
+        publish_comment: Objavi komentar
       form:
         phase_not_open: Ova faza još nije otvorena
       index:
         title: Komentari
-        comments_about: Komentari o
+        comments_about: Komentari za
         see_in_context: Vidi u kontekstu
         comments_count:
           one: "%{count} komentar"
@@ -28,16 +28,16 @@ hr:
         title: Komentar
       version_chooser:
         seeing_version: Komentari za verziju
-        see_text: Spremi draft teksta
+        see_text: Pogledaj skicu teksta
     draft_versions:
       changes:
         title: Promjene
-        seeing_changelog_version: Revizija mijenja sažetak
-        see_text: Pogledaj tekstualni draft
+        seeing_changelog_version: Sažetak revizija promjena
+        see_text: Pogledaj skicu teksta
       show:
         loading_comments: Učitavam komentare
-        seeing_version: Šaljete draft verziju
-        select_draft_version: Odaberi draft
+        seeing_version: Gledate skicu
+        select_draft_version: Odaberi skicu
         select_version_submit: pogledaj
         updated_at: ažurirano na %{date}
         see_changes: pogledaj promjene u sažetku
@@ -61,16 +61,16 @@ hr:
       index:
         filter: Filter
         filters:
-          open: Otvoreni proces
+          open: Otvoreni procesi
           past: Prošle
         no_open_processes: Nema otvorenih procesa
         no_past_processes: Nema prošlih procesa
         section_header:
-          icon_alt: Ikona kolaborativne legislative
-          title: Kolaborativna legislativa
-          help: Pomoć oko kolaborativne legislative
+          icon_alt: Ikona javnog savjetovanja
+          title: Javno savjetovanje
+          help: Pomoć oko javnog savjetovanja
         section_footer:
-          title: Pomoć oko kolaborativne legislative
+          title: Pomoć oko javnog savjetovanja
           description: Sudjelujte u raspravama i procesima prije odobravanja novih propisa ili strategija. Vaše mišljenje će se razmotriti.
       phase_not_open:
         not_open: Ova faza još uvijek nije otvorena
@@ -121,4 +121,38 @@ hr:
       form:
         tags_label: "Kategorije"
       not_verified: "Za izglasavanje prijedloga %{verify_account}."
-      process_title: Proces kolaborativne legislative
+      process_title: Proces javnog savjetovanja
+    summary:
+      title: "Sažetak"
+      votes:
+        zero: "%{count} glasova"
+        one: "%{count} glas"
+        few: "%{count} glasa"
+        other: "%{count} glasova"
+      debate_phase: "Faza rasprave"
+      proposals_phase: "Faza prijedloga"
+      allegations_phase: "Faza komentara"
+      debates:
+        zero: "Nema rasprava"
+        one: "%{count} rasprava"
+        few: "%{count} rasprave"
+        other: "%{count} rasprava"
+      proposals:
+        zero: "Nema prijedloga"
+        one: "%{count} prijedlog"
+        few: "%{count} prijedloga"
+        other: "%{count} prijedloga"
+      comments:
+        zero: "Nema komentara"
+        one: "%{count} komentar"
+        few: "%{count} komentara"
+        other: "%{count} komentara"
+      download: "Preuzmi sažetak"
+      top_comments:
+        zero: "Nema komentara"
+        one: "%{count} komentar"
+        few: "%{count} komentara"
+        other: "Najbolji komentari"
+      most_voted_comments: "Komentari s najviše glasova"
+      no_allegation: "Nema komentara"
+      process_empty: "Ovaj proces nije imao nikakve faze sudjelovanja"

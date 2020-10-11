@@ -2,10 +2,10 @@ hr:
   images:
     remove_image: Ukloni sliku
     form:
-      title: Slika opisa
+      title: Opisna slika
       title_placeholder: Dodaj opisni naziv slike
       delete_button: Ukloni sliku
-      note: "Možete ažurirati jednu sliku iz sljedećih tipova sadržaja: %{accepted_content_types}, do %{max_file_size} MB."
+      note: "Možete postaviti jednu sliku iz sljedećih tipova sadržaja: %{accepted_content_types}, do %{max_file_size} MB."
       add_new_image: Dodaj sliku
       admin_title: "Slika"
       admin_alt_text: "Uredi tekst slike"

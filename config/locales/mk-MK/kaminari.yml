@@ -1,1 +1,22 @@
 mk:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Објави
+        one: Објава
+        other: Објави
+      more_pages:
+        display_entries: Се прикажуваат <strong>%{first}&nbsp;-&nbsp;%{last}</strong> од <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} не може да се пронајде"
+          one: Има <strong>1 %{entry_name}</strong>
+          other: Има <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Ти си на страна
+      first: Прво
+      last: Последно
+      next: Следно
+      previous: Претходно
+      truncate: "&hellip;"

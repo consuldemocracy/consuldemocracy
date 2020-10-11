@@ -29,7 +29,7 @@ class GraphqlController < ApplicationController
   private
 
     def consul_schema
-      api_types  = GraphQL::ApiTypesCreator.create(API_TYPE_DEFINITIONS)
+      api_types  = GraphQL::ApiTypesCreator.create
       query_type = GraphQL::QueryTypeCreator.create(api_types)
 
       GraphQL::Schema.define do

@@ -50,7 +50,7 @@ module Notifications
   end
 
   def path_for(resource)
-    polymorphic_hierarchy_path(resource)
+    polymorphic_path(resource)
   end
 
   def error_message(resource_model = nil)

@@ -16,6 +16,7 @@ ca:
         table_assigned_investments_valuation_open: Prop. Inv. asignades en avaluació
         table_actions: Accions
         evaluate: Avaluar
+        no_budgets: "No hi ha pressupostos"
     budget_investments:
       index:
         headings_filter_all: Totes les partides
@@ -26,9 +27,11 @@ ca:
         assigned_to: "Asignades a %{valuator}"
         title: Propostes d'inversió
         edit: Editar informe
+        table_id: ID
         table_title: Títol
         table_heading_name: Nom de la partida
         table_actions: Accions
+        no_investments: "No hi ha projectes d’inversió."
       show:
         back: Tornar
         title: Proposta d'inversió
@@ -40,6 +43,7 @@ ca:
         edit_dossier: Editar informe
         price: Cost
         price_first_year: Cost en el primer any
+        currency: "€"
         feasibility: Viabilitat
         feasible: Viable
         unfeasible: No viables
@@ -49,9 +53,16 @@ ca:
         responsibles: Responsables
         assigned_admin: Administrador asignat
         assigned_valuators: Avaluadors asignats
+        preview: Vista prèvia de la inversió
       edit:
         dossier: Informe
+        price: "Preu (%{currency})"
+        price_first_year: "Cost durant el primer any (%{currency}) <small>(optional, data not public)</small>"
         feasibility: Viabilitat
+        valuation_finished_alert: "Esteu segur que voleu marcar aquest informe com a finalitzat? Si ho fas, ja no es podrà modificar."
+        not_feasible_alert: "S'enviarà immediatament un correu electrònic a l'autor del projecte amb l'informe de inviabilitat."
         save: Guardar canvis
       notice:
         valuate: "Informe actualitzat"
+      valuation_comments: Comentaris de valoració
+      not_in_valuating_phase: Les inversions només es poden valorar quan el pressupost està en fase de valoració

@@ -1,1 +1,90 @@
 ro:
+  officing:
+    header:
+      title: Votare
+    dashboard:
+      index:
+        title: Birou de votare
+        info: Aici puteți valida documentele utilizatorului și stoca rezultatele votului
+        no_shifts: Nu ai schimburi oficiale astăzi.
+    menu:
+      voters: Validează document
+      total_recounts: Renumărări și rezultate finale
+    polls:
+      final:
+        title: Sondaje pregătite pentru renumărarea finală
+        no_polls: Nu efectuați oficializați renumărarea finale în niciun sondaj activ
+        select_poll: Selectează sondaj
+        add_results: Adaugă rezultate
+    poll_budgets:
+      see_ballot_sheets: Consultați lista buletinelor de vot
+      index:
+        title: "%{poll_budget} - Buletinelor de vot"
+        ballot_sheet: "Buletin de vot %{id}"
+        ballot_sheet_name: Nume
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data creării
+        empty_results: Nu există buletine de vot pentru acest sondaj încă
+      new:
+        title: "%{poll_budget} - Noi buletine de vot"
+        booth: Cabină vot
+        select_booth: Selectează cabină de vot
+        csv_data: CSV data
+        submit: Salvează
+      show:
+        created_at: Data creării
+        author: Autor
+        data: CSV data
+    booth:
+      new:
+        title: "Alege cabină de vot"
+    results:
+      flash:
+        create: "Rezultate salvate"
+        error_create: "Rezultatele NU au fost salvate. Eroare în baza de date."
+        error_wrong_booth: "Cabină de vot greșită. Rezultatele nu au fost salvate."
+      new:
+        title: "%{poll} - Adaugă rezultate"
+        not_allowed: "Nu aveți voie să adăugați rezultate pentru acest sondaj"
+        booth: "Cabină vot"
+        date: "Date"
+        select_booth: "Selectează cabină de vot"
+        ballots_white: "Buletinele de vot total necompletate"
+        ballots_null: "Buletine de vot invalide"
+        ballots_total: "Buletine de vot valide"
+        submit: "Salvează"
+        results_list: "Rezultatele tale"
+        see_results: "Vezi rezultatele"
+      index:
+        no_results: "Nu există rezultate"
+        results: Rezultate
+        table_answer: Răspuns
+        table_votes: Voturi
+        table_whites: "Buletinele de vot total necompletate"
+        table_nulls: "Buletine de vot invalide"
+        table_total: "Buletine de vot valide"
+    residence:
+      flash:
+        create: "Document verificat cu recensământul"
+        not_allowed: "Nu ai schimburi oficiale astăzi"
+      new:
+        title: Validează document
+        document_number: "Numărul documentului (inclusiv litere)"
+        submit: Validează document
+        error_verifying_census: "Baza de date a recensământului nu a putut verifica acest document."
+        form_errors: a împiedicat verificarea acestui documentului
+    voters:
+      new:
+        title: Sondaje
+        table_poll: Sondaj
+        table_status: Status sondaj
+        table_actions: Acțiuni
+        not_to_vote: Persoana a decis să nu voteze în acest moment
+      show:
+        can_vote: Puteți vota
+        cannot_vote: Persoana nu poate vota deoarece nu este înregistrată în districtul (districtele) unde are loc votarea.
+        error_already_voted: A participat deja la acest sondaj
+        submit: Confirmă vot
+        success: "Vot introdus!"
+      can_vote:
+        submit_disable_with: "Așteptați, vot în curs de confirmare..."

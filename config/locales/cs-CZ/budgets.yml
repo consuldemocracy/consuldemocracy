@@ -3,8 +3,8 @@ cs:
     ballots:
       show:
         title: Vaše hlasování
-        amount_spent: Vydaná částka
-        remaining: "Ještě můžete investovat částku <span>%{amount}</span>."
+        amount_limit:
+          knapsack: "%{count}"
         no_balloted_group_yet: "Dosud jste o této skupině nehlasovali, hlasujte!"
         remove: Odstranit hlas
         voted_info_2: "Hlas však můžete kdykoli změnit, dokud nebude tato fáze uzavřena."
@@ -76,8 +76,6 @@ cs:
           title: Vyhledat
         sidebar:
           my_ballot: Moje hlasování
-          voted_info: Můžete %{link} kdykoli před ukončením této fáze. Není třeba utrácet všechny dostupné peníze.
-          voted_info_link: změnit své hlasování
           different_heading_assigned: "Už jste hlasoval v jiné kapitole: %{heading_link}"
           change_ballot: "Pokud změníte názor, můžete odebrat své hlasy v %{check_ballot} a začít znovu."
           check_ballot_link: "kontrola mého hlasování"

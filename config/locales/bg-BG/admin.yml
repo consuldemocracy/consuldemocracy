@@ -1,1 +1,1617 @@
 bg:
+  admin:
+    header:
+      title: Администрация
+    actions:
+      actions: Действия
+      confirm: Сигурни ли сте?
+      confirm_hide: Потвърждаване на модерация
+      hide: Скриване
+      hide_author: Скриване на автора
+      restore: Възстановяване
+      mark_featured: Представен
+      unmark_featured: Отмяна на маркирането
+      edit: Редактиране
+      configure: Конфигуриране
+      delete: Изтриване
+    officing_booth:
+      title: "Вие обслужвате кабината, разположена на %{booth}. Ако това не е правилно, не продължавайте и се обадете на телефона за помощ. Благодаря."
+    banners:
+      index:
+        title: Банери
+        create: Създаване на банер
+        edit: Редактиране на банер
+        delete: Изтриване на банер
+        filters:
+          all: Всички
+          with_active: Активен
+          with_inactive: Неактивен
+        preview: Преглед
+      banner:
+        sections_label: Раздели, където ще се показва
+        sections:
+          homepage: Начална страница
+          debates: Дебати
+          proposals: Предложения
+          budgets: Бюджетиране чрез участие на гражданите
+          help_page: Помощна страница
+      edit:
+        editing: Редактиране на банер
+        form:
+          submit_button: Запазване на промени
+      new:
+        creating: Създаване на банер
+    activity:
+      show:
+        action: Действие
+        actions:
+          block: Блокиран
+          hide: Скрит
+          restore: Възстановен
+        by: Модериран от
+        content: Съдържание
+        filter: Показване
+        filters:
+          all: Всички
+          on_comments: Коментари
+          on_debates: Дебати
+          on_proposals: Предложения
+          on_users: Потребители
+          on_system_emails: Системни имейли
+        title: Модераторска дейност
+        type: Тип
+        no_activity: Няма активност на модераторите.
+    budgets:
+      index:
+        title: Бюджетиране чрез участие на гражданите
+        new_link: Създайте нов бюджет
+        filter: Филтър
+        filters:
+          open: Отворен
+          finished: Завършен
+        budget_investments: Управление на проекти
+        table_name: Име
+        table_phase: Фаза
+        table_investments: Инвестиции
+        table_edit_groups: Групи заглавия
+        table_edit_budget: Редактиране
+        table_admin_ballots: Бюлетини
+        edit_groups: Редактиране на групи заглавия
+        edit_budget: Редактиране на бюджета
+        admin_ballots: Административни бюлетини
+        no_budgets: "Няма бюджети."
+      create:
+        notice: Нов бюджет с участие на гражданите е създаден успешно!
+      update:
+        notice: Бюджет с участие на гражданите е актуализиран успешно
+      edit:
+        title: Редактиране на бюджет с участие на гражданите
+        delete: Изтриване на бюджет
+        phase: Фаза
+        dates: Дати
+        enabled: Активиран
+        actions: Действия
+        edit_phase: Редактиране на фаза
+        active: Активен
+        blank_dates: Датите са празни
+        administrators:
+          zero: "Избор на администратори"
+          one: "1 избран администратор"
+          other: "%{count} избрани администратори"
+        valuators:
+          zero: "Избор на оценители"
+          one: "1 избран оценител"
+          other: "%{count} избрани оценители"
+        empty_administrators: "Няма администратори"
+        empty_valuators: "Няма оценители"
+      destroy:
+        success_notice: Бюджетът е изтрит успешно
+        unable_notice: Не можете да изтриете бюджет, който има свързани инвестиции
+        unable_notice_polls: Не можете да изтриете бюджет, който има свързана анкета
+      new:
+        title: Нов бюджет с участие на гражданите
+      winners:
+        calculate: Изчислете инвестициите на Победителя
+        calculated: Победителите се изчисляват, може да отнеме минута.
+        recalculate: Преизчисляване на инвестициите на Победителя
+    budget_groups:
+      name: "Име"
+      headings_name: "Заглавия"
+      headings_edit: "Редактиране на заглавия"
+      headings_manage: "Управление на заглавия"
+      no_groups: "Няма групи."
+      amount:
+        one: "Има 1 група"
+        other: "Има %{count} групи"
+      create:
+        notice: "Групата е създадена успешно!"
+      update:
+        notice: "Групата е актуализирана успешно"
+      destroy:
+        success_notice: "Групата е изтрита успешно"
+        unable_notice: "Не можете да изтриете група, която има свързани заглавия"
+      form:
+        create: "Създаване на нова група"
+        edit: "Редактиране на група"
+        max_votable_headings_info: "Прилага се само за фазата на избор на проекти. По време на фазата на гласуване за проекти потребителите могат да гласуват само за едно заглавие на група."
+        submit: "Запазване на група"
+      index:
+        back: "Върнете се към бюджетите"
+    budget_headings:
+      no_headings: "Няма заглавия."
+      amount:
+        one: "Има 1 заглавие"
+        other: "Има %{count} заглавия"
+      create:
+        notice: "Заглавието е създадено успешно!"
+      update:
+        notice: "Заглавието е актуализирано успешно"
+      destroy:
+        success_notice: "Заглавието е изтрито успешно"
+        unable_notice: "Не можете да изтриете заглавие, което има свързани инвестиции"
+      form:
+        max_ballot_lines_info: 'Максимален брой проекти, за които потребителят може да гласува по тази позиция по време на фазата "Гласуване на проекти". Само за бюджети, използващи гласуване за одобрение.'
+        population_info: "Полето за бюджетно заглавие се използва за статистически цели в края на бюджета, за да се покаже за всяко заглавие, което представлява зона с население, какъв процент е гласувал. Полето е по избор, така че можете да го оставите празно, ако не се прилага."
+        coordinates_info: "Ако са предоставени ширина и дължина, страницата за инвестиции за това заглавие ще включва карта. Картата ще бъде центрирана с помощта на тези координати."
+        content_blocks_info: "Ако се разреши блокиране на съдържанието, ще можете да създадете персонализирано съдържание, свързано с това заглавие, от секцията Настройки. > Персонализирани блокове за съдържание. Това съдържание ще се появи на страницата за инвестиции за това заглавие."
+        create: "Създаване на ново заглавие"
+        edit: "Редактиране на заглавието"
+        submit: "Запазване на заглавието"
+      index:
+        back: "Върнете се към групите"
+    budget_phases:
+      edit:
+        summary_help_text: Този текст ще информира потребителя за фазата. За да го покажете, дори ако фазата не е активна, поставете отметка в квадратчето по-долу
+        description_help_text: Този текст ще се появи в заглавката, когато фазата е активна
+        enabled_help_text: Този етап ще бъде публичен в графика на бюджетните фази, както и активен за всяка друга цел
+        save_changes: Запазване на промените
+    budget_investments:
+      index:
+        heading_filter_all: Всички заглавия
+        administrator_filter_all: Всички администратори
+        valuator_filter_all: Всички оценители
+        tags_filter_all: Всички тагове
+        advanced_filters: Разширени филтри
+        placeholder: Търсене на проекти
+        filters:
+          all: Всички
+          without_admin: Без назначен администратор
+          without_valuator: Без назначен оценител
+          under_valuation: В процес на оценяване
+          valuation_finished: Оценяването е приключило
+          feasible: Изпълнимо
+          selected: Избрано
+          undecided: Нерешено
+          unfeasible: Неизпълнимо
+          min_total_supports: Минимална подкрепа
+          max_total_supports: Максимална подкрепа
+          winners: Победители
+          one_filter: "Текущо приложени филтри: <b><em>%{filter}</em></b>"
+          two_filters: "Текущо приложени филтри: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Филтър
+        download_current_selection: "Изтегляне на текущия избор"
+        no_budget_investments: "Няма инвестиционни проекти."
+        title: Инвестиционни проекти
+        columns: Колони
+        assigned_admin: Назначен администратор
+        no_admin_assigned: Няма назначен администратор
+        no_valuators_assigned: Няма назначени оценители
+        feasibility:
+          feasible: "Изпълнимо"
+          unfeasible: "Неизпълнимо"
+          undecided: "Нерешено"
+        selected: "Избрано"
+        select: "Избиране"
+        list:
+          title: Заглавие
+          supports: Подкрепа
+          admin: Администратор
+          valuator: Оценител
+          valuation_group: Оценяваща група
+          geozone: Обхват на действие
+          feasibility: Осъществимост
+          valuation_finished: Оценяване приключило
+          selected: Избрано
+          visible_to_valuators: Показване на оценителите
+          author_username: Потребителско име на автора
+          incompatible: Несъвместимо
+          price: Цена
+          author: Автор
+        cannot_calculate_winners: Бюджетът трябва да остане на фаза "Гласуване на проекти", "Преглед на бюлетините" или "Приключил бюджет", за да се изчислят проектите победители
+        see_results: "Вижте резултатите"
+        milestone_tags_filter_all: "Всички тагове за основни събития"
+      show:
+        assigned_admin: Назначен администратор
+        assigned_valuators: Назначени оценители
+        classification: Класификация
+        info: "%{budget_name} - Група: %{group_name} - Инвестиционен проект %{id}"
+        edit: Редактиране
+        edit_classification: Редактиране на класификация
+        by: От
+        sent: Изпратено
+        group: Група
+        heading: Заглавие
+        dossier: Досие
+        edit_dossier: Редактиране на досие
+        tags: Тагове
+        undefined: Неопределено
+        compatibility:
+          title: Съвместимост
+          "true": Несъвместим
+          "false": Съвместим
+        selection:
+          title: Избор
+        winner:
+          title: Победител
+          "true": "Да"
+          "false": "Не"
+        valuator_groups: "Оценяващи групи"
+        preview: Преглед на инвестициите
+      edit:
+        classification: Класификация
+        compatibility: Съвместимост
+        selection: Избор
+        assigned_valuators: Оценители
+        select_heading: Избор на заглавие
+        submit_button: Актуализиране
+        user_tags: Назначени от потребителя тагове
+        tags_placeholder: "Напишете таговете, които искате, разделени от запетаи(,)"
+        undefined: Неопределено
+      search_unfeasible: Търсене не е възможно
+    milestones:
+      index:
+        table_title: "Заглавие"
+        table_description: "Описание"
+        table_publication_date: "Дата на публикуване"
+        table_status: Състояние
+        table_actions: "Действия"
+        delete: "Изтриване на основни етапи"
+        no_milestones: "Не са дефинирани етапи"
+        image: "Изображение"
+        show_image: "Покажи изображение"
+        documents: "Документи"
+        milestone: Основен етап
+        new_milestone: Създайте нов етап
+        milestone_tags: Тагове за основни етапи
+      form:
+        admin_statuses: Управление на състояния
+        no_statuses_defined: Все още няма определени състояния
+      new:
+        creating: Създаване на основен етап
+      edit:
+        title: Редактиране на основен етап
+      create:
+        notice: Нов етап е създаден успешно!
+      update:
+        notice: Основният етап е актуализиран успешно
+      delete:
+        notice: Основният етап е изтрит успешно
+    statuses:
+      index:
+        title: Състояния на основни етапи
+        empty_statuses: Не са създадени състояния на основни етапи
+        new_status: Създаване на ново състояние на основен етап
+        table_name: Име
+        table_description: Описание
+        table_actions: Действия
+        delete: Изтриване
+        edit: Редактиране
+      edit:
+        title: Редактиране на състоянието на основен етап
+      update:
+        notice: Състоянието на основен етап е актуализирано успешно
+      new:
+        title: Създаване на състояние на основен етап
+      create:
+        notice: Създаването на основен етап е със статус успешно
+      delete:
+        notice: Състоянието на основен етап е изтрито успешно
+    progress_bars:
+      manage: "Управление на лентите за напредък"
+      index:
+        title: "Ленти за напредък"
+        no_progress_bars: "Няма ленти за напредък"
+        new_progress_bar: "Създаване на нова лента за напредък"
+        primary: "Основна лента за напредък"
+        table_kind: "Вид"
+        table_title: "Заглавие"
+        table_percentage: "Текущ напредък"
+      new:
+        creating: "Създаване на лента за напредък"
+      edit:
+        title:
+          primary: "Редактиране на основната лента за напредък"
+          secondary: "Редактиране на лентата за напредък %{title}"
+      create:
+        notice: "Лентата за напредък е създадена успешно!"
+      update:
+        notice: "Лента за напредък е актуализирана успешно"
+      delete:
+        notice: "Лентата на напредъка е изтрита успешно"
+    comments:
+      index:
+        content: "Съдържание"
+        author: "Автор"
+        commentable_type: "Вид"
+        title: Коментари
+        no_comments: Няма коментари.
+        table_link: "Връзка"
+    hidden_comments:
+      index:
+        filter: Филтър
+        filters:
+          all: Всички
+          with_confirmed_hide: Потвърдено
+          without_confirmed_hide: Изчакване
+        hidden_debate: Скрит дебат
+        hidden_proposal: Скрито предложение
+        title: Скрити коментари
+        no_hidden_comments: Няма скрити коментари.
+    dashboard:
+      index:
+        back: Върнете се към %{org}
+        title: Администрация
+        description: Добре дошли в административния панел %{org}.
+      actions:
+        index:
+          description: "Когато потребителите създават предложения, те могат да получат достъп до табло на своето предложение, където можете да предлагате ресурси и препоръки, за да получите подкрепа за тяхната идея."
+          create: Създаване на ресурс или действие
+          edit: Редактиране
+          delete: Изтриване
+          active: 'Да'
+          inactive: 'Не'
+          title: Ресурси и действия
+          action_title: Заглавие
+          action_type: Вид
+          required_supports: Необходими поддръжки
+          day_offset: Необходими дни
+          action_active: Активно
+          order: Ред
+          published_proposal: Публикувано предложение
+          default:
+            email: Имейл
+            polls: Анкети
+            poster: Плакат
+        new:
+          creating: Ново действие за таблото за предложения
+          back: Назад към списъка
+        create:
+          notice: Действието е създадено успешно
+        edit:
+          editing: Редактиране на действие за таблото за предложения
+          back: Назад към списъка
+        delete:
+          success: Действието е успешно изтрито
+        form:
+          submit_button: Запазване
+          help_text: Въведете 0, така че тази стойност да не бъде взета под внимание
+          published_proposal_help_text: Поставете отметка в това квадратче, за да създадете действието само за публикувани предложения
+      administrator_tasks:
+        index:
+          description: "Ресурсите, публикувани в таблото за предложения могат да включват бутон, който да бъде изискан от администраторите. Потребителските заявки са показани по-долу."
+          title: Заявени ресурси
+          solve: Решаване
+          no_records: Не са заявени ресурси
+          source: Източник
+          resource: Заявен ресурс
+          filter: Филтър
+          filters:
+            pending: Изчакване
+            done: Решено
+        edit:
+          back: Назад към списъка с чакащи задачи
+          solving: Решаване на чакаща задача
+        form:
+          solve: Отбележете като решен
+          proposal: Предложение
+          request: Заявен ресурс
+        update:
+          success: Задачата е маркирана като решена.
+    debates:
+      index:
+        author: Автор
+        title: Дебати
+        no_debates: Няма дебати.
+    hidden_debates:
+      index:
+        filter: Филтър
+        filters:
+          all: Всички
+          with_confirmed_hide: Потвърдено
+          without_confirmed_hide: Изчакване
+        title: Скрити дебати
+        no_hidden_debates: Няма скрити дебати.
+    documents:
+      new:
+        title: "Качване на документ"
+        submit_button: "Качване"
+      index:
+        new_link: "Добавяне на нов документ"
+        no_documents: "Няма документи."
+        title: "Документи"
+        format: "Формат"
+        size: "Размер"
+        url: "URL адрес"
+      create:
+        success_notice: "Документът качен успешно"
+        unable_notice: "Невалиден документ"
+      destroy:
+        success_notice: "Документът е изтрит успешно"
+    hidden_users:
+      index:
+        filter: Филтър
+        filters:
+          all: Всички
+          with_confirmed_hide: Потвърдено
+          without_confirmed_hide: Изчакване
+        title: Скрити потребители
+        user: Потребител
+        no_hidden_users: Няма скрити потребители.
+      show:
+        email: "Имейл:"
+        hidden_at: "Скрито в:"
+        registered_at: "Регистриран в:"
+        title: Дейност на потребителя (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Филтър
+        filters:
+          all: Всички
+          with_confirmed_hide: Потвърдено
+          without_confirmed_hide: Изчакване
+        title: Скрити бюджетни инвестиции
+        no_hidden_budget_investments: Няма скрити бюджетни инвестиции
+    legislation:
+      processes:
+        create:
+          notice: 'Процесът е създаден успешно.<a href="%{link}">Кликнете, за да посетите</a>'
+          error: Процесът не можа да бъде създаден
+        update:
+          notice: 'Процесът е актуализиран успешно.<a href="%{link}">Кликнете, за да посетите</a>'
+          error: Процесът не можа да бъде актуализиран
+        destroy:
+          notice: Процесът е изтрит успешно
+        edit:
+          back: Назад
+          submit_button: Запазване на промените
+        form:
+          enabled: Активиран
+          process: Процес
+          debate_phase: Фаза на дебат
+          draft_phase: Фаза на чернова
+          draft_phase_description: Ако тази фаза е активна, процесът няма да бъде посочен в индекса на процесите. Позволете да визуализирате процеса и да създадете съдържание преди началото. If this phase is active, the process won't be listed on processes index. Allow to preview the process and create content before the start.
+          allegations_phase: Фаза на коментари
+          proposals_phase: Фаза на предложенията
+          use_markdown: Използвайте Markdown за форматиране на текста
+          title_placeholder: Заглавието на процеса
+          summary_placeholder: Кратко резюме на описанието
+          description_placeholder: Добавете описание на процеса
+          additional_info_placeholder: Добавете допълнителна информация, която считате за полезна
+          homepage_description: Тук можете да обясните съдържанието на процеса
+          banner_title: Цветове на хедъра
+        index:
+          create: Нов процес
+          delete: Изтриване
+          title: Съвместно законодателство
+          filters:
+            active: Активен
+            all: Всички
+        new:
+          back: Назад
+          title: Създаване на нов процес на съвместно законодателство
+          submit_button: Създаване на процес
+        proposals:
+          select_order: Сортиране по
+          orders:
+            title: Заглавие
+            supports: Общо подкрепени
+        process:
+          title: Процес
+          comments: Коментари
+          status: Състояние
+          start_date: Начална дата
+          end_date: Крайна дата
+          status_open: Отворено
+          status_closed: Затворено
+          status_planned: Планирано
+        subnav:
+          info: Информация
+          homepage: Начална страница
+          draft_versions: Съставяне
+          questions: Дебат
+          proposals: Предложения
+          milestones: Следват
+      homepage:
+        edit:
+          title: Конфигурирайте началната страница на процеса
+      proposals:
+        index:
+          title: Заглавие
+          back: Назад
+          supports: Общо подкрепени
+        form:
+          custom_categories: Категории
+          custom_categories_description: Категории, които потребителите могат да изберат при създаването на предложението. Максимум 160 символа.
+          custom_categories_placeholder: Въведете таговете, които искате да използвате, разделени със запетаи (,) и между кавички ("")
+      draft_versions:
+        create:
+          notice: 'Черновата е създадена успешно.<a href="%{link}">Кликнете, за да я посетите</a>'
+          error: Черновата не може да бъде създадена
+        update:
+          notice: 'Черновата е актуализирана успешно.<a href="%{link}">Кликнете, за да посетите</a>'
+          error: Черновата не може да бъде актуализирана
+        destroy:
+          notice: Черновата е изтрита успешно
+        edit:
+          back: Назад
+          submit_button: Запазване на промените
+          warning: Редактирахте текста, не забравяйте да кликнете върху Запазване, за да запазите трайно промените.
+          markdown_changes_message: "Вие редактирахте текста, но не сте запазили промените. Искате ли да напуснете страницата?"
+        form:
+          title: 'Редактиране <span class="strong">%{draft_version_title}</span> от процеса <span class="strong">%{process_title}</span>'
+          launch_text_editor: Стартиране на текстов редактор
+          close_text_editor: Затваряне на текстовия редактор
+          use_markdown: Използвайте Markdown за форматиране на текста
+          hints:
+            final_version: Тази версия ще бъде публикувана като окончателен резултат за този процес. В тази версия няма да се допускат коментари.
+            status:
+              draft: Можете да визуализирате като администратор, никой друг не може да го види
+              published: Видимо за всички
+          title_placeholder: Напишете заглавието на черновата версия
+          changelog_placeholder: Добавете основните промени от предишната версия
+          body_placeholder: Запишете текста на черновата
+        index:
+          title: Версии на черновата
+          create: Създаване на версия
+          delete: Изтриване
+          preview: Визуализация
+        new:
+          back: Назад
+          title: Създайте нова версия
+          submit_button: Създаване на версия
+        table:
+          title: Заглавие
+          created_at: Създадено в
+          comments: Коментари
+          final_version: Окончателна версия
+          status: Състояние
+      questions:
+        create:
+          notice: 'Въпросът е създаден успешно.<a href="%{link}">Кликнете, за да го посетите</a>'
+          error: Въпросът не можа да бъде създаден
+        update:
+          notice: 'Въпросът е актуализиран успешно.<a href="%{link}">Кликнете, за да го посетите</a>'
+          error: Въпросът не можа да бъде актуализиран
+        destroy:
+          notice: Въпросът е изтрит успешно
+        edit:
+          back: Назад
+          title: "Редактиране“%{question_title}”"
+          submit_button: Запазване на промените
+        form:
+          add_option: Добавяне на опция
+          title_placeholder: Добавяне на въпрос
+          value_placeholder: Добавете затворен отговор
+          question_options: "Възможни отговори (незадължително, отворени отговори по подразбиране)"
+        index:
+          back: Назад
+          title: Въпроси, свързани с този процес
+          create: Създаване на въпрос
+          delete: Изтриване
+        new:
+          back: Назад
+          title: Създайте нов въпрос
+          submit_button: Създаване на въпрос
+        table:
+          title: Заглавие
+          question_options: Опции за въпроси
+          answers_count: Брой отговори
+          comments_count: Брой коментари
+        question_option_fields:
+          remove_option: Премахване на опция
+      milestones:
+        index:
+          title: Следва
+    managers:
+      index:
+        title: Мениджъри
+        name: Име
+        email: Имейл
+        no_managers: Няма мениджъри.
+      manager:
+        add: Добавяне
+        delete: Изтриване
+      search:
+        title: "Мениджъри: Търсене на потребители"
+    menu:
+      activity: Дейност на модератора
+      admin: Административно меню
+      banner: Управление на банери
+      proposals: Предложения
+      proposals_topics: Теми за предложения
+      budgets: Бюджети за участие
+      geozones: Управление на геозоните
+      hidden_comments: Скрити коментари
+      hidden_debates: Скрити дебати
+      hidden_proposals: Скрити предложения
+      hidden_budget_investments: Скрити бюджетни инвестиции
+      hidden_proposal_notifications: Скрити известия за предложения
+      hidden_users: Скрити потребители
+      administrators: Администратори
+      managers: Мениджъри
+      moderators: Модератори
+      messaging_users: Съобщения до потребителите
+      newsletters: Бюлетини
+      admin_notifications: Известия
+      system_emails: Системни имейли
+      emails_download: Изтегляне на имейли
+      valuators: Оценители
+      poll_officers: Анкетни служители
+      polls: Анкети
+      poll_booths: Местоположение на кабинки
+      poll_booth_assignments: Назначения на кабинки
+      poll_shifts: Управление на смени
+      officials: Длъжностни лица
+      organizations: Организации
+      settings: Глобални настройки
+      stats: Статистика
+      signature_sheets: Листове за подпис
+      site_customization:
+        documents: Персонализирани документи
+        homepage: Начална страница
+        pages: Персонализирани страници
+        images: Персонализирани изображения
+        content_blocks: Персонализирани блокове на съдържание
+        information_texts: Персонализирани информационни текстове
+        information_texts_menu:
+          basic: "Основна персонализация"
+          debates: "Дебати"
+          community: "Общност"
+          proposals: "Предложения"
+          polls: "Анкети"
+          layouts: "Оформление"
+          mailers: "Имейли"
+          management: "Управление"
+          welcome: "Добре дошли"
+        buttons:
+          save: "Запазване"
+          content_block:
+            update: "Актуализиране на блок"
+      title_moderated_content: Модерирано съдържание
+      title_profiles: Профили
+      title_settings: Настройки
+      title_site_customization: Съдържание на сайта
+      title_booths: Кабини за гласуване
+      legislation: Съвместно законодателство
+      users: Потребители
+      dashboard: Табло за управление на предложенията
+      administrator_tasks: Искани ресурси
+      dashboard_actions: Ресурси и действия
+      debates: "Дебати"
+      comments: "Коментари"
+      local_census_records: Администриране на местния регистър
+    administrators:
+      index:
+        title: Администратори
+        name: Име
+        email: Имейл
+        description: Описание
+        id: ID на администратор
+        no_administrators: Няма администратори.
+      administrator:
+        add: Добавяне
+        delete: Изтриване
+        restricted_removal: "За съжаление не можете да се премахнете от администраторите"
+      search:
+        title: "Администратори: Търсене на потребители"
+      form:
+        edit_title: "Редактиране на администратор"
+        updated: "Администраторът е актуализиран успешно"
+    moderators:
+      index:
+        title: Модератори
+        name: Име
+        email: Имейл
+        no_moderators: Няма модератори.
+      moderator:
+        add: Добавяне
+        delete: Изтриване
+      search:
+        title: "Модератори: Търсене на потребители"
+    segment_recipient:
+      all_users: Всички потребители
+      administrators: Администратори
+      all_proposal_authors: Автори на предложения (включително архивирани и оттеглили се)
+      proposal_authors: Автори на предложения
+      investment_authors: Инвестиционни автори в текущия бюджет
+      feasible_and_undecided_investment_authors: "Авторите на някои инвестиции в текущия бюджет, който не отговарят на изискванията: [невъзможност за завършване на оценката]"
+      selected_investment_authors: Автори на избрани инвестиции в текущия бюджет
+      winner_investment_authors: Автори на печеливши инвестиции в текущия бюджет
+      not_supported_on_current_budget: Потребители, които не са подкрепили инвестиции за текущия бюджет
+      invalid_recipients_segment: "Потребителският сегмент на получателите е невалиден"
+    newsletters:
+      create_success: Бюлетинът е създаден успешно
+      update_success: Бюлетинът е актуализиран успешно
+      send_success: Бюлетинът е изпратен успешно
+      delete_success: Бюлетинът е изтрит успешно
+      index:
+        title: Бюлетини
+        new_newsletter: Нов бюлетин
+        subject: Тема
+        segment_recipient: Получатели
+        sent: Изпратено
+        actions: Действия
+        draft: Чернова
+        edit: Редактиране
+        delete: Изтриване
+        preview: Визуализация
+        empty_newsletters: Няма бюлетини за показване
+      new:
+        title: Нов бюлетин
+        header_footer_help_text: "Заглавието и долния колонтитул са еднакви за всички имейли. Можете да ги промените в <code>app/views/layouts/mailer_header</code> и <code>app/views/layouts/mailer_footer</code>.<br> Можете да замените заглавното изображение на %{link}."
+        image_link: "персонализирани изображения"
+      edit:
+        title: Редактиране на бюлетин
+      show:
+        title: Визуализация на бюлетина
+        send: Изпратете
+        affected_users: (%{n} засегнати потребители)
+        sent_emails:
+          one: 1 имейл е изпратен
+          other: "%{count} имейла са изпратени"
+        sent_at: Изпратено в
+        subject: Тема
+        segment_recipient: Получатели
+        from: Имейл адрес, който ще се появи при изпращане на бюлетина
+        body: Съдържание на имейла
+        body_help_text: Така потребителите ще виждат имейла.
+        send_alert: Сигурни ли сте, че искате да изпратите този бюлетин до %{n} потребители?
+    admin_notifications:
+      create_success: Известието е създадено успешно
+      update_success: Известието е актуализирано успешно
+      send_success: Известието е изпратено успешно
+      delete_success: Известието е изтрито успешно
+      index:
+        section_title: Известия
+        new_notification: Ново известие
+        title: Заглавие
+        segment_recipient: Получатели
+        sent: Изпратено
+        actions: Действия
+        draft: Чернова
+        edit: Редактиране
+        delete: Изтриване
+        preview: Визуализация
+        view: Преглед
+        empty_notifications: Няма известия за показване
+      new:
+        section_title: Ново известие
+        submit_button: Създаване на известие
+      edit:
+        section_title: Редактиране на известие
+        submit_button: Актуализиране на известие
+      show:
+        section_title: Визуализация на известие
+        send: Изпращане на известие
+        will_get_notified: (%{n} потребители ще бъдат уведомени)
+        got_notified: (%{n} потребители са уведомени)
+        sent_at: Изпратено в
+        title: Заглавие
+        body: Текст
+        link: Връзка
+        segment_recipient: Получатели
+        preview_guide: "Така потребителите ще виждат известието:"
+        sent_guide: "Така потребителите виждат известието:"
+        send_alert: Сигурни ли сте, че искате да изпратите това известие до%{n} потребители?
+    system_emails:
+      preview_pending:
+        action: Визуализация в очакване
+        preview_of: Визуализация на %{name}
+        pending_to_be_sent: Това е съдържанието, което чака да бъде изпратено
+        moderate_pending: Модерирано изпращане на известие
+        send_pending: Изпращане в очакване
+        send_pending_notification: Изчакващите известия са изпратени успешно
+      proposal_notification_digest:
+        title: "Дайджест на известия за предложения"
+        description: "Събира всички известия за предложения за потребител в едно съобщение, за да избегне твърде много имейли."
+        preview_detail: "Потребителите ще получават известия само от предложенията, които следват"
+      budget_investment_created:
+        title: "Създадена е бюджетна инвестиция"
+        description: "Изпраща се, когато потребителят създаде бюджетна инвестиция."
+      budget_investment_selected:
+        title: "Избрана е бюджетна инвестиция"
+        description: "Изпратен на автора, когато бъде избрана неговата бюджетна инвестиция."
+      budget_investment_unfeasible:
+        title: "Бюджетната инвестиция е неизпълнима"
+        description: "Изпратено на автора, когато неговата бюджетна инвестиция е била маркирана като неизпълнима."
+      budget_investment_unselected:
+        title: "Неизбрана бюджетна инвестиция"
+        description: "Изпратено на автора, когато неговата бюджетна инвестиция не е избрана за фаза на гласуване."
+      comment:
+        title: "Коментар"
+        description: "Изпраща се на автора, когато получи коментар."
+      reply:
+        title: "Отговор"
+        description: "Изпратен на автора на коментара, когато получи отговор."
+      direct_message_for_receiver:
+        title: "Получател на лично съобщение"
+        description: "Изпратено до получателя на личното съобщение."
+      direct_message_for_sender:
+        title: "Подател на лично съобщение"
+        description: "Изпратено до подателя на личното съобщение."
+      email_verification:
+        title: "Потвърждение на имейла"
+        description: "Изпратен на нов потребител, за да потвърди акаунта му."
+      user_invite:
+        title: "Потребителска покана"
+        description: "Изпратено на лицето, което е поканено да регистрира акаунт."
+      evaluation_comment:
+        title: "Нов коментар за оценка"
+        description: "Изпратено на администратори и оценители, свързани с коментирани инвестиции"
+      edit_info: "Можете да редактирате този имейл в"
+      message_title: "Заглавие на съобщението"
+      message_body: "Това е извадка от съдържанието на съобщението."
+      alert:
+        no_investments: "Не са създадени никакви бюджетни инвестиции. Някои примерни данни са необходими, за да визуализирате имейла."
+        no_comments: "Няма създадени коментари. Някои примерни данни са необходими, за да визуализирате имейла."
+        no_replies: "Няма създадени отговори. Някои примерни данни са необходими, за да визуализирате имейла."
+        no_evaluation_comments: "Няма създадени коментари за оценка. Някои примерни данни са необходими, за да визуализирате имейла."
+    emails_download:
+      index:
+        title: Изтегляне на имейли
+        download_segment: Изтеглете имейл адреси
+        download_segment_help_text: Изтегляне във формат CSV
+        download_emails_button: Изтеглете списъка с имейли
+    valuators:
+      index:
+        title: Оценители
+        name: Име
+        email: Имейл
+        description: Описание
+        no_description: Няма описание
+        no_valuators: Няма оценители.
+        valuator_groups: "Групи за оценка"
+        group: "Група"
+        no_group: "Няма група"
+        abilities: "Способности"
+        can_comment: "Може да коментирате"
+        can_edit_dossier: "Може да редактирате досието"
+      valuator:
+        add: Добавете към оценители
+        delete: Изтрийте
+      search:
+        title: "Оценители: Потребителско търсене"
+      form:
+        edit_title: "Оценители: Редактиране на оценител"
+        updated: "Оценителят е актуализиран успешно"
+      show:
+        description: "Описание"
+        email: "Имейл"
+        group: "Група"
+        abilities: "Способности"
+        no_description: "Без описание"
+        no_group: "Без група"
+        no_abilities: "Без способности"
+    valuator_groups:
+      index:
+        title: "Групи за оценка"
+        new: "Създайте група за оценка"
+        name: "Име"
+        members: "Членове"
+        no_groups: "Няма групи за оценка"
+      show:
+        title: "Група за оценка: %{group}"
+        no_valuators: "В тази група няма оценители"
+      form:
+        new: "Създайте група оценители"
+        edit: "Запазване на група оценители"
+    poll_officers:
+      index:
+        title: Анкетни служители
+      officer:
+        add: Добави
+        delete: Изтрий позицията
+        name: Име
+        email: Електронна поща
+        entry_name: служител
+      search:
+        email_placeholder: Търсене на потребител по имейл
+        search: Търсене
+        user_not_found: Потребителят не е намерен
+        help: "За добавяне или премахване на анкетни служители използвайте формата за търсене по-долу."
+    poll_officer_assignments:
+      index:
+        officers_title: "Списък на служителите"
+        no_officers: "Няма служители, назначени в тази анкета."
+        table_name: "Име"
+        table_email: "Имейл"
+      by_officer:
+        date: "Дата"
+        booth: "Кабинка"
+        assignments: "Обслужващи смени в тази анкета"
+        no_assignments: "Този потребител няма обслужващи смени в тази анкета."
+    poll_shifts:
+      new:
+        add_shift: "Добавяне на смяна"
+        shift: "Назначение"
+        shifts: "Смени в тази кабинка"
+        date: "Дата"
+        edit_shifts: Редактиране на смени
+        new_shift: "Нова смяна"
+        no_shifts: "Тази кабинка няма смени"
+        officer: "Служител"
+        remove_shift: "Премахване"
+        search_officer_button: Търсене
+        search_officer_placeholder: Служител за търсене
+        search_officer_text: Търсене на служител, който да назначи нова смяна
+        select_date: "Изберете ден"
+        no_voting_days: "Дните на гласуване приключиха"
+        select_task: "Изберете задача"
+        table_shift: "Смяна"
+        table_email: "Имейл"
+        table_name: "Име"
+      flash:
+        create: "Смяната е добавена"
+        destroy: "Смяната е премахната"
+        unable_to_destroy: "Промените със свързани резултати или преброяване не могат да бъдат изтрити"
+        date_missing: "Трябва да бъде избрана дата"
+      vote_collection: Съберете гласове
+      recount_scrutiny: Преброяване и контрол
+    booth_assignments:
+      manage_assignments: Управление на задания
+      manage:
+        assignments_list: "Задания за анкета '%{poll}'"
+        status:
+          assign_status: Задание
+          assigned: Възложено
+          unassigned: Незададено
+        actions:
+          assign: Определяне на кабинка
+          unassign: Отменяне на кабинка
+    poll_booth_assignments:
+      alert:
+        shifts: "Има смени, свързани с тази кабинка. Ако премахнете заданието на кабинката, смените също ще бъдат изтрити. Продължи?"
+      show:
+        location: "Местоположение"
+        officers: "Служители"
+        officers_list: "Списък на служителите за тази кабинка"
+        no_officers: "За тази кабинка няма служители"
+        recounts: "Преброяване"
+        recounts_list: "Списък на преброяване за тази кабинка"
+        results: "Резултати"
+        date: "Дата"
+        count_final: "Окончателно преброяване (от служител)"
+        count_by_system: "Гласувания (автоматично)"
+        total_system: Общо гласове (автоматично)
+      index:
+        booths_title: "Списък на кабинки"
+        no_booths: "Няма кабинки, назначени за тази анкета."
+        table_name: "Име"
+        table_location: "Местоположение"
+    active_polls:
+      edit:
+        title: "Описание на анкетите"
+      form:
+        description:
+          help_text: "Този текст ще се появи в заглавката на страницата за анкети. Може да се използва за добавяне на контекст към откритите анкети."
+    polls:
+      index:
+        title: "Списък на анкети"
+        no_polls: "Няма анкети."
+        create: "Създаване на анкета"
+        name: "Име"
+        dates: "Дати"
+        start_date: "Начална дата"
+        closing_date: "Крайна дата"
+        geozone_restricted: "Ограничен до райони"
+      new:
+        title: "Нова анкета"
+        submit_button: "Създаване на анкета"
+      edit:
+        title: "Редактиране на анкетата"
+        submit_button: "Актуализиране на анкетата"
+      show:
+        questions_tab: Въпроси
+        booths_tab: Кабинки
+        officers_tab: Служители
+        recounts_tab: Преброяване
+        results_tab: Резултати
+        no_questions: "Няма въпроси, назначени в тази анкета."
+        questions_title: "Списък от въпроси"
+        table_title: "Заглавие"
+        edit_answers: Редактиране на отговори
+        see_proposal: "(Вижте предложението)"
+      flash:
+        question_added: "Въпросът е добавен към тази анкета"
+        error_on_question_added: "Въпросът не може да бъде зададен към тази анкета"
+      destroy:
+        alert: "Това действие ще премахне анкетата и всички свързани с нея въпроси."
+        success_notice: "Анкета е изтрита успешно"
+        unable_notice: "Не можете да изтриете анкета с гласове"
+    questions:
+      index:
+        title: "Въпроси"
+        create: "Създайте въпрос"
+        no_questions: "Няма въпроси."
+        filter_poll: Филтриране по анкета
+        select_poll: Избиране на анкета
+        questions_tab: "Въпроси"
+        successful_proposals_tab: "Успешни предложения"
+        create_question: "Създайте въпрос"
+        table_proposal: "Предложение"
+        table_question: "Въпрос"
+        table_poll: "Анкета"
+        poll_not_assigned: "Анкета не е назначена"
+      edit:
+        title: "Редактиране на въпроса"
+      new:
+        title: "Създайте въпрос за анкета %{poll}"
+        title_proposal: "Създайте въпрос"
+      answers:
+        images:
+          add_image: "Добавете изображение"
+          save_image: "Запазете изображение"
+      show:
+        proposal: Оригинално предложение
+        author: Автор
+        question: Въпрос
+        edit_question: Редактиране на въпрос
+        valid_answers: Валидни отговори
+        add_answer: Добавете отговор
+        video_url: Външно видео
+        answers:
+          title: Въпрос
+          description: Описание
+          videos: Видео
+          video_list: Списък с видео
+          images: Изображения
+          images_list: Списък с изображения
+          documents: Документи
+          documents_list: Списък с документи
+          document_title: Заглавие
+          document_actions: Действия
+    answers:
+      new:
+        title: Нов отговор
+      show:
+        title: Заглавие
+        description: Описание
+        images: Изображения
+        images_list: Списък с изображения
+        edit: Редактиране на отговор
+      edit:
+        title: Редактиране на отговор
+      videos:
+        index:
+          title: Видео
+          add_video: Добавяне на видео
+          video_title: Заглавие
+          video_url: Външно видео
+        new:
+          title: Ново видео
+        edit:
+          title: Редактиране на видео
+    recounts:
+      index:
+        title: "Преброяване"
+        no_recounts: "Няма нищо за преброяване"
+        all_booths_total: "Обща сума от всички кабинки:"
+        total_final: "Окончателни изчисления"
+        total_system: "Гласувания (автоматично)\ntable_booth_name: \"Кабинка"
+        table_booth_name: "Кабинка"
+        table_total_recount: "Общо преброяване (от служител)"
+        table_system_count: "Гласувания (автоматично)"
+    results:
+      index:
+        title: "Резултати"
+        no_results: "Няма резултати"
+      result:
+        table_whites: "Напълно празни бюлетини"
+        table_nulls: "Невалидни бюлетини"
+        table_total: "Валидни бюлетини"
+        table_answer: Отговор
+        table_votes: Гласове
+      results_by_booth:
+        booth: Кабинка
+        results: Резултати
+        see_results: Вижте резултати
+        title: "Резултати от кабинка"
+    booths:
+      index:
+        title: "Списък на активните кабинки"
+        no_booths: "Няма активни кабинки за предстояща анкета."
+        add_booth: "Добавяне на кабинка"
+        name: "Име"
+        location: "Местоположение"
+        no_location: "Няма местоположение"
+      new:
+        title: "Нова кабинка"
+        submit_button: "Създаване на кабинка"
+      edit:
+        title: "Редактиране на кабинка"
+        submit_button: "Актуализиране на кабинка"
+      show:
+        location: "Местоположение"
+      booth:
+        shifts: "Управление на смените"
+        edit: "Редактиране на кабинка"
+    officials:
+      edit:
+        destroy: Премахнете състоянието „Длъжностно лице“
+        title: "Длъжностни лица: Редактиране на потребител"
+      flash:
+        official_destroyed: "Детайли са запазени: потребителят вече не е длъжностно лице"
+        official_updated: Подробности за длъжностни лица запазени
+      index:
+        title: Длъжностни лица
+        help: Потребителските акаунти, маркирани като длъжностни лица, ще имат обозначена своята намеса в платформата. Можете да определите етикета, който се появява до потребителските имена на тези акаунти, от най-важното (ниво 1) до най-маловажно (ниво 5).
+        no_officials: Няма длъжностни лица.
+        name: Име
+        official_position: Официална позиция
+        official_level: Ниво
+      level_0: Не е официално
+      level_1: Ниво 1
+      level_2: Ниво 2
+      level_3: Ниво 3
+      level_4: Ниво 4
+      level_5: Ниво 5
+      search:
+        edit_official: Редактиране на служебно лице
+        make_official: Make official/ Направете официално
+        title: "Официални позиции: Търсене на потребители"
+        no_results: Официални позиции не са намерени.
+    organizations:
+      index:
+        filter: Филтър
+        filters:
+          all: Всички
+          pending: Изчакване
+          rejected: Отхвърлено
+          verified: Потвърдено
+        hidden_count:
+          one: Има и <strong> една организация </strong> без потребители или със скрит потребител.
+          other: Има <strong>%{count} организации </strong> без потребители или със скрит потребител.
+        name: Име
+        email: Имейл
+        phone_number: Телефон
+        responsible_name: Отговорен
+        status: Състояние
+        no_organizations: Няма организации.
+        reject: Отхвърлете
+        rejected: Отхвърлено
+        search: Търсете
+        search_placeholder: Име, имейл или телефонен номер
+        title: Организации
+        verified: Потвърдено
+        verify: Потвърдете
+        pending: Изчакване
+      search:
+        title: Търсене на организации
+        no_results: Не са намерени организации.
+    proposals:
+      index:
+        title: Предложения
+        author: Автор
+        select: Изберете
+        selected: Избрано
+        milestones: Основни етапи
+        no_proposals: Няма предложения.
+      show:
+        create_question: Добавете това предложение към анкета, която ще бъде гласувана
+      form:
+        update: Актуализиране на предложението
+      update:
+        notice: Предложението е актуализирано успешно
+    hidden_proposals:
+      index:
+        filter: Филтър
+        filters:
+          all: Всички
+          with_confirmed_hide: Потвърдено
+          without_confirmed_hide: Изчакване
+        title: Скрити предложения
+        no_hidden_proposals: Няма скрити предложения.
+    hidden_proposal_notifications:
+      index:
+        filter: Филтър
+        filters:
+          all: Всички
+          with_confirmed_hide: Потвърдени
+          without_confirmed_hide: Изчакващи
+        title: Скрити известия
+        no_hidden_proposals: Няма скрити известия.
+    settings:
+      flash:
+        updated: Стойността е актуализирана
+      index:
+        title: Настройки
+        general: Настройки за конфигурация
+        update_setting: Актуализация
+        participation_processes: "„Процеси на участие“"
+        images_and_documents: "„Изображения и документи“"
+        feature_flags: Характеристика
+        features:
+          enabled: "Функцията е активирана"
+          disabled: "Функцията е деактивирана"
+          enable: "Активиране"
+          disable: "Деактивиране"
+        map:
+          title: Конфигурация на картата
+          help: Тук можете да персонализирате начина, по който картата се показва на потребителите. Плъзнете маркера на картата или кликнете някъде върху картата, задайте желаното увеличение и натиснете бутона "Актуализиране".
+          flash:
+            update: Конфигурацията на картата е актуализирана успешно.
+          form:
+            submit: Актуализиране
+          how_to_enable: 'За да покажете картата на потребителите, трябва да активирате "Предложения и геолокация на бюджетни инвестиции" в раздел "Функции".'
+        dashboard:
+          title: Табло за управление на предложенията
+        remote_census:
+          title: Конфигурация на дистанционното преброяване
+          how_to_enable: 'За да конфигурирате отдалечено преброяване (SOAP), трябва да активирате "Конфигуриране на връзка с отдалечено преброяване (SOAP)" в раздел "Характеристики".'
+      remote_census_general_name: Обща информация
+      remote_census_request_name: Заявете данни
+      remote_census_response_name: Данни за отговор
+      setting: Характеристика
+      setting_actions: Действия
+      setting_name: Настройка
+      setting_status: Състояние
+      setting_value: Стойност
+      no_description: "Няма описание"
+    shared:
+      true_value: "Да"
+      false_value: "Не"
+      booths_search:
+        button: Търсене
+        placeholder: Търсете кабинка по име или местоположение
+      poll_officers_search:
+        button: Търсене
+        placeholder: Търсете служители за анкета
+      poll_questions_search:
+        button: Търсене
+        placeholder: Търсете въпроси за анкета
+      proposal_search:
+        button: Търсене
+        placeholder: Търсете предложения по заглавие, код, описание или въпрос
+      debate_search:
+        button: Търсене
+        placeholder: Търсете дебати по заглавие или описание
+      user_search:
+        button: Търсене
+        placeholder: Търсете потребител по име или имейл
+      search_results: "Резултати от търсенето"
+      no_search_results: "Няма намерени резултати."
+      actions: Действия
+      title: Заглавие
+      description: Описание
+      image: Изображение
+      show_image: Покажи изображение
+      moderated_content: "Проверете съдържанието, модерирано от модераторите, и потвърдете дали модерирането е извършено правилно."
+      view: Изглед
+      proposal: Предложение
+      author: Автор
+      content: Съдържание
+      created_at: Създадено в
+      delete: Изтриване
+      color_help: Шестнадесетичен формат
+      show_results_and_stats: "Показване на резултати и статистика"
+      results_and_stats_reminder: "Ако маркирате тези квадратчета, резултатите и/или статистиката ще бъдат публично достъпни и всеки потребител ще ги вижда."
+    geozones:
+      index:
+        title: Геозона
+        create: Създайте геозона
+        edit: Редактирайте
+        delete: Изтрийте
+      geozone:
+        name: Име
+        external_code: Външен код
+        census_code: Код на преброяване
+        code_help: Код на отговора за тази геозона в API на ГРАО
+        coordinates: Координати
+        coordinates_help: Координати, които ще генерират зона с възможност за кликване върху HTML карта на изображение
+      edit:
+        form:
+          submit_button: Запазете промените
+        editing: Редактиране на геозона
+        back: Върнете се
+      new:
+        back: Върнете се
+        creating: Създайте област
+      delete:
+        success: Геозоната успешно е изтрита
+        error: Тази геозона не може да бъде изтрита, тъй като към нея има прикачени елементи
+    signature_sheets:
+      author: Автор
+      created_at: Дата на създаване
+      name: Име
+      no_signature_sheets: "Няма листове за подпис"
+      index:
+        title: Листове за подпис
+        new: Нови листове за подпис
+      new:
+        title: Нови листове за подпис
+        document_numbers_note: "Напишете числата, разделени с точка и запетая (;)"
+        submit: Създайте лист за подпис
+        text_help:
+          required_fields_note: "За да потвърдите потребител, вашето приложение се нуждае от: Номер на документа"
+          date_of_birth_note: ", Дата на раждане (дд/мм/гггг)"
+          postal_code_note: " и пощенски код"
+          required_fields_structure_note: "Задължителните полета за всеки потребител трябва да бъдат разделени със запетаи и всеки потребител трябва да бъде разделен с точка и запетая."
+          example_text: "Пример: "
+      show:
+        created_at: Създадено
+        author: Автор
+        users: Потребители
+        signature_count: "Брой подписи:"
+        verified:
+          one: "Има %{count} валиден подпис"
+          other: "Има %{count} валидни подписи"
+        unverified:
+          one: "Има %{count} невалиден подпис"
+          other: "Има %{count} невалидни подписи"
+        unverified_error: (не е подвърдено от преброяването)
+        voted:
+          zero: "От проверените подписи няма гласове."
+          one: "От проверените подписи е създаден %{count} глас."
+          other: "Има %{count} гласа, създадени от проверени подписи."
+        loading: "Все още има подписи, които се проверяват от преброяването, моля, обновете страницата след няколко минути"
+    stats:
+      show:
+        stats_title: Статистика
+        summary:
+          comment_votes: Коментирайте гласове
+          comments: Коментари
+          debate_votes: Гласове за дебат
+          debates: Дебати
+          proposal_votes: Гласове за предложение
+          proposals: Предложения
+          budgets: Отворени бюджети
+          budget_investments: Инвестиционни проекти
+          unverified_users: Непроверени потребители
+          user_level_three: Потребители от трето ниво
+          user_level_two: Потребители от второ ниво
+          users: Общо потребители
+          verified_users: Потвърдени потребители
+          verified_users_who_didnt_vote_proposals: Проверени потребители, които не са гласували предложения
+          visits: Посещения
+          votes: Общо гласове
+        budgets_title: Бюджетиране с участие
+        participatory_budgets: Бюджети с участие
+        direct_messages: Директно съобщение
+        proposal_notifications: Известия за предложения
+        incomplete_verifications: Непълни проверки
+        polls: Анкети
+      graph:
+        debate_created: Дебати
+        visit: Посещения
+        level_2_user: Потребители от ниво 2
+        proposal_created: Граждански предложения
+      budgets:
+        no_data_before_balloting_phase: "Няма данни, които да се показват преди фазата на гласуване."
+        title: "Бюджети с участие - Статистика на участието"
+        supporting_phase: Поддържаща фаза
+        balloting_phase: Окончателно гласуване
+      budget_balloting:
+        title: "Крайна статистика на гласуване"
+        vote_count: Гласове
+        participant_count: Участници
+        votes_per_heading: Гласове за заглавие
+        participants_per_district: Участници по област
+      budget_supporting:
+        title: "Статистика на поддържаща фаза"
+        headings: Заглавия
+        users: Потребители
+        vote_count: Гласове
+        participant_count: Участници
+      direct_messages:
+        title: Директни съобщения
+        total: Общо
+        users_who_have_sent_message: Потребители, изпратили лично съобщение
+      proposal_notifications:
+        title: Известия за предложение
+        total: Общо
+        proposals_with_notifications: Предложения с известия
+        not_available: "Предложение не е налично"
+      polls:
+        title: Статистика на анкетите
+        all: Анкети
+        web_participants: Уеб участници
+        total_participants: Общо участници
+        poll_questions: "Въпроси от анкета: %{poll}"
+        table:
+          poll_name: Анкета
+          question_name: Въпрос
+          origin_web: Уеб участници
+          origin_total: Общо участници
+    tags:
+      create: Създайте тема
+      destroy: Изтрийте тема
+      index:
+        add_tag: Добавете нова тема за предложения
+        title: Теми за предложения
+        topic: Тема
+        help: "Когато потребителят създава предложение, следните теми се предлагат като тагове по подразбиране."
+    users:
+      columns:
+        erase_reason: Причина за изтриване
+        name: Име
+        email: Имейл
+        document_number: Номер на документ
+        roles: Роли
+        verification_level: Ниво на проверка
+      index:
+        title: Потребител
+        no_users: Няма потребители.
+        filter: Филтриране
+        filters:
+          active: Активен
+          erased: Изтрит
+      search:
+        placeholder: Търсене на потребител по имейл, име или номер на документ
+        search: Търсене
+    verifications:
+      index:
+        phone_not_given: Телефон не е даден
+        sms_code_not_confirmed: Не е потвърдил sms кода
+        title: Непълни проверки
+    site_customization:
+      content_blocks:
+        information: Информация за блокове със съдържание
+        about: "Можете да създадете HTML блокове със съдържание, които могат да бъдат вмъкнати на различни места на Вашия уеб сайт."
+        html_format: "Блокът със съдържание/ съдържателен блок е група от връзки и трябва да има следния формат:"
+        no_blocks: "Няма блокове със съдържание."
+        create:
+          notice: Съдържателният блок е създаден успешно
+          error: Съдържателният блок не може да бъде създаден
+        update:
+          notice: Съдържателният блок е актуализиран успешно
+          error: Съдържателният блок не може да бъде актуализиран
+        destroy:
+          notice: Съдържателният блок е изтрит успешно
+        edit:
+          title: Редактиране на съдържателен блок
+        index:
+          create: Създаване на нов съдържателен блок
+          delete: Изтриване на блок
+          title: Съдържателни блокове
+        new:
+          title: Създайте нов съдържателен блок
+        content_block:
+          body: Тяло
+          name: Име
+          names:
+            top_links: Топ връзки
+            footer: Долен колонтитул
+            subnavigation_left: Главна навигация вляво
+            subnavigation_right: Главна навигация вдясно
+      images:
+        index:
+          title: Персонализирани изображения
+          update: Актуализация
+          delete: Изтриване
+          image: Изображение
+        update:
+          notice: Изображението е актуализирано успешно
+          error: Изображението не може да бъде актуализирано
+        destroy:
+          notice: Изображението е изтрито успешно
+          error: Изображението не може да бъде изтрито
+      pages:
+        create:
+          notice: Страницата е създадена успешно
+          error: Страницата не може да бъде създадена
+        update:
+          notice: Страницата е актуализирана успешно
+          error: Страницата не може да бъде актуализирана
+        destroy:
+          notice: Страницата е изтрита успешно
+        edit:
+          title: Редактиране на %{page_title}
+        form:
+          options: Опции
+        index:
+          create: Създайте нова страница
+          delete: Изтрийте страницата
+          title: Персонализирани страници
+          see_page: Вижте страница
+        new:
+          title: Създайте нова персонализирана страница
+          slug_help: "Текст за идентифициране на тази страница в URL, например <code>https://consulproject.org/page-slug</code>"
+        page:
+          created_at: Създадено в
+          status: Състояние
+          updated_at: Актуализирано в
+          title: Заглавие
+          slug: Линотипен ред
+          cards_title: Карти
+          see_cards: Вижте карти
+        cards:
+          cards_title: карти
+          create_card: Създайте карта
+          no_cards: Няма карти.
+          title: Заглавие
+          description: Описание
+          link_text: Текст на връзката
+          link_url: Връзка URL
+          columns_help: "Ширина на картата в брой колони. На мобилните екрани винаги е ширина 100%."
+          create:
+            notice: "Картата е създадена успешно!"
+          update:
+            notice: "Картата е актуализирана успешно"
+          destroy:
+            notice: "Картата е премахната успешно"
+    homepage:
+      title: Начална страница
+      description: Активните модули се появяват в началната страница в същия ред, както тук.
+      header_title: Заглавка
+      no_header: Няма заглавки.
+      create_header: Създайте заглавка
+      cards_title: Карти
+      create_card: Създайте карта
+      no_cards: Няма карти.
+      cards:
+        title: Заглавие
+        description: Описание
+        link_text: Текст на връзката
+        link_url: Връзка URL
+      feeds:
+        proposals: Предложения
+        debates: Дебати
+        processes: Процеси
+      new:
+        header_title: Нова заглавка
+        submit_header: Създайте заглавка
+        card_title: Нова карта
+        submit_card: Създайте карта
+      edit:
+        header_title: Редактирайте заглавка
+        submit_header: Запазете заглавката
+        card_title: Редактирайте карта
+        submit_card: Запазете картата
+    audits:
+      title: "Дневник на промените"
+      changes: "Списък на промени"
+      field: "Поле"
+      new_value: "Нова стойност"
+      old_value: "Стара стойност"
+      edited_at: "Редактирано в"
+      edited_by: "Редактирано от"
+      actions: "Действия"
+      empty: "Няма регистрирани промени"
+    local_census_records:
+      index:
+        title: Управление на местния регистър
+        create: Създаване на нов местен регистър
+        no_local_census_records: Няма записи в местния регистър ГРАО.
+        document_type: Вид на документа
+        document_number: Номер на документа
+        date_of_birth: Дата на раждане
+        postal_code: Пощенски код
+        search:
+          placeholder: Търсене по номер на документ
+          search: Търсене
+        import: Импортиране на CSV
+      new:
+        creating: Създаване на нов местен регистър
+      create:
+        notice: Нов местен регистър е създаден успешно!
+      edit:
+        editing: Редактиране на местен регистър
+      update:
+        notice: Местният регистър е актуализиран успешно!
+      destroy:
+        notice: Местният регистър е премахнат успешно!
+      imports:
+        new:
+          title: Записи от местния регистър
+          subtitle: Импортиране на CSV файл
+        create:
+          notice: Процесът на импортиране на записи от местния регистър е изпълнен успешно!
+        show:
+          title: Администриране на местния регистър
+          subtitle: Импортиране на резултатите от процеса
+          import: Повторно импортиране
+          errored: Грешни редове
+          created: Създадени записи
+        local_census_records:
+          no_records_found: Не са намерени записи.

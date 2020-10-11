@@ -436,10 +436,6 @@ a {
   display: table-cell;
 }
 
-.off-canvas-content {
-  box-shadow: none;
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -447,6 +443,66 @@ a {
 .help-text {
   line-height: rem-calc(20);
   margin-top: 0;
+}
+
+.menu-and-content {
+  $side-menu-min-width: rem-calc(240);
+
+  @include breakpoint(medium) {
+    display: flex;
+
+    > nav {
+      flex: 20%;
+      min-width: $side-menu-min-width;
+
+      + * {
+        flex: 80%;
+        padding: $line-height;
+      }
+    }
+
+    [for="show_menu"] {
+      display: none;
+    }
+  }
+
+  @include breakpoint(small only) {
+    > nav {
+      height: 100%;
+      left: -$side-menu-min-width;
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      transition: left 0.5s ease;
+      width: $side-menu-min-width;
+      z-index: 12;
+
+      + * {
+        padding: $line-height;
+      }
+    }
+
+    [name="show_menu"]:checked + nav,
+    > nav:focus-within {
+      left: 0;
+
+      + * {
+        overflow-x: hidden;
+
+        [for="show_menu"]::after {
+          @include reveal-overlay;
+          content: "";
+          cursor: pointer;
+          display: block;
+          z-index: 11;
+        }
+      }
+    }
+  }
+
+  [name="show_menu"] {
+    display: none;
+  }
 }
 
 // 02. Header
@@ -1074,6 +1130,10 @@ form {
     &.error {
       margin-bottom: rem-calc(1);
     }
+
+    &:disabled {
+      background-color: $input-background-disabled;
+    }
   }
 
   [type="checkbox"] + label,
@@ -1548,6 +1608,16 @@ table {
   line-height: $line-height * 2;
   padding: 0;
   position: relative;
+
+  &::before {
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height * 2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
 }
 
 .button.button-twitter {
@@ -1557,13 +1627,6 @@ table {
   &::before {
     color: #45b0e3;
     content: "f";
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 0;
-    line-height: $line-height * 2;
-    padding: 0 rem-calc(20);
-    position: absolute;
-    top: 0;
   }
 }
 
@@ -1600,13 +1663,6 @@ table {
   &::before {
     color: #3b5998;
     content: "A";
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 0;
-    line-height: $line-height * 2;
-    padding: 0 rem-calc(20);
-    position: absolute;
-    top: 0;
   }
 }
 
@@ -1643,39 +1699,6 @@ table {
   &::before {
     color: #de4c34;
     content: "B";
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 0;
-    line-height: $line-height * 2;
-    padding: 0 rem-calc(20);
-    position: absolute;
-    top: 0;
-  }
-}
-
-[class^="ssb-icon ssb-google"] {
-  background: #de4c34;
-  background-image: none !important;
-  color: #fff;
-  height: $line-height * 2 !important;
-  position: relative;
-  width: $line-height * 2 !important;
-
-  &::before {
-    content: "B";
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 50%;
-    line-height: $line-height * 2;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
-  }
-
-  &:hover,
-  &:focus {
-    background: #fff;
-    color: #ce3e26;
   }
 }
 
@@ -1686,13 +1709,6 @@ table {
   &::before {
     color: #2f2f33;
     content: "J";
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 0;
-    line-height: $line-height * 2;
-    padding: 0 rem-calc(20);
-    position: absolute;
-    top: 0;
   }
 }
 
@@ -1703,13 +1719,6 @@ table {
   &::before {
     color: #08c;
     content: "1";
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 0;
-    line-height: $line-height * 2;
-    padding: 0 rem-calc(20);
-    position: absolute;
-    top: 0;
   }
 }
 
@@ -1814,31 +1823,6 @@ table {
     &:focus {
       background: #fff;
       color: #354f88;
-    }
-  }
-
-  [class^="ssb-icon ssb-google"] {
-    background: #de4c34;
-    color: #fff;
-    height: rem-calc(24);
-    position: relative;
-    width: rem-calc(48);
-
-    &::before {
-      content: "B";
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
-      left: 50%;
-      line-height: $line-height * 2;
-      margin-left: rem-calc(-11);
-      position: absolute;
-      top: 0;
-    }
-
-    &:hover,
-    &:focus {
-      background: #fff;
-      color: #ce3e26;
     }
   }
 
@@ -2117,10 +2101,6 @@ table {
     padding: $line-height / 4;
     position: relative;
 
-    .relative {
-      padding-left: rem-calc(18);
-    }
-
     .divider {
       color: $text-light;
       display: inline-block;
@@ -2132,23 +2112,22 @@ table {
   }
 
   .responses-count {
-    .far {
-      @extend .fa-minus-square;
-      font-size: $small-font-size;
-      left: 0;
-      position: absolute;
-      text-decoration: none;
-      top: 2px;
-    }
-
     .show-children {
+      @include has-fa-icon(plus-square, r);
       display: none;
     }
 
+    .collapse-children {
+      @include has-fa-icon(minus-square, r);
+    }
+
+    .show-children::before,
+    .collapse-children::before {
+      margin-right: rem-calc(6);
+      transform: translateY(1px);
+    }
+
     &.collapsed {
-      .far {
-        @extend .fa-plus-square;
-      }
 
       .collapse-children {
         display: none;
@@ -2363,6 +2342,22 @@ table {
 // 18. Banners
 // -----------
 
+.banner {
+
+  a > * {
+    @include grid-row;
+    padding: 0 rem-calc(16);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  + .budget.expanded,
+  + .jumbo {
+    margin-top: 0;
+  }
+}
 
 // 19. Recommendations
 // -------------------

@@ -4,6 +4,8 @@ describe "Commenting debates" do
   let(:user)   { create :user }
   let(:debate) { create :debate }
 
+  it_behaves_like "flaggable", :debate_comment
+
   scenario "Index" do
     3.times { create(:comment, commentable: debate) }
 
@@ -338,53 +340,6 @@ describe "Commenting debates" do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
-    comment = create(:comment, commentable: debate)
-
-    login_as(user)
-    visit debate_path(debate)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    comment = create(:comment, commentable: debate)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit debate_path(debate)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    debate = create(:debate, title: "Should we change the world?")
-    comment = create(:comment, commentable: debate)
-
-    login_as(user)
-    visit debates_path
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
-  end
-
   scenario "Erasing a comment's author" do
     debate = create(:debate)
     comment = create(:comment, commentable: debate, body: "this should be visible")
@@ -405,11 +360,9 @@ describe "Commenting debates" do
     fill_in "Leave your comment", with: "Testing submit button!"
     click_button "Publish comment"
 
-    # The button"s text should now be "..."
-    # This should be checked before the Ajax request is finished
-    expect(page).not_to have_button "Publish comment"
-
-    expect(page).to have_content("Testing submit button!")
+    expect(page).to have_button "Publish comment", disabled: true
+    expect(page).to have_content "Testing submit button!"
+    expect(page).to have_button "Publish comment", disabled: false
   end
 
   describe "Moderators" do

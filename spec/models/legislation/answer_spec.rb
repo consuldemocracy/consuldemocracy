@@ -36,4 +36,12 @@ RSpec.describe Legislation::Answer, type: :model do
     expect(option_2.answers_count).to eq 1
     expect(option_1.answers_count).to eq 0
   end
+
+  it "does not delete users that created the answer" do
+    user = legislation_answer.user
+
+    legislation_answer.destroy!
+
+    expect(user).not_to be_hidden
+  end
 end

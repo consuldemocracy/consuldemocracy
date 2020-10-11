@@ -53,6 +53,5 @@ Capybara.register_driver :headless_chrome do |app|
 end
 
 Capybara.exact = true
-Webdrivers::Chromedriver.required_version = "2.38"
 
 OmniAuth.config.test_mode = true

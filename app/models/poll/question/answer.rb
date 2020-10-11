@@ -9,7 +9,7 @@ class Poll::Question::Answer < ApplicationRecord
   accepts_nested_attributes_for :documents, allow_destroy: true
 
   belongs_to :question, class_name: "Poll::Question"
-  has_many :videos, class_name: "Poll::Question::Answer::Video"
+  has_many :videos, class_name: "Poll::Question::Answer::Video", dependent: :destroy
 
   validates_translation :title, presence: true
   validates :given_order, presence: true, uniqueness: { scope: :question_id }

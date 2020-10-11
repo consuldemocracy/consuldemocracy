@@ -1,13 +1,15 @@
 require "rails_helper"
 
 describe GraphQL::QueryTypeCreator do
-  let(:api_type_definitions) do
-    {
-      ProposalNotification => { fields: { title: :string }},
-      Proposal => { fields: { id: :integer, title: :string }}
-    }
+  before do
+    allow(GraphQL::ApiTypesCreator).to receive(:api_types_definitions).and_return(
+      {
+        ProposalNotification => { fields: { title: :string }},
+        Proposal => { fields: { id: :integer, title: :string }}
+      }
+    )
   end
-  let(:api_types) { GraphQL::ApiTypesCreator.create(api_type_definitions) }
+  let(:api_types) { GraphQL::ApiTypesCreator.create }
 
   describe "::create" do
     let(:query_type) { GraphQL::QueryTypeCreator.create(api_types) }

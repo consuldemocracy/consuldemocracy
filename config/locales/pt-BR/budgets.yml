@@ -3,8 +3,23 @@ pt-BR:
     ballots:
       show:
         title: Sua cédula
-        amount_spent: Quantia gasta
-        remaining: "Você ainda tem <span>%{amount}</span> para investir."
+        amount_available:
+          knapsack: "Você ainda tem <span>%{count}</span> para investir."
+          approval:
+            zero: "Você ainda pode votar <span>%{count}</span> vezes."
+            one: "Você ainda pode votar <span>%{count}</span> vez."
+            other: "Você ainda pode votar <span>%{count}</span> vezes."
+        amount_spent:
+          knapsack: "Total gasto <span>%{count}</span>"
+          approval:
+            zero: "Votos realizados: <span>%{count}</span>"
+            one: "Votos realizados: <span>%{count}</span>"
+            other: "Votos realizados: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Você pode votar em <span>1</span> projeto"
+            other: "Você pode votar em até <span>%{count}</span> projetos"
         no_balloted_group_yet: "Você ainda não votou neste grupo, vote!"
         remove: Remover voto
         voted:
@@ -21,6 +36,7 @@ pt-BR:
         not_enough_money: "Você já atribuiu o orçamento disponível.<br><small>Lembre-se que pode %{change_ballot} a qualquer momento</small>"
         no_ballots_allowed: A fase de seleção está fechada
         different_heading_assigned: "Você já votou em um título diferente: %{heading_link}"
+        not_enough_available_votes: "Você atingiu o número máximo de votos permitidos"
         change_ballot: mudar seus votos
         casted_offline: Você já participou presencialmente
     groups:
@@ -84,11 +100,17 @@ pt-BR:
           other: " contendo o termo <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Minha cédula
-          voted:
-            one: "<strong>Você votou em uma proposta com o custo de %{amount_spent}</strong>"
-            other: "<strong>Você votou em %{count} propostas com o custo de %{amount_spent}</strong>"
-          voted_info: Você pode %{link} a qualquer momento até o encerramento desta fase. Não há necessidade de gastar todo o dinheiro disponível.
-          voted_info_link: mudar seu voto
+          voted_info:
+            knapsack:
+              one: "<strong>Você votou em uma proposta com um custo de %{amount_spent}</strong>"
+              other: "<strong>Você votou em %{count} propostas com um custo de %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Você votou em uma proposta</strong>"
+              other: "<strong>Você votou em %{count} propostas</strong>"
+          change_vote_info:
+            knapsack: "Você pode %{link} a qualquer momento até o encerramento desta fase. Não há necessidade de gastar todo o dinheiro disponível."
+            approval: "Você pode %{link} a qualquer momento até o final desta fase."
+          change_vote_link: "mudar seu voto"
           different_heading_assigned: "Você tem votos ativos num título diferente: %{heading_link}"
           change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
           check_ballot_link: "verificar minha cédula"
@@ -148,6 +170,10 @@ pt-BR:
     progress_bar:
       assigned: "Você atribuiu: "
       available: "Orçamento disponível: "
+      votes:
+        zero: "Você selecionou <strong>0</strong> projetos de um total de <strong>%{limit}</strong>"
+        one: "Você selecionou <strong>1</strong> projeto de um total de <strong>%{limit}</strong>"
+        other: "Você selecionou <strong>%{count}</strong> projetos de um total de <strong>%{limit}</strong>"
     show:
       group: Grupo
       phase: Fase atual
@@ -175,8 +201,8 @@ pt-BR:
       not_selected_investment_proyects: Lista de todos os projetos de investimento não selecionados para votação
     executions:
       link: "Marcos"
-      page_title: "%{budget} - Andamento do(s) projeto(s)"
-      heading: "Orçamento participativo (Marcos)"
+      page_title: "%{budget} - Andamento do/s projeto/s"
+      heading: "Andamento do orçamento participativo"
       heading_selection_title: "Por distrito"
       no_winner_investments: "Não há projetos de investimentos ganhadores neste estado"
       filters:

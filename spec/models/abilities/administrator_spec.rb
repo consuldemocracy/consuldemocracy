@@ -18,6 +18,10 @@ describe Abilities::Administrator do
   let(:legislation_question) { create(:legislation_question) }
   let(:poll_question) { create(:poll_question) }
 
+  let(:past_process) { create(:legislation_process, :past) }
+  let(:past_draft_process) { create(:legislation_process, :past, :not_published) }
+  let(:open_process) { create(:legislation_process, :open) }
+
   let(:proposal_document) { build(:document, documentable: proposal, user: proposal.author) }
   let(:budget_investment_document) { build(:document, documentable: budget_investment) }
   let(:poll_question_document) { build(:document, documentable: poll_question) }
@@ -66,6 +70,10 @@ describe Abilities::Administrator do
 
   it { should be_able_to(:comment_as_administrator, legislation_question) }
   it { should_not be_able_to(:comment_as_moderator, legislation_question) }
+
+  it { should be_able_to(:summary, past_process) }
+  it { should_not be_able_to(:summary, past_draft_process) }
+  it { should_not be_able_to(:summary, open_process) }
 
   it { should be_able_to(:create, Budget) }
   it { should be_able_to(:update, Budget) }

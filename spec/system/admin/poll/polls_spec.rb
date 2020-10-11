@@ -6,6 +6,11 @@ describe "Admin polls" do
     login_as(admin.user)
   end
 
+  scenario "Disabled with a feature flag" do
+    Setting["process.polls"] = nil
+    expect { visit admin_polls_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+  end
+
   scenario "Index empty", :js do
     visit admin_root_path
 
@@ -142,7 +147,20 @@ describe "Admin polls" do
       expect(page).not_to have_content("Do you support CONSUL?")
 
       expect(Poll::Question.count).to eq(0)
-      expect(Poll::Question::Answer.count). to eq(0)
+      expect(Poll::Question::Answer.count).to eq(0)
+    end
+
+    scenario "Can destroy polls with answers including videos", :js do
+      poll = create(:poll, name: "Do you support CONSUL?")
+      create(:poll_answer_video, poll: poll)
+
+      visit admin_polls_path
+
+      within(".poll", text: "Do you support CONSUL?") do
+        accept_confirm { click_link "Delete" }
+      end
+
+      expect(page).to have_content "Poll deleted successfully"
     end
 
     scenario "Can't destroy poll with votes", :js do

@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Proposals" do
-  it_behaves_like "milestoneable",
-                  :proposal,
-                  "proposal_path"
+  it_behaves_like "milestoneable", :proposal
 
   scenario "Disabled with a feature flag" do
     Setting["process.proposals"] = nil
@@ -21,6 +19,7 @@ describe "Proposals" do
                     :proposal,
                     "proposal_path",
                     { "id": "id" }
+    it_behaves_like "flaggable", :proposal
   end
 
   context "Index" do
@@ -141,7 +140,7 @@ describe "Proposals" do
     expect(page).not_to have_selector ".js-follow"
 
     within(".social-share-button") do
-      expect(page.all("a").count).to be(4) # Twitter, Facebook, Google+, Telegram
+      expect(page.all("a").count).to be(3) # Twitter, Facebook, Telegram
     end
   end
 
@@ -199,9 +198,34 @@ describe "Proposals" do
         expect(page).not_to have_link("No comments", href: "#comments")
       end
     end
+
+    scenario "After using the browser's back button, social buttons will have one screen reader", :js do
+      proposal = create(:proposal)
+      visit proposal_path(proposal)
+      click_link "Help"
+
+      expect(page).to have_content "CONSUL is a platform for citizen participation"
+
+      go_back
+
+      expect(page).to have_css "span.show-for-sr", text: "twitter", count: 1
+    end
   end
 
-  context "Show on mobile screens" do
+  describe "Sticky support button on medium and up screens", :js do
+    scenario "is shown anchored to top" do
+      proposal = create(:proposal)
+      visit proposals_path
+
+      click_link proposal.title
+
+      within("#proposal_sticky") do
+        expect(find(".is-anchored")).to match_style(top: "0px")
+      end
+    end
+  end
+
+  describe "Show sticky support button on mobile screens", :js do
     let!(:window_size) { Capybara.current_window.size }
 
     before do
@@ -212,9 +236,58 @@ describe "Proposals" do
       Capybara.current_window.resize_to(*window_size)
     end
 
-    scenario "Show support button sticky at bottom", :js do
+    scenario "On a first visit" do
       proposal = create(:proposal)
       visit proposal_path(proposal)
+
+      within("#proposal_sticky") do
+        expect(page).to have_css(".is-stuck")
+        expect(page).not_to have_css(".is-anchored")
+      end
+    end
+
+    scenario "After visiting another page" do
+      proposal = create(:proposal)
+
+      visit proposal_path(proposal)
+      click_link "Go back"
+      click_link proposal.title
+
+      within("#proposal_sticky") do
+        expect(page).to have_css(".is-stuck")
+        expect(page).not_to have_css(".is-anchored")
+      end
+    end
+
+    scenario "After using the browser's back button" do
+      proposal = create(:proposal)
+
+      visit proposal_path(proposal)
+      click_link "Go back"
+
+      expect(page).to have_link proposal.title
+
+      go_back
+
+      within("#proposal_sticky") do
+        expect(page).to have_css(".is-stuck")
+        expect(page).not_to have_css(".is-anchored")
+      end
+    end
+
+    scenario "After using the browser's forward button" do
+      proposal = create(:proposal)
+
+      visit proposals_path
+      click_link proposal.title
+
+      expect(page).not_to have_link proposal.title
+
+      go_back
+
+      expect(page).to have_link proposal.title
+
+      go_forward
 
       within("#proposal_sticky") do
         expect(page).to have_css(".is-stuck")
@@ -1410,21 +1483,21 @@ describe "Proposals" do
       end
     end
 
-    scenario "Order by relevance by default", :spanish_search, :js do
-      create(:proposal, title: "Show you got",      cached_votes_up: 10)
-      create(:proposal, title: "Show what you got", cached_votes_up: 1)
-      create(:proposal, title: "Show you got",      cached_votes_up: 100)
+    scenario "Order by relevance by default", :js do
+      create(:proposal, title: "In summary", summary: "Title content too", cached_votes_up: 10)
+      create(:proposal, title: "Title content", summary: "Summary", cached_votes_up: 1)
+      create(:proposal, title: "Title here", summary: "Content here", cached_votes_up: 100)
 
       visit proposals_path
-      fill_in "search", with: "Show what you got"
+      fill_in "search", with: "Title content"
       click_button "Search"
 
       expect(page).to have_selector("a.is-active", text: "relevance")
 
       within("#proposals") do
-        expect(all(".proposal")[0].text).to match "Show what you got"
-        expect(all(".proposal")[1].text).to match "Show you got"
-        expect(all(".proposal")[2].text).to match "Show you got"
+        expect(all(".proposal")[0].text).to match "Title content"
+        expect(all(".proposal")[1].text).to match "Title here"
+        expect(all(".proposal")[2].text).to match "In summary"
       end
     end
 
@@ -1501,69 +1574,6 @@ describe "Proposals" do
 
     visit proposal_path(good_proposal)
     expect(page).not_to have_content "This proposal has been flagged as inappropriate by several users."
-  end
-
-  scenario "Flagging", :js do
-    user = create(:user)
-    proposal = create(:proposal)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    within "#proposal_#{proposal.id}" do
-      page.find("#flag-expand-proposal-#{proposal.id}").click
-      page.find("#flag-proposal-#{proposal.id}").click
-
-      expect(page).to have_css("#unflag-expand-proposal-#{proposal.id}")
-    end
-
-    expect(Flag.flagged?(user, proposal)).to be
-  end
-
-  scenario "Unflagging", :js do
-    user = create(:user)
-    proposal = create(:proposal)
-    Flag.flag(user, proposal)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    within "#proposal_#{proposal.id}" do
-      page.find("#unflag-expand-proposal-#{proposal.id}").click
-      page.find("#unflag-proposal-#{proposal.id}").click
-
-      expect(page).to have_css("#flag-expand-proposal-#{proposal.id}")
-    end
-
-    expect(Flag.flagged?(user, proposal)).not_to be
-  end
-
-  scenario "Flagging/Unflagging AJAX", :js do
-    user = create(:user)
-    proposal = create(:proposal)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    # Flagging
-    within "#proposal_#{proposal.id}" do
-      page.find("#flag-expand-proposal-#{proposal.id}").click
-      page.find("#flag-proposal-#{proposal.id}").click
-
-      expect(page).to have_css("#unflag-expand-proposal-#{proposal.id}")
-    end
-
-    expect(Flag.flagged?(user, proposal)).to be
-
-    # Unflagging
-    within "#proposal_#{proposal.id}" do
-      page.find("#unflag-expand-proposal-#{proposal.id}").click
-      page.find("#unflag-proposal-#{proposal.id}").click
-
-      expect(page).to have_css("#flag-expand-proposal-#{proposal.id}")
-    end
-
-    expect(Flag.flagged?(user, proposal)).not_to be
   end
 
   it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }

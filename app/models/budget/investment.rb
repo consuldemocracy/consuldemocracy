@@ -167,7 +167,7 @@ class Budget
       ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?("selected")
       ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?("undecided")
       ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?("unfeasible")
-      results = results.where("budget_investments.id IN (?)", ids) if ids.any?
+      results = results.where(id: ids) if ids.any?
       results
     end
 
@@ -194,7 +194,7 @@ class Budget
         ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
       end
 
-      results.where("budget_investments.id IN (?)", ids)
+      results.where(id: ids)
     end
 
     def self.search_by_title_or_id(title_or_id)
@@ -268,8 +268,9 @@ class Budget
       return :not_selected               unless selected?
       return :no_ballots_allowed         unless budget.balloting?
       return :different_heading_assigned unless ballot.valid_heading?(heading)
-      return :not_enough_money           if ballot.present? && !enough_money?(ballot)
       return :casted_offline             if ballot.casted_offline?
+
+      ballot.reason_for_not_being_ballotable(self)
     end
 
     def permission_problem(user)
@@ -299,15 +300,6 @@ class Budget
 
     def voted_in?(heading, user)
       user.headings_voted_within_group(group).where(id: heading.id).exists?
-    end
-
-    def ballotable_by?(user)
-      reason_for_not_being_ballotable_by(user).blank?
-    end
-
-    def enough_money?(ballot)
-      available_money = ballot.amount_available(heading)
-      price.to_i <= available_money
     end
 
     def register_selection(user)

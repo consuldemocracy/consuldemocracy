@@ -26,9 +26,17 @@ RSpec.configure do |config|
 
   config.before do |example|
     I18n.locale = :en
-    Globalize.locale = nil
     Globalize.set_fallbacks_to_all_available_locales
     Setting["feature.user.skip_verification"] = nil
+  end
+
+  config.around(:each, :race_condition) do |example|
+    self.use_transactional_tests = false
+    example.run
+    self.use_transactional_tests = true
+
+    DatabaseCleaner.clean_with(:truncation)
+    Rails.application.load_seed
   end
 
   config.before(:each, type: :system) do
@@ -98,10 +106,6 @@ RSpec.configure do |config|
     application_zone = ActiveSupport::TimeZone.new("Madrid")
 
     allow(Time).to receive(:zone).and_return(application_zone)
-  end
-
-  config.before(:each, :spanish_search) do |example|
-    allow(SearchDictionarySelector).to receive(:call).and_return("spanish")
   end
 
   # Allows RSpec to persist some state between runs in order to support

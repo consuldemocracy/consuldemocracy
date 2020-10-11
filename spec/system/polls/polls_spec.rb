@@ -5,6 +5,11 @@ describe "Polls" do
     it_behaves_like "notifiable in-app", :poll
   end
 
+  scenario "Disabled with a feature flag" do
+    Setting["process.polls"] = nil
+    expect { visit polls_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+  end
+
   context "#index" do
     scenario "Shows description for open polls" do
       visit polls_path
@@ -182,6 +187,33 @@ describe "Polls" do
 
       within("div.poll-more-info-answers") do
         expect(answer2.title).to appear_before(answer1.title)
+      end
+    end
+
+    scenario "Answer images are shown", :js do
+      question = create(:poll_question, :yes_no, poll: poll)
+      create(:image, imageable: question.question_answers.first, title: "The yes movement")
+
+      visit poll_path(poll)
+
+      expect(page).to have_css "img[alt='The yes movement']"
+    end
+
+    scenario "Buttons to slide through images work back and forth", :js do
+      question = create(:poll_question, :yes_no, poll: poll)
+      create(:image, imageable: question.question_answers.last, title: "The no movement")
+      create(:image, imageable: question.question_answers.last, title: "No movement planning")
+
+      visit poll_path(poll)
+
+      within(".orbit-bullets") do
+        find("[data-slide='1']").click
+
+        expect(page).to have_css ".is-active[data-slide='1']"
+
+        find("[data-slide='0']").click
+
+        expect(page).to have_css ".is-active[data-slide='0']"
       end
     end
 

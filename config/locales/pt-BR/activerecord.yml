@@ -141,6 +141,9 @@ pt-BR:
         description_finished: "Descrição quando o orçamento for concluído."
         phase: "Estágio"
         currency_symbol: "Moeda"
+        voting_style: "Estilo final de votação"
+        voting_style_knapsack: "Mochila"
+        voting_style_approval: "Aprovação"
       budget/translation:
         name: "Nome"
       budget/investment:
@@ -197,12 +200,13 @@ pt-BR:
       budget/group/translation:
         name: "Nome do grupo"
       budget/heading:
-        allow_custom_content: "Permitir bloqueio de contúdos"
+        allow_custom_content: "Permitir bloqueio de conteúdos"
         latitude: "Latitude (optional)"
         longitude: "Longitude (optional)"
         name: "Nome do título"
         price: "Preço"
         population: "População"
+        max_ballot_lines: "Votos permitidos"
       budget/heading/translation:
         name: "Título"
       budget/phase:
@@ -291,7 +295,7 @@ pt-BR:
       poll/question/translation:
         title: "Questão"
       poll/ballot_sheet:
-        data: dados CSV
+        data: Dados CSV
         poll_id: Votação
         officer_assignment_id: Pessoal designado
       poll/shift:
@@ -300,6 +304,7 @@ pt-BR:
         body: "Mensagem"
         title: "Título"
       signature_sheet:
+        title: "Título"
         signable_type: "Tipo Significável"
         signable_id: "Identificação Signável"
         document_numbers: "Números de documentos"
@@ -503,6 +508,7 @@ pt-BR:
           attributes:
             document_number:
               not_in_census: "Documento não está no censo"
+            user_id:
               has_voted: "Usuário já votou"
         legislation/process:
           attributes:
@@ -548,6 +554,10 @@ pt-BR:
           attributes:
             valuation:
               cannot_comment_valuation: "Você não pode comentar uma avaliação"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Recurso já traduzido
       messages:
         translations_too_short: É obrigatório oferecer no mínimo uma tradução
         record_invalid: "Validação falhou: %{errors}"

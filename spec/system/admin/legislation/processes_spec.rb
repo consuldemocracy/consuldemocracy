@@ -162,8 +162,8 @@ describe "Admin collaborative legislation" do
       fill_in "Summary", with: "Summary of the process"
 
       base_date = Date.current
-      fill_in "legislation_process[start_date]", with: base_date.strftime("%d/%m/%Y")
-      fill_in "legislation_process[end_date]", with: (base_date + 5.days).strftime("%d/%m/%Y")
+      fill_in "legislation_process[start_date]", with: base_date
+      fill_in "legislation_process[end_date]", with: base_date + 5.days
       imageable_attach_new_file(create(:image), Rails.root.join("spec/fixtures/files/clippy.jpg"))
 
       click_button "Create process"
@@ -238,6 +238,44 @@ describe "Admin collaborative legislation" do
       click_link "Click to visit"
 
       expect(page).not_to have_content "Draft publication"
+    end
+
+    scenario "Enabling/disabling a phase enables/disables its date fields", :js do
+      process.update!(published: false)
+
+      visit edit_admin_legislation_process_path(process)
+
+      expect(page).to have_field "start_date", disabled: true
+      expect(page).to have_field "end_date", disabled: true
+
+      check "legislation_process[published]"
+      fill_in "start_date", with: "07/07/2007"
+      fill_in "end_date", with: "08/08/2008"
+      uncheck "legislation_process[published]"
+
+      expect(page).to have_field "start_date", disabled: true
+      expect(page).to have_field "end_date", disabled: true
+
+      check "legislation_process[published]"
+
+      expect(page).to have_field "start_date", disabled: false, with: "2007-07-07"
+      expect(page).to have_field "end_date", disabled: false, with: "2008-08-08"
+    end
+
+    scenario "Enabling/disabling a phase does not enable/disable another phase date fields", :js do
+      process.update!(draft_phase_enabled: false, draft_publication_enabled: false)
+
+      visit edit_admin_legislation_process_path(process)
+
+      expect(page).to have_field "draft_start_date", disabled: true
+      expect(page).to have_field "draft_end_date", disabled: true
+      expect(page).to have_field "draft_publication_date", disabled: true
+
+      check "legislation_process[draft_phase_enabled]"
+
+      expect(page).to have_field "draft_start_date", disabled: false
+      expect(page).to have_field "draft_end_date", disabled: false
+      expect(page).to have_field "draft_publication_date", disabled: true
     end
 
     scenario "Change proposal categories" do

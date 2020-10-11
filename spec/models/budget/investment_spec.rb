@@ -1086,6 +1086,31 @@ describe Budget::Investment do
 
           expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
         end
+
+        context "Approval voting" do
+          before { budget.update!(phase: "balloting", voting_style: "approval") }
+          let(:group) { create(:budget_group, budget: budget) }
+
+          it "does not reject investments based on available money" do
+            heading = create(:budget_heading, group: group, max_ballot_lines: 2)
+            inv1 = create(:budget_investment, :selected, heading: heading, price: heading.price)
+            inv2 = create(:budget_investment, :selected, heading: heading, price: heading.price)
+            ballot = create(:budget_ballot, user: user, budget: budget, investments: [inv1])
+
+            expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to be nil
+          end
+
+          it "rejects if not enough available votes" do
+            heading = create(:budget_heading, group: group, max_ballot_lines: 1)
+            inv1 = create(:budget_investment, :selected, heading: heading)
+            inv2 = create(:budget_investment, :selected, heading: heading)
+            ballot = create(:budget_ballot, user: user, budget: budget, investments: [inv1])
+
+            reason = inv2.reason_for_not_being_ballotable_by(user, ballot)
+
+            expect(reason).to eq(:not_enough_available_votes)
+          end
+        end
       end
     end
   end

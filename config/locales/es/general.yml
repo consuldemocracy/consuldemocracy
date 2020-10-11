@@ -241,8 +241,7 @@ es:
       help: Ayuda
       my_account_link: Mi cuenta
       my_activity_link: Mi contenido
-      open: abierto
-      open_gov: Gobierno %{open}
+      open_gov: Gobierno abierto
       proposals: Propuestas
       poll_questions: Votaciones
       budgets: Presupuestos participativos
@@ -252,8 +251,6 @@ es:
           other: Tienes %{count} notificaciones nuevas
         notifications: Notificaciones
         no_notifications: "No tienes notificaciones nuevas"
-    admin:
-      watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -299,8 +296,9 @@ es:
       sign_in: Entra con Twitter
       sign_up: Regístrate con Twitter
       name: Twitter
-    info_sign_in: "Entra con:"
-    info_sign_up: "Regístrate con:"
+    info:
+      sign_in: "Entra con:"
+      sign_up: "Regístrate con:"
     or_fill: "O rellena el siguiente formulario:"
   proposals:
     create:
