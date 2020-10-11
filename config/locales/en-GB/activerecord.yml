@@ -63,6 +63,9 @@ en-GB:
       poll/booth:
         one: "кабінка"
         other: "кабінки"
+      poll/officer:
+        one: "службовець"
+        other: "службовці"
       poll/ballot_sheet:
         one: Бюлетень
         other: Бюлетені
@@ -114,12 +117,18 @@ en-GB:
       proposal_notification:
         one: "Сповіщення щодо пропозицій"
         other: "Сповіщення щодо пропозицій"
+      dashboard/action:
+        one: Дія з панеллю пропозицій
+        other: Дії з панеллю пропозицій
       dashboard/administrator_task:
         one: Завдання
         other: Завдання
       link:
         one: Посилання
         other: Посилання
+      local_census_record:
+        one: Запис місцевого перепису населення
+        other: Записи місцевого перепису населення
     attributes:
       budget:
         name: "Ім'я"
@@ -128,6 +137,7 @@ en-GB:
         description_selecting: "Опис на етапі відбору"
         description_valuating: "Опис на етапі оцінки"
         description_balloting: "Опис на етапі голосування"
+        description_reviewing_ballots: "Опис на етапі перевірки бюлетенів"
         description_finished: "Опис після виконання бюджету"
         phase: "Етап"
         currency_symbol: "Валюта"
