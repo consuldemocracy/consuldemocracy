@@ -368,22 +368,81 @@ en-GB:
         form:
           submit_button: Зберегти
           help_text: Введіть 0, щоб цю оцінку не було враховано
+          published_proposal_help_text: Встановіть позначку, щоб створювати дії лише для опублікованих пропозицій
       administrator_tasks:
         index:
+          title: Запитувані ресурси
+          solve: Вирішити
+          no_records: Запитувані ресурси відсутні
           source: Джерело
+          resource: Запитуваний ресурс
           filter: Фільтр
+          filters:
+            pending: В очікуванні
+            done: Вирішено
+        edit:
+          back: Назад до списку завдань в очікуванні
+          solving: Вирішити очікуване завдання
+        form:
+          solve: Позначити як вирішене
+          proposal: Пропозиція
+          request: Запитуваний ресурс
+        update:
+          success: Завдання позначене як вирішене.
     debates:
       index:
+        id: ID
         author: Автор
+        title: Обговорення
+        no_debates: Обговорень немає.
     hidden_debates:
       index:
         filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані обговорення
+        no_hidden_debates: Немає прихованих обговорень.
+    documents:
+      new:
+        title: "Завантажити документ"
+        submit_button: "Завантажити"
+      index:
+        new_link: "Додати новий документ"
+        no_documents: "Документів немає."
+        title: "Документи"
+        format: "Формат"
+        size: "Розмір"
+        url: "URL-адреса"
+      create:
+        success_notice: "Документ завантажено"
+        unable_notice: "Недійсний документ"
+      destroy:
+        success_notice: "Документ видалено"
     hidden_users:
       index:
         filter: Filter
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані користувачі
+        user: Користувач
+        no_hidden_users: Прихованих користувачів немає.
+      show:
+        email: "Електронна адреса:"
+        hidden_at: "Приховано о:"
+        registered_at: "Зареєстровано о:"
+        title: Активність користувача (%{user})
     hidden_budget_investments:
       index:
         filter: Filter
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані бюджетні інвестиції
     legislation:
       questions:
         edit:
