@@ -1241,3 +1241,46 @@ en-GB:
         external_code: Зовнішній код
         census_code: Код перепису
         coordinates: Координати
+        coordinates_help: Координати, за якими буде згенеровано клікабельну область на карті зображення у форматі HTML
+      edit:
+        form:
+          submit_button: Зберегти зміни
+        editing: Редагування геозони
+        back: Повернутися
+      new:
+        back: Повернутися
+        creating: Створити район
+      delete:
+        success: Геозону видалено
+        error: Цю геозону не можна видалити, адже до неї прикріплені елементи
+    signature_sheets:
+      author: Автор
+      created_at: Дата створення
+      name: Назва
+      no_signature_sheets: "Підписні листи відсутні"
+      index:
+        title: Підписні листи
+        new: Нові підписні листи
+      new:
+        title: Нові підписні листи
+        document_numbers_note: "Вкажіть цифри, розділені крапкою з комою (;)"
+        submit: Створити підписний лист
+        text_help:
+          required_fields_note: "Щоб перевірити користувача, додатку необхіний: Номер документа"
+          date_of_birth_note: ", Дата народження (дд/мм/рррр)"
+          postal_code_note: " та поштовий індекс"
+          example_text: "Приклад: "
+      show:
+        created_at: Створено
+        author: Автор
+        users: Користувачі
+        signature_count: "Кількість підписів:"
+        verified:
+          one: "Є %{count} перевірений підпис"
+          other: "Є %{count} перевірених підписів"
+        unverified:
+          one: "Є %{count} неперевірений підпис"
+          other: "Є %{count} недійсних підписів"
+        unverified_error: (Не перевірено Census)
+        voted:
+          zero: "Відсутні голоси, створені з перевірених підписів."
