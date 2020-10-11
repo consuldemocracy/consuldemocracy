@@ -851,3 +851,98 @@ en-GB:
         title: "Оцінювачі: Користувацький пошук"
       form:
         edit_title: "Оцінювачі: Додати оцінювача"
+        updated: "Оцінювача оновлено"
+      show:
+        description: "Опис"
+        email: "Електронна адреса"
+        group: "Група"
+        abilities: "Можливості"
+        no_description: "Опис відсутній"
+        no_group: "Група відсутня"
+        no_abilities: "Можливості відсутні"
+    valuator_groups:
+      index:
+        title: "Групи оцінювачів"
+        new: "Створити групи оцінювачів"
+        name: "Назва"
+        members: "Члени"
+        no_groups: "Групи оцінювачів відсутні"
+      show:
+        title: "Група оцінювачів: %{group}"
+        no_valuators: "Для цієї групи немає призначених оцінювачів"
+      form:
+        new: "Створити групу оцінювачів"
+        edit: "Зберегти групу оцінювачів"
+    poll_officers:
+      officer:
+        add: Додати
+        name: Ім'я
+        email: Електронна адреса
+      search:
+        email_placeholder: Користувацький пошук за електронною адресою
+        search: Пошук
+        user_not_found: Користувача не знайдено
+    poll_officer_assignments:
+      index:
+        table_name: "Ім'я"
+        table_email: "Електронна адреса"
+      by_officer:
+        date: "Дата"
+        booth: "Кабінка"
+    poll_shifts:
+      new:
+        add_shift: "Додати зміни"
+        shift: "Завдання"
+        shifts: "Зміни у цій кабінці"
+        date: "Дата"
+        edit_shifts: Редагувати зміни
+        new_shift: "Нова зміна"
+        no_shifts: "У цій кабінці немає змін"
+        remove_shift: "Усунути"
+        search_officer_button: Пошук
+        select_task: "Обрати завдання"
+        table_shift: "Зміна"
+        table_email: "Електронна адреса"
+        table_name: "Ім'я"
+      flash:
+        create: "Зміну додано"
+        destroy: "Зміну усунено"
+        date_missing: "Необхідно обрати дату"
+      vote_collection: Рахувати голоси
+      recount_scrutiny: Перерахунок та перевірка
+    booth_assignments:
+      manage_assignments: Управляти завданнями
+      manage:
+        assignments_list: "Завдання для опитування '%{poll}'"
+        status:
+          assign_status: Завдання
+          assigned: Призначено
+          unassigned: Не призначено
+        actions:
+          assign: Призначити кабінку
+          unassign: Скасувати призначення кабінки
+    poll_booth_assignments:
+      alert:
+        shifts: "Є зміни, які пов'язані з даною кабінкою. Якщо ви видалите завдання для кабінки, зміни також будуть видалені. Продовжити?"
+      show:
+        location: "Місцезнаходження"
+        officers_list: "Список інспекторів для цієї кабінки"
+        no_officers: "Немає інспекторів для цієї кабінки"
+        recounts: "Перерахунок"
+        recounts_list: "Список перерахунків для цієї кабінки"
+        results: "Результати"
+        date: "Дата"
+        count_final: "Остаточний перерахунок (інспектором)"
+        count_by_system: "Голоси (автоматично)"
+        total_system: Загальна кількість голосів (автоматично)
+      index:
+        booths_title: "Список кабінок"
+        no_booths: "Для цього обговорення немає призначених кабінок."
+        table_name: "Назва"
+        table_location: "Розташування"
+    active_polls:
+      edit:
+        title: "Опис опитувань"
+    polls:
+      index:
+        title: "Список опитувань"
