@@ -697,17 +697,73 @@ en-GB:
       proposal_authors: Автори пропозицій
       investment_authors: Автори інвестицій у поточному бюджеті
       feasible_and_undecided_investment_authors: "Автори деяких інвестицій у поточному бюджеті не відповідають: [valuation finished unfesasible]"
+      selected_investment_authors: Автори вибраних інвестицій у поточному бюджеті
+      winner_investment_authors: Автори переможних інвестицій у поточному бюджеті
+      not_supported_on_current_budget: Користувачі, які не підтримали інвестиції в поточному бюджеті
+      invalid_recipients_segment: "Недопустимий користувацький сегмент користувачів"
     newsletters:
+      create_success: Інформаційну розсилку створено
+      update_success: Інформаційну розсилку оновлено
+      send_success: Інформаційну розсилку надіслано
+      delete_success: Інформаційну розсилку видалено
       index:
+        title: Інформаційні розсилки
+        new_newsletter: Нова інформаційна розсилка
+        subject: Предмет
         segment_recipient: Отримувачі
-        sent: Відправлені
+        sent: Надіслані
         actions: Дії
+        draft: Чернетка
         edit: Редагувати
         delete: Видалити
+        preview: Попередній перегляд
+        empty_newsletters: Інформаційних розсилок немає
+      new:
+        title: Нова інформаційна розсилка
+        image_link: "особисті зображення"
+      edit:
+        title: Редагувати інформаційну розсилку
+      show:
+        title: Попередній перегляд інформаціної розсилки
+        send: Надіслати
+        affected_users: (%{n} задіяних користувачів)
+        sent_emails:
+          one: Надіслано 1 електронний лист
+          other: "Надіслано %{count} електронних листів"
+        sent_at: Надіслано о
+        subject: Предмет
+        segment_recipient: Отримувачі
+        from: Електронна адреса, що відображатиметься як відправник інформаційного бюлетеня
+        body: Вміст листа
+        body_help_text: Ось як виглядатиме лист для отримувачів.
+        send_alert: Ви впевнені, що хочете надіслати цю інформаційну розсилку %{n} користувачам?
     admin_notifications:
+      create_success: Сповіщення створено
+      update_success: Сповіщення оновлено
+      send_success: Сповіщення надіслано
+      delete_success: Сповіщення видалено
       index:
+        section_title: Сповіщення
+        new_notification: Нове сповіщення
+        title: Назва
+        segment_recipient: Одержувачі
+        sent: Надіслано
+        actions: Дії
+        draft: Чернетка
         edit: Редагувати
         delete: Видалити
+        preview: Попередній перегляд
+        view: Переглянути
+        empty_notifications: Сповіщень немає
+      new:
+        section_title: Нове сповіщення
+        submit_button: Створити сповіщення
+      edit:
+        section_title: Редагувати сповіщення
+        submit_button: Оновити сповіщення
+      show:
+        section_title: Попередній перегляд сповіщення
+        send: Надіслати сповіщення
     valuators:
       valuator:
         delete: Видалити
