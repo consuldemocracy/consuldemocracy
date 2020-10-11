@@ -117,9 +117,11 @@ en-GB:
       section_footer:
         title: Допомога щодо обговорень
         description: Розпочніть обговорення, щоб поділитися з іншими думками щодо тем, які вас турбують.
+        help_text_2: 'Щоб розпочати обговорення, необхідно зареєструватися у %{org}. Також користувачі можуть коментувати відкриті обговорення та оцінювати їх за допомогою кнопок "Я погоджуюсь" та "Я не погоджуюсь", які є у кожному обговоренні.'
     new:
       form:
         submit_button: Розпочати обговорення
+      info: 'Якщо ви хочете подати пропозицію, це неправильний розділ: перейдіть у %{info_link}.'
       info_link: подати нову пропозицію
       more_info: Більше інформації
       recommendations_title: Рекомендації щодо створення обоворень
@@ -128,6 +130,8 @@ en-GB:
       author_deleted: Користувач видалений
       comments:
         zero: Коментарі відсутні
+        one: 1 коментар
+        other: "%{count} коментарів"
       comments_title: Коментарі
       edit_debate_link: Редагувати
       flag: Це обговорення позначене як недоречне кількома користувачами.
@@ -139,6 +143,7 @@ en-GB:
   errors:
     messages:
       user_not_found: Користувача не знайдено
+      invalid_date_range: "Недійсний діапазон даних"
   form:
     accept_terms: Я погоджуюся з %{policy} та %{conditions}
     accept_terms_title: Я погоджуюся з Політикою конфіденційності і Правилами та умовами користування
@@ -151,40 +156,69 @@ en-GB:
     banner: банер
     proposal: Пропозиція
     proposal_notification: "Сповіщення"
+    budget/investment: Інвестиція
+    budget/group: Група бюджету
+    geozone: геозона
+    legislation/draft_version: чернетка
     legislation/process: процес
     legislation/question: запитання
+    poll/shift: Зміна
     poll/question/answer: Відповідь
     user: Обліковий запис
     verification/sms: телефон
+    signature_sheet: Підписний лист
     document: Документ
+    topic: Тема
     image: Зображення
+    site_customization/content_block: блок контенту
     site_customization/page: сторінка
+  geozones:
+    none: Все місто
   layouts:
     application:
       chrome: Google Chrome
       firefox: Firefox
+      ie: Ми виявили, що ви користуєтесь веб-переглядачем Internet Explorer. Для кращого результату ми рекомендуємо користуватися %{firefox} або %{chrome}.
+      ie_title: Цей вебсайт не пристосований для вашого веб-переглядача
     dashboard:
       proposal_header:
         published: Опубліковано
+        draft: Чернетка
       proposal_totals:
+        active_resources: Активні ресурси
+        community: Учасники у вашій спільноті
         show_proposal: Показати пропозицію
         preview_proposal: Попередній перегляд пропозиції
         current_goal: Поточна ціль
+        supports:
+          zero: Немає підтримки
+          one: 1 підтримка
+          other: "Підтримка"
     footer:
+      accessibility: Доступність
       conditions: Правила та умови користування
       consul: Додаток CONSUL
       consul_url: https://github.com/consul/consul
+      contact_us: Для технічної допомоги перейдіть
+      copyright: CONSUL, %{year}
+      description: Цей портал використовує %{consul} який знаходиться %{open_source}.
+      open_source: відкрите програмне забезпечення
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Вирішуйте, як створити місто, у якому ви бажаєте жити.
       participation_title: Участь
       privacy: Політика конфіденційності
     header:
       administration_menu: Меню
+      administration: Адміністрування
       available_locales: Доступні мови
+      collaborative_legislation: Спільне законодавство
       debates: Обговорення
       locale: "Мова:"
       logo: Логотип CONSUL
       management: Управління
       moderation: Модерування
       valuation: Оцінка
+      officing: Інспектори опитувань
       help: Допомога
       my_account_link: Мій обліковий запис
       open_gov: Відкритий уряд
