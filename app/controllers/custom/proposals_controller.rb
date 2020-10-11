@@ -11,6 +11,7 @@ class ProposalsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :map, :summary, :json_data]
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
+  before_action :redirect, only: :index
   before_action :proposals_recommendations, only: :index, if: :current_user
 
   feature_flag :proposals
@@ -23,8 +24,15 @@ class ProposalsController < ApplicationController
   load_and_authorize_resource except: :json_data
   helper_method :resource_model, :resource_name
   respond_to :html, :js
-  
+
   skip_authorization_check only: :json_data
+
+  def redirect
+    if !params[:search].present? &&
+      (!current_user.present? || !(current_user.moderator? || current_user.administrator?)) then
+        redirect_to "/"
+    end
+  end
 
   def show
     super
@@ -100,7 +108,7 @@ class ProposalsController < ApplicationController
     @proposal.publish
     redirect_to share_proposal_path(@proposal), notice: t("proposals.notice.published")
   end
- 
+
    def json_data
     proposal = Proposal.find(params[:id])
     data = {
@@ -200,7 +208,7 @@ class ProposalsController < ApplicationController
         @recommended_proposals = Proposal.recommendations(current_user).sort_by_random.limit(3)
       end
     end
-    
+
     def proposal_created_email(proposal)
       @proposal = proposal
       @project = @proposal.tag_list_with_limit(1)
