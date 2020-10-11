@@ -31,19 +31,38 @@ en-GB:
         sections_label: Розділи, у яких він з'явиться
         sections:
           homepage: Домашня сторінка
+          debates: Обговорення
+          proposals: Пропозиції
+          budgets: Партисипативний бюджет
+          help_page: Довідка
       edit:
         editing: Редагувати банер
         form:
           submit_button: Зберегти зміни
+      new:
+        creating: Створити банер
     activity:
       show:
         action: Дія
+        actions:
+          block: Заблоковане
+          hide: Приховане
+          restore: Відновлене
+        by: Модерується
+        content: Вміст
+        filter: Показати
         filters:
+          all: Усі
           on_comments: Коментарі
+          on_debates: Обговорення
+          on_proposals: Пропозиції
           on_users: Користувачі
+          on_system_emails: Електронні листи системи
+        title: Посередницька діяльність
         type: Тип
     budgets:
       index:
+        title: Партисипативні бюджети
         new_link: Створити новий бюджет
         filter: Фільтр
         filters:
@@ -55,13 +74,21 @@ en-GB:
         table_investments: Інвестиції
         table_edit_budget: Редагувати
         table_admin_ballots: Бюлетені
+        edit_budget: Редагувати бюджет
+        admin_ballots: Бюлетені адміністратора
         no_budgets: "Бюджети відсутні."
+      create:
+        notice: Новий партисипативний бюджет створено!
+      update:
+        notice: Партисипативний бюджет оновлено
       edit:
+        title: Редагувати партисипативний бюджет
         delete: Видалити бюджет
         phase: Етап
         dates: Дати
         actions: Дії
         edit_phase: Редагувати етап
+        active: Активні
         blank_dates: Дати порожні
         administrators:
           zero: "Обрати адміністраторів"
@@ -79,6 +106,8 @@ en-GB:
         unable_notice_polls: Ви не можете видалити бюджет, який має пов'язане опитування
       new:
         title: Новий партисипативний бюджет
+      winners:
+        calculated: Переможці вираховуються, це може зайняти хвилину.
     budget_groups:
       name: "Назва"
       no_groups: "Групи відсутні."
