@@ -827,27 +827,74 @@ en-GB:
       retired_help_text: Для вилучених пропозицій немає інформаційної панелі
   votes:
     agree: Я погоджуюсь
+    comment_unauthenticated: Щоб проголосувати, необхідно %{signin} або %{signup}.
     disagree: Я не погоджуюсь
+    organizations: Організації не допускаються до голосування
+    supports: Підтримання
     verified_only: Тільки користувачі, які підтвердили свій обліковий запис, можуть віддавати голоси за пропозиції; %{verify_account}.
     budget_investments:
       not_logged_in: Щоб продовжити, %{signin} або %{signup}.
+      not_verified: Тільки підтверджені користувачі можуть віддавати голоси за інвестиційні проєкти; %{verify_account}.
+      organization: Організації не допускаються до голосування
+      unfeasible: Не можна підтримати недоцільні інвестиційні проєкти
+      not_voting_allowed: Етап голосування завершено
+      different_heading_assigned:
+        one: "Ви можете підтримати лише інвестиційні проєкти на дільниці %{count}. Ви вже підтримали інвестиції у%{supported_headings}."
+        other: "Ви можете підтримати лише інвестиційні проєкти на дільниці %{count}. Ви вже підтримали інвестиції у%{supported_headings}."
   welcome:
     feed:
+      most_active:
+        debates: "Найактивніші обговорення"
+        proposals: "Найактивніші пропозиції"
+        processes: "Відкрити процеси"
+      see_all_debates: Переглянути всі обговорення
       see_all_proposals: Переглянути всі пропозиції
       see_all_processes: Переглянути всі процеси
       process_label: Процес
       see_process: Переглянути процес
+    cards:
+      title: Рекомендовані
     recommended:
       title: Рекомендації, які можуть вас зацікавити
+      help: "Ці рекомендації згенеровано відповідно до тег та обговорень, за якими ви слідкуєте."
+      debates:
+        title: Рекомендовані обговорення
+        btn_text_link: Усі рекомендовані обговорення
+      proposals:
+        title: Рекомендовані пропозиції
+        btn_text_link: Усі рекомендовані пропозиції
+      budget_investments:
+        title: Рекомендовані інвестиції
+      slide: "Переглянути %{title}"
     verification:
+      i_dont_have_an_account: У мене немає облікового запису
+      i_have_an_account: У мене є обліковий запис
+      question: Чи є у вас обліковий запис у %{org_name}?
       title: Підтвердження облікового запису
     welcome:
+      go_to_index: Не зараз, перейти до сторінки індексу
+      start_using_consul: Перейти до сторінки індексу
       title: Взяти участь
+      user_permission_debates: Взяти участь в обговоренні
+      user_permission_info: З вашим обліковим записом ви маєте можливість...
       user_permission_proposal: Подати нові пропозиції
       user_permission_support_proposal: Підтримати пропозиції
+      user_permission_verify: "Для виконання цих дій підтвердіть свій обліковий запис."
+      user_permission_verify_info: "* Лише для користувачів Census."
       user_permission_verify_my_account: Підтвердити мій обліковий запис
       user_permission_votes: Взяти участь у підсумковому голосуванні
+  invisible_captcha:
+    sentence_for_humans: "Якщо ви людина, проігноруйте це поле"
+    timestamp_error_message: "Вибачте, це було занадто швидко! Будь ласка, повторіть."
   related_content:
+    title: "Пов'язаний контент"
+    add: "Весь пов'язаний контент"
+    label: "Посилання на пов'язаний контент"
+    placeholder: "%{url}"
+    help: "Ви можете додавати посилання %{models} у %{org}."
+    submit: "Додати"
+    error: "Посилання недійсне. Починайте з %{url}."
+    error_itself: "Посилання недійсне. Ви не можете пов'язати контент із самим собою."
     score_positive: "Так"
     score_negative: "Ні"
     content_title:
