@@ -895,26 +895,44 @@ en-GB:
     submit: "Додати"
     error: "Посилання недійсне. Починайте з %{url}."
     error_itself: "Посилання недійсне. Ви не можете пов'язати контент із самим собою."
+    success: "Ви додали новий пов'язаний контент"
+    is_related: "Це пов'язаний контент?"
     score_positive: "Так"
     score_negative: "Ні"
     content_title:
       proposal: "Пропозиція"
+      debate: "Обговорення"
+      budget_investment: "Бюджетна інвестиція"
+  admin/widget:
+    header:
+      title: Адміністрування
+  annotator:
+    help:
+      alt: Виберіть текст, який хочете прокоментувати, і натисніть кнопку з зображенням олівця.
+      text: Щоб прокоментувати цей документ, необхідно %{sign_in} або %{sign_up}. Потім виберіть текст, який хочете прокоментувати, і натисніть кнопку з зображенням олівця.
+      title: Як я можу прокоментувати цей документ?
   links:
     form:
       delete_button: Видалити
       cancel_button: Скасувати
     nested_links:
       title: Посилання
+      note: Додати посилання, які можуть становити інтерес
       add_new_link: Додати нове посилання
     link_fields:
       label_placeholder: Назва посилання
+      url_placeholder: Адреса посилання
   communities:
     show:
       surveys: Опитування
       complete_survey: Заповнити опитування
     subnav:
       surveys: Опитування
+    poll:
+      take_part: Взяти участь від %{from} до %{to}
   remote_translations:
     text: Вміст цієї сторінки недоступний вашою мовою
     all_remote_translations_enqueued_text: Згодом після оновлення сторінки її вміст буде доступним вашою мовою.
+    create:
+      enqueue_remote_translation: Запит на переклад здійснено коректно.
     button: Перекласти сторінку
