@@ -530,11 +530,44 @@ en-GB:
           launch_text_editor: Запустити текстовий редактор
           close_text_editor: Закрити текстовий редактор
           use_markdown: Використовуйте Markdown, щоб відформатувати текст
+          hints:
+            final_version: Ця версія буде опублікована як остаточний результат для даного процесу. У цій версії коментарі заборонені.
+            status:
+              draft: Ви можете здійснити попередній перегляд як адміністратор, ніхто інший не може здійснити попередній перегляд
+              published: Видимий для всіх
+          title_placeholder: Напишіть назву чорнової версії
+          changelog_placeholder: Додати основні зміни з попередньої версії
+          body_placeholder: Записати чорновий текст
+        index:
+          title: Чорнові версії
+          create: Створити версію
+          delete: Видалити
+          preview: Попередній перегляд
+        new:
+          back: Назад
+          title: Створити нову версію
+          submit_button: Створити версію
+        table:
+          title: Назва
+          created_at: Створено
+          comments: Коментарі
+          final_version: Остаточна версія
+          status: Статус
       questions:
+        create:
+          notice: 'Запитання створено. <a href="%{link}">Натисніть, щоб переглянути</a>'
+          error: Не вдалося створити запитання
+        update:
+          notice: 'Запитання оновлено. <a href="%{link}">Натисніть, щоб переглянути</a>'
+          error: Не вдалося оновити запитання
+        destroy:
+          notice: Запитання видалено
         edit:
           back: Назад
+          title: "Редагувати “%{question_title}”"
           submit_button: Зберегти зміни
         form:
+          add_option: Додати опцію
           title_placeholder: Додати запитання
         index:
           back: Назад
