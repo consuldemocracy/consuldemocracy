@@ -142,9 +142,10 @@ en-GB:
         phase: "Етап"
         currency_symbol: "Валюта"
         voting_style: "Вид остаточного голосування"
+        voting_style_knapsack: "Оптимальне співвідношення"
         voting_style_approval: "Затвердження"
       budget/translation:
-        name: "Ім'я"
+        name: "Назва"
       budget/investment:
         heading_id: "Заголовок"
         title: "Назва"
