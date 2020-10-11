@@ -69,8 +69,12 @@ en-GB:
     debate:
       comments:
         zero: Коментарі відсутні
+        one: 1 коментар
+        other: "%{count} коментарів"
       votes:
         zero: Голоси відсутні
+        one: 1 голос
+        other: "%{count} голосів"
     edit:
       editing: Редагувати обговорення
       form:
