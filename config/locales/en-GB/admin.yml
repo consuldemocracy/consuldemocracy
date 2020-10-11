@@ -251,17 +251,72 @@ en-GB:
         table_publication_date: "Дата публікування"
         table_status: Статус
         table_actions: "Дії"
+        delete: "Видалити віху"
+        no_milestones: "Немає визначених віх"
+        image: "Зображення"
+        show_image: "Показати зображення"
+        documents: "Документи"
+        milestone: Віха
+        new_milestone: Створити нову віху
+        milestone_tags: Теги віх
+      form:
+        admin_statuses: Керувати статусами
+        no_statuses_defined: Визначених статусів ще немає
+      new:
+        creating: Створити віху
+      edit:
+        title: Редарувати віху
+      create:
+        notice: Нову віху створено!
+      update:
+        notice: Віху оновлено
+      delete:
+        notice: Віху видалено
     statuses:
       index:
+        title: Статуси віх
+        empty_statuses: Статусів віх не створено
+        new_status: Створити новий статус віхи
         table_description: Опис
         table_actions: Дії
         delete: Видалити
         edit: Редагувати
+      edit:
+        title: Редагувати статус віхи
+      update:
+        notice: Статус віхи оновлено
+      new:
+        title: Створити статус віхи
+      create:
+        notice: Статус віхи створено
+      delete:
+        notice: Статус віхи видалено
     progress_bars:
+      manage: "Керувати індикаторами прогресу"
       index:
+        title: "Індикатори прогресу"
+        no_progress_bars: "Індикатори прогресу відсутні"
+        new_progress_bar: "Створити новий індикатор прогресу"
+        primary: "Головний індикатор прогресу"
+        table_id: "ID"
         table_kind: "Тип"
+        table_percentage: "Поточний прогрес"
+      new:
+        creating: "Створити індикатор прогресу"
+      edit:
+        title:
+          primary: "Редагувати головний індикатор прогресу"
+          secondary: "Редагувати індикатор прогресу %{title}"
+      create:
+        notice: "Індикатор прогресу створено!"
+      update:
+        notice: "Індикатор прогресу оновлено"
+      delete:
+        notice: "Індикатор прогресу видалено"
     comments:
       index:
+        id: "ID"
+        content: "Вміст"
         author: "Автор"
         commentable_type: "Тип"
         title: Коментарі
@@ -270,6 +325,14 @@ en-GB:
     hidden_comments:
       index:
         filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        hidden_debate: Приховане обговорення
+        hidden_proposal: Прихована пропозиція
+        title: Приховані коментарі
+        no_hidden_comments: Приховані коментарі відсутні.
     dashboard:
       actions:
         index:
