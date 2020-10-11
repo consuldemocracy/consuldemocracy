@@ -50,3 +50,25 @@ en-GB:
     mailer_from_name: "Ім'я електронної пошти відправника"
     mailer_from_name_description: "Це ім'я з'являтиметься як ім'я відправника у листах, що надсилаються з додатку"
     mailer_from_address: "Адреса електронної пошти відправника"
+    mailer_from_address_description: "Ця електронна адреса з'являтиметься у листах, що надсилаються з додатку"
+    meta_title: "Назва сайту (SEO)"
+    meta_title_description: "Назва сайту <title>, що використовується з метою SEO"
+    meta_description: "Опис сайту (SEO)"
+    meta_description_description: 'Опис сайту <meta name="description">, що використовується з метою SEO'
+    meta_keywords: "Ключові слова (SEO)"
+    meta_keywords_description: 'Ключові слова <meta name="keywords">, що використовуються з метою SEO'
+    min_age_to_participate: Мінімальний вік, необхідний для участі
+    min_age_to_participate_description: "Користувачі, які досягли цього віку, можуть брати участь у процесах, які потребують підтвердження облікового запису"
+    proposals:
+      successful_proposal_id: Успішна пропозиція
+      successful_proposal_id_description: Ця пропозиція використовується як орінтир успішної пропозиції залежно від кількості підтримок та буде розміщена на інформаційній панелі.
+      poll_short_title: Опитування
+      poll_short_title_description: Короткий опис функції опитування. Дозволяє користувача створювати досвідження щодо пропозицій
+      poll_description: Опис опитувань
+      poll_description_description: Детальний опис функції дослідження
+      poll_link: Посилання на додаткову інформацію
+      poll_link_description: Додає до функції дослідження посилання на додаткову інформацію
+      email_short_title: Електронна адреса
+      email_short_title_description: 'Короткий опис функції "Електронна адреса". Дає користувачам змогу надсилати листи для підтримки їхніх пропозицій. Ви можете знайти весь вміст цього листа тут "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: Опис електронної адреси
+      email_description_description: Детальний опис функції "Електронна адреса"
