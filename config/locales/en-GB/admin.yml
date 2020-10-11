@@ -1323,3 +1323,55 @@ en-GB:
         title: "Статистика остаточного голосування"
         vote_count: Голоси
         participant_count: Учасники
+        participants_per_district: Учасники на дільниці
+      budget_supporting:
+        title: "Статистика Етапу підтримки"
+        users: Користувачі
+        vote_count: Голоси
+        participant_count: Учасники
+      direct_messages:
+        title: Особисті повідомлення
+        total: Загалом
+      proposal_notifications:
+        title: Сповіщення щодо пропозицій
+        total: Загалом
+        proposals_with_notifications: Пропозиції зі сповіщеннями
+        not_available: "Пропозиція недоступна"
+      polls:
+        title: Статистика опитування
+        all: Опитування
+        web_participants: Web-учасники
+        total_participants: Загалом учасників
+        poll_questions: "Запитання з опитування: %{poll}"
+        table:
+          poll_name: Опитування
+          question_name: Запитання
+          origin_web: Web-учасники
+          origin_total: Загалом учасників
+    tags:
+      create: Створити тему
+      destroy: Видалити тему
+      index:
+        add_tag: Додати тему нової пропозиції
+        title: Теми пропозицій
+        topic: Тема
+        help: "Коли користувач подає пропозицію, наступні теми пропонуються як теги (за замовчуванням)."
+    users:
+      columns:
+        id: ID
+        erase_reason: Видалити причину
+        name: Ім'я
+        email: Електронна адреса
+        document_number: Номер документа
+        roles: Ролі
+        verification_level: Рівень перевірки
+      index:
+        title: Користувач
+        no_users: Користувачі відсутні.
+        filter: Фільтр
+        filters:
+          active: Активні
+          erased: Видалені
+      search:
+        placeholder: Шукати користувача за електронною адресою, ім'ям або номером документа
+        search: Пошук
