@@ -56,7 +56,8 @@ module Budgets
     def show
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
-      @related_contents = Kaminari.paginate_array(@investment.relationed_contents).page(params[:page]).per(5)
+      related_contents_without_retired_proposals = @investment.relationed_contents.select { |rel| rel[:retired_at] == nil }
+      @related_contents = Kaminari.paginate_array(related_contents_without_retired_proposals).page(params[:page]).per(5)
       set_comment_flags(@comment_tree.comments)
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
