@@ -176,6 +176,7 @@ en-GB:
       geozone:
         name: Ім'я
         external_code: "Зовнішній код (за бажанням)"
+        census_code: "Код перепису (за бажанням)"
         html_map_coordinates: "Координати HTML <map> (за бажанням)"
       milestone:
         status_id: "Поточний статус (за бажанням)"
@@ -209,6 +210,7 @@ en-GB:
       budget/heading/translation:
         name: "Назва рубрики"
       budget/phase:
+        enabled: "Доступний етап"
         ends_at: "Дата закінчення"
         starts_at: "Дата початку"
       budget/phase/translation:
@@ -248,6 +250,7 @@ en-GB:
         password_confirmation: "Підтвердження пароля"
         password: "Пароль"
         current_password: "Поточний пароль"
+        email_digest: "Отримувати коротку інформацію про сповіщення щодо пропозицій"
         email_on_comment: "Отримувати на електронну пошту сповіщення про коментарі до моїх пропозицій та обговорень"
         email_on_comment_reply: "Отримувати на електронну пошту сповіщення про відповіді на мої коментарі"
         email_on_direct_message: "Отримувати на електронну пошту сповіщення про вхідні повідомлення"
@@ -257,6 +260,7 @@ en-GB:
         official_level: "Офіціний рівень"
         phone_number: "Номер телефону"
         public_activity: "Зробити список моїх дій загальнодоступним"
+        public_interests: "Забезпечити вільний доступ до міток елементів, за якими я слідкую"
         recommended_debates: "Показати рекомендовані обговорення"
         recommended_proposals: "Показати рекомендовані пропозиції"
         redeemable_code: "Код підтвердження надіслано на електронну адресу"
@@ -293,6 +297,7 @@ en-GB:
       poll/ballot_sheet:
         data: Дані CSV
         poll_id: Опитування
+        officer_assignment_id: Завдання службовця
       poll/shift:
         task: "Завдання"
       proposal_notification:
@@ -300,6 +305,8 @@ en-GB:
         title: "Назва"
       signature_sheet:
         title: "Назва"
+        signable_type: "Тип, що підписується"
+        signable_id: "ID, що підписується"
         document_numbers: "Номери документів"
       site_customization/page:
         content: Вміст
@@ -351,7 +358,9 @@ en-GB:
         draft_start_date: Початок
         draft_end_date: Кінець
         draft_publication_date: Дата публікування чорнової версії
+        allegations_start_date: Початок
         allegations_end_date: Кінець
+        proposals_phase_start_date: Початок
         proposals_phase_end_date: Кінець
         result_publication_date: Дата публікування остаточного результату
         background_color: Колір фону
@@ -404,6 +413,7 @@ en-GB:
         description: Опис
       poll/question/answer/video:
         title: Назва
+        url: Зовнішнє відео
       newsletter:
         segment_recipient: Отримувачі
         subject: Предмет
