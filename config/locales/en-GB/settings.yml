@@ -63,12 +63,33 @@ en-GB:
       successful_proposal_id: Успішна пропозиція
       successful_proposal_id_description: Ця пропозиція використовується як орінтир успішної пропозиції залежно від кількості підтримок та буде розміщена на інформаційній панелі.
       poll_short_title: Опитування
-      poll_short_title_description: Короткий опис функції опитування. Дозволяє користувача створювати досвідження щодо пропозицій
+      poll_short_title_description: Короткий опис функції "Опитування". Дозволяє користувача створювати досвідження щодо пропозицій
       poll_description: Опис опитувань
-      poll_description_description: Детальний опис функції дослідження
+      poll_description_description: Детальний опис функції "Дослідження"
       poll_link: Посилання на додаткову інформацію
       poll_link_description: Додає до функції дослідження посилання на додаткову інформацію
       email_short_title: Електронна адреса
-      email_short_title_description: 'Короткий опис функції "Електронна адреса". Дає користувачам змогу надсилати листи для підтримки їхніх пропозицій. Ви можете знайти весь вміст цього листа тут "/app/views/dashboard/mailer/forward.html.erb"'
+      email_short_title_description: 'Короткий опис функції "Електронна адреса". Дає користувачам змогу надсилати листи для підтримки їхніх пропозицій. Вся інформація доступна тут "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Опис електронної адреси
       email_description_description: Детальний опис функції "Електронна адреса"
+      poster_short_title: Афіша
+      poster_short_title_description: 'Короткий опис функції "Афіша". Дає змогу користувачам завантажувати афішу в форматі PDF для просування їхніх пропозицій. Вся інформація доступна тут "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Опис афіші
+      poster_description_description: Детальний опис функції "Афіша"
+    analytics_url: "URL-посилання на аналітику"
+    proposal_notification_minimum_interval_in_days: "Мінімальний інтервал (у днях) для авторів пропозицій для надсилання сповіщень про нові пропозиції"
+    proposal_notification_minimum_interval_in_days_description: "Кількість днів, протягом якої користувач може надсилати сповіщення усім, хто слідкує за його пропозицією"
+    direct_message_max_per_day: "Максимальна особистих повідомлень на день"
+    direct_message_max_per_day_description: "Максимальна кількість особистих повідомлень, які один користувач може відправляти на день"
+    feature:
+      twitter_login: "Логін Twitter"
+      twitter_login_description: "Дає змогу користувачам реєструватися за допомогою облікового запису Twitter"
+      facebook_login: "Логін Facebook"
+      facebook_login_description: "Дає змогу користувачам реєструватися за допомогою облікового запису Facebook"
+      google_login: "Логін Google"
+      google_login_description: "Дає змогу користувачам реєструватися за допомогою облікового запису Google"
+      wordpress_login: "Логін Wordpress"
+      wordpress_login_description: "Дає змогу користувачам реєструватися за допомогою облікового запису Wordpress"
+      featured_proposals: "Рекомендовані пропозиції"
+      featured_proposals_description: "Показує рекомендовані пропозиції на сторінці індексу пропозицій"
+      signature_sheets: "Підписні листи"
