@@ -477,6 +477,7 @@ en-GB:
       view_resource: Переглянути ресурс
       resource_requested: Ресурси, на які вже був запит
       request_resource: Здійснити запит ресурсів
+      resource_locked: Ресурс заблоковано
     recommended_actions:
       title: Рекомендовані дії
       goto_proposed_actions: Перейти до рекомендованих дій
@@ -484,16 +485,39 @@ en-GB:
       hide_proposed_actions: Приховати рекомендовані дії
       pending_title: В очікуванні
       show_description: Показати опис
+      without_pending_actions: Немає рекомендованих дій в очікуванні
+      done_title: Виконано
+      without_done_actions: Немає виконаних рекомендованих дій
+    next_goal:
+      title: Ціль
+      see_complete_course: Ознайотимитись із повним курсом
+      hide_course: Приховати курс
+    goal:
+      target_supports:
+        one: Отримати %{count} підтримання для своєї пропозиції
+        other: Отримати %{count} підтримань для пропозиції
+      days:
+        one: "%{count} день"
+        other: "%{count} днів"
+      locked_resource: Ресурс заблоковано
+      ideal_time: Оптимальний час
     community:
+      access_community: Отримати доступ до спільноти
+      latest_activity: "Остання активність спільноти: %{at}"
       participants: Учасники
+      debates: Обговорення
       comments: Коментарі
       latest_comments: Останні повідомлення
     messages:
+      send_notification: Надіслати повідомлення тим, хто слідкує за пропозицією
       previous_notifications: Переглянути попередні сповіщення
     polls:
       index:
         title: Опитування
         create: Створити опитування
+        count:
+          one: Ви створили %{count} опитування.
+          other: Ви створили %{count} опитувань.
         links: Посилання
         additiontal_information: Додаткова інформація
       new:
@@ -502,10 +526,16 @@ en-GB:
       edit:
         submit: Оновити опитування
       poll:
+        responses:
+          one: "%{count} відповідь"
+          other: "%{count} відповідей"
         view_results: Переглянути результати
         edit_poll: Редагувати опитування
-        delete: Видалити опитування
-        success_notice: Опитування успішно видалене
+        show_results_help: Якщо ви встановите тут прапорець, результати будуть загальнодоступними і всі користувачі зможуть їх бачити
+        delete: Видалити дослідження
+        alert_notice: Ця дія видалить дослідження і всі пов'язані запитання.
+        success_notice: Дослідження видалене
+        unable_notice: Ви не можете знищити дослідження, у якому є відповіді
       form:
         name: Назва опитування
         add_question: Додати запитання
@@ -516,6 +546,8 @@ en-GB:
         remove_answer: Видалити відповідь
     poster:
       index:
+        poster_title: "Не варто більше шукати,"
+        poster_subtitle: "підтримайте мене! ;)"
         proposal_code: "Код пропозиції: %{code}"
         support: Підтримати мою пропозицію
         footer: "<strong>Перейдіть %{link} та підтримайте цю пропозицію.</strong> Чим більше, тим краще. Зробіть свій внесок. Дякуємо!"
