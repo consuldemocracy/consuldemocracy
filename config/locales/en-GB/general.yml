@@ -327,6 +327,58 @@ en-GB:
       map_skip_checkbox: "Для цієї пропозиції немає визначеного місця розташування або воно мені не відоме."
     index:
       featured_proposals: Рекомендовані
+      orders:
+        confidence_score: з найвищим рейтингом
+        created_at: найновіші
+        hot_score: найактивніші
+        most_commented: з найбільшою кількістю коментарів
+        relevance: актуальність
+        archival_date: заархівовані
+        recommendations: рекомендації
+      recommendations:
+        without_results: Відсутні пропозиції, пов'язані зі сферою ваших інтересів
+        without_interests: Слідкуйте за пропозиціями, щоб ми могли надавати вам рекомендації
+        disable: "Рекомендовані пропозиції не будуть показані, якщо ви їх відхилите. Щоб увімкнути їх, перейдіть на сторінку \"Мій обліковий запис\""
+        actions:
+          success: "Рекомендовані пропозиції вимкнено для цього облікового запису"
+          error: "Сталася помилка. Перейдіть на сторінку \"Мій обліковий запис\", щоб власноруч увімкнути рекомендовані пропозиції"
+      retired_proposals: Вилучені пропозиції
+      retired_proposals_link: "Пропозиції, вилучені автором"
+      selected_proposals: Вибрані пропозиції
+      selected_proposals_link: Переглянути вибрані пропозиції
+      archived_proposals: Заархівовані пропозиції
+      proposals_lists: Список пропозицій
+      retired_links:
+        all: Усі
+        duplicated: Дублювання
+        started: В процесі
+        unfeasible: Недоцільні
+        done: Виконані
+        other: Інші
+      search_form:
+        button: Пошук
+        placeholder: Шукати пропозиції...
+        title: Пошук
+      search_results:
+        one: " що містить термін <strong>'%{search_term}'</strong>"
+        other: " що містять термін <strong>'%{search_term}'</strong>"
+      select_order: Сортувати за
+      select_order_long: "Ви переглядаєте пропозиції згідно з:"
+      start_proposal: Подати пропозицію
+      title: Пропозиції
+      top: Топ за тиждень
+      top_link_proposals: Найбільш підтримувані пропозиції за категоріями
+      section_header:
+        icon_alt: Значок пропозицій
+        title: Пропозиції
+        help: Допомога щодо пропозицій
+      section_footer:
+        title: Допомога щодо пропозицій
+        description: Пропозиції громадян є можливістю для колективів безпосередньо вирішувати, яким має бути їхнє місто, шляхом отримання достатньої підтримки та подання на голосування громадян.
+    new:
+      form:
+        submit_button: Подати пропозицію
+      more_info: Як працюють пропозиції громадян?
     proposal:
       created: "Ви створили пропозицію!"
       share:
