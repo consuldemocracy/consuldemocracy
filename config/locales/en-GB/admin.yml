@@ -569,22 +569,66 @@ en-GB:
         form:
           add_option: Додати опцію
           title_placeholder: Додати запитання
+          value_placeholder: Додати закриту відповідь
+          question_options: "Можливі відповіді (за бажанням; за замовчуванням - відкриті відповіді)"
         index:
           back: Назад
+          title: Запитання, пов’язані з цим процесом
           create: Створити запитання
           delete: Видалити
         new:
           back: Назад
           title: Створити нове запитання
           submit_button: Створити запитання
+        table:
+          title: Назва
+          question_options: Варіанти відповідей
+          answers_count: Підрахунок відповідей
+          comments_count: Підрахунок коментарів
+        question_option_fields:
+          remove_option: Видалити опцію
+      milestones:
+        index:
+          title: Наступне
     managers:
       index:
+        title: Керівники
+        name: Ім'я
         email: Електронна адреса
         no_managers: Менеджерів немає.
       manager:
         add: Додати
         delete: Видалити
+      search:
+        title: "Керівники: користувацький пошук"
     menu:
+      activity: Посередницька діяльність
+      admin: Меню адміністратора
+      banner: Керувати банерами
+      proposals: Пропозиції
+      proposals_topics: Теми пропозицій
+      budgets: Партисипативні бюджети
+      geozones: Управляти геозонами
+      hidden_comments: Приховані коментарі
+      hidden_debates: Приховані обговорення
+      hidden_proposals: Приховані пропозиції
+      hidden_budget_investments: Приховані бюджетні інвестиції
+      hidden_proposal_notifications: Приховані сповіщення щодо пропозицій
+      hidden_users: Приховані користувачі
+      administrators: Адміністратори
+      managers: Керівники
+      moderators: Модератори
+      messaging_users: Повідомлення користувачам
+      newsletters: Інформаційні розсилки
+      admin_notifications: Сповіщення
+      system_emails: Електронні листи системи
+      emails_download: Завантаження електронних листів
+      valuators: Оцінювачі
+      polls: Опитування
+      poll_booths: Розташування кабінок
+      poll_booth_assignments: Призначення кабінок
+      poll_shifts: Керувати змінами
+      organizations: Організації
       site_customization:
         information_texts_menu:
           mailers: "Електронні адреси"
