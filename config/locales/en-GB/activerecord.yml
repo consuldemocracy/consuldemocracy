@@ -446,6 +446,9 @@ en-GB:
         short_description: Короткий опис
         description: Опис
         link: Зовнішнє посилання
+        day_offset: Скільки днів після подачі пропозиції ви хочете, щоб вона була активована?
+        required_supports: Скільки голосів на підтримку має отримати пропозиція, щоб бути активованою?
+        order: Ви можете ввести позицію, за якою ця дія буде показана користувачу в переліку дій
         active: Активний
         action_type: Тип
         action_type_proposed_action: "Пропонована дія"
@@ -475,6 +478,10 @@ en-GB:
           attributes:
             email:
               password_already_set: "Цей користувач вже має пароль"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "кількість тегів має бути меншою або дорвінювати %{count}"
         poll/voter:
           attributes:
             user_id:
