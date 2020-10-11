@@ -208,15 +208,49 @@ en-GB:
           price: Ціна
           author: Автор
         see_results: "Див. результати"
+        milestone_tags_filter_all: "Теги всіх етапів"
       show:
         assigned_admin: Призначений адміністратор
         assigned_valuators: Призначені оцінювачі
+        classification: Класифікація
         edit: Редагувати
+        edit_classification: Редагувати класифікацію
+        by: За
+        sent: Надіслані
+        group: Група
+        dossier: Досьє
+        edit_dossier: Редагувати досьє
+        tags: Теги
+        undefined: Не визначено
+        compatibility:
+          title: Сумісність
+          "true": Несумісно
+          "false": Сумісно
+        selection:
+          title: Відбір
         winner:
+          title: Переможець
           "true": "Так"
           "false": "Ні"
+        valuator_groups: "Групи оцінювачів"
+        preview: Попередній перегляд інвестиції
       edit:
+        classification: Класифікація
+        compatibility: Сумісність
+        selection: Відбір
+        assigned_valuators: Оцінювачі
         submit_button: Оновити
+        user_tags: Теги користувача
+        tags_placeholder: "Напишіть бажані теги, розділивши їх комами (,)"
+        undefined: Не визначено
+      search_unfeasible: Пошук неможливий
+    milestones:
+      index:
+        table_id: "ID"
+        table_description: "Опис"
+        table_publication_date: "Дата публікування"
+        table_status: Статус
+        table_actions: "Дії"
     statuses:
       index:
         table_description: Опис
