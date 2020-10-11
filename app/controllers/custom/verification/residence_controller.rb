@@ -1,12 +1,6 @@
-class Verification::ResidenceController < ApplicationController
-  before_action :authenticate_user!
-  before_action :verify_verified!
-  before_action :verify_lock, only: [:new, :create]
-  skip_authorization_check
+require_dependency Rails.root.join("app", "controllers", "verification", "residence_controller").to_s
 
-  def new
-    @residence = Verification::Residence.new
-  end
+class Verification::ResidenceController
 
   def create
     @residence = Verification::Residence.new(residence_params.merge(user: current_user))
@@ -17,10 +11,4 @@ class Verification::ResidenceController < ApplicationController
       render :new
     end
   end
-
-  private
-
-    def residence_params
-      params.require(:residence).permit(:document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service)
-    end
 end
