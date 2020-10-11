@@ -981,3 +981,125 @@ en-GB:
       index:
         title: "Запитання"
         create: "Створити запитання"
+        no_questions: "Запитання відсутні."
+        questions_tab: "Запитання"
+        create_question: "Створити запитання"
+        table_proposal: "Пропозиція"
+        table_question: "Запитання"
+        table_poll: "Опитування"
+        poll_not_assigned: "Опитування не призначено"
+      edit:
+        title: "Редагувати запитання"
+      new:
+        title: "Створити запитання в опитуванні %{poll}"
+        title_proposal: "Створити запитання"
+      answers:
+        images:
+          add_image: "Додати зображення"
+          save_image: "Зберегти зображення"
+      show:
+        proposal: Початкова пропозиція
+        author: Автор
+        question: Запитання
+        edit_question: Редагувати запитання
+        valid_answers: Дійсні відповіді
+        add_answer: Додати відповідь
+        video_url: Зовнішнє відео
+        answers:
+          title: Відповідь
+          description: Опис
+          videos: Відео
+          video_list: Список відео
+          images: Зображення
+          images_list: Список зображень
+          documents: Документи
+          documents_list: Список документів
+          document_title: Назва
+          document_actions: Дії
+    answers:
+      new:
+        title: Нова відповідь
+      show:
+        title: Назва
+        description: Опис
+        images: Зображення
+        images_list: Список зображень
+        edit: Додати відповідь
+      edit:
+        title: Редагувати відповідь
+      videos:
+        index:
+          title: Відео
+          add_video: Додати відео
+          video_title: Назва
+          video_url: Зовнішнє відео
+        new:
+          title: Нове відео
+        edit:
+          title: Редагувати відео
+    recounts:
+      index:
+        title: "Перерахунок"
+        no_recounts: "Перераховувати нічого"
+        all_booths_total: "Сукупні дані по всіх кабінках:"
+        total_final: "Остаточний перерахунок"
+        total_system: "Голоси (автоматично)"
+        table_booth_name: "Кабінка"
+        table_total_recount: "Остаточний перерахунок (інспектором)"
+        table_system_count: "Голоси (автоматично)"
+    results:
+      index:
+        title: "Результати"
+        no_results: "Результати відсутні"
+      result:
+        table_whites: "Порожні бюлетені"
+        table_nulls: "Недійсні бюлетені"
+        table_total: "Дійсні бюлетені"
+        table_answer: Відповідь
+        table_votes: Голоси
+      results_by_booth:
+        booth: Кабінка
+        results: Результати
+        see_results: Переглянути результати
+        title: "Результати по кабінках"
+    booths:
+      index:
+        title: "Список активних кабінок"
+        no_booths: "Для майбутніх опитувань немає активних кабінок."
+        add_booth: "Додати кабінку"
+        name: "Назва"
+        location: "Розташування"
+        no_location: "Немає розташування"
+      new:
+        title: "Нова кабінка"
+        submit_button: "Створити кабінку"
+      edit:
+        title: "Редагувати кабінку"
+        submit_button: "Оновити кабінку"
+      show:
+        location: "Розташування"
+      booth:
+        shifts: "Керувати змінами"
+        edit: "Редагувати кабінку"
+    officials:
+      edit:
+        title: "Інспектори: Редагувати користувача"
+      flash:
+        official_destroyed: "Деталі збережено: користувач більше не є інспектором"
+        official_updated: Деталі щодо інспектора збередено
+      index:
+        title: Інспектори
+        no_officials: Інспектори відсутні.
+        name: Ім'я
+        official_position: Офіційна посада
+        official_level: Рівень
+      level_0: Не інспектор
+      level_1: Рівень 1
+      level_2: Рівень 2
+      level_3: Рівень 3
+      level_4: Рівень 4
+      level_5: Рівень 5
+      search:
+        edit_official: Редагувати інспектора
+        make_official: Зробити інспектором
+        title: "Офіційна посада: Користувацький пошук"
