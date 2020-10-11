@@ -19,7 +19,7 @@ class ProposalsController < ApplicationController
   has_orders ->(c) { Proposal.proposals_orders(c.current_user) }, only: :index
   has_orders %w[most_voted newest oldest], only: :show
 
-  load_and_authorize_resource
+  load_and_authorize_resource except: :json_data #Don't know how to override in custom file...
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
