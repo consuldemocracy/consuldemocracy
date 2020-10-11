@@ -35,3 +35,9 @@ en-GB:
         year_of_birth: "Рік народження"
       local_census_records/import:
         file: Файл
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Формат файлу не підтримується. Допустимий формат: %{valid_extensions}."
