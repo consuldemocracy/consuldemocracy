@@ -1448,3 +1448,69 @@ en-GB:
           status: Статус
           updated_at: Завантажено
           title: Назва
+          slug: Блок
+          cards_title: Картки
+          see_cards: Переглянути картки
+        cards:
+          cards_title: картки
+          create_card: Створити картку
+          no_cards: Картки відсутні.
+          title: Назва
+          description: Опис
+          link_text: Текст посилання
+          link_url: URL-адреса посилання
+          create:
+            notice: "Картку створено!"
+          update:
+            notice: "Картку оновлено"
+          destroy:
+            notice: "Картку вилучено"
+    homepage:
+      title: Домашня сторінка
+      description: Активні модулі з'являються на домашній сторінці в тому ж порядку, що й тут.
+      cards_title: Картки
+      create_card: Створити картку
+      no_cards: Картки відсутні.
+      cards:
+        title: Назва
+        description: Опис
+        link_text: Текст посилання
+        link_url: URL-адреса посилання
+      feeds:
+        proposals: Пропозиції
+        debates: Обговорення
+        processes: Процеси
+      new:
+        card_title: Нова картка
+        submit_card: Створити картку
+      edit:
+        card_title: Редагувати картку
+        submit_card: Зберегти картку
+    audits:
+      title: "Журнал змін"
+      changes: "Список змін"
+      id: "ID"
+      edited_at: "Оновлено"
+      edited_by: "Оновлено"
+      actions: "Дії"
+      empty: "Зареєстровані зміни відсутні"
+    local_census_records:
+      index:
+        document_type: Тип документа
+        document_number: Номер документа
+        date_of_birth: Дата народження
+        postal_code: Поштовий індекс
+        search:
+          placeholder: Шукати за номером документа
+          search: Пошук
+        import: Імпорт CSV
+      imports:
+        new:
+          subtitle: Імпортувати CSV-файл
+        show:
+          subtitle: Результати процесу імпорту
+          import: Імпортувати знову
+          errored: Помилкові рядки
+          created: Створені записи
+        local_census_records:
+          no_records_found: Записів не знайдено.
