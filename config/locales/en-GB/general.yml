@@ -221,11 +221,15 @@ en-GB:
       officing: Інспектори опитувань
       help: Допомога
       my_account_link: Мій обліковий запис
+      my_activity_link: Мій контент
       open_gov: Відкритий уряд
       proposals: Пропозиції
       poll_questions: Голосування
       budgets: Партисипативний бюджет
       notification_item:
+        new_notifications:
+          one: Ви маєте нове сповіщення
+          other: Ви маєте %{count} нових сповіщень
         notifications: Сповіщення
         no_notifications: "Нових сповіщень немає"
   notifications:
@@ -236,9 +240,23 @@ en-GB:
       title: Сповіщення
       unread: Непрочитане
     notification:
+      action:
+        comments_on:
+          one: Хтось залишив коментар
+          other: З'явилось %{count} нових коментарів щодо
+        proposal_notification:
+          one: Є нове сповіщення щодо
+          other: Є %{count} нових сповіщень щодо
+        replies_to:
+          one: Хтось відповів на ваш коментар
+          other: Є %{count} нових відповідей на ваш коментар щодо
       mark_as_read: Позначити як прочитане
       mark_as_unread: Позначити як непрочитане
       notifiable_hidden: Цей ресурс більше не доступний.
+  map:
+    title: "Дільниці"
+    proposal_for_district: "Подати пропозицію для своєї дільниці"
+    start_proposal: Подати пропозицію
   omniauth:
     facebook:
       sign_in: Реєстрація через Facebook
@@ -246,6 +264,7 @@ en-GB:
       name: Facebook
     finish_signup:
       title: "Додаткові деталі"
+      username_warning: "У зв'язку зі змінами нашої взаємодії з соціальними мережами ваше ім'я користувача може відображатися як таке, що вже використовується. В такому разі оберіть, будь ласка, інше ім'я користувача."
     google_oauth2:
       sign_in: Реєстрація через Google
       sign_up: Вхід через Google
@@ -263,8 +282,16 @@ en-GB:
       sign_up: "Вхід через:"
     or_fill: "Або заповніть форму нижче:"
   proposals:
+    create:
+      form:
+        submit_button: Подати пропозицію
     created:
       title: Вітаємо! Ви виконали перший крок.
+      motivation: "Для того, щоб результати подання вашої пропозиції були успішними, потрібно розпочати кампанію для її підтримки. Перші кілька днів є вирішальними."
+      motivation_2: "<strong>Якщо вам необхідні поради щодо створення публікації, створіть чернетку і ми допоможемо вам.</strong>"
+      publish: Ні, я хочу опублікувати пропозицію
+      dashboard: Так, я хочу отримати допомогу і опублікувати пропозицію пізніше
+      preview_title: Коли ви опублікуєте пропозицію, вона матиме наступний вигляд
     share:
       dashboard: Отримати більше інформації
     edit:
