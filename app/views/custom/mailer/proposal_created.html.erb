@@ -1,19 +1,19 @@
 <td style="padding-bottom: 20px; padding-left: 10px;">
 
   <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
-    <%= t("mailers.comment.title") %>
+    <%= t("mailers.proposal_created.title") %>
   </h1>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.comment.hi") %> <strong><%= @official.username %></strong>,
+    <%= t("mailers.proposal_created.hi") %> <strong><%= @official.username %></strong>,
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= sanitize(t("mailers.comment.new_comment_by", commenter: @proposal.author.name)) %>
+    <%= sanitize(t("mailers.proposal_created.new_proposal_by", creator: @proposal.author.name)) %>: 
     <%= link_to @proposal.title, proposal_url(@proposal), style: "color: #2895F1; text-decoration:none;" %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 12px;font-weight: normal;line-height: 20px;">
-    Sie bekommen diese E-Mail, weil Sie als Verantwortlicher für das betreffende Projekt eingetragen sind.<br>
+    <%= t("mailers.proposal_created.why") %>
   </p>
 </td>

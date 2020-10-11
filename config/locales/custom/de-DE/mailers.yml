@@ -1,0 +1,8 @@
+de:
+  mailers:
+    proposal_created:
+      hi: Hallo
+      subject: Neuer Vorschlag wurde erstellt
+      title: Neuer Vorschlag
+      new_proposal_by: Es gibt einen neuen Vorschlag von <strong>%{creator}</strong>
+      why: Sie bekommen diese E-Mail, weil Sie als Verantwortlicher für das betreffende Projekt eingetragen sind.
