@@ -143,3 +143,63 @@ en-GB:
         already_added: Ви вже додали цей інвестиційний проєкт
         already_supported: Ви вже підтримали цей інвестиційний проєкт. Поділіться ним!
         support_title: Підтримати цей проєкт
+        confirm_group:
+          one: "Ви можете підтримувати інвестиції лише на дільниці %{count}. Якщо ви продовжите, ви не зможете змінити вибори у своїй дільниці. Ви впевнені?"
+          other: "Ви можете підтримувати інвестиції лише на дільницях %{count}. Якщо ви продовжите, ви не зможете змінити вибори у своїй дільниці. Ви впевнені?"
+        supports:
+          zero: Не підтримано
+          one: 1 підтримка
+          other: "%{count} підтримок"
+        give_support: Підтримка
+      header:
+        check_ballot: Перевірити і підтвердити моє голосування
+        different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
+        change_ballot: "Якщо ви передумали, ви можете видалити свої голоси в %{check_ballot} і розпочати знову."
+        check_ballot_link: "перевірити і підтвердити моє голосування"
+    progress_bar:
+      assigned: "Ви призначили: "
+      available: "Доступний бюджет: "
+      votes:
+        zero: "Ви вибрали <strong> 0 </strong> проєктів із <strong>%{limit}</strong>"
+        one: "Ви вибрали <strong> 1 </strong> проєкт із <strong>%{limit}</strong>"
+        other: "Ви вибрали <strong>%{count}</strong> проєктів із <strong>%{limit}</strong>"
+    show:
+      group: Група
+      phase: Фактичний етап
+      unfeasible_title: Недоцільні інвестиції
+      unfeasible: Переглянути недоцільні інвестиції
+      unselected_title: Інвестиції, не відібрані для фази голосування
+      unselected: Бачити інвестиції, не відібрані для фази голосування
+      see_results: Бачити результати
+    results:
+      link: Результати
+      page_title: "%{budget} - Рузультати"
+      heading: "Результати партисипативних бюджетів"
+      heading_selection_title: "За дільницями"
+      ballot_lines_count: Голоси
+      hide_discarded_link: Приховати відхилені
+      show_all_link: Показати усі
+      price: Вартість
+      amount_available: Доступний бюджет
+      accepted: "Прийняті інвестиції: "
+      discarded: "Відхилені інвестиції: "
+      incompatibles: Несумісні
+      investment_title: Назва проєкту
+      investment_proyects: Перелік усіх інвестиційних проєктів
+      unfeasible_investment_proyects: Перелік усіх недоцільних інвестиційних проєктів
+      not_selected_investment_proyects: Перелік усіх інвестиційних проєктів, не відібраних для голосування
+    executions:
+      link: "Віхи"
+      page_title: "%{budget} - Віхи"
+      heading: "Віхи партисипативних бюджетів"
+      heading_selection_title: "За дільницями"
+      filters:
+        status:
+          label: "Поточний стан проєкту"
+          all: "Усі (%{count})"
+        milestone_tag:
+          label: "Тег етапу"
+          all: "Усі (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Дата початку не може бути співпадати з датою завершення або бути пізнішою"
