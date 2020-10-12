@@ -186,27 +186,27 @@ en-GB:
       milestone/translation:
         description: "Опис"
       milestone/status:
-        name: "Ім'я"
+        name: "Назва"
         description: "Опис (за бажанням)"
       progress_bar:
         kind: "Тип"
-        title: "Назва"
+        title: "Заголовок"
         percentage: "Поточний прогрес"
       progress_bar/kind:
-        primary: "Початковий"
+        primary: "Першочерговий"
         secondary: "Другорядний"
       budget/group:
         max_votable_headings: "Максимальна кількість рубрик, за якими користувач може обирати проєкти"
       budget/group/translation:
         name: "Назва групи"
       budget/heading:
-        allow_custom_content: "Дозволити блокування вмісту"
+        allow_custom_content: "Дозволити блокування контенту"
         latitude: "Широта (за бажанням)"
         longitude: "Довгота (за бажанням)"
         name: "Назва рубрики"
         price: "Кількість"
         population: "Населення (за бажанням)"
-        max_ballot_lines: "Голосування передбачено"
+        max_ballot_lines: "Дозволене голосування"
       budget/heading/translation:
         name: "Назва рубрики"
       budget/phase:
@@ -224,7 +224,7 @@ en-GB:
         description: "Думка"
         tag_list: "Теми"
         terms_of_service: "Умови користування"
-        title: "Назва"
+        title: "Заголовок"
       debate/translation:
         title: "Назва обговорення"
         description: "Початковий текст обговорення"
@@ -234,10 +234,10 @@ en-GB:
         question: "Запитання"
         description: "Опис"
         responsible_name: "Повне ім'я особи, яка подає пропозицію"
-        retired_reason: "Причина скасування пропозиції"
-        selected: "Прзначити як вибране"
+        retired_reason: "Причина вилучення пропозиції"
+        selected: "Позначити як вибране"
         terms_of_service: "Умови користування"
-        video_url: "Посилання на зовнішнє відео"
+        video_url: "URL-посилання на зовнішнє відео"
       proposal/translation:
         title: "Назва пропозиції"
         description: "Текст пропозиції"
