@@ -757,7 +757,7 @@ en-GB:
       new:
         title: Нова інформаційна розсилка
         header_footer_help_text: "Заголовок та нижній колонтитул однакові для всіх електронних листів, їх можна змінити в <code>app/views/layouts/mailer_header</code> та <code>app/views/layouts/mailer_footer</code>. <br> Ви може замінити зображення заголовка на %{link}."
-        image_link: "особисті зображення"
+        image_link: "зображення користувача"
       edit:
         title: Редагувати інформаційну розсилку
       show:
@@ -772,7 +772,7 @@ en-GB:
         segment_recipient: Отримувачі
         from: Електронна адреса, що відображатиметься як відправник інформаційного бюлетеня
         body: Вміст листа
-        body_help_text: Ось як виглядатиме лист для отримувачів.
+        body_help_text: Ось у якому вигляді отримувачі бачитимуть лист.
         send_alert: Ви впевнені, що хочете надіслати цю інформаційну розсилку %{n} користувачам?
     admin_notifications:
       create_success: Сповіщення створено
@@ -808,7 +808,7 @@ en-GB:
         body: Текст
         link: Посилання
         segment_recipient: Отримувачі
-        preview_guide: "Ось як виглядатиме сповіщення для отримувачів:"
+        preview_guide: "Таким бачитимуть сповіщення отримувачі:"
         sent_guide: "Ось як виглядатиме сповіщення для отримувачів:"
         send_alert: Ви впевнені, що хочете надіслати це сповіщення %{n} користувачам?
     system_emails:
@@ -816,8 +816,9 @@ en-GB:
         action: Очікування попереднього перегляду
         preview_of: Попередній перегляд %{name}
         pending_to_be_sent: Цей вміст очікує надсилання
-        moderate_pending: Модерувати надіслане сповіщення
-        send_pending_notification: Очікуване сповіщення надіслано
+        moderate_pending: Сповіщення про модерування надіслане
+        send_pending: Надіслати те, що в очікуванні
+        send_pending_notification: Сповіщення в очікуванні надіслано
       proposal_notification_digest:
         preview_detail: "Користувачі отримуватимуть лише сповіщення щодо пропозицій, за якими вони слідкують"
       budget_investment_created:
