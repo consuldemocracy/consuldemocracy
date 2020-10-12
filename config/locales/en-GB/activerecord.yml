@@ -322,20 +322,20 @@ en-GB:
         print_content_flag: Кнопка друкування вмісту
         locale: Мова
       site_customization/page/translation:
-        title: Назва
+        title: Заголовок
         subtitle: Підзаголовок
         content: Вміст
       site_customization/image:
-        name: Ім'я
+        name: Назва
         image: Зображення
       site_customization/content_block:
-        name: Ім'я
+        name: Назва
         locale: локалізація
         body: Орган
       tag:
         name: "Введіть назву теми"
       topic:
-        title: "Назва"
+        title: "Заголовок"
         description: "Початковий текст"
       banner:
         background_color: Колір фону
@@ -344,7 +344,7 @@ en-GB:
         post_started_at: "Пост розпочато о"
         target_url: "Посилання"
       banner/translation:
-        title: "Назва"
+        title: "Заголовок"
         description: "Опис"
       legislation/process:
         title: Назва процесу
@@ -352,20 +352,20 @@ en-GB:
         description: Опис
         additional_info: Додаткова інформація
         start_date: Початок
-        end_date: Кінець
+        end_date: Закінчення
         debate_start_date: Початок
-        debate_end_date: Кінець
+        debate_end_date: Закінчення
         draft_start_date: Початок
-        draft_end_date: Кінець
+        draft_end_date: Закінчення
         draft_publication_date: Дата публікування чорнової версії
         allegations_start_date: Початок
-        allegations_end_date: Кінець
+        allegations_end_date: Закінчення
         proposals_phase_start_date: Початок
-        proposals_phase_end_date: Кінець
+        proposals_phase_end_date: Закінчення
         result_publication_date: Дата публікування остаточного результату
         background_color: Колір фону
         font_color: Колір шрифту
-        homepage_enabled: "Домашня сторінка ввімкнена"
+        homepage_enabled: "Домашня сторінка доступна"
       legislation/process/translation:
         title: Назва процесу
         summary: Підсумок
@@ -391,7 +391,7 @@ en-GB:
         body: Текст
         changelog: Зміни
       legislation/question:
-        title: Назва
+        title: Заголовок
         question_options: Опції
       legislation/question/translation:
         title: Запитання
@@ -400,11 +400,11 @@ en-GB:
       legislation/annotation:
         text: Коментар
       document:
-        title: Назва
-        attachment: "Оберіть документ"
+        title: Заголовок
+        attachment: "Обрати документ"
       image:
-        title: Назва
-        attachment: "Вибрати зображення"
+        title: Заголовок
+        attachment: "Обрати зображення"
       poll/question/answer:
         title: Відповідь
         description: Опис
@@ -412,7 +412,7 @@ en-GB:
         title: Відповідь
         description: Опис
       poll/question/answer/video:
-        title: Назва
+        title: Заголовок
         url: Зовнішнє відео
       newsletter:
         segment_recipient: Отримувачі
@@ -421,33 +421,33 @@ en-GB:
         body: Вміст листа
       admin_notification:
         segment_recipient: Отримувачі
-        title: Назва
+        title: Заголовок
         link: Посилання
         body: Текст
       admin_notification/translation:
-        title: Назва
+        title: Заголовок
         body: Текст
       widget/card:
         label: Мітка (за бажанням)
-        title: Назва
+        title: Заголовок
         description: Опис
         link_text: Текст посилання
         link_url: URL-адреса посилання
         columns: Кількість колонок
       widget/card/translation:
         label: Мітка (за бажанням)
-        title: Назва
+        title: Заголовок
         description: Опис
         link_text: Текст посилання
       widget/feed:
         limit: Кількість пунктів
       dashboard/action:
-        title: Назва
+        title: Заголовок
         short_description: Короткий опис
         description: Опис
         link: Зовнішнє посилання
         request_to_administrators: Додати до ресурсу кнопку для запиту ресурсу в адміністраторів
-        day_offset: Скільки днів після подачі пропозиції ви хочете, щоб вона була активована?
+        day_offset: Впродовж скількох днів після подачі пропозиції ви хочете, щоб вона була активована?
         required_supports: Скільки голосів на підтримку має отримати пропозиція, щоб бути активованою?
         order: Ви можете ввести позицію, за якою ця дія буде показана користувачу в переліку дій
         active: Активний
