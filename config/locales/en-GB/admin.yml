@@ -153,20 +153,21 @@ en-GB:
         max_ballot_lines_info: 'Максимальна кількість проєктів, за які може проголосувати користувач за даною рубрикою на етапі "Голосування за проєкти". Лише для бюджетів, де використовується голосування за одобрювальним принципом.'
         population_info: "Поле \"Населення\" в рубриці бюджету використовується для статистичних цілей і показує, яка частка населення певної місцевості взяла участь в голосуванні. Поле є необов’язковим, тому ви можете залишити його порожнім."
         coordinates_info: "Якщо зазначені широта і довгота, сторінка інвестиції включатиме мапу. Ця мапа буде відцентрована з використанням даних координат"
-        create: "Створити новий заголовок"
-        edit: "Редагувати заголовок"
-        submit: "Зберегти заголовок"
+        content_blocks_info: "Якщо встановлено прапорець біля \"Дозволити блокування контенту\", ви зможете створювати власний контент, пов’язаний із цим заголовком, у розділі Налаштування> Блоки контенту користувача. Цей контент з’явиться на сторінці інвестицій для цієї рубрики."
+        create: "Створити нову рубрику"
+        edit: "Редагувати рубрику"
+        submit: "Зберегти рубрику"
       index:
         back: "Повернутися до груп"
     budget_phases:
       edit:
         summary_help_text: Цей текст інформуватиме коритувача щодо етапу. Щоб показувати його навіть за умови, що етап не є активним, встановіть прапорець нижче
-        description_help_text: Цей текст зв'являтиметься у заголовку, якщо етап є активним
+        description_help_text: Цей текст з'являтиметься у заголовку, якщо етап є активним
         enabled_help_text: Цей етап буде загальнодоступним на часовій шкалі етапів бюджету та активним для будь-яких інших цілей
         save_changes: Зберегти зміни
     budget_investments:
       index:
-        heading_filter_all: Усі заголовки
+        heading_filter_all: Усі рубрики
         administrator_filter_all: Усі адміністратори
         valuator_filter_all: Усі оцінювачі
         tags_filter_all: Усі теги
@@ -178,10 +179,10 @@ en-GB:
           without_valuator: Без призначеного оцінювача
           under_valuation: В процесі оцінювання
           valuation_finished: Оцінювання завершено
-          feasible: Доцільно
+          feasible: Реалізація доцільна
           selected: Вибрано
           undecided: Не вирішено
-          unfeasible: Недоцільно
+          unfeasible: Реалізація недоцільна
           min_total_supports: Найменше підтримки
           max_total_supports: Найбільше підтримки
           winners: Переможці
@@ -189,7 +190,7 @@ en-GB:
           two_filters: "Застосовані фільтри: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Фільтр
-        download_current_selection: "Завантажити поточний вибір"
+        download_current_selection: "Завантажити поточний відбір"
         no_budget_investments: "Інвестиційні проекти відсутні."
         title: Інвестиційні проекти
         columns: Колонки
@@ -197,10 +198,10 @@ en-GB:
         no_admin_assigned: Адміністратора не призначено
         no_valuators_assigned: Оцінювачів не призначено
         feasibility:
-          feasible: "Доцільно"
-          unfeasible: "Недоцільно"
+          feasible: "Реалізація доцільна"
+          unfeasible: "Реалізація недоцільна"
           undecided: "Не вирішено"
-        selected: "Вибране"
+        selected: "Вибрано"
         select: "Обрати"
         list:
           id: ID
@@ -208,25 +209,30 @@ en-GB:
           supports: Підтримка
           admin: Адміністратор
           valuator: Оцінювач
+          valuation_group: Група оцінювання
           geozone: Сфера діяльності
           feasibility: Доцільність
+          valuation_finished: Остаточне оцінювання.
           selected: Вибрано
-          visible_to_valuators: Представити оцінювачам
+          visible_to_valuators: Показати оцінювачам
           author_username: Ім'я користувача автора
           incompatible: Несумісно
-          price: Ціна
+          price: Вартість
           author: Автор
-        see_results: "Див. результати"
+        cannot_calculate_winners: Щоб визначити переможні інвестиційні проєкти, бюджет має знаходитись на етапах "Голосування за проєкти" або "Виконаний бюджет"
+        see_results: "Переглянути результати"
         milestone_tags_filter_all: "Теги всіх етапів"
       show:
         assigned_admin: Призначений адміністратор
         assigned_valuators: Призначені оцінювачі
         classification: Класифікація
+        info: "%{budget_name} - Група: %{group_name} - Інвестиційний проєкт %{id}"
         edit: Редагувати
         edit_classification: Редагувати класифікацію
         by: За
         sent: Надіслані
         group: Група
+        heading: Рубрика
         dossier: Досьє
         edit_dossier: Редагувати досьє
         tags: Теги
@@ -248,6 +254,7 @@ en-GB:
         compatibility: Сумісність
         selection: Відбір
         assigned_valuators: Оцінювачі
+        select_heading: Обрати рубрику
         submit_button: Оновити
         user_tags: Теги користувача
         tags_placeholder: "Напишіть бажані теги, розділивши їх комами (,)"
@@ -256,6 +263,7 @@ en-GB:
     milestones:
       index:
         table_id: "ID"
+        table_title: "Заголовок"
         table_description: "Опис"
         table_publication_date: "Дата публікування"
         table_status: Статус
@@ -286,6 +294,7 @@ en-GB:
         title: Статуси віх
         empty_statuses: Статусів віх не створено
         new_status: Створити новий статус віхи
+        table_name: Назва
         table_description: Опис
         table_actions: Дії
         delete: Видалити
@@ -309,6 +318,7 @@ en-GB:
         primary: "Головний індикатор прогресу"
         table_id: "ID"
         table_kind: "Тип"
+        table_title: "Заголовок"
         table_percentage: "Поточний прогрес"
       new:
         creating: "Створити індикатор прогресу"
