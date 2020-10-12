@@ -450,7 +450,7 @@ en-GB:
         day_offset: Впродовж скількох днів після подачі пропозиції ви хочете, щоб вона була активована?
         required_supports: Скільки голосів на підтримку має отримати пропозиція, щоб бути активованою?
         order: Ви можете ввести позицію, за якою ця дія буде показана користувачу в переліку дій
-        active: Активний
+        active: Активні
         action_type: Тип
         action_type_proposed_action: "Пропонована дія"
         action_type_resource: "Ресурс"
@@ -459,7 +459,7 @@ en-GB:
         source: Джерело
         user: Виконавець
       link:
-        label: Назва
+        label: Заголовок
         url: Посилання
       valuator:
         description: Опис
@@ -482,7 +482,7 @@ en-GB:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "кількість тегів має бути меншою або дорвінювати %{count}"
+              less_than_or_equal_to: "кількість тегів має бути меншою або дорівнювати %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -492,12 +492,22 @@ en-GB:
             attachment:
               min_image_width: "Ширина зображення повинна становити принаймні %{required_min_width}пікселів"
               min_image_height: "Висота зображення повинна становити принаймні %{required_min_height}пікселів"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Недійсний сегмент одержувачів"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Недійсний сегмент одержувачів"
         map_location:
           attributes:
             map:
               invalid: Місцезнаходження не можу бути відсутнім. Зробіть відмітку чи встановіть прапорець, якщо геолокалізація не потрібна
         poll/voter:
           attributes:
+            document_number:
+              not_in_census: "Документ відсутній у переписі"
             user_id:
               has_voted: "Користувач вже проголосував"
         legislation/process:
@@ -513,11 +523,11 @@ en-GB:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "кількість тегів має бути меншою або дорвінювати %{count}"
+              less_than_or_equal_to: "кількість тегів має бути меншою або дорівнювати %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "кількість тегів має бути меншою або дорвінювати %{count}"
+              less_than_or_equal_to: "кількість тегів має бути меншою або дорівнювати %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
