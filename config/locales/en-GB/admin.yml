@@ -1031,26 +1031,29 @@ en-GB:
         see_proposal: "(Переглянути пропозицію)"
       flash:
         question_added: "Запитання додано до голосування"
-        error_on_question_added: "Запитання не вдалося призначити для цього опитування"
+        error_on_question_added: "Не вдалося призначити запитання для цього опитування"
       destroy:
-        alert: "Ця дія видалить опитування і всі пов'язані запитання."
-        success_notice: "Опитування видалено"
-        unable_notice: "Ви не можете видалити опитування, за яке віддані голоси"
+        alert: "Ця дія видалить голосування і всі пов'язані запитання."
+        success_notice: "Голосування видалено"
+        unable_notice: "Ви не можете видалити голосування, за яке віддані голоси"
     questions:
       index:
         title: "Запитання"
         create: "Створити запитання"
         no_questions: "Запитання відсутні."
+        filter_poll: Фільтр за голосуванням
+        select_poll: Обрати голосування
         questions_tab: "Запитання"
+        successful_proposals_tab: "Успішні пропозиції"
         create_question: "Створити запитання"
         table_proposal: "Пропозиція"
         table_question: "Запитання"
-        table_poll: "Опитування"
-        poll_not_assigned: "Опитування не призначено"
+        table_poll: "Голосування"
+        poll_not_assigned: "Голосування не призначено"
       edit:
         title: "Редагувати запитання"
       new:
-        title: "Створити запитання в опитуванні %{poll}"
+        title: "Створити запитання в голосуванні %{poll}"
         title_proposal: "Створити запитання"
       answers:
         images:
@@ -1061,7 +1064,7 @@ en-GB:
         author: Автор
         question: Запитання
         edit_question: Редагувати запитання
-        valid_answers: Дійсні відповіді
+        valid_answers: Правильні відповіді
         add_answer: Додати відповідь
         video_url: Зовнішнє відео
         answers:
@@ -1104,12 +1107,12 @@ en-GB:
         total_final: "Остаточний перерахунок"
         total_system: "Голоси (автоматично)"
         table_booth_name: "Кабінка"
-        table_total_recount: "Остаточний перерахунок (інспектором)"
+        table_total_recount: "Загальний перерахунок (інспектором)"
         table_system_count: "Голоси (автоматично)"
     results:
       index:
         title: "Результати"
-        no_results: "Результати відсутні"
+        no_results: "Немає результатів"
       result:
         table_whites: "Порожні бюлетені"
         table_nulls: "Недійсні бюлетені"
@@ -1120,7 +1123,7 @@ en-GB:
         booth: Кабінка
         results: Результати
         see_results: Переглянути результати
-        title: "Результати по кабінках"
+        title: "Результати за кабінкою"
     booths:
       index:
         title: "Список активних кабінок"
@@ -1142,12 +1145,13 @@ en-GB:
         edit: "Редагувати кабінку"
     officials:
       edit:
-        title: "Інспектори: Редагувати користувача"
+        destroy: Прибрати статус "Службовець"
+        title: "Службовці: Редагувати користувача"
       flash:
-        official_destroyed: "Деталі збережено: користувач більше не є інспектором"
-        official_updated: Деталі щодо інспектора збередено
+        official_destroyed: "Деталі збережено: користувач більше не є службовцем"
+        official_updated: Деталі щодо службовця збережено
       index:
-        title: Інспектори
+        title: Службовці
         no_officials: Інспектори відсутні.
         name: Ім'я
         official_position: Офіційна посада
