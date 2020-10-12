@@ -359,13 +359,14 @@ en-GB:
         description: Ласкаво просимо до %{org} панелі адміністратора.
       actions:
         index:
-          description: "Коли користувачі подають пропозиції, вони отримують доступ до інформаційної панелі своєї пропозиції, де ви можете пропонувати ресурси та надавати рекомендації для підтримки їхньої ідеї."
+          description: "Коли користувачі подають пропозиції, вони отримують доступ до інформаційної панелі своєї пропозиції, де вони можуть пропонувати ресурси та надавати рекомендації для підтримки їхніх ідей."
           create: Створити ресурс або дію
           edit: Редагувати
           delete: Видалити
           active: 'Так'
           inactive: 'Ні'
           title: Ресурси та дії
+          action_title: Заголовок
           action_type: Тип
           required_supports: Необхідна підтримка
           day_offset: Необхідна кількість днів
@@ -375,7 +376,9 @@ en-GB:
           default:
             email: Електронна адреса
             polls: Опитування
+            poster: Афіша
         new:
+          creating: Нова дія для інформаційної панелі пропозицій
           back: Назад до списку
         create:
           notice: Дію створено
@@ -390,6 +393,7 @@ en-GB:
           published_proposal_help_text: Встановіть позначку, щоб створювати дії лише для опублікованих пропозицій
       administrator_tasks:
         index:
+          description: "Ресурси на інформаційній панелі пропозицій можуть містити кнопку запитів для адміністраторів. Запити користувачів показані нижче."
           title: Запитувані ресурси
           solve: Вирішити
           no_records: Запитувані ресурси відсутні
@@ -441,7 +445,7 @@ en-GB:
         success_notice: "Документ видалено"
     hidden_users:
       index:
-        filter: Filter
+        filter: Фільтр
         filters:
           all: Усі
           with_confirmed_hide: Підтверджені
@@ -456,7 +460,7 @@ en-GB:
         title: Активність користувача (%{user})
     hidden_budget_investments:
       index:
-        filter: Filter
+        filter: Фільтр
         filters:
           all: Усі
           with_confirmed_hide: Підтверджені
@@ -477,21 +481,24 @@ en-GB:
           back: Назад
           submit_button: Зберегти зміни
         form:
+          enabled: Дозволено
           process: Процес
           debate_phase: Етап обговорення
           draft_phase: Етап розробки проєкту
+          draft_phase_description: Якщо цей етап активний, процес процес не буде відображений у списку процесів. Зробіть можливим попередній перегляд процесу і створити контент перед початком.
           allegations_phase: Етап коментування
-          proposals_phase: Етап пропозицій
+          proposals_phase: Етап подання пропозицій
           use_markdown: Використовуйте Markdown, щоб відформатувати текст
           title_placeholder: Назва процесу
           summary_placeholder: Короткий виклад опису
           description_placeholder: Додати опис процесу
           additional_info_placeholder: Додати додаткову інформацію, яку ви вважаєте корисною
           homepage_description: Тут ви можете пояснити зміст процесу
+          banner_title: Кольори рубрик
         index:
           create: Новий процес
           delete: Видалити
-          title: Спільне законодавство
+          title: Спільна законотворчість
           filters:
             active: Активні
             all: Усі
@@ -520,6 +527,10 @@ en-GB:
           draft_versions: Розробка
           questions: Обговорення
           proposals: Пропозиції
+          milestones: Відслідковувані
+      homepage:
+        edit:
+          title: Налаштувати домашню сторінку процесу
       proposals:
         index:
           title: Назва
@@ -542,7 +553,7 @@ en-GB:
         edit:
           back: Назад
           submit_button: Зберегти зміни
-          warning: Ви відредагувати текст, не забудьте натистути "Зберегти" для остаточного збереження.
+          warning: Ви відредагувати текст; не забудьте натистути "Зберегти" для остаточного збереження.
           markdown_changes_message: "Ви відредагували текст, не зберігши його. Ви дійсно хочете залишити сторінку?"
         form:
           title: 'Редагувати <span class="strong">%{draft_version_title}</span> з процесу <span class="strong">%{process_title}</span>'
@@ -552,7 +563,7 @@ en-GB:
           hints:
             final_version: Ця версія буде опублікована як остаточний результат для даного процесу. У цій версії коментарі заборонені.
             status:
-              draft: Ви можете здійснити попередній перегляд як адміністратор, ніхто інший не може здійснити попередній перегляд
+              draft: Ви можете здійснити попередній перегляд як адміністратор, ніхто інший не може бачити попередній перегляд
               published: Видимий для всіх
           title_placeholder: Напишіть назву чорнової версії
           changelog_placeholder: Додати основні зміни з попередньої версії
@@ -568,7 +579,7 @@ en-GB:
           submit_button: Створити версію
         table:
           title: Назва
-          created_at: Створено
+          created_at: Створено о
           comments: Коментарі
           final_version: Остаточна версія
           status: Статус
