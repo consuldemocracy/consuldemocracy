@@ -9,6 +9,8 @@ en-GB:
           all: Усі
           pending_flag_review: В очікуванні
           with_ignored_flag: Позначити як переглянуте
+        headers:
+          comment: Коментар
         hide_comments: Приховати коментарі
         ignore_flags: Позначити як переглянуте
         order: Порядок
