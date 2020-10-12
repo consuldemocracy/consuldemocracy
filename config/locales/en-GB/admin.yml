@@ -18,10 +18,10 @@ en-GB:
       title: "Ви призначені на кабінку, розташовану в %{booth}. Якщо це не так, не продовжуйте і зателефонуйте в службу підтримки. Дякуємо."
     banners:
       index:
-        title: Банери
-        create: Створити банер
-        edit: Редагувати банер
-        delete: Видалити банер
+        title: Постери
+        create: Створити постер
+        edit: Редагувати постер
+        delete: Видалити постер
         filters:
           all: Усі
           with_active: Активні
@@ -33,21 +33,21 @@ en-GB:
           homepage: Домашня сторінка
           debates: Обговорення
           proposals: Пропозиції
-          budgets: Партисипативний бюджет
+          budgets: Бюджетування за участі громадськості
           help_page: Довідка
       edit:
-        editing: Редагувати банер
+        editing: Редагувати постер
         form:
           submit_button: Зберегти зміни
       new:
-        creating: Створити банер
+        creating: Створити постер
     activity:
       show:
         action: Дія
         actions:
-          block: Заблоковане
-          hide: Приховане
-          restore: Відновлене
+          block: Заблоковано
+          hide: Приховано
+          restore: Відновлено
         by: Модерується
         content: Вміст
         filter: Показати
@@ -60,9 +60,10 @@ en-GB:
           on_system_emails: Електронні листи системи
         title: Посередницька діяльність
         type: Тип
+        no_activity: Посередницька діяльність відсутня.
     budgets:
       index:
-        title: Партисипативні бюджети
+        title: Бюджети участі
         new_link: Створити новий бюджет
         filter: Фільтр
         filters:
