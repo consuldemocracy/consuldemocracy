@@ -611,7 +611,7 @@ en-GB:
           title: Створити нове запитання
           submit_button: Створити запитання
         table:
-          title: Назва
+          title: Заголовок
           question_options: Варіанти відповідей
           answers_count: Підрахунок відповідей
           comments_count: Підрахунок коментарів
@@ -619,7 +619,7 @@ en-GB:
           remove_option: Видалити опцію
       milestones:
         index:
-          title: Наступне
+          title: Відслідковувані
     managers:
       index:
         title: Керівники
@@ -634,10 +634,10 @@ en-GB:
     menu:
       activity: Посередницька діяльність
       admin: Меню адміністратора
-      banner: Керувати банерами
+      banner: Керувати постерами
       proposals: Пропозиції
       proposals_topics: Теми пропозицій
-      budgets: Партисипативні бюджети
+      budgets: Бюджети участі
       geozones: Управляти геозонами
       hidden_comments: Приховані коментарі
       hidden_debates: Приховані обговорення
@@ -654,10 +654,12 @@ en-GB:
       system_emails: Електронні листи системи
       emails_download: Завантаження електронних листів
       valuators: Оцінювачі
+      poll_officers: Інспектори опитувань
       polls: Опитування
       poll_booths: Розташування кабінок
       poll_booth_assignments: Призначення кабінок
       poll_shifts: Керувати змінами
+      officials: Інспектори
       organizations: Організації
       settings: Глобальні налаштування
       stats: Статистика
@@ -665,10 +667,10 @@ en-GB:
       site_customization:
         documents: Особисті документи
         homepage: Домашня сторінка
-        pages: Особисті сторінки
-        images: Особисті зображення
-        content_blocks: Особисті блоки контенту
-        information_texts: Особисті інформаційні тексти
+        pages: Сторінки користувачів
+        images: Зображення користувача
+        content_blocks: Блоки контенту користувача
+        information_texts: Інформаційні тексти користувача
         information_texts_menu:
           basic: "Базові налаштування"
           debates: "Обговорення"
@@ -688,13 +690,14 @@ en-GB:
       title_settings: Налаштування
       title_site_customization: Зміст сайту
       title_booths: Кабінки для голосування
-      legislation: Спільне законодавство
+      legislation: Спільна законотворчість
       users: Користувачі
       dashboard: Інформаційна панель пропозицій
       administrator_tasks: Запитувані ресурси
       dashboard_actions: Ресурси та дії
       debates: "Обговорення"
       comments: "Коментарі"
+      local_census_records: Керувати місцевим переписом населення
     administrators:
       index:
         title: Адміністратори
@@ -707,26 +710,29 @@ en-GB:
         add: Додати
         delete: Видалити
         restricted_removal: "Вибачте, ви не можете видалити себе з переліку адміністраторів"
+      search:
+        title: "Адміністратори: користувацький пошук"
       form:
         edit_title: "Редагувати адміністратора"
-        updated: "Адміністатор оновлений"
+        updated: "Адміністатора оновлено"
     moderators:
       index:
         title: Модератори
         name: Ім'я
         email: Електронна адреса
+        no_moderators: Модераторів немає.
       moderator:
         add: Додати
         delete: Видалити
       search:
-        title: "Модератори відсутні"
+        title: "Модератори: користувацький пошук"
     segment_recipient:
       all_users: Усі користувачі
       administrators: Адміністратори
-      all_proposal_authors: Автори пропозицій (в тому числі заархівовані та ті, що вибули)
+      all_proposal_authors: Автори пропозицій (в тому числі заархівованих та вилучених)
       proposal_authors: Автори пропозицій
       investment_authors: Автори інвестицій у поточному бюджеті
-      feasible_and_undecided_investment_authors: "Автори деяких інвестицій у поточному бюджеті не відповідають: [valuation finished unfesasible]"
+      feasible_and_undecided_investment_authors: "Автори деяких інвестицій у поточному бюджеті, які не відповідають: [valuation finished unfesasible]"
       selected_investment_authors: Автори вибраних інвестицій у поточному бюджеті
       winner_investment_authors: Автори переможних інвестицій у поточному бюджеті
       not_supported_on_current_budget: Користувачі, які не підтримали інвестиції в поточному бюджеті
@@ -750,6 +756,7 @@ en-GB:
         empty_newsletters: Інформаційних розсилок немає
       new:
         title: Нова інформаційна розсилка
+        header_footer_help_text: "Заголовок та нижній колонтитул однакові для всіх електронних листів, їх можна змінити в <code>app/views/layouts/mailer_header</code> та <code>app/views/layouts/mailer_footer</code>. <br> Ви може замінити зображення заголовка на %{link}."
         image_link: "особисті зображення"
       edit:
         title: Редагувати інформаційну розсилку
