@@ -961,15 +961,16 @@ en-GB:
       flash:
         create: "Зміну додано"
         destroy: "Зміну видалено"
+        unable_to_destroy: "Зміни з пов'язаними результатами та перерахунками не можуть бути видалені"
         date_missing: "Необхідно обрати дату"
-      vote_collection: Рахувати голоси
-      recount_scrutiny: Перерахунок та перевірка
+      vote_collection: Зібрати голоси
+      recount_scrutiny: Перерахунок та перевірка правильності підрахунку голосів
     booth_assignments:
-      manage_assignments: Управляти завданнями
+      manage_assignments: Управляти призначеннями
       manage:
-        assignments_list: "Завдання для опитування '%{poll}'"
+        assignments_list: "Призначення для голосування '%{poll}'"
         status:
-          assign_status: Завдання
+          assign_status: Призначення
           assigned: Призначено
           unassigned: Не призначено
         actions:
@@ -979,7 +980,8 @@ en-GB:
       alert:
         shifts: "Є зміни, які пов'язані з даною кабінкою. Якщо ви видалите завдання для кабінки, зміни також будуть видалені. Продовжити?"
       show:
-        location: "Місцезнаходження"
+        location: "Розташування"
+        officers: "Інспектори"
         officers_list: "Список інспекторів для цієї кабінки"
         no_officers: "Немає інспекторів для цієї кабінки"
         recounts: "Перерахунок"
@@ -988,44 +990,47 @@ en-GB:
         date: "Дата"
         count_final: "Остаточний перерахунок (інспектором)"
         count_by_system: "Голоси (автоматично)"
-        total_system: Загальна кількість голосів (автоматично)
+        total_system: Всього голосів (автоматично)
       index:
         booths_title: "Список кабінок"
-        no_booths: "Для цього обговорення немає призначених кабінок."
+        no_booths: "Немає кабінок, призначених для цього голосування."
         table_name: "Назва"
         table_location: "Розташування"
     active_polls:
       edit:
         title: "Опис опитувань"
+      form:
+        description:
+          help_text: "Цей текст з'явиться у заголовку сторінки голосувань. Його можна використати для того, щоб додати контексту відкритим голосуванням."
     polls:
       index:
-        title: "Список опитувань"
-        no_polls: "Опитування відсутні."
-        create: "Створити опитування"
+        title: "Список голосувань"
+        no_polls: "Голосувань немає."
+        create: "Створити голосування"
         name: "Назва"
         dates: "Дати"
         start_date: "Дата початку"
         closing_date: "Дата завершення"
-        geozone_restricted: "Обмежено районами"
+        geozone_restricted: "Обмежено дільницями"
       new:
-        title: "Нове опитування"
-        submit_button: "Створити опитування"
+        title: "Нове голосування"
+        submit_button: "Створити голосування"
       edit:
-        title: "Редагувати опитування"
-        submit_button: "Оновити опитування"
+        title: "Редагувати голосування"
+        submit_button: "Оновити голосування"
       show:
         questions_tab: Запитання
         booths_tab: Кабінки
         officers_tab: Інспектори
         recounts_tab: Перерахунок
         results_tab: Результати
-        no_questions: "Для цього обговорення немає призначених запитань."
+        no_questions: "Немає запитань, призначених для цього обговорення."
         questions_title: "Перелік запитань"
         table_title: "Назва"
         edit_answers: Редагувати відповіді
         see_proposal: "(Переглянути пропозицію)"
       flash:
-        question_added: "До опитування додане запитання"
+        question_added: "Запитання додано до голосування"
         error_on_question_added: "Запитання не вдалося призначити для цього опитування"
       destroy:
         alert: "Ця дія видалить опитування і всі пов'язані запитання."
