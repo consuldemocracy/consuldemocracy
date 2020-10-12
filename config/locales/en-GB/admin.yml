@@ -897,14 +897,14 @@ en-GB:
         email: "Електронна адреса"
         group: "Група"
         abilities: "Можливості"
-        no_description: "Опис відсутній"
-        no_group: "Група відсутня"
-        no_abilities: "Можливості відсутні"
+        no_description: "Без опису"
+        no_group: "Без групи"
+        no_abilities: "Без можливостей"
     valuator_groups:
       index:
         title: "Групи оцінювачів"
         new: "Створити групи оцінювачів"
-        name: "Назва"
+        name: "Ім'я"
         members: "Члени"
         no_groups: "Групи оцінювачів відсутні"
       show:
@@ -914,39 +914,53 @@ en-GB:
         new: "Створити групу оцінювачів"
         edit: "Зберегти групу оцінювачів"
     poll_officers:
+      index:
+        title: Інспектори опитувань
       officer:
         add: Додати
+        delete: Видалити позицію
         name: Ім'я
         email: Електронна адреса
+        entry_name: інспектор
       search:
-        email_placeholder: Користувацький пошук за електронною адресою
+        email_placeholder: Пошук користувача за електронною адресою
         search: Пошук
         user_not_found: Користувача не знайдено
+        help: "Щоб додати або усунути інспекторів опитувань, скористайтеся формою нижче."
     poll_officer_assignments:
       index:
+        officers_title: "Список інспекторів"
+        no_officers: "Немає інспекторів, призначених для цього обговорення."
         table_name: "Ім'я"
         table_email: "Електронна адреса"
       by_officer:
         date: "Дата"
         booth: "Кабінка"
+        assignments: "Зміни інспекторів у цьому голосуванні"
+        no_assignments: "У цього коритсувача немає змін в даному голосуванні."
     poll_shifts:
       new:
-        add_shift: "Додати зміни"
+        add_shift: "Додати зміну"
         shift: "Завдання"
         shifts: "Зміни у цій кабінці"
         date: "Дата"
         edit_shifts: Редагувати зміни
         new_shift: "Нова зміна"
         no_shifts: "У цій кабінці немає змін"
+        officer: "Інспектор"
         remove_shift: "Усунути"
         search_officer_button: Пошук
+        search_officer_placeholder: Шукати інспектора
+        search_officer_text: Шукати інспектора для призначення на нову зміну
+        select_date: "Обрати день"
+        no_voting_days: "Дні голосування завершені"
         select_task: "Обрати завдання"
         table_shift: "Зміна"
         table_email: "Електронна адреса"
         table_name: "Ім'я"
       flash:
         create: "Зміну додано"
-        destroy: "Зміну усунено"
+        destroy: "Зміну видалено"
         date_missing: "Необхідно обрати дату"
       vote_collection: Рахувати голоси
       recount_scrutiny: Перерахунок та перевірка
