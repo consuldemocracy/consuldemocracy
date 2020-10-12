@@ -1,9 +1,9 @@
 en-GB:
   attributes:
     geozone_id: "Сфера діяльності"
-    results_enabled: "Переглянути результати"
-    stats_enabled: "Переглянути статистику"
-    advanced_stats_enabled: "Переглянути розширену статистику"
+    results_enabled: "Показати результати"
+    stats_enabled: "Показати статистику"
+    advanced_stats_enabled: "Показати розширену статистику"
   activerecord:
     models:
       activity:
@@ -16,11 +16,11 @@ en-GB:
         one: "Інвестиція"
         other: "Інвестиції"
       milestone:
-        one: "етап"
-        other: "етапи"
+        one: "віха"
+        other: "віхи"
       milestone/status:
-        one: "Статус етапу"
-        other: "Статуси етапу"
+        one: "Статус віх"
+        other: "Статуси віх"
       progress_bar:
         one: "Індикатор виконання"
         other: "Індикатори виконання"
@@ -64,8 +64,8 @@ en-GB:
         one: "кабінка"
         other: "кабінки"
       poll/officer:
-        one: "службовець"
-        other: "службовці"
+        one: "інспектор"
+        other: "інспектори"
       poll/ballot_sheet:
         one: Бюлетень
         other: Бюлетені
