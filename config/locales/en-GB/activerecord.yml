@@ -256,13 +256,13 @@ en-GB:
         email_on_direct_message: "Отримувати на електронну пошту сповіщення про вхідні повідомлення"
         newsletter: "Отримувати на електронну пошту актуальну інформацію про вебсайт"
         official_position: "Офіційна посада"
-        official_position_badge: "Показати посвідчення, що засвідчує посаду"
-        official_level: "Офіціний рівень"
+        official_position_badge: "Показати посвідчення про офіційну посаду"
+        official_level: "Офіційний рівень"
         phone_number: "Номер телефону"
         public_activity: "Зробити список моїх дій загальнодоступним"
         public_interests: "Забезпечити вільний доступ до міток елементів, за якими я слідкую"
-        recommended_debates: "Показати рекомендовані обговорення"
-        recommended_proposals: "Показати рекомендовані пропозиції"
+        recommended_debates: "Показувати рекомендовані обговорення"
+        recommended_proposals: "Показувати рекомендовані пропозиції"
         redeemable_code: "Код підтвердження надіслано на електронну адресу"
       direct_message:
         title: "Назва"
@@ -274,16 +274,16 @@ en-GB:
         name: "Ім'я"
         starts_at: "Дата початку"
         ends_at: "Дата завершення"
-        geozone_restricted: "Обмеження за географічною зоною"
+        geozone_restricted: "Обмеження за геозоною"
         summary: "Підсумок"
         description: "Опис"
       active_poll/translation:
         description: "Опис"
       poll/booth:
-        name: "Ім'я"
-        location: "Місцезнаходження"
+        name: "Назва"
+        location: "Розташування"
       poll/translation:
-        name: "Ім'я"
+        name: "Назва"
         summary: "Підсумок"
         description: "Опис"
       poll/question:
@@ -297,29 +297,29 @@ en-GB:
       poll/ballot_sheet:
         data: Дані CSV
         poll_id: Опитування
-        officer_assignment_id: Завдання службовця
+        officer_assignment_id: Завдання інспектора
       poll/shift:
         task: "Завдання"
       proposal_notification:
         body: "Повідомлення"
-        title: "Назва"
+        title: "Заголовок"
       signature_sheet:
-        title: "Назва"
+        title: "Заголовок"
         signable_type: "Тип, що підписується"
         signable_id: "ID, що підписується"
         document_numbers: "Номери документів"
       site_customization/page:
         content: Вміст
-        created_at: Створено
+        created_at: Створено о
         subtitle: Підзаголовок
         slug: Блок
         status: Статус
         status_draft: "Чернетка"
         status_published: "Опубліковано"
-        title: Назва
+        title: Заголовок
         updated_at: Оновлено
         more_info_flag: Показати на сторінці довідки
-        print_content_flag: Кнопка друку вмісту
+        print_content_flag: Кнопка друкування вмісту
         locale: Мова
       site_customization/page/translation:
         title: Назва
