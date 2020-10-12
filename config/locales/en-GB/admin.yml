@@ -73,20 +73,23 @@ en-GB:
         table_name: Назва
         table_phase: Етап
         table_investments: Інвестиції
+        table_edit_groups: Групи розіділів
         table_edit_budget: Редагувати
         table_admin_ballots: Бюлетені
+        edit_groups: Редагувати групи розіділів
         edit_budget: Редагувати бюджет
-        admin_ballots: Бюлетені адміністратора
+        admin_ballots: Адмініструвати бюлетені
         no_budgets: "Бюджети відсутні."
       create:
-        notice: Новий партисипативний бюджет створено!
+        notice: Новий бюджет участі створено!
       update:
-        notice: Партисипативний бюджет оновлено
+        notice: Бюджет участі оновлено
       edit:
-        title: Редагувати партисипативний бюджет
+        title: Редагувати бюджет участі
         delete: Видалити бюджет
         phase: Етап
         dates: Дати
+        enabled: Дозволено
         actions: Дії
         edit_phase: Редагувати етап
         active: Активні
@@ -102,7 +105,7 @@ en-GB:
         empty_administrators: "Адміністратори відсутні"
         empty_valuators: "Оцінювачі відсутні"
       destroy:
-        success_notice: Бюджет успішно видалений
+        success_notice: Бюджет видалений
         unable_notice: Ви не можете видалити бюджет, який має пов'язані інвестиції
         unable_notice_polls: Ви не можете видалити бюджет, який має пов'язане опитування
       new:
