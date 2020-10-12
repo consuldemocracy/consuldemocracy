@@ -128,10 +128,10 @@ en-GB:
         other: Посилання
       local_census_record:
         one: Запис місцевого перепису населення
-        other: Записи місцевого перепису населення
+        other: Дані місцевого перепису населення
     attributes:
       budget:
-        name: "Ім'я"
+        name: "Назва"
         description_accepting: "Опис на етапі прийняття"
         description_reviewing: "Опис на етапі перегляду"
         description_selecting: "Опис на етапі відбору"
@@ -147,13 +147,13 @@ en-GB:
       budget/translation:
         name: "Назва"
       budget/investment:
-        heading_id: "Заголовок"
-        title: "Назва"
+        heading_id: "Розділ"
+        title: "Заголовок"
         description: "Опис"
         external_url: "Посилання на додаткову документацію"
         administrator_id: "Адміністратор"
         location: "Розміщення додаткової інформації"
-        organization_name: "Якщо ви подаєте пропозицію від імені колективу/організації або від імені більшої кількості людей, зазначте назву/імена"
+        organization_name: "Якщо ви подаєте пропозицію від імені колективу/організації або від імені ширшого кола людей, зазначте назву/імена"
         image: "Зображення для опису пропозиції"
         image_title: "Назва зображення"
         duration: "Часовий діапазон"
