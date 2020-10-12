@@ -317,7 +317,7 @@ en-GB:
         status_draft: "Чернетка"
         status_published: "Опубліковано"
         title: Заголовок
-        updated_at: Оновлено
+        updated_at: Оновлено о
         more_info_flag: Показати на сторінці довідки
         print_content_flag: Кнопка друкування вмісту
         locale: Мова
