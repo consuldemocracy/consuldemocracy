@@ -1152,21 +1152,22 @@ en-GB:
         official_updated: Деталі щодо службовця збережено
       index:
         title: Службовці
-        no_officials: Інспектори відсутні.
+        help: Облікові записи користувачів, позначених як службовці, будуть підсвічені. Ви можете визначити, яка мітка відобразиться поряд з іменами користувачів цих облікових записів, від найважливіших (рівень 1) до найменш важливих (рівень 5).
+        no_officials: Службовців немає.
         name: Ім'я
         official_position: Офіційна посада
         official_level: Рівень
-      level_0: Не інспектор
+      level_0: Не службовець
       level_1: Рівень 1
       level_2: Рівень 2
       level_3: Рівень 3
       level_4: Рівень 4
       level_5: Рівень 5
       search:
-        edit_official: Редагувати інспектора
-        make_official: Зробити інспектором
-        title: "Офіційна посада: Користувацький пошук"
-        no_results: Офіційних посад не знайдено.
+        edit_official: Редагувати службовця
+        make_official: Зробити службовцем
+        title: "Посади службовців: пошук користувача"
+        no_results: Посад службовців не знайдено.
     organizations:
       index:
         filter: Фільтр
@@ -1175,14 +1176,17 @@ en-GB:
           pending: В очікуванні
           rejected: Відхилені
           verified: Перевірені
+        hidden_count:
+          one: Також є <strong> одна організація </strong>, в якій немає користувачів вони приховані.
+          other: Також є <strong>%{count} організацій </strong>, в яких немає користувачів вони приховані.
         name: Ім'я
         email: Електронна адреса
         phone_number: Телефон
         responsible_name: Відповідальний
         status: Статус
-        no_organizations: Організації відсутні.
+        no_organizations: Немає організацій.
         reject: Відхилити
-        rejected: Відхилені
+        rejected: Відхилено
         search: Пошук
         search_placeholder: Ім'я, електронна адреса і номер телефону
         title: Організації
@@ -1198,9 +1202,9 @@ en-GB:
         id: ID
         author: Автор
         select: Обрати
-        selected: Вибране
-        milestones: Віхи
-        no_proposals: Пропозиції відсутні.
+        selected: Вибрано
+        milestones: Основні етапи
+        no_proposals: Пропозицій немає.
       show:
         create_question: Додати пропозицію в опитування для голосування
       form:
@@ -1221,13 +1225,13 @@ en-GB:
         filter: Фільтр
         filters:
           all: Усі
-          with_confirmed_hide: Підтверджені
+          with_confirmed_hide: Підтверджено
           without_confirmed_hide: В очікуванні
         title: Приховані сповіщення
         no_hidden_proposals: Приховані сповіщення відсутні.
     settings:
       flash:
-        updated: Оновлене значення
+        updated: Значення оновлено
       index:
         title: Налаштування
         general: Налаштування
