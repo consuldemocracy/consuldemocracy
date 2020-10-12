@@ -1344,6 +1344,7 @@ en-GB:
           required_fields_note: "Щоб перевірити користувача, додатку необхіний: Номер документа"
           date_of_birth_note: ", Дата народження (дд/мм/рррр)"
           postal_code_note: " та поштовий індекс"
+          required_fields_structure_note: "Для кожного користувача обов’язкові поля повинні бути відокремлені комами, а кожен користувач - крапкою з комою."
           example_text: "Приклад: "
       show:
         created_at: Створено
@@ -1358,55 +1359,62 @@ en-GB:
           other: "Є %{count} неперевірених підписів"
         unverified_error: (Не перевірено Census)
         voted:
-          zero: "Відсутні голоси, створені з перевірених підписів."
+          zero: "Немає голосів, створених за допомогою перевірених підписів."
+          one: "Є %{count} голос, створений за допомогою перевірених підписів."
+          other: "Є %{count} голосів, створених за допомогою перевірених підписів."
+        loading: "Деякі підпсиси все ще перевіряються Census. Будь ласка, оновіть сторінку трішки пізніше"
     stats:
       show:
         stats_title: Статистика
         summary:
-          comment_votes: Коментувати голоси
+          comment_votes: Голоси за коментарі
           comments: Коментарі
-          debate_votes: Голоси обговорень
+          debate_votes: Голоси за обговорення
           debates: Обговорення
+          proposal_votes: Голоси за пропозиції
           proposals: Пропозиції
           budgets: Відкриті бюджети
           budget_investments: Інвестиційні проєкти
           unverified_users: Неперевірені користувачі
           user_level_three: Користувачі третього рівня
           user_level_two: Користувачі другого рівня
-          users: Усі користувачі
+          users: Загалом користувачів
           verified_users: Перевірені користувачі
-          verified_users_who_didnt_vote_proposals: Перевірені користувачі, які не віддали голоси за пропозиції
+          verified_users_who_didnt_vote_proposals: Перевірені користувачі, які не голосували за пропозиції
           visits: Відвідування
-          votes: Усі голоси
-        budgets_title: Партисипативне бюджетування
-        participatory_budgets: Партисипативні бюджети
+          votes: Загалом голосів
+        budgets_title: Бюджетування участі
+        participatory_budgets: Бюджети участі
         direct_messages: Особисті повідомлення
         proposal_notifications: Сповіщення щодо пропозицій
         incomplete_verifications: Незавершені перевірки
-        polls: Опитування
+        polls: Голосування
       graph:
         debate_created: Обговорення
         visit: Відвідування
         level_2_user: Користувачі 2 рівня
-        proposal_created: Пропозиції громадянина
+        proposal_created: Пропозиції громадян
       budgets:
         no_data_before_balloting_phase: "Немає даних для показу до етапу голосування."
-        title: "Панртисипативні бюджети - Статистика участі"
+        title: "Бюджети участі - Статистика участі"
         supporting_phase: Етап підтримки
         balloting_phase: Остаточне голосування
       budget_balloting:
         title: "Статистика остаточного голосування"
         vote_count: Голоси
         participant_count: Учасники
-        participants_per_district: Учасники на дільниці
+        votes_per_heading: Голосів на рубрику
+        participants_per_district: Учасників на дільниці
       budget_supporting:
-        title: "Статистика Етапу підтримки"
+        title: "Статистика етапу підтримки"
+        headings: Рубрики
         users: Користувачі
         vote_count: Голоси
         participant_count: Учасники
       direct_messages:
         title: Особисті повідомлення
         total: Загалом
+        users_who_have_sent_message: Користувачі, які надіслали приватне повідомлення
       proposal_notifications:
         title: Сповіщення щодо пропозицій
         total: Загалом
