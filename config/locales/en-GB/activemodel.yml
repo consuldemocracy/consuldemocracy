@@ -5,8 +5,8 @@ en-GB:
         residence: "Місце проживання"
         sms: "SMS"
       local_census_records/import:
-        one: Імпорт записів місцевого перепису населення
-        other: Імпорт запису місцевого перепису населення
+        one: Імпорт даних місцевого перепису населення
+        other: Імпорт даних місцевого перепису населення
     attributes:
       verification:
         residence:
