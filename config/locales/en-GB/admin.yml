@@ -1421,15 +1421,15 @@ en-GB:
         proposals_with_notifications: Пропозиції зі сповіщеннями
         not_available: "Пропозиція недоступна"
       polls:
-        title: Статистика опитування
-        all: Опитування
-        web_participants: Web-учасники
+        title: Статистика голосування
+        all: Голосування
+        web_participants: Учасники в мережі
         total_participants: Загалом учасників
-        poll_questions: "Запитання з опитування: %{poll}"
+        poll_questions: "Запитання з голосування: %{poll}"
         table:
-          poll_name: Опитування
+          poll_name: Голосування
           question_name: Запитання
-          origin_web: Web-учасники
+          origin_web: Учасники в мережі
           origin_total: Загалом учасників
     tags:
       create: Створити тему
@@ -1450,7 +1450,7 @@ en-GB:
         verification_level: Рівень перевірки
       index:
         title: Користувач
-        no_users: Користувачі відсутні.
+        no_users: Користувачів немає.
         filter: Фільтр
         filters:
           active: Активні
@@ -1461,7 +1461,7 @@ en-GB:
     verifications:
       index:
         phone_not_given: Телефона немає
-        sms_code_not_confirmed: Не підтверджено кодом з sms
+        sms_code_not_confirmed: Не підтверджено sms-кодом
         title: Незавершені перевірки
     site_customization:
       content_blocks:
@@ -1527,9 +1527,9 @@ en-GB:
           title: Створити нову особисту сторінку
           slug_help: "Текст для ідентифікації цієї сторінки через URL-адресу, наприклад <code>https://consulproject.org/page-slug</code>"
         page:
-          created_at: Створено
+          created_at: Створено о
           status: Статус
-          updated_at: Завантажено
+          updated_at: Оновлено
           title: Назва
           slug: Блок
           cards_title: Картки
@@ -1542,6 +1542,7 @@ en-GB:
           description: Опис
           link_text: Текст посилання
           link_url: URL-адреса посилання
+          columns_help: "Ширина картки у вигляді кількості колонок. На мобільних екранах це завжди 100% ширина."
           create:
             notice: "Картку створено!"
           update:
@@ -1551,9 +1552,12 @@ en-GB:
     homepage:
       title: Домашня сторінка
       description: Активні модулі з'являються на домашній сторінці в тому ж порядку, що й тут.
+      header_title: Заголовок
+      no_header: Заголовків немає.
+      create_header: Створити заголовок
       cards_title: Картки
       create_card: Створити картку
-      no_cards: Картки відсутні.
+      no_cards: Карток немає.
       cards:
         title: Назва
         description: Опис
@@ -1564,9 +1568,13 @@ en-GB:
         debates: Обговорення
         processes: Процеси
       new:
+        header_title: Новий заголовок
+        submit_header: Створити заголовок
         card_title: Нова картка
         submit_card: Створити картку
       edit:
+        header_title: Редагувати заголовок
+        submit_header: Зберегти заголовок
         card_title: Редагувати картку
         submit_card: Зберегти картку
     audits:
