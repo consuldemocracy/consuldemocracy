@@ -254,7 +254,7 @@ describe "Commenting debates" do
       expect(page).to have_content "It will be done next week."
     end
 
-    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
   end
 
   scenario "Reply to reply", :js do
@@ -408,7 +408,7 @@ describe "Commenting debates" do
         expect(page).to have_css "img.moderator-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
     scenario "can not comment as an administrator" do
@@ -464,7 +464,7 @@ describe "Commenting debates" do
         expect(page).to have_css "img.admin-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
     scenario "can not comment as a moderator" do

@@ -115,7 +115,7 @@ describe "Home" do
       )
 
       visit root_path
-      expect(page).to have_xpath(ie_alert_box_xpath, visible: false)
+      expect(page).to have_xpath(ie_alert_box_xpath)
       expect(page.driver.request.cookies["ie_alert_closed"]).to be_nil
 
       # faking close button, since a normal find and click
@@ -123,13 +123,13 @@ describe "Home" do
       page.driver.browser.set_cookie("ie_alert_closed=true")
 
       visit root_path
-      expect(page).not_to have_xpath(ie_alert_box_xpath, visible: false)
+      expect(page).not_to have_xpath(ie_alert_box_xpath)
       expect(page.driver.request.cookies["ie_alert_closed"]).to eq("true")
     end
 
     scenario "non-IE visitors are not bothered with IE alerts", :page_driver do
       visit root_path
-      expect(page).not_to have_xpath(ie_alert_box_xpath, visible: false)
+      expect(page).not_to have_xpath(ie_alert_box_xpath)
       expect(page.driver.request.cookies["ie_alert_closed"]).to be_nil
     end
 

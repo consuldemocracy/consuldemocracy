@@ -690,11 +690,11 @@ describe "Ballots" do
         find(".in-favor a").click
 
         expect(page).not_to have_content "Remove"
-        expect(page).to have_selector(".participation-not-allowed", visible: false)
+        expect(page).not_to have_selector(".participation-not-allowed")
 
         hover_over_ballot
 
-        expect(page).to have_selector(".participation-not-allowed", visible: true)
+        expect(page).to have_selector(".participation-not-allowed")
         expect(page).to have_selector(".in-favor a", obscured: true)
       end
     end

@@ -50,7 +50,7 @@ describe "Admin settings" do
 
       find("#map-tab").click
 
-      expect(page).to have_css("#admin-map.leaflet-container", visible: true)
+      expect(page).to have_css("#admin-map.leaflet-container")
     end
   end
 

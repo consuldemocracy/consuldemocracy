@@ -22,7 +22,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      expect(page).to have_css "#new_document_link", visible: true
+      expect(page).to have_css "#new_document_link"
     end
 
     scenario "Should not show new document link when
@@ -34,14 +34,14 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         click_link "Add new document"
       end
 
-      expect(page).to have_css "#new_document_link", visible: false
+      expect(page).not_to have_css "#new_document_link"
     end
 
     scenario "Should not show max documents warning when no documents added", :js do
       login_as user_to_login
       visit send(path, arguments)
 
-      expect(page).to have_css ".max-documents-notice", visible: false
+      expect(page).not_to have_css ".max-documents-notice"
     end
 
     scenario "Should show max documents warning when max documents allowed limit is reached", :js do
@@ -51,7 +51,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
       end
 
-      expect(page).to have_css ".max-documents-notice", visible: true
+      expect(page).to have_css ".max-documents-notice"
       expect(page).to have_content "Remove document"
     end
 
@@ -65,7 +65,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
       all("a", text: "Cancel").last.click
 
-      expect(page).to have_css ".max-documents-notice", visible: false
+      expect(page).not_to have_css ".max-documents-notice"
     end
 
     scenario "Should update nested document file name after choosing a file", :js do
@@ -263,7 +263,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         login_as user_to_login
         visit send(path, arguments)
 
-        expect(page).to have_css "#new_document_link", visible: false
+        expect(page).not_to have_css "#new_document_link"
       end
 
       scenario "Should show add document button after destroy one document", :js do
@@ -275,7 +275,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
           click_on "Remove document"
         end
 
-        expect(page).to have_css "#new_document_link", visible: true
+        expect(page).to have_css "#new_document_link"
       end
 
       scenario "Should remove nested field after remove document", :js do

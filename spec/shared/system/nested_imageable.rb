@@ -17,16 +17,16 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       login_as user
       visit send(path, arguments)
 
-      expect(page).to have_selector "#new_image_link", visible: true
+      expect(page).to have_selector "#new_image_link"
     end
 
-    scenario "Should hide new image link after adding one image" do
+    scenario "Should hide new image link after adding one image", :js do
       login_as user
       visit send(path, arguments)
 
       click_on "Add image"
 
-      expect(page).to have_selector "#new_image_link", visible: false
+      expect(page).not_to have_selector "#new_image_link"
     end
 
     scenario "Should update nested image file name after choosing any file", :js do
@@ -226,7 +226,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         login_as user
         visit send(path, arguments)
 
-        expect(page).to have_css "a#new_image_link", visible: false
+        expect(page).not_to have_css "a#new_image_link"
       end
 
       scenario "Should remove nested field after remove image", :js do
@@ -244,7 +244,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         visit send(path, arguments)
         click_on "Remove image"
 
-        expect(page).to have_css "a#new_image_link", visible: true
+        expect(page).to have_css "a#new_image_link"
       end
     end
   end
