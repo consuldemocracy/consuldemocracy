@@ -40,7 +40,7 @@ describe "Admin settings" do
       login_as(admin)
       visit admin_settings_path
 
-      expect(page).not_to have_css("#admin-map.leaflet-container", visible: false)
+      expect(page).not_to have_css("#admin-map.leaflet-container", visible: :all)
     end
 
     scenario "When `Map settings` tab content is shown map should be initialized" do
@@ -101,8 +101,8 @@ describe "Admin settings" do
 
       visit admin_settings_path
 
-      expect(find("#latitude", visible: false).value).to eq "51.48"
-      expect(find("#longitude", visible: false).value).to eq "0.0"
+      expect(find("#latitude", visible: :hidden).value).to eq "51.48"
+      expect(find("#longitude", visible: :hidden).value).to eq "0.0"
     end
 
     scenario "Should update marker", :js do
@@ -117,7 +117,7 @@ describe "Admin settings" do
         click_on "Update"
       end
 
-      expect(find("#latitude", visible: false).value).not_to eq "51.48"
+      expect(find("#latitude", visible: :hidden).value).not_to eq "51.48"
       expect(page).to have_content "Map configuration updated succesfully"
     end
   end

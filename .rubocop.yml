@@ -26,6 +26,9 @@ Capybara/FeatureMethods:
     - scenario
     - xscenario
 
+Capybara/VisibilityMatcher:
+  Enabled: true
+
 FactoryBot/AttributeDefinedStatically:
   Enabled: true
 

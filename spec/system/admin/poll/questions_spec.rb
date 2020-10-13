@@ -67,7 +67,7 @@ describe "Admin poll questions" do
 
     expect(page).to have_content("Create question to poll Movies")
     expect(page).to have_selector("input[id='poll_question_poll_id'][value='#{poll.id}']",
-                                   visible: false)
+                                   visible: :hidden)
     fill_in "Question", with: title
 
     click_button "Save"

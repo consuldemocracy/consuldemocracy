@@ -1815,7 +1815,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 6, visible: false)
+        expect(page).to have_css(".map-icon", count: 6, visible: :all)
       end
     end
 
@@ -1829,7 +1829,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 2, visible: false)
+        expect(page).to have_css(".map-icon", count: 2, visible: :all)
       end
     end
 
@@ -1853,7 +1853,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 4, visible: false)
+        expect(page).to have_css(".map-icon", count: 4, visible: :all)
       end
     end
 
@@ -1871,7 +1871,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 0, visible: false)
+        expect(page).to have_css(".map-icon", count: 0, visible: :all)
       end
     end
 
@@ -1889,7 +1889,7 @@ describe "Budget Investments" do
       end
 
       within(".map_location") do
-        expect(page).to have_css(".map-icon", count: 3, visible: false)
+        expect(page).to have_css(".map-icon", count: 3, visible: :all)
       end
     end
 
