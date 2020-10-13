@@ -2,7 +2,7 @@ en-GB:
   budgets:
     ballots:
       show:
-        title: Ваш бюлетень
+        title: Ваш голос
         amount_available:
           knapsack: "Ви можете інвестувати <span>%{count}</span>."
           approval:
@@ -25,44 +25,52 @@ en-GB:
         voted:
           one: "Ви віддали голос за <span>одну</span> інвестицію."
           other: "Ви віддали голоси за <span>%{count}</span> інвестицій."
-        voted_info: "Ваш бюлетень підтверджено!"
-        voted_info_2: "Ви маєте можливість змінити свій вибір в будь-який час до завершення етапу."
+        voted_info: "Ваш голос підтверджено!"
+        voted_info_2: "Ви маєте можливість змінити свій вибір в будь-який час до завершення даного етапу."
         zero: Ви не проголосували за жоден інвестиційний проєкт.
       reasons_for_not_balloting:
-        not_logged_in: Для продовження %{signin} або %{signup}.
-        not_verified: Тільки підтверджені користувачі можуть віддавати голоси за інвестиції; %{verify_account}.
+        not_logged_in: Щоб продовжити, необхідно %{signin} або %{signup}.
+        not_verified: Тільки підтверджені користувачі можуть голосувати за інвестиції; %{verify_account}.
         organization: Організації не допускаються до голосування
-        no_ballots_allowed: Фазу відбору завершено
+        not_selected: Ви не можете підтримати не вибрані інвестиційні проєкти
+        not_enough_money: "Ви вже розподілили доступний бюджет.<br><small>Пам'ятайте, що ви можете %{change_ballot} у будь-який час</small>"
+        no_ballots_allowed: Фаза відбору закрита
+        different_heading_assigned: "Ви вже віддали голос за інший заголовок: %{heading_link}"
         not_enough_available_votes: "Ви віддали максимально дозволену кількість голосів"
         change_ballot: змінити голоси
         casted_offline: Ви вже взяли участь в офлайн-режимі
     groups:
       show:
         title: Обрати варіант
+        unfeasible_title: Недоцільні інвестиції
+        unfeasible: Переглянути недоцільні інвестиції
+        unselected_title: Інвестиції не відібрані для фази голосування
+        unselected: Бачити інвестиції, не відібрані для фази голосування
     phase:
+      drafting: Чернетка (не є публічно доступною)
       informing: Інформація
-      accepting: Приймання проєктів
+      accepting: Прийняття проєктів
       reviewing: Перегляд проєктів
       selecting: Відбір проєктів
       valuating: Оцінювання проєктів
       publishing_prices: Публікування вартості проєктів
       balloting: Голосування за проєкти
       reviewing_ballots: Перегляд голосування
-      finished: Завершений бюджет
+      finished: Готовий бюджет
     index:
-      title: Партисипативний бюджет
-      empty_budgets: Бюджети відсутні.
+      title: Бюджети участі
+      empty_budgets: Бюджетів немає.
       section_header:
         icon_alt: Значок партисипативних бюджетів
-        title: Партисипативні бюджети
-        help: Допомога щодо партисипативних бюджетів
+        title: Бюджети участі
+        help: Допомога щодо бюджетів участі
         all_phases: Переглянути всі етапи
       all_phases: Етапи бюджетної інвестиції
       map: Пропозиції щодо бюджетних інвестицій, розташовані географічно
       investment_proyects: Перелік усіх інвестиційних проєктів
-      unfeasible_investment_proyects: Перелік недоцільних інвестиційних проєктів
+      unfeasible_investment_proyects: Перелік усіх недоцільних інвестиційних проєктів
       not_selected_investment_proyects: Перелік усіх інвестиційних проєктів, не відібраних для голосування
-      finished_budgets: Готовий партисипативний бюджет
+      finished_budgets: Готові бюджети участі
       see_results: Переглянути результати
       section_footer:
         title: Допомога щодо партисипативних бюджетів
