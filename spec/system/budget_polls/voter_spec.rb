@@ -83,7 +83,7 @@ describe "BudgetPolls", :with_frozen_time do
 
       within("#budget_investment_#{investment.id}") do
         expect(page).to have_content "You have already participated offline"
-        expect(page).to have_css(".add a", visible: false)
+        expect(page).to have_css(".add a", obscured: true)
       end
     end
   end
