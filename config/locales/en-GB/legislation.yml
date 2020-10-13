@@ -48,27 +48,27 @@ en-GB:
         description: Опис
         more_info: Більше інформації та контексту
       proposals:
-        empty_proposals: Пропозиції відсутні
+        empty_proposals: Пропозицій немає
         filters:
           random: Випадково
           winners: Вибране
       debate:
-        empty_questions: Запитання відсутні
+        empty_questions: Запитань немає
         participate: Взяти участь в обговоренні
       index:
         filter: Фільтр
         filters:
           open: Відкриті процеси
-          past: Минулі
-        no_open_processes: Відкриті процеси відсутні
-        no_past_processes: Минулі процеси відсутні
+          past: Завершені
+        no_open_processes: Немає відкритих процесів
+        no_past_processes: Немає завершених процесів
         section_header:
-          icon_alt: Значок спільного законодавства
-          title: Спільне законодавство
-          help: Допомога щодо спільного законодавства
+          icon_alt: Значок спільної законотворчості
+          title: Спільна законотворчість
+          help: Допомога щодо спільної законотворчості
         section_footer:
-          title: Допомога щодо спільного законодавства
-          description: Беріть участь в обговореннях та процесах до затвердження нових положень або стратегій. Ваша думка буде врахована.
+          title: Допомога щодо спільної законотворчості
+          description: Беріть участь в обговореннях та процесах перед затвердженням нових положень або стратегій. Ваша думка буде врахована.
       phase_not_open:
         not_open: Цей етап ще не відкрито
       phase_empty:
@@ -80,10 +80,10 @@ en-GB:
         key_dates: Етапи участі
         homepage: Домашня сторінка
         debate_dates: Обговорення
-        draft_publication_date: Проект публікації
+        draft_publication_date: Публікування чернетки
         allegations_dates: Коментарі
         result_publication_date: Публікування остаточного результату
-        milestones_date: Наступне
+        milestones_date: Підписки
         proposals_dates: Пропозиції
     questions:
       comments:
@@ -91,10 +91,10 @@ en-GB:
         comments_title: Відкрити відповіді
         comments_closed: Закритий етап
         form:
-          leave_comment: Залишити відповідь
+          leave_comment: Залиште відповідь
       question:
         comments:
-          zero: Коментарі відсутні
+          zero: Коментарів немає
           one: "%{count} коментар"
           other: "%{count} коментарів"
         debate: Обговорення
@@ -103,7 +103,7 @@ en-GB:
         next_question: Наступне запитання
         first_question: Перше запитання
         share: Поділитися
-        title: Процес спільного законодавства
+        title: Процес спільної законотворчості
       participation:
         phase_not_open: Цей етап не відкрито
         organizations: Організаціям не дозволено брати участь в обговореннях
@@ -116,7 +116,8 @@ en-GB:
     proposals:
       form:
         tags_label: "Категорії"
-      process_title: Процес спільного законодавства
+      not_verified: "Для надання пропозицій щодо голосів %{verify_account}."
+      process_title: Процес спільної законотворчості
     summary:
       title: "Підсумок"
       votes:
@@ -124,25 +125,25 @@ en-GB:
         one: "%{count} голос"
         other: "%{count} голосів"
       debate_phase: "Етап обговорення"
-      proposals_phase: "Етап пропозицій"
+      proposals_phase: "Етап подання пропозицій"
       allegations_phase: "Етап коментування"
       debates:
         zero: "Обговорень немає"
         one: "%{count} обговорення"
         other: "%{count} обговорень"
       proposals:
-        zero: "Пропозиції відсутні"
+        zero: "Пропозицій немає"
         one: "%{count} пропозиція"
         other: "%{count} пропозицій"
       comments:
-        zero: "Коментарі відсутні"
+        zero: "Коментарів немає"
         one: "%{count} коментар"
         other: "%{count} коментарів"
-      download: "Завантажити підсумок"
+      download: "Завантажити підсумки"
       top_comments:
-        zero: "Коментарі відсутні"
+        zero: "Коментарів немає"
         one: "%{count} коментар"
         other: "Найкращі коментарі"
-      most_voted_comments: "Коментарі, які отрмали найбільшу кількість голосів"
-      no_allegation: "Коментарі відсутні"
+      most_voted_comments: "Коментарі, які отримали найбільшу кількість голосів"
+      no_allegation: "Коментарів немає"
       process_empty: "Цей процес не мав етапів участі"
