@@ -19,9 +19,4 @@ module Votes
     expect(page).to have_content "Only verified users can vote on proposals"
     expect(page).to have_selector(".in-favor", visible: false)
   end
-
-  def expect_message_voting_not_allowed
-    expect(page).to have_content "Voting phase is closed"
-    expect(page).not_to have_selector(".in-favor a")
-  end
 end
