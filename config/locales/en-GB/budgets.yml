@@ -4,6 +4,7 @@ en-GB:
       show:
         title: Ваш бюлетень
         amount_available:
+          knapsack: "Ви можете інвестувати <span>%{count}</span>."
           approval:
             zero: "Ви можете віддати ще <span>%{count}</span> голосів."
             one: "Ви можете віддати ще <span>%{count}</span> голос."
@@ -15,9 +16,10 @@ en-GB:
             one: "Віддано голосів: <span>%{count}</span>"
             other: "Віддано голосів: <span>%{count}</span>"
         amount_limit:
+          knapsack: "%{count}"
           approval:
-            one: "Ви можете проголосувати за <span>1</span> проект"
-            other: "Ви можете проголосувати за <span>%{count}</span> проектів"
+            one: "Ви можете проголосувати за <span>1</span> проєкт"
+            other: "Ви можете проголосувати за <span>%{count}</span> проєктів"
         no_balloted_group_yet: "Ви ще не голосували у цій групі. Вперед!"
         remove: Скасувати голос
         voted:
