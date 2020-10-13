@@ -202,8 +202,9 @@ en-GB:
     executions:
       link: "Віхи"
       page_title: "%{budget} - Віхи"
-      heading: "Віхи партисипативних бюджетів"
+      heading: "Віхи бюджетів участі"
       heading_selection_title: "За дільницями"
+      no_winner_investments: "У цій обсласті немає інвестиції, що отримала перемогу"
       filters:
         status:
           label: "Поточний стан проєкту"
