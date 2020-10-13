@@ -3,195 +3,41 @@ en-GB:
     abbr_day_names:
       - Sun
       - Mon
-      - Вт
-      - Ср
-      - Чт
-      - Пт
-      - Сб
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
     abbr_month_names:
       - 
-      - Січ.
-      - Лют.
-      - Бер.
-      - Квіт.
-      - Трав.
-      - Черв.
-      - Лип.
-      - Серп.
-      - Вер.
-      - Жовт.
-      - Лист.
-      - Груд.
-    day_names:
-      - Неділя
-      - Понеділок
-      - Вівторок
-      - Середа
-      - Четвер
-      - П'ятниця
-      - Субота
-    formats:
-      default: "%Y-%m-%d"
-      long: "%B %d, %Y"
-      short: "%b %d"
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
     month_names:
       - 
-      - Січень
-      - Лютий
-      - Березень
-      - Квітень
-      - Травень
-      - Червень
-      - Липень
-      - Серпень
-      - Вересень
-      - Жовтень
-      - Листопад
-      - Грудень
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: близько 1 години
-        other: близько %{count} годин
-      about_x_months:
-        one: близько 1 місяця
-        other: близько %{count} місяців
-      about_x_years:
-        one: близько 1 року
-        other: близько %{count} років
-      almost_x_years:
-        one: майже 1 рік
-        other: майже %{count} років
-      half_a_minute: півхвилини
-      less_than_x_minutes:
-        one: менше хвилини
-        other: менше %{count} хвилин
-      less_than_x_seconds:
-        one: менше 1 секунди
-        other: менше %{count} секунд
-      over_x_years:
-        one: понад 1 рік
-        other: понад %{count} років
-      x_days:
-        one: 1 день
-        other: "%{count} днів"
-      x_minutes:
-        one: 1 хвилина
-        other: "%{count} хвилин"
-      x_months:
-        one: 1 місяць
-        other: "%{count} місяців"
-      x_years:
-        one: 1 рік
-        other: "%{count} років"
-      x_seconds:
-        one: 1 секунда
-        other: "%{count} секунд"
-    prompts:
-      day: День
-      hour: Година
-      minute: Хвилина
-      month: Місяць
-      second: Секунди
-      year: Рік
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: повинно бути прийнято
-      blank: не має бути порожнім
-      present: має бути порожнім
-      confirmation: не співпадає з %{attribute}
-      empty: не може бути порожнім
-      equal_to: має становити %{count}
-      even: має дорівнювати
-      exclusion: зарезервовано
-      greater_than: має бути більше %{count}
-      greater_than_or_equal_to: має бути більше або дорівнювати %{count}
-      inclusion: не входить до списку
-      invalid: недійсний
-      less_than: має бути менше %{count}
-      less_than_or_equal_to: має бути менше або дорівнювати %{count}
-      model_invalid: "Помилка перевірки: %{errors}"
-      not_a_number: не є числом
-      not_an_integer: має бути цілим числом
-      odd: має бути непарним
-      required: має існувати
-      taken: вже взято
-      too_long:
-        one: занадто довгий (максимум - 1 символ)
-        other: занадто довгий (максимум %{count} символів)
-      too_short:
-        one: занадто короткий (мінімум - 1 символ)
-        other: занадто короткий (мінімум %{count} символів)
-      wrong_length:
-        one: неправильна довжина (має бути 1 символ)
-        other: неправильна довжина (має складати %{count} символів)
-      other_than: має бути іншим, ніж %{count}
-    template:
-      body: "Виникли проблеми з такими полями:"
-      header:
-        one: Помилка 1 не дає змоги зберегти цю %{model}
-        other: "%{count} помилок не дають змоги зберегти цю %{model}"
-  helpers:
-    select:
-      prompt: Будь даска, оберіть
-    submit:
-      create: Створити %{model}
-      submit: Зберегти %{model}
-      update: Оновити %{model}
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
   number:
-    currency:
-      format:
-        delimiter: ","
-        format: "%u%n"
-        precision: 2
-        separator: "."
-        significant: false
-        strip_insignificant_zeros: false
-        unit: "$"
-    format:
-      delimiter: ","
-      precision: 3
-      separator: "."
-      significant: false
-      strip_insignificant_zeros: false
     human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: Мільярд
-          million: Мільйон
-          quadrillion: Квадрильйон
-          thousand: Тисяча
-          trillion: Трильйон
       format:
-        precision: 3
         significant: true
         strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Байт
-            other: Байти
-          gb: Гігабайт
-          kb: Кілобайт
-          mb: Мегабайт
-          tb: Терабайт
-    percentage:
-      format:
-        format: "%n%"
-  support:
-    array:
-      last_word_connector: ", і "
-      two_words_connector: " і "
-      words_connector: ", "
-  time:
-    am: ранку
-    formats:
-      datetime: "%Y-%m-%d %H:%M:%S"
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
-      api: "%Y-%m-%d %H"
-    pm: пополудні
