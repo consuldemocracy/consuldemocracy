@@ -2,9 +2,9 @@ en-GB:
   helpers:
     page_entries_info:
       entry:
-        zero: Входи
-        one: Вхід
-        other: Входи
+        zero: Записи
+        one: Запис
+        other: Записи
       more_pages:
         display_entries: Показати <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
       one_page:
@@ -15,8 +15,8 @@ en-GB:
   views:
     pagination:
       current: Ви на сторінці
-      first: Перший
-      last: Останній
-      next: Наступний
-      previous: Попередній
+      first: Перша
+      last: Остання
+      next: Наступна
+      previous: Попередня
       truncate: "&hellip;"
