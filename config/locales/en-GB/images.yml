@@ -3,7 +3,7 @@ en-GB:
     remove_image: Видалити зображення
     form:
       title: Зображення для опису
-      title_placeholder: Додати назву для опису зображення
+      title_placeholder: Додати назву зображення для опису
       delete_button: Видалити зображення
       note: "Ви можете завантажити одне зображення наступних типів: %{accepted_content_types}, до %{max_file_size} мегабайт."
       add_new_image: Додати зображення
@@ -11,7 +11,7 @@ en-GB:
       admin_alt_text: "Альтернативний текст для зображення"
     actions:
       destroy:
-        notice: Зображення успішно видалене.
+        notice: Зображення видалено.
         alert: Не вдається видалити зображення.
     errors:
       messages:
