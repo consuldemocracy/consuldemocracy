@@ -1,0 +1,47 @@
+oc:
+  activemodel:
+    models:
+      verification:
+        residence: "Residéncia"
+        sms: "SMS"
+      local_census_records/import:
+        one: Importacion del registre de cens local
+        other: Registre de censes locales importacions
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipe de document"
+          document_number: "Numèro de document (en i comprenent de letras)"
+          date_of_birth: "Data de naissença"
+          postal_code: "Còdi postal"
+        sms:
+          phone: "Telefòn"
+          confirmation_code: "SMS de confirmacion"
+        email:
+          recipient: "Lo tieu corrièr electronic"
+      verification/letter:
+        email: "Corrièr electronic"
+        password: "Contrasenya"
+        verification_code: "Còdi qu'avètz recebut a la carta"
+      verification/management/document:
+        document_type: "Tipe de document:"
+        document_number: "Numèro de Document"
+      verification/residence:
+        date_of_birth: "Data de naixement"
+        document_type: "Tipe de document"
+        postal_code: "Còdi postal"
+      verification/sms:
+        confirmation_code: "Introdusissètz lo còdi qu'avètz recebut al mobil"
+      officing/residence:
+        document_type: "Tipe de document"
+        document_number: "Numèro de document (en i comprenent de letras)"
+        year_of_birth: "An de naissença"
+      local_census_records/import:
+        file: Dossièr
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Lo format del fichièr es incorrècte. Lo format de fichièr permés es: %{valid_extensions}."
+              headers: "Las entèstas de fichièr donat son incorrèctas. Las entèstas del fichièr lor cal aver los noms seguents: %{required_headers}."

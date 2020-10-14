@@ -1,1 +1,149 @@
 bg:
+  legislation:
+    annotations:
+      comments:
+        see_all: Вижте всички
+        see_complete: Вижте завършен/и
+        comments_count:
+          one: "%{count} коментар"
+          other: "%{count} коментари"
+        replies_count:
+          one: "%{count} отговор"
+          other: "%{count} отговори"
+        cancel: Cancel
+        publish_comment: Публикувайте коментар
+      form:
+        phase_not_open: Тази фаза не е отворена
+      index:
+        title: Коментари
+        comments_about: Коментари относно
+        see_in_context: Вижте в контекста
+        comments_count:
+          one: "%{count} коментар"
+          other: "%{count} коментари"
+      show:
+        title: Коментар
+      version_chooser:
+        seeing_version: Коментари за версия
+        see_text: Вижте чернова на текст
+    draft_versions:
+      changes:
+        title: Промени
+        seeing_changelog_version: Резюме на ревизионните промени
+        see_text: Вижте чернова на текст
+      show:
+        loading_comments: Зареждане на коментари
+        seeing_version: Виждате чернова версия
+        select_draft_version: Изберете чернова
+        select_version_submit: вижте
+        updated_at: актуализирано на %{date}
+        see_changes: вижте резюме на промените
+        see_comments: Вижте всички коментари
+        text_toc: Съдържание
+        text_body: Текст
+        text_comments: Коментари
+    processes:
+      header:
+        additional_info: Допълнителна информация
+        description: Описание
+        more_info: Повече информация и контекст
+      proposals:
+        empty_proposals: Няма предложения
+        filters:
+          random: Случаен
+          winners: Избран
+      debate:
+        empty_questions: Няма въпроси
+        participate: Участвайте в дебата
+      index:
+        filter: Филтър
+        filters:
+          open: Отворени процеси
+          past: Минали
+        no_open_processes: Няма отворени процеси
+        no_past_processes: Няма минали процеси
+        section_header:
+          icon_alt: Икона за съвместно законодателство
+          title: Съвместно законодателство
+          help: Помощ относно съвместното законодателство
+        section_footer:
+          title: Помощ относно съвместното законодателство
+          description: Участвайте в дебатите и процесите преди одобряването на нови регламенти или стратегии. Вашето мнение ще бъде взето под внимание.
+      phase_not_open:
+        not_open: Тази фаза все още не е отворена
+      phase_empty:
+        empty: Все още нищо не е публикувано
+      process:
+        see_latest_comments: Вижте последни коментари
+        see_latest_comments_title: Коментирайте този процес
+      shared:
+        key_dates: Фази на участие
+        homepage: Начална страница
+        debate_dates: Дебат
+        draft_publication_date: Проект на публикация
+        allegations_dates: Коментари
+        result_publication_date: Публикуване на крайния резултат
+        milestones_date: Следващо
+        proposals_dates: Предложения
+    questions:
+      comments:
+        comment_button: Публикуване на отговор
+        comments_title: Отворени отговори
+        comments_closed: Затворена фаза
+        form:
+          leave_comment: Оставете вашия отговор
+      question:
+        comments:
+          zero: Няма коментари
+          one: "%{count} коментар"
+          other: "%{count} коментари"
+        debate: Дебат
+      show:
+        answer_question: Изпратете отговор
+        next_question: Следващ въпрос
+        first_question: Първи въпрос
+        share: Споделете
+        title: Процес на съвместно законодателство
+      participation:
+        phase_not_open: Тази фаза не е отворена
+        organizations: Организации нямат право да участват в дебата
+        unauthenticated: Трябва да %{signin} или %{signup}, за да участвате.
+        verified_only: Само проверени потребители могат да участват, %{verify_account}.
+        debate_phase_not_open: Фазата на дебат приключи и отговорите вече не се приемат
+    shared:
+      share: Споделете
+      share_comment: Коментирайте относно %{version_name} от черновата на процеса %{process_name}
+    proposals:
+      form:
+        tags_label: "Категории"
+      not_verified: "За предложения за гласуване %{verify_account}."
+      process_title: Процес на съвместно законодателство
+    summary:
+      title: "Резюме"
+      votes:
+        zero: "%{count} гласа"
+        one: "%{count} глас"
+        other: "%{count} гласа"
+      debate_phase: "Фаза на дебат"
+      proposals_phase: "Фаза на предложенията"
+      allegations_phase: "Фаза на коментари"
+      debates:
+        zero: "Няма дебати"
+        one: "%{count} дебат"
+        other: "%{count} дебата"
+      proposals:
+        zero: "Няма предложения"
+        one: "%{count} предложение"
+        other: "%{count} предложения"
+      comments:
+        zero: "Няма коментари"
+        one: "%{count} коментар"
+        other: "%{count} коментара"
+      download: "Изтеглете резюме"
+      top_comments:
+        zero: "Без коментари"
+        one: "%{count} коментар"
+        other: "Най-харесвани коментари"
+      most_voted_comments: "Коментари с най-много гласове"
+      no_allegation: "Няма коментари"
+      process_empty: "Този процес не е включвал фази на участие"

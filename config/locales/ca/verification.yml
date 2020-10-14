@@ -17,6 +17,9 @@ ca:
     letter:
       alert:
         unconfirmed_code: Encara no has introduït el codi de confirmació
+      create:
+        flash:
+          success: Gràcies per sol·licitar el vostre codi de <b>seguretat màxima (només cal per als vots finals)</b>. En uns dies l’enviarem a l’adreça que apareix a les dades que tenim al fitxer. Recordeu que, si ho preferiu, podeu recollir el vostre codi a qualsevol de les Oficines d’Atenció Ciutadana.
       edit:
         see_all: Veure propostes
         title: Carta sol·licitada
@@ -46,10 +49,14 @@ ca:
         accept_terms_text_title: Accepte els termes d'accés al Padró
         document_number: Número de document
         document_number_help_title: Ajuda
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Passaport</strong>: AAA000001<br> <strong>Targeta de residència</strong>: X1234567P"
         document_type:
           passport: Passaport
           residence_card: Targeta de residència
+          spanish_id: DNI
         error_not_allowed_age: No tens l'edat mínima per a participar
+        error_not_allowed_postal_code: Per poder ser verificat, heu d’estar registrat.
+        error_verifying_census: El Cens no ha pogut verificar la informació. Confirmeu que les dades del vostre cens són correctes trucant a l'Ajuntament o visiteu una Oficina d'Atenció Ciutadana.
         form_errors: van evitar verificar la teua residència
         postal_code_note: Per a verificar les teues dades has d'estar empadronat
         terms: els termes d'accés
@@ -66,6 +73,8 @@ ca:
         title: SMS de confirmación
       new:
         phone: Introduce tu teléfono móvil para recibir el código
+        phone_format: "<strong><em>(Exemple: 612345678 o +34612345678)</em></strong>"
+        phone_note: Només utilitzem el vostre telèfon per enviar-vos un codi, mai per contactar-vos.
         phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
         submit_button: Enviar
         title: SMS de confirmació
@@ -80,6 +89,7 @@ ca:
     step_2: SMS de confirmació
     step_3: Verificació final
     user_permission_debates: Participar en debats
+    user_permission_info: Verificant la informació que podreu...
     user_permission_proposal: Crear noves propostes
     user_permission_support_proposal: Avalar propostes
     user_permission_votes: Participar en les votacions finals

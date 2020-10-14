@@ -336,7 +336,6 @@ val:
           attributes:
             document_number:
               not_in_census: "Este document no apareix en el cens"
-              has_voted: "Este usuari ja ha votat"
         legislation/process:
           attributes:
             end_date:

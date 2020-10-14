@@ -1,0 +1,133 @@
+ka:
+  management:
+    account:
+      menu:
+        reset_password_email: პაროლის აღდგენა ელ. ფოსტის მეშვეობით
+        reset_password_manually: პაროლის აღდგენა ხელით
+      alert:
+        unverified_user: დადასტურებული ანგარიშის მფლობელ მომხმარებელს ავტორიზაცია ჯერ არ გაუვლია
+      show:
+        title: მომხმარებლის ანგარიში
+      edit:
+        title: "მომხმარებლის ანგარიშის რედაქტირება: პაროლის აღდგენა"
+        back: უკან
+        password:
+          password: პაროლი
+          send_email: ახალი პაროლის გაგზავნა ელ. ფოსტაზე
+          reset_email_send: ელ. წერილი გაიგზავნა.
+          reseted: პაროლის აღდგენა წარმატებით განხორციელდა
+          random: პაროლის ავტომატური გენერირება
+          save: პაროლის დამახსოვრება
+          print: პაროლის ბეჭვდა
+          print_help: პაროლის შენახვის შემდეგ შეგეძლებათ მისი ბეჭვდა.
+    account_info:
+      change_user: მომხმარებლის შეცვლა
+      document_number_label: "დოკუმენტის ნომერი:"
+      document_type_label: "დოკუმენტის ტიპი:"
+      email_label: "ელ.ფოსტა:"
+      identified_label: "იდენტიფიცირებულია, როგორც:"
+      username_label: "მომხმარებლის სახელი:"
+    check: დოკუმენტის შემოწმება
+    dashboard:
+      index:
+        title: მენეჯმენტი
+        info: აქედან მარცხენა მხარეს განთავსებული მენიუს საშუალებით შეგიძლიათ მომხმარებელთა მართვა.
+    document_verifications:
+      already_verified: ამ მომხმარებლის ანგარიში უკვე გადამოწმებულია.
+      has_no_account: ანგარიშის შესაქმნელად გადადით %{link}-ზე და დააჭირეთ ზედა მარცხენა მხარეს განთავსებულ ღილაკს <b>"რეგისტრაცია"</b>.
+      link: CONSUL
+      in_census_has_following_permissions: "ამ მომხმარებელს ვებ-გვერდზე შემდეგი უფლებების ფარგლებში შეუძლია აქტივობა:"
+      not_in_census: ეს დოკუმენტი რეგისტრირებული არ არის.
+      not_in_census_info: "მომხმარებლებს, რომლებიც არ არიან ჩათვლილი აღწერაში, ვებ-გვერდზე შემდეგი უფლებების ფარგლებში შეუძლიათ აქტივობა:"
+      please_check_account_data: გთხოვთ, დარწმუნდეთ, რომ ანგარიშის მონაცემები სწორია.
+      title: მომხმარებლის მართვა
+      under_age: "თქვენ ვერ აკმაყოფილებთ ანგარიშის დასადასტურებლად აუცილებელი ასაკის კრიტერიუმს."
+      verify: დადასტურება
+    email_label: ელ.ფოსტა
+    date_of_birth: დაბადების თარიღი
+    email_verifications:
+      already_verified: ამ მომხმარებლის ანგარიში უკვე გადამოწმებულია.
+      choose_options: "გთხოვთ, შეარჩიოთ ერთ-ერთი:"
+      document_found_in_census: მიუხედავად იმისა, რომ ეს დოკუმენტი აღწერაში არსებობს, მასთან დაკავშირებული მომხმარებლის ანგარიში ვერ მოიძებნა.
+      document_mismatch: "მითითებული ელ. ფოსტის მისამართი ეკუთვნის უკვე რეგისტრირებულ მომხმარებელს: %{document_number}(%{document_type})"
+      email_placeholder: მიუთითეთ ელ. ფოსტა, რომლის საშუალებითაც ამ პიროვნების ანგარიშის შექმნა მოხდა
+      email_sent_instructions: მომხმარებლის ანგარიშის ბოლომდე დადასტურების მიზნით, აუცილებელია მომხმარებელმა დააჭიროს ელ. ფოსტაზე მიღებულ ბმულს. ეს პროცედურა სავალდებულოა ელ. ფოსტის დასადასტურებლად.
+      if_existing_account: თუ ამ მომხმარებელს უკვე აქვს ერთი რეგისტრირებული ანგარიში,
+      if_no_existing_account: თუ მომხმარებელს ჯერ არ შეუქმნია ანგარიში
+      introduce_email: "გთხოვთ, შეიყვანოთ ანგარიშში მითითებული ელ. ფოსტა:"
+      send_email: დადასტურების წერილის გაგზავნა
+    menu:
+      create_proposal: ინიციატივის შექმნა
+      print_proposals: ინიციატივების ბეჭვდა
+      support_proposals: ინიციატივებზე ხმის მიცემა
+      create_budget_investment: საბიუჯეტო ინვესტიციის შექმნა
+      print_budget_investments: საბიუჯეტო ინვესტიციების ბეჭდვა
+      support_budget_investments: საბიუჯეტო ინვესტიციების მხარდაჭერა
+      users: მომხმარებელთა მართვა
+      user_invites: მოწვევების დაგზავნა
+      select_user: მომხმარებლის შერჩევა
+    permissions:
+      create_proposals: ინიციატივების შექმნა
+      debates: დებატებში ჩაბმა
+      support_proposals: ინიციატივების მხარდაჭერა
+      vote_proposals: ინიციატივებზე ხმის მიცემა
+    print:
+      proposals_info: შექმენით თქვენი ინიციატივა http://url.consul-ზე
+      proposals_title: "ინიციატივები:"
+      budget_investments_info: მონაწილეობის მიღება http://url.consul-ზე
+    print_info: ინფორმაციის ბეჭდვა
+    proposals:
+      alert:
+        unverified_user: მომხმარებელი არ არის გადამოწმებული
+      create_proposal: ინიციატივის შექმნა
+      print:
+        print_button: ბეჭდვა
+      index:
+        title: ინიციატივების მხარდაჭერა
+    budgets:
+      create_new_investment: საბიუჯეტო ინვესტიციის შექმნა
+      print_investments: საბიუჯეტო ინვესტიციების ბეჭდვა
+      support_investments: საბიუჯეტო ინვესტიციების მხარდაჭერა
+      table_name: სახელი
+      table_phase: ფაზა
+      table_actions: მოქმედებები
+      no_budgets: აქტიური მონაწილეობითი ბიუჯეტები არ მოიძებნა.
+    budget_investments:
+      alert:
+        unverified_user: მომხმარებელი არ არის გადამოწმებული
+      create: საბიუჯეტო ინვესტიციის შექმნა
+      edit: საბიუჯეტო ინვესტიციების რედაქტირება
+      filters:
+        heading: კონცეფცია
+        unfeasible: არაგანხორციელებადი ინვესტიცია
+      print:
+        print_button: ბეჭდვა
+      search_results:
+        one: " შეიცავს საძიებო სიტყვას '%{search_term}'"
+        other: " შეიცავს საძიებო სიტყვას '%{search_term}'"
+    sessions:
+      signed_out: წარმატებით გამოხვედით.
+      signed_out_managed_user: მომხმარებლის სესია წარმატებით დამთავრდა.
+    username_label: მომხმარებლის სახელი
+    users:
+      create_user: ახალი ანგარიშის შექმნა
+      create_user_info: შემდეგ მონაცემებზე დაყრდნობით მოხდება ახალი ანგარიშის შექმნა
+      create_user_submit: მომხმარებლის შექმნა
+      create_user_success: ელექტრონული მისამართის დადასტურების მიზნით, ჩვენ გავაგზავნეთ ელ. ფოსტა <b>%{email}</b>-ზე. საიტზე წვდომის მისაღებად, საჭიროა მიღებულ ბმულზე გადასვლა და პაროლის დაყენება. 
+      autogenerated_password: "ავტოგენერირებული პაროლი არის <b>%{password}</b>, მისი შეცვლა შესაძლებელია 'ჩემი ანგარიშის' განყოფილებიდან"
+      email_optional_label: ელ. ფოსტა (არასავალდებულო)
+      erased_notice: მომხმარებლის ანგარიში წაიშალა.
+      erased_by_manager: "წაშლილია მენეჯერის მიერ: %{manager}"
+      erase_account_link: მომხმარებლის წაშლა
+      erase_account_confirm: ნამდვილად გსურთ ანგარიშის წაშლა? მისი აღდგენა შეუძლებელი იქნება
+      erase_warning: მოქმედების გაუქმება შეუძლებელი იქნება. დარწმუნდით, ნამდვილად გსურთ თუ არა ანგარიშის წაშლა.
+      erase_submit: ანგარიშის წაშლა
+    user_invites:
+      new:
+        label: ელ. ფოსტა
+        info: "მიუთითეთ ელ. ფოსტის მისამართები, გამოყავით მძიმით (',')"
+        submit: მოწვევების დაგზავნა
+        title: მოწვევების დაგზავნა
+      create:
+        success: <strong>%{count} მოწვევა</strong> დაიგზავნა.
+        title: მოწვევების დაგზავნა

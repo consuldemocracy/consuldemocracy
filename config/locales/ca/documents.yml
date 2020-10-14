@@ -1,5 +1,23 @@
 ca:
   documents:
+    title: Documents
+    max_documents_allowed_reached: Heu arribat al nombre màxim de documents permesos. <strong>Heu de suprimir-ne un abans de pujar-ne un altre.</strong>
+    additional: Documentació addicional
+    form:
+      title: Documents
+      title_placeholder: Afegiu un títol descriptiu per al document
+      delete_button: Elimina el document
+      cancel_button: Cancel · lar
+      note: "Podeu penjar fins a un màxim de %{max_documents_allowed} documents dels tipus de contingut següents: %{accepted_content_types}, Fins a %{max_file_size} MB per fitxer."
+      add_new_document: Afegeix un document nou
+    actions:
+      destroy:
+        notice: El document s'ha suprimit correctament.
+        alert: No es pot eliminar el document.
+        confirm: Esteu segur que voleu suprimir el document? Aquesta acció no es pot desfer!
+    buttons:
+      download_document: Descarrega l'arxiu
+      destroy_document: Suprimeix el document
     errors:
       messages:
         in_between: ha de ser entre %{min} i %{max}

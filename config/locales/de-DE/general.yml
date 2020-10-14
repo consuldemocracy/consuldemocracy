@@ -95,9 +95,6 @@ de:
       tags_placeholder: "Trennen Sie die Tags mit einem Komma (',')"
     index:
       featured_debates: Hervorgehoben
-      filter_topic:
-        one: " mit Thema '%{topic} '"
-        other: " mit Thema '%{topic} '"
       orders:
         confidence_score: am besten bewertet
         created_at: neuste
@@ -138,7 +135,7 @@ de:
       info_link: Neuen Vorschlag erstellen
       more_info: Weitere Informationen
       recommendation_four: Genießen Sie diesen Ort und die Stimmen, die ihn füllen. Er gehört auch Ihnen.
-      recommendation_one: Verwenden Sie bitte nicht ausschließlich Großbuchstaben für die Überschrift oder für komplette Sätze. Im Internet gilt das als schreien. Und niemand mächte angeschrien werden.
+      recommendation_one: Verwenden Sie bitte nicht ausschließlich Großbuchstaben für die Überschrift oder für komplette Sätze. Im Internet gilt das als schreien. Und niemand möchte gerne angeschrien werden.
       recommendation_three: Kritik ist sehr willkommen. Denn dies ist ein Raum für unterschiedliche Betrachtungen. Aber wir empfehlen Ihnen, sich an sprachlicher Eleganz und Intelligenz zu halten. Die Welt ist ein besserer Ort mit diesen Tugenden.
       recommendation_two: Diskussionen oder Kommentare, die illegale Handlungen beinhalten, werden gelöscht sowie diejenigen, die die Diskussionen absichtlich sabotieren. Alles andere ist erlaubt.
       recommendations_title: Empfehlungen für die Erstellung einer Diskussion
@@ -244,7 +241,6 @@ de:
       help: Hilfe
       my_account_link: Mein Konto
       my_activity_link: Meine Aktivität
-      open: offen
       open_gov: Open Government
       proposals: Vorschläge
       poll_questions: Abstimmung
@@ -255,8 +251,6 @@ de:
           other: Sie haben %{count} neue Benachrichtigungen
         notifications: Benachrichtigungen
         no_notifications: "Sie haben keine neuen Benachrichtigungen"
-    admin:
-      watch_form_message: "Sie haben die Änderungen nicht gespeichert. Möchten Sie die Seite dennoch verlassen?"
   notifications:
     index:
       empty_notifications: Sie haben keine neuen Benachrichtigungen.
@@ -298,8 +292,6 @@ de:
       sign_in: Anmelden mit Twitter
       sign_up: Registrierung mit Twitter
       name: Twitter
-    info_sign_in: "Anmelden mit:"
-    info_sign_up: "Registrieren mit:"
     or_fill: "Oder folgendes Formular ausfüllen:"
   proposals:
     create:
@@ -347,9 +339,6 @@ de:
       map_skip_checkbox: "Dieser Vorschlag hat keinen konkreten Ort oder ich kenne ihn nicht."
     index:
       featured_proposals: Hervorgehoben
-      filter_topic:
-        one: " mit Thema '%{topic} '"
-        other: " mit Thema '%{topic} '"
       orders:
         confidence_score: am besten bewertet
         created_at: neuste
@@ -722,7 +711,6 @@ de:
           notice: "Jetzt folgen Sie diesem Bürgervorschlag! <br> Wir werden Sie über Änderungen benachrichtigen sobald diese erscheinen, sodass Sie auf dem neusten Stand sind."
         destroy:
           notice: "Sie haben aufgehört diesem Bürgervorschlag zu folgen! <br> Sie werden nicht länger Benachrichtigungen zu diesem Vorschlag erhalten."
-    hide: Verbergen
     print:
       print_button: Diese Info drucken
     search: Suche

@@ -45,9 +45,7 @@ class Community < ApplicationRecord
   private
 
     def users_who_commented
-      topics_ids = topics.pluck(:id)
-      query = "comments.commentable_id IN (?)and comments.commentable_type = 'Topic'"
-      User.by_comments(query, topics_ids)
+      User.by_comments(topics)
     end
 
     def users_who_topics_author

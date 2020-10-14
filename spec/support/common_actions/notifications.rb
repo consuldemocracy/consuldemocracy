@@ -10,7 +10,19 @@ module Notifications
   end
 
   def comment_body(resource)
-    "comment-body-#{resource.class.name.parameterize(separator: "_").to_sym}_#{resource.id}"
+    if resource.class.name == "Legislation::Question"
+      "Leave your answer"
+    else
+      "Leave your comment"
+    end
+  end
+
+  def submit_comment_text(resource)
+    if resource.class.name == "Legislation::Question"
+      "Publish answer"
+    else
+      "Publish comment"
+    end
   end
 
   def create_proposal_notification(proposal)
@@ -38,7 +50,7 @@ module Notifications
   end
 
   def path_for(resource)
-    polymorphic_hierarchy_path(resource)
+    polymorphic_path(resource)
   end
 
   def error_message(resource_model = nil)

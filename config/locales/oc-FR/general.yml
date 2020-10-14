@@ -1,0 +1,961 @@
+oc:
+  account:
+    show:
+      change_credentials_link: Cambiar las miás donadas d'accès
+      erase_account_link: Esborrar lo mieu compte
+      finish_verification: Finalizar verificacion
+      notifications: Notificacions
+      organization_name_label: Nom de l'associacion
+      organization_responsible_name_placeholder: en Representant de l'associacion
+      personal: Donadas personalas
+      phone_number_label: telefòn
+      public_interests_my_title_list: Etiquetas d’elements que seguissètz
+      public_interests_user_title_list: Etiquetas d’elements que seguís aquel usatgièr
+      save_changes_submit: Gardar de cambiaments
+      recommendations: Recomandacions
+      title: Lo mieu compte
+      user_permission_debates: Participar a debats
+      user_permission_info: Amb lo tieu compte pòdes ja...
+      user_permission_proposal: Crear de nòvas proposicions
+      user_permission_support_proposal: Sosténer de proposicions
+      user_permission_title: Participacion
+      user_permission_verify: Per poder realizar totas las accions, verifica lo tieu compte.
+      user_permission_verify_info: "* Solament d'usatgièrs empadronats."
+      user_permission_votes: Participar a las votacions finalas*
+      username_label: Nom d'usatgièr
+      verified_account: Compte verificat
+      verify_my_account: Verificar lo mieu compte
+  application:
+    close: Barrar
+    menu: Menu
+  comments:
+    comments_closed: Los comentaris son barrats
+    verified_only: Per participar %{verify_account}
+    comment:
+      admin: Administrador
+      author: Autor
+      deleted: Aquel comentari es estat eliminat
+      moderator: Moderador
+      responses:
+        zero: I a pas respondudas
+        one: 1 Responsa
+        other: "%{count} Responsas"
+      responses_show:
+        zero: I a pas respondudas
+        one: "1 responsa (mòstra)"
+        other: "%{count} responsas (mòstra)"
+      responses_collapse:
+        zero: I a pas respondudas
+        one: "1 responsa (escrancament)"
+        other: "%{count} responsas (escrancament)"
+      user_deleted: Usatgièr eliminat
+      votes:
+        zero: Sens vòts
+        one: 1 vòt
+        other: "%{count} de vòts"
+    form:
+      comment_as_admin: Comentar coma administrador
+      comment_as_moderator: Comentar coma moderador
+      leave_comment: Daissa lo tieu comentari
+    orders:
+      most_voted: Mai votats
+      newest: Mai nòus primièr
+      oldest: Mai ancians primièr
+      most_commented: La majoritat de comentaris
+    select_order: Ordenar per
+    show:
+      return_to_commentable: "Tornar a "
+  comments_helper:
+    comment_button: Publicar comentari
+    comment_link: Comentar
+    comments_title: Comentarios
+    reply_button: Publicar responsa
+    reply_link: Respondre
+  debates:
+    create:
+      form:
+        submit_button: Comença un nòu debat
+    debate:
+      comments:
+        zero: Sens comentaris
+        one: 1 Comentari
+        other: "%{count} comentaris"
+      votes:
+        zero: Sens vòts
+        one: 1 vòt
+        other: "%{count} vòts"
+    edit:
+      editing: Editar debat
+      form:
+        submit_button: Gardar de cambiaments
+      show_link: Veire debat
+    form:
+      debate_title: Títol del debat
+      tags_instructions: Etiqueta aquel debat.
+      tags_placeholder: "Escriu las etiquetas que desiras separadas per coma (',')"
+    index:
+      featured_debates: Destacadas
+      orders:
+        confidence_score: Mai avaladas
+        created_at: Nòvas
+        hot_score: Mai activas uèi
+        most_commented: Mai comentadas
+        relevance: Mai considerables
+        recommendations: recomandacions
+      recommendations:
+        without_results: I a pas de debats ligats als vòstres interèsses
+        without_interests: Seguissètz las proposicions perque vos poscam far de recomandacions
+        disable: "Las recomandacions dels debats quitaràn de se mostrar se las refusatz. Podètz los activar de nòu a la pagina \"Lo mieu compte\""
+        actions:
+          success: "Las recomandacions pels debats son ja desactivadas per aquel compte"
+          error: "S'es produsit un error. Vai a la pagina \"Lo mieu compte\" per desactivar manualment las recomandacions dels debats"
+      search_form:
+        button: Cercar
+        placeholder: Cercar de debats...
+        title: Cercar
+      search_results:
+        one: " que conten lo tèrme <strong>'%{search_term}'</strong>"
+        other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
+      select_order: Ordenar per
+      start_debate: Comença un nòu debat
+      title: Debats
+      section_header:
+        icon_alt: Icòna de debats
+        title: Debats
+        help: Ajuda sus debats
+      section_footer:
+        title: Ajuda sus debats
+        description: Iniciatz un debat per partejar d'opinions amb autras personas suls tèmas que vos preocupa.
+        help_text_1: "L’espaci pels debates de ciutadans s’adreça a quina persona que siá que pòsca expausar de tèmas de la siá preocupacion e a aqueles que volgatz partejar d'opinions amb autras personas."
+        help_text_2: 'Per dobrir un debat, vos vos cal enregistrar %{org}. Los usatgièrs pòdon tanben comentar los debats dubèrtes e avalorar - los amb lo programa "soi d''acòrdi" o "i soi d''acòrdi pas" de botons que se tròban a cadun d’eles.'
+    new:
+      form:
+        submit_button: Comença un nòu debat
+      info: Se çò que vòles es far una proposicion, aquela es la seccion incorrècta, dintra en %{info_link}.
+      info_link: crear nòva proposicion
+      more_info: Mai informacion
+      recommendation_four: Gaudís d'aquel espaci, de las voses qu'o emplisson, es tanben tieu.
+      recommendation_one: Escrigas pas lo títol del debat o frasas entièras en majusculas. Dins internet aquò se considèra cridar. E a degun li agrada que li cridan.
+      recommendation_three: Las criticas despietades son fòrça benvengudas. Aquel es un espaci de pensada. Mas te recomandam conservar l'elegància e l'intelligéncia.
+      recommendation_two: Quina proposicion que siá o comentari qu'impliqui una accion illegala serà eliminada, tanben las qu'auràn l'intencion de sabotejar los espacis de proposicion, tota la rèsta es permesa.
+      recommendations_title: Recomendacions per crear un debat
+      start_new: Comença un nòu debat
+    show:
+      author_deleted: Usatgièr eliminat
+      comments:
+        zero: Sens comentaris
+        one: 1 Comentari
+        other: "%{count} comentaris"
+      comments_title: Comentaris
+      edit_debate_link: Editar proposicion
+      flag: Aquel debat es estat marcat coma inadequat per divèrses usatgièrs.
+      share: partejar
+      author: Autor
+    update:
+      form:
+        submit_button: Gardar de cambiaments
+  errors:
+    messages:
+      user_not_found: se trobèt pas l'usatgièr
+      invalid_date_range: "Lo reng de datas es pas valid"
+  form:
+    accept_terms: Accèpti la %{policy} e las %{conditions}
+    accept_terms_title: Accèpti la Politica de privadança e las Condicions d'usatge
+    conditions: Condicions d'usatge
+    debate: debat prealable
+    direct_message: lo messatge privat
+    error: error
+    errors: errors
+    not_saved: "o empediguèt %{resource} d'èsser gardat. <br>Consultatz los camps marcats per los saber corregir:"
+    policy: Politica de Privadança
+    banner: plancarda
+    proposal: la proposicion
+    proposal_notification: "la notificacion"
+    budget/investment: la proposicion d'inversion
+    budget/group: Grop budgetari
+    budget/heading: Rúbrica del budgèt
+    geozone: geozona
+    legislation/draft_version: borrolhon
+    legislation/process: procés
+    legislation/question: question
+    poll/shift: Majusculas
+    poll/question/answer: Responsa
+    user: lo compte
+    verification/sms: lo telefòn
+    signature_sheet: la fuèlha de signaturas
+    document: Document
+    topic: Tèma
+    image: image
+    local_census_record: Registre local del cens
+    local_census_records/import: Importacion de registres de cens local
+    site_customization/content_block: blòc de contengut
+    site_customization/page: pagina
+  geozones:
+    none: Tota la vila
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Avèm detectat qu'ès navigaire dempuèi Internet Explorer. Per una melhora experiéncia te recomandam utilizar %{firefox} o %{chrome}.
+      ie_title: Aquela web es pas optimitzada per lo tieu navigador
+    dashboard:
+      proposal_header:
+        published: Publicat
+        draft: Borrolhon
+        retired: Jubilat
+      proposal_totals:
+        active_resources: Recorses actius
+        community: De participants de la vòstra comunitat
+        show_proposal: Mòstra la proposicion
+        preview_proposal: Proposicion de vista prealabla
+        current_goal: Objectiu actual
+        supports:
+          zero: Sens supòrts
+          one: 1 Supòrt
+          other: "Supòrts"
+    footer:
+      accessibility: Accessibilitat
+      conditions: De condicions d'usatge
+      consul: Sollicitud CONSUL
+      consul_url: https://github.com/consul/consul
+      contact_us: Per assisténcia tecnica, visitatz
+      copyright: CONSUL, %{year}
+      description: Aquel portal es una adaptacion de la plataforma de %{open_source} %{consul} desvolopada per la Comuna de Madrid e adaptada per la Deputacion de Valéncia.
+      open_source: logicial liure
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Decidís coma li cal èsser la vila que vòles.
+      participation_title: Participacion
+      privacy: Politica de Privadança
+    header:
+      administration_menu: Menu
+      administration: Administrar
+      available_locales: d'Idiòmas disponibles
+      collaborative_legislation: de procèsses legislatius
+      debates: De debats
+      locale: "Idiòma:"
+      logo: Logotip de CONSUL
+      management: gestion
+      moderation: moderacion
+      valuation: avaloracion
+      officing: De presidentas de mesa
+      help: Ajuda
+      my_account_link: Lo mieu compte
+      my_activity_link: La miá activitat
+      open_gov: Govèrn dubèrt
+      proposals: De proposicions ciutadanas
+      poll_questions: De votacions
+      budgets: dDe budgèts ciutadans
+      notification_item:
+        new_notifications:
+          one: As una nòva notificacion
+          other: As %{count} notificacions nòvas
+        notifications: De notificacions
+        no_notifications: "As pas de notificacions nòvas"
+  notifications:
+    index:
+      empty_notifications: As pas de notificacions nòvas.
+      mark_all_as_read: Marcar totas cossí legidas
+      read: Legissètz
+      title: De notificacions
+      unread: Sens legir
+    notification:
+      action:
+        comments_on:
+          one: I a un nòu comentari en
+          other: I a %{count} comentaris nòus en
+        proposal_notification:
+          one: I a una nòva notificacion en
+          other: I a %{count} nòvas notificacions en
+        replies_to:
+          one: I a una responsa nòva a lo tieu comentari en
+          other: I a %{count} de nòvas responsas a lo tieu comentari en
+      mark_as_read: Marcar coma legit
+      mark_as_unread: marcar coma pas legit
+      notifiable_hidden: Aquel recors es pas mai disponible.
+  map:
+    title: "De districtes"
+    proposal_for_district: "Crèa una proposicion per lo tieu districte"
+    start_proposal: Crèa una proposicion
+  omniauth:
+    facebook:
+      sign_in: Dintra amb Facebook
+      sign_up: Enregistra-te amb Facebook
+      name: Facebook
+    finish_signup:
+      title: "De detalhs addicionales de lo tieu compte"
+      username_warning: "A causa qu'avèm cambiat la forma que nos connectam amb rets socialas e es possible que lo tieu nom d'usatgièr aparesca cossí 'ja en usatge', quitament se podiás abans accedir amb el. S'es lo tieu cas, per favor escuelh un nom d'usatgièr desparièr."
+    google_oauth2:
+      sign_in: Dintra amb Google
+      sign_up: Enregistra-te amb Google
+      name: Google
+    wordpress_oauth2:
+      sign_in: Iniciatz la session amb Wordpress
+      sign_up: Enregistra-te amb Wordpress
+      name: Wordpress
+    twitter:
+      sign_in: Dintra amb Twitter
+      sign_up: Enregistra-te amb Twitter
+      name: Twitter
+    or_fill: "O ramplís lo seguent formulari:"
+  proposals:
+    create:
+      form:
+        submit_button: crear proposicion
+    created:
+      title: Felicitacions! Avètz fach lo primièr passatge.
+      motivation: "Es important preparar la campanha de lançament perque la vòstra proposicion aja succès. Los primièrs jorns son decisius."
+      motivation_2: "<strong>Se volètz de recomandacions per preparar la publicacion, daissatz la proposicion coma borrolhon e vos orientarem.</strong>"
+      publish: Pas, vòli publicar la proposicion
+      dashboard: Òc, vòli ajuda e publicarai mai endavant
+      preview_title: Se veirà aital la vòstra proposicion quand la publicatz
+    share:
+      improve_it: Melhora la campanha e obten ajuda mai.
+      dashboard: Veire mai informacion
+      message: "Sostenguèri a la proposicion %{title} a %{handle}. Si esteu interessats, recolzeu-lo també!"
+    edit:
+      editing: Editar proposicion
+      form:
+        submit_button: Gardar de cambiaments
+      show_link: Veire proposicion
+    retire_form:
+      title: Retirar proposicion
+      warning: "Se seguisses endavant, la tiá proposicion poirà contunhar de recebre d'avals, mas quitarà d'èsser listada en la lista principala, e apareisserà un messatge per totes los usatgièrs en los avertint que l'autor considèra qu'aquela proposicion li cal pas seguir en amassant d'avals."
+      retired_reason_blank: Selecciona una opcion
+      retired_explanation_placeholder: Explica brèvament per que considèras qu'aquela proposicion li cal pas amassar mai d'avals
+      submit_button: Retirar proposicion
+    retire_options:
+      duplicated: Duplicada
+      started: En execucion
+      unfeasible: Pas viables
+      done: Realizada
+      other: Una autra
+    form:
+      proposal_responsible_name_note: "(individualment o coma representant d'un collectiu; se mostrarà pas publicament)"
+      proposal_summary_note: "(maximal 200 caractèrs)"
+      proposal_video_url_note: Pòdes apondre un ligam a YouTube o Vimeo
+      tag_category_label: "De categorias"
+      tags_instructions: "Etiqueta aquela proposicion. Pòdes escuélher entre las categorias prepausadas o introdusir las que desiras"
+      tags_label: d'Etiquetas
+      tags_placeholder: "Escriu las etiquetas que desiras separadas per coma (',')"
+      map_location: "Ubicacion de la mapa"
+      map_location_instructions: "Desplaçatz-vos a la mapa fins a l'ubicacion e metètz-i lo mercador."
+      map_remove_marker: "Elimina lo mercador de mapa"
+      map_skip_checkbox: "Aquela proposicion a pas una ubicacion concrèta ni n'ai coneissença."
+    index:
+      featured_proposals: Destacadas
+      orders:
+        confidence_score: Mai avaladas
+        created_at: Nòvas
+        hot_score: Mai activas uèi
+        most_commented: Mai comentadas
+        relevance: Mai considerables
+        archival_date: arxivat
+        recommendations: recomandacions
+      recommendations:
+        without_results: I a pas de proposicions ligadas als vòstres interèsses
+        without_interests: Seguissètz las proposicions perque vos poscam far de recomandacions
+        disable: "Las recomandacions de las proposicions quitaràn de se mostrar se las refusatz. Podètz los activar de nòu a la pagina \"Lo mieu compte\""
+        actions:
+          success: "Las recomandacions per las proposicions son desactivadas per aquel compte"
+          error: "S'es produsit un error. Vai a la pagina \"Lo mieu compte\" per desactivar manualment las recomandacions de proposicions"
+      retired_proposals: De proposicions retiradas
+      retired_proposals_link: "De proposicions retiradas per los sieus autors"
+      selected_proposals: De proposicions seleccionadas
+      selected_proposals_link: Consultatz las proposicions seleccionadas
+      archived_proposals: De proposicions arxivades
+      proposals_lists: De listas de proposicions
+      retired_links:
+        all: totes
+        duplicated: Duplicada
+        started: En execucion
+        unfeasible: Pas viables
+        done: Realizada
+        other: Una autra
+      search_form:
+        button: Cercar
+        placeholder: Cercar de proposicions...
+        title: Cercar
+      search_results:
+        one: " que conten lo tèrme <strong>'%{search_term}'</strong>"
+        other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
+      select_order: Ordenar per
+      select_order_long: "veses las proposicions"
+      start_proposal: Crèa una proposicion
+      title: De proposicions ciutadanas
+      top: Top setmanièr
+      top_link_proposals: Proposicions mai avaladas per categoria
+      section_header:
+        icon_alt: Icòna de proposicions
+        title: De proposicions ciutadanas
+        help: Ajuda sus proposicions
+      section_footer:
+        title: Ajuda sus proposicions
+        description: Las proposicions ciutadanas son una oportunitat perque los vesins e collectius pòscan decidir dirèctament coma vòlon èsser la siá vila, après d’aver obtengut lo supòrt sufisent e sometre’s al vòt dels ciutadans.
+    new:
+      form:
+        submit_button: crear proposicion
+      more_info: Cossí foncionan las proposicions ciutadanas?
+      recommendation_one: Escrigas pas lo títol de la proposicion o frasas entièras en majusculas. Dins internet aquò se considèra cridar. E a degun li agrada que li cridan.
+      recommendation_three: Gaudís d'aquel espaci, de las voses qu'o emplisson, es tanben tieu.
+      recommendation_two: Quina proposicion que siá o comentari qu'impliqui una accion illegala serà eliminada, tanben las qu'auràn l'intencion de sabotejar los espacis de proposicion, tota la rèsta es permesa.
+      recommendations_title: De recomandacions per crear una proposicion
+      start_new: Crear una proposicion
+    notice:
+      retired: Proposicion retirada
+      published: La proposicion es estada publicada
+    proposal:
+      created: "As creat una nòva proposicion!"
+      share:
+        guide: "Pòdes ara la partejar a Twitter, Facebook, Google+, Telegram o WhatsApp(s'utilizas un dispositiu mobil) perque las gents comence a l'apiejar. Abans que se publique lo tèxt en las rets socialas poiràs modificar a lo tieu gost"
+        edit: "Abans que se partege, poiretz cambiar lo tèxt que volgatz."
+        view_proposal: Ara pas, veire la miá proposicion
+      already_supported: As ja avalat aquela proposicion.
+      comments:
+        zero: Sens comentaris
+        one: 1 Comentari
+        other: "%{count} comentaris"
+      support: Avalar
+      support_title: Avalar aquela proposicion
+      supports:
+        zero: Sens supòrts
+        one: 1 aval
+        other: "%{count} avals"
+      votes:
+        zero: Sens vòts
+        one: 1 vòt
+        other: "%{count} vòts"
+      supports_necessary: "%{number} d'avals necessaris"
+      total_percent: 100%
+      archived: "Aquela proposicion es estada arxivada e pòt pas mai amassar d'avals."
+      successful: "Aquela proposicion es arribada als supòrts necessaris."
+      selected: "Proposicion seleccionada"
+    show:
+      author_deleted: Usatgièr eliminat
+      code: "Còdi de la proposicion:"
+      comments:
+        zero: Sens comentaris
+        one: 1 Comentari
+        other: "%{count} comentaris"
+      comments_tab: Comentaris
+      dashboard_proposal_link: panèl
+      flag: Aquela proposicion es estada marcada coma inadequada per divèrses usatgièrs.
+      notifications_tab: De notificacions
+      milestones_tab: De hitas
+      retired_warning: "L'autor d'aquela proposicion considèra que li cal pas mai seguir en amassant d'avals."
+      retired_warning_link_to_explanation: Revisa la siá explicacion abans de l'avalar.
+      retired: Proposicion retirada per l'autor
+      share: partejar
+      no_notifications: "Aquela proposicion a pas notificacions."
+      embed_video_title: "Vidèo en %{proposal}"
+      title_video_url: "Vidèo extèrne"
+      author: Autor
+      draft: Proposicion en borrolhon. Podètz pas encara obténer de supòrts ni apareis a la lista de proposicions.
+    update:
+      form:
+        submit_button: Gardar de cambiaments
+  dashboard:
+    menu:
+      my_proposal: Edita la miá proposicion
+      progress: Progrés
+      resources: De recorses
+      community: Comunitat
+      polls: d'Enquèstas
+      mailing: Corrièr electronic
+      poster: Aficha
+      recommended_actions: d'Accions recomandadas
+      messages: Messatge als usatgièrs
+      related_content: Contengut ligat
+    form:
+      request: Sollicitud
+    create_request:
+      success: La sollicitud s'es enviada corrèctament. Nos metrem en contacte amb tu çò de mès lèu possible per t'informar al respècte.
+      archived: Aquela proposicion s’arxiva e pòt pas sollicitar de recorses.
+    progress:
+      title: Grafic
+      group_by_month: Mesadièr
+      group_by_week: Setmanièrment
+      group_by_date: Jornalièrament
+      progress: Progrès acumulat
+      supports: Supòrts
+      success: Progrès ideal
+      new_action: Nòu
+    index:
+      title: Edicion
+      edit_proposal_link: Edita la proposicion
+      publish: Publica la proposicion
+      retire: Proposicion de jubilacion
+    new_request:
+      links: Ligams
+    resources:
+      available_resources: De recorses disponibles
+    resource:
+      required_days: "%{days} jorns requerits"
+      required_supports: "%{supports} Supòrt obligatòri"
+      and: i
+      view_resource: Veire recors
+      resource_requested: Recors ja sollicitat
+      request_resource: Sollicitatz recors
+      resource_locked: Recors bloquejat
+    recommended_actions:
+      title: d'Accions recomandadas
+      goto_proposed_actions: Vai a las accions recomandadas
+      see_proposed_actions: Consultatz las accions recomandadas
+      hide_proposed_actions: Amagatz las accions recomandadas
+      pending_title: Pendentes
+      show_description: Mòstra la descripcion
+      without_pending_actions: I a pas accions recomandadas pendentas
+      done_title: Fach
+      without_done_actions: Se fan pas d'accions recomandadas
+    next_goal:
+      title: Objectiu
+      see_complete_course: Consultatz lo cors complet
+      hide_course: Amagar lo cors
+    goal:
+      target_supports:
+        one: Aténher %{count} suport per a la vostra proposta
+        other: Aconseguir %{count} supòrts per la vòstra proposicion
+      days:
+        one: "%{count} jorn"
+        other: "%{count} jorns"
+      locked_resource: Recors bloquejat
+      ideal_time: Temps ideal
+    community:
+      access_community: Accedissètz a la comunitat
+      latest_activity: "Darrièra activitat de la comunitat: %{at}"
+      participants: De participants
+      debates: De debats
+      comments: De comentaris
+      latest_comments: De darrièrs messatges
+    messages:
+      send_notification: Enviar messatge als seguidors de la proposicion
+      previous_notifications: Vejatz de notificacions anterioras
+    polls:
+      index:
+        title: d'Enquèstas
+        create: Crèa un sondatge
+        count:
+          one: Avètz creat %{count} enquèsta.
+          other: Avètz creat %{count} d'urnas.
+        links: De ligams
+        additiontal_information: Informacion addicionala
+      new:
+        title: Nòva enquèsta
+        submit: Crèa un sondatge
+      edit:
+        submit: Actualizacion del sondatge
+      poll:
+        responses:
+          one: "%{count} responsa"
+          other: "%{count} responsas"
+        view_results: Veire de resultats
+        edit_poll: Edita l'enquèsta
+        show_results_help: Se marcatz aquel caleishon, los resultats seràn publics e totes los usatgièrs los poiràn veire
+        delete: Suprimís l'enquèsta
+        alert_notice: Aquela accion eliminarà l'enquèsta e totas las siás questions associadas.
+        success_notice: L'enquèsta s'es suprimida corrèctament
+        unable_notice: Podètz pas destruir una enquèsta qu'aja de responsas
+      form:
+        name: Títol de l'enquèsta
+        add_question: Apond una question
+      question_fields:
+        remove_question: Elimina la question
+        add_answer: Apondètz responsa
+      question_answer_fields:
+        remove_answer: Elimina la responsa
+    poster:
+      index:
+        title: Vista prealabla de l'aficha
+        poster_title: "Pas continuis en cercant,"
+        poster_subtitle: "apieja-me! ;)"
+        intro_text: "<strong>I participi %{org}</strong> amb la miá pròpria proposicion ciutadana e solament s'i apondes tanben, pòdi aténher lo supòrt necessari per far que la vila que totes desiram."
+        proposal_code: "Còdi de la proposicion: %{code}"
+        support: Sosten a la miá proposicion
+        footer: "<strong>Visita %{link} e apiejatz aquela proposicion.</strong> Cossí mai melhor. Fasèm lo nòstre pauc. Mercés!"
+      new:
+        title: Aficha de la tiá proposicion
+      options:
+        preview: Vista prealabla
+        download: descargar
+    mailing:
+      index:
+        title: Vista prealabla del corrièr electronic
+      new:
+        title: Modèl de corrièr electronic per partejar
+      mailing_options:
+        send: Envia a %{address}
+        preview: Vista prealabla
+      create:
+        sent: S'es enviat lo corrièr electronic
+    mailer:
+      forward:
+        subtitle: "Se m'apiejatz, <br>o atenherem."
+        support_button: Sosténer a aquela proposicion
+        share_in: Parteja
+        hi: "Adieu!"
+        introduction: Vos escrivi per vos informar que participi %{org}, la plataforma que podèm decidir quina vila volèm. E per aquò, creèri la miá pròpria proposicion ciutadana e ai de besonh ara lo vòstre supòrt. Mas vos preocupatz pas perque es fòrça simple.
+        support: "vos Cal solament far clic sul boton que veiràs de contunh \"Supòrt aquela proposicion\" e vos podètz informar abans de la promòure. L’Comuna menarà a tèrme solament las proposicions qu'atengan lo maximal supòrt e ai pensat que vosautres, soi segur que m’ajudatz a o aténher!"
+        share: "E se me fagatz tanben lo grand favor de partejar la miá proposicion amb los vòstres amics, familiales e de contactes, seriá perfièch!"
+  polls:
+    all: "totes"
+    no_dates: "sens data assignada"
+    dates: "Dempuèi çò %{open_at} fins a lo %{closed_at}"
+    final_date: "Recompte final/Resultats"
+    index:
+      filters:
+        current: "dobèrt"
+        expired: "Terminades"
+      title: "votacions"
+      participate_button: "Participar a aquela votacion"
+      participate_button_expired: "votacion finalizada"
+      no_geozone_restricted: "Tota la vila"
+      geozone_restricted: "De districtes"
+      geozone_info: "Pòdon participar las personas al cens: "
+      already_answer: "As ja participat a aquela votacion"
+      not_logged_in: "As de besonh iniciar session o t'enregistrar per participar"
+      unverified: "Per participar, vos cal verificar lo vòstre compte"
+      cant_answer: "Aquela votacion es pas disponibla dins la tiá zòna"
+      section_header:
+        icon_alt: Icòna de votacion
+        title: De votacions
+        help: Ajuda sus la votacion
+      section_footer:
+        title: Ajuda sus la votacion
+        description: Las enquèstes de ciutadanas son un mecanisme participatiu que los ciutadans amb drech de vòt pòdon per el prene de decisions dirèctas
+      no_polls: "I a pas de votacions dubèrtas."
+    show:
+      already_voted_in_booth: "Avètz ja participat a un estand fisic. Podètz pas tornar a participar."
+      already_voted_in_web: "Ja heu participat en aquesta enquesta. Si vòtas de nou, se sobreescriurà."
+      back: Tòrna votar
+      cant_answer_not_logged_in: "avètz de besonh %{signin} o %{signup} per participar al debat."
+      comments_tab: De comentaris
+      cant_answer_verify: "Cal %{verify_link} per'mor de respondre."
+      verify_link: "verifica lo tieu compte"
+      cant_answer_expired: "Aquela enquèsta a acabat."
+      cant_answer_wrong_geozone: "Aquela votacion es pas disponibla dins la tiá zòna."
+      more_info_title: "Mai informacion"
+      documents: De documents
+      zoom_plus: Agrandís l'image
+      read_more: "Legissètz-ne mai %{answer}"
+      read_less: "Legissètz mens dessús %{answer}"
+      videos: "Vidèo extèrne"
+      info_menu: "informacion"
+      stats_menu: "Estatisticas de participacion"
+      results_menu: "De resultats de l'enquèsta"
+      stats:
+        total_votes: "Impòrt total dels vòts donats"
+        votes: "VÒTS"
+        web: "WEB"
+        mail: "MAIL"
+        booth: "CABINA"
+        total: "TOTAL"
+        valid: "Valid"
+        white: "Totalament en blanc"
+        null_votes: "Invalid"
+      results:
+        title: "Demandas de ciutadanas"
+        most_voted_answer: "Responsa mai votada: "
+    poll_header:
+      back_to_proposal: Tornar a la proposicion
+  poll_questions:
+    show:
+      vote_answer: "Votar %{answer}"
+      voted: "As votat %{answer}"
+  proposal_notifications:
+    new:
+      title: "Enviar messatge"
+      submit_button: "Enviar messatge"
+      info_about_receivers: "Aquel messatge serà enviat a <strong>%{count} gents</strong> e serà visible a %{proposal_page}.<br> Los messatges pas s’envian immediatament, los usatgièrs recebrián periodicament un corrièr electronic amb totas las notificacions de la proposicion."
+      proposal_page: "la pagina de la proposicion"
+    show:
+      back: "Tornar a la miá activitat"
+  shared:
+    edit: "Editar proposicion"
+    save: "Plegar"
+    delete: "Suprimís"
+    "yes": "Òc"
+    "no": "Pas"
+    search_results: "De resultats de cèrca"
+    advanced_search:
+      author_type: "Per categoria d'autor"
+      author_type_blank: "Escuelh una categoria"
+      date: "Per data"
+      date_placeholder: "DD/MM/AAAA"
+      date_range_blank: "Escuelh una data"
+      date_1: "Darrièras 24 oras"
+      date_2: "Darrièra setmana"
+      date_3: "Darrièr mes"
+      date_4: "Darrièr an"
+      date_5: "Personalizada"
+      from: "Dempuèi"
+      general: "Amb lo tèxt"
+      general_placeholder: "Escriu lo tèxt"
+      search: "filtre"
+      title: "Cèrca avançada"
+      to: "Fins a"
+    author_info:
+      author_deleted: Usatgièr eliminat
+      email_deleted: S'es suprimit lo corrièr electronic
+    back: Tornar
+    check: Seleccionar
+    check_all: totes
+    check_none: Cap
+    collective: Associacion
+    flag: Denonciar coma inadequat
+    follow: "Seguissètz"
+    following: "De contunh"
+    follow_entity: "Seguissètz %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Seguissètz ara aquel projècte d'inversion! <br> Te notificarem los cambiaments a mesura que se produsiscan perque siás al jorn."
+        destroy:
+          notice: "Avètz quitat de seguir aquel projècti d’inversion! <br> Quitaretz de recebre de notificacions ligadas a aquel projècte."
+      proposal:
+        create:
+          notice: "Seguissètz ara aquela proposicion ciutadana! <br> Te notificarem los cambiaments a mesura que se produsiscan perque siás al jorn."
+        destroy:
+          notice: "Avètz quitat de seguir aquela proposicion ciutadana! <br> Quitaretz de recebre de notificacions ligadas a aquela proposicion."
+    print:
+      print_button: Estampar aquela informacion
+    search: Cercar
+    show: Mostrar
+    suggest:
+      debate:
+        found:
+          one: "Existeix un debat amb el terme '%{query}', pots participar en ell en comptes d'obrir un de nou."
+          other: "Existisson de debats amb lo tèrme '%{query}', pòdes participar a eles alloc de dobrir un de nòu."
+        message: "Veses %{limit} de %{count} debates que contenon lo tèrme '%{query}'"
+        see_all: "veire totes"
+      budget_investment:
+        found:
+          one: "I a una proposicion d'inversion amb lo tèrme '%{query}', pòdes i participar alloc de dobrir una nòva."
+          other: "I de proposicions d'inversion amb lo tèrme '%{query}', pòdes i participar alloc de dobrir una nòva."
+        message: "veses %{limit} de %{count} de proposicions d'inversion que contenon lo tèrme '%{query}'"
+        see_all: "veire totes"
+      proposal:
+        found:
+          one: "Existís una proposicion amb lo tèrme '%{query}', pòdes participar a ela alloc de dobrir una nòva."
+          other: "Existisson de proposicions amb lo tèrme '%{query}', pòdes participar a elas alloc de dobrir una nòva."
+        message: "veses %{limit} de %{count} de proposicions que contenon lo tèrme '%{query}'"
+        see_all: "veire totes"
+    tags_cloud:
+      tags: De tendéncias
+      districts: "De districtes"
+      districts_list: "Listat de districtes"
+      categories: "De categorias"
+    target_blank: " (lo ligam s'òbri en nòva fenèstra)"
+    you_are_in: "Ès en"
+    unflag: Desfar denóncia
+    unfollow_entity: "Quitar de seguir %{entity}"
+    outline:
+      searcher: Cercaire
+    go_to_page: "Anar a la pagina de"
+    share: Partejar
+    orbit:
+      previous_slide: Diapositiva anterior
+      next_slide: Diapositiva seguent
+    documentation: Documentacion addicionala
+    view_mode:
+      title: Faiçon de visualizacion
+      cards: De cartas
+      list: Lista
+    recommended_index:
+      title: De recomandacions
+      see_more: Veire mai de recomandacions
+      hide: Amagatz las recomandacions
+    translations:
+      select_language_prompt: Escuelh l’idiòma
+      remove_language: Elimina l’idiòma
+      add_language: Apondre idiòma
+      languages_in_use:
+        zero: "0 d'idiòmas en usatge"
+        one: "1 idiòma en usatge"
+        other: "%{count} d'idiòmas en usatge"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: Whatsapp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  stats:
+    index:
+      visits: De visitas
+      debates: De debats
+      proposals: De proposicions ciutadanas
+      comments: De comentaris
+      proposal_votes: De vòts en proposicions
+      debate_votes: De vòts en debats
+      comment_votes: De vòts en comentaris
+      votes: De vòts
+      verified_users: d'Usatgièrs verificats
+      unverified_users: d'Usatgièrs sens verificar
+  unauthorized:
+    default: Pas tibat permís per accedir a aquela pagina.
+    manage:
+      all: "Pas tibat permís per realizar l'accion '%{action}' dessús %{subject}."
+  users:
+    login_to_comment: "Cal %{signin} o %{signup} per daissar un comentari."
+    login_to_continue: "Cal %{signin} o %{signup} per contunhar."
+    signin: "Iniciar la session"
+    signup: "Enregistra-te"
+    verify_account: "verifica lo tieu compte"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "Aquel usatgièr a pas decidit recebre de messatges privats"
+        submit_button: Enviar messatge
+        title: Enviar messatge privat a %{receiver}
+        verified_only: Per enviar un messatge privat %{verify_account}
+      show:
+        receiver: Messatge enviat a %{receiver}
+    show:
+      deleted: Eliminat
+      deleted_debate: Aquel debat es estat eliminat
+      deleted_proposal: Aquela proposicion es estada eliminada
+      deleted_budget_investment: Aquel projècti d’inversion s’a suprimit
+      proposals: De proposicions ciutadanas
+      proposals_status: Estat
+      debates: De debats
+      budget_investments: d'Inversions budgetàrias
+      comments: De comentaris
+      actions: d'Accions
+      filters:
+        comments:
+          one: 1 Comentari
+          other: "%{count} Comentaris"
+        debates:
+          one: 1 Debat
+          other: "%{count} Debats"
+        proposals:
+          one: 1 Proposicion
+          other: "%{count} Proposicions"
+        budget_investments:
+          one: 1 Proposicion d'inversion
+          other: "%{count} Proposicions d'inversion"
+        follows:
+          one: 1 en Seguint
+          other: "%{count} De contunh"
+      no_activity: Usatgièr sens activitat publica
+      no_private_messages: "Aquel usatgièr accèpta pas messatges privats."
+      private_activity: Aquel usatgièr decidiguèt manténer privada la lista d’activitats.
+      send_private_message: "Enviar un messatge privat"
+      delete_alert: "Sètz segur que volètz suprimir lo vòstre projècti d’inversion? Aquela accion se pòt pas desfar"
+    proposals:
+      retired: "Proposicion jubilada"
+      draft: Borrolhon
+      published: Publicat
+      see: "Veire proposicion"
+      actions: d'Accions
+      retired_help_text: Panèl pas disponible per las proposicions de jubilats
+  votes:
+    agree: Soi d'acòrdi
+    anonymous: Tròp de vòts anonimes, per poder votar %{verify_account}.
+    comment_unauthenticated: As de besonh %{signin} o %{signup} per poder votar.
+    disagree: Soi pas d'acòrdi
+    organizations: Las associacions pòdon pas avalar
+    supports: d'Avals
+    verified_only: Las proposicions pòdon solament èsser votadas per usatgièrs verificats, %{verify_account}.
+    budget_investments:
+      not_logged_in: As de besonh %{signin} o %{signup}.
+      not_verified: Solament los usatgièrs verificats pòdon votar los projèctes d’inversion; %{verify_account}.
+      organization: Las associacions pòdon pas avalar
+      unfeasible: Se pòdon pas avalar de proposicions inviables
+      not_voting_allowed: Lo periòde de recuelhuda d'avals aquel barrat.
+      different_heading_assigned:
+        one: "Podètz solament sosténer a projèctes d'inversion %{count} districte. Avètz ja sostengut a inversions a %{supported_headings}."
+        other: "Podètz solament sosténer a projèctes d'inversion %{count} de districtes. Avètz ja sostengut a inversions a %{supported_headings}."
+  welcome:
+    feed:
+      most_active:
+        debates: "Debates mai actius"
+        proposals: "Proposicions mai activas"
+        processes: "de procèsses actius"
+      see_all_debates: Veire totes los debats
+      see_all_proposals: Veire totas las proposicions
+      see_all_processes: Veire totes los procèsses
+      process_label: procès
+      see_process: Veire procès
+    cards:
+      title: Destacadas
+    recommended:
+      title: de Recomandacions que vos pòdon interessar
+      help: "Aquelas recomandacions se genèran a comptar de las etiquetas dels debats e proposicions que seguissètz."
+      debates:
+        title: Debates recomandats
+        btn_text_link: Totes los debats recomandats
+      proposals:
+        title: De proposicions recomandadas
+        btn_text_link: Totas las proposicions recomandadas
+      budget_investments:
+        title: d'Inversions recomandadas
+      slide: "Veire %{title}"
+    verification:
+      i_dont_have_an_account: Avètz pas compte, vòli crear un e o verificar
+      i_have_an_account: Ai ja un compte que vòli verificar
+      question: As ja un compte en %{org_name}?
+      title: Verificacion de compte
+    welcome:
+      go_to_index: Ara pas, veire de proposicions
+      start_using_consul: Vai a la pagina d’indèx
+      title: Collabòra en l'elaboracion de la nòrma dessús
+      user_permission_debates: Participar a debats
+      user_permission_info: Amb lo tieu compte pòdes ja...
+      user_permission_proposal: Crear de nòvas proposicions
+      user_permission_support_proposal: Avalar de proposicions
+      user_permission_verify: "Per poder realizar totas las accions, verifica lo tieu compte."
+      user_permission_verify_info: "* Solament d'usatgièrs empadronats."
+      user_permission_verify_my_account: Verificar lo mieu compte
+      user_permission_votes: Participar a las votacions finalas*
+  invisible_captcha:
+    sentence_for_humans: "S'èras uman, per favor ignòra aquel camp"
+    timestamp_error_message: "Aquò es tròp estat rapid. Per favor, reénvia lo formulari."
+  related_content:
+    title: "Contengut ligat"
+    add: "Apondètz contengut ligat"
+    label: "Ligam amb contengut ligat"
+    placeholder: "%{url}"
+    help: "Podètz apondre de ligams de %{models} Dins de %{org}."
+    submit: "apondre coma President de taula"
+    error: "Ligam pas valid. Desbrembatz pas començar %{url}."
+    error_itself: "Ligam pas valid. Podètz pas ligar un contengut a el meteis."
+    success: "Avètz apondut un contengut ligat nòu"
+    is_related: "A contengut ligat?"
+    score_positive: "Òc"
+    score_negative: "Pas"
+    content_title:
+      proposal: "la proposicion"
+      debate: "debat prealable"
+      budget_investment: "Inversion budgetària"
+  admin/widget:
+    header:
+      title: Administrar
+  annotator:
+    help:
+      alt: Selecciona lo tèxt que vòles comentar e prem lo boton amb lo gredon.
+      text: Per comentar aquel document as %{sign_in} o %{sign_up}. Selecciona après lo tèxt que vòles comentar e prem lo boton amb lo gredon.
+      title: Cossí pòdi comentar aquel document?
+  links:
+    form:
+      delete_button: Suprimís
+      cancel_button: Anullar
+    nested_links:
+      title: De ligams
+      note: Apondètz los ligams que sián d’interès
+      add_new_link: Apond un nòu ligam
+    link_fields:
+      label_placeholder: Títol del ligam
+      url_placeholder: Adreça de ligam
+  communities:
+    show:
+      surveys: d'Enquèstas
+      complete_survey: Completa l’enquèsta
+    subnav:
+      surveys: d'Enquèstas
+    poll:
+      take_part: Participa de %{from} a %{to}
+  remote_translations:
+    text: La contenuda d’aquela pagina es pas disponibla a lo vòstre idiòma
+    all_remote_translations_enqueued_text: En un periòde cuert de temps, en actualizant la pagina poiretz veire tot lo contengut de lo vòstre idiòma.
+    create:
+      enqueue_remote_translation: Se son sollicitats corrèctament de traduccions.
+    button: Tradusir pagina

@@ -3,8 +3,6 @@ zh-CN:
     ballots:
       show:
         title: 您的选票
-        amount_spent: 支出金额
-        remaining: "您仍然有<span>%{amount}</span>可以投资。"
         no_balloted_group_yet: "您还没有投票给这个组，去投票吧！"
         remove: 删除投票
         zero: 您没有对任何投资项目投票。
@@ -73,8 +71,6 @@ zh-CN:
           title: 搜索
         sidebar:
           my_ballot: 我的选票
-          voted_info: 在此阶段结束前您可以随时%{link}。不需要花掉所有可用的钱。
-          voted_info_link: 更改您的投票
           change_ballot: "如果您改变主意，您可以删除您在%{check_ballot} 中的投票并重新开始。"
           check_ballot_link: "查看我的选票"
           zero: 您没有对此组中的任何投资项目投票。

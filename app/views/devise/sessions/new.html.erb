@@ -15,7 +15,7 @@
   <h2><%= t("devise_views.sessions.new.title") %></h2>
 </div>
 
-<%= render "devise/omniauth_form" %>
+<%= render "devise/omniauth_form", action: "sign_in" %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row">

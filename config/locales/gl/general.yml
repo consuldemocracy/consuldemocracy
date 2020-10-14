@@ -95,9 +95,6 @@ gl:
       tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
     index:
       featured_debates: Destacar
-      filter_topic:
-        one: " co tema '%{topic}'"
-        other: " co tema '%{topic}'"
       orders:
         confidence_score: Máis apoiadas
         created_at: Novas
@@ -233,7 +230,6 @@ gl:
       help: Axuda
       my_account_link: A miña conta
       my_activity_link: A miña actividade
-      open: aberto
       open_gov: Goberno aberto
       proposals: Propostas cidadás
       poll_questions: Votacións
@@ -244,8 +240,6 @@ gl:
           other: Tes %{count} notificacións novas
         notifications: Notificacións
         no_notifications: "Non tes notificacións novas"
-    admin:
-      watch_form_message: "Realizaches cambios que aínda non se gardaron. Tes a certeza de que queres deixar a páxina?"
   notifications:
     index:
       empty_notifications: Non tes notificacións novas.
@@ -287,8 +281,6 @@ gl:
       sign_in: Entra con Twitter
       sign_up: Rexístrate con Twitter
       name: Twitter
-    info_sign_in: "Entra con:"
-    info_sign_up: "Rexístrate con:"
     or_fill: "Ou cubre o formulario seguinte:"
   proposals:
     create:
@@ -335,9 +327,6 @@ gl:
       map_skip_checkbox: "Esta proposta non ten unha localización concreta ou non a coñezo."
     index:
       featured_proposals: Destacar
-      filter_topic:
-        one: " cos temas '%{topic}'"
-        other: " cos temas '%{topic}'"
       orders:
         confidence_score: Máis apoiados
         created_at: novos
@@ -633,7 +622,6 @@ gl:
     follow: "Seguir"
     following: "Seguindo"
     follow_entity: "Seguir %{entity}"
-    hide: Ocultar
     print:
       print_button: Imprimir esta información
     search: Procurar

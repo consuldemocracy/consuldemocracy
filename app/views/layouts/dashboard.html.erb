@@ -9,7 +9,7 @@
     <title><%= content_for?(:title) ? yield(:title) : setting["org_name"] %></title>
     <%= content_for :canonical %>
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
     <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),
@@ -25,40 +25,23 @@
 
     <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
 
-    <div class="off-canvas-wrapper">
-      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-        <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
-          <div class="show-for-small-only">
-            <div class="dashboard-sidebar">
-              <%= render "dashboard/menu" %>
-            </div>
-          </div>
-        </div>
+    <%= render "layouts/header", with_subnavigation: false %>
 
-        <div class="off-canvas-content" data-off-canvas-content>
-          <%= render "layouts/header", with_subnavigation: false %>
+    <div class="menu-and-content">
+      <%= check_box_tag :show_menu, nil, false, role: "switch" %>
 
-          <div class="dashboard-menu-and-content no-margin-top">
-            <div id="side_menu" class="hide-for-small-only">
-              <div class="dashboard-sidebar">
-                <%= render "dashboard/menu" %>
-              </div>
-            </div>
+      <nav id="side_menu" class="dashboard-sidebar">
+        <%= render "dashboard/menu" %>
+      </nav>
 
-            <div class="admin-content">
-              <div class="show-for-small-only">
-                <button type="button" class="button hollow expanded" data-toggle="offCanvas">
-                  <%= t("admin.menu.admin") %>
-                </button>
-              </div>
+      <div class="admin-content">
+        <%= label_tag :show_menu, t("admin.menu.admin"),
+                      "aria-hidden": true, class: "button hollow expanded" %>
 
-              <%= render "layouts/flash" %>
-              <%= render "layouts/dashboard/proposal_totals" %>
-              <%= render "layouts/dashboard/proposal_header" %>
-              <%= yield %>
-            </div>
-          </div>
-        </div>
+        <%= render "layouts/flash" %>
+        <%= render "layouts/dashboard/proposal_totals" %>
+        <%= render "layouts/dashboard/proposal_header" %>
+        <%= yield %>
       </div>
     </div>
   </body>

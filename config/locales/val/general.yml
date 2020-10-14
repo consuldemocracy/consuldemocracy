@@ -87,9 +87,6 @@ val:
       tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
     index:
       featured_debates: Destacades
-      filter_topic:
-        one: " amb el tema '%{topic}'"
-        other: " amb el tema '%{topic}'"
       orders:
         confidence_score: més avalades
         created_at: noves
@@ -207,7 +204,6 @@ val:
       help: Ajuda
       my_account_link: El meu compte
       my_activity_link: La meua activitat
-      open: obert
       open_gov: Govern obert
       proposals: Propostes
       poll_questions: Votacions
@@ -218,8 +214,6 @@ val:
           other: Tens %{count} notificacions
         notifications: Notificacions
         no_notifications: "No tens noves notificacions"
-    admin:
-      watch_form_message: "Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?"
   notifications:
     index:
       empty_notifications: No tens noves notificacions.
@@ -261,8 +255,6 @@ val:
       sign_in: Entra amb Twitter
       sign_up: Regístrat amb Twitter
       name: Twitter
-    info_sign_in: "Entra amb:"
-    info_sign_up: "Regístrat amb:"
     or_fill: "O ompli el següent formulari:"
   proposals:
     create:
@@ -301,9 +293,6 @@ val:
       map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la coneixem."
     index:
       featured_proposals: Destacar
-      filter_topic:
-        one: " amb el tema '%{topic}'"
-        other: " amb el tema '%{topic}'"
       orders:
         confidence_score: millor valorats
         created_at: nous
@@ -506,7 +495,6 @@ val:
     follow: "Seguir"
     following: "Seguint"
     follow_entity: "Seguir %{entity}"
-    hide: Ocultar
     print:
       print_button: Imprimir esta informació
     search: Cercar

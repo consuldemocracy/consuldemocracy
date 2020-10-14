@@ -2,7 +2,11 @@ ca:
   pages:
     conditions:
       title: Condicions d'ús
+      subtitle: AVÍS LEGAL SOBRE LES CONDICIONS D'ÚS, PRIVACITAT I PROTECCIÓ DE DADES PERSONALS DEL PORTAL OBERT DE GOVERN
+      description: Pàgina d’informació sobre les condicions d’ús, privadesa i protecció de dades personals.
     help:
+      title: "%{org} és una plataforma de participació ciutadana"
+      guide: "Aquesta guia explica què és cadascun dels %{org} seccions són per a i com funcionen."
       menu:
         debates: "Debats"
         proposals: "Propostes ciutadanes"
@@ -12,18 +16,36 @@ ca:
         processes: "processos"
       debates:
         title: "Debats"
+        description: "A la %{link} a la secció podeu presentar i compartir la vostra opinió amb altres persones sobre problemes que us preocupin relacionats amb la ciutat. També és un lloc per generar idees que a través de les altres seccions de %{org} conduir a accions concretes per part de l’Ajuntament."
+        link: "debats ciutadans"
+        feature: "Podeu obrir debats, comentar-los i avaluar-los amb el programa <strong>estic d'acord</strong> o <strong>No estic d'acord</strong>. Per això has de fer-ho %{link}."
+        feature_link: "registrar-se %{org}"
         image_alt: "Botons per valorar els debats"
         figcaption: 'Botons "Estic d''acord" i "No estic d''acord" per valorar els debats.'
       proposals:
         title: "Propostes ciutadanes"
+        description: "A la %{link} secció podeu fer propostes perquè l’Ajuntament les dugui a terme. Les propostes requereixen suport i, si aconsegueixen el suport suficient, se sotmeten a votació pública. Les propostes aprovades en aquests vots dels ciutadans són acceptades per l'Ajuntament i dutes a terme."
+        link: "propostes ciutadanes"
         image_alt: "Botó per donar suport a una proposta"
+        figcaption: 'Botó per "Assistència" una proposta.'
       budgets:
         title: "Pressupostos participatius"
+        description: "El %{link} l’apartat ajuda la gent a prendre una decisió directa sobre quina part del pressupost municipal es gasta."
+        link: "pressupostos participatius"
         image_alt: "Diferents fases d'un pressupost participatiu"
+        figcaption: '"Assistència" i "Votació" fases dels pressupostos participatius.'
       polls:
         title: "votacions"
+        description: "El %{link} la secció s’activa cada vegada que una proposta aconsegueix l’1% de suport i es vota a vot o quan l’Ajuntament proposa un problema perquè la gent decideixi."
+        link: "urnes"
+        feature_1: "Per participar a la votació heu de fer-ho %{link} i verifiqueu el vostre compte."
+        feature_1_link: "registrar-se %{org_name}"
       processes:
         title: "processos"
+        description: "A la %{link} la secció, els ciutadans participen en la redacció i modificació de les regulacions que afecten la ciutat i poden opinar sobre les polítiques municipals en els debats anteriors."
+        link: "processos"
+        feature: "Per participar en els processos has de %{link} i verificar el teu compte."
+        feature_link: "registrar-se %{org_name}"
       faq:
         title: "¿Problemes tècnics?"
         description: "Llegeix les preguntes freqüents i resol els teus dubtes."
@@ -34,27 +56,114 @@ ca:
       other:
         title: "Altra informació d'interès"
         how_to_use: "Utilitza %{org_name} al teu municipi"
+      how_to_use:
+        text: |-
+          Utilitzeu-lo al vostre govern local o ajudeu-nos a millorar-lo, és un programari gratuït.
+
+          Aquest portal de govern obert utilitza el [CONSUL app](https://github.com/consul/consul 'consul github') és a dir, el programari lliure[licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), això vol dir, amb paraules simples, que qualsevol pot utilitzar el codi lliurement, copiar-lo, veure'l en detall, modificar-lo i redistribuir-lo al món amb les modificacions que vulgui (permetent que altres facin el mateix). Perquè pensem que la cultura és millor i més rica quan s’estrena.
+
+          Si sou un programador, podeu veure el codi i ajudar-nos a millorar-lo [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Utilitza-ho al teu municipi
     privacy:
       title: Política de Privacitat
+      subtitle: "Pàgina d'informació sobre privadesa"
     accessibility:
       title: Accessibilitat
+      description: |-
+        L’accessibilitat web fa referència a la possibilitat d’accedir a la web i als seus continguts per part de totes les persones, independentment de les discapacitats (físiques, intel·lectuals o tècniques) que puguin sorgir o derivades del context d’ús (tecnològic o ambiental) .
+
+        Si es dissenyen llocs web tenint en compte l'accessibilitat, tots els usuaris poden accedir al contingut en igualtat de condicions, per exemple:
+      examples:
+        - Quan es proporciona text alternatiu a les imatges, els usuaris cecs o amb deficiències visuals poden utilitzar lectors especials per accedir a la informació.
+        - Quan els vídeos tenen subtítols, els usuaris amb dificultats auditives els poden entendre completament.
+        - Si els continguts estan escrits en un llenguatge senzill i il·lustrat, els usuaris amb problemes d’aprenentatge són capaços d’entendre’ls millor.
+        - Si l’usuari té problemes de mobilitat i és difícil utilitzar el ratolí, les alternatives amb el teclat ajuden a la navegació.
       keyboard_shortcuts:
+        title: Dreceres de teclat
         navigation_table:
+          description: Per poder navegar per aquest lloc web d’una manera accessible, s’ha programat un grup de claus d’accés ràpid que recullen les seccions principals d’interès general en què s’organitza el lloc.
+          caption: Dreceres de teclat per al menú de navegació
+          key_header: Clau
+          page_header: Pàg
           rows:
             - 
+              key_column: 0
+              page_column: Inici
             - 
+              key_column: 1
               page_column: Debats
             - 
+              key_column: 2
               page_column: Propostes ciutadanes
             - 
               key_column: 1
               page_column: Votacions
             - 
+              key_column: 4
               page_column: Pressupostos participatius
             - 
+              key_column: 5
+              page_column: Processos legislatius
+        browser_table:
+          description: "Segons el sistema operatiu i el navegador utilitzat, la combinació de tecles serà la següent:"
+          caption: Combinació de claus en funció del sistema operatiu i del navegador
+          browser_header: Navegador
+          key_header: Combinació de claus
+          rows:
+            - 
+              browser_column: Explorador
+              key_column: ALT + drecera i ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + Drecera
+            - 
+              browser_column: Chrome
+              key_column: ALT + dreceres (CTRL + ALT + dreceres per a MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + dreceres (CMD + dreceres per a MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + dreceres
+      textsize:
+        title: Mida del text
+        browser_settings_table:
+          description: El disseny accessible d’aquest lloc web permet a l’usuari triar la mida del text que li convé. Aquesta acció es pot dur a terme de diferents maneres en funció del navegador utilitzat.
+          browser_header: Navegador
+          action_header: Accions a dur a terme
+          rows:
+            - 
+              browser_column: Explorador
+              action_column: Veure > Mida del text
+            - 
+              browser_column: Firefox
+              action_column: Veure > Mida
+            - 
+              browser_column: Chrome
+              action_column: Configuració (icona) > Opcions > Avançat > Contingut web > Mida del text
+            - 
+              browser_column: Safari
+              action_column: Veure > Allunya / Allunya
+            - 
+              browser_column: Opera
+              action_column: Veure > escala
+        browser_shortcuts_table:
+          description: "Una altra manera de modificar la mida del text és utilitzar les dreceres de teclat definides als navegadors, en particular la combinació de tecles:"
+          rows:
+            - 
+              shortcut_column: CTRL i + (CMD i + endavant MAC)
+              description_column: Augmenta la mida del text
+            - 
+              shortcut_column: CTRL i - (CMD i - endavant MAC)
+              description_column: Disminueix la mida del text
+      compatibility:
+        title: Compatibilitat amb estàndards i disseny visual
+        description: 'Totes les pàgines d’aquest lloc web compleixen el <strong>Directrius d’accessibilitat</strong> o Principis generals de disseny accessible i establerts pel grup de treball<abbr title="Iniciativa d’accessibilitat web" lang="en">WAI</abbr> pertanyent a W3C.'
+    titles:
+      help: "Què és %{org}? - Participació ciutadana"
     verify:
+      info: "Per verificar el compte, introduïu les dades d’accés:"
       info_code: "Ara introdueix el codi que has rebut a la teva carta:"
       submit: Verificar el meu compte
       title: Verifica el teu compte

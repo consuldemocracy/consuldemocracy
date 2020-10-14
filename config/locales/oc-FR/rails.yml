@@ -1,0 +1,197 @@
+oc:
+  date:
+    abbr_day_names:
+      - Dg
+      - Dl
+      - Dm
+      - Dc
+      - Dj
+      - Dv
+      - Ds
+    abbr_month_names:
+      - 
+      - Gen
+      - Feb
+      - Mar
+      - Abr
+      - Maig
+      - Jun
+      - Jul
+      - Ago
+      - Set
+      - Oct
+      - Nov
+      - Des
+    day_names:
+      - Dimenge
+      - Diluns
+      - Dimarts
+      - Dimècres
+      - Dijòus
+      - Divendres
+      - Dissabte
+    formats:
+      default: "%d-%m-%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
+    month_names:
+      - 
+      - en Genièr
+      - en Febrièr
+      - en Març
+      - en Abril
+      - en Mai
+      - en Junh
+      - en Julhet
+      - en Agost
+      - en Setembre
+      - en Octòbre
+      - en Novembre
+      - en Decembre
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aperaquí 1 ora
+        other: aperaquí %{count} d'oras
+      about_x_months:
+        one: aperaquí 1 mes
+        other: aperaquí %{count} de meses
+      about_x_years:
+        one: aperaquí 1 an
+        other: aperaquí %{count} d'ans
+      almost_x_years:
+        one: gaireben 1 an
+        other: gaireben %{count} d'ans
+      half_a_minute: mièja minuta
+      less_than_x_minutes:
+        one: mens de 1 minuta
+        other: mens de %{count} de minutas
+      less_than_x_seconds:
+        one: mens de 1 segond
+        other: mens de %{count} segon
+      over_x_years:
+        one: mai de 1 an
+        other: mai de %{count} d'ans
+      x_days:
+        one: 1 jorn
+        other: "%{count} de jorns"
+      x_minutes:
+        one: 1 minuta
+        other: "%{count} de minutas"
+      x_months:
+        one: 1 mes
+        other: "%{count} de meses"
+      x_years:
+        one: 1 an
+        other: "%{count} d'ans"
+      x_seconds:
+        one: 1 segond
+        other: "%{count} segon"
+    prompts:
+      day: jorn
+      hour: ora
+      minute: minuta
+      month: mes
+      second: segond
+      year: an
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: li cal èsser acceptat
+      blank: pòt pas èsser en blanc
+      present: a d’èsser en blanc
+      confirmation: coincidís pas %{attribute}
+      empty: pòt pas èsser void
+      equal_to: li cal èsser parièr a %{count}
+      even: li cal èsser parelh
+      exclusion: es reservat
+      greater_than: li cal èsser mai grand que %{count}
+      greater_than_or_equal_to: li cal èsser mai grand o parièr a %{count}
+      inclusion: es pas inclós a la lista
+      invalid: es pas valid
+      less_than: li cal èsser mendre que %{count}
+      less_than_or_equal_to: li cal èsser mendre o parièr a %{count}
+      model_invalid: "Validacion mancada: %{errors}"
+      not_a_number: es pas un numèro
+      not_an_integer: li cal èsser un enter
+      odd: li cal èsser senar
+      required: a d’existir
+      taken: es ja en vos
+      too_long:
+        one: es tròp long (lo maximal es d'un caractèr)
+        other: es tròp long (maximal es %{count} de personatges)
+      too_short:
+        one: es tròp cuert (lo minim es un caractèr)
+        other: es tròp cuert (minim es %{count} de personatges)
+      wrong_length:
+        one: es la longitud incorrècta (li caldriá aver un caractèr)
+        other: es la longitud incorrècta (li caldriá èsser) %{count} de personatges)
+      other_than: li cal èsser desparièr %{count}
+    template:
+      body: "I a agut de problèmas amb los seguents camps:"
+      header:
+        one: S'es pas pogut plegar aquel/a %{model} perque i a 1 error
+        other: "S'es pas pogut plegar aquel/a %{model} perque i a agut %{count} d'errors"
+  helpers:
+    select:
+      prompt: Se vos plai causida
+    submit:
+      create: Crear %{model}
+      submit: Gardar %{model}
+      update: Actualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: "."
+      precision: 1
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: mil milions
+          million: milion
+          quadrillion: quadrilió
+          thousand: mil
+          trillion: trilió
+      format:
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", i "
+      two_words_connector: " i "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%A, %d de %B de %Y %H:%M:%S %z"
+      long: "%d de %B de %Y %H:%M"
+      short: "%d de %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm

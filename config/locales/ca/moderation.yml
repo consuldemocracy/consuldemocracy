@@ -46,7 +46,9 @@ ca:
     menu:
       flagged_comments: Comentarios
       flagged_debates: Debats
+      flagged_investments: Inversions pressupostàries
       proposals: Propostes ciutadanes
+      proposal_notifications: Propostes de notificacions
       users: Bloquejar usuaris
     proposals:
       index:
@@ -78,11 +80,14 @@ ca:
           with_ignored_flag: Marcats com revisats
         headers:
           moderate: Moderar
+          budget_investment: Inversió pressupostària
+        hide_budget_investments: Amagueu les inversions pressupostàries
         ignore_flags: Marcar como revisades
         order: Ordenar per
         orders:
           created_at: Més recents
           flags: Més denunciades
+        title: Inversions pressupostàries
     proposal_notifications:
       index:
         block_authors: Bloquejar autors
@@ -94,11 +99,13 @@ ca:
           ignored: Marcar como revisades
         headers:
           moderate: Moderar
+          proposal_notification: Notificació de la proposta
         hide_proposal_notifications: Ocultar Propostes
         ignore_flags: Marcar como revisades
         order: Ordenar per
         orders:
           created_at: Més recents
+          moderated: Moderada
         title: Notificacions de propostes
     users:
       index:

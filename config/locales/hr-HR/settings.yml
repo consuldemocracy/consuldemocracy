@@ -43,15 +43,15 @@ hr:
     url: "Glavni URL"
     url_description: "Glavni URL vaše stranice"
     org_name: "Ime stranice"
-    org_name_description: "Ovo ime pojavit će se na temi emaila, pomoćne stranice..."
+    org_name_description: "Ovo ime pojavit će se na temi e-maila, pomoćnim stranicama..."
     related_content_score_threshold: "Prag srodnih sadržaja"
     related_content_score_threshold_description: "Prema ocjeni glasova u srodnom sadržaju, sakriva sadržaj koji korisnici označuju kao nepovezan"
     hot_score_period_in_days: "Period (dana) koji se koristi po filtru 'najviše aktivan'"
     hot_score_period_in_days_description: "Filter 'najviše aktivan' koji se koristi u više sekcija biti će baziran na glasovima tokom zadnjih X dana"
-    mailer_from_name: "Ime pošiljatelja emaila"
-    mailer_from_name_description: "Ovo ime pojavit će se kao ime pošiljatelja u emailu poslanom s aplikacije"
+    mailer_from_name: "Ime pošiljatelja e-maila"
+    mailer_from_name_description: "Ovo ime pojavit će se kao ime pošiljatelja u e-mailu poslanom s aplikacije"
     mailer_from_address: "Email adresa pošiljatelja"
-    mailer_from_address_description: "Ova email adresa će se pojaviti u email-ovima poslanim od strane aplikacije"
+    mailer_from_address_description: "Ova e-mail adresa će se pojaviti u porukama koje pošalje aplikacija"
     meta_title: "Naziv stranice (SEO)"
     meta_title_description: "Naziv stranice <title>, korišten kako bi se poboljšao SEO"
     meta_description: "Opis stranice (SEO)"
@@ -65,21 +65,21 @@ hr:
       successful_proposal_id_description: Ovaj prijedlog se koristi kao referenca za uspješni prijedlog u potpornom broju te će biti prikazan u grafu na upravljačkoj ploči.
       poll_short_title: Glasovanje
       poll_short_title_description: Kratki opis značajke istraživanja. Dopušta korisnicima da stvore istraživanje o prijedlogu
-      poll_description: Opis glovanja
+      poll_description: Opis glasovanja
       poll_description_description: Detaljni opis značajki istraživanja
       poll_link: Dodatna poveznica s informacijama
       poll_link_description: Dodajte vezu za dodatne informacije u upravljačku ploču
       email_short_title: Email
-      email_short_title_description: 'Kratki opis o sadržaju email-a. Dopušta korisnicima da pošalju email kako bi promovirali svoj prijedlog. Možete pronaći sadržaj emaila u "/app/views/dashboard/mailer/forward.html.erb"'
+      email_short_title_description: 'Kratki opis o sadržaju e-maila. Dopušta korisnicima da pošalju e-mail kako bi promovirali svoj prijedlog. Možete pronaći sadržaj e-maila u "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Opis email-a
       email_description_description: Detaljan opis značajki email-a
       poster_short_title: Poster
-      poster_short_title_description: 'Kratki opis o sadržaju postera. Dopušta korisnicima da preuzmu postar u PDF formatu kako bi promovirali svoj prijedlog. Možete pronaći sadržaj postera u "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_short_title_description: 'Kratki opis o sadržaju postera. Dopušta korisnicima da preuzmu poster u PDF formatu kako bi promovirali svoj prijedlog. Možete pronaći sadržaj postera u "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Opis postera
       poster_description_description: Detaljni opis značajki postera
     analytics_url: "Analitika URL-a"
     proposal_notification_minimum_interval_in_days: "Minimalni interval (u danima) za autore prijedloga da pošalju nove obavijesti prijedloga"
-    proposal_notification_minimum_interval_in_days_description: "Broj dana u kojima korisnik može poslati obavijest za sve one koji podupiru prijelog"
+    proposal_notification_minimum_interval_in_days_description: "Broj dana u kojima korisnik može poslati obavijest za sve one koji podupiru prijedlog"
     direct_message_max_per_day: "Izravna Poruka je dostigla maksimalan broj po danu"
     direct_message_max_per_day_description: "Maksimalni broj izravnih poruka koje jedan korisnik može poslati po danu"
     feature:
@@ -89,10 +89,12 @@ hr:
       facebook_login_description: "Dopusti da se korisnik može prijaviti sa svojim Facebook računom"
       google_login: "Google prijava"
       google_login_description: "Dopusti da se korisnik može prijaviti sa svojim Google računom"
+      wordpress_login: "Wordpress prijava"
+      wordpress_login_description: "Dopusti korisnicima da se prijave svojim Wordpress računom"
       featured_proposals: "Istaknuti prijedlozi"
       featured_proposals_description: "Prikaži istaknute prijedloge na indeksnoj stranici prijedloga"
       signature_sheets: "Potpisne liste"
-      signature_sheets_description: "Dopušta dodavanje Administracijskog panela potpisa koji se sakupljaju na stranicu Prijedloga i investicijskih projekata Participativnih Budžeta"
+      signature_sheets_description: "Dopušta dodavanje Administracijskog panela potpisa koji se sakupljaju na stranicu Prijedloga i investicijskih projekata Participativnog proračuna"
       user:
         recommendations: "Preporuke"
         recommendations_description: "Prikaži korisničke preporuke na glavnoj stranici koji su bazirani na oznakama sljedećih stavaka"
@@ -107,7 +109,7 @@ hr:
       map: "Geolokacija prijedloga i investicijskih budžeta"
       map_description: "Omogućuje geolokaciju prijedloga i investicijskih projekata"
       allow_images: "Dopustite učitavanje i prikazivanje slika"
-      allow_images_description: "Dopušta korisnicima učitavanje slika kada žele stvoriti prijedloge i investicijske projekte iz Participativnog Budžeta"
+      allow_images_description: "Dopušta korisnicima učitavanje slika kada žele stvoriti prijedloge i investicijske projekte iz Participativnog proračuna"
       allow_attached_documents: "Dopusti učitavanje i prikazivanje priloženih dokumenata"
       allow_attached_documents_description: "Dopušta korisnicima učitavanje dokumenata kada žele stvoriti prijedloge i investicijske projekte iz Participativnog Budžeta"
       guides: "Priručnik za stvaranje prijedloga ili investicijskih projekata"
@@ -116,6 +118,50 @@ hr:
       public_stats_description: "Prikazuje javne statistike u Administrativnom panelu"
       help_page: "Stranica za pomoć"
       help_page_description: 'Prikazuje izbornik Pomoć koji sadrži stranicu s odjeljkom s informacijama o svakoj omogućenoj značajki. U odjeljcima "Prilagođene stranice" i "Blokovi za prilagođeni sadržaj" mogu se izraditi prilagođene stranice i izbornici'
+      remote_translations: "Prijevod na daljinu"
+      remote_translations_description: "Prikazuje dugme koje omogućuje korisnicima da zatraže prijevod u slučajevima kada nema sadržaja na njihovom jeziku."
+      translation_interface: "Sučelje za prijevod"
+      translation_interface_description: "Prikazuje sučelje za priručni prijevod koje korisnicima omogućuje pristup njihovom sadržaju na svim dostupnim jezicima aplikacije. Ova mogućnost tiče se samo korisničkih prijavnica i samostalno će uvijek biti aktivna u administracijskoj ploči."
+      remote_census: "Konfiguracija veze za udaljeni cenzus (SOAP)"
+      remote_census_description: "Dopušta konfiguraciju veze za udaljeni cenzus svake institucije"
+      valuation_comment_notification: "Obavijest o komentaru procjene"
+      valuation_comment_notification_description: "Pošaljite e-mail poruku svim povezanim korisnicima osim komentatoru procjene za proračunsko ulaganje kada se pojavi novi komentar procjene"
+      graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "E-mail poruke s obavijestima o kontrolnoj ploči"
+        notification_emails_description: "Omogući slanje e-mail poruka s obavijestima o kontrolnoj ploči autorima prijedloga"
+    remote_census:
+      general:
+        endpoint: "Krajnja točka"
+        endpoint_description: "Naziv poslužitelja na kojem je dostupan servis o cenzusu (wsdl)"
+      request:
+        method_name: "Naziv metode zahtjeva"
+        method_name_description: "Naziv metode zahtjeva koji prihvaća web servis City Census."
+        structure: "Struktura zahtjeva"
+        structure_description: 'Struktura zahtjeva koji zaprima web servis City Census Gradskog vijeća. "Statičke" vrijednosti ovoga zahtjeva trebaju biti popunjene. Vrijednosti vezane uz tip dokumenta, broj dokumenta, datum rođenja i poštanski broj trebaju biti ništavne. Primjer valjanog oblikovanja: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Put za Vrstu dokumenta"
+        document_type_description: "Put u strukturi zahtjeva koji šalje Vrstu dokumenta. NE ISPUNJAVAJTE ukoliko web servis ne traži Vrstu dokumenta za provjeru korisnika."
+        document_number: "Putanja za broj dokumenta"
+        document_number_description: "Putanja u strukturi zahtjeva koji šalje broj dokumenta. NE ISPUNJAVAJTE ukoliko web servis ne traži broj dokumenta za provjeru korisnika."
+        date_of_birth: "Putanja za datum rođenja"
+        date_of_birth_description: "Putanja u strukturi zahtjeva koji šalje datum rođenja. NE ISPUNJAVAJTE ukoliko web servis ne traži Datum rođenja za provjeru korisnika."
+        postal_code: "Putanja za poštanski broj"
+        postal_code_description: "Putanja u strukturi zahtjeva koji šalje poštanski broj. NE ISPUNJAVAJTE ukoliko web servis ne traži poštanski broj za provjeru korisnika."
+      response:
+        date_of_birth: "Putanja za datum rođenja"
+        date_of_birth_description: "U kojoj je putanji odgovora korisnikov datum rođenja?"
+        postal_code: "Putanja za poštanski broj"
+        postal_code_description: "U kojoj je putanji odgovora korisnikov poštanski broj?"
+        district: "Putanja za županiju"
+        district_description: "U kojoj je putanji odgovora korisnikova županija?"
+        gender: "Putanja za spol"
+        gender_description: "U kojoj je putanji odgovora korisnikov spol?"
+        name: "Putanja za Ime"
+        name_description: "U kojoj je putanji odgovora korisnikovo ime?"
+        surname: "Putanja za prezime"
+        surname_description: "U kojoj je putanji odgovora korisnikovo prezime?"
+        valid: "Uvjeti za prepoznavanje ispravnog odgovora"
+        valid_description: "Koja putanja odgovora mora biti zadovoljena da bi se smatrala ispravnim odgovorom i potvrđena od strane korisnika"
     map:
       latitude: "Širina"
       latitude_description: "Širina prikazana na mapi"

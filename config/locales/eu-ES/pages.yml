@@ -1,1 +1,65 @@
 eu:
+  pages:
+    help:
+      title: "%{org} herri partaidetzarako plataforma bat da"
+      guide: "Gida honek %{org}-k dituen atalak zeratarako diren eta nola funtzionatzen duten azaltzen du."
+      menu:
+        debates: "Eztabaidak"
+        proposals: "Proposamenak"
+        budgets: "Partaidetzazko aurrekontuak"
+        polls: "Bozkaketak"
+        other: "Beste bat información de interés"
+        processes: "Legegintza prosezuak"
+      debates:
+        title: "Eztabaidak"
+        description: "%{link} atalean beste herritar batzuekin, udalerriarekin zerikusia dituzten gai ezberdinei buruz, zure iritzia partekatu eta ezagutarazi dezakezu. Halaber, ideien sorlekua izan daiteke. Gero, ideia hauek %{org}-ko beste atal batzuen bitartez bultza genitzake Udaletxeak ekintza zehatzak garatu ditzan."
+        link: "herri eztabaidak"
+        feature_link: "%{org}-(e)n erregistratu"
+        image_alt: "Eztabaidak ebaluatzeko botoiak"
+        figcaption: 'Eztabaidak ebaluatzeko "Ados nago" y "Ez nago ados" botoiak.'
+      proposals:
+        title: "Proposamenak"
+        description: "%{link} atalean Udaletxeak garatzeko proposamenak aurkeztu ditzakezu. Proposamenak herritarren babesak jasotzen dituzte eta babes nahikoa dituztenean herri-bozkaketetan bozkatu egiten dira. Udaletxeak, herri bozkaketetan baiestutako proposamenak, garatu beharko ditu."
+        link: "propuestas ciudadanas"
+        image_alt: "Proposamenak babesteko botoia"
+      budgets:
+        title: "Partaidetzazko aurrekontuak"
+        description: "%{link} atala herritarrek aurrekontuaren zati bat zuzenki erabakitzeko bidea da."
+        link: "partaidetzazko aurrekontuak"
+        image_alt: "Partaidetzako aurrekontuaren fase ezberdinak"
+      polls:
+        title: "Bozkaketak"
+        description: "Proposamen batek duen babesa %1 denean eta bozkaketara pasatzen denean edo Udaletxeak herritarrek erabakitzeko gai bat proposatzen duenean \"%{link} atala aktibatzen da.\""
+        link: "herri bozkaketak"
+        feature_1: "Bozkaketetan parte hartu ahal izateko %{link} eta zure kontua egiaztatu behar duzu."
+        feature_1_link: "%{org_name}-(e)n erregistratu"
+      processes:
+        title: "Legegintza prosezuak"
+        description: "%{link} atalean herritarrek herritarrengan eragina dituzten araudien lantze eta aldatze prosezuan parte hartzen dute. Herritarrek beraien iritzia ezagutarazi dezkakete aurretiko eztabaidetan."
+        link: "legegile prosezuak"
+      faq:
+        title: "Arazo teknikoak?"
+        description: "Ohiko zalantzak irakurri eta zure zalantzak argitu."
+        button: "Ohiko zalantzak ikusi"
+        page:
+          title: "Ohiko Zalantzak"
+          description: "Orri hau erabili hemengo erabiltzeileei ohiko zalantzak argizeko."
+      other:
+        title: "Beste informazio interesgarri bat"
+        how_to_use: "Zure udalerrian %{org_name} erabili"
+      how_to_use:
+        text: |-
+          Zure udalerrian modu librean erabili edo hobetzen lagundu gaitzazu, software librea da.
+
+          Gobernu irekia den web atari honek [CONSUL aplikazioa](https://github.com/consul/consul 'github consul') erabiltzen du software librea delako, [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ) lizentzia du, honek, edonork bere kodea libreki erabil dezakeela esan nahi du. Kopiatu, xehetasunak begiratu, eraldatu, nahi dituen aldaketak eginda birbanatu (besteak berdin egin dezaten mantenduz). Liberatzen denean aberatsagoa eta hobeago dela uste baitugu.
+
+          Programatzailea bazara, kodea begiratu dezakezu eta hobetzen lagundu [CONSUL aplikazioa](https://github.com/consul/consul 'github consul') -(e)n.
+      titles:
+        how_to_use: Zure Udalerrian erabili
+    titles:
+      help: "%{org} zer da? - Herri partaidetza"
+    verify:
+      info: "Zure kontua egiaztatzeko erregistratu zineneko datuak sartu:"
+      info_code: "Orain zure eskutitzan jaso duzun kodea sartu:"
+      submit: Nire kontua egiaztatu
+      title: Zure kontua egiaztatu

@@ -1,0 +1,23 @@
+<section class="proposals-phase">
+  <header>
+    <h3><%= t("legislation.summary.proposals_phase") %></h3>
+    <h3><%= t("legislation.summary.proposals", count: proposals.count) %></h3>
+  </header>
+
+  <% if proposals.any? %>
+    <div>
+      <% proposals.sort_by_supports.each do |proposal| %>
+        <div class="proposal-summary">
+          <h4>
+            <%= link_to proposal.title, polymorphic_path(proposal) %>
+          </h4>
+          <p><%= t("legislation.summary.votes", count: proposal.votes_score) %></p>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="callout primary">
+      <p><%= t("legislation.processes.proposals.empty_proposals") %></p>
+    </div>
+  <% end %>
+</section>

@@ -260,6 +260,10 @@ zh-CN:
         back: 返回%{org}
         title: 管理
         description: 欢迎使用%{org} 管理面板。
+      actions:
+        index:
+          active: '是'
+          inactive: '不是'
     debates:
       index:
         title: 隐藏的辩论
@@ -935,15 +939,6 @@ zh-CN:
           without_confirmed_hide: 有待
         title: 隐藏的提议
         no_hidden_proposals: 没有隐藏的提议。
-    proposal_notifications:
-      index:
-        filter: 过滤器
-        filters:
-          all: 所有
-          with_confirmed_hide: 已确认
-          without_confirmed_hide: 有待
-        title: 隐藏的通知
-        no_hidden_proposals: 没有隐藏的通知。
     settings:
       flash:
         updated: 价值已更新

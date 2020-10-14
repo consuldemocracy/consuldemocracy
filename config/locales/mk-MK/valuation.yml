@@ -1,1 +1,68 @@
 mk:
+  valuation:
+    header:
+      title: Вредност
+    menu:
+      title: Вредност
+      budgets: Партиципативни буџети
+    budgets:
+      index:
+        title: Партиципативни буџети
+        filters:
+          current: Отворено
+          finished: Завршено
+        table_name: Име
+        table_phase: Фаза
+        table_assigned_investments_valuation_open: Проекти за инвестирање означени со вредност отворено
+        table_actions: Акции
+        evaluate: Евалуирај
+        no_budgets: "Нема буџети"
+    budget_investments:
+      index:
+        headings_filter_all: Сите наслови
+        filters:
+          valuation_open: Отворено
+          valuating: Подлежи на вреднување
+          valuation_finished: Завршено вреднување
+        assigned_to: "Одредено на %{valuator}"
+        title: Проекти за инвестирање
+        edit: Измени досие
+        table_id: ИД
+        table_title: Наслов
+        table_heading_name: Име на наслов
+        table_actions: Акции
+        no_investments: "Нема инвестициски проекти."
+      show:
+        back: Назад
+        title: Проекти за инвестирање
+        info: Информации за авторот
+        by: Испратено од
+        sent: Испратено на
+        heading: Наслов
+        dossier: Досие
+        edit_dossier: Измени досие
+        price: Цена
+        price_first_year: Цена за време на првата година
+        currency: "евра"
+        feasibility: Изводливост
+        feasible: Изводливо
+        unfeasible: Неизводливо
+        undefined: Недефинирано
+        valuation_finished: Завршено вреднување
+        duration: Временски рок
+        responsibles: Одговорни
+        assigned_admin: Одреден админ
+        assigned_valuators: Одредени вреднувачи
+        preview: Преглед на инвестицијата
+      edit:
+        dossier: Досие
+        price: "Цена (%{currency})"
+        price_first_year: "Цена за време на првата година (%{currency}) <small>(опционално, податоците не се јавни)</small>"
+        feasibility: Изводливост
+        valuation_finished_alert: "Дали сте сигурни дека сакате да го обележите овој извештај како комплетиран? Ако го направите тоа, потоа не може да биде променет."
+        not_feasible_alert: "Електронска пошта ќе биде веднаш испратена на авторот на проектот со извештај за неизводливост."
+        save: Зачувај промени
+      notice:
+        valuate: "Досието е ажурирано"
+      valuation_comments: Коментари за вреднување
+      not_in_valuating_phase: Инвестициите можат да бидат вреднувани кога Буџетот е во фаза на вреднување

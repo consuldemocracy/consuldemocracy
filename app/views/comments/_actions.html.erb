@@ -1,5 +1,5 @@
-<span id="flag-actions-<%= dom_id(comment) %>" class="js-flag-actions">
-  <%= render "comments/flag_actions", comment: comment %>
+<span class="js-flag-actions">
+  <%= render "shared/flag_actions", flaggable: comment, divider: true %>
 </span>
 
 <span class="js-moderation-actions">

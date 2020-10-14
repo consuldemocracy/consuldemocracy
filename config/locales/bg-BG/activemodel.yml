@@ -2,7 +2,11 @@ bg:
   activemodel:
     models:
       verification:
+        residence: "Местожителство"
         sms: "СМС"
+      local_census_records/import:
+        one: Въвеждане запис на местното преброяване
+        other: Въведени записи на местното преброяване
     attributes:
       verification:
         residence:
@@ -27,7 +31,7 @@ bg:
         document_type: "Вид на документа"
         postal_code: "Пощенски код"
       verification/sms:
-        confirmation_code: "Въведете кода, който сте получили на Вашете мобилно устройство"
+        confirmation_code: "Въведете кода, който сте получили на Вашето мобилно устройство"
       officing/residence:
         document_type: "Вид на документа"
         document_number: "Номер на документа (включително букви)"
@@ -40,3 +44,4 @@ bg:
           attributes:
             file:
               extension: "Файловият формат е грешен. Разрешеният файлов формат е: %{valid_extensions}."
+              headers: "Зададените файлови заглавки са грешни. Файловите заглавки трябва да имат следните имена: %{required_headers}."

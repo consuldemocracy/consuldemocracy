@@ -9,7 +9,7 @@
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <% if local_assigns[:preview].nil? %>
     <span class="js-flag-actions">
-      <%= render "budgets/investments/flag_actions", investment: investment %>
+      <%= render "shared/flag_actions", flaggable: investment %>
     </span>
   <% end %>
 </div>
