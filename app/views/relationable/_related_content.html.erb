@@ -2,7 +2,7 @@
 
   <div class="margin-bottom">
     <h2 class="inline-block">
-      <%= t("related_content.title") %>&nbsp;<span>(<%= @related_contents.size %>)</span>
+      <%= t("related_content.title") %>&nbsp;<span>(<%= @related_contents ? @related_contents.size : 0 %>)</span>
     </h2>
     <% if current_user %>
       <a>
