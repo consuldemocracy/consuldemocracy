@@ -436,7 +436,7 @@ hr:
         title: "Učitaj dokument"
         submit_button: "Učitaj"
       index:
-        new_link: "Dodaj novi dokument"
+        new_link: "Dodajte novi dokument"
         no_documents: "Ne postoje dokumenti."
         title: "Dokumenti"
         format: "Format"
@@ -1062,7 +1062,7 @@ hr:
         title_proposal: "Stvori pitanje"
       answers:
         images:
-          add_image: "Dodaj sliku"
+          add_image: "Dodajte sliku"
           save_image: "Spremi sliku"
       show:
         proposal: Izvorni prijedlog
