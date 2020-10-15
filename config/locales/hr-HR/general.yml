@@ -139,7 +139,7 @@ hr:
       form:
         submit_button: Započnite raspravu
       info: Ako želite napraviti prijedlog, onda je ova pogrešna sekcija, slijedite %{info_link}.
-      info_link: izradi novi prijedlog
+      info_link: izradite novi prijedlog
       more_info: Više informacija
       recommendation_four: Uživajte na ovom mjestu, nek se i vaš glas čuje.
       recommendation_one: Ne koristite velika početna slova za naslove rasprave niti cijele rečenice. Na internetu se takav način može shvatiti kao vikanje, a nitko ne želi da se na njega viče.
@@ -199,7 +199,7 @@ hr:
     site_customization/content_block: blokiranje sadržaja
     site_customization/page: stranica
   geozones:
-    none: Svi gradovi
+    none: Cijeli grad
   layouts:
     application:
       chrome: Google Chrome
@@ -316,7 +316,7 @@ hr:
   proposals:
     create:
       form:
-        submit_button: Stvorite prijedlog
+        submit_button: Izradite prijedlog
     created:
       title: Čestitamo! Napravili ste prvi korak.
       motivation: "Važno je spremiti početak kampanje za vaš prijedlog kako bi bio uspješan. Prvih par dana su odlučujuča."
@@ -410,13 +410,13 @@ hr:
         description: Prijedlozi građana prilika su da susjedstva i kolektivi izravno odluče kako žele da njihov grad izgleda, nakon dobivanja dovoljne potpore i podnošenja glasova građana.
     new:
       form:
-        submit_button: Stvorite prijedlog
+        submit_button: Izradite prijedlog
       more_info: Kako prijedlozi građana funkcioniraju?
       recommendation_one: Ne koristite velika početna slova za naslove prijedloga niti cijele rečenice. Na internetu se takav način može shvatiti kao vikanje, a nitko ne želi da se na njega viče.
       recommendation_three: Uživajte na ovom mjestu, nek se i vaš glas čuje.
       recommendation_two: Bilo koji prijedlog ili komentar koji sugerira ilegalne aktivnosti bit će obrisan, kao i onaj koji ometa prostor rasprave. Sve je ostalo dozvoljeno.
       recommendations_title: Preporuke za stvaranje rasprave
-      start_new: Stvori novi prijedlog
+      start_new: Izradite novi prijedlog
     notice:
       retired: Prijedlog je povučen
       published: Prijedlog je objavljen
@@ -632,7 +632,7 @@ hr:
       title: "Ankete"
       participate_button: "Sudjelujte u ovoj anketi"
       participate_button_expired: "Anketa završena"
-      no_geozone_restricted: "Svi gradovi"
+      no_geozone_restricted: "Cijeli grad"
       geozone_restricted: "Distrikti"
       geozone_info: "Mogu sudjelovati građani u Cenzusu od: "
       already_answer: "Vi ste već sudjelovali u ovom glasanju"
@@ -720,7 +720,7 @@ hr:
     author_info:
       author_deleted: Korisnik obrisan
       email_deleted: E-mail poruka izbrisana
-    back: Idi nazad
+    back: Vrati se
     check: Odaberi
     check_all: Svi
     check_none: Niti jedan
