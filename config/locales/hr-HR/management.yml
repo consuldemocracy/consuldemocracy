@@ -79,7 +79,7 @@ hr:
     proposals:
       alert:
         unverified_user: Korisnik nije verificiran
-      create_proposal: Stvorite prijedlog
+      create_proposal: Izradite prijedlog
       print:
         print_button: Ispiši
       index:
