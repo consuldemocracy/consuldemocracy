@@ -122,7 +122,7 @@ hr:
           username_label: Korisničko ime
           username_note: Ime koje se pojavljuje pored Vaše objave
         success:
-          back_to_index: Razumijem; vrati na glavnu stranicu
+          back_to_index: Razumijem; vrati se na glavnu stranicu
           instructions_1: Molimo vas, <b>provjerite vaš e-poštu</b> - poslali smo vam <b>poveznicu za potvrdu vašega računa</b>.
           instructions_2: Nakon potvrde, možete sudjelovati.
           thank_you: Hvala vam na registraciji na stranici. Sada morate <b>potvrditi vašu e-mail adresu</b>.
