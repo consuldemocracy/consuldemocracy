@@ -874,7 +874,7 @@ footer {
 
 .footer {
   background: #2d313b;
-  padding-top: $line-height * 3;
+  padding-top: $line-height * 2;
 
   .footer-title {
     margin: $line-height 0;
@@ -908,7 +908,7 @@ footer {
 .subfooter {
   border-top: 0;
   font-size: $base-font-size;
-  margin-top: $line-height * 4;
+  margin-top: $line-height * 2;
   padding: $line-height 0;
 
   ul {
