@@ -599,10 +599,10 @@ header {
     }
 
     h1 {
-      font-size: rem-calc(60);
+      font-size: rem-calc(48);
 
       @include breakpoint(large) {
-        font-size: rem-calc(90);
+        font-size: rem-calc(60);
       }
     }
   }
