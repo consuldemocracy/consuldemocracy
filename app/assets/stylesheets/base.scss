@@ -476,7 +476,7 @@ header {
 
   @include breakpoint(medium) {
     padding-bottom: $line-height;
-    padding-top: $line-height * 2;
+    padding-top: $line-height;
   }
 
   &::before {
