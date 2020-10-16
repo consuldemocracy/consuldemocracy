@@ -103,6 +103,9 @@ describe "Stats" do
 
         create(:budget_investment, heading: create(:budget_heading, group: group_2), voters: [create(:user)])
         create(:budget_investment, heading: heading_all_city, voters: [create(:user), create(:user)])
+        investment_retired_supports = create(:budget_investment, heading: heading_all_city)
+
+        3.times { create(:vote, votable: investment_retired_supports, vote_flag: false) }
 
         visit admin_stats_path
         click_link "Participatory Budgets"
