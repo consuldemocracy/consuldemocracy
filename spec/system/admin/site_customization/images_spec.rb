@@ -9,7 +9,7 @@ describe "Admin custom images" do
   scenario "List of customizable images" do
     valid_images = SiteCustomization::Image::VALID_IMAGES
     %w[logo_header social_media_icon social_media_icon_twitter apple-touch-icon-200 budget_execution_no_image
-       budget_no_image map logo_email header_homepage auth_bg].each do |image_name|
+       budget_no_image map logo_email auth_bg].each do |image_name|
       expect(valid_images.keys).to include(image_name)
     end
   end
@@ -119,13 +119,13 @@ describe "Admin custom images" do
       click_link "Custom images"
     end
 
-    within("tr#image_header_homepage") do
-      attach_file "site_customization_image_image", "spec/fixtures/files/header_homepage_large.jpg"
+    within("tr#image_logo_header") do
+      attach_file "site_customization_image_image", "spec/fixtures/files/example_large.jpg"
       click_button "Update"
     end
 
-    expect(page).to have_css("tr#image_header_homepage img[src*='header_homepage_large.jpg']")
-    expect(page).to have_css("img[src*='header_homepage_large.jpg']", count: 1)
+    expect(page).to have_css("tr#image_logo_header img[src*='example_large.jpg']")
+    expect(page).to have_css("img[src*='example_large.jpg']", count: 1)
   end
 
   scenario "Upload image with same required dimensions is valid" do
@@ -135,13 +135,13 @@ describe "Admin custom images" do
       click_link "Custom images"
     end
 
-    within("tr#image_header_homepage") do
-      attach_file "site_customization_image_image", "spec/fixtures/files/header_homepage.jpg"
+    within("tr#image_budget_no_image") do
+      attach_file "site_customization_image_image", "spec/fixtures/files/example.jpg"
       click_button "Update"
     end
 
-    expect(page).to have_css("tr#image_header_homepage img[src*='header_homepage.jpg']")
-    expect(page).to have_css("img[src*='header_homepage.jpg']", count: 1)
+    expect(page).to have_css("tr#image_budget_no_image img[src*='example.jpg']")
+    expect(page).to have_css("img[src*='example.jpg']", count: 1)
   end
 
   scenario "Upload an image with less required dimensions is invalid" do
@@ -151,13 +151,13 @@ describe "Admin custom images" do
       click_link "Custom images"
     end
 
-    within("tr#image_header_homepage") do
-      attach_file "site_customization_image_image", "spec/fixtures/files/header_homepage_small.jpg"
+    within("tr#image_budget_execution_no_image") do
+      attach_file "site_customization_image_image", "spec/fixtures/files/example_small.jpg"
       click_button "Update"
     end
 
-    expect(page).to have_content("Width must be 500px")
-    expect(page).to have_content("Height must be 400px")
+    expect(page).to have_content("Width must be 800px")
+    expect(page).to have_content("Height must be 600px")
   end
 
   scenario "Delete image" do

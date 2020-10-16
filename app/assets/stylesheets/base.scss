@@ -591,11 +591,11 @@ header {
 
     @include breakpoint(large) {
       background: none;
-      background-position: right -150px bottom 0;
+      background-position: 85% 30%;
       background-repeat: no-repeat;
       background-size: contain;
       margin-top: $line-height * 2;
-      min-height: $line-height * 30;
+      min-height: $line-height * 20;
     }
 
     h1 {
