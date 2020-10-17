@@ -183,7 +183,7 @@ nl:
       consul: Consul
       consul_url: https://github.com/consul/consul
       contact_us: Voor tech support klik
-      copyright: Consul, %{year}
+      copyright: "Consul versie %{version}, %{year}"
       description: Deze site gebruikt %{consul}; een %{open_source} toepassing.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
