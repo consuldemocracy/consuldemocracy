@@ -119,6 +119,7 @@ ignore_missing:
   - "errors.messages.too_long"
   - "devise.failure.invalid"
   - "devise.registrations.destroyed"
+  - "devise.confirmations.user.already_confirmed"
   - "devise.password_expired.*"
   - "seeds.settings.*"
   - "budgets.progress_bar.you_have_assigned"

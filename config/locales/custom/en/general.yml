@@ -45,3 +45,6 @@ en:
       vote_registered: "Your vote has been registered correctly."
   shared:
     expired: "Expired"
+  comments:
+    delete_comment: "Delete comment"
+    confirm_delete_comment: "Are you sure? This action will delete this comment. You can't undo this action."

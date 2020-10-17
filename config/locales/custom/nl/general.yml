@@ -228,6 +228,8 @@ nl:
         other: "%{count} reacties (verbergen)"
         zero: "Geen reacties"
       user_deleted: "Deelnemer verwijderd"
+    delete_comment: "Verwijder reactie"
+    confirm_delete_comment: "Weet u het zeker? Hiermee wordt uw reactie verwijderd. Dit kan niet ongedaan worden gemaakt."
   comments_helper:
     comments_title: "Reacties"
   users:

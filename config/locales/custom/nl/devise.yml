@@ -24,6 +24,8 @@ nl:
       confirmed: "Je account is geactiveerd"
       send_instructions: "Je ontvangt via e-mail instructies om jouw account te activeren"
       send_paranoid_instructions: "Als je e-mailadres bij ons bekend is, ontvangt je hierop instructies hoe je jouw account kunt activeren"
+      user:
+        already_confirmed: "Je mailadres is al geverifieerd. Je kunt hiermee nu inloggen."
     failure:
       already_authenticated: "Je bent al aangemeld"
       inactive: "Je account is nog niet geactiveerd"

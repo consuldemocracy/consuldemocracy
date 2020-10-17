@@ -428,6 +428,14 @@ aside {
   }
 }
 
+.delete-comment {
+  color: $brand;
+}
+
+.callout a {
+  font-size: $small-font-size !important;
+}
+
 // 1. Header
 // --------------------
 
@@ -2358,7 +2366,8 @@ footer {
   }
 
   .auth-image {
-    background: $brand image-url("auth_bg.png");
+    background-color: transparent;
+    background-size: auto;
 
     @include breakpoint(medium) {
       min-height: rem-calc(1390);

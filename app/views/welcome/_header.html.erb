@@ -1,5 +1,6 @@
 <% if header.present? %>
-  <div class="jumbo highlight" style="background-image: url(<%= image_path_for("header_homepage.png") %>)">
+  <div class="jumbo highlight"
+       style="background-image: url(<%= asset_url(image_path_for("header_homepage.png")) %>)">
     <div class="row">
       <div class="small-12 large-7 column">
         <span><%= header.label %></span>

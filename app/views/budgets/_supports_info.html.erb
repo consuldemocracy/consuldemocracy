@@ -13,11 +13,11 @@
     <div class="callout">
       <h3>
         <% if current_user %>
-          <% if budget_investments_total_supports(current_user) == 1 %>
+          <% total_supports = budget_investments_total_supports(current_user, budget) %>
+          <% if total_supports == 1 %>
             <%= sanitize(t("budgets.index.supports_info.supported_one")) %>
           <% else %>
-            <%= sanitize(t("budgets.index.supports_info.supported",
-                            count: budget_investments_total_supports(current_user))) %>
+            <%= sanitize(t("budgets.index.supports_info.supported", count: total_supports)) %>
           <% end %>
         <% else %>
           <%= sanitize(t("budgets.index.supports_info.supported_not_logged_in")) %>
