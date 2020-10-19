@@ -36,7 +36,7 @@ en-GB:
           moderate: Модерувати
         hide_debates: Приховати обговорення
         ignore_flags: Позначити як переглянуте
-        order: Сортування
+        order: Порядок
         orders:
           created_at: Найновіші
           flags: З найбільшою кількістю відміток
@@ -77,7 +77,7 @@ en-GB:
         filters:
           all: Усі
           pending_flag_review: В очікуванні
-          with_ignored_flag: Позначине як переглянуте
+          with_ignored_flag: Позначити як переглянуте
         headers:
           moderate: Модерувати
           budget_investment: Бюджетна інвестиція
