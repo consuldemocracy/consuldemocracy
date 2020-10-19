@@ -11,6 +11,7 @@ en-GB:
           with_ignored_flag: Позначити як переглянуте
         headers:
           comment: Коментар
+          moderate: Модерувати
         hide_comments: Приховати коментарі
         ignore_flags: Позначити як переглянуте
         order: Порядок
@@ -32,9 +33,10 @@ en-GB:
           with_ignored_flag: Позначити як переглянуте
         headers:
           debate: Обговорення
+          moderate: Модерувати
         hide_debates: Приховати обговорення
         ignore_flags: Позначити як переглянуте
-        order: Порядок
+        order: Сортування
         orders:
           created_at: Найновіші
           flags: З найбільшою кількістю відміток
@@ -58,6 +60,7 @@ en-GB:
           pending_flag_review: Очікують на розгляд
           with_ignored_flag: Позначити як переглянуте
         headers:
+          moderate: Модерувати
           proposal: Пропозиція
         hide_proposals: Приховати пропозиції
         ignore_flags: Позначити як переглянуте
