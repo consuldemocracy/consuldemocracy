@@ -316,6 +316,7 @@ en-GB:
         no_progress_bars: "Індикатори прогресу відсутні"
         new_progress_bar: "Створити новий індикатор прогресу"
         primary: "Головний індикатор прогресу"
+        table_id: "ID"
         table_kind: "Тип"
         table_title: "Заголовок"
         table_percentage: "Поточний прогрес"
@@ -333,6 +334,7 @@ en-GB:
         notice: "Індикатор прогресу видалено"
     comments:
       index:
+        id: "ID"
         content: "Вміст"
         author: "Автор"
         commentable_type: "Тип"
@@ -412,6 +414,7 @@ en-GB:
           success: Завдання позначене як вирішене.
     debates:
       index:
+        id: ID
         author: Автор
         title: Обговорення
         no_debates: Обговорень немає.
@@ -471,7 +474,7 @@ en-GB:
           error: Неможливо створити процес
         update:
           notice: 'Процес оновлено. <a href="%{link}">Click to visit</a>'
-          error: Немоливо оновити процес
+          error: Неможливо оновити процес
         destroy:
           notice: Процес видалено
         edit:
@@ -506,6 +509,7 @@ en-GB:
         proposals:
           select_order: Сортувати за
           orders:
+            id: Id
             title: Назва
             supports: Загальна підтримка
         process:
@@ -531,6 +535,7 @@ en-GB:
         index:
           title: Назва
           back: Назад
+          id: Id
           supports: Загальна підтримка
         form:
           custom_categories: Категорії
@@ -900,7 +905,7 @@ en-GB:
         title: "Групи оцінювачів"
         new: "Створити групи оцінювачів"
         name: "Ім'я"
-        members: "Члени"
+        members: "Учасники"
         no_groups: "Групи оцінювачів відсутні"
       show:
         title: "Група оцінювачів: %{group}"
@@ -910,7 +915,7 @@ en-GB:
         edit: "Зберегти групу оцінювачів"
     poll_officers:
       index:
-        title: Інспектори опитувань
+        title: Посадові особи опитувань
       officer:
         add: Додати
         delete: Видалити позицію
@@ -921,7 +926,7 @@ en-GB:
         email_placeholder: Пошук користувача за електронною адресою
         search: Пошук
         user_not_found: Користувача не знайдено
-        help: "Щоб додати або усунути інспекторів опитувань, скористайтеся формою нижче."
+        help: "Щоб додати або усунути посадових осіб голосувань, скористайтеся формою нижче."
     poll_officer_assignments:
       index:
         officers_title: "Список інспекторів"
@@ -1194,6 +1199,7 @@ en-GB:
     proposals:
       index:
         title: Пропозиції
+        id: ID
         author: Автор
         select: Обрати
         selected: Вибрано
@@ -1435,6 +1441,7 @@ en-GB:
         help: "Коли користувач подає пропозицію, наступні теми пропонуються як теги (за замовчуванням)."
     users:
       columns:
+        id: ID
         erase_reason: Видалити причину
         name: Ім'я
         email: Електронна адреса
@@ -1573,6 +1580,7 @@ en-GB:
     audits:
       title: "Журнал змін"
       changes: "Список змін"
+      id: "ID"
       field: "Сфера"
       new_value: "Нова вартість"
       old_value: "Стара вартість"
