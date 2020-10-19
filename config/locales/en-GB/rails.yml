@@ -30,6 +30,10 @@ en-GB:
       - Четвер
       - П'ятниця
       - Субота
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
       - 
       - Січень
@@ -91,6 +95,7 @@ en-GB:
       second: Секунди
       year: Рік
   errors:
+    format: "%{attribute} %{message}"
     messages:
       accepted: повинно бути прийнято
       blank: не має бути порожнім
@@ -135,6 +140,13 @@ en-GB:
       submit: Зберегти %{model}
       update: Оновити %{model}
   number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
     human:
       decimal_units:
         units:
