@@ -59,7 +59,12 @@ describe RelatedContent do
     end
 
     it "returns related contents without retired proposals" do
-      create(:related_content, parent_relationable: parent_relationable, child_relationable: create(:proposal, :retired), author: build(:user))
+      create(
+        :related_content,
+        parent_relationable: parent_relationable,
+        child_relationable: create(:proposal, :retired),
+        author: build(:user)
+      )
       expect(parent_relationable.relationed_contents).to eq [child_relationable]
     end
   end
