@@ -7,13 +7,13 @@ en-GB:
       official_level_4_name: Офіційна посада 4
       official_level_5_name: Офіційна посада 5
     geozones:
-      north_district: Північна дільниця
-      west_district: Західна дільниця
-      east_district: Східна дільниця
-      central_district: Центральна дільниця
+      north_district: Північний район
+      west_district: Західний район
+      east_district: Східний район
+      central_district: Центральний район
     organizations:
       human_rights: Права людини
-      neighborhood_association: Об'єднання мешканців дільниці
+      neighborhood_association: Комітет мешканців
     categories:
       associations: Об'єднання
       culture: Культура
@@ -31,24 +31,24 @@ en-GB:
       security_emergencies: Безпека і надзвичайні ситуації
       environment: Навколишнє середовище
     budgets:
-      budget: Бюджет участі
+      budget: Партисипативний бюджет
       currency: '€'
       groups:
         all_city: Все місто
-        districts: Дільниці
+        districts: Райони
       valuator_groups:
         culture_and_sports: Культура і спорт
         gender_and_diversity: Гендерний баланс та різноманітність
         urban_development: Сталий розвиток міста
         equity_and_employment: Рівність та працевлаштування
       statuses:
-        studying_project: Вивчення проєкту
+        studying_project: Вивчення проекту
         bidding: Подання заявок
-        executing_project: Виконання проєкту
+        executing_project: Виконання проекту
         executed: Виконано
     polls:
       current_poll: "Поточне голосування"
       current_poll_geozone_restricted: "Геозона поточного голосування обмежена"
       recounting_poll: "Голосування, яке перераховується"
-      expired_poll_without_stats: "Завершене голосування без статистики та результатів"
-      expired_poll_with_stats: "Завершене голосування зі статистикою та результатами"
+      expired_poll_without_stats: "Завершене опитування без статистики та результатів"
+      expired_poll_with_stats: "Завершене опитування зі статистикою та результатами"
