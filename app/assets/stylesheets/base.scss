@@ -1510,6 +1510,11 @@ footer {
   position: initial;
 }
 
+.comments-box-container .comment-meta .comment-votes {
+  position: relative;
+  width: 100%;
+}
+
 .comment-box {
 
   .button {
@@ -1558,8 +1563,8 @@ footer {
     }
 
     .votes {
-      bottom: 12px !important;
-      right: 12px !important;
+      bottom: 0 !important;
+      right: 0 !important;
     }
 
     .voted {
