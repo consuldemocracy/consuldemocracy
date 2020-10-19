@@ -28,7 +28,7 @@ de:
     created:
       title: Überprüfen Sie Ihre Angaben
       motivation: "Damit Ihr Vorschlag angezeigt wird, klicken Sie auf \"Vorschlag veröffentlichen\"."
-      motivation_2: ""
+      motivation_2: "Sobald Sie Ihren Vorschlag veröffentlicht haben, können Sie ihn nicht mehr bearbeiten."
       publish: Vorschlag veröffentlichen
       preview_title: So wird Ihr Vorschlag aussehen, wenn Sie ihn veröffentlichen
     index:
