@@ -21,12 +21,12 @@
 <div id="more-info" class="more-info-content">
   <div class="row">
     <div class="small-12 medium-7 large-8 column">
-      <% if feature?(:debates) %>
-        <%= render "pages/help/debates" %>
-      <% end %>
-
       <% if feature?(:proposals) %>
         <%= render "pages/help/proposals" %>
+      <% end %>
+      
+      <% if feature?(:debates) %>
+        <%= render "pages/help/debates" %>
       <% end %>
 
       <% if feature?(:budgets) %>
