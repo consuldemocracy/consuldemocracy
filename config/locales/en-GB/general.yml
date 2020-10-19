@@ -173,6 +173,7 @@ en-GB:
     proposal_notification: "Сповіщення"
     budget/investment: Інвестиція
     budget/group: Група бюджету
+    budget/heading: Заголовок бюджету
     geozone: геозона
     legislation/draft_version: чернетка
     legislation/process: процес
@@ -185,18 +186,23 @@ en-GB:
     document: Документ
     topic: Тема
     image: Зображення
+    local_census_record: Місцеві дані Цензусу
+    local_census_records/import: Імпорт місцевих даних Цензусу
     site_customization/content_block: блок контенту
     site_customization/page: сторінка
   geozones:
     none: Все місто
   layouts:
     application:
-      ie: Ми виявили, що ви користуєтесь веб-переглядачем Internet Explorer. Для кращого результату ми рекомендуємо користуватися %{firefox} або %{chrome}.
-      ie_title: Цей вебсайт не пристосований для вашого веб-переглядача
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Ми виявили, що ви користуєтесь браузером Internet Explorer. Для кращого результату ми рекомендуємо користуватися %{firefox} або %{chrome}.
+      ie_title: Цей вебсайт не пристосований для вашого браузера
     dashboard:
       proposal_header:
         published: Опубліковано
         draft: Чернетка
+        retired: Той, що втратив силу
       proposal_totals:
         active_resources: Активні ресурси
         community: Учасники у вашій спільноті
@@ -211,9 +217,12 @@ en-GB:
       accessibility: Доступність
       conditions: Правила та умови користування
       consul: Додаток CONSUL
+      consul_url: https://github.com/consul/consul
       contact_us: Для технічної допомоги перейдіть
+      copyright: CONSUL, %{year}
       description: Цей портал використовує %{consul} який знаходиться %{open_source}.
       open_source: відкрите програмне забезпечення
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Вирішуйте, як створити місто, у якому ви бажаєте жити.
       participation_title: Участь
       privacy: Політика конфіденційності
@@ -221,21 +230,21 @@ en-GB:
       administration_menu: Меню
       administration: Адміністрування
       available_locales: Доступні мови
-      collaborative_legislation: Спільне законодавство
+      collaborative_legislation: Спільна законотворчість
       debates: Обговорення
       locale: "Мова:"
       logo: Логотип CONSUL
       management: Управління
       moderation: Модерування
       valuation: Оцінка
-      officing: Інспектори опитувань
+      officing: Посадові особи опитувань
       help: Допомога
       my_account_link: Мій обліковий запис
       my_activity_link: Мій контент
       open_gov: Відкритий уряд
       proposals: Пропозиції
       poll_questions: Голосування
-      budgets: Партисипативний бюджет
+      budgets: Бюджетування участі
       notification_item:
         new_notifications:
           one: Ви маєте нове сповіщення
@@ -271,18 +280,22 @@ en-GB:
     facebook:
       sign_in: Реєстрація через Facebook
       sign_up: Вхід через Facebook
+      name: Facebook
     finish_signup:
       title: "Додаткові деталі"
       username_warning: "У зв'язку зі змінами нашої взаємодії з соціальними мережами ваше ім'я користувача може відображатися як таке, що вже використовується. В такому разі оберіть, будь ласка, інше ім'я користувача."
     google_oauth2:
       sign_in: Реєстрація через Google
       sign_up: Вхід через Google
+      name: Google
     wordpress_oauth2:
       sign_in: Реєстрація через Wordpress
       sign_up: Вхід через Wordpress
+      name: Wordpress
     twitter:
       sign_in: Реєстрація через Twitter
       sign_up: Увійти через Twitter
+      name: Twitter
     info:
       sign_in: "Реєстрація через:"
       sign_up: "Вхід через:"
@@ -297,7 +310,7 @@ en-GB:
       motivation_2: "<strong>Якщо вам необхідні поради щодо створення публікації, створіть чернетку і ми допоможемо вам.</strong>"
       publish: Ні, я хочу опублікувати пропозицію
       dashboard: Так, я хочу отримати допомогу і опублікувати пропозицію пізніше
-      preview_title: Коли ви опублікуєте пропозицію, вона матиме наступний вигляд
+      preview_title: Коли ви опублікуєте пропозицію, вона буде виглядати наступним чином
     share:
       improve_it: Удоскональте свою кампанію та отримайте більше підтримки.
       dashboard: Отримати більше інформації
@@ -308,8 +321,8 @@ en-GB:
         submit_button: Зберегти зміни
       show_link: Переглянути пропозицію
     retire_form:
-      title: Вилучити пропозицію
-      warning: "Якщо ви вилучите пропозицію, вона все ще отримуватиме підтримку, але її буде усунуто з основного переліку. Усі користувачі бачитимуть повідомлення про те, що автор більше не бажає отримувати підтримку своєї пропозиції"
+      title: Відкликати пропозицію
+      warning: "Якщо ви відкличете пропозицію, вона все ще отримуватиме підтримку, але її буде усунуто з основного переліку. Усі користувачі бачитимуть повідомлення про те, що автор більше не бажає отримувати підтримку своєї пропозиції"
       retired_reason_blank: Обрати варіант
       retired_explanation_placeholder: Коротко поясніть, чому на вашу думку пропозиція більше не повинна отримувати підтримку
       submit_button: Вилучити пропозицію
@@ -324,7 +337,7 @@ en-GB:
       proposal_summary_note: "(до 200 символів)"
       proposal_video_url_note: Ви можете додати посилання на YouTube або Vimeo
       tag_category_label: "Категорії"
-      tags_instructions: "Тегнути цю пропозицію. Ви можете вибрати із запропонованих або створити власну"
+      tags_instructions: "Відмітьте цю пропозицію. Ви можете вибрати із запропонованих або створити власну"
       tags_label: Теги
       tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
       map_location: "Розташування мапи"
@@ -348,8 +361,8 @@ en-GB:
         actions:
           success: "Рекомендовані пропозиції вимкнено для цього облікового запису"
           error: "Сталася помилка. Перейдіть на сторінку \"Мій обліковий запис\", щоб власноруч увімкнути рекомендовані пропозиції"
-      retired_proposals: Вилучені пропозиції
-      retired_proposals_link: "Пропозиції, вилучені автором"
+      retired_proposals: Відкликані пропозиції
+      retired_proposals_link: "Пропозиції, відкликані автором"
       selected_proposals: Вибрані пропозиції
       selected_proposals_link: Переглянути вибрані пропозиції
       archived_proposals: Заархівовані пропозиції
@@ -391,6 +404,7 @@ en-GB:
       recommendations_title: Рекомендації щодо створення пропозицій
       start_new: Подати нову пропозицію
     notice:
+      retired: Пропозицію відкликано
       published: Пропозицію опубліковано
     proposal:
       created: "Ви створили пропозицію!"
@@ -414,6 +428,7 @@ en-GB:
         one: 1 голос
         other: "%{count} голосів"
       supports_necessary: "необхідно %{number} підтримань"
+      total_percent: 100%
       archived: "Ця пропозиція заархівована і не збирає підтримки."
       successful: "Ця пропозиція отримала достатню підтримку."
       selected: "Вибрана пропозиція"
@@ -430,7 +445,7 @@ en-GB:
       notifications_tab: Сповіщення
       milestones_tab: Віхи
       retired_warning: "Автор вважає, що ця пропозиція більше не повинна отримувати підтримку."
-      retired_warning_link_to_explanation: Прочитайте появнення перед тим як віддавати голос.
+      retired_warning_link_to_explanation: Прочитайте пояснення перед тим, як віддавати голос.
       retired: Пропозиція вилучена автором
       share: Поділитися
       no_notifications: "Щодо даної пропозиції немає сповіщень."
