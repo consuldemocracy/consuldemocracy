@@ -77,8 +77,9 @@ en-GB:
         filters:
           all: Усі
           pending_flag_review: В очікуванні
-          with_ignored_flag: Позначити як переглянуте
+          with_ignored_flag: Позначине як переглянуте
         headers:
+          moderate: Модерувати
           budget_investment: Бюджетна інвестиція
         hide_budget_investments: Приховати бюджетні інвестиції
         ignore_flags: Позначити як переглянуте
@@ -97,12 +98,14 @@ en-GB:
           pending_review: Очікують на розгляд
           ignored: Позначити як переглянуте
         headers:
+          moderate: Модерувати
           proposal_notification: Сповіщення щодо пропозицій
         hide_proposal_notifications: Приховати пропозиції
         ignore_flags: Позначити як переглянуте
         order: Сортувати за
         orders:
           created_at: Найновіші
+          moderated: Відмодеровано
         title: Сповіщення щодо пропозицій
     users:
       index:
