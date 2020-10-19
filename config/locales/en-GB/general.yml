@@ -445,7 +445,7 @@ en-GB:
       notifications_tab: Сповіщення
       milestones_tab: Віхи
       retired_warning: "Автор вважає, що ця пропозиція більше не повинна отримувати підтримку."
-      retired_warning_link_to_explanation: Прочитайте пояснення перед тим, як віддавати голос.
+      retired_warning_link_to_explanation: Перед тим, як віддавати голос, проситайте пояснення.
       retired: Пропозиція вилучена автором
       share: Поділитися
       no_notifications: "Щодо даної пропозиції немає сповіщень."
@@ -464,6 +464,7 @@ en-GB:
       community: Спільнота
       polls: Опитування
       mailing: Електронна адреса
+      poster: Афіша
       recommended_actions: Рекомендовані дії
       messages: Повідомлення користувачам
       related_content: Пов'язаний вміст
@@ -478,21 +479,21 @@ en-GB:
       group_by_week: Щотижня
       group_by_date: Щодня
       progress: Досягнутий прогрес
-      supports: Підтримання
+      supports: Підтримки
       success: Оптимальний прогрес
       new_action: Новий
     index:
       title: Версія
       edit_proposal_link: Редагувати пропозицію
       publish: Опублікувати пропозицію
-      retire: Вилучити пропозицію
+      retire: Відкликати пропозицію
     new_request:
       links: Посилання
     resources:
       available_resources: Доступні ресурси
     resource:
       required_days: "%{days} днів потрібно"
-      required_supports: "%{supports} підтримань потрібно"
+      required_supports: "%{supports} підтримок потрібно"
       and: і
       view_resource: Переглянути ресурс
       resource_requested: Ресурси, на які вже був запит
@@ -533,18 +534,18 @@ en-GB:
       previous_notifications: Переглянути попередні сповіщення
     polls:
       index:
-        title: Опитування
-        create: Створити опитування
+        title: Голосування
+        create: Створити голосування
         count:
-          one: Ви створили %{count} опитування.
-          other: Ви створили %{count} опитувань.
+          one: Ви створили %{count} голосування.
+          other: Ви створили %{count} голосувань.
         links: Посилання
         additiontal_information: Додаткова інформація
       new:
-        title: Нове опитування
-        submit: Створити опитування
+        title: Нове голосування
+        submit: Створити голосування
       edit:
-        submit: Оновити опитування
+        submit: Оновити голосування
       poll:
         responses:
           one: "%{count} відповідь"
@@ -566,6 +567,7 @@ en-GB:
         remove_answer: Видалити відповідь
     poster:
       index:
+        title: Попередній перегляд афіші
         poster_title: "Не варто більше шукати,"
         poster_subtitle: "підтримайте мене! ;)"
         intro_text: "<strong>Я беру участь у %{org}</strong> з власною пропозицією громадянина, і тільки завдяки вашій підтримці ми можемо зробити наше місто таким, яким ми всі хочемо його бачити"
@@ -580,8 +582,10 @@ en-GB:
     mailing:
       index:
         title: Попередній перегляд електронного листа
+      new:
+        title: Модель листа для розповсюдження
       mailing_options:
-        send: Надіслати %{address}
+        send: Надіслати на %{address}
         preview: Попередній перегляд
       create:
         sent: Цей лист надіслано
@@ -603,22 +607,23 @@ en-GB:
       filters:
         current: "Відкриті"
         expired: "З завершеним терміном"
-      title: "Опитування"
-      participate_button: "Взяти участь у цьому опитуванні"
-      participate_button_expired: "Опитування завершено"
+      title: "Голосування"
+      participate_button: "Взяти участь у цьому голосуванні"
+      participate_button_expired: "Голосування завершено"
       no_geozone_restricted: "Все місто"
       geozone_restricted: "Дільниці"
-      already_answer: "Ви вже взяли участь у цьому опитуванні"
+      geozone_info: "Можуть брати участь люди в Цензусі: "
+      already_answer: "Ви вже взяли участь у цьому голосуванні"
       not_logged_in: "Зареєструйтеся або увійдіть у свій обліковий запис, щоб взяти участь"
       unverified: "Підтвердіть свій обліковий запис, щоб взяти участь"
-      cant_answer: "Це опитування недоступне у вашій геозоні"
+      cant_answer: "Це голосування недоступне у вашій геозоні"
       section_header:
         icon_alt: Значок голосування
         title: Голосування
         help: Допомога з голосуванням
       section_footer:
         title: Допомога з голосуванням
-        description: Опитування громадян - це механізм залучення, завдяки якому громадяни з правом голосу можуть приймати безпосередні рішення
+        description: Голосування громадян - це механізм залучення, завдяки якому громадяни з правом голосу можуть приймати безпосередні рішення
       no_polls: "Відкриті голосування відсутні."
     show:
       already_voted_in_booth: "Ви вже взяли участь у фізичній кабінці. Ви не можете брати участь знову."
@@ -628,7 +633,7 @@ en-GB:
       comments_tab: Коментарі
       cant_answer_verify: "Щоб дати відповідь, необхідно %{verify_link}."
       verify_link: "підтвердіть свій обліковий запис"
-      cant_answer_expired: "Опитування завершено."
+      cant_answer_expired: "Голосування завершено."
       cant_answer_wrong_geozone: "Це питання недоступне у вашій геозоні."
       more_info_title: "Більше інформації"
       documents: Документи
@@ -642,8 +647,9 @@ en-GB:
       stats:
         total_votes: "Загальна кількість голосів"
         votes: "ГОЛОСИ"
+        web: "WEB"
         mail: "ЕЛЕКТРОННОЮ ПОШТОЮ"
-        booth: "ЧЕРЕЗ КАБІНКУ"
+        booth: "КАБІНКА"
         total: "ЗАГАЛОМ"
         valid: "Дійсні"
         white: "Порожні"
@@ -768,6 +774,13 @@ en-GB:
         zero: "Використовуються 0 мов"
         one: "Використовується 1 мова"
         other: "використовується %{count} мов"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   stats:
     index:
       visits: Відвідування
@@ -794,7 +807,7 @@ en-GB:
       new:
         direct_messages_bloqued: "Цей користувач вирішив не отримувати особистих повідомлень"
         submit_button: Надіслати повідомлення
-        title: Надіслати приватне повідомлення %{receiver}
+        title: Надіслати особисте повідомлення %{receiver}
         verified_only: Щоб надіслати приватне повідомлення, %{verify_account}
       show:
         receiver: Повідомлення надіслане %{receiver}
@@ -802,7 +815,7 @@ en-GB:
       deleted: Видалено
       deleted_debate: Це обговорення видалено
       deleted_proposal: Пропозицію видалено
-      deleted_budget_investment: Інвестиційний проект видалено
+      deleted_budget_investment: Інвестиційний проєкт видалено
       proposals: Пропозиції
       proposals_status: Статус
       debates: Обговорення
@@ -825,7 +838,7 @@ en-GB:
         follows:
           one: 1 відслідковується
           other: "%{count} відслідковуються"
-      no_activity: У користувача немає публісної активності
+      no_activity: У користувача немає публічної активності
       no_private_messages: "Користувач не приймає приватні повідомлення."
       private_activity: Цей користувач вирішив залишити список дій приватним.
       send_private_message: "Надіслати приватне повідомлення"
