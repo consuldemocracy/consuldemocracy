@@ -49,8 +49,8 @@ en-GB:
         one: "Група оцінювачів"
         other: "Групи оцінювачів"
       manager:
-        one: "Керівник"
-        other: "Керівники"
+        one: "Менеджер"
+        other: "Менеджери"
       newsletter:
         one: "Інформаційна розсилка"
         other: "Інформаційні розсилки"
@@ -112,14 +112,14 @@ en-GB:
         one: "Тема"
         other: "Теми"
       poll:
-        one: "Опитування"
-        other: "Опитування"
+        one: "Голосування"
+        other: "Голосування"
       proposal_notification:
         one: "Сповіщення щодо пропозицій"
         other: "Сповіщення щодо пропозицій"
       dashboard/action:
-        one: Дія з панеллю пропозицій
-        other: Дії з панеллю пропозицій
+        one: Дія панелі управління пропозиціями
+        other: Дія панелі управління пропозиціями
       dashboard/administrator_task:
         one: Завдання
         other: Завдання
@@ -127,8 +127,8 @@ en-GB:
         one: Посилання
         other: Посилання
       local_census_record:
-        one: Запис місцевого перепису населення
-        other: Дані місцевого перепису населення
+        one: Місцеві дані Цензусу
+        other: Місцеві дані Цензусу
     attributes:
       budget:
         name: "Назва"
@@ -296,7 +296,7 @@ en-GB:
         title: "Запитання"
       poll/ballot_sheet:
         data: Дані CSV
-        poll_id: Опитування
+        poll_id: Голосування
         officer_assignment_id: Завдання інспектора
       poll/shift:
         task: "Завдання"
@@ -520,6 +520,10 @@ en-GB:
               invalid_date_range: на дату створення чернетки або після неї
             allegations_end_date:
               invalid_date_range: на дату початку коментування або після неї
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: не включено в перелік, дозволені значення - 1 для DNI, 2 для паспорту та 3 для посвідчення про місце проживання.
         proposal:
           attributes:
             tag_list:
@@ -535,7 +539,7 @@ en-GB:
         signature:
           attributes:
             document_number:
-              not_in_census: "Не перевірено Census"
+              not_in_census: "Не перевірено Цензусом"
               already_voted: "За цю пропозицію вже віддано голос"
         site_customization/page:
           attributes:
