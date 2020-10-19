@@ -49,7 +49,7 @@ class Comment < ApplicationRecord
 
   scope :sort_by_most_voted, -> { order(confidence_score: :desc, created_at: :desc) }
   scope :sort_descendants_by_most_voted, -> { order(confidence_score: :desc, created_at: :asc) }
-  scope :sort_by_supports, -> { order("cached_votes_up - cached_votes_down DESC") }
+  scope :sort_by_supports, -> { order(Arel.sql("cached_votes_up - cached_votes_down DESC")) }
 
   scope :sort_by_newest, -> { order(created_at: :desc) }
   scope :sort_descendants_by_newest, -> { order(created_at: :desc) }

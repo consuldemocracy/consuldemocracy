@@ -82,12 +82,8 @@ RSpec.configure do |config|
       .to receive(:available_locales).and_return(I18n.available_locales.map(&:to_s))
   end
 
-  config.before(:each, :with_frozen_time) do
-    travel_to Time.current # TODO: use `freeze_time` after migrating to Rails 5.2.
-  end
-
-  config.after(:each, :with_frozen_time) do
-    travel_back
+  config.around(:each, :with_frozen_time) do |example|
+    freeze_time { example.run }
   end
 
   config.before(:each, :application_zone_west_of_system_zone) do
