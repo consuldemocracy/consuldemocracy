@@ -7,13 +7,13 @@ en-GB:
       official_level_4_name: Офіційна посада 4
       official_level_5_name: Офіційна посада 5
     geozones:
-      north_district: Північний район
-      west_district: Західний район
-      east_district: Східний район
-      central_district: Центральний район
+      north_district: Північна дільниця
+      west_district: Західна дільниця
+      east_district: Східна дільниця
+      central_district: Центральна дільниця
     organizations:
       human_rights: Права людини
-      neighborhood_association: Комітет мешканців
+      neighborhood_association: Об'єднання мешканців дільниці
     categories:
       associations: Об'єднання
       culture: Культура
