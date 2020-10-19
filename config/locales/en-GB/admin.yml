@@ -73,7 +73,7 @@ en-GB:
         table_name: Назва
         table_phase: Етап
         table_investments: Інвестиції
-        table_edit_groups: Групи розіділів
+        table_edit_groups: Групи розділів
         table_edit_budget: Редагувати
         table_admin_ballots: Бюлетені
         edit_groups: Редагувати групи розіділів
@@ -191,8 +191,8 @@ en-GB:
         buttons:
           filter: Фільтр
         download_current_selection: "Завантажити поточний відбір"
-        no_budget_investments: "Інвестиційні проекти відсутні."
-        title: Інвестиційні проекти
+        no_budget_investments: "Інвестиційні проєкти відсутні."
+        title: Інвестиційні проєкти
         columns: Колонки
         assigned_admin: Призначений адміністратор
         no_admin_assigned: Адміністратора не призначено
@@ -204,6 +204,7 @@ en-GB:
         selected: "Вибрано"
         select: "Обрати"
         list:
+          id: ID
           title: Назва
           supports: Підтримка
           admin: Адміністратор
@@ -261,6 +262,7 @@ en-GB:
       search_unfeasible: Пошук неможливий
     milestones:
       index:
+        table_id: "ID"
         table_title: "Заголовок"
         table_description: "Опис"
         table_publication_date: "Дата публікування"
