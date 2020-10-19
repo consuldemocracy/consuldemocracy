@@ -31,20 +31,22 @@ en-GB:
       security_emergencies: Безпека і надзвичайні ситуації
       environment: Навколишнє середовище
     budgets:
-      budget: Партисипативний бюджет
+      budget: Бюджет участі
+      currency: '€'
       groups:
         all_city: Все місто
-        districts: Райони
+        districts: Дільниці
       valuator_groups:
         culture_and_sports: Культура і спорт
         gender_and_diversity: Гендерний баланс та різноманітність
         urban_development: Сталий розвиток міста
         equity_and_employment: Рівність та працевлаштування
       statuses:
-        studying_project: Вивчення проекту
+        studying_project: Вивчення проєкту
         bidding: Подання заявок
-        executing_project: Виконання проекту
+        executing_project: Виконання проєкту
         executed: Виконано
     polls:
+      current_poll: "Поточне голосування"
       expired_poll_without_stats: "Завершене опитування без статистики та результатів"
       expired_poll_with_stats: "Завершене опитування зі статистикою та результатами"
