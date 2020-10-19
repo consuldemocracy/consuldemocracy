@@ -48,5 +48,7 @@ en-GB:
         executed: Виконано
     polls:
       current_poll: "Поточне голосування"
-      expired_poll_without_stats: "Завершене опитування без статистики та результатів"
-      expired_poll_with_stats: "Завершене опитування зі статистикою та результатами"
+      current_poll_geozone_restricted: "Геозона поточного голосування обмежена"
+      recounting_poll: "Голосування, яке перераховується"
+      expired_poll_without_stats: "Завершене голосування без статистики та результатів"
+      expired_poll_with_stats: "Завершене голосування зі статистикою та результатами"
