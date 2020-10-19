@@ -39,6 +39,8 @@ de:
         description: Die Vorschläge der Bürger*innen sind eine Möglichkeit für Sie, direkten Einfluss auf die Gestaltung der Stadt zu nehmen. Sie können die einzelnen Vorschläge unterstützen und unter den Vorschlägen diskutieren.
     proposal:
       reason_for_supports_necessary: ""
+      share:
+        edit: ""
   welcome:
     feed:
       most_active:
