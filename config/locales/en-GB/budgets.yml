@@ -16,7 +16,6 @@ en-GB:
             one: "Віддано голосів: <span>%{count}</span>"
             other: "Віддано голосів: <span>%{count}</span>"
         amount_limit:
-          knapsack: "%{count}"
           approval:
             one: "Ви можете проголосувати за <span>1</span> проєкт"
             other: "Ви можете проголосувати за <span>%{count}</span> проєктів"
