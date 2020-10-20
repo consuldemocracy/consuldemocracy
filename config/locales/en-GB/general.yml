@@ -20,7 +20,7 @@ en-GB:
       user_permission_support_proposal: Підтримати пропозиції
       user_permission_title: Участь
       user_permission_verify: Для виконання дій підтвердіть свій обліковий запис.
-      user_permission_verify_info: "* Лише для користувачів Цензусу."
+      user_permission_verify_info: "* Лише для користувачів Census."
       user_permission_votes: Взяти участь у підсумковому голосуванні
       username_label: Ім'я користувача
       verified_account: Обліковий запис підтверджено
@@ -91,15 +91,15 @@ en-GB:
       show_link: Переглянути обговорення
     form:
       debate_title: Назва обговорення
-      tags_instructions: Відмітити обговорення.
+      tags_instructions: Тегнути обговорення.
       tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
     index:
       featured_debates: Рекомендовані
       orders:
-        confidence_score: з найвищим рейтингом
+        confidence_score: найвищий рейтинг
         created_at: найновіші
         hot_score: найактивніші
-        most_commented: найбільш коментовані
+        most_commented: найбільш коментоване
         relevance: актуальність
         recommendations: рекомендації
       recommendations:
@@ -126,7 +126,7 @@ en-GB:
       section_footer:
         title: Допомога щодо обговорень
         description: Розпочніть обговорення, щоб поділитися з іншими думками щодо тем, які вас турбують.
-        help_text_1: "Простір для обговорень створений для кожного, хто прагне порушити запитання, що його турбують, та поділитися думками з іншими."
+        help_text_1: "Простір для обговорень створений для кожного, хто прагне підняти запитання, що його турбують, та поділития думками з іншими."
         help_text_2: 'Щоб розпочати обговорення, необхідно зареєструватися у %{org}. Також користувачі можуть коментувати відкриті обговорення та оцінювати їх за допомогою кнопок "Я погоджуюсь" та "Я не погоджуюсь", які є у кожному обговоренні.'
     new:
       form:
@@ -163,12 +163,12 @@ en-GB:
     accept_terms_title: Я погоджуюся з Політикою конфіденційності і Правилами та умовами користування
     conditions: Правила та умови користування
     debate: Обговорення
-    direct_message: особисте повідомлення
+    direct_message: приватне повідомлення
     error: помилка
     errors: помилки
     not_saved: "не вдалося зберегти цей %{resource}. <br>Перевірте позначені поля, щоб знати, як їх виправити:"
     policy: Політика конфіденційності
-    banner: постер
+    banner: банер
     proposal: Пропозиція
     proposal_notification: "Сповіщення"
     budget/investment: Інвестиція
@@ -196,8 +196,8 @@ en-GB:
     application:
       chrome: Google Chrome
       firefox: Firefox
-      ie: Ми виявили, що ви користуєтесь браузером Internet Explorer. Для кращого результату ми рекомендуємо користуватися %{firefox} або %{chrome}.
-      ie_title: Цей вебсайт не пристосований для вашого браузера
+      ie: Ми виявили, що ви користуєтесь веб-переглядачем Internet Explorer. Для кращого результату ми рекомендуємо користуватися %{firefox} або %{chrome}.
+      ie_title: Цей вебсайт не пристосований для вашого веб-переглядача
     dashboard:
       proposal_header:
         published: Опубліковано
@@ -230,21 +230,21 @@ en-GB:
       administration_menu: Меню
       administration: Адміністрування
       available_locales: Доступні мови
-      collaborative_legislation: Спільна законотворчість
+      collaborative_legislation: Спільне законодавство
       debates: Обговорення
       locale: "Мова:"
       logo: Логотип CONSUL
       management: Управління
       moderation: Модерування
       valuation: Оцінка
-      officing: Посадові особи опитувань
+      officing: Інспектори опитувань
       help: Допомога
       my_account_link: Мій обліковий запис
       my_activity_link: Мій контент
       open_gov: Відкритий уряд
       proposals: Пропозиції
       poll_questions: Голосування
-      budgets: Бюджетування участі
+      budgets: Партисипативний бюджет
       notification_item:
         new_notifications:
           one: Ви маєте нове сповіщення
@@ -310,7 +310,7 @@ en-GB:
       motivation_2: "<strong>Якщо вам необхідні поради щодо створення публікації, створіть чернетку і ми допоможемо вам.</strong>"
       publish: Ні, я хочу опублікувати пропозицію
       dashboard: Так, я хочу отримати допомогу і опублікувати пропозицію пізніше
-      preview_title: Коли ви опублікуєте пропозицію, вона буде виглядати наступним чином
+      preview_title: Коли ви опублікуєте пропозицію, вона матиме наступний вигляд
     share:
       improve_it: Удоскональте свою кампанію та отримайте більше підтримки.
       dashboard: Отримати більше інформації
@@ -321,8 +321,8 @@ en-GB:
         submit_button: Зберегти зміни
       show_link: Переглянути пропозицію
     retire_form:
-      title: Відкликати пропозицію
-      warning: "Якщо ви відкличете пропозицію, вона все ще отримуватиме підтримку, але її буде усунуто з основного переліку. Усі користувачі бачитимуть повідомлення про те, що автор більше не бажає отримувати підтримку своєї пропозиції"
+      title: Вилучити пропозицію
+      warning: "Якщо ви вилучите пропозицію, вона все ще отримуватиме підтримку, але її буде усунуто з основного переліку. Усі користувачі бачитимуть повідомлення про те, що автор більше не бажає отримувати підтримку своєї пропозиції"
       retired_reason_blank: Обрати варіант
       retired_explanation_placeholder: Коротко поясніть, чому на вашу думку пропозиція більше не повинна отримувати підтримку
       submit_button: Вилучити пропозицію
@@ -337,7 +337,7 @@ en-GB:
       proposal_summary_note: "(до 200 символів)"
       proposal_video_url_note: Ви можете додати посилання на YouTube або Vimeo
       tag_category_label: "Категорії"
-      tags_instructions: "Відмітьте цю пропозицію. Ви можете вибрати із запропонованих або створити власну"
+      tags_instructions: "Тегнути цю пропозицію. Ви можете вибрати із запропонованих або створити власну"
       tags_label: Теги
       tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
       map_location: "Розташування мапи"
@@ -361,8 +361,8 @@ en-GB:
         actions:
           success: "Рекомендовані пропозиції вимкнено для цього облікового запису"
           error: "Сталася помилка. Перейдіть на сторінку \"Мій обліковий запис\", щоб власноруч увімкнути рекомендовані пропозиції"
-      retired_proposals: Відкликані пропозиції
-      retired_proposals_link: "Пропозиції, відкликані автором"
+      retired_proposals: Вилучені пропозиції
+      retired_proposals_link: "Пропозиції, вилучені автором"
       selected_proposals: Вибрані пропозиції
       selected_proposals_link: Переглянути вибрані пропозиції
       archived_proposals: Заархівовані пропозиції
@@ -445,7 +445,7 @@ en-GB:
       notifications_tab: Сповіщення
       milestones_tab: Віхи
       retired_warning: "Автор вважає, що ця пропозиція більше не повинна отримувати підтримку."
-      retired_warning_link_to_explanation: Перед тим, як віддавати голос, проситайте пояснення.
+      retired_warning_link_to_explanation: Прочитайте появнення перед тим як віддавати голос.
       retired: Пропозиція вилучена автором
       share: Поділитися
       no_notifications: "Щодо даної пропозиції немає сповіщень."
@@ -479,21 +479,21 @@ en-GB:
       group_by_week: Щотижня
       group_by_date: Щодня
       progress: Досягнутий прогрес
-      supports: Підтримки
+      supports: Підтримання
       success: Оптимальний прогрес
       new_action: Новий
     index:
       title: Версія
       edit_proposal_link: Редагувати пропозицію
       publish: Опублікувати пропозицію
-      retire: Відкликати пропозицію
+      retire: Вилучити пропозицію
     new_request:
       links: Посилання
     resources:
       available_resources: Доступні ресурси
     resource:
       required_days: "%{days} днів потрібно"
-      required_supports: "%{supports} підтримок потрібно"
+      required_supports: "%{supports} підтримань потрібно"
       and: і
       view_resource: Переглянути ресурс
       resource_requested: Ресурси, на які вже був запит
@@ -534,18 +534,18 @@ en-GB:
       previous_notifications: Переглянути попередні сповіщення
     polls:
       index:
-        title: Голосування
-        create: Створити голосування
+        title: Опитування
+        create: Створити опитування
         count:
-          one: Ви створили %{count} голосування.
-          other: Ви створили %{count} голосувань.
+          one: Ви створили %{count} опитування.
+          other: Ви створили %{count} опитувань.
         links: Посилання
         additiontal_information: Додаткова інформація
       new:
-        title: Нове голосування
-        submit: Створити голосування
+        title: Нове опитування
+        submit: Створити опитування
       edit:
-        submit: Оновити голосування
+        submit: Оновити опитування
       poll:
         responses:
           one: "%{count} відповідь"
@@ -585,7 +585,7 @@ en-GB:
       new:
         title: Модель листа для розповсюдження
       mailing_options:
-        send: Надіслати на %{address}
+        send: Надіслати %{address}
         preview: Попередній перегляд
       create:
         sent: Цей лист надіслано
@@ -607,23 +607,23 @@ en-GB:
       filters:
         current: "Відкриті"
         expired: "З завершеним терміном"
-      title: "Голосування"
-      participate_button: "Взяти участь у цьому голосуванні"
-      participate_button_expired: "Голосування завершено"
+      title: "Опитування"
+      participate_button: "Взяти участь у цьому опитуванні"
+      participate_button_expired: "Опитування завершено"
       no_geozone_restricted: "Все місто"
       geozone_restricted: "Дільниці"
       geozone_info: "Можуть брати участь люди в Цензусі: "
-      already_answer: "Ви вже взяли участь у цьому голосуванні"
+      already_answer: "Ви вже взяли участь у цьому опитуванні"
       not_logged_in: "Зареєструйтеся або увійдіть у свій обліковий запис, щоб взяти участь"
       unverified: "Підтвердіть свій обліковий запис, щоб взяти участь"
-      cant_answer: "Це голосування недоступне у вашій геозоні"
+      cant_answer: "Це опитування недоступне у вашій геозоні"
       section_header:
         icon_alt: Значок голосування
         title: Голосування
         help: Допомога з голосуванням
       section_footer:
         title: Допомога з голосуванням
-        description: Голосування громадян - це механізм залучення, завдяки якому громадяни з правом голосу можуть приймати безпосередні рішення
+        description: Опитування громадян - це механізм залучення, завдяки якому громадяни з правом голосу можуть приймати безпосередні рішення
       no_polls: "Відкриті голосування відсутні."
     show:
       already_voted_in_booth: "Ви вже взяли участь у фізичній кабінці. Ви не можете брати участь знову."
@@ -633,7 +633,7 @@ en-GB:
       comments_tab: Коментарі
       cant_answer_verify: "Щоб дати відповідь, необхідно %{verify_link}."
       verify_link: "підтвердіть свій обліковий запис"
-      cant_answer_expired: "Голосування завершено."
+      cant_answer_expired: "Опитування завершено."
       cant_answer_wrong_geozone: "Це питання недоступне у вашій геозоні."
       more_info_title: "Більше інформації"
       documents: Документи
@@ -649,7 +649,7 @@ en-GB:
         votes: "ГОЛОСИ"
         web: "WEB"
         mail: "ЕЛЕКТРОННОЮ ПОШТОЮ"
-        booth: "КАБІНКА"
+        booth: "ЧЕРЕЗ КАБІНКУ"
         total: "ЗАГАЛОМ"
         valid: "Дійсні"
         white: "Порожні"
@@ -807,7 +807,7 @@ en-GB:
       new:
         direct_messages_bloqued: "Цей користувач вирішив не отримувати особистих повідомлень"
         submit_button: Надіслати повідомлення
-        title: Надіслати особисте повідомлення %{receiver}
+        title: Надіслати приватне повідомлення %{receiver}
         verified_only: Щоб надіслати приватне повідомлення, %{verify_account}
       show:
         receiver: Повідомлення надіслане %{receiver}
@@ -815,7 +815,7 @@ en-GB:
       deleted: Видалено
       deleted_debate: Це обговорення видалено
       deleted_proposal: Пропозицію видалено
-      deleted_budget_investment: Інвестиційний проєкт видалено
+      deleted_budget_investment: Інвестиційний проект видалено
       proposals: Пропозиції
       proposals_status: Статус
       debates: Обговорення
@@ -838,7 +838,7 @@ en-GB:
         follows:
           one: 1 відслідковується
           other: "%{count} відслідковуються"
-      no_activity: У користувача немає публічної активності
+      no_activity: У користувача немає публісної активності
       no_private_messages: "Користувач не приймає приватні повідомлення."
       private_activity: Цей користувач вирішив залишити список дій приватним.
       send_private_message: "Надіслати приватне повідомлення"
