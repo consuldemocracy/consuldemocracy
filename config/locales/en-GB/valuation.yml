@@ -62,3 +62,5 @@ en-GB:
         save: Зберегти зміни
       notice:
         valuate: "Досьє оновлено"
+      valuation_comments: Коментарі до оцінки
+      not_in_valuating_phase: Інвестиції можна оцінювати тільки на етапі оцінки бюджету
