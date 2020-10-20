@@ -77,7 +77,6 @@ en-GB:
       title: Новий оціночний коментар щодо %{investment}
       hi: Привіт,
       new_comment_by: Є новий оціночний коментар від <strong>%{commenter}</strong> щодо бюджетної інвестиції %{investment}
-      commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Більше новин про вашу пропозицію громадянина"
       hi: "Привіт, %{name},"
