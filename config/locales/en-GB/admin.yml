@@ -73,7 +73,7 @@ en-GB:
         table_name: Назва
         table_phase: Етап
         table_investments: Інвестиції
-        table_edit_groups: Групи розділів
+        table_edit_groups: Групи розіділів
         table_edit_budget: Редагувати
         table_admin_ballots: Бюлетені
         edit_groups: Редагувати групи розіділів
@@ -191,8 +191,8 @@ en-GB:
         buttons:
           filter: Фільтр
         download_current_selection: "Завантажити поточний відбір"
-        no_budget_investments: "Інвестиційні проєкти відсутні."
-        title: Інвестиційні проєкти
+        no_budget_investments: "Інвестиційні проекти відсутні."
+        title: Інвестиційні проекти
         columns: Колонки
         assigned_admin: Призначений адміністратор
         no_admin_assigned: Адміністратора не призначено
@@ -474,7 +474,7 @@ en-GB:
           error: Неможливо створити процес
         update:
           notice: 'Процес оновлено. <a href="%{link}">Click to visit</a>'
-          error: Неможливо оновити процес
+          error: Немоливо оновити процес
         destroy:
           notice: Процес видалено
         edit:
@@ -905,7 +905,7 @@ en-GB:
         title: "Групи оцінювачів"
         new: "Створити групи оцінювачів"
         name: "Ім'я"
-        members: "Учасники"
+        members: "Члени"
         no_groups: "Групи оцінювачів відсутні"
       show:
         title: "Група оцінювачів: %{group}"
@@ -915,7 +915,7 @@ en-GB:
         edit: "Зберегти групу оцінювачів"
     poll_officers:
       index:
-        title: Посадові особи опитувань
+        title: Інспектори опитувань
       officer:
         add: Додати
         delete: Видалити позицію
@@ -926,7 +926,7 @@ en-GB:
         email_placeholder: Пошук користувача за електронною адресою
         search: Пошук
         user_not_found: Користувача не знайдено
-        help: "Щоб додати або усунути посадових осіб голосувань, скористайтеся формою нижче."
+        help: "Щоб додати або усунути інспекторів опитувань, скористайтеся формою нижче."
     poll_officer_assignments:
       index:
         officers_title: "Список інспекторів"
