@@ -4,16 +4,16 @@ en-GB:
       title: Оцінка
     menu:
       title: Оцінка
-      budgets: Бюджети участі
+      budgets: Партисипативні бюджети
     budgets:
       index:
-        title: Бюджети участі
+        title: Партисипативний бюджет
         filters:
           current: Відкриті
           finished: Завершені
         table_name: Назва
         table_phase: Етап
-        table_assigned_investments_valuation_open: Інвестиційні проєкти з відкритою оцінкою
+        table_assigned_investments_valuation_open: Інвестиційні проекти з відкритою оцінкою
         table_actions: Дії
         evaluate: Оцінити
         no_budgets: "Бюджети відсутні"
@@ -25,16 +25,16 @@ en-GB:
           valuating: В процесі оцінювання
           valuation_finished: Оцінювання завершено
         assigned_to: "Доручено %{valuator}"
-        title: Інвестиційні проєкти
+        title: Інвестиційні проекти
         edit: Редагувати досьє
         table_id: ID
         table_title: Назва
         table_heading_name: Назва розділу
         table_actions: Дії
-        no_investments: "Інвестиційні проєкти відсутні."
+        no_investments: "Інвестиційні проекти відсутні."
       show:
         back: Назад
-        title: Інвестиційний проєкт
+        title: Інвестиційний проект
         info: Інформація про автора
         by: Відправлено через
         sent: Відправлено в
