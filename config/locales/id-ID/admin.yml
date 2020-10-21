@@ -72,10 +72,6 @@ id:
         budget_investments: Melihat anggaran investasi
         table_name: Nama
         table_phase: Fase
-        table_investments: Investasi
-        table_edit_groups: Judul Kelompok
-        table_edit_budget: Sunting
-        table_admin_ballots: Surat suara
         edit_groups: Edit judul grup
         edit_budget: Edit anggaran
         admin_ballots: Admin surat suara
@@ -107,7 +103,6 @@ id:
     budget_groups:
       name: "Nama"
       headings_name: "Judul"
-      headings_edit: "Edit judul"
       headings_manage: "Kelola judul"
       no_groups: "Tidak ada pemilihan."
       amount:
@@ -255,8 +250,6 @@ id:
         table_name: Nama
         table_description: Deskripsi
         table_actions: Tindakan
-        delete: Hapus
-        edit: Sunting
     progress_bars:
       index:
         table_kind: "Tipe"
@@ -319,7 +312,6 @@ id:
           additional_info_placeholder: Tambahkan informasi tambahan yang anda anggap bisa bermanfaat
         index:
           create: Proses baru
-          delete: Hapus
           title: Undang-undang proses
           filters:
             all: Semua
@@ -435,7 +427,6 @@ id:
         no_managers: Tidak ada manajer disana.
       manager:
         add: Tambahkan
-        delete: Hapus
       search:
         title: "Pengelola: Pencarian pengguna"
     menu:
@@ -492,7 +483,6 @@ id:
         no_administrators: Tidak ada administrator.
       administrator:
         add: Tambahkan
-        delete: Hapus
         restricted_removal: "Maaf, anda tidak dapat menghapus diri anda dari administrasi"
       search:
         title: "Administrasi: Cari pengguna"
@@ -504,7 +494,6 @@ id:
         no_moderators: Tidak ada moderator.
       moderator:
         add: Tambahkan
-        delete: Hapus
       search:
         title: "Moderator: pencarian Pengguna"
     segment_recipient:
@@ -516,8 +505,6 @@ id:
         sent: Terkirim
         actions: Tindakan
         draft: Konsep
-        edit: Sunting
-        delete: Hapus
         preview: Tinjauan
       show:
         send: Kirim
@@ -529,8 +516,6 @@ id:
         sent: Terkirim
         actions: Tindakan
         draft: Konsep
-        edit: Sunting
-        delete: Hapus
         preview: Tinjauan
       show:
         send: Kirim pemberitahuan
@@ -549,7 +534,6 @@ id:
         group: "Kelompok"
       valuator:
         add: Tambahkan ke penilai
-        delete: Hapus
       search:
         title: "Penilai: Pencarian pengguna"
       show:
@@ -871,15 +855,12 @@ id:
       author: Penulis
       content: Konten
       created_at: Dibuat pada
-      delete: Hapus
       show_results_and_stats: "Lihat hasil dan status"
       results_and_stats_reminder: "Menandai kotak centang ini, hasil dan atau statistik akan tersedia untuk umum dan setiap pengguna akan melihatnya."
     geozones:
       index:
         title: Geozone
         create: Membuat geozone
-        edit: Sunting
-        delete: Hapus
       geozone:
         name: Nama
         external_code: Eksternal kode
