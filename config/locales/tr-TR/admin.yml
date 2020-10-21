@@ -72,10 +72,6 @@ tr:
         budget_investments: Projeleri yönetme
         table_name: Ad
         table_phase: Aşama
-        table_investments: Yatırımlar
-        table_edit_groups: Başlıklar grupları
-        table_edit_budget: Düzenleme
-        table_admin_ballots: Oylar
         edit_groups: Başlıklar gruplarını düzenle
         edit_budget: Bütçe düzenleme
         admin_ballots: Yönetici oyları
@@ -117,7 +113,6 @@ tr:
     budget_groups:
       name: "Ad"
       headings_name: "Başlıklar"
-      headings_edit: "Başlıkları Düzenle"
       headings_manage: "Başlıkları yönet"
       no_groups: "Hiç grup yok."
       amount:
@@ -293,8 +288,6 @@ tr:
         table_name: İsim
         table_description: Tanımlama
         table_actions: Aksiyon
-        delete: Sil
-        edit: Düzenleme
       edit:
         title: Kilometre taşı durumu düzenle
       update:
@@ -357,8 +350,6 @@ tr:
         index:
           description: "Kullanıcılar öneriler oluşturduklarında, fikirlerine destek almak için kaynakları ve tavsiyeleri önerebileceğiniz, tekliflerinin bir gösterge panosuna erişebilirler."
           create: Kaynak veya eylem oluştur
-          edit: Düzenle
-          delete: Sil
           active: 'Evet'
           inactive: 'Hayır'
           title: Kaynaklar ve eylemler
@@ -493,7 +484,6 @@ tr:
           banner_title: Başlık renkleri
         index:
           create: Yeni işlem
-          delete: Sil
           title: Mevzuat işlemleri
           filters:
             active: Aktif
@@ -622,7 +612,6 @@ tr:
         no_managers: Hiç yönetici yok.
       manager:
         add: Ekle
-        delete: Sil
       search:
         title: "Yöneticiler: Kullanıcı arama"
     menu:
@@ -701,7 +690,6 @@ tr:
         no_administrators: Hiç yönetici yok.
       administrator:
         add: Ekle
-        delete: Sil
         restricted_removal: "Üzgünüm, kendinizi yöneticilerden kaldıramazsınız"
       search:
         title: "Yöneticiler: Kullanıcı ara"
@@ -716,7 +704,6 @@ tr:
         no_moderators: Hiç moderatör yok.
       moderator:
         add: Ekle
-        delete: Sil
       search:
         title: "Moderatörler: Kullanıcı arama"
     segment_recipient:
@@ -743,8 +730,6 @@ tr:
         sent: Gönder
         actions: Aksiyon
         draft: Taslak
-        edit: Düzenleme
-        delete: Sil
         preview: Önizleme
         empty_newsletters: Hiç gösterilecek bülten yok
       new:
@@ -779,8 +764,6 @@ tr:
         sent: Gönder
         actions: Aksiyon
         draft: Taslak
-        edit: Düzenleme
-        delete: Sil
         preview: Önizleme
         view: Görünüm
         empty_notifications: Hiç gösterilecek bildirim yok
@@ -878,7 +861,6 @@ tr:
         can_edit_dossier: "Dosyayı düzenleyebilir"
       valuator:
         add: Bilirkişilere ekle
-        delete: Sil
       search:
         title: "Bilirkişiler: Kullanıcı arama"
       form:
@@ -1272,7 +1254,6 @@ tr:
       author: Yazar
       content: İçerik
       created_at: Oluşturuldu
-      delete: Sil
       color_help: Onaltılık format
       show_results_and_stats: "Sonuçları ve istatistikleri göster"
       results_and_stats_reminder: "Bu onay kutularını işaretleyince sonuçlar ve/veya istatistikleri herkese açık olacak ve her kullanıcı bunları görecek."
@@ -1280,8 +1261,6 @@ tr:
       index:
         title: Coğrafi Bölge (Geozone)
         create: Coğrafi bölge (Geozone) oluştur
-        edit: Düzenleme
-        delete: Sil
       geozone:
         name: İsim
         external_code: Harici kod
