@@ -72,10 +72,6 @@ el:
         budget_investments: Διαχείριση προγραμμάτων
         table_name: Όνομα
         table_phase: Φάση
-        table_investments: Επενδύσεις
-        table_edit_groups: Επικεφαλίδες ομάδων
-        table_edit_budget: Επεξεργασία
-        table_admin_ballots: Ψηφοδέλτια
         edit_groups: Επεξεργασία επικεφαλίδων ομάδων
         edit_budget: Επεξεργασία προϋπολογισμού
         admin_ballots: Ψηφοδέλτια διαχειριστών
@@ -107,7 +103,6 @@ el:
     budget_groups:
       name: "Όνομα"
       headings_name: "Επικεφαλίδες"
-      headings_edit: "Επεξεργασία επικεφαλίδων"
       headings_manage: "Διαχείριση επικεφαλίδων "
       no_groups: "Δεν υπάρχουν ομάδες."
       amount:
@@ -279,8 +274,6 @@ el:
         table_name: Όνομα
         table_description: Περιγραφή
         table_actions: Ενέργειες
-        delete: Διαγραφή
-        edit: Επεξεργασία
       edit:
         title: Επεξεργασία κατάστασης οροσήμου
       update:
@@ -326,8 +319,6 @@ el:
         index:
           description: "Οι χρήστες που υποβάλουν προτάσεις έχουν πρόσβαση στον πίνακα της πρότασής τους, όπου άλλοι χρήστες μπορούν να προτείνουν πόρους και συστάσεις για να λάβουν στήριξη για την ιδέα τους."
           create: Δημιουργία πόρων ή δράσης
-          edit: Επεξεργασία
-          delete: Διαγραφή
           active: 'Ναι'
           inactive: 'Όχι'
           title: Πόροι και δράσεις
@@ -450,7 +441,6 @@ el:
           banner_title: Χρώματα επικεφαλίδας
         index:
           create: Νέα διαδικασία
-          delete: Διαγραφή
           title: Συνεργατική νομοθεσία
           filters:
             active: Ενεργό
@@ -579,7 +569,6 @@ el:
         no_managers: Δεν υπάρχουν υπεύθυνοι
       manager:
         add: Προσθήκη
-        delete: Διαγραφή
       search:
         title: "Συντονιστές: Αναζήτηση χρήστη"
     menu:
@@ -654,7 +643,6 @@ el:
         no_administrators: Δεν υπάρχουν διαχειριστές.
       administrator:
         add: Προσθέστε
-        delete: Διαγραφή
         restricted_removal: "Συγνώμη, δεν μπορείτε να αφαιρέσετε τον εαυτό σας από τους διαχειριστές"
       search:
         title: "Διαχειριστές: Αναζήτηση χρήστη"
@@ -666,7 +654,6 @@ el:
         no_moderators: Δεν υπάρχουν συντονιστές.
       moderator:
         add: Προσθέστε
-        delete: Διαγραφή
       search:
         title: "Συντονιστές: Αναζήτηση χρήστη"
     segment_recipient:
@@ -692,8 +679,6 @@ el:
         sent: Απεσταλμένα
         actions: Ενέργειες
         draft: Προσχέδιο
-        edit: Επεξεργασία
-        delete: Διαγραφή
         preview: Προεπισκόπηση
         empty_newsletters: Δεν υπάρχουν ενημερωτικά δελτία για προβολή
       new:
@@ -727,8 +712,6 @@ el:
         sent: Απεσταλμένα
         actions: Ενέργειες
         draft: Προσχέδιο
-        edit: Επεξεργασία
-        delete: Διαγραφή
         preview: Προεπισκόπηση
         view: Προβολή
         empty_notifications: Δεν υπάρχουν ειδοποιήσεις για προβολή
@@ -819,7 +802,6 @@ el:
         no_group: "Δεν υπάρχει ομάδα"
       valuator:
         add: Προσθέστε στους εκτιμητές
-        delete: Διαγραφή
       search:
         title: "Εκτιμητές: Αναζήτηση χρήστη"
       form:
@@ -1201,14 +1183,11 @@ el:
       author: Συγγραφέας
       content: Περιεχόμενο
       created_at: Δημιουργήθηκε στις
-      delete: Διαγραφή
       color_help: Δεκαεξαδική μορφή
     geozones:
       index:
         title: Γεωζώνη
         create: Δημιουργία γεωζώνης
-        edit: Επεξεργασία
-        delete: Διαγραφή
       geozone:
         name: Όνομα
         external_code: Εξωτερικός κωδικός
