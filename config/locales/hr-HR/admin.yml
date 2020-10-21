@@ -72,10 +72,6 @@ hr:
         budget_investments: Upravljaj projektima
         table_name: Ime
         table_phase: Faza
-        table_investments: Investicije
-        table_edit_groups: Tematska grupa
-        table_edit_budget: Uredi
-        table_admin_ballots: Glasački listići
         edit_groups: Uredi naslov grupa
         edit_budget: Uredi budžet
         admin_ballots: Glasovi admina
@@ -119,7 +115,6 @@ hr:
     budget_groups:
       name: "Ime"
       headings_name: "Naslovi"
-      headings_edit: "Uredi Naslove"
       headings_manage: "Upravljaj naslovima"
       no_groups: "Nema grupa."
       amount:
@@ -301,8 +296,6 @@ hr:
         table_name: Ime
         table_description: Opis
         table_actions: Akcije
-        delete: Izbriši
-        edit: Uredi
       edit:
         title: Uredi statuse ključnih ciljeva
       update:
@@ -365,8 +358,6 @@ hr:
         index:
           description: "Kada korisnik stvori prijedlog može mu pristupiti kroz glavni izbornik svojih prijedloga, tamo može predložiti resurse i preporuke kako bi dobili potporu za svoju ideju."
           create: Stvori resurs ili djelovanje
-          edit: Uredi
-          delete: Izbriši
           active: 'Da'
           inactive: 'Ne'
           title: Resursi i djelovanja
@@ -501,7 +492,6 @@ hr:
           banner_title: Boje naslova
         index:
           create: Novi proces
-          delete: Izbriši
           title: Javno savjetovanje
           filters:
             active: Aktivirati
@@ -632,7 +622,6 @@ hr:
         no_managers: Ne postoje menadžeri.
       manager:
         add: Dodaj
-        delete: Izbriši
       search:
         title: "Menadžeri: Pretraga korisnika"
     menu:
@@ -712,7 +701,6 @@ hr:
         no_administrators: Ne postoje administratori.
       administrator:
         add: Dodaj
-        delete: Izbriši
         restricted_removal: "Oprostite, ne možete sebe ukloniti kao administratora"
       search:
         title: "Administratori: Korisnička pretraga"
@@ -727,7 +715,6 @@ hr:
         no_moderators: Ne postoje moderatori.
       moderator:
         add: Dodaj
-        delete: Izbriši
       search:
         title: "Moderatori: Korisnička pretraga"
     segment_recipient:
@@ -754,8 +741,6 @@ hr:
         sent: Pošalji
         actions: Akcije
         draft: Nacrt
-        edit: Uredi
-        delete: Izbriši
         preview: Pregled
         empty_newsletters: Ne postoje newsletteri za prikaz
       new:
@@ -792,8 +777,6 @@ hr:
         sent: Poslano
         actions: Akcije
         draft: Nacrt
-        edit: Uredi
-        delete: Izbriši
         preview: Pregled
         view: Pogled
         empty_notifications: Ne postoje obavijesti za prikaz
@@ -891,7 +874,6 @@ hr:
         can_edit_dossier: "Može uređivati spis"
       valuator:
         add: Dodaj procjenitelje
-        delete: Izbriši
       search:
         title: "Procjenitelji: Pretraga korisnika"
       form:
@@ -1306,7 +1288,6 @@ hr:
       author: Autor
       content: Sadržaj
       created_at: Stvoreno kod
-      delete: Izbriši
       color_help: Heksadecimalni format
       show_results_and_stats: "Prikaži rezultate i statistike"
       results_and_stats_reminder: "Označi ove kućice rezultata i/ili status koji može biti javno dostupan i svaki korisnik će ih vidjeti."
@@ -1314,8 +1295,6 @@ hr:
       index:
         title: Geozona
         create: Stvori geozonu
-        edit: Uredi
-        delete: Izbriši
       geozone:
         name: Ime
         external_code: Vanjski kod
