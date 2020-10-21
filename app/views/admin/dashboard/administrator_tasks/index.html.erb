@@ -10,7 +10,7 @@
       <tr>
         <th><%= t("admin.dashboard.administrator_tasks.index.source") %></th>
         <th><%= t("admin.dashboard.administrator_tasks.index.resource") %></th>
-        <th class="text-right"><%= t("admin.actions.actions") %></th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
 
@@ -23,11 +23,12 @@
           <td>
             <%= task.source.action.title %>
           </td>
-          <td class="text-right">
+          <td>
             <% unless task.executed_at? %>
-              <%= link_to t("admin.dashboard.administrator_tasks.index.solve"),
-                          edit_admin_dashboard_administrator_task_path(task),
-                          class: "button hollow" %>
+              <%= render Admin::TableActionsComponent.new(task,
+                actions: [:edit],
+                edit_text: t("admin.dashboard.administrator_tasks.index.solve")
+              ) %>
             <% end %>
           </td>
         </tr>

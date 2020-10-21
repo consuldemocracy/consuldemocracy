@@ -56,10 +56,10 @@
             <% end %>
           </td>
           <td class="small-2">
-            <%= link_to t("admin.milestones.index.delete"),
-                        admin_polymorphic_path(milestone),
-                        method: :delete,
-                        class: "button hollow alert expanded" %>
+            <%= render Admin::TableActionsComponent.new(milestone,
+              actions: [:destroy],
+              destroy_text: t("admin.milestones.index.delete")
+            ) %>
           </td>
         </tr>
       <% end %>

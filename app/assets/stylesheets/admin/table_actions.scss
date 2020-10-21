@@ -1,0 +1,12 @@
+.admin .table-actions {
+  align-items: baseline;
+  display: flex;
+
+  > :not(:first-child) {
+    margin-left: $line-height / 2;
+  }
+
+  > p {
+    align-self: flex-start;
+  }
+}

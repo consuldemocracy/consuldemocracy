@@ -236,16 +236,8 @@ $sidebar-active: #f4fcd0;
       table-layout: fixed;
     }
 
-    [type="submit"] ~ a,
-    a ~ a {
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: $line-height / 2;
-
-      @include breakpoint(medium) {
-        margin-left: $line-height / 2;
-        margin-top: 0;
-      }
+    [type="submit"] ~ a {
+      margin-left: $line-height / 2;
     }
   }
 

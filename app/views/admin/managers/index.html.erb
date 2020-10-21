@@ -22,10 +22,7 @@
               <%= manager.email %>
             </td>
             <td>
-              <%= link_to t("admin.managers.manager.delete"),
-                admin_manager_path(manager),
-                method: :delete,
-                class: "button hollow alert expanded" %>
+              <%= render Admin::Roles::TableActionsComponent.new(manager) %>
             </td>
           </tr>
         <% end %>

@@ -17,14 +17,8 @@
     <% end %>
   </td>
   <td>
-    <%= link_to t("admin.actions.edit"),
-                edit_admin_widget_card_path(card, page_id: params[:page_id]),
-                class: "button hollow" %>
-
-    <%= link_to t("admin.actions.delete"),
-                admin_widget_card_path(card, page_id: params[:page_id]),
-                method: :delete,
-                data: { confirm: t("admin.actions.confirm") },
-                class: "button hollow alert" %>
+    <%= render Admin::TableActionsComponent.new(card,
+      edit_path: edit_admin_widget_card_path(card, page_id: params[:page_id])
+    ) %>
   </td>
 </tr>

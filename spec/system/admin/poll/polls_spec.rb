@@ -58,7 +58,7 @@ describe "Admin polls" do
     poll = create(:poll)
 
     visit admin_polls_path
-    click_link poll.name
+    click_link "Configure"
 
     expect(page).to have_content poll.name
   end

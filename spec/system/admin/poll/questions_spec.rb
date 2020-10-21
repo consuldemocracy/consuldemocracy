@@ -52,7 +52,7 @@ describe "Admin poll questions" do
     question = create(:poll_question, poll: poll)
 
     visit admin_poll_path(poll)
-    click_link question.title
+    click_link "Edit answers"
 
     expect(page).to have_content(question.title)
     expect(page).to have_content(question.author.name)
