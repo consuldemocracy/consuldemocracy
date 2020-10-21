@@ -64,9 +64,6 @@ fa:
           finished: به پایان رسید
         table_name: نام
         table_phase: فاز
-        table_investments: سرمایه گذاری ها
-        table_edit_groups: سرفصلهای گروه
-        table_edit_budget: ویرایش
         edit_groups: ویرایش سرفصلهای گروه
         edit_budget: ویرایش بودجه
         no_budgets: "هیچ بودجه ای وجود ندارد."
@@ -223,8 +220,6 @@ fa:
         table_name: نام
         table_description: توضیحات
         table_actions: اقدامات
-        delete: حذف
-        edit: ویرایش
     progress_bars:
       index:
         table_id: "شناسه"
@@ -288,7 +283,6 @@ fa:
           additional_info_placeholder: افزودن اطلاعات اضافی که در نظر شما مفید است
         index:
           create: فرآیند جدید
-          delete: حذف
           title: فرآیندهای قانونی
           filters:
             all: همه
@@ -401,7 +395,6 @@ fa:
         no_managers: هیچ مدیری وجود ندارد
       manager:
         add: اضافه کردن
-        delete: حذف
       search:
         title: "مدیران: جستجوی کاربر"
     menu:
@@ -459,7 +452,6 @@ fa:
         no_administrators: هیچ مدیری وجود ندارد
       administrator:
         add: اضافه کردن
-        delete: حذف
         restricted_removal: "با عرض پوزش، شما نمی توانید خود را از مدیریت حذف کنید"
       search:
         title: "مدیران: جستجوی کاربر"
@@ -471,7 +463,6 @@ fa:
         no_moderators: هیچ مدیری وجود ندارد
       moderator:
         add: اضافه کردن
-        delete: حذف
       search:
         title: "مدیران: جستجوی کاربر"
     segment_recipient:
@@ -497,8 +488,6 @@ fa:
         sent: "ارسال شد\n"
         actions: اقدامات
         draft: ' پیش نویس'
-        edit: ویرایش
-        delete: حذف
         preview: پیش نمایش
         empty_newsletters: هیچ خبرنامه برای نشان دادن وجود ندارد
       new:
@@ -523,8 +512,6 @@ fa:
         sent: "ارسال شد\n"
         actions: اقدامات
         draft: ' پیش نویس'
-        edit: ویرایش
-        delete: حذف
         preview: پیش نمایش
       show:
         send: ارسال اعلان
@@ -552,7 +539,6 @@ fa:
         no_group: "هیچ گروهی وجود ندارد"
       valuator:
         add: افزودن به ارزیابان
-        delete: حذف
       search:
         title: "ارزیابی کنندگان: جستجوی کاربر"
       form:
@@ -898,13 +884,10 @@ fa:
       author: نویسنده
       content: محتوا
       created_at: "ایجاد شده در\n"
-      delete: حذف
     geozones:
       index:
         title: Geozone
         create: ایجاد geozone
-        edit: ویرایش
-        delete: حذف
       geozone:
         name: نام
         external_code: ویدیوهای خارجی
