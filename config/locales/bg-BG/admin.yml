@@ -72,10 +72,6 @@ bg:
         budget_investments: Управление на проекти
         table_name: Име
         table_phase: Фаза
-        table_investments: Инвестиции
-        table_edit_groups: Групи заглавия
-        table_edit_budget: Редактиране
-        table_admin_ballots: Бюлетини
         edit_groups: Редактиране на групи заглавия
         edit_budget: Редактиране на бюджета
         admin_ballots: Административни бюлетини
@@ -117,7 +113,6 @@ bg:
     budget_groups:
       name: "Име"
       headings_name: "Заглавия"
-      headings_edit: "Редактиране на заглавия"
       headings_manage: "Управление на заглавия"
       no_groups: "Няма групи."
       amount:
@@ -295,8 +290,6 @@ bg:
         table_name: Име
         table_description: Описание
         table_actions: Действия
-        delete: Изтриване
-        edit: Редактиране
       edit:
         title: Редактиране на състоянието на основен етап
       update:
@@ -357,8 +350,6 @@ bg:
         index:
           description: "Когато потребителите създават предложения, те могат да получат достъп до табло на своето предложение, където можете да предлагате ресурси и препоръки, за да получите подкрепа за тяхната идея."
           create: Създаване на ресурс или действие
-          edit: Редактиране
-          delete: Изтриване
           active: 'Да'
           inactive: 'Не'
           title: Ресурси и действия
@@ -492,7 +483,6 @@ bg:
           banner_title: Цветове на хедъра
         index:
           create: Нов процес
-          delete: Изтриване
           title: Съвместно законодателство
           filters:
             active: Активен
@@ -621,7 +611,6 @@ bg:
         no_managers: Няма мениджъри.
       manager:
         add: Добавяне
-        delete: Изтриване
       search:
         title: "Мениджъри: Търсене на потребители"
     menu:
@@ -701,7 +690,6 @@ bg:
         no_administrators: Няма администратори.
       administrator:
         add: Добавяне
-        delete: Изтриване
         restricted_removal: "За съжаление не можете да се премахнете от администраторите"
       search:
         title: "Администратори: Търсене на потребители"
@@ -716,7 +704,6 @@ bg:
         no_moderators: Няма модератори.
       moderator:
         add: Добавяне
-        delete: Изтриване
       search:
         title: "Модератори: Търсене на потребители"
     segment_recipient:
@@ -743,8 +730,6 @@ bg:
         sent: Изпратено
         actions: Действия
         draft: Чернова
-        edit: Редактиране
-        delete: Изтриване
         preview: Визуализация
         empty_newsletters: Няма бюлетини за показване
       new:
@@ -780,8 +765,6 @@ bg:
         sent: Изпратено
         actions: Действия
         draft: Чернова
-        edit: Редактиране
-        delete: Изтриване
         preview: Визуализация
         view: Преглед
         empty_notifications: Няма известия за показване
@@ -879,7 +862,6 @@ bg:
         can_edit_dossier: "Може да редактирате досието"
       valuator:
         add: Добавете към оценители
-        delete: Изтрийте
       search:
         title: "Оценители: Потребителско търсене"
       form:
@@ -1292,7 +1274,6 @@ bg:
       author: Автор
       content: Съдържание
       created_at: Създадено в
-      delete: Изтриване
       color_help: Шестнадесетичен формат
       show_results_and_stats: "Показване на резултати и статистика"
       results_and_stats_reminder: "Ако маркирате тези квадратчета, резултатите и/или статистиката ще бъдат публично достъпни и всеки потребител ще ги вижда."
@@ -1300,8 +1281,6 @@ bg:
       index:
         title: Геозона
         create: Създайте геозона
-        edit: Редактирайте
-        delete: Изтрийте
       geozone:
         name: Име
         external_code: Външен код
