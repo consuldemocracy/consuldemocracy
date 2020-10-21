@@ -70,9 +70,6 @@ sq:
         budget_investments: Menaxho projektet
         table_name: Emri
         table_phase: Fazë
-        table_investments: Investim
-        table_edit_groups: Grupet e titujve
-        table_edit_budget: Ndrysho
         edit_groups: Ndrysho grupet e titujve
         edit_budget: Ndrysho buxhetin
         no_budgets: "Nuk ka buxhet."
@@ -236,8 +233,6 @@ sq:
         table_name: Emri
         table_description: Përshkrimi
         table_actions: Veprimet
-        delete: Fshi
-        edit: Ndrysho
       edit:
         title: Ndrysho statusin e investimeve
       update:
@@ -315,7 +310,6 @@ sq:
           additional_info_placeholder: Shto një informacion shtesë që e konsideron të dobishme
         index:
           create: Proces i ri
-          delete: Fshi
           title: Legjislacion
           filters:
             all: Të gjithë
@@ -438,7 +432,6 @@ sq:
         no_managers: Nuk ka menaxherë.
       manager:
         add: Shto
-        delete: Fshi
       search:
         title: "Menaxherët: Kërkimi i përdoruesit"
     menu:
@@ -507,7 +500,6 @@ sq:
         no_administrators: Nuk ka administratorë.
       administrator:
         add: Shto
-        delete: Fshi
         restricted_removal: "Na vjen keq, nuk mund ta heqësh veten nga administratorët"
       search:
         title: "Administratorët: Kërkimi i përdoruesit"
@@ -519,7 +511,6 @@ sq:
         no_moderators: Nuk ka moderator.
       moderator:
         add: Shto
-        delete: Fshi
       search:
         title: "Moderatorët: Kërkimi i përdoruesit"
     segment_recipient:
@@ -545,8 +536,6 @@ sq:
         sent: Dërguar
         actions: Veprimet
         draft: Drafti
-        edit: Ndrysho
-        delete: Fshi
         preview: Parapamje
         empty_newsletters: Nuk ka buletin për të treguar
       new:
@@ -580,8 +569,6 @@ sq:
         sent: Dërguar
         actions: Veprimet
         draft: Drafti
-        edit: Ndrysho
-        delete: Fshi
         preview: Parapamje
         view: Pamje
         empty_notifications: Nuk ka njoftim për të treguar
@@ -635,7 +622,6 @@ sq:
         no_group: "Asnjë grup"
       valuator:
         add: Shto tek vlerësuesit
-        delete: Fshi
       search:
         title: "Vlerësuesit: Kërkimi i përdoruesit"
       form:
@@ -989,13 +975,10 @@ sq:
       author: Autor
       content: Përmbajtje
       created_at: Krijuar në
-      delete: Fshi
     geozones:
       index:
         title: Gjeozona
         create: Krijo gjeozonë
-        edit: Ndrysho
-        delete: Fshi
       geozone:
         name: Emri
         external_code: Kodi i jashtëm
