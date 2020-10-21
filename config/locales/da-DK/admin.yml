@@ -72,10 +72,6 @@ da:
         budget_investments: Administrer projekter
         table_name: Navn
         table_phase: Fase
-        table_investments: Projektidéer
-        table_edit_groups: Budgetområder
-        table_edit_budget: Rediger
-        table_admin_ballots: Valgsteder
         edit_groups: Rediger områder
         edit_budget: Rediger budget
         admin_ballots: Administrer valgsteder
@@ -117,7 +113,6 @@ da:
     budget_groups:
       name: "Navn"
       headings_name: "Områder"
-      headings_edit: "Rediger post"
       headings_manage: "Administrer post"
       no_groups: "Der er ingen grupper."
       amount:
@@ -295,8 +290,6 @@ da:
         table_name: Navn
         table_description: Beskrivelse
         table_actions: Handlinger
-        delete: Slet
-        edit: Rediger
       edit:
         title: Rediger processtatus
       update:
@@ -359,8 +352,6 @@ da:
         index:
           description: "Når brugere opretter borgerforslag, kan de tilgå dashboardet for deres forslag, hvor du kan foreslå funktioner og anbefale, hvordan de bedst muligt får opbakning til deres idéer."
           create: Opret funktion eller handling
-          edit: Rediger
-          delete: Slet
           active: 'Ja'
           inactive: 'Nej'
           title: Funktioner og handlinger
@@ -495,7 +486,6 @@ da:
           banner_title: Farve på overskrift
         index:
           create: Ny proces
-          delete: Slet
           title: Medborgerdialog
           filters:
             active: Aktive
@@ -625,7 +615,6 @@ da:
         no_managers: Der findes ingen managere.
       manager:
         add: Tilføj
-        delete: Slet
       search:
         title: "Managers: Søg bruger"
     menu:
@@ -705,7 +694,6 @@ da:
         no_administrators: Der er ingen administratorer.
       administrator:
         add: Tilføj
-        delete: Slet
         restricted_removal: "Beklager, men du kan ikke fjerne dig selv som administrator"
       search:
         title: "Administratorer: Søg brugere"
@@ -720,7 +708,6 @@ da:
         no_moderators: Der er ingen moderatorer.
       moderator:
         add: Tilføj
-        delete: Slet
       search:
         title: "Moderatorer: Søg brugere"
     segment_recipient:
@@ -747,8 +734,6 @@ da:
         sent: Sendt
         actions: Handlinger
         draft: Udkast
-        edit: Rediger
-        delete: Slet
         preview: Forhåndsvisning
         empty_newsletters: Der er ingen nyhedsbreve at vise
       new:
@@ -784,8 +769,6 @@ da:
         sent: Sendt
         actions: Handlinger
         draft: Udkast
-        edit: Rediger
-        delete: Slet
         preview: Forhåndsvisning
         view: Se
         empty_notifications: Der er ingen notifikationer at vise
@@ -883,7 +866,6 @@ da:
         can_edit_dossier: "Kan redigere projektinformation"
       valuator:
         add: Føj til evaluatorer
-        delete: Slet
       search:
         title: "Evaluatorer: Søg bruger"
       form:
@@ -1278,14 +1260,11 @@ da:
       author: Oprettet af
       content: Indhold
       created_at: Oprettet den
-      delete: Slet
       color_help: Hexadecimalt format
     geozones:
       index:
         title: Geografisk område
         create: Opret gegrafisk område
-        edit: Rediger
-        delete: Slet
       geozone:
         name: Navn
         external_code: Ekstern kode
