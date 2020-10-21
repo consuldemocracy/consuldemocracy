@@ -72,10 +72,6 @@ oc:
         budget_investments: Gerir de projèctes
         table_name: Nome
         table_phase: fasa
-        table_investments: de Proposicions d'inversion
-        table_edit_groups: de Grops de partidas
-        table_edit_budget: Editar proposicion
-        table_admin_ballots: ' de Bilhetas'
         edit_groups: Edita de grops de partidas
         edit_budget: Edita budgèt
         admin_ballots: de Bilhetas d’administracion
@@ -117,7 +113,6 @@ oc:
     budget_groups:
       name: "Nome"
       headings_name: "Rúbriques"
-      headings_edit: "Edita los encapçalaments"
       headings_manage: "Gerís los encapçalaments"
       no_groups: "I a pas de grops."
       amount:
@@ -295,8 +290,6 @@ oc:
         table_name: Nome
         table_description: Descripcion detalhada
         table_actions: d'Accions
-        delete: Borrar
-        edit: Editar proposicion
       edit:
         title: Edita l'estat de la hita
       update:
@@ -359,8 +352,6 @@ oc:
         index:
           description: "Quand los usatgièrs crèan de proposicions pòdon accedir a un quadre de comandament de la siá proposicion, ont podètz prepausar de recorses e de recomandacions per obténer supòrt per la siá idèa."
           create: Crear recors o accion
-          edit: Edita
-          delete: Suprimís
           active: 'Òc'
           inactive: 'Pas'
           title: de Recorses e d'accions
@@ -495,7 +486,6 @@ oc:
           banner_title: de Colors d'entèsta
         index:
           create: nòu procès
-          delete: Borrar
           title: de procèsses legislatius
           filters:
             active: Actiu
@@ -625,7 +615,6 @@ oc:
         no_managers: I a pas de gestors.
       manager:
         add: Añadir como President de taula
-        delete: Borrar
       search:
         title: "de Gestors: cerca d’usatgièrs"
     menu:
@@ -705,7 +694,6 @@ oc:
         no_administrators: I a pas d'administradors.
       administrator:
         add: Añadir como President de taula
-        delete: Borrar
         restricted_removal: "O sentèm, pòdes pas t'eliminar a tu meteis de la lista"
       search:
         title: "d'Administradors: cerca d’usatgièrs"
@@ -720,7 +708,6 @@ oc:
         no_moderators: I a pas de moderadors.
       moderator:
         add: Añadir como President de taula
-        delete: Borrar
       search:
         title: "de Moderadors: cerca d’usatgièrs"
     segment_recipient:
@@ -747,8 +734,6 @@ oc:
         sent: data
         actions: d'Accions
         draft: Borrolhon
-        edit: Editar proposicion
-        delete: Borrar
         preview: Previsualitzar
         empty_newsletters: I a pas de bulletins per mostrar
       new:
@@ -784,8 +769,6 @@ oc:
         sent: data
         actions: d'Accions
         draft: Borrolhon
-        edit: Editar proposicion
-        delete: Borrar
         preview: Previsualitzar
         view: Veire
         empty_notifications: I a pas de notificacions a mostrar
@@ -883,7 +866,6 @@ oc:
         can_edit_dossier: "Es pot editar dossier"
       valuator:
         add: Apondre coma avaluador
-        delete: Borrar
       search:
         title: "Avaluadors: cerca d’usatgièrs"
       form:
@@ -1288,7 +1270,6 @@ oc:
       author: Autor
       content: contengut
       created_at: creat
-      delete: Borrar
       color_help: Format hexadecimal
       show_results_and_stats: "Mostra els resultats i les estadístiques"
       results_and_stats_reminder: "En marcar aquestes caselles de selecció els resultats i / o estadístiques estaran a la disposició del públic i tots els usuaris els veuran."
@@ -1296,8 +1277,6 @@ oc:
       index:
         title: de Districtes
         create: Crear un districte
-        edit: Editar proposicion
-        delete: Borrar
       geozone:
         name: Nome
         external_code: còdi extèrne
