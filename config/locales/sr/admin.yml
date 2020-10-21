@@ -72,10 +72,6 @@ sr:
         budget_investments: Управљање пројектима
         table_name: Име
         table_phase: Фаза
-        table_investments: Инвестиције
-        table_edit_groups: Групе наслова
-        table_edit_budget: Уредити
-        table_admin_ballots: Гласачки листићи
         edit_groups: Уреди групе наслова
         edit_budget: Уредити буџет
         admin_ballots: Админ листићи
@@ -119,7 +115,6 @@ sr:
     budget_groups:
       name: "Име"
       headings_name: "Наслови"
-      headings_edit: "Уредите Наслове"
       headings_manage: "Управљајте насловима"
       no_groups: "Нема група."
       amount:
@@ -301,8 +296,6 @@ sr:
         table_name: Име
         table_description: Опис
         table_actions: Акције
-        delete: Обрисати
-        edit: Променити
       edit:
         title: Уредите значајни статус
       update:
@@ -365,8 +358,6 @@ sr:
         index:
           description: "Када корисници креирају предлоге, могу да приступе контролној табли свог предлога, где можете да предложите ресурсе и препоруке да бисте добили подршку за своју идеју."
           create: Креирајте ресурс или радњу
-          edit: Измените
-          delete: Обришите
           active: 'Да'
           inactive: 'Не'
           title: Ресурси и радње
@@ -501,7 +492,6 @@ sr:
           banner_title: Боје наслова
         index:
           create: Нови процес
-          delete: Обрисати
           title: Заједнички закон
           filters:
             active: Активно
@@ -632,7 +622,6 @@ sr:
         no_managers: Нема управљача.
       manager:
         add: Додати
-        delete: Обрисати
       search:
         title: "Управљачи: Корисничка претрага"
     menu:
@@ -712,7 +701,6 @@ sr:
         no_administrators: Нема администратора.
       administrator:
         add: Додати
-        delete: Обрисати
         restricted_removal: "Извините, не можете уклонити себе као администратора"
       search:
         title: "Администратори: Корисничка претрага"
@@ -727,7 +715,6 @@ sr:
         no_moderators: Нема модератора.
       moderator:
         add: Додати
-        delete: Обрисати
       search:
         title: "Модератори: Корисничка претрага"
     segment_recipient:
@@ -754,8 +741,6 @@ sr:
         sent: Послато
         actions: Радње
         draft: Нацрт
-        edit: Уредити
-        delete: Обрисати
         preview: Преглед
         empty_newsletters: Нема билтена за приказ
       new:
@@ -792,8 +777,6 @@ sr:
         sent: Послато
         actions: Радње
         draft: Нацрт
-        edit: Уређивање
-        delete: Брисање
         preview: Преглед
         view: Приказ
         empty_notifications: Нема обавештења за приказивање
@@ -891,7 +874,6 @@ sr:
         can_edit_dossier: "Могуће уредити фасциклу"
       valuator:
         add: Додати оцењиваче
-        delete: Обрисати
       search:
         title: "Оцењивачи: Корисничка претрага"
       form:
@@ -1306,7 +1288,6 @@ sr:
       author: Аутор
       content: Садржај
       created_at: Креирано у
-      delete: Обрисати
       color_help: Хексадецимални формат
       show_results_and_stats: "Прикажи резултате и статус"
       results_and_stats_reminder: "Обележавање ових поља за потврду резултати и/или статистике ће бити јавно доступни и сваки корисник ће их видети."
@@ -1314,8 +1295,6 @@ sr:
       index:
         title: Геозона
         create: Креирајте геозону
-        edit: Уреди
-        delete: Обрисати
       geozone:
         name: Име
         external_code: Спољни видео запис
