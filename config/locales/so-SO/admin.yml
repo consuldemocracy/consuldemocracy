@@ -70,9 +70,6 @@ so:
         budget_investments: Mareynta Mashariicda
         table_name: Magac
         table_phase: Weeji
-        table_investments: Maalgashiyo
-        table_edit_groups: Madaxyada Kooxaha
-        table_edit_budget: Isbedel
         edit_groups: Wax ka bedel Madaxyada Kooxaha
         edit_budget: Wax ka bedel Misaaniyada
         no_budgets: "Majiiraan misaniyado."
@@ -236,8 +233,6 @@ so:
         table_name: Magac
         table_description: Sharaxaad
         table_actions: Tilaabooyin
-        delete: Titiriid
-        edit: Isbedel
       edit:
         title: Tafatir xaalada maalgashiga
       update:
@@ -314,7 +309,6 @@ so:
           additional_info_placeholder: Ku dar xog dheeriya oo ad u aragto iney faido ledahay
         index:
           create: New process
-          delete: Titiriid
           title: Nidaamka Sharciga
           filters:
             all: Dhamaan
@@ -437,7 +431,6 @@ so:
         no_managers: Majiraan Mamulayaal.
       manager:
         add: Kudar
-        delete: Titiriid
       search:
         title: "Mamulayasha isticmaala raadinta"
     menu:
@@ -506,7 +499,6 @@ so:
         no_administrators: Ma jiraan maamulayaal.
       administrator:
         add: Kudar
-        delete: Titiriid
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
         title: "Mamulayasha: isticmalayasha radinaya"
@@ -518,7 +510,6 @@ so:
         no_moderators: Majiraan dhex dhexadiyayal.
       moderator:
         add: Kudar
-        delete: Titiriid
       search:
         title: "Dhexdhexadiyasha radinaya isticmalyaal"
     segment_recipient:
@@ -544,8 +535,6 @@ so:
         sent: Diray
         actions: Tilaabooyin
         draft: Qabyo Qorid
-        edit: Isbedel
-        delete: Titiriid
         preview: Hor udhaac
         empty_newsletters: Ma jiraan wargeysyo si aad u muujiso
       new:
@@ -579,8 +568,6 @@ so:
         sent: Diray
         actions: Tilaabooyin
         draft: Qabyo Qorid
-        edit: Isbedel
-        delete: Titiriid
         preview: Hor udhaac
         view: Aragtida
         empty_notifications: Ma jiraan wax wargelin ah oo muujinaya
@@ -634,7 +621,6 @@ so:
         no_group: "Kooxi majirto"
       valuator:
         add: Kudaar qimeyayasha
-        delete: Titiriid
       search:
         title: "Raadi isticmalka qimeyayasha"
       form:
@@ -988,13 +974,10 @@ so:
       author: Qoraa
       content: Mawduuc
       created_at: Abuuray
-      delete: Titiriid
     geozones:
       index:
         title: Dusha sare
         create: Abuur dusha sare
-        edit: Isbedel
-        delete: Titiriid
       geozone:
         name: Magac
         external_code: Koodhaka dibada
