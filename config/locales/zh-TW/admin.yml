@@ -70,9 +70,6 @@ zh-TW:
         budget_investments: 管理項目
         table_name: 名字
         table_phase: 階段
-        table_investments: 投資
-        table_edit_groups: 標題組
-        table_edit_budget: 編輯
         edit_groups: 編輯標題組
         edit_budget: 編輯預算
         no_budgets: "沒有預算。"
@@ -236,8 +233,6 @@ zh-TW:
         table_name: 名字
         table_description: 描述
         table_actions: 行動
-        delete: 刪除
-        edit: 編輯
       edit:
         title: 編輯投資狀態
       update:
@@ -313,7 +308,6 @@ zh-TW:
           additional_info_placeholder: 添加您認為有用的額外資訊
         index:
           create: 新進程
-          delete: 刪除
           title: 立法進程
           filters:
             all: 所有
@@ -434,7 +428,6 @@ zh-TW:
         no_managers: 沒有經理。
       manager:
         add: 添加
-        delete: 刪除
       search:
         title: "經理：用戶搜索"
     menu:
@@ -502,7 +495,6 @@ zh-TW:
         no_administrators: 沒有管理員。
       administrator:
         add: 添加
-        delete: 刪除
         restricted_removal: "對不起，您無法將自己從管理員中刪除"
       search:
         title: "管理員：用戶搜索"
@@ -514,7 +506,6 @@ zh-TW:
         no_moderators: 沒有審核員。
       moderator:
         add: 添加
-        delete: 刪除
       search:
         title: "審核員：用戶搜索"
     segment_recipient:
@@ -540,8 +531,6 @@ zh-TW:
         sent: 發送
         actions: 行動
         draft: 草稿
-        edit: 編輯
-        delete: 刪除
         preview: 預覽
         empty_newsletters: 沒有可顯示的通訊
       new:
@@ -572,8 +561,6 @@ zh-TW:
         sent: 發送
         actions: 行動
         draft: 草稿
-        edit: 編輯
-        delete: 刪除
         preview: 預覽
         view: 檢視
         empty_notifications: 沒有要顯示的通知
@@ -627,7 +614,6 @@ zh-TW:
         no_group: "沒有組"
       valuator:
         add: 添加到評估組
-        delete: 刪除
       search:
         title: "評估員：用戶搜索"
       form:
@@ -981,13 +967,10 @@ zh-TW:
       author: 作者
       content: 內容
       created_at: 創建於
-      delete: 刪除
     geozones:
       index:
         title: 地理區域
         create: 創建地理區域
-        edit: 編輯
-        delete: 刪除
       geozone:
         name: 名字
         external_code: 外部代碼
