@@ -201,12 +201,15 @@ describe "Votes" do
     before { login_as(manuela) }
 
     scenario "Budget limit is ignored", :js do
+      budget.phases.balloting.update!(starts_at: "01-10-2020", ends_at: "31-12-2020")
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group, max_ballot_lines: 2)
       investment1 = create(:budget_investment, :selected, heading: heading, price: heading.price)
       investment2 = create(:budget_investment, :selected, heading: heading, price: heading.price)
 
       visit budget_investments_path(budget, heading_id: heading.id)
+
+      expect(page).to have_content "You can change your vote at any time until the 2020-12-31."
 
       add_to_ballot(investment1.title)
 

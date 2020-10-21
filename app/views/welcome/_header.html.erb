@@ -1,6 +1,6 @@
 <% if header.present? %>
   <div class="jumbo highlight"
-       style="background-image: url(<%= asset_url(image_path_for("header_homepage.png")) %>)">
+       style="background-image: url(<%= image_path_for(header.image_url(:original)) if header.image.present? %>)">
     <div class="row">
       <div class="small-12 large-7 column">
         <span><%= header.label %></span>
@@ -11,9 +11,11 @@
         </div>
       </div>
 
-      <div class="small-12 column hide-for-large">
-        <%= image_tag(image_path_for("header_homepage.png")) %>
-      </div>
+      <% if header.image.present? %>
+        <div class="small-12 column hide-for-large">
+          <%= image_tag(header.image_url(:large), class: "margin", alt: header.image.title) %>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>

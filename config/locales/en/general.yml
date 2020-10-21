@@ -215,7 +215,7 @@ en:
     footer:
       accessibility: Accessibility
       conditions: Terms and conditions of use
-      copyright: CONSUL, %{year}
+      copyright: "CONSUL version %{version}, %{year}"
       privacy: Privacy Policy
     header:
       administration_menu: Menu

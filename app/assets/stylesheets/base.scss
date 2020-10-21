@@ -476,7 +476,7 @@ header {
 
   @include breakpoint(medium) {
     padding-bottom: $line-height;
-    padding-top: $line-height * 2;
+    padding-top: $line-height;
   }
 
   &::before {
@@ -591,18 +591,18 @@ header {
 
     @include breakpoint(large) {
       background: none;
-      background-position: right -150px bottom 0;
+      background-position: 85% 30%;
       background-repeat: no-repeat;
       background-size: contain;
       margin-top: $line-height * 2;
-      min-height: $line-height * 30;
+      min-height: $line-height * 20;
     }
 
     h1 {
-      font-size: rem-calc(60);
+      font-size: rem-calc(48);
 
       @include breakpoint(large) {
-        font-size: rem-calc(90);
+        font-size: rem-calc(60);
       }
     }
   }
@@ -874,7 +874,7 @@ footer {
 
 .footer {
   background: #2d313b;
-  padding-top: $line-height * 3;
+  padding-top: $line-height * 2;
 
   .footer-title {
     margin: $line-height 0;
@@ -908,7 +908,7 @@ footer {
 .subfooter {
   border-top: 0;
   font-size: $base-font-size;
-  margin-top: $line-height * 4;
+  margin-top: $line-height * 2;
   padding: $line-height 0;
 
   ul {
@@ -1199,6 +1199,13 @@ footer {
   h2 {
     font-size: rem-calc(20);
     margin: $line-height / 2 0;
+  }
+}
+
+.budget-investment-index-list {
+
+  .budget-investment .panel img {
+    height: auto;
   }
 }
 
@@ -1503,6 +1510,11 @@ footer {
   position: initial;
 }
 
+.comments-box-container .comment-meta .comment-votes {
+  position: relative;
+  width: 100%;
+}
+
 .comment-box {
 
   .button {
@@ -1551,8 +1563,8 @@ footer {
     }
 
     .votes {
-      bottom: 12px !important;
-      right: 12px !important;
+      bottom: 0 !important;
+      right: 0 !important;
     }
 
     .voted {

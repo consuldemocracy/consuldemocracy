@@ -1661,6 +1661,7 @@ describe "Budget Investments" do
 
     scenario "Confirm", :js do
       budget.update!(phase: "balloting")
+      budget.phases.balloting.update!(starts_at: "01-10-2020", ends_at: "31-12-2020")
       user = create(:user, :level_two)
 
       global_group   = create(:budget_group, budget: budget, name: "Global Group")
@@ -1692,6 +1693,9 @@ describe "Budget Investments" do
 
       add_to_ballot("Fireworks")
       add_to_ballot("Bus pass")
+
+      expect(page).to have_content "You can change your vote at any time until the 2020-12-31. "\
+                                   "No need to spend all the money available."
 
       visit budget_ballot_path(budget)
 
