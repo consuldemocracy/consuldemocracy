@@ -70,9 +70,6 @@ gl:
         budget_investments: Xestionar proxectos
         table_name: Nome
         table_phase: Fase
-        table_investments: Investimentos
-        table_edit_groups: Grupo de partidas
-        table_edit_budget: Editar proposta
         edit_groups: Editar grupos de partidas
         edit_budget: Editar orzamento
         no_budgets: "Non hai orzamentos."
@@ -102,7 +99,6 @@ gl:
     budget_groups:
       name: "Nome"
       headings_name: "Partidas"
-      headings_edit: "Editar Partidas"
       headings_manage: "Xestionar Partidas"
       no_groups: "Non hai grupos creados aínda. Cada usuario poderá votar nunha soa partida de cada grupo."
       amount:
@@ -270,8 +266,6 @@ gl:
         table_name: Nome
         table_description: Descrición
         table_actions: Accións
-        delete: Borrar
-        edit: Editar proposta
       edit:
         title: Editar estados de investimento
       update:
@@ -369,7 +363,6 @@ gl:
           banner_title: Cores da cabeceira
         index:
           create: Novo proceso
-          delete: Borrar
           title: Procesos lexislativos
           filters:
             active: Activo
@@ -498,7 +491,6 @@ gl:
         no_managers: Non hai xestores.
       manager:
         add: Engadir
-        delete: Borrar
       search:
         title: "Xestores: busca de usuarios"
     menu:
@@ -569,7 +561,6 @@ gl:
         no_administrators: Non hai ningún administrador.
       administrator:
         add: Engadir
-        delete: Borrar
         restricted_removal: "Sentímolo mais non podes borrarte a ti mesmo da relación"
       search:
         title: "Administración: busca de usuarios"
@@ -581,7 +572,6 @@ gl:
         no_moderators: Non hai ningún moderador/a.
       moderator:
         add: Engadir
-        delete: Borrar
       search:
         title: "Moderadores: busca de usuarios"
     segment_recipient:
@@ -607,8 +597,6 @@ gl:
         sent: Data
         actions: Accións
         draft: Bosquexo
-        edit: Editar proposta
-        delete: Borrar
         preview: Vista previa
         empty_newsletters: Non hai notificacións para amosar
       new:
@@ -642,8 +630,6 @@ gl:
         sent: Data
         actions: Accións
         draft: Bosquexo
-        edit: Editar proposta
-        delete: Borrar
         preview: Vista previa
         view: Ver
         empty_notifications: Non hai notificacións para amosar
@@ -712,7 +698,6 @@ gl:
         no_group: "Sen grupo"
       valuator:
         add: Engadir como avaliador
-        delete: Borrar
       search:
         title: "Avaliadores: busca de usuarios"
       form:
@@ -1077,13 +1062,10 @@ gl:
       author: Autoría
       content: Contido
       created_at: Creada
-      delete: Borrar
     geozones:
       index:
         title: Zonas
         create: Crear unha zona
-        edit: Editar proposta
-        delete: Borrar
       geozone:
         name: Nome
         external_code: Código externo
