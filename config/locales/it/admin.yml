@@ -72,10 +72,6 @@ it:
         budget_investments: Gestisci i progetti
         table_name: Nominativo
         table_phase: Fase
-        table_investments: Investimenti
-        table_edit_groups: Gruppi di intestazioni
-        table_edit_budget: Modificare
-        table_admin_ballots: Scrutini
         edit_groups: Modificare i gruppi di intestazioni
         edit_budget: Modifica il budget
         admin_ballots: Scrutini amministratore
@@ -117,7 +113,6 @@ it:
     budget_groups:
       name: "Nominativo"
       headings_name: "Intestazione"
-      headings_edit: "Modificare intestazioni"
       headings_manage: "Gestisci voci"
       no_groups: "Non ci sono gruppi."
       amount:
@@ -292,8 +287,6 @@ it:
         table_name: Nominativo
         table_description: Descrizione
         table_actions: Azioni
-        delete: Eliminare
-        edit: Modificare
       edit:
         title: Modifica status dell’investimento
       update:
@@ -414,7 +407,6 @@ it:
           banner_title: Colori voce
         index:
           create: Nuovo procedimento
-          delete: Eliminare
           title: Processi di legislazione
           filters:
             active: Attivo
@@ -543,7 +535,6 @@ it:
         no_managers: Non ci sono dirigenti.
       manager:
         add: Aggiungere
-        delete: Eliminare
       search:
         title: "Dirigenti: Ricerca utenti"
     menu:
@@ -612,7 +603,6 @@ it:
         no_administrators: Non ci sono amministratori.
       administrator:
         add: Aggiungi
-        delete: Eliminare
         restricted_removal: "Non è possibile rimuovere se stessi dagli amministratori"
       search:
         title: "Amministratori: Ricerca utenti"
@@ -624,7 +614,6 @@ it:
         no_moderators: Non ci sono moderatori.
       moderator:
         add: Aggiungi
-        delete: Eliminare
       search:
         title: "Moderatori: Ricerca utenti"
     segment_recipient:
@@ -650,8 +639,6 @@ it:
         sent: Inviato
         actions: Azioni
         draft: Bozza
-        edit: Modificare
-        delete: Eliminare
         preview: Anteprima
         empty_newsletters: Non ci sono newsletter da visualizzare
       new:
@@ -682,8 +669,6 @@ it:
         sent: Inviato
         actions: Azioni
         draft: Bozza
-        edit: Modificare
-        delete: Eliminare
         preview: Anteprima
         view: Visualizza
         empty_notifications: Non ci sono notifiche da visualizzare
@@ -735,7 +720,6 @@ it:
         no_group: "Nessun gruppo"
       valuator:
         add: Aggiungere ai valutatori
-        delete: Eliminare
       search:
         title: "Stimatori: Ricerca utenti"
       form:
@@ -1094,13 +1078,10 @@ it:
       author: Autore
       content: Contenuto
       created_at: Creato al
-      delete: Eliminare
     geozones:
       index:
         title: Geozona
         create: Creare geozona
-        edit: Modificare
-        delete: Eliminare
       geozone:
         name: Nominativo
         external_code: Codice esterno
