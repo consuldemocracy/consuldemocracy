@@ -70,9 +70,6 @@ cs:
         budget_investments: Správa projektů
         table_name: Název
         table_phase: Fáze
-        table_investments: Investice
-        table_edit_groups: Záhlaví skupiny
-        table_edit_budget: Upravit
         edit_groups: Upravit záhlaví skupiny
         edit_budget: Upravit rozpočet
         no_budgets: "Neexistují žádné rozpočty."
@@ -102,7 +99,6 @@ cs:
     budget_groups:
       name: "Název"
       headings_name: "Kapitoly"
-      headings_edit: "Upravit kapitoly"
       headings_manage: "Spravovat kapitoly"
       no_groups: "Neexistují žádné skupiny."
       create:
@@ -259,8 +255,6 @@ cs:
         table_name: Název
         table_description: Description
         table_actions: Akce
-        delete: Smazat
-        edit: Upravit
       edit:
         title: Edit investment status
       update:
@@ -320,8 +314,6 @@ cs:
         description: Vítejte v admin panelu portálu %{org}.
       actions:
         index:
-          edit: Upravit
-          delete: Smazat
           active: 'Ano'
           inactive: 'Ne'
           action_title: Název
@@ -416,7 +408,6 @@ cs:
           banner_title: Barvy záhlaví
         index:
           create: Nový proces
-          delete: Smazat
           title: Legislativní procesy
           filters:
             active: Aktivní
@@ -545,7 +536,6 @@ cs:
         no_managers: Nemáte žádné manažery.
       manager:
         add: Přidat
-        delete: Smazat
       search:
         title: "Manažeři: Vyhledávání uživatelů"
     menu:
@@ -619,7 +609,6 @@ cs:
         no_administrators: Neexistují žádní administrátoři.
       administrator:
         add: Přidat
-        delete: Smazat
         restricted_removal: "Omlouváme se, nemůžete se odstranit ze skupiny administrátorů"
       search:
         title: "Administrátoři: Vyhledávání uživatelů"
@@ -631,7 +620,6 @@ cs:
         no_moderators: Nemáte žádné moderátory.
       moderator:
         add: Přidat
-        delete: Smazat
       search:
         title: "Moderátoři: Vyhledávání uživatelů"
     segment_recipient:
@@ -657,8 +645,6 @@ cs:
         sent: Odesláno
         actions: Akce
         draft: Pracovní verze
-        edit: Upravit
-        delete: Smazat
         preview: Náhled
         empty_newsletters: Žádné informační bulletiny k zobrazení
       new:
@@ -690,8 +676,6 @@ cs:
         sent: Odesláno
         actions: Akce
         draft: Pracovní verze
-        edit: Upravit
-        delete: Smazat
         preview: Náhled
         view: Zobrazit
         empty_notifications: Nemáte žádná oznámení
@@ -745,7 +729,6 @@ cs:
         no_group: "Žádná skupina"
       valuator:
         add: Přidat k hodnotitelům
-        delete: Smazat
       search:
         title: "Hodnotitelé: Vyhledávání uživatelů"
       form:
@@ -1114,7 +1097,6 @@ cs:
       author: Autor
       content: Obsah
       created_at: Vytvořeno v
-      delete: Smazat
       color_help: Hexadecimální formát
       show_results_and_stats: "Zobrazit výsledky a statistiky"
       results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
@@ -1122,8 +1104,6 @@ cs:
       index:
         title: Geozóna
         create: Vytvořit geozónu
-        edit: Upravit
-        delete: Smazat
       geozone:
         name: Název
         external_code: Externí kód
