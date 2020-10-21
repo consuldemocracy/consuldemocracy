@@ -5,7 +5,11 @@
 <div class="expanded budget no-margin-top">
   <div class="row" data-equalizer data-equalizer-on="medium">
     <div class="small-12 medium-9 column padding" data-equalizer-watch>
-      <%= back_link_to budgets_path %>
+      <% if params[:filter].present? && ['unfeasible', 'unselected'].include?(params[:filter]) %>
+        <%= back_link_to budget_path(@budget) %>
+      <% else %>
+        <%= back_link_to budgets_path %>
+      <% end %>
 
       <h1><%= @budget.name %></h1>
 
@@ -80,6 +84,16 @@
 </div>
 
 <% if @budget.balloting_or_later? %>
+  <% if @current_filter == "unfeasible" || @current_filter == "unselected" %>
+    <div class="row">
+      <div class="small-12 column">
+        <%= link_to budget_path(@budget) do %>
+          <small><%= t("budgets.index.investment_proyects") %></small>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
   <% unless @current_filter == "unfeasible" %>
     <div class="row">
       <div class="small-12 column">
