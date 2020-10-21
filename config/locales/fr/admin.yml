@@ -70,10 +70,6 @@ fr:
         budget_investments: Gestion de projets
         table_name: Nom
         table_phase: Phase
-        table_investments: Propositions d'investissement
-        table_edit_groups: Groupes de rubriques
-        table_edit_budget: Éditer
-        table_admin_ballots: Bulletins
         edit_groups: Modifier les groupes de rubriques
         edit_budget: Modifier le budget
         admin_ballots: Bulletins de l’admin
@@ -105,7 +101,6 @@ fr:
     budget_groups:
       name: "Nom"
       headings_name: "Titres"
-      headings_edit: "Modifier les rubriques"
       headings_manage: "Gérer les rubriques"
       no_groups: "Il n'y a pas de groupes."
       amount:
@@ -273,8 +268,6 @@ fr:
         table_name: Nom
         table_description: Description
         table_actions: Actions
-        delete: Supprimer
-        edit: Éditer
       edit:
         title: Modifier le statut d'investissement
       update:
@@ -323,8 +316,6 @@ fr:
         index:
           description: "Lorsque les utilisateurs créent des propositions il peuvent accéder au tableau de bord de leur proposition, où vous pouvez proposer des ressources et recommandations pour soutenir leur idée."
           create: Créer une ressource ou une action
-          edit: Editer
-          delete: Supprimer
           active: 'Oui'
           inactive: 'Non'
           title: Ressources et actions
@@ -449,7 +440,6 @@ fr:
           banner_title: Couleurs de l'en-tête
         index:
           create: Nouveau processus
-          delete: Supprimer
           title: Processus législatifs
           filters:
             active: Actif
@@ -575,7 +565,6 @@ fr:
         no_managers: Il n’y a aucun gestionnaire.
       manager:
         add: Ajouter en tant que président
-        delete: Supprimer
       search:
         title: "Gestionnaires : Recherche d'utilisateur"
     menu:
@@ -649,7 +638,6 @@ fr:
         no_administrators: Il n'y a pas d'administrateurs.
       administrator:
         add: Ajouter en tant que président
-        delete: Supprimer
         restricted_removal: "Désolé, vous ne pouvez pas vous retirer de la liste des administrateurs"
       search:
         title: "Administrateurs : Recherche d'utilisateur"
@@ -661,7 +649,6 @@ fr:
         no_moderators: Il n'y a pas de modérateurs.
       moderator:
         add: Ajouter en tant que président
-        delete: Supprimer
       search:
         title: "Modérateurs : Recherche d'utilisateur"
     segment_recipient:
@@ -687,8 +674,6 @@ fr:
         sent: Envoyé
         actions: Actions
         draft: Brouillon
-        edit: Éditer
-        delete: Supprimer
         preview: Aperçu
         empty_newsletters: Aucun bulletin d'information à afficher
       new:
@@ -719,8 +704,6 @@ fr:
         sent: Envoyé
         actions: Actions
         draft: Brouillon
-        edit: Éditer
-        delete: Supprimer
         preview: Aperçu
         view: Vue
         empty_notifications: Aucune notification à afficher
@@ -787,7 +770,6 @@ fr:
         abilities: "Pouvoirs"
       valuator:
         add: Ajouter un évaluateur
-        delete: Supprimer
       search:
         title: "Évaluateurs : Recherche d'utilisateur"
       form:
@@ -1150,13 +1132,10 @@ fr:
       author: Auteur
       content: Contenu
       created_at: Créé le
-      delete: Supprimer
     geozones:
       index:
         title: District
         create: Créer un district
-        edit: Éditer
-        delete: Supprimer
       geozone:
         name: Nom
         external_code: Code externe
