@@ -72,10 +72,6 @@ ca:
         budget_investments: Gestionar projectes
         table_name: Nome
         table_phase: fase
-        table_investments: Propostes d'inversió
-        table_edit_groups: Grups de partides
-        table_edit_budget: Editar proposta
-        table_admin_ballots: Paperetes
         edit_groups: Edita grups de partides
         edit_budget: Edita pressupost
         admin_ballots: Paperetes d’administració
@@ -117,7 +113,6 @@ ca:
     budget_groups:
       name: "Nome"
       headings_name: "Rúbriques"
-      headings_edit: "Edita els encapçalaments"
       headings_manage: "Gestiona els encapçalaments"
       no_groups: "No hi ha grups."
       amount:
@@ -296,8 +291,6 @@ ca:
         table_name: Nome
         table_description: Descripció detallada
         table_actions: Accions
-        delete: Borrar
-        edit: Editar proposta
       edit:
         title: Edita l'estat de la fita
       update:
@@ -360,8 +353,6 @@ ca:
         index:
           description: "Quan els usuaris creen propostes poden accedir a un quadre de comandament de la seva proposta, on podeu proposar recursos i recomanacions per obtenir suport per a la seva idea."
           create: Crear recurs o acció
-          edit: Edita
-          delete: Suprimeix
           active: 'Sí'
           inactive: 'No'
           title: Recursos i accions
@@ -496,7 +487,6 @@ ca:
           banner_title: Colors de capçalera
         index:
           create: nou procés
-          delete: Borrar
           title: processos legislatius
           filters:
             active: Actiu
@@ -627,7 +617,6 @@ ca:
         no_managers: No hi ha gestors.
       manager:
         add: Añadir como President de taula
-        delete: Borrar
       search:
         title: "Gestors: cerca d’usuaris"
     menu:
@@ -707,7 +696,6 @@ ca:
         no_administrators: No hi ha administradors.
       administrator:
         add: Añadir como President de taula
-        delete: Borrar
         restricted_removal: "Ho sentim, no pots eliminar-te a tu mateix de la llista"
       search:
         title: "Administradors: cerca d’usuaris"
@@ -722,7 +710,6 @@ ca:
         no_moderators: No hi ha moderadors.
       moderator:
         add: Añadir como President de taula
-        delete: Borrar
       search:
         title: "Moderadors: cerca d’usuaris"
     segment_recipient:
@@ -749,8 +736,6 @@ ca:
         sent: data
         actions: Accions
         draft: Esborrany
-        edit: Editar proposta
-        delete: Borrar
         preview: Previsualitzar
         empty_newsletters: No hi ha butlletins per mostrar
       new:
@@ -786,8 +771,6 @@ ca:
         sent: data
         actions: Accions
         draft: Esborrany
-        edit: Editar proposta
-        delete: Borrar
         preview: Previsualitzar
         view: Veure
         empty_notifications: No hi ha notificacions a mostrar
@@ -885,7 +868,6 @@ ca:
         can_edit_dossier: "Es pot editar dossier"
       valuator:
         add: Afegir com a avaluador
-        delete: Borrar
       search:
         title: "Avaluadors: cerca d’usuaris"
       form:
@@ -1299,7 +1281,6 @@ ca:
       author: Autor
       content: contingut
       created_at: creat
-      delete: Borrar
       color_help: Format hexadecimal
       show_results_and_stats: "Mostra els resultats i les estadístiques"
       results_and_stats_reminder: "En marcar aquestes caselles de selecció els resultats i / o estadístiques estaran a la disposició del públic i tots els usuaris els veuran."
@@ -1307,8 +1288,6 @@ ca:
       index:
         title: Districtes
         create: Crear un districte
-        edit: Editar proposta
-        delete: Borrar
       geozone:
         name: Nome
         external_code: codi extern
