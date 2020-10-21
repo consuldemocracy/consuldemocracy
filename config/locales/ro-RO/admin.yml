@@ -72,10 +72,6 @@ ro:
         budget_investments: Administrează proiecte
         table_name: Nume
         table_phase: Etapă
-        table_investments: Investiții
-        table_edit_groups: Grupuri de rubrici
-        table_edit_budget: Editează
-        table_admin_ballots: Buletine de vot
         edit_groups: Editați grupurile de rubrici
         edit_budget: Editează buget
         admin_ballots: Gestionați buletinele de vot
@@ -119,7 +115,6 @@ ro:
     budget_groups:
       name: "Nume"
       headings_name: "Rubrici"
-      headings_edit: "Editează Rubrici"
       headings_manage: "Administrează rubrici"
       no_groups: "Nu există grupuri."
       amount:
@@ -301,8 +296,6 @@ ro:
         table_name: Nume
         table_description: Descriere
         table_actions: Acțiune
-        delete: Șterge
-        edit: Edit
       edit:
         title: Editați statusul reperului
       update:
@@ -365,8 +358,6 @@ ro:
         index:
           description: "Când utilizatorii creează propuneri, pot accesa un tablou de bord al propunerii lor, unde se pot propune resurse și recomandări pentru a obține sprijin pentru ideea lor."
           create: Crează resursă sau acțiune
-          edit: Editează
-          delete: Șterge
           active: 'Da'
           inactive: 'Nu'
           title: Resurse și acțiuni
@@ -501,7 +492,6 @@ ro:
           banner_title: Culoarea antetului
         index:
           create: Proces nou
-          delete: Șterge
           title: Legislație colaborativă
           filters:
             active: Activ
@@ -632,7 +622,6 @@ ro:
         no_managers: Nu există administratori.
       manager:
         add: Adaugă
-        delete: Șterge
       search:
         title: "Manageri: Căutare utilizator"
     menu:
@@ -712,7 +701,6 @@ ro:
         no_administrators: Nu există administratori.
       administrator:
         add: Adaugă
-        delete: Șterge
         restricted_removal: "Ne pare rău, nu vă puteți scoate din lista de administratori"
       search:
         title: "Administratori: Căutare utilizator"
@@ -727,7 +715,6 @@ ro:
         no_moderators: Nu există moderatori.
       moderator:
         add: Adaugă
-        delete: Șterge
       search:
         title: "Moderatori: Căutare utilizator"
     segment_recipient:
@@ -754,8 +741,6 @@ ro:
         sent: Trimis
         actions: Acțiuni
         draft: Schiță
-        edit: Editează
-        delete: Șterge
         preview: Previzualizare
         empty_newsletters: Nu există newslettere
       new:
@@ -792,8 +777,6 @@ ro:
         sent: Trimis
         actions: Acțiuni
         draft: Schiță
-        edit: Editează
-        delete: Șterge
         preview: Previzualizare
         view: Vizualizare
         empty_notifications: Nu există notificări
@@ -891,7 +874,6 @@ ro:
         can_edit_dossier: "Puteți edita dosar"
       valuator:
         add: Adaugă la evaluatori
-        delete: Șterge
       search:
         title: "Moderatori: Căutare utilizator"
       form:
@@ -1306,7 +1288,6 @@ ro:
       author: Autor
       content: Conținut
       created_at: Creat la
-      delete: Șterge
       color_help: Format hexadecimal
       show_results_and_stats: "Afișează rezultate și statistici"
       results_and_stats_reminder: "Marcarea acestor căsuțe de selectare a rezultatelor și / sau statisticilor va fi disponibilă publicului și fiecare utilizator le va vedea."
@@ -1314,8 +1295,6 @@ ro:
       index:
         title: Geozone
         create: Crează geozonă
-        edit: Editează
-        delete: Șterge
       geozone:
         name: Nume
         external_code: Cod extern
