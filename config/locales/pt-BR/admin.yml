@@ -72,10 +72,6 @@ pt-BR:
         budget_investments: Gerenciar projetos
         table_name: Nome
         table_phase: Estágio
-        table_investments: Investimentos
-        table_edit_groups: Grupos de títulos
-        table_edit_budget: Editar
-        table_admin_ballots: Cédulas
         edit_groups: Editar grupos de títulos
         edit_budget: Editar orçamento
         admin_ballots: Administrar cédulas
@@ -117,7 +113,6 @@ pt-BR:
     budget_groups:
       name: "Nome"
       headings_name: "Títulos"
-      headings_edit: "Editar Títulos"
       headings_manage: "Gerenciar títulos"
       no_groups: "Não há grupos."
       amount:
@@ -297,8 +292,6 @@ pt-BR:
         table_name: Nome
         table_description: Descrição
         table_actions: Ações
-        delete: Apagar
-        edit: Editar
       edit:
         title: Editar status de investimento
       update:
@@ -361,8 +354,6 @@ pt-BR:
         index:
           description: "Quando os usuários criam propostas, eles podem acessar um painel com o progresso da sua proposta, no qual é possível propor-lhes recursos y recomendações para conseguir apoios para as suas ideias."
           create: Criar recurso ou ação
-          edit: Editar
-          delete: Excluir
           active: 'Sim'
           inactive: 'Não'
           title: Recursos e ações
@@ -497,7 +488,6 @@ pt-BR:
           banner_title: Cores do cabeçalho
         index:
           create: Novo processo
-          delete: Apagar
           title: Processos legislativos
           filters:
             active: Ativo
@@ -628,7 +618,6 @@ pt-BR:
         no_managers: Não há gerentes.
       manager:
         add: Adicionar
-        delete: Apagar
       search:
         title: "Gerentes: Pesquisa de usuário"
     menu:
@@ -708,7 +697,6 @@ pt-BR:
         no_administrators: Não há administradores.
       administrator:
         add: Adicionar
-        delete: Apagar
         restricted_removal: "Desculpe, você não pode se remover dos administradores"
       search:
         title: "Administradores: busca de usuário"
@@ -723,7 +711,6 @@ pt-BR:
         no_moderators: Não há moderadores.
       moderator:
         add: Adicionar
-        delete: Apagar
       search:
         title: "Moderadores: Pesquisa de usuário"
     segment_recipient:
@@ -750,8 +737,6 @@ pt-BR:
         sent: Enviados
         actions: Ações
         draft: Rascunho
-        edit: Editar
-        delete: Apagar
         preview: Prévia
         empty_newsletters: Não há nenhum boletins informativos para mostrar
       new:
@@ -787,8 +772,6 @@ pt-BR:
         sent: Enviados
         actions: Ações
         draft: Rascunho
-        edit: Editar
-        delete: Apagar
         preview: Prévia
         view: Visão
         empty_notifications: Não há nenhuma notificação para mostrar
@@ -886,7 +869,6 @@ pt-BR:
         can_edit_dossier: "Pode editar relatório"
       valuator:
         add: Adicionar aos avaliadores
-        delete: Apagar
       search:
         title: "Avaliadores: Pesquisa de usuário"
       form:
@@ -1300,7 +1282,6 @@ pt-BR:
       author: Autor
       content: Conteúdo
       created_at: Criado em
-      delete: Apagar
       color_help: Formato hexadecimal
       show_results_and_stats: "Exibir resultados e estatísticas"
       results_and_stats_reminder: "Ao marcar estas caixas de seleção, os resultado e/ou estatísticas estarão disponíveis publicamente e qualquer usuário poderá vê-los."
@@ -1308,8 +1289,6 @@ pt-BR:
       index:
         title: Geozona
         create: Criar geozona
-        edit: Editar
-        delete: Apagar
       geozone:
         name: Nome
         external_code: Código externo
