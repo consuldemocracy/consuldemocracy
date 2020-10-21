@@ -60,8 +60,6 @@ sl:
         budget_investments: Oglej si proračunske naložbe
         table_name: Ime
         table_phase: Faza
-        table_investments: Naložbe
-        table_edit_budget: Uredi
         edit_groups: Uredi headings groups
         edit_budget: Uredi proračun
       create:
@@ -236,7 +234,6 @@ sl:
           additional_info_placeholder: Dodaj dodatne informacije, če se ti zdi uporabno
         index:
           create: Nov proces
-          delete: Izbriši
           title: Procesi legislacije
           filters:
             all: Vsi
@@ -341,7 +338,6 @@ sl:
         no_managers: Ni upravljalcev.
       manager:
         add: Dodaj
-        delete: Izbriši
       search:
         title: "Upravljalci: iskanje uporabnika"
     menu:
@@ -389,7 +385,6 @@ sl:
         no_administrators: Ni administratorjev.
       administrator:
         add: Dodaj
-        delete: Izbriši
         restricted_removal: "Ne moreš same/-ga sebe odstraniti kot administratorja/-ko."
       search:
         title: "Administratorji: Iskanje uporabnika/-ce"
@@ -401,7 +396,6 @@ sl:
         no_moderators: Ni moderatorjev.
       moderator:
         add: Dodaj
-        delete: Izbriši
       search:
         title: "Moderatorji: Iskanje uporabnika/-ce"
     segment_recipient:
@@ -427,8 +421,6 @@ sl:
         sent: Poslano
         actions: Dejanja
         draft: Osnutek
-        edit: Uredi
-        delete: Izbriši
         preview: Predogled
         empty_newsletters: Ni obvestilnikov, ki bi jih bilo mogoče prikazati
       new:
@@ -464,7 +456,6 @@ sl:
         no_group: "Ni skupine"
       valuator:
         add: Dodaj k cenilcem
-        delete: Izbriši
       search:
         title: "Cenilci: Išči uporabnika/-co"
       form:
@@ -794,8 +785,6 @@ sl:
       index:
         title: Geocona
         create: Ustvari geocono
-        edit: Uredi
-        delete: Izbriši
       geozone:
         name: Ime
         external_code: Zunanja koda
