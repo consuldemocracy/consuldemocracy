@@ -72,10 +72,6 @@ sv:
         budget_investments: Hantera projekt
         table_name: Namn
         table_phase: Fas
-        table_investments: Budgetförslag
-        table_edit_groups: Delbudgetar
-        table_edit_budget: Redigera
-        table_admin_ballots: Röstsedel
         edit_groups: Redigera delbudgetar
         edit_budget: Redigera budget
         admin_ballots: Administratörs röstsedlar
@@ -117,7 +113,6 @@ sv:
     budget_groups:
       name: "Namn"
       headings_name: "Områden"
-      headings_edit: "Redigera områden"
       headings_manage: "Hantera områden"
       no_groups: "Det finns inga grupper."
       amount:
@@ -295,8 +290,6 @@ sv:
         table_name: Namn
         table_description: Beskrivning
         table_actions: Åtgärder
-        delete: Ta bort
-        edit: Redigera
       edit:
         title: Redigera status för budgetförslag
       update:
@@ -359,8 +352,6 @@ sv:
         index:
           description: "När användare skapar förslag kan de använda förslagets dashboard, där du kan föreslå resurser och rekommendationer för att få stöd för deras idé."
           create: Skapa resurs eller åtgärd
-          edit: Redigera
-          delete: Radera
           active: 'Ja'
           inactive: 'Nej'
           title: Resurser och åtgärder
@@ -495,7 +486,6 @@ sv:
           banner_title: Färger för sidhuvud
         index:
           create: Ny process
-          delete: Ta bort
           title: Dialoger
           filters:
             active: Aktiva
@@ -625,7 +615,6 @@ sv:
         no_managers: Det finns inga medborgarguider.
       manager:
         add: Lägg till
-        delete: Ta bort
       search:
         title: "Bedömare: Sök användare"
     menu:
@@ -705,7 +694,6 @@ sv:
         no_administrators: Det finns inga administratörer.
       administrator:
         add: Lägg till
-        delete: Ta bort
         restricted_removal: "Tyvärr, du kan inte ta bort dig själv från administratörerna"
       search:
         title: "Administratörer: Sök användare"
@@ -720,7 +708,6 @@ sv:
         no_moderators: Det finns inga moderatorer.
       moderator:
         add: Lägg till
-        delete: Ta bort
       search:
         title: "Moderatorer: Sök användare"
     segment_recipient:
@@ -747,8 +734,6 @@ sv:
         sent: Skickat
         actions: Åtgärder
         draft: Utkast
-        edit: Redigera
-        delete: Ta bort
         preview: Förhandsvisning
         empty_newsletters: Det finns inga nyhetsbrev att visa
       new:
@@ -784,8 +769,6 @@ sv:
         sent: Skickat
         actions: Åtgärder
         draft: Utkast
-        edit: Redigera
-        delete: Ta bort
         preview: Förhandsvisning
         view: Visa
         empty_notifications: Det finns inga aviseringar att visa
@@ -883,7 +866,6 @@ sv:
         can_edit_dossier: "Kan redigera rapport"
       valuator:
         add: Lägg till bedömare
-        delete: Ta bort
       search:
         title: "Bedömare: Sök användare"
       form:
@@ -1288,7 +1270,6 @@ sv:
       author: Skribent
       content: Innehåll
       created_at: Skapad den
-      delete: Ta bort
       color_help: Hexadecimalt format
       show_results_and_stats: "Visa resultat och statistik"
       results_and_stats_reminder: "Genom att markera dessa rutor kommer omröstningens resultat och/eller statistik att visas för alla användare."
@@ -1296,8 +1277,6 @@ sv:
       index:
         title: Geografiska områden
         create: Skapa geografiskt område
-        edit: Redigera
-        delete: Ta bort
       geozone:
         name: Namn
         external_code: Extern kod
