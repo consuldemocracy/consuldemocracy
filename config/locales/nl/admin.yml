@@ -72,10 +72,6 @@ nl:
         budget_investments: Zie begrotingsvoorstellen
         table_name: Name
         table_phase: Phase
-        table_investments: Investments
-        table_edit_groups: Headings groups
-        table_edit_budget: Edit
-        table_admin_ballots: Stembiljetten
         edit_groups: Edit headings groups
         edit_budget: Edit budget
         admin_ballots: Stembiljetten
@@ -106,7 +102,6 @@ nl:
     budget_groups:
       name: "Name"
       headings_name: "Rubrieken"
-      headings_edit: "Rubrieken bewerken"
       headings_manage: "Rubrieken beheren"
       no_groups: "Er zijn geen groepen."
       amount:
@@ -274,8 +269,6 @@ nl:
         table_name: Name
         table_description: Beschrijving
         table_actions: Activiteiten
-        delete: Delete
-        edit: Edit
       edit:
         title: Bewerk investeringsstatus
       update:
@@ -365,7 +358,6 @@ nl:
           banner_title: Rubriekkleuren
         index:
           create: Nieuw plan
-          delete: Delete
           title: Plannen
           filters:
             active: Actief
@@ -494,7 +486,6 @@ nl:
         no_managers: Er zijn geen managers.
       manager:
         add: Add
-        delete: Delete
       search:
         title: "Managers: zoek deelnemers"
     menu:
@@ -565,7 +556,6 @@ nl:
         no_administrators: Er zijn geen beheerders.
       administrator:
         add: Voeg toe
-        delete: Delete
         restricted_removal: "Sorry, u kunt uzelf niet uit de beheerders verwijderen"
       search:
         title: "Beheerders: zoek deelnemers"
@@ -577,7 +567,6 @@ nl:
         no_moderators: Er zijn geen moderators.
       moderator:
         add: Voeg toe
-        delete: Delete
       search:
         title: "Moderators: zoek deelnemers"
     segment_recipient:
@@ -603,8 +592,6 @@ nl:
         sent: Verzonden
         actions: Activiteiten
         draft: Concept
-        edit: Edit
-        delete: Delete
         preview: Preview
         empty_newsletters: Er zijn geen nieuwsbrieven om te tonen
       new:
@@ -638,8 +625,6 @@ nl:
         sent: Verzonden
         actions: Activiteiten
         draft: Concept
-        edit: Edit
-        delete: Delete
         preview: Preview
         view: Weergave
         empty_notifications: Er zijn geen meldingen te tonen
@@ -730,7 +715,6 @@ nl:
         no_group: "Geen groep"
       valuator:
         add: Add to valuators
-        delete: Delete
       search:
         title: "Beoordelaars: zoek deelnemers"
       form:
@@ -1106,14 +1090,11 @@ nl:
       author: Author
       content: Content
       created_at: Created at
-      delete: Delete
       color_help: Hexadecimale notatie
     geozones:
       index:
         title: Geozone
         create: Create geozone
-        edit: Edit
-        delete: Delete
       geozone:
         name: Name
         external_code: External code
