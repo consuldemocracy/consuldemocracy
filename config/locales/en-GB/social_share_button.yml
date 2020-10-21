@@ -1,1 +1,3 @@
 en-GB:
+  social_share_button:
+    share_to: "Поділитися з %{name}"
