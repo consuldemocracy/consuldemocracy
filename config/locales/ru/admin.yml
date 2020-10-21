@@ -72,10 +72,6 @@ ru:
         budget_investments: Управлять проектами
         table_name: Имя
         table_phase: Этап
-        table_investments: Инвестиции
-        table_edit_groups: Группы заголовков
-        table_edit_budget: Редактировать
-        table_admin_ballots: Бюллетени
         edit_groups: Редактировать группы заголовков
         edit_budget: Редактировать бюджет
         admin_ballots: Администрирование бюллетеней
@@ -107,7 +103,6 @@ ru:
     budget_groups:
       name: "Имя"
       headings_name: "Заголовки"
-      headings_edit: "Редактировать заголовки"
       headings_manage: "Управление заголовками"
       no_groups: "Групп нет."
       amount:
@@ -281,8 +276,6 @@ ru:
         table_name: Имя
         table_description: Описание
         table_actions: Действия
-        delete: Удалить
-        edit: Редактировать
       edit:
         title: Редактировать статус инвестиции
       update:
@@ -338,8 +331,6 @@ ru:
         index:
           description: "Когда пользователи создают предложения, они могут получить доступ к панели управления своим предложением. Там вы можете предложить ресурсы и рекомендации по получению поддержки для их идеи."
           create: Создать ресурс или действие
-          edit: Редактировать
-          delete: Удалить
           active: 'Да'
           inactive: 'Нет'
           title: Ресурсы и действия
@@ -471,7 +462,6 @@ ru:
           banner_title: Цвета заголовка
         index:
           create: Новый процесс
-          delete: Удалить
           title: Процессы законотворчества
           filters:
             active: Активные
@@ -600,7 +590,6 @@ ru:
         no_managers: Нет менеджеров.
       manager:
         add: Добавить
-        delete: Удалить
       search:
         title: "Менеджеры: Поиск пользователей"
     menu:
@@ -677,7 +666,6 @@ ru:
         no_administrators: Нет администраторов.
       administrator:
         add: Добавить
-        delete: Удалить
         restricted_removal: "Извините, вы не можете удалить сами себя из администраторов"
       search:
         title: "Администраторы: Поиск пользователей"
@@ -692,7 +680,6 @@ ru:
         no_moderators: Нет модераторов.
       moderator:
         add: Добавить
-        delete: Удалить
       search:
         title: "Модераторы: Поиск пользователей"
     segment_recipient:
@@ -719,8 +706,6 @@ ru:
         sent: Отправлено
         actions: Действия
         draft: Черновик
-        edit: Редактировать
-        delete: Удалить
         preview: Предпросмотр
         empty_newsletters: Нет новостных писем для отображения
       new:
@@ -757,8 +742,6 @@ ru:
         sent: Отправлено
         actions: Действия
         draft: Черновик
-        edit: Редактировать
-        delete: Удалить
         preview: Предпросмотр
         view: Просмотреть
         empty_notifications: Нет уведомлений для показа
@@ -853,7 +836,6 @@ ru:
         no_group: "Нет группы"
       valuator:
         add: Добавить в оценщики
-        delete: Удалить
       search:
         title: "Оценщики: Поиск пользователя"
       form:
@@ -1243,7 +1225,6 @@ ru:
       author: Автор
       content: Содержание
       created_at: Создано в
-      delete: Удалить
       color_help: Шестнадцатеричный формат
       show_results_and_stats: "Показать результаты и статистику"
       results_and_stats_reminder: "Отмечая эти галочки, можно сделать результаты и/или статистику публично доступными и видимыми для каждого пользователя."
@@ -1251,8 +1232,6 @@ ru:
       index:
         title: Геозона
         create: Создать геозону
-        edit: Редактировать
-        delete: Удалить
       geozone:
         name: Имя
         external_code: Внешний код
