@@ -72,10 +72,6 @@ ka:
         budget_investments: პროექტების მართვა
         table_name: სახელი
         table_phase: ფაზა
-        table_investments: ინვესტიციები
-        table_edit_groups: სათაურების ჯგუფები
-        table_edit_budget: რედაქტირება
-        table_admin_ballots: ბიულეტენები
         edit_groups: სათაურების ჯგუფების რედაქტირება
         edit_budget: ბიუჯეტის რედაქტირება
         admin_ballots: ადმინისტრაციული ბიულეტენები
@@ -117,7 +113,6 @@ ka:
     budget_groups:
       name: "სახელი"
       headings_name: "რუბრიკები"
-      headings_edit: "რუბრიკების რედაქტირება"
       headings_manage: "რუბრიკების მართვა"
       no_groups: "ჯგუფები არ მოიძებნა."
       amount:
@@ -297,8 +292,6 @@ ka:
         table_name: სახელი
         table_description: აღწერა
         table_actions: მოქმედებები
-        delete: წაშლა
-        edit: რედაქტირება
       edit:
         title: ეტაპის სტატუსის რედაქტირება
       update:
@@ -361,8 +354,6 @@ ka:
         index:
           description: "ინიციატივის შექმნასთან ერთად, მომხმარებელს ენიჭება წვდომა ინიციატივების დაფაზე, სადაც მათ მიერ წამოჭრილი იდეების მხარდასაჭერად, თქვენ შეგეძლებათ შესთავაზოთ რესურსები და რეკომენდაციები."
           create: შექმენით რესურსი ან მოქმედება
-          edit: რედაქტირება
-          delete: წაშლა
           active: 'დიახ'
           inactive: 'არა'
           title: რესურსები და მოქმედებები
@@ -497,7 +488,6 @@ ka:
           banner_title: სათაურის ფერები
         index:
           create: ახალი პროცესი
-          delete: წაშლა
           title: საკანონმდებლო ინიციატივა
           filters:
             active: აქტიური
@@ -627,7 +617,6 @@ ka:
         no_managers: მენეჯერები არ მოიძებნა.
       manager:
         add: დამატება
-        delete: წაშლა
       search:
         title: "მენეჯერები: მომხმარებლის ძებნა"
     menu:
@@ -707,7 +696,6 @@ ka:
         no_administrators: ადმინისტრატორები არ მოიძებნა.
       administrator:
         add: დამატება
-        delete: წაშლა
         restricted_removal: "სამწუხაროდ საკუთარ თავს ადმინისტრატორების სიიდან ვერ ამოშლით"
       search:
         title: "ადმინისტრატორები: მომხმარებლის ძებნა"
@@ -722,7 +710,6 @@ ka:
         no_moderators: მოდერატორები არ მოიძებნა.
       moderator:
         add: დამატება
-        delete: წაშლა
       search:
         title: "მოდერატორები: მომხმარებლის ძებნა"
     segment_recipient:
@@ -749,8 +736,6 @@ ka:
         sent: გაგზავნილია
         actions: მოქმედებები
         draft: მონახაზი
-        edit: რედაქტირება
-        delete: წაშლა
         preview: ესკიზი
         empty_newsletters: საინფორმაციო ბიულეტენები არ მოიძებნა
       new:
@@ -786,8 +771,6 @@ ka:
         sent: გაიგზავნა
         actions: მოქმედებები
         draft: მონახაზი
-        edit: რედაქტირება
-        delete: წაშლა
         preview: ესკიზი
         view: ნახვა
         empty_notifications: შეტყობინებები არ მოიძებნა
@@ -885,7 +868,6 @@ ka:
         can_edit_dossier: "შეუძლია დოსიეს რედაქტირება"
       valuator:
         add: შემფასებლებში დამატება
-        delete: წაშლა
       search:
         title: "შემფასებლები: მომხმარებლის ძებნა"
       form:
@@ -1290,7 +1272,6 @@ ka:
       author: ავტორი
       content: შინაარსი
       created_at: შექმნის თარიღი
-      delete: წაშლა
       color_help: ჰექსადეციალური ფორმატი
       show_results_and_stats: "შედეგებისა და სტატისტიკის ჩვენება"
       results_and_stats_reminder: "ამ უჯრედების მონიშვნით შედეგები და/ან სტატისტიკა გახდება საჯარო და ყველას შეეძლება მათი ნახვა."
@@ -1298,8 +1279,6 @@ ka:
       index:
         title: გეოგრაფიული ზონა
         create: გეოგრაფიული ზონის შექმნა
-        edit: რედაქტირება
-        delete: წაშლა
       geozone:
         name: სახელი
         external_code: გარეშე კოდი
