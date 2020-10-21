@@ -72,10 +72,6 @@ de:
         budget_investments: Ausgabenprojekte verwalten
         table_name: Name
         table_phase: Phase
-        table_investments: Ausgabenvorschläge
-        table_edit_groups: Gruppierungen von Rubriken
-        table_edit_budget: Bearbeiten
-        table_admin_ballots: Stimmzettel
         edit_groups: Gruppierungen von Rubriken bearbeiten
         edit_budget: Bürgerhaushalt bearbeiten
         admin_ballots: Admin Stimmzettel
@@ -117,7 +113,6 @@ de:
     budget_groups:
       name: "Name"
       headings_name: "Rubriken"
-      headings_edit: "Rubriken bearbeiten"
       headings_manage: "Rubriken verwalten"
       no_groups: "Keine Gruppen vorhanden."
       amount:
@@ -295,8 +290,6 @@ de:
         table_name: Name
         table_description: Beschreibung
         table_actions: Aktionen
-        delete: Löschen
-        edit: Bearbeiten
       edit:
         title: Status für Ausgabenvorschlag bearbeiten
       update:
@@ -359,8 +352,6 @@ de:
         index:
           description: "Wenn Benutzer Vorschläge erstellen, können sie auf ein Dashboard ihres Vorschlags zugreifen, in dem Sie Ressourcen und Empfehlungen vorschlagen können, um Unterstützung für ihre Idee zu erhalten."
           create: Ressource oder Aktion erstellen
-          edit: Bearbeiten
-          delete: Löschen
           active: 'Ja'
           inactive: 'Nein'
           title: Ressourcen und Aktionen
@@ -495,7 +486,6 @@ de:
           banner_title: Farben Header
         index:
           create: Neues Beteiligungsverfahren
-          delete: Löschen
           title: Gesetzgebungsverfahren
           filters:
             active: Aktiv
@@ -625,7 +615,6 @@ de:
         no_managers: Keine Manager*innen vorhanden.
       manager:
         add: Hinzufügen
-        delete: Löschen
       search:
         title: "Manager*innen: Benutzer*innensuche"
     menu:
@@ -705,7 +694,6 @@ de:
         no_administrators: Keine Administrator*innen vorhanden.
       administrator:
         add: Hinzufügen
-        delete: Löschen
         restricted_removal: "Entschuldigung, Sie können sich nicht von der Liste entfernen"
       search:
         title: "Administrator*innen: Benutzer*innensuche"
@@ -720,7 +708,6 @@ de:
         no_moderators: Keine Moderator*innen vorhanden.
       moderator:
         add: Hinzufügen
-        delete: Löschen
       search:
         title: "Moderator*innen: Benutzer*innensuche"
     segment_recipient:
@@ -747,8 +734,6 @@ de:
         sent: Gesendet
         actions: Aktionen
         draft: Entwurf
-        edit: Bearbeiten
-        delete: Löschen
         preview: Vorschau
         empty_newsletters: Keine Newsletter zum Anzeigen vorhanden
       new:
@@ -784,8 +769,6 @@ de:
         sent: Gesendet
         actions: Aktionen
         draft: Entwurf
-        edit: Bearbeiten
-        delete: Löschen
         preview: Vorschau
         view: Anzeigen
         empty_notifications: Keine Benachrichtigungen vorhanden
@@ -883,7 +866,6 @@ de:
         can_edit_dossier: "Kann Dossier bearbeiten"
       valuator:
         add: Als Begutachter*in hinzufügen
-        delete: Löschen
       search:
         title: "Begutachter*innen: Benutzer*innensuche"
       form:
@@ -1287,7 +1269,6 @@ de:
       author: Autor
       content: Inhalt
       created_at: Erstellt am
-      delete: Löschen
       color_help: Hexadezimales Format
       show_results_and_stats: "Ergebnisse und Statistiken anzeigen"
       results_and_stats_reminder: "Durch das Markieren dieses Kontrollkästchens werden die Resultate und/oder Statistiken dieser Abstimmung öffentlich abrufbar und für alle Benutzer*innen sichtbar."
@@ -1295,8 +1276,6 @@ de:
       index:
         title: Bezirke
         create: Bezirk erstellen
-        edit: Bearbeiten
-        delete: Löschen
       geozone:
         name: Name
         external_code: Externer Code
