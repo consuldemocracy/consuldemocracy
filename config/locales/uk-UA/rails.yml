@@ -1,35 +1,115 @@
 uk-UA:
   date:
+    abbr_day_names:
+      - Sun
+      - Mon
+      - Вт
+      - Ср
+      - Чт
+      - Пт
+      - Сб
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - Січ.
+      - Лют.
+      - Бер.
+      - Квіт.
+      - Трав.
+      - Черв.
+      - Лип.
+      - Серп.
+      - Вер.
+      - Жовт.
+      - Лист.
+      - Груд.
+    day_names:
+      - Неділя
+      - Понеділок
+      - Вівторок
+      - Середа
+      - Четвер
+      - П'ятниця
+      - Субота
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Січень
+      - Лютий
+      - Березень
+      - Квітень
+      - Травень
+      - Червень
+      - Липень
+      - Серпень
+      - Вересень
+      - Жовтень
+      - Листопад
+      - Грудень
+  datetime:
+    distance_in_words:
+      half_a_minute: півхвилини
+    prompts:
+      day: День
+      hour: Година
+      minute: Хвилина
+      month: Місяць
+      second: Секунди
+      year: Рік
+  errors:
+    messages:
+      accepted: повинно бути прийнято
+      blank: не має бути порожнім
+      present: має бути порожнім
+      confirmation: не співпадає з %{attribute}
+      empty: не може бути порожнім
+      equal_to: має становити %{count}
+      even: має дорівнювати
+      exclusion: зарезервовано
+      greater_than: має бути більше %{count}
+      greater_than_or_equal_to: має бути більше або дорівнювати %{count}
+      inclusion: не входить до списку
+      invalid: недійсний
+      less_than: має бути менше %{count}
+      less_than_or_equal_to: має бути менше або дорівнювати %{count}
+      model_invalid: "Помилка перевірки: %{errors}"
+      not_a_number: не є числом
+      not_an_integer: має бути цілим числом
+      odd: має бути непарним
+      required: має існувати
+      taken: вже взято
+      other_than: має бути іншим, ніж %{count}
+    template:
+      body: "Виникли проблеми з такими полями:"
+  helpers:
+    select:
+      prompt: Будь даска, оберіть
+    submit:
+      create: Створити %{model}
+      submit: Зберегти %{model}
+      update: Оновити %{model}
   number:
     human:
+      decimal_units:
+        units:
+          billion: Мільярд
+          million: Мільйон
+          quadrillion: Квадрильйон
+          thousand: Тисяча
+          trillion: Трильйон
       format:
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        units:
+          gb: Гігабайт
+          kb: Кілобайт
+          mb: Мегабайт
+          tb: Терабайт
+  support:
+    array:
+      last_word_connector: ", і "
+      two_words_connector: " і "
+  time:
+    am: ранку
+    formats:
+      default: "%a,%d %b %Y %H:%M:%S %z"
+    pm: пополудні
