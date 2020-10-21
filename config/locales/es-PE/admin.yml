@@ -60,9 +60,6 @@ es-PE:
           finished: Finalizadas
         table_name: Nombre
         table_phase: Fase
-        table_investments: Propuestas de inversión
-        table_edit_groups: Grupos de partidas
-        table_edit_budget: Editar propuesta
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
@@ -196,8 +193,6 @@ es-PE:
         table_name: Nombre
         table_description: Descripción detallada
         table_actions: Acciones
-        delete: Borrar
-        edit: Editar propuesta
     progress_bars:
       index:
         table_kind: "Tipo"
@@ -259,7 +254,6 @@ es-PE:
           additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
         index:
           create: Nuevo proceso
-          delete: Borrar
           title: Procesos legislativos
           filters:
             all: Todas
@@ -375,7 +369,6 @@ es-PE:
         no_managers: No hay gestores.
       manager:
         add: Añadir como Presidente de mesa
-        delete: Borrar
       search:
         title: "Gestores: Búsqueda de usuarios"
     menu:
@@ -429,7 +422,6 @@ es-PE:
         no_administrators: No hay administradores.
       administrator:
         add: Añadir como Presidente de mesa
-        delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
         title: "Administradores: Búsqueda de usuarios"
@@ -441,7 +433,6 @@ es-PE:
         no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Presidente de mesa
-        delete: Borrar
       search:
         title: "Moderadores: Búsqueda de usuarios"
     segment_recipient:
@@ -452,8 +443,6 @@ es-PE:
         sent: Fecha
         actions: Acciones
         draft: Borrador
-        edit: Editar propuesta
-        delete: Borrar
         preview: Previsualizar
       show:
         send: Enviar
@@ -465,8 +454,6 @@ es-PE:
         sent: Fecha
         actions: Acciones
         draft: Borrador
-        edit: Editar propuesta
-        delete: Borrar
         preview: Previsualizar
       show:
         send: Enviar notificación
@@ -485,7 +472,6 @@ es-PE:
         group: "Grupo"
       valuator:
         add: Añadir como evaluador
-        delete: Borrar
       search:
         title: "Evaluadores: Búsqueda de usuarios"
       show:
@@ -816,13 +802,10 @@ es-PE:
       author: Autor
       content: Contenido
       created_at: Creado
-      delete: Borrar
     geozones:
       index:
         title: Distritos
         create: Crear un distrito
-        edit: Editar propuesta
-        delete: Borrar
       geozone:
         name: Nombre
         external_code: Código externo
