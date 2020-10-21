@@ -72,10 +72,6 @@ ar:
         budget_investments: إدارة المشاريع
         table_name: الإ سم
         table_phase: مرحلة
-        table_investments: إستثمارات
-        table_edit_groups: مجموعات العناوين
-        table_edit_budget: تعديل
-        table_admin_ballots: بطاقات الاقتراع
         edit_groups: تعديل مجموعات العناوين
         edit_budget: تعديل الميزانية
         admin_ballots: بطاقات الاقتراع الادارية
@@ -125,7 +121,6 @@ ar:
     budget_groups:
       name: "الإ سم"
       headings_name: "العناوين"
-      headings_edit: "تعديل العناوين"
       headings_manage: "إدارة العناوين"
       no_groups: "لا توجد مجموعات."
       amount:
@@ -307,8 +302,6 @@ ar:
         table_name: الإ سم
         table_description: الوصف
         table_actions: الإجراءات
-        delete: حذف
-        edit: تعديل
       edit:
         title: تعديل حالة المعلم
       update:
@@ -370,8 +363,6 @@ ar:
         index:
           description: "عندما ينشئ المستخدمون اقتراحات ، يمكنهم الوصول إلى اللوحة الخاصة باقتراحهم ، اين يمكنك اقتراح الموارد والتوصيات للحصول على الدعم لفكرتهم."
           create: إنشاء مورد أو إجراء
-          edit: تعديل
-          delete: حذف
           active: 'نعم'
           inactive: 'لا'
           title: الموارد و الإجراءات
@@ -506,7 +497,6 @@ ar:
           banner_title: لون العنوان
         index:
           create: عملية جديدة
-          delete: حذف
           title: العمليات التشريعية
           filters:
             active: نشِط
@@ -635,7 +625,6 @@ ar:
         no_managers: لا يوجد مدراء.
       manager:
         add: إضافة
-        delete: حذف
       search:
         title: "المدراء: البحث عن المستخدم"
     menu:
@@ -714,7 +703,6 @@ ar:
         no_administrators: لا يوجد مدراء.
       administrator:
         add: إضافة
-        delete: حذف
         restricted_removal: "عذراً، لا يمكنك إزالة نفسك من المدراء"
       search:
         title: "المسؤولين: بحث عن مستخدم"
@@ -729,7 +717,6 @@ ar:
         no_moderators: لا يوجد مشرفون.
       moderator:
         add: إضافة
-        delete: حذف
       search:
         title: "المشرفون: البحث عن مستخدم"
     segment_recipient:
@@ -756,8 +743,6 @@ ar:
         sent: تم الإرسال
         actions: الإجراءات
         draft: مسودة
-        edit: تعديل
-        delete: حذف
         preview: معاينة
         empty_newsletters: لا توجد أية رسائل إخبارية للإظهار
       new:
@@ -796,8 +781,6 @@ ar:
         sent: تم الإرسال
         actions: الإجراءات
         draft: مسودة
-        edit: تعديل
-        delete: حذف
         preview: معاينة
         view: عرض
         empty_notifications: لايوجد عناصر للعرض
@@ -895,7 +878,6 @@ ar:
         can_edit_dossier: "يمكن تعديل الملف"
       valuator:
         add: أضف إلى المقيمين
-        delete: حذف
       search:
         title: "المقيمون: البحث عن مستخدم"
       form:
@@ -1290,7 +1272,6 @@ ar:
       author: كاتب
       content: المحتوى
       created_at: أنشئت في
-      delete: حذف
       color_help: تنسيق Hexadecimal
       show_results_and_stats: "اظهار النتائج والإحصائيات"
       results_and_stats_reminder: "عند تحديد خانات الاختيار كنتائج و / أو إحصائيات ستكون متاحة للجميع وسيشاهدها كل مستخدم."
@@ -1298,8 +1279,6 @@ ar:
       index:
         title: رقعة جغرافية
         create: إنشاء منطقة جغرافية
-        edit: تعديل
-        delete: حذف
       geozone:
         name: الإ سم
         external_code: الرّمز الخارجي
