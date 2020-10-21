@@ -72,10 +72,6 @@ en-GB:
         budget_investments: Управляти проектами
         table_name: Назва
         table_phase: Етап
-        table_investments: Інвестиції
-        table_edit_groups: Групи розділів
-        table_edit_budget: Редагувати
-        table_admin_ballots: Бюлетені
         edit_groups: Редагувати групи розіділів
         edit_budget: Редагувати бюджет
         admin_ballots: Адмініструвати бюлетені
@@ -117,7 +113,6 @@ en-GB:
     budget_groups:
       name: "Назва"
       headings_name: "Рубрики"
-      headings_edit: "Редагувати рубрики"
       headings_manage: "Управляти розділами"
       no_groups: "Групи відсутні."
       amount:
@@ -295,8 +290,6 @@ en-GB:
         table_name: Назва
         table_description: Опис
         table_actions: Дії
-        delete: Видалити
-        edit: Редагувати
       edit:
         title: Редагувати статус віхи
       update:
@@ -357,8 +350,6 @@ en-GB:
         index:
           description: "Коли користувачі подають пропозиції, вони отримують доступ до інформаційної панелі своєї пропозиції, де вони можуть пропонувати ресурси та надавати рекомендації для підтримки їхніх ідей."
           create: Створити ресурс або дію
-          edit: Редагувати
-          delete: Видалити
           active: 'Так'
           inactive: 'Ні'
           title: Ресурси та дії
@@ -492,7 +483,6 @@ en-GB:
           banner_title: Кольори рубрик
         index:
           create: Новий процес
-          delete: Видалити
           title: Спільна законотворчість
           filters:
             active: Активні
@@ -621,7 +611,6 @@ en-GB:
         no_managers: Менеджерів немає.
       manager:
         add: Додати
-        delete: Видалити
       search:
         title: "Керівники: користувацький пошук"
     menu:
@@ -701,7 +690,6 @@ en-GB:
         no_administrators: Адміністратори відсутні.
       administrator:
         add: Додати
-        delete: Видалити
         restricted_removal: "Вибачте, ви не можете видалити себе з переліку адміністраторів"
       search:
         title: "Адміністратори: користувацький пошук"
@@ -716,7 +704,6 @@ en-GB:
         no_moderators: Модераторів немає.
       moderator:
         add: Додати
-        delete: Видалити
       search:
         title: "Модератори: користувацький пошук"
     segment_recipient:
@@ -743,8 +730,6 @@ en-GB:
         sent: Надіслані
         actions: Дії
         draft: Чернетка
-        edit: Редагувати
-        delete: Видалити
         preview: Попередній перегляд
         empty_newsletters: Інформаційних розсилок немає
       new:
@@ -780,8 +765,6 @@ en-GB:
         sent: Надіслано
         actions: Дії
         draft: Чернетка
-        edit: Редагувати
-        delete: Видалити
         preview: Попередній перегляд
         view: Переглянути
         empty_notifications: Сповіщень немає
@@ -879,7 +862,6 @@ en-GB:
         can_edit_dossier: "Може редагувати досьє"
       valuator:
         add: Додати до оцінювачів
-        delete: Видалити
       search:
         title: "Оцінювачі: Користувацький пошук"
       form:
@@ -1292,7 +1274,6 @@ en-GB:
       author: Автор
       content: Зміст
       created_at: Створено о
-      delete: Видалити
       color_help: Шістнадцятковий формат
       show_results_and_stats: "Показати результати і статистику"
       results_and_stats_reminder: "Поставивши прапорець, можна зробити результати та/або статистику публічно доступними і видимими для кожного користувача."
@@ -1300,8 +1281,6 @@ en-GB:
       index:
         title: Геозона
         create: Створити геозону
-        edit: Редагувати
-        delete: Видалити
       geozone:
         name: Назва
         external_code: Зовнішній код
