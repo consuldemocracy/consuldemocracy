@@ -7,10 +7,20 @@ uk-UA:
           knapsack: "Ви можете інвестувати <span>%{count}</span>."
           approval:
             zero: "Ви можете віддати ще <span>%{count}</span> голосів."
+            one: "Ви можете віддати ще <span>%{count}</span> голос."
+            few: "Ви можете віддати ще <span>%{count}</span> голоси."
+            many: "Ви можете віддати ще <span>%{count}</span> голосів."
+            other: "Ви можете віддати ще <span>%{count}</span> голосів."
         amount_spent:
           knapsack: "Використана кількість <span>%{count}</span>"
           approval:
             zero: "Віддано голосів: <span>%{count}</span>"
+            one: "Віддано голосів: <span>%{count}</span>"
+            few: "Віддано голосів: <span>%{count}</span>"
+            many: "Віддано голосів: <span>%{count}</span>"
+            other: "Віддано голосів: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
         no_balloted_group_yet: "Ви ще не голосували у цій групі. Вперед!"
         remove: Скасувати голос
         voted_info: "Ваш голос підтверджено!"
