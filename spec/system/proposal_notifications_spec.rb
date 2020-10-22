@@ -405,7 +405,7 @@ describe "Proposal Notifications" do
 
       expect(page).to have_content "Your message has been sent correctly."
 
-      travel(3.days + 1.second) do
+      travel_to(3.days.from_now + 1.second) do
         visit new_proposal_notification_path(proposal_id: proposal.id)
         fill_in "Title", with: "Thank you again for supporting my proposal"
         fill_in "Message", with: "Please share it again with others so we can make it happen!"
