@@ -279,6 +279,22 @@ uk-UA:
       title: Сповіщення
       unread: Непрочитане
     notification:
+      action:
+        comments_on:
+          one: Хтось залишив коментар
+          few: З'явилось %{count} нових коментарі щодо
+          many: З'явилось %{count} нових коментарів щодо
+          other: З'явилось %{count} нових коментарів щодо
+        proposal_notification:
+          one: Є нове сповіщення щодо
+          few: Є %{count} нових сповіщення щодо
+          many: Є %{count} нових сповіщень щодо
+          other: Є %{count} нових сповіщень щодо
+        replies_to:
+          one: Хтось відповів на ваш коментар
+          few: Є %{count} нових відповіді на ваш коментар щодо
+          many: Є %{count} нових відповідей на ваш коментар щодо
+          other: Є %{count} нових відповідей на ваш коментар щодо
       mark_as_read: Позначити як прочитане
       mark_as_unread: Позначити як непрочитане
       notifiable_hidden: Цей ресурс більше не доступний.
@@ -388,6 +404,11 @@ uk-UA:
         button: Пошук
         placeholder: Шукати пропозиції...
         title: Пошук
+      search_results:
+        one: " що містить термін <strong>'%{search_term}'</strong>"
+        few: " що містять термін <strong>'%{search_term}'</strong>"
+        many: " що містять термін <strong>'%{search_term}'</strong>"
+        other: " що містять термін <strong>'%{search_term}'</strong>"
       select_order: Сортувати за
       select_order_long: "Ви переглядаєте пропозиції згідно з:"
       start_proposal: Подати пропозицію
@@ -422,12 +443,24 @@ uk-UA:
       already_supported: Ви вже підтримали цю пропозицію. Поділіться нею!
       comments:
         zero: Коментарі відсутні
+        one: 1 коментар
+        few: "%{count} коментарі"
+        many: "%{count} коментарів"
+        other: "%{count} коментарів"
       support: Підтримка
       support_title: Підтримати цю пропозицію
       supports:
         zero: Немає підтримки
+        one: 1 підтримка
+        few: "%{count} підтримки"
+        many: "%{count} підтримок"
+        other: "%{count} підтримок"
       votes:
         zero: Голоси відсутні
+        one: 1 голос
+        few: "%{count} голоси"
+        many: "%{count} голосів"
+        other: "%{count} голосів"
       supports_necessary: "необхідно %{number} підтримань"
       total_percent: 100%
       archived: "Ця пропозиція заархівована і не збирає підтримки."
@@ -438,6 +471,10 @@ uk-UA:
       code: "Код пропозиції:"
       comments:
         zero: Коментарі відсутні
+        one: 1 коментар
+        few: "%{count} коментарі"
+        many: "%{count} коментарів"
+        other: "%{count} коментарів"
       comments_tab: Коментарі
       dashboard_proposal_link: Інформаційна панель
       flag: Цю пропозицію позначено як недоречну кількома користувачами.
@@ -513,6 +550,16 @@ uk-UA:
       see_complete_course: Ознайотимитись із повним курсом
       hide_course: Приховати курс
     goal:
+      target_supports:
+        one: Отримати %{count} підтримку для вашої пропозиції
+        few: Отримати %{count} підтримки для вашої пропозиції
+        many: Отримати %{count} підтримок для вашої пропозиції
+        other: Отримати %{count} підтримок для вашої пропозиції
+      days:
+        one: "%{count} день"
+        few: "%{count} дні"
+        many: "%{count} днів"
+        other: "%{count} днів"
       locked_resource: Ресурс заблоковано
       ideal_time: Оптимальний час
     community:
@@ -529,6 +576,11 @@ uk-UA:
       index:
         title: Голосування
         create: Створити голосування
+        count:
+          one: Ви створили %{count} голосування.
+          few: Ви створили %{count} голосування.
+          many: Ви створили %{count} голосувань.
+          other: Ви створили %{count} голосувань.
         links: Посилання
         additiontal_information: Додаткова інформація
       new:
