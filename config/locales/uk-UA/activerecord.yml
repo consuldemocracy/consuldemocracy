@@ -5,6 +5,27 @@ uk-UA:
     stats_enabled: "Показати статистику"
     advanced_stats_enabled: "Показати розширену статистику"
   activerecord:
+    models:
+      activity:
+        one: "дія"
+        few: "дії"
+        many: "дії"
+        other: "дії"
+      budget:
+        one: "Бюджет"
+        few: "Бюджети"
+        many: "Бюджети"
+        other: "Бюджети"
+      budget/investment:
+        one: "Інвестиція"
+        few: "Інвестиції"
+        many: "Інвестиції"
+        other: "Інвестиції"
+      milestone:
+        one: "основний етап"
+        few: "основні етапи"
+        many: "основні етапи"
+        other: "основні етапи"
     attributes:
       budget:
         name: "Назва"
