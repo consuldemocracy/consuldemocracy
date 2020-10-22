@@ -35,6 +35,7 @@ uk-UA:
     document_verifications:
       already_verified: Обліковий запис цього користувача вже підтверджено.
       has_no_account: Для створення облікового запису перейдіть до %{link} та натисніть <b> «Зареєструватись» </b> у верхній лівій частині екрана.
+      link: CONSUL
       in_census_has_following_permissions: "Цей користувач може користуватися веб-сайтом з такими правами доступу:"
       not_in_census: Цей документ не зареєстровано.
       not_in_census_info: "Громадяни, які не перебувають у Census, можуть користуватися веб-сайтом з такими правами доступу:"
@@ -101,6 +102,11 @@ uk-UA:
         unfeasible: Недоцільна інвестиція
       print:
         print_button: Роздрукувати
+      search_results:
+        one: " містить термін '%{search_term}'"
+        few: " містить термін '%{search_term}'"
+        many: " містить термін '%{search_term}'"
+        other: " містить термін '%{search_term}'"
     sessions:
       signed_out: Вихід здійснено.
       signed_out_managed_user: Сеанс користування завершено.
