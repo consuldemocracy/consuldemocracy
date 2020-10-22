@@ -92,8 +92,16 @@ uk-UA:
         blank_dates: Дати порожні
         administrators:
           zero: "Обрати адміністраторів"
+          one: "Вибрано 1 адміністратора"
+          few: "Вибрано %{count} адміністратори"
+          many: "Вибрано %{count} адміністраторів"
+          other: "Вибрано %{count} адміністраторів"
         valuators:
           zero: "Обрати оцінювачів"
+          one: "Вибрано 1 оцінювача"
+          few: "Вибрано %{count} оцінювачі"
+          many: "Вибрано %{count} оцінювачів"
+          other: "Вибрано %{count} оцінювачів"
         empty_administrators: "Адміністратори відсутні"
         empty_valuators: "Оцінювачі відсутні"
       destroy:
@@ -111,6 +119,11 @@ uk-UA:
       headings_name: "Рубрики"
       headings_manage: "Управляти розділами"
       no_groups: "Групи відсутні."
+      amount:
+        one: "Є 1 група"
+        few: "Є %{count} групи"
+        many: "Є %{count} груп"
+        other: "Є %{count} груп"
       create:
         notice: "Групу створено!"
       update:
@@ -127,6 +140,11 @@ uk-UA:
         back: "Повернутися до бюджетів"
     budget_headings:
       no_headings: "Рубрики відсутні."
+      amount:
+        one: "Є 1 заголовок"
+        few: "Є %{count} заголовки"
+        many: "Є %{count} заголовків"
+        other: "Є %{count} заголовків"
       create:
         notice: "Рубрику створено!"
       update:
@@ -189,6 +207,7 @@ uk-UA:
         selected: "Вибрано"
         select: "Обрати"
         list:
+          id: ID
           title: Назва
           supports: Підтримка
           admin: Адміністратор
@@ -246,6 +265,7 @@ uk-UA:
       search_unfeasible: Пошук неможливий
     milestones:
       index:
+        table_id: "ID"
         table_title: "Заголовок"
         table_description: "Опис"
         table_publication_date: "Дата публікування"
@@ -297,6 +317,7 @@ uk-UA:
         no_progress_bars: "Індикатори прогресу відсутні"
         new_progress_bar: "Створити новий індикатор прогресу"
         primary: "Головний індикатор прогресу"
+        table_id: "ID"
         table_kind: "Тип"
         table_title: "Заголовок"
         table_percentage: "Поточний прогрес"
@@ -314,6 +335,7 @@ uk-UA:
         notice: "Індикатор прогресу видалено"
     comments:
       index:
+        id: "ID"
         content: "Вміст"
         author: "Автор"
         commentable_type: "Тип"
@@ -391,6 +413,7 @@ uk-UA:
           success: Завдання позначене як вирішене.
     debates:
       index:
+        id: ID
         author: Автор
         title: Обговорення
         no_debates: Обговорень немає.
@@ -484,6 +507,7 @@ uk-UA:
         proposals:
           select_order: Сортувати за
           orders:
+            id: Id
             title: Назва
             supports: Загальна підтримка
         process:
@@ -509,6 +533,7 @@ uk-UA:
         index:
           title: Назва
           back: Назад
+          id: Id
           supports: Загальна підтримка
         form:
           custom_categories: Категорії
@@ -732,6 +757,11 @@ uk-UA:
         title: Попередній перегляд інформаціної розсилки
         send: Надіслати
         affected_users: (%{n} задіяних користувачів)
+        sent_emails:
+          one: Надіслано 1 електронний лист
+          few: "Надіслано %{count} електронних листи"
+          many: "Надіслано %{count} електронних листів"
+          other: "Надіслано %{count} електронних листів"
         sent_at: Надіслано о
         subject: Предмет
         segment_recipient: Отримувачі
@@ -1138,6 +1168,11 @@ uk-UA:
           pending: В очікуванні
           rejected: Відхилені
           verified: Перевірені
+        hidden_count:
+          one: Також є <strong> одна організація </strong>, в якій немає користувачів вони приховані.
+          few: Також є <strong>%{count} організації </strong>, в яких немає користувачів вони приховані.
+          many: Також є <strong>%{count} організацій </strong>, в яких немає користувачів вони приховані.
+          other: Також є <strong>%{count} організацій </strong>, в яких немає користувачів вони приховані.
         name: Ім'я
         email: Електронна адреса
         phone_number: Телефон
@@ -1158,6 +1193,7 @@ uk-UA:
     proposals:
       index:
         title: Пропозиції
+        id: ID
         author: Автор
         select: Обрати
         selected: Вибрано
@@ -1306,9 +1342,23 @@ uk-UA:
         author: Автор
         users: Користувачі
         signature_count: "Кількість підписів:"
+        verified:
+          one: "Є %{count} перевірений підпис"
+          few: "Є %{count} перевірених підписи"
+          many: "Є %{count} перевірених підписів"
+          other: "Є %{count} перевірених підписів"
+        unverified:
+          one: "Є %{count} неперевірений підпис"
+          few: "Є %{count} неперевірених підписи"
+          many: "Є %{count} неперевірених підписів"
+          other: "Є %{count} неперевірених підписів"
         unverified_error: (Не перевірено Census)
         voted:
           zero: "Немає голосів, створених за допомогою перевірених підписів."
+          one: "Є %{count} голос, створений за допомогою перевірених підписів."
+          few: "Є %{count} голоси, створених за допомогою перевірених підписів."
+          many: "Є %{count} голосів, створених за допомогою перевірених підписів."
+          other: "Є %{count} голосів, створених за допомогою перевірених підписів."
         loading: "Деякі підпсиси все ще перевіряються Census. Будь ласка, оновіть сторінку трішки пізніше"
     stats:
       show:
@@ -1388,6 +1438,7 @@ uk-UA:
         help: "Коли користувач подає пропозицію, наступні теми пропонуються як теги (за замовчуванням)."
     users:
       columns:
+        id: ID
         erase_reason: Видалити причину
         name: Ім'я
         email: Електронна адреса
@@ -1526,6 +1577,7 @@ uk-UA:
     audits:
       title: "Журнал змін"
       changes: "Список змін"
+      id: "ID"
       field: "Сфера"
       new_value: "Нова вартість"
       old_value: "Стара вартість"
