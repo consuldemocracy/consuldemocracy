@@ -1963,7 +1963,7 @@ describe "Budget Investments" do
         end
       end
 
-      scenario "Contains remove image button in phases different from accepting" do
+      scenario "Do not show edit button in phases different from accepting" do
         budget.update!(phase: "reviewing")
         investment = create(:budget_investment, :with_image, heading: heading, author: author)
 
@@ -1971,9 +1971,8 @@ describe "Budget Investments" do
         visit budget_investment_path(budget, investment)
 
         within("aside") do
-          expect(page).to have_content "Author"
+          expect(page).not_to have_content "Author"
           expect(page).not_to have_link "Edit"
-          expect(page).to have_link "Remove image"
         end
       end
     end

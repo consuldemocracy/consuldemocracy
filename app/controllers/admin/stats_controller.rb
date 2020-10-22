@@ -58,7 +58,7 @@ class Admin::StatsController < Admin::BaseController
     @budget = Budget.find(params[:budget_id])
     heading_ids = @budget.heading_ids
 
-    votes = Vote.where(votable_type: "Budget::Investment").
+    votes = Vote.where(votable_type: "Budget::Investment", vote_flag: true).
             includes(:budget_investment).
             where(budget_investments: { heading_id: heading_ids })
 
