@@ -21,8 +21,18 @@ uk-UA:
             other: "Віддано голосів: <span>%{count}</span>"
         amount_limit:
           knapsack: "%{count}"
+          approval:
+            one: "Ви можете проголосувати за <span>1</span> проєкт"
+            few: "Ви можете проголосувати за <span>%{count}</span> проєкти"
+            many: "Ви можете проголосувати за <span>%{count}</span> проєктів"
+            other: "Ви можете проголосувати за <span>%{count}</span> проєктів"
         no_balloted_group_yet: "Ви ще не голосували у цій групі. Вперед!"
         remove: Скасувати голос
+        voted:
+          one: "Ви віддали голос за <span>одну</span> інвестицію."
+          few: "Ви віддали голоси за <span>%{count}</span> інвестиції."
+          many: "Ви віддали голоси за <span>%{count}</span> інвестицій."
+          other: "Ви віддали голоси за <span>%{count}</span> інвестицій."
         voted_info: "Ваш голос підтверджено!"
         voted_info_2: "Ви маєте можливість змінити свій вибір в будь-який час до завершення даного етапу."
         zero: Ви не проголосували за жоден інвестиційний проєкт.
@@ -93,8 +103,24 @@ uk-UA:
           button: Пошук
           placeholder: Шукати інвестиційні проєкти...
           title: Пошук
+        search_results:
+          one: " містить термін<strong>'%{search_term}'</strong>"
+          few: " містять термін<strong>'%{search_term}'</strong>"
+          many: " містять термін<strong>'%{search_term}'</strong>"
+          other: " містять термін<strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Моє голосування
+          voted_info:
+            knapsack:
+              one: "<strong> Ви проголосували за одну пропозицію вартістю в %{amount_spent}</strong>"
+              few: "<strong> Ви проголосували за %{count} пропозиції вартістю в %{amount_spent}</strong>"
+              many: "<strong> Ви проголосували за %{count} пропозицій вартістю в %{amount_spent}</strong>"
+              other: "<strong> Ви проголосували за %{count} пропозицій вартістю в %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Ви проголосували за одну пропозицію</strong>"
+              few: "<strong>Ви проголосували за %{count} пропозиції</strong>"
+              many: "<strong>Ви проголосували за %{count} пропозицій</strong>"
+              other: "<strong>Ви проголосували за %{count} пропозицій</strong>"
           change_vote_info:
             knapsack: "Ви можете %{link} у будь-який час до завершення цього етапу. Немає потреби витрачати всі наявні кошти."
             approval: "Ви можете %{link} у будь-який час до завершення цього етапу."
@@ -141,8 +167,17 @@ uk-UA:
         already_added: Ви вже додали цей інвестиційний проєкт
         already_supported: Ви вже підтримали цей інвестиційний проєкт. Поділіться ним!
         support_title: Підтримати цей проєкт
+        confirm_group:
+          one: "Ви можете підтримувати інвестиції лише на %{count} дільниці. Якщо ви продовжите, ви не зможете змінити вибори на своїй дільниці. Ви впевнені?"
+          few: "Ви можете підтримувати інвестиції лише на %{count} дільницях. Якщо ви продовжите, ви не зможете змінити вибори на своїй дільниці. Ви впевнені?"
+          many: "Ви можете підтримувати інвестиції лише на %{count} дільницях. Якщо ви продовжите, ви не зможете змінити вибори на своїй дільниці. Ви впевнені?"
+          other: "Ви можете підтримувати інвестиції лише на %{count} дільницях. Якщо ви продовжите, ви не зможете змінити вибори на своїй дільниці. Ви впевнені?"
         supports:
           zero: Немає підтримок
+          one: 1 підтримка
+          few: "%{count} підтримки"
+          many: "%{count} підтримок"
+          other: "%{count} підтримок"
         give_support: Підтримка
       header:
         check_ballot: Перевірити і підтвердити моє голосування
@@ -155,6 +190,10 @@ uk-UA:
       available: "Доступний бюджет: "
       votes:
         zero: "Ви вибрали <strong> 0 </strong> проєктів із <strong>%{limit}</strong>"
+        one: "Ви вибрали <strong> 1 </strong> проєкт із <strong>%{limit}</strong>"
+        few: "Ви вибрали <strong>%{count}</strong> проєкти із <strong>%{limit}</strong>"
+        many: "Ви вибрали <strong>%{count}</strong> проєктів із <strong>%{limit}</strong>"
+        other: "Ви вибрали <strong>%{count}</strong> проєктів із <strong>%{limit}</strong>"
     show:
       group: Група
       phase: Фактичний етап
