@@ -4,6 +4,11 @@ uk-UA:
       verification:
         residence: "Місце проживання"
         sms: "SMS"
+      local_census_records/import:
+        one: Імпорт місцевих даних Цензусу
+        few: Імпорт місцевих даних Цензусу
+        many: Імпорт місцевих даних Цензусу
+        other: Імпорт місцевих даних Цензусу
     attributes:
       verification:
         residence:
