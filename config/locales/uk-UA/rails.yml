@@ -203,6 +203,11 @@ uk-UA:
       storage_units:
         format: "%n %u"
         units:
+          byte:
+            one: Байт
+            few: Байтів
+            many: Байтів
+            other: Байтів
           gb: Гігабайт
           kb: Кілобайт
           mb: Мегабайт
