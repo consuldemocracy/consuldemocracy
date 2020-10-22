@@ -38,13 +38,29 @@ uk-UA:
       moderator: Модератор
       responses:
         zero: Відповіді відсутні
+        one: 1 відповідь
+        few: "%{count} відповіді"
+        many: "%{count} відповідей"
+        other: "%{count} відповідей"
       responses_show:
         zero: Відповіді відсутні
+        one: "1 відповідь (показати)"
+        few: "%{count} відповіді (показати)"
+        many: "%{count} відповідей (показати)"
+        other: "%{count} відповідей (показати)"
       responses_collapse:
         zero: Відповіді відсутні
+        one: "1 відповідь (приховати)"
+        few: "%{count} відповіді (приховати)"
+        many: "%{count} відповідей (приховати)"
+        other: "%{count} відповідей (приховати)"
       user_deleted: Користувача видалено
       votes:
         zero: Голоси відсутні
+        one: 1 голос
+        few: "%{count} голоси"
+        many: "%{count} голоси"
+        other: "%{count} голоси"
     form:
       comment_as_admin: Коментувати як адміністратор
       comment_as_moderator: Коментувати як модератор
@@ -70,8 +86,16 @@ uk-UA:
     debate:
       comments:
         zero: Коментарі відсутні
+        one: 1 коментар
+        few: "%{count} коментарі"
+        many: "%{count} коментарів"
+        other: "%{count} коментарів"
       votes:
         zero: Голоси відсутні
+        one: 1 голос
+        few: "%{count} голоси"
+        many: "%{count} голосів"
+        other: "%{count} голосів"
     edit:
       editing: Редагувати обговорення
       form:
@@ -101,6 +125,11 @@ uk-UA:
         button: Пошук
         placeholder: Пошук обговорень...
         title: Пошук
+      search_results:
+        one: " містить термін <strong>'%{search_term}'</strong>"
+        few: " містить терміни <strong>'%{search_term}'</strong>"
+        many: " містить терміни <strong>'%{search_term}'</strong>"
+        other: " містить терміни <strong>'%{search_term}'</strong>"
       select_order: Сортувати за
       start_debate: Розпочати обговорення
       title: Обговорення
@@ -129,6 +158,10 @@ uk-UA:
       author_deleted: Користувач видалений
       comments:
         zero: Коментарі відсутні
+        one: 1 коментар
+        few: "%{count} коментарі"
+        many: "%{count} коментарів"
+        other: "%{count} коментарів"
       comments_title: Коментарі
       edit_debate_link: Редагувати
       flag: Це обговорення позначене як недоречне кількома користувачами.
@@ -177,6 +210,8 @@ uk-UA:
     none: Все місто
   layouts:
     application:
+      chrome: Google Chrome
+      firefox: Firefox
       ie: Ми виявили, що ви користуєтесь браузером Internet Explorer. Для кращого результату ми рекомендуємо користуватися %{firefox} або %{chrome}.
       ie_title: Цей вебсайт не пристосований для вашого браузера
     dashboard:
@@ -192,13 +227,20 @@ uk-UA:
         current_goal: Поточна ціль
         supports:
           zero: Немає підтримки
+          one: 1 підтримка
+          few: "Підтримки"
+          many: "Підтримок"
+          other: "Підтримок"
     footer:
       accessibility: Доступність
       conditions: Правила та умови користування
       consul: Додаток CONSUL
+      consul_url: https://github.com/consul/consul
       contact_us: Для технічної допомоги перейдіть
+      copyright: CONSUL, %{year}
       description: Цей портал використовує %{consul} який знаходиться %{open_source}.
       open_source: відкрите програмне забезпечення
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Вирішуйте, як створити місто, у якому ви бажаєте жити.
       participation_title: Участь
       privacy: Політика конфіденційності
@@ -222,6 +264,11 @@ uk-UA:
       poll_questions: Голосування
       budgets: Бюджетування участі
       notification_item:
+        new_notifications:
+          one: Ви маєте нове сповіщення
+          few: Ви маєте %{count} нових сповіщення
+          many: Ви маєте %{count} нових сповіщень
+          other: Ви маєте %{count} нових сповіщень
         notifications: Сповіщення
         no_notifications: "Нових сповіщень немає"
   notifications:
@@ -243,18 +290,22 @@ uk-UA:
     facebook:
       sign_in: Реєстрація через Facebook
       sign_up: Вхід через Facebook
+      name: Facebook
     finish_signup:
       title: "Додаткові деталі"
       username_warning: "У зв'язку зі змінами нашої взаємодії з соціальними мережами ваше ім'я користувача може відображатися як таке, що вже використовується. В такому разі оберіть, будь ласка, інше ім'я користувача."
     google_oauth2:
       sign_in: Реєстрація через Google
       sign_up: Вхід через Google
+      name: Google
     wordpress_oauth2:
       sign_in: Реєстрація через Wordpress
       sign_up: Вхід через Wordpress
+      name: Wordpress
     twitter:
       sign_in: Реєстрація через Twitter
       sign_up: Увійти через Twitter
+      name: Twitter
     info:
       sign_in: "Реєстрація через:"
       sign_up: "Вхід через:"
@@ -378,6 +429,7 @@ uk-UA:
       votes:
         zero: Голоси відсутні
       supports_necessary: "необхідно %{number} підтримань"
+      total_percent: 100%
       archived: "Ця пропозиція заархівована і не збирає підтримки."
       successful: "Ця пропозиція отримала достатню підтримку."
       selected: "Вибрана пропозиція"
@@ -582,6 +634,7 @@ uk-UA:
       stats:
         total_votes: "Загальна кількість голосів"
         votes: "ГОЛОСИ"
+        web: "Мережа"
         mail: "ЕЛЕКТРОННОЮ ПОШТОЮ"
         booth: "КАБІНКА"
         total: "ЗАГАЛОМ"
@@ -697,6 +750,13 @@ uk-UA:
       add_language: Додати мову
       languages_in_use:
         zero: "Використовуються 0 мов"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   stats:
     index:
       visits: Відвідування
@@ -813,6 +873,7 @@ uk-UA:
     title: "Пов'язаний контент"
     add: "Весь пов'язаний контент"
     label: "Посилання на пов'язаний контент"
+    placeholder: "%{url}"
     help: "Ви можете додавати посилання %{models} у %{org}."
     submit: "Додати"
     error: "Посилання недійсне. Починайте з %{url}."
