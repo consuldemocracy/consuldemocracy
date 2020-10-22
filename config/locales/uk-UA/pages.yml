@@ -88,16 +88,22 @@ uk-UA:
           page_header: Сторінка
           rows:
             - 
+              key_column: 0
               page_column: Повернутися
             - 
+              key_column: 1
               page_column: Обговорення
             - 
+              key_column: 2
               page_column: Пропозиції
             - 
+              key_column: 3
               page_column: Голоси
             - 
+              key_column: 4
               page_column: Партисипативні бюджети
             - 
+              key_column: 5
               page_column: Законодавчі процеси
         browser_table:
           description: "Залежно від операційної системи та використовуваного веб-переглядача, комбінація клавіш буде такою:"
@@ -106,14 +112,19 @@ uk-UA:
           key_header: Комбінація клавіш
           rows:
             - 
+              browser_column: Explorer
               key_column: Комбінація клавіш ALT +, а потім ENTER
             - 
+              browser_column: Firefox
               key_column: Комбінація ALT + CAPS +
             - 
+              browser_column: Chrome
               key_column: Комбінація ALT + (Комбінація CTRL + ALT + для MAC)
             - 
+              browser_column: Safari
               key_column: Комбінація ALT + (Комбінація CMD + для MAC)
             - 
+              browser_column: Opera
               key_column: Комбінація CAPS + ESC +
       textsize:
         title: Розмір тексту
@@ -123,14 +134,19 @@ uk-UA:
           action_header: Дія, яку потрібно виконати
           rows:
             - 
+              browser_column: Explorer
               action_column: Переглянути > Розмір тексту
             - 
+              browser_column: Firefox
               action_column: Переглянути > Розмір
             - 
+              browser_column: Chrome
               action_column: Налаштування (піктограма)> Опції> Додатково> Веб-вміст> Розмір тексту
             - 
+              browser_column: Safari
               action_column: Перегляд> Збільшити / Зменшити
             - 
+              browser_column: Opera
               action_column: Переглянути > Масштаб
         browser_shortcuts_table:
           description: "Інший спосіб змінити розмір тексту - це використання комбінацій клавіш, визначених у браузерах, зокрема комбінації клавіш:"
