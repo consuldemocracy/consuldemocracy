@@ -27,6 +27,7 @@ uk-UA:
         assigned_to: "Доручено %{valuator}"
         title: Інвестиційні проєкти
         edit: Редагувати досьє
+        table_id: ID
         table_title: Назва
         table_heading_name: Назва розділу
         table_actions: Дії
@@ -42,6 +43,7 @@ uk-UA:
         edit_dossier: Редагувати досьє
         price: Ціна
         price_first_year: Вартість впродовж першого року
+        currency: "€"
         feasibility: Доцільність
         feasible: Доцільно
         unfeasible: Недоцільно
