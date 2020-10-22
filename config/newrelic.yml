@@ -41,7 +41,7 @@ test:
 
 staging:
   <<: *default_settings
-  app_name: CONSUL (Staging)
+  #app_name: CONSUL (Staging)
 
 production:
   <<: *default_settings
