@@ -111,6 +111,106 @@ uk-UA:
         few: Бюлетені
         many: Бюлетені
         other: Бюлетені
+      proposal:
+        one: "Пропозиція громадянина"
+        few: "Пропозиції громадян"
+        many: "Пропозиції громадян"
+        other: "Пропозиції громадян"
+      site_customization/page:
+        one: Сторінка користувача
+        few: Сторінки користувачів
+        many: Сторінки користувачів
+        other: Сторінки користувачів
+      site_customization/image:
+        one: Зображення користувача
+        few: Зображення користувача
+        many: Зображення користувача
+        other: Зображення користувача
+      site_customization/content_block:
+        one: Блок контенту користувача
+        few: Блоки контенту користувача
+        many: Блоки контенту користувача
+        other: Блоки контенту користувача
+      document:
+        one: Документ
+        few: Документи
+        many: Документи
+        other: Документи
+      legislation/process:
+        one: "Процес"
+        few: "Процеси"
+        many: "Процеси"
+        other: "Процеси"
+      legislation/proposal:
+        one: "Пропозиція"
+        few: "Пропозиції"
+        many: "Пропозиції"
+        other: "Пропозиції"
+      legislation/draft_versions:
+        one: "Чорнова версія"
+        few: "Чорнові версії"
+        many: "Чорнові версії"
+        other: "Чорнові версії"
+      legislation/questions:
+        one: "Запитання"
+        few: "Запитання"
+        many: "Запитання"
+        other: "Запитання"
+      legislation/question_options:
+        one: "Варіант запитання"
+        few: "Варіанти запитань"
+        many: "Варіанти запитань"
+        other: "Варіанти запитань"
+      legislation/answers:
+        one: "Відповідь"
+        few: "Відповіді"
+        many: "Відповіді"
+        other: "Відповіді"
+      documents:
+        one: "Документ"
+        few: "Документи"
+        many: "Документи"
+        other: "Документи"
+      images:
+        one: "Зображення"
+        few: "Зображення"
+        many: "Зображення"
+        other: "Зображення"
+      topic:
+        one: "Тема"
+        few: "Теми"
+        many: "Теми"
+        other: "Теми"
+      poll:
+        one: "Голосування"
+        few: "Голосування"
+        many: "Голосування"
+        other: "Голосування"
+      proposal_notification:
+        one: "Сповіщення щодо пропозицій"
+        few: "Сповіщення щодо пропозицій"
+        many: "Сповіщення щодо пропозицій"
+        other: "Сповіщення щодо пропозицій"
+      dashboard/action:
+        one: Дія панелі управління пропозиціями
+        few: Дії панелі управління пропозиціями
+        many: Дії панелі управління пропозиціями
+        other: Дії панелі управління пропозиціями
+      dashboard/administrator_task:
+        one: Завдання
+        few: Завдання
+        many: Завдання
+        other: Завдання
+      link:
+        one: Посилання
+        few: Посилання
+        many: Посилання
+        other: Посилання
+      local_census_record:
+        one: Місцеві дані Цензусу
+        few: Місцеві дані Цензусу
+        many: Місцеві дані Цензусу
+        other: Місцеві дані Цензусу
     attributes:
       budget:
         name: "Назва"
