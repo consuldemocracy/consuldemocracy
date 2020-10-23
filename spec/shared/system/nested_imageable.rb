@@ -1,10 +1,11 @@
 shared_examples "nested imageable" do |imageable_factory_name, path, imageable_path_arguments, fill_resource_method_name, submit_button, imageable_success_notice, has_many_images = false|
   let!(:user)                { create(:user, :level_two) }
-  let!(:administrator)       { create(:administrator, user: user) }
   let!(:arguments)           { {} }
   let!(:imageable)           { create(imageable_factory_name) }
 
   before do
+    create(:administrator, user: user)
+
     imageable_path_arguments&.each do |argument_name, path_to_value|
       arguments.merge!("#{argument_name}": imageable.send(path_to_value))
     end
