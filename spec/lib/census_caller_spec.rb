@@ -13,6 +13,16 @@ describe CensusCaller do
       { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}}}}
     end
 
+    it "returns invalid response when document_number or document_type are empty" do
+      response = api.call(1, "", nil, nil)
+
+      expect(response).not_to be_valid
+
+      response = api.call("", "12345678A", nil, nil)
+
+      expect(response).not_to be_valid
+    end
+
     it "returns local census response when census api response is invalid" do
       census_api_response = CensusApi::Response.new(invalid_body)
       allow_any_instance_of(CensusApi).to receive(:call).and_return(census_api_response)
