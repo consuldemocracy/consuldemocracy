@@ -2122,8 +2122,7 @@ table {
 
     .show-children::before,
     .collapse-children::before {
-      margin-right: rem-calc(6);
-      transform: translateY(1px);
+      transform: translateY(-1px);
     }
 
     &.collapsed {
