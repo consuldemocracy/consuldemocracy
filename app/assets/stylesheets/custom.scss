@@ -127,3 +127,8 @@ background: $secondary-brand;
   }
 }
 
+.custom-page--content {
+  p {
+    white-space: pre-wrap;
+  }
+}
