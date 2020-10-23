@@ -15,6 +15,7 @@ Bundler/DuplicatedGem:
 
 Bundler/OrderedGems:
   Enabled: true
+  ConsiderPunctuation: true
 
 Capybara/CurrentPathExpectation:
   Enabled: true
@@ -165,7 +166,13 @@ Layout/TrailingWhitespace:
 Lint/AmbiguousRegexpLiteral:
   Enabled: true
 
+Lint/ConstantDefinitionInBlock:
+  Enabled: true
+
 Lint/DuplicateMethods:
+  Enabled: true
+
+Lint/EmptyFile:
   Enabled: true
 
 Lint/LiteralAsCondition:
@@ -367,7 +374,13 @@ Security/JSONLoad:
 Security/YAMLLoad:
   Enabled: true
 
+Style/AccessorGrouping:
+  Enabled: true
+
 Style/AndOr:
+  Enabled: true
+
+Style/ArrayCoercion:
   Enabled: true
 
 Style/BlockDelimiters:
@@ -404,6 +417,9 @@ Style/PercentLiteralDelimiters:
   Enabled: true
 
 Style/Proc:
+  Enabled: true
+
+Style/RedundantFileExtensionInRequire:
   Enabled: true
 
 Style/RedundantFreeze:

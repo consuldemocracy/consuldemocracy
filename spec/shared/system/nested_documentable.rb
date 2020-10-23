@@ -235,12 +235,11 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       end
       login_as user_to_login
       visit send(path, arguments)
-      FILENAMES ||= %w[clippy empty logo].freeze
 
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable.class.max_documents_allowed.times.zip(FILENAMES).each do |_n, fn|
-        documentable_attach_new_file(Rails.root.join("spec/fixtures/files/#{fn}.pdf"))
+      %w[clippy empty logo].take(documentable.class.max_documents_allowed).each do |filename|
+        documentable_attach_new_file(Rails.root.join("spec/fixtures/files/#{filename}.pdf"))
       end
 
       click_on submit_button

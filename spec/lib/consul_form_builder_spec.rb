@@ -1,10 +1,14 @@
 require "rails_helper"
 
 describe ConsulFormBuilder do
-  class DummyModel
-    include ActiveModel::Model
-    OPTIONS = %w[Good Bad Ugly].freeze
-    attr_accessor :title, :quality
+  before do
+    dummy_model = Class.new do
+      include ActiveModel::Model
+      attr_accessor :title, :quality
+    end
+
+    stub_const("DummyModel", dummy_model)
+    stub_const("DummyModel::OPTIONS", %w[Good Bad Ugly].freeze)
   end
 
   let(:builder) { ConsulFormBuilder.new(:dummy, DummyModel.new, ActionView::Base.new, {}) }

@@ -1,6 +1,6 @@
 rubocop:
   config_file: .rubocop.yml
-  version: 0.83.0
+  version: 0.91.0
 scss:
   config_file: .scss-lint.yml
 erblint:

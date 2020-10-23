@@ -89,9 +89,7 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :organization, update_only: true
 
-  attr_accessor :skip_password_validation
-  attr_accessor :use_redeemable_code
-  attr_accessor :login
+  attr_accessor :skip_password_validation, :use_redeemable_code, :login
 
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
