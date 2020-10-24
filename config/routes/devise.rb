@@ -1,5 +1,6 @@
 # Solo permitmos el sign-in, el resto de las rutas realmente nos las eliminamos
 devise_for :users, controllers: {
+                     registrations: "users/registrations",
                      sessions: "users/sessions",
                    }, skip:[:registrations,:passwords,:confirmations]
 
@@ -10,6 +11,9 @@ devise_scope :user do
   get "users/sign_up", to: "users/sessions#new",as: :new_user_registration
   get "users/participacion", to: "users/sessions#participacion", as: :participacion_logon
   get "users/me", to: "users/sessions#me", as: :participacion_me
+  put :user_registration, to: 'users/registrations#update'
+  patch :user_registration, to: 'users/registrations#update'
+  get 'users/edit' => 'users/registrations#edit', :as => 'edit_user_registration'
 end
 
 
