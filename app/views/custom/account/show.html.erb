@@ -1,7 +1,6 @@
 <div class="row account">
   <div class="small-12 column">
     <%# Permitimos cambiar la clave, si el usuario no es de participacion, por ejemplo usuarios desde los sistemas administrativos %>
-    <%= current_user.participacion_id %>
     <% if current_user.participacion_id.nil? ||current_user.participacion_id ==0  %>
       <div class="float-right text-right">
         <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow" %>
