@@ -7,4 +7,12 @@
   .table-actions {
     justify-content: flex-end;
   }
+
+  .soft-block-link {
+    @include hollow-button($color-warning);
+  }
+
+  .hide-link {
+    @include hollow-button($alert-color);
+  }
 }
