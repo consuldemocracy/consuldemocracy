@@ -3,7 +3,7 @@ require_dependency Rails.root.join("app", "controllers", "proposals_controller")
 class ProposalsController
   include ProposalsHelper
 
-  before_action(except: [:json_data]) {authenticate_user!}
+  before_action(except: [:json_data, :index, :show, :map, :summary]) {authenticate_user!}
   before_action :redirect, only: :index
 
   load_and_authorize_resource except: :json_data
