@@ -9,27 +9,7 @@
 <% end %>
 
 <main>
-  <% if @search_terms || @advanced_search_terms %>
-    <div class="highlight no-margin-top padding margin-bottom">
-      <div class="row">
-        <div class="small-12 column">
-          <% if @search_terms || @advanced_search_terms %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @debates %>
-              <% if !@advanced_search_terms %>
-                <%= sanitize(
-                  t("debates.index.search_results", count: @debates.size, search_term: @search_terms)
-                ) %>
-              <% end %>
-            </p>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% else %>
-    <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
-  <% end %>
+  <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
 
   <% if feature?("user.recommendations") && @recommended_debates.present? %>
     <%= render "shared/recommended_index", recommended: @recommended_debates,

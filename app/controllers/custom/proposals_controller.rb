@@ -11,6 +11,10 @@ class ProposalsController
   skip_authorization_check only: :json_data
 
   def redirect
+    if (params[:search].present?) && (!current_user.present? || !(current_user.moderator? || current_user.administrator?)) then
+        params[:project] = params[:search]
+    end
+    
     if (!params[:project].present? || !Tag.category_names.include?(params[:project])) &&
       (!current_user.present? || !(current_user.moderator? || current_user.administrator?)) then
         redirect_to "/"
