@@ -68,7 +68,7 @@
         
         <div class="show-for-small-only">
           <%= link_to t("proposals.index.start_proposal"),
-                    (new_proposal_path + (if @search_terms then ("?project="+@search_terms) else "" end)),
+                    (new_proposal_path + (if params[:project].present? then ("?project="+params[:project]) else "" end)),
                       class: "button expanded" %>
         </div>
       <% end %>
@@ -103,7 +103,7 @@
         <% if (current_user.present? && (current_user.moderator? || current_user.administrator?)) ||
            (@search_terms.present? && (!@search_terms.downcase().include? "bischofshut")) %>
           <%= link_to t("proposals.index.start_proposal"),
-                      (new_proposal_path + (if @search_terms then ("?project="+@search_terms) else "" end)),
+                      (new_proposal_path + (if params[:project].present? then ("?project="+params[:project]) else "" end)),
                       class: "button expanded" %>
 
           <div class="sidebar-divider"></div>

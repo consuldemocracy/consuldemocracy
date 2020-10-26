@@ -11,7 +11,7 @@ class ProposalsController
   skip_authorization_check only: :json_data
 
   def redirect
-    if (!params[:search].present? || !Tag.category_names.include?(params[:search])) &&
+    if (!params[:project].present? || !Tag.category_names.include?(params[:project])) &&
       (!current_user.present? || !(current_user.moderator? || current_user.administrator?)) then
         redirect_to "/"
     end
@@ -34,6 +34,7 @@ class ProposalsController
     load_selected
     load_featured
     remove_archived_from_order_links
+    take_only_by_tag_name
     @proposals_coordinates = all_proposal_map_locations
   end
 
@@ -50,6 +51,22 @@ class ProposalsController
   end
 
   private
+    def take_only_by_tag_name
+      if params[:project].present?
+        @resources = @resources.proposals_by_category(params[:project])
+      end
+    end
+    
+    def all_active_proposals
+     	if params[:project]
+    		Proposal.published().not_retired().not_archived().proposals_by_category(params[:project])
+    	elsif params[:search]
+      		Proposal.published().not_retired().not_archived().search(params[:search])
+	else
+	  Proposal.published().not_retired().not_archived().all
+	end
+    end
+  
     def proposal_created_email(proposal)
       @proposal = proposal
       @project = @proposal.tag_list_with_limit(1)
