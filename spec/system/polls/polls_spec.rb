@@ -10,7 +10,7 @@ describe "Polls" do
     expect { visit polls_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
-  context "#index" do
+  describe "Index" do
     scenario "Shows description for open polls" do
       visit polls_path
       expect(page).not_to have_content "Description for open polls"

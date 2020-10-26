@@ -323,8 +323,8 @@ describe "Proposals" do
     proposal = create(:proposal)
 
     visit proposal_path(proposal)
-    expect(page).to have_css "meta[name='twitter:title'][content=\'#{proposal.title}\']", visible: false
-    expect(page).to have_css "meta[property='og:title'][content=\'#{proposal.title}\']", visible: false
+    expect(page).to have_css "meta[name='twitter:title'][content=\'#{proposal.title}\']", visible: :hidden
+    expect(page).to have_css "meta[property='og:title'][content=\'#{proposal.title}\']", visible: :hidden
   end
 
   scenario "Create and publish" do

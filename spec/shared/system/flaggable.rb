@@ -30,7 +30,8 @@ shared_examples "flaggable" do |factory_name, admin: false|
       click_link "Flag as inappropriate"
 
       expect(page).to have_css ".flag-active"
-      expect(page).to have_link "Unflag", visible: false
+      expect(page).to have_link "Unflag", visible: :hidden
+      expect(page).not_to have_link "Flag as inappropriate", visible: :all
     end
 
     expect(Flag.flagged?(user, flaggable)).to be
@@ -49,7 +50,8 @@ shared_examples "flaggable" do |factory_name, admin: false|
       click_link "Unflag"
 
       expect(page).not_to have_css ".flag-active"
-      expect(page).to have_link "Flag as inappropriate", visible: false
+      expect(page).to have_link "Flag as inappropriate", visible: :hidden
+      expect(page).not_to have_link "Unflag", visible: :all
     end
 
     expect(Flag.flagged?(user, flaggable)).not_to be

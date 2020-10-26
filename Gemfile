@@ -105,7 +105,7 @@ group :development do
   gem "rubocop", "~> 0.91.0", require: false
   gem "rubocop-performance", "~> 1.7.1", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
-  gem "rubocop-rspec", "~> 1.35.0", require: false
+  gem "rubocop-rspec", "~> 1.41.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "scss_lint", "~> 0.59.0", require: false
   gem "web-console", "~> 3.7.0"

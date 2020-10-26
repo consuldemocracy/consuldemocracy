@@ -23,13 +23,13 @@ shared_examples "relationable" do |relationable_model_name|
     expect(page).not_to have_css("#related-content-list")
   end
 
-  scenario "related contents can be added" do
+  scenario "related contents can be added", :js do
     login_as(user)
     visit relationable.url
 
-    expect(page).to have_selector("#related_content", visible: false)
+    expect(page).not_to have_selector("#related_content")
+
     click_on("Add related content")
-    expect(page).to have_selector("#related_content", visible: true)
 
     within("#related_content") do
       fill_in "url", with: "#{Setting["url"] + related1.url}"
@@ -45,6 +45,8 @@ shared_examples "relationable" do |relationable_model_name|
     within("#related-content-list") do
       expect(page).to have_content(relationable.title)
     end
+
+    click_on("Add related content")
 
     within("#related_content") do
       fill_in "url", with: "#{Setting["url"] + related2.url}"
