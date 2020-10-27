@@ -8,9 +8,11 @@ de:
     footer:
       participation_text: Gestalten Sie Ihre Stadt Würzburg mit, damit sie für Sie lebenswerter wird.
       consul: einer Anwendung von Consul
-      contact_us: 
+      contact_us: ""
       description: Diese Plattform basiert auf %{consul}, einer %{open_source}.
-      copyright: Stadt Würzburg, %{year}
+      copyright: Stadt %{wuerzburg_link}, %{year}
+      wuerzburg_name: Würzburg
+      wuerzburg_url: https://wuerzburg.de
       contactus: Impressum
       netiquette: Netiquette
     header:

@@ -23,7 +23,7 @@
 
   <div class="subfooter row">
     <div class="small-12 medium-8 column">
-      <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
+      <%= sanitize(t("layouts.footer.copyright", year: Time.current.year, wuerzburg_link: link_to(t("layouts.footer.wuerzburg_name"), t("layouts.footer.wuerzburg_url"), target: "_blank", rel: "nofollow")), attributes: %w(href target)) %>&nbsp;|
       <ul class="no-bullet inline-block">
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
