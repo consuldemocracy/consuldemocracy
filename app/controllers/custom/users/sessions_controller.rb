@@ -28,7 +28,12 @@ class Users::SessionsController < Devise::SessionsController
   private
 
     def after_sign_in_path_for(resource)
-      stored_location_for(resource) || root_path
+      @returnTo = stored_location_for(resource);
+      if(@returnTo!=nil)
+        @returnTo
+      else
+        root_path
+      end
     end
 
     def after_sign_out_path_for(resource)
@@ -45,6 +50,7 @@ class Users::SessionsController < Devise::SessionsController
     end
 
     def verify_ip
+
       # Simplemente verificamos si la IP remota es una de las IPs de gestion
       # en caso negativo redirigimos la petición a la de renegociacion
       # del portal de participacion.. siempre y cuando el usuario no este conectado ya, claro...
@@ -58,8 +64,8 @@ class Users::SessionsController < Devise::SessionsController
           @redirect = Rails.application.config.participacion_renegotiation
         end
 
-        if(@redirect!=nil && @managementIps!=nil)
-          if(@managementIps.split(';').none?{|m| m.strip == @ip })
+        if(@redirect!=nil)
+          if(@managementIps==nil || @managementIps.split(';').none?{|m| m.strip == @ip })
             redirect_to @redirect, :status => 302
           end
         end
