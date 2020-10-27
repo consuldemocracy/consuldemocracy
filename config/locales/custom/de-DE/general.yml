@@ -6,11 +6,11 @@ de:
       user_permission_verify_info: "* Nur für bei der Stadt Würzburg gemeldete Bürger*innen möglich."
   layouts:
     footer:
-      participation_text: Gestalten Sie Ihre Stadt Würzburg, damit sie für Sie lebenswerter wird.
+      participation_text: Gestalten Sie Ihre Stadt Würzburg mit, damit sie für Sie lebenswerter wird.
       consul: einer Anwendung von Consul
-      contact_us: Für technische Unterstützung wenden Sie sich bitte an das ZDI Mainfranken.
+      contact_us: 
       description: Diese Plattform basiert auf %{consul}, einer %{open_source}.
-      copyright: ZDI Mainfranken, %{year}
+      copyright: Stadt <a href="https://wuerzburg.de/">Würzburg</a>, %{year}
       contactus: Impressum
       netiquette: Netiquette
     header:
