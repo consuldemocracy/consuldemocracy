@@ -120,6 +120,8 @@ es:
       public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
       help_page: "Página de ayuda"
       help_page_description: 'Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada. También se pueden crear páginas y menús personalizados en las secciones "Personalizar páginas" y "Personalizar bloques"'
+      link_to_top: "Enlace al inicio"
+      link_to_top_description: "Muestra una enlace para volver a la parte superior de la página después de desplazarse"
       remote_translations: "Traducciones remotas"
       remote_translations_description: "Muestra un botón que permite a los usuarios solicitar una traducción de una página no traducida en su idioma."
       translation_interface: "Interfaz de traducción"

@@ -112,6 +112,7 @@
 //= require columns_selector
 //= require budget_edit_associations
 //= require datepicker
+//= require link_to_top
 //= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
@@ -169,6 +170,7 @@ var initialize_modules = function() {
   App.AdminMachineLearningScripts.initialize();
   App.BudgetEditAssociations.initialize();
   App.Datepicker.initialize();
+  App.LinkToTop.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
 };
