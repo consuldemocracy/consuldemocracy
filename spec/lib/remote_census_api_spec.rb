@@ -4,20 +4,12 @@ describe RemoteCensusApi do
   let(:api) { RemoteCensusApi.new }
 
   describe "#call", :remote_census do
-    let(:invalid_body) { { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}}}} }
-    let(:valid_body) do
-      {
-        get_habita_datos_response: {
-          get_habita_datos_return: {
-            datos_habitante: {
-              item: {
-                fecha_nacimiento_string: "1-1-1980"
-              }
-            }
-          }
-        }
-      }
+    before do
+      Setting["remote_census.response.valid"] = "response.data.date_of_birth"
     end
+
+    let(:invalid_body) { { response: { data: {}}} }
+    let(:valid_body) { { response: { data: { date_of_birth: "1-1-1980" }}} }
 
     it "returns the response for the first valid variant" do
       date = Date.parse("01/01/1983")
@@ -153,23 +145,15 @@ describe RemoteCensusApi do
 
       response = RemoteCensusApi.new.send(:get_response_body, document_type, document_number, nil, nil)
 
-      expect(response).to eq({ get_habita_datos_response: {
-                                 get_habita_datos_return: {
-                                   datos_habitante: {
-                                     item: {
-                                       fecha_nacimiento_string: "31-12-1980",
-                                       identificador_documento: "12345678Z",
-                                       descripcion_sexo: "Varón",
-                                       nombre: "José",
-                                       apellido1: "García"
-                                     }
-                                   },
-                                   datos_vivienda: {
-                                     item: {
-                                       codigo_postal: "28013",
-                                       codigo_distrito: "01"
-                                     }
-                                   }
+      expect(response).to eq({ response: {
+                                 data: {
+                                   date_of_birth: "31-12-1980",
+                                   document_number: "12345678Z",
+                                   gender: "Male",
+                                   name: "William",
+                                   surname: "Widmore",
+                                   postal_code: "28013",
+                                   district_code: "01"
                                  }
                                }
                              })
@@ -187,9 +171,8 @@ describe RemoteCensusApi do
       expect(response.valid?).to eq true
       expect(response.date_of_birth).to eq Time.zone.local(1980, 12, 31).to_date
       expect(response.postal_code).to eq "28013"
-      expect(response.district_code).to eq "01"
       expect(response.gender).to eq "male"
-      expect(response.name).to eq "José García"
+      expect(response.name).to eq "William Widmore"
     end
   end
 end

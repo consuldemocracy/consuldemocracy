@@ -45,6 +45,9 @@ describe CensusCaller do
     end
 
     describe "RemoteCensusApi", :remote_census do
+      let(:valid_body) { { response: { data: { document_number: "12345678" }}} }
+      let(:invalid_body) { { response: { data: {}}} }
+
       it "returns remote census api response when it's available and response is valid" do
         remote_census_api_response = RemoteCensusApi::Response.new(valid_body)
         allow_any_instance_of(RemoteCensusApi).to receive(:call).and_return(remote_census_api_response)
