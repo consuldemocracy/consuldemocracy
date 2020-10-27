@@ -10,7 +10,7 @@ de:
       consul: einer Anwendung von Consul
       contact_us: 
       description: Diese Plattform basiert auf %{consul}, einer %{open_source}.
-      copyright: Stadt <a href="https://wuerzburg.de/">Würzburg</a>, %{year}
+      copyright: Stadt [Würzburg] (https://wuerzburg.de), %{year}
       contactus: Impressum
       netiquette: Netiquette
     header:
