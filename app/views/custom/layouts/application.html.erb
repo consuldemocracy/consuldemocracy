@@ -13,14 +13,14 @@
 
     <%= raw setting["html.per_page_code_head"] %>
   </head>
-  <body class="<%= yield (:body_class) %> <% if request.headers['X-Proxy-Management'] == 'proxy' %>iframed<% end%> ">
+  <body class="<%= yield (:body_class) %> <% if request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>iframed<% end%> ">
     <%= raw setting["html.per_page_code_body"] %>
 
     <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
 
     <div class="wrapper <%= yield (:wrapper_class) %>">
       <%# Si viene de un proxy eliminamos la información de cabecera e incluimos un [consume:proxy-header] para que el proxy introduzca su cabecera %>
-      <% unless request.headers['X-Proxy-Management'] == 'proxy' %>
+      <% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>
       <%= render "layouts/header", with_subnavigation: true %>
       <% end %>
 
@@ -47,12 +47,12 @@
       <%= render "layouts/flash" %>
 
       <%= yield %>
-      <% unless request.headers['X-Proxy-Management'] == 'proxy' %>
+      <% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed] %>
       <div class="push"></div>
       <% end %>
     </div>
     <%# Si viene de un proxy eliminamos la información de cabecera e incluimos un [consume:proxy-footer] para que el proxy introduzca su cabecera %>
-    <% unless request.headers['X-Proxy-Management'] == 'proxy' %>
+    <% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>
     <div class="footer">
       <%= render "layouts/footer" %>
     </div>

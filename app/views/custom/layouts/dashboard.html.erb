@@ -29,11 +29,11 @@
         </div>
 
         <div class="off-canvas-content" data-off-canvas-content>
-          <% unless request.headers['X-Proxy-Management'] == 'proxy' %>
+          <% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>
             <%= render "layouts/header", with_subnavigation: false %>
           <% end %>
 
-          <div class="dashboard-menu-and-content <% unless request.headers['X-Proxy-Management'] == 'proxy' %>no-margin-top<% end %>">
+          <div class="dashboard-menu-and-content <% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed] %>no-margin-top<% end %>">
             <div id="side_menu" class="hide-for-small-only">
               <div class="dashboard-sidebar">
                 <%= render "dashboard/menu" %>

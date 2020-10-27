@@ -7,7 +7,7 @@
 <%= csrf_meta_tags %>
 <%= favicon_link_tag "favicon.ico" %>
 <%= render "layouts/disable_animations_in_tests" if Rails.env.test? %>
-<% if request.headers['X-Proxy-Management']=='proxy' %>
+<% if request.headers['X-Proxy-Management']=='proxy' || session[:iframed] %>
 <script type="text/javascript">
   if(window.parent && window.parent !== window && window.postMessage && typeof(window.postMessage) === 'function') {
     // Controlamos cambios en altura y el cambio de página, mediante un chequeo de intervalos

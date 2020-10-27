@@ -39,7 +39,7 @@
   <% end %>
 </main>
 <%# Solo habilitamos la cabecera estándar si la petición no se incluye un Proxy %>
-<% unless request.headers['X-Proxy-Management'] == 'proxy' %>
+<% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>
 <div class="row expanded homepage-tu-voz">
   <div class="row">
     <div class="small-12 medium-6 column margin-top margin-bottom">

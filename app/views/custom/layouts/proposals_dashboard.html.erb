@@ -29,11 +29,11 @@
         </div>
 
         <div class="off-canvas-content" data-off-canvas-content>
-          <% unless request.headers['X-Proxy-Management'] == 'proxy' %>
+          <% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed] %>
             <%= render "layouts/header", with_subnavigation: false %>
           <% end %>
 
-          <div class="<% unless request.headers['X-Proxy-Management'] == 'proxy' %>no-margin-top<% end %> row expanded collapse" data-equalizer>
+          <div class="<% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>no-margin-top<% end %> row expanded collapse" data-equalizer>
             <div class="small-12 medium-3 column" data-equalizer-watch>
 
               <div class="show-for-small-only">
