@@ -119,6 +119,16 @@ describe Abilities::Common do
     end
   end
 
+  describe "follows" do
+    let(:other_user) { create(:user) }
+
+    it { should be_able_to(:create, build(:follow, :followed_proposal, user: user)) }
+    it { should_not be_able_to(:create, build(:follow, :followed_proposal, user: other_user)) }
+
+    it { should be_able_to(:destroy, create(:follow, :followed_proposal, user: user)) }
+    it { should_not be_able_to(:destroy, create(:follow, :followed_proposal, user: other_user)) }
+  end
+
   describe "other users" do
     let(:other_user) { create(:user) }
 
