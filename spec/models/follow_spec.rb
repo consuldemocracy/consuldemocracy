@@ -21,4 +21,16 @@ describe Follow do
     follow.followable_type = nil
     expect(follow).not_to be_valid
   end
+
+  it "is not valid with an invalid followable_type" do
+    follow.followable_type = "NotARealModel"
+
+    expect { follow.valid? }.to raise_exception "uninitialized constant NotARealModel"
+  end
+
+  it "is not valid with the ID of a non-existent record" do
+    follow.followable_id = Proposal.last.id + 1
+
+    expect(follow).not_to be_valid
+  end
 end

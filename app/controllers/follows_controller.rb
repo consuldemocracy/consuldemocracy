@@ -3,7 +3,7 @@ class FollowsController < ApplicationController
   load_and_authorize_resource
 
   def create
-    @follow = Follow.create!(user: current_user, followable: find_followable)
+    @follow = current_user.follows.create!(follow_params)
     flash.now[:notice] = t("shared.followable.#{followable_translation_key(@follow.followable)}.create.notice")
     render :refresh_follow_button
   end
@@ -17,8 +17,8 @@ class FollowsController < ApplicationController
 
   private
 
-    def find_followable
-      params[:followable_type].constantize.find(params[:followable_id])
+    def follow_params
+      params.permit(:followable_type, :followable_id)
     end
 
     def followable_translation_key(followable)
