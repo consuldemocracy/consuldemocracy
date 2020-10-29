@@ -38,7 +38,7 @@ describe Officing::Residence do
       let(:custom_residence) do
         build(:officing_residence,
               document_number: "12345678Z",
-              date_of_birth: "01/01/1980",
+              date_of_birth: Date.parse("01/01/1980"),
               postal_code: "28001")
       end
 
