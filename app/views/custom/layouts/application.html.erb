@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user.try(:id) %>">
+  <head>
+    <%= render "layouts/common_head", default_title: setting["org_name"] %>
+    <%= render "layouts/tracking_data" %>
+    <%= render "layouts/meta_tags" %>
+    <%= content_for :canonical %>
+    <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),
+                     rel: "icon apple-touch-icon",
+                     sizes: "200x200",
+                     type: "image/png" %>
+    <%= content_for :social_media_meta_tags %>
+
+    <%= raw setting["html.per_page_code_head"] %>
+  </head>
+  <body class="<%= yield (:body_class) %> <% if request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>iframed<% end%> ">
+    <%= raw setting["html.per_page_code_body"] %>
+
+    <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
+
+    <div class="wrapper <%= yield (:wrapper_class) %>">
+      <%# Si viene de un proxy eliminamos la información de cabecera e incluimos un [consume:proxy-header] para que el proxy introduzca su cabecera %>
+      <% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>
+      <%= render "layouts/header", with_subnavigation: true %>
+      <% end %>
+
+      <% if request.headers["User-Agent"] =~ /MSIE/ && cookies["ie_alert_closed"] != "true" %>
+      <!--[if lt IE 9]>
+        <div data-alert class="callout primary ie-callout" data-closable>
+          <button class="close-button ie-callout-close-js"
+                  aria-label="<%= t("application.close") %>" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h2><%= t("layouts.application.ie_title") %></h2>
+          <p>
+            <%= sanitize(t("layouts.application.ie",
+            chrome: link_to(
+                    t("layouts.application.chrome"), "https://www.google.com/chrome/browser/desktop/", title: t("shared.target_blank"), target: "_blank"),
+            firefox: link_to(
+                     t("layouts.application.firefox"), "https://www.mozilla.org/firefox", title: t("shared.target_blank"), target: "_blank")
+            )) %>
+          </p>
+        </div>
+      <![endif]-->
+      <% end %>
+
+      <%= render "layouts/flash" %>
+
+      <%= yield %>
+      <% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed] %>
+      <div class="push"></div>
+      <% end %>
+    </div>
+    <%# Si viene de un proxy eliminamos la información de cabecera e incluimos un [consume:proxy-footer] para que el proxy introduzca su cabecera %>
+    <% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>
+    <div class="footer">
+      <%= render "layouts/footer" %>
+    </div>
+    <% else %>
+    <% end %>
+  </body>
+</html>

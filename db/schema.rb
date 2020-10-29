@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200713184213) do
+ActiveRecord::Schema.define(version: 20201005064927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pg_trgm"
   enable_extension "unaccent"
+  enable_extension "pg_trgm"
 
   create_table "active_poll_translations", force: :cascade do |t|
     t.integer  "active_poll_id", null: false
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20200713184213) do
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "action"
-    t.integer  "actionable_id"
     t.string   "actionable_type"
+    t.integer  "actionable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["actionable_id", "actionable_type"], name: "index_activities_on_actionable_id_and_actionable_type", using: :btree
@@ -210,8 +210,6 @@ ActiveRecord::Schema.define(version: 20200713184213) do
   create_table "budget_headings", force: :cascade do |t|
     t.integer  "group_id"
     t.bigint   "price"
-    t.string   "short_name",           limit: 100
-    t.string   "long_name",            limit: 1000
     t.integer  "population"
     t.string   "slug"
     t.boolean  "allow_custom_content",              default: false
@@ -219,6 +217,8 @@ ActiveRecord::Schema.define(version: 20200713184213) do
     t.text     "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "short_name",           limit: 100
+    t.string   "long_name",            limit: 1000
     t.index ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
   end
 
@@ -517,10 +517,10 @@ ActiveRecord::Schema.define(version: 20200713184213) do
     t.string   "visit_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
+    t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
     t.integer  "cached_votes_up",                         default: 0
     t.integer  "cached_votes_down",                       default: 0
-    t.datetime "ignored_flag_at"
     t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0
@@ -583,6 +583,18 @@ ActiveRecord::Schema.define(version: 20200713184213) do
     t.index ["documentable_type", "documentable_id"], name: "index_documents_on_documentable_type_and_documentable_id", using: :btree
     t.index ["user_id", "documentable_type", "documentable_id"], name: "access_documents", using: :btree
     t.index ["user_id"], name: "index_documents_on_user_id", using: :btree
+  end
+
+  create_table "external_users", force: :cascade do |t|
+    t.string   "uuid",             limit: 128
+    t.string   "fullname",         limit: 512
+    t.string   "email",            limit: 256
+    t.boolean  "validated"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "organization"
+    t.integer  "participacion_id"
+    t.index ["uuid"], name: "index_external_users_on_uuid", unique: true, using: :btree
   end
 
   create_table "failed_census_calls", force: :cascade do |t|
@@ -963,8 +975,8 @@ ActiveRecord::Schema.define(version: 20200713184213) do
 
   create_table "notifications", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "notifiable_id"
     t.string   "notifiable_type"
+    t.integer  "notifiable_id"
     t.integer  "counter",         default: 1
     t.datetime "emailed_at"
     t.datetime "read_at"
@@ -1357,8 +1369,8 @@ ActiveRecord::Schema.define(version: 20200713184213) do
   end
 
   create_table "signature_sheets", force: :cascade do |t|
-    t.integer  "signable_id"
     t.string   "signable_type"
+    t.integer  "signable_id"
     t.text     "required_fields_to_verify"
     t.boolean  "processed",                 default: false
     t.integer  "author_id"
@@ -1429,10 +1441,10 @@ ActiveRecord::Schema.define(version: 20200713184213) do
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
-    t.integer  "taggable_id"
     t.string   "taggable_type"
-    t.integer  "tagger_id"
+    t.integer  "taggable_id"
     t.string   "tagger_type"
+    t.integer  "tagger_id"
     t.string   "context",       limit: 128
     t.datetime "created_at"
     t.index ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
@@ -1525,12 +1537,14 @@ ActiveRecord::Schema.define(version: 20200713184213) do
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
-    t.integer  "created_by"
-    t.string   "postal_code",                    limit: 10
     t.integer  "balloted_heading_id"
     t.boolean  "public_interests",                          default: false
     t.boolean  "recommended_debates",                       default: true
     t.boolean  "recommended_proposals",                     default: true
+    t.integer  "created_by"
+    t.string   "postal_code",                    limit: 10
+    t.boolean  "origin_participacion"
+    t.integer  "participacion_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
@@ -1598,10 +1612,10 @@ ActiveRecord::Schema.define(version: 20200713184213) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer  "votable_id"
     t.string   "votable_type"
-    t.integer  "voter_id"
+    t.integer  "votable_id"
     t.string   "voter_type"
+    t.integer  "voter_id"
     t.boolean  "vote_flag"
     t.string   "vote_scope"
     t.integer  "vote_weight"

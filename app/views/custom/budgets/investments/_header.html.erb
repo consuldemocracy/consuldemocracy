@@ -9,7 +9,7 @@
           <% if can? :show, @ballot %>
             <%= link_to t("budgets.investments.header.check_ballot"),
                         budget_ballot_path(@budget),
-                        class: "button float-right" %>
+                        class: "button hollow float-right" %>
           <% end %>
         </div>
       </div>
@@ -22,7 +22,7 @@
                           budget_ballot_path(@budget) %>
             </div>
             <% if @ballot.valid_heading?(@heading) %>
-              <div class="progress-bar-nav" data-fixed-bar>
+              <div class="progress-bar-nav">
                 <h2>
                   <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
                 </h2>

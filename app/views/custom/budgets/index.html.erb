@@ -1,5 +1,5 @@
 <% if has_banners? %>
-  <div class="budgets-banner">  
+  <div class="budgets-banner">
     <%= render "shared/banner" %>
   </div>
 <% end %>
@@ -11,9 +11,9 @@
 <% end %>
 
 <% if current_budget.present? %>
-  <div id="budget_heading" class="expanded budget no-margin-top">
+  <div id="budget_heading" class="expanded budget main-budget-home no-margin-top">
     <div class="row" data-equalizer data-equalizer-on="medium">
-      <div class="small-12 medium-9 column padding" data-equalizer-watch>
+      <div class="small-12 medium-7 large-6 column padding" data-equalizer-watch>
 
           <h1><%= current_budget.name %></h1>
           <div class="description">
@@ -22,14 +22,15 @@
           <p>
             <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
           </p>
-        </div>
-        <div class="small-12 medium-3 column info padding" data-equalizer-watch>
-          <p>
+      </div>
+      <div class="small-12 medium-5 large-6 column info padding " data-equalizer-watch>
+        <div class="decorated-on-large">
+          <p class="pre-title">
             <strong><%= t("budgets.show.phase") %></strong>
           </p>
           <h2><%= t("budgets.phase.#{current_budget.phase}") %></h2>
 
-          <%= link_to t("budgets.index.section_header.all_phases"), "#all_phases" if current_budget.published_phases.present? %>
+          <%= link_to t("budgets.index.section_header.all_phases"), "#all_phases", class: "see-all-budgets" if current_budget.published_phases.present? %>
 
           <% if current_budget.accepting? %>
             <% if current_user %>
@@ -41,16 +42,17 @@
             <% else %>
               <div class="callout primary margin-top">
                 <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
-                      sign_in: link_to_signin, sign_up: link_to_signup)) %>
+                               sign_in: link_to_signin, sign_up: link_to_signup)) %>
               </div>
             <% end %>
           <% end %>
 
-        <% if can?(:read_results, current_budget) %>
-          <%= link_to t("budgets.show.see_results"),
-                      budget_results_path(current_budget, heading_id: current_budget.headings.first),
-                      class: "button margin-top expanded" %>
-        <% end %>
+          <% if can?(:read_results, current_budget) %>
+            <%= link_to t("budgets.show.see_results"),
+                        budget_results_path(current_budget, heading_id: current_budget.headings.first),
+                        class: "button margin-top expanded" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -58,7 +60,8 @@
   <div id="budget_info" class="budget-info">
     <div class="row margin-top">
       <div class="small-12 column">
-        <div id="groups_and_headings" class="groups-and-headings small-12 medium-6 column">
+        <div id="groups_and_headings" class="groups-and-headings small-12 medium-6 column current-budgets groups-<%= current_budget.groups.length %>
+">
           <% current_budget.groups.each do |group| %>
             <h2 id="<%= group.name.parameterize %>"><%= group.name %></h2>
             <table class="table-fixed table-areas">
@@ -84,14 +87,12 @@
           <% end %>
         </div>
 
-        <div class="medium-6 column text-center">
+        <div class="medium-6 column text-center map-areas">
           <h3><%= t("budgets.shared.budget_areas") %></h3>
-          <p>
-            <%= raw t("budgets.shared.see_map", link: link_to(t("budgets.shared.link_map"), asset_url("map_big.png") , target: "_blank")) %>
-          </p>
           <%= link_to asset_url('map_big.png'), target: "_blank" do %>
             <%= image_tag "map.png" %>
           <% end %>
+          <%= link_to(t("budgets.shared.see_map"), asset_url('map_big.png'), target: "_blank", class:"show-large") %>
         </div>
 
         <% unless current_budget.informing? %>
@@ -102,7 +103,7 @@
             </div>
           <% end %>
 
-          <ul class="no-bullet margin-top">
+          <ul class="extra-links no-bullet margin-top">
             <% show_links = show_links_to_budget_investments(current_budget) %>
             <% if show_links %>
               <li>
@@ -125,7 +126,7 @@
             <% end %>
           </ul>
         <% end %>
-        
+
         <% if current_budget.published_phases.present? %>
           <div class="clear" id="all_phases">
             <h2><%= t("budgets.index.all_phases") %></h2>
