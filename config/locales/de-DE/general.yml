@@ -104,7 +104,7 @@ de:
         recommendations: Empfehlungen
       recommendations:
         without_results: Es gibt keine Debatten, die Ihren Interessen entsprechen
-        without_interests: Folgen Sie Vorschlägen, sodass wir Ihnen Empfehlungen geben können
+        without_interests: Folgen Sie Vorschlägen, so dass wir Ihnen Empfehlungen geben können
         disable: "Empfehlungen für Diskussionen werden nicht mehr angezeigt, wenn sie diese ablehnen. Sie können auf der 'Mein Benutzerkonto'-Seite wieder aktiviert werden"
         actions:
           success: "Empfehlungen für Diskussionen sind jetzt für dieses Konto deaktiviert"
@@ -166,7 +166,7 @@ de:
     direct_message: Private Nachricht
     error: Fehler
     errors: Fehler
-    not_saved: "verhinderte das Speichern dieser %{resource}. <br>Bitte überprüfen Sie die gekennzeichneten Felder, um herauszufinden wie diese korrigiert werden können:"
+    not_saved: "Speichern fehlgeschlagen. Bitte überprüfen Sie die gekennzeichneten Felder."
     policy: Datenschutzbestimmungen
     banner: Banner
     proposal: Vorschlag
