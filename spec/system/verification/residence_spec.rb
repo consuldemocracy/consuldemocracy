@@ -23,6 +23,7 @@ describe "Residence" do
   scenario "Verify resident throught RemoteCensusApi", :remote_census do
     user = create(:user)
     login_as(user)
+    mock_valid_remote_census_response
 
     visit account_path
     click_link "Verify my account"

@@ -4,175 +4,91 @@ describe RemoteCensusApi do
   let(:api) { RemoteCensusApi.new }
 
   describe "#call", :remote_census do
-    before do
-      Setting["remote_census.response.valid"] = "response.data.date_of_birth"
-    end
+    it "returns a valid response correctly fullfilled when remote response returns a valid response" do
+      %w[12345678 12345678z].each { mock_invalid_remote_census_response }
+      %w[12345678Z].each { mock_valid_remote_census_response }
 
-    let(:invalid_body) { { response: { data: {}}} }
-    let(:valid_body) { { response: { data: { date_of_birth: "1-1-1980" }}} }
-
-    it "returns the response for the first valid variant" do
-      date = Date.parse("01/01/1983")
-      allow(api).to receive(:get_response_body).with(1, "00123456", date, "28001").and_return(invalid_body)
-      allow(api).to receive(:get_response_body).with(1, "123456", date, "28001").and_return(invalid_body)
-      allow(api).to receive(:get_response_body).with(1, "0123456", date, "28001").and_return(valid_body)
-
-      response = api.call(1, "123456", date, "28001")
+      response = api.call("1", "12345678Z", Date.parse("31/12/1980"), "28013")
 
       expect(response).to be_valid
-      expect(response.date_of_birth).to eq(Date.new(1980, 1, 1))
-    end
-
-    it "returns the response for the first valid variant without send date_of_birth and postal_code" do
-      allow(api).to receive(:get_response_body).with(1, "00123456", nil, nil).and_return(invalid_body)
-      allow(api).to receive(:get_response_body).with(1, "123456", nil, nil).and_return(invalid_body)
-      allow(api).to receive(:get_response_body).with(1, "0123456", nil, nil).and_return(valid_body)
-
-      response = api.call(1, "123456", nil, nil)
-
-      expect(response).to be_valid
-      expect(response.date_of_birth).to eq(Date.new(1980, 1, 1))
-    end
-
-    it "returns the last failed response" do
-      date = Date.parse("01/01/1983")
-      allow(api).to receive(:get_response_body).with(1, "00123456", date, "28001").and_return(invalid_body)
-      allow(api).to receive(:get_response_body).with(1, "123456", date, "28001").and_return(invalid_body)
-      allow(api).to receive(:get_response_body).with(1, "0123456", date, "28001").and_return(invalid_body)
-      response = api.call(1, "123456", date, "28001")
-
-      expect(response).not_to be_valid
-    end
-  end
-
-  describe "request structure correctly filled" do
-    before do
-      Setting["feature.remote_census"] = true
-      Setting["remote_census.request.structure"] = '{ "request":
-                                                      { "codigo_institucion": 1,
-                                                        "codigo_portal": 1,
-                                                        "codigo_usuario": 1,
-                                                        "documento": null,
-                                                        "tipo_documento": null,
-                                                        "codigo_idioma": 102,
-                                                        "nivel": 3 }
-                                                    }'
-      Setting["remote_census.request.document_type"] = "request.tipo_documento"
-      Setting["remote_census.request.document_number"] = "request.documento"
-      Setting["remote_census.request.date_of_birth"] = nil
-      Setting["remote_census.request.postal_code"] = nil
-    end
-
-    it "with default values" do
-      document_type = "1"
-      document_number = "0123456"
-
-      request = RemoteCensusApi.new.send(:request, document_type, document_number, nil, nil)
-
-      expect(request).to eq({ "request" =>
-                             { "codigo_institucion" => 1,
-                               "codigo_portal" => 1,
-                               "codigo_usuario" => 1,
-                               "documento" => "0123456",
-                               "tipo_documento" => "1",
-                               "codigo_idioma" => 102,
-                               "nivel" => 3 }
-                             })
-    end
-
-    it "when send date_of_birth and postal_code but are not configured" do
-      document_type = "1"
-      document_number = "0123456"
-      date_of_birth = Date.new(1980, 1, 1)
-      postal_code = "28001"
-
-      request = RemoteCensusApi.new.send(:request, document_type, document_number, date_of_birth, postal_code)
-
-      expect(request).to eq({ "request" =>
-                            { "codigo_institucion" => 1,
-                              "codigo_portal" => 1,
-                              "codigo_usuario" => 1,
-                              "documento" => "0123456",
-                              "tipo_documento" => "1",
-                              "codigo_idioma" => 102,
-                              "nivel" => 3 }
-                            })
-    end
-
-    it "when send date_of_birth and postal_code but are configured" do
-      Setting["remote_census.request.structure"] = '{ "request":
-                                                      { "codigo_institucion": 1,
-                                                        "codigo_portal": 1,
-                                                        "codigo_usuario": 1,
-                                                        "documento": "nil",
-                                                        "tipo_documento": "null",
-                                                        "fecha_nacimiento": "null",
-                                                        "codigo_postal": "nil",
-                                                        "codigo_idioma": 102,
-                                                        "nivel": 3 }
-                                                    }'
-      Setting["remote_census.request.date_of_birth"] = "request.fecha_nacimiento"
-      Setting["remote_census.request.postal_code"] = "request.codigo_postal"
-      document_type = "1"
-      document_number = "0123456"
-      date_of_birth = Date.new(1980, 1, 1)
-      postal_code = "28001"
-
-      request = RemoteCensusApi.new.send(:request, document_type, document_number, date_of_birth, postal_code)
-
-      expect(request).to eq({ "request" =>
-                            { "codigo_institucion" => 1,
-                              "codigo_portal" => 1,
-                              "codigo_usuario" => 1,
-                              "documento" => "0123456",
-                              "tipo_documento" => "1",
-                              "fecha_nacimiento" => "1980-01-01",
-                              "codigo_postal" => "28001",
-                              "codigo_idioma" => 102,
-                              "nivel" => 3 }
-                            })
-    end
-  end
-
-  describe "get_response_body" do
-    before do
-      Setting["feature.remote_census"] = true
-    end
-
-    it "return expected stubbed_response" do
-      document_type = "1"
-      document_number = "12345678Z"
-
-      response = RemoteCensusApi.new.send(:get_response_body, document_type, document_number, nil, nil)
-
-      expect(response).to eq({ response: {
-                                 data: {
-                                   date_of_birth: "31-12-1980",
-                                   document_number: "12345678Z",
-                                   gender: "Male",
-                                   name: "William",
-                                   surname: "Widmore",
-                                   postal_code: "28013",
-                                   district_code: "01"
-                                 }
-                               }
-                             })
-    end
-  end
-
-  describe "RemoteCensusApi::Response", :remote_census do
-    it "return expected response methods with default values" do
-      document_type = "1"
-      document_number = "12345678Z"
-
-      get_response_body = RemoteCensusApi.new.send(:get_response_body, document_type, document_number, nil, nil)
-      response = RemoteCensusApi::Response.new(get_response_body)
-
-      expect(response.valid?).to eq true
       expect(response.date_of_birth).to eq Time.zone.local(1980, 12, 31).to_date
       expect(response.postal_code).to eq "28013"
       expect(response.gender).to eq "male"
       expect(response.name).to eq "William Widmore"
+    end
+
+    it "returns an invalid response all variants return invalid responses" do
+      %w[99999999 99999999z 99999999Z].each { mock_invalid_remote_census_response }
+
+      response = api.call("1", "99999999Z", Date.parse("31/12/1980"), "28013")
+
+      expect(response).not_to be_valid
+    end
+
+    describe "request messages" do
+      let(:valid_response) { File.read("spec/fixtures/files/remote_census_api/valid.xml") }
+
+      def request_with(params)
+        { "request" => params }
+      end
+
+      it "includes date_of_birth and postal_code when request structure is configured" do
+        params = {
+          "document_type" => "1",
+          "date_of_birth" => "1980-12-31",
+          "postal_code"   => "28013"
+        }
+
+        savon.expects(:verify_residence)
+             .with(message: request_with(params.merge("document_number" => "12345678")))
+             .returns(valid_response)
+
+        api.call("1", "12345678Z", Date.parse("31/12/1980"), "28013")
+      end
+
+      it "does not include date_of_birth and postal_code when not configured" do
+        Setting["remote_census.request.date_of_birth"] = nil
+        Setting["remote_census.request.postal_code"] = nil
+        Setting["remote_census.request.structure"] = '{ "request":
+          {
+            "document_number": "nil",
+            "document_type": "null"
+          }
+        }'
+
+        params = { "document_type" => "1" }
+
+        savon.expects(:verify_residence)
+             .with(message: request_with(params.merge("document_number" => "12345678")))
+             .returns(valid_response)
+
+        api.call("1", "12345678Z", Date.parse("31/12/1980"), "28013")
+      end
+
+      it "includes custom parameters when configured" do
+        Setting["remote_census.request.structure"] = '{ "request":
+          {
+            "document_type": "null",
+            "document_number": "nil",
+            "date_of_birth": "null",
+            "postal_code": "nil",
+            "api_key": "your_api_key"
+          }
+        }'
+
+        params = {
+          "document_type" => "1",
+          "date_of_birth" => "1980-12-31",
+          "postal_code"   => "28013",
+          "api_key"       => "your_api_key"
+        }
+
+        savon.expects(:verify_residence)
+             .with(message: request_with(params.merge("document_number" => "12345678")))
+             .returns(valid_response)
+
+        api.call("1", "12345678Z", Date.parse("31/12/1980"), "28013")
+      end
     end
   end
 end

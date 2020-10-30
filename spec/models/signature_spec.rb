@@ -230,6 +230,8 @@ describe Signature do
                                        date_of_birth: "31/12/1980",
                                        postal_code: "28013")
 
+        mock_valid_remote_census_response
+
         expect_any_instance_of(Signature).to receive(:assign_vote_to_user).exactly(1).times
 
         signature.verify

@@ -147,6 +147,8 @@ describe "Residence", :with_frozen_time do
     end
 
     scenario "can verify voter with date_of_birth and postal_code fields" do
+      mock_valid_remote_census_response
+
       within("#side_menu") do
         click_link "Validate document"
       end
@@ -154,7 +156,7 @@ describe "Residence", :with_frozen_time do
       select "DNI", from: "residence_document_type"
       fill_in "residence_document_number", with: "12345678Z"
       select_date "31-December-1980", from: "residence_date_of_birth"
-      fill_in "residence_postal_code", with: "28001"
+      fill_in "residence_postal_code", with: "28013"
 
       click_button "Validate document"
 

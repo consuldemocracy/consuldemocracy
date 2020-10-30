@@ -8,6 +8,7 @@ module CommonActions
   include Notifications
   include Polls
   include Proposals
+  include RemoteCensusMock
   include Tags
   include Translations
   include Users

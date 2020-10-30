@@ -128,6 +128,12 @@ RSpec.configure do |config|
     Setting["remote_census.response.name"] = "response.data.name"
     Setting["remote_census.response.surname"] = "response.data.surname"
     Setting["remote_census.response.valid"] = "response.data.document_number"
+
+    savon.mock!
+  end
+
+  config.after(:each, :remote_census) do
+    savon.unmock!
   end
 
   # Allows RSpec to persist some state between runs in order to support

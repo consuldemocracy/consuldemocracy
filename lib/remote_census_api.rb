@@ -77,7 +77,7 @@ class RemoteCensusApi
         request = request(document_type, document_number, date_of_birth, postal_code)
         client.call(Setting["remote_census.request.method_name"].to_sym, message: request).body
       else
-        stubbed_response(document_type, document_number)
+        stubbed_invalid_response
       end
     end
 
@@ -119,34 +119,10 @@ class RemoteCensusApi
     end
 
     def end_point_available?
-      Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
-    end
-
-    def stubbed_response(document_type, document_number)
-      if (document_number == "12345678Z" || document_number == "12345678Y") && document_type == "1"
-        stubbed_valid_response
-      else
-        stubbed_invalid_response
-      end
-    end
-
-    def stubbed_valid_response
-      {
-        response: {
-          data: {
-            date_of_birth: "31-12-1980",
-            document_number: "12345678Z",
-            gender: "Male",
-            name: "William",
-            surname: "Widmore",
-            postal_code: "28013",
-            district_code: "01"
-          }
-        }
-      }
+      !Rails.env.development?
     end
 
     def stubbed_invalid_response
-      { response: { data: {}}}
+      {}
     end
 end

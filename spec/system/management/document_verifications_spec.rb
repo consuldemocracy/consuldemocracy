@@ -67,7 +67,10 @@ describe "DocumentVerifications" do
         expect(page).to have_content "This document is not registered"
       end
 
-      scenario "Verifying a user which does exists in the census but not in the db redirects allows sending an email" do
+      scenario "Verifying a user which does exists in the census but not in the db
+                redirects allows sending an email" do
+        mock_valid_remote_census_response
+
         visit management_document_verifications_path
         fill_in "document_verification_document_number", with: "12345678Z"
         select_date "31-December-1980", from: "document_verification_date_of_birth"

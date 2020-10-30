@@ -77,6 +77,11 @@ describe "Signature sheets" do
   end
 
   context "Create throught all required_fields_to_verify of custom census api", :remote_census do
+    before do
+      mock_valid_remote_census_response
+      mock_invalid_signature_sheet_remote_census_response
+    end
+
     scenario "Proposal" do
       proposal = create(:proposal)
       visit new_admin_signature_sheet_path
