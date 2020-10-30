@@ -1,0 +1,6 @@
+de:
+  errors:
+    messages:
+      not_saved:
+        one: "Speichern fehlgeschlagen. Bitte markieren Sie die gekennzeichneten Felder, um weitere Infos zu erhalten."
+        other: "%{count} Fehler. Speichern fehlgechlagen.  Bitte markieren Sie die gekennzeichneten Felder."

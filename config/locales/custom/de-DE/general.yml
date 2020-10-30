@@ -2,7 +2,7 @@ de:
   account:
     show:
       user_permission_votes: An finaler Abstimmung teilnehmen
-      user_permission_support_proposal:  Neuen Vorschlag erstellen
+      user_permission_support_proposal: Neuen Vorschlag erstellen
       user_permission_verify_info: ""
   layouts:
     footer:
@@ -19,6 +19,8 @@ de:
       collaborative_legislation: Bürgerbeteiligungsverfahren
   debates:
     index:
+      recommendations:
+        without_interests: Folgen Sie Vorschlägen, so dass wir Ihnen Empfehlungen geben können
       section_header:
         help: Hilfe zu "Diskussionen"
       section_footer:
@@ -26,6 +28,8 @@ de:
         help_text_1: "Bringen Sie Ihre eigenen Ideen zur Gestaltung der Stadt Würzburg ein. Teilen Sie Ihre Meinung mit Mitbürger*innen in einer Diskussion über Themen, die Sie interessieren und tauschen Sie sich über die Ideen und Anliegen aus."
     new:
       recommendation_one: Verwenden Sie bitte nicht ausschließlich Großbuchstaben für die Überschrift oder für komplette Sätze. Im Internet gilt das als schreien. Und niemand möchte angeschrien werden.
+  form:
+    not_saved: "Speichern fehlgeschlagen. Bitte überprüfen Sie die gekennzeichneten Felder."
   proposals:
     created:
       title: Überprüfen Sie Ihre Angaben
