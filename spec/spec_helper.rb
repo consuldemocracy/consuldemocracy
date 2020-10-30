@@ -106,6 +106,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each, :remote_census) do |example|
+    allow_any_instance_of(RemoteCensusApi).to receive(:end_point_defined?).and_return(true)
     Setting["feature.remote_census"] = true
     Setting["remote_census.request.method_name"] = "verify_residence"
     Setting["remote_census.request.structure"] = '{ "request":

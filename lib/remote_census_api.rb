@@ -73,7 +73,7 @@ class RemoteCensusApi
   private
 
     def get_response_body(document_type, document_number, date_of_birth, postal_code)
-      if end_point_available?
+      if end_point_defined?
         request = request(document_type, document_number, date_of_birth, postal_code)
         client.call(Setting["remote_census.request.method_name"].to_sym, message: request).body
       else
@@ -118,8 +118,8 @@ class RemoteCensusApi
       to_set[final_key] = value
     end
 
-    def end_point_available?
-      !Rails.env.development?
+    def end_point_defined?
+      Setting["remote_census.general.endpoint"].present?
     end
 
     def stubbed_invalid_response

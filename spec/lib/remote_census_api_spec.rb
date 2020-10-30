@@ -90,5 +90,13 @@ describe RemoteCensusApi do
         api.call("1", "12345678Z", Date.parse("31/12/1980"), "28013")
       end
     end
+
+    it "returns an invalid response when endpoint is not defined" do
+      allow_any_instance_of(RemoteCensusApi).to receive(:end_point_defined?).and_return(false)
+
+      response = api.call("1", "12345678Z", Date.parse("01/01/1983"), "28013")
+
+      expect(response).not_to be_valid
+    end
   end
 end
