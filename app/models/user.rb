@@ -250,7 +250,9 @@ class User < ApplicationRecord
       Comment.restore_all comments.where("hidden_at >= ?", hidden_at)
       Proposal.restore_all proposals.where("hidden_at >= ?", hidden_at)
       Budget::Investment.restore_all budget_investments.where("hidden_at >= ?", hidden_at)
-      ProposalNotification.restore_all ProposalNotification.where("hidden_at >= ?", hidden_at).where(author_id: id).unscope(:where)
+      ProposalNotification.restore_all(
+        ProposalNotification.where("hidden_at >= ?", hidden_at).where(author_id: id).unscope(:where)
+      )
 
       restore
     end
