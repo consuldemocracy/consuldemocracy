@@ -244,11 +244,16 @@ class User < ApplicationRecord
     ProposalNotification.hide_all ProposalNotification.where(author_id: id).pluck(:id)
   end
 
-  def after_restore
-    Debate.restore_all debate_ids
-    Comment.restore_all comment_ids
-    Proposal.restore_all proposal_ids
-    Budget::Investment.restore_all budget_investment_ids
+  def full_restore
+    ActiveRecord::Base.transaction do
+      Debate.restore_all debates.where("hidden_at >= ?", hidden_at)
+      Comment.restore_all comments.where("hidden_at >= ?", hidden_at)
+      Proposal.restore_all proposals.where("hidden_at >= ?", hidden_at)
+      Budget::Investment.restore_all budget_investments.where("hidden_at >= ?", hidden_at)
+      ProposalNotification.restore_all ProposalNotification.where("hidden_at >= ?", hidden_at).where(author_id: id).unscope(:where)
+
+      restore
+    end
   end
 
   def erase(erase_reason = nil)
