@@ -616,14 +616,14 @@ hr:
           title: Pratiti
     managers:
       index:
-        title: Menadžeri
+        title: Upravitelji
         name: Ime
-        email: Email
-        no_managers: Ne postoje menadžeri.
+        email: E-mail
+        no_managers: Ne postoje upravitelji.
       manager:
         add: Dodaj
       search:
-        title: "Menadžeri: Pretraga korisnika"
+        title: "Upravitelji: Pretraga korisnika"
     menu:
       activity: Aktivnosti moderatora
       admin: Meni admina
@@ -639,7 +639,7 @@ hr:
       hidden_proposal_notifications: Sakrivene obavijesti prijedloga
       hidden_users: Sakriveni korisnici
       administrators: Administratori
-      managers: Menadžeri
+      managers: Upravitelji
       moderators: Moderatori
       messaging_users: Poruke korisnicima
       newsletters: Newsletteri
