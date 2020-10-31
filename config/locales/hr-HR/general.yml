@@ -605,7 +605,7 @@ hr:
       index:
         title: Pregled emaila
       new:
-        title: Email model dijeljenja
+        title: E-mail model dijeljenja
       mailing_options:
         send: Pošalji prema %{address}
         preview: Pregled
