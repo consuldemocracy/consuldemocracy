@@ -10,7 +10,7 @@ hr:
     confirmations:
       confirmed: "Vaš račun je potvrđen."
       send_instructions: "U nekoliko minuta ćete prihvatiti email koji sadrži upute za ponovno postavljanje lozinke."
-      send_paranoid_instructions: "Ako vaša e-mail adresa nije u našoj bazi podataka u nekoliko minuta ćete zaprimiti e-mail koji sadrži upute za ponovno postavljanje lozinke."
+      send_paranoid_instructions: "Ako je vaša e-mail adresa u našoj bazi podataka u nekoliko minuta ćete zaprimiti e-mail koji sadrži upute za ponovno postavljanje lozinke."
     failure:
       already_authenticated: "Već ste prijavljeni."
       inactive: "Vaš račun još nije aktiviran."
