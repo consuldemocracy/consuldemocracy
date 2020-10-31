@@ -712,18 +712,18 @@ describe User do
 
   describe "#after_restore" do
     it "restore all previous hidden user content" do
-      user                  = create(:user, :hidden)
-      debate                = create(:debate, :hidden, author: user)
-      comment               = create(:comment, :hidden, author: user)
-      proposal              = create(:proposal, :hidden, author: user)
-      budget_investment     = create(:budget_investment, :hidden, author: user)
+      user = create(:user, :hidden)
+      debate = create(:debate, :hidden, author: user)
+      comment = create(:comment, :hidden, author: user)
+      proposal = create(:proposal, :hidden, author: user)
+      budget_investment = create(:budget_investment, :hidden, author: user)
 
       user.restore
 
-      expect(debate.reload.hidden?).to be_falsey
-      expect(comment.reload.hidden?).to be_falsey
-      expect(proposal.reload.hidden?).to be_falsey
-      expect(budget_investment.reload.hidden?).to be_falsey
+      expect(debate.reload.hidden?).not_to be_hidden
+      expect(comment.reload.hidden?).not_to be_hidden
+      expect(proposal.reload.hidden?).not_to be_hidden
+      expect(budget_investment.reload.hidden?).not_to be_hidden
     end
   end
 end
