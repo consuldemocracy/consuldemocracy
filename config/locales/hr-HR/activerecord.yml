@@ -63,7 +63,7 @@ hr:
         few: "Grupa procjenitelja"
         other: "Grupa procjenitelja"
       manager:
-        one: "Menadžer"
+        one: "Upravitelj"
         few: "Menadžeri"
         other: "Menadžeri"
       newsletter:
