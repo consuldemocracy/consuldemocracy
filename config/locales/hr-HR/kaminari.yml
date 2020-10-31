@@ -7,7 +7,7 @@ hr:
         few: Unosi
         other: Unosi
       more_pages:
-        display_entries: Prikazivanje <strong>%{first}&nbsp;-&nbsp;%{last}</strong> u <strong>%{total}%{entry_name}</strong>
+        display_entries: Prikaz <strong>%{first}&nbsp;-&nbsp;%{last}</strong> od <strong>%{total} %{entry_name}</strong>
       one_page:
         display_entries:
           zero: "%{entry_name} ne može pronaći"
