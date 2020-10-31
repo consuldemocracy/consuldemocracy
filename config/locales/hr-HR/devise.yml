@@ -9,7 +9,7 @@ hr:
       updated: "Zaporka je uspješno ažurirana"
     confirmations:
       confirmed: "Vaš račun je potvrđen."
-      send_instructions: "U nekoliko minuta ćete prihvatiti email koji sadrži upute za ponovno postavljanje lozinke."
+      send_instructions: "U nekoliko minuta primit ćete e-mail koji sadrži upute za ponovno postavljanje zaporke."
       send_paranoid_instructions: "Ako je vaša e-mail adresa u našoj bazi podataka u nekoliko minuta ćete zaprimiti e-mail koji sadrži upute za ponovno postavljanje lozinke."
     failure:
       already_authenticated: "Već ste prijavljeni."
