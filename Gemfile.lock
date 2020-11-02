@@ -274,7 +274,7 @@ GEM
     httparty (0.17.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
-    httpi (2.4.4)
+    httpi (2.4.5)
       rack
       socksify
     i18n (1.8.5)
@@ -532,7 +532,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    savon (2.12.0)
+    savon (2.12.1)
       akami (~> 1.2)
       builder (>= 2.1.2)
       gyoku (~> 1.2)
@@ -612,7 +612,8 @@ GEM
       activesupport (>= 5.0.0, < 7.0)
     warden (1.2.9)
       rack (>= 2.0.9)
-    wasabi (3.5.0)
+    wasabi (3.6.1)
+      addressable
       httpi (~> 2.0)
       nokogiri (>= 1.4.2)
     web-console (3.7.0)
@@ -718,7 +719,7 @@ DEPENDENCIES
   rubocop-rspec (~> 1.41.0)
   rvm1-capistrano3 (~> 1.4.0)
   sassc-rails (~> 2.1.2)
-  savon (~> 2.12.0)
+  savon (~> 2.12.1)
   scss_lint (~> 0.59.0)
   selenium-webdriver (~> 3.142)
   sitemap_generator (~> 6.1.2)
