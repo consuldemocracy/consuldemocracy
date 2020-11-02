@@ -1,5 +1,7 @@
 class CensusCaller
   def call(document_type, document_number, date_of_birth, postal_code)
+    return Response.new if document_number.blank? || document_type.blank?
+
     if Setting["feature.remote_census"].present?
       response = RemoteCensusApi.new.call(document_type, document_number, date_of_birth, postal_code)
     else
@@ -8,5 +10,11 @@ class CensusCaller
     response = LocalCensus.new.call(document_type, document_number) unless response.valid?
 
     response
+  end
+
+  class Response
+    def valid?
+      false
+    end
   end
 end

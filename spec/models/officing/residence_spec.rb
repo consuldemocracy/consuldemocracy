@@ -34,26 +34,17 @@ describe Officing::Residence do
       expect(residence).to be_valid
     end
 
-    describe "custom validations" do
+    describe "custom validations", :remote_census do
       let(:custom_residence) do
         build(:officing_residence,
               document_number: "12345678Z",
-              date_of_birth: "01/01/1980",
+              date_of_birth: Date.parse("01/01/1980"),
               postal_code: "28001")
       end
 
-      before do
-        Setting["feature.remote_census"] = true
-        Setting["remote_census.request.date_of_birth"] = "some.value"
-        Setting["remote_census.request.postal_code"] = "some.value"
-        access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
-        access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
-        Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
-        Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
-        Setting["remote_census.response.valid"] = access_user_data
-      end
-
       it "is valid" do
+        mock_valid_remote_census_response
+
         expect(custom_residence).to be_valid
       end
 
@@ -70,11 +61,15 @@ describe Officing::Residence do
       it "is valid without a year of birth when date_of_birth is present" do
         custom_residence.year_of_birth = nil
 
+        mock_valid_remote_census_response
+
         expect(custom_residence).to be_valid
       end
 
       it "is not valid without a date of birth" do
         custom_residence.date_of_birth = nil
+
+        mock_valid_remote_census_response
 
         expect(custom_residence).not_to be_valid
       end
@@ -82,15 +77,18 @@ describe Officing::Residence do
       it "is not valid without a postal_code" do
         custom_residence.postal_code = nil
 
+        mock_valid_remote_census_response
+
         expect(custom_residence).not_to be_valid
       end
 
       describe "dates" do
-        it "is valid with a valid date of birth" do
+        it "is not valid but not because date of birth" do
           custom_residence = Officing::Residence.new("date_of_birth(3i)" => "1",
                                                  "date_of_birth(2i)" => "1",
                                                  "date_of_birth(1i)" => "1980")
 
+          expect(custom_residence).not_to be_valid
           expect(custom_residence.errors[:date_of_birth]).to be_empty
         end
 
@@ -110,6 +108,11 @@ describe Officing::Residence do
                           :invalid,
                           document_number: "12345678Z",
                           postal_code: "00001")
+
+        %w[12345678 12345678z 12345678Z].each do
+          mock_invalid_remote_census_response
+        end
+
         residence.save
 
         expect(FailedCensusCall.count).to eq(1)

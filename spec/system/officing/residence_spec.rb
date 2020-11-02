@@ -111,11 +111,8 @@ describe "Residence", :with_frozen_time do
     expect(page).to have_content "Vote introduced!"
   end
 
-  context "With remote census configuration" do
+  context "With remote census configuration", :remote_census do
     before do
-      Setting["feature.remote_census"] = true
-      Setting["remote_census.request.date_of_birth"] = "some.value"
-      Setting["remote_census.request.postal_code"] = "some.value"
       create(:poll_officer_assignment, officer: officer)
       login_through_form_as_officer(officer.user)
       visit officing_root_path
@@ -137,9 +134,6 @@ describe "Residence", :with_frozen_time do
       end
 
       scenario "with all custom census not display year_of_birth" do
-        Setting["remote_census.request.date_of_birth"] = "some.value"
-        Setting["remote_census.request.postal_code"] = "some.value"
-
         within("#side_menu") do
           click_link "Validate document"
         end
@@ -153,11 +147,8 @@ describe "Residence", :with_frozen_time do
     end
 
     scenario "can verify voter with date_of_birth and postal_code fields" do
-      access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
-      access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
-      Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
-      Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
-      Setting["remote_census.response.valid"] = access_user_data
+      mock_valid_remote_census_response
+
       within("#side_menu") do
         click_link "Validate document"
       end
@@ -165,7 +156,7 @@ describe "Residence", :with_frozen_time do
       select "DNI", from: "residence_document_type"
       fill_in "residence_document_number", with: "12345678Z"
       select_date "31-December-1980", from: "residence_date_of_birth"
-      fill_in "residence_postal_code", with: "28001"
+      fill_in "residence_postal_code", with: "28013"
 
       click_button "Validate document"
 
