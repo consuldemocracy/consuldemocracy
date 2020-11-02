@@ -16,7 +16,7 @@ set :server_name, deploysecret(:server_name)
 set :db_server, deploysecret(:db_server)
 set :ssh_options, port: deploysecret(:ssh_port)
 
-set :repo_url, "https://github.com/marvinklose/consul-ddd.git"
+set :repo_url, "https://github.com/Michael1337/consul-ddd.git"
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
