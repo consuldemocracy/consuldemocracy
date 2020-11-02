@@ -7,7 +7,7 @@ module Filterable
   end
 
   class_methods do
-    def filter(params)
+    def filter_by(params)
       resources = all
       params.each do |filter, value|
         if allowed_filter?(filter, value)
