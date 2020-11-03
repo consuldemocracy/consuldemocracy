@@ -17,7 +17,7 @@
       <div class="small-12 medium-4 column">
         <%= link_to t("layouts.footer.participation_title"), root_path, class: "title" %>
         <p><%= t("layouts.footer.participation_text") %></p>
-      </div
+      </div>
       <div class="small-12 medium-4 column">
         <%= link_to t("layouts.footer.ticket_title"), t("layouts.footer.ticket_url"), class: "title", target: "_blank" %>
         <p><%= sanitize(t("layouts.footer.ticket_text", ticket_link: link_to(t("layouts.footer.ticket_name"), t("layouts.footer.ticket_url"), target: "_blank", rel: "nofollow")), attributes: %w(href target)) %></p>
