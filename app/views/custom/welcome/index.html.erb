@@ -38,7 +38,8 @@
                 recommended_proposals: @recommended_proposals %>
   <% end %>
 </main>
-
+<%# Solo habilitamos la cabecera estándar si la petición no se incluye un Proxy %>
+<% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>
 <div class="row expanded homepage-tu-voz">
   <div class="row">
     <div class="small-12 medium-6 column margin-top margin-bottom">
@@ -47,6 +48,7 @@
     <div class="small-12 medium-6 column margin-top margin-bottom">
       <div class="margin"></div>
       <%= t("pages.welcome.tu-voz").html_safe %>
-    </div> 
+    </div>
   </div>
 </div>
+<% end %>

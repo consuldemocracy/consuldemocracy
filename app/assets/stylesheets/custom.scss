@@ -19,7 +19,119 @@ strong, b, a, .ava-link {
 }
 
 .map .map-marker .map-icon {
-  background: $brand;
+  background: $tertiary-contrast;
+}
+
+.resource-card .button,
+.featured-proposals .supports .button-support {
+  color: white;
+}
+
+.button {
+  color: white;
+  background-color: $secondary;
+  border: 0px;
+  border-radius: 0px;
+  font-size: $font-size-base-small;
+  &.success, &.button-support {
+    color: white !important;
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  &.expanded {
+    border-radius: 0px;
+    background-color: $secondary !important;
+    &:not(.hollow) {
+      &:hover,
+      &:active,
+      &:focus,
+      &:active:hover,
+      &:active:focus {
+        background-color: lighten(saturate($secondary, 60%), 10%) !important;
+        text-decoration: inherit;
+      }
+    }
+  }
+
+  &.hollow {
+    border-radius: 0px;
+    background: transparent !important;
+    border-color: #979797;
+    font-size: $font-size-base-small;
+    font-weight: bold;
+    color: $secondary;
+  }
+  &:not(.hollow):not(.success) {
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+      background-color: lighten(saturate($secondary, 60%),10%) !important;
+      text-decoration: inherit;
+    }
+  }
+}
+
+.view-mode .button {
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover,
+  &:active:focus {
+    background-color: $gray-base !important;
+    &:before {
+      color: white !important;
+    }
+    text-decoration: inherit;
+  }
+}
+
+a.back {
+  color: $tertiary-contrast;
+  font-weight: 600;
+  font-size: $base-font-size;
+  text-decoration: none;
+  &:not([class^="icon-"]) {
+    text-decoration: none;
+  }
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover,
+  &:active:focus {
+    color: $secondary;
+    text-decoration: inherit;
+  }
+  .icon-angle-left {
+    color: inherit;
+  }
+}
+
+.callout {
+  color: $gray-base !important;
+}
+
+.debate-show aside h2,
+.proposal-show aside h2,
+.poll-question-show aside h2,
+.investment-project-show aside h2,
+.budget-investment-show aside h2,
+.polls-show aside h2,
+.debate-quiz aside h2,
+.budget-investment-show aside h2,
+.draft-panels aside h2,
+.debate-questions aside h2,
+.communities-show aside h2,
+.topic-show aside h2,
+.milestone-content aside h2,
+.sidebar-title {
+  border-top-color: $secondary;
+  & + p {
+    font-size: $font-size-base-small;
+  }
 }
 
 // 02. Header
@@ -31,7 +143,7 @@ header, .top-bar {
 
 // Color de fondo de los enlaces en la parte superior de la cabecera
 .top-links {
-  background-color: #E6118F;
+  background-color: $brand-secondary;
 }
 
 // Eliminado margen en la cabecera
@@ -55,7 +167,7 @@ header, .top-bar {
 
 // Menú principal de la página
 .subnavigation {
-  background-color: $brand;
+  background-color: $brand-secondary;
 }
 
 .subnavigation {
@@ -64,7 +176,7 @@ header, .top-bar {
   }
 
   a:hover, a:active, a.is-active {
-    color: $brand_secondary;
+    color: $orange-hover-menu;
   }
 }
 
@@ -126,12 +238,16 @@ header, .top-bar {
 
 // Contenido debajo de la cabecera
 .homepage-tu-voz {
-  background: $brand;
+  background: $brand-secondary;
   position: relative;
   top: 48px;
 
   h4 {
     color: #FFF;
+  }
+
+  .color-brand-secondary {
+    color: $orange-hover-menu;
   }
 }
 
@@ -174,7 +290,7 @@ header, .top-bar {
 }
 
 .tabla-puntos-encuentro {
-  
+
   background: #fff1f9;
   overflow: auto;
 
@@ -241,7 +357,7 @@ header, .top-bar {
   height: rem-calc(48) !important;
   position: relative;
   width: rem-calc(48) !important;
-  
+
   &:before{
     content: "A";
     font-family: "icons" !important;
@@ -326,13 +442,226 @@ body.management .admin-content {
 // 08. Budgets
 
 // Imágen de fondo de la cabecera y los botones
+.main-budget-home {
+  @media screen and (min-width: 64em) {
+    min-height: 230px;
+    .column {
+      min-height: 230px;
+    }
+  }
+}
 .expanded.budget, .budget-heading {
-  background-image: image-url("header_va_proposals.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  background-color: $bg-gray-content;
+  .row {
+    h1 {
+      color: $gray-darker;
+    }
+    .column:not(.info) {
+      a {
+        color: $tertiary-contrast;
+        font-weight: 600;
+        font-size: $font-size-largest;
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus,
+        &:active:hover,
+        &:active:focus {
+          color: $secondary;
+          text-decoration: inherit;
+        }
+        .icon-angle-left {
+          color: inherit;
+        }
+      }
+    }
+    .info {
+      background-color: transparent;
+      .pre-title {
+        font-size: $small-font-size;
+        text-transform: uppercase;
+      }
+      h2 {
+        font-size: $font-size-h5;
+        color: $gray-darker;
+      }
+      a.see-all-budgets {
+        color: $tertiary-contrast;
+        font-weight: 600;
+        font-size: $font-size-base-small;
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus,
+        &:active:hover,
+        &:active:focus {
+          color: $secondary;
+          text-decoration: inherit;
+        }
+      }
+      .button {
+        background-color: $brand-secondary;
+        color: white;
+        border-radius: 0px;
+        font-size: $font-size-base-small;
+      }
+
+      @media screen and (min-width: 64em) {
+        .decorated-on-large {
+          max-width: 50%;
+        }
+        background-image: image-url("background-budgets.jpg");
+        background-repeat: no-repeat;
+        background-position: 100%;
+        background-size: 50%;
+        .decorated-on-large {
+          padding-right: 10px;
+        }
+        @supports (background-size: contain) {
+          .decorated-on-large {
+            padding-right: 0px;
+          }
+          background-size: contain;
+        }
+
+      }
+    }
+  }
+  .description {
+    color: $gray-base;
+  }
+}
+/**
+ * Zona de destacados principal
+ */
+.budget-info {
+  // El mapa de las zonas, tal y como es la imagen de valladolid es mejor un posicionameinto
+  // absoluto del texto para qeu visualmente quede atractivo
+  .map-areas {
+    position: relative;
+    @media screen and (min-width: 64em) {
+      h3 {
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: $font-size-h5;
+    }
+  }
+
+  .show-large {
+    @media screen and (min-width: 64em) {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+    }
+    color: $tertiary-contrast;
+    font-weight: 600;
+    font-size: $small-font-size;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+      color: $secondary;
+      text-decoration: inherit;
+    }
+  }
+
+  .current-budgets {
+    padding-left: 0px;
+
+    h2 {
+      font-size: $font-size-h4;
+      color: $brand-secondary;
+
+      &:not(:first-child) {
+        padding-top: 15px;
+      }
+    }
+
+    h3 {
+      font-size: $font-size-largest;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+
+      > li {
+        display: inline-block;
+        border: 1px solid #979797;
+        padding: 6px 15px;
+        font-size: $font-size-base-small;
+        font-weight: 600;
+      }
+    }
+  }
+
+  h3 {
+    font-size: $font-size-h4;
+  }
+
+  .extra-links {
+    a {
+      color: $tertiary-contrast;
+      font-weight: 600;
+      font-size: $small-font-size;
+      text-decoration: none;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:active:hover,
+      &:active:focus {
+        color: $secondary;
+        text-decoration: inherit;
+      }
+    }
+  }
+
+  .budget-timeline li.phase {
+    &::before {
+      border-color: #FBCFE0;
+    }
+    h3 {
+      font-size: $font-size-h6;
+    }
+    &.is-active {
+      h3 {
+        background-color: transparent;
+        color: $secondary;
+      }
+    }
+  }
+
+  .budget-investment {
+    h3 {
+      font-size: $font-size-h6;
+    }
+
+    .button {
+      background-color: $brand-secondary;
+      color: white;
+      border-radius: 0px;
+      font-size: $font-size-base-small;
+    }
+  }
+}
+
+ul.recommendations {
+  color: $gray-base;
+}
+
+.advanced-search-form input.button {
+  margin-top:$line-height;
+  height: 2*$line-height;
 }
 
 // Eliminar margen de la cabecera en los presupuestos participativos
@@ -357,40 +686,77 @@ body.management .admin-content {
     color: $brand !important;
 }
 
-// Botón de volver atrás
-.budget-heading a.back {
-  color: black !important;
-  background: #FFDB0A !important;
-  border: 1px solid #FFDB0A !important;
-  text-decoration: none;
-  display: inline-block;
-  line-height: 1;
-  cursor: pointer;
-  -webkit-appearance: none;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  vertical-align: middle;
-  border: 1px solid #000000;
-  border-radius: 0.1875rem;
-  padding: 1em 1em;
-  font-size: 0.9rem;
+
+
+// Mostramos una propuesta de gasto.
+.budget-investment-show {
+  .budget-investment-info {
+    font-size: $font-size-base-small;
+    display: flex;
+    align-items: center;
+    span:not(.author) {
+      color: #ABABAB
+    }
+  }
+  p#investment_code,
+  p.in-name-of,
+  p.location {
+    font-size: $font-size-base-small;
+  }
+
+  .related-content h2,
+  h2#price_explanation {
+    font-size: $font-size-h5;
+  }
+
+
 }
 
-.budget-heading a.back span {
-  color: #000000;
-  font-weight: 100;
+.tags li a,
+.categories a {
+  border-radius: 2px;
 }
+
+
+.categories a:hover, .categories a.is-active,
+.geozone a:hover,
+.geozone a.is-active {
+  background-color: $secondary;
+}
+
+
 
 
 // Color de fondo de la barra de progreso en
 // la votación final
-.progress-bar-nav { 
-  @include breakpoint(medium) { 
-    background-color: transparent;
+.progress-votes {
+  .progress-bar-nav {
+    color: $gray-base;
 
-    &.is-fixed { 
-      background-color: $budget; 
-    } 
-  } 
+    .total-amount,
+    .spent-amount-text {
+      color: inherit !important;
+    }
+
+    .spent-amount-text:before {
+      color: $orange-hover-menu;
+    }
+
+    .progress {
+      background-color: $bg-gray-light;
+      .progress-meter {
+        background-color: $secondary;
+      }
+    }
+
+    @include breakpoint(medium) {
+      background-color: transparent;
+
+      &.is-fixed {
+        background-color: $budget;
+      }
+    }
+  }
 }
 
 // 09. Propuestas
@@ -433,9 +799,54 @@ body.management .admin-content {
 
 // 13. Enlaces de compartir en redes sociales
 
-.icon-whatsapp_web::before {
-    content: "\50";
+.social-share-button {
+  a.ssb-icon {
+    border: 1px solid $border-gray-light;
+    color: $gray-light;
+    height: 3rem !important;
+    position: relative;
+    width: 3rem !important;
+    background-image: none;
+    background-color: transparent;
+
+    &.ssb-whatsapp_web:before {
+      content: 'P';
+      font-family: icons;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height * 2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+    &.ssb-linkedin:before {
+      content: '\f08c';
+      font-family: "Font Awesome 5 Brands";
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height * 2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+      border-color: $secondary;
+      color: $secondary;
+      &:before {
+        color: inherit;
+      }
+    }
+  }
 }
+
+
+
+
 
 .button.button-linkedin,
 .button.button-whatsapp_web {
@@ -453,7 +864,7 @@ body.management .admin-content {
   border-left: 3px solid #43d854;
 }
 
-.button.button-whatsapp_web::before { 
+.button.button-whatsapp_web::before {
   color: #43d854;
   content: "A";
   font-family: "icons" !important;
@@ -465,30 +876,7 @@ body.management .admin-content {
   top: 0;
 }
 
-.ssb-whatsapp_web {
-  background: #43d854;
-  background-image: none !important;
-  color: #fff;
-  height: 3rem !important;
-  position: relative;
-  width: 3rem !important;
-}
 
-.ssb-whatsapp_web::before {
-  content: "P";
-  font-family: "icons" !important;
-  font-size: 1.5rem;
-  left: 50%;
-  line-height: 3rem;
-  margin-left: -0.6875rem;
-  position: absolute;
-  top: 0;
-}
-
-.ssb-whatsapp_web:hover, .ssb-whatsapp_web:focus { 
-  background: #fff;
-  color: #43d854;
-}
 
 .debate-show .whatsapp_web::before,
 .proposal-show .whatsapp_web::before,
@@ -514,15 +902,14 @@ body.management .admin-content {
   width: 3rem;
 }
 
-.featured-proposals .share-supported .ssb-whatsapp_web {
-  background: none;
-  color: #222;
-  height: 2.0625rem !important;
+.jumbo-budget {
+  border-bottom: 0px;
 }
 
-.featured-proposals .share-supported .ssb-whatsapp_web::before {
-  font-size: 1.125rem;
-  line-height: 2.0625rem;
+.jumbo-budget h2, .jumbo-budget h3, .jumbo-budget .back, .jumbo-budget .icon-angle-left, .jumbo-budget p, .jumbo-budget a,
+.expanded.budget h2, .expanded.budget h3, .expanded.budget  .back, .expanded.budget  .icon-angle-left, .expanded.budget  p, .expanded.budget  a
+{
+  color: $gray-base;
 }
 
 .jumbo-budget .social-share-button a[class^="social-share-button-whatsapp_web"] {
@@ -544,7 +931,7 @@ body.management .admin-content {
   vertical-align: 0.625rem;
 }
 
-.button.button-linkedin { 
+.button.button-linkedin {
   background: #ebeef4;
   border-left: 3px solid #0e76a8;
 }
@@ -561,54 +948,6 @@ body.management .admin-content {
   top: 0;
 }
 
-.ssb-linkedin {
-  background: #007ccb;
-  color: #fff;
-  height: 3rem !important;
-  position: relative;
-  width: 3rem !important;
-}
-
-.ssb-linkedin:hover,
-.ssb-linkedin:focus {
-  background: #fff;
-  background-image: image-url("linkedin_hover.png");
-  background-position: center;
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  color: #0e76a8;
-}
-
-.share-supported .ssb-linkedin {
-  color: #fff;
-  height: 1.5rem;
-  position: relative;
-  width: 3rem;
-}
-
-.share-supported .ssb-linkedin:hover,
-.share-supported .ssb-linkedin:focus {
-  background-image: image-url("linkedin_hover.png");
-  background-position: center;
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  color:#40a2d1;
-}
-
-.featured-proposals .share-supported .ssb-linkedin {
-  background: none;
-  background-image: image-url("linkedin_featured_proposals.png");
-  background-position: center;
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  color: #222;
-  height: 2.0625rem !important;
-}
-
-.ssb-linkedin::before {
-  font-size: 1.125rem;
-  line-height: 2.0625rem;
-}
 
 .jumbo-survey .social-share-button a.social-share-button-linkedin:hover,
 .jumbo-featured .social-share-button a.social-share-button-linkedin:hover,
@@ -622,16 +961,6 @@ body.management .admin-content {
   color: #08c
 }
 
-.featured-proposals .share-supported .ssb-telegram {
-  background: none;
-  color: #222;
-  height: 2.0625rem !important;
-}
-
-.featured-proposals .share-supported .ssb-telegram::before {
-  font-size: 1.125rem;
-  line-height: 2.0625rem;
-}
 
 // 14. Legislación
 
@@ -646,5 +975,37 @@ body.management .admin-content {
 @media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .ssb-whatsapp_web::before, .ssb-facebook::before, .ssb-twitter::before, .ssb-telegram::before {
     line-height: 50px;
+  }
+}
+
+// 16. Dentro de un iframe
+body.iframed {
+  > div.wrapper {
+    > section {
+      > div.row {
+        > .column:first-child {
+          padding-left: 0px;
+        }
+        > .column:last-child {
+          padding-right: 0px;
+        }
+      }
+    }
+    > div.row {
+      > .column:first-child {
+        padding-left: 0px;
+      }
+      > .column:last-child {
+        padding-right: 0px;
+      }
+    }
+    padding-top: 15px;
+    height: auto !important;
+    min-height: unset;
+    min-height: auto;
+  }
+
+  #featured-proposals {
+    margin-bottom: 15px;
   }
 }

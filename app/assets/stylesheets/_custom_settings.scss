@@ -6,27 +6,91 @@
 
 // 0. CONSUL variables
 // --------------------
+$base-font-size:      16px;
+$global-radius: 0px;
 
-$brand:             #E6118F;
-$brand_secondary:   #FFDB0A;
-$dark:              darken($brand, 10%);
+$header-styles: (
+  small: (
+    "h1": ("font-size": 36),
+    "h2": ("font-size": 28),
+    "h3": ("font-size": 26),
+    "h4": ("font-size": 24),
+    "h5": ("font-size": 22),
+    "h6": ("font-size": 20),
+  ),
+  medium: (
+    "h1": ("font-size": 36),
+    "h2": ("font-size": 28),
+    "h3": ("font-size": 26),
+    "h4": ("font-size": 24),
+    "h5": ("font-size": 22),
+    "h6": ("font-size": 20),
+  ),
+);
+$brand: #1E1E1E;
+$secondary: #990A42;
+$brand-secondary:   $secondary;
 
-$budget:            #BC237E;
+//ESCALA DE GRISES
+$gray-base:         #242424;
+$gray-darker:       lighten($gray-base, 8%);
 
+//Texto
+$gray-dark:         #646464;
+$gray:              #616161; //6.2:1
+$gray-light:        #767677; //4.5:1
+$olap-calendar-color: #C7A5AC;
+$political-party-color: #7E7E7E;
+$reuniones-title-color: #3B3B3B;
+$asamblea-date-color: #858585;
+$file-icon:           #CECECE;
+
+//Border
+$border-gray:        lighten($gray-base, 46.5%);
+$border-gray-light:  #CDCDCD;
+$border-gray-solicitudes: #DFDFDF;
+$orange-hover-menu:         #dd9133;
+
+//Background
+$bg-gray-darker:       lighten($gray-base, 8%);
+$bg-gray:              lighten($gray-base, 46.5%);
+$bg-gray-light:        #bfbfbf;
+$bg-gray-lighter:      lighten($gray-base, 75%);
+$bg-gray-lightest:     lighten($gray-base, 80%);
+$bg-gray-content:      #F7F7F7;
+$bg-gray-temas:        #333333;
+$bg-gray-temas-mobile: #1A1A1A;
+$bg-gray-adopta-form:  #e3e3e3;
+$bg-gray-interes:      #EFEFEF;
+$bg-gray-bienes:       #A9A9A9;
+
+$font-size-base-small: rem-calc(14);
+$font-size-largest: rem-calc(18);
+
+$font-size-h2:      rem-calc(24);
+$font-size-h4:      rem-calc(24);
+$font-size-h5:      rem-calc(22);
+$font-size-h6:      rem-calc(20);
+$titulo-temas: 		  rem-calc(32);
+
+
+
+$tertiary:          #79adde;
+$tertiary-contrast: #4879a4;
+$budget:            $secondary;
 $highlight:         #FFFFFF;
 
-$info-bg:           #F7D9EA;
-$info-border:       #F1BCDA;
+$info-bg:           #F8D6E3;
+$info-border:       #F8D6E3;
 
 // 1. Global
 // ---------
-
-$body-font-family: 'Nunito Light', 'Open Sans', 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
+$body-font-family: 'Open Sans', sans-serif;
+$font-family-serif: 'Open Sans', sans-serif;
+$header-font-family: $body-font-family;
 
 // 4. Base Typography
 // ------------------
-
-$header-font-family: 'Nunito Bold', $body-font-family;
 $header-color: $brand;
 $small-font-size: rem-calc(12);
 
@@ -35,3 +99,4 @@ $small-font-size: rem-calc(12);
 
 $button-background: $brand;
 $button-background-hover: scale-color($brand, $lightness: -15%);
+
