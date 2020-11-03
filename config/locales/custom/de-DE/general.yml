@@ -15,6 +15,10 @@ de:
       wuerzburg_url: https://wuerzburg.de
       contactus: Impressum
       netiquette: Netiquette
+      ticket_name: hier
+      ticket_url: https://newaccount1603974033138.freshdesk.com/support/home
+      ticket_text: Für Ihre Fragen und Anregungen freuen wir uns %{ticket_link} über Ihren Input.
+      ticket_title: Support
     header:
       collaborative_legislation: Bürgerbeteiligungsverfahren
   debates:
@@ -60,4 +64,3 @@ de:
   shared:
     follow_entity: "%{entity} folgen"
     unfollow_entity: "%{entity} nicht länger folgen"
-   
