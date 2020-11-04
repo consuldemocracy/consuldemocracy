@@ -1529,7 +1529,6 @@ uk-UA:
           updated_at: Оновлено
           title: Назва
           slug: Блок
-          cards_title: Картки
           see_cards: Переглянути картки
         cards:
           cards_title: картки
