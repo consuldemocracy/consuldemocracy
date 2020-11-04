@@ -1520,7 +1520,6 @@ sr:
           updated_at: Ажурирано у
           title: Наслов
           slug: Метак
-          cards_title: Картице
           see_cards: Видите Картице
         cards:
           cards_title: картице
