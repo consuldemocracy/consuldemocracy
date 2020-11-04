@@ -1334,7 +1334,6 @@ fr:
           updated_at: Mis-à-jour le
           title: Titre
           slug: Slug
-          cards_title: Mosaïque
           see_cards: Voir les Cartes
         cards:
           cards_title: cartes
