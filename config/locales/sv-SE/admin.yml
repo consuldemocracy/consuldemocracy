@@ -1493,7 +1493,6 @@ sv:
           updated_at: Uppdaterad den
           title: Titel
           slug: URL
-          cards_title: Kort
           see_cards: Se kort
         cards:
           cards_title: kort
