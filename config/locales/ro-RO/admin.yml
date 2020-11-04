@@ -1520,7 +1520,6 @@ ro:
           updated_at: Actualizat la
           title: Titlu
           slug: Slug
-          cards_title: Carduri
           see_cards: Vedeți cărți
         cards:
           cards_title: carduri
