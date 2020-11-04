@@ -201,7 +201,7 @@ describe "Admin collaborative legislation" do
         click_link "Collaborative Legislation"
       end
 
-      click_link "An example legislation process"
+      within("tr", text: "An example legislation process") { click_link "Edit" }
 
       expect(page).to have_selector("h2", text: "An example legislation process")
       expect(find("#legislation_process_debate_phase_enabled")).to be_checked
@@ -224,7 +224,7 @@ describe "Admin collaborative legislation" do
         click_link "Collaborative Legislation"
       end
 
-      click_link "An example legislation process"
+      within("tr", text: "An example legislation process") { click_link "Edit" }
 
       expect(find("#legislation_process_draft_publication_enabled")).to be_checked
 

@@ -274,6 +274,10 @@ resolve "Budget::Heading" do |heading, options|
   [heading.budget, :group, :heading, options.merge(group_id: heading.group, id: heading)]
 end
 
+resolve "Budget::Phase" do |phase, options|
+  [phase.budget, :phase, options.merge(id: phase)]
+end
+
 resolve "Poll::Booth" do |booth, options|
   [:booth, options.merge(id: booth)]
 end

@@ -1512,7 +1512,6 @@ en:
           updated_at: Updated at
           title: Title
           slug: Slug
-          cards_title: Cards
           see_cards: See Cards
         cards:
           cards_title: cards

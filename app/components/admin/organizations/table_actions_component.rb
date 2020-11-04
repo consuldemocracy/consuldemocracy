@@ -1,4 +1,5 @@
 class Admin::Organizations::TableActionsComponent < ApplicationComponent
+  include TableActionLink
   delegate :can?, to: :controller
   attr_reader :organization
 

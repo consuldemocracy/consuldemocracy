@@ -1,4 +1,5 @@
 class Admin::Roles::TableActionsComponent < ApplicationComponent
+  include TableActionLink
   attr_reader :record, :actions
 
   def initialize(record, actions: [:destroy])

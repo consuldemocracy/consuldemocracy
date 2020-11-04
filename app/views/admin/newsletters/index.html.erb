@@ -9,7 +9,7 @@
         <th class="small-2"><%= t("admin.newsletters.index.subject") %></th>
         <th><%= t("admin.newsletters.index.segment_recipient") %></th>
         <th><%= t("admin.newsletters.index.sent") %></th>
-        <th class="small-5"><%= t("admin.newsletters.index.actions") %></th>
+        <th><%= t("admin.newsletters.index.actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -32,7 +32,7 @@
           <%= render Admin::TableActionsComponent.new(newsletter) do |actions| %>
             <%= actions.link_to t("admin.newsletters.index.preview"),
                                 admin_newsletter_path(newsletter),
-                                class: "button" %>
+                                class: "preview-link" %>
           <% end %>
         </td>
       </tr>

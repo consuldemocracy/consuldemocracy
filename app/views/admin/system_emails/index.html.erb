@@ -22,16 +22,16 @@
           <% if system_email_actions.include?("view") %>
             <%= actions.link_to t("admin.shared.view"),
                                 admin_system_email_view_path(system_email_title),
-                                class: "button hollow" %>
+                                class: "show-link" %>
           <% end %>
 
           <% if system_email_actions.include?("preview_pending") %>
             <%= actions.link_to t("admin.system_emails.preview_pending.action"),
                                 admin_system_email_preview_pending_path(system_email_title),
-                                class: "button" %>
+                                class: "preview-pending-link" %>
             <%= actions.link_to t("admin.system_emails.preview_pending.send_pending"),
                                 admin_system_email_send_pending_path(system_email_title),
-                                class: "button success",
+                                class: "send-pending-link",
                                 method: :put %>
           <% end %>
 
