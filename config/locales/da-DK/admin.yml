@@ -1467,7 +1467,6 @@ da:
           updated_at: Opdateret den
           title: Titel
           slug: Signaturlinje
-          cards_title: Informationsbokse
           see_cards: Se Informationsbokse
         cards:
           cards_title: informationsbokse
