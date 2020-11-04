@@ -1159,7 +1159,6 @@ zh-CN:
           updated_at: 更新于
           title: 标题
           slug: Slug
-          cards_title: 卡片
         cards:
           create_card: 创建卡
           no_cards: 没有卡。
