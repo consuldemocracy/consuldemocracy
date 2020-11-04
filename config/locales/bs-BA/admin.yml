@@ -1399,7 +1399,6 @@ bs:
           updated_at: Ažurirano
           title: Naslov
           slug: Slug
-          cards_title: Kartice
           see_cards: Vidi kartice
         cards:
           cards_title: kartice
