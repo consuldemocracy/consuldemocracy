@@ -1493,7 +1493,6 @@ oc:
           updated_at: Darrièra actualizacion
           title: Títol
           slug: URL
-          cards_title: de Cartas
           see_cards: Vejatz de Cartas
         cards:
           cards_title: de cartas
