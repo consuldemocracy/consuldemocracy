@@ -251,6 +251,14 @@ class Budget < ApplicationRecord
     end
   end
 
+  def self.open_budgets_for(user = nil)
+    if user&.administrator?
+      open.order(:created_at)
+    else
+      open.published.order(:created_at)
+    end
+  end
+
   private
 
     def generate_phases

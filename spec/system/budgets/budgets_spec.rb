@@ -27,6 +27,81 @@ describe "Budgets" do
     end
   end
 
+  context "Menu" do
+    scenario "Show single link if there is only one open budget" do
+      open_budget = create(:budget)
+      finished_budget = create(:budget, :finished)
+
+      visit root_path
+
+      within("#navigation_bar") do
+        expect(page).to have_link("Participatory budgeting", href: budgets_path)
+        expect(page).not_to have_link(open_budget.name, href: budget_path(open_budget))
+        expect(page).not_to have_link(finished_budget.name, href: budget_path(finished_budget))
+      end
+    end
+
+    scenario "Do not show drafting budgets for non admin users" do
+      drafting_budget = create(:budget, :drafting)
+      published_budget = create(:budget)
+
+      visit root_path
+
+      within("#navigation_bar") do
+        expect(page).to have_link("Participatory budgeting", href: budgets_path)
+        expect(page).not_to have_link(drafting_budget.name, href: budget_path(drafting_budget))
+        expect(page).not_to have_link(published_budget.name, href: budget_path(published_budget))
+      end
+
+      user = create(:user)
+      login_as(user)
+
+      visit root_path
+
+      within("#navigation_bar") do
+        expect(page).to have_link("Participatory budgeting", href: budgets_path)
+        expect(page).not_to have_link(drafting_budget.name, href: budget_path(drafting_budget))
+        expect(page).not_to have_link(published_budget.name, href: budget_path(published_budget))
+      end
+
+      admin = create(:administrator).user
+      login_as(admin)
+      visit root_path
+
+      within("#navigation_bar") do
+        expect(page).to have_link(drafting_budget.name, href: budget_path(drafting_budget))
+        expect(page).to have_link(published_budget.name, href: budget_path(published_budget))
+      end
+    end
+
+    scenario "Show budget links in the main menu" do
+      admin = create(:administrator).user
+      budget_1 = create(:budget)
+      budget_2 = create(:budget)
+      budget_3 = create(:budget, :drafting)
+      budget_4 = create(:budget, :finished)
+
+      visit root_path
+
+      within("#navigation_bar") do
+        expect(page).to have_link(budget_1.name, href: budget_path(budget_1))
+        expect(page).to have_link(budget_2.name, href: budget_path(budget_2))
+        expect(page).not_to have_link(budget_3.name, href: budget_path(budget_3))
+        expect(page).not_to have_link(budget_4.name, href: budget_path(budget_4))
+      end
+
+      login_as(admin)
+      visit root_path
+
+      within("#navigation_bar") do
+        expect(page).to have_link(budget_1.name, href: budget_path(budget_1))
+        expect(page).to have_link(budget_2.name, href: budget_path(budget_2))
+        expect(page).to have_link(budget_3.name, href: budget_path(budget_3))
+        expect(page).not_to have_link(budget_4.name, href: budget_path(budget_4))
+      end
+    end
+  end
+
   context "Index" do
     scenario "Show normal index with links" do
       group1 = create(:budget_group, budget: budget)

@@ -565,6 +565,62 @@ header {
   border-color: $light;
 }
 
+.subnavigation {
+
+  .dropdown.menu > li {
+
+    &.opens-left > .is-dropdown-submenu {
+      background: #fff;
+    }
+
+    &.is-dropdown-submenu-parent {
+
+      > a::before {
+        border: inset 6px;
+        border-bottom-width: 0;
+        border-color: $brand transparent transparent;
+        border-top-style: solid;
+        content: "";
+        display: block;
+        position: absolute;
+        right: 5px;
+        top: 20px;
+      }
+
+      > a::after {
+        border: 0;
+        margin-top: 0;
+        top: auto;
+      }
+    }
+
+    &.is-active > a {
+      color: $brand;
+    }
+
+    > a {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  .dropdown .is-dropdown-submenu {
+    min-width: rem-calc(240);
+    width: max-content;
+
+    li {
+      display: block;
+    }
+
+    a {
+      display: block;
+      font-size: $small-font-size;
+      padding: 0 $line-height / 2;
+      width: 100%;
+    }
+  }
+}
+
 // 2. Homepage and custom pages
 // ----------------------------
 
