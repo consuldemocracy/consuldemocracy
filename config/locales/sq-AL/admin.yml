@@ -1155,7 +1155,6 @@ sq:
           updated_at: Përditësuar në
           title: Titull
           slug: Slug
-          cards_title: Kartat
         cards:
           create_card: Krijo kartë
           no_cards: Nuk ka karta.
