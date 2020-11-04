@@ -1255,7 +1255,6 @@ it:
           updated_at: Aggiornato al
           title: Titolo
           slug: Slug
-          cards_title: Schede
         cards:
           create_card: Crea scheda
           title: Titolo
