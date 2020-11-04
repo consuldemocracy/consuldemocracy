@@ -1510,7 +1510,6 @@ ca:
           updated_at: Última actualització
           title: Títol
           slug: URL
-          cards_title: Targetes
           see_cards: Vegeu Targetes
         cards:
           cards_title: targetes
