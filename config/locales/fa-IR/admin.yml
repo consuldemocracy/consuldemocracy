@@ -1056,7 +1056,6 @@ fa:
           updated_at: "ایجاد شده در\n"
           title: عنوان
           slug: slug
-          cards_title: کارتها
         cards:
           create_card: ایجاد کارت
           title: عنوان
