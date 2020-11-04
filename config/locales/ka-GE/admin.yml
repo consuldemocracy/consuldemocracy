@@ -1504,7 +1504,6 @@ ka:
           updated_at: განახლების თარიღი
           title: სათაური
           slug: მოკლე დასახელება
-          cards_title: ბარათები
           see_cards: ბარათების ნახვა
         cards:
           cards_title: ბარათები
