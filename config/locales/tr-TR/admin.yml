@@ -1468,7 +1468,6 @@ tr:
           updated_at: Güncellendi
           title: Başlık
           slug: Parça
-          cards_title: Kartlar
           see_cards: Kartları Gör
         cards:
           cards_title: kartlar
