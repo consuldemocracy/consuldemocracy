@@ -1396,7 +1396,6 @@ el:
           updated_at: Ενημερώθηκε στις
           title: Τίτλος
           slug: Χτυπώ δυνατά
-          cards_title: Κάρτες
           see_cards: Δες τις κάρτες
         cards:
           cards_title: κάρτες
