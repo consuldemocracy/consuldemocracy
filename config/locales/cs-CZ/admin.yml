@@ -1291,7 +1291,6 @@ cs:
           updated_at: Aktualizováno dne
           title: Předmět
           slug: Slug
-          cards_title: Karty
           see_cards: Zobrazit karty
         cards:
           cards_title: karty
