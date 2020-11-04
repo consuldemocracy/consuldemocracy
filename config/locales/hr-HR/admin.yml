@@ -1520,7 +1520,6 @@ hr:
           updated_at: Ažurirano u
           title: Naziv
           slug: Žeton
-          cards_title: Kartice
           see_cards: Pogledaj Kartice
         cards:
           cards_title: kartice
