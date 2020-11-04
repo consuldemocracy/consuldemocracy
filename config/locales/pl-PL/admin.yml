@@ -1275,7 +1275,6 @@ pl:
           updated_at: Aktualizacja w
           title: Tytuł
           slug: Ścieżka
-          cards_title: Karty
           see_cards: Zobacz karty
         cards:
           cards_title: karty
