@@ -1200,7 +1200,6 @@ val:
           updated_at: Actualitzada el
           title: Títol
           slug: Slug
-          cards_title: Targetes
           see_cards: Vore Targetes
         cards:
           cards_title: targetes
