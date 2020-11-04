@@ -1492,7 +1492,6 @@ de:
           updated_at: Aktualisiert am
           title: Titel
           slug: URL
-          cards_title: Karten
           see_cards: Karten anzeigen
         cards:
           cards_title: Karten
