@@ -7,7 +7,8 @@
         <% budget.published_phases.each_with_index do |phase, index| %>
           <li class="tabs-title <%= "is-active" if phase == budget.current_phase %>">
             <a href="#<%= index + 1 %>-<%= budget_phase_name(phase).parameterize %>"
-               class="<%= "current-phase" if phase == budget.current_phase %>">
+               class="<%= "current-phase" if phase == budget.current_phase %>"
+               data-turbolinks="false">
               <% if phase == budget.current_phase %>
                 <span class="current-phase-timeline"><%= t("budgets.index.current_phase") %></span>
               <% end %>
@@ -23,7 +24,7 @@
         <% enabled_phases = budget.published_phases.to_a %>
         <% enabled_phases.each_with_index do |phase, index| %>
           <div class="tabs-panel <%= "is-active" if phase == budget.current_phase %>"
-               id="<%= index + 1 %>-<%= budget_phase_name(phase).parameterize %>">
+               id="<%= index + 1 %>-<%= budget_phase_name(phase).parameterize %>" data-turbolinks="false">
 
             <% if enabled_phases.first == phase %>
               <span class="budget-prev-phase-disabled"></span>
