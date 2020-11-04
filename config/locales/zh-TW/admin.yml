@@ -1145,7 +1145,6 @@ zh-TW:
           updated_at: 更新於
           title: 標題
           slug: Slug
-          cards_title: 卡
         cards:
           create_card: 創建卡
           title: 標題
