@@ -1502,7 +1502,6 @@ bg:
           updated_at: Актуализирано в
           title: Заглавие
           slug: Линотипен ред
-          cards_title: Карти
           see_cards: Вижте карти
         cards:
           cards_title: карти
