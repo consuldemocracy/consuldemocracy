@@ -1244,7 +1244,6 @@ gl:
           updated_at: Última actualización
           title: Título
           slug: URL
-          cards_title: Tarxetas
           see_cards: Ver tarxetas
         cards:
           cards_title: tarxetas
