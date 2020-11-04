@@ -1275,7 +1275,6 @@ nl:
           updated_at: Updated at
           title: Title
           slug: Bullet
-          cards_title: Tegels
           see_cards: Tegels bekijken
         cards:
           cards_title: tegels
