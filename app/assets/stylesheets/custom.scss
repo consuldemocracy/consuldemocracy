@@ -4,7 +4,36 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+$link: #dd3464; // TODO: use $brand?
+$gray: #f9f9f9;
+
 header {
+  background-color: $gray;
+
+  .top-links,
+  .subnavigation,
+  .top-bar {
+    color: $black;
+    background: transparent;
+
+    a {
+      color: $black;
+
+      &:focus,
+      &:hover {
+        color: $link;
+      }
+    }
+  }
+
+  .top-bar {
+    background: transparent !important; // TODO: Remove important when it's removed from the original file
+    padding: 0 rem-calc(16);
+
+    .top-bar-title {
+      margin-top: 0;
+    }
+  }
 
   .top-links {
     @include flex-grid-row;
@@ -12,6 +41,18 @@ header {
 
     > :first-child {
       margin-right: auto;
+    }
+
+    li:first-child a {
+      margin-left: 0;
+    }
+  }
+
+  .top-links,
+  .social {
+
+    li::after {
+      content: "";
     }
   }
 }
