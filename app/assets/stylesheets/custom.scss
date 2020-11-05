@@ -3,3 +3,15 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+header {
+
+  .top-links {
+    @include flex-grid-row;
+    padding: 0 rem-calc(15);
+
+    > :first-child {
+      margin-right: auto;
+    }
+  }
+}
