@@ -85,5 +85,9 @@ header {
         width: 2em;
       }
     }
+
+    .icon-otempo {
+      @include has-fa-icon(cloud, solid);
+    }
   }
 }
