@@ -107,11 +107,11 @@ describe "Admin custom information texts" do
 
       visit admin_site_customization_information_texts_path(tab: "debates")
 
-      select "Español", from: :select_language
+      select "Castellano", from: :select_language
       click_link "Remove language"
       click_button "Save"
 
-      expect(page).not_to have_link "Español"
+      expect(page).not_to have_link "Castellano"
 
       visit admin_site_customization_information_texts_path(tab: "debates")
       select "English", from: :select_language

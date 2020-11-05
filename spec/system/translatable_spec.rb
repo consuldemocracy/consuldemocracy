@@ -118,9 +118,9 @@ describe "Public area translatable records" do
     scenario "Highlight new locale added" do
       visit new_proposal_path
 
-      select "Español", from: "locale-switcher"
+      select "Castellano", from: "locale-switcher"
 
-      expect_to_have_language_selected "Español"
+      expect_to_have_language_selected "Castellano"
     end
 
     scenario "Select a locale and add it to the form" do
@@ -150,7 +150,7 @@ describe "Public area translatable records" do
       scenario "Increase description count after add new language" do
         visit new_proposal_path
 
-        select "Español", from: :add_language
+        select "Castellano", from: :add_language
 
         expect(page).to have_content "2 languages in use"
       end
@@ -198,7 +198,7 @@ describe "Public area translatable records" do
         scenario "Changes the existing translation" do
           visit path
 
-          select "Español", from: :select_language
+          select "Castellano", from: :select_language
 
           fill_in "Debate title", with: "Título corregido"
           fill_in_ckeditor "Initial debate text", with: "Texto corregido"
@@ -209,7 +209,7 @@ describe "Public area translatable records" do
 
           expect(page).to have_field "Debate title", with: "Title in English"
 
-          select "Español", from: "locale-switcher"
+          select "Castellano", from: "locale-switcher"
 
           expect(page).to have_field "Título del debate", with: "Título corregido"
           expect(page).to have_ckeditor "Texto inicial del debate", with: "Texto corregido"
@@ -221,7 +221,7 @@ describe "Public area translatable records" do
 
         scenario "Show validation errors" do
           visit edit_proposal_path(translatable)
-          select "Español", from: :select_language
+          select "Castellano", from: :select_language
 
           expect(page).to have_field "Proposal title", with: "Título en español"
 
@@ -230,7 +230,7 @@ describe "Public area translatable records" do
 
           expect(page).to have_css "#error_explanation"
 
-          select "Español", from: :select_language
+          select "Castellano", from: :select_language
 
           expect(page).to have_field "Proposal title", with: "", class: "is-invalid-input"
         end

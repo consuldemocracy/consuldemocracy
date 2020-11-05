@@ -227,7 +227,7 @@ describe "Admin budgets" do
 
       visit edit_admin_budget_path(budget)
 
-      select "Español", from: :add_language
+      select "Castellano", from: :add_language
       fill_in "Name", with: "Spanish name"
       click_button "Update Budget"
 

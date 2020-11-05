@@ -44,10 +44,10 @@ describe Budget::Heading do
     end
 
     it "must not be repeated for a different heading in any locale" do
-      heading.update!(name_en: "English", name_es: "Español")
+      heading.update!(name_en: "English", name_es: "Castellano")
 
       expect(build(:budget_heading, group: group, name_en: "English")).not_to be_valid
-      expect(build(:budget_heading, group: group, name_en: "Español")).not_to be_valid
+      expect(build(:budget_heading, group: group, name_en: "Castellano")).not_to be_valid
     end
   end
 

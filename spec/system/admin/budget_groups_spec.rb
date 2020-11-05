@@ -169,7 +169,7 @@ describe "Admin budget groups" do
 
       visit edit_admin_budget_group_path(budget, group)
 
-      select "Español", from: :add_language
+      select "Castellano", from: :add_language
       fill_in "Group name", with: "Spanish name"
       click_button "Save group"
 
