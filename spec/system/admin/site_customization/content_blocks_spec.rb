@@ -4,6 +4,7 @@ describe "Admin custom content blocks" do
   before do
     admin = create(:administrator)
     login_as(admin.user)
+    SiteCustomization::ContentBlock.delete_all
   end
 
   scenario "Index" do

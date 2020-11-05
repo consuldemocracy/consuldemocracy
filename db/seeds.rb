@@ -16,3 +16,4 @@ WebSection.where(name: "help_page").first_or_create!
 
 # Default custom pages
 load Rails.root.join("db", "pages.rb")
+load Rails.root.join("db/custom_seeds.rb") if File.exist?(Rails.root.join("db/custom_seeds.rb"))

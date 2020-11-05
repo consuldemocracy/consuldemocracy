@@ -77,6 +77,7 @@ search:
   paths:
    - app/
    - db/pages/
+   - db/custom_seeds.rb
 
   ## Root directories for relative keys resolution.
   # relative_roots:
