@@ -55,4 +55,35 @@ header {
       content: "";
     }
   }
+
+  .social {
+
+    li {
+      display: inline-block;
+
+      &:not(:first-child) {
+        margin-left: rem-calc(16);
+      }
+    }
+
+    a {
+      margin: 0;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      [class^="icon-"] {
+        align-items: center;
+        border: 1px solid;
+        border-radius: 2em;
+        display: inline-flex;
+        font-size: rem-calc(13);
+        height: 2em;
+        justify-content: center;
+        line-height: 1;
+        width: 2em;
+      }
+    }
+  }
 }
