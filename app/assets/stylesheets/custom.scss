@@ -8,8 +8,19 @@ $link: #dd3464; // TODO: use $brand?
 $gray: #f9f9f9;
 
 header {
+  $border: 1px solid #a8a8a8;
+
   background-color: $gray;
   padding-top: $line-height / 2;
+
+  %link {
+    color: $black;
+
+    &:focus,
+    &:hover {
+      color: $link;
+    }
+  }
 
   .top-links,
   .subnavigation,
@@ -18,21 +29,7 @@ header {
     background: transparent;
 
     a {
-      color: $black;
-
-      &:focus,
-      &:hover {
-        color: $link;
-      }
-    }
-  }
-
-  .top-bar {
-    background: transparent !important; // TODO: Remove important when it's removed from the original file
-    padding: 0 rem-calc(16);
-
-    .top-bar-title {
-      margin-top: 0;
+      @extend %link;
     }
   }
 
@@ -119,5 +116,75 @@ header {
       height: 2em;
       margin-top: 0;
     }
+  }
+
+  .top-bar {
+    background: transparent !important; // TODO: Remove when important is removed from the original file
+    padding-left: rem-calc(15);
+    padding-bottom: $line-height / 2;
+
+    @include breakpoint(medium) {
+      align-items: baseline;
+    }
+
+    .top-bar-title {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      border-top: $border;
+
+      @include breakpoint(medium) {
+        display: flex;
+        flex: 1;
+        padding-top: $line-height / 2;
+      }
+    }
+  }
+
+  .top-bar .menu {
+
+    a {
+      @extend %link;
+
+      &.button {
+        color: $link;
+        font-weight: bold;
+
+        @include breakpoint(medium) {
+          border: 1px solid $link;
+        }
+      }
+    }
+
+    .is-active {
+      text-decoration: none;
+
+      > a {
+        color: $link;
+        text-decoration: underline;
+      }
+    }
+
+    .is-dropdown-submenu-parent {
+      a::after {
+        border-top-color: $black;
+      }
+    }
+  }
+
+  .top-bar .menu-icon {
+    &.dark {
+
+      &:hover::after,
+      &::after {
+        background: $black;
+        box-shadow: 0 7px 0 $black, 0 14px 0 $black;
+      }
+    }
+  }
+
+  .subnavigation {
+    border-top: $border;
   }
 }
