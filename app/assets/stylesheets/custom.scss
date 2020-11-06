@@ -11,6 +11,7 @@ header {
   $border: 1px solid #a8a8a8;
 
   background-color: $gray;
+  border: 0;
   padding-top: $line-height / 2;
 
   %link {
@@ -185,6 +186,20 @@ header {
   }
 
   .subnavigation {
-    border-top: $border;
+    padding-top: $line-height / 4;
+
+    @include breakpoint(medium) {
+      border-top: $border;
+    }
+
+    a {
+      font-weight: normal;
+      font-size: 1rem;
+
+      &.is-active {
+        color: $link;
+        border-bottom-color: $link;
+      }
+    }
   }
 }
