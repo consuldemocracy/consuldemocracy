@@ -332,6 +332,31 @@ describe "Valuation budget investments" do
       expect(page).not_to have_content("Valuation finished")
     end
 
+    scenario "Can valuate investments for more than one active budgets" do
+      budget_1 = create(:budget, :valuating)
+      budget_2 = create(:budget, :valuating)
+      investment_1 = create(:budget_investment, :visible_to_valuators, budget: budget_1, valuators: [valuator])
+      investment_2 = create(:budget_investment, :visible_to_valuators, budget: budget_2, valuators: [valuator])
+
+      visit valuation_budgets_path
+      within "#budget_#{budget_1.id}" do
+        click_link "Evaluate"
+      end
+
+      click_link "Edit dossier"
+      expect(page).to have_content "Dossier"
+      expect(page).to have_content investment_1.title
+
+      visit valuation_budgets_path
+      within "#budget_#{budget_2.id}" do
+        click_link "Evaluate"
+      end
+
+      click_link "Edit dossier"
+      expect(page).to have_content "Dossier"
+      expect(page).to have_content investment_2.title
+    end
+
     scenario "Feasibility can be marked as pending" do
       visit valuation_budget_budget_investment_path(budget, investment)
       click_link "Edit dossier"
