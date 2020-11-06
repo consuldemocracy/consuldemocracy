@@ -203,3 +203,50 @@ header {
     }
   }
 }
+
+.admin {
+
+  .top-links {
+    background: transparent;
+    max-width: none;
+
+    > :only-child {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0;
+      width: 100%;
+
+      > :first-child {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+
+    a {
+      color: $link;
+    }
+  }
+
+  .admin-top-bar {
+    background: transparent;
+  }
+
+  .top-bar {
+    background: transparent !important; // TODO: Remove important when it's removed in the original file
+  }
+
+  .top-bar-left {
+    flex: 0;
+  }
+
+  .top-bar .menu > li {
+
+    a {
+      color: $black !important; // TODO: Remove important when it's removed in the original file
+
+      &:hover {
+        color: $link !important; // TODO: Remove important when it's removed in the original file
+      }
+    }
+  }
+}
