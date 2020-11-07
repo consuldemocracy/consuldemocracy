@@ -42,7 +42,13 @@ body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-size: $base-font-size;
+
+  > .wrapper {
+    flex: 1;
+  }
 }
 
 h1,
@@ -212,19 +218,6 @@ a {
 
 .icon-check {
   color: $check;
-}
-
-.wrapper {
-  min-height: 100%;
-  margin: 0 auto (-$line-height) * 12;
-  height: auto !important;
-  height: 100%;
-}
-
-.footer,
-.push {
-  clear: both;
-  min-height: $line-height * 12;
 }
 
 .ie-callout {
@@ -932,7 +925,9 @@ footer {
 
 .footer {
   background: #f1f1f1;
+  clear: both;
   margin-top: $line-height * 2;
+  min-height: $line-height * 12;
   padding-top: $line-height;
 }
 
@@ -999,8 +994,8 @@ footer {
 
 .auth-page {
 
-  .wrapper {
-    margin: 0 auto (-$line-height) * 14;
+  .footer {
+    margin-top: 0;
   }
 }
 
