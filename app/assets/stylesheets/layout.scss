@@ -501,7 +501,8 @@ a {
 // 02. Header
 // ----------
 
-header {
+body > header,
+.wrapper > header {
   background: $brand;
   border-bottom: 1px solid $border;
   margin-bottom: $line-height;
