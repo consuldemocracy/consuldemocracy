@@ -65,6 +65,7 @@ describe "Admin feature flags" do
   end
 
   scenario "Disable a feature" do
+    Setting["feature.twitter_login"] = true
     setting = Setting.find_by(key: "feature.twitter_login")
 
     visit admin_settings_path

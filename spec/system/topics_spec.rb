@@ -14,7 +14,7 @@ describe "Topics" do
       visit community_path(community)
       click_link "Create topic"
 
-      expect(page).to have_content "Sign in with:"
+      expect(page).to have_content "Don't have an account?"
       expect(page).to have_current_path(new_user_session_path)
     end
 

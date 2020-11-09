@@ -198,6 +198,10 @@ describe "Users" do
     end
 
     context "Twitter" do
+      before do
+        Setting["feature.twitter_login"] = true
+      end
+
       let(:twitter_hash) { { provider: "twitter", uid: "12345", info: { name: "manuela" }} }
       let(:twitter_hash_with_email) { { provider: "twitter", uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }} }
       let(:twitter_hash_with_verified_email) do
