@@ -3,27 +3,29 @@
     <%= link_to t("layouts.header.open_gov"), root_path %>
   </h1>
 
-  <p class="info">
-    <%= sanitize(t("layouts.footer.description",
-      open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
-      consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow"))) %>
-    <%= t("layouts.footer.contact_us") %>
-  </p>
+  <section class="sites">
+    <p class="info">
+      <%= sanitize(t("layouts.footer.description",
+        open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
+        consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow"))) %>
+      <%= t("layouts.footer.contact_us") %>
+    </p>
 
-  <div class="site-info">
-    <%= link_to t("layouts.footer.participation_title"), root_path, class: "title" %>
-    <p><%= t("layouts.footer.participation_text") %></p>
-  </div>
+    <div class="site-info">
+      <%= link_to t("layouts.footer.participation_title"), root_path, class: "title" %>
+      <p><%= t("layouts.footer.participation_text") %></p>
+    </div>
 
-  <div class="site-info">
-    <%= link_to t("sites.transparency.title"), "https://transparencia.santiagodecompostela.gal/portada/#{I18n.locale}", class: "title" %>
-    <p><%= t("sites.transparency.description") %></p>
-  </div>
+    <div class="site-info">
+      <%= link_to t("sites.transparency.title"), "https://transparencia.santiagodecompostela.gal/portada/#{I18n.locale}", class: "title" %>
+      <p><%= t("sites.transparency.description") %></p>
+    </div>
 
-  <div class="site-info">
-    <%= link_to t("sites.open_data.title"), "https://datos.santiagodecompostela.gal/#{locale}", class: "title" %>
-    <p><%= t("sites.open_data.description") %></p>
-  </div>
+    <div class="site-info">
+      <%= link_to t("sites.open_data.title"), "https://datos.santiagodecompostela.gal/#{locale}", class: "title" %>
+      <p><%= t("sites.open_data.description") %></p>
+    </div>
+  </section>
 
   <div class="subfooter">
     <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
