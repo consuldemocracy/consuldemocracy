@@ -2,7 +2,9 @@ es:
   sites:
     transparency:
       title: "Transparencia"
+      description: "Obtén cualquier información sobre el Concello de Santiago"
     open_data:
       title: "Datos abiertos"
+      description: "Todos los datos del Ayuntamiento son tuyos."
     weather:
       title: "El Tiempo"

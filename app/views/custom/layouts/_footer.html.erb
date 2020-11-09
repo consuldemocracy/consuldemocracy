@@ -10,9 +10,19 @@
     <%= t("layouts.footer.contact_us") %>
   </p>
 
-  <div class="footer-sections">
+  <div class="site-info">
     <%= link_to t("layouts.footer.participation_title"), root_path, class: "title" %>
     <p><%= t("layouts.footer.participation_text") %></p>
+  </div>
+
+  <div class="site-info">
+    <%= link_to t("sites.transparency.title"), "https://transparencia.santiagodecompostela.gal/portada/#{I18n.locale}", class: "title" %>
+    <p><%= t("sites.transparency.description") %></p>
+  </div>
+
+  <div class="site-info">
+    <%= link_to t("sites.open_data.title"), "https://datos.santiagodecompostela.gal/#{locale}", class: "title" %>
+    <p><%= t("sites.open_data.description") %></p>
   </div>
 
   <div class="subfooter">

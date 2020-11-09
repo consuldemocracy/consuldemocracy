@@ -268,3 +268,26 @@ header {
     }
   }
 }
+
+footer {
+  @include grid-row;
+
+  .logo {
+    display: block;
+  }
+
+  .info,
+  .site-info {
+    @include breakpoint(medium) {
+      @include grid-column(3);
+    }
+  }
+
+  .info {
+    padding-left: 0;
+  }
+
+  .subfooter {
+    clear: both;
+  }
+}
