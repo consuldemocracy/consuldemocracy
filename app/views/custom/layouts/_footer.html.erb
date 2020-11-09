@@ -28,11 +28,11 @@
   </section>
 
   <div class="subfooter">
-    <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
-    <ul class="no-bullet inline-block">
-      <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
-      <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
-      <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %></li>
+    <ul>
+      <li><%= t("layouts.footer.copyright", year: Time.current.year) %></li>
+      <li><%= link_to t("layouts.footer.privacy"), page_path("privacy") %></li>
+      <li><%= link_to t("layouts.footer.conditions"), page_path("conditions") %></li>
+      <li><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %></li>
     </ul>
   </div>
 </footer>

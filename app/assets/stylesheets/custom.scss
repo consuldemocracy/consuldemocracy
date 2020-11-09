@@ -341,9 +341,35 @@ header {
   .subfooter {
     background-color: $gray;
     color: $black;
+    padding-bottom: $line-height / 2;
+
+    > * {
+      @include grid-row;
+      margin-bottom: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      @include breakpoint(medium) {
+        display: inline-block;
+
+        &:not(:first-child) {
+          margin-left: 2em;
+        }
+      }
+    }
 
     a {
       color: $black;
+      font-weight: normal;
+
+      &:hover,
+      &:focus {
+        color: $link;
+      }
     }
   }
 }
