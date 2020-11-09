@@ -2,6 +2,8 @@ gl:
   layouts:
     footer:
       participation_text: Decide como debe ser a cidade que queres.
+    header:
+      open_gov: Concello de Santiago de Compostela
   sites:
     transparency:
       title: "Transparencia"

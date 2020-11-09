@@ -1,4 +1,7 @@
 es:
+  layouts:
+    header:
+      open_gov: Concello de Santiago de Compostela
   sites:
     transparency:
       title: "Transparencia"
