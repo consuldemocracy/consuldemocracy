@@ -55,7 +55,9 @@ class Users::SessionsController < Devise::SessionsController
       # en caso negativo redirigimos la petición a la de renegociacion
       # del portal de participacion.. siempre y cuando el usuario no este conectado ya, claro...
       unless user_signed_in?
-        @ip = request.remote_ip
+        # Usamos el request.ip, el remote_ip no parece dar resultados correctos en el entorno
+        # del Ayto
+        @ip = request.ip
         @managementIps = nil
         Rails.logger.debug "verifyIp: IP remota: #{@ip}"
         Rails.logger.debug "verifyIp: La ip de cliente es: #{request.ip}"
@@ -76,7 +78,7 @@ class Users::SessionsController < Devise::SessionsController
             Rails.logger.debug "verifyIp: Generando redirect a #{@redirect} no hemos localizado ips validas"
             redirect_to @redirect, :status => 302
           end
-          Rails.logger.debug "verifyIp: Generando redirect a #{@redirect}"
+          Rails.logger.debug "verifyIp: Success!"
         end
       end
     end
