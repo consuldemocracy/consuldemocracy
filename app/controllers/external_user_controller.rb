@@ -33,7 +33,8 @@ class ExternalUserController < ApplicationController
       if(xauth!=nil)
         xauth = xauth.strip
       end
-      ip = request.remote_ip
+      # Utilizamos directamente la IP de la request, el remote_ip no parece gustar demasiado...
+      ip = request.ip
       # El secreto y el origen valido almacenado
       secret = nil
       origin = nil
