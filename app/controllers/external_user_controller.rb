@@ -37,6 +37,9 @@ class ExternalUserController < ApplicationController
       # El secreto y el origen valido almacenado
       secret = nil
       origin = nil
+      Rails.logger.debug "verify_participacion_token: Tenemos xauth-token: [#{xauth}] con ip remota: #{ip}"
+      Rails.logger.debug "verify_participacion_token: La ip de cliente es: #{request.ip}"
+
       if(Rails.application.config.respond_to?(:participacion_xauth_secret))
         secret = Rails.application.config.participacion_xauth_secret.strip
       end
@@ -44,17 +47,24 @@ class ExternalUserController < ApplicationController
         origin = Rails.application.config.participacion_xauth_origin.strip
       end
 
+      Rails.logger.debug "verify_participacion_token: Comprobando xauth-token: [#{(secret == xauth)}] con ip remota registrada: [#{origin}]"
+
       # Verificamos que tenemos todos los datos
       if (secret == nil || origin == nil || xauth == nil || xauth != secret)
+        Rails.logger.debug "verify_participacion_token: Alguno de los datos es nulo o el secreto no es válido"
         render plain: 'unknown', status: :not_found
         return
       end
 
+      origin.split(';').each{|m| Rails.logger.debug "verifyIp: --- evaluando [#{m.strip}] #{(m.strip == ip)}"}
+
       # Ahora comprobamos... si alguna ip coincide
       if(origin.split(';').none? {|m| m.strip == ip})
+        Rails.logger.debug "verify_participacion_token: No hay coincidencia de IPs"
         render plain: 'unknown', status: :not_found
         return
       end
+      Rails.logger.debug "verify_participacion_token: Success"
 
     end
 
