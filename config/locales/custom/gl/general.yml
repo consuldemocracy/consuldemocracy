@@ -1,4 +1,7 @@
 gl:
+  layouts:
+    footer:
+      participation_text: Decide como debe ser a cidade que queres.
   sites:
     transparency:
       title: "Transparencia"
