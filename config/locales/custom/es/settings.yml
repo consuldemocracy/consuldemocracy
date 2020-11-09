@@ -1,0 +1,12 @@
+es:
+  settings:
+    contact:
+      in_footer: &in_footer "Aparecerá en el contacto del pie de página"
+      address: "Dirección"
+      address_description: *in_footer
+      phone_1: "Teléfono de Atención Telefónica"
+      phone_1_description: *in_footer
+      phone_2: "Teléfono de Alcaldía"
+      phone_2_description: *in_footer
+      email: "Correo de contacto"
+      email_description: *in_footer

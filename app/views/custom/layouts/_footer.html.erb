@@ -27,6 +27,19 @@
     </div>
   </section>
 
+  <section class="contact">
+    <p><%= setting["contact.address"] %></p>
+    <% %w[phone_1 phone_2].each do |phone_name| %>
+      <p>
+        <%= link_to(
+          t("contact.#{phone_name}", phone: format_phone(setting["contact.#{phone_name}"])),
+          "tel:#{raw_phone(setting["contact.#{phone_name}"])}"
+        ) %>
+      </p>
+    <% end %>
+    <p><a href="mailto:<%= setting["contact.email"] %>"><%= setting["contact.email"] %></a></p>
+  </section>
+
   <div class="subfooter">
     <ul>
       <li><%= t("layouts.footer.copyright", year: Time.current.year) %></li>

@@ -13,3 +13,6 @@ es:
       description: "Todos los datos del Ayuntamiento son tuyos."
     weather:
       title: "El Tiempo"
+  contact:
+    phone_1: "%{phone} (Centro de Atención Telefónica)"
+    phone_2: "%{phone} (Alcaldía)"

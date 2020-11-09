@@ -285,10 +285,31 @@ header {
       padding-right: rem-calc(16);
     }
 
-    .sites > * {
+    .sites,
+    .contact {
+
       @include breakpoint(medium) {
-        @include grid-column(3);
+        > * {
+          @include grid-column(6);
+        }
+
+        > :nth-child(odd) {
+          padding-left: 0;
+        }
       }
+
+      @include breakpoint(large) {
+        > * {
+          @include grid-column(3);
+        }
+
+        > :first-child {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .sites {
 
       .title {
         border: 0;
@@ -297,10 +318,6 @@ header {
         margin-top: 0;
         text-decoration: underline;
       }
-    }
-
-    .info {
-      padding-left: 0;
     }
 
     p {
@@ -338,6 +355,31 @@ header {
     }
   }
 
+  .contact {
+
+    > :first-child {
+      @include has-fa-icon(map-marker-alt, "s");
+    }
+
+    > :first-child,
+    a {
+
+      &::before {
+        color: $link;
+        margin-right: rem-calc(4);
+      }
+    }
+
+    [href^="tel:"] {
+      @include has-fa-icon(phone-alt, "s");
+    }
+
+    [href^="mailto:"] {
+      @include has-fa-icon(envelope, "s");
+      white-space: nowrap;
+    }
+  }
+
   .subfooter {
     background-color: $gray;
     color: $black;
@@ -364,7 +406,6 @@ header {
 
     a {
       color: $black;
-      font-weight: normal;
 
       &:hover,
       &:focus {
