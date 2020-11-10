@@ -193,6 +193,7 @@ describe "Notifications" do
     end
 
     it "sends pending proposal notifications" do
+      Setting["org_name"] = "CONSUL"
       Delayed::Worker.delay_jobs = false
       Notification.send_pending
 

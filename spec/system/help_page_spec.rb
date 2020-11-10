@@ -4,6 +4,7 @@ describe "Help page" do
   context "Index" do
     scenario "Help menu and page is visible if feature is enabled" do
       Setting["feature.help_page"] = true
+      Setting["org_name"] = "CONSUL"
 
       visit root_path
 
