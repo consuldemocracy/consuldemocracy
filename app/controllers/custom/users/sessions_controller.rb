@@ -28,9 +28,9 @@ class Users::SessionsController < Devise::SessionsController
   private
 
     def after_sign_in_path_for(resource)
-      @returnTo = stored_location_for(resource);
-      if(@returnTo!=nil)
-        @returnTo
+      returnTo = stored_location_for(resource);
+      if(returnTo!=nil)
+        returnTo
       else
         root_path
       end
@@ -55,19 +55,30 @@ class Users::SessionsController < Devise::SessionsController
       # en caso negativo redirigimos la petición a la de renegociacion
       # del portal de participacion.. siempre y cuando el usuario no este conectado ya, claro...
       unless user_signed_in?
-        @ip = request.remote_ip
-        @managementIps = nil
+        # Usamos el request.ip, el remote_ip no parece dar resultados correctos en el entorno
+        # del Ayto
+        ip = request.ip
+        managementIps = nil
+        Rails.logger.debug "verifyIp: IP remota: #{ip}"
+        Rails.logger.debug "verifyIp: La ip de cliente es: #{request.ip}"
         if(Rails.application.config.respond_to?(:participacion_management_ip))
-          @managementIps = Rails.application.config.participacion_management_ip
+          managementIps = Rails.application.config.participacion_management_ip
         end
         if(Rails.application.config.respond_to?(:participacion_renegotiation))
-          @redirect = Rails.application.config.participacion_renegotiation
+          redirect = Rails.application.config.participacion_renegotiation
         end
+        Rails.logger.debug "verifyIp: IP de gestión #{managementIps}"
+        Rails.logger.debug "verifyIp: IP de redirección #{redirect}"
 
-        if(@redirect!=nil)
-          if(@managementIps==nil || @managementIps.split(';').none?{|m| m.strip == @ip })
-            redirect_to @redirect, :status => 302
+        if(redirect!=nil)
+          Rails.logger.debug "verifyIp: IP de redirección no nula, verificando IPs de gestión"
+          managementIps.split(';').each{|m| Rails.logger.debug "verifyIp: --- evaluando [#{m.strip}] #{(m.strip == ip)}"}
+
+          if(managementIps==nil || managementIps.split(';').none?{|m| m.strip == ip })
+            Rails.logger.debug "verifyIp: Generando redirect a #{redirect} no hemos localizado ips validas"
+            redirect_to redirect, :status => 302
           end
+          Rails.logger.debug "verifyIp: Success!"
         end
       end
     end
