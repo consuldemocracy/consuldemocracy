@@ -80,6 +80,8 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     describe "When restoring the page from browser history" do
+      before { Setting["org_name"] = "CONSUL" }
+
       scenario "map should not be duplicated", :js do
         do_login_for user
         visit send(mappable_new_path, arguments)

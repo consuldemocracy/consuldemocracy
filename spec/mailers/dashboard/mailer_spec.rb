@@ -165,6 +165,7 @@ describe Dashboard::Mailer do
     end
 
     it "sends emails if new actions detected when creating a proposal" do
+      Setting["org_name"] = "CONSUL"
       action.update!(published_proposal: false)
       resource.update!(published_proposal: false)
       proposal.save!
