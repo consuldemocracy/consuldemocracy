@@ -386,7 +386,7 @@ describe "Budget Investments" do
         expect(page).to have_content(low_investment.title)
       end
 
-      select "Whole city: District Nine", from: "heading_id"
+      select "District Nine", from: "heading_id"
       click_button("Search")
 
       within "#budget-investments" do

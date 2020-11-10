@@ -916,8 +916,23 @@ describe "Budget Investments" do
       expect(page).to have_content "Build a skyscraper"
     end
 
+    scenario "Create with single group and multiple headings" do
+      budget = create(:budget)
+      group = create(:budget_group, name: "New group", budget: budget)
+      create(:budget_heading, budget: budget, group: group, name: "Culture")
+      create(:budget_heading, budget: budget, group: group, name: "Environment")
+
+      login_as(author)
+
+      visit new_budget_investment_path(budget)
+
+      expect(page).not_to have_content "New group"
+      select_options = find("#budget_investment_heading_id").all("option").map(&:text)
+      expect(select_options).to eq ["", "Culture", "Environment"]
+    end
+
     scenario "Create with multiple headings" do
-      heading2 = create(:budget_heading, budget: budget)
+      heading2 = create(:budget_heading, budget: budget, group: group)
       heading3 = create(:budget_heading, budget: budget)
       login_as(author)
 
@@ -931,7 +946,7 @@ describe "Budget Investments" do
         expect(page).to have_selector("option[value='#{heading3.id}']")
       end
 
-      select  heading2.name, from: "budget_investment_heading_id"
+      select "#{group.name}: #{heading2.name}", from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a skyscraper"
       fill_in "Description", with: "I want to live in a high tower over the clouds"
       fill_in "budget_investment_location", with: "City center"
@@ -1084,7 +1099,7 @@ describe "Budget Investments" do
 
       select_options = find("#budget_investment_heading_id").all("option").map(&:text)
       expect(select_options).to eq ["",
-                                    "Toda la ciudad",
+                                    "Toda la ciudad: Toda la ciudad",
                                     "Health: More health professionals",
                                     "Health: More hospitals"]
     end
