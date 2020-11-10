@@ -65,6 +65,10 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
             u.verified_at = DateTime.current
         end
 
+        # Podemos no tener email de los usuarios que provienen del sistema externo,
+        # por ejemplo usuarios
+        u.skip_email_validation = true
+
         u.save!
 
       end
