@@ -265,6 +265,21 @@ describe "Admin settings", :admin do
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("div#tab-feature-flags.is-active")
     end
+
+    scenario "On #tab-sdg-configuration", :js do
+      Setting.create!(key: "sdg.whatever")
+      login_as(create(:administrator).user)
+
+      visit admin_settings_path
+      click_link "SDG configuration"
+
+      accept_alert do
+        within("tr", text: "Whatever") { click_button "Enable" }
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("h2", exact_text: "SDG configuration")
+    end
   end
 
   describe "Skip verification" do
