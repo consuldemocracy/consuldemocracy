@@ -475,6 +475,18 @@ body.management .admin-content {
         }
       }
     }
+    .img {
+      .img-holder {
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
     .info {
       background-color: transparent;
       .pre-title {
@@ -506,8 +518,9 @@ body.management .admin-content {
         font-size: $font-size-base-small;
       }
 
+
       @media screen and (min-width: 64em) {
-        .decorated-on-large {
+        /*.decorated-on-large {
           max-width: 50%;
         }
         background-image: image-url("background-budgets.jpg");
@@ -522,7 +535,8 @@ body.management .admin-content {
             padding-right: 0px;
           }
           background-size: contain;
-        }
+        }*/
+
 
       }
     }
