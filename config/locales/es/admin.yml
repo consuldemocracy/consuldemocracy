@@ -650,6 +650,9 @@ es:
       poll_shifts: Asignar turnos
       officials: Cargos públicos
       organizations: Organizaciones
+      sdg:
+        content: Contenido ODS
+        goals: Objetivos
       settings: Configuración global
       stats: Estadísticas
       signature_sheets: Hojas de firmas

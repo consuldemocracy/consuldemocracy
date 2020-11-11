@@ -651,6 +651,9 @@ en:
       poll_shifts: Manage shifts
       officials: Officials
       organizations: Organisations
+      sdg:
+        content: SDG content
+        goals: Goals
       settings: Global settings
       stats: Statistics
       signature_sheets: Signature Sheets

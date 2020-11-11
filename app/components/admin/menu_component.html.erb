@@ -143,6 +143,18 @@
 
   <li class="section-title">
     <a href="#">
+      <span class="icon-sdg"></span>
+      <strong><%= t("admin.menu.sdg.content") %></strong>
+    </a>
+    <ul <%= "class=is-active" if sdg? %>>
+      <li <%= "class=is-active" if controller_name == "goals" %>>
+        <%= link_to t("admin.menu.sdg.goals"), admin_sdg_goals_path %>
+      </li>
+    </ul>
+  </li>
+
+  <li class="section-title">
+    <a href="#">
       <span class="icon-eye"></span>
       <strong><%= t("admin.menu.title_moderated_content") %></strong>
     </a>
