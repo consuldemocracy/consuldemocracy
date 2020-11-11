@@ -20,6 +20,7 @@
     * [Installer](en/installation/installer.md)
     * [Create a deploy user](en/installation/create_deploy_user.md)
     * [Generating SSH Key](en/installation/generating_ssh_key.md)
+    * [Manual installation (not recommended)](en/installation/manual_installation_production.md)
     * [Digital Ocean](en/installation/digital_ocean.md)
     * [Heroku](en/installation/deploying-on-heroku.md)
     * [Docker](en/installation/docker.md)
