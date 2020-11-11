@@ -23,8 +23,7 @@
             <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
           </p>
       </div>
-      <div class="small-12 medium-5 large-6 column info padding " data-equalizer-watch>
-        <div class="decorated-on-large">
+      <div class="small-12 medium-3 large-3 column info padding " data-equalizer-watch>
           <p class="pre-title">
             <strong><%= t("budgets.show.phase") %></strong>
           </p>
@@ -52,6 +51,10 @@
                         budget_results_path(current_budget, heading_id: current_budget.headings.first),
                         class: "button margin-top expanded" %>
           <% end %>
+      </div>
+      <div class="column img hide-for-small-only medium-2 large-3" data-equalizer-watch>
+        <div class="img-holder">
+          <%= image_tag "background-budgets.jpg", alt: "" %>
         </div>
       </div>
     </div>
