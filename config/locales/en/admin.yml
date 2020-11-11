@@ -651,6 +651,9 @@ en:
       poll_shifts: Manage shifts
       officials: Officials
       organizations: Organisations
+      sdg:
+        content: "SDG content"
+        goals: "Goals"
       settings: Global settings
       stats: Statistics
       signature_sheets: Signature Sheets
@@ -1443,6 +1446,10 @@ en:
         phone_not_given: Phone not given
         sms_code_not_confirmed: Has not confirmed the sms code
         title: Incomplete verifications
+    sdg:
+      goals:
+        index:
+          title: "Goals"
     site_customization:
       content_blocks:
         information: Information about content blocks

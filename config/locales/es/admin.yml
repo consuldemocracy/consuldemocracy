@@ -650,6 +650,9 @@ es:
       poll_shifts: Asignar turnos
       officials: Cargos públicos
       organizations: Organizaciones
+      sdg:
+        content: "Contenido ODS"
+        goals: "Objetivos"
       settings: Configuración global
       stats: Estadísticas
       signature_sheets: Hojas de firmas
@@ -1442,6 +1445,10 @@ es:
         phone_not_given: No ha dado su teléfono
         sms_code_not_confirmed: No ha introducido su código de seguridad
         title: Verificaciones incompletas
+    sdg:
+      goals:
+        index:
+          title: "Objetivos"
     site_customization:
       content_blocks:
         information: Información sobre los bloques de contenido

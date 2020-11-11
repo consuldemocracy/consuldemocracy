@@ -305,6 +305,10 @@ es:
       proposal_notification:
         body: "Mensaje"
         title: "Título"
+      sdg/goal:
+        code: "Código"
+        title: "Título"
+        description: "Descripción"
       signature_sheet:
         title: "Título"
         signable_type: "Tipo de hoja de firmas"

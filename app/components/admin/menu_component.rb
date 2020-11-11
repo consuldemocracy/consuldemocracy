@@ -41,6 +41,10 @@ class Admin::MenuComponent < ApplicationComponent
         homepage? || pages?
     end
 
+    def sdg?
+      controller.class.parent == Admin::SDG
+    end
+
     def homepage?
       ["homepage", "cards"].include?(controller_name) && params[:page_id].nil?
     end

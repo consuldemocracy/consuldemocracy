@@ -18,6 +18,17 @@
       vertical-align: middle;
       width: $line-height * 1.5;
     }
+
+    .icon-sdg {
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+
+      &::before {
+        @extend %svg-icon;
+        mask-image: image-url("sdg.svg");
+      }
+    }
   }
 
   li {

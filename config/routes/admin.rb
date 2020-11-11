@@ -252,6 +252,10 @@ namespace :admin do
   namespace :local_census_records do
     resources :imports, only: [:new, :create, :show]
   end
+
+  namespace :sdg do
+    resources :goals, only: [:index]
+  end
 end
 
 resolve "Milestone" do |milestone|
