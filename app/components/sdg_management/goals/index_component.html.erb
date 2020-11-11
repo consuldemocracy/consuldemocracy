@@ -1,0 +1,25 @@
+<% provide(:title) do %>
+  <%= t("sdg_management.header.title") %> - <%= title %>
+<% end %>
+
+<h2><%= title %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= attribute_name(:code) %></th>
+      <th><%= attribute_name(:title) %></th>
+      <th><%= attribute_name(:description) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% goals.each do |goal| %>
+      <tr id="<%= dom_id(goal) %>" class="goal">
+        <td><%= goal.code %></td>
+        <td><%= goal.title %></td>
+        <td><%= goal.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
