@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_084257) do
+ActiveRecord::Schema.define(version: 2020_11_11_095452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1295,6 +1295,13 @@ ActiveRecord::Schema.define(version: 2020_09_08_084257) do
     t.datetime "updated_at", null: false
     t.boolean "advanced_stats"
     t.index ["process_type", "process_id"], name: "index_reports_on_process_type_and_process_id"
+  end
+
+  create_table "sdg_goals", force: :cascade do |t|
+    t.integer "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_sdg_goals_on_code", unique: true
   end
 
   create_table "settings", id: :serial, force: :cascade do |t|
