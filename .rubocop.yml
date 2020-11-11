@@ -86,6 +86,8 @@ Layout/LeadingEmptyLines:
 Layout/LineLength:
   Max: 110
   Severity: refactor
+  Exclude:
+  - db/sdg/*
 
 Layout/MultilineBlockLayout:
   Enabled: true

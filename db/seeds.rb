@@ -16,3 +16,6 @@ WebSection.where(name: "help_page").first_or_create!
 
 # Default custom pages
 load Rails.root.join("db", "pages.rb")
+
+# Sustainable Development Goals
+load Rails.root.join("db", "sdg.rb")
