@@ -308,6 +308,10 @@ en:
         signable_type: "Signable type"
         signable_id: "Signable ID"
         document_numbers: "Documents numbers"
+      sdg/goal:
+        code: "Code"
+        title: "Title"
+        description: "Description"
       site_customization/page:
         content: Content
         created_at: Created at

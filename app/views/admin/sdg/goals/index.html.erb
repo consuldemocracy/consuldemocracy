@@ -1,0 +1,25 @@
+<% provide(:title) do %>
+  <%= t("admin.header.title") %> - <%= t("admin.sdg.goals.index.title") %>
+<% end %>
+
+<h2><%= t("admin.sdg.goals.index.title") %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= SDG::Goal.human_attribute_name(:code) %></th>
+      <th><%= SDG::Goal.human_attribute_name(:title) %></th>
+      <th><%= SDG::Goal.human_attribute_name(:description) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @goals.each do |goal| %>
+      <tr id="<%= dom_id(goal) %>" class="goal">
+        <td><%= goal.code %></td>
+        <td><%= goal.title %></td>
+        <td><%= goal.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
