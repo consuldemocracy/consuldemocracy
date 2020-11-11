@@ -1241,6 +1241,7 @@ es:
           how_to_enable: 'Para configurar la conexión con el Censo Remoto (SOAP) se debe activar "Configurar la conexión al censo remoto (SOAP)" en la pestaña "Funcionalidades".'
         sdg:
           title: Configuración ODS
+          how_to_enable: 'Para mostrar las opciones de configuración de los Objetivos de Desarrollo Sostenible se debe activar "ODS" en la pestaña "Funcionalidades".'
       remote_census_general_name: Datos Generales
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta
