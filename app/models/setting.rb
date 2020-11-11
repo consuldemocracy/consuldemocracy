@@ -184,7 +184,12 @@ class Setting < ApplicationRecord
         "remote_census.response.gender": "",
         "remote_census.response.name": "",
         "remote_census.response.surname": "",
-        "remote_census.response.valid": ""
+        "remote_census.response.valid": "",
+        "sdg.process.debates": false,
+        "sdg.process.proposals": false,
+        "sdg.process.polls": false,
+        "sdg.process.budgets": false,
+        "sdg.process.legislation": false
       }
     end
 
