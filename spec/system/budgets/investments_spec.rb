@@ -570,18 +570,35 @@ describe "Budget Investments" do
       expect(page).to have_content "Build a skyscraper"
     end
 
-    scenario "Create with multiple headings" do
-      create(:budget_heading, budget: budget, name: "Medical supplies")
-      create(:budget_heading, budget: budget, name: "Even more hospitals")
+    scenario "Create with single group and multiple headings" do
+      create(:budget_heading, group: group, name: "Medical supplies")
+      create(:budget_heading, group: group, name: "Even more hospitals")
+
+      login_as(author)
+
+      visit new_budget_investment_path(budget)
+
+      expect(page).to have_select "Heading",
+        options: ["", "More hospitals", "Medical supplies", "Even more hospitals"]
+      expect(page).not_to have_content "Health"
+    end
+
+    scenario "Create with multiple groups" do
+      education = create(:budget_group, budget: budget, name: "Education")
+
+      create(:budget_heading, group: group, name: "Medical supplies")
+      create(:budget_heading, group: education, name: "Schools")
+
       login_as(author)
 
       visit new_budget_investment_path(budget)
 
       expect(page).not_to have_content("#{heading.name} (#{budget.formatted_heading_price(heading)})")
       expect(page).to have_select "Heading",
-        options: ["", "More hospitals", "Medical supplies", "Even more hospitals"]
+        options: ["", "Health: More hospitals", "Health: Medical supplies", "Education: Schools"]
 
-      select "Medical supplies", from: "Heading"
+      select "Health: Medical supplies", from: "Heading"
+
       fill_in "Title", with: "Build a skyscraper"
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "Location additional info", with: "City center"
@@ -755,7 +772,7 @@ describe "Budget Investments" do
 
       select_options = find("#budget_investment_heading_id").all("option").map(&:text)
       expect(select_options).to eq ["",
-                                    "Toda la ciudad",
+                                    "Toda la ciudad: Toda la ciudad",
                                     "Health: More health professionals",
                                     "Health: More hospitals"]
     end

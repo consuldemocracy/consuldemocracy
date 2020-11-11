@@ -162,8 +162,12 @@ class Budget < ApplicationRecord
     current_phase&.balloting_or_later?
   end
 
+  def single_group?
+    groups.one?
+  end
+
   def single_heading?
-    groups.one? && headings.one?
+    single_group? && headings.one?
   end
 
   def heading_price(heading)
