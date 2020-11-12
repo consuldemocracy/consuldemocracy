@@ -4,3 +4,51 @@ es:
       goal_1:
         title: "Fin de la pobreza"
         description: "Poner fin a la pobreza en todas sus formas en todo el mundo."
+      goal_2:
+        title: "Hambre Cero"
+        description: "Poner fin al hambre."
+      goal_3:
+        title: "Salud y Bienestar"
+        description: "Garantizar una vida sana y promover el bienestar para todos en todas las edades."
+      goal_4:
+        title: "Educación de Calidad"
+        description: "Garantizar una educación inclusiva, equitativa y de calidad y promover oportunidades de aprendizaje durante toda la vida para todos."
+      goal_5:
+        title: "Igualdad de Género"
+        description: "Lograr la igualdad entre los géneros y empoderar a todas las mujeres y las niñas."
+      goal_6:
+        title: "Agua Limpia y Saneamiento"
+        description: "Garantizar la disponibilidad de agua y su gestión sostenible y el saneamiento para todos."
+      goal_7:
+        title: "Energía Sostenible y No Contaminante"
+        description: "Garantizar el acceso a una energía asequible, segura, sostenible y moderna."
+      goal_8:
+        title: "Trabajo Decente y Crecimiento Económico"
+        description: "Promover el crecimiento económico inclusivo y sostenible, el empleo y el trabajo decente para todos."
+      goal_9:
+        title: "Industria, Innovación e Infraestructuras"
+        description: "Construir infraestructuras resilientes, promover la industrialización sostenible y fomentar la innovación."
+      goal_10:
+        title: "Reducción de las Desigualdades"
+        description: "Reducir la desigualdad en y entre los países."
+      goal_11:
+        title: "Ciudades y Comunidades Sostenibles"
+        description: "Lograr que las ciudades sean más inclusivas, seguras, resilientes y sostenibles."
+      goal_12:
+        title: "Producción y Consumo Responsables"
+        description: "Garantizar modalidades de consumo y producción sostenibles"
+      goal_13:
+        title: "Acción Por el Clima"
+        description: "Adoptar medidas urgentes para combatir el cambio climático y sus efectos."
+      goal_14:
+        title: "Vida Submarina"
+        description: "Conservar y utilizar sosteniblemente los océanos, los mares y los recursos marinos."
+      goal_15:
+        title: "Vida de Ecosistemas Terrestres"
+        description: "Gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras, detener la pérdida de biodiversidad."
+      goal_16:
+        title: "Paz, Justicia e Instituciones Sólidas"
+        description: "Promover sociedades justas, pacíficas e inclusivas."
+      goal_17:
+        title: "Alianzas para Lograr los Objetivos"
+        description: "Revitalizar la Alianza Mundial para el Desarrollo Sostenible."

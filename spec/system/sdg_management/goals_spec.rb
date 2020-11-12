@@ -5,8 +5,6 @@ describe "Goals", :js do
 
   describe "Index" do
     scenario "Visit the index" do
-      SDG::Goal.where(code: "1").first_or_create!
-
       visit sdg_management_root_path
 
       within("#side_menu") do

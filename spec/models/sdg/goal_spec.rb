@@ -1,12 +1,24 @@
 require "rails_helper"
 
 describe SDG::Goal do
-  it "is valid" do
-    expect(build(:sdg_goal)).to be_valid
-  end
+  describe "validations" do
+    it "is valid with an existent code" do
+      goal = SDG::Goal.where(code: "1").first_or_initialize
 
-  it "is not valid without a code" do
-    expect(build(:sdg_goal, code: nil)).not_to be_valid
+      expect(goal).to be_valid
+    end
+
+    it "is not valid without a code" do
+      expect(build(:sdg_goal, code: nil)).not_to be_valid
+    end
+
+    it "is not valid with a nonexistent code" do
+      [0, 18].each do |code|
+        goal = SDG::Goal.where(code: code).first_or_initialize
+
+        expect(goal).not_to be_valid
+      end
+    end
   end
 
   it "translates title" do

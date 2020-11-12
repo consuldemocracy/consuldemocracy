@@ -4,3 +4,51 @@ en:
       goal_1:
         title: "No Poverty"
         description: "End poverty in all its forms, everywhere."
+      goal_2:
+        title: "Zero Hunger"
+        description: "Zero Hunger"
+      goal_3:
+        title: "Good Health and Well-Being"
+        description: "Ensure healthy lives and promote well-being for all at all ages."
+      goal_4:
+        title: "Quality Education"
+        description: "Quality Education"
+      goal_5:
+        title: "Gender Equality"
+        description: "Achieve gender equality and empower all women and girls."
+      goal_6:
+        title: "Clean Water and Sanitation"
+        description: "Ensure access to water and sanitation for all."
+      goal_7:
+        title: "Affordable and Clean Energy"
+        description: "Ensure access to affordable, reliable, sustainable and modern energy."
+      goal_8:
+        title: "Decent Work and Economic Growth"
+        description: "Promote inclusive and sustainable economic growth, employment and decent work for all."
+      goal_9:
+        title: "Industry, Innovation and Infrastructure"
+        description: "Build resilient infrastructure, promote sustainable industrialization and foster innovation."
+      goal_10:
+        title: "Reduced Inequalities"
+        description: "Reduce inequality within and among countries."
+      goal_11:
+        title: "Sustainable Cities and Communities"
+        description: "Make cities inclusive, safe, resilient and sustainable."
+      goal_12:
+        title: "Responsible Consumption and Production"
+        description: "Ensure sustainable consumption and production patterns."
+      goal_13:
+        title: "Climate Action"
+        description: "Take urgent action to combat climate change and its impacts."
+      goal_14:
+        title: "Life Below Water"
+        description: "Conserve and sustainably use the oceans, seas and marine resources."
+      goal_15:
+        title: "Life on Land"
+        description: "Sustainably manage forests, combat desertification, halt and reverse land degradation, halt biodiversity loss."
+      goal_16:
+        title: "Peace, Justice and Strong Institution"
+        description: "Promote just, peaceful and inclusive societies."
+      goal_17:
+        title: "Partnerships For the Goals"
+        description: "Revitalize the global partnership for Sustainable Development."
