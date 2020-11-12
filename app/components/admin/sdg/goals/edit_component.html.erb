@@ -1,0 +1,27 @@
+<% provide(:title) do %>
+  <%= t("admin.header.title") %> - <%= title %>
+<% end %>
+
+<h2><%= title %></h2>
+
+<%= render "shared/globalize_locales", resource: goal %>
+
+<%= translatable_form_for [:admin, goal] do |f| %>
+  <%= render "shared/errors", resource: goal %>
+
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 column">
+        <%= translations_form.text_field :title %>
+      </div>
+
+      <div class="small-12 column">
+        <%= translations_form.text_area :description, rows: 2 %>
+      </div>
+
+      <div class="small-12 column">
+        <%= f.submit(class: "button") %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

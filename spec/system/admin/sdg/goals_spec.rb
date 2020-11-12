@@ -15,7 +15,27 @@ describe "Goals", :js do
       end
 
       expect(page).to have_title "Administration - Goals"
-      within("table") { expect(page).to have_content "No more heroes" }
+
+      within("tr", text: "No more heroes") do
+        expect(page).to have_link "Edit"
+      end
+    end
+  end
+
+  describe "Edit" do
+    scenario "Update a record" do
+      create(:sdg_goal, title: "No more heroes")
+
+      visit admin_sdg_goals_path
+
+      within("tr", text: "No more heroes") { click_link "Edit" }
+
+      fill_in "Title", with: "More heroes"
+      click_button "Update goal"
+
+      expect(page).to have_content "Goal updated successfully"
+      expect(page).to have_css "tr", text: "More heroes"
+      expect(page).not_to have_css "tr", text: "No more heroes"
     end
   end
 end

@@ -1447,8 +1447,12 @@ es:
         title: Verificaciones incompletas
     sdg:
       goals:
+        edit:
+          title: "Objetivo %{code} - %{title}"
         index:
           title: "Objetivos"
+        update:
+          notice: "Objetivo actualizado correctamente"
     site_customization:
       content_blocks:
         information: Información sobre los bloques de contenido

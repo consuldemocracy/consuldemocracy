@@ -254,7 +254,7 @@ namespace :admin do
   end
 
   namespace :sdg do
-    resources :goals, only: [:index]
+    resources :goals, only: [:index, :edit, :update]
   end
 end
 

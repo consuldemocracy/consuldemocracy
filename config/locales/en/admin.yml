@@ -1448,8 +1448,13 @@ en:
         title: Incomplete verifications
     sdg:
       goals:
+        edit:
+          title: "Goal %{code} - %{title}"
+          save: "Save changes"
         index:
           title: "Goals"
+        update:
+          notice: "Goal updated successfully"
     site_customization:
       content_blocks:
         information: Information about content blocks

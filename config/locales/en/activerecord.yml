@@ -72,6 +72,9 @@ en:
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
+      sdg/goal:
+        one: "goal"
+        other: "goals"
       site_customization/page:
         one: Custom page
         other: Custom pages

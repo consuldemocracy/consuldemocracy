@@ -10,6 +10,7 @@
       <th><%= attribute_name(:code) %></th>
       <th><%= attribute_name(:title) %></th>
       <th><%= attribute_name(:description) %></th>
+      <th><%= t("admin.actions.actions") %></th>
     </tr>
   </thead>
 
@@ -19,6 +20,7 @@
         <td><%= goal.code %></td>
         <td><%= goal.title %></td>
         <td><%= goal.description %></td>
+        <td><%= render Admin::TableActionsComponent.new(goal, actions: [:edit]) %>
       </tr>
     <% end %>
   </tbody>

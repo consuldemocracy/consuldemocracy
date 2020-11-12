@@ -72,6 +72,9 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
+      sdg/goal:
+        one: "objetivo"
+        other: "objetivos"
       site_customization/page:
         one: Página
         other: Páginas
