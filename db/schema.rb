@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_11_095452) do
+ActiveRecord::Schema.define(version: 2020_11_12_155047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1302,6 +1302,15 @@ ActiveRecord::Schema.define(version: 2020_11_11_095452) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_sdg_goals_on_code", unique: true
+  end
+
+  create_table "sdg_targets", force: :cascade do |t|
+    t.bigint "goal_id"
+    t.string "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_sdg_targets_on_code", unique: true
+    t.index ["goal_id"], name: "index_sdg_targets_on_goal_id"
   end
 
   create_table "settings", id: :serial, force: :cascade do |t|

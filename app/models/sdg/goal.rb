@@ -1,6 +1,8 @@
 class SDG::Goal < ApplicationRecord
   validates :code, presence: true, uniqueness: true, inclusion: { in: 1..17 }
 
+  has_many :targets, dependent: :destroy
+
   def title
     I18n.t("sdg.goals.goal_#{code}.title")
   end
