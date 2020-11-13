@@ -1,8 +1,8 @@
-# Development Mail Server
+# Mail Server Configuration
 
-This is a example to how integrate a mailing service with a development environment of Consul.
+This is an example of how to integrate a mailing service with Consul.
 
-In this example we used [Mailgun](https://www.mailgun.com/).
+In this example we use [Mailgun](https://www.mailgun.com/).
 
 ## Create an account in Mailgun
 
@@ -11,41 +11,28 @@ In this example we used [Mailgun](https://www.mailgun.com/).
 * Skip the credit card form
 * And activate your account with the link sent by email
 
-
 ## Domain configuration
-* Go to the Domains section:
-![Mailgun domain section](../../img/mailserver/mailgun-domains.png)
 
-* Since you don't have a domain yet, you should click in the sandbox that is already created;
-* Remember the next credentials:
-![Mailgun sandbox](../../img/mailserver/mailgun-sandbox.png)
+* Go to the Domains section: ![Mailgun domain section](../../img/mailserver/mailgun-domains.png)
+* Since you don't have a domain yet, you should click in the sandbox that is already created
+* Remember the following credentials: ![Mailgun sandbox](../../img/mailserver/mailgun-sandbox.png)
 
-## Consul mailing configuration for development environment
-* Go to `config/environments/development.rb` file;
-* Add the lines on the file to configure the mail server:
+## Consul mailing configuration
 
-``` ruby
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
-      :address              => '',
-      :port                 => 2525,
-      :domain               => '',
-      :user_name            => '',
-      :password             => '',
-      :authentication => :plain,
-      :enable_starttls_auto => true,
-      :ssl => false
-  }
+* Go to the `config/secrets.yml` file
+* Change the lines on the file to configure the mail server under the section `staging`, `preproduction` or `production`, depending on your setup:
+
+```yml
+  mailer_delivery_method: :smtp
+  smtp_settings:
+     :address: "<smtp address>"
+     :port: 587
+     :domain: "<domain>"
+     :user_name: "<user_name>"
+     :password: "<password>"
+     :authentication: "plain"
+     :enable_starttls_auto: true
 ```
-* Fill, `address`, `domain`, `user_name`, `password` with your information. The file would look like:
 
-![development.rb file](../../img/mailserver/development.rb.png)
-
-## Consul mailing configuration for production environment
-
-* Go to `config/environments/production.rb` file.
-* Add the same **action mailer settings** configuration, but now with your production mail server information.
-* Pay attention because you will need to change the **port** number to **587**.
-
-You can also use Mailgun to production, adding your custom domain. Mailgun’s logs sent and delivered emails.
+* Fill `<smtp address>`, `<domain>`, `<user_name>` and `<password>` with your information
+* Save the file and restart your Consul application

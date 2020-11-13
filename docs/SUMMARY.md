@@ -23,7 +23,7 @@
     * [Digital Ocean](en/installation/digital_ocean.md)
     * [Heroku](en/installation/deploying-on-heroku.md)
     * [Docker](en/installation/docker.md)
-    * [Development Mail Server](en/installation/dev_mailserver.md)
+    * [Mail Server Configuration](en/installation/dev_mailserver.md)
   * [Basic configuration](en/installation/basic_configuration.md)
   * [CONSUL Documentation and guides](en/installation/documentation_and_guides.md)
 
