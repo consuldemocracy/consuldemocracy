@@ -1,5 +1,9 @@
 <%= header %>
 
+<%# TODO: replace links with tabs %>
+<%= link_to SDG::Goal.model_name.human(count: 2).titleize, sdg_management_goals_path %>
+<%= link_to SDG::Target.model_name.human(count: 2).titleize, sdg_management_targets_path %>
+
 <table>
   <thead>
     <tr>
