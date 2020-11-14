@@ -384,6 +384,15 @@
       .calc-index {
         max-width: calc(35% - 25px);
 
+        .draft-index {
+          @supports (position: sticky) {
+            max-height: 100vh;
+            overflow-y: auto;
+            position: sticky;
+            top: $line-height;
+          }
+        }
+
         > * {
           padding-right: rem-calc(20);
         }
