@@ -42,19 +42,17 @@
 
     <%= render "legislation/processes/help_gif" %>
 
-    <div class="row draft-allegation medium-collapse comments-on">
-      <div class="small-12 calc-index column <%= "js-toggle-allegations" unless @draft_version.final_version? %>">
-        <div class="draft-panel">
+    <div class="row draft-allegation medium-collapse">
+      <details class="small-12 calc-index column">
+        <summary class="draft-panel">
           <span class="icon-banner" aria-hidden="true"></span>
           <span class="panel-title"><%= t("legislation.draft_versions.show.text_toc") %></span>
-        </div>
+        </summary>
 
-        <div data-sticky-container>
-          <div data-sticky data-anchor="sticky-panel" class="draft-index sticky" data-tree-navigator>
-            <%= AdminLegislationSanitizer.new.sanitize(@draft_version.toc_html) %>
-          </div>
+        <div class="draft-index" data-tree-navigator>
+          <%= AdminLegislationSanitizer.new.sanitize(@draft_version.toc_html) %>
         </div>
-      </div>
+      </details>
       <div class="small-12 calc-text column border-right border-left">
         <div class="draft-panel">
           <div><span class="panel-title"><%= t("legislation.draft_versions.show.text_body") %></span></div>

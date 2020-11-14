@@ -326,33 +326,6 @@
   position: relative;
   padding: rem-calc(32) 0;
 
-  %calc-collapsed {
-    .draft-panel {
-      @include breakpoint(medium) {
-        line-height: 1;
-        display: block;
-        font-size: $small-font-size;
-        text-transform: uppercase;
-        font-weight: 700;
-        color: #696969;
-        padding: 0;
-        text-align: center;
-
-        .icon-banner::before,
-        .icon-comments::before {
-          display: block;
-          margin: rem-calc(24) auto rem-calc(36);
-        }
-
-        .panel-title {
-          display: block;
-          transform: rotate(-90deg);
-          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-        }
-      }
-    }
-  }
-
   .draft-chooser {
 
     h3 {
@@ -411,12 +384,6 @@
       padding-right: rem-calc(15);
     }
 
-    .calc-index {
-      .draft-panel {
-        cursor: pointer;
-      }
-    }
-
     @media screen and (min-width: 40em) {
       .calc-index {
         width: calc(35% - 25px);
@@ -424,19 +391,6 @@
 
       .calc-text {
         width: calc(65% - 25px);
-      }
-
-      .calc-comments {
-        cursor: pointer;
-        background: #f2f2f2;
-        width: rem-calc(50);
-
-        .draft-panel {
-
-          .panel-title {
-            display: none;
-          }
-        }
       }
     }
 
@@ -558,26 +512,51 @@
       }
     }
 
-    &:not(.comments-on) .calc-comments {
-      @extend %calc-collapsed;
+    .calc-comments {
       position: relative;
+    }
 
-      .comment-box {
+    summary {
+      cursor: pointer;
+      list-style: none;
+
+      &::-webkit-details-marker {
         display: none;
       }
     }
-  }
 
-  .comments-on {
-    .calc-index {
-      @extend %calc-collapsed;
-
-      width: rem-calc(50);
+    details:not([open]) {
       background: #f2f2f2;
-      cursor: pointer;
 
-      .draft-index {
-        display: none;
+      @include breakpoint(small only) {
+        border-bottom: 1px solid #d4d4d4;
+      }
+
+      @include breakpoint(medium) {
+        width: rem-calc(50);
+
+        .draft-panel {
+          line-height: 1;
+          display: block;
+          font-size: $small-font-size;
+          text-transform: uppercase;
+          font-weight: 700;
+          color: #696969;
+          padding: 0;
+          text-align: center;
+
+          .icon-banner::before,
+          .icon-comments::before {
+            display: block;
+            margin: rem-calc(24) auto rem-calc(36);
+          }
+
+          .panel-title {
+            display: block;
+            transform: rotate(-90deg);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+          }
+        }
       }
     }
 
@@ -604,8 +583,14 @@
       cursor: auto;
       width: calc(35% - 25px);
 
-      .draft-panel {
-        cursor: pointer;
+      @include breakpoint(small only) {
+        summary {
+          display: none;
+        }
+      }
+
+      &:not([open]) {
+        border-left: 1px solid #d4d4d4;
       }
 
       .comments-box-container {
@@ -788,15 +773,6 @@
               }
             }
           }
-        }
-      }
-
-      .draft-panel {
-        background: #e5e5e5;
-        border-left: 1px solid #d4d4d4;
-
-        .panel-title {
-          display: inline-block;
         }
       }
     }
