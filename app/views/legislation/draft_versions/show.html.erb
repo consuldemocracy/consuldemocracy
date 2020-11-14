@@ -42,8 +42,8 @@
 
     <%= render "legislation/processes/help_gif" %>
 
-    <div class="row draft-allegation medium-collapse">
-      <details class="small-12 calc-index column">
+    <div class="draft-allegation">
+      <details class="calc-index">
         <summary class="draft-panel">
           <span class="icon-banner" aria-hidden="true"></span>
           <span class="panel-title"><%= t("legislation.draft_versions.show.text_toc") %></span>
@@ -53,7 +53,7 @@
           <%= AdminLegislationSanitizer.new.sanitize(@draft_version.toc_html) %>
         </div>
       </details>
-      <div class="small-12 calc-text column border-right border-left">
+      <div class="calc-text border-right border-left">
         <div class="draft-panel">
           <div><span class="panel-title"><%= t("legislation.draft_versions.show.text_body") %></span></div>
         </div>
@@ -72,7 +72,7 @@
       </div>
 
       <% if @draft_version.final_version? %>
-        <div class="small-12 calc-comments end column"></div>
+        <div class="calc-comments"></div>
       <% else %>
         <%= render "comments_panel", draft_version: @draft_version %>
       <% end %>

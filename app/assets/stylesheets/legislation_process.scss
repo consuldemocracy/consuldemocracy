@@ -380,17 +380,26 @@
 
     @include breakpoint(medium) {
       display: flex;
-      padding-left: rem-calc(15);
-      padding-right: rem-calc(15);
-    }
 
-    @media screen and (min-width: 40em) {
       .calc-index {
-        width: calc(35% - 25px);
+        max-width: calc(35% - 25px);
+
+        > * {
+          padding-right: rem-calc(20);
+        }
       }
 
       .calc-text {
-        width: calc(65% - 25px);
+        flex: 1;
+      }
+
+      .calc-comments {
+        min-width: 15rem;
+        width: calc(35% - 25px);
+
+        > * {
+          padding-left: rem-calc(20);
+        }
       }
     }
 
@@ -467,6 +476,8 @@
       padding: rem-calc(16);
 
       @include breakpoint(medium) {
+        margin: 0 auto;
+        max-width: 3 * $grid-row-width / 4;
         padding: rem-calc(32) rem-calc(32) rem-calc(32) rem-calc(48);
       }
 
@@ -533,6 +544,7 @@
       }
 
       @include breakpoint(medium) {
+        min-width: auto;
         width: rem-calc(50);
 
         .draft-panel {
@@ -561,7 +573,6 @@
     }
 
     .calc-text {
-      width: calc(65% - 25px);
       border-right: 0;
 
       .show-comments {
@@ -581,7 +592,6 @@
     .calc-comments {
       background: #fff;
       cursor: auto;
-      width: calc(35% - 25px);
 
       @include breakpoint(small only) {
         summary {
@@ -594,12 +604,11 @@
       }
 
       .comments-box-container {
-        position: absolute;
-        top: rem-calc(230);
+        position: relative;
+        top: rem-calc(180);
       }
 
       .comment-box {
-        width: rem-calc(375);
         padding: rem-calc(4);
         background: #f9f9f9;
         border: 1px solid $border;
