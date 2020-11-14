@@ -326,6 +326,33 @@
   position: relative;
   padding: rem-calc(32) 0;
 
+  %calc-collapsed {
+    .draft-panel {
+      @include breakpoint(medium) {
+        line-height: 1;
+        display: block;
+        font-size: $small-font-size;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #696969;
+        padding: 0;
+        text-align: center;
+
+        .icon-banner::before,
+        .icon-comments::before {
+          display: block;
+          margin: rem-calc(24) auto rem-calc(36);
+        }
+
+        .panel-title {
+          display: block;
+          transform: rotate(-90deg);
+          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        }
+      }
+    }
+  }
+
   .draft-chooser {
 
     h3 {
@@ -388,10 +415,6 @@
       .draft-panel {
         cursor: pointer;
       }
-
-      .draft-index-rotated {
-        display: none;
-      }
     }
 
     @media screen and (min-width: 40em) {
@@ -445,7 +468,6 @@
         line-height: 0;
         color: $text-medium;
         vertical-align: sub;
-        margin-right: rem-calc(4);
       }
     }
 
@@ -536,57 +558,26 @@
       }
     }
 
-    .calc-comments {
+    &:not(.comments-on) .calc-comments {
+      @extend %calc-collapsed;
       position: relative;
 
       .comment-box {
         display: none;
-      }
-
-      .draft-comments-rotated {
-        @include breakpoint(medium) {
-          font-size: $small-font-size;
-          text-transform: uppercase;
-          font-weight: 700;
-          color: #696969;
-          margin-top: rem-calc(64);
-          transform: rotate(-90deg);
-          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-        }
       }
     }
   }
 
   .comments-on {
     .calc-index {
+      @extend %calc-collapsed;
+
       width: rem-calc(50);
       background: #f2f2f2;
       cursor: pointer;
 
-      .panel-title {
-        display: none;
-      }
-
       .draft-index {
         display: none;
-      }
-
-      .draft-index-rotated {
-        @include breakpoint(medium) {
-          line-height: 1;
-          display: block;
-          font-size: $small-font-size;
-          text-transform: uppercase;
-          font-weight: 700;
-          color: #696969;
-          margin-top: $line-height;
-          transform: rotate(-90deg);
-          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-
-          .panel-title {
-            display: block;
-          }
-        }
       }
     }
 
@@ -615,10 +606,6 @@
 
       .draft-panel {
         cursor: pointer;
-      }
-
-      .draft-comments-rotated {
-        display: none;
       }
 
       .comments-box-container {
