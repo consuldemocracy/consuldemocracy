@@ -61,7 +61,7 @@ ro:
       print_proposals: Imprimare propunere
       support_proposals: Sprijină propuneri
       create_budget_investment: Crează buget de investiții
-      print_budget_investments: Printează buget de investiții
+      print_budget_investments: Imprimă buget de investiții
       support_budget_investments: Susțineți bugetul de investiții
       users: Administrarea utilizatorilor
       user_invites: Trimite invitații
@@ -75,7 +75,7 @@ ro:
       proposals_info: Crează-ți propunerea pe http://url.consul
       proposals_title: "Propuneri:"
       budget_investments_info: Participă la http://url.consul
-    print_info: Printează această informație
+    print_info: Imprimă această informație
     proposals:
       alert:
         unverified_user: Utilizatorul nu este verificat
