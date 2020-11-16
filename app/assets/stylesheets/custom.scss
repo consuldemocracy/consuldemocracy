@@ -264,6 +264,14 @@ header {
       }
     }
   }
+
+  tr {
+    border: 0;
+
+    &:hover {
+      color: $brand;
+    }
+  }
 }
 
 .footer {
@@ -418,4 +426,21 @@ input:focus {
 
 body {
   background: $background;
+}
+
+// 11. Tables (layout.scss)
+// ----------
+
+table {
+
+  tr {
+
+    &:nth-child(odd) {
+      background: $background;
+    }
+
+    &:nth-child(even) {
+      background: $light-pink;
+    }
+  }
 }
