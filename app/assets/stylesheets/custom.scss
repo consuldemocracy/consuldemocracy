@@ -3,12 +3,11 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
-$gray: #f9f9f9;
 
 header {
   $border: 1px solid #a8a8a8;
 
-  background-color: $gray;
+  background-color: $background;
   border: 0;
   padding-top: $line-height / 2;
 
@@ -125,7 +124,7 @@ header {
     }
 
     .locale-switcher {
-      background-color: $gray;
+      background-color: $background;
       border: 1px solid #979797;
       border-radius: 4px;
       color: $black;
@@ -379,7 +378,7 @@ header {
   }
 
   .subfooter {
-    background-color: $gray;
+    background-color: $background;
     color: $black;
     padding-bottom: $line-height / 2;
 
@@ -415,4 +414,8 @@ header {
 
 input:focus {
   outline: 0;
+}
+
+body {
+  background: $background;
 }
