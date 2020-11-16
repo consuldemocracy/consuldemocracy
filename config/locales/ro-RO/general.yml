@@ -741,7 +741,7 @@ ro:
         destroy:
           notice: "Nu mai urmăriți propunerea acestui cetățean! <br> Nu veți mai primi notificări legate de această propunere."
     print:
-      print_button: Printează această informație
+      print_button: Imprimare această informație
     search: Caută
     show: Afișează
     suggest:
