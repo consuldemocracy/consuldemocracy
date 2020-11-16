@@ -18,7 +18,7 @@ ro:
           reseted: Parolă resetată cu succes
           random: Generează parolă aleatorie
           save: Salvează parolă
-          print: Printează parolă
+          print: Imprimare parolă
           print_help: Veți avea posibilitatea să printați parola când aceasta va fi salvată.
     account_info:
       change_user: Schimbă utilizatorul
@@ -58,7 +58,7 @@ ro:
       send_email: Trimite emailul de verificare
     menu:
       create_proposal: Crează propunere
-      print_proposals: Printează propunere
+      print_proposals: Imprimare propunere
       support_proposals: Sprijină propuneri
       create_budget_investment: Crează buget de investiții
       print_budget_investments: Printează buget de investiții
