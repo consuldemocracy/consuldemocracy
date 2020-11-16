@@ -32,7 +32,7 @@ ro:
         different_heading_assigned: "Ați votat deja o altă rubrică: %{heading_link}"
         not_enough_available_votes: "Ați atins numărul maxim de voturi permise pe zi"
         change_ballot: schimbă-ți voturile
-        casted_offline: Ați participat deja offline
+        casted_offline: Ați participat deja off line
     groups:
       show:
         title: Selectați o opțiune
