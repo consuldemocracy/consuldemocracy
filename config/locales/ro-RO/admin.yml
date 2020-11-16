@@ -297,7 +297,7 @@ ro:
         table_description: Descriere
         table_actions: Acțiune
       edit:
-        title: Editați statusul reperului
+        title: Editați starea reperului
       update:
         notice: Status de reper actualizat cu succes
       new:
@@ -742,7 +742,7 @@ ro:
         actions: Acțiuni
         draft: Schiță
         preview: Previzualizare
-        empty_newsletters: Nu există newslettere
+        empty_newsletters: Nu există buletine informative noi
       new:
         title: Newsletter nou
         header_footer_help_text: "Antetul și subsolul sunt aceleași pentru toate e-mailurile, le puteți modifica pe <code> app / views / layouts / mailer_header </code> și <code> app / views / layouts / mailer_footer </code>.<br> Puteți înlocui imaginea antetului pe%{link}."
