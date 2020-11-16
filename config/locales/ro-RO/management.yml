@@ -15,11 +15,11 @@ ro:
           password: Parolă
           send_email: Trimite noua parolă prin email
           reset_email_send: Email trimis corect.
-          reseted: Parolă resetată cu succes
+          reseted: Parolă actualizată cu succes
           random: Generează parolă aleatorie
           save: Salvează parolă
           print: Imprimare parolă
-          print_help: Veți avea posibilitatea să printați parola când aceasta va fi salvată.
+          print_help: Veți avea posibilitatea să imprimați parola când aceasta va fi salvată.
     account_info:
       change_user: Schimbă utilizatorul
       document_number_label: "Numărul documentului:"
