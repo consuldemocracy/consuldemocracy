@@ -181,7 +181,7 @@
   @include tooltip;
   line-height: $global-lineheight;
   margin-top: $line-height / 8;
-  white-space: nowrap;
+  width: max-content;
 
   &::before {
     @include css-triangle($tooltip-pip-width, $tooltip-background-color, up);
