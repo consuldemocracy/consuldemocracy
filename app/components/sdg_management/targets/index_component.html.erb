@@ -1,35 +1,33 @@
 <%= header %>
 
-<%# TODO: replace links with tabs %>
-<%= link_to SDG::Goal.model_name.human(count: 2).titleize, sdg_management_goals_path %>
-<%= link_to SDG::Target.model_name.human(count: 2).titleize, sdg_management_targets_path %>
-
-<table>
-  <thead>
-    <tr>
-      <td></td>
-      <th id="target-title" scope="col"><%= attribute_name(:title) %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% targets.group_by(&:goal).map do |goal, targets| %>
-      <tr class="goal-header">
-        <th id="<%= header_id(goal) %>" colspan="2" scope="colgroup">
-          <%= goal.code %>. <%= goal.title %>
-        </th>
+<%= render SDGManagement::SubnavigationComponent.new(current: :targets) do %>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th id="target-title" scope="col"><%= attribute_name(:title) %></th>
       </tr>
+    </thead>
 
-      <% targets.each do |target| %>
-        <tr id="<%= dom_id(target) %>" class="target">
-          <th headers="<%= header_id(goal) %>" id="<%= header_id(target) %>">
-            <%= target.code %>
+    <tbody>
+      <% targets.group_by(&:goal).map do |goal, targets| %>
+        <tr class="goal-header">
+          <th id="<%= header_id(goal) %>" colspan="2" scope="colgroup">
+            <%= goal.code %>. <%= goal.title %>
           </th>
-          <td headers="<%= header_id(goal) %> <%= header_id(target) %> target-title">
-            <%= target.title %>
-          </td>
         </tr>
+
+        <% targets.each do |target| %>
+          <tr id="<%= dom_id(target) %>" class="target">
+            <th headers="<%= header_id(goal) %>" id="<%= header_id(target) %>">
+              <%= target.code %>
+            </th>
+            <td headers="<%= header_id(goal) %> <%= header_id(target) %> target-title">
+              <%= target.title %>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+<% end %>
