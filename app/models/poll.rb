@@ -8,6 +8,7 @@ class Poll < ApplicationRecord
   include Sluggable
   include StatsVersionable
   include Reportable
+  include SDG::Relatable
 
   translates :name,        touch: true
   translates :summary,     touch: true
