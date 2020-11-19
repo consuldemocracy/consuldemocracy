@@ -2820,6 +2820,10 @@ table {
   .cards-container {
     display: flex;
     flex-wrap: wrap;
+
+    .card a {
+      height: 100%;
+    }
   }
 
   .card {
@@ -2828,8 +2832,6 @@ table {
     overflow: visible;
 
     a {
-      height: 100%;
-
       img {
         transition-duration: 0.3s;
         transition-property: transform;
