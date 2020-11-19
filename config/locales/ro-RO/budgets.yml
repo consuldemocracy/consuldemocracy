@@ -207,7 +207,7 @@ ro:
       no_winner_investments: "Nu există investiții câștigătoare în această stare"
       filters:
         status:
-          label: "Statusul proiectului"
+          label: "Statusul curent al proiectului"
           all: "Toate (%{count})"
         milestone_tag:
           label: "Etichete reper"
