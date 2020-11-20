@@ -1,4 +1,6 @@
 class SDGManagement::Goals::IndexComponent < ApplicationComponent
+  include SDGManagement::Header
+
   attr_reader :goals
 
   def initialize(goals)
