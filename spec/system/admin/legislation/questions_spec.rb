@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin legislation questions" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin legislation questions", :admin do
   let!(:process) { create(:legislation_process, title: "An example legislation process") }
 
   context "Feature flag" do

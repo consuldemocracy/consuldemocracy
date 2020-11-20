@@ -467,10 +467,7 @@ describe "Commenting debates" do
       expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
-    scenario "can not comment as a moderator" do
-      admin = create(:administrator)
-
-      login_as(admin.user)
+    scenario "can not comment as a moderator", :admin do
       visit debate_path(debate)
 
       expect(page).not_to have_content "Comment as moderator"

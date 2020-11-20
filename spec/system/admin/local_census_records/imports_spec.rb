@@ -1,12 +1,7 @@
 require "rails_helper"
 
-describe "Imports" do
+describe "Imports", :admin do
   let(:base_files_path) { %w[spec fixtures files local_census_records import] }
-
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
 
   describe "New" do
     scenario "Should show import form" do

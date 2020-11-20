@@ -70,6 +70,10 @@ RSpec.configure do |config|
     Bullet.end_request
   end
 
+  config.before(:each, :admin) do
+    login_as(create(:administrator).user)
+  end
+
   config.before(:each, :delay_jobs) do
     Delayed::Worker.delay_jobs = true
   end

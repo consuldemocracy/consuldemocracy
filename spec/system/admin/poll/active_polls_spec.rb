@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin Active polls" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin Active polls", :admin do
   scenario "Add", :js do
     expect(ActivePoll.first).to be nil
 

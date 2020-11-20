@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin custom content blocks" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin custom content blocks", :admin do
   scenario "Index" do
     block = create(:site_customization_content_block)
     heading_block = create(:heading_content_block)

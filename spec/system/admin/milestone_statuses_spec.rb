@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin milestone statuses" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin milestone statuses", :admin do
   context "Index" do
     scenario "Displaying only not hidden statuses" do
       status1 = create(:milestone_status)

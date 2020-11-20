@@ -1854,11 +1854,8 @@ describe "Successful proposals" do
     end
   end
 
-  scenario "Successful proposals do not show create question button in index" do
+  scenario "Successful proposals do not show create question button in index", :admin do
     successful_proposals = create_successful_proposals
-    admin = create(:administrator)
-
-    login_as(admin.user)
 
     visit proposals_path
 
@@ -1869,11 +1866,8 @@ describe "Successful proposals" do
     end
   end
 
-  scenario "Successful proposals do not show create question button in show" do
+  scenario "Successful proposals do not show create question button in show", :admin do
     successful_proposals = create_successful_proposals
-    admin = create(:administrator)
-
-    login_as(admin.user)
 
     successful_proposals.each do |proposal|
       visit proposal_path(proposal)

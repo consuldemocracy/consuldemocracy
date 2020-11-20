@@ -1,11 +1,10 @@
 require "rails_helper"
 
-describe "Admin moderators" do
+describe "Admin moderators", :admin do
   let!(:user)      { create(:user, username: "Jose Luis Balbin") }
   let!(:moderator) { create(:moderator) }
 
   before do
-    login_as(create(:administrator).user)
     visit admin_moderators_path
   end
 

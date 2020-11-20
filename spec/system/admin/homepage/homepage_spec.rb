@@ -1,14 +1,11 @@
 require "rails_helper"
 
-describe "Homepage" do
+describe "Homepage", :admin do
   before do
     Setting["homepage.widgets.feeds.proposals"] = false
     Setting["homepage.widgets.feeds.debates"] = false
     Setting["homepage.widgets.feeds.processes"] = false
     Setting["feature.user.recommendations"] = false
-
-    admin = create(:administrator).user
-    login_as(admin)
   end
 
   let!(:proposals_feed)    { create(:widget_feed, kind: "proposals") }

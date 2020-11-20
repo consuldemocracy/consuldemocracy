@@ -1,12 +1,6 @@
 require "rails_helper"
 
-describe "Admin dashboard actions" do
-  let(:admin) { create :administrator }
-
-  before do
-    login_as(admin.user)
-  end
-
+describe "Admin dashboard actions", :admin do
   it_behaves_like "nested documentable",
                   "administrator",
                   "dashboard_action",

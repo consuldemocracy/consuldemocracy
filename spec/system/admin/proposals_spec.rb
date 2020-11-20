@@ -1,10 +1,6 @@
 require "rails_helper"
 
-describe "Admin proposals" do
-  before do
-    login_as create(:administrator).user
-  end
-
+describe "Admin proposals", :admin do
   it_behaves_like "admin_milestoneable",
                   :proposal,
                   "admin_polymorphic_path"
@@ -64,9 +60,6 @@ describe "Admin proposals" do
 
     scenario "Successful proposals show create question button" do
       successful_proposals = create_successful_proposals
-      admin = create(:administrator)
-
-      login_as(admin.user)
 
       visit admin_proposals_path
 

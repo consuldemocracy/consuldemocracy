@@ -422,12 +422,9 @@ describe "Commenting polls" do
       expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
-    scenario "can not comment as a moderator" do
+    scenario "can not comment as a moderator", :admin do
       skip "Feature not implemented yet, review soon"
 
-      admin = create(:administrator)
-
-      login_as(admin.user)
       visit poll_path(poll)
 
       expect(page).not_to have_content "Comment as moderator"

@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin legislation draft versions" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin legislation draft versions", :admin do
   context "Feature flag" do
     scenario "Disabled with a feature flag" do
       Setting["process.legislation"] = nil

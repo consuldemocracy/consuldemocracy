@@ -1,12 +1,8 @@
 require "rails_helper"
 
-describe "Admin officials" do
+describe "Admin officials", :admin do
   let!(:citizen) { create(:user, username: "Citizen Kane") }
   let!(:official) { create(:user, official_position: "Mayor", official_level: 5) }
-
-  before do
-    login_as(create(:administrator).user)
-  end
 
   scenario "Index" do
     visit admin_officials_path

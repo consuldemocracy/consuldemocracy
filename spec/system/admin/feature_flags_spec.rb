@@ -1,9 +1,8 @@
 require "rails_helper"
 
-describe "Admin feature flags" do
+describe "Admin feature flags", :admin do
   before do
     Setting["process.budgets"] = true
-    login_as(create(:administrator).user)
   end
 
   scenario "Enabled features are listed on menu" do

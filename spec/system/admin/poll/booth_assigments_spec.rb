@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin booths assignments" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin booths assignments", :admin do
   describe "Admin Booth Assignment management" do
     let!(:poll) { create(:poll) }
     let!(:booth) { create(:poll_booth) }

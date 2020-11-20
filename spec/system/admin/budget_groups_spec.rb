@@ -1,12 +1,7 @@
 require "rails_helper"
 
-describe "Admin budget groups" do
+describe "Admin budget groups", :admin do
   let(:budget) { create(:budget, :drafting) }
-
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
 
   context "Feature flag" do
     before do

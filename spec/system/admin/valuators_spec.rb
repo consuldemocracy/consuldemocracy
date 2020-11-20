@@ -1,14 +1,10 @@
 require "rails_helper"
 
-describe "Admin valuators" do
-  let(:admin) { create(:administrator) }
+describe "Admin valuators", :admin do
   let!(:user) { create(:user, username: "Jose Luis Balbin") }
   let!(:valuator) { create(:valuator, description: "Very reliable") }
 
-  before do
-    login_as(admin.user)
-    visit admin_valuators_path
-  end
+  before { visit admin_valuators_path }
 
   scenario "Show" do
     visit admin_valuator_path(valuator)
