@@ -612,6 +612,29 @@ describe "Admin budgets" do
       expect(page).to have_current_path admin_budget_path(budget)
     end
 
+    scenario "Select administrators and valuators", :js do
+      admin = Administrator.first
+      valuator = create(:valuator)
+
+      budget = create(:budget)
+
+      visit edit_admin_budget_path(budget)
+
+      click_link "Select administrators"
+      check admin.name
+
+      click_link "Select valuators"
+      check valuator.name
+
+      click_button "Update Budget"
+
+      click_link "1 administrator selected"
+      expect(find_field(admin.name)).to be_checked
+
+      click_link "1 valuator selected"
+      expect(find_field(valuator.name)).to be_checked
+    end
+
     scenario "Deselect all selected staff", :js do
       admin = Administrator.first
       valuator = create(:valuator)
