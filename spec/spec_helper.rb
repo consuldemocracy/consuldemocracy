@@ -171,5 +171,5 @@ RSpec.configure do |config|
   config.expect_with(:rspec) { |c| c.syntax = :expect }
 end
 
-# Parallel build helper configuration for travis
+# Parallel build helper configuration for CI
 KnapsackPro::Adapters::RSpecAdapter.bind
