@@ -23,6 +23,11 @@ jobs:
       POSTGRES_HOST: postgres
       RAILS_ENV: test
       COVERALLS: true
+    strategy:
+      fail-fast: false
+      matrix:
+        ci_node_total: [5]
+        ci_node_index: [0, 1, 2, 3, 4]
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
@@ -37,4 +42,10 @@ jobs:
       - name: Compile assets
         run: bundle exec rake assets:precompile > /dev/null 2>&1
       - name: Run test suite
-        run: bin/rspec
+        env:
+          KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC: ${{ secrets.KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC }}
+          KNAPSACK_PRO_CI_NODE_TOTAL: ${{ matrix.ci_node_total }}
+          KNAPSACK_PRO_CI_NODE_INDEX: ${{ matrix.ci_node_index }}
+          KNAPSACK_PRO_FIXED_QUEUE_SPLIT: true
+          KNAPSACK_PRO_LOG_LEVEL: info
+        run: bin/knapsack_pro_rspec
