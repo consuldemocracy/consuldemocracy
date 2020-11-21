@@ -1,5 +1,5 @@
 // Base styles
-// 0. Global styles and variables
+// 0. Global styles
 // 1. Header
 // 2. Homepage and custom pages
 // 3. Footer
@@ -11,33 +11,11 @@
 // 9. Related content
 // 10. Proposals
 // 11. Polls
-// 12. Icons
-// 13. Users
+// 12. Users
 //
 
-// 0. Global styles and variables
+// 0. Global styles
 // ------------------------------
-
-$base-font-size:       18px;
-$border:            #cbc7c7;
-$brand:             #004a83;
-$brand-secondary:   #0054ad;
-$dark:              #2d313b;
-$footer:            #c9d8ff;
-$highlight-soft:    #f0f3f6;
-$highlight-text:    #8a9999;
-$hover:             darken($brand, 20%);
-$hover-secondary:   darken($brand-secondary, 20%);
-$info:              #4ab4f9;
-$label:             #00469f;
-$light:             #f2f5f7;
-$like:              #21a562;
-$link-dark:         #493d57;
-$link-hover:        $brand;
-$link-soft:         #a099a8;
-$text:              #000;
-$unlike:            #da262b;
-
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
@@ -906,7 +884,7 @@ footer {
 
 .subfooter {
   border-top: 0;
-  font-size: $base-font-size;
+  font-size: $small-font-size;
   margin-top: $line-height * 2;
   padding: $line-height 0;
 
@@ -2266,80 +2244,7 @@ footer {
   }
 }
 
-// 12. Icons
-// --------------------
-
-.debate-content h3,
-.debate-show h1,
-.proposal-content h3,
-.proposal-show h1,
-.poll h4,
-.polls-show h1 {
-  position: relative;
-
-  &::before {
-    color: $border;
-    font-family: "Font Awesome 5 Free";
-    font-size: rem-calc(30);
-    font-weight: normal;
-    position: absolute;
-    left: 0;
-  }
-}
-
-.debate-content h3,
-.debate-show h1 {
-
-  &::before {
-    content: "\f27a";
-  }
-}
-
-.proposal-content h3,
-.proposal-show h1 {
-
-  &::before {
-    content: "\f0eb";
-    font-size: rem-calc(36);
-  }
-}
-
-.poll h4,
-.polls-show h1 {
-
-  &::before {
-    content: "\f080";
-    font-size: rem-calc(36);
-  }
-}
-
-.debate-content h3,
-.debate-show h1,
-.debate-info,
-.proposal-content h3,
-.proposal-show h1,
-.proposal-info,
-.poll h4,
-.polls-show h1 {
-  padding-left: $line-height * 2;
-}
-
-.debate-show h1,
-.polls-show h1 {
-
-  &::before {
-    top: 10px;
-  }
-}
-
-.proposal-show h1 {
-
-  &::before {
-    top: 7px;
-  }
-}
-
-// 13. Users
+// 12. Users
 // --------------------
 
 .auth-page {
