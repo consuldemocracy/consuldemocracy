@@ -1,5 +1,5 @@
 ENV["RAILS_ENV"] ||= "test"
-if ENV["TRAVIS"]
+if ENV["COVERALLS"]
   require "coveralls"
   Coveralls.wear!("rails")
 end

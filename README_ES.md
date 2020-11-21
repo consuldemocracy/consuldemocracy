@@ -10,7 +10,7 @@
 
 Aplicación de Participación Ciudadana y Gobierno Abierto
 
-[![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
+![Estado de los tests](https://github.com/consul/consul/workflows/.github/workflows/tests.yml/badge.svg)
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
 [![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg?branch=master)](https://coveralls.io/github/consul/consul?branch=master)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://crowdin.com/project/consul)
