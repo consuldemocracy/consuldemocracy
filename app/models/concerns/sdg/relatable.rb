@@ -4,7 +4,7 @@ module SDG::Relatable
   included do
     has_many :sdg_relations, as: :relatable, dependent: :destroy, class_name: "SDG::Relation"
 
-    %w[SDG::Goal SDG::Target].each do |sdg_type|
+    %w[SDG::Goal SDG::Target SDG::LocalTarget].each do |sdg_type|
       has_many sdg_type.constantize.table_name.to_sym,
                through: :sdg_relations,
                source: :related_sdg,

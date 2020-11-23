@@ -571,6 +571,10 @@ en:
           attributes:
             locale:
               already_translated: Already translated resource
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "must start with the same code as its target followed by a dot and end with a number"
       messages:
         translations_too_short: Is mandatory to provide one translation at least
         record_invalid: "Validation failed: %{errors}"

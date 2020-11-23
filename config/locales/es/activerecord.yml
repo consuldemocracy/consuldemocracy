@@ -573,6 +573,10 @@ es:
           attributes:
             locale:
               already_translated: Recurso ya traducido
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "debe empezar con el código de su meta seguido de un punto y terminar con un número"
       messages:
         translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"
