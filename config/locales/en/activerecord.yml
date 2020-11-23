@@ -287,6 +287,7 @@ en:
         responsible_name: "Person responsible for the group"
       poll:
         name: "Name"
+        title: "Name"
         starts_at: "Start Date"
         ends_at: "Closing Date"
         geozone_restricted: "Restricted by geozone"

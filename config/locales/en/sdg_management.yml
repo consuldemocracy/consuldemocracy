@@ -3,6 +3,11 @@ en:
     header:
       title: "SDG content"
     menu:
+      budget_investments: "Participatory budgets"
+      debates: "Debates"
+      legislation_processes: "Collaborative legislation"
+      polls: "Polls"
+      proposals: "Proposals"
       sdg_content: "Goals and Targets"
     local_targets:
       create:

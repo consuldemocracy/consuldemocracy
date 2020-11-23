@@ -28,6 +28,14 @@ describe SDG::Relatable do
     end
   end
 
+  describe "#sdg_goal_list" do
+    it "orders goals by code" do
+      relatable.sdg_goals = [SDG::Goal[1], SDG::Goal[3], SDG::Goal[2]]
+
+      expect(relatable.sdg_goal_list).to eq "1, 2, 3"
+    end
+  end
+
   describe "#sdg_targets" do
     it "can assign targets to a model" do
       relatable.sdg_targets = [target, another_target]
@@ -43,6 +51,14 @@ describe SDG::Relatable do
       relatable.sdg_targets = [target, another_target]
 
       expect(relatable.reload.sdg_targets).to match_array [target, another_target]
+    end
+  end
+
+  describe "#sdg_target_list" do
+    it "orders targets by code" do
+      relatable.sdg_targets = [SDG::Target[2.2], SDG::Target[1.2], SDG::Target[2.1]]
+
+      expect(relatable.sdg_target_list).to eq "1.2, 2.1, 2.2"
     end
   end
 
