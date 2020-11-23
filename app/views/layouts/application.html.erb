@@ -16,8 +16,6 @@
   <body class="<%= yield (:body_class) %>">
     <%= raw setting["html.per_page_code_body"] %>
 
-    <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
-
     <div class="wrapper <%= yield (:wrapper_class) %>">
       <%= render "layouts/header", with_subnavigation: true %>
 
@@ -44,8 +42,6 @@
       <%= render "layouts/flash" %>
 
       <%= yield %>
-
-      <div class="push"></div>
     </div>
     <div class="footer">
       <%= render "layouts/footer" %>
