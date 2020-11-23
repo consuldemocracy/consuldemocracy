@@ -75,6 +75,9 @@ en:
       sdg/goal:
         one: "goal"
         other: "goals"
+      sdg/local_target:
+        one: "local target"
+        other: "local targets"
       sdg/target:
         one: "target"
         other: "targets"
@@ -318,6 +321,10 @@ en:
         code: "Code"
         title: "Title"
         description: "Description"
+      sdg/local_target:
+        title: "Title"
+      sdg/local_target/translation:
+        title: "Title"
       sdg/target:
         code: "Code"
         title: "Title"

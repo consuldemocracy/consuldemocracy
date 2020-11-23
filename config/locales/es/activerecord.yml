@@ -75,6 +75,9 @@ es:
       sdg/goal:
         one: "objetivo"
         other: "objetivos"
+      sdg/local_target:
+        one: "meta localizada"
+        other: "metas localizadas"
       sdg/target:
         one: "meta"
         other: "metas"
@@ -315,6 +318,10 @@ es:
         code: "Código"
         title: "Título"
         description: "Descripción"
+      sdg/local_target:
+        title: "Título"
+      sdg/local_target/translation:
+        title: "Título"
       sdg/target:
         code: "Código"
         title: "Título"
