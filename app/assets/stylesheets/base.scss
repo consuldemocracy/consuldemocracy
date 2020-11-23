@@ -550,6 +550,13 @@ header {
   }
 }
 
+.subnavigation ul li {
+
+  @include breakpoint(medium) {
+    margin-right: $line-height / 2;
+  }
+}
+
 .additional-content .filter-subnav {
   background: $light;
 }
