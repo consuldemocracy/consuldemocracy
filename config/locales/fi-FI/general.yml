@@ -124,7 +124,6 @@ fi:
       administration: Järjestelmänvalvonta
       available_locales: Saatavilla olevat kielet
       locale: "Kieli:"
-      logo: CONSUL logo
       help: Apua
       my_account_link: Tilini
       proposals: Ehdotukset
