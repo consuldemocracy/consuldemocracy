@@ -8,4 +8,8 @@ class SDG::Goal < ApplicationRecord
   def description
     I18n.t("sdg.goals.goal_#{code}.description")
   end
+
+  def self.[](code)
+    find_by!(code: code)
+  end
 end

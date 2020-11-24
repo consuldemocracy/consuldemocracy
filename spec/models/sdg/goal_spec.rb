@@ -3,7 +3,7 @@ require "rails_helper"
 describe SDG::Goal do
   describe "validations" do
     it "is valid with an existent code" do
-      goal = SDG::Goal.where(code: "1").first_or_initialize
+      goal = SDG::Goal[1]
 
       expect(goal).to be_valid
     end
@@ -21,8 +21,18 @@ describe SDG::Goal do
     end
   end
 
+  describe ".[]" do
+    it "finds existing goals by code" do
+      expect(SDG::Goal[1].code).to be 1
+    end
+
+    it "raises an exception for non-existing codes" do
+      expect { SDG::Goal[100] }.to raise_exception ActiveRecord::RecordNotFound
+    end
+  end
+
   it "translates title" do
-    goal = SDG::Goal.where(code: "1").first_or_create!
+    goal = SDG::Goal[1]
 
     expect(goal.title).to eq "No Poverty"
 
@@ -32,7 +42,7 @@ describe SDG::Goal do
   end
 
   it "translates description" do
-    goal = SDG::Goal.where(code: "1").first_or_create!
+    goal = SDG::Goal[1]
 
     expect(goal.description).to eq "End poverty in all its forms, everywhere."
 
