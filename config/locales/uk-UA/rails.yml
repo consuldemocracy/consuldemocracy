@@ -166,7 +166,7 @@ uk-UA:
         other: "%{count} помилок не дають змоги зберегти цю %{model}"
   helpers:
     select:
-      prompt: Будь даска, оберіть
+      prompt: Будь ласка, оберіть
     submit:
       create: Створити %{model}
       submit: Зберегти %{model}
