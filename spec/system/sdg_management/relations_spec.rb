@@ -70,5 +70,17 @@ describe "SDG Relations", :js do
         expect(page).to have_content "6.1, 6.2"
       end
     end
+
+    scenario "shows link to edit a record" do
+      create(:budget_investment, title: "Build a hospital")
+
+      visit sdg_management_budget_investments_path
+
+      within("tr", text: "Build a hospital") do
+        click_link "Manage goals and targets"
+      end
+
+      expect(page).to have_css "h2", exact_text: "Build a hospital"
+    end
   end
 end

@@ -16,4 +16,13 @@ class SDGManagement::Relations::IndexComponent < ApplicationComponent
     def model_class
       records.model
     end
+
+    def edit_path_for(record)
+      {
+        controller: "sdg_management/relations",
+        action: :edit,
+        relatable_type: record.class.name.tableize,
+        id: record
+      }
+    end
 end

@@ -1,5 +1,7 @@
 es:
   sdg_management:
+    actions:
+      edit: "Asignar objetivos y metas"
     header:
       title: "Contenido ODS"
     menu:

@@ -1,5 +1,7 @@
 en:
   sdg_management:
+    actions:
+      edit: "Manage goals and targets"
     header:
       title: "SDG content"
     menu:
