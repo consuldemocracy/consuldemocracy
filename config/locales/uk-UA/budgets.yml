@@ -143,8 +143,8 @@ uk-UA:
         message: "Я створив інвестиційний проект %{title} у %{handle}. Створіть теж інвестиційний проект!"
       show:
         author_deleted: Користувача видалено
-        price_explanation: Обгрунтування вартості
-        unfeasibility_explanation: Обгрунтування недоцільності
+        price_explanation: Обґрунтування вартості
+        unfeasibility_explanation: Обґрунтування недоцільності
         code: "Код інвестиційного проєкту:<strong>%{code}</strong>"
         location: "Розташування: <strong>%{location}</strong>"
         organization_name: "Запропоновано від імені: <strong>%{name}</strong>"
@@ -160,7 +160,7 @@ uk-UA:
         project_selected: "Цей інвестиційний проєкт <strong> був відібраний </strong> для фази голосування."
         project_winner: "Інвестиційний проєкт, який отримав перемогу"
         project_not_selected: "Цей інвестиційний проєкт <strong> не був відібраний </strong> для фази голосування."
-        see_price_explanation: Переглянути обгрунтування вартості
+        see_price_explanation: Переглянути обґрунтування вартості
       wrong_price_format: Тільки цілі числа
       investment:
         add: Голосувати
@@ -204,7 +204,7 @@ uk-UA:
       see_results: Переглянути результати
     results:
       link: Результати
-      page_title: "%{budget} - Рузультати"
+      page_title: "%{budget} - Результати"
       heading: "Результати бюджетів участі"
       heading_selection_title: "За дільницями"
       ballot_lines_count: Голоси
@@ -224,7 +224,7 @@ uk-UA:
       page_title: "%{budget} - Віхи"
       heading: "Віхи бюджетів участі"
       heading_selection_title: "За дільницями"
-      no_winner_investments: "У цій обсласті немає інвестиції, що отримала перемогу"
+      no_winner_investments: "У цій області немає інвестиції, що отримала перемогу"
       filters:
         status:
           label: "Поточний стан проєкту"
