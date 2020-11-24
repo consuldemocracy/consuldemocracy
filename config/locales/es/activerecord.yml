@@ -319,9 +319,12 @@ es:
         title: "Título"
         description: "Descripción"
       sdg/local_target:
+        code: "Código"
+        target_id: "Meta"
         title: "Título"
       sdg/local_target/translation:
         title: "Título"
+        description: "Descripción"
       sdg/target:
         code: "Código"
         title: "Título"

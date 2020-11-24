@@ -1,4 +1,8 @@
-<%= header %>
+<%= header do %>
+  <%= link_to t("sdg_management.local_targets.index.new"),
+              new_sdg_management_local_target_path,
+              class: "new-link" %>
+<% end %>
 
 <%= render SDGManagement::SubnavigationComponent.new(current: :local_targets) do %>
   <table>
