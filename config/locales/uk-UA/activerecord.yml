@@ -244,11 +244,11 @@ uk-UA:
         feasibility_unfeasible: "Реалізація недоцільна"
         incompatible: "Позначити як несумісний"
         milestone_tag_list: "Теги етапу"
-        price_explanation: "Обгрунтування вартості"
+        price_explanation: "Обґрунтування вартості"
         selected: "Позначити як вибране"
         selected_true: "Вибране"
         selected_false: "Не вибране"
-        unfeasibility_explanation: "Обгрунтування доцільності реалізації"
+        unfeasibility_explanation: "Обґрунтування доцільності реалізації"
         valuation_finished: "Оцінювання завершено"
         valuator_ids: "Групи"
         valuation_tag_list: "Теги"
@@ -585,7 +585,7 @@ uk-UA:
         map_location:
           attributes:
             map:
-              invalid: Місцезнаходження не можу бути відсутнім. Зробіть відмітку чи встановіть прапорець, якщо геолокалізація не потрібна
+              invalid: Місцезнаходження не може бути відсутнім. Зробіть відмітку чи встановіть прапорець, якщо геолокалізація не потрібна
         poll/voter:
           attributes:
             document_number:
