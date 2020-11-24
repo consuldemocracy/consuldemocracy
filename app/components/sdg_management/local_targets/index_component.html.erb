@@ -10,13 +10,14 @@
       <tr>
         <td></td>
         <th id="local-target-title" scope="col"><%= attribute_name(:title) %></th>
+        <th id="local-target-actions" scope="col"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
 
     <tbody>
       <% local_targets.group_by(&:target).map do |target, local_targets| %>
         <tr class="target-header">
-          <th id="<%= header_id(target) %>" colspan="2" scope="colgroup">
+          <th id="<%= header_id(target) %>" colspan="3" scope="colgroup">
             <%= target.code %> <%= target.title %>
           </th>
         </tr>
@@ -28,6 +29,8 @@
             </th>
             <td headers="<%= header_id(target) %> <%= header_id(local_target) %> local-target-title">
               <%= local_target.title %>
+            </td>
+            <td headers="<%= header_id(local_target) %> local-target-actions">
             </td>
           </tr>
         <% end %>
