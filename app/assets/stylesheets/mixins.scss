@@ -198,3 +198,14 @@
     transform: translateX(-50%);
   }
 }
+
+@mixin hollow-button($color: $link) {
+  @include button($style: hollow, $background: $color);
+  font-size: $base-font-size;
+  margin-bottom: 0;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}

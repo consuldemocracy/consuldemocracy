@@ -614,6 +614,16 @@ code {
   }
 }
 
+.admin-content > header {
+  align-items: flex-start;
+  display: flex;
+
+  a {
+    @include hollow-button;
+    margin-left: auto;
+  }
+}
+
 .admin-content .select-geozone,
 .admin-content .select-heading {
 
