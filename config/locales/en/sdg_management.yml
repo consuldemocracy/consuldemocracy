@@ -7,6 +7,8 @@ en:
     local_targets:
       create:
         notice: "Local target created successfully"
+      destroy:
+        notice: "Local target deleted successfully"
       edit:
         title: "Edit local target"
       form:

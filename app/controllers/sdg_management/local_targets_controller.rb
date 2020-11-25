@@ -35,6 +35,12 @@ class SDGManagement::LocalTargetsController < SDGManagement::BaseController
     end
   end
 
+  def destroy
+    @local_target = LocalTarget.find(params[:id])
+    @local_target.destroy!
+    redirect_to sdg_management_local_targets_path, notice: t("sdg_management.local_targets.destroy.notice")
+  end
+
   private
 
     def local_target_params
