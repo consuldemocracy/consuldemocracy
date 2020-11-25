@@ -21,6 +21,20 @@ class SDGManagement::LocalTargetsController < SDGManagement::BaseController
     end
   end
 
+  def edit
+    @local_target = LocalTarget.find(params[:id])
+  end
+
+  def update
+    @local_target = LocalTarget.find(params[:id])
+
+    if @local_target.update(local_target_params)
+      redirect_to sdg_management_local_targets_path, notice: t("sdg_management.local_targets.update.notice")
+    else
+      render :edit
+    end
+  end
+
   private
 
     def local_target_params

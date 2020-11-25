@@ -3,5 +3,5 @@ namespace :sdg_management do
 
   resources :goals, only: [:index]
   resources :targets, only: [:index]
-  resources :local_targets, only: [:index, :new, :create]
+  resources :local_targets, only: [:index, :new, :create, :edit, :update]
 end

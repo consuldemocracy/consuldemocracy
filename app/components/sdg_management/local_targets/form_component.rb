@@ -13,7 +13,11 @@ class SDGManagement::LocalTargets::FormComponent < ApplicationComponent
   private
 
     def title
-      t("sdg_management.local_targets.new.title")
+      if local_target.persisted?
+        t("sdg_management.local_targets.edit.title")
+      else
+        t("sdg_management.local_targets.new.title")
+      end
     end
 
     def form_url

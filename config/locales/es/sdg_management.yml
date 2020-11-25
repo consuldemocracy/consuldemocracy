@@ -7,6 +7,8 @@ es:
     local_targets:
       create:
         notice: "Meta localizada creada correctamente"
+      edit:
+        title: "Editar meta localizada"
       form:
         code: "El código debe comenzar por el código de la meta seleccionada seguida de un '.'"
         description: "Este texto ser mostrará como ayuda para los usuarios."
@@ -14,3 +16,5 @@ es:
         new: "Crear meta localizada"
       new:
         title: "Nueva meta localizada"
+      update:
+        notice: "Meta localizada asctualizada correctamente"

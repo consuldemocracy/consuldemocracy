@@ -20,4 +20,11 @@ class SDGManagement::LocalTargets::IndexComponent < ApplicationComponent
     def header_id(object)
       "#{dom_id(object)}_header"
     end
+
+    def actions(local_target)
+      render Admin::TableActionsComponent.new(
+        local_target,
+        actions: [:edit],
+        edit_path: edit_sdg_management_local_target_path(local_target))
+    end
 end
