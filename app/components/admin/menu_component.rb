@@ -68,6 +68,14 @@ class Admin::MenuComponent < ApplicationComponent
       %w[newsletters emails_download admin_notifications system_emails]
     end
 
+    def sdg_managers?
+      controller_name == "managers" && controller.class.parent ==  Admin::SDG
+    end
+
+    def managers?
+      controller_name == "managers" && controller.class.parent ==  Admin
+    end
+
     def officers_link
       [
         t("admin.menu.poll_officers"),
@@ -272,7 +280,7 @@ class Admin::MenuComponent < ApplicationComponent
       [
         t("admin.menu.managers"),
         admin_managers_path,
-        controller_name == "managers"
+        managers?
       ]
     end
 
@@ -345,6 +353,14 @@ class Admin::MenuComponent < ApplicationComponent
         t("admin.menu.dashboard_actions"),
         admin_dashboard_actions_path,
         controller_name == "actions"
+      ]
+    end
+
+    def sdg_managers_link
+      [
+        t("admin.menu.sdg_managers"),
+        admin_sdg_managers_path,
+        sdg_managers?
       ]
     end
 end
