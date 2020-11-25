@@ -23,6 +23,11 @@ class User < ApplicationRecord
     signature_sheet_officer.present?
   end
 
+  def username_required?
+    return false if origin_participacion
+    !organization? && !erased?
+  end
+
   # Queremos evitar que podamos autenticarnos como usuarios de participacion
   # externos... que la clave es una de mentira...
   def self.find_for_database_authentication(warden_conditions)
