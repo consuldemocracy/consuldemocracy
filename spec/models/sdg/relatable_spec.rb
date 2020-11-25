@@ -90,4 +90,30 @@ describe SDG::Relatable do
       expect(relatable.reload.related_sdgs).to match_array related_sdgs
     end
   end
+
+  describe "#sdg_target_list=" do
+    it "assigns a single target" do
+      relatable.sdg_target_list = "1.1"
+
+      expect(relatable.reload.sdg_targets).to match_array [SDG::Target["1.1"]]
+    end
+
+    it "assigns multiple targets" do
+      relatable.sdg_target_list = "1.1,2.3"
+
+      expect(relatable.reload.sdg_targets).to match_array [SDG::Target["1.1"], SDG::Target["2.3"]]
+    end
+
+    it "ignores trailing spaces and spaces between commas" do
+      relatable.sdg_target_list = " 1.1,  2.3 "
+
+      expect(relatable.reload.sdg_targets).to match_array [SDG::Target["1.1"], SDG::Target["2.3"]]
+    end
+
+    it "assigns goals" do
+      relatable.sdg_target_list = "1.1,1.2,2.3"
+
+      expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], SDG::Goal[2]]
+    end
+  end
 end

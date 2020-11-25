@@ -83,4 +83,19 @@ describe "SDG Relations", :js do
       expect(page).to have_css "h2", exact_text: "Build a hospital"
     end
   end
+
+  describe "Edit" do
+    scenario "allows changing the targets" do
+      process = create(:legislation_process, title: "SDG process")
+      process.sdg_targets = [SDG::Target["3.3"]]
+
+      visit sdg_management_edit_legislation_process_path(process)
+      fill_in "Targets", with: "1.2, 2.1"
+      click_button "Update Process"
+
+      within("tr", text: "SDG process") do
+        expect(page).to have_css "td", exact_text: "1.2, 2.1"
+      end
+    end
+  end
 end

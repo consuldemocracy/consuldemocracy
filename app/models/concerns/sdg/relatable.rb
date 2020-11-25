@@ -23,4 +23,13 @@ module SDG::Relatable
   def sdg_target_list
     sdg_targets.sort.map(&:code).join(", ")
   end
+
+  def sdg_target_list=(codes)
+    targets = codes.tr(" ", "").split(",").map { |code| SDG::Target[code] }
+
+    transaction do
+      self.sdg_targets = targets
+      self.sdg_goals = targets.map(&:goal).uniq
+    end
+  end
 end

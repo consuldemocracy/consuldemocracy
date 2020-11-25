@@ -2,6 +2,7 @@ es:
   attributes:
     geozone_id: "Ámbito de actuación"
     results_enabled: "Mostrar resultados"
+    sdg_target_list: "Metas"
     stats_enabled: "Mostrar estadísticas"
     advanced_stats_enabled: "Mostrar estadísticas avanzadas"
     name: Nombre
