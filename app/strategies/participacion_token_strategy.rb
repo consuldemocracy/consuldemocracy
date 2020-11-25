@@ -23,8 +23,8 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
       if(u)
         u.participacion_id = eu.participacion_id
         hasChanges = false
-        if(eu.fullname != u.username)
-          u.username = eu.fullname
+        if(eu.fullname[0..60] != u.username)
+          u.username = eu.fullname[0..60]
           hasChanges = true
         end
         if(eu.validated && !u.level_three_verified?)
@@ -48,7 +48,7 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
         u.save! if(hasChanges)
       else
         u = User.new(
-                    username: eu.fullname,
+                    username: eu.fullname[0..60],
                     email: eu.email,
                     confirmed_at: DateTime.current,
                     password: Devise.friendly_token[0, 20],
@@ -66,7 +66,7 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
         end
 
         # Podemos no tener email de los usuarios que provienen del sistema externo,
-        # por ejemplo usuarios
+        # por ejemplo usuarios con certificado
         u.skip_email_validation = true
 
         u.save!
