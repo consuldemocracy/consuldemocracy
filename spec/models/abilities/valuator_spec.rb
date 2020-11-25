@@ -39,4 +39,7 @@ describe Abilities::Valuator do
 
     it { should_not be_able_to(:comment_valuation, assigned_investment) }
   end
+
+  it { should_not be_able_to(:read, SDG::Goal) }
+  it { should_not be_able_to(:read, SDG::Target) }
 end

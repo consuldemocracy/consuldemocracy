@@ -4,6 +4,7 @@ module Abilities
 
     def initialize(user)
       merge Abilities::Moderation.new(user)
+      merge Abilities::SDG::Manager.new(user)
 
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil

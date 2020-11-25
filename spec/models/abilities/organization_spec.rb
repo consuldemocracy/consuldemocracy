@@ -22,4 +22,7 @@ describe "Abilities::Organization" do
 
   it { should be_able_to(:create, Comment) }
   it { should_not be_able_to(:vote, Comment) }
+
+  it { should_not be_able_to(:read, SDG::Goal) }
+  it { should_not be_able_to(:read, SDG::Target) }
 end

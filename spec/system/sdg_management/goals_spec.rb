@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Goals", :js do
-  before { login_as(create(:administrator).user) }
+  before { login_as(create(:sdg_manager).user) }
 
   describe "Index" do
     scenario "Visit the index" do

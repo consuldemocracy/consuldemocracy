@@ -304,4 +304,7 @@ describe Abilities::Common do
     it { should be_able_to(:disable_recommendations, Debate) }
     it { should be_able_to(:disable_recommendations, Proposal) }
   end
+
+  it { should_not be_able_to(:read, SDG::Goal) }
+  it { should_not be_able_to(:read, SDG::Target) }
 end

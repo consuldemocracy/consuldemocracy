@@ -52,4 +52,7 @@ describe Abilities::Everyone do
   it { should be_able_to(:summary, create(:legislation_process, :past)) }
   it { should_not be_able_to(:summary, create(:legislation_process, :open)) }
   it { should_not be_able_to(:summary, create(:legislation_process, :past, :not_published)) }
+
+  it { should_not be_able_to(:read, SDG::Goal) }
+  it { should_not be_able_to(:read, SDG::Target) }
 end

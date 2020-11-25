@@ -108,4 +108,7 @@ describe Abilities::Moderator do
     it { should_not be_able_to(:comment_as_administrator, proposal) }
     it { should_not be_able_to(:comment_as_administrator, legislation_question) }
   end
+
+  it { should_not be_able_to(:read, SDG::Goal) }
+  it { should_not be_able_to(:read, SDG::Target) }
 end
