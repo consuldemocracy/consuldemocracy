@@ -621,6 +621,12 @@ en:
         add: Add
       search:
         title: "Managers: User search"
+    sdg_managers:
+      index:
+        no_sdg_managers: There are no users.
+    sdg/managers:
+      sdg/manager:
+        add: Add
     menu:
       activity: Moderator activity
       admin: Admin menu
@@ -637,6 +643,7 @@ en:
       hidden_users: Hidden users
       administrators: Administrators
       managers: Managers
+      sdg_managers: SDG Managers
       moderators: Moderators
       messaging_users: Messages to users
       newsletters: Newsletters

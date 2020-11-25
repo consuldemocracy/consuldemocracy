@@ -9,4 +9,8 @@ describe "Abilities::SDG::Manager" do
 
   it { should be_able_to(:read, SDG::Goal) }
   it { should be_able_to(:read, SDG::Target) }
+
+  it { should_not be_able_to(:read, SDG::Manager) }
+  it { should_not be_able_to(:create, SDG::Manager) }
+  it { should_not be_able_to(:delete, SDG::Manager) }
 end

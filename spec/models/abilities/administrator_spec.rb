@@ -109,4 +109,8 @@ describe Abilities::Administrator do
 
   it { should be_able_to(:read, SDG::Goal) }
   it { should be_able_to(:read, SDG::Target) }
+
+  it { should be_able_to(:read, SDG::Manager) }
+  it { should be_able_to(:create, SDG::Manager) }
+  it { should be_able_to(:destroy, SDG::Manager) }
 end

@@ -42,6 +42,16 @@ describe "Admin" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
+  scenario "Access as SDG manager is not authorized", :js do
+    create(:sdg_manager, user: user)
+    login_as(user)
+    visit admin_root_path
+
+    expect(page).not_to have_current_path(admin_root_path)
+    expect(page).to have_current_path(root_path)
+    expect(page).to have_content "You do not have permission to access this page"
+  end
+
   scenario "Access as poll officer is not authorized" do
     login_as(create(:poll_officer).user)
     visit admin_root_path
@@ -59,12 +69,15 @@ describe "Admin" do
   end
 
   scenario "Admin access links", :admin do
+    Setting["feature.sdg"] = true
+
     visit root_path
 
     expect(page).to have_link("Administration")
     expect(page).to have_link("Moderation")
     expect(page).to have_link("Valuation")
     expect(page).to have_link("Management")
+    expect(page).to have_link("SDG content")
   end
 
   scenario "Admin dashboard", :admin do

@@ -113,6 +113,10 @@ namespace :admin do
     get :search, on: :collection
   end
 
+  namespace :sdg do
+    resources :managers, only: [:index, :create, :destroy]
+  end
+
   resources :administrators, only: [:index, :create, :destroy, :edit, :update] do
     get :search, on: :collection
   end

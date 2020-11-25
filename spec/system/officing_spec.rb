@@ -42,6 +42,20 @@ describe "Poll Officing" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
+  scenario "Access as SDG manager is not authorized", :js do
+    create(:sdg_manager, user: user)
+    login_as(user)
+    visit root_path
+
+    expect(page).not_to have_link("Polling officers")
+
+    visit officing_root_path
+
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
+    expect(page).to have_content "You do not have permission to access this page"
+  end
+
   scenario "Access as a valuator is not authorized" do
     create(:valuator, user: user)
     login_as(user)
