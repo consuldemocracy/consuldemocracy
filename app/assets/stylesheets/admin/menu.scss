@@ -8,6 +8,20 @@
     margin-bottom: 0;
     margin-left: 0;
     padding: 0;
+  }
+
+  > ul > li a {
+    font-weight: bold;
+
+    @mixin icon($name, $style) {
+      @include has-fa-icon($name, $style);
+
+      &::before {
+        font-size: rem-calc(20);
+        margin-left: rem-calc(8);
+        margin-right: rem-calc(10);
+      }
+    }
 
     [class^="icon-"] {
       color: #fff;
@@ -18,10 +32,81 @@
       vertical-align: middle;
       width: $line-height * 1.5;
     }
-  }
 
-  > ul > li a {
-    font-weight: bold;
+    &.booths-link {
+      @include icon(archive, solid);
+    }
+
+    &.budgets-link,
+    &.investments-link {
+      @include icon(chart-pie, solid);
+    }
+
+    &.comments-link {
+      @include icon(comments, regular);
+    }
+
+    &.dashboard-link {
+      @include icon(check, solid);
+    }
+
+    &.debates-link {
+      @include icon(comment-alt, solid);
+    }
+
+    &.invitations-link {
+      @include icon(envelope, regular);
+    }
+
+    &.legislation-link {
+      @include icon(file-alt, solid);
+    }
+
+    &.messages-link {
+      @include icon(file-archive, regular);
+    }
+
+    &.moderated-content-link {
+      @include icon(eye, regular);
+    }
+
+    &.polls-link {
+      @include icon(check-circle, regular);
+    }
+
+    &.print-proposals-link,
+    &.print-investments-link {
+      @include icon(print, solid);
+    }
+
+    &.profiles-link {
+      @include icon(users, solid);
+    }
+
+    &.proposals-link,
+    &.proposal-notifications-link {
+      @include icon(lightbulb, solid);
+    }
+
+    &.settings-link {
+      @include icon(cog, solid);
+    }
+
+    &.signature-sheets-link {
+      @include icon(file-alt, regular);
+    }
+
+    &.site-customization-link {
+      @include icon(pencil-alt, solid);
+    }
+
+    &.stats-link {
+      @include icon(chart-line, solid);
+    }
+
+    &.users-link {
+      @include icon(user, solid);
+    }
   }
 
   li {
