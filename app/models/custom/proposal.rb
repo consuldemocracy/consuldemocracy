@@ -6,4 +6,3 @@ class Proposal < ApplicationRecord
        author.origin_participacion && author.level_three_verified? || Setting["feature.user.skip_verification"].present?
     end
 end
-~       
