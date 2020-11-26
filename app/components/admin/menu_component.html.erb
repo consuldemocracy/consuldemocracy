@@ -90,13 +90,12 @@
   <% end %>
 
   <% messages_sections = %w[newsletters emails_download admin_notifications system_emails] %>
-  <% messages_menu_active = messages_sections.include?(controller_name) %>
-  <li class="section-title" <%= "class=is-active" if messages_menu_active %>>
+  <li class="section-title">
     <a href="#">
       <span class="icon-zip"></span>
       <strong><%= t("admin.menu.messaging_users") %></strong>
     </a>
-    <ul id="messaging_users_menu" <%= "class=is-active" if messages_menu_active %>>
+    <ul id="messaging_users_menu" <%= "class=is-active" if messages_sections.include?(controller_name) %>>
       <li <%= "class=is-active" if controller_name == "newsletters" %>>
         <%= link_to t("admin.menu.newsletters"), admin_newsletters_path %>
       </li>
@@ -221,7 +220,7 @@
     </ul>
   </li>
 
-  <li class="section-title" <%= "class=is-active" if controller_name == "stats" %>>
+  <li class="section-title <%= "is-active" if controller_name == "stats" %>">
     <%= link_to admin_stats_path do %>
       <span class="icon-stats"></span><%= t("admin.menu.stats") %>
     <% end %>
