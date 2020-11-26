@@ -1,6 +1,6 @@
 <ul id="admin_menu" data-accordion-menu data-multi-open="true">
   <% if feature?(:proposals) %>
-    <li class="section-title">
+    <li>
       <%= link_to admin_proposals_path do %>
         <span class="icon-proposals"></span>
         <strong><%= t("admin.menu.proposals") %></strong>
@@ -9,7 +9,7 @@
   <% end %>
 
   <% if feature?(:debates) %>
-    <li class="section-title <%= "is-active" if controller_name == "debates" %>">
+    <li class="<%= "is-active" if controller_name == "debates" %>">
       <%= link_to admin_debates_path do %>
         <span class="icon-debates"></span>
         <strong><%= t("admin.menu.debates") %></strong>
@@ -17,7 +17,7 @@
     </li>
   <% end %>
 
-  <li class="section-title <%= "is-active" if controller_name == "comments" %>">
+  <li class="<%= "is-active" if controller_name == "comments" %>">
     <%= link_to admin_comments_path do %>
       <span class="icon-comments"></span>
       <strong><%= t("admin.menu.comments") %></strong>
@@ -25,7 +25,7 @@
   </li>
 
   <% if feature?(:polls) %>
-    <li class="section-title <%= "is-active" if polls? %>">
+    <li class="<%= "is-active" if polls? %>">
       <%= link_to admin_polls_path do %>
         <span class="icon-checkmark-circle"></span>
         <strong><%= t("admin.menu.polls") %></strong>
@@ -34,7 +34,7 @@
   <% end %>
 
   <% if feature?(:legislation) %>
-    <li class="section-title <%= "is-active" if controller.class.parent == Admin::Legislation %>">
+    <li class="<%= "is-active" if controller.class.parent == Admin::Legislation %>">
       <%= link_to admin_legislation_processes_path do %>
         <span class="icon-file-text"></span>
         <strong><%= t("admin.menu.legislation") %></strong>
@@ -43,7 +43,7 @@
   <% end %>
 
   <% if feature?(:budgets) %>
-    <li class="section-title <%= "is-active" if budgets? %>">
+    <li class="<%= "is-active" if budgets? %>">
       <%= link_to admin_budgets_path do %>
         <span class="icon-budget"></span>
         <strong><%= t("admin.menu.budgets") %></strong>
@@ -51,7 +51,7 @@
     </li>
   <% end %>
 
-  <li class="section-title">
+  <li>
     <a href="#">
       <span class="icon-box"></span>
       <strong><%= t("admin.menu.title_booths") %></strong>
@@ -81,7 +81,7 @@
   </li>
 
   <% if feature?(:signature_sheets) %>
-    <li class="section-title <%= "is-active" if controller_name == "signature_sheets" %>">
+    <li class="<%= "is-active" if controller_name == "signature_sheets" %>">
       <%= link_to admin_signature_sheets_path do %>
         <span class="icon-file-text-o"></span>
         <strong><%= t("admin.menu.signature_sheets") %></strong>
@@ -89,7 +89,7 @@
     </li>
   <% end %>
 
-  <li class="section-title">
+  <li>
     <a href="#">
       <span class="icon-zip"></span>
       <strong><%= t("admin.menu.messaging_users") %></strong>
@@ -110,7 +110,7 @@
     </ul>
   </li>
 
-  <li class="section-title">
+  <li>
     <a href="#">
       <span class="icon-edit"></span>
       <strong><%= t("admin.menu.title_site_customization") %></strong>
@@ -141,7 +141,7 @@
     </ul>
   </li>
 
-  <li class="section-title">
+  <li>
     <a href="#">
       <span class="icon-eye"></span>
       <strong><%= t("admin.menu.title_moderated_content") %></strong>
@@ -183,7 +183,7 @@
     </ul>
   </li>
 
-  <li class="section-title">
+  <li>
     <a href="#">
       <span class="icon-organizations"></span>
       <strong><%= t("admin.menu.title_profiles") %></strong>
@@ -219,13 +219,13 @@
     </ul>
   </li>
 
-  <li class="section-title <%= "is-active" if controller_name == "stats" %>">
+  <li class="<%= "is-active" if controller_name == "stats" %>">
     <%= link_to admin_stats_path do %>
       <span class="icon-stats"></span><%= t("admin.menu.stats") %>
     <% end %>
   </li>
 
-  <li class="section-title">
+  <li>
     <a href="#">
       <span class="icon-settings"></span>
       <strong><%= t("admin.menu.title_settings") %></strong>
@@ -257,7 +257,7 @@
       </li>
     </ul>
   </li>
-  <li class="section-title">
+  <li>
     <a href="#">
       <span class="icon-check"></span>
       <strong><%= t("admin.menu.dashboard") %></strong>
