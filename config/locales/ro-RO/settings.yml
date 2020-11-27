@@ -78,9 +78,9 @@ ro:
       poster_description: Descrierea afișului
       poster_description_description: Descrierea detaliată a funcției de afiș
     analytics_url: "Informatii statistice"
-    proposal_notification_minimum_interval_in_days: "Intervalul minim (de zile) pentru ca autorii sa trimita notificari noi"
+    proposal_notification_minimum_interval_in_days: "Intervalul minim (de zile) pentru ca autorii să trimită notificări pentru o nouă propunere"
     proposal_notification_minimum_interval_in_days_description: "Numarul de zile in care utilizatorul poate trimite notificari pentru cei care urmaresc propunerea"
-    direct_message_max_per_day: "Numarul maxim de mesaje directe pe zi"
+    direct_message_max_per_day: "Numărul maxim de mesaje directe pe zi"
     direct_message_max_per_day_description: "Numarul maxim de mesaje pe care un utilizator le poate trimite intr-o zi"
     feature:
       twitter_login: "Autentificare pe Twitter"
