@@ -469,7 +469,7 @@ describe "Ballots" do
 
     click_link "Go back to budgets"
 
-    expect(page).to have_current_path(budgets_path)
+    expect(page).to have_current_path(budget_path(budget))
   end
 
   context "Permissions" do
