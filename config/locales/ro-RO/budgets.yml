@@ -5,8 +5,15 @@ ro:
         title: Votul tău
         amount_available:
           knapsack: "Mai aveți <span>%{count}</span> de investit."
+          approval:
+            zero: "Încă puteți exprima <span>%{count}</span> voturi."
         amount_spent:
           knapsack: "Sumă cheltuită <span>%{count}</span>"
+          approval:
+            zero: "Voturi exprimate: <span>%{count}</span>"
+            one: "Voturi exprimate: <span>%{count}</span>"
+            few: "Voturi exprimate: <span>%{count}</span>"
+            other: "Voturi exprimate: <span>%{count}</span>"
         amount_limit:
           knapsack: "%{count}"
           approval:
