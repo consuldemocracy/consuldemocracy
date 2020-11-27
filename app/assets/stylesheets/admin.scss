@@ -62,6 +62,7 @@ $sidebar-active: #f4fcd0;
     border-bottom: 1px solid #eee;
     color: #000;
     height: auto;
+    padding-top: $line-height / 2;
 
     @include breakpoint(small only) {
 
@@ -134,7 +135,6 @@ $sidebar-active: #f4fcd0;
 
     @include breakpoint(medium) {
       height: auto !important;
-      padding-top: $line-height / 2;
     }
 
     a {
