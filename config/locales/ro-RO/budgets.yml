@@ -7,6 +7,9 @@ ro:
           knapsack: "Mai aveți <span>%{count}</span> de investit."
           approval:
             zero: "Încă puteți exprima <span>%{count}</span> voturi."
+            one: "Încă puteți exprima <span>%{count}</span> vot."
+            few: "Încă puteți exprima <span>%{count}</span> voturi."
+            other: "Încă puteți exprima <span>%{count}</span> voturi."
         amount_spent:
           knapsack: "Sumă cheltuită <span>%{count}</span>"
           approval:
