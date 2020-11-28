@@ -244,6 +244,20 @@ header {
 
   .admin-top-bar {
     background: transparent;
+
+    .top-bar-title {
+      flex: 19%;
+      margin-right: 0;
+      min-width: 14rem;
+
+      a {
+        float: left;
+      }
+    }
+
+    .responsive-menu {
+      flex: 81%;
+    }
   }
 
   .top-bar {

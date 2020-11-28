@@ -16,29 +16,21 @@
     </div>
 
     <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text">
-            <% if namespace == "officing" %>
-              <h1>
-                <%= link_to "#" do %>
-                  <%= setting["org_name"] %>
-                  <br><small><%= namespaced_header_title %></small>
-                <% end %>
-              </h1>
-            <% else %>
-              <h1>
-                <%= link_to namespaced_root_path do %>
-                  <%= setting["org_name"] %>
-                  <br><small><%= namespaced_header_title %></small>
-                <% end %>
-              </h1>
-            <% end %>
-          </li>
-        </ul>
+      <div class="top-bar-title">
+        <h1>
+        <% if namespace == "officing" %>
+          <%= link_to "#" do %>
+            <%= image_tag(image_path_for("logo_header.png"), alt: setting["org_name"]) %>
+          <% end %>
+        <% else %>
+          <%= link_to namespaced_root_path do %>
+            <%= image_tag(image_path_for("logo_header.png"), alt: setting["org_name"]) %>
+          <% end %>
+        <% end %>
+        </h1>
       </div>
 
-      <div id="responsive_menu">
+      <div id="responsive_menu" class="responsive-menu">
         <div class="top-bar-right">
           <ul class="dropdown menu" data-dropdown-menu>
             <%= render "shared/admin_login_items" %>
