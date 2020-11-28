@@ -444,3 +444,38 @@ table {
     }
   }
 }
+
+// 02. Sidebar (admin.scss)
+// -----------
+
+.admin-sidebar {
+  background: $background;
+
+  ul {
+    [class^="icon-"] {
+      color: $black;
+    }
+  }
+
+  li {
+    &.is-active a {
+      color: $link;
+
+      [class^="icon-"] {
+        color: $link;
+      }
+    }
+  }
+
+  li a {
+    color: $black;
+
+    &:hover {
+      color: $link;
+
+      [class^="icon-"] {
+        color: $link;
+      }
+    }
+  }
+}
