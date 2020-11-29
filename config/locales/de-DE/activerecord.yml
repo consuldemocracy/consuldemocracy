@@ -141,6 +141,7 @@ de:
         description_finished: "Beschreibung, wenn der Bürgerhaushalt beschlossen ist"
         phase: "Phase"
         currency_symbol: "Währung"
+        voting_style: "Finaler Abstimmungsstil"
       budget/translation:
         name: "Name"
       budget/investment:
@@ -203,6 +204,7 @@ de:
         name: "Name der Rubrik"
         price: "Preis"
         population: "Bevölkerung"
+        max_ballot_lines: "Erlaubte Stimmen"
       budget/heading/translation:
         name: "Name der Rubrik"
       budget/phase:
@@ -504,6 +506,8 @@ de:
           attributes:
             document_number:
               not_in_census: "Dieses Dokument scheint nicht im Melderegister auf"
+            user_id:
+              has_voted: "Nutzer hat bereit abgestimmt"
         legislation/process:
           attributes:
             end_date:
@@ -548,6 +552,10 @@ de:
           attributes:
             valuation:
               cannot_comment_valuation: "Eine Überprüfung kann nicht kommentiert werden"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Bereits übersetzte Ressource
       messages:
         translations_too_short: Ist verpflichtet, mindestens eine Übersetzung zur Verfügung zu stellen
         record_invalid: "Validierung fehlgeschlagen: %{errors}"
