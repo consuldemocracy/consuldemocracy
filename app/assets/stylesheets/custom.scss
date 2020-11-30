@@ -500,3 +500,17 @@ table {
 .stats {
   background: $background;
 }
+
+// 01. Header (pages.scss)
+// ----------------------
+
+.background-header {
+  display: none;
+}
+
+.jumbo.highlight {
+  background: $brand image-url("background-header-homepage.jpg"); //pending  add image from zepling
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $light-pink;
+}
