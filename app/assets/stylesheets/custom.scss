@@ -538,3 +538,17 @@ table {
     background: $background;
   }
 }
+
+// 04. Tags (layout.scss)
+// --------
+
+.categories a,
+.geozone a {
+  background: $light-pink;
+
+  &:hover,
+  &.is-active {
+    background: $brand;
+    color: $background;
+  }
+}
