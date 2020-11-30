@@ -181,7 +181,7 @@ describe "Admin collaborative legislation" do
     scenario "Default colors are present" do
       visit new_admin_legislation_process_path
 
-      expect(find("#legislation_process_background_color").value).to eq "#e7f2fc"
+      expect(find("#legislation_process_background_color").value).to eq "#fff4f4"
       expect(find("#legislation_process_font_color").value).to eq "#222222"
     end
   end
