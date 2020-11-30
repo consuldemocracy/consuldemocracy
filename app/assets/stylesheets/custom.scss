@@ -514,3 +514,27 @@ table {
   background-size: cover;
   color: $light-pink;
 }
+
+// 04. List participation (participation.scss)
+// ----------------------
+
+%panel {
+  background: $background;
+
+  h3 {
+    a {
+      color: $brand;
+    }
+  }
+}
+
+.debate,
+.proposal,
+.investment-project,
+.budget-investment,
+.legislation,
+.communities-show {
+  .truncate {
+    background: $background;
+  }
+}
