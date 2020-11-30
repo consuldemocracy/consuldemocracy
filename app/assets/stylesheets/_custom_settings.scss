@@ -44,3 +44,10 @@ $foundation-palette: (
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-palette: $foundation-palette;
+
+// 51. Tabs
+// --------
+
+$tab-background: $background;
+$tab-content-background: $background;
+$tab-background-active: $background;
