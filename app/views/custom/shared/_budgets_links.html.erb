@@ -1,0 +1,10 @@
+<% budgets = Budget.open_budgets_for(current_user) %>
+<% if budgets.count > 1 %>
+  <ul>
+    <% budgets.each do |budget| %>
+      <li>
+        <%= link_to budget.name, url_for(budget) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

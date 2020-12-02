@@ -5,11 +5,13 @@ class Valuation::BudgetsController < Valuation::BaseController
   load_and_authorize_resource
 
   def index
-    @budget = current_budget
-    if @budget.present?
-      @investments = @budget.investments
-                            .by_valuator(current_user.valuator)
-                            .valuation_open
+    @investments_count = {}
+    @budgets = Budget.open.published.valuating
+    @budgets.each do |budget|
+      @investments_count[budget.id] = budget.investments
+                                            .by_valuator(current_user.valuator)
+                                            .valuation_open
+                                            .count
     end
   end
 end

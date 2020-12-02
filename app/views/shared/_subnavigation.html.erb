@@ -1,5 +1,5 @@
 <div class="small-12 medium-9 column">
-  <ul>
+  <ul class="dropdown menu" data-dropdown-menu>
     <%= raw content_block("subnavigation_left", I18n.locale) %>
 
     <% if feature?(:debates) %>
@@ -44,6 +44,7 @@
                                   controller_name == "budgets" || controller_name == "investments",
                                   accesskey: "5",
                                   title: t("shared.go_to_page") + t("layouts.header.budgets") %>
+        <%= render "shared/budgets_links" %>
       </li>
     <% end %>
     <% if feature?(:help_page) %>
