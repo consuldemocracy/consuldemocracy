@@ -8,7 +8,7 @@ class Admin::BudgetsController < Admin::BaseController
   has_filters %w[all open finished], only: :index
 
   before_action :load_budget, except: [:index, :new, :create]
-  before_action :load_staff, only: [:new, :edit]
+  before_action :load_staff, only: [:new, :show, :edit]
   before_action :set_budget_mode, only: [:new, :create, :switch_group]
   load_and_authorize_resource
 

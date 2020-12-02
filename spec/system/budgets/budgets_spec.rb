@@ -65,6 +65,19 @@ describe "Budgets" do
       expect(page).not_to have_content("#finished_budgets")
     end
 
+    scenario "Show custom phase name on subheader" do
+      budget.update!(phase: "informing")
+      budget.phases.informing.update!(name: "Custom name for informing phase")
+
+      visit budgets_path
+
+      within(".budget-subheader") do
+        expect(page).to have_content("Actual phase")
+        expect(page).to have_content("Custom name for informing phase")
+        expect(page).not_to have_content("Information")
+      end
+    end
+
     scenario "Show finished budgets list" do
       finished_budget_1 = create(:budget, :finished)
       finished_budget_2 = create(:budget, :finished)

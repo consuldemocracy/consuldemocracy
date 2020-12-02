@@ -1471,8 +1471,16 @@ footer {
   background: #fff;
   border: 0;
 
+  .comment {
+    position: relative;
+  }
+
   .comment-input {
     border-bottom: 0;
+  }
+
+  .comment-footer {
+    min-height: $line-height * 4;
   }
 }
 
@@ -1491,7 +1499,6 @@ footer {
 
 .draft-panels .comments-on .calc-comments .comments-box-container {
   margin-top: $line-height * 2;
-  position: initial;
 }
 
 .comments-box-container .comment-meta .comment-votes {

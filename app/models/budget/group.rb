@@ -30,10 +30,6 @@ class Budget
       all.sort_by(&:name)
     end
 
-    def single_heading_group?
-      headings.count == 1
-    end
-
     private
 
       def generate_slug?
