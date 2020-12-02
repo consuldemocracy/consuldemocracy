@@ -2,6 +2,6 @@ class SDGManagement::MenuComponent < ApplicationComponent
   private
 
     def sdg?
-      controller_name == "goals" || controller_name == "targets"
+      %w[goals targets local_targets].include?(controller_name)
     end
 end
