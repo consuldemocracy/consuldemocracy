@@ -613,8 +613,6 @@ es:
     managers:
       index:
         title: Gestores
-        name: Nombre
-        email: Email
         no_managers: No hay gestores.
       manager:
         add: Añadir como gestor
@@ -697,9 +695,6 @@ es:
     administrators:
       index:
         title: Administradores
-        name: Nombre
-        email: Email
-        description: Descripción
         id: ID de Administrador
         no_administrators: No hay administradores.
       administrator:
@@ -713,8 +708,6 @@ es:
     moderators:
       index:
         title: Moderadores
-        name: Nombre
-        email: Email
         no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Moderador

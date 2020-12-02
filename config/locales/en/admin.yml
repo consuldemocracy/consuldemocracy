@@ -614,8 +614,6 @@ en:
     managers:
       index:
         title: Managers
-        name: Name
-        email: Email
         no_managers: There are no managers.
       manager:
         add: Add
@@ -698,9 +696,6 @@ en:
     administrators:
       index:
         title: Administrators
-        name: Name
-        email: Email
-        description: Description
         id: Administrator ID
         no_administrators: There are no administrators.
       administrator:
@@ -714,8 +709,6 @@ en:
     moderators:
       index:
         title: Moderators
-        name: Name
-        email: Email
         no_moderators: There are no moderators.
       moderator:
         add: Add

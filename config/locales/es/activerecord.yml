@@ -145,8 +145,6 @@ es:
         one: Registro del censo local
         other: Registros del censo local
     attributes:
-      administrator:
-        description: Descripción
       budget:
         name: "Nombre"
         description_accepting: "Descripción durante la fase de presentación de proyectos"

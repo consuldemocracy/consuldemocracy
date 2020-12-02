@@ -10,8 +10,8 @@
 
     <table>
       <thead>
-        <th scope="col"><%= t("admin.moderators.index.name") %></th>
-        <th scope="col" class="small-6"><%= t("admin.moderators.index.email") %></th>
+        <th scope="col"><%= Moderator.human_attribute_name(:name) %></th>
+        <th scope="col" class="small-6"><%= Moderator.human_attribute_name(:email) %></th>
         <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
       </thead>
       <tbody>
