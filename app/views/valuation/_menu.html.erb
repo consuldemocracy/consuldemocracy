@@ -6,12 +6,8 @@
 
     <% if feature?(:budgets) %>
       <li <%= "class=is-active" if controller_name == "budget_investments" %>>
-        <%= link_to valuation_budgets_path do %>
-          <span class="icon-budget"></span>
-          <%= t("valuation.menu.budgets") %>
-        <% end %>
+        <%= link_to t("valuation.menu.budgets"), valuation_budgets_path, class: "budgets-link" %>
       </li>
     <% end %>
-
   </ul>
 </nav>
