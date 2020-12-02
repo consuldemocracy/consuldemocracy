@@ -1,10 +1,6 @@
 require "rails_helper"
 
-describe "Admin settings" do
-  before do
-    login_as(create(:administrator).user)
-  end
-
+describe "Admin settings", :admin do
   scenario "Index" do
     create(:setting, key: "super.users.first")
     create(:setting, key: "super.users.second")
@@ -36,16 +32,12 @@ describe "Admin settings" do
     end
 
     scenario "When `Map settings` tab content is hidden map should not be initialized" do
-      admin = create(:administrator).user
-      login_as(admin)
       visit admin_settings_path
 
       expect(page).not_to have_css("#admin-map.leaflet-container", visible: :all)
     end
 
     scenario "When `Map settings` tab content is shown map should be initialized" do
-      admin = create(:administrator).user
-      login_as(admin)
       visit admin_settings_path
 
       find("#map-tab").click
@@ -57,8 +49,7 @@ describe "Admin settings" do
   describe "Update map" do
     scenario "Should not be able when map feature deactivated" do
       Setting["feature.map"] = false
-      admin = create(:administrator).user
-      login_as(admin)
+
       visit admin_settings_path
       find("#map-tab").click
 
@@ -70,8 +61,7 @@ describe "Admin settings" do
 
     scenario "Should be able when map feature activated" do
       Setting["feature.map"] = true
-      admin = create(:administrator).user
-      login_as(admin)
+
       visit admin_settings_path
       find("#map-tab").click
 
@@ -83,8 +73,7 @@ describe "Admin settings" do
 
     scenario "Should show successful notice" do
       Setting["feature.map"] = true
-      admin = create(:administrator).user
-      login_as(admin)
+
       visit admin_settings_path
 
       within "#map-form" do
@@ -96,8 +85,6 @@ describe "Admin settings" do
 
     scenario "Should display marker by default", :js do
       Setting["feature.map"] = true
-      admin = create(:administrator).user
-      login_as(admin)
 
       visit admin_settings_path
 
@@ -107,8 +94,6 @@ describe "Admin settings" do
 
     scenario "Should update marker", :js do
       Setting["feature.map"] = true
-      admin = create(:administrator).user
-      login_as(admin)
 
       visit admin_settings_path
       find("#map-tab").click
@@ -125,8 +110,6 @@ describe "Admin settings" do
   describe "Update content types" do
     scenario "stores the correct mime types" do
       setting = Setting.create!(key: "upload.images.content_types", value: "image/png")
-      admin = create(:administrator).user
-      login_as(admin)
       visit admin_settings_path
       find("#images-and-documents-tab").click
 
@@ -161,8 +144,6 @@ describe "Admin settings" do
 
     scenario "Should not be able when remote census feature deactivated" do
       Setting["feature.remote_census"] = nil
-      admin = create(:administrator).user
-      login_as(admin)
       visit admin_settings_path
       find("#remote-census-tab").click
 
@@ -172,8 +153,6 @@ describe "Admin settings" do
     end
 
     scenario "Should be able when remote census feature activated" do
-      admin = create(:administrator).user
-      login_as(admin)
       visit admin_settings_path
       find("#remote-census-tab").click
 
@@ -194,8 +173,7 @@ describe "Admin settings" do
 
       scenario "On #tab-remote-census-configuration", :js do
         remote_census_setting = create(:setting, key: "remote_census.general.whatever")
-        admin = create(:administrator).user
-        login_as(admin)
+
         visit admin_settings_path
         find("#remote-census-tab").click
 
@@ -211,8 +189,7 @@ describe "Admin settings" do
 
     scenario "On #tab-configuration", :js do
       configuration_setting = Setting.create!(key: "whatever")
-      admin = create(:administrator).user
-      login_as(admin)
+
       visit admin_settings_path
       find("#tab-configuration").click
 
@@ -232,8 +209,7 @@ describe "Admin settings" do
 
       scenario "On #tab-map-configuration", :js do
         map_setting = Setting.create!(key: "map.whatever")
-        admin = create(:administrator).user
-        login_as(admin)
+
         visit admin_settings_path
         find("#map-tab").click
 
@@ -249,8 +225,7 @@ describe "Admin settings" do
 
     scenario "On #tab-proposals", :js do
       proposal_dashboard_setting = Setting.create!(key: "proposals.whatever")
-      admin = create(:administrator).user
-      login_as(admin)
+
       visit admin_settings_path
       find("#proposals-tab").click
 
@@ -265,8 +240,7 @@ describe "Admin settings" do
 
     scenario "On #tab-participation-processes", :js do
       process_setting = Setting.create!(key: "process.whatever")
-      admin = create(:administrator).user
-      login_as(admin)
+
       visit admin_settings_path
       find("#participation-processes-tab").click
 
@@ -280,8 +254,7 @@ describe "Admin settings" do
 
     scenario "On #tab-feature-flags", :js do
       feature_setting = Setting.create!(key: "feature.whatever")
-      admin = create(:administrator).user
-      login_as(admin)
+
       visit admin_settings_path
       find("#features-tab").click
 

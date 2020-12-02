@@ -458,12 +458,10 @@ describe "Commenting topics from proposals" do
       expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
-    scenario "can not comment as a moderator" do
+    scenario "can not comment as a moderator", :admin do
       community = proposal.community
       topic = create(:topic, community: community)
-      admin = create(:administrator)
 
-      login_as(admin.user)
       visit community_topic_path(community, topic)
 
       expect(page).not_to have_content "Comment as moderator"
@@ -966,12 +964,10 @@ describe "Commenting topics from budget investments" do
       expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
-    scenario "can not comment as a moderator" do
+    scenario "can not comment as a moderator", :admin do
       community = investment.community
       topic = create(:topic, community: community)
-      admin = create(:administrator)
 
-      login_as(admin.user)
       visit community_topic_path(community, topic)
 
       expect(page).not_to have_content "Comment as moderator"

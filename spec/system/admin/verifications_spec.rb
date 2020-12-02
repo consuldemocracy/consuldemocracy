@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Incomplete verifications" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Incomplete verifications", :admin do
   scenario "Index" do
     incompletely_verified_user1 = create(:user, :incomplete_verification)
     incompletely_verified_user2 = create(:user, :incomplete_verification)

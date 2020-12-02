@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Cards" do
-  before do
-    admin = create(:administrator).user
-    login_as(admin)
-  end
-
+describe "Cards", :admin do
   scenario "Create", :js do
     visit admin_homepage_path
     click_link "Create card"

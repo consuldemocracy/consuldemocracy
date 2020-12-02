@@ -479,10 +479,7 @@ describe "Commenting Budget::Investments" do
       end
     end
 
-    scenario "can not comment as a moderator" do
-      admin = create(:administrator)
-
-      login_as(admin.user)
+    scenario "can not comment as a moderator", :admin do
       visit budget_investment_path(investment.budget, investment)
 
       expect(page).not_to have_content "Comment as moderator"

@@ -1,10 +1,6 @@
 require "rails_helper"
 
-describe "Admin banners magement" do
-  before do
-    login_as(create(:administrator).user)
-  end
-
+describe "Admin banners magement", :admin do
   context "Index" do
     before do
       create(:banner, title: "Banner number one",

@@ -496,10 +496,7 @@ describe "Commenting legislation questions" do
       expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
-    scenario "can not comment as a moderator" do
-      admin = create(:administrator)
-
-      login_as(admin.user)
+    scenario "can not comment as a moderator", :admin do
       visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                               legislation_annotation.draft_version,
                                                               legislation_annotation)

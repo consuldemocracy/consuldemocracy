@@ -1,11 +1,10 @@
 require "rails_helper"
 
-describe "Admin managers" do
+describe "Admin managers", :admin do
   let!(:user) { create(:user) }
   let!(:manager) { create(:manager) }
 
   before do
-    login_as(create(:administrator).user)
     visit admin_managers_path
   end
 

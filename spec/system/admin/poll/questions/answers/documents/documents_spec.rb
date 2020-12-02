@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Documents" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Documents", :admin do
   context "Index" do
     scenario "Answer with no documents" do
       answer = create(:poll_question_answer)

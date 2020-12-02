@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Signature sheets" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Signature sheets", :admin do
   context "Index" do
     scenario "Lists all signature_sheets" do
       3.times { create(:signature_sheet) }

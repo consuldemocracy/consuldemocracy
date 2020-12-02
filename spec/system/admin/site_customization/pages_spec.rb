@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin custom pages" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin custom pages", :admin do
   context "Index" do
     scenario "lists all created custom pages" do
       custom_page = create(:site_customization_page)

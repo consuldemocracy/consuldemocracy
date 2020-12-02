@@ -1,10 +1,6 @@
 require "rails_helper"
 
-describe "Admin poll questions" do
-  before do
-    login_as(create(:administrator).user)
-  end
-
+describe "Admin poll questions", :admin do
   scenario "Index" do
     poll1 = create(:poll)
     poll2 = create(:poll)

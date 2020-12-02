@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Admin budget investments" do
+describe "Admin budget investments", :admin do
   let(:budget) { create(:budget) }
   let(:administrator) do
     create(:administrator, user: create(:user, username: "Ana", email: "ana@admins.org"))
@@ -9,10 +9,6 @@ describe "Admin budget investments" do
   it_behaves_like "admin_milestoneable",
                   :budget_investment,
                   "admin_polymorphic_path"
-
-  before do
-    login_as(create(:administrator).user)
-  end
 
   context "Feature flag" do
     before do

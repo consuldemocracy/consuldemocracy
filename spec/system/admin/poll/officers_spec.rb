@@ -1,11 +1,10 @@
 require "rails_helper"
 
-describe "Admin poll officers" do
+describe "Admin poll officers", :admin do
   let!(:user)    { create(:user, username: "Pedro Jose Garcia") }
   let!(:officer) { create(:poll_officer) }
 
   before do
-    login_as(create(:administrator).user)
     visit admin_officers_path
   end
 

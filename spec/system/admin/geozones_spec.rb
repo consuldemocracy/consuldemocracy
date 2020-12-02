@@ -1,10 +1,6 @@
 require "rails_helper"
 
-describe "Admin geozones" do
-  before do
-    login_as(create(:administrator).user)
-  end
-
+describe "Admin geozones", :admin do
   scenario "Show list of geozones" do
     chamberi = create(:geozone, name: "Chamberí")
     retiro = create(:geozone, name: "Retiro")
