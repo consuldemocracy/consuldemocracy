@@ -13,6 +13,8 @@ class SDGManagement::MenuComponent < ApplicationComponent
 
     def relatable_links
       SDG::Related::RELATABLE_TYPES.map do |type|
+        next unless setting["process.#{process_name(type)}"] && setting["sdg.process.#{process_name(type)}"]
+
         [
           t("sdg_management.menu.#{table_name(type)}"),
           relatable_type_path(type),
@@ -36,5 +38,15 @@ class SDGManagement::MenuComponent < ApplicationComponent
 
     def table_name(type)
       type.constantize.table_name
+    end
+
+    def process_name(type)
+      process_name = type.split("::").first
+
+      if process_name == "Legislation"
+        "legislation"
+      else
+        process_name.constantize.table_name
+      end
     end
 end

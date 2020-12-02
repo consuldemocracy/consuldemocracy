@@ -4,6 +4,11 @@ describe "SDG Relations", :js do
   before do
     login_as(create(:administrator).user)
     Setting["feature.sdg"] = true
+    Setting["sdg.process.budgets"] = true
+    Setting["sdg.process.debates"] = true
+    Setting["sdg.process.legislation"] = true
+    Setting["sdg.process.polls"] = true
+    Setting["sdg.process.proposals"] = true
   end
 
   scenario "navigation" do

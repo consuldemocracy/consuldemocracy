@@ -1,4 +1,5 @@
 class SDGManagement::RelationsController < SDGManagement::BaseController
+  before_action :check_feature_flags
   before_action :load_record, only: [:edit, :update]
 
   def index
@@ -22,5 +23,13 @@ class SDGManagement::RelationsController < SDGManagement::BaseController
 
     def relatable_class
       params[:relatable_type].classify.constantize
+    end
+
+    def check_feature_flags
+      process_name = params[:relatable_type].split("/").first
+      process_name = process_name.pluralize unless process_name == "legislation"
+
+      check_feature_flag(process_name)
+      raise FeatureDisabled, process_name unless Setting["sdg.process.#{process_name}"]
     end
 end
