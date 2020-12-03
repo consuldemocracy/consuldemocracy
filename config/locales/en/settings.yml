@@ -130,6 +130,8 @@ en:
       dashboard:
         notification_emails: "Dashboard notification emails"
         notification_emails_description: "Enable sending dashboard notification emails to proposal's authors"
+      sdg: SDG
+      sdg_description: Enable Sustainable Development Goals sections in the administration menu and in the Global Settings.
     remote_census:
       general:
         endpoint: "Endpoint"

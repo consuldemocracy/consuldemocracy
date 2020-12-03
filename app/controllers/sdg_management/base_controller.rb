@@ -1,4 +1,7 @@
 class SDGManagement::BaseController < ApplicationController
+  include FeatureFlags
+  feature_flag :sdg
+
   layout "admin"
 
   before_action :authenticate_user!

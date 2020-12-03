@@ -5,6 +5,7 @@ section "Creating Settings" do
     "facebook_handle": "CONSUL",
     "feature.featured_proposals": "true",
     "feature.map": "true",
+    "feature.sdg": "true",
     "instagram_handle": "CONSUL",
     "mailer_from_address": "noreply@consul.dev",
     "mailer_from_name": "CONSUL",

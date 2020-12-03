@@ -5,6 +5,8 @@ describe "Goals", :js do
 
   describe "Index" do
     scenario "Visit the index" do
+      Setting["feature.sdg"] = true
+
       visit sdg_management_root_path
 
       within("#side_menu") do

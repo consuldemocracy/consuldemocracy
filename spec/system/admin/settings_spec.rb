@@ -267,6 +267,7 @@ describe "Admin settings", :admin do
     end
 
     scenario "On #tab-sdg-configuration", :js do
+      Setting["feature.sdg"] = true
       Setting.create!(key: "sdg.whatever")
       login_as(create(:administrator).user)
 
@@ -311,6 +312,30 @@ describe "Admin settings", :admin do
       expect(page).to have_content "Value updated"
 
       Setting["feature.user.skip_verification"] = nil
+    end
+  end
+
+  describe "SDG configuration tab", :js do
+    scenario "is enabled when the sdg feature is enabled" do
+      Setting["feature.sdg"] = true
+      login_as(create(:administrator).user)
+
+      visit admin_settings_path
+      click_link "SDG configuration"
+
+      expect(page).to have_css "h2", exact_text: "SDG configuration"
+    end
+
+    scenario "is disabled when the sdg feature is disabled" do
+      Setting["feature.sdg"] = false
+      login_as(create(:administrator).user)
+
+      visit admin_settings_path
+      click_link "SDG configuration"
+
+      expect(page).to have_content "To show the configuration options from " \
+                                   "Sustainable Development Goals you must " \
+                                   'enable "SDG" on "Features" tab.'
     end
   end
 end
