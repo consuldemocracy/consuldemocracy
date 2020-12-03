@@ -83,6 +83,7 @@ describe "Admin administrators" do
       click_button "Search"
 
       expect(page).to have_content("Administrators: User search")
+      expect(page).to have_field "name_or_email", with: "Sumn"
       expect(page).to have_content(administrator1.name)
       expect(page).not_to have_content(administrator2.name)
     end
@@ -95,6 +96,7 @@ describe "Admin administrators" do
       click_button "Search"
 
       expect(page).to have_content("Administrators: User search")
+      expect(page).to have_field "name_or_email", with: administrator2.email
       expect(page).to have_content(administrator2.email)
       expect(page).not_to have_content(administrator1.email)
     end

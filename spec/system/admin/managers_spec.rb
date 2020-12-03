@@ -64,6 +64,7 @@ describe "Admin managers", :admin do
       click_button "Search"
 
       expect(page).to have_content("Managers: User search")
+      expect(page).to have_field "name_or_email", with: "Taylor"
       expect(page).to have_content(manager1.name)
       expect(page).not_to have_content(manager2.name)
     end
@@ -76,6 +77,7 @@ describe "Admin managers", :admin do
       click_button "Search"
 
       expect(page).to have_content("Managers: User search")
+      expect(page).to have_field "name_or_email", with: manager2.email
       expect(page).to have_content(manager2.email)
       expect(page).not_to have_content(manager1.email)
     end
