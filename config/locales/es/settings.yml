@@ -207,3 +207,15 @@ es:
         max_size_description: "Tamaño máximo permitido al subir un documento (en Megabytes/MB)"
         content_types: "Tipos de documentos permitidos"
         content_types_description: "Selecciona todos los tipos permitidos para los documentos subidos"
+    sdg:
+      process:
+        debates: Alineamiento ODS en debates
+        debates_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en debates
+        proposals: Alineamiento ODS en propuestas
+        proposals_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en propuestas
+        polls: Alineamiento ODS en votaciones
+        polls_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en votaciones
+        budgets: Alineamiento ODS en presupuestos participativos
+        budgets_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en presupuestos participativos
+        legislation: Alineamiento ODS en legislación colaborativa
+        legislation_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en legislación colaborativa
