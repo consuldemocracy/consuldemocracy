@@ -1,7 +1,6 @@
 <h2><%= t("admin.users.index.title") %></h2>
 
 <%= render Admin::SearchComponent.new(
-  url: admin_users_path,
   label: t("admin.users.search.placeholder"),
   remote: true
 ) %>

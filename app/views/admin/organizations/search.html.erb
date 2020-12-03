@@ -1,9 +1,6 @@
 <h2><%= t("admin.organizations.search.title") %></h2>
 
-<%= render Admin::SearchComponent.new(
-  url: search_admin_organizations_path,
-  label: t("admin.organizations.index.search_placeholder")
-) %>
+<%= render Admin::SearchComponent.new(label: t("admin.organizations.index.search_placeholder")) %>
 
 <div id="search-results">
   <% if @organizations.any? %>
