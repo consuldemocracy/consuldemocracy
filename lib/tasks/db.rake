@@ -4,4 +4,10 @@ namespace :db do
     @avoid_log = args[:print_log] == "avoid_log"
     load(Rails.root.join("db", "dev_seeds.rb"))
   end
+
+  desc "Load SDG content into database"
+  task load_sdg: :environment do
+    ApplicationLogger.new.info "Adding Sustainable Development Goals content"
+    load(Rails.root.join("db", "sdg.rb"))
+  end
 end

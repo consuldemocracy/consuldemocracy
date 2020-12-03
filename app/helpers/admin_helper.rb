@@ -42,6 +42,6 @@ module AdminHelper
   private
 
     def namespace
-      controller.class.name.downcase.split("::").first
+      controller.class.name.split("::").first.underscore
     end
 end

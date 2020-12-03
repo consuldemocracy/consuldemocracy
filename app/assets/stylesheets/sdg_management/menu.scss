@@ -1,0 +1,10 @@
+.sdg-content-menu {
+
+  .goals-link::before {
+    @extend %font-icon;
+    @extend %svg-icon;
+    @extend %admin-menu-icon;
+
+    mask-image: image-url("sdg.svg");
+  }
+}

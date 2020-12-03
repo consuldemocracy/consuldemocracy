@@ -17,9 +17,7 @@
       @include has-fa-icon($name, $style);
 
       &::before {
-        font-size: rem-calc(20);
-        margin-left: rem-calc(8);
-        margin-right: rem-calc(10);
+        @extend %admin-menu-icon;
       }
     }
 

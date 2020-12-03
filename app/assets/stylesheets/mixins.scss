@@ -141,6 +141,13 @@
   }
 }
 
+%font-icon {
+  @extend %fa-icon;
+  font-family: "Font Awesome 5 Free";
+  margin-right: rem-calc(4);
+  vertical-align: middle;
+}
+
 %svg-icon {
   background: currentcolor;
   content: "";
@@ -150,14 +157,17 @@
   width: 1em;
 }
 
+%admin-menu-icon {
+  font-size: rem-calc(20);
+  margin-left: rem-calc(8);
+  margin-right: rem-calc(10);
+}
+
 @mixin has-fa-icon($icon, $style) {
   @extend .fa-#{$icon};
 
   &::before {
-    @extend %fa-icon;
-    font-family: "Font Awesome 5 Free";
-    margin-right: rem-calc(4);
-    vertical-align: middle;
+    @extend %font-icon;
 
     @if $style == "regular" {
       font-weight: normal;
