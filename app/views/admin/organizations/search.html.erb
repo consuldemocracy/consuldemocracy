@@ -1,15 +1,9 @@
 <h2><%= t("admin.organizations.search.title") %></h2>
 
-<div class="small-12 medium-6">
-  <%= form_for(Organization.new, url: search_admin_organizations_path, method: :get) do |f| %>
-    <div class="input-group">
-      <%= text_field_tag :search, "", placeholder: t("admin.organizations.index.search_placeholder") %>
-      <div class="input-group-button">
-        <%= f.submit t("admin.shared.search.search"), class: "button" %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render Admin::SearchComponent.new(
+  url: search_admin_organizations_path,
+  label: t("admin.organizations.index.search_placeholder")
+) %>
 
 <div id="search-results">
   <% if @organizations.any? %>
