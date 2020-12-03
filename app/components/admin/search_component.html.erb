@@ -1,10 +1,4 @@
-<div class="small-12 medium-6">
-  <%= form_tag(url, method: :get, role: "search") do |f| %>
-    <div class="input-group">
-        <%= text_field_tag :search, search_terms.to_s, placeholder: label, "aria-label": label %>
-      <div class="input-group-button">
-        <%= submit_tag t("admin.shared.user_search.button"), class: "button" %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= form_tag(url, method: :get, role: "search") do |f| %>
+  <%= text_field_tag :search, search_terms.to_s, placeholder: label, "aria-label": label %>
+  <%= submit_tag t("admin.shared.user_search.button") %>
+<% end %>
