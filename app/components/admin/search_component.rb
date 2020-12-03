@@ -1,17 +1,14 @@
 class Admin::SearchComponent < ApplicationComponent
-  attr_reader :url
+  attr_reader :url, :label
 
-  def initialize(url:)
+  def initialize(url:, label:)
     @url = url
+    @label = label
   end
 
   private
 
     def search_terms
       params[:search]
-    end
-
-    def label
-      t("admin.shared.user_search.placeholder")
     end
 end
