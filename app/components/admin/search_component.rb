@@ -10,4 +10,8 @@ class Admin::SearchComponent < ApplicationComponent
     def search_terms
       params[:search]
     end
+
+    def label
+      t("admin.shared.user_search.placeholder")
+    end
 end
