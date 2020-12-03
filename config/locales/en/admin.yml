@@ -907,7 +907,6 @@ en:
         entry_name: officer
       search:
         email_placeholder: Search user by email
-        search: Search
         user_not_found: User not found
         help: "To add or remove Poll officers use the search form below."
     poll_officer_assignments:
@@ -1170,7 +1169,6 @@ en:
         no_organizations: There are no organizations.
         reject: Reject
         rejected: Rejected
-        search: Search
         search_placeholder: Name, email or phone number
         title: Organisations
         verified: Verified
@@ -1255,23 +1253,19 @@ en:
     shared:
       true_value: "Yes"
       false_value: "No"
+      search:
+        search: "Search"
       booths_search:
-        button: Search
         placeholder: Search booth by name or location
       poll_officers_search:
-        button: Search
         placeholder: Search poll officers
       poll_questions_search:
-        button: Search
         placeholder: Search poll questions
       proposal_search:
-        button: Search
         placeholder: Search proposals by title, code, description or question
       debate_search:
-        button: Search
         placeholder: Search debates by title or description
       user_search:
-        button: Search
         placeholder: Search user by name or email
       search_results: "Search results"
       no_search_results: "No results found."
@@ -1440,7 +1434,6 @@ en:
           erased: Erased
       search:
         placeholder: Search user by email, name or document number
-        search: Search
     verifications:
       index:
         phone_not_given: Phone not given
@@ -1581,7 +1574,6 @@ en:
         postal_code: Postal code
         search:
           placeholder: Search by document number
-          search: Search
         import: Import CSV
       new:
         creating: Creating new local census record
