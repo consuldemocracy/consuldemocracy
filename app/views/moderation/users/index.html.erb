@@ -3,7 +3,7 @@
 <%= form_for(User.new, url: moderation_users_path, as: :user, method: :get) do |f| %>
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= text_field_tag :name_or_email, "", placeholder: t("moderation.users.index.search_placeholder") %>
+      <%= text_field_tag :search, "", placeholder: t("moderation.users.index.search_placeholder") %>
     </div>
     <div class="small-12 medium-6 column">
       <%= f.submit t("moderation.users.index.search"), class: "button success" %>

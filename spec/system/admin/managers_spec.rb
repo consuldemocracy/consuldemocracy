@@ -15,7 +15,7 @@ describe "Admin managers", :admin do
   end
 
   scenario "Create Manager", :js do
-    fill_in "name_or_email", with: user.email
+    fill_in "search", with: user.email
     click_button "Search"
 
     expect(page).to have_content user.name
@@ -47,7 +47,7 @@ describe "Admin managers", :admin do
       expect(page).to have_content(manager1.name)
       expect(page).to have_content(manager2.name)
 
-      fill_in "name_or_email", with: " "
+      fill_in "search", with: " "
       click_button "Search"
 
       expect(page).to have_content("Managers: User search")
@@ -60,11 +60,11 @@ describe "Admin managers", :admin do
       expect(page).to have_content(manager1.name)
       expect(page).to have_content(manager2.name)
 
-      fill_in "name_or_email", with: "Taylor"
+      fill_in "search", with: "Taylor"
       click_button "Search"
 
       expect(page).to have_content("Managers: User search")
-      expect(page).to have_field "name_or_email", with: "Taylor"
+      expect(page).to have_field "search", with: "Taylor"
       expect(page).to have_content(manager1.name)
       expect(page).not_to have_content(manager2.name)
     end
@@ -73,11 +73,11 @@ describe "Admin managers", :admin do
       expect(page).to have_content(manager1.email)
       expect(page).to have_content(manager2.email)
 
-      fill_in "name_or_email", with: manager2.email
+      fill_in "search", with: manager2.email
       click_button "Search"
 
       expect(page).to have_content("Managers: User search")
-      expect(page).to have_field "name_or_email", with: manager2.email
+      expect(page).to have_field "search", with: manager2.email
       expect(page).to have_content(manager2.email)
       expect(page).not_to have_content(manager1.email)
     end

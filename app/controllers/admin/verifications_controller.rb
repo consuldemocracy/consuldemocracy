@@ -4,7 +4,7 @@ class Admin::VerificationsController < Admin::BaseController
   end
 
   def search
-    @users = User.incomplete_verification.search(params[:name_or_email])
+    @users = User.incomplete_verification.search(params[:search])
                                          .page(params[:page])
                                          .for_render
     render :index

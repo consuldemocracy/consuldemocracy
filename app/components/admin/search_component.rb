@@ -4,4 +4,10 @@ class Admin::SearchComponent < ApplicationComponent
   def initialize(url:)
     @url = url
   end
+
+  private
+
+    def search_terms
+      params[:search]
+    end
 end
