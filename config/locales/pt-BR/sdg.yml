@@ -25,11 +25,18 @@ pt-BR:
         targets:
           target_2_1:
             title: "Até 2030, acabar com a fome e assegurar o acesso de todas as pessoas, em particular os pobres e aqueles em situações vulneráveis, incluindo crianças pequenas, a comida saudável, nutritiva e suficiente o ano todo."
+      goal_3:
+        title: "Boa saúde e bem-estar"
+        description: "Garantir vidas saudáveis e promover o bem-estar para todos em todas as idades."
       goal_4:
         title: "Educação de qualidade"
+        description: "Educação de qualidade."
       goal_5:
         title: "Igualdade de gênero"
         description: "Atingir igualdade de gênero e empoderar todas as mulheres e garotas."
         targets:
           target_5_1:
             title: "Acabar com todas as formas de discriminação contra todas as mulheres e garotas em todos os lugares."
+      goal_6:
+        title: "Água tratada e saneamento"
+        description: "Garantir acesso a água e saneamento para todos."
