@@ -75,6 +75,9 @@ es:
       sdg/goal:
         one: "objetivo"
         other: "objetivos"
+      sdg/target:
+        one: "meta"
+        other: "metas"
       site_customization/page:
         one: Página
         other: Páginas
@@ -312,6 +315,9 @@ es:
         code: "Código"
         title: "Título"
         description: "Descripción"
+      sdg/target:
+        code: "Código"
+        title: "Título"
       signature_sheet:
         title: "Título"
         signable_type: "Tipo de hoja de firmas"

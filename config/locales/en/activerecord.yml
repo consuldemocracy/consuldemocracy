@@ -75,6 +75,9 @@ en:
       sdg/goal:
         one: "goal"
         other: "goals"
+      sdg/target:
+        one: "target"
+        other: "targets"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -315,6 +318,9 @@ en:
         code: "Code"
         title: "Title"
         description: "Description"
+      sdg/target:
+        code: "Code"
+        title: "Title"
       site_customization/page:
         content: Content
         created_at: Created at
