@@ -40,3 +40,33 @@ pt-BR:
       goal_6:
         title: "Água tratada e saneamento"
         description: "Garantir acesso a água e saneamento para todos."
+      goal_7:
+        title: "Energia limpa e acessível"
+        description: "Garantir acesso a energia barata, confiável, sustentável e moderna."
+      goal_8:
+        title: "Trabalho decente e crescimento econômico"
+        description: "Promover crescimento econômico e sustentável, emprego e trabalho decente para todos."
+      goal_9:
+        title: "Indústria, inovação e infraestrutura"
+        description: "Construir infraestrutura resiliente, promover industrialização sustentável e fomentar inovação."
+      goal_10:
+        title: "Desigualdades reduzidas"
+        description: "Reduzir a desigualdade entre os países e dentro deles."
+      goal_11:
+        title: "Cidades sustentáveis e comunidades"
+        description: "Tornar as cidades inclusivas, seguras, resilientes e sustentáveis."
+      goal_12:
+        title: "Consumo e produção responsáveis"
+        description: "Garantir consumo sustentável e padrões de produção."
+      goal_13:
+        title: "Ações pelo clima"
+        description: "Tomar ações urgentes para combater as mudanças climáticas e seus impactos."
+      goal_14:
+        title: "Vida aquática"
+        description: "Conservar e usar de forma sustentável os oceanos, mares e recursos marinhos."
+      goal_15:
+        title: "Vida terrestre"
+        description: "Administrar sustentavelmente florestas, combater a desertificação, parar e reverter a degradação da terra, parar a perda da biodiversidade."
+      goal_16:
+        title: "Paz, justiça e instituições fortes"
+        description: "Promover sociedades justas, pacíficas e inclusivas."
