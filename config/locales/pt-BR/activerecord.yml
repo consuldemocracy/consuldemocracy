@@ -72,6 +72,9 @@ pt-BR:
       proposal:
         one: "Proposta dos cidadãos"
         other: "Propostas dos cidadãos"
+      sdg/goal:
+        one: "objetivo"
+        other: "objetivos"
       site_customization/page:
         one: Página personalizada
         other: Páginas personalizadas
@@ -308,6 +311,10 @@ pt-BR:
         signable_type: "Tipo Significável"
         signable_id: "Identificação Signável"
         document_numbers: "Números de documentos"
+      sdg/goal:
+        code: "Código"
+        title: "Título"
+        description: "Descrição"
       site_customization/page:
         content: Conteúdo
         created_at: Criado em
