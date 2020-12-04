@@ -1,1 +1,6 @@
 pt-BR:
+  sdg_management:
+    header:
+      title: "Conteúdo de ODSs"
+    menu:
+      sdg_content: "Objetivos e metas"
