@@ -130,6 +130,7 @@ ro:
       dashboard:
         notification_emails: "Panoul cu privire la notificarile trimise prin email"
         notification_emails_description: "Permite trimitea de notificari pe email catre autorii propunerilor"
+      sdg: Obiective de dezvoltare durabilă
     remote_census:
       general:
         endpoint: "Punct final"
