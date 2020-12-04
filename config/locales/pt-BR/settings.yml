@@ -130,6 +130,8 @@ pt-BR:
       dashboard:
         notification_emails: "Emails de notificações do painel de progresso"
         notification_emails_description: "Ativar o envio de emails de notificações aos autores das propostas na seção do painel de progresso"
+      sdg: ODS (SDG)
+      sdg_description: Habilitar seções de Objetivos de Desenvolvimento Sustentável no menu de administração e nas Configurações Globais.
     remote_census:
       general:
         endpoint: "Endpoint"
@@ -207,3 +209,15 @@ pt-BR:
         max_size_description: "Tamanho máximo permitido ao carregar um documento (em Megabytes/MB)"
         content_types: "Tipos de conteúdos permitidos para o documento"
         content_types_description: "Selecionar todos os tipos permitidos para os documentos carregados"
+    sdg:
+      process:
+        debates: ODSs relacionadas em debates
+        debates_description: Permitir que debates sejam associados a Objetivos de Desenvolvimento Sustentável
+        proposals: ODSs relacionadas em propostas
+        proposals_description: Permitir que propostas sejam associadas a Objetivos de Desenvolvimento Sustentável
+        polls: ODSs relacionadas em pesquisas
+        polls_description: Permitir que pesquisas sejam associadas a Objetivos de Desenvolvimento Sustentável
+        budgets: ODSs relacionadas em orçamentos participativos
+        budgets_description: Permitir que orçamentos participativos sejam associados a Objetivos de Desenvolvimento Sustentável
+        legislation: ODSs relacionadas em legislação colaborativa
+        legislation_description: Permitir que legislação colaborativa seja associada a Objetivos de Desenvolvimento Sustentável
