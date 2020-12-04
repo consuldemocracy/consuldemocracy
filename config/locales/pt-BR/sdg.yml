@@ -2,7 +2,7 @@ pt-BR:
   sdg:
     goals:
       goal_1:
-        title: "Nenhuma probreza"
+        title: "Nenhuma pobreza"
         description: "Acabem com a pobreza em todas as suas formas, em todos os lugares."
         targets:
           target_1_1:
@@ -70,3 +70,6 @@ pt-BR:
       goal_16:
         title: "Paz, justiça e instituições fortes"
         description: "Promover sociedades justas, pacíficas e inclusivas."
+      goal_17:
+        title: "Parecerias para os objetivos"
+        description: "Revitalizar a parceria mundial para o desenvolvimento sustentável."
