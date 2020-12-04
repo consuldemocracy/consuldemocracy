@@ -17,9 +17,14 @@ pt-BR:
             title: "Até 2030, construir a resiliência dos pobres e daqueles em situações vulneráveis, e reduzir a exposição e a vulnerabilidade deles a eventos extremos relacionados ao clima e outros desastres e incidentes sociais e ambientais"
           target_1_A:
             title: "Assegurar significante mobilização de recursos a partir de uma variedade de fontes, inclusive através de cooperação de desenvolvimento avançada, a fim de oferecer meios adequados e previsíveis para países em desenvolvimento, em particular aqueles menos desenvolvidos, para implementar programas e políticas para acabar com a pobreza em todas as suas dimensões"
+          target_1_B:
+            title: "Criar estruturas de políticas seguras nos âmbitos nacional, regional e internacional, baseadas em estratégias de desenvolvimento a favor dos pobres e sensíveis às questões de gênero, para apoiar investimento acelerado em ações de erradicação da pobreza"
       goal_2:
         title: "Fome zero"
         description: "Fome zero"
+        targets:
+          target_2_1:
+            title: "Até 2030, acabar com a fome e assegurar o acesso de todas as pessoas, em particular os pobres e aqueles em situações vulneráveis, incluindo crianças pequenas, a comida saudável, nutritiva e suficiente o ano todo."
       goal_4:
         title: "Educação de qualidade"
       goal_5:
