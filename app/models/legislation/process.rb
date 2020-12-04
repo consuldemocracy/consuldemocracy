@@ -4,6 +4,7 @@ class Legislation::Process < ApplicationRecord
   include Milestoneable
   include Imageable
   include Documentable
+  include SDG::Relatable
 
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs

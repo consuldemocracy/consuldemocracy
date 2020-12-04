@@ -1,5 +1,6 @@
 class SDG::Target < ApplicationRecord
   include Comparable
+  include SDG::Related
 
   validates :code, presence: true, uniqueness: true
   validates :goal, presence: true

@@ -1,4 +1,6 @@
 class SDG::Goal < ApplicationRecord
+  include SDG::Related
+
   validates :code, presence: true, uniqueness: true, inclusion: { in: 1..17 }
 
   has_many :targets, dependent: :destroy
