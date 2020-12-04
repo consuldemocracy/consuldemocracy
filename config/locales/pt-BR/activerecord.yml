@@ -75,6 +75,9 @@ pt-BR:
       sdg/goal:
         one: "objetivo"
         other: "objetivos"
+      sdg/target:
+        one: "meta"
+        other: "metas"
       site_customization/page:
         one: Página personalizada
         other: Páginas personalizadas
@@ -315,6 +318,9 @@ pt-BR:
         code: "Código"
         title: "Título"
         description: "Descrição"
+      sdg/target:
+        code: "Código"
+        title: "Título"
       site_customization/page:
         content: Conteúdo
         created_at: Criado em
