@@ -1,1 +1,6 @@
 ro:
+  sdg_management:
+    header:
+      title: "Conținutul obiectivelor de dezvoltare durabilă"
+    menu:
+      sdg_content: "Obiective și Ținte"
