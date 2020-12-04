@@ -94,6 +94,10 @@ ro:
         one: "Propunerea cetățeanului"
         few: "Propunerile cetățeanului"
         other: "Propunerile cetățeanului"
+      sdg/goal:
+        one: "scop"
+        few: "scopuri"
+        other: "scopuri"
       site_customization/page:
         one: Pagină personalizate
         few: Pagini personalizate
@@ -348,6 +352,8 @@ ro:
         signable_type: "Tip semnnătură"
         signable_id: "Semnatar"
         document_numbers: "Numerele documentelor"
+      sdg/goal:
+        title: "Titlu"
       site_customization/page:
         content: Conținut
         created_at: Creat la
