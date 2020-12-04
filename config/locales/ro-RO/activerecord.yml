@@ -354,6 +354,7 @@ ro:
         document_numbers: "Numerele documentelor"
       sdg/goal:
         title: "Titlu"
+        description: "Descriere"
       site_customization/page:
         content: Conținut
         created_at: Creat la
