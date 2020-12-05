@@ -1,4 +1,6 @@
 class Admin::MenuComponent < ApplicationComponent
+  include LinkListHelper
+
   private
 
     def moderated_content?
