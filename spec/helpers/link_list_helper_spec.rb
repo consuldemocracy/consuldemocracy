@@ -32,6 +32,32 @@ describe LinkListHelper do
       expect(page).to have_css "a.root", count: 1, exact_text: "Home"
       expect(page).to have_css "a#info", count: 1, exact_text: "Info"
     end
+
+    it "accepts an optional condition to check the active element" do
+      render helper.link_list(
+        ["Home", "/", false],
+        ["Info", "/info", true],
+        ["Help", "/help"]
+      )
+
+      expect(page).to have_css "li", count: 3
+      expect(page).to have_css "li.is-active", count: 1, exact_text: "Info"
+    end
+
+    it "allows passing both the active condition and link options" do
+      render helper.link_list(
+        ["Home", "/", false, class: "root"],
+        ["Info", "/info", true, id: "info"],
+        ["Help", "/help", rel: "help"]
+      )
+
+      expect(page).to have_css "li", count: 3
+      expect(page).to have_css "li.is-active", count: 1, exact_text: "Info"
+
+      expect(page).to have_css "a.root", count: 1, exact_text: "Home"
+      expect(page).to have_css "a#info", count: 1, exact_text: "Info"
+      expect(page).to have_css "a[rel='help']", count: 1, exact_text: "Help"
+    end
   end
 
   attr_reader :content
