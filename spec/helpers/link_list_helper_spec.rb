@@ -41,7 +41,7 @@ describe LinkListHelper do
       )
 
       expect(page).to have_css "li", count: 3
-      expect(page).to have_css "li.is-active", count: 1, exact_text: "Info"
+      expect(page).to have_css "li[aria-current='true']", count: 1, exact_text: "Info"
     end
 
     it "allows passing both the active condition and link options" do
@@ -52,7 +52,7 @@ describe LinkListHelper do
       )
 
       expect(page).to have_css "li", count: 3
-      expect(page).to have_css "li.is-active", count: 1, exact_text: "Info"
+      expect(page).to have_css "li[aria-current='true']", count: 1, exact_text: "Info"
 
       expect(page).to have_css "a.root", count: 1, exact_text: "Home"
       expect(page).to have_css "a#info", count: 1, exact_text: "Info"
