@@ -36,26 +36,10 @@
   <li>
     <a href="#" class="booths-link"><%= t("admin.menu.title_booths") %></a>
     <%= link_list(
-      [
-        t("admin.menu.poll_officers"),
-        admin_officers_path,
-        %w[officers officer_assignments].include?(controller_name)
-      ],
-      [
-        t("admin.menu.poll_booths"),
-        admin_booths_path,
-        controller_name == "booths" && action_name != "available"
-      ],
-      [
-        t("admin.menu.poll_booth_assignments"),
-        booth_assignments_admin_polls_path,
-        controller_name == "polls" && action_name == "booth_assignments" || controller_name == "booth_assignments" && action_name == "manage"
-      ],
-      [
-        t("admin.menu.poll_shifts"),
-        available_admin_booths_path,
-        %w[shifts booths].include?(controller_name) && %w[available new].include?(action_name)
-      ],
+      officers_link,
+      booths_link,
+      booth_assignments_link,
+      shifts_link,
       id: "booths_menu", class: ("is-active" if booths?)
     ) %>
   </li>
@@ -69,26 +53,10 @@
   <li>
     <a href="#" class="messages-link"><%= t("admin.menu.messaging_users") %></a>
     <%= link_list(
-      [
-        t("admin.menu.newsletters"),
-        admin_newsletters_path,
-        controller_name == "newsletters"
-      ],
-      [
-        t("admin.menu.admin_notifications"),
-        admin_admin_notifications_path,
-        controller_name == "admin_notifications"
-      ],
-      [
-        t("admin.menu.system_emails"),
-        admin_system_emails_path,
-        controller_name == "system_emails"
-      ],
-      [
-        t("admin.menu.emails_download"),
-        admin_emails_download_index_path,
-        controller_name == "emails_download"
-      ],
+      newsletters_link,
+      admin_notifications_link,
+      system_emails_link,
+      emails_download_link,
       id: "messaging_users_menu", class: ("is-active" if messages_menu_active?)
     ) %>
   </li>
@@ -96,31 +64,11 @@
   <li>
     <a href="#" class="site-customization-link"><%= t("admin.menu.title_site_customization") %></a>
     <%= link_list(
-      [
-        t("admin.menu.site_customization.homepage"),
-        admin_homepage_path,
-        homepage?
-      ],
-      [
-        t("admin.menu.site_customization.pages"),
-        admin_site_customization_pages_path,
-        pages? || controller_name == "pages"
-      ],
-      [
-        t("admin.menu.banner"),
-        admin_banners_path,
-        controller_name == "banners"
-      ],
-      [
-        t("admin.menu.site_customization.information_texts"),
-        admin_site_customization_information_texts_path,
-        controller_name == "information_texts"
-      ],
-      [
-        t("admin.menu.site_customization.documents"),
-        admin_site_customization_documents_path,
-        controller_name == "documents"
-      ],
+      homepage_link,
+      pages_link,
+      banners_link,
+      information_texts_link,
+      documents_link,
       class: ("is-active" if customization? && controller.class.parent != Admin::Poll::Questions::Answers)
     ) %>
   </li>
@@ -128,47 +76,13 @@
   <li>
     <a href="#" class="moderated-content-link"><%= t("admin.menu.title_moderated_content") %></a>
     <%= link_list(
-      (
-        [
-          t("admin.menu.hidden_proposals"),
-          admin_hidden_proposals_path,
-          controller_name == "hidden_proposals"
-        ] if feature?(:proposals)
-      ),
-      (
-        [
-          t("admin.menu.hidden_debates"),
-          admin_hidden_debates_path,
-          controller_name == "hidden_debates"
-        ] if feature?(:debates)
-      ),
-      (
-        [
-          t("admin.menu.hidden_budget_investments"),
-          admin_hidden_budget_investments_path,
-          controller_name == "hidden_budget_investments"
-        ] if feature?(:budgets)
-      ),
-      [
-        t("admin.menu.hidden_comments"),
-        admin_hidden_comments_path,
-        controller_name == "hidden_comments"
-      ],
-      [
-        t("admin.menu.hidden_proposal_notifications"),
-        admin_hidden_proposal_notifications_path,
-        controller_name == "hidden_proposal_notifications"
-      ],
-      [
-        t("admin.menu.hidden_users"),
-        admin_hidden_users_path,
-        controller_name == "hidden_users"
-      ],
-      [
-        t("admin.menu.activity"),
-        admin_activity_path,
-        controller_name == "activity"
-      ],
+      (hidden_proposals_link if feature?(:proposals)),
+      (hidden_debates_link if feature?(:debates)),
+      (hidden_budget_investments_link if feature?(:budgets)),
+      hidden_comments_link,
+      hidden_proposal_notifications_link,
+      hidden_users_link,
+      activity_link,
       class: ("is-active" if moderated_content?)
     ) %>
   </li>
@@ -176,41 +90,13 @@
   <li>
     <a href="#" class="profiles-link"><%= t("admin.menu.title_profiles") %></a>
     <%= link_list(
-      [
-        t("admin.menu.administrators"),
-        admin_administrators_path,
-        controller_name == "administrators"
-      ],
-      [
-        t("admin.menu.organizations"),
-        admin_organizations_path,
-        controller_name == "organizations"
-      ],
-      [
-        t("admin.menu.officials"),
-        admin_officials_path,
-        controller_name == "officials"
-      ],
-      [
-        t("admin.menu.moderators"),
-        admin_moderators_path,
-        controller_name == "moderators"
-      ],
-      [
-        t("admin.menu.valuators"),
-        admin_valuators_path,
-        controller_name == "valuators"
-      ],
-      [
-        t("admin.menu.managers"),
-        admin_managers_path,
-        controller_name == "managers"
-      ],
-      [
-        t("admin.menu.users"),
-        admin_users_path,
-        controller_name == "users"
-      ],
+      administrators_link,
+      organizations_link,
+      officials_link,
+      moderators_link,
+      valuators_link,
+      managers_link,
+      users_link,
       class: ("is-active" if profiles?)
     ) %>
   </li>
@@ -222,52 +108,20 @@
   <li>
     <a href="#" class="settings-link"><%= t("admin.menu.title_settings") %></a>
     <%= link_list(
-      [
-        t("admin.menu.settings"),
-        admin_settings_path,
-        controller_name == "settings"
-      ],
-      [
-        t("admin.menu.proposals_topics"),
-        admin_tags_path,
-        controller_name == "tags"
-      ],
-      [
-        t("admin.menu.geozones"),
-        admin_geozones_path,
-        controller_name == "geozones"
-      ],
-      [
-        t("admin.menu.site_customization.images"),
-        admin_site_customization_images_path,
-        controller_name == "images" && controller.class.parent != Admin::Poll::Questions::Answers
-      ],
-      [
-        t("admin.menu.site_customization.content_blocks"),
-        admin_site_customization_content_blocks_path,
-        controller_name == "content_blocks"
-      ],
-      [
-        t("admin.menu.local_census_records"),
-        admin_local_census_records_path,
-        local_census_records?
-      ],
+      settings_link,
+      tags_link,
+      geozones_link,
+      images_link,
+      content_blocks_link,
+      local_census_records_link,
       class: ("is-active" if settings?)
     ) %>
   </li>
   <li>
     <a href="#" class="dashboard-link"><%= t("admin.menu.dashboard") %></a>
     <%= link_list(
-      [
-        t("admin.menu.dashboard_actions"),
-        admin_dashboard_actions_path,
-        controller_name == "actions"
-      ],
-      [
-        t("admin.menu.administrator_tasks"),
-        admin_dashboard_administrator_tasks_path,
-        controller_name == "administrator_tasks"
-      ],
+      dashboard_actions_link,
+      administrator_tasks_link,
       class: ("is-active" if dashboard?)
     ) %>
   </li>
