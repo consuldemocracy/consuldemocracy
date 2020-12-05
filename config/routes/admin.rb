@@ -192,7 +192,9 @@ namespace :admin do
     get :generate_csv, on: :collection
   end
 
-  resource :stats, only: :show do
+  get "/stats", to: "stats#index", as: :stats
+
+  resource :stats, only: [] do
     get :graph, on: :member
     get :budgets, on: :collection
     get :budget_supporting, on: :member
