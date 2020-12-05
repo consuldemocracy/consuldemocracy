@@ -1,7 +1,6 @@
-<ul id="admin_menu" data-accordion-menu>
-  <li class="section-title">
-    <a href="#" class="users-link"><%= t("management.menu.users") %></a>
-    <%= link_list(
+<%= link_list(
+  link_to(t("management.menu.users"), "#", class: "users-link") +
+    link_list(
       [
         t("management.menu.select_user"),
         management_document_verifications_path,
@@ -44,20 +43,26 @@
         ] if Setting["process.budgets"]
       ),
       class: "is-active"
-    ) %>
-  </li>
-
-  <% if Setting["process.budgets"] %>
-    <li <%= "class=is-active" if menu_print_investments? %>>
-      <%= link_to t("management.menu.print_budget_investments"), print_investments_management_budgets_path, class: "print-investments-link" %>
-    </li>
-  <% end %>
-
-  <li <%= "class=is-active" if menu_print_proposals? %>>
-    <%= link_to t("management.menu.print_proposals"), print_management_proposals_path, class: "print-proposals-link" %>
-  </li>
-
-  <li <%= "class=is-active" if menu_user_invites? %>>
-    <%= link_to t("management.menu.user_invites"), new_management_user_invite_path, class: "invitations-link" %>
-  </li>
-</ul>
+    ),
+  (
+    [
+      t("management.menu.print_budget_investments"),
+      print_investments_management_budgets_path,
+      menu_print_investments?,
+      class: "print-investments-link"
+    ] if Setting["process.budgets"]
+  ),
+  [
+    t("management.menu.print_proposals"),
+    print_management_proposals_path,
+    menu_print_proposals?,
+    class: "print-proposals-link"
+  ],
+  [
+    t("management.menu.user_invites"),
+    new_management_user_invite_path,
+    menu_user_invites?,
+    class: "invitations-link"
+  ],
+  id: "admin_menu", data: { "accordion-menu": true }
+) %>

@@ -58,6 +58,20 @@ describe LinkListHelper do
       expect(page).to have_css "a#info", count: 1, exact_text: "Info"
       expect(page).to have_css "a[rel='help']", count: 1, exact_text: "Help"
     end
+
+    it "accepts the content of the list item as a parameter" do
+      list = helper.link_list(["Home", "/"], "Something")
+
+      expect(list).to eq '<ul><li><a href="/">Home</a></li><li>Something</li></ul>'
+      expect(list).to be_html_safe
+    end
+
+    it "accepts safe HTML as the content of the list item" do
+      list = helper.link_list(["Home", "/"], helper.tag.span("Something"))
+
+      expect(list).to eq '<ul><li><a href="/">Home</a></li><li><span>Something</span></li></ul>'
+      expect(list).to be_html_safe
+    end
   end
 
   attr_reader :content
