@@ -166,7 +166,7 @@ namespace :admin do
     get :search, on: :collection
   end
 
-  resource :activity, controller: :activity, only: :show
+  get "/activity", to: "activity#index", as: :activity
 
   resources :newsletters do
     member do
