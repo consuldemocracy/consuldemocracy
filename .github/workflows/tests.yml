@@ -1,7 +1,7 @@
 name: tests
 on:
   push:
-    branches:
+    branches-ignore:
       - master
   pull_request:
     branches-ignore:
