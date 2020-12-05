@@ -150,7 +150,7 @@ class Admin::MenuComponent < ApplicationComponent
 
     def banners_link
       [
-        t("admin.menu.banner"),
+        t("admin.menu.banners"),
         admin_banners_path,
         controller_name == "banners"
       ]
@@ -294,7 +294,7 @@ class Admin::MenuComponent < ApplicationComponent
 
     def tags_link
       [
-        t("admin.menu.proposals_topics"),
+        t("admin.menu.tags"),
         admin_tags_path,
         controller_name == "tags"
       ]
@@ -334,7 +334,7 @@ class Admin::MenuComponent < ApplicationComponent
 
     def administrator_tasks_link
       [
-        t("admin.menu.administrator_tasks"),
+        t("admin.menu.dashboard.administrator_tasks"),
         admin_dashboard_administrator_tasks_path,
         controller_name == "administrator_tasks"
       ]
@@ -342,7 +342,7 @@ class Admin::MenuComponent < ApplicationComponent
 
     def dashboard_actions_link
       [
-        t("admin.menu.dashboard_actions"),
+        t("admin.menu.dashboard.actions"),
         admin_dashboard_actions_path,
         controller_name == "actions"
       ]
