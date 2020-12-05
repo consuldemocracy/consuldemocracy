@@ -1,4 +1,6 @@
 class SDGManagement::MenuComponent < ApplicationComponent
+  include LinkListHelper
+
   private
 
     def sdg?
