@@ -145,15 +145,17 @@ class Admin::MenuComponent < ApplicationComponent
       %w[newsletters emails_download admin_notifications system_emails]
     end
 
-    def subnavigation_link(controller)
+    def navigation_link(controller)
       [
         t("admin.menu.#{controller.tr("/", ".")}"),
         { controller: "/admin/#{controller}", action: :index },
-        controller_name == controller.split("/").last
+        controller_name == controller.split("/").last,
+        class: "#{controller.tr("_/", "-")}-link"
       ]
     end
 
     %w[
+      proposals debates comments signature_sheets stats
       newsletters admin_notifications system_emails emails_download
       hidden_proposals hidden_debates hidden_budget_investments hidden_comments hidden_proposal_notifications hidden_users activity
       banners
@@ -161,20 +163,47 @@ class Admin::MenuComponent < ApplicationComponent
       settings tags geozones
     ].each do |controller|
       define_method :"#{controller}_link" do
-        subnavigation_link(controller)
+        navigation_link(controller)
       end
     end
 
     %w[information_texts documents content_blocks].each do |controller|
       define_method :"#{controller}_link" do
-        subnavigation_link("site_customization/#{controller}")
+        navigation_link("site_customization/#{controller}")
       end
     end
 
     %w[administrator_tasks actions].each do |controller|
       define_method :"dashboard_#{controller}_link" do
-        subnavigation_link("dashboard/#{controller}")
+        navigation_link("dashboard/#{controller}")
       end
+    end
+
+    def polls_link
+      [
+        t("admin.menu.polls"),
+        admin_polls_path,
+        polls?,
+        class: "polls-link"
+      ]
+    end
+
+    def legislation_link
+      [
+        t("admin.menu.legislation"),
+        admin_legislation_processes_path,
+        controller.class.parent == Admin::Legislation,
+        class: "legislation-link"
+      ]
+    end
+
+    def budgets_link
+      [
+        t("admin.menu.budgets"),
+        admin_budgets_path,
+        budgets?,
+        class: "budgets-link"
+      ]
     end
 
     def officers_link
