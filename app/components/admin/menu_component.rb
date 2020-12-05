@@ -3,6 +3,83 @@ class Admin::MenuComponent < ApplicationComponent
 
   private
 
+    def booths_list
+      link_list(
+        officers_link,
+        booths_link,
+        booth_assignments_link,
+        shifts_link,
+        id: "booths_menu", class: ("is-active" if booths?)
+      )
+    end
+
+    def messages_list
+      link_list(
+        newsletters_link,
+        admin_notifications_link,
+        system_emails_link,
+        emails_download_link,
+        id: "messaging_users_menu", class: ("is-active" if messages_menu_active?)
+      )
+    end
+
+    def site_customization_list
+      link_list(
+        homepage_link,
+        pages_link,
+        banners_link,
+        information_texts_link,
+        documents_link,
+        class: ("is-active" if customization? && controller.class.parent != Admin::Poll::Questions::Answers)
+      )
+    end
+
+    def moderated_content_list
+      link_list(
+        (hidden_proposals_link if feature?(:proposals)),
+        (hidden_debates_link if feature?(:debates)),
+        (hidden_budget_investments_link if feature?(:budgets)),
+        hidden_comments_link,
+        hidden_proposal_notifications_link,
+        hidden_users_link,
+        activity_link,
+        class: ("is-active" if moderated_content?)
+      )
+    end
+
+    def profiles_list
+      link_list(
+        administrators_link,
+        organizations_link,
+        officials_link,
+        moderators_link,
+        valuators_link,
+        managers_link,
+        users_link,
+        class: ("is-active" if profiles?)
+      )
+    end
+
+    def settings_list
+      link_list(
+        settings_link,
+        tags_link,
+        geozones_link,
+        images_link,
+        content_blocks_link,
+        local_census_records_link,
+        class: ("is-active" if settings?)
+      )
+    end
+
+    def dashboard_list
+      link_list(
+        dashboard_actions_link,
+        dashboard_administrator_tasks_link,
+        class: ("is-active" if dashboard?)
+      )
+    end
+
     def moderated_content?
       moderated_sections.include?(controller_name) && controller.class.parent != Admin::Legislation
     end
