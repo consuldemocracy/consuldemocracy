@@ -1,69 +1,17 @@
 <%= link_list(
-  (
-    [
-      t("admin.menu.proposals"),
-      admin_proposals_path,
-      controller_name == "proposals",
-      class: "proposals-link"
-    ] if feature?(:proposals)
-  ),
-  (
-    [
-      t("admin.menu.debates"),
-      admin_debates_path,
-      controller_name == "debates",
-      class: "debates-link"
-    ] if feature?(:debates)
-  ),
-  [
-    t("admin.menu.comments"),
-    admin_comments_path,
-    controller_name == "comments",
-    class: "comments-link"
-  ],
-  (
-    [
-      t("admin.menu.polls"),
-      admin_polls_path,
-      polls?,
-      class: "polls-link"
-    ] if feature?(:polls)
-  ),
-  (
-    [
-      t("admin.menu.legislation"),
-      admin_legislation_processes_path,
-      controller.class.parent == Admin::Legislation,
-      class: "legislation-link"
-    ] if feature?(:legislation)
-  ),
-  (
-    [
-      t("admin.menu.budgets"),
-      admin_budgets_path,
-      budgets?,
-      class: "budgets-link"
-    ] if feature?(:budgets)
-  ),
+  (proposals_link if feature?(:proposals)),
+  (debates_link if feature?(:debates)),
+  comments_link,
+  (polls_link if feature?(:polls)),
+  (legislation_link if feature?(:legislation)),
+  (budgets_link if feature?(:budgets)),
   link_to(t("admin.menu.title_booths"), "#", class: "booths-link") + booths_list,
-  (
-    [
-      t("admin.menu.signature_sheets"),
-      admin_signature_sheets_path,
-      controller_name == "signature_sheets",
-      class: "signature-sheets-link"
-    ] if feature?(:signature_sheets)
-  ),
+  (signature_sheets_link if feature?(:signature_sheets)),
   link_to(t("admin.menu.title_messages"), "#", class: "messages-link") + messages_list,
   link_to(t("admin.menu.title_site_customization"), "#", class: "site-customization-link") + site_customization_list,
   link_to(t("admin.menu.title_moderated_content"), "#", class: "moderated-content-link") + moderated_content_list,
   link_to(t("admin.menu.title_profiles"), "#", class: "profiles-link") + profiles_list,
-  [
-    t("admin.menu.stats"),
-    admin_stats_path,
-    controller_name == "stats",
-    class: "stats-link"
-  ],
+  stats_link,
   link_to(t("admin.menu.title_settings"), "#", class: "settings-link") + settings_list,
   link_to(t("admin.menu.title_dashboard"), "#", class: "dashboard-link") + dashboard_list,
   id: "admin_menu", data: { "accordion-menu": true, "multi-open": true }

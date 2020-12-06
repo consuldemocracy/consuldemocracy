@@ -1,68 +1,7 @@
 <%= link_list(
-  link_to(t("management.menu.users"), "#", class: "users-link") +
-    link_list(
-      [
-        t("management.menu.select_user"),
-        management_document_verifications_path,
-        users?
-      ],
-      (
-        [
-          t("management.account.menu.reset_password_email"),
-          edit_password_email_management_account_path,
-          edit_password_email?
-        ] if managed_user.email
-      ),
-      [
-        t("management.account.menu.reset_password_manually"),
-        edit_password_manually_management_account_path,
-        edit_password_manually?
-      ],
-      [
-        t("management.menu.create_proposal"),
-        new_management_proposal_path,
-        create_proposal?
-      ],
-      [
-        t("management.menu.support_proposals"),
-        management_proposals_path,
-        support_proposal?
-      ],
-      (
-        [
-          t("management.menu.create_budget_investment"),
-          create_investments_management_budgets_path,
-          create_investments?
-        ] if Setting["process.budgets"]
-      ),
-      (
-        [
-          t("management.menu.support_budget_investments"),
-          support_investments_management_budgets_path,
-          support_investments?
-        ] if Setting["process.budgets"]
-      ),
-      class: "is-active"
-    ),
-  (
-    [
-      t("management.menu.print_budget_investments"),
-      print_investments_management_budgets_path,
-      print_investments?,
-      class: "print-investments-link"
-    ] if Setting["process.budgets"]
-  ),
-  [
-    t("management.menu.print_proposals"),
-    print_management_proposals_path,
-    print_proposals?,
-    class: "print-proposals-link"
-  ],
-  [
-    t("management.menu.user_invites"),
-    new_management_user_invite_path,
-    user_invites?,
-    class: "invitations-link"
-  ],
+  link_to(t("management.menu.users"), "#", class: "users-link") + users_list,
+  (print_investments_link if Setting["process.budgets"]),
+  print_proposals_link,
+  user_invites_link,
   id: "admin_menu", data: { "accordion-menu": true }
 ) %>

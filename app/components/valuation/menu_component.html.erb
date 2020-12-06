@@ -1,5 +1,1 @@
-<%= link_list(
-  [t("valuation.menu.title"), valuation_root_path],
-  [t("valuation.menu.budgets"), valuation_budgets_path, controller_name == "budget_investments", class: "budgets-link"],
-  id: "valuation_menu"
-) %>
+<%= link_list(valuation_link, budgets_link, id: "valuation_menu") %>

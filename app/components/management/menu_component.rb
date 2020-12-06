@@ -4,6 +4,102 @@ class Management::MenuComponent < ApplicationComponent
 
   private
 
+    def users_list
+      link_list(
+        document_verifications_link,
+        (edit_password_email_link if managed_user.email),
+        edit_password_manually_link,
+        new_proposal_link,
+        proposals_link,
+        (create_investments_link if Setting["process.budgets"]),
+        (support_investments_link if Setting["process.budgets"]),
+        class: "is-active"
+      )
+    end
+
+    def document_verifications_link
+      [
+        t("management.menu.select_user"),
+        management_document_verifications_path,
+        users?
+      ]
+    end
+
+    def edit_password_email_link
+      [
+        t("management.account.menu.reset_password_email"),
+        edit_password_email_management_account_path,
+        edit_password_email?
+      ]
+    end
+
+    def edit_password_manually_link
+      [
+        t("management.account.menu.reset_password_manually"),
+        edit_password_manually_management_account_path,
+        edit_password_manually?
+      ]
+    end
+
+    def new_proposal_link
+      [
+        t("management.menu.create_proposal"),
+        new_management_proposal_path,
+        create_proposal?
+      ]
+    end
+
+    def proposals_link
+      [
+        t("management.menu.support_proposals"),
+        management_proposals_path,
+        support_proposal?
+      ]
+    end
+
+    def create_investments_link
+      [
+        t("management.menu.create_budget_investment"),
+        create_investments_management_budgets_path,
+        create_investments?
+      ]
+    end
+
+    def support_investments_link
+      [
+        t("management.menu.support_budget_investments"),
+        support_investments_management_budgets_path,
+        support_investments?
+      ]
+    end
+
+    def print_investments_link
+      [
+        t("management.menu.print_budget_investments"),
+        print_investments_management_budgets_path,
+        print_investments?,
+        class: "print-investments-link"
+      ]
+    end
+
+    def print_proposals_link
+      [
+        t("management.menu.print_proposals"),
+        print_management_proposals_path,
+        print_proposals?,
+        class: "print-proposals-link"
+      ]
+    end
+
+    def user_invites_link
+      [
+        t("management.menu.user_invites"),
+        new_management_user_invite_path,
+        user_invites?,
+        class: "invitations-link"
+      ]
+    end
+
     def users?
       ["users", "email_verifications", "document_verifications"].include?(controller_name)
     end
