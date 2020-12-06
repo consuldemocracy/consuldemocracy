@@ -3,6 +3,10 @@ class Admin::MenuComponent < ApplicationComponent
 
   private
 
+    def item_title(section_name)
+      link_to(t("admin.menu.title_#{section_name}"), "#", class: "#{section_name.tr("_", "-")}-link")
+    end
+
     def booths_list
       link_list(
         officers_link,

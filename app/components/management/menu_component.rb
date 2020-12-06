@@ -4,6 +4,10 @@ class Management::MenuComponent < ApplicationComponent
 
   private
 
+    def item_title(section_name)
+      link_to(t("management.menu.#{section_name}"), "#", class: "#{section_name.tr("_", "-")}-link")
+    end
+
     def users_list
       link_list(
         document_verifications_link,
