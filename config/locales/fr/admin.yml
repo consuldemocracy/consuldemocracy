@@ -807,7 +807,6 @@ fr:
         entry_name: assesseur
       search:
         email_placeholder: Rechercher un utilisateur par courriel
-        search: Chercher
         user_not_found: Utilisateur introuvable
     poll_officer_assignments:
       index:
@@ -1047,7 +1046,6 @@ fr:
         no_organizations: Il n’y a pas d’organisations.
         reject: Rejeter
         rejected: Rejeté
-        search: Chercher
         search_placeholder: Nom, courriel ou téléphone
         title: Organisations
         verified: Vérifié
@@ -1103,21 +1101,14 @@ fr:
       true_value: "Oui"
       false_value: "Non"
       booths_search:
-        button: Chercher
         placeholder: Rechercher le bureau de vote par nom
       poll_officers_search:
-        button: Chercher
         placeholder: Rechercher le président d'un vote
       poll_questions_search:
-        button: Chercher
         placeholder: Rechercher les questions d'un vote
       proposal_search:
-        button: Chercher
         placeholder: Rechercher des propositions par titre, code, description ou question
-      debate_search:
-        button: Rechercher
       user_search:
-        button: Chercher
         placeholder: Rechercher un utilisateur par nom ou courriel
       search_results: "Résultats de recherche"
       no_search_results: "Aucun résultat trouvé."
@@ -1260,7 +1251,6 @@ fr:
         no_users: Il n'y a pas aucun utilisateur.
       search:
         placeholder: Rechercher un utilisateur par email, nom ou numéro de document
-        search: Chercher
     verifications:
       index:
         phone_not_given: Téléphone non communiqué
@@ -1379,5 +1369,3 @@ fr:
     local_census_records:
       index:
         date_of_birth: Date de naissance
-        search:
-          search: Rechercher
