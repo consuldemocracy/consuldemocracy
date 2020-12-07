@@ -903,7 +903,6 @@ de:
         entry_name: Wahlvorsteher*in
       search:
         email_placeholder: Benutzer*in via E-Mail suchen
-        search: Suche
         user_not_found: Benutzer wurde nicht gefunden
         help: "Um Umfragebeauftragte hinzuzufügen oder zu entfernen, verwenden Sie das untenstehende Suchformular."
     poll_officer_assignments:
@@ -1165,7 +1164,6 @@ de:
         no_organizations: Keine Organisationen vorhanden.
         reject: Ablehnen
         rejected: Abgelehnt
-        search: Suche
         search_placeholder: Name, E-Mail oder Telefonnummer
         title: Organisationen
         verified: Überprüft
@@ -1239,22 +1237,16 @@ de:
       true_value: "Ja"
       false_value: "Nein"
       booths_search:
-        button: Suche
         placeholder: Suche Wahlkabine nach Name
       poll_officers_search:
-        button: Suche
         placeholder: Suche Beamte/innen
       poll_questions_search:
-        button: Suche
         placeholder: Suche Fragen
       proposal_search:
-        button: Suche
         placeholder: Suche Vorschläge nach Titel, Code, Beschreibung oder Frage
       debate_search:
-        button: Suche
         placeholder: Suche Debatten per Titel oder Beschreibung
       user_search:
-        button: Suche
         placeholder: Suche Benutzer*in nach Name oder E-Mail
       search_results: "Ergebnisse anzeigen"
       no_search_results: "Keine Ergebnisse gefunden."
@@ -1417,7 +1409,6 @@ de:
         no_users: Keine Benutzer*innen vorhanden.
       search:
         placeholder: Suche Benutzer*in nach E-Mail, Name oder Ausweis
-        search: Suche
     verifications:
       index:
         phone_not_given: Telefon nicht angegeben
@@ -1558,7 +1549,6 @@ de:
         postal_code: Postleitzahl
         search:
           placeholder: Suche per Dokumentennummer
-          search: Suche
         import: Import CSV
       new:
         creating: Neues lokales Register anlegen
