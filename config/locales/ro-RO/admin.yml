@@ -911,7 +911,6 @@ ro:
         entry_name: funcționar public
       search:
         email_placeholder: Caută utilizator după email
-        search: Caută
         user_not_found: Utilizatorul nu a fost găsit
         help: "Pentru a adăuga sau elimina ofițerii de sondaj utilizați formularul de căutare de mai jos."
     poll_officer_assignments:
@@ -1175,7 +1174,6 @@ ro:
         no_organizations: Nu există organizații.
         reject: Respinge
         rejected: Respins
-        search: Caută
         search_placeholder: Nume, email sau număr de telefon
         title: Organizații
         verified: Verificat
@@ -1260,22 +1258,16 @@ ro:
       true_value: "Da"
       false_value: "Nu"
       booths_search:
-        button: Caută
         placeholder: Caută cabină de vot după nume sau locație
       poll_officers_search:
-        button: Caută
         placeholder: Caută funcționar public
       poll_questions_search:
-        button: Caută
         placeholder: Căutați întrebări la sondaj
       proposal_search:
-        button: Caută
         placeholder: Caută propunere după titlu, cod, descriere ori întrebare
       debate_search:
-        button: Caută
         placeholder: Căutați dezbateri după titlu sau descriere
       user_search:
-        button: Caută
         placeholder: Caută utilizator după nume sau email
       search_results: "Caută rezultate"
       no_search_results: "Nu a fost găsită niciun rezultat."
@@ -1447,7 +1439,6 @@ ro:
           erased: Șters
       search:
         placeholder: Caută utilizator după email, nume sau numărul documentului
-        search: Caută
     verifications:
       index:
         phone_not_given: Numărul de telefon nu a fost pus la dispoziție
@@ -1588,7 +1579,6 @@ ro:
         postal_code: Cod poștal
         search:
           placeholder: Caută după numărul documentului
-          search: Caută
         import: Importă CSV
       new:
         creating: Crează o nouă înregistrare de date locale
