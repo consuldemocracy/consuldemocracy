@@ -360,7 +360,6 @@ fi:
         name: Nimi
         email: Sähköposti
       search:
-        search: Etsi
         user_not_found: Käyttäjää ei löydy
     poll_officer_assignments:
       index:
@@ -446,7 +445,6 @@ fi:
         email: Sähköposti
         phone_number: Puhelin
         status: Tila
-        search: Etsi
         title: Organisaatiot
         pending: Vireillä
     proposals:
@@ -476,16 +474,6 @@ fi:
     shared:
       true_value: "Kyllä"
       false_value: "Ei"
-      booths_search:
-        button: Etsi
-      poll_officers_search:
-        button: Etsi
-      poll_questions_search:
-        button: Etsi
-      proposal_search:
-        button: Etsi
-      user_search:
-        button: Etsi
       actions: Toiminnot
       description: Kuvaus
       image: Kuva
@@ -531,8 +519,6 @@ fi:
         email: Sähköposti
       index:
         title: Käyttäjä
-      search:
-        search: Etsi
     site_customization:
       content_blocks:
         content_block:
