@@ -534,7 +534,6 @@ eu:
         entry_name: Mahaiburua
       search:
         email_placeholder: Email bidez erabiltzailea bilatu
-        search: Bilatu
         user_not_found: Ez da erabiltzailerik bilatu
     poll_officer_assignments:
       index:
@@ -771,7 +770,6 @@ eu:
         no_organizations: Ez dago erakunderik.
         reject: Baztertu
         rejected: Baztertuta
-        search: Bilatu
         search_placeholder: Izena, emaila edo telefonoa
         title: Erakundeak
         verified: Egiaztatuta
@@ -804,19 +802,14 @@ eu:
             submit: Eguneratu
     shared:
       booths_search:
-        button: Bilatu
         placeholder: Bilatu hautetsontzia izenagaitik
       poll_officers_search:
-        button: Bilatu
         placeholder: Mahaiburuak bilatu
       poll_questions_search:
-        button: Bilatu
         placeholder: Galderak bilatu
       proposal_search:
-        button: Bilatu
         placeholder: Proposamenak izenburua, kodea, deskribapena edo galderagaitik bilatu
       user_search:
-        button: Bilatu
         placeholder: Erabiltzailea izena edo emailagaitik bilatu
       search_results: "Bilaketaren emaitzak"
       no_search_results: "Ez da emaitzik bilatu."
@@ -933,7 +926,6 @@ eu:
         no_users: Ez dago erabiltzailerik.
       search:
         placeholder: Erabiltzailea emaila, izena edo NANagaitik bilatu
-        search: Bilatu
     verifications:
       index:
         phone_not_given: Ez du telefonoa eman
