@@ -657,7 +657,6 @@ sq:
         entry_name: oficer
       search:
         email_placeholder: Kërko përdoruesin me email
-        search: Kërko
         user_not_found: Përdoruesi nuk u gjet
     poll_officer_assignments:
       index:
@@ -895,7 +894,6 @@ sq:
         no_organizations: Nuk ka organizata.
         reject: Refuzuar
         rejected: Refuzuar
-        search: Kërko
         search_placeholder: Emri, emaili ose numri i telefonit
         title: Organizim
         verified: Verifikuar
@@ -948,19 +946,14 @@ sq:
       true_value: "Po"
       false_value: "Jo"
       booths_search:
-        button: Kërko
         placeholder: Kërko kabinat sipas emrit
       poll_officers_search:
-        button: Kërko
         placeholder: Kërko ofruesit e sondazhit
       poll_questions_search:
-        button: Kërko
         placeholder: Kërkoni pyetjet e sondazhit
       proposal_search:
-        button: Kërko
         placeholder: Kërkoni propozime sipas titullit, kodit, përshkrimit ose pyetjes
       user_search:
-        button: Kërko
         placeholder: Kërko përdoruesin sipas emrit ose email
       search_results: "Kërko rezultatet"
       no_search_results: "Nuk u gjetën rezultate."
@@ -1082,7 +1075,6 @@ sq:
         no_users: Nuk ka përdorues.
       search:
         placeholder: Kërko përdoruesin sipas email, emrin ose numrin e dokumentit
-        search: Kërko
     verifications:
       index:
         phone_not_given: Telefon nuk është dhënë
