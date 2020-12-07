@@ -662,7 +662,6 @@ zh-CN:
         entry_name: 官员
       search:
         email_placeholder: 通过电子邮件搜索用户
-        search: 搜索
         user_not_found: 未找到用户
     poll_officer_assignments:
       index:
@@ -900,7 +899,6 @@ zh-CN:
         no_organizations: 没有组织。
         reject: 拒绝
         rejected: 已拒绝
-        search: 搜索
         search_placeholder: 名字，电子邮件或者电话号码
         title: 组织
         verified: 已验证
@@ -954,19 +952,14 @@ zh-CN:
       true_value: "是"
       false_value: "不是"
       booths_search:
-        button: 搜索
         placeholder: 按名字搜索投票亭
       poll_officers_search:
-        button: 搜索
         placeholder: 搜索投票站官员
       poll_questions_search:
-        button: 搜索
         placeholder: 搜索投票项问题
       proposal_search:
-        button: 搜索
         placeholder: 按标题，代码，描述或问题搜索提议
       user_search:
-        button: 搜索
         placeholder: 按名字或电子邮件搜索用户
       search_results: "搜索结果"
       no_search_results: "未找到结果。"
@@ -1086,7 +1079,6 @@ zh-CN:
         no_users: 没有用户。
       search:
         placeholder: 通过电子邮件，名字或者文档编号搜索用户
-        search: 搜索
     verifications:
       index:
         phone_not_given: 未提供电话号码
