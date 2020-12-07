@@ -916,7 +916,6 @@ uk-UA:
         entry_name: інспектор
       search:
         email_placeholder: Пошук користувача за електронною адресою
-        search: Пошук
         user_not_found: Користувача не знайдено
         help: "Щоб додати або усунути посадових осіб голосувань, скористайтеся формою нижче."
     poll_officer_assignments:
@@ -1181,7 +1180,6 @@ uk-UA:
         no_organizations: Немає організацій.
         reject: Відхилити
         rejected: Відхилено
-        search: Пошук
         search_placeholder: Ім'я, електронна адреса і номер телефону
         title: Організації
         verified: Перевірені
@@ -1264,22 +1262,16 @@ uk-UA:
       true_value: "Так"
       false_value: "Ні"
       booths_search:
-        button: Пошук
         placeholder: Шукати кабінку за назвою або розташуванням
       poll_officers_search:
-        button: Пошук
         placeholder: Шукати службовців голосування
       poll_questions_search:
-        button: Пошук
         placeholder: Шукати запитання голосувань
       proposal_search:
-        button: Пошук
         placeholder: Шукати пропозиції за назвою, кодом, описом або запитанням
       debate_search:
-        button: Пошук
         placeholder: Шукати обговорення за назвою або описом
       user_search:
-        button: Пошук
         placeholder: Шукати користувача за ім'ям або електронною адресою
       search_results: "Результати пошуку"
       no_search_results: "Результатів не знайдено."
@@ -1454,7 +1446,6 @@ uk-UA:
           erased: Видалені
       search:
         placeholder: Шукати користувача за електронною адресою, ім'ям або номером документа
-        search: Пошук
     verifications:
       index:
         phone_not_given: Телефона немає
@@ -1595,7 +1586,6 @@ uk-UA:
         postal_code: Поштовий індекс
         search:
           placeholder: Шукати за номером документа
-          search: Пошук
         import: Імпорт CSV
       new:
         creating: Створення нового журналу місцевого перепису
