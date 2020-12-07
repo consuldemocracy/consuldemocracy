@@ -903,7 +903,6 @@ da:
         entry_name: valgtilforordnede
       search:
         email_placeholder: Søg bruger via e-mail
-        search: Søg
         user_not_found: Brugeren blev ikke fundet
     poll_officer_assignments:
       index:
@@ -1164,7 +1163,6 @@ da:
         no_organizations: Der er ingen organisationer.
         reject: Afvis
         rejected: Afvist
-        search: Søg
         search_placeholder: Navn, e-mail eller telefonnummer
         title: Organisationer
         verified: Verificeret
@@ -1233,19 +1231,14 @@ da:
       true_value: "Ja"
       false_value: "Nej"
       booths_search:
-        button: Søg
         placeholder: Søg stemmeboks vis navn
       poll_officers_search:
-        button: Søg
         placeholder: Søg ansvarlig medarbejder
       poll_questions_search:
-        button: Søg
         placeholder: Søg spørgsmål til afstemning
       proposal_search:
-        button: Søg
         placeholder: Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål
       user_search:
-        button: Søg
         placeholder: Søg bruger vis navn eller e-mail
       search_results: "Søgningsresultater"
       no_search_results: "Ingen resultater fundet."
@@ -1393,7 +1386,6 @@ da:
           erased: Slettede
       search:
         placeholder: Søg bruger via e-mail, navn eller dokumentnummer
-        search: Søg
     verifications:
       index:
         phone_not_given: Telefon ikke angivet
