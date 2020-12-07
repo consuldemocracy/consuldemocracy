@@ -899,7 +899,6 @@ bg:
         entry_name: служител
       search:
         email_placeholder: Търсене на потребител по имейл
-        search: Търсене
         user_not_found: Потребителят не е намерен
         help: "За добавяне или премахване на анкетни служители използвайте формата за търсене по-долу."
     poll_officer_assignments:
@@ -1162,7 +1161,6 @@ bg:
         no_organizations: Няма организации.
         reject: Отхвърлете
         rejected: Отхвърлено
-        search: Търсете
         search_placeholder: Име, имейл или телефонен номер
         title: Организации
         verified: Потвърдено
@@ -1244,22 +1242,16 @@ bg:
       true_value: "Да"
       false_value: "Не"
       booths_search:
-        button: Търсене
         placeholder: Търсете кабинка по име или местоположение
       poll_officers_search:
-        button: Търсене
         placeholder: Търсете служители за анкета
       poll_questions_search:
-        button: Търсене
         placeholder: Търсете въпроси за анкета
       proposal_search:
-        button: Търсене
         placeholder: Търсете предложения по заглавие, код, описание или въпрос
       debate_search:
-        button: Търсене
         placeholder: Търсете дебати по заглавие или описание
       user_search:
-        button: Търсене
         placeholder: Търсете потребител по име или имейл
       search_results: "Резултати от търсенето"
       no_search_results: "Няма намерени резултати."
@@ -1427,7 +1419,6 @@ bg:
           erased: Изтрит
       search:
         placeholder: Търсене на потребител по имейл, име или номер на документ
-        search: Търсене
     verifications:
       index:
         phone_not_given: Телефон не е даден
@@ -1567,7 +1558,6 @@ bg:
         postal_code: Пощенски код
         search:
           placeholder: Търсене по номер на документ
-          search: Търсене
         import: Импортиране на CSV
       new:
         creating: Създаване на нов местен регистър
