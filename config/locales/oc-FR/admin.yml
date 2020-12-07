@@ -903,7 +903,6 @@ oc:
         entry_name: president de taula
       search:
         email_placeholder: Cercar usuario paur email
-        search: Cercar
         user_not_found: se trobèt pas l'usatgièr
         help: "Per afegir o eliminar els agents de sondeig, utilitzeu el formulari de cerca següent."
     poll_officer_assignments:
@@ -1166,7 +1165,6 @@ oc:
         no_organizations: I a pas d'organizacions.
         reject: refusar
         rejected: refusada
-        search: Cercar
         search_placeholder: Nom, email o telefòn
         title: d'Organizacions
         verified: verificada
@@ -1240,22 +1238,16 @@ oc:
       true_value: "Òc"
       false_value: "Pas"
       booths_search:
-        button: Cercar
         placeholder: Cercar bóstia per nom
       poll_officers_search:
-        button: Cercar
         placeholder: Cercar de presidents de taula
       poll_questions_search:
-        button: Cercar
         placeholder: Cercar de questions
       proposal_search:
-        button: Cercar
         placeholder: Cercar de proposicions per títol, còdi, descripcion o question
       debate_search:
-        button: Cerca
         placeholder: Cerca debats per títol o descripció
       user_search:
-        button: Cercar
         placeholder: Cercar usatgièr per nom o e-mail
       search_results: "de Resultats de cèrca"
       no_search_results: "Pas se an de trobats resultats."
@@ -1418,7 +1410,6 @@ oc:
         no_users: I a pas d'usatgièrs.
       search:
         placeholder: Cercar usatgièr per email, nom o DNI
-        search: Cercar
     verifications:
       index:
         phone_not_given: A pas donat lo sieu telefòn
@@ -1559,7 +1550,6 @@ oc:
         postal_code: Codi Postal
         search:
           placeholder: Cerca per número de document
-          search: Cerca
         import: Importa CSV
       new:
         creating: Creació d'un registre de cens local
