@@ -91,6 +91,5 @@ eu:
       index:
         hidden: Blokeatuta
         hide: Blokeatu
-        search: Bilatu
         search_placeholder: erabiltzailea edo emaila
         title: Erabiltzaileak blokeatu
