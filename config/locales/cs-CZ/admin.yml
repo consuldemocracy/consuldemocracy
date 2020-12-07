@@ -764,7 +764,6 @@ cs:
         entry_name: úředník
       search:
         email_placeholder: Vyhledat uživatele podle emailu
-        search: Vyhledat
         user_not_found: Uživatel nenalezen
     poll_officer_assignments:
       index:
@@ -1014,7 +1013,6 @@ cs:
         no_organizations: Nemáte žádné organizace.
         reject: Odmítnout
         rejected: Odmítnutý
-        search: Vyhledat
         search_placeholder: Jméno, email nebo telefonní číslo
         title: Organizace
         verified: Ověřen
@@ -1068,21 +1066,14 @@ cs:
       true_value: "Ano"
       false_value: "Ne"
       booths_search:
-        button: Vyhledat
         placeholder: Vyhledat informační stánek podle jména
       poll_officers_search:
-        button: Vyhledat
         placeholder: Vyhledat úředníky ankety
       poll_questions_search:
-        button: Vyhledat
         placeholder: Vyhledat otázky ankety
       proposal_search:
-        button: Vyhledat
         placeholder: Vyhledat návrhy podle názvu, kódu, popisu nebo otázky
-      debate_search:
-        button: Hledat
       user_search:
-        button: Vyhledat
         placeholder: Vyhledat uživatele podle jména nebo e-mailu
       search_results: "Výsledky vyhledávání"
       no_search_results: "Nebyly nalezeny žádné výsledky."
@@ -1217,7 +1208,6 @@ cs:
         no_users: Nemáte žádné uživatele.
       search:
         placeholder: Hledat uživatele pomocí e-mailu, jména nebo čísla dokladu
-        search: Vyhledat
     verifications:
       index:
         phone_not_given: Telefon není uveden
