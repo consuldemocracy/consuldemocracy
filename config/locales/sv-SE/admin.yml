@@ -903,7 +903,6 @@ sv:
         entry_name: funktionär
       search:
         email_placeholder: Sök användare efter e-post
-        search: Sök
         user_not_found: Användaren hittades inte
         help: "Lägg till och ta bort funktionärer via sökfältet nedan."
     poll_officer_assignments:
@@ -1166,7 +1165,6 @@ sv:
         no_organizations: Det finns inga organisationer.
         reject: Ge avslag
         rejected: Avvisade
-        search: Sök
         search_placeholder: Namn, e-post eller telefonnummer
         title: Organisationer
         verified: Verifierade
@@ -1240,22 +1238,16 @@ sv:
       true_value: "Ja"
       false_value: "Nej"
       booths_search:
-        button: Sök
         placeholder: Sök röststation efter namn
       poll_officers_search:
-        button: Sök
         placeholder: Sök funktionär
       poll_questions_search:
-        button: Sök
         placeholder: Sök omröstningsfrågor
       proposal_search:
-        button: Sök
         placeholder: Sök förslag efter titel, kod, beskrivning eller fråga
       debate_search:
-        button: Sök
         placeholder: Sök debatter med titel eller beskrivning
       user_search:
-        button: Sök
         placeholder: Sök användare efter namn eller e-post
       search_results: "Sökresultat"
       no_search_results: "Inget resultat."
@@ -1418,7 +1410,6 @@ sv:
         no_users: Det finns inga användare.
       search:
         placeholder: Sök användare med e-postadress, namn eller identitetshandling
-        search: Sök
     verifications:
       index:
         phone_not_given: Telefonnummer saknas
@@ -1559,7 +1550,6 @@ sv:
         postal_code: Postkod
         search:
           placeholder: Sök efter dokumentnummer
-          search: Sök
         import: Importera CSV
       new:
         creating: Skapar nytt lokalt adressregister
