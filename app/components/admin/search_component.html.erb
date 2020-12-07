@@ -1,0 +1,4 @@
+<%= form_tag(url, options) do |f| %>
+  <%= text_field_tag :search, search_terms.to_s, placeholder: label, "aria-label": label %>
+  <%= submit_tag t("admin.shared.search.search") %>
+<% end %>

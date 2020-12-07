@@ -38,7 +38,7 @@ describe "Admin officials", :admin do
 
   scenario "Create an official" do
     visit admin_officials_path
-    fill_in "name_or_email", with: citizen.email
+    fill_in "search", with: citizen.email
     click_button "Search"
 
     expect(page).to have_current_path(search_admin_officials_path, ignore_query: true)

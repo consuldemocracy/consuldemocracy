@@ -58,7 +58,7 @@ describe "Moderate users" do
     visit moderation_users_path
 
     expect(page).not_to have_content citizen.name
-    fill_in "name_or_email", with: "Wanda"
+    fill_in "search", with: "Wanda"
     click_button "Search"
 
     within("#moderation_users") do

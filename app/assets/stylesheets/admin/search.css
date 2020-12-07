@@ -1,0 +1,17 @@
+.admin  [role=search] {
+  display: flex;
+
+  [type="submit"] {
+    @include button($background: $link);
+    border-radius: 0;
+    font-size: 1rem;
+
+    &[disabled] {
+      @include button-disabled;
+    }
+  }
+
+  @include breakpoint(medium) {
+    width: 50%;
+  }
+}

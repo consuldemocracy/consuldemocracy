@@ -1,11 +1,7 @@
 <p><%= t("admin.poll_officers.search.help") %></p>
 
-<%= form_tag search_admin_officers_path, method: :get, remote: true  do %>
-  <div class="input-group">
-    <%= text_field_tag :email, "",
-                       placeholder: t("admin.poll_officers.search.email_placeholder") %>
-    <div class="input-group-button">
-      <%= submit_tag t("admin.poll_officers.search.search"), class: "button" %>
-    </div>
-  </div>
-<% end %>
+<%= render Admin::SearchComponent.new(
+  url: search_admin_officers_path,
+  label: t("admin.poll_officers.search.email_placeholder"),
+  remote: true
+) %>

@@ -1,15 +1,9 @@
 <h2><%= t("admin.users.index.title") %></h2>
 
-<div class="small-12 medium-6">
-  <%= form_tag admin_users_path, method: :get, remote: true  do %>
-    <div class="input-group">
-      <%= text_field_tag :search, "", placeholder: t("admin.users.search.placeholder") %>
-      <div class="input-group-button">
-        <%= submit_tag t("admin.users.search.search"), class: "button" %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render Admin::SearchComponent.new(
+  label: t("admin.users.search.placeholder"),
+  remote: true
+) %>
 
 <div id="users">
   <%= render "users" %>

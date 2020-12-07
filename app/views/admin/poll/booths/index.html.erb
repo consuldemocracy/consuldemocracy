@@ -4,7 +4,7 @@
   <%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path, class: "button float-right" %>
 <% end %>
 
-<%= render "/admin/shared/booth_search", url: admin_booths_path %>
+<%= render Admin::SearchComponent.new(label: t("admin.shared.booths_search.placeholder")) %>
 
 <% if @booths.empty? %>
   <div class="callout primary">

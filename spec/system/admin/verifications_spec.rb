@@ -22,7 +22,7 @@ describe "Incomplete verifications", :admin do
 
     visit admin_verifications_path
 
-    fill_in "name_or_email", with: "juan"
+    fill_in "search", with: "juan"
     click_button "Search"
 
     expect(page).to have_content("Juan_anonymous")
