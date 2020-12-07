@@ -911,7 +911,6 @@ hr:
         entry_name: činovnik
       search:
         email_placeholder: Pretraži korisnika po emailu
-        search: Pretraga
         user_not_found: Korisnik nije pronađen
         help: "Dodaj ili ukloni činovnike ankete iz pretrage od ispod."
     poll_officer_assignments:
@@ -1175,7 +1174,6 @@ hr:
         no_organizations: Ne postoje organizacije.
         reject: Odbiti
         rejected: Odbijeno
-        search: Pretraga
         search_placeholder: Ime, email ili telfonski broj
         title: Organizacije
         verified: Dopušteno
@@ -1258,22 +1256,16 @@ hr:
       true_value: "Da"
       false_value: "Ne"
       booths_search:
-        button: Pretraga
         placeholder: Pretraži glasačko mjesto po imenu
       poll_officers_search:
-        button: Pretraga
         placeholder: Pretraži činovnike za glasanje
       poll_questions_search:
-        button: Pretraga
         placeholder: Pretraga pitanja glasanja
       proposal_search:
-        button: Pretraga
         placeholder: Pretraga prijedloga po naslovu, kodu, opisu ili pitanju
       debate_search:
-        button: Pretraga
         placeholder: Pretraži rasprave po nazivu ili opisu
       user_search:
-        button: Pretraga
         placeholder: Pretraži korisnika po imenu ili emailu
       search_results: "Pretraži rezultate"
       no_search_results: "Rezultati nisu pronađeni."
@@ -1445,7 +1437,6 @@ hr:
           erased: Uklonjeni
       search:
         placeholder: Pretražite korisnike putem emaila, ime ili broj dokumenta
-        search: Pretraga
     verifications:
       index:
         phone_not_given: Broj telefona nije dostupan
@@ -1586,7 +1577,6 @@ hr:
         postal_code: Poštanski broj
         search:
           placeholder: Pretraga po broju dokumenta
-          search: Pretraga
         import: Uvezi CSV
       new:
         creating: Stvaranje novog zapisa lokalnog cenzusa
