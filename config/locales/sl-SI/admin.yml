@@ -491,7 +491,6 @@ sl:
         entry_name: uradnik
       search:
         email_placeholder: Išči uporabnika/-co po e-naslovu
-        search: Išči
         user_not_found: Uporabnika/-ce ni mogoče najti
     poll_officer_assignments:
       index:
@@ -727,7 +726,6 @@ sl:
         no_organizations: Ni organizacij.
         reject: Zavrni
         rejected: Zavrnjeno
-        search: Išči
         search_placeholder: Ime, e-naslov ali telefonska številka
         title: Organizacije
         verified: Verificirane
@@ -760,19 +758,14 @@ sl:
             submit: Posodobi
     shared:
       booths_search:
-        button: Išči
         placeholder: Išči volišče po imenu
       poll_officers_search:
-        button: Išči
         placeholder: Išči uradnike glasovanja
       poll_questions_search:
-        button: Išči
         placeholder: Išči vprašanja glasovanja
       proposal_search:
-        button: Išči
         placeholder: Išči predloge po naslovu, kodi, opisu ali vprašanju
       user_search:
-        button: Išči
         placeholder: Išči uporabnika/-co po imenu ali e-naslovu
       search_results: "Rezultati iskanja"
       no_search_results: "Ni rezultatov."
@@ -881,7 +874,6 @@ sl:
         no_users: Ni uporabnikov.
       search:
         placeholder: Išči uporabnika po e-naslovu, imenu ali št. dokumenta
-        search: Išči
     verifications:
       index:
         phone_not_given: Ni podatka o telefonski številki
