@@ -757,7 +757,6 @@ pl:
         entry_name: urzędnik
       search:
         email_placeholder: Wyszukaj użytkownika według adresu e-mail
-        search: Szukaj
         user_not_found: Nie znaleziono użytkownika
     poll_officer_assignments:
       index:
@@ -1011,7 +1010,6 @@ pl:
         no_organizations: Brak organizacji.
         reject: Odrzuć
         rejected: Odrzucone
-        search: Szukaj
         search_placeholder: Nazwisko, adres e-mail lub numer telefonu
         title: Organizacji
         verified: Zweryfikowane
@@ -1069,19 +1067,14 @@ pl:
       true_value: "Tak"
       false_value: "Nie"
       booths_search:
-        button: Szukaj
         placeholder: Wyszukaj stoisko według nazwy
       poll_officers_search:
-        button: Szukaj
         placeholder: Szukaj urzędników
       poll_questions_search:
-        button: Szukaj
         placeholder: Szukaj pytań wyborczych
       proposal_search:
-        button: Szukaj
         placeholder: Szukaj propozycji według tytułu, kodu, opisu lub pytania
       user_search:
-        button: Szukaj
         placeholder: Wyszukaj użytkownika według nazwy lub adresu e-mail
       search_results: "Szukaj wyników"
       no_search_results: "Nie znaleziono wyników."
@@ -1201,7 +1194,6 @@ pl:
         no_users: Brak użytkowników.
       search:
         placeholder: Wyszukaj użytkownika za pomocą adresu e-mail, nazwiska lub numeru dokumentu
-        search: Szukaj
     verifications:
       index:
         phone_not_given: Telefon nie został podany
