@@ -733,7 +733,6 @@ gl:
         entry_name: presidente de mesa
       search:
         email_placeholder: Buscar usuario por correo electrónico
-        search: Procurar
         user_not_found: Non se atopou o usuario
     poll_officer_assignments:
       index:
@@ -981,7 +980,6 @@ gl:
         no_organizations: Non hai organizacións.
         reject: Rexeitar
         rejected: Rexeitada
-        search: Procurar
         search_placeholder: Nome, correo electrónico ou teléfono
         title: Organizacións
         verified: Verificada
@@ -1035,19 +1033,14 @@ gl:
       true_value: "Si"
       false_value: "Non"
       booths_search:
-        button: Procurar
         placeholder: Buscar urna por nome
       poll_officers_search:
-        button: Procurar
         placeholder: Buscar presidentes da mesa
       poll_questions_search:
-        button: Procurar
         placeholder: Buscar preguntas
       proposal_search:
-        button: Procurar
         placeholder: Buscar propostas por título, código, descrición ou pregunta
       user_search:
-        button: Procurar
         placeholder: Buscar usuario por nome ou correo electrónico
       search_results: "Resultados da procura"
       no_search_results: "Non se atoparon resultados."
@@ -1170,7 +1163,6 @@ gl:
         no_users: Non hai usuarios.
       search:
         placeholder: Buscar usuarios por correo electrónico, nome ou DNI
-        search: Procurar
     verifications:
       index:
         phone_not_given: Non deu o seu teléfono
