@@ -906,7 +906,6 @@ pt-BR:
         entry_name: presidente
       search:
         email_placeholder: Pesquisar usuário pelo email
-        search: Buscar
         user_not_found: Usuário não encontrado
         help: "Para adicionar ou remover Presidentes de mesa, utilize o navegador a seguir."
     poll_officer_assignments:
@@ -1169,7 +1168,6 @@ pt-BR:
         no_organizations: Não há nenhuma organização.
         reject: Rejeitar
         rejected: Rejeitado
-        search: Buscar
         search_placeholder: Nome, e-mail ou número de telefone
         title: Organizações
         verified: Verificado
@@ -1255,22 +1253,16 @@ pt-BR:
       true_value: "Sim"
       false_value: "Não"
       booths_search:
-        button: Buscar
         placeholder: Buscar urna por nome
       poll_officers_search:
-        button: Buscar
         placeholder: Buscar presidentes das votações
       poll_questions_search:
-        button: Buscar
         placeholder: Buscar perguntas
       proposal_search:
-        button: Buscar
         placeholder: Buscar propostas por título, código, descrição ou pergunta
       debate_search:
-        button: Pesquisar
         placeholder: Buscar debates por título ou descrição
       user_search:
-        button: Buscar
         placeholder: Pesquisar usuário por nome ou pelo email
       search_results: "Buscar resultados"
       no_search_results: "Nenhum resultado encontrado."
@@ -1439,7 +1431,6 @@ pt-BR:
           erased: Apagados
       search:
         placeholder: Buscar usuário por e-mail, nome ou número do documento
-        search: Buscar
     verifications:
       index:
         phone_not_given: Telefone não dado
@@ -1580,7 +1571,6 @@ pt-BR:
         postal_code: CEP
         search:
           placeholder: Pesquisar por número de documento
-          search: Pesquisar
         import: Importar CSV
       new:
         creating: Criando novo registro de censo local
