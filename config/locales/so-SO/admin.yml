@@ -656,7 +656,6 @@ so:
         entry_name: sarkaal
       search:
         email_placeholder: Radi isticmalaha Email ahaan
-        search: Raadin
         user_not_found: Iisticamalaha lama hayo
     poll_officer_assignments:
       index:
@@ -894,7 +893,6 @@ so:
         no_organizations: Majiran ururo.
         reject: Diiday
         rejected: Diiday
-        search: Raadin
         search_placeholder: Magaca Emailka ama talafoon lambarka
         title: Ururo
         verified: Hubin
@@ -947,19 +945,14 @@ so:
       true_value: "Haa"
       false_value: "Maya"
       booths_search:
-        button: Raadin
         placeholder: Raadi labada magacba
       poll_officers_search:
-        button: Raadin
         placeholder: Raadinta dorashada sarakiisha
       poll_questions_search:
-        button: Raadin
         placeholder: Radinta Sualaha Dorashada
       proposal_search:
-        button: Raadin
         placeholder: Raadinta soo jeedinta adoo cinwaanka, koodhka, sharaxaadda ama su'aasha
       user_search:
-        button: Raadin
         placeholder: Raadi isticmaal adoo magacaaga ama email
       search_results: "Raadi natiijada"
       no_search_results: "Natijooyin lama helin."
@@ -1081,7 +1074,6 @@ so:
         no_users: Majiraan isticmaalayaal.
       search:
         placeholder: Raadi isticmalaha Email ahaa, magac ama dukumeenti lambar
-        search: Raadin
     verifications:
       index:
         phone_not_given: Telefoon aan la siin
