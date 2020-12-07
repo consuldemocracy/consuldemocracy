@@ -898,7 +898,6 @@ tr:
         entry_name: memur
       search:
         email_placeholder: E-posta ile kullanıcı ara
-        search: Ara
         user_not_found: Kullanıcı bulunamadı
         help: "Anket memurlarını eklemek veya kaldırmak için aşağıdaki arama formunu kullanın."
     poll_officer_assignments:
@@ -1157,7 +1156,6 @@ tr:
         no_organizations: Hiç organizasyon yok.
         reject: Reddet
         rejected: Reddedildi
-        search: Ara
         search_placeholder: İsim, e-posta veya telefon numarası
         title: Organizasyonlar
         verified: Doğrulandı
@@ -1224,22 +1222,16 @@ tr:
       true_value: "Evet"
       false_value: "Hayır"
       booths_search:
-        button: Ara
         placeholder: İsme göre kabin ara
       poll_officers_search:
-        button: Ara
         placeholder: Anket memurlarını ara
       poll_questions_search:
-        button: Ara
         placeholder: Anket sorularını ara
       proposal_search:
-        button: Ara
         placeholder: Başlığa, koda, tanımlamaya veya soruya göre önerileri ara
       debate_search:
-        button: Ara
         placeholder: Tartışmaları başlığa veya açıklamaya göre ara
       user_search:
-        button: Ara
         placeholder: İsim veya e-posta ile kullanıcı ara
       search_results: "Arama sonuçları"
       no_search_results: "Hiç sonuç bulunamadı."
@@ -1394,7 +1386,6 @@ tr:
         no_users: Kullanıcı yok.
       search:
         placeholder: E-posta, isim veya belge numarasına göre kullanıcı ara
-        search: Ara
     verifications:
       index:
         phone_not_given: Telefon verilmemiş
