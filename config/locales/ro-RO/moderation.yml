@@ -111,7 +111,6 @@ ro:
       index:
         hidden: Blocat
         hide: Blochează
-        search: Căutare
         search_placeholder: email sau numele utilizatorului
         title: Blochează utilizatorii
       notice_hide: Utilizator blocat. Toate dezbaterile și comentariile utilizatorului sunt ascunse.
