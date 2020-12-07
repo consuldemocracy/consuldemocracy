@@ -755,7 +755,6 @@ it:
         entry_name: scrutatore
       search:
         email_placeholder: Cerca utente via email
-        search: Ricercare
         user_not_found: Utente non trovato
     poll_officer_assignments:
       index:
@@ -996,7 +995,6 @@ it:
         no_organizations: Non ci sono organizzazioni.
         reject: Respingi
         rejected: Respinto
-        search: Ricercare
         search_placeholder: Nominativo, numero di telefono o e-mail
         title: Organizzazioni
         verified: Verificato
@@ -1049,21 +1047,16 @@ it:
       true_value: "Sì"
       false_value: "No"
       booths_search:
-        button: Ricercare
         placeholder: Ricercare seggio per nome
       poll_officers_search:
-        button: Ricercare
         placeholder: Ricercare presidenti di seggio
       poll_questions_search:
-        button: Ricercare
         placeholder: Cerca quesiti oggetto di votazione
       proposal_search:
-        button: Ricercare
         placeholder: Ricercare le proposte per titolo, codice. descrizione o domanda
       debate_search:
         placeholder: Cerca dibattiti per titolo o descrizione
       user_search:
-        button: Ricercare
         placeholder: Cerca utente in base al nome o all’email
       search_results: "Risultati della ricerca"
       no_search_results: "Nessun risultato trovato."
@@ -1187,7 +1180,6 @@ it:
         no_users: Non ci sono utenti.
       search:
         placeholder: Ricerca utente per e-mail, nome o documento
-        search: Ricercare
     verifications:
       index:
         phone_not_given: Telefono non fornito
