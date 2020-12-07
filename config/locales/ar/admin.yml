@@ -915,7 +915,6 @@ ar:
         entry_name: ضابط
       search:
         email_placeholder: بحث عن مستخدم عن طريق البريد الإلكتروني
-        search: بحث
         user_not_found: المستخدم غير موجود
         help: "لإضافة أو إزالة موظفي استطلاع الرأي ، الرجاء استخدام نموذج البحث أدناه."
     poll_officer_assignments:
@@ -1175,7 +1174,6 @@ ar:
         no_organizations: لا توجد منظمات.
         reject: رفض
         rejected: مرفوضة
-        search: بحث
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
         title: منظمات
         verified: تم التثبت
@@ -1242,22 +1240,16 @@ ar:
       true_value: "نعم"
       false_value: "لا"
       booths_search:
-        button: بحث
         placeholder: البحث عند مكتب إقتراع وفقا للاسم
       poll_officers_search:
-        button: بحث
         placeholder: البحث عن ضباط الاستطلاع
       poll_questions_search:
-        button: بحث
         placeholder: البحث عن أسئلة الاستطلاع
       proposal_search:
-        button: بحث
         placeholder: البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال
       debate_search:
-        button: بحث
         placeholder: بحث في المناقشات حسب العنوان أو الوصف
       user_search:
-        button: بحث
         placeholder: بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني
       search_results: "نتائج البحث"
       no_search_results: "لا توجد نتائج."
@@ -1424,7 +1416,6 @@ ar:
         no_users: لا يوجد مستخدمين.
       search:
         placeholder: البحث عن المستخدم عبر البريد الإلكتروني أو الاسم أو رقم الوثيقة
-        search: بحث
     verifications:
       index:
         phone_not_given: الهاتف غير معطى
