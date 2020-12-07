@@ -554,7 +554,6 @@ id:
         entry_name: petugas
       search:
         email_placeholder: Cari pengguna berdasarkan surel
-        search: Cari
         user_not_found: Pengguna tidak ditemukan
     poll_officer_assignments:
       index:
@@ -781,7 +780,6 @@ id:
         no_organizations: Tidak ada organisasi disana.
         reject: Menolak
         rejected: Ditolak
-        search: Cari
         search_placeholder: Nama, email atau nomor telepon
         title: Organisasi
         verified: Diverifikasi
@@ -831,19 +829,14 @@ id:
       true_value: "Ya"
       false_value: "Tidak"
       booths_search:
-        button: Cari
         placeholder: Pencarian stan dengan nama
       poll_officers_search:
-        button: Cari
         placeholder: Pencarian jajak pendapat petugas
       poll_questions_search:
-        button: Cari
         placeholder: Pencarian pertanyaan jajak pendapat
       proposal_search:
-        button: Cari
         placeholder: Pencarian proposal dengan judul, kode, deskripsi, atau pertanyaan
       user_search:
-        button: Cari
         placeholder: Pengguna pencarian berdasarkan nama atau email
       search_results: "Hasil pencarian"
       actions: Tindakan
@@ -957,7 +950,6 @@ id:
         title: Pengguna
       search:
         placeholder: Pencarian pengguna melalui email, nama, atau nomor dokumen
-        search: Cari
     verifications:
       index:
         sms_code_not_confirmed: Belum mengkonfirmasi kode sms
