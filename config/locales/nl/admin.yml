@@ -750,7 +750,6 @@ nl:
         entry_name: Lid
       search:
         email_placeholder: Search user by email
-        search: Search
         user_not_found: Gebruiker niet gevonden
     poll_officer_assignments:
       index:
@@ -1005,7 +1004,6 @@ nl:
         no_organizations: Er zijn geen organisaties.
         reject: Reject
         rejected: Afgewezen
-        search: Search
         search_placeholder: Name, email or phone number
         title: Organisations
         verified: Geverifierd
@@ -1063,19 +1061,14 @@ nl:
       true_value: "Ja"
       false_value: "Nee"
       booths_search:
-        button: Search
         placeholder: Search booth by name
       poll_officers_search:
-        button: Search
         placeholder: Search poll officers
       poll_questions_search:
-        button: Search
         placeholder: Search poll questions
       proposal_search:
-        button: Search
         placeholder: Zoek voorstellen op titel, code, omschrijving of vraag
       user_search:
-        button: Search
         placeholder: Search user by name or email'
       search_results: "Zoekresultaten"
       no_search_results: "No results found."
@@ -1201,7 +1194,6 @@ nl:
         no_users: Er zijn geen deelnemers.
       search:
         placeholder: Zoek deelnemer per e-mail, naam of documentnummer
-        search: Search
     verifications:
       index:
         phone_not_given: Phone not given
