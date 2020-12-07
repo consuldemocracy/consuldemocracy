@@ -841,7 +841,6 @@ bs:
         entry_name: anketar
       search:
         email_placeholder: Pretraga korisnika po email-adresi
-        search: Traži
         user_not_found: Korisnik nije pronađen
         help: "Kako bi dodali ili obrisali anketare, koristite formular za traženje dole."
     poll_officer_assignments:
@@ -1101,7 +1100,6 @@ bs:
         no_organizations: Nema organizacija.
         reject: Odbij
         rejected: Odbijeno
-        search: Pretraga
         search_placeholder: Ime, email ili telefonski broj
         title: Organizacije
         verified: Potvrđeno
@@ -1161,19 +1159,14 @@ bs:
       true_value: "Da"
       false_value: "Ne"
       booths_search:
-        button: Traži
         placeholder: Traži kabinu po nazivu
       poll_officers_search:
-        button: Traži
         placeholder: Pretraga po anketarima
       poll_questions_search:
-        button: Traži
         placeholder: Pretraga po pitanjima u glasačkoj anketi
       proposal_search:
-        button: Traži
         placeholder: Pretraga prijedloga po nazivu, šifri, opisu ili pitanju
       user_search:
-        button: Traži
         placeholder: Pretraga korisnika po imenu ili email-adresi
       search_results: "Rezultati pretrage"
       no_search_results: "Nema rezultata."
@@ -1325,7 +1318,6 @@ bs:
         no_users: Nema korisnika.
       search:
         placeholder: Traži korisnika po email adresi, imenu ili broju dokumenta
-        search: Traži
     verifications:
       index:
         phone_not_given: Telefonski broj nije naveden
