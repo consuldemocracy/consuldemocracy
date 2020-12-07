@@ -111,7 +111,6 @@ zh-TW:
       index:
         hidden: 禁用
         hide: 封鎖
-        search: 搜尋
         search_placeholder: 電郵或用戶名
         title: 封鎖用戶
       notice_hide: 用戶已被封鎖。 此用戶所有的辯論和評論都被隱藏了。
