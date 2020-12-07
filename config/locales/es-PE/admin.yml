@@ -492,7 +492,6 @@ es-PE:
         entry_name: presidente de mesa
       search:
         email_placeholder: Buscar usuario por email
-        search: Buscar
         user_not_found: Usuario no encontrado
     poll_officer_assignments:
       index:
@@ -728,7 +727,6 @@ es-PE:
         no_organizations: No hay organizaciones.
         reject: Rechazar
         rejected: Rechazada
-        search: Buscar
         search_placeholder: Nombre, email o teléfono
         title: Organizaciones
         verified: Verificada
@@ -777,19 +775,14 @@ es-PE:
     shared:
       true_value: "Si"
       booths_search:
-        button: Buscar
         placeholder: Buscar urna por nombre
       poll_officers_search:
-        button: Buscar
         placeholder: Buscar presidentes de mesa
       poll_questions_search:
-        button: Buscar
         placeholder: Buscar preguntas
       proposal_search:
-        button: Buscar
         placeholder: Buscar propuestas por título, código, descripción o pregunta
       user_search:
-        button: Buscar
         placeholder: Buscar usuario por nombre o email
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
@@ -904,7 +897,6 @@ es-PE:
         no_users: No hay usuarios.
       search:
         placeholder: Buscar usuario por email, nombre o DNI
-        search: Buscar
     verifications:
       index:
         phone_not_given: No ha dado su teléfono
