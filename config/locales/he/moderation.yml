@@ -111,7 +111,6 @@ he:
       index:
         hidden: מוסתרים
         hide: הסתרה
-        search: חיפוש
         search_placeholder: דוא"ל או שם משתמש
         title: חסימת משתמשים
       notice_hide: המשתמש/ת נחסם/ה. כל הדיונים וההערות של המשתמש/ת הוסתרו.
