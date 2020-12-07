@@ -574,7 +574,6 @@ fa:
         entry_name: افسر
       search:
         email_placeholder: جستجوی کاربر توسط ایمیل
-        search: جستجو
         user_not_found: کاربری یافت نشد
     poll_officer_assignments:
       index:
@@ -808,7 +807,6 @@ fa:
         no_organizations: هیچ سازمانی وجود ندارد
         reject: رد
         rejected: رد شده
-        search: جستجو
         search_placeholder: نام و ایمیل یا تلفن شماره
         title: سازمان ها
         verified: تایید
@@ -859,19 +857,14 @@ fa:
       true_value: "بله"
       false_value: "نه"
       booths_search:
-        button: جستجو
         placeholder: جستجوی غرفه با نام
       poll_officers_search:
-        button: جستجو
         placeholder: جستجو افسران نظرسنجی 
       poll_questions_search:
-        button: جستجو
         placeholder: جستجو پرسش های نظرسنجی
       proposal_search:
-        button: جستجو
         placeholder: پیشنهادات را با عنوان، کد، توضیحات یا سوال جستجو کنید
       user_search:
-        button: جستجو
         placeholder: جستجوی کاربر توسط ایمیل
       search_results: "جستجو نتایج "
       no_search_results: "نتیجه ای پیدا نشد.\n"
@@ -990,7 +983,6 @@ fa:
         no_users: هیچ کاربری وجود ندارد.
       search:
         placeholder: جستجوی کاربر توسط ایمیل و نام یا شماره سند 
-        search: جستجو
     verifications:
       index:
         phone_not_given: تلفن داده نشده
