@@ -871,7 +871,6 @@ ru:
         entry_name: офицер
       search:
         email_placeholder: Искать пользователя по email
-        search: Поиск
         user_not_found: Пользователь не найден
         help: "Чтобы добавить или удалить служащих голосования, используйте форму поиска ниже."
     poll_officer_assignments:
@@ -1131,7 +1130,6 @@ ru:
         no_organizations: Нет организаций.
         reject: Отклонить
         rejected: Отклонено
-        search: Поиск
         search_placeholder: Имя, email или номер телефона
         title: Организации
         verified: Верифицировано
@@ -1198,19 +1196,14 @@ ru:
       true_value: "Да"
       false_value: "Нет"
       booths_search:
-        button: Поиск
         placeholder: Искать кабинку по имени
       poll_officers_search:
-        button: Поиск
         placeholder: Искать сотрудников голосования
       poll_questions_search:
-        button: Поиск
         placeholder: Искать вопросы голосования
       proposal_search:
-        button: Поиск
         placeholder: Искать предложения по названию, коду, описанию или вопросу
       user_search:
-        button: Поиск
         placeholder: Искать пользователя по имени или email
       search_results: "Результаты поиска"
       no_search_results: "Результаты не найдены."
@@ -1366,7 +1359,6 @@ ru:
         no_users: Нет пользователей.
       search:
         placeholder: Искать пользователя по email'у, имени или номеру документа
-        search: Поиск
     verifications:
       index:
         phone_not_given: Телефон не задан
