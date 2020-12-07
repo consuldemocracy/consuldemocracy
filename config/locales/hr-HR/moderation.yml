@@ -111,7 +111,6 @@ hr:
       index:
         hidden: Blokirano
         hide: Blok
-        search: Pretraga
         search_placeholder: email ili ime korisnika
         title: Blokirani korisnici
       notice_hide: Korisnik blokiran. Sve baze podataka i komentari ovog korisnika su sakrivene.
