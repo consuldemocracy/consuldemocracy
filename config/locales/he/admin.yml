@@ -905,7 +905,6 @@ he:
         entry_name: נושאי משרה
       search:
         email_placeholder: חיפוש משתמש/ת לפי דואר אלקטרוני
-        search: חיפוש
         user_not_found: משתמש/ת לא נמצא/ה
         help: "בכדי להוסיף או להסיר אחראים על הסקרים, השתמש בטופס החיפוש מטה."
     poll_officer_assignments:
@@ -1165,7 +1164,6 @@ he:
         no_organizations: לא נמצאו ארגונים.
         reject: דחה
         rejected: נדחה
-        search: חיפוש
         search_placeholder: שם, דוא"ל או מספר טלפון
         title: ארגונים
         verified: אומת ואושר
@@ -1232,22 +1230,16 @@ he:
       true_value: "כן"
       false_value: "לא"
       booths_search:
-        button: חיפוש
         placeholder: חיפוש דוכן לפי שם
       poll_officers_search:
-        button: חיפוש
         placeholder: חפש סקר לפי נושא משרה
       poll_questions_search:
-        button: חיפוש
         placeholder: חפש שאלות סקר
       proposal_search:
-        button: חיפוש
         placeholder: חיפוש הצעות לפי כותרת, קוד, תיאור או שאלה
       debate_search:
-        button: חיפוש
         placeholder: חיפוש דיונים על פי כותרת או תיאור
       user_search:
-        button: חיפוש
         placeholder: '‘חיפוש משתמש/ת לפי שם או דואר אלקטרוני’'
       search_results: "תוצאות החיפוש"
       no_search_results: "לא נמצאו תוצאות."
@@ -1408,7 +1400,6 @@ he:
         no_users: לא נמצאו משתמשים.
       search:
         placeholder: חפש משתמש על פי דוא"ל, שם או מספר מסמך מזהה
-        search: חיפוש
     verifications:
       index:
         phone_not_given: לא ניתן מספר טלפון
