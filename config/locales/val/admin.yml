@@ -698,7 +698,6 @@ val:
         entry_name: president de taula
       search:
         email_placeholder: Cercar usuari per correu electrònic
-        search: Cercar
         user_not_found: Usuari no trobat
     poll_officer_assignments:
       index:
@@ -937,7 +936,6 @@ val:
         no_organizations: No hi ha organitzacions.
         reject: Rebutjar
         rejected: Rebutjades
-        search: Cercar
         search_placeholder: Nom, email o telèfon
         title: Associacions
         verified: Verificades
@@ -991,19 +989,14 @@ val:
       true_value: "Si"
       false_value: "No"
       booths_search:
-        button: Cercar
         placeholder: Cercar urna per nom
       poll_officers_search:
-        button: Cercar
         placeholder: Cercar presidents de taula
       poll_questions_search:
-        button: Cercar
         placeholder: Cercar preguntes
       proposal_search:
-        button: Cercar
         placeholder: Cercar propostes per títol, codi, descripció o pregunta
       user_search:
-        button: Cercar
         placeholder: Cercar usuari per nom o correu electrònic
       search_results: "Resultats de la cerca"
       no_search_results: "No s'an trobat resultats."
@@ -1126,7 +1119,6 @@ val:
         no_users: No hi ha usuaris.
       search:
         placeholder: Cercar usuari per email, nom o Dni
-        search: Cercar
     verifications:
       index:
         phone_not_given: No ha donat el seu telèfon
