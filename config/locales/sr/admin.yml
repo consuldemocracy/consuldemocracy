@@ -911,7 +911,6 @@ sr:
         entry_name: службеник
       search:
         email_placeholder: Тражи корисника преко емаила
-        search: Тражи
         user_not_found: Корисник није нађен
         help: "Да бисте додали или уклонили Анкетне службенике користите образац за претраживање испод."
     poll_officer_assignments:
@@ -1175,7 +1174,6 @@ sr:
         no_organizations: Нема организација.
         reject: Одбити
         rejected: Одбијено
-        search: Претрага
         search_placeholder: Име, емаил или број телефона
         title: Организације
         verified: Проверено
@@ -1258,22 +1256,16 @@ sr:
       true_value: "Да"
       false_value: "Не"
       booths_search:
-        button: Тражите
         placeholder: Тражите гласачко место по називу или локацији
       poll_officers_search:
-        button: Тражите
         placeholder: Претрага анкетних службеника
       poll_questions_search:
-        button: Тражите
         placeholder: Тражите анктена питања
       proposal_search:
-        button: Тражите
         placeholder: Тражите предлоге по наслову, коду, опису или питању
       debate_search:
-        button: Тражите
         placeholder: Тражите расправе по наслову или опису
       user_search:
-        button: Тражите
         placeholder: Тражи корисника по имену или емаилу
       search_results: "Тражите резултате"
       no_search_results: "Нема нађених резултата."
@@ -1445,7 +1437,6 @@ sr:
           erased: Обрисано
       search:
         placeholder: Претражите корисника путем емаила, имена или броја документа
-        search: Претражите
     verifications:
       index:
         phone_not_given: Телефон није дат
@@ -1586,7 +1577,6 @@ sr:
         postal_code: Поштански број
         search:
           placeholder: Претражите по броју документа
-          search: Претражите
         import: Увоз ЦСВ
       new:
         creating: Креирање новог записа локалног пописа
