@@ -18,4 +18,15 @@ section "Creating Sustainable Development Goals" do
       end
     end
   end
+
+  relatables = [Debate, Proposal, Poll, Legislation::Process, Budget::Investment]
+  relatables.map { |relatable| relatable.sample(5) }.flatten.each do |relatable|
+    Array(SDG::Goal.sample(rand(1..3))).each do |goal|
+      target = goal.targets.sample
+      local_target = target.local_targets.sample
+      relatable.sdg_goals << goal
+      relatable.sdg_targets << target
+      relatable.sdg_local_targets << local_target if local_target.present?
+    end
+  end
 end
