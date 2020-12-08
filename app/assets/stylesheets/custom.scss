@@ -39,6 +39,10 @@ header {
     align-items: center;
     padding: 0 rem-calc(15);
 
+    @include breakpoint(small only) {
+      padding-bottom: $line-height / 2;
+    }
+
     > :first-child {
       margin-right: auto;
     }
@@ -62,11 +66,21 @@ header {
 
   .social {
 
+    @include breakpoint(small only) {
+      ul {
+        margin-left: 0;
+      }
+    }
+
     li {
       display: inline-block;
 
       &:not(:first-child) {
         margin-left: rem-calc(16);
+
+        @include breakpoint(small only) {
+          margin-left: rem-calc(4);
+        }
       }
     }
 
@@ -97,6 +111,10 @@ header {
 
   .locale {
     height: auto;
+
+    @include breakpoint(small only) {
+      margin-left: auto;
+    }
 
     &::after {
       color: $black;
