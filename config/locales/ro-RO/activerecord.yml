@@ -355,6 +355,8 @@ ro:
       sdg/goal:
         title: "Titlu"
         description: "Descriere"
+      sdg/target:
+        title: "Titlu"
       site_customization/page:
         content: Conținut
         created_at: Creat la
