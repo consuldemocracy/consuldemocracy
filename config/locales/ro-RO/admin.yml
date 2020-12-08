@@ -1257,6 +1257,8 @@ ro:
     shared:
       true_value: "Da"
       false_value: "Nu"
+      search:
+        search: "Caută"
       booths_search:
         placeholder: Caută cabină de vot după nume sau locație
       poll_officers_search:
