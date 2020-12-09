@@ -83,8 +83,8 @@
           <p><%= t("debates.index.section_footer.description") %></p>
           <p><%= t("debates.index.section_footer.help_text_1") %></p>
           <p><%= sanitize(t("debates.index.section_footer.help_text_2",
-                            org: link_to(t("debates.index.section_footer.help_text_link"),
-                                         new_user_registration_path))) %>
+                            org: link_to(Setting["org_name"],
+                                 new_user_registration_path))) %>
           </p>
         </div>
       <% end %>
