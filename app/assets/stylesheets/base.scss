@@ -602,6 +602,12 @@ header {
       padding-bottom: 0;
       padding-top: 0;
     }
+
+    a {
+      font-size: rem-calc(16);
+      padding-left: $line-height / 4;
+      padding-right: $line-height / 4;
+    }
   }
 
   .dropdown .is-dropdown-submenu {
