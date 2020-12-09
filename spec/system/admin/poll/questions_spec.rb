@@ -165,7 +165,7 @@ describe "Admin poll questions" do
 
       expect(page).to have_select("poll_question_poll_id", options: ["Select Poll", poll.name_en])
 
-      select("Español", from: "locale-switcher")
+      select("Castellano", from: "locale-switcher")
 
       expect(page).to have_select("poll_question_poll_id",
                                   options: ["Seleccionar votación", poll.name_es])

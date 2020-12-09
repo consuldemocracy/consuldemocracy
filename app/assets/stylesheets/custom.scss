@@ -3,3 +3,268 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+$link: #dd3464; // TODO: use $brand?
+$gray: #f9f9f9;
+
+header {
+  $border: 1px solid #a8a8a8;
+
+  background-color: $gray;
+  border: 0;
+  padding-top: $line-height / 2;
+
+  %link {
+    color: $black;
+
+    &:focus,
+    &:hover {
+      color: $link;
+    }
+  }
+
+  .top-links,
+  .subnavigation,
+  .top-bar {
+    color: $black;
+    background: transparent;
+
+    a {
+      @extend %link;
+    }
+  }
+
+  .top-links {
+    @include flex-grid-row;
+    align-items: center;
+    padding: 0 rem-calc(15);
+
+    @include breakpoint(small only) {
+      padding-bottom: $line-height / 2;
+    }
+
+    > :first-child {
+      margin-right: auto;
+    }
+
+    li:first-child a {
+      margin-left: 0;
+    }
+  }
+
+  .top-links,
+  .social {
+
+    ul {
+      line-height: 0;
+    }
+
+    li::after {
+      content: "";
+    }
+  }
+
+  .social {
+
+    @include breakpoint(small only) {
+      ul {
+        margin-left: 0;
+      }
+    }
+
+    li {
+      display: inline-block;
+
+      &:not(:first-child) {
+        margin-left: rem-calc(16);
+
+        @include breakpoint(small only) {
+          margin-left: rem-calc(4);
+        }
+      }
+    }
+
+    a {
+      margin: 0;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      [class^="icon-"] {
+        align-items: center;
+        border: 1px solid;
+        border-radius: 2em;
+        display: inline-flex;
+        font-size: rem-calc(13);
+        height: 2em;
+        justify-content: center;
+        line-height: 1;
+        width: 2em;
+      }
+    }
+
+    .icon-otempo {
+      @include has-fa-icon(cloud, solid);
+    }
+  }
+
+  .locale {
+    height: auto;
+
+    @include breakpoint(small only) {
+      margin-left: auto;
+    }
+
+    &::after {
+      color: $black;
+      font-size: 1rem;
+      top: 1px;
+    }
+
+    label {
+      @include element-invisible;
+    }
+
+    .locale-switcher {
+      background-color: $gray;
+      border: 1px solid #979797;
+      border-radius: 4px;
+      color: $black;
+      font-size: rem-calc(14);
+      height: 2em;
+      margin-top: 0;
+    }
+  }
+
+  .top-bar {
+    background: transparent !important; // TODO: Remove when important is removed from the original file
+    padding-left: rem-calc(15);
+    padding-bottom: $line-height / 2;
+
+    @include breakpoint(medium) {
+      align-items: baseline;
+    }
+
+    .top-bar-title {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      border-top: $border;
+
+      @include breakpoint(medium) {
+        display: flex;
+        flex: 1;
+        padding-top: $line-height / 2;
+      }
+    }
+  }
+
+  .top-bar .menu {
+
+    a {
+      @extend %link;
+
+      &.button {
+        color: $link;
+        font-weight: bold;
+
+        @include breakpoint(medium) {
+          border: 1px solid $link;
+        }
+      }
+    }
+
+    .is-active {
+      text-decoration: none;
+
+      > a {
+        color: $link;
+        text-decoration: underline;
+      }
+    }
+
+    .is-dropdown-submenu-parent {
+      a::after {
+        border-top-color: $black;
+      }
+    }
+  }
+
+  .top-bar .menu-icon {
+    &.dark {
+
+      &:hover::after,
+      &::after {
+        background: $black;
+        box-shadow: 0 7px 0 $black, 0 14px 0 $black;
+      }
+    }
+  }
+
+  .subnavigation {
+    padding-top: $line-height / 4;
+
+    @include breakpoint(medium) {
+      border-top: $border;
+    }
+
+    a {
+      font-weight: normal;
+      font-size: 1rem;
+
+      &.is-active {
+        color: $link;
+        border-bottom-color: $link;
+      }
+    }
+  }
+}
+
+.admin {
+
+  .top-links {
+    background: transparent;
+    max-width: none;
+
+    > :only-child {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0;
+      width: 100%;
+
+      > :first-child {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+
+    a {
+      color: $link;
+    }
+  }
+
+  .admin-top-bar {
+    background: transparent;
+  }
+
+  .top-bar {
+    background: transparent !important; // TODO: Remove important when it's removed in the original file
+  }
+
+  .top-bar-left {
+    flex: 0;
+  }
+
+  .top-bar .menu > li {
+
+    a {
+      color: $black !important; // TODO: Remove important when it's removed in the original file
+
+      &:hover {
+        color: $link !important; // TODO: Remove important when it's removed in the original file
+      }
+    }
+  }
+}

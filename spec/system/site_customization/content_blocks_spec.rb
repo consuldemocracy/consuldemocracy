@@ -1,6 +1,8 @@
 require "rails_helper"
 
 describe "Custom content blocks" do
+  before { SiteCustomization::ContentBlock.delete_all }
+
   scenario "top links" do
     create(:site_customization_content_block, name: "top_links", locale: "en",
                                               body: "content for top links")

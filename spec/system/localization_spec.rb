@@ -20,7 +20,7 @@ describe "Localization" do
     visit "/"
 
     within(".locale-form .js-location-changer") do
-      expect(page).to have_content "Español"
+      expect(page).to have_content "Castellano"
       expect(page).to have_content "English"
     end
   end
@@ -34,16 +34,16 @@ describe "Localization" do
     visit "/"
     expect(page).to have_content("Language")
 
-    select("Español", from: "locale-switcher")
+    select("Castellano", from: "locale-switcher")
     expect(page).to have_content("Idioma")
     expect(page).not_to have_content("Language")
-    expect(page).to have_select("locale-switcher", selected: "Español")
+    expect(page).to have_select("locale-switcher", selected: "Castellano")
   end
 
   scenario "Keeps query parameters while using protected redirects", :js do
     visit "/debates?order=created_at&host=evil.dev"
 
-    select("Español", from: "locale-switcher")
+    select("Castellano", from: "locale-switcher")
 
     expect(current_host).to eq "http://127.0.0.1"
     expect(page).to have_current_path "/debates?locale=es&order=created_at"

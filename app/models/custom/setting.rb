@@ -6,7 +6,10 @@ class Setting
 
     def defaults
       consul_defaults.merge({
-        "org_name": "Portal de participación ciudadana - Concello de Santiago de Compostela"
+        "facebook_handle": "concellosantiago",
+        "org_name": "Portal de participación ciudadana - Concello de Santiago de Compostela",
+        "twitter_handle": "pazoderaxoi",
+        "youtube_handle": "channel/UCSrcC2UgDHIb80vVVRtvoDw"
       })
     end
   end

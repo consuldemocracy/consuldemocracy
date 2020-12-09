@@ -16,7 +16,7 @@ describe "Localization" do
     visit management_root_path
 
     within(".locale-form .js-location-changer") do
-      expect(page).to have_content "Español"
+      expect(page).to have_content "Castellano"
       expect(page).to have_content "English"
     end
   end
@@ -31,10 +31,10 @@ describe "Localization" do
     visit management_root_path
     expect(page).to have_content("Language")
 
-    select("Español", from: "locale-switcher")
+    select("Castellano", from: "locale-switcher")
     expect(page).to have_content("Idioma")
     expect(page).not_to have_content("Language")
-    expect(page).to have_select("locale-switcher", selected: "Español")
+    expect(page).to have_select("locale-switcher", selected: "Castellano")
   end
 
   scenario "Locale switcher not present if only one locale" do

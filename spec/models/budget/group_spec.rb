@@ -24,10 +24,10 @@ describe Budget::Group do
       end
 
       it "must not be repeated for a different group in any locale" do
-        group.update!(name_en: "English", name_es: "Español")
+        group.update!(name_en: "English", name_es: "Castellano")
 
         expect(build(:budget_group, budget: budget, name_en: "English")).not_to be_valid
-        expect(build(:budget_group, budget: budget, name_en: "Español")).not_to be_valid
+        expect(build(:budget_group, budget: budget, name_en: "Castellano")).not_to be_valid
       end
     end
   end
