@@ -268,3 +268,149 @@ header {
     }
   }
 }
+
+.footer {
+  background-color: #333;
+  min-height: auto;
+
+  footer {
+    color: #fff4f4;
+
+    > :not(.subfooter) {
+      @include grid-row;
+    }
+
+    > * {
+      padding-left: rem-calc(16);
+      padding-right: rem-calc(16);
+    }
+
+    .sites,
+    .contact {
+
+      @include breakpoint(medium) {
+        > * {
+          @include grid-column(6);
+        }
+
+        > :nth-child(odd) {
+          padding-left: 0;
+        }
+      }
+
+      @include breakpoint(large) {
+        > * {
+          @include grid-column(3);
+        }
+
+        > :first-child {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .sites {
+
+      .title {
+        border: 0;
+        display: inline-block;
+        margin-bottom: $line-height / 4;
+        margin-top: 0;
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      line-height: 5 * $line-height / 6;
+    }
+
+    a {
+      color: #fff4f4;
+
+      &:hover,
+      &:focus {
+        color: $link;
+      }
+    }
+  }
+
+  .logo a,
+  .site-info > a {
+    font-weight: bold;
+  }
+
+  .logo {
+    display: block;
+    font-size: rem-calc(28);
+    margin-bottom: $line-height;
+
+    a {
+      border-bottom: 4px solid $link;
+      padding-bottom: $line-height / 4;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .contact {
+
+    > :first-child {
+      @include has-fa-icon(map-marker-alt, "s");
+    }
+
+    > :first-child,
+    a {
+
+      &::before {
+        color: $link;
+        margin-right: rem-calc(4);
+      }
+    }
+
+    [href^="tel:"] {
+      @include has-fa-icon(phone-alt, "s");
+    }
+
+    [href^="mailto:"] {
+      @include has-fa-icon(envelope, "s");
+      white-space: nowrap;
+    }
+  }
+
+  .subfooter {
+    background-color: $gray;
+    color: $black;
+    padding-bottom: $line-height / 2;
+
+    > * {
+      @include grid-row;
+      margin-bottom: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      @include breakpoint(medium) {
+        display: inline-block;
+
+        &:not(:first-child) {
+          margin-left: 2em;
+        }
+      }
+    }
+
+    a {
+      color: $black;
+
+      &:hover,
+      &:focus {
+        color: $link;
+      }
+    }
+  }
+}

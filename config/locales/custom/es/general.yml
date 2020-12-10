@@ -1,8 +1,18 @@
 es:
+  layouts:
+    header:
+      open_gov: Concello de Santiago de Compostela
+    footer:
+      open_source: software libre
   sites:
     transparency:
       title: "Transparencia"
+      description: "Obtén cualquier información sobre el Concello de Santiago"
     open_data:
       title: "Datos abiertos"
+      description: "Todos los datos del Ayuntamiento son tuyos."
     weather:
       title: "El Tiempo"
+  contact:
+    phone_1: "%{phone} (Centro de Atención Telefónica)"
+    phone_2: "%{phone} (Alcaldía)"
