@@ -271,7 +271,7 @@ header {
   min-height: auto;
 
   footer {
-    color: #fff4f4;
+    color: $light-pink;
 
     > :not(.subfooter) {
       @include grid-row;
@@ -322,7 +322,7 @@ header {
     }
 
     a {
-      color: #fff4f4;
+      color: $light-pink;
 
       &:hover,
       &:focus {
