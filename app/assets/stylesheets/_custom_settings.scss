@@ -3,3 +3,57 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+$brand:             #dd3464;
+$link:              $brand;
+$link-hover:        darken($link, 20%);
+$body-background:   #fdfdfd;
+$background:        $body-background;
+$light-pink:        #fff4f4;
+$sidebar-hover:     $light-pink;
+$sidebar-active:    $brand;
+$admin-color:       $brand;
+$highlight:         $light-pink;
+$info-bg:           $light-pink; // Pending definition: Bibi? Example en http://localhost:3000/admin/polls/6/recounts
+$info-border:       $light-pink; // Pending definition: Bibi? Example en http://localhost:3000/admin/polls/6/recounts
+$color-info:        $brand; // Pending definition: Bibi? Example en http://localhost:3000/admin/polls/6/recounts
+$highlight-soft:    $light-pink;
+$budget:            $brand;
+$select-background: $background;
+$debates:           $brand;
+$proposals:         $brand;
+
+//  Foundation for Sites Settings
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//  11. Button
+
+
+// 1. Global
+// ---------
+
+$foundation-palette: (
+  primary: $brand,
+  secondary: #767676,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+
+@include add-foundation-colors;
+
+// 11. Button
+// ----------
+
+$button-background: $primary-color;
+$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-palette: $foundation-palette;
+
+// 51. Tabs
+// --------
+
+$tab-background: $background;
+$tab-content-background: $background;
+$tab-background-active: $background;

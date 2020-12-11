@@ -4,13 +4,10 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
-$link: #dd3464; // TODO: use $brand?
-$gray: #f9f9f9;
-
 header {
   $border: 1px solid #a8a8a8;
 
-  background-color: $gray;
+  background-color: $background;
   border: 0;
   padding-top: $line-height / 2;
 
@@ -127,7 +124,7 @@ header {
     }
 
     .locale-switcher {
-      background-color: $gray;
+      background-color: $background;
       border: 1px solid #979797;
       border-radius: 4px;
       color: $black;
@@ -247,6 +244,20 @@ header {
 
   .admin-top-bar {
     background: transparent;
+
+    .top-bar-title {
+      flex: 19%;
+      margin-right: 0;
+      min-width: 14rem;
+
+      a {
+        float: left;
+      }
+    }
+
+    .responsive-menu {
+      flex: 81%;
+    }
   }
 
   .top-bar {
@@ -267,6 +278,14 @@ header {
       }
     }
   }
+
+  tr {
+    border: 0;
+
+    &:hover {
+      color: $brand;
+    }
+  }
 }
 
 .footer {
@@ -274,7 +293,7 @@ header {
   min-height: auto;
 
   footer {
-    color: #fff4f4;
+    color: $light-pink;
 
     > :not(.subfooter) {
       @include grid-row;
@@ -325,7 +344,7 @@ header {
     }
 
     a {
-      color: #fff4f4;
+      color: $light-pink;
 
       &:hover,
       &:focus {
@@ -381,7 +400,7 @@ header {
   }
 
   .subfooter {
-    background-color: $gray;
+    background-color: $background;
     color: $black;
     padding-bottom: $line-height / 2;
 
@@ -411,6 +430,162 @@ header {
       &:focus {
         color: $link;
       }
+    }
+  }
+}
+
+input:focus {
+  outline: 0;
+}
+
+body {
+  background: $background;
+}
+
+// 11. Tables (layout.scss)
+// ----------
+
+table {
+
+  tr {
+
+    &:nth-child(odd) {
+      background: $background;
+
+      &:hover {
+        background: $background;
+      }
+    }
+
+    &:nth-child(even) {
+      background: $light-pink;
+
+      &:hover {
+        background: $light-pink;
+      }
+    }
+  }
+}
+
+// 02. Sidebar (admin.scss)
+// -----------
+
+.admin-sidebar {
+  background: $background;
+
+  ul {
+    [class^="icon-"] {
+      color: $black;
+    }
+  }
+
+  li {
+    &.is-active a {
+      color: $link;
+
+      [class^="icon-"] {
+        color: $link;
+      }
+    }
+  }
+
+  li a {
+    color: $black;
+
+    &:hover {
+      color: $link;
+
+      [class^="icon-"] {
+        color: $link;
+      }
+    }
+  }
+}
+
+// 04. Stats (admin.scss)
+// ---------
+
+.stats {
+  background: $background;
+}
+
+// 01. Header (pages.scss)
+// ----------------------
+
+.background-header {
+  display: none;
+}
+
+.jumbo.highlight {
+  background: $brand image-url("background-header-homepage.jpg"); //pending  add image from zepling
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $light-pink;
+}
+
+// 04. List participation (participation.scss)
+// ----------------------
+
+%panel {
+  background: $background;
+
+  h3 {
+    a {
+      color: $brand;
+    }
+  }
+}
+
+.debate,
+.proposal,
+.investment-project,
+.budget-investment,
+.legislation,
+.communities-show {
+  .truncate {
+    background: $background;
+  }
+}
+
+// 04. Tags (layout.scss)
+// --------
+
+.categories a,
+.geozone a {
+  background: $light-pink;
+
+  &:hover,
+  &.is-active {
+    background: $brand;
+    color: $background;
+  }
+}
+
+.card {
+  background: $background;
+}
+
+.figure-card figcaption span {
+  background: $background;
+}
+
+.notifications .icon-circle {
+  color: $brand;
+}
+
+// 06. Budgets
+// -----------
+
+.expanded {
+
+  &.budget {
+
+    .info {
+      background: $black;
+    }
+
+    h2 {
+      color: $brand;
     }
   }
 }
