@@ -451,10 +451,18 @@ table {
 
     &:nth-child(odd) {
       background: $background;
+
+      &:hover {
+        background: $background;
+      }
     }
 
     &:nth-child(even) {
       background: $light-pink;
+
+      &:hover {
+        background: $light-pink;
+      }
     }
   }
 }
