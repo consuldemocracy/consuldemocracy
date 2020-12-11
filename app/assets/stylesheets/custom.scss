@@ -564,3 +564,20 @@ table {
 .notifications .icon-circle {
   color: $brand;
 }
+
+// 06. Budgets
+// -----------
+
+.expanded {
+
+  &.budget {
+
+    .info {
+      background: $black;
+    }
+
+    h2 {
+      color: $brand;
+    }
+  }
+}
