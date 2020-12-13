@@ -278,7 +278,8 @@ describe "Legislation Draft Versions" do
     end
 
     def select_text_in(element)
-      element.double_click
+      element.click
+      3.times { page.driver.browser.action.click(element.native).perform }
     end
   end
 
