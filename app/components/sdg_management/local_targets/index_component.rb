@@ -1,5 +1,5 @@
 class SDGManagement::LocalTargets::IndexComponent < ApplicationComponent
-  include SDGManagement::Header
+  include Header
 
   attr_reader :local_targets
 

@@ -1,5 +1,5 @@
 class Admin::SDG::Managers::IndexComponent < ApplicationComponent
-  include Admin::Header
+  include Header
 
   attr_reader :users
 

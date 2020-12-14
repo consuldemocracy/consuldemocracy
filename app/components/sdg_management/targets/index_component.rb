@@ -1,5 +1,5 @@
 class SDGManagement::Targets::IndexComponent < ApplicationComponent
-  include SDGManagement::Header
+  include Header
 
   attr_reader :targets
 
