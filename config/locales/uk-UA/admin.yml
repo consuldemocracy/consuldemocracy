@@ -621,8 +621,6 @@ uk-UA:
     managers:
       index:
         title: Керівники
-        name: Ім'я
-        email: Електронна адреса
         no_managers: Менеджерів немає.
       manager:
         add: Додати
@@ -698,9 +696,6 @@ uk-UA:
     administrators:
       index:
         title: Адміністратори
-        name: Ім'я
-        email: Електронна адреса
-        description: Опис
         id: ID адміністратора
         no_administrators: Адміністратори відсутні.
       administrator:
@@ -714,8 +709,6 @@ uk-UA:
     moderators:
       index:
         title: Модератори
-        name: Ім'я
-        email: Електронна адреса
         no_moderators: Модераторів немає.
       moderator:
         add: Додати
