@@ -617,8 +617,6 @@ ro:
     managers:
       index:
         title: Administratori
-        name: Nume
-        email: Email
         no_managers: Nu există administratori.
       manager:
         add: Adaugă
@@ -694,9 +692,6 @@ ro:
     administrators:
       index:
         title: Administratori
-        name: Nume
-        email: Email
-        description: Descriere
         id: ID-ul Administratorului
         no_administrators: Nu există administratori.
       administrator:
@@ -710,8 +705,6 @@ ro:
     moderators:
       index:
         title: Moderatori
-        name: Nume
-        email: Email
         no_moderators: Nu există moderatori.
       moderator:
         add: Adaugă
