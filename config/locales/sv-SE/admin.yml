@@ -610,8 +610,6 @@ sv:
     managers:
       index:
         title: Medborgarguider
-        name: Namn
-        email: E-post
         no_managers: Det finns inga medborgarguider.
       manager:
         add: Lägg till
@@ -687,9 +685,6 @@ sv:
     administrators:
       index:
         title: Administratörer
-        name: Namn
-        email: E-post
-        description: Beskrivning
         id: Administratör ID
         no_administrators: Det finns inga administratörer.
       administrator:
@@ -703,8 +698,6 @@ sv:
     moderators:
       index:
         title: Moderatorer
-        name: Namn
-        email: E-post
         no_moderators: Det finns inga moderatorer.
       moderator:
         add: Lägg till
