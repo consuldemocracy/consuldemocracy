@@ -491,8 +491,6 @@ pl:
     managers:
       index:
         title: Menedżerowie
-        name: Nazwa
-        email: E-mail
         no_managers: Brak kierowników.
       manager:
         add: Dodaj
@@ -560,8 +558,6 @@ pl:
     administrators:
       index:
         title: Administratorów
-        name: Nazwa
-        email: E-mail
         id: Identyfikator administratora
         no_administrators: Brak administratorów.
       administrator:
@@ -572,8 +568,6 @@ pl:
     moderators:
       index:
         title: Moderatorzy
-        name: Nazwa
-        email: E-mail
         no_moderators: Brak moderatorów.
       moderator:
         add: Dodaj
