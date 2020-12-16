@@ -606,8 +606,6 @@ bg:
     managers:
       index:
         title: Мениджъри
-        name: Име
-        email: Имейл
         no_managers: Няма мениджъри.
       manager:
         add: Добавяне
@@ -683,9 +681,6 @@ bg:
     administrators:
       index:
         title: Администратори
-        name: Име
-        email: Имейл
-        description: Описание
         id: ID на администратор
         no_administrators: Няма администратори.
       administrator:
@@ -699,8 +694,6 @@ bg:
     moderators:
       index:
         title: Модератори
-        name: Име
-        email: Имейл
         no_moderators: Няма модератори.
       moderator:
         add: Добавяне
