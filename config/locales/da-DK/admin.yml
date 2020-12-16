@@ -610,8 +610,6 @@ da:
     managers:
       index:
         title: Managers
-        name: Navn
-        email: E-mail
         no_managers: Der findes ingen managere.
       manager:
         add: Tilføj
@@ -687,9 +685,6 @@ da:
     administrators:
       index:
         title: Administratorer
-        name: Navn
-        email: E-mail
-        description: Beskrivelse
         id: Administrator ID
         no_administrators: Der er ingen administratorer.
       administrator:
@@ -703,8 +698,6 @@ da:
     moderators:
       index:
         title: Moderatorer
-        name: Navn
-        email: E-mail
         no_moderators: Der er ingen moderatorer.
       moderator:
         add: Tilføj
