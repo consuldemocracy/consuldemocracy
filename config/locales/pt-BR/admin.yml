@@ -613,8 +613,6 @@ pt-BR:
     managers:
       index:
         title: Gerentes
-        name: Nome
-        email: Email
         no_managers: Não há gerentes.
       manager:
         add: Adicionar
@@ -690,9 +688,6 @@ pt-BR:
     administrators:
       index:
         title: Administradores
-        name: Nome
-        email: Email
-        description: Descrição
         id: ID de Administrador
         no_administrators: Não há administradores.
       administrator:
@@ -706,8 +701,6 @@ pt-BR:
     moderators:
       index:
         title: Moderadores
-        name: Nome
-        email: Email
         no_moderators: Não há moderadores.
       moderator:
         add: Adicionar
