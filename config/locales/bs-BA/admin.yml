@@ -564,8 +564,6 @@ bs:
     managers:
       index:
         title: Menadžeri
-        name: Ime
-        email: Email
         no_managers: Nema menadžera.
       manager:
         add: Dodaj
@@ -638,8 +636,6 @@ bs:
     administrators:
       index:
         title: Administratori
-        name: Ime
-        email: Email
         id: Identifikacioni broj administratora
         no_administrators: Nema administratora.
       administrator:
@@ -650,8 +646,6 @@ bs:
     moderators:
       index:
         title: Moderatori
-        name: Ime
-        email: 'Email:'
         no_moderators: Nema moderatora.
       moderator:
         add: Dodaj
