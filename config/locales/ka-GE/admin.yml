@@ -612,8 +612,6 @@ ka:
     managers:
       index:
         title: მენეჯერები
-        name: სახელი
-        email: ელ.ფოსტა
         no_managers: მენეჯერები არ მოიძებნა.
       manager:
         add: დამატება
@@ -689,9 +687,6 @@ ka:
     administrators:
       index:
         title: ადმინისტრატორები
-        name: სახელი
-        email: ელ.ფოსტა
-        description: აღწერა
         id: ადმინისტრატორის ID
         no_administrators: ადმინისტრატორები არ მოიძებნა.
       administrator:
@@ -705,8 +700,6 @@ ka:
     moderators:
       index:
         title: მოდერატორები
-        name: სახელი
-        email: ელ.ფოსტა
         no_moderators: მოდერატორები არ მოიძებნა.
       moderator:
         add: დამატება
