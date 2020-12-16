@@ -10,4 +10,9 @@ namespace :db do
     ApplicationLogger.new.info "Adding Sustainable Development Goals content"
     load(Rails.root.join("db", "sdg.rb"))
   end
+
+  desc "Calculates the TSV column for all polls"
+  task calculate_tsv: :environment do
+    Poll.find_each(&:calculate_tsvector)
+  end
 end

@@ -32,3 +32,22 @@ describe "rake db:load_sdg" do
     expect(SDG::Target.last.id).to eq target_id
   end
 end
+
+describe "rake db:calculate_tsv" do
+  before { Rake::Task["db:calculate_tsv"].reenable }
+
+  let :run_rake_task do
+    Rake.application.invoke_task("db:calculate_tsv")
+  end
+
+  it "calculates the tsvector for polls" do
+    poll = create(:poll)
+    poll.update_column(:tsv, nil)
+
+    expect(poll.reload.tsv).to be nil
+
+    run_rake_task
+
+    expect(poll.reload.tsv).not_to be nil
+  end
+end

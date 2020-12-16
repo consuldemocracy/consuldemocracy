@@ -433,4 +433,29 @@ describe Poll do
       expect(poll.recounts_confirmed?).to be true
     end
   end
+
+  describe ".search" do
+    let!(:square) do
+      create(:poll, name: "Square reform", summary: "Next to the park", description: "Give it more space")
+    end
+
+    let!(:park) do
+      create(:poll, name: "New park", summary: "Green spaces", description: "Next to the square")
+    end
+
+    it "returns only matching polls" do
+      expect(Poll.search("reform")).to eq [square]
+      expect(Poll.search("green")).to eq [park]
+      expect(Poll.search("nothing here")).to be_empty
+    end
+
+    it "gives more weight to name" do
+      expect(Poll.search("square")).to eq [square, park]
+      expect(Poll.search("park")).to eq [park, square]
+    end
+
+    it "gives more weight to summary than description" do
+      expect(Poll.search("space")).to eq [park, square]
+    end
+  end
 end
