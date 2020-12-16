@@ -610,8 +610,6 @@ de:
     managers:
       index:
         title: Manager*innen
-        name: Name
-        email: E-Mail
         no_managers: Keine Manager*innen vorhanden.
       manager:
         add: Hinzufügen
@@ -687,9 +685,6 @@ de:
     administrators:
       index:
         title: Administrator*innen
-        name: Name
-        email: E-Mail
-        description: Beschreibung
         id: Administrator ID
         no_administrators: Keine Administrator*innen vorhanden.
       administrator:
@@ -703,8 +698,6 @@ de:
     moderators:
       index:
         title: Moderator*innen
-        name: Name
-        email: E-Mail
         no_moderators: Keine Moderator*innen vorhanden.
       moderator:
         add: Hinzufügen
