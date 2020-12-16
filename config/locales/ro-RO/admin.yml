@@ -622,6 +622,12 @@ ro:
         add: Adaugă
       search:
         title: "Manageri: Căutare utilizator"
+    sdg_managers:
+      index:
+        no_sdg_managers: Nu există utilizatori.
+    sdg/managers:
+      sdg/manager:
+        add: Adaugă
     menu:
       activity: Activitatea moderatorului
       admin: Meniul de administrare
@@ -638,6 +644,7 @@ ro:
       hidden_users: Utilizatori ascunși
       administrators: Administratori
       managers: Administratori
+      sdg_managers: Administratori obiective de dezvoltare durabilă
       moderators: Moderatori
       messaging_users: Mesaj către utilizatori
       newsletters: Newsletters
