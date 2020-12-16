@@ -585,8 +585,6 @@ ru:
     managers:
       index:
         title: Менеджеры
-        name: Имя
-        email: Электронный адрес
         no_managers: Нет менеджеров.
       manager:
         add: Добавить
@@ -659,9 +657,6 @@ ru:
     administrators:
       index:
         title: Администраторы
-        name: Имя
-        email: Электронный адрес
-        description: Описание
         id: ID администратора
         no_administrators: Нет администраторов.
       administrator:
@@ -675,8 +670,6 @@ ru:
     moderators:
       index:
         title: Модераторы
-        name: Имя
-        email: Электронный адрес
         no_moderators: Нет модераторов.
       moderator:
         add: Добавить
