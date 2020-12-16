@@ -372,8 +372,6 @@ eu:
     managers:
       index:
         title: Kudeatzaileak
-        name: Izena
-        email: E-mail
         no_managers: Ez dago kudeatzailerik.
       manager:
         add: Kudeatzaile gisa gehitu
@@ -422,8 +420,6 @@ eu:
     administrators:
       index:
         title: Administratzaileak
-        name: Izena
-        email: E-mail
         no_administrators: Ez dago administratzailerik.
       administrator:
         add: Administratzaile gisa gehitu
@@ -433,8 +429,6 @@ eu:
     moderators:
       index:
         title: Moderatzaileak
-        name: Izena
-        email: E-mail
         no_moderators: Ez dago moderatzailerik.
       moderator:
         add: Moderatzaile gisa gehitu
