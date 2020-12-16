@@ -610,8 +610,6 @@ oc:
     managers:
       index:
         title: de Gestors
-        name: Nome
-        email: Lo tieu corrièr electronic
         no_managers: I a pas de gestors.
       manager:
         add: Añadir como President de taula
@@ -687,9 +685,6 @@ oc:
     administrators:
       index:
         title: d'Administradors
-        name: Nome
-        email: Lo tieu corrièr electronic
-        description: Descripció
         id: Identificador d’administrador
         no_administrators: I a pas d'administradors.
       administrator:
@@ -703,8 +698,6 @@ oc:
     moderators:
       index:
         title: de Moderadors
-        name: Nome
-        email: Lo tieu corrièr electronic
         no_moderators: I a pas de moderadors.
       moderator:
         add: Añadir como President de taula
