@@ -333,8 +333,6 @@ sl:
     managers:
       index:
         title: Upravljalec
-        name: Ime
-        email: E-naslov
         no_managers: Ni upravljalcev.
       manager:
         add: Dodaj
@@ -380,8 +378,6 @@ sl:
     administrators:
       index:
         title: Administratorji
-        name: Ime
-        email: E-naslov
         no_administrators: Ni administratorjev.
       administrator:
         add: Dodaj
@@ -391,8 +387,6 @@ sl:
     moderators:
       index:
         title: Moderatorji
-        name: Ime
-        email: E-naslov
         no_moderators: Ni moderatorjev.
       moderator:
         add: Dodaj
