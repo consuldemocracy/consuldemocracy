@@ -481,8 +481,6 @@ nl:
     managers:
       index:
         title: Managers
-        name: Name
-        email: E-mail
         no_managers: Er zijn geen managers.
       manager:
         add: Add
@@ -550,8 +548,6 @@ nl:
     administrators:
       index:
         title: Admins
-        name: Name
-        email: E-mail
         id: Beheerder ID
         no_administrators: Er zijn geen beheerders.
       administrator:
@@ -562,8 +558,6 @@ nl:
     moderators:
       index:
         title: Moderators
-        name: Name
-        email: E-mail
         no_moderators: Er zijn geen moderators.
       moderator:
         add: Voeg toe
