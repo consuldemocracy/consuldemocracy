@@ -531,8 +531,6 @@ cs:
     managers:
       index:
         title: Manažeři
-        name: Název
-        email: Email
         no_managers: Nemáte žádné manažery.
       manager:
         add: Přidat
@@ -602,9 +600,6 @@ cs:
     administrators:
       index:
         title: Administrátoři
-        name: Název
-        email: Email
-        description: Popis
         id: Administrátor ID
         no_administrators: Neexistují žádní administrátoři.
       administrator:
@@ -615,8 +610,6 @@ cs:
     moderators:
       index:
         title: Moderátoři
-        name: Název
-        email: Email
         no_moderators: Nemáte žádné moderátory.
       moderator:
         add: Přidat
