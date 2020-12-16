@@ -50,4 +50,15 @@ describe "rake db:calculate_tsv" do
 
     expect(poll.reload.tsv).not_to be nil
   end
+
+  it "calculates the tsvector for legislation processes" do
+    process = create(:legislation_process)
+    process.update_column(:tsv, nil)
+
+    expect(process.reload.tsv).to be nil
+
+    run_rake_task
+
+    expect(process.reload.tsv).not_to be nil
+  end
 end

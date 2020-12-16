@@ -11,8 +11,9 @@ namespace :db do
     load(Rails.root.join("db", "sdg.rb"))
   end
 
-  desc "Calculates the TSV column for all polls"
+  desc "Calculates the TSV column for all polls and legislation processes"
   task calculate_tsv: :environment do
     Poll.find_each(&:calculate_tsvector)
+    Legislation::Process.find_each(&:calculate_tsvector)
   end
 end
