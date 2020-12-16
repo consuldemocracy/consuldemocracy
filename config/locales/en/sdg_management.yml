@@ -4,3 +4,19 @@ en:
       title: "SDG content"
     menu:
       sdg_content: "Goals and Targets"
+    local_targets:
+      create:
+        notice: "Local target created successfully"
+      destroy:
+        notice: "Local target deleted successfully"
+      edit:
+        title: "Edit local target"
+      form:
+        code: "Code must start with the selected target code followed by a dot"
+        description: "This description will be shown as help to users."
+      index:
+        new: "Create local target"
+      new:
+        title: "New local target"
+      update:
+        notice: "Local target updated successfully"

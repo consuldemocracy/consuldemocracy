@@ -75,6 +75,9 @@ es:
       sdg/goal:
         one: "objetivo"
         other: "objetivos"
+      sdg/local_target:
+        one: "meta localizada"
+        other: "metas localizadas"
       sdg/target:
         one: "meta"
         other: "metas"
@@ -313,6 +316,13 @@ es:
         title: "Título"
       sdg/goal:
         code: "Código"
+        title: "Título"
+        description: "Descripción"
+      sdg/local_target:
+        code: "Código"
+        target_id: "Meta"
+        title: "Título"
+      sdg/local_target/translation:
         title: "Título"
         description: "Descripción"
       sdg/target:
@@ -573,6 +583,10 @@ es:
           attributes:
             locale:
               already_translated: Recurso ya traducido
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "debe empezar con el código de su meta seguido de un punto y terminar con un número"
       messages:
         translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"

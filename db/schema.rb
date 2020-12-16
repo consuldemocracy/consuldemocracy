@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_200945) do
+ActiveRecord::Schema.define(version: 2020_11_23_124006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1302,6 +1302,26 @@ ActiveRecord::Schema.define(version: 2020_11_17_200945) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_sdg_goals_on_code", unique: true
+  end
+
+  create_table "sdg_local_target_translations", force: :cascade do |t|
+    t.bigint "sdg_local_target_id", null: false
+    t.string "locale", null: false
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_sdg_local_target_translations_on_locale"
+    t.index ["sdg_local_target_id"], name: "index_sdg_local_target_translations_on_sdg_local_target_id"
+  end
+
+  create_table "sdg_local_targets", force: :cascade do |t|
+    t.bigint "target_id"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_sdg_local_targets_on_code", unique: true
+    t.index ["target_id"], name: "index_sdg_local_targets_on_target_id"
   end
 
   create_table "sdg_relations", force: :cascade do |t|

@@ -8,7 +8,7 @@ class SDGManagement::SubnavigationComponent < ApplicationComponent
   private
 
     def sections
-      %i[goals targets]
+      %i[goals targets local_targets]
     end
 
     def link_to_section(section)

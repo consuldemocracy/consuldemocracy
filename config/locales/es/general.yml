@@ -190,6 +190,7 @@ es:
     local_census_records/import: la importación de registros del censo local
     site_customization/content_block: el bloque
     site_customization/page: la página
+    sdg/local_target: la meta localizada
   geozones:
     none: Toda la ciudad
   layouts:
