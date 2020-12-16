@@ -1,1 +1,6 @@
 ro:
+  sdg:
+    goals:
+      goal_1:
+        title: "Fără sărăcie"
+        description: "Pune capăt sărăciei în toate formele sale, peste tot."
