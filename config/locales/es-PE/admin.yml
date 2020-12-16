@@ -364,8 +364,6 @@ es-PE:
     managers:
       index:
         title: Gestores
-        name: Nombre
-        email: Tu correo electrónico
         no_managers: No hay gestores.
       manager:
         add: Añadir como Presidente de mesa
@@ -417,8 +415,6 @@ es-PE:
     administrators:
       index:
         title: Administradores
-        name: Nombre
-        email: Tu correo electrónico
         no_administrators: No hay administradores.
       administrator:
         add: Añadir como Presidente de mesa
@@ -428,8 +424,6 @@ es-PE:
     moderators:
       index:
         title: Moderadores
-        name: Nombre
-        email: Tu correo electrónico
         no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Presidente de mesa
