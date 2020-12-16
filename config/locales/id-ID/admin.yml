@@ -422,8 +422,6 @@ id:
     managers:
       index:
         title: Pengelola
-        name: Nama
-        email: Email
         no_managers: Tidak ada manajer disana.
       manager:
         add: Tambahkan
@@ -478,8 +476,6 @@ id:
     administrators:
       index:
         title: Administrasi
-        name: Nama
-        email: Email
         no_administrators: Tidak ada administrator.
       administrator:
         add: Tambahkan
@@ -489,8 +485,6 @@ id:
     moderators:
       index:
         title: Moderator
-        name: Nama
-        email: Email
         no_moderators: Tidak ada moderator.
       moderator:
         add: Tambahkan
