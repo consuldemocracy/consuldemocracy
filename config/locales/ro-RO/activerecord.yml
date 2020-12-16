@@ -4,6 +4,9 @@ ro:
     results_enabled: "Se arată rezultatele"
     stats_enabled: "Statistici"
     advanced_stats_enabled: "Statistici avansate"
+    name: Nume
+    email: Email
+    description: Descriere
   activerecord:
     models:
       activity:
@@ -98,6 +101,10 @@ ro:
         one: "scop"
         few: "scopuri"
         other: "scopuri"
+      sdg/local_target:
+        one: "țintă locală"
+        few: "ținte locale"
+        other: "ținte locale"
       site_customization/page:
         one: Pagină personalizate
         few: Pagini personalizate
@@ -355,6 +362,11 @@ ro:
       sdg/goal:
         title: "Titlu"
         description: "Descriere"
+      sdg/local_target:
+        title: "Titlu"
+      sdg/local_target/translation:
+        title: "Titlu"
+        description: "Descriere"
       sdg/target:
         title: "Titlu"
       site_customization/page:
@@ -607,6 +619,10 @@ ro:
           attributes:
             locale:
               already_translated: Resursă deja tradusă
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "trebuie să înceapă cu același cod ca ținta sa, urmat de un punct și să se termine cu un număr"
       messages:
         translations_too_short: Este obligatoriu să furnizați cel puțin o traducere
         record_invalid: "Validarea a eșuat: %{errors}"
