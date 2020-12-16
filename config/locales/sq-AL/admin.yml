@@ -427,8 +427,6 @@ sq:
     managers:
       index:
         title: Menaxherët
-        name: Emri
-        email: Email
         no_managers: Nuk ka menaxherë.
       manager:
         add: Shto
@@ -494,8 +492,6 @@ sq:
     administrators:
       index:
         title: Administrator
-        name: Emri
-        email: Email
         id: Administrator ID
         no_administrators: Nuk ka administratorë.
       administrator:
@@ -506,8 +502,6 @@ sq:
     moderators:
       index:
         title: Moderator
-        name: Emri
-        email: Email
         no_moderators: Nuk ka moderator.
       moderator:
         add: Shto
