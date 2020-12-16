@@ -278,9 +278,6 @@ fi:
           back: Takaisin
           submit_button: Luo kysymys
     managers:
-      index:
-        name: Nimi
-        email: Sähköposti
       manager:
         add: Lisää
     menu:
@@ -306,15 +303,10 @@ fi:
       users: Käyttäjät
     administrators:
       index:
-        name: Nimi
-        email: Sähköposti
         id: Järjestelmänvalvojan ID
       administrator:
         add: Lisää
     moderators:
-      index:
-        name: Nimi
-        email: Sähköposti
       moderator:
         add: Lisää
     segment_recipient:
