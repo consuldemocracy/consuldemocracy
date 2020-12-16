@@ -105,6 +105,10 @@ ro:
         one: "țintă locală"
         few: "ținte locale"
         other: "ținte locale"
+      sdg/manager:
+        one: "Administrator obiective de dezvoltare durabilă"
+        few: "Administratori obiective de dezvoltare durabilă"
+        other: "Administratori obiective de dezvoltare durabilă"
       site_customization/page:
         one: Pagină personalizate
         few: Pagini personalizate
