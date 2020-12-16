@@ -486,8 +486,6 @@ gl:
     managers:
       index:
         title: Xestores
-        name: Nome
-        email: O teu correo electrónico
         no_managers: Non hai xestores.
       manager:
         add: Engadir
@@ -555,8 +553,6 @@ gl:
     administrators:
       index:
         title: Administradores
-        name: Nome
-        email: O teu correo electrónico
         id: ID do administrador
         no_administrators: Non hai ningún administrador.
       administrator:
@@ -567,8 +563,6 @@ gl:
     moderators:
       index:
         title: Moderadores
-        name: Nome
-        email: O teu correo electrónico
         no_moderators: Non hai ningún moderador/a.
       moderator:
         add: Engadir
