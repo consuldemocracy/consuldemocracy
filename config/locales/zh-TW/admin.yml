@@ -423,8 +423,6 @@ zh-TW:
     managers:
       index:
         title: 經理
-        name: 名字
-        email: 電郵
         no_managers: 沒有經理。
       manager:
         add: 添加
@@ -490,8 +488,6 @@ zh-TW:
     administrators:
       index:
         title: 管理員
-        name: 名字
-        email: 電郵
         no_administrators: 沒有管理員。
       administrator:
         add: 添加
@@ -501,8 +497,6 @@ zh-TW:
     moderators:
       index:
         title: 版主
-        name: 名字
-        email: 電郵
         no_moderators: 沒有審核員。
       moderator:
         add: 添加
