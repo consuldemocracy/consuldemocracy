@@ -607,8 +607,6 @@ tr:
     managers:
       index:
         title: Yöneticiler
-        name: Ad
-        email: E-posta
         no_managers: Hiç yönetici yok.
       manager:
         add: Ekle
@@ -683,9 +681,6 @@ tr:
     administrators:
       index:
         title: Yöneticiler
-        name: İsim
-        email: E-posta
-        description: Tanımlama
         id: Yönetici KİMLİĞİ
         no_administrators: Hiç yönetici yok.
       administrator:
@@ -699,8 +694,6 @@ tr:
     moderators:
       index:
         title: Moderatörler
-        name: İsim
-        email: E-posta
         no_moderators: Hiç moderatör yok.
       moderator:
         add: Ekle
