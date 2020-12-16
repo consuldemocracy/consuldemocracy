@@ -426,8 +426,6 @@ so:
     managers:
       index:
         title: Mamule
-        name: Magac
-        email: Email
         no_managers: Majiraan Mamulayaal.
       manager:
         add: Kudar
@@ -493,8 +491,6 @@ so:
     administrators:
       index:
         title: Mamulayal
-        name: Magac
-        email: Email
         id: Aqoonsiga maamulka
         no_administrators: Ma jiraan maamulayaal.
       administrator:
@@ -505,8 +501,6 @@ so:
     moderators:
       index:
         title: Dhexdhexadiyayal
-        name: Magac
-        email: Email
         no_moderators: Majiraan dhex dhexadiyayal.
       moderator:
         add: Kudar
