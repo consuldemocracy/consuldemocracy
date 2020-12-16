@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_one :moderator
   has_one :valuator
   has_one :manager
+  has_one :sdg_manager, class_name: "SDG::Manager", dependent: :destroy
   has_one :poll_officer, class_name: "Poll::Officer"
   has_one :organization
   has_one :lock
@@ -94,6 +95,7 @@ class User < ApplicationRecord
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
+  scope :sdg_managers,   -> { joins(:sdg_manager) }
   scope :officials,      -> { where("official_level > 0") }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
@@ -195,6 +197,10 @@ class User < ApplicationRecord
 
   def manager?
     manager.present?
+  end
+
+  def sdg_manager?
+    sdg_manager.present?
   end
 
   def poll_officer?

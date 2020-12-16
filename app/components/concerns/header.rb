@@ -1,9 +1,9 @@
-module SDGManagement::Header
+module Header
   extend ActiveSupport::Concern
 
   def header(&block)
     provide(:title) do
-      "#{t("sdg_management.header.title")} - #{title}"
+      "#{t("#{namespace}.header.title")} - #{title}"
     end
 
     tag.header do
@@ -14,4 +14,10 @@ module SDGManagement::Header
       end
     end
   end
+
+  private
+
+    def namespace
+      controller_path.split("/").first
+    end
 end

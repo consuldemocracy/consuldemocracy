@@ -56,6 +56,12 @@ section "Creating Users" do
                        confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                        verified_at: Time.current, document_number: unique_document_number)
 
+  sdg_manager = create_user("sdg_manager@consul.dev", "SDG manager")
+  sdg_manager.create_sdg_manager
+  sdg_manager.update!(residence_verified_at: Time.current,
+                confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                verified_at: Time.current, document_number: unique_document_number)
+
   create_user("unverified@consul.dev", "unverified")
 
   level_2 = create_user("leveltwo@consul.dev", "level 2")

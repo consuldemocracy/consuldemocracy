@@ -12,6 +12,6 @@ class SDGManagement::BaseController < ApplicationController
   private
 
     def verify_sdg_manager
-      raise CanCan::AccessDenied unless current_user&.administrator?
+      raise CanCan::AccessDenied unless current_user&.sdg_manager? || current_user&.administrator?
     end
 end

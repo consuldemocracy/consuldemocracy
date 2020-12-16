@@ -96,6 +96,7 @@
       moderators_link,
       valuators_link,
       managers_link,
+      (sdg_managers_link if feature?(:sdg)),
       users_link,
       class: ("is-active" if profiles?)
     ) %>

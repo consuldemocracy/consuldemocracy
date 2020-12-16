@@ -614,13 +614,17 @@ en:
     managers:
       index:
         title: Managers
-        name: Name
-        email: Email
         no_managers: There are no managers.
       manager:
         add: Add
       search:
         title: "Managers: User search"
+    sdg_managers:
+      index:
+        no_sdg_managers: There are no users.
+    sdg/managers:
+      sdg/manager:
+        add: Add
     menu:
       activity: Moderator activity
       admin: Admin menu
@@ -637,6 +641,7 @@ en:
       hidden_users: Hidden users
       administrators: Administrators
       managers: Managers
+      sdg_managers: SDG Managers
       moderators: Moderators
       messaging_users: Messages to users
       newsletters: Newsletters
@@ -691,9 +696,6 @@ en:
     administrators:
       index:
         title: Administrators
-        name: Name
-        email: Email
-        description: Description
         id: Administrator ID
         no_administrators: There are no administrators.
       administrator:
@@ -707,8 +709,6 @@ en:
     moderators:
       index:
         title: Moderators
-        name: Name
-        email: Email
         no_moderators: There are no moderators.
       moderator:
         add: Add

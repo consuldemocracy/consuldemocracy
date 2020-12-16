@@ -613,13 +613,17 @@ es:
     managers:
       index:
         title: Gestores
-        name: Nombre
-        email: Email
         no_managers: No hay gestores.
       manager:
         add: Añadir como gestor
       search:
         title: "Gestores: Búsqueda de usuarios"
+    sdg_managers:
+      index:
+        no_sdg_managers: No hay usuarios.
+    sdg/managers:
+      sdg/manager:
+        add: Añadir como gestor ODS
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
@@ -636,6 +640,7 @@ es:
       hidden_users: Usuarios bloqueados
       administrators: Administradores
       managers: Gestores
+      sdg_managers: Gestores ODS
       moderators: Moderadores
       messaging_users: Mensajes a usuarios
       newsletters: Newsletters
@@ -690,9 +695,6 @@ es:
     administrators:
       index:
         title: Administradores
-        name: Nombre
-        email: Email
-        description: Descripción
         id: ID de Administrador
         no_administrators: No hay administradores.
       administrator:
@@ -706,8 +708,6 @@ es:
     moderators:
       index:
         title: Moderadores
-        name: Nombre
-        email: Email
         no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Moderador
