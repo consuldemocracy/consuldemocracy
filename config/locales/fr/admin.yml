@@ -560,8 +560,6 @@ fr:
     managers:
       index:
         title: Responsables
-        name: Nom
-        email: Email
         no_managers: Il n’y a aucun gestionnaire.
       manager:
         add: Ajouter en tant que président
@@ -632,8 +630,6 @@ fr:
     administrators:
       index:
         title: Administrateurs
-        name: Nom
-        email: Email
         id: ID Administrateur
         no_administrators: Il n'y a pas d'administrateurs.
       administrator:
@@ -644,8 +640,6 @@ fr:
     moderators:
       index:
         title: Modérateurs
-        name: Nom
-        email: Email
         no_moderators: Il n'y a pas de modérateurs.
       moderator:
         add: Ajouter en tant que président
