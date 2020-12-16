@@ -620,8 +620,6 @@ ar:
     managers:
       index:
         title: مدراء
-        name: الإ سم
-        email: البريد الإلكتروني
         no_managers: لا يوجد مدراء.
       manager:
         add: إضافة
@@ -696,9 +694,6 @@ ar:
     administrators:
       index:
         title: مدراء
-        name: الإ سم
-        email: البريد الإلكتروني
-        description: الوصف
         id: معرف المدير
         no_administrators: لا يوجد مدراء.
       administrator:
@@ -712,8 +707,6 @@ ar:
     moderators:
       index:
         title: المشرفين
-        name: الإ سم
-        email: البريد الإلكتروني
         no_moderators: لا يوجد مشرفون.
       moderator:
         add: إضافة
