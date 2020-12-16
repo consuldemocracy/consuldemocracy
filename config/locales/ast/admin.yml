@@ -345,8 +345,6 @@ ast:
     managers:
       index:
         title: Xestores
-        name: Nome
-        email: Corréu electrónicu
       manager:
         add: Añedir como Presidente de mesa
     menu:
@@ -394,16 +392,12 @@ ast:
     administrators:
       index:
         title: Alministradores
-        name: Nome
-        email: Corréu electrónicu
       administrator:
         add: Añedir como Presidente de mesa
         restricted_removal: "Sentimoslo, nun puedes esaniciate a ti mesmu de la llista"
     moderators:
       index:
         title: Moderadores
-        name: Nome
-        email: Corréu electrónicu
       moderator:
         add: Añedir como Presidente de mesa
     segment_recipient:
