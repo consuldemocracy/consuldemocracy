@@ -612,8 +612,6 @@ ca:
     managers:
       index:
         title: Gestors
-        name: Nome
-        email: El teu correu electrònic
         no_managers: No hi ha gestors.
       manager:
         add: Añadir como President de taula
@@ -689,9 +687,6 @@ ca:
     administrators:
       index:
         title: Administradors
-        name: Nome
-        email: El teu correu electrònic
-        description: Descripció
         id: Identificador d’administrador
         no_administrators: No hi ha administradors.
       administrator:
@@ -705,8 +700,6 @@ ca:
     moderators:
       index:
         title: Moderadors
-        name: Nome
-        email: El teu correu electrònic
         no_moderators: No hi ha moderadors.
       moderator:
         add: Añadir como President de taula
