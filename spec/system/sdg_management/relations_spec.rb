@@ -87,6 +87,19 @@ describe "SDG Relations", :js do
 
       expect(page).to have_css "h2", exact_text: "Build a hospital"
     end
+
+    scenario "search" do
+      create(:poll, name: "Internet speech freedom")
+      create(:poll, name: "SDG interest")
+
+      visit sdg_management_polls_path
+
+      fill_in "search", with: "speech"
+      click_button "Search"
+
+      expect(page).to have_content "Internet speech freedom"
+      expect(page).not_to have_content "SDG interest"
+    end
   end
 
   describe "Edit" do

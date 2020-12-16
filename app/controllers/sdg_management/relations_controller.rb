@@ -4,6 +4,8 @@ class SDGManagement::RelationsController < SDGManagement::BaseController
 
   def index
     @records = relatable_class.accessible_by(current_ability).order(:id).page(params[:page])
+
+    @records = @records.search(params[:search]) if params[:search].present?
   end
 
   def edit

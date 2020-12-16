@@ -1254,11 +1254,14 @@ es:
       search:
         label:
           booths: "Buscar urna por nombre"
+          budget_investments: "Buscar proyectos por título, descripción o partida"
           debates: "Buscar debates por título o descripción"
+          legislation_processes: "Buscar procesos por título o descripción"
           local_census_records: "Búsqueda por número de documento"
           organizations: "Nombre, email o teléfono"
           poll_officers: "Buscar presidentes de mesa"
           poll_questions: "Buscar preguntas"
+          polls: "Buscar votaciones por nombre o descripción"
           proposals: "Buscar propuestas por título, código, descripción o pregunta"
           users: "Buscar usuario por nombre o email"
         search: "Buscar"

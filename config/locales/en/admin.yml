@@ -1255,11 +1255,14 @@ en:
       search:
         label:
           booths: "Search booth by name or location"
+          budget_investments: "Search investments by title, description or heading"
           debates: "Search debates by title or description"
+          legislation_processes: "Search processes by title or description"
           local_census_records: "Search by document number"
           organizations: "Name, email or phone number"
           poll_officers: "Search poll officers"
           poll_questions: "Search poll questions"
+          polls: "Search polls by name or description"
           proposals: "Search proposals by title, code, description or question"
           users: "Search user by name or email"
         search: "Search"
