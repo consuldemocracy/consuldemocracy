@@ -431,8 +431,6 @@ zh-CN:
     managers:
       index:
         title: 经理
-        name: 名字
-        email: 电子邮件地址
         no_managers: 没有经理。
       manager:
         add: 添加
@@ -500,8 +498,6 @@ zh-CN:
     administrators:
       index:
         title: 管理员
-        name: 名字
-        email: 电子邮件地址
         id: 管理员 ID
         no_administrators: 没有管理员。
       administrator:
@@ -512,8 +508,6 @@ zh-CN:
     moderators:
       index:
         title: 版主
-        name: 名字
-        email: 电子邮件地址
         no_moderators: 没有审核员。
       moderator:
         add: 添加
