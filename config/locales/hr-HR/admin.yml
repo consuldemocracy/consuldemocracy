@@ -617,8 +617,6 @@ hr:
     managers:
       index:
         title: Upravitelji
-        name: Ime
-        email: E-mail
         no_managers: Ne postoje upravitelji.
       manager:
         add: Dodaj
@@ -694,9 +692,6 @@ hr:
     administrators:
       index:
         title: Administratori
-        name: Ime
-        email: Email
-        description: Opis
         id: Administrator ID
         no_administrators: Ne postoje administratori.
       administrator:
@@ -710,8 +705,6 @@ hr:
     moderators:
       index:
         title: Moderatori
-        name: Ime
-        email: Email
         no_moderators: Ne postoje moderatori.
       moderator:
         add: Dodaj
