@@ -617,8 +617,6 @@ sr:
     managers:
       index:
         title: Управљачи
-        name: Име
-        email: Емаил
         no_managers: Нема управљача.
       manager:
         add: Додати
@@ -694,9 +692,6 @@ sr:
     administrators:
       index:
         title: Администратори
-        name: Име
-        email: Емаил
-        description: Опис
         id: ИД администратора
         no_administrators: Нема администратора.
       administrator:
@@ -710,8 +705,6 @@ sr:
     moderators:
       index:
         title: Модератори
-        name: Име
-        email: Емаил
         no_moderators: Нема модератора.
       moderator:
         add: Додати
