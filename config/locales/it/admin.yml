@@ -530,8 +530,6 @@ it:
     managers:
       index:
         title: Gestori
-        name: Nominativo
-        email: Email
         no_managers: Non ci sono dirigenti.
       manager:
         add: Aggiungere
@@ -598,8 +596,6 @@ it:
     administrators:
       index:
         title: Amministratori
-        name: Nominativo
-        email: Email
         no_administrators: Non ci sono amministratori.
       administrator:
         add: Aggiungi
@@ -609,8 +605,6 @@ it:
     moderators:
       index:
         title: Moderatori
-        name: Nominativo
-        email: Email
         no_moderators: Non ci sono moderatori.
       moderator:
         add: Aggiungi
