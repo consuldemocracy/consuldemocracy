@@ -612,8 +612,6 @@ he:
     managers:
       index:
         title: מנהלים
-        name: שם
-        email: דואר אלקטרוני
         no_managers: לא נמצאו מנהלים.
       manager:
         add: הוסף
@@ -688,9 +686,6 @@ he:
     administrators:
       index:
         title: מנהלים
-        name: שם
-        email: דואר אלקטרוני
-        description: תיאור
         id: מזהה מנהל
         no_administrators: אין מנהלי מערכת.
       administrator:
@@ -704,8 +699,6 @@ he:
     moderators:
       index:
         title: מנחים
-        name: שם
-        email: דואר אלקטרוני
         no_moderators: לא נמצאו מנחים.
       moderator:
         add: הוסף
