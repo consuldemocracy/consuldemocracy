@@ -466,8 +466,6 @@ val:
     managers:
       index:
         title: Gestors
-        name: Nom
-        email: Correu electrònic
         no_managers: No hi han gestors.
       manager:
         add: Afegir com a moderador
@@ -535,8 +533,6 @@ val:
     administrators:
       index:
         title: Administradors
-        name: Nom
-        email: Correu electrònic
         id: ID de l'administrador
         no_administrators: No hi administradors.
       administrator:
@@ -547,8 +543,6 @@ val:
     moderators:
       index:
         title: Moderadors
-        name: Nom
-        email: Correu electrònic
         no_moderators: No hi han moderadors.
       moderator:
         add: Afegir com a Gestor
