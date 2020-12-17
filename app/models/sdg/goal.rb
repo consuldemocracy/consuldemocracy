@@ -16,4 +16,8 @@ class SDG::Goal < ApplicationRecord
   def self.[](code)
     find_by!(code: code)
   end
+
+  def code_and_title
+    "#{code}. #{title}"
+  end
 end
