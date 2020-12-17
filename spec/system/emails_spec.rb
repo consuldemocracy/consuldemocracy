@@ -250,6 +250,7 @@ describe "Emails" do
 
   context "Proposal notification digest" do
     scenario "notifications for proposals that I'm following" do
+      Setting["org_name"] = "CONSUL"
       user = create(:user, email_digest: true)
 
       proposal1 = create(:proposal, followers: [user])
@@ -317,6 +318,7 @@ describe "Emails" do
 
   context "User invites" do
     scenario "Send an invitation" do
+      Setting["org_name"] = "CONSUL"
       login_as_manager
       visit new_management_user_invite_path
 

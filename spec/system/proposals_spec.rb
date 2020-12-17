@@ -200,6 +200,7 @@ describe "Proposals" do
     end
 
     scenario "After using the browser's back button, social buttons will have one screen reader", :js do
+      Setting["org_name"] = "CONSUL"
       proposal = create(:proposal)
       visit proposal_path(proposal)
       click_link "Help"
