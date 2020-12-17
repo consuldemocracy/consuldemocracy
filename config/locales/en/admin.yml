@@ -1253,6 +1253,10 @@ en:
       true_value: "Yes"
       false_value: "No"
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "All goals"
+            label: "By goal"
         label:
           booths: "Search booth by name or location"
           budget_investments: "Search investments by title, description or heading"

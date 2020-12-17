@@ -116,4 +116,25 @@ describe SDG::Relatable do
       expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], SDG::Goal[2]]
     end
   end
+
+  describe ".by_goal" do
+    it "returns everything if no code is provided" do
+      expect(relatable.class.by_goal("")).to eq [relatable]
+      expect(relatable.class.by_goal(nil)).to eq [relatable]
+    end
+
+    it "returns records associated with that goal" do
+      same_association = create(:proposal, sdg_goals: [goal])
+      both_associations = create(:proposal, sdg_goals: [goal, another_goal])
+
+      expect(relatable.class.by_goal(goal.code)).to match_array [same_association, both_associations]
+    end
+
+    it "does not return records not associated with that goal" do
+      create(:proposal)
+      create(:proposal, sdg_goals: [another_goal])
+
+      expect(relatable.class.by_goal(goal.code)).to be_empty
+    end
+  end
 end

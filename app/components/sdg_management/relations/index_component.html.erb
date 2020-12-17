@@ -1,6 +1,10 @@
 <%= header %>
 
-<%= render Admin::SearchComponent.new(label: search_label) %>
+<%= render Admin::SearchComponent.new(label: search_label, class: "complex") do |component| %>
+  <%= component.select_tag :goal_code, goal_options,
+                           include_blank: goal_blank_option,
+                           "aria-label": goal_label %>
+<% end %>
 
 <table>
   <thead>

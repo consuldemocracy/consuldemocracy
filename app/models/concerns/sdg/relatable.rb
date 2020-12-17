@@ -12,6 +12,14 @@ module SDG::Relatable
     end
   end
 
+  class_methods do
+    def by_goal(code)
+      return all if code.blank?
+
+      joins(:sdg_goals).merge(SDG::Goal.where(code: code))
+    end
+  end
+
   def related_sdgs
     sdg_relations.map(&:related_sdg)
   end

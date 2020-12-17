@@ -29,4 +29,16 @@ class SDGManagement::Relations::IndexComponent < ApplicationComponent
     def search_label
       t("admin.shared.search.label.#{model_class.table_name}")
     end
+
+    def goal_label
+      t("admin.shared.search.advanced_filters.sdg_goals.label")
+    end
+
+    def goal_blank_option
+      t("admin.shared.search.advanced_filters.sdg_goals.all")
+    end
+
+    def goal_options
+      options_from_collection_for_select(SDG::Goal.all, :code, :code_and_title, params[:goal_code])
+    end
 end
