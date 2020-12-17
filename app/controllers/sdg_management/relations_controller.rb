@@ -6,6 +6,7 @@ class SDGManagement::RelationsController < SDGManagement::BaseController
     @records = relatable_class
                .accessible_by(current_ability)
                .by_goal(params[:goal_code])
+               .by_target(params[:target_code])
                .order(:id)
                .page(params[:page])
 

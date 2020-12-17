@@ -137,4 +137,25 @@ describe SDG::Relatable do
       expect(relatable.class.by_goal(goal.code)).to be_empty
     end
   end
+
+  describe ".by_target" do
+    it "returns everything if no code is provided" do
+      expect(relatable.class.by_target("")).to eq [relatable]
+      expect(relatable.class.by_target(nil)).to eq [relatable]
+    end
+
+    it "returns records associated with that target" do
+      same_association = create(:proposal, sdg_targets: [target])
+      both_associations = create(:proposal, sdg_targets: [target, another_target])
+
+      expect(relatable.class.by_target(target.code)).to match_array [same_association, both_associations]
+    end
+
+    it "does not return records not associated with that target" do
+      create(:proposal)
+      create(:proposal, sdg_targets: [another_target])
+
+      expect(relatable.class.by_target(target.code)).to be_empty
+    end
+  end
 end

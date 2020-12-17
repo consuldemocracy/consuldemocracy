@@ -1256,6 +1256,9 @@ es:
           sdg_goals:
             all: "Todos los objetivos"
             label: "Por objetivo"
+          sdg_targets:
+            all: "Todas las metas"
+            label: "Por meta"
         label:
           booths: "Buscar urna por nombre"
           budget_investments: "Buscar proyectos por título, descripción o partida"

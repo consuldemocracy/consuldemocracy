@@ -4,6 +4,9 @@
   <%= component.select_tag :goal_code, goal_options,
                            include_blank: goal_blank_option,
                            "aria-label": goal_label %>
+  <%= component.select_tag :target_code, target_options,
+                           include_blank: target_blank_option,
+                           "aria-label": target_label %>
 <% end %>
 
 <table>

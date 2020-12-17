@@ -1257,6 +1257,9 @@ en:
           sdg_goals:
             all: "All goals"
             label: "By goal"
+          sdg_targets:
+            all: "All targets"
+            label: "By target"
         label:
           booths: "Search booth by name or location"
           budget_investments: "Search investments by title, description or heading"

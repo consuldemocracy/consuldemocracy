@@ -14,9 +14,17 @@ module SDG::Relatable
 
   class_methods do
     def by_goal(code)
+      by_sdg_related(SDG::Goal, code)
+    end
+
+    def by_target(code)
+      by_sdg_related(SDG::Target, code)
+    end
+
+    def by_sdg_related(sdg_class, code)
       return all if code.blank?
 
-      joins(:sdg_goals).merge(SDG::Goal.where(code: code))
+      joins(sdg_class.table_name.to_sym).merge(sdg_class.where(code: code))
     end
   end
 
