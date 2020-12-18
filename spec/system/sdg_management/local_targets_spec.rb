@@ -97,4 +97,22 @@ describe "Local Targets", :js do
       expect(page).not_to have_content("1.1.1")
     end
   end
+
+  describe "When translation interface feature setting" do
+    scenario "Is enabled translation interface should be rendered" do
+      Setting["feature.translation_interface"] = true
+
+      visit new_sdg_management_local_target_path
+
+      expect(page).to have_css ".globalize-languages"
+    end
+
+    scenario "Is disabled translation interface should be rendered" do
+      Setting["feature.translation_interface"] = nil
+
+      visit new_sdg_management_local_target_path
+
+      expect(page).to have_css ".globalize-languages"
+    end
+  end
 end
