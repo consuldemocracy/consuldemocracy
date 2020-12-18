@@ -1,4 +1,9 @@
 fr:
+  attributes:
+    geozone_id: "Périmètre de l'opération"
+    results_enabled: "Afficher les résultats"
+    stats_enabled: "Afficher les statistiques"
+    advanced_stats_enabled: "Afficher les statistiques avancées"
   activerecord:
     models:
       activity:
