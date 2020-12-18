@@ -197,6 +197,13 @@ fr:
       proposal_header:
         published: Publié
         draft: Brouillon
+        retired: Retirer
+      proposal_totals:
+        active_resources: Resource active
+        community: Voir les participants dans votre communauté
+        show_proposal: Voir la proposition
+        preview_proposal: Preview la proposition
+        current_goal: Objectif en cours
     footer:
       accessibility: Accessibilité
       conditions: Conditions légales
@@ -271,15 +278,26 @@ fr:
       sign_in: S'enregistrer avec Google
       sign_up: S'enregistrer avec Google
       name: Google
+    wordpress_oauth2:
+      name: Wordpress
     twitter:
       sign_in: S'enregistrer avec Twitter
       sign_up: S'enregistrer avec Twitter
       name: Twitter
+    info:
+      sign_in: "Se connecter avec :"
+      sign_up: "S'inscrire avec :"
     or_fill: "Ou remplissez le formulaire suivant :"
   proposals:
     create:
       form:
         submit_button: Créer la proposition
+    created:
+      title: Félicitations ! Vous avez fait le premier pas.
+      motivation: "Il est important de préparer le lancement de la campagne autour de votre proposition. Les premiers jours sont décisifs."
+      motivation_2: "<strong>Si vous voulez des conseils pour préparer la publication, laissez votre brouillon de proposition et nous vous accompagnerons.</strong>"
+      publish: Non, je veux tout de même publier la proposition
+      dashboard: Oui, je veux de l'aide et je publierai plus tard
     share:
       dashboard: Voir plus d’information
     edit:
