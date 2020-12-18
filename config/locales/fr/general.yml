@@ -298,8 +298,11 @@ fr:
       motivation_2: "<strong>Si vous voulez des conseils pour préparer la publication, laissez votre brouillon de proposition et nous vous accompagnerons.</strong>"
       publish: Non, je veux tout de même publier la proposition
       dashboard: Oui, je veux de l'aide et je publierai plus tard
+      preview_title: Voici à quoi votre proposition ressemblera lorsque vous la publierez
     share:
+      improve_it: Améliorez votre campagne et obtenez plus de soutiens.
       dashboard: Voir plus d’information
+      message: "Je soutiens la proposition %{title} dans %{handle}. Si vous êtes intéressés, soutenez la aussi !"
     edit:
       editing: Modifier la proposition
       form:
@@ -348,6 +351,9 @@ fr:
           error: "Une erreur est survenue. Veuillez vous rendre sur la page 'Votre compte' pour désactiver manuellement les recommandations de proposition"
       retired_proposals: Propositions retirées
       retired_proposals_link: "Propositions retirées par l'auteur"
+      selected_proposals: Propositions sélectionnées
+      selected_proposals_link: Afficher les propositions sélectionnées
+      archived_proposals: Propositions archivées
       retired_links:
         all: Tous
         duplicated: Duplicata d'une autre proposition
