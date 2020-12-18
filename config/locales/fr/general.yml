@@ -42,6 +42,10 @@ fr:
         other: "%{count} réponses"
       responses_show:
         zero: Aucune réponse
+      responses_collapse:
+        zero: Aucune réponse
+        one: "1 réponse (masquer)"
+        other: "%{count} réponses (réduire)"
       user_deleted: Utilisateur effacé
       votes:
         zero: Aucun vote
@@ -157,11 +161,17 @@ fr:
     direct_message: message privé
     error: erreur
     errors: erreurs
+    not_saved: "a empêché cette %{resource} d'être sauvegardée. <br>Vérifiez les champs marqués suivants pour les corriger :"
     policy: Vie privée
+    banner: bannière
     proposal: Proposition
     proposal_notification: "Notification"
     budget/investment: Projet d'investissement
+    budget/group: Budget groupé
     budget/heading: Rubrique
+    geozone: geozone
+    legislation/draft_version: brouillon
+    legislation/process: processus
     legislation/question: question
     poll/shift: Période de travail
     poll/question/answer: Réponse
@@ -171,6 +181,9 @@ fr:
     document: Document
     topic: Sujet
     image: Image
+    local_census_record: Recensement local
+    local_census_records/import: Importer les données du recensement local
+    site_customization/content_block: content block
     site_customization/page: page
   geozones:
     none: Toute la ville
@@ -180,6 +193,10 @@ fr:
       firefox: Firefox
       ie: Vous utilisez Internet Explorer. Pour une navigation plus sûre, %{chrome} ou %{firefox} sont recommandés.
       ie_title: Ce site internet n'est pas affiché de manière optimale par votre navigateur.
+    dashboard:
+      proposal_header:
+        published: Publié
+        draft: Brouillon
     footer:
       accessibility: Accessibilité
       conditions: Conditions légales
