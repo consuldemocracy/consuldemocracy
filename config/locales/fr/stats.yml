@@ -1,3 +1,8 @@
 fr:
   stats:
     title: "Données de participation"
+    advanced: "Statistiques approfondies"
+    total_participants: "Participants"
+    by_gender: "Participation selon le sexe"
+    by_age: "Participation selon l'age"
+    by_geozone: "Participation par quartier"
