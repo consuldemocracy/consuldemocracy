@@ -1,0 +1,7 @@
+.sdg-goal-show {
+  @include grid-row;
+
+  > * {
+    @include grid-column-gutter;
+  }
+}

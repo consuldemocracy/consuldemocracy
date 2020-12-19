@@ -31,4 +31,12 @@ describe "SDG Goals", :js do
       expect(page).to have_current_path sdg_goal_path(7)
     end
   end
+
+  describe "Show" do
+    scenario "shows the SDG" do
+      visit sdg_goal_path(15)
+
+      within(".sdg-goal header") { expect(page).to have_content "Life on Land" }
+    end
+  end
 end
