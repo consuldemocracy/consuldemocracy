@@ -21,4 +21,14 @@ describe "SDG Goals", :js do
       expect(page).to have_current_path sdg_goals_path
     end
   end
+
+  describe "Index" do
+    scenario "has links to SDGs" do
+      visit sdg_goals_path
+
+      click_link "7. Affordable and Clean Energy"
+
+      expect(page).to have_current_path sdg_goal_path(7)
+    end
+  end
 end

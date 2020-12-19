@@ -1,3 +1,3 @@
 namespace :sdg do
-  resources :goals, only: :index
+  resources :goals, param: :code, only: [:index, :show]
 end

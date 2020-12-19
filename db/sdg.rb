@@ -1,4 +1,4 @@
-(1..17).each do |code|
+(1..17).to_a.shuffle.each do |code|
   SDG::Goal.where(code: code).first_or_create!
 end
 
