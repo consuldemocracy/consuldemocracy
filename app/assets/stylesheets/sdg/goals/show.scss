@@ -4,4 +4,22 @@
   > * {
     @include grid-column-gutter;
   }
+
+  .sdg-goal {
+
+    > header {
+      color: #fff;
+      margin-top: $line-height / 2;
+      padding-left: rem-calc(24);
+      text-shadow: 0 0 1px $black;
+    }
+
+    @each $code, $color in $sdg-colors {
+      &.sdg-goal-#{$code} {
+        > header {
+          background-color: $color;
+        }
+      }
+    }
+  }
 }
