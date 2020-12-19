@@ -4,7 +4,7 @@ fr:
     advanced: "Statistiques approfondies"
     total_participants: "Participants"
     by_gender: "Participation selon le sexe"
-    by_age: "Participation selon l'age"
+    by_age: "Participation selon l'âge"
     by_geozone: "Participation par quartier"
     men_percentage: "%{percentage} d'hommes"
     women_percentage: "%{percentage} de femmes"
