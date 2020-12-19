@@ -4,7 +4,6 @@ class Abilities::SDG::Manager
   def initialize(user)
     merge Abilities::Common.new(user)
 
-    can :read, ::SDG::Goal
     can :read, ::SDG::Target
   end
 end

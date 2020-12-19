@@ -42,12 +42,20 @@
                                   accesskey: "5" %>
       </li>
     <% end %>
+    <% if feature?(:sdg) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.sdg"),
+                                sdg_goals_path,
+                                controller_path.split("/").first == "sdg",
+                                accesskey: "6" %>
+      </li>
+    <% end %>
     <% if feature?(:help_page) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.help"),
                                 help_path,
                                 current_page?(help_path),
-                                accesskey: "6" %>
+                                accesskey: "7" %>
       </li>
     <% end %>
 

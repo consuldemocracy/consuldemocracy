@@ -251,6 +251,7 @@ en:
           other: You have %{count} new notifications
         notifications: Notifications
         no_notifications: "You don't have new notifications"
+      sdg: "SDG"
   notifications:
     index:
       empty_notifications: You don't have new notifications.

@@ -251,6 +251,7 @@ es:
           other: Tienes %{count} notificaciones nuevas
         notifications: Notificaciones
         no_notifications: "No tienes notificaciones nuevas"
+      sdg: "ODS"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
