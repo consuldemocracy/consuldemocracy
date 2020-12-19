@@ -92,9 +92,6 @@ describe "Homepage", :admin do
         expect(page).to have_content "Most active debates"
         expect(page).to have_css(".debate", count: 3)
       end
-
-      expect(page).to have_css("#feed_proposals.medium-8")
-      expect(page).to have_css("#feed_debates.medium-4")
     end
 
     scenario "Processes", :js do

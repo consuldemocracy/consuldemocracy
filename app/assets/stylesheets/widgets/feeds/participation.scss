@@ -1,0 +1,20 @@
+.feeds-participation {
+
+  .feed-debates,
+  .feed-proposals {
+    @include grid-col;
+    margin-top: $line-height;
+  }
+
+  .feed-proposals:not(:only-child) {
+    @include breakpoint(medium) {
+      width: 2 * 100% / 3;
+    }
+  }
+
+  .feed-debates:not(:only-child) {
+    @include breakpoint(medium) {
+      width: 1 * 100% / 3;
+    }
+  }
+}
