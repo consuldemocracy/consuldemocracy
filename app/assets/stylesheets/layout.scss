@@ -2889,10 +2889,6 @@ table {
 
 .feeds-list {
 
-  .proposal {
-    clear: both;
-  }
-
   a {
 
     &.see-all {
@@ -2903,22 +2899,6 @@ table {
       text-align: right;
       width: 100%;
     }
-  }
-}
-
-.feed-image {
-  display: inline-block;
-  height: rem-calc(120);
-  overflow: hidden;
-  width: 100%;
-
-  @include breakpoint(medium) {
-    height: rem-calc(96);
-  }
-
-  img {
-    max-width: none;
-    width: 100%;
   }
 }
 

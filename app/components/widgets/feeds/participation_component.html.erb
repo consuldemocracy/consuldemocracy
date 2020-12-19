@@ -1,0 +1,11 @@
+<div class="row margin-bottom feeds-list feeds-participation" data-equalizer data-equalize-on="medium">
+  <% feeds.each do |feed| %>
+    <% if feed_proposals?(feed) %>
+      <%= render Widgets::Feeds::ProposalsComponent.new(feed) %>
+    <% end %>
+
+    <% if feed_debates?(feed) %>
+      <%= render Widgets::Feeds::DebatesComponent.new(feed) %>
+    <% end %>
+  <% end %>
+</div>
