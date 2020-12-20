@@ -40,6 +40,8 @@ describe "SDG Goals", :js do
       create(:debate, title: "Hunting ground", sdg_goals: [goal])
       create(:proposal, title: "Animal farm", sdg_goals: [goal])
       create(:proposal, title: "Sea farm", sdg_goals: [SDG::Goal[14]])
+      create(:legislation_process, title: "Bullfighting regulations", sdg_goals: [goal])
+      create(:legislation_process, title: "Tax regulations", sdg_goals: [SDG::Goal[10]])
     end
 
     scenario "shows the SDG and its related content" do
@@ -55,6 +57,11 @@ describe "SDG Goals", :js do
       within ".feed-debates" do
         expect(page).to have_content "Hunting ground"
         expect(page).not_to have_content "Solar panels"
+      end
+
+      within ".feed-processes" do
+        expect(page).to have_content "BULLFIGHTING REGULATIONS"
+        expect(page).not_to have_content "TAX REGULATIONS"
       end
     end
 

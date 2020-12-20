@@ -52,6 +52,14 @@ describe Widgets::Feeds::FeedComponent, type: :component do
 
         expect(component.see_all_path).to eq "/legislation/processes"
       end
+
+      it "points to the legislation processes path for goal processes feeds" do
+        component = Widgets::Feeds::FeedComponent.new(SDG::Widget::Feed.new(feed, SDG::Goal[6]))
+
+        render_inline component
+
+        expect(component.see_all_path).to eq "/legislation/processes"
+      end
     end
   end
 end

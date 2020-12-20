@@ -24,7 +24,7 @@ class Widgets::Feeds::FeedComponent < ApplicationComponent
     end
 
     def filters
-      if feed.respond_to?(:goal)
+      if feed.respond_to?(:goal) && kind != "processes"
         { advanced_search: { goal: feed.goal.code }}
       else
         {}

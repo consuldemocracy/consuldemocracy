@@ -10,4 +10,10 @@
   </article>
 
   <%= render Widgets::Feeds::ParticipationComponent.new(feeds) %>
+
+  <% if processes_feed %>
+    <div class="feeds-list">
+      <%= render Widgets::Feeds::FeedComponent.new(processes_feed) %>
+    </div>
+  <% end %>
 </div>

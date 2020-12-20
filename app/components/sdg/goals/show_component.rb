@@ -9,4 +9,10 @@ class SDG::Goals::ShowComponent < ApplicationComponent
   def feeds
     SDG::Widget::Feed.for_goal(goal)
   end
+
+  private
+
+    def processes_feed
+      feeds.find { |feed| feed.kind == "processes" }
+    end
 end

@@ -22,4 +22,19 @@
       }
     }
   }
+
+  .feed-processes {
+
+    .feed-content {
+      @include breakpoint(medium) {
+        @include grid-row-nest;
+        display: flex;
+
+        > * {
+          @include grid-column-gutter;
+          width: 50%;
+        }
+      }
+    }
+  }
 }
