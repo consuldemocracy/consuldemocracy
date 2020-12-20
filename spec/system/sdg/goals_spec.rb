@@ -33,14 +33,16 @@ describe "SDG Goals", :js do
   end
 
   describe "Show" do
-    scenario "shows the SDG and its related content" do
+    before do
       goal = SDG::Goal[15]
 
       create(:debate, title: "Solar panels", sdg_goals: [SDG::Goal[7]])
       create(:debate, title: "Hunting ground", sdg_goals: [goal])
       create(:proposal, title: "Animal farm", sdg_goals: [goal])
       create(:proposal, title: "Sea farm", sdg_goals: [SDG::Goal[14]])
+    end
 
+    scenario "shows the SDG and its related content" do
       visit sdg_goal_path(15)
 
       within(".sdg-goal header") { expect(page).to have_content "Life on Land" }
@@ -53,6 +55,26 @@ describe "SDG Goals", :js do
       within ".feed-debates" do
         expect(page).to have_content "Hunting ground"
         expect(page).not_to have_content "Solar panels"
+      end
+    end
+
+    scenario "has links to debates and proposals filtered by goal" do
+      visit sdg_goal_path(15)
+
+      click_link "See all debates"
+
+      within "#debates" do
+        expect(page).to have_content "Hunting ground"
+        expect(page).not_to have_content "Solar panels"
+      end
+
+      go_back
+
+      click_link "See all proposals"
+
+      within "#proposals" do
+        expect(page).to have_content "Animal farm"
+        expect(page).not_to have_content "Sea farm"
       end
     end
   end

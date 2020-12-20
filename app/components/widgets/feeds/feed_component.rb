@@ -7,7 +7,7 @@ class Widgets::Feeds::FeedComponent < ApplicationComponent
   end
 
   def see_all_path
-    polymorphic_path(feed.items.model)
+    polymorphic_path(feed.items.model, filters)
   end
 
   private
@@ -20,6 +20,14 @@ class Widgets::Feeds::FeedComponent < ApplicationComponent
         Widgets::Feeds::DebateComponent
       when "processes"
         Widgets::Feeds::ProcessComponent
+      end
+    end
+
+    def filters
+      if feed.respond_to?(:goal)
+        { advanced_search: { goal: feed.goal.code }}
+      else
+        {}
       end
     end
 end
