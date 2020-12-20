@@ -1,11 +1,13 @@
-<div id="feed_<%= kind %>" class="widget-feed feed-<%= kind %>">
-  <div class="feed-content">
+<section id="feed_<%= kind %>" class="widget-feed feed-<%= kind %>">
+  <header>
     <h3 class="title"><%= t("welcome.feed.most_active.#{kind}") %></h3>
+  </header>
 
+  <div class="feed-content">
     <% feed.items.each do |item| %>
       <%= render item_component_class.new(item) %>
     <% end %>
   </div>
 
   <%= link_to t("welcome.feed.see_all.#{kind}"), see_all_path, class: "see-all" %>
-</div>
+</section>
