@@ -5,4 +5,8 @@ class SDG::Goals::ShowComponent < ApplicationComponent
   def initialize(goal)
     @goal = goal
   end
+
+  def feeds
+    SDG::Widget::Feed.for_goal(goal)
+  end
 end

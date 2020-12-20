@@ -8,4 +8,6 @@
       <h1><%= goal.title %></h1>
     </header>
   </article>
+
+  <%= render Widgets::Feeds::ParticipationComponent.new(feeds) %>
 </div>
