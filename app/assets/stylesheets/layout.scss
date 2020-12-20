@@ -2856,6 +2856,13 @@ table {
     }
   }
 
+  h2 {
+    &.title {
+      @include header-font-size(h3);
+    }
+  }
+
+  h2,
   h3 {
 
     &.title {
