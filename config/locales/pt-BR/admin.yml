@@ -1161,7 +1161,6 @@ pt-BR:
         no_organizations: Não há nenhuma organização.
         reject: Rejeitar
         rejected: Rejeitado
-        search_placeholder: Nome, e-mail ou número de telefone
         title: Organizações
         verified: Verificado
         verify: Verificar
@@ -1245,18 +1244,16 @@ pt-BR:
     shared:
       true_value: "Sim"
       false_value: "Não"
-      booths_search:
-        placeholder: Buscar urna por nome
-      poll_officers_search:
-        placeholder: Buscar presidentes das votações
-      poll_questions_search:
-        placeholder: Buscar perguntas
-      proposal_search:
-        placeholder: Buscar propostas por título, código, descrição ou pergunta
-      debate_search:
-        placeholder: Buscar debates por título ou descrição
-      user_search:
-        placeholder: Pesquisar usuário por nome ou pelo email
+      search:
+        label:
+          booths: "Buscar urna por nome"
+          debates: "Buscar debates por título ou descrição"
+          local_census_records: "Pesquisar por número de documento"
+          organizations: "Nome, e-mail ou número de telefone"
+          poll_officers: "Buscar presidentes das votações"
+          poll_questions: "Buscar perguntas"
+          proposals: "Buscar propostas por título, código, descrição ou pergunta"
+          users: "Pesquisar usuário por nome ou pelo email"
       search_results: "Buscar resultados"
       no_search_results: "Nenhum resultado encontrado."
       actions: Ações
@@ -1562,8 +1559,6 @@ pt-BR:
         document_number: Número do documento
         date_of_birth: Data de nascimento
         postal_code: CEP
-        search:
-          placeholder: Pesquisar por número de documento
         import: Importar CSV
       new:
         creating: Criando novo registro de censo local
