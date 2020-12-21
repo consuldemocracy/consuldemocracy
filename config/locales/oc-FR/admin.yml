@@ -1158,7 +1158,6 @@ oc:
         no_organizations: I a pas d'organizacions.
         reject: refusar
         rejected: refusada
-        search_placeholder: Nom, email o telefòn
         title: d'Organizacions
         verified: verificada
         verify: verificar usatgièr
@@ -1230,18 +1229,16 @@ oc:
     shared:
       true_value: "Òc"
       false_value: "Pas"
-      booths_search:
-        placeholder: Cercar bóstia per nom
-      poll_officers_search:
-        placeholder: Cercar de presidents de taula
-      poll_questions_search:
-        placeholder: Cercar de questions
-      proposal_search:
-        placeholder: Cercar de proposicions per títol, còdi, descripcion o question
-      debate_search:
-        placeholder: Cerca debats per títol o descripció
-      user_search:
-        placeholder: Cercar usatgièr per nom o e-mail
+      search:
+        label:
+          booths: "Cercar bóstia per nom"
+          debates: "Cerca debats per títol o descripció"
+          local_census_records: "Cerca per número de document"
+          organizations: "Nom, email o telefòn"
+          poll_officers: "Cercar de presidents de taula"
+          poll_questions: "Cercar de questions"
+          proposals: "Cercar de proposicions per títol, còdi, descripcion o question"
+          users: "Cercar usatgièr per nom o e-mail"
       search_results: "de Resultats de cèrca"
       no_search_results: "Pas se an de trobats resultats."
       actions: d'Accions
@@ -1541,8 +1538,6 @@ oc:
         document_number: Número de Document
         date_of_birth: Data de naixement
         postal_code: Codi Postal
-        search:
-          placeholder: Cerca per número de document
         import: Importa CSV
       new:
         creating: Creació d'un registre de cens local
