@@ -1149,7 +1149,6 @@ tr:
         no_organizations: Hiç organizasyon yok.
         reject: Reddet
         rejected: Reddedildi
-        search_placeholder: İsim, e-posta veya telefon numarası
         title: Organizasyonlar
         verified: Doğrulandı
         verify: Doğrula
@@ -1214,18 +1213,15 @@ tr:
     shared:
       true_value: "Evet"
       false_value: "Hayır"
-      booths_search:
-        placeholder: İsme göre kabin ara
-      poll_officers_search:
-        placeholder: Anket memurlarını ara
-      poll_questions_search:
-        placeholder: Anket sorularını ara
-      proposal_search:
-        placeholder: Başlığa, koda, tanımlamaya veya soruya göre önerileri ara
-      debate_search:
-        placeholder: Tartışmaları başlığa veya açıklamaya göre ara
-      user_search:
-        placeholder: İsim veya e-posta ile kullanıcı ara
+      search:
+        label:
+          booths: "İsme göre kabin ara"
+          debates: "Tartışmaları başlığa veya açıklamaya göre ara"
+          organizations: "İsim, e-posta veya telefon numarası"
+          poll_officers: "Anket memurlarını ara"
+          poll_questions: "Anket sorularını ara"
+          proposals: "Başlığa, koda, tanımlamaya veya soruya göre önerileri ara"
+          users: "İsim veya e-posta ile kullanıcı ara"
       search_results: "Arama sonuçları"
       no_search_results: "Hiç sonuç bulunamadı."
       actions: Aksiyon
