@@ -893,7 +893,6 @@ zh-CN:
         no_organizations: 没有组织。
         reject: 拒绝
         rejected: 已拒绝
-        search_placeholder: 名字，电子邮件或者电话号码
         title: 组织
         verified: 已验证
         verify: 验证
@@ -945,16 +944,14 @@ zh-CN:
     shared:
       true_value: "是"
       false_value: "不是"
-      booths_search:
-        placeholder: 按名字搜索投票亭
-      poll_officers_search:
-        placeholder: 搜索投票站官员
-      poll_questions_search:
-        placeholder: 搜索投票项问题
-      proposal_search:
-        placeholder: 按标题，代码，描述或问题搜索提议
-      user_search:
-        placeholder: 按名字或电子邮件搜索用户
+      search:
+        label:
+          booths: "按名字搜索投票亭"
+          organizations: "名字，电子邮件或者电话号码"
+          poll_officers: "搜索投票站官员"
+          poll_questions: "搜索投票项问题"
+          proposals: "按标题，代码，描述或问题搜索提议"
+          users: "按名字或电子邮件搜索用户"
       search_results: "搜索结果"
       no_search_results: "未找到结果。"
       actions: 行动
