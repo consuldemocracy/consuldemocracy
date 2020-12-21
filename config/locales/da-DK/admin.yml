@@ -1156,7 +1156,6 @@ da:
         no_organizations: Der er ingen organisationer.
         reject: Afvis
         rejected: Afvist
-        search_placeholder: Navn, e-mail eller telefonnummer
         title: Organisationer
         verified: Verificeret
         verify: Verificer
@@ -1223,16 +1222,14 @@ da:
     shared:
       true_value: "Ja"
       false_value: "Nej"
-      booths_search:
-        placeholder: Søg stemmeboks vis navn
-      poll_officers_search:
-        placeholder: Søg ansvarlig medarbejder
-      poll_questions_search:
-        placeholder: Søg spørgsmål til afstemning
-      proposal_search:
-        placeholder: Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål
-      user_search:
-        placeholder: Søg bruger vis navn eller e-mail
+      search:
+        label:
+          booths: "Søg stemmeboks vis navn"
+          organizations: "Navn, e-mail eller telefonnummer"
+          poll_officers: "Søg ansvarlig medarbejder"
+          poll_questions: "Søg spørgsmål til afstemning"
+          proposals: "Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål"
+          users: "Søg bruger vis navn eller e-mail"
       search_results: "Søgningsresultater"
       no_search_results: "Ingen resultater fundet."
       actions: Handlinger
