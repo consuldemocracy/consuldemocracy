@@ -1094,7 +1094,6 @@ bs:
         no_organizations: Nema organizacija.
         reject: Odbij
         rejected: Odbijeno
-        search_placeholder: Ime, email ili telefonski broj
         title: Organizacije
         verified: Potvrđeno
         verify: Potvrdi
@@ -1152,16 +1151,14 @@ bs:
     shared:
       true_value: "Da"
       false_value: "Ne"
-      booths_search:
-        placeholder: Traži kabinu po nazivu
-      poll_officers_search:
-        placeholder: Pretraga po anketarima
-      poll_questions_search:
-        placeholder: Pretraga po pitanjima u glasačkoj anketi
-      proposal_search:
-        placeholder: Pretraga prijedloga po nazivu, šifri, opisu ili pitanju
-      user_search:
-        placeholder: Pretraga korisnika po imenu ili email-adresi
+      search:
+        label:
+          booths: "Traži kabinu po nazivu"
+          organizations: "Ime, email ili telefonski broj"
+          poll_officers: "Pretraga po anketarima"
+          poll_questions: "Pretraga po pitanjima u glasačkoj anketi"
+          proposals: "Pretraga prijedloga po nazivu, šifri, opisu ili pitanju"
+          users: "Pretraga korisnika po imenu ili email-adresi"
       search_results: "Rezultati pretrage"
       no_search_results: "Nema rezultata."
       actions: Radnje
