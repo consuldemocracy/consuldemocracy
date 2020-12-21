@@ -1167,7 +1167,6 @@ ar:
         no_organizations: لا توجد منظمات.
         reject: رفض
         rejected: مرفوضة
-        search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
         title: منظمات
         verified: تم التثبت
         verify: تحقق
@@ -1232,18 +1231,15 @@ ar:
     shared:
       true_value: "نعم"
       false_value: "لا"
-      booths_search:
-        placeholder: البحث عند مكتب إقتراع وفقا للاسم
-      poll_officers_search:
-        placeholder: البحث عن ضباط الاستطلاع
-      poll_questions_search:
-        placeholder: البحث عن أسئلة الاستطلاع
-      proposal_search:
-        placeholder: البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال
-      debate_search:
-        placeholder: بحث في المناقشات حسب العنوان أو الوصف
-      user_search:
-        placeholder: بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني
+      search:
+        label:
+          booths: "البحث عند مكتب إقتراع وفقا للاسم"
+          debates: "بحث في المناقشات حسب العنوان أو الوصف"
+          organizations: "الاسم، البريد الإلكتروني أو رقم الهاتف"
+          poll_officers: "البحث عن ضباط الاستطلاع"
+          poll_questions: "البحث عن أسئلة الاستطلاع"
+          proposals: "البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال"
+          users: "بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني"
       search_results: "نتائج البحث"
       no_search_results: "لا توجد نتائج."
       actions: الإجراءات
