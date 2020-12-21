@@ -880,7 +880,6 @@ zh-TW:
         no_organizations: 這裡沒有組織。
         reject: 拒絕
         rejected: 已拒绝
-        search_placeholder: 姓名、電郵或電話號碼
         title: 組織
         verified: 已核實
         verify: 核實
@@ -931,16 +930,14 @@ zh-TW:
     shared:
       true_value: "是"
       false_value: "否"
-      booths_search:
-        placeholder: 按名稱搜尋投票亭
-      poll_officers_search:
-        placeholder: 搜尋投票站職員
-      poll_questions_search:
-        placeholder: 搜尋投票項問題
-      proposal_search:
-        placeholder: 按標題，代碼，描述或問題來搜尋建議
-      user_search:
-        placeholder: 按名稱或電郵搜索用戶
+      search:
+        label:
+          booths: "按名稱搜尋投票亭"
+          organizations: "姓名、電郵或電話號碼"
+          poll_officers: "搜尋投票站職員"
+          poll_questions: "搜尋投票項問題"
+          proposals: "按標題，代碼，描述或問題來搜尋建議"
+          users: "按名稱或電郵搜索用戶"
       search_results: "搜尋結果"
       no_search_results: "未找到結果。"
       actions: 行動
