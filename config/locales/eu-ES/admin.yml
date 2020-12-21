@@ -764,7 +764,6 @@ eu:
         no_organizations: Ez dago erakunderik.
         reject: Baztertu
         rejected: Baztertuta
-        search_placeholder: Izena, emaila edo telefonoa
         title: Erakundeak
         verified: Egiaztatuta
         verify: Egiaztatu
@@ -795,16 +794,14 @@ eu:
           form:
             submit: Eguneratu
     shared:
-      booths_search:
-        placeholder: Bilatu hautetsontzia izenagaitik
-      poll_officers_search:
-        placeholder: Mahaiburuak bilatu
-      poll_questions_search:
-        placeholder: Galderak bilatu
-      proposal_search:
-        placeholder: Proposamenak izenburua, kodea, deskribapena edo galderagaitik bilatu
-      user_search:
-        placeholder: Erabiltzailea izena edo emailagaitik bilatu
+      search:
+        label:
+          booths: "Bilatu hautetsontzia izenagaitik"
+          organizations: "Izena, emaila edo telefonoa"
+          poll_officers: "Mahaiburuak bilatu"
+          poll_questions: "Galderak bilatu"
+          proposals: "Proposamenak izenburua, kodea, deskribapena edo galderagaitik bilatu"
+          users: "Erabiltzailea izena edo emailagaitik bilatu"
       search_results: "Bilaketaren emaitzak"
       no_search_results: "Ez da emaitzik bilatu."
       actions: Ekintzak
