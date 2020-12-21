@@ -1004,7 +1004,6 @@ pl:
         no_organizations: Brak organizacji.
         reject: Odrzuć
         rejected: Odrzucone
-        search_placeholder: Nazwisko, adres e-mail lub numer telefonu
         title: Organizacji
         verified: Zweryfikowane
         verify: Weryfikuj
@@ -1060,16 +1059,14 @@ pl:
     shared:
       true_value: "Tak"
       false_value: "Nie"
-      booths_search:
-        placeholder: Wyszukaj stoisko według nazwy
-      poll_officers_search:
-        placeholder: Szukaj urzędników
-      poll_questions_search:
-        placeholder: Szukaj pytań wyborczych
-      proposal_search:
-        placeholder: Szukaj propozycji według tytułu, kodu, opisu lub pytania
-      user_search:
-        placeholder: Wyszukaj użytkownika według nazwy lub adresu e-mail
+      search:
+        label:
+          booths: "Wyszukaj stoisko według nazwy"
+          organizations: "Nazwisko, adres e-mail lub numer telefonu"
+          poll_officers: "Szukaj urzędników"
+          poll_questions: "Szukaj pytań wyborczych"
+          proposals: "Szukaj propozycji według tytułu, kodu, opisu lub pytania"
+          users: "Wyszukaj użytkownika według nazwy lub adresu e-mail"
       search_results: "Szukaj wyników"
       no_search_results: "Nie znaleziono wyników."
       actions: Akcje
