@@ -1040,7 +1040,6 @@ fr:
         no_organizations: Il n’y a pas d’organisations.
         reject: Rejeter
         rejected: Rejeté
-        search_placeholder: Nom, courriel ou téléphone
         title: Organisations
         verified: Vérifié
         verify: Vérifier
@@ -1094,16 +1093,14 @@ fr:
     shared:
       true_value: "Oui"
       false_value: "Non"
-      booths_search:
-        placeholder: Rechercher le bureau de vote par nom
-      poll_officers_search:
-        placeholder: Rechercher le président d'un vote
-      poll_questions_search:
-        placeholder: Rechercher les questions d'un vote
-      proposal_search:
-        placeholder: Rechercher des propositions par titre, code, description ou question
-      user_search:
-        placeholder: Rechercher un utilisateur par nom ou courriel
+      search:
+        label:
+          booths: "Rechercher le bureau de vote par nom"
+          organizations: "Nom, courriel ou téléphone"
+          poll_officers: "Rechercher le président d'un vote"
+          poll_questions: "Rechercher les questions d'un vote"
+          proposals: "Rechercher des propositions par titre, code, description ou question"
+          users: "Rechercher un utilisateur par nom ou courriel"
       search_results: "Résultats de recherche"
       no_search_results: "Aucun résultat trouvé."
       actions: Actions
