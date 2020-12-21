@@ -1089,7 +1089,6 @@ el:
         no_organizations: Δεν υπάρχουν οργανισμοί.
         reject: Απερρίφθη
         rejected: Απερρίφθη
-        search_placeholder: Όνομα, email ή τηλεφωνικός αριθμός
         title: Οργανισμοί
         verified: Επιβεβαιωμένο
         verify: Βεβαιωθείτε
@@ -1147,16 +1146,14 @@ el:
     shared:
       true_value: "Ναι"
       false_value: "Όχι"
-      booths_search:
-        placeholder: Αναζητήστε περίπτερο με το όνομα
-      poll_officers_search:
-        placeholder: Αναζήτηση υπαλλήλων δημοσκόπησης
-      poll_questions_search:
-        placeholder: Αναζήτηση ερωτήσεων δημοσκόπησης
-      proposal_search:
-        placeholder: Αναζήτηση προτάσεων από τον τίτλο, κωδικό, περιγραφή ή ερώτηση
-      user_search:
-        placeholder: Αναζήτηση χρηστών με όνομα ή ηλεκτρονικό ταχυδρομείο
+      search:
+        label:
+          booths: "Αναζητήστε περίπτερο με το όνομα"
+          organizations: "Όνομα, email ή τηλεφωνικός αριθμός"
+          poll_officers: "Αναζήτηση υπαλλήλων δημοσκόπησης"
+          poll_questions: "Αναζήτηση ερωτήσεων δημοσκόπησης"
+          proposals: "Αναζήτηση προτάσεων από τον τίτλο, κωδικό, περιγραφή ή ερώτηση"
+          users: "Αναζήτηση χρηστών με όνομα ή ηλεκτρονικό ταχυδρομείο"
       search_results: "Αναζήτηση αποτελεσμάτων"
       no_search_results: "Δεν βρέθηκαν αποτελέσματα."
       actions: Ενέργειες
