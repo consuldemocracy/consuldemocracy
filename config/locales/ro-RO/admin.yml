@@ -1174,7 +1174,6 @@ ro:
         no_organizations: Nu există organizații.
         reject: Respinge
         rejected: Respins
-        search_placeholder: Nume, email sau număr de telefon
         title: Organizații
         verified: Verificat
         verify: Verifică
@@ -1258,19 +1257,16 @@ ro:
       true_value: "Da"
       false_value: "Nu"
       search:
+        label:
+          booths: "Caută cabină de vot după nume sau locație"
+          debates: "Căutați dezbateri după titlu sau descriere"
+          local_census_records: "Caută după numărul documentului"
+          organizations: "Nume, email sau număr de telefon"
+          poll_officers: "Caută funcționar public"
+          poll_questions: "Căutați întrebări la sondaj"
+          proposals: "Caută propunere după titlu, cod, descriere ori întrebare"
+          users: "Caută utilizator după nume sau email"
         search: "Caută"
-      booths_search:
-        placeholder: Caută cabină de vot după nume sau locație
-      poll_officers_search:
-        placeholder: Caută funcționar public
-      poll_questions_search:
-        placeholder: Căutați întrebări la sondaj
-      proposal_search:
-        placeholder: Caută propunere după titlu, cod, descriere ori întrebare
-      debate_search:
-        placeholder: Căutați dezbateri după titlu sau descriere
-      user_search:
-        placeholder: Caută utilizator după nume sau email
       search_results: "Caută rezultate"
       no_search_results: "Nu a fost găsită niciun rezultat."
       actions: Acțiuni
@@ -1579,8 +1575,6 @@ ro:
         document_number: Numărul documentului
         date_of_birth: Data nașterii
         postal_code: Cod poștal
-        search:
-          placeholder: Caută după numărul documentului
         import: Importă CSV
       new:
         creating: Crează o nouă înregistrare de date locale
