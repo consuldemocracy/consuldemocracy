@@ -1006,7 +1006,6 @@ cs:
         no_organizations: Nemáte žádné organizace.
         reject: Odmítnout
         rejected: Odmítnutý
-        search_placeholder: Jméno, email nebo telefonní číslo
         title: Organizace
         verified: Ověřen
         verify: Ověřit
@@ -1058,16 +1057,14 @@ cs:
     shared:
       true_value: "Ano"
       false_value: "Ne"
-      booths_search:
-        placeholder: Vyhledat informační stánek podle jména
-      poll_officers_search:
-        placeholder: Vyhledat úředníky ankety
-      poll_questions_search:
-        placeholder: Vyhledat otázky ankety
-      proposal_search:
-        placeholder: Vyhledat návrhy podle názvu, kódu, popisu nebo otázky
-      user_search:
-        placeholder: Vyhledat uživatele podle jména nebo e-mailu
+      search:
+        label:
+          booths: "Vyhledat informační stánek podle jména"
+          organizations: "Jméno, email nebo telefonní číslo"
+          poll_officers: "Vyhledat úředníky ankety"
+          poll_questions: "Vyhledat otázky ankety"
+          proposals: "Vyhledat návrhy podle názvu, kódu, popisu nebo otázky"
+          users: "Vyhledat uživatele podle jména nebo e-mailu"
       search_results: "Výsledky vyhledávání"
       no_search_results: "Nebyly nalezeny žádné výsledky."
       actions: Akce
