@@ -989,7 +989,6 @@ it:
         no_organizations: Non ci sono organizzazioni.
         reject: Respingi
         rejected: Respinto
-        search_placeholder: Nominativo, numero di telefono o e-mail
         title: Organizzazioni
         verified: Verificato
         verify: Verificare
@@ -1040,18 +1039,15 @@ it:
     shared:
       true_value: "Sì"
       false_value: "No"
-      booths_search:
-        placeholder: Ricercare seggio per nome
-      poll_officers_search:
-        placeholder: Ricercare presidenti di seggio
-      poll_questions_search:
-        placeholder: Cerca quesiti oggetto di votazione
-      proposal_search:
-        placeholder: Ricercare le proposte per titolo, codice. descrizione o domanda
-      debate_search:
-        placeholder: Cerca dibattiti per titolo o descrizione
-      user_search:
-        placeholder: Cerca utente in base al nome o all’email
+      search:
+        label:
+          booths: "Ricercare seggio per nome"
+          debates: "Cerca dibattiti per titolo o descrizione"
+          organizations: "Nominativo, numero di telefono o e-mail"
+          poll_officers: "Ricercare presidenti di seggio"
+          poll_questions: "Cerca quesiti oggetto di votazione"
+          proposals: "Ricercare le proposte per titolo, codice. descrizione o domanda"
+          users: "Cerca utente in base al nome o all’email"
       search_results: "Risultati della ricerca"
       no_search_results: "Nessun risultato trovato."
       actions: Azioni
