@@ -1173,7 +1173,6 @@ uk-UA:
         no_organizations: Немає організацій.
         reject: Відхилити
         rejected: Відхилено
-        search_placeholder: Ім'я, електронна адреса і номер телефону
         title: Організації
         verified: Перевірені
         verify: Перевірити
@@ -1254,18 +1253,16 @@ uk-UA:
     shared:
       true_value: "Так"
       false_value: "Ні"
-      booths_search:
-        placeholder: Шукати кабінку за назвою або розташуванням
-      poll_officers_search:
-        placeholder: Шукати службовців голосування
-      poll_questions_search:
-        placeholder: Шукати запитання голосувань
-      proposal_search:
-        placeholder: Шукати пропозиції за назвою, кодом, описом або запитанням
-      debate_search:
-        placeholder: Шукати обговорення за назвою або описом
-      user_search:
-        placeholder: Шукати користувача за ім'ям або електронною адресою
+      search:
+        label:
+          booths: "Шукати кабінку за назвою або розташуванням"
+          debates: "Шукати обговорення за назвою або описом"
+          local_census_records: "Шукати за номером документа"
+          organizations: "Ім'я, електронна адреса і номер телефону"
+          poll_officers: "Шукати службовців голосування"
+          poll_questions: "Шукати запитання голосувань"
+          proposals: "Шукати пропозиції за назвою, кодом, описом або запитанням"
+          users: "Шукати користувача за ім'ям або електронною адресою"
       search_results: "Результати пошуку"
       no_search_results: "Результатів не знайдено."
       actions: Дії
@@ -1577,8 +1574,6 @@ uk-UA:
         document_number: Номер документа
         date_of_birth: Дата народження
         postal_code: Поштовий індекс
-        search:
-          placeholder: Шукати за номером документа
         import: Імпорт CSV
       new:
         creating: Створення нового журналу місцевого перепису
