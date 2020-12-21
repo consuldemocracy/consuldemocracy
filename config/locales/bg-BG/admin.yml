@@ -1154,7 +1154,6 @@ bg:
         no_organizations: Няма организации.
         reject: Отхвърлете
         rejected: Отхвърлено
-        search_placeholder: Име, имейл или телефонен номер
         title: Организации
         verified: Потвърдено
         verify: Потвърдете
@@ -1234,18 +1233,16 @@ bg:
     shared:
       true_value: "Да"
       false_value: "Не"
-      booths_search:
-        placeholder: Търсете кабинка по име или местоположение
-      poll_officers_search:
-        placeholder: Търсете служители за анкета
-      poll_questions_search:
-        placeholder: Търсете въпроси за анкета
-      proposal_search:
-        placeholder: Търсете предложения по заглавие, код, описание или въпрос
-      debate_search:
-        placeholder: Търсете дебати по заглавие или описание
-      user_search:
-        placeholder: Търсете потребител по име или имейл
+      search:
+        label:
+          booths: "Търсете кабинка по име или местоположение"
+          debates: "Търсете дебати по заглавие или описание"
+          local_census_records: "Търсене по номер на документ"
+          organizations: "Име, имейл или телефонен номер"
+          poll_officers: "Търсете служители за анкета"
+          poll_questions: "Търсете въпроси за анкета"
+          proposals: "Търсете предложения по заглавие, код, описание или въпрос"
+          users: "Търсете потребител по име или имейл"
       search_results: "Резултати от търсенето"
       no_search_results: "Няма намерени резултати."
       actions: Действия
@@ -1549,8 +1546,6 @@ bg:
         document_number: Номер на документа
         date_of_birth: Дата на раждане
         postal_code: Пощенски код
-        search:
-          placeholder: Търсене по номер на документ
         import: Импортиране на CSV
       new:
         creating: Създаване на нов местен регистър
