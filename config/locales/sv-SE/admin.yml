@@ -1158,7 +1158,6 @@ sv:
         no_organizations: Det finns inga organisationer.
         reject: Ge avslag
         rejected: Avvisade
-        search_placeholder: Namn, e-post eller telefonnummer
         title: Organisationer
         verified: Verifierade
         verify: Kontrollera
@@ -1230,18 +1229,16 @@ sv:
     shared:
       true_value: "Ja"
       false_value: "Nej"
-      booths_search:
-        placeholder: Sök röststation efter namn
-      poll_officers_search:
-        placeholder: Sök funktionär
-      poll_questions_search:
-        placeholder: Sök omröstningsfrågor
-      proposal_search:
-        placeholder: Sök förslag efter titel, kod, beskrivning eller fråga
-      debate_search:
-        placeholder: Sök debatter med titel eller beskrivning
-      user_search:
-        placeholder: Sök användare efter namn eller e-post
+      search:
+        label:
+          booths: "Sök röststation efter namn"
+          debates: "Sök debatter med titel eller beskrivning"
+          local_census_records: "Sök efter dokumentnummer"
+          organizations: "Namn, e-post eller telefonnummer"
+          poll_officers: "Sök funktionär"
+          poll_questions: "Sök omröstningsfrågor"
+          proposals: "Sök förslag efter titel, kod, beskrivning eller fråga"
+          users: "Sök användare efter namn eller e-post"
       search_results: "Sökresultat"
       no_search_results: "Inget resultat."
       actions: Åtgärder
@@ -1541,8 +1538,6 @@ sv:
         document_number: Dokumentnummer
         date_of_birth: Födelsedatum
         postal_code: Postkod
-        search:
-          placeholder: Sök efter dokumentnummer
         import: Importera CSV
       new:
         creating: Skapar nytt lokalt adressregister
