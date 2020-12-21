@@ -28,6 +28,14 @@ module SDG::Relatable
 
       joins(sdg_class.table_name.to_sym).merge(sdg_class.where(code: code))
     end
+
+    def sdg_reviewed
+      joins(:sdg_review)
+    end
+
+    def pending_sdg_review
+      left_joins(:sdg_review).merge(SDG::Review.where(id: nil))
+    end
   end
 
   def related_sdgs
