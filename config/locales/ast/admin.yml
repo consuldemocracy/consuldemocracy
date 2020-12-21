@@ -627,7 +627,6 @@ ast:
         status: Estáu
         reject: Rechazar
         rejected: Rechazada
-        search_placeholder: Nombre, email o teléfono
         title: Organizaciones
         verified: Verificada
         verify: Verificar usuario
@@ -669,16 +668,14 @@ ast:
     shared:
       true_value: "Sí"
       false_value: "Non"
-      booths_search:
-        placeholder: Buscar urna por nombre
-      poll_officers_search:
-        placeholder: Buscar presidentes de mesa
-      poll_questions_search:
-        placeholder: Buscar preguntas
-      proposal_search:
-        placeholder: Buscar propuestas por título, código, descripción o pregunta
-      user_search:
-        placeholder: Buscar usuario por nombre o email
+      search:
+        label:
+          booths: "Buscar urna por nombre"
+          organizations: "Nombre, email o teléfono"
+          poll_officers: "Buscar presidentes de mesa"
+          poll_questions: "Buscar preguntas"
+          proposals: "Buscar propuestas por título, código, descripción o pregunta"
+          users: "Buscar usuario por nombre o email"
       search_results: "Resultados de búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
