@@ -1157,7 +1157,6 @@ de:
         no_organizations: Keine Organisationen vorhanden.
         reject: Ablehnen
         rejected: Abgelehnt
-        search_placeholder: Name, E-Mail oder Telefonnummer
         title: Organisationen
         verified: Überprüft
         verify: Überprüfen
@@ -1229,18 +1228,16 @@ de:
     shared:
       true_value: "Ja"
       false_value: "Nein"
-      booths_search:
-        placeholder: Suche Wahlkabine nach Name
-      poll_officers_search:
-        placeholder: Suche Beamte/innen
-      poll_questions_search:
-        placeholder: Suche Fragen
-      proposal_search:
-        placeholder: Suche Vorschläge nach Titel, Code, Beschreibung oder Frage
-      debate_search:
-        placeholder: Suche Debatten per Titel oder Beschreibung
-      user_search:
-        placeholder: Suche Benutzer*in nach Name oder E-Mail
+      search:
+        label:
+          booths: "Suche Wahlkabine nach Name"
+          debates: "Suche Debatten per Titel oder Beschreibung"
+          local_census_records: "Suche per Dokumentennummer"
+          organizations: "Name, E-Mail oder Telefonnummer"
+          poll_officers: "Suche Beamte/innen"
+          poll_questions: "Suche Fragen"
+          proposals: "Suche Vorschläge nach Titel, Code, Beschreibung oder Frage"
+          users: "Suche Benutzer*in nach Name oder E-Mail"
       search_results: "Ergebnisse anzeigen"
       no_search_results: "Keine Ergebnisse gefunden."
       actions: Aktionen
@@ -1540,8 +1537,6 @@ de:
         document_number: Dokumentennummer
         date_of_birth: Geburtsdatum
         postal_code: Postleitzahl
-        search:
-          placeholder: Suche per Dokumentennummer
         import: Import CSV
       new:
         creating: Neues lokales Register anlegen
