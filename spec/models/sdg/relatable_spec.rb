@@ -117,6 +117,18 @@ describe SDG::Relatable do
     end
   end
 
+  describe "#sdg_review" do
+    it "returns nil when relatable is not reviewed" do
+      expect(relatable.sdg_review).to be_blank
+    end
+
+    it "returns the review when relatable is reviewed" do
+      review = create(:sdg_review, relatable: relatable)
+
+      expect(relatable.sdg_review).to eq(review)
+    end
+  end
+
   describe ".by_goal" do
     it "returns everything if no code is provided" do
       expect(relatable.class.by_goal("")).to eq [relatable]

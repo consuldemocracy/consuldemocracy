@@ -18,4 +18,13 @@ FactoryBot.define do
   factory :sdg_phase, class: "SDG::Phase" do
     kind { :sensitization }
   end
+
+  factory :sdg_review, class: "SDG::Review" do
+    SDG::Related::RELATABLE_TYPES.map { |relatable_type| relatable_type.downcase.gsub("::", "_") }
+    .each do |relatable|
+      trait :"#{relatable}_review" do
+        association :relatable, factory: relatable
+      end
+    end
+  end
 end

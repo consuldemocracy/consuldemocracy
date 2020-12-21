@@ -10,6 +10,8 @@ module SDG::Relatable
                source: :related_sdg,
                source_type: sdg_type
     end
+
+    has_one :sdg_review, as: :relatable, dependent: :destroy, class_name: "SDG::Review"
   end
 
   class_methods do
