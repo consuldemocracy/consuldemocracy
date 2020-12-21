@@ -1157,7 +1157,6 @@ he:
         no_organizations: לא נמצאו ארגונים.
         reject: דחה
         rejected: נדחה
-        search_placeholder: שם, דוא"ל או מספר טלפון
         title: ארגונים
         verified: אומת ואושר
         verify: אישור
@@ -1222,18 +1221,15 @@ he:
     shared:
       true_value: "כן"
       false_value: "לא"
-      booths_search:
-        placeholder: חיפוש דוכן לפי שם
-      poll_officers_search:
-        placeholder: חפש סקר לפי נושא משרה
-      poll_questions_search:
-        placeholder: חפש שאלות סקר
-      proposal_search:
-        placeholder: חיפוש הצעות לפי כותרת, קוד, תיאור או שאלה
-      debate_search:
-        placeholder: חיפוש דיונים על פי כותרת או תיאור
-      user_search:
-        placeholder: '‘חיפוש משתמש/ת לפי שם או דואר אלקטרוני’'
+      search:
+        label:
+          booths: "חיפוש דוכן לפי שם"
+          debates: "חיפוש דיונים על פי כותרת או תיאור"
+          organizations: "שם, דוא\"ל או מספר טלפון"
+          poll_officers: "חפש סקר לפי נושא משרה"
+          poll_questions: "חפש שאלות סקר"
+          proposals: "חיפוש הצעות לפי כותרת, קוד, תיאור או שאלה"
+          users: "‘חיפוש משתמש/ת לפי שם או דואר אלקטרוני’"
       search_results: "תוצאות החיפוש"
       no_search_results: "לא נמצאו תוצאות."
       actions: פעולות
