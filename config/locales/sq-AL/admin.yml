@@ -888,7 +888,6 @@ sq:
         no_organizations: Nuk ka organizata.
         reject: Refuzuar
         rejected: Refuzuar
-        search_placeholder: Emri, emaili ose numri i telefonit
         title: Organizim
         verified: Verifikuar
         verify: Verifiko
@@ -939,16 +938,14 @@ sq:
     shared:
       true_value: "Po"
       false_value: "Jo"
-      booths_search:
-        placeholder: Kërko kabinat sipas emrit
-      poll_officers_search:
-        placeholder: Kërko ofruesit e sondazhit
-      poll_questions_search:
-        placeholder: Kërkoni pyetjet e sondazhit
-      proposal_search:
-        placeholder: Kërkoni propozime sipas titullit, kodit, përshkrimit ose pyetjes
-      user_search:
-        placeholder: Kërko përdoruesin sipas emrit ose email
+      search:
+        label:
+          booths: "Kërko kabinat sipas emrit"
+          organizations: "Emri, emaili ose numri i telefonit"
+          poll_officers: "Kërko ofruesit e sondazhit"
+          poll_questions: "Kërkoni pyetjet e sondazhit"
+          proposals: "Kërkoni propozime sipas titullit, kodit, përshkrimit ose pyetjes"
+          users: "Kërko përdoruesin sipas emrit ose email"
       search_results: "Kërko rezultatet"
       no_search_results: "Nuk u gjetën rezultate."
       actions: Veprimet
