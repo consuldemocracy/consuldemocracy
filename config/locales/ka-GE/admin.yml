@@ -1160,7 +1160,6 @@ ka:
         no_organizations: ორგანიზაციები არ მოიძებნა.
         reject: უარყოფა
         rejected: უარყოფილი
-        search_placeholder: სახელი, ელ.ფოსტა ან ტელეფონის ნომერი
         title: ორგანიზაციები
         verified: გადამოწმებული
         verify: გადამოწმება
@@ -1235,18 +1234,16 @@ ka:
     shared:
       true_value: "დიახ"
       false_value: "არა"
-      booths_search:
-        placeholder: კაბინის ძებნა დასახელებით, ან ლოკაციით
-      poll_officers_search:
-        placeholder: ადმინისტრატორების ძებნა
-      poll_questions_search:
-        placeholder: კენჭისყრის კითხვების ძიება
-      proposal_search:
-        placeholder: ინიციატივათა ძიება დასახელებით, კოდით, აღწერით ან შეკითხვით
-      debate_search:
-        placeholder: დებატების ძიება სათაურით ან აღწერით
-      user_search:
-        placeholder: მომხმარებლის ძებნა სახელით ან ელ.ფოსტის მეშვეობით
+      search:
+        label:
+          booths: "კაბინის ძებნა დასახელებით, ან ლოკაციით"
+          debates: "დებატების ძიება სათაურით ან აღწერით"
+          local_census_records: "ძებნა დოკუმენტის ნომრის მიხედვით"
+          organizations: "სახელი, ელ.ფოსტა ან ტელეფონის ნომერი"
+          poll_officers: "ადმინისტრატორების ძებნა"
+          poll_questions: "კენჭისყრის კითხვების ძიება"
+          proposals: "ინიციატივათა ძიება დასახელებით, კოდით, აღწერით ან შეკითხვით"
+          users: "მომხმარებლის ძებნა სახელით ან ელ.ფოსტის მეშვეობით"
       search_results: "ძებნის შედეგები"
       no_search_results: "შედეგები არ მოიძებნა."
       actions: მოქმედებები
@@ -1552,8 +1549,6 @@ ka:
         document_number: დოკუმენტის ნომერი
         date_of_birth: დაბადების თარიღი
         postal_code: საფოსტო ინდექსი
-        search:
-          placeholder: ძებნა დოკუმენტის ნომრის მიხედვით
         import: CSV-ის ატვირთვა
       new:
         creating: ახალი ადგილობრივი აღწერის ჩანაწერის შექმნა
