@@ -774,7 +774,6 @@ id:
         no_organizations: Tidak ada organisasi disana.
         reject: Menolak
         rejected: Ditolak
-        search_placeholder: Nama, email atau nomor telepon
         title: Organisasi
         verified: Diverifikasi
         verify: Memeriksa
@@ -822,16 +821,14 @@ id:
     shared:
       true_value: "Ya"
       false_value: "Tidak"
-      booths_search:
-        placeholder: Pencarian stan dengan nama
-      poll_officers_search:
-        placeholder: Pencarian jajak pendapat petugas
-      poll_questions_search:
-        placeholder: Pencarian pertanyaan jajak pendapat
-      proposal_search:
-        placeholder: Pencarian proposal dengan judul, kode, deskripsi, atau pertanyaan
-      user_search:
-        placeholder: Pengguna pencarian berdasarkan nama atau email
+      search:
+        label:
+          booths: "Pencarian stan dengan nama"
+          organizations: "Nama, email atau nomor telepon"
+          poll_officers: "Pencarian jajak pendapat petugas"
+          poll_questions: "Pencarian pertanyaan jajak pendapat"
+          proposals: "Pencarian proposal dengan judul, kode, deskripsi, atau pertanyaan"
+          users: "Pengguna pencarian berdasarkan nama atau email"
       search_results: "Hasil pencarian"
       actions: Tindakan
       title: Judul
