@@ -1,6 +1,7 @@
 class SDGManagement::Relations::IndexComponent < ApplicationComponent
   include Header
   include SDG::Goals::OptionsForSelect
+  delegate :valid_filters, :current_filter, to: :helpers
 
   attr_reader :records
 

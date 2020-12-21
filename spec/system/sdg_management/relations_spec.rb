@@ -18,26 +18,31 @@ describe "SDG Relations", :js do
 
     expect(page).to have_current_path "/sdg_management/budget/investments"
     expect(page).to have_css "h2", exact_text: "Participatory budgets"
+    expect(page).to have_css "li.is-active h2", exact_text: "Pending"
 
     within("#side_menu") { click_link "Debates" }
 
     expect(page).to have_current_path "/sdg_management/debates"
     expect(page).to have_css "h2", exact_text: "Debates"
+    expect(page).to have_css "li.is-active h2", exact_text: "Pending"
 
     within("#side_menu") { click_link "Collaborative legislation" }
 
     expect(page).to have_current_path "/sdg_management/legislation/processes"
     expect(page).to have_css "h2", exact_text: "Collaborative legislation"
+    expect(page).to have_css "li.is-active h2", exact_text: "Pending"
 
     within("#side_menu") { click_link "Polls" }
 
     expect(page).to have_current_path "/sdg_management/polls"
     expect(page).to have_css "h2", exact_text: "Polls"
+    expect(page).to have_css "li.is-active h2", exact_text: "Pending"
 
     within("#side_menu") { click_link "Proposals" }
 
     expect(page).to have_current_path "/sdg_management/proposals"
     expect(page).to have_css "h2", exact_text: "Proposals"
+    expect(page).to have_css "li.is-active h2", exact_text: "Pending"
   end
 
   describe "Index" do
@@ -86,6 +91,39 @@ describe "SDG Relations", :js do
       end
 
       expect(page).to have_css "h2", exact_text: "Build a hospital"
+    end
+
+    scenario "list records pending to review for the current model by default" do
+      create(:debate, title: "I'm a debate")
+      create(:sdg_review, relatable: create(:debate, title: "I'm a reviewed debate"))
+
+      visit sdg_management_debates_path
+
+      expect(page).to have_css "li.is-active h2", exact_text: "Pending"
+      expect(page).to have_text "I'm a debate"
+      expect(page).not_to have_text "I'm a reviewed debate"
+    end
+
+    scenario "list all records for the current model when user clicks on 'all' tab" do
+      create(:debate, title: "I'm a debate")
+      create(:sdg_review, relatable: create(:debate, title: "I'm a reviewed debate"))
+
+      visit sdg_management_debates_path
+      click_link "All"
+
+      expect(page).to have_text "I'm a debate"
+      expect(page).to have_text "I'm a reviewed debate"
+    end
+
+    scenario "list reviewed records for the current model when user clicks on 'reviewed' tab" do
+      create(:debate, title: "I'm a debate")
+      create(:sdg_review, relatable: create(:debate, title: "I'm a reviewed debate"))
+
+      visit sdg_management_debates_path
+      click_link "Marked as reviewed"
+
+      expect(page).not_to have_text "I'm a debate"
+      expect(page).to have_text "I'm a reviewed debate"
     end
 
     describe "search" do

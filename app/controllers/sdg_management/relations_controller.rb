@@ -2,8 +2,12 @@ class SDGManagement::RelationsController < SDGManagement::BaseController
   before_action :check_feature_flags
   before_action :load_record, only: [:edit, :update]
 
+  FILTERS = %w[pending_sdg_review all sdg_reviewed].freeze
+  has_filters FILTERS, only: :index
+
   def index
     @records = relatable_class
+               .send(@current_filter)
                .accessible_by(current_ability)
                .by_goal(params[:goal_code])
                .by_target(params[:target_code])

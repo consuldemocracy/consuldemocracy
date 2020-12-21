@@ -32,3 +32,10 @@ es:
         title: "Nueva meta localizada"
       update:
         notice: "Meta localizada asctualizada correctamente"
+    relations:
+      index:
+        filter: "Filtro"
+        filters:
+          all: "Todos"
+          pending_sdg_review: "Pendientes"
+          sdg_reviewed: "Marcados como revisados"
