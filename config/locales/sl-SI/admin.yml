@@ -720,7 +720,6 @@ sl:
         no_organizations: Ni organizacij.
         reject: Zavrni
         rejected: Zavrnjeno
-        search_placeholder: Ime, e-naslov ali telefonska številka
         title: Organizacije
         verified: Verificirane
         verify: Verificiraj
@@ -751,16 +750,14 @@ sl:
           form:
             submit: Posodobi
     shared:
-      booths_search:
-        placeholder: Išči volišče po imenu
-      poll_officers_search:
-        placeholder: Išči uradnike glasovanja
-      poll_questions_search:
-        placeholder: Išči vprašanja glasovanja
-      proposal_search:
-        placeholder: Išči predloge po naslovu, kodi, opisu ali vprašanju
-      user_search:
-        placeholder: Išči uporabnika/-co po imenu ali e-naslovu
+      search:
+        label:
+          booths: "Išči volišče po imenu"
+          organizations: "Ime, e-naslov ali telefonska številka"
+          poll_officers: "Išči uradnike glasovanja"
+          poll_questions: "Išči vprašanja glasovanja"
+          proposals: "Išči predloge po naslovu, kodi, opisu ali vprašanju"
+          users: "Išči uporabnika/-co po imenu ali e-naslovu"
       search_results: "Rezultati iskanja"
       no_search_results: "Ni rezultatov."
       actions: Dejanja
