@@ -1123,7 +1123,6 @@ ru:
         no_organizations: Нет организаций.
         reject: Отклонить
         rejected: Отклонено
-        search_placeholder: Имя, email или номер телефона
         title: Организации
         verified: Верифицировано
         verify: Верифицировать
@@ -1188,16 +1187,14 @@ ru:
     shared:
       true_value: "Да"
       false_value: "Нет"
-      booths_search:
-        placeholder: Искать кабинку по имени
-      poll_officers_search:
-        placeholder: Искать сотрудников голосования
-      poll_questions_search:
-        placeholder: Искать вопросы голосования
-      proposal_search:
-        placeholder: Искать предложения по названию, коду, описанию или вопросу
-      user_search:
-        placeholder: Искать пользователя по имени или email
+      search:
+        label:
+          booths: "Искать кабинку по имени"
+          organizations: "Имя, email или номер телефона"
+          poll_officers: "Искать сотрудников голосования"
+          poll_questions: "Искать вопросы голосования"
+          proposals: "Искать предложения по названию, коду, описанию или вопросу"
+          users: "Искать пользователя по имени или email"
       search_results: "Результаты поиска"
       no_search_results: "Результаты не найдены."
       actions: Действия
