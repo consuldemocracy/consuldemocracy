@@ -887,7 +887,6 @@ so:
         no_organizations: Majiran ururo.
         reject: Diiday
         rejected: Diiday
-        search_placeholder: Magaca Emailka ama talafoon lambarka
         title: Ururo
         verified: Hubin
         verify: Xaqiijin
@@ -938,16 +937,14 @@ so:
     shared:
       true_value: "Haa"
       false_value: "Maya"
-      booths_search:
-        placeholder: Raadi labada magacba
-      poll_officers_search:
-        placeholder: Raadinta dorashada sarakiisha
-      poll_questions_search:
-        placeholder: Radinta Sualaha Dorashada
-      proposal_search:
-        placeholder: Raadinta soo jeedinta adoo cinwaanka, koodhka, sharaxaadda ama su'aasha
-      user_search:
-        placeholder: Raadi isticmaal adoo magacaaga ama email
+      search:
+        label:
+          booths: "Raadi labada magacba"
+          organizations: "Magaca Emailka ama talafoon lambarka"
+          poll_officers: "Raadinta dorashada sarakiisha"
+          poll_questions: "Radinta Sualaha Dorashada"
+          proposals: "Raadinta soo jeedinta adoo cinwaanka, koodhka, sharaxaadda ama su'aasha"
+          users: "Raadi isticmaal adoo magacaaga ama email"
       search_results: "Raadi natiijada"
       no_search_results: "Natijooyin lama helin."
       actions: Tilaabooyin
