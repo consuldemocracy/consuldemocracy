@@ -801,7 +801,6 @@ fa:
         no_organizations: هیچ سازمانی وجود ندارد
         reject: رد
         rejected: رد شده
-        search_placeholder: نام و ایمیل یا تلفن شماره
         title: سازمان ها
         verified: تایید
         verify: تأیید
@@ -850,16 +849,14 @@ fa:
     shared:
       true_value: "بله"
       false_value: "نه"
-      booths_search:
-        placeholder: جستجوی غرفه با نام
-      poll_officers_search:
-        placeholder: جستجو افسران نظرسنجی 
-      poll_questions_search:
-        placeholder: جستجو پرسش های نظرسنجی
-      proposal_search:
-        placeholder: پیشنهادات را با عنوان، کد، توضیحات یا سوال جستجو کنید
-      user_search:
-        placeholder: جستجوی کاربر توسط ایمیل
+      search:
+        label:
+          booths: "جستجوی غرفه با نام"
+          organizations: "نام و ایمیل یا تلفن شماره"
+          poll_officers: "جستجو افسران نظرسنجی "
+          poll_questions: "جستجو پرسش های نظرسنجی"
+          proposals: "پیشنهادات را با عنوان، کد، توضیحات یا سوال جستجو کنید"
+          users: "جستجوی کاربر توسط ایمیل"
       search_results: "جستجو نتایج "
       no_search_results: "نتیجه ای پیدا نشد.\n"
       actions: اقدامات
