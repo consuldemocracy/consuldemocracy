@@ -1160,7 +1160,6 @@ ca:
         no_organizations: No hi ha organitzacions.
         reject: rebutjar
         rejected: rebutjada
-        search_placeholder: Nom, email o telèfon
         title: Organitzacions
         verified: verificada
         verify: verificar usuari
@@ -1241,18 +1240,16 @@ ca:
     shared:
       true_value: "Sí"
       false_value: "No"
-      booths_search:
-        placeholder: Cercar bústia per nom
-      poll_officers_search:
-        placeholder: Cercar presidents de taula
-      poll_questions_search:
-        placeholder: Cercar preguntes
-      proposal_search:
-        placeholder: Cercar propostes per títol, codi, descripció o pregunta
-      debate_search:
-        placeholder: Cerca debats per títol o descripció
-      user_search:
-        placeholder: Cercar usuari per nom o e-mail
+      search:
+        label:
+          booths: "Cercar bústia per nom"
+          debates: "Cerca debats per títol o descripció"
+          local_census_records: "Cerca per número de document"
+          organizations: "Nom, email o telèfon"
+          poll_officers: "Cercar presidents de taula"
+          poll_questions: "Cercar preguntes"
+          proposals: "Cercar propostes per títol, codi, descripció o pregunta"
+          users: "Cercar usuari per nom o e-mail"
       search_results: "Resultats de cerca"
       no_search_results: "No s'an trobat resultats."
       actions: Accions
@@ -1558,8 +1555,6 @@ ca:
         document_number: Número de Document
         date_of_birth: Data de naixement
         postal_code: Codi Postal
-        search:
-          placeholder: Cerca per número de document
         import: Importa CSV
       new:
         creating: Creació d'un registre de cens local
