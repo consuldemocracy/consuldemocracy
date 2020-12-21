@@ -998,7 +998,6 @@ nl:
         no_organizations: Er zijn geen organisaties.
         reject: Reject
         rejected: Afgewezen
-        search_placeholder: Name, email or phone number
         title: Organisations
         verified: Geverifierd
         verify: Verify
@@ -1054,16 +1053,14 @@ nl:
     shared:
       true_value: "Ja"
       false_value: "Nee"
-      booths_search:
-        placeholder: Search booth by name
-      poll_officers_search:
-        placeholder: Search poll officers
-      poll_questions_search:
-        placeholder: Search poll questions
-      proposal_search:
-        placeholder: Zoek voorstellen op titel, code, omschrijving of vraag
-      user_search:
-        placeholder: Search user by name or email'
+      search:
+        label:
+          booths: "Search booth by name"
+          organizations: "Name, email or phone number"
+          poll_officers: "Search poll officers"
+          poll_questions: "Search poll questions"
+          proposals: "Zoek voorstellen op titel, code, omschrijving of vraag"
+          users: "Search user by name or email'"
       search_results: "Zoekresultaten"
       no_search_results: "No results found."
       actions: Activiteiten
