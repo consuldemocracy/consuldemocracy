@@ -1167,7 +1167,6 @@ hr:
         no_organizations: Ne postoje organizacije.
         reject: Odbiti
         rejected: Odbijeno
-        search_placeholder: Ime, email ili telfonski broj
         title: Organizacije
         verified: Dopušteno
         verify: Potvrdi
@@ -1248,18 +1247,16 @@ hr:
     shared:
       true_value: "Da"
       false_value: "Ne"
-      booths_search:
-        placeholder: Pretraži glasačko mjesto po imenu
-      poll_officers_search:
-        placeholder: Pretraži činovnike za glasanje
-      poll_questions_search:
-        placeholder: Pretraga pitanja glasanja
-      proposal_search:
-        placeholder: Pretraga prijedloga po naslovu, kodu, opisu ili pitanju
-      debate_search:
-        placeholder: Pretraži rasprave po nazivu ili opisu
-      user_search:
-        placeholder: Pretraži korisnika po imenu ili emailu
+      search:
+        label:
+          booths: "Pretraži glasačko mjesto po imenu"
+          debates: "Pretraži rasprave po nazivu ili opisu"
+          local_census_records: "Pretraga po broju dokumenta"
+          organizations: "Ime, email ili telfonski broj"
+          poll_officers: "Pretraži činovnike za glasanje"
+          poll_questions: "Pretraga pitanja glasanja"
+          proposals: "Pretraga prijedloga po naslovu, kodu, opisu ili pitanju"
+          users: "Pretraži korisnika po imenu ili emailu"
       search_results: "Pretraži rezultate"
       no_search_results: "Rezultati nisu pronađeni."
       actions: Djelovanja
@@ -1568,8 +1565,6 @@ hr:
         document_number: Broj dokumenta
         date_of_birth: Datum rođenja
         postal_code: Poštanski broj
-        search:
-          placeholder: Pretraga po broju dokumenta
         import: Uvezi CSV
       new:
         creating: Stvaranje novog zapisa lokalnog cenzusa
