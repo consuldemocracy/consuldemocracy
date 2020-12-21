@@ -13,7 +13,7 @@
       <% targets.group_by(&:goal).map do |goal, targets| %>
         <tr class="goal-header">
           <th id="<%= header_id(goal) %>" colspan="2" scope="colgroup">
-            <%= goal.code %>. <%= goal.title %>
+            <%= goal.code_and_title %>
           </th>
         </tr>
 

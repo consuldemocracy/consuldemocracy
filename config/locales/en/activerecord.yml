@@ -2,6 +2,7 @@ en:
   attributes:
     geozone_id: "Scope of operation"
     results_enabled: "Show results"
+    sdg_target_list: "Targets"
     stats_enabled: "Show stats"
     advanced_stats_enabled: "Show advanced stats"
     name: Name
@@ -287,6 +288,7 @@ en:
         responsible_name: "Person responsible for the group"
       poll:
         name: "Name"
+        title: "Name"
         starts_at: "Start Date"
         ends_at: "Closing Date"
         geozone_restricted: "Restricted by geozone"

@@ -1168,7 +1168,6 @@ es:
         no_organizations: No hay organizaciones.
         reject: Rechazar
         rejected: Rechazada
-        search_placeholder: Nombre, email o teléfono
         title: Organizaciones
         verified: Verificada
         verify: Verificar
@@ -1253,19 +1252,26 @@ es:
       true_value: "Sí"
       false_value: "No"
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Todos los objetivos"
+            label: "Por objetivo"
+          sdg_targets:
+            all: "Todas las metas"
+            label: "Por meta"
+        label:
+          booths: "Buscar urna por nombre"
+          budget_investments: "Buscar proyectos por título, descripción o partida"
+          debates: "Buscar debates por título o descripción"
+          legislation_processes: "Buscar procesos por título o descripción"
+          local_census_records: "Búsqueda por número de documento"
+          organizations: "Nombre, email o teléfono"
+          poll_officers: "Buscar presidentes de mesa"
+          poll_questions: "Buscar preguntas"
+          polls: "Buscar votaciones por nombre o descripción"
+          proposals: "Buscar propuestas por título, código, descripción o pregunta"
+          users: "Buscar usuario por nombre o email"
         search: "Buscar"
-      booths_search:
-        placeholder: Buscar urna por nombre
-      poll_officers_search:
-        placeholder: Buscar presidentes de mesa
-      poll_questions_search:
-        placeholder: Buscar preguntas
-      proposal_search:
-        placeholder: Buscar propuestas por título, código, descripción o pregunta
-      debate_search:
-        placeholder: Buscar debates por título o descripción
-      user_search:
-        placeholder: Buscar usuario por nombre o email
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
@@ -1571,8 +1577,6 @@ es:
         document_number: Número de documento
         date_of_birth: Fecha de nacimiento
         postal_code: Código postal
-        search:
-          placeholder: Búsqueda por número de documento
         import: Importar CSV
       new:
         creating: Creando nuevo registro de censo local

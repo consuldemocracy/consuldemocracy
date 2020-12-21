@@ -229,4 +229,35 @@ describe Legislation::Process do
       end
     end
   end
+
+  describe ".search" do
+    let!(:traffic) do
+      create(:legislation_process,
+             title: "Traffic regulation",
+             summary: "Lane structure",
+             description: "From top to bottom")
+    end
+
+    let!(:animal_farm) do
+      create(:legislation_process,
+             title: "Hierarchy structure",
+             summary: "Pigs at the top",
+             description: "Napoleon in charge of the traffic")
+    end
+
+    it "returns only matching polls" do
+      expect(Legislation::Process.search("lane")).to eq [traffic]
+      expect(Legislation::Process.search("pigs")).to eq [animal_farm]
+      expect(Legislation::Process.search("nothing here")).to be_empty
+    end
+
+    it "gives more weight to name" do
+      expect(Legislation::Process.search("traffic")).to eq [traffic, animal_farm]
+      expect(Legislation::Process.search("structure")).to eq [animal_farm, traffic]
+    end
+
+    it "gives more weight to summary than description" do
+      expect(Legislation::Process.search("top")).to eq [animal_farm, traffic]
+    end
+  end
 end

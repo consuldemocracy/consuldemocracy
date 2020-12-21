@@ -1,0 +1,41 @@
+<%= header %>
+
+<%= render Admin::SearchComponent.new(label: search_label, class: "complex") do |component| %>
+  <%= component.select_tag :goal_code, goal_options,
+                           include_blank: goal_blank_option,
+                           "aria-label": goal_label %>
+  <%= component.select_tag :target_code, target_options,
+                           include_blank: target_blank_option,
+                           "aria-label": target_label %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= SDG::Goal.model_name.human(count: 2).upcase_first %></th>
+      <th><%= SDG::Target.model_name.human(count: 2).upcase_first %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.title %></td>
+        <td><%= record.sdg_goal_list %></td>
+        <td><%= record.sdg_target_list %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(
+            record,
+            actions: [:edit],
+            edit_text: t("sdg_management.actions.edit"),
+            edit_path: edit_path_for(record)
+          ) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate(@records) %>

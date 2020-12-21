@@ -1,9 +1,1 @@
-<%= link_list(
-  [
-    t("sdg_management.menu.sdg_content"),
-    sdg_management_goals_path,
-    sdg?,
-    class: "goals-link"
-  ],
-  class: "sdg-content-menu"
-) %>
+<%= link_list(*links, class: "sdg-content-menu") %>

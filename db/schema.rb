@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_145559) do
+ActiveRecord::Schema.define(version: 2020_12_16_132642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -747,6 +747,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_145559) do
     t.boolean "homepage_enabled", default: false
     t.text "background_color"
     t.text "font_color"
+    t.tsvector "tsv"
     t.index ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date"
     t.index ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date"
     t.index ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date"
@@ -1166,6 +1167,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_145559) do
     t.integer "budget_id"
     t.string "related_type"
     t.integer "related_id"
+    t.tsvector "tsv"
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true
     t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id"
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
