@@ -875,9 +875,10 @@ en:
         debates: "Most active debates"
         proposals: "Most active proposals"
         processes: "Open processes"
-      see_all_debates: See all debates
-      see_all_proposals: See all proposals
-      see_all_processes: See all processes
+      see_all:
+        debates: See all debates
+        proposals: See all proposals
+        processes: See all processes
       process_label: Process
       see_process: See process
     cards:

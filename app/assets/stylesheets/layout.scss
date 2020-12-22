@@ -2902,24 +2902,6 @@ table {
   }
 }
 
-.feed-description {
-
-  p {
-    font-size: $small-font-size;
-    margin-bottom: 0;
-  }
-}
-
-.feed-content {
-
-  .debate,
-  .proposal {
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: $line-height / 2 0;
-  }
-}
-
 .figure-card {
   display: flex;
   margin: 0 0 $line-height;

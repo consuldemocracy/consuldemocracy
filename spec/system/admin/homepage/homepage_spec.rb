@@ -106,7 +106,7 @@ describe "Homepage", :admin do
       visit root_path
 
       expect(page).to have_content "Open processes"
-      expect(page).to have_css(".legislation_process", count: 3)
+      expect(page).to have_css(".legislation-process", count: 3)
     end
 
     xscenario "Deactivate"

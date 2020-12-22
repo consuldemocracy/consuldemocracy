@@ -1,7 +1,7 @@
 <div class="feeds-list">
   <% @feeds.each do |feed| %>
     <% if feed_processes?(feed) %>
-      <%= render Widgets::Feeds::ProcessesComponent.new(feed) %>
+      <%= render Widgets::Feeds::FeedComponent.new(feed) %>
     <% end %>
   <% end %>
 </div>
