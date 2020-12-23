@@ -6,5 +6,6 @@ class Abilities::SDG::Manager
 
     can :read, ::SDG::Goal
     can :read, ::SDG::Target
+    can :manage, ::SDG::LocalTarget
   end
 end
