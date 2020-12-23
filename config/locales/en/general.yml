@@ -879,6 +879,10 @@ en:
         debates: See all debates
         proposals: See all proposals
         processes: See all processes
+      no_items:
+        debates: There are no debates right now
+        proposals: There are no proposals right now
+        processes: There are no open processes right now
       process_label: Process
       see_process: See process
     cards:

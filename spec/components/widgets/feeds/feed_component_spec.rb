@@ -1,6 +1,15 @@
 require "rails_helper"
 
 describe Widgets::Feeds::FeedComponent, type: :component do
+  it "renders a message when there are no items" do
+    feed = double(kind: "debates", items: [])
+    component = Widgets::Feeds::FeedComponent.new(feed)
+
+    render_inline component
+
+    expect(page).to have_content "no debates"
+  end
+
   describe "#see_all_path" do
     context "debates" do
       let(:feed) { Widget::Feed.new(kind: "debates") }
