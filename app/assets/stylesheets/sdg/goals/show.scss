@@ -8,16 +8,30 @@
   .sdg-goal {
 
     > header {
+      @include grid-column-gutter;
+      align-items: center;
       color: #fff;
-      margin-top: $line-height / 2;
-      padding-left: rem-calc(24);
+      display: flex;
+      margin: $line-height / 2 0;
       text-shadow: 0 0 1px $black;
+      min-width: fit-content;
+
+      &::after {
+        align-self: stretch;
+        background: transparent no-repeat center right;
+        background-size: contain;
+        content: "";
+        flex: 1;
+        min-width: 100px;
+      }
     }
 
     @each $code, $color in $sdg-colors {
-      &.sdg-goal-#{$code} {
-        > header {
-          background-color: $color;
+      &.sdg-goal-#{$code} > header {
+        background-color: $color;
+
+        &::after {
+          background-image: image-url("sdg/goal_#{$code}_icon_only");
         }
       }
     }
