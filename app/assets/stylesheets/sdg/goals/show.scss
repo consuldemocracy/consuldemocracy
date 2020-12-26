@@ -26,6 +26,13 @@
       }
     }
 
+    h1 {
+      font-family: "Oswald" !important;
+      font-weight: 500;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+
     @each $code, $color in $sdg-colors {
       &.sdg-goal-#{$code} > header {
         background-color: $color;
