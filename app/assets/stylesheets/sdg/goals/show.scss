@@ -31,6 +31,11 @@
       font-weight: 500;
       letter-spacing: -1px;
       text-transform: uppercase;
+
+      .goal-code {
+        letter-spacing: -0.1em;
+        margin-right: rem-calc(10);
+      }
     }
 
     @each $code, $color in $sdg-colors {

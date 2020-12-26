@@ -15,4 +15,8 @@ class SDG::Goals::ShowComponent < ApplicationComponent
     def processes_feed
       feeds.find { |feed| feed.kind == "processes" }
     end
+
+    def heading
+      safe_join([tag.span(goal.code, class: "goal-code"), tag.span(goal.title, class: "goal-title")], " ")
+    end
 end
