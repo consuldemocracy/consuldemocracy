@@ -23,6 +23,10 @@
         content: "";
         flex: 1;
         min-width: 100px;
+
+        @include breakpoint(small only) {
+          min-width: 75px;
+        }
       }
     }
 
@@ -34,6 +38,10 @@
       letter-spacing: -1px;
       line-height: 1.1;
       text-transform: uppercase;
+
+      @include breakpoint(small only) {
+        font-size: rem-calc(map-get(map-get(map-get($header-styles, small), h2), font-size));
+      }
 
       .goal-code {
         font-size: 2.2em;
