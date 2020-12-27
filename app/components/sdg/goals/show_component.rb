@@ -17,6 +17,10 @@ class SDG::Goals::ShowComponent < ApplicationComponent
     end
 
     def heading
-      safe_join([tag.span(goal.code, class: "goal-code"), tag.span(goal.title, class: "goal-title")], " ")
+      safe_join([tag.span(goal.code, class: "goal-code"), tag.span(split_title, class: "goal-title")], " ")
+    end
+
+    def split_title
+      safe_join(goal.multiline_title.split("\n").map { |text| tag.span(text) }, " ")
     end
 end

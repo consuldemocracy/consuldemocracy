@@ -27,14 +27,22 @@
     }
 
     h1 {
+      align-items: center;
+      display: flex;
       font-family: "Oswald" !important;
       font-weight: 500;
       letter-spacing: -1px;
+      line-height: 1.1;
       text-transform: uppercase;
 
       .goal-code {
+        font-size: 2.2em;
         letter-spacing: -0.1em;
-        margin-right: rem-calc(10);
+        margin-right: 0.2em;
+      }
+
+      .goal-title > * {
+        display: block;
       }
     }
 

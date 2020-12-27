@@ -3,6 +3,7 @@ en:
     goals:
       goal_1:
         title: "No Poverty"
+        multiline_title: "No\nPoverty"
         description: "End poverty in all its forms, everywhere."
         targets:
           target_1_1:
@@ -21,6 +22,7 @@ en:
             title: "Create sound policy frameworks at the national, regional and international levels, based on pro-poor and gender-sensitive development strategies, to support accelerated investment in poverty eradication actions"
       goal_2:
         title: "Zero Hunger"
+        multiline_title: "Zero\nHunger"
         description: "Zero Hunger"
         targets:
           target_2_1:
@@ -41,6 +43,7 @@ en:
             title: "Adopt measures to ensure the proper functioning of food commodity markets and their derivatives and facilitate timely access to market information, including on food reserves, in order to help limit extreme food price volatility."
       goal_3:
         title: "Good Health and Well-Being"
+        multiline_title: "Good Health\nand Well-Being"
         description: "Ensure healthy lives and promote well-being for all at all ages."
         targets:
           target_3_1:
@@ -71,6 +74,7 @@ en:
             title: "Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks."
       goal_4:
         title: "Quality Education"
+        multiline_title: "Quality\nEducation"
         description: "Quality Education."
         targets:
           target_4_1:
@@ -95,6 +99,7 @@ en:
             title: "By 2030, substantially increase the supply of qualified teachers, including through international cooperation for teacher training in developing countries, especially least developed countries and small island developing states."
       goal_5:
         title: "Gender Equality"
+        multiline_title: "Gender\nEquality"
         description: "Achieve gender equality and empower all women and girls."
         targets:
           target_5_1:
@@ -117,6 +122,7 @@ en:
             title: "Adopt and strengthen sound policies and enforceable legislation for the promotion of gender equality and the empowerment of all women and girls at all levels."
       goal_6:
         title: "Clean Water and Sanitation"
+        multiline_title: "Clean Water\nand Sanitation"
         description: "Ensure access to water and sanitation for all."
         targets:
           target_6_1:
@@ -137,6 +143,7 @@ en:
             title: "Support and strengthen the participation of local communities in improving water and sanitation management."
       goal_7:
         title: "Affordable and Clean Energy"
+        multiline_title: "Affordable and\nClean Energy"
         description: "Ensure access to affordable, reliable, sustainable and modern energy."
         targets:
           target_7_1:
@@ -151,6 +158,7 @@ en:
             title: "By 2030, expand infrastructure and upgrade technology for supplying modern and sustainable energy services for all in developing countries, in particular least developed countries, small island developing States, and land-locked developing countries, in accordance with their respective programmes of support."
       goal_8:
         title: "Decent Work and Economic Growth"
+        multiline_title: "Decent Work and\nEconomic Growth"
         description: "Promote inclusive and sustainable economic growth, employment and decent work for all."
         targets:
           target_8_1:
@@ -179,6 +187,7 @@ en:
             title: "By 2020, develop and operationalize a global strategy for youth employment and implement the Global Jobs Pact of the International Labour Organization."
       goal_9:
         title: "Industry, Innovation and Infrastructure"
+        multiline_title: "Industry, Innovation\nand Infrastructure"
         description: "Build resilient infrastructure, promote sustainable industrialization and foster innovation."
         targets:
           target_9_1:
@@ -199,6 +208,7 @@ en:
             title: "Significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020."
       goal_10:
         title: "Reduced Inequalities"
+        multiline_title: "Reduced\nInequalities"
         description: "Reduce inequality within and among countries."
         targets:
           target_10_1:
@@ -223,6 +233,7 @@ en:
             title: "By 2030, reduce to less than 3 per cent the transaction costs of migrant remittances and eliminate remittance corridors with costs higher than 5 per cent."
       goal_11:
         title: "Sustainable Cities and Communities"
+        multiline_title: "Sustainable Cities\nand Communities"
         description: "Make cities inclusive, safe, resilient and sustainable."
         targets:
           target_11_1:
@@ -247,6 +258,7 @@ en:
             title: "Support least developed countries, including through financial and technical assistance, in building sustainable and resilient buildings utilizing local materials."
       goal_12:
         title: "Responsible Consumption and Production"
+        multiline_title: "Responsible Consumption\nand Production"
         description: "Ensure sustainable consumption and production patterns."
         targets:
           target_12_1:
@@ -273,6 +285,7 @@ en:
             title: "Rationalize inefficient fossil-fuel subsidies that encourage wasteful consumption by removing market distortions, in accordance with national circumstances, including by restructuring taxation and phasing out those harmful subsidies, where they exist, to reflect their environmental impacts, taking fully into account the specific needs and conditions of developing countries and minimizing the possible adverse impacts on their development in a manner that protects the poor and the affected communities."
       goal_13:
         title: "Climate Action"
+        multiline_title: "Climate\nAction"
         description: "Take urgent action to combat climate change and its impacts."
         targets:
           target_13_1:
@@ -287,6 +300,7 @@ en:
             title: "Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities."
       goal_14:
         title: "Life Below Water"
+        multiline_title: "Life Below\nWater"
         description: "Conserve and sustainably use the oceans, seas and marine resources."
         targets:
           target_14_1:
@@ -311,6 +325,7 @@ en:
             title: "Enhance the conservation and sustainable use of oceans and their resources by implementing international law as reflected in UNCLOS, which provides the legal framework for the conservation and sustainable use of oceans and their resources, as recalled in paragraph 158 of The Future We Want."
       goal_15:
         title: "Life on Land"
+        multiline_title: "Life on\nLand"
         description: "Sustainably manage forests, combat desertification, halt and reverse land degradation, halt biodiversity loss."
         targets:
           target_15_1:
@@ -339,6 +354,7 @@ en:
             title: "Enhance global support for efforts to combat poaching and trafficking of protected species, including by increasing the capacity of local communities to pursue sustainable livelihood opportunities."
       goal_16:
         title: "Peace, Justice and Strong Institution"
+        multiline_title: "Peace, Justice and\nStrong Institution"
         description: "Promote just, peaceful and inclusive societies."
         targets:
           target_16_1:
@@ -367,6 +383,7 @@ en:
             title: "Promote and enforce non-discriminatory laws and policies for sustainable development."
       goal_17:
         title: "Partnerships For the Goals"
+        multiline_title: "Partnerships\nFor the Goals"
         description: "Revitalize the global partnership for Sustainable Development."
         targets:
           target_17_1:
