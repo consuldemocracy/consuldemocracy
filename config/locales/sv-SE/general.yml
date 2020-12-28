@@ -869,9 +869,10 @@ sv:
         debates: "Mest aktiva debatter"
         proposals: "Mest aktiva förslag"
         processes: "Pågående processer"
-      see_all_debates: Visa alla debatter
-      see_all_proposals: Visa alla förslag
-      see_all_processes: Visa alla processer
+      see_all:
+        debates: Visa alla debatter
+        proposals: Visa alla förslag
+        processes: Visa alla processer
       process_label: Process
       see_process: Visa process
     cards:
