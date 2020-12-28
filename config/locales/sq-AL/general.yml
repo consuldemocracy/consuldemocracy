@@ -627,9 +627,10 @@ sq:
         debates: "Debatet më aktive"
         proposals: "Propozimet më aktive"
         processes: "\nProceset e hapura"
-      see_all_debates: Shihni të gjitha debated
-      see_all_proposals: Shiko të gjitha propozimet
-      see_all_processes: Shiko të gjitha proceset
+      see_all:
+        debates: Shihni të gjitha debated
+        proposals: Shiko të gjitha propozimet
+        processes: Shiko të gjitha proceset
       process_label: Proçes
       see_process: Shihni procesin
     cards:
