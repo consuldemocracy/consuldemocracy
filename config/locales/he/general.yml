@@ -875,9 +875,10 @@ he:
         debates: "הדיונים הכי פעילים"
         proposals: "ההצעות הכי פעילות"
         processes: "תהליכים פתוחים"
-      see_all_debates: ראה את כל הדיונים
-      see_all_proposals: ראה/י את כל ההצעות
-      see_all_processes: ראה את כל התהליכים
+      see_all:
+        debates: ראה את כל הדיונים
+        proposals: ראה/י את כל ההצעות
+        processes: ראה את כל התהליכים
       process_label: תהליכים
       see_process: ראה תהליכים
     cards:
