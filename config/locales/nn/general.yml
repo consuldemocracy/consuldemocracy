@@ -846,9 +846,10 @@ nn:
         debates: "Mest aktive debattinnlegg"
         proposals: "Mest aktive forslag"
         processes: "Åpne prosesser"
-      see_all_debates: Se alle debattinnlegg
-      see_all_proposals: Se alle forslag
-      see_all_processes: Se alle prosesser
+      see_all:
+        debates: Se alle debattinnlegg
+        proposals: Se alle forslag
+        processes: Se alle prosesser
       process_label: Prosess
       see_process: Se prosess
     cards:
