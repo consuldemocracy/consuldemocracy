@@ -628,9 +628,10 @@ nl:
         debates: "Actieve debatten"
         proposals: "Voorstellen"
         processes: "Plannen"
-      see_all_debates: Alle debatten
-      see_all_proposals: Alle voorstellen
-      see_all_processes: Alle plannen
+      see_all:
+        debates: Alle debatten
+        proposals: Alle voorstellen
+        processes: Alle plannen
       process_label: Proces
       see_process: Zie proces
     cards:
