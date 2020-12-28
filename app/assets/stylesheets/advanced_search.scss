@@ -14,12 +14,6 @@
 
 .advanced-search-form {
 
-  @include breakpoint(medium) {
-    > .column {
-      padding: 0;
-    }
-  }
-
   select {
     height: $line-height * 2;
   }
