@@ -35,7 +35,7 @@
                 <%= t("shared.advanced_search.from") %> (<%= t("shared.advanced_search.date_placeholder") %>)
               </label>
               <%= text_field_tag "advanced_search[date_min]",
-                                  params[:advanced_search].try(:[], :date_min),
+                                  advanced_search[:date_min],
                                   class: "js-calendar" %>
             </div>
             <div class="small-12 large-6 column">
@@ -43,7 +43,7 @@
                 <%= t("shared.advanced_search.to") %> (<%= t("shared.advanced_search.date_placeholder") %>)
               </label>
               <%= text_field_tag "advanced_search[date_max]",
-                                  params[:advanced_search].try(:[], :date_max),
+                                  advanced_search[:date_max],
                                   class: "js-calendar" %>
             </div>
           </div>
