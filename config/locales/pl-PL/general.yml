@@ -670,9 +670,10 @@ pl:
         debates: "Najbardziej aktywne debaty"
         proposals: "Najbardziej aktywne propozycje"
         processes: "Otwarte procesy"
-      see_all_debates: Zobacz wszystkie debaty
-      see_all_proposals: Zobacz wszystkie zrealizowane projekty
-      see_all_processes: Zobacz wszystkie procesy
+      see_all:
+        debates: Zobacz wszystkie debaty
+        proposals: Zobacz wszystkie zrealizowane projekty
+        processes: Zobacz wszystkie procesy
       process_label: Proces
       see_process: Zobacz proces
     cards:
