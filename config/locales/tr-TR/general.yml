@@ -820,9 +820,10 @@ tr:
         debates: "En aktif tartışmalar"
         proposals: "En aktif öneriler"
         processes: "Açık işlemler"
-      see_all_debates: Tüm tartışmaları göster
-      see_all_proposals: Tüm önerileri göster
-      see_all_processes: Tüm işlemleri göster
+      see_all:
+        debates: Tüm tartışmaları göster
+        proposals: Tüm önerileri göster
+        processes: Tüm işlemleri göster
       process_label: İşlem
       see_process: İşlemi gör
     cards:
