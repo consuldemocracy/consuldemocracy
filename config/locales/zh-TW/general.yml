@@ -604,9 +604,10 @@ zh-TW:
         debates: "最活躍的辯論"
         proposals: "最活躍的建議"
         processes: "開啟進程"
-      see_all_debates: 查看所有辯論
-      see_all_proposals: 查看所有建議
-      see_all_processes: 查看所有進程
+      see_all:
+        debates: 查看所有辯論
+        proposals: 查看所有建議
+        processes: 查看所有進程
       process_label: 進程
       see_process: 查看進程
     cards:
