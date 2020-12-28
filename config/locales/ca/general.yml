@@ -872,9 +872,10 @@ ca:
         debates: "Debats més actius"
         proposals: "Propostes més actives"
         processes: "processos actius"
-      see_all_debates: Veure tots els debats
-      see_all_proposals: Veure totes les propostes
-      see_all_processes: Veure tots els processos
+      see_all:
+        debates: Veure tots els debats
+        proposals: Veure totes les propostes
+        processes: Veure tots els processos
       process_label: procés
       see_process: Veure procés
     cards:
