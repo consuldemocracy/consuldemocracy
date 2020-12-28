@@ -904,9 +904,10 @@ hr:
         debates: "Najaktivnije rasprave"
         proposals: "Najaktivniji prijedlozi"
         processes: "Otvoreni procesi"
-      see_all_debates: Vidi sve rasprave
-      see_all_proposals: Vidi sve prijedloge
-      see_all_processes: Vidi sve procese
+      see_all:
+        debates: Vidi sve rasprave
+        proposals: Vidi sve prijedloge
+        processes: Vidi sve procese
       process_label: Procesi
       see_process: Vidi procese
     cards:
