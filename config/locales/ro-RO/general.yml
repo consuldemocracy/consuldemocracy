@@ -904,9 +904,10 @@ ro:
         debates: "Dezbaterile cele mai active"
         proposals: "Propunerile cele mai active"
         processes: "Procese deschise"
-      see_all_debates: Vezi toate dezbaterile
-      see_all_proposals: Vezi propuneri
-      see_all_processes: Vezi toate procesele
+      see_all:
+        debates: Vezi toate dezbaterile
+        proposals: Vezi propuneri
+        processes: Vezi toate procesele
       process_label: Proces
       see_process: Vezi proces
     cards:
