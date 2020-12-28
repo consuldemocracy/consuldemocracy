@@ -855,9 +855,10 @@ bg:
         debates: "Най-активни дебати"
         proposals: "Най-активни предложения"
         processes: "Отворени процеси"
-      see_all_debates: Вижте всички дебати
-      see_all_proposals: Вижте всички предложения
-      see_all_processes: Вижте всички процеси
+      see_all:
+        debates: Вижте всички дебати
+        proposals: Вижте всички предложения
+        processes: Вижте всички процеси
       process_label: Процес
       see_process: Вижте процес
     cards:
