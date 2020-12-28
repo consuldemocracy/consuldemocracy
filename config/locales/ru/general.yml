@@ -875,9 +875,10 @@ ru:
         debates: "Самые активные дебаты"
         proposals: "Самые активные предложения"
         processes: "Открытые процессы"
-      see_all_debates: Просмотреть все дебаты
-      see_all_proposals: Просмотреть все предложения
-      see_all_processes: Просмотреть все процессы
+      see_all:
+        debates: Просмотреть все дебаты
+        proposals: Просмотреть все предложения
+        processes: Просмотреть все процессы
       process_label: Процесс
       see_process: Просмотреть процесс
     cards:
