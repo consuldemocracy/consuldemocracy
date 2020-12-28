@@ -872,9 +872,10 @@ pt-BR:
         debates: "Discussões com maior atividade"
         proposals: "Propostas com maior atividade"
         processes: "Processos abertos"
-      see_all_debates: Ver todas as discuções
-      see_all_proposals: Ver todas as propostas
-      see_all_processes: Ver todos os processos
+      see_all:
+        debates: Ver todas as discuções
+        proposals: Ver todas as propostas
+        processes: Ver todos os processos
       process_label: Processo
       see_process: Ver processo
     cards:
