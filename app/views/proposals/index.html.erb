@@ -73,7 +73,7 @@
       <% end %>
 
       <% unless params[:retired].present? || params[:selected].present? %>
-        <%= render "shared/advanced_search" %>
+        <%= render Shared::AdvancedSearchComponent.new %>
       <% end %>
 
       <% unless params[:selected].present? %>

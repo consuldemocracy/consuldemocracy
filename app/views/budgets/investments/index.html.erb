@@ -55,7 +55,7 @@
         </div>
       <% end %>
 
-      <%= render("shared/advanced_search") %>
+      <%= render Shared::AdvancedSearchComponent.new %>
 
       <% if unfeasible_or_unselected_filter %>
         <ul class="no-bullet submenu">

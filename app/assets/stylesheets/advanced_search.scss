@@ -1,0 +1,30 @@
+.advanced-search {
+  float: left;
+  margin: $line-height 0;
+  position: inherit;
+
+  @include breakpoint(medium) {
+    float: right;
+    margin-bottom: 0;
+    margin-top: $line-height / 4;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.advanced-search-form {
+
+  @include breakpoint(medium) {
+    > .column {
+      padding: 0;
+    }
+  }
+
+  select {
+    height: $line-height * 2;
+  }
+
+  .column.end.clear {
+    clear: both;
+  }
+}
