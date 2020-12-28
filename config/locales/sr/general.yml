@@ -904,9 +904,10 @@ sr:
         debates: "Најактивније расправе"
         proposals: "Најактивинији предлози"
         processes: "Отворите процесе"
-      see_all_debates: Види све расправе
-      see_all_proposals: Погледајте све предлоге
-      see_all_processes: Погледајте све процесе
+      see_all:
+        debates: Види све расправе
+        proposals: Погледајте све предлоге
+        processes: Погледајте све процесе
       process_label: Процес
       see_process: Види процес
     cards:
