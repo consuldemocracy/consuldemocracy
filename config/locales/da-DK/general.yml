@@ -869,9 +869,10 @@ da:
         debates: "Mest aktive debatindlæg"
         proposals: "Mest aktive forslag"
         processes: "Aktive dialoger"
-      see_all_debates: Se alle debatindlæg
-      see_all_proposals: Se alle forslag
-      see_all_processes: Se alle processer
+      see_all:
+        debates: Se alle debatindlæg
+        proposals: Se alle forslag
+        processes: Se alle processer
       process_label: Proces
       see_process: Se proces
     cards:
