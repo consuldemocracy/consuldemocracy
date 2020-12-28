@@ -628,9 +628,10 @@ cs:
         debates: "Nejaktivnější debaty"
         proposals: "Nejaktivnější návrhy"
         processes: "Otevřené procesy"
-      see_all_debates: Zobrazit všechny debaty
-      see_all_proposals: Zobrazit všechny návrhy
-      see_all_processes: Zobrazit všechny procesy
+      see_all:
+        debates: Zobrazit všechny debaty
+        proposals: Zobrazit všechny návrhy
+        processes: Zobrazit všechny procesy
       process_label: Proces
       see_process: Zobrazit proces
     cards:
