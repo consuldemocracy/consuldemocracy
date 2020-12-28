@@ -606,9 +606,10 @@ zh-CN:
         debates: "最活跃的辩论"
         proposals: "最活跃的提议"
         processes: "开启进程"
-      see_all_debates: 查看所有辩论
-      see_all_proposals: 查看所有提议
-      see_all_processes: 查看所有进程
+      see_all:
+        debates: 查看所有辩论
+        proposals: 查看所有提议
+        processes: 查看所有进程
       process_label: 进程
       see_process: 查看进程
     cards:
