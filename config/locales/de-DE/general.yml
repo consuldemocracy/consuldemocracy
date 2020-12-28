@@ -862,9 +862,10 @@ de:
         debates: "Aktivste Debatten"
         proposals: "Aktivste Vorschläge"
         processes: "Laufende Verfahren"
-      see_all_debates: Alle Debatten anzeigen
-      see_all_proposals: Alle Vorschläge anzeigen
-      see_all_processes: Alle Beteiligungsverfahren anzeigen
+      see_all:
+        debates: Alle Debatten anzeigen
+        proposals: Alle Vorschläge anzeigen
+        processes: Alle Beteiligungsverfahren anzeigen
       process_label: Beteiligungsverfahren
       see_process: Beteiligungsverfahren anzeigen
     cards:
