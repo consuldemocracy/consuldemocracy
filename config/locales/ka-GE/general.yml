@@ -872,9 +872,10 @@ ka:
         debates: "ყველაზე აქტიური დებატები"
         proposals: "ყველაზე აქტიური ინიციატივები"
         processes: "ღია პროცესები"
-      see_all_debates: ყველა დებატის ნახვა
-      see_all_proposals: ყველა ინიციატივის ნახვა
-      see_all_processes: ყველა პროცესის ნახვა
+      see_all:
+        debates: ყველა დებატის ნახვა
+        proposals: ყველა ინიციატივის ნახვა
+        processes: ყველა პროცესის ნახვა
       process_label: პროცესი
       see_process: პროცესის ნახვა
     cards:
