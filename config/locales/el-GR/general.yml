@@ -817,9 +817,10 @@ el:
         debates: "Πιο ενεργές συζητήσεις"
         proposals: "Πιο ενεργές προτάσεις"
         processes: "Ανοικτές διαδικασίες"
-      see_all_debates: Προβολή όλων των συζητήσεων
-      see_all_proposals: Προβολή όλων των προτάσεων
-      see_all_processes: Προβολή όλων των διαδικασιών
+      see_all:
+        debates: Προβολή όλων των συζητήσεων
+        proposals: Προβολή όλων των προτάσεων
+        processes: Προβολή όλων των διαδικασιών
       process_label: Διαδικασία
       see_process: Προβολή διαδικασίας
     cards:
