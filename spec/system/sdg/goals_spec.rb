@@ -47,7 +47,7 @@ describe "SDG Goals", :js do
     scenario "shows the SDG and its related content" do
       visit sdg_goal_path(15)
 
-      within(".sdg-goal header") { expect(page).to have_content "Life on Land" }
+      within(".sdg-goal header") { expect(page).to have_content "15\nLIFE ON\nLAND" }
 
       within ".feed-proposals" do
         expect(page).to have_content "Animal farm"
