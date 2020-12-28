@@ -627,9 +627,10 @@ so:
         debates: "Inta badan doodaha firfircoon"
         proposals: "Talooyinka ugu firfircoon"
         processes: "Gedisocodka furaan"
-      see_all_debates: Arag dhaman doodaha
-      see_all_proposals: Arag dhaman sojedimaha
-      see_all_processes: Arag dhaman gedis socodyada
+      see_all:
+        debates: Arag dhaman doodaha
+        proposals: Arag dhaman sojedimaha
+        processes: Arag dhaman gedis socodyada
       process_label: Geedisocoodka
       see_process: Arag gedi socodka
     cards:
