@@ -1507,6 +1507,10 @@ form {
   select {
     height: $line-height * 2;
   }
+
+  .column.end.clear {
+    clear: both;
+  }
 }
 
 // 10. Officials levels
