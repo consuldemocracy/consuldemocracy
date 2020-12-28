@@ -821,9 +821,10 @@ bs:
         debates: "Najaktivnije debate"
         proposals: "Najaktivniji prijedlozi"
         processes: "Otvoreni procesi"
-      see_all_debates: Vidi sve debate
-      see_all_proposals: Vidi sve prijedloge
-      see_all_processes: Vidi sve procese
+      see_all:
+        debates: Vidi sve debate
+        proposals: Vidi sve prijedloge
+        processes: Vidi sve procese
       process_label: Proces
       see_process: Vidi proces
     cards:
