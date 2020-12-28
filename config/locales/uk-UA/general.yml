@@ -936,9 +936,10 @@ uk-UA:
         debates: "Найактивніші обговорення"
         proposals: "Найактивніші пропозиції"
         processes: "Відкрити процеси"
-      see_all_debates: Переглянути всі обговорення
-      see_all_proposals: Переглянути всі пропозиції
-      see_all_processes: Переглянути всі процеси
+      see_all:
+        debates: Переглянути всі обговорення
+        proposals: Переглянути всі пропозиції
+        processes: Переглянути всі процеси
       process_label: Процес
       see_process: Переглянути процес
     cards:
