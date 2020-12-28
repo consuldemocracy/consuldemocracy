@@ -937,9 +937,10 @@ ar:
         debates: "المناقشات الأكثر نشاطا"
         proposals: "المقترحات الأكثر نشاطا"
         processes: "إجراءات مفتوحة"
-      see_all_debates: انظر جميع الحوارات
-      see_all_proposals: انظر جميع المقترحات
-      see_all_processes: انظر جميع المقترحات
+      see_all:
+        debates: انظر جميع الحوارات
+        proposals: انظر جميع المقترحات
+        processes: انظر جميع المقترحات
       process_label: عملية
       see_process: انظر الإجرائية
     cards:
