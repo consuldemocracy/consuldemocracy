@@ -19,7 +19,7 @@
   <div class="row">
     <% if @cards.any? %>
       <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
-        <h3 class="title"><%= t("welcome.cards.title") %></h3>
+        <h2 class="title"><%= t("welcome.cards.title") %></h2>
 
         <%= render "shared/cards" %>
       </div>

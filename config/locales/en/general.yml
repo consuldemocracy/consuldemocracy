@@ -251,6 +251,7 @@ en:
           other: You have %{count} new notifications
         notifications: Notifications
         no_notifications: "You don't have new notifications"
+      sdg: "SDG"
   notifications:
     index:
       empty_notifications: You don't have new notifications.
@@ -874,9 +875,14 @@ en:
         debates: "Most active debates"
         proposals: "Most active proposals"
         processes: "Open processes"
-      see_all_debates: See all debates
-      see_all_proposals: See all proposals
-      see_all_processes: See all processes
+      see_all:
+        debates: See all debates
+        proposals: See all proposals
+        processes: See all processes
+      no_items:
+        debates: There are no debates right now
+        proposals: There are no proposals right now
+        processes: There are no open processes right now
       process_label: Process
       see_process: See process
     cards:

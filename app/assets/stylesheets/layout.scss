@@ -2794,7 +2794,8 @@ table {
 // ------------
 
 .home-page,
-.custom-page {
+.custom-page,
+.sdg-goal-show {
 
   a {
 
@@ -2859,6 +2860,13 @@ table {
     }
   }
 
+  h2 {
+    &.title {
+      @include header-font-size(h3);
+    }
+  }
+
+  h2,
   h3 {
 
     &.title {
@@ -2893,10 +2901,6 @@ table {
 
 .feeds-list {
 
-  .proposal {
-    clear: both;
-  }
-
   a {
 
     &.see-all {
@@ -2907,40 +2911,6 @@ table {
       text-align: right;
       width: 100%;
     }
-  }
-}
-
-.feed-image {
-  display: inline-block;
-  height: rem-calc(120);
-  overflow: hidden;
-  width: 100%;
-
-  @include breakpoint(medium) {
-    height: rem-calc(96);
-  }
-
-  img {
-    max-width: none;
-    width: 100%;
-  }
-}
-
-.feed-description {
-
-  p {
-    font-size: $small-font-size;
-    margin-bottom: 0;
-  }
-}
-
-.feed-content {
-
-  .debate,
-  .proposal {
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: $line-height / 2 0;
   }
 }
 

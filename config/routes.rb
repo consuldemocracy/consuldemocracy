@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   draw :poll
   draw :proposal
   draw :related_content
+  draw :sdg
   draw :sdg_management
   draw :tag
   draw :user

@@ -1,0 +1,30 @@
+.feeds-participation {
+
+  @include breakpoint(medium) {
+    display: flex;
+
+    .feed-proposals:not(:only-child) {
+      width: 2 * 100% / 3;
+    }
+
+    .feed-debates:not(:only-child) {
+      width: 1 * 100% / 3;
+    }
+
+    .feed-proposals,
+    .feed-debates {
+      display: flex;
+      flex-direction: column;
+
+      .feed-content {
+        flex: 1;
+      }
+    }
+  }
+
+  .feed-debates,
+  .feed-proposals {
+    @include grid-col;
+    margin-top: $line-height;
+  }
+}

@@ -1,0 +1,19 @@
+<% provide(:title) { goal.title } %>
+
+<div class="sdg-goal-show">
+  <%= back_link_to sdg_goals_path %>
+
+  <article class="sdg-goal sdg-goal-<%= goal.code %>">
+    <header>
+      <h1><%= goal.title %></h1>
+    </header>
+  </article>
+
+  <%= render Widgets::Feeds::ParticipationComponent.new(feeds) %>
+
+  <% if processes_feed %>
+    <div class="feeds-list">
+      <%= render Widgets::Feeds::FeedComponent.new(processes_feed) %>
+    </div>
+  <% end %>
+</div>
