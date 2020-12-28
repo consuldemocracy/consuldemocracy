@@ -698,9 +698,10 @@ fr:
         debates: "Discussions les plus actives"
         proposals: "Propositions les plus actives"
         processes: "Processus ouverts"
-      see_all_debates: Voir toutes les discussions
-      see_all_proposals: Voir toutes les propositions
-      see_all_processes: Voir tous les processus
+      see_all:
+        debates: Voir toutes les discussions
+        proposals: Voir toutes les propositions
+        processes: Voir tous les processus
       process_label: Processus
       see_process: Voir processus
     cards:
