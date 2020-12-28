@@ -757,9 +757,10 @@ gl:
         debates: "Debates máis activos"
         proposals: "Propostas máis activas"
         processes: "Procesos abertos"
-      see_all_debates: Ver todos os debates
-      see_all_proposals: Ver todas as propostas
-      see_all_processes: Ver todos os procesos
+      see_all:
+        debates: Ver todos os debates
+        proposals: Ver todas as propostas
+        processes: Ver todos os procesos
       process_label: Proceso
       see_process: Ver proceso
     cards:
