@@ -624,9 +624,10 @@ eu:
         debates: "Eztabaida aktiboenak"
         proposals: "Proposamen aktiboenak"
         processes: "Irekitako prosezuak"
-      see_all_debates: Eztabaida guztiak ikusi
-      see_all_proposals: Proposamen guztiak ikusi
-      see_all_processes: Prosezu guztiak ikusi
+      see_all:
+        debates: Eztabaida guztiak ikusi
+        proposals: Proposamen guztiak ikusi
+        processes: Prosezu guztiak ikusi
       process_label: Prosezua
       see_process: Prosezua ikusi
     cards:
