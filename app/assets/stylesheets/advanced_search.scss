@@ -14,11 +14,37 @@
 
 .advanced-search-form {
 
-  select {
-    height: $line-height * 2;
+  @include breakpoint(large) {
+    .filter {
+      @include grid-column;
+      width: 25%;
+    }
+
+    .date-filters {
+      float: left;
+      width: 50%;
+
+      .filter {
+        width: 50%;
+      }
+
+      .custom-date-filters {
+        clear: both;
+      }
+    }
+
+    .submit {
+      width: 25%;
+    }
   }
 
-  .column.end.clear {
-    clear: both;
+  .general-search,
+  .filter,
+  .submit {
+    @include grid-column-gutter;
+  }
+
+  select {
+    height: $line-height * 2;
   }
 }
