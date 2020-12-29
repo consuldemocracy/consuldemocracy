@@ -20,6 +20,7 @@ class Mailer < ApplicationMailer
   def reply(reply)
     @email = ReplyEmail.new(reply)
     @email_to = @email.to
+    manage_subscriptions_token(@email.recipient)
 
     with_user(@email.recipient) do
       mail(to: @email_to, subject: @email.subject) if @email.can_be_sent?

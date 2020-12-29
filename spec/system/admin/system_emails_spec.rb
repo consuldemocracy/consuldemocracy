@@ -176,6 +176,9 @@ describe "System Emails" do
       expect(page).to have_content reply.body
 
       expect(page).to have_link "Let's do...", href: comment_url(reply, host: app_host)
+      expect(page).to have_link("Notifications",
+                                href: edit_subscriptions_url(token: user.subscriptions_token,
+                                                             host: app_host))
     end
 
     scenario "#direct_message_for_receiver" do

@@ -198,8 +198,9 @@ describe "Emails" do
       expect(email).to deliver_to(user)
       expect(email).not_to have_body_text(debate_path(debate))
       expect(email).to have_body_text(comment_path(Comment.last))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: user.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Notify me by email when someone replies to my comments"')
     end
 
     scenario "Do not send email about own replies to own comments" do
@@ -469,8 +470,9 @@ describe "Emails" do
       expect(email).to deliver_to(user1)
       expect(email).not_to have_body_text(poll_path(poll))
       expect(email).to have_body_text(comment_path(Comment.last))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: user1.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Notify me by email when someone replies to my comments"')
     end
   end
 
