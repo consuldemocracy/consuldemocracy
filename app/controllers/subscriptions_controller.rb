@@ -5,6 +5,12 @@ class SubscriptionsController < ApplicationController
   def edit
   end
 
+  def update
+    @user.update!(subscriptions_params)
+    redirect_to edit_subscriptions_path(token: @user.subscriptions_token),
+                notice: t("flash.actions.save_changes.notice")
+  end
+
   private
 
     def set_user
@@ -13,5 +19,13 @@ class SubscriptionsController < ApplicationController
               else
                 current_user || raise(CanCan::AccessDenied)
               end
+    end
+
+    def subscriptions_params
+      params.require(:user).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:email_on_comment, :email_on_comment_reply, :email_on_direct_message, :email_digest, :newsletter]
     end
 end
