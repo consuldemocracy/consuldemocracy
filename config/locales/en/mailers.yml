@@ -28,8 +28,7 @@ en:
       title: "Proposal notifications in %{org_name}"
       share: Share proposal
       comment: Comment proposal
-      unsubscribe: "If you don't want to receive any proposal notifications, visit %{account} and uncheck 'Receive a summary of proposal notifications'."
-      unsubscribe_account: My account
+      unsubscribe_text: "If you don't want to receive any proposal notifications, visit %{notifications} and uncheck 'Receive a summary of proposal notifications'."
       unfollow: "Visit this proposal and unfollow it to stop receiving notifications."
     direct_message_for_receiver:
       subject: "You have received a new private message"

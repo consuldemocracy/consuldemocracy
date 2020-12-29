@@ -92,6 +92,7 @@ describe "System Emails" do
                                 href: proposal_url(proposal_b, anchor: "tab-notifications", host: app_host))
       expect(page).to have_content("Proposal A Notification Body")
       expect(page).to have_content("Proposal B Notification Body")
+      expect(page).to have_link "Notifications"
     end
 
     scenario "#budget_investment_created" do

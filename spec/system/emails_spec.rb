@@ -303,7 +303,7 @@ describe "Emails" do
       expect(email).to have_body_text(proposal2.author.name)
 
       expect(email).not_to have_body_text(proposal3.title)
-      expect(email).to have_body_text(/#{account_path}/)
+      expect(email).to have_body_text(edit_subscriptions_path(token: user.subscriptions_token))
       expect(email).to have_body_text("Visit this proposal and unfollow it to stop receiving notifications.")
 
       notification1.reload

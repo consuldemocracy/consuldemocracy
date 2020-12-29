@@ -62,6 +62,7 @@ class Mailer < ApplicationMailer
   def proposal_notification_digest(user, notifications)
     @notifications = notifications
     @email_to = user.email
+    manage_subscriptions_token(user)
 
     with_user(user) do
       mail(to: @email_to, subject: t("mailers.proposal_notification_digest.title", org_name: Setting["org_name"]))
