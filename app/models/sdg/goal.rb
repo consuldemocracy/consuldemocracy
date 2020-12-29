@@ -9,8 +9,8 @@ class SDG::Goal < ApplicationRecord
     I18n.t("sdg.goals.goal_#{code}.title")
   end
 
-  def multiline_title
-    I18n.t("sdg.goals.goal_#{code}.multiline_title")
+  def title_in_two_lines
+    I18n.t("sdg.goals.goal_#{code}.title_in_two_lines")
   end
 
   def description

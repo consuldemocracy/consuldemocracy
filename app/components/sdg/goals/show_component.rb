@@ -21,6 +21,6 @@ class SDG::Goals::ShowComponent < ApplicationComponent
     end
 
     def split_title
-      safe_join(goal.multiline_title.split("\n").map { |text| tag.span(text) }, " ")
+      safe_join(goal.title_in_two_lines.split("\n").map { |text| tag.span(text) }, " ")
     end
 end
