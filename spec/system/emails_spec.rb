@@ -50,8 +50,10 @@ describe "Emails" do
       expect(email).to have_subject("Someone has commented on your citizen proposal")
       expect(email).to deliver_to(proposal.author)
       expect(email).to have_body_text(proposal_path(proposal))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: proposal.author.subscriptions_token))
+      expect(email).to have_body_text(
+                        'and uncheck "Notify me by email when someone comments on my proposals or debates"')
     end
 
     scenario "Do not send email about own proposal comments" do
@@ -77,8 +79,10 @@ describe "Emails" do
       expect(email).to have_subject("Someone has commented on your debate")
       expect(email).to deliver_to(debate.author)
       expect(email).to have_body_text(debate_path(debate))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: debate.author.subscriptions_token))
+      expect(email).to have_body_text(
+                        'and uncheck "Notify me by email when someone comments on my proposals or debates"')
     end
 
     scenario "Do not send email about own debate comments" do
@@ -104,8 +108,10 @@ describe "Emails" do
       expect(email).to have_subject("Someone has commented on your investment")
       expect(email).to deliver_to(investment.author)
       expect(email).to have_body_text(budget_investment_path(investment, budget_id: investment.budget_id))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: investment.author.subscriptions_token))
+      expect(email).to have_body_text(
+                        'and uncheck "Notify me by email when someone comments on my proposals or debates"')
     end
 
     scenario "Do not send email about own budget investments comments" do
@@ -132,8 +138,10 @@ describe "Emails" do
       expect(email).to have_subject("Someone has commented on your topic")
       expect(email).to deliver_to(topic.author)
       expect(email).to have_body_text(community_topic_path(topic, community_id: topic.community_id))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: topic.author.subscriptions_token))
+      expect(email).to have_body_text(
+                        'and uncheck "Notify me by email when someone comments on my proposals or debates"')
     end
 
     scenario "Do not send email about own topic comments" do
@@ -159,8 +167,10 @@ describe "Emails" do
       expect(email).to have_subject("Someone has commented on your poll")
       expect(email).to deliver_to(poll.author)
       expect(email).to have_body_text(poll_path(poll))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: poll.author.subscriptions_token))
+      expect(email).to have_body_text(
+                        'and uncheck "Notify me by email when someone comments on my proposals or debates"')
     end
 
     scenario "Do not send email about own poll comments" do

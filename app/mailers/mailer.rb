@@ -9,6 +9,7 @@ class Mailer < ApplicationMailer
     @comment = comment
     @commentable = comment.commentable
     @email_to = @commentable.author.email
+    manage_subscriptions_token(@commentable.author)
 
     with_user(@commentable.author) do
       subject = t("mailers.comment.subject", commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
@@ -149,5 +150,10 @@ class Mailer < ApplicationMailer
       if @email_to.blank?
         mail.perform_deliveries = false
       end
+    end
+
+    def manage_subscriptions_token(user)
+      user.add_subscriptions_token
+      @token = user.subscriptions_token
     end
 end

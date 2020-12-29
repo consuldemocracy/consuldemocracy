@@ -9,6 +9,8 @@ en:
       title: New comment
     config:
       manage_email_subscriptions: To stop receiving these emails change your settings in
+      notifications_link: Notifications
+      unsubscribe_text: 'To unsubscribe from these emails, visit %{notifications} and uncheck "%{notification}".'
     email_verification:
       click_here_to_verify: this link
       instructions_2: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.

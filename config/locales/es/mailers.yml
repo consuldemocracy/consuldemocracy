@@ -9,6 +9,8 @@ es:
       title: Nuevo comentario
     config:
       manage_email_subscriptions: Puedes dejar de recibir estos emails cambiando tu configuración en
+      notifications_link: Notificaciones
+      unsubscribe_text: 'Para darse de baja de estos emails, puedes entrar en %{notifications} y desmarcar la opción "%{notification}".'
     email_verification:
       click_here_to_verify: en este enlace
       instructions_2: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
