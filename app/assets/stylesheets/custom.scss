@@ -267,26 +267,23 @@ header, .top-bar {
 // 05. custom pages
 
 .budgets-calendar {
-
-  margin: 0;
-  padding: 0;
-  border: 1px solid white;
-  display: inline-block;
-  padding: 2.2rem 1.5rem 0.75rem 1.5rem;
-  background: $brand;
-  min-height: 8rem;
-  min-width: 15rem;
-  width: 20%;
-  color: white;
-  font-family: "Nunito Bold";
-  text-align: center;
-
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+    display: inline-block;
+    padding: 2.2rem 1.5rem 0.75rem 1.5rem;
+    background: #1E1E1E;
+    min-height: 8rem;
+    min-width: 14rem;
+    width: 20%;
+    color: white;
+    font-family: "Nunito Bold";
+    text-align: center !important;
 }
 
 .budgets-calendar-active {
   background: $brand_secondary;
   color: black;
-  padding: 0.75rem 1.5rem 0.75rem 1.5rem;
 }
 
 .tabla-puntos-encuentro {
