@@ -26,7 +26,7 @@
 <% if @map_location&.available? %>
   <%= render "budgets/investments/map" %>
 <% end %>
-<%= render "shared/tag_cloud", taggable: "budget/investment" %>
+<%= render "shared/tag_cloud", taggable: "Budget::Investment" %>
 <%= render "budgets/investments/categories" %>
 
 <% if @heading && can?(:show, @ballot) %>
