@@ -4,6 +4,7 @@ describe SDGManagement::MenuComponent, type: :component do
   let(:component) { SDGManagement::MenuComponent.new }
 
   before do
+    Setting["feature.sdg"] = true
     Setting["sdg.process.budgets"] = true
     Setting["sdg.process.debates"] = true
     Setting["sdg.process.legislation"] = true
