@@ -16,3 +16,5 @@
     <% end %>
   </ul>
 <% end %>
+
+<%= render SDG::Goals::TagListComponent.new(taggable, limit: limit) %>

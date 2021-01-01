@@ -45,6 +45,7 @@ data:
     - config/locales/%{locale}/user_groups.yml
     - config/locales/%{locale}/i18n.yml
     - config/locales/%{locale}/milestones.yml
+    - config/locales/%{locale}/sdg.yml
     - config/locales/%{locale}/sdg_management.yml
     - config/locales/%{locale}/stats.yml
 
@@ -217,6 +218,7 @@ ignore_unused:
   - landings.cambia_tu_ciudad.*
   - "seeds.settings.*"
   - "dashboard.polls.*.submit"
+  - "sdg.goals.goal_*"
 ####
 ## Exclude these keys from the `i18n-tasks eq-base" report:
 # ignore_eq_base:
