@@ -1020,3 +1020,26 @@ body.iframed {
     margin-bottom: 15px;
   }
 }
+
+/**
+ * Info del usuario
+ */
+.user-info-container {
+  clear: both;
+  width: 100%;
+  .user-info {
+    float: left;
+  }
+
+  .user-actions {
+    float: right;
+    font-size: 0.9rem;
+    .menu.vertical {
+      margin:  0.3rem;
+      padding: 0.3rem;
+    }
+    .menu.vertical li {
+      margin-bottom: 0.3rem;
+    }
+  }
+}
