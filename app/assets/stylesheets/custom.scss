@@ -27,6 +27,22 @@ strong, b, a, .ava-link {
   color: white;
 }
 
+#section_help {
+  a {
+    color: $tertiary-contrast;
+    font-weight: bold;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+      color: $secondary;
+      text-decoration: inherit;
+    }
+  }
+}
+
 .button {
   color: white;
   background-color: $secondary;
@@ -112,6 +128,7 @@ a.back {
 
 .callout {
   color: $gray-base !important;
+  font-size: 1rem;
 }
 
 .debate-show aside h2,
@@ -473,6 +490,7 @@ body.management .admin-content {
       }
     }
     .img {
+      padding-right: 0px;
       .img-holder {
         width: 100%;
         height: 100%;
@@ -487,11 +505,11 @@ body.management .admin-content {
     .info {
       background-color: transparent;
       .pre-title {
-        font-size: $small-font-size;
+        font-size: $font-size-largest;
         text-transform: uppercase;
       }
       h2 {
-        font-size: $font-size-h5;
+        font-size: $font-size-h2;
         color: $gray-darker;
       }
       a.see-all-budgets {
