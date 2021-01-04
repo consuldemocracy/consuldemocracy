@@ -43,7 +43,12 @@
       // Además incluimos la notificación de cambio de página...
       var _href = window.location.href;
       if(_href.indexOf('#')>=0) {
-        _href = _href.substring(0,_check.indexOf('#'));
+        setTimeout(function() {
+          document.querySelector(window.location.href.substring(window.location.href.indexOf('#'))).scrollIntoView({
+            behavior: 'smooth'
+          });
+        },500);
+        _href = _href.substring(0,_href.indexOf('#'));
       }
       window.parent.postMessage('l:' + _href, '<%=Rails.application.config.participacion_push_target_origin %>');
     });
