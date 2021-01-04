@@ -1,14 +1,14 @@
 class SDG::Goals::TagListComponent < ApplicationComponent
-  attr_reader :record, :limit
+  attr_reader :record_or_name, :limit
   delegate :link_list, to: :helpers
 
-  def initialize(record, limit: nil)
-    @record = record
+  def initialize(record_or_name, limit: nil)
+    @record_or_name = record_or_name
     @limit = limit
   end
 
   def render?
-    SDG::ProcessEnabled.new(record.class.name).enabled?
+    process.enabled?
   end
 
   private
@@ -28,7 +28,11 @@ class SDG::Goals::TagListComponent < ApplicationComponent
     end
 
     def goals
-      record.sdg_goals.order(:code)
+      if record_or_name.respond_to?(:sdg_goals)
+        record_or_name.sdg_goals.order(:code)
+      else
+        SDG::Goal.order(:code)
+      end
     end
 
     def see_more_link
@@ -36,22 +40,30 @@ class SDG::Goals::TagListComponent < ApplicationComponent
 
       [
         "#{count_out_of_limit}+",
-        polymorphic_path(record),
+        polymorphic_path(record_or_name),
         class: "more-goals", title: t("sdg.goals.filter.more", count: count_out_of_limit)
       ]
     end
 
     def index_by_goal(goal)
-      polymorphic_path(record.class, advanced_search: { goal: goal.code })
+      polymorphic_path(model, advanced_search: { goal: goal.code })
     end
 
     def filter_text(goal)
       t("sdg.goals.filter.link",
-        resources: record.model_name.human(count: :other),
+        resources: model.model_name.human(count: :other),
         code: goal.code)
     end
 
     def count_out_of_limit
       goals.size - limit
+    end
+
+    def model
+      process.name.constantize
+    end
+
+    def process
+      @process ||= SDG::ProcessEnabled.new(record_or_name)
     end
 end

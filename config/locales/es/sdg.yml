@@ -425,6 +425,7 @@ es:
           target_17_19:
             title: "De aquí a 2030, aprovechar las iniciativas existentes para elaborar indicadores que permitan medir los progresos en materia de desarrollo sostenible y complementen el producto interno bruto, y apoyar la creación de capacidad estadística en los países en desarrollo."
       filter:
+        heading: "Filtros por ODS"
         link: "Ver %{resources} del objetivo %{code}"
         more:
           one: "Un objetivo más"

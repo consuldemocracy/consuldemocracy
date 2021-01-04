@@ -1,13 +1,21 @@
 class SDG::ProcessEnabled
   include SettingsHelper
-  attr_reader :name
+  attr_reader :record_or_name
 
-  def initialize(name)
-    @name = name
+  def initialize(record_or_name)
+    @record_or_name = record_or_name
   end
 
   def enabled?
     feature?("sdg") && feature?(process_name) && setting["sdg.process.#{process_name}"]
+  end
+
+  def name
+    if record_or_name.respond_to?(:downcase)
+      record_or_name
+    else
+      record_or_name.class.name
+    end
   end
 
   private
