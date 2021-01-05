@@ -39,3 +39,7 @@ en:
           all: "All"
           pending_sdg_review: "Pending"
           sdg_reviewed: "Marked as reviewed"
+      update:
+        notice: "%{relatable} updated successfully"
+      update_and_review:
+        notice: "%{relatable} updated successfully and marked as reviewed"

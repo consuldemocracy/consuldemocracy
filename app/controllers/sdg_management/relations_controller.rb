@@ -23,7 +23,7 @@ class SDGManagement::RelationsController < SDGManagement::BaseController
   def update
     @record.sdg_target_list = params[@record.class.table_name.singularize][:sdg_target_list]
 
-    redirect_to action: :index
+    redirect_to({ action: :index }, notice: update_notice)
   end
 
   private
@@ -42,5 +42,14 @@ class SDGManagement::RelationsController < SDGManagement::BaseController
 
       check_feature_flag(process_name)
       raise FeatureDisabled, process_name unless Setting["sdg.process.#{process_name}"]
+    end
+
+    def update_notice
+      if @record.sdg_review.present?
+        t("sdg_management.relations.update.notice", relatable: relatable_class.model_name.human)
+      else
+        @record.create_sdg_review!
+        t("sdg_management.relations.update_and_review.notice", relatable: relatable_class.model_name.human)
+      end
     end
 end

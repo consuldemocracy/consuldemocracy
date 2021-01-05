@@ -190,15 +190,37 @@ describe "SDG Relations", :js do
   end
 
   describe "Edit" do
-    scenario "allows changing the targets" do
+    scenario "allows changing the targets and marks the resource as reviewed" do
       process = create(:legislation_process, title: "SDG process")
       process.sdg_targets = [SDG::Target["3.3"]]
 
       visit sdg_management_edit_legislation_process_path(process)
-      fill_in "Targets", with: "1.2, 2.1"
+      fill_in "Targets", with: "1.2, 2.1", fill_options: { clear: :backspace }
       click_button "Update Process"
 
+      expect(page).to have_content "Process updated successfully and marked as reviewed"
+
+      click_link "Marked as reviewed"
+
       within("tr", text: "SDG process") do
+        expect(page).to have_css "td", exact_text: "1.2, 2.1"
+      end
+    end
+
+    scenario "does not show the review notice when resource was already reviewed" do
+      debate = create(:sdg_review, relatable: create(:debate, title: "SDG debate")).relatable
+      debate.sdg_targets = [SDG::Target["3.3"]]
+
+      visit sdg_management_edit_debate_path(debate, filter: "sdg_reviewed")
+      fill_in "Targets", with: "1.2, 2.1", fill_options: { clear: :backspace }
+      click_button "Update Debate"
+
+      expect(page).not_to have_content "Debate updated successfully and marked as reviewed"
+      expect(page).to have_content "Debate updated successfully"
+
+      click_link "Marked as reviewed"
+
+      within("tr", text: "SDG debate") do
         expect(page).to have_css "td", exact_text: "1.2, 2.1"
       end
     end
