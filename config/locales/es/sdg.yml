@@ -3,7 +3,7 @@ es:
     goals:
       goal_1:
         title: "Fin de la pobreza"
-        multiline_title: "Fin\nde la probreza"
+        title_in_two_lines: "Fin\nde la probreza"
         description: "Poner fin a la pobreza en todas sus formas en todo el mundo."
         targets:
           target_1_1:
@@ -22,7 +22,7 @@ es:
             title: "Crear marcos normativos sólidos en el ámbito nacional, regional e internacional, sobre la base de estrategias de desarrollo en favor de los pobres que tengan en cuenta las cuestiones de género, a fin de apoyar la inversión acelerada en medidas para erradicar la pobreza."
       goal_2:
         title: "Hambre Cero"
-        multiline_title: "Hambre\nCero"
+        title_in_two_lines: "Hambre\nCero"
         description: "Poner fin al hambre."
         targets:
           target_2_1:
@@ -43,7 +43,7 @@ es:
             title: "Adoptar medidas para asegurar el buen funcionamiento de los mercados de productos básicos alimentarios y sus derivados y facilitar el acceso oportuno a información sobre los mercados, en particular sobre las reservas de alimentos, a fin de ayudar a limitar la extrema volatilidad de los precios de los alimentos."
       goal_3:
         title: "Salud y Bienestar"
-        multiline_title: "Salud\ny Bienestar"
+        title_in_two_lines: "Salud\ny Bienestar"
         description: "Garantizar una vida sana y promover el bienestar para todos en todas las edades."
         targets:
           target_3_1:
@@ -74,7 +74,7 @@ es:
             title: "Reforzar la capacidad de todos los países, en particular los países en desarrollo, en materia de alerta temprana, reducción de riesgos y gestión de los riesgos para la salud nacional y mundial."
       goal_4:
         title: "Educación de Calidad"
-        multiline_title: "Educación\nde Calidad"
+        title_in_two_lines: "Educación\nde Calidad"
         description: "Garantizar una educación inclusiva, equitativa y de calidad y promover oportunidades de aprendizaje durante toda la vida para todos."
         targets:
           target_4_1:
@@ -99,7 +99,7 @@ es:
             title: "De aquí a 2030, aumentar considerablemente la oferta de docentes calificados, incluso mediante la cooperación internacional para la formación de docentes en los países en desarrollo, especialmente los países menos adelantados y los pequeños Estados insulares en desarrollo."
       goal_5:
         title: "Igualdad de Género"
-        multiline_title: "Igualdad\nde Género"
+        title_in_two_lines: "Igualdad\nde Género"
         description: "Lograr la igualdad entre los géneros y empoderar a todas las mujeres y las niñas."
         targets:
           target_5_1:
@@ -122,7 +122,7 @@ es:
             title: "Aprobar y fortalecer políticas acertadas y leyes aplicables para promover la igualdad de género y el empoderamiento de todas las mujeres y las niñas a todos los niveles."
       goal_6:
         title: "Agua Limpia y Saneamiento"
-        multiline_title: "Agua Limpia\ny Saneamiento"
+        title_in_two_lines: "Agua Limpia\ny Saneamiento"
         description: "Garantizar la disponibilidad de agua y su gestión sostenible y el saneamiento para todos."
         targets:
           target_6_1:
@@ -143,7 +143,7 @@ es:
             title: "Apoyar y fortalecer la participación de las comunidades locales en la mejora de la gestión del agua y el saneamiento."
       goal_7:
         title: "Energía Asequible y No Contaminante"
-        multiline_title: "Energía Sostenible\ny No Contaminante"
+        title_in_two_lines: "Energía Sostenible\ny No Contaminante"
         description: "Garantizar el acceso a una energía asequible, segura, sostenible y moderna."
         targets:
           target_7_1:
@@ -158,7 +158,7 @@ es:
             title: "De aquí a 2030, ampliar la infraestructura y mejorar la tecnología para prestar servicios energéticos modernos y sostenibles para todos en los países en desarrollo, en particular los países menos adelantados, los pequeños Estados insulares en desarrollo y los países en desarrollo sin litoral, en consonancia con sus respectivos programas de apoyo."
       goal_8:
         title: "Trabajo Decente y Crecimiento Económico"
-        multiline_title: "Trabajo Decente\ny Crecimiento Económico"
+        title_in_two_lines: "Trabajo Decente\ny Crecimiento Económico"
         description: "Promover el crecimiento económico inclusivo y sostenible, el empleo y el trabajo decente para todos."
         targets:
           target_8_1:
@@ -187,7 +187,7 @@ es:
             title: "De aquí a 2020, desarrollar y poner en marcha una estrategia mundial para el empleo de los jóvenes y aplicar el Pacto Mundial para el Empleo de la Organización Internacional del Trabajo."
       goal_9:
         title: "Industria, Innovación e Infraestructuras"
-        multiline_title: "Industria, Innovación\ne Infraestructuras"
+        title_in_two_lines: "Industria, Innovación\ne Infraestructuras"
         description: "Construir infraestructuras resilientes, promover la industrialización sostenible y fomentar la innovación."
         targets:
           target_9_1:
@@ -208,7 +208,7 @@ es:
             title: "Aumentar significativamente el acceso a la tecnología de la información y las comunicaciones y esforzarse por proporcionar acceso universal y asequible a Internet en los países menos adelantados de aquí a 2020."
       goal_10:
         title: "Reducción de las Desigualdades"
-        multiline_title: "Reducción de las\nDesigualdades"
+        title_in_two_lines: "Reducción de las\nDesigualdades"
         description: "Reducir la desigualdad en y entre los países."
         targets:
           target_10_1:
@@ -233,7 +233,7 @@ es:
             title: "De aquí a 2030, reducir a menos del 3% los costos de transacción de las remesas de los migrantes y eliminar los corredores de remesas con un costo superior al 5%."
       goal_11:
         title: "Ciudades y Comunidades Sostenibles"
-        multiline_title: "Ciudades y Comunidades\nSostenibles"
+        title_in_two_lines: "Ciudades y Comunidades\nSostenibles"
         description: "Lograr que las ciudades sean más inclusivas, seguras, resilientes y sostenibles."
         targets:
           target_11_1:
@@ -258,7 +258,7 @@ es:
             title: "Proporcionar apoyo a los países menos adelantados, incluso mediante asistencia financiera y técnica, para que puedan construir edificios sostenibles y resilientes utilizando materiales locales."
       goal_12:
         title: "Producción y Consumo Responsables"
-        multiline_title: "Producción y Consumo\nResponsables"
+        title_in_two_lines: "Producción y Consumo\nResponsables"
         description: "Garantizar modalidades de consumo y producción sostenibles."
         targets:
           target_12_1:
@@ -285,7 +285,7 @@ es:
             title: "Racionalizar los subsidios ineficientes a los combustibles fósiles que fomentan el consumo antieconómico eliminando las distorsiones del mercado, de acuerdo con las circunstancias nacionales, incluso mediante la reestructuración de los sistemas tributarios y la eliminación gradual de los subsidios perjudiciales, cuando existan, para reflejar su impacto ambiental, teniendo plenamente en cuenta las necesidades y condiciones específicas de los países en desarrollo y minimizando los posibles efectos adversos en su desarrollo, de manera que se proteja a los pobres y a las comunidades afectadas."
       goal_13:
         title: "Acción Por el Clima"
-        multiline_title: "Acción\nPor el Clima"
+        title_in_two_lines: "Acción\nPor el Clima"
         description: "Adoptar medidas urgentes para combatir el cambio climático y sus efectos."
         targets:
           target_13_1:
@@ -300,7 +300,7 @@ es:
             title: "Promover mecanismos para aumentar la capacidad para la planificación y gestión eficaces en relación con el cambio climático en los países menos adelantados y los pequeños Estados insulares en desarrollo, haciendo particular hincapié en las mujeres, los jóvenes y las comunidades locales y marginadas."
       goal_14:
         title: "Vida Submarina"
-        multiline_title: "Vida\nSubmarina"
+        title_in_two_lines: "Vida\nSubmarina"
         description: "Conservar y utilizar sosteniblemente los océanos, los mares y los recursos marinos."
         targets:
           target_14_1:
@@ -325,7 +325,7 @@ es:
             title: "Mejorar la conservación y el uso sostenible de los océanos y sus recursos aplicando el derecho internacional reflejado en la Convención de las Naciones Unidas sobre el Derecho del Mar, que constituye el marco jurídico para la conservación y la utilización sostenible de los océanos y sus recursos, como se recuerda en el párrafo 158 del documento “El futuro que queremos”."
       goal_15:
         title: "Vida de Ecosistemas Terrestres"
-        multiline_title: "Vida de Ecosistemas\nTerrestres"
+        title_in_two_lines: "Vida de Ecosistemas\nTerrestres"
         description: "Gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras, detener la pérdida de biodiversidad."
         targets:
           target_15_1:
@@ -354,7 +354,7 @@ es:
             title: "Aumentar el apoyo mundial a la lucha contra la caza furtiva y el tráfico de especies protegidas, en particular aumentando la capacidad de las comunidades locales para promover oportunidades de subsistencia sostenibles."
       goal_16:
         title: "Paz, Justicia e Instituciones Sólidas"
-        multiline_title: "Paz, Justicia e\nInstituciones Sólidas"
+        title_in_two_lines: "Paz, Justicia e\nInstituciones Sólidas"
         description: "Promover sociedades justas, pacíficas e inclusivas."
         targets:
           target_16_1:
@@ -383,7 +383,7 @@ es:
             title: "Promover y aplicar leyes y políticas no discriminatorias en favor del desarrollo sostenible."
       goal_17:
         title: "Alianzas para Lograr los Objetivos"
-        multiline_title: "Alianzas para\nLograr los Objetivos"
+        title_in_two_lines: "Alianzas para\nLograr los Objetivos"
         description: "Revitalizar la Alianza Mundial para el Desarrollo Sostenible."
         targets:
           target_17_1:
