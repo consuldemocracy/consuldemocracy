@@ -325,6 +325,11 @@ pt-BR:
         description: "Descrição"
       sdg/local_target:
         code: "Código"
+        target_id: "Meta"
+        title: "Título"
+      sdg/local_target/translation:
+        title: "Título"
+        description: "Descrição"
       sdg/target:
         code: "Código"
         title: "Título"
