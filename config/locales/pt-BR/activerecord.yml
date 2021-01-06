@@ -2,8 +2,12 @@ pt-BR:
   attributes:
     geozone_id: "Escopo da operação"
     results_enabled: "Exibir resultados"
+    sdg_target_list: "Metas"
     stats_enabled: "Exibir estatísticas"
     advanced_stats_enabled: "Exibir estatísticas avançadas"
+    name: Nome
+    email: Email
+    description: Descrição
   activerecord:
     models:
       activity:
@@ -278,6 +282,7 @@ pt-BR:
         responsible_name: "Pessoa responsável pelo grupo"
       poll:
         name: "Nome"
+        title: "Nome"
         starts_at: "Data de início"
         ends_at: "Data de encerramento"
         geozone_restricted: "Restrito por geozona"
@@ -318,6 +323,8 @@ pt-BR:
         code: "Código"
         title: "Título"
         description: "Descrição"
+      sdg/local_target:
+        code: "Código"
       sdg/target:
         code: "Código"
         title: "Título"
