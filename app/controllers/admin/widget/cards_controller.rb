@@ -67,8 +67,4 @@ class Admin::Widget::CardsController < Admin::BaseController
     def page
       ::SiteCustomization::Page.find(@card.site_customization_page_id)
     end
-
-    def resource
-      Widget::Card.find(params[:id])
-    end
 end
