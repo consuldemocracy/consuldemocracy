@@ -1519,10 +1519,6 @@ en:
           cards_title: cards
           create_card: Create card
           no_cards: There are no cards.
-          title: Title
-          description: Description
-          link_text: Link text
-          link_url: Link URL
           columns_help: "Width of the card in number of columns. On mobile screens it's always a width of 100%."
           create:
             notice: "Card created successfully!"
@@ -1539,11 +1535,6 @@ en:
       cards_title: Cards
       create_card: Create card
       no_cards: There are no cards.
-      cards:
-        title: Title
-        description: Description
-        link_text: Link text
-        link_url: Link URL
       feeds:
         proposals: Proposals
         debates: Debates

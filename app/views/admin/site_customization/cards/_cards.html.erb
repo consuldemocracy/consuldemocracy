@@ -1,9 +1,9 @@
 <table>
   <thead>
     <tr>
-      <th><%= t("admin.site_customization.pages.cards.title") %></th>
-      <th class="small-4"><%= t("admin.site_customization.pages.cards.description") %></th>
-      <th><%= t("admin.site_customization.pages.cards.link_text") %> / <%= t("admin.site_customization.pages.cards.link_url") %></th>
+      <th><%= Widget::Card.human_attribute_name(:title) %></th>
+      <th class="small-4"><%= Widget::Card.human_attribute_name(:description) %></th>
+      <th><%= Widget::Card.human_attribute_name(:link_text) %> / <%= Widget::Card.human_attribute_name(:link_url) %></th>
       <th><%= t("admin.shared.image") %></th>
       <th class="small-2"><%= t("admin.shared.actions") %></th>
     </tr>

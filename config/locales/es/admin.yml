@@ -1518,10 +1518,6 @@ es:
           cards_title: tarjetas
           create_card: Crear tarjeta
           no_cards: No hay tarjetas.
-          title: Título
-          description: Descripción
-          link_text: Texto del enlace
-          link_url: URL del enlace
           columns_help: "Ancho de la tarjeta en número de columnas. En pantallas móviles siempre es un ancho del 100%."
           create:
             notice: "¡Tarjeta creada con éxito!"
@@ -1538,11 +1534,6 @@ es:
       cards_title: Tarjetas
       create_card: Crear tarjeta
       no_cards: No hay tarjetas.
-      cards:
-        title: Título
-        description: Descripción
-        link_text: Texto del enlace
-        link_url: URL del enlace
       feeds:
         proposals: Propuestas
         debates: Debates
