@@ -5,4 +5,10 @@ class Admin::Widget::Cards::TableComponent < ApplicationComponent
     @cards = cards
     @no_cards_message = no_cards_message
   end
+
+  private
+
+    def attribute_name(attribute)
+      ::Widget::Card.human_attribute_name(attribute)
+    end
 end
