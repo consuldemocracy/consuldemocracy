@@ -5,9 +5,6 @@ class Widget::Card < ApplicationRecord
     foreign_key: "site_customization_page_id",
     inverse_of:  :cards
 
-  # table_name must be set before calls to 'translates'
-  self.table_name = "widget_cards"
-
   translates :label,       touch: true
   translates :title,       touch: true
   translates :description, touch: true
