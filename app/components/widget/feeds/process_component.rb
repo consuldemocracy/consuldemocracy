@@ -1,4 +1,4 @@
-class Widgets::Feeds::ProcessComponent < ApplicationComponent
+class Widget::Feeds::ProcessComponent < ApplicationComponent
   attr_reader :process
 
   def initialize(process)
