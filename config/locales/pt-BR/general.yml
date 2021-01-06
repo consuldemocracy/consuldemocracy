@@ -250,6 +250,7 @@ pt-BR:
           other: Você tem %{count} novas notificações
         notifications: Notificações
         no_notifications: "Vocie nnao possui novas notificações"
+      sdg: "ODS (SDG)"
   notifications:
     index:
       empty_notifications: Você não possui novas notificações
