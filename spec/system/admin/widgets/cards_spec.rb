@@ -27,6 +27,15 @@ describe "Cards", :admin do
     end
   end
 
+  scenario "Create with errors", :js do
+    visit admin_homepage_path
+    click_link "Create card"
+    click_button "Create card"
+
+    expect(page).to have_text error_message
+    expect(page).to have_button "Create card"
+  end
+
   scenario "Index" do
     3.times { create(:widget_card) }
 
@@ -128,6 +137,15 @@ describe "Cards", :admin do
       within("#cards") do
         expect(page).to have_css(".homepage-card", count: 0)
       end
+    end
+
+    scenario "Create with errors", :js do
+      visit admin_homepage_path
+      click_link "Create header"
+      click_button "Create header"
+
+      expect(page).to have_text error_message
+      expect(page).to have_button "Create header"
     end
 
     context "Page card" do

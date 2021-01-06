@@ -14,6 +14,8 @@ class Widget::Card < ApplicationRecord
   translates :link_text,   touch: true
   include Globalizable
 
+  validates_translation :title, presence: true
+
   def self.header
     where(header: true)
   end
