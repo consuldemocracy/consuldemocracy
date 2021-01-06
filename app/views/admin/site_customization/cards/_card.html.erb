@@ -17,8 +17,6 @@
     <% end %>
   </td>
   <td>
-    <%= render Admin::TableActionsComponent.new(card,
-      edit_path: edit_admin_widget_card_path(card, page_id: params[:page_id])
-    ) %>
+    <%= render Admin::TableActionsComponent.new(card) %>
   </td>
 </tr>

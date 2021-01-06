@@ -30,7 +30,7 @@
         <td>
           <%= render Admin::TableActionsComponent.new(page) do |actions| %>
             <%= actions.link_to t("admin.site_customization.pages.page.see_cards"),
-                                admin_site_customization_page_cards_path(page),
+                                admin_site_customization_page_widget_cards_path(page),
                                 class: "cards-link" %>
 
             <% if page.status == "published" %>

@@ -164,6 +164,19 @@ describe "Polymorphic routes" do
       expect(admin_polymorphic_path(shift)).to eq(admin_booth_shift_path(booth, shift))
     end
 
+    it "routes widget cards" do
+      card = create(:widget_card)
+
+      expect(admin_polymorphic_path(card)).to eq(admin_widget_card_path(card))
+    end
+
+    it "routes site customization page widget cards" do
+      page = create(:site_customization_page)
+      card = create(:widget_card, page: page)
+
+      expect(admin_polymorphic_path(card)).to eq admin_site_customization_page_widget_card_path(page, card)
+    end
+
     it "supports routes for actions like edit" do
       proposal = create(:proposal)
       milestone = create(:milestone, milestoneable: proposal)
