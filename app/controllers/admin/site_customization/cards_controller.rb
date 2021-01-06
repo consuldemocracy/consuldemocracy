@@ -1,8 +1,8 @@
 class Admin::SiteCustomization::CardsController < Admin::SiteCustomization::BaseController
   skip_authorization_check
+  load_and_authorize_resource :page, class: "::SiteCustomization::Page"
+  load_and_authorize_resource :card, through: :page, class: "Widget::Card"
 
   def index
-    @page = ::SiteCustomization::Page.find(params[:page_id])
-    @cards = @page.cards
   end
 end
