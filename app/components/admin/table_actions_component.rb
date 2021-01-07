@@ -1,6 +1,7 @@
 class Admin::TableActionsComponent < ApplicationComponent
   include TableActionLink
   attr_reader :record, :options
+  delegate :namespace, to: :helpers
 
   def initialize(record = nil, **options)
     @record = record
@@ -18,7 +19,7 @@ class Admin::TableActionsComponent < ApplicationComponent
     end
 
     def edit_path
-      options[:edit_path] || admin_polymorphic_path(record, action: :edit)
+      options[:edit_path] || namespaced_polymorphic_path(namespace, record, action: :edit)
     end
 
     def edit_options
@@ -30,7 +31,7 @@ class Admin::TableActionsComponent < ApplicationComponent
     end
 
     def destroy_path
-      options[:destroy_path] || admin_polymorphic_path(record)
+      options[:destroy_path] || namespaced_polymorphic_path(namespace, record)
     end
 
     def destroy_options

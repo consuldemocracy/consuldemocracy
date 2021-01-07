@@ -39,9 +39,7 @@ module AdminHelper
     user_roles(user).join(", ")
   end
 
-  private
-
-    def namespace
-      controller.class.name.split("::").first.underscore
-    end
+  def namespace
+    controller.class.name.split("::").first.underscore
+  end
 end

@@ -18,3 +18,7 @@ namespace :sdg_management do
     get "#{type}/:id/edit", to: "relations#edit", as: "edit_#{type.singularize}"
   end
 end
+
+resolve "SDG::LocalTarget" do |target, options|
+  [:local_target, options.merge(id: target)]
+end

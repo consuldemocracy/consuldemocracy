@@ -4,6 +4,10 @@ describe Admin::Budgets::TableActionsComponent, type: :component do
   let(:budget) { create(:budget) }
   let(:component) { Admin::Budgets::TableActionsComponent.new(budget) }
 
+  before do
+    allow(ViewComponent::Base).to receive(:test_controller).and_return("Admin::BaseController")
+  end
+
   it "renders links to edit budget, manage investments and edit groups and manage ballots" do
     render_inline component
 

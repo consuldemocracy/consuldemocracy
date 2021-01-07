@@ -186,6 +186,16 @@ describe "Polymorphic routes" do
       )
     end
   end
+
+  describe "sdg_management_polymorphic_path" do
+    include ActionDispatch::Routing::UrlFor
+
+    it "routes local targets" do
+      target = create(:sdg_local_target)
+
+      expect(sdg_management_polymorphic_path(target)).to eq sdg_management_local_target_path(target)
+    end
+  end
 end
 
 def polymorphic_path(record, options = {})

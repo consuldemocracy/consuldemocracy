@@ -3,6 +3,10 @@ require "rails_helper"
 describe Admin::TableActionsComponent, type: :component do
   let(:record) { create(:banner) }
 
+  before do
+    allow(ViewComponent::Base).to receive(:test_controller).and_return("Admin::BaseController")
+  end
+
   it "renders links to edit and destroy a record by default" do
     render_inline Admin::TableActionsComponent.new(record)
 
@@ -64,5 +68,19 @@ describe Admin::TableActionsComponent, type: :component do
     expect(page).to have_link "Main", href: "/"
     expect(page).to have_link "Edit"
     expect(page).to have_link "Delete"
+  end
+
+  context "different namespace" do
+    before do
+      allow(ViewComponent::Base).to receive(:test_controller).and_return("SDGManagement::BaseController")
+    end
+
+    it "generates links to different namespaces" do
+      render_inline Admin::TableActionsComponent.new(create(:sdg_local_target))
+
+      expect(page).to have_css "a", count: 2
+      expect(page).to have_css "a[href^='/sdg_management/'][href*='edit']", text: "Edit"
+      expect(page).to have_css "a[href^='/sdg_management/'][data-method='delete']", text: "Delete"
+    end
   end
 end
