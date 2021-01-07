@@ -23,6 +23,8 @@ class Budget
     validates :budget, presence: true
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }
     validates :main_button_url, presence: true, if: -> { main_button_text.present? }
+    validates :starts_at, presence: true
+    validates :ends_at, presence: true
     validate :invalid_dates_range?
 
     scope :enabled,           -> { where(enabled: true) }
