@@ -3,6 +3,12 @@ de:
     ballots:
       show:
         title: Ihre Abstimmung
+        amount_available:
+          knapsack: "Sie können noch <span>%{count}</span> ausgeben."
+          approval:
+            zero: "Sie können noch <span>%{count}</span> Stimmen abgeben."
+            one: "Sie können noch <span>%{count}</span> Stimmen abgeben."
+            other: "Sie können noch <span>%{count}</span> Stimmen abgeben."
         no_balloted_group_yet: "Sie haben in dieser Gruppe noch nicht abgestimmt. Stimmen Sie jetzt ab!"
         remove: Stimme entfernen
         voted:
