@@ -145,6 +145,7 @@ de:
         success_notice: "Rubrik erfolgreich gelöscht"
         unable_notice: "Eine Rubrik mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden"
       form:
+        max_ballot_lines_info: 'Maximale Anzahl der Projekte die von User*innen in dieser Rubrik während der "Abstimnungsphase" ausgewählt werden können. Nur für Budgets, die zur Abstimmung zugelassen wurden.'
         population_info: "Das Feld 'Bevölkerung' in den Rubriken wird nur für statistische Zwecke verwendet, mit dem Ziel, den Prozentsatz der Stimmen in jeder Rubrik anzuzeigen, die ein Bevölkerungsgebiet darstellt. Dieses Feld ist optional; Sie können es daher leer lassen, wenn es nicht zutrifft."
         coordinates_info: "Wenn Längen- und Breitengrad angegeben sind, enthält die Seite des Ausgabenvorschlags für diese Rubrik eine Karte. Diese Karte wird mit diesen Koordinaten berechnet."
         content_blocks_info: "Wenn Inhaltsblock zulassen aktiviert ist, können Sie benutzerdefinierte Inhalte, die sich auf diese Rubrik beziehen, im Abschnitt Einstellungen> Benutzerdefinierte Inhaltsblöcke erstellen. Dieser Inhalt wird auf der Ausgabenvorschlagsseite für diese Rubrik angezeigt."
@@ -543,6 +544,7 @@ de:
           back: Zurück
           submit_button: Änderungen speichern
           warning: Sie haben den Text bearbeitet. Bitte klicken Sie nun auf speichern, um die Änderungen dauerhaft zu sichern.
+          markdown_changes_message: "Sie haben den Text bearbeitet, ohne diesen zu speichern. Wollen Sie die Seite dennoch verlassen?"
         form:
           title: 'Bearbeiten des <span class="strong">-%{draft_version_title}-</span> Beteiligungsverfahrens <span class="strong">%{process_title}</span>'
           launch_text_editor: Textbearbeitung öffnen
@@ -616,6 +618,12 @@ de:
         add: Hinzufügen
       search:
         title: "Manager*innen: Benutzer*innensuche"
+    sdg_managers:
+      index:
+        no_sdg_managers: Keine Benutzer*innen vorhanden.
+    sdg/managers:
+      sdg/manager:
+        add: Hinzufügen
     menu:
       activity: Aktivität der Moderator*innen
       admin: Admin-Menü
@@ -632,6 +640,7 @@ de:
       hidden_users: Verborgene Benutzer*innen
       administrators: Administrator*innen
       managers: Manager*innen
+      sdg_managers: SDG Managers 
       moderators: Moderator*innen
       messaging_users: Nachrichten an Benutzer*innen
       newsletters: Newsletter
@@ -1025,6 +1034,7 @@ de:
       edit:
         title: "Frage bearbeiten"
       new:
+        title: "Frage zur Umfrage erstellen %{poll}"
         title_proposal: "Frage erstellen"
       answers:
         images:
@@ -1189,6 +1199,15 @@ de:
           without_confirmed_hide: Ausstehend
         title: Verborgene Vorschläge
         no_hidden_proposals: Keine verborgenen Vorschläge vorhanden.
+    hidden_proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          with_confirmed_hide: Bestätigt
+          without_confirmed_hide: Ausstehend
+        title: Verborgene Benachrichtigungen
+        no_hidden_proposals: Keine verborgenen Benachrichtigungen vorhanden.
     settings:
       flash:
         updated: Wert aktualisiert
@@ -1217,6 +1236,9 @@ de:
         remote_census:
           title: Register Konfiguration entfernen
           how_to_enable: 'Um die Fernzählung (SOAP) zu konfigurieren, müssen Sie "Verbindung zur Fernzählung (SOAP) konfigurieren" auf der Registerkarte "Funktionen" aktivieren.'
+        sdg:
+          title: SDG Konfiguration
+          how_to_enable: 'Um die Konfigurationsoptionen von Sustainable Development Goals anzuzeigen, müssen Sie "SDG" auf der Registerkarte "Features" aktivieren.'
       remote_census_general_name: Allgemeine Informationen
       remote_census_request_name: Anfrage Daten
       remote_census_response_name: Antwort Daten
@@ -1230,9 +1252,14 @@ de:
       true_value: "Ja"
       false_value: "Nein"
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Alle Ziele"
         label:
           booths: "Suche Wahlkabine nach Name"
+          budget_investments: "Investitionen nach Titel, Beschreibung oder Überschrift suchen"
           debates: "Suche Debatten per Titel oder Beschreibung"
+          legislation_processes: "Suche Prozesse per Titel oder Beschreibung"
           local_census_records: "Suche per Dokumentennummer"
           organizations: "Name, E-Mail oder Telefonnummer"
           poll_officers: "Suche Beamte/innen"
