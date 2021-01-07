@@ -172,7 +172,7 @@ describe "Polymorphic routes" do
 
     it "routes site customization page widget cards" do
       page = create(:site_customization_page)
-      card = create(:widget_card, page: page)
+      card = create(:widget_card, cardable: page)
 
       expect(admin_polymorphic_path(card)).to eq admin_site_customization_page_widget_card_path(page, card)
     end
