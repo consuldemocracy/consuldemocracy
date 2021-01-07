@@ -2,8 +2,12 @@ de:
   attributes:
     geozone_id: "Rahmen der Operation"
     results_enabled: "Ergebnisse anzeigen"
+    sdg_target_list: "Ziele"
     stats_enabled: "Statistiken anzeigen"
     advanced_stats_enabled: "Erweiterte Statistiken anzeigen"
+    name: Name
+    email: E-Mail
+    description: Beschreibung
   activerecord:
     models:
       activity:
