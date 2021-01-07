@@ -4,6 +4,7 @@ namespace :sdg_management do
   resources :goals, only: [:index]
   resources :targets, only: [:index]
   resources :local_targets, except: [:show]
+  resource :homepage, controller: :homepage, only: [:show]
 
   types = SDG::Related::RELATABLE_TYPES.map(&:tableize)
   types_constraint = /#{types.join("|")}/

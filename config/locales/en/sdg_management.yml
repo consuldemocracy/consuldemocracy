@@ -4,6 +4,8 @@ en:
       edit: "Manage goals and targets"
     header:
       title: "SDG content"
+    homepage:
+      title: "Homepage configuration"
     menu:
       budget_investments: "Participatory budgets"
       debates: "Debates"
@@ -11,6 +13,7 @@ en:
       polls: "Polls"
       proposals: "Proposals"
       sdg_content: "Goals and Targets"
+      sdg_homepage: "SDG homepage"
     local_targets:
       create:
         notice: "Local target created successfully"
