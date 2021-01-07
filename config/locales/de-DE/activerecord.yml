@@ -76,6 +76,18 @@ de:
       proposal:
         one: "Bürgervorschlag"
         other: "Bürgervorschläge"
+      sdg/goal:
+        one: "Ziel"
+        other: "Ziele"
+      sdg/local_target:
+        one: "lokales Ziel"
+        other: "lokale Ziele"
+      sdg/manager:
+        one: "SDG Manager"
+        other: "SDG Managers "
+      sdg/target:
+        one: "Ziel"
+        other: "Ziele"
       site_customization/page:
         one: Meine Seite
         other: Meine Seiten
@@ -146,6 +158,8 @@ de:
         phase: "Phase"
         currency_symbol: "Währung"
         voting_style: "Finaler Abstimmungsstil"
+        voting_style_knapsack: "Rucksack"
+        voting_style_approval: "Freigabe"
       budget/translation:
         name: "Name"
       budget/investment:
@@ -274,6 +288,7 @@ de:
         responsible_name: "Der/die* Gruppenverantwortliche"
       poll:
         name: "Name"
+        title: "Name"
         starts_at: "Anfangsdatum"
         ends_at: "Enddatum"
         geozone_restricted: "Beschränkt auf Gebiete"
@@ -310,6 +325,20 @@ de:
         signable_type: "Unterschriftentyp"
         signable_id: "ID des Bürgervorschlags/Ausgabenvorschlags"
         document_numbers: "Dokumentennummern"
+      sdg/goal:
+        code: "Code"
+        title: "Titel"
+        description: "Beschreibung"
+      sdg/local_target:
+        code: "Code"
+        target_id: "Ziel"
+        title: "Titel"
+      sdg/local_target/translation:
+        title: "Titel"
+        description: "Beschreibung"
+      sdg/target:
+        code: "Code"
+        title: "Titel"
       site_customization/page:
         content: Inhalt
         created_at: Erstellt am
@@ -560,6 +589,10 @@ de:
           attributes:
             locale:
               already_translated: Bereits übersetzte Ressource
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "muss mit dem gleichen Code wie sein Ziel beginnen, gefolgt von einem Punkt und mit einer Zahl enden"
       messages:
         translations_too_short: Ist verpflichtet, mindestens eine Übersetzung zur Verfügung zu stellen
         record_invalid: "Validierung fehlgeschlagen: %{errors}"
