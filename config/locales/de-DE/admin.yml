@@ -1259,13 +1259,15 @@ de:
           booths: "Suche Wahlkabine nach Name"
           budget_investments: "Investitionen nach Titel, Beschreibung oder Überschrift suchen"
           debates: "Suche Debatten per Titel oder Beschreibung"
-          legislation_processes: "Suche Prozesse per Titel oder Beschreibung"
+          legislation_processes: "Suche Prozesse nach Titel oder Beschreibung"
           local_census_records: "Suche per Dokumentennummer"
           organizations: "Name, E-Mail oder Telefonnummer"
           poll_officers: "Suche Beamte/innen"
           poll_questions: "Suche Fragen"
+          polls: "Suche Umfragen nach Titel oder Beschreibung"
           proposals: "Suche Vorschläge nach Titel, Code, Beschreibung oder Frage"
           users: "Suche Benutzer*in nach Name oder E-Mail"
+        search: "Suche"
       search_results: "Ergebnisse anzeigen"
       no_search_results: "Keine Ergebnisse gefunden."
       actions: Aktionen
@@ -1417,6 +1419,8 @@ de:
         help: "Wenn ein*e Benutzer*in einen Vorschlag erstellt, werden die folgenden Themen als Standard-Tags vorgeschlagen."
     users:
       columns:
+        id: ID
+        erase_reason: Lösche Begründung
         name: Name
         email: E-Mail
         document_number: Dokumentennummern
@@ -1425,6 +1429,10 @@ de:
       index:
         title: Benutzer*in
         no_users: Keine Benutzer*innen vorhanden.
+        filter: Filter
+        filters:
+          active: Aktiv
+          erased: Gelöscht 
       search:
         placeholder: Suche Benutzer*in nach E-Mail, Name oder Ausweis
     verifications:
