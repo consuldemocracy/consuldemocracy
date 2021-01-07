@@ -6,11 +6,7 @@ class Image < ApplicationRecord
                                    large: "x#{Setting["uploads.images.min_height"]}",
                                    medium: "300x300#",
                                    thumb: "140x245#"
-                                 },
-                                 url: "/system/:class/:prefix/:style/:hash.:extension",
-                                 hash_data: ":class/:style",
-                                 use_timestamp: false,
-                                 hash_secret: Rails.application.secrets.secret_key_base
+                                 }
   attr_accessor :cached_attachment
 
   belongs_to :user
@@ -44,7 +40,7 @@ class Image < ApplicationRecord
     self.attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
                         File.open(cached_attachment)
                       else
-                        URI.parse(cached_attachment)
+                        open(URI.parse(cached_attachment))
                       end
   end
 

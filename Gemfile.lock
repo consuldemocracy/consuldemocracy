@@ -79,6 +79,22 @@ GEM
       activerecord (>= 4.2, < 6.1)
     autoprefixer-rails (8.2.0)
       execjs
+    aws-eventstream (1.1.0)
+    aws-partitions (1.418.0)
+    aws-sdk-core (3.111.2)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.239.0)
+      aws-sigv4 (~> 1.1)
+      jmespath (~> 1.0)
+    aws-sdk-kms (1.41.0)
+      aws-sdk-core (~> 3, >= 3.109.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.87.0)
+      aws-sdk-core (~> 3, >= 3.109.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.1)
+    aws-sigv4 (1.2.2)
+      aws-eventstream (~> 1, >= 1.0.2)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -296,6 +312,7 @@ GEM
       railties (>= 3.1, < 7.0)
     invisible_captcha (0.10.0)
       rails (>= 3.2.0)
+    jmespath (1.4.0)
     jquery-fileupload-rails (1.0.0)
       actionpack (>= 3.1)
       railties (>= 3.1)
@@ -636,6 +653,7 @@ DEPENDENCIES
   ancestry (~> 3.0.7)
   audited (~> 4.9.0)
   autoprefixer-rails (~> 8.2.0)
+  aws-sdk-s3
   bullet (~> 5.9.0)
   byebug (~> 11.1.1)
   cancancan (~> 2.3.0)
@@ -727,4 +745,4 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.4)
 
 BUNDLED WITH
-   1.17.1
+   1.17.3

@@ -1,10 +1,7 @@
 class Document < ApplicationRecord
   include DocumentsHelper
   include DocumentablesHelper
-  has_attached_file :attachment, url: "/system/:class/:prefix/:style/:hash.:extension",
-                                 hash_data: ":class/:style/:custom_hash_data",
-                                 use_timestamp: false,
-                                 hash_secret: Rails.application.secrets.secret_key_base
+  has_attached_file :attachment, hash_data: ":class/:style/:custom_hash_data"
   attr_accessor :cached_attachment, :remove, :original_filename
 
   belongs_to :user
@@ -38,7 +35,7 @@ class Document < ApplicationRecord
     self.attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
                         File.open(cached_attachment)
                       else
-                        URI.parse(cached_attachment)
+                        open(URI.parse(cached_attachment))
                       end
   end
 
