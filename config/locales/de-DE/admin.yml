@@ -128,6 +128,7 @@ de:
       form:
         create: "Neue Gruppe erstellen"
         edit: "Gruppe bearbeiten"
+        max_votable_headings_info: "Gilt nur für die Phase der Projektauswahl. Während der Phase \"Projekte wählen\" können Benutzer nur in einer Rubrik pro Gruppe abstimmen."
         submit: "Gruppe speichern"
       index:
         back: "Zurück zu Bürgerhaushalten"
