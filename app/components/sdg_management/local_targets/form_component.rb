@@ -1,5 +1,4 @@
 class SDGManagement::LocalTargets::FormComponent < ApplicationComponent
-  delegate :back_link_to, to: :helpers
   include Header
   include TranslatableFormHelper
   include GlobalizeHelper
