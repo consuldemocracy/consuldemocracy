@@ -55,6 +55,7 @@ describe Abilities::Everyone do
 
   it { should be_able_to(:read, SDG::Goal) }
   it { should_not be_able_to(:read, SDG::Target) }
+  it { should be_able_to(:read, SDG::Phase) }
 
   it { should_not be_able_to(:read, SDG::Manager) }
   it { should_not be_able_to(:create, SDG::Manager) }

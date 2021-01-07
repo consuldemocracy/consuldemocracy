@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_132909) do
+ActiveRecord::Schema.define(version: 2021_01_07_125458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1331,6 +1331,13 @@ ActiveRecord::Schema.define(version: 2021_01_06_132909) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sdg_managers_on_user_id", unique: true
+  end
+
+  create_table "sdg_phases", force: :cascade do |t|
+    t.integer "kind", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kind"], name: "index_sdg_phases_on_kind", unique: true
   end
 
   create_table "sdg_relations", force: :cascade do |t|
