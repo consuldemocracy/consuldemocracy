@@ -199,15 +199,19 @@
   }
 }
 
-@mixin hollow-button($color: $link) {
-  @include button($style: hollow, $background: $color);
+%button {
   font-size: $base-font-size;
-  margin-bottom: 0;
 
   &:focus,
   &:hover {
-    text-decoration: none;
+    text-decoration: none !important;
   }
+}
+
+@mixin hollow-button($color: $link) {
+  @include button($style: hollow, $background: $color);
+  @extend %button;
+  margin-bottom: 0;
 }
 
 @mixin header-font-size($heading-tag) {

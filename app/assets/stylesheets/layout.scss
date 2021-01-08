@@ -91,12 +91,8 @@ a {
 }
 
 .button {
+  @extend %button;
   background: $brand;
-  font-size: $base-font-size;
-
-  &:hover {
-    text-decoration: none !important;
-  }
 
   &.warning,
   &.warning:hover {
