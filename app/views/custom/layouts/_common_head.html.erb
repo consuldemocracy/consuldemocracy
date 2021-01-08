@@ -31,14 +31,17 @@
 
     $(document).on('ready page:load',function() {
       // Los enlaces internos no parecen funcionar bien dentro del iframe...
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      var links = document.querySelectorAll('a[href^="#"]');
+      for(var i =0;i<links.length;i++) {
+        var anchor = links[i];
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
           document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
           });
+          return false;
         });
-      });
+      }
 
       // Además incluimos la notificación de cambio de página...
       var _href = window.location.href;
