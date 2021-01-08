@@ -694,6 +694,8 @@ es:
       from: "Desde"
       general: "Con el texto"
       general_placeholder: "Escribe el texto"
+      goal: "Por ODS"
+      goal_blank: "Elige un objetivo"
       search: "Filtrar"
       title: "Búsqueda avanzada"
       to: "Hasta"

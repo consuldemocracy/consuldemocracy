@@ -1,4 +1,5 @@
 class Shared::AdvancedSearchComponent < ApplicationComponent
+  include SDG::Goals::OptionsForSelect
 
   private
 
@@ -27,5 +28,13 @@ class Shared::AdvancedSearchComponent < ApplicationComponent
 
     def custom_date_range?
       advanced_search[:date_max].present?
+    end
+
+    def goal_options
+      super(advanced_search[:goal])
+    end
+
+    def sdg?
+      SDG::ProcessEnabled.new(controller_path).enabled?
     end
 end

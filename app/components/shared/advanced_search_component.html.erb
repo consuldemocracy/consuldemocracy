@@ -20,6 +20,14 @@
                       include_blank: t("shared.advanced_search.author_type_blank")) %>
       </div>
 
+      <% if sdg? %>
+        <div class="filter">
+          <label for="advanced_search_goal"><%= t("shared.advanced_search.goal") %></label>
+          <%= select_tag("advanced_search[goal]", goal_options,
+                        include_blank: t("shared.advanced_search.goal_blank")) %>
+        </div>
+      <% end %>
+
       <div class="date-filters">
         <div class="filter">
           <label for="js-advanced-search-date-min"><%= t("shared.advanced_search.date") %></label>

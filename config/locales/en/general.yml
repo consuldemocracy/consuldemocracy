@@ -694,6 +694,8 @@ en:
       from: "From"
       general: "With the text"
       general_placeholder: "Write the text"
+      goal: "By SDG"
+      goal_blank: "Select a goal"
       search: "Filter"
       title: "Advanced search"
       to: "To"
