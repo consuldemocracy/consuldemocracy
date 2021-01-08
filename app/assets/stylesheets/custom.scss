@@ -1061,3 +1061,31 @@ body.iframed {
     }
   }
 }
+
+@mixin bocadillo($pctg) {
+  div.ellipse {
+    background-color: #45597e;
+    height: 392px * $pctg;
+    width: 570px * $pctg;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    transform: rotate(-10deg);
+    position: relative;
+    z-index: 2;
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 50px * $pctg solid transparent;
+      border-right: 50px * $pctg solid transparent;
+      border-top: 100px * $pctg solid #45597e;
+      display: block;
+      position: absolute;
+      right: 90px;
+      z-index: 1;
+      bottom: -60px;
+      transform: rotate(-30deg);
+    }
+  }
+}
