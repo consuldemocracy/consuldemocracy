@@ -1,1 +1,3 @@
-<%= link_list(*goals.map { |goal| [goal.code_and_title, sdg_goal_path(goal.code)] }) %>
+<div class="sdg-goals-index">
+  <%= link_list(*goal_links, class: "sdg-goal-list") %>
+</div>
