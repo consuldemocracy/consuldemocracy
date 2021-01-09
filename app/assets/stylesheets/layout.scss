@@ -73,15 +73,6 @@ a {
   &:active {
     color: $link-hover;
     text-decoration: underline;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: $link-hover;
-    }
   }
 
   &:focus {
@@ -2767,13 +2758,6 @@ table {
         color: $text;
         word-wrap: break-word;
       }
-    }
-  }
-
-  a:hover {
-
-    h3 {
-      color: #fff;
     }
   }
 
