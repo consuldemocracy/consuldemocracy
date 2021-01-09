@@ -36,3 +36,8 @@
 public/sitemap.xml
 public/system/
 /public/ckeditor_assets/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
