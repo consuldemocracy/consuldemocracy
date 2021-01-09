@@ -6,6 +6,8 @@ en:
       title: "SDG content"
     homepage:
       title: "Homepage configuration"
+      create_card: "Create %{phase} card"
+      no_cards: "There are no cards for this phase"
     menu:
       budget_investments: "Participatory budgets"
       debates: "Debates"

@@ -6,5 +6,7 @@ class Abilities::SDG::Manager
 
     can :read, ::SDG::Target
     can :manage, ::SDG::LocalTarget
+    can [:read, :update, :destroy], Widget::Card, cardable_type: "SDG::Phase"
+    can(:create, Widget::Card) { |card| card.cardable_type == "SDG::Phase" }
   end
 end

@@ -6,6 +6,8 @@ es:
       title: "Contenido ODS"
     homepage:
       title: "Configuración de la página de inicio"
+      create_card: "Crear tarjeta de %{phase}"
+      no_cards: "No hay tarjetas para esta fase"
     menu:
       budget_investments: "Presupuestos participativos"
       debates: "Debates"

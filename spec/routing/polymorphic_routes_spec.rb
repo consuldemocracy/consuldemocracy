@@ -195,6 +195,15 @@ describe "Polymorphic routes" do
 
       expect(sdg_management_polymorphic_path(target)).to eq sdg_management_local_target_path(target)
     end
+
+    it "routes SDG phases widget cards" do
+      phase = SDG::Phase.sample
+      card = create(:widget_card, cardable: phase)
+
+      expect(sdg_management_polymorphic_path(card)).to eq(
+        sdg_management_sdg_phase_widget_card_path(phase, card)
+      )
+    end
   end
 end
 

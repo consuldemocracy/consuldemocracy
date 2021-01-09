@@ -208,6 +208,11 @@
   }
 }
 
+@mixin regular-button($color: $brand) {
+  @include button($background: $color);
+  @extend %button;
+}
+
 @mixin hollow-button($color: $link) {
   @include button($style: hollow, $background: $color);
   @extend %button;
