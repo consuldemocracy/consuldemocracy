@@ -21,10 +21,8 @@ describe SDGManagement::SubnavigationComponent, type: :component do
   end
 
   it "renders given block within active panel" do
-    render_inline component
+    render_inline(component) { "Tab content" }
 
-    within "#goals.tabs-panel.is-active" do
-      expect(page).to have_content("Tab content")
-    end
+    expect(page.find(".tabs-panel.is-active")).to have_content("Tab content")
   end
 end

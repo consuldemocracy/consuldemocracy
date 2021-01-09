@@ -7,10 +7,12 @@ describe Admin::Poll::Officers::OfficersComponent, type: :component do
   let(:component) { Admin::Poll::Officers::OfficersComponent.new(officers) }
 
   it "renders as many rows as officers" do
-    within "tbody" do
-      expect(page).to have_css "tr", count: 2
-      expect(page).to have_css "a", count: 2
-    end
+    render_inline component
+
+    tbody = page.find("tbody")
+
+    expect(tbody).to have_css "tr", count: 2
+    expect(tbody).to have_css "a", count: 2
   end
 
   it "renders link to destroy for existing officers" do
