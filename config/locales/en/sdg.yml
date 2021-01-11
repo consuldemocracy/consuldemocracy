@@ -424,3 +424,9 @@ en:
             title: "By 2020, enhance capacity-building support to developing countries, including for least developed countries and small island developing States, to increase significantly the availability of high-quality, timely and reliable data disaggregated by income, gender, age, race, ethnicity, migratory status, disability, geographic location and other characteristics relevant in national contexts."
           target_17_19:
             title: "By 2030, build on existing initiatives to develop measurements of progress on sustainable development that complement gross domestic product, and support statistical capacity-building in developing countries."
+      filter:
+        heading: "Filters by SDG"
+        link: "See all %{resources} related to goal %{code}"
+        more:
+          one: "One more goal"
+          other: "%{count} more goals"

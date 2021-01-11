@@ -5,14 +5,16 @@
     <% taggable.tag_list_with_limit(limit).each do |tag| %>
       <li class="inline-block">
         <%= link_to sanitize(tag.name),
-                    taggables_path(taggable.class.name.underscore, tag.name) %></li>
+                    polymorphic_path(taggable.class, search: tag.name) %></li>
     <% end %>
 
     <% if taggable.tags_count_out_of_limit(limit) > 0 %>
       <li class="inline-block">
         <%= link_to "#{taggable.tags_count_out_of_limit(limit)}+",
-                    taggable_path(taggable) %>
+                    polymorphic_path(taggable) %>
       </li>
     <% end %>
   </ul>
 <% end %>
+
+<%= render SDG::Goals::TagListComponent.new(taggable, limit: limit) %>
