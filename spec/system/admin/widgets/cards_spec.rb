@@ -5,6 +5,8 @@ describe "Cards", :admin do
     visit admin_homepage_path
     click_link "Create card"
 
+    expect(page).to have_link("Go back", href: admin_homepage_path)
+
     fill_in "Label (optional)", with: "Card label"
     fill_in "Title", with: "Card text"
     fill_in "Description", with: "Card description"
@@ -73,6 +75,8 @@ describe "Cards", :admin do
     within("#widget_card_#{card.id}") do
       click_link "Edit"
     end
+
+    expect(page).to have_link("Go back", href: admin_homepage_path)
 
     within(".translatable-fields") do
       fill_in "Label (optional)", with: "Card label updated"
@@ -160,6 +164,9 @@ describe "Cards", :admin do
 
         click_link "Create card"
 
+        expect(page).to have_link("Go back",
+          href: admin_site_customization_page_widget_cards_path(custom_page))
+
         fill_in "Title", with: "Card for a custom page"
         click_button "Create card"
 
@@ -204,6 +211,9 @@ describe "Cards", :admin do
         expect(page).to have_content("Original title")
 
         click_link "Edit"
+
+        expect(page).to have_link("Go back",
+          href: admin_site_customization_page_widget_cards_path(custom_page))
 
         within(".translatable-fields") do
           fill_in "Title", with: "Updated title"
