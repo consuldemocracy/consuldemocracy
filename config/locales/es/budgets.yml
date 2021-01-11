@@ -1,5 +1,11 @@
 es:
   budgets:
+    valladolid:
+      my_voice: Mi voz
+      va_logo: Va!
+      budgets: Presupuestos participativos
+      descr_html: "Ahora <em>yo decido</em> como mejorar <strong>mi barrio</strong> con los <em>presupuestos participativos</em>"
+      knowmore: Informate
     ballots:
       show:
         title: Mis votos

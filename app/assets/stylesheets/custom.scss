@@ -491,6 +491,7 @@ body.management .admin-content {
     }
     .img {
       padding-right: 0px;
+      padding-left: 0px;
       .img-holder {
         width: 100%;
         height: 100%;
@@ -1059,5 +1060,152 @@ body.iframed {
     .menu.vertical li {
       margin-bottom: 0.3rem;
     }
+  }
+}
+
+@mixin bocadillo($pctg, $participacion-bg-color: #E6118F) {
+  height: 392px * $pctg;
+  width: 570px * $pctg;
+  margin-left: auto;
+  margin-right: auto;
+
+  > div.ellipse {
+    background-color: $participacion-bg-color;
+    height: 392px * $pctg;
+    width: 570px * $pctg;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    transform: rotate(-10deg);
+    position: absolute;
+    z-index: 2;
+
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 50px * $pctg solid transparent;
+      border-right: 50px * $pctg solid transparent;
+      border-top: 100px * $pctg solid $participacion-bg-color;
+      display: block;
+      position: absolute;
+      right: 90px * $pctg;
+      z-index: 1;
+      bottom: -60px * $pctg;
+      transform: rotate(-30deg);
+    }
+
+  }
+  > div.bocadillo-text {
+    padding-top: 20%;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    > h2.heading {
+      font-family: "Nunito Black";
+      font-size: 90px * $pctg;
+      font-weight: bold;
+      text-transform: uppercase;
+      transform: scaleY(1.2);
+      position: relative;
+      color: yellow !important;
+      display: block;
+      margin-bottom: 0px;
+      line-height: 1.1;
+    }
+
+    > p.text,
+    > p.text-small,
+    > div.actions {
+      text-align: left;
+      padding: 0px;
+      padding-left: 89px * $pctg;
+      padding-right: 77px * $pctg;
+      font-family: "Nunito Bold";
+      color: white;
+      font-size: 30px * $pctg;
+      margin-bottom: 0px;
+
+      line-height: 1.1;
+
+      em {
+        text-transform: none;
+        font-style: normal;
+        color: yellow;
+        font-size: 31px * $pctg;
+      }
+      strong {
+        color: inherit !important;
+        font-size: 31px * $pctg;
+        font-family: "Nunito Black";
+      }
+    }
+    > p.text-small {
+      font-size: 26px * $pctg;
+      em {
+        font-size: 28px * $pctg;
+      }
+    }
+    > div.actions {
+      margin-top: 6px;
+      font-size: 28px * $pctg;
+      .call {
+        background: yellow;
+        color: $participacion-bg-color;
+        text-transform: uppercase;
+        padding: 0 6px;
+      }
+      a.phone {
+        &:before {
+          content: '\f095';
+          font-family: "Font Awesome 5 Free";
+          display: inline-block;
+          padding: 0 6px;
+          transform: rotate(90deg);
+        }
+        color: yellow !important;
+        font-size: inherit !important;
+      }
+    }
+  }
+
+}
+
+@mixin bocadillo-wrapper($default-bocadillos-size) {
+  $main-color: #E6118F;
+  margin-top: 20px;
+  @include bocadillo($default-bocadillos-size,$main-color);
+  .small-bocadillo {
+    @include bocadillo($default-bocadillos-size/4,white);
+    display: inline-block;
+    position: relative;
+    top:  - rem-calc(70 * $default-bocadillos-size);
+    right: 15px;
+    > div.ellipse {
+      transform: rotateZ(10deg) rotateY(-180deg);
+    }
+    > div.bocadillo-text {
+      > div.title {
+        color: $main-color;
+        font-size: 60px * $default-bocadillos-size;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 0px;
+        text-decoration: none;
+        border-bottom: 0px;
+        letter-spacing: -1px;
+      }
+    }
+  }
+}
+
+.main-bocadillo {
+  @include bocadillo-wrapper(0.5);
+  @media screen and (min-width: 40rem) {
+    @include bocadillo-wrapper(0.35);
+  }
+  @media screen and (min-width: 60rem) {
+    @include bocadillo-wrapper(0.45);
   }
 }
