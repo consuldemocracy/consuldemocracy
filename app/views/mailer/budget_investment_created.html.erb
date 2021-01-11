@@ -16,6 +16,10 @@
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= sanitize(t("mailers.budget_investment_created.text2")) %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
     <%= sanitize(t("mailers.budget_investment_created.follow",
            link: link_to(t("mailers.budget_investment_created.follow_link"), budgets_url))) %>
   </p>

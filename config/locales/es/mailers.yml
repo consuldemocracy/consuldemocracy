@@ -48,6 +48,7 @@ es:
       title: "¡Gracias por crear un proyecto!"
       intro: "Hola <strong>%{author}</strong>,"
       text: "Muchas gracias por crear tu proyecto <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
+      text2: "También puedes <strong>formar parte del proceso de elección de proyectos</strong>, apuntándote a las mesas de zona, que este año serán por vídeo-conferencia. Para ello, manda un correo a <a href=\"mailto:presupuestosparticipativos@ava.es?Subject=Quiero%20participar%20en%20las%20mesas%20de%20zona%20online\">presupuestosparticipativos@ava.es</a>."
       follow: "Te informaremos de cómo avanza el proceso, que también puedes seguir en la página de <strong>%{link}</strong>."
       follow_link: "Presupuestos participativos"
       sincerely: "Atentamente,"
