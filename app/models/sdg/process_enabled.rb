@@ -21,11 +21,19 @@ class SDG::ProcessEnabled
   private
 
     def process_name
-      if module_name == "Legislation"
-        "legislation"
+      if controller_path_name?
+        name.split("/").first
       else
-        module_name.constantize.table_name
+        if module_name == "Legislation"
+          "legislation"
+        else
+          module_name.constantize.table_name
+        end
       end
+    end
+
+    def controller_path_name?
+      name == name.downcase
     end
 
     def module_name

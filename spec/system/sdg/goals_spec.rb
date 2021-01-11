@@ -3,6 +3,8 @@ require "rails_helper"
 describe "SDG Goals", :js do
   before do
     Setting["feature.sdg"] = true
+    Setting["sdg.process.debates"] = true
+    Setting["sdg.process.proposals"] = true
   end
 
   describe "SDG navigation link" do
@@ -75,6 +77,10 @@ describe "SDG Goals", :js do
         expect(page).not_to have_content "Solar panels"
       end
 
+      within "#advanced_search_form" do
+        expect(page).to have_select "By SDG", selected: "15. Life on Land"
+      end
+
       go_back
 
       click_link "See all proposals"
@@ -82,6 +88,10 @@ describe "SDG Goals", :js do
       within "#proposals" do
         expect(page).to have_content "Animal farm"
         expect(page).not_to have_content "Sea farm"
+      end
+
+      within "#advanced_search_form" do
+        expect(page).to have_select "By SDG", selected: "15. Life on Land"
       end
     end
   end

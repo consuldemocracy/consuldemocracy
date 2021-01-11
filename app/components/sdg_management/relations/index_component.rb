@@ -1,5 +1,6 @@
 class SDGManagement::Relations::IndexComponent < ApplicationComponent
   include Header
+  include SDG::Goals::OptionsForSelect
 
   attr_reader :records
 
@@ -47,7 +48,7 @@ class SDGManagement::Relations::IndexComponent < ApplicationComponent
     end
 
     def goal_options
-      options_from_collection_for_select(SDG::Goal.all, :code, :code_and_title, params[:goal_code])
+      super(params[:goal_code])
     end
 
     def target_options
