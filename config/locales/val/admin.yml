@@ -984,6 +984,7 @@ val:
       search:
         label:
           booths: "Cercar urna per nom"
+          debates: "Busca debats per títol o descripció"
           organizations: "Nom, email o telèfon"
           poll_officers: "Cercar presidents de taula"
           poll_questions: "Cercar preguntes"
