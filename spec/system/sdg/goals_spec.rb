@@ -32,6 +32,17 @@ describe "SDG Goals", :js do
 
       expect(page).to have_current_path sdg_goal_path(7)
     end
+
+    scenario "has cards for phases" do
+      create(:widget_card, cardable: SDG::Phase["planning"], title: "Planning card")
+
+      visit sdg_goals_path
+
+      within "#sdg_phase_planning" do
+        expect(page).to have_css "header", exact_text: "Planning"
+        expect(page).to have_content "PLANNING CARD"
+      end
+    end
   end
 
   describe "Show" do

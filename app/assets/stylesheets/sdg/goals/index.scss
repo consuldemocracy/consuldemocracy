@@ -22,4 +22,13 @@
       }
     }
   }
+
+  .sdg-phase {
+    @include grid-row;
+    @include grid-column-gutter;
+
+    .cards-container {
+      @include grid-row-nest;
+    }
+  }
 }

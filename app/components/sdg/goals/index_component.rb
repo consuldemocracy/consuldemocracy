@@ -1,9 +1,10 @@
 class SDG::Goals::IndexComponent < ApplicationComponent
-  attr_reader :goals
+  attr_reader :goals, :phases
   delegate :link_list, to: :helpers
 
-  def initialize(goals)
+  def initialize(goals, phases)
     @goals = goals
+    @phases = phases
   end
 
   private
