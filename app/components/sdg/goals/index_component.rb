@@ -9,6 +9,10 @@ class SDG::Goals::IndexComponent < ApplicationComponent
 
   private
 
+    def title
+      t("sdg.goals.title")
+    end
+
     def goal_links
       goals.map { |goal| goal_link(goal) }
     end
