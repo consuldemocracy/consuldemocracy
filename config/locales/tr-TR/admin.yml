@@ -1453,10 +1453,6 @@ tr:
           cards_title: kartlar
           create_card: Kart oluştur
           no_cards: Kart yok.
-          title: Başlık
-          description: Tanımlama
-          link_text: Bağlantı metni
-          link_url: Bağlantı Adresi
           columns_help: "Sütün sayılarında kartın genişliği. Mobil ekranlarda her zaman %100 genişliğindedir."
           create:
             notice: "Kart başarıyla oluşturuldu!"
@@ -1473,11 +1469,6 @@ tr:
       cards_title: Kartlar
       create_card: Kart oluştur
       no_cards: Kart yok.
-      cards:
-        title: Başlık
-        description: Tanımlama
-        link_text: Bağlantı metni
-        link_url: Bağlantı Adresi
       feeds:
         proposals: Öneriler
         debates: Tartışmalar
