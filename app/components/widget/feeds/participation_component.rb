@@ -1,4 +1,4 @@
-class Widgets::Feeds::ParticipationComponent < ApplicationComponent
+class Widget::Feeds::ParticipationComponent < ApplicationComponent
   attr_reader :feeds
 
   def initialize(feeds)

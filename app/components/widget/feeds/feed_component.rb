@@ -1,4 +1,4 @@
-class Widgets::Feeds::FeedComponent < ApplicationComponent
+class Widget::Feeds::FeedComponent < ApplicationComponent
   attr_reader :feed
   delegate :kind, to: :feed
 
@@ -15,11 +15,11 @@ class Widgets::Feeds::FeedComponent < ApplicationComponent
     def item_component_class
       case kind
       when "proposals"
-        Widgets::Feeds::ProposalComponent
+        Widget::Feeds::ProposalComponent
       when "debates"
-        Widgets::Feeds::DebateComponent
+        Widget::Feeds::DebateComponent
       when "processes"
-        Widgets::Feeds::ProcessComponent
+        Widget::Feeds::ProcessComponent
       end
     end
 

@@ -9,6 +9,10 @@ describe Widget::Card do
     it "is valid" do
       expect(card).to be_valid
     end
+
+    it "is not valid without a title" do
+      expect(build(:widget_card, title: "")).not_to be_valid
+    end
   end
 
   describe "#header" do

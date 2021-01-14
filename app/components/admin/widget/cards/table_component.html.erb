@@ -1,0 +1,22 @@
+<% if cards.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= attribute_name(:title) %></th>
+        <th class="small-4"><%= attribute_name(:description) %></th>
+        <th><%= attribute_name(:link_text) %> / <%= attribute_name(:link_url) %></th>
+        <th><%= t("admin.shared.image") %></th>
+        <th><%= t("admin.shared.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% cards.each do |card| %>
+        <%= render Admin::Widget::Cards::RowComponent.new(card) %>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary clear">
+    <%= no_cards_message %>
+  </div>
+<% end %>

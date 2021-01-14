@@ -227,7 +227,7 @@ namespace :admin do
 
   namespace :site_customization do
     resources :pages, except: [:show] do
-      resources :cards, only: [:index]
+      resources :cards, except: [:show], as: :widget_cards
     end
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
@@ -268,6 +268,10 @@ end
 
 resolve "Audit" do |audit|
   [*resource_hierarchy_for(audit.associated || audit.auditable), audit]
+end
+
+resolve "Widget::Card" do |card, options|
+  [*resource_hierarchy_for(card.page), card]
 end
 
 resolve "Budget::Group" do |group, options|

@@ -1,9 +1,9 @@
 require "rails_helper"
 
-describe Widgets::Feeds::FeedComponent, type: :component do
+describe Widget::Feeds::FeedComponent, type: :component do
   it "renders a message when there are no items" do
     feed = double(kind: "debates", items: [])
-    component = Widgets::Feeds::FeedComponent.new(feed)
+    component = Widget::Feeds::FeedComponent.new(feed)
 
     render_inline component
 
@@ -15,7 +15,7 @@ describe Widgets::Feeds::FeedComponent, type: :component do
       let(:feed) { Widget::Feed.new(kind: "debates") }
 
       it "points to the debates path for homepage debates feeds" do
-        component = Widgets::Feeds::FeedComponent.new(feed)
+        component = Widget::Feeds::FeedComponent.new(feed)
 
         render_inline component
 
@@ -23,7 +23,7 @@ describe Widgets::Feeds::FeedComponent, type: :component do
       end
 
       it "points to the debates filtered by goal for goal feeds" do
-        component = Widgets::Feeds::FeedComponent.new(SDG::Widget::Feed.new(feed, SDG::Goal[6]))
+        component = Widget::Feeds::FeedComponent.new(SDG::Widget::Feed.new(feed, SDG::Goal[6]))
 
         render_inline component
 
@@ -35,7 +35,7 @@ describe Widgets::Feeds::FeedComponent, type: :component do
       let(:feed) { Widget::Feed.new(kind: "proposals") }
 
       it "points to the proposals path for homepage proposals feeds" do
-        component = Widgets::Feeds::FeedComponent.new(feed)
+        component = Widget::Feeds::FeedComponent.new(feed)
 
         render_inline component
 
@@ -43,7 +43,7 @@ describe Widgets::Feeds::FeedComponent, type: :component do
       end
 
       it "points to the proposals filtered by goal for goal feeds" do
-        component = Widgets::Feeds::FeedComponent.new(SDG::Widget::Feed.new(feed, SDG::Goal[6]))
+        component = Widget::Feeds::FeedComponent.new(SDG::Widget::Feed.new(feed, SDG::Goal[6]))
 
         render_inline component
 
@@ -55,7 +55,7 @@ describe Widgets::Feeds::FeedComponent, type: :component do
       let(:feed) { Widget::Feed.new(kind: "processes") }
 
       it "points to the legislation processes path for homepage processes feeds" do
-        component = Widgets::Feeds::FeedComponent.new(feed)
+        component = Widget::Feeds::FeedComponent.new(feed)
 
         render_inline component
 
@@ -63,7 +63,7 @@ describe Widgets::Feeds::FeedComponent, type: :component do
       end
 
       it "points to the legislation processes path for goal processes feeds" do
-        component = Widgets::Feeds::FeedComponent.new(SDG::Widget::Feed.new(feed, SDG::Goal[6]))
+        component = Widget::Feeds::FeedComponent.new(SDG::Widget::Feed.new(feed, SDG::Goal[6]))
 
         render_inline component
 

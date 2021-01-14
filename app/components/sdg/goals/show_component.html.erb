@@ -9,11 +9,11 @@
     </header>
   </article>
 
-  <%= render Widgets::Feeds::ParticipationComponent.new(feeds) %>
+  <%= render Widget::Feeds::ParticipationComponent.new(feeds) %>
 
   <% if processes_feed %>
     <div class="feeds-list">
-      <%= render Widgets::Feeds::FeedComponent.new(processes_feed) %>
+      <%= render Widget::Feeds::FeedComponent.new(processes_feed) %>
     </div>
   <% end %>
 </div>
