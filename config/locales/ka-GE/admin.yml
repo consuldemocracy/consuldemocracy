@@ -1490,10 +1490,6 @@ ka:
           cards_title: ბარათები
           create_card: ბარათის შექმნა
           no_cards: ბარათები არ მოიძებნა.
-          title: სათაური
-          description: აღწერა
-          link_text: ბმულის დასახელება
-          link_url: ბმულის მისამართი (URL)
           columns_help: "ბარათის სიგანე სვეტების რაოდენობის მიხედვით. მობილურ ვერსიაზე სიგანე ყოველთვის 100%-ია."
           create:
             notice: "ბარათი წარმატებით შეიქმნა!"
@@ -1510,11 +1506,6 @@ ka:
       cards_title: ბარათები
       create_card: ბარათის შექმნა
       no_cards: ბარათები არ მოიძებნა.
-      cards:
-        title: სათაური
-        description: აღწერა
-        link_text: ბმულის დასახელება
-        link_url: ბმულის მისამართი (URL)
       feeds:
         proposals: ინიციატივები
         debates: დებატები
