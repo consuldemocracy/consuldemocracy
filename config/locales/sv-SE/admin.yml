@@ -1479,10 +1479,6 @@ sv:
           cards_title: kort
           create_card: Skapa kort
           no_cards: Det finns inga kort.
-          title: Titel
-          description: Beskrivning
-          link_text: Länktext
-          link_url: Länk-URL
           columns_help: "Kortets bredd i antal kolumner. På mobilskärmar är det alltid en bredd om 100 %."
           create:
             notice: "Kortet har skapats!"
@@ -1499,11 +1495,6 @@ sv:
       cards_title: Kort
       create_card: Skapa kort
       no_cards: Det finns inga kort.
-      cards:
-        title: Titel
-        description: Beskrivning
-        link_text: Länktext
-        link_url: Länk-URL
       feeds:
         proposals: Förslag
         debates: Debatter
