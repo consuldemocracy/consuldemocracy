@@ -1263,10 +1263,6 @@ nl:
           cards_title: tegels
           create_card: Kaart aanmaken
           no_cards: Er zijn geen tegels.
-          title: Title
-          description: Beschrijving
-          link_text: Tekst link
-          link_url: URL link
           columns_help: "Breedte van de tegel in aantal kolommen. Op mobiele schermen worden tegels altijd op 100% breedte getoond."
           create:
             notice: "Tegel aangemaakt"
@@ -1283,11 +1279,6 @@ nl:
       cards_title: Tegels
       create_card: Kaart aanmaken
       no_cards: Er zijn geen tegels.
-      cards:
-        title: Title
-        description: Beschrijving
-        link_text: Tekst link
-        link_url: URL link
       feeds:
         proposals: Proposals
         debates: Discussie
