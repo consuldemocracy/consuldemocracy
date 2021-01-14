@@ -1276,10 +1276,6 @@ cs:
           cards_title: karty
           create_card: Vytvořit kartu
           no_cards: Nemáte žádnou kartu.
-          title: Předmět
-          description: Description
-          link_text: Link text
-          link_url: Link URL
           columns_help: "Šířka karty v počtu sloupců. Na mobilních obrazovkách je vždy šířka 100 %."
           create:
             notice: "Karta úspěšně vytvořena!"
@@ -1296,11 +1292,6 @@ cs:
       cards_title: Karty
       create_card: Vytvořit kartu
       no_cards: Nemáte žádné karty.
-      cards:
-        title: Předmět
-        description: Description
-        link_text: Link text
-        link_url: Link URL
       feeds:
         proposals: Návrhy
         debates: Debaty
