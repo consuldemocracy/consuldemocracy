@@ -989,11 +989,6 @@ eu:
       cards_title: Txartelak
       create_card: Txartela sortu
       no_cards: Ez dago txartelik.
-      cards:
-        title: Izenburua
-        description: Deskribapena
-        link_text: Lotura testua
-        link_url: Lotura URLa
       feeds:
         proposals: Proposamenak
         debates: Eztabaidak
