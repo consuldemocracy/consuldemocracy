@@ -1263,10 +1263,6 @@ pl:
           cards_title: karty
           create_card: Utwórz kartę
           no_cards: Nie ma kart.
-          title: Tytuł
-          description: Opis
-          link_text: Tekst łącza
-          link_url: Łącze URL
           columns_help: "Szerokość karty w liczbie kolumn. Na smartfonie screeny są zawsze o szerokości 100%."
           create:
             notice: "Strona utworzona pomyślnie!"
@@ -1283,11 +1279,6 @@ pl:
       cards_title: Karty
       create_card: Utwórz kartę
       no_cards: Nie ma kart.
-      cards:
-        title: Tytuł
-        description: Opis
-        link_text: Tekst łącza
-        link_url: Łącze URL
       feeds:
         proposals: Wnioski
         debates: Debaty
