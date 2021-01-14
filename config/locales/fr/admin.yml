@@ -1320,10 +1320,6 @@ fr:
           cards_title: cartes
           create_card: Créer un encart
           no_cards: Il n'y a pas d'encarts.
-          title: Titre
-          description: Description
-          link_text: Texte du lien
-          link_url: Url du lien
     homepage:
       title: Page d’accueil
       description: Les modules actifs apparaissent dans la page d’accueil dans le même ordre, comme en l’espèce.
@@ -1333,11 +1329,6 @@ fr:
       cards_title: Mosaïque
       create_card: Créer un encart
       no_cards: Il n'y a pas d'encarts.
-      cards:
-        title: Titre
-        description: Description
-        link_text: Texte du lien
-        link_url: Url du lien
       feeds:
         proposals: Propositions
         debates: Débats
