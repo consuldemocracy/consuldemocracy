@@ -952,13 +952,7 @@ es-PE:
           status: Estado
           updated_at: Última actualización
           title: Título
-        cards:
-          title: Título
-          description: Descripción detallada
     homepage:
-      cards:
-        title: Título
-        description: Descripción detallada
       feeds:
         proposals: Propuestas
         processes: Procesos
