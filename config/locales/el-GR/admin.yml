@@ -1384,10 +1384,6 @@ el:
           cards_title: κάρτες
           create_card: Δημιουργία κάρτας
           no_cards: Δεν υπάρχουν κάρτες.
-          title: Τίτλος
-          description: Περιγραφή
-          link_text: Σύνδεσμος κειμένου
-          link_url: Σύνδεσμος URL
           columns_help: "Πλάτος της κάρτας σε αριθμό στηλών. Σε οθόνες κινητών είναι πάντα πλάτος 100%."
           create:
             notice: "Η κάρτα δημιουργήθηκε με επιτυχία!"
@@ -1404,11 +1400,6 @@ el:
       cards_title: Κάρτες
       create_card: Δημιουργία κάρτας
       no_cards: Δεν υπάρχουν κάρτες.
-      cards:
-        title: Τίτλος
-        description: Περιγραφή
-        link_text: Σύνδεσμος κειμένου
-        link_url: Σύνδεσμος URL
       feeds:
         proposals: Προτάσεις
         debates: Συζητήσεις
