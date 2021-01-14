@@ -1479,10 +1479,6 @@ oc:
           cards_title: de cartas
           create_card: Crear carta
           no_cards: I a pas de cartas.
-          title: Títol
-          description: Descripcion detalhada
-          link_text: Enllaça lo tèxt
-          link_url: URL de ligam
           columns_help: "Amplada de la carta en nombre de colomnas. A las pantalhas mobilas es totjorn una amplada de 100%."
           create:
             notice: "S'es creat la carta corrèctament!"
@@ -1499,11 +1495,6 @@ oc:
       cards_title: de Cartas
       create_card: Crear carta
       no_cards: I a pas de cartas.
-      cards:
-        title: Títol
-        description: Descripcion detalhada
-        link_text: Enllaça lo tèxt
-        link_url: URL de ligam
       feeds:
         proposals: de Proposicions ciutadanas
         debates: de Debats
