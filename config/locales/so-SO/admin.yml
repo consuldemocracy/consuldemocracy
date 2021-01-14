@@ -1140,10 +1140,6 @@ so:
         cards:
           create_card: Kar saame
           no_cards: Majiraan karar.
-          title: Ciwaan
-          description: Sharaxaad
-          link_text: Qoraalka Xirirka
-          link_url: Isku xirka URL
     homepage:
       title: Bogga
       description: Modhale-ka firfircoon ayaa ka muuqda bogga si isku mid ah halkaan.
@@ -1153,11 +1149,6 @@ so:
       cards_title: Kararka
       create_card: Kar saame
       no_cards: Majiraan karar.
-      cards:
-        title: Ciwaan
-        description: Sharaxaad
-        link_text: Qoraalka Xirirka
-        link_url: Isku xirka URL
       feeds:
         proposals: Sojeedino
         debates: Doodo
