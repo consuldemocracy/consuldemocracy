@@ -531,16 +531,8 @@ fi:
         page:
           created_at: Luotu
           status: Tila
-        cards:
-          description: Kuvaus
-          link_text: Linkin teksti
-          link_url: Linkin URL
     homepage:
       title: Kotisivu
-      cards:
-        description: Kuvaus
-        link_text: Linkin teksti
-        link_url: Linkin URL
       feeds:
         proposals: Ehdotukset
         processes: Prosessit
