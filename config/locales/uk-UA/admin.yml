@@ -1515,10 +1515,6 @@ uk-UA:
           cards_title: картки
           create_card: Створити картку
           no_cards: Картки відсутні.
-          title: Назва
-          description: Опис
-          link_text: Текст посилання
-          link_url: URL-адреса посилання
           columns_help: "Ширина картки у вигляді кількості колонок. На мобільних екранах це завжди 100% ширина."
           create:
             notice: "Картку створено!"
@@ -1535,11 +1531,6 @@ uk-UA:
       cards_title: Картки
       create_card: Створити картку
       no_cards: Карток немає.
-      cards:
-        title: Назва
-        description: Опис
-        link_text: Текст посилання
-        link_url: URL-адреса посилання
       feeds:
         proposals: Пропозиції
         debates: Обговорення
