@@ -1454,10 +1454,6 @@ da:
           cards_title: informationsbokse
           create_card: Opret informationsboks
           no_cards: Der er ingen informationsbokse.
-          title: Titel
-          description: Beskrivelse
-          link_text: Link tekst
-          link_url: Link URL
           columns_help: "Informationsboksens bredde i antal kolonner. På mobilskærmen har den altid en bredde på 100 %."
           create:
             notice: "Informationsboksen blev oprettet!"
@@ -1474,11 +1470,6 @@ da:
       cards_title: Informationsbokse
       create_card: Opret informationsboks
       no_cards: Der er ingen informationsbokse.
-      cards:
-        title: Titel
-        description: Beskrivelse
-        link_text: Link
-        link_url: Link URL
       feeds:
         proposals: Borgerforslag
         debates: Debatforum
