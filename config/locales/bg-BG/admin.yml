@@ -1488,10 +1488,6 @@ bg:
           cards_title: карти
           create_card: Създайте карта
           no_cards: Няма карти.
-          title: Заглавие
-          description: Описание
-          link_text: Текст на връзката
-          link_url: Връзка URL
           columns_help: "Ширина на картата в брой колони. На мобилните екрани винаги е ширина 100%."
           create:
             notice: "Картата е създадена успешно!"
@@ -1508,11 +1504,6 @@ bg:
       cards_title: Карти
       create_card: Създайте карта
       no_cards: Няма карти.
-      cards:
-        title: Заглавие
-        description: Описание
-        link_text: Текст на връзката
-        link_url: Връзка URL
       feeds:
         proposals: Предложения
         debates: Дебати
