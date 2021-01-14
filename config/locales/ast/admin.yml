@@ -847,13 +847,7 @@ ast:
           updated_at: Actualizáu en
           title: Títulu
           slug: Slug
-        cards:
-          title: Títulu
-          description: Descripción detallada
     homepage:
-      cards:
-        title: Títulu
-        description: Descripción detallada
       feeds:
         proposals: Propuestes
         debates: Alderique
