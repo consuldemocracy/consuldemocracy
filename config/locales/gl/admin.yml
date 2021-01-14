@@ -1232,10 +1232,6 @@ gl:
           cards_title: tarxetas
           create_card: Crear tarxeta
           no_cards: Non hai tarxetas.
-          title: Título
-          description: Descrición
-          link_text: Texto da ligazón
-          link_url: URL da ligazón
           columns_help: "Largura da tarxeta en número de columnas. En pantallas móbiles sempre ten unha largura do 100%."
           create:
             notice: "Tarxeta creada correctamente!"
@@ -1252,11 +1248,6 @@ gl:
       cards_title: Tarxetas
       create_card: Crear tarxeta
       no_cards: Non hai tarxetas.
-      cards:
-        title: Título
-        description: Descrición
-        link_text: Texto da ligazón
-        link_url: URL da ligazón
       feeds:
         proposals: Propostas cidadás
         debates: Debates
