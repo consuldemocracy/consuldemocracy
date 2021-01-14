@@ -1514,10 +1514,6 @@ de:
           cards_title: Karten
           create_card: Karte erstellen
           no_cards: Keine Karten vorhanden.
-          title: Titel
-          description: Beschreibung
-          link_text: Linktext
-          link_url: URL des Links
           columns_help: "Breite der Karte in Spaltenanzahl. Auf mobilen Bildschirmen beträgt die Breit immer 100%."
           create:
             notice: "Erfolg"
@@ -1534,11 +1530,6 @@ de:
       cards_title: Karten
       create_card: Karte erstellen
       no_cards: Keine Karten vorhanden.
-      cards:
-        title: Titel
-        description: Beschreibung
-        link_text: Linktext
-        link_url: URL des Links
       feeds:
         proposals: Vorschläge
         debates: Diskussionen
