@@ -1189,10 +1189,6 @@ val:
           cards_title: targetes
           create_card: Crear targeta
           no_cards: No hi ha targetes.
-          title: Títol
-          description: Descripció
-          link_text: Text de l'enllaç
-          link_url: URL de l'enllaç
     homepage:
       title: Pàgina principal
       description: Els moduls actius apareixeran en la pàgina principal en el mateix ordre que ací.
@@ -1202,11 +1198,6 @@ val:
       cards_title: Targetes
       create_card: Crear targeta
       no_cards: No hi ha targetes.
-      cards:
-        title: Títol
-        description: Descripció
-        link_text: Text de l'enllaç
-        link_url: URL de l'enllaç
       feeds:
         proposals: Propostes
         debates: Debats
