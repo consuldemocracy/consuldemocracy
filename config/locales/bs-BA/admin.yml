@@ -1387,10 +1387,6 @@ bs:
           cards_title: kartice
           create_card: Napravi karticu
           no_cards: Nema kartica.
-          title: Naziv
-          description: Opis
-          link_text: Link za tekst
-          link_url: Link za URL
           columns_help: "Širina kartice po broju stupaca. Na ekranu mobilnog telefona, širina je uvijek 100%."
           create:
             notice: "Kartica uspješno napravljena!"
@@ -1407,11 +1403,6 @@ bs:
       cards_title: Kartice
       create_card: Napravi karticu
       no_cards: Nema kartica.
-      cards:
-        title: Naziv
-        description: Opis
-        link_text: Link za tekst
-        link_url: Link za URL
       feeds:
         proposals: Prijedlozi
         debates: Debate
