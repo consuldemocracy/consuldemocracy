@@ -1130,10 +1130,6 @@ zh-TW:
           slug: Slug
         cards:
           create_card: 創建卡
-          title: 標題
-          description: 描述
-          link_text: 鏈接文本
-          link_url: 鏈接 URL
     homepage:
       title: 主頁
       description: 活動模組以與此處相同的順序在主頁中顯示。
@@ -1143,11 +1139,6 @@ zh-TW:
       cards_title: 卡
       create_card: 創建卡
       no_cards: 沒有卡。
-      cards:
-        title: 標題
-        description: 描述
-        link_text: 鏈接文本
-        link_url: 鏈接 URL
       feeds:
         proposals: 建議
         debates: 辯論
