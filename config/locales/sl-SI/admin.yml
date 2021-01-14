@@ -936,11 +936,6 @@ sl:
       cards_title: Karte
       create_card: Ustvari karto
       no_cards: Ni kart.
-      cards:
-        title: Naslov
-        description: Opis
-        link_text: Besedilo povezave
-        link_url: URL povezave
       feeds:
         proposals: Predlogi
         debates: Razprave
