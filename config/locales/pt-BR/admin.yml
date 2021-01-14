@@ -1500,10 +1500,6 @@ pt-BR:
           cards_title: cartões
           create_card: Criar cartão
           no_cards: Não há cartões.
-          title: Título
-          description: Descrição
-          link_text: Texto do link
-          link_url: Link da URL
           columns_help: "Largura do cartão em número de colunas. Em telas móveis é sempre de 100%."
           create:
             notice: "Cartão criado com sucesso!"
@@ -1520,11 +1516,6 @@ pt-BR:
       cards_title: Cartões
       create_card: Criar cartão
       no_cards: Não há cartões.
-      cards:
-        title: Título
-        description: Descrição
-        link_text: Texto do link
-        link_url: URL do link
       feeds:
         proposals: Propostas
         debates: Debates
