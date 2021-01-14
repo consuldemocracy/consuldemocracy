@@ -1141,10 +1141,6 @@ sq:
         cards:
           create_card: Krijo kartë
           no_cards: Nuk ka karta.
-          title: Titull
-          description: Përshkrimi
-          link_text: Linku tekstit
-          link_url: Linku URL
     homepage:
       title: Kryefaqja
       description: Modulet aktive shfaqen në faqen kryesore në të njëjtën mënyrë si këtu.
@@ -1154,11 +1150,6 @@ sq:
       cards_title: Kartat
       create_card: Krijo kartë
       no_cards: Nuk ka karta.
-      cards:
-        title: Titull
-        description: Përshkrimi
-        link_text: Linku tekstit
-        link_url: Linku URL
       feeds:
         proposals: Propozime
         debates: Debate
