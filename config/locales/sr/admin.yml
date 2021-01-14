@@ -1506,10 +1506,6 @@ sr:
           cards_title: картице
           create_card: Креирајте картицу
           no_cards: Нема картица.
-          title: Наслов
-          description: Опис
-          link_text: Веза текста
-          link_url: Веза УРЛ
           columns_help: "Ширина картице у броју колона. На мобилним екранима увек је ширина од 100%."
           create:
             notice: "Картица је успешно креирана!"
@@ -1526,11 +1522,6 @@ sr:
       cards_title: Картице
       create_card: Креирајте картицу
       no_cards: Нема картица.
-      cards:
-        title: Наслов
-        description: Опис
-        link_text: Веза текста
-        link_url: Линк УРЛ
       feeds:
         proposals: Предлози
         debates: Расправе
