@@ -1041,10 +1041,6 @@ fa:
           slug: slug
         cards:
           create_card: ایجاد کارت
-          title: عنوان
-          description: توضیحات
-          link_text: لینک متن
-          link_url: لینک آدرس
     homepage:
       title: صفحه اصلی
       description: ماژول های فعال در صفحه اصلی به ترتیب در اینجا نمایش داده می شوند.
@@ -1054,11 +1050,6 @@ fa:
       cards_title: کارتها
       create_card: ایجاد کارت
       no_cards: بدون کارت
-      cards:
-        title: عنوان
-        description: توضیحات
-        link_text: لینک متن
-        link_url: لینک آدرس
       feeds:
         proposals: طرح های پیشنهادی
         debates: مباحثه
