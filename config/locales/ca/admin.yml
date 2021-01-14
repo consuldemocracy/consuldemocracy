@@ -1496,10 +1496,6 @@ ca:
           cards_title: targetes
           create_card: Crear targeta
           no_cards: No hi ha targetes.
-          title: Títol
-          description: Descripció detallada
-          link_text: Enllaça el text
-          link_url: URL d'enllaç
           columns_help: "Amplada de la targeta en nombre de columnes. A les pantalles mòbils sempre és una amplada del 100%."
           create:
             notice: "S'ha creat la targeta correctament!"
@@ -1516,11 +1512,6 @@ ca:
       cards_title: Targetes
       create_card: Crear targeta
       no_cards: No hi ha targetes.
-      cards:
-        title: Títol
-        description: Descripció detallada
-        link_text: Enllaça el text
-        link_url: URL d'enllaç
       feeds:
         proposals: Propostes ciutadanes
         debates: Debats
