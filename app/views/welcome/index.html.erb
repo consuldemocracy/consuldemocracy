@@ -4,7 +4,7 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<%= render "shared/banner" %>
+<%= render Shared::BannerComponent.new("homepage") %>
 
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",

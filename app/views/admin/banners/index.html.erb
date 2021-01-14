@@ -30,7 +30,7 @@
       <tr>
         <td colspan="3">
           <span class="help-text"><%= t("admin.banners.index.preview") %></span>
-          <%= render "shared/banner", banner: banner %>
+          <%= render Shared::BannerComponent.new(banner) %>
         </td>
       </tr>
     </tbody>

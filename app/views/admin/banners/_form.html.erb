@@ -79,6 +79,6 @@
   </div>
 
   <div class="row">
-    <%= render "shared/banner", banner: @banner %>
+    <%= render Shared::BannerComponent.new(@banner) %>
   </div>
 <% end %>
