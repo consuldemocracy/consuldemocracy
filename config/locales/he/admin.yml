@@ -1467,10 +1467,6 @@ he:
           cards_title: כרטיסים
           create_card: יצירת כרטיס
           no_cards: לא נמצאו כרטיסים.
-          title: כותרת
-          description: תיאור
-          link_text: טקסט הקישור
-          link_url: כתובת url של קישור
           columns_help: "רוחב של הכרטיס במספר עמודות. על המסכים ניידים זה תמיד ברוחב של 100%."
           create:
             notice: "כרטיס נוצר בהצלחה!"
@@ -1487,11 +1483,6 @@ he:
       cards_title: כרטיסים
       create_card: יצירת כרטיס
       no_cards: לא נמצאו כרטיסים.
-      cards:
-        title: כותרת
-        description: תיאור
-        link_text: טקסט הקישור
-        link_url: כתובת url של קישור
       feeds:
         proposals: הצעות
         debates: דיונים
