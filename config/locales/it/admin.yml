@@ -1239,10 +1239,6 @@ it:
           slug: Slug
         cards:
           create_card: Crea scheda
-          title: Titolo
-          description: Descrizione
-          link_text: Testo del link
-          link_url: URL del link
     homepage:
       title: Homepage
       description: I moduli attivi vengono visualizzati nella homepage nello stesso ordine qui riportato.
@@ -1252,11 +1248,6 @@ it:
       cards_title: Schede
       create_card: Crea scheda
       no_cards: Non c’è alcuna scheda.
-      cards:
-        title: Titolo
-        description: Descrizione
-        link_text: Testo del link
-        link_url: URL del link
       feeds:
         proposals: Proposte
         debates: Dibattiti
