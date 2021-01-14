@@ -1516,10 +1516,6 @@ ro:
           cards_title: carduri
           create_card: Crează card
           no_cards: Nu există carduri.
-          title: Titlu
-          description: Descriere
-          link_text: Link
-          link_url: URL-ul Link-ului
           columns_help: "Lățimea cărții în număr de coloane. Pe ecranele mobile este întotdeauna o lățime de 100%."
           create:
             notice: "Card creat cu succes!"
@@ -1536,11 +1532,6 @@ ro:
       cards_title: Carduri
       create_card: Crează card
       no_cards: Nu există carduri.
-      cards:
-        title: Titlu
-        description: Descriere
-        link_text: Link text
-        link_url: Link URL
       feeds:
         proposals: Propuneri
         debates: Dezbateri
