@@ -23,10 +23,12 @@
                   <% if budget.id == 1 && Setting["budget_monitoring_url_2018"].present? %>
                     <%= link_to t("budgets.index.milestones"),
                               Setting["budget_monitoring_url_2018"],
+                              target: "_blank",
                               class: "button" %>
                   <% elsif budget.id == 2 && Setting["budget_monitoring_url_2019"].present? %>
                     <%= link_to t("budgets.index.milestones"),
                               Setting["budget_monitoring_url_2019"],
+                              target,
                               class: "button" %>
                   <% else %>
                     <%= link_to t("budgets.index.milestones"),
