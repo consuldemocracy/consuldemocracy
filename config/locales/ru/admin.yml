@@ -1427,10 +1427,6 @@ ru:
           cards_title: карты
           create_card: Создать карту
           no_cards: Нет карт.
-          title: Название
-          description: Описание
-          link_text: Текст ссылки
-          link_url: Ссылка URL
           columns_help: "Ширина карточки в виде количества колонок. На мобильных экранах - это всегда 100% ширина."
           create:
             notice: "Карта успешно создана!"
@@ -1447,11 +1443,6 @@ ru:
       cards_title: Карты
       create_card: Создать карту
       no_cards: Нет карт.
-      cards:
-        title: Название
-        description: Описание
-        link_text: Текст ссылки
-        link_url: Ссылка URL
       feeds:
         proposals: Заявки
         debates: Обсуждения проблем
