@@ -1506,10 +1506,6 @@ hr:
           cards_title: kartice
           create_card: Stvori karticu
           no_cards: Ne postoje kartice.
-          title: Naziv
-          description: Opis
-          link_text: Poveznica teksta
-          link_url: Poveznica URL-a
           columns_help: "Širina kartice u brojevima stupaca. Na mobilnom ekranu je uvijek širine koja iznosi 100%."
           create:
             notice: "Kartica uspješno stvorena!"
@@ -1526,11 +1522,6 @@ hr:
       cards_title: Kartice
       create_card: Stvori karticu
       no_cards: Ne postoje kartice.
-      cards:
-        title: Naziv
-        description: Opis
-        link_text: Poveznica teksta
-        link_url: Poveznica URL-a
       feeds:
         proposals: Prijedlozi
         debates: Rasprave
