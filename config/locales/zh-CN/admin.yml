@@ -1145,10 +1145,6 @@ zh-CN:
         cards:
           create_card: 创建卡
           no_cards: 没有卡。
-          title: 标题
-          description: 说明
-          link_text: 链接文本
-          link_url: 链接URL
     homepage:
       title: 主页
       description: 有效模块以与此处相同的顺序显示在主页中。
@@ -1158,11 +1154,6 @@ zh-CN:
       cards_title: 卡片
       create_card: 创建卡
       no_cards: 没有卡。
-      cards:
-        title: 标题
-        description: 说明
-        link_text: 链接文本
-        link_url: 链接URL
       feeds:
         proposals: 提议
         debates: 辩论
