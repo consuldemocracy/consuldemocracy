@@ -1001,13 +1001,7 @@ id:
           updated_at: Diperbarui pada
           title: Judul
           slug: Siput
-        cards:
-          title: Judul
-          description: Deskripsi
     homepage:
-      cards:
-        title: Judul
-        description: Deskripsi
       feeds:
         proposals: Proposal
         debates: Perdebatan
