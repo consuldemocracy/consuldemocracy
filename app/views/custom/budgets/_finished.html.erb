@@ -28,7 +28,7 @@
                   <% elsif budget.id == 2 && Setting["budget_monitoring_url_2019"].present? %>
                     <%= link_to t("budgets.index.milestones"),
                               Setting["budget_monitoring_url_2019"],
-                              target,
+                              target: "_blank",
                               class: "button" %>
                   <% else %>
                     <%= link_to t("budgets.index.milestones"),
