@@ -12,14 +12,24 @@ development: &development
 
 # The staging, preproduction and production dbs are only needed
 # for running rake assets:precompile locally before deploying
+rds_settings: &rds_settings
+  database: <%= ENV["RDS_DB_NAME"] %>
+  username: <%= ENV["RDS_USERNAME"] %>
+  password: <%= ENV["RDS_PASSWORD"] %>
+  host: <%= ENV["RDS_HOSTNAME"] %>
+  port: <%= ENV["RDS_PORT"] %>
+
 staging:
-  <<: *development
+  <<: *default
+  <<: *rds_settings
 
 preproduction:
-  <<: *development
+  <<: *default
+  <<: *rds_settings
 
 production:
-  <<: *development
+  <<: *default
+  <<: *rds_settings
 
 test:
   <<: *default
