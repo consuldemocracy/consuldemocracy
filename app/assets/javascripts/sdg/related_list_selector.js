@@ -44,6 +44,7 @@
         amsify_suggestags.classes.sTagsInput = ".sdg-related-list-selector-input";
         amsify_suggestags._init();
         App.SDGRelatedListSelector.manage_icons(amsify_suggestags);
+        App.SDGRelatedListSelector.fix_label(amsify_suggestags);
       }
     },
     manage_icons: function(amsify_suggestags) {
@@ -79,6 +80,14 @@
       if ($(amsify_suggestags.selector).val() === "") {
         $(".sdg-related-list-selector .help-section").addClass("hide");
       }
+    },
+    fix_label: function(amsify_suggestags) {
+      var original_input = amsify_suggestags.selector;
+      var suggestions_input = amsify_suggestags.selectors.sTagsInput;
+
+      suggestions_input[0].id = original_input[0].id + "_suggestions";
+
+      $("[for='" + original_input[0].id + "']").attr("for", suggestions_input[0].id);
     }
   };
 }).call(this);
