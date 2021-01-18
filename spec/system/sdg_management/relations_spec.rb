@@ -278,5 +278,14 @@ describe "SDG Relations", :js do
         expect(page).to have_css "td", exact_text: "1.1"
       end
     end
+
+    scenario "allows adding only white list suggestions" do
+      process = create(:legislation_process, title: "SDG process")
+
+      visit sdg_management_edit_legislation_process_path(process)
+
+      fill_in "Sustainable Development Goals and Targets", with: "tag nonexistent,"
+      within(".amsify-suggestags-input-area") { expect(page).not_to have_content "tag nonexistent" }
+    end
   end
 end

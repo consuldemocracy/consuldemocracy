@@ -7,6 +7,9 @@
 
         amsify_suggestags._settings({
           suggestions: $(".sdg-related-list-selector .input").data("suggestions-list"),
+          whiteList: true,
+          keepLastOnHoverTag: false,
+          checkSimilar: false
         });
         amsify_suggestags.classes.focus = ".sdg-related-list-focus";
         amsify_suggestags.classes.sTagsInput = ".sdg-related-list-selector-input";
