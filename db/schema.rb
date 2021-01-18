@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_16_132642) do
+ActiveRecord::Schema.define(version: 2021_01_07_125458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1333,6 +1333,13 @@ ActiveRecord::Schema.define(version: 2020_12_16_132642) do
     t.index ["user_id"], name: "index_sdg_managers_on_user_id", unique: true
   end
 
+  create_table "sdg_phases", force: :cascade do |t|
+    t.integer "kind", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kind"], name: "index_sdg_phases_on_kind", unique: true
+  end
+
   create_table "sdg_relations", force: :cascade do |t|
     t.string "related_sdg_type"
     t.bigint "related_sdg_id"
@@ -1647,9 +1654,10 @@ ActiveRecord::Schema.define(version: 2020_12_16_132642) do
     t.boolean "header", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "site_customization_page_id"
+    t.integer "cardable_id"
     t.integer "columns", default: 4
-    t.index ["site_customization_page_id"], name: "index_widget_cards_on_site_customization_page_id"
+    t.string "cardable_type", default: "SiteCustomization::Page"
+    t.index ["cardable_id"], name: "index_widget_cards_on_cardable_id"
   end
 
   create_table "widget_feeds", id: :serial, force: :cascade do |t|

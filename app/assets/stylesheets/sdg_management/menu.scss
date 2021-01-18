@@ -7,4 +7,12 @@
 
     mask-image: image-url("sdg.svg");
   }
+
+  .homepage-link {
+    @include has-fa-icon(home, solid);
+
+    &::before {
+      @extend %admin-menu-icon;
+    }
+  }
 }

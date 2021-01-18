@@ -1,11 +1,1 @@
-<%= back_link_to index_path %>
-
-<h2>
-  <% if @card.header? %>
-    <%= t("admin.homepage.edit.header_title") %>
-  <% else %>
-    <%= t("admin.homepage.edit.card_title") %>
-  <% end %>
-</h2>
-
-<%= render "admin/widget/cards/form" %>
+<%= render Admin::Widget::Cards::EditComponent.new(@card, index_path: index_path) %>

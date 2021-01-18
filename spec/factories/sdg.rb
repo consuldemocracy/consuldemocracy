@@ -14,4 +14,8 @@ FactoryBot.define do
 
     target { SDG::Target[code.rpartition(".").first] }
   end
+
+  factory :sdg_phase, class: "SDG::Phase" do
+    kind { :sensitization }
+  end
 end

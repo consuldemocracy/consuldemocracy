@@ -175,9 +175,9 @@ describe "Cards", :admin do
       end
 
       scenario "Show" do
-        card_1 = create(:widget_card, page: custom_page, title: "Card large", columns: 8)
-        card_2 = create(:widget_card, page: custom_page, title: "Card medium", columns: 4)
-        card_3 = create(:widget_card, page: custom_page, title: "Card small", columns: 2)
+        card_1 = create(:widget_card, cardable: custom_page, title: "Card large", columns: 8)
+        card_2 = create(:widget_card, cardable: custom_page, title: "Card medium", columns: 4)
+        card_3 = create(:widget_card, cardable: custom_page, title: "Card small", columns: 2)
 
         visit custom_page.url
 
@@ -189,8 +189,8 @@ describe "Cards", :admin do
       end
 
       scenario "Show label only if it is present" do
-        card_1 = create(:widget_card, page: custom_page, title: "Card one", label: "My label")
-        card_2 = create(:widget_card, page: custom_page, title: "Card two")
+        card_1 = create(:widget_card, cardable: custom_page, title: "Card one", label: "My label")
+        card_2 = create(:widget_card, cardable: custom_page, title: "Card two")
 
         visit custom_page.url
 
@@ -204,7 +204,7 @@ describe "Cards", :admin do
       end
 
       scenario "Edit", :js do
-        create(:widget_card, page: custom_page, title: "Original title")
+        create(:widget_card, cardable: custom_page, title: "Original title")
 
         visit admin_site_customization_page_widget_cards_path(custom_page)
 
@@ -227,7 +227,7 @@ describe "Cards", :admin do
       end
 
       scenario "Destroy", :js do
-        create(:widget_card, page: custom_page, title: "Card title")
+        create(:widget_card, cardable: custom_page, title: "Card title")
 
         visit admin_site_customization_page_widget_cards_path(custom_page)
 

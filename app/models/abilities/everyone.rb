@@ -29,6 +29,7 @@ module Abilities
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
 
       can :read, ::SDG::Goal
+      can :read, ::SDG::Phase
     end
   end
 end

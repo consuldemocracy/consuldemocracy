@@ -34,7 +34,7 @@ describe Widget::Card do
       header = create(:widget_card, header: true)
       card1 = create(:widget_card, header: false)
       card2 = create(:widget_card, header: false)
-      page_card = create(:widget_card, header: false, page: create(:site_customization_page))
+      page_card = create(:widget_card, header: false, cardable: create(:site_customization_page))
 
       expect(Widget::Card.body).to match_array [card1, card2]
       expect(Widget::Card.body).not_to include(header)

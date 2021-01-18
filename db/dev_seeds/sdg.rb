@@ -30,3 +30,9 @@ section "Creating Sustainable Development Goals" do
     end
   end
 end
+
+section "Creating SDG homepage cards" do
+  SDG::Phase.all.each do |phase|
+    Widget::Card.create!(cardable: phase, title: "#{phase.title} card")
+  end
+end

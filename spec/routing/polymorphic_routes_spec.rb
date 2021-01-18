@@ -172,7 +172,7 @@ describe "Polymorphic routes" do
 
     it "routes site customization page widget cards" do
       page = create(:site_customization_page)
-      card = create(:widget_card, page: page)
+      card = create(:widget_card, cardable: page)
 
       expect(admin_polymorphic_path(card)).to eq admin_site_customization_page_widget_card_path(page, card)
     end
@@ -183,6 +183,25 @@ describe "Polymorphic routes" do
 
       expect(admin_polymorphic_path(milestone, action: :edit)).to eq(
         edit_admin_proposal_milestone_path(proposal, milestone)
+      )
+    end
+  end
+
+  describe "sdg_management_polymorphic_path" do
+    include ActionDispatch::Routing::UrlFor
+
+    it "routes local targets" do
+      target = create(:sdg_local_target)
+
+      expect(sdg_management_polymorphic_path(target)).to eq sdg_management_local_target_path(target)
+    end
+
+    it "routes SDG phases widget cards" do
+      phase = SDG::Phase.sample
+      card = create(:widget_card, cardable: phase)
+
+      expect(sdg_management_polymorphic_path(card)).to eq(
+        sdg_management_sdg_phase_widget_card_path(phase, card)
       )
     end
   end

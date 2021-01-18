@@ -3,6 +3,10 @@ require "rails_helper"
 describe Admin::Roles::TableActionsComponent, type: :component do
   let(:user) { create(:user) }
 
+  before do
+    allow(ViewComponent::Base).to receive(:test_controller).and_return("Admin::BaseController")
+  end
+
   it "renders link to add the role for new records" do
     render_inline Admin::Roles::TableActionsComponent.new(user.build_manager)
 

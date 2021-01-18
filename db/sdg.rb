@@ -23,3 +23,5 @@ end
 ].each do |code|
   SDG::Target.where(code: code, goal: SDG::Goal.find_by!(code: code.split(".").first)).first_or_create!
 end
+
+SDG::Phase.kinds.values.each { |kind| SDG::Phase.where(kind: kind).first_or_create! }

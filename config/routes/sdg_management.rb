@@ -4,6 +4,11 @@ namespace :sdg_management do
   resources :goals, only: [:index]
   resources :targets, only: [:index]
   resources :local_targets, except: [:show]
+  resource :homepage, controller: :homepage, only: [:show]
+
+  resources :phases, only: [], as: :sdg_phases do
+    resources :cards, except: [:index, :show], as: :widget_cards
+  end
 
   types = SDG::Related::RELATABLE_TYPES.map(&:tableize)
   types_constraint = /#{types.join("|")}/
@@ -16,4 +21,8 @@ namespace :sdg_management do
     get type, to: "relations#index", as: type
     get "#{type}/:id/edit", to: "relations#edit", as: "edit_#{type.singularize}"
   end
+end
+
+resolve "SDG::LocalTarget" do |target, options|
+  [:local_target, options.merge(id: target)]
 end

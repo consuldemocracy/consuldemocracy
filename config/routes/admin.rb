@@ -271,7 +271,7 @@ resolve "Audit" do |audit|
 end
 
 resolve "Widget::Card" do |card, options|
-  [*resource_hierarchy_for(card.page), card]
+  [*resource_hierarchy_for(card.cardable), card]
 end
 
 resolve "Budget::Group" do |group, options|

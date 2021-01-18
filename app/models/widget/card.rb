@@ -1,9 +1,6 @@
 class Widget::Card < ApplicationRecord
   include Imageable
-  belongs_to :page,
-    class_name:  "SiteCustomization::Page",
-    foreign_key: "site_customization_page_id",
-    inverse_of:  :cards
+  belongs_to :cardable, polymorphic: true
 
   translates :label,       touch: true
   translates :title,       touch: true
@@ -18,6 +15,6 @@ class Widget::Card < ApplicationRecord
   end
 
   def self.body
-    where(header: false, site_customization_page_id: nil).order(:created_at)
+    where(header: false, cardable_id: nil).order(:created_at)
   end
 end

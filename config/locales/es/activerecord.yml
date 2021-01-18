@@ -331,6 +331,10 @@ es:
       sdg/local_target/translation:
         title: "Título"
         description: "Descripción"
+      sdg/phase/kind:
+        sensitization: "Sensibilización"
+        planning: "Planificación"
+        monitoring: "Seguimiento"
       sdg/target:
         code: "Código"
         title: "Título"

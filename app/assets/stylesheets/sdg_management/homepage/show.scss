@@ -1,0 +1,11 @@
+.phase-cards {
+  > header {
+    align-items: flex-start;
+    display: flex;
+
+    a {
+      @include regular-button;
+      margin-left: auto;
+    }
+  }
+}
