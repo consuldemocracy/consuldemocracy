@@ -32,6 +32,14 @@
     margin-top: $line-height / 2;
   }
 
+  .remove-tag {
+    color: $white;
+
+    &:focus {
+      outline: $outline-focus;
+    }
+  }
+
   h3 {
     @include header-font-size(h4);
   }

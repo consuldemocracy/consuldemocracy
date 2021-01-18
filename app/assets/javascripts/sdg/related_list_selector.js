@@ -18,6 +18,11 @@
           }
         };
 
+        amsify_suggestags.setIcon = function() {
+          var remove_tag_text = $(".sdg-related-list-selector .input").data("remove-tag-text");
+          return '<button aria-label="' + remove_tag_text + '" class="remove-tag ' + this.classes.removeTag.substring(1) + '">&#10006;</button>';
+        };
+
         amsify_suggestags._settings({
           suggestions: $(".sdg-related-list-selector .input").data("suggestions-list"),
           whiteList: true,

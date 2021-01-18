@@ -219,11 +219,11 @@ describe "SDG Relations", :js do
       visit sdg_management_edit_legislation_process_path(process)
 
       within "span[data-val='2']" do
-        find(".amsify-remove-tag").click
+        click_button "Remove"
       end
 
       within "span[data-val='3.3']" do
-        find(".amsify-remove-tag").click
+        click_button "Remove"
       end
 
       click_button "Update Process"
@@ -334,13 +334,13 @@ describe "SDG Relations", :js do
 
         visit sdg_management_edit_legislation_process_path(process)
         within "span[data-val='1']" do
-          find(".amsify-remove-tag").click
+          click_button "Remove"
         end
 
         expect(find("li[data-code='1']")["aria-checked"]).to eq "true"
 
         within "span[data-val='1.1']" do
-          find(".amsify-remove-tag").click
+          click_button "Remove"
         end
 
         expect(find("li[data-code='1']")["aria-checked"]).to eq "false"
@@ -366,7 +366,7 @@ describe "SDG Relations", :js do
         within(".help-section") { expect(page).to have_content "No Poverty" }
 
         within "span[data-val='1']" do
-          find(".amsify-remove-tag").click
+          click_button "Remove"
         end
 
         expect(page).not_to have_content "No Poverty"
