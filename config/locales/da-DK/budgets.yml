@@ -3,6 +3,12 @@ da:
     ballots:
       show:
         title: Din stemme
+        amount_available:
+          knapsack: "Du har stadig <span>%{count}</span> at investere for."
+          approval:
+            zero: "Du har stadig <span>%{count}</span> stemmer."
+            one: "Du har stadig <span>%{count}</span> stemmer."
+            other: "Du har stadig <span>%{count}</span> stemmer."
         no_balloted_group_yet: "Du har ikke stemt på denne gruppe endnu, så stem stem stem!"
         remove: Fjern din stemme
         voted:
