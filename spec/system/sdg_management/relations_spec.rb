@@ -263,7 +263,7 @@ describe "SDG Relations", :js do
       fill_in "Sustainable Development Goals and Targets", with: "3"
       within(".amsify-list") { find(:css, "[data-val='3']").click }
 
-      within(".amsify-suggestags-input-area") { expect(page).to have_content "3" }
+      within(".amsify-suggestags-input-area") { expect(page).to have_content "SDG3" }
 
       fill_in "Sustainable Development Goals and Targets", with: "1.1"
       within(".amsify-list") { find(:css, "[data-val='1.1']").click }

@@ -22,6 +22,7 @@ class SDG::RelatedListSelectorComponent < ApplicationComponent
   def suggestion_tag_for(goal_or_target)
     {
       tag: "#{goal_or_target.code}. #{goal_or_target.title.gsub(",", "")}",
+      display_text: text_for(goal_or_target),
       value: goal_or_target.code
     }
   end
@@ -30,5 +31,13 @@ class SDG::RelatedListSelectorComponent < ApplicationComponent
 
     def goals
       SDG::Goal.order(:code)
+    end
+
+    def text_for(goal_or_target)
+      if goal_or_target.class.name == "SDG::Goal"
+        t("sdg.related_list_selector.goal_identifier", code: goal_or_target.code)
+      else
+        goal_or_target.code
+      end
     end
 end

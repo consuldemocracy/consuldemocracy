@@ -5,6 +5,19 @@
       if ($(".sdg-related-list-selector").length) {
         var amsify_suggestags = new AmsifySuggestags($(".sdg-related-list-selector .input"));
 
+        amsify_suggestags.getItem = function(value) {
+          var item_key = this.getItemKey(value);
+          return this.settings.suggestions[item_key];
+        };
+
+        amsify_suggestags.getTag = function(value) {
+          if (this.getItem(value) !== undefined) {
+            return this.getItem(value).display_text;
+          } else {
+            return value;
+          }
+        };
+
         amsify_suggestags._settings({
           suggestions: $(".sdg-related-list-selector .input").data("suggestions-list"),
           whiteList: true,

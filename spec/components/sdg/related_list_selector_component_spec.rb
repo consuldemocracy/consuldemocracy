@@ -28,6 +28,7 @@ describe SDG::RelatedListSelectorComponent, type: :component do
 
       expect(suggestion).to eq({
         tag: "1. No Poverty",
+        display_text: "SDG1",
         value: 1
       })
     end
@@ -37,6 +38,7 @@ describe SDG::RelatedListSelectorComponent, type: :component do
 
       expect(suggestion).to eq({
         tag: "1.1. By 2030 eradicate extreme poverty for all people everywhere currently measured as people living on less than $1.25 a day",
+        display_text: "1.1",
         value: "1.1"
       })
     end
