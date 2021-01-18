@@ -431,3 +431,6 @@ es:
         more:
           one: "Un objetivo más"
           other: "%{count} objetivos más"
+    related_list_selector:
+      hint: "Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno"
+      placeholder: "Escribe las etiquetas que desees"

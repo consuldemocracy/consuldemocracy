@@ -190,12 +190,15 @@ describe "SDG Relations", :js do
   end
 
   describe "Edit" do
-    scenario "allows changing the targets and marks the resource as reviewed" do
+    scenario "allows adding the goals and targets and marks the resource as reviewed" do
       process = create(:legislation_process, title: "SDG process")
-      process.sdg_targets = [SDG::Target["3.3"]]
+      process.sdg_goals = [SDG::Goal[3]]
+      process.sdg_targets = [SDG::Target[3.3]]
 
       visit sdg_management_edit_legislation_process_path(process)
-      fill_in "Targets", with: "1.2, 2.1", fill_options: { clear: :backspace }
+
+      find(:css, ".sdg-related-list-selector-input").set("1.2, 2,")
+
       click_button "Update Process"
 
       expect(page).to have_content "Process updated successfully and marked as reviewed"
@@ -203,16 +206,44 @@ describe "SDG Relations", :js do
       click_link "Marked as reviewed"
 
       within("tr", text: "SDG process") do
-        expect(page).to have_css "td", exact_text: "1.2, 2.1"
+        expect(page).to have_css "td", exact_text: "1.2, 3.3"
+        expect(page).to have_css "td", exact_text: "1, 2, 3"
+      end
+    end
+
+    scenario "allows removing the goals and targets" do
+      process = create(:legislation_process, title: "SDG process")
+      process.sdg_goals = [SDG::Goal[2], SDG::Goal[3]]
+      process.sdg_targets = [SDG::Target[2.1], SDG::Target[3.3]]
+
+      visit sdg_management_edit_legislation_process_path(process)
+
+      within "span[data-val='2']" do
+        find(".amsify-remove-tag").click
+      end
+
+      within "span[data-val='3.3']" do
+        find(".amsify-remove-tag").click
+      end
+
+      click_button "Update Process"
+
+      expect(page).to have_content "Process updated successfully and marked as reviewed"
+
+      click_link "Marked as reviewed"
+
+      within("tr", text: "SDG process") do
+        expect(page).to have_css "td", exact_text: "2, 3"
+        expect(page).to have_css "td", exact_text: "2.1"
       end
     end
 
     scenario "does not show the review notice when resource was already reviewed" do
       debate = create(:sdg_review, relatable: create(:debate, title: "SDG debate")).relatable
-      debate.sdg_targets = [SDG::Target["3.3"]]
+      debate.sdg_targets = [SDG::Target[3.3]]
 
       visit sdg_management_edit_debate_path(debate, filter: "sdg_reviewed")
-      fill_in "Targets", with: "1.2, 2.1", fill_options: { clear: :backspace }
+      find(:css, ".sdg-related-list-selector-input").set("1.2, 2.1,")
       click_button "Update Debate"
 
       expect(page).not_to have_content "Debate updated successfully and marked as reviewed"

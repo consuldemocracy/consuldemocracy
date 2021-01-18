@@ -431,3 +431,6 @@ en:
         more:
           one: "One more goal"
           other: "%{count} more goals"
+    related_list_selector:
+      hint: "You can introduce the code of a specific goal/target or a text to find one"
+      placeholder: "Write a goal or target code or description"
