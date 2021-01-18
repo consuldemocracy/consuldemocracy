@@ -31,4 +31,8 @@
   .input-section {
     margin-top: $line-height / 2;
   }
+
+  h3 {
+    @include header-font-size(h4);
+  }
 }

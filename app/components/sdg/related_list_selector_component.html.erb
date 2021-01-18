@@ -14,4 +14,9 @@
                       hint: t("sdg.related_list_selector.hint"),
                       data: { "suggestions-list": sdg_related_suggestions } %>
   </div>
+
+  <div class="help-section callout primary hide">
+    <h3><%= t("sdg.related_list_selector.help.title", record: f.object.model_name.human) %></h3>
+    <ul class="selected-info"></ul>
+  </div>
 </div>

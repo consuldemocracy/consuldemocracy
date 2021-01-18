@@ -10,6 +10,7 @@ describe SDG::RelatedListSelectorComponent, type: :component do
 
     expect(page).to have_css ".sdg-related-list-selector .input"
     expect(page).to have_content "Sustainable Development Goals and Targets"
+    expect(page).to have_css ".help-section"
   end
 
   describe "#goals_and_targets" do
@@ -29,6 +30,7 @@ describe SDG::RelatedListSelectorComponent, type: :component do
       expect(suggestion).to eq({
         tag: "1. No Poverty",
         display_text: "SDG1",
+        title: "No Poverty",
         value: 1
       })
     end
@@ -39,6 +41,7 @@ describe SDG::RelatedListSelectorComponent, type: :component do
       expect(suggestion).to eq({
         tag: "1.1. By 2030 eradicate extreme poverty for all people everywhere currently measured as people living on less than $1.25 a day",
         display_text: "1.1",
+        title: "By 2030, eradicate extreme poverty for all people everywhere, currently measured as people living on less than $1.25 a day",
         value: "1.1"
       })
     end

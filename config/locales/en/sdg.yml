@@ -434,5 +434,7 @@ en:
     related_list_selector:
       goal_identifier: "SDG%{code}"
       goal_list: "Goal list"
+      help:
+        title: "Which SDGs and targets are aligned with my %{record}?"
       hint: "You can introduce the code of a specific goal/target or a text to find one"
       placeholder: "Write a goal or target code or description"

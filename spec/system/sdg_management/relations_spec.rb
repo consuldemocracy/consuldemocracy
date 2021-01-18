@@ -346,5 +346,31 @@ describe "SDG Relations", :js do
         expect(find("li[data-code='1']")["aria-checked"]).to eq "false"
       end
     end
+
+    describe "help section" do
+      scenario "when add new tag render title in help section" do
+        process = create(:legislation_process, title: "SDG process")
+
+        visit sdg_management_edit_legislation_process_path(process)
+        find("li[data-code='1']").click
+
+        within(".help-section") { expect(page).to have_content "No Poverty" }
+      end
+
+      scenario "when remove a tag remove his title in help section" do
+        process = create(:legislation_process, title: "SDG process")
+        process.sdg_goals = [SDG::Goal[1]]
+
+        visit sdg_management_edit_legislation_process_path(process)
+
+        within(".help-section") { expect(page).to have_content "No Poverty" }
+
+        within "span[data-val='1']" do
+          find(".amsify-remove-tag").click
+        end
+
+        expect(page).not_to have_content "No Poverty"
+      end
+    end
   end
 end
