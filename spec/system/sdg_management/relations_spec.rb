@@ -287,5 +287,54 @@ describe "SDG Relations", :js do
       fill_in "Sustainable Development Goals and Targets", with: "tag nonexistent,"
       within(".amsify-suggestags-input-area") { expect(page).not_to have_content "tag nonexistent" }
     end
+
+    describe "by clicking on a Goal icon" do
+      scenario "allows adding a Goal" do
+        process = create(:legislation_process, title: "SDG process")
+
+        visit sdg_management_edit_legislation_process_path(process)
+        find("li[data-code='1']").click
+        click_button "Update Process"
+        click_link "Marked as reviewed"
+
+        within("tr", text: "SDG process") do
+          expect(page).to have_css "td", exact_text: "1"
+        end
+      end
+
+      scenario "allows remove a Goal" do
+        skip("Pending to fix removing item twice")
+      end
+    end
+
+    describe "manage goals icon status" do
+      scenario "when add a tag related to Goal, the icon will be checked" do
+        process = create(:legislation_process, title: "SDG process")
+
+        visit sdg_management_edit_legislation_process_path(process)
+        find("li[data-code='1']").click
+
+        expect(find("li[data-code='1']")["aria-checked"]).to eq "true"
+      end
+
+      scenario "when remove a last tag related to a Goal, the icon will not be checked" do
+        process = create(:legislation_process, title: "SDG process")
+        process.sdg_goals = [SDG::Goal[1]]
+        process.sdg_targets = [SDG::Target[1.1]]
+
+        visit sdg_management_edit_legislation_process_path(process)
+        within "span[data-val='1']" do
+          find(".amsify-remove-tag").click
+        end
+
+        expect(find("li[data-code='1']")["aria-checked"]).to eq "true"
+
+        within "span[data-val='1.1']" do
+          find(".amsify-remove-tag").click
+        end
+
+        expect(find("li[data-code='1']")["aria-checked"]).to eq "false"
+      end
+    end
   end
 end

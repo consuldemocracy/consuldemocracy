@@ -9,4 +9,26 @@
       }
     }
   }
+
+  > ul {
+    list-style: none;
+    margin-bottom: 0;
+    margin-left: 0;
+
+    li {
+      display: inline-block;
+
+      &[aria-checked=true] img {
+        opacity: 0.15;
+      }
+
+      &:focus {
+        outline: $outline-focus;
+      }
+    }
+  }
+
+  .input-section {
+    margin-top: $line-height / 2;
+  }
 }

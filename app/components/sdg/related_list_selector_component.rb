@@ -5,6 +5,10 @@ class SDG::RelatedListSelectorComponent < ApplicationComponent
     @f = form
   end
 
+  def checked?(code)
+    f.object.sdg_goals.find_by(code: code).present?
+  end
+
   def sdg_related_suggestions
     goals_and_targets.map { |goal_or_target| suggestion_tag_for(goal_or_target) }
   end

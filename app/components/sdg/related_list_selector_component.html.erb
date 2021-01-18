@@ -1,4 +1,12 @@
 <div class="sdg-related-list-selector">
+  <ul aria-label="<%= t("sdg.related_list_selector.goal_list") %>">
+    <% goals.each do |goal| %>
+      <li data-code="<%= goal.code %>" role="checkbox" aria-checked="<%= checked?(goal.code) %>" tabindex="0">
+        <%= render SDG::Goals::IconComponent.new(goal) %>
+      </li>
+    <% end %>
+  </ul>
+
   <div class="input-section">
     <%= f.text_field :sdg_related_list,
                       class: "input",

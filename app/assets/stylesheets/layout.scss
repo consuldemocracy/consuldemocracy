@@ -77,7 +77,7 @@ a {
 
   &:focus {
     color: $link-hover;
-    outline: 3px solid #ffbf47;
+    outline: $outline-focus;
   }
 }
 
@@ -1075,7 +1075,7 @@ footer {
     width: auto;
 
     &:focus {
-      outline: 3px solid #ffbf47;
+      outline: $outline-focus;
     }
   }
 }
