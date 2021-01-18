@@ -1,0 +1,34 @@
+.sdg-goals-index {
+
+  .sdg-goal-list {
+    @include grid-row;
+    @include grid-column-gutter;
+    list-style: none;
+    margin-bottom: 0;
+    max-width: 40rem;
+
+    li {
+      display: inline-block;
+      $spacing: 1vw;
+
+      line-height: 0;
+      margin-bottom: $spacing;
+      padding-left: $spacing / 2;
+      padding-right: $spacing / 2;
+      width: 1 * 100% / 6;
+
+      .sdg-goal-icon {
+        width: 100%;
+      }
+    }
+  }
+
+  .sdg-phase {
+    @include grid-row;
+    @include grid-column-gutter;
+
+    .cards-container {
+      @include grid-row-nest;
+    }
+  }
+}

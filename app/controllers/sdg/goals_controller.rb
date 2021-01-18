@@ -5,6 +5,7 @@ class SDG::GoalsController < ApplicationController
 
   def index
     @goals = @goals.order(:code)
+    @phases = SDG::Phase.accessible_by(current_ability).order(:kind)
   end
 
   def show
