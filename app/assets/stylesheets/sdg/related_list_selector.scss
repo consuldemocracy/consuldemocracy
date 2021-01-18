@@ -1,0 +1,12 @@
+.sdg-related-list-selector {
+
+  .amsify-suggestags-area .amsify-select-tag {
+    color: $white;
+
+    @each $code, $color in $sdg-colors {
+      &[data-val^="#{$code}"] {
+        background-color: $color;
+      }
+    }
+  }
+}
