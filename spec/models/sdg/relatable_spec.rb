@@ -80,6 +80,15 @@ describe SDG::Relatable do
     end
   end
 
+  describe "#sdg_related_list" do
+    it "orders related list by code" do
+      relatable.sdg_goals = [SDG::Goal[1], SDG::Goal[3], SDG::Goal[2]]
+      relatable.sdg_targets = [SDG::Target[2.2], SDG::Target[1.2], SDG::Target[2.1]]
+
+      expect(relatable.sdg_related_list).to eq "1, 1.2, 2, 2.1, 2.2, 3"
+    end
+  end
+
   describe "#related_sdgs" do
     it "returns all related goals and targets" do
       relatable.sdg_goals = [goal, another_goal]
@@ -91,29 +100,45 @@ describe SDG::Relatable do
     end
   end
 
-  describe "#sdg_target_list=" do
-    it "assigns a single target" do
-      relatable.sdg_target_list = "1.1"
+  describe "#sdg_related_list=" do
+    it "assigns a single goal" do
+      relatable.sdg_related_list = "1"
 
-      expect(relatable.reload.sdg_targets).to match_array [SDG::Target["1.1"]]
+      expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1]]
+    end
+
+    it "assigns a single target" do
+      relatable.sdg_related_list = "1.1"
+
+      expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1]]
+      expect(relatable.reload.sdg_targets).to match_array [SDG::Target[1.1]]
     end
 
     it "assigns multiple targets" do
-      relatable.sdg_target_list = "1.1,2.3"
+      relatable.sdg_related_list = "1.1,2.3"
 
-      expect(relatable.reload.sdg_targets).to match_array [SDG::Target["1.1"], SDG::Target["2.3"]]
+      expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], SDG::Goal[2]]
+      expect(relatable.reload.sdg_targets).to match_array [SDG::Target[1.1], SDG::Target[2.3]]
+    end
+
+    it "assigns multiple goals" do
+      relatable.sdg_related_list = "3,2,1"
+
+      expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], SDG::Goal[2], SDG::Goal[3]]
     end
 
     it "ignores trailing spaces and spaces between commas" do
-      relatable.sdg_target_list = " 1.1,  2.3 "
-
-      expect(relatable.reload.sdg_targets).to match_array [SDG::Target["1.1"], SDG::Target["2.3"]]
-    end
-
-    it "assigns goals" do
-      relatable.sdg_target_list = "1.1,1.2,2.3"
+      relatable.sdg_related_list = " 1.1,  2.3 "
 
       expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], SDG::Goal[2]]
+      expect(relatable.reload.sdg_targets).to match_array [SDG::Target[1.1], SDG::Target[2.3]]
+    end
+
+    it "assigns goals and targets" do
+      relatable.sdg_related_list = "1.1,3,4,4.1"
+
+      expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], SDG::Goal[3], SDG::Goal[4]]
+      expect(relatable.reload.sdg_targets).to match_array [SDG::Target[1.1], SDG::Target[4.1]]
     end
   end
 
