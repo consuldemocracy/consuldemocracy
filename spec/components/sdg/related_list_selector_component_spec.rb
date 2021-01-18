@@ -11,4 +11,34 @@ describe SDG::RelatedListSelectorComponent, type: :component do
     expect(page).to have_css ".sdg-related-list-selector .input"
     expect(page).to have_content "Sustainable Development Goals and Targets"
   end
+
+  describe "#goals_and_targets" do
+    it "return all goals and target with order" do
+      goals_and_targets = component.goals_and_targets
+
+      expect(goals_and_targets.first).to eq SDG::Goal[1]
+      expect(goals_and_targets.second).to eq SDG::Target[1.1]
+      expect(goals_and_targets.last).to eq SDG::Target[17.19]
+    end
+  end
+
+  describe "#suggestion_tag_for" do
+    it "return suggestion tag for goal" do
+      suggestion = component.suggestion_tag_for(SDG::Goal[1])
+
+      expect(suggestion).to eq({
+        tag: "1. No Poverty",
+        value: 1
+      })
+    end
+
+    it "return suggestion tag for target" do
+      suggestion = component.suggestion_tag_for(SDG::Target[1.1])
+
+      expect(suggestion).to eq({
+        tag: "1.1. By 2030 eradicate extreme poverty for all people everywhere currently measured as people living on less than $1.25 a day",
+        value: "1.1"
+      })
+    end
+  end
 end

@@ -255,5 +255,28 @@ describe "SDG Relations", :js do
         expect(page).to have_css "td", exact_text: "1.2, 2.1"
       end
     end
+
+    scenario "allows adding the goals and targets with autocomplete" do
+      process = create(:legislation_process, title: "SDG process")
+      visit sdg_management_edit_legislation_process_path(process)
+
+      fill_in "Sustainable Development Goals and Targets", with: "3"
+      within(".amsify-list") { find(:css, "[data-val='3']").click }
+
+      within(".amsify-suggestags-input-area") { expect(page).to have_content "3" }
+
+      fill_in "Sustainable Development Goals and Targets", with: "1.1"
+      within(".amsify-list") { find(:css, "[data-val='1.1']").click }
+
+      within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1" }
+
+      click_button "Update Process"
+      click_link "Marked as reviewed"
+
+      within("tr", text: "SDG process") do
+        expect(page).to have_css "td", exact_text: "1, 3"
+        expect(page).to have_css "td", exact_text: "1.1"
+      end
+    end
   end
 end
