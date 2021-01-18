@@ -10,7 +10,7 @@
     }
   }
 
-  > ul {
+  label + ul {
     list-style: none;
     margin-bottom: 0;
     margin-left: 0;
@@ -25,11 +25,33 @@
       &:focus {
         outline: $outline-focus;
       }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
   .input-section {
-    margin-top: $line-height / 2;
+    margin-bottom: 2 * $line-height / 3;
+  }
+
+  .amsify-suggestags-area {
+    position: relative;
+
+    .amsify-suggestags-list {
+      top: $input-height;
+    }
+  }
+
+  .amsify-suggestags-input-area {
+    display: flex;
+    flex-wrap: wrap;
+
+    > input {
+      margin-bottom: $line-height / 4 !important;
+      order: -1;
+    }
   }
 
   .remove-tag {
