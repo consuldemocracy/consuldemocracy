@@ -6,7 +6,7 @@ describe HasFilters do
     has_filters ["all", "pending", "reviewed"], only: :index
 
     def index
-      render plain: "#{@current_filter} (#{@valid_filters.join(" ")})"
+      render plain: "#{current_filter} (#{valid_filters.join(" ")})"
     end
   end
 

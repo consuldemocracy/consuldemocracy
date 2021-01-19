@@ -360,7 +360,6 @@ RSpec/HookArgument:
 RSpec/InstanceVariable:
   Enabled: true
   Exclude:
-    - spec/controllers/concerns/has_filters_spec.rb
     - spec/controllers/concerns/has_orders_spec.rb
 
 RSpec/LetBeforeExamples:
