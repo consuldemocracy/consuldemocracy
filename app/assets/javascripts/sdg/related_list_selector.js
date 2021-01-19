@@ -12,7 +12,7 @@
 
         amsify_suggestags.getTag = function(value) {
           if (this.getItem(value) !== undefined) {
-            return this.getItem(value).display_text;
+            return $("<div>" + this.getItem(value).display_text + "</div>").text();
           } else {
             return value;
           }
