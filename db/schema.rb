@@ -1352,6 +1352,14 @@ ActiveRecord::Schema.define(version: 2021_01_07_125458) do
     t.index ["related_sdg_type", "related_sdg_id"], name: "index_sdg_relations_on_related_sdg_type_and_related_sdg_id"
   end
 
+  create_table "sdg_reviews", force: :cascade do |t|
+    t.string "relatable_type"
+    t.bigint "relatable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["relatable_type", "relatable_id"], name: "index_sdg_reviews_on_relatable_type_and_relatable_id", unique: true
+  end
+
   create_table "sdg_targets", force: :cascade do |t|
     t.bigint "goal_id"
     t.string "code", null: false

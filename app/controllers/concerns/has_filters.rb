@@ -1,5 +1,10 @@
 module HasFilters
   extend ActiveSupport::Concern
+  attr_reader :valid_filters, :current_filter
+
+  included do
+    helper_method :valid_filters, :current_filter
+  end
 
   class_methods do
     def has_filters(valid_filters, *args)

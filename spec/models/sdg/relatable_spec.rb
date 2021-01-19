@@ -117,6 +117,18 @@ describe SDG::Relatable do
     end
   end
 
+  describe "#sdg_review" do
+    it "returns nil when relatable is not reviewed" do
+      expect(relatable.sdg_review).to be_blank
+    end
+
+    it "returns the review when relatable is reviewed" do
+      review = create(:sdg_review, relatable: relatable)
+
+      expect(relatable.sdg_review).to eq(review)
+    end
+  end
+
   describe ".by_goal" do
     it "returns everything if no code is provided" do
       expect(relatable.class.by_goal("")).to eq [relatable]
@@ -156,6 +168,25 @@ describe SDG::Relatable do
       create(:proposal, sdg_targets: [another_target])
 
       expect(relatable.class.by_target(target.code)).to be_empty
+    end
+  end
+
+  describe ".pending_sdg_review" do
+    let!(:relatable) { create(:proposal) }
+
+    it "returns records not reviewed yet" do
+      create(:sdg_review, relatable: create(:proposal))
+
+      expect(relatable.class.pending_sdg_review).to match_array [relatable]
+    end
+  end
+
+  describe ".sdg_reviewed" do
+    let!(:relatable) { create(:proposal) }
+    let!(:reviewed_relatable) { create(:sdg_review, relatable: create(:proposal)).relatable }
+
+    it "returns records already reviewed" do
+      expect(relatable.class.sdg_reviewed).to match_array [reviewed_relatable]
     end
   end
 end

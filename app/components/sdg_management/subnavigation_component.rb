@@ -12,9 +12,11 @@ class SDGManagement::SubnavigationComponent < ApplicationComponent
     end
 
     def link_to_section(section)
-      link_to "SDG::#{section.to_s.classify}".constantize.model_name.human(count: 2).titleize,
-              path_for(section),
-              class: active_style(section)
+      link_to text_for(section), path_for(section), class: active_style(section)
+    end
+
+    def text_for(section)
+      "SDG::#{section.to_s.classify}".constantize.model_name.human(count: 2).titleize
     end
 
     def path_for(section)

@@ -10,6 +10,8 @@ module SDG::Relatable
                source: :related_sdg,
                source_type: sdg_type
     end
+
+    has_one :sdg_review, as: :relatable, dependent: :destroy, class_name: "SDG::Review"
   end
 
   class_methods do
@@ -25,6 +27,14 @@ module SDG::Relatable
       return all if code.blank?
 
       joins(sdg_class.table_name.to_sym).merge(sdg_class.where(code: code))
+    end
+
+    def sdg_reviewed
+      joins(:sdg_review)
+    end
+
+    def pending_sdg_review
+      left_joins(:sdg_review).merge(SDG::Review.where(id: nil))
     end
   end
 
