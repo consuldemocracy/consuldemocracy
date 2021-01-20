@@ -26,6 +26,11 @@
           <%= select_tag("advanced_search[goal]", goal_options,
                         include_blank: t("shared.advanced_search.goal_blank")) %>
         </div>
+        <div class="filter">
+          <label for="advanced_search_target"><%= t("shared.advanced_search.target") %></label>
+          <%= select_tag("advanced_search[target]", target_options,
+                        include_blank: t("shared.advanced_search.target_blank")) %>
+        </div>
       <% end %>
 
       <div class="date-filters">

@@ -1482,6 +1482,27 @@ describe "Proposals" do
           end
         end
       end
+
+      scenario "Search by SDG target", :js do
+        Setting["feature.sdg"] = true
+        Setting["sdg.process.proposals"] = true
+        create(:proposal, title: "Unrelated")
+        create(:proposal, title: "High school", sdg_targets: [SDG::Target["4.1"]])
+        create(:proposal, title: "Preschool", sdg_targets: [SDG::Target["4.2"]])
+
+        visit proposals_path
+        click_link "Advanced search"
+        select "4.2", from: "By target"
+        click_button "Filter"
+
+        expect(page).to have_content("There is 1 citizen proposal")
+
+        within("#proposals") do
+          expect(page).to have_content("Preschool")
+          expect(page).not_to have_content("High school")
+          expect(page).not_to have_content("Unrelated")
+        end
+      end
     end
 
     scenario "Order by relevance by default", :js do

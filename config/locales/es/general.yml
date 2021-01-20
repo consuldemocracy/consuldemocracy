@@ -697,6 +697,8 @@ es:
       goal: "Por ODS"
       goal_blank: "Elige un objetivo"
       search: "Filtrar"
+      target: "Por meta"
+      target_blank: "Elige una meta"
       title: "Búsqueda avanzada"
       to: "Hasta"
     author_info:

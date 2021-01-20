@@ -17,6 +17,7 @@ describe Shared::AdvancedSearchComponent, type: :component do
       render_inline component
 
       expect(page).not_to have_selector "#advanced_search_goal", visible: :all
+      expect(page).not_to have_selector "#advanced_search_target", visible: :all
     end
 
     it "does not render when the SDG process feature is disabled" do
@@ -25,12 +26,14 @@ describe Shared::AdvancedSearchComponent, type: :component do
       render_inline component
 
       expect(page).not_to have_selector "#advanced_search_goal", visible: :all
+      expect(page).not_to have_selector "#advanced_search_target", visible: :all
     end
 
     it "renders when both features are enabled" do
       render_inline component
 
       expect(page).to have_selector "#advanced_search_goal", visible: :all
+      expect(page).to have_selector "#advanced_search_target", visible: :all
     end
   end
 end

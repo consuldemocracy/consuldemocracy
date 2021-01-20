@@ -20,7 +20,7 @@ module Filterable
     def allowed_filter?(filter, value)
       return if value.blank?
 
-      ["official_level", "date_range", "goal"].include?(filter)
+      ["official_level", "date_range", "goal", "target"].include?(filter)
     end
   end
 end
