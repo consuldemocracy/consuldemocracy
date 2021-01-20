@@ -20,7 +20,11 @@ module SDG::Relatable
     end
 
     def by_target(code)
-      by_sdg_related(SDG::Target, code)
+      if SDG::Target.find_by(code: code)
+        by_sdg_related(SDG::Target, code)
+      else
+        by_sdg_related(SDG::LocalTarget, code)
+      end
     end
 
     def by_sdg_related(sdg_class, code)

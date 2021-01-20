@@ -194,6 +194,19 @@ describe SDG::Relatable do
 
       expect(relatable.class.by_target(target.code)).to be_empty
     end
+
+    it "returns records associated to a local target" do
+      relatable.sdg_local_targets = [local_target]
+
+      expect(relatable.class.by_target(local_target.code)).to eq [relatable]
+    end
+
+    it "does not return records not associated with that local target" do
+      create(:proposal)
+      create(:proposal, sdg_local_targets: [another_local_target])
+
+      expect(relatable.class.by_target(local_target.code)).to be_empty
+    end
   end
 
   describe ".pending_sdg_review" do
