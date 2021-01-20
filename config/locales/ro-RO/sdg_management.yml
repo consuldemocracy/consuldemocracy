@@ -4,3 +4,14 @@ ro:
       title: "Conținutul obiectivelor de dezvoltare durabilă"
     menu:
       sdg_content: "Obiective și Ținte"
+    relations:
+      index:
+        filter: "Filtru"
+        filters:
+          all: "Tot"
+          pending_sdg_review: "În așteptare"
+          sdg_reviewed: "Marcat ca revizuit"
+      update:
+        notice: "%{relatable} actualizat cu succes"
+      update_and_review:
+        notice: "%{relatable} actualizat cu succes și marcat ca revizuit"
