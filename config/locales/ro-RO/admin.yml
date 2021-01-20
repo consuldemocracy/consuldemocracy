@@ -1257,9 +1257,18 @@ ro:
       true_value: "Da"
       false_value: "Nu"
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Toate obiectivele"
+            label: "După obiectiv"
+          sdg_targets:
+            all: "Toate obiectivele"
+            label: "După obiectiv"
         label:
           booths: "Caută cabină de vot după nume sau locație"
+          budget_investments: "Caută investiție după titlu, descriere sau rubrică"
           debates: "Căutați dezbateri după titlu sau descriere"
+          legislation_processes: "Caută procese după titlu sau după descriere"
           local_census_records: "Caută după numărul documentului"
           organizations: "Nume, email sau număr de telefon"
           poll_officers: "Caută funcționar public"
