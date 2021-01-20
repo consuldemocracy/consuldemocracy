@@ -1273,6 +1273,7 @@ ro:
           organizations: "Nume, email sau număr de telefon"
           poll_officers: "Caută funcționar public"
           poll_questions: "Căutați întrebări la sondaj"
+          polls: "Caută sondaje după nume sau descriere"
           proposals: "Caută propunere după titlu, cod, descriere ori întrebare"
           users: "Caută utilizator după nume sau email"
         search: "Caută"
