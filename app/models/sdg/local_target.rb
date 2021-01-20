@@ -17,10 +17,12 @@ class SDG::LocalTarget < ApplicationRecord
 
   belongs_to :target
 
-  def <=>(local_target)
-    return unless local_target.class == self.class
-
-    [target, numeric_subcode] <=> [local_target.target, local_target.numeric_subcode]
+  def <=>(any_target)
+    if any_target.class == self.class
+      [target, numeric_subcode] <=> [any_target.target, any_target.numeric_subcode]
+    elsif any_target.class == target.class
+      -1 * (any_target <=> self)
+    end
   end
 
   protected

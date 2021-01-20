@@ -73,5 +73,13 @@ describe SDG::LocalTarget do
       expect(local_target).to be > lesser_local_target
       expect(local_target).to be < greater_local_target
     end
+
+    it "can be compared against global targets" do
+      lesser_target = build(:sdg_target, code: "10.A", goal: SDG::Goal[10])
+      greater_target = build(:sdg_target, code: "11.1", goal: SDG::Goal[11])
+
+      expect(local_target).to be > lesser_target
+      expect(local_target).to be < greater_target
+    end
   end
 end
