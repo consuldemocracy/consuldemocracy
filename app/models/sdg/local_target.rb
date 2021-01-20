@@ -17,6 +17,10 @@ class SDG::LocalTarget < ApplicationRecord
 
   belongs_to :target
 
+  def self.[](code)
+    find_by!(code: code)
+  end
+
   def <=>(any_target)
     if any_target.class == self.class
       [target, numeric_subcode] <=> [any_target.target, any_target.numeric_subcode]

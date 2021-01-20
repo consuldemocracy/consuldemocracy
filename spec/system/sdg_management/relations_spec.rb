@@ -168,11 +168,10 @@ describe "SDG Relations", :js do
       end
 
       scenario "local target filter" do
-        schools = create(:sdg_local_target, code: "4.1.1")
-        teachers = create(:sdg_local_target, code: "4.1.2")
-
-        create(:debate, title: "Rebuild local schools", sdg_local_targets: [schools])
-        create(:debate, title: "Hire teachers", sdg_local_targets: [teachers])
+        create(:sdg_local_target, code: "4.1.1")
+        create(:sdg_local_target, code: "4.1.2")
+        create(:debate, title: "Rebuild local schools", sdg_local_targets: [SDG::LocalTarget["4.1.1"]])
+        create(:debate, title: "Hire teachers", sdg_local_targets: [SDG::LocalTarget["4.1.2"]])
 
         visit sdg_management_debates_path
         select "4.1.1", from: "target_code"

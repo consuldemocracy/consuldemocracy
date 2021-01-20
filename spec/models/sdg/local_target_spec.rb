@@ -82,4 +82,16 @@ describe SDG::LocalTarget do
       expect(local_target).to be < greater_target
     end
   end
+
+  describe ".[]" do
+    it "finds existing local targets by code" do
+      create(:sdg_local_target, code: "1.1.1")
+
+      expect(SDG::LocalTarget["1.1.1"].code).to eq "1.1.1"
+    end
+
+    it "raises an exception for non-existing codes" do
+      expect { SDG::LocalTarget["1.1.99"] }.to raise_exception ActiveRecord::RecordNotFound
+    end
+  end
 end
