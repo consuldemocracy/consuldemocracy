@@ -303,7 +303,17 @@ describe "SDG Relations", :js do
       end
 
       scenario "allows remove a Goal" do
-        skip("Pending to fix removing item twice")
+        process = create(:legislation_process, title: "SDG process")
+        process.sdg_goals = [SDG::Goal[1], SDG::Goal[2]]
+
+        visit sdg_management_edit_legislation_process_path(process)
+        find("li[data-code='1']").click
+        click_button "Update Process"
+        click_link "Marked as reviewed"
+
+        within("tr", text: "SDG process") do
+          expect(page).to have_css "td", exact_text: "2"
+        end
       end
     end
 
