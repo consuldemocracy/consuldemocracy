@@ -1,5 +1,7 @@
 <% provide(:title) { title } %>
 
+<%= render Shared::BannerComponent.new("sdg") %>
+
 <div class="sdg-goals-index">
   <%= link_list(*goal_links, class: "sdg-goal-list") %>
 

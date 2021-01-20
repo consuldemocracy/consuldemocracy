@@ -9,6 +9,7 @@ namespace :db do
   task load_sdg: :environment do
     ApplicationLogger.new.info "Adding Sustainable Development Goals content"
     load(Rails.root.join("db", "sdg.rb"))
+    WebSection.where(name: "sdg").first_or_create!
   end
 
   desc "Calculates the TSV column for all polls and legislation processes"

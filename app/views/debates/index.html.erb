@@ -40,7 +40,7 @@
   <div class="row">
     <div id="debates" class="debates-list small-12 medium-9 column">
 
-      <%= render "shared/banner" %>
+      <%= render Shared::BannerComponent.new("debates") %>
 
       <% unless @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
