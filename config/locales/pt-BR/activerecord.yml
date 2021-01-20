@@ -2,7 +2,6 @@ pt-BR:
   attributes:
     geozone_id: "Escopo da operação"
     results_enabled: "Exibir resultados"
-    sdg_target_list: "Metas"
     stats_enabled: "Exibir estatísticas"
     advanced_stats_enabled: "Exibir estatísticas avançadas"
     name: Nome
