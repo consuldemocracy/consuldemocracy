@@ -46,5 +46,6 @@ Capybara.register_driver :headless_chrome do |app|
 end
 
 Capybara.exact = true
+Capybara.enable_aria_label = true
 
 OmniAuth.config.test_mode = true

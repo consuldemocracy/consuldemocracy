@@ -62,6 +62,7 @@
 //= require moderator_legislation_proposals
 //= require gettext
 //= require annotator
+//= require jquery.amsify.suggestags
 //= require tags
 //= require users
 //= require votes
@@ -111,6 +112,7 @@
 //= require columns_selector
 //= require budget_edit_associations
 //= require datepicker
+//= require sdg/related_list_selector
 
 var initialize_modules = function() {
   "use strict";
@@ -163,6 +165,7 @@ var initialize_modules = function() {
   }
   App.BudgetEditAssociations.initialize();
   App.Datepicker.initialize();
+  App.SDGRelatedListSelector.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {

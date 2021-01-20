@@ -1,0 +1,26 @@
+<div class="sdg-related-list-selector">
+  <div class="input-section">
+    <%= f.label :sdg_related_list %>
+
+    <ul aria-label="<%= t("sdg.related_list_selector.goal_list") %>">
+      <% goals.each do |goal| %>
+        <li data-code="<%= goal.code %>" role="checkbox" aria-checked="<%= checked?(goal.code) %>" tabindex="0">
+          <%= render SDG::Goals::IconComponent.new(goal) %>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= f.text_field :sdg_related_list,
+                      class: "input",
+                      label: false,
+                      placeholder: t("sdg.related_list_selector.placeholder"),
+                      hint: t("sdg.related_list_selector.hint"),
+                      data: { "suggestions-list": sdg_related_suggestions,
+                              "remove-tag-text": t("sdg.related_list_selector.remove_tag") } %>
+  </div>
+
+  <div class="help-section callout primary hide">
+    <h3><%= t("sdg.related_list_selector.help.title", record: f.object.model_name.human) %></h3>
+    <ul class="selected-info"></ul>
+  </div>
+</div>

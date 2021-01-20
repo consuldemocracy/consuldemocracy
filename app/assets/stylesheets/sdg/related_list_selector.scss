@@ -1,0 +1,68 @@
+.sdg-related-list-selector {
+
+  .amsify-suggestags-area .amsify-select-tag {
+    color: $white;
+
+    @each $code, $color in $sdg-colors {
+      &[data-val^="#{$code}"] {
+        background-color: $color;
+      }
+    }
+  }
+
+  label + ul {
+    list-style: none;
+    margin-bottom: 0;
+    margin-left: 0;
+
+    li {
+      display: inline-block;
+
+      &[aria-checked=true] img {
+        opacity: 0.15;
+      }
+
+      &:focus {
+        outline: $outline-focus;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .input-section {
+    margin-bottom: 2 * $line-height / 3;
+  }
+
+  .amsify-suggestags-area {
+    position: relative;
+
+    .amsify-suggestags-list {
+      top: $input-height;
+    }
+  }
+
+  .amsify-suggestags-input-area {
+    display: flex;
+    flex-wrap: wrap;
+
+    > input {
+      margin-bottom: $line-height / 4 !important;
+      order: -1;
+    }
+  }
+
+  .remove-tag {
+    color: $white;
+
+    &:focus {
+      outline: $outline-focus;
+    }
+  }
+
+  h3 {
+    @include header-font-size(h4);
+  }
+}

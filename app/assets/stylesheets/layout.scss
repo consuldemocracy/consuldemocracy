@@ -77,7 +77,7 @@ a {
 
   &:focus {
     color: $link-hover;
-    outline: 3px solid #ffbf47;
+    outline: $outline-focus;
   }
 }
 
@@ -1075,7 +1075,7 @@ footer {
     width: auto;
 
     &:focus {
-      outline: 3px solid #ffbf47;
+      outline: $outline-focus;
     }
   }
 }
@@ -1107,7 +1107,7 @@ form {
 
   [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
     background: #f8f8f8;
-    height: $line-height * 2;
+    height: $input-height;
     margin-bottom: rem-calc(16);
 
     &.error {

@@ -76,6 +76,16 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
+  scenario "SDG identifier", :admin do
+    Setting["feature.sdg"] = true
+    Setting["sdg.process.proposals"] = true
+    I18nContent.create!(key: "sdg.related_list_selector.goal_identifier", value: attack_code)
+
+    visit sdg_management_edit_proposal_path(create(:proposal, sdg_goals: [SDG::Goal[1]]))
+
+    expect(page.text).not_to be_empty
+  end
+
   scenario "proposal actions in dashboard" do
     proposal = create(:proposal)
 

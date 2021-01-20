@@ -50,12 +50,20 @@ module SDG::Relatable
     sdg_targets.sort.map(&:code).join(", ")
   end
 
-  def sdg_target_list=(codes)
-    targets = codes.tr(" ", "").split(",").map { |code| SDG::Target[code] }
+  def sdg_related_list
+    sdg_goals.order(:code).map do |goal|
+      [goal, sdg_targets.where(goal: goal).sort]
+    end.flatten.map(&:code).join(", ")
+  end
+
+  def sdg_related_list=(codes)
+    target_codes, goal_codes = codes.tr(" ", "").split(",").partition { |code| code.include?(".") }
+    targets = target_codes.map { |code| SDG::Target[code] }
+    goals = goal_codes.map { |code| SDG::Goal[code] }
 
     transaction do
       self.sdg_targets = targets
-      self.sdg_goals = targets.map(&:goal).uniq
+      self.sdg_goals = (targets.map(&:goal) + goals).uniq
     end
   end
 end
