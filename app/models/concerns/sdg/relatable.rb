@@ -14,7 +14,6 @@ module SDG::Relatable
              through: :sdg_relations,
              source: :related_sdg,
              source_type: "SDG::Target"
-    alias_method :sdg_targets, :sdg_global_targets
     alias_method :sdg_targets=, :sdg_global_targets=
 
     has_one :sdg_review, as: :relatable, dependent: :destroy, class_name: "SDG::Review"
@@ -54,12 +53,16 @@ module SDG::Relatable
     sdg_relations.map(&:related_sdg)
   end
 
+  def sdg_targets
+    sdg_global_targets + sdg_local_targets
+  end
+
   def sdg_goal_list
     sdg_goals.order(:code).map(&:code).join(", ")
   end
 
   def sdg_target_list
-    sdg_global_targets.sort.map(&:code).join(", ")
+    sdg_targets.sort.map(&:code).join(", ")
   end
 
   def sdg_related_list

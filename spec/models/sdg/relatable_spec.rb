@@ -60,6 +60,13 @@ describe SDG::Relatable do
 
       expect(relatable.sdg_target_list).to eq "1.2, 2.1, 2.2"
     end
+
+    it "includes both targets and local targets in order" do
+      relatable.sdg_global_targets = [SDG::Target[2.2], SDG::Target[1.2], SDG::Target[2.1]]
+      relatable.sdg_local_targets = %w[1.1.1 2.1.3].map { |code| create(:sdg_local_target, code: code) }
+
+      expect(relatable.sdg_target_list).to eq "1.1.1, 1.2, 2.1, 2.1.3, 2.2"
+    end
   end
 
   describe "#sdg_local_targets" do
