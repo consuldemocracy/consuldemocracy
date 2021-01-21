@@ -1,3 +1,7 @@
 .sdg-goal-tag-list {
   @extend %sdg-goal-list;
+
+  .more-goals {
+    @extend %tag;
+  }
 }
