@@ -11,9 +11,9 @@
 
       line-height: 0;
       margin-bottom: $spacing;
-      padding-left: $spacing / 2;
-      padding-right: $spacing / 2;
-      width: 1 * 100% / 6;
+      margin-left: $spacing / 2;
+      margin-right: $spacing / 2;
+      width: calc(100% / 6 - #{$spacing});
 
       .sdg-goal-icon {
         width: 100%;

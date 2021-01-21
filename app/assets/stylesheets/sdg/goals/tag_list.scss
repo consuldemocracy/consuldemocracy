@@ -1,11 +1,3 @@
 .sdg-goal-tag-list {
   @extend %sdg-goal-list;
-
-  li {
-    margin-bottom: 1ch;
-
-    &:not(:last-child) {
-      padding-right: 1ch;
-    }
-  }
 }

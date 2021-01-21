@@ -7,7 +7,7 @@ module LinkListHelper
         tag.li(({ "aria-current": true } if current)) do
           link_to text, url, link_options
         end
-      end)
+      end, "\n")
     end
   end
 end

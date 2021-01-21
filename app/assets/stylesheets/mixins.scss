@@ -228,12 +228,19 @@
 }
 
 %sdg-goal-list {
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin-bottom: 0;
   margin-left: 0;
 
   li {
-    display: inline-block;
+    margin-bottom: 1ch;
+    margin-right: 1ch;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 

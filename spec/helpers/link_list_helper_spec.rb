@@ -13,7 +13,9 @@ describe LinkListHelper do
     it "generates a list of links" do
       list = helper.link_list(["Home", "/"], ["Info", "/info"], class: "menu")
 
-      expect(list).to eq '<ul class="menu"><li><a href="/">Home</a></li><li><a href="/info">Info</a></li></ul>'
+      expect(list).to eq '<ul class="menu">' +
+        '<li><a href="/">Home</a></li>' + "\n" +
+        '<li><a href="/info">Info</a></li></ul>'
       expect(list).to be_html_safe
     end
 
