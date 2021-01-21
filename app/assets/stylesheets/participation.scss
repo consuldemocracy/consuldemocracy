@@ -408,10 +408,10 @@
     }
   }
 
-  .tags,
   .geozone {
 
     li {
+      display: inline-block;
       margin-bottom: 0;
     }
   }
@@ -487,8 +487,7 @@
   }
 
   .tags {
-    display: block;
-    margin-bottom: 0;
+    @extend %tags;
 
     a {
       margin-right: rem-calc(6);
@@ -673,8 +672,7 @@
   }
 
   .tags {
-    display: block;
-    margin-bottom: 0;
+    @extend %tags;
 
     a {
       font-size: $tiny-font-size;

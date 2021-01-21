@@ -1,15 +1,15 @@
 <%- limit ||= nil %>
 
 <% if taggable.tags.any? %>
-  <ul id="tags_<%= dom_id(taggable) %>" class="no-bullet tags">
+  <ul id="tags_<%= dom_id(taggable) %>" class="tags">
     <% taggable.tag_list_with_limit(limit).each do |tag| %>
-      <li class="inline-block">
+      <li>
         <%= link_to sanitize(tag.name),
                     polymorphic_path(taggable.class, search: tag.name) %></li>
     <% end %>
 
     <% if taggable.tags_count_out_of_limit(limit) > 0 %>
-      <li class="inline-block">
+      <li>
         <%= link_to "#{taggable.tags_count_out_of_limit(limit)}+",
                     polymorphic_path(taggable) %>
       </li>

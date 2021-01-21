@@ -1,0 +1,6 @@
+ul {
+
+  &.tags {
+    @extend %tags;
+  }
+}
