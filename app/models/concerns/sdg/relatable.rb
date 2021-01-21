@@ -4,33 +4,41 @@ module SDG::Relatable
   included do
     has_many :sdg_relations, as: :relatable, dependent: :destroy, class_name: "SDG::Relation"
 
-    %w[SDG::Goal SDG::Target SDG::LocalTarget].each do |sdg_type|
+    %w[SDG::Goal SDG::LocalTarget].each do |sdg_type|
       has_many sdg_type.constantize.table_name.to_sym,
                through: :sdg_relations,
                source: :related_sdg,
                source_type: sdg_type
     end
+    has_many :sdg_global_targets,
+             through: :sdg_relations,
+             source: :related_sdg,
+             source_type: "SDG::Target"
+    alias_method :sdg_targets, :sdg_global_targets
+    alias_method :sdg_targets=, :sdg_global_targets=
 
     has_one :sdg_review, as: :relatable, dependent: :destroy, class_name: "SDG::Review"
   end
 
   class_methods do
     def by_goal(code)
-      by_sdg_related(SDG::Goal, code)
+      by_sdg_related(:sdg_goals, code)
     end
 
     def by_target(code)
       if SDG::Target.find_by(code: code)
-        by_sdg_related(SDG::Target, code)
+        by_sdg_related(:sdg_global_targets, code)
       else
-        by_sdg_related(SDG::LocalTarget, code)
+        by_sdg_related(:sdg_local_targets, code)
       end
     end
 
-    def by_sdg_related(sdg_class, code)
+    def by_sdg_related(association, code)
       return all if code.blank?
 
-      joins(sdg_class.table_name.to_sym).merge(sdg_class.where(code: code))
+      sdg_class = reflect_on_association(association).options[:source_type].constantize
+
+      joins(association).merge(sdg_class.where(code: code))
     end
 
     def sdg_reviewed
@@ -51,12 +59,12 @@ module SDG::Relatable
   end
 
   def sdg_target_list
-    sdg_targets.sort.map(&:code).join(", ")
+    sdg_global_targets.sort.map(&:code).join(", ")
   end
 
   def sdg_related_list
     sdg_goals.order(:code).map do |goal|
-      [goal, sdg_targets.where(goal: goal).sort]
+      [goal, sdg_global_targets.where(goal: goal).sort]
     end.flatten.map(&:code).join(", ")
   end
 
@@ -66,7 +74,7 @@ module SDG::Relatable
     goals = goal_codes.map { |code| SDG::Goal[code] }
 
     transaction do
-      self.sdg_targets = targets
+      self.sdg_global_targets = targets
       self.sdg_goals = (targets.map(&:goal) + goals).uniq
     end
   end

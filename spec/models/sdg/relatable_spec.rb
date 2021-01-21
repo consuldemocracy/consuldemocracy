@@ -36,9 +36,9 @@ describe SDG::Relatable do
     end
   end
 
-  describe "#sdg_targets" do
+  describe "#sdg_global_targets" do
     it "can assign targets to a model" do
-      relatable.sdg_targets = [target, another_target]
+      relatable.sdg_global_targets = [target, another_target]
 
       expect(SDG::Relation.count).to be 2
       expect(SDG::Relation.first.relatable).to eq relatable
@@ -48,9 +48,9 @@ describe SDG::Relatable do
     end
 
     it "can obtain the list of targets" do
-      relatable.sdg_targets = [target, another_target]
+      relatable.sdg_global_targets = [target, another_target]
 
-      expect(relatable.reload.sdg_targets).to match_array [target, another_target]
+      expect(relatable.reload.sdg_global_targets).to match_array [target, another_target]
     end
   end
 
@@ -190,7 +190,7 @@ describe SDG::Relatable do
 
     it "does not return records not associated with that target" do
       create(:proposal)
-      create(:proposal, sdg_targets: [another_target])
+      create(:proposal, sdg_global_targets: [another_target])
 
       expect(relatable.class.by_target(target.code)).to be_empty
     end
