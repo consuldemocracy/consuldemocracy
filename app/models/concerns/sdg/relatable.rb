@@ -14,7 +14,6 @@ module SDG::Relatable
              through: :sdg_relations,
              source: :related_sdg,
              source_type: "SDG::Target"
-    alias_method :sdg_targets=, :sdg_global_targets=
 
     has_one :sdg_review, as: :relatable, dependent: :destroy, class_name: "SDG::Review"
   end
@@ -55,6 +54,15 @@ module SDG::Relatable
 
   def sdg_targets
     sdg_global_targets + sdg_local_targets
+  end
+
+  def sdg_targets=(targets)
+    global_targets, local_targets = targets.partition { |target| target.class.name == "SDG::Target" }
+
+    transaction do
+      self.sdg_global_targets = global_targets
+      self.sdg_local_targets = local_targets
+    end
   end
 
   def sdg_goal_list
