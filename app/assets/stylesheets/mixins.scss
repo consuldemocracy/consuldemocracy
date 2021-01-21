@@ -227,6 +227,16 @@
   }
 }
 
+%sdg-goal-list {
+  list-style: none;
+  margin-bottom: 0;
+  margin-left: 0;
+
+  li {
+    display: inline-block;
+  }
+}
+
 %tags {
   margin-bottom: 0;
   margin-left: 0;

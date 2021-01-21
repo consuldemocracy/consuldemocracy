@@ -1,14 +1,12 @@
 .sdg-goals-index {
 
   .sdg-goal-list {
+    @extend %sdg-goal-list;
     @include grid-row;
     @include grid-column-gutter;
-    list-style: none;
-    margin-bottom: 0;
     max-width: 40rem;
 
     li {
-      display: inline-block;
       $spacing: 1vw;
 
       line-height: 0;

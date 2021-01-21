@@ -1,10 +1,7 @@
 .sdg-goal-tag-list {
-  list-style: none;
-  margin-bottom: 0;
-  margin-left: 0;
+  @extend %sdg-goal-list;
 
   li {
-    display: inline-block;
     margin-bottom: 1ch;
 
     &:not(:last-child) {
