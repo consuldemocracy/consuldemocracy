@@ -1115,4 +1115,41 @@ describe "Debates" do
       expect(page).not_to have_content("Featured")
     end
   end
+
+  describe "SDG related list" do
+    let(:user) { create(:user) }
+
+    before do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.debates"] = true
+    end
+
+    scenario "create debate with sdg related list", :js do
+      login_as(user)
+      visit new_debate_path
+      fill_in "Debate title", with: "A title for a debate related with SDG related content"
+      fill_in_ckeditor "Initial debate text", with: "This is very important because..."
+      click_sdg_goal(1)
+      check "debate_terms_of_service"
+
+      click_button "Start a debate"
+
+      within(".sdg-goal-tag-list") { expect(page).to have_link "1. No Poverty" }
+    end
+
+    scenario "edit debate with sdg related list", :js do
+      debate = create(:debate, author: user)
+      debate.sdg_goals = [SDG::Goal[1], SDG::Goal[2]]
+      login_as(user)
+      visit edit_debate_path(debate)
+
+      remove_sdg_goal_or_target_tag(1)
+      click_button "Save changes"
+
+      within(".sdg-goal-tag-list") do
+        expect(page).not_to have_link "1. No Poverty"
+        expect(page).to have_link "2. Zero Hunger"
+      end
+    end
+  end
 end
