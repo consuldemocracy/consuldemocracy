@@ -436,6 +436,6 @@ es:
       goal_list: "Listado de objetivos"
       help:
         title: "¿Qué ODS y metas se alinean con mi %{record}?"
-      hint: "Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno"  
+      hint: "Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno"
       placeholder: "Escribe las etiquetas que desees"
       remove_tag: "Eliminar"
