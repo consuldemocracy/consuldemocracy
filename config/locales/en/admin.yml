@@ -1373,6 +1373,7 @@ en:
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
         polls: Polls
+        sdg: SDG
       graph:
         debate_created: Debates
         visit: Visits
@@ -1423,6 +1424,7 @@ en:
         debates: "Debates"
         polls: "Polls"
         proposals: "Proposals"
+        title: "Sustainable Development Goals - Stats"
     tags:
       create: Create topic
       destroy: Delete topic

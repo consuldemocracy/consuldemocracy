@@ -90,6 +90,10 @@ class Admin::StatsController < Admin::BaseController
     @participants = ::Poll::Voter.where(poll: @polls)
   end
 
+  def sdg
+    @goals = SDG::Goal.order(:code)
+  end
+
   private
 
     def voters_in_heading(heading)
