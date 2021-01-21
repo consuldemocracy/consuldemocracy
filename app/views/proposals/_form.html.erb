@@ -93,6 +93,8 @@
       </div>
     <% end %>
 
+    <%= render SDG::RelatedListSelectorComponent.new(f) %>
+
     <div class="small-12 column">
       <% if @proposal.new_record? %>
         <%= f.check_box :terms_of_service,
