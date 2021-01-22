@@ -20,6 +20,8 @@
         <th class="text-center"><%= t("admin.legislation.processes.process.start_date") %></th>
         <th class="text-center"><%= t("admin.legislation.processes.process.end_date") %></th>
         <th class="text-center"><%= t("admin.legislation.processes.process.comments") %></th>
+        <th class="text-center"><%= SDG::Goal.model_name.human(count: :other).upcase_first %></th>
+        <th class="text-center"><%= SDG::Target.model_name.human(count: :other).upcase_first %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -32,6 +34,8 @@
           <td class="text-center"><%= I18n.l process.start_date %></td>
           <td class="text-center"><%= I18n.l process.end_date %></td>
           <td class="text-center"><%= process.total_comments %></td>
+          <td class="text-center"><%= process.sdg_goal_list %></td>
+          <td class="text-center"><%= process.sdg_target_list %></td>
           <td><%= render Admin::TableActionsComponent.new(process) %></td>
         </tr>
       <% end %>
