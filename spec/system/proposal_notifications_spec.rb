@@ -197,7 +197,6 @@ describe "Proposal Notifications" do
       logout
       login_as user1
       visit root_path
-      visit root_path
 
       find(".icon-notification").click
 
@@ -209,7 +208,6 @@ describe "Proposal Notifications" do
       logout
       login_as user2
       visit root_path
-      visit root_path
 
       find(".icon-notification").click
 
@@ -220,7 +218,6 @@ describe "Proposal Notifications" do
 
       logout
       login_as user3
-      visit root_path
       visit root_path
 
       find(".icon-no-notification").click
@@ -300,7 +297,6 @@ describe "Proposal Notifications" do
 
       logout
       login_as user
-      visit root_path
       visit root_path
 
       find(".icon-notification").click
