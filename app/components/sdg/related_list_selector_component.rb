@@ -28,6 +28,10 @@ class SDG::RelatedListSelectorComponent < ApplicationComponent
     }
   end
 
+  def render?
+    SDG::ProcessEnabled.new(f.object).enabled?
+  end
+
   private
 
     def goals
