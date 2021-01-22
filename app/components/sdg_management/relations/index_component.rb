@@ -53,6 +53,8 @@ class SDGManagement::Relations::IndexComponent < ApplicationComponent
     end
 
     def target_options
-      options_from_collection_for_select(SDG::Target.all.sort, :code, :code, params[:target_code])
+      targets = SDG::Target.all + SDG::LocalTarget.all
+
+      options_from_collection_for_select(targets.sort, :code, :code, params[:target_code])
     end
 end

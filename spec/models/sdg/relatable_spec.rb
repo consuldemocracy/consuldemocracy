@@ -36,9 +36,9 @@ describe SDG::Relatable do
     end
   end
 
-  describe "#sdg_targets" do
+  describe "#sdg_global_targets" do
     it "can assign targets to a model" do
-      relatable.sdg_targets = [target, another_target]
+      relatable.sdg_global_targets = [target, another_target]
 
       expect(SDG::Relation.count).to be 2
       expect(SDG::Relation.first.relatable).to eq relatable
@@ -48,9 +48,9 @@ describe SDG::Relatable do
     end
 
     it "can obtain the list of targets" do
-      relatable.sdg_targets = [target, another_target]
+      relatable.sdg_global_targets = [target, another_target]
 
-      expect(relatable.reload.sdg_targets).to match_array [target, another_target]
+      expect(relatable.reload.sdg_global_targets).to match_array [target, another_target]
     end
   end
 
@@ -59,6 +59,25 @@ describe SDG::Relatable do
       relatable.sdg_targets = [SDG::Target[2.2], SDG::Target[1.2], SDG::Target[2.1]]
 
       expect(relatable.sdg_target_list).to eq "1.2, 2.1, 2.2"
+    end
+
+    it "includes both targets and local targets in order" do
+      relatable.sdg_global_targets = [SDG::Target[2.2], SDG::Target[1.2], SDG::Target[2.1]]
+      relatable.sdg_local_targets = %w[1.1.1 2.1.3].map { |code| create(:sdg_local_target, code: code) }
+
+      expect(relatable.sdg_target_list).to eq "1.1.1, 1.2, 2.1, 2.1.3, 2.2"
+    end
+  end
+
+  describe "#sdg_targets=" do
+    it "assigns both targets and local targets" do
+      global_targets = [SDG::Target[2.2], SDG::Target[1.2]]
+      local_targets = %w[2.2.1 3.1.1].map { |code| create(:sdg_local_target, code: code) }
+
+      relatable.sdg_targets = global_targets + local_targets
+
+      expect(relatable.sdg_global_targets).to match_array global_targets
+      expect(relatable.sdg_local_targets).to match_array local_targets
     end
   end
 
@@ -190,9 +209,22 @@ describe SDG::Relatable do
 
     it "does not return records not associated with that target" do
       create(:proposal)
-      create(:proposal, sdg_targets: [another_target])
+      create(:proposal, sdg_global_targets: [another_target])
 
       expect(relatable.class.by_target(target.code)).to be_empty
+    end
+
+    it "returns records associated to a local target" do
+      relatable.sdg_local_targets = [local_target]
+
+      expect(relatable.class.by_target(local_target.code)).to eq [relatable]
+    end
+
+    it "does not return records not associated with that local target" do
+      create(:proposal)
+      create(:proposal, sdg_local_targets: [another_local_target])
+
+      expect(relatable.class.by_target(local_target.code)).to be_empty
     end
   end
 

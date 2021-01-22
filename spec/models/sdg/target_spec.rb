@@ -61,6 +61,32 @@ describe SDG::Target do
       expect(target).to be > lesser_target
       expect(target).to be < greater_target
     end
+
+    context "comparing with a local target" do
+      it "compares using the goal first" do
+        lesser_local_target = build(:sdg_local_target, code: "2.1.1")
+        greater_local_target = build(:sdg_local_target, code: "11.1.2")
+
+        expect(target).to be > lesser_local_target
+        expect(target).to be < greater_local_target
+      end
+
+      it "compares using the target when the goal is the same" do
+        lesser_target = build(:sdg_target, code: "10.2", goal: goal)
+        greater_target = build(:sdg_target, code: "10.A", goal: goal)
+        lesser_local_target = build(:sdg_local_target, code: "10.2.25", target: lesser_target)
+        greater_local_target = build(:sdg_local_target, code: "10.A.1", target: greater_target)
+
+        expect(target).to be > lesser_local_target
+        expect(target).to be < greater_local_target
+      end
+
+      it "is smaller than a local target belonging to it" do
+        local_target = build(:sdg_local_target, target: target, code: "10.19.1")
+
+        expect(target).to be < local_target
+      end
+    end
   end
 
   describe ".[]" do
