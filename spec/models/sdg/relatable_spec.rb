@@ -159,6 +159,16 @@ describe SDG::Relatable do
       expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], SDG::Goal[3], SDG::Goal[4]]
       expect(relatable.reload.sdg_targets).to match_array [SDG::Target[1.1], SDG::Target[4.1]]
     end
+
+    it "touches the associated record" do
+      relatable.sdg_related_list = "1.1, 2.1, 2.2"
+
+      travel(10.seconds) do
+        relatable.sdg_related_list = "1.1, 2.1, 2.2, 3.1"
+
+        expect(relatable.updated_at).to eq Time.current
+      end
+    end
   end
 
   describe "#sdg_review" do
