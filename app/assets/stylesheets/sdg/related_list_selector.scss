@@ -1,4 +1,6 @@
 .sdg-related-list-selector {
+  @include grid-column-gutter;
+  clear: both;
 
   .amsify-suggestags-area .amsify-select-tag {
     color: $white;

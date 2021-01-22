@@ -1907,4 +1907,42 @@ describe "Successful proposals" do
       expect(page).to have_content "Proposal created successfully."
     end
   end
+
+  describe "SDG related list" do
+    let(:user) { create(:user) }
+
+    before do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.proposals"] = true
+    end
+
+    scenario "create proposal with sdg related list", :js do
+      login_as(user)
+      visit new_proposal_path
+      fill_in "Proposal title", with: "A title for a proposal related with SDG related content"
+      fill_in "Proposal summary", with: "In summary, what we want is..."
+      fill_in "proposal_responsible_name", with: "Isabel Garcia"
+      click_sdg_goal(1)
+      check "proposal_terms_of_service"
+
+      click_button "Create proposal"
+
+      within(".sdg-goal-tag-list") { expect(page).to have_link "1. No Poverty" }
+    end
+
+    scenario "edit proposal with sdg related list", :js do
+      proposal = create(:proposal, author: user)
+      proposal.sdg_goals = [SDG::Goal[1], SDG::Goal[2]]
+      login_as(user)
+      visit edit_proposal_path(proposal)
+
+      remove_sdg_goal_or_target_tag(1)
+      click_button "Save changes"
+
+      within(".sdg-goal-tag-list") do
+        expect(page).not_to have_link "1. No Poverty"
+        expect(page).to have_link "2. Zero Hunger"
+      end
+    end
+  end
 end

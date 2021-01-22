@@ -330,4 +330,42 @@ describe "Admin collaborative legislation", :admin do
       expect(page).not_to have_link "Remove language"
     end
   end
+
+  context "SDG related list" do
+    before do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.legislation"] = true
+    end
+
+    scenario "create Collaborative Legislation with sdg related list", :js do
+      visit new_admin_legislation_process_path
+      fill_in "Process Title", with: "Legislation process with SDG related content"
+      within_fieldset "Process" do
+        fill_in "Start", with: 2.days.ago
+        fill_in "End", with: 1.day.from_now
+      end
+
+      click_sdg_goal(17)
+      click_button "Create process"
+      visit admin_legislation_processes_path
+
+      within("tr", text: "Legislation process with SDG related content") do
+        expect(page).to have_css "td", exact_text: "17"
+      end
+    end
+
+    scenario "edit Collaborative Legislation with sdg related list", :js do
+      process = create(:legislation_process, title: "Legislation process with SDG related content")
+      process.sdg_goals = [SDG::Goal[1], SDG::Goal[17]]
+      visit edit_admin_legislation_process_path(process)
+
+      remove_sdg_goal_or_target_tag(1)
+      click_button "Save changes"
+      visit admin_legislation_processes_path
+
+      within("tr", text: "Legislation process with SDG related content") do
+        expect(page).to have_css "td", exact_text: "17"
+      end
+    end
+  end
 end

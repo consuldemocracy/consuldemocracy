@@ -86,6 +86,8 @@
                         data: { js_url: suggest_tags_path } %>
     </div>
 
+    <%= render SDG::RelatedListSelectorComponent.new(f) %>
+
     <% unless current_user.manager? %>
 
       <div class="small-12 column">

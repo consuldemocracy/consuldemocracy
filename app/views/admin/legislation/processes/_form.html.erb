@@ -191,6 +191,10 @@
   </div>
 
   <div class="row">
+    <%= render SDG::RelatedListSelectorComponent.new(f) %>
+  </div>
+
+  <div class="row">
     <div class="small-12 medium-3 column clear end">
       <%= f.submit(class: "button success expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
     </div>

@@ -14,6 +14,8 @@
       <th class="small-5"><%= t("admin.polls.index.name") %></th>
       <th class="text-center"><%= t("admin.polls.index.start_date") %></th>
       <th class="text-center"><%= t("admin.polls.index.closing_date") %></th>
+      <th class="text-center"><%= SDG::Goal.model_name.human(count: :other).upcase_first %></th>
+      <th class="text-center"><%= SDG::Target.model_name.human(count: :other).upcase_first %></th>
       <th><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>

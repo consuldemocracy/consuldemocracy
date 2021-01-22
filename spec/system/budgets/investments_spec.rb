@@ -1933,4 +1933,41 @@ describe "Budget Investments" do
       end
     end
   end
+
+  describe "SDG related list" do
+    before do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.budgets"] = true
+      budget.update!(phase: "accepting")
+    end
+
+    scenario "create budget investment with sdg related list", :js do
+      login_as(author)
+      visit new_budget_investment_path(budget)
+      select heading.name, from: "Heading"
+      fill_in "Title", with: "A title for a budget investment related with SDG related content"
+      fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
+      click_sdg_goal(1)
+      check "budget_investment_terms_of_service"
+
+      click_button "Create Investment"
+
+      within(".sdg-goal-tag-list") { expect(page).to have_link "1. No Poverty" }
+    end
+
+    scenario "edit budget investment with sdg related list", :js do
+      investment = create(:budget_investment, heading: heading, author: author)
+      investment.sdg_goals = [SDG::Goal[1], SDG::Goal[2]]
+      login_as(author)
+      visit edit_budget_investment_path(budget, investment)
+
+      remove_sdg_goal_or_target_tag(1)
+      click_button "Update Investment"
+
+      within(".sdg-goal-tag-list") do
+        expect(page).not_to have_link "1. No Poverty"
+        expect(page).to have_link "2. Zero Hunger"
+      end
+    end
+  end
 end

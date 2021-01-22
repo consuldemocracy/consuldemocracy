@@ -5,6 +5,27 @@ describe SDG::RelatedListSelectorComponent, type: :component do
   let(:form) { ConsulFormBuilder.new(:debate, debate, ActionView::Base.new, {}) }
   let(:component) { SDG::RelatedListSelectorComponent.new(form) }
 
+  before do
+    Setting["feature.sdg"] = true
+    Setting["sdg.process.debates"] = true
+  end
+
+  it "does not render when the feature is disabled" do
+    Setting["feature.sdg"] = false
+
+    render_inline component
+
+    expect(page).not_to have_css ".sdg-related-list-selector"
+  end
+
+  it "does not render when the SDG process feature is disabled" do
+    Setting["sdg.process.debates"] = false
+
+    render_inline component
+
+    expect(page).not_to have_css ".sdg-related-list-selector"
+  end
+
   it "renders sdg_related_list field" do
     render_inline component
 
