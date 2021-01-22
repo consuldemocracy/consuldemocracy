@@ -218,13 +218,8 @@ describe "SDG Relations", :js do
 
       visit sdg_management_edit_legislation_process_path(process)
 
-      within "span[data-val='2']" do
-        click_button "Remove"
-      end
-
-      within "span[data-val='3.3']" do
-        click_button "Remove"
-      end
+      remove_sdg_goal_or_target_tag(2)
+      remove_sdg_goal_or_target_tag(3.3)
 
       click_button "Update Process"
 
@@ -293,7 +288,7 @@ describe "SDG Relations", :js do
         process = create(:legislation_process, title: "SDG process")
 
         visit sdg_management_edit_legislation_process_path(process)
-        find("li[data-code='1']").click
+        click_sdg_goal(1)
         click_button "Update Process"
         click_link "Marked as reviewed"
 
@@ -307,7 +302,7 @@ describe "SDG Relations", :js do
         process.sdg_goals = [SDG::Goal[1], SDG::Goal[2]]
 
         visit sdg_management_edit_legislation_process_path(process)
-        find("li[data-code='1']").click
+        click_sdg_goal(1)
         click_button "Update Process"
         click_link "Marked as reviewed"
 
@@ -322,7 +317,7 @@ describe "SDG Relations", :js do
         process = create(:legislation_process, title: "SDG process")
 
         visit sdg_management_edit_legislation_process_path(process)
-        find("li[data-code='1']").click
+        click_sdg_goal(1)
 
         expect(find("li[data-code='1']")["aria-checked"]).to eq "true"
       end
@@ -333,15 +328,11 @@ describe "SDG Relations", :js do
         process.sdg_targets = [SDG::Target[1.1]]
 
         visit sdg_management_edit_legislation_process_path(process)
-        within "span[data-val='1']" do
-          click_button "Remove"
-        end
+        remove_sdg_goal_or_target_tag(1)
 
         expect(find("li[data-code='1']")["aria-checked"]).to eq "true"
 
-        within "span[data-val='1.1']" do
-          click_button "Remove"
-        end
+        remove_sdg_goal_or_target_tag(1.1)
 
         expect(find("li[data-code='1']")["aria-checked"]).to eq "false"
       end
@@ -352,7 +343,7 @@ describe "SDG Relations", :js do
         process = create(:legislation_process, title: "SDG process")
 
         visit sdg_management_edit_legislation_process_path(process)
-        find("li[data-code='1']").click
+        click_sdg_goal(1)
 
         within(".help-section") { expect(page).to have_content "No Poverty" }
       end
@@ -365,9 +356,7 @@ describe "SDG Relations", :js do
 
         within(".help-section") { expect(page).to have_content "No Poverty" }
 
-        within "span[data-val='1']" do
-          click_button "Remove"
-        end
+        remove_sdg_goal_or_target_tag(1)
 
         expect(page).not_to have_content "No Poverty"
       end
