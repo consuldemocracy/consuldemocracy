@@ -1414,6 +1414,14 @@ es:
           question_name: Pregunta
           origin_web: Participantes en Web
           origin_total: Participantes Totales
+      sdg:
+        budget_investments:
+          amount: "Presupuesto aprobado"
+          winners: "Proyectos de inversión ganadores"
+          sent: "Proyectos de inversión enviados"
+        debates: "Debates"
+        polls: "Votaciones"
+        proposals: "Propuestas"
     tags:
       create: Crear tema
       destroy: Eliminar tema

@@ -1415,6 +1415,14 @@ en:
           question_name: Question
           origin_web: Web participants
           origin_total: Total participants
+      sdg:
+        budget_investments:
+          amount: "Approved amount"
+          winners: "Winner investment projects"
+          sent: "Investment projects sent"
+        debates: "Debates"
+        polls: "Polls"
+        proposals: "Proposals"
     tags:
       create: Create topic
       destroy: Delete topic
