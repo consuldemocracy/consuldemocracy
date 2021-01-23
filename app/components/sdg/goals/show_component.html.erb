@@ -3,17 +3,20 @@
 <div class="sdg-goal-show">
   <%= back_link_to sdg_goals_path %>
 
-  <article class="sdg-goal sdg-goal-<%= goal.code %>">
+  <article class="sdg-goal sdg-goal-<%= code %>">
     <header>
       <h1><%= heading %></h1>
     </header>
+    <div class="goal-description-content">
+      <%= long_description %>
+    </div>
   </article>
 
-  <%= render Widget::Feeds::ParticipationComponent.new(feeds) %>
+  <%= render ::Widget::Feeds::ParticipationComponent.new(feeds) %>
 
   <% if processes_feed %>
     <div class="feeds-list">
-      <%= render Widget::Feeds::FeedComponent.new(processes_feed) %>
+      <%= render ::Widget::Feeds::FeedComponent.new(processes_feed) %>
     </div>
   <% end %>
 </div>
