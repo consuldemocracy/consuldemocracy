@@ -439,3 +439,9 @@ es:
       hint: "Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno"
       placeholder: "Escribe las etiquetas que desees"
       remove_tag: "Eliminar"
+    targets:
+      filter:
+        link: "Ver %{resources} de la meta %{code}"
+        more:
+          one: "Una meta más"
+          other: "%{count} metas más"

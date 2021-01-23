@@ -7,4 +7,22 @@
       @extend %tag;
     }
   }
+
+  .sdg-target-tag-list {
+    @extend %tags;
+
+    a:not(.more-targets) {
+      color: $white;
+    }
+
+    @each $code, $color in $sdg-colors {
+      [data-code^="#{$code}"] {
+        background-color: $color;
+
+        &:hover {
+          background-color: darken($color, 10%);
+        }
+      }
+    }
+  }
 }

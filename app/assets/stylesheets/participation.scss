@@ -488,6 +488,10 @@
 
   .tags {
     @extend %tags;
+  }
+
+  .tags,
+  .sdg-target-tag-list {
 
     a {
       margin-right: rem-calc(6);
@@ -673,7 +677,10 @@
 
   .tags {
     @extend %tags;
+  }
 
+  .tags,
+  .sdg-target-tag-list {
     a {
       font-size: $tiny-font-size;
     }

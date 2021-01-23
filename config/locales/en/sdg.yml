@@ -439,3 +439,9 @@ en:
       hint: "You can introduce the code of a specific goal/target or a text to find one"
       placeholder: "Write a goal or target code or description"
       remove_tag: "Remove"
+    targets:
+      filter:
+        link: "See all %{resources} related to target %{code}"
+        more:
+          one: "One more target"
+          other: "%{count} more targets"
