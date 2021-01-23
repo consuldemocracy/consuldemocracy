@@ -15,7 +15,8 @@ class SDG::RelatedListSelectorComponent < ApplicationComponent
 
   def goals_and_targets
     goals.map do |goal|
-      [goal, *goal.targets.sort]
+      global_and_local_targets = goal.targets + goal.local_targets
+      [goal, global_and_local_targets.sort]
     end.flatten
   end
 

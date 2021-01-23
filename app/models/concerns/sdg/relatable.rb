@@ -74,19 +74,20 @@ module SDG::Relatable
   end
 
   def sdg_related_list
-    sdg_goals.order(:code).map do |goal|
-      [goal, sdg_global_targets.where(goal: goal).sort]
-    end.flatten.map(&:code).join(", ")
+    related_sdgs.sort.map(&:code).join(", ")
   end
 
   def sdg_related_list=(codes)
     target_codes, goal_codes = codes.tr(" ", "").split(",").partition { |code| code.include?(".") }
-    targets = target_codes.map { |code| SDG::Target[code] }
+    local_targets_codes, global_targets_codes = target_codes.partition { |code| code.split(".")[2] }
+    global_targets = global_targets_codes.map { |code| SDG::Target[code] }
+    local_targets = local_targets_codes.map { |code| SDG::LocalTarget[code] }
     goals = goal_codes.map { |code| SDG::Goal[code] }
 
     transaction do
-      self.sdg_global_targets = targets
-      self.sdg_goals = (targets.map(&:goal) + goals).uniq
+      self.sdg_local_targets = local_targets
+      self.sdg_global_targets = global_targets
+      self.sdg_goals = (global_targets.map(&:goal) + local_targets.map(&:goal) + goals).uniq
     end
   end
 end

@@ -12,11 +12,13 @@ class SDG::Target < ApplicationRecord
     I18n.t("sdg.goals.goal_#{goal.code}.targets.target_#{code_key}.title")
   end
 
-  def <=>(any_target)
-    if any_target.class == self.class
-      [goal.code, numeric_subcode] <=> [any_target.goal.code, any_target.numeric_subcode]
-    elsif any_target.class.name == "SDG::LocalTarget"
-      [self, -1] <=> [any_target.target, 1]
+  def <=>(goal_or_target)
+    if goal_or_target.class == self.class
+      [goal.code, numeric_subcode] <=> [goal_or_target.goal.code, goal_or_target.numeric_subcode]
+    elsif goal_or_target.class == goal.class
+      -1 * (goal_or_target <=> self)
+    elsif goal_or_target.class.name == "SDG::LocalTarget"
+      [self, -1] <=> [goal_or_target.target, 1]
     end
   end
 

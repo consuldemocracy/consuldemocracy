@@ -23,11 +23,11 @@ class SDG::LocalTarget < ApplicationRecord
     find_by!(code: code)
   end
 
-  def <=>(any_target)
-    if any_target.class == self.class
-      [target, numeric_subcode] <=> [any_target.target, any_target.numeric_subcode]
-    elsif any_target.class == target.class
-      -1 * (any_target <=> self)
+  def <=>(goal_or_target)
+    if goal_or_target.class == self.class
+      [target, numeric_subcode] <=> [goal_or_target.target, goal_or_target.numeric_subcode]
+    elsif [target.class, goal.class].include?(goal_or_target.class)
+      -1 * (goal_or_target <=> self)
     end
   end
 

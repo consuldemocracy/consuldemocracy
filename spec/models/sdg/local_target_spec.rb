@@ -90,6 +90,14 @@ describe SDG::LocalTarget do
       expect(local_target).to be > lesser_target
       expect(local_target).to be < greater_target
     end
+
+    it "can be compared against goals" do
+      lesser_goal = build(:sdg_goal, code: "10")
+      greater_goal = build(:sdg_goal, code: "11")
+
+      expect(local_target).to be > lesser_goal
+      expect(local_target).to be < greater_goal
+    end
   end
 
   describe ".[]" do
