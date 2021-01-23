@@ -1,5 +1,7 @@
 <%- limit ||= nil %>
 
+<%= render SDG::TagListComponent.new(taggable, limit: limit) %>
+
 <% if taggable.tags.any? %>
   <ul id="tags_<%= dom_id(taggable) %>" class="tags">
     <% taggable.tag_list_with_limit(limit).each do |tag| %>
@@ -16,5 +18,3 @@
     <% end %>
   </ul>
 <% end %>
-
-<%= render SDG::TagListComponent.new(taggable, limit: limit) %>
