@@ -18,7 +18,7 @@ describe SDG::LocalTarget do
   end
 
   it "is not valid without a code" do
-    expect(build(:sdg_local_target, code: nil, target: SDG::Target[1.1])).not_to be_valid
+    expect(build(:sdg_local_target, code: nil, target: SDG::Target[1.1], goal: SDG::Goal[1])).not_to be_valid
   end
 
   it "is not valid when code does not include associated target code" do
@@ -45,6 +45,15 @@ describe SDG::LocalTarget do
 
   it "is not valid without a target" do
     expect(build(:sdg_local_target, target: nil)).not_to be_valid
+  end
+
+  describe "#set_related_goal" do
+    it "before validation set related goal" do
+      local_target = build(:sdg_local_target, code: "1.1.1", target: SDG::Target["1.1"], goal: nil)
+
+      expect(local_target).to be_valid
+      expect(local_target.goal).to eq(SDG::Goal[1])
+    end
   end
 
   describe "#goal" do

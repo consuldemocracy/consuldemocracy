@@ -2,8 +2,6 @@ class SDG::LocalTarget < ApplicationRecord
   include Comparable
   include SDG::Related
 
-  delegate :goal, to: :target
-
   translates :title, touch: true
   translates :description, touch: true
   include Globalizable
@@ -14,8 +12,12 @@ class SDG::LocalTarget < ApplicationRecord
   validates :code, presence: true, uniqueness: true,
     format: ->(local_target) { /\A#{local_target.target&.code}\.\d+/ }
   validates :target, presence: true
+  validates :goal, presence: true
 
   belongs_to :target
+  belongs_to :goal
+
+  before_validation :set_related_goal
 
   def self.[](code)
     find_by!(code: code)
@@ -39,5 +41,9 @@ class SDG::LocalTarget < ApplicationRecord
 
     def subcode
       code.split(".").last
+    end
+
+    def set_related_goal
+      self.goal ||= target&.goal
     end
 end
