@@ -1372,6 +1372,7 @@ es:
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
         polls: Votaciones
+        sdg: ODS
       graph:
         debate_created: Debates
         visit: Visitas
@@ -1414,6 +1415,15 @@ es:
           question_name: Pregunta
           origin_web: Participantes en Web
           origin_total: Participantes Totales
+      sdg:
+        budget_investments:
+          amount: "Presupuesto aprobado"
+          winners: "Proyectos de inversión ganadores"
+          sent: "Proyectos de inversión enviados"
+        debates: "Debates"
+        polls: "Votaciones"
+        proposals: "Propuestas"
+        title: "Objetivos de Desarrollo Sostenible - Estadísticas"
     tags:
       create: Crear tema
       destroy: Eliminar tema
