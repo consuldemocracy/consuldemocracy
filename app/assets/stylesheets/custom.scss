@@ -299,8 +299,12 @@ header, .top-bar {
 }
 
 .budgets-calendar-active {
-  background: $brand_secondary;
-  color: black;
+    background: $brand_secondary;
+    color: white;
+}
+
+.budgets-calendar-active > a {
+    color: white;
 }
 
 .tabla-puntos-encuentro {
