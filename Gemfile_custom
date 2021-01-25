@@ -4,3 +4,4 @@
 # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#gemfile
 #
 gem "aws-sdk-s3"
+gem "dalli-elasticache"

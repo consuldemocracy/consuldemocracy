@@ -61,7 +61,11 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  config.cache_store = :dalli_store
+  if Rails.application.secrets.aws_memcached_configuration_endpoint.present?
+    endpoint    = Rails.application.secrets.aws_memcached_configuration_endpoint
+    elasticache = Dalli::ElastiCache.new(endpoint)
+    config.cache_store = :dalli_store, elasticache.servers, { expires_in: 1.day, compress: true}
+  end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"

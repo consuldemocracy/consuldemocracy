@@ -60,7 +60,11 @@ Rails.application.configure do
   config.log_tags = [:request_id]
 
   # Use a different cache store in production.
-  config.cache_store = :dalli_store, { value_max_bytes: 2000000 }
+  if Rails.application.secrets.aws_memcached_configuration_endpoint.present?
+    endpoint    = Rails.application.secrets.aws_memcached_configuration_endpoint
+    elasticache = Dalli::ElastiCache.new(endpoint)
+    config.cache_store = :dalli_store, elasticache.servers, { expires_in: 1.day, compress: true}
+  end
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
