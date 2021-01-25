@@ -618,6 +618,8 @@ describe "Commenting legislation questions" do
       create(:legislation_annotation, draft_version: draft_version, text: "my other annotation",
                                       ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10 }])
     end
+    let!(:comment1) { annotation1.comments.first }
+    let!(:comment2) { annotation2.comments.first }
 
     before do
       login_as user
@@ -648,15 +650,14 @@ describe "Commenting legislation questions" do
         first(:link, "0 replies").click
       end
 
-      comment = annotation1.comments.first
       click_link "Reply"
 
-      within "#js-comment-form-comment_#{comment.id}" do
+      within "#js-comment-form-comment_#{comment1.id}" do
         fill_in "Leave your comment", with: "replying in single annotation thread"
         click_button "Publish reply"
       end
 
-      within "#comment_#{comment.id}" do
+      within "#comment_#{comment1.id}" do
         expect(page).to have_content "replying in single annotation thread"
       end
 
@@ -685,17 +686,16 @@ describe "Commenting legislation questions" do
         find(".icon-expand").click
       end
 
-      comment = annotation2.comments.first
-      within("#comment_#{comment.id}") do
+      within("#comment_#{comment2.id}") do
         click_link "Reply"
       end
 
-      within "#js-comment-form-comment_#{comment.id}" do
+      within "#js-comment-form-comment_#{comment2.id}" do
         fill_in "Leave your comment", with: "replying in multiple annotation thread"
         click_button "Publish reply"
       end
 
-      within "#comment_#{comment.id}" do
+      within "#comment_#{comment2.id}" do
         expect(page).to have_content "replying in multiple annotation thread"
       end
 
