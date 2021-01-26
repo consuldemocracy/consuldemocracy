@@ -55,34 +55,10 @@
       }
       window.parent.postMessage('l:' + _href, '<%=Rails.application.config.participacion_push_target_origin %>');
     });
-  } else if(window.parent === undefined || window.parent === window) {
-    var _i = window.location.href.indexOf('//');
-    if(_i>=0) {
-      _i = window.location.href.indexOf('/',_i+2);
-      if(_i>=0) {
-        var _href = window.location.href.substring(_i);
-        window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>#'+encodeURIComponent(_href);
-      } else {
-        window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>';
-      }
-    } else {
-      window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>'
-    }
   }
 </script>
 <%else %>
   <script type="text/javascript">
-    var _i = window.location.href.indexOf('//');
-    if(_i>=0) {
-      _i = window.location.href.indexOf('/',_i+2);
-      if(_i>=0) {
-        window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>#'+encodeURIComponent(_href);
-      } else {
-        window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>';
-      }
-    } else {
-      window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>'
-    }
-
+    window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>'
   </script>
 <% end %>
