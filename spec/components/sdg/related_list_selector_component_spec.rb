@@ -26,7 +26,7 @@ describe SDG::RelatedListSelectorComponent, type: :component do
     expect(page).not_to have_css ".sdg-related-list-selector"
   end
 
-  it "renders sdg_related_list field" do
+  it "renders related_sdg_list field" do
     render_inline component
 
     expect(page).to have_css ".sdg-related-list-selector .input"

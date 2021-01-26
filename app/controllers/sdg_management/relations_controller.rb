@@ -21,7 +21,7 @@ class SDGManagement::RelationsController < SDGManagement::BaseController
   end
 
   def update
-    @record.sdg_related_list = params[@record.class.table_name.singularize][:sdg_related_list]
+    @record.related_sdg_list = params[@record.class.table_name.singularize][:related_sdg_list]
 
     redirect_to({ action: :index }, notice: update_notice)
   end

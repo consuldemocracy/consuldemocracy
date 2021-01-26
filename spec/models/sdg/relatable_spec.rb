@@ -99,13 +99,13 @@ describe SDG::Relatable do
     end
   end
 
-  describe "#sdg_related_list" do
+  describe "#related_sdg_list" do
     it "orders related list by code" do
       relatable.sdg_goals = [SDG::Goal[1], SDG::Goal[3], SDG::Goal[2]]
       local_targets = %w[2.2.2 2.2.1 3.1.1].map { |code| create(:sdg_local_target, code: code) }
       relatable.sdg_targets = [SDG::Target[2.2], SDG::Target[1.2], SDG::Target[2.1]] + local_targets
 
-      expect(relatable.sdg_related_list).to eq "1, 1.2, 2, 2.1, 2.2, 2.2.1, 2.2.2, 3, 3.1.1"
+      expect(relatable.related_sdg_list).to eq "1, 1.2, 2, 2.1, 2.2, 2.2.1, 2.2.2, 3, 3.1.1"
     end
   end
 
@@ -120,56 +120,56 @@ describe SDG::Relatable do
     end
   end
 
-  describe "#sdg_related_list=" do
+  describe "#related_sdg_list=" do
     it "assigns a single goal" do
-      relatable.sdg_related_list = "1"
+      relatable.related_sdg_list = "1"
 
       expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1]]
     end
 
     it "assigns a single target" do
-      relatable.sdg_related_list = "1.1"
+      relatable.related_sdg_list = "1.1"
 
       expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1]]
       expect(relatable.reload.sdg_targets).to match_array [SDG::Target[1.1]]
     end
 
     it "assigns a single local target" do
-      relatable.sdg_related_list = local_target.code
+      relatable.related_sdg_list = local_target.code
 
       expect(relatable.reload.sdg_goals).to match_array [local_target.goal]
       expect(relatable.reload.sdg_local_targets).to match_array [local_target]
     end
 
     it "assigns multiple targets" do
-      relatable.sdg_related_list = "1.1,2.3"
+      relatable.related_sdg_list = "1.1,2.3"
 
       expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], SDG::Goal[2]]
       expect(relatable.reload.sdg_targets).to match_array [SDG::Target[1.1], SDG::Target[2.3]]
     end
 
     it "assigns multiple goals" do
-      relatable.sdg_related_list = "3,2,1"
+      relatable.related_sdg_list = "3,2,1"
 
       expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], SDG::Goal[2], SDG::Goal[3]]
     end
 
     it "assigns multiple local targets" do
-      relatable.sdg_related_list = "#{local_target.code}, #{another_local_target.code}"
+      relatable.related_sdg_list = "#{local_target.code}, #{another_local_target.code}"
 
       expect(relatable.reload.sdg_goals).to match_array [local_target.goal, another_local_target.goal]
       expect(relatable.reload.sdg_local_targets).to match_array [local_target, another_local_target]
     end
 
     it "ignores trailing spaces and spaces between commas" do
-      relatable.sdg_related_list = " 1.1,  2.3 "
+      relatable.related_sdg_list = " 1.1,  2.3 "
 
       expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], SDG::Goal[2]]
       expect(relatable.reload.sdg_targets).to match_array [SDG::Target[1.1], SDG::Target[2.3]]
     end
 
     it "assigns goals, targets and local_targets" do
-      relatable.sdg_related_list = "1.1,3,4,4.1,#{another_local_target.code}"
+      relatable.related_sdg_list = "1.1,3,4,4.1,#{another_local_target.code}"
 
       expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], another_local_target.goal, SDG::Goal[3], SDG::Goal[4]]
       expect(relatable.reload.sdg_global_targets).to match_array [SDG::Target[1.1], SDG::Target[4.1]]
@@ -177,10 +177,10 @@ describe SDG::Relatable do
     end
 
     it "touches the associated record" do
-      relatable.sdg_related_list = "1.1, 2.1, 2.2"
+      relatable.related_sdg_list = "1.1, 2.1, 2.2"
 
       travel(10.seconds) do
-        relatable.sdg_related_list = "1.1, 2.1, 2.2, 3.1"
+        relatable.related_sdg_list = "1.1, 2.1, 2.2, 3.1"
 
         expect(relatable.updated_at).to eq Time.current
       end

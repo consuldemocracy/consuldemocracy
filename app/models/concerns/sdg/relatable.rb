@@ -73,11 +73,11 @@ module SDG::Relatable
     sdg_targets.sort.map(&:code).join(", ")
   end
 
-  def sdg_related_list
+  def related_sdg_list
     related_sdgs.sort.map(&:code).join(", ")
   end
 
-  def sdg_related_list=(codes)
+  def related_sdg_list=(codes)
     target_codes, goal_codes = codes.tr(" ", "").split(",").partition { |code| code.include?(".") }
     local_targets_codes, global_targets_codes = target_codes.partition { |code| code.split(".")[2] }
     global_targets = global_targets_codes.map { |code| SDG::Target[code] }
