@@ -76,7 +76,6 @@
     if(_i>=0) {
       _i = window.location.href.indexOf('/',_i+2);
       if(_i>=0) {
-        var _href = window.location.href.substring(_i);
         window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>#'+encodeURIComponent(_href);
       } else {
         window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>';
