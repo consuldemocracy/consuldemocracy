@@ -168,11 +168,10 @@ describe "SDG Relations", :js do
       end
 
       scenario "local target filter" do
-        schools = create(:sdg_local_target, code: "4.1.1")
-        teachers = create(:sdg_local_target, code: "4.1.2")
-
-        create(:debate, title: "Rebuild local schools", sdg_local_targets: [schools])
-        create(:debate, title: "Hire teachers", sdg_local_targets: [teachers])
+        create(:sdg_local_target, code: "4.1.1")
+        create(:sdg_local_target, code: "4.1.2")
+        create(:debate, title: "Rebuild local schools", sdg_local_targets: [SDG::LocalTarget["4.1.1"]])
+        create(:debate, title: "Hire teachers", sdg_local_targets: [SDG::LocalTarget["4.1.2"]])
 
         visit sdg_management_debates_path
         select "4.1.1", from: "target_code"
@@ -205,14 +204,16 @@ describe "SDG Relations", :js do
   end
 
   describe "Edit" do
-    scenario "allows adding the goals and targets and marks the resource as reviewed" do
+    scenario "allows adding the goals, global targets and local targets and marks the resource as reviewed" do
       process = create(:legislation_process, title: "SDG process")
-      process.sdg_goals = [SDG::Goal[3]]
-      process.sdg_targets = [SDG::Target[3.3]]
+      create(:sdg_local_target, code: "1.1.1")
+      create(:sdg_local_target, code: "3.3.3")
+      process.sdg_goals = [SDG::Goal[3], SDG::Goal[4]]
+      process.sdg_targets = [SDG::Target[3.3], SDG::LocalTarget["3.3.3"]]
 
       visit sdg_management_edit_legislation_process_path(process)
 
-      find(:css, ".sdg-related-list-selector-input").set("1.2, 2,")
+      find(:css, ".sdg-related-list-selector-input").set("1.2, 2, 1.1.1, ")
 
       click_button "Update Process"
 
@@ -221,20 +222,22 @@ describe "SDG Relations", :js do
       click_link "Marked as reviewed"
 
       within("tr", text: "SDG process") do
-        expect(page).to have_css "td", exact_text: "1.2, 3.3"
-        expect(page).to have_css "td", exact_text: "1, 2, 3"
+        expect(page).to have_css "td", exact_text: "1.1.1, 1.2, 3.3, 3.3.3"
+        expect(page).to have_css "td", exact_text: "1, 2, 3, 4"
       end
     end
 
-    scenario "allows removing the goals and targets" do
+    scenario "allows removing the goals, global target and local_targets" do
       process = create(:legislation_process, title: "SDG process")
-      process.sdg_goals = [SDG::Goal[2], SDG::Goal[3]]
-      process.sdg_targets = [SDG::Target[2.1], SDG::Target[3.3]]
+      create(:sdg_local_target, code: "1.1.1")
+      process.sdg_goals = [SDG::Goal[1], SDG::Goal[2], SDG::Goal[3]]
+      process.sdg_targets = [SDG::Target[2.1], SDG::Target[3.3], SDG::LocalTarget["1.1.1"]]
 
       visit sdg_management_edit_legislation_process_path(process)
 
       remove_sdg_goal_or_target_tag(2)
       remove_sdg_goal_or_target_tag(3.3)
+      remove_sdg_goal_or_target_tag("1.1.1")
 
       click_button "Update Process"
 
@@ -243,14 +246,13 @@ describe "SDG Relations", :js do
       click_link "Marked as reviewed"
 
       within("tr", text: "SDG process") do
-        expect(page).to have_css "td", exact_text: "2, 3"
+        expect(page).to have_css "td", exact_text: "1, 2, 3"
         expect(page).to have_css "td", exact_text: "2.1"
       end
     end
 
     scenario "does not show the review notice when resource was already reviewed" do
       debate = create(:sdg_review, relatable: create(:debate, title: "SDG debate")).relatable
-      debate.sdg_targets = [SDG::Target[3.3]]
 
       visit sdg_management_edit_debate_path(debate, filter: "sdg_reviewed")
       find(:css, ".sdg-related-list-selector-input").set("1.2, 2.1,")
@@ -266,8 +268,9 @@ describe "SDG Relations", :js do
       end
     end
 
-    scenario "allows adding the goals and targets with autocomplete" do
+    scenario "allows adding the goals, global targets and local targets with autocomplete" do
       process = create(:legislation_process, title: "SDG process")
+      create(:sdg_local_target, code: "1.1.1")
       visit sdg_management_edit_legislation_process_path(process)
 
       fill_in "Sustainable Development Goals and Targets", with: "3"
@@ -280,12 +283,17 @@ describe "SDG Relations", :js do
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1" }
 
+      fill_in "Sustainable Development Goals and Targets", with: "1.1.1"
+      within(".amsify-list") { find(:css, "[data-val='1.1.1']").click }
+
+      within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1.1" }
+
       click_button "Update Process"
       click_link "Marked as reviewed"
 
       within("tr", text: "SDG process") do
         expect(page).to have_css "td", exact_text: "1, 3"
-        expect(page).to have_css "td", exact_text: "1.1"
+        expect(page).to have_css "td", exact_text: "1.1, 1.1.1"
       end
     end
 
@@ -339,8 +347,9 @@ describe "SDG Relations", :js do
 
       scenario "when remove a last tag related to a Goal, the icon will not be checked" do
         process = create(:legislation_process, title: "SDG process")
+        create(:sdg_local_target, code: "1.1.1")
         process.sdg_goals = [SDG::Goal[1]]
-        process.sdg_targets = [SDG::Target[1.1]]
+        process.sdg_targets = [SDG::Target[1.1], SDG::LocalTarget["1.1.1"]]
 
         visit sdg_management_edit_legislation_process_path(process)
         remove_sdg_goal_or_target_tag(1)
@@ -348,6 +357,10 @@ describe "SDG Relations", :js do
         expect(find("li[data-code='1']")["aria-checked"]).to eq "true"
 
         remove_sdg_goal_or_target_tag(1.1)
+
+        expect(find("li[data-code='1']")["aria-checked"]).to eq "true"
+
+        remove_sdg_goal_or_target_tag("1.1.1")
 
         expect(find("li[data-code='1']")["aria-checked"]).to eq "false"
       end

@@ -21,6 +21,34 @@ describe SDG::Goal do
     end
   end
 
+  describe "#<=>" do
+    let(:goal) { SDG::Goal[10] }
+
+    it "can be compared against goals" do
+      lesser_goal = SDG::Goal[9]
+      greater_goal = SDG::Goal[11]
+
+      expect(goal).to be > lesser_goal
+      expect(goal).to be < greater_goal
+    end
+
+    it "can be compared against global targets" do
+      lesser_target = build(:sdg_target, code: "9.A", goal: SDG::Goal[9])
+      greater_target = build(:sdg_target, code: "10.1", goal: SDG::Goal[10])
+
+      expect(goal).to be > lesser_target
+      expect(goal).to be < greater_target
+    end
+
+    it "can be compared against local targets" do
+      lesser_local_target = build(:sdg_local_target, code: "9.B.12")
+      greater_local_target = build(:sdg_local_target, code: "10.1.4")
+
+      expect(goal).to be > lesser_local_target
+      expect(goal).to be < greater_local_target
+    end
+  end
+
   describe ".[]" do
     it "finds existing goals by code" do
       expect(SDG::Goal[1].code).to be 1

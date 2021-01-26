@@ -13,6 +13,7 @@ FactoryBot.define do
     sequence(:description) { |n| "Help for Local Target #{n}" }
 
     target { SDG::Target[code.rpartition(".").first] }
+    goal { SDG::Goal[code.split(".")[0]] }
   end
 
   factory :sdg_phase, class: "SDG::Phase" do
