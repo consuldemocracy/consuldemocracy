@@ -11,16 +11,11 @@ describe SDGManagement::Relations::IndexComponent, type: :component do
       .and_return("/anything")
   end
 
-  describe "#goal_options" do
-    it "orders goals by code in the select" do
-      component = SDGManagement::Relations::IndexComponent.new(Proposal.none.page(1))
+  it "renders the search form" do
+    component = SDGManagement::Relations::IndexComponent.new(Proposal.none.page(1))
 
-      render_inline component
-      options = page.find("#goal_code").all("option")
+    render_inline component
 
-      expect(options[0]).to have_content "All goals"
-      expect(options[1]).to have_content "1. "
-      expect(options[17]).to have_content "17. "
-    end
+    expect(page).to have_css "form.complex"
   end
 end
