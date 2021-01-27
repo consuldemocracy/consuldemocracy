@@ -3,4 +3,9 @@ ro:
     goals:
       goal_1:
         title: "Fără sărăcie"
+        title_in_two_lines: "Fără sărăcie"
         description: "Pune capăt sărăciei în toate formele sale, peste tot."
+      goal_2:
+        title: "Zero Foame"
+        title_in_two_lines: "Zero \nFoame"
+        description: "Zero Foame"
