@@ -11,17 +11,22 @@
   .sdg-target-tag-list {
     @extend %tags;
 
-    a:not(.more-targets) {
+    a:not(.more-targets),
+    span {
       color: $white;
     }
 
     @each $code, $color in $sdg-colors {
-      [data-code^="#{$code}"] {
+      a[data-code^="#{$code}"] {
         background-color: $color;
 
         &:hover {
           background-color: darken($color, 10%);
         }
+      }
+
+      span[data-code^="#{$code}"] {
+        background-color: $color;
       }
     }
   }
