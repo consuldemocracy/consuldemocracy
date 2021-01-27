@@ -13,12 +13,9 @@
   }
 
   label + ul {
-    list-style: none;
-    margin-bottom: 0;
-    margin-left: 0;
+    @extend %sdg-goal-list;
 
     li {
-      display: inline-block;
 
       &[aria-checked=true] img {
         opacity: 0.15;

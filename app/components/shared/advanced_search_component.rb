@@ -1,5 +1,5 @@
 class Shared::AdvancedSearchComponent < ApplicationComponent
-  include SDG::Goals::OptionsForSelect
+  include SDG::OptionsForSelect
 
   private
 
@@ -32,6 +32,10 @@ class Shared::AdvancedSearchComponent < ApplicationComponent
 
     def goal_options
       super(advanced_search[:goal])
+    end
+
+    def target_options
+      super(advanced_search[:target])
     end
 
     def sdg?

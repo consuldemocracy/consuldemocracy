@@ -927,25 +927,11 @@ footer {
 // 04. Tags
 // --------
 
-.tags a ,
 .tag-cloud a,
 .categories a,
 .geozone a,
-.sdg-goal-tag-list .more-goals,
-.sidebar-links a,
-.tags span {
-  background: #ececec;
-  border-radius: rem-calc(6);
-  color: $text;
-  display: inline-block;
-  font-size: $small-font-size;
-  margin-bottom: $line-height / 3;
-  padding: $line-height / 4 $line-height / 3;
-  text-decoration: none;
-
-  &:hover {
-    background: #e0e0e0;
-  }
+.sidebar-links a {
+  @extend %tag;
 }
 
 .categories a,
