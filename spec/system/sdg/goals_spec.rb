@@ -105,5 +105,17 @@ describe "SDG Goals", :js do
         expect(page).to have_select "By SDG", selected: "15. Life on Land"
       end
     end
+
+    scenario "has links to read more and read less for long description" do
+      visit sdg_goal_path(15)
+
+      expect(page).to have_css("div.read-more a", text: "Read more about Life on Land")
+      expect(page).to have_css("div.read-more a", text: "Read less about Life on Land", visible: :hidden)
+
+      find("div.read-more a", text: "Read more about Life on Land").click
+
+      expect(page).to have_css("div.read-more a", text: "Read more about Life on Land", visible: :hidden)
+      expect(page).to have_css("div.read-more a", text: "Read less about Life on Land")
+    end
   end
 end

@@ -23,5 +23,8 @@ describe SDG::Goals::ShowComponent, type: :component do
 
     expect(page).to have_css "#description_goal_#{goal_1.code}"
     expect(page).to have_content "Globally, the number of people living in extreme poverty"
+    expect(page).to have_css "#read_more_goal_#{goal_1.code}"
+    expect(page).to have_content "Read more about No Poverty"
+    expect(page).to have_css "#read_less_goal_#{goal_1.code}.hide"
   end
 end

@@ -441,6 +441,9 @@ es:
             title: "De aquí a 2020, mejorar el apoyo a la creación de capacidad prestado a los países en desarrollo, incluidos los países menos adelantados y los pequeños Estados insulares en desarrollo, para aumentar significativamente la disponibilidad de datos oportunos, fiables y de gran calidad desglosados por ingresos, sexo, edad, raza, origen étnico, estatus migratorio, discapacidad, ubicación geográfica y otras características pertinentes en los contextos nacionales."
           target_17_19:
             title: "De aquí a 2030, aprovechar las iniciativas existentes para elaborar indicadores que permitan medir los progresos en materia de desarrollo sostenible y complementen el producto interno bruto, y apoyar la creación de capacidad estadística en los países en desarrollo."
+      show:
+        read_more: "Leer más sobre %{goal}"
+        read_less: "Leer menos sobre %{goal}"
       title: "Objetivos de Desarrollo Sostenible"
       filter:
         heading: "Filtros por ODS"
