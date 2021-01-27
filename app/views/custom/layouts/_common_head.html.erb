@@ -61,7 +61,15 @@
       _i = window.location.href.indexOf('/',_i+2);
       if(_i>=0) {
         var _href = window.location.href.substring(_i);
-        window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>#'+encodeURIComponent(_href);
+        _i = _href.indexOf('/', 1);
+        if (_i > 0) {
+          var module = _href.substring(_href.indexOf('/', 1)+1);
+          if (module.indexOf('admin') < 0 && module.indexOf('moderation') < 0 && module.indexOf('valuation') < 0 && module.indexOf('management') < 0 && module.indexOf('consultation') < 0 && module.indexOf('restriction') < 0) {
+            window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>#'+encodeURIComponent(_href);
+          } // else - es admin: no hacemos nada
+        } else {
+          window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>#'+encodeURIComponent(_href);
+        }
       } else {
         window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>';
       }
