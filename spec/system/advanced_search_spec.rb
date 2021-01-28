@@ -367,24 +367,47 @@ describe "Advanced search", :js do
       end
     end
 
-    scenario "Search by SDG target" do
-      Setting["feature.sdg"] = true
-      Setting["sdg.process.debates"] = true
-      create(:debate, title: "Unrelated")
-      create(:debate, title: "High school", sdg_targets: [SDG::Target["4.1"]])
-      create(:debate, title: "Preschool", sdg_targets: [SDG::Target["4.2"]])
+    describe "SDG" do
+      before do
+        Setting["feature.sdg"] = true
+        Setting["sdg.process.debates"] = true
+        Setting["sdg.process.budgets"] = true
+      end
 
-      visit debates_path
-      click_link "Advanced search"
-      select "4.2", from: "By target"
-      click_button "Filter"
+      scenario "Search by goal" do
+        create(:budget_investment, title: "Purifier", heading: heading, sdg_goals: [SDG::Goal[6]])
+        create(:budget_investment, title: "Hospital", heading: heading, sdg_goals: [SDG::Goal[3]])
 
-      expect(page).to have_content("There is 1 debate")
+        visit budget_investments_path(budget)
+        click_link "Advanced search"
+        select "6. Clean Water and Sanitation", from: "By SDG"
+        click_button "Filter"
 
-      within("#debates") do
-        expect(page).to have_content("Preschool")
-        expect(page).not_to have_content("High school")
-        expect(page).not_to have_content("Unrelated")
+        expect(page).to have_content("There is 1 investment")
+
+        within("#budget-investments") do
+          expect(page).to have_content "Purifier"
+          expect(page).not_to have_content "Hospital"
+        end
+      end
+
+      scenario "Search by target" do
+        create(:debate, title: "Unrelated")
+        create(:debate, title: "High school", sdg_targets: [SDG::Target["4.1"]])
+        create(:debate, title: "Preschool", sdg_targets: [SDG::Target["4.2"]])
+
+        visit debates_path
+        click_link "Advanced search"
+        select "4.2", from: "By target"
+        click_button "Filter"
+
+        expect(page).to have_content("There is 1 debate")
+
+        within("#debates") do
+          expect(page).to have_content("Preschool")
+          expect(page).not_to have_content("High school")
+          expect(page).not_to have_content("Unrelated")
+        end
       end
     end
   end
