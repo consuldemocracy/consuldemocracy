@@ -715,7 +715,11 @@ ro:
       from: "De la"
       general: "Cu textul"
       general_placeholder: "Scrie textul"
+      goal: "După ODD"
+      goal_blank: "Alege un obiectiv"
       search: "Filtru"
+      target: "După obiectiv"
+      target_blank: "Alege un obiectiv"
       title: "Căutare avansată"
       to: "La"
     author_info:
@@ -910,6 +914,10 @@ ro:
         debates: Vezi toate dezbaterile
         proposals: Vezi propuneri
         processes: Vezi toate procesele
+      no_items:
+        debates: Nu sunt dezbateri în acest moment
+        proposals: Nu sunt propuneri în acest moment
+        processes: Nu sunt procese deschise în acest moment
       process_label: Proces
       see_process: Vezi proces
     cards:
