@@ -1,5 +1,22 @@
 .sdg-goals-index {
 
+  .section-header {
+
+    h1 {
+      @include grid-row;
+      @include grid-column-gutter;
+
+      &::before {
+        @extend %font-icon;
+
+        background: image-url("sdg.svg");
+        display: inline-block;
+        height: 1.5em;
+        width: 1.5em;
+      }
+    }
+  }
+
   .sdg-goal-list {
     @extend %sdg-goal-list;
     @include grid-row;
