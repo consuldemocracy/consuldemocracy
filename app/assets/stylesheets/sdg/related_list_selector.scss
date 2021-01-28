@@ -13,9 +13,12 @@
   }
 
   label + ul {
-    @extend %sdg-goal-list;
+    $spacing: 0.5%;
+    @include sdg-goal-list($spacing);
 
     li {
+      min-width: $sdg-icon-min-width;
+      width: calc(100% / 17 - #{$spacing});
 
       &[aria-checked=true] img {
         opacity: 0.15;
@@ -27,6 +30,10 @@
 
       &:hover {
         cursor: pointer;
+      }
+
+      .sdg-goal-icon {
+        width: 100%;
       }
     }
   }
