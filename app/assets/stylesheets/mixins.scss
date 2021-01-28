@@ -247,6 +247,10 @@
     margin-top: $spacing;
     margin-top: $max-spacing;
   }
+
+  a:hover .sdg-goal-icon {
+    filter: brightness(90%);
+  }
 }
 
 %sdg-goal-list {
