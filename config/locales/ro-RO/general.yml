@@ -198,6 +198,7 @@ ro:
     local_census_records/import: Import de date
     site_customization/content_block: bloc de conținut
     site_customization/page: pagină
+    sdg/local_target: țintă locală
   geozones:
     none: Tot orașul
   layouts:
@@ -260,6 +261,7 @@ ro:
           other: Aveți %{count} notificări noi
         notifications: Notificări
         no_notifications: "Nu aveți notificări noi"
+      sdg: "ODD (Obiective de dezvoltare durabilă)"
   notifications:
     index:
       empty_notifications: Nu aveți notificări noi.
