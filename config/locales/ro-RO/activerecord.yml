@@ -2,6 +2,7 @@ ro:
   attributes:
     geozone_id: "Scopul operațiunii"
     results_enabled: "Se arată rezultatele"
+    related_sdg_list: "Obiective de dezvoltare durabilă și Ținte"
     stats_enabled: "Statistici"
     advanced_stats_enabled: "Statistici avansate"
     name: Nume
@@ -109,6 +110,10 @@ ro:
         one: "Administrator obiective de dezvoltare durabilă"
         few: "Administratori obiective de dezvoltare durabilă"
         other: "Administratori obiective de dezvoltare durabilă"
+      sdg/target:
+        one: "obiectiv"
+        few: "obiective"
+        other: "obiective"
       site_customization/page:
         one: Pagină personalizate
         few: Pagini personalizate
@@ -327,6 +332,7 @@ ro:
         responsible_name: "Persoană responsabilă pentru grup"
       poll:
         name: "Nume"
+        title: "Nume"
         starts_at: "Data de început"
         ends_at: "Data limită"
         geozone_restricted: "Limitat de locație"
@@ -364,14 +370,22 @@ ro:
         signable_id: "Semnatar"
         document_numbers: "Numerele documentelor"
       sdg/goal:
+        code: "Cod"
         title: "Titlu"
         description: "Descriere"
       sdg/local_target:
+        code: "Cod"
+        target_id: "Obiectiv"
         title: "Titlu"
       sdg/local_target/translation:
         title: "Titlu"
         description: "Descriere"
+      sdg/phase/kind:
+        sensitization: "Sensibilizare"
+        planning: "Planificare"
+        monitoring: "Monitorizare"
       sdg/target:
+        code: "Cod"
         title: "Titlu"
       site_customization/page:
         content: Conținut
