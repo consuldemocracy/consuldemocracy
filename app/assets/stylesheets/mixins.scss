@@ -227,21 +227,22 @@
   }
 }
 
-%sdg-goal-list {
+@mixin sdg-goal-list($spacing: 1ch) {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: -$spacing 0 $line-height / 3 -#{$spacing};
+  width: calc(100% + #{$spacing});
 
   li {
-    margin-bottom: 1ch;
-    margin-right: 1ch;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    margin-bottom: 0;
+    margin-left: $spacing;
+    margin-top: $spacing;
   }
+}
+
+%sdg-goal-list {
+  @include sdg-goal-list;
 }
 
 %tags {
