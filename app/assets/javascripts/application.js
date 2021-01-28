@@ -112,7 +112,8 @@
 //= require columns_selector
 //= require budget_edit_associations
 //= require datepicker
-//= require sdg/related_list_selector
+//= require_tree ./sdg
+//= require_tree ./sdg_management
 
 var initialize_modules = function() {
   "use strict";
@@ -166,6 +167,7 @@ var initialize_modules = function() {
   App.BudgetEditAssociations.initialize();
   App.Datepicker.initialize();
   App.SDGRelatedListSelector.initialize();
+  App.SDGManagementRelationSearch.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {

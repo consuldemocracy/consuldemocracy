@@ -371,6 +371,7 @@ describe "Advanced search", :js do
       before do
         Setting["feature.sdg"] = true
         Setting["sdg.process.debates"] = true
+        Setting["sdg.process.proposals"] = true
         Setting["sdg.process.budgets"] = true
       end
 
@@ -389,6 +390,10 @@ describe "Advanced search", :js do
           expect(page).to have_content "Purifier"
           expect(page).not_to have_content "Hospital"
         end
+
+        expect(page).to have_select "By target",
+                                    selected: "Select a target",
+                                    enabled_options: ["Select a target"] + %w[6.1 6.2 6.3 6.4 6.5 6.6 6.A 6.B]
       end
 
       scenario "Search by target" do
@@ -408,6 +413,29 @@ describe "Advanced search", :js do
           expect(page).not_to have_content("High school")
           expect(page).not_to have_content("Unrelated")
         end
+      end
+
+      scenario "Dynamic target options depending on the selected goal" do
+        visit proposals_path
+
+        click_link "Advanced search"
+        select "1. No Poverty", from: "By SDG"
+
+        expect(page).to have_select "By target",
+                                    selected: "Select a target",
+                                    enabled_options: ["Select a target"] + %w[1.1 1.2 1.3 1.4 1.5 1.A 1.B]
+
+        select "1.1", from: "By target"
+        select "13. Climate Action", from: "By SDG"
+
+        expect(page).to have_select "By target",
+                                    selected: "Select a target",
+                                    enabled_options: ["Select a target"] + %w[13.1 13.2 13.3 13.A 13.B]
+
+        select "13.1", from: "By target"
+        select "Select a goal", from: "By SDG"
+
+        expect(page).to have_select "By target", selected: "13.1", disabled_options: []
       end
     end
   end

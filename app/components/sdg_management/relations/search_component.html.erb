@@ -1,4 +1,4 @@
-<%= render Admin::SearchComponent.new(label: label, class: "complex") do |component| %>
+<%= render Admin::SearchComponent.new(label: label, class: "sdg-relations-search complex") do |component| %>
   <%= component.select_tag :goal_code, goal_options,
                            include_blank: goal_blank_option,
                            "aria-label": goal_label %>
