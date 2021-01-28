@@ -35,6 +35,7 @@ ro:
           proposals: Propuneri
           budgets: Bugetare participativă
           help_page: Pagina de ajutor
+          sdg: ODD
       edit:
         editing: Editează banner
         form:
@@ -1244,6 +1245,7 @@ ro:
           how_to_enable: 'Pentru a configura recensământul la distanță (SOAP), trebuie să activați „Configurarea conexiunii la recensământul la distanță (SOAP)” din fila „Caracteristici”.'
         sdg:
           title: Configurarea obiectivelor de dezvoltare durabilă
+          how_to_enable: 'Pentru a afișa opțiunile de configurare pentru Obiectivele de dezvoltare durabilă trebuie să activați "ODD" din tabul de "Caracteristici".'
       remote_census_general_name: Informații Generale
       remote_census_request_name: Solicitare date
       remote_census_response_name: Date de răspuns
@@ -1379,6 +1381,7 @@ ro:
         proposal_notifications: Notificări propuneri
         incomplete_verifications: Verificări incomplete
         polls: Sondaje
+        sdg: ODD
       graph:
         debate_created: Dezbateri
         visit: Vizite
@@ -1421,6 +1424,15 @@ ro:
           question_name: Întrebare
           origin_web: Participanți online
           origin_total: Total participanți
+      sdg:
+        budget_investments:
+          amount: "Suma aprobată"
+          winners: "Proiectul de investiții câștigător"
+          sent: "Propuneri de investiții trimise"
+        debates: "Dezbateri"
+        polls: "Sondaje"
+        proposals: "Propuneri"
+        title: "Obiective de dezvoltare durabilă - Status"
     tags:
       create: Crează subiect
       destroy: Șterge subiect
