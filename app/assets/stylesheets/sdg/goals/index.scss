@@ -18,13 +18,13 @@
   }
 
   .sdg-goal-list {
-    $spacing: 1vw;
+    $spacing: 1.5%;
 
     @include sdg-goal-list($spacing);
     @include grid-row;
     @include grid-column-gutter;
 
-    max-width: 40rem;
+    max-width: 60rem;
     width: 100%;
 
     li {
