@@ -444,6 +444,8 @@ es:
       show:
         read_more: "Leer más sobre %{goal}"
         read_less: "Leer menos sobre %{goal}"
+        targets:
+          no_local_targets: Este objetivo no tiene metas localizadas
       title: "Objetivos de Desarrollo Sostenible"
       filter:
         heading: "Filtros por ODS"

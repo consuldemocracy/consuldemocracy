@@ -444,6 +444,8 @@ en:
       show:
         read_more: "Read more about %{goal}"
         read_less: "Read less about %{goal}"
+        targets:
+          no_local_targets: This goal has no local targets
       title: "Sustainable Development Goals"
       filter:
         heading: "Filters by SDG"
