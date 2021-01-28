@@ -131,6 +131,7 @@ ro:
         notification_emails: "Panoul cu privire la notificarile trimise prin email"
         notification_emails_description: "Permite trimitea de notificari pe email catre autorii propunerilor"
       sdg: Obiective de dezvoltare durabilă
+      sdg_description: Activați secțiunea Obiective de dezvoltare durabilă din meniu de administrare și din Setările Globale.
     remote_census:
       general:
         endpoint: "Punct final"
