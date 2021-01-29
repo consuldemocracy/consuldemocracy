@@ -40,6 +40,7 @@ resources :proposals do
     get :retire_form
     get :share
     get :created
+    get :json_data
     patch :retire
     patch :publish
   end
