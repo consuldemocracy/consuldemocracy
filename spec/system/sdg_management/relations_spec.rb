@@ -152,6 +152,10 @@ describe "SDG Relations", :js do
         expect(page).to have_content "School"
         expect(page).not_to have_content "Hospital"
         expect(page).to have_css "li.is-active h2", exact_text: "Pending"
+
+        expect(page).to have_select "By target",
+                                    selected: "All targets",
+                                    enabled_options: ["All targets"] + %w[4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.A 4.B 4.C]
       end
 
       scenario "target filter" do
@@ -199,6 +203,28 @@ describe "SDG Relations", :js do
         click_button "Search"
 
         expect(page).to have_css "li.is-active h2", exact_text: "All"
+      end
+
+      scenario "dynamic target options depending on the selected goal" do
+        visit sdg_management_polls_path
+
+        select "1. No Poverty", from: "By goal"
+
+        expect(page).to have_select "By target",
+                                    selected: "All targets",
+                                    enabled_options: ["All targets"] + %w[1.1 1.2 1.3 1.4 1.5 1.A 1.B]
+
+        select "1.1", from: "By target"
+        select "13. Climate Action", from: "By goal"
+
+        expect(page).to have_select "By target",
+                                    selected: "All targets",
+                                    enabled_options: ["All targets"] + %w[13.1 13.2 13.3 13.A 13.B]
+
+        select "13.1", from: "By target"
+        select "All goals", from: "By goal"
+
+        expect(page).to have_select "By target", selected: "13.1", disabled_options: []
       end
     end
   end
