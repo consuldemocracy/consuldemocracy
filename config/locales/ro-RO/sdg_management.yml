@@ -1,9 +1,37 @@
 ro:
   sdg_management:
+    actions:
+      edit: "Gestionați obiective și ținte"
     header:
       title: "Conținutul obiectivelor de dezvoltare durabilă"
+    homepage:
+      title: "Configurarea paginii de pornire"
+      create_card: "Crează un card %{phase}"
+      no_cards: "Nu există carduri în această fază"
     menu:
+      budget_investments: "Bugete participative"
+      debates: "Dezbateri"
+      legislation_processes: "Legislație colaborativă"
+      polls: "Sondaje"
+      proposals: "Propuneri"
       sdg_content: "Obiective și Ținte"
+      sdg_homepage: "Pagina de pornire SDG"
+    local_targets:
+      create:
+        notice: "Obiectiv local creat cu succes"
+      destroy:
+        notice: "Obiectiv local șters cu succes"
+      edit:
+        title: "Modifică obiectivul local"
+      form:
+        code: "Codul trebuie să înceapă cu codul țintă selectat, urmat de un punct"
+        description: "Această descriere va fi afișată ca ajutor pentru utilizatori."
+      index:
+        new: "Crează o țintă locală"
+      new:
+        title: "Țintă locală nouă"
+      update:
+        notice: "Țintă locală actualizată cu succes"
     relations:
       index:
         filter: "Filtru"
