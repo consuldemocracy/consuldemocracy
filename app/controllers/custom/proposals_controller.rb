@@ -24,7 +24,6 @@ class ProposalsController
       format.json { render json: data }
     end
   end
-
   def index_customization
     discard_draft
     discard_archived
@@ -34,5 +33,4 @@ class ProposalsController
     remove_archived_from_order_links
     @proposals_coordinates = all_proposal_map_locations
   end
-
 end
