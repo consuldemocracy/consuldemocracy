@@ -1,15 +1,17 @@
 require_dependency Rails.root.join("app", "controllers", "proposals_controller").to_s
 
 class ProposalsController
+
   before_action :authenticate_user!, except: [:index, :show, :map, :summary, :json_data]
   def index_customization
-    @proposals_coordinates = all_proposal_map_locations
     discard_draft
     discard_archived
     load_retired
     load_selected
     load_featured
     remove_archived_from_order_links
+
+    @proposals_coordinates = all_proposal_map_locations
   end
   def all_proposal_map_locations
     ids = if params[:search]
