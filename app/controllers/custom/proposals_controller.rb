@@ -25,12 +25,12 @@ class ProposalsController
     end
   end
   def index_customization
+    @proposals_coordinates = all_proposal_map_locations
     discard_draft
     discard_archived
     load_retired
     load_selected
     load_featured
     remove_archived_from_order_links
-    @proposals_coordinates = all_proposal_map_locations
   end
 end
