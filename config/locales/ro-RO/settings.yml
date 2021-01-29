@@ -212,5 +212,9 @@ ro:
     sdg:
       process:
         debates: Dezbateri privind ODD
+        debates_description: Permiteți ca dezbaterile să fie legate de Obiective de Dezvoltare Durabilă
         proposals: Propuneri privind ODD
+        proposals_description: Permiteți ca propunerile să fie legate de Obiective de Dezvoltare Durabilă
         polls: Chestionare privind ODD
+        polls_description: Permiteți ca chestionarele să fie legate de Obiective de Dezvoltare Durabilă
+        budgets_description: Permiteți ca bugetele participative să fie legate de Obiective de Dezvoltare Durabilă
