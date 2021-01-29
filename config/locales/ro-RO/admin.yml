@@ -1297,7 +1297,7 @@ ro:
       results_and_stats_reminder: "Marcarea acestor căsuțe de selectare a rezultatelor și / sau statisticilor va fi disponibilă publicului și fiecare utilizator le va vedea."
     geozones:
       index:
-        title: Geozone
+        title: Geozonă
         create: Crează geozonă
       geozone:
         name: Nume
