@@ -227,21 +227,30 @@
   }
 }
 
-%sdg-goal-list {
+@mixin sdg-goal-list($spacing: 1ch) {
+  $min-spacing: $sdg-icon-min-width / 10;
+  $max-spacing: #{"Max(#{$min-spacing}, #{$spacing})"};
+
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: -$spacing 0 $line-height / 3 -#{$spacing};
+  margin-left: calc(-1 * #{$max-spacing});
+  margin-top: calc(-1 * #{$max-spacing});
+  width: calc(100% + #{$spacing});
+  width: calc(100% + #{$max-spacing});
 
   li {
-    margin-bottom: 1ch;
-    margin-right: 1ch;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    margin-bottom: 0;
+    margin-left: $spacing;
+    margin-left: $max-spacing;
+    margin-top: $spacing;
+    margin-top: $max-spacing;
   }
+}
+
+%sdg-goal-list {
+  @include sdg-goal-list;
 }
 
 %tags {
