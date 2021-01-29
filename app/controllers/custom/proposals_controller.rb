@@ -31,7 +31,6 @@ class ProposalsController
       proposal_id: proposal.id,
       proposal_title: proposal.title
     }.to_json
-
     respond_to do |format|
       format.json { render json: data }
     end
