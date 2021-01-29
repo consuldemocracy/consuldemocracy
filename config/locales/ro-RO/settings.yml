@@ -217,4 +217,7 @@ ro:
         proposals_description: Permiteți ca propunerile să fie legate de Obiective de Dezvoltare Durabilă
         polls: Chestionare privind ODD
         polls_description: Permiteți ca chestionarele să fie legate de Obiective de Dezvoltare Durabilă
+        budgets: Legat de ODD în bugetele participative
         budgets_description: Permiteți ca bugetele participative să fie legate de Obiective de Dezvoltare Durabilă
+        legislation: Legat de ODD în legislația colaborativă
+        legislation_description: Permiteți ca legislația colaborativă să fie legată de Obiective de Dezvoltare Durabilă
