@@ -1,5 +1,4 @@
 class SDG::Goal < ApplicationRecord
-  include Comparable
   include SDG::Related
 
   validates :code, presence: true, uniqueness: true, inclusion: { in: 1..17 }
@@ -17,14 +16,6 @@ class SDG::Goal < ApplicationRecord
 
   def description
     I18n.t("sdg.goals.goal_#{code}.description")
-  end
-
-  def <=>(goal_or_target)
-    if goal_or_target.class == self.class
-      code <=> goal_or_target.code
-    elsif goal_or_target.respond_to?(:goal)
-      [self, -1] <=> [goal_or_target.goal, 1]
-    end
   end
 
   def self.[](code)

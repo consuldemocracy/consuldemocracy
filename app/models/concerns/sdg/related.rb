@@ -1,5 +1,6 @@
 module SDG::Related
   extend ActiveSupport::Concern
+  include Comparable
 
   RELATABLE_TYPES = %w[
     Budget::Investment
@@ -22,5 +23,21 @@ module SDG::Related
 
   def relatables
     relations.map(&:relatable)
+  end
+
+  def <=>(goal_or_target)
+    if goal_or_target.class.ancestors.include?(SDG::Related)
+      subcodes <=> goal_or_target.subcodes
+    end
+  end
+
+  def subcodes
+    code.to_s.split(".").map do |subcode|
+      if subcode.to_i.positive?
+        subcode.to_i
+      else
+        subcode.to_i(36) * 1000
+      end
+    end
   end
 end
