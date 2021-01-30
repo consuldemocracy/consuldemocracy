@@ -2785,7 +2785,8 @@ table {
       }
     }
 
-    p {
+    p,
+    .sdg-tag-list {
       padding: 0 $line-height / 4;
     }
   }
