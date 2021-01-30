@@ -7,7 +7,7 @@
     <% taggable.tag_list_with_limit(limit).each do |tag| %>
       <li>
         <%= link_to sanitize(tag.name),
-                    polymorphic_path(taggable.class, search: tag.name) %></li>
+                    taggables_path(taggable, tag.name) %></li>
     <% end %>
 
     <% if taggable.tags_count_out_of_limit(limit) > 0 %>
