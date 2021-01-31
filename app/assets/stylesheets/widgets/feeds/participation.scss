@@ -22,6 +22,10 @@
     }
   }
 
+  .sdg-tag-list {
+    margin-top: $line-height / 2;
+  }
+
   .feed-debates,
   .feed-proposals {
     @include grid-col;
