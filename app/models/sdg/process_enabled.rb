@@ -7,7 +7,7 @@ class SDG::ProcessEnabled
   end
 
   def enabled?
-    feature?("sdg") && feature?(process_name) && setting["sdg.process.#{process_name}"]
+    feature?("sdg") && feature?(process_name) && setting["sdg.process.#{process_name}"] && relatable?
   end
 
   def name
@@ -38,5 +38,11 @@ class SDG::ProcessEnabled
 
     def module_name
       name.split("::").first
+    end
+
+    def relatable?
+      return true if controller_path_name?
+
+      (SDG::Related::RELATABLE_TYPES & [record_or_name.class.name, record_or_name]).any?
     end
 end

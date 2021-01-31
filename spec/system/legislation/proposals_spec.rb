@@ -226,7 +226,10 @@ describe "Legislation Proposals" do
     expect(page).to have_content "Open concert"
   end
 
-  scenario "Show proposal tags on show", :js do
+  scenario "Show proposal tags on show when SDG is enabled", :js do
+    Setting["feature.sdg"] = true
+    Setting["sdg.process.legislation"] = true
+
     proposal = create(:legislation_proposal, process: process, tag_list: "Culture")
 
     visit legislation_process_proposal_path(proposal.process, proposal)
