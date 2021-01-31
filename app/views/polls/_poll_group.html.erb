@@ -52,6 +52,7 @@
             <li><span><%= g.name %></span></li>
           <% end %>
         </ul>
+        <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>
       </div>
       <div class="small-12 medium-3 column table" data-equalizer-watch>
         <div class="table-cell align-middle">

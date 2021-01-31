@@ -127,6 +127,19 @@ describe "Legislation" do
         expect(page).to have_content("past published")
       end
     end
+
+    scenario "Show SDG tags when feature is enabled", :js do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.legislation"] = true
+
+      create(:legislation_process, sdg_goals: [SDG::Goal[1]],
+                                   sdg_targets: [SDG::Target["1.1"]])
+
+      visit legislation_processes_path
+
+      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_content "target 1.1"
+    end
   end
 
   context "process page" do
@@ -209,6 +222,19 @@ describe "Legislation" do
         click_link "Create a proposal"
 
         expect(page).to have_current_path new_legislation_process_proposal_path(process)
+      end
+
+      scenario "Show SDG tags when feature is enabled", :js do
+        Setting["feature.sdg"] = true
+        Setting["sdg.process.legislation"] = true
+
+        process = create(:legislation_process, sdg_goals: [SDG::Goal[1]],
+                                               sdg_targets: [SDG::Target["1.1"]])
+
+        visit legislation_process_path(process)
+
+        expect(page).to have_selector "img[alt='1. No Poverty']"
+        expect(page).to have_content "target 1.1"
       end
     end
 

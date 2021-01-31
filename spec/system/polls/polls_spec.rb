@@ -129,6 +129,19 @@ describe "Polls" do
 
       expect(page).to have_link("Poll with results", href: results_poll_path(poll.slug))
     end
+
+    scenario "Shows SDG tags when feature is enabled", :js do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.polls"] = true
+
+      create(:poll, sdg_goals: [SDG::Goal[1]],
+                    sdg_targets: [SDG::Target["1.1"]])
+
+      visit polls_path
+
+      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_content "target 1.1"
+    end
   end
 
   context "Show" do
@@ -400,6 +413,19 @@ describe "Polls" do
         expect(page).not_to have_link("No")
         expect(page).to have_link("Yes")
       end
+    end
+
+    scenario "Shows SDG tags when feature is enabled", :js do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.polls"] = true
+
+      poll = create(:poll, sdg_goals: [SDG::Goal[1]],
+                           sdg_targets: [SDG::Target["1.1"]])
+
+      visit poll_path(poll)
+
+      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_content "target 1.1"
     end
   end
 

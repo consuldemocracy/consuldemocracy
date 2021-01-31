@@ -16,21 +16,6 @@
 
 .legislation-hero {
 
-  ul {
-    list-style: none;
-    margin-left: 0;
-
-    li {
-
-      &::before {
-        color: #8aa8be;
-        content: "■";
-        padding-right: $line-height / 4;
-        vertical-align: text-bottom;
-      }
-    }
-  }
-
   .title {
     font-weight: bold;
     text-transform: uppercase;
