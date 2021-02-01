@@ -80,7 +80,7 @@ pt-BR:
         one: "objetivo"
         other: "objetivos"
       sdg/local_target:
-        one: "destino local"
+        one: "meta local"
         other: "destinos locais"
       sdg/manager:
         one: "Gerenciador de ODS (SDG)"
