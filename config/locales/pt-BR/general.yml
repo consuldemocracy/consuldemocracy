@@ -696,8 +696,8 @@ pt-BR:
       goal: "Por ODS (SDG)"
       goal_blank: "Selecione um objetivo"
       search: "Filtro"
-      target: "Por destino"
-      target_blank: "Selecione um destino"
+      target: "Por meta"
+      target_blank: "Selecione uma meta"
       title: "Busca avançada"
       to: "Para"
     author_info:
