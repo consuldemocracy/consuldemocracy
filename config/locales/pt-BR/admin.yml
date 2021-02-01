@@ -35,6 +35,7 @@ pt-BR:
           proposals: Propostas
           budgets: Orçamento participativo
           help_page: Página de ajuda
+          sdg: ODS (SDG)
       edit:
         editing: Editar banner
         form:
@@ -618,6 +619,12 @@ pt-BR:
         add: Adicionar
       search:
         title: "Gerentes: Pesquisa de usuário"
+    sdg_managers:
+      index:
+        no_sdg_managers: Não há usuários.
+    sdg/managers:
+      sdg/manager:
+        add: Adicionar
     menu:
       activity: Atividade do moderador
       admin: Menu de admin
@@ -634,6 +641,7 @@ pt-BR:
       hidden_users: Usuários ocultos
       administrators: Administradores
       managers: Gerentes
+      sdg_managers: Gerenciadores de ODS (SDG)
       moderators: Moderadores
       messaging_users: Mensagens para os usuários
       newsletters: Boletins informativos
@@ -1245,15 +1253,26 @@ pt-BR:
       true_value: "Sim"
       false_value: "Não"
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Todos os objetivos"
+            label: "Por objetivo"
+          sdg_targets:
+            all: "Todos os destinos"
+            label: "Por destino"
         label:
           booths: "Buscar urna por nome"
+          budget_investments: "Buscar investimentos por título, descrição ou cabeçalho"
           debates: "Buscar debates por título ou descrição"
+          legislation_processes: "Buscar processos por título ou descrição"
           local_census_records: "Pesquisar por número de documento"
           organizations: "Nome, e-mail ou número de telefone"
           poll_officers: "Buscar presidentes das votações"
           poll_questions: "Buscar perguntas"
+          polls: "Buscar votações por nome ou descrição"
           proposals: "Buscar propostas por título, código, descrição ou pergunta"
           users: "Pesquisar usuário por nome ou pelo email"
+        search: "Buscar"
       search_results: "Buscar resultados"
       no_search_results: "Nenhum resultado encontrado."
       actions: Ações
@@ -1353,6 +1372,7 @@ pt-BR:
         proposal_notifications: Notificações de proposta
         incomplete_verifications: Verificações incompletas
         polls: Votações
+        sdg: ODS (SDG)
       graph:
         debate_created: Debates
         visit: Visitas
@@ -1395,6 +1415,15 @@ pt-BR:
           question_name: Questão
           origin_web: Participantes da Web
           origin_total: Total de participantes
+      sdg:
+        budget_investments:
+          amount: "Total aprovado"
+          winners: "Projeto de investimento ganhando"
+          sent: "Propostas de investimento enviadas"
+        debates: "Debates"
+        polls: "Votações"
+        proposals: "Propostas"
+        title: "Objetivos de Desenvolvimento Sustentável - Estatísticas"
     tags:
       create: Criar tópico
       destroy: Deletar tópico
