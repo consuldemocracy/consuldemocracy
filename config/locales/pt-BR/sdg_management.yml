@@ -1,6 +1,43 @@
 pt-BR:
   sdg_management:
+    actions:
+      edit: "Gerenciar objetivos e destinos"
     header:
       title: "Conteúdo de ODSs"
+    homepage:
+      title: "Configuração da homepage"
+      create_card: "Criar cartão %{phase}"
+      no_cards: "Não há cartões para esta fase"
     menu:
+      budget_investments: "Orçamentos participativos"
+      debates: "Debates"
+      legislation_processes: "Legislação colaborativa"
+      polls: "Votações"
+      proposals: "Propostas"
       sdg_content: "Objetivos e metas"
+      sdg_homepage: "Homepage de ODS (SDG)"
+    local_targets:
+      create:
+        notice: "Destino local criado com sucesso"
+      destroy:
+        notice: "Destino local excluído com sucesso"
+      edit:
+        title: "Editar destino local"
+      form:
+        code: "Código deve começar com o código de destino selecionado, seguido por um ponto"
+        description: "A descrição será mostrada como ajuda para os usuários."
+      index:
+        new: "Criar destino local"
+      new:
+        title: "Novo destino local"
+      update:
+        notice: "Destino local atualizado com sucesso"
+    relations:
+      index:
+        filter: "Filtro"
+        filters:
+          all: "Todos"
+          pending_sdg_review: "Pendente"
+          sdg_reviewed: "Marcado como visto"
+      update:
+        notice: "%{relatable} atualizado com sucesso"
