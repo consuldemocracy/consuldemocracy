@@ -3,6 +3,7 @@ pt-BR:
     goals:
       goal_1:
         title: "Nenhuma pobreza"
+        title_in_two_lines: "Nenhuma pobreza"
         description: "Acabem com a pobreza em todas as suas formas, em todos os lugares."
         targets:
           target_1_1:
@@ -21,24 +22,29 @@ pt-BR:
             title: "Criar estruturas de políticas seguras nos âmbitos nacional, regional e internacional, baseadas em estratégias de desenvolvimento a favor dos pobres e sensíveis às questões de gênero, para apoiar investimento acelerado em ações de erradicação da pobreza"
       goal_2:
         title: "Fome zero"
+        title_in_two_lines: "Fome zero"
         description: "Fome zero"
         targets:
           target_2_1:
             title: "Até 2030, acabar com a fome e assegurar o acesso de todas as pessoas, em particular os pobres e aqueles em situações vulneráveis, incluindo crianças pequenas, a comida saudável, nutritiva e suficiente o ano todo."
       goal_3:
         title: "Boa saúde e bem-estar"
+        title_in_two_lines: "Boa saúde e bem-estar"
         description: "Garantir vidas saudáveis e promover o bem-estar para todos em todas as idades."
       goal_4:
         title: "Educação de qualidade"
+        title_in_two_lines: "Educação de qualidade"
         description: "Educação de qualidade."
       goal_5:
         title: "Igualdade de gênero"
+        title_in_two_lines: "Igualdade de gênero"
         description: "Atingir igualdade de gênero e empoderar todas as mulheres e garotas."
         targets:
           target_5_1:
             title: "Acabar com todas as formas de discriminação contra todas as mulheres e garotas em todos os lugares."
       goal_6:
         title: "Água tratada e saneamento"
+        title_in_two_lines: "Água tratada e saneamento"
         description: "Garantir acesso a água e saneamento para todos."
       goal_7:
         title: "Energia limpa e acessível"
