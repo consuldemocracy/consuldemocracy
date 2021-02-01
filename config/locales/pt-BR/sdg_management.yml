@@ -1,7 +1,7 @@
 pt-BR:
   sdg_management:
     actions:
-      edit: "Gerenciar objetivos e destinos"
+      edit: "Gerenciar objetivos e metas"
     header:
       title: "Conteúdo de ODSs"
     homepage:
@@ -18,20 +18,20 @@ pt-BR:
       sdg_homepage: "Homepage de ODS (SDG)"
     local_targets:
       create:
-        notice: "Destino local criado com sucesso"
+        notice: "Meta local criada com sucesso"
       destroy:
-        notice: "Destino local excluído com sucesso"
+        notice: "Meta local excluída com sucesso"
       edit:
-        title: "Editar destino local"
+        title: "Editar meta local"
       form:
         code: "Código deve começar com o código de destino selecionado, seguido por um ponto"
         description: "A descrição será mostrada como ajuda para os usuários."
       index:
-        new: "Criar destino local"
+        new: "Criar meta local"
       new:
-        title: "Novo destino local"
+        title: "Nova meta local"
       update:
-        notice: "Destino local atualizado com sucesso"
+        notice: "Meta local atualizada com sucesso"
     relations:
       index:
         filter: "Filtro"
@@ -41,3 +41,5 @@ pt-BR:
           sdg_reviewed: "Marcado como visto"
       update:
         notice: "%{relatable} atualizado com sucesso"
+      update_and_review:
+        notice: "%{relatable} atualizado com sucesso e marcado como revisto"
