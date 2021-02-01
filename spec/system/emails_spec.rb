@@ -502,6 +502,10 @@ describe "Emails" do
       expect(email).to have_subject("This is a different subject")
       expect(email).to deliver_from("no-reply@consul.dev")
       expect(email.body.encoded).to include("This is a different body")
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(
+                        edit_subscriptions_path(token: user_with_newsletter_in_segment_2.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Receive by email website relevant information"')
     end
   end
 

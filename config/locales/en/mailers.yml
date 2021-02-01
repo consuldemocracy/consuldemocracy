@@ -8,7 +8,6 @@ en:
       subject: Someone has commented on your %{commentable}
       title: New comment
     config:
-      manage_email_subscriptions: To stop receiving these emails change your settings in
       notifications_link: Notifications
       unsubscribe_text: 'To unsubscribe from these emails, visit %{notifications} and uncheck "%{notification}".'
     email_verification:
