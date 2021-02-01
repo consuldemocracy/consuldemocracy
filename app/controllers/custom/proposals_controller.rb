@@ -17,7 +17,7 @@ class ProposalsController
     take_only_by_tag_names
     @proposals_coordinates = all_proposal_map_locations
   end
-  
+
   private
     def process_tags
       params[:proposal][:tag_list_categories].split(",").each do |t|
