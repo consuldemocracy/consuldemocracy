@@ -1,0 +1,9 @@
+// Supporter Box Bugfix
+.topless {
+  @include breakpoint(small) {
+    top: auto !important;
+    }
+  @include breakpoint(medium) {
+  top: 0px !important;
+  }
+}
