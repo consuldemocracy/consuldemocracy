@@ -27,6 +27,10 @@ pt-BR:
         targets:
           target_2_1:
             title: "Até 2030, acabar com a fome e assegurar o acesso de todas as pessoas, em particular os pobres e aqueles em situações vulneráveis, incluindo crianças pequenas, a comida saudável, nutritiva e suficiente o ano todo."
+          target_2_2:
+            title: "Até 2030, acabar com todas as formas de subnutrição, incluindo atingir, até 2025, as metas acordadas internacionalmente sobre baixa estatura e baixo peso em crianças abaixo de 5 anos de idade, e tratar das necessidades nutricionais de garotas adolescentes, grávidas e mulheres lactantes e idosos."
+          target_2_3:
+            title: "Até 2030, duplicar a produtividade de agricultura e receitas de pequenos produtores de comida, em particular mulheres, povos indígenas, \n famílias fazendeiras, pastores e pescadores, incluindo acesso seguro e igualitário à terra, outros recursos e meios produtivos, conhecimento, serviços financeiros, mercados e oportunidades para mais valia e emprego fora das fazendas."
       goal_3:
         title: "Boa saúde e bem-estar"
         title_in_two_lines: "Boa saúde e bem-estar"
