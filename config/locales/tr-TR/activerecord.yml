@@ -4,6 +4,9 @@ tr:
     results_enabled: "Sonuçları göster"
     stats_enabled: "İstatistikleri göster"
     advanced_stats_enabled: "Gelişmiş istatistikleri göster"
+    name: Ad
+    email: E-posta
+    description: Açıklama
   activerecord:
     models:
       activity:
@@ -140,6 +143,7 @@ tr:
         currency_symbol: "Para Birimi"
         voting_style: "Son oylama şekli"
         voting_style_knapsack: "Sırt çantası"
+        voting_style_approval: "Onay"
       budget/investment:
         heading_id: "Başlık"
         title: "İsim"
@@ -150,6 +154,13 @@ tr:
         organization_name: "Eğer bir topluluk/kurum adına veya birden fazla kişi adına öneride bulunuyorsanız, ismini yazın"
         image: "Öneriyi temsil eden görsel"
         image_title: "Görsel ismi"
+        duration: "Zaman Aralığı"
+        feasibility_feasible: "Yapılabilir"
+        feasibility_undecided: "Tanımsız"
+        feasibility_unfeasible: "Yapılamaz"
+        incompatible: "Uyumsuz olarak işaretle"
+        price_explanation: "Fiyat açıklaması"
+        selected: "Seçilmiş olarak işaretle"
       budget/investment/translation:
         title: "Başlık"
         description: "Açıklama"
@@ -177,6 +188,8 @@ tr:
         name: "Başlık adı"
         price: "Fiyat"
         population: "Nüfus"
+      budget/phase/translation:
+        description: "Açıklama"
       comment:
         body: "Yorum"
         user: "Kullanıcı"
@@ -195,6 +208,7 @@ tr:
         description: "Tanımlama"
         selected: "Seçilmiş olarak işaretle"
         terms_of_service: "Kullanım şartları"
+        video_url: "Harici Video URL'si"
       proposal/translation:
         title: "Öneri başlığı"
         description: "Öneri metni"
