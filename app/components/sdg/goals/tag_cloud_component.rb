@@ -1,4 +1,4 @@
-class SDG::Goals::FilterLinksComponent < ApplicationComponent
+class SDG::Goals::TagCloudComponent < ApplicationComponent
   attr_reader :class_name
 
   def initialize(class_name)

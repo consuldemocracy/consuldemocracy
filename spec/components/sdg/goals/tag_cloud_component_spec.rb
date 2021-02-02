@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Goals::FilterLinksComponent, type: :component do
+describe SDG::Goals::TagCloudComponent, type: :component do
   before do
     Setting["feature.sdg"] = true
     Setting["sdg.process.debates"] = true
@@ -8,7 +8,7 @@ describe SDG::Goals::FilterLinksComponent, type: :component do
   end
 
   it "renders a title" do
-    component = SDG::Goals::FilterLinksComponent.new("Debate")
+    component = SDG::Goals::TagCloudComponent.new("Debate")
 
     render_inline component
 
@@ -16,7 +16,7 @@ describe SDG::Goals::FilterLinksComponent, type: :component do
   end
 
   it "renders all goals" do
-    component = SDG::Goals::FilterLinksComponent.new("Proposal")
+    component = SDG::Goals::TagCloudComponent.new("Proposal")
 
     render_inline component
 
