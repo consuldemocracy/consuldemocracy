@@ -12,13 +12,6 @@ module Taggable
     tags.sort { |a, b| b.taggings_count <=> a.taggings_count }[0, limit]
   end
 
-  def tags_count_out_of_limit(limit = nil)
-    return 0 unless limit
-
-    count = tags.size - limit
-    count < 0 ? 0 : count
-  end
-
   def max_number_of_tags
     errors.add(:tag_list, :less_than_or_equal_to, count: 6) if tag_list.count > 6
   end

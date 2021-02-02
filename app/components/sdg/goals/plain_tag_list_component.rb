@@ -8,7 +8,7 @@ class SDG::Goals::PlainTagListComponent < ApplicationComponent
     end
 
     def tags
-      [*goal_tags, see_more_link(goals)].compact
+      [*goal_tags, see_more_link(:sdg_goals)].select(&:present?)
     end
 
     def goal_tags

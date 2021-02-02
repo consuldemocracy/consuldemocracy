@@ -973,3 +973,8 @@ en:
     create:
       enqueue_remote_translation: Translations have been correctly requested.
     button: Translate page
+  tags:
+    filter:
+      more:
+        one: "One more tag"
+        other: "%{count} more tags"

@@ -23,10 +23,7 @@ class Shared::TagListComponent < ApplicationComponent
     end
 
     def see_more_link
-      if taggable.tags_count_out_of_limit(limit) > 0
-         link_to "#{taggable.tags_count_out_of_limit(limit)}+",
-                 polymorphic_path(taggable)
-      end
+      render Shared::SeeMoreLinkComponent.new(taggable, :tags, limit: limit)
     end
 
     def taggables_path(taggable, tag_name)

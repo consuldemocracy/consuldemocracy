@@ -8,7 +8,7 @@ class SDG::Goals::TagListComponent < ApplicationComponent
     end
 
     def links
-      [*goal_links, see_more_link(goals)]
+      [*goal_links, see_more_link(:sdg_goals)]
     end
 
     def goal_links

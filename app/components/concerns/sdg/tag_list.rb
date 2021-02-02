@@ -12,15 +12,8 @@ module SDG::TagList
     process.enabled?
   end
 
-  def see_more_link(collection)
-    count = count_out_of_limit(collection)
-
-    if count > 0
-      link_to "#{count}+",
-              polymorphic_path(record),
-              class: "more-#{i18n_namespace}",
-              title: t("sdg.#{i18n_namespace}.filter.more", count: count)
-    end
+  def see_more_link(association_name)
+    render Shared::SeeMoreLinkComponent.new(record, association_name, limit: limit)
   end
 
   def filter_text(goal_or_target)
@@ -31,12 +24,6 @@ module SDG::TagList
 
   def index_by(advanced_search)
     polymorphic_path(model, advanced_search: advanced_search)
-  end
-
-  def count_out_of_limit(collection)
-    return 0 unless limit
-
-    collection.size - limit
   end
 
   def process
