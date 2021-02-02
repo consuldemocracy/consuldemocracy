@@ -16,11 +16,10 @@ module SDG::TagList
     count = count_out_of_limit(collection)
 
     if count > 0
-      [
-        "#{count}+",
-        polymorphic_path(record),
-        class: "more-#{i18n_namespace}", title: t("sdg.#{i18n_namespace}.filter.more", count: count)
-      ]
+      link_to "#{count}+",
+              polymorphic_path(record),
+              class: "more-#{i18n_namespace}",
+              title: t("sdg.#{i18n_namespace}.filter.more", count: count)
     end
   end
 

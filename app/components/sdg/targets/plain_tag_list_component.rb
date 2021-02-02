@@ -8,13 +8,7 @@ class SDG::Targets::PlainTagListComponent < ApplicationComponent
     end
 
     def tags
-      [*target_tags, see_more_link].compact
-    end
-
-    def see_more_link
-      options = super(targets)
-
-      link_to(*options) if options.present?
+      [*target_tags, see_more_link(targets)].compact
     end
 
     def target_tags

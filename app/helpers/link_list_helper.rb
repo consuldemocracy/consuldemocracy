@@ -1,11 +1,15 @@
 module LinkListHelper
   def link_list(*links, **options)
-    return "" if links.compact.empty?
+    return "" if links.select(&:present?).empty?
 
     tag.ul(options) do
-      safe_join(links.compact.map do |text, url, current = false, **link_options|
+      safe_join(links.select(&:present?).map do |text, url, current = false, **link_options|
         tag.li(({ "aria-current": true } if current)) do
-          link_to text, url, link_options
+          if url
+            link_to text, url, link_options
+          else
+            text
+          end
         end
       end, "\n")
     end
