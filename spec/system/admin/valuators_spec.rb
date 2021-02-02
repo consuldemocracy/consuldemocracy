@@ -54,11 +54,23 @@ describe "Admin valuators" do
     expect(page).not_to have_content "Can edit dossier"
   end
 
-  scenario "Destroy" do
-    click_link "Delete"
+  context "Destroy" do
+    scenario "Valuator not assigned to a budget" do
+      click_link "Delete"
 
-    within("#valuators") do
-      expect(page).not_to have_content(valuator.name)
+      within("#valuators") do
+        expect(page).not_to have_content(valuator.name)
+      end
+    end
+
+    scenario "Valuator assigned to a budget" do
+      create(:budget, valuators: [valuator])
+
+      click_link "Delete"
+
+      within("#valuators") do
+        expect(page).not_to have_content(valuator.name)
+      end
     end
   end
 
