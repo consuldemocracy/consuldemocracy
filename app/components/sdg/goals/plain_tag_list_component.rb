@@ -3,25 +3,17 @@ class SDG::Goals::PlainTagListComponent < ApplicationComponent
 
   private
 
-    def record
-      record_or_name
-    end
-
     def tags
-      [*goal_tags, see_more_link(:sdg_goals)].select(&:present?)
+      [*goal_tags, see_more_link].select(&:present?)
     end
 
     def goal_tags
-      goals.order(:code).limit(limit).map do |goal|
+      tag_records.map do |goal|
         render SDG::TagComponent.new(goal)
       end
     end
 
-    def goals
-      record.sdg_goals
-    end
-
-    def i18n_namespace
-      "goals"
+    def association_name
+      :sdg_goals
     end
 end

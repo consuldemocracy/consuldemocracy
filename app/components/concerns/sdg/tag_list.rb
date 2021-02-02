@@ -1,36 +1,31 @@
 module SDG::TagList
   extend ActiveSupport::Concern
-  attr_reader :record_or_name, :limit
-  delegate :link_list, to: :helpers
+  attr_reader :record, :limit
 
-  def initialize(record_or_name, limit: nil)
-    @record_or_name = record_or_name
+  def initialize(record, limit: nil)
+    @record = record
     @limit = limit
   end
 
   def render?
-    process.enabled?
+    SDG::ProcessEnabled.new(record).enabled?
   end
 
-  def see_more_link(association_name)
+  def tag_records
+    tags = record.send(association_name)
+
+    if tags.respond_to?(:limit)
+      tags.order(:code).limit(limit)
+    else
+      tags.sort[0..(limit.to_i - 1)]
+    end
+  end
+
+  def see_more_link
     render Shared::SeeMoreLinkComponent.new(record, association_name, limit: limit)
   end
 
-  def filter_text(goal_or_target)
-    t("sdg.#{i18n_namespace}.filter.link",
-      resources: model.model_name.human(count: :other),
-      code: goal_or_target.code)
-  end
-
-  def index_by(advanced_search)
-    polymorphic_path(model, advanced_search: advanced_search)
-  end
-
-  def process
-    @process ||= SDG::ProcessEnabled.new(record_or_name)
-  end
-
-  def model
-    process.name.constantize
+  def association_name
+    raise NotImplementedError, "method must be implemented in the included class"
   end
 end

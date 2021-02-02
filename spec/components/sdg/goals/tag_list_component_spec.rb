@@ -60,16 +60,4 @@ describe SDG::Goals::TagListComponent, type: :component do
                               title: "One more goal",
                               href: "/debates/#{debate.to_param}"
   end
-
-  context "given a class name" do
-    let(:component) { SDG::Goals::TagListComponent.new("Debate") }
-
-    it "renders all goals ordered by code" do
-      render_inline component
-
-      expect(page).to have_selector "li", count: 17
-      expect(page.first("a")[:title]).to end_with "goal 1"
-      expect(page.all("a").last[:title]).to end_with "goal 17"
-    end
-  end
 end
