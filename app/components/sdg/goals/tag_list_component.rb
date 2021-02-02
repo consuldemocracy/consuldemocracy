@@ -14,7 +14,7 @@ class SDG::Goals::TagListComponent < ApplicationComponent
     def goal_links
       goals.order(:code).limit(limit).map do |goal|
         [
-          render(SDG::Goals::IconComponent.new(goal)),
+          render(SDG::TagComponent.new(goal)),
           index_by_goal(goal),
           title: filter_text(goal)
         ]

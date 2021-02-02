@@ -13,16 +13,12 @@ class SDG::Targets::PlainTagListComponent < ApplicationComponent
 
     def target_tags
       targets.sort[0..(limit.to_i - 1)].map do |target|
-        tag.span(text(target), data: { code: target.code })
+        tag.span(render(SDG::TagComponent.new(target)), data: { code: target.code })
       end
     end
 
     def targets
       record.sdg_targets
-    end
-
-    def text(target)
-      "#{SDG::Target.model_name.human} #{target.code}"
     end
 
     def i18n_namespace

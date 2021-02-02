@@ -13,7 +13,7 @@ class SDG::Goals::PlainTagListComponent < ApplicationComponent
 
     def goal_tags
       goals.order(:code).limit(limit).map do |goal|
-        render SDG::Goals::IconComponent.new(goal)
+        render SDG::TagComponent.new(goal)
       end
     end
 

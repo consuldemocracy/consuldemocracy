@@ -14,7 +14,7 @@ class SDG::Targets::TagListComponent < ApplicationComponent
     def target_links
       targets.sort[0..(limit.to_i - 1)].map do |target|
         [
-          "#{SDG::Target.model_name.human} #{target.code}",
+          render(SDG::TagComponent.new(target)),
           index_by_target(target),
           title: filter_text(target),
           data: { code: target.code }
