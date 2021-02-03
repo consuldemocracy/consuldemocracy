@@ -1,10 +1,21 @@
 tr:
   sdg_management:
+    actions:
+      edit: "Amaçları ve hedefleri yönetin"
+    header:
+      title: "SKH içeriği"
+    homepage:
+      title: "Ana sayfa biçimlendirmesi"
+      create_card: "Kart %{phase} oluştur"
+      no_cards: "Bu aşama için kart yok"
     menu:
+      budget_investments: "Katılımcı bütçeleri"
+      debates: "Tartışmalar"
+      legislation_processes: "İşbirliğine dayalı mevzuat"
       polls: "Anketler"
       proposals: "Teklifler"
       sdg_content: "Amaçlar ve Hedefler"
-      sdg_homepage: "SDG ana sayfası"
+      sdg_homepage: "SKH ana sayfası"
     local_targets:
       create:
         notice: "Yerel hedef başarıyla oluşturuldu"
