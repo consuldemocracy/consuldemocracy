@@ -2,6 +2,7 @@ tr:
   attributes:
     geozone_id: "İşlem kapsamı"
     results_enabled: "Sonuçları göster"
+    related_sdg_list: "Sürdürülebilir Kalkınma Amaç ve Hedefleri"
     stats_enabled: "İstatistikleri göster"
     advanced_stats_enabled: "Gelişmiş istatistikleri göster"
     name: Ad
