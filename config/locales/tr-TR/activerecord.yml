@@ -75,6 +75,15 @@ tr:
       proposal:
         one: "Vatandaş önerisi"
         other: "Vatandaş önerileri"
+      sdg/goal:
+        one: "amaç"
+        other: "amaçlar"
+      sdg/local_target:
+        one: "yerel hedef"
+        other: "yerel hedefler"
+      sdg/target:
+        one: "hedef"
+        other: "hedefler"
       site_customization/page:
         one: Kişisel sayfa
         other: Kişisel sayfalar
@@ -129,6 +138,9 @@ tr:
       link:
         one: Bağlantı
         other: Bağlantılar
+      local_census_record:
+        one: Yerel nüfus sayımı kaydı
+        other: Yerel nüfus sayımı kayıtları
     attributes:
       budget:
         name: "İsim"
