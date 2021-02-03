@@ -35,6 +35,7 @@ tr:
           proposals: Öneriler
           budgets: Katılımcı bütçeleme
           help_page: Yardım sayfası
+          sdg: SKH
       edit:
         editing: Banner düzenleme
         form:
@@ -612,6 +613,12 @@ tr:
         add: Ekle
       search:
         title: "Yöneticiler: Kullanıcı arama"
+    sdg_managers:
+      index:
+        no_sdg_managers: Kullanıcı yok.
+    sdg/managers:
+      sdg/manager:
+        add: Ekle
     menu:
       activity: Moderatör faaliyeti
       admin: Yönetici menüsü
@@ -628,6 +635,7 @@ tr:
       hidden_users: Gizli kullanıcılar
       administrators: Yöneticiler
       managers: Yöneticiler
+      sdg_managers: SKH Yöneticileri
       moderators: Moderatörler
       messaging_users: Kullanıcılara mesajlar
       newsletters: Bültenler
@@ -678,6 +686,7 @@ tr:
       dashboard_actions: Kaynaklar ve eylemler
       debates: "Tartışmalar"
       comments: "Yorumlar"
+      local_census_records: Yerel nüfus sayımını yönet
     administrators:
       index:
         title: Yöneticiler
@@ -1180,11 +1189,21 @@ tr:
           without_confirmed_hide: Beklemede
         title: Gizli öneriler
         no_hidden_proposals: Hiç gizli öneriler yok.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtrele
+        filters:
+          all: Hepsi
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizlenmiş bildirimler
+        no_hidden_proposals: Burada gizlenmiş bildirim yok.
     settings:
       flash:
         updated: Değer güncellendi
       index:
         title: Yapılandırma ayarları
+        general: Yapılandırma ayarları
         update_setting: Güncelleme
         participation_processes: "Katılım süreçleri"
         images_and_documents: "Görüntüler ve belgeler"
@@ -1204,6 +1223,9 @@ tr:
           how_to_enable: 'Haritayı kullanıcılara göstermek için "Özellikler" sekmesinde "Öneriler ve bütçe yatırımları coğrafi konum belirleme" özelliğini etkinleştirmeniz gerekir.'
         dashboard:
           title: Öneriler gösterge tablosu
+      remote_census_general_name: Genel Bilgi
+      remote_census_request_name: Veri Talebi
+      remote_census_response_name: Yanıt Verisi
       setting: Özellik
       setting_actions: Aksiyon
       setting_name: Ayar
@@ -1214,14 +1236,25 @@ tr:
       true_value: "Evet"
       false_value: "Hayır"
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Tüm amaçlar"
+            label: "Amaca göre"
+          sdg_targets:
+            all: "Tüm hedefler"
+            label: "Hedefe göre"
         label:
           booths: "İsme göre kabin ara"
+          budget_investments: "Yatırımları başlık ya da açıklamaya göre arayın"
           debates: "Tartışmaları başlığa veya açıklamaya göre ara"
+          legislation_processes: "Süreçleri başlık ya da açıklamaya göre arayın"
           organizations: "İsim, e-posta veya telefon numarası"
           poll_officers: "Anket memurlarını ara"
           poll_questions: "Anket sorularını ara"
+          polls: "Anketleri ad veya açıklamaya göre arayın"
           proposals: "Başlığa, koda, tanımlamaya veya soruya göre önerileri ara"
           users: "İsim veya e-posta ile kullanıcı ara"
+        search: "Ara"
       search_results: "Arama sonuçları"
       no_search_results: "Hiç sonuç bulunamadı."
       actions: Aksiyon
@@ -1273,8 +1306,10 @@ tr:
         document_numbers_note: "Virgül ile ayrılmış sayıları yazın (,)"
         submit: İmza sayfası oluştur
         text_help:
+          required_fields_note: "Kullanıcıyı doğrulamak için belge numarası gereklidir"
           date_of_birth_note: ", Doğum Tarihi (gg/aa/yyyy)"
           postal_code_note: " ve Posta Kodu"
+          required_fields_structure_note: "Doldurulması zorunlu alanlar virgülle ve her kullanıcı noktalı virgülle ayrılmalıdır."
           example_text: "Örnek: "
       show:
         created_at: Oluşturuldu
@@ -1494,3 +1529,7 @@ tr:
         submit_header: Üstbilgiyi kaydet
         card_title: Kart düzenle
         submit_card: Kart kaydet
+    local_census_records:
+      imports:
+        local_census_records:
+          no_records_found: Kayıt bulunamadı.
