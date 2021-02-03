@@ -30,6 +30,7 @@ tr:
       unsubscribe_account: Hesabım
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
+      title: "Bu içerikle <strong>%{receiver}</strong>'a bir yeni özel mesaj gönderdiniz:"
     user_invite:
       ignore: "Eğer bu daveti talep etmemişseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
       text: "%{org}'a katılım başvurunuz için teşekkür ederiz! Saniyeler içinde katılmaya başlayabilirsiniz, aşağıdaki formu doldurmanız yeterlidir:"
@@ -40,6 +41,7 @@ tr:
     budget_investment_created:
       subject: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
       title: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
+      intro: "Merhaba <strong>%{author}</strong>,"
       follow_link: "Katılımcı Bütçeler"
       sincerely: "İçtenlikle,"
       share: "Projenizi paylaşın"
