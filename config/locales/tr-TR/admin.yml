@@ -1272,9 +1272,15 @@ tr:
         title: Yeni imza sayfaları
         document_numbers_note: "Virgül ile ayrılmış sayıları yazın (,)"
         submit: İmza sayfası oluştur
+        text_help:
+          date_of_birth_note: ", Doğum Tarihi (gg/aa/yyyy)"
+          postal_code_note: " ve Posta Kodu"
+          example_text: "Örnek: "
       show:
         created_at: Oluşturuldu
         author: Yazar
+        users: Kullanıcılar
+        signature_count: "İmza sayısı:"
         verified:
           one: "%{count} geçerli imza var"
           other: "%{count} geçerli imzalar var"
@@ -1313,6 +1319,7 @@ tr:
         proposal_notifications: Öneri bildirimleri
         incomplete_verifications: Tamamlanmamış doğrulamalar
         polls: Anketler
+        sdg: SKH
       graph:
         debate_created: Tartışmalar
         visit: Ziyaretler
@@ -1355,6 +1362,10 @@ tr:
           question_name: Soru
           origin_web: Web katılımcıları
           origin_total: Toplam katılımcılar
+      sdg:
+        budget_investments:
+          amount: "Onaylanan miktar"
+          winners: "Kazanan yatırım projeleri"
     tags:
       create: Konu oluştur
       destroy: Konuyu yok etmek
