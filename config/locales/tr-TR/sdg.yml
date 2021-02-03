@@ -1,1 +1,21 @@
 tr:
+  sdg:
+    goals:
+      filter:
+        link: "Hedefle bağlantılı tüm %{resources} görüntüle %{code}"
+        more:
+          one: "Bir hedef daha"
+          other: "%{count} daha fazla hedef"
+    related_list_selector:
+      goal_identifier: "SKH%{code}"
+      goal_list: "Hedef listesi"
+      help:
+        title: "Hangi SKH'ler %{record} ile uyumlu?"
+      placeholder: "Bir amaç ya da hedef kodu yazın veya açıklayın"
+      remove_tag: "Kaldır"
+    targets:
+      filter:
+        link: "Hedefle bağlantılı tüm %{resources} görüntüle %{code}"
+        more:
+          one: "Bir hedef daha"
+          other: "%{count} daha fazla hedef"
