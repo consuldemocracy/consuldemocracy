@@ -81,6 +81,9 @@ tr:
       sdg/local_target:
         one: "yerel hedef"
         other: "yerel hedefler"
+      sdg/manager:
+        one: "SKH yöneticisi"
+        other: "SKH yöneticileri"
       sdg/target:
         one: "hedef"
         other: "hedefler"
@@ -156,6 +159,8 @@ tr:
         voting_style: "Son oylama şekli"
         voting_style_knapsack: "Sırt çantası"
         voting_style_approval: "Onay"
+      budget/translation:
+        name: "İsim"
       budget/investment:
         heading_id: "Başlık"
         title: "İsim"
@@ -173,6 +178,12 @@ tr:
         incompatible: "Uyumsuz olarak işaretle"
         price_explanation: "Fiyat açıklaması"
         selected: "Seçilmiş olarak işaretle"
+        selected_true: "Seçilmiş"
+        selected_false: "Seçilmemiş"
+        unfeasibility_explanation: "Fizibilite açıklaması"
+        valuation_finished: "Değerlendirme tamamlandı"
+        valuator_ids: "Gruplar"
+        valuation_tag_list: "Etiketler"
       budget/investment/translation:
         title: "Başlık"
         description: "Açıklama"
@@ -186,6 +197,8 @@ tr:
         title: "İsim"
         description: "Açıklama (isteğe bağlı, eğer bir görev belirtilmiş ise)"
         publication_date: "Yayın tarihi"
+      milestone/translation:
+        description: "Açıklama"
       milestone/status:
         name: "İsim"
         description: "Tanımlama (isteğe bağlı)"
@@ -196,18 +209,32 @@ tr:
       progress_bar/kind:
         primary: "Birincil"
         secondary: "İkincil"
+      budget/group:
+        max_votable_headings: "Bir kullanıcının projeleri seçebileceği maksimum başlık sayısı"
+      budget/group/translation:
+        name: "Grup ismi"
       budget/heading:
+        allow_custom_content: "İçerik engellemeye izin ver"
         name: "Başlık adı"
         price: "Fiyat"
         population: "Nüfus"
+        max_ballot_lines: "Oylara izin verildi"
+      budget/heading/translation:
+        name: "Başlık adı"
+      budget/phase:
+        enabled: "Aşama etkinleştirildi"
+        ends_at: "Bitiş tarihi"
+        starts_at: "Başlangıç tarihi"
       budget/phase/translation:
         description: "Açıklama"
+        summary: "Özet"
       comment:
         body: "Yorum"
         user: "Kullanıcı"
       debate:
         author: "Yazar"
         description: "Fikir"
+        tag_list: "Konular"
         terms_of_service: "Hizmet şartları"
         title: "İsim"
       debate/translation:
@@ -218,6 +245,8 @@ tr:
         title: "İsim"
         question: "Soru"
         description: "Tanımlama"
+        responsible_name: "Tasarıyı sunan kişinin tam adı"
+        retired_reason: "Tasarıyı geri çekme sebebi"
         selected: "Seçilmiş olarak işaretle"
         terms_of_service: "Kullanım şartları"
         video_url: "Harici Video URL'si"
@@ -233,25 +262,38 @@ tr:
         password_confirmation: "Şifre onayı"
         password: "Şifre"
         current_password: "Mevcut şifre"
+        email_on_comment: "Biri tasarılarıma veya tartışmalarıma yorum yaptığı zaman bana e-posta ile bildir"
+        email_on_comment_reply: "Biri yorumlarıma cevap verdiğinde bana e-posta ile bildir"
+        email_on_direct_message: "Direkt mesajlarla ilgili e-posta al"
         official_position: "Resmi görev"
         official_level: "Resmi düzey"
         phone_number: "Telefon numarası"
         redeemable_code: "Doğrulama kodu e-posta yoluyla alındı"
+      direct_message:
+        title: "Başlık"
+        body: "Mesaj"
       organization:
         name: "Organizasyon adı"
         responsible_name: "Gruptan sorumlu kişi"
       poll:
         name: "Ad"
+        title: "Ad"
         starts_at: "Başlangıç Tarihi"
         ends_at: "Kapanış Tarihi"
         geozone_restricted: "Geozone tarafından kısıtlandırılmış"
         summary: "Özet"
         description: "Tanımlama"
+      active_poll/translation:
+        description: "Açıklama"
+      poll/booth:
+        name: "Ad"
+        location: "Konum"
       poll/translation:
         name: "Ad"
         summary: "Özet"
         description: "Tanımlama"
       poll/question:
+        poll_id: "Anket"
         title: "Soru"
         summary: "Özet"
         description: "Tanımlama"
@@ -262,10 +304,23 @@ tr:
         data: CSV verisi
         poll_id: Anket
         officer_assignment_id: Memur ataması
+      poll/shift:
+        task: "Görev"
+      proposal_notification:
+        body: "Mesaj"
+        title: "Başlık"
       signature_sheet:
+        title: "Başlık"
         signable_type: "İmzalanır tür"
         signable_id: "İmzalanır KİMLİK"
         document_numbers: "Belgelerin numaraları"
+      sdg/goal:
+        code: "Şifre"
+        title: "Başlık"
+        description: "Açıklama"
+      sdg/local_target:
+        code: "Kod"
+        target_id: "Hedef"
       site_customization/page:
         content: İçerik
         created_at: Oluşturuldu
