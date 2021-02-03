@@ -835,6 +835,10 @@ tr:
         debates: Tüm tartışmaları göster
         proposals: Tüm önerileri göster
         processes: Tüm işlemleri göster
+      no_items:
+        debates: Şu anda bir tartışma bulunmamaktadır
+        proposals: Şu anda bir tasarı bulunmamaktadır
+        processes: Şu anda işleyen bir süreç bulunmamaktadır
       process_label: İşlem
       see_process: İşlemi gör
     cards:
