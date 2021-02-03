@@ -118,3 +118,7 @@ tr:
         tags_label: "Kategoriler"
       not_verified: "Önerileri oylamak için %{verify_account}."
       process_title: Katılımcı mevzuat süreci
+    summary:
+      title: "Özet"
+      votes:
+        zero: "%{count} oy"
