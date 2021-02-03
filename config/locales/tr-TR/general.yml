@@ -177,6 +177,7 @@ tr:
     document: Belge
     topic: Konu
     image: Resim
+    site_customization/page: sayfa
   geozones:
     none: Tüm şehir
   layouts:
@@ -274,10 +275,17 @@ tr:
       sign_in: Google ile oturum aç
       sign_up: Google ile kaydol
       name: Google
+    wordpress_oauth2:
+      sign_in: Wordpress ile oturum aç
+      sign_up: Wordpress ile kaydol
+      name: Wordpress
     twitter:
       sign_in: Twitter ile oturum aç
       sign_up: Twitter ile kaydol
       name: Twitter
+    info:
+      sign_in: "Bununla oturum aç:"
+      sign_up: "Bununla kaydol:"
     or_fill: "Veya aşağıdaki formu doldur:"
   proposals:
     create:
@@ -442,6 +450,7 @@ tr:
       poster: Görsel
       recommended_actions: Önerilen eylemler
       messages: Kullanıcılara mesajlar
+      related_content: İlgili içerik
     form:
       request: Talep
     create_request:
@@ -660,7 +669,9 @@ tr:
       from: "Kaynak"
       general: "Metin ile"
       general_placeholder: "Metni yaz"
+      goal_blank: "Hedef seç"
       search: "Filtre"
+      target_blank: "Hedef seç"
       title: "Gelişmiş arama"
       to: "Şuna"
     author_info:
