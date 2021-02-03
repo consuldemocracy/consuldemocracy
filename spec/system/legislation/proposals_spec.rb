@@ -210,4 +210,30 @@ describe "Legislation Proposals" do
       expect(page).to have_link(process.title)
     end
   end
+
+  scenario "Shows proposal tags as proposals filter", :js do
+    create(:legislation_proposal, process: process, tag_list: "Culture", title: "Open concert")
+    create(:legislation_proposal, process: process, tag_list: "Sports", title: "Baseball field")
+
+    visit legislation_process_proposals_path(process)
+
+    expect(page).to have_content "Open concert"
+    expect(page).to have_content "Baseball field"
+
+    click_link "Culture"
+
+    expect(page).not_to have_content "Baseball field"
+    expect(page).to have_content "Open concert"
+  end
+
+  scenario "Show proposal tags on show when SDG is enabled", :js do
+    Setting["feature.sdg"] = true
+    Setting["sdg.process.legislation"] = true
+
+    proposal = create(:legislation_proposal, process: process, tag_list: "Culture")
+
+    visit legislation_process_proposal_path(proposal.process, proposal)
+
+    expect(page).to have_link("Culture")
+  end
 end
