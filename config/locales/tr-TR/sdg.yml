@@ -1,7 +1,12 @@
 tr:
   sdg:
     goals:
+      show:
+        read_more: "%{goal} hakkında daha fazla oku"
+        read_less: "%{goal} hakkında daha az oku"
+      title: "Sürdürülebilir Kalkınma Hedefleri"
       filter:
+        heading: "SKH'ye göre filtreler"
         link: "Hedefle bağlantılı tüm %{resources} görüntüle %{code}"
         more:
           one: "Bir hedef daha"
