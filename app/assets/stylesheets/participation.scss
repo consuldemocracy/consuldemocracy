@@ -1118,8 +1118,7 @@
     .ssb-facebook {
       background: none;
       color: $text;
-      height: rem-calc(33) !important;
-
+      height: rem-calc(33);
 
       &::before {
         font-size: rem-calc(18);

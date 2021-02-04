@@ -1569,18 +1569,15 @@ table {
   }
 }
 
-.ssb-facebook,
-.ssb-telegram,
-.ssb-twitter,
-.ssb-whatsapp_app {
-  background-image: none !important;
+.social-share-button .ssb-icon {
+  background-image: none;
   color: #fff;
-  height: $icon-width !important;
+  height: $icon-width;
   position: relative;
-  width: $icon-width !important;
+  width: $icon-width;
 
   &::before {
-    font-family: "icons" !important;
+    font-family: "icons";
     font-size: rem-calc(24);
     left: 50%;
     line-height: $line-height * 2;
