@@ -1,4 +1,4 @@
-class SDG::Goals::FilterLinksComponent < ApplicationComponent
+class SDG::Goals::TagCloudComponent < ApplicationComponent
   attr_reader :class_name
 
   def initialize(class_name)
@@ -13,5 +13,9 @@ class SDG::Goals::FilterLinksComponent < ApplicationComponent
 
     def heading
       t("sdg.goals.filter.heading")
+    end
+
+    def goals
+      SDG::Goal.order(:code)
     end
 end

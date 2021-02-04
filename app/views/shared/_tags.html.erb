@@ -1,20 +1,4 @@
 <%- limit ||= nil %>
 
 <%= render SDG::TagListComponent.new(taggable, limit: limit) %>
-
-<% if taggable.tags.any? %>
-  <ul id="tags_<%= dom_id(taggable) %>" class="tags">
-    <% taggable.tag_list_with_limit(limit).each do |tag| %>
-      <li>
-        <%= link_to sanitize(tag.name),
-                    taggables_path(taggable, tag.name) %></li>
-    <% end %>
-
-    <% if taggable.tags_count_out_of_limit(limit) > 0 %>
-      <li>
-        <%= link_to "#{taggable.tags_count_out_of_limit(limit)}+",
-                    polymorphic_path(taggable) %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render Shared::TagListComponent.new(taggable, limit: limit) %>

@@ -973,3 +973,8 @@ es:
     create:
       enqueue_remote_translation: Se han solicitado correctamente las traducciones.
     button: Traducir página
+  tags:
+    filter:
+      more:
+        one: "Una etiqueta más"
+        other: "%{count} etiquetas más"

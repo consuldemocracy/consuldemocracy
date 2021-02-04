@@ -19,6 +19,15 @@ describe LinkListHelper do
       expect(list).to be_html_safe
     end
 
+    it "accepts anchor tags" do
+      list = helper.link_list(link_to("Home", "/"), ["Info", "/info"], class: "menu")
+
+      expect(list).to eq '<ul class="menu">' +
+        '<li><a href="/">Home</a></li>' + "\n" +
+        '<li><a href="/info">Info</a></li></ul>'
+      expect(list).to be_html_safe
+    end
+
     it "accepts options for links" do
       render helper.link_list(["Home", "/", class: "root"], ["Info", "/info", id: "info"])
 
@@ -30,7 +39,15 @@ describe LinkListHelper do
     it "ignores nil entries" do
       render helper.link_list(["Home", "/", class: "root"], nil, ["Info", "/info", id: "info"])
 
-      expect(page).to have_css "a", count: 2
+      expect(page).to have_css "li", count: 2
+      expect(page).to have_css "a.root", count: 1, exact_text: "Home"
+      expect(page).to have_css "a#info", count: 1, exact_text: "Info"
+    end
+
+    it "ignores empty entries" do
+      render helper.link_list(["Home", "/", class: "root"], "", ["Info", "/info", id: "info"])
+
+      expect(page).to have_css "li", count: 2
       expect(page).to have_css "a.root", count: 1, exact_text: "Home"
       expect(page).to have_css "a#info", count: 1, exact_text: "Info"
     end

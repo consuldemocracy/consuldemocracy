@@ -3,35 +3,17 @@ class SDG::Targets::PlainTagListComponent < ApplicationComponent
 
   private
 
-    def record
-      record_or_name
-    end
-
     def tags
-      [*target_tags, see_more_link].compact
-    end
-
-    def see_more_link
-      options = super(targets)
-
-      link_to(*options) if options.present?
+      [*target_tags, see_more_link].select(&:present?)
     end
 
     def target_tags
-      targets.sort[0..(limit.to_i - 1)].map do |target|
-        tag.span(text(target), data: { code: target.code })
+      tag_records.map do |target|
+        tag.span(render(SDG::TagComponent.new(target)), data: { code: target.code })
       end
     end
 
-    def targets
-      record.sdg_targets
-    end
-
-    def text(target)
-      "#{SDG::Target.model_name.human} #{target.code}"
-    end
-
-    def i18n_namespace
-      "targets"
+    def association_name
+      :sdg_targets
     end
 end
