@@ -203,6 +203,7 @@ ro:
         phase: "Etapă"
         currency_symbol: "Monedă"
         voting_style: "Votare finală"
+        voting_style_knapsack: "Votare de tip Knapsack"
         voting_style_approval: "Aprobare"
       budget/translation:
         name: "Nume"
