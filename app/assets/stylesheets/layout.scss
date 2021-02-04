@@ -1575,9 +1575,9 @@ table {
 .ssb-whatsapp_app {
   background-image: none !important;
   color: #fff;
-  height: $line-height * 2 !important;
+  height: $icon-width !important;
   position: relative;
-  width: $line-height * 2 !important;
+  width: $icon-width !important;
 
   &::before {
     font-family: "icons" !important;
