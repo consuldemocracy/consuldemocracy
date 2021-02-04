@@ -9,6 +9,16 @@ ro:
         title: "Zero Foame"
         title_in_two_lines: "Zero \nFoame"
         description: "Zero Foame"
+        targets:
+          target_2_B:
+            title: "Corectați și preveniți restricțiile comerciale și denaturările pe piețele agricole mondiale, inclusiv prin eliminarea paralelă a tuturor formelor de subvenții la exportul agricol și a tuturor măsurilor de export cu efect echivalent, în conformitate cu mandatul Rundei de dezvoltare de la Doha."
+          target_2_C:
+            title: "Adoptați măsuri pentru a asigura buna funcționare a piețelor produselor alimentare și a instrumentelor derivate ale acestora și pentru a facilita accesul în timp util la informațiile de piață, inclusiv cu privire la rezervele de alimente, pentru a contribui la limitarea volatilității extreme a prețului alimentelor."
+      goal_3:
+        description: "Asigurați o viață sănătoasă și promovați bunăstarea tuturor la toate vârstele."
       goal_5:
         title: "Egalitate între sexe"
         title_in_two_lines: "Egalitate \nîntre sexe"
+      goal_14:
+        title: "Viața Sub Apă"
+        title_in_two_lines: "Viața Sub\nApă"
