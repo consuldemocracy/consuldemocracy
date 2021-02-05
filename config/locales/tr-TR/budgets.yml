@@ -138,7 +138,9 @@ tr:
         milestones_tab: Kilometre taşları
         author: Fikir sahibi
         project_unfeasible: "Bu yatırım projesinin <strong> uygulanabilir olmadığı belirlendi </strong> ve oy kullanma aşamasına geçmesi mümkün olmayacak."
+        project_selected: "Bu yatırım projesi oylama aşaması için <strong>seçildi</strong>."
         project_winner: "Kazanan yatırım projesi"
+        project_not_selected: "Bu yatırım projesi oylama aşaması için <strong>seçilmedi</strong>."
         see_price_explanation: Maliyet açıklamasını gör
       wrong_price_format: Sadece tam sayılar
       investment:
@@ -156,6 +158,7 @@ tr:
         give_support: Destek
       header:
         check_ballot: Oyumu kontrol et
+        different_heading_assigned: "Başka bir konuda aktif oylarınız bulunmakta: %{heading_link}"
         change_ballot: "Eğer fikrinizi değiştirirseniz oyunuzu %{check_ballot} 'dan geri çekebilirsiniz ve başka bir fikre oy verebilirsiniz."
         check_ballot_link: "oyumu kontrol et"
         price: "Bu konunun bir bütçesi var"
