@@ -8,6 +8,8 @@ linters:
     enabled: true
   FinalNewline:
     enabled: true
+  NoJavascriptTagHelper:
+    enabled: true
   SelfClosingTag:
     enabled: false
   SpaceAroundErbTag:
