@@ -31,7 +31,7 @@ tr:
         not_enough_money: "Mevcut bütçeyi zaten atadınız. <br> <small> İstediğiniz zaman%{change_ballot} yapabileceğinizi unutmayın </small>"
         no_ballots_allowed: Seçim aşaması tamamlanmıştır
         different_heading_assigned: "Zaten farklı bir başlık seçtiniz:%{heading_link}"
-        not_enough_available_votes: "Verebileceğiniz maksimum oy sayısına ulaştınız"
+        not_enough_available_votes: "Kullanabileceğiniz maksimum oy sayısına ulaştınız"
         change_ballot: oylarınızı değiştirin
         casted_offline: Daha önce çevrimdışı olarak katıldınız
     groups:
@@ -97,16 +97,16 @@ tr:
           my_ballot: Oyum
           voted_info:
             knapsack:
-              one: "<strong>%{amount_spent} değerindeki bir teklife oy verdiniz</strong>"
-              other: "<strong>%{amount_spent} değerindeki %{count} teklifi oyladınız</strong>"
+              one: "<strong>%{amount_spent} değerindeki bir tasarı için oy kullandınız</strong>"
+              other: "<strong>%{amount_spent} değerindeki %{count} tasarıya oy verdiniz</strong>"
             approval:
-              one: "<strong>Bir teklif için oy kullandınız</strong>"
-              other: "<strong>%{count} teklif için oy kullandınız</strong>"
+              one: "<strong>Bir tasarı için oy kullandınız</strong>"
+              other: "<strong>%{count} tasarı için oy kullandınız</strong>"
           change_vote_info:
             knapsack: "Bu aşama tamamlanana kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanız gerekmemektedir."
             approval: "Bu aşama tamamlanana kadar istediğiniz zaman %{link} yapabilirsiniz."
           change_vote_link: "oyunuzu değiştirin"
-          different_heading_assigned: "Başka bir teklif için aktif oylarınız bulunmaktadır: %{heading_link}"
+          different_heading_assigned: "Başka bir tasarı için aktif oylarınız bulunmaktadır: %{heading_link}"
           change_ballot: "Eğer fikrinizi değiştirirseniz, oyunuzu %{check_ballot}'dan geri çekebilirsiniz ve tekrar oy verebilirsiniz."
           check_ballot_link: "oyumu kontrol et"
           zero: Bu kategoride herhangi bir yatırım projesine oy vermediniz.
@@ -128,7 +128,7 @@ tr:
         unfeasibility_explanation: Uygulanabilirlik açıklaması
         code: "Yatırım projesi kodu: <strong>%{code}</strong>"
         location: "Konum: <strong>%{location}</strong>"
-        organization_name: "Teklif eden: <strong>%{name}</strong>"
+        organization_name: "Tasarıyı sunan: <strong>%{name}</strong>"
         share: Paylaş
         title: Yatırım projesi
         supports: Destekler
