@@ -83,3 +83,6 @@ pt-BR:
       goal_17:
         title: "Parecerias para os objetivos"
         description: "Revitalizar a parceria mundial para o desenvolvimento sustentável."
+      show:
+        targets:
+          no_local_targets: Este objetivo não tem metas locais
