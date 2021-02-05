@@ -5,6 +5,8 @@ tr:
         title: Oyunuz
         amount_available:
           knapsack: "Şu an itibariyle yatırım yapabileceğiniz miktar <span>%{count}</span>."
+          approval:
+            zero: "Şu an itibariyle <span>%{count}</span> oy hakkınız bulunmaktadır."
         no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
         remove: Oyu geri çek
         voted:
