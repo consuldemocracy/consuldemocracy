@@ -19,6 +19,15 @@ ro:
       goal_5:
         title: "Egalitate între sexe"
         title_in_two_lines: "Egalitate \nîntre sexe"
+        targets:
+          target_5_1:
+            title: "Pune capăt tuturor formelor de discriminare împotriva tuturor femeilor și fetelor de pretutindeni."
+          target_5_2:
+            title: "Eliminați toate formele de violență împotriva tuturor femeilor și fetelor din sferele publice și private, inclusiv traficul de persoane și alte tipuri de exploatare."
+          target_5_3:
+            title: "Elimină toate practicile dăunătoare, cum ar fi căsătoria copilului, căsătoria timpurie și forțată și mutilarea genitală feminină."
+          target_5_A:
+            title: "Întreprinde reforme pentru a oferi femeilor drepturi egale la resursele economice, precum și accesul la proprietate și control asupra pământului și a altor forme de proprietate, servicii financiare, moștenire și resurse naturale, în conformitate cu legislația națională."
       goal_14:
         title: "Viața Sub Apă"
         title_in_two_lines: "Viața Sub\nApă"
