@@ -106,6 +106,7 @@ tr:
             knapsack: "Bu aşama tamamlanana kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanız gerekmemektedir."
             approval: "Bu aşama tamamlanana kadar istediğiniz zaman %{link} yapabilirsiniz."
           change_vote_link: "oyunuzu değiştirin"
+          different_heading_assigned: "Başka bir teklif için aktif oylarınız bulunmaktadır: %{heading_link}"
           change_ballot: "Eğer fikrinizi değiştirirseniz, oyunuzu %{check_ballot}'dan geri çekebilirsiniz ve tekrar oy verebilirsiniz."
           check_ballot_link: "oyumu kontrol et"
           zero: Bu kategoride herhangi bir yatırım projesine oy vermediniz.
@@ -125,6 +126,9 @@ tr:
         author_deleted: Kullanıcı silindi
         price_explanation: Maliyet açıklaması
         unfeasibility_explanation: Uygulanabilirlik açıklaması
+        code: "Yatırım projesi kodu: <strong>%{code}</strong>"
+        location: "Konum: <strong>%{location}</strong>"
+        organization_name: "Teklif eden: <strong>%{name}</strong>"
         share: Paylaş
         title: Yatırım projesi
         supports: Destekler
@@ -133,6 +137,7 @@ tr:
         comments_tab: Yorumlar
         milestones_tab: Kilometre taşları
         author: Fikir sahibi
+        project_unfeasible: "Bu yatırım projesinin <strong> uygulanabilir olmadığı belirlendi </strong> ve oy kullanma aşamasına geçmesi mümkün olmayacak."
         project_winner: "Kazanan yatırım projesi"
         see_price_explanation: Maliyet açıklamasını gör
       wrong_price_format: Sadece tam sayılar
