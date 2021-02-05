@@ -2,7 +2,7 @@ pt-BR:
   attributes:
     geozone_id: "Escopo da operação"
     results_enabled: "Exibir resultados"
-    related_sdg_list: "Objetivos e Destinos de Desenvolvimento Sustentável"
+    related_sdg_list: "Objetivos e Metas de Desenvolvimento Sustentável"
     stats_enabled: "Exibir estatísticas"
     advanced_stats_enabled: "Exibir estatísticas avançadas"
     name: Nome
