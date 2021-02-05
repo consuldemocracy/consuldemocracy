@@ -1114,8 +1114,7 @@
 
   .share-supported {
 
-    .ssb-twitter,
-    .ssb-facebook {
+    .social-share-button .ssb-icon {
       background: none;
       color: $text;
       height: rem-calc(33);
