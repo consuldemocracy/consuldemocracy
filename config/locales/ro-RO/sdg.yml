@@ -15,7 +15,13 @@ ro:
           target_2_C:
             title: "Adoptați măsuri pentru a asigura buna funcționare a piețelor produselor alimentare și a instrumentelor derivate ale acestora și pentru a facilita accesul în timp util la informațiile de piață, inclusiv cu privire la rezervele de alimente, pentru a contribui la limitarea volatilității extreme a prețului alimentelor."
       goal_3:
+        title: "Viață sănătoasă și Bunăstare"
+        title_in_two_lines: "Viață sănătoasă\nși Bunăstare"
         description: "Asigurați o viață sănătoasă și promovați bunăstarea tuturor la toate vârstele."
+      goal_4:
+        title: "Educație de calitate"
+        title_in_two_lines: "Educație \nde calitate"
+        description: "Educație de calitate."
       goal_5:
         title: "Egalitate între sexe"
         title_in_two_lines: "Egalitate \nîntre sexe"
@@ -26,6 +32,10 @@ ro:
             title: "Eliminați toate formele de violență împotriva tuturor femeilor și fetelor din sferele publice și private, inclusiv traficul de persoane și alte tipuri de exploatare."
           target_5_3:
             title: "Elimină toate practicile dăunătoare, cum ar fi căsătoria copilului, căsătoria timpurie și forțată și mutilarea genitală feminină."
+          target_5_5:
+            title: "Asigurați participarea deplină și efectivă a femeilor și oportunități egale de conducere la toate nivelurile de luare a deciziilor în viața politică, economică și publică."
+          target_5_6:
+            title: "Asicurați accesul universal la sănătatea sexuală și reproductivă și la drepturile reproductive, astfel cum s-a convenit în conformitate cu Programul de acțiune al Conferinței internaționale pentru populație și dezvoltare și cu Platforma de acțiune de la Beijing și cu documentele rezultate ale conferințelor lor de revizuire."
           target_5_A:
             title: "Întreprinde reforme pentru a oferi femeilor drepturi egale la resursele economice, precum și accesul la proprietate și control asupra pământului și a altor forme de proprietate, servicii financiare, moștenire și resurse naturale, în conformitate cu legislația națională."
       goal_14:
