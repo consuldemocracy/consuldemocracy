@@ -12,21 +12,17 @@
     }
   }
 
-  label + ul {
+  .goals {
     $spacing: 0.5%;
     @include sdg-goal-list($spacing);
 
-    li {
+    legend {
+      @include element-invisible;
+    }
+
+    label {
       min-width: $sdg-icon-min-width;
       width: calc(100% / 17 - #{$spacing});
-
-      &[aria-checked=true] img {
-        opacity: 0.15;
-      }
-
-      &:focus {
-        outline: $outline-focus;
-      }
 
       &:hover {
         cursor: pointer;
@@ -34,6 +30,18 @@
 
       .sdg-goal-icon {
         width: 100%;
+      }
+    }
+
+    input {
+      @include element-invisible;
+
+      &:focus + label {
+        outline: $outline-focus;
+      }
+
+      &:checked + label img {
+        opacity: 0.15;
       }
     }
   }

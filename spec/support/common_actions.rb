@@ -45,7 +45,9 @@ module CommonActions
   end
 
   def click_sdg_goal(code)
-    find("li[data-code='#{code}']").click
+    within(".sdg-related-list-selector .goals") do
+      find("[data-code='#{code}'] + label").click
+    end
   end
 
   def remove_sdg_goal_or_target_tag(code)

@@ -5,10 +5,6 @@ class SDG::RelatedListSelectorComponent < ApplicationComponent
     @f = form
   end
 
-  def checked?(code)
-    f.object.sdg_goals.find_by(code: code).present?
-  end
-
   def sdg_related_suggestions
     goals_and_targets.map { |goal_or_target| suggestion_tag_for(goal_or_target) }
   end
@@ -37,6 +33,13 @@ class SDG::RelatedListSelectorComponent < ApplicationComponent
 
     def goals
       SDG::Goal.order(:code)
+    end
+
+    def goal_field(checkbox_form)
+      goal = checkbox_form.object
+
+      checkbox_form.check_box(data: { code: goal.code }) +
+        checkbox_form.label { render(SDG::Goals::IconComponent.new(goal)) }
     end
 
     def text_for(goal_or_target)

@@ -2,13 +2,12 @@
   <div class="input-section">
     <%= f.label :related_sdg_list %>
 
-    <ul aria-label="<%= t("sdg.related_list_selector.goal_list") %>">
-      <% goals.each do |goal| %>
-        <li data-code="<%= goal.code %>" role="checkbox" aria-checked="<%= checked?(goal.code) %>" tabindex="0">
-          <%= render SDG::Goals::IconComponent.new(goal) %>
-        </li>
+    <fieldset class="goals">
+      <legend><%= t("sdg.related_list_selector.goal_list") %></legend>
+      <%= f.collection_check_boxes(:sdg_goal_ids, goals, :id, :code) do |checkbox_form| %>
+        <%= goal_field(checkbox_form) %>
       <% end %>
-    </ul>
+    </fieldset>
 
     <%= f.text_field :related_sdg_list,
                       class: "input",
