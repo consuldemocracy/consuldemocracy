@@ -165,6 +165,10 @@ tr:
     progress_bar:
       assigned: "Atadınız: "
       available: "Mevcut bütçe: "
+      votes:
+        zero: "<strong>%{limit}</strong> projeden <strong>0</strong> adet seçtiniz"
+        one: "<strong>%{limit}</strong> projeden <strong>1</strong> adet seçtiniz"
+        other: "<strong>%{limit}</strong> projeden <strong>%{count}</strong> adet seçtiniz"
     show:
       group: Grup
       phase: Gerçek aşama
