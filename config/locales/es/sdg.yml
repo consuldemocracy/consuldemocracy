@@ -455,12 +455,13 @@ es:
           other: "%{count} objetivos más"
     related_list_selector:
       goal_identifier: "ODS%{code}"
-      goal_list: "Listado de objetivos"
+      goal_list: "Puedes seleccionar uno o varios ODS con los que se alinea tu %{record}"
       help:
         title: "¿Qué ODS y metas se alinean con mi %{record}?"
       hint: "Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno"
       placeholder: "Escribe las etiquetas que desees"
       remove_tag: "Eliminar"
+      title: "Objetivos de Desarrollo Sostenible y Metas"
     targets:
       filter:
         link: "Ver %{resources} de la meta %{code}"

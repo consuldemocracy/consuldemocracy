@@ -455,12 +455,13 @@ en:
           other: "%{count} more goals"
     related_list_selector:
       goal_identifier: "SDG%{code}"
-      goal_list: "Goal list"
+      goal_list: "You can choose one or several SDGs aligned with your %{record}"
       help:
         title: "Which SDGs and targets are aligned with my %{record}?"
       hint: "You can introduce the code of a specific goal/target or a text to find one"
       placeholder: "Write a goal or target code or description"
       remove_tag: "Remove"
+      title: "Sustainable Development Goals and Targets"
     targets:
       filter:
         link: "See all %{resources} related to target %{code}"

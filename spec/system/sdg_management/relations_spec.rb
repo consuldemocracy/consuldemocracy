@@ -299,17 +299,17 @@ describe "SDG Relations", :js do
       create(:sdg_local_target, code: "1.1.1")
       visit sdg_management_edit_legislation_process_path(process)
 
-      fill_in "Sustainable Development Goals and Targets", with: "3"
+      fill_in "You can introduce the code of a specific goal/target or a text to find one", with: "3"
       within(".amsify-list") { find(:css, "[data-val='3']").click }
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "SDG3" }
 
-      fill_in "Sustainable Development Goals and Targets", with: "1.1"
+      fill_in "You can introduce the code of a specific goal/target or a text to find one", with: "1.1"
       within(".amsify-list") { find(:css, "[data-val='1.1']").click }
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1" }
 
-      fill_in "Sustainable Development Goals and Targets", with: "1.1.1"
+      fill_in "You can introduce the code of a specific goal/target or a text to find one", with: "1.1.1"
       within(".amsify-list") { find(:css, "[data-val='1.1.1']").click }
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1.1" }
@@ -327,8 +327,8 @@ describe "SDG Relations", :js do
       process = create(:legislation_process, title: "SDG process")
 
       visit sdg_management_edit_legislation_process_path(process)
+      fill_in "You can introduce the code of a specific goal/target or a text to find one", with: "tag nonexistent,"
 
-      fill_in "Sustainable Development Goals and Targets", with: "tag nonexistent,"
       within(".amsify-suggestags-input-area") { expect(page).not_to have_content "tag nonexistent" }
     end
 
