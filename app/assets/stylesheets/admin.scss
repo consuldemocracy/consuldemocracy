@@ -1165,6 +1165,18 @@ table {
   span[class^="icon-"] {
     vertical-align: middle;
   }
+
+  &[aria-expanded='false'] {
+    @include hollow-button;
+
+    + .columns-selector-wrapper {
+      display: none;
+    }
+  }
+
+  &[aria-expanded='true'] {
+    @include regular-button;
+  }
 }
 
 .columns-selector-wrapper {
@@ -1172,10 +1184,6 @@ table {
   padding: 2rem;
   border-radius: 10px;
   margin-bottom: 1rem;
-
-  &.hidden {
-    display: none;
-  }
 
   .column-selector-item {
     display: inline-block;
