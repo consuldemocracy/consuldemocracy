@@ -10,7 +10,7 @@
   </td>
   <td>
     <% if valuator.valuator_group.present? %>
-      <%= valuator.valuator_group.try(:name) %>
+      <%= valuator.valuator_group&.name %>
     <% else %>
       <%= t("admin.valuators.index.no_group") %>
     <% end %>

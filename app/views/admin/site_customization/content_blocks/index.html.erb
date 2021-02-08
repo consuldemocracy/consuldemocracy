@@ -43,7 +43,7 @@
     <% end %>
     <% @headings_content_blocks.each do |content_block| %>
       <tr id="<%= dom_id(content_block) %>">
-        <td><%= link_to "#{content_block.heading.name} (#{content_block.locale})", admin_site_customization_edit_heading_content_block_path(content_block) %></td>
+        <td><%= link_to "#{content_block.name} (#{content_block.locale})", admin_site_customization_edit_heading_content_block_path(content_block) %></td>
         <td><%= raw content_block.body %></td>
         <td>
           <%= render Admin::TableActionsComponent.new(

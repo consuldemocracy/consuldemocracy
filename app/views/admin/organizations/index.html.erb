@@ -22,7 +22,7 @@
     </thead>
     <tbody>
     <% @organizations.each do |organization| %>
-      <% hidden += 1 and next if organization.user.nil? || organization.user.hidden? %>
+      <% hidden += 1 and next if organization.user.nil? %>
       <tr id="<%= dom_id(organization) %>">
       <td><%= organization.name %></td>
       <td><%= organization.email %></td>

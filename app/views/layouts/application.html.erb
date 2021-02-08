@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user.try(:id) %>">
+<html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user&.id %>">
   <head>
     <%= render "layouts/common_head", default_title: setting["org_name"] %>
     <%= render "layouts/tracking_data" %>

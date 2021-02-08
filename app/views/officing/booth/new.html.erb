@@ -11,7 +11,7 @@
         <div class="row">
           <div class="small-12 column">
             <%= f.select :id,
-                         @booths.collect { |booth| [booth.location, booth.id] },
+                         @booths.map { |booth| [booth.location, booth.id] },
                          selected: @booths.first,
                          label: false,
                          tabindex: "1" %>

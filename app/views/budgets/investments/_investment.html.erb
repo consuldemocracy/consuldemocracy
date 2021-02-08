@@ -63,8 +63,7 @@
                <%= render "/budgets/investments/votes",
                  investment: investment,
                  investment_votes: investment_votes,
-                 vote_url: namespaced_budget_investment_vote_path(investment, value: "yes")
-               %>
+                 vote_url: namespaced_budget_investment_vote_path(investment, value: "yes") %>
           </div>
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"
@@ -84,8 +83,7 @@
                 <%= render "/budgets/investments/ballot",
                   investment: investment,
                   investment_ids: investment_ids,
-                  ballot: ballot
-                %>
+                  ballot: ballot %>
           </div>
         <% elsif investment.should_show_price? %>
           <div id="<%= dom_id(investment) %>_price"
