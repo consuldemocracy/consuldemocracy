@@ -1825,9 +1825,7 @@ describe "Admin budget investments", :admin do
     scenario "Use column selector to display visible columns", :js do
       visit admin_budget_budget_investments_path(budget)
 
-      within("#js-columns-selector") do
-        find("strong", text: "Columns").click
-      end
+      click_button "Columns"
 
       within("#js-columns-selector-wrapper") do
         selectable_columns.each do |column|
@@ -1857,9 +1855,7 @@ describe "Admin budget investments", :admin do
     scenario "Cookie will be updated after change columns selection", :js do
       visit admin_budget_budget_investments_path(budget)
 
-      within("#js-columns-selector") do
-        find("strong", text: "Columns").click
-      end
+      click_button "Columns"
 
       within("#js-columns-selector-wrapper") do
         uncheck "Title"
@@ -1889,7 +1885,7 @@ describe "Admin budget investments", :admin do
       investment.update!(title: "Don't display me, please!")
 
       visit admin_budget_budget_investments_path(budget)
-      within("#js-columns-selector") { find("strong", text: "Columns").click }
+      click_button "Columns"
       within("#js-columns-selector-wrapper") { uncheck "Title" }
 
       within("#budget_investment_#{investment.id}") do
@@ -1909,9 +1905,7 @@ describe "Admin budget investments", :admin do
 
       go_back
 
-      within("#js-columns-selector") do
-        find("strong", text: "Columns").click
-      end
+      click_button "Columns"
 
       within("#js-columns-selector-wrapper") do
         selectable_columns.each do |column|
