@@ -54,6 +54,8 @@ describe "BudgetPolls", :with_frozen_time do
 
       within("#poll_#{poll.id}") do
         click_button("Confirm vote")
+
+        expect(page).to have_content "Vote introduced"
       end
 
       visit new_officing_residence_path
