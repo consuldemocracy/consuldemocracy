@@ -557,7 +557,7 @@ GEM
     sitemap_generator (6.1.2)
       builder (~> 3.0)
     smart_properties (1.15.0)
-    social-share-button (1.1.0)
+    social-share-button (1.2.3)
       coffee-rails
     socksify (1.7.1)
     spring (2.1.1)
@@ -724,7 +724,7 @@ DEPENDENCIES
   scss_lint (~> 0.59.0)
   selenium-webdriver (~> 3.142)
   sitemap_generator (~> 6.1.2)
-  social-share-button (~> 1.1)
+  social-share-button (~> 1.2.3)
   spring (~> 2.1.1)
   spring-commands-rspec (~> 1.0.4)
   sprockets (~> 3.7.2)

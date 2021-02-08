@@ -138,9 +138,43 @@ describe "Proposals" do
     expect(page.html).to include "<title>#{proposal.title}</title>"
     expect(page).not_to have_selector ".js-flag-actions"
     expect(page).not_to have_selector ".js-follow"
+  end
 
-    within(".social-share-button") do
-      expect(page.all("a").count).to be(3) # Twitter, Facebook, Telegram
+  describe "Social share buttons", :js do
+    context "On desktop browsers" do
+      scenario "Shows links to share on facebook and twitter" do
+        visit proposal_path(create(:proposal))
+
+        within(".social-share-button") do
+          expect(page.all("a").count).to be(2)
+          expect(page).to have_link "Share to Facebook"
+          expect(page).to have_link "Share to Twitter"
+        end
+      end
+    end
+
+    context "On small devices" do
+      let!(:window_size) { Capybara.current_window.size }
+
+      before do
+        Capybara.current_window.resize_to(639, 479)
+      end
+
+      after do
+        Capybara.current_window.resize_to(*window_size)
+      end
+
+      scenario "Shows links to share on telegram and whatsapp too" do
+        visit proposal_path(create(:proposal))
+
+        within(".social-share-button") do
+          expect(page.all("a").count).to be(4)
+          expect(page).to have_link "Share to Facebook"
+          expect(page).to have_link "Share to Twitter"
+          expect(page).to have_link "Share to Telegram"
+          expect(page).to have_link "Share to WhatsApp"
+        end
+      end
     end
   end
 

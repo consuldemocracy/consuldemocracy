@@ -93,9 +93,43 @@ describe "Debates" do
     expect(page).to have_content I18n.l(debate.created_at.to_date)
     expect(page).to have_selector(avatar(debate.author.name))
     expect(page.html).to include "<title>#{debate.title}</title>"
+  end
 
-    within(".social-share-button") do
-      expect(page.all("a").count).to be(3) # Twitter, Facebook, Telegram
+  describe "Social share buttons", :js do
+    context "On desktop browsers" do
+      scenario "Shows links to share on facebook and twitter" do
+        visit debate_path(create(:debate))
+
+        within(".social-share-button") do
+          expect(page.all("a").count).to be(2)
+          expect(page).to have_link "Share to Facebook"
+          expect(page).to have_link "Share to Twitter"
+        end
+      end
+    end
+
+    context "On small devices" do
+      let!(:window_size) { Capybara.current_window.size }
+
+      before do
+        Capybara.current_window.resize_to(639, 479)
+      end
+
+      after do
+        Capybara.current_window.resize_to(*window_size)
+      end
+
+      scenario "Shows links to share on telegram and whatsapp too" do
+        visit debate_path(create(:debate))
+
+        within(".social-share-button") do
+          expect(page.all("a").count).to be(4)
+          expect(page).to have_link "Share to Facebook"
+          expect(page).to have_link "Share to Twitter"
+          expect(page).to have_link "Share to Telegram"
+          expect(page).to have_link "Share to WhatsApp"
+        end
+      end
     end
   end
 
