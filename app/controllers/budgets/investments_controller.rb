@@ -18,6 +18,7 @@ module Budgets
 
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
+    before_action :load_assigned_heading, only: [:show]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create, :edit, :update]
     before_action :set_default_budget_filter, only: :index
@@ -151,6 +152,10 @@ module Budgets
           @assigned_heading = @ballot&.heading_for_group(@heading.group)
           load_map
         end
+      end
+
+      def load_assigned_heading
+        @assigned_heading = @ballot&.heading_for_group(@investment.heading.group)
       end
 
       def load_categories
