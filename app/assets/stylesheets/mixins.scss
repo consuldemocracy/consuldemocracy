@@ -169,10 +169,14 @@
   &::before {
     @extend %font-icon;
 
-    @if $style == "regular" {
-      font-weight: normal;
-    } @else {
+    @if $style == "solid" {
       font-weight: bold;
+    } @else {
+      font-weight: normal;
+    }
+
+    @if $style == "brands" {
+      font-family: "Font Awesome 5 Brands";
     }
   }
 
