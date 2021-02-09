@@ -1538,8 +1538,7 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
-.button.button-wordpress,
-.button.button-telegram {
+.button.button-wordpress {
   background: #fff;
   color: $text;
   font-weight: bold;
@@ -1648,16 +1647,6 @@ table {
   }
 }
 
-.button.button-telegram {
-  background: #ecf7fc;
-  border-left: 3px solid #08c;
-
-  &::before {
-    color: #08c;
-    content: "1";
-  }
-}
-
 .ssb-telegram {
   background: #08c;
 
@@ -1686,7 +1675,6 @@ table {
 
 @include breakpoint(medium) {
 
-  .button.button-telegram,
   .ssb-telegram,
   .ssb-whatsapp_app {
     display: none !important;
