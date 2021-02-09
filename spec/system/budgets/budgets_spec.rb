@@ -84,6 +84,7 @@ describe "Budgets" do
       visit root_path
 
       within("#navigation_bar") do
+        expect(page).to have_link("Participatory budgeting", href: "#")
         expect(page).to have_link(budget_1.name, href: budget_path(budget_1))
         expect(page).to have_link(budget_2.name, href: budget_path(budget_2))
         expect(page).not_to have_link(budget_3.name, href: budget_path(budget_3))
@@ -94,6 +95,7 @@ describe "Budgets" do
       visit root_path
 
       within("#navigation_bar") do
+        expect(page).to have_link("Participatory budgeting", href: "#")
         expect(page).to have_link(budget_1.name, href: budget_path(budget_1))
         expect(page).to have_link(budget_2.name, href: budget_path(budget_2))
         expect(page).to have_link(budget_3.name, href: budget_path(budget_3))
