@@ -122,7 +122,7 @@ describe "SDG Goals", :js do
       create(:sdg_local_target, code: "15.1.1", title: "SDG local target sample text")
       visit sdg_goal_path(15)
 
-      within "#target_tabs" do
+      within ".sdg-goal-targets" do
         expect(page).to have_content "Targets"
         expect(page).to have_content "Local targets"
       end
