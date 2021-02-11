@@ -461,7 +461,8 @@ es:
       goal_list: "Puedes seleccionar uno o varios ODS con los que se alinea tu %{record}"
       help:
         title: "¿Qué ODS y metas se alinean con mi %{record}?"
-      hint: "Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno"
+        text: "página de ayuda de ODS"
+      hint: Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno. Para más información visita la %{link}.
       placeholder: "Escribe las etiquetas que desees"
       remove_tag: "Eliminar"
       title: "Objetivos de Desarrollo Sostenible y Metas"
