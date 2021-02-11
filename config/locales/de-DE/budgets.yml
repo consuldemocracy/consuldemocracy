@@ -104,6 +104,13 @@ de:
             knapsack:
               one: "<strong>Sie haben für einen Vorschlag mit Kosten von %{amount_spent}-</strong> gestimmt"
               other: "<strong>Sie haben für Vorschläge mit Kosten von %{amount_spent}</strong> gestimmt %{count}"
+            approval:
+              one: "<strong>Sie haben für einen Vorschlag gestimmt</strong>"
+              other: "<strong>Sie haben für %{count} Vorschläge gestimmt</strong>"
+          change_vote_info:
+            knapsack: "Sie können bis zur Schließung der Phase jederzeit %{link}. Es gibt keinen Grund sämtliches verfügbares Geld auszugeben."
+            approval: "Sie können jederzeit %{link} bis zum Ende dieser Phase."
+          change_vote_link: "ihre Wahl ändern"
           different_heading_assigned: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
           change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
           check_ballot_link: "Überprüfung meiner Abstimmung"
@@ -163,6 +170,10 @@ de:
     progress_bar:
       assigned: "Sie haben zugeordnet: "
       available: "Verfügbare Haushaltsmittel: "
+      votes:
+        zero: "Sie haben <strong>0</strong> Projekte gewählt von <strong>%{limit}</strong>"
+        one: "Sie haben <strong>1</strong> Projekte gewählt von <strong>%{limit}</strong>"
+        other: "Sie haben <strong>%{count}</strong> Projekte gewählt von <strong>%{limit}</strong>"
     show:
       group: Gruppe
       phase: Aktuelle Phase
