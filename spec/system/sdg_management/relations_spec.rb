@@ -413,6 +413,16 @@ describe "SDG Relations", :js do
           expect(find("input[data-code='1']")).to be_checked
         end
       end
+
+      scenario "Help page link opens in new window" do
+        process = create(:legislation_process, title: "SDG process")
+
+        visit sdg_management_edit_legislation_process_path(process)
+
+        within_window(window_opened_by { click_link "SDG help page" }) do
+          expect(page).to have_content "Sustainable Development Goals help"
+        end
+      end
     end
 
     describe "help section" do
