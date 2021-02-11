@@ -9,6 +9,17 @@ de:
             zero: "Sie können noch <span>%{count}</span> Stimmen abgeben."
             one: "Sie können noch <span>%{count}</span> Stimmen abgeben."
             other: "Sie können noch <span>%{count}</span> Stimmen abgeben."
+        amount_spent:
+          knapsack: "Ausgegebener Betrag <span>%{count}</span>"
+          approval:
+            zero: "Abgegebene Stimmen: <span>%{count}</span>"
+            one: "Abgegebene Stimmen: <span>%{count}</span>"
+            other: "Abgegebene Stimmen: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Sie können <span>1</span> Projekt wählen"
+            other: "Sie können bis zu <span>%{count}</span> Projekte wählen"
         no_balloted_group_yet: "Sie haben in dieser Gruppe noch nicht abgestimmt. Stimmen Sie jetzt ab!"
         remove: Stimme entfernen
         voted:
@@ -25,6 +36,7 @@ de:
         not_enough_money: "Sie haben bereits das gesamte verfügbare Budget zugewiesen.<br><small>Bitte denken Sie daran, dass Sie dies %{change_ballot} jederzeit</small>ändern können"
         no_ballots_allowed: Die Auswahlphase ist abgeschlossen
         different_heading_assigned: "Sie haben bereits für eine andere Rubrik gestimmt: %{heading_link}"
+        not_enough_available_votes: "Sie haben die maximale Anzahl an abgegebenen Stimmen erreicht"
         change_ballot: Ändern Sie Ihre Wahl
         casted_offline: Sie haben schon offline abgestimmt
     groups:
@@ -88,6 +100,10 @@ de:
           other: " enthält den Begriff <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Meine Stimmen
+          voted_info:
+            knapsack:
+              one: "<strong>Sie haben für einen Vorschlag mit Kosten von %{amount_spent}-</strong> gestimmt"
+              other: "<strong>Sie haben für Vorschläge mit Kosten von %{amount_spent}</strong> gestimmt %{count}"
           different_heading_assigned: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
           change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
           check_ballot_link: "Überprüfung meiner Abstimmung"
