@@ -1561,17 +1561,13 @@ table {
   background-image: none;
   color: #fff;
   height: $icon-width;
-  position: relative;
+  line-height: $icon-width;
+  text-align: center;
   width: $icon-width;
 
   &::before {
-    font-family: "icons";
     font-size: $icon-width / 2;
-    left: 50%;
-    line-height: $icon-width;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
+    margin-right: 0;
   }
 
   &:hover,
@@ -1581,11 +1577,8 @@ table {
 }
 
 .ssb-twitter {
+  @include has-fa-icon(twitter, brands);
   background: #45b0e3;
-
-  &::before {
-    content: "f";
-  }
 
   &:hover,
   &:focus {
@@ -1604,11 +1597,8 @@ table {
 }
 
 .ssb-facebook {
+  @include has-fa-icon(facebook-f, brands);
   background: #3b5998;
-
-  &::before {
-    content: "A";
-  }
 
   &:hover,
   &:focus {
@@ -1637,11 +1627,8 @@ table {
 }
 
 .ssb-telegram {
+  @include has-fa-icon(telegram-plane, brands);
   background: #08c;
-
-  &::before {
-    content: "1";
-  }
 
   &:hover,
   &:focus {
@@ -1650,11 +1637,8 @@ table {
 }
 
 .ssb-whatsapp_app {
+  @include has-fa-icon(whatsapp, brands);
   background: #43d854;
-
-  &::before {
-    content: "P";
-  }
 
   &:hover,
   &:focus {
