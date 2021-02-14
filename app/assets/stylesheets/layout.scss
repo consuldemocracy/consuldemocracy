@@ -1566,9 +1566,9 @@ table {
 
   &::before {
     font-family: "icons";
-    font-size: rem-calc(24);
+    font-size: $icon-width / 2;
     left: 50%;
-    line-height: $line-height * 2;
+    line-height: $icon-width;
     margin-left: rem-calc(-11);
     position: absolute;
     top: 0;
