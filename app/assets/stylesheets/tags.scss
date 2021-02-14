@@ -1,6 +1,3 @@
-ul {
-
-  &.tags {
-    @extend %tags;
-  }
+.tags {
+  @extend %tags;
 }
