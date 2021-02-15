@@ -18,6 +18,7 @@ tr:
         title: "Hangi SKH'ler %{record} ile uyumlu?"
       placeholder: "Bir amaç ya da hedef kodu yazın veya açıklayın"
       remove_tag: "Kaldır"
+      title: "Sürdürülebilir Kalkınma Amaçları ve Hedefleri"
     targets:
       filter:
         link: "Hedefle bağlantılı tüm %{resources} görüntüle %{code}"
