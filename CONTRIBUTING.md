@@ -1,6 +1,6 @@
 # How to Contribute to this Project
 
-## Code of conduct
+## Code of conduct 
 
 The core team members and the project's community adopt an inclusive Code of Conduct that you can read in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file.
 
