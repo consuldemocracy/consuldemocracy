@@ -86,3 +86,5 @@ pt-BR:
       show:
         targets:
           no_local_targets: Este objetivo não tem metas locais
+    related_list_selector:
+      title: "Objetivos e Metas de Desenvolvimento Sustentável"
