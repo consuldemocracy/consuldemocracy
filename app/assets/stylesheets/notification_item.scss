@@ -1,0 +1,25 @@
+.notifications {
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  [class^="icon-"] {
+    font-size: rem-calc(19);
+    vertical-align: middle;
+  }
+
+  .icon-circle {
+    color: #ecf00b;
+    font-size: rem-calc(10);
+    position: absolute;
+    left: 12px;
+    top: 6px;
+
+    @include breakpoint(medium) {
+      left: auto;
+      right: 8px;
+    }
+  }
+}
