@@ -2,7 +2,6 @@ es:
   attributes:
     geozone_id: "Ámbito de actuación"
     results_enabled: "Mostrar resultados"
-    related_sdg_list: "Objetivos de Desarrollo Sostenible y Metas"
     stats_enabled: "Mostrar estadísticas"
     advanced_stats_enabled: "Mostrar estadísticas avanzadas"
     name: Nombre

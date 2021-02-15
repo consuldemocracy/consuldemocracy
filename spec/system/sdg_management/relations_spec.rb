@@ -299,17 +299,17 @@ describe "SDG Relations", :js do
       create(:sdg_local_target, code: "1.1.1")
       visit sdg_management_edit_legislation_process_path(process)
 
-      fill_in "Sustainable Development Goals and Targets", with: "3"
+      fill_in "You can introduce the code of a specific goal/target or a text to find one", with: "3"
       within(".amsify-list") { find(:css, "[data-val='3']").click }
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "SDG3" }
 
-      fill_in "Sustainable Development Goals and Targets", with: "1.1"
+      fill_in "You can introduce the code of a specific goal/target or a text to find one", with: "1.1"
       within(".amsify-list") { find(:css, "[data-val='1.1']").click }
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1" }
 
-      fill_in "Sustainable Development Goals and Targets", with: "1.1.1"
+      fill_in "You can introduce the code of a specific goal/target or a text to find one", with: "1.1.1"
       within(".amsify-list") { find(:css, "[data-val='1.1.1']").click }
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1.1" }
@@ -327,8 +327,8 @@ describe "SDG Relations", :js do
       process = create(:legislation_process, title: "SDG process")
 
       visit sdg_management_edit_legislation_process_path(process)
+      fill_in "You can introduce the code of a specific goal/target or a text to find one", with: "tag nonexistent,"
 
-      fill_in "Sustainable Development Goals and Targets", with: "tag nonexistent,"
       within(".amsify-suggestags-input-area") { expect(page).not_to have_content "tag nonexistent" }
     end
 
@@ -368,7 +368,7 @@ describe "SDG Relations", :js do
         visit sdg_management_edit_legislation_process_path(process)
         click_sdg_goal(1)
 
-        expect(find("li[data-code='1']")["aria-checked"]).to eq "true"
+        expect(find("input[data-code='1']")).to be_checked
       end
 
       scenario "when remove a last tag related to a Goal, the icon will not be checked" do
@@ -380,15 +380,32 @@ describe "SDG Relations", :js do
         visit sdg_management_edit_legislation_process_path(process)
         remove_sdg_goal_or_target_tag(1)
 
-        expect(find("li[data-code='1']")["aria-checked"]).to eq "true"
+        expect(find("input[data-code='1']")).to be_checked
 
         remove_sdg_goal_or_target_tag(1.1)
 
-        expect(find("li[data-code='1']")["aria-checked"]).to eq "true"
+        expect(find("input[data-code='1']")).to be_checked
 
         remove_sdg_goal_or_target_tag("1.1.1")
 
-        expect(find("li[data-code='1']")["aria-checked"]).to eq "false"
+        expect(find("input[data-code='1']")).not_to be_checked
+      end
+
+      context "when we have a Goal and a related Target selected" do
+        scenario "we can remove and add same Goal always keeping the icon as checked" do
+          process = create(:legislation_process, title: "SDG process")
+          process.sdg_goals = [SDG::Goal[1]]
+          process.sdg_targets = [SDG::Target[1.1]]
+
+          visit sdg_management_edit_legislation_process_path(process)
+          click_sdg_goal(1)
+
+          expect(find("input[data-code='1']")).to be_checked
+
+          click_sdg_goal(1)
+
+          expect(find("input[data-code='1']")).to be_checked
+        end
       end
     end
 

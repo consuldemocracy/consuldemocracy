@@ -244,7 +244,7 @@
   width: calc(100% + #{$spacing});
   width: calc(100% + #{$max-spacing});
 
-  li {
+  > * {
     margin-bottom: 0;
     margin-left: $spacing;
     margin-left: $max-spacing;
