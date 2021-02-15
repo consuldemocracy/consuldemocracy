@@ -2,7 +2,6 @@ ro:
   attributes:
     geozone_id: "Scopul operațiunii"
     results_enabled: "Se arată rezultatele"
-    related_sdg_list: "Obiective de dezvoltare durabilă și Ținte"
     stats_enabled: "Statistici"
     advanced_stats_enabled: "Statistici avansate"
     name: Nume
