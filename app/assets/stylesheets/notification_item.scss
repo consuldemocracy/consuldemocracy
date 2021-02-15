@@ -1,25 +1,40 @@
 .notifications {
   position: relative;
 
+  &.unread-notifications {
+    @include has-fa-icon(bell, solid);
+    @include has-fa-icon(circle, solid, after);
+
+    &::before {
+      @include breakpoint(medium) {
+        margin-right: 0;
+      }
+    }
+
+    &::after {
+      color: #ecf00b;
+      font-size: rem-calc(10);
+      margin-right: 0;
+      position: absolute;
+      left: 12px;
+      top: 6px;
+
+      @include breakpoint(medium) {
+        left: auto;
+        right: 8px;
+      }
+    }
+  }
+
+  &.no-notifications {
+    @include has-fa-icon(bell, regular);
+  }
+
+  &::before {
+    font-size: rem-calc(19);
+  }
+
   &:hover {
     text-decoration: none;
-  }
-
-  [class^="icon-"] {
-    font-size: rem-calc(19);
-    vertical-align: middle;
-  }
-
-  .icon-circle {
-    color: #ecf00b;
-    font-size: rem-calc(10);
-    position: absolute;
-    left: 12px;
-    top: 6px;
-
-    @include breakpoint(medium) {
-      left: auto;
-      right: 8px;
-    }
   }
 }

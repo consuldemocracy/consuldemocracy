@@ -103,14 +103,14 @@ describe "Notifications" do
     visit root_path
 
     within("#notifications") do
-      expect(page).to have_css(".icon-circle")
+      expect(page).to have_css(".unread-notifications")
     end
 
     click_notifications_icon
     first(".notification a").click
 
     within("#notifications") do
-      expect(page).not_to have_css(".icon-circle")
+      expect(page).not_to have_css(".unread-notifications")
     end
   end
 

@@ -1,18 +1,10 @@
 <% if user %>
   <li id="notifications">
-    <%= link_to notifications_path, rel: "nofollow",
-                class: "notifications" do %>
+    <%= link_to notifications_path, rel: "nofollow", title: text,
+                class: "notifications #{notifications_class}" do %>
       <span class="show-for-sr">
         <%= t("layouts.header.notification_item.notifications") %>
       </span>
-
-      <% if user.notifications.unread.count > 0 %>
-        <span class="icon-circle" aria-hidden="true"></span>
-        <span class="icon-notification" aria-hidden="true" title="<%= text %>"></span>
-      <% else %>
-        <span class="icon-no-notification" aria-hidden="true" title="<%= text %>"></span>
-      <% end %>
-
       <span class="show-for-small-only"><%= text %></span>
     <% end %>
   </li>

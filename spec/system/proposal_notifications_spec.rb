@@ -198,7 +198,7 @@ describe "Proposal Notifications" do
       login_as user1
       visit root_path
 
-      find(".icon-notification").click
+      find(".unread-notifications").click
 
       expect(page).to have_css ".notification", count: 1
 
@@ -210,7 +210,7 @@ describe "Proposal Notifications" do
       login_as user2
       visit root_path
 
-      find(".icon-notification").click
+      find(".unread-notifications").click
 
       expect(page).to have_css ".notification", count: 1
 
@@ -222,7 +222,7 @@ describe "Proposal Notifications" do
       login_as user3
       visit root_path
 
-      find(".icon-no-notification").click
+      click_link "You don't have new notifications"
 
       expect(page).to have_css ".notification", count: 0
     end
@@ -251,7 +251,7 @@ describe "Proposal Notifications" do
       login_as user1.reload
       visit root_path
 
-      find(".icon-notification").click
+      click_link "You have a new notification"
 
       expect(page).to have_css ".notification", count: 1
 
@@ -263,7 +263,7 @@ describe "Proposal Notifications" do
       login_as user2.reload
       visit root_path
 
-      find(".icon-notification").click
+      click_link "You have a new notification"
 
       expect(page).to have_css ".notification", count: 1
 
@@ -275,7 +275,7 @@ describe "Proposal Notifications" do
       login_as user3.reload
       visit root_path
 
-      find(".icon-no-notification").click
+      click_link "You don't have new notifications"
 
       expect(page).to have_css ".notification", count: 0
     end
@@ -303,7 +303,7 @@ describe "Proposal Notifications" do
       login_as user
       visit root_path
 
-      find(".icon-notification").click
+      find(".unread-notifications").click
 
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "This resource is not available anymore"
@@ -346,8 +346,7 @@ describe "Proposal Notifications" do
         login_as user.reload
         visit root_path
 
-        within("#notifications") { expect(page).to have_content :all, "You have 3 new notifications" }
-        find(".icon-notification").click
+        click_link "You have 3 new notifications"
 
         expect(page).to have_css ".notification", count: 3
         expect(page).to have_content "There is one new notification on #{proposal.title}", count: 3
