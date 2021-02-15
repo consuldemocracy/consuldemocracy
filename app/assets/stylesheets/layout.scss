@@ -1538,34 +1538,22 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
-.button.button-wordpress,
-.button.button-telegram {
-  background: #fff;
+.button.button-wordpress {
   color: $text;
   font-weight: bold;
-  height: $line-height * 2;
-  line-height: $line-height * 2;
-  padding: 0;
-  position: relative;
 
   &::before {
-    font-family: "icons" !important;
     font-size: rem-calc(24);
-    left: 0;
-    line-height: $line-height * 2;
-    padding: 0 rem-calc(20);
-    position: absolute;
-    top: 0;
   }
 }
 
 .button.button-twitter {
+  @include has-fa-icon(twitter, brands);
   background: #ecf7fc;
   border-left: 3px solid #45b0e3;
 
   &::before {
     color: #45b0e3;
-    content: "f";
   }
 }
 
@@ -1573,17 +1561,13 @@ table {
   background-image: none;
   color: #fff;
   height: $icon-width;
-  position: relative;
+  line-height: $icon-width;
+  text-align: center;
   width: $icon-width;
 
   &::before {
-    font-family: "icons";
-    font-size: rem-calc(24);
-    left: 50%;
-    line-height: $line-height * 2;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
+    font-size: $icon-width / 2;
+    margin-right: 0;
   }
 
   &:hover,
@@ -1593,11 +1577,8 @@ table {
 }
 
 .ssb-twitter {
+  @include has-fa-icon(twitter, brands);
   background: #45b0e3;
-
-  &::before {
-    content: "f";
-  }
 
   &:hover,
   &:focus {
@@ -1606,21 +1587,18 @@ table {
 }
 
 .button.button-facebook {
+  @include has-fa-icon(facebook-f, brands);
   background: #ebeef4;
   border-left: 3px solid #3b5998;
 
   &::before {
     color: #3b5998;
-    content: "A";
   }
 }
 
 .ssb-facebook {
+  @include has-fa-icon(facebook-f, brands);
   background: #3b5998;
-
-  &::before {
-    content: "A";
-  }
 
   &:hover,
   &:focus {
@@ -1629,41 +1607,28 @@ table {
 }
 
 .button.button-google {
+  @include has-fa-icon(google, brands);
   background: #fcedea;
   border-left: 3px solid #de4c34;
 
   &::before {
     color: #de4c34;
-    content: "B";
   }
 }
 
 .button.button-wordpress {
+  @include has-fa-icon(wordpress, brands);
   background: #dcdde3;
   border-left: 3px solid #2f2f33;
 
   &::before {
     color: #2f2f33;
-    content: "J";
-  }
-}
-
-.button.button-telegram {
-  background: #ecf7fc;
-  border-left: 3px solid #08c;
-
-  &::before {
-    color: #08c;
-    content: "1";
   }
 }
 
 .ssb-telegram {
+  @include has-fa-icon(telegram-plane, brands);
   background: #08c;
-
-  &::before {
-    content: "1";
-  }
 
   &:hover,
   &:focus {
@@ -1672,11 +1637,8 @@ table {
 }
 
 .ssb-whatsapp_app {
+  @include has-fa-icon(whatsapp, brands);
   background: #43d854;
-
-  &::before {
-    content: "P";
-  }
 
   &:hover,
   &:focus {
@@ -1686,7 +1648,6 @@ table {
 
 @include breakpoint(medium) {
 
-  .button.button-telegram,
   .ssb-telegram,
   .ssb-whatsapp_app {
     display: none !important;
