@@ -198,7 +198,7 @@ describe "Proposal Notifications" do
       login_as user1
       visit root_path
 
-      find(".unread-notifications").click
+      click_link "You have a new notification"
 
       expect(page).to have_css ".notification", count: 1
 
@@ -210,7 +210,7 @@ describe "Proposal Notifications" do
       login_as user2
       visit root_path
 
-      find(".unread-notifications").click
+      click_link "You have a new notification"
 
       expect(page).to have_css ".notification", count: 1
 
@@ -303,7 +303,7 @@ describe "Proposal Notifications" do
       login_as user
       visit root_path
 
-      find(".unread-notifications").click
+      click_link "You have a new notification"
 
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "This resource is not available anymore"

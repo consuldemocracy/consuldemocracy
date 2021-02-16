@@ -9,7 +9,7 @@ class Layout::NotificationItemComponent < ApplicationComponent
 
     def text
       if unread_notifications?
-        t("layouts.header.notification_item.new_notifications", count: user.notifications_count)
+        t("layouts.header.notification_item.new_notifications", count: unread_notifications.count)
       else
         t("layouts.header.notification_item.no_notifications")
       end
@@ -24,6 +24,10 @@ class Layout::NotificationItemComponent < ApplicationComponent
     end
 
     def unread_notifications?
-      user.notifications.unread.count > 0
+      unread_notifications.count > 0
+    end
+
+    def unread_notifications
+      user.notifications.unread
     end
 end

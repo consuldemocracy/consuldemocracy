@@ -2,6 +2,8 @@ shared_examples "notifiable in-app" do |factory_name|
   let(:author) { create(:user, :verified) }
   let!(:notifiable) { create(factory_name, author: author) }
 
+  before { create(:notification, :read, notifiable: notifiable, user: author) }
+
   scenario "Notification message is shown" do
     create(:notification, notifiable: notifiable, user: author)
 
