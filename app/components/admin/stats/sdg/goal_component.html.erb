@@ -6,5 +6,14 @@
     <% stats.each do |text, amount, options = {}| %>
       <%= render Admin::Stats::StatComponent.new(text: text, amount: amount, options: options) %>
     <% end %>
+
+    <% bugdets_stats.each do |budget_name, *budget_stats| %>
+      <div class="budget-stats">
+        <h4><%= budget_name %></h4>
+        <% budget_stats.each do |text, amount, options = {}| %>
+          <%= render Admin::Stats::StatComponent.new(text: text, amount: amount, options: options) %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
