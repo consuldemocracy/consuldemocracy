@@ -20,7 +20,10 @@ Bundler.require(*Rails.groups)
 module Consul
   class Application < Rails::Application
     config.load_defaults 5.2
-
+  
+    config.action_view.sanitized_allowed_tags = ['strong', 'em', 'a']
+    config.action_view.sanitized_allowed_attributes = ['href', 'title', 'target']
+    
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
