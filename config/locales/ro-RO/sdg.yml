@@ -44,3 +44,5 @@ ro:
       goal_15:
         title: "Viața pe Uscat"
         title_in_two_lines: "Viața pe\nUscat"
+    related_list_selector:
+      title: "Obiective de dezvoltare durabilă și Ținte"
