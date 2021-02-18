@@ -255,11 +255,11 @@ hr:
       budgets: Participativno budžetiranje
       notification_item:
         new_notifications:
+          zero: "Nemate novu obavijest"
           one: Imate novu obavijest
           few: Vi imate %{count} nove obavijesti
           other: Vi imate %{count} nove obavijesti
         notifications: Obavijesti
-        no_notifications: "Nemate novu obavijest"
   notifications:
     index:
       empty_notifications: Nemate nove obavijesti.
@@ -803,7 +803,6 @@ hr:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
