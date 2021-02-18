@@ -184,8 +184,9 @@ sl:
       poll_questions: Glasovanje
       budgets: Participatorni proračun
       notification_item:
+        new_notifications:
+          zero: "Nimaš novih obvestil"
         notifications: Obvestila
-        no_notifications: "Nimaš novih obvestil"
   notifications:
     index:
       empty_notifications: Nimaš novih obvestil.
