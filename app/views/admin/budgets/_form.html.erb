@@ -44,48 +44,7 @@
     </div>
 
     <%= render Admin::Budgets::HelpComponent.new("budget_phases") %>
-
-    <% if @budget.phases.present? %>
-      <table id="budget-phases-table" class="table-for-mobile">
-        <thead>
-          <tr>
-            <th><%= t("admin.budgets.edit.phase") %></th>
-            <th><%= t("admin.budgets.edit.dates") %></th>
-            <th class="text-center"><%= t("admin.budgets.edit.enabled") %></th>
-            <th><%= t("admin.budgets.edit.actions") %></th>
-          </tr>
-        </thead>
-
-        <% @budget.phases.order(:id).each do |phase| %>
-          <tr id="<%= dom_id(phase) %>" class="phase">
-            <td>
-              <%= phase.name %>
-              <% if phase.current? %>
-                <span class="label success"><strong><%= t("admin.budgets.edit.active") %></strong></span>
-              <% end %>
-            </td>
-            <td>
-              <% if phase.starts_at.present? || phase.ends_at.present? %>
-                <%= l(phase.starts_at.to_date) if phase.starts_at.present? %>
-                -
-                <%= l(phase.ends_at.to_date) if phase.ends_at.present? %>
-              <% else %>
-                <em><%= t("admin.budgets.edit.blank_dates") %></em>
-              <% end %>
-            </td>
-            <td class="text-center">
-              <span class="budget-phase-enabled <%= phase.enabled? ? "enabled" : "disabled" %>"></span>
-            </td>
-            <td>
-              <%= render Admin::TableActionsComponent.new(phase,
-                actions: [:edit],
-                edit_text: t("admin.budgets.edit.edit_phase")
-              ) %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
-    <% end %>
+    <%= render Admin::BudgetPhases::PhasesComponent.new(@budget) %>
   </fieldset>
 
   <% if @budget.persisted? %>
