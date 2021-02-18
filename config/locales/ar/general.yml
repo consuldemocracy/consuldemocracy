@@ -265,6 +265,7 @@ ar:
       budgets: الميزانية التشاركية
       notification_item:
         new_notifications:
+          zero: "لا يوجد إشعارات جديدة"
           zero: لديك %{count} إشعارات الجديدة
           one: لديك إشعار جديد
           two: لديك %{count} إشعارات الجديدة
@@ -272,7 +273,6 @@ ar:
           many: لديك %{count} إشعارات الجديدة
           other: لديك %{count} إشعارات الجديدة
         notifications: إشعارات
-        no_notifications: "لا يوجد إشعارات جديدة"
   notifications:
     index:
       empty_notifications: لا يوجد إشعارات جديدة.
@@ -823,7 +823,6 @@ ar:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: واتساب
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
