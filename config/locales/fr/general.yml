@@ -237,10 +237,10 @@ fr:
       budgets: Budget participatif
       notification_item:
         new_notifications:
+          zero: "Vous n'avez pas de nouvelles notifications"
           one: Vous avez une nouvelle notification
           other: Vous avez %{count} nouvelles notifications
         notifications: Notifications
-        no_notifications: "Vous n'avez pas de nouvelles notifications"
   notifications:
     index:
       empty_notifications: Vous n'avez pas de nouvelles notifications
@@ -616,7 +616,6 @@ fr:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
