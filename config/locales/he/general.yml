@@ -249,12 +249,12 @@ he:
       budgets: מימון השתתפותי
       notification_item:
         new_notifications:
+          zero: "אין לך התראות חדשות"
           one: . יש לך התרעה חדשה
           two: יש לך %{count} התרעות חדשות
           many: יש לך %{count} התרעות חדשות
           other: יש לך %{count} התרעות חדשות
         notifications: התראות
-        no_notifications: "אין לך התראות חדשות"
   notifications:
     index:
       empty_notifications: אין לך תגובות חדשות
@@ -773,7 +773,6 @@ he:
     facebook: "%{org} פייסבוק"
     twitter: "%{org} טוויטר"
     youtube: "%{org} יוטיוב YouTube"
-    whatsapp: ווטסאפ
     telegram: "%{org} טלגרם Telegram"
     instagram: "%{org} אינסטגרם Instagram"
   stats:
