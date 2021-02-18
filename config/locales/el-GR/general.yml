@@ -233,10 +233,10 @@ el:
       budgets: Συμμετοχικός προϋπολογισμός
       notification_item:
         new_notifications:
+          zero: "Δεν έχετε νέες ειδοποιήσεις"
           one: Έχετε μια νέα ειδοποίηση
           other: Έχετε %{count} νέες ειδοποιήσεις
         notifications: Ειδοποιήσεις
-        no_notifications: "Δεν έχετε νέες ειδοποιήσεις"
   notifications:
     index:
       empty_notifications: Δεν έχετε νέες ειδοποιήσεις.
@@ -727,7 +727,6 @@ el:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
