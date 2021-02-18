@@ -231,11 +231,11 @@ bs:
       budgets: Participativno budžetiranje
       notification_item:
         new_notifications:
+          zero: "Nemate novih obavijesti"
           one: Imate jednu novu obavijest
           few: Imate %{count} nove/novih obavijesti
           other: Imate %{count} nove/novih obavijesti
         notifications: Obavijesti
-        no_notifications: "Nemate novih obavijesti"
   notifications:
     index:
       empty_notifications: Nemate novih obavijesti.
@@ -725,7 +725,6 @@ bs:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
