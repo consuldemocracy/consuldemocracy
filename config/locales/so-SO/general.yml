@@ -209,10 +209,10 @@ so:
       budgets: Misaaniyada kaqayb qadashada
       notification_item:
         new_notifications:
+          zero: "Ma haysatid wargelin cusub"
           one: Waxaad heysataa ogeysiis cusub
           other: Waxaad heysataa%{count} ogeysiis cusub
         notifications: Ogaysiisyo
-        no_notifications: "Ma haysatid wargelin cusub"
   notifications:
     index:
       empty_notifications: Ma haysatid wargelin cusub,.
@@ -545,7 +545,6 @@ so:
     facebook: "%{org} faysbuug"
     twitter: "%{org} tuwiitar"
     youtube: "%{org} yotuyuub"
-    whatsapp: Wat isaaab
     telegram: "%{org} telegaraam"
     instagram: "%{org} istigraam"
   stats:
