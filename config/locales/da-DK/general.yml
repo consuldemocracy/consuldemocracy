@@ -246,10 +246,10 @@ da:
       budgets: Deltagerbudget
       notification_item:
         new_notifications:
+          zero: "Du har ingen nye notifikationer"
           one: Du har en ny notifikation
           other: Du har %{count} nye notifikationer
         notifications: Notifikationer
-        no_notifications: "Du har ingen nye notifikationer"
   notifications:
     index:
       empty_notifications: Du har ingen nye notifikationer.
@@ -774,7 +774,6 @@ da:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
