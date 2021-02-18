@@ -209,10 +209,10 @@ val:
       budgets: Pressupostos participatius
       notification_item:
         new_notifications:
+          zero: "No tens noves notificacions"
           one: Tens una nova notificació
           other: Tens %{count} notificacions
         notifications: Notificacions
-        no_notifications: "No tens noves notificacions"
   notifications:
     index:
       empty_notifications: No tens noves notificacions.
@@ -545,7 +545,6 @@ val:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
-    whatsapp: WhatsApp
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
   stats:
