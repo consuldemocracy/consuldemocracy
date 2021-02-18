@@ -234,10 +234,10 @@ tr:
       budgets: Katılımcı bütçeleme
       notification_item:
         new_notifications:
+          zero: "Yeni bildiriminiz yok"
           one: Bir yeni bildiriminiz var
           other: '%{count} yeni bildirimleriniz var'
         notifications: Bildirimler
-        no_notifications: "Yeni bildiriminiz yok"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
@@ -741,7 +741,6 @@ tr:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
     youtube: "YouTube %{org}"
-    whatsapp: WhatsApp
     telegram: "Telegram %{org}"
     instagram: "Instagram %{org}"
   stats:
