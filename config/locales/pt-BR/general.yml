@@ -247,10 +247,10 @@ pt-BR:
       budgets: Orçamento participativo
       notification_item:
         new_notifications:
+          zero: "Vocie nnao possui novas notificações"
           one: Você tem uma nova notificação
           other: Você tem %{count} novas notificações
         notifications: Notificações
-        no_notifications: "Vocie nnao possui novas notificações"
       sdg: "ODS (SDG)"
   notifications:
     index:
@@ -783,7 +783,6 @@ pt-BR:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
