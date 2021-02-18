@@ -1091,7 +1091,7 @@ form {
     }
   }
 
-  [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
+  [type]:not(.close-button, [type=checkbox], [type=file], [type=radio], [type=submit]) {
     background: #f8f8f8;
     height: $input-height;
     margin-bottom: rem-calc(16);
