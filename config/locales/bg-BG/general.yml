@@ -241,10 +241,10 @@ bg:
       budgets: Бюджетиране с участие
       notification_item:
         new_notifications:
+          zero: "Нямате нови известия"
           one: Имате ново известие
           other: Имате %{count} нови известия
         notifications: Известия
-        no_notifications: "Нямате нови известия"
   notifications:
     index:
       empty_notifications: Нямате нови известия.
