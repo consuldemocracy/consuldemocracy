@@ -203,8 +203,9 @@ cs:
       poll_questions: Průzkumy
       budgets: Participativní rozpočet
       notification_item:
+        new_notifications:
+          zero: "Nemáte žádná nová upozornění"
         notifications: Upozornění
-        no_notifications: "Nemáte žádná nová upozornění"
   notifications:
     index:
       empty_notifications: Nemáte nová upozornění.
@@ -562,7 +563,6 @@ cs:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
