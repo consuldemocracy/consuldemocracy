@@ -1,0 +1,185 @@
+.admin-sidebar {
+  background: $sidebar;
+  background: linear-gradient(to bottom, #245b80 0%, #488fb5 100%);
+  border-right: 1px solid $border;
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  > ul > li a {
+    font-weight: bold;
+
+    @mixin icon($name, $style) {
+      @include has-fa-icon($name, $style);
+
+      &::before {
+        @extend %admin-menu-icon;
+      }
+    }
+
+    [class^="icon-"] {
+      color: #fff;
+      display: inline-block;
+      font-size: rem-calc(20);
+      line-height: $line-height;
+      text-align: center;
+      vertical-align: middle;
+      width: $line-height * 1.5;
+    }
+
+    &.booths-link {
+      @include icon(archive, solid);
+    }
+
+    &.budgets-link,
+    &.investments-link,
+    &.budget-investments-link {
+      @include icon(chart-pie, solid);
+    }
+
+    &.comments-link {
+      @include icon(comments, regular);
+    }
+
+    &.dashboard-link {
+      @include icon(check, solid);
+    }
+
+    &.debates-link {
+      @include icon(comment-alt, solid);
+    }
+
+    &.invitations-link {
+      @include icon(envelope, regular);
+    }
+
+    &.legislation-link,
+    &.legislation-processes-link {
+      @include icon(file-alt, solid);
+    }
+
+    &.messages-link {
+      @include icon(file-archive, regular);
+    }
+
+    &.moderated-content-link {
+      @include icon(eye, regular);
+    }
+
+    &.polls-link {
+      @include icon(check-circle, regular);
+    }
+
+    &.print-proposals-link,
+    &.print-investments-link {
+      @include icon(print, solid);
+    }
+
+    &.profiles-link {
+      @include icon(users, solid);
+    }
+
+    &.proposals-link,
+    &.proposal-notifications-link {
+      @include icon(lightbulb, solid);
+    }
+
+    &.settings-link {
+      @include icon(cog, solid);
+    }
+
+    &.signature-sheets-link {
+      @include icon(file-alt, regular);
+    }
+
+    &.site-customization-link {
+      @include icon(pencil-alt, solid);
+    }
+
+    &.stats-link {
+      @include icon(chart-line, solid);
+    }
+
+    &.users-link {
+      @include icon(user, solid);
+    }
+  }
+
+  li {
+    margin: 0;
+    outline: 0;
+
+    ul {
+      margin-left: $line-height / 1.5;
+      border-left: 1px solid $sidebar-hover;
+      padding-left: $line-height / 2;
+    }
+
+    &.is-active a,
+    &[aria-current] a {
+      background: $sidebar-hover;
+      border-left: 2px solid $sidebar-active;
+      font-weight: bold;
+    }
+
+    &[aria-expanded="true"] {
+
+      > a::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  li a {
+    color: #fff;
+    display: block;
+    line-height: $line-height * 2;
+    padding-left: $line-height / 4;
+    vertical-align: top;
+
+    &:hover {
+      background: $sidebar-hover;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .is-accordion-submenu-parent {
+
+    > a::after {
+      border: 0;
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      font-weight: bold;
+      height: auto;
+      position: absolute;
+      right: 24px;
+      transition: 0.25s;
+    }
+  }
+
+  .submenu {
+    border-bottom: 0;
+    margin-left: $line-height;
+
+    li:first-child {
+      padding-top: $line-height / 2;
+    }
+
+    li:last-child {
+      padding-bottom: $line-height / 2;
+    }
+
+    a {
+      font-weight: normal;
+    }
+
+    .is-active {
+      border-bottom: 0;
+    }
+  }
+}

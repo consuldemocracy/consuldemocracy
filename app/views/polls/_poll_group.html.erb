@@ -47,11 +47,12 @@
             <small><%= t("polls.index.geozone_info") %></small>
           </p>
         <% end %>
-        <ul class="no-bullet inline-block tags">
+        <ul class="tags">
           <% poll.geozones.each do |g| %>
-            <li class="inline-block"><span><%= g.name %></span></li>
+            <li><span><%= g.name %></span></li>
           <% end %>
         </ul>
+        <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>
       </div>
       <div class="small-12 medium-3 column table" data-equalizer-watch>
         <div class="table-cell align-middle">

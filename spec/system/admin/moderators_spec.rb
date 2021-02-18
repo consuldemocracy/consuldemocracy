@@ -1,11 +1,10 @@
 require "rails_helper"
 
-describe "Admin moderators" do
+describe "Admin moderators", :admin do
   let!(:user)      { create(:user, username: "Jose Luis Balbin") }
   let!(:moderator) { create(:moderator) }
 
   before do
-    login_as(create(:administrator).user)
     visit admin_moderators_path
   end
 
@@ -16,7 +15,7 @@ describe "Admin moderators" do
   end
 
   scenario "Create Moderator", :js do
-    fill_in "name_or_email", with: user.email
+    fill_in "search", with: user.email
     click_button "Search"
 
     expect(page).to have_content user.name
@@ -48,7 +47,7 @@ describe "Admin moderators" do
       expect(page).to have_content(moderator1.name)
       expect(page).to have_content(moderator2.name)
 
-      fill_in "name_or_email", with: " "
+      fill_in "search", with: " "
       click_button "Search"
 
       expect(page).to have_content("Moderators: User search")
@@ -61,10 +60,11 @@ describe "Admin moderators" do
       expect(page).to have_content(moderator1.name)
       expect(page).to have_content(moderator2.name)
 
-      fill_in "name_or_email", with: "Eliz"
+      fill_in "search", with: "Eliz"
       click_button "Search"
 
       expect(page).to have_content("Moderators: User search")
+      expect(page).to have_field "search", with: "Eliz"
       expect(page).to have_content(moderator1.name)
       expect(page).not_to have_content(moderator2.name)
     end
@@ -73,10 +73,11 @@ describe "Admin moderators" do
       expect(page).to have_content(moderator1.email)
       expect(page).to have_content(moderator2.email)
 
-      fill_in "name_or_email", with: moderator2.email
+      fill_in "search", with: moderator2.email
       click_button "Search"
 
       expect(page).to have_content("Moderators: User search")
+      expect(page).to have_field "search", with: moderator2.email
       expect(page).to have_content(moderator2.email)
       expect(page).not_to have_content(moderator1.email)
     end

@@ -17,7 +17,7 @@ section "Creating Users" do
   def unique_document_number
     @document_number ||= 12345678
     @document_number += 1
-    "#{@document_number}#{[*"A".."Z"].sample}"
+    "#{@document_number}#{("A".."Z").to_a.sample}"
   end
 
   admin = create_user("admin@consul.dev", "admin")
@@ -55,6 +55,12 @@ section "Creating Users" do
   poll_officer2.update!(residence_verified_at: Time.current,
                        confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                        verified_at: Time.current, document_number: unique_document_number)
+
+  sdg_manager = create_user("sdg_manager@consul.dev", "SDG manager")
+  sdg_manager.create_sdg_manager
+  sdg_manager.update!(residence_verified_at: Time.current,
+                confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                verified_at: Time.current, document_number: unique_document_number)
 
   create_user("unverified@consul.dev", "unverified")
 

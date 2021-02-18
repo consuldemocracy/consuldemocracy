@@ -35,6 +35,7 @@ en:
           proposals: Proposals
           budgets: Participatory budgeting
           help_page: Help page
+          sdg: SDG
       edit:
         editing: Edit banner
         form:
@@ -72,10 +73,6 @@ en:
         budget_investments: Manage projects
         table_name: Name
         table_phase: Phase
-        table_investments: Investments
-        table_edit_groups: Headings groups
-        table_edit_budget: Edit
-        table_admin_ballots: Ballots
         edit_groups: Edit headings groups
         edit_budget: Edit budget
         admin_ballots: Admin ballots
@@ -117,7 +114,6 @@ en:
     budget_groups:
       name: "Name"
       headings_name: "Headings"
-      headings_edit: "Edit Headings"
       headings_manage: "Manage headings"
       no_groups: "There are no groups."
       amount:
@@ -297,8 +293,6 @@ en:
         table_name: Name
         table_description: Description
         table_actions: Actions
-        delete: Delete
-        edit: Edit
       edit:
         title: Edit milestone status
       update:
@@ -361,8 +355,6 @@ en:
         index:
           description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
           create: Create resource or action
-          edit: Edit
-          delete: Delete
           active: 'Yes'
           inactive: 'No'
           title: Resources and actions
@@ -497,7 +489,6 @@ en:
           banner_title: Header colors
         index:
           create: New process
-          delete: Delete
           title: Collaborative legislation
           filters:
             active: Active
@@ -624,14 +615,17 @@ en:
     managers:
       index:
         title: Managers
-        name: Name
-        email: Email
         no_managers: There are no managers.
       manager:
         add: Add
-        delete: Delete
       search:
         title: "Managers: User search"
+    sdg_managers:
+      index:
+        no_sdg_managers: There are no users.
+    sdg/managers:
+      sdg/manager:
+        add: Add
     menu:
       activity: Moderator activity
       admin: Admin menu
@@ -648,6 +642,7 @@ en:
       hidden_users: Hidden users
       administrators: Administrators
       managers: Managers
+      sdg_managers: SDG Managers
       moderators: Moderators
       messaging_users: Messages to users
       newsletters: Newsletters
@@ -702,14 +697,10 @@ en:
     administrators:
       index:
         title: Administrators
-        name: Name
-        email: Email
-        description: Description
         id: Administrator ID
         no_administrators: There are no administrators.
       administrator:
         add: Add
-        delete: Delete
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
         title: "Administrators: User search"
@@ -719,12 +710,9 @@ en:
     moderators:
       index:
         title: Moderators
-        name: Name
-        email: Email
         no_moderators: There are no moderators.
       moderator:
         add: Add
-        delete: Delete
       search:
         title: "Moderators: User search"
     segment_recipient:
@@ -751,8 +739,6 @@ en:
         sent: Sent
         actions: Actions
         draft: Draft
-        edit: Edit
-        delete: Delete
         preview: Preview
         empty_newsletters: There are no newsletters to show
       new:
@@ -788,8 +774,6 @@ en:
         sent: Sent
         actions: Actions
         draft: Draft
-        edit: Edit
-        delete: Delete
         preview: Preview
         view: View
         empty_notifications: There are no notifications to show
@@ -887,7 +871,6 @@ en:
         can_edit_dossier: "Can edit dossier"
       valuator:
         add: Add to valuators
-        delete: Delete
       search:
         title: "Valuators: User search"
       form:
@@ -925,7 +908,6 @@ en:
         entry_name: officer
       search:
         email_placeholder: Search user by email
-        search: Search
         user_not_found: User not found
         help: "To add or remove Poll officers use the search form below."
     poll_officer_assignments:
@@ -1188,8 +1170,6 @@ en:
         no_organizations: There are no organizations.
         reject: Reject
         rejected: Rejected
-        search: Search
-        search_placeholder: Name, email or phone number
         title: Organisations
         verified: Verified
         verify: Verify
@@ -1258,6 +1238,9 @@ en:
         remote_census:
           title: Remote Census configuration
           how_to_enable: 'To configure remote census (SOAP) you must enable "Configure connection to remote census (SOAP)" on "Features" tab.'
+        sdg:
+          title: SDG configuration
+          how_to_enable: 'To show the configuration options from Sustainable Development Goals you must enable "SDG" on "Features" tab.'
       remote_census_general_name: General Information
       remote_census_request_name: Request Data
       remote_census_response_name: Response Data
@@ -1270,24 +1253,27 @@ en:
     shared:
       true_value: "Yes"
       false_value: "No"
-      booths_search:
-        button: Search
-        placeholder: Search booth by name or location
-      poll_officers_search:
-        button: Search
-        placeholder: Search poll officers
-      poll_questions_search:
-        button: Search
-        placeholder: Search poll questions
-      proposal_search:
-        button: Search
-        placeholder: Search proposals by title, code, description or question
-      debate_search:
-        button: Search
-        placeholder: Search debates by title or description
-      user_search:
-        button: Search
-        placeholder: Search user by name or email
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "All goals"
+            label: "By goal"
+          sdg_targets:
+            all: "All targets"
+            label: "By target"
+        label:
+          booths: "Search booth by name or location"
+          budget_investments: "Search investments by title, description or heading"
+          debates: "Search debates by title or description"
+          legislation_processes: "Search processes by title or description"
+          local_census_records: "Search by document number"
+          organizations: "Name, email or phone number"
+          poll_officers: "Search poll officers"
+          poll_questions: "Search poll questions"
+          polls: "Search polls by name or description"
+          proposals: "Search proposals by title, code, description or question"
+          users: "Search user by name or email"
+        search: "Search"
       search_results: "Search results"
       no_search_results: "No results found."
       actions: Actions
@@ -1301,7 +1287,6 @@ en:
       author: Author
       content: Content
       created_at: Created at
-      delete: Delete
       color_help: Hexadecimal format
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
@@ -1309,8 +1294,6 @@ en:
       index:
         title: Geozone
         create: Create geozone
-        edit: Edit
-        delete: Delete
       geozone:
         name: Name
         external_code: External code
@@ -1390,6 +1373,7 @@ en:
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
         polls: Polls
+        sdg: SDG
       graph:
         debate_created: Debates
         visit: Visits
@@ -1432,6 +1416,15 @@ en:
           question_name: Question
           origin_web: Web participants
           origin_total: Total participants
+      sdg:
+        budget_investments:
+          amount: "Approved amount"
+          winners: "Winner investment projects"
+          sent: "Investment projects sent"
+        debates: "Debates"
+        polls: "Polls"
+        proposals: "Proposals"
+        title: "Sustainable Development Goals - Stats"
     tags:
       create: Create topic
       destroy: Delete topic
@@ -1458,7 +1451,6 @@ en:
           erased: Erased
       search:
         placeholder: Search user by email, name or document number
-        search: Search
     verifications:
       index:
         phone_not_given: Phone not given
@@ -1533,16 +1525,11 @@ en:
           updated_at: Updated at
           title: Title
           slug: Slug
-          cards_title: Cards
           see_cards: See Cards
         cards:
           cards_title: cards
           create_card: Create card
           no_cards: There are no cards.
-          title: Title
-          description: Description
-          link_text: Link text
-          link_url: Link URL
           columns_help: "Width of the card in number of columns. On mobile screens it's always a width of 100%."
           create:
             notice: "Card created successfully!"
@@ -1559,11 +1546,6 @@ en:
       cards_title: Cards
       create_card: Create card
       no_cards: There are no cards.
-      cards:
-        title: Title
-        description: Description
-        link_text: Link text
-        link_url: Link URL
       feeds:
         proposals: Proposals
         debates: Debates
@@ -1598,9 +1580,6 @@ en:
         document_number: Document number
         date_of_birth: Date of birth
         postal_code: Postal code
-        search:
-          placeholder: Search by document number
-          search: Search
         import: Import CSV
       new:
         creating: Creating new local census record

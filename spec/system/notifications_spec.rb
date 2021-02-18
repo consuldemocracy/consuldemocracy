@@ -175,7 +175,7 @@ describe "Notifications" do
       visit notifications_path
       expect(page).to have_content("Notification title")
       expect(page).to have_content("Notification body")
-      expect(page).not_to have_link(notification_path(notification), visible: false)
+      expect(page).not_to have_link(notification_path(notification), visible: :all)
     end
   end
 
@@ -193,6 +193,7 @@ describe "Notifications" do
     end
 
     it "sends pending proposal notifications" do
+      Setting["org_name"] = "CONSUL"
       Delayed::Worker.delay_jobs = false
       Notification.send_pending
 

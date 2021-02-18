@@ -197,30 +197,29 @@ describe "Proposal Notifications" do
       logout
       login_as user1
       visit root_path
-      visit root_path
 
       find(".icon-notification").click
 
-      notification_for_user1 = Notification.find_by(user: user1)
       expect(page).to have_css ".notification", count: 1
-      expect(page).to have_content "There is one new notification on #{proposal.title}"
-      expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user1)}']"
+
+      click_link text: "There is one new notification on #{proposal.title}"
+
+      expect(page).to have_current_path(proposal_path(proposal))
 
       logout
       login_as user2
       visit root_path
-      visit root_path
 
       find(".icon-notification").click
 
-      notification_for_user2 = Notification.find_by(user: user2)
       expect(page).to have_css ".notification", count: 1
-      expect(page).to have_content "There is one new notification on #{proposal.title}"
-      expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user2)}']"
+
+      click_link text: "There is one new notification on #{proposal.title}"
+
+      expect(page).to have_current_path(proposal_path(proposal))
 
       logout
       login_as user3
-      visit root_path
       visit root_path
 
       find(".icon-no-notification").click
@@ -254,10 +253,11 @@ describe "Proposal Notifications" do
 
       find(".icon-notification").click
 
-      notification_for_user1 = Notification.find_by(user: user1)
       expect(page).to have_css ".notification", count: 1
-      expect(page).to have_content "There is one new notification on #{proposal.title}"
-      expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user1)}']"
+
+      click_link text: "There is one new notification on #{proposal.title}"
+
+      expect(page).to have_current_path(proposal_path(proposal))
 
       logout
       login_as user2.reload
@@ -265,10 +265,11 @@ describe "Proposal Notifications" do
 
       find(".icon-notification").click
 
-      notification_for_user2 = Notification.find_by(user: user2)
       expect(page).to have_css ".notification", count: 1
-      expect(page).to have_content "There is one new notification on #{proposal.title}"
-      expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user2)}']"
+
+      click_link text: "There is one new notification on #{proposal.title}"
+
+      expect(page).to have_current_path(proposal_path(proposal))
 
       logout
       login_as user3.reload
@@ -301,14 +302,11 @@ describe "Proposal Notifications" do
       logout
       login_as user
       visit root_path
-      visit root_path
 
       find(".icon-notification").click
 
-      notification_for_user = Notification.find_by(user: user)
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "This resource is not available anymore"
-      expect(page).not_to have_xpath "//a[@href='#{notification_path(notification_for_user)}']"
     end
 
     scenario "Proposal retired by author", :js do
@@ -405,7 +403,7 @@ describe "Proposal Notifications" do
 
       expect(page).to have_content "Your message has been sent correctly."
 
-      travel(3.days + 1.second) do
+      travel_to(3.days.from_now + 1.second) do
         visit new_proposal_notification_path(proposal_id: proposal.id)
         fill_in "Title", with: "Thank you again for supporting my proposal"
         fill_in "Message", with: "Please share it again with others so we can make it happen!"

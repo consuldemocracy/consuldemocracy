@@ -3,6 +3,16 @@ ka:
     ballots:
       show:
         title: თქვენი ბიულეტენი
+        amount_available:
+          knapsack: "თქვენ დაგრჩათ <span>%{count}</span> ინვესტირებისათვის."
+          approval:
+            zero: "თქვენ დაგრჩათ <span>%{count}</span> ხმა."
+        amount_spent:
+          knapsack: "დახარჯული თანხის რაოდენობა<span>%{count}</span>"
+          approval:
+            zero: "<span>%{count}</span> მიცემული ხმა"
+        amount_limit:
+          knapsack: "%{count}"
         no_balloted_group_yet: "ამ ჯგუფისთვის ჯერ ხმა არ მიგიციათ, ამის გაკეთება ახლა შეგიძლიათ!"
         remove: ხმის წაშლა
         voted:
@@ -19,6 +29,7 @@ ka:
         not_enough_money: "თქვენ უკვე გამოყავით ხელმისაწვდომი ბიუჯეტი.<br><small>გახსოვდეთ, შეგიძლიათ %{change_ballot} ნებისმიერ დროს</small>"
         no_ballots_allowed: შერჩევის ფაზა დახურულია
         different_heading_assigned: "თქვენ უკვე მიეცით ხმა სხვა რუბრიკაზე: %{heading_link}"
+        not_enough_available_votes: "თქვენ მიაღწიეთ დასაშვები ხმების მაქსიმალურ რაოდენობას"
         change_ballot: ხმების შეცვლა
         casted_offline: თქვენ უკვე მიიღეთ მონაწილეობა ინტერნეტის გარეშე
     groups:
@@ -82,6 +93,10 @@ ka:
           other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: ჩემი ბიულეტენი
+          change_vote_info:
+            knapsack: "თქვენ შეგიძლიათ %{link} ნებისმიერ დროს, სანამ ფაზა არ დაიხურება. საჭირო არ არის მთელი თანხის დახარჯვა."
+            approval: "თქვენ შეგიძლიათ %{link} ნებისმიერ დროს, სანამ ფაზა არ დაიხურება."
+          change_vote_link: "ხმის შეცვლა"
           different_heading_assigned: "თქვენ უკვე მიეცით ხმა სხვა რუბრიკაზე: %{heading_link}"
           change_ballot: "თუ გადაწყვეტილებას შეცვლით, შეგიძლიათ %{check_ballot}-ში ხმების გაუქმება და თავიდან დაწყება."
           check_ballot_link: "მონიშნეთ და დაადასტურეთ ბიულეტენი"
@@ -141,6 +156,8 @@ ka:
     progress_bar:
       assigned: "თქვენ გამოყავით: "
       available: "ხელმისაწვდომი ბიუჯეტი: "
+      votes:
+        zero: "თქვენ შეარჩეთ <strong>0</strong> პროექტი <strong>%{limit}</strong> პროექტიდან"
     show:
       group: ჯგუფი
       phase: მიმდინარე ფაზა

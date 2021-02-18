@@ -10,6 +10,7 @@ class Admin::SettingsController < Admin::BaseController
     @remote_census_request_settings = all_settings["remote_census.request"]
     @remote_census_response_settings = all_settings["remote_census.response"]
     @uploads_settings = all_settings["uploads"]
+    @sdg_settings = all_settings["sdg"]
   end
 
   def update

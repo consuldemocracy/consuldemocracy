@@ -1,17 +1,5 @@
-<nav class="admin-sidebar">
-  <ul id="valuation_menu">
-    <li>
-      <%= link_to t("valuation.menu.title"), valuation_root_path %>
-    </li>
-
-    <% if feature?(:budgets) %>
-      <li <%= "class=is-active" if controller_name == "budget_investments" %>>
-        <%= link_to valuation_budgets_path do %>
-          <span class="icon-budget"></span>
-          <%= t("valuation.menu.budgets") %>
-        <% end %>
-      </li>
-    <% end %>
-
-  </ul>
-</nav>
+<%= link_list(
+  [t("valuation.menu.title"), valuation_root_path],
+  [t("valuation.menu.budgets"), valuation_budgets_path, controller_name == "budget_investments", class: "budgets-link"],
+  id: "valuation_menu"
+) %>

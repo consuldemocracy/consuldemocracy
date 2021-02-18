@@ -172,334 +172,6 @@ describe "Budget Investments" do
         expect(page).not_to have_content(investment3.title)
       end
     end
-
-    context "Advanced search" do
-      scenario "Search by text", :js do
-        bdgt_invest1 = create(:budget_investment, heading: heading, title: "Get Schwifty")
-        bdgt_invest2 = create(:budget_investment, heading: heading, title: "Schwifty Hello")
-        bdgt_invest3 = create(:budget_investment, heading: heading, title: "Do not show me")
-
-        visit budget_investments_path(budget)
-
-        click_link "Advanced search"
-        fill_in "Write the text", with: "Schwifty"
-        click_button "Filter"
-
-        expect(page).to have_content("There are 2 investments")
-
-        within("#budget-investments") do
-          expect(page).to have_content(bdgt_invest1.title)
-          expect(page).to have_content(bdgt_invest2.title)
-          expect(page).not_to have_content(bdgt_invest3.title)
-        end
-      end
-
-      context "Search by author type" do
-        scenario "Public employee", :js do
-          ana = create :user, official_level: 1
-          john = create :user, official_level: 2
-
-          bdgt_invest1 = create(:budget_investment, heading: heading, author: ana)
-          bdgt_invest2 = create(:budget_investment, heading: heading, author: ana)
-          bdgt_invest3 = create(:budget_investment, heading: heading, author: john)
-
-          visit budget_investments_path(budget)
-
-          click_link "Advanced search"
-          select Setting["official_level_1_name"], from: "advanced_search_official_level"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 investments")
-
-          within("#budget-investments") do
-            expect(page).to have_content(bdgt_invest1.title)
-            expect(page).to have_content(bdgt_invest2.title)
-            expect(page).not_to have_content(bdgt_invest3.title)
-          end
-        end
-
-        scenario "Municipal Organization", :js do
-          ana = create :user, official_level: 2
-          john = create :user, official_level: 3
-
-          bdgt_invest1 = create(:budget_investment, heading: heading, author: ana)
-          bdgt_invest2 = create(:budget_investment, heading: heading, author: ana)
-          bdgt_invest3 = create(:budget_investment, heading: heading, author: john)
-
-          visit budget_investments_path(budget)
-
-          click_link "Advanced search"
-          select Setting["official_level_2_name"], from: "advanced_search_official_level"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 investments")
-
-          within("#budget-investments") do
-            expect(page).to have_content(bdgt_invest1.title)
-            expect(page).to have_content(bdgt_invest2.title)
-            expect(page).not_to have_content(bdgt_invest3.title)
-          end
-        end
-
-        scenario "General director", :js do
-          ana = create :user, official_level: 3
-          john = create :user, official_level: 4
-
-          bdgt_invest1 = create(:budget_investment, heading: heading, author: ana)
-          bdgt_invest2 = create(:budget_investment, heading: heading, author: ana)
-          bdgt_invest3 = create(:budget_investment, heading: heading, author: john)
-
-          visit budget_investments_path(budget)
-
-          click_link "Advanced search"
-          select Setting["official_level_3_name"], from: "advanced_search_official_level"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 investments")
-
-          within("#budget-investments") do
-            expect(page).to have_content(bdgt_invest1.title)
-            expect(page).to have_content(bdgt_invest2.title)
-            expect(page).not_to have_content(bdgt_invest3.title)
-          end
-        end
-
-        scenario "City councillor", :js do
-          ana = create :user, official_level: 4
-          john = create :user, official_level: 5
-
-          bdgt_invest1 = create(:budget_investment, heading: heading, author: ana)
-          bdgt_invest2 = create(:budget_investment, heading: heading, author: ana)
-          bdgt_invest3 = create(:budget_investment, heading: heading, author: john)
-
-          visit budget_investments_path(budget)
-
-          click_link "Advanced search"
-          select Setting["official_level_4_name"], from: "advanced_search_official_level"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 investments")
-
-          within("#budget-investments") do
-            expect(page).to have_content(bdgt_invest1.title)
-            expect(page).to have_content(bdgt_invest2.title)
-            expect(page).not_to have_content(bdgt_invest3.title)
-          end
-        end
-
-        scenario "Mayoress", :js do
-          ana = create :user, official_level: 5
-          john = create :user, official_level: 4
-
-          bdgt_invest1 = create(:budget_investment, heading: heading, author: ana)
-          bdgt_invest2 = create(:budget_investment, heading: heading, author: ana)
-          bdgt_invest3 = create(:budget_investment, heading: heading, author: john)
-
-          visit budget_investments_path(budget)
-
-          click_link "Advanced search"
-          select Setting["official_level_5_name"], from: "advanced_search_official_level"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 investments")
-
-          within("#budget-investments") do
-            expect(page).to have_content(bdgt_invest1.title)
-            expect(page).to have_content(bdgt_invest2.title)
-            expect(page).not_to have_content(bdgt_invest3.title)
-          end
-        end
-      end
-
-      context "Search by date" do
-        context "Predefined date ranges" do
-          scenario "Last day", :js do
-            bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 1.minute.ago)
-            bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 1.hour.ago)
-            bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 2.days.ago)
-
-            visit budget_investments_path(budget)
-
-            click_link "Advanced search"
-            select "Last 24 hours", from: "js-advanced-search-date-min"
-            click_button "Filter"
-
-            expect(page).to have_content("There are 2 investments")
-
-            within("#budget-investments") do
-              expect(page).to have_content(bdgt_invest1.title)
-              expect(page).to have_content(bdgt_invest2.title)
-              expect(page).not_to have_content(bdgt_invest3.title)
-            end
-          end
-
-          scenario "Last week", :js do
-            bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 1.day.ago)
-            bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 5.days.ago)
-            bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 8.days.ago)
-
-            visit budget_investments_path(budget)
-
-            click_link "Advanced search"
-            select "Last week", from: "js-advanced-search-date-min"
-            click_button "Filter"
-
-            expect(page).to have_content("There are 2 investments")
-
-            within("#budget-investments") do
-              expect(page).to have_content(bdgt_invest1.title)
-              expect(page).to have_content(bdgt_invest2.title)
-              expect(page).not_to have_content(bdgt_invest3.title)
-            end
-          end
-
-          scenario "Last month", :js do
-            bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 10.days.ago)
-            bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 20.days.ago)
-            bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 33.days.ago)
-
-            visit budget_investments_path(budget)
-
-            click_link "Advanced search"
-            select "Last month", from: "js-advanced-search-date-min"
-            click_button "Filter"
-
-            expect(page).to have_content("There are 2 investments")
-
-            within("#budget-investments") do
-              expect(page).to have_content(bdgt_invest1.title)
-              expect(page).to have_content(bdgt_invest2.title)
-              expect(page).not_to have_content(bdgt_invest3.title)
-            end
-          end
-
-          scenario "Last year", :js do
-            bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 300.days.ago)
-            bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 350.days.ago)
-            bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 370.days.ago)
-
-            visit budget_investments_path(budget)
-
-            click_link "Advanced search"
-            select "Last year", from: "js-advanced-search-date-min"
-            click_button "Filter"
-
-            expect(page).to have_content("There are 2 investments")
-
-            within("#budget-investments") do
-              expect(page).to have_content(bdgt_invest1.title)
-              expect(page).to have_content(bdgt_invest2.title)
-              expect(page).not_to have_content(bdgt_invest3.title)
-            end
-          end
-        end
-
-        scenario "Search by custom date range", :js do
-          bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 2.days.ago)
-          bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 3.days.ago)
-          bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 9.days.ago)
-
-          visit budget_investments_path(budget)
-
-          click_link "Advanced search"
-          select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.day.ago
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 investments")
-
-          within("#budget-investments") do
-            expect(page).to have_content(bdgt_invest1.title)
-            expect(page).to have_content(bdgt_invest2.title)
-            expect(page).not_to have_content(bdgt_invest3.title)
-          end
-        end
-
-        scenario "Search by custom invalid date range", :js do
-          bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 2.days.ago)
-          bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 3.days.ago)
-          bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 9.days.ago)
-
-          visit budget_investments_path(budget)
-
-          click_link "Advanced search"
-          select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 4000.years.ago
-          fill_in "advanced_search_date_max", with: "wrong date"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 3 investments")
-
-          within("#budget-investments") do
-            expect(page).to have_content(bdgt_invest1.title)
-            expect(page).to have_content(bdgt_invest2.title)
-            expect(page).to have_content(bdgt_invest3.title)
-          end
-        end
-
-        scenario "Search by multiple filters", :js do
-          ana  = create :user, official_level: 1
-          john = create :user, official_level: 1
-
-          create(:budget_investment, heading: heading, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
-          create(:budget_investment, heading: heading, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
-          create(:budget_investment, heading: heading, title: "Save the forest")
-
-          visit budget_investments_path(budget)
-
-          click_link "Advanced search"
-          fill_in "Write the text", with: "Schwifty"
-          select Setting["official_level_1_name"], from: "advanced_search_official_level"
-          select "Last 24 hours", from: "js-advanced-search-date-min"
-
-          click_button "Filter"
-
-          expect(page).to have_content("There is 1 investment")
-
-          within("#budget-investments") do
-            expect(page).to have_content "Get Schwifty"
-          end
-        end
-
-        scenario "Maintain advanced search criteria", :js do
-          visit budget_investments_path(budget)
-          click_link "Advanced search"
-
-          fill_in "Write the text", with: "Schwifty"
-          select Setting["official_level_1_name"], from: "advanced_search_official_level"
-          select "Last 24 hours", from: "js-advanced-search-date-min"
-
-          click_button "Filter"
-
-          expect(page).to have_content("investments cannot be found")
-
-          within "#js-advanced-search" do
-            expect(page).to have_selector("input[name='search'][value='Schwifty']")
-            expect(page).to have_select("advanced_search[official_level]", selected: Setting["official_level_1_name"])
-            expect(page).to have_select("advanced_search[date_min]", selected: "Last 24 hours")
-          end
-        end
-
-        scenario "Maintain custom date search criteria", :js do
-          visit budget_investments_path(budget)
-          click_link "Advanced search"
-
-          select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 7.days.ago.strftime("%d/%m/%Y")
-          fill_in "advanced_search_date_max", with: 1.day.ago.strftime("%d/%m/%Y")
-          click_button "Filter"
-
-          expect(page).to have_content("investments cannot be found")
-
-          within "#js-advanced-search" do
-            expect(page).to have_select("advanced_search[date_min]", selected: "Customized")
-            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime("%d/%m/%Y")}']")
-            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime("%d/%m/%Y")}']")
-          end
-        end
-      end
-    end
   end
 
   context("Filters") do
@@ -947,13 +619,11 @@ describe "Budget Investments" do
       expect(page).to have_content message_error
     end
 
-    scenario "Another User can't edit budget investment" do
+    scenario "Another User can't edit budget investment", :admin do
       message_error = "You do not have permission to carry out the action 'edit' on budget/investment"
-      admin = create(:administrator)
       daniel = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading, author: daniel)
 
-      login_as(admin.user)
       visit edit_budget_investment_path(budget, investment)
 
       expect(page).to have_content message_error
@@ -1337,11 +1007,10 @@ describe "Budget Investments" do
                   { "budget_id": "budget_id" }
 
   context "Destroy" do
-    scenario "Admin cannot destroy budget investments" do
+    scenario "Admin cannot destroy budget investments", :admin do
       user = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading, author: user)
 
-      login_as(create(:administrator).user)
       visit user_path(user)
 
       within("#budget_investment_#{investment.id}") do
@@ -1815,7 +1484,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 6, visible: false)
+        expect(page).to have_css(".map-icon", count: 6, visible: :all)
       end
     end
 
@@ -1829,7 +1498,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 2, visible: false)
+        expect(page).to have_css(".map-icon", count: 2, visible: :all)
       end
     end
 
@@ -1853,7 +1522,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 4, visible: false)
+        expect(page).to have_css(".map-icon", count: 4, visible: :all)
       end
     end
 
@@ -1871,7 +1540,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map_location" do
-        expect(page).to have_css(".map-icon", count: 0, visible: false)
+        expect(page).to have_css(".map-icon", count: 0, visible: :all)
       end
     end
 
@@ -1889,7 +1558,7 @@ describe "Budget Investments" do
       end
 
       within(".map_location") do
-        expect(page).to have_css(".map-icon", count: 3, visible: false)
+        expect(page).to have_css(".map-icon", count: 3, visible: :all)
       end
     end
 
@@ -1933,6 +1602,43 @@ describe "Budget Investments" do
           expect(page).not_to have_link "Edit"
           expect(page).to have_link "Remove image"
         end
+      end
+    end
+  end
+
+  describe "SDG related list" do
+    before do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.budgets"] = true
+      budget.update!(phase: "accepting")
+    end
+
+    scenario "create budget investment with sdg related list", :js do
+      login_as(author)
+      visit new_budget_investment_path(budget)
+      select heading.name, from: "Heading"
+      fill_in "Title", with: "A title for a budget investment related with SDG related content"
+      fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
+      click_sdg_goal(1)
+      check "budget_investment_terms_of_service"
+
+      click_button "Create Investment"
+
+      within(".sdg-goal-tag-list") { expect(page).to have_link "1. No Poverty" }
+    end
+
+    scenario "edit budget investment with sdg related list", :js do
+      investment = create(:budget_investment, heading: heading, author: author)
+      investment.sdg_goals = [SDG::Goal[1], SDG::Goal[2]]
+      login_as(author)
+      visit edit_budget_investment_path(budget, investment)
+
+      remove_sdg_goal_or_target_tag(1)
+      click_button "Update Investment"
+
+      within(".sdg-goal-tag-list") do
+        expect(page).not_to have_link "1. No Poverty"
+        expect(page).to have_link "2. Zero Hunger"
       end
     end
   end

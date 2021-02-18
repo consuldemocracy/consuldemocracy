@@ -1,10 +1,7 @@
 require "rails_helper"
 
-describe "Custom information texts" do
+describe "Custom information texts", :admin do
   scenario "Show custom texts instead of default ones" do
-    admin = create(:administrator)
-    login_as(admin.user)
-
     debate_key = "debates.index.section_footer.title"
     proposal_key = "proposals.index.section_footer.title"
 
@@ -32,14 +29,12 @@ describe "Custom information texts" do
   end
 
   scenario "Show custom text with options", :js do
-    admin = create(:administrator)
     user = create(:user, username: "Rachel")
     create(:budget_investment, author_id: user.id)
 
     intro_key = "mailers.budget_investment_created.intro"
     create(:i18n_content, key: intro_key, value_en: "Hi %{author}")
 
-    login_as(admin.user)
     visit admin_site_customization_information_texts_path(tab: "mailers")
 
     expect(page).to have_content "Hi %{author}"

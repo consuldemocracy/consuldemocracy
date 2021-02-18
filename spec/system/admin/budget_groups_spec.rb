@@ -1,12 +1,7 @@
 require "rails_helper"
 
-describe "Admin budget groups" do
+describe "Admin budget groups", :admin do
   let(:budget) { create(:budget, :drafting) }
-
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
 
   context "Feature flag" do
     before do
@@ -128,7 +123,7 @@ describe "Admin budget groups" do
       click_button "Create new group"
 
       expect(page).to have_content "Group created successfully!"
-      expect(page).to have_link "All City"
+      expect(page).to have_content "All City"
     end
 
     scenario "Maximum number of headings in which a user can vote is set to 1 by default" do

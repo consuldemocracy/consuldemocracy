@@ -4,10 +4,11 @@
     <td><%= Dashboard::Action.human_attribute_name("action_type_resource") %></td>
     <td class="text-center"><%= t("admin.dashboard.actions.index.active") %></td>
     <td colspan="4">&nbsp;</td>
-    <td class="text-right">
-      <%= link_to t("admin.dashboard.actions.index.edit"),
-                        admin_settings_path(anchor: "tab-proposals"),
-                        class: "button hollow" %>
+    <td>
+      <%= render Admin::TableActionsComponent.new(
+        actions: [:edit],
+        edit_path: admin_settings_path(anchor: "tab-proposals"),
+      ) %>
     </td>
   </tr>
 <% end %>

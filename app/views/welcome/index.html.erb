@@ -4,7 +4,7 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<%= render "shared/banner" %>
+<%= render Shared::BannerComponent.new("homepage") %>
 
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
@@ -19,9 +19,9 @@
   <div class="row">
     <% if @cards.any? %>
       <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
-        <h3 class="title"><%= t("welcome.cards.title") %></h3>
+        <h2 class="title"><%= t("welcome.cards.title") %></h2>
 
-        <%= render "shared/cards" %>
+        <%= render "shared/cards", cards: @cards %>
       </div>
     <% end %>
 

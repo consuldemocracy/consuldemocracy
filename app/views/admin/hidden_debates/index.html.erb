@@ -24,17 +24,7 @@
           </div>
         </td>
         <td class="align-top">
-          <%= link_to t("admin.actions.restore"),
-                      restore_admin_hidden_debate_path(debate, request.query_parameters),
-                      method: :put,
-                      data: { confirm: t("admin.actions.confirm") },
-                      class: "button hollow warning" %>
-          <% unless debate.confirmed_hide? %>
-            <%= link_to t("admin.actions.confirm_hide"),
-                        confirm_hide_admin_hidden_debate_path(debate, request.query_parameters),
-                        method: :put,
-                        class: "button" %>
-          <% end %>
+          <%= render Admin::HiddenTableActionsComponent.new(debate) %>
         </td>
       </tr>
     <% end %>

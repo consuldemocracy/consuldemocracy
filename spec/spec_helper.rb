@@ -14,6 +14,7 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.include RequestSpecHelper, type: :request
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
   config.include FactoryBot::Syntax::Methods
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
@@ -69,6 +70,10 @@ RSpec.configure do |config|
     Bullet.end_request
   end
 
+  config.before(:each, :admin) do
+    login_as(create(:administrator).user)
+  end
+
   config.before(:each, :delay_jobs) do
     Delayed::Worker.delay_jobs = true
   end
@@ -82,12 +87,8 @@ RSpec.configure do |config|
       .to receive(:available_locales).and_return(I18n.available_locales.map(&:to_s))
   end
 
-  config.before(:each, :with_frozen_time) do
-    travel_to Time.current # TODO: use `freeze_time` after migrating to Rails 5.2.
-  end
-
-  config.after(:each, :with_frozen_time) do
-    travel_back
+  config.around(:each, :with_frozen_time) do |example|
+    freeze_time { example.run }
   end
 
   config.before(:each, :application_zone_west_of_system_zone) do
@@ -106,6 +107,38 @@ RSpec.configure do |config|
     application_zone = ActiveSupport::TimeZone.new("Madrid")
 
     allow(Time).to receive(:zone).and_return(application_zone)
+  end
+
+  config.before(:each, :remote_census) do |example|
+    allow_any_instance_of(RemoteCensusApi).to receive(:end_point_defined?).and_return(true)
+    Setting["feature.remote_census"] = true
+    Setting["remote_census.request.method_name"] = "verify_residence"
+    Setting["remote_census.request.structure"] = '{ "request":
+      {
+        "document_type": "null",
+        "document_number": "nil",
+        "date_of_birth": "null",
+        "postal_code": "nil"
+      }
+    }'
+
+    Setting["remote_census.request.document_type"] = "request.document_type"
+    Setting["remote_census.request.document_number"] = "request.document_number"
+    Setting["remote_census.request.date_of_birth"] = "request.date_of_birth"
+    Setting["remote_census.request.postal_code"] = "request.postal_code"
+    Setting["remote_census.response.date_of_birth"] = "response.data.date_of_birth"
+    Setting["remote_census.response.postal_code"] = "response.data.postal_code"
+    Setting["remote_census.response.district"] = "response.data.district_code"
+    Setting["remote_census.response.gender"] = "response.data.gender"
+    Setting["remote_census.response.name"] = "response.data.name"
+    Setting["remote_census.response.surname"] = "response.data.surname"
+    Setting["remote_census.response.valid"] = "response.data.document_number"
+
+    savon.mock!
+  end
+
+  config.after(:each, :remote_census) do
+    savon.unmock!
   end
 
   # Allows RSpec to persist some state between runs in order to support
@@ -142,5 +175,5 @@ RSpec.configure do |config|
   config.expect_with(:rspec) { |c| c.syntax = :expect }
 end
 
-# Parallel build helper configuration for travis
+# Parallel build helper configuration for CI
 KnapsackPro::Adapters::RSpecAdapter.bind

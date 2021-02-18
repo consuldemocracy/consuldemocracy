@@ -189,6 +189,18 @@ describe User do
     end
   end
 
+  describe "sdg_manager?" do
+    it "is false when the user is not a sdg manager" do
+      expect(subject.sdg_manager?).to be false
+    end
+
+    it "is true when the user is a sdg manager" do
+      subject.save!
+      create(:sdg_manager, user: subject)
+      expect(subject.sdg_manager?).to be true
+    end
+  end
+
   describe "poll_officer?" do
     it "is false when the user is not a poll officer" do
       expect(subject.poll_officer?).to be false

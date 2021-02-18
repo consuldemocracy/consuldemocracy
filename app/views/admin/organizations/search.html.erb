@@ -1,15 +1,6 @@
 <h2><%= t("admin.organizations.search.title") %></h2>
 
-<div class="small-12 medium-6">
-  <%= form_for(Organization.new, url: search_admin_organizations_path, method: :get) do |f| %>
-    <div class="input-group">
-      <%= text_field_tag :term, "", placeholder: t("admin.organizations.index.search_placeholder") %>
-      <div class="input-group-button">
-        <%= f.submit t("admin.organizations.index.search"), class: "button" %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.organizations")) %>
 
 <div id="search-results">
   <% if @organizations.any? %>
@@ -44,17 +35,7 @@
             <% end %>
           </td>
           <td>
-            <% if can? :verify, organization %>
-              <%= link_to t("admin.organizations.index.verify"),
-                      verify_admin_organization_path(organization, request.query_parameters),
-                      method: :put, class: "button success small-5" %>
-            <% end %>
-
-            <% if can? :reject, organization %>
-              <%= link_to t("admin.organizations.index.reject"),
-                      reject_admin_organization_path(organization, request.query_parameters),
-                      method: :put, class: "button hollow alert small-5" %>
-            <% end %>
+            <%= render Admin::Organizations::TableActionsComponent.new(organization) %>
           </td>
         </tr>
       <% end %>

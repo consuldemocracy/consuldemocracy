@@ -1,0 +1,39 @@
+<% provide(:title) { goal.title } %>
+
+<div class="sdg-goal-show">
+  <%= back_link_to sdg_goals_path %>
+
+  <article class="sdg-goal sdg-goal-<%= code %>">
+    <header>
+      <h1><%= heading %></h1>
+    </header>
+    <div class="goal-description-content">
+      <div id="description_goal_<%= goal.code %>" class="goal-description short" data-toggler="short">
+        <%= long_description %>
+      </div>
+      <div class="read-more">
+        <a id="read_more_goal_<%= goal.code %>"
+           data-toggle="description_goal_<%= goal.code %> read_more_goal_<%= goal.code %> read_less_goal_<%= goal.code %>"
+           data-toggler="hide">
+          <%= t("sdg.goals.show.read_more", goal: goal.title) %>
+        </a>
+        <a id="read_less_goal_<%= goal.code %>"
+           data-toggle="description_goal_<%= goal.code %> read_more_goal_<%= goal.code %> read_less_goal_<%= goal.code %>"
+           data-toggler="hide"
+           class="hide">
+          <%= t("sdg.goals.show.read_less", goal: goal.title) %>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <%= render ::Widget::Feeds::ParticipationComponent.new(feeds) %>
+
+  <% if processes_feed %>
+    <div class="feeds-list">
+      <%= render ::Widget::Feeds::FeedComponent.new(processes_feed) %>
+    </div>
+  <% end %>
+
+  <%= render SDG::Goals::TargetsComponent.new(goal) %>
+</div>

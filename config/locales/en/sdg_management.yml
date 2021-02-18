@@ -1,0 +1,45 @@
+en:
+  sdg_management:
+    actions:
+      edit: "Manage goals and targets"
+    header:
+      title: "SDG content"
+    homepage:
+      title: "Homepage configuration"
+      create_card: "Create %{phase} card"
+      no_cards: "There are no cards for this phase"
+    menu:
+      budget_investments: "Participatory budgets"
+      debates: "Debates"
+      legislation_processes: "Collaborative legislation"
+      polls: "Polls"
+      proposals: "Proposals"
+      sdg_content: "Goals and Targets"
+      sdg_homepage: "SDG homepage"
+    local_targets:
+      create:
+        notice: "Local target created successfully"
+      destroy:
+        notice: "Local target deleted successfully"
+      edit:
+        title: "Edit local target"
+      form:
+        code: "Code must start with the selected target code followed by a dot"
+        description: "This description will be shown as help to users."
+      index:
+        new: "Create local target"
+      new:
+        title: "New local target"
+      update:
+        notice: "Local target updated successfully"
+    relations:
+      index:
+        filter: "Filter"
+        filters:
+          all: "All"
+          pending_sdg_review: "Pending"
+          sdg_reviewed: "Marked as reviewed"
+      update:
+        notice: "%{relatable} updated successfully"
+      update_and_review:
+        notice: "%{relatable} updated successfully and marked as reviewed"

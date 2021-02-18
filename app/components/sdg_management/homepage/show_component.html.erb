@@ -1,0 +1,15 @@
+<%= header %>
+
+<% phases.each do |phase| %>
+  <section class="phase-cards <%= phase.kind %>-cards">
+    <header>
+      <h3><%= phase.title %></h3>
+      <%= link_to create_card_text(phase), new_sdg_management_sdg_phase_widget_card_path(phase) %>
+    </header>
+
+    <%= render Admin::Widget::Cards::TableComponent.new(
+      phase.cards,
+      no_cards_message: no_cards_message
+    ) %>
+  </section>
+<% end %>

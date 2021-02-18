@@ -5,6 +5,7 @@ extends: "eslint:recommended"
 globals:
   $: readonly
   App: readonly
+  AmsifySuggestags: readonly
   annotator: readonly
   c3: readonly
   CKEDITOR: readonly

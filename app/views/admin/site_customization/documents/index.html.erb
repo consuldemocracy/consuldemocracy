@@ -26,11 +26,10 @@
           <td><%= link_to document.title, document.attachment.url, target: :blank %></td>
           <td>
             <div class="small-12 medium-6 column">
-              <%= link_to t("admin.shared.delete"),
-                          admin_site_customization_document_path(document),
-                          method: :delete,
-                          class: "button hollow alert",
-                          data: { confirm: t("admin.actions.confirm") } %>
+              <%= render Admin::TableActionsComponent.new(
+                actions: [:destroy],
+                destroy_path: admin_site_customization_document_path(document)
+              ) %>
             </div>
           </td>
         </tr>

@@ -223,7 +223,7 @@ describe "Admin activity" do
     scenario "Shows moderation activity from moderation screen" do
       user = create(:user)
 
-      visit moderation_users_path(name_or_email: user.username)
+      visit moderation_users_path(search: user.username)
 
       within("#moderation_users") do
         click_link "Block"

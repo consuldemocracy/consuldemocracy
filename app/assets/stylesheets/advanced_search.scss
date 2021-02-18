@@ -1,0 +1,50 @@
+.advanced-search {
+  float: left;
+  margin: $line-height 0;
+  position: inherit;
+
+  @include breakpoint(medium) {
+    float: right;
+    margin-bottom: 0;
+    margin-top: $line-height / 4;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.advanced-search-form {
+
+  @include breakpoint(large) {
+    .filter {
+      @include grid-column;
+      width: 25%;
+    }
+
+    .date-filters {
+      float: left;
+      width: 25%;
+
+      .filter {
+        width: 100%;
+      }
+
+      .custom-date-filters {
+        clear: both;
+      }
+    }
+
+    .submit {
+      width: 25%;
+    }
+  }
+
+  .general-search,
+  .filter,
+  .submit {
+    @include grid-column-gutter;
+  }
+
+  select {
+    height: $line-height * 2;
+  }
+}

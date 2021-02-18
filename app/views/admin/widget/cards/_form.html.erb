@@ -1,6 +1,7 @@
-<%= render "shared/globalize_locales", resource: @card %>
+<%= render "shared/globalize_locales", resource: card %>
 
-<%= translatable_form_for [:admin, @card] do |f| %>
+<%= translatable_form_for [namespace, card.cardable, card] do |f| %>
+  <%= render "shared/errors", resource: card %>
 
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
@@ -29,7 +30,7 @@
   </div>
 
   <div class="row">
-    <% unless @card.header? %>
+    <% unless card.header? %>
       <div class="column">
         <%= f.label :columns %>
         <p class="help-text"><%= t("admin.site_customization.pages.cards.columns_help") %></p>
@@ -40,16 +41,18 @@
     <% end %>
   </div>
 
-  <%= f.hidden_field :header, value: @card.header? %>
-  <%= f.hidden_field :site_customization_page_id, value: @card.site_customization_page_id %>
+  <%= f.hidden_field :header, value: card.header? %>
   <div class="row">
     <div class="image-form">
       <div class="image small-12 column">
-        <%= render "images/nested_image", imageable: @card, f: f %>
+        <%= render "images/nested_image", imageable: card, f: f %>
       </div>
     </div>
     <div class="column">
-      <%= f.submit(t("admin.homepage.#{action_name}.#{@card.header? ? "submit_header" : "submit_card"}"), class: "button success") %>
+      <%= f.submit(
+        t("admin.homepage.#{admin_submit_action(card)}.#{card.header? ? "submit_header" : "submit_card"}"),
+        class: "button success"
+      ) %>
     </div>
   </div>
 <% end %>

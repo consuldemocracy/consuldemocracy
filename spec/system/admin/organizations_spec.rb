@@ -36,7 +36,7 @@ describe "Admin::Organizations" do
       visit admin_organizations_path
       expect(page).to have_content("Get up, Stand up")
 
-      fill_in "term", with: "      "
+      fill_in "search", with: "      "
       click_button "Search"
 
       expect(page).to have_current_path(search_admin_organizations_path, ignore_query: true)
@@ -49,7 +49,7 @@ describe "Admin::Organizations" do
       visit search_admin_organizations_path
       expect(page).not_to have_content("Get up, Stand up")
 
-      fill_in "term", with: "Up, sta"
+      fill_in "search", with: "Up, sta"
       click_button "Search"
 
       within("#search-results") do
@@ -61,7 +61,7 @@ describe "Admin::Organizations" do
       visit search_admin_organizations_path
       expect(page).not_to have_content("Get up, Stand up")
 
-      fill_in "term", with: user.email
+      fill_in "search", with: user.email
       click_button "Search"
 
       within("#search-results") do
@@ -73,7 +73,7 @@ describe "Admin::Organizations" do
       visit search_admin_organizations_path
       expect(page).not_to have_content("Get up, Stand up")
 
-      fill_in "term", with: user.phone_number
+      fill_in "search", with: user.phone_number
       click_button "Search"
 
       within("#search-results") do

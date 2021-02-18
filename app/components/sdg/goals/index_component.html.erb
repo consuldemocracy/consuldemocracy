@@ -1,0 +1,21 @@
+<% provide(:title) { title } %>
+
+<main class="sdg-goals-index">
+  <header class="section-header">
+    <h1><%= title %></h1>
+  </header>
+
+  <%= render Shared::BannerComponent.new("sdg") %>
+
+  <%= link_list(*goal_links, class: "sdg-goal-list") %>
+
+  <% phases.each do |phase| %>
+    <section class="sdg-phase" id="sdg_phase_<%= phase.kind %>">
+      <header>
+        <h2 class="title"><%= phase.title %></h2>
+      </header>
+
+      <%= render "shared/cards", cards: phase.cards %>
+    </section>
+  <% end %>
+</main>

@@ -7,7 +7,7 @@ module Filterable
   end
 
   class_methods do
-    def filter(params)
+    def filter_by(params)
       resources = all
       params.each do |filter, value|
         if allowed_filter?(filter, value)
@@ -20,7 +20,7 @@ module Filterable
     def allowed_filter?(filter, value)
       return if value.blank?
 
-      ["official_level", "date_range"].include?(filter)
+      ["official_level", "date_range", "goal", "target"].include?(filter)
     end
   end
 end

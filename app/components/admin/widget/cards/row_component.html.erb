@@ -1,0 +1,22 @@
+<tr id="<%= dom_id(card) %>" class="homepage-card">
+  <td>
+    <%= card.label %><br>
+    <%= card.title %>
+  </td>
+  <td><%= card.description %></td>
+  <td>
+    <%= card.link_text %><br>
+    <%= card.link_url %>
+  </td>
+
+  <!-- remove conditional once specs have image validations -->
+  <td>
+    <% if card.image.present? %>
+      <%= link_to t("admin.shared.show_image"), card.image_url(:large),
+                  title: card.image.title, target: "_blank" %>
+    <% end %>
+  </td>
+  <td>
+    <%= render Admin::TableActionsComponent.new(card) %>
+  </td>
+</tr>

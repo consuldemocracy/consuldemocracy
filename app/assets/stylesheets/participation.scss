@@ -355,18 +355,6 @@
     display: inline;
   }
 
-  .whatsapp::before {
-    background-color: #43d854;
-    color: #fff;
-    display: inline-block;
-    font-size: rem-calc(30);
-    height: rem-calc(48);
-    padding-top: rem-calc(9);
-    text-align: center;
-    vertical-align: top;
-    width: rem-calc(48);
-  }
-
   .debate-info,
   .proposal-info,
   .investment-project-info,
@@ -408,10 +396,10 @@
     }
   }
 
-  .tags,
   .geozone {
 
     li {
+      display: inline-block;
       margin-bottom: 0;
     }
   }
@@ -487,8 +475,11 @@
   }
 
   .tags {
-    display: block;
-    margin-bottom: 0;
+    @extend %tags;
+  }
+
+  .tags,
+  .sdg-target-tag-list {
 
     a {
       margin-right: rem-calc(6);
@@ -603,12 +594,6 @@
     img {
       max-width: 12rem;
     }
-
-    .budget-investment-content {
-      ul {
-        margin-bottom: 0;
-      }
-    }
   }
 }
 
@@ -673,9 +658,11 @@
   }
 
   .tags {
-    display: block;
-    margin-bottom: 0;
+    @extend %tags;
+  }
 
+  .tags,
+  .sdg-target-tag-list {
     a {
       font-size: $tiny-font-size;
     }
@@ -910,7 +897,8 @@
   }
 }
 
-.help-header {
+.help-header,
+.section-header {
   background: #fafafa;
   border-bottom: 1px solid #eee;
   margin-top: -$line-height;
@@ -1126,12 +1114,10 @@
 
   .share-supported {
 
-    .ssb-twitter,
-    .ssb-facebook {
+    .social-share-button .ssb-icon {
       background: none;
       color: $text;
-      height: rem-calc(33) !important;
-
+      height: rem-calc(33);
 
       &::before {
         font-size: rem-calc(18);
@@ -1237,22 +1223,6 @@
     color: $brand;
     margin-bottom: rem-calc(3);
     text-decoration: none;
-  }
-
-  .social-share-button a {
-    color: #fff;
-
-    &.social-share-button-twitter:hover {
-      color: #40a2d1;
-    }
-
-    &.social-share-button-facebook:hover {
-      color: #354f88;
-    }
-
-    &.social-share-button-telegram:hover {
-      color: #ce3e26;
-    }
   }
 }
 
@@ -1826,7 +1796,7 @@
       padding: 0 $line-height / 2 0 0;
     }
 
-    img {
+    .image-container img {
       height: 100%;
       max-width: none;
       position: absolute;

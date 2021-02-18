@@ -24,7 +24,7 @@
     <tbody>
       <% @headings.each do |heading| %>
         <tr id="<%= dom_id(heading) %>" class="heading">
-          <td><%= link_to heading.name, edit_admin_budget_group_heading_path(@budget, @group, heading) %></td>
+          <td><%= heading.name %></td>
           <td><%= @budget.formatted_heading_price(heading) %></td>
           <% if @budget.approval_voting? %>
             <td><%= heading.max_ballot_lines %></td>
@@ -34,13 +34,7 @@
             <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
           </td>
           <td>
-            <%= link_to t("admin.actions.edit"),
-                        edit_admin_budget_group_heading_path(@budget, @group, heading),
-                        class: "button hollow" %>
-            <%= link_to t("admin.actions.delete"),
-                        admin_budget_group_heading_path(@budget, @group, heading),
-                        method: :delete,
-                        class: "button hollow alert" %>
+            <%= render Admin::TableActionsComponent.new(heading) %>
           </td>
         </tr>
       <% end %>

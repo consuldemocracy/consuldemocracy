@@ -15,6 +15,7 @@ Bundler/DuplicatedGem:
 
 Bundler/OrderedGems:
   Enabled: true
+  ConsiderPunctuation: true
 
 Capybara/CurrentPathExpectation:
   Enabled: true
@@ -25,7 +26,13 @@ Capybara/FeatureMethods:
     - scenario
     - xscenario
 
+Capybara/VisibilityMatcher:
+  Enabled: true
+
 FactoryBot/AttributeDefinedStatically:
+  Enabled: true
+
+FactoryBot/FactoryClassName:
   Enabled: true
 
 Layout/AssignmentIndentation:
@@ -165,7 +172,13 @@ Layout/TrailingWhitespace:
 Lint/AmbiguousRegexpLiteral:
   Enabled: true
 
+Lint/ConstantDefinitionInBlock:
+  Enabled: true
+
 Lint/DuplicateMethods:
+  Enabled: true
+
+Lint/EmptyFile:
   Enabled: true
 
 Lint/LiteralAsCondition:
@@ -253,7 +266,6 @@ Rails/OutputSafety:
   Severity: warning
   Exclude:
     - app/helpers/text_with_links_helper.rb
-    - config/initializers/escape_javascript_fix.rb
 
 Rails/PluralizationGrammar:
   Enabled: true
@@ -288,6 +300,13 @@ Rails/SkipsModelValidations:
 Rails/TimeZone:
   Enabled: true
 
+Rails/UniqBeforePluck:
+  Enabled: true
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: true
+  Severity: refactor
+
 Rails/UnknownEnv:
   Enabled: true
   Environments:
@@ -306,6 +325,9 @@ RSpec/AroundBlock:
 RSpec/BeforeAfterAll:
   Enabled: true
 
+RSpec/ContextMethod:
+  Enabled: true
+
 RSpec/DescribedClass:
   Enabled: true
   EnforcedStyle: explicit
@@ -314,6 +336,12 @@ RSpec/EmptyExampleGroup:
   Enabled: true
   Exclude:
     - spec/factories/**/*
+
+RSpec/EmptyHook:
+  Enabled: true
+
+RSpec/EmptyLineAfterExample:
+  Enabled: true
 
 RSpec/EmptyLineAfterExampleGroup:
   Enabled: true
@@ -332,7 +360,6 @@ RSpec/HookArgument:
 RSpec/InstanceVariable:
   Enabled: true
   Exclude:
-    - spec/controllers/concerns/has_filters_spec.rb
     - spec/controllers/concerns/has_orders_spec.rb
 
 RSpec/LetBeforeExamples:
@@ -348,6 +375,12 @@ RSpec/OverwritingSetup:
   Enabled: true
 
 RSpec/RepeatedExample:
+  Enabled: true
+
+RSpec/RepeatedExampleGroupBody:
+  Enabled: true
+
+RSpec/RepeatedExampleGroupDescription:
   Enabled: true
 
 RSpec/ScatteredLet:
@@ -368,7 +401,13 @@ Security/JSONLoad:
 Security/YAMLLoad:
   Enabled: true
 
+Style/AccessorGrouping:
+  Enabled: true
+
 Style/AndOr:
+  Enabled: true
+
+Style/ArrayCoercion:
   Enabled: true
 
 Style/BlockDelimiters:
@@ -405,6 +444,9 @@ Style/PercentLiteralDelimiters:
   Enabled: true
 
 Style/Proc:
+  Enabled: true
+
+Style/RedundantFileExtensionInRequire:
   Enabled: true
 
 Style/RedundantFreeze:

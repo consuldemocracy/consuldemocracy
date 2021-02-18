@@ -40,7 +40,7 @@
   <div class="row">
     <div id="debates" class="debates-list small-12 medium-9 column">
 
-      <%= render "shared/banner" %>
+      <%= render Shared::BannerComponent.new("debates") %>
 
       <% unless @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <%= render "shared/advanced_search", search_path: debates_path(page: 1) %>
+      <%= render Shared::AdvancedSearchComponent.new %>
 
       <%= render "shared/order_links", i18n_namespace: "debates.index" %>
 
@@ -91,7 +91,7 @@
 
       <aside class="margin-bottom">
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
-        <%= render "shared/tag_cloud", taggable: "debate" %>
+        <%= render "shared/tag_cloud", taggable: "Debate" %>
       </aside>
     </div>
 

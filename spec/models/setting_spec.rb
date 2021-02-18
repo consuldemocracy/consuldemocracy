@@ -53,6 +53,12 @@ describe Setting do
       expect(homepage_setting.type).to eq "homepage"
     end
 
+    it "returns the key prefix for 'sdg' settings" do
+      sdg_setting = Setting.create!(key: "sdg.whatever")
+
+      expect(sdg_setting.type).to eq "sdg"
+    end
+
     it "returns the key prefix for 'remote_census.general' settings" do
       remote_census_general_setting = Setting.create!(key: "remote_census.general.whatever")
       expect(remote_census_general_setting.type).to eq "remote_census.general"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user.try(:id) %>">
+<html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user&.id %>">
   <head>
     <%= render "layouts/common_head", default_title: setting["org_name"] %>
     <%= render "layouts/tracking_data" %>
@@ -15,8 +15,6 @@
   </head>
   <body class="<%= yield (:body_class) %>">
     <%= raw setting["html.per_page_code_body"] %>
-
-    <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
 
     <div class="wrapper <%= yield (:wrapper_class) %>">
       <%= render "layouts/header", with_subnavigation: true %>
@@ -44,8 +42,6 @@
       <%= render "layouts/flash" %>
 
       <%= yield %>
-
-      <div class="push"></div>
     </div>
     <div class="footer">
       <%= render "layouts/footer" %>

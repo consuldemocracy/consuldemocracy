@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 125" width="125" height="125" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);" preserveAspectRatio="xMidYMid meet">
+  <g>
+    <g style="display: block;" transform="matrix(1,0,0,1,0,0)" opacity="1">
+      <rect width="125" height="125" fill="#19486a"/>
+    </g>
+    <g style="display: block;" transform="matrix(0.9999977946281433,0,0,0.9999977946281433,-32,-55.86207580566406)" opacity="1">
+      <g opacity="1" transform="matrix(1,0,0,1,81.75,74.11299896240234)">
+        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="5" d=" M12,0 C24.141799926757812,0 34,9.858200073242188 34,22 C34,34.14179992675781 24.141799926757812,44 12,44 C-0.14180000126361847,44 -10,34.14179992675781 -10,22 C-10,9.858200073242188 -0.14180000126361847,0 12,0z"/>
+      </g>
+      <g opacity="1" transform="matrix(1,0,0,1,81.75,74.11299896240234)">
+        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="5" d=" M-1,42 C11.141799926757812,42 21,51.85820007324219 21,64 C21,76.14179992675781 11.141799926757812,86 -1,86 C-13.141799926757812,86 -23,76.14179992675781 -23,64 C-23,51.85820007324219 -13.141799926757812,42 -1,42z"/>
+      </g>
+      <g opacity="1" transform="matrix(1,0,0,1,108.51200103759766,74.11300659179688)">
+        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="5" d=" M-1,42 C11.141799926757812,42 21,51.85820007324219 21,64 C21,76.14179992675781 11.141799926757812,86 -1,86 C-13.141799926757812,86 -23,76.14179992675781 -23,64 C-23,51.85820007324219 -13.141799926757812,42 -1,42z"/>
+      </g>
+      <g opacity="1" transform="matrix(1,0,0,1,117.68799591064453,49.16899871826172)">
+        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="5" d=" M-1.5,40 C10.641799926757812,40 20.5,49.85820007324219 20.5,62 C20.5,74.14179992675781 10.641799926757812,84 -1.5,84 C-13.641799926757812,84 -23.5,74.14179992675781 -23.5,62 C-23.5,49.85820007324219 -13.641799926757812,40 -1.5,40z"/>
+      </g>
+      <g opacity="1" transform="matrix(1,0,0,1,77.32499694824219,49.334999084472656)">
+        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="5" d=" M-5.5,40 C6.6417999267578125,40 16.5,49.85820007324219 16.5,62 C16.5,74.14179992675781 6.6417999267578125,84 -5.5,84 C-17.641799926757812,84 -27.5,74.14179992675781 -27.5,62 C-27.5,49.85820007324219 -17.641799926757812,40 -5.5,40z"/>
+      </g>
+    </g>
+  </g>
+</svg>

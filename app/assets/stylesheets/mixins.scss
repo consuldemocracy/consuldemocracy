@@ -1,9 +1,9 @@
 // Table of Contents
 //
 // 01. Logo
-// 02. Side menu and content
-// 03. Orbit bullets
-// 04. Direct uploads
+// 02. Orbit bullets
+// 03. Direct uploads
+// 04. Admin layout
 // ------------------
 
 // 01. Logo
@@ -22,30 +22,8 @@
   }
 }
 
-// 02. Side menu and content
-// -------------------------
-
-@mixin side-menu-and-content {
-  display: flex;
-
-  > :first-child {
-    flex: 25%;
-    min-width: 250px;
-
-    > :first-child {
-      height: 100%;
-    }
-  }
-
-  > :last-child {
-    flex: 75%;
-    overflow-x: auto;
-    padding: $line-height !important;
-  }
-}
-
-// 03. Orbit bullet
-// ----------------
+// 02. Orbit bullets
+// -----------------
 
 @mixin orbit-bullets {
   @include disable-mouse-outline;
@@ -72,7 +50,7 @@
   }
 }
 
-// 04. Direct uploads
+// 03. Direct uploads
 // ------------------
 
 @mixin direct-uploads {
@@ -149,17 +127,167 @@
   }
 }
 
+// 04. Admin layout
+// ----------------
+
+@mixin admin-layout {
+
+  > header {
+    margin-bottom: 0;
+  }
+
+  > .menu-and-content {
+    flex: 1;
+  }
+}
+
+%font-icon {
+  @extend %fa-icon;
+  font-family: "Font Awesome 5 Free";
+  margin-right: rem-calc(4);
+  vertical-align: middle;
+}
+
+%svg-icon {
+  background: currentcolor;
+  content: "";
+  height: 1em;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  width: 1em;
+}
+
+%admin-menu-icon {
+  font-size: rem-calc(20);
+  margin-left: rem-calc(8);
+  margin-right: rem-calc(10);
+}
+
 @mixin has-fa-icon($icon, $style) {
   @extend .fa-#{$icon};
 
   &::before {
-    @extend %fa-icon;
-    font-family: "Font Awesome 5 Free";
+    @extend %font-icon;
 
-    @if $style == "r" {
-      font-weight: normal;
-    } @else {
+    @if $style == "solid" {
       font-weight: bold;
+    } @else {
+      font-weight: normal;
     }
+
+    @if $style == "brands" {
+      font-family: "Font Awesome 5 Brands";
+    }
+  }
+
+  @supports (mask-image: url()) {
+
+    &::before {
+      @extend %svg-icon;
+      mask-image: image-url("fontawesome/#{$style}/#{$icon}.svg");
+    }
+  }
+}
+
+@mixin bottom-tooltip {
+  @include tooltip;
+  line-height: $global-lineheight;
+  margin-top: $line-height / 8;
+  width: max-content;
+
+  &::before {
+    @include css-triangle($tooltip-pip-width, $tooltip-background-color, up);
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+%button {
+  font-size: $base-font-size;
+
+  &:focus,
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+@mixin regular-button($color: $brand) {
+  @include button($background: $color);
+  @extend %button;
+}
+
+@mixin hollow-button($color: $link) {
+  @include button($style: hollow, $background: $color);
+  @extend %button;
+  margin-bottom: 0;
+}
+
+@mixin header-font-size($heading-tag) {
+  @each $size, $headers in $header-styles {
+    @include breakpoint($size) {
+      font-size: rem-calc(map-get(map-get($headers, $heading-tag), font-size));
+    }
+  }
+}
+
+@mixin sdg-goal-list($spacing: 1ch) {
+  $min-spacing: $sdg-icon-min-width / 10;
+  $max-spacing: #{"Max(#{$min-spacing}, #{$spacing})"};
+
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: -$spacing 0 $line-height / 3 -#{$spacing};
+  margin-left: calc(-1 * #{$max-spacing});
+  margin-top: calc(-1 * #{$max-spacing});
+  width: calc(100% + #{$spacing});
+  width: calc(100% + #{$max-spacing});
+
+  > * {
+    margin-bottom: 0;
+    margin-left: $spacing;
+    margin-left: $max-spacing;
+    margin-top: $spacing;
+    margin-top: $max-spacing;
+  }
+
+  a:hover .sdg-goal-icon {
+    filter: brightness(90%);
+  }
+}
+
+%sdg-goal-list {
+  @include sdg-goal-list;
+}
+
+%tags {
+  margin-bottom: 0;
+  margin-left: 0;
+
+  li {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  a,
+  span {
+    @extend %tag;
+  }
+}
+
+%tag {
+  background: #ececec;
+  border-radius: rem-calc(6);
+  color: $text;
+  display: inline-block;
+  font-size: $small-font-size;
+  margin-bottom: $line-height / 3;
+  padding: $line-height / 4 $line-height / 3;
+  text-decoration: none;
+
+  &:hover {
+    background: #e0e0e0;
+    text-decoration: none;
   }
 }

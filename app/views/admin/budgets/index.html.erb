@@ -14,10 +14,7 @@
       <tr>
         <th><%= t("admin.budgets.index.table_name") %></th>
         <th><%= t("admin.budgets.index.table_phase") %></th>
-        <th><%= t("admin.budgets.index.table_investments") %></th>
-        <th><%= t("admin.budgets.index.table_edit_groups") %></th>
-        <th><%= t("admin.budgets.index.table_edit_budget") %></th>
-        <th><%= t("admin.budgets.index.table_admin_ballots") %></th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -30,22 +27,7 @@
             <%= t("budgets.phase.#{budget.phase}") %>
           </td>
           <td>
-            <%= link_to t("admin.budgets.index.budget_investments"),
-                           admin_budget_budget_investments_path(budget_id: budget.id),
-                           class: "button hollow medium" %>
-          </td>
-          <td class="small">
-            <%= link_to t("admin.budgets.index.edit_groups"), admin_budget_groups_path(budget) %>
-          </td>
-          <td class="small">
-            <%= link_to t("admin.budgets.index.edit_budget"), edit_admin_budget_path(budget) %>
-          </td>
-          <td class="small">
-            <% if budget.poll.present? %>
-              <%= link_to t("admin.budgets.index.admin_ballots"), admin_poll_booth_assignments_path(budget.poll) %>
-            <% else %>
-              <%= link_to_create_budget_poll(budget) %>
-            <% end %>
+            <%= render Admin::Budgets::TableActionsComponent.new(budget) %>
           </td>
         </tr>
       <% end %>

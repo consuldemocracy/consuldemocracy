@@ -1,12 +1,12 @@
 <h3><%= t("admin.poll_shifts.new.shifts") %></h3>
-<table class="fixed">
+<table>
   <thead>
     <tr>
       <th><%= t("admin.poll_shifts.new.date") %></th>
       <th><%= t("admin.poll_shifts.new.officer") %></th>
       <th><%= t("admin.poll_shifts.new.table_email") %></th>
       <th><%= Poll::Shift.human_attribute_name(:task) %></th>
-      <th class="small-3"><%= t("admin.poll_shifts.new.shift") %></th>
+      <th><%= t("admin.poll_shifts.new.shift") %></th>
     </tr>
   </thead>
   <tbody>
@@ -17,10 +17,10 @@
         <td><%= shift.officer_email %></td>
         <td><%= t("admin.poll_shifts.#{shift.task}") %></td>
         <td>
-          <%= link_to t("admin.poll_shifts.new.remove_shift"),
-                      admin_booth_shift_path(@booth, shift),
-                      method: :delete,
-                      class: "button hollow alert expanded" %>
+          <%= render Admin::TableActionsComponent.new(shift,
+            actions: [:destroy],
+            destroy_text: t("admin.poll_shifts.new.remove_shift")
+          ) %>
         </td>
       </tr>
     <% end %>

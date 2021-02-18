@@ -1,0 +1,70 @@
+<div class="relative">
+  <%= link_to t("shared.advanced_search.title"), "#advanced_search_form", id: "js-advanced-search-title", class: "advanced-search small" %>
+</div>
+
+<div class="row advanced-search-form">
+  <%= form_tag request.path, id: "advanced_search_form", method: :get do %>
+    <div id="js-advanced-search" data-advanced-search-terms="<%= advanced_search.present? %>" style="display: none">
+
+      <div class="general-search">
+        <label for="search">
+          <%= t("shared.advanced_search.general") %>
+        </label>
+        <%= text_field_tag "search", params[:search],
+                           placeholder: t("shared.advanced_search.general_placeholder") %>
+      </div>
+
+      <div class="date-filters">
+        <div class="filter">
+          <label for="js-advanced-search-date-min"><%= t("shared.advanced_search.date") %></label>
+          <%= select_tag("advanced_search[date_min]", date_range_options,
+                        include_blank: t("shared.advanced_search.date_range_blank"),
+                        id: "js-advanced-search-date-min") %>
+        </div>
+
+        <div id="js-custom-date" class="custom-date-filters" style="display: none">
+          <div class="filter">
+            <label for="advanced_search_date_min">
+              <%= t("shared.advanced_search.from") %> (<%= t("shared.advanced_search.date_placeholder") %>)
+            </label>
+            <%= text_field_tag "advanced_search[date_min]",
+                                advanced_search[:date_min],
+                                class: "js-calendar" %>
+          </div>
+          <div class="filter">
+            <label for="advanced_search_date_max">
+              <%= t("shared.advanced_search.to") %> (<%= t("shared.advanced_search.date_placeholder") %>)
+            </label>
+            <%= text_field_tag "advanced_search[date_max]",
+                                advanced_search[:date_max],
+                                class: "js-calendar" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter">
+        <label for="advanced_search_official_level"><%= t("shared.advanced_search.author_type") %></label>
+        <%= select_tag("advanced_search[official_level]", official_level_search_options,
+                      include_blank: t("shared.advanced_search.author_type_blank")) %>
+      </div>
+
+      <% if sdg? %>
+        <div class="filter">
+          <label for="advanced_search_goal"><%= t("shared.advanced_search.goal") %></label>
+          <%= select_tag("advanced_search[goal]", goal_options,
+                        include_blank: t("shared.advanced_search.goal_blank")) %>
+        </div>
+        <div class="filter">
+          <label for="advanced_search_target"><%= t("shared.advanced_search.target") %></label>
+          <%= select_tag("advanced_search[target]", target_options,
+                        include_blank: t("shared.advanced_search.target_blank")) %>
+        </div>
+      <% end %>
+
+      <div class="submit">
+        <%= submit_tag t("shared.advanced_search.search"), class: "button expanded" %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

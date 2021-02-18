@@ -40,8 +40,10 @@
     },
     renderAnnotationComments: function(event) {
       if (event.offset) {
+        var default_top = $(".calc-comments").offset().top + $(".calc-comments .draft-panel").outerHeight();
+
         $("#comments-box").css({
-          top: event.offset - $(".calc-comments").offset().top
+          top: event.offset - default_top
         });
       }
       if (App.LegislationAnnotatable.isMobile()) {

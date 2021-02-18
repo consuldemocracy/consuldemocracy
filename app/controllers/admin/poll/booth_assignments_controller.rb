@@ -1,5 +1,5 @@
 class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
-  before_action :load_poll, except: [:create, :destroy]
+  before_action :load_poll, except: [:create]
 
   def index
     @booth_assignments = @poll.booth_assignments.includes(:booth).order("poll_booths.name")
@@ -36,9 +36,8 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   end
 
   def destroy
-    @poll = Poll.find(booth_assignment_params[:poll_id])
-    @booth = Poll::Booth.find(booth_assignment_params[:booth_id])
-    @booth_assignment = ::Poll::BoothAssignment.find(params[:id])
+    @booth_assignment = @poll.booth_assignments.find(params[:id])
+    @booth = @booth_assignment.booth
 
     @booth_assignment.destroy!
 

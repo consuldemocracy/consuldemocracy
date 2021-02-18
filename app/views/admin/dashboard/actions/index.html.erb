@@ -17,7 +17,7 @@
       <th class="text-center"><%= t("admin.dashboard.actions.index.day_offset") %></th>
       <th class="text-center"><%= t("admin.dashboard.actions.index.required_supports") %></th>
       <th class="text-center"><%= t("admin.dashboard.actions.index.order") %></th>
-      <th class="text-right small-3"><%= t("admin.actions.actions") %></th>
+      <th><%= t("admin.actions.actions") %></th>
     </tr>
   </thead>
 
@@ -31,15 +31,8 @@
         <td class="text-center"><%= number_with_delimiter(action.day_offset, delimiter: ".") %></td>
         <td class="text-center"><%= number_with_delimiter(action.required_supports, delimiter: ".") %></td>
         <td class="text-center"><%= action.order %></td>
-        <td class="text-right">
-          <%= link_to t("admin.dashboard.actions.index.edit"),
-                      edit_admin_dashboard_action_path(action),
-                      class: "button hollow" %>
-          <%= link_to t("admin.dashboard.actions.index.delete"),
-                      admin_dashboard_action_path(action),
-                      method: :delete,
-                      class: "button hollow alert",
-                      data: { confirm: t("admin.actions.confirm") } %>
+        <td>
+          <%= render Admin::TableActionsComponent.new(action) %>
         </td>
       </tr>
     <% end %>

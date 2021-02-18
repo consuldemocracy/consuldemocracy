@@ -1,0 +1,41 @@
+<%= header do %>
+  <%= link_to t("sdg_management.local_targets.index.new"),
+              new_sdg_management_local_target_path,
+              class: "new-link" %>
+<% end %>
+
+<%= render SDGManagement::SubnavigationComponent.new(current: :local_targets) do %>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th id="local-target-title" scope="col"><%= attribute_name(:title) %></th>
+        <th id="local-target-actions" scope="col"><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% local_targets.group_by(&:target).map do |target, local_targets| %>
+        <tr class="target-header">
+          <th id="<%= header_id(target) %>" colspan="3" scope="colgroup">
+            <%= target.code %> <%= target.title %>
+          </th>
+        </tr>
+
+        <% local_targets.each do |local_target| %>
+          <tr id="<%= dom_id(local_target) %>" class="local-target">
+            <th headers="<%= header_id(target) %>" id="<%= header_id(local_target) %>">
+              <%= local_target.code %>
+            </th>
+            <td headers="<%= header_id(target) %> <%= header_id(local_target) %> local-target-title">
+              <%= local_target.title %>
+            </td>
+            <td headers="<%= header_id(local_target) %> local-target-actions">
+              <%= actions(local_target) %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

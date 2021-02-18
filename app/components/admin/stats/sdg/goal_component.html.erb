@@ -1,0 +1,14 @@
+<div class="sdg-goal-stats">
+
+  <h3><%= goal.code_and_title %></h3>
+
+  <div class="stats-numbers">
+    <% stats.each do |text, amount, options = {}| %>
+      <div class="small-12 medium-4 column">
+        <%= tag.p(options) do %>
+          <%= text %> <br><span class="number"><%= amount %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

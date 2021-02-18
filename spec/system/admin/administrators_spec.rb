@@ -19,7 +19,7 @@ describe "Admin administrators" do
   end
 
   scenario "Create Administrator", :js do
-    fill_in "name_or_email", with: user.email
+    fill_in "search", with: user.email
     click_button "Search"
 
     expect(page).to have_content user.name
@@ -66,7 +66,7 @@ describe "Admin administrators" do
       expect(page).to have_content(administrator1.name)
       expect(page).to have_content(administrator2.name)
 
-      fill_in "name_or_email", with: " "
+      fill_in "search", with: " "
       click_button "Search"
 
       expect(page).to have_content("Administrators: User search")
@@ -79,10 +79,11 @@ describe "Admin administrators" do
       expect(page).to have_content(administrator1.name)
       expect(page).to have_content(administrator2.name)
 
-      fill_in "name_or_email", with: "Sumn"
+      fill_in "search", with: "Sumn"
       click_button "Search"
 
       expect(page).to have_content("Administrators: User search")
+      expect(page).to have_field "search", with: "Sumn"
       expect(page).to have_content(administrator1.name)
       expect(page).not_to have_content(administrator2.name)
     end
@@ -91,10 +92,11 @@ describe "Admin administrators" do
       expect(page).to have_content(administrator1.email)
       expect(page).to have_content(administrator2.email)
 
-      fill_in "name_or_email", with: administrator2.email
+      fill_in "search", with: administrator2.email
       click_button "Search"
 
       expect(page).to have_content("Administrators: User search")
+      expect(page).to have_field "search", with: administrator2.email
       expect(page).to have_content(administrator2.email)
       expect(page).not_to have_content(administrator1.email)
     end

@@ -263,7 +263,7 @@ FactoryBot.define do
     reason { "unfeasible" }
   end
 
-  factory :valuator_group, class: ValuatorGroup do
+  factory :valuator_group, class: "ValuatorGroup" do
     sequence(:name) { |n| "Valuator Group #{n}" }
   end
 

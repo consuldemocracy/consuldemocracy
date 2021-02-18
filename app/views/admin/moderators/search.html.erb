@@ -8,9 +8,9 @@
 
     <table id="moderators">
       <thead>
-        <th scope="col"><%= t("admin.moderators.index.name") %></th>
-        <th scope="col" class="small-6"><%= t("admin.moderators.index.email") %></th>
-        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+        <th scope="col"><%= Moderator.human_attribute_name(:name) %></th>
+        <th scope="col" class="small-6"><%= Moderator.human_attribute_name(:email) %></th>
+        <th scope="col"><%= t("admin.shared.actions") %></th>
       </thead>
       <tbody>
       <% @users.each do |user| %>
@@ -18,19 +18,7 @@
           <td><%= user.name %></td>
           <td><%= user.email %></td>
           <td>
-            <% if user.moderator? && user.moderator.persisted? %>
-              <%= link_to t("admin.moderators.moderator.delete"),
-                          admin_moderator_path(user.moderator),
-                          method: :delete,
-                          class: "button hollow alert expanded" %>
-            <% else %>
-              <%= link_to t("admin.moderators.moderator.add"),
-                          { controller: "admin/moderators",
-                            action: :create,
-                            user_id: user },
-                          method: :post,
-                          class: "button success expanded" %>
-            <% end %>
+            <%= render Admin::Roles::TableActionsComponent.new(user.moderator || user.build_moderator) %>
           </td>
         </tr>
       <% end %>

@@ -33,10 +33,8 @@
         $("#js-columns-selector-wrapper").append(item);
       });
     },
-    toggleOptions: function(event) {
-      event.preventDefault();
-      $("#js-columns-selector").toggleClass("hollow");
-      $("#js-columns-selector-wrapper").toggleClass("hidden");
+    toggleOptions: function(button) {
+      button.attr("aria-expanded", !JSON.parse(button.attr("aria-expanded")));
     },
     hideAll: function() {
       $("[data-field]").addClass("hidden");
@@ -73,8 +71,8 @@
       App.ColumnsSelector.initChecks();
       App.ColumnsSelector.initColumns();
       $("#js-columns-selector").on({
-        click: function(event) {
-          App.ColumnsSelector.toggleOptions(event);
+        click: function() {
+          App.ColumnsSelector.toggleOptions($(this));
         }
       });
       $(".column-selector-item input").on({

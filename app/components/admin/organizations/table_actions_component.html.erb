@@ -1,0 +1,13 @@
+<%= render Admin::TableActionsComponent.new(actions: []) do %>
+  <% if can_verify? %>
+    <%= link_to t("admin.organizations.index.verify"),
+      verify_admin_organization_path(organization, request.query_parameters),
+      method: :put, class: "verify-link" %>
+  <% end %>
+
+  <% if can_reject? %>
+    <%= link_to t("admin.organizations.index.reject"),
+      reject_admin_organization_path(organization, request.query_parameters),
+      method: :put, class: "reject-link" %>
+  <% end %>
+<% end %>
