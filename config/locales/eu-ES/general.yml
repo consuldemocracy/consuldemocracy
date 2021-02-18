@@ -209,10 +209,10 @@ eu:
       budgets: Partaidetzazko aurrekontuak
       notification_item:
         new_notifications:
+          zero: "Ez duzu jakinarazpen berririk"
           one: Jakinarazpen bat duzu
           other: '%{count} jakinarazpen berri dituzu'
         notifications: Jakinarazpenak
-        no_notifications: "Ez duzu jakinarazpen berririk"
   notifications:
     index:
       empty_notifications: Ez duzu jakinarazpen berririk.
@@ -539,7 +539,6 @@ eu:
     facebook: "%{org} Facebooka"
     twitter: "%{org} Twitterra"
     youtube: "%{org} YouTubea"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegrama"
     instagram: "%{org} Instagrama"
   stats:
