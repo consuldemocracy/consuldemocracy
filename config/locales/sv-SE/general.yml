@@ -246,10 +246,10 @@ sv:
       budgets: Medborgarbudget
       notification_item:
         new_notifications:
+          zero: "Du har inga nya aviseringar"
           one: Du har en ny avisering
           other: Du har %{count} nya aviseringar
         notifications: Aviseringar
-        no_notifications: "Du har inga nya aviseringar"
   notifications:
     index:
       empty_notifications: Du har inga nya aviseringar.
@@ -774,7 +774,6 @@ sv:
     facebook: "%{org} på Facebook"
     twitter: "%{org} på Twitter"
     youtube: "%{org} på YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} på Telegram"
     instagram: "%{org} på Instagram"
   stats:
