@@ -48,5 +48,42 @@ describe "SDG homepage configuration", :js do
         expect(page).not_to have_content "My monitoring card"
       end
     end
+
+    scenario "Create header card" do
+      visit sdg_management_homepage_path
+      click_link "Create header"
+
+      within(".translatable-fields") { fill_in "Title", with: "My header" }
+      click_button "Create card"
+
+      within(".sdg-header") do
+        expect(page).to have_content "My header"
+        expect(page).not_to have_content "Create header"
+      end
+    end
+
+    scenario "Update header card" do
+      create(:widget_card, cardable: WebSection.find_by!(name: "sdg"))
+      visit sdg_management_homepage_path
+      within ".sdg-header" do
+        click_link "Edit"
+      end
+
+      within(".translatable-fields") { fill_in "Title", with: "My header update" }
+      click_button "Save card"
+
+      expect(page).to have_content "My header update"
+    end
+
+    scenario "Remove header card" do
+      create(:widget_card, title: "SDG Header", cardable: WebSection.find_by!(name: "sdg"))
+      visit sdg_management_homepage_path
+
+      within ".sdg-header" do
+        accept_confirm { click_link "Delete" }
+      end
+
+      expect(page).not_to have_content "SDG Header"
+    end
   end
 end

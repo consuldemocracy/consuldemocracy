@@ -1,9 +1,10 @@
 class SDGManagement::Homepage::ShowComponent < ApplicationComponent
   include Header
 
-  attr_reader :phases
+  attr_reader :header_card, :phases
 
-  def initialize(phases)
+  def initialize(header_card, phases)
+    @header_card = header_card
     @phases = phases
   end
 
