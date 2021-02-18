@@ -255,11 +255,11 @@ sr:
       budgets: Партиципаторно буџетирање
       notification_item:
         new_notifications:
+          zero: "Немате нових обавештења"
           one: Имате ново обавештење
           few: Имате %{count} нових обавештења
           other: Имате %{count} нових обавештења
         notifications: Обавештења
-        no_notifications: "Немате нових обавештења"
   notifications:
     index:
       empty_notifications: Немате нових обавештења.
@@ -803,7 +803,6 @@ sr:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
