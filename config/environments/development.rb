@@ -79,7 +79,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :address              => 'mail.sagasoluciones.com',
     :port                 => 2525,
-    :domain               => 'sagasoluciones.com',
+    :domain               => 'consul.sagasoluciones.com',
     :user_name            => 'mailserver-ocms@sagasoluciones.com',
     :password             => 'M@ailServer17',
     :authentication => :plain,
