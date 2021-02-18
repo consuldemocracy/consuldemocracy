@@ -256,11 +256,11 @@ ro:
       budgets: Bugetare participativă
       notification_item:
         new_notifications:
+          zero: "Nu aveți notificări noi"
           one: Aveți o notificare nouă
           few: Aveți %{count} notificări noi
           other: Aveți %{count} notificări noi
         notifications: Notificări
-        no_notifications: "Nu aveți notificări noi"
       sdg: "ODD (Obiective de dezvoltare durabilă)"
   notifications:
     index:
@@ -809,7 +809,6 @@ ro:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
