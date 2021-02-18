@@ -209,10 +209,10 @@ it:
       budgets: Bilancio partecipativo
       notification_item:
         new_notifications:
+          zero: "Non hai nuove notifiche"
           one: Hai una nuova notifica
           other: Hai %{count} nuove notifiche
         notifications: Notifiche
-        no_notifications: "Non hai nuove notifiche"
   notifications:
     index:
       empty_notifications: Non hai nuove notifiche.
@@ -595,7 +595,6 @@ it:
     facebook: "Facebook di %{org}"
     twitter: "Twitter di %{org}"
     youtube: "YouTube di %{org}"
-    whatsapp: WhatsApp
     telegram: "Telegram di %{org}"
     instagram: "Instagram di %{org}"
   stats:
