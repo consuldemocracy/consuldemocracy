@@ -209,10 +209,10 @@ sq:
       budgets: Buxhetet  pjesëmarrës
       notification_item:
         new_notifications:
+          zero: "Ju nuk keni njoftime të reja"
           one: Ju keni një njoftim të ri
           other: Ju keni %{count} njoftim të reja
         notifications: Njoftimet
-        no_notifications: "Ju nuk keni njoftime të reja"
   notifications:
     index:
       empty_notifications: Ju nuk keni njoftime të reja
@@ -545,7 +545,6 @@ sq:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
     youtube: "YouTube %{org}"
-    whatsapp: WhatsApp
     telegram: "Telegram %{org}"
     instagram: " Instagram %{org}"
   stats:
