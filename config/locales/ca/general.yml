@@ -246,10 +246,10 @@ ca:
       budgets: Pressupostos ciutadans
       notification_item:
         new_notifications:
+          zero: "No tens notificacions noves"
           one: Tens una nova notificació
           other: Tens %{count} notificacions noves
         notifications: Notificacions
-        no_notifications: "No tens notificacions noves"
   notifications:
     index:
       empty_notifications: No tens notificacions noves.
@@ -777,7 +777,6 @@ ca:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: Whatsapp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
