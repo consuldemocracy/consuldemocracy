@@ -241,11 +241,11 @@ nn:
       budgets: Deltakende budsjettering
       notification_item:
         new_notifications:
+          zero: "Du har ingen nye varsler"
           zero: Du har %{count} nye varsler
           one: Du har %{count} nye varsel
           other: Du har %{count} nye varsler
         notifications: Varsler
-        no_notifications: "Du har ingen nye varsler"
   notifications:
     index:
       empty_notifications: Du har ingen nye varsler.
@@ -750,7 +750,6 @@ nn:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
