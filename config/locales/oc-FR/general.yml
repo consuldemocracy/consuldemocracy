@@ -246,10 +246,10 @@ oc:
       budgets: dDe budgèts ciutadans
       notification_item:
         new_notifications:
+          zero: "As pas de notificacions nòvas"
           one: As una nòva notificacion
           other: As %{count} notificacions nòvas
         notifications: De notificacions
-        no_notifications: "As pas de notificacions nòvas"
   notifications:
     index:
       empty_notifications: As pas de notificacions nòvas.
@@ -774,7 +774,6 @@ oc:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: Whatsapp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
