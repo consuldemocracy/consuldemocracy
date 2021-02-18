@@ -52,8 +52,8 @@ module Consul
       #"da",
       #"de",
       #"el",
-      "en",
-      "es"]
+      "es",
+      "en"]
       #"es-PE",
       #"eu",
       #"fa",
