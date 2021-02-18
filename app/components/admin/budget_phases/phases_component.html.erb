@@ -19,9 +19,7 @@
         </td>
         <td>
           <% if phase.starts_at.present? || phase.ends_at.present? %>
-            <%= l(phase.starts_at.to_date) if phase.starts_at.present? %>
-            -
-            <%= l(phase.ends_at.to_date) if phase.ends_at.present? %>
+            <%= start_date(phase) %> - <%= end_date(phase) %>
           <% else %>
             <em><%= t("admin.budgets.edit.blank_dates") %></em>
           <% end %>
