@@ -246,10 +246,10 @@ ka:
       budgets: მონაწილეობითი ბიუჯეტირება
       notification_item:
         new_notifications:
+          zero: "თქვენ არ გაქვთ შეტყობინება"
           one: თქვენ გაქვთ ერთი შეტყობინება
           other: თქვენ გაქვთ %{count} შეტყობინება
         notifications: შეტყობინებები
-        no_notifications: "თქვენ არ გაქვთ შეტყობინება"
   notifications:
     index:
       empty_notifications: თქვენ არ გაქვთ შეტყობინება.
@@ -777,7 +777,6 @@ ka:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
