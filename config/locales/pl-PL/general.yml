@@ -220,12 +220,12 @@ pl:
       budgets: Budżetowanie Partycypacyjne
       notification_item:
         new_notifications:
+          zero: "Nie masz nowych powiadomień"
           one: Masz nowe powiadomienie
           few: Masz %{count} nowe powiadomienia
           many: Masz %{count} nowe powiadomienia
           other: Masz %{count} nowe powiadomienia
         notifications: Powiadomienia
-        no_notifications: "Nie masz nowych powiadomień"
   notifications:
     index:
       empty_notifications: Nie masz nowych powiadomień.
@@ -578,7 +578,6 @@ pl:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
