@@ -210,10 +210,10 @@ nl:
       budgets: Participatory budgeting
       notification_item:
         new_notifications:
+          zero: "U heeft geen nieuwe meldingen"
           one: U heeft een nieuwe melding
           other: U heeft %{count} nieuwe meldingen
         notifications: Notificaties
-        no_notifications: "U heeft geen nieuwe meldingen"
   notifications:
     index:
       empty_notifications: U heeft geen nieuwe meldingen.
@@ -546,7 +546,6 @@ nl:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
