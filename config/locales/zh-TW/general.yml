@@ -204,9 +204,9 @@ zh-TW:
       budgets: 參與性預算編制
       notification_item:
         new_notifications:
+          zero: "您沒有新通知"
           other: 您有%{count} 個新通知
         notifications: 通知
-        no_notifications: "您沒有新通知"
   notifications:
     index:
       empty_notifications: 您沒有新通知。
@@ -527,7 +527,6 @@ zh-TW:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
