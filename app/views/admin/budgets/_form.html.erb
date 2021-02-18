@@ -60,7 +60,7 @@
           <tr id="<%= dom_id(phase) %>" class="phase">
             <td>
               <%= t("budgets.phase.#{phase.kind}") %>
-              <% if @budget.current_phase == phase %>
+              <% if phase.current? %>
                 <span class="label success"><strong><%= t("admin.budgets.edit.active") %></strong></span>
               <% end %>
             </td>

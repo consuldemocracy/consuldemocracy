@@ -273,7 +273,7 @@ describe "Admin budgets", :admin do
             expect(page).to have_content("#{phase.starts_at.to_date} - #{phase.ends_at.to_date}")
             expect(page).to have_css(".budget-phase-enabled.enabled")
             expect(page).to have_link("Edit phase", href: edit_phase_link)
-            expect(page).to have_content("Active") if budget.current_phase == phase
+            expect(page).to have_content("Active") if phase.current?
           end
         end
       end

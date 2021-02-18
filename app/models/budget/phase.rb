@@ -62,6 +62,10 @@ class Budget
       in_phase_or_later?("balloting")
     end
 
+    def current?
+      budget.current_phase == self
+    end
+
     private
 
       def adjust_date_ranges
