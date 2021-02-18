@@ -99,7 +99,7 @@ $sidebar-active: #f4fcd0;
       }
     }
 
-    [class^="icon-"]:not(.icon-circle) {
+    [class^="icon-"] {
       font-size: $base-font-size;
     }
   }
@@ -156,7 +156,7 @@ $sidebar-active: #f4fcd0;
     }
   }
 
-  .notifications .icon-circle {
+  .notifications.unread-notifications::after {
     color: $admin-color;
   }
 

@@ -249,8 +249,8 @@ en:
         new_notifications:
           one: You have a new notification
           other: You have %{count} new notifications
+          zero: "You don't have new notifications"
         notifications: Notifications
-        no_notifications: "You don't have new notifications"
       sdg: "SDG"
   notifications:
     index:

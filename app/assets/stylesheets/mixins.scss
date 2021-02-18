@@ -163,11 +163,11 @@
   margin-right: rem-calc(10);
 }
 
-@mixin has-fa-icon($icon, $style) {
-  @extend .fa-#{$icon};
+@mixin has-fa-icon($icon, $style, $position: "before") {
 
-  &::before {
+  &::#{$position} {
     @extend %font-icon;
+    @extend .fa-#{$icon}:before;
 
     @if $style == "solid" {
       font-weight: bold;
@@ -182,7 +182,7 @@
 
   @supports (mask-image: url()) {
 
-    &::before {
+    &::#{$position} {
       @extend %svg-icon;
       mask-image: image-url("fontawesome/#{$style}/#{$icon}.svg");
     }

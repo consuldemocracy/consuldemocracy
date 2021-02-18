@@ -2,13 +2,15 @@ shared_examples "notifiable in-app" do |factory_name|
   let(:author) { create(:user, :verified) }
   let!(:notifiable) { create(factory_name, author: author) }
 
-  scenario "Notification icon is shown" do
+  before { create(:notification, :read, notifiable: notifiable, user: author) }
+
+  scenario "Notification message is shown" do
     create(:notification, notifiable: notifiable, user: author)
 
     login_as author
     visit root_path
 
-    expect(page).to have_css ".icon-notification"
+    expect(page).to have_link "You have a new notification"
   end
 
   scenario "A user commented on my notifiable", :js do
@@ -16,7 +18,8 @@ shared_examples "notifiable in-app" do |factory_name|
 
     login_as author
     visit root_path
-    find(".icon-notification").click
+
+    click_link "You have a new notification"
 
     expect(page).to have_css ".notification", count: 1
     expect(page).to have_content "Someone commented on"
@@ -108,7 +111,8 @@ shared_examples "notifiable in-app" do |factory_name|
     end
 
     within("#notifications") do
-      find(".icon-no-notification").click
+      click_link "You don't have new notifications"
+
       expect(page).to have_css ".notification", count: 0
     end
   end
@@ -130,7 +134,8 @@ shared_examples "notifiable in-app" do |factory_name|
     end
 
     within("#notifications") do
-      find(".icon-no-notification").click
+      click_link "You don't have new notifications"
+
       expect(page).to have_css ".notification", count: 0
     end
   end
