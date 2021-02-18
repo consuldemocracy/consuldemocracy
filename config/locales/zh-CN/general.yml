@@ -204,9 +204,9 @@ zh-CN:
       budgets: 参与性预算编制
       notification_item:
         new_notifications:
+          zero: "您没有新的通知"
           other: 您有%{count} 个新通知
         notifications: 通知
-        no_notifications: "您没有新的通知"
   notifications:
     index:
       empty_notifications: 您没有新的通知。
@@ -529,7 +529,6 @@ zh-CN:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram（电报群）"
     instagram: "%{org} Instagram"
   stats:
