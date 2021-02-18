@@ -78,10 +78,10 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
     :address              => 'mail.sagasoluciones.com',
-    :port                 => 2525,
-    :domain               => 'sandbox01cd6339a8a64695b793e75721912ac1.mailgun.org',
-    :user_name            => 'postmaster@sandbox01cd6339a8a64695b793e75721912ac1.mailgun.org',
-    :password             => 'd7fe4e4477c164627f65c851234caa9c-d32d817f-ca2e7ba1',
+    :port                 => 25,
+    :domain               => 'consul.sagasoluciones.com',
+    :user_name            => 'mailserver-ocms@sagasoluciones.com',
+    :password             => 'M@ailServer17',
     :authentication => :plain,
     :enable_starttls_auto => true,
     :ssl => false
