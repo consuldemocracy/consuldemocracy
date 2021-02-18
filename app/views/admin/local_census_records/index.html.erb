@@ -8,16 +8,10 @@
             new_admin_local_census_records_import_path,
             class: "button float-right hollow" %>
 
-<div class="small-12 medium-6">
-  <%= form_tag admin_local_census_records_path, method: :get, remote: true  do %>
-    <div class="input-group">
-      <%= text_field_tag :search, "", placeholder: t("admin.local_census_records.index.search.placeholder") %>
-      <div class="input-group-button">
-        <%= submit_tag t("admin.local_census_records.index.search.search"), class: "button" %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render Admin::SearchComponent.new(
+  label: t("admin.shared.search.label.local_census_records"),
+  remote: true
+) %>
 
 <div id="local_census_records">
   <%= render "local_census_records" %>

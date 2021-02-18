@@ -42,6 +42,19 @@ describe "Valuation" do
       expect(page).to have_content "You do not have permission to access this page"
     end
 
+    scenario "Access as SDG manager is not authorized" do
+      create(:sdg_manager, user: user)
+      login_as(user)
+      visit root_path
+
+      expect(page).not_to have_link("Valuation")
+      visit valuation_root_path
+
+      expect(page).not_to have_current_path(valuation_root_path)
+      expect(page).to have_current_path(root_path)
+      expect(page).to have_content "You do not have permission to access this page"
+    end
+
     scenario "Access as poll officer is not authorized" do
       create(:poll_officer, user: user)
       login_as(user)

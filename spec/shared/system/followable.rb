@@ -1,7 +1,6 @@
 shared_examples "followable" do |followable_class_name, followable_path, followable_path_arguments|
   let!(:arguments) { {} }
   let!(:followable) { create(followable_class_name) }
-  let!(:followable_dom_name) { followable_class_name.tr("_", "-") }
 
   def dom_id(record)
     ActionView::RecordIdentifier.dom_id(record)

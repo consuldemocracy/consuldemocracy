@@ -8,8 +8,8 @@
 
     <table>
       <thead>
-        <th scope="col"><%= t("admin.managers.index.name") %></th>
-        <th scope="col"><%= t("admin.managers.index.email") %></th>
+        <th scope="col"><%= Manager.human_attribute_name(:name) %></th>
+        <th scope="col"><%= Manager.human_attribute_name(:email) %></th>
         <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
       </thead>
       <tbody>
@@ -22,10 +22,7 @@
               <%= manager.email %>
             </td>
             <td>
-              <%= link_to t("admin.managers.manager.delete"),
-                admin_manager_path(manager),
-                method: :delete,
-                class: "button hollow alert expanded" %>
+              <%= render Admin::Roles::TableActionsComponent.new(manager) %>
             </td>
           </tr>
         <% end %>

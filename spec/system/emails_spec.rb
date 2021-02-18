@@ -250,6 +250,7 @@ describe "Emails" do
 
   context "Proposal notification digest" do
     scenario "notifications for proposals that I'm following" do
+      Setting["org_name"] = "CONSUL"
       user = create(:user, email_digest: true)
 
       proposal1 = create(:proposal, followers: [user])
@@ -317,6 +318,7 @@ describe "Emails" do
 
   context "User invites" do
     scenario "Send an invitation" do
+      Setting["org_name"] = "CONSUL"
       login_as_manager
       visit new_management_user_invite_path
 
@@ -461,15 +463,12 @@ describe "Emails" do
     end
   end
 
-  context "Newsletter" do
+  context "Newsletter", :admin do
     scenario "Send newsletter email to selected users" do
       user_with_newsletter_in_segment_1 = create(:user, :with_proposal, newsletter: true)
       user_with_newsletter_in_segment_2 = create(:user, :with_proposal, newsletter: true)
       user_with_newsletter_not_in_segment = create(:user, newsletter: true)
       user_without_newsletter_in_segment = create(:user, :with_proposal, newsletter: false)
-
-      admin = create(:administrator)
-      login_as(admin.user)
 
       visit new_admin_newsletter_path
       fill_in_newsletter_form(segment_recipient: "Proposal authors")

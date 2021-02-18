@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Documents" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Documents", :admin do
   scenario "Navigation", :js do
     visit admin_root_path
 
@@ -58,7 +53,7 @@ describe "Documents" do
   scenario "Create" do
     visit new_admin_site_customization_document_path
 
-    attach_file("document_attachment", Rails.root + "spec/fixtures/files/logo.pdf")
+    attach_file("document_attachment", "#{Rails.root}/spec/fixtures/files/logo.pdf")
     click_button "Upload"
 
     expect(page).to have_content "Document uploaded succesfully"

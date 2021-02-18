@@ -3,8 +3,6 @@ class Officing::BallotSheetsController < Officing::BaseController
   before_action :load_poll
   before_action :load_officer_assignments, only: [:new, :create]
 
-  helper_method :namespace
-
   def index
     load_ballot_sheets
   end
@@ -30,10 +28,6 @@ class Officing::BallotSheetsController < Officing::BaseController
   end
 
   private
-
-    def namespace
-      "officing"
-    end
 
     def load_poll
       @poll = Poll.find(params[:poll_id])

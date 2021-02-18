@@ -34,9 +34,11 @@
               <%= audit.user&.name %>
             </td>
             <td>
-              <%= link_to t("shared.show"),
-                admin_polymorphic_path(audit),
-                class: "button hollow primary" %>
+              <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+                <%= actions.link_to t("shared.show"),
+                  admin_polymorphic_path(audit),
+                  class: "show-link" %>
+              <% end %>
             </td>
           </tr>
         <% end %>

@@ -104,7 +104,7 @@ describe "Custom Pages" do
 
       scenario "Show widget cards for that page" do
         custom_page = create(:site_customization_page, :published)
-        create(:widget_card, page: custom_page, title: "Card Highlights")
+        create(:widget_card, cardable: custom_page, title: "Card Highlights")
 
         visit custom_page.url
 

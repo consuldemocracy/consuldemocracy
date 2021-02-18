@@ -33,7 +33,7 @@ If you want to contribute code to solve an issue:
 If you'd like us to review your pull request in good spirits, please follow our coding conventions:
 
 * Include specs to test any changes you've made
-* Travis CI will check whether the rest of the application is still working properly; check its build and make sure all tests are passing
+* Our CI will check whether the rest of the application is still working properly; check its build and make sure all tests are passing
 * Your pull request will be automatically reviewed by Hound CI; fix any issues it reports
 * Follow [the seven rules of a great commit message](https://chris.beams.io/posts/git-commit/)
 

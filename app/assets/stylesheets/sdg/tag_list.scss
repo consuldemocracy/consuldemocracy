@@ -1,0 +1,33 @@
+.sdg-tag-list {
+
+  .sdg-goal-tag-list {
+    @extend %sdg-goal-list;
+
+    .more-goals {
+      @extend %tag;
+    }
+  }
+
+  .sdg-target-tag-list {
+    @extend %tags;
+
+    a:not(.more-targets),
+    span {
+      color: $white;
+    }
+
+    @each $code, $color in $sdg-colors {
+      a[data-code^="#{$code}"] {
+        background-color: $color;
+
+        &:hover {
+          background-color: darken($color, 10%);
+        }
+      }
+
+      span[data-code^="#{$code}"] {
+        background-color: $color;
+      }
+    }
+  }
+}

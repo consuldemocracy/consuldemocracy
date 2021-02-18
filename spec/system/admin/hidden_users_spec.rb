@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin hidden users" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin hidden users", :admin do
   scenario "Show user activity" do
     user = create(:user, :hidden)
 

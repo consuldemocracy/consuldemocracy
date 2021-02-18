@@ -12,14 +12,6 @@
     <%= local_census_record.postal_code %>
   </td>
   <td>
-    <%= link_to t("admin.actions.edit"),
-                edit_admin_local_census_record_path(local_census_record),
-                class: "button hollow" %>
-
-    <%= link_to t("admin.actions.delete"),
-                admin_local_census_record_path(local_census_record),
-                method: :delete,
-                class: "button hollow alert",
-                data: { confirm: t("admin.actions.confirm") } %>
+    <%= render Admin::TableActionsComponent.new(local_census_record) %>
   </td>
 </tr>

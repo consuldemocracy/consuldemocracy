@@ -22,6 +22,7 @@ $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
 .admin {
+  @include admin-layout;
 
   h2 {
     font-weight: 100;
@@ -61,10 +62,7 @@ $sidebar-active: #f4fcd0;
     border-bottom: 1px solid #eee;
     color: #000;
     height: auto;
-
-    @include breakpoint(medium) {
-      box-shadow: 0 2px 2px #eee;
-    }
+    padding-top: $line-height / 2;
 
     @include breakpoint(small only) {
 
@@ -137,7 +135,6 @@ $sidebar-active: #f4fcd0;
 
     @include breakpoint(medium) {
       height: auto !important;
-      padding-top: $line-height / 2;
     }
 
     a {
@@ -239,16 +236,8 @@ $sidebar-active: #f4fcd0;
       table-layout: fixed;
     }
 
-    [type="submit"] ~ a,
-    a ~ a {
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: $line-height / 2;
-
-      @include breakpoint(medium) {
-        margin-left: $line-height / 2;
-        margin-top: 0;
-      }
+    [type="submit"] ~ a {
+      margin-left: $line-height / 2;
     }
   }
 
@@ -289,10 +278,6 @@ $sidebar-active: #f4fcd0;
 
   .button.secondary {
     margin-right: rem-calc(12);
-  }
-
-  .side-menu-and-admin-content {
-    @include side-menu-and-content;
   }
 
   .admin-content {
@@ -371,26 +356,25 @@ $sidebar-active: #f4fcd0;
 }
 
 .icon-sortable {
-  font-family: "icons";
+  font-family: "Font Awesome 5 Free";
   font-size: $small-font-size;
-  padding-right: $line-height / 2;
   position: relative;
 
   &::before,
   &::after {
     left: 6px;
-    opacity: 0.25;
+    opacity: 0.5;
     position: absolute;
   }
 
   &::before {
-    content: "\57";
-    top: -2px;
+    content: "\f0d8";
+    bottom: 0;
   }
 
   &::after {
-    content: "\52";
-    bottom: -10px;
+    content: "\f0d7";
+    top: 0;
   }
 
   &.asc {
@@ -424,93 +408,7 @@ code {
 // 02. Sidebar
 // -----------
 
-.admin-sidebar {
-  background: $sidebar;
-  background: linear-gradient(to bottom, #245b80 0%, #488fb5 100%);
-  border-right: 1px solid $border;
-
-  ul {
-    list-style-type: none;
-    margin-bottom: 0;
-    margin-left: 0;
-    padding: 0;
-
-    [class^="icon-"] {
-      color: #fff;
-      display: inline-block;
-      font-size: rem-calc(24);
-      line-height: $line-height;
-      padding: $line-height / 2 $line-height / 4;
-      padding-left: 0;
-      vertical-align: middle;
-    }
-  }
-
-  li {
-    margin: 0;
-    outline: 0;
-
-    ul {
-      margin-left: $line-height / 1.5;
-      border-left: 1px solid $sidebar-hover;
-      padding-left: $line-height / 2;
-    }
-
-    &.is-active a {
-      background: $sidebar-hover;
-      border-left: 2px solid $sidebar-active;
-      font-weight: bold;
-    }
-  }
-
-  li a {
-    color: #fff;
-    display: block;
-    line-height: rem-calc(48);
-    padding-left: rem-calc(12);
-    vertical-align: top;
-
-    &:hover {
-      background: $sidebar-hover;
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-
-  .is-accordion-submenu-parent {
-
-    > a::after {
-      border: 0;
-      content: "\61" !important;
-      font-family: "icons" !important;
-      height: auto;
-      position: absolute !important;
-      right: 30px;
-      top: 6px !important;
-    }
-  }
-
-  .submenu {
-    border-bottom: 0;
-    margin-left: $line-height;
-
-    li:first-child {
-      padding-top: $line-height / 2;
-    }
-
-    li:last-child {
-      padding-bottom: $line-height / 2;
-    }
-
-    a {
-      font-weight: normal;
-    }
-
-    .is-active {
-      border-bottom: 0;
-    }
-  }
-}
+// See admin/menu.scss
 
 // 03. List elements
 // -----------------
@@ -652,7 +550,7 @@ code {
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
   font-weight: normal;
-  margin: $line-height;
+  margin-bottom: $line-height;
   padding: $line-height / 2;
 
   strong {
@@ -713,6 +611,16 @@ code {
     &:nth-child(odd) td:last-child {
       background: $success-bg;
     }
+  }
+}
+
+.admin-content > header {
+  align-items: flex-start;
+  display: flex;
+
+  a {
+    @include hollow-button;
+    margin-left: auto;
   }
 }
 
@@ -1257,6 +1165,18 @@ table {
   span[class^="icon-"] {
     vertical-align: middle;
   }
+
+  &[aria-expanded='false'] {
+    @include hollow-button;
+
+    + .columns-selector-wrapper {
+      display: none;
+    }
+  }
+
+  &[aria-expanded='true'] {
+    @include regular-button;
+  }
 }
 
 .columns-selector-wrapper {
@@ -1264,10 +1184,6 @@ table {
   padding: 2rem;
   border-radius: 10px;
   margin-bottom: 1rem;
-
-  &.hidden {
-    display: none;
-  }
 
   .column-selector-item {
     display: inline-block;

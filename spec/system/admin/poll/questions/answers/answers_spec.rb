@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Answers" do
-  before do
-    admin = create(:administrator)
-    login_as admin.user
-  end
-
+describe "Answers", :admin do
   scenario "Create" do
     question = create(:poll_question)
 

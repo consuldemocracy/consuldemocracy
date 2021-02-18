@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin polls" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin polls", :admin do
   scenario "Disabled with a feature flag" do
     Setting["process.polls"] = nil
     expect { visit admin_polls_path }.to raise_exception(FeatureFlags::FeatureDisabled)
@@ -58,7 +53,7 @@ describe "Admin polls" do
     poll = create(:poll)
 
     visit admin_polls_path
-    click_link poll.name
+    click_link "Configure"
 
     expect(page).to have_content poll.name
   end
@@ -523,6 +518,44 @@ describe "Admin polls" do
         expect(page).to have_content "Results"
         expect(page).to have_content "Yes"
         expect(page).to have_content "5"
+      end
+    end
+  end
+
+  context "SDG related list" do
+    before do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.polls"] = true
+    end
+
+    scenario "create poll with sdg related list", :js do
+      visit new_admin_poll_path
+      fill_in "Name", with: "Upcoming poll with SDG related content"
+      fill_in "Start Date", with: 1.week.from_now
+      fill_in "Closing Date", with: 2.weeks.from_now
+      fill_in "Summary", with: "Upcoming poll's summary. This poll..."
+      fill_in "Description", with: "Upcomming poll's description. This poll..."
+
+      click_sdg_goal(17)
+      click_button "Create poll"
+      visit admin_polls_path
+
+      within("tr", text: "Upcoming poll with SDG related content") do
+        expect(page).to have_css "td", exact_text: "17"
+      end
+    end
+
+    scenario "edit poll with sdg related list", :js do
+      poll = create(:poll, name: "Upcoming poll with SDG related content")
+      poll.sdg_goals = [SDG::Goal[1], SDG::Goal[17]]
+      visit edit_admin_poll_path(poll)
+
+      remove_sdg_goal_or_target_tag(1)
+      click_button "Update poll"
+      visit admin_polls_path
+
+      within("tr", text: "Upcoming poll with SDG related content") do
+        expect(page).to have_css "td", exact_text: "17"
       end
     end
   end

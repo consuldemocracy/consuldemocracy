@@ -69,6 +69,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :custom_list,
         :background_color,
         :font_color,
+        :related_sdg_list,
         translation_params(::Legislation::Process),
         documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
         image_attributes: image_attributes

@@ -1,0 +1,50 @@
+.sdg-goals-index {
+
+  .section-header {
+
+    h1 {
+      @include grid-row;
+      @include grid-column-gutter;
+
+      &::before {
+        @extend %font-icon;
+
+        background: image-url("sdg.svg");
+        display: inline-block;
+        height: 1.5em;
+        width: 1.5em;
+      }
+    }
+  }
+
+  .sdg-goal-list {
+    $spacing: 1.5%;
+
+    @include sdg-goal-list($spacing);
+    @include grid-row;
+    @include grid-column-gutter;
+
+    max-width: 60rem;
+    width: 100%;
+
+    li {
+      line-height: 0;
+      margin-left: $spacing / 2;
+      margin-right: $spacing / 2;
+      width: calc(100% / 6 - #{$spacing});
+
+      .sdg-goal-icon {
+        width: 100%;
+      }
+    }
+  }
+
+  .sdg-phase {
+    @include grid-row;
+    @include grid-column-gutter;
+
+    .cards-container {
+      @include grid-row-nest;
+    }
+  }
+}

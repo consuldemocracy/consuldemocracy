@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin proposal notifications" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin proposal notifications", :admin do
   scenario "List shows all relevant info" do
     proposal_notification = create(:proposal_notification, :hidden)
     visit admin_hidden_proposal_notifications_path

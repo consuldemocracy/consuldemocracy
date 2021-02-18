@@ -9,9 +9,9 @@
     <table>
       <thead>
         <th scope="col" class="text-center"><%= t("admin.administrators.index.id") %></th>
-        <th scope="col"><%= t("admin.administrators.index.name") %></th>
-        <th scope="col"><%= t("admin.administrators.index.email") %></th>
-        <th scope="col"><%= t("admin.administrators.index.description") %></th>
+        <th scope="col"><%= Administrator.human_attribute_name(:name) %></th>
+        <th scope="col"><%= Administrator.human_attribute_name(:email) %></th>
+        <th scope="col"><%= Administrator.human_attribute_name(:description) %></th>
         <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
       </thead>
       <% @administrators.each do |administrator| %>
@@ -29,13 +29,10 @@
             <%= administrator.description %>
           </td>
           <td>
-            <%= link_to t("admin.actions.edit"),
-                        edit_admin_administrator_path(administrator),
-                        class: "button hollow" %>
-            <%= link_to t("admin.administrators.administrator.delete"),
-                        admin_administrator_path(administrator),
-                        method: :delete,
-                        class: "button hollow alert" %>
+            <%= render Admin::Roles::TableActionsComponent.new(
+              administrator,
+              actions: [:edit, :destroy]
+            ) %>
           </td>
         </tr>
       <% end %>

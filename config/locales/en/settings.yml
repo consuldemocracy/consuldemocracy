@@ -130,6 +130,8 @@ en:
       dashboard:
         notification_emails: "Dashboard notification emails"
         notification_emails_description: "Enable sending dashboard notification emails to proposal's authors"
+      sdg: SDG
+      sdg_description: Enable Sustainable Development Goals sections in the administration menu and in the Global Settings.
     remote_census:
       general:
         endpoint: "Endpoint"
@@ -207,3 +209,15 @@ en:
         max_size_description: "Maximum size allowed for an uploaded document (in Megabytes/MB)"
         content_types: "Accepted content types for documents"
         content_types_description: "Select all the content types allowed for uploaded documents"
+    sdg:
+      process:
+        debates: Related SDG in debates
+        debates_description: Allow debates to be linked to Sustainable Development Goals
+        proposals: Related SDG in proposals
+        proposals_description: Allow proposals to be linked to Sustainable Development Goals
+        polls: Related SDG in polls
+        polls_description: Allow polls to be linked to Sustainable Development Goals
+        budgets: Related SDG in partipatory budgets
+        budgets_description: Allow participatory budgets to be linked to Sustainable Development Goals
+        legislation: Related SDG in collaborative legislation
+        legislation_description: Allow collaborative legislation to be linked to Sustainable Development Goals

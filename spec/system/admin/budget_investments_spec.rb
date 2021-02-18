@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Admin budget investments" do
+describe "Admin budget investments", :admin do
   let(:budget) { create(:budget) }
   let(:administrator) do
     create(:administrator, user: create(:user, username: "Ana", email: "ana@admins.org"))
@@ -9,10 +9,6 @@ describe "Admin budget investments" do
   it_behaves_like "admin_milestoneable",
                   :budget_investment,
                   "admin_polymorphic_path"
-
-  before do
-    login_as(create(:administrator).user)
-  end
 
   context "Feature flag" do
     before do
@@ -1651,6 +1647,28 @@ describe "Admin budget investments" do
       end
     end
 
+    scenario "Cannot mark/unmark visible to valuators on finished budgets" do
+      budget.update!(phase: "finished")
+      create(:budget_investment, budget: budget, title: "Visible", visible_to_valuators: true)
+      create(:budget_investment, budget: budget, title: "Invisible", visible_to_valuators: false)
+
+      visit admin_budget_budget_investments_path(budget)
+
+      within "tr", text: "Visible" do
+        within "td[data-field=visible_to_valuators]" do
+          expect(page).to have_text "Yes"
+          expect(page).not_to have_field "budget_investment_visible_to_valuators"
+        end
+      end
+
+      within "tr", text: "Invisible" do
+        within "td[data-field=visible_to_valuators]" do
+          expect(page).to have_text "No"
+          expect(page).not_to have_field "budget_investment_visible_to_valuators"
+        end
+      end
+    end
+
     scenario "Showing the valuating checkbox" do
       investment1 = create(:budget_investment, :with_administrator, :with_valuator, :visible_to_valuators,
                            budget: budget)
@@ -1807,9 +1825,7 @@ describe "Admin budget investments" do
     scenario "Use column selector to display visible columns", :js do
       visit admin_budget_budget_investments_path(budget)
 
-      within("#js-columns-selector") do
-        find("strong", text: "Columns").click
-      end
+      click_button "Columns"
 
       within("#js-columns-selector-wrapper") do
         selectable_columns.each do |column|
@@ -1839,9 +1855,7 @@ describe "Admin budget investments" do
     scenario "Cookie will be updated after change columns selection", :js do
       visit admin_budget_budget_investments_path(budget)
 
-      within("#js-columns-selector") do
-        find("strong", text: "Columns").click
-      end
+      click_button "Columns"
 
       within("#js-columns-selector-wrapper") do
         uncheck "Title"
@@ -1871,7 +1885,7 @@ describe "Admin budget investments" do
       investment.update!(title: "Don't display me, please!")
 
       visit admin_budget_budget_investments_path(budget)
-      within("#js-columns-selector") { find("strong", text: "Columns").click }
+      click_button "Columns"
       within("#js-columns-selector-wrapper") { uncheck "Title" }
 
       within("#budget_investment_#{investment.id}") do
@@ -1891,9 +1905,7 @@ describe "Admin budget investments" do
 
       go_back
 
-      within("#js-columns-selector") do
-        find("strong", text: "Columns").click
-      end
+      click_button "Columns"
 
       within("#js-columns-selector-wrapper") do
         selectable_columns.each do |column|

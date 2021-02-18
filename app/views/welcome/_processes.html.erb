@@ -1,29 +1,7 @@
 <div class="feeds-list">
   <% @feeds.each do |feed| %>
-
     <% if feed_processes?(feed) %>
-      <div class="card small-12 column margin-bottom">
-        <div class="feed-content">
-          <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
-
-          <% feed.items.each do |item| %>
-            <%= link_to url_for(item) do %>
-              <figure class="figure-card <%= item.class.to_s.parameterize(separator: "_") %>">
-                <%= image_tag("welcome_process.png", alt: "") %>
-                <figcaption>
-                  <span><%= t("welcome.feed.process_label") %></span><br>
-                  <h3><%= item.title %></h3>
-                </figcaption>
-              </figure>
-              <p class="description small"><%= item.summary %></p>
-              <p class="small"><%= t("welcome.feed.see_process") %></p>
-            <% end %>
-          <% end %>
-
-          <%= link_to t("welcome.feed.see_all_processes"), legislation_processes_path, class: "float-right see-all" %>
-        </div>
-      </div>
+      <%= render Widget::Feeds::FeedComponent.new(feed) %>
     <% end %>
-
   <% end %>
 </div>

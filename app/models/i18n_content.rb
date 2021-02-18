@@ -94,4 +94,12 @@ class I18nContent < ApplicationRecord
       budgets.index.section_footer.description
     ]
   end
+
+  def self.translations_hash(locale)
+    Rails.cache.fetch(translation_class.where(locale: locale)) do
+      all.map do |content|
+        [content.key, translation_class.find_by(i18n_content_id: content, locale: locale)&.value]
+      end.to_h
+    end
+  end
 end

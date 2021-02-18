@@ -277,7 +277,7 @@ describe "Commenting legislation questions" do
       expect(page).to have_content "It will be done next week."
     end
 
-    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
   end
 
   scenario "Reply update parent comment responses count", :js do
@@ -430,7 +430,7 @@ describe "Commenting legislation questions" do
         expect(page).to have_css "img.moderator-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
     scenario "can not comment as an administrator" do
@@ -493,13 +493,10 @@ describe "Commenting legislation questions" do
         expect(page).to have_css "img.admin-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
-    scenario "can not comment as a moderator" do
-      admin = create(:administrator)
-
-      login_as(admin.user)
+    scenario "can not comment as a moderator", :admin do
       visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                               legislation_annotation.draft_version,
                                                               legislation_annotation)
@@ -621,6 +618,8 @@ describe "Commenting legislation questions" do
       create(:legislation_annotation, draft_version: draft_version, text: "my other annotation",
                                       ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10 }])
     end
+    let!(:comment1) { annotation1.comments.first }
+    let!(:comment2) { annotation2.comments.first }
 
     before do
       login_as user
@@ -651,15 +650,14 @@ describe "Commenting legislation questions" do
         first(:link, "0 replies").click
       end
 
-      comment = annotation1.comments.first
       click_link "Reply"
 
-      within "#js-comment-form-comment_#{comment.id}" do
+      within "#js-comment-form-comment_#{comment1.id}" do
         fill_in "Leave your comment", with: "replying in single annotation thread"
         click_button "Publish reply"
       end
 
-      within "#comment_#{comment.id}" do
+      within "#comment_#{comment1.id}" do
         expect(page).to have_content "replying in single annotation thread"
       end
 
@@ -688,17 +686,16 @@ describe "Commenting legislation questions" do
         find(".icon-expand").click
       end
 
-      comment = annotation2.comments.first
-      within("#comment_#{comment.id}") do
+      within("#comment_#{comment2.id}") do
         click_link "Reply"
       end
 
-      within "#js-comment-form-comment_#{comment.id}" do
+      within "#js-comment-form-comment_#{comment2.id}" do
         fill_in "Leave your comment", with: "replying in multiple annotation thread"
         click_button "Publish reply"
       end
 
-      within "#comment_#{comment.id}" do
+      within "#comment_#{comment2.id}" do
         expect(page).to have_content "replying in multiple annotation thread"
       end
 

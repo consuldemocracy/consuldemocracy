@@ -502,9 +502,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: new_york.id)
 
       within("#budget_investment_#{investment.id}") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect(page).to have_content "You must sign in or sign up to continue."
-        expect(page).to have_selector(".in-favor a", visible: false)
+        expect(page).to have_selector(".in-favor a", obscured: true)
       end
     end
 
@@ -516,9 +517,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: new_york.id)
 
       within("#budget_investment_#{investment.id}") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect(page).to have_content "Only verified users can vote on investments"
-        expect(page).to have_selector(".in-favor a", visible: false)
+        expect(page).to have_selector(".in-favor a", obscured: true)
       end
     end
 
@@ -530,7 +532,8 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: new_york.id)
 
       within("#budget_investment_#{investment.id}") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect_message_organizations_cannot_vote
       end
     end
@@ -569,9 +572,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading: new_york)
 
       within("#budget_investment_#{bi2.id}") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect(page).to have_content("already voted a different heading")
-        expect(page).to have_selector(".in-favor a", visible: false)
+        expect(page).to have_selector(".in-favor a", obscured: true)
       end
     end
 
@@ -584,9 +588,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: california.id)
 
       within("#budget_investment_#{bi2.id}") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect(page).to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", visible: false)
+        expect(page).to have_selector(".in-favor a", obscured: true)
       end
     end
 
@@ -598,17 +603,19 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: california.id)
 
       within(".budget-investment", text: "Build replicants") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect(page).not_to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", visible: true)
+        expect(page).to have_selector(".in-favor a", obscured: false)
       end
 
       add_to_ballot("Build replicants")
 
       within(".budget-investment", text: "Build terminators") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect(page).to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", visible: false)
+        expect(page).to have_selector(".in-favor a", obscured: true)
       end
     end
 
@@ -621,9 +628,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: california.id)
 
       within("#budget_investment_#{bi2.id}") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect(page).to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", visible: false)
+        expect(page).to have_selector(".in-favor a", obscured: true)
       end
 
       within("#budget_investment_#{bi1.id}") do
@@ -632,9 +640,10 @@ describe "Ballots" do
       end
 
       within("#budget_investment_#{bi2.id}") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect(page).not_to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", visible: true)
+        expect(page).to have_selector(".in-favor a", obscured: false)
       end
     end
 
@@ -647,9 +656,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: california.id)
 
       within("#budget_investment_#{bi2.id}") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect(page).to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", visible: false)
+        expect(page).to have_selector(".in-favor a", obscured: true)
       end
 
       within("#budget_investment_#{bi1.id}_sidebar") do
@@ -659,9 +669,10 @@ describe "Ballots" do
       expect(page).not_to have_css "#budget_investment_#{bi1.id}_sidebar"
 
       within("#budget_investment_#{bi2.id}") do
-        find("div.ballot").hover
+        hover_over_ballot
+
         expect(page).not_to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", visible: true)
+        expect(page).to have_selector(".in-favor a", obscured: false)
       end
     end
 
@@ -676,13 +687,15 @@ describe "Ballots" do
       new_york.update!(price: 10)
 
       within("#budget_investment_#{investment1.id}") do
-        expect(page).to have_selector(".in-favor a", visible: true)
-        find(".add a").click
+        find(".in-favor a").click
+
         expect(page).not_to have_content "Remove"
-        expect(page).to have_selector(".participation-not-allowed", visible: false)
-        find("div.ballot").hover
-        expect(page).to have_selector(".participation-not-allowed", visible: true)
-        expect(page).to have_selector(".in-favor a", visible: false)
+        expect(page).not_to have_selector(".participation-not-allowed")
+
+        hover_over_ballot
+
+        expect(page).to have_selector(".participation-not-allowed")
+        expect(page).to have_selector(".in-favor a", obscured: true)
       end
     end
 

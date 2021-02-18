@@ -10,7 +10,7 @@ describe "Polls" do
     expect { visit polls_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
-  context "#index" do
+  describe "Index" do
     scenario "Shows description for open polls" do
       visit polls_path
       expect(page).not_to have_content "Description for open polls"
@@ -128,6 +128,19 @@ describe "Polls" do
       visit polls_path(filter: "expired")
 
       expect(page).to have_link("Poll with results", href: results_poll_path(poll.slug))
+    end
+
+    scenario "Shows SDG tags when feature is enabled", :js do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.polls"] = true
+
+      create(:poll, sdg_goals: [SDG::Goal[1]],
+                    sdg_targets: [SDG::Target["1.1"]])
+
+      visit polls_path
+
+      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_content "target 1.1"
     end
   end
 
@@ -401,6 +414,19 @@ describe "Polls" do
         expect(page).to have_link("Yes")
       end
     end
+
+    scenario "Shows SDG tags when feature is enabled", :js do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.polls"] = true
+
+      poll = create(:poll, sdg_goals: [SDG::Goal[1]],
+                           sdg_targets: [SDG::Target["1.1"]])
+
+      visit poll_path(poll)
+
+      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_content "target 1.1"
+    end
   end
 
   context "Booth & Website", :with_frozen_time do
@@ -484,11 +510,9 @@ describe "Polls" do
       expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
     end
 
-    scenario "Do not show poll results or stats to admins if disabled" do
+    scenario "Do not show poll results or stats to admins if disabled", :admin do
       poll = create(:poll, :expired, results_enabled: false, stats_enabled: false)
-      admin = create(:administrator).user
 
-      login_as admin
       visit poll_path(poll)
 
       expect(page).not_to have_content("Poll results")

@@ -1,9 +1,8 @@
 require "rails_helper"
 
-describe "Admin edit translatable records" do
+describe "Admin edit translatable records", :admin do
   before do
     translatable.update!(attributes)
-    login_as(create(:administrator).user)
   end
 
   let(:fields) { translatable.translated_attribute_names }

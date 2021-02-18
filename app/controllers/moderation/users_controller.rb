@@ -21,7 +21,7 @@ class Moderation::UsersController < Moderation::BaseController
   private
 
     def load_users
-      @users = User.with_hidden.search(params[:name_or_email]).page(params[:page]).for_render
+      @users = User.with_hidden.search(params[:search]).page(params[:page]).for_render
     end
 
     def block_user

@@ -1,0 +1,17 @@
+<div class="proposal">
+  <div class="feed-description small-12 column
+             <%= "medium-6 large-9" if proposal.image.present? %>">
+    <strong><%= link_to proposal.title, url_for(proposal) %></strong><br>
+    <p><%= proposal.summary %></p>
+    <%= render SDG::TagListComponent.new(proposal, limit: 5) %>
+  </div>
+
+  <% if proposal.image.present? %>
+    <div class="small-12 medium-6 large-3 column">
+      <div class="feed-image">
+        <%= image_tag proposal.image_url(:thumb),
+                      alt: proposal.image.title.unicode_normalize %>
+      </div>
+    </div>
+  <% end %>
+</div>

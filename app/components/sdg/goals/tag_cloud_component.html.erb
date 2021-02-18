@@ -1,0 +1,5 @@
+<div class="sdg-goal-tag-cloud">
+  <div class="sidebar-divider"></div>
+  <h2 class="sidebar-title"><%= heading %></h2>
+  <%= render SDG::FilterLinksComponent.new(goals, class_name.constantize) %>
+</div>

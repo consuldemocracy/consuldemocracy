@@ -1,18 +1,4 @@
 <%- limit ||= nil %>
 
-<% if taggable.tags.any? %>
-  <ul id="tags_<%= dom_id(taggable) %>" class="no-bullet tags">
-    <% taggable.tag_list_with_limit(limit).each do |tag| %>
-      <li class="inline-block">
-        <%= link_to sanitize(tag.name),
-                    taggables_path(taggable.class.name.underscore, tag.name) %></li>
-    <% end %>
-
-    <% if taggable.tags_count_out_of_limit(limit) > 0 %>
-      <li class="inline-block">
-        <%= link_to "#{taggable.tags_count_out_of_limit(limit)}+",
-                    taggable_path(taggable) %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render SDG::TagListComponent.new(taggable, limit: limit) %>
+<%= render Shared::TagListComponent.new(taggable, limit: limit) %>

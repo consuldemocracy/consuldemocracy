@@ -17,9 +17,7 @@
       <tr>
         <th><%= t("admin.answers.videos.index.video_title") %></th>
         <th><%= t("admin.answers.videos.index.video_url") %></th>
-        <th class="text-right">
-          <%= t("admin.actions.actions") %>
-        </th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
 
@@ -28,16 +26,8 @@
         <tr id="<%= dom_id(video) %>" class="poll_question_answer_video">
           <td><%= video.title %></td>
           <td><%= link_to "#{video.url}", video.url %></td>
-          <td class="text-right">
-
-            <%= link_to t("shared.edit"),
-                          edit_admin_video_path(video),
-                          class: "button hollow" %>
-
-            <%= link_to t("shared.delete"),
-                        admin_video_path(video),
-                        class: "button hollow alert",
-                        method: :delete %>
+          <td>
+            <%= render Admin::TableActionsComponent.new(video) %>
           </td>
         </tr>
       <% end %>

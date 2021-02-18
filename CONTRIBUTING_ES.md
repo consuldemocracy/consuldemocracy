@@ -33,7 +33,7 @@ Cuando quieras resolver una incidencia mediante código:
 Si quieres que revisemos tu código con una sonrisa, por favor sigue nuestras convenciones:
 
 * Incluye tests para los cambios que hayas hecho
-* Travis CI comprobará automáticamente que el resto de la aplicación sigue funcionando; asegúrate de que los tests pasan
+* Los tests se ejecutarán automáticamente para comprobar que el resto de la aplicación sigue funcionando; asegúrate de que los tests pasan
 * Tus cambios serán revisados automáticamente por Hound CI; arregla los problemas de los que informa (si es que hay alguno)
 * Sigue [las siete reglas para un gran mensaje de commit](https://chris.beams.io/posts/git-commit/)
 

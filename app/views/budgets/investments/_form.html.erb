@@ -4,7 +4,7 @@
 
   <div class="row column">
     <div class="small-12 medium-8 column">
-      <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true, } %>
+      <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true } %>
     </div>
     <div class="row">
       <div class="small-12 column">
@@ -85,6 +85,8 @@
                         class: "js-tag-list tag-autocomplete",
                         data: { js_url: suggest_tags_path } %>
     </div>
+
+    <%= render SDG::RelatedListSelectorComponent.new(f) %>
 
     <% unless current_user.manager? %>
 

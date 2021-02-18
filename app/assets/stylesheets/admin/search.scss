@@ -1,0 +1,32 @@
+.admin  [role=search] {
+  display: flex;
+
+  &.complex {
+    @include breakpoint(small only) {
+      flex-direction: column;
+    }
+
+    @include breakpoint(medium) {
+      select {
+        height: $line-height * 2;
+        margin: 0 rem-calc(12);
+      }
+    }
+  }
+
+  &:not(.complex) {
+    @include breakpoint(medium) {
+      width: 50%;
+    }
+  }
+
+  [type="submit"] {
+    @include button($background: $link);
+    border-radius: 0;
+    font-size: 1rem;
+
+    &[disabled] {
+      @include button-disabled;
+    }
+  }
+}

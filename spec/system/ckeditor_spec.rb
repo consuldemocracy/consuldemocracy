@@ -15,9 +15,7 @@ describe "CKEditor" do
     expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"
   end
 
-  scenario "uploading an image through the upload tab", :js do
-    login_as(create(:administrator).user)
-
+  scenario "uploading an image through the upload tab", :js, :admin do
     visit new_admin_site_customization_page_path
     fill_in_ckeditor "Content", with: "Filling in to make sure CKEditor is loaded"
     find(".cke_button__image").click
@@ -40,9 +38,7 @@ describe "CKEditor" do
     expect(page).to have_css "img[src$='clippy.jpg']"
   end
 
-  scenario "cannot upload attachments through link tab", :js do
-    login_as(create(:administrator).user)
-
+  scenario "cannot upload attachments through link tab", :js, :admin do
     visit new_admin_site_customization_page_path
     fill_in_ckeditor "Content", with: "Filling in to make sure CKEditor is loaded"
     find(".cke_button__link").click
@@ -53,9 +49,7 @@ describe "CKEditor" do
   end
 
   context "When navigating back to editor page using browser history back" do
-    scenario "display ckeditor unsaved contents", :js do
-      login_as(create(:administrator).user)
-
+    scenario "display ckeditor unsaved contents", :js, :admin do
       visit new_admin_newsletter_path
       fill_in_ckeditor "Email content", with: "This is an unsaved body"
       click_link "Newsletters"

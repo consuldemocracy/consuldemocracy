@@ -68,6 +68,34 @@ $color-alert:       #a94442;
 $pdf-primary:       #0300ff;
 $pdf-secondary:     #ff9e00;
 
+$outline-focus:     3px solid #ffbf47;
+
+$input-height:      $line-height * 2;
+
+$icon-width: $line-height * 2;
+
+$sdg-icon-min-width: 40px;
+
+$sdg-colors: (
+  1: #e5243b,
+  2: #dda63a,
+  3: #4c9f38,
+  4: #c5192d,
+  5: #ff3a21,
+  6: #26bde2,
+  7: #fcc30b,
+  8: #a21942,
+  9: #fd6925,
+  10: #dd1367,
+  11: #fd9d24,
+  12: #bf8b2e,
+  13: #3f7e44,
+  14: #0a97d9,
+  15: #56c02b,
+  16: #00689d,
+  17: #19486a
+);
+
 // 2. Foundation settings overrides
 // ---------------------------------
 
@@ -122,3 +150,4 @@ $pagination-radius: $global-radius;
 
 $show-header-for-stacked: true;
 
+$tooltip-background-color: $brand;

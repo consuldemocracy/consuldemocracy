@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Incomplete verifications" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Incomplete verifications", :admin do
   scenario "Index" do
     incompletely_verified_user1 = create(:user, :incomplete_verification)
     incompletely_verified_user2 = create(:user, :incomplete_verification)
@@ -27,7 +22,7 @@ describe "Incomplete verifications" do
 
     visit admin_verifications_path
 
-    fill_in "name_or_email", with: "juan"
+    fill_in "search", with: "juan"
     click_button "Search"
 
     expect(page).to have_content("Juan_anonymous")

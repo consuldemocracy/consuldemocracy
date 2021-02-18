@@ -55,7 +55,7 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      attributes = [:tag_list, :terms_of_service]
+      attributes = [:tag_list, :terms_of_service, :related_sdg_list]
       params.require(:debate).permit(attributes, translation_params(Debate))
     end
 

@@ -20,11 +20,11 @@
         <%= t("application.menu") %>
       </span>
 
-      <div class="top-bar-title">
+      <h1 class="top-bar-title">
         <%= link_to root_path, accesskey: "0" do %>
-          <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: t("layouts.header.logo")) %>
+          <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: setting["org_name"]) %>
         <% end %>
-      </div>
+      </h1>
 
       <div id="responsive-menu">
         <div class="top-bar-right">

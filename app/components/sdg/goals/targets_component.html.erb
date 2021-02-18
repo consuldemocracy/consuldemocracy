@@ -1,0 +1,28 @@
+<section class="targets">
+  <ul class="tabs" id="target_tabs" data-deep-link="true" data-tabs>
+    <% [global_targets, local_targets].each do |targets| %>
+      <li class="tabs-title <%= active(targets) %>">
+        <%= link_to title(targets), "#tab_#{type(targets)}_targets" %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="tabs-content" data-tabs-content="target_tabs">
+    <% [global_targets, local_targets].each do |targets| %>
+      <div class="tabs-panel <%= active(targets) %>" id="tab_<%= type(targets) %>_targets">
+        <% if targets.blank? %>
+          <div class="callout primary">
+            <%= t("sdg.goals.show.targets.no_local_targets") %>
+          </div>
+        <% else %>
+          <dl>
+            <% targets.sort.each do |target| %>
+              <dt><%= target.code %><dt>
+              <dd><%= target.title %><dd>
+            <% end %>
+          </dl>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>

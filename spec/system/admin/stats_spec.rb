@@ -1,9 +1,7 @@
 require "rails_helper"
 
-describe "Stats" do
+describe "Stats", :admin do
   before do
-    admin = create(:administrator)
-    login_as(admin.user)
     visit root_path
   end
 
@@ -395,6 +393,31 @@ describe "Stats" do
       within("#poll_#{poll.id}_questions_total") do
         expect(page).to have_content "2"
       end
+    end
+  end
+
+  context "SDG", :js do
+    scenario "Shows SDG stats link when SDG feature is enabled" do
+      Setting["feature.sdg"] = true
+
+      visit admin_stats_path
+
+      expect(page).to have_link "SDG", href: sdg_admin_stats_path
+    end
+
+    scenario "Does not show SDG stats link when SDG feature is disbled" do
+      Setting["feature.sdg"] = false
+
+      visit admin_stats_path
+
+      expect(page).not_to have_link "SDG"
+    end
+
+    scenario "Renders all goals stats" do
+      visit sdg_admin_stats_path
+
+      expect(page).to have_css "h3", count: SDG::Goal.count
+      expect(page).to have_css ".sdg-goal-stats", count: SDG::Goal.count
     end
   end
 end

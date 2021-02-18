@@ -1,0 +1,97 @@
+.sdg-goal-show {
+  @include grid-row;
+
+  > :not(.feeds-participation) {
+    @include grid-column-gutter;
+  }
+
+  .sdg-goal {
+
+    > header {
+      @include grid-column-gutter;
+      align-items: center;
+      color: #fff;
+      display: flex;
+      margin: $line-height / 2 0;
+      text-shadow: 0 0 1px $black;
+      min-width: fit-content;
+
+      &::after {
+        align-self: stretch;
+        background: transparent no-repeat center right;
+        background-size: contain;
+        content: "";
+        flex: 1;
+        min-width: 100px;
+
+        @include breakpoint(small only) {
+          min-width: 75px;
+        }
+      }
+    }
+
+    h1 {
+      align-items: center;
+      display: flex;
+      font-family: "Oswald" !important;
+      font-weight: 500;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      text-transform: uppercase;
+
+      @include breakpoint(small only) {
+        font-size: rem-calc(map-get(map-get(map-get($header-styles, small), h2), font-size));
+      }
+
+      .goal-code {
+        font-size: 2.2em;
+        letter-spacing: -0.1em;
+        margin-right: 0.2em;
+      }
+
+      .goal-title > * {
+        display: block;
+      }
+    }
+
+    @each $code, $color in $sdg-colors {
+      &.sdg-goal-#{$code} > header {
+        background-color: $color;
+
+        &::after {
+          background-image: image-url("sdg/goal_#{$code}_icon_only");
+        }
+      }
+    }
+
+    .goal-description-content {
+
+      .read-more {
+        text-align: center;
+      }
+    }
+
+    .goal-description {
+
+      &.short {
+        height: rem-calc(150);
+        overflow: hidden;
+      }
+    }
+  }
+
+  .feed-processes {
+
+    .feed-content {
+      @include breakpoint(medium) {
+        @include grid-row-nest;
+        display: flex;
+
+        > * {
+          @include grid-column-gutter;
+          width: 50%;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 hr:
   attributes:
-    geozone_id: "Opseg djelovanja"
+    geozone_id: "Djelokrug postupka"
     results_enabled: "Prikaži rezultate"
     stats_enabled: "Prikaži statistike"
     advanced_stats_enabled: "Prikaži napredne statistike"
@@ -182,6 +182,9 @@ hr:
         description_finished: "Opis kada se finalizira budžet"
         phase: "Faza"
         currency_symbol: "Valuta"
+        voting_style: "Stil završnog glasovanja"
+        voting_style_knapsack: "\"Knapsack\""
+        voting_style_approval: "Odobravanje"
       budget/translation:
         name: "Ime"
       budget/investment:
@@ -244,6 +247,7 @@ hr:
         name: "Ime naslova"
         price: "Cijena"
         population: "Populacija"
+        max_ballot_lines: "Dopušteno glasova"
       budget/heading/translation:
         name: "Naziv naslova"
       budget/phase:

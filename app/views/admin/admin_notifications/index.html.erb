@@ -9,7 +9,7 @@
         <th><%= t("admin.admin_notifications.index.title") %></th>
         <th><%= t("admin.admin_notifications.index.segment_recipient") %></th>
         <th><%= t("admin.admin_notifications.index.sent") %></th>
-        <th class="small-5"><%= t("admin.admin_notifications.index.actions") %></th>
+        <th><%= t("admin.admin_notifications.index.actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -30,27 +30,17 @@
         </td>
         <td>
           <% if admin_notification.draft? %>
-            <div class="small-4 column">
-              <%= link_to t("admin.admin_notifications.index.edit"),
-                          edit_admin_admin_notification_path(admin_notification),
-                          class: "button expanded hollow" %>
-            </div>
-            <div class="small-4 column">
-              <%= link_to t("admin.admin_notifications.index.delete"),
-                          admin_admin_notification_path(admin_notification),
-                          method: :delete, class: "button expanded hollow alert" %>
-            </div>
-            <div class="small-4 column">
-              <%= link_to t("admin.admin_notifications.index.preview"),
-                          admin_admin_notification_path(admin_notification),
-                          class: "button expanded" %>
-            </div>
+            <%= render Admin::TableActionsComponent.new(admin_notification) do |actions| %>
+              <%= actions.link_to t("admin.admin_notifications.index.preview"),
+                                  admin_admin_notification_path(admin_notification),
+                                  class: "preview-link" %>
+            <% end %>
           <% else %>
-            <div class="small-4 column">
-              <%= link_to t("admin.admin_notifications.index.view"),
-                          admin_admin_notification_path(admin_notification),
-                          class: "button expanded" %>
-            </div>
+            <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+              <%= actions.link_to t("admin.admin_notifications.index.view"),
+                                  admin_admin_notification_path(admin_notification),
+                                  class: "show-link" %>
+            <% end %>
           <% end %>
         </td>
       </tr>

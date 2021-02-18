@@ -3,6 +3,10 @@ include DocumentParser
 
 describe DocumentParser do
   describe "#get_document_number_variants" do
+    it "returns no variants when document_number is not defined" do
+      expect(DocumentParser.get_document_number_variants("1", "")).to be_empty
+    end
+
     it "trims and cleans up entry" do
       expect(DocumentParser.get_document_number_variants(2, "  1 2@ 34")).to eq(["1234"])
     end

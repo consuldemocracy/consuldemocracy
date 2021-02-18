@@ -190,6 +190,7 @@ en:
     local_census_records/import: Local Census Records Import
     site_customization/content_block: content block
     site_customization/page: page
+    sdg/local_target: local target
   geozones:
     none: All city
   layouts:
@@ -233,7 +234,6 @@ en:
       collaborative_legislation: Collaborative legislation
       debates: Debates
       locale: "Language:"
-      logo: CONSUL logo
       management: Management
       moderation: Moderation
       valuation: Valuation
@@ -251,6 +251,7 @@ en:
           other: You have %{count} new notifications
         notifications: Notifications
         no_notifications: "You don't have new notifications"
+      sdg: "SDG"
   notifications:
     index:
       empty_notifications: You don't have new notifications.
@@ -693,7 +694,11 @@ en:
       from: "From"
       general: "With the text"
       general_placeholder: "Write the text"
+      goal: "By SDG"
+      goal_blank: "Select a goal"
       search: "Filter"
+      target: "By target"
+      target_blank: "Select a target"
       title: "Advanced search"
       to: "To"
     author_info:
@@ -779,7 +784,6 @@ en:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -874,9 +878,14 @@ en:
         debates: "Most active debates"
         proposals: "Most active proposals"
         processes: "Open processes"
-      see_all_debates: See all debates
-      see_all_proposals: See all proposals
-      see_all_processes: See all processes
+      see_all:
+        debates: See all debates
+        proposals: See all proposals
+        processes: See all processes
+      no_items:
+        debates: There are no debates right now
+        proposals: There are no proposals right now
+        processes: There are no open processes right now
       process_label: Process
       see_process: See process
     cards:
@@ -963,3 +972,8 @@ en:
     create:
       enqueue_remote_translation: Translations have been correctly requested.
     button: Translate page
+  tags:
+    filter:
+      more:
+        one: "One more tag"
+        other: "%{count} more tags"
