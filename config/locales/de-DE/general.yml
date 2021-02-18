@@ -246,10 +246,10 @@ de:
       budgets: Bürgerhaushalte
       notification_item:
         new_notifications:
+          zero: "Sie haben keine neuen Benachrichtigungen"
           one: Sie haben eine neue Benachrichtigung
           other: Sie haben %{count} neue Benachrichtigungen
         notifications: Benachrichtigungen
-        no_notifications: "Sie haben keine neuen Benachrichtigungen"
   notifications:
     index:
       empty_notifications: Sie haben keine neuen Benachrichtigungen.
@@ -770,7 +770,6 @@ de:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegramm"
     instagram: "%{org} Instagram"
   stats:
