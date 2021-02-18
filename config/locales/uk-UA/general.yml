@@ -264,12 +264,12 @@ uk-UA:
       budgets: Бюджетування участі
       notification_item:
         new_notifications:
+          zero: "Нових сповіщень немає"
           one: Ви маєте нове сповіщення
           few: Ви маєте %{count} нових сповіщення
           many: Ви маєте %{count} нових сповіщень
           other: Ви маєте %{count} нових сповіщень
         notifications: Сповіщення
-        no_notifications: "Нових сповіщень немає"
   notifications:
     index:
       empty_notifications: Нових сповіщень немає.
@@ -829,7 +829,6 @@ uk-UA:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
