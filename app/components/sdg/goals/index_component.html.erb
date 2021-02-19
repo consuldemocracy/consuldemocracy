@@ -1,9 +1,13 @@
 <% provide(:title) { title } %>
 
 <main class="sdg-goals-index">
-  <header class="section-header">
-    <h1><%= title %></h1>
-  </header>
+  <% if header.present? %>
+    <%= render "shared/header", header: header %>
+  <% else %>
+    <header class="section-header">
+      <h1><%= title %></h1>
+    </header>
+  <% end %>
 
   <%= render Shared::BannerComponent.new("sdg") %>
 
