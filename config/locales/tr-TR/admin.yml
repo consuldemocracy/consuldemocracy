@@ -134,6 +134,7 @@ tr:
         submit: "Grubu kaydet"
       index:
         back: "Bütçelere geri dön"
+        help: "Grupların başlıkları düzenlemesi hedeflenmiştir. Grup ve içerikleri oluşturulduktan sonra, bir kullanıcının grup başına kaç başlıkta oy verebileceğini belirlemek mümkündür."
     budget_headings:
       no_headings: "Hiç başlık yok."
       amount:
@@ -155,6 +156,7 @@ tr:
         submit: "Başlığı kaydet"
       index:
         back: "Gruplara geri dön"
+        help: "Başlıklar, katılımcı bütçedeki parayı ayırmak içindir. Burada, grup için başlıklar ekleyebilir ve her başlık için kullanılacak miktarı belirleyebilirsiniz."
     budget_phases:
       edit:
         summary_help_text: Bu metin kullanıcıyı aşama hakkında bilgilendirecektir. Aşama etkin olmasa bile göstermek için aşağıdaki onay kutusunu seçin
