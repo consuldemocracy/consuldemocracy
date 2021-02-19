@@ -2,11 +2,12 @@
 
 <div class="clear"></div>
 
-<h2 class="inline-block"><%= @budget.name %></h2>
+<header>
+  <h2><%= @budget.name %></h2>
+  <%= link_to t("admin.budget_groups.form.create"), new_admin_budget_group_path %>
+</header>
 
-<%= link_to t("admin.budget_groups.form.create"),
-            new_admin_budget_group_path,
-            class: "button float-right" %>
+<%= render Admin::Budgets::HelpComponent.new("budget_groups") %>
 
 <% if @groups.any? %>
   <h3><%= t("admin.budget_groups.amount", count: @groups.count) %></h3>

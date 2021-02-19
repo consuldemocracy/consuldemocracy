@@ -659,7 +659,7 @@ code {
   display: flex;
 
   a {
-    @include hollow-button;
+    @include regular-button;
     margin-left: auto;
   }
 }

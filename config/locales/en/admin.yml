@@ -70,6 +70,7 @@ en:
         filters:
           open: Open
           finished: Finished
+        help: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
         budget_investments: Manage projects
         table_name: Name
         table_phase: Phase
@@ -133,6 +134,7 @@ en:
         submit: "Save group"
       index:
         back: "Go back to budgets"
+        help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
     budget_headings:
       no_headings: "There are no headings."
       amount:
@@ -155,12 +157,15 @@ en:
         submit: "Save heading"
       index:
         back: "Go back to groups"
+        help: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
     budget_phases:
       edit:
         summary_help_text: This text will inform the user about the phase. To show it even if the phase is not active, select the checkbox below
         description_help_text: This text will appear in the header when the phase is active
         enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
         save_changes: Save changes
+      index:
+        help: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
     budget_investments:
       index:
         heading_filter_all: All headings

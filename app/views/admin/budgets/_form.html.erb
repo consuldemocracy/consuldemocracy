@@ -42,6 +42,8 @@
     <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, form: f %>
   </div>
 
+  <%= render Admin::Budgets::HelpComponent.new("budget_phases") %>
+
   <% if @budget.phases.present? %>
     <div class="row">
       <div class="small-12 column">
