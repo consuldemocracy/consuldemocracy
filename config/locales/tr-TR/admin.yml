@@ -163,6 +163,8 @@ tr:
         description_help_text: Aşama etkinken bu metin başlıkta görünecektir
         enabled_help_text: Bu aşama, bütçe'nin aşamaları zaman çizelgesinde herkese açık olacak, başka herhangi bir amaç için aktif olduğu kadar aktif olacak
         save_changes: Değişiklikleri kaydet
+      index:
+        help: "Katılımcı bütçelerin farklı aşamaları vardır. Burada, aşamaları etkinleştirip devre dışı bırakabilir ve her bir aşamayı özelleştirebilirsiniz."
     budget_investments:
       index:
         heading_filter_all: Tüm başlıklar
