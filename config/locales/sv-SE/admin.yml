@@ -145,7 +145,7 @@ sv:
         unable_notice: "Du kan inte ta bort ett område som har budgetförslag"
       form:
         population_info: "Fältet för folkmängd inom ett område används för att föra statistik över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är frivilligt."
-        coordinates_info: "Om latitud och longitud anes kommer investeringssidan för detta område att innehålla en karta. Kartan centreras kring dessa koordinater."
+        coordinates_info: "Om latitud och longitud anges kommer budgetsidan för detta område att innehålla en karta. Kartan centreras kring dessa koordinater."
         content_blocks_info: "Om innehållsblock är tillåtna kan du skapa anpassat innehåll som rör detta område från avsnittet Inställningar > Anpassade innehållsblock. Detta innehåll visas på investeringssidan för området."
         create: "Skapa nytt område"
         edit: "Redigera område"
@@ -1398,6 +1398,8 @@ sv:
       index:
         title: Användare
         no_users: Det finns inga användare.
+        filters:
+          erased: Raderad
       search:
         placeholder: Sök användare med e-postadress, namn eller identitetshandling
     verifications:
