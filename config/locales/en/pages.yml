@@ -56,6 +56,7 @@ en:
       other:
         title: "Other information of interest"
         how_to_use: "Use %{org_name} in your city"
+        sdg: "Sustainable Development Goals help"
       how_to_use:
         text: |-
           Use it in your local government or help us to improve it, it is free software.
