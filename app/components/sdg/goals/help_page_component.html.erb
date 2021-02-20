@@ -1,5 +1,9 @@
 <% provide(:title) { t("sdg.goals.help.title") } %>
 
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: sdg_help_url %>
+<% end %>
+
 <section class="row sdg-help-content">
   <h1><%= t("sdg.goals.help.title") %></h1>
   <p><%= t("sdg.goals.help.description") %></p>
