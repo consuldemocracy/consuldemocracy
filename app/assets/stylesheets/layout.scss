@@ -700,7 +700,7 @@ body > header,
 }
 
 .top-links {
-  background: $dark;
+  background: $negro-mate;
   color: #fff;
   font-size: $small-font-size;
   padding-right: $line-height / 2;
@@ -738,7 +738,7 @@ body > header,
 .subnavigation {
 
   @include breakpoint(medium) {
-    background: #fff;
+    background: $secundario-gris;
     padding-bottom: 0;
   }
 
