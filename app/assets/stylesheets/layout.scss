@@ -715,7 +715,7 @@ body > header,
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    &:before{
+    &:before, &:after{
       content: none;
     }
   }
