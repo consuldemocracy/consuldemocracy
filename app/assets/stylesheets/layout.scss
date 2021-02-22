@@ -838,6 +838,7 @@ body > header,
     margin-right: $line-height / 2;
     position: relative;
     text-align: left;
+    font-family: 'montserratregular';
 
     @include breakpoint(medium) {
       margin-right: $line-height;
@@ -2690,6 +2691,8 @@ table {
       margin-bottom: 0;
       min-width: rem-calc(240);
       padding: $line-height / 2 0;
+      font-family: 'montserratregular';
+
     }
   }
 
@@ -2725,7 +2728,7 @@ table {
   }
 
   @include breakpoint(medium) {
-    max-height: rem-calc(185);
+   /* max-height: rem-calc(185);*/
   }
 
   @include breakpoint(large) {
@@ -2754,10 +2757,13 @@ table {
     padding: $line-height / 4 $line-height / 2;
     position: absolute;
     width: 100%;
-    z-index: 3;
+    z-index: 24;
+    background: $brand;
+
 
     h3 {
       font-size: $base-font-size;
+      font-family: 'montserratregular';
 
       @include breakpoint(medium) {
         font-size: rem-calc(20);
@@ -2774,10 +2780,12 @@ table {
       border-radius: rem-calc(4);
       color: #000;
       display: inline-block;
-      font-size: $small-font-size;
+      /*font-size: $small-font-size;*/
+      font-size: 0.9rem;
       font-weight: bold;
       margin-bottom: $line-height / 4;
       padding: rem-calc(4) rem-calc(8);
+      font-family: 'montserratlight';
     }
   }
 }

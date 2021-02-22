@@ -1,7 +1,9 @@
 .widget-feed {
 
   .feed-description {
-
+    a{
+      font-family: 'montserratregular';
+    }
     p {
       font-size: $small-font-size;
       margin-bottom: 0;
