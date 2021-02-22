@@ -4,8 +4,8 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
-.header{
+header{
   h2.title{
-    font-family: 'montserratregular';
+    font-family: 'montserratregular' !important;
   }
 }
