@@ -2768,10 +2768,12 @@ table {
     background: $brand;
 
 
+
     h3 {
       font-size: $base-font-size;
       font-family: 'montserratregular' !important;
       margin-top: 5px;
+      font-weight: normal;
 
       @include breakpoint(medium) {
         font-size: rem-calc(20);
