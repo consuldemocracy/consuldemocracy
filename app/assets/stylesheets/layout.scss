@@ -704,6 +704,21 @@ body > header,
   color: #fff;
   font-size: $small-font-size;
   padding-right: $line-height / 2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  .row{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    &:before{
+      content: none;
+    }
+  }
 
   a {
     color: #fff;
