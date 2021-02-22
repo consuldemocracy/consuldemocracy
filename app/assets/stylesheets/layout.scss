@@ -2649,6 +2649,9 @@ table {
         word-wrap: break-word;
         padding-left: 12px;
         padding-right: 12px;
+        &+p{
+          border: 1px solid $brand;
+        }
       }
     }
   }
