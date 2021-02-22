@@ -178,7 +178,6 @@ en:
         other: "You have selected <strong>%{count}</strong> projects out of <strong>%{limit}</strong>"
     show:
       group: Group
-      phase: Actual phase
       unfeasible_title: Unfeasible investments
       unfeasible: See unfeasible investments
       unselected_title: Investments not selected for balloting phase
