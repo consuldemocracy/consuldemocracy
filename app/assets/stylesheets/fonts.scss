@@ -210,3 +210,147 @@
   font-style: normal;
 
 }
+
+
+/*--------------------------------------------
+ MULI FONT FAMILY ----------------------------
+ --------------------------------------------*/
+
+/* MULI REGULAR */
+
+
+@font-face {
+  font-family: 'muliregular';
+  src: url('/muli-webfont.woff2') format('woff2'),
+  url('muli-webfont.woff') format('woff'),
+  url('muli-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI BOLD */
+
+
+@font-face {
+  font-family: 'mulibold';
+  src: url('muli-bold-webfont.woff2') format('woff2'),
+  url('muli-bold-webfont.woff') format('woff'),
+  url('muli-bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI BOLD ITALIC */
+
+
+@font-face {
+  font-family: 'mulibolditalic';
+  src: url('muli-bolditalic-webfont.woff2') format('woff2'),
+  url('muli-bolditalic-webfont.woff') format('woff'),
+  url('muli-bolditalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI EXTRALIGHT*/
+
+
+@font-face {
+  font-family: 'muliextralight';
+  src: url('muli-extralight-webfont.woff2') format('woff2'),
+  url('muli-extralight-webfont.woff') format('woff'),
+  url('muli-extralight-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI EXTRALIGHT ITALIC*/
+
+
+@font-face {
+  font-family: 'muliextralightitalic';
+  src: url('muli-extralightitalic-webfont.woff2') format('woff2'),
+  url('muli-extralightitalic-webfont.woff') format('woff'),
+  url('muli-extralightitalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI REGULAR ITALIC*/
+
+
+@font-face {
+  font-family: 'muliregularitalic';
+  src: url('muli-italic-webfont.woff2') format('woff2'),
+  url('muli-italic-webfont.woff') format('woff'),
+  url('muli-italic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI LIGHT*/
+
+
+@font-face {
+  font-family: 'mulilight';
+  src: url('muli-light-webfont.woff2') format('woff2'),
+  url('muli-light-webfont.woff') format('woff'),
+  url('muli-light-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI LIGHT ITALIC*/
+
+
+@font-face {
+  font-family: 'mulilightitalic';
+  src: url('muli-lightitalic-webfont.woff2') format('woff2'),
+  url('muli-lightitalic-webfont.woff') format('woff'),
+  url('muli-lightitalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI SEMIBOLD*/
+
+
+@font-face {
+  font-family: 'mulisemibold';
+  src: url('muli-semibold-webfont.woff2') format('woff2'),
+  url('muli-semibold-webfont.woff') format('woff'),
+  url('muli-semibold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI SEMIBOLD ITALIC*/
+
+
+@font-face {
+  font-family: 'mulisemibolditalic';
+  src: url('muli-semi-bolditalic-webfont.woff2') format('woff2'),
+  url('muli-semi-bolditalic-webfont.woff') format('woff'),
+  url('muli-semi-bolditalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
