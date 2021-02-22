@@ -17,6 +17,16 @@
       margin-bottom: 0;
       margin-top: 0;
       padding: $line-height / 2 0;
+      width: 48%;
+      clear: none;
+      margin: 0;
+      float: left;
+      margin-right: 4%;
+      border-right: 1px solid #b9b9b9;
+      &:nth-child(even){
+        margin-right: 0;
+        border-right: 0;
+      }
     }
   }
 
