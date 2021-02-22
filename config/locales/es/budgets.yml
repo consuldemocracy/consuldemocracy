@@ -178,7 +178,6 @@ es:
         other: "Has seleccionado <strong>%{count}</strong> proyectos de <strong>%{limit}</strong>"
     show:
       group: Grupo
-      phase: Fase actual
       unfeasible_title: Proyectos de gasto inviables
       unfeasible: Ver los proyectos inviables
       unselected_title: Proyectos no seleccionados para la votación final
