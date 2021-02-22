@@ -2651,6 +2651,12 @@ table {
         padding-right: 12px;
         &+p{
           border: 1px solid $brand;
+          display: inline-block;
+          margin-left: 12px;
+          color: #000;
+          font-family: 'montserratmedium';
+          font-size: 12px;
+          font-weight: bold;
         }
       }
     }
@@ -2711,10 +2717,11 @@ table {
 
     &.title {
       display: inline-block;
-      border-top: 4px solid $brand;
-      margin-bottom: 0;
-      min-width: rem-calc(240);
+      border-bottom: 4px solid $brand;
+      margin-bottom: 32px;
       padding: $line-height / 2 0;
+
+      padding-bottom: 4px;
       font-family: 'montserratregular' !important;
 
     }
