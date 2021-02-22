@@ -2738,12 +2738,27 @@ table {
   a {
 
     &.see-all {
-      border-bottom: 1px solid $border;
+      border-bottom: 1px solid #dee0e3;
       display: block;
-      font-size: $small-font-size;
-      margin: $line-height 0 $line-height / 2;
-      text-align: right;
-      width: 100%;
+      font-size: 0.875rem;
+      margin: 1.5rem 0 0.75rem;
+      text-align: center;
+      width: 198px !important;
+      border: 1px solid #407374;
+      padding-bottom: 2px;
+      /* float: right; */
+      display: inline !important;
+      background: #fff;
+      position: relative;
+      &:after{
+        content: 'a';
+        font-size: 0;
+        background: $brand;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+      }
     }
   }
 }
