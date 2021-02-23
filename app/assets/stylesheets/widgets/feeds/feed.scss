@@ -1,9 +1,7 @@
 .widget-feed {
 
   .feed-description {
-    a{
-      font-family: 'montserratregular';
-    }
+
     p {
       font-size: $small-font-size;
       margin-bottom: 0;
@@ -17,28 +15,6 @@
       margin-bottom: 0;
       margin-top: 0;
       padding: $line-height / 2 0;
-      width: 48%;
-      clear: none;
-      margin: 0;
-      float: left;
-      margin-right: 4%;
-      border-right: 1px solid #b9b9b9;
-      &:nth-child(even){
-        margin-right: 0;
-        border-right: 0;
-      }
-    }
-    @media (max-width: 767px){
-      .proposal {
-        width: 100%;
-        margin-right: 0;
-        border-bottom: 1px solid #b9b9b9;
-        border-right: 0;
-        padding: 0.95rem 0;
-        &:last-of-type{
-          border-bottom: 0;
-        }
-      }
     }
   }
 

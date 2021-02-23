@@ -4,6 +4,238 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+
+
+/* FONTS */
+
+/* MONSERRAT FAMILY */
+
+/* MONTSERRAT BOLD */
+
+
+@font-face {
+  font-family: 'montserratbold';
+  src: url('montserrat-bold-webfont.woff2') format('woff2'),
+  url('montserrat-bold-webfont.woff') format('woff'),
+  url('montserrat-bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MONTSERRAT EXTRABOLD */
+
+@font-face {
+  font-family: 'montserratextrabold';
+  src: url('montserrat-extrabold-webfont.woff2') format('woff2'),
+  url('montserrat-extrabold-webfont.woff') format('woff'),
+  url('montserrat-extrabold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MONTSERRAT LIGHT */
+
+
+@font-face {
+  font-family: 'montserratlight';
+  src: url('montserrat-light-webfont.woff2') format('woff2'),
+  url('montserrat-light-webfont.woff') format('woff'),
+  url('montserrat-light-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+/* MONTSERRAT MEDIUM */
+
+@font-face {
+  font-family: 'montserratmedium';
+  src: url('montserrat-medium-webfont.woff2') format('woff2'),
+  url('montserrat-medium-webfont.woff') format('woff'),
+  url('montserrat-medium-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MONTSERRAT REGULAR */
+
+
+@font-face {
+  font-family: 'montserratregular';
+  src: url('montserrat-regular_0-webfont.woff2') format('woff2'),
+  url('montserrat-regular_0-webfont.woff') format('woff'),
+  url('montserrat-regular_0-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MONTSERRAT SEMIBOLD */
+
+
+@font-face {
+  font-family: 'montserratsemibold';
+  src: url('montserrat-semibold-webfont.woff2') format('woff2'),
+  url('montserrat-semibold-webfont.woff') format('woff'),
+  url('montserrat-semibold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/*--------------------------------------------
+ MULI FONT FAMILY ----------------------------
+ --------------------------------------------*/
+
+/* MULI REGULAR */
+
+
+@font-face {
+  font-family: 'muliregular';
+  src: url('/muli-webfont.woff2') format('woff2'),
+  url('muli-webfont.woff') format('woff'),
+  url('muli-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI BOLD */
+
+
+@font-face {
+  font-family: 'mulibold';
+  src: url('muli-bold-webfont.woff2') format('woff2'),
+  url('muli-bold-webfont.woff') format('woff'),
+  url('muli-bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI BOLD ITALIC */
+
+
+@font-face {
+  font-family: 'mulibolditalic';
+  src: url('muli-bolditalic-webfont.woff2') format('woff2'),
+  url('muli-bolditalic-webfont.woff') format('woff'),
+  url('muli-bolditalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI EXTRALIGHT*/
+
+
+@font-face {
+  font-family: 'muliextralight';
+  src: url('muli-extralight-webfont.woff2') format('woff2'),
+  url('muli-extralight-webfont.woff') format('woff'),
+  url('muli-extralight-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI EXTRALIGHT ITALIC*/
+
+
+@font-face {
+  font-family: 'muliextralightitalic';
+  src: url('muli-extralightitalic-webfont.woff2') format('woff2'),
+  url('muli-extralightitalic-webfont.woff') format('woff'),
+  url('muli-extralightitalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI REGULAR ITALIC*/
+
+
+@font-face {
+  font-family: 'muliregularitalic';
+  src: url('muli-italic-webfont.woff2') format('woff2'),
+  url('muli-italic-webfont.woff') format('woff'),
+  url('muli-italic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI LIGHT*/
+
+
+@font-face {
+  font-family: 'mulilight';
+  src: url('muli-light-webfont.woff2') format('woff2'),
+  url('muli-light-webfont.woff') format('woff'),
+  url('muli-light-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI LIGHT ITALIC*/
+
+
+@font-face {
+  font-family: 'mulilightitalic';
+  src: url('muli-lightitalic-webfont.woff2') format('woff2'),
+  url('muli-lightitalic-webfont.woff') format('woff'),
+  url('muli-lightitalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI SEMIBOLD*/
+
+
+@font-face {
+  font-family: 'mulisemibold';
+  src: url('muli-semibold-webfont.woff2') format('woff2'),
+  url('muli-semibold-webfont.woff') format('woff'),
+  url('muli-semibold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* MULI SEMIBOLD ITALIC*/
+
+
+@font-face {
+  font-family: 'mulisemibolditalic';
+  src: url('muli-semi-bolditalic-webfont.woff2') format('woff2'),
+  url('muli-semi-bolditalic-webfont.woff') format('woff'),
+  url('muli-semi-bolditalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 header{
   h2.title{
     font-family: 'montserratregular' !important;
@@ -937,3 +1169,277 @@ footer {
     }
   }
 }
+
+/* PARTICIPACION.CSS */
+
+.debate,
+.proposal,
+.investment-project,
+.budget-investment,
+.legislation,
+.communities-show {
+  /* margin: $line-height / 4 0;*/
+  margin: 0.875rem 0;
+  .panel {
+    @extend %panel;
+  }
+
+  .debate-content,
+  .proposal-content,
+  .investment-project-content,
+  .budget-investment-content {
+    margin: 0;
+    min-height: rem-calc(180);
+    position: relative;
+  }
+
+  .tags {
+    @extend %tags;
+  }
+
+  .tags,
+  .sdg-target-tag-list {
+    a {
+      font-size: $tiny-font-size;
+    }
+  }
+
+  .icon-debates,
+  .icon-proposals,
+  .icon-budget {
+    font-size: rem-calc(18);
+    line-height: $line-height;
+    margin-left: rem-calc(6);
+    top: 0;
+  }
+
+  .icon-debates {
+    color: $debates;
+  }
+
+  .icon-proposals {
+    color: $proposals-dark;
+  }
+
+  .icon-budget {
+    color: $budget;
+    font-size: $small-font-size;
+  }
+
+  .debate-info,
+  .proposal-info,
+  .investment-project-info,
+  .budget-investment-info,
+  .topic-info {
+    color: $text-medium;
+    font-size: $small-font-size;
+    margin: rem-calc(6) 0 0;
+
+    .icon-comments {
+      font-size: rem-calc(16);
+      vertical-align: top;
+    }
+
+    a {
+      color: $text-medium;
+    }
+  }
+
+  .debate-description,
+  .proposal-description,
+  .investment-project-description,
+  .budget-investment-description {
+    color: $text;
+    font-size: rem-calc(13);
+    height: rem-calc(72);
+    line-height: $line-height;
+    margin-bottom: rem-calc(12);
+    margin-top: 0;
+    overflow: hidden;
+    position: relative;
+
+    a {
+      color: $text;
+    }
+  }
+
+  .truncate {
+    background: image-url("truncate.png");
+    background-repeat: repeat-x;
+    bottom: 0;
+    height: rem-calc(24);
+    position: absolute;
+    width: 100%;
+  }
+
+  p {
+    color: $text;
+  }
+}
+
+.help-header,
+.section-header {
+  background: #fff;
+  border-bottom: 1px solid $brand;
+  margin-top: -$line-height;
+  margin-bottom: $line-height;
+  padding-bottom: $line-height / 2;
+  padding-top: $line-height;
+
+  h1 {
+    font-size: rem-calc(24);
+    text-transform: uppercase;
+  }
+}
+
+
+
+.featured-proposals {
+  /*background: $featured;*/
+  background: #ececec;
+
+  .proposal-featured {
+    min-height: $line-height * 3.5;
+    border-bottom: 2px solid #fefefe;
+  }
+
+  .supports {
+    @include supports;
+    background: none;
+    border: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    &::after {
+      content: none;
+    }
+
+    .total-supports {
+      display: none;
+    }
+
+    .button-support {
+      background: $text;
+      color: $featured;
+      margin-top: 0;
+
+      &:hover {
+        background: #fff;
+        color: $text;
+      }
+    }
+
+    .participation-not-allowed {
+      background: $featured;
+      font-size: $small-font-size;
+      padding-top: 0;
+
+      a {
+        color: $color-warning;
+      }
+
+      p {
+        color: $color-warning;
+        font-size: $small-font-size;
+        line-height: $line-height;
+      }
+    }
+
+    .supported {
+      margin-top: 0;
+      font-size: $small-font-size;
+    }
+  }
+
+  .share-supported {
+
+    .social-share-button .ssb-icon {
+      background: none;
+      color: $text;
+      height: rem-calc(33);
+
+      &::before {
+        font-size: rem-calc(18);
+        line-height: rem-calc(33);
+      }
+    }
+  }
+}
+
+/* PROPOSAL.SCSS */
+
+.feed-proposals .proposal {
+  @include grid-row-nest;
+  clear: both;
+
+  .feed-image {
+    display: inline-block;
+    height: rem-calc(120);
+    overflow: hidden;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      height: rem-calc(96);
+    }
+
+    img {
+      max-width: none;
+      width: 100%;
+    }
+  }
+}
+
+
+/* FEED.CSS */
+
+.widget-feed {
+
+  .feed-description {
+    a{
+      font-family: 'montserratregular';
+    }
+    p {
+      font-size: $small-font-size;
+      margin-bottom: 0;
+    }
+  }
+
+  .feed-content {
+
+    .debate,
+    .proposal {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding: $line-height / 2 0;
+      width: 48%;
+      clear: none;
+      margin: 0;
+      float: left;
+      margin-right: 4%;
+      border-right: 1px solid #b9b9b9;
+      &:nth-child(even){
+        margin-right: 0;
+        border-right: 0;
+      }
+    }
+    @media (max-width: 767px){
+      .proposal {
+        width: 100%;
+        margin-right: 0;
+        border-bottom: 1px solid #b9b9b9;
+        border-right: 0;
+        padding: 0.95rem 0;
+        &:last-of-type{
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .no-items {
+    margin-top: $line-height;
+  }
+}
+
+
+

@@ -642,8 +642,8 @@
 .budget-investment,
 .legislation,
 .communities-show {
- /* margin: $line-height / 4 0;*/
-  margin: 0.875rem 0;
+  margin: $line-height / 4 0;
+
   .panel {
     @extend %panel;
   }
@@ -899,8 +899,8 @@
 
 .help-header,
 .section-header {
-  background: #fff;
-  border-bottom: 1px solid $brand;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
   margin-top: -$line-height;
   margin-bottom: $line-height;
   padding-bottom: $line-height / 2;
@@ -1058,12 +1058,10 @@
 }
 
 .featured-proposals {
-  /*background: $featured;*/
-  background: #ececec;
+  background: $featured;
 
   .proposal-featured {
     min-height: $line-height * 3.5;
-    border-bottom: 2px solid #fefefe;
   }
 
   .supports {
