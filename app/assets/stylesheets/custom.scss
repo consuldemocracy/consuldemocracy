@@ -1508,3 +1508,58 @@ footer {
     background: $brand;
   }
 }
+
+.proposal-show{
+  .row{
+    .column > h1{
+      border-bottom: 3px solid #407374;
+      margin-bottom: 17px;
+
+    }
+  }
+}
+.debate-show{
+  .row{
+    .column > h1{
+      border-bottom: 3px solid #407374;
+      margin-bottom: 17px;
+
+    }
+  }
+}
+
+.legislation-hero{
+  &.jumbo{
+    background: #d6d6d6 !important;
+  }
+  .row{
+    .column > h2{
+      border-bottom: 3px solid #407374;
+      margin-bottom: 17px;
+
+    }
+  }
+}
+
+
+.key-dates li {
+  background: #ececec !important;
+}
+
+@media print, screen and (min-width: 64em) {
+  .key-dates li {
+    background: #ececec;
+  }
+}
+
+.sdg-goal-show{
+  .feeds-list{
+    .feed-proposals{
+      header{
+        h2.title{
+          border-top: 0;
+        }
+      }
+    }
+  }
+}
