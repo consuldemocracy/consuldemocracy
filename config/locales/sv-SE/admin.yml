@@ -62,6 +62,8 @@ sv:
         type: Typ
         no_activity: Det finns ingen moderatoraktivitet.
     budgets:
+      actions:
+        preview: "Förhandsvisa budget"
       index:
         title: Medborgarbudgetar
         new_link: Skapa ny budget
@@ -80,8 +82,12 @@ sv:
         notice: En ny medborgarbudget har skapats!
       update:
         notice: Medborgarbudgeten har uppdaterats
+      publish:
+        notice: "Medborgarbudgeten har publicerats"
       edit:
         title: Redigera medborgarbudget
+        drafting: "Den här medborgarbudgeten är i utkastläge, bara administratörer kan se den på den offentliga webbplatsen. När den väl har publicerats kan den inte ändras till utkastläget igen."
+        publish: "Publicera budget"
         delete: Radera budget
         phase: Fas
         dates: Datum
