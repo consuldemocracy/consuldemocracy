@@ -63,7 +63,7 @@ h6 {
 p {
   font-size: $base-font-size;
   font-weight: 400;
-  line-height: 1.45rem;
+  line-height: $base-line;
 }
 
 a {
@@ -88,12 +88,6 @@ a {
   &.warning,
   &.warning:hover {
     color: #000;
-  }
-
-  &.expanded{
-    &:hover{
-      background: $secundario-gris;
-    }
   }
 
   &.medium {
@@ -515,7 +509,7 @@ body > header,
     position: relative;
 
     &::after {
-      color: #fff;
+      color: #808080;
       content: "\61";
       font-family: "icons" !important;
       font-size: $small-font-size;
@@ -562,20 +556,6 @@ body > header,
   color: #fff;
   padding-bottom: 0;
   padding-top: 0;
-  & span.float-right{
-    font-family: 'montserratregular';
-    font-size: 18px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    .menu-icon.dark{
-      margin-right: 8px;
-      margin-left: 8px;
-    }
-  }
 
   @include breakpoint(medium) {
     padding: 0;
@@ -687,12 +667,6 @@ body > header,
   }
 }
 
-@media (max-width: 767px){
-  .top-bar{
-    flex-direction: row-reverse;
-  }
-}
-
 .menu-icon {
 
   &.dark {
@@ -726,30 +700,10 @@ body > header,
 }
 
 .top-links {
-  background: $negro-mate;
+  background: $dark;
   color: #fff;
   font-size: $small-font-size;
   padding-right: $line-height / 2;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  .row{
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    &:before, &:after{
-      content: none;
-    }
-    @media (max-width: 767px){
-      .hide-for-small-only{
-        display: block !important;
-      }
-    }
-  }
 
   a {
     color: #fff;
@@ -784,7 +738,7 @@ body > header,
 .subnavigation {
 
   @include breakpoint(medium) {
-    background: $secundario-gris;
+    background: #fff;
     padding-bottom: 0;
   }
 
@@ -796,7 +750,6 @@ body > header,
       @include breakpoint(medium) {
         display: inline-block;
         margin-right: rem-calc(20);
-        font-family: 'montserratregular';
       }
     }
   }
@@ -808,8 +761,6 @@ body > header,
     position: relative;
     text-align: left;
     width: 100%;
-    font-family: 'montserratregular';
-
 
     @include breakpoint(medium) {
       color: $text;
@@ -833,8 +784,8 @@ body > header,
   }
 
   .input-group {
-    /*padding-top: $line-height / 4;*/
-    padding-top: 0.45rem;
+    padding-top: $line-height / 4;
+
     @include breakpoint(medium) {
       margin-bottom: 0;
     }
@@ -887,18 +838,13 @@ body > header,
     margin-right: $line-height / 2;
     position: relative;
     text-align: left;
-    font-family: 'montserratregular';
 
     @include breakpoint(medium) {
       margin-right: $line-height;
     }
 
-    h2{
-      font-family: 'montserratregular' !important;
-    }
     &:hover {
       color: $link;
-      text-decoration: none;
     }
   }
 
@@ -929,36 +875,30 @@ footer {
   .logo a {
     font-family: "Lato" !important;
     text-decoration: none;
-    color: #fff;
 
     &:hover {
       text-decoration: underline;
-      color: $brand;
     }
   }
 
   p {
     font-size: $small-font-size;
-    color: #fff;
 
     &.info a {
       text-decoration: underline;
-      color: #fff;
     }
   }
 
-  a{
-    color: #fff;
-  }
+  a,
   a:active,
   a:focus {
-    color: $brand;
+    color: $text;
     text-decoration: underline;
+
     &:hover {
-      color: $brand;
+      color: $text-medium;
     }
   }
-
 
   .footer-sections {
     padding-left: 0;
@@ -971,7 +911,7 @@ footer {
 }
 
 .footer {
-  background: #333333;
+  background: #f1f1f1;
   clear: both;
   margin-top: $line-height * 2;
   min-height: $line-height * 12;
@@ -982,23 +922,6 @@ footer {
   border-top: 1px solid $text-light;
   font-size: $small-font-size;
   padding-top: $line-height / 2;
-  div{
-    color: #fff;
-    a{
-      color: #fff;
-      &:hover{
-        color: $brand;
-      }
-    }
-  }
-  .social{
-    a{
-      color: #fff;
-      &:hover{
-        color: $brand;
-      }
-    }
-  }
 }
 
 // 04. Tags
@@ -1125,11 +1048,11 @@ footer {
   }
 
   .locale-switcher {
-    background: #737272;
+    background: #001d33;
     border: 0;
-    border-radius: 0;
+    border-radius: rem-calc(4);
     color: #fff;
-    font-size: 0.7rem;
+    font-size: $small-font-size;
     height: $line-height;
     margin-bottom: 0;
     margin-top: $line-height / 4;
@@ -1615,22 +1538,34 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
-.button.button-wordpress {
+.button.button-wordpress,
+.button.button-telegram {
+  background: #fff;
   color: $text;
   font-weight: bold;
+  height: $line-height * 2;
+  line-height: $line-height * 2;
+  padding: 0;
+  position: relative;
 
   &::before {
+    font-family: "icons" !important;
     font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height * 2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
   }
 }
 
 .button.button-twitter {
-  @include has-fa-icon(twitter, brands);
   background: #ecf7fc;
   border-left: 3px solid #45b0e3;
 
   &::before {
     color: #45b0e3;
+    content: "f";
   }
 }
 
@@ -1638,13 +1573,17 @@ table {
   background-image: none;
   color: #fff;
   height: $icon-width;
-  line-height: $icon-width;
-  text-align: center;
+  position: relative;
   width: $icon-width;
 
   &::before {
-    font-size: $icon-width / 2;
-    margin-right: 0;
+    font-family: "icons";
+    font-size: rem-calc(24);
+    left: 50%;
+    line-height: $line-height * 2;
+    margin-left: rem-calc(-11);
+    position: absolute;
+    top: 0;
   }
 
   &:hover,
@@ -1654,8 +1593,11 @@ table {
 }
 
 .ssb-twitter {
-  @include has-fa-icon(twitter, brands);
   background: #45b0e3;
+
+  &::before {
+    content: "f";
+  }
 
   &:hover,
   &:focus {
@@ -1664,18 +1606,21 @@ table {
 }
 
 .button.button-facebook {
-  @include has-fa-icon(facebook-f, brands);
   background: #ebeef4;
   border-left: 3px solid #3b5998;
 
   &::before {
     color: #3b5998;
+    content: "A";
   }
 }
 
 .ssb-facebook {
-  @include has-fa-icon(facebook-f, brands);
   background: #3b5998;
+
+  &::before {
+    content: "A";
+  }
 
   &:hover,
   &:focus {
@@ -1684,28 +1629,41 @@ table {
 }
 
 .button.button-google {
-  @include has-fa-icon(google, brands);
   background: #fcedea;
   border-left: 3px solid #de4c34;
 
   &::before {
     color: #de4c34;
+    content: "B";
   }
 }
 
 .button.button-wordpress {
-  @include has-fa-icon(wordpress, brands);
   background: #dcdde3;
   border-left: 3px solid #2f2f33;
 
   &::before {
     color: #2f2f33;
+    content: "J";
+  }
+}
+
+.button.button-telegram {
+  background: #ecf7fc;
+  border-left: 3px solid #08c;
+
+  &::before {
+    color: #08c;
+    content: "1";
   }
 }
 
 .ssb-telegram {
-  @include has-fa-icon(telegram-plane, brands);
   background: #08c;
+
+  &::before {
+    content: "1";
+  }
 
   &:hover,
   &:focus {
@@ -1714,8 +1672,11 @@ table {
 }
 
 .ssb-whatsapp_app {
-  @include has-fa-icon(whatsapp, brands);
   background: #43d854;
+
+  &::before {
+    content: "P";
+  }
 
   &:hover,
   &:focus {
@@ -1725,6 +1686,7 @@ table {
 
 @include breakpoint(medium) {
 
+  .button.button-telegram,
   .ssb-telegram,
   .ssb-whatsapp_app {
     display: none !important;
@@ -2705,17 +2667,6 @@ table {
       &.description {
         color: $text;
         word-wrap: break-word;
-        padding-left: 12px;
-        padding-right: 12px;
-        &+p{
-          border: 1px solid $brand;
-          display: inline-block;
-          margin-left: 12px;
-          color: #000;
-          font-family: 'montserratmedium';
-          font-size: 12px;
-          font-weight: bold;
-        }
       }
     }
   }
@@ -2733,7 +2684,6 @@ table {
 
     .card a {
       height: 100%;
-      background: #ececec;
     }
   }
 
@@ -2763,11 +2713,6 @@ table {
       padding: 0 $line-height / 4;
     }
   }
-  @media (max-width: 767px){
-    .card {
-      width: 100%;
-    }
-  }
 
   h2 {
     &.title {
@@ -2780,13 +2725,10 @@ table {
 
     &.title {
       display: inline-block;
-      border-bottom: 4px solid $brand;
-      margin-bottom: 32px;
+      border-top: 4px solid $brand;
+      margin-bottom: 0;
+      min-width: rem-calc(240);
       padding: $line-height / 2 0;
-
-      padding-bottom: 4px;
-      font-family: 'montserratregular' !important;
-
     }
   }
 
@@ -2801,33 +2743,12 @@ table {
   a {
 
     &.see-all {
-      border-bottom: 1px solid #dee0e3;
+      border-bottom: 1px solid $border;
       display: block;
-      font-size: 0.875rem;
-      margin: 1.5rem 0 0.75rem;
-      text-align: center;
-      width: 198px !important;
-      border: 1px solid #407374;
-      padding-bottom: 2px;
-      /* float: right; */
-      display: inline !important;
-      background: #fff;
-      position: relative;
-      margin-left: 13px;
-      &:hover{
-        background: $brand;
-        text-decoration: none;
-        color: #fff;
-      }
-    }
-  }
-  @media (max-width: 767px){
-    a {
-      &.see-all {
-        margin-left: calc(50% - 99px);
-        padding-left: 10px;
-        padding-right: 10px;
-      }
+      font-size: $small-font-size;
+      margin: $line-height 0 $line-height / 2;
+      text-align: right;
+      width: 100%;
     }
   }
 }
@@ -2839,15 +2760,15 @@ table {
   position: relative;
 
   @include breakpoint(medium down) {
-    min-height: 17.8rem;
+    min-height: $line-height * 4;
   }
 
   @include breakpoint(medium) {
-   /* max-height: rem-calc(185);*/
+    max-height: rem-calc(185);
   }
 
   @include breakpoint(large) {
-    min-height: 17.8rem;
+    min-height: rem-calc(185);
   }
 
   .gradient {
@@ -2870,43 +2791,32 @@ table {
     line-height: rem-calc(24);
     text-transform: uppercase;
     padding: $line-height / 4 $line-height / 2;
-    padding-top: 12px;
     position: absolute;
     width: 100%;
-    z-index: 24;
-    background: $brand;
-
-
+    z-index: 3;
 
     h3 {
       font-size: $base-font-size;
-      font-family: 'montserratregular' !important;
-      margin-top: 5px;
-      font-weight: normal;
 
       @include breakpoint(medium) {
         font-size: rem-calc(20);
-        font-family: 'montserratregular';
       }
 
       @include breakpoint(large) {
         font-size: rem-calc(24);
         line-height: rem-calc(24);
-        font-family: 'montserratregular';
       }
     }
 
     span {
-      background: transparent;
-      border-radius: 0;
-      color: #fff;
+      background: #fff;
+      border-radius: rem-calc(4);
+      color: #000;
       display: inline-block;
-      font-size: 0.7rem;
-      font-weight: normal;
-      margin-bottom: 0.375rem;
-      padding: 2px 12px 0px 12px;
-      font-family: 'montserratlight';
-      border: 1px solid #fff;
+      font-size: $small-font-size;
+      font-weight: bold;
+      margin-bottom: $line-height / 4;
+      padding: rem-calc(4) rem-calc(8);
     }
   }
 }
