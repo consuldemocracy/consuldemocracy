@@ -1432,7 +1432,7 @@ footer {
 
     .debate,
     .proposal {
-      margin-bottom: 0;
+      /*margin-bottom: 0;
       margin-top: 0;
       padding: $line-height / 2 0;
       width: 48%;
@@ -1444,10 +1444,10 @@ footer {
       &:nth-child(even){
         margin-right: 0;
         border-right: 0;
-      }
+      }*/
     }
     @media (max-width: 767px){
-      .proposal {
+     /* .proposal {
         width: 100%;
         margin-right: 0;
         border-bottom: 1px solid #b9b9b9;
@@ -1456,7 +1456,7 @@ footer {
         &:last-of-type{
           border-bottom: 0;
         }
-      }
+      }*/
     }
   }
 
@@ -1625,9 +1625,18 @@ footer {
 }
 
 .home-page .background-header {
-  -webkit-clip-path: none;
+  /*-webkit-clip-path: none;
   clip-path: none;
   height: 3rem;
   background: #000;
-  margin-top: -3rem;
+  margin-top: -3rem;*/
+  display: none;
 }
+
+.home-page .jumbo.highlight{
+  background: url("assets/banner-home.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
