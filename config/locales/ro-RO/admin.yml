@@ -137,6 +137,7 @@ ro:
         submit: "Salvează grup"
       index:
         back: "Mergi înapoi la bugete"
+        help: "Grupurile sunt menite să organizeze titluri. După ce un grup este creat și conține titluri, se poate stabili în câte titluri poate vota un utilizator pe grup."
     budget_headings:
       no_headings: "Nu există rubrici."
       amount:
@@ -160,12 +161,15 @@ ro:
         submit: "Salvează rubrică"
       index:
         back: "Înapoi la grupuri"
+        help: "Rubricile sunt menite să împartă banii din bugetul participativ. Aici puteți adăuga titluri pentru acest grup și puteți atribui suma de bani care va fi utilizată pentru fiecare titlu."
     budget_phases:
       edit:
         summary_help_text: Acest text va informa utilizatorul despre etapă. Pentru a-l afișa chiar dacă etapa nu este activă, bifați caseta de mai jos
         description_help_text: Acest text va apărea în antet atunci când faza este activă
         enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
         save_changes: Salvează modificări
+      index:
+        help: "Bugetele participative au faze diferite. Aici puteți activa sau dezactiva fazele și, de asemenea, personaliza fiecare fază individuală."
     budget_investments:
       index:
         heading_filter_all: Toate rubricile
