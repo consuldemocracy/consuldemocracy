@@ -1484,3 +1484,27 @@ footer {
     }
   }
 }
+
+
+.social-share-button .ssb-icon::before {
+  font-family: "icons";
+  font-size: 1.5rem;
+  left: 50%;
+  line-height: 3rem;
+  margin-left: -0.6875rem;
+  position: absolute;
+  top: 26%;
+}
+
+.debate-show .supports .progress, .proposal-show .supports .progress, .poll-question-show .supports .progress, .investment-project-show .supports .progress, .budget-investment-show .supports .progress, .polls-show .supports .progress, .debate-quiz .supports .progress, .budget-investment-show .supports .progress, .draft-panels .supports .progress, .debate-questions .supports .progress, .communities-show .supports .progress, .topic-show .supports .progress, .milestone-content .supports .progress {
+  background: #ececec;
+  border: 1px solid #ececec;
+}
+
+.debate-show .supports .button-support, .proposal-show .supports .button-support, .poll-question-show .supports .button-support, .investment-project-show .supports .button-support, .budget-investment-show .supports .button-support, .polls-show .supports .button-support, .debate-quiz .supports .button-support, .budget-investment-show .supports .button-support, .draft-panels .supports .button-support, .debate-questions .supports .button-support, .communities-show .supports .button-support, .topic-show .supports .button-support, .milestone-content .supports .button-support {
+  background: #333333;
+  color: #fefefe;
+  &:hover{
+    background: $brand;
+  }
+}
