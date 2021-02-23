@@ -1069,9 +1069,9 @@ footer {
   .locale-switcher {
     background: #001d33;
     border: 0;
-    border-radius: rem-calc(4);
+    border-radius: 0;
     color: #fff;
-    font-size: $small-font-size;
+    font-size: 0.7rem;
     height: $line-height;
     margin-bottom: 0;
     margin-top: $line-height / 4;
@@ -2750,6 +2750,12 @@ table {
       display: inline !important;
       background: #fff;
       position: relative;
+      margin-left: 13px;
+      &:hover{
+        background: $brand;
+        text-decoration: none;
+        color: #fff
+      }
     }
   }
 }
