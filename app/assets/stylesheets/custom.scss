@@ -1297,10 +1297,24 @@ footer {
 .featured-proposals {
   /*background: $featured;*/
   background: #ececec;
+  margin-bottom: 15px;
+  .column{
+    background: $brand;
+    color: #fff;
+    margin-top: -11px;
+    padding-top: 5px;
+  }
 
   .proposal-featured {
-    min-height: $line-height * 3.5;
-    border-bottom: 2px solid #fefefe;
+    min-height: 0;
+    border-bottom: 2px solid #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    float: left;
+    width: 100%;
+    &:last-of-type{
+      border-bottom: 0;
+    }
   }
 
   .supports {
@@ -1319,13 +1333,13 @@ footer {
     }
 
     .button-support {
-      background: $text;
-      color: $featured;
+      background: #000;
+      color: #fff;
       margin-top: 0;
 
       &:hover {
-        background: #fff;
-        color: $text;
+        background: $brand;
+        color: #fff;
       }
     }
 
@@ -1442,4 +1456,17 @@ footer {
 }
 
 
+.categories a, .geozone a {
+  background: #ececec;
+  color: #407374;
+}
 
+.legislation-calendar {
+  background: #ececec;
+}
+
+.button.hollow {
+  border: 1px solid #407374;
+  color: #fff;
+  background: #407374;
+}
