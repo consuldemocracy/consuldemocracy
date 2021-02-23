@@ -70,9 +70,9 @@
 
 @font-face {
   font-family: 'montserratregular';
-  src: url('fonts/custom/montserrat-regular_0-webfont.woff2') format('woff2'),
-  url('fonts/custom/montserrat-regular_0-webfont.woff') format('woff'),
-  url('fonts/custom/montserrat-regular_0-webfont.ttf') format('truetype');
+  src: url('fonts/montserrat-regular_0-webfont.woff2') format('woff2'),
+  url('fonts/montserrat-regular_0-webfont.woff') format('woff'),
+  url('fonts/montserrat-regular_0-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 
@@ -1597,4 +1597,18 @@ footer {
 
 .admin-sidebar {
   background: #407374 !important;
+}
+
+.subnavigation.row{
+  .no-bullet.external-links{
+    display: none;
+  }
+}
+
+ul.menu.dropdown {
+  border-bottom: 1px solid #fff;
+  margin-bottom: 9px;
+  padding-bottom: 14px;
+  border-top: 1px solid #fff;
+  padding-top: 9px;
 }
