@@ -1714,11 +1714,17 @@ footer {
       width: 100%;
       background: url("banner-home.png");
       background-size: cover;
-      background-position: center top;
+      background-position: left top;
       background-repeat: no-repeat;
     }
     .small-12.medium-9.column{
       width: 100%;
     }
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  .auth-image {
+    min-height: 250px;
   }
 }
