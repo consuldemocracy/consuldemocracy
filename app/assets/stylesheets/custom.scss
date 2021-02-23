@@ -70,9 +70,9 @@
 
 @font-face {
   font-family: 'montserratregular';
-  src: url('custom/montserrat-regular_0-webfont.woff2') format('woff2'),
-  url('custom/montserrat-regular_0-webfont.woff') format('woff'),
-  url('custom/montserrat-regular_0-webfont.ttf') format('truetype');
+  src: url('fonts/custom/montserrat-regular_0-webfont.woff2') format('woff2'),
+  url('fonts/custom/montserrat-regular_0-webfont.woff') format('woff'),
+  url('fonts/custom/montserrat-regular_0-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 
@@ -1592,4 +1592,9 @@ footer {
 }
 .admin-sidebar li.is-active a, .admin-sidebar li[aria-current] a {
   font-weight: normal;
+}
+
+
+.admin-sidebar {
+  background: #407374 !important;
 }
