@@ -100,6 +100,11 @@ sv:
           other: "%{count} bedömare valda"
         empty_administrators: "Det finns inga administratörer"
         empty_valuators: "Det finns inga bedömare"
+        name_description: "Detta är medborgarbudgetens namn som används i rubriken och på korten när den är aktiv"
+        info:
+          budget_settings: "Allmänna medborgarbudgetinställningar"
+          phases_settings: "Inställningar för faser"
+          staff_settings: "Administratörer och bedömare som tilldelats budgeten"
       destroy:
         success_notice: Budgeten raderades
         unable_notice: Du kan inte ta bort en budget som har budgetförslag
