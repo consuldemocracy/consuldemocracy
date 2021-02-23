@@ -15,19 +15,20 @@ describe "Admin budgets", :admin do
     let!(:budget) { create(:budget, slug: "budget_slug") }
 
     scenario "finds budget by slug" do
-      visit admin_budget_path("budget_slug")
-      expect(page).to have_content(budget.name)
+      visit edit_admin_budget_path("budget_slug")
+
+      expect(page).to have_content("Edit Participatory budget")
     end
 
     scenario "raises an error if budget slug is not found" do
       expect do
-        visit admin_budget_path("wrong_budget")
+        visit edit_admin_budget_path("wrong_budget")
       end.to raise_error ActiveRecord::RecordNotFound
     end
 
     scenario "raises an error if budget id is not found" do
       expect do
-        visit admin_budget_path(0)
+        visit edit_admin_budget_path(0)
       end.to raise_error ActiveRecord::RecordNotFound
     end
   end
@@ -107,11 +108,13 @@ describe "Admin budgets", :admin do
       click_button "Create Budget"
 
       expect(page).to have_content "New participatory budget created successfully!"
-      expect(page).to have_content "M30 - Summer campaign"
-      expect(Budget.last.voting_style).to eq "knapsack"
+      expect(page).to have_field "Name", with: "M30 - Summer campaign"
+      expect(page).to have_select "Final voting style", selected: "Knapsack"
     end
 
     scenario "Create budget - Approval voting", :js do
+      admin = Administrator.first
+
       visit admin_budgets_path
       click_link "Create new budget"
 
@@ -121,8 +124,12 @@ describe "Admin budgets", :admin do
       click_button "Create Budget"
 
       expect(page).to have_content "New participatory budget created successfully!"
-      expect(page).to have_content "M30 - Summer campaign"
-      expect(Budget.last.voting_style).to eq "approval"
+      expect(page).to have_field "Name", with: "M30 - Summer campaign"
+      expect(page).to have_select "Final voting style", selected: "Approval"
+
+      click_link "Select administrators"
+
+      expect(page).to have_field admin.name
     end
 
     scenario "Name is mandatory" do
@@ -152,6 +159,49 @@ describe "Admin budgets", :admin do
       expect(page).not_to have_field "Show results"
       expect(page).not_to have_field "Show stats"
       expect(page).not_to have_field "Show advanced stats"
+    end
+  end
+
+  context "Create", :js do
+    scenario "A new budget is always created in draft mode" do
+      visit admin_budgets_path
+      click_link "Create new budget"
+
+      fill_in "Name", with: "M30 - Summer campaign"
+      select "Accepting projects", from: "budget[phase]"
+
+      click_button "Create Budget"
+
+      expect(page).to have_content "New participatory budget created successfully!"
+      expect(page).to have_content "This participatory budget is in draft mode"
+      expect(page).to have_link "Preview budget"
+      expect(page).to have_link "Publish budget"
+    end
+  end
+
+  context "Publish", :js do
+    let(:budget) { create(:budget, :drafting) }
+
+    scenario "Can preview budget before it is published" do
+      visit edit_admin_budget_path(budget)
+
+      within_window(window_opened_by { click_link "Preview budget" }) do
+        expect(page).to have_current_path budget_path(budget)
+      end
+    end
+
+    scenario "Can preview a budget after it is published" do
+      visit edit_admin_budget_path(budget)
+
+      accept_confirm { click_link "Publish budget" }
+
+      expect(page).to have_content "Participatory budget published successfully"
+      expect(page).not_to have_content "This participatory budget is in draft mode"
+      expect(page).not_to have_link "Publish budget"
+
+      within_window(window_opened_by { click_link "Preview budget" }) do
+        expect(page).to have_current_path budget_path(budget)
+      end
     end
   end
 
@@ -236,7 +286,7 @@ describe "Admin budgets", :admin do
     end
 
     scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
-      budget.update!(phase: "drafting")
+      budget.update!(published: false)
       old_slug = budget.slug
 
       visit edit_admin_budget_path(budget)

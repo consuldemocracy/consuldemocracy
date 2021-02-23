@@ -657,6 +657,7 @@ code {
 .admin-content > header {
   align-items: flex-start;
   display: flex;
+  flex-wrap: wrap;
 
   a {
     @include regular-button;

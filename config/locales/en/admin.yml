@@ -63,6 +63,8 @@ en:
         type: Type
         no_activity: There are no moderators activity.
     budgets:
+      actions:
+        preview: "Preview budget"
       index:
         title: Participatory budgets
         new_link: Create new budget
@@ -82,8 +84,12 @@ en:
         notice: New participatory budget created successfully!
       update:
         notice: Participatory budget updated successfully
+      publish:
+        notice: "Participatory budget published successfully"
       edit:
         title: Edit Participatory budget
+        drafting: "This participatory budget is in draft mode, only administrators can see it in the public site. Once it's published it cannot be changed to draft mode again."
+        publish: "Publish budget"
         delete: Delete budget
         phase: Phase
         dates: Dates
