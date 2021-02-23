@@ -2705,6 +2705,11 @@ table {
       padding: 0 $line-height / 4;
     }
   }
+  @media (max-width: 767px){
+    .card {
+      width: 100%;
+    }
+  }
 
   h2 {
     &.title {
@@ -2755,6 +2760,13 @@ table {
         background: $brand;
         text-decoration: none;
         color: #fff;
+      }
+    }
+  }
+  @media (max-width: 767px){
+    a {
+      &.see-all {
+        margin-left: calc(50% - 99px);
       }
     }
   }

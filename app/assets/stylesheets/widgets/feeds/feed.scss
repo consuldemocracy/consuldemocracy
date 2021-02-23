@@ -28,6 +28,17 @@
         border-right: 0;
       }
     }
+    @media (max-width: 767px){
+      .proposal {
+        width: 100%;
+        margin-right: 0;
+        border-bottom: 1px solid #b9b9b9;
+        border-right: 0;
+        &:last-of-type{
+          border-bottom: 0;
+        }
+      }
+    }
   }
 
   .no-items {

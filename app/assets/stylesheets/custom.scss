@@ -20,8 +20,18 @@ header{
       height: 1px;
       background: $brand;
       position: absolute;
-      bottom: 12px;
+      bottom: 24px;
       left: 0;
+      z-index: -1;
+    }
+  }
+  @media (max-width:767px){
+    .feed-proposals{
+      &:after{
+        left: 15px;
+        right: 15px;
+        width: 96%;
+      }
     }
   }
 }
