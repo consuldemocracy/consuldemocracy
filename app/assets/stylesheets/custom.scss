@@ -1637,9 +1637,7 @@ footer {
   padding: 0 !important;
   margin: 0;
   margin-top: -24px;
-  /* background: url("banner-home.png");
-   background-repeat: no-repeat;
-   background-size: cover;*/
+  margin-bottom: 66px;
   .row{
     width: 100%;
     max-width: 100%;
@@ -1654,7 +1652,7 @@ footer {
       display: -ms-flexbox;
       display: flex;
       justify-content: center;
-      border-bottom: 3px solid #000;
+      border-bottom: 1px solid #000;
       span, h1, p{
         display: none;
       }
@@ -1671,6 +1669,9 @@ footer {
           margin-left: 0;
           display: inline-block;
           padding: 10px 23px 13px 23px;
+          &:hover{
+            background: #000;
+          }
         }
       }
       &:nth-child(2){
