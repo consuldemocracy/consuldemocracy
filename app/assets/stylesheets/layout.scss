@@ -556,6 +556,9 @@ body > header,
   color: #fff;
   padding-bottom: 0;
   padding-top: 0;
+  & + span.float-right{
+    font-family: 'montserratregular';
+  }
 
   @include breakpoint(medium) {
     padding: 0;
@@ -2767,6 +2770,8 @@ table {
     a {
       &.see-all {
         margin-left: calc(50% - 99px);
+        padding-left: 10px;
+        padding-right: 10px;
       }
     }
   }
