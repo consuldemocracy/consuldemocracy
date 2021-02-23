@@ -246,7 +246,7 @@ header{
   .feed-proposals{
     position: relative;
     &:after{
-      content: 'a';
+      /*content: 'a';
       font-size: 0;
       width: 100%;
       height: 1px;
@@ -254,7 +254,7 @@ header{
       position: absolute;
       bottom: 24px;
       left: 0;
-      z-index: -1;
+      z-index: -1;*/
     }
   }
   @media (max-width:767px){
@@ -997,7 +997,7 @@ footer {
 
     .card a {
       height: 100%;
-      background: #ececec;
+     /* background: #ececec;*/
     }
   }
 
@@ -1077,7 +1077,7 @@ footer {
       display: inline !important;
       background: #fff;
       position: relative;
-      margin-left: 13px;
+      /*margin-left: 13px;*/
       &:hover{
         background: $brand;
         text-decoration: none;
@@ -1311,12 +1311,12 @@ footer {
   }
 
   .proposal-featured {
-    min-height: 0;
+    /*min-height: 0;
     border-bottom: 2px solid #fff;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 15px;*/
     float: left;
-    width: 100%;
+    /*width: 100%;*/
     .column{
       background: transparent;
       padding-top: 0;
@@ -1574,9 +1574,13 @@ footer {
   }
 }
 
-.home-page h2.title, .home-page h3.title, .custom-page h2.title, .custom-page h3.title, .sdg-goal-show h2.title, .sdg-goal-show h3.title, .sdg-goals-index h2.title, .sdg-goals-index h3.title {
+.custom-page h2.title, .custom-page h3.title, .sdg-goal-show h2.title, .sdg-goal-show h3.title, .sdg-goals-index h2.title, .sdg-goals-index h3.title {
   border-top: 0;
   min-width: auto;
+}
+.home-page h2.title, .home-page h3.title {
+  border-top: 0;
+  min-width: 100%;
 }
 
 .auth-form {
