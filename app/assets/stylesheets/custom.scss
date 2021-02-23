@@ -9,3 +9,19 @@ header{
     font-family: 'montserratregular' !important;
   }
 }
+
+.feeds-participation{
+  .feed-proposals{
+    position: relative;
+    &:after{
+      content: 'a';
+      font-size: 0;
+      width: 100%;
+      height: 1px;
+      background: $brand;
+      position: absolute;
+      bottom: 12px;
+      left: 0;
+    }
+  }
+}
