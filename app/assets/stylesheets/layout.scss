@@ -893,6 +893,9 @@ body > header,
       margin-right: $line-height;
     }
 
+    h2{
+      font-family: 'montserratregular';
+    }
     &:hover {
       color: $link;
       text-decoration: none;
