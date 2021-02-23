@@ -3,6 +3,11 @@ sv:
     ballots:
       show:
         title: Dina röster
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Du kan rösta i <span>1</span> projekt"
+            other: "Du kan rösta i <span>%{count}</span> projekt"
         no_balloted_group_yet: "Du har inte röstat i den här delen av budgeten än, rösta nu!"
         remove: Dra tillbaka din röst
         voted:
@@ -82,6 +87,7 @@ sv:
           other: " som innehåller <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mina röster
+          change_vote_link: "ändra din röst"
           different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
           check_ballot_link: "kontrollera min omröstning"
