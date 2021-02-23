@@ -36,3 +36,13 @@ header{
     }
   }
 }
+
+ul.no-bullet.submenu{
+  li{
+    a{
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
