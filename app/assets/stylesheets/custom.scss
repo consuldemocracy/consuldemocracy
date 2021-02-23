@@ -1648,9 +1648,30 @@ footer {
       width: 100%;
       position: absolute;
       z-index: 5;
-      bottom: -25px;
+      bottom: -79px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: center;
+      border-bottom: 3px solid #000;
       span, h1, p{
         display: none;
+      }
+      .small-12.medium-6.large-4{
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        .button.expanded {
+          width: auto;
+          margin-right: 0;
+          margin-left: 0;
+          display: inline-block;
+          padding: 10px 23px 13px 23px;
+        }
       }
       &:nth-child(2){
         width: 100%;
@@ -1659,6 +1680,7 @@ footer {
         padding: 0;
         margin: 0;
         bottom: 0;
+        border-bottom: 0;
         img.margin{
           margin-bottom: 0;
           margin-top: 0;
