@@ -564,8 +564,10 @@ body > header,
     display: -ms-flexbox;
     display: flex;
     align-items: center;
+    flex-direction: row-reverse;
     .menu-icon.dark{
       margin-right: 8px;
+      margin-left: 8px;
     }
   }
 
@@ -676,6 +678,12 @@ body > header,
         height: auto;
       }
     }
+  }
+}
+
+@media (max-width: 767px){
+  .top-bar{
+    flex-direction: row-reverse;
   }
 }
 
