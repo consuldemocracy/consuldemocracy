@@ -642,8 +642,8 @@
 .budget-investment,
 .legislation,
 .communities-show {
-  margin: $line-height / 4 0;
-
+ /* margin: $line-height / 4 0;*/
+  margin: 0.875rem 0;
   .panel {
     @extend %panel;
   }
@@ -899,8 +899,8 @@
 
 .help-header,
 .section-header {
-  background: #fafafa;
-  border-bottom: 1px solid #eee;
+  background: #fff;
+  border-bottom: 1px solid $brand;
   margin-top: -$line-height;
   margin-bottom: $line-height;
   padding-bottom: $line-height / 2;

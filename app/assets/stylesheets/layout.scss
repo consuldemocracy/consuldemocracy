@@ -90,6 +90,12 @@ a {
     color: #000;
   }
 
+  &.expanded{
+    &:hover{
+      background: $secundario-gris;
+    }
+  }
+
   &.medium {
     font-size: $small-font-size;
   }
@@ -827,8 +833,8 @@ body > header,
   }
 
   .input-group {
-    padding-top: $line-height / 4;
-
+    /*padding-top: $line-height / 4;*/
+    padding-top: 0.45rem;
     @include breakpoint(medium) {
       margin-bottom: 0;
     }
@@ -937,7 +943,9 @@ footer {
     }
   }
 
-  a,
+  a{
+    color: #fff;
+  }
   a:active,
   a:focus {
     color: $brand;
@@ -973,7 +981,10 @@ footer {
   div{
     color: #fff;
     a{
-      color: $brand;
+      color: #fff;
+      &:hover{
+        color: $brand;
+      }
     }
   }
   .social{
