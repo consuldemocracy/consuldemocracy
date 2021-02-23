@@ -509,7 +509,7 @@ body > header,
     position: relative;
 
     &::after {
-      color: #808080;
+      color: #fff;
       content: "\61";
       font-family: "icons" !important;
       font-size: $small-font-size;
@@ -919,6 +919,7 @@ footer {
   .logo a {
     font-family: "Lato" !important;
     text-decoration: none;
+    color: #fff;
 
     &:hover {
       text-decoration: underline;
@@ -927,16 +928,18 @@ footer {
 
   p {
     font-size: $small-font-size;
+    color: #fff;
 
     &.info a {
       text-decoration: underline;
+      color: #fff;
     }
   }
 
   a,
   a:active,
   a:focus {
-    color: $text;
+    color: $secundario-gris;
     text-decoration: underline;
 
     &:hover {
@@ -955,7 +958,7 @@ footer {
 }
 
 .footer {
-  background: #f1f1f1;
+  background: #333333;
   clear: both;
   margin-top: $line-height * 2;
   min-height: $line-height * 12;
@@ -966,6 +969,20 @@ footer {
   border-top: 1px solid $text-light;
   font-size: $small-font-size;
   padding-top: $line-height / 2;
+  div{
+    color: #fff;
+    a{
+      color: #fff;
+    }
+  }
+  .social{
+    a{
+      color: #fff;
+      &:hover{
+        color: $brand;
+      }
+    }
+  }
 }
 
 // 04. Tags
@@ -1092,7 +1109,7 @@ footer {
   }
 
   .locale-switcher {
-    background: #001d33;
+    background: #737272;
     border: 0;
     border-radius: 0;
     color: #fff;
