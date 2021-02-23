@@ -894,7 +894,7 @@ body > header,
     }
 
     h2{
-      font-family: 'montserratregular';
+      font-family: 'montserratregular' !important;
     }
     &:hover {
       color: $link;
