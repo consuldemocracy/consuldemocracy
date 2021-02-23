@@ -923,6 +923,7 @@ footer {
 
     &:hover {
       text-decoration: underline;
+      color: $brand;
     }
   }
 
@@ -939,11 +940,11 @@ footer {
   a,
   a:active,
   a:focus {
-    color: $secundario-gris;
+    color: $brand;
     text-decoration: underline;
 
     &:hover {
-      color: $text-medium;
+      color: $brand;
     }
   }
 
@@ -972,7 +973,7 @@ footer {
   div{
     color: #fff;
     a{
-      color: #fff;
+      color: $brand;
     }
   }
   .social{
