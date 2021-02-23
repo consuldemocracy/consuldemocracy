@@ -558,6 +558,15 @@ body > header,
   padding-top: 0;
   & span.float-right{
     font-family: 'montserratregular';
+    font-size: 18px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    .menu-icon.dark{
+      margin-right: 8px;
+    }
   }
 
   @include breakpoint(medium) {
