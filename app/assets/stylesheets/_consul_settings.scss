@@ -16,11 +16,8 @@ $small-font-size:     rem-calc(14);
 $line-height:         rem-calc(24);
 $tiny-font-size:      rem-calc(12);
 
-$brand:             #407374;
+$brand:             #004a83;
 $dark:              darken($brand, 10%);
-
-$negro-mate:        #333333;
-$secundario-gris:   #ececec;
 
 $text:              #222;
 $text-medium:       #515151;
@@ -71,7 +68,7 @@ $color-alert:       #a94442;
 $pdf-primary:       #0300ff;
 $pdf-secondary:     #ff9e00;
 
-$outline-focus:     3px solid $brand;
+$outline-focus:     3px solid #ffbf47;
 
 $input-height:      $line-height * 2;
 
@@ -105,7 +102,7 @@ $sdg-colors: (
 $black: #222;
 $white: #fff;
 
-$body-font-family: "muliregular", "Helvetica", "Arial", sans-serif !important;
+$body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important;
 
 $header-font-family: $body-font-family;
 

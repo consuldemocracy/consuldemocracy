@@ -1058,10 +1058,12 @@
 }
 
 .featured-proposals {
-  background: $featured;
+  /*background: $featured;*/
+  background: #ececec;
 
   .proposal-featured {
     min-height: $line-height * 3.5;
+    border-bottom: 2px solid #fefefe;
   }
 
   .supports {
