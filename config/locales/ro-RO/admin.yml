@@ -70,6 +70,7 @@ ro:
         filters:
           open: Deschide
           finished: Terminat
+        help: "Bugetele participative permit cetățenilor să propună și să decidă direct cum să cheltuiască o parte din buget, cu monitorizare și evaluare riguroasă a propunerilor de către instituție."
         budget_investments: Administrează proiecte
         table_name: Nume
         table_phase: Etapă
