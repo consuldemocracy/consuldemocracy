@@ -144,6 +144,15 @@ describe "Admin budgets", :admin do
       expect(page).to have_css(".is-invalid-label", text: "Name")
       expect(page).to have_css("small.form-error", text: "has already been taken")
     end
+
+    scenario "Do not show results and stats settings on new budget", :js do
+      visit new_admin_budget_path
+
+      expect(page).not_to have_content "Show results and stats"
+      expect(page).not_to have_field "Show results"
+      expect(page).not_to have_field "Show stats"
+      expect(page).not_to have_field "Show advanced stats"
+    end
   end
 
   context "Destroy" do
@@ -213,6 +222,16 @@ describe "Admin budgets", :admin do
             expect(page).to have_content("Active") if budget.current_phase == phase
           end
         end
+      end
+    end
+
+    scenario "Show results and stats settings", :js do
+      visit edit_admin_budget_path(budget)
+
+      within_fieldset "Show results and stats" do
+        expect(page).to have_field "Show results"
+        expect(page).to have_field "Show stats"
+        expect(page).to have_field "Show advanced stats"
       end
     end
 

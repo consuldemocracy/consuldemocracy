@@ -102,6 +102,11 @@ en:
           other: "%{count} valuators selected"
         empty_administrators: "There are no administrators"
         empty_valuators: "There are no valuators"
+        name_description: "This is the name of the participatory budget used on the header and cards whenever it is active"
+        info:
+          budget_settings: "General participatory budget settings"
+          phases_settings: "Phases settings"
+          staff_settings: "Administrators and Valuators assigned to the budget"
       destroy:
         success_notice: Budget deleted successfully
         unable_notice: You cannot delete a budget that has associated investments
