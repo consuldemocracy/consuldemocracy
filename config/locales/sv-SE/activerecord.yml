@@ -4,6 +4,9 @@ sv:
     results_enabled: "Visa resultat"
     stats_enabled: "Visa statistik"
     advanced_stats_enabled: "Visa avancerad statistik"
+    name: Namn
+    email: E-post
+    description: Beskrivning
   activerecord:
     models:
       activity:
@@ -72,6 +75,9 @@ sv:
       proposal:
         one: "Medborgarförslag"
         other: "Medborgarförslag"
+      sdg/goal:
+        one: "mål"
+        other: "mål"
       site_customization/page:
         one: Anpassad sida
         other: Anpassade sidor
@@ -268,6 +274,7 @@ sv:
         responsible_name: "Representant för gruppen"
       poll:
         name: "Namn"
+        title: "Namn"
         starts_at: "Startdatum"
         ends_at: "Slutdatum"
         geozone_restricted: "Begränsat till område"
@@ -304,6 +311,12 @@ sv:
         signable_type: "Typ av underskrifter"
         signable_id: "Förslagets ID"
         document_numbers: "Dokumentnummer"
+      sdg/goal:
+        code: "Kod"
+        title: "Titel"
+        description: "Beskrivning"
+      sdg/local_target:
+        code: "Kod"
       site_customization/page:
         content: Innehåll
         created_at: Skapad
