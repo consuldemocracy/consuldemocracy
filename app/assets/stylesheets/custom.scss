@@ -1573,3 +1573,16 @@ footer {
   border-top: 0;
   min-width: auto;
 }
+
+.auth-form {
+  .button.button-twitter::before {
+    color: #45b0e3;
+    top: 27%;
+  }
+  .button.button-facebook::before {
+    top: 27%;
+  }
+  .button.button-google::before {
+    top: 27%;
+  }
+}
