@@ -102,7 +102,7 @@
 
 @font-face {
   font-family: 'muliregular';
-  src: url('/muli-webfont.woff2') format('woff2'),
+  src: url('muli-webfont.woff2') format('woff2'),
   url('muli-webfont.woff') format('woff'),
   url('muli-webfont.ttf') format('truetype');
   font-weight: normal;
@@ -716,7 +716,7 @@ p {
 
 footer {
   color: $text;
-
+  min-height: auto !important;
   .logo a {
     font-family: "Lato" !important;
     text-decoration: none;
@@ -773,6 +773,11 @@ footer {
   border-top: 1px solid $text-light;
   font-size: $small-font-size;
   padding-top: $line-height / 2;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   div{
     color: #fff;
     a{
