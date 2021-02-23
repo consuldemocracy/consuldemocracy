@@ -1643,18 +1643,25 @@ footer {
   .row{
     width: 100%;
     max-width: 100%;
+    position: relative;
     .small-12.medium-6.column{
       width: 100%;
       position: absolute;
       z-index: 5;
+      bottom: -25px;
+      span, h1, p{
+        display: none;
+      }
       &:nth-child(2){
         width: 100%;
         z-index: 0;
         position: relative;
         padding: 0;
         margin: 0;
-        img{
-          margin: 0;
+        bottom: 0;
+        img.margin{
+          margin-bottom: 0;
+          margin-top: 0;
         }
       }
     }
