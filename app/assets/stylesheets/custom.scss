@@ -1538,6 +1538,11 @@ footer {
       margin-bottom: 17px;
 
     }
+    .column{
+      .icon-angle-left::before {
+        margin-right: 8px;
+      }
+    }
   }
 }
 
