@@ -1,1 +1,7 @@
 sv:
+  sdg:
+    goals:
+      goal_2:
+        title: "Zero Hunger"
+        title_in_two_lines: "Zero\nHunger"
+        description: "Zero Hunger"
