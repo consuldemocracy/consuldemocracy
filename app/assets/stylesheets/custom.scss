@@ -1624,3 +1624,10 @@ footer {
   }
 }
 
+.home-page .background-header {
+  -webkit-clip-path: none;
+  clip-path: none;
+  height: 3rem;
+  background: #000;
+  margin-top: -3rem;
+}
