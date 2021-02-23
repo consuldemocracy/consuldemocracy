@@ -1634,10 +1634,15 @@ footer {
 }
 
 .home-page .jumbo.highlight{
- /* background: url("banner-home.png");
-  background-repeat: no-repeat;
-  background-size: cover;*/
+  padding: 0 !important;
+  margin: 0;
+  margin-top: -24px;
+  /* background: url("banner-home.png");
+   background-repeat: no-repeat;
+   background-size: cover;*/
   .row{
+    width: 100%;
+    max-width: 100%;
     .small-12.medium-6.column{
       width: 100%;
       position: absolute;
@@ -1648,6 +1653,9 @@ footer {
         position: relative;
         padding: 0;
         margin: 0;
+        img{
+          margin: 0;
+        }
       }
     }
   }
