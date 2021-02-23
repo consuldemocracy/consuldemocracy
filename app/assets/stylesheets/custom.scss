@@ -1312,6 +1312,11 @@ footer {
     padding-bottom: 15px;
     float: left;
     width: 100%;
+    .column{
+      background: transparent;
+      padding-top: 0;
+      margin-top: 0;
+    }
     &:last-of-type{
       border-bottom: 0;
     }
