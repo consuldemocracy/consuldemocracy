@@ -730,6 +730,11 @@ body > header,
     &:before, &:after{
       content: none;
     }
+    @media (max-width: 767px){
+      .hide-for-small-only{
+        display: block !important;
+      }
+    }
   }
 
   a {
