@@ -1813,10 +1813,16 @@ a:focus {
   }
 }
 
-footer{
+/*footer{
   & > .row{
     &:first-of-type{
       display: none;
     }
   }
-}
+  .subfooter{
+    border-top: 0;
+    .small-12.medium-8.column{
+      display: none;
+    }
+  }
+}*/
