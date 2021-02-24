@@ -46,13 +46,13 @@ sv:
     menu:
       flagged_comments: Kommentarer
       flagged_debates: Debatter
-      flagged_investments: Budgetförslag
+      flagged_investments: Budgetinvesteringar
       proposals: Förslag
       proposal_notifications: Aviseringar om förslag
       users: Blockera användare
     proposals:
       index:
-        block_authors: Blockera användare
+        block_authors: Blockera förslagslämnare
         confirm: Är du säker?
         filter: Filtrera
         filters:
@@ -81,7 +81,7 @@ sv:
         headers:
           moderate: Moderera
           budget_investment: Budgetförslag
-        hide_budget_investments: Dölj budgetförslag
+        hide_budget_investments: Dölj budgetinvesteringar
         ignore_flags: Markera som läst
         order: Sortera efter
         orders:
