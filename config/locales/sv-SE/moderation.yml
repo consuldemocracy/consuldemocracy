@@ -87,7 +87,7 @@ sv:
         orders:
           created_at: Senaste
           flags: Mest flaggade
-        title: Budgetförslag
+        title: Budgetinvesteringar
     proposal_notifications:
       index:
         block_authors: Blockera användare
