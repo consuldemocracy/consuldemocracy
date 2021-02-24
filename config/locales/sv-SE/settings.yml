@@ -129,11 +129,11 @@ sv:
       graphql_api: "GraphQL API"
       dashboard:
         notification_emails: "Dashboard för e-postaviseringar"
-        notification_emails_description: "Aktivera att skicka dashboard-aviseringar via e-post till författarna av förslaget"
+        notification_emails_description: "Aktivera skickande av dashboard-aviseringar via e-post till förslagslämnare"
     remote_census:
       general:
         endpoint: "Slutpunkt"
-        endpoint_description: "Namn på värden där adressregistervärden finns (wsdl)"
+        endpoint_description: "Namn på värden där adressregistertjänsten finns (wsdl)"
       request:
         method_name: "Namn på metod för begäran"
         method_name_description: "Namn på metoden för begäran till webbtjänsten för stadens adressregister."
