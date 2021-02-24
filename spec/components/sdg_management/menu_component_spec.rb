@@ -20,7 +20,8 @@ describe SDGManagement::MenuComponent, type: :component do
       expect(page).to have_link "SDG homepage"
       expect(page).to have_link "Participatory budgets"
       expect(page).to have_link "Debates"
-      expect(page).to have_link "Collaborative legislation"
+      expect(page).to have_link "Legislation processes"
+      expect(page).to have_link "Legislation proposals"
       expect(page).to have_link "Polls"
       expect(page).to have_link "Proposals"
     end
@@ -71,7 +72,8 @@ describe SDGManagement::MenuComponent, type: :component do
       expect(page).to have_link "Goals and Targets"
       expect(page).to have_link "SDG homepage"
       expect(page).to have_link "Participatory budgets"
-      expect(page).to have_link "Collaborative legislation"
+      expect(page).to have_link "Legislation processes"
+      expect(page).to have_link "Legislation proposals"
       expect(page).to have_link "Polls"
       expect(page).to have_link "Proposals"
 
@@ -92,7 +94,8 @@ describe SDGManagement::MenuComponent, type: :component do
       expect(page).to have_link "Polls"
       expect(page).to have_link "Proposals"
 
-      expect(page).not_to have_link "Collaborative legislation"
+      expect(page).not_to have_link "Legislation processes"
+      expect(page).not_to have_link "Legislation proposals"
     end
   end
 end

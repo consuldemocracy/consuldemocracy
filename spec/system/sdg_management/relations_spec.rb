@@ -26,10 +26,16 @@ describe "SDG Relations", :js do
     expect(page).to have_css "h2", exact_text: "Debates"
     expect(page).to have_css "li.is-active h2", exact_text: "Pending"
 
-    within("#side_menu") { click_link "Collaborative legislation" }
+    within("#side_menu") { click_link "Legislation processes" }
 
     expect(page).to have_current_path "/sdg_management/legislation/processes"
-    expect(page).to have_css "h2", exact_text: "Collaborative legislation"
+    expect(page).to have_css "h2", exact_text: "Legislation processes"
+    expect(page).to have_css "li.is-active h2", exact_text: "Pending"
+
+    within("#side_menu") { click_link "Legislation proposals" }
+
+    expect(page).to have_current_path "/sdg_management/legislation/proposals"
+    expect(page).to have_css "h2", exact_text: "Legislation proposals"
     expect(page).to have_css "li.is-active h2", exact_text: "Pending"
 
     within("#side_menu") { click_link "Polls" }

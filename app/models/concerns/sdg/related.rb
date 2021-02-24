@@ -6,6 +6,7 @@ module SDG::Related
     Budget::Investment
     Debate
     Legislation::Process
+    Legislation::Proposal
     Poll
     Proposal
   ].freeze

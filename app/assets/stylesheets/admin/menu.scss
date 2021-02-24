@@ -58,6 +58,7 @@
     }
 
     &.legislation-link,
+    &.legislation-proposals-link,
     &.legislation-processes-link {
       @include icon(file-alt, solid);
     }
