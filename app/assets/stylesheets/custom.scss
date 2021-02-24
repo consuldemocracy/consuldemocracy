@@ -1815,6 +1815,8 @@ a:focus {
 
 footer{
   & > .row{
-    display: none;
+    &:first-of-type{
+      display: none;
+    }
   }
 }
