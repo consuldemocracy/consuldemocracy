@@ -1754,3 +1754,13 @@ footer {
 .admin-sidebar li ul {
   border-left: 1px solid #ffffff !important;
 }
+
+.admin .menu.simple .is-active {
+  border-bottom: 2px solid $brand !important;
+  color: $brand !important;
+}
+
+.menu.simple li.is-active {
+  border-bottom: $brand !important;
+  color: $brand !important;
+}
