@@ -1343,12 +1343,12 @@ footer {
     }
 
     .button-support {
-      background: #000;
+      background: $brand;
       color: #fff;
       margin-top: 0;
 
       &:hover {
-        background: $brand;
+        background: #000;
         color: #fff;
       }
     }
