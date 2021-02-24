@@ -1486,6 +1486,7 @@ footer {
     &:hover{
       color: #000;
       background: $secundario-gris;
+      border: 1px solid $brand;
     }
   }
 }
@@ -1736,4 +1737,21 @@ footer {
   .auth-image {
     min-height: 250px;
   }
+}
+
+.admin-sidebar li.is-active a, .admin-sidebar li[aria-current] a {
+  background: #164142;
+  border-left: 2px solid #fff;
+  color: #fff;
+  padding-left: 13px;
+}
+
+.admin-sidebar li a:hover {
+  background: #164142;
+  color: #fff;
+  text-decoration: none;
+}
+
+.admin-sidebar li ul {
+  border-left: 1px solid #ffffff;
 }
