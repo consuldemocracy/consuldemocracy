@@ -1812,3 +1812,9 @@ a:focus {
     }
   }
 }
+
+footer{
+  & > .row{
+    display: none;
+  }
+}
