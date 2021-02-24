@@ -1764,3 +1764,7 @@ footer {
   border-bottom: $brand !important;
   color: $brand !important;
 }
+
+a:focus {
+  outline: 0;
+}
