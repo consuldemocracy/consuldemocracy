@@ -1476,9 +1476,18 @@ footer {
 }
 
 .button.hollow {
-  border: 1px solid #407374;
+  border: 1px solid $brand;
   color: #fff;
-  background: #407374;
+  background: $brand;
+  &.alert{
+    border: 1px solid $brand;
+    color: #fff;
+    background: $brand;
+    &:hover{
+      color: #000;
+      background-repeat: $secundario-gris;
+    }
+  }
 }
 
 
