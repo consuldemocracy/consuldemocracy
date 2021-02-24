@@ -63,6 +63,8 @@ ro:
         type: Tip
         no_activity: Nu există activitate efectuată de moderatori.
     budgets:
+      actions:
+        preview: "Previzualizați bugetul"
       index:
         title: Bugetele participative
         new_link: Crează buget nou
@@ -82,8 +84,12 @@ ro:
         notice: Buget participativ creat cu succes!
       update:
         notice: Bugetul Participativ a fost actualizat cu succes
+      publish:
+        notice: "Bugetul Participativ a fost publicat cu succes"
       edit:
         title: Editează Buget participativ
+        drafting: "Acest buget participativ este în modul schiță, doar administratorii îl pot vedea pe site-ul public. Odată publicat, acesta nu poate fi schimbat din nou în modul schiță."
+        publish: "Publică buget"
         delete: Șterge buget
         phase: Etapă
         dates: Date
@@ -104,6 +110,11 @@ ro:
           other: "%{count} evaluatori selectați"
         empty_administrators: "Nu există administratori"
         empty_valuators: "Nu există evaluatori"
+        name_description: "Acesta este numele bugetului participativ utilizat pe antet și carduri ori de câte ori este activ"
+        info:
+          budget_settings: "Setări generale ale bugetului participativ"
+          phases_settings: "Setările fazelor"
+          staff_settings: "Administratori și evaluatori repartizați la buget"
       destroy:
         success_notice: Buget șters cu succes
         unable_notice: Nu puteți șterge un buget care are investiții asociate
