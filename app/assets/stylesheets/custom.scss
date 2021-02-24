@@ -1740,18 +1740,17 @@ footer {
 }
 
 .admin-sidebar li.is-active a, .admin-sidebar li[aria-current] a {
-  background: #164142;
-  border-left: 2px solid #fff;
-  color: #fff;
-  padding-left: 13px;
+  background: #164142 !important;
+  border-left: 2px solid #fff !important;
+  color: #fff !important;
+
 }
 
 .admin-sidebar li a:hover {
-  background: #164142;
-  color: #fff;
-  text-decoration: none;
+  background: #164142 !important;
+  color: #fff !important;
 }
 
 .admin-sidebar li ul {
-  border-left: 1px solid #ffffff;
+  border-left: 1px solid #ffffff !important;
 }
