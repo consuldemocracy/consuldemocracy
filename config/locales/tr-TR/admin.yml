@@ -105,6 +105,8 @@ tr:
         name_description: "Bu, etkin olduğu zaman başlıkta ve kartlarda kullanılan katılımcı bütçenin adıdır"
         info:
           budget_settings: "Genel katılımcı bütçe ayarları"
+          phases_settings: "Aşama ayarları"
+          staff_settings: "Bütçeye atanan yönetici ve bilirkişiler"
       destroy:
         success_notice: Bütçe başarıyla silindi
         unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
