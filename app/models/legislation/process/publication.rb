@@ -9,7 +9,7 @@ class Legislation::Process::Publication
   end
 
   def started?
-    enabled? && Date.current >= @publication_date
+    @publication_date.nil? || enabled? && Date.current >= @publication_date
   end
 
   def open?

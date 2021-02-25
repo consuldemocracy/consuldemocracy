@@ -144,6 +144,50 @@ describe "Legislation" do
       travel_back
     end
 
+    scenario "Participation phases do not show dates if they are blank" do
+      process = create(:legislation_process, debate_start_date: "",
+                                             debate_end_date: "",
+                                             proposals_phase_start_date: "",
+                                             proposals_phase_end_date: "",
+                                             draft_publication_date: "",
+                                             allegations_start_date: "",
+                                             allegations_end_date: "",
+                                             result_publication_date: "")
+
+      visit legislation_processes_path
+
+      within("#legislation_process_#{process.id} .legislation-calendar") do
+        expect(page).to have_content "Debate"
+        expect(page).to have_content "Draft publication"
+        expect(page).to have_content "Proposals"
+        expect(page).to have_content "Comments"
+        expect(page).to have_content "Final result publication"
+        expect(page).not_to have_content "Locked"
+        expect(page).not_to have_content "Published"
+        expect(page).not_to have_content "Active"
+        expect(page).not_to have_content "Coming soon"
+        expect(page).not_to have_content "-"
+      end
+
+      visit legislation_process_path(process)
+
+      within(".legislation-content") do
+        expect(page).to have_content "Draft publication"
+        expect(page).to have_content "Final result publication"
+      end
+
+      within(".legislation-process-list") do
+        expect(page).to have_content "Debate"
+        expect(page).to have_content "Proposals"
+        expect(page).to have_content "Comments"
+        expect(page).not_to have_content "Locked"
+        expect(page).not_to have_content "Published"
+        expect(page).not_to have_content "Active"
+        expect(page).not_to have_content "Coming soon"
+        expect(page).not_to have_content "-"
+      end
+    end
+
     scenario "Filtering processes" do
       create(:legislation_process, title: "Process open")
       create(:legislation_process, :past, title: "Process past")

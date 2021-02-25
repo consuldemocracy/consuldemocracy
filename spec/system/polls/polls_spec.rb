@@ -51,15 +51,24 @@ describe "Polls" do
       expect(page).to have_content("Question 2 #{question2.title}")
     end
 
-    scenario "Polls display remaining days to participate" do
+    scenario "Polls display remaining days to participate if not expired" do
       travel_to "10/06/2020".to_date
-      create(:poll, starts_at: "01/06/2020", ends_at: "20/06/2020")
+      create(:poll, starts_at: "01/05/2020", ends_at: "31/05/2020", name: "Expired poll")
+      create(:poll, starts_at: "01/06/2020", ends_at: "20/06/2020", name: "Active poll")
 
       visit polls_path
 
       within(".poll") do
         expect(page).to have_content("Remaining 10 days to participate")
       end
+
+      click_link "Expired"
+
+      within(".poll") do
+        expect(page).not_to have_content("Remaining")
+        expect(page).not_to have_content("days to participate")
+      end
+
       travel_back
     end
 
@@ -98,11 +107,12 @@ describe "Polls" do
 
     scenario "Displays icon correctly", :js do
       create_list(:poll, 3)
+      create(:poll, :expired, name: "Expired poll")
 
       visit polls_path
 
       expect(page).to have_css(".message .callout .fa-user", count: 3)
-      expect(page).to have_content("You must sign in or sign up to participate")
+      expect(page).to have_content("You must sign in or sign up to participate", count: 3)
 
       user = create(:user)
       login_as(user)
@@ -110,7 +120,12 @@ describe "Polls" do
       visit polls_path
 
       expect(page).to have_css(".message .callout .fa-user", count: 3)
-      expect(page).to have_content("You must verify your account to participate")
+      expect(page).to have_content("You must verify your account to participate", count: 3)
+
+      click_link "Expired"
+
+      expect(page).not_to have_css(".message .callout .fa-user")
+      expect(page).not_to have_content("You must verify your account to participate")
     end
 
     scenario "Geozone poll" do

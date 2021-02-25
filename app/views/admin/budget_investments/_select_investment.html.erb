@@ -51,7 +51,7 @@
 </td>
 
 <td class="small text-center" data-field="visible_to_valuators">
-  <%= form_for [:admin, investment.budget, investment], remote: true do |f| %>
+  <%= form_for [:admin, investment.budget, investment], remote: true, format: :json do |f| %>
       <%= f.check_box :visible_to_valuators,
                       label: false,
                       class: "js-submit-on-change",

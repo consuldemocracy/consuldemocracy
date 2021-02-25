@@ -716,24 +716,6 @@ code {
   }
 }
 
-.input-calendar-icon {
-  position: relative;
-
-  &::before {
-    color: $brand;
-    content: "\f133";
-    font-family: "Font Awesome 5 Free";
-    font-size: rem-calc(24);
-    left: 10px;
-    position: absolute;
-    top: 40px;
-  }
-
-  .input-calendar {
-    padding-left: $line-height * 1.5;
-  }
-}
-
 // 02. Sidebar
 // -----------
 

@@ -18,6 +18,13 @@ nl:
         new:
           organization_name_label: "Naam van organisatie of collectief"
           responsible_name_note: "Dit is de persoon die namens de vereniging of het collectief initiatieven indient"
+          title: "Als organisatie of collectief registreren."
+          submit: "Registreren"
+        success:
+          instructions_1: "Wij nemen zo snel mogelijk contact met je op om het collectief of de vereniging te verifiëren."
+          instructions_2: "We hebben een mail met een bevestigingslink gestuurd naar het opgegeven e-mailadres."
+          instructions_3: "Klik op de link om het account te bevestigen. Hierna kun je als collectief of vereniging meedoen."
+          thank_you: "Bedankt voor het registreren als collectief of vereniging op de website."
     sessions:
       new:
         submit: "Inloggen"

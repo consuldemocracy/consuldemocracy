@@ -82,7 +82,12 @@ class Admin::StatsController < Admin::BaseController
 
     @vote_count_by_heading = @budget.lines.group(:heading_id).count.map { |k, v| [Budget::Heading.find(k).name, v] }.sort
 
-    @user_count_by_district = User.where.not(balloted_heading_id: nil).group(:balloted_heading_id).count.map { |k, v| [Budget::Heading.find(k).name, v] }.sort
+    @user_count_by_district = @budget.headings.map do |heading|
+      [
+        heading.name,
+        Budget::Ballot::Line.where(investment_id: heading.investments.map(&:id)).group(:ballot_id).count.count
+      ]
+    end
   end
 
   def polls

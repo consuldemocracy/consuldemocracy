@@ -478,6 +478,7 @@ en:
           filters:
             pending: Pending
             done: Solved
+          deleted_proposal: "This proposal has been deleted"
         edit:
           back: Back to pending tasks list
           solving: Solve pending task

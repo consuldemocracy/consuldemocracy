@@ -28,6 +28,11 @@ module LegislationHelper
     end
   end
 
+  def phase_dates?(process, phase)
+    phase = "proposals_phase" if phase == "proposals"
+    process.send("#{phase}_start_date").present? && process.send("#{phase}_end_date").present?
+  end
+
   def phase_status(process, phase)
     if process.send("#{phase}_phase").open?
       t("legislation.processes.header.active")

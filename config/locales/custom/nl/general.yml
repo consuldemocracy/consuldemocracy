@@ -64,6 +64,7 @@ nl:
     show:
       author: "Auteur"
       comments_title: "Reacties"
+      edit_debate_link: "Bewerk"
     edit:
       editing: "Discussie bewerken"
       show_link: "Discussie bekijken"
@@ -314,6 +315,10 @@ nl:
     supports: "Steun"
     budget_investments:
       not_verified: "Alleen geverifieerde gebruikers mogen stemmen op ideeën; %{verify_account}."
+      different_heading_assigned:
+        one: "Je kan ideeën in %{count} groep steunen. Je hebt al ideeën gesteund in de groep %{supported_headings}."
+        other: "Je kan ideeën in %{count} groep steunen. Je hebt al ideeën gesteund in de groep %{supported_headings}."
+    organizations: "Collectieven en verenigingen kunnen niet stemmen."
   welcome:
     feed:
       budgets_description: "Burgerbegrotingen zijn processen waarbij burgers bepalen wat er met een deel van de gemeentelijke begroting gebeurt. De gemeente onderzoekt of de meest gesteunde ideeën haalbaar zijn. In de stem fase die daarop volgt beslissen de burgers welke ideeën de gemeente gaat uitvoeren."
