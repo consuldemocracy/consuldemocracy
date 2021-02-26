@@ -118,3 +118,8 @@ sv:
         tags_label: "Kategorier"
       not_verified: "Rösta på förslag %{verify_account}."
       process_title: Medborgardialoger
+    summary:
+      title: "Sammanfattning"
+      top_comments:
+        zero: "Inga kommentarer"
+      no_allegation: "Det finns inga kommentarer"
