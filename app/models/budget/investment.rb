@@ -358,7 +358,7 @@ class Budget
       investments = investments.send(current_filter)             if current_filter.present?
       investments = investments.by_heading(params[:heading_id])  if params[:heading_id].present?
       investments = investments.search(params[:search])          if params[:search].present?
-      investments = investments.filter_by(params[:advanced_search]) if params[:advanced_search].present?
+      investments = investments.filter_by(params[:advanced_search])
       investments
     end
 

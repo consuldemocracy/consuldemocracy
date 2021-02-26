@@ -1282,6 +1282,7 @@ en:
           budget_investments: "Search investments by title, description or heading"
           debates: "Search debates by title or description"
           legislation_processes: "Search processes by title or description"
+          legislation_proposals: "Search proposals by title or description"
           local_census_records: "Search by document number"
           organizations: "Name, email or phone number"
           poll_officers: "Search poll officers"
