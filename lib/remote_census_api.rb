@@ -145,7 +145,7 @@ class RemoteCensusApi
             },
             datos_vivienda: {
               item: {
-                codigo_postal: "28013",
+                codigo_postal: "30813",
                 codigo_distrito: "01"
               }
             }

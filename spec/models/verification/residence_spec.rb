@@ -79,7 +79,7 @@ describe Verification::Residence do
 
   describe "tries" do
     it "increases tries after a call to the Census" do
-      residence.postal_code = "28011"
+      residence.postal_code = "30811"
       residence.valid?
       expect(residence.user.lock.tries).to eq(1)
     end
@@ -102,7 +102,7 @@ describe Verification::Residence do
         document_number: "12345678Z",
         document_type:   "1",
         date_of_birth:   Date.new(1980, 12, 31),
-        postal_code:     "28001"
+        postal_code:     "30800"
       )
     end
   end

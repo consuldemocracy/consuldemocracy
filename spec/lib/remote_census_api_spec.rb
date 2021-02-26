@@ -174,7 +174,7 @@ describe RemoteCensusApi do
                                    },
                                    datos_vivienda: {
                                      item: {
-                                       codigo_postal: "28013",
+                                       codigo_postal: "30813",
                                        codigo_distrito: "01"
                                      }
                                    }
@@ -207,7 +207,7 @@ describe RemoteCensusApi do
 
       expect(response.valid?).to eq true
       expect(response.date_of_birth).to eq Time.zone.local(1980, 12, 31).to_date
-      expect(response.postal_code).to eq "28013"
+      expect(response.postal_code).to eq "30813"
       expect(response.district_code).to eq "01"
       expect(response.gender).to eq "male"
       expect(response.name).to eq "José García"
