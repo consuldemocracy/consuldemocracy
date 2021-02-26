@@ -1,0 +1,15 @@
+de:
+  comments:
+    comment:
+      responses:
+        zero: Keine Antworten
+        one: 1 Antwort
+        other: "%{count} Antworten"
+      responses_show:
+        zero: Keine Antworten
+        one: "1 Antwort (Anzeigen)"
+        other: "%{count} Antworten (Anzeigen)"
+      responses_collapse:
+        zero: Keine Antworten
+        one: "1 Antwort (Einklappen)"
+        other: "%{count} Antworten (Einklappen)"
