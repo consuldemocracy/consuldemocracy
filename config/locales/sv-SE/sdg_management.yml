@@ -1,1 +1,7 @@
 sv:
+  sdg_management:
+    homepage:
+      header:
+        create: "Skapa sidhuvud"
+        no_cards: "Det finns inget sidhuvud"
+        title: "Sidhuvud"
