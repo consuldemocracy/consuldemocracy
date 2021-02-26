@@ -3,3 +3,16 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+.comment-children .comment-body {
+  background: AliceBlue;
+}
+
+.comment-children {
+  border-left: 2px solid lightgray;
+  padding-left: 2rem;
+}
+
+li.comment-body .is-admin p {
+  background: #F7EED0;
+}
