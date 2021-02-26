@@ -4,7 +4,9 @@ namespace :sdg_management do
   resources :goals, only: [:index]
   resources :targets, only: [:index]
   resources :local_targets, except: [:show]
-  resource :homepage, controller: :homepage, only: [:show]
+  resource :homepage, controller: :homepage, only: [:show] do
+    resource :header, controller: :header, only: [:new, :create, :edit, :update, :destroy]
+  end
 
   resources :phases, only: [], as: :sdg_phases do
     resources :cards, except: [:index, :show], as: :widget_cards

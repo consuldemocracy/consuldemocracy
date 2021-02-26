@@ -6,6 +6,10 @@ es:
       title: "Contenido ODS"
     homepage:
       title: "Configuración de la página de inicio"
+      header:
+        create: "Crear cabecera"
+        no_cards: "No hay cabecera"
+        title: "Cabecera"
       create_card: "Crear tarjeta de %{phase}"
       no_cards: "No hay tarjetas para esta fase"
     menu:

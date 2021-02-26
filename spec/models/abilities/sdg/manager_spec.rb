@@ -9,13 +9,19 @@ describe "Abilities::SDG::Manager" do
 
   it { should be_able_to(:read, SDG::Target) }
   it { should be_able_to(:manage, SDG::LocalTarget) }
+  it { should be_able_to(:read, WebSection.find_by!(name: "sdg")) }
 
   it { should_not be_able_to(:read, SDG::Manager) }
   it { should_not be_able_to(:create, SDG::Manager) }
   it { should_not be_able_to(:delete, SDG::Manager) }
+  it { should_not be_able_to(:read, WebSection.find_by!(name: "homepage")) }
 
   it { should_not be_able_to(:update, create(:widget_card)) }
   it { should be_able_to(:update, create(:widget_card, cardable: SDG::Phase.sample)) }
+  it { should be_able_to(:update, create(:widget_card, cardable: WebSection.find_by!(name: "sdg"))) }
+  it { should_not be_able_to(:update, create(:widget_card, cardable: WebSection.find_by!(name: "homepage"))) }
   it { should_not be_able_to(:create, build(:widget_card)) }
   it { should be_able_to(:create, build(:widget_card, cardable: SDG::Phase.sample)) }
+  it { should be_able_to(:create, build(:widget_card, cardable: WebSection.find_by!(name: "sdg"))) }
+  it { should_not be_able_to(:create, build(:widget_card, cardable: WebSection.find_by!(name: "homepage"))) }
 end

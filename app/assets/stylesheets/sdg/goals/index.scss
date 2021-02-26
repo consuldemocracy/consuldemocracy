@@ -47,4 +47,8 @@
       @include grid-row-nest;
     }
   }
+
+  .background-header {
+    margin-bottom: $line-height;
+  }
 }

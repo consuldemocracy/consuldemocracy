@@ -3,6 +3,10 @@ module Admin::Widget::CardsActions
   include Translatable
   include ImageAttributes
 
+  included do
+    helper_method :form_path
+  end
+
   def new
     @card.header = header_card?
     render template: "#{cards_view_path}/new"
@@ -55,5 +59,9 @@ module Admin::Widget::CardsActions
 
     def cards_view_path
       "admin/widget/cards"
+    end
+
+    def form_path
+      nil
     end
 end
