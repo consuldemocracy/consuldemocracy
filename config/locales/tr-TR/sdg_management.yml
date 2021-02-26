@@ -6,6 +6,10 @@ tr:
       title: "SKH içeriği"
     homepage:
       title: "Ana sayfa biçimlendirmesi"
+      header:
+        create: "Başlık oluştur"
+        no_cards: "Başlık yok"
+        title: "Başlık"
       create_card: "Kart %{phase} oluştur"
       no_cards: "Bu aşama için kart yok"
     menu:
