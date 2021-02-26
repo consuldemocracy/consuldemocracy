@@ -9,7 +9,7 @@
 <% if @budgets.any? %>
   <h3><%= page_entries_info @budgets %></h3>
 
-  <table>
+  <table class="budgets-table">
     <thead>
       <tr>
         <th><%= t("admin.budgets.index.table_name") %></th>
@@ -20,8 +20,13 @@
     <tbody>
       <% @budgets.each do |budget| %>
         <tr id="<%= dom_id(budget) %>" class="budget">
-          <td>
-            <%= budget.name %>
+          <td class="<%= "budget-completed" if budget.finished? %>">
+            <% if budget.finished? %>
+              <span>
+                <%= t("admin.budgets.index.table_completed") %>
+              </span>
+            <% end %>
+            <strong><%= budget.name %></strong>
           </td>
           <td class="small">
             <%= t("budgets.phase.#{budget.phase}") %>

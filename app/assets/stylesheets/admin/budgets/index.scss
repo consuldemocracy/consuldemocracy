@@ -1,0 +1,24 @@
+.admin .budgets-table {
+
+  .budget-completed {
+    @include has-fa-icon(lock, solid);
+    padding-left: calc(1em + #{rem-calc(10)});
+    position: relative;
+
+    &::before {
+      color: $admin-border-color;
+      left: rem-calc(4);
+      position: absolute;
+      transform: translateY(50%);
+    }
+
+    span {
+      color: $admin-text;
+      display: block;
+      font-size: $tiny-font-size;
+      font-weight: bold;
+      line-height: rem-calc(12);
+      text-transform: uppercase;
+    }
+  }
+}

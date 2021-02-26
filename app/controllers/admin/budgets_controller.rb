@@ -4,7 +4,7 @@ class Admin::BudgetsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters %w[open finished], only: :index
+  has_filters %w[all open finished], only: :index
 
   before_action :load_budget, except: [:index, :new, :create]
   before_action :load_staff, only: [:new, :create, :edit, :update, :show]
