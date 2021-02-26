@@ -5,3 +5,5 @@ sv:
         create: "Skapa sidhuvud"
         no_cards: "Det finns inget sidhuvud"
         title: "Sidhuvud"
+    menu:
+      legislation_proposals: "Lagförslag"
