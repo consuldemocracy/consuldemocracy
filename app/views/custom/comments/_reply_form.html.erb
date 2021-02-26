@@ -1,0 +1,35 @@
+<% valuation = local_assigns.fetch(:valuation, false) %>
+<% cache [locale_and_user_status, parent_id, commentable_cache_key(commentable), valuation] do %>
+  <% css_id = parent_or_commentable_dom_id(parent_id, commentable) %>
+  <div id="js-comment-form-<%= css_id %>" <%= raw("style='display:none'") if toggeable %> class="comment-form">
+    <%= form_for Comment.new, remote: true do |f| %>
+      <%= f.text_area :body,
+        id: "comment-body-#{css_id}",
+        maxlength: Comment.body_max_length,
+        label: t('custom.comments.reply_form.leave_comment') %>
+
+      <%= f.hidden_field :commentable_type, value: commentable.class.name %>
+      <%= f.hidden_field :commentable_id, value: commentable.id %>
+      <%= f.hidden_field :parent_id, value: parent_id %>
+      <%= f.hidden_field :valuation, value: valuation %>
+
+      <%= f.submit comment_button_text(parent_id, commentable), class: "button", id: "publish_comment" %>
+
+      <% if can? :comment_as_moderator, commentable %>
+        <div class="float-right">
+          <%= f.check_box :as_moderator,
+            label: t("comments.form.comment_as_moderator"),
+            id: "comment-as-moderator-#{css_id}" %>
+        </div>
+      <% end %>
+      <% if can? :comment_as_administrator, commentable %>
+        <div class="float-right">
+          <%= f.check_box :as_administrator,
+            label: t("comments.form.comment_as_admin"),
+            id: "comment-as-administrator-#{css_id}" %>
+        </div>
+      <% end %>
+
+    <% end %>
+  </div>
+<% end %>
