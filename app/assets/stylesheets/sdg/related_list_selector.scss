@@ -17,25 +17,11 @@
   }
 
   .goals {
-    $spacing: 0.5%;
-    @include sdg-goal-list($spacing);
+    @extend %sdg-goal-list-expanded;
 
     legend {
       font-weight: normal;
       font-style: italic;
-    }
-
-    label {
-      min-width: $sdg-icon-min-width;
-      width: calc(100% / 17 - #{$spacing});
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      .sdg-goal-icon {
-        width: 100%;
-      }
     }
 
     input {
