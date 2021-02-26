@@ -628,6 +628,9 @@ sv:
         add: Lägg till
       search:
         title: "Bedömare: Sök användare"
+    sdg/managers:
+      sdg/manager:
+        add: Lägg till
     menu:
       activity: Moderatoraktivitet
       admin: Administrationsmeny
@@ -1202,6 +1205,14 @@ sv:
           without_confirmed_hide: Väntande
         title: Dolda förslag
         no_hidden_proposals: Det finns inga dolda förslag.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtrera
+        filters:
+          all: Alla
+          with_confirmed_hide: Bekräftad
+          without_confirmed_hide: Väntande
+        title: Dolda aviseringar
     settings:
       flash:
         updated: Uppdaterad värde
@@ -1394,6 +1405,8 @@ sv:
           question_name: Fråga
           origin_web: Webbdeltagare
           origin_total: Totalt antal deltagare
+      sdg:
+        proposals: "Förslag"
     tags:
       create: Skapa inlägg
       destroy: Ta bort inlägg
