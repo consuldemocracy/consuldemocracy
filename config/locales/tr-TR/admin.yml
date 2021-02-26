@@ -68,10 +68,12 @@ tr:
         new_link: Yeni bütçe oluştur
         filter: Filtre
         filters:
+          all: Tümü
           open: Açık
           finished: Bitmiş
         help: "Katılımcı bütçeler, vatandaşların teklif vermesine ve bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesine olanak tanımakla beraber, tekliflerin kurum tarafından izlenmesine ve titiz bir şekilde değerlendirilmesine de olanak tanır."
         budget_investments: Projeleri yönetme
+        table_completed: Tamamlandı
         table_name: Ad
         table_phase: Aşama
         edit_groups: Başlıklar gruplarını düzenle
