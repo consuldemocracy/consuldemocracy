@@ -295,6 +295,8 @@ sv:
       sign_in: Logga in med Twitter
       sign_up: Registrera dig med Twitter
       name: Twitter
+    info:
+      sign_up: "Registrera dig genom:"
     or_fill: "Eller fyll i följande formulär:"
   proposals:
     create:
@@ -688,6 +690,7 @@ sv:
       from: "Från"
       general: "Med texten"
       general_placeholder: "Fyll i texten"
+      goal_blank: "Välj ett mål"
       search: "Filtrera"
       title: "Avancerad sökning"
       to: "Till"
