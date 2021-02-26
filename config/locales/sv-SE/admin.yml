@@ -1246,6 +1246,7 @@ sv:
         label:
           booths: "Sök röststation efter namn"
           debates: "Sök debatter med titel eller beskrivning"
+          legislation_proposals: "Sök förslag efter titel eller beskrivning"
           local_census_records: "Sök efter dokumentnummer"
           organizations: "Namn, e-post eller telefonnummer"
           poll_officers: "Sök funktionär"
