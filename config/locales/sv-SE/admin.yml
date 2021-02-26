@@ -69,9 +69,11 @@ sv:
         new_link: Skapa ny budget
         filter: Filtrera
         filters:
+          all: Alla
           open: Öppna
           finished: Avslutade
         budget_investments: Hantera projekt
+        table_completed: Färdiga
         table_name: Namn
         table_phase: Fas
         edit_groups: Redigera delbudgetar
