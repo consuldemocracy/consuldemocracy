@@ -4,6 +4,9 @@ uk-UA:
     results_enabled: "Показати результати"
     stats_enabled: "Показати статистику"
     advanced_stats_enabled: "Показати розширену статистику"
+    name: Назва
+    email: Електронна адреса
+    description: Опис
   activerecord:
     models:
       activity:
@@ -390,6 +393,8 @@ uk-UA:
         signable_type: "Тип, що підписується"
         signable_id: "ID, що підписується"
         document_numbers: "Номери документів"
+      sdg/goal:
+        description: "Опис"
       site_customization/page:
         content: Вміст
         created_at: Створено о
