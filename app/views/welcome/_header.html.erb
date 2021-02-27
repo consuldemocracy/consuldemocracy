@@ -14,14 +14,14 @@
 #       <% if header.image.present? %>
 
         <div class="small-12 medium-6 column" style = "width:100%">
-          <%= image_tag(header.image_url(:large),
-                        class: "margin",
-                        alt: header.image.title)
-                       %>
+
         </div>
 #       <% end %>
     </div>
   </div>
-#   <div class="background-header" style = "width:100%">
-#   </div>
+  <div class="background-header" style = "width:100%">
+  <%= image_tag(header.image_url(:large),
+                          alt: header.image.title)
+                         %>
+  </div>
 <% end %>
