@@ -70,10 +70,12 @@ ro:
         new_link: Crează buget nou
         filter: Filtru
         filters:
+          all: Tot
           open: Deschide
           finished: Terminat
         help: "Bugetele participative permit cetățenilor să propună și să decidă direct cum să cheltuiască o parte din buget, cu monitorizare și evaluare riguroasă a propunerilor de către instituție."
         budget_investments: Administrează proiecte
+        table_completed: Completat
         table_name: Nume
         table_phase: Etapă
         edit_groups: Editați grupurile de rubrici
@@ -1287,6 +1289,7 @@ ro:
           budget_investments: "Caută investiție după titlu, descriere sau rubrică"
           debates: "Căutați dezbateri după titlu sau descriere"
           legislation_processes: "Caută procese după titlu sau după descriere"
+          legislation_proposals: "Caută propuneri după titlu sau după descriere"
           local_census_records: "Caută după numărul documentului"
           organizations: "Nume, email sau număr de telefon"
           poll_officers: "Caută funcționar public"
