@@ -6,12 +6,17 @@ ro:
       title: "Conținutul obiectivelor de dezvoltare durabilă"
     homepage:
       title: "Configurarea paginii de pornire"
+      header:
+        create: "Crează antet"
+        no_cards: "Nu există antet"
+        title: "Antet"
       create_card: "Crează un card %{phase}"
       no_cards: "Nu există carduri în această fază"
     menu:
       budget_investments: "Bugete participative"
       debates: "Dezbateri"
       legislation_processes: "Legislație colaborativă"
+      legislation_proposals: "Propuneri legislative"
       polls: "Sondaje"
       proposals: "Propuneri"
       sdg_content: "Obiective și Ținte"
