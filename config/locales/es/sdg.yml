@@ -441,6 +441,9 @@ es:
             title: "De aquí a 2020, mejorar el apoyo a la creación de capacidad prestado a los países en desarrollo, incluidos los países menos adelantados y los pequeños Estados insulares en desarrollo, para aumentar significativamente la disponibilidad de datos oportunos, fiables y de gran calidad desglosados por ingresos, sexo, edad, raza, origen étnico, estatus migratorio, discapacidad, ubicación geográfica y otras características pertinentes en los contextos nacionales."
           target_17_19:
             title: "De aquí a 2030, aprovechar las iniciativas existentes para elaborar indicadores que permitan medir los progresos en materia de desarrollo sostenible y complementen el producto interno bruto, y apoyar la creación de capacidad estadística en los países en desarrollo."
+      help:
+        title: "Ayuda Objetivos de Desarrollo Sostenible"
+        description: "Puedes alinear tus aportaciones a la comunidad (debates, propuestas ciudadanas y proyectos de inversión) con los Objetivos de Desarrollo Sostenible de la Agenda 2030, esto nos permitirá tener una visión general de nuestra aportación en cada uno de los objetivos de desarrollo sostenible. A continuación puedes informarte de todos los objetivos, sus metas y las metas localizadas."
       show:
         read_more: "Leer más sobre %{goal}"
         read_less: "Leer menos sobre %{goal}"
@@ -458,7 +461,8 @@ es:
       goal_list: "Puedes seleccionar uno o varios ODS con los que se alinea tu %{record}"
       help:
         title: "¿Qué ODS y metas se alinean con mi %{record}?"
-      hint: "Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno"
+        text: "página de ayuda de ODS"
+      hint: Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno. Para más información visita la %{link}.
       placeholder: "Escribe las etiquetas que desees"
       remove_tag: "Eliminar"
       title: "Objetivos de Desarrollo Sostenible y Metas"

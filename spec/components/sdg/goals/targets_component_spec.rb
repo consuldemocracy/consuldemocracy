@@ -21,13 +21,13 @@ describe SDG::Goals::TargetsComponent, type: :component do
   it "renders tabs panel" do
     render_inline component
 
-    expect(page).to have_css ".targets"
-    expect(page).to have_css "#target_tabs"
+    expect(page).to have_css ".sdg-goal-targets"
+    expect(page).to have_css "#goal_1_targets"
     expect(page).to have_css "li", count: 2
     expect(page).to have_content "Targets"
     expect(page).to have_content "Local targets"
     expect(page).to have_css ".tabs-content"
-    expect(page).to have_css "#tab_global_targets"
+    expect(page).to have_css "#goal_1_tab_global_targets"
   end
 
   it "renders code and title for each target" do

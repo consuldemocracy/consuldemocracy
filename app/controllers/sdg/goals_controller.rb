@@ -11,4 +11,8 @@ class SDG::GoalsController < ApplicationController
 
   def show
   end
+
+  def help
+    @goals = @goals.order(:code)
+  end
 end

@@ -244,10 +244,12 @@
   width: calc(100% + #{$spacing});
   width: calc(100% + #{$max-spacing});
 
-  > * {
+  > *,
+  > .tabs-title {
     margin-bottom: 0;
     margin-left: $spacing;
     margin-left: $max-spacing;
+    margin-right: 0;
     margin-top: $spacing;
     margin-top: $max-spacing;
   }
@@ -259,6 +261,33 @@
 
 %sdg-goal-list {
   @include sdg-goal-list;
+}
+
+%sdg-goal-list-expanded {
+  $spacing: 0.5%;
+  @include sdg-goal-list($spacing);
+
+  label,
+  li {
+    min-width: $sdg-icon-min-width;
+    width: calc(100% / 17 - #{$spacing});
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .sdg-goal-icon {
+      width: 100%;
+    }
+
+    a:focus {
+      outline: none;
+
+      img {
+        outline: $outline-focus;
+      }
+    }
+  }
 }
 
 %tags {

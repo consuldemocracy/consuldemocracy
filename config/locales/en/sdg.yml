@@ -24,7 +24,7 @@ en:
       goal_2:
         title: "Zero Hunger"
         title_in_two_lines: "Zero\nHunger"
-        description: "Zero Hunger"
+        description: "Zero Hunger."
         long_description: '<p>After decades of steady decline, the number of people who suffer from hunger – as measured by the prevalence of undernourishment – began to slowly increase again in 2015. Current estimates show that <a href="http://www.fao.org/publications/sofi/2020/en/">nearly 690 million people are hungry, or 8.9 percent of the world population</a> – up by 10 million people in one year and by nearly 60 million in five years.</p> <p>The world is not on track to achieve Zero Hunger by 2030. If recent trends continue, the number of people affected by hunger would surpass 840 million by 2030.</p> <p>According to the World Food Programme, <a href="https://www.wfp.org/publications/2020-global-report-food-crises">135 million suffer from acute hunger</a> largely due to man-made conflicts, climate change and economic downturns. The COVID-19 pandemic could now double that number, putting an additional 130 million people at risk of suffering acute hunger by the end of 2020.</p> <p>With more than <a href="https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072">a quarter of a billion people potentially at the brink of starvation</a>, swift action needs to be taken to provide food and humanitarian relief to the most at-risk regions.</p> <p>At the same time,&nbsp;a profound change of the global food and agriculture system is needed if we are to nourish the more than 690 million people who are hungry today – and the&nbsp;<a href="https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html">additional 2 billion people</a>&nbsp;the world will have by 2050. Increasing agricultural productivity and sustainable food production are crucial to help alleviate the perils of hunger.</p>'
         targets:
           target_2_1:
@@ -441,6 +441,9 @@ en:
             title: "By 2020, enhance capacity-building support to developing countries, including for least developed countries and small island developing States, to increase significantly the availability of high-quality, timely and reliable data disaggregated by income, gender, age, race, ethnicity, migratory status, disability, geographic location and other characteristics relevant in national contexts."
           target_17_19:
             title: "By 2030, build on existing initiatives to develop measurements of progress on sustainable development that complement gross domestic product, and support statistical capacity-building in developing countries."
+      help:
+        title: "Sustainable Development Goals help"
+        description: "You can align your contributions to the community (debates, citizen proposals and investment projects) with the Sustaniable Development Goals 2030 Agenda, this will allow us to have an overview of our contribution to each of the Sustainable Development Goals. Below you can find out about all the goals, their targets and localized targets."
       show:
         read_more: "Read more about %{goal}"
         read_less: "Read less about %{goal}"
@@ -458,7 +461,8 @@ en:
       goal_list: "You can choose one or several SDGs aligned with your %{record}"
       help:
         title: "Which SDGs and targets are aligned with my %{record}?"
-      hint: "You can introduce the code of a specific goal/target or a text to find one"
+        text: "SDG help page"
+      hint: You can introduce the code of a specific goal/target or a text to find one. For more information visit the %{link}.
       placeholder: "Write a goal or target code or description"
       remove_tag: "Remove"
       title: "Sustainable Development Goals and Targets"
