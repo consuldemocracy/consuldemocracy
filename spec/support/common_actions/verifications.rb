@@ -13,7 +13,7 @@ module Verifications
     select_date "31-#{I18n.l(Date.current.at_end_of_year, format: "%B")}-1980",
                 from: "residence_date_of_birth"
 
-    fill_in "residence_postal_code", with: "28013"
+    fill_in "residence_postal_code", with: "30813"
     check "residence_terms_of_service"
 
     click_button "new_residence_submit"

@@ -5,17 +5,17 @@ describe Verification::Residence do
 
   describe "verification" do
     describe "postal code" do
-      it "is valid with postal codes starting with 280" do
-        residence.postal_code = "28012"
+      it "is valid with postal codes starting with 308" do
+        residence.postal_code = "30812"
         residence.valid?
         expect(residence.errors[:postal_code]).to be_empty
 
-        residence.postal_code = "28023"
+        residence.postal_code = "30823"
         residence.valid?
         expect(residence.errors[:postal_code]).to be_empty
       end
 
-      it "is not valid with postal codes not starting with 280" do
+      it "is not valid with postal codes not starting with 308" do
         residence.postal_code = "12345"
         residence.valid?
         expect(residence.errors[:postal_code].size).to eq(1)
