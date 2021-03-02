@@ -7,6 +7,7 @@ sv:
     name: Namn
     email: E-post
     description: Beskrivning
+    related_sdg_list: Mål
   activerecord:
     models:
       activity:
