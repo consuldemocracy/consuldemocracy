@@ -54,6 +54,7 @@ sv:
       other:
         title: "Andra intresseområden"
         how_to_use: "Använd %{org_name} i din stad"
+        sdg: "Globala målen för hållbar utveckling, hjälp"
       how_to_use:
         text: |-
           Använd plattformen i din stad eller hjälp oss att förbättra den, den är fri programvara.
