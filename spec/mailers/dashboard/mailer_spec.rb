@@ -11,6 +11,8 @@ describe Dashboard::Mailer do
 
   before do
     Setting["feature.dashboard.notification_emails"] = true
+    Setting["mailer_from_name"] = "CONSUL"
+    Setting["mailer_from_address"] = "noreply@consul.dev"
   end
 
   describe "#forward" do
@@ -33,7 +35,7 @@ describe Dashboard::Mailer do
 
       email = open_last_email
 
-      expect(email).to deliver_from("CONSUL <participa@lorca.es>")
+      expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
       expect(email).to deliver_to(proposal.author)
       expect(email).to have_subject(proposal.title)
       expect(email).to have_body_text("Support this proposal")
@@ -74,7 +76,7 @@ describe Dashboard::Mailer do
 
         email = open_last_email
 
-        expect(email).to deliver_from("CONSUL <participa@lorca.es>")
+        expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
         expect(email).to deliver_to(proposal.author)
         expect(email).to have_subject("More news about your citizen proposal")
         expect(email).to have_body_text("Hello #{proposal.author.name},")
@@ -116,7 +118,7 @@ describe Dashboard::Mailer do
 
         email = open_last_email
 
-        expect(email).to deliver_from("CONSUL <participa@lorca.es>")
+        expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
         expect(email).to deliver_to(proposal.author)
         expect(email).to have_subject("More news about your citizen proposal")
         expect(email).to have_body_text("Hello #{proposal.author.name},")
@@ -171,7 +173,7 @@ describe Dashboard::Mailer do
 
       email = open_last_email
 
-      expect(email).to deliver_from("CONSUL <participa@lorca.es>")
+      expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
       expect(email).to deliver_to(proposal.author)
       expect(email).to have_subject("Your draft citizen proposal is created")
       expect(email).to have_body_text("Hi #{proposal.author.name}!")
@@ -235,7 +237,7 @@ describe Dashboard::Mailer do
 
       email = open_last_email
 
-      expect(email).to deliver_from("CONSUL <participa@lorca.es>")
+      expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
       expect(email).to deliver_to(proposal.author)
       expect(email).to have_subject("Your citizen proposal is already "\
                                     "published. Don't stop spreading!")

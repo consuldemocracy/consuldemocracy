@@ -48,6 +48,11 @@ describe "Dashboards Rake" do
       let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 0) }
       let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0) }
 
+      before do
+        Setting["mailer_from_name"] = "CONSUL"
+        Setting["mailer_from_address"] = "noreply@consul.dev"
+      end
+
       it " when there are news actions actived for published proposals" do
         proposal = create(:proposal)
         action.update!(published_proposal: true)
@@ -56,7 +61,7 @@ describe "Dashboards Rake" do
         run_rake_task
         email = open_last_email
 
-        expect(email).to deliver_from("CONSUL <participa@lorca.es>")
+        expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
         expect(email).to deliver_to(proposal.author)
         expect(email).to have_subject("More news about your citizen proposal")
       end
@@ -69,7 +74,7 @@ describe "Dashboards Rake" do
         run_rake_task
         email = open_last_email
 
-        expect(email).to deliver_from("CONSUL <participa@lorca.es>")
+        expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
         expect(email).to deliver_to(proposal.author)
         expect(email).to have_subject("More news about your citizen proposal")
       end
