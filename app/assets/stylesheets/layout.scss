@@ -1610,7 +1610,6 @@ table {
   position: relative;
 
   &::before {
-    font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
     line-height: $line-height * 2;
@@ -1621,12 +1620,12 @@ table {
 }
 
 .button.button-twitter {
+  @include has-fa-icon(twitter, brands);
   background: #ecf7fc;
   border-left: 3px solid #45b0e3;
 
   &::before {
     color: #45b0e3;
-    content: "f";
   }
 }
 
@@ -1657,12 +1656,12 @@ table {
 }
 
 .button.button-facebook {
+  @include has-fa-icon(facebook-f, brands);
   background: #ebeef4;
   border-left: 3px solid #3b5998;
 
   &::before {
     color: #3b5998;
-    content: "A";
   }
 }
 
@@ -1693,22 +1692,22 @@ table {
 }
 
 .button.button-google {
+  @include has-fa-icon(google, brands);
   background: #fcedea;
   border-left: 3px solid #de4c34;
 
   &::before {
     color: #de4c34;
-    content: "B";
   }
 }
 
 .button.button-wordpress {
+  @include has-fa-icon(wordpress, brands);
   background: #dcdde3;
   border-left: 3px solid #2f2f33;
 
   &::before {
     color: #2f2f33;
-    content: "J";
   }
 }
 

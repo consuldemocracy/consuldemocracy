@@ -150,10 +150,14 @@
     @extend %fa-icon;
     font-family: "Font Awesome 5 Free";
 
-    @if $style == "r" {
-      font-weight: normal;
-    } @else {
+    @if $style == "solid" {
       font-weight: bold;
+    } @else {
+      font-weight: normal;
+    }
+
+    @if $style == "brands" {
+      font-family: "Font Awesome 5 Brands";
     }
   }
 }
