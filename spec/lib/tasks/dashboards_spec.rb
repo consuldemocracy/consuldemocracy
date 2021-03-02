@@ -56,7 +56,7 @@ describe "Dashboards Rake" do
         run_rake_task
         email = open_last_email
 
-        expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
+        expect(email).to deliver_from("CONSUL <participa@lorca.es>")
         expect(email).to deliver_to(proposal.author)
         expect(email).to have_subject("More news about your citizen proposal")
       end
@@ -69,7 +69,7 @@ describe "Dashboards Rake" do
         run_rake_task
         email = open_last_email
 
-        expect(email).to deliver_from("CONSUL <noreply@consul.dev>")
+        expect(email).to deliver_from("CONSUL <participa@lorca.es>")
         expect(email).to deliver_to(proposal.author)
         expect(email).to have_subject("More news about your citizen proposal")
       end
