@@ -12,8 +12,8 @@ class Setting
         "mailer_from_address": "participa@lorca.es",
         "remote_census.general.endpoint": Rails.application.secrets.census_api_end_point,
         "remote_census.request.date_of_birth": nil,
-        "remote_census.request.document_number": "get_habita_datos.request.documento",
-        "remote_census.request.document_type": "get_habita_datos.request.tipo_documento",
+        "remote_census.request.document_number": "request.documento",
+        "remote_census.request.document_type": "request.tipo_documento",
         "remote_census.request.method_name": "get_habita_datos",
         "remote_census.request.postal_code": nil,
         "remote_census.request.structure": %Q({ "request":
