@@ -49,8 +49,22 @@ ro:
         targets:
           target_3_1:
             title: "Până în 2030, reducerea ratei globale a mortalității materne la mai puțin de 70 de cazuri la 100.000 de născuți-vii."
+          target_3_2:
+            title: "Până în 2030, eliminarea deceselor care pot fi prevenite în randul nou-născuților și copiilor până la 5 ani, toate țările având scopul de a reduce mortalitatea neonatală la cel mult 12 decese la 1.000 născuți-vii și mortalitatea copiilor până la 5 ani la cel mult 25 decese la 1000 născuți-vii."
+          target_3_3:
+            title: "Până în 2030, eliminarea epidemiilor de SIDA, tuberculoză, malarie și boli tropicale neglijate, precum și combaterea hepatitei, bolilor condiționate de apă și a altor boli transmisibile."
+          target_3_4:
+            title: "Până în 2030, reducerea cu o treime a mortalității premature cauzate de boli netransmisibile prin prevenire, tratare și promovarea sănătății mintale și a bunăstării."
           target_3_5:
-            title: "Consolidarea prevenirii și tratamentul abuzului de substanțe, inclusiv a abuzului de stupefiante și a consumului nociv de alcool."
+            title: "Consolidarea prevenirii și tratamentul abuzului de substanțe, inclusiv a abuzul de droguri și substanțe narcotice și a consumului excesiv de alcool."
+          target_3_6:
+            title: "Până în 2020, înjumătățirea numărul global de decese și răniri cauzate de accidente rutiere."
+          target_3_7:
+            title: "Până în 2030, asigurarea accesului universal la serviciile de sănătate sexuală și reproductivă, inclusiv pentru planificarea familiei, informare și educație, precum și integrarea reproducerii sănătoase în strategiile și programele naționale."
+          target_3_8:
+            title: "Realizarea asigurării de sănătate, inclusiv protecția riscurilor financiare, accesul la servicii de sănătate esențiale și calitative și accesul la medicamente de bază sigure, eficiente, calitative și la prețuri accesibile și vaccinuri."
+          target_3_9:
+            title: "Până în 2030, reducerea substanțială a numărului deceselor și bolilor provocate de produsele chimice periculoase, de poluare și de contaminarea aerului, apei și a solului."
           target_3_B:
             title: "Sprijinirea cercetării și dezvoltării vaccinurilor și medicamentelor pentru bolile transmisibile și netransmisibile care afectează în principal țările în curs de dezvoltare, asigurarea accesului la medicamente și vaccinuri esențiale la prețuri accesibile, în conformitate cu Declarația de la Doha privind Acordul TRIPS și sănătatea publică, care afirmă dreptul de dezvoltare țările să utilizeze la maximum dispozițiile din Acordul privind aspectele legate de comerț ale drepturilor de proprietate intelectuală cu privire la flexibilitățile de protejare a sănătății publice și, în special, să asigure accesul la medicamente pentru toți."
       goal_4:
