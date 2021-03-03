@@ -1691,7 +1691,7 @@ footer {
 .auth-page{
   .auth-image.small-12.medium-3.column{
     width: 45%;
-    background: #ececec url("imagen-registro.png");
+    background: #ececec image-url("imagen-registro.png");
     background-size: contain;
     background-position: left top;
     background-repeat: no-repeat;
@@ -1708,7 +1708,8 @@ footer {
   @media (max-width: 767px){
     .auth-image.small-12.medium-3.column{
       width: 100%;
-      background: url("banner-home.png");
+
+      background: iamge-url("banner-home.png");
       background-size: cover;
       background-position: -92px 0px;
       background-repeat: no-repeat;
