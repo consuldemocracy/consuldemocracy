@@ -71,6 +71,10 @@ ro:
             title: "Consolidarea punerii în aplicare a Convenției-cadru a Organizației Mondiale a Sănătății privind controlul tutunului în toate țările, după caz."
           target_3_B:
             title: "Sprijinirea cercetării și dezvoltării vaccinurilor și medicamentelor pentru bolile transmisibile și netransmisibile care afectează în principal țările în curs de dezvoltare, asigurarea accesului la medicamente și vaccinuri esențiale la prețuri accesibile, în conformitate cu Declarația de la Doha privind Acordul TRIPS și sănătatea publică, care afirmă dreptul de dezvoltare țările să utilizeze la maximum dispozițiile din Acordul privind aspectele legate de comerț ale drepturilor de proprietate intelectuală cu privire la flexibilitățile de protejare a sănătății publice și, în special, să asigure accesul la medicamente pentru toți."
+          target_3_C:
+            title: "Creșterea substanțială a finanțării în domeniul sănătății și recrutarea, dezvoltarea, instruirea și păstrarea forței de muncă în domeniul sănătății în țările în curs de dezvoltare, în special în țările cel mai puțin dezvoltate și în micile state insulare în curs de dezvoltare."
+          target_3_D:
+            title: "Consolidarea capacității tuturor țărilor, în special a țărilor în curs de dezvoltare, de avertizare timpurie, reducere a riscurilor și gestionarea riscurilor naționale și globale pentru sănătate."
       goal_4:
         title: "Educație de Calitate"
         title_in_two_lines: "Educație \nde Calitate"
@@ -169,6 +173,16 @@ ro:
             title: "Susținerea creșterii economice pe cap de locuitor în conformitate cu situația națională și, în special, creșterea Produsului Intern Brut cu cel puțin 7 la sută pe an în țările cel mai puțin dezvoltate."
           target_8_2:
             title: "Atingerea unor niveluri mai ridicate ale productivității prin diversificare, modernizarea tehnologică și inovație, inclusiv prin accent pe sectoarele cu valoare adăugată sporită și utilizarea intesivă a forței de muncă."
+          target_8_3:
+            title: "Promovarea politicilor orientate spre dezvoltare care să susțină activități productive, crearea de locuri de muncă decente, antreprenoriatul, creativitatea și inovarea și să încurajeze formalizarea și creșterea întreprinderilor micro, mici și mijlocii, inclusiv prin accesul la servicii financiare."
+          target_8_4:
+            title: "Îmbunătățirea progresivă, până în 2030, a eficienței globale a resurselor în consum și producție și depunerea de eforturi pentru a decupla creșterea economică de degradarea mediului, în conformitate cu cadrul de 10 ani al programelor privind consumul și producția durabile, cu țările dezvoltate la conducere."
+          target_8_5:
+            title: "Până în 2030, obținerea unui loc de muncă deplin și productiv și o muncă decentă pentru toate femeile și bărbații, inclusiv pentru tinerii și persoanele cu dizabilități și o remunerare egală pentru munca de valoare egală."
+          target_8_6:
+            title: "Până în 2020, reducerea în mod substanțial a proporției de tineri care nu sunt încadrați în câmpul forței muncă, educație sau formare."
+          target_8_7:
+            title: "Luarea de măsuri imediate și eficiente pentru a eradica munca forțată, a pune capăt sclaviei moderne și a traficului de persoane și a asigura interzicerea și eliminarea celor mai grave forme de muncă a copiilor, inclusiv recrutarea și utilizarea copiilor ca soldați, și până în 2025 încetarea muncii copiilor în toate formele sale."
       goal_9:
         title: "Industrie, Inovație și Infrastructură"
         title_in_two_lines: "Industrie, Inovație\nși Infrastructură"
