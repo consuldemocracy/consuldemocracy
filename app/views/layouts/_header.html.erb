@@ -7,7 +7,9 @@
     <div class="row">
       <div class="small-12 medium-4 column end">
         <a href="https://www.madrid.es" target="_blank" accesskey="0">
-          <img class="float-rigth application-logo" alt="Decide Madrid: portal de participación ciudadana del Ayuntamiento de Madrid." src="<%= image_tag(image_path_for("logo-puerto-cruz.png"), class: "float-left", alt: setting["org_name"]) %>">
+          <%= link_to root_path, accesskey: "0" do %>
+            <%= image_tag(image_path_for("logo-puerto-cruz.png"), class: "float-left", alt: setting["org_name"]) %>
+          <% end %>
         </a>
       </div>
       <%= render "shared/locale_switcher" %>
