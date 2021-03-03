@@ -7,6 +7,7 @@ ro:
     name: Nume
     email: Email
     description: Descriere
+    related_sdg_list: Obiective și Ținte
   activerecord:
     models:
       activity:
