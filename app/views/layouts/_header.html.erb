@@ -5,13 +5,6 @@
 
   <div class="top-links">
     <div class="row">
-      <div class="small-12 medium-4 column end">
-        <a href="https://www.madrid.es" target="_blank" accesskey="0">
-          <%= link_to root_path, accesskey: "0" do %>
-            <%= image_tag(image_path_for("logo-puerto-cruz.png"), class: "float-left", alt: setting["org_name"]) %>
-          <% end %>
-        </a>
-      </div>
       <%= render "shared/locale_switcher" %>
       <div class="hide-for-small-only">
         <%= render "shared/top_links" %>
