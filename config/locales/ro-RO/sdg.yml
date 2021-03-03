@@ -114,8 +114,21 @@ ro:
       goal_6:
         title: "Apă potabilă și Canalizare"
         title_in_two_lines: "Apă potabilă\nși Canalizare"
-        description: "Asigurați accesul la apă și canalizare pentru toți."
+        description: "Asigurarea accesului la apă și canalizare pentru toți."
         long_description: '<p> Deși s-au înregistrat progrese substanțiale în ceea ce privește creșterea accesului la apă potabilă curată și canalizare, miliarde de oameni - în special în zonele rurale - încă nu au aceste servicii de bază. La nivel mondial, <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">una din trei persoane nu au acces la apă potabilă sigură </a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">două din cinci persoane nu au o instalație de spălare a mâinilor de bază </a> cu apă și săpun și mai mult de <a href="https://news.un.org/en/story/2019/11/1051561"> 673 de milioane de oameni practică în continuare defecarea în aer liber</a>. </p> <p> Pandemia COVID-19 a demonstrat importanța crucială a salubrității, igienei și accesului adecvat la apă curată pentru prevenirea și limitarea bolilor. <a href="https://www.unwater.org/water-facts/handhygiene/"> Igiena mâinilor salvează vieți </a>. Potrivit Organizației Mondiale a Sănătății, <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">spălarea mâinilor este una dintre cele mai eficiente acțiuni pe care le puteți întreprinde </a> pentru a reduce răspândirea agenților patogeni și pentru a preveni infecțiile, inclusiv virusul COVID-19. Cu toate acestea, miliarde de oameni încă nu dispun de apă igienică sigură, iar finanțarea este inadecvată. </p>'
+        targets:
+          target_6_1:
+            title: "Până în 2030, realizarea accesului universal și echitabil la apă potabilă sigură și la prețuri accesibile pentru toți."
+          target_6_2:
+            title: "Până în 2030, realizarea accesului la condiții sanitare și de igienă adecvate și echitabile pentru toți și eliminarea defecării în aer liber, acordând o atenție specială nevoilor femeilor și fetelor și celor în situații vulnerabile."
+          target_6_3:
+            title: "Până în 2030, îmbunătățirea calității apei prin reducerea poluării, eliminarea depozitării deșeurilor și reducerea la minimum a produselor chimice și materialelor periculoase, înjumătățind proporția apelor uzate netratate și sporind substanțial reciclarea și reutilizarea sigură la nivel global."
+          target_6_4:
+            title: "Până în 2030, creșterea substanțială a eficienței de utilizare a apei în toate sectoarele și asigurarea unui proces durabil de captare și furnizare a apei potabile, pentru a face față deficitului de apă și pentru a reduce substanțial numărul de persoane care suferă de deficit de apă."
+          target_6_5:
+            title: "Până în 2030, implementarea managementului integrat al resurselor de apă la toate nivelurile, inclusiv, dacă este cazul, prin cooperarea transfrontalieră."
+          target_6_6:
+            title: "Până în 2020, protejarea și restabilirea ecosistemelor legate de apă, inclusiv munți, păduri, zone umede, râuri, rezervoare acvifere și lacuri."
       goal_7:
         title: "Energie verde la prețuri accesibile"
         title_in_two_lines: "Energie verde\nla prețuri \naccesibile"
