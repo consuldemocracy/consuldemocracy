@@ -96,15 +96,21 @@ ro:
           target_5_1:
             title: "Eradicarea tuturor formelor de discriminare împotriva tuturor femeilor și fetelor de pretutindeni."
           target_5_2:
-            title: "Eliminați toate formele de violență împotriva tuturor femeilor și fetelor din sferele publice și private, inclusiv traficul de persoane și alte tipuri de exploatare."
+            title: "Eliminarea tuturor formele de violență împotriva tuturor femeilor și fetelor, în sferele publice și private, inclusiv a traficului, exploatării sexuale și a altor tipuri de exploatare."
           target_5_3:
             title: "Eradicarea tuturor practicilor dăunătoare, cum ar fi căsătoria timpurie și forțată în rândul copiilor și mutilarea genitală feminină."
+          target_5_4:
+            title: "Recunoașterea și aprecierea îngrijirii neremunerate și a muncii casnice prin furnizarea de servicii publice, infrastructură și politici de protecție socială și promovarea responsabilității partajate în gospodărie și familie, după caz la nivel național."
           target_5_5:
-            title: "Asigurați participarea deplină și efectivă a femeilor și oportunități egale de conducere la toate nivelurile de luare a deciziilor în viața politică, economică și publică."
+            title: "Asigurarea participării depline și eficiente a femeilor și a egalității de șanse la ocuparea de posturi de conducere la toate nivelurile de luare a deciziilor în viața politică, economică și publică."
           target_5_6:
-            title: "Asigurați accesul universal la sănătatea sexuală și reproductivă și la drepturile reproductive, astfel cum s-a convenit în conformitate cu Programul de acțiune al Conferinței internaționale pentru populație și dezvoltare și cu Platforma de acțiune de la Beijing și cu documentele rezultate ale conferințelor lor de revizuire."
+            title: "Asigurarea accesului universal la sănătatea sexuală și reproductivă și la drepturile reproductive, astfel cum s-a convenit în conformitate cu Programul de Acțiune al Conferinței Internaționale pentru Populație și Dezvoltare și cu Platforma de Acțiune de la Beijing și cu documentele rezultate ale conferințelor lor de revizuire."
           target_5_A:
-            title: "Întreprinde reforme pentru a oferi femeilor drepturi egale la resursele economice, precum și accesul la proprietate și control asupra pământului și a altor forme de proprietate, servicii financiare, moștenire și resurse naturale, în conformitate cu legislația națională."
+            title: "Întreprinderea reformelor pentru a oferi femeilor drepturi egale la resursele economice, precum și accesul la proprietate și control asupra pământului și a altor forme de proprietate, servicii financiare, moștenire și resurse naturale, în conformitate cu legislația națională."
+          target_5_B:
+            title: "Îmbunătățirea utilizării tehnologiei de abilitare, în special a tehnologiei informației și comunicațiilor, pentru a promova abilitarea femeilor."
+          target_5_C:
+            title: "Adoptarea și consolidarea politicilor solide și legislației aplicabile pentru promovarea egalității între sexe și pentru abilitarea tuturor femeilor și fetelor la toate nivelurile."
       goal_6:
         title: "Apă potabilă și Canalizare"
         title_in_two_lines: "Apă potabilă\nși Canalizare"
