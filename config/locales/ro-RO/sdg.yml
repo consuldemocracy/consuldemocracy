@@ -37,6 +37,8 @@ ro:
             title: "Până în 2030, asigurarea sistemelor durabile de producție alimentară și implementarea practicilor agricole rezistente care cresc productivitatea și producția, ajută la menținerea ecosistemelor, consolidează capacitatea de adaptare la schimbările climatice, condiții meteorologice extreme, secetă, inundații și alte dezastre și cele care îmbunătățesc progresiv calitatea solului."
           target_2_5:
             title: "Până în 2020, menținerea diversității genetice a semințelor, plantelor cultivate și animalelor de crescătorie și domesticite și a speciilor sălbatice înrudite, inclusiv prin bănci de semințe și plante gestionate corect și diversificate la nivel național, regional și internațional și promovarea accesului și un schimb corect și echitabil al beneficiilor care rezultă din utilizarea resurselor genetice și cunoștințelor tradiționale asociate, conform acordurilor internaționale."
+          target_2_A:
+            title: "Creșterea investițiilor, inclusiv printr-o cooperare internațională consolidată, în infrastructura rurală, cercetare agricolă și servicii de extindere, dezvoltare tehnologică și bănci genetice pentru plante și animale, pentru a spori capacitatea productivă agricolă în țările în curs de dezvoltare, în special în țările cel mai puțin dezvoltate."
           target_2_B:
             title: "Corectarea și prevenirea restricțiilor comerciale și denaturărilor pe piețele agricole mondiale, inclusiv prin eliminarea paralelă a tuturor formelor de subvenții la exportul agricol și a tuturor măsurilor de export cu efect echivalent, în conformitate cu mandatul Rundei de dezvoltare de la Doha."
           target_2_C:
@@ -65,6 +67,8 @@ ro:
             title: "Realizarea asigurării de sănătate, inclusiv protecția riscurilor financiare, accesul la servicii de sănătate esențiale și calitative și accesul la medicamente de bază sigure, eficiente, calitative și la prețuri accesibile și vaccinuri."
           target_3_9:
             title: "Până în 2030, reducerea substanțială a numărului deceselor și bolilor provocate de produsele chimice periculoase, de poluare și de contaminarea aerului, apei și a solului."
+          target_3_A:
+            title: "Consolidarea punerii în aplicare a Convenției-cadru a Organizației Mondiale a Sănătății privind controlul tutunului în toate țările, după caz."
           target_3_B:
             title: "Sprijinirea cercetării și dezvoltării vaccinurilor și medicamentelor pentru bolile transmisibile și netransmisibile care afectează în principal țările în curs de dezvoltare, asigurarea accesului la medicamente și vaccinuri esențiale la prețuri accesibile, în conformitate cu Declarația de la Doha privind Acordul TRIPS și sănătatea publică, care afirmă dreptul de dezvoltare țările să utilizeze la maximum dispozițiile din Acordul privind aspectele legate de comerț ale drepturilor de proprietate intelectuală cu privire la flexibilitățile de protejare a sănătății publice și, în special, să asigure accesul la medicamente pentru toți."
       goal_4:
@@ -89,6 +93,10 @@ ro:
             title: "Până în 2030, asigurarea faptului că toți elevii dobândesc cunoștințele și competențele necesare pentru promovarea dezvoltării durabile, inclusiv, printre altele, prin educația pentru dezvoltare durabilă și stiluri de viață durabile, drepturile omului, egalitatea între sexe, promovarea unei culturi a păcii și non-violenței, cetățenia globală și aprecierea diversității culturale și a contribuției culturii la dezvoltarea durabilă."
           target_4_A:
             title: "Construirea și actualizarea de facilități de educație adaptate în funcție de nevoile fiecărui copil și să ofere medii de învățare sigure, nonviolente, incluzive și eficiente pentru toți."
+          target_4_B:
+            title: "Până în 2020, extinderea în mod substanțial la nivel global numărul de burse disponibile țărilor în curs de dezvoltare, în special țărilor cel mai puțin dezvoltate, micilor state insulare în curs de dezvoltare și țărilor africane, pentru înscrierea în învățământul superior, inclusiv formare profesională și tehnologia informației și comunicațiilor, programe tehnice, de inginerie și științifice, în țările dezvoltate și alte țări în curs de dezvoltare."
+          target_4_C:
+            title: "Până în 2030, creșterea substanțială a ofertei de profesori calificați, inclusiv prin cooperarea internațională pentru formarea profesorilor în țările în curs de dezvoltare, în special în țările cel mai puțin dezvoltate și în statele insulare în curs de dezvoltare."
       goal_5:
         title: "Egalitate între sexe"
         title_in_two_lines: "Egalitate \nîntre Sexe"
