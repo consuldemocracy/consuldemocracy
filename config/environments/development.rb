@@ -70,20 +70,4 @@ Rails.application.configure do
       Bullet.add_footer = true
     end
   end
-  # Use an evented file watcher to asynchronously detect changes in source code,
-  # routes, locales, etc. This feature depends on the listen gem.
-  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
-    :address              => 'mail.sagasoluciones.com',
-    :port                 => 25,
-    :domain               => 'consul.sagasoluciones.com',
-    :user_name            => 'mailserver-ocms@sagasoluciones.com',
-    :password             => 'M@ailServer17',
-    :authentication => :plain,
-    :enable_starttls_auto => true,
-    :ssl => false
-  }
 end
