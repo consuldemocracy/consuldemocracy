@@ -4,23 +4,19 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
-
-
 /* FONTS */
 
 /* MONSERRAT FAMILY */
 
 /* MONTSERRAT BOLD */
-
-
 @font-face {
   font-family: 'montserratbold';
-  src: url('montserrat-bold-webfont.woff2') format('woff2'),
-  url('montserrat-bold-webfont.woff') format('woff'),
-  url('montserrat-bold-webfont.ttf') format('truetype');
+  src:
+    font-url('montserrat-bold-webfont.woff2') format('woff2'),
+    font-url('montserrat-bold-webfont.woff') format('woff'),
+    font-url('montserrat-bold-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -28,12 +24,12 @@
 
 @font-face {
   font-family: 'montserratextrabold';
-  src: url('montserrat-extrabold-webfont.woff2') format('woff2'),
-  url('montserrat-extrabold-webfont.woff') format('woff'),
-  url('montserrat-extrabold-webfont.ttf') format('truetype');
+  src:
+    font-url('montserrat-extrabold-webfont.woff2') format('woff2'),
+    font-url('montserrat-extrabold-webfont.woff') format('woff'),
+    font-url('montserrat-extrabold-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -42,12 +38,12 @@
 
 @font-face {
   font-family: 'montserratlight';
-  src: url('montserrat-light-webfont.woff2') format('woff2'),
-  url('montserrat-light-webfont.woff') format('woff'),
-  url('montserrat-light-webfont.ttf') format('truetype');
+  src:
+    font-url('montserrat-light-webfont.woff2') format('woff2'),
+    font-url('montserrat-light-webfont.woff') format('woff'),
+    font-url('montserrat-light-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -56,12 +52,12 @@
 
 @font-face {
   font-family: 'montserratmedium';
-  src: url('montserrat-medium-webfont.woff2') format('woff2'),
-  url('montserrat-medium-webfont.woff') format('woff'),
-  url('montserrat-medium-webfont.ttf') format('truetype');
+  src:
+    font-url('montserrat-medium-webfont.woff2') format('woff2'),
+    font-url('montserrat-medium-webfont.woff') format('woff'),
+    font-url('montserrat-medium-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -70,12 +66,12 @@
 
 @font-face {
   font-family: 'montserratregular';
-  src: url('custom/montserrat-regular_0-webfont.woff2') format('woff2'),
-  url('custom/montserrat-regular_0-webfont.woff') format('woff'),
-  url('custom/montserrat-regular_0-webfont.ttf') format('truetype');
+  src:
+    font-url('custom/montserrat-regular_0-webfont.woff2') format('woff2'),
+    font-url('custom/montserrat-regular_0-webfont.woff') format('woff'),
+    font-url('custom/montserrat-regular_0-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -84,12 +80,12 @@
 
 @font-face {
   font-family: 'montserratsemibold';
-  src: url('montserrat-semibold-webfont.woff2') format('woff2'),
-  url('montserrat-semibold-webfont.woff') format('woff'),
-  url('montserrat-semibold-webfont.ttf') format('truetype');
+  src:
+    font-url('montserrat-semibold-webfont.woff2') format('woff2'),
+    font-url('montserrat-semibold-webfont.woff') format('woff'),
+    font-url('montserrat-semibold-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -102,12 +98,12 @@
 
 @font-face {
   font-family: 'muliregular';
-  src: url('muli-webfont.woff2') format('woff2'),
-  url('muli-webfont.woff') format('woff'),
-  url('muli-webfont.ttf') format('truetype');
+  src:
+    font-url('muli-webfont.woff2') format('woff2'),
+    font-url('muli-webfont.woff') format('woff'),
+    font-url('muli-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -116,12 +112,12 @@
 
 @font-face {
   font-family: 'mulibold';
-  src: url('muli-bold-webfont.woff2') format('woff2'),
-  url('muli-bold-webfont.woff') format('woff'),
-  url('muli-bold-webfont.ttf') format('truetype');
+  src:
+    font-url('muli-bold-webfont.woff2') format('woff2'),
+    font-url('muli-bold-webfont.woff') format('woff'),
+    font-url('muli-bold-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -130,12 +126,12 @@
 
 @font-face {
   font-family: 'mulibolditalic';
-  src: url('muli-bolditalic-webfont.woff2') format('woff2'),
-  url('muli-bolditalic-webfont.woff') format('woff'),
-  url('muli-bolditalic-webfont.ttf') format('truetype');
+  src:
+    font-url('muli-bolditalic-webfont.woff2') format('woff2'),
+    font-url('muli-bolditalic-webfont.woff') format('woff'),
+    font-url('muli-bolditalic-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -144,12 +140,12 @@
 
 @font-face {
   font-family: 'muliextralight';
-  src: url('muli-extralight-webfont.woff2') format('woff2'),
-  url('muli-extralight-webfont.woff') format('woff'),
-  url('muli-extralight-webfont.ttf') format('truetype');
+  src:
+    font-url('muli-extralight-webfont.woff2') format('woff2'),
+    font-url('muli-extralight-webfont.woff') format('woff'),
+    font-url('muli-extralight-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -158,12 +154,12 @@
 
 @font-face {
   font-family: 'muliextralightitalic';
-  src: url('muli-extralightitalic-webfont.woff2') format('woff2'),
-  url('muli-extralightitalic-webfont.woff') format('woff'),
-  url('muli-extralightitalic-webfont.ttf') format('truetype');
+  src:
+    font-url('muli-extralightitalic-webfont.woff2') format('woff2'),
+    font-url('muli-extralightitalic-webfont.woff') format('woff'),
+    font-url('muli-extralightitalic-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
@@ -172,68 +168,58 @@
 
 @font-face {
   font-family: 'muliregularitalic';
-  src: url('muli-italic-webfont.woff2') format('woff2'),
-  url('muli-italic-webfont.woff') format('woff'),
-  url('muli-italic-webfont.ttf') format('truetype');
+  src:
+    font-url('muli-italic-webfont.woff2') format('woff2'),
+    font-url('muli-italic-webfont.woff') format('woff'),
+    font-url('muli-italic-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
 /* MULI LIGHT*/
-
-
 @font-face {
   font-family: 'mulilight';
-  src: url('muli-light-webfont.woff2') format('woff2'),
-  url('muli-light-webfont.woff') format('woff'),
-  url('muli-light-webfont.ttf') format('truetype');
+  src:
+    font-url('muli-light-webfont.woff2') format('woff2'),
+    font-url('muli-light-webfont.woff') format('woff'),
+    font-url('muli-light-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
 /* MULI LIGHT ITALIC*/
-
-
 @font-face {
   font-family: 'mulilightitalic';
-  src: url('muli-lightitalic-webfont.woff2') format('woff2'),
-  url('muli-lightitalic-webfont.woff') format('woff'),
-  url('muli-lightitalic-webfont.ttf') format('truetype');
+  src: font-url('muli-lightitalic-webfont.woff2') format('woff2'),
+  font-url('muli-lightitalic-webfont.woff') format('woff'),
+  font-url('muli-lightitalic-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
 /* MULI SEMIBOLD*/
-
-
 @font-face {
   font-family: 'mulisemibold';
-  src: url('muli-semibold-webfont.woff2') format('woff2'),
-  url('muli-semibold-webfont.woff') format('woff'),
-  url('muli-semibold-webfont.ttf') format('truetype');
+  src: font-url('muli-semibold-webfont.woff2') format('woff2'),
+  font-url('muli-semibold-webfont.woff') format('woff'),
+  font-url('muli-semibold-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 
 /* MULI SEMIBOLD ITALIC*/
-
-
 @font-face {
   font-family: 'mulisemibolditalic';
-  src: url('muli-semi-bolditalic-webfont.woff2') format('woff2'),
-  url('muli-semi-bolditalic-webfont.woff') format('woff'),
-  url('muli-semi-bolditalic-webfont.ttf') format('truetype');
+  src:
+    font-url('muli-semi-bolditalic-webfont.woff2') format('woff2'),
+    font-url('muli-semi-bolditalic-webfont.woff') format('woff'),
+    font-url('muli-semi-bolditalic-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 header{
