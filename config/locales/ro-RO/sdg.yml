@@ -72,6 +72,15 @@ ro:
         title_in_two_lines: "Educație \nde Calitate"
         description: "Educație de Calitate."
         long_description: '<p> Educația permite o mobilitate socioeconomică ascendentă și este o cheie pentru a scăpa de sărăcie. În ultimul deceniu, s-au înregistrat progrese majore în direcția creșterii accesului la educație și la ratele de înscriere la școală la toate nivelurile, în special pentru fete. Cu toate acestea, <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth"> aproximativ 260 de milioane de copii erau încă în afara școlii </a> în 2018 - aproape o cincime din populația globală din acea grupă de vârstă. Și mai mult de jumătate din copiii și adolescenții din întreaga lume <a href="https://unstats.un.org/sdgs/report/2019/goal-04/"> nu îndeplinesc standardele minime de competență </a> în lectură și matematică. &nbsp; </p> <p> În 2020, pe măsură ce pandemia COVID-19 s-a răspândit pe tot globul, majoritatea țărilor au anunțat închiderea temporară a școlilor, afectând peste 91% din elevii din întreaga lume. Până în aprilie 2020, aproape  <a href="https://en.unesco.org/covid19/educationresponse"> 1,6 miliarde de copii și tineri nu erau școlari </a>. Și aproape <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf"> 369 de milioane de copii care se bazează pe mesele școlare </a> au trebuit să caute alte surse pentru hrana zilnică. &nbsp; </p> <p>Nu au ieșit niciodată atât de mulți copii din școală în același timp, perturbând învățarea și avansarea viața, în special cei mai vulnerabili și marginalizați. Pandemia globală are consecințe de anvergură care pot pune în pericol câștigurile obținute cu greu în îmbunătățirea educației globale. </p>'
+        targets:
+          target_4_1:
+            title: "Până în 2030, asigurarea absolvirii unui învățământ primar și secundar gratuit, echitabil și de calitate de către toate fetele și toți băieții, ceea ce duce la rezultate de învățare relevante și eficiente pentru acest obiectiv."
+          target_4_2:
+            title: "Până în 2030, asigurarea faptului că toate fetele și toti băieții au acces la dezvoltarea timpurie de calitate, îngrijire și educație preșcolară, astfel încât să fie pregătiți pentru învățământul primar."
+          target_4_3:
+            title: "Până în 2030, asigurarea accesului egal pentru toate femeile și toți bărbații la educație tehnică, vocațională și terțiară, inclusiv universitară, accesibilă și calitativă."
+          target_4_4:
+            title: "Până în 2030, creșterea substanțială a numărului de tineri și adulți care dețin competențe relevante, inclusiv competențe tehnice și vocaționale, pentru ocuparea forței de muncă, locuri de muncă decente și antreprenoriat."
       goal_5:
         title: "Egalitate între sexe"
         title_in_two_lines: "Egalitate \nîntre Sexe"
