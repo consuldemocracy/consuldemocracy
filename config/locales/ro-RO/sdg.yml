@@ -157,6 +157,8 @@ ro:
         targets:
           target_8_1:
             title: "Susținerea creșterii economice pe cap de locuitor în conformitate cu situația națională și, în special, creșterea Produsului Intern Brut cu cel puțin 7 la sută pe an în țările cel mai puțin dezvoltate."
+          target_8_2:
+            title: "Atingerea unor niveluri mai ridicate ale productivității prin diversificare, modernizarea tehnologică și inovație, inclusiv prin accent pe sectoarele cu valoare adăugată sporită și utilizarea intesivă a forței de muncă."
       goal_9:
         title: "Industrie, Inovație și Infrastructură"
         title_in_two_lines: "Industrie, Inovație\nși Infrastructură"
