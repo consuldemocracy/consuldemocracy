@@ -3,7 +3,7 @@ ro:
     actions:
       edit: "Gestionați obiective și ținte"
     header:
-      title: "Conținutul obiectivelor de dezvoltare durabilă"
+      title: "Conținutul ODD"
     homepage:
       title: "Configurarea paginii de pornire"
       header:
@@ -11,16 +11,16 @@ ro:
         no_cards: "Nu există antet"
         title: "Antet"
       create_card: "Crează un card %{phase}"
-      no_cards: "Nu există carduri în această fază"
+      no_cards: "Nu există carduri în această etapă"
     menu:
       budget_investments: "Bugete participative"
       debates: "Dezbateri"
-      legislation_processes: "Legislație colaborativă"
+      legislation_processes: "Procese legislative"
       legislation_proposals: "Propuneri legislative"
       polls: "Sondaje"
       proposals: "Propuneri"
       sdg_content: "Obiective și Ținte"
-      sdg_homepage: "Pagina de pornire SDG"
+      sdg_homepage: "Pagină de pornire SDG"
     local_targets:
       create:
         notice: "Obiectiv local creat cu succes"
@@ -41,7 +41,7 @@ ro:
       index:
         filter: "Filtru"
         filters:
-          all: "Tot"
+          all: "Toate"
           pending_sdg_review: "În așteptare"
           sdg_reviewed: "Marcat ca revizuit"
       update:
