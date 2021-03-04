@@ -102,6 +102,11 @@ group :development do
   gem "erb_lint", "~> 0.0.35", require: false
   gem "github_changelog_generator", "~> 1.15.2"
   gem "mdl", "~> 0.11.0", require: false
+  gem "pronto", "~> 0.11.0"
+  gem "pronto-erb_lint", "~> 0.1.5"
+  gem "pronto-eslint", "~> 0.11.0"
+  gem "pronto-rubocop", "~> 0.11.0"
+  gem "pronto-scss", "~> 0.11.0"
   gem "rubocop", "~> 0.91.0", require: false
   gem "rubocop-performance", "~> 1.7.1", require: false
   gem "rubocop-rails", "~> 2.6.0", require: false

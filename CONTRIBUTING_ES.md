@@ -34,7 +34,7 @@ Si quieres que revisemos tu código con una sonrisa, por favor sigue nuestras co
 
 * Incluye tests para los cambios que hayas hecho
 * Los tests se ejecutarán automáticamente para comprobar que el resto de la aplicación sigue funcionando; asegúrate de que los tests pasan
-* Tus cambios serán revisados automáticamente por Hound CI; arregla los problemas de los que informa (si es que hay alguno)
+* Ejecuta `bundle exec pronto run` y arregla los problemas de los que informe (si es que hay alguno)
 * Sigue [las siete reglas para un gran mensaje de commit](https://chris.beams.io/posts/git-commit/)
 
 Cuando revisemos tu código y te pidamos que cambies alguna cosa, si tienes experiencia con `git rebase` edita los commits existentes en vez de añadir más. Si no tienes experiencia con `git rebase`, puedes saltarte este punto.
