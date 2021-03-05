@@ -190,6 +190,7 @@ sv:
     local_census_records/import: Importera lokala adressregister
     site_customization/content_block: innehållsblock
     site_customization/page: sida
+    sdg/local_target: lokalt mål
   geozones:
     none: Hela staden
   layouts:
@@ -296,6 +297,7 @@ sv:
       sign_up: Registrera dig med Twitter
       name: Twitter
     info:
+      sign_in: "Logga in med:"
       sign_up: "Registrera dig genom:"
     or_fill: "Eller fyll i följande formulär:"
   proposals:
