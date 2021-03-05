@@ -79,6 +79,9 @@ sv:
       sdg/goal:
         one: "mål"
         other: "mål"
+      sdg/local_target:
+        one: "lokalt mål"
+        other: "lokala mål"
       site_customization/page:
         one: Anpassad sida
         other: Anpassade sidor
@@ -317,6 +320,11 @@ sv:
         title: "Titel"
         description: "Beskrivning"
       sdg/local_target:
+        code: "Kod"
+        target_id: "Mål"
+      sdg/local_target/translation:
+        description: "Beskrivning"
+      sdg/target:
         code: "Kod"
       site_customization/page:
         content: Innehåll
