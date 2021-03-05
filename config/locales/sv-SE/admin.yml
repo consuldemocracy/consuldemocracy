@@ -628,6 +628,9 @@ sv:
         add: Lägg till
       search:
         title: "Bedömare: Sök användare"
+    sdg_managers:
+      index:
+        no_sdg_managers: Det finns inga användare.
     sdg/managers:
       sdg/manager:
         add: Lägg till
@@ -1213,6 +1216,7 @@ sv:
           with_confirmed_hide: Bekräftad
           without_confirmed_hide: Väntande
         title: Dolda aviseringar
+        no_hidden_proposals: Det finns inga dolda aviseringar.
     settings:
       flash:
         updated: Uppdaterad värde
@@ -1254,6 +1258,13 @@ sv:
       true_value: "Ja"
       false_value: "Nej"
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Alla mål"
+            label: "Efter mål"
+          sdg_targets:
+            all: "Alla mål"
+            label: "Efter mål"
         label:
           booths: "Sök röststation efter namn"
           debates: "Sök debatter med titel eller beskrivning"
@@ -1406,6 +1417,8 @@ sv:
           origin_web: Webbdeltagare
           origin_total: Totalt antal deltagare
       sdg:
+        debates: "Debatter"
+        polls: "Omröstningar"
         proposals: "Förslag"
     tags:
       create: Skapa inlägg
@@ -1417,6 +1430,8 @@ sv:
         help: "När en användare skapar ett förslag föreslås följande ämnen som taggar."
     users:
       columns:
+        id: Legitimation
+        erase_reason: Radera anledning
         name: Namn
         email: E-post
         document_number: Dokumentnummer
@@ -1425,6 +1440,7 @@ sv:
       index:
         title: Användare
         no_users: Det finns inga användare.
+        filter: Filtrera
         filters:
           erased: Raderad
       search:
