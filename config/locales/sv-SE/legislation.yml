@@ -120,6 +120,8 @@ sv:
       process_title: Medborgardialoger
     summary:
       title: "Sammanfattning"
+      comments:
+        zero: "Inga kommentarer"
       top_comments:
         zero: "Inga kommentarer"
       no_allegation: "Det finns inga kommentarer"
