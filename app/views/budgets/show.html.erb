@@ -15,7 +15,7 @@
       <p>
         <strong><%= t("budgets.show.phase") %></strong>
       </p>
-      <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+      <h2><%= @budget.current_phase.name %></h2>
 
       <% if @budget.accepting? %>
         <% if current_user %>

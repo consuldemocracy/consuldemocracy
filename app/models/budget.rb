@@ -155,10 +155,6 @@ class Budget < ApplicationRecord
     heading_ids.include?(heading.id) ? heading.price : -1
   end
 
-  def translated_phase
-    I18n.t "budgets.phase.#{phase}"
-  end
-
   def formatted_amount(amount)
     ActionController::Base.helpers.number_to_currency(amount,
                                                       precision: 0,

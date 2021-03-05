@@ -29,7 +29,7 @@
             <strong><%= budget.name %></strong>
           </td>
           <td class="small">
-            <%= t("budgets.phase.#{budget.phase}") %>
+            <%= budget.current_phase.name %>
           </td>
           <td>
             <%= render Admin::Budgets::TableActionsComponent.new(budget) %>

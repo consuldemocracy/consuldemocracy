@@ -36,6 +36,10 @@ class Budget
       PHASE_KINDS[PHASE_KINDS.index(phase)..-1]
     end
 
+    def name
+      Class.new.extend(ActionView::Helpers::TranslationHelper).t("budgets.phase.#{kind}")
+    end
+
     def next_enabled_phase
       next_phase&.enabled? ? next_phase : next_phase&.next_enabled_phase
     end
@@ -81,7 +85,7 @@ class Budget
         if enabled? && starts_at.present? && prev_enabled_phase.present?
           prev_enabled_phase.assign_attributes(ends_at: starts_at)
           if prev_enabled_phase.invalid_dates_range?
-            phase_name = I18n.t("budgets.phase.#{prev_enabled_phase.kind}")
+            phase_name = prev_enabled_phase.name
             error = I18n.t("budgets.phases.errors.prev_phase_dates_invalid", phase_name: phase_name)
             errors.add(:starts_at, error)
           end
@@ -92,7 +96,7 @@ class Budget
         if enabled? && ends_at.present? && next_enabled_phase.present?
           next_enabled_phase.assign_attributes(starts_at: ends_at)
           if next_enabled_phase.invalid_dates_range?
-            phase_name = I18n.t("budgets.phase.#{next_enabled_phase.kind}")
+            phase_name = next_enabled_phase.name
             error = I18n.t("budgets.phases.errors.next_phase_dates_invalid", phase_name: phase_name)
             errors.add(:ends_at, error)
           end
