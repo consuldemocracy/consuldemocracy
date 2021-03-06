@@ -34,7 +34,6 @@
         "null": "ignore"
       }
     ],
-    "func-call-spacing": "error",
     "indent": [
       "error",
          2
@@ -42,7 +41,6 @@
     "key-spacing": "error",
     "keyword-spacing": "error",
     "linebreak-style": "error",
-    "lines-between-class-members": "error",
     "max-len": [
       "warn",
          {
@@ -61,7 +59,6 @@
     "no-param-reassign": "error",
     "no-shadow": "error",
     "no-spaced-func": "error",
-    "no-tabs": "error",
     "no-trailing-spaces": "error",
     "no-void": "error",
     "no-whitespace-before-property": "error",
@@ -109,7 +106,6 @@
       }
     ],
     "strict": "error",
-    "switch-colon-spacing": "error",
     "yoda": "error"
   }
 }
