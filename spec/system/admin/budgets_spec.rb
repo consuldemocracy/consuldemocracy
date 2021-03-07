@@ -255,7 +255,7 @@ describe "Admin budgets", :admin do
 
         expect(page).to have_select "Phase", selected: "Selecting projects"
 
-        expect(page).to have_table "budget-phases-table", with_cols: [
+        expect(page).to have_table "Phases", with_cols: [
           [
             "Information",
             "Accepting projects",
@@ -278,7 +278,7 @@ describe "Admin budgets", :admin do
           ]
         ]
 
-        within_table "budget-phases-table" do
+        within_table "Phases" do
           within "tr", text: "Information" do
             expect(page).to have_css ".budget-phase-enabled.enabled"
             expect(page).to have_link "Edit phase"
