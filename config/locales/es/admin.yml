@@ -94,6 +94,7 @@ es:
         publish: "Publicar presupuesto"
         delete: Eliminar presupuesto
         phase: Fase
+        phases_caption: "Fases"
         dates: Fechas
         enabled: Habilitada
         actions: Acciones
