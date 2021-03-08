@@ -1,6 +1,8 @@
 tr:
   sdg:
     goals:
+      help:
+        title: "Sürdürülebilir Kalkınma Amaçları yardım"
       show:
         read_more: "%{goal} hakkında daha fazla oku"
         read_less: "%{goal} hakkında daha az oku"
@@ -16,6 +18,7 @@ tr:
       goal_list: "Hedef listesi"
       help:
         title: "Hangi SKH'ler %{record} ile uyumlu?"
+        text: "SKA yardım sayfası"
       placeholder: "Bir amaç ya da hedef kodu yazın veya açıklayın"
       remove_tag: "Kaldır"
       title: "Sürdürülebilir Kalkınma Amaçları ve Hedefleri"
