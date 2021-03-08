@@ -55,6 +55,7 @@ tr:
       other:
         title: "İlgili diğer bilgi"
         how_to_use: "%{org_name}'yı ülkeniz için kullanın"
+        sdg: "Sürdürülebilir Kalkınma Hedefleri yardım"
       how_to_use:
         text: |-
           Bunu yerel idarenizde kullanın ya da geliştirmemize yardım edin, bu özgür bir yazılımdır.
