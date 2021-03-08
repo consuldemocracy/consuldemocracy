@@ -4,9 +4,11 @@
   <div class="input-section">
     <fieldset class="goals">
       <legend><%= t("sdg.related_list_selector.goal_list", record: relatable_name) %></legend>
-      <%= f.collection_check_boxes(:sdg_goal_ids, goals, :id, :code) do |checkbox_form| %>
-        <%= goal_field(checkbox_form) %>
-      <% end %>
+      <div class="goal-list">
+        <%= f.collection_check_boxes(:sdg_goal_ids, goals, :id, :code) do |checkbox_form| %>
+          <%= goal_field(checkbox_form) %>
+        <% end %>
+      </div>
     </fieldset>
 
     <%= f.text_field :related_sdg_list,
