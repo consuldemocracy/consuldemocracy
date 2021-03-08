@@ -33,7 +33,7 @@ es:
         help_text_4_3: "¿Qué son propuesta de inversión y de gasto corriente?"
         help_text_4_3_1: "Las propuestas deben ser de inversión o gasto corriente y ajustarse al presupuesto disponible:"
         help_text_4_3_2: "Una propuesta de inversión es aquélla que supone un gasto en creación de nuevos equipamientos o infraestructuras, arreglo-modificación-mejora de las ya existentes y adquisición de bienes inventariables. Es decir, se trata de algo tangible que será beneficioso en el futuro."
-		    help_text_4_3_3: "Una propuesta de gasto corriente es aquella destinada a contratar personal o comprar recursos, bienes y servicios para el desarrollo de programas o actuaciones de la Diputación en la provincia."
+        help_text_4_3_3: "Una propuesta de gasto corriente es aquella destinada a contratar personal o comprar recursos, bienes y servicios para el desarrollo de programas o actuaciones de la Diputación en la provincia."
         help_text_4_4: "¿Qué criterios deben cumplir las propuestas para pasar a la fase de votación?"
         help_text_4_4_0: "A cada propuesta se le aplica un baremo que le otorga puntos si cumple una serie de criterios, que son los siguientes:"		
         help_text_4_4_1: "-	Que atiendan a necesidades básicas de la población destinadas a resolver carencias o equipamientos básicos."
