@@ -14,4 +14,12 @@ class Admin::BudgetPhases::PhasesComponent < ApplicationComponent
     def dates(phase)
       Admin::Budgets::DurationComponent.new(phase).dates
     end
+
+    def enabled_text(phase)
+      if phase.enabled?
+        tag.span t("shared.yes"), class: "budget-phase-enabled"
+      else
+        tag.span t("shared.no"), class: "budget-phase-disabled"
+      end
+    end
 end

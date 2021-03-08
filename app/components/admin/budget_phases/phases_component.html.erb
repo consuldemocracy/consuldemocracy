@@ -26,7 +26,7 @@
           <% end %>
         </td>
         <td class="text-center">
-          <span class="budget-phase-enabled <%= phase.enabled? ? "enabled" : "disabled" %>"></span>
+          <%= enabled_text(phase) %>
         </td>
         <td>
           <%= render Admin::TableActionsComponent.new(phase,
