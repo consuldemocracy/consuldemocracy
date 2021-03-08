@@ -32,7 +32,7 @@ es:
         help_text_4_2_4: "- Que el coste no supere el importe máximo destinado a cada zona."
         help_text_4_3: "¿Qué son propuesta de inversión y de gasto corriente?"
         help_text_4_3_1: "Las propuestas deben ser de inversión o gasto corriente y ajustarse al presupuesto disponible:"
-        help_text_4_3_2: "Una propuesta de inversión es aquélla que supone un gasto en creación de nuevos equipamientos o infraestructuras, arreglo//modificación//mejora de las ya existentes y adquisición de bienes inventariables. Es decir, se trata de algo tangible que será beneficioso en el futuro."
+        help_text_4_3_2: "Una propuesta de inversión es aquélla que supone un gasto en creación de nuevos equipamientos o infraestructuras, arreglo/modificación/mejora de las ya existentes y adquisición de bienes inventariables. Es decir, se trata de algo tangible que será beneficioso en el futuro."
         help_text_4_3_3: "Una propuesta de gasto corriente es aquella destinada a contratar personal o comprar recursos, bienes y servicios para el desarrollo de programas o actuaciones de la Diputación en la provincia."
         help_text_4_4: "¿Qué criterios deben cumplir las propuestas para pasar a la fase de votación?"
         help_text_4_4_0: "A cada propuesta se le aplica un baremo que le otorga puntos si cumple una serie de criterios, que son los siguientes:"		
@@ -70,7 +70,7 @@ es:
         help_text_5_4: "•	No sean viables técnicamente tras la revisión del personal técnico provincial (es decir, no haya posibilidad técnica de ejecución)."
         help_text_5_5: "•	No cumplan con la legislación y la normativa vigente, tras la revisión del personal técnico provincial."
         help_text_titulo6: "¿Cómo hago mi propuesta?"
-        help_text_6_1 : "Puedes hacer un máximo de tres propuestas. Date de alta <a href='https://participa.diputaciondevalladolid.es/users/sign_up'>[enlace a registro]</a> en esta plataforma y cumplimenta el formulario [enlace a la propuesta]. Procura elegir un título que defina bien la idea y sea llamativo y detalla lo máximo posible la propuesta."
+        help_text_6_1 : ""
         help_text_6_2 : ""
         help_text_6_2_1 :
         help_text_6_2_2 : 
