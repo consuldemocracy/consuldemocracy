@@ -250,6 +250,7 @@ describe "Admin budgets", :admin do
     scenario "Show phases table" do
       travel_to(Date.new(2015, 7, 15)) do
         budget.update!(phase: "selecting")
+        budget.phases.valuating.update!(enabled: false)
 
         visit edit_admin_budget_path(budget)
 
@@ -272,15 +273,24 @@ describe "Admin budgets", :admin do
             "2015-09-15 00:00:00 - 2015-10-14 23:59:59",
             "2015-10-15 00:00:00 - 2015-11-14 23:59:59",
             "2015-11-15 00:00:00 - 2015-12-14 23:59:59",
-            "2015-12-15 00:00:00 - 2016-01-14 23:59:59",
+            "2015-11-15 00:00:00 - 2016-01-14 23:59:59",
             "2016-01-15 00:00:00 - 2016-02-14 23:59:59",
             "2016-02-15 00:00:00 - 2016-03-14 23:59:59"
+          ],
+          [
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "Yes"
           ]
         ]
 
         within_table "Phases" do
           within "tr", text: "Information" do
-            expect(page).to have_css ".budget-phase-enabled.enabled"
             expect(page).to have_link "Edit phase"
           end
         end
