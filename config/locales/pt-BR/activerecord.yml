@@ -7,6 +7,7 @@ pt-BR:
     name: Nome
     email: Email
     description: Descrição
+    related_sdg_list: Objetivos e metas
   activerecord:
     models:
       activity:
