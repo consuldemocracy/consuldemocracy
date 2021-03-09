@@ -4,7 +4,7 @@ class Budget
                 reviewing_ballots finished].freeze
     PUBLISHED_PRICES_PHASES = %w[publishing_prices balloting reviewing_ballots finished].freeze
     SUMMARY_MAX_LENGTH = 1000
-    DESCRIPTION_MAX_LENGTH = 2000
+    DESCRIPTION_MAX_LENGTH = 4000
 
     translates :name, touch: true
     translates :summary, touch: true
