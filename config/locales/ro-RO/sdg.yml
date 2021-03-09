@@ -293,11 +293,18 @@ ro:
             title: "Susținerea dezvoltării țărilor pentru consolidarea capacității științifice și tehnologice spre modele durabile de consum și producție."
           target_12_B:
             title: "Dezvoltarea și implemenarea unor ustensile de monitorizare a impactului dezvoltării durabile pentru un turism durabil care creează locuri de muncă și care promovează cultura și produsele locale."
+          target_12_C:
+            title: "Raționalizarea subvențiilor ineficiente pentru combustibilii fosili care încurajează consumul risipitor prin eliminarea distorsiunilor pieței, în conformitate cu circumstanțele naționale, inclusiv prin restructurarea impozitelor și eliminarea treptată a acestor subvenții nocive, acolo unde există, pentru a reflecta impactul lor asupra mediului, ținând seama pe deplin de nevoile specifice și condițiile țărilor în curs de dezvoltare și reducerea la minimum a posibilelor efecte negative asupra dezvoltării acestora într-un mod care să protejeze săracii și comunitățile afectate."
       goal_13:
         title: "Acțiune Climatică"
         title_in_two_lines: "Acțiune\nClimatică"
         description: "Luați măsuri urgente pentru a combate schimbările climatice și impactul acestora."
         long_description: '<p> 2019 a fost <a href="https://news.un.org/en/story/2020/03/1059061"> al doilea cel mai cald an înregistrat </a> și sfârșitul celui mai cald deceniu (2010 - 2019) înregistrate vreodată.&nbsp;&nbsp;</p> <p> Nivelurile de dioxid de carbon (CO2) și alte<a href="https://news.un.org/en/story/2020/04/1062332">gazele cu efect de seră din atmosferă </a> au ajuns la noi recorduri în 2019. &nbsp;</p> <p> Schimbările climatice afectează fiecare țară de pe fiecare continent. Aceasta perturbă economiile naționale și afectează viețile. Modelele meteo se schimbă, nivelul mării crește și evenimentele meteo devin din ce în ce mai extreme. </p> <p> Deși se estimează că emisiile de gaze cu efect de seră vor scădea cu aproximativ 6% în 2020 din cauza interdicțiilor de călătorie și a încetinirilor economice rezultate din pandemia de COVID -19, această îmbunătățire este doar temporară. <a href="https://news.un.org/en/story/2020/04/1062332"> Schimbările climatice nu sunt în pauză </a>. Odată ce economia globală începe să se recupereze după pandemie, se așteaptă ca emisiile să revină la niveluri mai ridicate. </p> <p> Salvarea vieților și mijloacelor de trai necesită acțiuni urgente pentru a aborda atât pandemia, cât și situația de urgență climatică. </p> <p><a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Acordul de la Paris </a>, adoptat în 2015, are ca scop consolidarea nivelului global răspuns la amenințarea schimbărilor climatice, menținând o creștere a temperaturii globale în acest secol, cu mult sub 2 grade Celsius peste nivelurile preindustriale. Acordul urmărește, de asemenea, să consolideze capacitatea țărilor de a face față impactului schimbărilor climatice, prin fluxuri financiare adecvate, un nou cadru tehnologic și un cadru îmbunătățit de consolidare a capacităților de construire. </p>'
+        targets:
+          target_13_1:
+            title: "Consolidarea rezistenței și a capacității de adaptare la pericolele legate de climă și dezastrele naturale din toate țările."
+          target_13_2:
+            title: "Integrarea măsurilor pentru schimbările climatice în politici, strategii și planificări naționale."
       goal_14:
         title: "Viața Sub Apă"
         title_in_two_lines: "Viața Sub\nApă"
