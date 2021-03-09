@@ -56,6 +56,7 @@ pt-BR:
       other:
         title: "Outras informações de interesse"
         how_to_use: "Use o %{org_name} em sua cidade"
+        sdg: "Objetivos de Desenvolvimento Sustentável - Ajuda"
       how_to_use:
         text: |-
           Use-o em seu governo local ou nos ajude a melhorá-lo, é software livre.
