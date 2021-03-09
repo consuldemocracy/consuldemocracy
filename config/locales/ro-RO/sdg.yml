@@ -319,6 +319,18 @@ ro:
         targets:
           target_14_1:
             title: "Până în 2025, prevenirea și reducerea semnificativă a poluării marine de toate tipurile, în special de la activitățile terestre, inclusiv poluarea cu deșeuri marine și poluarea cu nutrienți."
+          target_14_2:
+            title: "Până în 2020, gestionarea și protecția durabilă a ecosistemelor marine și costale, pentru a evita impactele negative semnificative, inclusiv prin consolidarea rezistenței acestora, și luarea de măsuri pentru restaurarea acestora, pentru a avea oceane sănătoase și productive."
+          target_14_3:
+            title: "Minimizarea și gestionarea impactului acidificării oceanelor, inclusiv prin cooperare științifică sporită la toate nivelurile."
+          target_14_4:
+            title: "Până în 2020, reglementarea eficientă a pescuitului și eliminarea pescuitului excesiv, ilegal, nedeclarat și nereglementat și a practicilor de pescuit distructive și implementarea planurilor de management bazate pe știință, pentru a restabili stocurile de pește în cel mai scurt timp posibil, cel puțin la nivelurile care ar asigura un randament maxim durabil, după cum este determinat de caracteristicile biologice ale acestora."
+          target_14_5:
+            title: "Până în 2020, conservarea a cel puțin 10 la sută din zonele costale și marine, în conformitate cu legislația națională și internațională și în baza celor mai bune evidențe științifice disponibile."
+          target_14_6:
+            title: "Până în 2020, interzicerea formelor de subvenționare a pescuitului care contribuie la capacitatea excedentară și pescuitul excesiv, eliminarea subvențiilor care contribuie la pescuitul ilegal, nedeclarat și nereglementat și abținerea de la introducerea unor subvenții noi de acest tip, recunoscând că tratamentul adecvat și eficient, special și diferențiat pentru țările cel mai puțin dezvoltate ar trebui să fie o parte integrantă a negocierii subvențiilor pentru pescuit în cadrul Organizației Mondiale a Comerțului."
+          target_14_7:
+            title: "Până în 2030, creșterea beneficiilor economice pentru statele insulare mici și țările cel mai puțin dezvoltate, din utilizarea durabilă a resurselor marine, inclusiv prin gestionarea durabilă a pescuitului, acvaculturii și turismului."
       goal_15:
         title: "Viața pe Uscat"
         title_in_two_lines: "Viața pe\nUscat"
