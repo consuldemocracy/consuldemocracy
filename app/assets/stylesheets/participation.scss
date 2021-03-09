@@ -1136,51 +1136,48 @@
 // 06. Budgets
 // -----------
 
-.expanded {
+.budget-header {
+  background: $budget;
+  margin-top: -$line-height;
 
-  &.budget {
-    background: $budget;
-    margin-top: -$line-height;
+  h1,
+  h2,
+  p,
+  a,
+  .back,
+  .icon-angle-left,
+  .description {
+    color: #fff;
+  }
 
-    h1,
-    h2,
-    p,
-    a,
-    .back,
-    .icon-angle-left,
-    .description {
-      color: #fff;
+  a {
+    text-decoration: underline;
+  }
+
+  .callout {
+
+    &.primary a {
+      color: $link;
     }
+  }
 
-    a {
-      text-decoration: underline;
-    }
+  .button {
+    background: #fff;
+    color: $budget;
+    text-decoration: none;
+  }
 
-    .callout {
+  .confirmed {
+    font-size: rem-calc(24);
+    font-weight: bold;
+  }
 
-      &.primary a {
-        color: $link;
-      }
-    }
+  .info {
+    background: #6a2a72;
 
-    .button {
-      background: #fff;
-      color: $budget;
-      text-decoration: none;
-    }
-
-    .confirmed {
-      font-size: rem-calc(24);
-      font-weight: bold;
-    }
-
-    .info {
-      background: #6a2a72;
-
-      p {
-        margin-bottom: 0;
-        text-transform: uppercase;
-      }
+    p {
+      margin-bottom: 0;
+      text-transform: uppercase;
     }
   }
 }

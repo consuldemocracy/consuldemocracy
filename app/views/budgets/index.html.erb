@@ -7,7 +7,7 @@
 <% end %>
 
 <% if current_budget.present? %>
-  <div id="budget_heading" class="expanded budget">
+  <div class="budget-header">
     <div class="row" data-equalizer data-equalizer-on="medium">
       <div class="small-12 medium-9 column padding" data-equalizer-watch>
 
@@ -121,7 +121,7 @@
     <% end %>
   </div>
 <% else %>
-  <div class="expanded budget no-margin-top margin-bottom">
+  <div class="budget-header no-margin-top margin-bottom">
     <div class="row">
       <div class="small-12 medium-9 column padding">
           <h1><%= t("budgets.index.title") %></h1>
