@@ -305,10 +305,20 @@ ro:
             title: "Consolidarea rezistenței și a capacității de adaptare la pericolele legate de climă și dezastrele naturale din toate țările."
           target_13_2:
             title: "Integrarea măsurilor pentru schimbările climatice în politici, strategii și planificări naționale."
+          target_13_3:
+            title: "Îmbunătățirea educației, a sensibilizării și a capacității umane și instituționale pentru atenuarea, adaptarea, reducerea impactului și atenționarea timpurie în ceea ce privește schimbările climatice."
+          target_13_A:
+            title: "Punerea în aplicare a angajamentului asumat de țările dezvoltate participante la Convenția-cadru a Organizației Națiunilor Unite privind schimbările climatice în vederea mobilizării în comun a 100 miliarde de dolari anual până în 2020 din toate sursele pentru a răspunde nevoilor țărilor în curs de dezvoltare în contextul unor acțiuni semnificative de atenuare și transparență în implementare și să operaționalizeze pe deplin Fondul Verde pentru Climă prin valorificarea acestuia cât mai curând posibil."
+          target_13_B:
+            title: "Promovarea mecanismelor de creștere a capacității de planificare și gestionare eficientă a schimbărilor climatice în țările cel mai puțin dezvoltate și statele mici insulare în curs de dezvoltare, inclusiv concentrarea asupra femeilor, tinerilor și comunităților locale și marginalizate."
       goal_14:
-        title: "Viața Sub Apă"
-        title_in_two_lines: "Viața Sub\nApă"
+        title: "Viața Acvatică"
+        title_in_two_lines: "Viața\nAcvatică"
+        description: "Conservarea şi utilizarea durabilă a oceanelor, mărilor şi a resurselor marine."
         long_description: '<p> Oceanul conduce sisteme globale care fac Pământul locuibil pentru omenire. Apa de ploaie, apa potabilă, vremea, clima, litoralul, o mare parte din hrana noastră și chiar oxigenul din aerul pe care îl respirăm sunt furnizate și reglementate în cele din urmă de mare.&nbsp; </p> <p> Gestionarea atentă a acestei<a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter"> resurse globală și esențială </a> este o caracteristică cheie a unui mediu durabil pe viitor. Cu toate acestea, în prezent, există o deteriorare continuă a apelor de coastă din cauza poluării, iar acidificarea oceanelor are un efect advers asupra funcționării ecosistemelor și a biodiversității. Acest lucru are, de asemenea, un impact negativ asupra pescuitului la scară mică. &nbsp; </p> <p> Salvarea oceanului nostru trebuie să rămână o prioritate. Biodiversitatea marină este esențială pentru sănătatea oamenilor și a planetei noastre. Zonele marine protejate trebuie să fie gestionate în mod eficient și să aibă resurse adecvate, iar reglementările trebuie puse în aplicare pentru a reduce supra-pescuitul, poluarea marină și acidificarea oceanelor. </p>'
+        targets:
+          target_14_1:
+            title: "Până în 2025, prevenirea și reducerea semnificativă a poluării marine de toate tipurile, în special de la activitățile terestre, inclusiv poluarea cu deșeuri marine și poluarea cu nutrienți."
       goal_15:
         title: "Viața pe Uscat"
         title_in_two_lines: "Viața pe\nUscat"
