@@ -38,7 +38,7 @@ describe "Budgets" do
 
       visit budgets_path
 
-      within("#budget_heading") do
+      within(".budget-header") do
         expect(page).to have_content(budget.name)
         expect(page).to have_content(budget.description)
         expect(page).to have_link("Help with participatory budgets")
@@ -51,7 +51,7 @@ describe "Budgets" do
       budget.update!(phase: "publishing_prices")
       visit budgets_path
 
-      within("#budget_heading") do
+      within(".budget-header") do
         expect(page).to have_content("Publishing projects prices")
       end
 
