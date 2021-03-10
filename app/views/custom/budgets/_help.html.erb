@@ -1,13 +1,26 @@
+<style>
+	.ocultar{
+		display:none
+	}
+	.click:hover{
+		cursor:pointer;
+	}
+	.click:hover .lead{
+		background-color: lightgrey;
+	}
+</style>
 <div class="row">
   <div class="small-12 column">
-    <div id="section_help" class="margin" data-magellan-target="section_help">
-      <div></div>
-      <p class="lead">
-        <strong><%= t("budgets.index.section_footer.title") %></strong>
-      </p>
-
-      <p><%= t("budgets.index.section_footer.description") %></p>
-      <p class="lead">
+	<div id="section_help" class="margin" data-magellan-target="section_help">
+		<div class="click">
+			<p class="lead">
+				<strong><%= t("budgets.index.section_footer.title") %></strong>
+			</p>
+			<div class="ocultar">
+			  <p><%= t("budgets.index.section_footer.description") %></p>
+			</div>
+		</div>	
+	  <p class="lead">
         <strong><%= t("budgets.index.section_footer.help_text_titulo1") %></strong>
       </p>
       <p><%= t("budgets.index.section_footer.help_text_1") %></p>
@@ -88,14 +101,11 @@
       <p>Puedes hacer un máximo de tres propuestas. <a href='https://participa.diputaciondevalladolid.es/users/sign_up'>Date de alta en esta plataforma</a> y cumplimenta el formulario [enlace a la propuesta]. Procura elegir un título que defina bien la idea y sea llamativo y detalla lo máximo posible la propuesta.</p>
      <!--<p> <%= t("budgets.index.section_footer.help_text_6_1") %></p>
       <p><%= t("budgets.index.section_footer.help_text_6_2") %></p>
-
       <ul>
         <li><%= t("budgets.index.section_footer.help_text_6_2_1") %></li>
         <li><%= t("budgets.index.section_footer.help_text_6_2_2") %></li>
       </ul>
-
       <p><%= t("budgets.index.section_footer.help_text_6_2_3") %></p>
-
       <ul>
         <li><%= t("budgets.index.section_footer.help_text_6_2_2_1") %></li>
         <li><%= t("budgets.index.section_footer.help_text_6_2_2_2") %></li>
@@ -106,3 +116,8 @@
     </div>
   </div>
 </div>
+<script>
+	$( ".click" ).click(function() {
+		  $(this).find(".ocultar").toggle();
+		});
+</script>
