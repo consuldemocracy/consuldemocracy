@@ -122,13 +122,15 @@
 </div>
 <script>
 	$( ".click" ).click(function() {
-		  $(this).find(".ocultar").toggle();
+		  
 		  if($(this).find(".fa-plus")){
+			$(this).find(".ocultar").slideDown();
 			$(this).find(".fa-plus").removeClass("fa-plus");
-			$(this).find(".fa-plus").addClass("fa-minus");
+			$(this).find(".fa").addClass("fa-minus");
 		  }else{
-			$(this).find(".fa-plus").removeClass("fa-minus");
-			$(this).find(".fa-plus").addClass("fa-plus");
+			$(this).find(".ocultar").slideUp();
+			$(this).find(".fa-minus").removeClass("fa-minus");
+			$(this).find(".fa").addClass("fa-plus");
 		  }
 		 
 		});
