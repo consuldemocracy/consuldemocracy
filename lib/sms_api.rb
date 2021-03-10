@@ -19,23 +19,25 @@ class SMSApi
   def sms_deliver(phone, code)
     return stubbed_response unless end_point_available?
 
-    response = client.call(:enviar_sms_simples, message: request(phone, code))
+    response = client.call(:enviar_sms, message: request(phone, code))
     success?(response)
   end
 
   def request(phone, code)
-    { autorizacion:  authorization,
-      destinatarios: { destinatario: phone },
-      texto_mensaje: "Clave para verificarte: #{code}. Gobierno Abierto",
-      solicita_notificacion: "All" }
+    {
+      usuario: Rails.application.secrets.sms_username,
+      pass: Rails.application.secrets.sms_password,
+      telefono: phone,
+      textomensaje: "Clave para verificarte: #{code}. Gobierno Abierto"
+    }
   end
 
   def success?(response)
-    response.body[:respuesta_sms][:respuesta_servicio_externo][:texto_respuesta] == "Success"
+    response.body[:enviar_sms_response][:enviar_sms_result] == "Success"
   end
 
   def end_point_available?
-    Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
+    Rails.application.secrets.sms_end_point.present?
   end
 
   def stubbed_response
