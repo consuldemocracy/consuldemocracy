@@ -5,6 +5,10 @@
     clear: both;
     margin-top: $line-height * 1.5;
 
+    &:first-of-type {
+      margin-top: 0;
+    }
+
     legend {
       color: $admin-text;
       font-size: $small-font-size;
