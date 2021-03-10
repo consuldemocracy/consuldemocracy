@@ -1,10 +1,6 @@
 <style>
 	.ocultar{
 		display:none;
-		 transition: all 2s;
-		 -o-transition: all 2s;
-		 -moz-transition: all 2s;
-		 -webkit-transition: all 2s;
 	}
 	.click:hover{
 		cursor:pointer;
@@ -128,6 +124,7 @@
 			$(this).find(".fa-plus").removeClass("fa-plus");
 			$(this).find(".fa").addClass("fa-minus");
 		  }else{
+		  Console.log("ocultar");
 			$(this).find(".ocultar").slideUp();
 			$(this).find(".fa-minus").removeClass("fa-minus");
 			$(this).find(".fa").addClass("fa-plus");
