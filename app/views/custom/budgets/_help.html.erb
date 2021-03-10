@@ -1,6 +1,10 @@
 <style>
 	.ocultar{
-		display:none
+		display:none;
+		 transition: all 2s;
+		 -o-transition: all 2s;
+		 -moz-transition: all 2s;
+		 -webkit-transition: all 2s;
 	}
 	.click:hover{
 		cursor:pointer;
@@ -14,7 +18,7 @@
 	<div id="section_help" class="margin" data-magellan-target="section_help">
 		<div class="click">
 			<p class="lead">
-				<strong><%= t("budgets.index.section_footer.title") %></strong>
+				<strong><%= t("budgets.index.section_footer.title") %> <span class="fa fa-plus"></span></strong>
 			</p>
 			<div class="ocultar">
 			  <p><%= t("budgets.index.section_footer.description") %></p>
@@ -119,5 +123,13 @@
 <script>
 	$( ".click" ).click(function() {
 		  $(this).find(".ocultar").toggle();
+		  if($(this).find(".fa-plus")){
+			$(this).find(".fa-plus").removeClass("fa-plus");
+			$(this).find(".fa-plus").addClass("fa-minus");
+		  }else{
+			$(this).find(".fa-plus").removeClass("fa-minus");
+			$(this).find(".fa-plus").addClass("fa-plus");
+		  }
+		 
 		});
 </script>
