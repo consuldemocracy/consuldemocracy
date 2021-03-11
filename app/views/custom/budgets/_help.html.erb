@@ -123,12 +123,11 @@
 <script>
 	$( ".click" ).click(function() {
 		  
-		  if($(this).find(".fa-plus")){
+		  if($(this).find(".fa-plus").length){
 			$(this).find(".ocultar").slideDown();
 			$(this).find(".fa-plus").removeClass("fa-plus");
 			$(this).find(".fa").addClass("fa-minus");
-		  }else{
-			alert("Intentas ocultarlo");
+		  }else{			
 			$(this).find(".ocultar").slideUp();
 			$(this).find(".fa-minus").removeClass("fa-minus");
 			$(this).find(".fa").addClass("fa-plus");
