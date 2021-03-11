@@ -383,9 +383,24 @@ ro:
             title: "Până în 2030, reducerea semnificativă a fluxurilor ilicite financiare și de armament, creșterea ratei de recuperare și returnare bunurilor furate și combaterea tuturor formelor de crimă organizată."
           target_16_5:
             title: "Reducerea semnificativă a corupției și dării de mită în toate formele sale."
+          target_16_6:
+            title: "Dezvoltarea instituțiilor eficiente, responsabile și transparente la toate nivelurile."
+          target_16_7:
+            title: "Asigurarea procesului decizional receptiv, incluziv, participativ și reprezentativ la toate nivelurile."
+          target_16_8:
+            title: "Extinderea și consolidarea participării țărilor în curs de dezvoltare în instituțiile de guvernare globală."
+          target_16_9:
+            title: "Până în 2030, asigurarea identității legale tuturor, inclusiv înregistrarea nașterii."
+          target_16_10:
+            title: "Asigurarea accesului public la informații și protejarea libertăților fundamentale, în conformitate cu legislația națională și acordurile internaționale."
+          target_16_A:
+            title: "Consolidarea instituțiilor naționale relevante, inclusiv prin cooperare internațională, pentru consolidarea capacității la toate nivelurile, în special în țările în curs de dezvoltare, pentru a preveni violența și a combate terorismul și criminalitatea."
+          target_16_B:
+            title: "Promovarea și aplicarea legilor și politicilor nediscriminatorii pentru dezvoltare durabilă."
       goal_17:
         title: "Parteneriate Pentru Obiective"
         title_in_two_lines: "Parteneriate\nPentru Obiective"
+        description: "Revitalizarea parteneriatului global pentru Dezvoltare Durabilă."
         long_description: '<p> ODD-urile pot fi realizate numai cu parteneriate și cooperare globale puternice. </p> <p> O agendă de dezvoltare de succes necesită parteneriate incluzive - la nivel global, regional, național și local - construite pe principii și valori și pe o viziune comună și obiective comune care plasează oamenii și planeta în centru. </p> <p> Multe țări necesită asistență oficială pentru dezvoltare pentru a încuraja creșterea și comerțul. Cu toate acestea, <a href="https://www.un.org/press/en/2019/ga12191.doc.htm"> nivelurile de ajutor scad </a> și țările donatoare nu și-au respectat angajamentul de a crește finanțarea dezvoltării. </p> <p> Datorită pandemiei COVID-19, <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">economia globală </a> se preconizează că se va contracta brusc, cu 3%, în 2020, cunoscând cea mai gravă recesiune de la Marea Depresiune. </p> <p> Cooperarea internațională puternică este necesară acum mai mult decât să ne asigurăm vreodată că țările au mijloacele necesare pentru a se recupera de la pandemie, pentru a reconstrui mai bine și pentru a atinge obiectivele de dezvoltare durabilă. </p>'
       show:
         read_more: "Citiți mai multe despre %{goal}"
