@@ -1,10 +1,27 @@
 .groups-and-headings {
+  $spacing: rem-calc(4);
+
+  .headings-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: -$spacing;
+  }
 
   .heading {
     border: 1px solid $border;
     border-radius: rem-calc(3);
-    display: inline-block;
     margin-bottom: $line-height / 2;
+    margin-left: $spacing;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      width: calc(100% / 3 - #{$spacing});
+    }
+
+    @include breakpoint(large) {
+      width: calc(100% / 6 - #{$spacing});
+    }
 
     a {
       display: block;
