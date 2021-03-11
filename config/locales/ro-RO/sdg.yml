@@ -372,6 +372,17 @@ ro:
         title_in_two_lines: "Pace, Justiție\nși Instituții\nEficiente"
         description: "Promovarea unor societăți pașnice, drepte și incluzive."
         long_description: '<p> Conflictele, nesiguranța, instituțiile slabe și accesul limitat la justiție rămân o mare amenințare la adresa dezvoltării durabile. &nbsp; </p> <p> Numărul de<a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">oamenii care fug de război, persecuție și conflict au depășit 70 de milioane </a> în 2018, cel mai înalt nivel înregistrat de agenția ONU pentru refugiați (UNHCR) în aproape 70 de ani.&nbsp;</p> <p> În 2019, Națiunile Unite au urmărit <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 de crime și 30 de dispariții forțate </a> ale apărătorilor drepturilor omului, jurnaliștilor și sindicaliștilor din 47 de țări. </p> <p> Și nașterile a aproximativ<a href="https://data.unicef.org/topic/child-protection/birth-registration/">unul din patru copii </a> cu vârsta sub 5 ani din întreaga lume nu sunt niciodată înregistrați oficial, lipsindu-i de o dovadă a identității juridice crucială pentru protejare drepturile lor și pentru accesul la justiție și la serviciile sociale. </p>'
+        targets:
+          target_16_1:
+            title: "Reducerea semnificativă a tuturor formelor de violență și ratelor de deces conexe, pretutindeni."
+          target_16_2:
+            title: "Stoparea abuzului, exploatării, traficului și a tuturor formelor de violență și torturii copiilor."
+          target_16_3:
+            title: "Promovarea statului de drept la nivel național și internațional și asigurarea accesul egal la justiție pentru toți."
+          target_16_4:
+            title: "Până în 2030, reducerea semnificativă a fluxurilor ilicite financiare și de armament, creșterea ratei de recuperare și returnare bunurilor furate și combaterea tuturor formelor de crimă organizată."
+          target_16_5:
+            title: "Reducerea semnificativă a corupției și dării de mită în toate formele sale."
       goal_17:
         title: "Parteneriate Pentru Obiective"
         title_in_two_lines: "Parteneriate\nPentru Obiective"
