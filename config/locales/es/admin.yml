@@ -142,6 +142,8 @@ es:
           max_number_headings: "Máximo número de partidas en que un usuario puede votar"
           add_group: "Añadir grupo"
           add_heading: "Añadir partida"
+        hide_money: "Ocultar dinero"
+        hide_money_help_text: "Si esta opción está marcada, todos los campos que muestran la cantidad de dinero se ocultarán durante todo el proceso."
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados

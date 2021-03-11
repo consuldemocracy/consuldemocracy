@@ -48,6 +48,7 @@ nl:
       budget:
         main_button_text: "Tekst knop"
         main_button_url: "Link knop"
+        hide_money: "Verberg budget voor deze begroting"
       budget/translation:
         name: "Titel"
       budget/phase:

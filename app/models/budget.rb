@@ -263,6 +263,10 @@ class Budget < ApplicationRecord
     end
   end
 
+  def show_money?
+    !hide_money?
+  end
+
   private
 
     def generate_phases

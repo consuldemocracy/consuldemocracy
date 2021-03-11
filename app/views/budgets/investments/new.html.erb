@@ -10,7 +10,9 @@
       <% if @budget.single_heading? %>
         <h2>
           <%= @budget.headings.first.name %>
-          (<%= @budget.formatted_heading_price(@budget.headings.first) %>)
+          <% if @budget.show_money? %>
+            (<%= @budget.formatted_heading_price(@budget.headings.first) %>)
+          <% end %>
         </h2>
       <% end %>
     </div>

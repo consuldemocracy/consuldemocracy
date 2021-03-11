@@ -63,6 +63,10 @@ FactoryBot.define do
     trait :approval do
       voting_style { "approval" }
     end
+
+    trait :hide_money do
+      hide_money { true }
+    end
   end
 
   factory :budget_group, class: "Budget::Group" do

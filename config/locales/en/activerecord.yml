@@ -146,6 +146,7 @@ en:
         voting_style_approval: "Approval"
         main_button_text: "Text on the button"
         main_button_url: "The button takes you to (add a link)"
+        hide_money: "Hide money amount for this budget"
       budget/translation:
         name: "Name"
       budget/investment:

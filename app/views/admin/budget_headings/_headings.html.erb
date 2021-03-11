@@ -4,7 +4,9 @@
     <thead>
       <tr id="<%= dom_id(@group) %>">
         <th><%= t("admin.budget_headings.name") %></th>
-        <th class="text-center"><%= t("admin.budget_headings.price") %></th>
+        <% if @budget.show_money? %>
+          <th class="text-center"><%= t("admin.budget_headings.price") %></th>
+        <% end %>
         <% if @budget.approval_voting? %>
           <th class="text-center"><%= Budget::Heading.human_attribute_name(:max_ballot_lines) %></th>
         <% end %>
@@ -19,7 +21,9 @@
       <% @headings.each do |heading| %>
         <tr id="<%= dom_id(heading) %>" class="heading">
           <td><%= heading.name %></td>
-          <td class="text-center"><%= @budget.formatted_heading_price(heading) %></td>
+          <% if @budget.show_money? %>
+            <td class="text-center"><%= @budget.formatted_heading_price(heading) %></td>
+          <% end %>
           <% if @budget.approval_voting? %>
             <td class="text-center"><%= heading.max_ballot_lines %></td>
           <% end %>

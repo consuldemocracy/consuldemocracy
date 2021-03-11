@@ -24,6 +24,12 @@
     <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
   </div>
 
+  <div id="hide_money" class="small-12 column <%= "hide" if @budget.voting_style == "knapsack" %>">
+    <p class="form-label"><%= t("admin.budgets.edit.hide_money") %></p>
+    <p class="help-text"><%= t("admin.budgets.edit.hide_money_help_text") %></p>
+    <%= f.check_box :hide_money, id: "hide_money_checkbox" %>
+  </div>
+
   <% if feature?(:allow_images) %>
     <div class="budget-investment-form">
       <div class="images small-12 column">

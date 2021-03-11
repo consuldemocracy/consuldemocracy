@@ -916,6 +916,19 @@ describe "Budget Investments" do
       expect(page).to have_content "Build a skyscraper"
     end
 
+    scenario "Create with single heading and hidden money" do
+      budget_hide_money = create(:budget, :hide_money)
+      group = create(:budget_group, budget: budget_hide_money)
+      create(:budget_heading, name: "Heading without money", group: group)
+
+      login_as(author)
+
+      visit new_budget_investment_path(budget_hide_money)
+
+      expect(page).to have_content "Heading without money"
+      expect(page).not_to have_content "€"
+    end
+
     scenario "Create with single group and multiple headings" do
       budget = create(:budget)
       group = create(:budget_group, name: "New group", budget: budget)
