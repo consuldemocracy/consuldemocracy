@@ -39,7 +39,6 @@ pl:
         icon_alt: Ikona budżetów partycypacyjnych
         title: Budżety partycypacyjne
         help: Pomoc z budżetem partycypacyjnym
-        all_phases: Zobacz wszystkie fazy
       all_phases: Fazy inwestycji budżetowych
       map: Propozycje inwestycji budżetowych zlokalizowane geograficznie
       investment_proyects: Lista wszystkich projektów inwestycyjnych
@@ -129,7 +128,6 @@ pl:
       available: "Dostępny budżet: "
     show:
       group: Grupa
-      phase: Aktualna faza
       unfeasible_title: Niewykonalne inwestycje
       unfeasible: Zobacz niewykonalne inwestycje
       unselected_title: Inwestycje niewybrane do fazy głosowania
