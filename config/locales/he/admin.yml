@@ -84,7 +84,6 @@ he:
         title: ערוך תקציב השתתפותי
         delete: מחיקת התקציב
         phase: שלב
-        dates: תאריכים
         enabled: מופעל
         actions: פעולות
         edit_phase: ערוך שלב
@@ -162,7 +161,6 @@ he:
         back: "חזור אל הקבוצות"
     budget_phases:
       edit:
-        summary_help_text: טקסט זה יודיע למשתמש על השלב. כדי להציג אותו גם אם השלב אינו פעיל, בחר בתיבת הסימון שבהמשך
         description_help_text: טקסט זה יופיע בכותרת כאשר השלב פעיל
         enabled_help_text: שלב זה יהיה ציבורי בציר הזמן של שלבי התקציב, וכן פעיל לכל מטרה אחרת
         save_changes: שמירת שינויים
