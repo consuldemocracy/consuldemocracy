@@ -81,7 +81,6 @@ val:
         title: Edita campanya de pressupostos participatius
         delete: Eliminar presupost
         phase: Fase
-        dates: Dates
         enabled: Activa
         actions: Accions
         edit_phase: Edita fase
@@ -140,7 +139,6 @@ val:
         back: "Tornar a grups"
     budget_phases:
       edit:
-        summary_help_text: Este text informarà a l'usuari sobre la fase. Per a mostrar-lo inclús quant la fase no estiga activa, selecciona la casella següent
         description_help_text: Este text apareixerà en la capçalera quant la fase estiga activa
         enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, així com activa per a qualsevol altre propòsit
         save_changes: Guardar canvis
