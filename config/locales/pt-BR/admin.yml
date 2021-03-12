@@ -85,7 +85,6 @@ pt-BR:
         title: Editar Orçamento participativo
         delete: Deletar orçamento
         phase: Estágio
-        dates: Datas
         enabled: Habilitado
         actions: Ações
         edit_phase: Editar estágio
@@ -157,7 +156,6 @@ pt-BR:
         back: "Voltar a grupos"
     budget_phases:
       edit:
-        summary_help_text: Este texto irá informar o usuário sobre a fase. Para mostrá-lo mesmo se a fase não está ativa, selecione a caixa de seleção abaixo
         description_help_text: Esse texto será exibido no cabeçalho quando a fase estiver ativa
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento, bem como ativa para qualquer outra finalidade
         save_changes: Salvar alterações
