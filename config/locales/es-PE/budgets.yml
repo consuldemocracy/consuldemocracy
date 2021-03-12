@@ -34,7 +34,6 @@ es-PE:
       section_header:
         icon_alt: Icono de Presupuestos participativos
         title: Presupuestos participativos
-        all_phases: Ver todas las fases
       all_phases: Fases de los presupuestos participativos
       map: Proyectos localizables geográficamente
       investment_proyects: Ver lista completa de proyectos de inversión
@@ -108,7 +107,6 @@ es-PE:
       available: "Presupuesto disponible: "
     show:
       group: Grupo
-      phase: Fase actual
       unfeasible_title: Propuestas inviables
       unfeasible: Ver las propuestas inviables
       unselected_title: Propuestas no seleccionadas para la votación final
