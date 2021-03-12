@@ -1,0 +1,23 @@
+@mixin admin-layout {
+
+  > header {
+    margin-bottom: 0;
+  }
+
+  > .menu-and-content {
+    flex: 1;
+  }
+}
+
+@mixin logo {
+  color: #fff;
+  display: inline-block;
+  font-family: "Lato" !important;
+  font-size: rem-calc(24);
+  font-weight: lighter;
+
+  @include breakpoint(medium) {
+    line-height: $line-height * 2;
+    margin-top: 0;
+  }
+}
