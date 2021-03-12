@@ -81,7 +81,6 @@ zh-CN:
         title: 编辑参与性预算
         delete: 删除预算
         phase: 阶段
-        dates: 日期
         enabled: 已启用
         actions: 行动
         edit_phase: 编辑阶段
@@ -107,7 +106,6 @@ zh-CN:
         submit: "保存标题"
     budget_phases:
       edit:
-        summary_help_text: 此文本将通知用户阶段情况。如果就算阶段未活跃也要显示，请选中以下复选框。
         description_help_text: 当阶段处于活跃状态时，此文本将显示在页眉中
         enabled_help_text: 这一阶段将在预算的阶段时间内公开，并为其他目的保持活跃
         save_changes: 保存更改
