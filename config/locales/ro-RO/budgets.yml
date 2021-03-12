@@ -68,7 +68,6 @@ ro:
         icon_alt: Pictograma bugetelor participative
         title: Bugete participative
         help: Ajutor cu procesele de bugetare participativă
-        all_phases: Vezi toate etapele
       all_phases: Etapele bugetului de investiții
       map: Propunerile investițiilor bugetare situate geografic
       investment_proyects: Lista tuturor proiectelor de investiții
@@ -186,7 +185,6 @@ ro:
         other: "Ați selectat <strong>%{count}</strong> proiecte din <strong>%{limit}</strong>"
     show:
       group: Grup
-      phase: Etapa actuală
       unfeasible_title: Investiții imposibile
       unfeasible: Vezi investițiile nerealizabile
       unselected_title: Investiții neselectate pentru etapa de votare
