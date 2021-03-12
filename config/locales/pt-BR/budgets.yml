@@ -64,7 +64,6 @@ pt-BR:
         icon_alt: Ícone dos orçamentos participativos
         title: Orçamentos participativos
         help: Ajuda com orçamentos participativos
-        all_phases: Ver todas as fases
       all_phases: Fases do investimento orçamental
       map: Propostas de investimentos orçamentários localizadas geograficamente
       investment_proyects: Lista de todos os projetos de investimento
@@ -176,7 +175,6 @@ pt-BR:
         other: "Você selecionou <strong>%{count}</strong> projetos de um total de <strong>%{limit}</strong>"
     show:
       group: Grupo
-      phase: Fase atual
       unfeasible_title: Investimentos inviáveis
       unfeasible: Ver investimentos inviáveis
       unselected_title: Investimentos não selecionados para a fase de votação
