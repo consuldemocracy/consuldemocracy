@@ -74,8 +74,10 @@ sv:
           finished: Avslutade
         budget_investments: Hantera projekt
         table_completed: Färdiga
+        table_duration: "Varaktighet"
         table_name: Namn
         table_phase: Fas
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Redigera delbudgetar
         edit_budget: Redigera budget
         admin_ballots: Administratörs röstsedlar
@@ -92,6 +94,8 @@ sv:
         publish: "Publicera budget"
         delete: Radera budget
         phase: Fas
+        phases_caption: "Faser"
+        duration: "Varaktighet"
         enabled: Aktiverad
         actions: Åtgärder
         edit_phase: Redigera fas
@@ -167,7 +171,10 @@ sv:
     budget_phases:
       edit:
         description_help_text: Den här texten visas i sidhuvudet när fasen är aktiv
+        duration: "Fasens varaktighet"
+        duration_description: "Den tidsperiod som den här fasen blir aktiv."
         enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål
+        name_help_text: "Detta är fasens titel som användare ser i sidhuvudet när fasen är aktiv."
         save_changes: Spara ändringar
     budget_investments:
       index:
