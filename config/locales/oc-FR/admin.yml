@@ -84,7 +84,6 @@ oc:
         title: Edita campanha de budgèts participatius
         delete: Suprimís lo budgèt
         phase: fasa
-        dates: Fechas
         enabled: activa
         actions: d'Accions
         edit_phase: Fasa d'edicion
@@ -154,7 +153,6 @@ oc:
         back: "Tornatz a grops"
     budget_phases:
       edit:
-        summary_help_text: En aquel tèxt s’informa sus una informacion especifica sus la fasa. Per la mostrar, e mai se la fasa siá pas activa, seleccionatz lo caleishon de seleccion seguenta
         description_help_text: Aquel tèxt apareisserà a l'entèsta quand la fasa siá activa
         enabled_help_text: Aquela fasa serà publica en lo calendari de fasas del budgèt, de mai d’activa per quina autra intencion que siá
         save_changes: Gardar de cambiaments
