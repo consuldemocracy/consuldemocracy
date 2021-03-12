@@ -84,7 +84,6 @@ da:
         title: Rediger deltagerbudget
         delete: Slet budget
         phase: Fase
-        dates: Datoer
         enabled: Aktiveret
         actions: Handlinger
         edit_phase: Rediger fase
@@ -154,7 +153,6 @@ da:
         back: "Gå tilbage til grupper"
     budget_phases:
       edit:
-        summary_help_text: Denne tekst vil informere brugeren om fasen. For at vise informationen selvom fasen ikke er aktiv, skal du sætte kryds i feltet nedenfor
         description_help_text: Teksten vil være synlig i sidehovedet (øverst på siden), når fasen er aktiv
         enabled_help_text: Fasen vil være synlig i budgettets tidslinje
         save_changes: Gem ændringer
