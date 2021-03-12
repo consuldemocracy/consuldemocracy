@@ -54,7 +54,6 @@ hr:
         icon_alt: Participativni budžeti ikona
         title: Participativni budžeti
         help: Pomogni s participativnim budžetima
-        all_phases: Pogledaj sve faze
       all_phases: Investicijkse faze budžeta
       map: Prijedlozi investiranja budžeta prema geografskoj lokaciji
       investment_proyects: Lista svih investicijskih projekata
@@ -157,7 +156,6 @@ hr:
       available: "Dostupan budžet: "
     show:
       group: Grupa
-      phase: Stvarna faza
       unfeasible_title: Neizvedive investicije
       unfeasible: Pregledaj neizvedive investicije
       unselected_title: Investicije koje nisu odabrane za fazu izglasavanja
