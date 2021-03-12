@@ -88,7 +88,6 @@ tr:
         title: Katılımcı bütçeyi düzenle
         delete: Bütçeyi sil
         phase: Aşama
-        dates: Tarih
         enabled: Etkinleştirildi
         actions: Aksiyon
         edit_phase: Aşama düzenleme
@@ -166,7 +165,6 @@ tr:
         help: "Başlıklar, katılımcı bütçedeki parayı ayırmak içindir. Burada, grup için başlıklar ekleyebilir ve her başlık için kullanılacak miktarı belirleyebilirsiniz."
     budget_phases:
       edit:
-        summary_help_text: Bu metin kullanıcıyı aşama hakkında bilgilendirecektir. Aşama etkin olmasa bile göstermek için aşağıdaki onay kutusunu seçin
         description_help_text: Aşama etkinken bu metin başlıkta görünecektir
         enabled_help_text: Bu aşama, bütçe'nin aşamaları zaman çizelgesinde herkese açık olacak, başka herhangi bir amaç için aktif olduğu kadar aktif olacak
         save_changes: Değişiklikleri kaydet
