@@ -38,7 +38,6 @@ sl:
         icon_alt: Participatorni proračuni ikona
         title: Participatorni proračuni
         help: Pomoč s participatornimi proračuni
-        all_phases: Poglej vse faze
       all_phases: Faze proračunskih naložb
       map: Predlogi za proračunske naložbe po geografski lokaciji
       investment_proyects: Seznam vseh investicijskih projektov
@@ -114,7 +113,6 @@ sl:
       available: "Razpoložljivi proračun: "
     show:
       group: Skupina
-      phase: Dejanska faza
       unfeasible_title: Neizvedljive investicije
       unfeasible: Poglej neizvedljive investicije
       unselected_title: Investicije, ki niso bile izbrane za fazo glasovanja
