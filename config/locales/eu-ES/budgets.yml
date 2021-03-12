@@ -38,7 +38,6 @@ eu:
         icon_alt: Partaidetzazko aurrekontu ikonoa
         title: Partaidetzazko aurrekontuak
         help: Partaidetzazko aurrekontuei buruzko laguntza
-        all_phases: Fasea guztiak ikusi
       all_phases: Partaidetzazko aurrekontuen faseak
       map: Geografikoki koka daitezken proiektuak
       investment_proyects: Gastu proiektu zerrenda osoa ikusi
@@ -120,7 +119,6 @@ eu:
       available: "Aurrekontu eskuragarria: "
     show:
       group: Taldea
-      phase: Oraingo fasea
       unfeasible_title: Proiektu bideragarriezinak
       unfeasible: Proiektu bideragarriezinak ikusi
       unselected_title: Azken bozkaketarako aukeratu ez diran proiektuak
