@@ -84,7 +84,6 @@ hr:
         title: Uredi Participativni budžet
         delete: Obriši budžet
         phase: Faza
-        dates: Datumi
         enabled: Omogućeno
         actions: Akcije
         edit_phase: Uredi fazu
@@ -160,7 +159,6 @@ hr:
         back: "Vrati se na grupe"
     budget_phases:
       edit:
-        summary_help_text: Ovaj tekst će vas informirati korisnika o fazi. Kako biste to mogući tokom faze koja nije aktivirana odaberite kućicu dolje
         description_help_text: Ovaj tekst će se pojavljiti u naslovu kada je ova faza aktivna
         enabled_help_text: Ova faza će biti javna u fazama budžetiranja, a tako i aktivna za ostale svrhe
         save_changes: Spremi promjene
