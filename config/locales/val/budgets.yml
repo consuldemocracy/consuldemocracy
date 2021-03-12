@@ -38,7 +38,6 @@ val:
         icon_alt: Icona de pressupostos participatius
         title: Pressupostos participatius
         help: Ajuda amb els pressupostos participatius
-        all_phases: Vore totes les fases
       all_phases: Fases de pressupostos participatius
       map: Propostes de pressupostos ubicades geogràficament
       investment_proyects: Llista de totes les propostes d'inversió
@@ -124,7 +123,6 @@ val:
       available: "Pressupost disponible: "
     show:
       group: Grup
-      phase: Fase actual
       unfeasible_title: Propostes inviables
       unfeasible: Veure propostes inviables
       unselected_title: Propostes no seleccionades per a la votació final
