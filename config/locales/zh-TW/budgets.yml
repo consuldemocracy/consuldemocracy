@@ -38,7 +38,6 @@ zh-TW:
         icon_alt: 參與性預算的圖標
         title: 參與性預算
         help: 參與性預算的説明
-        all_phases: 查看所有階段
       all_phases: 預算投資階段
       map: 預算投資之建議的地理位置
       investment_proyects: 所有投資項目清單
@@ -119,7 +118,6 @@ zh-TW:
       available: "可用預算： "
     show:
       group: 組
-      phase: 實際階段
       unfeasible_title: 不可行的投資
       unfeasible: 查看不可行的投資
       unselected_title: 未被選入投票階段的投資
