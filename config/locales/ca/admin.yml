@@ -84,7 +84,6 @@ ca:
         title: Edita campanya de pressupostos participatius
         delete: Suprimeix el pressupost
         phase: fase
-        dates: Fechas
         enabled: activa
         actions: Accions
         edit_phase: Fase d'edició
@@ -155,7 +154,6 @@ ca:
         back: "Torneu a grups"
     budget_phases:
       edit:
-        summary_help_text: En aquest text s’informa sobre una informació específica sobre la fase. Per mostrar-la, encara que la fase no estigui activa, seleccioneu la casella de selecció següent
         description_help_text: Aquest text apareixerà a la capçalera quan la fase estigui activa
         enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, a més d’activa per a qualsevol altre propòsit
         save_changes: Guardar canvis
