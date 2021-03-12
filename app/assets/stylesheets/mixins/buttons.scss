@@ -15,6 +15,7 @@
 
 @mixin hollow-button($color: $link) {
   @include button($style: hollow, $background: $color);
+  @include normal-selection;
   @extend %button;
   margin-bottom: 0;
 }

@@ -7,6 +7,19 @@
   }
 }
 
+@mixin brand-text {
+  @include normal-selection;
+  color: $brand;
+}
+
+@mixin normal-selection {
+
+  &::selection,
+  *::selection {
+    @include brand-background($invert-selection: false);
+  }
+}
+
 @mixin inverted-selection {
 
   &::selection,
@@ -18,4 +31,8 @@
 
 %brand-background {
   @include brand-background;
+}
+
+%brand-text {
+  @include brand-text;
 }

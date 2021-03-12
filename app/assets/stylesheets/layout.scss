@@ -29,8 +29,8 @@
 // 01. Global styles
 // -----------------
 
-::selection {
-  @include brand-background($invert-selection: false);
+* {
+  @include normal-selection;
 }
 
 html,
@@ -96,6 +96,7 @@ a {
 }
 
 .button.hollow {
+  @include normal-selection;
   border: 1px solid $link;
   color: $link;
 }
@@ -248,12 +249,12 @@ a {
     }
 
     &.is-active {
+      @include brand-text;
       border-bottom: 2px solid $brand;
-      color: $brand;
       padding-bottom: rem-calc(1);
 
       h2 a {
-        color: $brand;
+        @include brand-text;
       }
     }
 
@@ -279,8 +280,8 @@ a {
       padding: 0;
 
       &.is-active {
+        @include brand-text;
         font-weight: bold;
-        color: $brand;
       }
     }
 
@@ -289,8 +290,8 @@ a {
     }
 
     &.is-active {
+      @include brand-text;
       border-bottom: 2px solid $brand;
-      color: $brand;
     }
   }
 
@@ -352,15 +353,15 @@ a {
     position: relative;
 
     &:hover {
+      @include brand-text;
       background: none;
-      color: $brand;
       text-decoration: none;
     }
 
     &[aria-selected="true"],
     &.is-active {
+      @include brand-text;
       border-bottom: 0;
-      color: $brand;
       font-weight: bold;
 
       &::after {
@@ -527,11 +528,11 @@ body > header,
       padding: rem-calc(6);
 
       [type="submit"] {
+        @include brand-text;
         background: none;
         border: 0;
         cursor: pointer;
         font-weight: bold;
-        color: $brand;
 
         &:hover {
           text-decoration: underline;
@@ -615,8 +616,8 @@ body > header,
       text-align: left;
 
       @include breakpoint(medium) {
+        @include brand-text;
         background: #fff;
-        color: $brand;
         text-align: center;
       }
     }
@@ -776,8 +777,8 @@ body > header,
       color: #fff;
 
       @include breakpoint(medium) {
+        @include brand-text;
         border-bottom: 2px solid $brand;
-        color: $brand;
       }
     }
   }
@@ -848,8 +849,8 @@ body > header,
   }
 
   .is-active {
+    @include brand-text;
     border-bottom: 2px solid $brand;
-    color: $brand;
 
     &:hover {
       text-decoration: none;
@@ -1638,7 +1639,7 @@ table {
     text-decoration: none;
 
     &:hover {
-      color: $brand;
+      @include brand-text;
     }
   }
 }

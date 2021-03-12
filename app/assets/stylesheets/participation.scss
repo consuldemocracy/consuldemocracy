@@ -991,7 +991,7 @@
   }
 
   .is-active {
-    color: $brand;
+    @include brand-text;
 
     &::after {
       content: "\6c";
@@ -1211,15 +1211,15 @@
   }
 
   .button {
+    @include brand-text;
     background: #fff;
-    color: $brand;
     margin-bottom: rem-calc(3);
     text-decoration: none;
   }
 }
 
 .current-phase {
-  color: $brand;
+  @include brand-text;
 }
 
 .progress-votes {
