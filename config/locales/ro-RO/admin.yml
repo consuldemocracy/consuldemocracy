@@ -94,7 +94,6 @@ ro:
         publish: "Publică buget"
         delete: Șterge buget
         phase: Etapă
-        dates: Date
         enabled: Activat
         actions: Acțiuni
         edit_phase: Editează etapă
@@ -177,7 +176,6 @@ ro:
         help: "Rubricile sunt menite să împartă banii din bugetul participativ. Aici puteți adăuga titluri pentru acest grup și puteți atribui suma de bani care va fi utilizată pentru fiecare titlu."
     budget_phases:
       edit:
-        summary_help_text: Acest text va informa utilizatorul despre etapă. Pentru a-l afișa chiar dacă etapa nu este activă, bifați caseta de mai jos
         description_help_text: Acest text va apărea în antet atunci când faza este activă
         enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
         save_changes: Salvează modificări
