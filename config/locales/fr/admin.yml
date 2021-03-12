@@ -82,7 +82,6 @@ fr:
         title: Modifier le budget participatif
         delete: Supprimer le budget
         phase: Phase
-        dates: Dates
         enabled: Activé
         actions: Actions
         edit_phase: Modifier la phase
@@ -141,7 +140,6 @@ fr:
         back: "Retourner aux groupes"
     budget_phases:
       edit:
-        summary_help_text: Ce texte informera l’utilisateur sur la phase. Pour le montrer même si la phase n’est pas active, cochez la case ci-dessous
         description_help_text: Ce texte s’affiche dans l’en-tête lors de la phase est active
         enabled_help_text: Cette phase sera publique dans la chronologie des phases du budget, mais aussi active pour tout autre usage
         save_changes: Sauvegarder des changements
