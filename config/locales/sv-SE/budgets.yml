@@ -51,7 +51,6 @@ sv:
         icon_alt: Medborgarbudgetssymbol
         title: Medborgarbudgetar
         help: Hjälp med medborgarbudgetar
-        all_phases: Visa alla faser
       all_phases: Medborgarbudgetens faser
       map: Geografiskt baserade budgetförslag
       investment_proyects: Lista över budgetförslag
@@ -149,7 +148,6 @@ sv:
       available: "Tillgänglig budget: "
     show:
       group: Delbudget
-      phase: Aktuell fas
       unfeasible_title: Ej genomförbara budgetförslag
       unfeasible: Visa ej genomförbara budgetförslag
       unselected_title: Budgetförslag som inte gått vidare till omröstning
