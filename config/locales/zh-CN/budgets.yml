@@ -38,7 +38,6 @@ zh-CN:
         icon_alt: 参与性预算图标
         title: 参与性预算
         help: 参与性预算的帮助说明
-        all_phases: 查看所有阶段
       all_phases: 预算投资的阶段
       map: 预算投资提议的地理位置
       investment_proyects: 所有投资项目的列表
@@ -121,7 +120,6 @@ zh-CN:
       available: "可用的预算： "
     show:
       group: 组
-      phase: 实际阶段
       unfeasible_title: 不可行的投资
       unfeasible: 查看不可行的投资
       unselected_title: 未被选入投票阶段的投资
