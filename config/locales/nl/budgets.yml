@@ -40,7 +40,6 @@ nl:
         icon_alt: Budgetafbeelding
         title: Participatory budgets
         help: Hulp bij burgerbegrotingen
-        all_phases: Bekijk alle fases
       all_phases: Investeringsfases
       map: Investeringen geografisch weergegeven
       investment_proyects: Lijst van alle begrotingsvoorstellen
@@ -126,7 +125,6 @@ nl:
       available: "Beschikbaar budget: "
     show:
       group: Groep
-      phase: Huidige fase
       unfeasible_title: Onhaalbare voorstellen
       unfeasible: Bekijk de niet haalbare voorstellen
       unselected_title: Voorstellen die niet geselecteerd zijn voor de stemfase
