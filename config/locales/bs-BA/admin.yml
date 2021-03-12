@@ -84,7 +84,6 @@ bs:
         title: Edituj participativni budžet
         delete: Obriši budžet
         phase: Faza
-        dates: Datumi
         enabled: Pokrenuto
         actions: Radnje
         edit_phase: Edituj fazu
@@ -146,7 +145,6 @@ bs:
         back: "Idi nazad na grupe"
     budget_phases:
       edit:
-        summary_help_text: Ovim tekstom se korisnik obavještava o statusu faze. Označite kockicu kako bi se tekst pokazao čak i ako faza nije aktivna
         description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
         enabled_help_text: Ova faza će biti javna u vremenskom prikazu budžetskih faza, te će biti aktivna i u bilo koju drugu svrhu
         save_changes: Spasi izmjene
