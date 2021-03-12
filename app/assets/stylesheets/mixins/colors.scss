@@ -1,0 +1,8 @@
+@mixin brand-background {
+  background-color: $brand;
+  color: $white;
+}
+
+%brand-background {
+  @include brand-background;
+}

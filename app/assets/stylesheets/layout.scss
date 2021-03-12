@@ -30,8 +30,7 @@
 // -----------------
 
 ::selection {
-  color: #fff;
-  background-color: $brand;
+  @include brand-background;
 }
 
 html,
@@ -386,7 +385,7 @@ a {
 }
 
 .pagination .current {
-  background: $brand;
+  @extend %brand-background;
 }
 
 .pagination li {
@@ -489,7 +488,7 @@ a {
 
 body > header,
 .wrapper > header {
-  background: $brand;
+  @extend %brand-background;
   border-bottom: 1px solid $border;
   margin-bottom: $line-height;
 
@@ -552,8 +551,7 @@ body > header,
 }
 
 .top-bar {
-  background: $brand !important;
-  color: #fff;
+  @extend %brand-background;
   padding-bottom: 0;
   padding-top: 0;
 
@@ -941,8 +939,7 @@ footer {
 
   &:hover,
   &.is-active {
-    background: $brand;
-    color: #fff;
+    @extend %brand-background;
   }
 }
 

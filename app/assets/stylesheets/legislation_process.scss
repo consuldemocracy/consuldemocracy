@@ -239,8 +239,7 @@
 
       &:hover,
       &:active {
-        background: $brand;
-        color: #fff;
+        @extend %brand-background;
         text-decoration: none;
       }
     }
