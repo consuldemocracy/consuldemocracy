@@ -64,7 +64,6 @@ de:
         icon_alt: Symbol für Bürgerhaushalte
         title: Bürgerhaushalte
         help: Hilfe zu Bürgerhaushalten
-        all_phases: Alle Phasen anzeigen
       all_phases: Phasen des Bürgerhaushalts
       map: Ausgabenvorschläge geografisch geordnet
       investment_proyects: Liste aller Ausgabenvorschläge
@@ -176,7 +175,6 @@ de:
         other: "Sie haben <strong>%{count}</strong> Projekte gewählt von <strong>%{limit}</strong>"
     show:
       group: Gruppe
-      phase: Aktuelle Phase
       unfeasible_title: Nicht durchführbare Ausgabenvorschläge
       unfeasible: Nicht durchführbare Ausgabenvorschläge anzeigen
       unselected_title: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben
