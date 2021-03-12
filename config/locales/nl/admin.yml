@@ -84,7 +84,6 @@ nl:
         title: Edit Participatory budget
         delete: Verwijder begroting
         phase: Phase
-        dates: Datums
         enabled: Actief
         actions: Activiteiten
         edit_phase: Bewerk fase
@@ -143,7 +142,6 @@ nl:
         back: "Terug naar groepen"
     budget_phases:
       edit:
-        summary_help_text: Deze tekst informeert de deelnemer over de fase. Om het te laten zien zelfs als de fase niet actief is, vinkt u het vakje aan
         description_help_text: Deze tekst verschijnt in de kop wanneer de fase actief is
         enabled_help_text: Deze fase is openbaar in de tijdlijn van de budgetfasen, maar ook actief voor andere doeleinden
         save_changes: Bewaar wijzigingen
