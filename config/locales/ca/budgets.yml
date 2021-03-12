@@ -64,7 +64,6 @@ ca:
         icon_alt: Icona dels pressupostos participatius
         title: Pressupostos participatius
         help: Ajuda amb pressupostos participatius
-        all_phases: Veure totes les fases
       all_phases: Fases de la inversió pressupostària
       map: Propostes d’inversions pressupostàries situades geogràficament
       investment_proyects: Llista de tots els projectes d’inversió
@@ -176,7 +175,6 @@ ca:
         other: "Ha seleccionat <strong>%{count}</strong> projectes de <strong>%{limit}</strong>"
     show:
       group: Grup
-      phase: Fase actual
       unfeasible_title: Propostes inviables
       unfeasible: Veure les propostes inviables
       unselected_title: Propostes no seleccionades per a la votació final
