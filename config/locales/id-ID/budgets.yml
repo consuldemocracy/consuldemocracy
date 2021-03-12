@@ -40,7 +40,6 @@ id:
         icon_alt: Ikon anggaran partisipatif
         title: Anggaran partisipasif
         help: Membantu dengan anggaran partisipatif
-        all_phases: Lihat semua fase
       all_phases: Anggaran fase investasi
       map: Anggaran investasi' proposal yang terletak secara geografis
       investment_proyects: Daftar semua proyek-proyek investasi
@@ -124,7 +123,6 @@ id:
       available: "Anggaran tersedia: "
     show:
       group: Kelompok
-      phase: Tahap sebenarnya
       unfeasible_title: Investasi tidak layak
       unfeasible: Lihat investasi tidak layak
       unselected_title: Investasi tidak dipilih untuk pemungutan suara tahap
