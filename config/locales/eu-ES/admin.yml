@@ -79,7 +79,6 @@ eu:
         title: Partaidetzazko aurrekontuak editatu
         delete: Aurrekontua ezabatu
         phase: Fasea
-        dates: Datak
         enabled: Gaituta
         actions: Ekintzak
         edit_phase: Editatu fasea
@@ -98,7 +97,6 @@ eu:
       name: "Izena"
     budget_phases:
       edit:
-        summary_help_text: Testu honek erabiltzailea faseari buruz informatuko du. Erakuzteko, nahiz eta aktibatuta ez egon, beheko aukera markatu.
         description_help_text: Testu hau goiburuan agertuko da fasea aktibatuta dagoenenan.
         enabled_help_text: Fase hau aurrekontu faseen egutegian publikoa izango da eta beste asmo batzuentzako aktibatuta egongo da.
         save_changes: Aldaketak gorde
