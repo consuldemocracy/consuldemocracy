@@ -81,7 +81,6 @@ sq:
         title: Ndrysho buxhetin pjesëmarrës
         delete: Fshi buxhetin
         phase: Fazë
-        dates: Datat
         enabled: Aktivizuar
         actions: Veprimet
         edit_phase: Ndrysho Fazën
@@ -107,7 +106,6 @@ sq:
         submit: "Ruaj titullin"
     budget_phases:
       edit:
-        summary_help_text: Ky tekst do të informojë përdoruesit për fazën. Për ta treguar atë edhe nëse faza nuk është aktive, zgjidhni kutinë e mëposhtme
         description_help_text: Ky tekst do të shfaqet në kokë kur faza është aktive
         enabled_help_text: Kjo fazë do të jetë publike në afatet kohore të buxhetit, si dhe aktivë për çdo qëllim tjetër
         save_changes: Ruaj ndryshimet
