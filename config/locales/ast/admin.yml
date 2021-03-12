@@ -72,7 +72,6 @@ ast:
       edit:
         title: Editar campaña de presupuestos participativos
         phase: Fase
-        dates: Feches
         enabled: Habilitáu
         actions: Acciones
         active: Activos
