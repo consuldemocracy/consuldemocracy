@@ -52,7 +52,6 @@ it:
         icon_alt: Icona dei bilanci partecipativi
         title: Bilanci partecipativi
         help: Aiuto con i bilanci partecipativi
-        all_phases: Vedi tutte le fasi
       all_phases: Fasi dell'investimento di bilancio
       map: Proposte di investimenti di bilancio geograficamente localizzate
       investment_proyects: Elenco di tutti i progetti di investimento
@@ -142,7 +141,6 @@ it:
       available: "Budget disponibile: "
     show:
       group: Gruppo
-      phase: Fase attuale
       unfeasible_title: Progetti di investimento irrealizzabili
       unfeasible: Mostra gli investimenti irrealizzabili
       unselected_title: Investimenti che non sono stati selezionati per la fase di voto
