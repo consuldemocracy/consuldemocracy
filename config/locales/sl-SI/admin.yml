@@ -70,7 +70,6 @@ sl:
         title: Uredi participatorni proračun
         delete: Izbriši proračun
         phase: Faza
-        dates: Datumi
         enabled: Omogočeno
         actions: Dejanja
         edit_phase: Faza urejanja
@@ -87,7 +86,6 @@ sl:
         recalculate: Ponovno izračunaj zmagovalne naložbe.
     budget_phases:
       edit:
-        summary_help_text: To besedilo bo obvestilo uporabnika o fazi. Če ga želite prikazati tudi, če faza ni aktivna, izberite potrditveno polje spodaj.
         description_help_text: To besedilo bo prikazano v glavi, ko je faza aktivna.
         enabled_help_text: Ta faza bo javna v časovnem okviru faze proračuna, pa tudi aktivna za druge namene
         save_changes: Shrani spremembe
