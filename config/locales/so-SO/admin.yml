@@ -81,7 +81,6 @@ so:
         title: Wax kabedel misaniyada ka qaybqadashada
         delete: Tirir misaniyada
         phase: Weeji
-        dates: Tariikhaha
         enabled: Karti leh
         actions: Tilaabooyin
         edit_phase: Wax ka bedelka marxaladda
@@ -107,7 +106,6 @@ so:
         submit: "Bad baadi ciwaanka"
     budget_phases:
       edit:
-        summary_help_text: Qoraalkan ayaa usheegaya isticmaalaha ku saabsan wajiga. Si aad u muujiso xitaa haddii wajiga uusan firfircooneyn, dooro sanduuqa saxda ee hoose
         description_help_text: Qoraalkan ayaa ka muuqan doona madaxa marka wajiga uu firfircoon yahay
         enabled_help_text: Marxaladani waxay noqon doontaa mid guud oo ku saabsan marxaladaha miisaaniyadda, iyo sidoo kale firfircoon ujeedooyinka kale
         save_changes: Badbaadi beddelka
