@@ -88,7 +88,6 @@ ast:
         check_ballot_link: "revisar los mios votos"
     show:
       group: Grupu
-      phase: Fase actual
       unfeasible_title: Propuestes invidables
       unfeasible: Ver les propuestes invidables
       unselected_title: Propuestes non escoyíes pa la votación final
