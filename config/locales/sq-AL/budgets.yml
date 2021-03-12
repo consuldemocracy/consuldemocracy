@@ -38,7 +38,6 @@ sq:
         icon_alt: Ikona e buxheteve  pjesëmarrëse
         title: Buxhetet  pjesëmarrës
         help: Ndihmoni me buxhetet pjesëmarrëse
-        all_phases: Shihni të gjitha fazat
       all_phases: Fazat e investimeve buxhetore
       map: Propozimet e investimeve buxhetore të vendosura gjeografikisht
       investment_proyects: Lista e të gjitha projekteve të investimeve 
@@ -123,7 +122,6 @@ sq:
       available: "Buxheti në dispozicion:"
     show:
       group: Grupet
-      phase: Faza aktuale
       unfeasible_title: Investimet e papranueshme
       unfeasible: Shih Investimet e papranueshme
       unselected_title: Investimet nuk janë përzgjedhur për fazën e votimit
