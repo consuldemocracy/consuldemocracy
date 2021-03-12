@@ -84,7 +84,6 @@ it:
         title: Modificare il bilancio partecipativo
         delete: Elimina budget
         phase: Fase
-        dates: Date
         enabled: Abilitato
         actions: Azioni
         edit_phase: Modifica fase
@@ -153,7 +152,6 @@ it:
         back: "Torna ai gruppi"
     budget_phases:
       edit:
-        summary_help_text: Questo paragrafo darà agli utenti informazioni sulla fase. Per renderlo visibile anche se la fase non risulta attiva, selezionare la spunta sottostante
         description_help_text: Questo paragrafo apparirà nell’intestazione quando la fase risulterà attiva
         enabled_help_text: Questa fase sarà visibile a tutti nella sequenza temporale delle fasi del bilancio e risulterà attiva ad ogni altro fine
         save_changes: Salva modifiche
