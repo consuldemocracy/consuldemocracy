@@ -1,0 +1,4 @@
+es:
+  layouts:
+    footer:
+      copyright: Ayuntamiento de Lorca, %{year}
