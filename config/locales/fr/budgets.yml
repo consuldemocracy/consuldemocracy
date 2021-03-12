@@ -39,7 +39,6 @@ fr:
         icon_alt: Icône des budgets participatifs
         title: Budgets participatifs
         help: Aide sur les budgets participatifs
-        all_phases: Voir toutes les phases
       all_phases: Phases de l’investissement budgétaire
       map: Propositions d'investissement localisés
       investment_proyects: Liste des projets d’investissement
@@ -124,7 +123,6 @@ fr:
       available: "Budget disponible : "
     show:
       group: Groupe
-      phase: Phase actuelle
       unfeasible_title: Investissements irréalisables
       unfeasible: Voir les investissements irréalisables
       unselected_title: Propositions non-sélectionnées pour la phase de vote
