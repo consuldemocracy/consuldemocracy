@@ -43,7 +43,6 @@ cs:
         icon_alt: Ikona participativního rozpočtu
         title: Participativní rozpočty
         help: Nápověda pro paticipativní rozpočty
-        all_phases: Zobrazit všechny fáze
       all_phases: Fáze participativního rozpočtu
       map: Lokalizace návrhů pro participativní rozpočet
       investment_proyects: Seznam všech investičních projektů
@@ -129,7 +128,6 @@ cs:
       available: "Dostupný rozpočet: "
     show:
       group: Skupina
-      phase: Aktuální fáze
       unfeasible_title: Nerealizovatelné projekty
       unfeasible: Podívejte se na nerealizovatelné investice
       unselected_title: Projekty, které nebyly vybrány pro fázi hlasování
