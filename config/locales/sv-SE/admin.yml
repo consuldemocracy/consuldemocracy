@@ -92,7 +92,6 @@ sv:
         publish: "Publicera budget"
         delete: Radera budget
         phase: Fas
-        dates: Datum
         enabled: Aktiverad
         actions: Åtgärder
         edit_phase: Redigera fas
@@ -167,7 +166,6 @@ sv:
         back: "Gå tillbaka till grupper"
     budget_phases:
       edit:
-        summary_help_text: Den här texten är för att informera användaren om fasen. Markera rutan nedan för att visa den även om fasen inte är pågående
         description_help_text: Den här texten visas i sidhuvudet när fasen är aktiv
         enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål
         save_changes: Spara ändringar
