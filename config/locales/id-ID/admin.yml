@@ -84,7 +84,6 @@ id:
         title: Edit Partisipatif anggaran
         delete: Menghapus anggaran
         phase: Fase
-        dates: Tanggal
         enabled: Diaktifkan
         actions: Tindakan
         edit_phase: Mengedit fase
@@ -136,7 +135,6 @@ id:
         submit: "Menyimpan judul"
     budget_phases:
       edit:
-        summary_help_text: Teks ini akan memberi informasi pengguna tentang fase. Untuk menunjukkannya meski fase sesang tidak aktif, pilih kotak centang di bawah ini
         description_help_text: Teks ini akan muncul di header disaat fase aktif
         enabled_help_text: Fase ini akan menjadi publik dalam garis waktu fase anggaran, dan juga akan aktif untuk tujuan yang lain
         save_changes: Simpan perubahan
