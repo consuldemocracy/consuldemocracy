@@ -16,7 +16,6 @@ es:
             one: "Votos: <span>%{count}</span>"
             other: "Votos: <span>%{count}</span>"
         amount_limit:
-          knapsack: "%{count}"
           approval:
             one: "Puedes votar <span>1</span> proyecto"
             other: "Puedes votar hasta <span>%{count}</span> proyectos"
@@ -64,7 +63,6 @@ es:
         icon_alt: Icono de Presupuestos participativos
         title: Presupuestos participativos
         help: Ayuda sobre presupuestos participativos
-        all_phases: Ver todas las fases
       all_phases: Fases de los presupuestos participativos
       map: Proyectos localizables geográficamente
       investment_proyects: Ver lista completa de proyectos de gasto
@@ -176,7 +174,6 @@ es:
         other: "Has seleccionado <strong>%{count}</strong> proyectos de <strong>%{limit}</strong>"
     show:
       group: Grupo
-      phase: Fase actual
       unfeasible_title: Proyectos de gasto inviables
       unfeasible: Ver los proyectos inviables
       unselected_title: Proyectos no seleccionados para la votación final
