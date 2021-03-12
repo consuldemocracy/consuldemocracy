@@ -59,7 +59,6 @@ tr:
         icon_alt: Katılımcı bütçeler simgesi
         title: Katılımcı bütçeler
         help: Katılımcı bütçelere yardım edin
-        all_phases: Tüm aşamaları göster
       all_phases: Bütçe yatırım aşamaları
       map: Bölgelere göre bütçe yatırım önerileri
       investment_proyects: Yatırım projelerinin tam listesi
@@ -171,7 +170,6 @@ tr:
         other: "<strong>%{limit}</strong> projeden <strong>%{count}</strong> adet seçtiniz"
     show:
       group: Grup
-      phase: Gerçek aşama
       unfeasible_title: Uygulanabilir olmayan yatırımlar
       unfeasible: Uygulanabilir olmayan yatırımları göster
       unselected_title: Oy aşaması için seçilmeyen yatırımlar
