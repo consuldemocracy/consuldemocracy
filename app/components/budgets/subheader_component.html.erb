@@ -1,0 +1,38 @@
+<div class="budget-subheader">
+  <div class="small-12 medium-8 column info">
+    <span class="current-phase"><strong><%= t("budgets.index.current_phase") %></strong></span>
+    <h2><%= budget.current_phase.name %></h2>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <% if budget.accepting? %>
+      <% if current_user %>
+        <% if current_user.level_two_or_three_verified? %>
+          <div class="text-right">
+            <%= link_to t("budgets.investments.index.sidebar.create"),
+                        new_budget_investment_path(budget),
+                        class: "button" %>
+          </div>
+        <% else %>
+          <div class="callout warning">
+            <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
+                  verify: link_to_verify_account)) %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="callout primary">
+          <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
+                sign_in: link_to_signin, sign_up: link_to_signup)) %>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if can?(:read_results, budget) %>
+      <div class="text-right">
+        <%= link_to t("budgets.show.see_results"),
+                    budget_results_path(budget, heading_id: budget.headings.first),
+                    class: "button expanded" %>
+      </div>
+    <% end %>
+  </div>
+</div>

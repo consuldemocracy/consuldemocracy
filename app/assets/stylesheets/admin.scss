@@ -212,6 +212,10 @@ $table-header:   #ecf1f6;
 
   table {
 
+    caption {
+      @include element-invisible;
+    }
+
     thead {
 
       &,
@@ -1157,38 +1161,6 @@ table {
 
   .button {
     margin-top: $line-height / 2;
-  }
-}
-
-.budget-phase-enabled {
-  font-weight: bold;
-  padding-left: rem-calc(20);
-  position: relative;
-  text-decoration: none;
-
-  &.enabled::before,
-  &.disabled::before {
-    font-family: "icons";
-    left: 0;
-    position: absolute;
-  }
-
-  &.enabled {
-    color: $check;
-
-    &::before {
-      color: $check;
-      content: "\6c";
-    }
-  }
-
-  &.disabled {
-    color: #000;
-
-    &::before {
-      color: #000;
-      content: "\76";
-    }
   }
 }
 

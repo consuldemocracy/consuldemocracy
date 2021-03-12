@@ -38,19 +38,21 @@ describe "Budgets" do
 
       visit budgets_path
 
-      within("#budget_heading") do
+      within(".budget-header") do
         expect(page).to have_content(budget.name)
         expect(page).to have_content(budget.description)
-        expect(page).to have_content("Actual phase")
-        expect(page).to have_content("Information")
         expect(page).to have_link("Help with participatory budgets")
-        expect(page).to have_link("See all phases")
+      end
+
+      within(".budget-subheader") do
+        expect(page).to have_content "Current phase"
+        expect(page).to have_content "Information"
       end
 
       budget.update!(phase: "publishing_prices")
       visit budgets_path
 
-      within("#budget_heading") do
+      within(".budget-subheader") do
         expect(page).to have_content("Publishing projects prices")
       end
 
@@ -208,63 +210,72 @@ describe "Budgets" do
 
     phases.informing.update!(starts_at: "30-12-2017", ends_at: "31-12-2017", enabled: true,
                              description: "Description of informing phase",
-                             summary: "<p>This is the summary for informing phase</p>")
+                             name: "Custom name for informing phase")
 
     phases.accepting.update!(starts_at: "01-01-2018", ends_at: "10-01-2018", enabled: true,
                             description: "Description of accepting phase",
-                            summary: "This is the summary for accepting phase")
+                            name: "Custom name for accepting phase")
 
     phases.reviewing.update!(starts_at: "11-01-2018", ends_at: "20-01-2018", enabled: false,
-                            description: "Description of reviewing phase",
-                            summary: "This is the summary for reviewing phase")
+                            description: "Description of reviewing phase")
 
     phases.selecting.update!(starts_at: "21-01-2018", ends_at: "01-02-2018", enabled: true,
                             description: "Description of selecting phase",
-                            summary: "This is the summary for selecting phase")
+                            name: "Custom name for selecting phase")
 
     phases.valuating.update!(starts_at: "10-02-2018", ends_at: "20-02-2018", enabled: false,
-                            description: "Description of valuating phase",
-                            summary: "This is the summary for valuating phase")
+                            description: "Description of valuating phase")
 
     phases.publishing_prices.update!(starts_at: "21-02-2018", ends_at: "01-03-2018", enabled: false,
-                                    description: "Description of publishing prices phase",
-                                    summary: "This is the summary for publishing_prices phase")
+                                    description: "Description of publishing prices phase")
 
     phases.balloting.update!(starts_at: "02-03-2018", ends_at: "10-03-2018", enabled: true,
-                            description: "Description of balloting phase",
-                            summary: "This is the summary for balloting phase")
+                            description: "Description of balloting phase")
 
     phases.reviewing_ballots.update!(starts_at: "11-03-2018", ends_at: "20-03-2018", enabled: false,
-                                    description: "Description of reviewing ballots phase",
-                                    summary: "This is the summary for reviewing_ballots phase")
+                                    description: "Description of reviewing ballots phase")
 
     phases.finished.update!(starts_at: "21-03-2018", ends_at: "30-03-2018", enabled: true,
-                           description: "Description of finished phase",
-                           summary: "This is the summary for finished phase")
+                           description: "Description of finished phase")
 
     visit budgets_path
 
-    expect(page).not_to have_content "This is the summary for reviewing phase"
+    expect(page).not_to have_content "Description of reviewing phase"
     expect(page).not_to have_content "January 11, 2018 - January 20, 2018"
-    expect(page).not_to have_content "This is the summary for valuating phase"
+    expect(page).not_to have_content "Description of valuating phase"
     expect(page).not_to have_content "February 10, 2018 - February 20, 2018"
-    expect(page).not_to have_content "This is the summary for publishing_prices phase"
+    expect(page).not_to have_content "Description of publishing_prices phase"
     expect(page).not_to have_content "February 21, 2018 - March 01, 2018"
-    expect(page).not_to have_content "This is the summary for reviewing_ballots phase"
+    expect(page).not_to have_content "Description of reviewing_ballots phase"
     expect(page).not_to have_content "March 11, 2018 - March 20, 2018"
 
-    expect(page).to have_content "This is the summary for informing phase"
+    expect(page).to have_content "Description of informing phase"
     expect(page).to have_content "December 30, 2017 - December 31, 2017"
-    expect(page).to have_content "This is the summary for accepting phase"
+    expect(page).to have_content "Description of accepting phase"
     expect(page).to have_content "January 01, 2018 - January 20, 2018"
-    expect(page).to have_content "This is the summary for selecting phase"
+    expect(page).to have_content "Description of selecting phase"
     expect(page).to have_content "January 21, 2018 - March 01, 2018"
-    expect(page).to have_content "This is the summary for balloting phase"
+    expect(page).to have_content "Description of balloting phase"
     expect(page).to have_content "March 02, 2018 - March 20, 2018"
-    expect(page).to have_content "This is the summary for finished phase"
+    expect(page).to have_content "Description of finished phase"
     expect(page).to have_content "March 21, 2018 - March 29, 2018"
 
-    expect(page).to have_css(".phase.is-active", count: 1)
+    expect(page).to have_css(".tabs-panel.is-active", count: 1)
+
+    within("#budget_phases_tabs") do
+      expect(page).to have_link "Custom name for informing phase"
+      expect(page).to have_link "Custom name for accepting phase"
+      expect(page).to have_link "Custom name for selecting phase"
+      expect(page).to have_link phases.balloting.name
+      expect(page).to have_link "Current phase #{phases.finished.name}"
+    end
+
+    click_link "Custom name for accepting phase"
+
+    within("#2-custom-name-for-accepting-phase") do
+      expect(page).to have_link("Previous phase", href: "#1-custom-name-for-informing-phase")
+      expect(page).to have_link("Next phase", href: "#3-custom-name-for-selecting-phase")
+    end
   end
 
   context "Index map" do

@@ -230,6 +230,7 @@ es:
         ends_at: "Fecha de fin"
         starts_at: "Fecha de inicio"
       budget/phase/translation:
+        name: "Nombre"
         description: "Descripción"
         summary: "Resumen"
       comment:

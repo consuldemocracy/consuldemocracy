@@ -10,7 +10,7 @@
 
     > :first-child {
       @include bottom-tooltip;
-      left: -10000px;
+      left: $off-screen-left;
       opacity: 0;
       transform: translateX(-50%);
       transition: opacity 0.3s, left 0s 0.3s;
@@ -28,7 +28,7 @@
     }
 
     &:not(:focus) > :first-child:hover {
-      left: -10000px;
+      left: $off-screen-left;
     }
 
     &::before {

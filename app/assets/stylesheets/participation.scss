@@ -628,10 +628,16 @@
   }
 
   &.past-budgets {
+    display: flex;
+    flex-wrap: wrap;
     min-height: 0;
 
-    .button ~ .button {
-      margin-left: $line-height / 2;
+    > :not(:first-child) {
+      margin-left: auto;
+    }
+
+    .button {
+      margin-left: $line-height;
     }
   }
 }
@@ -1130,51 +1136,37 @@
 // 06. Budgets
 // -----------
 
-.expanded {
+.budget-header {
+  background: $budget;
+  margin-top: -$line-height;
+  padding-bottom: $line-height;
+  padding-top: $line-height;
 
-  &.budget {
-    background: $budget;
-    margin-top: -$line-height;
+  h1,
+  h2,
+  p,
+  a,
+  .back,
+  .icon-angle-left,
+  .description {
+    color: #fff;
+  }
 
-    h1,
-    h2,
-    p,
-    a,
-    .back,
-    .icon-angle-left,
-    .description {
-      color: #fff;
-    }
+  a {
+    text-decoration: underline;
+  }
 
-    a {
-      text-decoration: underline;
-    }
+  .confirmed {
+    font-size: rem-calc(24);
+    font-weight: bold;
+  }
 
-    .callout {
+  .info {
+    background: #6a2a72;
 
-      &.primary a {
-        color: $link;
-      }
-    }
-
-    .button {
-      background: #fff;
-      color: $budget;
-      text-decoration: none;
-    }
-
-    .confirmed {
-      font-size: rem-calc(24);
-      font-weight: bold;
-    }
-
-    .info {
-      background: #6a2a72;
-
-      p {
-        margin-bottom: 0;
-        text-transform: uppercase;
-      }
+    p {
+      margin-bottom: 0;
+      text-transform: uppercase;
     }
   }
 }
@@ -1224,6 +1216,10 @@
     margin-bottom: rem-calc(3);
     text-decoration: none;
   }
+}
+
+.current-phase {
+  color: $brand;
 }
 
 .groups-and-headings {
@@ -1462,63 +1458,6 @@
       h2 {
         font-size: rem-calc(24);
         transition: font-size 0.3s;
-      }
-    }
-  }
-}
-
-.budget-timeline {
-  border-left: 3px solid $budget;
-  margin-left: $line-height / 2;
-  padding: $line-height $line-height / 2;
-
-  h3,
-  span,
-  p {
-    padding: 0 $line-height / 4;
-  }
-
-  h3 {
-    margin-bottom: 0;
-  }
-
-  span {
-    color: $text-medium;
-    display: block;
-    font-size: $small-font-size;
-    margin-bottom: $line-height / 2;
-  }
-
-  .phase {
-    position: relative;
-
-    &:not(:first-child) {
-      margin-top: $line-height * 1.5;
-    }
-
-    &::before {
-      background-color: #fff;
-      border: 4px solid $budget;
-      border-radius: 100%;
-      content: "";
-      height: 16px;
-      left: -22px;
-      position: absolute;
-      top: 6px;
-      width: 16px;
-      z-index: 99;
-    }
-
-    &.is-active {
-
-      h3 {
-        background: $budget;
-        color: #fff;
-        display: inline-block;
-      }
-
-      &::before {
-        background-color: $budget;
       }
     }
   }

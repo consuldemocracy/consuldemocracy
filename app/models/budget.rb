@@ -71,6 +71,14 @@ class Budget < ApplicationRecord
     phases.published.order(:id)
   end
 
+  def starts_at
+    phases.published.first.starts_at
+  end
+
+  def ends_at
+    phases.published.last.ends_at
+  end
+
   def description
     description_for_phase(phase)
   end
@@ -155,10 +163,6 @@ class Budget < ApplicationRecord
     heading_ids.include?(heading.id) ? heading.price : -1
   end
 
-  def translated_phase
-    I18n.t "budgets.phase.#{phase}"
-  end
-
   def formatted_amount(amount)
     ActionController::Base.helpers.number_to_currency(amount,
                                                       precision: 0,
@@ -214,6 +218,7 @@ class Budget < ApplicationRecord
         Budget::Phase.create(
           budget: self,
           kind: phase,
+          name: I18n.t("budgets.phase.#{phase}"),
           prev_phase: phases&.last,
           starts_at: phases&.last&.ends_at || Date.current,
           ends_at: (phases&.last&.ends_at || Date.current) + 1.month
