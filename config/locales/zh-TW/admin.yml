@@ -81,7 +81,6 @@ zh-TW:
         title: 編輯參與性預算
         delete: 刪除預算
         phase: 階段
-        dates: 日期
         enabled: 啟用
         actions: 行動
         edit_phase: 編輯階段
@@ -107,7 +106,6 @@ zh-TW:
         submit: "儲存標題"
     budget_phases:
       edit:
-        summary_help_text: 本文將告知用戶關於階段。就算階段未活躍也要顯示，請選中下面的複選框
         description_help_text: 當此文本將顯示在頁眉中，則表示階段處於活躍狀態
         enabled_help_text: 這一階段將在預算的階段時間內公開, 也會為其他目的而活躍
         save_changes: 儲存更改
