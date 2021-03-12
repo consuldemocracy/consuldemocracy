@@ -220,6 +220,7 @@ sv:
         ends_at: "Slutdatum"
         starts_at: "Startdatum"
       budget/phase/translation:
+        name: "Namn"
         description: "Beskrivning"
         summary: "Sammanfattning"
       comment:
