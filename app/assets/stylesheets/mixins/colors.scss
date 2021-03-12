@@ -1,6 +1,19 @@
-@mixin brand-background {
+@mixin brand-background($invert-selection: true) {
   background-color: $brand;
   color: $white;
+
+  @if $invert-selection {
+    @include inverted-selection;
+  }
+}
+
+@mixin inverted-selection {
+
+  &::selection,
+  *::selection {
+    background-color: rgba($white, 0.99);
+    color: $brand;
+  }
 }
 
 %brand-background {

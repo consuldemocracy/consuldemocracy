@@ -30,7 +30,7 @@
 // -----------------
 
 ::selection {
-  @include brand-background;
+  @include brand-background($invert-selection: false);
 }
 
 html,
@@ -82,6 +82,7 @@ a {
 
 .button {
   @extend %button;
+  @include inverted-selection;
   background: $brand;
 
   &.warning,
