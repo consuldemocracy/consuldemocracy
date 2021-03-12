@@ -81,7 +81,6 @@ cs:
         title: Upravit participativní rozpočet
         delete: Odstranit rozpočet
         phase: Fáze
-        dates: Kalendářní data
         enabled: Povolit
         actions: Akce
         edit_phase: Upravit fázi
@@ -134,7 +133,6 @@ cs:
         back: "Jít zpět do skupin"
     budget_phases:
       edit:
-        summary_help_text: Text bude informovat uživatele o této fázi. Chcete-li ho zobrazit i v případě, že fáze není aktivní, zaškrtněte políčko dole
         description_help_text: Tento text bude zobrazen v záhlaví, když je fáze aktivní
         enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
         save_changes: Uložit změny
