@@ -81,7 +81,6 @@ pl:
         title: Edytuj budżet partycypacyjny
         delete: Usuń budżet
         phase: Etap
-        dates: Daty
         enabled: Włączone
         actions: Akcje
         edit_phase: Edytuj etap
@@ -144,7 +143,6 @@ pl:
         back: "Powrót do grup"
     budget_phases:
       edit:
-        summary_help_text: Ten tekst będzie informował użytkownika o fazie. Aby wyświetlić go, nawet jeśli faza nie jest aktywna, zaznacz pole wyboru poniżej
         description_help_text: Ten tekst pojawi się w nagłówku, gdy faza jest aktywna
         enabled_help_text: Faza ta będzie publiczna na osi czasu fazy budżetowej, a także będzie aktywna do jakichkolwiek innych celów
         save_changes: Zapisz zmiany
