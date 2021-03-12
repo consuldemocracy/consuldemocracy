@@ -52,6 +52,9 @@ sv:
         title: Medborgarbudgetar
         help: Hjälp med medborgarbudgetar
       all_phases: Medborgarbudgetens faser
+      next_phase: Nästa fas
+      prev_phase: Föregående fas
+      current_phase: Nuvarande fas
       map: Geografiskt baserade budgetförslag
       investment_proyects: Lista över budgetförslag
       unfeasible_investment_proyects: Lista över ej genomförbara budgetförslag
