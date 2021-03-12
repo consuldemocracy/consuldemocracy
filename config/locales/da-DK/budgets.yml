@@ -52,7 +52,6 @@ da:
         icon_alt: Deltagerbudgetter ikon
         title: Deltagerbudgetter
         help: Hvad er et deltagerbudget?
-        all_phases: Se alle faser
       all_phases: Tidslinje
       map: Projekternes geografiske placering
       investment_proyects: Alle projekter
@@ -149,7 +148,6 @@ da:
       available: "Penge der kan fordeles: "
     show:
       group: Gruppe
-      phase: Aktuel fase
       unfeasible_title: Projekter, der ikke kan gennemføres
       unfeasible: Se projekter, der ikke kan gennemføres
       unselected_title: Projekter, der ikke er udvalgt til afstemning
