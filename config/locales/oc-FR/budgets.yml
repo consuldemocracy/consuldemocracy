@@ -46,7 +46,6 @@ oc:
         icon_alt: Icòna dels budgèts participatius
         title: de Budgèts participatius
         help: Ajuda amb budgèts participatius
-        all_phases: Veire totas las fasas
       all_phases: de Fasas de l'inversion budgetària
       map: de Proposicions d’inversions budgetàrias situadas geogràficament
       investment_proyects: Lista de totes los projèctes d’inversion
@@ -143,7 +142,6 @@ oc:
       available: "Budgèt disponible: "
     show:
       group: Nom d'usatgièr
-      phase: Fasa actuala
       unfeasible_title: de Proposicions inviables
       unfeasible: Veire las proposicions inviables
       unselected_title: Proposicions pas seleccionadas per la votacion finala
