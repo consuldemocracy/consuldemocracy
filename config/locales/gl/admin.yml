@@ -81,7 +81,6 @@ gl:
         title: Editar campaña de orzamentos participativos
         delete: Eliminar orzamento
         phase: Fase
-        dates: Datas
         enabled: Habilitado
         actions: Accións
         edit_phase: Editar fase
@@ -140,7 +139,6 @@ gl:
         back: "Volver aos grupos"
     budget_phases:
       edit:
-        summary_help_text: Este texto informará ao usuario sobre a fase. Para amosalo aínda que a fase non estea activa, marca a opción inferior
         description_help_text: Este texto aparecerá na cabeceira cando a fase estiver activa
         enabled_help_text: Esta fase será pública no calendario de fases do orzamento e estará activa para outros propósitos
         save_changes: Gardar so cambios
