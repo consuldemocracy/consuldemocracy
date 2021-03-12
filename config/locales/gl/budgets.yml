@@ -42,7 +42,6 @@ gl:
         icon_alt: Icona dos orzamentos participativos
         title: Orzamentos participativos
         help: Axuda sobre os orzamentos participativos
-        all_phases: Ver todas as fases
       all_phases: Fases dos orzamentos participativos
       map: Proxectos localizables xeograficamente
       investment_proyects: Listaxe de todos os proxectos de investimento
@@ -128,7 +127,6 @@ gl:
       available: "Orzamento dispoñible: "
     show:
       group: Grupo
-      phase: Fase actual
       unfeasible_title: Propostas inviables
       unfeasible: Ver as propostas inviables
       unselected_title: Propostas non seleccionadas para a votación final
