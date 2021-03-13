@@ -35,6 +35,7 @@ de:
           proposals: Vorschläge
           budgets: Bürgerhaushalt
           help_page: Hilfeseite
+          sdg: SDG
       edit:
         editing: Banner bearbeiten
         form:
@@ -62,14 +63,19 @@ de:
         type: Typ
         no_activity: Hier sind keine Moderator*innen aktiv.
     budgets:
+      actions:
+        preview: "Ansicht Budget"
       index:
         title: Bürgerhaushalte
         new_link: Neuen Bürgerhaushalt erstellen
         filter: Filter
         filters:
+          all: Alle
           open: Offen
           finished: Abgeschlossen
+        help: "Bürgerhaushalte ermöglichen es den Bürger: innen, Vorschläge einzubringen und zu entscheiden, wie ein Teil des Haushalts ausgegeben werden soll, wobei die Vorschläge von der Verwaltung kontrolliert und bewertet werden."
         budget_investments: Ausgabenprojekte verwalten
+        table_completed: Abgeschlossen
         table_duration: "Laufzeit"
         table_name: Name
         table_phase: Phase
@@ -82,8 +88,12 @@ de:
         notice: Neuer Bürgerhaushalt erfolgreich erstellt!
       update:
         notice: Bürgerhaushalt erfolgreich aktualisiert
+      publish:
+        notice: "Bürgerhaushalt erfolgreich veröffentlicht"
       edit:
         title: Bürgerhaushalt bearbeiten
+        drafting: "Dieser Bürgerhaushalt ist im Entwurfsmodus, nur Administrator:innen können ihn auf der öffentlichen Seite sehen. Sobald er veröffentlicht ist, kann er nicht mehr in den Entwurfsmodus geändert werden."
+        publish: "Budget veröffentlichen"
         delete: Bürgerhaushalt löschen
         phase: Phase
         phases_caption: "Phasen"
@@ -103,6 +113,10 @@ de:
           other: "%{count} Begutachter ausgewählt"
         empty_administrators: "Keine Administrator*innen vorhanden"
         empty_valuators: "Keine Begutachter*innen vorhanden"
+        name_description: "Dies ist der Name des Bürgerhaushalts, der in der Kopfzeile und auf den Kacheln verwendet wird, wenn er aktiv ist"
+        info:
+          budget_settings: "Allgemeine Einstellungen Bürgerhaushalt"
+          phases_settings: "Einstellungen Phasen"
       destroy:
         success_notice: Bürgerhaushalt erfolgreich gelöscht
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
