@@ -548,7 +548,9 @@ describe "Budget Investments" do
           expect(page).not_to have_content "by price"
           expect(page).not_to have_content "highest rated"
         end
+      end
 
+      Budget::Phase.kind_or_later("publishing_prices").each do |phase|
         visit budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
 
         within(".submenu") do

@@ -3,7 +3,7 @@ module InvestmentFilters
 
   class_methods do
     def investment_filters
-      %w[not_unfeasible unfeasible unselected selected winners]
+      ->(controller) { controller.investment_filters }
     end
   end
 
@@ -13,5 +13,15 @@ module InvestmentFilters
     elsif @budget&.publishing_prices_or_later?
       params[:filter] ||= "selected"
     end
+  end
+
+  def investment_filters
+    [
+      "not_unfeasible",
+      "unfeasible",
+      ("unselected" if @budget.publishing_prices_or_later?),
+      ("selected" if @budget.publishing_prices_or_later?),
+      ("winners" if @budget.finished?)
+    ].compact
   end
 end
