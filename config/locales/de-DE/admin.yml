@@ -150,6 +150,7 @@ de:
         submit: "Gruppe speichern"
       index:
         back: "Zurück zu Bürgerhaushalten"
+        help: "Gruppen sind dazu gedacht, Rubriken zu organisieren. Nachdem eine Gruppe erstellt wurde und sie Rubriken enthält, kann festgelegt werden, in wie vielen Rubriken ein Benutzer pro Gruppe abstimmen kann."
     budget_headings:
       no_headings: "Keine Rubriken vorhanden."
       amount:
@@ -180,6 +181,8 @@ de:
         enabled_help_text: Diese Phase wird öffentlich in der Zeitleiste der Phasen des Bürgerhaushalts angezeigt und ist auch für andere Zwecke aktiv
         name_help_text: "Dies ist der Titel der Phase, den die Benutzer in der Kopfzeile lesen, wenn diese Phase aktiv ist."
         save_changes: Änderungen speichern
+      index:
+        help: "Bürgerhaushalte haben verschiedene Phasen. Hier können Sie Phasen aktivieren oder deaktivieren und auch jede einzelne Phase individuell anpassen."
     budget_investments:
       index:
         heading_filter_all: Alle Überschriften
@@ -1275,6 +1278,10 @@ de:
         advanced_filters:
           sdg_goals:
             all: "Alle Ziele"
+            label: "Nach Ziel"
+          sdg_targets:
+            all: "Alle Zielvorgaben"
+            label: "Nach Zielvorgaben"
         label:
           booths: "Suche Wahlkabine nach Name"
           budget_investments: "Investitionen nach Titel, Beschreibung oder Überschrift suchen"
@@ -1387,6 +1394,7 @@ de:
         proposal_notifications: Benachrichtigungen zu einem Vorschlag
         incomplete_verifications: Unvollständige Verifizierungen
         polls: Umfragen
+        sdg: SDG
       graph:
         debate_created: Debatten
         visit: Besuche
