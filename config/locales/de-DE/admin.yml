@@ -117,6 +117,7 @@ de:
         info:
           budget_settings: "Allgemeine Einstellungen Bürgerhaushalt"
           phases_settings: "Einstellungen Phasen"
+          staff_settings: "Administratoren und Bewerter, die dem Bürgerhaushalt zugeordnet sind"
       destroy:
         success_notice: Bürgerhaushalt erfolgreich gelöscht
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
