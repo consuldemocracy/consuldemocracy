@@ -65,6 +65,9 @@ de:
         title: Bürgerhaushalte
         help: Hilfe zu Bürgerhaushalten
       all_phases: Phasen des Bürgerhaushalts
+      next_phase: Nächste Phase
+      prev_phase: Vorherige Phase
+      current_phase: Aktuelle Phase
       map: Ausgabenvorschläge geografisch geordnet
       investment_proyects: Liste aller Ausgabenvorschläge
       unfeasible_investment_proyects: Liste aller nicht durchführbaren Ausgabenvorschläge
