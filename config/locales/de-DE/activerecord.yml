@@ -7,6 +7,7 @@ de:
     name: Name
     email: E-Mail
     description: Beschreibung
+    related_sdg_list: Ziele und Vorgaben
   activerecord:
     models:
       activity:
