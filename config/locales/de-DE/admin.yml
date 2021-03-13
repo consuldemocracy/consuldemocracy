@@ -70,8 +70,10 @@ de:
           open: Offen
           finished: Abgeschlossen
         budget_investments: Ausgabenprojekte verwalten
+        table_duration: "Laufzeit"
         table_name: Name
         table_phase: Phase
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Gruppierungen von Rubriken bearbeiten
         edit_budget: Bürgerhaushalt bearbeiten
         admin_ballots: Admin Stimmzettel
@@ -84,6 +86,8 @@ de:
         title: Bürgerhaushalt bearbeiten
         delete: Bürgerhaushalt löschen
         phase: Phase
+        phases_caption: "Phasen"
+        duration: "Laufzeit"
         enabled: Aktiviert
         actions: Aktionen
         edit_phase: Phase bearbeiten
@@ -156,6 +160,8 @@ de:
     budget_phases:
       edit:
         description_help_text: Dieser Text erscheint in der Kopfzeile, wenn die Phase aktiv ist
+        duration: "Laufzeit dieser Phase"
+        duration_description: "Der Zeitraum, in dem diese Phase aktiv sein wird."
         enabled_help_text: Diese Phase wird öffentlich in der Zeitleiste der Phasen des Bürgerhaushalts angezeigt und ist auch für andere Zwecke aktiv
         save_changes: Änderungen speichern
     budget_investments:
