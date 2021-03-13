@@ -229,6 +229,7 @@ de:
         ends_at: "Enddatum des Verfahrens"
         starts_at: "Anfangsdatum"
       budget/phase/translation:
+        name: "Name"
         description: "Beschreibung"
         summary: "Zusammenfassung"
       comment:
