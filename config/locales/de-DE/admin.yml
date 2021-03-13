@@ -1437,6 +1437,15 @@ de:
           question_name: Frage
           origin_web: Online-Teilnehmer*innen
           origin_total: Gesamtanzahl Teilnehmer*innen
+      sdg:
+        budget_investments:
+          amount: "Freigegebener Betrag"
+          winners: "Gewinner Investitionsprojekt"
+          sent: "Investitionsprojekte eingereicht"
+        debates: "Diskussionen"
+        polls: "Umfragen"
+        proposals: "Vorschläge"
+        title: "Ziele für nachhaltige Entwicklung - Statistiken"
     tags:
       create: Thema erstellen
       destroy: Thema löschen
