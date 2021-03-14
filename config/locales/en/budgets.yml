@@ -120,9 +120,6 @@ en:
           verified_only: "To create a new budget investment %{verify}."
           create: "Create a budget investment"
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
-          by_feasibility: By feasibility
-          feasible: Feasible projects
-          unfeasible: Unfeasible projects
         orders:
           random: random
           confidence_score: highest rated
