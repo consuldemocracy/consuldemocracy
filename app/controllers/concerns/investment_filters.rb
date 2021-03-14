@@ -3,7 +3,7 @@ module InvestmentFilters
 
   class_methods do
     def investment_filters
-      %w[not_unfeasible feasible unfeasible unselected selected winners]
+      %w[not_unfeasible unfeasible unselected selected winners]
     end
   end
 
