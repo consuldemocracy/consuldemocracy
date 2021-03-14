@@ -190,6 +190,7 @@ de:
     local_census_records/import: Import von Datensätzen aus dem lokalen Register
     site_customization/content_block: Inhaltsblöcke
     site_customization/page: Seite
+    sdg/local_target: lokales Ziel
   geozones:
     none: Ganze Stadt
   layouts:
@@ -250,6 +251,7 @@ de:
           one: Sie haben eine neue Benachrichtigung
           other: Sie haben %{count} neue Benachrichtigungen
         notifications: Benachrichtigungen
+      sdg: "SDG"
   notifications:
     index:
       empty_notifications: Sie haben keine neuen Benachrichtigungen.
@@ -287,10 +289,17 @@ de:
       sign_in: Anmelden mit Google
       sign_up: Registrierung mit Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Anmelden mit Wordpress
+      sign_up: Abmelden mit Wordpress
+      name: Wordpress
     twitter:
       sign_in: Anmelden mit Twitter
       sign_up: Registrierung mit Twitter
       name: Twitter
+    info:
+      sign_in: "Anmelden mit:"
+      sign_up: "Abmelden mit:"
     or_fill: "Oder folgendes Formular ausfüllen:"
   proposals:
     create:
@@ -855,6 +864,9 @@ de:
       organization: Organisationen ist es nicht erlaubt abzustimmen
       unfeasible: Undurchführbare Investitionsprojekte können nicht unterstützt werden
       not_voting_allowed: Die Abstimmungsphase ist beendet
+      different_heading_assigned:
+        one: "Sie können nur Investitionsprojekte in %{count} Bezirk unterstützen. Sie haben bereits Projekte in %{supported_headings} unterstützt."
+        other: "Sie können nur Investitionsprojekte in %{count} Bezirken unterstützen. Sie haben bereits Projekte in %{supported_headings} unterstützt."
   welcome:
     feed:
       most_active:
@@ -865,6 +877,10 @@ de:
         debates: Alle Debatten anzeigen
         proposals: Alle Vorschläge anzeigen
         processes: Alle Beteiligungsverfahren anzeigen
+      no_items:
+        debates: Aktuell gibt es keine Diskussionen
+        proposals: Aktuell gibt es keine Vorschläge
+        processes: Aktuell gibt es keine laufende Prozesse
       process_label: Beteiligungsverfahren
       see_process: Beteiligungsverfahren anzeigen
     cards:
