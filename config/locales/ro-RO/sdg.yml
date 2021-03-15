@@ -413,6 +413,12 @@ ro:
             title: "Asistența țărilor în curs de dezvoltare în realizarea sustenabilității pe termen lung a datoriilor prin politici coordonate menite să încurajeze finanțarea datoriilor, reducerea datoriilor și restructurarea datoriilor, după caz, și abordarea datoriilor externe ale țărilor sărace foarte îndatorate pentru a reduce dificultatea datoriilor."
           target_17_5:
             title: "Adoptarea și implementarea de regimuri de promovare a investițiilor pentru țările cel mai puțin dezvoltate."
+          target_17_6:
+            title: "Consolidarea cooperării regionale și internaționale nord-sud, sud-sud și accesul la știință, tehnologie și inovație și îmbunătățirea schimbului de cunoștințe în condiții convenite de comun acord, inclusiv printr-o coordonare îmbunătățită între mecanismele existente, în special la nivelul Organizației Națiunilor Unite și prin un mecanism global de facilitare a tehnologiei."
+          target_17_7:
+            title: "Promovarea dezvoltării, transferului, diseminării și difuzării de tehnologii ecologice către țările în curs de dezvoltare în condiții favorabile, inclusiv în condiții concesionale și preferențiale, după cum s-a convenit de comun acord."
+          target_17_8:
+            title: "Operaționalizarea completă a băncii tehnologice și a mecanismului de consolidare a capacității științei, tehnologiei și inovării pentru țările cel mai puțin dezvoltate până în 2017 și îmbunătățirea utilizării tehnologiei permise, în special a tehnologiei informației și comunicațiilor."
       show:
         read_more: "Citiți mai multe despre %{goal}"
         read_less: "Citiți mai puține despre %{goal}"
