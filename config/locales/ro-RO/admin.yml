@@ -79,6 +79,7 @@ ro:
         table_duration: "Durata"
         table_name: Nume
         table_phase: Etapă
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Editați grupurile de rubrici
         edit_budget: Editează buget
         admin_ballots: Gestionați buletinele de vot
@@ -95,6 +96,8 @@ ro:
         publish: "Publică buget"
         delete: Șterge buget
         phase: Etapă
+        phases_caption: "Etape"
+        duration: "Durata"
         enabled: Activat
         actions: Acțiuni
         edit_phase: Editează etapă
@@ -178,6 +181,7 @@ ro:
     budget_phases:
       edit:
         description_help_text: Acest text va apărea în antet atunci când faza este activă
+        duration: "Durata etapei"
         enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
         save_changes: Salvează modificări
       index:
