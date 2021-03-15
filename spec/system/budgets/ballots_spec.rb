@@ -1,4 +1,5 @@
 require "rails_helper"
+require "sessions_helper"
 
 describe "Ballots" do
   let(:user)        { create(:user, :level_two) }
@@ -679,23 +680,36 @@ describe "Ballots" do
     scenario "Edge case voting a non-elegible investment", :js do
       investment1 = create(:budget_investment, :selected, heading: new_york, price: 10000)
 
-      login_as(user)
-      visit budget_path(budget)
-      click_link "States"
-      click_link "New York"
+      in_browser(:user) do
+        login_as user
+        visit budget_path(budget)
+        click_link "States"
+        click_link "New York"
 
-      new_york.update!(price: 10)
+        expect(page).to have_css(".in-favor a")
+      end
 
-      within("#budget_investment_#{investment1.id}") do
-        find(".in-favor a").click
+      in_browser(:admin) do
+        login_as create(:administrator).user
+        visit edit_admin_budget_group_heading_path(budget, states, new_york)
+        fill_in "Amount", with: 10
+        click_button "Save heading"
 
-        expect(page).not_to have_content "Remove"
-        expect(page).not_to have_selector(".participation-not-allowed")
+        expect(page).to have_content "Heading updated successfully"
+      end
 
-        hover_over_ballot
+      in_browser(:user) do
+        within("#budget_investment_#{investment1.id}") do
+          find(".in-favor a").click
 
-        expect(page).to have_selector(".participation-not-allowed")
-        expect(page).to have_selector(".in-favor a", obscured: true)
+          expect(page).not_to have_content "Remove"
+          expect(page).not_to have_selector(".participation-not-allowed")
+
+          hover_over_ballot
+
+          expect(page).to have_selector(".participation-not-allowed")
+          expect(page).to have_selector(".in-favor a", obscured: true)
+        end
       end
     end
 

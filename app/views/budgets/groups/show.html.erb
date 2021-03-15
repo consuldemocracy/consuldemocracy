@@ -35,8 +35,7 @@
                   class="<%= css_for_ballot_heading(heading) %>">
               <%= link_to heading.name,
                           budget_investments_path(heading_id: heading.id,
-                                                  filter: @current_filter),
-                          data: { turbolinks: false } %><br>
+                                                  filter: @current_filter) %><br>
             </span>
           <% end %>
         </div>

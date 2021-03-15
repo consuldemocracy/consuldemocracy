@@ -35,8 +35,7 @@
                 <%= link_to group.name,
                             budget_investments_path(@budget,
                               heading_id: group.headings.first.id,
-                              filter: @current_filter),
-                            data: { turbolinks: false } %>
+                              filter: @current_filter) %>
               <% else %>
                 <%= link_to group.name,
                             budget_group_path(@budget, group,
