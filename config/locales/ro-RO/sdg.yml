@@ -419,8 +419,14 @@ ro:
             title: "Promovarea dezvoltării, transferului, diseminării și difuzării de tehnologii ecologice către țările în curs de dezvoltare în condiții favorabile, inclusiv în condiții concesionale și preferențiale, după cum s-a convenit de comun acord."
           target_17_8:
             title: "Operaționalizarea completă a băncii tehnologice și a mecanismului de consolidare a capacității științei, tehnologiei și inovării pentru țările cel mai puțin dezvoltate până în 2017 și îmbunătățirea utilizării tehnologiei permise, în special a tehnologiei informației și comunicațiilor."
+          target_17_9:
+            title: "Sporirea sprijinului internațional pentru punerea în aplicare a unei capacități eficiente și direcționate în dezvoltarea țărilor în curs de dezvoltare pentru a sprijini planurile naționale de punere în aplicare a tuturor obiectivelor de dezvoltare durabilă, inclusiv prin cooperare nord-sud, sud-sud și triunghiulară."
+          target_17_10:
+            title: "Promovarea unui sistem comercial multilateral universal, bazat pe reguli, deschis, nediscriminatoriu și echitabil în cadrul Organizației Mondiale a Comerțului, inclusiv prin încheierea negocierilor în cadrul Agendei sale de dezvoltare de la Doha."
           target_17_11:
             title: "Creșterea semnificativă a exporturilor țărilor în curs de dezvoltare, în special în vederea dublării ponderii țărilor cel mai puțin dezvoltate privind exporturile globale până în 2020."
+          target_17_12:
+            title: "Realizați punerea în aplicare în timp util a accesului pe piață fără taxe vamale pe o bază durabilă pentru toate țările mai puțin dezvoltate, în conformitate cu deciziile Organizației Mondiale a Comerțului, inclusiv prin asigurarea faptului că regulile preferențiale de origine aplicabile importurilor din țările cel mai puțin dezvoltate sunt transparente și simple, și să contribuie la facilitarea accesului pe piață."
       show:
         read_more: "Citiți mai multe despre %{goal}"
         read_less: "Citiți mai puține despre %{goal}"
