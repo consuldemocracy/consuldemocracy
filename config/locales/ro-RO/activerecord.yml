@@ -275,6 +275,7 @@ ro:
         ends_at: "Data de sfârșit"
         starts_at: "Data de început"
       budget/phase/translation:
+        name: "Nume"
         description: "Descriere"
         summary: "Sumar"
       comment:
