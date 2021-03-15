@@ -419,6 +419,8 @@ ro:
             title: "Promovarea dezvoltării, transferului, diseminării și difuzării de tehnologii ecologice către țările în curs de dezvoltare în condiții favorabile, inclusiv în condiții concesionale și preferențiale, după cum s-a convenit de comun acord."
           target_17_8:
             title: "Operaționalizarea completă a băncii tehnologice și a mecanismului de consolidare a capacității științei, tehnologiei și inovării pentru țările cel mai puțin dezvoltate până în 2017 și îmbunătățirea utilizării tehnologiei permise, în special a tehnologiei informației și comunicațiilor."
+          target_17_11:
+            title: "Creșterea semnificativă a exporturilor țărilor în curs de dezvoltare, în special în vederea dublării ponderii țărilor cel mai puțin dezvoltate privind exporturile globale până în 2020."
       show:
         read_more: "Citiți mai multe despre %{goal}"
         read_less: "Citiți mai puține despre %{goal}"
