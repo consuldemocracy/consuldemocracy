@@ -76,6 +76,7 @@ ro:
         help: "Bugetele participative permit cetățenilor să propună și să decidă direct cum să cheltuiască o parte din buget, cu monitorizare și evaluare riguroasă a propunerilor de către instituție."
         budget_investments: Administrează proiecte
         table_completed: Completat
+        table_duration: "Durata"
         table_name: Nume
         table_phase: Etapă
         edit_groups: Editați grupurile de rubrici
