@@ -4,16 +4,13 @@
     <ul class="headings-list">
       <% group.headings.sort_by_name.each do |heading| %>
         <li class="heading">
-          <% unless budget.informing? || budget.finished? %>
-            <%= link_to budget_investments_path(budget.id,
-                                                heading_id: heading.id) do %>
-              <%= heading_name_and_price_html(heading) %>
-            <% end %>
-          <% else %>
-            <div class="heading-name">
-              <%= heading_name_and_price_html(heading) %>
-            </div>
-          <% end %>
+          <%= link_to_unless(
+            (budget.informing? || budget.finished?),
+            heading.name,
+            budget_investments_path(budget.id, heading_id: heading.id)
+          ) %>
+
+          <%= price(heading) %>
         </li>
       <% end %>
     </ul>

@@ -7,10 +7,7 @@ class Budgets::GroupsAndHeadingsComponent < ApplicationComponent
 
   private
 
-    def heading_name_and_price_html(heading)
-      tag.div do
-        concat(heading.name + " ")
-        concat(tag.span(budget.formatted_heading_price(heading)))
-      end
+    def price(heading)
+      tag.span(budget.formatted_heading_price(heading))
     end
 end

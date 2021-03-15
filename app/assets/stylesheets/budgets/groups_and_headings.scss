@@ -13,6 +13,8 @@
     border-radius: rem-calc(3);
     margin-bottom: $line-height / 2;
     margin-left: $spacing;
+    padding: $line-height / 2;
+    position: relative;
     width: 100%;
 
     @include breakpoint(medium) {
@@ -23,22 +25,37 @@
       width: calc(100% / 6 - #{$spacing});
     }
 
-    a {
-      display: block;
-      padding: $line-height / 2;
+    &:focus-within {
+      outline: $outline-focus;
 
-      &:hover {
-        background: $highlight;
-        text-decoration: none;
+      a:focus {
+        outline: none;
       }
     }
 
-    .heading-name {
-      padding: $line-height / 2;
+    a {
+
+      &::after,
+      &::before {
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:hover::before {
+        background: $highlight;
+        z-index: -1;
+      }
     }
 
     span {
-      color: $text;
       display: block;
       font-size: $small-font-size;
     }
