@@ -182,7 +182,9 @@ ro:
       edit:
         description_help_text: Acest text va apărea în antet atunci când faza este activă
         duration: "Durata etapei"
+        duration_description: "Perioada de timp în care va fi activă această etapă."
         enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
+        name_help_text: "Acesta este titlul pe care utilizatorii îl vor citi în antet de fiecare când etapa va fi activă."
         save_changes: Salvează modificări
       index:
         help: "Bugetele participative au faze diferite. Aici puteți activa sau dezactiva fazele și, de asemenea, personaliza fiecare fază individuală."
