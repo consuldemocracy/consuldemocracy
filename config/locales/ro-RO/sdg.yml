@@ -402,6 +402,11 @@ ro:
         title_in_two_lines: "Parteneriate\nPentru Obiective"
         description: "Revitalizarea parteneriatului global pentru Dezvoltare Durabilă."
         long_description: '<p> ODD-urile pot fi realizate numai cu parteneriate și cooperare globale puternice. </p> <p> O agendă de dezvoltare de succes necesită parteneriate incluzive - la nivel global, regional, național și local - construite pe principii și valori și pe o viziune comună și obiective comune care plasează oamenii și planeta în centru. </p> <p> Multe țări necesită asistență oficială pentru dezvoltare pentru a încuraja creșterea și comerțul. Cu toate acestea, <a href="https://www.un.org/press/en/2019/ga12191.doc.htm"> nivelurile de ajutor scad </a> și țările donatoare nu și-au respectat angajamentul de a crește finanțarea dezvoltării. </p> <p> Datorită pandemiei COVID-19, <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">economia globală </a> se preconizează că se va contracta brusc, cu 3%, în 2020, cunoscând cea mai gravă recesiune de la Marea Depresiune. </p> <p> Cooperarea internațională puternică este necesară acum mai mult decât să ne asigurăm vreodată că țările au mijloacele necesare pentru a se recupera de la pandemie, pentru a reconstrui mai bine și pentru a atinge obiectivele de dezvoltare durabilă. </p>'
+        targets:
+          target_17_1:
+            title: "Consolidarea mobilizării resurselor interne, inclusiv prin sprijin internațional pentru țările în curs de dezvoltare, pentru a îmbunătăți capacitatea internă de colectare a impozitelor și a altor venituri."
+          target_17_3:
+            title: "Mobilizarea resurselor financiare adiționale pentru țările în curs de dezvoltare de la surse multiple."
       show:
         read_more: "Citiți mai multe despre %{goal}"
         read_less: "Citiți mai puține despre %{goal}"
