@@ -69,6 +69,9 @@ ro:
         title: Bugete participative
         help: Ajutor cu procesele de bugetare participativă
       all_phases: Etapele bugetului de investiții
+      next_phase: Etapa următoare
+      prev_phase: Etapa anterioară
+      current_phase: Etapa curentă
       map: Propunerile investițiilor bugetare situate geografic
       investment_proyects: Lista tuturor proiectelor de investiții
       unfeasible_investment_proyects: Lista tuturor proiectelor de investiții imposibile
