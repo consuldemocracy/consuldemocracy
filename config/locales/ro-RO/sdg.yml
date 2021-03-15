@@ -405,8 +405,14 @@ ro:
         targets:
           target_17_1:
             title: "Consolidarea mobilizării resurselor interne, inclusiv prin sprijin internațional pentru țările în curs de dezvoltare, pentru a îmbunătăți capacitatea internă de colectare a impozitelor și a altor venituri."
+          target_17_2:
+            title: "Țările dezvoltate să-și pună în aplicare pe deplin angajamentele oficiale de asistență pentru dezvoltare, inclusiv angajamentul multor țări dezvoltate de a atinge obiectivul de 0,7 la sută din AOD(Asistență Oficială pentru Dezvoltare)/VNB(Venit Național Brut) către țările în curs de dezvoltare și de 0,15 până la 0,20 la sută din AOD/VNB către țările cel mai puțin dezvoltate Furnizorii de AOD sunt încurajat să ia în considerare stabilirea unui obiectiv care să asigure cel puțin 0,20 la sută din AOD/VNB țărilor cel mai puțin dezvoltate."
           target_17_3:
             title: "Mobilizarea resurselor financiare adiționale pentru țările în curs de dezvoltare de la surse multiple."
+          target_17_4:
+            title: "Asistența țărilor în curs de dezvoltare în realizarea sustenabilității pe termen lung a datoriilor prin politici coordonate menite să încurajeze finanțarea datoriilor, reducerea datoriilor și restructurarea datoriilor, după caz, și abordarea datoriilor externe ale țărilor sărace foarte îndatorate pentru a reduce dificultatea datoriilor."
+          target_17_5:
+            title: "Adoptarea și implementarea de regimuri de promovare a investițiilor pentru țările cel mai puțin dezvoltate."
       show:
         read_more: "Citiți mai multe despre %{goal}"
         read_less: "Citiți mai puține despre %{goal}"
