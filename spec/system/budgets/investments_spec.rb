@@ -1325,10 +1325,7 @@ describe "Budget Investments" do
       expect(page).to have_css("#budget_heading_#{heading_1.id}.is-active")
       expect(page).to have_css("#budget_heading_#{heading_2.id}")
 
-      visit budget_group_path(budget, group)
-
       click_link "See unfeasible investments"
-      click_link "Health"
 
       within("#headings") do
         expect(page).to have_css("#budget_heading_#{heading_1.id}")

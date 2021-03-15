@@ -49,5 +49,24 @@ describe "Budget Groups" do
 
       expect(first_heading.name).to appear_before(last_heading.name)
     end
+
+    scenario "Links to investment filters", :js do
+      create(:budget_heading, group: group, name: "Southwest")
+      budget.update!(phase: "finished")
+
+      visit budget_group_path(budget, group)
+
+      click_link "See unfeasible investments"
+
+      expect(page).to have_css "h3", exact_text: "Unfeasible investments"
+      expect(page).to have_link "Southwest"
+      expect(page).not_to have_link "See unfeasible investments"
+
+      click_link "See investments not selected for balloting phase"
+
+      expect(page).to have_css "h3", exact_text: "Investments not selected for balloting phase"
+      expect(page).to have_link "Southwest"
+      expect(page).not_to have_link "See investments not selected for balloting phase unfeasible investments"
+    end
   end
 end
