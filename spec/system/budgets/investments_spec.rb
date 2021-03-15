@@ -88,6 +88,10 @@ describe "Budget Investments" do
         expect(page).not_to have_content(unfeasible_investment.title)
       end
     end
+
+    click_link "Go back"
+
+    expect(page).to have_current_path budget_path(budget)
   end
 
   scenario "Index view mode" do

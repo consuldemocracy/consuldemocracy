@@ -68,5 +68,13 @@ describe "Budget Groups" do
       expect(page).to have_link "Southwest"
       expect(page).not_to have_link "See investments not selected for balloting phase unfeasible investments"
     end
+
+    scenario "Back link", :js do
+      visit budget_group_path(budget, group)
+
+      click_link "Go back"
+
+      expect(page).to have_current_path budget_path(budget)
+    end
   end
 end
