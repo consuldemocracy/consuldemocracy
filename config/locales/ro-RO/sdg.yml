@@ -443,6 +443,7 @@ ro:
             title: "Până în 2030, construiți pe inițiativele existente pentru a dezvolta măsurători ale progresului în dezvoltarea durabilă care să completeze produsul intern brut și să sprijine consolidarea capacității statistice în țările în curs de dezvoltare."
       help:
         title: "Ajutor în Obiectivele de Dezvoltare Durabilă"
+        description: "Vă puteți alinia contribuțiile la comunitate (dezbateri, propuneri ale cetățenilor și proiecte de investiții) cu Agenda pentru Obiectivele de Dezvoltare Durabilă 2030, acest lucru ne va permite să avem o imagine de ansamblu a contribuției noastre la fiecare Obiectiv de Dezvoltare Durabilă. Mai jos puteți afla despre toate obiectivele și țintele acestora."
       show:
         read_more: "Citiți mai multe despre %{goal}"
         read_less: "Citiți mai puține despre %{goal}"
