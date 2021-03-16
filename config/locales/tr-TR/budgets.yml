@@ -60,6 +60,9 @@ tr:
         title: Katılımcı bütçeler
         help: Katılımcı bütçelere yardım edin
       all_phases: Bütçe yatırım aşamaları
+      next_phase: Sonraki aşama
+      prev_phase: Önceki aşama
+      current_phase: Mevcut aşama
       map: Bölgelere göre bütçe yatırım önerileri
       investment_proyects: Yatırım projelerinin tam listesi
       unfeasible_investment_proyects: Uygulanabilir olmayan yatırım projelerinin tam listesi
