@@ -433,6 +433,10 @@ ro:
             title: "Consolidarea coerenței politicilor pentru dezvoltarea durabilă."
           target_17_15:
             title: "Respectați spațiul politic și conducerea fiecărei țări pentru a stabili și implementa politici de eradicare a sărăciei și dezvoltare durabilă."
+          target_17_16:
+            title: "Consolidarea parteneriatului global pentru dezvoltare durabilă, completată de parteneriate cu mai multe părți interesate care mobilizează și împărtășesc cunoștințe, expertiză, tehnologie și resurse financiare, pentru a sprijini realizarea obiectivelor de dezvoltare durabilă în toate țările, în special în țările în curs de dezvoltare."
+          target_17_17:
+            title: "Încurajarea și promovarea parteneriatelor eficiente public, public-privat și ale societății civile, pe baza experienței și strategiilor de resurse ale parteneriatelor."
       show:
         read_more: "Citiți mai multe despre %{goal}"
         read_less: "Citiți mai puține despre %{goal}"
