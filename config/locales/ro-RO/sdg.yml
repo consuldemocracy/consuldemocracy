@@ -427,6 +427,12 @@ ro:
             title: "Creșterea semnificativă a exporturilor țărilor în curs de dezvoltare, în special în vederea dublării ponderii țărilor cel mai puțin dezvoltate privind exporturile globale până în 2020."
           target_17_12:
             title: "Realizați punerea în aplicare în timp util a accesului pe piață fără taxe vamale pe o bază durabilă pentru toate țările mai puțin dezvoltate, în conformitate cu deciziile Organizației Mondiale a Comerțului, inclusiv prin asigurarea faptului că regulile preferențiale de origine aplicabile importurilor din țările cel mai puțin dezvoltate sunt transparente și simple, și să contribuie la facilitarea accesului pe piață."
+          target_17_13:
+            title: "Consolidarea stabilității macroeconomice globale, inclusiv prin coordonarea și coerența politicilor."
+          target_17_14:
+            title: "Consolidarea coerenței politicilor pentru dezvoltarea durabilă."
+          target_17_15:
+            title: "Respectați spațiul politic și conducerea fiecărei țări pentru a stabili și implementa politici de eradicare a sărăciei și dezvoltare durabilă."
       show:
         read_more: "Citiți mai multe despre %{goal}"
         read_less: "Citiți mai puține despre %{goal}"
