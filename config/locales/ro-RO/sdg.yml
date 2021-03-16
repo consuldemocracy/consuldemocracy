@@ -459,7 +459,9 @@ ro:
           other: "Încă %{count} ținte"
     related_list_selector:
       goal_identifier: "ODD%{code}"
+      goal_list: "Puteți alege unul sau mai multe ODD aliniate cu %{record} dvs."
       help:
+        title: "Ce ODD și ținte sunt aliniate cu %{record}?"
         text: "Pagina de ajutor pentru ODD"
       remove_tag: "Înlătură"
       title: "Obiective de dezvoltare durabilă și Ținte"
