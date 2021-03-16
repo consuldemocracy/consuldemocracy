@@ -2,7 +2,7 @@
 	.ocultar{
 		display:none;
 	}
-	.click:hover{
+	.click .lead:hover{
 		cursor:pointer;
 	}
 	.click .lead{
@@ -178,7 +178,7 @@
   </div>
 </div>
 <script>
-	$( ".click" ).click(function() {
+	$( ".click .lead" ).click(function() {
 		  
 		  if($(this).find(".fa-plus").length){
 			$(this).find(".ocultar").slideDown();
