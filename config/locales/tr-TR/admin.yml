@@ -74,6 +74,7 @@ tr:
         help: "Katılımcı bütçeler, vatandaşların teklif vermesine ve bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesine olanak tanımakla beraber, tekliflerin kurum tarafından izlenmesine ve titiz bir şekilde değerlendirilmesine de olanak tanır."
         budget_investments: Projeleri yönetme
         table_completed: Tamamlandı
+        table_duration: "Süreç"
         table_name: Ad
         table_phase: Aşama
         edit_groups: Başlıklar gruplarını düzenle
@@ -88,6 +89,8 @@ tr:
         title: Katılımcı bütçeyi düzenle
         delete: Bütçeyi sil
         phase: Aşama
+        phases_caption: "Aşamalar"
+        duration: "Süreç"
         enabled: Etkinleştirildi
         actions: Aksiyon
         edit_phase: Aşama düzenleme
@@ -166,7 +169,10 @@ tr:
     budget_phases:
       edit:
         description_help_text: Aşama etkinken bu metin başlıkta görünecektir
+        duration: "Aşama süresi"
+        duration_description: "Bu aşamanın aktif olacağı süre."
         enabled_help_text: Bu aşama, bütçe'nin aşamaları zaman çizelgesinde herkese açık olacak, başka herhangi bir amaç için aktif olduğu kadar aktif olacak
+        name_help_text: "Bu, bu aşama etkin olduğunda kullanıcıların başlıkta okuyacağı başlıktır."
         save_changes: Değişiklikleri kaydet
       index:
         help: "Katılımcı bütçelerin farklı aşamaları vardır. Burada, aşamaları etkinleştirip devre dışı bırakabilir ve her bir aşamayı özelleştirebilirsiniz."
