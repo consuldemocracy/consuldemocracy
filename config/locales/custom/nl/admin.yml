@@ -270,6 +270,8 @@ nl:
       answers:
         images:
           add_image: "Afbeelding toevoegen"
+      flash:
+        destroy: "Peiling succesvol verwijderd."
     hidden_comments:
       index:
         filters:

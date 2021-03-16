@@ -1154,6 +1154,8 @@ es:
           documents_list: Lista de documentos
           document_title: Título
           document_actions: Acciones
+      flash:
+        destroy: "Pregunta eliminada correctamente"
     answers:
       new:
         title: Nueva respuesta

@@ -1155,6 +1155,8 @@ en:
           documents_list: Documents list
           document_title: Title
           document_actions: Actions
+      flash:
+        destroy: "Question destroyed succesfully"
     answers:
       new:
         title: New answer
