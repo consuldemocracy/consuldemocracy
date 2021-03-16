@@ -463,10 +463,13 @@ ro:
       help:
         title: "Ce ODD și ținte sunt aliniate cu %{record}?"
         text: "Pagina de ajutor pentru ODD"
+      hint: Puteți introduce codul unui anumit obiectiv/țintă sau un text pentru căutare. Pentru mai multe informații, accesați %{link}.
+      placeholder: "Scrieți codul un scop sau unei țintă sau o descriere"
       remove_tag: "Înlătură"
       title: "Obiective de dezvoltare durabilă și Ținte"
     targets:
       filter:
+        link: "Vedeți toate %{resources} legate de %{code} vizat"
         more:
           one: "Încă un obiectiv"
           few: "Încă %{count} obiective"
