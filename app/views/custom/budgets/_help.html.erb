@@ -178,16 +178,16 @@
   </div>
 </div>
 <script>
-	$( ".click .lead" ).click(function() {
+	$( ".lead").click(function() {
 		  
-		  if($(this).prev().find(".fa-plus").length){
-			$(this).prev().find(".ocultar").slideDown();
-			$(this).prev().find(".fa-plus").removeClass("fa-plus");
-			$(this).prev().find(".fa").addClass("fa-minus");
+		  if($(this).parent().find(".fa-plus").length){
+			$(this).parent().find(".ocultar").slideDown();
+			$(this).parent().find(".fa-plus").removeClass("fa-plus");
+			$(this).parent().find(".fa").addClass("fa-minus");
 		  }else{			
-			$(this).prev().find(".ocultar").slideUp();
-			$(this).prev().find(".fa-minus").removeClass("fa-minus");
-			$(this).prev().find(".fa").addClass("fa-plus");
+			$(this).parent().find(".ocultar").slideUp();
+			$(this).parent().find(".fa-minus").removeClass("fa-minus");
+			$(this).parent().find(".fa").addClass("fa-plus");
 		  }
 		 
 		});
