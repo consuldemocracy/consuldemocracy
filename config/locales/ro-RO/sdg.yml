@@ -437,11 +437,18 @@ ro:
             title: "Consolidarea parteneriatului global pentru dezvoltare durabilă, completată de parteneriate cu mai multe părți interesate care mobilizează și împărtășesc cunoștințe, expertiză, tehnologie și resurse financiare, pentru a sprijini realizarea obiectivelor de dezvoltare durabilă în toate țările, în special în țările în curs de dezvoltare."
           target_17_17:
             title: "Încurajarea și promovarea parteneriatelor eficiente public, public-privat și ale societății civile, pe baza experienței și strategiilor de resurse ale parteneriatelor."
+          target_17_18:
+            title: "Până în 2020, sporiți sprijinul pentru consolidarea capacităților țărilor în curs de dezvoltare, inclusiv pentru țările cel mai puțin dezvoltate și micile state insulare în curs de dezvoltare, pentru a crește în mod semnificativ disponibilitatea datelor de înaltă calitate, în timp util și fiabil, indiferent de venituri, sex, vârstă, rasă, etnie, dizabilități, localizarea geografică și alte caracteristici relevante în contextele naționale."
+          target_17_19:
+            title: "Până în 2030, construiți pe inițiativele existente pentru a dezvolta măsurători ale progresului în dezvoltarea durabilă care să completeze produsul intern brut și să sprijine consolidarea capacității statistice în țările în curs de dezvoltare."
+      help:
+        title: "Ajutor în Obiectivele de Dezvoltare Durabilă"
       show:
         read_more: "Citiți mai multe despre %{goal}"
         read_less: "Citiți mai puține despre %{goal}"
         targets:
           no_local_targets: Acest obiectiv nu are ținte locale
+      title: "Obiective de Dezvoltare Durabilă"
       filter:
         heading: "Filtre ale ODD"
         link: "Vezi toate %{resources} legate de obiectivul %{code}"
