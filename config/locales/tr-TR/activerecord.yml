@@ -227,6 +227,7 @@ tr:
         ends_at: "Bitiş tarihi"
         starts_at: "Başlangıç tarihi"
       budget/phase/translation:
+        name: "İsim"
         description: "Açıklama"
         summary: "Özet"
       comment:
