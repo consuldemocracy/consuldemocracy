@@ -180,14 +180,14 @@
 <script>
 	$( ".click .lead" ).click(function() {
 		  
-		  if($(this).find(".fa-plus").length){
-			$(this).find(".ocultar").slideDown();
-			$(this).find(".fa-plus").removeClass("fa-plus");
-			$(this).find(".fa").addClass("fa-minus");
+		  if($(this).prev().find(".fa-plus").length){
+			$(this).prev().find(".ocultar").slideDown();
+			$(this).prev().find(".fa-plus").removeClass("fa-plus");
+			$(this).prev().find(".fa").addClass("fa-minus");
 		  }else{			
-			$(this).find(".ocultar").slideUp();
-			$(this).find(".fa-minus").removeClass("fa-minus");
-			$(this).find(".fa").addClass("fa-plus");
+			$(this).prev().find(".ocultar").slideUp();
+			$(this).prev().find(".fa-minus").removeClass("fa-minus");
+			$(this).prev().find(".fa").addClass("fa-plus");
 		  }
 		 
 		});
