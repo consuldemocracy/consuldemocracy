@@ -45,9 +45,6 @@ cs:
         help: Nápověda pro paticipativní rozpočty
       all_phases: Fáze participativního rozpočtu
       map: Lokalizace návrhů pro participativní rozpočet
-      investment_proyects: Seznam všech investičních projektů
-      unfeasible_investment_proyects: Seznam všech nerealizovatelných investičních projektů
-      not_selected_investment_proyects: Seznam všech nerealizovatelných investičních projektů odmítnutých pro hlasování
       finished_budgets: Ukončené participativní rozpočty
       see_results: Zobrazit výsledky
       section_footer:
@@ -82,9 +79,6 @@ cs:
           verified_only: "Pro vytvoření nové položky participativního rozpočtu %{verify}."
           create: "Přidat investiční projekt"
           not_logged_in: "Pro vytvoření nové položky participativního rozpočtu musíte %{sign_in} nebo%{sign_up}."
-          by_feasibility: Podle proveditelnosti
-          feasible: Proveditelné projekty
-          unfeasible: Neproveditelné projekty
         orders:
           random: náhodné pořadí
           confidence_score: nejlépe hodnocené
