@@ -54,9 +54,6 @@ it:
         help: Aiuto con i bilanci partecipativi
       all_phases: Fasi dell'investimento di bilancio
       map: Proposte di investimenti di bilancio geograficamente localizzate
-      investment_proyects: Elenco di tutti i progetti di investimento
-      unfeasible_investment_proyects: Elenco di tutti i progetti di investimento irrealizzabili
-      not_selected_investment_proyects: Elenco di tutti i progetti di investimento non selezionati per la fase di voto finale
       finished_budgets: Bilanci partecipativi conclusi
       see_results: Vedi risultati
       section_footer:
@@ -97,9 +94,6 @@ it:
           verified_only: "Per creare un nuovo budget d'investimento %{verify}."
           create: "Crea un investimento di bilancio"
           not_logged_in: "Per creare un nuovo investimento di bilancio è necessario %{sign_in} o %{sign_up}."
-          by_feasibility: Per fattibilità
-          feasible: Progetti realizzabili
-          unfeasible: Progetti non realizzabili
         orders:
           random: casuale
           confidence_score: più apprezzati
