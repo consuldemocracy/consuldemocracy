@@ -36,9 +36,6 @@ es-PE:
         title: Presupuestos participativos
       all_phases: Fases de los presupuestos participativos
       map: Proyectos localizables geográficamente
-      investment_proyects: Ver lista completa de proyectos de inversión
-      unfeasible_investment_proyects: Ver lista de proyectos de inversión inviables
-      not_selected_investment_proyects: Ver lista de proyectos de inversión no seleccionados para la votación final
       finished_budgets: Presupuestos participativos terminados
       see_results: Ver resultados
       milestones: Seguimiento
@@ -67,9 +64,6 @@ es-PE:
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
           create: "Crear nuevo proyecto"
           not_logged_in: "Para crear una nueva propuesta de inversión debes %{sign_in} o %{sign_up}."
-          by_feasibility: Por viabilidad
-          feasible: Ver los proyectos viables
-          unfeasible: Ver los proyectos inviables
         orders:
           random: Aleatorias
           confidence_score: Mejor valorados
