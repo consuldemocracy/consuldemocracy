@@ -42,9 +42,6 @@ ar:
         help: ساعد في ميزانيات المشاركة
       all_phases: مرحلة الميزانية الاستثمارية
       map: مقتراحات استثمارات الميزانية محددة جغرافيا
-      investment_proyects: قائمة بجميع المشاريع الاستثمارية
-      unfeasible_investment_proyects: قائمة بجميع المشاريع الاستثمارية الغير مجدية
-      not_selected_investment_proyects: قائمة بالمشاريع الاستثمارية الغير محددة للاقرتاح
       finished_budgets: ميزانيات المشاركة النهائية
       see_results: رؤية النتائج
       section_footer:
@@ -78,9 +75,6 @@ ar:
           verified_only: "لانشاء ميزانية استثمار جديدة %{verify}."
           create: "انشاء ميزانية استثمار"
           not_logged_in: "لانشاء ميزانية استثمار جديدة يجب عليك %{sign_in} او %{sign_up}."
-          by_feasibility: حسب الجدوى
-          feasible: مشاريع مجدية
-          unfeasible: مشاريع غير مجدية
         orders:
           random: عشوائي
           confidence_score: اعلى تقييم
