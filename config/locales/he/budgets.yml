@@ -42,9 +42,6 @@ he:
         help: עזרה עם תקציבים השתתפותיים
       all_phases: שלבי השקעות בתקציב
       map: הצעות השקעות התקציב על פי מיקום גאוגרפי
-      investment_proyects: רשימת כל פרויקטי ההשקעה
-      unfeasible_investment_proyects: רשימת כל הפרויקטים אשר אינם ישימים
-      not_selected_investment_proyects: רשימת כל הפרויקטים שלא עברו לשלב ההצבעות
       finished_budgets: תקציבים השתתפותיים אשר הסתיימו
       see_results: ראו תוצאות
       section_footer:
@@ -78,9 +75,6 @@ he:
           verified_only: "ליצירת פרויקט השקעה חדש %{verify}."
           create: "יצירת תקציב להשקעה"
           not_logged_in: "כדי ליצור תקציב השקעה חדש עליך ל- %{sign_in} או ל - %{sign_up}."
-          by_feasibility: על פי ההיתכנות
-          feasible: פרויקטים ברי ביצוע
-          unfeasible: פרויקטים שאינם ברי ביצוע
         orders:
           random: אקראי
           confidence_score: הכי נתמכת
