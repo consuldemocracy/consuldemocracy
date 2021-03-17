@@ -56,9 +56,6 @@ hr:
         help: Pomogni s participativnim budžetima
       all_phases: Investicijkse faze budžeta
       map: Prijedlozi investiranja budžeta prema geografskoj lokaciji
-      investment_proyects: Lista svih investicijskih projekata
-      unfeasible_investment_proyects: Lista svih neizvedivih investicijskih projekata
-      not_selected_investment_proyects: Popis svih investicijskih projekata koji nisu odabrani za glasanje
       finished_budgets: Dovršeni participativni budžeti
       see_results: Pogledaj rezultate
       section_footer:
@@ -100,9 +97,6 @@ hr:
           verified_only: "Kako bi se stvorio nova investcijski budžet %{verify}."
           create: "Stvori investicijski budžet"
           not_logged_in: "%{sign_in} ili %{sign_up} da biste izradili novo proračunsko ulaganje."
-          by_feasibility: Po izvedivosti
-          feasible: Izvedivi projekti
-          unfeasible: Neizvedivi projekti
         orders:
           random: nasumično
           confidence_score: najbolje ocijenjeni
