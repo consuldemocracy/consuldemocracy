@@ -42,9 +42,6 @@ nl:
         help: Hulp bij burgerbegrotingen
       all_phases: Investeringsfases
       map: Investeringen geografisch weergegeven
-      investment_proyects: Lijst van alle begrotingsvoorstellen
-      unfeasible_investment_proyects: Lijst van alle onhaalbare begrotingsvoorstellen
-      not_selected_investment_proyects: Lijst van alle begrotingsvoorstellen niet geschikt voor stemming
       finished_budgets: Afgeronde burgerbegrotingen
       see_results: Bekijk resultaten
       section_footer:
@@ -78,9 +75,6 @@ nl:
           verified_only: "%{verify} je account om een nieuw begrotingsvoorstel te doen."
           create: "Nieuw begrotingsvoorstel maken"
           not_logged_in: "Om een nieuw begrotingsvoorstel te doen moet je %{sign_in} of %{sign_up}."
-          by_feasibility: Op haalbaarheid
-          feasible: Haalbare voorstellen
-          unfeasible: Onhaalbare voorstellen
         orders:
           random: willekeurig
           confidence_score: best gescored
