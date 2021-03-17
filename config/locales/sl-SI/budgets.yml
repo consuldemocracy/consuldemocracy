@@ -40,9 +40,6 @@ sl:
         help: Pomoč s participatornimi proračuni
       all_phases: Faze proračunskih naložb
       map: Predlogi za proračunske naložbe po geografski lokaciji
-      investment_proyects: Seznam vseh investicijskih projektov
-      unfeasible_investment_proyects: Seznam vseh neizvedljivih projektov
-      not_selected_investment_proyects: Seznam vseh investicijskih projektov za glasovanje
       finished_budgets: Končani participatorni proračuni
       see_results: Poglej rezultate
       section_footer:
@@ -75,9 +72,6 @@ sl:
           verified_only: "Za ustvarjanje nove proračunske naložbe %{verify}."
           create: "Dodaj svoj predlog!"
           not_logged_in: "Za ustvarjanje nove proračunske naložbe se moraš %{sign_in} ali %{sign_up}."
-          by_feasibility: Po izvedljivosti
-          feasible: Izvedljivi projekti
-          unfeasible: Neizvedljivi projekti
         orders:
           random: naključno
           confidence_score: najbolje ocenjeni
