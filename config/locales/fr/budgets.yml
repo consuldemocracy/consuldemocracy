@@ -41,9 +41,6 @@ fr:
         help: Aide sur les budgets participatifs
       all_phases: Phases de l’investissement budgétaire
       map: Propositions d'investissement localisés
-      investment_proyects: Liste des projets d’investissement
-      unfeasible_investment_proyects: Liste des projets d'investissement irréalisables
-      not_selected_investment_proyects: Liste des projets d'investissement non sélectionnés pour le vote
       finished_budgets: Budgets participatifs terminés
       see_results: Voir les résultats
       section_footer:
@@ -76,9 +73,6 @@ fr:
           verified_only: "Pour créer une proposition d'investissement %{verify}."
           create: "Créer un nouveau projet"
           not_logged_in: "Pour créer une proposition d'investissement, vous devez vous %{sign_in} ou %{sign_up}."
-          by_feasibility: Par faisabilité
-          feasible: Projets faisables
-          unfeasible: Projets infaisables
         orders:
           random: aléatoire
           confidence_score: la plus votée
