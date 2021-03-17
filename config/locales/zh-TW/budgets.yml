@@ -40,9 +40,6 @@ zh-TW:
         help: 參與性預算的説明
       all_phases: 預算投資階段
       map: 預算投資之建議的地理位置
-      investment_proyects: 所有投資項目清單
-      unfeasible_investment_proyects: 所有不可行的投資項目清單
-      not_selected_investment_proyects: 未被選入投票階段的所有投資項目清單
       finished_budgets: 已完成的參與性預算
       see_results: 查看結果
       section_footer:
@@ -76,9 +73,6 @@ zh-TW:
           verified_only: "創建新的預算投資 %{verify}。"
           create: "創建預算投資"
           not_logged_in: "要創建新的預算投資, 您必須 %{sign_in} 或 %{sign_up}。"
-          by_feasibility: 通過可行性
-          feasible: 可行項目
-          unfeasible: 不可行項目
         orders:
           random: 隨機
           confidence_score: 最高評分
