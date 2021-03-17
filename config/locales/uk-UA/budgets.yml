@@ -74,9 +74,6 @@ uk-UA:
         help: Допомога щодо бюджетів участі
       all_phases: Етапи бюджетної інвестиції
       map: Пропозиції щодо бюджетних інвестицій, розташовані географічно
-      investment_proyects: Перелік усіх інвестиційних проєктів
-      unfeasible_investment_proyects: Перелік усіх недоцільних інвестиційних проєктів
-      not_selected_investment_proyects: Перелік усіх інвестиційних проєктів, не відібраних для голосування
       finished_budgets: Готові бюджети участі
       see_results: Переглянути результати
       section_footer:
@@ -131,9 +128,6 @@ uk-UA:
           verified_only: "Для створення нової бюджетної інвестиції %{verify}."
           create: "Створити бюджетну інвестицію"
           not_logged_in: "Щоб створити нову бюджетну інвестицію, потрібно %{sign_in} або %{sign_up}."
-          by_feasibility: За доцільністю
-          feasible: Доцільні проєкти
-          unfeasible: Недоцільні проєкти
         orders:
           random: випадково
           confidence_score: найвищий рейтинг
