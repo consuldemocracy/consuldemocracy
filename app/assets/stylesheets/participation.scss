@@ -1321,58 +1321,6 @@
 .ballot-list {
   list-style: none;
   margin-left: 0;
-
-  li {
-    background: #f9f9f9;
-    line-height: $line-height;
-    margin-bottom: $line-height / 4;
-    padding: $line-height $line-height / 2;
-    position: relative;
-
-    a {
-      color: $text;
-    }
-
-    span {
-      display: block;
-      font-style: italic;
-    }
-
-    .remove-investment-project {
-      display: block;
-      height: 0;
-
-      .icon-x {
-        color: #9f9f9f;
-        font-size: rem-calc(24);
-        line-height: $line-height / 2;
-        position: absolute;
-        right: 6px;
-        text-decoration: none;
-        top: 6px;
-
-        @include breakpoint(medium) {
-          font-size: $base-font-size;
-        }
-      }
-    }
-
-    &:hover {
-      background: $budget;
-      color: #fff;
-
-      a,
-      span {
-        color: #fff;
-        outline: 0;
-        text-decoration: none;
-      }
-
-      .remove-investment-project .icon-x {
-        color: #fff;
-      }
-    }
-  }
 }
 
 .select-district a {

@@ -59,11 +59,10 @@
 
   <ul class="ballot-list">
     <% if @heading %>
-      <% @ballot.investments.by_heading(@heading.id).each do |investment| %>
-        <%= render "budgets/ballot/investment_for_sidebar",
-                    investment: investment,
-                    investment_ids: @investment_ids %>
-      <% end %>
+      <%= render Budgets::Ballot::InvestmentForSidebarComponent.with_collection(
+        @ballot.investments.by_heading(@heading.id),
+        investment_ids: @investment_ids
+      ) %>
     <% end %>
   </ul>
 
