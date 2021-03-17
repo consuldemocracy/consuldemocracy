@@ -64,9 +64,6 @@ tr:
       prev_phase: Önceki aşama
       current_phase: Mevcut aşama
       map: Bölgelere göre bütçe yatırım önerileri
-      investment_proyects: Yatırım projelerinin tam listesi
-      unfeasible_investment_proyects: Uygulanabilir olmayan yatırım projelerinin tam listesi
-      not_selected_investment_proyects: Oylama için seçilmeyen yatırım projelerinin tam listesi
       finished_budgets: Tamamlanmış katılımcı bütçeler
       see_results: Sonuçları göster
       section_footer:
@@ -115,9 +112,6 @@ tr:
           verified_only: "Yeni bir bütçe yatırımı oluşturmak için %{verify}."
           create: "Bütçe yatırımı oluşturun"
           not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in} ya da %{sign_up}."
-          by_feasibility: Uygulanabilirlik kriterine göre
-          feasible: Uygulanabilir projeler
-          unfeasible: Uygulanabilir olmayan projeler
         orders:
           random: gelişi güzel
           confidence_score: en yüksek puanlı
