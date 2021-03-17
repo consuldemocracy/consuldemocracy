@@ -66,9 +66,6 @@ bg:
         help: Помощ при бюджети с участие
       all_phases: Фази на бюджетните инвестиции
       map: Предложения за бюджетни инвестиции, разположени географски
-      investment_proyects: Списък на всички инвестиционни проекти
-      unfeasible_investment_proyects: Списък на всички неизпълними инвестиционни проекти
-      not_selected_investment_proyects: Списък на всички инвестиционни проекти, които не са избрани за гласуване
       finished_budgets: Приключили бюджети с участие
       see_results: Вижте резултатите
       section_footer:
@@ -117,9 +114,6 @@ bg:
           verified_only: "За създаване на нова бюджетна инвестиция %{verify}."
           create: "Създайте бюджетна инвестиция"
           not_logged_in: "За да създадете нова бюджетна инвестиция, трябва да %{sign_in} или %{sign_up}."
-          by_feasibility: По изпълнимост
-          feasible: Изпълними проекти
-          unfeasible: Неизпълними проекти
         orders:
           random: случаен
           confidence_score: най-високо оценени
