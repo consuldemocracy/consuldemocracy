@@ -66,9 +66,6 @@ pt-BR:
         help: Ajuda com orçamentos participativos
       all_phases: Fases do investimento orçamental
       map: Propostas de investimentos orçamentários localizadas geograficamente
-      investment_proyects: Lista de todos os projetos de investimento
-      unfeasible_investment_proyects: Lista de todos os projetos de investimento inviáveis
-      not_selected_investment_proyects: Lista de todos os projetos de investimento não selecionados para votação
       finished_budgets: Orçamentos participativos concluídos
       see_results: Exibir resultados
       section_footer:
@@ -117,9 +114,6 @@ pt-BR:
           verified_only: "Para criar um novo investimento orçamentário %{verify}."
           create: "Criar um investimento orçamentário"
           not_logged_in: "Para criar um novo investimento orçamentário, você deve %{sign_in} ou %{sign_up}."
-          by_feasibility: Por viabilidade
-          feasible: Projetos viáveis
-          unfeasible: Projetos inviáveis
         orders:
           random: aleatório
           confidence_score: melhor avaliado
