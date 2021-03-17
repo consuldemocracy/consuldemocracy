@@ -40,9 +40,6 @@ zh-CN:
         help: 参与性预算的帮助说明
       all_phases: 预算投资的阶段
       map: 预算投资提议的地理位置
-      investment_proyects: 所有投资项目的列表
-      unfeasible_investment_proyects: 所有不可行投资项目的列表
-      not_selected_investment_proyects: 所有未被选入投票的投资项目的列表
       finished_budgets: 已完成的参与性预算
       see_results: 查看结果
       section_footer:
@@ -76,9 +73,6 @@ zh-CN:
           verified_only: "创建新的预算投资%{verify}。"
           create: "创建预算投资"
           not_logged_in: "要创建新的预算投资，您必须%{sign_in} 或者%{sign_up}。"
-          by_feasibility: 按可行性
-          feasible: 可行的项目
-          unfeasible: 不可行的项目
         orders:
           random: 随机
           confidence_score: 最高评分
