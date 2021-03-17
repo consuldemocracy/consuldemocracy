@@ -94,6 +94,13 @@ sv:
           verified_only: "För att skapa ett nytt budgetförslag måste du %{verify}."
           create: "Skapa budgetförslag"
           not_logged_in: "Om du vill skapa ett nytt budgetförslag behöver du %{sign_in} eller %{sign_up}."
+        filter: "Filtrerar projekt efter"
+        filters:
+          not_unfeasible: "Ej ogenomförbart"
+          selected: "Valda"
+          unfeasible: "Ogenomförbara"
+          unselected: "Ovalda"
+          winners: "Vinnare"
         orders:
           random: slumpvis ordning
           confidence_score: populära
