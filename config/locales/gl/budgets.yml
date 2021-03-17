@@ -44,9 +44,6 @@ gl:
         help: Axuda sobre os orzamentos participativos
       all_phases: Fases dos orzamentos participativos
       map: Proxectos localizables xeograficamente
-      investment_proyects: Listaxe de todos os proxectos de investimento
-      unfeasible_investment_proyects: Ver a relación de proxectos de investimento inviables
-      not_selected_investment_proyects: Ver a listaxe de proxecto de investimento non seleccionadas para a votación final
       finished_budgets: Orzamentos participativos rematados
       see_results: Ver resultados
       section_footer:
@@ -80,9 +77,6 @@ gl:
           verified_only: "Para creares unha nova proposta de investimento %{verify}."
           create: "Crear un proxecto novo"
           not_logged_in: "Para creares unha nova proposta de investimento debes %{sign_in} ou %{sign_up}."
-          by_feasibility: Por viabilidade
-          feasible: Ver os proxectos viables
-          unfeasible: Ver os proxectos inviables
         orders:
           random: aleatorias
           confidence_score: Máis apoiados
