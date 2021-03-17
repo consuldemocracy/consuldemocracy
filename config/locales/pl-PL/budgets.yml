@@ -41,9 +41,6 @@ pl:
         help: Pomoc z budżetem partycypacyjnym
       all_phases: Fazy inwestycji budżetowych
       map: Propozycje inwestycji budżetowych zlokalizowane geograficznie
-      investment_proyects: Lista wszystkich projektów inwestycyjnych
-      unfeasible_investment_proyects: Lista wszystkich niewykonalnych projektów inwestycyjnych
-      not_selected_investment_proyects: Lista wszystkich projektów inwestycyjnych nie wybranych do głosowania
       finished_budgets: Ukończone budżety partycypacyjne
       see_results: Zobacz wyniki
       section_footer:
@@ -77,9 +74,6 @@ pl:
           verified_only: "By stworzyć nową inwestycję budżetową %{verify}."
           create: "Utwórz inwestycję budżetową"
           not_logged_in: "By stworzyć nową inwestycję budżetową musisz %{sign_in} lub %{sign_up}."
-          by_feasibility: Według wykonalności
-          feasible: Projekty uznane za możliwe do realizacji
-          unfeasible: Projekty uznane za niemożliwe do realizacji
         orders:
           random: losowe
           confidence_score: najwyżej oceniane
