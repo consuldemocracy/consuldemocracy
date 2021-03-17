@@ -38,9 +38,6 @@ fa:
         help: کمک در مورد بودجه مشارکتی
       all_phases: مراحل بودجه سرمایه گذاری
       map: طرح های سرمایه گذاری بودجه جغرافیایی
-      investment_proyects: لیست تمام پروژه های سرمایه گذاری
-      unfeasible_investment_proyects: لیست پروژه های سرمایه گذاری غیرقابل پیش بینی
-      not_selected_investment_proyects: فهرست همه پروژه های سرمایه گذاری که برای رای گیری انتخاب نشده اند
       finished_budgets: بودجه مشارکتی به پایان رسید
       see_results: مشاهده نتایج
       section_footer:
@@ -73,9 +70,6 @@ fa:
           verified_only: "برای ایجاد یک سرمایه گذاری جدید بودجه%{verify}"
           create: "ایجاد بودجه سرمایه گذاری \n"
           not_logged_in: "برای ایجاد یک سرمایه گذاری جدید بودجه باید%{sign_in} یا %{sign_up} کنید."
-          by_feasibility: "امکان پذیری\n"
-          feasible: پروژه های قابل اجرا
-          unfeasible: پروژه های غیرقابل اجرا
         orders:
           random: "تصادفی\n"
           confidence_score: بالاترین امتیاز
