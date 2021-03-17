@@ -40,9 +40,6 @@ sq:
         help: Ndihmoni me buxhetet pjesëmarrëse
       all_phases: Fazat e investimeve buxhetore
       map: Propozimet e investimeve buxhetore të vendosura gjeografikisht
-      investment_proyects: Lista e të gjitha projekteve të investimeve 
-      unfeasible_investment_proyects: Lista e të gjitha projekteve të investimeve të papranueshme
-      not_selected_investment_proyects: Lista e të gjitha projekteve të investimeve të pa zgjedhur për votim
       finished_budgets: Përfunduan buxhetet pjesëmarrëse.
       see_results: Shiko rezultatet
       section_footer:
@@ -76,9 +73,6 @@ sq:
           verified_only: "Për të krijuar një investim të ri buxhetor %{verify}"
           create: "Krijo një investim buxhetor"
           not_logged_in: "Për të krijuar një investim të ri buxhetor ju duhet %{sign_in} ose %{sign_up}."
-          by_feasibility: Fizibilitetit
-          feasible: Projektet e realizueshme
-          unfeasible: Projektet e parealizueshme
         orders:
           random: "\ni rastësishëm\n"
           confidence_score: më të vlerësuarat
