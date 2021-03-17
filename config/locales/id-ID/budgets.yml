@@ -42,9 +42,6 @@ id:
         help: Membantu dengan anggaran partisipatif
       all_phases: Anggaran fase investasi
       map: Anggaran investasi' proposal yang terletak secara geografis
-      investment_proyects: Daftar semua proyek-proyek investasi
-      unfeasible_investment_proyects: Daftar semua proyek-proyek investasi tidak layak
-      not_selected_investment_proyects: Daftar semua proyek-proyek investasi tidak dipilih untuk pemungutan suara
       finished_budgets: Selesai partisipatif anggaran
       see_results: Lihat hasil
       section_footer:
@@ -78,9 +75,6 @@ id:
           verified_only: "Untuk membuat anggaran baru investasi %{verify}."
           create: "Buat investasi anggaran"
           not_logged_in: "Untuk membuat sebuah anggaran investasi baru anda harus %{sign_in} atau %{sign_up}."
-          by_feasibility: Oleh kelayakan
-          feasible: Proyek yang layak
-          unfeasible: Proyek tidak layak
         orders:
           random: acak
           confidence_score: nilai tertinggi
