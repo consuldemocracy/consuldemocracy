@@ -56,9 +56,6 @@ sv:
       prev_phase: Föregående fas
       current_phase: Nuvarande fas
       map: Geografiskt baserade budgetförslag
-      investment_proyects: Lista över budgetförslag
-      unfeasible_investment_proyects: Lista över ej genomförbara budgetförslag
-      not_selected_investment_proyects: Lista över budgetförslag som inte gått vidare till omröstning
       finished_budgets: Avslutade medborgarbudgetar
       see_results: Visa resultat
       section_footer:
@@ -97,9 +94,6 @@ sv:
           verified_only: "För att skapa ett nytt budgetförslag måste du %{verify}."
           create: "Skapa budgetförslag"
           not_logged_in: "Om du vill skapa ett nytt budgetförslag behöver du %{sign_in} eller %{sign_up}."
-          by_feasibility: Efter genomförbarhet
-          feasible: Genomförbara projekt
-          unfeasible: Ej genomförbara projekt
         orders:
           random: slumpvis ordning
           confidence_score: populära
