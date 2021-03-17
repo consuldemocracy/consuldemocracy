@@ -1,8 +1,4 @@
 module BudgetsHelper
-  def show_links_to_budget_investments(budget)
-    ["balloting", "reviewing_ballots", "finished"].include? budget.phase
-  end
-
   def budget_voting_styles_select_options
     Budget::VOTING_STYLES.map do |style|
       [Budget.human_attribute_name("voting_style_#{style}"), style]

@@ -1,12 +1,13 @@
 class BudgetsController < ApplicationController
   include FeatureFlags
   include BudgetsHelper
+  include InvestmentFilters
   feature_flag :budgets
 
   before_action :load_budget, only: :show
   load_and_authorize_resource
-  before_action :set_default_budget_filter, only: :show
-  has_filters %w[not_unfeasible feasible unfeasible unselected selected winners], only: :show
+  before_action :set_default_investment_filter, only: :show
+  has_filters investment_filters, only: :show
 
   respond_to :html, :js
 
