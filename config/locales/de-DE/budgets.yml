@@ -69,9 +69,6 @@ de:
       prev_phase: Vorherige Phase
       current_phase: Aktuelle Phase
       map: Ausgabenvorschläge geografisch geordnet
-      investment_proyects: Liste aller Ausgabenvorschläge
-      unfeasible_investment_proyects: Liste aller nicht durchführbaren Ausgabenvorschläge
-      not_selected_investment_proyects: Liste aller Ausgabenvorschläge, die nicht für die Abstimmung ausgewählt wurden
       finished_budgets: Abgeschlossene Bürgerhaushalte
       see_results: Ergebnisse anzeigen
       section_footer:
@@ -120,9 +117,6 @@ de:
           verified_only: "Um ein neuen Ausgabenvorschlag zu erstellen %{verify}."
           create: "Eine Budgetinvestitionen erstellen"
           not_logged_in: "Um einen neuen Ausgabenvorschlag erstellen zu können, müssen Sie %{sign_in} oder %{sign_up}."
-          by_feasibility: Nach Durchführbarkeit
-          feasible: Durchführbare Projekte
-          unfeasible: Nicht durchführbare Projekte
         orders:
           random: zufällig
           confidence_score: am besten bewertet
