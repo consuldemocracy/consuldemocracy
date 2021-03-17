@@ -54,9 +54,6 @@ ast:
           zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.
           verified_only: "Pa crear una nueva propuesta d'inversión %{verify}."
           not_logged_in: "Pa crear una nueva propuesta d'inversión debes %{sign_in} o %{sign_up}."
-          by_feasibility: Por viabilidá
-          feasible: Ver los proyeutos vidables
-          unfeasible: Ver los proyeutos invidables
         orders:
           random: aleatories
           confidence_score: meyor valoraes
