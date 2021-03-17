@@ -73,9 +73,6 @@ ro:
       prev_phase: Etapa anterioară
       current_phase: Etapa curentă
       map: Propunerile investițiilor bugetare situate geografic
-      investment_proyects: Lista tuturor proiectelor de investiții
-      unfeasible_investment_proyects: Lista tuturor proiectelor de investiții imposibile
-      not_selected_investment_proyects: Lista tuturor proiectelor de investiții care nu sunt selectate pentru votare
       finished_budgets: Bugete participative terminate
       see_results: Vezi rezultatele
       section_footer:
@@ -127,9 +124,6 @@ ro:
           verified_only: "Pentru a crea o nouă investiție bugetară %{verify}."
           create: "Crează un buget de investiții"
           not_logged_in: "Pentru a crea un nou buget de investiții trebuie să %{sign_in} sau %{sign_up}."
-          by_feasibility: După fezabilitate
-          feasible: Proiecte posibile
-          unfeasible: Proiecte imposibile
         orders:
           random: aleatoriu
           confidence_score: cel mai bine cotat
