@@ -66,9 +66,6 @@ ca:
         help: Ajuda amb pressupostos participatius
       all_phases: Fases de la inversió pressupostària
       map: Propostes d’inversions pressupostàries situades geogràficament
-      investment_proyects: Llista de tots els projectes d’inversió
-      unfeasible_investment_proyects: Llista de tots els projectes d'inversió inviables
-      not_selected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a les votacions
       finished_budgets: Pressupostos participatius finalitzats
       see_results: veure resultats
       section_footer:
@@ -117,9 +114,6 @@ ca:
           verified_only: "Per a crear una nova proposta d'inversió %{verify}."
           create: "Crear una inversió pressupostària"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
-          by_feasibility: Per viabilitat
-          feasible: Veure les propostes d'inversió viables
-          unfeasible: Veure les propostes d'inversió inviables
         orders:
           random: Aleatòries
           confidence_score: Més avalades
