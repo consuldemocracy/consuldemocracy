@@ -40,9 +40,6 @@ eu:
         help: Partaidetzazko aurrekontuei buruzko laguntza
       all_phases: Partaidetzazko aurrekontuen faseak
       map: Geografikoki koka daitezken proiektuak
-      investment_proyects: Gastu proiektu zerrenda osoa ikusi
-      unfeasible_investment_proyects: Gastu proiektu bideragarriezin zerrenda ikusi
-      not_selected_investment_proyects: Azken bozketarako aukeratu ez diren gastu proiektu zerrenda ikusi
       finished_budgets: Amaitutako partaidetzazko aurrekontuak
       see_results: Emaitzak ikusi
       section_footer:
@@ -75,9 +72,6 @@ eu:
           verified_only: "%{verify} Gastu proiektu berri bat sortzeko."
           create: "Gastu proiektua sortu"
           not_logged_in: "Gastu proiektu berri bat sortzeko %{sign_in} edo %{sign_up} egin behar duzu."
-          by_feasibility: Bideragarritasunarengaitik
-          feasible: Proiektu bideragarriak ikusi
-          unfeasible: Proiektu bideragarriezinak ikusi
         orders:
           random: Zorizkoak
           confidence_score: Hobekien baloratuta
