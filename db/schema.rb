@@ -1250,6 +1250,7 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at"
     t.index ["hot_score"], name: "index_proposals_on_hot_score"
     t.index ["tsv"], name: "index_proposals_on_tsv", using: :gin
+    #t.string []
   end
 
   create_table "related_content_scores", id: :serial, force: :cascade do |t|

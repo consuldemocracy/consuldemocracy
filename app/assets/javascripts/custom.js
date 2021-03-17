@@ -5,3 +5,7 @@
 //
 //
 
+//El fichero sirve
+/*$(function(){
+    alert('foobar');
+  });*/
