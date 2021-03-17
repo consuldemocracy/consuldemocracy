@@ -54,9 +54,6 @@ da:
         help: Hvad er et deltagerbudget?
       all_phases: Tidslinje
       map: Projekternes geografiske placering
-      investment_proyects: Alle projekter
-      unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
-      not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemning
       finished_budgets: Afsluttede deltagerbudgetter
       see_results: Se resultat
       section_footer:
@@ -94,9 +91,6 @@ da:
           verified_only: "For at oprette et forslag til det aktuelle deltagerbudget %{verify}."
           create: "Opret din projektidé"
           not_logged_in: "For at oprette et forslag skal du %{sign_in} eller %{sign_up}."
-          by_feasibility: Kan gennemføres
-          feasible: Mulige forslag
-          unfeasible: Ikke mulige forslag
         orders:
           random: Alle idéer
           confidence_score: højest rangeret
