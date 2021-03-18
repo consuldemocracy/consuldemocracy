@@ -694,6 +694,7 @@ sv:
       general_placeholder: "Fyll i texten"
       goal_blank: "Välj ett mål"
       search: "Filtrera"
+      target_blank: "Välj ett mål"
       title: "Avancerad sökning"
       to: "Till"
     author_info:
@@ -877,6 +878,8 @@ sv:
         debates: Visa alla debatter
         proposals: Visa alla förslag
         processes: Visa alla processer
+      no_items:
+        debates: Det finns inga debatter just nu
       process_label: Process
       see_process: Visa process
     cards:
