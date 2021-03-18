@@ -122,6 +122,7 @@ sv:
       title: "Sammanfattning"
       comments:
         zero: "Inga kommentarer"
+      download: "Hämta sammanfattning"
       top_comments:
         zero: "Inga kommentarer"
       no_allegation: "Det finns inga kommentarer"
