@@ -1,0 +1,5 @@
+en:
+  layouts:
+    footer:
+      contact_us:
+      copyright: Lorca City Council, %{year}
