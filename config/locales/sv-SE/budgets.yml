@@ -24,6 +24,7 @@ sv:
         not_enough_money: "Du har redan använt hela din budget.<br><small>Kom ihåg att du kan %{change_ballot} när som helst</small>"
         no_ballots_allowed: Urvalsfasen är stängd
         different_heading_assigned: "Du har redan röstat inom ett annat område: %{heading_link}"
+        not_enough_available_votes: "Du har uppnått maximalt antal tillåtna röster"
         change_ballot: ändra dina röster
         casted_offline: Du har redan deltagit offline
     groups:
