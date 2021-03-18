@@ -33,3 +33,10 @@ header {
 .locale-form .locale-switcher {
     background: #890724;
 }
+.admin-sidebar {
+    background: #9C082C;
+    background: -webkit-gradient(linear, left top, left bottom, from(#9C082C), to(#CD0A3A));
+    background: -webkit-linear-gradient(top, #9C082C 0%, #CD0A3A 100%);
+    background: linear-gradient(to bottom, #9C082C 0%, #CD0A3A 100%);
+    border-right: 1px solid #dee0e3;
+}
