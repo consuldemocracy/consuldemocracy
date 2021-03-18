@@ -112,6 +112,13 @@ tr:
           verified_only: "Yeni bir bütçe yatırımı oluşturmak için %{verify}."
           create: "Bütçe yatırımı oluşturun"
           not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in} ya da %{sign_up}."
+        filter: "Projelere göre filtreleme"
+        filters:
+          not_unfeasible: "Uygulanabilir"
+          selected: "Seçilmiş"
+          unfeasible: "Uygulanamaz"
+          unselected: "Seçilemez"
+          winners: "Kazananlar"
         orders:
           random: gelişi güzel
           confidence_score: en yüksek puanlı
