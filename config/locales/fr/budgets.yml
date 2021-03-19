@@ -116,11 +116,6 @@ fr:
       assigned: "Vous avez affecté : "
       available: "Budget disponible : "
     show:
-      group: Groupe
-      unfeasible_title: Investissements irréalisables
-      unfeasible: Voir les investissements irréalisables
-      unselected_title: Propositions non-sélectionnées pour la phase de vote
-      unselected: Voir les propositions non-sélectionnées pour la phase de vote
       see_results: Voir les résultats
     results:
       link: Résultats
