@@ -113,11 +113,6 @@ zh-CN:
       assigned: "您已经分配： "
       available: "可用的预算： "
     show:
-      group: 组
-      unfeasible_title: 不可行的投资
-      unfeasible: 查看不可行的投资
-      unselected_title: 未被选入投票阶段的投资
-      unselected: 查看未被选入投票阶段的投资
       see_results: 查看结果
     results:
       link: 结果
