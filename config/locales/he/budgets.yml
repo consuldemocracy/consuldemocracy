@@ -122,11 +122,6 @@ he:
       assigned: "הקצית: "
       available: "תקציב זמין: "
     show:
-      group: קבוצה
-      unfeasible_title: השקעות שאינן ברות ביצוע
-      unfeasible: צפיה בהשקעות שאינן ברות ביצוע
-      unselected_title: השקעות שלא נבחרו לשלב ההצבעות
-      unselected: ראו את ההשקעות שלא נבחרו לשלב ההצבעות
       see_results: ראו תוצאות
     results:
       link: תוצאות
