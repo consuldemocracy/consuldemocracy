@@ -100,11 +100,6 @@ es-PE:
       assigned: "Has asignado: "
       available: "Presupuesto disponible: "
     show:
-      group: Grupo
-      unfeasible_title: Propuestas inviables
-      unfeasible: Ver las propuestas inviables
-      unselected_title: Propuestas no seleccionadas para la votación final
-      unselected: Ver las propuestas no seleccionadas para la votación final
       see_results: Ver resultados
     results:
       link: Resultados
