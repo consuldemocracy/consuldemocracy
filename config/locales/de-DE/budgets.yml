@@ -171,11 +171,6 @@ de:
         one: "Sie haben <strong>1</strong> Projekte gewählt von <strong>%{limit}</strong>"
         other: "Sie haben <strong>%{count}</strong> Projekte gewählt von <strong>%{limit}</strong>"
     show:
-      group: Gruppe
-      unfeasible_title: Nicht durchführbare Ausgabenvorschläge
-      unfeasible: Nicht durchführbare Ausgabenvorschläge anzeigen
-      unselected_title: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben
-      unselected: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben, anzeigen
       see_results: Ergebnisse anzeigen
     results:
       link: Ergebnisse
