@@ -135,11 +135,6 @@ oc:
       assigned: "Avètz assignat: "
       available: "Budgèt disponible: "
     show:
-      group: Nom d'usatgièr
-      unfeasible_title: de Proposicions inviables
-      unfeasible: Veire las proposicions inviables
-      unselected_title: Proposicions pas seleccionadas per la votacion finala
-      unselected: Veire las proposicions pas seleccionadas per la votacion finala
       see_results: veire de resultats
     results:
       link: de resultats
