@@ -152,11 +152,6 @@ sv:
       assigned: "Du har fördelat: "
       available: "Tillgänglig budget: "
     show:
-      group: Delbudget
-      unfeasible_title: Ej genomförbara budgetförslag
-      unfeasible: Visa ej genomförbara budgetförslag
-      unselected_title: Budgetförslag som inte gått vidare till omröstning
-      unselected: Visa budgetförslag som inte gått vidare till omröstning
       see_results: Visa resultat
     results:
       link: Resultat
