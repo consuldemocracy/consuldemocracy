@@ -121,11 +121,6 @@ pl:
       assigned: "Przypisałeś: "
       available: "Dostępny budżet: "
     show:
-      group: Grupa
-      unfeasible_title: Niewykonalne inwestycje
-      unfeasible: Zobacz niewykonalne inwestycje
-      unselected_title: Inwestycje niewybrane do fazy głosowania
-      unselected: Zobacz inwestycje niewybrane do fazy głosowania
       see_results: Zobacz wyniki
     results:
       link: Wyniki
