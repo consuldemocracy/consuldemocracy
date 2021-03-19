@@ -120,11 +120,6 @@ gl:
       assigned: "Asignaches: "
       available: "Orzamento dispoñible: "
     show:
-      group: Grupo
-      unfeasible_title: Propostas inviables
-      unfeasible: Ver as propostas inviables
-      unselected_title: Propostas non seleccionadas para a votación final
-      unselected: Ver as propostas que non foron seleccionadas para a votación final
       see_results: Ver resultados
     results:
       link: Resultados
