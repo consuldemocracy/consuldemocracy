@@ -422,28 +422,45 @@ describe "Ballots" do
     end
   end
 
-  scenario "Back link after removing an investment from Ballot", :js do
-    create(:budget_investment, :selected, heading: new_york, price: 10, title: "Sully monument")
+  describe "Back link", :js do
+    scenario "after adding and removing an investment from the ballot" do
+      create(:budget_investment, :selected, heading: new_york, price: 10, title: "Sully monument")
 
-    login_as(user)
-    visit budget_investments_path(budget, heading_id: new_york.id)
-    add_to_ballot("Sully monument")
+      login_as(user)
+      visit budget_investments_path(budget, heading_id: new_york.id)
+      add_to_ballot("Sully monument")
 
-    within(".budget-heading") do
-      click_link "Check and confirm my ballot"
+      within(".budget-heading") do
+        click_link "Check and confirm my ballot"
+      end
+
+      expect(page).to have_content("You have voted one investment")
+
+      within(".ballot-list li", text: "Sully monument") do
+        find(".icon-x").click
+      end
+
+      expect(page).to have_content("You have voted 0 investments")
+
+      click_link "Go back"
+
+      expect(page).to have_current_path(budget_investments_path(budget, heading_id: new_york.id))
     end
 
-    expect(page).to have_content("You have voted one investment")
+    scenario "before adding any investments" do
+      login_as(user)
+      visit budget_investments_path(budget, heading_id: new_york.id)
 
-    within(".ballot-list li", text: "Sully monument") do
-      find(".icon-x").click
+      within(".budget-heading") do
+        click_link "Check and confirm my ballot"
+      end
+
+      expect(page).to have_content("You have voted 0 investments")
+
+      click_link "Go back"
+
+      expect(page).to have_current_path(budget_investments_path(budget, heading_id: new_york.id))
     end
-
-    expect(page).to have_content("You have voted 0 investments")
-
-    click_link "Go back"
-
-    expect(page).to have_current_path(budget_investments_path(budget, heading_id: new_york.id))
   end
 
   context "Permissions" do
