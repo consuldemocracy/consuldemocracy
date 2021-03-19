@@ -168,11 +168,6 @@ pt-BR:
         one: "Você selecionou <strong>1</strong> projeto de um total de <strong>%{limit}</strong>"
         other: "Você selecionou <strong>%{count}</strong> projetos de um total de <strong>%{limit}</strong>"
     show:
-      group: Grupo
-      unfeasible_title: Investimentos inviáveis
-      unfeasible: Ver investimentos inviáveis
-      unselected_title: Investimentos não selecionados para a fase de votação
-      unselected: Ver investimentos não selecionados para a fase de votação
       see_results: Exibir resultados
     results:
       link: Resultados
