@@ -84,11 +84,6 @@ ast:
         change_ballot: "Si camudes d'opinión pues borrar los tos votos en %{check_ballot} y volver principiar."
         check_ballot_link: "revisar los mios votos"
     show:
-      group: Grupu
-      unfeasible_title: Propuestes invidables
-      unfeasible: Ver les propuestes invidables
-      unselected_title: Propuestes non escoyíes pa la votación final
-      unselected: Ver les propuestes ensin escoyer pa la votación final
       see_results: Ver resultancies
     results:
       link: Resultancies
