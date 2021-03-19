@@ -134,11 +134,6 @@ it:
       assigned: "Sono stati assegnati: "
       available: "Budget disponibile: "
     show:
-      group: Gruppo
-      unfeasible_title: Progetti di investimento irrealizzabili
-      unfeasible: Mostra gli investimenti irrealizzabili
-      unselected_title: Investimenti che non sono stati selezionati per la fase di voto
-      unselected: Mostra gli investimenti non selezionati per la fase di voto
       see_results: Vedi risultati
     results:
       link: Risultati
