@@ -115,11 +115,6 @@ sq:
       assigned: "Ju keni caktuar:"
       available: "Buxheti në dispozicion:"
     show:
-      group: Grupet
-      unfeasible_title: Investimet e papranueshme
-      unfeasible: Shih Investimet e papranueshme
-      unselected_title: Investimet nuk janë përzgjedhur për fazën e votimit
-      unselected: Shih investimet që nuk janë përzgjedhur për fazën e votimit
       see_results: Shiko rezultatet
     results:
       link: Rezultatet
