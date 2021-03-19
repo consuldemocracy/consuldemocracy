@@ -141,11 +141,6 @@ da:
       assigned: "Du har tildelt: "
       available: "Penge der kan fordeles: "
     show:
-      group: Gruppe
-      unfeasible_title: Projekter, der ikke kan gennemføres
-      unfeasible: Se projekter, der ikke kan gennemføres
-      unselected_title: Projekter, der ikke er udvalgt til afstemning
-      unselected: Se projekter, der ikke er udvalgt til afstemning
       see_results: Se resultat
     results:
       link: Resultater
