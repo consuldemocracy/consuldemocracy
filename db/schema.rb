@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_23_100638) do
+ActiveRecord::Schema.define(version: 2021_03_19_100709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -949,6 +949,14 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
     t.index ["user_id"], name: "index_organizations_on_user_id"
   end
 
+  create_table "participants", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "taggable_type"
+    t.integer "taggable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "poll_answers", id: :serial, force: :cascade do |t|
     t.integer "question_id"
     t.integer "author_id"
@@ -1205,6 +1213,15 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
     t.datetime "confirmed_hide_at"
   end
 
+  create_table "proposal_participants", force: :cascade do |t|
+    t.bigint "proposal_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proposal_id"], name: "index_proposal_participants_on_proposal_id"
+    t.index ["user_id"], name: "index_proposal_participants_on_user_id"
+  end
+
   create_table "proposal_translations", id: :serial, force: :cascade do |t|
     t.integer "proposal_id", null: false
     t.string "locale", null: false
@@ -1250,7 +1267,6 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at"
     t.index ["hot_score"], name: "index_proposals_on_hot_score"
     t.index ["tsv"], name: "index_proposals_on_tsv", using: :gin
-    #t.string []
   end
 
   create_table "related_content_scores", id: :serial, force: :cascade do |t|
@@ -1719,6 +1735,8 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
   add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "polls", "budgets"
+  add_foreign_key "proposal_participants", "proposals"
+  add_foreign_key "proposal_participants", "users"
   add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"

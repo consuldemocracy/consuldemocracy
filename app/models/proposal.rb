@@ -34,6 +34,13 @@ class Proposal < ApplicationRecord
   include Globalizable
   translation_class_delegate :retired_at
 
+  #JHH: Añadimos el has many para los proposal_participants 10/03/2021
+  has_many :proposal_participants
+  has_many :users, through: :proposal_participants
+
+  attr_accessor :participants_id
+  #Fin
+
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :proposals
   belongs_to :geozone
   has_many :comments, as: :commentable, inverse_of: :commentable, dependent: :destroy
@@ -87,6 +94,18 @@ class Proposal < ApplicationRecord
   scope :draft,                    -> { where(published_at: nil) }
   scope :created_by,               ->(author) { where(author: author) }
 
+
+  #JHH: 
+  def save_participants
+    #Convertir en un arreglo alu10,alu20 => [alu10,alu20]
+    participants_array = participants_id.split(",")
+    #Iterarlo
+    participants_array.each do |participant_id|
+      #Crear ProposalParticipants
+      ProposalParticipant.find_or_create_by(proposal: self,user_id: participants_id)
+    end
+  end
+  #Fin
   def url
     proposal_path(self)
   end

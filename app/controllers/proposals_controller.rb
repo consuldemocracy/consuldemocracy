@@ -11,6 +11,9 @@ class ProposalsController < ApplicationController
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
   before_action :proposals_recommendations, only: :index, if: :current_user
+  # JHH: 
+  before_action :load_participants, only: [:new, :edit]
+  #Fin
 
   feature_flag :proposals
 
@@ -34,8 +37,20 @@ class ProposalsController < ApplicationController
     end
   end
 
+  # JHH: 
+  def load_participants
+    
+    @participants = User.all
+  end
+  #Fin
+
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
+
+    # JHH: 
+    @proposal.save_participants
+    #Fin
+
     if @proposal.save
       redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
     else
@@ -98,7 +113,9 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      attributes = [:video_url, :responsible_name, :tag_list, :terms_of_service,
+      # JHH: Aqui se ha añadido el "participants_id" en los parametros permitidos
+      # Nota: Si se usara un arreglo directamente, hay que cambiarlo por "participants_id: []"
+      attributes = [:participants_id, :video_url, :responsible_name, :tag_list, :terms_of_service,
                     :geozone_id, :skip_map, :related_sdg_list,
                     image_attributes: image_attributes,
                     documents_attributes: [:id, :title, :attachment, :cached_attachment,
@@ -107,6 +124,7 @@ class ProposalsController < ApplicationController
       translations_attributes = translation_params(Proposal, except: :retired_explanation)
       params.require(:proposal).permit(attributes, translations_attributes)
     end
+    #Fin
 
     def retired_params
       attributes = [:retired_reason]

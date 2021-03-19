@@ -66,6 +66,21 @@
       </div>
     <% end %>
 
+    <%-# ----------------------Este código añade el formulario para los añadir los users---------------------- -%>
+
+    <div class="small-12 column">
+     <%= f.label :participants_id %>
+     <div class="row">
+     <% @participants.each do |participant| %>
+       <a class="select-participants"><%= participant.email %></a>
+     <% end %>
+     </div>
+     <%= f.text_field :participants_id %>
+    </div>
+
+    <%-# ---------------------- Fin ---------------------- -%>
+
+
     <div class="small-12 column">
       <%= f.label :tag_list, t("proposals.form.tags_label") %>
       <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>

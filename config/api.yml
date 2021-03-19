@@ -43,6 +43,7 @@ Proposal:
     public_author:        User
     votes_for:            [Vote]
     tags:                 [Tag]
+    participant:          [User]
 Comment:
   fields:
     id:                 integer
