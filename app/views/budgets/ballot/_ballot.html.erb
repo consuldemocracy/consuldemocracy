@@ -1,6 +1,6 @@
 <div class="budget-header">
   <div class="row">
-    <%= back_link_to @ballot_referer %>
+    <%= back_link_to session[:ballot_referer] %>
 
     <h1 class="text-center"><%= t("budgets.ballots.show.title") %></h1>
 

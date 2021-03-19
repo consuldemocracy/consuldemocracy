@@ -5,13 +5,6 @@ module BudgetsHelper
     end
   end
 
-  def heading_name_and_price_html(heading, budget)
-    tag.div do
-      concat(heading.name + " ")
-      concat(tag.span(budget.formatted_heading_price(heading)))
-    end
-  end
-
   def csv_params
     csv_params = params.clone.merge(format: :csv)
     csv_params = csv_params.to_unsafe_h.map { |k, v| [k.to_sym, v] }.to_h
@@ -61,18 +54,6 @@ module BudgetsHelper
 
   def budget_published?(budget)
     budget.published? || current_user&.administrator?
-  end
-
-  def current_budget_map_locations
-    return unless current_budget.present?
-
-    if current_budget.publishing_prices_or_later? && current_budget.investments.selected.any?
-      investments = current_budget.investments.selected
-    else
-      investments = current_budget.investments
-    end
-
-    MapLocation.where(investment_id: investments).map(&:json_data)
   end
 
   def display_calculate_winners_button?(budget)
