@@ -116,11 +116,6 @@ id:
       assigned: "Anda telah ditugaskan: "
       available: "Anggaran tersedia: "
     show:
-      group: Kelompok
-      unfeasible_title: Investasi tidak layak
-      unfeasible: Lihat investasi tidak layak
-      unselected_title: Investasi tidak dipilih untuk pemungutan suara tahap
-      unselected: Melihat investasi yang tidak dipilih untuk pemungutan suara tahap
       see_results: Lihat hasil
     results:
       link: Hasil
