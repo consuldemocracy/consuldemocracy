@@ -112,11 +112,6 @@ eu:
       assigned: "Esleitutakoa: "
       available: "Aurrekontu eskuragarria: "
     show:
-      group: Taldea
-      unfeasible_title: Proiektu bideragarriezinak
-      unfeasible: Proiektu bideragarriezinak ikusi
-      unselected_title: Azken bozkaketarako aukeratu ez diran proiektuak
-      unselected: Azken bozkaketarako aukeratu ez diran proiektuak ikusi
       see_results: Emaitzak ikusi
     results:
       link: Emaitzak
