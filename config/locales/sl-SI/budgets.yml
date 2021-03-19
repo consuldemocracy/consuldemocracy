@@ -106,11 +106,6 @@ sl:
       assigned: "Dodelil si: "
       available: "Razpoložljivi proračun: "
     show:
-      group: Skupina
-      unfeasible_title: Neizvedljive investicije
-      unfeasible: Poglej neizvedljive investicije
-      unselected_title: Investicije, ki niso bile izbrane za fazo glasovanja
-      unselected: Poglej investicije, ki niso bile izbrane za fazo glasovanja
       see_results: Poglej rezultate
     results:
       link: Rezultati
