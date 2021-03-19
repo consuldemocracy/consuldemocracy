@@ -152,11 +152,6 @@ ka:
       votes:
         zero: "თქვენ შეარჩეთ <strong>0</strong> პროექტი <strong>%{limit}</strong> პროექტიდან"
     show:
-      group: ჯგუფი
-      unfeasible_title: არაგანხორციელებადი ინვესტიციები
-      unfeasible: არაგანხორციელებადი ინვესტიციების ნახვა
-      unselected_title: ინვესტიციები არ არის არჩეული კენჭისყრის ეტაპისთვის
-      unselected: კენჭისყრის ეტაპისთვის გამოტოვებული ინვესტიციების ნახვა
       see_results: შედეგების ნახვა
     results:
       link: შედეგები
