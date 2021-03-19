@@ -188,11 +188,6 @@ uk-UA:
         many: "Ви вибрали <strong>%{count}</strong> проєктів із <strong>%{limit}</strong>"
         other: "Ви вибрали <strong>%{count}</strong> проєктів із <strong>%{limit}</strong>"
     show:
-      group: Група
-      unfeasible_title: Недоцільні інвестиції
-      unfeasible: Переглянути недоцільні інвестиції
-      unselected_title: Інвестиції, не відібрані для етапу голосування
-      unselected: Бачити інвестиції, не відібрані для фази голосування
       see_results: Переглянути результати
     results:
       link: Результати
