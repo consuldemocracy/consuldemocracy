@@ -168,11 +168,6 @@ ca:
         one: "Ha seleccionat <strong>1</strong> projecte de <strong>%{limit}</strong>"
         other: "Ha seleccionat <strong>%{count}</strong> projectes de <strong>%{limit}</strong>"
     show:
-      group: Grup
-      unfeasible_title: Propostes inviables
-      unfeasible: Veure les propostes inviables
-      unselected_title: Propostes no seleccionades per a la votació final
-      unselected: Veure les propostes no seleccionades per a la votació final
       see_results: veure resultats
     results:
       link: resultats
