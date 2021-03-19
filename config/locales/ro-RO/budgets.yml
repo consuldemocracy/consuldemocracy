@@ -181,11 +181,6 @@ ro:
         few: "Ați selectat <strong>%{count}</strong> proiecte din <strong>%{limit}</strong>"
         other: "Ați selectat <strong>%{count}</strong> proiecte din <strong>%{limit}</strong>"
     show:
-      group: Grup
-      unfeasible_title: Investiții imposibile
-      unfeasible: Vezi investițiile nerealizabile
-      unselected_title: Investiții neselectate pentru etapa de votare
-      unselected: Vezi investițiile neselectate pentru etapa de votare
       see_results: Vezi rezultatele
     results:
       link: Rezultate
