@@ -111,11 +111,6 @@ zh-TW:
       assigned: "您已分配： "
       available: "可用預算： "
     show:
-      group: 組
-      unfeasible_title: 不可行的投資
-      unfeasible: 查看不可行的投資
-      unselected_title: 未被選入投票階段的投資
-      unselected: 查看未被選入投票階段的投資
       see_results: 查看結果
     results:
       link: 結果
