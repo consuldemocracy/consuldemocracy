@@ -118,11 +118,6 @@ nl:
       assigned: "Je hebt toegewezen: "
       available: "Beschikbaar budget: "
     show:
-      group: Groep
-      unfeasible_title: Onhaalbare voorstellen
-      unfeasible: Bekijk de niet haalbare voorstellen
-      unselected_title: Voorstellen die niet geselecteerd zijn voor de stemfase
-      unselected: Bekijk de voorstellen die niet geselecteerd zijn voor de stemfase
       see_results: Bekijk resultaten
     results:
       link: Resultaten
