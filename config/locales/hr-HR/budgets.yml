@@ -149,11 +149,6 @@ hr:
       assigned: "Vi ste pripisali: "
       available: "Dostupan budžet: "
     show:
-      group: Grupa
-      unfeasible_title: Neizvedive investicije
-      unfeasible: Pregledaj neizvedive investicije
-      unselected_title: Investicije koje nisu odabrane za fazu izglasavanja
-      unselected: Pogledaj investicije koje nisu odabrane za fazu izglasavanja
       see_results: Pogledaj rezultate
     results:
       link: Rezultati
