@@ -126,11 +126,6 @@ ar:
       assigned: "لقد قمت بتعيين: "
       available: "الميزانية المتاحة: "
     show:
-      group: مجموعة
-      unfeasible_title: الإستثمارات غير مجدية
-      unfeasible: انظر الى الاستثمارات الغير مجدية
-      unselected_title: الإستثمارات غير محددة لمرحلة الإقتراع
-      unselected: انظر للاستثمارات الغير محددة لمرحلة الاقتراع
       see_results: رؤية النتائج
     results:
       link: النتائج
