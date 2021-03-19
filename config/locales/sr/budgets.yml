@@ -178,11 +178,6 @@ sr:
         few: "Одабрали сте <strong>%{count}</strong> пројекта од <strong>%{limit}</strong>"
         other: "Одабрали сте <strong>%{count}</strong> пројеката од <strong>%{limit}</strong>"
     show:
-      group: Група
-      unfeasible_title: Неизводљиве инвестиције
-      unfeasible: Погледајте неизводљиве инвестиције
-      unselected_title: Инвестиције нису одабране за гласачку фазу
-      unselected: Прегледајте инвестиције које нису одабране за гласачку фазу
       see_results: Види резултате
     results:
       link: Резултати
