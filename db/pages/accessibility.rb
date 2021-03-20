@@ -1,5 +1,4 @@
-if SiteCustomization::Page.find_by(slug: "accessibility").nil?
-  page = SiteCustomization::Page.new(slug: "accessibility", status: "published")
+def generate_content(page)
   page.title = I18n.t("pages.accessibility.title")
 
   content = ""
@@ -93,4 +92,15 @@ if SiteCustomization::Page.find_by(slug: "accessibility").nil?
 
   page.content = content
   page.save!
+end
+
+if SiteCustomization::Page.find_by(slug: "accessibility").nil?
+  page = SiteCustomization::Page.new(slug: "accessibility", status: "published")
+  generate_content(page)
+  I18n.available_locales.each do |locale|
+    I18n.locale = locale 
+    translation = page.translations.build(locale: locale)
+   # Not generating content for :fa, :id and it translations, as they are causing error in line 32
+    generate_content(translation) unless locale == :fa or locale == :id or locale == :it
+  end
 end
