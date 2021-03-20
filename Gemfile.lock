@@ -497,7 +497,7 @@ GEM
       ffi (~> 1.0)
     recipient_interceptor (0.2.0)
       mail
-    redcarpet (3.5.0)
+    redcarpet (3.5.1)
     referer-parser (0.3.0)
     regexp_parser (1.8.0)
     request_store (1.5.0)
@@ -748,7 +748,7 @@ DEPENDENCIES
   rails-assets-leaflet!
   rails-assets-markdown-it (~> 9.0.1)!
   recipient_interceptor (~> 0.2.0)
-  redcarpet (~> 3.5.0)
+  redcarpet (~> 3.5.1)
   responders (~> 3.0.1)
   rinku (~> 2.0.6)
   rollbar (~> 3.0.1)
