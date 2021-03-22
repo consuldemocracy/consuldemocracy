@@ -1831,3 +1831,11 @@ footer a:hover, footer a:active:hover, footer a:focus:hover {
 .subfooter div a:hover {
   color: #163d3e;
 }
+
+footer a{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
