@@ -13,7 +13,11 @@ module Measurable
     def question_max_length
       140
     end
-
+    
+    def description_min_length
+      10
+    end
+    
     def description_max_length
       6000
     end
