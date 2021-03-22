@@ -1855,3 +1855,14 @@ footer a{
     background: #ececec;
   }
 }
+
+.button.warning, .button.warning.disabled, .button.warning[disabled] {
+  background-color: #407374;
+  border: 1px solid #407374;
+  color: #fff;
+}
+.button.warning.disabled:hover, .button.warning[disabled]:hover, .button.warning.disabled:focus, .button.warning[disabled]:focus{
+  border-color: #0c3d5d;
+  color: #0c3d5d;
+  background: #ececec;
+}
