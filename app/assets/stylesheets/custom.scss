@@ -1872,3 +1872,53 @@ footer a{
     margin-bottom: 19px;
   }
 }
+.sdg-goals-index .sdg-goal-list li {
+  width: calc(100% / 10 - 1.5%);
+}
+
+.sdg-goals-index .sdg-goal-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: -1.5% 0 0.5rem -1.5%;
+  margin-left: calc(-1 * Max(4px, 1.5%));
+  margin-top: calc(-1 * Max(4px, 1.5%));
+  width: calc(100% + 1.5%);
+  width: calc(100% + Max(4px, 1.5%));
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  max-width: 75rem;
+  width: 100%;
+}
+
+@media (max-width: 1024px) and (min-width: 768px){
+  .sdg-goals-index .sdg-goal-list li {
+    width: calc(100% / 6 - 1.5%) !important;
+  }
+  .sdg-goals-index .sdg-goal-list {
+    -webkit-box-pack: unset !important;
+    -webkit-justify-content: unset !important;;
+    -ms-flex-pack: unset !important;;
+    justify-content: unset !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .sdg-goals-index .sdg-goal-list li {
+    width: calc(100% / 2 - 1.5%) !important;
+  }
+  .sdg-goals-index .sdg-goal-list {
+    -webkit-box-pack: unset !important;
+    -webkit-justify-content: unset !important;;
+    -ms-flex-pack: unset !important;;
+    justify-content: unset !important;
+  }
+}
