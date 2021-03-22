@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  has_filters %w[proposals debates budget_investments comments follows], only: :show
+  has_filters %w[proposals participant debates budget_investments comments follows], only: :show
 
   load_and_authorize_resource
   helper_method :author?
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     def set_activity_counts
       @activity_counts = ActiveSupport::HashWithIndifferentAccess.new(
                           proposals: Proposal.where(author_id: @user.id).count,
+                          participant: ProposalParticipant.where(user_id: @user.id).count,
                           debates: (Setting["process.debates"] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting["process.budgets"] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count,
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
       set_activity_counts
       case params[:filter]
       when "proposals" then load_proposals
+      when "participant" then load_participant
       when "debates"   then load_debates
       when "budget_investments" then load_budget_investments
       when "comments" then load_comments
@@ -36,6 +38,9 @@ class UsersController < ApplicationController
       if @activity_counts[:proposals] > 0
         load_proposals
         @current_filter = "proposals"
+      elsif @activity_counts[:participant] > 0
+        load_participant
+        @current_filter = "participant"
       elsif @activity_counts[:debates] > 0
         load_debates
         @current_filter = "debates"
@@ -54,6 +59,17 @@ class UsersController < ApplicationController
     def load_proposals
       @proposals = Proposal.created_by(@user).order(created_at: :desc).page(params[:page])
     end
+
+    # JHH: Cargamos ademas las propuestas en las que el usuario es participante
+    #@proposal_part = ProposalParticipant.where(user_id: @user.id)
+    def load_participant
+      @proposals = []
+      @participate = ProposalParticipant.where(user_id: @user.id).order(created_at: :desc).page(params[:page])
+      @participate.each do |part|
+        @proposals << Proposal.where(id: part.proposal_id).order(created_at: :desc).page(params[:page])
+      end
+    end
+    #Fin
 
     def load_debates
       @debates = Debate.where(author_id: @user.id).order(created_at: :desc).page(params[:page])

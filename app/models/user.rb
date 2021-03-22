@@ -14,6 +14,7 @@ class User < ApplicationRecord
   #JHH: Añadimos el has many para los proposal_participants 10/03/2021
   has_many :proposal_participants
   has_many :proposals, through: :proposal_participants
+  #Fin
 
   has_one :administrator
   has_one :moderator

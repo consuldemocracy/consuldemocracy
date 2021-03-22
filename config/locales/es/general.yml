@@ -93,6 +93,7 @@ es:
       debate_title: Título del debate
       tags_instructions: Etiqueta este debate.
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
+      participant_placeholder: "Escribe los id de los participantes que desees separadas por coma (',')"
     index:
       featured_debates: Destacar
       orders:
@@ -341,6 +342,7 @@ es:
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
       tags_label: Etiquetas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
+      participant_placeholder: "Escribe los id de los participantes que desees separadas por coma (',')"
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       map_remove_marker: "Eliminar el marcador"

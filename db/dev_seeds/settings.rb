@@ -14,7 +14,7 @@ section "Creating Settings" do
     "meta_keywords": "citizen participation, open government",
     "meta_title": "CONSUL",
     "org_name": "CONSUL",
-    "proposal_code_prefix": "MAD",
+    "proposal_code_prefix": "INNCONSUL",
     "proposal_notification_minimum_interval_in_days": 0,
     "sdg.process.debates": "true",
     "sdg.process.proposals": "true",

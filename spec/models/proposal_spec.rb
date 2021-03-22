@@ -130,7 +130,7 @@ describe Proposal do
     proposal = create(:proposal)
     expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime("%Y-%m")}-#{proposal.id}"
 
-    Setting["proposal_code_prefix"] = "MAD"
+    Setting["proposal_code_prefix"] = "INNCONSUL"
   end
 
   describe "#retired_explanation" do

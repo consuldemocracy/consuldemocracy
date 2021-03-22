@@ -145,7 +145,7 @@ class Setting < ApplicationRecord
         "max_votes_for_debate_edit": 1000,
         "max_votes_for_proposal_edit": 1000,
         "comments_body_max_length": 1000,
-        "proposal_code_prefix": "CONSUL",
+        "proposal_code_prefix": "INNCONSUL",
         "votes_for_proposal_success": 10000,
         "months_to_archive_proposals": 12,
         # Users with this email domain will automatically be marked as level 1 officials

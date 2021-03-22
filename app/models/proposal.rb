@@ -98,14 +98,18 @@ class Proposal < ApplicationRecord
   #JHH: 
   def save_participants
     #Convertir en un arreglo alu10,alu20 => [alu10,alu20]
+
+    return if participants_id.nil? || participants_id.empty?
+
     participants_array = participants_id.split(",")
     #Iterarlo
-    participants_array.each do |participant_id|
+    participants_array.each do |id_participant|
       #Crear ProposalParticipants
-      ProposalParticipant.find_or_create_by(proposal: self,user_id: participants_id)
+      ProposalParticipant.find_or_create_by(proposal: self,user_id: id_participant)
     end
   end
   #Fin
+
   def url
     proposal_path(self)
   end
