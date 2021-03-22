@@ -1334,8 +1334,9 @@ footer {
       margin-top: 0;
 
       &:hover {
-        background: #000;
-        color: #fff;
+        border-color: #0c3d5d;
+        color: #0c3d5d;
+        background: #ececec;
       }
     }
 
@@ -1666,7 +1667,9 @@ footer {
           display: inline-block;
           padding: 10px 23px 13px 23px;
           &:hover{
-            background: #000;
+            border-color: #0c3d5d;
+            color: #0c3d5d;
+            background: #ececec;
           }
         }
       }
@@ -1838,4 +1841,10 @@ footer a{
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.button.hollow:hover, .button.hollow:focus {
+  border-color: #0c3d5d;
+  color: #0c3d5d;
+  background: #ececec;
 }
