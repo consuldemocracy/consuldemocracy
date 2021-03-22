@@ -26,6 +26,21 @@ describe "Admin custom pages", :admin do
         expect(page).to have_content slug
       end
     end
+
+    scenario "should contain all custom pages translations populated by db:seeds" do
+      paths = { accessibility: "pages.accessibility.title", conditions: "pages.conditions.title",
+                faq: "pages.help.faq.page.title", privacy: "pages.privacy.title",
+                welcome_not_verified: "welcome.welcome.title",
+                welcome_level_two_verified: "welcome.welcome.title",
+                welcome_level_three_verified: "welcome.welcome.title" }
+      locale = :fr
+      I18n.locale = locale
+
+      paths.each do |slug, path|
+        site = SiteCustomization::Page.find_by(slug: slug).translations.find_by(locale: locale)
+        expect(site.title).to eq I18n.t(path)
+      end
+    end
   end
 
   context "Create" do
