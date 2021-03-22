@@ -1848,3 +1848,10 @@ footer a{
   color: #0c3d5d;
   background: #ececec;
 }
+.button.expanded {
+  &:hover{
+    border-color: #0c3d5d;
+    color: #0c3d5d;
+    background: #ececec;
+  }
+}
