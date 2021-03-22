@@ -4,6 +4,10 @@ bg:
     results_enabled: "Показване на резултати"
     stats_enabled: "Показване на статистики"
     advanced_stats_enabled: "Показване на разширени статистики"
+    name: Име
+    email: Електронна поща
+    description: Описание
+    related_sdg_list: Цели и задачи
   activerecord:
     models:
       activity:
@@ -72,6 +76,9 @@ bg:
       proposal:
         one: "Гражданско предложение"
         other: "Граждански предложения"
+      sdg/goal:
+        one: "цел"
+        other: "цели"
       site_customization/page:
         one: Персонализирана страница
         other: Персонализирани страници
