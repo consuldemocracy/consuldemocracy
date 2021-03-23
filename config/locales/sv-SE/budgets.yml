@@ -101,6 +101,11 @@ sv:
             knapsack:
               one: "<strong>Du röstade för ett förslag med en kostnad på %{amount_spent}</strong>"
               other: "<strong>Du röstade för %{count} förslag med en kostnad på %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Du röstade för ett förslag</strong>"
+              other: "<strong>Du röstade för %{count} förslag</strong>"
+          change_vote_info:
+            approval: "Du kan %{link} när som helst fram till slutet av denna fas."
           change_vote_link: "ändra din röst"
           different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
@@ -165,6 +170,10 @@ sv:
     progress_bar:
       assigned: "Du har fördelat: "
       available: "Tillgänglig budget: "
+      votes:
+        zero: "Du har valt <strong>0</strong> projekt av <strong>%{limit}</strong>"
+        one: "Du har valt <strong>1</strong> projekt av <strong>%{limit}</strong>"
+        other: "Du har valt <strong>%{count}</strong> projekt av <strong>%{limit}</strong>"
     show:
       see_results: Visa resultat
     results:
