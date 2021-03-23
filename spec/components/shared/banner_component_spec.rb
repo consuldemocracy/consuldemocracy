@@ -2,9 +2,24 @@ require "rails_helper"
 
 describe Shared::BannerComponent, type: :component do
   it "renders given a banner" do
-    render_inline Shared::BannerComponent.new(create(:banner, title: "Vote now!"))
+    banner = create(:banner,
+                    title: "Vote now!",
+                    description: "Banner description",
+                    target_url:  "http://www.url.com",
+                    post_started_at: (Time.current - 4.days),
+                    post_ended_at:   (Time.current + 10.days),
+                    background_color: "#FF0000",
+                    font_color: "#FFFFFF"
+                   )
+
+    render_inline Shared::BannerComponent.new(banner)
 
     expect(page.find(".banner")).to have_content "Vote now!"
+    expect(page.find(".banner")).to have_content "Banner description"
+    expect(page.find(".banner")[:style]).to eq("background-color:#FF0000;")
+    expect(page.find("h2")[:style]).to eq("color:#FFFFFF;")
+    expect(page.find("h3")[:style]).to eq("color:#FFFFFF;")
+    expect(page).to have_link href: "http://www.url.com"
   end
 
   it "renders given a section" do
