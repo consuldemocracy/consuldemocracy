@@ -35,6 +35,7 @@ sv:
           proposals: Förslag
           budgets: Medborgarbudgetar
           help_page: Hjälpsida
+          sdg: Globala målen
       edit:
         editing: Redigera banner
         form:
@@ -72,6 +73,7 @@ sv:
           all: Alla
           open: Öppna
           finished: Avslutade
+        help: "I en medborgarbudget kan medborgare föreslå och bestämma direkt hur en del av budgeten ska användas, med institutionell övervakning och rigorös utvärdering av förslag."
         budget_investments: Hantera projekt
         table_completed: Färdiga
         table_duration: "Varaktighet"
@@ -144,6 +146,7 @@ sv:
       form:
         create: "Skapa ny grupp"
         edit: "Redigera delbudget"
+        max_votable_headings_info: "Gäller bara för projekturvalsfasen. Under projektomröstningsfasen kan användare bara rösta i ett område per grupp."
         submit: "Spara delbudget"
       index:
         back: "Gå tillbaka till budgetar"
