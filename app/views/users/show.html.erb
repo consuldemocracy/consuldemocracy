@@ -25,7 +25,7 @@
       <% if @user.public_activity || @authorized_current_user %>
         <ul class="menu simple margin-top">
           <% @valid_filters.each do |filter| %>
-            <% if @activity_counts[filter] > 0 %>
+            <% if @activity_counts[filter] > 0%>
               <% if @current_filter == filter %>
                 <li class="is-active">
                   <h2><%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %></h2>

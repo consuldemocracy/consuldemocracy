@@ -837,7 +837,7 @@ es:
         proposals:
           one: 1 Propuesta
           other: "%{count} Propuestas"
-        participant:
+        participants:
           one: 1 Participación
           other: "%{count} Participaciones"
         budget_investments:

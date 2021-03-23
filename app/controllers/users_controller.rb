@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  has_filters %w[proposals participant debates budget_investments comments follows], only: :show
+  has_filters %w[proposals participants debates budget_investments comments follows], only: :show
 
   load_and_authorize_resource
   helper_method :author?
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     def set_activity_counts
       @activity_counts = ActiveSupport::HashWithIndifferentAccess.new(
                           proposals: Proposal.where(author_id: @user.id).count,
-                          participant: ProposalParticipant.where(user_id: @user.id).count,
+                          participants: ProposalParticipant.where(user_id: @user.id).count,
                           debates: (Setting["process.debates"] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting["process.budgets"] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count,
@@ -25,8 +25,8 @@ class UsersController < ApplicationController
       set_activity_counts
       case params[:filter]
       when "proposals" then load_proposals
-      when "participant" then load_participant
-      when "debates"   then load_debates
+      when "participants" then load_participants
+      when "debates" then load_debates
       when "budget_investments" then load_budget_investments
       when "comments" then load_comments
       when "follows" then load_follows
@@ -38,9 +38,9 @@ class UsersController < ApplicationController
       if @activity_counts[:proposals] > 0
         load_proposals
         @current_filter = "proposals"
-      elsif @activity_counts[:participant] > 0
-        load_participant
-        @current_filter = "participant"
+      elsif @activity_counts[:participants] > 0
+        load_participants
+        @current_filter = "participants"
       elsif @activity_counts[:debates] > 0
         load_debates
         @current_filter = "debates"
@@ -62,12 +62,13 @@ class UsersController < ApplicationController
 
     # JHH: Cargamos ademas las propuestas en las que el usuario es participante
     #@proposal_part = ProposalParticipant.where(user_id: @user.id)
-    def load_participant
-      @proposals = []
-      @participate = ProposalParticipant.where(user_id: @user.id).order(created_at: :desc).page(params[:page])
-      @participate.each do |part|
-        @proposals << Proposal.where(id: part.proposal_id).order(created_at: :desc).page(params[:page])
+    def load_participants
+      @participants = []
+      @proposal_participate = ProposalParticipant.where(user_id: @user.id).order(created_at: :desc).page(params[:page])
+      @proposal_participate.each do |part|
+        @participants += Proposal.where(id: part.proposal_id).order(created_at: :desc).page(params[:page])
       end
+      @participants
     end
     #Fin
 
