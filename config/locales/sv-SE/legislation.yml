@@ -142,6 +142,8 @@ sv:
       download: "Hämta sammanfattning"
       top_comments:
         zero: "Inga kommentarer"
+        one: "%{count} kommentar"
+        other: "Toppkommentarerna"
       most_voted_comments: "Mest omröstade kommentarer"
       no_allegation: "Det finns inga kommentarer"
       process_empty: "Den här processen hade inte några deltagandefaser"
