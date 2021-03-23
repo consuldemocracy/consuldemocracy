@@ -82,6 +82,9 @@ sv:
       sdg/local_target:
         one: "lokalt mål"
         other: "lokala mål"
+      sdg/target:
+        one: "delmål"
+        other: "delmål"
       site_customization/page:
         one: Anpassad sida
         other: Anpassade sidor
@@ -151,6 +154,7 @@ sv:
         description_finished: "Beskrivning för när budgeten är avslutad"
         phase: "Fas"
         currency_symbol: "Valuta"
+        voting_style_approval: "Godkännande"
       budget/translation:
         name: "Namn"
       budget/investment:
@@ -213,6 +217,7 @@ sv:
         name: "Område"
         price: "Kostnad"
         population: "Befolkning"
+        max_ballot_lines: "Tillåtna röster"
       budget/heading/translation:
         name: "Områdes namn"
       budget/phase:
@@ -325,6 +330,9 @@ sv:
         target_id: "Mål"
       sdg/local_target/translation:
         description: "Beskrivning"
+      sdg/phase/kind:
+        planning: "Planering"
+        monitoring: "Övervakning"
       sdg/target:
         code: "Kod"
       site_customization/page:
