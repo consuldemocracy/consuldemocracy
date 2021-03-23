@@ -150,6 +150,7 @@ sv:
         submit: "Spara delbudget"
       index:
         back: "Gå tillbaka till budgetar"
+        help: "Grupper används för att organisera områden. När en grupp har skapats och den innehåller områden går det att fastställa i hur många områden som användaren kan rösta i varje grupp."
     budget_headings:
       no_headings: "Det finns inga områden."
       amount:
@@ -658,6 +659,7 @@ sv:
       hidden_users: Dolda användare
       administrators: Administratörer
       managers: Medborgarguider
+      sdg_managers: Globala målen-chefer
       moderators: Moderatorer
       messaging_users: Meddelanden till användare
       newsletters: Nyhetsbrev
@@ -1382,6 +1384,7 @@ sv:
         proposal_notifications: Aviseringar om förslag
         incomplete_verifications: Ofullständiga verifieringar
         polls: Omröstningar
+        sdg: Globala målen
       graph:
         debate_created: Debatter
         visit: Visningar
