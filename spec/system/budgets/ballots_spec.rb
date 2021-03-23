@@ -645,6 +645,10 @@ describe "Ballots" do
         click_button "Save heading"
 
         expect(page).to have_content "Heading updated successfully"
+
+        within "tr", text: "New York" do
+          expect(page).to have_css "td", exact_text: "€10"
+        end
       end
 
       in_browser(:user) do
