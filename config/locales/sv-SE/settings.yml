@@ -130,6 +130,7 @@ sv:
       dashboard:
         notification_emails: "Dashboard för e-postaviseringar"
         notification_emails_description: "Aktivera skickande av dashboard-aviseringar via e-post till förslagslämnare"
+      sdg: Globala målen
     remote_census:
       general:
         endpoint: "Slutpunkt"
