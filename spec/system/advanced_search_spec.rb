@@ -272,8 +272,8 @@ describe "Advanced search", :js do
 
         click_link "Advanced search"
         select "Customized", from: "js-advanced-search-date-min"
-        fill_in "advanced_search_date_min", with: 7.days.ago
-        fill_in "advanced_search_date_max", with: 1.day.ago
+        fill_in "advanced_search_date_min", with: 7.days.ago.strftime("%d/%m/%Y")
+        fill_in "advanced_search_date_max", with: 1.day.ago.strftime("%d/%m/%Y")
         click_button "Filter"
 
         within("#debates") do
@@ -294,7 +294,7 @@ describe "Advanced search", :js do
 
         click_link "Advanced search"
         select "Customized", from: "js-advanced-search-date-min"
-        fill_in "advanced_search_date_min", with: 4000.years.ago
+        fill_in "advanced_search_date_min", with: 4000.years.ago.strftime("%d/%m/%Y")
         fill_in "advanced_search_date_max", with: "wrong date"
         click_button "Filter"
 
