@@ -884,6 +884,7 @@ sv:
       no_items:
         debates: Det finns inga debatter just nu
         proposals: Det finns inga förslag just nu
+        processes: Det finns inga öppna processer just nu
       process_label: Process
       see_process: Visa process
     cards:
@@ -970,3 +971,8 @@ sv:
     create:
       enqueue_remote_translation: Översättningar har begärts.
     button: Översätta sida
+  tags:
+    filter:
+      more:
+        one: "En tagg till"
+        other: "%{count} taggar till"
