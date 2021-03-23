@@ -44,6 +44,7 @@ sv:
         title: "Processer"
         description: "I %{link}-delen är medborgare med i processen för att skriva och kommentera nya dokument och handlingar som rör staden."
         link: "processer"
+        feature: "För att delta i processerna måste du %{link} och verifiera ditt konto."
         feature_link: "registrera dig i %{org_name}"
       faq:
         title: "Har du tekniska problem?"
