@@ -3,6 +3,11 @@ sv:
     ballots:
       show:
         title: Dina röster
+        amount_available:
+          approval:
+            zero: "Du kan fortfarande lägga <span>%{count}</span> röster."
+            one: "Du kan fortfarande lägga <span>%{count}</span> röst."
+            other: "Du kan fortfarande lägga <span>%{count}</span> röster."
         amount_spent:
           approval:
             zero: "Lagda röster: <span>%{count}</span>"
@@ -92,6 +97,10 @@ sv:
           other: " som innehåller <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mina röster
+          voted_info:
+            knapsack:
+              one: "<strong>Du röstade för ett förslag med en kostnad på %{amount_spent}</strong>"
+              other: "<strong>Du röstade för %{count} förslag med en kostnad på %{amount_spent}</strong>"
           change_vote_link: "ändra din röst"
           different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
