@@ -109,6 +109,7 @@ group :development do
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "scss_lint", "~> 0.59.0", require: false
   gem "web-console", "~> 3.7.0"
+  gem "letter_opener"
 end
 
 eval_gemfile "./Gemfile_custom"

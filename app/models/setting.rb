@@ -159,7 +159,7 @@ class Setting < ApplicationRecord
         "youtube_handle": nil,
         "url": "http://example.com", # Public-facing URL of the app.
         # CONSUL installation's organization name
-        "org_name": "CONSUL",
+        "org_name": "INNCONSUL",
         "meta_title": nil,
         "meta_description": nil,
         "meta_keywords": nil,

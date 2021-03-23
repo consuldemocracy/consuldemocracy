@@ -692,6 +692,7 @@ DEPENDENCIES
   kaminari (~> 1.2.1)
   knapsack_pro (~> 2.6.0)
   launchy (~> 2.5.0)
+  letter_opener
   letter_opener_web (~> 1.4.0)
   mdl (~> 0.11.0)
   newrelic_rpm (~> 4.1.0.333)

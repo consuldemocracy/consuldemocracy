@@ -13,7 +13,7 @@ section "Creating Settings" do
                         "transparent and democratic government",
     "meta_keywords": "citizen participation, open government",
     "meta_title": "CONSUL",
-    "org_name": "CONSUL",
+    "org_name": "INNCONSUL",
     "proposal_code_prefix": "INNCONSUL",
     "proposal_notification_minimum_interval_in_days": 0,
     "sdg.process.debates": "true",
