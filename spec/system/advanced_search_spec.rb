@@ -295,7 +295,7 @@ describe "Advanced search", :js do
         click_link "Advanced search"
         select "Customized", from: "js-advanced-search-date-min"
         fill_in "advanced_search_date_min", with: 4000.years.ago.strftime("%d/%m/%Y")
-        fill_in "advanced_search_date_max", with: "wrong date"
+        fill_in "advanced_search_date_max", with: "13/13/2199"
         click_button "Filter"
 
         expect(page).to have_content("There are 3 citizen proposals")
