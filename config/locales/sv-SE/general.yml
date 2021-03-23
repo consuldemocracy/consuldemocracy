@@ -251,6 +251,7 @@ sv:
           one: Du har en ny avisering
           other: Du har %{count} nya aviseringar
         notifications: Aviseringar
+      sdg: "Globala målen"
   notifications:
     index:
       empty_notifications: Du har inga nya aviseringar.
@@ -692,8 +693,10 @@ sv:
       from: "Från"
       general: "Med texten"
       general_placeholder: "Fyll i texten"
+      goal: "Per globalt mål"
       goal_blank: "Välj ett mål"
       search: "Filtrera"
+      target: "Per delmål"
       target_blank: "Välj ett mål"
       title: "Avancerad sökning"
       to: "Till"
@@ -880,6 +883,7 @@ sv:
         processes: Visa alla processer
       no_items:
         debates: Det finns inga debatter just nu
+        proposals: Det finns inga förslag just nu
       process_label: Process
       see_process: Visa process
     cards:
