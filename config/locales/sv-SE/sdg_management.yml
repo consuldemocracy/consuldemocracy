@@ -6,4 +6,9 @@ sv:
         no_cards: "Det finns inget sidhuvud"
         title: "Sidhuvud"
     menu:
+      debates: "Debatter"
       legislation_proposals: "Lagförslag"
+      proposals: "Förslag"
+    relations:
+      index:
+        filter: "Filtrera"
