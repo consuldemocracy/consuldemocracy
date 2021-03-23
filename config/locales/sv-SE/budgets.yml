@@ -3,6 +3,11 @@ sv:
     ballots:
       show:
         title: Dina röster
+        amount_spent:
+          approval:
+            zero: "Lagda röster: <span>%{count}</span>"
+            one: "Lagda röster: <span>%{count}</span>"
+            other: "Lagda röster: <span>%{count}</span>"
         amount_limit:
           knapsack: "%{count}"
           approval:
