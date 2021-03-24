@@ -98,13 +98,10 @@ sl:
           zero: brez podpore
         give_support: Glasuj za predlog!
       header:
-        check_ballot: Preveri moja glasovanja
+        check_ballot: "Preveri moja glasovanja"
         change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} and start again."
         check_ballot_link: "preveri moja glasovanja"
         price: "Ta naslov ima proračun v višini"
-    progress_bar:
-      assigned: "Dodelil si: "
-      available: "Razpoložljivi proračun: "
     show:
       see_results: Poglej rezultate
     results:
