@@ -155,18 +155,11 @@ ca:
           other: "%{count} avals"
         give_support: Avalar
       header:
-        check_ballot: Revisar els meus vots
+        check_ballot: "Revisar els meus vots"
         different_heading_assigned: "Teniu vots actius en un altre títol: %{heading_link}"
         change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
         check_ballot_link: "revisar els meus vots"
         price: "Aquesta partida té un pressupost de"
-    progress_bar:
-      assigned: "Heu assignat: "
-      available: "Pressupost disponible: "
-      votes:
-        zero: "Ha seleccionat <strong>0</strong> projectes de <strong>%{limit}</strong>"
-        one: "Ha seleccionat <strong>1</strong> projecte de <strong>%{limit}</strong>"
-        other: "Ha seleccionat <strong>%{count}</strong> projectes de <strong>%{limit}</strong>"
     show:
       see_results: veure resultats
     results:
