@@ -107,13 +107,10 @@ so:
           other: "%{count} tagerayal"
         give_support: Tageero
       header:
-        check_ballot: Huubi codkayga
+        check_ballot: "Huubi codkayga"
         change_ballot: "Haddii aad bedesho maskaxda waxaad ka saari kartaa codadkaaga%{check_ballot} oo mar kale bilow."
         check_ballot_link: "huubi codkayga"
         price: "Taani waxay ledaahay misaniyaad"
-    progress_bar:
-      assigned: "Waa lugu asteyey: "
-      available: "Misaniyada lahelikaro: "
     show:
       see_results: Arag Natijada
     results:
