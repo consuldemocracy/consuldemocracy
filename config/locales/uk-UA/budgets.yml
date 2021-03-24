@@ -173,20 +173,11 @@ uk-UA:
           other: "%{count} підтримок"
         give_support: Підтримка
       header:
-        check_ballot: Перевірити і підтвердити моє голосування
+        check_ballot: "Перевірити і підтвердити моє голосування"
         different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
         change_ballot: "Якщо ви передумали, ви можете видалити свої голоси в %{check_ballot} і розпочати знову."
         check_ballot_link: "перевірити і підтвердити моє голосування"
         price: "Цей головок має бюджет"
-    progress_bar:
-      assigned: "Ви призначили: "
-      available: "Доступний бюджет: "
-      votes:
-        zero: "Ви вибрали <strong> 0 </strong> проєктів із <strong>%{limit}</strong>"
-        one: "Ви вибрали <strong> 1 </strong> проєкт із <strong>%{limit}</strong>"
-        few: "Ви вибрали <strong>%{count}</strong> проєкти із <strong>%{limit}</strong>"
-        many: "Ви вибрали <strong>%{count}</strong> проєктів із <strong>%{limit}</strong>"
-        other: "Ви вибрали <strong>%{count}</strong> проєктів із <strong>%{limit}</strong>"
     show:
       see_results: Переглянути результати
     results:
