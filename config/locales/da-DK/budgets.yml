@@ -132,14 +132,11 @@ da:
           other: "%{count} støtter op om projektet"
         give_support: Støt
       header:
-        check_ballot: Tjek min afstemning
+        check_ballot: "Tjek min afstemning"
         different_heading_assigned: "Du har aktive stemmer i en anden post: %{heading_link}"
         change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
         check_ballot_link: "kontroller og bekræft min afstemning"
         price: "Denne post har et budget på"
-    progress_bar:
-      assigned: "Du har tildelt: "
-      available: "Penge der kan fordeles: "
     show:
       see_results: Se resultat
     results:
