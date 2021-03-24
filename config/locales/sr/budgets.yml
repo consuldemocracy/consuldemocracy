@@ -164,19 +164,11 @@ sr:
           other: "%{count} подршки"
         give_support: Подршка
       header:
-        check_ballot: Провери и потврди моје гласање
+        check_ballot: "Провери и потврди моје гласање"
         different_heading_assigned: "Имате активна гласања у другом наслову: %{heading_link}"
         change_ballot: "Уколико промените Ваше мишљење можете променити свој глас у %{check_ballot} и започети поново."
         check_ballot_link: "провери и потврди моје гласање"
         price: "Овај наслов поседује буџет од"
-    progress_bar:
-      assigned: "Одредили сте: "
-      available: "Расположиви буџети: "
-      votes:
-        zero: "Одабрали сте <strong>0</strong> пројеката од <strong>%{limit}</strong>"
-        one: "Одабрали сте <strong>1</strong> пројекат од <strong>%{limit}</strong>"
-        few: "Одабрали сте <strong>%{count}</strong> пројекта од <strong>%{limit}</strong>"
-        other: "Одабрали сте <strong>%{count}</strong> пројеката од <strong>%{limit}</strong>"
     show:
       see_results: Види резултате
     results:
