@@ -104,13 +104,10 @@ eu:
           other: "%{count} babes"
         give_support: Babestu
       header:
-        check_ballot: Nire bozkak berrikusi
+        check_ballot: "Nire bozkak berrikusi"
         change_ballot: "Iritzia aldatu ezkero zure bozkak aldatu ditzakezu %{check_ballot}-(e)n eta berriz hasi zaitezke."
         check_ballot_link: "Nire bozkak berrikusi"
         price: "Sail honen aurrekontua"
-    progress_bar:
-      assigned: "Esleitutakoa: "
-      available: "Aurrekontu eskuragarria: "
     show:
       see_results: Emaitzak ikusi
     results:
