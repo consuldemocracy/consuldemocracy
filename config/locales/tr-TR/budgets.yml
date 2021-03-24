@@ -3,6 +3,7 @@ tr:
     ballots:
       show:
         title: Oyunuz
+        amount_progress: "%{amount_spent}%{amount_limit}\nharcanan tutar / tutar limiti"
         amount_available:
           knapsack: "Şu an itibariyle yatırım yapabileceğiniz miktar <span>%{count}</span>."
           approval:
