@@ -108,13 +108,10 @@ fr:
           other: "%{count} soutiens"
         give_support: Soutenir
       header:
-        check_ballot: Vérifier mon vote
+        check_ballot: "Vérifier mon vote"
         change_ballot: "Si vous changez d'avis, vous pouvez supprimer vos votes dans %{check_ballot} et recommencer."
         check_ballot_link: "vérifier mon vote"
         price: "Cette rubrique dispose d’un budget de"
-    progress_bar:
-      assigned: "Vous avez affecté : "
-      available: "Budget disponible : "
     show:
       see_results: Voir les résultats
     results:
