@@ -155,18 +155,11 @@ bg:
           other: "%{count} гласове за подкрепа"
         give_support: Подкрепа
       header:
-        check_ballot: Проверете и потвърдете моята бюлетина
+        check_ballot: "Проверете и потвърдете моята бюлетина"
         different_heading_assigned: "Имате активни гласове в друга рубрика: %{heading_link}"
         change_ballot: "Ако промените решението си, можете да премахнете гласовете си в %{check_ballot} и да започнете отново."
         check_ballot_link: "провери и потвърди моята бюлетина"
         price: "В тази рубрика има бюджет от"
-    progress_bar:
-      assigned: "Вие сте определили: "
-      available: "Наличен бюджет: "
-      votes:
-        zero: "Вие избрахте <strong>0</strong> проекта от <strong>%{limit}</strong>"
-        one: "Вие избрахте <strong>1</strong> проект от <strong>%{limit}</strong>"
-        other: "Вие избрахте <strong>%{count}</strong> проекта от <strong>%{limit}</strong>"
     show:
       see_results: Вижте резултатите
     results:
