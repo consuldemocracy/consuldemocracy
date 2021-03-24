@@ -126,14 +126,11 @@ oc:
           other: "%{count} d'avals"
         give_support: Avalar
       header:
-        check_ballot: Revisar los mieus vòts
+        check_ballot: "Revisar los mieus vòts"
         different_heading_assigned: "Avètz de vòts actius en un autre títol: %{heading_link}"
         change_ballot: "Se càmbias d'opinion pòdes esborrar los tieus vòts en %{check_ballot} e tornar a començar."
         check_ballot_link: "revisar los mieus vòts"
         price: "Aquela partida a un budgèt de"
-    progress_bar:
-      assigned: "Avètz assignat: "
-      available: "Budgèt disponible: "
     show:
       see_results: veire de resultats
     results:
