@@ -101,13 +101,10 @@ fa:
           other: "%{count}پشتیبانی"
         give_support: پشتیبانی
       header:
-        check_ballot: رای من را چک کن
+        check_ballot: "رای من را چک کن"
         change_ballot: "اگر نظر شما تغییر کند، می توانید رای خود را در%{check_ballot} حذف کنید و دوباره شروع کنید."
         check_ballot_link: "رای من را چک کن"
         price: "این عنوان یک بودجه دارد"
-    progress_bar:
-      assigned: "شما اختصاص داده اید:"
-      available: "بودجه موجود"
     show:
       see_results: مشاهده نتایج
     results:
