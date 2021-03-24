@@ -105,13 +105,10 @@ zh-CN:
           other: "%{count} 个支持"
         give_support: 支持
       header:
-        check_ballot: 查看我的选票
+        check_ballot: "查看我的选票"
         change_ballot: "如果您改变主意，您可以在%{check_ballot} 中删除投票并重新开始。"
         check_ballot_link: "查看我的选票"
         price: "此标题有一个预算"
-    progress_bar:
-      assigned: "您已经分配： "
-      available: "可用的预算： "
     show:
       see_results: 查看结果
     results:
