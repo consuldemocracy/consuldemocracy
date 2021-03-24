@@ -114,13 +114,10 @@ he:
           other: "%{count} תומכים"
         give_support: בעד
       header:
-        check_ballot: בדוק את מצב ההצבעות
+        check_ballot: "בדוק את מצב ההצבעות"
         change_ballot: "אם את משנה את דעתך, באפשרותך להסיר את ההצבעות שלכם ב- %{check_ballot} ולהתחיל שוב."
         check_ballot_link: "בדוק ואשר את ההצבעה שלי"
         price: "לנושא זה יש תקציב של"
-    progress_bar:
-      assigned: "הקצית: "
-      available: "תקציב זמין: "
     show:
       see_results: ראו תוצאות
     results:
