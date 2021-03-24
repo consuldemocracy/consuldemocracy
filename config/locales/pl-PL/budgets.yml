@@ -113,13 +113,10 @@ pl:
           other: "%{count} popierających"
         give_support: Poparcie
       header:
-        check_ballot: Sprawdź moje głosowanie
+        check_ballot: "Sprawdź moje głosowanie"
         change_ballot: "Jeśli zmienisz zdanie, możesz usunąć swoje głosy w %{check_ballot} i zacząć od nowa."
         check_ballot_link: "sprawdź moje głosowanie"
         price: "Ten dział ma budżet w wysokości"
-    progress_bar:
-      assigned: "Przypisałeś: "
-      available: "Dostępny budżet: "
     show:
       see_results: Zobacz wyniki
     results:
