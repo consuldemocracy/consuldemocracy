@@ -109,13 +109,10 @@ ru:
           other: "поддерживает %{count}"
         give_support: Поддержка
       header:
-        check_ballot: Проверить мой бюллетень
+        check_ballot: "Проверить мой бюллетень"
         change_ballot: "Если вы передумаете, вы можете удалить свои голоса в %{check_ballot} и начать заново."
         check_ballot_link: "проверить мое голосование"
         price: "Этот заголовок имеет бюджет"
-    progress_bar:
-      assigned: "Вы назначили: "
-      available: "Доступный бюджет: "
     show:
       see_results: Посмотреть результаты
     results:
