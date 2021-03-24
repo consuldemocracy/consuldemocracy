@@ -140,14 +140,11 @@ hr:
           other: "%{count} potpora"
         give_support: Potpora
       header:
-        check_ballot: Provjeri i potvrdi moj glas
+        check_ballot: "Provjeri i potvrdi moj glas"
         different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
         change_ballot: "Ako izmijenite mišljenje možete ukloniti svoj glas u %{check_ballot} i započeti ponovno."
         check_ballot_link: "provjeri i potvrdi moj glas"
         price: "Ova tema ima budžet od"
-    progress_bar:
-      assigned: "Vi ste pripisali: "
-      available: "Dostupan budžet: "
     show:
       see_results: Pogledaj rezultate
     results:
