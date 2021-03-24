@@ -103,13 +103,10 @@ zh-TW:
           other: "%{count} 個支持"
         give_support: 支持
       header:
-        check_ballot: 查看我的選票
+        check_ballot: "查看我的選票"
         change_ballot: "如果您改變了主意, 您可以在 %{check_ballot} 中刪除您的投票，然後重新開始。"
         check_ballot_link: "查看我的選票"
         price: "此標題有一個預算"
-    progress_bar:
-      assigned: "您已分配： "
-      available: "可用預算： "
     show:
       see_results: 查看結果
     results:
