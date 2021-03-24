@@ -270,7 +270,7 @@ sv:
         email_digest: "Få en sammanfattning av aviseringar om förslag"
         email_on_comment: "Meddela mig via e-post när någon kommenterar mina förslag eller debatter"
         email_on_comment_reply: "Meddela mig via e-post när någon svarar på mina kommentarer"
-        email_on_direct_message: "Få e-post om direkta meddelanden"
+        email_on_direct_message: "Få e-post om direktmeddelanden"
         newsletter: "Få relevanta uppdateringar om webbplatsen med e-post"
         official_position: "Titel"
         official_position_badge: "Visa etikett för representant för staden"
