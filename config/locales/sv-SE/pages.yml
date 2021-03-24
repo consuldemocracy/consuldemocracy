@@ -20,7 +20,7 @@ sv:
         link: "debatter"
         feature: "Du kan skriva debattinlägg och kommentera och betygsätta andras inlägg med <strong>Jag håller med</strong> eller <strong>Jag håller inte med</strong>. För att göra det behöver du %{link}."
         feature_link: "registrera dig på %{org}"
-        image_alt: "Knappar för att betygsätta diskussioner"
+        image_alt: "Knappar för att betygsätta debatterna"
         figcaption: 'Knappar för "Jag håller med" och "Jag håller inte med" för att betygsätta diskussioner.'
       proposals:
         title: "Förslag"
