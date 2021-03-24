@@ -154,18 +154,11 @@ es:
           other: "%{count} apoyos"
         give_support: Apoyar
       header:
-        check_ballot: Revisar y confirmar mis votos
+        check_ballot: "Revisar y confirmar mis votos"
         different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar y confirmar mis votos"
         price: "Esta partida tiene un presupuesto de"
-    progress_bar:
-      assigned: "Has asignado: "
-      available: "Presupuesto disponible: "
-      votes:
-        zero: "Has seleccionado <strong>0</strong> proyectos de <strong>%{limit}</strong>"
-        one: "Has seleccionado <strong>1</strong> proyecto de <strong>%{limit}</strong>"
-        other: "Has seleccionado <strong>%{count}</strong> proyectos de <strong>%{limit}</strong>"
     show:
       see_results: Ver resultados
     results:
