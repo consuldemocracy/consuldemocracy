@@ -118,13 +118,10 @@ ar:
           other: "%{count} دعم"
         give_support: دعم
       header:
-        check_ballot: تحقق من قرعتي
+        check_ballot: "تحقق من قرعتي"
         change_ballot: "اذا تريد تغير رايك تستطيع ازالة تصويتك في %{check_ballot} والبدء مرة اخرى."
         check_ballot_link: "تحقق من قرعتي"
         price: "هذا البند لديه ميزانية بقدر"
-    progress_bar:
-      assigned: "لقد قمت بتعيين: "
-      available: "الميزانية المتاحة: "
     show:
       see_results: رؤية النتائج
     results:
