@@ -35,7 +35,7 @@ sv:
       no_token: "Du kan inte komma åt denna sida utom genom en länk för återställning av lösenord. Om du har kommit hit genom en länk för återställning av lösenord, kontrollera att webbadressen är komplett."
       send_instructions: "Du kommer strax att få ett e-postmeddelande med instruktioner för att återställa ditt lösenord."
       send_paranoid_instructions: "Om din e-postadress finns i vår databas kommer du strax få en länk för att återställa ditt lösenord."
-      updated: "Ditt lösenord har ändrats."
+      updated: "Ditt lösenord har ändrats. Du har autentiserats."
       updated_not_active: "Ditt lösenord har ändrats."
     registrations:
       destroyed: "Hejdå! Ditt konto har avslutats. Vi hoppas på att snart få se dig igen."
