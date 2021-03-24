@@ -155,18 +155,11 @@ pt-BR:
           other: "%{count} apoios"
         give_support: Apoiar
       header:
-        check_ballot: Verificar minha cédula
+        check_ballot: "Verificar minha cédula"
         different_heading_assigned: "Você tem votos ativos num título diferente: %{heading_link}"
         change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
         check_ballot_link: "verificar minha cédula"
         price: "Este título tem um orçamento de"
-    progress_bar:
-      assigned: "Você atribuiu: "
-      available: "Orçamento disponível: "
-      votes:
-        zero: "Você selecionou <strong>0</strong> projetos de um total de <strong>%{limit}</strong>"
-        one: "Você selecionou <strong>1</strong> projeto de um total de <strong>%{limit}</strong>"
-        other: "Você selecionou <strong>%{count}</strong> projetos de um total de <strong>%{limit}</strong>"
     show:
       see_results: Exibir resultados
     results:
