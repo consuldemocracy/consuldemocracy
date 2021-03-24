@@ -108,13 +108,10 @@ val:
           other: "%{count} avals"
         give_support: Avalar
       header:
-        check_ballot: Revisar els meus vots
+        check_ballot: "Revisar els meus vots"
         change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
         check_ballot_link: "revisar els meus vots"
         price: "Esta partida te un pressupost de"
-    progress_bar:
-      assigned: "Has asignat: "
-      available: "Pressupost disponible: "
     show:
       see_results: Vore resultats
     results:
