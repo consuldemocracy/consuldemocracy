@@ -86,6 +86,7 @@
   * [Vistas & Estilos](es/customization/views_and_styles.md)
   * [Javascript](es/customization/javascript.md)
   * [Modelos](es/customization/models.md)
+  * [Componentes](es/customization/components.md)
   * [Gemas](es/customization/gems.md)
   * [Adaptar la aplicación](es/customization/overwritting.md)
 
