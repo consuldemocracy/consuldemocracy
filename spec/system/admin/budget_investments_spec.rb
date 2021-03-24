@@ -529,7 +529,10 @@ describe "Admin budget investments", :admin do
 
       expect(page).to have_link "Calculate Winner Investments"
 
-      budget.update!(phase: "accepting")
+      select "Accepting projects", from: "Phase"
+      click_button "Update Budget"
+
+      expect(page).to have_content "Participatory budget updated successfully"
 
       visit admin_budget_budget_investments_path(budget)
 
