@@ -144,8 +144,8 @@
     margin-bottom: rem-calc(40);
 
     .debate-type {
+      @include brand-text;
       text-transform: uppercase;
-      color: $brand;
       font-weight: 700;
       font-size: $small-font-size;
 
@@ -155,7 +155,7 @@
     }
 
     .debate-title a {
-      color: $brand;
+      @include brand-text;
     }
   }
 
@@ -208,7 +208,7 @@
     }
 
     h4 a {
-      color: $brand;
+      @include brand-text;
 
       &:hover {
         text-decoration: none;
@@ -225,8 +225,8 @@
     }
 
     .quiz-next {
+      @include brand-text;
       background: #ccdbe5;
-      color: $brand;
       font-size: $small-font-size;
       font-weight: bold;
       text-align: right;
@@ -239,8 +239,7 @@
 
       &:hover,
       &:active {
-        background: $brand;
-        color: #fff;
+        @extend %brand-background;
         text-decoration: none;
       }
     }

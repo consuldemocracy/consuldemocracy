@@ -98,6 +98,7 @@ linters:
 
   PlaceholderInExtend:
     enabled: true
+    exclude: "app/assets/stylesheets/mixins/icons.scss"
 
   PrivateNamingConvention:
     enabled: true

@@ -204,8 +204,8 @@ $table-header:   #ecf1f6;
       line-height: $line-height * 2;
 
       .button {
+        @include brand-text;
         background: #fff;
-        color: $brand;
       }
     }
   }
@@ -677,7 +677,7 @@ code {
     display: block;
 
     &.is-active {
-      color: $brand;
+      @include brand-text;
       font-weight: bold;
       text-decoration: underline;
     }
