@@ -126,13 +126,10 @@ it:
           other: "%{count} sostegni"
         give_support: Sostieni
       header:
-        check_ballot: Controlla il mio voto
+        check_ballot: "Controlla il mio voto"
         change_ballot: "Se cambi idea è possibile cancellare il tuo voto in %{check_ballot} e ricominciare da capo."
         check_ballot_link: "controlla il mio voto"
         price: "Questa sezione dispone di un budget di"
-    progress_bar:
-      assigned: "Sono stati assegnati: "
-      available: "Budget disponibile: "
     show:
       see_results: Vedi risultati
     results:
