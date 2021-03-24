@@ -3,6 +3,7 @@ sv:
     ballots:
       show:
         title: Dina röster
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
           approval:
             zero: "Du kan fortfarande lägga <span>%{count}</span> röster."
