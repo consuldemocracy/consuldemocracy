@@ -13,7 +13,7 @@ bg:
     official_level_5_name: "Ниво 5 публичен служител"
     official_level_5_name_description: "Таг, който ще се появи на потребители, маркирани като официална длъжност ниво 5"
     max_ratio_anon_votes_on_debates: "Максимално съотношение на анонимните гласове за дебат"
-    max_ratio_anon_votes_on_debates_description: "Анонимните гласове са от регистрирани потребители с непотвърден акаунт"
+    max_ratio_anon_votes_on_debates_description: "Анонимните гласове са от регистрирани потребители с непотвърден профил"
     max_votes_for_proposal_edit: "Брой гласове за подкрепа, при които предложението вече не може да се редактира"
     max_votes_for_proposal_edit_description: "При този брой гласове за подкрепа авторът на предложението вече не може да го редактира"
     max_votes_for_debate_edit: "Брой гласове, при които дебатът вече не може да бъде редактиран"
@@ -27,7 +27,7 @@ bg:
     months_to_archive_proposals: "Месеци за архивиране на предложенията"
     months_to_archive_proposals_description: "След този брой месеци, предложенията ще бъдат архивирани и вече няма да могат да получават подкрепа"
     email_domain_for_officials: "Имейл домейн за публични служители"
-    email_domain_for_officials_description: "Всички потребители, регистрирани в този домейн, ще имат проверка на акаунта си при регистрация"
+    email_domain_for_officials_description: "Всички потребители, регистрирани в този домейн, ще имат проверка на профила си при регистрация"
     twitter_handle: "Twitter поддръжка"
     twitter_handle_description: "Ако се попълни, ще се появи в долния колонтитул"
     twitter_hashtag: "Twitter хаштаг"
@@ -59,7 +59,7 @@ bg:
     meta_keywords: "Ключови думи (SEO)"
     meta_keywords_description: 'Ключови думи <meta name="keywords">, използвани за подобряване на SEO'
     min_age_to_participate: Минимална възраст, необходима за участие
-    min_age_to_participate_description: "Потребители над тази възраст могат да участват във всички процеси, където е необходим потвърден от потребителя акаунт"
+    min_age_to_participate_description: "Потребители над тази възраст могат да участват във всички процеси, където е необходим потвърден от потребителя профил"
     proposals:
       successful_proposal_id: Успешно предложение
       successful_proposal_id_description: Това предложение се използва като еталон за успешно предложение по броя на гласове за подкрепа и ще бъде показано в графиката на таблото.
@@ -84,9 +84,9 @@ bg:
     direct_message_max_per_day_description: "Максимален брой директни съобщения, които един потребител може да изпраща на ден"
     feature:
       twitter_login: "Вход в Twitter"
-      twitter_login_description: "Позволява на потребителите да се регистрират със своя Twitter акаунт"
+      twitter_login_description: "Позволява на потребителите да се регистрират със своя Twitter профил"
       facebook_login: "Facebook вписване"
-      facebook_login_description: "Позволява на потребителите да се регистрират със своя Facebook акаунт"
+      facebook_login_description: "Позволява на потребителите да се регистрират със своя Facebook профил"
       google_login: "Вход в Google"
       google_login_description: "Позволява на потребителите да се регистрират с профила си в Google"
       wordpress_login: "Вход в Wordpress"
