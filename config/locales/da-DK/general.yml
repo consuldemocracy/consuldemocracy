@@ -253,7 +253,7 @@ da:
   notifications:
     index:
       empty_notifications: Du har ingen nye notifikationer.
-      mark_all_as_read: Marker alt som læst
+      mark_all_as_read: Markér alt som læst
       read: Læs
       title: Notifikationer
       unread: Ulæst
@@ -269,7 +269,7 @@ da:
           one: Nogen svarede på din kommentar til
           other: Der er %{count} nye svar til din kommentar til
       mark_as_read: Markér som læst
-      mark_as_unread: Marker som ulæst
+      mark_as_unread: Markér som ulæst
       notifiable_hidden: Ikke længere tilgængelig.
   map:
     title: "Distrikter"
@@ -699,7 +699,7 @@ da:
     check_all: Alle
     check_none: Ingen
     collective: Grupper
-    flag: Marker som upassende
+    flag: Markér som upassende
     follow: "Følg"
     following: "Følger"
     follow_entity: "Følg %{entity}"
