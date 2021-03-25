@@ -1,5 +1,7 @@
 sv:
   sdg_management:
+    actions:
+      edit: "Hantera mål och delmål"
     homepage:
       header:
         create: "Skapa sidhuvud"
