@@ -13,7 +13,7 @@ da:
         cancel: Annuller
         publish_comment: Udgive kommentar
       form:
-        phase_not_open: Denne fase er ikke åben
+        phase_not_open: Denne fase er ikke aktiv
       index:
         title: Kommentarer
         comments_about: Kommentarer om
