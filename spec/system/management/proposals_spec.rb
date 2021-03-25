@@ -214,8 +214,8 @@ describe "Proposals" do
 
       expect(page).to have_selector(".js-order-selector[data-order='created_at']")
 
-      expect(current_url).to include("order=created_at")
-      expect(current_url).to include("page=1")
+      expect(page).to have_current_path(/order=created_at/)
+      expect(page).to have_current_path(/page=1/)
 
       within(".proposals-list") do
         expect(medium_proposal.title).to appear_before(best_proposal.title)

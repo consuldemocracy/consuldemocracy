@@ -84,7 +84,7 @@ describe "Admin hidden users", :admin do
 
     click_on("Restore", match: :first, exact: true)
 
-    expect(current_url).to include("filter=with_confirmed_hide")
-    expect(current_url).to include("page=2")
+    expect(page).to have_current_path(/filter=with_confirmed_hide/)
+    expect(page).to have_current_path(/page=2/)
   end
 end

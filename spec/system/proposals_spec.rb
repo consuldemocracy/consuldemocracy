@@ -812,8 +812,8 @@ describe "Proposals" do
         expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
-      expect(current_url).to include("order=confidence_score")
-      expect(current_url).to include("page=1")
+      expect(page).to have_current_path(/order=confidence_score/)
+      expect(page).to have_current_path(/page=1/)
     end
 
     scenario "Proposals are ordered by newest", :js do
@@ -830,8 +830,8 @@ describe "Proposals" do
         expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
-      expect(current_url).to include("order=created_at")
-      expect(current_url).to include("page=1")
+      expect(page).to have_current_path(/order=created_at/)
+      expect(page).to have_current_path(/page=1/)
     end
 
     context "Recommendations" do
@@ -897,8 +897,8 @@ describe "Proposals" do
           expect(medium_proposal.title).to appear_before(worst_proposal.title)
         end
 
-        expect(current_url).to include("order=recommendations")
-        expect(current_url).to include("page=1")
+        expect(page).to have_current_path(/order=recommendations/)
+        expect(page).to have_current_path(/page=1/)
       end
 
       scenario "are not shown if account setting is disabled" do

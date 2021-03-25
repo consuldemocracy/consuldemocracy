@@ -372,8 +372,8 @@ describe "Budget Investments" do
         expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
-      expect(current_url).to include("order=confidence_score")
-      expect(current_url).to include("page=1")
+      expect(page).to have_current_path(/order=confidence_score/)
+      expect(page).to have_current_path(/page=1/)
     end
 
     scenario "Each user has a different and consistent random budget investment order" do
@@ -1192,8 +1192,8 @@ describe "Budget Investments" do
         expect(mid_investment.title).to appear_before(low_investment.title)
       end
 
-      expect(current_url).to include("order=price")
-      expect(current_url).to include("page=1")
+      expect(page).to have_current_path(/order=price/)
+      expect(page).to have_current_path(/page=1/)
     end
 
     scenario "Show" do

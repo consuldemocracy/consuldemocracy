@@ -121,9 +121,9 @@ describe "Moderate budget investments" do
 
         expect(page).to have_selector(".js-order-selector[data-order='created_at']")
 
-        expect(current_url).to include("filter=all")
-        expect(current_url).to include("page=2")
-        expect(current_url).to include("order=created_at")
+        expect(page).to have_current_path(/filter=all/)
+        expect(page).to have_current_path(/page=2/)
+        expect(page).to have_current_path(/order=created_at/)
       end
     end
 

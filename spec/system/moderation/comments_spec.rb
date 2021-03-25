@@ -134,9 +134,9 @@ describe "Moderate comments" do
 
         expect(page).to have_selector(".js-order-selector[data-order='newest']")
 
-        expect(current_url).to include("filter=all")
-        expect(current_url).to include("page=2")
-        expect(current_url).to include("order=newest")
+        expect(page).to have_current_path(/filter=all/)
+        expect(page).to have_current_path(/page=2/)
+        expect(page).to have_current_path(/order=newest/)
       end
     end
 

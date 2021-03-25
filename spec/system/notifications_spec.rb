@@ -155,7 +155,8 @@ describe "Notifications" do
       expect(page).to have_content("Notification body")
 
       first("#notification_#{notification.id} a").click
-      expect(page.current_url).to eq("https://www.external.link.dev/")
+
+      expect(page).to have_current_path "https://www.external.link.dev/", url: true
     end
 
     scenario "With internal link", :js do

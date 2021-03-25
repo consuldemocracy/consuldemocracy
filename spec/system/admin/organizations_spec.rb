@@ -210,7 +210,7 @@ describe "Admin::Organizations" do
 
     click_on("Verify", match: :first)
 
-    expect(current_url).to include("filter=pending")
-    expect(current_url).to include("page=2")
+    expect(page).to have_current_path(/filter=pending/)
+    expect(page).to have_current_path(/page=2/)
   end
 end
