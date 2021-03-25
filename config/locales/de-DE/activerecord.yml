@@ -84,7 +84,7 @@ de:
         other: "lokale Ziele"
       sdg/manager:
         one: "SDG Manager"
-        other: "SDG Managers "
+        other: "SDG Managers"
       sdg/target:
         one: "Ziel"
         other: "Ziele"
