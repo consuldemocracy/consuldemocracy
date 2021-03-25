@@ -31,7 +31,7 @@ bg:
         sections_label: Раздели, където ще се показва
         sections:
           homepage: Начална страница
-          debates: Дебати
+          debates: Дискусии
           proposals: Предложения
           budgets: Бюджетиране чрез участие на гражданите
           help_page: Помощна страница
@@ -54,7 +54,7 @@ bg:
         filters:
           all: Всички
           on_comments: Коментари
-          on_debates: Дебати
+          on_debates: Дискусии
           on_proposals: Предложения
           on_users: Потребители
           on_system_emails: Системни имейли
@@ -400,8 +400,8 @@ bg:
     debates:
       index:
         author: Автор
-        title: Дебати
-        no_debates: Няма дебати.
+        title: Дискусии
+        no_debates: Няма дискусии.
     hidden_debates:
       index:
         filter: Филтър
@@ -409,8 +409,8 @@ bg:
           all: Всички
           with_confirmed_hide: Потвърдено
           without_confirmed_hide: Изчакване
-        title: Скрити дебати
-        no_hidden_debates: Няма скрити дебати.
+        title: Скрити дискусии
+        no_hidden_debates: Няма скрити дискусии.
     documents:
       new:
         title: "Качване на документ"
@@ -618,7 +618,7 @@ bg:
       budgets: Бюджети за участие
       geozones: Управление на геозоните
       hidden_comments: Скрити коментари
-      hidden_debates: Скрити дебати
+      hidden_debates: Скрити дискусии
       hidden_proposals: Скрити предложения
       hidden_budget_investments: Скрити бюджетни инвестиции
       hidden_proposal_notifications: Скрити известия за предложения
@@ -651,7 +651,7 @@ bg:
         information_texts: Персонализирани информационни текстове
         information_texts_menu:
           basic: "Основна персонализация"
-          debates: "Дебати"
+          debates: "Дискусии"
           community: "Общност"
           proposals: "Предложения"
           polls: "Анкети"
@@ -673,7 +673,7 @@ bg:
       dashboard: Табло за управление на предложенията
       administrator_tasks: Искани ресурси
       dashboard_actions: Ресурси и действия
-      debates: "Дебати"
+      debates: "Дискусии"
       comments: "Коментари"
       local_census_records: Администриране на местния регистър
     administrators:
@@ -816,10 +816,10 @@ bg:
         description: "Изпратено до подателя на личното съобщение."
       email_verification:
         title: "Потвърждение на имейла"
-        description: "Изпратен на нов потребител, за да потвърди акаунта му."
+        description: "Изпратен на нов потребител, за да потвърди профила му."
       user_invite:
         title: "Потребителска покана"
-        description: "Изпратено на лицето, което е поканено да регистрира акаунт."
+        description: "Изпратено на лицето, което е поканено да регистрира профил."
       evaluation_comment:
         title: "Нов коментар за оценка"
         description: "Изпратено на администратори и оценители, свързани с коментирани инвестиции"
@@ -1117,7 +1117,7 @@ bg:
         official_updated: Подробности за длъжностни лица запазени
       index:
         title: Длъжностни лица
-        help: Потребителските акаунти, маркирани като длъжностни лица, ще имат обозначена своята намеса в платформата. Можете да определите етикета, който се появява до потребителските имена на тези акаунти, от най-важното (ниво 1) до най-маловажно (ниво 5).
+        help: Потребителските профили, маркирани като длъжностни лица, ще имат обозначена своята намеса в платформата. Можете да определите етикета, който се появява до потребителските имена на тези профили, от най-важното (ниво 1) до най-маловажно (ниво 5).
         no_officials: Няма длъжностни лица.
         name: Име
         official_position: Официална позиция
@@ -1234,7 +1234,7 @@ bg:
       search:
         label:
           booths: "Търсете кабинка по име или местоположение"
-          debates: "Търсете дебати по заглавие или описание"
+          debates: "Търсете дискусии по заглавие или описание"
           local_census_records: "Търсене по номер на документ"
           organizations: "Име, имейл или телефонен номер"
           poll_officers: "Търсете служители за анкета"
@@ -1321,7 +1321,7 @@ bg:
           comment_votes: Коментирайте гласове
           comments: Коментари
           debate_votes: Гласове за дебат
-          debates: Дебати
+          debates: Дискусии
           proposal_votes: Гласове за предложение
           proposals: Предложения
           budgets: Отворени бюджети
@@ -1341,7 +1341,7 @@ bg:
         incomplete_verifications: Непълни проверки
         polls: Анкети
       graph:
-        debate_created: Дебати
+        debate_created: Дискусии
         visit: Посещения
         level_2_user: Потребители от ниво 2
         proposal_created: Граждански предложения
@@ -1504,7 +1504,7 @@ bg:
       no_cards: Няма карти.
       feeds:
         proposals: Предложения
-        debates: Дебати
+        debates: Дискусии
         processes: Процеси
       new:
         header_title: Нова заглавка
