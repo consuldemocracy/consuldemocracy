@@ -1926,10 +1926,12 @@ footer a{
   align-self: center;
 }
 
-.highlight {
-  background: #fff image-url("fondo-busqueda.png");
-  border-bottom: 1px solid #407374;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center right;
+@media (min-width: 768px) {
+  .highlight {
+    background: #fff image-url("fondo-busqueda.png");
+    border-bottom: 1px solid #407374;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
 }
