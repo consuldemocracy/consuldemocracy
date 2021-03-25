@@ -17,6 +17,10 @@ sv:
       goal_7:
         title_in_two_lines: "Överkomlig och\nren energi"
         description: "Säkerställa tillgång till ekonomiskt överkomlig, tillförlitlig, hållbar och modern energi."
+      goal_15:
+        title: "Ekosystem på land"
+        title_in_two_lines: "Ekosystem\npå land"
+        description: "Hantera skogen hållbart, bekämpa ökenspridning, stoppa och återställa landdegradering och stoppa förlusten av biologisk mångfald."
       help:
         title: "Globala målen för hållbar utveckling, hjälp"
         description: "Du kan anpassa dina bidrag till gemenskapen (debatter, medborgarförslag och budgetförslag) runt den hållbara 2030-agendan med hållbar utveckling som mål, så att vi får överblick över vårt bidrag till varje mål för hållbar utveckling. Nedan hittar du mer information om alla mål, deras delmål och lokala delmål."
