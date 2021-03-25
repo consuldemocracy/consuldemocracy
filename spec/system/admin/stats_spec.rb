@@ -1,10 +1,6 @@
 require "rails_helper"
 
 describe "Stats", :admin do
-  before do
-    visit root_path
-  end
-
   context "Summary" do
     scenario "General" do
       create(:debate)
