@@ -1453,6 +1453,7 @@ sv:
         no_users: Det finns inga användare.
         filter: Filtrera
         filters:
+          active: Aktiva
           erased: Raderad
       search:
         placeholder: Sök användare med e-postadress, namn eller identitetshandling
