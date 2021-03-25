@@ -72,7 +72,7 @@ tr:
         other: "görevliler"
       poll/ballot_sheet:
         one: Oy verme formu
-        other: Oy verme formu
+        other: Oy verme formları
       proposal:
         one: "Vatandaş önerisi"
         other: "Vatandaş önerileri"
