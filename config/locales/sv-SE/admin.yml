@@ -1285,6 +1285,7 @@ sv:
           poll_questions: "Sök omröstningsfrågor"
           proposals: "Sök förslag efter titel, kod, beskrivning eller fråga"
           users: "Sök användare efter namn eller e-post"
+        search: "Sök"
       search_results: "Sökresultat"
       no_search_results: "Inget resultat."
       actions: Åtgärder
@@ -1428,6 +1429,8 @@ sv:
           origin_web: Webbdeltagare
           origin_total: Totalt antal deltagare
       sdg:
+        budget_investments:
+          amount: "Godkänt belopp"
         debates: "Debatter"
         polls: "Omröstningar"
         proposals: "Förslag"
