@@ -132,10 +132,10 @@ da:
     attributes:
       budget:
         name: "Navn"
-        description_accepting: "Synlig beskrivelse under accept fasen"
+        description_accepting: "Synlig beskrivelse under modtagelsesfasen"
         description_reviewing: "Synlig beskrivelse under gennemgangsfasen"
-        description_selecting: "Synlig beskrivelse under udvælgelsesfasen"
-        description_valuating: "Synlig beskrivelse under vurderingsfasen"
+        description_selecting: "Synlig beskrivelse under støttefasen"
+        description_valuating: "Synlig beskrivelse under evalueringsfasen"
         description_balloting: "Synlig beskrivelse under afstemningsfasen"
         description_reviewing_ballots: "Beskrivelse under fasen Gennemgang af Stemmesedler"
         description_finished: "Synlig beskrivelse, når budgettet er færdiggjort"
