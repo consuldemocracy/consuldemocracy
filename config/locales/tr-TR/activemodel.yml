@@ -3,7 +3,7 @@ tr:
     models:
       verification:
         residence: "İkamet"
-        sms: "Kısa mesaj"
+        sms: "SMS"
     attributes:
       verification:
         residence:
