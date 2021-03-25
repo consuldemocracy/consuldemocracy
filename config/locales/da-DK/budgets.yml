@@ -4,7 +4,7 @@ da:
       show:
         title: Din stemme
         amount_available:
-          knapsack: "Du har stadig <span>%{count}</span> at investere for."
+          knapsack: "Du har stadig <span>%{count}</span> at investere for"
           approval:
             zero: "Du har stadig <span>%{count}</span> stemmer."
             one: "Du har stadig <span>%{count}</span> stemmer."
