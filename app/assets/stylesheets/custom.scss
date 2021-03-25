@@ -1935,3 +1935,11 @@ footer a{
     background-position: center right;
   }
 }
+
+@media (max-width: 767px) {
+  .highlight {
+    background: #fff;
+    border-bottom: 1px solid #407374;
+  }
+}
+
