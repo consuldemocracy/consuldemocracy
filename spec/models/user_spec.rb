@@ -440,6 +440,14 @@ describe User do
       expect(search).to eq [user1]
     end
 
+    it "find users by name with whitespaces" do
+      user1 = create(:user, username: "Larry Bird")
+      create(:user, username: "Robert Parish")
+      search = User.search(" larry ")
+
+      expect(search).to eq [user1]
+    end
+
     it "returns no results if no search term provided" do
       expect(User.search("    ")).to be_empty
     end
