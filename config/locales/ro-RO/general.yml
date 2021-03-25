@@ -261,7 +261,7 @@ ro:
           few: Aveți %{count} notificări noi
           other: Aveți %{count} notificări noi
         notifications: Notificări
-      sdg: "ODD (Obiective de dezvoltare durabilă)"
+      sdg: "ODD"
   notifications:
     index:
       empty_notifications: Nu aveți notificări noi.
