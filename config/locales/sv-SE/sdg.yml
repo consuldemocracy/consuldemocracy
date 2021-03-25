@@ -24,6 +24,9 @@ sv:
       help:
         title: "Globala målen för hållbar utveckling, hjälp"
         description: "Du kan anpassa dina bidrag till gemenskapen (debatter, medborgarförslag och budgetförslag) runt den hållbara 2030-agendan med hållbar utveckling som mål, så att vi får överblick över vårt bidrag till varje mål för hållbar utveckling. Nedan hittar du mer information om alla mål, deras delmål och lokala delmål."
+      show:
+        targets:
+          no_local_targets: Detta mål har inga lokala delmål
       filter:
         more:
           one: "Ett mål till"
@@ -32,3 +35,8 @@ sv:
       help:
         text: "SDG-hjälpsida"
       remove_tag: "Ta bort"
+    targets:
+      filter:
+        more:
+          one: "Ett delmål till"
+          other: "%{count} delmål till"
