@@ -1383,13 +1383,13 @@ ro:
       show:
         stats_title: Statistici
         summary:
-          comment_votes: Comentează voturi
+          comment_votes: Voturi comentarii
           comments: Comentarii
-          debate_votes: Dezbate voturi
+          debate_votes: Voturi dezbateri
           debates: Dezbateri
-          proposal_votes: Propunere voturi
+          proposal_votes: Voturi propuneri
           proposals: Propuneri
-          budgets: Deschide bugete
+          budgets: Bugete deschise
           budget_investments: Proiecte de investiție
           unverified_users: Utilizatori neverificați
           user_level_three: Utilizatori de nivelul trei
@@ -1413,7 +1413,7 @@ ro:
         proposal_created: Propunerile cetățeanului
       budgets:
         no_data_before_balloting_phase: "Nu există date care să fie afișate înainte de faza de votare."
-        title: "Bugete participativă - statistici de participare"
+        title: "Bugete participative - Statistici de participare"
         supporting_phase: Faza de suport
         balloting_phase: Vot final
       budget_balloting:
@@ -1456,7 +1456,7 @@ ro:
         debates: "Dezbateri"
         polls: "Sondaje"
         proposals: "Propuneri"
-        title: "Obiective de dezvoltare durabilă - Status"
+        title: "Obiective de dezvoltare durabilă - Statistici"
     tags:
       create: Crează subiect
       destroy: Șterge subiect
