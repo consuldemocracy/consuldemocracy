@@ -416,36 +416,26 @@ describe User do
   end
 
   describe "self.search" do
-    it "find users by email" do
-      user1 = create(:user, email: "larry@consul.dev")
-      create(:user, email: "bird@consul.dev")
-      search = User.search("larry@consul.dev")
+    describe "find users" do
+      let!(:larry) { create(:user, email: "larry@consul.dev", username: "Larry Bird") }
 
-      expect(search).to eq [user1]
-    end
+      before { create(:user, email: "robert@consul.dev", username: "Robert Parish") }
 
-    it "find users by email with whitespaces" do
-      user1 = create(:user, email: "larry@consul.dev")
-      create(:user, email: "bird@consul.dev")
-      search = User.search(" larry@consul.dev ")
+      it "by email" do
+        expect(User.search("larry@consul.dev")).to eq [larry]
+      end
 
-      expect(search).to eq [user1]
-    end
+      it "by email with whitespaces" do
+        expect(User.search(" larry@consul.dev ")).to eq [larry]
+      end
 
-    it "find users by name" do
-      user1 = create(:user, username: "Larry Bird")
-      create(:user, username: "Robert Parish")
-      search = User.search("larry")
+      it "by name" do
+        expect(User.search("larry")).to eq [larry]
+      end
 
-      expect(search).to eq [user1]
-    end
-
-    it "find users by name with whitespaces" do
-      user1 = create(:user, username: "Larry Bird")
-      create(:user, username: "Robert Parish")
-      search = User.search(" larry ")
-
-      expect(search).to eq [user1]
+      it "by name with whitespaces" do
+        expect(User.search(" larry ")).to eq [larry]
+      end
     end
 
     it "returns no results if no search term provided" do
