@@ -671,7 +671,7 @@ da:
       title_profiles: Profiler
       title_settings: Indstillinger
       title_site_customization: Sidens indhold
-      title_booths: Stemmebokse
+      title_booths: Valgsteder
       legislation: Medborgerdialog
       users: Brugere
       dashboard: Dashboard for forslag
@@ -903,18 +903,18 @@ da:
         table_email: "E-mail"
       by_officer:
         date: "Dato"
-        booth: "Stemmeboks"
+        booth: "Valgsted"
         assignments: "Arbejdsopgaver til afstemningen"
         no_assignments: "Brugeren har ingen arbejdsopgaver under denne afstemning."
     poll_shifts:
       new:
         add_shift: "Tilføj arbejdsplan"
         shift: "Opgave"
-        shifts: "Arbejdsplan for dette afstemningssted"
+        shifts: "Arbejdsplan for valgsted"
         date: "Dato"
         edit_shifts: Rediger arbejdsplan
         new_shift: "Ny arbejdsplan"
-        no_shifts: "Dette afstemningssted har ingen tilknyttet arbejdsplan"
+        no_shifts: "Dette valgsted har ingen tilknyttet arbejdsplan"
         officer: "Ledende medarbejder"
         remove_shift: "Fjern"
         search_officer_button: Søg
@@ -932,7 +932,7 @@ da:
         unable_to_destroy: "Arbejdsopgaver associeret til resultater eller optælling af stemmer kan ikke slettes"
         date_missing: "Der skal vælges en dato"
       vote_collection: Indsaml stemmer
-      recount_scrutiny: Omtælling & Eftersyn
+      recount_scrutiny: Optælling & Eftersyn
     booth_assignments:
       manage_assignments: Administrer opgaver
       manage:
@@ -988,9 +988,9 @@ da:
         submit_button: "Opdater afstemning"
       show:
         questions_tab: Spørgsmål
-        booths_tab: Stemmebokse
+        booths_tab: Valgsteder
         officers_tab: Ledende medarbejdere
-        recounts_tab: Omtælling
+        recounts_tab: Optælling
         results_tab: Resultater
         no_questions: "Der er ingen spørgsmål til denne afstemning."
         questions_title: "Spørgsmål"
@@ -1068,12 +1068,12 @@ da:
           title: Rediger video
     recounts:
       index:
-        title: "Omtælling"
+        title: "Optællinger"
         no_recounts: "Der er ikke noget at omtælle"
         all_booths_total: "Kumulativ samlet antal stemmer fra alle valgsteder:"
-        total_final: "Endelig omtælling"
+        total_final: "Endelig optælling"
         total_system: "Stemmer (automatisk)"
-        table_booth_name: "Afstemningsområde"
+        table_booth_name: "Valgsted"
         table_total_recount: "Samlet antal stemmer (af ledende medarbejder)"
         table_system_count: "Stemmer (automatisk)"
     results:
@@ -1094,22 +1094,22 @@ da:
     booths:
       index:
         title: "Liste over aktive valgsteder"
-        no_booths: "Der er ingen aktive stemmebokse til kommende afstemninger."
-        add_booth: "Tilføj stemmeboks"
+        no_booths: "Der er ingen aktive valgsteder til de kommende afstemninger."
+        add_booth: "Tilføj valgsted"
         name: "Navn"
         location: "Lokation"
         no_location: "Ingen lokation"
       new:
-        title: "Ny stemmeboks"
-        submit_button: "Opret stemmeboks"
+        title: "Nyt valgsted"
+        submit_button: "Opret valgsted"
       edit:
-        title: "Rediger stemmeboks"
-        submit_button: "Opdater stemmeboks"
+        title: "Rediger valgsted"
+        submit_button: "Opdater valgsted"
       show:
         location: "Lokation"
       booth:
         shifts: "Administrer arbejdsfordeling"
-        edit: "Rediger stemmeboks"
+        edit: "Rediger valgsted"
     officials:
       edit:
         destroy: Fjern "Embedsmand"-status
