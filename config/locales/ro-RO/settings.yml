@@ -77,11 +77,11 @@ ro:
       poster_short_title_description: 'Scurta descriere a funcției de afiș. Permite utilizatorilor să descarce un afiș în format PDF pentru a-și promova propunerea. Puteți găsi întregul conținut al acestui afiș în „/app/views/dashboard/poster/index.pdf.erb”'
       poster_description: Descrierea afișului
       poster_description_description: Descrierea detaliată a funcției de afiș
-    analytics_url: "Informatii statistice"
+    analytics_url: "Statistici URL"
     proposal_notification_minimum_interval_in_days: "Intervalul minim (de zile) pentru ca autorii să trimită notificări pentru o nouă propunere"
-    proposal_notification_minimum_interval_in_days_description: "Numarul de zile in care utilizatorul poate trimite notificari pentru cei care urmaresc propunerea"
+    proposal_notification_minimum_interval_in_days_description: "Numărul de zile în care utilizatorul poate trimite notificări către urmăritorii propunerii sale"
     direct_message_max_per_day: "Numărul maxim de mesaje directe pe zi"
-    direct_message_max_per_day_description: "Numarul maxim de mesaje pe care un utilizator le poate trimite intr-o zi"
+    direct_message_max_per_day_description: "Numărul maxim de mesaje pe care un utilizator le poate trimite într-o zi"
     feature:
       twitter_login: "Autentificare pe Twitter"
       twitter_login_description: "Permiteți utilizatorilor să se înscrie cu contul Twitter"
@@ -93,11 +93,11 @@ ro:
       wordpress_login_description: "Permiteți utilizatorilor să se înscrie cu contul Wordpress"
       featured_proposals: "Propuneri recomandate"
       featured_proposals_description: "Arata propunerile recomandate pe pagina de propuneri"
-      signature_sheets: "Foi cu semnaturi"
-      signature_sheets_description: "Permite adaugarea din pagina de administrare informatii despre semnaturile stranse fizic de la cetateni pentru Propuneri si/sau proiecte de investii din cadrul Bugetarii Participative"
+      signature_sheets: "Foi cu semnături"
+      signature_sheets_description: "Permite adăugarea din pagina de administrare informații despre semnăturile strânse fizic de la cetățeni pentru Propuneri și/sau proiecte de invesții din cadrul Bugetării Participative"
       user:
         recommendations: "Recomandări"
-        recommendations_description: "Arata recomandarile utilizatorilor pe prima pagina, pe baza etichetelor urmatoarele articole"
+        recommendations_description: "Arată recomandările utilizatorilor pe prima pagină, pe baza etichetelor următoarele articole"
         skip_verification: "Sari peste verificarea utilizatorului"
         skip_verification_description: "Elimina verificarea utilizatorilor (in functie de adresa) astfel incat toti utilizatorii vor putea participa la toate procesele"
         recommendations_on_debates: "Recomandari de dezbateri"
