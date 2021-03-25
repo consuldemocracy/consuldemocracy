@@ -78,6 +78,18 @@ RSpec.configure do |config|
     sign_in(create(:administrator).user)
   end
 
+  config.before(:each, :show_exceptions) do
+    config = Rails.application.env_config
+
+    allow(Rails.application).to receive(:env_config) do
+      config.merge(
+        "action_dispatch.show_exceptions" => true,
+        "action_dispatch.show_detailed_exceptions" => false,
+        "consider_all_requests_local" => false
+      )
+    end
+  end
+
   config.before(:each, :delay_jobs) do
     Delayed::Worker.delay_jobs = true
   end
