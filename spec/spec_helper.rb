@@ -70,8 +70,12 @@ RSpec.configure do |config|
     Bullet.end_request
   end
 
-  config.before(:each, :admin) do
+  config.before(:each, :admin, type: :system) do
     login_as(create(:administrator).user)
+  end
+
+  config.before(:each, :admin, type: :controller) do
+    sign_in(create(:administrator).user)
   end
 
   config.before(:each, :delay_jobs) do

@@ -1,8 +1,6 @@
 require "rails_helper"
 
-describe Admin::HiddenDebatesController do
-  before { sign_in create(:administrator).user }
-
+describe Admin::HiddenDebatesController, :admin do
   describe "PUT confirm_hide" do
     it "keeps query parameters while using protected redirects" do
       debate = create(:debate, :hidden)

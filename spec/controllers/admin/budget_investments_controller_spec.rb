@@ -1,10 +1,9 @@
 require "rails_helper"
 
-describe Admin::BudgetInvestmentsController do
+describe Admin::BudgetInvestmentsController, :admin do
   describe "PATCH update" do
     it "does not redirect on AJAX requests" do
       investment = create(:budget_investment)
-      sign_in(create(:administrator).user)
 
       patch :update, params: {
         id: investment,
