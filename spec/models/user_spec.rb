@@ -424,6 +424,14 @@ describe User do
       expect(search).to eq [user1]
     end
 
+    it "find users by email with whitespaces" do
+      user1 = create(:user, email: "larry@consul.dev")
+      create(:user, email: "bird@consul.dev")
+      search = User.search(" larry@consul.dev ")
+
+      expect(search).to eq [user1]
+    end
+
     it "find users by name" do
       user1 = create(:user, username: "Larry Bird")
       create(:user, username: "Robert Parish")
