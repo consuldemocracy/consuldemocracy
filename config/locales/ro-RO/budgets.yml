@@ -3,6 +3,7 @@ ro:
     ballots:
       show:
         title: Votul tău
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
           knapsack: "Mai aveți <span>%{count}</span> de investit."
           approval:
