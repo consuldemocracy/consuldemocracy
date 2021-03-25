@@ -158,7 +158,7 @@ describe "Notifications" do
       expect(page.current_url).to eq("https://www.external.link.dev/")
     end
 
-    scenario "With internal link" do
+    scenario "With internal link", :js do
       admin_notification.update!(link: "/stats")
 
       visit notifications_path
