@@ -66,6 +66,9 @@ bg:
         title: Бюджети с участие
         help: Помощ при бюджети с участие
       all_phases: Фази на бюджетните инвестиции
+      next_phase: Следваща фаза
+      prev_phase: Предишна фаза
+      current_phase: Текуща фаза
       map: Предложения за бюджетни инвестиции, разположени географски
       finished_budgets: Приключили бюджети с участие
       see_results: Вижте резултатите
@@ -115,6 +118,13 @@ bg:
           verified_only: "За създаване на нова бюджетна инвестиция %{verify}."
           create: "Създайте бюджетна инвестиция"
           not_logged_in: "За да създадете нова бюджетна инвестиция, трябва да %{sign_in} или %{sign_up}."
+        filter: "Филтриране на проекти по"
+        filters:
+          not_unfeasible: "Реализуем"
+          selected: "Избран"
+          unfeasible: "Неизпълним"
+          unselected: "Неизбран"
+          winners: "Победители"
         orders:
           random: случаен
           confidence_score: най-високо оценени
