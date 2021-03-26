@@ -21,7 +21,7 @@ describe "Admin dashboard actions", :admin do
         expect(page).to have_content("Email")
         expect(page).to have_content("Poster")
 
-        expect(page).to have_selector("a", text: "Edit", count: 3)
+        expect(page).to have_link "Edit", count: 3
       end
     end
 
