@@ -84,8 +84,8 @@ describe "Budgets" do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
 
-      heading1 = create(:budget_heading, group: group1)
-      heading2 = create(:budget_heading, group: group2)
+      heading1 = create(:budget_heading, group: group1, price: 1_000_000)
+      heading2 = create(:budget_heading, group: group2, price: 2_000_000)
 
       visit budgets_path locale: :es
 
@@ -93,9 +93,9 @@ describe "Budgets" do
         expect(page).to have_content group1.name
         expect(page).to have_content group2.name
         expect(page).to have_content heading1.name
-        expect(page).to have_content budget.formatted_heading_price(heading1)
+        expect(page).to have_content "1.000.000 €"
         expect(page).to have_content heading2.name
-        expect(page).to have_content budget.formatted_heading_price(heading2)
+        expect(page).to have_content "2.000.000 €"
       end
     end
 
