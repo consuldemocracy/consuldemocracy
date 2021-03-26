@@ -79,6 +79,15 @@ bg:
       sdg/goal:
         one: "цел"
         other: "цели"
+      sdg/local_target:
+        one: "локална цел"
+        other: "локални цели"
+      sdg/manager:
+        one: "Мениджър Цели на устойчивото развитие (ЦУР)"
+        other: "Мениджъри Цели на устойчивото развитие (ЦУР)"
+      sdg/target:
+        one: "цел"
+        other: "цели"
       site_customization/page:
         one: Персонализирана страница
         other: Персонализирани страници
@@ -221,6 +230,7 @@ bg:
         ends_at: "Крайна дата"
         starts_at: "Начална дата"
       budget/phase/translation:
+        name: "Име"
         description: "Описание"
         summary: "Резюме"
       comment:
@@ -279,6 +289,7 @@ bg:
         responsible_name: "Лице, отговорно за групата"
       poll:
         name: "Име"
+        title: "Име"
         starts_at: "Дата на започване"
         ends_at: "Дата на закриване"
         geozone_restricted: "Ограничено от геозона"
@@ -315,6 +326,14 @@ bg:
         signable_type: "Тип подписване"
         signable_id: "Подписващ идентификационен номер"
         document_numbers: "Номера на документи"
+      sdg/goal:
+        code: "Код"
+        title: "Заглавие"
+        description: "Описание"
+      sdg/local_target:
+        code: "Код"
+        target_id: "Цел"
+        title: "Заглавие"
       site_customization/page:
         content: Съдържание
         created_at: Създадено в
