@@ -263,7 +263,7 @@ describe "Debates" do
     expect(page).to have_content error_message
   end
 
-  scenario "JS injection is prevented but safe html is respected" do
+  scenario "JS injection is prevented but safe html is respected", :no_js do
     author = create(:user)
     login_as(author)
 
@@ -297,7 +297,7 @@ describe "Debates" do
     expect(page).to have_link("www.example.org", href: "http://www.example.org")
   end
 
-  scenario "JS injection is prevented but autolinking is respected" do
+  scenario "JS injection is prevented but autolinking is respected", :no_js do
     author = create(:user)
     js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     login_as(author)
