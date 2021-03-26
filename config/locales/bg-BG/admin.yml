@@ -35,6 +35,7 @@ bg:
           proposals: Предложения
           budgets: Бюджетиране чрез участие на гражданите
           help_page: Помощна страница
+          sdg: Цели за устойчиво развитие (ЦУР)
       edit:
         editing: Редактиране на банер
         form:
@@ -62,11 +63,14 @@ bg:
         type: Тип
         no_activity: Няма активност на модераторите.
     budgets:
+      actions:
+        preview: "Изглед на бюджета"
       index:
         title: Бюджетиране чрез участие на гражданите
         new_link: Създайте нов бюджет
         filter: Филтър
         filters:
+          all: Всички
           open: Отворен
           finished: Завършен
         budget_investments: Управление на проекти
