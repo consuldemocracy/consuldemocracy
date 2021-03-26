@@ -47,8 +47,8 @@ describe "Admin dashboard actions", :admin do
     end
 
     scenario "Creates a new action" do
-      fill_in "dashboard_action_title", with: action.title
-      fill_in "dashboard_action_description", with: action.description
+      fill_in "Title", with: action.title
+      fill_in "Description", with: action.description
 
       click_button "Save"
 

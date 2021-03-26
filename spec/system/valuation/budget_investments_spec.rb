@@ -415,10 +415,14 @@ describe "Valuation budget investments" do
         login_as(admin.user)
         visit edit_valuation_budget_budget_investment_path(budget, investment)
 
-        expect(page).to have_selector("input[id='budget_investment_feasibility_undecided']")
-        expect(page).to have_selector("textarea[id='budget_investment_unfeasibility_explanation']")
-        expect(page).to have_selector("input[name='budget_investment[valuation_finished]']")
-        expect(page).to have_button("Save changes")
+        within_fieldset "Feasibility" do
+          expect(page).to have_field "Undefined", type: :radio
+          expect(page).to have_field "Feasible", type: :radio
+        end
+
+        expect(page).to have_field "Feasibility explanation", type: :textarea
+        expect(page).to have_field "Valuation finished", type: :checkbox
+        expect(page).to have_button "Save changes"
       end
 
       scenario "Valuators that are not admins cannot reopen or modify a finished valuation" do

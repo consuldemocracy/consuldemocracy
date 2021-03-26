@@ -69,8 +69,6 @@ describe "Admin banners magement", :admin do
   end
 
   scenario "Publish a banner" do
-    section = WebSection.find_by(name: "proposals")
-
     visit admin_root_path
 
     within("#side_menu") do
@@ -81,12 +79,12 @@ describe "Admin banners magement", :admin do
 
     fill_in "Title", with: "Such banner"
     fill_in "Description", with: "many text wow link"
-    fill_in "banner_target_url", with: "https://www.url.com"
-    fill_in "post_started_at", with: Date.current - 7.days
-    fill_in "post_ended_at", with: Date.current + 7.days
-    fill_in "banner_background_color", with: "#850000"
-    fill_in "banner_font_color", with: "#ffb2b2"
-    check section.name.titleize
+    fill_in "Link", with: "https://www.url.com"
+    fill_in "Post started at", with: Date.current - 7.days
+    fill_in "Post ended at", with: Date.current + 7.days
+    fill_in "Background color", with: "#850000"
+    fill_in "Font color", with: "#ffb2b2"
+    within_fieldset("Sections where it will appear") { check "Proposals" }
 
     click_button "Save changes"
 

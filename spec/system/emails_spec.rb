@@ -373,9 +373,9 @@ describe "Emails" do
       login_as(valuator.user)
       visit edit_valuation_budget_budget_investment_path(budget, investment)
 
-      choose "budget_investment_feasibility_unfeasible"
-      fill_in "budget_investment_unfeasibility_explanation", with: "This is not legal as stated in Article 34.9"
-      find_field("budget_investment[valuation_finished]").click
+      within_fieldset("Feasibility") { choose "Unfeasible" }
+      fill_in "Feasibility explanation", with: "This is not legal as stated in Article 34.9"
+      check "Valuation finished"
       click_button "Save changes"
 
       expect(page).to have_content "Dossier updated"

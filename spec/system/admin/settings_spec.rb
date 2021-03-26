@@ -40,7 +40,7 @@ describe "Admin settings", :admin do
     scenario "When `Map settings` tab content is shown map should be initialized" do
       visit admin_settings_path
 
-      find("#map-tab").click
+      click_link "Map configuration"
 
       expect(page).to have_css("#admin-map.leaflet-container")
     end
@@ -51,7 +51,7 @@ describe "Admin settings", :admin do
       Setting["feature.map"] = false
 
       visit admin_settings_path
-      find("#map-tab").click
+      click_link "Map configuration"
 
       expect(page).to have_content "To show the map to users you must enable " \
                                    '"Proposals and budget investments geolocation" ' \
@@ -63,7 +63,7 @@ describe "Admin settings", :admin do
       Setting["feature.map"] = true
 
       visit admin_settings_path
-      find("#map-tab").click
+      click_link "Map configuration"
 
       expect(page).to have_css("#admin-map")
       expect(page).not_to have_content "To show the map to users you must enable " \
@@ -96,7 +96,7 @@ describe "Admin settings", :admin do
       Setting["feature.map"] = true
 
       visit admin_settings_path
-      find("#map-tab").click
+      click_link "Map configuration"
       find("#admin-map").click
       within "#map-form" do
         click_on "Update"
@@ -211,7 +211,7 @@ describe "Admin settings", :admin do
         map_setting = Setting.create!(key: "map.whatever")
 
         visit admin_settings_path
-        find("#map-tab").click
+        click_link "Map configuration"
 
         within("#edit_setting_#{map_setting.id}") do
           fill_in "setting_#{map_setting.id}", with: "New value"
