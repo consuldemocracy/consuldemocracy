@@ -46,11 +46,11 @@ describe "Users" do
       end
 
       scenario "Sign in with username" do
-        create(:user, username: "👻👽👾🤖", email: "ash@nostromo.dev", password: "xenomorph")
+        create(:user, username: "中村広", email: "ash@nostromo.dev", password: "xenomorph")
 
         visit "/"
         click_link "Sign in"
-        fill_in "user_login",    with: "👻👽👾🤖"
+        fill_in "user_login",    with: "中村広"
         fill_in "user_password", with: "xenomorph"
         click_button "Enter"
 
