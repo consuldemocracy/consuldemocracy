@@ -105,7 +105,7 @@ describe "Home" do
     end
   end
 
-  describe "IE alert" do
+  describe "IE alert", :no_js do
     scenario "IE visitors are presented with an alert until they close it", :page_driver do
       # Selenium API does not include page request/response inspection methods
       # so we must use Capybara::RackTest driver to set the browser's headers
