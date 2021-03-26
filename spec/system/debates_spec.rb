@@ -219,7 +219,7 @@ describe "Debates" do
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
   end
 
-  scenario "Create with invisible_captcha honeypot field" do
+  scenario "Create with invisible_captcha honeypot field", :no_js do
     author = create(:user)
     login_as(author)
 

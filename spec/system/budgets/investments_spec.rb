@@ -501,7 +501,7 @@ describe "Budget Investments" do
   context "Phase I - Accepting" do
     before { budget.update(phase: "accepting") }
 
-    scenario "Create with invisible_captcha honeypot field" do
+    scenario "Create with invisible_captcha honeypot field", :no_js do
       login_as(author)
       visit new_budget_investment_path(budget)
 
