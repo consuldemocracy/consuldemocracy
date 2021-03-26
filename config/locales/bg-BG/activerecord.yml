@@ -334,6 +334,16 @@ bg:
         code: "Код"
         target_id: "Цел"
         title: "Заглавие"
+      sdg/local_target/translation:
+        title: "Заглавие"
+        description: "Описание"
+      sdg/phase/kind:
+        sensitization: "Сенсибилизация"
+        planning: "Планиране"
+        monitoring: "Мониторинг"
+      sdg/target:
+        code: "Код"
+        title: "Заглавие"
       site_customization/page:
         content: Съдържание
         created_at: Създадено в
@@ -584,6 +594,10 @@ bg:
           attributes:
             locale:
               already_translated: Вече преведен ресурс
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "трябва да започва със същия код като целта, последван от точка и да завършва с число"
       messages:
         translations_too_short: Задължително е да предоставите поне един превод
         record_invalid: "Валидирането е неуспешно: %{errors}"
