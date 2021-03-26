@@ -21,7 +21,7 @@ class Budgets::PhasesComponent < ApplicationComponent
     end
 
     def phase_dom_id(phase)
-      "#{phases.index(phase) + 1}-#{phase.name.parameterize}"
+      "phase-#{phases.index(phase) + 1}-#{phase.name.parameterize}"
     end
 
     def prev_phase_dom_id(phase)

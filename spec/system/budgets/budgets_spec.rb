@@ -217,9 +217,9 @@ describe "Budgets" do
 
     click_link "Custom name for accepting phase"
 
-    within("#2-custom-name-for-accepting-phase") do
-      expect(page).to have_link("Previous phase", href: "#1-custom-name-for-informing-phase")
-      expect(page).to have_link("Next phase", href: "#3-custom-name-for-selecting-phase")
+    within("#phase-2-custom-name-for-accepting-phase") do
+      expect(page).to have_link "Previous phase", href: "#phase-1-custom-name-for-informing-phase"
+      expect(page).to have_link "Next phase", href: "#phase-3-custom-name-for-selecting-phase"
     end
   end
 
