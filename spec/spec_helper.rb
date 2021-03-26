@@ -60,6 +60,10 @@ RSpec.configure do |config|
     driven_by :headless_chrome
   end
 
+  config.before(:each, type: :system, no_js: true) do
+    driven_by :rack_test
+  end
+
   config.before(:each, type: :system) do
     Bullet.start_request
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(0)

@@ -75,7 +75,7 @@ describe "Moderate proposal notifications" do
           expect(author.reload).to be_hidden
         end
 
-        scenario "Ignore the proposal" do
+        scenario "Ignore the proposal", :no_js do
           click_button "Mark as viewed"
 
           expect(proposal_notification.reload).to be_ignored
