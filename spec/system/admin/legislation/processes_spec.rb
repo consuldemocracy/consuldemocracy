@@ -72,25 +72,17 @@ describe "Admin collaborative legislation", :admin do
       fill_in "Description", with: "Describing the process"
 
       base_date = Date.current
-      fill_in "legislation_process[start_date]", with: base_date.strftime("%d/%m/%Y")
-      fill_in "legislation_process[end_date]", with: (base_date + 5.days).strftime("%d/%m/%Y")
+      fill_in "legislation_process[start_date]", with: base_date
+      fill_in "legislation_process[end_date]", with: base_date + 5.days
 
-      fill_in "legislation_process[debate_start_date]",
-               with: base_date.strftime("%d/%m/%Y")
-      fill_in "legislation_process[debate_end_date]",
-               with: (base_date + 2.days).strftime("%d/%m/%Y")
-      fill_in "legislation_process[draft_start_date]",
-               with: (base_date - 3.days).strftime("%d/%m/%Y")
-      fill_in "legislation_process[draft_end_date]",
-               with: (base_date - 1.day).strftime("%d/%m/%Y")
-      fill_in "legislation_process[draft_publication_date]",
-               with: (base_date + 3.days).strftime("%d/%m/%Y")
-      fill_in "legislation_process[allegations_start_date]",
-               with: (base_date + 3.days).strftime("%d/%m/%Y")
-      fill_in "legislation_process[allegations_end_date]",
-               with: (base_date + 5.days).strftime("%d/%m/%Y")
-      fill_in "legislation_process[result_publication_date]",
-               with: (base_date + 7.days).strftime("%d/%m/%Y")
+      fill_in "legislation_process[debate_start_date]", with: base_date
+      fill_in "legislation_process[debate_end_date]", with: base_date + 2.days
+      fill_in "legislation_process[draft_start_date]", with: base_date - 3.days
+      fill_in "legislation_process[draft_end_date]", with: base_date - 1.day
+      fill_in "legislation_process[draft_publication_date]", with: base_date + 3.days
+      fill_in "legislation_process[allegations_start_date]", with: base_date + 3.days
+      fill_in "legislation_process[allegations_end_date]", with: base_date + 5.days
+      fill_in "legislation_process[result_publication_date]", with: base_date + 7.days
 
       click_button "Create process"
 
@@ -126,11 +118,11 @@ describe "Admin collaborative legislation", :admin do
       fill_in "Description", with: "Describing the process"
 
       base_date = Date.current - 2.days
-      fill_in "legislation_process[start_date]", with: base_date.strftime("%d/%m/%Y")
-      fill_in "legislation_process[end_date]", with: (base_date + 5.days).strftime("%d/%m/%Y")
+      fill_in "legislation_process[start_date]", with: base_date
+      fill_in "legislation_process[end_date]", with: base_date + 5.days
 
-      fill_in "legislation_process[draft_start_date]", with: base_date.strftime("%d/%m/%Y")
-      fill_in "legislation_process[draft_end_date]", with: (base_date + 3.days).strftime("%d/%m/%Y")
+      fill_in "legislation_process[draft_start_date]", with: base_date
+      fill_in "legislation_process[draft_end_date]", with: base_date + 3.days
       check "legislation_process[draft_phase_enabled]"
 
       click_button "Create process"
