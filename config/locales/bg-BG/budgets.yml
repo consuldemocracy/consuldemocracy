@@ -3,6 +3,7 @@ bg:
     ballots:
       show:
         title: Вашата бюлетина
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
           knapsack: "Все още имате <span>%{count}</span> да инвестирате."
           approval:
