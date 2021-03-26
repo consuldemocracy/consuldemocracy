@@ -3,4 +3,44 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+//------------ JHH: -----------
 $brand: linear-gradient(to right, #fa6200, #ffc514);
+
+footer {
+  .row {
+    .colors {
+      .banner1 {
+        height: 5px;
+        background-color: green;
+      }
+      .banner2 {
+        height: 5px;
+        background-color: yellow;
+      }
+      .banner3 {
+        height: 5px;
+        background-color: pink;
+      }
+      .banner4 {
+        height: 5px;
+        background-color: blue;
+      }
+    }
+    .logos {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+div {
+  div {
+    .color-img-1 {
+      background-color: red;
+    }
+  }
+}
+//------------ Fin -----------

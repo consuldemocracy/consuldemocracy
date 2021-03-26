@@ -2,6 +2,14 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
   include Translatable
   load_and_authorize_resource :page, class: "SiteCustomization::Page"
 
+  #JHH:
+  before_action :load_participants
+
+  def load_participants
+    @participants = User.all
+  end
+  #Fin
+
   def index
     @pages = SiteCustomization::Page.order("slug").page(params[:page])
   end
@@ -33,9 +41,9 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
   end
 
   private
-
+    #JHH: Aquí se añade el campo de participantes de las páginas
     def page_params
-      attributes = [:slug, :more_info_flag, :print_content_flag, :status]
+      attributes = [:page_users_id, :slug, :more_info_flag, :print_content_flag, :status]
 
       params.require(:site_customization_page).permit(*attributes,
         translation_params(SiteCustomization::Page)

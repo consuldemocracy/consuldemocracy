@@ -1,0 +1,16 @@
+<table class="margin-top">
+  <thead>
+    <tr>
+      <th scope="col"><%= t("users.show.debates") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @participants_p.each do |page| %>
+      <tr id="debate_<%= page.id %>">
+        <td>
+          <%= link_to page.title, page %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

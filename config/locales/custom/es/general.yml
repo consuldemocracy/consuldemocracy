@@ -219,8 +219,8 @@ es:
       conditions: Condiciones de uso
       consul: aplicación CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Para asistencia técnica entra en
-      copyright: CONSUL, %{year}
+      contact_us: Contacto Técnico innconsul@grupoinnovaris.com
+      copyright: GRUPO INNOVARIS, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
       open_source: software de código abierto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -840,6 +840,12 @@ es:
         participants:
           one: 1 Participación
           other: "%{count} Participaciones"
+        participants_d:
+          one: 1 Participación a Debate
+          other: "%{count} Participaciones a Debates"
+        participants_p:
+          one: 1 Participación a Página
+          other: "%{count} Participaciones a Páginas"
         budget_investments:
           one: 1 Proyecto de presupuestos participativos
           other: "%{count} Proyectos de presupuestos participativos"
@@ -980,3 +986,13 @@ es:
       more:
         one: "Una etiqueta más"
         other: "%{count} etiquetas más"
+  box_views:
+    box1:
+      title: Registrarte
+      description: Registrate rellenando el formulario y forma parte de nuestra comunidad.
+    box2:
+      title: Decidir
+      description: Opina, propone y decide como quieres que se hagan las cosas.
+    box3:
+      title: Compartir
+      description: Comparte en tus redes para aumentar las opiniones.

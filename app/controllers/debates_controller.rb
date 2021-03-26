@@ -19,6 +19,14 @@ class DebatesController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
+  # JHH: 
+  before_action :load_participants, only: [:new, :edit]
+   
+  def load_participants
+    @participants = User.all
+  end
+  #Fin
+
   def index_customization
     @featured_debates = @debates.featured
   end
@@ -55,7 +63,7 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      attributes = [:tag_list, :terms_of_service, :related_sdg_list]
+      attributes = [:debate_users_id, :tag_list, :terms_of_service, :related_sdg_list]
       params.require(:debate).permit(attributes, translation_params(Debate))
     end
 

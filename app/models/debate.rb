@@ -24,6 +24,13 @@ class Debate < ApplicationRecord
   translates :description, touch: true
   include Globalizable
 
+  #JHH: Añadimos la relaciones con los usuarios
+  has_many :debate_participants
+  has_many :users, through: :debate_participants
+
+  attr_accessor :debate_users_id
+  #Fin
+
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :debates
   belongs_to :geozone
   has_many :comments, as: :commentable, inverse_of: :commentable
@@ -35,6 +42,10 @@ class Debate < ApplicationRecord
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   before_save :calculate_hot_score, :calculate_confidence_score
+
+  #JHH:
+  after_save :save_debate_participants
+  #Fin
 
   scope :for_render,               -> { includes(:tags) }
   scope :sort_by_hot_score,        -> { reorder(hot_score: :desc) }
@@ -52,6 +63,18 @@ class Debate < ApplicationRecord
   visitable # Ahoy will automatically assign visit_id on create
 
   attr_accessor :link_required
+
+  #JHH:
+  def save_debate_participants
+    return if debate_users_id.nil? || debate_users_id.empty?
+
+    debate_users_array = self.debate_users_id.split(",")
+
+    debate_users_array.each do |debate_user|
+      DebateParticipant.create(debate: self, user_id: debate_user)
+    end
+  end
+  #end
 
   def url
     debate_path(self)

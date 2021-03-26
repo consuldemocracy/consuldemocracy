@@ -33,6 +33,21 @@
                         class: "tag-autocomplete" %>
     </div>
 
+    <%-# ----------------------JHH: Este código añade el formulario para los añadir los users---------------------- -%>
+
+    <div class="small-12 column">
+     <%= f.label :debate_users_id %>
+
+     <div id="participant_tags" class="tags">
+          <% @participants.each do |participant| %>
+            <a class="select-participants"><%= participant.id%>: <%=participant.email%></a>
+          <% end %>
+     </div>
+     <%= f.text_field :debate_users_id, placeholder: t("proposals.form.participant_placeholder")%>
+    </div>
+
+    <%-# ---------------------- Fin ---------------------- -%>
+
     <%= render SDG::RelatedListSelectorComponent.new(f) %>
 
     <div class="small-12 column">
