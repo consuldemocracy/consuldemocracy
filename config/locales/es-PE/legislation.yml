@@ -123,6 +123,6 @@ es-PE:
       debates:
         zero: "No hay debates"
         one: "%{count} debate"
-        other: "%{count} debate"
+        other: "%{count} debates"
       proposals:
         zero: "No hay propuestas"
