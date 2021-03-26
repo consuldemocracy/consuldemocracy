@@ -195,6 +195,8 @@ bg:
     none: Целият град
   layouts:
     application:
+      chrome: Google Chrome
+      firefox: Firefox
       ie: Установихме, че търсите с Internet Explorer. За подобряване на опита, препоръчваме да използвате %{firefox} или %{chrome}.
       ie_title: Този уеб сайт не е оптимизиран за вашия браузър
     dashboard:
@@ -216,9 +218,12 @@ bg:
       accessibility: Достъпност
       conditions: Условия за ползване
       consul: приложението CONSUL
+      consul_url: https://github.com/consul/consul
       contact_us: За посещение на техническа помощ
+      copyright: CONSUL, %{year}
       description: Този портал използва %{consul}, който е %{open_source}.
       open_source: софтуер с отворен код
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Решете как да оформите града, в който искате да живеете.
       participation_title: Участие
       privacy: Политика за поверителност
@@ -246,6 +251,7 @@ bg:
           one: Имате ново известие
           other: Имате %{count} нови известия
         notifications: Известия
+      sdg: "Цели за устойчиво развитие (ЦУР)"
   notifications:
     index:
       empty_notifications: Нямате нови известия.
@@ -275,18 +281,22 @@ bg:
     facebook:
       sign_in: Влезте с Facebook
       sign_up: Регистрирайте се с Facebook
+      name: Facebook
     finish_signup:
       title: "Допълнителни детайли"
       username_warning: "Поради промяна в начина, по който взаимодействаме със социалните мрежи, е възможно вашето потребителско име сега да изглежда като „вече използвано“. Ако случаят е такъв, моля, изберете друго потребителско име."
     google_oauth2:
       sign_in: Влезте с Google
       sign_up: Влезте с Google
+      name: Google
     wordpress_oauth2:
       sign_in: Влезте с Wordpress
       sign_up: Регистрирайте се с Wordpress
+      name: Wordpress
     twitter:
       sign_in: Влезте с Twitter
       sign_up: Регистрирайте се с Twitter
+      name: Twitter
     info:
       sign_in: "Влезте с:"
       sign_up: "Регистрирайте се с:"
@@ -419,6 +429,7 @@ bg:
         one: 1 глас
         other: "%{count} гласа"
       supports_necessary: "%{number} гласове за подкрепа нужни"
+      total_percent: 100%
       archived: "Това предложение е архивирано и не може да събира подкрепа."
       successful: "Това предложение достигна необходимата подкрепа."
       selected: "Избрано предложение"
@@ -682,7 +693,11 @@ bg:
       from: "От"
       general: "С текста"
       general_placeholder: "Напишете текста"
+      goal: "Според Целите за устойчиво развитие (ЦУР)"
+      goal_blank: "Изберете цел"
       search: "Филтър"
+      target: "По цел"
+      target_blank: "Изберете цел"
       title: "Подробно търсене"
       to: "До"
     author_info:
@@ -764,6 +779,12 @@ bg:
         zero: "0 езика в употреба"
         one: "1 език в употреба"
         other: "%{count} езика в употреба"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   stats:
     index:
       visits: Посещения
@@ -860,6 +881,10 @@ bg:
         debates: Вижте всички дискусии
         proposals: Вижте всички предложения
         processes: Вижте всички процеси
+      no_items:
+        debates: Няма дискусии сега
+        proposals: Нама предложения сега
+        processes: Няма отворени процеси сега
       process_label: Процес
       see_process: Вижте процес
     cards:
@@ -900,6 +925,7 @@ bg:
     title: "Свързано съдържание"
     add: "Добавете свързано съдържание"
     label: "Връзка към свързано съдържание"
+    placeholder: "%{url}"
     help: "Можете да добавите връзки на %{models} в%{org}."
     submit: "Добавете"
     error: "Връзката не е валидна. Не забравяйте да започнете с %{url}."
@@ -945,3 +971,8 @@ bg:
     create:
       enqueue_remote_translation: Преводите са заявени правилно.
     button: Превод на страница
+  tags:
+    filter:
+      more:
+        one: "Още един таг"
+        other: "%{count} повече тагове"
