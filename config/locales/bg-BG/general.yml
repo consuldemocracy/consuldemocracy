@@ -190,6 +190,7 @@ bg:
     local_census_records/import: Въвеждане на запис на местното преброяване
     site_customization/content_block: блок на съдържание
     site_customization/page: страница
+    sdg/local_target: локална цел
   geozones:
     none: Целият град
   layouts:
