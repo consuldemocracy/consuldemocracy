@@ -418,6 +418,8 @@ describe "Valuation budget investments" do
         within_fieldset "Feasibility" do
           expect(page).to have_field "Undefined", type: :radio
           expect(page).to have_field "Feasible", type: :radio
+
+          choose "Unfeasible"
         end
 
         expect(page).to have_field "Feasibility explanation", type: :textarea
