@@ -88,7 +88,7 @@ describe "Admin banners magement", :admin do
 
     click_button "Save changes"
 
-    expect(page).to have_content "Such banner"
+    expect(page).to have_content "Banner created successfully"
 
     visit proposals_path
 
@@ -158,7 +158,8 @@ describe "Admin banners magement", :admin do
 
     click_button "Save changes"
 
-    visit admin_banners_path
+    expect(page).to have_content "Banner updated successfully"
+
     expect(page).to have_content "Modified title"
     expect(page).to have_content "Edited text"
 

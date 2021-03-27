@@ -36,12 +36,16 @@ en:
           budgets: Participatory budgeting
           help_page: Help page
           sdg: SDG
+      create:
+        notice: "Banner created successfully"
       edit:
         editing: Edit banner
         form:
           submit_button: Save changes
       new:
         creating: Create banner
+      update:
+        notice: "Banner updated successfully"
     activity:
       show:
         action: Action

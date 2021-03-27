@@ -36,12 +36,16 @@ es:
           budgets: Presupuestos participativos
           help_page: Página de ayuda
           sdg: ODS
+      create:
+        notice: "Banner creado correctamente"
       edit:
         editing: Editar el banner
         form:
           submit_button: Guardar cambios
       new:
         creating: Crear banner
+      update:
+        notice: "Banner actualizado correctamente"
     activity:
       show:
         action: Acción
