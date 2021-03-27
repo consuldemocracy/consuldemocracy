@@ -442,17 +442,13 @@ describe "Valuation budget investments" do
       end
     end
 
-    scenario "Validates price formats" do
+    scenario "Validates price formats on the server side", :no_js do
       investment.update!(visible_to_valuators: true)
 
-      visit valuation_budget_budget_investments_path(budget)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
 
-      within("#budget_investment_#{investment.id}") do
-        click_link "Edit dossier"
-      end
-
-      fill_in "budget_investment_price", with: "12345,98"
-      fill_in "budget_investment_price_first_year", with: "9876.6"
+      fill_in "Price (€)", with: "12345,98"
+      fill_in "Cost during the first year (€) (optional, data not public)", with: "9876.6"
       click_button "Save changes"
 
       expect(page).to have_content("2 errors")
