@@ -66,6 +66,7 @@ describe "Admin collaborative legislation", :admin do
       base_date = Date.current
 
       within_fieldset text: "Draft phase" do
+        check "Enabled"
         fill_in "Start", with: base_date - 3.days
         fill_in "End", with: base_date - 1.day
       end
@@ -76,16 +77,21 @@ describe "Admin collaborative legislation", :admin do
       end
 
       within_fieldset "Debate phase" do
+        check "Enabled"
         fill_in "Start", with: base_date
         fill_in "End", with: base_date + 2.days
       end
 
       within_fieldset "Comments phase" do
+        check "Enabled"
         fill_in "Start", with: base_date + 3.days
         fill_in "End", with: base_date + 5.days
       end
 
+      check "legislation_process[draft_publication_enabled]"
       fill_in "Draft publication date", with: base_date + 3.days
+
+      check "legislation_process[result_publication_enabled]"
       fill_in "Final result publication date", with: base_date + 7.days
 
       click_button "Create process"
@@ -98,6 +104,11 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_content "An example legislation process"
       expect(page).not_to have_content "Summary of the process"
       expect(page).to have_content "Describing the process"
+
+      within(".legislation-process-list") do
+        expect(page).to have_link text: "Debate"
+        expect(page).to have_link text: "Comments"
+      end
 
       visit legislation_processes_path
 
