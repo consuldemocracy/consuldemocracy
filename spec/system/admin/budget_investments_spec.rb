@@ -1692,7 +1692,7 @@ describe "Admin budget investments", :admin do
     end
   end
 
-  context "Selecting csv" do
+  context "Selecting csv", :no_js do
     scenario "Downloading CSV file" do
       admin = create(:administrator, user: create(:user, username: "Admin"))
       valuator = create(:valuator, user: create(:user, username: "Valuator"))
