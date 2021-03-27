@@ -26,7 +26,7 @@ describe "Proposal Notifications" do
     expect(page).to have_content "Please share it with others so we can make it happen!"
   end
 
-  scenario "Send a notification (Active voter)" do
+  scenario "Send a notification (Active voter)", :no_js do
     proposal = create(:proposal)
 
     create(:user, :level_two, votables: [proposal], followables: [proposal])
@@ -35,7 +35,7 @@ describe "Proposal Notifications" do
     expect(Notification.count).to eq(1)
   end
 
-  scenario "Send a notification (Follower)" do
+  scenario "Send a notification (Follower)", :no_js do
     proposal = create(:proposal)
 
     create(:user, :level_two, followables: [proposal])
@@ -44,7 +44,7 @@ describe "Proposal Notifications" do
     expect(Notification.count).to eq(1)
   end
 
-  scenario "Send a notification (Follower and Voter)" do
+  scenario "Send a notification (Follower and Voter)", :no_js do
     proposal = create(:proposal)
 
     create(:user, followables: [proposal], votables: [proposal])
@@ -55,7 +55,7 @@ describe "Proposal Notifications" do
     expect(Notification.count).to eq(2)
   end
 
-  scenario "Send a notification (Blocked voter)" do
+  scenario "Send a notification (Blocked voter)", :no_js do
     proposal = create(:proposal)
     voter = create(:user, :level_two, votables: [proposal])
 
@@ -65,7 +65,7 @@ describe "Proposal Notifications" do
     expect(Notification.count).to eq(0)
   end
 
-  scenario "Send a notification (Erased voter)" do
+  scenario "Send a notification (Erased voter)", :no_js do
     proposal = create(:proposal)
     voter = create(:user, :level_two, votables: [proposal])
 
