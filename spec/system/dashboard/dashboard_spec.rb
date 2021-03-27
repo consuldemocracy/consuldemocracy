@@ -1,31 +1,25 @@
 require "rails_helper"
 
 describe "Proposal's dashboard" do
-  let!(:proposal) { create(:proposal, :draft) }
+  let(:proposal) { create(:proposal, :draft) }
+  before { login_as(proposal.author) }
 
-  before do
-    login_as(proposal.author)
+  scenario "Navigation" do
     visit proposal_dashboard_path(proposal)
-  end
 
-  scenario "Dashboard has a link to my proposal" do
     expect(page).to have_link("Edit my proposal")
-  end
-
-  scenario "My proposal has a link to edit the proposal" do
     expect(page).to have_link("Edit proposal")
-  end
-
-  scenario "My proposal has a link to retire the proposal" do
     expect(page).to have_link("Retire proposal")
-  end
-
-  scenario "My proposal has a link to publish the proposal" do
     expect(page).to have_link("Publish proposal")
+    expect(page).to have_link("Polls")
+    expect(page).to have_link("E-mail")
+    expect(page).to have_link("Poster")
   end
 
   scenario "Publish link dissapears after proposal's publication" do
+    visit proposal_dashboard_path(proposal)
     click_link "Publish proposal"
+
     expect(page).not_to have_link("Publish proposal")
   end
 
@@ -261,18 +255,6 @@ describe "Proposal's dashboard" do
     end
   end
 
-  scenario "Dashboard has a link to polls feature" do
-    expect(page).to have_link("Polls")
-  end
-
-  scenario "Dashboard has a link to e-mail feature" do
-    expect(page).to have_link("E-mail")
-  end
-
-  scenario "Dashboard has a link to poster feature" do
-    expect(page).to have_link("Poster")
-  end
-
   scenario "Dashboard has a link to resources on main menu" do
     feature = create(:dashboard_action, :resource, :active)
 
@@ -342,7 +324,8 @@ describe "Proposal's dashboard" do
   end
 
   scenario "Dashboard has a link to dashboard community", js: true do
-    expect(page).to have_link("Community")
+    visit proposal_dashboard_path(proposal)
+
     click_link "Community"
 
     expect(page).to have_content("Participants")
@@ -364,6 +347,8 @@ describe "Proposal's dashboard" do
   end
 
   scenario "Dashboard has a link to messages" do
+    visit proposal_dashboard_path(proposal)
+
     expect(page).to have_link("Message to users")
 
     within("#side_menu") do
@@ -403,6 +388,8 @@ describe "Proposal's dashboard" do
 
     create(:related_content, parent_relationable: proposal,
                              child_relationable: related_proposal, author: build(:user))
+
+    visit proposal_dashboard_path(proposal)
 
     within("#side_menu") do
       click_link "Related content"
@@ -497,7 +484,8 @@ describe "Proposal's dashboard" do
 
   describe "detect_new_actions_after_last_login" do
     before do
-      proposal.author.update(last_sign_in_at: Date.yesterday)
+      visit proposal_dashboard_path(proposal)
+      proposal.author.update!(last_sign_in_at: Date.yesterday)
     end
 
     scenario "Display tag 'new' on resouce when it is new for author since last login" do
