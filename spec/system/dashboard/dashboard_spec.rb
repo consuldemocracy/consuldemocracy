@@ -41,10 +41,15 @@ describe "Proposal's dashboard" do
       expect(page).to have_content(goal.title)
       expect(page).not_to have_content(future_goal.title)
 
-      find(:css, "#see_complete_course_link").click
+      click_button "Check out the complete course"
 
       expect(page).to have_content(goal.title)
       expect(page).to have_content(future_goal.title)
+
+      click_button "Hide course"
+
+      expect(page).to have_content(goal.title)
+      expect(page).not_to have_content(future_goal.title)
     end
   end
 
@@ -69,7 +74,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_content(action.description)
     expect(page).to have_content("This is a really very long description for a proposed")
     expect(page).to have_selector("#truncated_description_dashboard_action_#{action_long.id}")
-    expect(page).to have_selector("a", text: "Show description")
+    expect(page).to have_button("Show description")
   end
 
   scenario "Dashboard progress do not display from the fourth proposed actions", js: true do
@@ -420,9 +425,13 @@ describe "Proposal's dashboard" do
     action_5 = create(:dashboard_action, :proposed_action, :active)
 
     visit recommended_actions_proposal_dashboard_path(proposal.to_param)
-    find(:css, "#see_proposed_actions_link_pending").click
+    click_button "Check out recommended actions"
 
     expect(page).to have_content(action_5.title)
+
+    click_button "Hide recommended actions"
+
+    expect(page).not_to have_content(action_5.title)
   end
 
   scenario "On recommended actions section display four proposed actions", js: true do

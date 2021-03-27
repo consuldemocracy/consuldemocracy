@@ -12,17 +12,17 @@
         <%= long_description %>
       </div>
       <div class="read-more">
-        <a id="read_more_goal_<%= goal.code %>"
+        <button type="button" id="read_more_goal_<%= goal.code %>"
            data-toggle="description_goal_<%= goal.code %> read_more_goal_<%= goal.code %> read_less_goal_<%= goal.code %>"
            data-toggler="hide">
           <%= t("sdg.goals.show.read_more", goal: goal.title) %>
-        </a>
-        <a id="read_less_goal_<%= goal.code %>"
+        </button>
+        <button type="button" id="read_less_goal_<%= goal.code %>"
            data-toggle="description_goal_<%= goal.code %> read_more_goal_<%= goal.code %> read_less_goal_<%= goal.code %>"
            data-toggler="hide"
            class="hide">
           <%= t("sdg.goals.show.read_less", goal: goal.title) %>
-        </a>
+        </button>
       </div>
     </div>
   </article>

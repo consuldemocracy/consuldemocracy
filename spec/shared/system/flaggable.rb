@@ -26,10 +26,10 @@ shared_examples "flaggable" do |factory_name, admin: false|
     visit path
 
     within "##{dom_id(flaggable)} .flag-content" do
-      find(".icon-flag").click
+      click_button "Flag as inappropriate"
       click_link "Flag as inappropriate"
 
-      expect(page).to have_css ".flag-active"
+      expect(page).to have_button "Unflag"
       expect(page).to have_link "Unflag", visible: :hidden
       expect(page).not_to have_link "Flag as inappropriate", visible: :all
     end
@@ -49,12 +49,12 @@ shared_examples "flaggable" do |factory_name, admin: false|
     visit path
 
     within "##{dom_id(flaggable)} .flag-content" do
-      expect(page).to have_css ".flag-active"
+      expect(page).to have_button "Unflag"
 
-      find(".icon-flag").click
+      click_button "Unflag"
       click_link "Unflag"
 
-      expect(page).not_to have_css ".flag-active"
+      expect(page).not_to have_button "Unflag"
       expect(page).to have_link "Flag as inappropriate", visible: :hidden
       expect(page).not_to have_link "Unflag", visible: :all
     end
@@ -72,15 +72,15 @@ shared_examples "flaggable" do |factory_name, admin: false|
     visit path
 
     within "##{dom_id(flaggable)} .flag-content" do
-      find(".icon-flag").click
+      click_button "Flag as inappropriate"
       click_link "Flag as inappropriate"
 
-      expect(page).to have_css ".flag-active"
+      expect(page).to have_button "Unflag"
 
-      find(".icon-flag").click
+      click_button "Unflag"
       click_link "Unflag"
 
-      expect(page).not_to have_css ".flag-active"
+      expect(page).not_to have_button "Unflag"
     end
 
     visit path
@@ -100,14 +100,14 @@ shared_examples "flaggable" do |factory_name, admin: false|
     visit path
 
     within "##{dom_id(flaggable)} > .comment-body .flag-content" do
-      find(".icon-flag").click
+      click_button "Flag as inappropriate"
       click_link "Flag as inappropriate"
 
-      expect(page).to have_css ".flag-active"
+      expect(page).to have_button "Unflag"
     end
 
     within "##{dom_id(child_comment)} .flag-content" do
-      expect(page).not_to have_css ".flag-active"
+      expect(page).not_to have_button "Unflag"
     end
   end
 end

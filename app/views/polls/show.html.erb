@@ -63,18 +63,18 @@
               <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
                 <%= wysiwyg(answer.description) %>
               </div>
-              <div class="margin">
-                <a id="read_more_<%= answer.id %>"
+              <div class="read-more">
+                <button type="button" id="read_more_<%= answer.id %>"
                    data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
                    data-toggler="hide">
                   <%= t("polls.show.read_more", answer: answer.title) %>
-                </a>
-                <a id="read_less_<%= answer.id %>"
+                </button>
+                <button type="button" id="read_less_<%= answer.id %>"
                    data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
                    data-toggler="hide"
                    class="hide">
                   <%= t("polls.show.read_less", answer: answer.title) %>
-                </a>
+                </button>
               </div>
             </div>
           <% end %>

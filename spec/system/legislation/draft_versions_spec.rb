@@ -72,6 +72,25 @@ describe "Legislation Draft Versions" do
       expect(page).to have_content("Current version")
     end
 
+    scenario "show more info button", :js do
+      process.update!(additional_info: "Text for additional info of the process")
+      visit legislation_process_draft_version_path(process, original)
+
+      expect(page).not_to have_content "Text for additional info of the process"
+
+      click_button "More information and context"
+
+      expect(page).to have_content "Text for additional info of the process"
+    end
+
+    scenario "show help gif", :js do
+      visit legislation_process_draft_version_path(process, original)
+
+      click_button text: "How can I comment this document?"
+
+      expect(page).to have_content "select the text you want to comment and press the button with the pencil"
+    end
+
     context "for final versions" do
       it "does not show the comments panel" do
         final_version = create(:legislation_draft_version, process: process, title: "Final version",
