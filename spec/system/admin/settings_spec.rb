@@ -108,31 +108,31 @@ describe "Admin settings", :admin do
   end
 
   describe "Update content types" do
-    scenario "stores the correct mime types" do
-      setting = Setting.create!(key: "upload.images.content_types", value: "image/png")
+    scenario "stores the correct mime types", :js do
+      Setting["uploads.images.content_types"] = "image/png"
+      setting = Setting.find_by!(key: "uploads.images.content_types")
+
       visit admin_settings_path
-      find("#images-and-documents-tab").click
+      click_link "Images and documents"
 
       within "#edit_setting_#{setting.id}" do
-        expect(find("#png")).to be_checked
-        expect(find("#jpg")).not_to be_checked
-        expect(find("#gif")).not_to be_checked
+        expect(find_field("PNG")).to be_checked
+        expect(find_field("JPG")).not_to be_checked
+        expect(find_field("GIF")).not_to be_checked
 
-        check "gif"
+        check "GIF"
 
         click_button "Update"
       end
 
       expect(page).to have_content "Value updated"
-      expect(Setting["upload.images.content_types"]).to include "image/png"
-      expect(Setting["upload.images.content_types"]).to include "image/gif"
 
-      visit admin_settings_path(anchor: "tab-images-and-documents")
+      click_link "Images and documents"
 
       within "#edit_setting_#{setting.id}" do
-        expect(find("#png")).to be_checked
-        expect(find("#gif")).to be_checked
-        expect(find("#jpg")).not_to be_checked
+        expect(find_field("PNG")).to be_checked
+        expect(find_field("GIF")).to be_checked
+        expect(find_field("JPG")).not_to be_checked
       end
     end
   end
