@@ -18,11 +18,7 @@ describe "Admin custom images", :admin do
   end
 
   scenario "Upload valid jpg image" do
-    visit admin_root_path
-
-    within("#side_menu") do
-      click_link "Custom images"
-    end
+    visit admin_site_customization_images_path
 
     within("tr#image_map") do
       attach_file "site_customization_image_image", "spec/fixtures/files/custom_map.jpg"
@@ -36,11 +32,8 @@ describe "Admin custom images", :admin do
   scenario "Image is replaced on front views" do
     budget = create(:budget)
     group = create(:budget_group, budget: budget)
-    visit admin_root_path
 
-    within("#side_menu") do
-      click_link "Custom images"
-    end
+    visit admin_site_customization_images_path
 
     within("tr#image_map") do
       attach_file "site_customization_image_image", "spec/fixtures/files/custom_map.jpg"
@@ -84,11 +77,7 @@ describe "Admin custom images", :admin do
   end
 
   scenario "Upload invalid image" do
-    visit admin_root_path
-
-    within("#side_menu") do
-      click_link "Custom images"
-    end
+    visit admin_site_customization_images_path
 
     within("tr#image_social_media_icon") do
       attach_file "site_customization_image_image", "spec/fixtures/files/logo_header.png"
@@ -100,11 +89,7 @@ describe "Admin custom images", :admin do
   end
 
   scenario "Delete image" do
-    visit admin_root_path
-
-    within("#side_menu") do
-      click_link "Custom images"
-    end
+    visit admin_site_customization_images_path
 
     within("tr#image_social_media_icon") do
       attach_file "site_customization_image_image", "spec/fixtures/files/social_media_icon.png"
