@@ -109,6 +109,7 @@ describe "Stats", :admin do
         end
 
         expect(page).to have_content "Votes 3"
+        expect(page).to have_link "Go back", count: 1
       end
 
       scenario "Number of users that have supported an investment project" do
