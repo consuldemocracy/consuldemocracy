@@ -64,17 +64,29 @@ describe "Admin collaborative legislation", :admin do
       fill_in "Description", with: "Describing the process"
 
       base_date = Date.current
-      fill_in "legislation_process[start_date]", with: base_date
-      fill_in "legislation_process[end_date]", with: base_date + 5.days
 
-      fill_in "legislation_process[debate_start_date]", with: base_date
-      fill_in "legislation_process[debate_end_date]", with: base_date + 2.days
-      fill_in "legislation_process[draft_start_date]", with: base_date - 3.days
-      fill_in "legislation_process[draft_end_date]", with: base_date - 1.day
-      fill_in "legislation_process[draft_publication_date]", with: base_date + 3.days
-      fill_in "legislation_process[allegations_start_date]", with: base_date + 3.days
-      fill_in "legislation_process[allegations_end_date]", with: base_date + 5.days
-      fill_in "legislation_process[result_publication_date]", with: base_date + 7.days
+      within_fieldset text: "Draft phase" do
+        fill_in "Start", with: base_date - 3.days
+        fill_in "End", with: base_date - 1.day
+      end
+
+      within_fieldset "Process" do
+        fill_in "Start", with: base_date
+        fill_in "End", with: base_date + 5.days
+      end
+
+      within_fieldset "Debate phase" do
+        fill_in "Start", with: base_date
+        fill_in "End", with: base_date + 2.days
+      end
+
+      within_fieldset "Comments phase" do
+        fill_in "Start", with: base_date + 3.days
+        fill_in "End", with: base_date + 5.days
+      end
+
+      fill_in "Draft publication date", with: base_date + 3.days
+      fill_in "Final result publication date", with: base_date + 7.days
 
       click_button "Create process"
 
@@ -110,12 +122,17 @@ describe "Admin collaborative legislation", :admin do
       fill_in "Description", with: "Describing the process"
 
       base_date = Date.current - 2.days
-      fill_in "legislation_process[start_date]", with: base_date
-      fill_in "legislation_process[end_date]", with: base_date + 5.days
 
-      fill_in "legislation_process[draft_start_date]", with: base_date
-      fill_in "legislation_process[draft_end_date]", with: base_date + 3.days
-      check "legislation_process[draft_phase_enabled]"
+      within_fieldset text: "Draft phase" do
+        check "Enabled"
+        fill_in "Start", with: base_date
+        fill_in "End", with: base_date + 3.days
+      end
+
+      within_fieldset "Process" do
+        fill_in "Start", with: base_date
+        fill_in "End", with: base_date + 5.days
+      end
 
       click_button "Create process"
 
@@ -141,8 +158,12 @@ describe "Admin collaborative legislation", :admin do
       fill_in "Summary", with: "Summary of the process"
 
       base_date = Date.current
-      fill_in "legislation_process[start_date]", with: base_date
-      fill_in "legislation_process[end_date]", with: base_date + 5.days
+
+      within_fieldset "Process" do
+        fill_in "Start", with: base_date
+        fill_in "End", with: base_date + 5.days
+      end
+
       imageable_attach_new_file(create(:image), Rails.root.join("spec/fixtures/files/clippy.jpg"))
 
       click_button "Create process"
