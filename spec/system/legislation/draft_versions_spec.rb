@@ -51,7 +51,7 @@ describe "Legislation Draft Versions" do
       end
     end
 
-    it "switches to another version without js" do
+    it "switches to another version without js", :no_js do
       visit legislation_process_draft_version_path(process, original)
       expect(page).to have_content("Original version")
 
@@ -151,7 +151,7 @@ describe "Legislation Draft Versions" do
       end
     end
 
-    it "switches to another version without js" do
+    it "switches to another version without js", :no_js do
       visit legislation_process_draft_version_changes_path(process, original)
       expect(page).to have_content("Changes for first version")
 
@@ -353,7 +353,7 @@ describe "Legislation Draft Versions" do
                ranges: [{ "start" => "/p[1]", "startOffset" => 11, "end" => "/p[1]", "endOffset" => 30 }])
       end
 
-      scenario "without js" do
+      scenario "without js", :no_js do
         visit legislation_process_draft_version_annotations_path(process, original)
         expect(page).to have_content("quote for version 1")
 
