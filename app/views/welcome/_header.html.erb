@@ -1,13 +1,12 @@
 <% if header.present? %>
-  <div class="jumbo highlight">
-    <%= image_tag("innconsulportada.png", alt: "welcome_cover_photo", class: "menu_imagen") %>
+  <div class="jumbo highlight" style = "background-image: url(<%= asset_path 'innconsulportada.png' %>);height:600px" >
 
     <div class= "row" style = "width:100%;padding-top:10%">
 
 
         <div class="small-12 medium-6 column <%= "medium-9 small-centered text-center" unless header.image.present? %>">
         <span style = "color:#ffffff"><%= header.label %></span>
-        <h1 class="Letter_welcome_enterprise" ><%= header.title %></h1>
+        <h1 class="Letter_welcome_enterprise" style = "color:#ffffff" ><%= header.title %></h1>
         <p class="lead" style = "color:#ffffff"><%= header.description %></p>
         <div class="small-12 medium-6 large-4 <%= "small-centered" unless header.image.present? %>">
           <%= link_to header.link_text, header.link_url, class: "button expanded large" %>
@@ -17,3 +16,5 @@
   </div>
   <div class="background-header" ></div>
 <% end %>
+
+
