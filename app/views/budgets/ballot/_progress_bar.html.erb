@@ -1,6 +1,6 @@
-<span class="total-amount">
-  <%= sanitize(ballot.amount_limit_info(heading)) %>
-</span>
+<p id="total_amount" class="total-amount">
+  <%= sanitize(ballot.amount_progress(heading)) %>
+</p>
 
 <div class="progress" role="progressbar" tabindex="0"
      aria-valuenow="<%= ballot.percentage_spent(heading) %>" aria-valuemin="0" aria-valuemax="100">
@@ -9,6 +9,6 @@
   </div>
 </div>
 
-<p id="amount-spent" class="spent-amount-text" style="width: <%= ballot.percentage_spent(heading) %>%">
-  <%= render "budgets/ballot/progress_bar/#{ballot.budget.voting_style}", ballot: ballot, heading: heading %>
+<p id="amount_available" class="amount-available" style="width: <%= ballot.percentage_spent(heading) %>%">
+  <%= sanitize(ballot.amount_available_info(heading)) %>
 </p>

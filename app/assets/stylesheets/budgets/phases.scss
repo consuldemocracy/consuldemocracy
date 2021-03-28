@@ -102,7 +102,7 @@
     }
 
     &.current-phase-tab a {
-      background: $brand;
+      background: $brand-secondary;
       color: $white;
       padding-top: $line-height / 2;
 
@@ -141,9 +141,8 @@
     .budget-next-phase,
     .budget-prev-phase-disabled,
     .budget-next-phase-disabled {
-      background: $brand;
+      @extend %brand-background;
       border-radius: rem-calc(3);
-      color: $white;
       display: flex;
       font-size: rem-calc(36);
       height: 1em * 4 / 3;

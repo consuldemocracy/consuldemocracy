@@ -3,20 +3,21 @@ es:
     ballots:
       show:
         title: Mis votos
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
-          knapsack: "Te quedan <span>%{count}</span> para invertir"
+          knapsack: "Todavía disponible <span>%{count}</span>"
           approval:
             zero: "Te quedan <span>%{count}</span> votos disponibles"
             one: "Te queda <span>%{count}</span> voto disponible"
             other: "Te quedan <span>%{count}</span> votos disponibles"
         amount_spent:
-          knapsack: "Coste total <span>%{count}</span>"
+          knapsack: "Has asignado <span>%{count}</span>"
           approval:
             zero: "Votos: <span>%{count}</span>"
             one: "Votos: <span>%{count}</span>"
             other: "Votos: <span>%{count}</span>"
         amount_limit:
-          knapsack: "%{count}"
+          knapsack: "Presupuesto total <span>%{count}</span>"
           approval:
             one: "Puedes votar <span>1</span> proyecto"
             other: "Puedes votar hasta <span>%{count}</span> proyectos"
@@ -107,8 +108,8 @@ es:
               one: "<strong>Has votado un proyecto</strong>"
               other: "<strong>Has votado %{count} proyectos</strong>"
           change_vote_info:
-            knapsack: "Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible."
-            approval: "Puedes %{link} en cualquier momento hasta el cierre de esta fase."
+            knapsack: "Puedes %{link} en cualquier momento hasta el %{phase_end_date}. No hace falta que gastes todo el dinero disponible."
+            approval: "Puedes %{link} en cualquier momento hasta el %{phase_end_date}."
           change_vote_link: "cambiar tus votos"
           different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
@@ -169,14 +170,7 @@ es:
         different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar y confirmar mis votos"
-        price: "Esta partida tiene un presupuesto de"
-    progress_bar:
-      assigned: "Has asignado: "
-      available: "Presupuesto disponible: "
-      votes:
-        zero: "Has seleccionado <strong>0</strong> proyectos de <strong>%{limit}</strong>"
-        one: "Has seleccionado <strong>1</strong> proyecto de <strong>%{limit}</strong>"
-        other: "Has seleccionado <strong>%{count}</strong> proyectos de <strong>%{limit}</strong>"
+        price: "Presupuesto total"
     show:
       see_results: Ver resultados
     results:

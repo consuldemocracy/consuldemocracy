@@ -211,7 +211,7 @@ describe "Votes" do
       add_to_ballot(investment1.title)
 
       expect(page).to have_content("Remove vote")
-      expect(page).to have_content("You have selected 1 project out of 2")
+      expect(page).to have_content("YOU CAN STILL CAST 1 VOTE")
 
       within(".budget-investment", text: investment2.title) do
         find("div.ballot").hover

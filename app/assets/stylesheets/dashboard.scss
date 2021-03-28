@@ -320,7 +320,7 @@
   }
 
   .is-active {
-    color: $brand;
+    @include brand-text;
     position: relative;
 
     &::before {
@@ -335,7 +335,7 @@
     }
 
     a {
-      color: $brand;
+      @include brand-text;
 
       ~ a {
         color: $text;
@@ -343,7 +343,7 @@
     }
 
     [class^="icon-"] {
-      color: $brand;
+      @include brand-text;
     }
   }
 
@@ -358,7 +358,7 @@
     border-bottom: 2px solid $brand;
 
     .has-tip {
-      color: $brand;
+      @include brand-text;
       font-weight: bold;
     }
   }

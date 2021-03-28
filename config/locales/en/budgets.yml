@@ -3,8 +3,9 @@ en:
     ballots:
       show:
         title: Your ballot
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
-          knapsack: "You still have <span>%{count}</span> to invest."
+          knapsack: "Still available to you <span>%{count}</span>"
           approval:
             zero: "You can still cast <span>%{count}</span> votes."
             one: "You can still cast <span>%{count}</span> vote."
@@ -16,7 +17,7 @@ en:
             one: "Votes cast: <span>%{count}</span>"
             other: "Votes cast: <span>%{count}</span>"
         amount_limit:
-          knapsack: "%{count}"
+          knapsack: "Total budget <span>%{count}</span>"
           approval:
             one: "You can vote <span>1</span> project"
             other: "You can vote up to <span>%{count}</span> projects"
@@ -107,12 +108,12 @@ en:
               one: "<strong>You voted one proposal</strong>"
               other: "<strong>You voted %{count} proposals</strong>"
           change_vote_info:
-            knapsack: "You can %{link} at any time until the close of this phase. No need to spend all the money available."
-            approval: "You can %{link} at any time until the close of this phase."
+            knapsack: "You can %{link} at any time until %{phase_end_date}. No need to spend all the money available."
+            approval: "You can %{link} at any time until %{phase_end_date}."
           change_vote_link: "change your vote"
           different_heading_assigned: "You have active votes in another heading: %{heading_link}"
           change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
-          check_ballot_link: "check and confirm my ballot"
+          check_ballot_link: "submit my ballot"
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
           create: "Create a budget investment"
@@ -165,18 +166,11 @@ en:
           zero: No supports
         give_support: Support
       header:
-        check_ballot: Check and confirm my ballot
+        check_ballot: "Submit my ballot"
         different_heading_assigned: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
-        check_ballot_link: "check and confirm my ballot"
-        price: "This heading has a budget of"
-    progress_bar:
-      assigned: "You have assigned: "
-      available: "Available budget: "
-      votes:
-        zero: "You have selected <strong>0</strong> projects out of <strong>%{limit}</strong>"
-        one: "You have selected <strong>1</strong> project out of <strong>%{limit}</strong>"
-        other: "You have selected <strong>%{count}</strong> projects out of <strong>%{limit}</strong>"
+        check_ballot_link: "submit my ballot"
+        price: "Total budget"
     show:
       see_results: See results
     results:
