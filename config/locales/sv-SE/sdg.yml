@@ -14,6 +14,10 @@ sv:
             title: "Öka investeringarna, bland annat genom stärkt internationellt samarbete, i infrastruktur på landsbygden, jordbruksforskning och förlängningstjänster, teknikutveckling och genbanker för växter och boskap, för att öka jordbrukets produktionskapacitet i utvecklingsländer, i synnerhet de minst utvecklade länderna."
       goal_3:
         title_in_two_lines: "God hälsa och\nvälbefinnande"
+      goal_4:
+        title: "God utbildning"
+        title_in_two_lines: "God\nutbildning"
+        description: "God utbildning."
       goal_5:
         title: "Jämställdhet"
         title_in_two_lines: "Jäm-\nställdhet"
@@ -21,6 +25,7 @@ sv:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
       goal_7:
+        title: "Överkomlig och ren energi"
         title_in_two_lines: "Överkomlig och\nren energi"
         description: "Säkerställa tillgång till ekonomiskt överkomlig, tillförlitlig, hållbar och modern energi."
       goal_15:
