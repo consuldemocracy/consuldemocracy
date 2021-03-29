@@ -1,13 +1,16 @@
 require "rails_helper"
 
 describe "Admin hidden proposals", :admin do
-  scenario "List shows all relevant info" do
+  scenario "List shows all relevant info", :js do
     proposal = create(:proposal, :hidden)
     visit admin_hidden_proposals_path
 
     expect(page).to have_content(proposal.title)
     expect(page).to have_content(proposal.summary)
     expect(page).to have_content(proposal.description)
+
+    find("td", text: proposal.summary).hover
+
     expect(page).to have_content(proposal.video_url)
   end
 
