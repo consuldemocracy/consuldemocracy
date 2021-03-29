@@ -108,11 +108,11 @@ shared_examples "admin_progressable" do |factory_name, path_name|
     end
 
     context "Delete" do
-      scenario "Remove progress bar" do
+      scenario "Remove progress bar", :js do
         bar = create(:progress_bar, progressable: progressable, percentage: 34)
 
         visit path
-        within("#progress_bar_#{bar.id}") { click_link "Delete" }
+        within("#progress_bar_#{bar.id}") { accept_confirm { click_link "Delete" } }
 
         expect(page).to have_content "Progress bar deleted successfully"
         expect(page).not_to have_content "34%"

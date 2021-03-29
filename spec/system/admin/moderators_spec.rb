@@ -25,8 +25,8 @@ describe "Admin moderators", :admin do
     end
   end
 
-  scenario "Delete Moderator" do
-    click_link "Delete"
+  scenario "Delete Moderator", :js do
+    accept_confirm { click_link "Delete" }
 
     within("#moderators") do
       expect(page).not_to have_content moderator.name
@@ -82,11 +82,11 @@ describe "Admin moderators", :admin do
       expect(page).not_to have_content(moderator1.email)
     end
 
-    scenario "Delete after searching" do
+    scenario "Delete after searching", :js do
       fill_in "Search user by name or email", with: moderator2.email
       click_button "Search"
 
-      click_link "Delete"
+      accept_confirm { click_link "Delete" }
 
       expect(page).to have_content(moderator1.email)
       expect(page).not_to have_content(moderator2.email)

@@ -50,7 +50,7 @@ describe "Moderate budget investments" do
     end
 
     describe "moderate in bulk" do
-      describe "When an investment has been selected for moderation" do
+      describe "When an investment has been selected for moderation", :js do
         before do
           visit moderation_budget_investments_path
 
@@ -66,7 +66,8 @@ describe "Moderate budget investments" do
         end
 
         scenario "Hide the investment" do
-          click_button "Hide budget investments"
+          accept_confirm { click_button "Hide budget investments" }
+
           expect(page).not_to have_css("investment_#{investment.id}")
 
           investment.reload
@@ -75,7 +76,8 @@ describe "Moderate budget investments" do
         end
 
         scenario "Block the author" do
-          click_button "Block authors"
+          accept_confirm { click_button "Block authors" }
+
           expect(page).not_to have_css("investment_#{investment.id}")
 
           investment.reload
@@ -84,7 +86,8 @@ describe "Moderate budget investments" do
         end
 
         scenario "Ignore the investment" do
-          click_button "Mark as viewed"
+          accept_confirm { click_button "Mark as viewed" }
+
           expect(page).not_to have_css("investment_#{investment.id}")
 
           investment.reload
@@ -111,13 +114,13 @@ describe "Moderate budget investments" do
         end
       end
 
-      scenario "remembering page, filter and order" do
+      scenario "remembering page, filter and order", :js do
         stub_const("#{ModerateActions}::PER_PAGE", 2)
         create_list(:budget_investment, 4, heading: heading, author: create(:user))
 
         visit moderation_budget_investments_path(filter: "all", page: "2", order: "created_at")
 
-        click_button "Mark as viewed"
+        accept_confirm { click_button "Mark as viewed" }
 
         expect(page).to have_selector(".js-order-selector[data-order='created_at']")
 

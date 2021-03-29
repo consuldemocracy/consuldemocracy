@@ -113,12 +113,12 @@ describe "Admin Notifications", :admin do
   end
 
   context "Destroy" do
-    scenario "A draft notification can be destroyed" do
+    scenario "A draft notification can be destroyed", :js do
       notification = create(:admin_notification)
 
       visit admin_admin_notifications_path
       within("#admin_notification_#{notification.id}") do
-        click_link "Delete"
+        accept_confirm { click_link "Delete" }
       end
 
       expect(page).to have_content "Notification deleted successfully"

@@ -159,7 +159,7 @@ describe "Admin shifts", :admin do
     expect(page).to have_content "A date must be selected"
   end
 
-  scenario "Destroy" do
+  scenario "Destroy", :js do
     poll = create(:poll, :current)
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
@@ -174,14 +174,14 @@ describe "Admin shifts", :admin do
 
     expect(page).to have_css(".shift", count: 1)
     within("#shift_#{shift.id}") do
-      click_link "Remove"
+      accept_confirm { click_link "Remove" }
     end
 
     expect(page).to have_content "Shift removed"
     expect(page).to have_css(".shift", count: 0)
   end
 
-  scenario "Try to destroy with associated recount" do
+  scenario "Try to destroy with associated recount", :js do
     assignment = create(:poll_booth_assignment)
     officer_assignment = create(:poll_officer_assignment, booth_assignment: assignment)
     create(:poll_recount, booth_assignment: assignment, officer_assignment: officer_assignment)
@@ -198,7 +198,7 @@ describe "Admin shifts", :admin do
 
     expect(page).to have_css(".shift", count: 1)
     within("#shift_#{shift.id}") do
-      click_link "Remove"
+      accept_confirm { click_link "Remove" }
     end
 
     expect(page).not_to have_content "Shift removed"
@@ -206,7 +206,7 @@ describe "Admin shifts", :admin do
     expect(page).to have_css(".shift", count: 1)
   end
 
-  scenario "try to destroy with associated partial results" do
+  scenario "try to destroy with associated partial results", :js do
     assignment = create(:poll_booth_assignment)
     officer_assignment = create(:poll_officer_assignment, booth_assignment: assignment)
     create(:poll_partial_result,
@@ -225,7 +225,7 @@ describe "Admin shifts", :admin do
 
     expect(page).to have_css(".shift", count: 1)
     within("#shift_#{shift.id}") do
-      click_link "Remove"
+      accept_confirm { click_link "Remove" }
     end
 
     expect(page).not_to have_content "Shift removed"

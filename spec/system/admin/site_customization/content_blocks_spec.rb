@@ -81,14 +81,14 @@ describe "Admin custom content blocks", :admin do
   end
 
   context "Delete" do
-    scenario "From index page" do
+    scenario "From index page", :js do
       block = create(:site_customization_content_block)
       visit   admin_site_customization_content_blocks_path
 
       expect(page).to have_content("#{block.name} (#{block.locale})")
       expect(page).to have_content(block.body)
 
-      click_link "Delete block"
+      accept_confirm { click_link "Delete block" }
 
       expect(page).not_to have_content("#{block.name} (#{block.locale})")
       expect(page).not_to have_content(block.body)

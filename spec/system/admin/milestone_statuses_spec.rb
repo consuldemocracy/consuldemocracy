@@ -72,13 +72,13 @@ describe "Admin milestone statuses", :admin do
   end
 
   context "Delete" do
-    scenario "Hides status" do
+    scenario "Hides status", :js do
       status = create(:milestone_status)
 
       visit admin_milestone_statuses_path
 
       within("#milestone_status_#{status.id}") do
-        click_link "Delete"
+        accept_confirm { click_link "Delete" }
       end
 
       expect(page).not_to have_content status.name

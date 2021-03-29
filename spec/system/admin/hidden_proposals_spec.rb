@@ -11,11 +11,11 @@ describe "Admin hidden proposals", :admin do
     expect(page).to have_content(proposal.video_url)
   end
 
-  scenario "Restore" do
+  scenario "Restore", :js do
     proposal = create(:proposal, :hidden)
     visit admin_hidden_proposals_path
 
-    click_link "Restore"
+    accept_confirm { click_link "Restore" }
 
     expect(page).not_to have_content(proposal.title)
 
@@ -75,13 +75,13 @@ describe "Admin hidden proposals", :admin do
     expect(page).to have_content("Confirmed proposal")
   end
 
-  scenario "Action links remember the pagination setting and the filter" do
+  scenario "Action links remember the pagination setting and the filter", :js do
     allow(Proposal).to receive(:default_per_page).and_return(2)
     4.times { create(:proposal, :hidden, :with_confirmed_hide) }
 
     visit admin_hidden_proposals_path(filter: "with_confirmed_hide", page: 2)
 
-    click_on("Restore", match: :first, exact: true)
+    accept_confirm { click_link "Restore", match: :first, exact: true }
 
     expect(page).to have_current_path(/filter=with_confirmed_hide/)
     expect(page).to have_current_path(/page=2/)

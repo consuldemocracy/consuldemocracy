@@ -25,8 +25,8 @@ describe "Admin poll officers", :admin do
     end
   end
 
-  scenario "Delete" do
-    click_link "Delete position"
+  scenario "Delete", :js do
+    accept_confirm { click_link "Delete position" }
 
     expect(page).not_to have_css "#officers"
   end

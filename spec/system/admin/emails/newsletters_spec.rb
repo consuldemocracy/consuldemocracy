@@ -98,12 +98,12 @@ describe "Admin newsletter emails", :admin do
     expect(page).to have_content "This is a body"
   end
 
-  scenario "Destroy" do
+  scenario "Destroy", :js do
     newsletter = create(:newsletter)
 
     visit admin_newsletters_path
     within("#newsletter_#{newsletter.id}") do
-      click_link "Delete"
+      accept_confirm { click_link "Delete" }
     end
 
     expect(page).to have_content "Newsletter deleted successfully"

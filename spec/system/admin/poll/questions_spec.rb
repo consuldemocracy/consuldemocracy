@@ -134,7 +134,7 @@ describe "Admin poll questions", :admin do
     expect(page).not_to have_content(old_title)
   end
 
-  scenario "Destroy" do
+  scenario "Destroy", :js do
     poll = create(:poll)
     question1 = create(:poll_question, poll: poll)
     question2 = create(:poll_question, poll: poll)
@@ -142,7 +142,7 @@ describe "Admin poll questions", :admin do
     visit admin_poll_path(poll)
 
     within("#poll_question_#{question1.id}") do
-      click_link "Delete"
+      accept_confirm { click_link "Delete" }
     end
 
     expect(page).not_to have_content(question1.title)

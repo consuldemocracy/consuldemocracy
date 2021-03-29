@@ -27,7 +27,7 @@ describe "Admin activity" do
       end
     end
 
-    scenario "Shows moderation activity from moderation screen" do
+    scenario "Shows moderation activity from moderation screen", :js do
       proposal1 = create(:proposal)
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
@@ -42,7 +42,9 @@ describe "Admin activity" do
         check "proposal_#{proposal3.id}_check"
       end
 
-      click_on "Hide proposals"
+      accept_confirm { click_button "Hide proposals" }
+
+      expect(page).not_to have_content(proposal1.title)
 
       visit admin_activity_path
 
@@ -51,14 +53,16 @@ describe "Admin activity" do
       expect(page).to have_content(proposal3.title)
     end
 
-    scenario "Shows admin restores" do
+    scenario "Shows admin restores", :js do
       proposal = create(:proposal, :hidden)
 
       visit admin_hidden_proposals_path
 
       within("#proposal_#{proposal.id}") do
-        click_on "Restore"
+        accept_confirm { click_link "Restore" }
       end
+
+      expect(page).to have_content "There are no hidden proposals"
 
       visit admin_activity_path
 
@@ -90,7 +94,7 @@ describe "Admin activity" do
       end
     end
 
-    scenario "Shows moderation activity from moderation screen" do
+    scenario "Shows moderation activity from moderation screen", :js do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
@@ -105,7 +109,9 @@ describe "Admin activity" do
         check "debate_#{debate3.id}_check"
       end
 
-      click_on "Hide debates"
+      accept_confirm { click_button "Hide debates" }
+
+      expect(page).not_to have_content(debate1.title)
 
       visit admin_activity_path
 
@@ -114,14 +120,16 @@ describe "Admin activity" do
       expect(page).to have_content(debate3.title)
     end
 
-    scenario "Shows admin restores" do
+    scenario "Shows admin restores", :js do
       debate = create(:debate, :hidden)
 
       visit admin_hidden_debates_path
 
       within("#debate_#{debate.id}") do
-        click_on "Restore"
+        accept_confirm { click_link "Restore" }
       end
+
+      expect(page).to have_content "There are no hidden debates"
 
       visit admin_activity_path
 
@@ -154,7 +162,7 @@ describe "Admin activity" do
       end
     end
 
-    scenario "Shows moderation activity from moderation screen" do
+    scenario "Shows moderation activity from moderation screen", :js do
       comment1 = create(:comment, body: "SPAM")
       comment2 = create(:comment)
       comment3 = create(:comment, body: "Offensive!")
@@ -169,7 +177,9 @@ describe "Admin activity" do
         check "comment_#{comment3.id}_check"
       end
 
-      click_on "Hide comments"
+      accept_confirm { click_button "Hide comments" }
+
+      expect(page).not_to have_content(comment1.body)
 
       visit admin_activity_path
 
@@ -178,14 +188,16 @@ describe "Admin activity" do
       expect(page).to have_content(comment3.body)
     end
 
-    scenario "Shows admin restores" do
+    scenario "Shows admin restores", :js do
       comment = create(:comment, :hidden)
 
       visit admin_hidden_comments_path
 
       within("#comment_#{comment.id}") do
-        click_on "Restore"
+        accept_confirm { click_link "Restore" }
       end
+
+      expect(page).to have_content "There are no hidden comments"
 
       visit admin_activity_path
 
@@ -198,13 +210,13 @@ describe "Admin activity" do
   end
 
   context "User" do
-    scenario "Shows moderation activity on users" do
+    scenario "Shows moderation activity on users", :js do
       proposal = create(:proposal)
 
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        click_link "Hide author"
+        accept_confirm { click_link "Hide author" }
 
         expect(page).to have_current_path(debates_path)
       end
@@ -238,7 +250,7 @@ describe "Admin activity" do
       end
     end
 
-    scenario "Shows moderation activity from proposals moderation screen" do
+    scenario "Shows moderation activity from proposals moderation screen", :js do
       proposal1 = create(:proposal)
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
@@ -253,7 +265,9 @@ describe "Admin activity" do
         check "proposal_#{proposal3.id}_check"
       end
 
-      click_on "Block authors"
+      accept_confirm { click_button "Block authors" }
+
+      expect(page).not_to have_content(proposal1.author.username)
 
       visit admin_activity_path
 
@@ -264,7 +278,7 @@ describe "Admin activity" do
       expect(page).not_to have_content(proposal2.author.username)
     end
 
-    scenario "Shows moderation activity from debates moderation screen" do
+    scenario "Shows moderation activity from debates moderation screen", :js do
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
@@ -279,7 +293,9 @@ describe "Admin activity" do
         check "debate_#{debate3.id}_check"
       end
 
-      click_on "Block authors"
+      accept_confirm { click_button "Block authors" }
+
+      expect(page).not_to have_content(debate1.author.username)
 
       visit admin_activity_path
 
@@ -290,7 +306,7 @@ describe "Admin activity" do
       expect(page).not_to have_content(debate2.author.username)
     end
 
-    scenario "Shows moderation activity from comments moderation screen" do
+    scenario "Shows moderation activity from comments moderation screen", :js do
       comment1 = create(:comment, body: "SPAM")
       comment2 = create(:comment)
       comment3 = create(:comment, body: "Offensive!")
@@ -305,7 +321,9 @@ describe "Admin activity" do
         check "comment_#{comment3.id}_check"
       end
 
-      click_on "Block authors"
+      accept_confirm { click_button "Block authors" }
+
+      expect(page).not_to have_content comment1.author.username
 
       visit admin_activity_path
 
@@ -316,14 +334,16 @@ describe "Admin activity" do
       expect(page).not_to have_content(comment2.author.username)
     end
 
-    scenario "Shows admin restores" do
+    scenario "Shows admin restores", :js do
       user = create(:user, :hidden)
 
       visit admin_hidden_users_path
 
       within("#user_#{user.id}") do
-        click_on "Restore"
+        accept_confirm { click_link "Restore" }
       end
+
+      expect(page).to have_content "There are no hidden users"
 
       visit admin_activity_path
 

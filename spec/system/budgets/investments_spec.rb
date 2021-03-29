@@ -997,7 +997,7 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Author can destroy while on the accepting phase" do
+    scenario "Author can destroy while on the accepting phase", :js do
       user = create(:user, :level_two)
       investment1 = create(:budget_investment, heading: heading, price: 10000, author: user)
 
@@ -1006,7 +1006,8 @@ describe "Budget Investments" do
 
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_content(investment1.title)
-        click_link("Delete")
+
+        accept_confirm { click_link("Delete") }
       end
 
       visit user_path(user, tab: :budget_investments)

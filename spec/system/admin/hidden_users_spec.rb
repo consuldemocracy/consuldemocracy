@@ -17,11 +17,11 @@ describe "Admin hidden users", :admin do
     expect(page).to have_content(comment2.body)
   end
 
-  scenario "Restore" do
+  scenario "Restore", :js do
     user = create(:user, :hidden)
     visit admin_hidden_users_path
 
-    click_link "Restore"
+    accept_confirm { click_link "Restore" }
 
     expect(page).not_to have_content(user.username)
 
@@ -76,13 +76,13 @@ describe "Admin hidden users", :admin do
     expect(page).to have_content("Confirmed user")
   end
 
-  scenario "Action links remember the pagination setting and the filter" do
+  scenario "Action links remember the pagination setting and the filter", :js do
     allow(User).to receive(:default_per_page).and_return(2)
     4.times { create(:user, :hidden, :with_confirmed_hide) }
 
     visit admin_hidden_users_path(filter: "with_confirmed_hide", page: 2)
 
-    click_on("Restore", match: :first, exact: true)
+    accept_confirm { click_link "Restore", match: :first, exact: true }
 
     expect(page).to have_current_path(/filter=with_confirmed_hide/)
     expect(page).to have_current_path(/page=2/)

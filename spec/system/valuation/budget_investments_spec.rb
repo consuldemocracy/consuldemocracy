@@ -379,14 +379,16 @@ describe "Valuation budget investments" do
       end
     end
 
-    scenario "Finish valuation" do
+    scenario "Finish valuation", :js do
       investment.update!(visible_to_valuators: true)
 
       visit valuation_budget_budget_investment_path(budget, investment)
       click_link "Edit dossier"
 
-      find_field("budget_investment[valuation_finished]").click
+      accept_confirm { find_field("budget_investment[valuation_finished]").click }
       click_button "Save changes"
+
+      expect(page).to have_content "Dossier updated"
 
       visit valuation_budget_budget_investments_path(budget)
       expect(page).not_to have_content investment.title

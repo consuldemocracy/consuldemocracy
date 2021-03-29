@@ -66,25 +66,25 @@ describe "Admin geozones", :admin do
     end
   end
 
-  scenario "Delete geozone with no associated elements" do
+  scenario "Delete geozone with no associated elements", :js do
     geozone = create(:geozone, name: "Delete me!")
 
     visit admin_geozones_path
 
-    within("#geozone_#{geozone.id}") { click_link "Delete" }
+    within("#geozone_#{geozone.id}") { accept_confirm { click_link "Delete" } }
 
     expect(page).to have_content "Geozone successfully deleted"
     expect(page).not_to have_content("Delete me!")
     expect(Geozone.where(id: geozone.id)).to be_empty
   end
 
-  scenario "Delete geozone with associated element" do
+  scenario "Delete geozone with associated element", :js do
     geozone = create(:geozone, name: "Delete me!")
     create(:proposal, geozone: geozone)
 
     visit admin_geozones_path
 
-    within("#geozone_#{geozone.id}") { click_link "Delete" }
+    within("#geozone_#{geozone.id}") { accept_confirm { click_link "Delete" } }
 
     expect(page).to have_content "This geozone can't be deleted since there are elements attached to it"
 

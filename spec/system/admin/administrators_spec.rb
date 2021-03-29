@@ -29,9 +29,9 @@ describe "Admin administrators" do
     end
   end
 
-  scenario "Delete Administrator" do
+  scenario "Delete Administrator", :js do
     within "#administrator_#{user_administrator.id}" do
-      click_on "Delete"
+      accept_confirm { click_link "Delete" }
     end
 
     within("#administrators") do
@@ -39,9 +39,9 @@ describe "Admin administrators" do
     end
   end
 
-  scenario "Delete Administrator when its the current user" do
+  scenario "Delete Administrator when its the current user", :js do
     within "#administrator_#{admin.id}" do
-      click_on "Delete"
+      accept_confirm { click_link "Delete" }
     end
 
     within("#error") do
@@ -101,11 +101,11 @@ describe "Admin administrators" do
       expect(page).not_to have_content(administrator1.email)
     end
 
-    scenario "Delete after searching" do
+    scenario "Delete after searching", :js do
       fill_in "Search user by name or email", with: administrator2.email
       click_button "Search"
 
-      click_link "Delete"
+      accept_confirm { click_link "Delete" }
 
       expect(page).to have_content(administrator1.email)
       expect(page).not_to have_content(administrator2.email)

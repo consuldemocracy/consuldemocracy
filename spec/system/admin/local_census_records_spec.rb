@@ -134,11 +134,12 @@ describe "Admin local census records", :admin do
     let!(:local_census_record) { create(:local_census_record) }
     let!(:deleted_document_number) { local_census_record.document_number }
 
-    scenario "Should show successful destroy notice" do
+    scenario "Should show successful destroy notice", :js do
       visit admin_local_census_records_path
 
       expect(page).to have_content deleted_document_number
-      click_on "Delete"
+
+      accept_confirm { click_on "Delete" }
 
       expect(page).to have_content "Local census record removed successfully!"
       expect(page).not_to have_content deleted_document_number

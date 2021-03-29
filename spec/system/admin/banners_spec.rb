@@ -167,7 +167,7 @@ describe "Admin banners magement", :admin do
     expect(page).not_to have_content "Wrong text"
   end
 
-  scenario "Delete a banner" do
+  scenario "Delete a banner", :js do
     create(:banner, title: "Ugly banner",
                     description: "Bad text",
                     target_url:  "http://www.url.com",
@@ -176,15 +176,11 @@ describe "Admin banners magement", :admin do
                     background_color: "#FF0000",
                     font_color: "#FFFFFF")
 
-    visit admin_root_path
-
-    within("#side_menu") do
-      click_link "Manage banners"
-    end
+    visit admin_banners_path
 
     expect(page).to have_content "Ugly banner"
 
-    click_link "Delete banner"
+    accept_confirm { click_link "Delete banner" }
 
     visit admin_root_path
     expect(page).not_to have_content "Ugly banner"

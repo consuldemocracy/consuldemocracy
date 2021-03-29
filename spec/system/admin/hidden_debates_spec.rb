@@ -1,11 +1,11 @@
 require "rails_helper"
 
-describe "Admin hidden debates", :admin do
+describe "Admin hidden debates", :admin, :js do
   scenario "Restore" do
     debate = create(:debate, :hidden)
     visit admin_hidden_debates_path
 
-    click_link "Restore"
+    accept_confirm { click_link "Restore" }
 
     expect(page).not_to have_content(debate.title)
 
@@ -65,13 +65,13 @@ describe "Admin hidden debates", :admin do
     expect(page).to have_content("Confirmed debate")
   end
 
-  scenario "Action links remember the pagination setting and the filter" do
+  scenario "Action links remember the pagination setting and the filter", :js do
     allow(Debate).to receive(:default_per_page).and_return(2)
     4.times { create(:debate, :hidden, :with_confirmed_hide) }
 
     visit admin_hidden_debates_path(filter: "with_confirmed_hide", page: 2)
 
-    click_on("Restore", match: :first, exact: true)
+    accept_confirm { click_link "Restore", match: :first, exact: true }
 
     expect(page).to have_current_path(/filter=with_confirmed_hide/)
     expect(page).to have_current_path(/page=2/)

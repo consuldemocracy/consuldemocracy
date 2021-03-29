@@ -50,8 +50,8 @@ describe "Admin valuators", :admin do
     expect(page).not_to have_content "Can edit dossier"
   end
 
-  scenario "Destroy" do
-    click_link "Delete"
+  scenario "Destroy", :js do
+    accept_confirm { click_link "Delete" }
 
     within("#valuators") do
       expect(page).not_to have_content(valuator.name)

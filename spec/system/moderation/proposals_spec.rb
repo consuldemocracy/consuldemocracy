@@ -43,7 +43,7 @@ describe "Moderate proposals" do
     describe "moderate in bulk" do
       let!(:proposal) { create(:proposal) }
 
-      describe "When a proposal has been selected for moderation" do
+      describe "When a proposal has been selected for moderation", :js do
         before do
           visit moderation_proposals_path
           within(".menu.simple") do
@@ -58,21 +58,24 @@ describe "Moderate proposals" do
         end
 
         scenario "Hide the proposal" do
-          click_on "Hide proposals"
+          accept_confirm { click_button "Hide proposals" }
+
           expect(page).not_to have_css("proposal_#{proposal.id}")
           expect(proposal.reload).to be_hidden
           expect(proposal.author).not_to be_hidden
         end
 
         scenario "Block the author" do
-          click_on "Block authors"
+          accept_confirm { click_button "Block authors" }
+
           expect(page).not_to have_css("proposal_#{proposal.id}")
           expect(proposal.reload).to be_hidden
           expect(proposal.author).to be_hidden
         end
 
         scenario "Ignore the proposal" do
-          click_button "Mark as viewed"
+          accept_confirm { click_button "Mark as viewed" }
+
           expect(page).not_to have_css("proposal_#{proposal.id}")
           expect(proposal.reload).to be_ignored_flag
           expect(proposal.reload).not_to be_hidden
@@ -96,13 +99,13 @@ describe "Moderate proposals" do
         end
       end
 
-      scenario "remembering page, filter and order" do
+      scenario "remembering page, filter and order", :js do
         stub_const("#{ModerateActions}::PER_PAGE", 2)
         create_list(:proposal, 4)
 
         visit moderation_proposals_path(filter: "all", page: "2", order: "created_at")
 
-        click_button "Mark as viewed"
+        accept_confirm { click_button "Mark as viewed" }
 
         expect(page).to have_selector(".js-order-selector[data-order='created_at']")
 

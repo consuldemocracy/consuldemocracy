@@ -69,7 +69,7 @@ describe "Moderate comments" do
     end
 
     describe "moderate in bulk" do
-      describe "When a comment has been selected for moderation" do
+      describe "When a comment has been selected for moderation", :js do
         let!(:comment) { create(:comment) }
 
         before do
@@ -86,21 +86,24 @@ describe "Moderate comments" do
         end
 
         scenario "Hide the comment" do
-          click_on "Hide comments"
+          accept_confirm { click_button "Hide comments" }
+
           expect(page).not_to have_css("comment_#{comment.id}")
           expect(comment.reload).to be_hidden
           expect(comment.user).not_to be_hidden
         end
 
         scenario "Block the user" do
-          click_on "Block authors"
+          accept_confirm { click_button "Block authors" }
+
           expect(page).not_to have_css("comment_#{comment.id}")
           expect(comment.reload).to be_hidden
           expect(comment.user).to be_hidden
         end
 
         scenario "Ignore the comment" do
-          click_on "Mark as viewed"
+          accept_confirm { click_button "Mark as viewed" }
+
           expect(page).not_to have_css("comment_#{comment.id}")
           expect(comment.reload).to be_ignored_flag
           expect(comment.reload).not_to be_hidden
@@ -124,13 +127,13 @@ describe "Moderate comments" do
         end
       end
 
-      scenario "remembering page, filter and order" do
+      scenario "remembering page, filter and order", :js do
         stub_const("#{ModerateActions}::PER_PAGE", 2)
         create_list(:comment, 4)
 
         visit moderation_comments_path(filter: "all", page: "2", order: "newest")
 
-        click_on "Mark as viewed"
+        accept_confirm { click_button "Mark as viewed" }
 
         expect(page).to have_selector(".js-order-selector[data-order='newest']")
 
