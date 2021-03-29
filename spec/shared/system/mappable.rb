@@ -43,7 +43,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       find("#new_map_location").click
       send("submit_#{mappable_factory_name}_form")
 
-      expect(page).to have_css(".map_location")
+      within ".map_location" do
+        expect(page).to have_css(".map-icon")
+      end
     end
 
     scenario "Can not display map on #{mappable_factory_name} when not fill marker on map" do
