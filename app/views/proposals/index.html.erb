@@ -9,6 +9,7 @@
 <% end %>
 
 <main>
+<% if current_administrator? %>
   <% if [
           @search_terms,
           @advanced_search_terms,
@@ -137,4 +138,8 @@
     </div>
 
   </div>
+<% else %>
+ <p class="text-center"><%= t("not_authorized.view") %></p>
+ <%= back_link_to root_url %>
+<% end %>
 </main>

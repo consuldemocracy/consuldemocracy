@@ -1,15 +1,24 @@
 <table class="margin-top">
   <thead>
     <tr>
-      <th scope="col"><%= t("users.show.debates") %></th>
+    <th><%= t("admin.site_customization.pages.page.title") %></th>
+    <th><%= t("admin.site_customization.pages.page.status") %></th>
+    <th><%= t("admin.actions.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @participants_p.each do |page| %>
-      <tr id="debate_<%= page.id %>">
-        <td>
-          <%= link_to page.title, page %>
-        </td>
+      <tr id="page_<%= page.id %>">
+        <td><%= page.title %></td>
+        <% if page.status == "published" %>
+        <td style="color:#008000;"><%= page.status %></td>
+        <td><%= link_to t("admin.site_customization.pages.index.see_page"),
+                            page.url,
+                            target: "_blank",
+                            class: "show-link" %></td>
+        <% else %>
+        <td><%= page.status %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

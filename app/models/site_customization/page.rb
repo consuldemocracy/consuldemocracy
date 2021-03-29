@@ -36,7 +36,7 @@ class SiteCustomization::Page < ApplicationRecord
     #Iterarlo
     participants_array.each do |id_participant|
       #Crear ProposalParticipants
-      PageParticipant.find_or_create_by(site_customization_pages_id: self.id, user_id: id_participant)
+      PageParticipant.find_or_create_by(site_customization_pages_id: self.id, user_id: id_participant, slug: self.slug)
     end
   end
   #fin

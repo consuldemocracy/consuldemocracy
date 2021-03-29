@@ -2,6 +2,7 @@
 <%= render "proposals" if @proposals.present? && feature?(:proposals) %>
 <%= render "participants" if @participants.present? %>
 <%= render "part_debates" if @participants_d.present? %>
+<%= render "part_pages" if @participants_p.present? %>
 <%= render "debates" if @debates.present? && feature?(:debates) %>
 <%= render "budget_investments" if @budget_investments.present? && feature?(:budgets) %>
 <%= render "comments" if @comments.present? %>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  has_filters %w[proposals participants participants_d debates budget_investments comments follows], only: :show
+  has_filters %w[proposals participants participants_d participants_p debates budget_investments comments follows], only: :show
   # falta el filtro participants_p
 
   load_and_authorize_resource
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
                           proposals: Proposal.where(author_id: @user.id).count,
                           participants: ProposalParticipant.where(user_id: @user.id).count,
                           participants_d: DebateParticipant.where(user_id: @user.id).count,
-                          #participants_p: PageParticipant.where(user_id: @user.id).count,
+                          participants_p: PageParticipant.where(user_id: @user.id).count,
                           debates: (Setting["process.debates"] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting["process.budgets"] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count,
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       when "proposals" then load_proposals
       when "participants" then load_participants
       when "participants_d" then load_participants_d
-      #when "participants_p" then load_participants_p
+      when "participants_p" then load_participants_p
       when "debates" then load_debates
       when "budget_investments" then load_budget_investments
       when "comments" then load_comments
@@ -49,9 +49,9 @@ class UsersController < ApplicationController
       elsif @activity_counts[:participants_d] > 0
         load_participants_d
         @current_filter = "participants_d"
-      # elsif @activity_counts[:participants_p] > 0
-        # load_participants_p
-        # @current_filter = "participants_p"
+      elsif @activity_counts[:participants_p] > 0
+        load_participants_p
+        @current_filter = "participants_p"
       elsif @activity_counts[:debates] > 0
         load_debates
         @current_filter = "debates"
@@ -95,7 +95,7 @@ class UsersController < ApplicationController
       @participants_p = []
       @page_participate = PageParticipant.where(user_id: @user.id).order(created_at: :desc).page(params[:page])
       @page_participate.each do |part|
-        @participants_p += Page.where(id: part.site_customization_pages_id).order(created_at: :desc).page(params[:page])
+        @participants_p += SiteCustomization::Page.where(id: part.site_customization_pages_id).order(created_at: :desc).page(params[:page])
       end
       @participants_p
     end

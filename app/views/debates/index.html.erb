@@ -9,6 +9,7 @@
 <% end %>
 
 <main>
+<% if current_administrator? %>
   <% if @search_terms || @advanced_search_terms %>
     <div class="highlight no-margin-top padding margin-bottom">
       <div class="row">
@@ -96,4 +97,8 @@
     </div>
 
   </div>
+<% else %>
+ <p class="text-center"><%= t("not_authorized.title") %></p>
+ <%= back_link_to root_url %>
+<% end %>
 </main>
