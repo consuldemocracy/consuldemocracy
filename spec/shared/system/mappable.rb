@@ -321,12 +321,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 end
 
 def do_login_for(user)
-  if management
-    login_managed_user(user)
-    login_as_manager
-  else
-    login_as(user)
-  end
+  common_do_login_for(user, management: management)
 end
 
 def fill_in_proposal_form
