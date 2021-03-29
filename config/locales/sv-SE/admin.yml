@@ -1431,6 +1431,8 @@ sv:
       sdg:
         budget_investments:
           amount: "Godkänt belopp"
+          winners: "Vinnande budgetförslag"
+          sent: "Skickade budgetförslag"
         debates: "Debatter"
         polls: "Omröstningar"
         proposals: "Förslag"
