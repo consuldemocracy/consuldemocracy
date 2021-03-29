@@ -1,14 +1,14 @@
 require "rails_helper"
 
 describe "Answers", :admin do
-  scenario "Create" do
+  scenario "Create", :js do
     question = create(:poll_question)
 
     visit admin_question_path(question)
     click_link "Add answer"
 
     fill_in "Answer", with: "The answer is always 42"
-    fill_in "Description", with: "The Hitchhiker's Guide To The Universe"
+    fill_in_ckeditor "Description", with: "The Hitchhiker's Guide To The Universe"
 
     click_button "Save"
 
@@ -16,7 +16,7 @@ describe "Answers", :admin do
     expect(page).to have_content "The Hitchhiker's Guide To The Universe"
   end
 
-  scenario "Create second answer and place after the first one" do
+  scenario "Create second answer and place after the first one", :js do
     question = create(:poll_question)
     create(:poll_question_answer, title: "First", question: question, given_order: 1)
 
@@ -24,7 +24,7 @@ describe "Answers", :admin do
     click_link "Add answer"
 
     fill_in "Answer", with: "Second"
-    fill_in "Description", with: "Description"
+    fill_in_ckeditor "Description", with: "Description"
 
     click_button "Save"
 

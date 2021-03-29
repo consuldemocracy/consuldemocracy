@@ -342,13 +342,13 @@ describe "Emails" do
     let(:budget)   { create(:budget) }
     let!(:heading) { create(:budget_heading, name: "More hospitals", budget: budget) }
 
-    scenario "Investment created" do
+    scenario "Investment created", :js do
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
       select  heading.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a hospital"
-      fill_in "Description", with: "We have lots of people that require medical attention"
+      fill_in_ckeditor "Description", with: "We have lots of people that require medical attention"
       check   "budget_investment_terms_of_service"
 
       click_button "Create Investment"
@@ -464,7 +464,7 @@ describe "Emails" do
   end
 
   context "Newsletter", :admin do
-    scenario "Send newsletter email to selected users" do
+    scenario "Send newsletter email to selected users", :js do
       user_with_newsletter_in_segment_1 = create(:user, :with_proposal, newsletter: true)
       user_with_newsletter_in_segment_2 = create(:user, :with_proposal, newsletter: true)
       user_with_newsletter_not_in_segment = create(:user, newsletter: true)
@@ -476,7 +476,7 @@ describe "Emails" do
 
       expect(page).to have_content "Newsletter created successfully"
 
-      click_link "Send"
+      accept_confirm { click_link "Send" }
 
       expect(page).to have_content "Newsletter sent successfully"
 

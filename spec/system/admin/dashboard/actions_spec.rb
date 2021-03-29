@@ -46,9 +46,9 @@ describe "Admin dashboard actions", :admin do
       click_link "Create resource or action"
     end
 
-    scenario "Creates a new action" do
+    scenario "Creates a new action", :js do
       fill_in "Title", with: action.title
-      fill_in "Description", with: action.description
+      fill_in_ckeditor "Description", with: action.description
 
       click_button "Save"
 

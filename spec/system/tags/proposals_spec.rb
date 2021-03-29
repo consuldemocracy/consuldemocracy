@@ -59,14 +59,14 @@ describe "Tags" do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario "Create with custom tags" do
+  scenario "Create with custom tags", :js do
     user = create(:user)
     login_as(user)
 
     visit new_proposal_path
     fill_in "Proposal title", with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "This is very important because..."
+    fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_tag_list", with: "Economía, Hacienda"
     check "proposal_terms_of_service"
@@ -108,13 +108,13 @@ describe "Tags" do
     end
   end
 
-  scenario "Create with too many tags" do
+  scenario "Create with too many tags", :js do
     user = create(:user)
     login_as(user)
 
     visit new_proposal_path
     fill_in "Proposal title", with: "Title"
-    fill_in "Proposal text", with: "Description"
+    fill_in_ckeditor "Proposal text", with: "Description"
     check "proposal_terms_of_service"
 
     fill_in "proposal_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -125,7 +125,7 @@ describe "Tags" do
     expect(page).to have_content "tags must be less than or equal to 6"
   end
 
-  scenario "Create with dangerous strings" do
+  scenario "Create with dangerous strings", :js do
     author = create(:user)
     login_as(author)
 
@@ -133,7 +133,7 @@ describe "Tags" do
 
     fill_in "Proposal title", with: "A test of dangerous strings"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "A description suitable for this test"
+    fill_in_ckeditor "Proposal text", with: "A description suitable for this test"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     check "proposal_terms_of_service"
 

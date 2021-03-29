@@ -35,7 +35,7 @@ module CommonActions
   def fill_in_proposal
     fill_in "Proposal title", with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "This is very important because..."
+    fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     check "proposal_terms_of_service"

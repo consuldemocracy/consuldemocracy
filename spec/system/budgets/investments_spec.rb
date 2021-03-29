@@ -518,7 +518,7 @@ describe "Budget Investments" do
       expect(page).to have_current_path(budget_investments_path(budget))
     end
 
-    scenario "Create budget investment too fast" do
+    scenario "Create budget investment too fast", :js do
       allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
 
       login_as(author)
@@ -526,7 +526,7 @@ describe "Budget Investments" do
 
       select  heading.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "I am a bot"
-      fill_in "Description", with: "This is the description"
+      fill_in_ckeditor "Description", with: "This is the description"
       check   "budget_investment_terms_of_service"
 
       click_button "Create Investment"
@@ -535,14 +535,14 @@ describe "Budget Investments" do
       expect(page).to have_current_path(new_budget_investment_path(budget))
     end
 
-    scenario "Create" do
+    scenario "Create", :js do
       login_as(author)
 
       visit new_budget_investment_path(budget)
 
       select  heading.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a skyscraper"
-      fill_in "Description", with: "I want to live in a high tower over the clouds"
+      fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "budget_investment_location", with: "City center"
       fill_in "budget_investment_organization_name", with: "T.I.A."
       fill_in "budget_investment_tag_list", with: "Towers"

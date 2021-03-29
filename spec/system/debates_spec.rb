@@ -201,13 +201,13 @@ describe "Debates" do
     expect(page).to have_content("-6 votes")
   end
 
-  scenario "Create" do
+  scenario "Create", :js do
     author = create(:user)
     login_as(author)
 
     visit new_debate_path
     fill_in "Debate title", with: "A title for a debate"
-    fill_in "Initial debate text", with: "This is very important because..."
+    fill_in_ckeditor "Initial debate text", with: "This is very important because..."
     check "debate_terms_of_service"
 
     click_button "Start a debate"
@@ -236,7 +236,7 @@ describe "Debates" do
     expect(page).to have_current_path(debates_path)
   end
 
-  scenario "Create debate too fast" do
+  scenario "Create debate too fast", :js do
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
 
     author = create(:user)
@@ -244,7 +244,7 @@ describe "Debates" do
 
     visit new_debate_path
     fill_in "Debate title", with: "I am a bot"
-    fill_in "Initial debate text", with: "This is the description"
+    fill_in_ckeditor "Initial debate text", with: "This is the description"
     check "debate_terms_of_service"
 
     click_button "Start a debate"
@@ -281,13 +281,13 @@ describe "Debates" do
     expect(page.html).not_to include "&lt;p&gt;This is"
   end
 
-  scenario "Autolinking is applied to description" do
+  scenario "Autolinking is applied to description", :js do
     author = create(:user)
     login_as(author)
 
     visit new_debate_path
     fill_in "Debate title", with: "Testing auto link"
-    fill_in "Initial debate text", with: "<p>This is a link www.example.org</p>"
+    fill_in_ckeditor "Initial debate text", with: "This is a link www.example.org"
     check "debate_terms_of_service"
 
     click_button "Start a debate"
@@ -347,7 +347,7 @@ describe "Debates" do
     expect(page).to have_content "You do not have permission to"
   end
 
-  scenario "Update should be posible for the author of an editable debate" do
+  scenario "Update should be posible for the author of an editable debate", :js do
     debate = create(:debate)
     login_as(debate.author)
 
@@ -355,7 +355,7 @@ describe "Debates" do
     expect(page).to have_current_path(edit_debate_path(debate))
 
     fill_in "Debate title", with: "End child poverty"
-    fill_in "Initial debate text", with: "Let's do something to end child poverty"
+    fill_in_ckeditor "Initial debate text", with: "Let's do something to end child poverty"
 
     click_button "Save changes"
 

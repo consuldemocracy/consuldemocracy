@@ -58,7 +58,7 @@ describe "Admin newsletter emails", :admin do
     end
   end
 
-  scenario "Create" do
+  scenario "Create", :js do
     visit admin_newsletters_path
     click_link "New newsletter"
 
@@ -76,7 +76,7 @@ describe "Admin newsletter emails", :admin do
     expect(page).to have_content "This is a body"
   end
 
-  scenario "Update" do
+  scenario "Update", :js do
     newsletter = create(:newsletter)
 
     visit admin_newsletters_path
@@ -161,7 +161,7 @@ describe "Admin newsletter emails", :admin do
     end
   end
 
-  scenario "Select list of users to send newsletter" do
+  scenario "Select list of users to send newsletter", :js do
     UserSegments::SEGMENTS.each do |user_segment|
       visit new_admin_newsletter_path
 

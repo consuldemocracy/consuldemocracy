@@ -33,7 +33,7 @@ describe "Budget Investments" do
   context "Create" do
     before { heading.budget.update(phase: "accepting") }
 
-    scenario "Creating budget investments on behalf of someone, selecting a budget" do
+    scenario "Creating budget investments on behalf of someone, selecting a budget", :js do
       user = create(:user, :level_two)
 
       login_managed_user(user)
@@ -52,7 +52,7 @@ describe "Budget Investments" do
 
       select "Health", from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a park in my neighborhood"
-      fill_in "Description", with: "There is no parks here..."
+      fill_in_ckeditor "Description", with: "There is no parks here..."
       fill_in "budget_investment_location", with: "City center"
       fill_in "budget_investment_organization_name", with: "T.I.A."
       fill_in "budget_investment_tag_list", with: "green"

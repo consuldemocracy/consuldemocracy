@@ -357,7 +357,7 @@ describe "Proposals" do
     expect(page).to have_css "meta[property='og:title'][content=\'#{proposal.title}\']", visible: :hidden
   end
 
-  scenario "Create and publish" do
+  scenario "Create and publish", :js do
     author = create(:user)
     login_as(author)
 
@@ -365,7 +365,7 @@ describe "Proposals" do
 
     fill_in "Proposal title", with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "This is very important because..."
+    fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_tag_list", with: "Refugees, Solidarity"
@@ -411,7 +411,7 @@ describe "Proposals" do
     expect(page).to have_current_path(proposals_path)
   end
 
-  scenario "Create proposal too fast" do
+  scenario "Create proposal too fast", :js do
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
 
     author = create(:user)
@@ -420,7 +420,7 @@ describe "Proposals" do
     visit new_proposal_path
     fill_in "Proposal title", with: "I am a bot"
     fill_in "Proposal summary", with: "This is the summary"
-    fill_in "Proposal text", with: "This is the description"
+    fill_in_ckeditor "Proposal text", with: "This is the description"
     fill_in "proposal_responsible_name", with: "Some other robot"
     check "proposal_terms_of_service"
 
@@ -431,14 +431,14 @@ describe "Proposals" do
     expect(page).to have_current_path(new_proposal_path)
   end
 
-  scenario "Responsible name is stored for anonymous users" do
+  scenario "Responsible name is stored for anonymous users", :js do
     author = create(:user)
     login_as(author)
 
     visit new_proposal_path
     fill_in "Proposal title", with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "This is very important because..."
+    fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     check "proposal_terms_of_service"
@@ -452,7 +452,7 @@ describe "Proposals" do
     expect(Proposal.last.responsible_name).to eq("Isabel Garcia")
   end
 
-  scenario "Responsible name field is not shown for verified users" do
+  scenario "Responsible name field is not shown for verified users", :js do
     author = create(:user, :level_two)
     login_as(author)
 
@@ -461,7 +461,7 @@ describe "Proposals" do
 
     fill_in "Proposal title", with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "This is very important because..."
+    fill_in_ckeditor "Proposal text", with: "This is very important because..."
     check "proposal_terms_of_service"
 
     click_button "Create proposal"
@@ -505,14 +505,14 @@ describe "Proposals" do
     expect(page.html).not_to include "&lt;p&gt;This is"
   end
 
-  scenario "Autolinking is applied to description" do
+  scenario "Autolinking is applied to description", :js do
     author = create(:user)
     login_as(author)
 
     visit new_proposal_path
     fill_in "Proposal title", with: "Testing auto link"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "<p>This is a link www.example.org</p>"
+    fill_in_ckeditor "Proposal text", with: "This is a link www.example.org"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     check "proposal_terms_of_service"
 
@@ -563,7 +563,7 @@ describe "Proposals" do
   end
 
   context "Geozones" do
-    scenario "Default whole city" do
+    scenario "Default whole city", :js do
       author = create(:user)
       login_as(author)
 
@@ -581,7 +581,7 @@ describe "Proposals" do
       end
     end
 
-    scenario "Specific geozone" do
+    scenario "Specific geozone", :js do
       create(:geozone, name: "California")
       create(:geozone, name: "New York")
       login_as(create(:user))
@@ -590,7 +590,7 @@ describe "Proposals" do
 
       fill_in "Proposal title", with: "Help refugees"
       fill_in "Proposal summary", with: "In summary, what we want is..."
-      fill_in "Proposal text", with: "This is very important because..."
+      fill_in_ckeditor "Proposal text", with: "This is very important because..."
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
       fill_in "proposal_responsible_name", with: "Isabel Garcia"
       check "proposal_terms_of_service"
@@ -749,7 +749,7 @@ describe "Proposals" do
     Setting["max_votes_for_proposal_edit"] = 1000
   end
 
-  scenario "Update should be posible for the author of an editable proposal" do
+  scenario "Update should be posible for the author of an editable proposal", :js do
     proposal = create(:proposal)
     login_as(proposal.author)
 
@@ -758,7 +758,7 @@ describe "Proposals" do
 
     fill_in "Proposal title", with: "End child poverty"
     fill_in "Proposal summary", with: "Basically..."
-    fill_in "Proposal text", with: "Let's do something to end child poverty"
+    fill_in_ckeditor "Proposal text", with: "Let's do something to end child poverty"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
 
     click_button "Save changes"
@@ -1584,7 +1584,7 @@ describe "Successful proposals" do
       Setting["feature.user.skip_verification"] = "true"
     end
 
-    scenario "Create" do
+    scenario "Create", :js do
       author = create(:user)
       login_as(author)
 
@@ -1598,7 +1598,7 @@ describe "Successful proposals" do
 
       fill_in "Proposal title", with: "Help refugees"
       fill_in "Proposal summary", with: "In summary what we want is..."
-      fill_in "Proposal text", with: "This is very important because..."
+      fill_in_ckeditor "Proposal text", with: "This is very important because..."
       fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
       fill_in "proposal_tag_list", with: "Refugees, Solidarity"
       check "proposal_terms_of_service"
