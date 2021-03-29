@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Sessions" do
-  scenario "Staying in the same page after doing login/logout" do
+  scenario "Staying in the same page after doing login/logout", :js do
     user = create(:user, sign_in_count: 10)
     debate = create(:debate)
 
@@ -13,6 +13,8 @@ describe "Sessions" do
 
     expect(page).to have_content("You have been signed in successfully")
     expect(page).to have_current_path(debate_path(debate))
+
+    within("#notice") { click_button "Close" }
 
     click_link "Sign out"
 
