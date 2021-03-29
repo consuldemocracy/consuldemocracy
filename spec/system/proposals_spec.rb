@@ -609,7 +609,7 @@ describe "Proposals" do
   end
 
   context "Retired proposals" do
-    scenario "Retire" do
+    scenario "Retire", :js do
       proposal = create(:proposal)
       login_as(proposal.author)
 
@@ -622,15 +622,15 @@ describe "Proposals" do
         click_link "Edit my proposal"
       end
 
-      click_link "Retire proposal"
+      within_window(window_opened_by { click_link "Retire proposal" }) do
+        expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
-      expect(page).to have_current_path(retire_form_proposal_path(proposal))
+        select "Duplicated", from: "proposal_retired_reason"
+        fill_in "Explanation", with: "There are three other better proposals with the same subject"
+        click_button "Retire proposal"
 
-      select "Duplicated", from: "proposal_retired_reason"
-      fill_in "Explanation", with: "There are three other better proposals with the same subject"
-      click_button "Retire proposal"
-
-      expect(page).to have_content "Proposal retired"
+        expect(page).to have_content "Proposal retired"
+      end
 
       visit proposal_path(proposal)
 

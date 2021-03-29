@@ -934,7 +934,7 @@ describe "Admin budget investments", :admin do
   end
 
   context "Show" do
-    scenario "Show the investment details" do
+    scenario "Show the investment details", :js do
       user = create(:user, username: "Rachel", email: "rachel@valuators.org")
       valuator = create(:valuator, user: user)
       budget_investment = create(:budget_investment,
@@ -948,27 +948,27 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
-      click_link budget_investment.title
+      within_window(window_opened_by { click_link budget_investment.title }) do
+        expect(page).to have_content("Investment preview")
+        expect(page).to have_content(budget_investment.title)
+        expect(page).to have_content(budget_investment.description)
+        expect(page).to have_content(budget_investment.author.name)
+        expect(page).to have_content(budget_investment.heading.name)
+        expect(page).to have_content("1234")
+        expect(page).to have_content("1000")
+        expect(page).to have_content("Unfeasible")
+        expect(page).to have_content("It is impossible")
+        expect(page).to have_content("Ana (ana@admins.org)")
 
-      expect(page).to have_content("Investment preview")
-      expect(page).to have_content(budget_investment.title)
-      expect(page).to have_content(budget_investment.description)
-      expect(page).to have_content(budget_investment.author.name)
-      expect(page).to have_content(budget_investment.heading.name)
-      expect(page).to have_content("1234")
-      expect(page).to have_content("1000")
-      expect(page).to have_content("Unfeasible")
-      expect(page).to have_content("It is impossible")
-      expect(page).to have_content("Ana (ana@admins.org)")
+        within("#assigned_valuators") do
+          expect(page).to have_content("Rachel (rachel@valuators.org)")
+        end
 
-      within("#assigned_valuators") do
-        expect(page).to have_content("Rachel (rachel@valuators.org)")
+        expect(page).to have_button "Publish comment"
       end
-
-      expect(page).to have_button "Publish comment"
     end
 
-    scenario "Show image and documents on investment details" do
+    scenario "Show image and documents on investment details", :js do
       budget_investment = create(:budget_investment,
                                   :with_image,
                                   :unfeasible,
@@ -980,22 +980,22 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
-      click_link budget_investment.title
-
-      expect(page).to have_content(budget_investment.title)
-      expect(page).to have_content(budget_investment.description)
-      expect(page).to have_content(budget_investment.author.name)
-      expect(page).to have_content(budget_investment.heading.name)
-      expect(page).to have_content("Investment preview")
-      expect(page).to have_content(budget_investment.image.title)
-      expect(page).to have_content("Documents (1)")
-      expect(page).to have_content(document.title)
-      expect(page).to have_content("Download file")
-      expect(page).to have_content("1234")
-      expect(page).to have_content("1000")
-      expect(page).to have_content("Unfeasible")
-      expect(page).to have_content("It is impossible")
-      expect(page).to have_content("Ana (ana@admins.org)")
+      within_window(window_opened_by { click_link budget_investment.title }) do
+        expect(page).to have_content(budget_investment.title)
+        expect(page).to have_content(budget_investment.description)
+        expect(page).to have_content(budget_investment.author.name)
+        expect(page).to have_content(budget_investment.heading.name)
+        expect(page).to have_content("Investment preview")
+        expect(page).to have_content(budget_investment.image.title)
+        expect(page).to have_content("Documents (1)")
+        expect(page).to have_content(document.title)
+        expect(page).to have_content("Download file")
+        expect(page).to have_content("1234")
+        expect(page).to have_content("1000")
+        expect(page).to have_content("Unfeasible")
+        expect(page).to have_content("It is impossible")
+        expect(page).to have_content("Ana (ana@admins.org)")
+      end
     end
 
     scenario "Does not show related content or hide links on preview" do
@@ -1013,23 +1013,21 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content("Hide")
     end
 
-    scenario "If budget is finished, investment cannot be edited or valuation comments created" do
-      # Only milestones can be managed
-
+    scenario "If budget is finished, investment cannot be edited or valuation comments created", :js do
       finished_budget = create(:budget, :finished)
       budget_investment = create(:budget_investment,
                                   budget: finished_budget,
                                   administrator: administrator)
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
-      click_link budget_investment.title
+      within_window(window_opened_by { click_link budget_investment.title }) do
+        expect(page).not_to have_link "Edit"
+        expect(page).not_to have_link "Edit classification"
+        expect(page).not_to have_link "Edit dossier"
+        expect(page).to have_link "Create new milestone"
 
-      expect(page).not_to have_link "Edit"
-      expect(page).not_to have_link "Edit classification"
-      expect(page).not_to have_link "Edit dossier"
-      expect(page).to have_link "Create new milestone"
-
-      expect(page).not_to have_button "Publish comment"
+        expect(page).not_to have_button "Publish comment"
+      end
     end
   end
 
