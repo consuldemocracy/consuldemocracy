@@ -1,11 +1,6 @@
 require "rails_helper"
 
 describe "Admin polls", :admin do
-  scenario "Disabled with a feature flag" do
-    Setting["process.polls"] = nil
-    expect { visit admin_polls_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
   scenario "Index empty", :js do
     visit admin_root_path
 

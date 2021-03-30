@@ -13,18 +13,6 @@ describe "Budgets" do
 
       expect(page).to have_content budget.name
     end
-
-    scenario "raises an error if budget slug is not found" do
-      expect do
-        visit budget_path("wrong_budget")
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if budget id is not found" do
-      expect do
-        visit budget_path(0)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
   end
 
   context "Index" do
@@ -412,10 +400,7 @@ describe "Budgets" do
   end
 
   context "In Drafting phase" do
-    let(:admin) { create(:administrator).user }
-
     before do
-      logout
       budget.update!(published: false)
       create(:budget)
     end
@@ -425,25 +410,6 @@ describe "Budgets" do
         visit budgets_path
 
         expect(page).not_to have_content(budget.name)
-      end
-    end
-
-    context "Shown" do
-      scenario "Not accesible to guest users" do
-        expect { visit budget_path(budget) }.to raise_error(ActionController::RoutingError)
-      end
-
-      scenario "Not accesible to logged users" do
-        login_as(level_two_user)
-
-        expect { visit budget_path(budget) }.to raise_error(ActionController::RoutingError)
-      end
-
-      scenario "Is accesible to admin users" do
-        login_as(admin)
-        visit budget_path(budget)
-
-        expect(page.status_code).to eq(200)
       end
     end
   end

@@ -39,34 +39,10 @@ describe "Budget Investments" do
       expect(page).to have_content investment.title
     end
 
-    scenario "raises an error if budget slug is not found" do
-      expect do
-        visit budget_investment_path("wrong_budget", investment)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if budget id is not found" do
-      expect do
-        visit budget_investment_path(0, investment)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
     scenario "finds investment using heading slug" do
       visit budget_investment_path(budget, investment, heading_id: "heading_slug")
 
       expect(page).to have_content investment.title
-    end
-
-    scenario "raises an error if heading slug is not found" do
-      expect do
-        visit budget_investment_path(budget, investment, heading_id: "wrong_heading")
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if heading id is not found" do
-      expect do
-        visit budget_investment_path(budget, investment, heading_id: 0)
-      end.to raise_error ActiveRecord::RecordNotFound
     end
   end
 

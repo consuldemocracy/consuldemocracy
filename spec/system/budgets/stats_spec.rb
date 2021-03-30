@@ -12,18 +12,6 @@ describe "Stats" do
 
       expect(page).to have_content budget.name
     end
-
-    scenario "raises an error if budget slug is not found" do
-      expect do
-        visit budget_stats_path("wrong_budget")
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if budget id is not found" do
-      expect do
-        visit budget_stats_path(0)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
   end
 
   describe "Show" do

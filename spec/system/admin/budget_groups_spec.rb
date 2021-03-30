@@ -3,18 +3,6 @@ require "rails_helper"
 describe "Admin budget groups", :admin do
   let(:budget) { create(:budget, :drafting) }
 
-  context "Feature flag" do
-    before do
-      Setting["process.budgets"] = nil
-    end
-
-    scenario "Disabled with a feature flag" do
-      expect do
-        visit admin_budget_groups_path(budget)
-      end.to raise_exception(FeatureFlags::FeatureDisabled)
-    end
-  end
-
   context "Load" do
     let!(:budget) { create(:budget, slug: "budget_slug") }
     let!(:group)  { create(:budget_group, slug: "group_slug", budget: budget) }
@@ -23,30 +11,6 @@ describe "Admin budget groups", :admin do
       visit edit_admin_budget_group_path("budget_slug", "group_slug")
       expect(page).to have_content(budget.name)
       expect(page).to have_field "Group name", with: group.name
-    end
-
-    scenario "raises an error if budget slug is not found" do
-      expect do
-        visit edit_admin_budget_group_path("wrong_budget", group)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if budget id is not found" do
-      expect do
-        visit edit_admin_budget_group_path(0, group)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if group slug is not found" do
-      expect do
-        visit edit_admin_budget_group_path(budget, "wrong_group")
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if group id is not found" do
-      expect do
-        visit edit_admin_budget_group_path(budget, 0)
-      end.to raise_error ActiveRecord::RecordNotFound
     end
   end
 

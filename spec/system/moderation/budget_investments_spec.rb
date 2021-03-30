@@ -6,13 +6,6 @@ describe "Moderate budget investments" do
   let(:mod)         { create(:moderator) }
   let!(:investment) { create(:budget_investment, heading: heading, author: create(:user)) }
 
-  scenario "Disabled with a feature flag" do
-    Setting["process.budgets"] = nil
-    login_as(mod.user)
-
-    expect { visit moderation_budget_investments_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
   scenario "Hiding an investment", :js do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)

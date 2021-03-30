@@ -1,14 +1,6 @@
 require "rails_helper"
 
 describe "Admin legislation draft versions", :admin do
-  context "Feature flag" do
-    scenario "Disabled with a feature flag" do
-      Setting["process.legislation"] = nil
-      process = create(:legislation_process)
-      expect { visit admin_legislation_process_draft_versions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
-    end
-  end
-
   context "Index" do
     scenario "Displaying legislation process draft versions" do
       process = create(:legislation_process, title: "An example legislation process")

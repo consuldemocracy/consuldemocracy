@@ -18,25 +18,6 @@ describe "Valuation budget investments" do
 
       expect(page).to have_content budget.name
     end
-
-    scenario "raises an error if budget slug is not found" do
-      expect do
-        visit valuation_budget_budget_investments_path("wrong_budget")
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if budget id is not found" do
-      expect do
-        visit valuation_budget_budget_investments_path(0)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-  end
-
-  scenario "Disabled with a feature flag" do
-    Setting["process.budgets"] = nil
-    expect do
-      visit valuation_budget_budget_investments_path(create(:budget))
-    end.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "Display link to valuation section" do
@@ -274,15 +255,6 @@ describe "Valuation budget investments" do
         expect(page).to have_content("Rachel (rachel@valuators.org)")
         expect(page).to have_content("Rick (rick@valuators.org)")
       end
-    end
-
-    scenario "not visible for not assigned valuators" do
-      logout
-      login_as create(:valuator).user
-
-      expect do
-        visit valuation_budget_budget_investment_path(budget, investment)
-      end.to raise_error "Not Found"
     end
   end
 

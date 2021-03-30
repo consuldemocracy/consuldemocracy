@@ -5,11 +5,6 @@ describe "Polls" do
     it_behaves_like "notifiable in-app", :poll
   end
 
-  scenario "Disabled with a feature flag" do
-    Setting["process.polls"] = nil
-    expect { visit polls_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
   describe "Index" do
     scenario "Shows description for open polls" do
       visit polls_path

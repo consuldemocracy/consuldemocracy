@@ -14,30 +14,6 @@ describe "Budget Groups" do
       visit budget_group_path(budget, group)
       expect(page).to have_content "Select an option"
     end
-
-    scenario "raises an error if budget slug is not found" do
-      expect do
-        visit budget_group_path("wrong_budget", group)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if budget id is not found" do
-      expect do
-        visit budget_group_path(0, group)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if group slug is not found" do
-      expect do
-        visit budget_group_path(budget, "wrong_group")
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if group id is not found" do
-      expect do
-        visit budget_group_path(budget, 0)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
   end
 
   context "Show" do

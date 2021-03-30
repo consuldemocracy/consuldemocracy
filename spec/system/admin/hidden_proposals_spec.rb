@@ -1,12 +1,6 @@
 require "rails_helper"
 
 describe "Admin hidden proposals", :admin do
-  scenario "Disabled with a feature flag" do
-    Setting["process.proposals"] = nil
-
-    expect { visit admin_hidden_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
   scenario "List shows all relevant info" do
     proposal = create(:proposal, :hidden)
     visit admin_hidden_proposals_path
