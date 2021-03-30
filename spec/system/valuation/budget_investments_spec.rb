@@ -20,8 +20,10 @@ describe "Valuation budget investments" do
     end
   end
 
-  scenario "Display link to valuation section" do
+  scenario "Display link to valuation section", :js do
     visit root_path
+    click_link "Menu"
+
     expect(page).to have_link "Valuation", href: valuation_root_path
   end
 

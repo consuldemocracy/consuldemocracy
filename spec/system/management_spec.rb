@@ -1,15 +1,14 @@
 require "rails_helper"
 
-describe "Management" do
+describe "Management", :js do
   let(:user) { create(:user) }
 
   scenario "Should show admin menu if logged user is admin" do
     create(:administrator, user: user)
     login_as(user)
+
     visit root_path
-
-    expect(page).to have_link("Management")
-
+    click_link "Menu"
     click_link "Management"
 
     expect(page).to have_content("My content")
@@ -22,8 +21,7 @@ describe "Management" do
     login_as(user)
     visit root_path
 
-    expect(page).to have_link("Management")
-
+    click_link "Menu"
     click_link "Management"
 
     expect(page).not_to have_content("My content")

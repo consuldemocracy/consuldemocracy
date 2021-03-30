@@ -15,8 +15,10 @@ describe "Poll budget ballot sheets" do
       set_officing_booth(booth)
     end
 
-    scenario "Budget polls are visible" do
+    scenario "Budget polls are visible", :js do
       visit root_path
+
+      click_link "Menu"
       click_link "Polling officers"
 
       within("#side_menu") do
