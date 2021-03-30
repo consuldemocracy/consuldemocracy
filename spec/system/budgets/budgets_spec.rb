@@ -149,7 +149,7 @@ describe "Budgets" do
     end
   end
 
-  scenario "Index shows only published phases" do
+  scenario "Index shows only published phases", :js do
     budget.update!(phase: :finished)
     phases = budget.phases
 
@@ -185,35 +185,15 @@ describe "Budgets" do
 
     visit budgets_path
 
-    expect(page).not_to have_content "Description of reviewing phase"
-    expect(page).not_to have_content "January 11, 2018 - January 20, 2018"
-    expect(page).not_to have_content "Description of valuating phase"
-    expect(page).not_to have_content "February 10, 2018 - February 20, 2018"
-    expect(page).not_to have_content "Description of publishing_prices phase"
-    expect(page).not_to have_content "February 21, 2018 - March 01, 2018"
-    expect(page).not_to have_content "Description of reviewing_ballots phase"
-    expect(page).not_to have_content "March 11, 2018 - March 20, 2018"
+    expect(page).not_to have_link "Reviewing projects"
+    expect(page).not_to have_link "Valuating projects"
+    expect(page).not_to have_link "Publishing projects prices"
+    expect(page).not_to have_link "Reviewing voting"
+
+    click_link "Custom name for informing phase"
 
     expect(page).to have_content "Description of informing phase"
     expect(page).to have_content "December 30, 2017 - December 31, 2017"
-    expect(page).to have_content "Description of accepting phase"
-    expect(page).to have_content "January 01, 2018 - January 20, 2018"
-    expect(page).to have_content "Description of selecting phase"
-    expect(page).to have_content "January 21, 2018 - March 01, 2018"
-    expect(page).to have_content "Description of balloting phase"
-    expect(page).to have_content "March 02, 2018 - March 20, 2018"
-    expect(page).to have_content "Description of finished phase"
-    expect(page).to have_content "March 21, 2018 - March 29, 2018"
-
-    expect(page).to have_css(".tabs-panel.is-active", count: 1)
-
-    within("#budget_phases_tabs") do
-      expect(page).to have_link "Custom name for informing phase"
-      expect(page).to have_link "Custom name for accepting phase"
-      expect(page).to have_link "Custom name for selecting phase"
-      expect(page).to have_link phases.balloting.name
-      expect(page).to have_link "Current phase #{phases.finished.name}"
-    end
 
     click_link "Custom name for accepting phase"
 
@@ -221,6 +201,26 @@ describe "Budgets" do
       expect(page).to have_link "Previous phase", href: "#phase-1-custom-name-for-informing-phase"
       expect(page).to have_link "Next phase", href: "#phase-3-custom-name-for-selecting-phase"
     end
+
+    expect(page).to have_content "Description of accepting phase"
+    expect(page).to have_content "January 01, 2018 - January 20, 2018"
+
+    click_link "Custom name for selecting phase"
+
+    expect(page).to have_content "Description of selecting phase"
+    expect(page).to have_content "January 21, 2018 - March 01, 2018"
+
+    click_link "Voting projects"
+
+    expect(page).to have_content "Description of balloting phase"
+    expect(page).to have_content "March 02, 2018 - March 20, 2018"
+
+    click_link "Current phase Finished budget"
+
+    expect(page).to have_content "Description of finished phase"
+    expect(page).to have_content "March 21, 2018 - March 29, 2018"
+
+    expect(page).to have_css(".tabs-panel.is-active", count: 1)
   end
 
   context "Index map" do

@@ -75,6 +75,7 @@ describe "Admin settings", :admin do
       Setting["feature.map"] = true
 
       visit admin_settings_path
+      click_link "Map configuration"
 
       within "#map-form" do
         click_on "Update"

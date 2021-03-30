@@ -75,7 +75,7 @@ describe "Proposal Notifications" do
     expect(Notification.count).to eq(0)
   end
 
-  scenario "Show notifications" do
+  scenario "Show notifications", :js do
     proposal = create(:proposal)
 
     create(:proposal_notification,
@@ -86,6 +86,7 @@ describe "Proposal Notifications" do
             body: "We are almost there please share with your peoples!")
 
     visit proposal_path(proposal)
+    click_link "Notifications (2)"
 
     expect(page).to have_content "Hey guys"
     expect(page).to have_content "Just wanted to let you know that..."

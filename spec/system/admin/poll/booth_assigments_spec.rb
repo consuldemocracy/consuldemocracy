@@ -207,7 +207,7 @@ describe "Admin booths assignments", :admin do
       end
     end
 
-    scenario "Doesn't show system recounts for old polls" do
+    scenario "Doesn't show system recounts for old polls", :js do
       poll = create(:poll, :old)
       booth_assignment = create(:poll_booth_assignment, poll: poll)
 
@@ -215,6 +215,8 @@ describe "Admin booths assignments", :admin do
       create(:poll_recount, booth_assignment: booth_assignment, total_amount: 10)
 
       visit admin_poll_booth_assignment_path(poll, booth_assignment)
+
+      click_link "Recounts"
 
       within("#totals") do
         within("#total_final") do

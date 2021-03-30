@@ -24,13 +24,14 @@ describe "Moderate proposal notifications" do
     expect(page).to have_content "Notifications (0)"
   end
 
-  scenario "Can not hide own proposal notification" do
+  scenario "Can not hide own proposal notification", :js do
     moderator = create(:moderator)
     proposal = create(:proposal, author: moderator.user)
     proposal_notification = create(:proposal_notification, proposal: proposal, created_at: Date.current - 4.days)
 
     login_as(moderator.user)
     visit proposal_path(proposal)
+    click_link "Notifications (1)"
 
     within("#proposal_notification_#{proposal_notification.id}") do
       expect(page).not_to have_link("Hide")
