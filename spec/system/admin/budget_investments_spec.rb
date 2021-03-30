@@ -514,7 +514,7 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_select("tag_name", options: ["All tags", "Accessibility"])
     end
 
-    scenario "Disable 'Calculate winner' button if incorrect phase" do
+    scenario "Disable 'Calculate winner' button if incorrect phase", :js do
       budget.update!(phase: "reviewing_ballots")
 
       visit admin_budget_budget_investments_path(budget)
@@ -536,6 +536,7 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
+      click_link "Advanced filters"
       check "Winners"
       click_button "Filter"
 
@@ -1086,7 +1087,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content "Assigned administrator: Marta"
     end
 
-    scenario "Add valuators" do
+    scenario "Add valuators", :js do
       budget_investment = create(:budget_investment)
 
       user1 = create(:user, username: "Valentina", email: "v1@valuators.org")
@@ -1098,6 +1099,8 @@ describe "Admin budget investments", :admin do
       create(:valuator, user: user2)
 
       visit edit_admin_budget_path(budget_investment.budget)
+
+      click_link "Select valuators"
 
       check "Valentina"
       check "Val"
