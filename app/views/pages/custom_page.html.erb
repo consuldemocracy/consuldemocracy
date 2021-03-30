@@ -1,27 +1,47 @@
 <%= content_for :body_class, "custom-page" %>
-<% provide :title do %><%= @custom_page.title %><% end %>
 
-<div class="row margin-top">
+<% show = false
+@users_index = PageParticipant.where(site_customization_pages_id: @custom_page.id)
+@users_index.each do |index|
+  if current_user.administrator? || index.user_id == current_user.id
+    show=true
+  end
+end %>
+<% if show ==true %>
+  <% provide :title do %><%= @custom_page.title %><% end %>
 
-  <div class="small-12 medium-9 column">
-    <h1><%= @custom_page.title %></h1>
-    <% if @custom_page.subtitle.present? %>
-      <h2><%= @custom_page.subtitle %></h2>
+  <div class="row margin-top">
+
+    <div class="small-12 medium-9 column">
+      <h1><%= @custom_page.title %></h1>
+      <% if @custom_page.subtitle.present? %>
+        <h2><%= @custom_page.subtitle %></h2>
+      <% end %>
+
+      <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@custom_page.content) %>
+    </div>
+
+    <% if @custom_page.print_content_flag %>
+      <div class="small-12 medium-3 column">
+        <%= render "/shared/print" %>
+      </div>
     <% end %>
 
-    <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@custom_page.content) %>
+    <% if @cards.any? %>
+      <div class="small-12 column">
+        <%= render "shared/cards", cards: @cards %>
+      </div>
+    <% end %>
+
   </div>
 
-  <% if @custom_page.print_content_flag %>
-    <div class="small-12 medium-3 column">
-      <%= render "/shared/print" %>
-    </div>
-  <% end %>
+<% else %>
 
-  <% if @cards.any? %>
-    <div class="small-12 column">
-      <%= render "shared/cards", cards: @cards %>
+  <div class="row margin-top">
+    <div class="small-4 medium-4 large-4 medium-centered">
+      <p style="color: red";><strong> No pertenece a este proyecto </strong></p>
+      <%= back_link_to root_url %>
     </div>
-  <% end %>
+  </div>
 
-</div>
+<% end %>
