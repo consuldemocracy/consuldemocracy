@@ -1,0 +1,18 @@
+<header>
+  <% if display_remote_translation_info?(@remote_translations, I18n.locale) %>
+    <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
+  <% end %>
+
+  <div class="top-links">
+    <div class="expanded row">
+      <%= render "shared/locale_switcher" %>
+        <div class="hide-for-small-only">
+            <%= render "shared/top_links" %>
+        </div>
+
+      <%= link_to root_path, class: "float-right" do %>
+        <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
+      <% end %>
+    </div>
+  </div>
+</header>

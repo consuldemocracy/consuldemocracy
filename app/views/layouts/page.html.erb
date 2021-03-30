@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+
+  <head>
+    <%= render "layouts/common_head", default_title: "Admin" %>
+    <%= content_for :head %>
+  </head>
+
+  <body class="<%= yield (:body_class) %>">
+    <div class="wrapper <%= yield (:wrapper_class) %>">
+      <%= render "layouts/page_header" %>
+      <%= yield %>
+    </div>
+    <div class="footer">
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
+</html>

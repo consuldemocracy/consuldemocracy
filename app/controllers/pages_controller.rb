@@ -4,6 +4,8 @@ class PagesController < ApplicationController
 
   feature_flag :help_page, if: lambda { params[:id] == "help/index" }
 
+  layout "page"
+
   def show
     @custom_page = SiteCustomization::Page.published.find_by(slug: params[:id])
 
