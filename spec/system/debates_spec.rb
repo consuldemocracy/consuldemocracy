@@ -800,13 +800,14 @@ describe "Debates" do
     end
   end
 
-  scenario "Index include featured debates", :admin do
+  scenario "Index include featured debates", :admin, :js do
     create(:debate, featured_at: Time.current)
     create(:debate)
 
     visit debates_path
+
     within("#debates") do
-      expect(page).to have_content("Featured")
+      expect(page).to have_content("FEATURED")
     end
   end
 

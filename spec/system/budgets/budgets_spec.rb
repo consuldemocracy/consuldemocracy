@@ -16,7 +16,7 @@ describe "Budgets" do
   end
 
   context "Index" do
-    scenario "Show normal index with links" do
+    scenario "Show normal index with links", :js do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
       heading1 = create(:budget_heading, group: group1)
@@ -33,7 +33,7 @@ describe "Budgets" do
       end
 
       within(".budget-subheader") do
-        expect(page).to have_content "Current phase"
+        expect(page).to have_content "CURRENT PHASE"
         expect(page).to have_content "Information"
       end
 
@@ -99,7 +99,7 @@ describe "Budgets" do
       end
     end
 
-    scenario "Show informing index without links" do
+    scenario "Show informing index without links", :js do
       budget.update!(phase: "informing")
       heading = create(:budget_heading, budget: budget)
 
@@ -107,7 +107,7 @@ describe "Budgets" do
 
       within("#budget_info") do
         expect(page).not_to have_link heading.name
-        expect(page).to have_content "#{heading.name} €1,000,000"
+        expect(page).to have_content "#{heading.name}\n€1,000,000"
 
         expect(page).not_to have_link("List of all investment projects")
         expect(page).not_to have_link("List of all unfeasible investment projects")
@@ -117,7 +117,7 @@ describe "Budgets" do
       end
     end
 
-    scenario "Show finished index without heading links" do
+    scenario "Show finished index without heading links", :js do
       budget.update!(phase: "finished")
       heading = create(:budget_heading, budget: budget)
 
@@ -125,7 +125,7 @@ describe "Budgets" do
 
       within("#budget_info") do
         expect(page).not_to have_link heading.name
-        expect(page).to have_content "#{heading.name} €1,000,000"
+        expect(page).to have_content "#{heading.name}\n€1,000,000"
 
         expect(page).to have_css("div.map")
       end

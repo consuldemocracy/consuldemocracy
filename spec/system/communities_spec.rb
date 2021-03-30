@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Communities" do
   context "Show" do
-    scenario "Should display default content" do
+    scenario "Should display default content", :js do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -10,7 +10,7 @@ describe "Communities" do
 
       visit community_path(community)
 
-      expect(page).to have_content "Proposal community"
+      expect(page).to have_content "PROPOSAL COMMUNITY"
       expect(page).to have_content proposal.title
       expect(page).to have_content "Participate in the community of this proposal"
       expect(page).to have_link("Create topic", href: new_community_topic_path(community))

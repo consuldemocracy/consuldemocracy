@@ -379,7 +379,7 @@ describe "Proposal's dashboard" do
                                                             anchor: "tab-notifications"))
   end
 
-  scenario "Dashboard has a related content section" do
+  scenario "Dashboard has a related content section", :js do
     related_debate = create(:debate)
     related_proposal = create(:proposal)
 
@@ -399,9 +399,9 @@ describe "Proposal's dashboard" do
 
     within(".dashboard-related-content") do
       expect(page).to have_content("Related content (2)")
-      expect(page).to have_selector(".related-content-title", text: "Proposal")
+      expect(page).to have_selector(".related-content-title", text: "PROPOSAL")
       expect(page).to have_link related_proposal.title
-      expect(page).to have_selector(".related-content-title", text: "Debate")
+      expect(page).to have_selector(".related-content-title", text: "DEBATE")
       expect(page).to have_link related_debate.title
     end
   end

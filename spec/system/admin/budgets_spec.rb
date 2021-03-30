@@ -26,7 +26,7 @@ describe "Admin budgets", :admin do
       expect(page).to have_content "Accepting projects"
     end
 
-    scenario "Filters by phase" do
+    scenario "Filters by phase", :js do
       drafting_budget  = create(:budget, :drafting)
       accepting_budget = create(:budget, :accepting)
       selecting_budget = create(:budget, :selecting)
@@ -41,7 +41,7 @@ describe "Admin budgets", :admin do
       expect(page).to have_content(finished_budget.name)
 
       within "#budget_#{finished_budget.id}" do
-        expect(page).to have_content("Completed")
+        expect(page).to have_content("COMPLETED")
       end
 
       click_link "Finished"

@@ -305,7 +305,7 @@ describe "Budget Investments" do
       expect(order).to eq(new_order)
     end
 
-    scenario "Random order maintained with pagination" do
+    scenario "Random order maintained with pagination", :js do
       (per_page + 2).times { create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
@@ -314,10 +314,10 @@ describe "Budget Investments" do
       expect(order).not_to be_empty
 
       click_link "Next"
-      expect(page).to have_content "You're on page 2"
+      expect(page).to have_css ".pagination .current", text: "2"
 
       click_link "Previous"
-      expect(page).to have_content "You're on page 1"
+      expect(page).to have_css ".pagination .current", text: "1"
 
       new_order = all(".budget-investment h3").map(&:text)
       expect(order).to eq(new_order)
@@ -338,7 +338,7 @@ describe "Budget Investments" do
       expect(order).to eq(new_order)
     end
 
-    scenario "Investments are not repeated with random order" do
+    scenario "Investments are not repeated with random order", :js do
       (per_page + 2).times { create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, order: "random")
@@ -346,7 +346,7 @@ describe "Budget Investments" do
       first_page_investments = investments_order
 
       click_link "Next"
-      expect(page).to have_content "You're on page 2"
+      expect(page).to have_css ".pagination .current", text: "2"
 
       second_page_investments = investments_order
 
@@ -376,7 +376,7 @@ describe "Budget Investments" do
       expect(page).to have_current_path(/page=1/)
     end
 
-    scenario "Each user has a different and consistent random budget investment order" do
+    scenario "Each user has a different and consistent random budget investment order", :js do
       (per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
       first_user_investments_order = nil
       second_user_investments_order = nil
@@ -395,20 +395,20 @@ describe "Budget Investments" do
 
       in_browser(:one) do
         click_link "Next"
-        expect(page).to have_content "You're on page 2"
+        expect(page).to have_css ".pagination .current", text: "2"
 
         click_link "Previous"
-        expect(page).to have_content "You're on page 1"
+        expect(page).to have_css ".pagination .current", text: "1"
 
         expect(investments_order).to eq(first_user_investments_order)
       end
 
       in_browser(:two) do
         click_link "Next"
-        expect(page).to have_content "You're on page 2"
+        expect(page).to have_css ".pagination .current", text: "2"
 
         click_link "Previous"
-        expect(page).to have_content "You're on page 1"
+        expect(page).to have_css ".pagination .current", text: "1"
 
         expect(investments_order).to eq(second_user_investments_order)
       end
@@ -919,7 +919,7 @@ describe "Budget Investments" do
     expect(page).to have_content("This investment project has not been selected for balloting phase")
   end
 
-  scenario "Show title (no message)" do
+  scenario "Show title (no message)", :js do
     investment = create(:budget_investment,
                         :feasible,
                         :finished,
@@ -932,7 +932,7 @@ describe "Budget Investments" do
     visit budget_investment_path(budget, id: investment.id)
 
     within("aside") do
-      expect(page).to have_content("Investment project")
+      expect(page).to have_content("INVESTMENT PROJECT")
       expect(page).to have_css(".label-budget-investment")
     end
   end
@@ -1080,12 +1080,12 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Sidebar in show should display support text" do
+    scenario "Sidebar in show should display support text", :js do
       investment = create(:budget_investment, budget: budget)
       visit budget_investment_path(budget, investment)
 
       within("aside") do
-        expect(page).to have_content "Supports"
+        expect(page).to have_content "SUPPORTS"
       end
     end
   end
@@ -1095,13 +1095,13 @@ describe "Budget Investments" do
       budget.update(phase: "valuating")
     end
 
-    scenario "Sidebar in show should display support text and count" do
+    scenario "Sidebar in show should display support text and count", :js do
       investment = create(:budget_investment, :selected, budget: budget, voters: [create(:user)])
 
       visit budget_investment_path(budget, investment)
 
       within("aside") do
-        expect(page).to have_content "Supports"
+        expect(page).to have_content "SUPPORTS"
         expect(page).to have_content "1 support"
       end
     end
@@ -1116,13 +1116,13 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Show should display support text and count" do
+    scenario "Show should display support text and count", :js do
       investment = create(:budget_investment, budget: budget, heading: heading, voters: [create(:user)])
 
       visit budget_investment_path(budget, investment)
 
       within("#budget_investment_#{investment.id}") do
-        expect(page).to have_content "Supports"
+        expect(page).to have_content "SUPPORTS"
         expect(page).to have_content "1 support"
       end
     end
@@ -1209,12 +1209,12 @@ describe "Budget Investments" do
       expect(page).to have_content "€10,000"
     end
 
-    scenario "Sidebar in show should display vote text" do
+    scenario "Sidebar in show should display vote text", :js do
       investment = create(:budget_investment, :selected, budget: budget)
       visit budget_investment_path(budget, investment)
 
       within("aside") do
-        expect(page).to have_content "Votes"
+        expect(page).to have_content "VOTES"
       end
     end
 
@@ -1304,7 +1304,7 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Ballot is visible" do
+    scenario "Ballot is visible", :js do
       login_as(author)
 
       visit budget_investments_path(budget, heading_id: heading.id)
@@ -1313,7 +1313,7 @@ describe "Budget Investments" do
       expect(page).to have_css("#progress_bar")
 
       within("#sidebar") do
-        expect(page).to have_content("My ballot")
+        expect(page).to have_content("MY BALLOT")
         expect(page).to have_link("Submit my ballot")
       end
     end
@@ -1505,20 +1505,20 @@ describe "Budget Investments" do
         end
       end
 
-      scenario "Contains edit button in the accepting phase" do
+      scenario "Contains edit button in the accepting phase", :js do
         investment = create(:budget_investment, heading: heading, author: author)
 
         login_as(author)
         visit budget_investment_path(budget, investment)
 
         within("aside") do
-          expect(page).to have_content "Author"
+          expect(page).to have_content "AUTHOR"
           expect(page).to have_link "Edit"
           expect(page).not_to have_link "Remove image"
         end
       end
 
-      scenario "Contains remove image button in phases different from accepting" do
+      scenario "Contains remove image button in phases different from accepting", :js do
         budget.update!(phase: "reviewing")
         investment = create(:budget_investment, :with_image, heading: heading, author: author)
 
@@ -1526,7 +1526,7 @@ describe "Budget Investments" do
         visit budget_investment_path(budget, investment)
 
         within("aside") do
-          expect(page).to have_content "Author"
+          expect(page).to have_content "AUTHOR"
           expect(page).not_to have_link "Edit"
           expect(page).to have_link "Remove image"
         end

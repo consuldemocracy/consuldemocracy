@@ -14,7 +14,7 @@ describe "Legislation" do
       create(:legislation_question, process: process, title: "Question 3")
     end
 
-    scenario "shows question list" do
+    scenario "shows question list", :js do
       visit legislation_process_path(process)
 
       expect(page).to have_content("Participate in the debate")
@@ -26,17 +26,17 @@ describe "Legislation" do
       click_link "Question 1"
 
       expect(page).to have_content("Question 1")
-      expect(page).to have_content("Next question")
+      expect(page).to have_content("NEXT QUESTION")
 
       click_link "Next question"
 
       expect(page).to have_content("Question 2")
-      expect(page).to have_content("Next question")
+      expect(page).to have_content("NEXT QUESTION")
 
       click_link "Next question"
 
       expect(page).to have_content("Question 3")
-      expect(page).not_to have_content("Next question")
+      expect(page).not_to have_content("NEXT QUESTION")
     end
 
     scenario "shows question page" do
@@ -46,21 +46,21 @@ describe "Legislation" do
       expect(page).to have_content("Open answers (0)")
     end
 
-    scenario "shows next question link in question page" do
+    scenario "shows next question link in question page", :js do
       visit legislation_process_question_path(process, process.questions.first)
 
       expect(page).to have_content("Question 1")
-      expect(page).to have_content("Next question")
+      expect(page).to have_content("NEXT QUESTION")
 
       click_link "Next question"
 
       expect(page).to have_content("Question 2")
-      expect(page).to have_content("Next question")
+      expect(page).to have_content("NEXT QUESTION")
 
       click_link "Next question"
 
       expect(page).to have_content("Question 3")
-      expect(page).not_to have_content("Next question")
+      expect(page).not_to have_content("NEXT QUESTION")
     end
 
     scenario "answer question", :no_js do

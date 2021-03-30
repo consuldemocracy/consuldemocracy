@@ -82,11 +82,11 @@ describe "Legislation Proposals" do
       expect(legislation_proposals_order).to eq(first_page_proposals_order)
     end
 
-    scenario "Does not crash when the seed is not a number" do
+    scenario "Does not crash when the seed is not a number", :js do
       login_as user
       visit legislation_process_proposals_path(process, random_seed: "Spoof")
 
-      expect(page).to have_content "You're on page 1"
+      expect(page).to have_content "Random"
     end
   end
 
@@ -200,13 +200,13 @@ describe "Legislation Proposals" do
     expect(page).to have_content("-6 votes")
   end
 
-  scenario "Show link to process on show" do
+  scenario "Show link to process on show", :js do
     create(:legislation_proposal, legislation_process_id: process.id)
 
     visit legislation_process_proposal_path(proposal.process, proposal)
 
     within(".process-proposal") do
-      expect(page).to have_content("Collaborative legislation process")
+      expect(page).to have_content("COLLABORATIVE LEGISLATION PROCESS")
       expect(page).to have_link(process.title)
     end
   end

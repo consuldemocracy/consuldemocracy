@@ -807,7 +807,7 @@ describe "Admin budget investments", :admin do
     end
   end
 
-  context "Sorting" do
+  context "Sorting", :js do
     before do
       create(:budget_investment, title: "B First Investment", budget: budget, cached_votes_up: 50)
       create(:budget_investment, title: "A Second Investment", budget: budget, cached_votes_up: 25)
@@ -831,7 +831,7 @@ describe "Admin budget investments", :admin do
         expect("B First Investment").to appear_before("A Second Investment")
         expect("A Second Investment").to appear_before("C Third Investment")
         within("th", text: "ID") do
-          expect(page).to have_css(".icon-sortable.desc")
+          expect(page).to have_css ".icon-sortable.desc", visible: :all
         end
       end
 
@@ -841,7 +841,7 @@ describe "Admin budget investments", :admin do
         expect("A Second Investment").to appear_before("B First Investment")
         expect("B First Investment").to appear_before("C Third Investment")
         within("th", text: "Title") do
-          expect(page).to have_css(".icon-sortable.desc")
+          expect(page).to have_css ".icon-sortable.desc", visible: :all
         end
       end
 
@@ -851,7 +851,7 @@ describe "Admin budget investments", :admin do
         expect("C Third Investment").to appear_before("A Second Investment")
         expect("A Second Investment").to appear_before("B First Investment")
         within("th", text: "Supports") do
-          expect(page).to have_css(".icon-sortable.desc")
+          expect(page).to have_css ".icon-sortable.desc", visible: :all
         end
       end
     end
@@ -863,7 +863,7 @@ describe "Admin budget investments", :admin do
         expect("C Third Investment").to appear_before("A Second Investment")
         expect("A Second Investment").to appear_before("B First Investment")
         within("th", text: "ID") do
-          expect(page).to have_css(".icon-sortable.asc")
+          expect(page).to have_css ".icon-sortable.asc", visible: :all
         end
       end
 
@@ -873,7 +873,7 @@ describe "Admin budget investments", :admin do
         expect("C Third Investment").to appear_before("B First Investment")
         expect("B First Investment").to appear_before("A Second Investment")
         within("th", text: "Title") do
-          expect(page).to have_css(".icon-sortable.asc")
+          expect(page).to have_css ".icon-sortable.asc", visible: :all
         end
       end
 
@@ -883,7 +883,7 @@ describe "Admin budget investments", :admin do
         expect("B First Investment").to appear_before("A Second Investment")
         expect("A Second Investment").to appear_before("C Third Investment")
         within("th", text: "Supports") do
-          expect(page).to have_css(".icon-sortable.asc")
+          expect(page).to have_css ".icon-sortable.asc", visible: :all
         end
       end
     end
@@ -895,7 +895,7 @@ describe "Admin budget investments", :admin do
         expect("B First Investment").to appear_before("A Second Investment")
         expect("A Second Investment").to appear_before("C Third Investment")
         within("th", text: "ID") do
-          expect(page).to have_css(".icon-sortable.desc")
+          expect(page).to have_css ".icon-sortable.desc", visible: :all
         end
       end
 
@@ -905,7 +905,7 @@ describe "Admin budget investments", :admin do
         expect("A Second Investment").to appear_before("B First Investment")
         expect("B First Investment").to appear_before("C Third Investment")
         within("th", text: "Title") do
-          expect(page).to have_css(".icon-sortable.desc")
+          expect(page).to have_css ".icon-sortable.desc", visible: :all
         end
       end
 
@@ -915,7 +915,7 @@ describe "Admin budget investments", :admin do
         expect("C Third Investment").to appear_before("A Second Investment")
         expect("A Second Investment").to appear_before("B First Investment")
         within("th", text: "Supports") do
-          expect(page).to have_css(".icon-sortable.desc")
+          expect(page).to have_css ".icon-sortable.desc", visible: :all
         end
       end
     end
@@ -927,7 +927,7 @@ describe "Admin budget investments", :admin do
         expect("B First Investment").to appear_before("A Second Investment")
         expect("A Second Investment").to appear_before("C Third Investment")
         within("th", text: "ID") do
-          expect(page).to have_css(".icon-sortable.desc")
+          expect(page).to have_css ".icon-sortable.desc", visible: :all
         end
       end
     end

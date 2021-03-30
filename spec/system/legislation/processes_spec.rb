@@ -162,17 +162,17 @@ describe "Legislation" do
         end
       end
 
-      scenario "show draft publication and final result publication dates" do
+      scenario "show draft publication and final result publication dates", :js do
         process = create(:legislation_process, draft_publication_date: Date.new(2019, 01, 10),
                                                result_publication_date: Date.new(2019, 01, 20))
 
         visit legislation_process_path(process)
 
         within("aside") do
-          expect(page).to have_content("Draft publication")
-          expect(page).to have_content("10 Jan 2019")
-          expect(page).to have_content("Final result publication")
-          expect(page).to have_content("20 Jan 2019")
+          expect(page).to have_content "DRAFT PUBLICATION"
+          expect(page).to have_content "10 Jan 2019"
+          expect(page).to have_content "FINAL RESULT PUBLICATION"
+          expect(page).to have_content "20 Jan 2019"
         end
       end
 
