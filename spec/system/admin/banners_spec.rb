@@ -60,14 +60,6 @@ describe "Admin banners magement", :admin do
     end
   end
 
-  scenario "Banners publication is listed on admin menu" do
-    visit admin_root_path
-
-    within("#side_menu") do
-      expect(page).to have_link "Manage banners"
-    end
-  end
-
   scenario "Publish a banner" do
     visit admin_root_path
 
