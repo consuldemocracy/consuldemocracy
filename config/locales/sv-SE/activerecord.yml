@@ -192,7 +192,7 @@ sv:
       geozone:
         name: Namn
         external_code: "Extern kod (valfri)"
-        census_code: "Områdeskod (valfri)"
+        census_code: "Adressregisterkod (valfri)"
         html_map_coordinates: "HTML-<map>koordinater (valfri)"
       milestone:
         status_id: "Nuvarande status för budgetförslag (frivilligt fält)"
