@@ -11,10 +11,13 @@ describe "Admin geozones", :admin do
     expect(page).to have_content(retiro.name)
   end
 
-  scenario "Create new geozone" do
+  scenario "Create new geozone", :js do
     visit admin_root_path
 
-    within("#side_menu") { click_link "Manage geozones" }
+    within("#side_menu") do
+      click_link "Settings"
+      click_link "Manage geozones"
+    end
 
     click_link "Create geozone"
 

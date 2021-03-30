@@ -60,10 +60,11 @@ describe "Admin banners magement", :admin do
     end
   end
 
-  scenario "Publish a banner" do
+  scenario "Publish a banner", :js do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Site content"
       click_link "Manage banners"
     end
 

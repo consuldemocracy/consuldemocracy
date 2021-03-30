@@ -1,10 +1,11 @@
 require "rails_helper"
 
 describe "Admin custom images", :admin do
-  scenario "Upload valid png image" do
+  scenario "Upload valid png image", :js do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Settings"
       click_link "Custom images"
     end
 

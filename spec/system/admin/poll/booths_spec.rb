@@ -1,22 +1,24 @@
 require "rails_helper"
 
 describe "Admin booths", :admin do
-  scenario "Index empty" do
+  scenario "Index empty", :js do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Booths location"
     end
 
     expect(page).to have_content "There are no active booths for any upcoming poll."
   end
 
-  scenario "Index" do
+  scenario "Index", :js do
     3.times { create(:poll_booth) }
 
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Booths location"
     end
 
@@ -30,13 +32,14 @@ describe "Admin booths", :admin do
     expect(page).not_to have_content "There are no booths"
   end
 
-  scenario "Available" do
+  scenario "Available", :js do
     booth_for_current_poll = create(:poll_booth, polls: [create(:poll, :current)])
     booth_for_expired_poll = create(:poll_booth, polls: [create(:poll, :expired)])
 
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Manage shifts"
     end
 

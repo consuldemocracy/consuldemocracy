@@ -59,10 +59,11 @@ describe "Admin custom pages", :admin do
       create(:site_customization_page, title: "An example custom page", slug: "custom-example-page")
     end
 
-    scenario "Valid custom page" do
+    scenario "Valid custom page", :js do
       visit admin_root_path
 
       within("#side_menu") do
+        click_link "Site content"
         click_link "Custom pages"
       end
 
