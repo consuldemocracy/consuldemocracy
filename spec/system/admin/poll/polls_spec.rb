@@ -62,12 +62,12 @@ describe "Admin polls", :admin do
     visit admin_polls_path
     click_link "Create poll"
 
-    start_date = 1.week.from_now
-    end_date = 2.weeks.from_now
+    start_date = 1.week.from_now.to_date
+    end_date = 2.weeks.from_now.to_date
 
     fill_in "Name", with: "Upcoming poll"
-    fill_in "poll_starts_at", with: start_date.strftime("%d/%m/%Y")
-    fill_in "poll_ends_at", with: end_date.strftime("%d/%m/%Y")
+    fill_in "poll_starts_at", with: start_date
+    fill_in "poll_ends_at", with: end_date
     fill_in "Summary", with: "Upcoming poll's summary. This poll..."
     fill_in "Description", with: "Upcomming poll's description. This poll..."
 
@@ -78,8 +78,8 @@ describe "Admin polls", :admin do
 
     expect(page).to have_content "Poll created successfully"
     expect(page).to have_content "Upcoming poll"
-    expect(page).to have_content I18n.l(start_date.to_date)
-    expect(page).to have_content I18n.l(end_date.to_date)
+    expect(page).to have_content I18n.l(start_date)
+    expect(page).to have_content I18n.l(end_date)
     expect(Poll.last.slug).to eq "#{Poll.last.name.to_s.parameterize}"
   end
 
@@ -89,12 +89,12 @@ describe "Admin polls", :admin do
     visit admin_poll_path(poll)
     click_link "Edit poll"
 
-    end_date = 1.year.from_now
+    end_date = 1.year.from_now.to_date
 
     expect(page).to have_css("img[alt='#{poll.image.title}']")
 
     fill_in "Name", with: "Next Poll"
-    fill_in "poll_ends_at", with: end_date.strftime("%d/%m/%Y")
+    fill_in "poll_ends_at", with: end_date
 
     click_button "Update poll"
 

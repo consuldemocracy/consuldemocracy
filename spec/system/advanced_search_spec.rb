@@ -272,8 +272,9 @@ describe "Advanced search", :js do
 
         click_link "Advanced search"
         select "Customized", from: "js-advanced-search-date-min"
-        fill_in "advanced_search_date_min", with: 7.days.ago
-        fill_in "advanced_search_date_max", with: 1.day.ago
+        fill_in "advanced_search_date_min", with: 7.days.ago.strftime("%d/%m/%Y")
+        fill_in "advanced_search_date_max", with: 1.day.ago.strftime("%d/%m/%Y")
+        find_field("With the text").click
         click_button "Filter"
 
         within("#debates") do
@@ -294,8 +295,9 @@ describe "Advanced search", :js do
 
         click_link "Advanced search"
         select "Customized", from: "js-advanced-search-date-min"
-        fill_in "advanced_search_date_min", with: 4000.years.ago
-        fill_in "advanced_search_date_max", with: "wrong date"
+        fill_in "advanced_search_date_min", with: 4000.years.ago.strftime("%d/%m/%Y")
+        fill_in "advanced_search_date_max", with: "13/13/2199"
+        find_field("With the text").click
         click_button "Filter"
 
         expect(page).to have_content("There are 3 citizen proposals")
@@ -355,6 +357,7 @@ describe "Advanced search", :js do
         select "Customized", from: "js-advanced-search-date-min"
         fill_in "advanced_search_date_min", with: 7.days.ago.strftime("%d/%m/%Y")
         fill_in "advanced_search_date_max", with: 1.day.ago.strftime("%d/%m/%Y")
+        find_field("With the text").click
         click_button "Filter"
 
         expect(page).to have_content("citizen proposals cannot be found")

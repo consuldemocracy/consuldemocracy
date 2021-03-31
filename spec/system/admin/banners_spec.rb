@@ -82,10 +82,8 @@ describe "Admin banners magement", :admin do
     fill_in "Title", with: "Such banner"
     fill_in "Description", with: "many text wow link"
     fill_in "banner_target_url", with: "https://www.url.com"
-    last_week = Time.current - 7.days
-    next_week = Time.current + 7.days
-    fill_in "post_started_at", with: last_week.strftime("%d/%m/%Y")
-    fill_in "post_ended_at", with: next_week.strftime("%d/%m/%Y")
+    fill_in "post_started_at", with: Date.current - 7.days
+    fill_in "post_ended_at", with: Date.current + 7.days
     fill_in "banner_background_color", with: "#850000"
     fill_in "banner_font_color", with: "#ffb2b2"
     check section.name.titleize
