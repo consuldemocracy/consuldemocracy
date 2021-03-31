@@ -5,7 +5,7 @@
                 <%= image_tag("footer_Innovaris horizontal.png", class: "float-center", height: "250px", width: "200px", alt: "Innovaris Logo") %>
             </p>
             <h3 class="text-center"><%= t("box_views.box1.title") %></h3>
-            <p class="button btn-success position"><%= t("box_views.box1.description") %></p>
+            <%= link_to t("box_views.box1.description"), recomendations_path, class: "button btn-success float-center position" %>
         </div>
     </div>
 </div>

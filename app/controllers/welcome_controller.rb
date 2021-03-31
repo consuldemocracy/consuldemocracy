@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
   before_action :authenticate_user!, only: :welcome
 
   layout "devise", only: [:welcome, :verification]
+  layout "recomendation", only: [:recomendations]
 
   def index
     @header = Widget::Card.header.first
