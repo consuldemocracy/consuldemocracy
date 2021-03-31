@@ -1,6 +1,8 @@
 module Budgets
   class GroupsController < ApplicationController
     include InvestmentFilters
+    include FeatureFlags
+    feature_flag :budgets
 
     before_action :load_budget
     before_action :load_group

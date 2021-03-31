@@ -8,6 +8,16 @@ describe Management::Budgets::InvestmentsController do
     login_managed_user(create(:user, :level_two))
   end
 
+  describe "GET index" do
+    it "raises an exception when the feature is disabled" do
+      Setting["process.budgets"] = false
+
+      expect do
+        get :index, params: { budget_id: create(:budget).id }
+      end.to raise_exception(FeatureFlags::FeatureDisabled)
+    end
+  end
+
   describe "GET show" do
     let(:investment) { create(:budget_investment) }
 
