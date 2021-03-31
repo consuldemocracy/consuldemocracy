@@ -3,11 +3,6 @@ require "rails_helper"
 describe "Proposals" do
   it_behaves_like "milestoneable", :proposal
 
-  scenario "Disabled with a feature flag" do
-    Setting["process.proposals"] = nil
-    expect { visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
   context "Concerns" do
     it_behaves_like "notifiable in-app", :proposal
     it_behaves_like "relationable", Proposal

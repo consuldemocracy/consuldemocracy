@@ -1,12 +1,6 @@
 require "rails_helper"
 
 describe "Admin hidden debates", :admin do
-  scenario "Disabled with a feature flag" do
-    Setting["process.debates"] = nil
-
-    expect { visit admin_hidden_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
   scenario "Restore" do
     debate = create(:debate, :hidden)
     visit admin_hidden_debates_path

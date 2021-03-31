@@ -5,14 +5,6 @@ describe "Admin collaborative legislation", :admin do
                   :legislation_process,
                   "admin_legislation_process_milestones_path"
 
-  context "Feature flag" do
-    scenario "Disabled with a feature flag" do
-      Setting["process.legislation"] = nil
-      expect { visit admin_legislation_processes_path }
-      .to raise_exception(FeatureFlags::FeatureDisabled)
-    end
-  end
-
   context "Index" do
     scenario "Displaying collaborative legislation" do
       process_1 = create(:legislation_process, title: "Process open")

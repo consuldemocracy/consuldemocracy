@@ -28,18 +28,6 @@ describe "Budget Investments" do
 
       expect(page).to have_content investment.title
     end
-
-    scenario "raises an error if budget slug is not found" do
-      expect do
-        visit management_budget_investment_path("wrong_budget", investment)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if budget id is not found" do
-      expect do
-        visit management_budget_investment_path(0, investment)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
   end
 
   context "Create" do

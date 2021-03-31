@@ -4,12 +4,6 @@ describe "Admin hidden budget investments", :admin do
   let(:budget)  { create(:budget) }
   let(:heading) { create(:budget_heading, budget: budget, price: 666666) }
 
-  scenario "Disabled with a feature flag" do
-    Setting["process.budgets"] = nil
-
-    expect { visit admin_hidden_budget_investments_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
   scenario "List shows all relevant info" do
     investment = create(:budget_investment, :hidden, heading: heading)
 

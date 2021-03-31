@@ -10,16 +10,6 @@ describe "Admin budget investments", :admin do
                   :budget_investment,
                   "admin_polymorphic_path"
 
-  context "Feature flag" do
-    before do
-      Setting["process.budgets"] = nil
-    end
-
-    scenario "Disabled with a feature flag" do
-      expect { visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-    end
-  end
-
   context "Load" do
     let!(:investment) { create(:budget_investment, budget: budget) }
 
@@ -29,18 +19,6 @@ describe "Admin budget investments", :admin do
       visit admin_budget_budget_investments_path("budget_slug")
 
       expect(page).to have_link investment.title
-    end
-
-    scenario "raises an error if budget slug is not found" do
-      expect do
-        visit admin_budget_budget_investments_path("wrong_budget", investment)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if budget id is not found" do
-      expect do
-        visit admin_budget_budget_investments_path(0, investment)
-      end.to raise_error ActiveRecord::RecordNotFound
     end
   end
 

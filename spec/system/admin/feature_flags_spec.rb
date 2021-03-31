@@ -14,7 +14,7 @@ describe "Admin feature flags", :admin do
     end
   end
 
-  scenario "Disable a participatory process" do
+  scenario "Disable a participatory process", :show_exceptions do
     setting = Setting.find_by(key: "process.budgets")
     budget = create(:budget)
 
@@ -33,8 +33,14 @@ describe "Admin feature flags", :admin do
       expect(page).not_to have_link "Participatory budgets"
     end
 
-    expect { visit budget_path(budget) }.to raise_exception(FeatureFlags::FeatureDisabled)
-    expect { visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    visit budget_path(budget)
+
+    expect(page).to have_content "Internal server error"
+
+    visit admin_budgets_path
+
+    expect(page).to have_current_path admin_budgets_path
+    expect(page).to have_content "Internal server error"
   end
 
   scenario "Enable a disabled participatory process" do

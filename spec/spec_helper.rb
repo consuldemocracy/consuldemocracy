@@ -70,8 +70,24 @@ RSpec.configure do |config|
     Bullet.end_request
   end
 
-  config.before(:each, :admin) do
+  config.before(:each, :admin, type: :system) do
     login_as(create(:administrator).user)
+  end
+
+  config.before(:each, :admin, type: :controller) do
+    sign_in(create(:administrator).user)
+  end
+
+  config.before(:each, :show_exceptions) do
+    config = Rails.application.env_config
+
+    allow(Rails.application).to receive(:env_config) do
+      config.merge(
+        "action_dispatch.show_exceptions" => true,
+        "action_dispatch.show_detailed_exceptions" => false,
+        "consider_all_requests_local" => false
+      )
+    end
   end
 
   config.before(:each, :delay_jobs) do

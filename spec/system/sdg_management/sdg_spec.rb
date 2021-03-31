@@ -23,9 +23,5 @@ describe "SDG Management" do
 
       expect(page).not_to have_link "SDG content"
     end
-
-    scenario "does not allow visits to the SDG content" do
-      expect { visit sdg_management_root_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-    end
   end
 end

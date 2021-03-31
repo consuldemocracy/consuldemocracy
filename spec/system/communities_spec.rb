@@ -135,14 +135,5 @@ describe "Communities" do
 
       expect(page).to have_current_path(root_path)
     end
-
-    scenario "Accesing a community without associated communitable" do
-      proposal = create(:proposal)
-      community = proposal.community
-      proposal.really_destroy!
-      community.reload
-
-      expect { visit community_path(community) }.to raise_error(ActionController::RoutingError)
-    end
   end
 end

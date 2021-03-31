@@ -1,12 +1,9 @@
 require "rails_helper"
 
-describe Admin::Api::StatsController do
+describe Admin::Api::StatsController, :admin do
   describe "GET index" do
-    let(:user) { create(:administrator).user }
-
     context "events or visits not present" do
       it "responds with bad_request" do
-        sign_in user
         get :show
 
         expect(response).not_to be_ok
@@ -29,7 +26,6 @@ describe Admin::Api::StatsController do
       end
 
       it "returns single events formated for working with c3.js" do
-        sign_in user
         get :show, params: { event: "foo" }
 
         expect(response).to be_ok
@@ -48,7 +44,6 @@ describe Admin::Api::StatsController do
         create :visit, started_at: time_1
         create :visit, started_at: time_2
 
-        sign_in user
         get :show, params: { visits: true }
 
         expect(response).to be_ok
@@ -67,7 +62,6 @@ describe Admin::Api::StatsController do
         create(:budget_investment, created_at: time_2)
         create(:budget_investment, created_at: time_2)
 
-        sign_in user
         get :show, params: { budget_investments: true }
 
         expect(response).to be_ok

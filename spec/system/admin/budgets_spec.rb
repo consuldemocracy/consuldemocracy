@@ -1,16 +1,6 @@
 require "rails_helper"
 
 describe "Admin budgets", :admin do
-  context "Feature flag" do
-    before do
-      Setting["process.budgets"] = nil
-    end
-
-    scenario "Disabled with a feature flag" do
-      expect { visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-    end
-  end
-
   context "Load" do
     let!(:budget) { create(:budget, slug: "budget_slug") }
 
@@ -18,18 +8,6 @@ describe "Admin budgets", :admin do
       visit edit_admin_budget_path("budget_slug")
 
       expect(page).to have_content("Edit Participatory budget")
-    end
-
-    scenario "raises an error if budget slug is not found" do
-      expect do
-        visit edit_admin_budget_path("wrong_budget")
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if budget id is not found" do
-      expect do
-        visit edit_admin_budget_path(0)
-      end.to raise_error ActiveRecord::RecordNotFound
     end
   end
 
