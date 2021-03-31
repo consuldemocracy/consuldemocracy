@@ -2,6 +2,14 @@ require "rails_helper"
 
 describe Admin::BudgetInvestmentsController, :admin do
   describe "GET index" do
+    it "raises an exception when the feature is disabled" do
+      Setting["process.budgets"] = false
+
+      expect do
+        get :index, params: { budget_id: create(:budget).id }
+      end.to raise_exception(FeatureFlags::FeatureDisabled)
+    end
+
     it "raises an error if budget slug is not found" do
       expect do
         get :index, params: { budget_id: "wrong_budget" }
