@@ -770,6 +770,31 @@ describe "Debates" do
         expect(page).not_to have_content "You are seeing"
       end
     end
+
+    describe "Don't show suggestions" do
+      let(:user) { create(:user) }
+      let(:debate) { create(:debate, title: "Debate title, has search term", author: user) }
+
+      before do
+        login_as(user)
+        visit edit_debate_path(debate)
+      end
+
+      scenario "for edit action" do
+        fill_in "Debate title", with: "search"
+
+        expect(page).not_to have_content "There is a debate with the term 'search'"
+      end
+
+      scenario "for update action" do
+        fill_in "Debate title", with: ""
+
+        click_button "Save changes"
+        fill_in "Debate title", with: "search"
+
+        expect(page).not_to have_content "There is a debate with the term 'search'"
+      end
+    end
   end
 
   scenario "Mark/Unmark a debate as featured", :admin do
