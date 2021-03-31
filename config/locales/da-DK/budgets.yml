@@ -107,6 +107,10 @@ da:
             approval:
               one: "<strong>Du har stemt på et forslag</strong>"
               other: "<strong>Du har stemt på %{count} forslag</strong>"
+          change_vote_info:
+            knapsack: "Du kan %{link} på ethvert tidspunkt indtil %{phase_end_date} Det er ikke nødvendigt at bruge alle de penge, der er til rådighed."
+            approval: "Du kan %{link} på ethvert tidspunkt indtil %{phase_end_date}."
+          change_vote_link: "ændre din stemme"
           different_heading_assigned: "Du har aktive stemmer i et andet budget: %{heading_link}"
           change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
           check_ballot_link: "kontroller og bekræft min afstemning"
@@ -114,6 +118,13 @@ da:
           verified_only: "For at oprette et forslag til det aktuelle deltagerbudget %{verify}."
           create: "Opret din projektidé"
           not_logged_in: "For at oprette et forslag skal du %{sign_in} eller %{sign_up}."
+        filter: "Filtrer projekter efter"
+        filters:
+          not_unfeasible: "Ikke umuligt"
+          selected: "Udvalgte"
+          unfeasible: "Kan ikke gennemføres"
+          unselected: "Ikke udvalgt"
+          winners: "Vindere"
         orders:
           random: Alle idéer
           confidence_score: højest rangeret
