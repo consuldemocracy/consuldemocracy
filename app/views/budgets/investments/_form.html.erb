@@ -16,9 +16,7 @@
       <div class="small-12 column">
         <%= translations_form.text_field :title,
               maxlength: Budget::Investment.title_max_length,
-              data: { js_suggest_result: "js_suggest_result",
-                      js_suggest: ".js-suggest",
-                      js_url: suggest_budget_investments_path(@budget) } %>
+              data: suggest_data(@investment) %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 

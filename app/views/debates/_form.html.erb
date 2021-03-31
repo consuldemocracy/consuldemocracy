@@ -10,9 +10,7 @@
         <%= translations_form.text_field :title,
               maxlength: Debate.title_max_length,
               placeholder: t("debates.form.debate_title"),
-              data: { js_suggest_result: "js_suggest_result",
-                      js_suggest: ".js-suggest",
-                      js_url: suggest_debates_path } %>
+              data: suggest_data(@debate) %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
