@@ -106,16 +106,16 @@ describe "SDG Goals", :js do
       end
     end
 
-    scenario "has links to read more and read less for long description" do
+    scenario "has buttons to read more and read less for long description" do
       visit sdg_goal_path(15)
 
-      expect(page).to have_css("div.read-more a", text: "Read more about Life on Land")
-      expect(page).to have_css("div.read-more a", text: "Read less about Life on Land", visible: :hidden)
+      expect(page).to have_button "Read more about Life on Land"
+      expect(page).to have_button "Read less about Life on Land", visible: :hidden
 
-      find("div.read-more a", text: "Read more about Life on Land").click
+      click_button "Read more about Life on Land"
 
-      expect(page).to have_css("div.read-more a", text: "Read more about Life on Land", visible: :hidden)
-      expect(page).to have_css("div.read-more a", text: "Read less about Life on Land")
+      expect(page).to have_button "Read more about Life on Land", visible: :hidden
+      expect(page).to have_button "Read less about Life on Land"
     end
 
     scenario "has tab target section" do

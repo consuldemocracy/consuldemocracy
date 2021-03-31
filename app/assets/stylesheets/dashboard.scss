@@ -133,6 +133,10 @@
     p {
       font-size: $small-font-size;
     }
+
+    button {
+      @include link;
+    }
   }
 
   .icon-check {
@@ -153,6 +157,12 @@
     height: rem-calc(20);
     margin-top: $line-height / 6;
     width: rem-calc(20);
+  }
+}
+
+.proposed-actions {
+  button {
+    @include link;
   }
 }
 
@@ -282,6 +292,12 @@
 
   &::before {
     content: "\67";
+  }
+}
+
+.goals-section {
+  button {
+    @include link;
   }
 }
 

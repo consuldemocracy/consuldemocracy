@@ -19,3 +19,18 @@
   @extend %button;
   margin-bottom: 0;
 }
+
+@mixin link {
+  color: $link;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: $link-hover;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: $outline-focus;
+  }
+}

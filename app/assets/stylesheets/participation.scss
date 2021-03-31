@@ -1579,6 +1579,15 @@
 .poll-more-info,
 .poll-more-info-answers {
   border-top: 1px solid #eee;
+
+  .read-more {
+    margin-bottom: $line-height;
+    margin-top: $line-height;
+
+    button {
+      @include link;
+    }
+  }
 }
 
 .poll-more-info-answers {
@@ -1655,6 +1664,7 @@
   top: 24px;
   width: rem-calc(48);
   z-index: 9;
+  cursor: pointer;
 
   &:hover {
     background: $dark;

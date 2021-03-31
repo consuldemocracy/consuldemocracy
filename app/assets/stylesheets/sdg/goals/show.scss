@@ -69,6 +69,10 @@
       .read-more {
         text-align: center;
       }
+
+      .read-more button {
+        @include link;
+      }
     }
 
     .goal-description {

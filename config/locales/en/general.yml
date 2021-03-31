@@ -946,7 +946,7 @@ en:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
       text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
-      title: How I can comment this document?
+      title: How can I comment this document?
   links:
     form:
       delete_button: Delete

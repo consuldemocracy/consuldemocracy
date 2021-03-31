@@ -1090,7 +1090,7 @@ form {
     }
   }
 
-  [type]:not(.close-button, [type=checkbox], [type=file], [type=radio], [type=submit]) {
+  [type]:not([type="button"], [type=checkbox], [type=file], [type=radio], [type=submit]) {
     background: #f8f8f8;
     height: $input-height;
     margin-bottom: rem-calc(16);
@@ -2060,10 +2060,8 @@ table {
 
 .flag-content {
 
-  .button {
-    background: none;
-    margin-bottom: 0;
-    padding: 0;
+  button {
+    @include link;
   }
 }
 
