@@ -7,24 +7,49 @@
 //------------ JHH: -----------
 $brand: linear-gradient(to right, #fb700a, #fca406);
 
+.content-reco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .color-img-1 {
+    background-color: #fb6e0a70;
+    height: 250px;
+    border-radius: 5px;
+
+    p {
+      margin-top: 10px;
+    }
+
+    .position {
+      margin-top: 30px;
+      margin-left: 10px;
+    }
+  }
+}
+
 footer {
   .row {
     .colors {
       .banner1 {
         height: 5px;
-        background-color: green;
+        background-color: #fb700a;
       }
       .banner2 {
         height: 5px;
-        background-color: yellow;
+        background-color: #143454;
       }
       .banner3 {
         height: 5px;
-        background-color: pink;
+        background-color: #049cdc;
       }
       .banner4 {
         height: 5px;
-        background-color: blue;
+        background-color: #fbee04;
+      }
+      .banner5 {
+        height: 5px;
+        background-color: #047c4c;
       }
     }
     .logos {
@@ -32,6 +57,18 @@ footer {
       margin-bottom: 10px;
       justify-content: center;
       align-items: center;
+      .column {
+        .foot_img {
+          max-width: 200px;
+          height: auto;
+          width: 100%;
+        }
+        .foot_img2 {
+          max-width: 300px;
+          height: auto;
+          width: 100%;
+        }
+      }
     }
   }
 }

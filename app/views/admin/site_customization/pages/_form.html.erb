@@ -40,22 +40,21 @@
           <%= translations_form.text_area :content, class: "html-area admin" %>
         </div>
       <% end %>
+
+      <%-# ----------------------JHH: Este código añade el formulario para los añadir los users---------------------- -%>
+      <div class="small-12 column">
+       <%= f.label :page_users_id %>
+
+       <div id="participant_tags" class="tags">
+            <% @participants.each do |participant| %>
+              <a class="select-participants"><%= participant.id%>: <%=participant.email%></a>
+            <% end %>
+       </div>
+       <%= f.text_field :page_users_id, placeholder: t("proposals.form.participant_placeholder")%>
+      </div>
+      <%-# ---------------------- Fin ---------------------- -%>
+
     </div>
-
-    <%-# ----------------------JHH: Este código añade el formulario para los añadir los users---------------------- -%>
-
-    <div class="small-12 column">
-     <%= f.label :page_users_id %>
-
-     <div id="participant_tags" class="tags">
-          <% @participants.each do |participant| %>
-            <a class="select-participants"><%= participant.id%>: <%=participant.email%></a>
-          <% end %>
-     </div>
-     <%= f.text_field :page_users_id, placeholder: t("proposals.form.participant_placeholder")%>
-    </div>
-
-    <%-# ---------------------- Fin ---------------------- -%>
   </div>
 
   <div class="row">

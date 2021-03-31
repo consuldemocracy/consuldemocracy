@@ -47,10 +47,6 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
 
-    # JHH: 
-    @proposal.save_participants
-    #Fin
-
     if @proposal.save
       redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
     else

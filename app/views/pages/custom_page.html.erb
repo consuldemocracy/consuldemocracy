@@ -1,14 +1,15 @@
 <%= content_for :body_class, "custom-page" %>
 
-<% show = false
+<% show=false
 @users_index = PageParticipant.where(site_customization_pages_id: @custom_page.id)
 @users_index.each do |index|
-  if current_user.administrator? || index.user_id == current_user.id
+  if current_user.administrator? || index.user_id == current_user.id || current_administrator?
     show=true
   end
 end %>
-<% if show ==true %>
+<% if show==true %>
   <% provide :title do %><%= @custom_page.title %><% end %>
+
 
   <div class="row margin-top">
 

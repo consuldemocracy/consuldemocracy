@@ -988,8 +988,8 @@ es:
         other: "%{count} etiquetas más"
   box_views:
     box1:
-      title: Registrarte
-      description: Registrate rellenando el formulario y forma parte de nuestra comunidad.
+      title: Reconocimientos
+      description: Leer más.
     box2:
       title: Decidir
       description: Opina, propone y decide como quieres que se hagan las cosas.

@@ -26,6 +26,9 @@ class WelcomeController < ApplicationController
     end
   end
 
+  def recomendations
+  end
+
   def verification
     redirect_to verification_path if signed_in?
   end
