@@ -210,7 +210,7 @@ class Budget < ApplicationRecord
     when "accepting", "reviewing"
       %w[random]
     when "publishing_prices", "balloting", "reviewing_ballots"
-      %w[random price]
+      hide_money? ? %w[random] : %w[random price]
     when "finished"
       %w[random]
     else
