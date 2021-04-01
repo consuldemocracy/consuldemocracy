@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Admin budgets", :admin do
   context "Load" do
-    let!(:budget) { create(:budget, slug: "budget_slug") }
+    before { create(:budget, slug: "budget_slug") }
 
     scenario "finds budget by slug" do
       visit edit_admin_budget_path("budget_slug")
