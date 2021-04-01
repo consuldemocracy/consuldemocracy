@@ -171,6 +171,7 @@ es:
         selected: "Marcar como seleccionado"
         selected_true: "Seleccionado"
         selected_false: "No seleccionado"
+        feasibility_explanation: "Informe de viabilidad <small>(opcional, dato público)</small>"
         unfeasibility_explanation: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
         valuation_finished: "Informe finalizado"
         valuator_ids: "Grupos"

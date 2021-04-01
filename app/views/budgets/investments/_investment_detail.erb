@@ -52,6 +52,11 @@
   </div>
 <% end %>
 
+<% if investment.should_show_feasibility_explanation? %>
+  <h2><%= t("budgets.investments.show.feasibility_explanation") %></h2>
+  <p><%= investment.feasibility_explanation %></p>
+<% end %>
+
 <% if investment.should_show_unfeasibility_explanation? %>
   <h2><%= t("budgets.investments.show.unfeasibility_explanation") %></h2>
   <p><%= investment.unfeasibility_explanation %></p>

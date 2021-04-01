@@ -148,6 +148,7 @@ es:
       show:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
+        feasibility_explanation: "Informe de viabilidad"
         unfeasibility_explanation: Informe de inviabilidad
         code: "Código proyecto de gasto: <strong>%{code}</strong>"
         location: "Ubicación: <strong>%{location}</strong>"
