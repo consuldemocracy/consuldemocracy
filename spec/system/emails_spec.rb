@@ -209,6 +209,8 @@ describe "Emails" do
     fill_in_signup_form
     click_button "Registrarse"
 
+    expect(page).to have_content "visita el enlace para activar tu cuenta."
+
     email = open_last_email
     expect(email).to deliver_to("manuela@consul.dev")
     expect(email).to have_body_text(user_confirmation_path)
