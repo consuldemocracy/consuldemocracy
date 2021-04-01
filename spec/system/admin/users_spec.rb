@@ -16,7 +16,7 @@ describe "Admin users" do
     expect(page).to have_content admin.email
   end
 
-  scenario "The username links to their public profile", :js do
+  scenario "The username links to their public profile" do
     within_window(window_opened_by { click_link user.name }) do
       expect(page).to have_current_path(user_path(user))
     end

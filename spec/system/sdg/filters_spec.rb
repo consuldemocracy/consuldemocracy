@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "SDG filters", :js do
+describe "SDG filters" do
   before do
     Setting["feature.sdg"] = true
     Setting["sdg.process.budgets"] = true

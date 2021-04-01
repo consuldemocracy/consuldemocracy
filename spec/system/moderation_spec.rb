@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Moderation", :js do
+describe "Moderation" do
   let(:user) { create(:user) }
 
   scenario "Access as regular user is not authorized" do
@@ -50,7 +50,7 @@ describe "Moderation", :js do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as SDG manager is not authorized", :js do
+  scenario "Access as SDG manager is not authorized" do
     create(:sdg_manager, user: user)
     login_as(user)
 

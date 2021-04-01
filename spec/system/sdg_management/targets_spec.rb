@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Targets", :js do
+describe "Targets" do
   before do
     login_as(create(:administrator).user)
     Setting["feature.sdg"] = true

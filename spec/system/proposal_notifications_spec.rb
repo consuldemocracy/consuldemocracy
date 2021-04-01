@@ -75,7 +75,7 @@ describe "Proposal Notifications" do
     expect(Notification.count).to eq(0)
   end
 
-  scenario "Show notifications", :js do
+  scenario "Show notifications" do
     proposal = create(:proposal)
 
     create(:proposal_notification,
@@ -176,7 +176,7 @@ describe "Proposal Notifications" do
   end
 
   context "In-app notifications from the proposal's author" do
-    scenario "Voters who are followed should receive a notification", :js do
+    scenario "Voters who are followed should receive a notification" do
       author = create(:user)
       proposal = create(:proposal, author: author)
 
@@ -229,7 +229,7 @@ describe "Proposal Notifications" do
       expect(page).to have_css ".notification", count: 0
     end
 
-    scenario "Followers should receive a notification", :js do
+    scenario "Followers should receive a notification" do
       author = create(:user)
       proposal = create(:proposal, author: author)
 
@@ -282,7 +282,7 @@ describe "Proposal Notifications" do
       expect(page).to have_css ".notification", count: 0
     end
 
-    scenario "Proposal hidden", :js do
+    scenario "Proposal hidden" do
       author = create(:user)
       user = create(:user)
       proposal = create(:proposal, author: author, voters: [user], followers: [user])
@@ -311,7 +311,7 @@ describe "Proposal Notifications" do
       expect(page).to have_content "This resource is not available anymore"
     end
 
-    scenario "Proposal retired by author", :js do
+    scenario "Proposal retired by author" do
       author = create(:user)
       user = create(:user)
       proposal = create(:proposal, author: author, voters: [user])
@@ -327,7 +327,7 @@ describe "Proposal Notifications" do
         Setting[:proposal_notification_minimum_interval_in_days] = 0
       end
 
-      scenario "for the same proposal", :js do
+      scenario "for the same proposal" do
         author = create(:user)
         proposal = create(:proposal, author: author)
         user = create(:user, followables: [proposal])

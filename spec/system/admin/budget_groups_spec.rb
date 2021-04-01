@@ -55,7 +55,7 @@ describe "Admin budget groups", :admin do
       end
     end
 
-    scenario "Delete a group without headings", :js do
+    scenario "Delete a group without headings" do
       group = create(:budget_group, budget: budget)
 
       visit admin_budget_groups_path(budget)
@@ -65,7 +65,7 @@ describe "Admin budget groups", :admin do
       expect(page).not_to have_selector "#budget_group_#{group.id}"
     end
 
-    scenario "Try to delete a group with headings", :js do
+    scenario "Try to delete a group with headings" do
       group = create(:budget_group, budget: budget)
       create(:budget_heading, group: group)
 
@@ -122,7 +122,7 @@ describe "Admin budget groups", :admin do
       expect(page).to have_field "Maximum number of headings in which a user can select projects", with: "2"
     end
 
-    scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
+    scenario "Changing name for current locale will update the slug if budget is in draft phase" do
       group = create(:budget_group, budget: budget)
       old_slug = group.slug
 

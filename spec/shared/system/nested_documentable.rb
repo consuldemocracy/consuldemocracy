@@ -26,7 +26,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     scenario "Should not show new document link when
-              documentable max documents allowed limit is reached", :js do
+              documentable max documents allowed limit is reached" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -37,14 +37,14 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).not_to have_css "#new_document_link"
     end
 
-    scenario "Should not show max documents warning when no documents added", :js do
+    scenario "Should not show max documents warning when no documents added" do
       login_as user_to_login
       visit send(path, arguments)
 
       expect(page).not_to have_css ".max-documents-notice"
     end
 
-    scenario "Should show max documents warning when max documents allowed limit is reached", :js do
+    scenario "Should show max documents warning when max documents allowed limit is reached" do
       login_as user_to_login
       visit send(path, arguments)
       documentable.class.max_documents_allowed.times.each do
@@ -55,7 +55,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_content "Remove document"
     end
 
-    scenario "Should hide max documents warning after any document removal", :js do
+    scenario "Should hide max documents warning after any document removal" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -68,7 +68,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).not_to have_css ".max-documents-notice"
     end
 
-    scenario "Should update nested document file name after choosing a file", :js do
+    scenario "Should update nested document file name after choosing a file" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -88,7 +88,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     scenario "Should update nested document file title with
-              file name after choosing a file when no title defined", :js do
+              file name after choosing a file when no title defined" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -98,7 +98,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     scenario "Should not update nested document file title with
-              file name after choosing a file when title already defined", :js do
+              file name after choosing a file when title already defined" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -119,7 +119,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect_document_has_title(0, "My Title")
     end
 
-    scenario "Should update loading bar style after valid file upload", :js do
+    scenario "Should update loading bar style after valid file upload" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -128,7 +128,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_css ".loading-bar.complete"
     end
 
-    scenario "Should update loading bar style after invalid file upload", :js do
+    scenario "Should update loading bar style after invalid file upload" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -140,7 +140,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_css ".loading-bar.errors"
     end
 
-    scenario "Should update document cached_attachment field after valid file upload", :js do
+    scenario "Should update document cached_attachment field after valid file upload" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -149,7 +149,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect_document_has_cached_attachment(0, ".pdf")
     end
 
-    scenario "Should not update document cached_attachment field after invalid file upload", :js do
+    scenario "Should not update document cached_attachment field after invalid file upload" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -162,7 +162,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     scenario "Should show document errors after documentable submit with
-              empty document fields", :js do
+              empty document fields" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -174,7 +174,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       end
     end
 
-    scenario "Should delete document after valid file upload and click on remove button", :js do
+    scenario "Should delete document after valid file upload and click on remove button" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -185,7 +185,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     scenario "Should show successful notice when
-              resource filled correctly without any nested documents", :js do
+              resource filled correctly without any nested documents" do
       login_as user_to_login
       visit send(path, arguments)
 
@@ -196,7 +196,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     scenario "Should show successful notice when
-              resource filled correctly and after valid file uploads", :js do
+              resource filled correctly and after valid file uploads" do
       login_as user_to_login
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
@@ -207,7 +207,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_content documentable_success_notice
     end
 
-    scenario "Should show new document after successful creation with one uploaded file", :js do
+    scenario "Should show new document after successful creation with one uploaded file" do
       if documentable_factory_name == "dashboard_action"
         skip("Not render Documents count on dashboard_actions")
       end
@@ -229,7 +229,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     scenario "Should show resource with new document after successful creation with
-              maximum allowed uploaded files", :js do
+              maximum allowed uploaded files" do
       if documentable_factory_name == "dashboard_action"
         skip("Not render Documents count on dashboard_actions")
       end
@@ -258,7 +258,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       end
 
       scenario "Should not show add document button when
-                documentable has reached maximum of documents allowed", :js do
+                documentable has reached maximum of documents allowed" do
         create_list(:document, documentable.class.max_documents_allowed, documentable: documentable)
         login_as user_to_login
         visit send(path, arguments)
@@ -266,7 +266,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         expect(page).not_to have_css "#new_document_link"
       end
 
-      scenario "Should show add document button after destroy one document", :js do
+      scenario "Should show add document button after destroy one document" do
         create_list(:document, documentable.class.max_documents_allowed, documentable: documentable)
         login_as user_to_login
         visit send(path, arguments)
@@ -278,7 +278,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         expect(page).to have_css "#new_document_link"
       end
 
-      scenario "Should remove nested field after remove document", :js do
+      scenario "Should remove nested field after remove document" do
         create(:document, documentable: documentable)
         login_as user_to_login
         visit send(path, arguments)

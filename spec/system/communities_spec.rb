@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Communities" do
   context "Show" do
-    scenario "Should display default content", :js do
+    scenario "Should display default content" do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)

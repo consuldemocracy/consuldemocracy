@@ -57,7 +57,7 @@ describe "Users" do
         expect(page).to have_content "You have been signed in successfully."
       end
 
-      scenario "Avoid username-email collisions", :js do
+      scenario "Avoid username-email collisions" do
         u1 = create(:user, username: "Spidey", email: "peter@nyc.dev", password: "greatpower")
         u2 = create(:user, username: "peter@nyc.dev", email: "venom@nyc.dev", password: "symbiote")
 
@@ -213,7 +213,7 @@ describe "Users" do
         }
       end
 
-      scenario "Sign up when Oauth provider has a verified email", :js do
+      scenario "Sign up when Oauth provider has a verified email" do
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_verified_email)
 
         visit "/"
@@ -232,7 +232,7 @@ describe "Users" do
         expect(page).to have_field("user_email", with: "manuelacarmena@example.com")
       end
 
-      scenario "Sign up when Oauth provider has an unverified email", :js do
+      scenario "Sign up when Oauth provider has an unverified email" do
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_email)
 
         visit "/"
@@ -260,7 +260,7 @@ describe "Users" do
         expect(page).to have_field("user_email", with: "manuelacarmena@example.com")
       end
 
-      scenario "Sign up, when no email was provided by OAuth provider", :js do
+      scenario "Sign up, when no email was provided by OAuth provider" do
         OmniAuth.config.add_mock(:twitter, twitter_hash)
 
         visit "/"
@@ -304,7 +304,7 @@ describe "Users" do
         expect_not_to_be_signed_in
       end
 
-      scenario "Sign in, user was already signed up with OAuth", :js do
+      scenario "Sign in, user was already signed up with OAuth" do
         user = create(:user, email: "manuela@consul.dev", password: "judgementday")
         create(:identity, uid: "12345", provider: "twitter", user: user)
         OmniAuth.config.add_mock(:twitter, twitter_hash)
@@ -352,7 +352,7 @@ describe "Users" do
         expect(page).to have_field("user_email", with: "manuelacarmena@example.com")
       end
 
-      scenario "Try to register with the email of an already existing user, when no email was provided by oauth", :js do
+      scenario "Try to register with the email of an already existing user, when no email was provided by oauth" do
         create(:user, username: "peter", email: "manuela@example.com")
         OmniAuth.config.add_mock(:twitter, twitter_hash)
 
@@ -389,7 +389,7 @@ describe "Users" do
         expect(page).to have_field("user_email", with: "somethingelse@example.com")
       end
 
-      scenario "Try to register with the email of an already existing user, when an unconfirmed email was provided by oauth", :js do
+      scenario "Try to register with the email of an already existing user, when an unconfirmed email was provided by oauth" do
         create(:user, username: "peter", email: "manuelacarmena@example.com")
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_email)
 
@@ -434,7 +434,7 @@ describe "Users" do
 
       before { Setting["feature.wordpress_login"] = true }
 
-      scenario "Sign up", :js do
+      scenario "Sign up" do
         OmniAuth.config.add_mock(:wordpress_oauth2, wordpress_hash)
 
         visit "/"
@@ -462,7 +462,7 @@ describe "Users" do
         expect(page).to have_field("user_email", with: "manuelacarmena@example.com")
       end
 
-      scenario "Try to register with username and email of an already existing user", :js do
+      scenario "Try to register with username and email of an already existing user" do
         create(:user, username: "manuela", email: "manuelacarmena@example.com", password: "judgementday")
         OmniAuth.config.add_mock(:wordpress_oauth2, wordpress_hash)
 

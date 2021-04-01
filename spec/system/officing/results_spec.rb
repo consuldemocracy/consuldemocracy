@@ -19,7 +19,7 @@ describe "Officing Results", :with_frozen_time do
     set_officing_booth(booth)
   end
 
-  scenario "Only polls where user is officer for results are accessible", :js do
+  scenario "Only polls where user is officer for results are accessible" do
     not_allowed_poll_1 = create(:poll, :expired)
     not_allowed_poll_2 = create(:poll, officers: [poll_officer], ends_at: 1.day.ago)
     not_allowed_poll_3 = create(:poll, officers: [poll_officer])

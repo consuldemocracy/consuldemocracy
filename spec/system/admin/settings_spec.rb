@@ -26,7 +26,7 @@ describe "Admin settings", :admin do
     expect(page).to have_content "Value updated"
   end
 
-  describe "Map settings initialization", :js do
+  describe "Map settings initialization" do
     before do
       Setting["feature.map"] = true
     end
@@ -84,7 +84,7 @@ describe "Admin settings", :admin do
       expect(page).to have_content "Map configuration updated succesfully"
     end
 
-    scenario "Should display marker by default", :js do
+    scenario "Should display marker by default" do
       Setting["feature.map"] = true
 
       visit admin_settings_path
@@ -93,7 +93,7 @@ describe "Admin settings", :admin do
       expect(find("#longitude", visible: :hidden).value).to eq "0.0"
     end
 
-    scenario "Should update marker", :js do
+    scenario "Should update marker" do
       Setting["feature.map"] = true
 
       visit admin_settings_path
@@ -109,7 +109,7 @@ describe "Admin settings", :admin do
   end
 
   describe "Update content types" do
-    scenario "stores the correct mime types", :js do
+    scenario "stores the correct mime types" do
       Setting["uploads.images.content_types"] = "image/png"
       setting = Setting.find_by!(key: "uploads.images.content_types")
 
@@ -172,7 +172,7 @@ describe "Admin settings", :admin do
         Setting["feature.remote_census"] = true
       end
 
-      scenario "On #tab-remote-census-configuration", :js do
+      scenario "On #tab-remote-census-configuration" do
         remote_census_setting = create(:setting, key: "remote_census.general.whatever")
 
         visit admin_settings_path
@@ -188,7 +188,7 @@ describe "Admin settings", :admin do
       end
     end
 
-    scenario "On #tab-configuration", :js do
+    scenario "On #tab-configuration" do
       configuration_setting = Setting.create!(key: "whatever")
 
       visit admin_settings_path
@@ -208,7 +208,7 @@ describe "Admin settings", :admin do
         Setting["feature.map"] = true
       end
 
-      scenario "On #tab-map-configuration", :js do
+      scenario "On #tab-map-configuration" do
         map_setting = Setting.create!(key: "map.whatever")
 
         visit admin_settings_path
@@ -224,7 +224,7 @@ describe "Admin settings", :admin do
       end
     end
 
-    scenario "On #tab-proposals", :js do
+    scenario "On #tab-proposals" do
       proposal_dashboard_setting = Setting.create!(key: "proposals.whatever")
 
       visit admin_settings_path
@@ -239,7 +239,7 @@ describe "Admin settings", :admin do
       expect(page).to have_css("div#tab-proposals.is-active")
     end
 
-    scenario "On #tab-participation-processes", :js do
+    scenario "On #tab-participation-processes" do
       process_setting = Setting.create!(key: "process.whatever")
 
       visit admin_settings_path
@@ -253,7 +253,7 @@ describe "Admin settings", :admin do
       expect(page).to have_css("div#tab-participation-processes.is-active")
     end
 
-    scenario "On #tab-feature-flags", :js do
+    scenario "On #tab-feature-flags" do
       feature_setting = Setting.create!(key: "feature.whatever")
 
       visit admin_settings_path
@@ -267,7 +267,7 @@ describe "Admin settings", :admin do
       expect(page).to have_css("div#tab-feature-flags.is-active")
     end
 
-    scenario "On #tab-sdg-configuration", :js do
+    scenario "On #tab-sdg-configuration" do
       Setting["feature.sdg"] = true
       Setting.create!(key: "sdg.whatever")
       login_as(create(:administrator).user)
@@ -285,7 +285,7 @@ describe "Admin settings", :admin do
   end
 
   describe "Skip verification" do
-    scenario "deactivate skip verification", :js do
+    scenario "deactivate skip verification" do
       Setting["feature.user.skip_verification"] = "true"
       setting = Setting.find_by(key: "feature.user.skip_verification")
 
@@ -299,7 +299,7 @@ describe "Admin settings", :admin do
       expect(page).to have_content "Value updated"
     end
 
-    scenario "activate skip verification", :js do
+    scenario "activate skip verification" do
       Setting["feature.user.skip_verification"] = nil
       setting = Setting.find_by(key: "feature.user.skip_verification")
 
@@ -316,7 +316,7 @@ describe "Admin settings", :admin do
     end
   end
 
-  describe "SDG configuration tab", :js do
+  describe "SDG configuration tab" do
     scenario "is enabled when the sdg feature is enabled" do
       Setting["feature.sdg"] = true
       login_as(create(:administrator).user)

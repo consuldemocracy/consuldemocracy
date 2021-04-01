@@ -16,7 +16,7 @@ describe "Account" do
     expect(page).to have_content "No verified user logged in yet"
   end
 
-  scenario "Delete a user account", :js do
+  scenario "Delete a user account" do
     user = create(:user, :level_two)
     login_managed_user(user)
 
@@ -66,7 +66,7 @@ describe "Account" do
     expect(page).to have_content "You have been signed in successfully."
   end
 
-  scenario "Manager generates random password", :js do
+  scenario "Manager generates random password" do
     user = create(:user, :level_three)
     login_managed_user(user)
     visit management_root_path
@@ -87,7 +87,7 @@ describe "Account" do
     expect(page).to have_content "You have been signed in successfully."
   end
 
-  scenario "The password is printed", :js do
+  scenario "The password is printed" do
     user = create(:user, :level_three)
     login_managed_user(user)
     visit management_root_path

@@ -29,7 +29,7 @@ describe "Admin custom pages", :admin do
   end
 
   context "Create" do
-    scenario "Valid custom page", :js do
+    scenario "Valid custom page" do
       visit admin_root_path
 
       within("#side_menu") do
@@ -59,7 +59,7 @@ describe "Admin custom pages", :admin do
       create(:site_customization_page, title: "An example custom page", slug: "custom-example-page")
     end
 
-    scenario "Valid custom page", :js do
+    scenario "Valid custom page" do
       visit admin_root_path
 
       within("#side_menu") do
@@ -81,7 +81,7 @@ describe "Admin custom pages", :admin do
       expect(page).to have_content "another-custom-example-page"
     end
 
-    scenario "Allows images in CKEditor", :js do
+    scenario "Allows images in CKEditor" do
       visit edit_admin_site_customization_page_path(custom_page)
       fill_in_ckeditor "Content", with: "Will add an image"
 

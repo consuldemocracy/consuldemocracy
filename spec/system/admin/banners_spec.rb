@@ -60,7 +60,7 @@ describe "Admin banners magement", :admin do
     end
   end
 
-  scenario "Publish a banner", :js do
+  scenario "Publish a banner" do
     visit admin_root_path
 
     within("#side_menu") do
@@ -89,7 +89,7 @@ describe "Admin banners magement", :admin do
     expect(page).to have_link "Such banner many text wow link", href: "https://www.url.com"
   end
 
-  scenario "Publish a banner with a translation different than the current locale", :js do
+  scenario "Publish a banner with a translation different than the current locale" do
     visit new_admin_banner_path
 
     expect_to_have_language_selected "English"
@@ -110,7 +110,7 @@ describe "Admin banners magement", :admin do
     expect(page).to have_field "Title", with: "En Français"
   end
 
-  scenario "Update banner color when changing from color picker or text_field", :js do
+  scenario "Update banner color when changing from color picker or text_field" do
     visit new_admin_banner_path
 
     fill_in "background_color_input", with: "#850000"
@@ -121,7 +121,7 @@ describe "Admin banners magement", :admin do
     expect(find("#font_color_input").value).to eq("#ffb2b2")
   end
 
-  scenario "Edit banner with live refresh", :js do
+  scenario "Edit banner with live refresh" do
     create(:banner, title: "Hello",
                     description: "Wrong text",
                     target_url:  "http://www.url.com",
@@ -160,7 +160,7 @@ describe "Admin banners magement", :admin do
     expect(page).not_to have_content "Wrong text"
   end
 
-  scenario "Delete a banner", :js do
+  scenario "Delete a banner" do
     create(:banner, title: "Ugly banner",
                     description: "Bad text",
                     target_url:  "http://www.url.com",

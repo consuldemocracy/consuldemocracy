@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate proposal notifications" do
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen   = create(:user)
     proposal  = create(:proposal)
     proposal_notification = create(:proposal_notification, proposal: proposal, created_at: Date.current - 4.days)
@@ -24,7 +24,7 @@ describe "Moderate proposal notifications" do
     expect(page).to have_content "Notifications (0)"
   end
 
-  scenario "Can not hide own proposal notification", :js do
+  scenario "Can not hide own proposal notification" do
     moderator = create(:moderator)
     proposal = create(:proposal, author: moderator.user)
     proposal_notification = create(:proposal_notification, proposal: proposal, created_at: Date.current - 4.days)
@@ -46,7 +46,7 @@ describe "Moderate proposal notifications" do
     end
 
     describe "moderate in bulk" do
-      describe "When a proposal has been selected for moderation", :js do
+      describe "When a proposal has been selected for moderation" do
         let!(:proposal_notification) { create(:proposal_notification, created_at: Date.current - 4.days) }
 
         before do
@@ -88,7 +88,7 @@ describe "Moderate proposal notifications" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:proposal_notification, 2)
 
         visit moderation_proposal_notifications_path
@@ -104,7 +104,7 @@ describe "Moderate proposal notifications" do
         end
       end
 
-      scenario "remembering page, filter and order", :js do
+      scenario "remembering page, filter and order" do
         stub_const("#{ModerateActions}::PER_PAGE", 2)
         create_list(:proposal, 4)
 

@@ -18,7 +18,7 @@ describe "Admin legislation draft versions", :admin do
   end
 
   context "Create" do
-    scenario "Valid legislation draft version", :js do
+    scenario "Valid legislation draft version" do
       create(:legislation_process, title: "An example legislation process")
 
       visit admin_root_path
@@ -47,7 +47,7 @@ describe "Admin legislation draft versions", :admin do
   end
 
   context "Update" do
-    scenario "Valid legislation draft version", :js do
+    scenario "Valid legislation draft version" do
       process = create(:legislation_process, title: "An example legislation process")
       create(:legislation_draft_version, title: "Version 1", process: process)
 
@@ -75,7 +75,7 @@ describe "Admin legislation draft versions", :admin do
     end
   end
 
-  context "Changing content with the markdown editor", :js do
+  context "Changing content with the markdown editor" do
     let(:prompt) { "You've edited the text without saving it. Do you confirm to leave the page?" }
     let(:version) { create(:legislation_draft_version, body: "Version 1") }
     let(:path) do

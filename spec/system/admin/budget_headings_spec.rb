@@ -60,7 +60,7 @@ describe "Admin budget headings", :admin do
       end
     end
 
-    scenario "Delete a heading without investments", :js do
+    scenario "Delete a heading without investments" do
       heading = create(:budget_heading, group: group)
 
       visit admin_budget_group_headings_path(budget, group)
@@ -70,7 +70,7 @@ describe "Admin budget headings", :admin do
       expect(page).not_to have_selector "#budget_heading_#{heading.id}"
     end
 
-    scenario "Try to delete a heading with investments", :js do
+    scenario "Try to delete a heading with investments" do
       heading = create(:budget_heading, group: group, name: "Atlantis")
       create(:budget_investment, heading: heading)
 
@@ -119,7 +119,7 @@ describe "Admin budget headings", :admin do
       expect(page).to have_content "can't be blank"
     end
 
-    describe "Max votes is optional", :js do
+    describe "Max votes is optional" do
       scenario "do no show max_ballot_lines field for knapsack budgets" do
         visit new_admin_budget_group_heading_path(budget, group)
 
@@ -159,7 +159,7 @@ describe "Admin budget headings", :admin do
       expect(find_field("Allow content block")).not_to be_checked
     end
 
-    scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
+    scenario "Changing name for current locale will update the slug if budget is in draft phase" do
       heading = create(:budget_heading, group: group)
       old_slug = heading.slug
 

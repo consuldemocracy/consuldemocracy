@@ -178,7 +178,7 @@ describe "Emails" do
   context "Comment replies" do
     let(:user) { create(:user, email_on_comment_reply: true) }
 
-    scenario "Send email on comment reply", :js do
+    scenario "Send email on comment reply" do
       reply_to(user)
 
       email = open_last_email
@@ -190,12 +190,12 @@ describe "Emails" do
       expect(email).to have_body_text(account_path)
     end
 
-    scenario "Do not send email about own replies to own comments", :js do
+    scenario "Do not send email about own replies to own comments" do
       reply_to(user, user)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
 
-    scenario "Do not send email about comment reply unless set in preferences", :js do
+    scenario "Do not send email about comment reply unless set in preferences" do
       user.update!(email_on_comment_reply: false)
       reply_to(user)
       expect { open_last_email }.to raise_error("No email has been sent!")
@@ -344,7 +344,7 @@ describe "Emails" do
     let(:budget)   { create(:budget) }
     let!(:heading) { create(:budget_heading, name: "More hospitals", budget: budget) }
 
-    scenario "Investment created", :js do
+    scenario "Investment created" do
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
@@ -367,7 +367,7 @@ describe "Emails" do
       expect(email).to have_body_text(budget_path(budget))
     end
 
-    scenario "Unfeasible investment", :js do
+    scenario "Unfeasible investment" do
       budget.update!(phase: "valuating")
       valuator = create(:valuator)
       investment = create(:budget_investment, author: author, budget: budget, valuators: [valuator])
@@ -435,7 +435,7 @@ describe "Emails" do
   end
 
   context "Polls" do
-    scenario "Send email on poll comment reply", :js do
+    scenario "Send email on poll comment reply" do
       user1 = create(:user, email_on_comment_reply: true)
       user2 = create(:user)
       poll = create(:poll, author: create(:user))
@@ -466,7 +466,7 @@ describe "Emails" do
   end
 
   context "Newsletter", :admin do
-    scenario "Send newsletter email to selected users", :js do
+    scenario "Send newsletter email to selected users" do
       user_with_newsletter_in_segment_1 = create(:user, :with_proposal, newsletter: true)
       user_with_newsletter_in_segment_2 = create(:user, :with_proposal, newsletter: true)
       user_with_newsletter_not_in_segment = create(:user, newsletter: true)

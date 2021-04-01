@@ -23,7 +23,7 @@ shared_examples "relationable" do |relationable_model_name|
     expect(page).not_to have_css("#related-content-list")
   end
 
-  scenario "related contents can be added", :js do
+  scenario "related contents can be added" do
     login_as(user)
     visit relationable.url
 
@@ -86,7 +86,7 @@ shared_examples "relationable" do |relationable_model_name|
     expect(page).to have_content("Link not valid. You cannot relate a content to itself")
   end
 
-  scenario "related content can be scored positively", :js do
+  scenario "related content can be scored positively" do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)
@@ -102,7 +102,7 @@ shared_examples "relationable" do |relationable_model_name|
     expect(related_content.opposite_related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.opposite_related_content.id).value).to eq(1)
   end
 
-  scenario "related content can be scored negatively", :js do
+  scenario "related content can be scored negatively" do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     login_as(user)

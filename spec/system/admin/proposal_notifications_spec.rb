@@ -9,7 +9,7 @@ describe "Admin proposal notifications", :admin do
     expect(page).to have_content(proposal_notification.body)
   end
 
-  scenario "Restore", :js do
+  scenario "Restore" do
     proposal_notification = create(:proposal_notification, :hidden, created_at: Date.current - 5.days)
     visit admin_hidden_proposal_notifications_path
 
@@ -74,7 +74,7 @@ describe "Admin proposal notifications", :admin do
     expect(page).to have_content("Confirmed notification")
   end
 
-  scenario "Action links remember the pagination setting and the filter", :js do
+  scenario "Action links remember the pagination setting and the filter" do
     allow(ProposalNotification).to receive(:default_per_page).and_return(2)
     4.times { create(:proposal_notification, :hidden, :with_confirmed_hide) }
 

@@ -27,7 +27,7 @@ describe "Localization" do
     expect(page).to have_text("Management")
   end
 
-  scenario "Changing the locale", :js do
+  scenario "Changing the locale" do
     visit management_root_path
     expect(page).to have_content("Language")
 

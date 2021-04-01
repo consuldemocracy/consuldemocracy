@@ -26,7 +26,7 @@ describe "Homepage", :admin do
   end
 
   context "Feeds" do
-    scenario "Proposals", :js do
+    scenario "Proposals" do
       5.times { create(:proposal) }
 
       visit admin_homepage_path
@@ -46,7 +46,7 @@ describe "Homepage", :admin do
       expect(page).not_to have_css("#feed_proposals.medium-8")
     end
 
-    scenario "Debates", :js do
+    scenario "Debates" do
       5.times { create(:debate) }
 
       visit admin_homepage_path
@@ -65,7 +65,7 @@ describe "Homepage", :admin do
       expect(page).not_to have_css("#feed_debates.medium-4")
     end
 
-    scenario "Proposals and debates", :js do
+    scenario "Proposals and debates" do
       3.times { create(:proposal) }
       3.times { create(:debate) }
 
@@ -94,7 +94,7 @@ describe "Homepage", :admin do
       end
     end
 
-    scenario "Processes", :js do
+    scenario "Processes" do
       5.times { create(:legislation_process) }
 
       visit admin_homepage_path
@@ -112,7 +112,7 @@ describe "Homepage", :admin do
     xscenario "Deactivate"
   end
 
-  scenario "Cards", :js do
+  scenario "Cards" do
     card1 = create(:widget_card, label: "Card1 label",
                                  title: "Card1 text",
                                  description: "Card1 description",

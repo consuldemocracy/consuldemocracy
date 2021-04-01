@@ -17,7 +17,7 @@ describe "Admin hidden users", :admin do
     expect(page).to have_content(comment2.body)
   end
 
-  scenario "Restore", :js do
+  scenario "Restore" do
     user = create(:user, :hidden)
     visit admin_hidden_users_path
 
@@ -76,7 +76,7 @@ describe "Admin hidden users", :admin do
     expect(page).to have_content("Confirmed user")
   end
 
-  scenario "Action links remember the pagination setting and the filter", :js do
+  scenario "Action links remember the pagination setting and the filter" do
     allow(User).to receive(:default_per_page).and_return(2)
     4.times { create(:user, :hidden, :with_confirmed_hide) }
 

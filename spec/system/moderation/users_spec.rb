@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate users" do
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen = create(:user)
     moderator = create(:moderator)
 

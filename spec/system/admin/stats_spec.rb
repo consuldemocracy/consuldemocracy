@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Stats", :admin do
-  context "Summary", :js do
+  context "Summary" do
     scenario "General" do
       create(:debate)
       2.times { create(:proposal) }
@@ -30,7 +30,7 @@ describe "Stats", :admin do
     end
   end
 
-  context "Users", :js do
+  context "Users" do
     scenario "Summary" do
       1.times { create(:user, :level_three) }
       2.times { create(:user, :level_two) }
@@ -86,13 +86,13 @@ describe "Stats", :admin do
     end
   end
 
-  describe "Budget investments", :js do
+  describe "Budget investments" do
     context "Supporting phase" do
       let(:budget) { create(:budget) }
       let(:group_all_city) { create(:budget_group, budget: budget) }
       let!(:heading_all_city) { create(:budget_heading, group: group_all_city) }
 
-      scenario "Number of supports in investment projects", :js do
+      scenario "Number of supports in investment projects" do
         group_2 = create(:budget_group, budget: budget)
 
         create(:budget_investment, heading: create(:budget_heading, group: group_2), voters: [create(:user)])
@@ -216,7 +216,7 @@ describe "Stats", :admin do
   end
 
   context "graphs" do
-    scenario "event graphs", :js do
+    scenario "event graphs" do
       campaign = create(:campaign)
 
       visit root_path(track_id: campaign.track_id)
@@ -393,7 +393,7 @@ describe "Stats", :admin do
     end
   end
 
-  context "SDG", :js do
+  context "SDG" do
     scenario "Shows SDG stats link when SDG feature is enabled" do
       Setting["feature.sdg"] = true
 

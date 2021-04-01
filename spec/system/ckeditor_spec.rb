@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "CKEditor" do
-  scenario "is present before & after turbolinks update page", :js do
+  scenario "is present before & after turbolinks update page" do
     author = create(:user)
     login_as(author)
 
@@ -15,7 +15,7 @@ describe "CKEditor" do
     expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"
   end
 
-  scenario "uploading an image through the upload tab", :js, :admin do
+  scenario "uploading an image through the upload tab", :admin do
     visit new_admin_site_customization_page_path
     fill_in_ckeditor "Content", with: "Filling in to make sure CKEditor is loaded"
     find(".cke_button__image").click
@@ -38,7 +38,7 @@ describe "CKEditor" do
     expect(page).to have_css "img[src$='clippy.jpg']"
   end
 
-  scenario "cannot upload attachments through link tab", :js, :admin do
+  scenario "cannot upload attachments through link tab", :admin do
     visit new_admin_site_customization_page_path
     fill_in_ckeditor "Content", with: "Filling in to make sure CKEditor is loaded"
     find(".cke_button__link").click
@@ -49,7 +49,7 @@ describe "CKEditor" do
   end
 
   context "When navigating back to editor page using browser history back" do
-    scenario "display ckeditor unsaved contents", :js, :admin do
+    scenario "display ckeditor unsaved contents", :admin do
       visit new_admin_newsletter_path
       fill_in_ckeditor "Email content", with: "This is an unsaved body"
       click_link "Newsletters"

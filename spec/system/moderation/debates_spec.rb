@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate debates" do
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen = create(:user)
     moderator = create(:moderator)
 
@@ -42,7 +42,7 @@ describe "Moderate debates" do
     end
 
     describe "moderate in bulk" do
-      describe "When a debate has been selected for moderation", :js do
+      describe "When a debate has been selected for moderation" do
         let!(:debate) { create(:debate) }
 
         before do
@@ -84,7 +84,7 @@ describe "Moderate debates" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:debate, 2)
 
         visit moderation_debates_path
@@ -100,7 +100,7 @@ describe "Moderate debates" do
         end
       end
 
-      scenario "remembering page, filter and order", :js do
+      scenario "remembering page, filter and order" do
         stub_const("#{ModerateActions}::PER_PAGE", 2)
         create_list(:debate, 4)
 

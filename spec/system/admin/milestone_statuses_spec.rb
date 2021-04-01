@@ -72,7 +72,7 @@ describe "Admin milestone statuses", :admin do
   end
 
   context "Delete" do
-    scenario "Hides status", :js do
+    scenario "Hides status" do
       status = create(:milestone_status)
 
       visit admin_milestone_statuses_path

@@ -11,7 +11,7 @@ describe "Admin geozones", :admin do
     expect(page).to have_content(retiro.name)
   end
 
-  scenario "Create new geozone", :js do
+  scenario "Create new geozone" do
     visit admin_root_path
 
     within("#side_menu") do
@@ -69,7 +69,7 @@ describe "Admin geozones", :admin do
     end
   end
 
-  scenario "Delete geozone with no associated elements", :js do
+  scenario "Delete geozone with no associated elements" do
     geozone = create(:geozone, name: "Delete me!")
 
     visit admin_geozones_path
@@ -81,7 +81,7 @@ describe "Admin geozones", :admin do
     expect(Geozone.where(id: geozone.id)).to be_empty
   end
 
-  scenario "Delete geozone with associated element", :js do
+  scenario "Delete geozone with associated element" do
     geozone = create(:geozone, name: "Delete me!")
     create(:proposal, geozone: geozone)
 

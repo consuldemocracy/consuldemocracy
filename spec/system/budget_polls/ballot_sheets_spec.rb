@@ -15,7 +15,7 @@ describe "Poll budget ballot sheets" do
       set_officing_booth(booth)
     end
 
-    scenario "Budget polls are visible", :js do
+    scenario "Budget polls are visible" do
       visit root_path
 
       click_link "Menu"
@@ -125,7 +125,7 @@ describe "Poll budget ballot sheets" do
       expect(page).to have_content("CSV data can't be blank")
     end
 
-    scenario "Shift booth has to be selected", :js do
+    scenario "Shift booth has to be selected" do
       visit new_officing_poll_ballot_sheet_path(poll)
 
       fill_in "data", with: "1234;5678"
@@ -144,7 +144,7 @@ describe "Poll budget ballot sheets" do
       set_officing_booth(booth)
     end
 
-    scenario "Ballot sheet information is displayed", :js do
+    scenario "Ballot sheet information is displayed" do
       officer_assignment = create(:poll_officer_assignment, officer: poll_officer)
       ballot_sheet = create(:poll_ballot_sheet, poll: poll, officer_assignment: officer_assignment)
 

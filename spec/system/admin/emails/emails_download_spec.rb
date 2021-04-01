@@ -39,7 +39,7 @@ describe "Admin download user emails" do
     end
   end
 
-  scenario "Download button is not disabled after being clicked", :js do
+  scenario "Download button is not disabled after being clicked" do
     visit admin_emails_download_index_path
     click_button "Download emails list"
 

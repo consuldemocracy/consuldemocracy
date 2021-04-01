@@ -13,7 +13,7 @@ describe "Admin hidden budget investments", :admin do
     expect(page).to have_content(investment.description)
   end
 
-  scenario "Restore", :js do
+  scenario "Restore" do
     investment = create(:budget_investment, :hidden, heading: heading)
 
     visit admin_hidden_budget_investments_path
@@ -78,7 +78,7 @@ describe "Admin hidden budget investments", :admin do
     expect(page).to have_content("Confirmed investment")
   end
 
-  scenario "Action links remember the pagination setting and the filter", :js do
+  scenario "Action links remember the pagination setting and the filter" do
     allow(Budget::Investment).to receive(:default_per_page).and_return(2)
     4.times { create(:budget_investment, :hidden, :with_confirmed_hide, heading: heading) }
 

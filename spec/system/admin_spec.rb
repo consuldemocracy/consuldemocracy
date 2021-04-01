@@ -42,7 +42,7 @@ describe "Admin" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as SDG manager is not authorized", :js do
+  scenario "Access as SDG manager is not authorized" do
     create(:sdg_manager, user: user)
     login_as(user)
     visit admin_root_path
@@ -68,7 +68,7 @@ describe "Admin" do
     expect(page).not_to have_content "You do not have permission to access this page"
   end
 
-  scenario "Admin access links", :admin, :js do
+  scenario "Admin access links", :admin do
     Setting["feature.sdg"] = true
 
     visit root_path
@@ -81,7 +81,7 @@ describe "Admin" do
     expect(page).to have_link("SDG content")
   end
 
-  scenario "Admin dashboard", :admin, :js do
+  scenario "Admin dashboard", :admin do
     visit root_path
 
     click_link "Menu"
@@ -93,7 +93,7 @@ describe "Admin" do
     expect(page).not_to have_css("#valuation_menu")
   end
 
-  scenario "Admin menu does not hide active elements", :js, :admin do
+  scenario "Admin menu does not hide active elements", :admin do
     visit admin_budgets_path
 
     within("#admin_menu") do

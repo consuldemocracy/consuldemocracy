@@ -21,7 +21,7 @@ describe "Documents", :admin do
     end
   end
 
-  scenario "Remove document from answer", :js do
+  scenario "Remove document from answer" do
     answer = create(:poll_question_answer)
     document = create(:document, documentable: answer)
 

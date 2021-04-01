@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Valuation", :js do
+describe "Valuation" do
   let(:user) { create(:user) }
 
   context "Access" do

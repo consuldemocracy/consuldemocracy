@@ -42,7 +42,7 @@ describe "Poll Officing" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as SDG manager is not authorized", :js do
+  scenario "Access as SDG manager is not authorized" do
     create(:sdg_manager, user: user)
     login_as(user)
     visit root_path
@@ -83,7 +83,7 @@ describe "Poll Officing" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as an administrator with poll officer role is authorized", :js do
+  scenario "Access as an administrator with poll officer role is authorized" do
     create(:administrator, user: user)
     create(:poll_officer, user: user)
     create(:poll)
@@ -97,7 +97,7 @@ describe "Poll Officing" do
     expect(page).not_to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as an poll officer is authorized", :js do
+  scenario "Access as an poll officer is authorized" do
     create(:poll_officer, user: user)
     create(:poll)
     login_as(user)
@@ -110,7 +110,7 @@ describe "Poll Officing" do
     expect(page).not_to have_content "You do not have permission to access this page"
   end
 
-  scenario "Poll officer access links", :js do
+  scenario "Poll officer access links" do
     create(:poll)
     create(:poll_officer, user: user)
     login_as(user)
@@ -124,7 +124,7 @@ describe "Poll Officing" do
     expect(page).not_to have_link("Moderation")
   end
 
-  scenario "Officing dashboard", :js do
+  scenario "Officing dashboard" do
     create(:poll_officer, user: user)
     create(:poll)
     login_as(user)
@@ -141,7 +141,7 @@ describe "Poll Officing" do
     expect(page).not_to have_css("#moderation_menu")
   end
 
-  scenario "Officing dashboard available for multiple sessions", :js, :with_frozen_time do
+  scenario "Officing dashboard available for multiple sessions", :with_frozen_time do
     poll = create(:poll)
     booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)

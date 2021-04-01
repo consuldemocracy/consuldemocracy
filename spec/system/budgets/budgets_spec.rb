@@ -16,7 +16,7 @@ describe "Budgets" do
   end
 
   context "Index" do
-    scenario "Show normal index with links", :js do
+    scenario "Show normal index with links" do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
       heading1 = create(:budget_heading, group: group1)
@@ -99,7 +99,7 @@ describe "Budgets" do
       end
     end
 
-    scenario "Show informing index without links", :js do
+    scenario "Show informing index without links" do
       budget.update!(phase: "informing")
       heading = create(:budget_heading, budget: budget)
 
@@ -117,7 +117,7 @@ describe "Budgets" do
       end
     end
 
-    scenario "Show finished index without heading links", :js do
+    scenario "Show finished index without heading links" do
       budget.update!(phase: "finished")
       heading = create(:budget_heading, budget: budget)
 
@@ -149,7 +149,7 @@ describe "Budgets" do
     end
   end
 
-  scenario "Index shows only published phases", :js do
+  scenario "Index shows only published phases" do
     budget.update!(phase: :finished)
     phases = budget.phases
 
@@ -230,7 +230,7 @@ describe "Budgets" do
       Setting["feature.map"] = true
     end
 
-    scenario "Display investment's map location markers", :js do
+    scenario "Display investment's map location markers" do
       investment1 = create(:budget_investment, heading: heading)
       investment2 = create(:budget_investment, heading: heading)
       investment3 = create(:budget_investment, heading: heading)
@@ -246,7 +246,7 @@ describe "Budgets" do
       end
     end
 
-    scenario "Display all investment's map location if there are no selected", :js do
+    scenario "Display all investment's map location if there are no selected" do
       budget.update!(phase: :publishing_prices)
 
       investment1 = create(:budget_investment, heading: heading)
@@ -266,7 +266,7 @@ describe "Budgets" do
       end
     end
 
-    scenario "Display only selected investment's map location from publishing prices phase", :js do
+    scenario "Display only selected investment's map location from publishing prices phase" do
       budget.update!(phase: :publishing_prices)
 
       investment1 = create(:budget_investment, :selected, heading: heading)
@@ -286,7 +286,7 @@ describe "Budgets" do
       end
     end
 
-    scenario "Skip invalid map markers", :js do
+    scenario "Skip invalid map markers" do
       map_locations = []
 
       investment = create(:budget_investment, heading: heading)

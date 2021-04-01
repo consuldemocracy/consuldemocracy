@@ -13,7 +13,7 @@ describe "Admin custom content blocks", :admin do
   end
 
   context "Create" do
-    scenario "Valid custom block", :js do
+    scenario "Valid custom block" do
       visit admin_root_path
 
       within("#side_menu") do
@@ -36,7 +36,7 @@ describe "Admin custom content blocks", :admin do
       expect(page).to have_content "Some custom content"
     end
 
-    scenario "Invalid custom block", :js do
+    scenario "Invalid custom block" do
       create(:site_customization_content_block)
 
       visit admin_root_path
@@ -63,7 +63,7 @@ describe "Admin custom content blocks", :admin do
   end
 
   context "Update" do
-    scenario "Valid custom block", :js do
+    scenario "Valid custom block" do
       create(:site_customization_content_block)
 
       visit admin_root_path
@@ -84,7 +84,7 @@ describe "Admin custom content blocks", :admin do
   end
 
   context "Delete" do
-    scenario "From index page", :js do
+    scenario "From index page" do
       block = create(:site_customization_content_block)
       visit   admin_site_customization_content_blocks_path
 

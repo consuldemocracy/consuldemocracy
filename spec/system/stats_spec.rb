@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Stats", :js do
+describe "Stats" do
   context "Summary" do
     scenario "General" do
       create(:debate)

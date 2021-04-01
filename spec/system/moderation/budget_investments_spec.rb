@@ -6,7 +6,7 @@ describe "Moderate budget investments" do
   let(:mod)         { create(:moderator) }
   let!(:investment) { create(:budget_investment, heading: heading, author: create(:user)) }
 
-  scenario "Hiding an investment", :js do
+  scenario "Hiding an investment" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
@@ -19,7 +19,7 @@ describe "Moderate budget investments" do
     expect(page).not_to have_content(investment.title)
   end
 
-  scenario "Hiding an investment's author", :js do
+  scenario "Hiding an investment's author" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
@@ -50,7 +50,7 @@ describe "Moderate budget investments" do
     end
 
     describe "moderate in bulk" do
-      describe "When an investment has been selected for moderation", :js do
+      describe "When an investment has been selected for moderation" do
         before do
           visit moderation_budget_investments_path
 
@@ -98,7 +98,7 @@ describe "Moderate budget investments" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:budget_investment, 2, heading: heading, author: create(:user))
 
         visit moderation_budget_investments_path
@@ -114,7 +114,7 @@ describe "Moderate budget investments" do
         end
       end
 
-      scenario "remembering page, filter and order", :js do
+      scenario "remembering page, filter and order" do
         stub_const("#{ModerateActions}::PER_PAGE", 2)
         create_list(:budget_investment, 4, heading: heading, author: create(:user))
 

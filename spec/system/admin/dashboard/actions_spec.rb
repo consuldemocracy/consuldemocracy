@@ -46,7 +46,7 @@ describe "Admin dashboard actions", :admin do
       click_link "Create resource or action"
     end
 
-    scenario "Creates a new action", :js do
+    scenario "Creates a new action" do
       fill_in "Title", with: action.title
       fill_in_ckeditor "Description", with: action.description
 
@@ -93,7 +93,7 @@ describe "Admin dashboard actions", :admin do
       visit admin_dashboard_actions_path
     end
 
-    scenario "deletes the action", js: true do
+    scenario "deletes the action" do
       page.accept_confirm do
         click_link "Delete"
       end
@@ -101,7 +101,7 @@ describe "Admin dashboard actions", :admin do
       expect(page).not_to have_content(action.title)
     end
 
-    scenario "can not delete actions that have been executed", js: true do
+    scenario "can not delete actions that have been executed" do
       _executed_action = create(:dashboard_executed_action, action: action)
 
       page.accept_confirm do

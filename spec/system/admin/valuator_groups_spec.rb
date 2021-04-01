@@ -63,7 +63,7 @@ describe "Valuator groups", :admin do
     expect(page).to have_content "Health and Sports"
   end
 
-  scenario "Delete", :js do
+  scenario "Delete" do
     create(:valuator_group)
 
     visit admin_valuator_groups_path

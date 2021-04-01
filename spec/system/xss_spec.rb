@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Cross-Site Scripting protection", :js do
+describe "Cross-Site Scripting protection" do
   let(:attack_code) { "<script>document.body.remove()</script>" }
 
   scenario "valuators in admin investments index", :admin do

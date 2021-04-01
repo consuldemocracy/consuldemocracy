@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "SDG Relations", :js do
+describe "SDG Relations" do
   before do
     login_as(create(:administrator).user)
     Setting["feature.sdg"] = true

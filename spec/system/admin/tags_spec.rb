@@ -29,7 +29,7 @@ describe "Admin tags", :admin do
     expect(page).to have_content "important issues"
   end
 
-  scenario "Delete", :js do
+  scenario "Delete" do
     tag2 = create(:tag, :category, name: "bad tag")
     create(:debate, tag_list: "bad tag")
 
@@ -46,7 +46,7 @@ describe "Admin tags", :admin do
     expect(page).to have_content "Existence"
   end
 
-  scenario "Delete tag with hidden taggables", :js do
+  scenario "Delete tag with hidden taggables" do
     tag2 = create(:tag, :category, name: "bad tag")
     debate = create(:debate, tag_list: "bad tag")
     debate.hide

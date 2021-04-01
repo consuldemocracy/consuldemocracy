@@ -21,7 +21,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
     end
   end
 
-  scenario "Flagging as inappropriate", :js do
+  scenario "Flagging as inappropriate" do
     login_as(user)
     visit path
 
@@ -42,7 +42,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
     end
   end
 
-  scenario "Unflagging", :js do
+  scenario "Unflagging" do
     Flag.flag(user, flaggable)
 
     login_as(user)
@@ -67,7 +67,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
     end
   end
 
-  scenario "Flagging and unflagging", :js do
+  scenario "Flagging and unflagging" do
     login_as(user)
     visit path
 
@@ -91,7 +91,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
     end
   end
 
-  scenario "Flagging a comment with a child does not update its children", :js do
+  scenario "Flagging a comment with a child does not update its children" do
     skip "Only for comments" unless flaggable.is_a?(Comment)
 
     child_comment = create(:comment, commentable: flaggable.commentable, parent: flaggable)

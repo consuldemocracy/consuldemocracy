@@ -58,7 +58,7 @@ describe "Admin newsletter emails", :admin do
     end
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     visit admin_newsletters_path
     click_link "New newsletter"
 
@@ -76,7 +76,7 @@ describe "Admin newsletter emails", :admin do
     expect(page).to have_content "This is a body"
   end
 
-  scenario "Update", :js do
+  scenario "Update" do
     newsletter = create(:newsletter)
 
     visit admin_newsletters_path
@@ -98,7 +98,7 @@ describe "Admin newsletter emails", :admin do
     expect(page).to have_content "This is a body"
   end
 
-  scenario "Destroy", :js do
+  scenario "Destroy" do
     newsletter = create(:newsletter)
 
     visit admin_newsletters_path
@@ -128,8 +128,8 @@ describe "Admin newsletter emails", :admin do
     expect(page).to have_content error_message
   end
 
-  context "Send newsletter", :js do
-    scenario "Sends newsletter emails", :js do
+  context "Send newsletter" do
+    scenario "Sends newsletter emails" do
       newsletter = create(:newsletter)
       visit admin_newsletter_path(newsletter)
 
@@ -138,7 +138,7 @@ describe "Admin newsletter emails", :admin do
       expect(page).to have_content "Newsletter sent successfully"
     end
 
-    scenario "Invalid newsletter cannot be sent", :js do
+    scenario "Invalid newsletter cannot be sent" do
       invalid_newsletter = create(:newsletter)
       invalid_newsletter.update_column(:segment_recipient, "invalid_segment")
       visit admin_newsletter_path(invalid_newsletter)
@@ -147,7 +147,7 @@ describe "Admin newsletter emails", :admin do
     end
   end
 
-  context "Counter of emails sent", :js do
+  context "Counter of emails sent" do
     scenario "Display counter" do
       newsletter = create(:newsletter, segment_recipient: "administrators")
       visit admin_newsletter_path(newsletter)
@@ -161,7 +161,7 @@ describe "Admin newsletter emails", :admin do
     end
   end
 
-  scenario "Select list of users to send newsletter", :js do
+  scenario "Select list of users to send newsletter" do
     UserSegments::SEGMENTS.each do |user_segment|
       visit new_admin_newsletter_path
 

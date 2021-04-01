@@ -41,7 +41,7 @@ describe "Legislation" do
       end
     end
 
-    scenario "Processes are sorted by descending start date", :js do
+    scenario "Processes are sorted by descending start date" do
       create(:legislation_process, title: "Process 1", start_date: 3.days.ago)
       create(:legislation_process, title: "Process 2", start_date: 2.days.ago)
       create(:legislation_process, title: "Process 3", start_date: Date.yesterday)
@@ -128,7 +128,7 @@ describe "Legislation" do
       end
     end
 
-    scenario "Show SDG tags when feature is enabled", :js do
+    scenario "Show SDG tags when feature is enabled" do
       Setting["feature.sdg"] = true
       Setting["sdg.process.legislation"] = true
 
@@ -162,7 +162,7 @@ describe "Legislation" do
         end
       end
 
-      scenario "show draft publication and final result publication dates", :js do
+      scenario "show draft publication and final result publication dates" do
         process = create(:legislation_process, draft_publication_date: Date.new(2019, 01, 10),
                                                result_publication_date: Date.new(2019, 01, 20))
 
@@ -187,7 +187,7 @@ describe "Legislation" do
         end
       end
 
-      scenario "show additional info button", :js do
+      scenario "show additional info button" do
         process = create(:legislation_process, additional_info: "Text for additional info of the process")
 
         visit legislation_process_path(process)
@@ -227,7 +227,7 @@ describe "Legislation" do
         expect(page).to have_current_path new_legislation_process_proposal_path(process)
       end
 
-      scenario "Show SDG tags when feature is enabled", :js do
+      scenario "Show SDG tags when feature is enabled" do
         Setting["feature.sdg"] = true
         Setting["sdg.process.legislation"] = true
 

@@ -5,7 +5,7 @@ describe "Admin feature flags", :admin do
     Setting["process.budgets"] = true
   end
 
-  scenario "Enabled features are listed on menu", :js do
+  scenario "Enabled features are listed on menu" do
     visit admin_root_path
 
     within("#side_menu") do
@@ -14,7 +14,7 @@ describe "Admin feature flags", :admin do
     end
   end
 
-  scenario "Disable a participatory process", :show_exceptions, :js do
+  scenario "Disable a participatory process", :show_exceptions do
     setting = Setting.find_by(key: "process.budgets")
     budget = create(:budget)
 
@@ -44,7 +44,7 @@ describe "Admin feature flags", :admin do
     expect(page).to have_content "Internal server error"
   end
 
-  scenario "Enable a disabled participatory process", :js do
+  scenario "Enable a disabled participatory process" do
     Setting["process.budgets"] = nil
     setting = Setting.find_by(key: "process.budgets")
 
@@ -71,7 +71,7 @@ describe "Admin feature flags", :admin do
     end
   end
 
-  scenario "Disable a feature", :js do
+  scenario "Disable a feature" do
     setting = Setting.find_by(key: "feature.twitter_login")
 
     visit admin_settings_path
@@ -92,7 +92,7 @@ describe "Admin feature flags", :admin do
     end
   end
 
-  scenario "Enable a disabled feature", :js do
+  scenario "Enable a disabled feature" do
     setting = Setting.find_by(key: "feature.map")
 
     visit admin_settings_path

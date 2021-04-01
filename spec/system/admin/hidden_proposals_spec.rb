@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Admin hidden proposals", :admin do
-  scenario "List shows all relevant info", :js do
+  scenario "List shows all relevant info" do
     proposal = create(:proposal, :hidden)
     visit admin_hidden_proposals_path
 
@@ -14,7 +14,7 @@ describe "Admin hidden proposals", :admin do
     expect(page).to have_content(proposal.video_url)
   end
 
-  scenario "Restore", :js do
+  scenario "Restore" do
     proposal = create(:proposal, :hidden)
     visit admin_hidden_proposals_path
 
@@ -78,7 +78,7 @@ describe "Admin hidden proposals", :admin do
     expect(page).to have_content("Confirmed proposal")
   end
 
-  scenario "Action links remember the pagination setting and the filter", :js do
+  scenario "Action links remember the pagination setting and the filter" do
     allow(Proposal).to receive(:default_per_page).and_return(2)
     4.times { create(:proposal, :hidden, :with_confirmed_hide) }
 

@@ -48,7 +48,7 @@ describe "Results" do
     end
   end
 
-  scenario "Show non winner & incomaptible investments", :js do
+  scenario "Show non winner & incomaptible investments" do
     visit budget_path(budget)
     click_link "See results"
     click_link "Show all"
@@ -112,7 +112,7 @@ describe "Results" do
     expect(page).to have_content "You do not have permission to carry out the action"
   end
 
-  scenario "No incompatible investments", :js do
+  scenario "No incompatible investments" do
     investment3.incompatible = false
     investment3.save!
 

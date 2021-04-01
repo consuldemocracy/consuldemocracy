@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Admin hidden comments", :admin do
-  scenario "Do not show comments from blocked users", :js do
+  scenario "Do not show comments from blocked users" do
     comment = create(:comment, :hidden, body: "SPAM from SPAMMER")
     proposal = create(:proposal, author: comment.author)
     create(:comment, commentable: proposal, user: comment.author, body: "Good Proposal!")
@@ -63,7 +63,7 @@ describe "Admin hidden comments", :admin do
     expect(page).not_to have_link("This is SPAM comment on proposal")
   end
 
-  scenario "Restore", :js do
+  scenario "Restore" do
     comment = create(:comment, :hidden, body: "Not really SPAM")
     visit admin_hidden_comments_path
 
@@ -123,7 +123,7 @@ describe "Admin hidden comments", :admin do
     expect(page).to have_content("Confirmed comment")
   end
 
-  scenario "Action links remember the pagination setting and the filter", :js do
+  scenario "Action links remember the pagination setting and the filter" do
     allow(Comment).to receive(:default_per_page).and_return(2)
     4.times { create(:comment, :hidden, :with_confirmed_hide) }
 

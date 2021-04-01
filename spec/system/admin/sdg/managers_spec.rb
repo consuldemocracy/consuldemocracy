@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Admin SDG managers", :js do
+describe "Admin SDG managers" do
   let!(:user) { create(:user) }
   let!(:sdg_manager) { create(:sdg_manager) }
 

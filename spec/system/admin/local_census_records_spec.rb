@@ -57,7 +57,7 @@ describe "Admin local census records", :admin do
         expect(page).not_to have_content local_census_record.document_number
       end
 
-      scenario "Should show matching records by document number", :js do
+      scenario "Should show matching records by document number" do
         visit admin_local_census_records_path
 
         fill_in :search, with: "X66777888"
@@ -134,7 +134,7 @@ describe "Admin local census records", :admin do
     let!(:local_census_record) { create(:local_census_record) }
     let!(:deleted_document_number) { local_census_record.document_number }
 
-    scenario "Should show successful destroy notice", :js do
+    scenario "Should show successful destroy notice" do
       visit admin_local_census_records_path
 
       expect(page).to have_content deleted_document_number

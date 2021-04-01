@@ -33,7 +33,7 @@ describe "Budget Investments" do
   context "Create" do
     before { heading.budget.update(phase: "accepting") }
 
-    scenario "Creating budget investments on behalf of someone, selecting a budget", :js do
+    scenario "Creating budget investments on behalf of someone, selecting a budget" do
       user = create(:user, :level_two)
 
       login_managed_user(user)
@@ -80,7 +80,7 @@ describe "Budget Investments" do
       expect(page).to have_content "User is not verified"
     end
 
-    scenario "Shows suggestions to unverified managers", :js do
+    scenario "Shows suggestions to unverified managers" do
       expect(manager.user.level_two_or_three_verified?).to be false
 
       create(:budget_investment, budget: budget, title: "More parks")
@@ -247,7 +247,7 @@ describe "Budget Investments" do
   end
 
   context "Supporting" do
-    scenario "Supporting budget investments on behalf of someone in index view", :js do
+    scenario "Supporting budget investments on behalf of someone in index view" do
       budget_investment = create(:budget_investment, heading: heading)
 
       user = create(:user, :level_two)
@@ -269,7 +269,7 @@ describe "Budget Investments" do
     end
 
     # This test passes ok locally but fails on the last two lines in Travis
-    xscenario "Supporting budget investments on behalf of someone in show view", :js do
+    xscenario "Supporting budget investments on behalf of someone in show view" do
       budget_investment = create(:budget_investment, budget: budget)
 
       user = create(:user, :level_two)
@@ -332,7 +332,7 @@ describe "Budget Investments" do
       expect(page).to have_link("Print", href: "javascript:window.print();")
     end
 
-    scenario "Filtering budget investments by heading to be printed", :js do
+    scenario "Filtering budget investments by heading to be printed" do
       district_9 = create(:budget_heading, group: group, name: "District Nine")
       another_heading = create(:budget_heading, group: group)
       low_investment = create(:budget_investment,

@@ -13,7 +13,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
   end
 
   context "Show" do
-    scenario "Show descriptive image when exists", :js do
+    scenario "Show descriptive image when exists" do
       image = create(:image, imageable: imageable)
 
       visit send(imageable_path, imageable_arguments)

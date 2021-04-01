@@ -28,7 +28,7 @@ shared_examples "admin_progressable" do |factory_name, path_name|
     end
 
     context "New" do
-      scenario "Primary progress bar", :js do
+      scenario "Primary progress bar" do
         visit path
         click_link "Create new progress bar"
 
@@ -46,7 +46,7 @@ shared_examples "admin_progressable" do |factory_name, path_name|
         expect(page).to have_content "Primary progress bar"
       end
 
-      scenario "Secondary progress bar", :js do
+      scenario "Secondary progress bar" do
         visit path
         click_link "Create new progress bar"
 
@@ -66,7 +66,7 @@ shared_examples "admin_progressable" do |factory_name, path_name|
     end
 
     context "Edit" do
-      scenario "Primary progress bar", :js do
+      scenario "Primary progress bar" do
         bar = create(:progress_bar, progressable: progressable)
 
         visit path
@@ -86,7 +86,7 @@ shared_examples "admin_progressable" do |factory_name, path_name|
         end
       end
 
-      scenario "Secondary progress bar", :js do
+      scenario "Secondary progress bar" do
         bar = create(:progress_bar, :secondary, progressable: progressable)
 
         visit path
@@ -108,7 +108,7 @@ shared_examples "admin_progressable" do |factory_name, path_name|
     end
 
     context "Delete" do
-      scenario "Remove progress bar", :js do
+      scenario "Remove progress bar" do
         bar = create(:progress_bar, progressable: progressable, percentage: 34)
 
         visit path

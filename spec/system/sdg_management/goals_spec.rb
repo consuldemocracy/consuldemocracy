@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Goals", :js do
+describe "Goals" do
   before { login_as(create(:sdg_manager).user) }
 
   describe "Index" do

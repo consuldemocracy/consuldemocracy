@@ -15,7 +15,7 @@ describe "BudgetPolls", :with_frozen_time do
   end
 
   context "Offline" do
-    scenario "A citizen can cast a paper vote", :js do
+    scenario "A citizen can cast a paper vote" do
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
@@ -46,7 +46,7 @@ describe "BudgetPolls", :with_frozen_time do
       end
     end
 
-    scenario "A citizen cannot vote offline again", :js do
+    scenario "A citizen cannot vote offline again" do
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
@@ -66,7 +66,7 @@ describe "BudgetPolls", :with_frozen_time do
       end
     end
 
-    scenario "A citizen cannot vote online after voting offline", :js do
+    scenario "A citizen cannot vote online after voting offline" do
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
@@ -91,7 +91,7 @@ describe "BudgetPolls", :with_frozen_time do
   end
 
   context "Online" do
-    scenario "A citizen can cast vote online", :js do
+    scenario "A citizen can cast vote online" do
       login_as(user)
       visit budget_investment_path(budget, investment)
 
@@ -101,7 +101,7 @@ describe "BudgetPolls", :with_frozen_time do
       end
     end
 
-    scenario "A citizen cannot vote online again", :js do
+    scenario "A citizen cannot vote online again" do
       login_as(user)
       visit budget_investment_path(budget, investment)
 
@@ -118,7 +118,7 @@ describe "BudgetPolls", :with_frozen_time do
       end
     end
 
-    scenario "A citizen cannot vote offline after voting online", :js do
+    scenario "A citizen cannot vote offline after voting online" do
       login_as(user)
       visit budget_investment_path(budget, investment)
 

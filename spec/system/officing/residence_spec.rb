@@ -89,7 +89,7 @@ describe "Residence", :with_frozen_time do
     end
   end
 
-  scenario "Verify booth", :js do
+  scenario "Verify booth" do
     booth = create(:poll_booth)
     poll = create(:poll)
 

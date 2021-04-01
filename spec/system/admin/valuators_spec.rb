@@ -21,7 +21,7 @@ describe "Admin valuators", :admin do
     expect(page).not_to have_content(user.name)
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     fill_in "search", with: user.email
     click_button "Search"
 
@@ -50,7 +50,7 @@ describe "Admin valuators", :admin do
     expect(page).not_to have_content "Can edit dossier"
   end
 
-  scenario "Destroy", :js do
+  scenario "Destroy" do
     accept_confirm { click_link "Delete" }
 
     within("#valuators") do

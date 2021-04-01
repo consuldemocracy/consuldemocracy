@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "SDGManagement", :js do
+describe "SDGManagement" do
   let(:user) { create(:user) }
 
   before { Setting["feature.sdg"] = true }

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Advanced search", :js do
+describe "Advanced search" do
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:heading) { create(:budget_heading, budget: budget, name: "More hospitals") }
 

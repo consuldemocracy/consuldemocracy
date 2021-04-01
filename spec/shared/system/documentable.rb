@@ -95,7 +95,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
   end
 
   context "Destroy" do
-    scenario "Should show success notice after successful document upload", :js do
+    scenario "Should show success notice after successful document upload" do
       login_as documentable.author
 
       visit send(documentable_path, arguments)
@@ -107,7 +107,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       expect(page).to have_content "Document was deleted successfully."
     end
 
-    scenario "Should hide documents tab if there is no documents", :js do
+    scenario "Should hide documents tab if there is no documents" do
       login_as documentable.author
 
       visit send(documentable_path, arguments)
@@ -119,7 +119,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       expect(page).not_to have_content "Documents (0)"
     end
 
-    scenario "Should redirect to documentable path after successful deletion", :js do
+    scenario "Should redirect to documentable path after successful deletion" do
       login_as documentable.author
 
       visit send(documentable_path, arguments)

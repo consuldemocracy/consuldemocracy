@@ -60,7 +60,7 @@ describe "Tags" do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     user = create(:user)
     login_as(user)
 
@@ -79,7 +79,7 @@ describe "Tags" do
     expect(page).to have_content "Impuestos"
   end
 
-  scenario "Create with too many tags", :js do
+  scenario "Create with too many tags" do
     user = create(:user)
     login_as(user)
 
@@ -96,7 +96,7 @@ describe "Tags" do
     expect(page).to have_content "tags must be less than or equal to 6"
   end
 
-  scenario "Create with dangerous strings", :js do
+  scenario "Create with dangerous strings" do
     user = create(:user)
     login_as(user)
 

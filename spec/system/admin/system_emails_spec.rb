@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "System Emails", :js do
+describe "System Emails" do
   let(:admin) { create(:administrator) }
 
   before do

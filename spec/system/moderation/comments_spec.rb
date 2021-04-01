@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate comments" do
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen = create(:user)
     moderator = create(:moderator)
 
@@ -69,7 +69,7 @@ describe "Moderate comments" do
     end
 
     describe "moderate in bulk" do
-      describe "When a comment has been selected for moderation", :js do
+      describe "When a comment has been selected for moderation" do
         let!(:comment) { create(:comment) }
 
         before do
@@ -111,7 +111,7 @@ describe "Moderate comments" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:comment, 2)
 
         visit moderation_comments_path
@@ -127,7 +127,7 @@ describe "Moderate comments" do
         end
       end
 
-      scenario "remembering page, filter and order", :js do
+      scenario "remembering page, filter and order" do
         stub_const("#{ModerateActions}::PER_PAGE", 2)
         create_list(:comment, 4)
 

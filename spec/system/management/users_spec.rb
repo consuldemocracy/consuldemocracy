@@ -71,7 +71,7 @@ describe "Users" do
     expect(user.date_of_birth).to have_content Date.new(1980, 12, 31)
   end
 
-  scenario "Delete a level 2 user account from document verification page", :js do
+  scenario "Delete a level 2 user account from document verification page" do
     level_2_user = create(:user, :level_two, document_number: "12345678Z")
 
     visit management_document_verifications_path
