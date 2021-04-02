@@ -8,6 +8,7 @@ describe "Commenting legislation questions" do
 
   scenario "Index" do
     3.times { create(:comment, commentable: legislation_annotation) }
+    comment = Comment.includes(:user).last
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
@@ -15,7 +16,6 @@ describe "Commenting legislation questions" do
 
     expect(page).to have_css(".comment", count: 4)
 
-    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)

@@ -66,6 +66,7 @@ describe "Advanced search" do
 
   context "Search by author type" do
     scenario "Public employee" do
+      Setting["official_level_1_name"] = "Official position 1"
       ana = create :user, official_level: 1
       john = create :user, official_level: 2
 
@@ -76,7 +77,7 @@ describe "Advanced search" do
       visit debates_path
 
       click_link "Advanced search"
-      select Setting["official_level_1_name"], from: "advanced_search_official_level"
+      select "Official position 1", from: "advanced_search_official_level"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 debates")
@@ -89,6 +90,7 @@ describe "Advanced search" do
     end
 
     scenario "Municipal Organization" do
+      Setting["official_level_2_name"] = "Official position 2"
       ana = create :user, official_level: 2
       john = create :user, official_level: 3
 
@@ -99,7 +101,7 @@ describe "Advanced search" do
       visit proposals_path
 
       click_link "Advanced search"
-      select Setting["official_level_2_name"], from: "advanced_search_official_level"
+      select "Official position 2", from: "advanced_search_official_level"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 citizen proposals")
@@ -112,6 +114,7 @@ describe "Advanced search" do
     end
 
     scenario "General director" do
+      Setting["official_level_3_name"] = "Official position 3"
       ana = create :user, official_level: 3
       john = create :user, official_level: 4
 
@@ -122,7 +125,7 @@ describe "Advanced search" do
       visit budget_investments_path(budget)
 
       click_link "Advanced search"
-      select Setting["official_level_3_name"], from: "advanced_search_official_level"
+      select "Official position 3", from: "advanced_search_official_level"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 investments")
@@ -135,6 +138,7 @@ describe "Advanced search" do
     end
 
     scenario "City councillor" do
+      Setting["official_level_4_name"] = "Official position 4"
       ana = create :user, official_level: 4
       john = create :user, official_level: 5
 
@@ -145,7 +149,7 @@ describe "Advanced search" do
       visit debates_path
 
       click_link "Advanced search"
-      select Setting["official_level_4_name"], from: "advanced_search_official_level"
+      select "Official position 4", from: "advanced_search_official_level"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 debates")
@@ -158,6 +162,7 @@ describe "Advanced search" do
     end
 
     scenario "Mayoress" do
+      Setting["official_level_5_name"] = "Official position 5"
       ana = create :user, official_level: 5
       john = create :user, official_level: 4
 
@@ -168,7 +173,7 @@ describe "Advanced search" do
       visit proposals_path
 
       click_link "Advanced search"
-      select Setting["official_level_5_name"], from: "advanced_search_official_level"
+      select "Official position 5", from: "advanced_search_official_level"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 citizen proposals")
@@ -310,6 +315,7 @@ describe "Advanced search" do
       end
 
       scenario "Search by multiple filters" do
+        Setting["official_level_1_name"] = "Official position 1"
         ana  = create :user, official_level: 1
         john = create :user, official_level: 1
 
@@ -321,7 +327,7 @@ describe "Advanced search" do
 
         click_link "Advanced search"
         fill_in "Write the text", with: "Schwifty"
-        select Setting["official_level_1_name"], from: "advanced_search_official_level"
+        select "Official position 1", from: "advanced_search_official_level"
         select "Last 24 hours", from: "js-advanced-search-date-min"
 
         click_button "Filter"
@@ -334,18 +340,20 @@ describe "Advanced search" do
       end
 
       scenario "Maintain advanced search criteria" do
+        Setting["official_level_1_name"] = "Official position 1"
+
         visit debates_path
         click_link "Advanced search"
 
         fill_in "Write the text", with: "Schwifty"
-        select Setting["official_level_1_name"], from: "advanced_search_official_level"
+        select "Official position 1", from: "advanced_search_official_level"
         select "Last 24 hours", from: "js-advanced-search-date-min"
 
         click_button "Filter"
 
         within "#js-advanced-search" do
           expect(page).to have_selector("input[name='search'][value='Schwifty']")
-          expect(page).to have_select("advanced_search[official_level]", selected: Setting["official_level_1_name"])
+          expect(page).to have_select("advanced_search[official_level]", selected: "Official position 1")
           expect(page).to have_select("advanced_search[date_min]", selected: "Last 24 hours")
         end
       end

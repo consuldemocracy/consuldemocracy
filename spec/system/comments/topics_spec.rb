@@ -10,12 +10,12 @@ describe "Commenting topics from proposals" do
     community = proposal.community
     topic = create(:topic, community: community)
     create_list(:comment, 3, commentable: topic)
+    comment = Comment.includes(:user).last
 
     visit community_topic_path(community, topic)
 
     expect(page).to have_css(".comment", count: 3)
 
-    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
@@ -574,12 +574,12 @@ describe "Commenting topics from budget investments" do
     community = investment.community
     topic = create(:topic, community: community)
     create_list(:comment, 3, commentable: topic)
+    comment = Comment.includes(:user).last
 
     visit community_topic_path(community, topic)
 
     expect(page).to have_css(".comment", count: 3)
 
-    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)

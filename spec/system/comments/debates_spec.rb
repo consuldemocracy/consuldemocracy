@@ -8,12 +8,12 @@ describe "Commenting debates" do
 
   scenario "Index" do
     3.times { create(:comment, commentable: debate) }
+    comment = Comment.includes(:user).last
 
     visit debate_path(debate)
 
     expect(page).to have_css(".comment", count: 3)
 
-    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)

@@ -94,8 +94,9 @@ describe "Tags" do
     click_button "Create Investment"
 
     expect(page).to have_content "Investment created successfully."
+    expect(page).to have_content "Build a skyscraper"
 
-    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+    within ".tags" do
       expect(page).to have_content tag_economia.name
       expect(page).not_to have_content tag_medio_ambiente.name
     end
@@ -118,8 +119,9 @@ describe "Tags" do
     click_button "Create Investment"
 
     expect(page).to have_content "Investment created successfully."
+    expect(page).to have_content "Build a skyscraper"
 
-    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+    within ".tags" do
       expect(page).to have_content "Education"
       expect(page).not_to have_content "Health"
     end
@@ -142,8 +144,9 @@ describe "Tags" do
     click_button "Create Investment"
 
     expect(page).to have_content "Investment created successfully."
+    expect(page).to have_content "Build a skyscraper"
 
-    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+    within ".tags" do
       expect(page).to have_content "Education"
       expect(page).not_to have_content "Health"
     end

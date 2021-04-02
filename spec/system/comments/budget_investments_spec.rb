@@ -7,7 +7,7 @@ describe "Commenting Budget::Investments" do
   it_behaves_like "flaggable", :budget_investment_comment
 
   scenario "Index" do
-    3.times { create(:comment, commentable: investment) }
+    not_valuations = 3.times.map { create(:comment, commentable: investment) }
     create(:comment, :valuation, commentable: investment, subject: "Not viable")
 
     visit budget_investment_path(investment.budget, investment)
@@ -16,7 +16,7 @@ describe "Commenting Budget::Investments" do
     expect(page).not_to have_content("Not viable")
 
     within("#comments") do
-      Comment.not_valuations.last(3).each do |comment|
+      not_valuations.each do |comment|
         expect(page).to have_content comment.user.name
         expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
         expect(page).to have_content comment.body

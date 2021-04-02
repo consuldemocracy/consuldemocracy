@@ -12,12 +12,12 @@ describe "Commenting legislation questions" do
 
   scenario "Index" do
     3.times { create(:comment, commentable: legislation_question) }
+    comment = Comment.includes(:user).last
 
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
     expect(page).to have_css(".comment", count: 3)
 
-    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
