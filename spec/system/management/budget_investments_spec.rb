@@ -5,8 +5,12 @@ describe "Budget Investments" do
   let(:budget)  { create(:budget, :selecting, name: "2033", slug: "budget_slug") }
   let(:group)   { create(:budget_group, budget: budget, name: "Whole city") }
   let(:heading) { create(:budget_heading, group: group, name: "Health") }
+  let(:user)    { create(:user, :level_two) }
 
-  before { login_as_manager(manager) }
+  before do
+    login_managed_user(user)
+    login_as_manager(manager)
+  end
 
   it_behaves_like "mappable",
                   "budget_investment",
@@ -19,9 +23,6 @@ describe "Budget Investments" do
 
   context "Load" do
     let(:investment) { create(:budget_investment, budget: budget) }
-    let(:user)       { create(:user, :level_two) }
-
-    before { login_managed_user(user) }
 
     scenario "finds investment using budget slug" do
       visit management_budget_investment_path("budget_slug", investment)
@@ -34,10 +35,6 @@ describe "Budget Investments" do
     before { heading.budget.update(phase: "accepting") }
 
     scenario "Creating budget investments on behalf of someone, selecting a budget" do
-      user = create(:user, :level_two)
-
-      login_managed_user(user)
-
       click_link "Create budget investment"
       within "#budget_#{budget.id}" do
         click_link "Create budget investment"
@@ -72,8 +69,7 @@ describe "Budget Investments" do
     end
 
     scenario "Should not allow unverified users to create budget investments" do
-      user = create(:user)
-      login_managed_user(user)
+      login_managed_user(create(:user))
 
       click_link "Create budget investment"
 
@@ -86,7 +82,6 @@ describe "Budget Investments" do
       create(:budget_investment, budget: budget, title: "More parks")
       create(:budget_investment, budget: budget, title: "No more parks")
       create(:budget_investment, budget: budget, title: "Plant trees")
-      login_managed_user(create(:user, :level_two))
 
       click_link "Create budget investment"
       within "#budget_#{budget.id}" do
@@ -108,9 +103,6 @@ describe "Budget Investments" do
     scenario "by title" do
       budget_investment1 = create(:budget_investment, budget: budget, title: "Show me what you got")
       budget_investment2 = create(:budget_investment, budget: budget, title: "Get Schwifty")
-
-      user = create(:user, :level_two)
-      login_managed_user(user)
 
       click_link "Support budget investments"
       expect(page).to have_content(budget.name)
@@ -137,9 +129,6 @@ describe "Budget Investments" do
       budget_investment2 = create(:budget_investment, budget: budget, title: "Let's go",
                                                       heading: create(:budget_heading, name: "Area 52"))
 
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
       click_link "Support budget investments"
       expect(page).to have_content(budget.name)
       within "#budget_#{budget.id}" do
@@ -163,9 +152,6 @@ describe "Budget Investments" do
   scenario "Listing" do
     budget_investment1 = create(:budget_investment, budget: budget, title: "Show me what you got")
     budget_investment2 = create(:budget_investment, budget: budget, title: "Get Schwifty")
-
-    user = create(:user, :level_two)
-    login_managed_user(user)
 
     click_link "Support budget investments"
     expect(page).to have_content(budget.name)
@@ -200,9 +186,6 @@ describe "Budget Investments" do
     reviewing_ballots_budget = create(:budget, :reviewing_ballots)
     finished = create(:budget, :finished)
 
-    user = create(:user, :level_two)
-    login_managed_user(user)
-
     click_link "Create budget investment"
 
     expect(page).to have_content(accepting_budget.name)
@@ -230,8 +213,6 @@ describe "Budget Investments" do
     admin = create(:administrator)
     login_as(admin.user)
 
-    user = create(:user, :level_two)
-    login_managed_user(user)
     visit management_sign_in_path
 
     click_link "Create budget investment"
@@ -249,9 +230,6 @@ describe "Budget Investments" do
   context "Supporting" do
     scenario "Supporting budget investments on behalf of someone in index view" do
       budget_investment = create(:budget_investment, heading: heading)
-
-      user = create(:user, :level_two)
-      login_managed_user(user)
 
       click_link "Support budget investments"
       expect(page).to have_content(budget.name)
@@ -272,9 +250,6 @@ describe "Budget Investments" do
     xscenario "Supporting budget investments on behalf of someone in show view" do
       budget_investment = create(:budget_investment, budget: budget)
 
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
       click_link "Support budget investments"
       expect(page).to have_content(budget.name)
       within "#budget_#{budget.id}" do
@@ -291,10 +266,8 @@ describe "Budget Investments" do
     end
 
     scenario "Should not allow unverified users to vote proposals" do
+      login_managed_user(create(:user))
       create(:budget_investment, budget: budget)
-
-      user = create(:user)
-      login_managed_user(user)
 
       click_link "Support budget investments"
 
@@ -354,9 +327,6 @@ describe "Budget Investments" do
                                   budget: budget,
                                   heading: another_heading,
                                   title: "Add new districts to the city")
-
-      user = create(:user, :level_two)
-      login_managed_user(user)
 
       click_link "Print budget investments"
 

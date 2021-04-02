@@ -1,15 +1,15 @@
 require "rails_helper"
 
 describe "Proposals" do
+  let(:user) { create(:user, :level_two) }
+
   before do
+    login_managed_user(user)
     login_as_manager
   end
 
   context "Create" do
     scenario "Creating proposals on behalf of someone" do
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
       click_link "Create proposal"
 
       within(".account-info") do
@@ -40,8 +40,7 @@ describe "Proposals" do
     end
 
     scenario "Should not allow unverified users to create proposals" do
-      user = create(:user)
-      login_managed_user(user)
+      login_managed_user(create(:user))
 
       click_link "Create proposal"
 
@@ -53,9 +52,6 @@ describe "Proposals" do
     scenario "When path matches the friendly url" do
       proposal = create(:proposal)
 
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
       right_path = management_proposal_path(proposal)
       visit right_path
 
@@ -64,9 +60,6 @@ describe "Proposals" do
 
     scenario "When path does not match the friendly url" do
       proposal = create(:proposal)
-
-      user = create(:user, :level_two)
-      login_managed_user(user)
 
       right_path = management_proposal_path(proposal)
       old_path = "#{management_proposals_path}/#{proposal.id}-something-else"
@@ -79,7 +72,6 @@ describe "Proposals" do
     scenario "Successful proposal" do
       proposal = create(:proposal, :successful, title: "Success!")
 
-      login_managed_user(create(:user, :level_two))
       visit management_proposal_path(proposal)
 
       expect(page).to have_content("Success!")
@@ -89,9 +81,6 @@ describe "Proposals" do
   scenario "Searching" do
     proposal1 = create(:proposal, title: "Show me what you got")
     proposal2 = create(:proposal, title: "Get Schwifty")
-
-    user = create(:user, :level_two)
-    login_managed_user(user)
 
     click_link "Support proposals"
 
@@ -112,9 +101,6 @@ describe "Proposals" do
   scenario "Listing" do
     proposal1 = create(:proposal, title: "Show me what you got")
     proposal2 = create(:proposal, title: "Get Schwifty")
-
-    user = create(:user, :level_two)
-    login_managed_user(user)
 
     click_link "Support proposals"
 
@@ -140,9 +126,6 @@ describe "Proposals" do
     let!(:proposal) { create(:proposal) }
 
     scenario "Voting proposals on behalf of someone in index view" do
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
       click_link "Support proposals"
 
       within(".proposals-list") do
@@ -155,9 +138,6 @@ describe "Proposals" do
     end
 
     scenario "Voting proposals on behalf of someone in show view" do
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
       click_link "Support proposals"
 
       within(".proposals-list") { click_link proposal.title }
@@ -171,8 +151,7 @@ describe "Proposals" do
     end
 
     scenario "Should not allow unverified users to vote proposals" do
-      user = create(:user)
-      login_managed_user(user)
+      login_managed_user(create(:user))
 
       click_link "Support proposals"
 
@@ -197,9 +176,6 @@ describe "Proposals" do
       best_proposal.update_column(:confidence_score, 10)
       medium_proposal = create(:proposal, title: "Medium proposal")
       medium_proposal.update_column(:confidence_score, 5)
-
-      user = create(:user, :level_two)
-      login_managed_user(user)
 
       click_link "Print proposals"
 
