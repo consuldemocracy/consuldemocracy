@@ -1,12 +1,9 @@
 require "rails_helper"
 
 describe "Managed User" do
-  before do
-    login_as_manager
-  end
-
   context "Currently managed user" do
     scenario "No managed user" do
+      login_as_manager
       visit management_document_verifications_path
       expect(page).not_to have_css ".account-info"
     end
@@ -14,6 +11,7 @@ describe "Managed User" do
     scenario "User is already level three verified" do
       user = create(:user, :level_three)
 
+      login_as_manager
       visit management_document_verifications_path
       fill_in "document_verification_document_number", with: user.document_number
       click_button "Check document"
@@ -31,6 +29,7 @@ describe "Managed User" do
     scenario "User becomes verified as level three" do
       user = create(:user, :level_two)
 
+      login_as_manager
       visit management_document_verifications_path
       fill_in "document_verification_document_number", with: user.document_number
       click_button "Check document"
@@ -50,10 +49,9 @@ describe "Managed User" do
     end
 
     scenario "User becomes verified as level two (pending email confirmation for level three)" do
-      login_as_manager
-
       user = create(:user)
 
+      login_as_manager
       visit management_document_verifications_path
       fill_in "document_verification_document_number", with: "12345678Z"
       click_button "Check document"
@@ -141,6 +139,7 @@ describe "Managed User" do
   scenario "Close the currently managed user session" do
     user = create(:user, :level_three)
 
+    login_as_manager
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: user.document_number
     click_button "Check document"

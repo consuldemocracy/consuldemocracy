@@ -282,12 +282,12 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   describe "At #{mappable_show_path}" do
     before do
       set_arguments(arguments, mappable, mappable_path_arguments)
-      do_login_for(user) if management
     end
 
     scenario "Should display map and marker on #{mappable_factory_name} show page" do
       arguments[:id] = mappable.id
 
+      do_login_for(user) if management
       visit send(mappable_show_path, arguments)
 
       within ".map_location" do
@@ -300,6 +300,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       set_arguments(arguments, mappable_without_map, mappable_path_arguments)
       arguments[:id] = mappable_without_map.id
 
+      do_login_for(user) if management
       visit send(mappable_show_path, arguments)
 
       expect(page).not_to have_css(".map_location")
@@ -309,6 +310,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       Setting["feature.map"] = false
       arguments[:id] = mappable.id
 
+      do_login_for(user) if management
       visit send(mappable_show_path, arguments)
 
       expect(page).not_to have_css(".map_location")
@@ -318,8 +320,8 @@ end
 
 def do_login_for(user)
   if management
-    login_as_manager
     login_managed_user(user)
+    login_as_manager
   else
     login_as(user)
   end

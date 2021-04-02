@@ -1,11 +1,8 @@
 require "rails_helper"
 
 describe "Users" do
-  before do
-    login_as_manager
-  end
-
   scenario "Create a level 3 user with email from scratch" do
+    login_as_manager
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
@@ -46,6 +43,7 @@ describe "Users" do
   end
 
   scenario "Create a level 3 user without email from scratch" do
+    login_as_manager
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
@@ -74,6 +72,7 @@ describe "Users" do
   scenario "Delete a level 2 user account from document verification page" do
     level_2_user = create(:user, :level_two, document_number: "12345678Z")
 
+    login_as_manager
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
