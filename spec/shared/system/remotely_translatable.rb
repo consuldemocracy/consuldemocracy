@@ -205,6 +205,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
         click_button "Traducir página"
 
+        expect(page).not_to have_button "Traducir página"
         expect(RemoteTranslation.count).to eq(0)
         expect(resource.translations.count).to eq(2)
       end
