@@ -165,7 +165,7 @@ describe "Polls" do
     expect(page).to have_css ".nested-fields", count: 1
   end
 
-  scenario "Edit poll should allow to remove answers" do
+  scenario "Edit poll allows users to remove answers" do
     poll = create(:poll, related: proposal, starts_at: 1.week.from_now)
     create(:poll_question, :yes_no, poll: poll)
     visit proposal_dashboard_polls_path(proposal)
@@ -182,6 +182,9 @@ describe "Polls" do
     end
 
     click_button "Update poll"
+
+    expect(page).to have_content "Poll updated successfully"
+
     visit edit_proposal_dashboard_poll_path(proposal, poll)
 
     within ".js-questions .js-answers" do
