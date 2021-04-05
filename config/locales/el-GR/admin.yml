@@ -1147,6 +1147,7 @@ el:
       search:
         label:
           booths: "Αναζητήστε περίπτερο με το όνομα"
+          local_census_records: "Αναζήτηση με αριθμό εγγράφου"
           organizations: "Όνομα, email ή τηλεφωνικός αριθμός"
           poll_officers: "Αναζήτηση υπαλλήλων δημοσκόπησης"
           poll_questions: "Αναζήτηση ερωτήσεων δημοσκόπησης"
