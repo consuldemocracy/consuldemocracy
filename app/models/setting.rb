@@ -157,6 +157,7 @@ class Setting < ApplicationRecord
         "twitter_handle": nil,
         "twitter_hashtag": nil,
         "youtube_handle": nil,
+        "linkedin_handle": nil,
         "url": "http://example.com", # Public-facing URL of the app.
         # CONSUL installation's organization name
         "org_name": "INNCONSUL",

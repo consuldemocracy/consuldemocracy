@@ -1,12 +1,16 @@
 <% show=false
-@users_index = DebateParticipant.where(debate_id: @debate.id)
-@users_index.each do |index|
-  if user_signed_in?
-    if index.user_id == current_user.id || current_administrator? || @debate.author_id == current_user.id
-      show=true
+if user_signed_in?
+  if current_administrator?
+    show=true
+  else
+    @users_index = DebateParticipant.where(debate_id: @debate.id)
+    @users_index.each do |index|
+      if index.user_id == current_user.id 
+        show=true
+      end
     end
   end
-end %>
+end%>
 
 <% if show==true %>
   <% provide :title do %><%= @debate.title %><% end %>

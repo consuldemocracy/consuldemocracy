@@ -1,11 +1,18 @@
 <%= content_for :body_class, "custom-page" %>
 
 <% show=false
-@users_index = PageParticipant.where(site_customization_pages_id: @custom_page.id)
-@users_index.each do |index|
-  if user_signed_in?
-    if index.user_id == current_user.id || current_administrator?
-      show=true
+if @custom_page.id==5 || @custom_page.id==4 || @custom_page.id==6 || @custom_page.id==7 || @custom_page.id==11 
+  show=true
+end
+if user_signed_in?
+  if current_administrator?
+    show=true
+  else
+    @users_index = PageParticipant.where(site_customization_pages_id: @custom_page.id)
+    @users_index.each do |index|
+      if index.user_id == current_user.id 
+        show=true
+      end
     end
   end
 end %>

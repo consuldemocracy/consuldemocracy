@@ -2,11 +2,11 @@ section "Creating Settings" do
   Setting.reset_defaults
 
   {
-    "facebook_handle": "CONSUL",
+    "facebook_handle": "GRPInnovaris",
     "feature.featured_proposals": "true",
     "feature.map": "true",
     "feature.sdg": "true",
-    "instagram_handle": "CONSUL",
+    "instagram_handle": "grupoinnovaris",
     "mailer_from_address": "noreply@consul.dev",
     "mailer_from_name": "CONSUL",
     "meta_description": "Citizen participation tool for an open, "\
@@ -22,11 +22,12 @@ section "Creating Settings" do
     "sdg.process.budgets": "true",
     "sdg.process.legislation": "true",
     "telegram_handle": "CONSUL",
-    "twitter_handle": "@consul_dev",
+    "twitter_handle": "grpinnovaris",
     "twitter_hashtag": "#consul_dev",
     "url": "http://localhost:3000",
     "votes_for_proposal_success": "100",
-    "youtube_handle": "CONSUL"
+    "youtube_handle": "channel/UC_yuidFUJK7pKabqbj66k8g",
+    "linkedin_handle": "innovaris-s.l."
   }.each do |name, value|
     Setting[name] = value
   end
