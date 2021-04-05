@@ -43,7 +43,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
   private
     #JHH: Aquí se añade el campo de participantes de las páginas
     def page_params
-      attributes = [:page_users_id, :slug, :more_info_flag, :print_content_flag, :status]
+      attributes = [:public, :page_users_id, :slug, :more_info_flag, :print_content_flag, :status]
 
       params.require(:site_customization_page).permit(*attributes,
         translation_params(SiteCustomization::Page)

@@ -1,10 +1,9 @@
 <%= content_for :body_class, "custom-page" %>
 
 <% show=false
-if @custom_page.id==5 || @custom_page.id==4 || @custom_page.id==6 || @custom_page.id==7 || @custom_page.id==11 
+if @custom_page.public?
   show=true
-end
-if user_signed_in?
+elsif user_signed_in?
   if current_administrator?
     show=true
   else
