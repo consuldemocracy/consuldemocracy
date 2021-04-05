@@ -144,6 +144,7 @@ el:
         description_finished: "Περιγραφή με την ολοκληρωση του προϋπολογισμού"
         phase: "Φάση"
         currency_symbol: "Συνάλλαγμα"
+        voting_style_knapsack: "Σακίδιο"
       budget/translation:
         name: "Όνομα"
       budget/investment:
@@ -213,6 +214,7 @@ el:
         ends_at: "Ημερομηνία ολοκλήρωσης"
         starts_at: "Ημερομηνία έναρξης"
       budget/phase/translation:
+        name: "Όνομα"
         description: "Περιγραφή"
         summary: "Περίληψη"
       comment:
@@ -271,6 +273,7 @@ el:
         responsible_name: "Υπεύθυνος ομάδας"
       poll:
         name: "Όνομα"
+        title: "Όνομα"
         starts_at: "Ημερομηνία έναρξης"
         ends_at: "Καταληκτική ημερομηνία"
         geozone_restricted: "Περιορίζεται από το geozone"
@@ -299,11 +302,17 @@ el:
         officer_assignment_id: Εργασία Λειτουργού
       poll/shift:
         task: "Εργασία"
+      proposal_notification:
+        body: "Μήνυμα"
+        title: "Τίτλος"
       signature_sheet:
         title: "Τίτλος"
         signable_type: "Τύπος με δυνατότητα υπογραφής"
         signable_id: "ID με δυνατότητα υπογραφής "
         document_numbers: "Αριθμοί εγγράφων"
+      sdg/goal:
+        title: "Τίτλος"
+        description: "Περιγραφή"
       site_customization/page:
         content: Περιεχόμενο
         created_at: Δημιουργήθηκε στις
