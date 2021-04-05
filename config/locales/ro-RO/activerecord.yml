@@ -368,7 +368,7 @@ ro:
         title: "Titlu"
       signature_sheet:
         title: "Titlu"
-        signable_type: "Tip semnabil"
+        signable_type: "Tip semnnătură"
         signable_id: "Semnatar"
         document_numbers: "Numerele documentelor"
       sdg/goal:
