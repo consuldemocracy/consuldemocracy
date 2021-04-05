@@ -82,6 +82,9 @@ el:
       sdg/local_target:
         one: "τοπικός στόχος"
         other: "τοπικοί στόχοι"
+      sdg/manager:
+        one: "Διαχειριστής ΣΒΑ"
+        other: "Διαχειριστές ΣΒΑ"
       sdg/target:
         one: "στόχος"
         other: "στόχοι"
@@ -486,6 +489,7 @@ el:
         active: Ενεργό
         action_type: Τύπος
         action_type_proposed_action: "Προτεινόμενη δράση"
+        action_type_resource: "Πόρος"
         published_proposal: "Για δημοσιευμένες προτάσεις;"
       dashboard/administrator_task:
         source: Πηγή
@@ -590,6 +594,10 @@ el:
           attributes:
             locale:
               already_translated: Ήδη μεταφρασμένος πόρος
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "πρέπει να ξεκινάει με τον ίδιο κωδικό με τον στόχο του ακολουθούμενο από μία τελεία και να τελειώνει με έναν αριθμό"
       messages:
         translations_too_short: Υποχρεούται να παρέχετε τουλάχιστον μία μετάφραση
         record_invalid: "Η επικύρωση απέτυχε: %{errors}"
