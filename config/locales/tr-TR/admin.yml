@@ -1264,6 +1264,7 @@ tr:
           budget_investments: "Yatırımları başlık ya da açıklamaya göre arayın"
           debates: "Tartışmaları başlığa veya açıklamaya göre ara"
           legislation_processes: "Süreçleri başlık ya da açıklamaya göre arayın"
+          legislation_proposals: "Önerilerde başlık ve açıklamara göre arama"
           local_census_records: "Belge Numarası ile Ara"
           organizations: "İsim, e-posta veya telefon numarası"
           poll_officers: "Anket memurlarını ara"
