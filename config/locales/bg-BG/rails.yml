@@ -157,7 +157,7 @@ bg:
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: "%n%u"
+        format: "%n %u"
         units:
           billion: Милиард
           million: Милион
