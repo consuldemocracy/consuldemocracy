@@ -7,6 +7,7 @@ el:
     name: Όνομα
     email: E-Mail
     description: Περιγραφή
+    related_sdg_list: Σκοποί και Στόχοι
   activerecord:
     models:
       activity:
@@ -75,6 +76,15 @@ el:
       proposal:
         one: "Πρόταση πολίτη"
         other: "Προτάσεις πολιτών"
+      sdg/goal:
+        one: "σκοπός"
+        other: "σκοποί"
+      sdg/local_target:
+        one: "τοπικός στόχος"
+        other: "τοπικοί στόχοι"
+      sdg/target:
+        one: "στόχος"
+        other: "στόχοι"
       site_customization/page:
         one: Προσαρμοσμένη σελίδα
         other: Προσαρμοσμένες σελίδες
@@ -144,7 +154,9 @@ el:
         description_finished: "Περιγραφή με την ολοκληρωση του προϋπολογισμού"
         phase: "Φάση"
         currency_symbol: "Συνάλλαγμα"
+        voting_style: "Στυλ τελικής ψηφοφορίας"
         voting_style_knapsack: "Σακίδιο"
+        voting_style_approval: "Έγγριση"
       budget/translation:
         name: "Όνομα"
       budget/investment:
@@ -207,6 +219,7 @@ el:
         name: "Όνομα επικεφαλίδας"
         price: "Τιμή"
         population: "Πληθυσμός"
+        max_ballot_lines: "Επιτρεπόμενες ψήφοι"
       budget/heading/translation:
         name: "Όνομα επικεφαλίδας"
       budget/phase:
@@ -311,14 +324,31 @@ el:
         signable_id: "ID με δυνατότητα υπογραφής "
         document_numbers: "Αριθμοί εγγράφων"
       sdg/goal:
+        code: "Κωδικός"
         title: "Τίτλος"
         description: "Περιγραφή"
+      sdg/local_target:
+        code: "Κωδικός"
+        target_id: "Στόχος"
+        title: "Τίτλος"
+      sdg/local_target/translation:
+        title: "Τίτλος"
+        description: "Περιγραφή"
+      sdg/phase/kind:
+        sensitization: "Ευαισθητοποίηση"
+        planning: "Σχεδιασμός"
+        monitoring: "Παρακολούθηση"
+      sdg/target:
+        code: "Κωδικός"
+        title: "Τίτλος"
       site_customization/page:
         content: Περιεχόμενο
         created_at: Δημιουργήθηκε στις
         subtitle: Υπότιτλος
         slug: Slug
         status: Κατάσταση
+        status_draft: "Προσχέδιο"
+        status_published: "Δημοσιεύθηκε"
         title: Τίτλος
         updated_at: Ενημερώθηκε στις
         more_info_flag: Εμφάνιση στη σελίδα βοήθειας
@@ -335,9 +365,20 @@ el:
         name: Όνομα
         locale: Τοπικές ρυθμίσεις
         body: Περιεχόμενο
+      tag:
+        name: "Πληκτρολογήστε το όνομα του θέματος"
+      topic:
+        title: "Τίτλος"
+        description: "Αρχικό κείμενο"
       banner:
         background_color: Χρώμα φόντου
         font_color: Χρώμα γραμματοσειράς
+        post_ended_at: "Θέση που έληξε στις"
+        post_started_at: "Θέση που ξεκίνησε στις"
+        target_url: "Σύνδεσμος"
+      banner/translation:
+        title: "Τίτλος"
+        description: "Περιγραφή"
       legislation/process:
         title: Τίτλος διαδικασίας
         summary: Περίληψη
@@ -357,12 +398,18 @@ el:
         result_publication_date: Ημερομηνία δημοσίευσης τελικών αποτελέσματων
         background_color: Χρώμα φόντου
         font_color: Χρώμα γραμματοσειράς
+        homepage_enabled: "Αρχική σελίδα ενεργοποιημένη"
       legislation/process/translation:
         title: Τίτλος διαδικασίας
         summary: Περίληψη
         description: Περιγραφή
         additional_info: Πρόσθετες πληροφορίες
+        homepage: "Περιγραφή"
         milestones_summary: Περίληψη
+      legislation/proposal:
+        description: "Κείμενο πρότασης"
+        summary: "Περίληψη πρότασης"
+        title: "Τίτλος πρότασης"
       legislation/draft_version:
         title: Τίτλος έκδοσης
         body: Κείμενο
