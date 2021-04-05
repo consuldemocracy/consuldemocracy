@@ -159,7 +159,7 @@ el:
         currency_symbol: "Συνάλλαγμα"
         voting_style: "Στυλ τελικής ψηφοφορίας"
         voting_style_knapsack: "Σακίδιο"
-        voting_style_approval: "Έγγριση"
+        voting_style_approval: "Έγκριση"
       budget/translation:
         name: "Όνομα"
       budget/investment:
