@@ -3,8 +3,10 @@
 <% show=false
 @users_index = PageParticipant.where(site_customization_pages_id: @custom_page.id)
 @users_index.each do |index|
-  if current_user.administrator? || index.user_id == current_user.id || current_administrator?
-    show=true
+  if user_signed_in?
+    if index.user_id == current_user.id || current_administrator?
+      show=true
+    end
   end
 end %>
 <% if show==true %>

@@ -7,6 +7,33 @@
 //------------ JHH: -----------
 $brand: linear-gradient(to right, #fb700a, #fca406);
 
+.grid-container {
+  .pdf1 {
+    background-image: image-url("pdf1.jpg");
+  }
+  .pdf2 {
+    background-image: image-url("pdf2.jpg");
+  }
+  .pdf3 {
+    background-image: image-url("pdf3.jpg");
+  }
+  .pdf4 {
+    background-image: image-url("pdf4.jpg");
+  }
+  .pdf5 {
+    background-image: image-url("pdf5.jpg");
+  }
+  .pdf6 {
+    background-image: image-url("pdf6.jpg");
+  }
+  .pdf7 {
+    background-image: image-url("pdf7.jpg");
+  }
+  .pdf8 {
+    background-image: image-url("pdf8.jpg");
+  }
+}
+
 // Recomendations grid
 .grid-container {
   display: grid;
@@ -69,15 +96,16 @@ $brand: linear-gradient(to right, #fb700a, #fca406);
 
   .color-img-1 {
     background-color: #fb6e0a70;
-    height: 250px;
-    border-radius: 5px;
+    height: 300px;
+    border-radius: 2px;
 
     p {
-      margin-top: 10px;
+      border-radius: 3px;
+      margin-top: 5px;
     }
 
     .position {
-      margin-top: 30px;
+      margin-top: 10px;
       margin-left: 10px;
     }
   }

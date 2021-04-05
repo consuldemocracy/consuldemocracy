@@ -9,94 +9,96 @@
 <% end %>
 
 <main>
-<% if current_administrator? %>
-  <% if @search_terms || @advanced_search_terms %>
-    <div class="highlight no-margin-top padding margin-bottom">
-      <div class="row">
-        <div class="small-12 column">
-          <% if @search_terms || @advanced_search_terms %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @debates %>
-              <% if !@advanced_search_terms %>
-                <%= sanitize(
-                  t("debates.index.search_results", count: @debates.size, search_term: @search_terms)
-                ) %>
-              <% end %>
-            </p>
-          <% end %>
+<% if user_signed_in? %>
+  <% if current_administrator? %>
+    <% if @search_terms || @advanced_search_terms %>
+      <div class="highlight no-margin-top padding margin-bottom">
+        <div class="row">
+          <div class="small-12 column">
+            <% if @search_terms || @advanced_search_terms %>
+              <h2><%= t("shared.search_results") %></h2>
+              <p>
+                <%= page_entries_info @debates %>
+                <% if !@advanced_search_terms %>
+                  <%= sanitize(
+                    t("debates.index.search_results", count: @debates.size, search_term: @search_terms)
+                  ) %>
+                <% end %>
+              </p>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  <% else %>
-    <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
-  <% end %>
+    <% else %>
+      <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
+    <% end %>
 
-  <% if feature?("user.recommendations") && @recommended_debates.present? %>
-    <%= render "shared/recommended_index", recommended: @recommended_debates,
-                                           disable_recommendations_path: recommendations_disable_debates_path,
-                                           namespace: "debates" %>
-  <% end %>
+    <% if feature?("user.recommendations") && @recommended_debates.present? %>
+      <%= render "shared/recommended_index", recommended: @recommended_debates,
+                                            disable_recommendations_path: recommendations_disable_debates_path,
+                                            namespace: "debates" %>
+    <% end %>
 
-  <div class="row">
-    <div id="debates" class="debates-list small-12 medium-9 column">
+    <div class="row">
+      <div id="debates" class="debates-list small-12 medium-9 column">
 
-      <%= render Shared::BannerComponent.new("debates") %>
+        <%= render Shared::BannerComponent.new("debates") %>
 
-      <% unless @search_terms || !has_featured? %>
-        <%= render "featured_debates" %>
-      <% end %>
-
-      <div class="row">
-        <div class="small-12 column">
-          <%= render "view_mode" %>
-        </div>
-      </div>
-
-      <%= render Shared::AdvancedSearchComponent.new %>
-
-      <%= render "shared/order_links", i18n_namespace: "debates.index" %>
-
-      <div class="show-for-small-only">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
-      </div>
-
-      <% if @debates.any? || current_user.blank? %>
-        <% if debates_default_view? %>
-          <%= render @debates %>
-        <% else %>
-          <% @debates.each do |debate| %>
-            <%= render "debates/debate_minimal", debate: debate %>
-          <% end %>
+        <% unless @search_terms || !has_featured? %>
+          <%= render "featured_debates" %>
         <% end %>
-      <% else %>
-        <%= empty_recommended_debates_message_text(current_user) %>
-      <% end %>
-      <%= paginate @debates %>
 
-      <% unless @search_terms || @advanced_search_terms %>
-        <div id="section_help" class="margin" data-magellan-target="section_help">
-          <p class="lead">
-            <strong><%= t("debates.index.section_footer.title") %></strong>
-          </p>
-          <p><%= t("debates.index.section_footer.description") %></p>
-          <p><%= t("debates.index.section_footer.help_text_1") %></p>
-          <p><%= sanitize(t("debates.index.section_footer.help_text_2",
-                    org: link_to(setting["org_name"], new_user_registration_path))) %></p>
-          </p>
+        <div class="row">
+          <div class="small-12 column">
+            <%= render "view_mode" %>
+          </div>
         </div>
-      <% end %>
+
+        <%= render Shared::AdvancedSearchComponent.new %>
+
+        <%= render "shared/order_links", i18n_namespace: "debates.index" %>
+
+        <div class="show-for-small-only">
+          <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
+        </div>
+
+        <% if @debates.any? || current_user.blank? %>
+          <% if debates_default_view? %>
+            <%= render @debates %>
+          <% else %>
+            <% @debates.each do |debate| %>
+              <%= render "debates/debate_minimal", debate: debate %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= empty_recommended_debates_message_text(current_user) %>
+        <% end %>
+        <%= paginate @debates %>
+
+        <% unless @search_terms || @advanced_search_terms %>
+          <div id="section_help" class="margin" data-magellan-target="section_help">
+            <p class="lead">
+              <strong><%= t("debates.index.section_footer.title") %></strong>
+            </p>
+            <p><%= t("debates.index.section_footer.description") %></p>
+            <p><%= t("debates.index.section_footer.help_text_1") %></p>
+            <p><%= sanitize(t("debates.index.section_footer.help_text_2",
+                      org: link_to(setting["org_name"], new_user_registration_path))) %></p>
+            </p>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="small-12 medium-3 column">
+
+        <aside class="margin-bottom">
+          <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
+          <%= render "shared/tag_cloud", taggable: "Debate" %>
+        </aside>
+      </div>
+
     </div>
-
-    <div class="small-12 medium-3 column">
-
-      <aside class="margin-bottom">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
-        <%= render "shared/tag_cloud", taggable: "Debate" %>
-      </aside>
-    </div>
-
-  </div>
+  <% end %>
 <% else %>
  <p class="text-center"><%= t("not_authorized.title") %></p>
  <%= back_link_to root_url %>
