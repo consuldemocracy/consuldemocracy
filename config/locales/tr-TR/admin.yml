@@ -63,6 +63,8 @@ tr:
         type: Tür
         no_activity: Hiç moderatör faaliyeti yok.
     budgets:
+      actions:
+        preview: "Bütçeyi Görüntüle"
       index:
         title: Katılımcı bütçe
         new_link: Yeni bütçe oluştur
