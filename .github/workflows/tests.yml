@@ -19,10 +19,13 @@ jobs:
           POSTGRES_USER: consul
           POSTGRES_PASSWORD: ""
     env:
+      CI_BUILD_NUMBER: ${{ github.run_number }}
+      COVERALLS_FLAG_NAME: run-${{ matrix.ci_node_index }}
+      COVERALLS_PARALLEL: true
+      COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
       PGUSER: consul
       POSTGRES_HOST: postgres
       RAILS_ENV: test
-      COVERALLS: true
     strategy:
       fail-fast: false
       matrix:
@@ -55,3 +58,12 @@ jobs:
         with:
           name: screenshots
           path: tmp/screenshots
+  coveralls:
+    runs-on: ubuntu-18.04
+    needs: tests
+    env:
+      CI_BUILD_NUMBER: ${{ github.run_number }}
+      COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+    steps:
+      - name: Finish coveralls
+        run: curl -k https://coveralls.io/webhook?repo_token=$COVERALLS_REPO_TOKEN -d "payload[build_num]=$CI_BUILD_NUMBER&payload[status]=done"
