@@ -41,6 +41,7 @@ class Proposal < ApplicationRecord
   attr_accessor :participants_id
 
   after_save :save_participants
+  after_destroy :delete_participants
   #Fin
 
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :proposals
@@ -98,14 +99,19 @@ class Proposal < ApplicationRecord
 
 
   #JHH: 
+  def delete_participants
+    ProposalParticipant.where(proposal_id: self).destroy_all
+  end
+
   def save_participants
     #Convertir en un arreglo alu10,alu20 => [alu10,alu20]
 
-    return proposal_participants.destroy_all if participants_id.nil? || participants_id.empty?
+    return ProposalParticipant.where(proposal_id: self).destroy_all if participants_id.nil? || participants_id.empty?
 
     participants_array = participants_id.split(",")
 
-    proposal_participants.where.not(user_id: participants_array).destroy_all
+    not_participant = ProposalParticipant.where(proposal_id:self)
+    not_participant.where.not(user_id: participants_array).destroy_all
     #Iterarlo
     participants_array.each do |id_participant|
       #Crear ProposalParticipants

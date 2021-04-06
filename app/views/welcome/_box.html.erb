@@ -1,11 +1,12 @@
-<div class="jumbo base-bg" style="margin-top: 30px;">
-    <div class="row medium-12 large-12 small-centered content-reco">
-        <div class="medium-3 large-3 small-3 column color-img-1 height-div-below">
-            <p>
-                <%= image_tag("Grupo-Innovaris-reconocimientos-scaled.jpg", class: "float-center", height: "80", alt: "Innovaris Logo") %>
-            </p>
-            <h3 class="text-center"><%= t("box_views.box1.title") %></h3>
-            <%= link_to t("box_views.box1.description"), recomendations_path, class: "button btn-success float-center position" %>
-        </div>
+<div class="row medium-12 large-12 small-centered float-center content-reco">
+    <div class="medium-3 large-3 small-9 small-centered column color-img-1 height-div-below float-center">
+        <br>
+        <p class="p1">
+            <%= image_tag("Grupo-Innovaris-reconocimientos-scaled.jpg", class: "float-center", alt: "Innovaris Logo") %>
+        </p>
+        <h3 class="text-center"><%= t("box_views.box1.title") %></h3>
+        <p class="p2">
+            <%= link_to t("box_views.box1.description"), recomendations_path, class: "button float-center position", style: "margin-bottom:10px;" %>
+        </p>
     </div>
 </div>

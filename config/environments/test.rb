@@ -58,4 +58,7 @@ Rails.application.configure do
       Bullet.raise = true # raise an error if n+1 query occurs
     end
   end
+
+  # Store uploaded files on the local file system in a temporary directory.
+  config.active_storage.service = :test
 end

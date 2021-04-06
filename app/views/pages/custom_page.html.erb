@@ -17,7 +17,11 @@ elsif user_signed_in?
 end %>
 <% if show==true %>
   <% provide :title do %><%= @custom_page.title %><% end %>
-
+  <div class="row header">
+    <% if @custom_page.header.attached? %>
+      <%= image_tag url_for(@custom_page.header), height:200, width:"100%" %>
+    <% end %>
+  </div>
 
   <div class="row margin-top">
 

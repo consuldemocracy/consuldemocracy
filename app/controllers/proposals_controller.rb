@@ -12,7 +12,7 @@ class ProposalsController < ApplicationController
   before_action :set_view, only: :index
   before_action :proposals_recommendations, only: :index, if: :current_user
   # JHH: 
-  before_action :load_participants, only: [:new, :edit]
+  before_action :load_participants
   #Fin
 
   feature_flag :proposals
@@ -39,7 +39,6 @@ class ProposalsController < ApplicationController
 
   # JHH: 
   def load_participants
-    
     @participants = User.all
   end
   #Fin

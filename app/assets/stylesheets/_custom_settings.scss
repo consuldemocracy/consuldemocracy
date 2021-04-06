@@ -7,6 +7,7 @@
 //------------ JHH: -----------
 $brand: linear-gradient(to right, #fb700a, #fca406);
 
+//Background image recognitions cards
 .grid-container {
   .pdf1 {
     background-image: image-url("pdf1.jpg");
@@ -87,26 +88,30 @@ $brand: linear-gradient(to right, #fb700a, #fca406);
   }
 }
 
-// Tarjeta reco
+// Recognition card _box
 // -------------------------------------------------------------------
 .content-reco {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  margin-top: 20px;
   .color-img-1 {
     background-color: #fb6e0a70;
-    height: 300px;
+    max-height: 400px;
     border-radius: 2px;
 
-    p {
-      border-radius: 3px;
-      margin-top: 5px;
+    .p1 {
+      img {
+        max-height: 150px;
+        height: 100%;
+        width: auto;
+      }
     }
 
-    .position {
-      margin-top: 10px;
-      margin-left: 10px;
+    h3 {
+      font-weight: lighter;
+    }
+
+    .p2 {
+      margin-bottom: 5px;
+      padding-bottom: 5px;
     }
   }
 }
