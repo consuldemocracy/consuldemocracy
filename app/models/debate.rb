@@ -45,6 +45,7 @@ class Debate < ApplicationRecord
 
   #JHH:
   after_save :save_debate_participants
+  after_destroy :delete_debate_participants
   #Fin
 
   scope :for_render,               -> { includes(:tags) }
@@ -65,13 +66,20 @@ class Debate < ApplicationRecord
   attr_accessor :link_required
 
   #JHH:
+  def delete_debate_participants
+    DebateParticipant.where(debate_id: self).destroy_all
+  end
+
   def save_debate_participants
-    return if debate_users_id.nil? || debate_users_id.empty?
+    return DebateParticipant.where(debate_id: self).destroy_all if debate_users_id.nil? || debate_users_id.empty?
 
     debate_users_array = self.debate_users_id.split(",")
 
+    not_participant = DebateParticipant.where(debate_id: self)
+    not_participant.where.not(user_id: debate_users_array).destroy_all
+
     debate_users_array.each do |debate_user|
-      DebateParticipant.create(debate: self, user_id: debate_user)
+      DebateParticipant.find_or_create_by(debate: self, user_id: debate_user)
     end
   end
   #end

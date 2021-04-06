@@ -20,7 +20,7 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   # JHH: 
-  before_action :load_participants, only: [:new, :edit]
+  before_action :load_participants
    
   def load_participants
     @participants = User.all

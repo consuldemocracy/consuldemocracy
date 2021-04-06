@@ -60,5 +60,5 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system in a temporary directory.
-  config.active_storage.service = :test
+  #config.active_storage.service = :test
 end
