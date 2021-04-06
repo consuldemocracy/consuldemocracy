@@ -9,6 +9,7 @@ describe "Incomplete verifications", :admin do
 
     visit admin_verifications_path
 
+    expect(page).to have_link "Go back", href: admin_stats_path
     expect(page).to have_content(incompletely_verified_user1.username)
     expect(page).to have_content(incompletely_verified_user2.username)
     expect(page).not_to have_content(never_tried_to_verify_user.username)
