@@ -550,8 +550,8 @@ body > header,
 }
 
 .top-bar {
-  background: linear-gradient(to right, #fa6200, #ffc514) !important;
-  color: #fff;
+  background: $top-color !important;
+  color: black;
   padding-bottom: 0;
   padding-top: 0;
 
@@ -599,7 +599,7 @@ body > header,
     }
 
     a {
-      color: #fff;
+      color: black;
       padding-left: 0;
 
       @include breakpoint(medium) {
@@ -613,8 +613,8 @@ body > header,
       text-align: left;
 
       @include breakpoint(medium) {
-        background: #fff;
-        color: $brand;
+        background: $brand;
+        color: black;
         text-align: center;
       }
     }
@@ -622,7 +622,7 @@ body > header,
 
   .has-submenu {
     &.is-active a {
-      color: #fff;
+      color: black;
       font-weight: bold;
     }
   }
@@ -666,8 +666,8 @@ body > header,
   &.dark {
     &:hover::after,
     &::after {
-      background: #fff;
-      box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+      background: black;
+      box-shadow: 0 7px 0 black, 0 14px 0 black;
     }
   }
 }
@@ -683,11 +683,11 @@ body > header,
   }
 
   &.is-active > a {
-    color: #fff;
+    color: black;
   }
 
   &.is-dropdown-submenu-parent > a::after {
-    border-color: #fff transparent transparent;
+    border-color: black transparent transparent;
   }
 }
 
@@ -1019,7 +1019,7 @@ footer {
   position: relative;
 
   label {
-    color: #fff;
+    color: black;
     font-size: $tiny-font-size;
     font-weight: normal;
   }

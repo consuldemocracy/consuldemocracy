@@ -3,8 +3,10 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
 .top-links {
-  background: linear-gradient(to right, #fb700a, #fca406);
+  background: $top-color;
+  //background: #f1f1f1;
 }
 
 // JHH:
@@ -27,6 +29,7 @@
 }
 
 .Letter_welcome_enterprise {
-  color: black;
+  -webkit-text-stroke: 1px black;
+  color: #f1f1f1;
 }
 // Fin

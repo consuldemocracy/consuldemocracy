@@ -6,6 +6,8 @@
 
 //------------ JHH: -----------
 $brand: linear-gradient(to right, #fb700a, #fca406);
+$top-color: #f1f1f1;
+$highlight: white;
 
 //Background image recognitions cards
 .grid-container {
@@ -93,7 +95,10 @@ $brand: linear-gradient(to right, #fb700a, #fca406);
 .content-reco {
   margin-top: 20px;
   .color-img-1 {
-    background-color: #fb6e0a70;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: #f1f1f1;
     max-height: 400px;
     border-radius: 2px;
 
@@ -114,11 +119,6 @@ $brand: linear-gradient(to right, #fb700a, #fca406);
       padding-bottom: 5px;
     }
   }
-}
-
-.footer {
-  background-color: red;
-  height: 600px;
 }
 
 // Footer
