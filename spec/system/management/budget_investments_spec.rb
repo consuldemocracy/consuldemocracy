@@ -100,6 +100,16 @@ describe "Budget Investments" do
         expect(page).not_to have_content "Plant trees"
       end
     end
+
+    scenario "when user has not been selected we can't create a budget investment" do
+      Setting["feature.user.skip_verification"] = "true"
+      login_as_manager(manager)
+
+      click_link "Create budget investment"
+
+      expect(page).to have_content "To perform this action you must select a user"
+      expect(page).to have_current_path management_document_verifications_path
+    end
   end
 
   context "Searching" do
@@ -285,6 +295,16 @@ describe "Budget Investments" do
       click_link "Support budget investments"
 
       expect(page).to have_content "User is not verified"
+    end
+
+    scenario "when user has not been selected we can't support budget investments" do
+      Setting["feature.user.skip_verification"] = "true"
+      login_as_manager(manager)
+
+      click_link "Support budget investments"
+
+      expect(page).to have_content "To perform this action you must select a user"
+      expect(page).to have_current_path management_document_verifications_path
     end
   end
 

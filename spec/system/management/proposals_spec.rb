@@ -44,6 +44,16 @@ describe "Proposals" do
 
       expect(page).to have_content "User is not verified"
     end
+
+    scenario "when user has not been selected we can't create a proposal" do
+      Setting["feature.user.skip_verification"] = "true"
+      login_as_manager
+
+      click_link "Create proposal"
+
+      expect(page).to have_content "To perform this action you must select a user"
+      expect(page).to have_current_path management_document_verifications_path
+    end
   end
 
   context "Show" do
@@ -171,6 +181,16 @@ describe "Proposals" do
 
       expect(page).to have_content "User is not verified"
     end
+
+    scenario "when user has not been selected we can't support proposals" do
+      Setting["feature.user.skip_verification"] = "true"
+      login_as_manager
+
+      click_link "Support proposals"
+
+      expect(page).to have_content "To perform this action you must select a user"
+      expect(page).to have_current_path management_document_verifications_path
+    end
   end
 
   context "Printing" do
@@ -213,6 +233,20 @@ describe "Proposals" do
         expect(medium_proposal.title).to appear_before(best_proposal.title)
         expect(best_proposal.title).to appear_before(worst_proposal.title)
       end
+    end
+
+    scenario "when user has not been selected we can't support a proposal" do
+      create(:proposal)
+      Setting["feature.user.skip_verification"] = "true"
+      login_as_manager
+
+      click_link "Print proposals"
+      within ".proposals-list" do
+        click_link "Support"
+      end
+
+      expect(page).to have_content "To perform this action you must select a user"
+      expect(page).to have_current_path management_document_verifications_path
     end
   end
 end

@@ -98,4 +98,28 @@ describe "Account" do
     expect(page).to have_css("a[href='javascript:window.print();']", text: "Print password")
     expect(page).to have_css("div.for-print-only", text: "another_new_password", visible: :hidden)
   end
+
+  describe "When a user has not been selected" do
+    before do
+      Setting["feature.user.skip_verification"] = "true"
+    end
+
+    scenario "we can't reset password via email" do
+      login_as_manager
+
+      click_link "Reset password via email"
+
+      expect(page).to have_content "To perform this action you must select a user"
+      expect(page).to have_current_path management_document_verifications_path
+    end
+
+    scenario "we can't reset password manually" do
+      login_as_manager
+
+      click_link "Reset password manually"
+
+      expect(page).to have_content "To perform this action you must select a user"
+      expect(page).to have_current_path management_document_verifications_path
+    end
+  end
 end
