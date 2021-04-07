@@ -3,12 +3,9 @@ require "rails_helper"
 describe "Proposals" do
   let(:user) { create(:user, :level_two) }
 
-  before do
-    login_managed_user(user)
-  end
-
   context "Create" do
     scenario "Creating proposals on behalf of someone" do
+      login_managed_user(user)
       login_as_manager
       click_link "Create proposal"
 
@@ -54,6 +51,7 @@ describe "Proposals" do
       proposal = create(:proposal)
 
       right_path = management_proposal_path(proposal)
+      login_managed_user(user)
       login_as_manager
       visit right_path
 
@@ -66,6 +64,7 @@ describe "Proposals" do
       right_path = management_proposal_path(proposal)
       old_path = "#{management_proposals_path}/#{proposal.id}-something-else"
 
+      login_managed_user(user)
       login_as_manager
       visit old_path
 
@@ -76,6 +75,7 @@ describe "Proposals" do
     scenario "Successful proposal" do
       proposal = create(:proposal, :successful, title: "Success!")
 
+      login_managed_user(user)
       login_as_manager
       visit management_proposal_path(proposal)
 
@@ -87,6 +87,7 @@ describe "Proposals" do
     proposal1 = create(:proposal, title: "Show me what you got")
     proposal2 = create(:proposal, title: "Get Schwifty")
 
+    login_managed_user(user)
     login_as_manager
     click_link "Support proposals"
 
@@ -108,6 +109,7 @@ describe "Proposals" do
     proposal1 = create(:proposal, title: "Show me what you got")
     proposal2 = create(:proposal, title: "Get Schwifty")
 
+    login_managed_user(user)
     login_as_manager
     click_link "Support proposals"
 
@@ -133,6 +135,7 @@ describe "Proposals" do
     let!(:proposal) { create(:proposal) }
 
     scenario "Voting proposals on behalf of someone in index view" do
+      login_managed_user(user)
       login_as_manager
       click_link "Support proposals"
 
@@ -146,6 +149,7 @@ describe "Proposals" do
     end
 
     scenario "Voting proposals on behalf of someone in show view" do
+      login_managed_user(user)
       login_as_manager
       click_link "Support proposals"
 
