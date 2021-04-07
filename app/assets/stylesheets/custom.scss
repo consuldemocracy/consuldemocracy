@@ -4,6 +4,12 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+.style_image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
 .top-links {
   background: $top-color;
   //background: #f1f1f1;

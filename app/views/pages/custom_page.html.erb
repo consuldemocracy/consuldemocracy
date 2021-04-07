@@ -18,9 +18,7 @@ end %>
 <% if show==true %>
   <% provide :title do %><%= @custom_page.title %><% end %>
   <div class="row header">
-    <% if @custom_page.header.attached? %>
-      <%= image_tag url_for(@custom_page.header), height:200, width:"100%" %>
-    <% end %>
+      <%= image_tag(@custom_page.imagen.url, :class => "style_image") if @custom_page.imagen.exists? %>
   </div>
 
   <div class="row margin-top">

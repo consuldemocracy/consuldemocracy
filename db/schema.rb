@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_05_162821) do
+ActiveRecord::Schema.define(version: 2021_04_07_094728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1497,6 +1497,10 @@ ActiveRecord::Schema.define(version: 2021_04_05_162821) do
     t.datetime "updated_at", null: false
     t.string "locale"
     t.boolean "public"
+    t.string "imagen_file_name"
+    t.string "imagen_content_type"
+    t.bigint "imagen_file_size"
+    t.datetime "imagen_updated_at"
   end
 
   create_table "stats_versions", id: :serial, force: :cascade do |t|

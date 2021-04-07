@@ -45,7 +45,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
     def page_params
       attributes = [:public, :page_users_id, :slug, :more_info_flag, :print_content_flag, :status]
 
-      params.require(:site_customization_page).permit(*attributes,
+      params.require(:site_customization_page).permit(*attributes, :imagen,
         translation_params(SiteCustomization::Page)
       )
     end
