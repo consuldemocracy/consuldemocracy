@@ -36,12 +36,16 @@ tr:
           budgets: Katılımcı bütçeleme
           help_page: Yardım sayfası
           sdg: SKH
+      create:
+        notice: "Başlık başarıyla oluşturuldu"
       edit:
         editing: Banner düzenleme
         form:
           submit_button: Değişiklikleri kaydet
       new:
         creating: Banner oluştur
+      update:
+        notice: "Başlık başarıyla güncellendi"
     activity:
       show:
         action: Eylem
