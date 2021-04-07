@@ -76,6 +76,7 @@ cs:
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       hi: "Dobrý den %{name},"
+      dashboard_button: "Jen do toho, objevte je!"
     new_actions_notification_rake_published:
       hi: "Dobrý den %{name},"
     new_actions_notification_on_create:
