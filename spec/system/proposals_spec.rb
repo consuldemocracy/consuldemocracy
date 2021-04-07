@@ -200,8 +200,6 @@ describe "Proposals" do
       proposal = create(:proposal)
       visit proposal_path(proposal)
       expect(page).to have_content "Access the community"
-
-      Setting["feature.community"] = false
     end
 
     scenario "Can not access the community" do
@@ -746,7 +744,6 @@ describe "Proposals" do
     expect(page).not_to have_current_path(edit_proposal_path(proposal))
     expect(page).to have_current_path(root_path)
     expect(page).to have_content "You do not have permission"
-    Setting["max_votes_for_proposal_edit"] = 1000
   end
 
   scenario "Update should be posible for the author of an editable proposal" do
