@@ -1425,6 +1425,9 @@ tr:
         budget_investments:
           amount: "Onaylanan miktar"
           winners: "Kazanan yatırım projeleri"
+        debates: "Tartışmalar"
+        polls: "Anketler"
+        proposals: "Teklifler"
     tags:
       create: Konu oluştur
       destroy: Konuyu yok etmek
@@ -1435,6 +1438,8 @@ tr:
         help: "Bir kullanıcı bir öneri oluşturduğunda, aşağıdaki konular varsayılan etiketler olarak önerilir."
     users:
       columns:
+        id: Kimlik
+        erase_reason: Sebebi sil
         name: İsim
         email: E-posta
         document_number: Belge numarası
@@ -1443,6 +1448,10 @@ tr:
       index:
         title: Kullanıcı
         no_users: Kullanıcı yok.
+        filter: Filtre
+        filters:
+          active: Aktif
+          erased: Silinmiş
       search:
         placeholder: E-posta, isim veya belge numarasına göre kullanıcı ara
     verifications:
@@ -1553,7 +1562,15 @@ tr:
         submit_header: Üstbilgiyi kaydet
         card_title: Kart düzenle
         submit_card: Kart kaydet
+    audits:
+      changes: "Değişiklikler listesi"
+      id: "Kimlik"
     local_census_records:
+      index:
+        document_type: Belge türü
+        document_number: Belge numarası
+        date_of_birth: Doğum tarihi
+        postal_code: Posta kodu
       imports:
         local_census_records:
           no_records_found: Kayıt bulunamadı.
