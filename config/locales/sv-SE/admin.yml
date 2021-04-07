@@ -36,12 +36,16 @@ sv:
           budgets: Medborgarbudgetar
           help_page: Hjälpsida
           sdg: Globala målen
+      create:
+        notice: "Banner har skapats"
       edit:
         editing: Redigera banner
         form:
           submit_button: Spara ändringar
       new:
         creating: Skapa banner
+      update:
+        notice: "Banner har uppdaterats"
     activity:
       show:
         action: Åtgärd
