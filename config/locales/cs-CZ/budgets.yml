@@ -79,6 +79,9 @@ cs:
           verified_only: "Pro vytvoření nové položky participativního rozpočtu %{verify}."
           create: "Přidat investiční projekt"
           not_logged_in: "Pro vytvoření nové položky participativního rozpočtu musíte %{sign_in} nebo%{sign_up}."
+        filters:
+          selected: "Vybrané"
+          winners: "Vítězové"
         orders:
           random: náhodné pořadí
           confidence_score: nejlépe hodnocené
@@ -100,7 +103,10 @@ cs:
         comments_tab: Komentáře
         milestones_tab: Milníky
         author: Autor
+        project_unfeasible: "Tento investiční projekt <strong>byla označen jako neuskutečnitelný</strong> a nepůjde do fáze závěrečného hlasování."
+        project_selected: "Tento investiční projekt <strong>byl zařazen</strong> do fáze závěrečného hlasování."
         project_winner: "Vítězný investiční projekt"
+        project_not_selected: "Tento investiční projekt <strong>nebyl zařazen</strong> do fáze závěrečného hlasování."
         see_price_explanation: Viz vysvětlení nákladů
       wrong_price_format: Pouze celá čísla
       investment:
