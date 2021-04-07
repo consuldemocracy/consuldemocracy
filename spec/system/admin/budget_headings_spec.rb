@@ -64,7 +64,7 @@ describe "Admin budget headings", :admin do
       heading = create(:budget_heading, group: group)
 
       visit admin_budget_group_headings_path(budget, group)
-      within("#budget_heading_#{heading.id}") { click_link "Delete" }
+      within("#budget_heading_#{heading.id}") { accept_confirm { click_link "Delete" } }
 
       expect(page).to have_content "Heading deleted successfully"
       expect(page).not_to have_selector "#budget_heading_#{heading.id}"
@@ -75,7 +75,7 @@ describe "Admin budget headings", :admin do
       create(:budget_investment, heading: heading)
 
       visit admin_budget_group_headings_path(budget, group)
-      within(".heading", text: "Atlantis") { click_link "Delete" }
+      within(".heading", text: "Atlantis") { accept_confirm { click_link "Delete" } }
 
       expect(page).to have_content "You cannot delete a Heading that has associated investments"
       expect(page).to have_content "Atlantis"
@@ -119,7 +119,7 @@ describe "Admin budget headings", :admin do
       expect(page).to have_content "can't be blank"
     end
 
-    describe "Max votes is optional", :js do
+    describe "Max votes is optional" do
       scenario "do no show max_ballot_lines field for knapsack budgets" do
         visit new_admin_budget_group_heading_path(budget, group)
 
@@ -159,7 +159,7 @@ describe "Admin budget headings", :admin do
       expect(find_field("Allow content block")).not_to be_checked
     end
 
-    scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
+    scenario "Changing name for current locale will update the slug if budget is in draft phase" do
       heading = create(:budget_heading, group: group)
       old_slug = heading.slug
 

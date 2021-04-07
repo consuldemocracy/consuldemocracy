@@ -64,17 +64,35 @@ describe "Admin collaborative legislation", :admin do
       fill_in "Description", with: "Describing the process"
 
       base_date = Date.current
-      fill_in "legislation_process[start_date]", with: base_date
-      fill_in "legislation_process[end_date]", with: base_date + 5.days
 
-      fill_in "legislation_process[debate_start_date]", with: base_date
-      fill_in "legislation_process[debate_end_date]", with: base_date + 2.days
-      fill_in "legislation_process[draft_start_date]", with: base_date - 3.days
-      fill_in "legislation_process[draft_end_date]", with: base_date - 1.day
-      fill_in "legislation_process[draft_publication_date]", with: base_date + 3.days
-      fill_in "legislation_process[allegations_start_date]", with: base_date + 3.days
-      fill_in "legislation_process[allegations_end_date]", with: base_date + 5.days
-      fill_in "legislation_process[result_publication_date]", with: base_date + 7.days
+      within_fieldset text: "Draft phase" do
+        check "Enabled"
+        fill_in "Start", with: base_date - 3.days
+        fill_in "End", with: base_date - 1.day
+      end
+
+      within_fieldset "Process" do
+        fill_in "Start", with: base_date
+        fill_in "End", with: base_date + 5.days
+      end
+
+      within_fieldset "Debate phase" do
+        check "Enabled"
+        fill_in "Start", with: base_date
+        fill_in "End", with: base_date + 2.days
+      end
+
+      within_fieldset "Comments phase" do
+        check "Enabled"
+        fill_in "Start", with: base_date + 3.days
+        fill_in "End", with: base_date + 5.days
+      end
+
+      check "legislation_process[draft_publication_enabled]"
+      fill_in "Draft publication date", with: base_date + 3.days
+
+      check "legislation_process[result_publication_enabled]"
+      fill_in "Final result publication date", with: base_date + 7.days
 
       click_button "Create process"
 
@@ -86,6 +104,11 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_content "An example legislation process"
       expect(page).not_to have_content "Summary of the process"
       expect(page).to have_content "Describing the process"
+
+      within(".legislation-process-list") do
+        expect(page).to have_link text: "Debate"
+        expect(page).to have_link text: "Comments"
+      end
 
       visit legislation_processes_path
 
@@ -110,12 +133,17 @@ describe "Admin collaborative legislation", :admin do
       fill_in "Description", with: "Describing the process"
 
       base_date = Date.current - 2.days
-      fill_in "legislation_process[start_date]", with: base_date
-      fill_in "legislation_process[end_date]", with: base_date + 5.days
 
-      fill_in "legislation_process[draft_start_date]", with: base_date
-      fill_in "legislation_process[draft_end_date]", with: base_date + 3.days
-      check "legislation_process[draft_phase_enabled]"
+      within_fieldset text: "Draft phase" do
+        check "Enabled"
+        fill_in "Start", with: base_date
+        fill_in "End", with: base_date + 3.days
+      end
+
+      within_fieldset "Process" do
+        fill_in "Start", with: base_date
+        fill_in "End", with: base_date + 5.days
+      end
 
       click_button "Create process"
 
@@ -135,14 +163,18 @@ describe "Admin collaborative legislation", :admin do
       expect(page).not_to have_content "Describing the process"
     end
 
-    scenario "Create a legislation process with an image", :js do
+    scenario "Create a legislation process with an image" do
       visit new_admin_legislation_process_path
       fill_in "Process Title", with: "An example legislation process"
       fill_in "Summary", with: "Summary of the process"
 
       base_date = Date.current
-      fill_in "legislation_process[start_date]", with: base_date
-      fill_in "legislation_process[end_date]", with: base_date + 5.days
+
+      within_fieldset "Process" do
+        fill_in "Start", with: base_date
+        fill_in "End", with: base_date + 5.days
+      end
+
       imageable_attach_new_file(create(:image), Rails.root.join("spec/fixtures/files/clippy.jpg"))
 
       click_button "Create process"
@@ -219,7 +251,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).not_to have_content "Draft publication"
     end
 
-    scenario "Enabling/disabling a phase enables/disables its date fields", :js do
+    scenario "Enabling/disabling a phase enables/disables its date fields" do
       process.update!(published: false)
 
       visit edit_admin_legislation_process_path(process)
@@ -241,7 +273,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_field "end_date", disabled: false, with: "2008-08-08"
     end
 
-    scenario "Enabling/disabling a phase does not enable/disable another phase date fields", :js do
+    scenario "Enabling/disabling a phase does not enable/disable another phase date fields" do
       process.update!(draft_phase_enabled: false, draft_publication_enabled: false)
 
       visit edit_admin_legislation_process_path(process)
@@ -277,7 +309,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_field("Categories", with: "bicycles, pollution, recycling")
     end
 
-    scenario "Edit milestones summary", :js do
+    scenario "Edit milestones summary" do
       visit admin_legislation_process_milestones_path(process)
 
       expect(page).not_to have_link "Remove language"
@@ -321,7 +353,7 @@ describe "Admin collaborative legislation", :admin do
       Setting["sdg.process.legislation"] = true
     end
 
-    scenario "create Collaborative Legislation with sdg related list", :js do
+    scenario "create Collaborative Legislation with sdg related list" do
       visit new_admin_legislation_process_path
       fill_in "Process Title", with: "Legislation process with SDG related content"
       within_fieldset "Process" do
@@ -338,7 +370,7 @@ describe "Admin collaborative legislation", :admin do
       end
     end
 
-    scenario "edit Collaborative Legislation with sdg related list", :js do
+    scenario "edit Collaborative Legislation with sdg related list" do
       process = create(:legislation_process, title: "Legislation process with SDG related content")
       process.sdg_goals = [SDG::Goal[1], SDG::Goal[17]]
       visit edit_admin_legislation_process_path(process)

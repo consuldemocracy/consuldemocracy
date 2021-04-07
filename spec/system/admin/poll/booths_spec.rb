@@ -5,6 +5,7 @@ describe "Admin booths", :admin do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Booths location"
     end
 
@@ -17,6 +18,7 @@ describe "Admin booths", :admin do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Booths location"
     end
 
@@ -37,6 +39,7 @@ describe "Admin booths", :admin do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Manage shifts"
     end
 

@@ -17,9 +17,10 @@ module Emails
   end
 
   def fill_in_newsletter_form(options = {})
-    fill_in "newsletter_subject", with: (options[:subject] || "This is a different subject")
-    select (options[:segment_recipient] || "All users"), from: "newsletter_segment_recipient"
-    fill_in "newsletter_from", with: (options[:from] || "no-reply@consul.dev")
-    fill_in "newsletter_body", with: (options[:body] || "This is a different body")
+    select (options[:segment_recipient] || "All users"), from: "Recipients"
+    fill_in "Subject", with: (options[:subject] || "This is a different subject")
+    fill_in "E-mail address that will appear as sending the newsletter",
+            with: (options[:from] || "no-reply@consul.dev")
+    fill_in_ckeditor "Email content", with: (options[:body] || "This is a different body")
   end
 end

@@ -22,6 +22,8 @@ describe "Valuation budget investments" do
 
   scenario "Display link to valuation section" do
     visit root_path
+    click_link "Menu"
+
     expect(page).to have_link "Valuation", href: valuation_root_path
   end
 
@@ -85,7 +87,7 @@ describe "Valuation budget investments" do
       expect(page).to have_css(".budget_investment", count: 2)
     end
 
-    scenario "Index filtering by heading", :js do
+    scenario "Index filtering by heading" do
       group = create(:budget_group, budget: budget)
       valuating_heading = create(:budget_heading, name: "Only Valuating", group: group)
       valuating_finished_heading = create(:budget_heading, name: "Valuating&Finished", group: group)
@@ -324,7 +326,7 @@ describe "Valuation budget investments" do
       expect(find("#budget_investment_feasibility_undecided")).to be_checked
     end
 
-    scenario "Feasibility selection makes proper fields visible", :js do
+    scenario "Feasibility selection makes proper fields visible" do
       feasible_fields = ["Price (€)", "Cost during the first year (€)", "Price explanation",
                          "Time scope"]
       unfeasible_fields = ["Feasibility explanation"]
@@ -385,8 +387,10 @@ describe "Valuation budget investments" do
       visit valuation_budget_budget_investment_path(budget, investment)
       click_link "Edit dossier"
 
-      find_field("budget_investment[valuation_finished]").click
+      accept_confirm { find_field("budget_investment[valuation_finished]").click }
       click_button "Save changes"
+
+      expect(page).to have_content "Dossier updated"
 
       visit valuation_budget_budget_investments_path(budget)
       expect(page).not_to have_content investment.title
@@ -415,10 +419,16 @@ describe "Valuation budget investments" do
         login_as(admin.user)
         visit edit_valuation_budget_budget_investment_path(budget, investment)
 
-        expect(page).to have_selector("input[id='budget_investment_feasibility_undecided']")
-        expect(page).to have_selector("textarea[id='budget_investment_unfeasibility_explanation']")
-        expect(page).to have_selector("input[name='budget_investment[valuation_finished]']")
-        expect(page).to have_button("Save changes")
+        within_fieldset "Feasibility" do
+          expect(page).to have_field "Undefined", type: :radio
+          expect(page).to have_field "Feasible", type: :radio
+
+          choose "Unfeasible"
+        end
+
+        expect(page).to have_field "Feasibility explanation", type: :textarea
+        expect(page).to have_field "Valuation finished", type: :checkbox
+        expect(page).to have_button "Save changes"
       end
 
       scenario "Valuators that are not admins cannot reopen or modify a finished valuation" do
@@ -438,17 +448,13 @@ describe "Valuation budget investments" do
       end
     end
 
-    scenario "Validates price formats" do
+    scenario "Validates price formats on the server side", :no_js do
       investment.update!(visible_to_valuators: true)
 
-      visit valuation_budget_budget_investments_path(budget)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
 
-      within("#budget_investment_#{investment.id}") do
-        click_link "Edit dossier"
-      end
-
-      fill_in "budget_investment_price", with: "12345,98"
-      fill_in "budget_investment_price_first_year", with: "9876.6"
+      fill_in "Price (€)", with: "12345,98"
+      fill_in "Cost during the first year (€) (optional, data not public)", with: "9876.6"
       click_button "Save changes"
 
       expect(page).to have_content("2 errors")

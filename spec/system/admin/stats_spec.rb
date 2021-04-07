@@ -1,10 +1,6 @@
 require "rails_helper"
 
 describe "Stats", :admin do
-  before do
-    visit root_path
-  end
-
   context "Summary" do
     scenario "General" do
       create(:debate)
@@ -14,10 +10,10 @@ describe "Stats", :admin do
 
       visit admin_stats_path
 
-      expect(page).to have_content "Debates 1"
-      expect(page).to have_content "Proposals 2"
-      expect(page).to have_content "Comments 3"
-      expect(page).to have_content "Visits 4"
+      expect(page).to have_content "DEBATES\n1"
+      expect(page).to have_content "PROPOSALS\n2"
+      expect(page).to have_content "COMMENTS\n3"
+      expect(page).to have_content "VISITS\n4"
     end
 
     scenario "Votes" do
@@ -27,10 +23,10 @@ describe "Stats", :admin do
 
       visit admin_stats_path
 
-      expect(page).to have_content "Debate votes 1"
-      expect(page).to have_content "Proposal votes 2"
-      expect(page).to have_content "Comment votes 3"
-      expect(page).to have_content "Total votes 6"
+      expect(page).to have_content "DEBATE VOTES\n1"
+      expect(page).to have_content "PROPOSAL VOTES\n2"
+      expect(page).to have_content "COMMENT VOTES\n3"
+      expect(page).to have_content "TOTAL VOTES\n6"
     end
   end
 
@@ -42,11 +38,11 @@ describe "Stats", :admin do
 
       visit admin_stats_path
 
-      expect(page).to have_content "Level three users 1"
-      expect(page).to have_content "Level two users 2"
-      expect(page).to have_content "Verified users 3"
-      expect(page).to have_content "Unverified users 4"
-      expect(page).to have_content "Total users 7"
+      expect(page).to have_content "LEVEL THREE USERS\n1"
+      expect(page).to have_content "LEVEL TWO USERS\n2"
+      expect(page).to have_content "VERIFIED USERS\n3"
+      expect(page).to have_content "UNVERIFIED USERS\n4"
+      expect(page).to have_content "TOTAL USERS\n7"
     end
 
     scenario "Do not count erased users" do
@@ -56,11 +52,11 @@ describe "Stats", :admin do
 
       visit admin_stats_path
 
-      expect(page).to have_content "Level three users 0"
-      expect(page).to have_content "Level two users 0"
-      expect(page).to have_content "Verified users 0"
-      expect(page).to have_content "Unverified users 1"
-      expect(page).to have_content "Total users 1"
+      expect(page).to have_content "LEVEL THREE USERS\n0"
+      expect(page).to have_content "LEVEL TWO USERS\n0"
+      expect(page).to have_content "VERIFIED USERS\n0"
+      expect(page).to have_content "UNVERIFIED USERS\n1"
+      expect(page).to have_content "TOTAL USERS\n1"
     end
 
     scenario "Do not count hidden users" do
@@ -70,11 +66,11 @@ describe "Stats", :admin do
 
       visit admin_stats_path
 
-      expect(page).to have_content "Level three users 0"
-      expect(page).to have_content "Level two users 0"
-      expect(page).to have_content "Verified users 0"
-      expect(page).to have_content "Unverified users 1"
-      expect(page).to have_content "Total users 1"
+      expect(page).to have_content "LEVEL THREE USERS\n0"
+      expect(page).to have_content "LEVEL TWO USERS\n0"
+      expect(page).to have_content "VERIFIED USERS\n0"
+      expect(page).to have_content "UNVERIFIED USERS\n1"
+      expect(page).to have_content "TOTAL USERS\n1"
     end
 
     scenario "Level 2 user Graph" do
@@ -86,7 +82,7 @@ describe "Stats", :admin do
 
       visit admin_stats_path
 
-      expect(page).to have_content "Level two users 1"
+      expect(page).to have_content "LEVEL TWO USERS\n1"
     end
   end
 
@@ -108,7 +104,7 @@ describe "Stats", :admin do
           click_link "Supporting phase"
         end
 
-        expect(page).to have_content "Votes 3"
+        expect(page).to have_content "VOTES\n3"
         expect(page).to have_link "Go back", count: 1
       end
 
@@ -127,7 +123,7 @@ describe "Stats", :admin do
           click_link "Supporting phase"
         end
 
-        expect(page).to have_content "Participants 2"
+        expect(page).to have_content "PARTICIPANTS\n2"
       end
 
       scenario "Number of users that have supported investments projects per geozone" do
@@ -200,7 +196,7 @@ describe "Stats", :admin do
           click_link "Final voting"
         end
 
-        expect(page).to have_content "Votes 3"
+        expect(page).to have_content "VOTES\n3"
       end
 
       scenario "Number of users that have voted a investment project" do
@@ -214,13 +210,13 @@ describe "Stats", :admin do
           click_link "Final voting"
         end
 
-        expect(page).to have_content "Participants 2"
+        expect(page).to have_content "PARTICIPANTS\n2"
       end
     end
   end
 
   context "graphs" do
-    scenario "event graphs", :js do
+    scenario "event graphs" do
       campaign = create(:campaign)
 
       visit root_path(track_id: campaign.track_id)
@@ -397,7 +393,7 @@ describe "Stats", :admin do
     end
   end
 
-  context "SDG", :js do
+  context "SDG" do
     scenario "Shows SDG stats link when SDG feature is enabled" do
       Setting["feature.sdg"] = true
 

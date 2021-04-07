@@ -53,11 +53,11 @@ RSpec.configure do |config|
   end
 
   config.before(:each, type: :system) do |example|
-    driven_by :rack_test
+    driven_by :headless_chrome
   end
 
-  config.before(:each, type: :system, js: true) do
-    driven_by :headless_chrome
+  config.before(:each, type: :system, no_js: true) do
+    driven_by :rack_test
   end
 
   config.before(:each, type: :system) do

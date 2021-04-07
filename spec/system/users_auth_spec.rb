@@ -46,11 +46,11 @@ describe "Users" do
       end
 
       scenario "Sign in with username" do
-        create(:user, username: "👻👽👾🤖", email: "ash@nostromo.dev", password: "xenomorph")
+        create(:user, username: "中村広", email: "ash@nostromo.dev", password: "xenomorph")
 
         visit "/"
         click_link "Sign in"
-        fill_in "user_login",    with: "👻👽👾🤖"
+        fill_in "user_login",    with: "中村広"
         fill_in "user_password", with: "xenomorph"
         click_button "Enter"
 
@@ -78,6 +78,7 @@ describe "Users" do
 
         expect(page).to have_content "You have been signed out successfully."
 
+        within("#notice") { click_button "Close" }
         click_link "Sign in"
         fill_in "user_login",    with: "peter@nyc.dev"
         fill_in "user_password", with: "symbiote"
@@ -222,7 +223,9 @@ describe "Users" do
 
         expect_to_be_signed_in
 
+        within("#notice") { click_button "Close" }
         click_link "My account"
+
         expect(page).to have_field("account_username", with: "manuela")
 
         visit edit_user_registration_path
@@ -248,7 +251,9 @@ describe "Users" do
         click_link "Sign in with Twitter"
         expect_to_be_signed_in
 
+        within("#notice") { click_button "Close" }
         click_link "My account"
+
         expect(page).to have_field("account_username", with: "manuela")
 
         visit edit_user_registration_path
@@ -276,7 +281,9 @@ describe "Users" do
         click_link "Sign in with Twitter"
         expect_to_be_signed_in
 
+        within("#notice") { click_button "Close" }
         click_link "My account"
+
         expect(page).to have_field("account_username", with: "manuela")
 
         visit edit_user_registration_path
@@ -308,7 +315,9 @@ describe "Users" do
 
         expect_to_be_signed_in
 
+        within("#notice") { click_button "Close" }
         click_link "My account"
+
         expect(page).to have_field("account_username", with: user.username)
 
         visit edit_user_registration_path
@@ -371,7 +380,9 @@ describe "Users" do
         click_link "Sign in with Twitter"
         expect_to_be_signed_in
 
+        within("#notice") { click_button "Close" }
         click_link "My account"
+
         expect(page).to have_field("account_username", with: "manuela")
 
         visit edit_user_registration_path
@@ -402,7 +413,9 @@ describe "Users" do
         click_link "Sign in with Twitter"
         expect_to_be_signed_in
 
+        within("#notice") { click_button "Close" }
         click_link "My account"
+
         expect(page).to have_field("account_username", with: "manuela")
 
         visit edit_user_registration_path
@@ -440,7 +453,9 @@ describe "Users" do
         click_link "Sign in with Wordpress"
         expect_to_be_signed_in
 
+        within("#notice") { click_button "Close" }
         click_link "My account"
+
         expect(page).to have_field("account_username", with: "manuela")
 
         visit edit_user_registration_path
@@ -479,7 +494,9 @@ describe "Users" do
 
         expect_to_be_signed_in
 
+        within("#notice") { click_button "Close" }
         click_link "My account"
+
         expect(page).to have_field("account_username", with: "manuela2")
 
         visit edit_user_registration_path

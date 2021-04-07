@@ -108,7 +108,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
     end
 
     context "Delete" do
-      scenario "Remove milestone" do
+      scenario "Remove milestone", :no_js do
         create(:milestone, milestoneable: milestoneable, title: "Title will it remove")
 
         visit path

@@ -165,7 +165,7 @@ describe "Legislation" do
       expect(page).to have_link "Comment 3"
     end
 
-    scenario "excel download" do
+    scenario "excel download", :no_js do
       visit summary_legislation_process_path(process)
       click_link "Download summary"
 

@@ -6,12 +6,12 @@ describe "Commenting polls" do
 
   scenario "Index" do
     3.times { create(:comment, commentable: poll) }
+    comment = Comment.includes(:user).last
 
     visit poll_path(poll)
 
     expect(page).to have_css(".comment", count: 3)
 
-    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
@@ -54,7 +54,7 @@ describe "Commenting polls" do
     expect(page).to have_current_path(comment_path(comment))
   end
 
-  scenario "Collapsable comments", :js do
+  scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: poll)
     child_comment  = create(:comment, body: "First subcomment", commentable: poll, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: poll, parent: child_comment)
@@ -193,7 +193,7 @@ describe "Commenting polls" do
     end
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     login_as(user)
     visit poll_path(poll)
 
@@ -209,7 +209,7 @@ describe "Commenting polls" do
     end
   end
 
-  scenario "Errors on create", :js do
+  scenario "Errors on create" do
     login_as(user)
     visit poll_path(poll)
 
@@ -218,7 +218,7 @@ describe "Commenting polls" do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario "Reply", :js do
+  scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")
     comment = create(:comment, commentable: poll, user: citizen)
@@ -240,7 +240,7 @@ describe "Commenting polls" do
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
   end
 
-  scenario "Reply update parent comment responses count", :js do
+  scenario "Reply update parent comment responses count" do
     comment = create(:comment, commentable: poll)
 
     login_as(create(:user))
@@ -255,7 +255,7 @@ describe "Commenting polls" do
     end
   end
 
-  scenario "Reply show parent comments responses when hidden", :js do
+  scenario "Reply show parent comments responses when hidden" do
     comment = create(:comment, commentable: poll)
     create(:comment, commentable: poll, parent: comment)
 
@@ -272,7 +272,7 @@ describe "Commenting polls" do
     end
   end
 
-  scenario "Errors on reply", :js do
+  scenario "Errors on reply" do
     comment = create(:comment, commentable: poll, user: user)
 
     login_as(user)
@@ -286,7 +286,7 @@ describe "Commenting polls" do
     end
   end
 
-  scenario "N replies", :js do
+  scenario "N replies" do
     parent = create(:comment, commentable: poll)
 
     7.times do
@@ -311,7 +311,7 @@ describe "Commenting polls" do
   end
 
   describe "Moderators" do
-    scenario "can create comment as a moderator", :js do
+    scenario "can create comment as a moderator" do
       skip "Feature not implemented yet, review soon"
 
       moderator = create(:moderator)
@@ -331,7 +331,7 @@ describe "Commenting polls" do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    scenario "can create reply as a moderator" do
       skip "Feature not implemented yet, review soon"
 
       citizen = create(:user, username: "Ana")
@@ -373,7 +373,7 @@ describe "Commenting polls" do
   end
 
   describe "Administrators" do
-    scenario "can create comment as an administrator", :js do
+    scenario "can create comment as an administrator" do
       skip "Feature not implemented yet, review soon"
 
       admin = create(:administrator)
@@ -393,7 +393,7 @@ describe "Commenting polls" do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    scenario "can create reply as an administrator" do
       skip "Feature not implemented yet, review soon"
 
       citizen = create(:user, username: "Ana")
@@ -460,7 +460,7 @@ describe "Commenting polls" do
       end
     end
 
-    scenario "Create", :js do
+    scenario "Create" do
       visit poll_path(poll)
 
       within("#comment_#{comment.id}_votes") do
@@ -478,7 +478,7 @@ describe "Commenting polls" do
       end
     end
 
-    scenario "Update", :js do
+    scenario "Update" do
       visit poll_path(poll)
 
       within("#comment_#{comment.id}_votes") do
@@ -502,7 +502,7 @@ describe "Commenting polls" do
       end
     end
 
-    scenario "Trying to vote multiple times", :js do
+    scenario "Trying to vote multiple times" do
       visit poll_path(poll)
 
       within("#comment_#{comment.id}_votes") do

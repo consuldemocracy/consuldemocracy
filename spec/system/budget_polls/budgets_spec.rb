@@ -20,7 +20,7 @@ describe "Admin Budgets", :admin do
       expect(Poll.last.budget).to eq(budget)
     end
 
-    scenario "Create poll in current locale if the budget does not have a poll associated", :js do
+    scenario "Create poll in current locale if the budget does not have a poll associated" do
       budget = create(:budget,
                       name_en: "Budget for climate change",
                       name_fr: "Budget pour le changement climatique")

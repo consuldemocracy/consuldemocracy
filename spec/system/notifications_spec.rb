@@ -52,7 +52,7 @@ describe "Notifications" do
     expect(page).to have_css ".notification", count: 1
   end
 
-  scenario "Mark as read", :js do
+  scenario "Mark as read" do
     notification1 = create(:notification, user: user)
     notification2 = create(:notification, user: user)
 
@@ -78,7 +78,7 @@ describe "Notifications" do
     expect(page).to have_css(".notification", count: 0)
   end
 
-  scenario "Mark as unread", :js do
+  scenario "Mark as unread" do
     notification1 = create(:notification, :read, user: user)
     notification2 = create(:notification, user: user)
 
@@ -155,10 +155,11 @@ describe "Notifications" do
       expect(page).to have_content("Notification body")
 
       first("#notification_#{notification.id} a").click
-      expect(page.current_url).to eq("https://www.external.link.dev/")
+
+      expect(page).to have_current_path "https://www.external.link.dev/", url: true
     end
 
-    scenario "With internal link", :js do
+    scenario "With internal link" do
       admin_notification.update!(link: "/stats")
 
       visit notifications_path

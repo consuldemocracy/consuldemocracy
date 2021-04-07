@@ -10,7 +10,7 @@ describe "Admin feature flags", :admin do
 
     within("#side_menu") do
       expect(page).to have_link "Participatory budgets"
-      expect(page).to have_link "Hidden debates"
+      expect(page).to have_link "Debates"
     end
   end
 
@@ -24,10 +24,11 @@ describe "Admin feature flags", :admin do
     within("#edit_setting_#{setting.id}") do
       expect(page).to have_button "Disable"
       expect(page).not_to have_button "Enable"
-      click_button "Disable"
+
+      accept_confirm { click_button "Disable" }
     end
 
-    visit admin_root_path
+    expect(page).to have_content "Value updated"
 
     within("#side_menu") do
       expect(page).not_to have_link "Participatory budgets"
@@ -59,10 +60,11 @@ describe "Admin feature flags", :admin do
     within("#edit_setting_#{setting.id}") do
       expect(page).to have_button "Enable"
       expect(page).not_to have_button "Disable"
-      click_button "Enable"
+
+      accept_confirm { click_button "Enable" }
     end
 
-    visit admin_root_path
+    expect(page).to have_content "Value updated"
 
     within("#side_menu") do
       expect(page).to have_link "Participatory budgets"
@@ -73,11 +75,13 @@ describe "Admin feature flags", :admin do
     setting = Setting.find_by(key: "feature.twitter_login")
 
     visit admin_settings_path
+    click_link "Features"
 
     within("#edit_setting_#{setting.id}") do
       expect(page).to have_button "Disable"
       expect(page).not_to have_button "Enable"
-      click_button "Disable"
+
+      accept_confirm { click_button "Disable" }
     end
 
     expect(page).to have_content "Value updated"
@@ -92,11 +96,13 @@ describe "Admin feature flags", :admin do
     setting = Setting.find_by(key: "feature.map")
 
     visit admin_settings_path
+    click_link "Features"
 
     within("#edit_setting_#{setting.id}") do
       expect(page).to have_button "Enable"
       expect(page).not_to have_button "Disable"
-      click_button "Enable"
+
+      accept_confirm { click_button "Enable" }
     end
 
     expect(page).to have_content "Value updated"

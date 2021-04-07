@@ -5,8 +5,9 @@ describe "Budget Investments" do
   let(:budget)  { create(:budget, :selecting, name: "2033", slug: "budget_slug") }
   let(:group)   { create(:budget_group, budget: budget, name: "Whole city") }
   let(:heading) { create(:budget_heading, group: group, name: "Health") }
+  let(:user)    { create(:user, :level_two) }
 
-  before { login_as_manager(manager) }
+  before { login_managed_user(user) }
 
   it_behaves_like "mappable",
                   "budget_investment",
@@ -19,11 +20,9 @@ describe "Budget Investments" do
 
   context "Load" do
     let(:investment) { create(:budget_investment, budget: budget) }
-    let(:user)       { create(:user, :level_two) }
-
-    before { login_managed_user(user) }
 
     scenario "finds investment using budget slug" do
+      login_as_manager(manager)
       visit management_budget_investment_path("budget_slug", investment)
 
       expect(page).to have_content investment.title
@@ -34,10 +33,7 @@ describe "Budget Investments" do
     before { heading.budget.update(phase: "accepting") }
 
     scenario "Creating budget investments on behalf of someone, selecting a budget" do
-      user = create(:user, :level_two)
-
-      login_managed_user(user)
-
+      login_as_manager(manager)
       click_link "Create budget investment"
       within "#budget_#{budget.id}" do
         click_link "Create budget investment"
@@ -52,7 +48,7 @@ describe "Budget Investments" do
 
       select "Health", from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a park in my neighborhood"
-      fill_in "Description", with: "There is no parks here..."
+      fill_in_ckeditor "Description", with: "There is no parks here..."
       fill_in "budget_investment_location", with: "City center"
       fill_in "budget_investment_organization_name", with: "T.I.A."
       fill_in "budget_investment_tag_list", with: "green"
@@ -72,22 +68,22 @@ describe "Budget Investments" do
     end
 
     scenario "Should not allow unverified users to create budget investments" do
-      user = create(:user)
-      login_managed_user(user)
+      login_managed_user(create(:user))
 
+      login_as_manager(manager)
       click_link "Create budget investment"
 
       expect(page).to have_content "User is not verified"
     end
 
-    scenario "Shows suggestions to unverified managers", :js do
+    scenario "Shows suggestions to unverified managers" do
       expect(manager.user.level_two_or_three_verified?).to be false
 
       create(:budget_investment, budget: budget, title: "More parks")
       create(:budget_investment, budget: budget, title: "No more parks")
       create(:budget_investment, budget: budget, title: "Plant trees")
-      login_managed_user(create(:user, :level_two))
 
+      login_as_manager(manager)
       click_link "Create budget investment"
       within "#budget_#{budget.id}" do
         click_link "Create budget investment"
@@ -109,9 +105,7 @@ describe "Budget Investments" do
       budget_investment1 = create(:budget_investment, budget: budget, title: "Show me what you got")
       budget_investment2 = create(:budget_investment, budget: budget, title: "Get Schwifty")
 
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
+      login_as_manager(manager)
       click_link "Support budget investments"
       expect(page).to have_content(budget.name)
       within "#budget_#{budget.id}" do
@@ -137,9 +131,7 @@ describe "Budget Investments" do
       budget_investment2 = create(:budget_investment, budget: budget, title: "Let's go",
                                                       heading: create(:budget_heading, name: "Area 52"))
 
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
+      login_as_manager(manager)
       click_link "Support budget investments"
       expect(page).to have_content(budget.name)
       within "#budget_#{budget.id}" do
@@ -164,9 +156,7 @@ describe "Budget Investments" do
     budget_investment1 = create(:budget_investment, budget: budget, title: "Show me what you got")
     budget_investment2 = create(:budget_investment, budget: budget, title: "Get Schwifty")
 
-    user = create(:user, :level_two)
-    login_managed_user(user)
-
+    login_as_manager(manager)
     click_link "Support budget investments"
     expect(page).to have_content(budget.name)
     within "#budget_#{budget.id}" do
@@ -200,9 +190,7 @@ describe "Budget Investments" do
     reviewing_ballots_budget = create(:budget, :reviewing_ballots)
     finished = create(:budget, :finished)
 
-    user = create(:user, :level_two)
-    login_managed_user(user)
-
+    login_as_manager(manager)
     click_link "Create budget investment"
 
     expect(page).to have_content(accepting_budget.name)
@@ -224,14 +212,8 @@ describe "Budget Investments" do
     reviewing_ballots_budget = create(:budget, :reviewing_ballots)
     finished = create(:budget, :finished)
 
-    visit root_path
-    click_link "Sign out"
+    login_as(create(:administrator).user)
 
-    admin = create(:administrator)
-    login_as(admin.user)
-
-    user = create(:user, :level_two)
-    login_managed_user(user)
     visit management_sign_in_path
 
     click_link "Create budget investment"
@@ -247,12 +229,10 @@ describe "Budget Investments" do
   end
 
   context "Supporting" do
-    scenario "Supporting budget investments on behalf of someone in index view", :js do
+    scenario "Supporting budget investments on behalf of someone in index view" do
       budget_investment = create(:budget_investment, heading: heading)
 
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
+      login_as_manager(manager)
       click_link "Support budget investments"
       expect(page).to have_content(budget.name)
       within "#budget_#{budget.id}" do
@@ -269,12 +249,10 @@ describe "Budget Investments" do
     end
 
     # This test passes ok locally but fails on the last two lines in Travis
-    xscenario "Supporting budget investments on behalf of someone in show view", :js do
+    xscenario "Supporting budget investments on behalf of someone in show view" do
       budget_investment = create(:budget_investment, budget: budget)
 
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
+      login_as_manager(manager)
       click_link "Support budget investments"
       expect(page).to have_content(budget.name)
       within "#budget_#{budget.id}" do
@@ -291,11 +269,10 @@ describe "Budget Investments" do
     end
 
     scenario "Should not allow unverified users to vote proposals" do
+      login_managed_user(create(:user))
       create(:budget_investment, budget: budget)
 
-      user = create(:user)
-      login_managed_user(user)
-
+      login_as_manager(manager)
       click_link "Support budget investments"
 
       expect(page).to have_content "User is not verified"
@@ -306,6 +283,7 @@ describe "Budget Investments" do
     scenario "Printing budget investments" do
       16.times { create(:budget_investment, heading: heading) }
 
+      login_as_manager(manager)
       click_link "Print budget investments"
 
       expect(page).to have_content(budget.name)
@@ -322,6 +300,7 @@ describe "Budget Investments" do
 
       voted_investment = create(:budget_investment, :selected, heading: heading, balloters: [create(:user)])
 
+      login_as_manager(manager)
       click_link "Print budget investments"
 
       within "#budget_#{budget.id}" do
@@ -332,7 +311,7 @@ describe "Budget Investments" do
       expect(page).to have_link("Print", href: "javascript:window.print();")
     end
 
-    scenario "Filtering budget investments by heading to be printed", :js do
+    scenario "Filtering budget investments by heading to be printed" do
       district_9 = create(:budget_heading, group: group, name: "District Nine")
       another_heading = create(:budget_heading, group: group)
       low_investment = create(:budget_investment,
@@ -355,9 +334,7 @@ describe "Budget Investments" do
                                   heading: another_heading,
                                   title: "Add new districts to the city")
 
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
+      login_as_manager(manager)
       click_link "Print budget investments"
 
       expect(page).to have_content(budget.name)

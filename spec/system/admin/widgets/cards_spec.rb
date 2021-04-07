@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Cards", :admin do
-  scenario "Create", :js do
+  scenario "Create" do
     visit admin_homepage_path
     click_link "Create card"
 
@@ -29,7 +29,7 @@ describe "Cards", :admin do
     end
   end
 
-  scenario "Create with errors", :js do
+  scenario "Create with errors" do
     visit admin_homepage_path
     click_link "Create card"
     click_button "Create card"
@@ -100,7 +100,7 @@ describe "Cards", :admin do
     end
   end
 
-  scenario "Remove", :js do
+  scenario "Remove" do
     card = create(:widget_card)
 
     visit admin_homepage_path
@@ -143,7 +143,7 @@ describe "Cards", :admin do
       end
     end
 
-    scenario "Create with errors", :js do
+    scenario "Create with errors" do
       visit admin_homepage_path
       click_link "Create header"
       click_button "Create header"
@@ -155,7 +155,7 @@ describe "Cards", :admin do
     context "Page card" do
       let!(:custom_page) { create(:site_customization_page, :published) }
 
-      scenario "Create", :js do
+      scenario "Create" do
         visit admin_site_customization_pages_path
 
         within "#site_customization_page_#{custom_page.id}" do
@@ -195,7 +195,7 @@ describe "Cards", :admin do
         visit custom_page.url
 
         within("#widget_card_#{card_1.id}") do
-          expect(page).to have_selector("span", text: "My label")
+          expect(page).to have_selector("span", text: "MY LABEL")
         end
 
         within("#widget_card_#{card_2.id}") do
@@ -203,7 +203,7 @@ describe "Cards", :admin do
         end
       end
 
-      scenario "Edit", :js do
+      scenario "Edit" do
         create(:widget_card, cardable: custom_page, title: "Original title")
 
         visit admin_site_customization_page_widget_cards_path(custom_page)
@@ -226,7 +226,7 @@ describe "Cards", :admin do
         expect(page).not_to have_content "Original title"
       end
 
-      scenario "Destroy", :js do
+      scenario "Destroy" do
         create(:widget_card, cardable: custom_page, title: "Card title")
 
         visit admin_site_customization_page_widget_cards_path(custom_page)

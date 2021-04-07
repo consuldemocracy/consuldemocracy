@@ -1,25 +1,21 @@
 require "rails_helper"
 
 describe "Account" do
-  before do
-    login_as_manager
-  end
-
   scenario "Should not allow unverified users to edit their account" do
     user = create(:user)
     login_managed_user(user)
 
-    visit management_root_path
-
+    login_as_manager
     click_link "Reset password via email"
 
     expect(page).to have_content "No verified user logged in yet"
   end
 
-  scenario "Delete a user account", :js do
+  scenario "Delete a user account" do
     user = create(:user, :level_two)
     login_managed_user(user)
 
+    login_as_manager
     visit management_account_path
 
     click_link "Delete user"
@@ -33,8 +29,8 @@ describe "Account" do
   scenario "Send reset password email to currently managed user session" do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_root_path
 
+    login_as_manager
     click_link "Reset password via email"
 
     click_link "Send reset password email"
@@ -49,8 +45,8 @@ describe "Account" do
   scenario "Manager changes the password by hand (writen by them)" do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_root_path
 
+    login_as_manager
     click_link "Reset password manually"
 
     find(:css, "input[id$='user_password']").set("new_password")
@@ -66,11 +62,11 @@ describe "Account" do
     expect(page).to have_content "You have been signed in successfully."
   end
 
-  scenario "Manager generates random password", :js do
+  scenario "Manager generates random password" do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_root_path
 
+    login_as_manager
     click_link "Reset password manually"
     click_link "Generate random password"
 
@@ -87,11 +83,11 @@ describe "Account" do
     expect(page).to have_content "You have been signed in successfully."
   end
 
-  scenario "The password is printed", :js do
+  scenario "The password is printed" do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_root_path
 
+    login_as_manager
     click_link "Reset password manually"
 
     find(:css, "input[id$='user_password']").set("another_new_password")

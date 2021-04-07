@@ -26,7 +26,7 @@ describe "Admin settings", :admin do
     expect(page).to have_content "Value updated"
   end
 
-  describe "Map settings initialization", :js do
+  describe "Map settings initialization" do
     before do
       Setting["feature.map"] = true
     end
@@ -40,7 +40,7 @@ describe "Admin settings", :admin do
     scenario "When `Map settings` tab content is shown map should be initialized" do
       visit admin_settings_path
 
-      find("#map-tab").click
+      click_link "Map configuration"
 
       expect(page).to have_css("#admin-map.leaflet-container")
     end
@@ -51,7 +51,7 @@ describe "Admin settings", :admin do
       Setting["feature.map"] = false
 
       visit admin_settings_path
-      find("#map-tab").click
+      click_link "Map configuration"
 
       expect(page).to have_content "To show the map to users you must enable " \
                                    '"Proposals and budget investments geolocation" ' \
@@ -63,7 +63,7 @@ describe "Admin settings", :admin do
       Setting["feature.map"] = true
 
       visit admin_settings_path
-      find("#map-tab").click
+      click_link "Map configuration"
 
       expect(page).to have_css("#admin-map")
       expect(page).not_to have_content "To show the map to users you must enable " \
@@ -75,6 +75,7 @@ describe "Admin settings", :admin do
       Setting["feature.map"] = true
 
       visit admin_settings_path
+      click_link "Map configuration"
 
       within "#map-form" do
         click_on "Update"
@@ -83,7 +84,7 @@ describe "Admin settings", :admin do
       expect(page).to have_content "Map configuration updated succesfully"
     end
 
-    scenario "Should display marker by default", :js do
+    scenario "Should display marker by default" do
       Setting["feature.map"] = true
 
       visit admin_settings_path
@@ -92,11 +93,11 @@ describe "Admin settings", :admin do
       expect(find("#longitude", visible: :hidden).value).to eq "0.0"
     end
 
-    scenario "Should update marker", :js do
+    scenario "Should update marker" do
       Setting["feature.map"] = true
 
       visit admin_settings_path
-      find("#map-tab").click
+      click_link "Map configuration"
       find("#admin-map").click
       within "#map-form" do
         click_on "Update"
@@ -109,30 +110,30 @@ describe "Admin settings", :admin do
 
   describe "Update content types" do
     scenario "stores the correct mime types" do
-      setting = Setting.create!(key: "upload.images.content_types", value: "image/png")
+      Setting["uploads.images.content_types"] = "image/png"
+      setting = Setting.find_by!(key: "uploads.images.content_types")
+
       visit admin_settings_path
-      find("#images-and-documents-tab").click
+      click_link "Images and documents"
 
       within "#edit_setting_#{setting.id}" do
-        expect(find("#png")).to be_checked
-        expect(find("#jpg")).not_to be_checked
-        expect(find("#gif")).not_to be_checked
+        expect(find_field("PNG")).to be_checked
+        expect(find_field("JPG")).not_to be_checked
+        expect(find_field("GIF")).not_to be_checked
 
-        check "gif"
+        check "GIF"
 
         click_button "Update"
       end
 
       expect(page).to have_content "Value updated"
-      expect(Setting["upload.images.content_types"]).to include "image/png"
-      expect(Setting["upload.images.content_types"]).to include "image/gif"
 
-      visit admin_settings_path(anchor: "tab-images-and-documents")
+      click_link "Images and documents"
 
       within "#edit_setting_#{setting.id}" do
-        expect(find("#png")).to be_checked
-        expect(find("#gif")).to be_checked
-        expect(find("#jpg")).not_to be_checked
+        expect(find_field("PNG")).to be_checked
+        expect(find_field("GIF")).to be_checked
+        expect(find_field("JPG")).not_to be_checked
       end
     end
   end
@@ -171,7 +172,7 @@ describe "Admin settings", :admin do
         Setting["feature.remote_census"] = true
       end
 
-      scenario "On #tab-remote-census-configuration", :js do
+      scenario "On #tab-remote-census-configuration" do
         remote_census_setting = create(:setting, key: "remote_census.general.whatever")
 
         visit admin_settings_path
@@ -187,7 +188,7 @@ describe "Admin settings", :admin do
       end
     end
 
-    scenario "On #tab-configuration", :js do
+    scenario "On #tab-configuration" do
       configuration_setting = Setting.create!(key: "whatever")
 
       visit admin_settings_path
@@ -207,11 +208,11 @@ describe "Admin settings", :admin do
         Setting["feature.map"] = true
       end
 
-      scenario "On #tab-map-configuration", :js do
+      scenario "On #tab-map-configuration" do
         map_setting = Setting.create!(key: "map.whatever")
 
         visit admin_settings_path
-        find("#map-tab").click
+        click_link "Map configuration"
 
         within("#edit_setting_#{map_setting.id}") do
           fill_in "setting_#{map_setting.id}", with: "New value"
@@ -223,7 +224,7 @@ describe "Admin settings", :admin do
       end
     end
 
-    scenario "On #tab-proposals", :js do
+    scenario "On #tab-proposals" do
       proposal_dashboard_setting = Setting.create!(key: "proposals.whatever")
 
       visit admin_settings_path
@@ -238,7 +239,7 @@ describe "Admin settings", :admin do
       expect(page).to have_css("div#tab-proposals.is-active")
     end
 
-    scenario "On #tab-participation-processes", :js do
+    scenario "On #tab-participation-processes" do
       process_setting = Setting.create!(key: "process.whatever")
 
       visit admin_settings_path
@@ -252,7 +253,7 @@ describe "Admin settings", :admin do
       expect(page).to have_css("div#tab-participation-processes.is-active")
     end
 
-    scenario "On #tab-feature-flags", :js do
+    scenario "On #tab-feature-flags" do
       feature_setting = Setting.create!(key: "feature.whatever")
 
       visit admin_settings_path
@@ -266,7 +267,7 @@ describe "Admin settings", :admin do
       expect(page).to have_css("div#tab-feature-flags.is-active")
     end
 
-    scenario "On #tab-sdg-configuration", :js do
+    scenario "On #tab-sdg-configuration" do
       Setting["feature.sdg"] = true
       Setting.create!(key: "sdg.whatever")
       login_as(create(:administrator).user)
@@ -284,7 +285,7 @@ describe "Admin settings", :admin do
   end
 
   describe "Skip verification" do
-    scenario "deactivate skip verification", :js do
+    scenario "deactivate skip verification" do
       Setting["feature.user.skip_verification"] = "true"
       setting = Setting.find_by(key: "feature.user.skip_verification")
 
@@ -298,7 +299,7 @@ describe "Admin settings", :admin do
       expect(page).to have_content "Value updated"
     end
 
-    scenario "activate skip verification", :js do
+    scenario "activate skip verification" do
       Setting["feature.user.skip_verification"] = nil
       setting = Setting.find_by(key: "feature.user.skip_verification")
 
@@ -315,7 +316,7 @@ describe "Admin settings", :admin do
     end
   end
 
-  describe "SDG configuration tab", :js do
+  describe "SDG configuration tab" do
     scenario "is enabled when the sdg feature is enabled" do
       Setting["feature.sdg"] = true
       login_as(create(:administrator).user)

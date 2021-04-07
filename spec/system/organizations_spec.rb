@@ -22,7 +22,7 @@ describe "Organizations" do
     expect(user.organization).not_to be_verified
   end
 
-  scenario "Create with invisible_captcha honeypot field" do
+  scenario "Create with invisible_captcha honeypot field", :no_js do
     visit new_organization_registration_path
 
     fill_in "user_organization_attributes_name",  with: "robot"

@@ -67,7 +67,7 @@ describe "Valuator groups", :admin do
     create(:valuator_group)
 
     visit admin_valuator_groups_path
-    click_link "Delete"
+    accept_confirm { click_link "Delete" }
 
     expect(page).to have_content "Valuator group deleted successfully"
     expect(page).to have_content "There are no valuator groups"

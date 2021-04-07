@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Admin Active polls", :admin do
-  scenario "Add", :js do
+  scenario "Add" do
     expect(ActivePoll.first).to be nil
 
     visit admin_polls_path
@@ -14,7 +14,7 @@ describe "Admin Active polls", :admin do
     expect(ActivePoll.first.description).to eq "<p>Active polls description</p>\r\n"
   end
 
-  scenario "Edit", :js do
+  scenario "Edit" do
     create(:active_poll, description_en: "Old description")
 
     visit polls_path

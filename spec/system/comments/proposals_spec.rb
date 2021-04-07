@@ -8,12 +8,12 @@ describe "Commenting proposals" do
 
   scenario "Index" do
     3.times { create(:comment, commentable: proposal) }
+    comment = Comment.includes(:user).last
 
     visit proposal_path(proposal)
 
     expect(page).to have_css(".comment", count: 3)
 
-    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
@@ -54,7 +54,7 @@ describe "Commenting proposals" do
     expect(page).to have_current_path(comment_path(comment))
   end
 
-  scenario "Collapsable comments", :js do
+  scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: proposal)
     child_comment  = create(:comment, body: "First subcomment", commentable: proposal, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: proposal, parent: child_comment)
@@ -193,7 +193,7 @@ describe "Commenting proposals" do
     end
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     login_as(user)
     visit proposal_path(proposal)
 
@@ -209,7 +209,7 @@ describe "Commenting proposals" do
     end
   end
 
-  scenario "Errors on create", :js do
+  scenario "Errors on create" do
     login_as(user)
     visit proposal_path(proposal)
 
@@ -218,7 +218,7 @@ describe "Commenting proposals" do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario "Reply", :js do
+  scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")
     comment = create(:comment, commentable: proposal, user: citizen)
@@ -240,7 +240,7 @@ describe "Commenting proposals" do
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
   end
 
-  scenario "Reply update parent comment responses count", :js do
+  scenario "Reply update parent comment responses count" do
     comment = create(:comment, commentable: proposal)
 
     login_as(create(:user))
@@ -255,7 +255,7 @@ describe "Commenting proposals" do
     end
   end
 
-  scenario "Reply show parent comments responses when hidden", :js do
+  scenario "Reply show parent comments responses when hidden" do
     comment = create(:comment, commentable: proposal)
     create(:comment, commentable: proposal, parent: comment)
 
@@ -272,7 +272,7 @@ describe "Commenting proposals" do
     end
   end
 
-  scenario "Errors on reply", :js do
+  scenario "Errors on reply" do
     comment = create(:comment, commentable: proposal, user: user)
 
     login_as(user)
@@ -286,7 +286,7 @@ describe "Commenting proposals" do
     end
   end
 
-  scenario "N replies", :js do
+  scenario "N replies" do
     parent = create(:comment, commentable: proposal)
 
     7.times do
@@ -311,7 +311,7 @@ describe "Commenting proposals" do
   end
 
   describe "Moderators" do
-    scenario "can create comment as a moderator", :js do
+    scenario "can create comment as a moderator" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -329,7 +329,7 @@ describe "Commenting proposals" do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    scenario "can create reply as a moderator" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
@@ -367,7 +367,7 @@ describe "Commenting proposals" do
   end
 
   describe "Administrators" do
-    scenario "can create comment as an administrator", :js do
+    scenario "can create comment as an administrator" do
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -385,7 +385,7 @@ describe "Commenting proposals" do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    scenario "can create reply as an administrator" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       admin   = create(:administrator, user: manuela)
@@ -448,7 +448,7 @@ describe "Commenting proposals" do
       end
     end
 
-    scenario "Create", :js do
+    scenario "Create" do
       visit proposal_path(proposal)
 
       within("#comment_#{comment.id}_votes") do
@@ -466,7 +466,7 @@ describe "Commenting proposals" do
       end
     end
 
-    scenario "Update", :js do
+    scenario "Update" do
       visit proposal_path(proposal)
 
       within("#comment_#{comment.id}_votes") do
@@ -490,7 +490,7 @@ describe "Commenting proposals" do
       end
     end
 
-    scenario "Trying to vote multiple times", :js do
+    scenario "Trying to vote multiple times" do
       visit proposal_path(proposal)
 
       within("#comment_#{comment.id}_votes") do

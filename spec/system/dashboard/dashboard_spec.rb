@@ -1,35 +1,29 @@
 require "rails_helper"
 
 describe "Proposal's dashboard" do
-  let!(:proposal) { create(:proposal, :draft) }
+  let(:proposal) { create(:proposal, :draft) }
+  before { login_as(proposal.author) }
 
-  before do
-    login_as(proposal.author)
+  scenario "Navigation" do
     visit proposal_dashboard_path(proposal)
-  end
 
-  scenario "Dashboard has a link to my proposal" do
     expect(page).to have_link("Edit my proposal")
-  end
-
-  scenario "My proposal has a link to edit the proposal" do
     expect(page).to have_link("Edit proposal")
-  end
-
-  scenario "My proposal has a link to retire the proposal" do
     expect(page).to have_link("Retire proposal")
-  end
-
-  scenario "My proposal has a link to publish the proposal" do
     expect(page).to have_link("Publish proposal")
+    expect(page).to have_link("Polls")
+    expect(page).to have_link("E-mail")
+    expect(page).to have_link("Poster")
   end
 
   scenario "Publish link dissapears after proposal's publication" do
+    visit proposal_dashboard_path(proposal)
     click_link "Publish proposal"
+
     expect(page).not_to have_link("Publish proposal")
   end
 
-  scenario "Dashboard progress shows current goal", js: true do
+  scenario "Dashboard progress shows current goal" do
     goal = create(:dashboard_action, :resource, :active,
                                      required_supports: proposal.votes_for.size + 1_000)
     future_goal = create(:dashboard_action, :resource, :active,
@@ -77,7 +71,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_button("Show description")
   end
 
-  scenario "Dashboard progress do not display from the fourth proposed actions", js: true do
+  scenario "Dashboard progress do not display from the fourth proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     action_5 = create(:dashboard_action, :proposed_action, :active)
 
@@ -87,7 +81,7 @@ describe "Proposal's dashboard" do
   end
 
   scenario "Dashboard progress display link to new page for proposed actions when
-            there are more than four proposed actions", js: true do
+            there are more than four proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     create(:dashboard_action, :proposed_action, :active)
 
@@ -97,7 +91,7 @@ describe "Proposal's dashboard" do
   end
 
   scenario "Dashboard progress do not display link to new page for proposed actions
-            when there are less than five proposed actions", js: true do
+            when there are less than five proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
 
     visit progress_proposal_dashboard_path(proposal)
@@ -261,18 +255,6 @@ describe "Proposal's dashboard" do
     end
   end
 
-  scenario "Dashboard has a link to polls feature" do
-    expect(page).to have_link("Polls")
-  end
-
-  scenario "Dashboard has a link to e-mail feature" do
-    expect(page).to have_link("E-mail")
-  end
-
-  scenario "Dashboard has a link to poster feature" do
-    expect(page).to have_link("Poster")
-  end
-
   scenario "Dashboard has a link to resources on main menu" do
     feature = create(:dashboard_action, :resource, :active)
 
@@ -280,7 +262,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_link(feature.title)
   end
 
-  scenario "Request resource with admin request", js: true do
+  scenario "Request resource with admin request" do
     feature = create(:dashboard_action, :resource, :active, :admin_request)
 
     visit proposal_dashboard_path(proposal)
@@ -291,7 +273,7 @@ describe "Proposal's dashboard" do
                                  "as soon as possible to inform you about it.")
   end
 
-  scenario "Request already requested resource with admin request", js: true do
+  scenario "Request already requested resource with admin request" do
     feature = create(:dashboard_action, :resource, :active, :admin_request)
 
     visit proposal_dashboard_path(proposal)
@@ -316,7 +298,7 @@ describe "Proposal's dashboard" do
                                  "as soon as possible to inform you about it.")
   end
 
-  scenario "Resource without admin request do not have a request link", js: true do
+  scenario "Resource without admin request do not have a request link" do
     feature = create(:dashboard_action, :resource, :active)
 
     visit proposal_dashboard_path(proposal)
@@ -341,7 +323,9 @@ describe "Proposal's dashboard" do
     expect(page).to have_content("This proposal is archived and can not request resources.")
   end
 
-  scenario "Dashboard has a link to dashboard community", js: true do
+  scenario "Dashboard has a link to dashboard community" do
+    visit proposal_dashboard_path(proposal)
+
     expect(page).to have_link("Community")
     click_link "Community"
 
@@ -351,7 +335,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_link("Access the community")
   end
 
-  scenario "Dashboard has a link to recommended_actions if there is any", js: true do
+  scenario "Dashboard has a link to recommended_actions if there is any" do
     expect(page).not_to have_link("Recommended actions")
 
     create_list(:dashboard_action, 3, :proposed_action, :active)
@@ -364,6 +348,8 @@ describe "Proposal's dashboard" do
   end
 
   scenario "Dashboard has a link to messages" do
+    visit proposal_dashboard_path(proposal)
+
     expect(page).to have_link("Message to users")
 
     within("#side_menu") do
@@ -404,6 +390,8 @@ describe "Proposal's dashboard" do
     create(:related_content, parent_relationable: proposal,
                              child_relationable: related_proposal, author: build(:user))
 
+    visit proposal_dashboard_path(proposal)
+
     within("#side_menu") do
       click_link "Related content"
     end
@@ -412,15 +400,15 @@ describe "Proposal's dashboard" do
 
     within(".dashboard-related-content") do
       expect(page).to have_content("Related content (2)")
-      expect(page).to have_selector(".related-content-title", text: "Proposal")
+      expect(page).to have_selector(".related-content-title", text: "PROPOSAL")
       expect(page).to have_link related_proposal.title
-      expect(page).to have_selector(".related-content-title", text: "Debate")
+      expect(page).to have_selector(".related-content-title", text: "DEBATE")
       expect(page).to have_link related_debate.title
     end
   end
 
   scenario "On recommended actions section display from the fourth proposed actions
-            when click see_proposed_actions_link", js: true do
+            when click see_proposed_actions_link" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     action_5 = create(:dashboard_action, :proposed_action, :active)
 
@@ -434,7 +422,7 @@ describe "Proposal's dashboard" do
     expect(page).not_to have_content(action_5.title)
   end
 
-  scenario "On recommended actions section display four proposed actions", js: true do
+  scenario "On recommended actions section display four proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     action_5 = create(:dashboard_action, :proposed_action, :active)
 
@@ -444,7 +432,7 @@ describe "Proposal's dashboard" do
   end
 
   scenario "On recommended actions section display link for toggle when there are
-            more than four proposed actions", js: true do
+            more than four proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     create(:dashboard_action, :proposed_action, :active)
 
@@ -454,7 +442,7 @@ describe "Proposal's dashboard" do
   end
 
   scenario "On recommended actions section do not display link for toggle when
-            there are less than five proposed actions", js: true do
+            there are less than five proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
 
     visit recommended_actions_proposal_dashboard_path(proposal.to_param)
@@ -497,7 +485,8 @@ describe "Proposal's dashboard" do
 
   describe "detect_new_actions_after_last_login" do
     before do
-      proposal.author.update(last_sign_in_at: Date.yesterday)
+      visit proposal_dashboard_path(proposal)
+      proposal.author.update!(last_sign_in_at: Date.yesterday)
     end
 
     scenario "Display tag 'new' on resouce when it is new for author since last login" do

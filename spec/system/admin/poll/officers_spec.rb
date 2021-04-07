@@ -14,7 +14,7 @@ describe "Admin poll officers", :admin do
     expect(page).not_to have_content user.name
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     fill_in "search", with: user.email
     click_button "Search"
 
@@ -26,7 +26,7 @@ describe "Admin poll officers", :admin do
   end
 
   scenario "Delete" do
-    click_link "Delete position"
+    accept_confirm { click_link "Delete position" }
 
     expect(page).not_to have_css "#officers"
   end

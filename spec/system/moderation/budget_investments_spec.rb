@@ -6,7 +6,7 @@ describe "Moderate budget investments" do
   let(:mod)         { create(:moderator) }
   let!(:investment) { create(:budget_investment, heading: heading, author: create(:user)) }
 
-  scenario "Hiding an investment", :js do
+  scenario "Hiding an investment" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
@@ -19,7 +19,7 @@ describe "Moderate budget investments" do
     expect(page).not_to have_content(investment.title)
   end
 
-  scenario "Hiding an investment's author", :js do
+  scenario "Hiding an investment's author" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
@@ -66,7 +66,8 @@ describe "Moderate budget investments" do
         end
 
         scenario "Hide the investment" do
-          click_button "Hide budget investments"
+          accept_confirm { click_button "Hide budget investments" }
+
           expect(page).not_to have_css("investment_#{investment.id}")
 
           investment.reload
@@ -75,7 +76,8 @@ describe "Moderate budget investments" do
         end
 
         scenario "Block the author" do
-          click_button "Block authors"
+          accept_confirm { click_button "Block authors" }
+
           expect(page).not_to have_css("investment_#{investment.id}")
 
           investment.reload
@@ -84,7 +86,8 @@ describe "Moderate budget investments" do
         end
 
         scenario "Ignore the investment" do
-          click_button "Mark as viewed"
+          accept_confirm { click_button "Mark as viewed" }
+
           expect(page).not_to have_css("investment_#{investment.id}")
 
           investment.reload
@@ -95,7 +98,7 @@ describe "Moderate budget investments" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:budget_investment, 2, heading: heading, author: create(:user))
 
         visit moderation_budget_investments_path
@@ -117,13 +120,13 @@ describe "Moderate budget investments" do
 
         visit moderation_budget_investments_path(filter: "all", page: "2", order: "created_at")
 
-        click_button "Mark as viewed"
+        accept_confirm { click_button "Mark as viewed" }
 
         expect(page).to have_selector(".js-order-selector[data-order='created_at']")
 
-        expect(current_url).to include("filter=all")
-        expect(current_url).to include("page=2")
-        expect(current_url).to include("order=created_at")
+        expect(page).to have_current_path(/filter=all/)
+        expect(page).to have_current_path(/page=2/)
+        expect(page).to have_current_path(/order=created_at/)
       end
     end
 

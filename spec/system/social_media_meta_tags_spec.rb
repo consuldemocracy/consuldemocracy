@@ -28,14 +28,12 @@ describe "Social media meta tags" do
       expect(page).to have_meta "twitter:site", with: twitter_handle
       expect(page).to have_meta "twitter:title", with: meta_title
       expect(page).to have_meta "twitter:description", with: meta_description
-      expect(page).to have_meta "twitter:image",
-                                 with: "#{Capybara.app_host}/social_media_icon_twitter.png"
-
+      expect(page).to have_meta "twitter:image", with: "#{app_host}/social_media_icon_twitter.png"
       expect(page).to have_property "og:title", with: meta_title
       expect(page).to have_property "article:publisher", with: url
       expect(page).to have_property "article:author", with: "https://www.facebook.com/#{facebook_handle}"
-      expect(page).to have_property "og:url", with: "#{Capybara.app_host}/"
-      expect(page).to have_property "og:image", with: "#{Capybara.app_host}/social_media_icon.png"
+      expect(page).to have_property "og:url", with: "#{app_host}/"
+      expect(page).to have_property "og:image", with: "#{app_host}/social_media_icon.png"
       expect(page).to have_property "og:site_name", with: org_name
       expect(page).to have_property "og:description", with: meta_description
     end

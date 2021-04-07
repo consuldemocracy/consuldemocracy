@@ -66,7 +66,7 @@ describe "Tags" do
     visit new_proposal_path
     fill_in "Proposal title", with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "This is very important because..."
+    fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     fill_in "proposal_tag_list", with: "Economía, Hacienda"
     check "proposal_terms_of_service"
@@ -81,7 +81,7 @@ describe "Tags" do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario "Category with category tags", :js do
+  scenario "Category with category tags" do
     create(:tag, :category, name: "Education")
     create(:tag, :category, name: "Health")
 
@@ -114,7 +114,7 @@ describe "Tags" do
 
     visit new_proposal_path
     fill_in "Proposal title", with: "Title"
-    fill_in "Proposal text", with: "Description"
+    fill_in_ckeditor "Proposal text", with: "Description"
     check "proposal_terms_of_service"
 
     fill_in "proposal_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -133,7 +133,7 @@ describe "Tags" do
 
     fill_in "Proposal title", with: "A test of dangerous strings"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "A description suitable for this test"
+    fill_in_ckeditor "Proposal text", with: "A description suitable for this test"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
     check "proposal_terms_of_service"
 

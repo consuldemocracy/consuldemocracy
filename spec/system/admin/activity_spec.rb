@@ -8,7 +8,7 @@ describe "Admin activity" do
   end
 
   context "Proposals" do
-    scenario "Shows moderation activity on proposals", :js do
+    scenario "Shows moderation activity on proposals" do
       proposal = create(:proposal)
 
       visit proposal_path(proposal)
@@ -42,7 +42,9 @@ describe "Admin activity" do
         check "proposal_#{proposal3.id}_check"
       end
 
-      click_on "Hide proposals"
+      accept_confirm { click_button "Hide proposals" }
+
+      expect(page).not_to have_content(proposal1.title)
 
       visit admin_activity_path
 
@@ -57,8 +59,10 @@ describe "Admin activity" do
       visit admin_hidden_proposals_path
 
       within("#proposal_#{proposal.id}") do
-        click_on "Restore"
+        accept_confirm { click_link "Restore" }
       end
+
+      expect(page).to have_content "There are no hidden proposals"
 
       visit admin_activity_path
 
@@ -71,7 +75,7 @@ describe "Admin activity" do
   end
 
   context "Debates" do
-    scenario "Shows moderation activity on debates", :js do
+    scenario "Shows moderation activity on debates" do
       debate = create(:debate)
 
       visit debate_path(debate)
@@ -105,7 +109,9 @@ describe "Admin activity" do
         check "debate_#{debate3.id}_check"
       end
 
-      click_on "Hide debates"
+      accept_confirm { click_button "Hide debates" }
+
+      expect(page).not_to have_content(debate1.title)
 
       visit admin_activity_path
 
@@ -120,8 +126,10 @@ describe "Admin activity" do
       visit admin_hidden_debates_path
 
       within("#debate_#{debate.id}") do
-        click_on "Restore"
+        accept_confirm { click_link "Restore" }
       end
+
+      expect(page).to have_content "There are no hidden debates"
 
       visit admin_activity_path
 
@@ -134,7 +142,7 @@ describe "Admin activity" do
   end
 
   context "Comments" do
-    scenario "Shows moderation activity on comments", :js do
+    scenario "Shows moderation activity on comments" do
       debate = create(:debate)
       comment = create(:comment, commentable: debate)
 
@@ -169,7 +177,9 @@ describe "Admin activity" do
         check "comment_#{comment3.id}_check"
       end
 
-      click_on "Hide comments"
+      accept_confirm { click_button "Hide comments" }
+
+      expect(page).not_to have_content(comment1.body)
 
       visit admin_activity_path
 
@@ -184,8 +194,10 @@ describe "Admin activity" do
       visit admin_hidden_comments_path
 
       within("#comment_#{comment.id}") do
-        click_on "Restore"
+        accept_confirm { click_link "Restore" }
       end
+
+      expect(page).to have_content "There are no hidden comments"
 
       visit admin_activity_path
 
@@ -204,7 +216,7 @@ describe "Admin activity" do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        click_link "Hide author"
+        accept_confirm { click_link "Hide author" }
 
         expect(page).to have_current_path(debates_path)
       end
@@ -253,7 +265,9 @@ describe "Admin activity" do
         check "proposal_#{proposal3.id}_check"
       end
 
-      click_on "Block authors"
+      accept_confirm { click_button "Block authors" }
+
+      expect(page).not_to have_content(proposal1.author.username)
 
       visit admin_activity_path
 
@@ -279,7 +293,9 @@ describe "Admin activity" do
         check "debate_#{debate3.id}_check"
       end
 
-      click_on "Block authors"
+      accept_confirm { click_button "Block authors" }
+
+      expect(page).not_to have_content(debate1.author.username)
 
       visit admin_activity_path
 
@@ -305,7 +321,9 @@ describe "Admin activity" do
         check "comment_#{comment3.id}_check"
       end
 
-      click_on "Block authors"
+      accept_confirm { click_button "Block authors" }
+
+      expect(page).not_to have_content comment1.author.username
 
       visit admin_activity_path
 
@@ -322,8 +340,10 @@ describe "Admin activity" do
       visit admin_hidden_users_path
 
       within("#user_#{user.id}") do
-        click_on "Restore"
+        accept_confirm { click_link "Restore" }
       end
+
+      expect(page).to have_content "There are no hidden users"
 
       visit admin_activity_path
 

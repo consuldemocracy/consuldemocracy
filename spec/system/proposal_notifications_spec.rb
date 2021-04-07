@@ -26,7 +26,7 @@ describe "Proposal Notifications" do
     expect(page).to have_content "Please share it with others so we can make it happen!"
   end
 
-  scenario "Send a notification (Active voter)" do
+  scenario "Send a notification (Active voter)", :no_js do
     proposal = create(:proposal)
 
     create(:user, :level_two, votables: [proposal], followables: [proposal])
@@ -35,7 +35,7 @@ describe "Proposal Notifications" do
     expect(Notification.count).to eq(1)
   end
 
-  scenario "Send a notification (Follower)" do
+  scenario "Send a notification (Follower)", :no_js do
     proposal = create(:proposal)
 
     create(:user, :level_two, followables: [proposal])
@@ -44,7 +44,7 @@ describe "Proposal Notifications" do
     expect(Notification.count).to eq(1)
   end
 
-  scenario "Send a notification (Follower and Voter)" do
+  scenario "Send a notification (Follower and Voter)", :no_js do
     proposal = create(:proposal)
 
     create(:user, followables: [proposal], votables: [proposal])
@@ -55,7 +55,7 @@ describe "Proposal Notifications" do
     expect(Notification.count).to eq(2)
   end
 
-  scenario "Send a notification (Blocked voter)" do
+  scenario "Send a notification (Blocked voter)", :no_js do
     proposal = create(:proposal)
     voter = create(:user, :level_two, votables: [proposal])
 
@@ -65,7 +65,7 @@ describe "Proposal Notifications" do
     expect(Notification.count).to eq(0)
   end
 
-  scenario "Send a notification (Erased voter)" do
+  scenario "Send a notification (Erased voter)", :no_js do
     proposal = create(:proposal)
     voter = create(:user, :level_two, votables: [proposal])
 
@@ -77,14 +77,16 @@ describe "Proposal Notifications" do
 
   scenario "Show notifications" do
     proposal = create(:proposal)
-    _notification1 = create(:proposal_notification,
-                             proposal: proposal, title: "Hey guys",
-                             body: "Just wanted to let you know that...")
-    _notification2 = create(:proposal_notification,
-                             proposal: proposal, title: "Another update",
-                             body: "We are almost there please share with your peoples!")
+
+    create(:proposal_notification,
+            proposal: proposal, title: "Hey guys",
+            body: "Just wanted to let you know that...")
+    create(:proposal_notification,
+            proposal: proposal, title: "Another update",
+            body: "We are almost there please share with your peoples!")
 
     visit proposal_path(proposal)
+    click_link "Notifications (2)"
 
     expect(page).to have_content "Hey guys"
     expect(page).to have_content "Just wanted to let you know that..."
@@ -174,7 +176,7 @@ describe "Proposal Notifications" do
   end
 
   context "In-app notifications from the proposal's author" do
-    scenario "Voters who are followed should receive a notification", :js do
+    scenario "Voters who are followed should receive a notification" do
       author = create(:user)
       proposal = create(:proposal, author: author)
 
@@ -227,7 +229,7 @@ describe "Proposal Notifications" do
       expect(page).to have_css ".notification", count: 0
     end
 
-    scenario "Followers should receive a notification", :js do
+    scenario "Followers should receive a notification" do
       author = create(:user)
       proposal = create(:proposal, author: author)
 
@@ -280,7 +282,7 @@ describe "Proposal Notifications" do
       expect(page).to have_css ".notification", count: 0
     end
 
-    scenario "Proposal hidden", :js do
+    scenario "Proposal hidden" do
       author = create(:user)
       user = create(:user)
       proposal = create(:proposal, author: author, voters: [user], followers: [user])
@@ -309,7 +311,7 @@ describe "Proposal Notifications" do
       expect(page).to have_content "This resource is not available anymore"
     end
 
-    scenario "Proposal retired by author", :js do
+    scenario "Proposal retired by author" do
       author = create(:user)
       user = create(:user)
       proposal = create(:proposal, author: author, voters: [user])
@@ -325,7 +327,7 @@ describe "Proposal Notifications" do
         Setting[:proposal_notification_minimum_interval_in_days] = 0
       end
 
-      scenario "for the same proposal", :js do
+      scenario "for the same proposal" do
         author = create(:user)
         proposal = create(:proposal, author: author)
         user = create(:user, followables: [proposal])

@@ -68,7 +68,7 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
-    fill_in "Description", with: "I want to live in a high tower over the clouds"
+    fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "#{tag_medio_ambiente.name}, #{tag_economia.name}"
@@ -80,7 +80,7 @@ describe "Tags" do
     expect(page).to have_content tag_medio_ambiente.name
   end
 
-  scenario "Category with category tags", :js do
+  scenario "Category with category tags" do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
@@ -94,14 +94,15 @@ describe "Tags" do
     click_button "Create Investment"
 
     expect(page).to have_content "Investment created successfully."
+    expect(page).to have_content "Build a skyscraper"
 
-    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+    within ".tags" do
       expect(page).to have_content tag_economia.name
       expect(page).not_to have_content tag_medio_ambiente.name
     end
   end
 
-  scenario "Turbolinks sanity check from budget's show", :js do
+  scenario "Turbolinks sanity check from budget's show" do
     create(:tag, name: "Education", kind: "category")
     create(:tag, name: "Health",    kind: "category")
 
@@ -118,14 +119,15 @@ describe "Tags" do
     click_button "Create Investment"
 
     expect(page).to have_content "Investment created successfully."
+    expect(page).to have_content "Build a skyscraper"
 
-    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+    within ".tags" do
       expect(page).to have_content "Education"
       expect(page).not_to have_content "Health"
     end
   end
 
-  scenario "Turbolinks sanity check from budget heading's show", :js do
+  scenario "Turbolinks sanity check from budget heading's show" do
     create(:tag, name: "Education", kind: "category")
     create(:tag, name: "Health",    kind: "category")
 
@@ -142,8 +144,9 @@ describe "Tags" do
     click_button "Create Investment"
 
     expect(page).to have_content "Investment created successfully."
+    expect(page).to have_content "Build a skyscraper"
 
-    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+    within ".tags" do
       expect(page).to have_content "Education"
       expect(page).not_to have_content "Health"
     end
@@ -156,7 +159,7 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
-    fill_in "Description", with: "I want to live in a high tower over the clouds"
+    fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -174,7 +177,7 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
-    fill_in "Description", with: "I want to live in a high tower over the clouds"
+    fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"

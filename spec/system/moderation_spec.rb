@@ -5,9 +5,12 @@ describe "Moderation" do
 
   scenario "Access as regular user is not authorized" do
     login_as(user)
+
     visit root_path
 
+    expect(page).not_to have_link("Menu")
     expect(page).not_to have_link("Moderation")
+
     visit moderation_root_path
 
     expect(page).not_to have_current_path(moderation_root_path)
@@ -17,11 +20,13 @@ describe "Moderation" do
 
   scenario "Access as valuator is not authorized" do
     create(:valuator, user: user)
-
     login_as(user)
+
     visit root_path
+    click_link "Menu"
 
     expect(page).not_to have_link("Moderation")
+
     visit moderation_root_path
 
     expect(page).not_to have_current_path(moderation_root_path)
@@ -31,11 +36,13 @@ describe "Moderation" do
 
   scenario "Access as manager is not authorized" do
     create(:manager, user: user)
-
     login_as(user)
+
     visit root_path
+    click_link "Menu"
 
     expect(page).not_to have_link("Moderation")
+
     visit moderation_root_path
 
     expect(page).not_to have_current_path(moderation_root_path)
@@ -43,11 +50,12 @@ describe "Moderation" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as SDG manager is not authorized", :js do
+  scenario "Access as SDG manager is not authorized" do
     create(:sdg_manager, user: user)
-
     login_as(user)
+
     visit root_path
+    click_link "Menu"
 
     expect(page).not_to have_link("Moderation")
 
@@ -60,11 +68,13 @@ describe "Moderation" do
 
   scenario "Access as poll officer is not authorized" do
     create(:poll_officer, user: user)
-
     login_as(user)
+
     visit root_path
+    click_link "Menu"
 
     expect(page).not_to have_link("Moderation")
+
     visit moderation_root_path
 
     expect(page).not_to have_current_path(moderation_root_path)
@@ -77,9 +87,8 @@ describe "Moderation" do
 
     login_as(user)
     visit root_path
-
-    expect(page).to have_link("Moderation")
-    click_on "Moderation"
+    click_link "Menu"
+    click_link "Moderation"
 
     expect(page).to have_current_path(moderation_root_path)
     expect(page).not_to have_content "You do not have permission to access this page"
@@ -90,9 +99,8 @@ describe "Moderation" do
 
     login_as(user)
     visit root_path
-
-    expect(page).to have_link("Moderation")
-    click_on "Moderation"
+    click_link "Menu"
+    click_link "Moderation"
 
     expect(page).to have_current_path(moderation_root_path)
     expect(page).not_to have_content "You do not have permission to access this page"
@@ -101,7 +109,9 @@ describe "Moderation" do
   scenario "Moderation access links" do
     create(:moderator, user: user)
     login_as(user)
+
     visit root_path
+    click_link "Menu"
 
     expect(page).to have_link("Moderation")
     expect(page).not_to have_link("Administration")
@@ -116,8 +126,9 @@ describe "Moderation" do
     scenario "Contains correct elements" do
       create(:moderator, user: user)
       login_as(user)
-      visit root_path
 
+      visit root_path
+      click_link "Menu"
       click_link "Moderation"
 
       expect(page).to have_link("Go back to OrgName")

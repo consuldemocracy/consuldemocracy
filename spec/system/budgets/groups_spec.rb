@@ -26,7 +26,7 @@ describe "Budget Groups" do
       expect(first_heading.name).to appear_before(last_heading.name)
     end
 
-    scenario "Links to investment filters", :js do
+    scenario "Links to investment filters" do
       create(:budget_heading, group: group, name: "Southwest")
       budget.update!(phase: "finished")
 
@@ -45,7 +45,7 @@ describe "Budget Groups" do
       expect(page).not_to have_link "See investments not selected for balloting phase unfeasible investments"
     end
 
-    scenario "Back link", :js do
+    scenario "Back link" do
       visit budget_group_path(budget, group)
 
       click_link "Go back"

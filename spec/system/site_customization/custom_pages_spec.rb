@@ -93,7 +93,7 @@ describe "Custom Pages" do
 
         visit custom_page.url
 
-        expect(page).to have_content "Card Highlights"
+        expect(page).to have_content "CARD HIGHLIGHTS"
       end
     end
   end

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Local Targets", :js do
+describe "Local Targets" do
   before do
     login_as(create(:administrator).user)
     Setting["feature.sdg"] = true

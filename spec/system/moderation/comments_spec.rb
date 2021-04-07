@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate comments" do
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen = create(:user)
     moderator = create(:moderator)
 
@@ -86,21 +86,24 @@ describe "Moderate comments" do
         end
 
         scenario "Hide the comment" do
-          click_on "Hide comments"
+          accept_confirm { click_button "Hide comments" }
+
           expect(page).not_to have_css("comment_#{comment.id}")
           expect(comment.reload).to be_hidden
           expect(comment.user).not_to be_hidden
         end
 
         scenario "Block the user" do
-          click_on "Block authors"
+          accept_confirm { click_button "Block authors" }
+
           expect(page).not_to have_css("comment_#{comment.id}")
           expect(comment.reload).to be_hidden
           expect(comment.user).to be_hidden
         end
 
         scenario "Ignore the comment" do
-          click_on "Mark as viewed"
+          accept_confirm { click_button "Mark as viewed" }
+
           expect(page).not_to have_css("comment_#{comment.id}")
           expect(comment.reload).to be_ignored_flag
           expect(comment.reload).not_to be_hidden
@@ -108,7 +111,7 @@ describe "Moderate comments" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:comment, 2)
 
         visit moderation_comments_path
@@ -130,13 +133,13 @@ describe "Moderate comments" do
 
         visit moderation_comments_path(filter: "all", page: "2", order: "newest")
 
-        click_on "Mark as viewed"
+        accept_confirm { click_button "Mark as viewed" }
 
         expect(page).to have_selector(".js-order-selector[data-order='newest']")
 
-        expect(current_url).to include("filter=all")
-        expect(current_url).to include("page=2")
-        expect(current_url).to include("order=newest")
+        expect(page).to have_current_path(/filter=all/)
+        expect(page).to have_current_path(/page=2/)
+        expect(page).to have_current_path(/order=newest/)
       end
     end
 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "SDG homepage configuration", :js do
+describe "SDG homepage configuration" do
   before do
     Setting["feature.sdg"] = true
     login_as(create(:sdg_manager).user)

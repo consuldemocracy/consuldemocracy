@@ -4,7 +4,7 @@ describe "Admin budget phases" do
   let(:budget) { create(:budget) }
 
   context "Edit", :admin do
-    scenario "Update phase", :js do
+    scenario "Update phase" do
       visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
 
       fill_in "start_date", with: Date.current + 1.day
@@ -31,6 +31,8 @@ describe "Admin budget phases" do
 
         within("tr", text: "Accepting projects") { click_link "Edit phase" }
       end
+
+      expect(page).to have_css "h2", exact_text: "Edit Participatory budget - Accepting projects"
 
       fill_in "Name", with: "My phase custom name"
       click_button "Save changes"

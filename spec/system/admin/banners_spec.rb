@@ -60,20 +60,11 @@ describe "Admin banners magement", :admin do
     end
   end
 
-  scenario "Banners publication is listed on admin menu" do
-    visit admin_root_path
-
-    within("#side_menu") do
-      expect(page).to have_link "Manage banners"
-    end
-  end
-
   scenario "Publish a banner" do
-    section = WebSection.find_by(name: "proposals")
-
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Site content"
       click_link "Manage banners"
     end
 
@@ -81,16 +72,16 @@ describe "Admin banners magement", :admin do
 
     fill_in "Title", with: "Such banner"
     fill_in "Description", with: "many text wow link"
-    fill_in "banner_target_url", with: "https://www.url.com"
-    fill_in "post_started_at", with: Date.current - 7.days
-    fill_in "post_ended_at", with: Date.current + 7.days
-    fill_in "banner_background_color", with: "#850000"
-    fill_in "banner_font_color", with: "#ffb2b2"
-    check section.name.titleize
+    fill_in "Link", with: "https://www.url.com"
+    fill_in "Post started at", with: Date.current - 7.days
+    fill_in "Post ended at", with: Date.current + 7.days
+    fill_in "Background color", with: "#850000"
+    fill_in "Font color", with: "#ffb2b2"
+    within_fieldset("Sections where it will appear") { check "Proposals" }
 
     click_button "Save changes"
 
-    expect(page).to have_content "Such banner"
+    expect(page).to have_content "Banner created successfully"
 
     visit proposals_path
 
@@ -98,7 +89,7 @@ describe "Admin banners magement", :admin do
     expect(page).to have_link "Such banner many text wow link", href: "https://www.url.com"
   end
 
-  scenario "Publish a banner with a translation different than the current locale", :js do
+  scenario "Publish a banner with a translation different than the current locale" do
     visit new_admin_banner_path
 
     expect_to_have_language_selected "English"
@@ -119,7 +110,7 @@ describe "Admin banners magement", :admin do
     expect(page).to have_field "Title", with: "En Français"
   end
 
-  scenario "Update banner color when changing from color picker or text_field", :js do
+  scenario "Update banner color when changing from color picker or text_field" do
     visit new_admin_banner_path
 
     fill_in "background_color_input", with: "#850000"
@@ -130,7 +121,7 @@ describe "Admin banners magement", :admin do
     expect(find("#font_color_input").value).to eq("#ffb2b2")
   end
 
-  scenario "Edit banner with live refresh", :js do
+  scenario "Edit banner with live refresh" do
     create(:banner, title: "Hello",
                     description: "Wrong text",
                     target_url:  "http://www.url.com",
@@ -160,7 +151,8 @@ describe "Admin banners magement", :admin do
 
     click_button "Save changes"
 
-    visit admin_banners_path
+    expect(page).to have_content "Banner updated successfully"
+
     expect(page).to have_content "Modified title"
     expect(page).to have_content "Edited text"
 
@@ -177,15 +169,11 @@ describe "Admin banners magement", :admin do
                     background_color: "#FF0000",
                     font_color: "#FFFFFF")
 
-    visit admin_root_path
-
-    within("#side_menu") do
-      click_link "Manage banners"
-    end
+    visit admin_banners_path
 
     expect(page).to have_content "Ugly banner"
 
-    click_link "Delete banner"
+    accept_confirm { click_link "Delete banner" }
 
     visit admin_root_path
     expect(page).not_to have_content "Ugly banner"

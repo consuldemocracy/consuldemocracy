@@ -17,9 +17,9 @@ describe "Admin users" do
   end
 
   scenario "The username links to their public profile" do
-    click_link user.name
-
-    expect(page).to have_current_path(user_path(user))
+    within_window(window_opened_by { click_link user.name }) do
+      expect(page).to have_current_path(user_path(user))
+    end
   end
 
   scenario "Show active or erased users using filters" do

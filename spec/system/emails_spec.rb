@@ -178,7 +178,7 @@ describe "Emails" do
   context "Comment replies" do
     let(:user) { create(:user, email_on_comment_reply: true) }
 
-    scenario "Send email on comment reply", :js do
+    scenario "Send email on comment reply" do
       reply_to(user)
 
       email = open_last_email
@@ -190,12 +190,12 @@ describe "Emails" do
       expect(email).to have_body_text(account_path)
     end
 
-    scenario "Do not send email about own replies to own comments", :js do
+    scenario "Do not send email about own replies to own comments" do
       reply_to(user, user)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
 
-    scenario "Do not send email about comment reply unless set in preferences", :js do
+    scenario "Do not send email about comment reply unless set in preferences" do
       user.update!(email_on_comment_reply: false)
       reply_to(user)
       expect { open_last_email }.to raise_error("No email has been sent!")
@@ -208,6 +208,8 @@ describe "Emails" do
     click_link "Registrarse"
     fill_in_signup_form
     click_button "Registrarse"
+
+    expect(page).to have_content "visita el enlace para activar tu cuenta."
 
     email = open_last_email
     expect(email).to deliver_to("manuela@consul.dev")
@@ -348,7 +350,7 @@ describe "Emails" do
 
       select  heading.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a hospital"
-      fill_in "Description", with: "We have lots of people that require medical attention"
+      fill_in_ckeditor "Description", with: "We have lots of people that require medical attention"
       check   "budget_investment_terms_of_service"
 
       click_button "Create Investment"
@@ -373,9 +375,9 @@ describe "Emails" do
       login_as(valuator.user)
       visit edit_valuation_budget_budget_investment_path(budget, investment)
 
-      choose "budget_investment_feasibility_unfeasible"
-      fill_in "budget_investment_unfeasibility_explanation", with: "This is not legal as stated in Article 34.9"
-      find_field("budget_investment[valuation_finished]").click
+      within_fieldset("Feasibility") { choose "Unfeasible" }
+      fill_in "Feasibility explanation", with: "This is not legal as stated in Article 34.9"
+      accept_confirm { check "Valuation finished" }
       click_button "Save changes"
 
       expect(page).to have_content "Dossier updated"
@@ -433,7 +435,7 @@ describe "Emails" do
   end
 
   context "Polls" do
-    scenario "Send email on poll comment reply", :js do
+    scenario "Send email on poll comment reply" do
       user1 = create(:user, email_on_comment_reply: true)
       user2 = create(:user)
       poll = create(:poll, author: create(:user))
@@ -476,7 +478,9 @@ describe "Emails" do
 
       expect(page).to have_content "Newsletter created successfully"
 
-      click_link "Send"
+      accept_confirm { click_link "Send" }
+
+      expect(page).to have_content "Newsletter sent successfully"
 
       expect(unread_emails_for(user_with_newsletter_in_segment_1.email).count).to eq 1
       expect(unread_emails_for(user_with_newsletter_in_segment_2.email).count).to eq 1

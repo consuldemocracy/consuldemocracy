@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate proposals" do
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen   = create(:user)
     proposal  = create(:proposal)
     moderator = create(:moderator)
@@ -58,21 +58,24 @@ describe "Moderate proposals" do
         end
 
         scenario "Hide the proposal" do
-          click_on "Hide proposals"
+          accept_confirm { click_button "Hide proposals" }
+
           expect(page).not_to have_css("proposal_#{proposal.id}")
           expect(proposal.reload).to be_hidden
           expect(proposal.author).not_to be_hidden
         end
 
         scenario "Block the author" do
-          click_on "Block authors"
+          accept_confirm { click_button "Block authors" }
+
           expect(page).not_to have_css("proposal_#{proposal.id}")
           expect(proposal.reload).to be_hidden
           expect(proposal.author).to be_hidden
         end
 
         scenario "Ignore the proposal" do
-          click_button "Mark as viewed"
+          accept_confirm { click_button "Mark as viewed" }
+
           expect(page).not_to have_css("proposal_#{proposal.id}")
           expect(proposal.reload).to be_ignored_flag
           expect(proposal.reload).not_to be_hidden
@@ -80,7 +83,7 @@ describe "Moderate proposals" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:proposal, 2)
 
         visit moderation_proposals_path
@@ -102,13 +105,13 @@ describe "Moderate proposals" do
 
         visit moderation_proposals_path(filter: "all", page: "2", order: "created_at")
 
-        click_button "Mark as viewed"
+        accept_confirm { click_button "Mark as viewed" }
 
         expect(page).to have_selector(".js-order-selector[data-order='created_at']")
 
-        expect(current_url).to include("filter=all")
-        expect(current_url).to include("page=2")
-        expect(current_url).to include("order=created_at")
+        expect(page).to have_current_path(/filter=all/)
+        expect(page).to have_current_path(/page=2/)
+        expect(page).to have_current_path(/order=created_at/)
       end
     end
 

@@ -101,7 +101,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        click_on "Delete document"
+        accept_confirm { click_link "Delete document" }
       end
 
       expect(page).to have_content "Document was deleted successfully."
@@ -113,7 +113,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        click_on "Delete document"
+        accept_confirm { click_link "Delete document" }
       end
 
       expect(page).not_to have_content "Documents (0)"
@@ -125,7 +125,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        click_on "Delete document"
+        accept_confirm { click_link "Delete document" }
       end
 
       within "##{ActionView::RecordIdentifier.dom_id(documentable)}" do

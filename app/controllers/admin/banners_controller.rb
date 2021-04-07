@@ -16,7 +16,7 @@ class Admin::BannersController < Admin::BaseController
   def create
     @banner = Banner.new(banner_params)
     if @banner.save
-      redirect_to admin_banners_path
+      redirect_to admin_banners_path, notice: t("admin.banners.create.notice")
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Admin::BannersController < Admin::BaseController
 
   def update
     if @banner.update(banner_params)
-      redirect_to admin_banners_path
+      redirect_to admin_banners_path, notice: t("admin.banners.update.notice")
     else
       render :edit
     end

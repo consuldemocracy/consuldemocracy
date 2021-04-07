@@ -59,7 +59,7 @@ describe "Admin budget groups", :admin do
       group = create(:budget_group, budget: budget)
 
       visit admin_budget_groups_path(budget)
-      within("#budget_group_#{group.id}") { click_link "Delete" }
+      within("#budget_group_#{group.id}") { accept_confirm { click_link "Delete" } }
 
       expect(page).to have_content "Group deleted successfully"
       expect(page).not_to have_selector "#budget_group_#{group.id}"
@@ -70,7 +70,7 @@ describe "Admin budget groups", :admin do
       create(:budget_heading, group: group)
 
       visit admin_budget_groups_path(budget)
-      within("#budget_group_#{group.id}") { click_link "Delete" }
+      within("#budget_group_#{group.id}") { accept_confirm { click_link "Delete" } }
 
       expect(page).to have_content "You cannot delete a Group that has associated headings"
       expect(page).to have_selector "#budget_group_#{group.id}"
@@ -122,7 +122,7 @@ describe "Admin budget groups", :admin do
       expect(page).to have_field "Maximum number of headings in which a user can select projects", with: "2"
     end
 
-    scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
+    scenario "Changing name for current locale will update the slug if budget is in draft phase" do
       group = create(:budget_group, budget: budget)
       old_slug = group.slug
 

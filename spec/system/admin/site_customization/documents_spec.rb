@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Documents", :admin do
-  scenario "Navigation", :js do
+  scenario "Navigation" do
     visit admin_root_path
 
     within("#side_menu") do
@@ -68,7 +68,7 @@ describe "Documents", :admin do
     expect(page).to have_content "Invalid document"
   end
 
-  scenario "Destroy", :js do
+  scenario "Destroy" do
     document = create(:document, :admin)
 
     visit admin_site_customization_documents_path
