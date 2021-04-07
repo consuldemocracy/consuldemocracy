@@ -5,7 +5,7 @@ tr:
     stats_enabled: "İstatistikleri göster"
     advanced_stats_enabled: "Gelişmiş istatistikleri göster"
     name: Ad
-    email: E-posta
+    email: E posta
     description: Açıklama
     related_sdg_list: Amaçlar ve Hedefler
   activerecord:
@@ -328,12 +328,25 @@ tr:
       sdg/local_target:
         code: "Kod"
         target_id: "Hedef"
+        title: "Başlık"
+      sdg/local_target/translation:
+        title: "Başlık"
+        description: "Açıklama"
+      sdg/phase/kind:
+        sensitization: "Duyarlılık"
+        planning: "Planlama"
+        monitoring: "İzleme"
+      sdg/target:
+        code: "Kod"
+        title: "Başlık"
       site_customization/page:
         content: İçerik
         created_at: Oluşturuldu
         subtitle: Altyazı
         slug: Parça
         status: Durum
+        status_draft: "Taslak"
+        status_published: "Yayınlanmış"
         title: İsim
         updated_at: Güncellenmiş
         more_info_flag: Yardım sayfasında göster
@@ -350,9 +363,20 @@ tr:
         name: Ad
         locale: yer
         body: Gövde
+      tag:
+        name: "Konunun adını yazın"
+      topic:
+        title: "Başlık"
+        description: "İlk metin"
       banner:
         background_color: Arka plan rengi
         font_color: Yazı tipi rengi
+        post_ended_at: "Yayın bitti"
+        post_started_at: "Yayın başladı"
+        target_url: "Link"
+      banner/translation:
+        title: "Başlık"
+        description: "Açıklama"
       legislation/process:
         title: İşlem Adı
         summary: Özet
@@ -372,17 +396,25 @@ tr:
         result_publication_date: Son sonuç yayın tarihi
         background_color: Arka plan rengi
         font_color: Yazı tipi rengi
+        homepage_enabled: "Ana sayfa etkin"
       legislation/process/translation:
         title: İşlem Adı
         summary: Özet
         description: Açıklama
         additional_info: Ek bilgi
+        homepage: "Açıklama"
         milestones_summary: Özet
+      legislation/proposal:
+        description: "Teklif metni"
+        summary: "Teklif özeti"
+        title: "Teklif başlığı"
       legislation/draft_version:
         title: Sürüm adı
         body: Metin
         changelog: Değişiklikler
         status: Durum
+        status_draft: "Taslak"
+        status_published: "Yayınlanmış"
         final_version: Son sürüm
       legislation/draft_version/translation:
         title: Sürüm adı
@@ -391,6 +423,8 @@ tr:
       legislation/question:
         title: İsim
         question_options: Seçenekler
+      legislation/question/translation:
+        title: Soru
       legislation/question_option:
         value: Değer
       legislation/annotation:
@@ -448,6 +482,8 @@ tr:
         order: Bu eylemin kullanıcıya gösterileceği konumu eylemler listesine girebilirsiniz
         active: Aktif
         action_type: Tür
+        action_type_proposed_action: "Önerilen eylem"
+        action_type_resource: "Kaynak"
       dashboard/administrator_task:
         source: Kaynak
         user: Tarafından yürütülen
@@ -459,6 +495,13 @@ tr:
         valuator_group_id: Bilirkişi grubu
         can_comment: Yorumlar oluşturabilir
         can_edit_dossier: Dosyaları düzenleyebilir
+      valuator_group:
+        name: "Grup adı"
+      local_census_record:
+        document_type: Belge Türü
+        document_number: Belge numarası
+        date_of_birth: Doğum tarihi
+        postal_code: Posta kodu
     errors:
       models:
         user:
@@ -494,6 +537,8 @@ tr:
           attributes:
             document_number:
               not_in_census: "Belge sayımda değil"
+            user_id:
+              has_voted: "Kullanıcı zaten oy kullanmış"
         legislation/process:
           attributes:
             end_date:
@@ -534,6 +579,10 @@ tr:
           attributes:
             valuation:
               cannot_comment_valuation: "Bir değerlendirmeye yorum yapamazsınız"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Tercüme edilmiş kaynak
       messages:
         translations_too_short: En az bir çeviri sağlamak zorunludur
         record_invalid: "Onaylama başarısız: %{errors}"
