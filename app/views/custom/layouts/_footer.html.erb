@@ -87,3 +87,15 @@
     </div>
   </div>
 </footer>
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    var theLanguage = $('html').attr('lang');
+
+    if ($(theLanguage) == "en") {
+      console.log("EN")
+      $(".home-page .jumbo.highlight img.margin").attr("src", '/assets/banner-home-en.png');
+    }
+
+  });
+</script>
