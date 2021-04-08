@@ -1691,6 +1691,7 @@ footer {
 }
 
 
+
 .auth-page{
   .auth-image.small-12.medium-3.column{
     width: 45%;
@@ -1728,7 +1729,13 @@ footer {
     min-height: 250px;
   }
 }
-
+html:lang(en){
+  .auth-page {
+    .auth-image.small-12.medium-3.column {
+      background: #ececec image-url("imagen-registro-en.png");
+    }
+  }
+}
 .admin-sidebar li.is-active a, .admin-sidebar li[aria-current] a {
   background: #164142 !important;
   border-left: 2px solid #fff !important;
