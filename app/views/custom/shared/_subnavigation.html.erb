@@ -38,6 +38,7 @@
     <li>
       <%= layout_menu_link_to t("layouts.header.budgets"),
                               page_path("budgets"),
+                              true,
                               accesskey: "5" %>
     </li>
     <% if feature?(:budgets) %>
