@@ -28,10 +28,12 @@ def generate_content(page)
                 </thead>
                 <tbody>"
   I18n.t("pages.accessibility.keyboard_shortcuts.navigation_table.rows").each do |row|
-    content << "  <tr>
+    if row.present?
+      content << "  <tr>
                     <td class='text-center'>#{row[:key_column]}</td>
                     <td>#{row[:page_column]}</td>
                   </tr>"
+    end
   end
   content << "  </tbody>
               </table>
@@ -52,10 +54,12 @@ def generate_content(page)
                 </thead>
                 <tbody>"
   I18n.t("pages.accessibility.keyboard_shortcuts.browser_table.rows").each do |row|
-    content << "  <tr>
+    if row.present?
+      content << "  <tr>
                     <td>#{row[:browser_column]}</td>
                     <td>#{row[:key_column]}</td>
                   </tr>"
+    end
   end
   content << "  </tbody>
               </table>
@@ -74,17 +78,21 @@ def generate_content(page)
                 </thead>
                 <tbody>"
   I18n.t("pages.accessibility.textsize.browser_settings_table.rows").each do |row|
-    content << "  <tr>
+    if row.present?
+      content << "  <tr>
                     <td>#{row[:browser_column]}</td>
                     <td>#{row[:action_column]}</td>
                   </tr>"
+    end
   end
   content << "  </tbody>
               </table>"
   content << "<p>#{I18n.t("pages.accessibility.textsize.browser_shortcuts_table.description")}</p>
               <ul>"
   I18n.t("pages.accessibility.textsize.browser_shortcuts_table.rows").each do |row|
-    content << "<li><strong>#{row[:shortcut_column]}</strong> #{row[:description_column]}</li>"
+    if row.present?
+      content << "<li><strong>#{row[:shortcut_column]}</strong> #{row[:description_column]}</li>"
+    end
   end
   content << "</ul>
               <h2>#{I18n.t("pages.accessibility.compatibility.title")}</h2>
@@ -98,9 +106,8 @@ if SiteCustomization::Page.find_by(slug: "accessibility").nil?
   page = SiteCustomization::Page.new(slug: "accessibility", status: "published")
   generate_content(page)
   I18n.available_locales.each do |locale|
-    I18n.locale = locale 
+    I18n.locale = locale
     translation = page.translations.build(locale: locale)
-   # Not generating content for :fa, :id and it translations, as they are causing error in line 32
-    generate_content(translation) unless locale == :fa or locale == :id or locale == :it
+    generate_content(translation)
   end
 end
