@@ -37,8 +37,8 @@
     <!-- PÁGINA DE PRESUPUESTOS PARTICIPATIVOS -->
     <li>
       <%= layout_menu_link_to t("layouts.header.budgets"),
-                              page_path("budgets"),
-                              true,
+                              page_path("participatory-budgets"),
+                              controller_name == "participatory-budgets",
                               accesskey: "5" %>
     </li>
     <% if feature?(:budgets) %>
