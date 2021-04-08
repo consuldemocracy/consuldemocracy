@@ -153,15 +153,25 @@ footer {
       justify-content: center;
       align-items: center;
       .column {
-        .foot_img {
-          max-width: 200px;
-          height: auto;
-          width: 100%;
+        #foot_image_innovaris {
+          max-height: 60px;
+          height: 100%;
+          width: auto;
         }
-        .foot_img2 {
-          max-width: 300px;
-          height: auto;
-          width: 100%;
+        #foot_image {
+          max-height: 35px;
+          height: 70%;
+          width: auto;
+        }
+        #foot_image2 {
+          max-height: 25px;
+          height: 70%;
+          width: auto;
+        }
+        #foot_image3 {
+          max-height: 30px;
+          height: 70%;
+          width: auto;
         }
       }
     }

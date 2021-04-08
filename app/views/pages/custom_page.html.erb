@@ -17,7 +17,7 @@ elsif user_signed_in?
 end %>
 <% if show==true %>
   <% provide :title do %><%= @custom_page.title %><% end %>
-  <div class="row header">
+  <div class="small-12 medium-9 row header">
       <%= image_tag(@custom_page.imagen.url, :class => "style_image") if @custom_page.imagen.exists? %>
   </div>
 
