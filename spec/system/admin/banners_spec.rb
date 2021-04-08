@@ -6,40 +6,40 @@ describe "Admin banners magement", :admin do
       create(:banner, title: "Banner number one",
              description:  "This is the text of banner number one and is not active yet",
              target_url:  "http://www.url.com",
-             post_started_at: (Time.current + 4.days),
-             post_ended_at:   (Time.current + 10.days),
+             post_started_at: (Date.current + 4.days),
+             post_ended_at:   (Date.current + 10.days),
              background_color: "#FF0000",
              font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number two",
              description:  "This is the text of banner number two and is not longer active",
              target_url:  "http://www.url.com",
-             post_started_at: (Time.current - 10.days),
-             post_ended_at:   (Time.current - 3.days),
+             post_started_at: (Date.current - 10.days),
+             post_ended_at:   (Date.current - 3.days),
              background_color: "#00FF00",
              font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number three",
              description:  "This is the text of banner number three",
              target_url:  "http://www.url.com",
-             post_started_at: (Time.current - 1.day),
-             post_ended_at:   (Time.current + 10.days),
+             post_started_at: (Date.current - 1.day),
+             post_ended_at:   (Date.current + 10.days),
              background_color: "#0000FF",
              font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number four",
              description:  "This is the text of banner number four",
              target_url:  "http://www.url.com",
-             post_started_at: (DateTime.current - 10.days),
-             post_ended_at:   (DateTime.current + 10.days),
+             post_started_at: (Date.current - 10.days),
+             post_ended_at:   (Date.current + 10.days),
              background_color: "#FFF000",
              font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number five",
              description:  "This is the text of banner number five",
              target_url:  "http://www.url.com",
-             post_started_at: (DateTime.current - 10.days),
-             post_ended_at:   (DateTime.current + 10.days),
+             post_started_at: (Date.current - 10.days),
+             post_ended_at:   (Date.current + 10.days),
              background_color: "#FFFF00",
              font_color: "#FFFFFF")
     end
@@ -100,8 +100,8 @@ describe "Admin banners magement", :admin do
     fill_in "Title", with: "En Français"
     fill_in "Description", with: "Link en Français"
     fill_in "Link", with: "https://www.url.com"
-    fill_in "Post started at", with: Time.current - 1.week
-    fill_in "Post ended at", with: Time.current + 1.week
+    fill_in "Post started at", with: Date.current - 1.week
+    fill_in "Post ended at", with: Date.current + 1.week
 
     click_button "Save changes"
     click_link "Edit banner"
@@ -125,8 +125,8 @@ describe "Admin banners magement", :admin do
     create(:banner, title: "Hello",
                     description: "Wrong text",
                     target_url:  "http://www.url.com",
-                    post_started_at: (Time.current + 4.days),
-                    post_ended_at:   (Time.current + 10.days),
+                    post_started_at: (Date.current + 4.days),
+                    post_ended_at:   (Date.current + 10.days),
                     background_color: "#FF0000",
                     font_color: "#FFFFFF")
 
@@ -164,8 +164,8 @@ describe "Admin banners magement", :admin do
     create(:banner, title: "Ugly banner",
                     description: "Bad text",
                     target_url:  "http://www.url.com",
-                    post_started_at: (Time.current + 4.days),
-                    post_ended_at:   (Time.current + 10.days),
+                    post_started_at: (Date.current + 4.days),
+                    post_ended_at:   (Date.current + 10.days),
                     background_color: "#FF0000",
                     font_color: "#FFFFFF")
 

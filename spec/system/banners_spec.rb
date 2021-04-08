@@ -5,8 +5,8 @@ describe "Banner" do
     create(:banner,
            web_sections: [WebSection.find_by!(name: "homepage")],
            description: "Banner description",
-           post_started_at: (Time.current - 4.days),
-           post_ended_at:   (Time.current + 10.days))
+           post_started_at: (Date.current - 4.days),
+           post_ended_at:   (Date.current + 10.days))
 
     visit root_path
 
