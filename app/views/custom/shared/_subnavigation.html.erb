@@ -38,7 +38,7 @@
     <li>
       <%= layout_menu_link_to t("layouts.header.budgets"),
                               page_path("participatory-budgets"),
-                              controller_name == "participatory-budgets",
+                              current_page?(page_path("participatory-budgets")),
                               accesskey: "5" %>
     </li>
     <% if feature?(:budgets) %>
