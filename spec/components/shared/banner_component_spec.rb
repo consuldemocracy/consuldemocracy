@@ -6,8 +6,8 @@ describe Shared::BannerComponent, type: :component do
                     title: "Vote now!",
                     description: "Banner description",
                     target_url:  "http://www.url.com",
-                    post_started_at: (Time.current - 4.days),
-                    post_ended_at:   (Time.current + 10.days),
+                    post_started_at: (Date.current - 4.days),
+                    post_ended_at:   (Date.current + 10.days),
                     background_color: "#FF0000",
                     font_color: "#FFFFFF"
                    )
@@ -69,7 +69,7 @@ describe Shared::BannerComponent, type: :component do
     end
 
     it "only renders active banners" do
-      Banner.first.update!(post_ended_at: 1.day.ago)
+      Banner.first.update!(post_ended_at: Date.current - 1.day)
 
       render_inline Shared::BannerComponent.new("debates")
 
@@ -78,7 +78,7 @@ describe Shared::BannerComponent, type: :component do
     end
 
     it "does not render anything with no active banners" do
-      Banner.all.each { |banner| banner.update!(post_ended_at: 1.day.ago) }
+      Banner.all.each { |banner| banner.update!(post_ended_at: Date.current - 1.day) }
 
       render_inline Shared::BannerComponent.new("debates")
 

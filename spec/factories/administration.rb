@@ -18,8 +18,8 @@ FactoryBot.define do
     sequence(:title) { |n| "Banner title #{n}" }
     sequence(:description) { |n| "This is the text of Banner #{n}" }
     target_url { ["/proposals", "/debates"].sample }
-    post_started_at { Time.current - 7.days }
-    post_ended_at { Time.current + 7.days }
+    post_started_at { Date.current - 7.days }
+    post_ended_at { Date.current + 7.days }
     background_color { "#FF0000" }
     font_color { "#FFFFFF" }
   end
