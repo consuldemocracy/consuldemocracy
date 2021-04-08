@@ -1,12 +1,6 @@
 require "rails_helper"
 
 describe "Admin custom pages", :admin do
-  I18n.available_locales = [:ar, :bg, :bs, :ca, :cs, :da, :de, :el, :en, :es, :"es-PE", :eu, :fa, :fr,
-                                  :gl, :he, :hr, :id, :it, :ka, :nl, :oc, :pl, :"pt-BR",
-                                  :ro, :ru, :sl, :sq, :so, :sr, :sv, :tr, :val, :"zh-CN", :"zh-TW"]
-  SiteCustomization::Page.destroy_all
-  Rails.application.load_seed
-
   context "Index" do
     scenario "lists all created custom pages" do
       custom_page = create(:site_customization_page)
@@ -30,21 +24,6 @@ describe "Admin custom pages", :admin do
       expect(all("[id^='site_customization_page_']").count).to be 7
       slugs.each do |slug|
         expect(page).to have_content slug
-      end
-    end
-
-    scenario "should contain all custom pages translations populated by db:seeds" do
-      paths = { accessibility: "pages.accessibility.title", conditions: "pages.conditions.title",
-                faq: "pages.help.faq.page.title", privacy: "pages.privacy.title",
-                welcome_not_verified: "welcome.welcome.title",
-                welcome_level_two_verified: "welcome.welcome.title",
-                welcome_level_three_verified: "welcome.welcome.title" }
-      I18n.available_locales.each do |locale|
-        I18n.locale = locale
-        paths.each do |slug, path|
-          site = SiteCustomization::Page.find_by(slug: slug).translations.find_by(locale: locale)
-          expect(site.title).to eq I18n.t(path)
-        end
       end
     end
   end
