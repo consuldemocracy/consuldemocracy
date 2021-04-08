@@ -8,10 +8,7 @@ end
 if SiteCustomization::Page.find_by(slug: "conditions").nil?
   page = SiteCustomization::Page.new(slug: "conditions", status: "published")
   page.print_content_flag = true
-  generate_content(page)
   I18n.available_locales.each do |locale|
-    I18n.locale = locale
-    translation = page.translations.build(locale: locale)
-    generate_content(translation)
+    I18n.with_locale(locale) { generate_content(page) }
   end
 end

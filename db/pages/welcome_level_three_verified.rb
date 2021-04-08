@@ -19,10 +19,7 @@ end
 
 if SiteCustomization::Page.find_by(slug: "welcome_level_three_verified").nil?
   page = SiteCustomization::Page.new(slug: "welcome_level_three_verified", status: "published")
-  generate_content(page)
   I18n.available_locales.each do |locale|
-    I18n.locale = locale
-    translation = page.translations.build(locale: locale)
-    generate_content(translation)
+    I18n.with_locale(locale) { generate_content(page) }
   end
 end

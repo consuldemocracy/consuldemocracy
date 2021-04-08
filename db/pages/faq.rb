@@ -5,10 +5,7 @@ def generate_content(page)
 end
 if SiteCustomization::Page.find_by(slug: "faq").nil?
   page = SiteCustomization::Page.new(slug: "faq", status: "published")
-  generate_content(page)
   I18n.available_locales.each do |locale|
-    I18n.locale = locale
-    translation = page.translations.build(locale: locale)
-    generate_content(translation)
+    I18n.with_locale(locale) { generate_content(page) }
   end
 end
