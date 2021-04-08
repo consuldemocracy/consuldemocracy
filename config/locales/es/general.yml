@@ -629,6 +629,7 @@ es:
         title: Ayuda sobre las votaciones
         description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
       no_polls: "No hay votaciones abiertas."
+      more_info: "Más información sobre las votaciones"
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
       already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
