@@ -1933,6 +1933,9 @@ footer a{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center right;
+    &.translatable-fields{
+      background: #fff !important;
+    }
   }
 }
 
