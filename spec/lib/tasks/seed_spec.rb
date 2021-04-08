@@ -23,8 +23,8 @@ describe "rake db:seed" do
           expect(site.title).to eq I18n.t(path)
         end
       end
+    ensure
+      I18n.available_locales = default_locales
     end
-  ensure
-    I18n.available_locales = default_locales
   end
 end
