@@ -17,13 +17,11 @@ elsif user_signed_in?
 end %>
 <% if show==true %>
   <% provide :title do %><%= @custom_page.title %><% end %>
-  <div class="small-12 medium-9 row header">
-      <%= image_tag(@custom_page.imagen.url, :class => "style_image") if @custom_page.imagen.exists? %>
-  </div>
 
   <div class="row margin-top">
 
     <div class="small-12 medium-9 column">
+      <%= image_tag(@custom_page.imagen.url, :class => "style_image ") if @custom_page.imagen.exists? %>
       <h1><%= @custom_page.title %></h1>
       <% if @custom_page.subtitle.present? %>
         <h2><%= @custom_page.subtitle %></h2>
