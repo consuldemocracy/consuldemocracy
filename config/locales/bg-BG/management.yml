@@ -106,6 +106,7 @@ bg:
         one: " съдържащи термина '%{search_term}'"
         other: " съдържащи термина '%{search_term}'"
     sessions:
+      need_managed_user: За да извършите това действие, трябва да изберете потребител
       signed_out: Успешно излизане.
       signed_out_managed_user: Потребителската сесия е излязла успешно.
     username_label: Потребителско име
