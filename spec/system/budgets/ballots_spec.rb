@@ -630,6 +630,7 @@ describe "Ballots" do
 
     scenario "Edge case voting a non-elegible investment" do
       investment1 = create(:budget_investment, :selected, heading: new_york, price: 10000)
+      admin_user = create(:administrator).user
 
       in_browser(:user) do
         login_as user
@@ -639,7 +640,7 @@ describe "Ballots" do
       end
 
       in_browser(:admin) do
-        login_as create(:administrator).user
+        login_as admin_user
         visit edit_admin_budget_group_heading_path(budget, states, new_york)
         fill_in "Amount", with: 10
         click_button "Save heading"
