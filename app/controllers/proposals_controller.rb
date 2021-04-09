@@ -3,6 +3,7 @@ class ProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
   include ImageAttributes
+  include DocumentAttributes
   include MapLocationAttributes
   include Translatable
 
@@ -102,8 +103,7 @@ class ProposalsController < ApplicationController
       attributes = [:video_url, :responsible_name, :tag_list, :terms_of_service,
                     :geozone_id, :skip_map, :related_sdg_list,
                     image_attributes: image_attributes,
-                    documents_attributes: [:id, :title, :attachment, :cached_attachment,
-                                           :user_id, :_destroy],
+                    documents_attributes: document_attributes,
                     map_location_attributes: map_location_attributes]
       translations_attributes = translation_params(Proposal, except: :retired_explanation)
       params.require(:proposal).permit(attributes, translations_attributes)
