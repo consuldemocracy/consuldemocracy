@@ -5,6 +5,7 @@ module Budgets
     include FlagActions
     include RandomSeed
     include ImageAttributes
+    include MapLocationAttributes
     include Translatable
     include InvestmentFilters
 
@@ -136,7 +137,7 @@ module Budgets
                       :terms_of_service, :skip_map, :related_sdg_list,
                       image_attributes: image_attributes,
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-                      map_location_attributes: [:latitude, :longitude, :zoom]]
+                      map_location_attributes: map_location_attributes]
         params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
       end
 

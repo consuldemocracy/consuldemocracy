@@ -2,6 +2,7 @@ class Management::ProposalsController < Management::BaseController
   include HasOrders
   include CommentableActions
   include Translatable
+  include MapLocationAttributes
 
   before_action :only_verified_users, except: :print
   before_action :set_proposal, only: [:vote, :show]
@@ -56,7 +57,7 @@ class Management::ProposalsController < Management::BaseController
     def proposal_params
       attributes = [:video_url, :responsible_name, :tag_list,
                     :terms_of_service, :geozone_id,
-                    :skip_map, map_location_attributes: [:latitude, :longitude, :zoom]]
+                    :skip_map, map_location_attributes: map_location_attributes]
       params.require(:proposal).permit(attributes, translation_params(Proposal))
     end
 
