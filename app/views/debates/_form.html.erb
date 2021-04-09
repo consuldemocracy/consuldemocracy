@@ -20,7 +20,7 @@
         <%= translations_form.text_area :description,
               maxlength: Debate.description_max_length,
               class: "html-area" %>
-        <% if @debate.errors.present? %>
+        <% if @debate.errors.present? && locale == translations_form.locale %>
           <div class="form-error is-visible html-area ">
             <%= @debate.errors[:description][0] %>
           </div>
