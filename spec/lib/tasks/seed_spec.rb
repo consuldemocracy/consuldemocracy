@@ -17,10 +17,11 @@ describe "rake db:seed" do
                 welcome_level_three_verified: "welcome.welcome.title" }
 
       I18n.available_locales.each do |locale|
-        I18n.locale = locale
-        paths.each do |slug, path|
-          site = SiteCustomization::Page.find_by(slug: slug).translations.find_by(locale: locale)
-          expect(site.title).to eq I18n.t(path)
+        I18n.with_locale(locale) do
+          paths.each do |slug, path|
+            site = SiteCustomization::Page.find_by(slug: slug).translations.find_by(locale: locale)
+            expect(site.title).to eq I18n.t(path)
+          end
         end
       end
     ensure
