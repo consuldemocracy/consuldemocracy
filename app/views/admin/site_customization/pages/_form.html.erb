@@ -48,14 +48,33 @@
 
       <%-# ----------------------JHH: Este código añade el formulario para los añadir los users---------------------- -%>
       <div class="small-12 column">
-       <%= f.label :page_users_id %>
 
+        <%= f.label 'Participantes con acceso a la página' %>
+        <% if @people.empty? %>
+          <p><%= t("debates.form.empty_participants") %></p>
+        <% else %>
+          <div id="participant_tags" class="tags">
+               <% @people.each do |actual| %>
+                <a class="select-participants"><%= actual.id%>: <%=actual.email%></a>
+               <% end %>
+          </div>
+        <% end %>
+
+       <%= f.label 'Participantes disponibles para añadir' %>
        <div id="participant_tags" class="tags">
             <% @participants.each do |participant| %>
               <a class="select-participants"><%= participant.id%>: <%=participant.email%></a>
             <% end %>
        </div>
-       <%= f.text_field :page_users_id, placeholder: t("proposals.form.participant_placeholder")%>
+
+       <br/>
+       <%= f.text_field :page_users_id, :label => t("debates.form.add_participants"), placeholder: t("proposals.form.participant_placeholder")%>
+       
+       <br/>
+       <% if !@people.empty?%>
+        <%= f.text_field :delete_users_id, :label => t("debates.form.delete_participants"), placeholder: t("proposals.form.participant_placeholder")%>
+      <% end %>
+
       </div>
       <%-# ---------------------- Fin ---------------------- -%>
 

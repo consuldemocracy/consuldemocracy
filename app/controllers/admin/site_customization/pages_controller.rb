@@ -3,10 +3,24 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
   load_and_authorize_resource :page, class: "SiteCustomization::Page"
 
   #JHH:
-  before_action :load_participants
+  before_action :load_participants, :actual_people, only: [:edit, :new]
+
+  def actual_people
+    @people = []
+    @page_actual_participant = PageParticipant.where(site_customization_pages_id: @page.id).order(user_id: :asc)
+    @page_actual_participant.each do |part|
+      @people += User.where(id: part.user_id)
+    end
+    @people
+  end
 
   def load_participants
-    @participants = User.all
+    arr = []
+    @except = actual_people()
+    @except.each do |index|
+      arr << index.id
+    end
+    @participants = User.where.not(id: arr).order(id: :asc)
   end
   #Fin
 
@@ -43,7 +57,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
   private
     #JHH: Aquí se añade el campo de participantes de las páginas
     def page_params
-      attributes = [:public, :page_users_id, :slug, :more_info_flag, :print_content_flag, :status]
+      attributes = [:delete_users_id, :public, :page_users_id, :slug, :more_info_flag, :print_content_flag, :status]
 
       params.require(:site_customization_page).permit(*attributes, :imagen,
         translation_params(SiteCustomization::Page)
