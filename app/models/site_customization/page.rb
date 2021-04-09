@@ -27,24 +27,31 @@ class SiteCustomization::Page < ApplicationRecord
   has_many :page_participants
   has_many :users, through: :page_participants
 
-  after_save :save_page_participants
+  after_save :save_page_participants, :delete_from_participants
   after_destroy :delete_page_participants
 
-  attr_accessor :page_users_id
+  attr_accessor :page_users_id, :delete_users_id
 
   def delete_page_participants
     PageParticipant.where(site_customization_pages_id: self).destroy_all
   end
 
+  def delete_from_participants
+    return if delete_users_id.nil? || delete_users_id.empty?
+
+    delete_participants_array = delete_users_id.split(",")
+
+    not_participant = PageParticipant.where(site_customization_pages_id: self)
+    not_participant.where(user_id: delete_participants_array).destroy_all
+
+  end
+
   def save_page_participants
     #Convertir en un arreglo alu10,alu20 => [alu10,alu20]
 
-    return PageParticipant.where(site_customization_pages_id: self).destroy_all if page_users_id.nil? || page_users_id.empty?
+    return if page_users_id.nil? || page_users_id.empty?
 
     participants_array = page_users_id.split(",")
-
-    not_participant = PageParticipant.where(site_customization_pages_id: self)
-    not_participant.where.not(user_id: participants_array).destroy_all
     #Iterarlo
     participants_array.each do |id_participant|
       #Crear ProposalParticipants

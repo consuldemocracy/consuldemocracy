@@ -28,7 +28,7 @@ class Debate < ApplicationRecord
   has_many :debate_participants
   has_many :users, through: :debate_participants
 
-  attr_accessor :debate_users_id
+  attr_accessor :debate_users_id, :delete_debate_users_id
   #Fin
 
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :debates
@@ -44,7 +44,7 @@ class Debate < ApplicationRecord
   before_save :calculate_hot_score, :calculate_confidence_score
 
   #JHH:
-  after_save :save_debate_participants
+  after_save :save_debate_participants, :delete_from_debate_participants
   after_destroy :delete_debate_participants
   #Fin
 
@@ -70,13 +70,19 @@ class Debate < ApplicationRecord
     DebateParticipant.where(debate_id: self).destroy_all
   end
 
-  def save_debate_participants
-    return DebateParticipant.where(debate_id: self).destroy_all if debate_users_id.nil? || debate_users_id.empty?
+  def delete_from_debate_participants
+    return if delete_debate_users_id.nil? || delete_debate_users_id.empty?
 
-    debate_users_array = self.debate_users_id.split(",")
+    delete_participants_array = delete_debate_users_id.split(",")
 
     not_participant = DebateParticipant.where(debate_id: self)
-    not_participant.where.not(user_id: debate_users_array).destroy_all
+    not_participant.where(user_id: delete_participants_array).destroy_all
+  end
+
+  def save_debate_participants
+    return if debate_users_id.nil? || debate_users_id.empty?
+
+    debate_users_array = debate_users_id.split(",")
 
     debate_users_array.each do |debate_user|
       DebateParticipant.find_or_create_by(debate: self, user_id: debate_user)

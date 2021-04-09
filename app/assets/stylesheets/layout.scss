@@ -603,7 +603,7 @@ body > header,
       padding-left: 0;
 
       @include breakpoint(medium) {
-        font-size: $small-font-size;
+        font-size: $small-font-size * 1.1;
         padding: rem-calc(11) rem-calc(16);
       }
     }
@@ -712,7 +712,7 @@ body > header,
 .top-links {
   background: $dark;
   color: #fff;
-  font-size: $small-font-size;
+  font-size: $small-font-size * 1.1;
   padding-right: $line-height / 2;
 
   a {
@@ -1056,7 +1056,7 @@ footer {
     border: 0;
     border-radius: rem-calc(4);
     color: #fff;
-    font-size: $small-font-size;
+    font-size: $small-font-size * 1.1;
     height: $line-height;
     margin-bottom: 0;
     margin-top: $line-height / 4;

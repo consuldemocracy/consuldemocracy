@@ -3,7 +3,7 @@
     <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
   <% end %>
 
-  <div class="top-links">
+  <div class="top-links show-for-small-only">
     <div class="row">
       <%= render "shared/locale_switcher" %>
       <div class="hide-for-small-only">
@@ -14,7 +14,7 @@
 
   <div class="row" style="max-width:100%">
     <div class="top-bar">
-
+      
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
         <%= t("application.menu") %>
@@ -29,6 +29,7 @@
       <div id="responsive-menu">
         <div class="top-bar-right">
           <ul class="menu" data-responsive-menu="medium-dropdown">
+            <li class="hide-for-small-only" style="margin-right:20px;"><%= render "shared/locale_switcher"%></li>
             <%= render "shared/admin_login_items" %>
             <%= render "layouts/notification_item" %>
             <%= render "devise/menu/login_items" %>

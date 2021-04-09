@@ -20,10 +20,26 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   # JHH: 
-  before_action :load_participants
-   
+  before_action :load_participants, :actual_people, only: [:edit,:new]
+  
+  def actual_people
+    @people = []
+    @debate_actual_participant = DebateParticipant.where(debate_id: @debate.id).order(user_id: :asc)
+    @debate_actual_participant.each do |part|
+      @people += User.where(id: part.user_id)
+    end
+    @people
+  end
+
+
+
   def load_participants
-    @participants = User.all
+    arr = []
+    @except = actual_people()
+    @except.each do |index|
+      arr << index.id
+    end
+    @participants = User.where.not(id: arr).order(id: :asc)
   end
   #Fin
 
@@ -63,7 +79,7 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      attributes = [:debate_users_id, :tag_list, :terms_of_service, :related_sdg_list]
+      attributes = [:delete_debate_users_id, :debate_users_id, :tag_list, :terms_of_service, :related_sdg_list]
       params.require(:debate).permit(attributes, translation_params(Debate))
     end
 

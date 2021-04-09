@@ -94,6 +94,9 @@ es:
       tags_instructions: Etiqueta este debate.
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
       participant_placeholder: "Escribe los id de los participantes que desees separadas por coma (',')"
+      add_participants: "Añadir Participantes"
+      delete_participants: "Eliminar Participantes"
+      empty_participants: "Actualmente no existen participantes"
     index:
       featured_debates: Destacar
       orders:
