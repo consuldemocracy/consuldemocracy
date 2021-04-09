@@ -2,17 +2,14 @@ require "rails_helper"
 
 describe "Notifications" do
   let(:user) { create :user }
-
-  before do
-    login_as(user)
-    visit root_path
-  end
+  before { login_as(user) }
 
   scenario "View all" do
     read1 = create(:notification, :read, user: user)
     read2 = create(:notification, :read, user: user)
     unread = create(:notification, user: user)
 
+    visit root_path
     click_notifications_icon
     click_link "Read"
 
@@ -27,6 +24,7 @@ describe "Notifications" do
     unread2 = create(:notification, user: user)
     read = create(:notification, :read, user: user)
 
+    visit root_path
     click_notifications_icon
     click_link "Unread"
 
@@ -40,6 +38,7 @@ describe "Notifications" do
     proposal = create(:proposal)
     create(:notification, user: user, notifiable: proposal)
 
+    visit root_path
     click_notifications_icon
 
     first(".notification a").click
@@ -56,6 +55,7 @@ describe "Notifications" do
     notification1 = create(:notification, user: user)
     notification2 = create(:notification, user: user)
 
+    visit root_path
     click_notifications_icon
 
     within("#notification_#{notification1.id}") do
@@ -70,6 +70,7 @@ describe "Notifications" do
   scenario "Mark all as read" do
     2.times { create(:notification, user: user) }
 
+    visit root_path
     click_notifications_icon
 
     expect(page).to have_css(".notification", count: 2)
@@ -82,6 +83,7 @@ describe "Notifications" do
     notification1 = create(:notification, :read, user: user)
     notification2 = create(:notification, user: user)
 
+    visit root_path
     click_notifications_icon
     click_link "Read"
 
@@ -115,6 +117,7 @@ describe "Notifications" do
   end
 
   scenario "No notifications" do
+    visit root_path
     click_notifications_icon
     expect(page).to have_content "You don't have new notifications."
   end
@@ -129,6 +132,7 @@ describe "Notifications" do
   scenario "Notification's notifiable model no longer includes Notifiable module" do
     create(:notification, :for_poll_question, user: user)
 
+    visit root_path
     click_notifications_icon
     expect(page).to have_content("This resource is not available anymore.", count: 1)
   end
