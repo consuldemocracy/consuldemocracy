@@ -41,10 +41,7 @@ describe "Ballots" do
   end
 
   context "Voting" do
-    before do
-      login_as(user)
-      visit budget_path(budget)
-    end
+    before { login_as(user) }
 
     let!(:city) { create(:budget_group, budget: budget, name: "City") }
     let!(:districts) { create(:budget_group, budget: budget, name: "Districts") }
