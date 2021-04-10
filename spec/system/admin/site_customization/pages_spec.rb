@@ -14,12 +14,12 @@ describe "Admin custom pages", :admin do
       slugs = %w[accessibility conditions faq privacy welcome_not_verified
                  welcome_level_two_verified welcome_level_three_verified]
 
-      visit admin_site_customization_pages_path
-
       expect(SiteCustomization::Page.count).to be 7
       slugs.each do |slug|
         expect(SiteCustomization::Page.find_by(slug: slug).status).to eq "published"
       end
+
+      visit admin_site_customization_pages_path
 
       expect(all("[id^='site_customization_page_']").count).to be 7
       slugs.each do |slug|
