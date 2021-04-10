@@ -59,16 +59,28 @@ describe "Moderate proposals" do
           accept_confirm { click_button "Hide proposals" }
 
           expect(page).not_to have_css("#proposal_#{proposal.id}")
-          expect(proposal.reload).to be_hidden
-          expect(proposal.author).not_to be_hidden
+
+          click_link "Block users"
+          fill_in "email or name of user", with: proposal.author.email
+          click_button "Search"
+
+          within "tr", text: proposal.author.name do
+            expect(page).to have_link "Block"
+          end
         end
 
         scenario "Block the author" do
           accept_confirm { click_button "Block authors" }
 
           expect(page).not_to have_css("#proposal_#{proposal.id}")
-          expect(proposal.reload).to be_hidden
-          expect(proposal.author).to be_hidden
+
+          click_link "Block users"
+          fill_in "email or name of user", with: proposal.author.email
+          click_button "Search"
+
+          within "tr", text: proposal.author.name do
+            expect(page).to have_content "Blocked"
+          end
         end
 
         scenario "Ignore the proposal", :no_js do

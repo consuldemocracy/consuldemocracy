@@ -60,16 +60,28 @@ describe "Moderate debates" do
           accept_confirm { click_button "Hide debates" }
 
           expect(page).not_to have_css("#debate_#{debate.id}")
-          expect(debate.reload).to be_hidden
-          expect(debate.author).not_to be_hidden
+
+          click_link "Block users"
+          fill_in "email or name of user", with: debate.author.email
+          click_button "Search"
+
+          within "tr", text: debate.author.name do
+            expect(page).to have_link "Block"
+          end
         end
 
         scenario "Block the author" do
           accept_confirm { click_button "Block authors" }
 
           expect(page).not_to have_css("#debate_#{debate.id}")
-          expect(debate.reload).to be_hidden
-          expect(debate.author).to be_hidden
+
+          click_link "Block users"
+          fill_in "email or name of user", with: debate.author.email
+          click_button "Search"
+
+          within "tr", text: debate.author.name do
+            expect(page).to have_content "Blocked"
+          end
         end
 
         scenario "Ignore the debate", :no_js do

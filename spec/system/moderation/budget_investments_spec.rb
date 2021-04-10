@@ -68,9 +68,13 @@ describe "Moderate budget investments" do
 
           expect(page).not_to have_css("#investment_#{investment.id}")
 
-          investment.reload
+          click_link "Block users"
+          fill_in "email or name of user", with: investment.author.email
+          click_button "Search"
 
-          expect(investment.author).not_to be_hidden
+          within "tr", text: investment.author.name do
+            expect(page).to have_link "Block"
+          end
         end
 
         scenario "Block the author" do
@@ -78,9 +82,13 @@ describe "Moderate budget investments" do
 
           expect(page).not_to have_css("#investment_#{investment.id}")
 
-          investment.reload
+          click_link "Block users"
+          fill_in "email or name of user", with: investment.author.email
+          click_button "Search"
 
-          expect(investment.author).to be_hidden
+          within "tr", text: investment.author.name do
+            expect(page).to have_content "Blocked"
+          end
         end
 
         scenario "Ignore the investment", :no_js do
