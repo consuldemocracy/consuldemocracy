@@ -1588,9 +1588,7 @@ describe "Admin budget investments", :admin do
       investment2.update!(administrator: admin)
 
       login_as(valuator.user)
-      visit root_path
-      click_link "Menu"
-      click_link "Valuation"
+      visit valuation_root_path
 
       within "#budget_#{budget.id}" do
         click_link "Evaluate"
