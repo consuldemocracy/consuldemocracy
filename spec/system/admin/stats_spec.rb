@@ -220,6 +220,9 @@ describe "Stats", :admin do
       campaign = create(:campaign)
 
       visit root_path(track_id: campaign.track_id)
+
+      expect(page).to have_content "Sign out"
+
       visit admin_stats_path
 
       within("#stats") do

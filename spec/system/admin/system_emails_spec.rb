@@ -301,6 +301,8 @@ describe "System Emails" do
         click_on "Moderate notification send"
       end
 
+      expect(page).not_to have_content("Proposal A Title")
+
       visit admin_system_email_preview_pending_path("proposal_notification_digest")
 
       expect(page).to have_content("Proposal B")

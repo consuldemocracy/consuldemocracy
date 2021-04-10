@@ -333,7 +333,12 @@ describe "Budget Investments" do
       expect(order).not_to be_empty
 
       click_link first_investment.title
+
+      expect(page).not_to have_link first_investment.title
+
       click_link "Go back"
+
+      expect(page).to have_link first_investment.title
 
       new_order = all(".budget-investment h3").map(&:text)
       expect(order).to eq(new_order)

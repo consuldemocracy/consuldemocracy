@@ -1075,6 +1075,8 @@ describe "Admin budget investments", :admin do
       check "Marta"
       click_button "Update Budget"
 
+      expect(page).to have_content "Participatory budget updated successfully"
+
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"
 
@@ -1103,6 +1105,8 @@ describe "Admin budget investments", :admin do
       check "Valentina"
       check "Val"
       click_button "Update Budget"
+
+      expect(page).to have_content "Participatory budget updated successfully"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"
@@ -1225,6 +1229,8 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_tag_list", with: "Park, Trees"
       fill_in "budget_investment_valuation_tag_list", with: "Education, Environment"
       click_button "Update"
+
+      expect(page).to have_content "Investment project updated succesfully"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
@@ -1740,6 +1746,9 @@ describe "Admin budget investments", :admin do
       click_link "Advanced filters"
       check "Valuation finished"
       click_button "Filter"
+
+      expect(page).to have_content "Finished Investment"
+      expect(page).not_to have_content "Unfeasible one"
 
       click_link "Download current selection"
 
