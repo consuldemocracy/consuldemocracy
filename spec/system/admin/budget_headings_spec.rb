@@ -160,8 +160,7 @@ describe "Admin budget headings", :admin do
     end
 
     scenario "Changing name for current locale will update the slug if budget is in draft phase" do
-      heading = create(:budget_heading, group: group)
-      old_slug = heading.slug
+      heading = create(:budget_heading, group: group, name: "Old English Name")
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
@@ -170,7 +169,10 @@ describe "Admin budget headings", :admin do
       click_button "Save heading"
 
       expect(page).to have_content "Heading updated successfully"
-      expect(heading.reload.slug).to eq old_slug
+
+      visit budget_investments_path(budget, heading_id: "old-english-name")
+
+      expect(page).to have_content "Old English Name"
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
@@ -179,8 +181,10 @@ describe "Admin budget headings", :admin do
       click_button "Save heading"
 
       expect(page).to have_content "Heading updated successfully"
-      expect(heading.reload.slug).not_to eq old_slug
-      expect(heading.slug).to eq "new-english-name"
+
+      visit budget_investments_path(budget, heading_id: "new-english-name")
+
+      expect(page).to have_content "New English Name"
     end
   end
 
