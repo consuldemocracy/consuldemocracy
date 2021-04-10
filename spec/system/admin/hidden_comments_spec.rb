@@ -71,8 +71,9 @@ describe "Admin hidden comments", :admin do
 
     expect(page).not_to have_content(comment.body)
 
-    expect(comment.reload).not_to be_hidden
-    expect(comment).to be_ignored_flag
+    visit comment_path(comment)
+
+    expect(page).to have_content(comment.body)
   end
 
   scenario "Confirm hide" do

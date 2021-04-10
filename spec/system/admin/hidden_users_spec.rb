@@ -25,7 +25,9 @@ describe "Admin hidden users", :admin do
 
     expect(page).not_to have_content(user.username)
 
-    expect(user.reload).not_to be_hidden
+    visit user_path(user)
+
+    expect(page).to have_content(user.username)
   end
 
   scenario "Confirm hide" do

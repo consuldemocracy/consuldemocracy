@@ -9,8 +9,9 @@ describe "Admin hidden debates", :admin do
 
     expect(page).not_to have_content(debate.title)
 
-    expect(debate.reload).not_to be_hidden
-    expect(debate).to be_ignored_flag
+    visit debate_path(debate)
+
+    expect(page).to have_content debate.title
   end
 
   scenario "Confirm hide" do

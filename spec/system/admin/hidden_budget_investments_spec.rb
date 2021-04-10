@@ -22,9 +22,9 @@ describe "Admin hidden budget investments", :admin do
 
     expect(page).not_to have_content(investment.title)
 
-    investment.reload
+    visit budget_investment_path(investment.budget, investment)
 
-    expect(investment).to be_ignored_flag
+    expect(page).to have_content(investment.title)
   end
 
   scenario "Confirm hide" do

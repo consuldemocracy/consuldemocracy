@@ -22,8 +22,9 @@ describe "Admin hidden proposals", :admin do
 
     expect(page).not_to have_content(proposal.title)
 
-    expect(proposal.reload).not_to be_hidden
-    expect(proposal).to be_ignored_flag
+    visit proposal_path(proposal)
+
+    expect(page).to have_content proposal.title
   end
 
   scenario "Confirm hide" do

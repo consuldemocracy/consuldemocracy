@@ -17,9 +17,11 @@ describe "Admin proposal notifications", :admin do
 
     expect(page).not_to have_content(proposal_notification.title)
 
-    expect(proposal_notification.reload).not_to be_hidden
-    expect(proposal_notification).to be_ignored
-    expect(proposal_notification).not_to be_moderated
+    logout
+    login_as(proposal_notification.author)
+    visit proposal_notification_path(proposal_notification)
+
+    expect(page).to have_content(proposal_notification.title)
   end
 
   scenario "Confirm hide" do
