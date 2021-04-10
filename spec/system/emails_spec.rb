@@ -177,27 +177,29 @@ describe "Emails" do
 
   context "Comment replies" do
     let(:user) { create(:user, email_on_comment_reply: true) }
+    let(:debate) { create(:debate) }
+    let!(:comment) { create(:comment, commentable: debate, user: user) }
 
     scenario "Send email on comment reply" do
-      reply_to(user)
+      reply_to(comment)
 
       email = open_last_email
       expect(email).to have_subject("Someone has responded to your comment")
       expect(email).to deliver_to(user)
-      expect(email).not_to have_body_text(debate_path(Comment.first.commentable))
+      expect(email).not_to have_body_text(debate_path(debate))
       expect(email).to have_body_text(comment_path(Comment.last))
       expect(email).to have_body_text("To stop receiving these emails change your settings in")
       expect(email).to have_body_text(account_path)
     end
 
     scenario "Do not send email about own replies to own comments" do
-      reply_to(user, replier: user)
+      reply_to(comment, replier: user)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
 
     scenario "Do not send email about comment reply unless set in preferences" do
       user.update!(email_on_comment_reply: false)
-      reply_to(user)
+      reply_to(comment)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
   end
