@@ -82,7 +82,10 @@ describe "Admin tags", :admin do
         click_button "Create topic"
       end
 
-      expect(Tag.category.where(name: "wow_category")).to exist
+      within "tbody" do
+        expect(page).to have_content "Existence"
+        expect(page).to have_content "wow_category"
+      end
     end
   end
 

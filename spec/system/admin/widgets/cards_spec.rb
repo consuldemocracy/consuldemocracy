@@ -25,7 +25,7 @@ describe "Cards", :admin do
         expect(page).to have_content "Card description"
         expect(page).to have_content "Link text"
         expect(page).to have_content "consul.dev"
-        expect(page).to have_link "Show image", href: Widget::Card.last.image_url(:large)
+        expect(page).to have_link "Show image", title: "clippy.jpg"
       end
     end
   end

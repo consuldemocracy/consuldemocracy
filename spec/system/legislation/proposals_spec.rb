@@ -152,7 +152,7 @@ describe "Legislation Proposals" do
 
     expect(page).to have_content "Legislation proposal with image"
     expect(page).to have_content "Including an image on a legislation proposal"
-    expect(page).to have_css("img[alt='#{Legislation::Proposal.last.image.title}']")
+    expect(page).to have_css "img[alt='clippy.jpg']"
   end
 
   scenario "Show votes score on index and show" do
