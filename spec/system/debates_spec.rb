@@ -201,7 +201,7 @@ describe "Debates" do
     expect(page).to have_content("-6 votes")
   end
 
-  scenario "Create" do
+  scenario "Create", :with_frozen_time do
     author = create(:user)
     login_as(author)
 
@@ -216,7 +216,7 @@ describe "Debates" do
     expect(page).to have_content "Debate created successfully."
     expect(page).to have_content "This is very important because..."
     expect(page).to have_content author.name
-    expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
+    expect(page).to have_content I18n.l(Date.current)
   end
 
   scenario "Create with invisible_captcha honeypot field", :no_js do

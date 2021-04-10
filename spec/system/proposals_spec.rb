@@ -355,7 +355,7 @@ describe "Proposals" do
     expect(page).to have_css "meta[property='og:title'][content=\'#{proposal.title}\']", visible: :hidden
   end
 
-  scenario "Create and publish" do
+  scenario "Create and publish", :with_frozen_time do
     author = create(:user)
     login_as(author)
 
@@ -387,7 +387,7 @@ describe "Proposals" do
     expect(page).to have_content author.name
     expect(page).to have_content "Refugees"
     expect(page).to have_content "Solidarity"
-    expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
+    expect(page).to have_content I18n.l(Date.current)
   end
 
   scenario "Create with invisible_captcha honeypot field", :no_js do
