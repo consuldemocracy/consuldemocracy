@@ -19,8 +19,8 @@ describe "Proposals" do
       fill_in "Proposal title", with: "Help refugees"
       fill_in "Proposal summary", with: "In summary, what we want is..."
       fill_in_ckeditor "Proposal text", with: "This is very important because..."
-      fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yRYFKcMa_Ek"
-      check "proposal_terms_of_service"
+      fill_in "External video URL", with: "https://www.youtube.com/watch?v=yRYFKcMa_Ek"
+      check "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create proposal"
 
