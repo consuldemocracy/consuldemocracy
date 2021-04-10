@@ -11,21 +11,6 @@ describe "Account" do
     expect(page).to have_content "No verified user logged in yet"
   end
 
-  scenario "Delete a user account" do
-    user = create(:user, :level_two)
-    login_managed_user(user)
-
-    login_as_manager
-    visit management_account_path
-
-    click_link "Delete user"
-    accept_confirm { click_link "Delete account" }
-
-    expect(page).to have_content "User account deleted."
-
-    expect(user.reload.erase_reason).to eq "Deleted by manager: manager_user_#{Manager.last.user_id}"
-  end
-
   scenario "Send reset password email to currently managed user session" do
     user = create(:user, :level_three)
     login_managed_user(user)
