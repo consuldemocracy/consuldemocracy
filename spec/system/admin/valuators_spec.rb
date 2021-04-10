@@ -4,8 +4,6 @@ describe "Admin valuators", :admin do
   let!(:user) { create(:user, username: "Jose Luis Balbin") }
   let!(:valuator) { create(:valuator, description: "Very reliable") }
 
-  before { visit admin_valuators_path }
-
   scenario "Show" do
     visit admin_valuator_path(valuator)
 
@@ -16,12 +14,16 @@ describe "Admin valuators", :admin do
   end
 
   scenario "Index" do
+    visit admin_valuators_path
+
     expect(page).to have_content(valuator.name)
     expect(page).to have_content(valuator.email)
     expect(page).not_to have_content(user.name)
   end
 
   scenario "Create" do
+    visit admin_valuators_path
+
     fill_in "search", with: user.email
     click_button "Search"
 
@@ -51,6 +53,8 @@ describe "Admin valuators", :admin do
   end
 
   scenario "Destroy" do
+    visit admin_valuators_path
+
     accept_confirm { click_link "Delete" }
 
     within("#valuators") do

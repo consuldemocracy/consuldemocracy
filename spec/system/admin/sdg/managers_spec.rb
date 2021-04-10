@@ -4,18 +4,19 @@ describe "Admin SDG managers" do
   let!(:user) { create(:user) }
   let!(:sdg_manager) { create(:sdg_manager) }
 
-  before do
-    login_as(create(:administrator).user)
-    visit admin_sdg_managers_path
-  end
+  before { login_as(create(:administrator).user) }
 
   scenario "Index" do
+    visit admin_sdg_managers_path
+
     expect(page).to have_content sdg_manager.name
     expect(page).to have_content sdg_manager.email
     expect(page).not_to have_content user.name
   end
 
   scenario "Create SDG Manager" do
+    visit admin_sdg_managers_path
+
     fill_in "search", with: user.email
     click_button "Search"
 
@@ -29,6 +30,8 @@ describe "Admin SDG managers" do
   end
 
   scenario "Delete SDG Manager" do
+    visit admin_sdg_managers_path
+
     accept_confirm { click_link "Delete" }
 
     within("#sdg_managers") do

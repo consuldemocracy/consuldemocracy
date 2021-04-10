@@ -5,12 +5,11 @@ describe "Admin administrators" do
   let!(:user) { create(:user, username: "Jose Luis Balbin") }
   let!(:user_administrator) { create(:administrator, description: "admin_alias") }
 
-  before do
-    login_as(admin.user)
-    visit admin_administrators_path
-  end
+  before { login_as(admin.user) }
 
   scenario "Index" do
+    visit admin_administrators_path
+
     expect(page).to have_content user_administrator.id
     expect(page).to have_content user_administrator.name
     expect(page).to have_content user_administrator.email
@@ -19,6 +18,8 @@ describe "Admin administrators" do
   end
 
   scenario "Create Administrator" do
+    visit admin_administrators_path
+
     fill_in "search", with: user.email
     click_button "Search"
 
@@ -30,6 +31,8 @@ describe "Admin administrators" do
   end
 
   scenario "Delete Administrator" do
+    visit admin_administrators_path
+
     within "#administrator_#{user_administrator.id}" do
       accept_confirm { click_link "Delete" }
     end
@@ -40,6 +43,8 @@ describe "Admin administrators" do
   end
 
   scenario "Delete Administrator when its the current user" do
+    visit admin_administrators_path
+
     within "#administrator_#{admin.id}" do
       accept_confirm { click_link "Delete" }
     end

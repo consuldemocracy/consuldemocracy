@@ -4,17 +4,17 @@ describe "Admin moderators", :admin do
   let!(:user)      { create(:user, username: "Jose Luis Balbin") }
   let!(:moderator) { create(:moderator) }
 
-  before do
-    visit admin_moderators_path
-  end
-
   scenario "Index" do
+    visit admin_moderators_path
+
     expect(page).to have_content moderator.name
     expect(page).to have_content moderator.email
     expect(page).not_to have_content user.name
   end
 
   scenario "Create Moderator" do
+    visit admin_moderators_path
+
     fill_in "search", with: user.email
     click_button "Search"
 
@@ -26,6 +26,8 @@ describe "Admin moderators", :admin do
   end
 
   scenario "Delete Moderator" do
+    visit admin_moderators_path
+
     accept_confirm { click_link "Delete" }
 
     within("#moderators") do
