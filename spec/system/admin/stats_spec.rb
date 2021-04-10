@@ -411,10 +411,12 @@ describe "Stats", :admin do
     end
 
     scenario "Renders all goals stats" do
+      goals_count = SDG::Goal.count
+
       visit sdg_admin_stats_path
 
-      expect(page).to have_css "h3", count: SDG::Goal.count
-      expect(page).to have_css ".sdg-goal-stats", count: SDG::Goal.count
+      expect(page).to have_css "h3", count: goals_count
+      expect(page).to have_css ".sdg-goal-stats", count: goals_count
     end
   end
 end

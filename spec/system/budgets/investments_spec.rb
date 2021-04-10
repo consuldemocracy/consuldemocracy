@@ -325,13 +325,14 @@ describe "Budget Investments" do
 
     scenario "Random order maintained when going back from show" do
       per_page.times { create(:budget_investment, heading: heading) }
+      first_investment = Budget::Investment.first
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
       order = all(".budget-investment h3").map(&:text)
       expect(order).not_to be_empty
 
-      click_link Budget::Investment.first.title
+      click_link first_investment.title
       click_link "Go back"
 
       new_order = all(".budget-investment h3").map(&:text)
@@ -742,15 +743,16 @@ describe "Budget Investments" do
       scenario "Price & explanation is shown when Budget is on published prices phase" do
         Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
           budget.update!(phase: phase)
+
+          if budget.finished?
+            investment.update!(winner: true)
+          end
+
           visit budget_investment_path(budget, id: investment.id)
 
           expect(page).to have_content(investment.formatted_price)
           expect(page).to have_content(investment.price_explanation)
           expect(page).to have_link("See price explanation")
-
-          if budget.finished?
-            investment.update(winner: true)
-          end
 
           visit budget_investments_path(budget)
 

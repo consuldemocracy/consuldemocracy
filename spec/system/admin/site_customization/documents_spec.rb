@@ -17,12 +17,13 @@ describe "Documents", :admin do
     3.times { create(:document, :admin) }
     1.times { create(:document) }
 
+    document = Document.first
+    attachment = document.attachment
+
     visit admin_site_customization_documents_path
 
     expect(page).to have_content "There are 3 documents"
-
-    document = Document.first
-    expect(page).to have_link document.title, href: document.attachment.url
+    expect(page).to have_link document.title, href: attachment.url
   end
 
   scenario "Index (empty)" do

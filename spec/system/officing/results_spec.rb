@@ -125,16 +125,20 @@ describe "Officing Results", :with_frozen_time do
   end
 
   scenario "Index lists all questions and answers" do
+    officer_assignment = poll_officer.officer_assignments.first
+    booth_assignment = officer_assignment.booth_assignment
+    booth = booth_assignment.booth
+
     create(:poll_partial_result,
-      officer_assignment: poll_officer.officer_assignments.first,
-      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
+      officer_assignment: officer_assignment,
+      booth_assignment: booth_assignment,
       date: poll.ends_at,
       question: question_1,
       amount: 33)
 
     create(:poll_recount,
-      officer_assignment: poll_officer.officer_assignments.first,
-      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
+      officer_assignment: officer_assignment,
+      booth_assignment: booth_assignment,
       date: poll.ends_at,
       white_amount: 21,
       null_amount: 44,
@@ -142,10 +146,10 @@ describe "Officing Results", :with_frozen_time do
 
     visit officing_poll_results_path(poll,
                                      date: I18n.l(poll.ends_at.to_date),
-                                     booth_assignment_id: poll_officer.officer_assignments.first.booth_assignment_id)
+                                     booth_assignment_id: officer_assignment.booth_assignment_id)
 
     expect(page).to have_content(I18n.l(poll.ends_at.to_date, format: :long))
-    expect(page).to have_content(poll_officer.officer_assignments.first.booth_assignment.booth.name)
+    expect(page).to have_content(booth.name)
 
     expect(page).to have_content(question_1.title)
     question_1.question_answers.each_with_index do |answer, i|

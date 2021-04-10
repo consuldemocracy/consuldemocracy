@@ -3,6 +3,7 @@ shared_examples "relationable" do |relationable_model_name|
   let(:related1) { create([:proposal, :debate, :budget_investment].sample) }
   let(:related2) { create([:proposal, :debate, :budget_investment].sample) }
   let(:user) { create(:user) }
+  let!(:url) { Setting["url"] }
 
   scenario "related contents are listed" do
     create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
@@ -32,7 +33,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_on("Add related content")
 
     within("#related_content") do
-      fill_in "url", with: "#{Setting["url"] + related1.url}"
+      fill_in "url", with: "#{url + related1.url}"
       click_button "Add"
     end
 
@@ -49,7 +50,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_on("Add related content")
 
     within("#related_content") do
-      fill_in "url", with: "#{Setting["url"] + related2.url}"
+      fill_in "url", with: "#{url + related2.url}"
       click_button "Add"
     end
 
@@ -69,7 +70,7 @@ shared_examples "relationable" do |relationable_model_name|
       click_button "Add"
     end
 
-    expect(page).to have_content("Link not valid. Remember to start with #{Setting[:url]}.")
+    expect(page).to have_content("Link not valid. Remember to start with #{url}.")
   end
 
   scenario "returns error when relating content URL to itself" do
@@ -79,7 +80,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_on("Add related content")
 
     within("#related_content") do
-      fill_in "url", with: Setting[:url] + relationable.url.to_s
+      fill_in "url", with: url + relationable.url.to_s
       click_button "Add"
     end
 

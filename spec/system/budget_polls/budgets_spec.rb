@@ -4,12 +4,11 @@ describe "Admin Budgets", :admin do
   context "Index" do
     scenario "Create poll if the budget does not have a poll associated" do
       budget = create(:budget)
+      balloting_phase = budget.phases.balloting
 
       visit admin_budgets_path
 
       click_link "Admin ballots"
-
-      balloting_phase = budget.phases.find_by(kind: "balloting")
 
       expect(page).to have_current_path(/admin\/polls\/\d+/)
       expect(page).to have_content(budget.name)
