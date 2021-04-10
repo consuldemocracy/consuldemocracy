@@ -74,10 +74,9 @@ describe "Moderate debates" do
           expect(debate.author).to be_hidden
         end
 
-        scenario "Ignore the debate" do
-          accept_confirm { click_button "Mark as viewed" }
+        scenario "Ignore the debate", :no_js do
+          click_button "Mark as viewed"
 
-          expect(page).not_to have_css("debate_#{debate.id}")
           expect(debate.reload).to be_ignored_flag
           expect(debate.reload).not_to be_hidden
           expect(debate.author).not_to be_hidden

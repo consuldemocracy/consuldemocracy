@@ -73,10 +73,9 @@ describe "Moderate proposals" do
           expect(proposal.author).to be_hidden
         end
 
-        scenario "Ignore the proposal" do
-          accept_confirm { click_button "Mark as viewed" }
+        scenario "Ignore the proposal", :no_js do
+          click_button "Mark as viewed"
 
-          expect(page).not_to have_css("proposal_#{proposal.id}")
           expect(proposal.reload).to be_ignored_flag
           expect(proposal.reload).not_to be_hidden
           expect(proposal.author).not_to be_hidden

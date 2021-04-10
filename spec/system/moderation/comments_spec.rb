@@ -101,10 +101,9 @@ describe "Moderate comments" do
           expect(comment.user).to be_hidden
         end
 
-        scenario "Ignore the comment" do
-          accept_confirm { click_button "Mark as viewed" }
+        scenario "Ignore the comment", :no_js do
+          click_button "Mark as viewed"
 
-          expect(page).not_to have_css("comment_#{comment.id}")
           expect(comment.reload).to be_ignored_flag
           expect(comment.reload).not_to be_hidden
           expect(comment.user).not_to be_hidden

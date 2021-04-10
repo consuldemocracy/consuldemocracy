@@ -85,10 +85,8 @@ describe "Moderate budget investments" do
           expect(investment.author).to be_hidden
         end
 
-        scenario "Ignore the investment" do
-          accept_confirm { click_button "Mark as viewed" }
-
-          expect(page).not_to have_css("investment_#{investment.id}")
+        scenario "Ignore the investment", :no_js do
+          click_button "Mark as viewed"
 
           investment.reload
 
