@@ -18,14 +18,15 @@ describe "Cards", :admin do
     expect(page).to have_content "Card created successfully!"
     expect(page).to have_css(".homepage-card", count: 1)
 
-    card = Widget::Card.last
-    within("#widget_card_#{card.id}") do
-      expect(page).to have_content "Card label"
-      expect(page).to have_content "Card text"
-      expect(page).to have_content "Card description"
-      expect(page).to have_content "Link text"
-      expect(page).to have_content "consul.dev"
-      expect(page).to have_link("Show image", href: card.image_url(:large))
+    within "#cards" do
+      within all("tbody tr").last do
+        expect(page).to have_content "Card label"
+        expect(page).to have_content "Card text"
+        expect(page).to have_content "Card description"
+        expect(page).to have_content "Link text"
+        expect(page).to have_content "consul.dev"
+        expect(page).to have_link "Show image", href: Widget::Card.last.image_url(:large)
+      end
     end
   end
 
@@ -91,12 +92,15 @@ describe "Cards", :admin do
     expect(page).to have_content "Card updated successfully"
 
     expect(page).to have_css(".homepage-card", count: 1)
-    within("#widget_card_#{Widget::Card.last.id}") do
-      expect(page).to have_content "Card label updated"
-      expect(page).to have_content "Card text updated"
-      expect(page).to have_content "Card description updated"
-      expect(page).to have_content "Link text updated"
-      expect(page).to have_content "consul.dev updated"
+
+    within "#cards" do
+      within all("tbody tr").last do
+        expect(page).to have_content "Card label updated"
+        expect(page).to have_content "Card text updated"
+        expect(page).to have_content "Card description updated"
+        expect(page).to have_content "Link text updated"
+        expect(page).to have_content "consul.dev updated"
+      end
     end
   end
 

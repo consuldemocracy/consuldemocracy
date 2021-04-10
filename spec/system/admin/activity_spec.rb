@@ -20,7 +20,7 @@ describe "Admin activity" do
 
       visit admin_activity_path
 
-      within("#activity_#{Activity.last.id}") do
+      within first("tbody tr") do
         expect(page).to have_content(proposal.title)
         expect(page).to have_content("Hidden")
         expect(page).to have_content(admin.user.username)
@@ -66,7 +66,7 @@ describe "Admin activity" do
 
       visit admin_activity_path
 
-      within("#activity_#{Activity.last.id}") do
+      within first("tbody tr") do
         expect(page).to have_content(proposal.title)
         expect(page).to have_content("Restored")
         expect(page).to have_content(admin.user.username)
@@ -87,7 +87,7 @@ describe "Admin activity" do
 
       visit admin_activity_path
 
-      within("#activity_#{Activity.last.id}") do
+      within first("tbody tr") do
         expect(page).to have_content(debate.title)
         expect(page).to have_content("Hidden")
         expect(page).to have_content(admin.user.username)
@@ -133,7 +133,7 @@ describe "Admin activity" do
 
       visit admin_activity_path
 
-      within("#activity_#{Activity.last.id}") do
+      within first("tbody tr") do
         expect(page).to have_content(debate.title)
         expect(page).to have_content("Restored")
         expect(page).to have_content(admin.user.username)
@@ -155,7 +155,7 @@ describe "Admin activity" do
 
       visit admin_activity_path
 
-      within("#activity_#{Activity.last.id}") do
+      within first("tbody tr") do
         expect(page).to have_content(comment.body)
         expect(page).to have_content("Hidden")
         expect(page).to have_content(admin.user.username)
@@ -201,7 +201,7 @@ describe "Admin activity" do
 
       visit admin_activity_path
 
-      within("#activity_#{Activity.last.id}") do
+      within first("tbody tr") do
         expect(page).to have_content(comment.body)
         expect(page).to have_content("Restored")
         expect(page).to have_content(admin.user.username)
@@ -223,7 +223,7 @@ describe "Admin activity" do
 
       visit admin_activity_path
 
-      within("#activity_#{Activity.last.id}") do
+      within first("tbody tr") do
         expect(page).to have_content("Blocked")
         expect(page).to have_content(proposal.author.username)
         expect(page).to have_content(proposal.author.email)
@@ -243,7 +243,7 @@ describe "Admin activity" do
 
       visit admin_activity_path
 
-      within("#activity_#{Activity.last.id}") do
+      within first("tbody tr") do
         expect(page).to have_content(user.username)
         expect(page).to have_content(user.email)
         expect(page).to have_content(admin.user.username)
@@ -347,7 +347,7 @@ describe "Admin activity" do
 
       visit admin_activity_path
 
-      within("#activity_#{Activity.last.id}") do
+      within first("tbody tr") do
         expect(page).to have_content(user.username)
         expect(page).to have_content(user.email)
         expect(page).to have_content("Restored")
@@ -366,7 +366,7 @@ describe "Admin activity" do
 
       visit admin_activity_path
 
-      within("#activity_#{Activity.last.id}") do
+      within first("tbody tr") do
         expect(page).to have_content(proposal_notification.title)
         expect(page).to have_content("Hidden")
         expect(page).to have_content(admin.user.username)

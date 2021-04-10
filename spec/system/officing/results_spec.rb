@@ -73,7 +73,7 @@ describe "Officing Results", :with_frozen_time do
 
     expect(page).to have_content("Your results")
 
-    within("#results_#{poll_officer.officer_assignments.first.booth_assignment_id}_#{Date.current.strftime("%Y%m%d")}") do
+    within "tbody tr" do
       expect(page).to have_content(I18n.l(Date.current, format: :long))
       expect(page).to have_content(booth.name)
     end

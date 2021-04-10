@@ -97,7 +97,14 @@ describe "Admin budget groups", :admin do
       click_button "Create new group"
 
       expect(page).to have_content "Group created successfully!"
-      expect(Budget::Group.first.max_votable_headings).to be 1
+
+      within all("thead th")[1] do
+        expect(page).to have_content("Maximum number of headings in which a user can select projects")
+      end
+
+      within "tbody tr" do
+        within all("td")[1] { expect(page.text).to eq "1" }
+      end
     end
 
     scenario "Group name is mandatory" do
