@@ -438,7 +438,6 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    fill_in "proposal_responsible_name", with: "Isabel Garcia"
     check "proposal_terms_of_service"
 
     click_button "Create proposal"
