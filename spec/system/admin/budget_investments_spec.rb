@@ -627,7 +627,7 @@ describe "Admin budget investments", :admin do
       administrator = create(:administrator, user: user)
       budget.administrators = [administrator]
 
-      create(:budget_investment, budget: budget, title: "Educate the children",
+      educate_children = create(:budget_investment, budget: budget, title: "Educate the children",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More schools",
                                  administrator: administrator)
@@ -648,8 +648,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      educate_children_investment = Budget::Investment.find_by(title: "Educate the children")
-      fill_in "title_or_id", with: educate_children_investment.id
+      fill_in "title_or_id", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -661,7 +660,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Combination of select with text search" do
-      create(:budget_investment, :feasible, :finished, budget: budget, title: "Educate the children")
+      educate_children = create(:budget_investment, :feasible, :finished,
+                                budget: budget, title: "Educate the children")
       create(:budget_investment, :feasible, :finished, budget: budget, title: "More schools")
       create(:budget_investment, budget: budget, title: "More hospitals")
 
@@ -682,8 +682,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      educate_children_investment = Budget::Investment.find_by(title: "Educate the children")
-      fill_in "title_or_id", with: educate_children_investment.id
+      fill_in "title_or_id", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -699,8 +698,8 @@ describe "Admin budget investments", :admin do
       administrator = create(:administrator, user: user)
       budget.administrators = [administrator]
 
-      create(:budget_investment, :feasible, :finished, budget: budget, title: "Educate the children",
-                                 administrator: administrator)
+      educate_children = create(:budget_investment, :feasible, :finished,
+                                budget: budget, title: "Educate the children", administrator: administrator)
       create(:budget_investment, :feasible, :finished, budget: budget, title: "More schools",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hospitals",
@@ -735,8 +734,7 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content("More hospitals")
       expect(page).not_to have_content("More hostals")
 
-      educate_children_investment = Budget::Investment.find_by(title: "Educate the children")
-      fill_in "title_or_id", with: educate_children_investment.id
+      fill_in "title_or_id", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)

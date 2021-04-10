@@ -255,14 +255,14 @@ describe "Stats", :admin do
     end
 
     scenario "Index" do
-      3.times { create(:proposal_notification) }
+      proposal_notifications = 3.times.map { create(:proposal_notification) }
 
       visit admin_stats_path
       click_link "Proposal notifications"
 
       expect(page).to have_css(".proposal_notification", count: 3)
 
-      ProposalNotification.find_each do |proposal_notification|
+      proposal_notifications.each do |proposal_notification|
         expect(page).to have_content proposal_notification.title
         expect(page).to have_content proposal_notification.body
       end
