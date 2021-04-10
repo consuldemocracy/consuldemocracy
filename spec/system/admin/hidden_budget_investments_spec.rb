@@ -40,8 +40,6 @@ describe "Admin hidden budget investments", :admin do
 
     click_link("Confirmed")
     expect(page).to have_content(investment.title)
-
-    expect(investment.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do

@@ -37,8 +37,6 @@ describe "Admin hidden users", :admin do
     expect(page).not_to have_content(user.username)
     click_link("Confirmed")
     expect(page).to have_content(user.username)
-
-    expect(user.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do

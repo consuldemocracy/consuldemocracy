@@ -80,7 +80,6 @@ describe "Admin proposals", :admin do
 
       expect(page).to have_content "Proposal updated successfully"
       expect(find_field("Mark as selected")).to be_checked
-      expect(proposal.reload.selected?).to be true
     end
 
     scenario "Unselect a proposal" do
@@ -93,7 +92,6 @@ describe "Admin proposals", :admin do
 
       expect(page).to have_content "Proposal updated successfully"
       expect(find_field("Mark as selected")).not_to be_checked
-      expect(proposal.reload.selected?).to be false
     end
   end
 end

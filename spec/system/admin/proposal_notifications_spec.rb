@@ -31,8 +31,6 @@ describe "Admin proposal notifications", :admin do
     expect(page).not_to have_content(proposal_notification.title)
     click_link("Confirmed")
     expect(page).to have_content(proposal_notification.title)
-
-    expect(proposal_notification.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do

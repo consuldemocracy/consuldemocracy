@@ -78,7 +78,6 @@ describe "Admin geozones", :admin do
 
     expect(page).to have_content "Geozone successfully deleted"
     expect(page).not_to have_content("Delete me!")
-    expect(Geozone.where(id: geozone.id)).to be_empty
   end
 
   scenario "Delete geozone with associated element" do

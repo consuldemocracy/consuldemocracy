@@ -35,8 +35,6 @@ describe "Admin hidden proposals", :admin do
     expect(page).not_to have_content(proposal.title)
     click_link("Confirmed")
     expect(page).to have_content(proposal.title)
-
-    expect(proposal.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do
