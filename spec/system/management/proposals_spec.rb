@@ -26,14 +26,13 @@ describe "Proposals" do
 
       expect(page).to have_content "Proposal created successfully."
 
+      expect(page).to have_current_path(/management/)
       expect(page).to have_content "Help refugees"
       expect(page).to have_content "In summary, what we want is..."
       expect(page).to have_content "This is very important because..."
       expect(page).to have_content "https://www.youtube.com/watch?v=yRYFKcMa_Ek"
       expect(page).to have_content user.name
       expect(page).to have_content I18n.l(Date.current)
-
-      expect(page).to have_current_path(management_proposal_path(Proposal.last))
     end
 
     scenario "Should not allow unverified users to create proposals" do

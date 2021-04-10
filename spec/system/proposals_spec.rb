@@ -560,7 +560,7 @@ describe "Proposals" do
 
     click_link "Edit proposal"
 
-    expect(page).to have_current_path(edit_proposal_path(Proposal.last))
+    expect(page).to have_field "Proposal title", with: "Testing auto link"
     expect(page).not_to have_link("click me")
     expect(page.html).not_to include "<script>alert('hey')</script>"
   end

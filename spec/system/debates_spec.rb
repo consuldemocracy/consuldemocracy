@@ -317,7 +317,8 @@ describe "Debates" do
 
     click_link "Edit"
 
-    expect(page).to have_current_path(edit_debate_path(Debate.last))
+    expect(page).to have_css "h1", exact_text: "Edit debate"
+    expect(page).to have_field "Debate title", with: "Testing auto link"
     expect(page).not_to have_link("click me")
     expect(page.html).not_to include "<script>alert('hey')</script>"
   end
