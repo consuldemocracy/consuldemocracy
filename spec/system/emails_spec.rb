@@ -191,7 +191,7 @@ describe "Emails" do
     end
 
     scenario "Do not send email about own replies to own comments" do
-      reply_to(user, user)
+      reply_to(user, replier: user)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
 

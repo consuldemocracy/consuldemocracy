@@ -6,13 +6,11 @@ module Comments
     CommentNotifier.new(comment: comment).process
   end
 
-  def reply_to(original_user, manuela = nil)
-    manuela ||= create(:user)
-
+  def reply_to(original_user, replier: create(:user))
     debate  = create(:debate)
     comment = create(:comment, commentable: debate, user: original_user)
 
-    login_as(manuela)
+    login_as(replier)
     visit debate_path(debate)
 
     click_link "Reply"
