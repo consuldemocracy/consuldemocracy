@@ -237,8 +237,7 @@ describe "Proposal Notifications" do
       user2 = create(:user, followables: [proposal])
       user3 = create(:user)
 
-      login_as author.reload
-      visit root_path
+      login_as author
 
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
@@ -250,7 +249,7 @@ describe "Proposal Notifications" do
       expect(page).to have_content "Your message has been sent correctly."
 
       logout
-      login_as user1.reload
+      login_as user1
       visit root_path
 
       click_link "You have a new notification"
@@ -262,7 +261,7 @@ describe "Proposal Notifications" do
       expect(page).to have_current_path(proposal_path(proposal))
 
       logout
-      login_as user2.reload
+      login_as user2
       visit root_path
 
       click_link "You have a new notification"
@@ -274,7 +273,7 @@ describe "Proposal Notifications" do
       expect(page).to have_current_path(proposal_path(proposal))
 
       logout
-      login_as user3.reload
+      login_as user3
       visit root_path
 
       click_link "You don't have new notifications"
@@ -332,7 +331,7 @@ describe "Proposal Notifications" do
         proposal = create(:proposal, author: author)
         user = create(:user, followables: [proposal])
 
-        login_as author.reload
+        login_as author
 
         3.times do
           visit new_proposal_notification_path(proposal_id: proposal.id)
@@ -345,7 +344,7 @@ describe "Proposal Notifications" do
         end
 
         logout
-        login_as user.reload
+        login_as user
         visit root_path
 
         click_link "You have 3 new notifications"
@@ -373,7 +372,7 @@ describe "Proposal Notifications" do
       author = create(:user)
       proposal = create(:proposal, author: author)
 
-      login_as author.reload
+      login_as author
 
       visit new_proposal_notification_path(proposal_id: proposal.id)
       fill_in "Title", with: "Thank you for supporting my proposal"
@@ -395,7 +394,7 @@ describe "Proposal Notifications" do
       author = create(:user)
       proposal = create(:proposal, author: author)
 
-      login_as author.reload
+      login_as author
 
       visit new_proposal_notification_path(proposal_id: proposal.id)
       fill_in "Title", with: "Thank you for supporting my proposal"

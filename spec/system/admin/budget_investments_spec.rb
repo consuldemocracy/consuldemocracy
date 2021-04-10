@@ -1587,7 +1587,7 @@ describe "Admin budget investments", :admin do
       investment1.update!(administrator: admin)
       investment2.update!(administrator: admin)
 
-      login_as(valuator.user.reload)
+      login_as(valuator.user)
       visit root_path
       click_link "Menu"
       click_link "Valuation"

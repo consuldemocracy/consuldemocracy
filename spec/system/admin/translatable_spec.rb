@@ -323,7 +323,7 @@ describe "Admin edit translatable records", :admin do
 
       expect(page).not_to have_css "#error_explanation"
 
-      visit edit_admin_legislation_process_path(translatable.reload)
+      visit edit_admin_legislation_process_path(translatable)
 
       expect_to_have_language_selected "Français"
       expect_not_to_have_language "English"
