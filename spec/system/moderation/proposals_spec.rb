@@ -53,14 +53,12 @@ describe "Moderate proposals" do
           within("#proposal_#{proposal.id}") do
             check "proposal_#{proposal.id}_check"
           end
-
-          expect(page).not_to have_css("proposal_#{proposal.id}")
         end
 
         scenario "Hide the proposal" do
           accept_confirm { click_button "Hide proposals" }
 
-          expect(page).not_to have_css("proposal_#{proposal.id}")
+          expect(page).not_to have_css("#proposal_#{proposal.id}")
           expect(proposal.reload).to be_hidden
           expect(proposal.author).not_to be_hidden
         end
@@ -68,7 +66,7 @@ describe "Moderate proposals" do
         scenario "Block the author" do
           accept_confirm { click_button "Block authors" }
 
-          expect(page).not_to have_css("proposal_#{proposal.id}")
+          expect(page).not_to have_css("#proposal_#{proposal.id}")
           expect(proposal.reload).to be_hidden
           expect(proposal.author).to be_hidden
         end

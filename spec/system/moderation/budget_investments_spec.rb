@@ -61,14 +61,12 @@ describe "Moderate budget investments" do
           within("#investment_#{investment.id}") do
             check "budget_investment_#{investment.id}_check"
           end
-
-          expect(page).not_to have_css("investment#{investment.id}")
         end
 
         scenario "Hide the investment" do
           accept_confirm { click_button "Hide budget investments" }
 
-          expect(page).not_to have_css("investment_#{investment.id}")
+          expect(page).not_to have_css("#investment_#{investment.id}")
 
           investment.reload
 
@@ -78,7 +76,7 @@ describe "Moderate budget investments" do
         scenario "Block the author" do
           accept_confirm { click_button "Block authors" }
 
-          expect(page).not_to have_css("investment_#{investment.id}")
+          expect(page).not_to have_css("#investment_#{investment.id}")
 
           investment.reload
 

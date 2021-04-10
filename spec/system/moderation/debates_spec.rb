@@ -54,14 +54,12 @@ describe "Moderate debates" do
           within("#debate_#{debate.id}") do
             check "debate_#{debate.id}_check"
           end
-
-          expect(page).not_to have_css("debate_#{debate.id}")
         end
 
         scenario "Hide the debate" do
           accept_confirm { click_button "Hide debates" }
 
-          expect(page).not_to have_css("debate_#{debate.id}")
+          expect(page).not_to have_css("#debate_#{debate.id}")
           expect(debate.reload).to be_hidden
           expect(debate.author).not_to be_hidden
         end
@@ -69,7 +67,7 @@ describe "Moderate debates" do
         scenario "Block the author" do
           accept_confirm { click_button "Block authors" }
 
-          expect(page).not_to have_css("debate_#{debate.id}")
+          expect(page).not_to have_css("#debate_#{debate.id}")
           expect(debate.reload).to be_hidden
           expect(debate.author).to be_hidden
         end

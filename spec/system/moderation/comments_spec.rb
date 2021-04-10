@@ -81,14 +81,12 @@ describe "Moderate comments" do
           within("#comment_#{comment.id}") do
             check "comment_#{comment.id}_check"
           end
-
-          expect(page).not_to have_css("comment_#{comment.id}")
         end
 
         scenario "Hide the comment" do
           accept_confirm { click_button "Hide comments" }
 
-          expect(page).not_to have_css("comment_#{comment.id}")
+          expect(page).not_to have_css("#comment_#{comment.id}")
           expect(comment.reload).to be_hidden
           expect(comment.user).not_to be_hidden
         end
@@ -96,7 +94,7 @@ describe "Moderate comments" do
         scenario "Block the user" do
           accept_confirm { click_button "Block authors" }
 
-          expect(page).not_to have_css("comment_#{comment.id}")
+          expect(page).not_to have_css("#comment_#{comment.id}")
           expect(comment.reload).to be_hidden
           expect(comment.user).to be_hidden
         end
