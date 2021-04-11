@@ -321,7 +321,7 @@ describe "Admin edit translatable records", :admin do
 
       click_button "Save changes"
 
-      expect(page).not_to have_css "#error_explanation"
+      expect(page).to have_content "Process updated successfully"
 
       visit edit_admin_legislation_process_path(translatable)
 
