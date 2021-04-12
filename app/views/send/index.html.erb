@@ -1,0 +1,15 @@
+<h1>Contacto</h1>
+<br/>
+<%= form_tag send_path,method: :post do %>
+      <%= label_tag :name,"Nombre" %><br/>
+      <%= text_field_tag :name %> <br/>
+      <%= label_tag :email, "Email" %> <br/>
+      <%= text_field_tag :email %> <br/>
+      <%= label_tag :subject, "Asunto" %> <br/>
+      <%= text_field_tag :subject %> <br/>
+      <%= label_tag :content, "Contenido" %><br/>
+      <%= text_area_tag :content %> <br/>
+      <%= submit_tag "Enviar" %>
+<% end %>
+<br/>
+
