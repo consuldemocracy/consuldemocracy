@@ -88,8 +88,9 @@
 
     <% unless current_user.manager? %>
 
-      <div class="small-12 column">
+      <div class="small-12 column" style="display: none;">
         <%= f.check_box :terms_of_service,
+          checked: true,
           title: t("form.accept_terms_title"),
           label: t("form.accept_terms",
                    policy: link_to(t("form.policy"), page_path("privacy"), target: "blank"),

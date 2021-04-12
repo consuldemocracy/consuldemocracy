@@ -33,7 +33,9 @@
 </td>
 
 <td class="small" data-field="author">
-  <%= investment.author.name %>
+  <% if investment.author.present? %>
+    <%= investment.author.name %>
+  <% end %>  
 </td>
 
 <td class="small" data-field="valuator">
