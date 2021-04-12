@@ -661,6 +661,30 @@ describe "Budget Investments" do
           expect(page).not_to have_content "You are seeing"
         end
       end
+
+      describe "Don't show suggestions" do
+        let(:investment) { create(factory, title: "Title, has search term", budget: budget, author: author) }
+
+        before do
+          login_as(author)
+          visit edit_budget_investment_path(budget, investment)
+        end
+
+        scenario "for edit action" do
+          fill_in "Title", with: "search"
+
+          expect(page).not_to have_content "There is an investment with the term 'search'"
+        end
+
+        scenario "for update action" do
+          fill_in "Title", with: ""
+
+          click_button "Update Investment"
+          fill_in "Title", with: "search"
+
+          expect(page).not_to have_content "There is an investment with the term 'search'"
+        end
+      end
     end
 
     scenario "Ballot is not visible" do
