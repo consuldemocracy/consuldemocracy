@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   get "/welcome", to: "welcome#welcome"
-  get "/recomendations", to: "welcome#recomendations"
+  get "/recognitions", to: "welcome#recomendations"
   get "/consul.json", to: "installation#details"
 
   resources :stats, only: [:index]
