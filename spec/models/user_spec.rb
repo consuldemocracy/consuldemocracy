@@ -413,6 +413,38 @@ describe User do
         expect(User.erased).not_to include(user3)
       end
     end
+
+    describe ".by_username_email_or_document_number" do
+      let!(:larry) do
+        create(:user, email: "larry@consul.dev", username: "Larry Bird", document_number: "12345678Z")
+      end
+
+      before { create(:user, email: "robert@consul.dev", username: "Robert Parish") }
+
+      it "finds users by email" do
+        expect(User.by_username_email_or_document_number("larry@consul.dev")).to eq [larry]
+      end
+
+      it "finds users by email with whitespaces" do
+        expect(User.by_username_email_or_document_number(" larry@consul.dev ")).to eq [larry]
+      end
+
+      it "finds users by name" do
+        expect(User.by_username_email_or_document_number("larry")).to eq [larry]
+      end
+
+      it "finds users by name with whitespaces" do
+        expect(User.by_username_email_or_document_number(" larry ")).to eq [larry]
+      end
+
+      it "finds users by document_number" do
+        expect(User.by_username_email_or_document_number("12345678Z")).to eq [larry]
+      end
+
+      it "finds users by document_number with whitespaces" do
+        expect(User.by_username_email_or_document_number(" 12345678Z ")).to eq [larry]
+      end
+    end
   end
 
   describe "self.search" do
