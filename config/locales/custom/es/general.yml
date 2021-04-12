@@ -227,6 +227,8 @@ es:
       participation_text: Decide cómo debe ser la ciudad que quieres.
       participation_title: Participación
       privacy: Política de privacidad
+      recognitions: Reconocimientos
+      contact: Contacto
     header:
       administration_menu: Menú
       administration: Administración
@@ -1000,3 +1002,8 @@ es:
   not_authorized:
     title: No esta autorizado para realizar esta acción
     view: No esta autorizado para ver esta página
+  contact:
+    name: Nombre
+    email: Email
+    subject: Título del mensaje
+    content: Contenido del mensaje

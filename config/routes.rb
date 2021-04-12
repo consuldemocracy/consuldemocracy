@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'send/index'
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
@@ -32,6 +33,8 @@ Rails.application.routes.draw do
   get "/welcome", to: "welcome#welcome"
   get "/recognitions", to: "welcome#recomendations"
   get "/consul.json", to: "installation#details"
+  get "send" => "send#index"
+  post "send" => "send#create"
 
   resources :stats, only: [:index]
   resources :images, only: [:destroy]
