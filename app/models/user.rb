@@ -241,19 +241,27 @@ class User < ApplicationRecord
   end
 
   def block
-    debates_ids = Debate.where(author_id: id).pluck(:id)
-    comments_ids = Comment.where(user_id: id).pluck(:id)
-    proposal_ids = Proposal.where(author_id: id).pluck(:id)
-    investment_ids = Budget::Investment.where(author_id: id).pluck(:id)
-    proposal_notification_ids = ProposalNotification.where(author_id: id).pluck(:id)
-
     hide
 
-    Debate.hide_all debates_ids
-    Comment.hide_all comments_ids
+    Debate.hide_all debate_ids
+    Comment.hide_all comment_ids
     Proposal.hide_all proposal_ids
-    Budget::Investment.hide_all investment_ids
-    ProposalNotification.hide_all proposal_notification_ids
+    Budget::Investment.hide_all budget_investment_ids
+    ProposalNotification.hide_all ProposalNotification.where(author_id: id).pluck(:id)
+  end
+
+  def full_restore
+    ActiveRecord::Base.transaction do
+      Debate.restore_all debates.where("hidden_at >= ?", hidden_at)
+      Comment.restore_all comments.where("hidden_at >= ?", hidden_at)
+      Proposal.restore_all proposals.where("hidden_at >= ?", hidden_at)
+      Budget::Investment.restore_all budget_investments.where("hidden_at >= ?", hidden_at)
+      ProposalNotification.restore_all(
+        ProposalNotification.only_hidden.where("hidden_at >= ?", hidden_at).where(author_id: id)
+      )
+
+      restore
+    end
   end
 
   def erase(erase_reason = nil)

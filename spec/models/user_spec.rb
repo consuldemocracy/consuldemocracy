@@ -721,4 +721,49 @@ describe User do
       expect(User.find_by_manager_login("admin_user_#{user.id}")).to eq user
     end
   end
+
+  describe "#full_restore" do
+    it "restore all previous hidden user content" do
+      user = create(:user, :hidden)
+      other_user = create(:user, :hidden)
+
+      comment = create(:comment, :hidden, author: user)
+      debate = create(:debate, :hidden, author: user)
+      investment = create(:budget_investment, :hidden, author: user)
+      proposal = create(:proposal, :hidden, author: user)
+      proposal_notification = create(:proposal_notification, :hidden, proposal: proposal)
+
+      old_hidden_comment = create(:comment, hidden_at: 3.days.ago, author: user)
+      old_hidden_debate = create(:debate, hidden_at: 3.days.ago, author: user)
+      old_hidden_investment = create(:budget_investment, hidden_at: 3.days.ago, author: user)
+      old_hidden_proposal = create(:proposal, hidden_at: 3.days.ago, author: user)
+      old_hidden_proposal_notification = create(:proposal_notification, hidden_at: 3.days.ago, proposal: proposal)
+
+      other_user_comment = create(:comment, :hidden, author: other_user)
+      other_user_debate = create(:debate, :hidden, author: other_user)
+      other_user_proposal = create(:proposal, :hidden, author: other_user)
+      other_user_investment = create(:budget_investment, :hidden, author: other_user)
+      other_user_proposal_notification = create(:proposal_notification, :hidden, proposal: other_user_proposal)
+
+      user.full_restore
+
+      expect(debate.reload).not_to be_hidden
+      expect(comment.reload).not_to be_hidden
+      expect(investment.reload).not_to be_hidden
+      expect(proposal.reload).not_to be_hidden
+      expect(proposal_notification.reload).not_to be_hidden
+
+      expect(old_hidden_comment.reload).to be_hidden
+      expect(old_hidden_debate.reload).to be_hidden
+      expect(old_hidden_investment.reload).to be_hidden
+      expect(old_hidden_proposal.reload).to be_hidden
+      expect(old_hidden_proposal_notification.reload).to be_hidden
+
+      expect(other_user_comment.reload).to be_hidden
+      expect(other_user_debate.reload).to be_hidden
+      expect(other_user_investment.reload).to be_hidden
+      expect(other_user_proposal.reload).to be_hidden
+      expect(other_user_proposal_notification.reload).to be_hidden
+    end
+  end
 end
