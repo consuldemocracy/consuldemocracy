@@ -29,6 +29,9 @@ sv:
     close: Stäng
     menu: Meny
   comments:
+    actions:
+      confirm_delete: "Är du säker? Med den här åtgärden raderas den här kommentaren. Du kan inte ångra den här åtgärden."
+      delete: "Radera kommentar"
     comments_closed: Kommentarer är avstängda
     verified_only: För att delta %{verify_account}
     comment:
