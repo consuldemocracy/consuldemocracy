@@ -65,9 +65,6 @@ describe Abilities::Common do
   it { should be_able_to(:show, user) }
   it { should be_able_to(:edit, user) }
 
-  it { should be_able_to(:create, Comment) }
-  it { should be_able_to(:vote, Comment)   }
-
   it { should     be_able_to(:index, Proposal) }
   it { should     be_able_to(:show, proposal) }
   it { should_not be_able_to(:vote, Proposal) }
@@ -96,6 +93,14 @@ describe Abilities::Common do
   it { should_not be_able_to(:manage, Dashboard::Action) }
 
   it { should_not be_able_to(:manage, LocalCensusRecord) }
+
+  describe "Comment" do
+    it { should be_able_to(:create, Comment) }
+    it { should be_able_to(:vote, Comment) }
+
+    it { should be_able_to(:hide, own_comment) }
+    it { should_not be_able_to(:hide, comment) }
+  end
 
   describe "flagging content" do
     it { should be_able_to(:flag, debate)   }

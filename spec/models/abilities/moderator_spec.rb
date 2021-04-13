@@ -54,7 +54,7 @@ describe Abilities::Moderator do
     it { should be_able_to(:hide, comment) }
     it { should be_able_to(:hide_in_moderation_screen, comment) }
     it { should_not be_able_to(:hide, hidden_comment) }
-    it { should_not be_able_to(:hide, own_comment) }
+    it { should be_able_to(:hide, own_comment) }
 
     it { should be_able_to(:moderate, comment) }
     it { should_not be_able_to(:moderate, own_comment) }
