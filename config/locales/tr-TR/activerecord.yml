@@ -275,6 +275,7 @@ tr:
         official_position_badge: "Resmi yetkili ünvanını göster"
         official_level: "Resmi düzey"
         phone_number: "Telefon numarası"
+        public_activity: "Etkinlikler listemi herkese açık tut"
         redeemable_code: "Doğrulama kodu e-posta yoluyla alındı"
       direct_message:
         title: "Başlık"
