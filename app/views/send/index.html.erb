@@ -7,9 +7,9 @@
       <%= text_field_tag :email %> <br/>
       <%= label_tag :subject, "Asunto" %> <br/>
       <%= text_field_tag :subject %> <br/>
-      <%= label_tag :content, "Contenido" %><br/>
-      <%= text_area_tag :content %> <br/>
-      <%= submit_tag "Enviar" %>
+      <%= label_tag :content, "Mensaje" %><br/>
+      <%= text_area_tag :content , nil, size: "25x10" %><br/>
+      <%= submit_tag "Enviar", class: "float-center success button" %>
 <% end %>
 <br/>
 

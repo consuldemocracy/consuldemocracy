@@ -1,0 +1,14 @@
+es:
+  cards:
+    card1:
+      title: Debatimos
+      content: Crear, debatir y decidir que proyectos forman parte de la plataforma.
+    card2:
+      title: Proponemos
+      content: Apuntate y participa en las propuestas que mas te interesen.
+    card3:
+      title: Votamos
+      content: Los integrantes votan por los proyectos que consideren mas importantes.
+    card4:
+      title: Procesos
+      content: Ayudamos a decidir los proyectos que son importantes para los ciudadanos.

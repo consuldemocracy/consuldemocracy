@@ -10,11 +10,18 @@
     <%= raw setting["html.per_page_code_body"] %>
     <div class="wrapper">
       <div class="small-12 medium-12 column">
-        <h1 class="logo margin">
+        <h1 class="logo margin hide-for-small-only">
           <%= link_to root_path do %>
             <%= image_tag(image_path_for("logo_header.png"), class: "image_contact", alt: setting["org_name"]) %>
           <% end %>
         </h1>
+        <div class="row show-for-small-only">
+          <h1 class="logo margin">
+            <%= link_to root_path do %>
+              <%= image_tag(image_path_for("logo_header.png"), alt: setting["org_name"]) %>
+            <% end %>
+          </h1>
+        </div>
         <div class="row">
           <div class="small-12 medium-6 large-6 small-centered column">
             <div class="auth-form margin">
