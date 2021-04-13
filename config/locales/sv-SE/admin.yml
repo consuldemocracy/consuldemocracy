@@ -168,6 +168,7 @@ sv:
         success_notice: "Området har raderats"
         unable_notice: "Du kan inte ta bort ett område som har budgetförslag"
       form:
+        max_ballot_lines_info: 'Maximalt antal projekt som en användare kan rösta om i det här området under fasen "Omröstning". Bara för budgetar som använder omröstning med godkännande.'
         population_info: "Fältet för folkmängd inom ett område används för att föra statistik över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är frivilligt."
         coordinates_info: "Om latitud och longitud anges kommer budgetsidan för detta område att innehålla en karta. Kartan centreras kring dessa koordinater."
         content_blocks_info: "Om innehållsblock är tillåtna kan du skapa anpassat innehåll som rör detta område från avsnittet Inställningar > Anpassade innehållsblock. Detta innehåll visas på investeringssidan för området."
