@@ -113,8 +113,8 @@ class User < ApplicationRecord
     joins(:comments).where("comments.commentable": commentables).distinct
   end
   scope :by_username_email_or_document_number, ->(search_string) do
-    string = "%#{search_string}%"
-    where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", string, string, string)
+    search = "%#{search_string.strip}%"
+    where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", search, search, search)
   end
   scope :between_ages, ->(from, to) do
     where(
@@ -310,7 +310,10 @@ class User < ApplicationRecord
   end
 
   def self.search(term)
-    term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
+    return none if term.blank?
+
+    search = term.strip
+    where("email = ? OR username ILIKE ?", search, "%#{search}%")
   end
 
   def self.username_max_length
