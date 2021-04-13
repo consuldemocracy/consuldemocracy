@@ -5,9 +5,9 @@
 
 
         <div class="small-12 medium-6 column <%= "medium-9 small-centered text-center" unless header.image.present? %>">
-        <span style = "color:#ffffff"><%= header.label %></span>
+        <span class="span_header"><%= header.label %></span>
         <h1 class="Letter_welcome_enterprise"><%= header.title %></h1>
-        <p class="lead" style = "color:#ffffff"><%= header.description %></p>
+        <p class="p_header lead"><%= header.description %></p>
         <div class="small-12 medium-6 large-4 <%= "small-centered" unless header.image.present? %>">
           <%= link_to header.link_text, header.link_url, class: "button expanded large" %>
         </div>

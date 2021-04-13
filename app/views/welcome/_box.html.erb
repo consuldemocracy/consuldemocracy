@@ -1,12 +1,42 @@
-<div class="row medium-12 large-12 small-centered float-center content-reco">
-    <div class="medium-3 large-3 small-9 small-centered column color-img-1 height-div-below float-center">
-        <br>
-        <p class="p1">
-            <%= image_tag("Grupo-Innovaris-reconocimientos-scaled.jpg", class: "float-center", alt: "Innovaris Logo") %>
-        </p>
-        <h3 class="text-center"><%= t("box_views.box1.title") %></h3>
-        <p class="p2">
-            <%= link_to t("box_views.box1.description"), recomendations_path, class: "button float-center position", style: "margin-bottom:10px;" %>
-        </p>
+<div class="small-12 column text-center margin">
+    <div class="row small-12 medium-8">
+        <div class="small-12 medium-6 column padding">
+            <h2 class="float-center">
+                <i class="far fa-comment" style="color:#fb700a;"></i>
+                <%= t("cards.card1.title") %>
+            </h2>
+            <p class="small-6 small-offset-3 medium-12 medium-offset-0">
+                <%= t("cards.card1.content") %>
+            </p>
+        </div>
+        <div class="small-12 medium-6 column padding">
+            <h2 class="float-center">
+                <i class="far fa-comment-alt" style="color:#fb700a;"></i>
+                <%= t("cards.card2.title") %>
+            </h2>
+            <p class="small-6 small-offset-3 medium-12 medium-offset-0">
+                <%= t("cards.card2.content") %>
+            </p>
+        </div>
+    </div>
+    <div class="row small-12 medium-8">
+        <div class="small-12 medium-6 column padding">
+            <h2 class="float-center">
+                <i class="far fa-thumbs-up" style="color:#fb700a;"></i>
+                <%= t("cards.card3.title") %>
+            </h2>
+            <p class="small-6 small-offset-3 medium-12 medium-offset-0">
+                <%= t("cards.card3.content") %>
+            </p>
+        </div>
+        <div class="small-12 medium-6 column padding">
+            <h2 class="float-center">
+                <i class="fas fa-poll" style="color:#fb700a;"></i>
+                <%= t("cards.card4.title") %>
+            </h2>
+            <p class="small-6 small-offset-3 medium-12 medium-offset-0">
+                <%= t("cards.card4.content") %>
+            </p>
+        </div>
     </div>
 </div>

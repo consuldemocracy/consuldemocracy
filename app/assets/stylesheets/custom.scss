@@ -3,6 +3,16 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+.span_header {
+  -webkit-text-stroke: 1px black;
+  color: #f1f1f1;
+  font-size: 30px;
+}
+
+.p_header {
+  -webkit-text-stroke: 1px black;
+  color: #f1f1f1;
+}
 
 .image_contact {
   position: absolute;
