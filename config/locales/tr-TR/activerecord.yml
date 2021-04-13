@@ -276,6 +276,9 @@ tr:
         official_level: "Resmi düzey"
         phone_number: "Telefon numarası"
         public_activity: "Etkinlikler listemi herkese açık tut"
+        public_interests: "Takip ettiğim unsurların etiketlerini herkese açık tut"
+        recommended_debates: "Tartışma önerilerini göster"
+        recommended_proposals: "Teklif önerilerini göster"
         redeemable_code: "Doğrulama kodu e-posta yoluyla alındı"
       direct_message:
         title: "Başlık"
@@ -409,6 +412,7 @@ tr:
         description: "Teklif metni"
         summary: "Teklif özeti"
         title: "Teklif başlığı"
+        video_url: "Harici videoya bağlantı"
       legislation/draft_version:
         title: Sürüm adı
         body: Metin
@@ -485,6 +489,7 @@ tr:
         action_type: Tür
         action_type_proposed_action: "Önerilen eylem"
         action_type_resource: "Kaynak"
+        published_proposal: "Yayınlanmış teklifler için mi?"
       dashboard/administrator_task:
         source: Kaynak
         user: Tarafından yürütülen
