@@ -30,6 +30,7 @@ tr:
     menu: Menü
   comments:
     actions:
+      confirm_delete: "Emin misiniz? Bu eylem yorumu silecektir ve geri alınamaz."
       delete: "Yorumu sil"
     comments_closed: Yorumlar kapalı
     verified_only: Katılmak için %{verify_account}
