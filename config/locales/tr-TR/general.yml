@@ -29,6 +29,8 @@ tr:
     close: Kapalı
     menu: Menü
   comments:
+    actions:
+      delete: "Yorumu sil"
     comments_closed: Yorumlar kapalı
     verified_only: Katılmak için %{verify_account}
     comment:
