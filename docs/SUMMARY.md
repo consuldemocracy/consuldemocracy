@@ -34,6 +34,7 @@
   * [Views & Styles](en/customization/views_and_styles.md)
   * [Javascript](en/customization/javascript.md)
   * [Models](en/customization/models.md)
+  * [Components](en/customization/components.md)
   * [Gems](en/customization/gems.md)
   * [Overwritting Application](en/customization/overwritting.md)
 
@@ -85,6 +86,7 @@
   * [Vistas & Estilos](es/customization/views_and_styles.md)
   * [Javascript](es/customization/javascript.md)
   * [Modelos](es/customization/models.md)
+  * [Componentes](es/customization/components.md)
   * [Gemas](es/customization/gems.md)
   * [Adaptar la aplicación](es/customization/overwritting.md)
 

@@ -6,5 +6,6 @@
 * [Vistas & Estilos](views_and_styles.md)
 * [Javascript](javascript.md)
 * [Modelos](models.md)
+* [Componentes](components.md)
 * [Gemas](gems.md)
 * [Adaptar la aplicación](overwritting.md)
