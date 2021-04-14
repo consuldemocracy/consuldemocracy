@@ -6,7 +6,7 @@ class SendController < ApplicationController
   end
 
   def create
-    @params= params
+    @params=params
     ContactMailer.contact_send(params).deliver
     flash[:notice]= "Formulario enviado"
     redirect_to root_path

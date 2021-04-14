@@ -3,15 +3,26 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+.header-style-photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(2px);
+}
+
+.Letter_welcome_enterprise {
+  //-webkit-text-stroke: 1px black;
+  color: black;
+}
+
 .span_header {
-  -webkit-text-stroke: 1px black;
-  color: #f1f1f1;
-  font-size: 30px;
+  //-webkit-text-stroke: 1px black;
+  color: black;
 }
 
 .p_header {
-  -webkit-text-stroke: 1px black;
-  color: #f1f1f1;
+  //-webkit-text-stroke: 1px black;
+  color: black;
 }
 
 .image_contact {
@@ -51,10 +62,5 @@
   max-width: 100%;
   height: auto;
   background-color: #fb700a;
-}
-
-.Letter_welcome_enterprise {
-  -webkit-text-stroke: 1px black;
-  color: #f1f1f1;
 }
 // Fin
