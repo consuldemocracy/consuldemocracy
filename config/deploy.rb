@@ -39,8 +39,7 @@ namespace :deploy do
   Rake::Task["delayed_job:default"].clear_actions
   Rake::Task["puma:smart_restart"].clear_actions
 
-  after :updating, "rvm1:install:rvm"
-  after :updating, "rvm1:install:ruby"
+  after :updating, "install_ruby"
 
   after "deploy:migrate", "add_new_settings"
 
@@ -57,6 +56,26 @@ namespace :deploy do
   task :upgrade do
     after "add_new_settings", "execute_release_tasks"
     invoke "deploy"
+  end
+end
+
+task :install_ruby do
+  on roles(:app) do
+    within release_path do
+      begin
+        current_ruby = capture(:rvm, "current")
+      rescue SSHKit::Command::Failed
+        after "install_ruby", "rvm1:install:rvm"
+        after "install_ruby", "rvm1:install:ruby"
+      else
+        if current_ruby.include?("not installed")
+          after "install_ruby", "rvm1:install:rvm"
+          after "install_ruby", "rvm1:install:ruby"
+        else
+          info "Ruby: Using #{current_ruby}"
+        end
+      end
+    end
   end
 end
 
