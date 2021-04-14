@@ -48,10 +48,10 @@ Y configura los de tu usuario de base de datos `consul` en `database.yml`
 7. Ejecuta las siguientes [tareas Rake](https://github.com/ruby/rake) para crear y rellenar tu base de datos local con el mínimo de información necesaria para que la aplicación funcione correctamente:
 
 ```bash
-rake db:create
-rake db:setup
-rake db:dev_seed
-rake db:test:prepare
+bin/rake db:create
+bin/rake db:setup
+bin/rake db:dev_seed
+bin/rake db:test:prepare
 ```
 
 8. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que podría tardar más de una hora):

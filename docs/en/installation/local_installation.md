@@ -48,10 +48,10 @@ And setup database credentials with your `consul` user in your new `database.yml
 7. Run the following [Rake tasks](https://github.com/ruby/rake) to create and fill your local database with the minimum data needed to run the application:
 
 ```bash
-rake db:create
-rake db:setup
-rake db:dev_seed
-rake db:test:prepare
+bin/rake db:create
+bin/rake db:setup
+bin/rake db:dev_seed
+bin/rake db:test:prepare
 ```
 
 8. Check everything is fine by running the test suite (beware it might take more than an hour):
