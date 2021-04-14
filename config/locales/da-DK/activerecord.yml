@@ -4,6 +4,10 @@ da:
     results_enabled: "Vis resultater"
     stats_enabled: "Vis statistik"
     advanced_stats_enabled: "Vis avanceret statistik"
+    name: Navn
+    email: Email
+    description: Beskrivelse
+    related_sdg_list: Mål og delmål
   activerecord:
     models:
       activity:
@@ -72,6 +76,12 @@ da:
       proposal:
         one: "Borgerforslag"
         other: "Borgerforslag"
+      sdg/goal:
+        one: "mål"
+        other: "mål"
+      sdg/local_target:
+        one: "lokale delmål"
+        other: "lokale delmål"
       site_customization/page:
         one: Brugerdefineret side
         other: Brugerdefinerede sider
