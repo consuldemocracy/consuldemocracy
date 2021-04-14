@@ -82,6 +82,12 @@ da:
       sdg/local_target:
         one: "lokale delmål"
         other: "lokale delmål"
+      sdg/manager:
+        one: "Verdensmåls konsulent"
+        other: "Verdensmåls konsulenter"
+      sdg/target:
+        one: "delmål"
+        other: "delmål"
       site_customization/page:
         one: Brugerdefineret side
         other: Brugerdefinerede sider
@@ -151,6 +157,9 @@ da:
         description_finished: "Synlig beskrivelse, når budgettet er færdiggjort"
         phase: "Fase"
         currency_symbol: "Valuta"
+        voting_style: "Afstemningstype"
+        voting_style_knapsack: "Knapsack"
+        voting_style_approval: "Approval"
       budget/translation:
         name: "Navn"
       budget/investment:
