@@ -1,10 +1,7 @@
 <% if header.present? %>
   <div class="jumbo highlight header-style-photo" style = "background-image: url(<%= asset_path 'surface.jpg' %>);height:400px" >
-
-    <div class= "row" style = "width:100%;padding-top:2%">
-
-
-        <div class="small-12 medium-6 column <%= "medium-9 small-centered text-center" unless header.image.present? %>">
+    <div class= "row header-style-content" style = "width:100%;padding-top:2%">
+      <div class="small-12 medium-6 column <%= "medium-9 small-centered text-center" unless header.image.present? %>">
         <span class="span_header"><%= header.label %></span>
         <h1 class="Letter_welcome_enterprise"><%= header.title %></h1>
         <p class="p_header lead"><%= header.description %></p>
@@ -14,7 +11,7 @@
       </div>
     </div>
   </div>
-  <div class="background-header" ></div>
+  <%# <div class="background-header" ></div> %>
 <% end %>
 
 
