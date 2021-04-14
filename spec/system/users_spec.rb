@@ -4,16 +4,14 @@ describe "Users" do
   describe "Show (public page)" do
     let(:user) { create(:user) }
 
-    before do
-      1.times { create(:debate, author: user) }
-      2.times { create(:proposal, author: user) }
-      3.times { create(:budget_investment, author: user) }
-      4.times { create(:comment, user: user) }
-
-      visit user_path(user)
-    end
+    let!(:debates)     { 1.times.map { create(:debate, author: user) } }
+    let!(:proposals)   { 2.times.map { create(:proposal, author: user) } }
+    let!(:investments) { 3.times.map { create(:budget_investment, author: user) } }
+    let!(:comments)    { 4.times.map { create(:comment, user: user) } }
 
     scenario "shows user public activity" do
+      visit user_path(user)
+
       expect(page).to have_content("1 Debate")
       expect(page).to have_content("2 Proposals")
       expect(page).to have_content("3 Investments")
@@ -21,7 +19,9 @@ describe "Users" do
     end
 
     scenario "shows only items where user has activity" do
-      user.proposals.destroy_all
+      proposals.each(&:destroy)
+
+      visit user_path(user)
 
       expect(page).not_to have_content("0 Proposals")
       expect(page).to have_content("1 Debate")
@@ -30,85 +30,92 @@ describe "Users" do
     end
 
     scenario "default filter is proposals" do
-      user.proposals.each do |proposal|
+      visit user_path(user)
+
+      proposals.each do |proposal|
         expect(page).to have_content(proposal.title)
       end
 
-      user.debates.each do |debate|
+      debates.each do |debate|
         expect(page).not_to have_content(debate.title)
       end
 
-      user.comments.each do |comment|
+      comments.each do |comment|
         expect(page).not_to have_content(comment.body)
       end
     end
 
     scenario "shows debates by default if user has no proposals" do
-      user.proposals.destroy_all
+      proposals.each(&:destroy)
+
       visit user_path(user)
 
-      expect(page).to have_content(user.debates.first.title)
+      expect(page).to have_content(debates.first.title)
     end
 
     scenario "shows investments by default if user has no proposals nor debates" do
-      user.proposals.destroy_all
-      user.debates.destroy_all
+      proposals.each(&:destroy)
+      debates.each(&:destroy)
+
       visit user_path(user)
 
-      expect(page).to have_content(user.budget_investments.first.title)
+      expect(page).to have_content(investments.first.title)
     end
 
     scenario "shows comments by default if user has no proposals nor debates nor investments" do
-      user.proposals.destroy_all
-      user.debates.destroy_all
-      user.budget_investments.destroy_all
+      proposals.each(&:destroy)
+      debates.each(&:destroy)
+      investments.each(&:destroy)
+
       visit user_path(user)
 
-      user.comments.each do |comment|
+      comments.each do |comment|
         expect(page).to have_content(comment.body)
       end
     end
 
     scenario "filters" do
+      visit user_path(user)
+
       click_link "1 Debate"
 
-      user.debates.each do |debate|
+      debates.each do |debate|
         expect(page).to have_content(debate.title)
       end
 
-      user.proposals.each do |proposal|
+      proposals.each do |proposal|
         expect(page).not_to have_content(proposal.title)
       end
 
-      user.comments.each do |comment|
+      comments.each do |comment|
         expect(page).not_to have_content(comment.body)
       end
 
       click_link "4 Comments"
 
-      user.comments.each do |comment|
+      comments.each do |comment|
         expect(page).to have_content(comment.body)
       end
 
-      user.proposals.each do |proposal|
+      proposals.each do |proposal|
         expect(page).not_to have_content(proposal.title)
       end
 
-      user.debates.each do |debate|
+      debates.each do |debate|
         expect(page).not_to have_content(debate.title)
       end
 
       click_link "2 Proposals"
 
-      user.proposals.each do |proposal|
+      proposals.each do |proposal|
         expect(page).to have_content(proposal.title)
       end
 
-      user.comments.each do |comment|
+      comments.each do |comment|
         expect(page).not_to have_content(comment.body)
       end
 
-      user.debates.each do |debate|
+      debates.each do |debate|
         expect(page).not_to have_content(debate.title)
       end
     end

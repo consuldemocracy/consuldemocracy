@@ -3,16 +3,16 @@ require "rails_helper"
 describe "Polls" do
   let!(:proposal) { create(:proposal, :draft) }
 
-  before do
-    login_as(proposal.author)
-    visit proposal_dashboard_path(proposal)
-  end
+  before { login_as(proposal.author) }
 
   scenario "Has a link to polls feature" do
+    visit proposal_dashboard_path(proposal)
+
     expect(page).to have_link("Polls")
   end
 
   scenario "Create a poll" do
+    visit proposal_dashboard_path(proposal)
     click_link "Polls"
     click_link "Create poll"
 
@@ -80,6 +80,7 @@ describe "Polls" do
   end
 
   scenario "Create a poll redirects back to form when invalid data" do
+    visit proposal_dashboard_path(proposal)
     click_link "Polls"
     click_link "Create poll"
 

@@ -114,13 +114,14 @@ describe "Residence", :with_frozen_time do
   context "With remote census configuration", :remote_census do
     before do
       create(:poll_officer_assignment, officer: officer)
-      login_through_form_as_officer(officer.user)
-      visit officing_root_path
     end
 
     describe "Display form fields according to the remote census configuration" do
       scenario "by default (without custom census) not display date_of_birth and postal_code" do
         Setting["feature.remote_census"] = false
+
+        login_through_form_as_officer(officer.user)
+        visit officing_root_path
 
         within("#side_menu") do
           click_link "Validate document"
@@ -134,6 +135,9 @@ describe "Residence", :with_frozen_time do
       end
 
       scenario "with all custom census not display year_of_birth" do
+        login_through_form_as_officer(officer.user)
+        visit officing_root_path
+
         within("#side_menu") do
           click_link "Validate document"
         end
@@ -148,6 +152,9 @@ describe "Residence", :with_frozen_time do
 
     scenario "can verify voter with date_of_birth and postal_code fields" do
       mock_valid_remote_census_response
+
+      login_through_form_as_officer(officer.user)
+      visit officing_root_path
 
       within("#side_menu") do
         click_link "Validate document"
