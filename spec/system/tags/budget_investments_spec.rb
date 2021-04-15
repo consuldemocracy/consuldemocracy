@@ -229,47 +229,42 @@ describe "Tags" do
     let!(:investment1) { create(:budget_investment, heading: heading, tag_list: new_tag) }
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: new_tag) }
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: newer_tag) }
+    let(:phase) { Budget::Phase::PHASE_KINDS.sample }
 
     scenario "Display user tags" do
-      Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update!(phase: phase)
+      budget.update!(phase: phase)
 
-        login_as(admin) if budget.drafting?
-        visit budget_investments_path(budget, heading_id: heading.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
 
-        within "#tag-cloud" do
-          expect(page).to have_content(new_tag)
-          expect(page).to have_content(newer_tag)
-        end
+      within "#tag-cloud" do
+        expect(page).to have_content(new_tag)
+        expect(page).to have_content(newer_tag)
       end
     end
 
     scenario "Filter by user tags" do
-      Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update!(phase: phase)
+      budget.update!(phase: phase)
 
-        [investment1, investment2, investment3].each do |investment|
-          investment.update(selected: true, feasibility: "feasible")
-        end
-
-        if budget.finished?
-          [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true, feasibility: "feasible", winner: true)
-          end
-        end
-
-        login_as(admin) if budget.drafting?
-        visit budget_investments_path(budget, heading: heading.id)
-
-        within "#tag-cloud" do
-          click_link new_tag
-        end
-
-        expect(page).to have_css ".budget-investment", count: 2
-        expect(page).to have_content investment1.title
-        expect(page).to have_content investment2.title
-        expect(page).not_to have_content investment3.title
+      [investment1, investment2, investment3].each do |investment|
+        investment.update(selected: true, feasibility: "feasible")
       end
+
+      if budget.finished?
+        [investment1, investment2, investment3].each do |investment|
+          investment.update(selected: true, feasibility: "feasible", winner: true)
+        end
+      end
+
+      visit budget_investments_path(budget, heading: heading.id)
+
+      within "#tag-cloud" do
+        click_link new_tag
+      end
+
+      expect(page).to have_css ".budget-investment", count: 2
+      expect(page).to have_content investment1.title
+      expect(page).to have_content investment2.title
+      expect(page).not_to have_content investment3.title
     end
   end
 
@@ -277,47 +272,42 @@ describe "Tags" do
     let!(:investment1) { create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name) }
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name) }
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: tag_economia.name) }
+    let(:phase) { Budget::Phase::PHASE_KINDS.sample }
 
     scenario "Display category tags" do
-      Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update!(phase: phase)
+      budget.update!(phase: phase)
 
-        login_as(admin) if budget.drafting?
-        visit budget_investments_path(budget, heading_id: heading.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
 
-        within "#categories" do
-          expect(page).to have_content(tag_medio_ambiente.name)
-          expect(page).to have_content(tag_economia.name)
-        end
+      within "#categories" do
+        expect(page).to have_content(tag_medio_ambiente.name)
+        expect(page).to have_content(tag_economia.name)
       end
     end
 
     scenario "Filter by category tags" do
-      Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update!(phase: phase)
+      budget.update!(phase: phase)
 
-        [investment1, investment2, investment3].each do |investment|
-          investment.update(selected: true, feasibility: "feasible")
-        end
-
-        if budget.finished?
-          [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true, feasibility: "feasible", winner: true)
-          end
-        end
-
-        login_as(admin) if budget.drafting?
-        visit budget_investments_path(budget, heading: heading.id)
-
-        within "#categories" do
-          click_link tag_medio_ambiente.name
-        end
-
-        expect(page).to have_css ".budget-investment", count: 2
-        expect(page).to have_content investment1.title
-        expect(page).to have_content investment2.title
-        expect(page).not_to have_content investment3.title
+      [investment1, investment2, investment3].each do |investment|
+        investment.update(selected: true, feasibility: "feasible")
       end
+
+      if budget.finished?
+        [investment1, investment2, investment3].each do |investment|
+          investment.update(selected: true, feasibility: "feasible", winner: true)
+        end
+      end
+
+      visit budget_investments_path(budget, heading: heading.id)
+
+      within "#categories" do
+        click_link tag_medio_ambiente.name
+      end
+
+      expect(page).to have_css ".budget-investment", count: 2
+      expect(page).to have_content investment1.title
+      expect(page).to have_content investment2.title
+      expect(page).not_to have_content investment3.title
     end
   end
 
