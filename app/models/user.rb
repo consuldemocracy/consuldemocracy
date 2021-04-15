@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   include Verification
 
-  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
+  devise :invitable, :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
          authentication_keys: [:login]
 
@@ -336,7 +336,7 @@ class User < ApplicationRecord
   end
 
   def username_required?
-    !organization? && !erased?
+    false
   end
 
   def email_required?
