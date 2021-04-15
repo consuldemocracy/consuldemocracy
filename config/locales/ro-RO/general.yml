@@ -233,7 +233,7 @@ ro:
       description: Acest portal folosește %{consul} care este %{open_source}.
       open_source: software open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide cum să modelezi orașul în care vrei să trăiești.
+      participation_text: Decide cum vrei să arate orașul în care locuiești.
       participation_title: Participare
       privacy: Politica de Confidențialitate
     header:
@@ -250,7 +250,7 @@ ro:
       help: Ajutor
       my_account_link: Contul meu
       my_activity_link: Conținutul meu
-      open_gov: Deschideți guvern
+      open_gov: Transparență
       proposals: Propuneri
       poll_questions: Votare
       budgets: Bugetare participativă
@@ -911,7 +911,7 @@ ro:
         processes: "Procese deschise"
       see_all:
         debates: Vezi toate dezbaterile
-        proposals: Vezi propuneri
+        proposals: Vezi toate propunerile
         processes: Vezi toate procesele
       no_items:
         debates: Nu sunt dezbateri în acest moment
