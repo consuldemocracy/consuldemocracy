@@ -94,7 +94,7 @@ sv:
       featured_proposals: "Uppmärksammade förslag"
       featured_proposals_description: "Visar uppmärksammade förslag på indexsidan för förslag"
       signature_sheets: "Namninsamlingar"
-      signature_sheets_description: "Tillåter att röster om förslag och investeringsprojekt i medborgarbudgetar som samlats in på plats kan läggas in via administrationspanelen"
+      signature_sheets_description: "Tillåter att röster om förslag och budgetförslag i medborgarbudgetar som samlats in på plats kan läggas in via administrationspanelen"
       user:
         recommendations: "Rekommendationer"
         recommendations_description: "Visar rekommendationer från användare på hemsidan baserat på taggarna i objekten de följer"
@@ -105,7 +105,7 @@ sv:
         recommendations_on_proposals: "Rekommenderade förslag"
         recommendations_on_proposals_description: "Visar rekommendationer från användare på förslagssidan baserat på taggarna i objekten som de följer"
       community: "Gemenskap kring förslag och budgetförslag"
-      community_description: "Aktiverar gemenskapsavsnitten i förslagen och investeringsprojekten i medborgarbudgetarna"
+      community_description: "Aktiverar gemenskapsavsnitten i förslagen och budgetförslagen i medborgarbudgetarna"
       map: "Geografisk plats för förslag och budgetförslag"
       map_description: "Aktiverar geografiska positioner av förslag och investeringsprojekt"
       allow_images: "Tillåt uppladdning och visning av bilder"
