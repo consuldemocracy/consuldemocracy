@@ -336,7 +336,7 @@ class User < ApplicationRecord
   end
 
   def username_required?
-    false
+    !organization? && !erased?
   end
 
   def email_required?
