@@ -12,7 +12,7 @@ hr:
         display_entries:
           zero: "%{entry_name} ne može pronaći"
           one: Postoji <strong> 1%{entry_name}</strong>
-          few: Postoje <strong>%{count} %{entry_name}</strong>
+          few: Postoji <strong> %{count} %{entry_name}</strong>
           other: Postoje <strong>%{count} %{entry_name}</strong>
   views:
     pagination:
