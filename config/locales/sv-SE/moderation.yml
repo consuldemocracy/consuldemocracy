@@ -111,6 +111,6 @@ sv:
       index:
         hidden: Blockerad
         hide: Blockera
-        search_placeholder: e-postadress eller namn på användare
+        search_placeholder: användares e-postadress eller namn
         title: Blockera användare
-      notice_hide: Användaren blockerades. Alla användarens inlägg och kommentarer har dolts.
+      notice_hide: Användaren blockerades. Användarens alla inlägg och kommentarer har dolts.
