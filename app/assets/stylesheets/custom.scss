@@ -520,7 +520,7 @@ p {
     display: -webkit-flex;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    ustify-content: flex-end;
     width: 100%;
     &:before, &:after{
       content: none;
