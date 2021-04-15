@@ -193,7 +193,7 @@ sv:
     local_census_records/import: Importera lokala adressregister
     site_customization/content_block: innehållsblock
     site_customization/page: sida
-    sdg/local_target: lokalt mål
+    sdg/local_target: lokalt delmål
   geozones:
     none: Hela staden
   layouts:
