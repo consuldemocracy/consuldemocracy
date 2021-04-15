@@ -80,7 +80,7 @@ sv:
         one: "mål"
         other: "mål"
       sdg/local_target:
-        one: "lokalt mål"
+        one: "lokalt delmål"
         other: "lokala mål"
       sdg/manager:
         one: "Globala målen-chef"
@@ -332,7 +332,7 @@ sv:
         description: "Beskrivning"
       sdg/local_target:
         code: "Kod"
-        target_id: "Mål"
+        target_id: "Delmål"
         title: "Titel"
       sdg/local_target/translation:
         title: "Titel"
@@ -596,7 +596,7 @@ sv:
         sdg/local_target:
           attributes:
             code:
-              invalid: "måste börja med samma kod som sitt mål, följt av en punkt, och sluta med ett tal"
+              invalid: "måste börja med samma kod som sitt delmål, följt av en punkt, och sluta med ett tal"
       messages:
         translations_too_short: Det krävs minst en översättning
         record_invalid: "Felmeddelanden: %{errors}"
