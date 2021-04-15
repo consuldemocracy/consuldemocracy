@@ -112,7 +112,7 @@ en:
             approval: "You can %{link} at any time until %{phase_end_date}."
           change_vote_link: "change your vote"
           different_heading_assigned: "You have active votes in another heading: %{heading_link}"
-          change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+          change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
           check_ballot_link: "submit my ballot"
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
@@ -168,7 +168,7 @@ en:
       header:
         check_ballot: "Submit my ballot"
         different_heading_assigned: "You have active votes in another heading: %{heading_link}"
-        change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+        change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
         check_ballot_link: "submit my ballot"
         price: "Total budget"
     show:
