@@ -15,6 +15,6 @@
   <%= t(proposals_path) %>
 </div>
 
-<% if @url == proposals_path %>
+<% if current_page?(page_path("proposals")) %>
 <%= render SDG::Goals::TagCloudComponent.new(taggable) %>
 <% end %>
