@@ -36,12 +36,16 @@ de:
           budgets: Bürgerhaushalt
           help_page: Hilfeseite
           sdg: SDG
+      create:
+        notice: "Banner erfolgreich erstellt"
       edit:
         editing: Banner bearbeiten
         form:
           submit_button: Änderungen speichern
       new:
         creating: Banner erstellen
+      update:
+        notice: "Banner erfolgreich aktualisiert"
     activity:
       show:
         action: Aktion
@@ -1287,6 +1291,7 @@ de:
           budget_investments: "Investitionen nach Titel, Beschreibung oder Überschrift suchen"
           debates: "Suche Debatten per Titel oder Beschreibung"
           legislation_processes: "Suche Prozesse nach Titel oder Beschreibung"
+          legislation_proposals: "Suche Vorschläge nach Titel oder Beschreibung"
           local_census_records: "Suche per Dokumentennummer"
           organizations: "Name, E-Mail oder Telefonnummer"
           poll_officers: "Suche Beamte/innen"
