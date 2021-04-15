@@ -151,7 +151,7 @@ sv:
       wrong_price_format: Endast heltal
       investment:
         add: Rösta
-        already_added: Du har redan skapat det här investeringsprojektet
+        already_added: Du har redan skapat det här budgetförslaget
         already_supported: Du stöder redan det här budgetförslaget. Dela det!
         support_title: Stöd projektet
         confirm_group:
