@@ -15,10 +15,10 @@ sv:
       already_authenticated: "Du är redan inloggad."
       inactive: "Ditt konto har inte aktiverats ännu."
       invalid: "Ogiltig %{authentication_keys} eller lösenord."
-      locked: "Ditt konto har blivit låst."
+      locked: "Ditt konto har låsts."
       last_attempt: "Du har ett försök kvar innan ditt konto spärras."
       not_found_in_database: "Ogiltig %{authentication_keys} eller lösenord."
-      timeout: "Din session har gått ut. Vänligen logga in igen för att fortsätta."
+      timeout: "Din session har gått ut. Vi ber dig logga in igen för att fortsätta."
       unauthenticated: "Du behöver logga in eller registrera dig för att fortsätta."
       unconfirmed: "Klicka på bekräftelselänken i ditt e-postmeddelande för att fortsätta"
     mailer:
