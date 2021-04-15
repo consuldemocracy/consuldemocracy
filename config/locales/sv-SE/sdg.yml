@@ -58,7 +58,7 @@ sv:
     related_list_selector:
       goal_identifier: "SDG%{code}"
       help:
-        title: "Vilka globala mål och delmål är i linje med min %{record}?"
+        title: "Vilka globala mål och delmål är i linje med min/mitt %{record}?"
         text: "SDG-hjälpsida"
       remove_tag: "Ta bort"
       title: "Globala mål och delmål för hållbar utveckling"
