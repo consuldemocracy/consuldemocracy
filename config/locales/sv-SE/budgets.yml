@@ -110,7 +110,7 @@ sv:
           change_vote_link: "ändra din röst"
           different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
-          check_ballot_link: "kontrollera min omröstning"
+          check_ballot_link: "skicka in min röst"
           zero: Du har inte röstat på några budgetförslag i den här delen av budgeten.
           verified_only: "För att skapa ett nytt budgetförslag måste du %{verify}."
           create: "Skapa budgetförslag"
@@ -163,10 +163,10 @@ sv:
           other: "%{count} stöd"
         give_support: Stöd
       header:
-        check_ballot: "Kontrollera min omröstning"
+        check_ballot: "Skicka in min röst"
         different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
         change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
-        check_ballot_link: "kontrollera min röster"
+        check_ballot_link: "skicka in min röst"
         price: "Det här området har en budget på"
     show:
       see_results: Visa resultat
