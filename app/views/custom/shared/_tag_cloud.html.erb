@@ -12,3 +12,7 @@
     <% end %>
   </ul>
 </div>
+
+<% if @url == proposals_urls %>
+<%= render SDG::Goals::TagCloudComponent.new(taggable) %>
+<% end %>
