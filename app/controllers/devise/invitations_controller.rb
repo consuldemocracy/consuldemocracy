@@ -122,5 +122,6 @@ class Devise::InvitationsController < DeviseController
       # Permit the `subscribe_newsletter` parameter along with the other
       # sign up parameters.
       devise_parameter_sanitizer.permit(:invite, keys: [:username])
+      devise_parameter_sanitizer.permit(:accept_invitation, keys: [:username])
     end
 end  
