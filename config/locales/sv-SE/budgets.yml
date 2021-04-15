@@ -5,6 +5,7 @@ sv:
         title: Dina röster
         amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
+          knapsack: "Du har fortfarande <span>%{count}</span>"
           approval:
             zero: "Du kan fortfarande lägga <span>%{count}</span> röster."
             one: "Du kan fortfarande lägga <span>%{count}</span> röst."
