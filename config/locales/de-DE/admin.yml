@@ -651,7 +651,7 @@ de:
       system_emails: E-mails vom System
       emails_download: E-Mails herunterladen
       valuators: Begutachter*innen
-      poll_officers: Vorsitzende der Abstimmung
+      poll_officers: Wahlvorstände
       polls: Umfragen
       poll_booths: Standort der Wahlkabinen
       poll_booth_assignments: Zuordnung der Wahlkabinen
@@ -1291,6 +1291,20 @@ de:
       color_help: Hexadezimales Format
       show_results_and_stats: "Ergebnisse und Statistiken anzeigen"
       results_and_stats_reminder: "Durch das Markieren dieses Kontrollkästchens werden die Resultate und/oder Statistiken dieser Abstimmung öffentlich abrufbar und für alle Benutzer*innen sichtbar."
+      label:
+        booths: "Suche nach Wahlkabinen anhand von Name oder Standort"
+        budget_investments: "Suche nach Budgetinvestitionen anhand von Titel, Beschreibung oder heading"
+        debates: "Suche nach Diskussionen anhand von Titel oder Beschreibung"
+        legislation_processes: "Suche nach Gesetzgebungsprozessen anhand von Titel oder Beschreibung"
+        legislation_proposals: "Suche nach Gesetzgebungsvorschlägen anhand von Titel oder Beschreibung"
+        local_census_records: "Suche nach Registern anhand von Dokumentennummer"
+        organizations: "Name, E-Mail oder Telefon"
+        poll_officers: "Suche nach Wahlvorständen"
+        poll_questions: "Suche nach Abstimmungsfragen"
+        polls: "Suche nach Abstimungen anhand von Name oder Beschreibung"
+        proposals: "Suche nach Vorschlägen anhand von Titel, Code, Beschreibung oder Frage"
+        users: "Suche nach Benutzer*innen anhand von Name oder E-Mail"
+      search: "Suchen"
     geozones:
       index:
         title: Bezirke
