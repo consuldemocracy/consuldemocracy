@@ -5,7 +5,7 @@ tr:
         title: Oyunuz
         amount_progress: "%{amount_spent}%{amount_limit}\nharcanan tutar / tutar limiti"
         amount_available:
-          knapsack: "Şu an itibariyle yatırım yapabileceğiniz miktar <span>%{count}</span>."
+          knapsack: "Şu an itibariyle yatırım yapabileceğiniz miktar <span>%{count}</span>"
           approval:
             zero: "Şu an itibariyle <span>%{count}</span> oy hakkınız bulunmaktadır."
             one: "Şu an itibariyle <span>%{count}</span> oy hakkınız bulunmaktadır."
