@@ -2,7 +2,7 @@ class SDGManagement::RelationsController < SDGManagement::BaseController
   before_action :check_feature_flags
   before_action :load_record, only: [:edit, :update]
 
-  FILTERS = %w[pending_sdg_review all sdg_reviewed].freeze
+  FILTERS = %w[all pending_sdg_review sdg_reviewed].freeze
   has_filters FILTERS, only: :index
 
   def index
