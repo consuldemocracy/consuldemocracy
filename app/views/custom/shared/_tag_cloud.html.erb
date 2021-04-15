@@ -13,6 +13,6 @@
   </ul>
 </div>
 
-<% if @url == proposals_urls %>
+<% if @url == proposals_path %>
 <%= render SDG::Goals::TagCloudComponent.new(taggable) %>
 <% end %>
