@@ -11,8 +11,8 @@
       </li>
     <% end %>
   </ul>
-  <%= t(@url) %>
-  <%= t(proposals_path) %>
+  <%= t(current_page?) %>
+  <%= t(page_path("proposals")) %>
 </div>
 
 <% if current_page?(page_path("proposals")) %>
