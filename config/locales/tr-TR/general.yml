@@ -172,6 +172,9 @@ tr:
     budget/investment: Yatırım
     budget/group: Bütçe Grubu
     budget/heading: Bütçe Başlığı
+    legislation/draft_version: taslak
+    legislation/process: süreç
+    legislation/question: soru
     poll/shift: Değiştir
     poll/question/answer: Cevap
     user: Hesap
@@ -180,7 +183,9 @@ tr:
     document: Belge
     topic: Konu
     image: Resim
+    site_customization/content_block: içerik bloğu
     site_customization/page: sayfa
+    sdg/local_target: yerel hedef
   geozones:
     none: Tüm şehir
   layouts:
@@ -241,6 +246,7 @@ tr:
           one: Bir yeni bildiriminiz var
           other: '%{count} yeni bildirimleriniz var'
         notifications: Bildirimler
+      sdg: "Sürdürülebilir Gelişim Hedefleri"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
