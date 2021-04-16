@@ -29,6 +29,9 @@ ro:
     close: Închis
     menu: Meniu
   comments:
+    actions:
+      confirm_delete: "Sunteți sigur? Această acțiune va șterge acest comentariu. Această acțiune nu poate fi revocată."
+      delete: "Șterge comentariu"
     comments_closed: Comentariile sunt închise
     verified_only: Pentru a participa %{verify_account}
     comment:
