@@ -200,7 +200,7 @@ he:
         selected: "נבחר"
         select: "בחר"
         list:
-          id: ID
+          id: מזהה
           title: כותרת
           supports: תמיכה
           admin: מנהל/ת
@@ -435,7 +435,7 @@ he:
         success_notice: "המסמך נמחק בהצלחה"
     hidden_users:
       index:
-        filter: סינון
+        filter: מסנן
         filters:
           all: כולם
           with_confirmed_hide: אושר
@@ -450,7 +450,7 @@ he:
         title: פעילות המשתמש (%{user})
     hidden_budget_investments:
       index:
-        filter: סינון
+        filter: מסנן
         filters:
           all: כולם
           with_confirmed_hide: אושר
@@ -490,7 +490,7 @@ he:
           title: חקיקה שיתופית
           filters:
             active: פעיל
-            all: כולם
+            all: הכל
         new:
           back: חזרה
           title: צור תהליך חקיקה שיתופית חדשה
@@ -500,7 +500,7 @@ he:
           orders:
             id: מזהה
             title: כותרת
-            supports: לחיצה לתמיכה
+            supports: סה"כ תומכים
         process:
           title: תהליך
           comments: הערות
@@ -525,7 +525,7 @@ he:
           title: כותרת
           back: חזרה
           id: מזהה
-          supports: לחיצה לתמיכה
+          supports: סה"כ תומכים
         form:
           custom_categories: תחומים
           custom_categories_description: קטגוריות בהם משתמשים יכולים ליצור את ההצעה. מקסימום 160 תווים.
