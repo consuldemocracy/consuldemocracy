@@ -662,7 +662,7 @@ he:
           proposals: "הצעות"
           polls: "סקרים"
           layouts: "פריסות"
-          mailers: "הודעה בדואר אלקטרוני"
+          mailers: "דואר אלקטרוני"
           management: "הנהלה"
           welcome: "ברוכים/ות הבאים/ות"
         buttons:
@@ -1143,7 +1143,7 @@ he:
       index:
         filter: סינון
         filters:
-          all: כולם
+          all: הכל
           pending: ממתין לאישור
           rejected: נדחה
           verified: אומת ואושר
@@ -1165,7 +1165,7 @@ he:
     proposals:
       index:
         title: הצעות
-        id: ID
+        id: מזהה
         author: מחבר/ת
         select: בחר
         selected: נבחר
@@ -1279,7 +1279,7 @@ he:
         document_numbers_note: "רשום את המספרים המופרדים בנקודות פסיק (;)"
         submit: יצירת דף לחתימות
       show:
-        created_at: נוצר ב
+        created_at: נוצר
         author: מחבר/ת
         verified:
           one: "יש %{count} חתימה חוקית"
