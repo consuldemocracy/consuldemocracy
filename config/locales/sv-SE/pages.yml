@@ -77,7 +77,7 @@ sv:
         När webbplatser designas med tillgänglighet i åtanke, kan alla användare få tillgång till innehållet på jämlika villkor, exempelvis:
       examples:
         - Erbjuda syntolkning till bilder som användare med synnedsättningar med hjälp av textläsare kan använda för att få tillgång till information.
-        - När videos har undertext kan användare med hörselskador fullt förstå dem.
+        - När videor har undertext kan användare med hörselskador fullt förstå dem.
         - Om innehållet är skrivet på ett lätt och illustrerat språk kan användare med inlärningssvårigheter bättre förstå det.
         - Om användaren har problem med rörlighet och det är svårt att använda musen kan tangentbordets alternativ hjälpa att navigera.
       keyboard_shortcuts:
@@ -132,7 +132,7 @@ sv:
         browser_settings_table:
           description: Webbplatsens tillgängliga design tillåter användaren att välja den storlek på texten som passar hen. Detta kan göras på olika sätt beroende på vilken webbläsare som används.
           browser_header: Webbläsare
-          action_header: Åtgärd att ta
+          action_header: Åtgärd att vidta
           rows:
             - 
               browser_column: IE
