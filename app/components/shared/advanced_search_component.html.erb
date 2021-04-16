@@ -42,23 +42,23 @@
         </div>
       </div>
 
-      <div class="filter">
-        <label for="advanced_search_official_level"><%= t("shared.advanced_search.author_type") %></label>
+      <!--<div class="filter">
+        <label for="advanced_search_official_level"><%#= t("shared.advanced_search.author_type") %></label>
         <%= select_tag("advanced_search[official_level]", official_level_search_options,
                       include_blank: t("shared.advanced_search.author_type_blank")) %>
-      </div>
+      </div>-->
 
       <% if sdg? %>
-        <div class="filter">
-          <label for="advanced_search_goal"><%= t("shared.advanced_search.goal") %></label>
+        <!--<div class="filter">
+          <label for="advanced_search_goal"><%#= t("shared.advanced_search.goal") %></label>
           <%= select_tag("advanced_search[goal]", goal_options,
                         include_blank: t("shared.advanced_search.goal_blank")) %>
         </div>
         <div class="filter">
-          <label for="advanced_search_target"><%= t("shared.advanced_search.target") %></label>
+          <label for="advanced_search_target"><%#= t("shared.advanced_search.target") %></label>
           <%= select_tag("advanced_search[target]", target_options,
                         include_blank: t("shared.advanced_search.target_blank")) %>
-        </div>
+        </div>-->
       <% end %>
 
       <div class="submit">
