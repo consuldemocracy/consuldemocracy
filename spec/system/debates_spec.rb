@@ -201,7 +201,7 @@ describe "Debates" do
     expect(page).to have_content("-6 votes")
   end
 
-  scenario "Create" do
+  scenario "Create", :with_frozen_time do
     author = create(:user)
     login_as(author)
 
@@ -216,7 +216,7 @@ describe "Debates" do
     expect(page).to have_content "Debate created successfully."
     expect(page).to have_content "This is very important because..."
     expect(page).to have_content author.name
-    expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
+    expect(page).to have_content I18n.l(Date.current)
   end
 
   scenario "Create with invisible_captcha honeypot field", :no_js do
@@ -317,7 +317,8 @@ describe "Debates" do
 
     click_link "Edit"
 
-    expect(page).to have_current_path(edit_debate_path(Debate.last))
+    expect(page).to have_css "h1", exact_text: "Edit debate"
+    expect(page).to have_field "Debate title", with: "Testing auto link"
     expect(page).not_to have_link("click me")
     expect(page.html).not_to include "<script>alert('hey')</script>"
   end
@@ -529,12 +530,9 @@ describe "Debates" do
         expect(page).not_to have_css(".recommendation", count: 3)
         expect(page).to have_content("Recommendations for debates are now disabled for this account")
 
-        user.reload
-
         visit account_path
 
         expect(find("#account_recommended_debates")).not_to be_checked
-        expect(user.recommended_debates).to be(false)
       end
     end
   end

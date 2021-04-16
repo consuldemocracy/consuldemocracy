@@ -629,12 +629,10 @@ describe "Ballots" do
       investment1 = create(:budget_investment, :selected, heading: new_york, price: 10000)
       admin_user = create(:administrator).user
 
-      in_browser(:user) do
-        login_as user
-        visit budget_investments_path(budget, heading_id: new_york)
+      login_as user
+      visit budget_investments_path(budget, heading_id: new_york)
 
-        expect(page).to have_css(".in-favor a")
-      end
+      expect(page).to have_css(".in-favor a")
 
       in_browser(:admin) do
         login_as admin_user
@@ -649,18 +647,16 @@ describe "Ballots" do
         end
       end
 
-      in_browser(:user) do
-        within("#budget_investment_#{investment1.id}") do
-          find(".in-favor a").click
+      within("#budget_investment_#{investment1.id}") do
+        find(".in-favor a").click
 
-          expect(page).not_to have_content "Remove"
-          expect(page).not_to have_selector(".participation-not-allowed")
+        expect(page).not_to have_content "Remove"
+        expect(page).not_to have_selector(".participation-not-allowed")
 
-          hover_over_ballot
+        hover_over_ballot
 
-          expect(page).to have_selector(".participation-not-allowed")
-          expect(page).to have_selector(".in-favor a", obscured: true)
-        end
+        expect(page).to have_selector(".participation-not-allowed")
+        expect(page).to have_selector(".in-favor a", obscured: true)
       end
     end
 

@@ -107,11 +107,13 @@ describe "Poll budget ballot sheets" do
       fill_in "data", with: "1234;5678"
       click_button "Save"
 
-      expect(Poll::BallotSheet.count).to be 1
-
-      expect(page).to have_content("Ballot sheet #{Poll::BallotSheet.last.id}")
+      expect(page).to have_content(/Ballot sheet \d+/)
       expect(page).to have_content(poll_officer.user.name)
       expect(page).to have_content("1234;5678")
+
+      visit officing_poll_ballot_sheets_path(poll)
+
+      expect(page).to have_css "tbody tr", count: 1
     end
 
     scenario "Ballot sheet is not saved" do
@@ -120,9 +122,11 @@ describe "Poll budget ballot sheets" do
       select "#{booth.name}", from: "officer_assignment_id"
       click_button "Save"
 
-      expect(Poll::BallotSheet.count).to be 0
-
       expect(page).to have_content("CSV data can't be blank")
+
+      visit officing_poll_ballot_sheets_path(poll)
+
+      expect(page).not_to have_css "tbody tr"
     end
 
     scenario "Shift booth has to be selected" do

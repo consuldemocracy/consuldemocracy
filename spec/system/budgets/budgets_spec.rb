@@ -15,45 +15,50 @@ describe "Budgets" do
     end
   end
 
-  context "Index" do
-    scenario "Show normal index with links" do
-      group1 = create(:budget_group, budget: budget)
-      group2 = create(:budget_group, budget: budget)
-      heading1 = create(:budget_heading, group: group1)
-      heading2 = create(:budget_heading, group: group2)
+  describe "Index" do
+    describe "Normal index" do
+      let!(:group1)   { create(:budget_group, budget: budget) }
+      let!(:group2)   { create(:budget_group, budget: budget) }
+      let!(:heading1) { create(:budget_heading, group: group1) }
+      let!(:heading2) { create(:budget_heading, group: group2) }
 
-      budget.update!(phase: "informing")
+      scenario "Show normal index with links in informing phase" do
+        budget.update!(phase: "informing")
 
-      visit budgets_path
+        visit budgets_path
 
-      within(".budget-header") do
-        expect(page).to have_content(budget.name)
-        expect(page).to have_content(budget.description)
-        expect(page).to have_link("Help with participatory budgets")
+        within(".budget-header") do
+          expect(page).to have_content(budget.name)
+          expect(page).to have_content(budget.description)
+          expect(page).to have_link("Help with participatory budgets")
+        end
+
+        within(".budget-subheader") do
+          expect(page).to have_content "CURRENT PHASE"
+          expect(page).to have_content "Information"
+        end
       end
 
-      within(".budget-subheader") do
-        expect(page).to have_content "CURRENT PHASE"
-        expect(page).to have_content "Information"
+      scenario "Show normal index with links publishing prices" do
+        budget.update!(phase: "publishing_prices")
+
+        visit budgets_path
+
+        within(".budget-subheader") do
+          expect(page).to have_content("Publishing projects prices")
+        end
+
+        within("#budget_info") do
+          expect(page).to have_content(group1.name)
+          expect(page).to have_content(group2.name)
+          expect(page).to have_content(heading1.name)
+          expect(page).to have_content(budget.formatted_heading_price(heading1))
+          expect(page).to have_content(heading2.name)
+          expect(page).to have_content(budget.formatted_heading_price(heading2))
+        end
+
+        expect(page).not_to have_content("#finished_budgets")
       end
-
-      budget.update!(phase: "publishing_prices")
-      visit budgets_path
-
-      within(".budget-subheader") do
-        expect(page).to have_content("Publishing projects prices")
-      end
-
-      within("#budget_info") do
-        expect(page).to have_content(group1.name)
-        expect(page).to have_content(group2.name)
-        expect(page).to have_content(heading1.name)
-        expect(page).to have_content(budget.formatted_heading_price(heading1))
-        expect(page).to have_content(heading2.name)
-        expect(page).to have_content(budget.formatted_heading_price(heading2))
-      end
-
-      expect(page).not_to have_content("#finished_budgets")
     end
 
     scenario "Show finished budgets list" do
@@ -316,35 +321,43 @@ describe "Budgets" do
   end
 
   context "Show" do
-    scenario "Links to unfeasible and selected if balloting or later" do
-      budget = create(:budget, :selecting)
-      group = create(:budget_group, budget: budget)
+    let!(:budget) { create(:budget, :selecting) }
+    let!(:group)  { create(:budget_group, budget: budget) }
 
-      visit budget_group_path(budget, group)
+    describe "Links to unfeasible and selected" do
+      scenario "are not seen before balloting" do
+        visit budget_group_path(budget, group)
 
-      expect(page).not_to have_link "See unfeasible investments"
-      expect(page).not_to have_link "See investments not selected for balloting phase"
+        expect(page).not_to have_link "See unfeasible investments"
+        expect(page).not_to have_link "See investments not selected for balloting phase"
+      end
 
-      budget.update!(phase: :publishing_prices)
+      scenario "are not seen publishing prices" do
+        budget.update!(phase: :publishing_prices)
 
-      visit budget_group_path(budget, group)
+        visit budget_group_path(budget, group)
 
-      expect(page).not_to have_link "See unfeasible investments"
-      expect(page).not_to have_link "See investments not selected for balloting phase"
+        expect(page).not_to have_link "See unfeasible investments"
+        expect(page).not_to have_link "See investments not selected for balloting phase"
+      end
 
-      budget.update!(phase: :balloting)
+      scenario "are seen balloting" do
+        budget.update!(phase: :balloting)
 
-      visit budget_group_path(budget, group)
+        visit budget_group_path(budget, group)
 
-      expect(page).to have_link "See unfeasible investments"
-      expect(page).to have_link "See investments not selected for balloting phase"
+        expect(page).to have_link "See unfeasible investments"
+        expect(page).to have_link "See investments not selected for balloting phase"
+      end
 
-      budget.update!(phase: :finished)
+      scenario "are seen on finished budgets" do
+        budget.update!(phase: :finished)
 
-      visit budget_group_path(budget, group)
+        visit budget_group_path(budget, group)
 
-      expect(page).to have_link "See unfeasible investments"
-      expect(page).to have_link "See investments not selected for balloting phase"
+        expect(page).to have_link "See unfeasible investments"
+        expect(page).to have_link "See investments not selected for balloting phase"
+      end
     end
 
     scenario "Take into account headings with the same name from a different budget" do

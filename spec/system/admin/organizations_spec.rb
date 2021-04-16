@@ -94,9 +94,12 @@ describe "Admin::Organizations" do
       click_on "Verify"
     end
     expect(page).to have_current_path(admin_organizations_path, ignore_query: true)
-    expect(page).to have_content "Verified"
 
-    expect(organization.reload.verified?).to eq(true)
+    click_link "Verified"
+
+    within "tr", text: organization.name do
+      expect(page).to have_content "Verified"
+    end
   end
 
   scenario "Verified organizations have link to reject" do
@@ -117,10 +120,10 @@ describe "Admin::Organizations" do
     expect(page).not_to have_content organization.name
 
     click_on "Rejected"
-    expect(page).to have_content "Rejected"
-    expect(page).to have_content organization.name
 
-    expect(organization.reload.rejected?).to eq(true)
+    within "tr", text: organization.name do
+      expect(page).to have_content "Rejected"
+    end
   end
 
   scenario "Rejected organizations have link to verify" do
@@ -139,9 +142,9 @@ describe "Admin::Organizations" do
     expect(page).not_to have_content organization.name
     click_on("Verified")
 
-    expect(page).to have_content organization.name
-
-    expect(organization.reload.verified?).to eq(true)
+    within "tr", text: organization.name do
+      expect(page).to have_content "Verified"
+    end
   end
 
   scenario "Current filter is properly highlighted" do

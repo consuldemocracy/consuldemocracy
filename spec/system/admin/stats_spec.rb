@@ -216,10 +216,13 @@ describe "Stats", :admin do
   end
 
   context "graphs" do
-    scenario "event graphs" do
+    scenario "event graphs", :with_frozen_time do
       campaign = create(:campaign)
 
       visit root_path(track_id: campaign.track_id)
+
+      expect(page).to have_content "Sign out"
+
       visit admin_stats_path
 
       within("#stats") do
@@ -227,9 +230,9 @@ describe "Stats", :admin do
       end
 
       expect(page).to have_content "#{campaign.name} (1)"
+
       within("#graph") do
-        event_created_at = Ahoy::Event.find_by(name: campaign.name).time
-        expect(page).to have_content event_created_at.strftime("%Y-%m-%d")
+        expect(page).to have_content Date.current.strftime("%Y-%m-%d")
       end
     end
   end
@@ -255,14 +258,14 @@ describe "Stats", :admin do
     end
 
     scenario "Index" do
-      3.times { create(:proposal_notification) }
+      proposal_notifications = 3.times.map { create(:proposal_notification) }
 
       visit admin_stats_path
       click_link "Proposal notifications"
 
       expect(page).to have_css(".proposal_notification", count: 3)
 
-      ProposalNotification.find_each do |proposal_notification|
+      proposal_notifications.each do |proposal_notification|
         expect(page).to have_content proposal_notification.title
         expect(page).to have_content proposal_notification.body
       end
@@ -411,10 +414,12 @@ describe "Stats", :admin do
     end
 
     scenario "Renders all goals stats" do
+      goals_count = SDG::Goal.count
+
       visit sdg_admin_stats_path
 
-      expect(page).to have_css "h3", count: SDG::Goal.count
-      expect(page).to have_css ".sdg-goal-stats", count: SDG::Goal.count
+      expect(page).to have_css "h3", count: goals_count
+      expect(page).to have_css ".sdg-goal-stats", count: goals_count
     end
   end
 end

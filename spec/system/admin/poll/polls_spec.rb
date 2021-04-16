@@ -75,7 +75,10 @@ describe "Admin polls", :admin do
     expect(page).to have_content "Upcoming poll"
     expect(page).to have_content I18n.l(start_date)
     expect(page).to have_content I18n.l(end_date)
-    expect(Poll.last.slug).to eq "#{Poll.last.name.to_s.parameterize}"
+
+    visit poll_path(id: "upcoming-poll")
+
+    expect(page).to have_content "Upcoming poll"
   end
 
   scenario "Edit" do

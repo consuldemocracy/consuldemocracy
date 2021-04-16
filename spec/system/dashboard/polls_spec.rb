@@ -256,11 +256,7 @@ describe "Polls" do
 
     visit proposal_dashboard_polls_path(proposal)
 
-    within "div#poll_#{poll.id}" do
-      click_link "View results"
-    end
-
-    page.driver.browser.switch_to.window page.driver.browser.window_handles.last do
+    within_window(window_opened_by { click_link "View results" }) do
       expect(page).to have_current_path(results_proposal_poll_path(proposal, poll))
     end
   end

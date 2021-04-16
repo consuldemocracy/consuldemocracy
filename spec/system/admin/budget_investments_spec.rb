@@ -627,7 +627,7 @@ describe "Admin budget investments", :admin do
       administrator = create(:administrator, user: user)
       budget.administrators = [administrator]
 
-      create(:budget_investment, budget: budget, title: "Educate the children",
+      educate_children = create(:budget_investment, budget: budget, title: "Educate the children",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More schools",
                                  administrator: administrator)
@@ -648,8 +648,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      educate_children_investment = Budget::Investment.find_by(title: "Educate the children")
-      fill_in "title_or_id", with: educate_children_investment.id
+      fill_in "title_or_id", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -661,7 +660,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Combination of select with text search" do
-      create(:budget_investment, :feasible, :finished, budget: budget, title: "Educate the children")
+      educate_children = create(:budget_investment, :feasible, :finished,
+                                budget: budget, title: "Educate the children")
       create(:budget_investment, :feasible, :finished, budget: budget, title: "More schools")
       create(:budget_investment, budget: budget, title: "More hospitals")
 
@@ -682,8 +682,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      educate_children_investment = Budget::Investment.find_by(title: "Educate the children")
-      fill_in "title_or_id", with: educate_children_investment.id
+      fill_in "title_or_id", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -699,8 +698,8 @@ describe "Admin budget investments", :admin do
       administrator = create(:administrator, user: user)
       budget.administrators = [administrator]
 
-      create(:budget_investment, :feasible, :finished, budget: budget, title: "Educate the children",
-                                 administrator: administrator)
+      educate_children = create(:budget_investment, :feasible, :finished,
+                                budget: budget, title: "Educate the children", administrator: administrator)
       create(:budget_investment, :feasible, :finished, budget: budget, title: "More schools",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hospitals",
@@ -735,8 +734,7 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content("More hospitals")
       expect(page).not_to have_content("More hostals")
 
-      educate_children_investment = Budget::Investment.find_by(title: "Educate the children")
-      fill_in "title_or_id", with: educate_children_investment.id
+      fill_in "title_or_id", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -1077,6 +1075,8 @@ describe "Admin budget investments", :admin do
       check "Marta"
       click_button "Update Budget"
 
+      expect(page).to have_content "Participatory budget updated successfully"
+
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"
 
@@ -1105,6 +1105,8 @@ describe "Admin budget investments", :admin do
       check "Valentina"
       check "Val"
       click_button "Update Budget"
+
+      expect(page).to have_content "Participatory budget updated successfully"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"
@@ -1227,6 +1229,8 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_tag_list", with: "Park, Trees"
       fill_in "budget_investment_valuation_tag_list", with: "Education, Environment"
       click_button "Update"
+
+      expect(page).to have_content "Investment project updated succesfully"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
@@ -1587,10 +1591,8 @@ describe "Admin budget investments", :admin do
       investment1.update!(administrator: admin)
       investment2.update!(administrator: admin)
 
-      login_as(valuator.user.reload)
-      visit root_path
-      click_link "Menu"
-      click_link "Valuation"
+      login_as(valuator.user)
+      visit valuation_root_path
 
       within "#budget_#{budget.id}" do
         click_link "Evaluate"
@@ -1744,6 +1746,9 @@ describe "Admin budget investments", :admin do
       click_link "Advanced filters"
       check "Valuation finished"
       click_button "Filter"
+
+      expect(page).to have_content "Finished Investment"
+      expect(page).not_to have_content "Unfeasible one"
 
       click_link "Download current selection"
 

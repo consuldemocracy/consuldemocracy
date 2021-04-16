@@ -301,11 +301,20 @@ describe "System Emails" do
         click_on "Moderate notification send"
       end
 
+      expect(page).not_to have_content("Proposal A Title")
+
       visit admin_system_email_preview_pending_path("proposal_notification_digest")
 
-      expect(Notification.count).to equal(1)
-      expect(Activity.last.actionable_type).to eq("ProposalNotification")
+      expect(page).to have_content("Proposal B")
       expect(page).not_to have_content("Proposal A Title")
+
+      visit admin_activity_path
+
+      within first("tbody tr") do
+        expect(page).to have_content "Proposal notification"
+        expect(page).to have_content "Proposal A Title"
+        expect(page).to have_content admin.user.username
+      end
     end
 
     scenario "#send_pending" do

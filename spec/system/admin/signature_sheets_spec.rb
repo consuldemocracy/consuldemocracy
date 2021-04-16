@@ -3,13 +3,13 @@ require "rails_helper"
 describe "Signature sheets", :admin do
   context "Index" do
     scenario "Lists all signature_sheets" do
-      3.times { create(:signature_sheet) }
+      signature_sheets = 3.times.map { create(:signature_sheet) }
 
       visit admin_signature_sheets_path
 
       expect(page).to have_css(".signature_sheet", count: 3)
 
-      SignatureSheet.find_each do |signature_sheet|
+      signature_sheets.each do |signature_sheet|
         expect(page).to have_content signature_sheet.name
       end
     end

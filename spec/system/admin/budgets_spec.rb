@@ -286,8 +286,7 @@ describe "Admin budgets", :admin do
     end
 
     scenario "Changing name for current locale will update the slug if budget is in draft phase" do
-      budget.update!(published: false)
-      old_slug = budget.slug
+      budget.update!(published: false, name: "Old English Name")
 
       visit edit_admin_budget_path(budget)
 
@@ -296,7 +295,10 @@ describe "Admin budgets", :admin do
       click_button "Update Budget"
 
       expect(page).to have_content "Participatory budget updated successfully"
-      expect(budget.reload.slug).to eq old_slug
+
+      visit budget_path(id: "old-english-name")
+
+      expect(page).to have_content "Old English Name"
 
       visit edit_admin_budget_path(budget)
 
@@ -305,8 +307,10 @@ describe "Admin budgets", :admin do
       click_button "Update Budget"
 
       expect(page).to have_content "Participatory budget updated successfully"
-      expect(budget.reload.slug).not_to eq old_slug
-      expect(budget.slug).to eq "new-english-name"
+
+      visit budget_path(id: "new-english-name")
+
+      expect(page).to have_content "New English Name"
     end
   end
 

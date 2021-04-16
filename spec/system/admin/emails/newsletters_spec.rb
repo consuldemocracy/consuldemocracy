@@ -33,13 +33,13 @@ describe "Admin newsletter emails", :admin do
 
   context "Index" do
     scenario "Valid newsletters" do
-      3.times { create(:newsletter) }
+      newsletters = 3.times.map { create(:newsletter) }
 
       visit admin_newsletters_path
 
       expect(page).to have_css(".newsletter", count: 3)
 
-      Newsletter.find_each do |newsletter|
+      newsletters.each do |newsletter|
         segment_recipient = I18n.t("admin.segment_recipient.#{newsletter.segment_recipient}")
         within("#newsletter_#{newsletter.id}") do
           expect(page).to have_content newsletter.subject

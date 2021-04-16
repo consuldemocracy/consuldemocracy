@@ -97,7 +97,14 @@ describe "Admin budget groups", :admin do
       click_button "Create new group"
 
       expect(page).to have_content "Group created successfully!"
-      expect(Budget::Group.first.max_votable_headings).to be 1
+
+      within all("thead th")[1] do
+        expect(page).to have_content("Maximum number of headings in which a user can select projects")
+      end
+
+      within "tbody tr" do
+        within all("td")[1] { expect(page.text).to eq "1" }
+      end
     end
 
     scenario "Group name is mandatory" do
@@ -123,8 +130,7 @@ describe "Admin budget groups", :admin do
     end
 
     scenario "Changing name for current locale will update the slug if budget is in draft phase" do
-      group = create(:budget_group, budget: budget)
-      old_slug = group.slug
+      group = create(:budget_group, budget: budget, name: "Old English Name")
 
       visit edit_admin_budget_group_path(budget, group)
 
@@ -133,7 +139,10 @@ describe "Admin budget groups", :admin do
       click_button "Save group"
 
       expect(page).to have_content "Group updated successfully"
-      expect(group.reload.slug).to eq old_slug
+
+      visit budget_group_path(budget, id: "old-english-name")
+
+      expect(page).to have_content "Select an option"
 
       visit edit_admin_budget_group_path(budget, group)
 
@@ -142,8 +151,10 @@ describe "Admin budget groups", :admin do
       click_button "Save group"
 
       expect(page).to have_content "Group updated successfully"
-      expect(group.reload.slug).not_to eq old_slug
-      expect(group.slug).to eq "new-english-name"
+
+      visit budget_group_path(budget, id: "new-english-name")
+
+      expect(page).to have_content "Select an option"
     end
   end
 

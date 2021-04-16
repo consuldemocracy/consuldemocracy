@@ -61,34 +61,38 @@ describe "Moderate budget investments" do
           within("#investment_#{investment.id}") do
             check "budget_investment_#{investment.id}_check"
           end
-
-          expect(page).not_to have_css("investment#{investment.id}")
         end
 
         scenario "Hide the investment" do
           accept_confirm { click_button "Hide budget investments" }
 
-          expect(page).not_to have_css("investment_#{investment.id}")
+          expect(page).not_to have_css("#investment_#{investment.id}")
 
-          investment.reload
+          click_link "Block users"
+          fill_in "email or name of user", with: investment.author.email
+          click_button "Search"
 
-          expect(investment.author).not_to be_hidden
+          within "tr", text: investment.author.name do
+            expect(page).to have_link "Block"
+          end
         end
 
         scenario "Block the author" do
           accept_confirm { click_button "Block authors" }
 
-          expect(page).not_to have_css("investment_#{investment.id}")
+          expect(page).not_to have_css("#investment_#{investment.id}")
 
-          investment.reload
+          click_link "Block users"
+          fill_in "email or name of user", with: investment.author.email
+          click_button "Search"
 
-          expect(investment.author).to be_hidden
+          within "tr", text: investment.author.name do
+            expect(page).to have_content "Blocked"
+          end
         end
 
-        scenario "Ignore the investment" do
-          accept_confirm { click_button "Mark as viewed" }
-
-          expect(page).not_to have_css("investment_#{investment.id}")
+        scenario "Ignore the investment", :no_js do
+          click_button "Mark as viewed"
 
           investment.reload
 

@@ -325,14 +325,20 @@ describe "Budget Investments" do
 
     scenario "Random order maintained when going back from show" do
       per_page.times { create(:budget_investment, heading: heading) }
+      first_investment = Budget::Investment.first
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
       order = all(".budget-investment h3").map(&:text)
       expect(order).not_to be_empty
 
-      click_link Budget::Investment.first.title
+      click_link first_investment.title
+
+      expect(page).not_to have_link first_investment.title
+
       click_link "Go back"
+
+      expect(page).to have_link first_investment.title
 
       new_order = all(".budget-investment h3").map(&:text)
       expect(order).to eq(new_order)
@@ -742,15 +748,16 @@ describe "Budget Investments" do
       scenario "Price & explanation is shown when Budget is on published prices phase" do
         Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
           budget.update!(phase: phase)
+
+          if budget.finished?
+            investment.update!(winner: true)
+          end
+
           visit budget_investment_path(budget, id: investment.id)
 
           expect(page).to have_content(investment.formatted_price)
           expect(page).to have_content(investment.price_explanation)
           expect(page).to have_link("See price explanation")
-
-          if budget.finished?
-            investment.update(winner: true)
-          end
 
           visit budget_investments_path(budget)
 
@@ -901,29 +908,26 @@ describe "Budget Investments" do
     expect(page).to have_content("This investment project has been selected for balloting phase")
   end
 
-  scenario "Show (winner budget investment) only if budget is finished" do
-    budget.update!(phase: "balloting")
+  describe "winner budget investment text" do
+    let(:investment) do
+      create(:budget_investment, :winner, budget: budget, heading: heading)
+    end
 
-    investment = create(:budget_investment,
-                        :feasible,
-                        :finished,
-                        :selected,
-                        :winner,
-                        budget: budget,
-                        heading: heading)
+    scenario "don't show text if budget is not finished" do
+      budget.update!(phase: "balloting")
 
-    user = create(:user)
-    login_as(user)
+      visit budget_investment_path(budget, id: investment.id)
 
-    visit budget_investment_path(budget, id: investment.id)
+      expect(page).not_to have_content("Winning investment project")
+    end
 
-    expect(page).not_to have_content("Winning investment project")
+    scenario "show text if budget is finished" do
+      budget.update!(phase: "finished")
 
-    budget.update!(phase: "finished")
+      visit budget_investment_path(budget, id: investment.id)
 
-    visit budget_investment_path(budget, id: investment.id)
-
-    expect(page).to have_content("Winning investment project")
+      expect(page).to have_content("Winning investment project")
+    end
   end
 
   scenario "Show (not selected budget investment)" do
@@ -1384,14 +1388,9 @@ describe "Budget Investments" do
         user = create(:user, :level_two, ballot_lines: [investment])
         heading2 = create(:budget_heading, group: group)
 
+        investment.update!(heading: heading2)
+
         login_as(user)
-        visit budget_ballot_path(budget)
-
-        expect(page).to have_content("You have voted one investment")
-
-        investment.heading = heading2
-        investment.save!
-
         visit budget_ballot_path(budget)
 
         expect(page).to have_content("You have voted 0 investment")
@@ -1401,15 +1400,9 @@ describe "Budget Investments" do
         investment = create(:budget_investment, :selected, heading: heading)
         user = create(:user, :level_two, ballot_lines: [investment])
 
+        investment.update!(feasibility: "unfeasible", unfeasibility_explanation: "too expensive")
+
         login_as(user)
-        visit budget_ballot_path(budget)
-
-        expect(page).to have_content("You have voted one investment")
-
-        investment.feasibility = "unfeasible"
-        investment.unfeasibility_explanation = "too expensive"
-        investment.save!
-
         visit budget_ballot_path(budget)
 
         expect(page).to have_content("You have voted 0 investment")

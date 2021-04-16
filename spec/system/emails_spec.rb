@@ -177,27 +177,29 @@ describe "Emails" do
 
   context "Comment replies" do
     let(:user) { create(:user, email_on_comment_reply: true) }
+    let(:debate) { create(:debate) }
+    let!(:comment) { create(:comment, commentable: debate, user: user) }
 
     scenario "Send email on comment reply" do
-      reply_to(user)
+      reply_to(comment)
 
       email = open_last_email
       expect(email).to have_subject("Someone has responded to your comment")
       expect(email).to deliver_to(user)
-      expect(email).not_to have_body_text(debate_path(Comment.first.commentable))
+      expect(email).not_to have_body_text(debate_path(debate))
       expect(email).to have_body_text(comment_path(Comment.last))
       expect(email).to have_body_text("To stop receiving these emails change your settings in")
       expect(email).to have_body_text(account_path)
     end
 
     scenario "Do not send email about own replies to own comments" do
-      reply_to(user, user)
+      reply_to(comment, replier: user)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
 
     scenario "Do not send email about comment reply unless set in preferences" do
       user.update!(email_on_comment_reply: false)
-      reply_to(user)
+      reply_to(comment)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
   end
@@ -357,13 +359,12 @@ describe "Emails" do
       expect(page).to have_content "Investment created successfully"
 
       email = open_last_email
-      investment = Budget::Investment.last
 
       expect(email).to have_subject("Thank you for creating an investment!")
-      expect(email).to deliver_to(investment.author.email)
+      expect(email).to deliver_to(author.email)
       expect(email).to have_body_text(author.name)
-      expect(email).to have_body_text(investment.title)
-      expect(email).to have_body_text(investment.budget.name)
+      expect(email).to have_body_text("Build a hospital")
+      expect(email).to have_body_text(budget.name)
       expect(email).to have_body_text(budget_path(budget))
     end
 
@@ -381,12 +382,11 @@ describe "Emails" do
       click_button "Save changes"
 
       expect(page).to have_content "Dossier updated"
-      investment.reload
 
       email = open_last_email
       expect(email).to have_subject("Your investment project '#{investment.code}' has been marked as unfeasible")
       expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text(investment.unfeasibility_explanation)
+      expect(email).to have_body_text "This is not legal as stated in Article 34.9"
     end
 
     scenario "Selected investment" do

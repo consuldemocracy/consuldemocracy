@@ -580,11 +580,13 @@ describe "Users" do
   end
 
   scenario "Sign in, admin with password expired" do
-    user = create(:user, password_changed_at: Time.current - 1.year)
-    admin = create(:administrator, user: user)
+    user = create(:administrator).user
+    user.update!(password_changed_at: Time.current - 1.year)
 
-    login_as(admin.user)
-    visit root_path
+    visit new_user_session_path
+    fill_in "Email or username", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Enter"
 
     expect(page).to have_content "Your password is expired"
 
@@ -617,11 +619,13 @@ describe "Users" do
   end
 
   scenario "Admin with password expired trying to use same password" do
-    user = create(:user, password_changed_at: Time.current - 1.year, password: "123456789")
-    admin = create(:administrator, user: user)
+    user = create(:administrator).user
+    user.update!(password_changed_at: Time.current - 1.year, password: "123456789")
 
-    login_as(admin.user)
-    visit root_path
+    visit new_user_session_path
+    fill_in "Email or username", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Enter"
 
     expect(page).to have_content "Your password is expired"
 

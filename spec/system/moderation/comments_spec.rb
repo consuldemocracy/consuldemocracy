@@ -81,30 +81,39 @@ describe "Moderate comments" do
           within("#comment_#{comment.id}") do
             check "comment_#{comment.id}_check"
           end
-
-          expect(page).not_to have_css("comment_#{comment.id}")
         end
 
         scenario "Hide the comment" do
           accept_confirm { click_button "Hide comments" }
 
-          expect(page).not_to have_css("comment_#{comment.id}")
-          expect(comment.reload).to be_hidden
-          expect(comment.user).not_to be_hidden
+          expect(page).not_to have_css("#comment_#{comment.id}")
+
+          click_link "Block users"
+          fill_in "email or name of user", with: comment.user.email
+          click_button "Search"
+
+          within "tr", text: comment.user.name do
+            expect(page).to have_link "Block"
+          end
         end
 
         scenario "Block the user" do
           accept_confirm { click_button "Block authors" }
 
-          expect(page).not_to have_css("comment_#{comment.id}")
-          expect(comment.reload).to be_hidden
-          expect(comment.user).to be_hidden
+          expect(page).not_to have_css("#comment_#{comment.id}")
+
+          click_link "Block users"
+          fill_in "email or name of user", with: comment.user.email
+          click_button "Search"
+
+          within "tr", text: comment.user.name do
+            expect(page).to have_content "Blocked"
+          end
         end
 
-        scenario "Ignore the comment" do
-          accept_confirm { click_button "Mark as viewed" }
+        scenario "Ignore the comment", :no_js do
+          click_button "Mark as viewed"
 
-          expect(page).not_to have_css("comment_#{comment.id}")
           expect(comment.reload).to be_ignored_flag
           expect(comment.reload).not_to be_hidden
           expect(comment.user).not_to be_hidden

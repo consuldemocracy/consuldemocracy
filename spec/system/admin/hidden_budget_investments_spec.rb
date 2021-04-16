@@ -22,9 +22,9 @@ describe "Admin hidden budget investments", :admin do
 
     expect(page).not_to have_content(investment.title)
 
-    investment.reload
+    visit budget_investment_path(investment.budget, investment)
 
-    expect(investment).to be_ignored_flag
+    expect(page).to have_content(investment.title)
   end
 
   scenario "Confirm hide" do
@@ -40,8 +40,6 @@ describe "Admin hidden budget investments", :admin do
 
     click_link("Confirmed")
     expect(page).to have_content(investment.title)
-
-    expect(investment.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do

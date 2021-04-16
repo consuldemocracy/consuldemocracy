@@ -31,7 +31,10 @@ describe "Admin proposals", :admin do
       within("#proposal_#{proposal.id}") { click_link "Select" }
 
       within("#proposal_#{proposal.id}") { expect(page).to have_link "Selected" }
-      expect(proposal.reload.selected?).to be true
+
+      refresh
+
+      within("#proposal_#{proposal.id}") { expect(page).to have_link "Selected" }
     end
 
     scenario "Unselect a proposal" do
@@ -42,7 +45,10 @@ describe "Admin proposals", :admin do
       within("#proposal_#{proposal.id}") { click_link "Selected" }
 
       within("#proposal_#{proposal.id}") { expect(page).to have_link "Select" }
-      expect(proposal.reload.selected?).to be false
+
+      refresh
+
+      within("#proposal_#{proposal.id}") { expect(page).to have_link "Select" }
     end
   end
 
@@ -80,7 +86,6 @@ describe "Admin proposals", :admin do
 
       expect(page).to have_content "Proposal updated successfully"
       expect(find_field("Mark as selected")).to be_checked
-      expect(proposal.reload.selected?).to be true
     end
 
     scenario "Unselect a proposal" do
@@ -93,7 +98,6 @@ describe "Admin proposals", :admin do
 
       expect(page).to have_content "Proposal updated successfully"
       expect(find_field("Mark as selected")).not_to be_checked
-      expect(proposal.reload.selected?).to be false
     end
   end
 end
