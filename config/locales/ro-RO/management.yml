@@ -107,6 +107,7 @@ ro:
         few: " care conțin termenii \"%{search_term}\""
         other: " care conțin termenii \"%{search_term}\""
     sessions:
+      need_managed_user: Pentru a efectua această acțiune trebuie să selectați un utilizator
       signed_out: Deconectat cu succes.
       signed_out_managed_user: Sesiunea de utilizator s-a deconectat cu succes.
     username_label: Nume de utilizator
