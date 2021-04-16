@@ -817,10 +817,10 @@ tr:
       actions: Eylemler
       retired_help_text: Geri çekilen öneriler için gösterge panosu mevcut değil
   votes:
-    agree: Kabul ediyorum
+    agree: Katılıyorum
     anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
     comment_unauthenticated: Oy kullanmak için %{signin} veya %{signup} yapmalısınız.
-    disagree: Kabul etmiyorum
+    disagree: Katılmıyorum
     organizations: Organizasyonların oy kullanmalarına izin verilmez
     supports: Destekler
     verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
