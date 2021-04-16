@@ -62,7 +62,7 @@ he:
         many: "%{count} הצבעות"
         other: "%{count} הצבעות"
     form:
-      comment_as_admin: הגב/י כמנהל/ת
+      comment_as_admin: הגב/י כמנהל/ת מערכת
       comment_as_moderator: הגב/י כמנחה/ת הדיון
       leave_comment: השאר תגובה
     orders:
