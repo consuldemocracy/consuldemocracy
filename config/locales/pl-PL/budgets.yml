@@ -54,7 +54,7 @@ pl:
         tags_label: Tagi
         tags_placeholder: "Wprowadź oznaczenia, których chciałbyś użyć, rozdzielone przecinkami (',')"
         map_location: "Lokalizacja na mapie"
-        map_location_instructions: "Nakieruj mapę na lokalizację i umieść znacznik."
+        map_location_instructions: "Przejdź na mapie do lokalizacji i umieść znacznik."
         map_remove_marker: "Usuń znacznik mapy"
         map_skip_checkbox: "Ta inwestycja nie posiada konkretnej lokalizacji lub nie jest mi ona znana."
       index:
