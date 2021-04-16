@@ -36,12 +36,16 @@ ro:
           budgets: Bugetare participativă
           help_page: Pagina de ajutor
           sdg: ODD
+      create:
+        notice: "Banner creat cu succes"
       edit:
         editing: Editează banner
         form:
           submit_button: Salvează modificările
       new:
         creating: Creați banner
+      update:
+        notice: "Banner actualizat cu succes"
     activity:
       show:
         action: Acțiuni
