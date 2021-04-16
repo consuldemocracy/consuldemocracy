@@ -49,6 +49,7 @@ tr:
           title: Bir kurum veya topluluk olarak kaydol
         success:
           back_to_index: Anladım; ana sayfaya geri dön
+          instructions_1: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
           title: Kurumun / topluluğun kaydı
     passwords:
       edit:
