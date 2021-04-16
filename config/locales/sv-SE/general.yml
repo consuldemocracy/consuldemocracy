@@ -111,7 +111,7 @@ sv:
         disable: "Rekommenderade debatter kommer sluta visas om du avaktiverar dem. Du kan aktivera funktionen igen under \"Mitt konto\""
         actions:
           success: "Rekommenderade debatter har inaktiverats för kontot"
-          error: "Ett fel har uppstått. Var vänlig och gå till \"Mitt konto\" för att manuellt inaktivera rekommenderade debatter"
+          error: "Ett fel har uppstått. Var vänlig och gå till \"Mitt konto\" för att manuellt inaktivera debattrekommendationer"
       search_form:
         button: Sök
         placeholder: Sök debatter...
