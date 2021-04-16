@@ -9,11 +9,21 @@ module ActsAsParanoidAliases
         after_hide
       end
 
+      def show
+        return true if hidden_at==nil
+
+        update_attribute(:hidden_at, nil) if self.class.column_names.include? "hidden_at"
+        after_show
+      end
+
       def hidden?
         deleted?
       end
 
       def after_hide
+      end
+
+      def after_show
       end
 
       def confirmed_hide?
@@ -58,6 +68,12 @@ module ActsAsParanoidAliases
       return if ids.blank?
 
       where(id: ids).each(&:hide)
+    end
+
+    def show_all(ids)
+      return if ids.blank?
+
+      where(id: ids).each(&:show)
     end
 
     def restore_all(ids)

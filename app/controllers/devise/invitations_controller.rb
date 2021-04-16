@@ -107,7 +107,6 @@ class Devise::InvitationsController < DeviseController
 
     def invite_params
       devise_parameter_sanitizer.sanitize(:invite)
-      #devise_parameter_sanitizer.for(:invite) { |u| u.permit(:username, :email) }
     end
 
     def update_resource_params
@@ -119,9 +118,7 @@ class Devise::InvitationsController < DeviseController
     end
 
     def configure_permitted_parameters
-      # Permit the `subscribe_newsletter` parameter along with the other
-      # sign up parameters.
       devise_parameter_sanitizer.permit(:invite, keys: [:username])
-      devise_parameter_sanitizer.permit(:accept_invitation, keys: [:username])
+      #devise_parameter_sanitizer.permit(:accept_invitation, keys: [:username])
     end
 end  

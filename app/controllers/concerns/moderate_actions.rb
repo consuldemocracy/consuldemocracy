@@ -15,6 +15,10 @@ module ModerateActions
     hide_resource resource
   end
 
+  def show
+    show_resource resource
+  end
+
   def moderate
     set_resource_params
     @resources = @resources.where(id: params[:resource_ids])
@@ -40,6 +44,11 @@ module ModerateActions
     def hide_resource(resource)
       resource.hide
       Activity.log(current_user, :hide, resource)
+    end
+
+    def show_resource(resource)
+      resource.show
+      Activity.log(current_user, :show, resource)
     end
 
     def block_user(user)

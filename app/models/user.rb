@@ -267,6 +267,22 @@ class User < ApplicationRecord
     ProposalNotification.hide_all proposal_notification_ids
   end
 
+  def show_user
+    debates_ids = Debate.where(author_id: id).pluck(:id)
+    comments_ids = Comment.where(user_id: id).pluck(:id)
+    proposal_ids = Proposal.where(author_id: id).pluck(:id)
+    investment_ids = Budget::Investment.where(author_id: id).pluck(:id)
+    proposal_notification_ids = ProposalNotification.where(author_id: id).pluck(:id)
+
+    show
+
+    Debate.show_all debates_ids
+    Comment.show_all comments_ids
+    Proposal.show_all proposal_ids
+    Budget::Investment.show_all investment_ids
+    ProposalNotification.show_all proposal_notification_ids
+  end
+
   def erase(erase_reason = nil)
     update!(
       erased_at: Time.current,
