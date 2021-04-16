@@ -5,7 +5,7 @@ services:
 
     # use the preferred version of the official Postgres image
     # see https://hub.docker.com/_/postgres/
-    image: postgres:9.4.5
+    image: postgres:9.6.21
 
     # persist the database between containers by storing it in a volume
     volumes:
