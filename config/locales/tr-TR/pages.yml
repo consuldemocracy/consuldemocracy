@@ -45,6 +45,7 @@ tr:
         description: "%{link} bölümünde, vatandaşlar ülkeyi etkileyen düzenlemelerin hazırlanmasına ve değiştirilmesine katılarak, önceki tartışmalar hakkında fikirlerini paylaşabilir."
         link: "süreçler"
         feature: "Sürece dahil olmak için aşağıdaki linke tıklamanız ve hesabınızı doğrulamanız gerekmektedir: %{link}."
+        feature_link: "%{org_name} ya kayıt ol"
       faq:
         title: "Teknik sorunlar?"
         description: "Sıkça Sorulan Sorular bölümünde sorularınıza yanıt bulabilirsiniz."
@@ -159,6 +160,7 @@ tr:
               description_column: Metin boyutunu küçültür
       compatibility:
         title: Standartlara ve görsel tasarıma uygunluk
+        description: 'Bu web sitesinin tüm sayfaları, W3C''nin Genel Erişilebilir Tasarım İlkeleri veya <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> Çalışma Grubu tarafından kurulan <strong>Erişilebilirlik Yönergeleri</strong> ile uyumludur.'
     titles:
       help: "%{org} nedir? - Vatandaş katılımı"
     verify:
