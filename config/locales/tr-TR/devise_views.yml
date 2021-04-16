@@ -118,4 +118,5 @@ tr:
           username_note: Gönderilerinizin yanında görünen isim
         success:
           back_to_index: Anladım; ana sayfaya geri dön
+          thank_you: Web sitesine kayıt olduğunuz için teşekkür ederiz. Şimdi <b>e-posta adresinizi doğrulamalısınız</b>.
           title: E-posta adresini onayla
