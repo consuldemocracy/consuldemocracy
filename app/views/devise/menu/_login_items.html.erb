@@ -22,10 +22,10 @@
 <% else %>
   <li>
     <%= link_to t("devise_views.menu.login_items.login"),
-                new_user_session_path, rel: "nofollow" %>
+                new_user_session_path, rel: "nofollow", class: "button black-test"%>
   </li>
-  <li>
-    <%= link_to t("devise_views.menu.login_items.signup"),
+  <%#  <li> %>
+  <%#  <%= link_to t("devise_views.menu.login_items.signup"),
                 new_user_registration_path, rel: "nofollow", class: "button black-test"%>
-  </li>
+  <%#  </li>  %>
 <% end %>
