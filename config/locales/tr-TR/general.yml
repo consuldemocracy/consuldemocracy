@@ -695,6 +695,10 @@ tr:
     follow: "Takip et"
     following: "Takip ediliyor"
     follow_entity: "Takip et %{entity}"
+    followable:
+      proposal:
+        create:
+          notice: "Vatandaş önerisini takip etmeye başladınız.! </br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
     print:
       print_button: Bu bilgiyi yazdır
     search: Ara
@@ -746,6 +750,8 @@ tr:
       select_language_prompt: Dil seç
       remove_language: Dili kaldır
       add_language: Dil ekle
+      languages_in_use:
+        zero: "0 dil kullanımda"
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
