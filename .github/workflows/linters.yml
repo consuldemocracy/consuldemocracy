@@ -7,12 +7,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - run: |
-          git fetch --no-tags --prune origin +refs/heads/*:refs/remotes/origin/*
+        with:
+          fetch-depth: 0
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - name: Run Pronto
+      - name: Run pronto
         run: |
-          PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ github.token }}" bundle exec pronto run -f github_status github_pr -c origin/${{ github.base_ref }}
+          if [ ${{ github.event.pull_request.head.repo.full_name }} == ${{ github.event.pull_request.base.repo.full_name }} ]; then
+            PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ github.token }}" bundle exec pronto run -f github_status github_pr -c origin/${{ github.base_ref }}
+          else
+            bundle exec pronto run --exit-code -c origin/${{ github.base_ref }}
+          fi
