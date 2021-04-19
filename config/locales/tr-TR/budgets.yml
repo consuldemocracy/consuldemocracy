@@ -105,8 +105,8 @@ tr:
               one: "<strong>Bir tasarı için oy kullandınız</strong>"
               other: "<strong>%{count} tasarı için oy kullandınız</strong>"
           change_vote_info:
-            knapsack: "Bu aşama tamamlanana kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanız gerekmemektedir."
-            approval: "Bu aşama tamamlanana kadar istediğiniz zaman %{link} yapabilirsiniz."
+            knapsack: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanız gerekmemektedir."
+            approval: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz."
           change_vote_link: "oyunuzu değiştirin"
           different_heading_assigned: "Başka bir tasarı için aktif oylarınız bulunmaktadır: %{heading_link}"
           change_ballot: "Eğer fikrinizi değiştirirseniz, oyunuzu %{check_ballot}'dan geri çekebilirsiniz ve tekrar oy verebilirsiniz."
