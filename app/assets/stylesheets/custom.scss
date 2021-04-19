@@ -3,6 +3,16 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+.edit-link {
+  @include has-fa-icon(edit, regular);
+}
+
+.block-link {
+  @include has-fa-icon(ban, solid);
+  color: $alert-color;
+}
+
 .header-style-photo {
   background-size: cover;
   background-position: center;

@@ -20,6 +20,9 @@ class SiteCustomization::Page < ApplicationRecord
   scope :locale, -> { where("site_customization_page_translations.locale": I18n.locale) }
 
   #JHH:
+  has_many :page_on_projects
+  has_many :projects, through: :page_on_projects
+
   has_attached_file :imagen
   validates_attachment :imagen,
                      content_type: { content_type: /\Aimage\/.*\z/ },

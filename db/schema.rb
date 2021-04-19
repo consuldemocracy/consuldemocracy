@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_15_085617) do
+ActiveRecord::Schema.define(version: 2021_04_19_100253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -979,6 +979,15 @@ ActiveRecord::Schema.define(version: 2021_04_15_085617) do
     t.index ["user_id"], name: "index_organizations_on_user_id"
   end
 
+  create_table "page_on_projects", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "site_customization_page_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_page_on_projects_on_project_id"
+    t.index ["site_customization_page_id"], name: "index_page_on_projects_on_site_customization_page_id"
+  end
+
   create_table "page_participants", force: :cascade do |t|
     t.bigint "site_customization_pages_id"
     t.bigint "user_id"
@@ -1236,6 +1245,12 @@ ActiveRecord::Schema.define(version: 2021_04_15_085617) do
     t.integer "percentage"
     t.string "progressable_type"
     t.integer "progressable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -1778,6 +1793,8 @@ ActiveRecord::Schema.define(version: 2021_04_15_085617) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
+  add_foreign_key "page_on_projects", "projects"
+  add_foreign_key "page_on_projects", "site_customization_pages"
   add_foreign_key "page_participants", "site_customization_pages", column: "site_customization_pages_id"
   add_foreign_key "page_participants", "users"
   add_foreign_key "poll_answers", "poll_questions", column: "question_id"
