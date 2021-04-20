@@ -2,3 +2,7 @@ es:
   project:
     page:
       label: Añadir páginas
+    show_page:
+      empty: No existen páginas en este proyecto
+    show_debate:
+      empty: No existen debates en este proyecto

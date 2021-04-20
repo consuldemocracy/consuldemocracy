@@ -1,5 +1,4 @@
 <div class="row">
-  <p id="notice"><%= notice %></p>
 
   <div class="small-12 medium-9 medium-centered column">
     <p>
@@ -24,11 +23,15 @@
           <% end %>
         </tbody>
       </table>
+    <% else %>
+      <strong>Debate:</strong>
+      <p><%= t("project.show_debate.empty") %></p>
     <% end %>
+
 
     <strong>Páginas:</strong>
     <% if @project_pages.empty? %>
-      <p>No hay páginas</p>
+      <p><%= t("project.show_page.empty") %></p>
     <% else %>
       <div id="participant_tags" class="tags">
            <% @project_pages.each do |actual| %>

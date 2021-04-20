@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/edit'
   resources :projects
   get 'send/index'
   mount Ckeditor::Engine => "/ckeditor"
