@@ -286,7 +286,7 @@ tr:
       name: Google
     wordpress_oauth2:
       sign_in: Wordpress ile oturum aç
-      sign_up: Wordpress ile kaydol
+      sign_up: Wordpress ile kayıt ol
       name: Wordpress
     twitter:
       sign_in: Twitter ile oturum aç
