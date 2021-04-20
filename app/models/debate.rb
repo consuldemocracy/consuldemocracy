@@ -29,6 +29,12 @@ class Debate < ApplicationRecord
   has_many :users, through: :debate_participants
 
   attr_accessor :debate_users_id, :delete_debate_users_id
+
+  # Se añade la relación con los proyectos
+
+  has_many :debate_on_projects
+  has_many :projects, through: :page_on_projects
+
   #Fin
 
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :debates

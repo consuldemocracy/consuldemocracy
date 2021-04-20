@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_100253) do
+ActiveRecord::Schema.define(version: 2021_04_20_090525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -485,6 +485,15 @@ ActiveRecord::Schema.define(version: 2021_04_19_100253) do
     t.datetime "updated_at", null: false
     t.index ["action_id"], name: "index_proposal_action"
     t.index ["proposal_id"], name: "index_dashboard_executed_actions_on_proposal_id"
+  end
+
+  create_table "debate_on_projects", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "debate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["debate_id"], name: "index_debate_on_projects_on_debate_id"
+    t.index ["project_id"], name: "index_debate_on_projects_on_project_id"
   end
 
   create_table "debate_participants", force: :cascade do |t|
@@ -1775,6 +1784,8 @@ ActiveRecord::Schema.define(version: 2021_04_19_100253) do
   add_foreign_key "dashboard_administrator_tasks", "users"
   add_foreign_key "dashboard_executed_actions", "dashboard_actions", column: "action_id"
   add_foreign_key "dashboard_executed_actions", "proposals"
+  add_foreign_key "debate_on_projects", "debates"
+  add_foreign_key "debate_on_projects", "projects"
   add_foreign_key "debate_participants", "debates"
   add_foreign_key "debate_participants", "users"
   add_foreign_key "documents", "users"
