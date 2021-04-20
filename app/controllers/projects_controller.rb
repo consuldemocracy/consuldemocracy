@@ -29,11 +29,10 @@ class ProjectsController < ApplicationController
   # POST /projects
   def create
     @project = Project.new(project_params)
-    pages_ids = params[:page_ids]
-    ejemplo_ids = [1,2]
-    @project.save_pages()
 
     if @project.save
+      page_elements = params[:page_ids]
+      @project.save_pages(page_elements)
       redirect_to @project, notice: 'Project was successfully created.'
     else
       render :new
@@ -43,6 +42,8 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   def update
     if @project.update(project_params)
+      page_elements = params[:page_ids]
+      @project.save_pages(page_elements)
       redirect_to @project, notice: 'Project was successfully updated.'
     else
       render :edit
@@ -64,6 +65,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:title, :page_elements, :page_ids)
+      params.require(:project).permit(:title, :page_elements, page_ids: [])
     end
 end
