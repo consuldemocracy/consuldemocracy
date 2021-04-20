@@ -29,6 +29,9 @@ class ProjectsController < ApplicationController
   # POST /projects
   def create
     @project = Project.new(project_params)
+    pages_ids = params[:page_ids]
+    ejemplo_ids = [1,2]
+    @project.save_pages()
 
     if @project.save
       redirect_to @project, notice: 'Project was successfully created.'
@@ -61,6 +64,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:title, :page_elements)
+      params.require(:project).permit(:title, :page_elements, :page_ids)
     end
 end

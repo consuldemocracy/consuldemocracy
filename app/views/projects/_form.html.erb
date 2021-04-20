@@ -17,7 +17,8 @@
 
   <div id="participant_tags" class="tags">
     <% @pages.each do |page| %>
-        <a class="select-participants"><%= page.id%>: <%=page.title%></a>
+       <%# <a class="select-participants"><%= page.id%>
+       <input type="checkbox" name="page_ids[]" value=<%= page.id %> /> <label> <%= page.title %> </label>
     <% end %>
   </div>
 
