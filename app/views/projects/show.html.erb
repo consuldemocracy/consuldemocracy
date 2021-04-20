@@ -7,15 +7,23 @@
       <%= @project.title %>
     </p>
 
-    <strong>Debates:</strong>
-    <% if @project_debates.empty? %>
-      <p>No hay debates</p>
-    <% else %>
-      <div id="participant_tags" class="tags">
-           <% @project_debates.each do |actual| %>
-            <a class="select-participants"><%= actual.title%></a>
-           <% end %>
-      </div>
+    <% if !@project_debates.empty? %>
+      <table class="margin-top">
+        <thead>
+          <tr>
+            <th scope="col"><%= t("users.show.debates") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @project_debates.each do |debate| %>
+            <tr id="debate_<%= debate.id %>">
+              <td>
+                <%= link_to debate.title, debate %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     <% end %>
 
     <strong>Páginas:</strong>
@@ -24,7 +32,10 @@
     <% else %>
       <div id="participant_tags" class="tags">
            <% @project_pages.each do |actual| %>
-            <a class="select-participants"><%= actual.title%></a>
+            <%= link_to actual.title,
+                            actual.url,
+                            target: "_blank",
+                            class: "show-link" %>
            <% end %>
       </div>
     <% end %>

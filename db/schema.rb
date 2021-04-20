@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_090525) do
+ActiveRecord::Schema.define(version: 2021_04_20_093036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1583,6 +1583,15 @@ ActiveRecord::Schema.define(version: 2021_04_20_090525) do
     t.index ["hidden_at"], name: "index_topics_on_hidden_at"
   end
 
+  create_table "user_on_projects", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_user_on_projects_on_project_id"
+    t.index ["user_id"], name: "index_user_on_projects_on_user_id"
+  end
+
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", default: ""
     t.string "encrypted_password", default: "", null: false
@@ -1830,6 +1839,8 @@ ActiveRecord::Schema.define(version: 2021_04_20_090525) do
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
   add_foreign_key "sdg_managers", "users"
+  add_foreign_key "user_on_projects", "projects"
+  add_foreign_key "user_on_projects", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

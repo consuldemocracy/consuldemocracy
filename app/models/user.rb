@@ -20,6 +20,9 @@ class User < ApplicationRecord
 
   has_many :page_participants
   has_many :pages, through: :page_participants
+
+  has_many :user_on_projects
+  has_many :projects, through: :user_on_projects
   #Fin
 
   has_one :administrator

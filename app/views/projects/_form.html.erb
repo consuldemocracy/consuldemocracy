@@ -20,7 +20,10 @@
   <div id="participant_tags" class="tags">
     <% @pages.each do |page| %>
        <%# <a class="select-participants"><%= page.id%>
-       <input type="checkbox" name="page_ids[]" value=<%= page.id %> /> <label> <%= page.title %> </label>
+      <span>
+        <input type="checkbox" name="page_ids[]" value=<%= page.id %> />
+        <%= page.title %>
+      </span>
     <% end %>
   </div>
 
@@ -29,7 +32,22 @@
   <div id="participant_tags" class="tags">
     <% @debates.each do |debate| %>
        <%# <a class="select-participants"><%= page.id%>
-       <input type="checkbox" name="debate_ids[]" value=<%= debate.id %> /> <label> <%= debate.title %> </label>
+      <span>
+        <input type="checkbox" name="debate_ids[]" value=<%= debate.id %> />
+        <%= debate.title %>
+      </span>
+    <% end %>
+  </div>
+
+  <br/>
+  <%= form.label 'Seleccionar participantes para el proyecto' %>
+  <div id="participant_tags" class="tags">
+    <% @users.each do |user| %>
+       <%# <a class="select-participants"><%= page.id%>
+       <span>
+        <input type="checkbox" name="user_ids[]" value=<%= user.id %> />
+        <%= user.username %>
+       </span>
     <% end %>
   </div>
 
