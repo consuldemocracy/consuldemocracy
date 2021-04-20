@@ -3,7 +3,7 @@
   App.Forms = {
     disableEnter: function() {
       $("form.js-enter-disabled").on("keyup keypress", function(event) {
-        if (event.which === 13) {
+        if (event.which == 13) {
           event.preventDefault();
         }
       });
