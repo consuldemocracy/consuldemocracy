@@ -698,7 +698,7 @@ tr:
     followable:
       proposal:
         create:
-          notice: "Vatandaş önerisini takip etmeye başladınız.! </br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
+          notice: "Vatandaş önerisini takip etmeye başladınız.! <br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
     print:
       print_button: Bu bilgiyi yazdır
     search: Ara
