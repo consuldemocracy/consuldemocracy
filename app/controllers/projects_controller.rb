@@ -2,10 +2,38 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   skip_authorization_check
 
-  before_action :load_pages, only: [:edit, :new, :update]
+  before_action :load_components, only: [:edit, :new, :update]
+  before_action :actual_debates, :actual_pages, only: [:show]
 
-  def load_pages
+  # Función para mostrar los debates actuales en el proyecto
+  def actual_debates
+    @project_debates = []
+    @debates_actuales = DebateOnProject.where(project_id: @project.id).order(debate_id: :asc)
+    @debates_actuales.each do |item|
+      @project_debates += Debate.where(id: item.debate_id)
+    end
+    @project_debates
+  end
+
+  # Función para mostrar las páginas actuales en el proyecto
+  def actual_pages
+    @project_pages = []
+    @pages_actuales = PageOnProject.where(project_id: @project.id).order(site_customization_page_id: :asc)
+    @pages_actuales.each do |item|
+      @project_pages += SiteCustomization::Page.where(id: item.site_customization_page_id)
+    end
+    @project_pages
+  end
+
+  # def load_pages
+  #   @pages = SiteCustomization::Page.all
+  # end
+
+  #Cargar los componentes a añadir en el proyecto
+  def load_components
     @pages = SiteCustomization::Page.all
+    @debates = Debate.all
+    @users = User.all
   end
 
   # GET /projects
@@ -31,6 +59,19 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
+      
+      #Guarda las páginas
+      page_elements = params[:page_ids]
+      @project.save_pages(page_elements)
+
+      #Guarda los debates
+      debate_elements = params[:debate_ids]
+      @project.save_component(debate_elements)
+
+      #Guarda los usuarios
+      user_elements = params[:user_ids]
+      @project.save_users(user_elements)
+
       redirect_to @project, notice: 'Project was successfully created.'
     else
       render :new
@@ -40,6 +81,18 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   def update
     if @project.update(project_params)
+      #Guarda las páginas
+      page_elements = params[:page_ids]
+      @project.save_pages(page_elements)
+
+      #Guarda los debates
+      debate_elements = params[:debate_ids]
+      @project.save_component(debate_elements)
+
+      #Guarda los usuarios
+      user_elements = params[:user_ids]
+      @project.save_users(user_elements)
+
       redirect_to @project, notice: 'Project was successfully updated.'
     else
       render :edit
@@ -61,6 +114,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:title, :page_elements)
+      params.require(:project).permit(:title, :user_elements, :debate_elements, :page_elements, page_ids: [] , user_ids: [] , debate_ids: [] )
     end
 end

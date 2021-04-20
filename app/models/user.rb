@@ -12,6 +12,7 @@ class User < ApplicationRecord
   include Graphqlable
 
   #JHH: Añadimos el has many para los proposal_participants 10/03/2021
+  
   has_many :proposal_participants
   has_many :proposals, through: :proposal_participants
 
@@ -20,6 +21,9 @@ class User < ApplicationRecord
 
   has_many :page_participants
   has_many :pages, through: :page_participants
+
+  has_many :user_on_projects
+  has_many :projects, through: :user_on_projects
   #Fin
 
   has_one :administrator

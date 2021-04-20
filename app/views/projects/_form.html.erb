@@ -14,15 +14,41 @@
   <div class="field">
     <%= form.text_field :title %>
   </div>
-
+  
+  <br/>
+  <%= form.label 'Seleccionar páginas para el proyecto' %>
   <div id="participant_tags" class="tags">
     <% @pages.each do |page| %>
-        <a class="select-participants"><%= page.id%>: <%=page.title%></a>
+       <%# <a class="select-participants"><%= page.id%>
+      <span>
+        <input type="checkbox" name="page_ids[]" value=<%= page.id %> />
+        <%= page.title %>
+      </span>
     <% end %>
   </div>
 
-  <div class="field">
-    <%= form.text_field :page_elements, :label => t("project.page.label"), placeholder: t("proposals.form.participant_placeholder")%>
+  <br/>
+  <%= form.label 'Seleccionar debates para el proyecto' %>
+  <div id="participant_tags" class="tags">
+    <% @debates.each do |debate| %>
+       <%# <a class="select-participants"><%= page.id%>
+      <span>
+        <input type="checkbox" name="debate_ids[]" value=<%= debate.id %> />
+        <%= debate.title %>
+      </span>
+    <% end %>
+  </div>
+
+  <br/>
+  <%= form.label 'Seleccionar participantes para el proyecto' %>
+  <div id="participant_tags" class="tags">
+    <% @users.each do |user| %>
+       <%# <a class="select-participants"><%= page.id%>
+       <span>
+        <input type="checkbox" name="user_ids[]" value=<%= user.id %> />
+        <%= user.username %>
+       </span>
+    <% end %>
   </div>
 
   <div class="actions">
