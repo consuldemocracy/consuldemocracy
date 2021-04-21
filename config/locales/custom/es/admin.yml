@@ -1,0 +1,11 @@
+es:
+  admin:
+    legislation:
+      processes:
+        index:
+          title: Procesos participativos
+        new:
+          title: Crear nuevo proceso participativo
+    menu:
+      legislation: Procesos participativos
+
