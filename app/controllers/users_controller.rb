@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   has_filters %w[proposals participants participants_d participants_p debates budget_investments comments follows], only: :show
-  # falta el filtro participants_p
-  load_and_authorize_resource
-  # load_and_authorize_resource :except => :edit
-  # skip_load_and_authorize_resource :only => :edit
-  # skip_authorization_check # JHH: Tener esto controlado
+
+  #load_and_authorize_resource
+  #load_and_authorize_resource :except => :edit
+  skip_load_and_authorize_resource :only => :edit
+  skip_authorization_check # JHH: Tener esto controlado
   helper_method :author?
   helper_method :valid_interests_access?
 
@@ -12,7 +12,25 @@ class UsersController < ApplicationController
     load_filtered_activity if valid_access?
   end
 
+  def edit
+    @user = User.find_by_id(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+        redirect_to admin_users_path, notice: 'User successfully updated'
+    else
+        render 'edit', notice: 'Failed to update profile.'
+    end
+  end
+
   private
+
+    def user_params
+      params.require(:user).permit(:username)
+    end
 
     def set_activity_counts
       @activity_counts = ActiveSupport::HashWithIndifferentAccess.new(
@@ -120,7 +138,7 @@ class UsersController < ApplicationController
     end
 
     def valid_access?
-      @user.public_activity || authorized_current_user?
+      authorized_current_user? || current_administrator? || @user.public_activity
     end
 
     def valid_interests_access?

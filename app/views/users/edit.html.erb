@@ -1,7 +1,15 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
-<div class="activity row margin-top">
-  <div class="small-12 column">
-    <%#<%= @user.id %>
+<div class="row">
+  <div class="small-12 medium-9 medium-centered column">
+    <% if current_administrator? %>
+      <h1>Editing User</h1>
+      <p>Editando el usuario con id: <%= @user.id %></p>
+
+      <%= render 'form', user: @user %>
+
+      <%= link_to 'Back', admin_root_path %>
+    <% else %>
+     <p class="text-center"><%= t("not_authorized.title") %></p>
+     <%= back_link_to root_url %>
+    <% end %>
   </div>
 </div>

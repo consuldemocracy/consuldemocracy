@@ -8,8 +8,8 @@ class Moderation::UsersController < Moderation::BaseController
 
   def hide_in_moderation_screen
     block_user
-
-    redirect_with_query_params_to({ action: :index }, { notice: I18n.t("moderation.users.notice_hide") })
+    flash[:notice] = I18n.t("moderation.users.notice_hide")
+    redirect_to admin_users_path
   end
 
   def hide

@@ -53,6 +53,10 @@
       @include icon(comment-alt, solid);
     }
 
+    &.projects-link {
+      @include icon(project-diagram, solid);
+    }
+
     &.invitations-link {
       @include icon(envelope, regular);
     }
@@ -127,7 +131,6 @@
     }
 
     &[aria-expanded="true"] {
-
       > a::after {
         transform: rotate(180deg);
       }
@@ -149,7 +152,6 @@
   }
 
   .is-accordion-submenu-parent {
-
     > a::after {
       border: 0;
       content: "\f078";

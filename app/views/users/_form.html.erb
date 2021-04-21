@@ -1,0 +1,12 @@
+<%= render "shared/globalize_locales", resource: @user %>
+
+<%= form_with(model: @user, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

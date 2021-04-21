@@ -11,8 +11,8 @@
     </li>
   <% end %>
 
-  <li class="<%= "is-active" if controller_name == "comments" %>">
-    <%= link_to t("admin.menu.comments"), admin_comments_path, class: "comments-link" %>
+  <li class="<%= "is-active" if controller_name == "projects" %>">
+    <%= link_to t("admin.menu.projects"), projects_path, class: "projects-link" %>
   </li>
 
   <% if feature?(:polls) %>
@@ -59,6 +59,10 @@
       emails_download_link,
       id: "messaging_users_menu", class: ("is-active" if messages_menu_active?)
     ) %>
+  </li>
+
+  <li class="<%= "is-active" if controller_name == "comments" %>">
+    <%= link_to t("admin.menu.comments"), admin_comments_path, class: "comments-link" %>
   </li>
 
   <li>
