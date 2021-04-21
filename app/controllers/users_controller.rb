@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   has_filters %w[proposals participants participants_d participants_p debates budget_investments comments follows], only: :show
 
   #load_and_authorize_resource
-  #load_and_authorize_resource :except => :edit
-  skip_load_and_authorize_resource :only => :edit
+  load_and_authorize_resource except: [:edit]
+#   skip_load_and_authorize_resource :only => :edit
   skip_authorization_check # JHH: Tener esto controlado
   helper_method :author?
   helper_method :valid_interests_access?
