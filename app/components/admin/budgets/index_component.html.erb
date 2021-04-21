@@ -20,12 +20,8 @@
     <tbody>
       <% budgets.each do |budget| %>
         <tr id="<%= dom_id(budget) %>" class="budget">
-          <td class="<%= "budget-completed" if budget.finished? %>">
-            <% if budget.finished? %>
-              <span>
-                <%= t("admin.budgets.index.table_completed") %>
-              </span>
-            <% end %>
+          <td class="<%= status_html_class(budget) %>">
+            <%= status_text(budget) %>
             <strong><%= budget.name %></strong>
           </td>
           <td>

@@ -29,4 +29,20 @@ class Admin::Budgets::IndexComponent < ApplicationComponent
     def duration(budget)
       Admin::Budgets::DurationComponent.new(budget).duration
     end
+
+    def status_html_class(budget)
+      if budget.drafting?
+        "budget-draft"
+      elsif budget.finished?
+        "budget-completed"
+      end
+    end
+
+    def status_text(budget)
+      if budget.drafting?
+        tag.span t("admin.budgets.index.table_draft")
+      elsif budget.finished?
+        tag.span t("admin.budgets.index.table_completed")
+      end
+    end
 end
