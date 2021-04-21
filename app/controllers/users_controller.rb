@@ -139,7 +139,7 @@ class UsersController < ApplicationController
     end
 
     def valid_access?
-      authorized_current_user? || current_administrator? || @user.public_activity
+      authorized_current_user? || @user&.administrator || @user.public_activity
     end
 
     def valid_interests_access?
