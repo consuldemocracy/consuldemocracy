@@ -17,6 +17,13 @@
   
   <br/>
   <%= form.label 'Seleccionar páginas para el proyecto' %>
+  
+  <%# Para buscar Páginas %>
+  <%# <%= form_tag(new_project_path, method: :get) do %>
+  <%#   <%= text_field_tag :page_search, params[:page_search], placeholder: "Search Pages", class: "form-control", id: "page-search-form", onkeyup: "SearchFunction()" %>
+  <%#   <%= submit_tag 'Search', name: nil %>
+  <%# <% end %>
+
   <div id="participant_tags" class="tags">
     <% @pages.each do |page| %>
        <%# <a class="select-participants"><%= page.id%>
@@ -29,6 +36,13 @@
 
   <br/>
   <%= form.label 'Seleccionar debates para el proyecto' %>
+
+  <%# Para buscar Debates %>
+  <%# <%= form_tag(new_project_path, method: :get) do %>
+  <%#   <%= text_field_tag :debate_search, params[:debate_search], placeholder: "Search Debates", class: "form-control", id: "page-search-form", onkeyup: "SearchFunction()" %>
+  <%#   <%= submit_tag 'Search', name: nil %>
+  <%# <% end %>
+
   <div id="participant_tags" class="tags">
     <% @debates.each do |debate| %>
        <%# <a class="select-participants"><%= page.id%>

@@ -1,4 +1,11 @@
 class Project < ApplicationRecord
+
+    include PgSearch::Model
+  
+    pg_search_scope :global_search,
+                    against: [:title],
+                    using: { tsearch: { prefix: true } }
+
     has_many :page_on_projects
     has_many :pages, through: :page_on_projects
 
@@ -63,4 +70,18 @@ class Project < ApplicationRecord
     #         end
     #     end
     # end
+
+    def self.search(search)
+        if search
+            projects = Project.where("title ilike ?", "%#{search}%")
+            if projects.nil? || projects.empty?
+                projects = Project.all
+            else
+                projects
+            end
+        else
+            projects = Project.all
+        end
+        projects
+    end
 end

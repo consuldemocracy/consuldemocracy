@@ -31,14 +31,27 @@ class ProjectsController < ApplicationController
 
   #Cargar los componentes a añadir en el proyecto
   def load_components
-    @pages = SiteCustomization::Page.all
-    @debates = Debate.all
+    if params[:page_search]
+      @pages = SiteCustomization::Page.search(params[:page_search])
+    else
+      @pages = SiteCustomization::Page.all
+    end
+
+    if params[:debate_search]
+      @debates = Debate.search(params[:debate_search])
+    else
+      @debates = Debate.all
+    end
+
     @users = User.all
   end
 
   # GET /projects
   def index
     @projects = Project.all
+    if params[:search]
+     @projects = Project.search(params[:search])
+    end
   end
 
   # GET /projects/1
@@ -110,6 +123,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:title, :user_elements, :debate_elements, :page_elements, page_ids: [] , user_ids: [] , debate_ids: [] )
+      params.require(:project).permit(:search, :title, :user_elements, :debate_elements, :page_elements, page_ids: [] , user_ids: [] , debate_ids: [] )
     end
 end

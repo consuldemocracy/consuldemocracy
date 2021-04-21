@@ -1,6 +1,10 @@
 <div class="row">
 <% if current_administrator? %>
   <div class="small-12 medium-9 medium-centered column">
+  <%# <%= form_tag(projects_path, method: :get) do %>
+  <%#   <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+  <%#   <%= submit_tag 'Search', name: nil %>
+  <%# <% end %>
     <h1>Projects</h1>
 
     <table>
@@ -12,6 +16,7 @@
       </thead>
 
       <tbody>
+      <% if @projects %>
         <% @projects.each do |project| %>
           <tr>
             <td><%= project.title %></td>
@@ -20,6 +25,7 @@
             <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
+      <% end %>
       </tbody>
     </table>
 

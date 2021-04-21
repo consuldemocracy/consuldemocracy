@@ -6,6 +6,6 @@
 //
 
 //El fichero sirve
-/*$(function(){
-    alert('foobar');
-  });*/
+// $(function(){
+//     alert('foobar');
+//   });
