@@ -27,7 +27,7 @@ describe "Admin budgets", :admin do
     end
 
     scenario "Filters by phase" do
-      create(:budget, :drafting, name: "Drafting budget")
+      create(:budget, :drafting, name: "Unpublished budget")
       create(:budget, :accepting, name: "Accepting budget")
       create(:budget, :selecting, name: "Selecting budget")
       create(:budget, :balloting, name: "Balloting budget")
@@ -35,10 +35,13 @@ describe "Admin budgets", :admin do
 
       visit admin_budgets_path
 
-      expect(page).to have_content "Drafting budget"
       expect(page).to have_content "Accepting budget"
       expect(page).to have_content "Selecting budget"
       expect(page).to have_content "Balloting budget"
+
+      within "tr", text: "Unpublished budget" do
+        expect(page).to have_content "Draft"
+      end
 
       within "tr", text: "Finished budget" do
         expect(page).to have_content "COMPLETED"
@@ -46,7 +49,7 @@ describe "Admin budgets", :admin do
 
       click_link "Finished"
 
-      expect(page).not_to have_content "Drafting budget"
+      expect(page).not_to have_content "Unpublished budget"
       expect(page).not_to have_content "Accepting budget"
       expect(page).not_to have_content "Selecting budget"
       expect(page).not_to have_content "Balloting budget"
@@ -54,7 +57,7 @@ describe "Admin budgets", :admin do
 
       click_link "Open"
 
-      expect(page).to have_content "Drafting budget"
+      expect(page).to have_content "Unpublished budget"
       expect(page).to have_content "Accepting budget"
       expect(page).to have_content "Selecting budget"
       expect(page).to have_content "Balloting budget"

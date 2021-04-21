@@ -31,11 +31,17 @@ class Admin::Budgets::IndexComponent < ApplicationComponent
     end
 
     def status_html_class(budget)
-      "budget-completed" if budget.finished?
+      if budget.drafting?
+        "budget-draft"
+      elsif budget.finished?
+        "budget-completed"
+      end
     end
 
     def status_text(budget)
-      if budget.finished?
+      if budget.drafting?
+        tag.span t("admin.budgets.index.table_draft")
+      elsif budget.finished?
         tag.span t("admin.budgets.index.table_completed")
       end
     end

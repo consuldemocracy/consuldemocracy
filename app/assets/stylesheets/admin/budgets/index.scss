@@ -1,7 +1,7 @@
 .admin .budgets-table {
 
-  .budget-completed {
-    @include has-fa-icon(lock, solid);
+  .budget-completed,
+  .budget-draft {
     padding-left: calc(1em + #{rem-calc(10)});
     position: relative;
 
@@ -18,7 +18,22 @@
       font-size: $tiny-font-size;
       font-weight: bold;
       line-height: rem-calc(12);
+    }
+  }
+
+  .budget-completed {
+    @include has-fa-icon(lock, solid);
+
+    span {
       text-transform: uppercase;
+    }
+  }
+
+  .budget-draft {
+    @include has-fa-icon(pencil-alt, solid);
+
+    span {
+      font-style: italic;
     }
   }
 
