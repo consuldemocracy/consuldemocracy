@@ -80,6 +80,7 @@ sv:
         help: "I en medborgarbudget kan medborgare föreslå och bestämma direkt hur en del av budgeten ska användas, med institutionell övervakning och rigorös utvärdering av förslag."
         budget_investments: Hantera projekt
         table_completed: Färdiga
+        table_draft: "Utkast"
         table_duration: "Varaktighet"
         table_name: Namn
         table_phase: Fas
