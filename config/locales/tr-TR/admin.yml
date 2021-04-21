@@ -80,6 +80,7 @@ tr:
         help: "Katılımcı bütçeler, vatandaşların teklif vermesine ve bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesine olanak tanımakla beraber, tekliflerin kurum tarafından izlenmesine ve titiz bir şekilde değerlendirilmesine de olanak tanır."
         budget_investments: Projeleri yönetme
         table_completed: Tamamlandı
+        table_draft: "Taslak"
         table_duration: "Süreç"
         table_name: Ad
         table_phase: Aşama
