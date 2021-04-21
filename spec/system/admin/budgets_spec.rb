@@ -27,36 +27,38 @@ describe "Admin budgets", :admin do
     end
 
     scenario "Filters by phase" do
-      drafting_budget  = create(:budget, :drafting)
-      accepting_budget = create(:budget, :accepting)
-      selecting_budget = create(:budget, :selecting)
-      balloting_budget = create(:budget, :balloting)
-      finished_budget  = create(:budget, :finished)
+      create(:budget, :drafting, name: "Drafting budget")
+      create(:budget, :accepting, name: "Accepting budget")
+      create(:budget, :selecting, name: "Selecting budget")
+      create(:budget, :balloting, name: "Balloting budget")
+      create(:budget, :finished, name: "Finished budget")
 
       visit admin_budgets_path
-      expect(page).to have_content(drafting_budget.name)
-      expect(page).to have_content(accepting_budget.name)
-      expect(page).to have_content(selecting_budget.name)
-      expect(page).to have_content(balloting_budget.name)
-      expect(page).to have_content(finished_budget.name)
 
-      within "#budget_#{finished_budget.id}" do
-        expect(page).to have_content("COMPLETED")
+      expect(page).to have_content "Drafting budget"
+      expect(page).to have_content "Accepting budget"
+      expect(page).to have_content "Selecting budget"
+      expect(page).to have_content "Balloting budget"
+
+      within "tr", text: "Finished budget" do
+        expect(page).to have_content "COMPLETED"
       end
 
       click_link "Finished"
-      expect(page).not_to have_content(drafting_budget.name)
-      expect(page).not_to have_content(accepting_budget.name)
-      expect(page).not_to have_content(selecting_budget.name)
-      expect(page).not_to have_content(balloting_budget.name)
-      expect(page).to have_content(finished_budget.name)
+
+      expect(page).not_to have_content "Drafting budget"
+      expect(page).not_to have_content "Accepting budget"
+      expect(page).not_to have_content "Selecting budget"
+      expect(page).not_to have_content "Balloting budget"
+      expect(page).to have_content "Finished budget"
 
       click_link "Open"
-      expect(page).to have_content(drafting_budget.name)
-      expect(page).to have_content(accepting_budget.name)
-      expect(page).to have_content(selecting_budget.name)
-      expect(page).to have_content(balloting_budget.name)
-      expect(page).not_to have_content(finished_budget.name)
+
+      expect(page).to have_content "Drafting budget"
+      expect(page).to have_content "Accepting budget"
+      expect(page).to have_content "Selecting budget"
+      expect(page).to have_content "Balloting budget"
+      expect(page).not_to have_content "Finished budget"
     end
 
     scenario "Filters are properly highlighted" do
