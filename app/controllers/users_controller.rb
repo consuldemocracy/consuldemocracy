@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   has_filters %w[proposals participants participants_d participants_p debates budget_investments comments follows], only: :show
 
   #load_and_authorize_resource
-  load_and_authorize_resource except: [:edit]
+  load_and_authorize_resource except: [:edit,:update]
 #   skip_load_and_authorize_resource :only => :edit
   skip_authorization_check # JHH: Tener esto controlado
   helper_method :author?
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     end
 
     def set_activity_counts
-      @user = User.find_by_id(params[:id])
+#       @user = User.find_by_id(params[:id])
       @activity_counts = ActiveSupport::HashWithIndifferentAccess.new(
                           proposals: Proposal.where(author_id: @user.id).count,
                           participants: ProposalParticipant.where(user_id: @user.id).count,
@@ -139,8 +139,8 @@ class UsersController < ApplicationController
     end
 
     def valid_access?
-      @user = User.find_by_id(params[:id])
-      authorized_current_user? || @user&.administrator || @user.public_activity
+#       @user = User.find_by_id(params[:id])
+      authorized_current_user? || current_administrator? || @user.public_activity
     end
 
     def valid_interests_access?
