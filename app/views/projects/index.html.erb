@@ -1,6 +1,5 @@
 <div class="row">
-  <p id="notice"><%= notice %></p>
-
+<% if current_administrator? %>
   <div class="small-12 medium-9 medium-centered column">
     <h1>Projects</h1>
 
@@ -28,4 +27,8 @@
 
     <%= link_to 'New Project', new_project_path %>
   </div>
+<% else %>
+  <p class="text-center"><%= t("not_authorized.title") %></p>
+  <%= back_link_to root_url %>
+<% end %>
 </div>

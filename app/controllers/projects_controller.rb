@@ -60,17 +60,19 @@ class ProjectsController < ApplicationController
 
     if @project.save
       
-      #Guarda las páginas
-      page_elements = params[:page_ids]
-      @project.save_pages(page_elements)
+      # #Guarda las páginas
+      # page_elements = params[:page_ids]
+      # @project.save_pages(page_elements)
 
       #Guarda los debates
+      page_elements = params[:page_ids]
       debate_elements = params[:debate_ids]
-      @project.save_component(debate_elements)
-
-      #Guarda los usuarios
       user_elements = params[:user_ids]
-      @project.save_users(user_elements)
+      @project.save_component(page_elements, debate_elements, user_elements)
+
+      # #Guarda los usuarios
+      # user_elements = params[:user_ids]
+      # @project.save_users(user_elements)
 
       redirect_to @project, notice: 'Project was successfully created.'
     else
@@ -81,17 +83,11 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   def update
     if @project.update(project_params)
-      #Guarda las páginas
+      
       page_elements = params[:page_ids]
-      @project.save_pages(page_elements)
-
-      #Guarda los debates
       debate_elements = params[:debate_ids]
-      @project.save_component(debate_elements)
-
-      #Guarda los usuarios
       user_elements = params[:user_ids]
-      @project.save_users(user_elements)
+      @project.save_component(page_elements, debate_elements, user_elements)
 
       redirect_to @project, notice: 'Project was successfully updated.'
     else
