@@ -162,6 +162,8 @@ cs:
         question: "Otázka"
         description: "Description"
         terms_of_service: "Terms of service"
+      proposal/translation:
+        retired_explanation: "Vysvětlení"
       user:
         login: "Email nebo uživatelské jméno"
         email: "Email"
@@ -172,6 +174,7 @@ cs:
         official_position: "Official position"
         official_level: "Official level"
         phone_number: "Telefon"
+        public_activity: "Udržet seznam mých aktivit veřejný"
         redeemable_code: "Verification code received via email"
       direct_message:
         title: "Předmět"
