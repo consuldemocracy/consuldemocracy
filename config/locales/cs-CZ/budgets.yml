@@ -44,6 +44,9 @@ cs:
         title: Participativní rozpočty
         help: Nápověda pro paticipativní rozpočty
       all_phases: Fáze participativního rozpočtu
+      next_phase: Další fáze
+      prev_phase: Předchozí fáze
+      current_phase: Aktuální fáze
       map: Lokalizace návrhů pro participativní rozpočet
       finished_budgets: Ukončené participativní rozpočty
       see_results: Zobrazit výsledky
@@ -72,6 +75,7 @@ cs:
           title: Vyhledat
         sidebar:
           my_ballot: Moje hlasování
+          change_vote_link: "změnit své hlasování"
           different_heading_assigned: "Už jste hlasoval v jiné kapitole: %{heading_link}"
           change_ballot: "Pokud změníte názor, můžete odebrat své hlasy v %{check_ballot} a začít znovu."
           check_ballot_link: "kontrola mého hlasování"
@@ -79,8 +83,11 @@ cs:
           verified_only: "Pro vytvoření nové položky participativního rozpočtu %{verify}."
           create: "Přidat investiční projekt"
           not_logged_in: "Pro vytvoření nové položky participativního rozpočtu musíte %{sign_in} nebo%{sign_up}."
+        filter: "Filtrování pprojektů podle"
         filters:
           selected: "Vybrané"
+          unfeasible: "Nerealizovatelné"
+          unselected: "Nevybráno"
           winners: "Vítězové"
         orders:
           random: náhodné pořadí
@@ -153,6 +160,7 @@ cs:
           label: "Aktuální stav projektu"
           all: "Vše (%{count})"
         milestone_tag:
+          label: "Označení milníku"
           all: "Všech (%{count})"
     phases:
       errors:
