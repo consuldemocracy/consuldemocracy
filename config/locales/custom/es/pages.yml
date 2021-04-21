@@ -1,0 +1,33 @@
+es:
+  pages:
+    help:
+      menu:
+        processes: "Procesos participativos"
+      processes:
+        title: "Procesos participativos"
+        link: "Procesos participativos"
+        feature: "Para participar en los procesos participativos tienes que %{link} y verificar tu cuenta."
+    accessibility:
+      keyboard_shortcuts:
+        title: '"Atajos" de teclado'
+        navigation_table:
+          rows:
+            - 
+              key_column: 0
+              page_column: Inicio
+            - 
+              key_column: 1
+              page_column: Debates
+            - 
+              key_column: 2
+              page_column: Propuestas
+            - 
+              key_column: 3
+              page_column: Votaciones
+            - 
+              key_column: 4
+              page_column: Presupuestos participativos
+            - 
+              key_column: 5
+              page_column: Procesos participativos
+

@@ -1,0 +1,16 @@
+es:
+  legislation:
+    processes:
+      index:
+        section_header:
+          icon_alt: Icono de procesos participativos
+          title: Procesos participativos
+          help: Ayuda sobre procesos participativos
+        section_footer:
+          title: Ayuda sobre procesos participativos
+    questions:
+      show:
+        title: Procesos participativos
+    proposals:
+      process_title: Procesos participativos
+
