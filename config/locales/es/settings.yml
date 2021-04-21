@@ -140,7 +140,7 @@ es:
         method_name: "Nombre del método de la petición"
         method_name_description: "Nombre del método qe acepta el WebService del Censo del Ayuntamiento."
         structure: "Estructura de la petición"
-        structure_description: 'Estructura de la petición que recibe el WebService del Censo del Ayuntamiento. Los valores "fijos" de esta petición deberan informarse. Los valores relacionado con Tipo de Documento, Número de Documento, Fecha de Nacimiento y Código Postal deberán dejarse con valor null. Ejemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        structure_description: 'Estructura de la petición a enviar al WebService del Censo del Ayuntamiento. Los valores "fijos" de esta petición deberan informarse. Los valores relacionado con Tipo de Documento, Número de Documento, Fecha de Nacimiento y Código Postal deberán dejarse con valor null. Ejemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
         document_type: "Ruta para Tipo de Documento"
         document_type_description: "Ruta donde se encuentra el campo en la estructura de la petición que envia el Tipo de Documento. NO RELLENAR en caso de que el WebService no requiera el Tipo de Documento para verificar un usuario."
         document_number: "Ruta para Número de Documento"
