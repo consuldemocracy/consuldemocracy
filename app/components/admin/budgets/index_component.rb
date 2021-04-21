@@ -29,4 +29,10 @@ class Admin::Budgets::IndexComponent < ApplicationComponent
     def duration(budget)
       Admin::Budgets::DurationComponent.new(budget).duration
     end
+
+    def status_text(budget)
+      if budget.finished?
+        tag.span t("admin.budgets.index.table_completed")
+      end
+    end
 end
