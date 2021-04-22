@@ -5,7 +5,8 @@
 //
 //
 
-//El fichero sirve
-// $(function(){
-//     alert('foobar');
-//   });
+// figura = document.querySelector('.figura_uno');
+
+// figura.addEventListener('click', (event) => { 
+//     alert('pulsado');
+// });
