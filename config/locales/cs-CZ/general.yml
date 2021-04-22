@@ -582,6 +582,9 @@ cs:
     manage:
       all: "Nemáte oprávnění k provedení akce \"%{action}\" subjektu %{subject}."
   users:
+    signin: "přihlásit se"
+    signup: "odhlásit se"
+    verify_account: "ověřit váš účet"
     direct_messages:
       new:
         direct_messages_bloqued: "Uživatel se rozhodl nepřijámat soukromé zprávy"
@@ -596,6 +599,7 @@ cs:
       deleted_proposal: Tento návrh byl odstraněn
       deleted_budget_investment: Tento investiční projekt byl smazán
       proposals: Návrhy
+      proposals_status: Stav
       debates: Debaty
       budget_investments: Rozpočtové investice
       comments: Komentáře
@@ -607,6 +611,8 @@ cs:
       delete_alert: "Opravdu chcete smazat svůj investiční projekt? Tuto akci nelze vrátit zpět"
     proposals:
       retired: "Pozastavené návrhy"
+      draft: Návrh
+      published: Publikováno
       see: "Zobrazit návrh"
   votes:
     agree: Souhlasím
