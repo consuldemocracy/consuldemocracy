@@ -67,15 +67,16 @@ docker build -t consul .
 ```
 
 Creamos las imágenes de base de datos:
+
 ```bash
-docker-compose up -d database
+POSTGRES_PASSWORD=password docker-compose up -d database
 ```
 
 Una vez creada la imagen, podemos crear la base de datos e introducir datos de prueba:
 
 ```
-docker-compose run app rake db:create db:migrate
-docker-compose run app rake db:dev_seed
+POSTGRES_PASSWORD=password docker-compose run app rake db:create db:migrate
+POSTGRES_PASSWORD=password docker-compose run app rake db:dev_seed
 ```
 
 ### Windows
@@ -87,8 +88,9 @@ Pendiente de ser completado... ¡Se agradecen las Contribuciones!
 ### macOS & Linux
 
 Una vez instalado, puedes lanzar la aplicación con:
+
 ```bash
-docker-compose up
+POSTGRES_PASSWORD=password docker-compose up
 ```
 
 Y podrás acceder a la aplicación desde tu navegador visitando [http://localhost:3000](http://localhost:3000)
@@ -96,7 +98,7 @@ Y podrás acceder a la aplicación desde tu navegador visitando [http://localhos
 Adicionalmente, si quieres lanzar por ejemplo la consola de rails:
 
 ```bash
-docker-compose run app rails console
+POSTGRES_PASSWORD=password docker-compose run app rails console
 ```
 
 Para verificar que los contenedores estan corriendo usa:

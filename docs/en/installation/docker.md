@@ -70,14 +70,14 @@ docker build -t consul .
 Create your app database images:
 
 ```bash
-docker-compose up -d database
+POSTGRES_PASSWORD=password docker-compose up -d database
 ```
 
 Once built you can initialize your development DB and populate it with:
 
 ```
-docker-compose run app rake db:create db:migrate
-docker-compose run app rake db:dev_seed
+POSTGRES_PASSWORD=password docker-compose run app rake db:create db:migrate
+POSTGRES_PASSWORD=password docker-compose run app rake db:dev_seed
 ```
 
 ### Windows
@@ -89,8 +89,9 @@ Pending to be completed... Contributions Welcome!
 ### macOS & Linux
 
 Now we can finally run the application with:
+
 ```bash
-docker-compose up
+POSTGRES_PASSWORD=password docker-compose up
 ```
 
 And you'll be able to access it at your browser visiting [http://localhost:3000](http://localhost:3000)
@@ -98,7 +99,7 @@ And you'll be able to access it at your browser visiting [http://localhost:3000]
 Additionally, if you want to run the rails console just run in another terminal:
 
 ```bash
-docker-compose run app rails console
+POSTGRES_PASSWORD=password docker-compose run app rails console
 ```
 
 To verify the containers are up execute:
