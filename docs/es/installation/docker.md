@@ -71,11 +71,10 @@ Creamos las imágenes de base de datos:
 docker-compose up -d database
 ```
 
-Y la inicializamos con:
+Una vez creada la imagen, podemos crear la base de datos e introducir datos de prueba:
+
 ```
-docker-compose run app rake db:create
-docker-compose run app rake db:migrate
-docker-compose run app rake db:seed
+docker-compose run app rake db:create db:migrate
 docker-compose run app rake db:dev_seed
 ```
 

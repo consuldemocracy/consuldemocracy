@@ -74,10 +74,9 @@ docker-compose up -d database
 ```
 
 Once built you can initialize your development DB and populate it with:
+
 ```
-docker-compose run app rake db:create
-docker-compose run app rake db:migrate
-docker-compose run app rake db:seed
+docker-compose run app rake db:create db:migrate
 docker-compose run app rake db:dev_seed
 ```
 
