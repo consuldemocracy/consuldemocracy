@@ -4,6 +4,14 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+.project-form-field {
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #9e9a9a;
+  margin-bottom: 30px;
+}
+
 .edit-link {
   @include has-fa-icon(edit, regular);
 }

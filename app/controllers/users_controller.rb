@@ -139,7 +139,7 @@ class UsersController < ApplicationController
 
     def valid_access?
 #       @user = User.find_by_id(params[:id])
-      authorized_current_user? || @user&.administrator || @user.public_activity
+      authorized_current_user? || current_user.administrator? || @user.public_activity
     end
 
     def valid_interests_access?

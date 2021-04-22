@@ -1002,6 +1002,8 @@ es:
   not_authorized:
     title: No esta autorizado para realizar esta acción
     view: No esta autorizado para ver esta página
+  authorized:
+    title: Tiene autorización
   contact:
     name: Nombre
     email: Email

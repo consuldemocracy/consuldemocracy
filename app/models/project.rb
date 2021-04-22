@@ -15,11 +15,17 @@ class Project < ApplicationRecord
     has_many :user_on_projects
     has_many :users, through: :user_on_projects
 
-    attr_accessor :page_elements, :pages_ids
+    attr_accessor :page_elements, :page_ids
 
     attr_accessor :debate_elements, :debate_ids
 
     attr_accessor :user_elements, :user_ids
+
+    attr_accessor :delete_page_elements, :delete_page_ids
+
+    attr_accessor :delete_debate_elements, :delete_debate_ids
+
+    attr_accessor :delete_user_elements, :delete_user_ids
 
     # after_save :save_pages
 
@@ -36,6 +42,27 @@ class Project < ApplicationRecord
     #         end
     #     end
     # end
+    def delete_component(delete_page_elements, delete_debate_elements, delete_user_elements)
+
+        #Guardamos las páginas
+        if !delete_page_elements.nil?
+            delete_element = PageOnProject.where(project_id: self)
+            delete_element.where(site_customization_page_id: delete_page_elements).destroy_all
+        end
+
+        # Guardamos los debates
+        if !delete_debate_elements.nil?
+            delete_element = DebateOnProject.where(project_id: self)
+            delete_element.where(debate_id: delete_debate_elements).destroy_all
+        end
+
+        # Guardamos los usuarios
+        if !delete_user_elements.nil?
+            delete_element = UserOnProject.where(project_id:self)
+            delete_element.where(user_id: delete_user_elements).destroy_all
+        end
+        
+    end
 
     def save_component(page_elements, debate_elements, user_elements)
 

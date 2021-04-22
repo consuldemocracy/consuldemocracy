@@ -15,53 +15,120 @@
     <%= form.text_field :title %>
   </div>
   
-  <br/>
-  <%= form.label 'Seleccionar páginas para el proyecto' %>
-  
-  <%# Para buscar Páginas %>
-  <%# <%= form_tag(new_project_path, method: :get) do %>
-  <%#   <%= text_field_tag :page_search, params[:page_search], placeholder: "Search Pages", class: "form-control", id: "page-search-form", onkeyup: "SearchFunction()" %>
-  <%#   <%= submit_tag 'Search', name: nil %>
-  <%# <% end %>
+  <%# ---------- Páginas ---------- %>
 
-  <div id="participant_tags" class="tags">
-    <% @pages.each do |page| %>
-       <%# <a class="select-participants"><%= page.id%>
-      <span>
-        <input type="checkbox" name="page_ids[]" value=<%= page.id %> />
-        <%= page.title %>
-      </span>
+  <div class="project-form-field">
+    <% if !@project_pages.empty? %>
+      <br/>
+      <%= form.label 'Páginas actuales en el proyecto' %>
+      <p>Seleccione páginas para eliminarlas</p>
+
+      <div id="participant_tags" class="tags">
+        <% @project_pages.each do |page| %>
+          <%# <a class="select-participants"><%= page.id%>
+          <span>
+            <input type="checkbox" name="delete_page_ids[]" value=<%= page.id %> />
+            <%= page.title %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+
+
+    <% if !@pages.empty? %>
+      <br/>
+      <%= form.label 'Seleccionar páginas para el proyecto' %>
+      <p>Seleccione páginas para añadirlas</p>
+
+      <%# Para buscar Páginas %>
+      <%# <%= form_tag(new_project_path, method: :get) do %>
+      <%#   <%= text_field_tag :page_search, params[:page_search], placeholder: "Search Pages", class: "form-control", id: "page-search-form", onkeyup: "SearchFunction()" %>
+      <%#   <%= submit_tag 'Search', name: nil %>
+      <%# <% end %>
+
+      <div id="participant_tags" class="tags">
+        <% @pages.each do |page| %>
+          <%# <a class="select-participants"><%= page.id%>
+          <span>
+            <input type="checkbox" name="page_ids[]" value=<%= page.id %> />
+            <%= page.title %>
+          </span>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
-  <br/>
-  <%= form.label 'Seleccionar debates para el proyecto' %>
+  <%# ---------- Debates ---------- %>
+  <div class="project-form-field">
+    <% if !@project_debates.empty? %>
+      <br/>
+      <%= form.label 'Debates actuales en el proyecto' %>
+      <p>Seleccione debates para eliminarlos</p>
 
-  <%# Para buscar Debates %>
-  <%# <%= form_tag(new_project_path, method: :get) do %>
-  <%#   <%= text_field_tag :debate_search, params[:debate_search], placeholder: "Search Debates", class: "form-control", id: "page-search-form", onkeyup: "SearchFunction()" %>
-  <%#   <%= submit_tag 'Search', name: nil %>
-  <%# <% end %>
+      <div id="participant_tags" class="tags">
+        <% @project_debates.each do |debate| %>
+          <%# <a class="select-participants"><%= page.id%>
+          <span>
+            <input type="checkbox" name="delete_debate_ids[]" value=<%= debate.id %> />
+            <%= debate.title %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
 
-  <div id="participant_tags" class="tags">
-    <% @debates.each do |debate| %>
-       <%# <a class="select-participants"><%= page.id%>
-      <span>
-        <input type="checkbox" name="debate_ids[]" value=<%= debate.id %> />
-        <%= debate.title %>
-      </span>
+    <% if !@debates.empty? %>
+      <br/>
+      <%= form.label 'Seleccionar debates para el proyecto' %>
+      <p>Seleccione debates para añadirlos</p>
+      <%# Para buscar Debates %>
+      <%# <%= form_tag(new_project_path, method: :get) do %>
+      <%#   <%= text_field_tag :debate_search, params[:debate_search], placeholder: "Search Debates", class: "form-control", id: "page-search-form", onkeyup: "SearchFunction()" %>
+      <%#   <%= submit_tag 'Search', name: nil %>
+      <%# <% end %>
+
+      <div id="participant_tags" class="tags">
+        <% @debates.each do |debate| %>
+          <%# <a class="select-participants"><%= page.id%>
+          <span>
+            <input type="checkbox" name="debate_ids[]" value=<%= debate.id %> />
+            <%= debate.title %>
+          </span>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
-  <br/>
-  <%= form.label 'Seleccionar participantes para el proyecto' %>
-  <div id="participant_tags" class="tags">
-    <% @users.each do |user| %>
-       <%# <a class="select-participants"><%= page.id%>
-       <span>
-        <input type="checkbox" name="user_ids[]" value=<%= user.id %> />
-        <%= user.username %>
-       </span>
+  <div class="project-form-field">
+    <%# ---------- Users ---------- %>
+    <% if !@project_users.empty? %>
+      <br/>
+      <%= form.label 'Users actuales en el proyecto' %>
+      <p>Seleccione usuarios para eliminarlos</p>
+      <div id="participant_tags" class="tags">
+        <% @project_users.each do |user| %>
+          <%# <a class="select-participants"><%= page.id%>
+          <span>
+            <input type="checkbox" name="delete_user_ids[]" value=<%= user.id %> />
+            <%= user.username %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if !@users.empty? %>
+      <br/>
+      <%= form.label 'Seleccionar participantes para el proyecto' %>
+      <p>Seleccione usuarios para añadirlos</p>
+
+      <div id="participant_tags" class="tags">
+        <% @users.each do |user| %>
+          <%# <a class="select-participants"><%= page.id%>
+          <span>
+            <input type="checkbox" name="user_ids[]" value=<%= user.id %> />
+            <%= user.username %>
+          </span>
+        <% end %>
+      </div>
     <% end %>
   </div>
 

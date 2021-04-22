@@ -1,6 +1,7 @@
 <div class="row">
 
   <div class="small-12 medium-9 medium-centered column">
+  <% if current_administrator? %>
     <p>
       <strong>Title:</strong>
       <%= @project.title %>
@@ -46,5 +47,9 @@
 
     <%= link_to 'Edit', edit_project_path(@project) %> |
     <%= link_to 'Back', projects_path %>
+  <% else %>
+    <p class="text-center"><%= t("not_authorized.title") %></p>
+    <%= back_link_to root_url %>
+  <% end %>
   </div>
 </div>
