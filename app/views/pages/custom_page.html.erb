@@ -13,8 +13,23 @@ elsif user_signed_in?
         show=true
       end
     end
+
+    arr_users = []
+    @user_on_project = PageOnProject.where(site_customization_page_id: @custom_page.id)
+    @user_on_project.each do |index|
+      arr_users << UserOnProject.where(project_id: index.project_id)
+    end
+      
+    arr_users.each do |index|
+      index.each do |item|
+        if item.user_id == current_user.id
+          show = true
+        end
+      end
+    end
   end
 end %>
+
 <% if show==true %>
   <% provide :title do %><%= @custom_page.title %><% end %>
 
