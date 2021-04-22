@@ -1,55 +1,67 @@
 <div class="row">
 
-  <div class="small-12 medium-9 medium-centered column">
-  <% if current_administrator? %>
-    <p>
-      <strong>Title:</strong>
-      <%= @project.title %>
-    </p>
+  <% show = false
+    if current_administrator?
+      show = true
+    else
+     @project_users.each do |index|
+        if index.id == current_user.id
+          show = true
+        end
+      end
+    end 
+  %>
 
-    <% if !@project_debates.empty? %>
-      <table class="margin-top">
-        <thead>
-          <tr>
-            <th scope="col"><%= t("users.show.debates") %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @project_debates.each do |debate| %>
-            <tr id="debate_<%= debate.id %>">
-              <td>
-                <%= link_to debate.title, debate %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% else %>
-      <strong>Debate:</strong>
-      <p><%= t("project.show_debate.empty") %></p>
-    <% end %>
+  <% if show == true %>
+    <div class="small-12 medium-9 medium-centered column">
+        <p>
+          <strong>Title:</strong>
+          <%= @project.title %>
+        </p>
 
-
-    <strong>Páginas:</strong>
-    <% if @project_pages.empty? %>
-      <p><%= t("project.show_page.empty") %></p>
-    <% else %>
-      <div id="participant_tags" class="tags">
-           <% @project_pages.each do |actual| %>
-            <%= link_to actual.title,
-                            actual.url,
-                            target: "_blank",
-                            class: "show-link" %>
-           <% end %>
-      </div>
-    <% end %>
+        <% if !@project_debates.empty? %>
+          <table class="margin-top">
+            <thead>
+              <tr>
+                <th scope="col"><%= t("users.show.debates") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @project_debates.each do |debate| %>
+                <tr id="debate_<%= debate.id %>">
+                  <td>
+                    <%= link_to debate.title, debate %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <strong>Debate:</strong>
+          <p><%= t("project.show_debate.empty") %></p>
+        <% end %>
 
 
-    <%= link_to 'Edit', edit_project_path(@project) %> |
-    <%= link_to 'Back', projects_path %>
+        <strong>Páginas:</strong>
+        <% if @project_pages.empty? %>
+          <p><%= t("project.show_page.empty") %></p>
+        <% else %>
+          <div id="participant_tags" class="tags">
+              <% @project_pages.each do |actual| %>
+                <%= link_to actual.title,
+                                actual.url,
+                                target: "_blank",
+                                class: "show-link" %>
+              <% end %>
+          </div>
+        <% end %>
+
+
+        <%= link_to 'Edit', edit_project_path(@project) %> |
+        <%= link_to 'Back', projects_path %>
+    </div>
   <% else %>
     <p class="text-center"><%= t("not_authorized.title") %></p>
     <%= back_link_to root_url %>
   <% end %>
-  </div>
 </div>
