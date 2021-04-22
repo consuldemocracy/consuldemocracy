@@ -3,6 +3,8 @@ tr:
     goals:
       goal_1:
         title: "Yoksulluğa Son"
+      goal_2:
+        title: "Açlığa Son"
       help:
         title: "Sürdürülebilir Kalkınma Amaçları yardım"
         description: "Topluma olan katkılarınızı (tartışmalar, vatandaş önerileri ve yatırım projeleri) Sürdürülebilir Kalkınma Hedefleri 2030 Ajandası ile uyumlu hale getirebilirsiniz, bu, Sürdürülebilir Kalkınma Hedeflerinin her birine olan katkımızın genel bakışına sahip olmamızı sağlayacaktır. Aşağıda tüm amaçlar, hedefler ve yerelleştirilmiş hedefler hakkında bilgi bulabilirsiniz."
