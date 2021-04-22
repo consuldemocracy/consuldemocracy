@@ -33,7 +33,6 @@ class UsersController < ApplicationController
     end
 
     def set_activity_counts
-#       @user = User.find_by_id(params[:id])
       @activity_counts = ActiveSupport::HashWithIndifferentAccess.new(
                           proposals: Proposal.where(author_id: @user.id).count,
                           participants: ProposalParticipant.where(user_id: @user.id).count,
