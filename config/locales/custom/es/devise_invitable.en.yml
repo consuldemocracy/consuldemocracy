@@ -19,7 +19,6 @@ en:
       invitation_instructions:
         subject: "Invitation instructions"
         hello: "Hello %{email}"
-        someone_invited_you: "Someone has invited you to innconsul.grupoinnovaris.com, you can accept it through the link below."
         someone_invited_you_custom: "Someone has invited you to Innconsul, you can accept it through the link below."
         accept: "Accept invitation"
         accept_until: "This invitation will be due in %{due_date}."
