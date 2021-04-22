@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  has_filters %w[proposals participants participants_d participants_p debates budget_investments comments follows], only: :show
+  has_filters %w[proposals participants participants_d participants_p projects debates budget_investments comments follows], only: :show
 
   #load_and_authorize_resource
   load_and_authorize_resource except: [:edit,:update]
@@ -38,6 +38,7 @@ class UsersController < ApplicationController
                           participants: ProposalParticipant.where(user_id: @user.id).count,
                           participants_d: DebateParticipant.where(user_id: @user.id).count,
                           participants_p: PageParticipant.where(user_id: @user.id).count,
+                          projects: UserOnProject.where(user_id: @user.id).count,
                           debates: (Setting["process.debates"] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting["process.budgets"] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count,
@@ -51,6 +52,7 @@ class UsersController < ApplicationController
       when "participants" then load_participants
       when "participants_d" then load_participants_d
       when "participants_p" then load_participants_p
+      when "projects" then load_projects
       when "debates" then load_debates
       when "budget_investments" then load_budget_investments
       when "comments" then load_comments
@@ -62,7 +64,10 @@ class UsersController < ApplicationController
     def load_available_activity
       if @activity_counts[:proposals] > 0
         load_proposals
-        @current_filter = "proposals"
+        @current_filter = "proposals" 
+      elsif @activity_counts[:projects] > 0
+        load_projects
+        @current_filter = "projects"
       elsif @activity_counts[:participants] > 0
         load_participants
         @current_filter = "participants"
@@ -85,6 +90,17 @@ class UsersController < ApplicationController
         load_follows
         @current_filter = "follows"
       end
+    end
+
+    def load_projects
+      @participants_project = []
+      @project_participants = UserOnProject.where(user_id: @user.id)
+      @project_participants.each do |index|
+        @participants_project += Project.where(id: index.project_id)
+      end
+      puts "proyectos cargados"
+      puts @participants_project.count
+      @participants_project
     end
 
     def load_proposals

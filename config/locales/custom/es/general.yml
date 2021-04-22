@@ -827,6 +827,7 @@ es:
       proposals: Propuestas
       proposals_status: Estado
       debates: Debates
+      projects: Proyectos
       budget_investments: Proyectos de presupuestos participativos
       comments: Comentarios
       actions: Acciones
@@ -849,6 +850,9 @@ es:
         participants_p:
           one: 1 Participación a Página
           other: "%{count} Participaciones a Páginas"
+        projects:
+          one: 1 Participación a Proyecto
+          other: "%{count} Participaciones a Proyectos"
         budget_investments:
           one: 1 Proyecto de presupuestos participativos
           other: "%{count} Proyectos de presupuestos participativos"
