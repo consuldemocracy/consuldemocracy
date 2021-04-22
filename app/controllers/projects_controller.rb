@@ -4,7 +4,8 @@ class ProjectsController < ApplicationController
   before_action :is_admin?, except: [:show]
   skip_authorization_check
 
-  before_action :load_components, only: [:edit, :new, :update]
+  before_action :load_components, only: [:edit, :update]
+  before_action :load_all, only: [:new]
   before_action :actual_debates, :actual_pages, only: [:show, :edit]
   before_action :actual_users, only: [:edit, :show]
 
@@ -45,6 +46,15 @@ class ProjectsController < ApplicationController
       @project_pages += SiteCustomization::Page.where(id: item.site_customization_page_id)
     end
     @project_pages
+  end
+
+  def load_all
+    @pages = SiteCustomization::Page.all
+    @debates = Debate.all
+    @users = User.all
+    @project_users = []
+    @project_pages = []
+    @project_debates = []
   end
 
   #Cargar los componentes a añadir en el proyecto
