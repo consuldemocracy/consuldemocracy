@@ -148,7 +148,7 @@ en:
       show:
         author_deleted: User deleted
         price_explanation: Price explanation
-        feasibility_explanation: "Feasibility explanation"
+        feasibility_explanation: "Feasibility explanation (optional)"
         unfeasibility_explanation: Unfeasibility explanation
         code: "Investment project code: <strong>%{code}</strong>"
         location: "Location: <strong>%{location}</strong>"

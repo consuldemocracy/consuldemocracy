@@ -170,7 +170,7 @@ en:
         selected_true: "Selected"
         selected_false: "Not selected"
         feasibility_explanation: "Feasibility explanation (optional)"
-        unfeasibility_explanation: "Feasibility explanation"
+        unfeasibility_explanation: "Unfeasibility explanation"
         valuation_finished: "Valuation finished"
         valuator_ids: "Groups"
         valuation_tag_list: "Tags"
