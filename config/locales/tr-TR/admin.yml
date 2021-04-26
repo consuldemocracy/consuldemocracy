@@ -1051,6 +1051,7 @@ tr:
       edit:
         title: "Soru Düzenle"
       new:
+        title: "Oylama%{poll} için soru oluştur"
         title_proposal: "Soru oluştur"
       answers:
         images:
