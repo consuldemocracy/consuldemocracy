@@ -678,6 +678,7 @@ tr:
       from: "Kaynak"
       general: "Metin ile"
       general_placeholder: "Metni yaz"
+      goal: "SKH'ye göre"
       goal_blank: "Hedef seç"
       search: "Filtre"
       target_blank: "Hedef seç"
