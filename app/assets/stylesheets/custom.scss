@@ -12,7 +12,7 @@
   margin: 2rem auto;
   overflow: hidden;
   position: relative;
-  width: 300px;
+  width: 400px;
 
   &__images {
     display: flex;
@@ -20,14 +20,9 @@
     transition: transform 0.25s;
 
     #figura {
-      width: 300px;
+      width: 400px;
     }
   }
-}
-
-.card-background {
-  width: 800px;
-  background-color: rgba(255, 98, 0, 0.6);
 }
 
 .carousel__button {
