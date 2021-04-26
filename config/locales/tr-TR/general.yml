@@ -776,6 +776,7 @@ tr:
     manage:
       all: "%{subject} 'de %{action} eylemini gerçekleştirme izniniz yok."
   users:
+    signin: "Oturum Aç"
     direct_messages:
       new:
         direct_messages_bloqued: "Bu kullanıcı doğrudan mesaj almamaya karar verdi"
