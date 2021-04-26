@@ -1,5 +1,6 @@
 tr:
   mailers:
+    title: "Açık Yönetim"
     no_reply: "Bu mesaj yanıtları kabul etmeyen bir e-posta adresinden gönderildi."
     comment:
       hi: Merhaba
