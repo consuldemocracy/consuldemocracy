@@ -38,12 +38,14 @@ html,
 body {
   height: 100%;
   margin: 0;
+  letter-spacing: 2px !important;
 }
 
 body {
   display: flex;
   flex-direction: column;
   font-size: $base-font-size;
+  letter-spacing: 2px !important;
 
   > .wrapper {
     flex: 1;
