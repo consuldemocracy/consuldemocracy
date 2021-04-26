@@ -3,6 +3,7 @@ tr:
     goals:
       goal_1:
         title: "Yoksulluğa Son"
+        title_in_two_lines: "Yoksulluğa Son"
       goal_2:
         title: "Açlığa Son"
       help:
