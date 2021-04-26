@@ -583,7 +583,7 @@ tr:
         support_button: Bu öneriyi destekle
         share_in: Paylaş
         hi: "Merhaba!"
-        introduction: Kıbrıs'taki günlük yaşamı önemli derecede iyileştirebilmeyi hedefleyen bir platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi teklifimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin, çünkü çok basit.
+        introduction: Hangi şehri istediğimize karar verebileceğimiz platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi vatandaş önerimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin çünkü bu çok basit.
         support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz butonu tıklamanız yeterlidir ve bunu yapmadan önce öneriyle ilgili bilgi edinebilirsiniz. Yalnızca, en fazla desteği alan öneri uygulanacak ve bunu başarmama yardım edeceğinizden eminim!"
         share: "Ve eğer bana iyilik yaparak teklifimi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, mükemmel olacak!"
   polls:
@@ -753,6 +753,8 @@ tr:
       add_language: Dil ekle
       languages_in_use:
         zero: "0 dil kullanımda"
+        one: "1 dil kullanımda"
+        other: "%{count} dil kullanımda"
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
