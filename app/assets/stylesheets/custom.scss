@@ -4,6 +4,64 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+//Carrousel
+.carousel {
+  background-color: rgba(255, 98, 0, 0.6);
+  align-items: center;
+  display: flex;
+  margin: 2rem auto;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+
+  &__images {
+    display: flex;
+    transform: translateX(0);
+    transition: transform 0.25s;
+
+    #figura {
+      width: 300px;
+    }
+  }
+}
+
+.card-background {
+  width: 800px;
+  background-color: rgba(255, 98, 0, 0.6);
+}
+
+.carousel__button {
+  background: teal;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 3rem;
+  opacity: 0.25;
+  position: absolute;
+  transition: opacity 0.25s;
+  width: 3rem;
+  z-index: 1;
+
+  &.previous {
+    top: 48%;
+    left: 5px;
+  }
+
+  &.next {
+    top: 48%;
+    right: 5px;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+//Carrousel
+
+//Formulario
 .project-form-field {
   border-radius: 10px;
   border: 1px solid;
@@ -11,7 +69,9 @@
   box-shadow: 5px 10px #9e9a9a;
   margin-bottom: 30px;
 }
+//Fin Formulario
 
+//Admin/Usuarios
 .edit-link {
   @include has-fa-icon(edit, regular);
 }
@@ -20,6 +80,8 @@
   @include has-fa-icon(ban, solid);
   color: $alert-color;
 }
+
+//Fin Admin/Usuarios
 
 .header-style-photo {
   background-size: cover;

@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   get "/welcome", to: "welcome#welcome"
   get "/recognitions", to: "welcome#recomendations"
+  get "/faq_page", to: "welcome#faq_page"
   get "/consul.json", to: "installation#details"
   get "send" => "send#index"
   post "send" => "send#create"
