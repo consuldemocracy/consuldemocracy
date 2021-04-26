@@ -1,7 +1,10 @@
 <div class="small-12 medium-9 column">
   <ul>
     <%= raw content_block("subnavigation_left", I18n.locale) %>
-
+      <li>
+        <%= link_to t("layouts.header.projects"),
+                                projects_path %>
+      </li>
     <% if feature?(:debates) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),

@@ -5,7 +5,7 @@
 //
 
 //------------ JHH: -----------
-$brand: linear-gradient(to right, #fb700a, #fca406);
+$brand: linear-gradient(to right, rgb(255, 98, 0), rgb(255, 197, 20));
 $top-color: #f1f1f1;
 $highlight: white;
 
@@ -127,7 +127,7 @@ footer {
     .colors {
       .banner1 {
         height: 5px;
-        background-color: #fb700a;
+        background-color: rgb(255, 98, 0);
       }
       .banner2 {
         height: 5px;

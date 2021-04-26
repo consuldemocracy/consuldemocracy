@@ -655,11 +655,10 @@ body > header,
     a img {
       height: rem-calc(48);
       margin: 0;
+      margin-left: 3px;
       width: auto;
-      border-radius: 45%;
       box-shadow: 2px 2px 7px lightgray;
-      background: #f1f1f1;
-      max-width: 10rem;
+      max-width: 15rem;
 
       @include breakpoint(medium up) {
         height: auto;
