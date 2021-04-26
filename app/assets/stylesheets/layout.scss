@@ -653,11 +653,11 @@ body > header,
     line-height: $line-height;
 
     a img {
+      background-color: #f1f1f1;
       height: rem-calc(48);
       margin: 0;
       margin-left: 3px;
       width: auto;
-      box-shadow: 2px 2px 7px lightgray;
       max-width: 15rem;
 
       @include breakpoint(medium up) {

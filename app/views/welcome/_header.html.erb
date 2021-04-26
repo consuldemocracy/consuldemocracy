@@ -1,8 +1,11 @@
 <% if header.present? %>
-  <div class="jumbo highlight header-style-photo" style = "background-image: url(<%= asset_path 'surface.jpg' %>);height:600px" >
+  <div class="jumbo highlight header-style-photo" style = "background-image: url(<%= asset_path 'surface.jpg' %>);height:650px" >
     <div class= "row header-style-content" style = "width:100%;padding-top:2%">
       <div class="small-12 medium-6 column <%= "medium-9 small-centered text-center" unless header.image.present? %>">
         <p class="p_header lead"><%= header.label %> <%= header.title %>: <%= header.description %></p>
+        <div class="small-12 medium-6 large-4 <%= "small-centered" unless header.image.present?%>">
+          <%= link_to header.link_text, header.link_url, class: "button expanded large" %>
+        </div>
       </div>
     </div>
     <%= render "box" %>

@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (event.target.id === 'previous') {
           if (imageIndex !== 1) {
             imageIndex--;
-            translateX += 400;
+            translateX += 300;
           }
         } else {
           if (imageIndex !== numberOfImages) {
             imageIndex++;
-            translateX -= 400;
+            translateX -= 300;
           }
         }
         
