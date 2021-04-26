@@ -251,7 +251,7 @@ tr:
     index:
       empty_notifications: Yeni bildiriminiz yok.
       mark_all_as_read: Tümünü okundu olarak işaretle
-      read: Oku
+      read: Okunmuş
       title: Bildirimler
       unread: Okunmamış
     notification:
