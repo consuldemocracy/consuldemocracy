@@ -229,7 +229,8 @@ es:
       privacy: Política de privacidad
       recognitions: Reconocimientos
       contact: Contacto
-      faq: Faq
+      faq: FAQ
+      product: "Un producto de: "
     header:
       administration_menu: Menú
       administration: Administración

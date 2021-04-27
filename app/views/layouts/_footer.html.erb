@@ -129,15 +129,15 @@
   </div>
 
   <div class="subfooter row">
-    <div class="small-12 medium-8 column">
-      <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
+    <div class="small-12 medium-12 large-12 column">
       <ul class="no-bullet inline-block">
+        <li class="inline-block"><%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.recognitions"), recognitions_path %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.contact"), send_path %>&nbsp;|</li>
-        <li class="inline-block"><%= link_to t("layouts.footer.faq"), faq_page_path %></li>
+        <li class="inline-block"><%= t("layouts.footer.product") %><%= image_tag(image_path_for("innovarisgrey_360.png"), size: "90x30", alt: setting["org_name"]) %></li>
       </ul>
     </div>
   </div>

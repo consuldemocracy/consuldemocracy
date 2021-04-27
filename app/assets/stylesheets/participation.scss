@@ -40,14 +40,13 @@
 
     &:hover,
     &:active {
-      color: #fff;
+      color: black;
       cursor: pointer;
       opacity: 1 !important;
     }
   }
 
   .icon-like {
-
     &:hover,
     &:active {
       background: $like;
@@ -56,7 +55,6 @@
   }
 
   .icon-unlike {
-
     &:hover,
     &:active {
       background: $unlike;
@@ -87,7 +85,6 @@
   }
 
   .voted {
-
     .icon-like,
     .icon-unlike {
       color: #fff;
@@ -105,7 +102,6 @@
   }
 
   .no-voted {
-
     .icon-like,
     .icon-unlike {
       opacity: 0.3;
@@ -252,7 +248,6 @@
 .document-form,
 .topic-new,
 .topic-form {
-
   .icon-debates,
   .icon-proposals,
   .icon-budget,
@@ -293,7 +288,6 @@
 }
 
 .debate-form {
-
   .recommendations li::before {
     color: $debates;
   }
@@ -303,7 +297,6 @@
 .document-form,
 .topic-form,
 .topic-new {
-
   .recommendations li::before {
     color: $proposals;
   }
@@ -339,7 +332,6 @@
 .communities-show,
 .topic-show,
 .milestone-content {
-
   h1,
   p {
     word-wrap: break-word;
@@ -389,7 +381,6 @@
 
   ul,
   ol {
-
     li {
       font-size: rem-calc(15);
       margin-bottom: rem-calc(15);
@@ -397,7 +388,6 @@
   }
 
   .geozone {
-
     li {
       display: inline-block;
       margin-bottom: 0;
@@ -420,7 +410,6 @@
   }
 
   aside {
-
     h2 {
       border-top: 2px solid $brand;
       display: inline-block;
@@ -480,7 +469,6 @@
 
   .tags,
   .sdg-target-tag-list {
-
     a {
       margin-right: rem-calc(6);
     }
@@ -499,7 +487,6 @@
 .proposal-show,
 .investment-project-show,
 .budget-investment-show {
-
   .supports {
     padding: $line-height / 2 0 0;
   }
@@ -510,7 +497,6 @@
 }
 
 .show-actions-menu {
-
   [class^="icon-"] {
     display: inline-block;
     vertical-align: middle;
@@ -518,7 +504,6 @@
 }
 
 .additional-content {
-
   .tabs {
     background: none;
     border: 0;
@@ -537,7 +522,6 @@
 }
 
 .fixed-mobile-content {
-
   @include breakpoint(medium down) {
     background: #fff;
     margin-bottom: rem-calc(-1) !important;
@@ -552,7 +536,6 @@
 .proposals-list,
 .investment-projects-list,
 .budget-investments-list {
-
   @include breakpoint(medium) {
     margin-bottom: rem-calc(48);
   }
@@ -560,7 +543,6 @@
 
 .investment-projects-list,
 .budget-investments-list {
-
   @include breakpoint(medium) {
     min-height: $line-height * 15;
   }
@@ -569,11 +551,8 @@
 .budget-investments-list .budget-investment,
 .proposals-list .proposal,
 .legislation-proposals .proposal {
-
   @include breakpoint(medium) {
-
     .panel {
-
       &.with-image {
         padding: 0 $line-height / 2 0 0;
       }
@@ -759,7 +738,6 @@
 .debate-show,
 .proposal-show,
 .legislation-proposals {
-
   .votes {
     @include votes;
 
@@ -774,7 +752,6 @@
 }
 
 .legislation-proposals {
-
   .votes {
     min-height: $line-height * 8;
   }
@@ -787,7 +764,6 @@
 }
 
 .proposal {
-
   .supports {
     @include supports;
   }
@@ -797,7 +773,6 @@
 .investment-project-show,
 .budget-investment,
 .budget-investment-show {
-
   .supports {
     @include supports;
 
@@ -840,7 +815,6 @@
 }
 
 .budget-investment-show {
-
   figure {
     margin: rem-calc(10) 0 0;
     display: inline-block;
@@ -858,7 +832,6 @@
 }
 
 .proposals-summary {
-
   .panel {
     min-height: 0;
   }
@@ -873,7 +846,6 @@
 }
 
 .budget-investment-show {
-
   .label-budget-investment {
     background: none;
     clear: both;
@@ -913,7 +885,6 @@
 }
 
 .view-mode {
-
   ul {
     margin-bottom: 0;
 
@@ -941,9 +912,7 @@
   }
 
   &.default {
-
     .button {
-
       &::before {
         content: "\51";
       }
@@ -951,9 +920,7 @@
   }
 
   &.minimal {
-
     .button {
-
       &::before {
         content: "\22";
       }
@@ -998,9 +965,7 @@
 .debate,
 .proposal,
 .budget-investment {
-
   &.minimal {
-
     .panel,
     .debate-content,
     .proposal-content,
@@ -1113,7 +1078,6 @@
   }
 
   .share-supported {
-
     .social-share-button .ssb-icon {
       background: none;
       color: $text;
@@ -1131,7 +1095,6 @@
 // -----------
 
 .expanded {
-
   &.budget {
     background: $budget;
     margin-top: -$line-height;
@@ -1151,7 +1114,6 @@
     }
 
     .callout {
-
       &.primary a {
         color: $link;
       }
@@ -1227,7 +1189,6 @@
 }
 
 .groups-and-headings {
-
   .heading {
     border: 1px solid $border;
     border-radius: rem-calc(3);
@@ -1317,7 +1278,6 @@
 }
 
 .ballot {
-
   h2,
   h3 {
     font-weight: normal;
@@ -1510,7 +1470,6 @@
     }
 
     &.is-active {
-
       h3 {
         background: $budget;
         color: #fff;
@@ -1525,7 +1484,6 @@
 }
 
 .budgets-stats {
-
   .header {
     background: $highlight;
   }
@@ -1607,7 +1565,6 @@
   }
 
   p {
-
     &.title {
       color: #ffd200;
     }
@@ -1629,7 +1586,6 @@
 }
 
 .successful .panel {
-
   .icon-successful {
     border-right: 60px solid #ffd200;
     border-top: 0;
@@ -1652,7 +1608,6 @@
 }
 
 .successful {
-
   .panel {
     position: relative;
   }
@@ -1680,7 +1635,6 @@
   background: #fafafa;
 
   .callout {
-
     &.warning a {
       color: $color-warning;
     }
@@ -1789,9 +1743,7 @@
 }
 
 .poll {
-
   &.with-image {
-
     @include breakpoint(medium) {
       padding: 0 $line-height / 2 0 0;
     }
@@ -1920,7 +1872,6 @@
 }
 
 .poll-question-answers {
-
   .button {
     margin-right: $line-height / 4;
     min-width: rem-calc(168);
@@ -1955,9 +1906,7 @@
 // ---------------------------
 
 .polls-results-stats {
-
   .sidebar {
-
     .menu:not(.vertical) {
       padding: 0;
 
@@ -1985,7 +1934,6 @@
     }
 
     td {
-
       &.win {
         background: #ccedf8;
         font-weight: bold;

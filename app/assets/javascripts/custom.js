@@ -15,24 +15,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     //CAROUSEL
     console.log("DOM fully loaded and parsed");
+    const carousel = document.querySelector('.carousel');
     const carouselImages = document.querySelector('.carousel__images');
     const carouselButtons = document.querySelectorAll('.carousel__button');
     const numberOfImages = document.querySelectorAll('#figura').length;
-    //console.log(numberOfImages);
     let imageIndex = 1;
     let translateX = 0;
+
     
     carouselButtons.forEach(button => {
       button.addEventListener('click', (event) => {
+        translate_info = carousel.getBoundingClientRect();
         if (event.target.id === 'previous') {
           if (imageIndex !== 1) {
             imageIndex--;
-            translateX += 300;
+            translateX += translate_info.width;
+            console.log(translateX)
           }
         } else {
           if (imageIndex !== numberOfImages) {
             imageIndex++;
-            translateX -= 300;
+            translateX -= translate_info.width;
           }
         }
         

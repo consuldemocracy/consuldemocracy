@@ -30,6 +30,7 @@
         <div class="top-bar-right">
           <ul class="menu" data-responsive-menu="medium-dropdown">
             <li class="hide-for-small-only" style="margin-right:20px;"><%= render "shared/locale_switcher"%></li>
+            <li class="inline-block" style="color:red !important;"><%= link_to t("layouts.footer.faq"), faq_page_path %></li>
             <%= render "shared/admin_login_items" %>
             <%= render "layouts/notification_item" %>
             <%= render "devise/menu/login_items" %>
