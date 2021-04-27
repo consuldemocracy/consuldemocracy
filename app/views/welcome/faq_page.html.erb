@@ -15,3 +15,18 @@
     </div>
   </div>
 </div>
+
+<script>
+    //CAROUSEL
+    console.log("DOM fully loaded and parsed");
+    //FAQ
+    $('.answer').hide();
+    $('#preguntas h2').click(function () {
+        if ($(this).next('.answer').is(':hidden')){
+            $(this).next('.answer').show();
+        }else{
+            $(this).next('.answer').hide();
+        }
+
+    });
+</script>
