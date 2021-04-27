@@ -1567,6 +1567,7 @@ tr:
     audits:
       changes: "Değişiklikler listesi"
       id: "Kimlik"
+      field: "Saha"
     local_census_records:
       index:
         document_type: Belge türü
