@@ -35,6 +35,7 @@ pt-BR:
           proposals: Propostas
           budgets: Orçamento participativo
           help_page: Página de ajuda
+          sdg: ODS (SDG)
       edit:
         editing: Editar banner
         form:
@@ -72,10 +73,6 @@ pt-BR:
         budget_investments: Gerenciar projetos
         table_name: Nome
         table_phase: Estágio
-        table_investments: Investimentos
-        table_edit_groups: Grupos de títulos
-        table_edit_budget: Editar
-        table_admin_ballots: Cédulas
         edit_groups: Editar grupos de títulos
         edit_budget: Editar orçamento
         admin_ballots: Administrar cédulas
@@ -88,7 +85,6 @@ pt-BR:
         title: Editar Orçamento participativo
         delete: Deletar orçamento
         phase: Estágio
-        dates: Datas
         enabled: Habilitado
         actions: Ações
         edit_phase: Editar estágio
@@ -117,7 +113,6 @@ pt-BR:
     budget_groups:
       name: "Nome"
       headings_name: "Títulos"
-      headings_edit: "Editar Títulos"
       headings_manage: "Gerenciar títulos"
       no_groups: "Não há grupos."
       amount:
@@ -161,7 +156,6 @@ pt-BR:
         back: "Voltar a grupos"
     budget_phases:
       edit:
-        summary_help_text: Este texto irá informar o usuário sobre a fase. Para mostrá-lo mesmo se a fase não está ativa, selecione a caixa de seleção abaixo
         description_help_text: Esse texto será exibido no cabeçalho quando a fase estiver ativa
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento, bem como ativa para qualquer outra finalidade
         save_changes: Salvar alterações
@@ -297,8 +291,6 @@ pt-BR:
         table_name: Nome
         table_description: Descrição
         table_actions: Ações
-        delete: Apagar
-        edit: Editar
       edit:
         title: Editar status de investimento
       update:
@@ -361,8 +353,6 @@ pt-BR:
         index:
           description: "Quando os usuários criam propostas, eles podem acessar um painel com o progresso da sua proposta, no qual é possível propor-lhes recursos y recomendações para conseguir apoios para as suas ideias."
           create: Criar recurso ou ação
-          edit: Editar
-          delete: Excluir
           active: 'Sim'
           inactive: 'Não'
           title: Recursos e ações
@@ -497,7 +487,6 @@ pt-BR:
           banner_title: Cores do cabeçalho
         index:
           create: Novo processo
-          delete: Apagar
           title: Processos legislativos
           filters:
             active: Ativo
@@ -623,14 +612,17 @@ pt-BR:
     managers:
       index:
         title: Gerentes
-        name: Nome
-        email: Email
         no_managers: Não há gerentes.
       manager:
         add: Adicionar
-        delete: Apagar
       search:
         title: "Gerentes: Pesquisa de usuário"
+    sdg_managers:
+      index:
+        no_sdg_managers: Não há usuários.
+    sdg/managers:
+      sdg/manager:
+        add: Adicionar
     menu:
       activity: Atividade do moderador
       admin: Menu de admin
@@ -647,6 +639,7 @@ pt-BR:
       hidden_users: Usuários ocultos
       administrators: Administradores
       managers: Gerentes
+      sdg_managers: Gerenciadores de ODS (SDG)
       moderators: Moderadores
       messaging_users: Mensagens para os usuários
       newsletters: Boletins informativos
@@ -701,14 +694,10 @@ pt-BR:
     administrators:
       index:
         title: Administradores
-        name: Nome
-        email: Email
-        description: Descrição
         id: ID de Administrador
         no_administrators: Não há administradores.
       administrator:
         add: Adicionar
-        delete: Apagar
         restricted_removal: "Desculpe, você não pode se remover dos administradores"
       search:
         title: "Administradores: busca de usuário"
@@ -718,12 +707,9 @@ pt-BR:
     moderators:
       index:
         title: Moderadores
-        name: Nome
-        email: Email
         no_moderators: Não há moderadores.
       moderator:
         add: Adicionar
-        delete: Apagar
       search:
         title: "Moderadores: Pesquisa de usuário"
     segment_recipient:
@@ -750,8 +736,6 @@ pt-BR:
         sent: Enviados
         actions: Ações
         draft: Rascunho
-        edit: Editar
-        delete: Apagar
         preview: Prévia
         empty_newsletters: Não há nenhum boletins informativos para mostrar
       new:
@@ -787,8 +771,6 @@ pt-BR:
         sent: Enviados
         actions: Ações
         draft: Rascunho
-        edit: Editar
-        delete: Apagar
         preview: Prévia
         view: Visão
         empty_notifications: Não há nenhuma notificação para mostrar
@@ -886,7 +868,6 @@ pt-BR:
         can_edit_dossier: "Pode editar relatório"
       valuator:
         add: Adicionar aos avaliadores
-        delete: Apagar
       search:
         title: "Avaliadores: Pesquisa de usuário"
       form:
@@ -924,7 +905,6 @@ pt-BR:
         entry_name: presidente
       search:
         email_placeholder: Pesquisar usuário pelo email
-        search: Buscar
         user_not_found: Usuário não encontrado
         help: "Para adicionar ou remover Presidentes de mesa, utilize o navegador a seguir."
     poll_officer_assignments:
@@ -1187,8 +1167,6 @@ pt-BR:
         no_organizations: Não há nenhuma organização.
         reject: Rejeitar
         rejected: Rejeitado
-        search: Buscar
-        search_placeholder: Nome, e-mail ou número de telefone
         title: Organizações
         verified: Verificado
         verify: Verificar
@@ -1257,6 +1235,9 @@ pt-BR:
         remote_census:
           title: Configuração do Censo Remoto
           how_to_enable: 'Para configurar a conexão com o Censo Remoto (SOAP) é preciso ativar "Configurar a conexão ao censo remoto (SOAP)" na aba "Funcionalidades".'
+        sdg:
+          title: Configuração de ODSs
+          how_to_enable: 'Para mostrar as opções de configuração de Objetivos de Desenvolvimento Sustentável, é preciso habilitar "ODS" na aba "Características".'
       remote_census_general_name: Informações gerais
       remote_census_request_name: Solicitação - Dados
       remote_census_response_name: Respostas - Dados
@@ -1269,24 +1250,27 @@ pt-BR:
     shared:
       true_value: "Sim"
       false_value: "Não"
-      booths_search:
-        button: Buscar
-        placeholder: Buscar urna por nome
-      poll_officers_search:
-        button: Buscar
-        placeholder: Buscar presidentes das votações
-      poll_questions_search:
-        button: Buscar
-        placeholder: Buscar perguntas
-      proposal_search:
-        button: Buscar
-        placeholder: Buscar propostas por título, código, descrição ou pergunta
-      debate_search:
-        button: Pesquisar
-        placeholder: Buscar debates por título ou descrição
-      user_search:
-        button: Buscar
-        placeholder: Pesquisar usuário por nome ou pelo email
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "Todos os objetivos"
+            label: "Por objetivo"
+          sdg_targets:
+            all: "Todos os destinos"
+            label: "Por destino"
+        label:
+          booths: "Buscar urna por nome"
+          budget_investments: "Buscar investimentos por título, descrição ou cabeçalho"
+          debates: "Buscar debates por título ou descrição"
+          legislation_processes: "Buscar processos por título ou descrição"
+          local_census_records: "Pesquisar por número de documento"
+          organizations: "Nome, e-mail ou número de telefone"
+          poll_officers: "Buscar presidentes das votações"
+          poll_questions: "Buscar perguntas"
+          polls: "Buscar votações por nome ou descrição"
+          proposals: "Buscar propostas por título, código, descrição ou pergunta"
+          users: "Pesquisar usuário por nome ou pelo email"
+        search: "Buscar"
       search_results: "Buscar resultados"
       no_search_results: "Nenhum resultado encontrado."
       actions: Ações
@@ -1300,7 +1284,6 @@ pt-BR:
       author: Autor
       content: Conteúdo
       created_at: Criado em
-      delete: Apagar
       color_help: Formato hexadecimal
       show_results_and_stats: "Exibir resultados e estatísticas"
       results_and_stats_reminder: "Ao marcar estas caixas de seleção, os resultado e/ou estatísticas estarão disponíveis publicamente e qualquer usuário poderá vê-los."
@@ -1308,8 +1291,6 @@ pt-BR:
       index:
         title: Geozona
         create: Criar geozona
-        edit: Editar
-        delete: Apagar
       geozone:
         name: Nome
         external_code: Código externo
@@ -1389,6 +1370,7 @@ pt-BR:
         proposal_notifications: Notificações de proposta
         incomplete_verifications: Verificações incompletas
         polls: Votações
+        sdg: ODS (SDG)
       graph:
         debate_created: Debates
         visit: Visitas
@@ -1431,6 +1413,15 @@ pt-BR:
           question_name: Questão
           origin_web: Participantes da Web
           origin_total: Total de participantes
+      sdg:
+        budget_investments:
+          amount: "Total aprovado"
+          winners: "Projeto de investimento ganhando"
+          sent: "Propostas de investimento enviadas"
+        debates: "Debates"
+        polls: "Votações"
+        proposals: "Propostas"
+        title: "Objetivos de Desenvolvimento Sustentável - Estatísticas"
     tags:
       create: Criar tópico
       destroy: Deletar tópico
@@ -1457,7 +1448,6 @@ pt-BR:
           erased: Apagados
       search:
         placeholder: Buscar usuário por e-mail, nome ou número do documento
-        search: Buscar
     verifications:
       index:
         phone_not_given: Telefone não dado
@@ -1532,16 +1522,11 @@ pt-BR:
           updated_at: Atualizado em
           title: Título
           slug: área de informações
-          cards_title: Cartões
           see_cards: Ver cartões
         cards:
           cards_title: cartões
           create_card: Criar cartão
           no_cards: Não há cartões.
-          title: Título
-          description: Descrição
-          link_text: Texto do link
-          link_url: Link da URL
           columns_help: "Largura do cartão em número de colunas. Em telas móveis é sempre de 100%."
           create:
             notice: "Cartão criado com sucesso!"
@@ -1558,11 +1543,6 @@ pt-BR:
       cards_title: Cartões
       create_card: Criar cartão
       no_cards: Não há cartões.
-      cards:
-        title: Título
-        description: Descrição
-        link_text: Texto do link
-        link_url: URL do link
       feeds:
         proposals: Propostas
         debates: Debates
@@ -1597,9 +1577,6 @@ pt-BR:
         document_number: Número do documento
         date_of_birth: Data de nascimento
         postal_code: CEP
-        search:
-          placeholder: Pesquisar por número de documento
-          search: Pesquisar
         import: Importar CSV
       new:
         creating: Criando novo registro de censo local

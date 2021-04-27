@@ -70,9 +70,6 @@ val:
         budget_investments: Vore propostes d'inversió
         table_name: Nom
         table_phase: Fase
-        table_investments: Propostes d'inversió
-        table_edit_groups: Grups de partides
-        table_edit_budget: Editar
         edit_groups: Edita grups de partides
         edit_budget: Edita pressupost
         no_budgets: "No hi ha pressupostos."
@@ -84,7 +81,6 @@ val:
         title: Edita campanya de pressupostos participatius
         delete: Eliminar presupost
         phase: Fase
-        dates: Dates
         enabled: Activa
         actions: Accions
         edit_phase: Edita fase
@@ -102,7 +98,6 @@ val:
     budget_groups:
       name: "Nom"
       headings_name: "Partides pressupostàries"
-      headings_edit: "Editar Partides"
       headings_manage: "Gestionar partides"
       no_groups: "No hi ha grups creats encara. Cada usuari podrà votar en una sola partida de cada grup."
       amount:
@@ -144,7 +139,6 @@ val:
         back: "Tornar a grups"
     budget_phases:
       edit:
-        summary_help_text: Este text informarà a l'usuari sobre la fase. Per a mostrar-lo inclús quant la fase no estiga activa, selecciona la casella següent
         description_help_text: Este text apareixerà en la capçalera quant la fase estiga activa
         enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, així com activa per a qualsevol altre propòsit
         save_changes: Guardar canvis
@@ -269,8 +263,6 @@ val:
         table_name: Nom
         table_description: Descripció
         table_actions: Accions
-        delete: Eliminar
-        edit: Editar
       edit:
         title: Edita l'estat de la proposta
       update:
@@ -352,7 +344,6 @@ val:
           banner_title: Colors de capçelera
         index:
           create: Nou procés
-          delete: Eliminar
           title: Processos legislatius
           filters:
             all: Totes
@@ -473,12 +464,9 @@ val:
     managers:
       index:
         title: Gestors
-        name: Nom
-        email: Correu electrònic
         no_managers: No hi han gestors.
       manager:
         add: Afegir com a moderador
-        delete: Eliminar
       search:
         title: "Gestors: Cerca d'usuaris"
     menu:
@@ -543,25 +531,19 @@ val:
     administrators:
       index:
         title: Administradors
-        name: Nom
-        email: Correu electrònic
         id: ID de l'administrador
         no_administrators: No hi administradors.
       administrator:
         add: Afegir com a Gestor
-        delete: Eliminar
         restricted_removal: "Ho sentim, no pots eliminar-te a tu mateix de la llista"
       search:
         title: "Administradors: Cerca d'usuaris"
     moderators:
       index:
         title: Moderadors
-        name: Nom
-        email: Correu electrònic
         no_moderators: No hi han moderadors.
       moderator:
         add: Afegir com a Gestor
-        delete: Eliminar
       search:
         title: "Moderadors: Cerca d'usuaris"
     segment_recipient:
@@ -587,8 +569,6 @@ val:
         sent: Data
         actions: Accions
         draft: Esborrany
-        edit: Editar
-        delete: Eliminar
         preview: Vista previa
         empty_newsletters: No hi ha butlletins informatius per a mostrar
       new:
@@ -622,8 +602,6 @@ val:
         sent: Data
         actions: Accions
         draft: Esborrany
-        edit: Editar
-        delete: Eliminar
         preview: Vista previa
         view: Vista
         empty_notifications: No hi ha notificacions per a mostrar
@@ -677,7 +655,6 @@ val:
         no_group: "Sense grup"
       valuator:
         add: Afegir com a avaluador
-        delete: Eliminar
       search:
         title: "Avaluadors: Cerca d'usuaris"
       form:
@@ -713,7 +690,6 @@ val:
         entry_name: president de taula
       search:
         email_placeholder: Cercar usuari per correu electrònic
-        search: Cercar
         user_not_found: Usuari no trobat
     poll_officer_assignments:
       index:
@@ -952,8 +928,6 @@ val:
         no_organizations: No hi ha organitzacions.
         reject: Rebutjar
         rejected: Rebutjades
-        search: Cercar
-        search_placeholder: Nom, email o telèfon
         title: Associacions
         verified: Verificades
         verify: Verificar
@@ -1005,21 +979,15 @@ val:
     shared:
       true_value: "Si"
       false_value: "No"
-      booths_search:
-        button: Cercar
-        placeholder: Cercar urna per nom
-      poll_officers_search:
-        button: Cercar
-        placeholder: Cercar presidents de taula
-      poll_questions_search:
-        button: Cercar
-        placeholder: Cercar preguntes
-      proposal_search:
-        button: Cercar
-        placeholder: Cercar propostes per títol, codi, descripció o pregunta
-      user_search:
-        button: Cercar
-        placeholder: Cercar usuari per nom o correu electrònic
+      search:
+        label:
+          booths: "Cercar urna per nom"
+          debates: "Busca debats per títol o descripció"
+          organizations: "Nom, email o telèfon"
+          poll_officers: "Cercar presidents de taula"
+          poll_questions: "Cercar preguntes"
+          proposals: "Cercar propostes per títol, codi, descripció o pregunta"
+          users: "Cercar usuari per nom o correu electrònic"
       search_results: "Resultats de la cerca"
       no_search_results: "No s'an trobat resultats."
       actions: Accions
@@ -1033,13 +1001,10 @@ val:
       author: Autor
       content: Contingut
       created_at: Creada el
-      delete: Eliminar
     geozones:
       index:
         title: Districtes
         create: Crear un districte
-        edit: Editar
-        delete: Eliminar
       geozone:
         name: Nom
         external_code: Codi extern
@@ -1144,7 +1109,6 @@ val:
         no_users: No hi ha usuaris.
       search:
         placeholder: Cercar usuari per email, nom o Dni
-        search: Cercar
     verifications:
       index:
         phone_not_given: No ha donat el seu telèfon
@@ -1218,16 +1182,11 @@ val:
           updated_at: Actualitzada el
           title: Títol
           slug: Slug
-          cards_title: Targetes
           see_cards: Vore Targetes
         cards:
           cards_title: targetes
           create_card: Crear targeta
           no_cards: No hi ha targetes.
-          title: Títol
-          description: Descripció
-          link_text: Text de l'enllaç
-          link_url: URL de l'enllaç
     homepage:
       title: Pàgina principal
       description: Els moduls actius apareixeran en la pàgina principal en el mateix ordre que ací.
@@ -1237,11 +1196,6 @@ val:
       cards_title: Targetes
       create_card: Crear targeta
       no_cards: No hi ha targetes.
-      cards:
-        title: Títol
-        description: Descripció
-        link_text: Text de l'enllaç
-        link_url: URL de l'enllaç
       feeds:
         proposals: Propostes
         debates: Debats

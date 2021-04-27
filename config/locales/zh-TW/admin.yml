@@ -70,9 +70,6 @@ zh-TW:
         budget_investments: 管理項目
         table_name: 名字
         table_phase: 階段
-        table_investments: 投資
-        table_edit_groups: 標題組
-        table_edit_budget: 編輯
         edit_groups: 編輯標題組
         edit_budget: 編輯預算
         no_budgets: "沒有預算。"
@@ -84,7 +81,6 @@ zh-TW:
         title: 編輯參與性預算
         delete: 刪除預算
         phase: 階段
-        dates: 日期
         enabled: 啟用
         actions: 行動
         edit_phase: 編輯階段
@@ -110,7 +106,6 @@ zh-TW:
         submit: "儲存標題"
     budget_phases:
       edit:
-        summary_help_text: 本文將告知用戶關於階段。就算階段未活躍也要顯示，請選中下面的複選框
         description_help_text: 當此文本將顯示在頁眉中，則表示階段處於活躍狀態
         enabled_help_text: 這一階段將在預算的階段時間內公開, 也會為其他目的而活躍
         save_changes: 儲存更改
@@ -236,8 +231,6 @@ zh-TW:
         table_name: 名字
         table_description: 描述
         table_actions: 行動
-        delete: 刪除
-        edit: 編輯
       edit:
         title: 編輯投資狀態
       update:
@@ -313,7 +306,6 @@ zh-TW:
           additional_info_placeholder: 添加您認為有用的額外資訊
         index:
           create: 新進程
-          delete: 刪除
           title: 立法進程
           filters:
             all: 所有
@@ -429,12 +421,9 @@ zh-TW:
     managers:
       index:
         title: 經理
-        name: 名字
-        email: 電郵
         no_managers: 沒有經理。
       manager:
         add: 添加
-        delete: 刪除
       search:
         title: "經理：用戶搜索"
     menu:
@@ -497,24 +486,18 @@ zh-TW:
     administrators:
       index:
         title: 管理員
-        name: 名字
-        email: 電郵
         no_administrators: 沒有管理員。
       administrator:
         add: 添加
-        delete: 刪除
         restricted_removal: "對不起，您無法將自己從管理員中刪除"
       search:
         title: "管理員：用戶搜索"
     moderators:
       index:
         title: 版主
-        name: 名字
-        email: 電郵
         no_moderators: 沒有審核員。
       moderator:
         add: 添加
-        delete: 刪除
       search:
         title: "審核員：用戶搜索"
     segment_recipient:
@@ -540,8 +523,6 @@ zh-TW:
         sent: 發送
         actions: 行動
         draft: 草稿
-        edit: 編輯
-        delete: 刪除
         preview: 預覽
         empty_newsletters: 沒有可顯示的通訊
       new:
@@ -572,8 +553,6 @@ zh-TW:
         sent: 發送
         actions: 行動
         draft: 草稿
-        edit: 編輯
-        delete: 刪除
         preview: 預覽
         view: 檢視
         empty_notifications: 沒有要顯示的通知
@@ -627,7 +606,6 @@ zh-TW:
         no_group: "沒有組"
       valuator:
         add: 添加到評估組
-        delete: 刪除
       search:
         title: "評估員：用戶搜索"
       form:
@@ -663,7 +641,6 @@ zh-TW:
         entry_name: 職員
       search:
         email_placeholder: 通過電郵搜尋用戶
-        search: 搜尋
         user_not_found: 未找到用戶
     poll_officer_assignments:
       index:
@@ -901,8 +878,6 @@ zh-TW:
         no_organizations: 這裡沒有組織。
         reject: 拒絕
         rejected: 已拒绝
-        search: 搜尋
-        search_placeholder: 姓名、電郵或電話號碼
         title: 組織
         verified: 已核實
         verify: 核實
@@ -953,21 +928,14 @@ zh-TW:
     shared:
       true_value: "是"
       false_value: "否"
-      booths_search:
-        button: 搜尋
-        placeholder: 按名稱搜尋投票亭
-      poll_officers_search:
-        button: 搜尋
-        placeholder: 搜尋投票站職員
-      poll_questions_search:
-        button: 搜尋
-        placeholder: 搜尋投票項問題
-      proposal_search:
-        button: 搜尋
-        placeholder: 按標題，代碼，描述或問題來搜尋建議
-      user_search:
-        button: 搜尋
-        placeholder: 按名稱或電郵搜索用戶
+      search:
+        label:
+          booths: "按名稱搜尋投票亭"
+          organizations: "姓名、電郵或電話號碼"
+          poll_officers: "搜尋投票站職員"
+          poll_questions: "搜尋投票項問題"
+          proposals: "按標題，代碼，描述或問題來搜尋建議"
+          users: "按名稱或電郵搜索用戶"
       search_results: "搜尋結果"
       no_search_results: "未找到結果。"
       actions: 行動
@@ -981,13 +949,10 @@ zh-TW:
       author: 作者
       content: 內容
       created_at: 創建於
-      delete: 刪除
     geozones:
       index:
         title: 地理區域
         create: 創建地理區域
-        edit: 編輯
-        delete: 刪除
       geozone:
         name: 名字
         external_code: 外部代碼
@@ -1089,7 +1054,6 @@ zh-TW:
         no_users: 沒有用戶。
       search:
         placeholder: 按電郵、姓名或文檔編號搜尋用戶
-        search: 搜尋
     verifications:
       index:
         phone_not_given: 未提供電話
@@ -1162,13 +1126,8 @@ zh-TW:
           updated_at: 更新於
           title: 標題
           slug: Slug
-          cards_title: 卡
         cards:
           create_card: 創建卡
-          title: 標題
-          description: 描述
-          link_text: 鏈接文本
-          link_url: 鏈接 URL
     homepage:
       title: 主頁
       description: 活動模組以與此處相同的順序在主頁中顯示。
@@ -1178,11 +1137,6 @@ zh-TW:
       cards_title: 卡
       create_card: 創建卡
       no_cards: 沒有卡。
-      cards:
-        title: 標題
-        description: 描述
-        link_text: 鏈接文本
-        link_url: 鏈接 URL
       feeds:
         proposals: 建議
         debates: 辯論

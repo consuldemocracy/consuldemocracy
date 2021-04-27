@@ -39,12 +39,8 @@ pl:
         icon_alt: Ikona budżetów partycypacyjnych
         title: Budżety partycypacyjne
         help: Pomoc z budżetem partycypacyjnym
-        all_phases: Zobacz wszystkie fazy
       all_phases: Fazy inwestycji budżetowych
       map: Propozycje inwestycji budżetowych zlokalizowane geograficznie
-      investment_proyects: Lista wszystkich projektów inwestycyjnych
-      unfeasible_investment_proyects: Lista wszystkich niewykonalnych projektów inwestycyjnych
-      not_selected_investment_proyects: Lista wszystkich projektów inwestycyjnych nie wybranych do głosowania
       finished_budgets: Ukończone budżety partycypacyjne
       see_results: Zobacz wyniki
       section_footer:
@@ -58,7 +54,7 @@ pl:
         tags_label: Tagi
         tags_placeholder: "Wprowadź oznaczenia, których chciałbyś użyć, rozdzielone przecinkami (',')"
         map_location: "Lokalizacja na mapie"
-        map_location_instructions: "Nakieruj mapę na lokalizację i umieść znacznik."
+        map_location_instructions: "Przejdź na mapie do lokalizacji i umieść znacznik."
         map_remove_marker: "Usuń znacznik mapy"
         map_skip_checkbox: "Ta inwestycja nie posiada konkretnej lokalizacji lub nie jest mi ona znana."
       index:
@@ -78,9 +74,6 @@ pl:
           verified_only: "By stworzyć nową inwestycję budżetową %{verify}."
           create: "Utwórz inwestycję budżetową"
           not_logged_in: "By stworzyć nową inwestycję budżetową musisz %{sign_in} lub %{sign_up}."
-          by_feasibility: Według wykonalności
-          feasible: Projekty uznane za możliwe do realizacji
-          unfeasible: Projekty uznane za niemożliwe do realizacji
         orders:
           random: losowe
           confidence_score: najwyżej oceniane
@@ -120,20 +113,11 @@ pl:
           other: "%{count} popierających"
         give_support: Poparcie
       header:
-        check_ballot: Sprawdź moje głosowanie
+        check_ballot: "Sprawdź moje głosowanie"
         change_ballot: "Jeśli zmienisz zdanie, możesz usunąć swoje głosy w %{check_ballot} i zacząć od nowa."
         check_ballot_link: "sprawdź moje głosowanie"
         price: "Ten dział ma budżet w wysokości"
-    progress_bar:
-      assigned: "Przypisałeś: "
-      available: "Dostępny budżet: "
     show:
-      group: Grupa
-      phase: Aktualna faza
-      unfeasible_title: Niewykonalne inwestycje
-      unfeasible: Zobacz niewykonalne inwestycje
-      unselected_title: Inwestycje niewybrane do fazy głosowania
-      unselected: Zobacz inwestycje niewybrane do fazy głosowania
       see_results: Zobacz wyniki
     results:
       link: Wyniki

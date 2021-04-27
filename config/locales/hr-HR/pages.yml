@@ -33,7 +33,7 @@ hr:
         description: "%{link} sekcija pomaže građanima kako bi sproveli direktnu odluku o trošenju dijelova javnog budžeta."
         link: "participativni budžeti"
         image_alt: "Različite faze participativnog budžetiranja"
-        figcaption: '"Potpora" i "Glasovanje" faze sudioničkih proračuna.'
+        figcaption: 'Faze "Potpore" i "Glasanja" sudioničkih proračuna.'
       polls:
         title: "Glasanje"
         description: "%{link} sekcije aktiviraju sesvaki puta kada prijedlog postigne 1% potpore i počne izglasavanje ili kada tijelo javne vlasti predlaže problem oko kojeg građani zatim odlučuju."
@@ -42,7 +42,7 @@ hr:
         feature_1_link: "registrirajte se %{org_name}"
       processes:
         title: "Procesi"
-        description: "U %{link} sekciji građani sudjeluju u stvaranju i modifikaciji propisa koji utječu na područne javnog djelovanja i mogu ponuditi mišljenje na temu propisa u prošlim raspravama."
+        description: "U sekciji %{link} građani sudjeluju u stvaranju i promjenama propisa koji utječu na područne javnog djelovanja i mogu ponuditi svoja viđenja na temu gradskih politika u prošlim raspravama."
         link: "procesi"
         feature: "Kako biste sudjelovali u izglasavanju kliknite na %{link} i potvrdite svoj račun."
         feature_link: "registrirajte se u %{org_name}"
@@ -58,11 +58,11 @@ hr:
         how_to_use: "Koristi %{org_name} u tvojem gradu"
       how_to_use:
         text: |-
-          Koristite ga za Vašu lokalnu vlast ili nam pomognite poboljšati ga, softver je besplatan. 
+          Koristite ga za Vašu lokalnu vlast ili nam ga pomognite poboljšati jer ovo je slobodan softver.
 
-          Ovaj Otvoreni Portal Vlade koristi [CONSUL app](https://github.com/consul/consul 'consul github') besplatni softvere, s [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), koja znači jednostavnije riječi koje svatko može slobodno koristiti, kopirati, detaljno pregledati, modificirati i redistribuirati ih svijetu s modifikacijama koje žele (prilikom čega i ostali mogu isto napraviti). Zato jer mi mislimo da je kultura bolja i bogatija kada se dijeli. 
+          Ovaj Otvoreni Portal Vlade koristi [CONSUL app](https://github.com/consul/consul 'consul github'), slobodan softver, [licenciran pod AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), a što jednostavno znači da ga svatko može slobodno koristiti, kopirati, detaljno pregledati, modificirati i dalje distribuirati svijetu s izmjenama kakvim želi (prilikom čega i ostali mogu raditi isto). Zato jer mislimo da je kultura bolja i bogatija kada se dijeli. 
 
-          Ako ste programer možete vidjeti kod i pomoći nam poboljšati ga [CONSUL app](https://github.com/consul/consul 'consul github').
+          Ako ste programer možete vidjeti izvorni kôd i pomoći nam poboljšati ga [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Koristite ga za svoju lokalno javno tijelo
     privacy:
@@ -164,6 +164,6 @@ hr:
       help: "Što je %{org}? - Građansko sudjelovanje"
     verify:
       info: "Kako biste potvrdili svoju adresu koristite svoje podatke za pristup:"
-      info_code: "Sada koristite šifru koju ste zaprimili u pismu:"
+      info_code: "Sada koristite kôd koji ste zaprimili u pismu:"
       submit: Potvrdi moj račun
       title: Potvrditi tvoj račun

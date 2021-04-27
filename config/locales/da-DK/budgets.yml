@@ -3,6 +3,24 @@ da:
     ballots:
       show:
         title: Din stemme
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Du har stadig <span>%{count}</span> at investere for"
+          approval:
+            zero: "Du har stadig <span>%{count}</span> stemmer."
+            one: "Du har stadig <span>%{count}</span> stemmer."
+            other: "Du har stadig <span>%{count}</span> stemmer."
+        amount_spent:
+          knapsack: "Beløb brugt <span>%{count}</span>"
+          approval:
+            zero: "Stemmer afgivet <span>%{count}</span>"
+            one: "Stemmer afgivet <span>%{count}</span>"
+            other: "Stemmer afgivet <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Samlet budget<span>%{count}</span>"
+          approval:
+            one: "Du kan stemme på <span>1</span> projekt"
+            other: "Du kan stemme på op til <span>%{count}</span> projekter"
         no_balloted_group_yet: "Du har ikke stemt på denne gruppe endnu, så stem stem stem!"
         remove: Fjern din stemme
         voted:
@@ -19,6 +37,7 @@ da:
         not_enough_money: "Du har allerede fordelt det mulige budget.<br><small>Husk at du %{change_ballot} til enhver tid</small>"
         no_ballots_allowed: Støttefasen er slut
         different_heading_assigned: "Du har allerede stemt i et andet budget: %{heading_link}"
+        not_enough_available_votes: "Du har brugt det maksimale antal stemmer tilladt"
         change_ballot: ændre din stemme
         casted_offline: Du har allerede deltaget, da du var offline
     groups:
@@ -46,12 +65,11 @@ da:
         icon_alt: Deltagerbudgetter ikon
         title: Deltagerbudgetter
         help: Hvad er et deltagerbudget?
-        all_phases: Se alle faser
       all_phases: Tidslinje
+      next_phase: Næste fase
+      prev_phase: Tidligere fase
+      current_phase: Nuværende fase
       map: Projekternes geografiske placering
-      investment_proyects: Alle projekter
-      unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
-      not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemning
       finished_budgets: Afsluttede deltagerbudgetter
       see_results: Se resultat
       section_footer:
@@ -82,6 +100,17 @@ da:
           other: " som indeholder <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Min stemme
+          voted_info:
+            knapsack:
+              one: "<strong>Du har stemt på et forslag med en værdi af %{amount_spent}</strong>"
+              other: "<strong>Du har stemt på %{count} forslag med en værdi af %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Du har stemt på et forslag</strong>"
+              other: "<strong>Du har stemt på %{count} forslag</strong>"
+          change_vote_info:
+            knapsack: "Du kan %{link} på ethvert tidspunkt indtil %{phase_end_date} Det er ikke nødvendigt at bruge alle de penge, der er til rådighed."
+            approval: "Du kan %{link} på ethvert tidspunkt indtil %{phase_end_date}."
+          change_vote_link: "ændre din stemme"
           different_heading_assigned: "Du har aktive stemmer i et andet budget: %{heading_link}"
           change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
           check_ballot_link: "kontroller og bekræft min afstemning"
@@ -89,9 +118,13 @@ da:
           verified_only: "For at oprette et forslag til det aktuelle deltagerbudget %{verify}."
           create: "Opret din projektidé"
           not_logged_in: "For at oprette et forslag skal du %{sign_in} eller %{sign_up}."
-          by_feasibility: Kan gennemføres
-          feasible: Mulige forslag
-          unfeasible: Ikke mulige forslag
+        filter: "Filtrer projekter efter"
+        filters:
+          not_unfeasible: "Ikke umuligt"
+          selected: "Udvalgte"
+          unfeasible: "Kan ikke gennemføres"
+          unselected: "Ikke udvalgt"
+          winners: "Vindere"
         orders:
           random: Alle idéer
           confidence_score: højest rangeret
@@ -133,21 +166,12 @@ da:
           other: "%{count} støtter op om projektet"
         give_support: Støt
       header:
-        check_ballot: Tjek min afstemning
+        check_ballot: "Tjek min afstemning"
         different_heading_assigned: "Du har aktive stemmer i en anden post: %{heading_link}"
         change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
         check_ballot_link: "kontroller og bekræft min afstemning"
         price: "Denne post har et budget på"
-    progress_bar:
-      assigned: "Du har tildelt: "
-      available: "Penge der kan fordeles: "
     show:
-      group: Gruppe
-      phase: Aktuel fase
-      unfeasible_title: Projekter, der ikke kan gennemføres
-      unfeasible: Se projekter, der ikke kan gennemføres
-      unselected_title: Projekter, der ikke er udvalgt til afstemning
-      unselected: Se projekter, der ikke er udvalgt til afstemning
       see_results: Se resultat
     results:
       link: Resultater

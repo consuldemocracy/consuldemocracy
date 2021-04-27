@@ -38,12 +38,8 @@ sq:
         icon_alt: Ikona e buxheteve  pjesëmarrëse
         title: Buxhetet  pjesëmarrës
         help: Ndihmoni me buxhetet pjesëmarrëse
-        all_phases: Shihni të gjitha fazat
       all_phases: Fazat e investimeve buxhetore
       map: Propozimet e investimeve buxhetore të vendosura gjeografikisht
-      investment_proyects: Lista e të gjitha projekteve të investimeve 
-      unfeasible_investment_proyects: Lista e të gjitha projekteve të investimeve të papranueshme
-      not_selected_investment_proyects: Lista e të gjitha projekteve të investimeve të pa zgjedhur për votim
       finished_budgets: Përfunduan buxhetet pjesëmarrëse.
       see_results: Shiko rezultatet
       section_footer:
@@ -77,9 +73,6 @@ sq:
           verified_only: "Për të krijuar një investim të ri buxhetor %{verify}"
           create: "Krijo një investim buxhetor"
           not_logged_in: "Për të krijuar një investim të ri buxhetor ju duhet %{sign_in} ose %{sign_up}."
-          by_feasibility: Fizibilitetit
-          feasible: Projektet e realizueshme
-          unfeasible: Projektet e parealizueshme
         orders:
           random: "\ni rastësishëm\n"
           confidence_score: më të vlerësuarat
@@ -114,20 +107,11 @@ sq:
           other: "1%{count} mbështetje"
         give_support: Suporti
       header:
-        check_ballot: Kontrolloni votimin tim
+        check_ballot: "Kontrolloni votimin tim"
         change_ballot: "Nëse ndryshoni mendjen tuaj, ju mund të hiqni votat tuaja në %{check_ballot} dhe të filloni përsëri."
         check_ballot_link: "Kontrolloni votimin tim"
         price: "Ky titull ka një buxhet prej"
-    progress_bar:
-      assigned: "Ju keni caktuar:"
-      available: "Buxheti në dispozicion:"
     show:
-      group: Grupet
-      phase: Faza aktuale
-      unfeasible_title: Investimet e papranueshme
-      unfeasible: Shih Investimet e papranueshme
-      unselected_title: Investimet nuk janë përzgjedhur për fazën e votimit
-      unselected: Shih investimet që nuk janë përzgjedhur për fazën e votimit
       see_results: Shiko rezultatet
     results:
       link: Rezultatet

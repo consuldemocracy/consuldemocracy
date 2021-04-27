@@ -32,20 +32,20 @@ bg:
           pending_flag_review: Изчакване
           with_ignored_flag: Маркиран като гледан
         headers:
-          debate: Дебат
+          debate: Дискусия
           moderate: Модериране
-        hide_debates: Скриване на дебати
+        hide_debates: Скриване на дискусии
         ignore_flags: Маркиран като гледан
         order: Подреждане
         orders:
           created_at: Най-нови
           flags: Най-маркирани
-        title: Дебати
+        title: Дискусии
     header:
       title: Модерация
     menu:
       flagged_comments: Коментари
-      flagged_debates: Дебати
+      flagged_debates: Дискусии
       flagged_investments: Бюджетни инвестиции
       proposals: Предложения
       proposal_notifications: Известия за предложения
@@ -111,7 +111,6 @@ bg:
       index:
         hidden: Блокиран
         hide: Блокиране
-        search: Търсене
         search_placeholder: имейл или име на потребителя
         title: Блокиране на потребители
-      notice_hide: Потребителят е блокиран. Всички дебати и коментари на този потребител са скрити.
+      notice_hide: Потребителят е блокиран. Всички дискусии и коментари на този потребител са скрити.

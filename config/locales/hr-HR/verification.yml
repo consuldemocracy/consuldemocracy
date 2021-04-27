@@ -8,7 +8,7 @@ hr:
         alert:
           failure: Došlo je do problema sa slanjem e-maila na vaš račun
         flash:
-          success: "Poslali smo vam potvrdu vašeg računa na e-mail: %{email}"
+          success: "Poslali smo vam potvrdu Vašeg računa na e-mail: %{email}"
       show:
         alert:
           failure: Potvrdni kôd netočan
@@ -65,14 +65,14 @@ hr:
     sms:
       create:
         flash:
-          success: Unesi potvrdni kôd koji smo vam poslali tekstualnom porukom
+          success: Unesite potvrdni kôd koji smo Vam poslali tekstualnom porukom
       edit:
         resend_sms_link: Klinknite ovdje da bi ga poslali ponovno
         resend_sms_text: Niste dobili poruku s potvrdnim kôdom?
         submit_button: Šalji
         title: Osiguraj potvrdni kôd
       new:
-        phone: Unesi svoj broj mobilnog uređaja kako bi ste primili kôd
+        phone: Unesite svoj broj mobilnog telefona kako bi ste primili kôd
         phone_format: "<strong><em>(Primjer: 612345678 ili +34612345678)</em></strong>"
         phone_note: Koristimo broj vašeg mobilnog uređaja samo za slanje kôda, nikad da bismo vas kontaktirali.
         phone_placeholder: "Primjer: 612345678 ili +34612345678"
@@ -90,9 +90,9 @@ hr:
     step_3: Završna potvrda
     user_permission_debates: Sudjelovati u raspravama
     user_permission_info: Potvrđivanjem osobnih podataka moći ćete...
-    user_permission_proposal: Izraživati nove prijedloge
+    user_permission_proposal: Izrađivati nove prijedloge
     user_permission_support_proposal: Podupirati prijedloge*
-    user_permission_votes: Sudjelovati u završnom glasovanju*
+    user_permission_votes: Sudjelovati u završnom glasanju*
     verified_user:
       form:
         submit_button: Pošalji kôd

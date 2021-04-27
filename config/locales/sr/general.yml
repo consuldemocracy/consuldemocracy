@@ -242,7 +242,6 @@ sr:
       collaborative_legislation: Заједнички закон
       debates: Расправе
       locale: "Језик:"
-      logo: ЦОНСУЛ лого
       management: Управљање
       moderation: Модерирање
       valuation: Вредновање
@@ -256,11 +255,11 @@ sr:
       budgets: Партиципаторно буџетирање
       notification_item:
         new_notifications:
+          zero: "Немате нових обавештења"
           one: Имате ново обавештење
           few: Имате %{count} нових обавештења
           other: Имате %{count} нових обавештења
         notifications: Обавештења
-        no_notifications: "Немате нових обавештења"
   notifications:
     index:
       empty_notifications: Немате нових обавештења.
@@ -804,7 +803,6 @@ sr:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -905,9 +903,10 @@ sr:
         debates: "Најактивније расправе"
         proposals: "Најактивинији предлози"
         processes: "Отворите процесе"
-      see_all_debates: Види све расправе
-      see_all_proposals: Погледајте све предлоге
-      see_all_processes: Погледајте све процесе
+      see_all:
+        debates: Види све расправе
+        proposals: Погледајте све предлоге
+        processes: Погледајте све процесе
       process_label: Процес
       see_process: Види процес
     cards:

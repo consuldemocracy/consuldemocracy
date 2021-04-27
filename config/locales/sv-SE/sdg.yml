@@ -1,0 +1,69 @@
+sv:
+  sdg:
+    goals:
+      goal_1:
+        title: "Avskaffa fattigdom"
+        title_in_two_lines: "Avskaffa\nfattigdom"
+      goal_2:
+        title: "Avskaffa hunger"
+        title_in_two_lines: "Avskaffa\nhunger"
+        description: "Avskaffa hunger."
+        long_description: '<p>Efter årtionden av stadig nedgång började antalet människor som lider av hunger – mätt genom förekomsten av undernäring – sakta öka igen 2015. De senaste uppskattningarna visar att <a href="http://www.fao.org/publications/sofi/2020/en/">nästan 690 miljoner människor går hungriga, eller 8,9 procent av världens befolkning</a> – 10 miljoner fler på ett år och nästan 60 miljoner fler över fem år.</p> <p>Världen är inte på väg att uppnå Zero Hunger-målet innan 2030. Om de senaste trenderna fortsätter skulle antalet människor som är drabbade av hunger överstiga 840 miljoner innan 2030.</p> <p>Enligt Världslivsmedelsprogrammet <a href="https://www.wfp.org/publications/2020-global-report-food-crises">lider 135 miljoner av akut hunger</a> till stor del på grund av konstgjorda konflikter, klimatförändringar och ekonomiska nedgångar. Covid-19-pandemin skulle nu kunna fördubbla det antalet och ytterligare 130 miljoner människor riskera att drabbas av akut hunger inom 2020.</p> <p>Med över <a href="https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072">en fjärdedels miljard människor potentiellt på svältgränsen</a> måste åtgärder vidtas snabbt för att förse de mest utsatta regionerna med livsmedel och humanitär hjälp.</p> <p>Samtidigt&nbsp;behövs det en djupgående förändring av det globala livsmedels- och jordbrukssystemet om det ska finnas näring för de över 690 miljoner människor som är hungriga idag – och&nbsp;<a href="https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html">de ytterligare 2 miljarder människor</a>&nbsp;som kommer att finnas i världen år 2050. Att öka jordbruksproduktiviteten och den hållbara livsmedelsproduktionen är avgörande för att lindra hungrandet.</p>'
+        targets:
+          target_2_A:
+            title: "Öka investeringarna, bland annat genom stärkt internationellt samarbete, i infrastruktur på landsbygden, jordbruksforskning och förlängningstjänster, teknikutveckling och genbanker för växter och boskap, för att öka jordbrukets produktionskapacitet i utvecklingsländer, i synnerhet de minst utvecklade länderna."
+      goal_3:
+        title_in_two_lines: "God hälsa och\nvälbefinnande"
+      goal_4:
+        title: "God utbildning"
+        title_in_two_lines: "God\nutbildning"
+        description: "God utbildning."
+      goal_5:
+        title: "Jämställdhet"
+        title_in_two_lines: "Jäm-\nställdhet"
+      goal_6:
+        title: "Rent vatten och sanitet"
+        title_in_two_lines: "Rent vatten\noch sanitet"
+      goal_7:
+        title: "Överkomlig och ren energi"
+        title_in_two_lines: "Överkomlig och\nren energi"
+        description: "Säkerställa tillgång till ekonomiskt överkomlig, tillförlitlig, hållbar och modern energi."
+      goal_10:
+        title: "Minska ojämlikheter"
+        title_in_two_lines: "Minska\nojämlikheter"
+      goal_13:
+        title: "Bekämpa klimatförändringar"
+        title_in_two_lines: "Bekämpa\nklimatförändringar"
+      goal_14:
+        title: "Hav och marina resurser"
+        title_in_two_lines: "Hav och\nmarina resurser"
+      goal_15:
+        title: "Ekosystem på land"
+        title_in_two_lines: "Ekosystem\npå land"
+        description: "Hantera skogen hållbart, bekämpa ökenspridning, stoppa och återställa landdegradering och stoppa förlusten av biologisk mångfald."
+      help:
+        title: "Globala målen för hållbar utveckling, hjälp"
+        description: "Du kan anpassa dina bidrag till gemenskapen (debatter, medborgarförslag och budgetförslag) runt den hållbara 2030-agendan med hållbar utveckling som mål, så att vi får överblick över vårt bidrag till varje mål för hållbar utveckling. Nedan hittar du mer information om alla mål, deras delmål och lokala delmål."
+      show:
+        read_more: "Läs mer om %{goal}"
+        read_less: "Läs mindre om %{goal}"
+        targets:
+          no_local_targets: Detta mål har inga lokala delmål
+      title: "Globala målen för hållbar utveckling"
+      filter:
+        heading: "Filter för Globala målen"
+        more:
+          one: "Ett mål till"
+          other: "%{count} mål till"
+    related_list_selector:
+      goal_identifier: "SDG%{code}"
+      help:
+        title: "Vilka globala mål och delmål är i linje med min/mitt %{record}?"
+        text: "SDG-hjälpsida"
+      remove_tag: "Ta bort"
+      title: "Globala mål och delmål för hållbar utveckling"
+    targets:
+      filter:
+        more:
+          one: "Ett delmål till"
+          other: "%{count} delmål till"

@@ -63,7 +63,7 @@ hr:
     proposals:
       successful_proposal_id: Uspješni prijedlog
       successful_proposal_id_description: Ovaj prijedlog se koristi kao referenca za uspješni prijedlog u potpornom broju te će biti prikazan u grafu na upravljačkoj ploči.
-      poll_short_title: Glasovanje
+      poll_short_title: Glasanja
       poll_short_title_description: Kratki opis značajke istraživanja. Dopušta korisnicima da stvore istraživanje o prijedlogu
       poll_description: Opis glasovanja
       poll_description_description: Detaljni opis značajki istraživanja
@@ -84,13 +84,13 @@ hr:
     direct_message_max_per_day_description: "Maksimalni broj izravnih poruka koje jedan korisnik može poslati po danu"
     feature:
       twitter_login: "Twitter prijava"
-      twitter_login_description: "Dopusti da se korisnik može prijaviti sa svojim Twitter računom"
+      twitter_login_description: "Dopustite korisnicima registraciju sa njihovim Twitter računima"
       facebook_login: "Facebook prijava"
-      facebook_login_description: "Dopusti da se korisnik može prijaviti sa svojim Facebook računom"
+      facebook_login_description: "Dopustite korisnicima registraciju sa njihovim Facebook računima"
       google_login: "Google prijava"
-      google_login_description: "Dopusti da se korisnik može prijaviti sa svojim Google računom"
+      google_login_description: "Dopustite korisnicima registraciju sa njihovim Google računima"
       wordpress_login: "Wordpress prijava"
-      wordpress_login_description: "Dopusti korisnicima da se prijave svojim Wordpress računom"
+      wordpress_login_description: "Dopustite korisnicima registraciju sa njihovim Wordpress računima"
       featured_proposals: "Istaknuti prijedlozi"
       featured_proposals_description: "Prikaži istaknute prijedloge na indeksnoj stranici prijedloga"
       signature_sheets: "Potpisne liste"
@@ -108,9 +108,9 @@ hr:
       community_description: "Omogućuje zajednički odabir prijedloga i investicijskih projekata Participativnih Budžeta"
       map: "Geolokacija prijedloga i investicijskih budžeta"
       map_description: "Omogućuje geolokaciju prijedloga i investicijskih projekata"
-      allow_images: "Dopustite učitavanje i prikazivanje slika"
+      allow_images: "Dopustite postavljanje i prikazivanje slika"
       allow_images_description: "Dopušta korisnicima učitavanje slika kada žele stvoriti prijedloge i investicijske projekte iz Participativnog proračuna"
-      allow_attached_documents: "Dopusti učitavanje i prikazivanje priloženih dokumenata"
+      allow_attached_documents: "Dopustite postavljanje i prikazivanje priloženih dokumenata"
       allow_attached_documents_description: "Dopušta korisnicima učitavanje dokumenata kada žele stvoriti prijedloge i investicijske projekte iz Participativnog Budžeta"
       guides: "Priručnik za stvaranje prijedloga ili investicijskih projekata"
       guides_description: "Prikazuje priručnik za različite prijedloge i investicijske projekte ukoliko postoje aktivni participativni budžet"
@@ -178,7 +178,7 @@ hr:
       polls_description: "Građansko glasanje su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke"
       budgets: "Participativno budžetiranje"
       budgets_description: "S participativnim budžetima građani odlučuju koje projekti će dobiti financiranje u njihovom susjedstvu"
-      legislation: "Kolaborativna Legislativa"
+      legislation: "Javno savjetovanje"
       legislation_description: "U participativnim procesima građanima se nudi prilika za sudjelovanjem i pripremi zakona koji utječu na društvo i daju svoje mišljenje na određene akcije koje su u planu"
     html:
       per_page_code_head: "Kod se mora uključiti na svakoj stranici (<head>)"

@@ -54,9 +54,6 @@ ast:
           zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.
           verified_only: "Pa crear una nueva propuesta d'inversión %{verify}."
           not_logged_in: "Pa crear una nueva propuesta d'inversión debes %{sign_in} o %{sign_up}."
-          by_feasibility: Por viabilidá
-          feasible: Ver los proyeutos vidables
-          unfeasible: Ver los proyeutos invidables
         orders:
           random: aleatories
           confidence_score: meyor valoraes
@@ -83,16 +80,10 @@ ast:
           other: "%{count} sofitos"
         give_support: Sofitar
       header:
-        check_ballot: Revisar los mios votos
+        check_ballot: "Revisar los mios votos"
         change_ballot: "Si camudes d'opinión pues borrar los tos votos en %{check_ballot} y volver principiar."
         check_ballot_link: "revisar los mios votos"
     show:
-      group: Grupu
-      phase: Fase actual
-      unfeasible_title: Propuestes invidables
-      unfeasible: Ver les propuestes invidables
-      unselected_title: Propuestes non escoyíes pa la votación final
-      unselected: Ver les propuestes ensin escoyer pa la votación final
       see_results: Ver resultancies
     results:
       link: Resultancies

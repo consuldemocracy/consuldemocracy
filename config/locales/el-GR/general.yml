@@ -220,7 +220,6 @@ el:
       collaborative_legislation: Συνεργατική νομοθεσία
       debates: Συζητήσεις
       locale: "Γλώσσα:"
-      logo: Λογότυπο CONSUL
       management: Διαχείριση
       moderation: Συντονισμός
       valuation: Αξιολόγηση
@@ -234,10 +233,10 @@ el:
       budgets: Συμμετοχικός προϋπολογισμός
       notification_item:
         new_notifications:
+          zero: "Δεν έχετε νέες ειδοποιήσεις"
           one: Έχετε μια νέα ειδοποίηση
           other: Έχετε %{count} νέες ειδοποιήσεις
         notifications: Ειδοποιήσεις
-        no_notifications: "Δεν έχετε νέες ειδοποιήσεις"
   notifications:
     index:
       empty_notifications: Δεν έχετε νέες ειδοποιήσεις.
@@ -728,7 +727,6 @@ el:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -818,9 +816,10 @@ el:
         debates: "Πιο ενεργές συζητήσεις"
         proposals: "Πιο ενεργές προτάσεις"
         processes: "Ανοικτές διαδικασίες"
-      see_all_debates: Προβολή όλων των συζητήσεων
-      see_all_proposals: Προβολή όλων των προτάσεων
-      see_all_processes: Προβολή όλων των διαδικασιών
+      see_all:
+        debates: Προβολή όλων των συζητήσεων
+        proposals: Προβολή όλων των προτάσεων
+        processes: Προβολή όλων των διαδικασιών
       process_label: Διαδικασία
       see_process: Προβολή διαδικασίας
     cards:

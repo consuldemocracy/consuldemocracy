@@ -197,7 +197,6 @@ nl:
       collaborative_legislation: Wetgevingsproces
       debates: Debatten
       locale: "Taal:"
-      logo: Consul logo
       management: Beheer
       moderation: Moderation
       valuation: Valuation
@@ -211,10 +210,10 @@ nl:
       budgets: Participatory budgeting
       notification_item:
         new_notifications:
+          zero: "U heeft geen nieuwe meldingen"
           one: U heeft een nieuwe melding
           other: U heeft %{count} nieuwe meldingen
         notifications: Notificaties
-        no_notifications: "U heeft geen nieuwe meldingen"
   notifications:
     index:
       empty_notifications: U heeft geen nieuwe meldingen.
@@ -547,7 +546,6 @@ nl:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -629,9 +627,10 @@ nl:
         debates: "Actieve debatten"
         proposals: "Voorstellen"
         processes: "Plannen"
-      see_all_debates: Alle debatten
-      see_all_proposals: Alle voorstellen
-      see_all_processes: Alle plannen
+      see_all:
+        debates: Alle debatten
+        proposals: Alle voorstellen
+        processes: Alle plannen
       process_label: Proces
       see_process: Zie proces
     cards:

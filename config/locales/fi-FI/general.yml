@@ -124,7 +124,6 @@ fi:
       administration: Järjestelmänvalvonta
       available_locales: Saatavilla olevat kielet
       locale: "Kieli:"
-      logo: CONSUL logo
       help: Apua
       my_account_link: Tilini
       proposals: Ehdotukset
@@ -320,8 +319,9 @@ fi:
     disagree: En hyväksy
   welcome:
     feed:
-      see_all_proposals: Näytä kaikki ehdotukset
-      see_all_processes: Näytä kaikki prosessit
+      see_all:
+        proposals: Näytä kaikki ehdotukset
+        processes: Näytä kaikki prosessit
       process_label: Prosessi
       see_process: Näytä prosessit
     recommended:

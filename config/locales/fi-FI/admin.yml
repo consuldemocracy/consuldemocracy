@@ -57,13 +57,10 @@ fi:
           finished: Päättynyt
         table_name: Nimi
         table_phase: Vaihe
-        table_investments: Sijoitukset
-        table_edit_budget: Muokkaa
         edit_budget: Muokkaa budjettia
       edit:
         delete: Poista budjetti
         phase: Vaihe
-        dates: Päivämäärät
         enabled: Käytössä
         actions: Toiminnot
         edit_phase: Muokkaa vaihetta
@@ -166,8 +163,6 @@ fi:
         table_name: Nimi
         table_description: Kuvaus
         table_actions: Toiminnot
-        delete: Poista
-        edit: Muokkaa
       edit:
         title: Muokkaa tavoitteen tilaa
     progress_bars:
@@ -227,7 +222,6 @@ fi:
           process: Prosessi
         index:
           create: Uusi prosessi
-          delete: Poista
           filters:
             all: Kaikki
         new:
@@ -283,12 +277,8 @@ fi:
           back: Takaisin
           submit_button: Luo kysymys
     managers:
-      index:
-        name: Nimi
-        email: Sähköposti
       manager:
         add: Lisää
-        delete: Poista
     menu:
       proposals: Ehdotukset
       hidden_comments: Piilotetut kommentit
@@ -312,19 +302,12 @@ fi:
       users: Käyttäjät
     administrators:
       index:
-        name: Nimi
-        email: Sähköposti
         id: Järjestelmänvalvojan ID
       administrator:
         add: Lisää
-        delete: Poista
     moderators:
-      index:
-        name: Nimi
-        email: Sähköposti
       moderator:
         add: Lisää
-        delete: Poista
     segment_recipient:
       proposal_authors: Ehdotuksen tekijät
     newsletters:
@@ -333,8 +316,6 @@ fi:
         title: Uutiskirjeet
         subject: Aihe
         actions: Toiminnot
-        edit: Muokkaa
-        delete: Poista
         preview: Esikatselu
       show:
         send: Lähetä
@@ -344,8 +325,6 @@ fi:
       index:
         section_title: Ilmoitukset
         actions: Toiminnot
-        edit: Muokkaa
-        delete: Poista
         preview: Esikatselu
       show:
         send: Lähetä ilmoitus
@@ -358,8 +337,6 @@ fi:
         description: Kuvaus
         no_description: Ei kuvausta
         group: "Ryhmä"
-      valuator:
-        delete: Poista
       show:
         description: "Kuvaus"
         email: "Sähköposti"
@@ -374,7 +351,6 @@ fi:
         name: Nimi
         email: Sähköposti
       search:
-        search: Etsi
         user_not_found: Käyttäjää ei löydy
     poll_officer_assignments:
       index:
@@ -460,7 +436,6 @@ fi:
         email: Sähköposti
         phone_number: Puhelin
         status: Tila
-        search: Etsi
         title: Organisaatiot
         pending: Vireillä
     proposals:
@@ -490,16 +465,6 @@ fi:
     shared:
       true_value: "Kyllä"
       false_value: "Ei"
-      booths_search:
-        button: Etsi
-      poll_officers_search:
-        button: Etsi
-      poll_questions_search:
-        button: Etsi
-      proposal_search:
-        button: Etsi
-      user_search:
-        button: Etsi
       actions: Toiminnot
       description: Kuvaus
       image: Kuva
@@ -508,11 +473,7 @@ fi:
       author: Tekijä
       content: Sisältö
       created_at: Luotu
-      delete: Poista
     geozones:
-      index:
-        edit: Muokkaa
-        delete: Poista
       geozone:
         name: Nimi
       edit:
@@ -549,8 +510,6 @@ fi:
         email: Sähköposti
       index:
         title: Käyttäjä
-      search:
-        search: Etsi
     site_customization:
       content_blocks:
         content_block:
@@ -571,16 +530,8 @@ fi:
         page:
           created_at: Luotu
           status: Tila
-        cards:
-          description: Kuvaus
-          link_text: Linkin teksti
-          link_url: Linkin URL
     homepage:
       title: Kotisivu
-      cards:
-        description: Kuvaus
-        link_text: Linkin teksti
-        link_url: Linkin URL
       feeds:
         proposals: Ehdotukset
         processes: Prosessit

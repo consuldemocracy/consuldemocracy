@@ -40,12 +40,8 @@ he:
         icon_alt: סמל תקציבים השתתפותיים
         title: תקציבים השתתפותיים
         help: עזרה עם תקציבים השתתפותיים
-        all_phases: ראה את כל השלבים
       all_phases: שלבי השקעות בתקציב
       map: הצעות השקעות התקציב על פי מיקום גאוגרפי
-      investment_proyects: רשימת כל פרויקטי ההשקעה
-      unfeasible_investment_proyects: רשימת כל הפרויקטים אשר אינם ישימים
-      not_selected_investment_proyects: רשימת כל הפרויקטים שלא עברו לשלב ההצבעות
       finished_budgets: תקציבים השתתפותיים אשר הסתיימו
       see_results: ראו תוצאות
       section_footer:
@@ -55,7 +51,7 @@ he:
     investments:
       form:
         tag_category_label: "תחומים"
-        tags_instructions: "תייג/י את התחומים להם שייכת הצעה זו והנושאים בהם היא עוסקת. ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך"
+        tags_instructions: "תייג/י את ההצעה הזו והנושאים בהם היא עוסקת. ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך"
         tags_label: תגיות
         tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
         map_location: "מיקום מפה"
@@ -64,9 +60,9 @@ he:
         map_skip_checkbox: "להשקעה זו אין מיקום מדויק או שאיני מודע למיקום."
       index:
         title: מימון השתתפותי
-        unfeasible: פרויקטים להשקעה אינם ברי ביצוע
+        unfeasible: פרויקטים להשקעה שאינם ברי ביצוע
         unfeasible_text: "ההשקעות צריכות לעמוד במספר קריטריונים (חוקיות, קונקרטיות, שלא יעלו על תקרת התקציב) להכרזה בת קיימא ולהגיע לשלב ההצבעה הסופי. כל ההשקעות שאינן עומדות בקריטריונים אלה מסומנות כבלתי אפשריות ויפורסמו ברשימה הבאה, יחד עם הדיווח על אי כדאיותכן."
-        by_heading: "הקפי השקעה בפרויקטים:%{heading}"
+        by_heading: "הקיפי ההשקעה בפרויקטים:%{heading}"
         search_form:
           button: חיפוש
           placeholder: חיפוש פרויקטים להשקעה...
@@ -75,24 +71,21 @@ he:
           my_ballot: ההצבעה שלי
           change_ballot: "אם שיניתם את דעתכם, באפשרותכם להסיר את ההצבעותכם ב- %{check_ballot} ולהתחיל שוב."
           check_ballot_link: "בדוק ואשר את ההצבעה שלי"
-          zero: לא נעשתה הצבעה עבור פרויקט השקעה.
+          zero: לא נעשתה הצבעה עבור פרויקט השקעה בקבוצה זו.
           verified_only: "ליצירת פרויקט השקעה חדש %{verify}."
           create: "יצירת תקציב להשקעה"
           not_logged_in: "כדי ליצור תקציב השקעה חדש עליך ל- %{sign_in} או ל - %{sign_up}."
-          by_feasibility: על פי ההיתכנות
-          feasible: פרויקטים ברי ביצוע
-          unfeasible: פרויקטים שאינם ברי ביצוע
         orders:
           random: אקראי
-          confidence_score: הכי נתמכת
+          confidence_score: מדורג הגבוה ביותר
           price: לפי מחיר
       share:
         message: "יצרתי את פרויקט השקעה %{title} %{handle}. צור פרויקט השקעה גם!"
       show:
         author_deleted: משתמש/ת זה/ו נמחק/ה
-        price_explanation: פירוט למחיר
-        unfeasibility_explanation: אין סבירות שניתן לביצוע
-        share: שיתוף
+        price_explanation: ראה הסבר תמחור
+        unfeasibility_explanation: הסבר לאי ישימות
+        share: שתף
         title: פרויקט להשקעה
         supports: לחיצה לתמיכה
         votes: הצבעות
@@ -107,7 +100,7 @@ he:
         add: הצבע
         already_added: כבר הוספת את פרויקט ההשקעות הזה
         already_supported: כבר תומכת בפרויקט השקעה זה.. שתף עם אחרים!
-        support_title: תמיכה בפרויקט זה
+        support_title: תמוך בפרויקט זה
         confirm_group:
           one: "תוכל לתמוך בהשקעות ברובע %{count}. אחרי לחיצה על המשך, לא תוכל לתמוך ברובע אחר. האם את/ה בטוח/ה?"
           two: "תוכל לתמוך בהשקעות ברובע %{count}. אחרי לחיצה על המשך, לא תוכל לתמוך ברובע אחר. האם את/ה בטוח/ה?"
@@ -121,20 +114,11 @@ he:
           other: "%{count} תומכים"
         give_support: בעד
       header:
-        check_ballot: בדוק את מצב ההצבעות
+        check_ballot: "בדוק ואשר את ההצבעות שלי"
         change_ballot: "אם את משנה את דעתך, באפשרותך להסיר את ההצבעות שלכם ב- %{check_ballot} ולהתחיל שוב."
         check_ballot_link: "בדוק ואשר את ההצבעה שלי"
         price: "לנושא זה יש תקציב של"
-    progress_bar:
-      assigned: "הקצית: "
-      available: "תקציב זמין: "
     show:
-      group: קבוצה
-      phase: שלב נוכחי
-      unfeasible_title: השקעות שאינן ברות ביצוע
-      unfeasible: צפיה בהשקעות שאינן ברות ביצוע
-      unselected_title: השקעות שלא נבחרו לשלב ההצבעות
-      unselected: ראו את ההשקעות שלא נבחרו לשלב ההצבעות
       see_results: ראו תוצאות
     results:
       link: תוצאות

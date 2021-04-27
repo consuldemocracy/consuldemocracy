@@ -1,0 +1,49 @@
+uk-UA:
+  activemodel:
+    models:
+      verification:
+        residence: "Місце проживання"
+        sms: "SMS"
+      local_census_records/import:
+        one: Імпорт місцевих даних Цензусу
+        few: Імпорт місцевих даних Цензусу
+        many: Імпорт місцевих даних Цензусу
+        other: Імпорт місцевих даних Цензусу
+    attributes:
+      verification:
+        residence:
+          document_type: "Тип документа"
+          document_number: "Номер документа (включаючи літери)"
+          date_of_birth: "Дата народження"
+          postal_code: "Поштовий індекс"
+        sms:
+          phone: "Телефон"
+          confirmation_code: "Код підтвердження"
+        email:
+          recipient: "Електронна адреса"
+      verification/letter:
+        email: "Електронна адреса"
+        password: "Пароль"
+        verification_code: "Код, який ви отримали у листі"
+      verification/management/document:
+        document_type: "Тип документа:"
+        document_number: "Номер документа"
+      verification/residence:
+        date_of_birth: "Дата народження"
+        document_type: "Тип документа"
+        postal_code: "Поштовий індекс"
+      verification/sms:
+        confirmation_code: "Введіть код, який прийшов на ваш мобільний телефон"
+      officing/residence:
+        document_type: "Тип документа"
+        document_number: "Номер документа (включаючи літери)"
+        year_of_birth: "Рік народження"
+      local_census_records/import:
+        file: Файл
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Формат файлу не підтримується. Допустимий формат: %{valid_extensions}."
+              headers: "Зазначені заголовки файлу неправильні. Заголовки повинні містити наступні назви: %{required_headers}."

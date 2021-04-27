@@ -28,6 +28,7 @@ da:
       comment: Skriv en kommentar til forslaget
       unsubscribe: "Hvis du ikke ønsker at modtage notifikationer om forslag, gå til %{account} og fjern markeringen ved 'Modtag notifikationer'."
       unsubscribe_account: Min konto
+      unfollow: "Besøg dette forslag og stop med at følge det, hvis du ikke ønsker notifikationer."
     direct_message_for_receiver:
       subject: "Du har modtaget en ny privat besked"
       reply: Svar %{sender}

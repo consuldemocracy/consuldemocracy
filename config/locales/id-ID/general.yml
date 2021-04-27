@@ -186,7 +186,6 @@ id:
       collaborative_legislation: Undang-undang proses
       debates: Perdebatan
       locale: "Bahasa:"
-      logo: Logo CONSUL
       management: Manajemen
       moderation: Moderasi
       valuation: Penilaian
@@ -200,9 +199,9 @@ id:
       budgets: Penganggaran partisipatif
       notification_item:
         new_notifications:
+          zero: "Anda tidak memiliki pemberitahuan baru"
           other: Anda memiliki %{count} pemberitahuan baru
         notifications: Pemberitahuan
-        no_notifications: "Anda tidak memiliki pemberitahuan baru"
   notifications:
     index:
       empty_notifications: Anda tidak memiliki pemberitahuan baru.
@@ -500,7 +499,6 @@ id:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
