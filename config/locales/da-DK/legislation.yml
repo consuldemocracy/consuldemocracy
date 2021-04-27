@@ -13,7 +13,7 @@ da:
         cancel: Annuller
         publish_comment: Udgive kommentar
       form:
-        phase_not_open: Denne fase er ikke åben
+        phase_not_open: Denne fase er ikke aktiv
       index:
         title: Kommentarer
         comments_about: Kommentarer om
@@ -118,3 +118,30 @@ da:
         tags_label: "Kategorier"
       not_verified: "For at stemme på borgerforslag %{verify_account}."
       process_title: Borgerproces
+    summary:
+      title: "Opsummering"
+      votes:
+        zero: "%{count} stemmer"
+        one: "%{count} stemme"
+        other: "%{count} stemmer"
+      debate_phase: "Debatfase"
+      proposals_phase: "Forslagsfasen"
+      allegations_phase: "Kommentarfasen"
+      debates:
+        zero: "Ingen debatindlæg"
+        one: "%{count} debatindlæg"
+        other: "%{count} debatindlæg"
+      proposals:
+        zero: "Ingen borgerforslag"
+        one: "%{count} borgerforslag"
+        other: "%{count} borgerforslag"
+      comments:
+        zero: "Ingen kommentarer"
+        one: "%{count} kommentar"
+        other: "%{count} kommentarer"
+      download: "Hent opsummering"
+      top_comments:
+        zero: "Ingen kommentarer"
+      most_voted_comments: "Kommentarer med flest stemmer"
+      no_allegation: "Der er ingen kommentarer"
+      process_empty: "Denne proces havde ingen faser for deltagelse"

@@ -35,12 +35,17 @@ ro:
           proposals: Propuneri
           budgets: Bugetare participativă
           help_page: Pagina de ajutor
+          sdg: ODD
+      create:
+        notice: "Banner creat cu succes"
       edit:
         editing: Editează banner
         form:
           submit_button: Salvează modificările
       new:
         creating: Creați banner
+      update:
+        notice: "Banner actualizat cu succes"
     activity:
       show:
         action: Acțiuni
@@ -62,20 +67,24 @@ ro:
         type: Tip
         no_activity: Nu există activitate efectuată de moderatori.
     budgets:
+      actions:
+        preview: "Previzualizați bugetul"
       index:
         title: Bugetele participative
         new_link: Crează buget nou
         filter: Filtru
         filters:
+          all: Tot
           open: Deschide
           finished: Terminat
+        help: "Bugetele participative permit cetățenilor să propună și să decidă direct cum să cheltuiască o parte din buget, cu monitorizare și evaluare riguroasă a propunerilor de către instituție."
         budget_investments: Administrează proiecte
+        table_completed: Completat
+        table_draft: "Schiță"
+        table_duration: "Durata"
         table_name: Nume
         table_phase: Etapă
-        table_investments: Investiții
-        table_edit_groups: Grupuri de rubrici
-        table_edit_budget: Editează
-        table_admin_ballots: Buletine de vot
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Editați grupurile de rubrici
         edit_budget: Editează buget
         admin_ballots: Gestionați buletinele de vot
@@ -84,11 +93,16 @@ ro:
         notice: Buget participativ creat cu succes!
       update:
         notice: Bugetul Participativ a fost actualizat cu succes
+      publish:
+        notice: "Bugetul Participativ a fost publicat cu succes"
       edit:
         title: Editează Buget participativ
+        drafting: "Acest buget participativ este în modul schiță, doar administratorii îl pot vedea pe site-ul public. Odată publicat, acesta nu poate fi schimbat din nou în modul schiță."
+        publish: "Publică buget"
         delete: Șterge buget
         phase: Etapă
-        dates: Date
+        phases_caption: "Etape"
+        duration: "Durata"
         enabled: Activat
         actions: Acțiuni
         edit_phase: Editează etapă
@@ -106,6 +120,11 @@ ro:
           other: "%{count} evaluatori selectați"
         empty_administrators: "Nu există administratori"
         empty_valuators: "Nu există evaluatori"
+        name_description: "Acesta este numele bugetului participativ utilizat pe antet și carduri ori de câte ori este activ"
+        info:
+          budget_settings: "Setări generale ale bugetului participativ"
+          phases_settings: "Setările fazelor"
+          staff_settings: "Administratori și evaluatori repartizați la buget"
       destroy:
         success_notice: Buget șters cu succes
         unable_notice: Nu puteți șterge un buget care are investiții asociate
@@ -119,7 +138,6 @@ ro:
     budget_groups:
       name: "Nume"
       headings_name: "Rubrici"
-      headings_edit: "Editează Rubrici"
       headings_manage: "Administrează rubrici"
       no_groups: "Nu există grupuri."
       amount:
@@ -140,6 +158,7 @@ ro:
         submit: "Salvează grup"
       index:
         back: "Mergi înapoi la bugete"
+        help: "Grupurile sunt menite să organizeze titluri. După ce un grup este creat și conține titluri, se poate stabili în câte titluri poate vota un utilizator pe grup."
     budget_headings:
       no_headings: "Nu există rubrici."
       amount:
@@ -163,12 +182,17 @@ ro:
         submit: "Salvează rubrică"
       index:
         back: "Înapoi la grupuri"
+        help: "Rubricile sunt menite să împartă banii din bugetul participativ. Aici puteți adăuga titluri pentru acest grup și puteți atribui suma de bani care va fi utilizată pentru fiecare titlu."
     budget_phases:
       edit:
-        summary_help_text: Acest text va informa utilizatorul despre etapă. Pentru a-l afișa chiar dacă etapa nu este activă, bifați caseta de mai jos
         description_help_text: Acest text va apărea în antet atunci când faza este activă
+        duration: "Durata etapei"
+        duration_description: "Perioada de timp în care va fi activă această etapă."
         enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
+        name_help_text: "Acesta este titlul pe care utilizatorii îl vor citi în antet de fiecare când etapa va fi activă."
         save_changes: Salvează modificări
+      index:
+        help: "Bugetele participative au faze diferite. Aici puteți activa sau dezactiva fazele și, de asemenea, personaliza fiecare fază individuală."
     budget_investments:
       index:
         heading_filter_all: Toate rubricile
@@ -216,7 +240,7 @@ ro:
           valuation_group: Grup de evaluare
           geozone: Scopul operațiunii
           feasibility: Fezabilitate
-          valuation_finished: Evaluare terminată
+          valuation_finished: Evaluare terminată.
           selected: Selectat
           visible_to_valuators: Afișează evaluatorilor
           author_username: Numele de utilizator al autorului
@@ -301,10 +325,8 @@ ro:
         table_name: Nume
         table_description: Descriere
         table_actions: Acțiune
-        delete: Șterge
-        edit: Edit
       edit:
-        title: Editați statusul reperului
+        title: Editați starea reperului
       update:
         notice: Status de reper actualizat cu succes
       new:
@@ -365,8 +387,6 @@ ro:
         index:
           description: "Când utilizatorii creează propuneri, pot accesa un tablou de bord al propunerii lor, unde se pot propune resurse și recomandări pentru a obține sprijin pentru ideea lor."
           create: Crează resursă sau acțiune
-          edit: Editează
-          delete: Șterge
           active: 'Da'
           inactive: 'Nu'
           title: Resurse și acțiuni
@@ -501,7 +521,6 @@ ro:
           banner_title: Culoarea antetului
         index:
           create: Proces nou
-          delete: Șterge
           title: Legislație colaborativă
           filters:
             active: Activ
@@ -627,14 +646,17 @@ ro:
     managers:
       index:
         title: Administratori
-        name: Nume
-        email: Email
         no_managers: Nu există administratori.
       manager:
         add: Adaugă
-        delete: Șterge
       search:
         title: "Manageri: Căutare utilizator"
+    sdg_managers:
+      index:
+        no_sdg_managers: Nu există utilizatori.
+    sdg/managers:
+      sdg/manager:
+        add: Adaugă
     menu:
       activity: Activitatea moderatorului
       admin: Meniul de administrare
@@ -651,6 +673,7 @@ ro:
       hidden_users: Utilizatori ascunși
       administrators: Administratori
       managers: Administratori
+      sdg_managers: Administratori obiective de dezvoltare durabilă
       moderators: Moderatori
       messaging_users: Mesaj către utilizatori
       newsletters: Newsletters
@@ -705,14 +728,10 @@ ro:
     administrators:
       index:
         title: Administratori
-        name: Nume
-        email: Email
-        description: Descriere
         id: ID-ul Administratorului
         no_administrators: Nu există administratori.
       administrator:
         add: Adaugă
-        delete: Șterge
         restricted_removal: "Ne pare rău, nu vă puteți scoate din lista de administratori"
       search:
         title: "Administratori: Căutare utilizator"
@@ -722,12 +741,9 @@ ro:
     moderators:
       index:
         title: Moderatori
-        name: Nume
-        email: Email
         no_moderators: Nu există moderatori.
       moderator:
         add: Adaugă
-        delete: Șterge
       search:
         title: "Moderatori: Căutare utilizator"
     segment_recipient:
@@ -754,10 +770,8 @@ ro:
         sent: Trimis
         actions: Acțiuni
         draft: Schiță
-        edit: Editează
-        delete: Șterge
         preview: Previzualizare
-        empty_newsletters: Nu există newslettere
+        empty_newsletters: Nu există buletine informative noi
       new:
         title: Newsletter nou
         header_footer_help_text: "Antetul și subsolul sunt aceleași pentru toate e-mailurile, le puteți modifica pe <code> app / views / layouts / mailer_header </code> și <code> app / views / layouts / mailer_footer </code>.<br> Puteți înlocui imaginea antetului pe%{link}."
@@ -792,8 +806,6 @@ ro:
         sent: Trimis
         actions: Acțiuni
         draft: Schiță
-        edit: Editează
-        delete: Șterge
         preview: Previzualizare
         view: Vizualizare
         empty_notifications: Nu există notificări
@@ -891,7 +903,6 @@ ro:
         can_edit_dossier: "Puteți edita dosar"
       valuator:
         add: Adaugă la evaluatori
-        delete: Șterge
       search:
         title: "Moderatori: Căutare utilizator"
       form:
@@ -929,7 +940,6 @@ ro:
         entry_name: funcționar public
       search:
         email_placeholder: Caută utilizator după email
-        search: Caută
         user_not_found: Utilizatorul nu a fost găsit
         help: "Pentru a adăuga sau elimina ofițerii de sondaj utilizați formularul de căutare de mai jos."
     poll_officer_assignments:
@@ -950,7 +960,7 @@ ro:
         shifts: "Schimbări în acest stand"
         date: "Dată"
         edit_shifts: Editează schimburi
-        new_shift: "Shimb nou"
+        new_shift: "Schimb nou"
         no_shifts: "Această cabină nu are schimburi"
         officer: "Funcționar public"
         remove_shift: "Înlătură"
@@ -980,7 +990,7 @@ ro:
           unassigned: Neatribuit
         actions:
           assign: Atribuie ambele
-          unassign: Neatribuie ambele
+          unassign: Anulează cabină
     poll_booth_assignments:
       alert:
         shifts: "Există schimburi asociate acestui stand. Dacă eliminați atribuirea standului, schimburile vor fi șterse. Continua?"
@@ -1193,8 +1203,6 @@ ro:
         no_organizations: Nu există organizații.
         reject: Respinge
         rejected: Respins
-        search: Caută
-        search_placeholder: Nume, email sau număr de telefon
         title: Organizații
         verified: Verificat
         verify: Verifică
@@ -1263,6 +1271,9 @@ ro:
         remote_census:
           title: Configurarea recensământului de la distanță
           how_to_enable: 'Pentru a configura recensământul la distanță (SOAP), trebuie să activați „Configurarea conexiunii la recensământul la distanță (SOAP)” din fila „Caracteristici”.'
+        sdg:
+          title: Configurarea obiectivelor de dezvoltare durabilă
+          how_to_enable: 'Pentru a afișa opțiunile de configurare pentru Obiectivele de dezvoltare durabilă trebuie să activați "ODD" din fila de "Caracteristici".'
       remote_census_general_name: Informații Generale
       remote_census_request_name: Solicitare date
       remote_census_response_name: Date de răspuns
@@ -1275,24 +1286,28 @@ ro:
     shared:
       true_value: "Da"
       false_value: "Nu"
-      booths_search:
-        button: Caută
-        placeholder: Caută cabină de vot după nume sau locație
-      poll_officers_search:
-        button: Caută
-        placeholder: Caută funcționar public
-      poll_questions_search:
-        button: Caută
-        placeholder: Căutați întrebări la sondaj
-      proposal_search:
-        button: Caută
-        placeholder: Caută propunere după titlu, cod, descriere ori întrebare
-      debate_search:
-        button: Caută
-        placeholder: Căutați dezbateri după titlu sau descriere
-      user_search:
-        button: Caută
-        placeholder: Caută utilizator după nume sau email
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "Toate obiectivele"
+            label: "După obiectiv"
+          sdg_targets:
+            all: "Toate obiectivele"
+            label: "După obiectiv"
+        label:
+          booths: "Caută cabină de vot după nume sau locație"
+          budget_investments: "Caută investiție după titlu, descriere sau rubrică"
+          debates: "Căutați dezbateri după titlu sau descriere"
+          legislation_processes: "Caută procese după titlu sau după descriere"
+          legislation_proposals: "Caută propuneri după titlu sau după descriere"
+          local_census_records: "Caută după numărul documentului"
+          organizations: "Nume, email sau număr de telefon"
+          poll_officers: "Caută funcționar public"
+          poll_questions: "Căutați întrebări la sondaj"
+          polls: "Caută sondaje după nume sau descriere"
+          proposals: "Caută propunere după titlu, cod, descriere ori întrebare"
+          users: "Caută utilizator după nume sau email"
+        search: "Caută"
       search_results: "Caută rezultate"
       no_search_results: "Nu a fost găsită niciun rezultat."
       actions: Acțiuni
@@ -1306,16 +1321,13 @@ ro:
       author: Autor
       content: Conținut
       created_at: Creat la
-      delete: Șterge
       color_help: Format hexadecimal
       show_results_and_stats: "Afișează rezultate și statistici"
       results_and_stats_reminder: "Marcarea acestor căsuțe de selectare a rezultatelor și / sau statisticilor va fi disponibilă publicului și fiecare utilizator le va vedea."
     geozones:
       index:
-        title: Geozone
+        title: Geozonă
         create: Crează geozonă
-        edit: Editează
-        delete: Șterge
       geozone:
         name: Nume
         external_code: Cod extern
@@ -1376,13 +1388,13 @@ ro:
       show:
         stats_title: Statistici
         summary:
-          comment_votes: Comentează voturi
+          comment_votes: Voturi comentarii
           comments: Comentarii
-          debate_votes: Dezbate voturi
+          debate_votes: Voturi dezbateri
           debates: Dezbateri
-          proposal_votes: Propunere voturi
+          proposal_votes: Voturi propuneri
           proposals: Propuneri
-          budgets: Deschide bugete
+          budgets: Bugete deschise
           budget_investments: Proiecte de investiție
           unverified_users: Utilizatori neverificați
           user_level_three: Utilizatori de nivelul trei
@@ -1398,6 +1410,7 @@ ro:
         proposal_notifications: Notificări propuneri
         incomplete_verifications: Verificări incomplete
         polls: Sondaje
+        sdg: ODD
       graph:
         debate_created: Dezbateri
         visit: Vizite
@@ -1405,7 +1418,7 @@ ro:
         proposal_created: Propunerile cetățeanului
       budgets:
         no_data_before_balloting_phase: "Nu există date care să fie afișate înainte de faza de votare."
-        title: "Bugete participativă - statistici de participare"
+        title: "Bugete participative - Statistici de participare"
         supporting_phase: Faza de suport
         balloting_phase: Vot final
       budget_balloting:
@@ -1440,6 +1453,15 @@ ro:
           question_name: Întrebare
           origin_web: Participanți online
           origin_total: Total participanți
+      sdg:
+        budget_investments:
+          amount: "Suma aprobată"
+          winners: "Proiectul de investiții câștigător"
+          sent: "Propuneri de investiții trimise"
+        debates: "Dezbateri"
+        polls: "Sondaje"
+        proposals: "Propuneri"
+        title: "Obiective de dezvoltare durabilă - Statistici"
     tags:
       create: Crează subiect
       destroy: Șterge subiect
@@ -1466,7 +1488,6 @@ ro:
           erased: Șters
       search:
         placeholder: Caută utilizator după email, nume sau numărul documentului
-        search: Caută
     verifications:
       index:
         phone_not_given: Numărul de telefon nu a fost pus la dispoziție
@@ -1541,16 +1562,11 @@ ro:
           updated_at: Actualizat la
           title: Titlu
           slug: Slug
-          cards_title: Carduri
           see_cards: Vedeți cărți
         cards:
           cards_title: carduri
           create_card: Crează card
           no_cards: Nu există carduri.
-          title: Titlu
-          description: Descriere
-          link_text: Link
-          link_url: URL-ul Link-ului
           columns_help: "Lățimea cărții în număr de coloane. Pe ecranele mobile este întotdeauna o lățime de 100%."
           create:
             notice: "Card creat cu succes!"
@@ -1567,11 +1583,6 @@ ro:
       cards_title: Carduri
       create_card: Crează card
       no_cards: Nu există carduri.
-      cards:
-        title: Titlu
-        description: Descriere
-        link_text: Link text
-        link_url: Link URL
       feeds:
         proposals: Propuneri
         debates: Dezbateri
@@ -1606,9 +1617,6 @@ ro:
         document_number: Numărul documentului
         date_of_birth: Data nașterii
         postal_code: Cod poștal
-        search:
-          placeholder: Caută după numărul documentului
-          search: Caută
         import: Importă CSV
       new:
         creating: Crează o nouă înregistrare de date locale

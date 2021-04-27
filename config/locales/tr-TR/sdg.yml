@@ -1,0 +1,54 @@
+tr:
+  sdg:
+    goals:
+      goal_1:
+        title: "Yoksulluğa Son"
+        title_in_two_lines: "Yoksulluğa Son"
+      goal_2:
+        title: "Açlığa Son"
+      goal_5:
+        title: "Cinsiyet Eşitliği"
+      goal_6:
+        title: "Temiz Su ve Sanitasyon"
+      goal_7:
+        title: "Erişilebilir ve Temiz Enerji"
+      goal_8:
+        title: "İnsana Yakışır İş ve Ekonomik Büyüme"
+      goal_11:
+        title_in_two_lines: "Sürdürülebilir Şehirler ve Topluluklar"
+      goal_13:
+        title: "İklim Eylemi"
+      goal_14:
+        title: "Sudaki Yaşam"
+      goal_15:
+        title_in_two_lines: "Karasal Yaşam"
+      goal_17:
+        title_in_two_lines: "Amaçlar İçin Ortaklıklar"
+      help:
+        title: "Sürdürülebilir Kalkınma Amaçları yardım"
+        description: "Topluma olan katkılarınızı (tartışmalar, vatandaş önerileri ve yatırım projeleri) Sürdürülebilir Kalkınma Hedefleri 2030 Ajandası ile uyumlu hale getirebilirsiniz, bu, Sürdürülebilir Kalkınma Hedeflerinin her birine olan katkımızın genel bakışına sahip olmamızı sağlayacaktır. Aşağıda tüm amaçlar, hedefler ve yerelleştirilmiş hedefler hakkında bilgi bulabilirsiniz."
+      show:
+        read_more: "%{goal} hakkında daha fazla oku"
+        read_less: "%{goal} hakkında daha az oku"
+      title: "Sürdürülebilir Kalkınma Hedefleri"
+      filter:
+        heading: "SKH'ye göre filtreler"
+        link: "Hedefle bağlantılı tüm %{resources} görüntüle %{code}"
+        more:
+          one: "Bir hedef daha"
+          other: "%{count} daha fazla hedef"
+    related_list_selector:
+      goal_identifier: "SKH%{code}"
+      goal_list: "Hedef listesi"
+      help:
+        title: "Hangi SKH'ler %{record} ile uyumlu?"
+        text: "SKA yardım sayfası"
+      placeholder: "Bir amaç ya da hedef kodu yazın veya açıklayın"
+      remove_tag: "Kaldır"
+      title: "Sürdürülebilir Kalkınma Amaçları ve Hedefleri"
+    targets:
+      filter:
+        link: "Hedefle bağlantılı tüm %{resources} görüntüle %{code}"
+        more:
+          one: "Bir hedef daha"
+          other: "%{count} daha fazla hedef"

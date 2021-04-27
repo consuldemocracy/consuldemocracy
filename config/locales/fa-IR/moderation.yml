@@ -107,7 +107,6 @@ fa:
       index:
         hidden: مسدود شده
         hide: مسدود کردن
-        search: جستجو
         search_placeholder: ایمیل یا نام کاربر
         title: انسداد کاربران
       notice_hide: کاربر مسدود شده. همه بحث و نظرات این کاربر  پنهان شده اند.

@@ -70,9 +70,6 @@ so:
         budget_investments: Mareynta Mashariicda
         table_name: Magac
         table_phase: Weeji
-        table_investments: Maalgashiyo
-        table_edit_groups: Madaxyada Kooxaha
-        table_edit_budget: Isbedel
         edit_groups: Wax ka bedel Madaxyada Kooxaha
         edit_budget: Wax ka bedel Misaaniyada
         no_budgets: "Majiiraan misaniyado."
@@ -84,7 +81,6 @@ so:
         title: Wax kabedel misaniyada ka qaybqadashada
         delete: Tirir misaniyada
         phase: Weeji
-        dates: Tariikhaha
         enabled: Karti leh
         actions: Tilaabooyin
         edit_phase: Wax ka bedelka marxaladda
@@ -110,7 +106,6 @@ so:
         submit: "Bad baadi ciwaanka"
     budget_phases:
       edit:
-        summary_help_text: Qoraalkan ayaa usheegaya isticmaalaha ku saabsan wajiga. Si aad u muujiso xitaa haddii wajiga uusan firfircooneyn, dooro sanduuqa saxda ee hoose
         description_help_text: Qoraalkan ayaa ka muuqan doona madaxa marka wajiga uu firfircoon yahay
         enabled_help_text: Marxaladani waxay noqon doontaa mid guud oo ku saabsan marxaladaha miisaaniyadda, iyo sidoo kale firfircoon ujeedooyinka kale
         save_changes: Badbaadi beddelka
@@ -236,8 +231,6 @@ so:
         table_name: Magac
         table_description: Sharaxaad
         table_actions: Tilaabooyin
-        delete: Titiriid
-        edit: Isbedel
       edit:
         title: Tafatir xaalada maalgashiga
       update:
@@ -314,7 +307,6 @@ so:
           additional_info_placeholder: Ku dar xog dheeriya oo ad u aragto iney faido ledahay
         index:
           create: New process
-          delete: Titiriid
           title: Nidaamka Sharciga
           filters:
             all: Dhamaan
@@ -432,12 +424,9 @@ so:
     managers:
       index:
         title: Mamule
-        name: Magac
-        email: Email
         no_managers: Majiraan Mamulayaal.
       manager:
         add: Kudar
-        delete: Titiriid
       search:
         title: "Mamulayasha isticmaala raadinta"
     menu:
@@ -500,25 +489,19 @@ so:
     administrators:
       index:
         title: Mamulayal
-        name: Magac
-        email: Email
         id: Aqoonsiga maamulka
         no_administrators: Ma jiraan maamulayaal.
       administrator:
         add: Kudar
-        delete: Titiriid
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
         title: "Mamulayasha: isticmalayasha radinaya"
     moderators:
       index:
         title: Dhexdhexadiyayal
-        name: Magac
-        email: Email
         no_moderators: Majiraan dhex dhexadiyayal.
       moderator:
         add: Kudar
-        delete: Titiriid
       search:
         title: "Dhexdhexadiyasha radinaya isticmalyaal"
     segment_recipient:
@@ -544,8 +527,6 @@ so:
         sent: Diray
         actions: Tilaabooyin
         draft: Qabyo Qorid
-        edit: Isbedel
-        delete: Titiriid
         preview: Hor udhaac
         empty_newsletters: Ma jiraan wargeysyo si aad u muujiso
       new:
@@ -579,8 +560,6 @@ so:
         sent: Diray
         actions: Tilaabooyin
         draft: Qabyo Qorid
-        edit: Isbedel
-        delete: Titiriid
         preview: Hor udhaac
         view: Aragtida
         empty_notifications: Ma jiraan wax wargelin ah oo muujinaya
@@ -634,7 +613,6 @@ so:
         no_group: "Kooxi majirto"
       valuator:
         add: Kudaar qimeyayasha
-        delete: Titiriid
       search:
         title: "Raadi isticmalka qimeyayasha"
       form:
@@ -670,7 +648,6 @@ so:
         entry_name: sarkaal
       search:
         email_placeholder: Radi isticmalaha Email ahaan
-        search: Raadin
         user_not_found: Iisticamalaha lama hayo
     poll_officer_assignments:
       index:
@@ -908,8 +885,6 @@ so:
         no_organizations: Majiran ururo.
         reject: Diiday
         rejected: Diiday
-        search: Raadin
-        search_placeholder: Magaca Emailka ama talafoon lambarka
         title: Ururo
         verified: Hubin
         verify: Xaqiijin
@@ -960,21 +935,14 @@ so:
     shared:
       true_value: "Haa"
       false_value: "Maya"
-      booths_search:
-        button: Raadin
-        placeholder: Raadi labada magacba
-      poll_officers_search:
-        button: Raadin
-        placeholder: Raadinta dorashada sarakiisha
-      poll_questions_search:
-        button: Raadin
-        placeholder: Radinta Sualaha Dorashada
-      proposal_search:
-        button: Raadin
-        placeholder: Raadinta soo jeedinta adoo cinwaanka, koodhka, sharaxaadda ama su'aasha
-      user_search:
-        button: Raadin
-        placeholder: Raadi isticmaal adoo magacaaga ama email
+      search:
+        label:
+          booths: "Raadi labada magacba"
+          organizations: "Magaca Emailka ama talafoon lambarka"
+          poll_officers: "Raadinta dorashada sarakiisha"
+          poll_questions: "Radinta Sualaha Dorashada"
+          proposals: "Raadinta soo jeedinta adoo cinwaanka, koodhka, sharaxaadda ama su'aasha"
+          users: "Raadi isticmaal adoo magacaaga ama email"
       search_results: "Raadi natiijada"
       no_search_results: "Natijooyin lama helin."
       actions: Tilaabooyin
@@ -988,13 +956,10 @@ so:
       author: Qoraa
       content: Mawduuc
       created_at: Abuuray
-      delete: Titiriid
     geozones:
       index:
         title: Dusha sare
         create: Abuur dusha sare
-        edit: Isbedel
-        delete: Titiriid
       geozone:
         name: Magac
         external_code: Koodhaka dibada
@@ -1098,7 +1063,6 @@ so:
         no_users: Majiraan isticmaalayaal.
       search:
         placeholder: Raadi isticmalaha Email ahaa, magac ama dukumeenti lambar
-        search: Raadin
     verifications:
       index:
         phone_not_given: Telefoon aan la siin
@@ -1171,14 +1135,9 @@ so:
           updated_at: La casriyeeyay
           title: Ciwaan
           slug: Laqabso
-          cards_title: Kararka
         cards:
           create_card: Kar saame
           no_cards: Majiraan karar.
-          title: Ciwaan
-          description: Sharaxaad
-          link_text: Qoraalka Xirirka
-          link_url: Isku xirka URL
     homepage:
       title: Bogga
       description: Modhale-ka firfircoon ayaa ka muuqda bogga si isku mid ah halkaan.
@@ -1188,11 +1147,6 @@ so:
       cards_title: Kararka
       create_card: Kar saame
       no_cards: Majiraan karar.
-      cards:
-        title: Ciwaan
-        description: Sharaxaad
-        link_text: Qoraalka Xirirka
-        link_url: Isku xirka URL
       feeds:
         proposals: Sojeedino
         debates: Doodo

@@ -107,3 +107,8 @@ cs:
       longitude_description: "Zeměpisná délka pro zobrazení pozice na mapě"
       zoom: "Zvětšení"
       zoom_description: "Zvětšení pro zobrazení pozice na mapě"
+    uploads:
+      images:
+        max_size: "Maximální velikost obrázku"
+        max_size_description: "Maximální povolená velikost pro nahraný obrázek (v megabajtech / MB)"
+        content_types: "Přijímané typy obsahu pro obrázky"

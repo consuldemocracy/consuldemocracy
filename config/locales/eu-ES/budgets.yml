@@ -38,12 +38,8 @@ eu:
         icon_alt: Partaidetzazko aurrekontu ikonoa
         title: Partaidetzazko aurrekontuak
         help: Partaidetzazko aurrekontuei buruzko laguntza
-        all_phases: Fasea guztiak ikusi
       all_phases: Partaidetzazko aurrekontuen faseak
       map: Geografikoki koka daitezken proiektuak
-      investment_proyects: Gastu proiektu zerrenda osoa ikusi
-      unfeasible_investment_proyects: Gastu proiektu bideragarriezin zerrenda ikusi
-      not_selected_investment_proyects: Azken bozketarako aukeratu ez diren gastu proiektu zerrenda ikusi
       finished_budgets: Amaitutako partaidetzazko aurrekontuak
       see_results: Emaitzak ikusi
       section_footer:
@@ -76,9 +72,6 @@ eu:
           verified_only: "%{verify} Gastu proiektu berri bat sortzeko."
           create: "Gastu proiektua sortu"
           not_logged_in: "Gastu proiektu berri bat sortzeko %{sign_in} edo %{sign_up} egin behar duzu."
-          by_feasibility: Bideragarritasunarengaitik
-          feasible: Proiektu bideragarriak ikusi
-          unfeasible: Proiektu bideragarriezinak ikusi
         orders:
           random: Zorizkoak
           confidence_score: Hobekien baloratuta
@@ -111,20 +104,11 @@ eu:
           other: "%{count} babes"
         give_support: Babestu
       header:
-        check_ballot: Nire bozkak berrikusi
+        check_ballot: "Nire bozkak berrikusi"
         change_ballot: "Iritzia aldatu ezkero zure bozkak aldatu ditzakezu %{check_ballot}-(e)n eta berriz hasi zaitezke."
         check_ballot_link: "Nire bozkak berrikusi"
         price: "Sail honen aurrekontua"
-    progress_bar:
-      assigned: "Esleitutakoa: "
-      available: "Aurrekontu eskuragarria: "
     show:
-      group: Taldea
-      phase: Oraingo fasea
-      unfeasible_title: Proiektu bideragarriezinak
-      unfeasible: Proiektu bideragarriezinak ikusi
-      unselected_title: Azken bozkaketarako aukeratu ez diran proiektuak
-      unselected: Azken bozkaketarako aukeratu ez diran proiektuak ikusi
       see_results: Emaitzak ikusi
     results:
       link: Emaitzak

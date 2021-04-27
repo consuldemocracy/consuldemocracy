@@ -70,9 +70,6 @@ zh-CN:
         budget_investments: 管理项目
         table_name: 名字
         table_phase: 阶段
-        table_investments: 投资
-        table_edit_groups: 标题组
-        table_edit_budget: 编辑
         edit_groups: 编辑标题组
         edit_budget: 编辑预算
         no_budgets: "没有预算。"
@@ -84,7 +81,6 @@ zh-CN:
         title: 编辑参与性预算
         delete: 删除预算
         phase: 阶段
-        dates: 日期
         enabled: 已启用
         actions: 行动
         edit_phase: 编辑阶段
@@ -110,7 +106,6 @@ zh-CN:
         submit: "保存标题"
     budget_phases:
       edit:
-        summary_help_text: 此文本将通知用户阶段情况。如果就算阶段未活跃也要显示，请选中以下复选框。
         description_help_text: 当阶段处于活跃状态时，此文本将显示在页眉中
         enabled_help_text: 这一阶段将在预算的阶段时间内公开，并为其他目的保持活跃
         save_changes: 保存更改
@@ -236,8 +231,6 @@ zh-CN:
         table_name: 名字
         table_description: 说明
         table_actions: 行动
-        delete: 删除
-        edit: 编辑
       edit:
         title: 编辑投资状态
       update:
@@ -319,7 +312,6 @@ zh-CN:
           additional_info_placeholder: 添加您认为有用的其他信息
         index:
           create: 新进程
-          delete: 删除
           title: 立法进程
           filters:
             all: 所有
@@ -437,12 +429,9 @@ zh-CN:
     managers:
       index:
         title: 经理
-        name: 名字
-        email: 电子邮件地址
         no_managers: 没有经理。
       manager:
         add: 添加
-        delete: 删除
       search:
         title: "经理：用户搜索"
     menu:
@@ -507,25 +496,19 @@ zh-CN:
     administrators:
       index:
         title: 管理员
-        name: 名字
-        email: 电子邮件地址
         id: 管理员 ID
         no_administrators: 没有管理员。
       administrator:
         add: 添加
-        delete: 删除
         restricted_removal: "抱歉，您无法将自己从管理员中删除"
       search:
         title: "管理员：用户搜索"
     moderators:
       index:
         title: 版主
-        name: 名字
-        email: 电子邮件地址
         no_moderators: 没有审核员。
       moderator:
         add: 添加
-        delete: 删除
       search:
         title: "审核员：用户搜索"
     segment_recipient:
@@ -551,8 +534,6 @@ zh-CN:
         sent: 已发送
         actions: 行动
         draft: 起草
-        edit: 编辑
-        delete: 删除
         preview: 预览
         empty_newsletters: 没有要显示的时事通讯
       new:
@@ -585,8 +566,6 @@ zh-CN:
         sent: 已发送
         actions: 行动
         draft: 起草
-        edit: 编辑
-        delete: 删除
         preview: 预览
         view: 查看
         empty_notifications: 没有要显示的通知
@@ -640,7 +619,6 @@ zh-CN:
         no_group: "没有组"
       valuator:
         add: 添加到评估员
-        delete: 删除
       search:
         title: "评估员：用户搜索"
       form:
@@ -676,7 +654,6 @@ zh-CN:
         entry_name: 官员
       search:
         email_placeholder: 通过电子邮件搜索用户
-        search: 搜索
         user_not_found: 未找到用户
     poll_officer_assignments:
       index:
@@ -914,8 +891,6 @@ zh-CN:
         no_organizations: 没有组织。
         reject: 拒绝
         rejected: 已拒绝
-        search: 搜索
-        search_placeholder: 名字，电子邮件或者电话号码
         title: 组织
         verified: 已验证
         verify: 验证
@@ -967,21 +942,14 @@ zh-CN:
     shared:
       true_value: "是"
       false_value: "不是"
-      booths_search:
-        button: 搜索
-        placeholder: 按名字搜索投票亭
-      poll_officers_search:
-        button: 搜索
-        placeholder: 搜索投票站官员
-      poll_questions_search:
-        button: 搜索
-        placeholder: 搜索投票项问题
-      proposal_search:
-        button: 搜索
-        placeholder: 按标题，代码，描述或问题搜索提议
-      user_search:
-        button: 搜索
-        placeholder: 按名字或电子邮件搜索用户
+      search:
+        label:
+          booths: "按名字搜索投票亭"
+          organizations: "名字，电子邮件或者电话号码"
+          poll_officers: "搜索投票站官员"
+          poll_questions: "搜索投票项问题"
+          proposals: "按标题，代码，描述或问题搜索提议"
+          users: "按名字或电子邮件搜索用户"
       search_results: "搜索结果"
       no_search_results: "未找到结果。"
       actions: 行动
@@ -995,13 +963,10 @@ zh-CN:
       author: 作者
       content: 内容
       created_at: 创建于
-      delete: 删除
     geozones:
       index:
         title: 地理区域
         create: 创建地理区域
-        edit: 编辑
-        delete: 删除
       geozone:
         name: 名字
         external_code: 外部代码
@@ -1103,7 +1068,6 @@ zh-CN:
         no_users: 没有用户。
       search:
         placeholder: 通过电子邮件，名字或者文档编号搜索用户
-        search: 搜索
     verifications:
       index:
         phone_not_given: 未提供电话号码
@@ -1176,14 +1140,9 @@ zh-CN:
           updated_at: 更新于
           title: 标题
           slug: Slug
-          cards_title: 卡片
         cards:
           create_card: 创建卡
           no_cards: 没有卡。
-          title: 标题
-          description: 说明
-          link_text: 链接文本
-          link_url: 链接URL
     homepage:
       title: 主页
       description: 有效模块以与此处相同的顺序显示在主页中。
@@ -1193,11 +1152,6 @@ zh-CN:
       cards_title: 卡片
       create_card: 创建卡
       no_cards: 没有卡。
-      cards:
-        title: 标题
-        description: 说明
-        link_text: 链接文本
-        link_url: 链接URL
       feeds:
         proposals: 提议
         debates: 辩论

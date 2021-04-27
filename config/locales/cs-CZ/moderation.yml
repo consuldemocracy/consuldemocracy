@@ -111,7 +111,6 @@ cs:
       index:
         hidden: Blokováno
         hide: Blokovat
-        search: Vyhledat
         search_placeholder: email nebo jméno uživatele
         title: Blokovat uživatele
       notice_hide: Uživatel byl zablokován. Všechny debaty a komentáře tohoto uživatele byly skryty.

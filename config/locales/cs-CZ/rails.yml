@@ -10,20 +10,20 @@ cs:
       - sob
     abbr_month_names:
       - 
-      - led
+      - Led
       - úno
       - bře
-      - dub
+      - Dub
       - květen
       - čer
       - črv
-      - srp
+      - Srp
       - zář
       - říj
-      - lis
-      - pro
+      - Lis
+      - Pro
     day_names:
-      - neděle
+      - Sobota
       - pondělí
       - úterý
       - středa
@@ -36,18 +36,18 @@ cs:
       short: "%d %b"
     month_names:
       - 
-      - leden
+      - Leden
       - únor
       - březen
-      - duben
+      - Duben
       - kvě
       - červen
       - červenec
-      - srpen
+      - Srpen
       - září
       - říjen
-      - listopad
-      - prosinec
+      - Listopad
+      - Prosinec
   datetime:
     distance_in_words:
       half_a_minute: p

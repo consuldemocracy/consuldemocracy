@@ -60,9 +60,6 @@ es-PE:
           finished: Finalizadas
         table_name: Nombre
         table_phase: Fase
-        table_investments: Propuestas de inversión
-        table_edit_groups: Grupos de partidas
-        table_edit_budget: Editar propuesta
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
@@ -73,7 +70,6 @@ es-PE:
         title: Editar campaña de presupuestos participativos
         delete: Eliminar presupuesto
         phase: Fase
-        dates: Fechas
         enabled: Habilitado
         actions: Acciones
         active: Activos
@@ -196,8 +192,6 @@ es-PE:
         table_name: Nombre
         table_description: Descripción detallada
         table_actions: Acciones
-        delete: Borrar
-        edit: Editar propuesta
     progress_bars:
       index:
         table_kind: "Tipo"
@@ -259,7 +253,6 @@ es-PE:
           additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
         index:
           create: Nuevo proceso
-          delete: Borrar
           title: Procesos legislativos
           filters:
             all: Todas
@@ -370,12 +363,9 @@ es-PE:
     managers:
       index:
         title: Gestores
-        name: Nombre
-        email: Tu correo electrónico
         no_managers: No hay gestores.
       manager:
         add: Añadir como Presidente de mesa
-        delete: Borrar
       search:
         title: "Gestores: Búsqueda de usuarios"
     menu:
@@ -424,24 +414,18 @@ es-PE:
     administrators:
       index:
         title: Administradores
-        name: Nombre
-        email: Tu correo electrónico
         no_administrators: No hay administradores.
       administrator:
         add: Añadir como Presidente de mesa
-        delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
         title: "Administradores: Búsqueda de usuarios"
     moderators:
       index:
         title: Moderadores
-        name: Nombre
-        email: Tu correo electrónico
         no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Presidente de mesa
-        delete: Borrar
       search:
         title: "Moderadores: Búsqueda de usuarios"
     segment_recipient:
@@ -452,8 +436,6 @@ es-PE:
         sent: Fecha
         actions: Acciones
         draft: Borrador
-        edit: Editar propuesta
-        delete: Borrar
         preview: Previsualizar
       show:
         send: Enviar
@@ -465,8 +447,6 @@ es-PE:
         sent: Fecha
         actions: Acciones
         draft: Borrador
-        edit: Editar propuesta
-        delete: Borrar
         preview: Previsualizar
       show:
         send: Enviar notificación
@@ -485,7 +465,6 @@ es-PE:
         group: "Grupo"
       valuator:
         add: Añadir como evaluador
-        delete: Borrar
       search:
         title: "Evaluadores: Búsqueda de usuarios"
       show:
@@ -506,7 +485,6 @@ es-PE:
         entry_name: presidente de mesa
       search:
         email_placeholder: Buscar usuario por email
-        search: Buscar
         user_not_found: Usuario no encontrado
     poll_officer_assignments:
       index:
@@ -742,8 +720,6 @@ es-PE:
         no_organizations: No hay organizaciones.
         reject: Rechazar
         rejected: Rechazada
-        search: Buscar
-        search_placeholder: Nombre, email o teléfono
         title: Organizaciones
         verified: Verificada
         verify: Verificar usuario
@@ -790,21 +766,14 @@ es-PE:
       no_description: "Sin descripción"
     shared:
       true_value: "Si"
-      booths_search:
-        button: Buscar
-        placeholder: Buscar urna por nombre
-      poll_officers_search:
-        button: Buscar
-        placeholder: Buscar presidentes de mesa
-      poll_questions_search:
-        button: Buscar
-        placeholder: Buscar preguntas
-      proposal_search:
-        button: Buscar
-        placeholder: Buscar propuestas por título, código, descripción o pregunta
-      user_search:
-        button: Buscar
-        placeholder: Buscar usuario por nombre o email
+      search:
+        label:
+          booths: "Buscar urna por nombre"
+          organizations: "Nombre, email o teléfono"
+          poll_officers: "Buscar presidentes de mesa"
+          poll_questions: "Buscar preguntas"
+          proposals: "Buscar propuestas por título, código, descripción o pregunta"
+          users: "Buscar usuario por nombre o email"
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
@@ -816,13 +785,10 @@ es-PE:
       author: Autor
       content: Contenido
       created_at: Creado
-      delete: Borrar
     geozones:
       index:
         title: Distritos
         create: Crear un distrito
-        edit: Editar propuesta
-        delete: Borrar
       geozone:
         name: Nombre
         external_code: Código externo
@@ -921,7 +887,6 @@ es-PE:
         no_users: No hay usuarios.
       search:
         placeholder: Buscar usuario por email, nombre o DNI
-        search: Buscar
     verifications:
       index:
         phone_not_given: No ha dado su teléfono
@@ -986,13 +951,7 @@ es-PE:
           status: Estado
           updated_at: Última actualización
           title: Título
-        cards:
-          title: Título
-          description: Descripción detallada
     homepage:
-      cards:
-        title: Título
-        description: Descripción detallada
       feeds:
         proposals: Propuestas
         processes: Procesos

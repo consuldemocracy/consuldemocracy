@@ -76,6 +76,7 @@ module Consul
       "sr",
       "sv",
       "tr",
+      "uk-UA",
       "val",
       "zh-CN",
       "zh-TW"]

@@ -17,13 +17,13 @@ he:
       user_permission_debates: להשתתף בדיונים
       user_permission_info: עם חשבונך תוכל/י ...
       user_permission_proposal: ליצור הצעות חדשות
-      user_permission_support_proposal: תמיכה בהצעות
+      user_permission_support_proposal: לתמוך בהצעות
       user_permission_title: השתתפות
       user_permission_verify: כדי לבצע את כל הפעולות, עליך לאמת את חשבונך
       user_permission_verify_info: "* רק עבור משתמשים/ות במפקד אוכלוסין."
       user_permission_votes: השתתפות בהצבעה הסופית
       username_label: שם המשתמש/ת
-      verified_account: החשבון זוהה בהצלחה
+      verified_account: החשבון אומת בהצלחה
       verify_my_account: אמת את החשבון שלי
   application:
     close: סגירה
@@ -62,8 +62,8 @@ he:
         many: "%{count} הצבעות"
         other: "%{count} הצבעות"
     form:
-      comment_as_admin: הגב/י כמנהל/ת
-      comment_as_moderator: הגב/י כמנה/ת הדיון
+      comment_as_admin: הגב/י כמנהל/ת מערכת
+      comment_as_moderator: הגב/י כמנחה/ת הדיון
       leave_comment: השאר תגובה
     orders:
       most_voted: הכי הרבה הצבעות
@@ -74,15 +74,15 @@ he:
     show:
       return_to_commentable: "חזור אל "
   comments_helper:
-    comment_button: פרסום התגובה
-    comment_link: הערות
-    comments_title: הערות
-    reply_button: פרסום התגובה
-    reply_link: מענה לתגובה
+    comment_button: פרסם תגובה
+    comment_link: תגובה
+    comments_title: תגובות
+    reply_button: פרסם תגובה
+    reply_link: השב
   debates:
     create:
       form:
-        submit_button: פתיחת דיון חדש
+        submit_button: פתיחת דיון
     debate:
       comments:
         zero: אין תגובות
@@ -103,12 +103,12 @@ he:
       show_link: צפייה בדיון
     form:
       debate_title: כותרת הדיון
-      tags_instructions: תגיות סימון נושאים בדיון זה
+      tags_instructions: סמן דיון זה.
       tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
     index:
       featured_debates: מומלצים
       orders:
-        confidence_score: הכי נתמכת
+        confidence_score: הכי מדורג גבוה
         created_at: הכי חדשה
         hot_score: הכי פעילה
         most_commented: עם הכי הרבה תגובות
@@ -125,8 +125,8 @@ he:
         button: חיפוש
         placeholder: חיפוש דיונים...
         title: חיפוש
-      select_order: הזמנה באמצעות
-      start_debate: פתיחת דיון חדש
+      select_order: סדר לפי
+      start_debate: פתח דיון
       title: דיונים
       section_header:
         icon_alt: סמל הדיון
@@ -236,7 +236,6 @@ he:
       collaborative_legislation: חקיקה שיתופית
       debates: דיונים
       locale: "שפה:"
-      logo: Consul logo לוגו
       management: הנהלה
       moderation: הנחייה
       valuation: הערכה
@@ -250,12 +249,12 @@ he:
       budgets: מימון השתתפותי
       notification_item:
         new_notifications:
+          zero: "אין לך התראות חדשות"
           one: . יש לך התרעה חדשה
           two: יש לך %{count} התרעות חדשות
           many: יש לך %{count} התרעות חדשות
           other: יש לך %{count} התרעות חדשות
         notifications: התראות
-        no_notifications: "אין לך התראות חדשות"
   notifications:
     index:
       empty_notifications: אין לך תגובות חדשות
@@ -774,7 +773,6 @@ he:
     facebook: "%{org} פייסבוק"
     twitter: "%{org} טוויטר"
     youtube: "%{org} יוטיוב YouTube"
-    whatsapp: ווטסאפ
     telegram: "%{org} טלגרם Telegram"
     instagram: "%{org} אינסטגרם Instagram"
   stats:
@@ -876,9 +874,10 @@ he:
         debates: "הדיונים הכי פעילים"
         proposals: "ההצעות הכי פעילות"
         processes: "תהליכים פתוחים"
-      see_all_debates: ראה את כל הדיונים
-      see_all_proposals: ראה/י את כל ההצעות
-      see_all_processes: ראה את כל התהליכים
+      see_all:
+        debates: ראה את כל הדיונים
+        proposals: ראה/י את כל ההצעות
+        processes: ראה את כל התהליכים
       process_label: תהליכים
       see_process: ראה תהליכים
     cards:

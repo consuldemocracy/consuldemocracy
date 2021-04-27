@@ -72,10 +72,6 @@ ru:
         budget_investments: Управлять проектами
         table_name: Имя
         table_phase: Этап
-        table_investments: Инвестиции
-        table_edit_groups: Группы заголовков
-        table_edit_budget: Редактировать
-        table_admin_ballots: Бюллетени
         edit_groups: Редактировать группы заголовков
         edit_budget: Редактировать бюджет
         admin_ballots: Администрирование бюллетеней
@@ -88,7 +84,6 @@ ru:
         title: Редактировать совместный бюджет
         delete: Удалить бюджет
         phase: Этап
-        dates: Даты
         enabled: Включено
         actions: Действия
         edit_phase: Редактировать фазу
@@ -107,7 +102,6 @@ ru:
     budget_groups:
       name: "Имя"
       headings_name: "Заголовки"
-      headings_edit: "Редактировать заголовки"
       headings_manage: "Управление заголовками"
       no_groups: "Групп нет."
       amount:
@@ -153,7 +147,6 @@ ru:
         back: "Вернуться к группам"
     budget_phases:
       edit:
-        summary_help_text: Этот текст проинформирует пользователя о фазе. Чтобы отобразить его даже при неактивной фазе, отметьте галочку снизу
         description_help_text: Этот текст появится в заголовке, когда фаза станет активной
         enabled_help_text: Эта фала будет публичной в расписании бюджетных фаз, а также активной для любых других целей
         save_changes: Сохранить изменения
@@ -281,8 +274,6 @@ ru:
         table_name: Имя
         table_description: Описание
         table_actions: Действия
-        delete: Удалить
-        edit: Редактировать
       edit:
         title: Редактировать статус инвестиции
       update:
@@ -338,8 +329,6 @@ ru:
         index:
           description: "Когда пользователи создают предложения, они могут получить доступ к панели управления своим предложением. Там вы можете предложить ресурсы и рекомендации по получению поддержки для их идеи."
           create: Создать ресурс или действие
-          edit: Редактировать
-          delete: Удалить
           active: 'Да'
           inactive: 'Нет'
           title: Ресурсы и действия
@@ -471,7 +460,6 @@ ru:
           banner_title: Цвета заголовка
         index:
           create: Новый процесс
-          delete: Удалить
           title: Процессы законотворчества
           filters:
             active: Активные
@@ -595,12 +583,9 @@ ru:
     managers:
       index:
         title: Менеджеры
-        name: Имя
-        email: Электронный адрес
         no_managers: Нет менеджеров.
       manager:
         add: Добавить
-        delete: Удалить
       search:
         title: "Менеджеры: Поиск пользователей"
     menu:
@@ -670,14 +655,10 @@ ru:
     administrators:
       index:
         title: Администраторы
-        name: Имя
-        email: Электронный адрес
-        description: Описание
         id: ID администратора
         no_administrators: Нет администраторов.
       administrator:
         add: Добавить
-        delete: Удалить
         restricted_removal: "Извините, вы не можете удалить сами себя из администраторов"
       search:
         title: "Администраторы: Поиск пользователей"
@@ -687,12 +668,9 @@ ru:
     moderators:
       index:
         title: Модераторы
-        name: Имя
-        email: Электронный адрес
         no_moderators: Нет модераторов.
       moderator:
         add: Добавить
-        delete: Удалить
       search:
         title: "Модераторы: Поиск пользователей"
     segment_recipient:
@@ -719,8 +697,6 @@ ru:
         sent: Отправлено
         actions: Действия
         draft: Черновик
-        edit: Редактировать
-        delete: Удалить
         preview: Предпросмотр
         empty_newsletters: Нет новостных писем для отображения
       new:
@@ -757,8 +733,6 @@ ru:
         sent: Отправлено
         actions: Действия
         draft: Черновик
-        edit: Редактировать
-        delete: Удалить
         preview: Предпросмотр
         view: Просмотреть
         empty_notifications: Нет уведомлений для показа
@@ -853,7 +827,6 @@ ru:
         no_group: "Нет группы"
       valuator:
         add: Добавить в оценщики
-        delete: Удалить
       search:
         title: "Оценщики: Поиск пользователя"
       form:
@@ -889,7 +862,6 @@ ru:
         entry_name: офицер
       search:
         email_placeholder: Искать пользователя по email
-        search: Поиск
         user_not_found: Пользователь не найден
         help: "Чтобы добавить или удалить служащих голосования, используйте форму поиска ниже."
     poll_officer_assignments:
@@ -1149,8 +1121,6 @@ ru:
         no_organizations: Нет организаций.
         reject: Отклонить
         rejected: Отклонено
-        search: Поиск
-        search_placeholder: Имя, email или номер телефона
         title: Организации
         verified: Верифицировано
         verify: Верифицировать
@@ -1215,21 +1185,14 @@ ru:
     shared:
       true_value: "Да"
       false_value: "Нет"
-      booths_search:
-        button: Поиск
-        placeholder: Искать кабинку по имени
-      poll_officers_search:
-        button: Поиск
-        placeholder: Искать сотрудников голосования
-      poll_questions_search:
-        button: Поиск
-        placeholder: Искать вопросы голосования
-      proposal_search:
-        button: Поиск
-        placeholder: Искать предложения по названию, коду, описанию или вопросу
-      user_search:
-        button: Поиск
-        placeholder: Искать пользователя по имени или email
+      search:
+        label:
+          booths: "Искать кабинку по имени"
+          organizations: "Имя, email или номер телефона"
+          poll_officers: "Искать сотрудников голосования"
+          poll_questions: "Искать вопросы голосования"
+          proposals: "Искать предложения по названию, коду, описанию или вопросу"
+          users: "Искать пользователя по имени или email"
       search_results: "Результаты поиска"
       no_search_results: "Результаты не найдены."
       actions: Действия
@@ -1243,7 +1206,6 @@ ru:
       author: Автор
       content: Содержание
       created_at: Создано в
-      delete: Удалить
       color_help: Шестнадцатеричный формат
       show_results_and_stats: "Показать результаты и статистику"
       results_and_stats_reminder: "Отмечая эти галочки, можно сделать результаты и/или статистику публично доступными и видимыми для каждого пользователя."
@@ -1251,8 +1213,6 @@ ru:
       index:
         title: Геозона
         create: Создать геозону
-        edit: Редактировать
-        delete: Удалить
       geozone:
         name: Имя
         external_code: Внешний код
@@ -1387,7 +1347,6 @@ ru:
         no_users: Нет пользователей.
       search:
         placeholder: Искать пользователя по email'у, имени или номеру документа
-        search: Поиск
     verifications:
       index:
         phone_not_given: Телефон не задан
@@ -1461,16 +1420,11 @@ ru:
           updated_at: Обновлено в
           title: Название
           slug: Slug URL
-          cards_title: Карты
           see_cards: Смотреть Карты
         cards:
           cards_title: карты
           create_card: Создать карту
           no_cards: Нет карт.
-          title: Название
-          description: Описание
-          link_text: Текст ссылки
-          link_url: Ссылка URL
           columns_help: "Ширина карточки в виде количества колонок. На мобильных экранах - это всегда 100% ширина."
           create:
             notice: "Карта успешно создана!"
@@ -1487,11 +1441,6 @@ ru:
       cards_title: Карты
       create_card: Создать карту
       no_cards: Нет карт.
-      cards:
-        title: Название
-        description: Описание
-        link_text: Текст ссылки
-        link_url: Ссылка URL
       feeds:
         proposals: Заявки
         debates: Обсуждения проблем

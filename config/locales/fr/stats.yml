@@ -1,1 +1,20 @@
 fr:
+  stats:
+    title: "Données de participation"
+    advanced: "Statistiques approfondies"
+    total_participants: "Participants"
+    by_gender: "Participation selon le sexe"
+    by_age: "Participation selon l'âge"
+    by_geozone: "Participation par quartier"
+    men_percentage: "%{percentage} d'hommes"
+    women_percentage: "%{percentage} de femmes"
+    age: "Âge"
+    age_more_than: "%{start} ans et plus"
+    age_range: "%{start} - %{finish} ans"
+    total: "Total"
+    geozone: "Quartier"
+    no_demographic_data:
+      one: "* Il n'y a pas de données démographiques pour 1 participant."
+      other: "* Il n'y a pas de données démographiques pour %{count} des participants."
+    budgets:
+      link: "Statistiques"

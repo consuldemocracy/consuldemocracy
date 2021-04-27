@@ -196,7 +196,6 @@ so:
       collaborative_legislation: Nidaamka Sharciga
       debates: Doodo
       locale: "Luqad:"
-      logo: Logada qunsuliyada
       management: Maraynta
       moderation: Dhexdhexaadinta
       valuation: Qimeyn
@@ -210,10 +209,10 @@ so:
       budgets: Misaaniyada kaqayb qadashada
       notification_item:
         new_notifications:
+          zero: "Ma haysatid wargelin cusub"
           one: Waxaad heysataa ogeysiis cusub
           other: Waxaad heysataa%{count} ogeysiis cusub
         notifications: Ogaysiisyo
-        no_notifications: "Ma haysatid wargelin cusub"
   notifications:
     index:
       empty_notifications: Ma haysatid wargelin cusub,.
@@ -546,7 +545,6 @@ so:
     facebook: "%{org} faysbuug"
     twitter: "%{org} tuwiitar"
     youtube: "%{org} yotuyuub"
-    whatsapp: Wat isaaab
     telegram: "%{org} telegaraam"
     instagram: "%{org} istigraam"
   stats:
@@ -628,9 +626,10 @@ so:
         debates: "Inta badan doodaha firfircoon"
         proposals: "Talooyinka ugu firfircoon"
         processes: "Gedisocodka furaan"
-      see_all_debates: Arag dhaman doodaha
-      see_all_proposals: Arag dhaman sojedimaha
-      see_all_processes: Arag dhaman gedis socodyada
+      see_all:
+        debates: Arag dhaman doodaha
+        proposals: Arag dhaman sojedimaha
+        processes: Arag dhaman gedis socodyada
       process_label: Geedisocoodka
       see_process: Arag gedi socodka
     cards:

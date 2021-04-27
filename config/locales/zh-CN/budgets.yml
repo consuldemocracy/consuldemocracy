@@ -38,12 +38,8 @@ zh-CN:
         icon_alt: 参与性预算图标
         title: 参与性预算
         help: 参与性预算的帮助说明
-        all_phases: 查看所有阶段
       all_phases: 预算投资的阶段
       map: 预算投资提议的地理位置
-      investment_proyects: 所有投资项目的列表
-      unfeasible_investment_proyects: 所有不可行投资项目的列表
-      not_selected_investment_proyects: 所有未被选入投票的投资项目的列表
       finished_budgets: 已完成的参与性预算
       see_results: 查看结果
       section_footer:
@@ -77,9 +73,6 @@ zh-CN:
           verified_only: "创建新的预算投资%{verify}。"
           create: "创建预算投资"
           not_logged_in: "要创建新的预算投资，您必须%{sign_in} 或者%{sign_up}。"
-          by_feasibility: 按可行性
-          feasible: 可行的项目
-          unfeasible: 不可行的项目
         orders:
           random: 随机
           confidence_score: 最高评分
@@ -112,20 +105,11 @@ zh-CN:
           other: "%{count} 个支持"
         give_support: 支持
       header:
-        check_ballot: 查看我的选票
+        check_ballot: "查看我的选票"
         change_ballot: "如果您改变主意，您可以在%{check_ballot} 中删除投票并重新开始。"
         check_ballot_link: "查看我的选票"
         price: "此标题有一个预算"
-    progress_bar:
-      assigned: "您已经分配： "
-      available: "可用的预算： "
     show:
-      group: 组
-      phase: 实际阶段
-      unfeasible_title: 不可行的投资
-      unfeasible: 查看不可行的投资
-      unselected_title: 未被选入投票阶段的投资
-      unselected: 查看未被选入投票阶段的投资
       see_results: 查看结果
     results:
       link: 结果

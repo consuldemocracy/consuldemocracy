@@ -4,6 +4,10 @@ el:
     results_enabled: "Εμφάνιση αποτελεσμάτων"
     stats_enabled: "Εμφάνιση στατιστικών στοιχείων"
     advanced_stats_enabled: "Εμφάνιση σύνθετων στατιστικών στοιχείων"
+    name: Όνομα
+    email: E-Mail
+    description: Περιγραφή
+    related_sdg_list: Σκοποί και Στόχοι
   activerecord:
     models:
       activity:
@@ -72,6 +76,18 @@ el:
       proposal:
         one: "Πρόταση πολίτη"
         other: "Προτάσεις πολιτών"
+      sdg/goal:
+        one: "σκοπός"
+        other: "σκοποί"
+      sdg/local_target:
+        one: "τοπικός στόχος"
+        other: "τοπικοί στόχοι"
+      sdg/manager:
+        one: "Διαχειριστής ΣΒΑ"
+        other: "Διαχειριστές ΣΒΑ"
+      sdg/target:
+        one: "στόχος"
+        other: "στόχοι"
       site_customization/page:
         one: Προσαρμοσμένη σελίδα
         other: Προσαρμοσμένες σελίδες
@@ -141,6 +157,9 @@ el:
         description_finished: "Περιγραφή με την ολοκληρωση του προϋπολογισμού"
         phase: "Φάση"
         currency_symbol: "Συνάλλαγμα"
+        voting_style: "Στυλ τελικής ψηφοφορίας"
+        voting_style_knapsack: "Σακίδιο"
+        voting_style_approval: "Έγκριση"
       budget/translation:
         name: "Όνομα"
       budget/investment:
@@ -203,6 +222,7 @@ el:
         name: "Όνομα επικεφαλίδας"
         price: "Τιμή"
         population: "Πληθυσμός"
+        max_ballot_lines: "Επιτρεπόμενες ψήφοι"
       budget/heading/translation:
         name: "Όνομα επικεφαλίδας"
       budget/phase:
@@ -210,6 +230,7 @@ el:
         ends_at: "Ημερομηνία ολοκλήρωσης"
         starts_at: "Ημερομηνία έναρξης"
       budget/phase/translation:
+        name: "Όνομα"
         description: "Περιγραφή"
         summary: "Περίληψη"
       comment:
@@ -268,6 +289,7 @@ el:
         responsible_name: "Υπεύθυνος ομάδας"
       poll:
         name: "Όνομα"
+        title: "Όνομα"
         starts_at: "Ημερομηνία έναρξης"
         ends_at: "Καταληκτική ημερομηνία"
         geozone_restricted: "Περιορίζεται από το geozone"
@@ -296,17 +318,40 @@ el:
         officer_assignment_id: Εργασία Λειτουργού
       poll/shift:
         task: "Εργασία"
+      proposal_notification:
+        body: "Μήνυμα"
+        title: "Τίτλος"
       signature_sheet:
         title: "Τίτλος"
         signable_type: "Τύπος με δυνατότητα υπογραφής"
         signable_id: "ID με δυνατότητα υπογραφής "
         document_numbers: "Αριθμοί εγγράφων"
+      sdg/goal:
+        code: "Κωδικός"
+        title: "Τίτλος"
+        description: "Περιγραφή"
+      sdg/local_target:
+        code: "Κωδικός"
+        target_id: "Στόχος"
+        title: "Τίτλος"
+      sdg/local_target/translation:
+        title: "Τίτλος"
+        description: "Περιγραφή"
+      sdg/phase/kind:
+        sensitization: "Ευαισθητοποίηση"
+        planning: "Σχεδιασμός"
+        monitoring: "Παρακολούθηση"
+      sdg/target:
+        code: "Κωδικός"
+        title: "Τίτλος"
       site_customization/page:
         content: Περιεχόμενο
         created_at: Δημιουργήθηκε στις
         subtitle: Υπότιτλος
         slug: Slug
         status: Κατάσταση
+        status_draft: "Προσχέδιο"
+        status_published: "Δημοσιεύθηκε"
         title: Τίτλος
         updated_at: Ενημερώθηκε στις
         more_info_flag: Εμφάνιση στη σελίδα βοήθειας
@@ -323,9 +368,20 @@ el:
         name: Όνομα
         locale: Τοπικές ρυθμίσεις
         body: Περιεχόμενο
+      tag:
+        name: "Πληκτρολογήστε το όνομα του θέματος"
+      topic:
+        title: "Τίτλος"
+        description: "Αρχικό κείμενο"
       banner:
         background_color: Χρώμα φόντου
         font_color: Χρώμα γραμματοσειράς
+        post_ended_at: "Θέση που έληξε στις"
+        post_started_at: "Θέση που ξεκίνησε στις"
+        target_url: "Σύνδεσμος"
+      banner/translation:
+        title: "Τίτλος"
+        description: "Περιγραφή"
       legislation/process:
         title: Τίτλος διαδικασίας
         summary: Περίληψη
@@ -345,17 +401,26 @@ el:
         result_publication_date: Ημερομηνία δημοσίευσης τελικών αποτελέσματων
         background_color: Χρώμα φόντου
         font_color: Χρώμα γραμματοσειράς
+        homepage_enabled: "Αρχική σελίδα ενεργοποιημένη"
       legislation/process/translation:
         title: Τίτλος διαδικασίας
         summary: Περίληψη
         description: Περιγραφή
         additional_info: Πρόσθετες πληροφορίες
+        homepage: "Περιγραφή"
         milestones_summary: Περίληψη
+      legislation/proposal:
+        description: "Κείμενο πρότασης"
+        summary: "Περίληψη πρότασης"
+        title: "Τίτλος πρότασης"
+        video_url: "Σύνδεσμος σε εξωτερικό βίντεο"
       legislation/draft_version:
         title: Τίτλος έκδοσης
         body: Κείμενο
         changelog: Αλλαγές
         status: Κατάσταση
+        status_draft: "Προσχέδιο"
+        status_published: "Δημοσιεύθηκε"
         final_version: Τελική μορφή
       legislation/draft_version/translation:
         title: Τίτλος έκδοσης
@@ -364,6 +429,8 @@ el:
       legislation/question:
         title: Τίτλος
         question_options: Επιλογές
+      legislation/question/translation:
+        title: Ερώτηση
       legislation/question_option:
         value: Τιμή
       legislation/annotation:
@@ -421,6 +488,9 @@ el:
         order: Μπορείτε να εισαγάγετε τη θέση στη λίστα δράσεων στην οποία επιθυμείτε να εμφανίζετε αυτή η δράση για τους χρήστες
         active: Ενεργό
         action_type: Τύπος
+        action_type_proposed_action: "Προτεινόμενη δράση"
+        action_type_resource: "Πόρος"
+        published_proposal: "Για δημοσιευμένες προτάσεις;"
       dashboard/administrator_task:
         source: Πηγή
         user: Εκτελέστηκε από
@@ -432,6 +502,8 @@ el:
         valuator_group_id: Ομάδα αξιολόγησης
         can_comment: Μπορεί να εισάγει σχόλιο
         can_edit_dossier: Μπορεί να επεξεργαστεί φακέλους
+      valuator_group:
+        name: "Όνομα ομάδας"
       local_census_record:
         document_type: Τύπος εγγράφου
         document_number: Αριθμός εγγράφου
@@ -472,6 +544,8 @@ el:
           attributes:
             document_number:
               not_in_census: "Έγγραφο το οποίο δεν υπάρχει στην απογραφή"
+            user_id:
+              has_voted: "Ο χρήστης έχει ήδη ψηφίσει"
         legislation/process:
           attributes:
             end_date:
@@ -482,6 +556,10 @@ el:
               invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης 
             allegations_end_date:
               invalid_date_range: πρέπει να είναι κατά ή μετά την ημερομηνία έναρξης των σχολίων
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: δεν είναι στην λίστα, επιτρεπόμενες τιμές είναι 1 για αστυνομική ταυτότητα, 2 για διαβατήριο και 3 για άδεια διαμονής.
         proposal:
           attributes:
             tag_list:
@@ -512,6 +590,14 @@ el:
           attributes:
             valuation:
               cannot_comment_valuation: "Δεν μπορείτε να σχολιάσετε μια αξιολόγηση"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Ήδη μεταφρασμένος πόρος
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "πρέπει να ξεκινάει με τον ίδιο κωδικό με τον στόχο του ακολουθούμενο από μία τελεία και να τελειώνει με έναν αριθμό"
       messages:
         translations_too_short: Υποχρεούται να παρέχετε τουλάχιστον μία μετάφραση
         record_invalid: "Η επικύρωση απέτυχε: %{errors}"

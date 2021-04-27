@@ -104,6 +104,7 @@ tr:
         one: " '%{search_term}'i içeren terim"
         other: " '%{search_term}'i içeren terim"
     sessions:
+      need_managed_user: Bu eylemi gerçekleştirmek için bir kullanıcı seçmelisiniz
       signed_out: Başarılı bir şekilde çıkış yaptınız.
       signed_out_managed_user: Kullanıcı oturumu başarıyla kapatıldı.
     username_label: Kullanıcı adı

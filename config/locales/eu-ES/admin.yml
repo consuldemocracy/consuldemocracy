@@ -69,9 +69,6 @@ eu:
         budget_investments: Gastu proiektuak kudeatu
         table_name: Izena
         table_phase: Fasea
-        table_investments: Gastu proiektuak
-        table_edit_groups: Sail taldeak
-        table_edit_budget: Editatu
         edit_groups: Sail taldeak editatu
         edit_budget: Aurrekontua editatu
       create:
@@ -82,7 +79,6 @@ eu:
         title: Partaidetzazko aurrekontuak editatu
         delete: Aurrekontua ezabatu
         phase: Fasea
-        dates: Datak
         enabled: Gaituta
         actions: Ekintzak
         edit_phase: Editatu fasea
@@ -101,7 +97,6 @@ eu:
       name: "Izena"
     budget_phases:
       edit:
-        summary_help_text: Testu honek erabiltzailea faseari buruz informatuko du. Erakuzteko, nahiz eta aktibatuta ez egon, beheko aukera markatu.
         description_help_text: Testu hau goiburuan agertuko da fasea aktibatuta dagoenenan.
         enabled_help_text: Fase hau aurrekontu faseen egutegian publikoa izango da eta beste asmo batzuentzako aktibatuta egongo da.
         save_changes: Aldaketak gorde
@@ -211,8 +206,6 @@ eu:
         table_name: Izena
         table_description: Deskribapena
         table_actions: Ekintzak
-        delete: Ezabatu
-        edit: Editatu
       edit:
         title: Proiektu egoera editatu
       update:
@@ -275,7 +268,6 @@ eu:
           additional_info_placeholder: Interesgarria izan daitekeen edozein informazio gehitu ezazu
         index:
           create: Prosezu berria
-          delete: Ezabatu
           title: Partaidetzazko legegintza prosezuak
           filters:
             all: Guztiak
@@ -378,12 +370,9 @@ eu:
     managers:
       index:
         title: Kudeatzaileak
-        name: Izena
-        email: E-mail
         no_managers: Ez dago kudeatzailerik.
       manager:
         add: Kudeatzaile gisa gehitu
-        delete: Ezabatu
       search:
         title: "Kudeatzaileak: Erabiltzaileak bilatu"
     menu:
@@ -429,24 +418,18 @@ eu:
     administrators:
       index:
         title: Administratzaileak
-        name: Izena
-        email: E-mail
         no_administrators: Ez dago administratzailerik.
       administrator:
         add: Administratzaile gisa gehitu
-        delete: Ezabatu
         restricted_removal: "Barkatu, baina zu (zuri) ezin zara listatik ezabatu"
       search:
         title: "Administratzaileak: Erabiltzaileak bilatu"
     moderators:
       index:
         title: Moderatzaileak
-        name: Izena
-        email: E-mail
         no_moderators: Ez dago moderatzailerik.
       moderator:
         add: Moderatzaile gisa gehitu
-        delete: Ezabatu
       search:
         title: "Moderatzaileak: Erabiltzaileak bilatu"
     segment_recipient:
@@ -472,8 +455,6 @@ eu:
         sent: Bidalita
         actions: Ekintzak
         draft: Zirriborroa
-        edit: Editatu
-        delete: Ezabatu
         preview: Aurreikusi
         empty_newsletters: Ez dago albiste berririk erakusteko.
       new:
@@ -510,7 +491,6 @@ eu:
         no_group: "Talde gabe"
       valuator:
         add: Ebaluatzaile gisa gehitu
-        delete: Ezabatu
       search:
         title: "Ebaluatzaileak: Erabiltzaileak bilatu"
       form:
@@ -546,7 +526,6 @@ eu:
         entry_name: Mahaiburua
       search:
         email_placeholder: Email bidez erabiltzailea bilatu
-        search: Bilatu
         user_not_found: Ez da erabiltzailerik bilatu
     poll_officer_assignments:
       index:
@@ -783,8 +762,6 @@ eu:
         no_organizations: Ez dago erakunderik.
         reject: Baztertu
         rejected: Baztertuta
-        search: Bilatu
-        search_placeholder: Izena, emaila edo telefonoa
         title: Erakundeak
         verified: Egiaztatuta
         verify: Egiaztatu
@@ -815,21 +792,14 @@ eu:
           form:
             submit: Eguneratu
     shared:
-      booths_search:
-        button: Bilatu
-        placeholder: Bilatu hautetsontzia izenagaitik
-      poll_officers_search:
-        button: Bilatu
-        placeholder: Mahaiburuak bilatu
-      poll_questions_search:
-        button: Bilatu
-        placeholder: Galderak bilatu
-      proposal_search:
-        button: Bilatu
-        placeholder: Proposamenak izenburua, kodea, deskribapena edo galderagaitik bilatu
-      user_search:
-        button: Bilatu
-        placeholder: Erabiltzailea izena edo emailagaitik bilatu
+      search:
+        label:
+          booths: "Bilatu hautetsontzia izenagaitik"
+          organizations: "Izena, emaila edo telefonoa"
+          poll_officers: "Mahaiburuak bilatu"
+          poll_questions: "Galderak bilatu"
+          proposals: "Proposamenak izenburua, kodea, deskribapena edo galderagaitik bilatu"
+          users: "Erabiltzailea izena edo emailagaitik bilatu"
       search_results: "Bilaketaren emaitzak"
       no_search_results: "Ez da emaitzik bilatu."
       actions: Ekintzak
@@ -842,8 +812,6 @@ eu:
       index:
         title: Auzoak
         create: Auzo bat sortu
-        edit: Editatu
-        delete: Ezabatu
       geozone:
         name: Izena
         external_code: Kanpo kodea
@@ -947,7 +915,6 @@ eu:
         no_users: Ez dago erabiltzailerik.
       search:
         placeholder: Erabiltzailea emaila, izena edo NANagaitik bilatu
-        search: Bilatu
     verifications:
       index:
         phone_not_given: Ez du telefonoa eman
@@ -1020,11 +987,6 @@ eu:
       cards_title: Txartelak
       create_card: Txartela sortu
       no_cards: Ez dago txartelik.
-      cards:
-        title: Izenburua
-        description: Deskribapena
-        link_text: Lotura testua
-        link_url: Lotura URLa
       feeds:
         proposals: Proposamenak
         debates: Eztabaidak

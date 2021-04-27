@@ -118,3 +118,16 @@ tr:
         tags_label: "Kategoriler"
       not_verified: "Önerileri oylamak için %{verify_account}."
       process_title: Katılımcı mevzuat süreci
+    summary:
+      title: "Özet"
+      votes:
+        zero: "%{count} oy"
+      proposals:
+        zero: "Öneri yok"
+      comments:
+        zero: "Yorum yok"
+      download: "Özeti İndir"
+      top_comments:
+        zero: "Yorum yok"
+      most_voted_comments: "En çok oylanan yorumlar"
+      no_allegation: "Hiç yorum yok"

@@ -29,6 +29,9 @@ tr:
     close: Kapalı
     menu: Menü
   comments:
+    actions:
+      confirm_delete: "Emin misiniz? Bu eylem yorumu silecektir ve geri alınamaz."
+      delete: "Yorumu sil"
     comments_closed: Yorumlar kapalı
     verified_only: Katılmak için %{verify_account}
     comment:
@@ -169,6 +172,9 @@ tr:
     budget/investment: Yatırım
     budget/group: Bütçe Grubu
     budget/heading: Bütçe Başlığı
+    legislation/draft_version: taslak
+    legislation/process: süreç
+    legislation/question: soru
     poll/shift: Değiştir
     poll/question/answer: Cevap
     user: Hesap
@@ -177,6 +183,9 @@ tr:
     document: Belge
     topic: Konu
     image: Resim
+    site_customization/content_block: içerik bloğu
+    site_customization/page: sayfa
+    sdg/local_target: yerel hedef
   geozones:
     none: Tüm şehir
   layouts:
@@ -220,7 +229,6 @@ tr:
       collaborative_legislation: Katılımcı mevzuat
       debates: Tartışmalar
       locale: "Dil:"
-      logo: CONSUL logosu
       management: Yönetim
       moderation: Moderasyon
       valuation: Değerlendirme
@@ -234,15 +242,16 @@ tr:
       budgets: Katılımcı bütçeleme
       notification_item:
         new_notifications:
+          zero: "Yeni bildiriminiz yok"
           one: Bir yeni bildiriminiz var
           other: '%{count} yeni bildirimleriniz var'
         notifications: Bildirimler
-        no_notifications: "Yeni bildiriminiz yok"
+      sdg: "Sürdürülebilir Gelişim Hedefleri"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
       mark_all_as_read: Tümünü okundu olarak işaretle
-      read: Oku
+      read: Okunmuş
       title: Bildirimler
       unread: Okunmamış
     notification:
@@ -275,10 +284,17 @@ tr:
       sign_in: Google ile oturum aç
       sign_up: Google ile kaydol
       name: Google
+    wordpress_oauth2:
+      sign_in: Wordpress ile oturum aç
+      sign_up: Wordpress ile kayıt ol
+      name: Wordpress
     twitter:
       sign_in: Twitter ile oturum aç
       sign_up: Twitter ile kaydol
       name: Twitter
+    info:
+      sign_in: "Bununla oturum aç:"
+      sign_up: "Bununla kaydol:"
     or_fill: "Veya aşağıdaki formu doldur:"
   proposals:
     create:
@@ -443,6 +459,7 @@ tr:
       poster: Görsel
       recommended_actions: Önerilen eylemler
       messages: Kullanıcılara mesajlar
+      related_content: İlgili içerik
     form:
       request: Talep
     create_request:
@@ -566,7 +583,7 @@ tr:
         support_button: Bu öneriyi destekle
         share_in: Paylaş
         hi: "Merhaba!"
-        introduction: Kıbrıs'taki günlük yaşamı önemli derecede iyileştirebilmeyi hedefleyen bir platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi teklifimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin, çünkü çok basit.
+        introduction: Hangi şehri istediğimize karar verebileceğimiz platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi vatandaş önerimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin çünkü bu çok basit.
         support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz butonu tıklamanız yeterlidir ve bunu yapmadan önce öneriyle ilgili bilgi edinebilirsiniz. Yalnızca, en fazla desteği alan öneri uygulanacak ve bunu başarmama yardım edeceğinizden eminim!"
         share: "Ve eğer bana iyilik yaparak teklifimi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, mükemmel olacak!"
   polls:
@@ -661,7 +678,10 @@ tr:
       from: "Kaynak"
       general: "Metin ile"
       general_placeholder: "Metni yaz"
+      goal: "SKH'ye göre"
+      goal_blank: "Hedef seç"
       search: "Filtre"
+      target_blank: "Hedef seç"
       title: "Gelişmiş arama"
       to: "Şuna"
     author_info:
@@ -676,6 +696,10 @@ tr:
     follow: "Takip et"
     following: "Takip ediliyor"
     follow_entity: "Takip et %{entity}"
+    followable:
+      proposal:
+        create:
+          notice: "Vatandaş önerisini takip etmeye başladınız.! <br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
     print:
       print_button: Bu bilgiyi yazdır
     search: Ara
@@ -727,11 +751,14 @@ tr:
       select_language_prompt: Dil seç
       remove_language: Dili kaldır
       add_language: Dil ekle
+      languages_in_use:
+        zero: "0 dil kullanımda"
+        one: "1 dil kullanımda"
+        other: "%{count} dil kullanımda"
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
     youtube: "YouTube %{org}"
-    whatsapp: WhatsApp
     telegram: "Telegram %{org}"
     instagram: "Instagram %{org}"
   stats:
@@ -751,6 +778,7 @@ tr:
     manage:
       all: "%{subject} 'de %{action} eylemini gerçekleştirme izniniz yok."
   users:
+    signin: "Oturum Aç"
     direct_messages:
       new:
         direct_messages_bloqued: "Bu kullanıcı doğrudan mesaj almamaya karar verdi"
@@ -799,10 +827,10 @@ tr:
       actions: Eylemler
       retired_help_text: Geri çekilen öneriler için gösterge panosu mevcut değil
   votes:
-    agree: Kabul ediyorum
+    agree: Katılıyorum
     anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
     comment_unauthenticated: Oy kullanmak için %{signin} veya %{signup} yapmalısınız.
-    disagree: Kabul etmiyorum
+    disagree: Katılmıyorum
     organizations: Organizasyonların oy kullanmalarına izin verilmez
     supports: Destekler
     verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
@@ -821,9 +849,14 @@ tr:
         debates: "En aktif tartışmalar"
         proposals: "En aktif öneriler"
         processes: "Açık işlemler"
-      see_all_debates: Tüm tartışmaları göster
-      see_all_proposals: Tüm önerileri göster
-      see_all_processes: Tüm işlemleri göster
+      see_all:
+        debates: Tüm tartışmaları göster
+        proposals: Tüm önerileri göster
+        processes: Tüm işlemleri göster
+      no_items:
+        debates: Şu anda bir tartışma bulunmamaktadır
+        proposals: Şu anda bir tasarı bulunmamaktadır
+        processes: Şu anda işleyen bir süreç bulunmamaktadır
       process_label: İşlem
       see_process: İşlemi gör
     cards:

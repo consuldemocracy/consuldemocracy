@@ -190,6 +190,7 @@ pt-BR:
     local_census_records/import: Importações de registros do censo local
     site_customization/content_block: bloco de conteúdo
     site_customization/page: página
+    sdg/local_target: destino local
   geozones:
     none: Toda a cidade
   layouts:
@@ -233,7 +234,6 @@ pt-BR:
       collaborative_legislation: Processos legislativos
       debates: Debates
       locale: "Idioma:"
-      logo: Consul logotipo
       management: Gestão
       moderation: Moderação
       valuation: Avaliação
@@ -247,10 +247,11 @@ pt-BR:
       budgets: Orçamento participativo
       notification_item:
         new_notifications:
+          zero: "Vocie nnao possui novas notificações"
           one: Você tem uma nova notificação
           other: Você tem %{count} novas notificações
         notifications: Notificações
-        no_notifications: "Vocie nnao possui novas notificações"
+      sdg: "ODS (SDG)"
   notifications:
     index:
       empty_notifications: Você não possui novas notificações
@@ -692,7 +693,11 @@ pt-BR:
       from: "De"
       general: "Com o texto"
       general_placeholder: "Escrever o texto"
+      goal: "Por ODS (SDG)"
+      goal_blank: "Selecione um objetivo"
       search: "Filtro"
+      target: "Por meta"
+      target_blank: "Selecione uma meta"
       title: "Busca avançada"
       to: "Para"
     author_info:
@@ -778,7 +783,6 @@ pt-BR:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -873,9 +877,14 @@ pt-BR:
         debates: "Discussões com maior atividade"
         proposals: "Propostas com maior atividade"
         processes: "Processos abertos"
-      see_all_debates: Ver todas as discuções
-      see_all_proposals: Ver todas as propostas
-      see_all_processes: Ver todos os processos
+      see_all:
+        debates: Ver todas as discuções
+        proposals: Ver todas as propostas
+        processes: Ver todos os processos
+      no_items:
+        debates: Não há debates neste momento
+        proposals: Não há propostas neste momento
+        processes: Não há processos abertos neste momento
       process_label: Processo
       see_process: Ver processo
     cards:
@@ -962,3 +971,8 @@ pt-BR:
     create:
       enqueue_remote_translation: As traduções foram solicitadas corretamente.
     button: Traduzir página
+  tags:
+    filter:
+      more:
+        one: "Mais uma tag"
+        other: "Mais %{count} tags"

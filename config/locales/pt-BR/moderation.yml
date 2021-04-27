@@ -111,7 +111,6 @@ pt-BR:
       index:
         hidden: Bloqueados
         hide: Bloquear
-        search: Buscar
         search_placeholder: e-mail ou nome de usuário
         title: Bloquear usuários
       notice_hide: Usuário bloqueado. Todos os debates e comentários do usuário foram ocultados.

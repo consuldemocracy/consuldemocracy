@@ -2,7 +2,7 @@ bg:
   account:
     show:
       change_credentials_link: Промяна на моите идентификационни данни
-      erase_account_link: Изтриване на акаунта ми
+      erase_account_link: Изтриване на профила ми
       finish_verification: Пълна проверка
       notifications: Известия
       organization_name_label: Име на организация
@@ -13,18 +13,18 @@ bg:
       public_interests_user_title_list: Тагове на елементи, които този потребител следва
       save_changes_submit: Запазване на промени
       recommendations: Препоръки
-      title: Моят акаунт
-      user_permission_debates: Участвайте в дебати
-      user_permission_info: С вашия акаунт можете да...
+      title: Моят профил
+      user_permission_debates: Участвайте в дискусии
+      user_permission_info: С Вашият профил можете да...
       user_permission_proposal: Създавате нови предложения
       user_permission_support_proposal: Подкрепяте предложения
       user_permission_title: Участие
-      user_permission_verify: За да извършите всички действия, потвърдете акаунта си.
+      user_permission_verify: За да извършите всички действия, потвърдете профила си.
       user_permission_verify_info: "* Само за потребители на преброяване."
       user_permission_votes: Участвате в окончателното гласуване
       username_label: Потребителско име
       verified_account: Профилът е потвърден
-      verify_my_account: Потвърдете акаунта ми
+      verify_my_account: Потвърдете профила ми
   application:
     close: Затваряне
     menu: Меню
@@ -103,31 +103,31 @@ bg:
         relevance: приложимост
         recommendations: препоръки
       recommendations:
-        without_results: Няма дебати, свързани с вашите интереси
+        without_results: Няма дискусии, свързани с Вашите интереси
         without_interests: Следвайте предложенията, за да можем да ви дадем препоръки
-        disable: "Препоръките за дебати ще спрат да се показват, ако ги отхвърлите. Можете да ги активирате отново на страницата „Моят акаунт“"
+        disable: "Препоръките за дебати ще спрат да се показват, ако ги отхвърлите. Можете да ги активирате отново на страницата 'Моят акаунт'"
         actions:
-          success: "Препоръките за дебати вече са деактивирани за този акаунт"
-          error: "Появи се грешка. Моля, отидете на страницата „Моят акаунт“, за да деактивирате ръчно препоръките за дебати"
+          success: "Препоръките за дискусии вече са деактивирани за този профил"
+          error: "Появи се грешка. Моля, отидете на страницата 'Моят профил', за да деактивирате ръчно препоръките за дискусии"
       search_form:
         button: Търсете
-        placeholder: Търсете дебати...
+        placeholder: Търсете дискусии...
         title: Търсете
       search_results:
         one: " съдържащи термина <strong>'%{search_term}'</strong>"
         other: " съдържащи термина <strong>'%{search_term}'</strong>"
       select_order: Подредени по
       start_debate: Започнете дебат
-      title: Дебати
+      title: Дискусии
       section_header:
-        icon_alt: Икона за дебати
-        title: Дебати
-        help: Помощ за дебати
+        icon_alt: Икона за дискусии
+        title: Дискусии
+        help: Помощ за дискусии
       section_footer:
-        title: Помощ за дебати
+        title: Помощ за дискусии
         description: Започнете дебат, за да споделите мнения с другите относно темите, които ви вълнуват.
-        help_text_1: "Пространството за граждански дебати е насочено към всеки, който може да изложи въпроси, които го вълнуват, както и към всеки, които иска да сподели мнение с други хора."
-        help_text_2: 'За да отворите дебат, трябва да се регистрирате на %{org}. Потребителите могат също да коментират открити дебати и да ги оценят с бутоните „Съгласен съм“ или „Не съм съгласен“, намиращи се във всеки от тях.'
+        help_text_1: "Пространството за граждански дискусии е насочено към всеки, който може да изложи въпроси, които го вълнуват, както и към всеки, които иска да сподели мнение с други хора."
+        help_text_2: 'За да започнете дискусия, трябва да се регистрирате на %{org}. Потребителите могат също да коментират открити дискусии и да ги оценят с бутоните „Съгласен съм“ или „Не съм съгласен“, намиращи се във всеки от тях.'
     new:
       form:
         submit_button: Започнете дебат
@@ -137,7 +137,7 @@ bg:
       recommendation_four: Насладете се на това пространство и на гласовете, които го изпълват. То принадлежи и на вас.
       recommendation_one: Не използвайте главни букви за заглавието на дебата или за цели изречения. В Интернет това се счита за викане. А никой не обича да му се вика.
       recommendation_three: Безмилостната критика е много добре дошла. Това е пространство за размисъл и обратна връзка. Но препоръчваме да се придържате към елегантност и интелигентност. Светът е по-добро място с тези добродетели.
-      recommendation_two: Всички дебати или коментари, предполагащи незаконни действия, ще бъдат заличени, както и онези, които възнамеряват да саботират пространствата за дебати. Всичко друго е позволено.
+      recommendation_two: Всички дискусии или коментари, предполагащи незаконни действия, ще бъдат заличени, както и онези, които възнамеряват да саботират пространствата за дискусии. Всичко друго е позволено.
       recommendations_title: Препоръки за създаване на дебат
       start_new: Започнете дебат
     show:
@@ -190,10 +190,13 @@ bg:
     local_census_records/import: Въвеждане на запис на местното преброяване
     site_customization/content_block: блок на съдържание
     site_customization/page: страница
+    sdg/local_target: локална цел
   geozones:
     none: Целият град
   layouts:
     application:
+      chrome: Google Chrome
+      firefox: Firefox
       ie: Установихме, че търсите с Internet Explorer. За подобряване на опита, препоръчваме да използвате %{firefox} или %{chrome}.
       ie_title: Този уеб сайт не е оптимизиран за вашия браузър
     dashboard:
@@ -215,9 +218,12 @@ bg:
       accessibility: Достъпност
       conditions: Условия за ползване
       consul: приложението CONSUL
+      consul_url: https://github.com/consul/consul
       contact_us: За посещение на техническа помощ
+      copyright: CONSUL, %{year}
       description: Този портал използва %{consul}, който е %{open_source}.
       open_source: софтуер с отворен код
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Решете как да оформите града, в който искате да живеете.
       participation_title: Участие
       privacy: Политика за поверителност
@@ -226,15 +232,14 @@ bg:
       administration: Администрация
       available_locales: Налични езици
       collaborative_legislation: Съвместно законодателство
-      debates: Дебати
+      debates: Дискусии
       locale: "Език:"
-      logo: CONSUL лого
-      management: Ръководство
+      management: Управление
       moderation: Модерация
       valuation: Оценка
       officing: Анкетни служители
       help: Помощ
-      my_account_link: Моят акаунт
+      my_account_link: Моят профил
       my_activity_link: Моето съдържание
       open_gov: Отворено управление
       proposals: Предложения
@@ -242,10 +247,11 @@ bg:
       budgets: Бюджетиране с участие
       notification_item:
         new_notifications:
+          zero: "Нямате нови известия"
           one: Имате ново известие
           other: Имате %{count} нови известия
         notifications: Известия
-        no_notifications: "Нямате нови известия"
+      sdg: "Цели за устойчиво развитие (ЦУР)"
   notifications:
     index:
       empty_notifications: Нямате нови известия.
@@ -275,18 +281,22 @@ bg:
     facebook:
       sign_in: Влезте с Facebook
       sign_up: Регистрирайте се с Facebook
+      name: Facebook
     finish_signup:
       title: "Допълнителни детайли"
       username_warning: "Поради промяна в начина, по който взаимодействаме със социалните мрежи, е възможно вашето потребителско име сега да изглежда като „вече използвано“. Ако случаят е такъв, моля, изберете друго потребителско име."
     google_oauth2:
       sign_in: Влезте с Google
       sign_up: Влезте с Google
+      name: Google
     wordpress_oauth2:
       sign_in: Влезте с Wordpress
       sign_up: Регистрирайте се с Wordpress
+      name: Wordpress
     twitter:
       sign_in: Влезте с Twitter
       sign_up: Регистрирайте се с Twitter
+      name: Twitter
     info:
       sign_in: "Влезте с:"
       sign_up: "Регистрирайте се с:"
@@ -348,10 +358,10 @@ bg:
       recommendations:
         without_results: Няма предложения, свързани с вашите интереси
         without_interests: Следвайте предложенията, за да можем да ви дадем препоръки
-        disable: "Препоръките за предложения ще спрат да се показват, ако ги отхвърлите. Можете да ги активирате отново на страницата „Моят акаунт“"
+        disable: "Препоръките за предложения ще спрат да се показват, ако ги отхвърлите. Можете да ги активирате отново на страницата 'Моят профил'"
         actions:
-          success: "Препоръките за предложения вече са деактивирани за този акаунт"
-          error: "Възникна грешка. Моля, отидете на страницата „Моят акаунт“, за да деактивирате ръчно препоръките за предложения"
+          success: "Препоръките за предложения вече са деактивирани за този профил"
+          error: "Възникна грешка. Моля, отидете на страницата 'Моят профил', за да деактивирате ръчно препоръките за предложения"
       retired_proposals: Оттеглени предложения
       retired_proposals_link: "Предложения, оттеглени от автора"
       selected_proposals: Избрани предложения
@@ -419,6 +429,7 @@ bg:
         one: 1 глас
         other: "%{count} гласа"
       supports_necessary: "%{number} гласове за подкрепа нужни"
+      total_percent: 100%
       archived: "Това предложение е архивирано и не може да събира подкрепа."
       successful: "Това предложение достигна необходимата подкрепа."
       selected: "Избрано предложение"
@@ -516,7 +527,7 @@ bg:
       access_community: Достъп до общността
       latest_activity: "Последна активност на общността: %{at}"
       participants: Участници
-      debates: Дебати
+      debates: Дискусии
       comments: Коментари
       latest_comments: Последни съобщения
     messages:
@@ -605,7 +616,7 @@ bg:
       geozone_info: "Могат да участват хора в преброяването на: "
       already_answer: "Вече сте участвали в тази анкета"
       not_logged_in: "Трябва да влезете или да се регистрирате, за да участвате"
-      unverified: "Трябва да потвърдите акаунта си, за да участвате"
+      unverified: "Трябва да потвърдите профила си, за да участвате"
       cant_answer: "Тази анкета не е налична във вашата геозона"
       section_header:
         icon_alt: Икона за гласуване
@@ -622,7 +633,7 @@ bg:
       cant_answer_not_logged_in: "Вие трябва да %{signin} или %{signup}, за да участвате."
       comments_tab: Коментари
       cant_answer_verify: "Вие трябва да %{verify_link}, за да отговорите."
-      verify_link: "потвърдете акаунта си"
+      verify_link: "потвърдете профила си"
       cant_answer_expired: "Тази анкета приключи."
       cant_answer_wrong_geozone: "Този въпрос не е наличен във вашата геозона."
       more_info_title: "Повече информация"
@@ -682,7 +693,11 @@ bg:
       from: "От"
       general: "С текста"
       general_placeholder: "Напишете текста"
+      goal: "Според Целите за устойчиво развитие (ЦУР)"
+      goal_blank: "Изберете цел"
       search: "Филтър"
+      target: "По цел"
+      target_blank: "Изберете цел"
       title: "Подробно търсене"
       to: "До"
     author_info:
@@ -715,9 +730,9 @@ bg:
     suggest:
       debate:
         found:
-          one: "Има дебат с термина '%{query}', можете да участвате в него, вместо да отваряте нов."
-          other: "Има дебати с термина '%{query}', можете да участвате в тях, вместо да отваряте нов."
-        message: "Виждате %{limit} от %{count} дебати, съдържащи термина '%{query}'"
+          one: "Има дискусия с термина '%{query}', можете да участвате в него, вместо да отваряте нов."
+          other: "Има дискусии с термина '%{query}', можете да участвате в тях, вместо да отваряте нова."
+        message: "Виждате %{limit} от %{count} дискусии, съдържащи термина '%{query}'"
         see_all: "Вижте всички"
       budget_investment:
         found:
@@ -764,14 +779,20 @@ bg:
         zero: "0 езика в употреба"
         one: "1 език в употреба"
         other: "%{count} езика в употреба"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   stats:
     index:
       visits: Посещения
-      debates: Дебати
+      debates: Дискусии
       proposals: Предложения
       comments: Коментари
       proposal_votes: Гласове за предложения
-      debate_votes: Гласове за дебати
+      debate_votes: Гласове за дискусии
       comment_votes: Гласове за коментари
       votes: Общо гласове
       verified_users: Проверени потребители
@@ -785,7 +806,7 @@ bg:
     login_to_continue: "Вие трябва да %{signin} или да %{signup}, за да продължите."
     signin: "впишете се"
     signup: "регистрирайте се"
-    verify_account: "потвърдете акаунта си"
+    verify_account: "потвърдете профила си"
     direct_messages:
       new:
         direct_messages_bloqued: "Този потребител е решил да не получава директни съобщения"
@@ -801,7 +822,7 @@ bg:
       deleted_budget_investment: Този инвестиционен проект беше изтрит
       proposals: Предложения
       proposals_status: Статус
-      debates: Дебати
+      debates: Дискусии
       budget_investments: Бюджетни инвестиции
       comments: Коментари
       actions: Действия
@@ -853,22 +874,27 @@ bg:
   welcome:
     feed:
       most_active:
-        debates: "Най-активни дебати"
+        debates: "Най-активни дискусии"
         proposals: "Най-активни предложения"
         processes: "Отворени процеси"
-      see_all_debates: Вижте всички дебати
-      see_all_proposals: Вижте всички предложения
-      see_all_processes: Вижте всички процеси
+      see_all:
+        debates: Вижте всички дискусии
+        proposals: Вижте всички предложения
+        processes: Вижте всички процеси
+      no_items:
+        debates: Няма дискусии сега
+        proposals: Нама предложения сега
+        processes: Няма отворени процеси сега
       process_label: Процес
       see_process: Вижте процес
     cards:
       title: Представено
     recommended:
       title: Препоръки, които могат да ви заинтересуват
-      help: "Тези препоръки се генерират от таговете на дебатите и предложенията, които следвате."
+      help: "Тези препоръки се генерират от таговете на дискусиите и предложенията, които следвате."
       debates:
-        title: Препоръчани дебати
-        btn_text_link: Всички препоръчани дебати
+        title: Препоръчани дискусии
+        btn_text_link: Всички препоръчани дискусии
       proposals:
         title: Препоръчани предложения
         btn_text_link: Всички препоръчани предложения
@@ -876,21 +902,21 @@ bg:
         title: Препоръчани инвестиции
       slide: "Вижте %{title}"
     verification:
-      i_dont_have_an_account: Нямам акаунт
-      i_have_an_account: Вече имам акаунт
-      question: Имате ли вече акаунт в %{org_name}?
-      title: Потвърждаване на акаунта
+      i_dont_have_an_account: Нямам профил
+      i_have_an_account: Вече имам профил
+      question: Имате ли вече профил в %{org_name}?
+      title: Потвърждаване на профила
     welcome:
       go_to_index: Не сега, отидете на страницата с индекси
       start_using_consul: Отидете на страницата с индекси
       title: Участвайте
-      user_permission_debates: Участвайте в дебати
-      user_permission_info: С акаунта си можете да...
+      user_permission_debates: Участвайте в дискусии
+      user_permission_info: С профила си можете да...
       user_permission_proposal: Създавате нови предложения
       user_permission_support_proposal: Подкрепяте предложения*
-      user_permission_verify: "За да извършите следните действия, потвърдете акаунта си."
+      user_permission_verify: "За да извършите следните действия, потвърдете профила си."
       user_permission_verify_info: "* Само за потребители на преброяване."
-      user_permission_verify_my_account: Потвърдете акаунта ми
+      user_permission_verify_my_account: Потвърдете профила ми
       user_permission_votes: Участвайте в окончателното гласуване
   invisible_captcha:
     sentence_for_humans: "Ако сте човек, игнорирайте това поле"
@@ -899,6 +925,7 @@ bg:
     title: "Свързано съдържание"
     add: "Добавете свързано съдържание"
     label: "Връзка към свързано съдържание"
+    placeholder: "%{url}"
     help: "Можете да добавите връзки на %{models} в%{org}."
     submit: "Добавете"
     error: "Връзката не е валидна. Не забравяйте да започнете с %{url}."
@@ -944,3 +971,8 @@ bg:
     create:
       enqueue_remote_translation: Преводите са заявени правилно.
     button: Превод на страница
+  tags:
+    filter:
+      more:
+        one: "Още един таг"
+        other: "%{count} повече тагове"
