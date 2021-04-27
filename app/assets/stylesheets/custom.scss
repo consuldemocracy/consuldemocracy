@@ -10,13 +10,20 @@
   margin-left: 37%;
   .contact-button {
     width: 200px;
+    height: 50px;
     font-size: 24px;
     color: #585858;
     background-color: white;
     cursor: pointer;
     border-radius: 50px;
     > a {
+      position: relative;
+      top: 10px;
       color: #585858;
+    }
+    > i {
+      position: relative;
+      top: 10px;
     }
   }
 }
@@ -134,7 +141,9 @@
   .span-center {
     margin-top: 30px;
     display: block;
-    margin-left: 13%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     .contact-button {
       width: 150px;
       font-size: 18px;

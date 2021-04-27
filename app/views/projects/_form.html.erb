@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.text_field :title %>
+    <%= form.text_field :title, :title => "Título" %>
   </div>
   
   <%# ---------- Páginas ---------- %>
@@ -133,6 +133,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Actualizar proyecto" %>
   </div>
 <% end %>

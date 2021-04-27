@@ -15,7 +15,7 @@
   <% if show == true %>
     <div class="small-12 medium-9 medium-centered column">
         <p>
-          <strong>Title:</strong>
+          <strong>Título:</strong>
           <%= @project.title %>
         </p>
 
@@ -57,8 +57,8 @@
         <% end %>
 
 
-        <%= link_to 'Edit', edit_project_path(@project) %> |
-        <%= link_to 'Back', projects_path %>
+        <%= link_to 'Editar', edit_project_path(@project) %> |
+        <%= link_to 'Volver', projects_path %>
     </div>
   <% else %>
     <p class="text-center"><%= t("not_authorized.title") %></p>
