@@ -34,6 +34,7 @@ tr:
         info: Burada, kullanıcıları sol menüde listelenen tüm eylemlere göre yönetebilirsiniz.
     document_verifications:
       already_verified: Bu kullanıcı hesabı zaten doğrulandı.
+      has_no_account: Hesap oluşturmak için, %{link}'a gidin ve ekranın sol üstünde yer alan <b> "Kaydol"</b> seçeneğine tıklayın.
       link: CONSUL
       in_census_has_following_permissions: "Bu kullanıcı aşağıda belirtilen koşullarda Pusula'ya katılabilir:"
       not_in_census: Bu belge kayıtlı değil.
