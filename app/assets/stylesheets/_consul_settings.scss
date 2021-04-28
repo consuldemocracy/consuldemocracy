@@ -108,11 +108,7 @@ $white: #fdfdfd;
 
 $body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important;
 
-$header-font-family: $body-font-family;
-
 $global-radius: rem-calc(3);
-
-$button-radius: $global-radius;
 
 $header-styles: (
   small: (
@@ -144,8 +140,6 @@ $tab-item-padding: $line-height / 2  0;
 $tab-content-border: $border;
 
 $orbit-bullet-diameter: 0.8rem;
-
-$pagination-radius: $global-radius;
 
 $show-header-for-stacked: true;
 
