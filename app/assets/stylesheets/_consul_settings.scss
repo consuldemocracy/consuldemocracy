@@ -15,6 +15,8 @@ $base-line:           rem-calc(26);
 $line-height:         rem-calc(24);
 $tiny-font-size:      rem-calc(12);
 
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+
 $brand:             #004a83;
 $brand-secondary:   darken($brand, 10%);
 $dark:              $brand-secondary;
@@ -111,8 +113,6 @@ $header-font-family: $body-font-family;
 $global-radius: rem-calc(3);
 
 $button-radius: $global-radius;
-
-$font-family-serif: Georgia, "Times New Roman", Times, serif;
 
 $header-styles: (
   small: (
