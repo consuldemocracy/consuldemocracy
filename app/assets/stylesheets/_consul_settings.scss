@@ -139,9 +139,6 @@ $abbr-underline: none;
 
 $tab-background-active: $white;
 
-$accordion-item-color: foreground($accordion-background, $text);
-$accordion-content-color: foreground($accordion-background, $text);
-
 $tab-item-font-size: $base-font-size;
 $tab-item-padding: $line-height / 2  0;
 $tab-content-border: $border;
