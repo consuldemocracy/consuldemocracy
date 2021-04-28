@@ -1,0 +1,16 @@
+<h1>¿Quieres más información?</h1>
+<h3>Déjanos tus datos y te llamamos</h3>
+<br/>
+<% my_time = Time.now %>
+<%= form_tag contact_path,method: :post do %>
+      <%= label_tag :name,"Nombre" %><br/>
+      <%= text_field_tag :name %> <br/>
+      <%= label_tag :phone, "Teléfono" %> <br/>
+      <%= number_field_tag :phone %> <br/>
+      <%= label_tag :country, "País" %><br/>
+      <%= country_select("contact_mailer", "country", selected: "ES") %> <br/><br/>
+      <%= label_tag "Preferencia horaria" %> <br/>
+      <%= select_time(my_time, start_hour: 2, end_hour: 14) %> <br/>
+      <%= submit_tag "Enviar", class: "float-center success button" %>
+<% end %>
+<br/>

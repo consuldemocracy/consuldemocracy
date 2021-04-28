@@ -111,6 +111,7 @@ group :development do
   gem "scss_lint", "~> 0.59.0", require: false
   gem "web-console", "~> 3.7.0"
   gem "letter_opener"
+  gem 'country_select', '~> 4.0'
 end
 
 eval_gemfile "./Gemfile_custom"

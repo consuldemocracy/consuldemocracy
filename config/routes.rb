@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'phone_contact/index'
   get 'users/edit'
   resources :projects
   get 'send/index'
@@ -38,6 +39,8 @@ Rails.application.routes.draw do
   get "/consul.json", to: "installation#details"
   get "send" => "send#index"
   post "send" => "send#create"
+  get "contact" => "phone_contact#index"
+  post "contact" => "phone_contact#create"
 
   resources :stats, only: [:index]
   resources :images, only: [:destroy]

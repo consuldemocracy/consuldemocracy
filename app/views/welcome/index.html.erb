@@ -43,6 +43,7 @@
 
 <script>
 //CAROUSEL
+window.onload = function() {
     console.log("DOM fully loaded and parsed");
     const carousel = document.querySelector('.carousel');
     const carouselImages = document.querySelector('.carousel__images');
@@ -71,4 +72,5 @@
         carouselImages.style.transform = `translateX(${translateX}px)`;
       });
     });
+}
 </script>
