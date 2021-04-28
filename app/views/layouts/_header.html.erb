@@ -1,4 +1,10 @@
 <header>
+  <div class="top-link-custom">
+    <div class="row" style="max-width:100%; display:inline-flex;">
+      <%= render "shared/custom_top_links" %>
+    </div>
+  </div>
+
   <% if display_remote_translation_info?(@remote_translations, I18n.locale) %>
     <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
   <% end %>

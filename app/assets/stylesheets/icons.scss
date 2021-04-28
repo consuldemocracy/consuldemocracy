@@ -18,6 +18,42 @@
   font-weight: bold;
 }
 
+.icon-map::before {
+  content: "\f276";
+  font-size: 16px;
+  color: white;
+}
+
+.icon-call::before {
+  content: "\f2a0";
+  font-size: 16px;
+  color: white;
+}
+
+.icon-phone::before {
+  content: "\f879";
+  font-size: 16px;
+  color: white;
+}
+
+.icon-mail::before {
+  content: "\f0e0";
+  font-size: 16px;
+  color: white;
+}
+
+.icon-phone-black::before {
+  content: "\f879";
+  font-size: 16px;
+  color: black;
+}
+
+.icon-mail-black::before {
+  content: "\f0e0";
+  font-size: 16px;
+  color: black;
+}
+
 .icon-angle-down::before {
   content: "\f107";
 }

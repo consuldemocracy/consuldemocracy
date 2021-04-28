@@ -4,6 +4,43 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+//Footer
+.contact-custom {
+  > p {
+    margin-bottom: 0;
+  }
+}
+
+//Top-links
+.top-link-custom {
+  background-color: #585858;
+  position: relative;
+  height: 45px;
+}
+.social-network {
+  position: absolute;
+  top: 5px;
+  right: 2rem;
+  > li > a {
+    color: white;
+    margin-right: 0.5rem;
+  }
+}
+
+.ul-link {
+  position: relative;
+  top: 5px;
+  margin-left: 10px;
+  > li {
+    display: inline-block;
+    margin-left: 1rem;
+    > a {
+      color: white;
+    }
+  }
+}
+//Fin top links
+
 //Carrousel
 .span-center {
   display: block;
@@ -51,15 +88,14 @@
 }
 
 .carousel__button {
-  background: teal;
   border: 0;
   border-radius: 50%;
   color: white;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  height: 3rem;
-  opacity: 0.25;
+  height: 5rem;
+  opacity: 1;
   position: absolute;
   transition: opacity 0.25s;
   width: 3rem;
@@ -77,6 +113,12 @@
 
   &:hover {
     opacity: 0.5;
+  }
+}
+
+@media (min-width: 700px) {
+  .custom-button {
+    margin-right: 25px;
   }
 }
 

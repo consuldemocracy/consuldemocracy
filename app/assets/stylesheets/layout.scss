@@ -923,11 +923,12 @@ footer {
   background: #f1f1f1;
   clear: both;
   margin-top: 0;
-  min-height: $line-height * 20;
+  min-height: auto;
   padding-top: $line-height;
 }
 
 .subfooter {
+  background-color: white;
   border-top: 1px solid $text-light;
   font-size: $small-font-size;
   padding-top: $line-height / 2;
