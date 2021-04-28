@@ -9,8 +9,8 @@
       <%= number_field_tag :phone %> <br/>
       <%= label_tag :country, "País" %><br/>
       <%= country_select("contact_mailer", "country", selected: "ES") %> <br/><br/>
-      <%= label_tag "Preferencia horaria" %> <br/>
-      <%= select_time(my_time, start_hour: 2, end_hour: 14) %> <br/>
+      <%= label_tag "Preferencia horaria (Hora de Londres, Reino Unido)" %> <br/>
+      <%= select_time(my_time, start_hour: 8, end_hour: 16) %> <br/>
       <%= submit_tag "Enviar", class: "float-center success button" %>
 <% end %>
 <br/>
