@@ -139,25 +139,6 @@ a {
   }
 }
 
-.f-dropdown {
-  li a {
-    font-size: $small-font-size;
-
-    &:hover {
-      color: $link-hover;
-    }
-  }
-
-  li:hover,
-  .f-dropdown li:focus {
-    background: #fff;
-  }
-
-  &.open {
-    outline: none;
-  }
-}
-
 .margin {
   margin-bottom: $line-height;
   margin-top: $line-height;
