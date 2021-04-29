@@ -147,10 +147,6 @@ $table-header:   #ecf1f6;
     @include breakpoint(medium) {
       height: auto !important;
     }
-
-    a {
-      color: #000 !important;
-    }
   }
 
   .title-bar {

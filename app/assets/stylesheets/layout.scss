@@ -559,7 +559,7 @@ body > header,
     }
 
     a {
-      color: #fff;
+      color: inherit;
       padding-left: 0;
 
       @include breakpoint(medium) {
@@ -591,6 +591,7 @@ body > header,
 
     &.is-dropdown-submenu {
       background: #fff;
+      color: $text;
       margin: 0;
       margin-top: rem-calc(-12);
       padding: 0;
@@ -601,10 +602,6 @@ body > header,
       display: block;
       height: auto;
       margin-bottom: 0;
-
-      a {
-        color: $text;
-      }
     }
   }
 
@@ -647,7 +644,7 @@ body > header,
   }
 
   &.is-active > a {
-    color: #fff;
+    color: inherit;
   }
 
   &.is-dropdown-submenu-parent > a::after {
@@ -787,7 +784,7 @@ body > header,
   margin-bottom: $line-height / 2;
 
   a {
-    color: $text;
+    color: inherit;
     display: inline-block;
     font-weight: bold;
     margin-right: $line-height / 2;
