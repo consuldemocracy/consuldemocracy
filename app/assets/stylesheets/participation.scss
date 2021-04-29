@@ -149,7 +149,6 @@
   }
 
   .percentage {
-    color: $text;
     font-size: $tiny-font-size;
     position: absolute;
     right: 6px;
@@ -180,7 +179,6 @@
   }
 
   .total-supports {
-    color: $text;
     display: block;
     font-weight: bold;
     text-align: center;
@@ -720,7 +718,6 @@
   .proposal-description,
   .investment-project-description,
   .budget-investment-description {
-    color: $text;
     font-size: rem-calc(13);
     height: rem-calc(72);
     line-height: $line-height;
@@ -741,10 +738,6 @@
     height: rem-calc(24);
     position: absolute;
     width: 100%;
-  }
-
-  p {
-    color: $text;
   }
 }
 
