@@ -537,7 +537,7 @@ body > header,
 }
 
 .top-bar {
-  @extend %brand-background;
+  background-color: inherit;
   padding-bottom: 0;
   padding-top: 0;
 
