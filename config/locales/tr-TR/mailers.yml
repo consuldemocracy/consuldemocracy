@@ -18,6 +18,7 @@ tr:
       title: Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın
     reply:
       hi: Merhaba
+      new_reply_by: Yorumunuza <strong>%{commenter}</strong> kullanıcısı tarafından yeni bir yanıt verildi
       subject: Birisi sizin yorumunuza cevap verdi
       title: Yorumunuza yeni bir cevap geldi
     proposal_notification_digest:
@@ -47,12 +48,14 @@ tr:
       subject: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
       title: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
       intro: "Merhaba <strong>%{author}</strong>,"
+      text: "<strong>%{budget}</strong> Katılımcı Bütçe uygulamasında <strong>%{investment}</strong> yatırımını oluşturduğunuz için teşekkür ederiz."
       follow: "Sürecin ilerleyişi hakkında sizi bilgilendireceğiz, ayrıca siz de gelişmeleri <strong>%{link}</strong> üzerinden takip edebilirsiniz."
       follow_link: "Katılımcı Bütçeler"
       sincerely: "İçtenlikle,"
       share: "Projenizi paylaşın"
     budget_investment_unfeasible:
       hi: "Değerli kullanıcı,"
+      new: "Tüm bunlar için, sizi bu sürecin koşullarına uygun olan <strong>yeni bir yatırım</strong> hazırlamaya davet ediyoruz. Bunun için bağlantıyı takip ediniz: %{url}."
       new_href: "yeni yatırım projesi"
       sincerely: "İçtenlikle"
       sorry: "Verdiğimiz rahatsızlıktan dolayı özür dileriz ve değerli katılımınız için tekrar teşekkür ederiz."
