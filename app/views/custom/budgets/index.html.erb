@@ -21,12 +21,10 @@
           <!-- p>
             <%=  link_to 'Presupuestos Provinciales 2019 (documento descargable)', asset_path('/docs/Folleto_Presupuestos_Participativos_2019.pdf')  %>
           </p -->
-          <a class="button margin-top expanded" href="/budgets/4/investments/new">PRESENTA TU PROPUESTA AQUÍ</a>
-          <p>¿Cómo puedes presentar tu propuesta? Pasos a seguir:</p>
-          <ol><li> Regístrate en la plataforma Participa</li><li> Verifica tu cuenta</li><li> Presenta tu propuesta (un máximo de 3)</li></ol>
-          <p>
+          
+          <!--<p>
             <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
-          </p>
+          </p>-->
         </div>
         <div class="small-12 medium-3 column info padding" data-equalizer-watch>
           <p>
@@ -206,7 +204,13 @@
 $( document ).ready(function() {
 	if($('#budget_heading').length) {	
 	  $('#budget_heading .info .button').html("PRESENTA TU PROPUESTA AQUÍ");
+		var aChild = '<a class="button margin-top expanded" href="/budgets/4/investments/new">PRESENTA TU PROPUESTA AQUÍ</a>';
+		$('.description').append(aChild);
+       $('a[href="#section_help"]').remove();
+	   $('.description').append("<p>¿Cómo puedes presentar tu propuesta? Pasos a seguir:</p>");
+	   $('.description').append("<ol><li> Regístrate en la plataforma Participa</li><li> Verifica tu cuenta</li><li> Presenta tu propuesta (un máximo de 3)</li></ol>");
 	}    
 });
-  
+
+
 </script>
