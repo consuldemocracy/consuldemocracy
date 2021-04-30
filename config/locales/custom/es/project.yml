@@ -6,3 +6,10 @@ es:
       empty: No existen páginas en este proyecto
     show_debate:
       empty: No existen debates en este proyecto
+    show_propuesta:
+      empty: No existen propuestas en este proyecto
+    component:
+      add: "Seleccionar %{item} para añadir al proyecto"
+      delete: "Seleccionar %{item} para eliminar del proyecto"
+      actual_delete: "%{item} actuales en el proyecto"
+      actual_add: "%{item} disponibles para el proyecto"

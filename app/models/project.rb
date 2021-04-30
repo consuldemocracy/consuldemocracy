@@ -15,11 +15,16 @@ class Project < ApplicationRecord
     has_many :user_on_projects
     has_many :users, through: :user_on_projects
 
+    has_many :proposal_on_projects
+    has_many :proposals, through: :proposal_on_projects
+
     attr_accessor :page_elements, :page_ids
 
     attr_accessor :debate_elements, :debate_ids
 
     attr_accessor :user_elements, :user_ids
+
+    attr_accessor :proposal_elements, :proposal_ids #new
 
     attr_accessor :delete_page_elements, :delete_page_ids
 
@@ -27,22 +32,18 @@ class Project < ApplicationRecord
 
     attr_accessor :delete_user_elements, :delete_user_ids
 
+    attr_accessor :delete_proposal_elements, :delete_proposal_ids #new
+
     # after_save :save_pages
 
     def destroy_component
         PageOnProject.where(project_id: self).destroy_all
         DebateOnProject.where(project_id: self).destroy_all
         UserOnProject.where(project_id: self).destroy_all
+        ProposalOnProject.where(project_id: self).destroy_all
     end
 
-    # def save_pages(page_elements)
-    #     if !page_elements.nil?
-    #         page_elements.each do |page_id|
-    #             PageOnProject.find_or_create_by(project_id: self.id, site_customization_page_id: page_id)
-    #         end
-    #     end
-    # end
-    def delete_component(delete_page_elements, delete_debate_elements, delete_user_elements)
+    def delete_component(delete_page_elements, delete_debate_elements, delete_user_elements, delete_proposal_elements)
 
         #Guardamos las páginas
         if !delete_page_elements.nil?
@@ -61,10 +62,14 @@ class Project < ApplicationRecord
             delete_element = UserOnProject.where(project_id:self)
             delete_element.where(user_id: delete_user_elements).destroy_all
         end
-        
+
+        if !delete_proposal_elements.nil?
+            delete_element = ProposalOnProject.where(project_id:self)
+            delete_element.where(proposal_id: delete_proposal_elements).destroy_all
+        end
     end
 
-    def save_component(page_elements, debate_elements, user_elements)
+    def save_component(page_elements, debate_elements, user_elements, proposal_elements)
 
         #Guardamos las páginas
         if !page_elements.nil?
@@ -86,7 +91,12 @@ class Project < ApplicationRecord
                 UserOnProject.find_or_create_by(project_id: self.id, user_id: user_id)
             end
         end
-        
+
+        if !proposal_elements.nil?
+            proposal_elements.each do |proposal_id|
+                ProposalOnProject.find_or_create_by(project_id:self.id, proposal_id: proposal_id)
+            end
+        end
     end
 
     # def save_users(user_elements)

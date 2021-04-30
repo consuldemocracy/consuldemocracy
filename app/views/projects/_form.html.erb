@@ -14,14 +14,13 @@
   <div class="field">
     <%= form.text_field :title, :title => "Título" %>
   </div>
-  
-  <%# ---------- Páginas ---------- %>
 
+  <%# ---------- Páginas ---------- %>
   <div class="project-form-field">
     <% if !@project_pages.empty? %>
       <br/>
-      <%= form.label 'Páginas actuales en el proyecto' %>
-      <p>Seleccione páginas para eliminarlas</p>
+      <%= form.label t("project.component.actual_delete", item:"Páginas") %>
+      <p><%= t("project.component.delete", item:"páginas") %></p>
 
       <div id="participant_tags" class="tags">
         <% @project_pages.each do |page| %>
@@ -37,8 +36,8 @@
 
     <% if !@pages.empty? %>
       <br/>
-      <%= form.label 'Seleccionar páginas para el proyecto' %>
-      <p>Seleccione páginas para añadirlas</p>
+      <%= form.label t("project.component.actual_add", item:"Páginas") %>
+      <p><%= t("project.component.add", item:"páginas") %></p>
 
       <%# Para buscar Páginas %>
       <%# <%= form_tag(new_project_path, method: :get) do %>
@@ -57,13 +56,14 @@
       </div>
     <% end %>
   </div>
+  <%# ---------- Fin Páginas ---------- %>
 
   <%# ---------- Debates ---------- %>
   <div class="project-form-field">
     <% if !@project_debates.empty? %>
       <br/>
-      <%= form.label 'Debates actuales en el proyecto' %>
-      <p>Seleccione debates para eliminarlos</p>
+      <%= form.label t("project.component.actual_delete", item:"Debates") %>
+      <p><%= t("project.component.delete", item:"debates") %></p>
 
       <div id="participant_tags" class="tags">
         <% @project_debates.each do |debate| %>
@@ -78,8 +78,8 @@
 
     <% if !@debates.empty? %>
       <br/>
-      <%= form.label 'Seleccionar debates para el proyecto' %>
-      <p>Seleccione debates para añadirlos</p>
+      <%= form.label t("project.component.actual_add", item:"Debates") %>
+      <p><%= t("project.component.add", item:"debates") %></p>
       <%# Para buscar Debates %>
       <%# <%= form_tag(new_project_path, method: :get) do %>
       <%#   <%= text_field_tag :debate_search, params[:debate_search], placeholder: "Search Debates", class: "form-control", id: "page-search-form", onkeyup: "SearchFunction()" %>
@@ -88,7 +88,6 @@
 
       <div id="participant_tags" class="tags">
         <% @debates.each do |debate| %>
-          <%# <a class="select-participants"><%= page.id%>
           <span>
             <input type="checkbox" name="debate_ids[]" value=<%= debate.id %> />
             <%= debate.title %>
@@ -97,13 +96,45 @@
       </div>
     <% end %>
   </div>
+  <%# ---------- Fin Debates ---------- %>
 
+  <%# ---------- Proposals ---------- %>
   <div class="project-form-field">
-    <%# ---------- Users ---------- %>
+    <% if !@project_proposals.empty? %>
+      <br/>
+      <%= form.label t("project.component.actual_delete", item:"Propuestas") %>
+      <p><%= t("project.component.delete", item:"propuestas") %></p>
+      <div id="participant_tags" class="tags">
+        <% @project_proposals.each do |item| %>
+          <span>
+            <input type="checkbox" name="delete_proposal_ids[]" value=<%= item.id %> />
+            <%= item.title %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+    <% if !@proposals.empty? %>
+      <br/>
+      <%= form.label t("project.component.actual_add", item:"Propuestas") %>
+      <p><%= t("project.component.add", item:"propuestas") %></p>
+      <div id="participant_tags" class="tags">
+        <% @proposals.each do |item| %>
+          <span>
+            <input type="checkbox" name="proposal_ids[]" value=<%= item.id %> />
+            <%= item.title %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%# ---------- Fin Proposals ---------- %>
+
+  <%# ---------- Users ---------- %>
+  <div class="project-form-field">
     <% if !@project_users.empty? %>
       <br/>
-      <%= form.label 'Users actuales en el proyecto' %>
-      <p>Seleccione usuarios para eliminarlos</p>
+      <%= form.label t("project.component.actual_delete", item:"Usuarios") %>
+      <p><%= t("project.component.delete", item:"usuarios") %></p>
       <div id="participant_tags" class="tags">
         <% @project_users.each do |user| %>
           <%# <a class="select-participants"><%= page.id%>
@@ -117,8 +148,8 @@
 
     <% if !@users.empty? %>
       <br/>
-      <%= form.label 'Seleccionar participantes para el proyecto' %>
-      <p>Seleccione usuarios para añadirlos</p>
+      <%= form.label t("project.component.actual_add", item:"Usuarios") %>
+      <p><%= t("project.component.add", item:"usuarios") %></p>
 
       <div id="participant_tags" class="tags">
         <% @users.each do |user| %>
@@ -131,6 +162,7 @@
       </div>
     <% end %>
   </div>
+  <%# ---------- Fin Users ---------- %>
 
   <div class="actions">
     <%= form.submit "Enviar" %>

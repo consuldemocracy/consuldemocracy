@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_093036) do
+ActiveRecord::Schema.define(version: 2021_04_30_110420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1277,6 +1277,15 @@ ActiveRecord::Schema.define(version: 2021_04_20_093036) do
     t.datetime "confirmed_hide_at"
   end
 
+  create_table "proposal_on_projects", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "proposal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_proposal_on_projects_on_project_id"
+    t.index ["proposal_id"], name: "index_proposal_on_projects_on_proposal_id"
+  end
+
   create_table "proposal_participants", force: :cascade do |t|
     t.bigint "proposal_id"
     t.bigint "user_id"
@@ -1833,6 +1842,8 @@ ActiveRecord::Schema.define(version: 2021_04_20_093036) do
   add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "polls", "budgets"
+  add_foreign_key "proposal_on_projects", "projects"
+  add_foreign_key "proposal_on_projects", "proposals"
   add_foreign_key "proposal_participants", "proposals"
   add_foreign_key "proposal_participants", "users"
   add_foreign_key "proposals", "communities"

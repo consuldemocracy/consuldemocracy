@@ -19,6 +19,28 @@
           <%= @project.title %>
         </p>
 
+        <% if !@project_proposals.empty? %>
+          <table class="margin-top">
+            <thead>
+              <tr>
+                <th scope="col"><%= t("users.show.proposals") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @project_proposals.each do |item| %>
+                <tr id="proposals_<%= item.id %>">
+                  <td>
+                    <%= link_to item.title, proposal_path(item) %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <strong>Propuesta:</strong>
+          <p><%= t("project.show_propuesta.empty") %></p>
+        <% end %>
+
         <% if !@project_debates.empty? %>
           <table class="margin-top">
             <thead>

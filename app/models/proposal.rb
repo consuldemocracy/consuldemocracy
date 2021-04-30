@@ -38,6 +38,9 @@ class Proposal < ApplicationRecord
   has_many :proposal_participants
   has_many :users, through: :proposal_participants
 
+  has_many :proposal_on_projects
+  has_many :projects, through: :proposal_on_projects
+
   attr_accessor :participants_id
 
   after_save :save_participants
