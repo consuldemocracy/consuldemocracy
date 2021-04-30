@@ -40,37 +40,3 @@
 
   <%= render "box_second" %>
 </main>
-
-<script>
-//CAROUSEL
-window.onload = function() {
-    console.log("DOM fully loaded and parsed");
-    const carousel = document.querySelector('.carousel');
-    const carouselImages = document.querySelector('.carousel__images');
-    const carouselButtons = document.querySelectorAll('.carousel__button');
-    const numberOfImages = document.querySelectorAll('#figura').length;
-    let imageIndex = 1;
-    let translateX = 0;
-
-    
-    carouselButtons.forEach(button => {
-      button.addEventListener('click', (event) => {
-        translate_info = carousel.getBoundingClientRect();
-        if (event.target.id === 'previous') {
-          if (imageIndex !== 1) {
-            imageIndex--;
-            translateX += translate_info.width;
-            console.log(translateX)
-          }
-        } else {
-          if (imageIndex !== numberOfImages) {
-            imageIndex++;
-            translateX -= translate_info.width;
-          }
-        }
-        
-        carouselImages.style.transform = `translateX(${translateX}px)`;
-      });
-    });
-}
-</script>
