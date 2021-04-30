@@ -6,6 +6,7 @@ tr:
         submit: Açıklamaları tekrar gönder
         title: Onay açıklamalarını tekrar gönder
       show:
+        instructions: '%{email} adresli hesap doğrulanıyor'
         new_password_confirmation_label: Erişim şifresini tekrarla
         new_password_label: Yeni erişim şifresi
         please_set_password: Lütfen yeni şifrenizi seçin (yukarıdaki e-posta ile giriş yapmanızı sağlar)
