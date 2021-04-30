@@ -167,6 +167,7 @@ tr:
     error: hata
     errors: hatalar
     policy: Gizlilik Politikası
+    banner: bannerlar
     proposal: Öneri
     proposal_notification: "Bildirim"
     budget/investment: Yatırım
@@ -184,6 +185,8 @@ tr:
     document: Belge
     topic: Konu
     image: Resim
+    local_census_record: Yerel Vatandaş Listesi Kaydı
+    local_census_records/import: Yerel Vatandaş Listesini İçe Aktar
     site_customization/content_block: içerik bloğu
     site_customization/page: sayfa
     sdg/local_target: yerel hedef
@@ -729,6 +732,7 @@ tr:
       districts: "İlçeler"
       districts_list: "İlçeler listesi"
       categories: "Kategoriler"
+    target_blank: " (bağlantı yeni pencerede açılacak)"
     you_are_in: "Şuradasınız"
     unflag: İşaretini Kaldır
     unfollow_entity: "Takibi bırak %{entity}"
@@ -780,6 +784,8 @@ tr:
       all: "%{subject} 'de %{action} eylemini gerçekleştirme izniniz yok."
   users:
     signin: "Oturum Aç"
+    signup: "kayıt ol"
+    verify_account: "hesabınızı doğrulayın"
     direct_messages:
       new:
         direct_messages_bloqued: "Bu kullanıcı doğrudan mesaj almamaya karar verdi"
