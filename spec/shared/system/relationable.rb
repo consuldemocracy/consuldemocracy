@@ -117,6 +117,21 @@ shared_examples "relationable" do |relationable_model_name|
     end
   end
 
+  scenario "returns an error when the related content already exists" do
+    create(:related_content, parent_relationable: relationable, child_relationable: related1)
+    login_as(user)
+    visit relationable.url
+
+    click_button "Add related content"
+
+    within("#related_content") do
+      fill_in "url", with: url + related1.url.to_s
+      click_button "Add"
+    end
+
+    expect(page).to have_content "The related content you are adding already exists."
+  end
+
   scenario "related content can be scored positively" do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 

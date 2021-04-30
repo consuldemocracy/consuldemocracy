@@ -927,6 +927,7 @@ es:
     help: "Puedes introducir cualquier enlace de %{models} que esté dentro de %{org}."
     submit: "Añadir"
     error: "Enlace no válido. Recuerda que debe empezar por %{url}."
+    error_duplicate: "El contenido relacionado que estás añadiendo ya existe."
     error_itself: "Enlace no válido. No se puede relacionar un contenido consigo mismo."
     success: "Has añadido un nuevo contenido relacionado"
     is_related: "¿Es contenido relacionado?"
