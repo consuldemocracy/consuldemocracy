@@ -122,6 +122,11 @@ tr:
       title: "Özet"
       votes:
         zero: "%{count} oy"
+      debate_phase: "Tartışma aşaması"
+      proposals_phase: "Öneri aşaması"
+      allegations_phase: "Yorum aşaması"
+      debates:
+        zero: "Tartışma bulunmuyor"
       proposals:
         zero: "Öneri yok"
       comments:
