@@ -1598,5 +1598,11 @@ tr:
         new:
           title: Yerel vatandaş listesi kayıtları
           subtitle: CSV dosyasını içeri aktar
+        create:
+          notice: Yerel vatandaş listesi kayıtlarının içe aktarımı başarıyla tamamlandı!
+        show:
+          title: Yerel vatandaş listesini yönet
+          subtitle: Süreç sonuçlarını içe aktar
+          import: Tekrar içe aktar
         local_census_records:
           no_records_found: Kayıt bulunamadı.
