@@ -96,6 +96,7 @@ tr:
       alert:
         unverified_user: Kullanıcı doğrulanmadı
       create: Bütçe yatırımı oluştur
+      edit: Bütçe yatırımını düzenle
       filters:
         heading: Konsept
         unfeasible: Uygulanamaz yatırım
