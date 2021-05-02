@@ -13,6 +13,10 @@ tr:
         targets:
           target_3_1:
             title: "2030'a kadar, dünya genelinde anne ölüm oranının 100.000 canlı doğumda 70'in altına düşürülmesi."
+      goal_4:
+        title: "Nitelikli Eğitim"
+        title_in_two_lines: "Nitelikli Eğitim"
+        description: "Nitelikli Eğitim."
       goal_5:
         title: "Cinsiyet Eşitliği"
         title_in_two_lines: "Toplumsal Cinsiyet Eşitliği"
