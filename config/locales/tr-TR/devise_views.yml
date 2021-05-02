@@ -52,6 +52,7 @@ tr:
           back_to_index: Anladım; ana sayfaya geri dön
           instructions_1: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
           instructions_2: <strong>E-postanız incelenirken</strong>,<strong>hesabınızı doğrulamanız için size bir bağlantı</strong> gönderdik.
+          instructions_3: Onaylandıktan sonra, doğrulanmamış grup olarak katılım sağlayabilirsiniz.
           thank_you: Topluluğunuzu web sitesine kaydettiğiniz için teşekkür ederiz. <strong>Doğrulama bekleniyor</strong>.
           title: Kurumun / topluluğun kaydı
     passwords:
@@ -123,5 +124,6 @@ tr:
         success:
           back_to_index: Anladım; ana sayfaya geri dön
           instructions_1: Lütfen <b>e-postanızı kontrol edin</b> - <b>hesabınızı doğrulamak için bir bağlantı</b> gönderdik.
+          instructions_2: Onaylandıktan sonra, katılım sağlayabilirsiniz.
           thank_you: Web sitesine kayıt olduğunuz için teşekkür ederiz. Şimdi <b>e-posta adresinizi doğrulamalısınız</b>.
           title: E-posta adresini onayla
