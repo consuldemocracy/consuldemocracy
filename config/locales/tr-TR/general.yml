@@ -702,6 +702,11 @@ tr:
     following: "Takip ediliyor"
     follow_entity: "Takip et %{entity}"
     followable:
+      budget_investment:
+        create:
+          notice: "Bu yatırım projesini takip etmeye başladınız! <br> Gelişmelerden haberdar olmanız için yapılan değişiklikleri size bildireceğiz."
+        destroy:
+          notice: "Bu yatırım projesini takip etmeyi bıraktınız! <br> Artık bu projeyle ilgili bildirim almayacaksınız."
       proposal:
         create:
           notice: "Vatandaş önerisini takip etmeye başladınız.! <br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
