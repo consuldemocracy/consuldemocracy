@@ -33,7 +33,7 @@ tr:
       goal_11:
         title: "Sürdürülebilir Şehirler ve Topluluklar"
         title_in_two_lines: "Sürdürülebilir Şehirler ve Topluluklar"
-        description: "Şehirleri her kesimi kapsayan, güvenli, değişen koşullara uyumlanabilir ve sürdürülebilir hale getirin."
+        description: "Şehirleri her kesimi kapsayan, güvenli, değişen koşullara uyumlu ve sürdürülebilir hale getirin."
       goal_13:
         title: "İklim Eylemi"
         title_in_two_lines: "İklim Eylemi"
@@ -59,7 +59,7 @@ tr:
           no_local_targets: Bu amaç yerel hedefler dahilinde değildir
       title: "Sürdürülebilir Kalkınma Hedefleri"
       filter:
-        heading: "SKH'ye göre filtreler"
+        heading: "SKHye göre filtreler"
         link: "Hedefle bağlantılı tüm %{resources} görüntüle %{code}"
         more:
           one: "Bir hedef daha"
