@@ -148,6 +148,7 @@ es:
         voting_style_approval: "Por aprobación"
         main_button_text: "Texto del botón"
         main_button_url: "El botón te lleva a (añade un enlace)"
+        hide_money: "Ocultar la cantidad de dinero para este presupuesto"
       budget/translation:
         name: "Nombre"
       budget/investment:
@@ -170,6 +171,7 @@ es:
         selected: "Marcar como seleccionado"
         selected_true: "Seleccionado"
         selected_false: "No seleccionado"
+        feasibility_explanation: "Informe de viabilidad <small>(opcional, dato público)</small>"
         unfeasibility_explanation: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
         valuation_finished: "Informe finalizado"
         valuator_ids: "Grupos"

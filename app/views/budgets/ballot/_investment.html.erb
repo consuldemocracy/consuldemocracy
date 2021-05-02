@@ -1,6 +1,8 @@
 <li id="<%= dom_id(investment) %>">
   <%= link_to investment.title, budget_investment_path(@budget, investment) %>
-  <span><%= investment.formatted_price %></span>
+  <% if @budget.show_money? %>
+    <span><%= investment.formatted_price %></span>
+  <% end %>
 
   <% if @budget.balloting? %>
     <%= link_to budget_ballot_line_path(@budget, id: investment.id),

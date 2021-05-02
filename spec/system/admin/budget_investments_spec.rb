@@ -58,6 +58,19 @@ describe "Admin budget investments" do
       expect(page).to have_content(budget_investment.total_votes)
     end
 
+    scenario "Do not show price column on budgets with hide money" do
+      budget_hide_money = create(:budget, :hide_money)
+      budget_investment = create(:budget_investment, budget: budget_hide_money)
+
+      visit admin_budget_budget_investments_path(budget_hide_money)
+
+      expect(page).to have_content(budget_investment.title)
+      expect(page).to have_content(budget_investment.heading.name)
+      expect(page).to have_content(budget_investment.id)
+      expect(page).not_to have_content("Price")
+      expect(page).not_to have_content("€")
+    end
+
     scenario "If budget is finished do not show 'Selected' button" do
       finished_budget = create(:budget, :finished)
       budget_investment = create(:budget_investment, budget: finished_budget, cached_votes_up: 77)
@@ -989,6 +1002,17 @@ describe "Admin budget investments" do
       end
 
       expect(page).to have_button "Publish comment"
+    end
+
+    scenario "Show feasible explanation" do
+      budget_investment = create(:budget_investment, :feasible, feasibility_explanation: "This is awesome!")
+
+      visit admin_budget_budget_investments_path(budget_investment.budget)
+
+      click_link budget_investment.title
+
+      expect(page).to have_content("Feasible")
+      expect(page).to have_content("This is awesome!")
     end
 
     scenario "Show image and documents on investment details" do

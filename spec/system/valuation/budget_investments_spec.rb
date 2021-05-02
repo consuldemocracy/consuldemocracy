@@ -332,6 +332,35 @@ describe "Valuation budget investments" do
       expect(page).not_to have_content("Valuation finished")
     end
 
+    scenario "Dossier hide price on hide money budgets" do
+      budget = create(:budget, :valuating, :hide_money)
+      investment = create(:budget_investment, budget: budget, administrator: admin, valuators: [valuator])
+      investment.update!(visible_to_valuators: true)
+
+      visit valuation_budget_budget_investments_path(budget)
+      within("#budget_investment_#{investment.id}") do
+        click_link "Edit dossier"
+      end
+
+      expect(page).not_to have_content "Price (€)"
+      expect(page).not_to have_content "Cost during the first year (€)"
+      expect(page).not_to have_content "Price explanation"
+
+      choose  "budget_investment_feasibility_feasible"
+      fill_in "budget_investment_duration", with: "12 months"
+      click_button "Save changes"
+
+      expect(page).to have_content "Dossier updated"
+
+      visit valuation_budget_budget_investments_path(budget)
+      click_link investment.title
+
+      within("#duration") { expect(page).to have_content("12 months") }
+      within("#feasibility") { expect(page).to have_content("Feasible") }
+      expect(page).not_to have_selector "#price"
+      expect(page).not_to have_selector "#price_first_year"
+    end
+
     scenario "Can valuate investments for more than one active budgets" do
       budget_1 = create(:budget, :valuating)
       budget_2 = create(:budget, :valuating)
@@ -379,10 +408,10 @@ describe "Valuation budget investments" do
 
     scenario "Feasibility selection makes proper fields visible", :js do
       feasible_fields = ["Price (€)", "Cost during the first year (€)", "Price explanation",
-                         "Time scope"]
-      unfeasible_fields = ["Feasibility explanation"]
+                         "Feasibility explanation", "Time scope"]
+      unfeasible_fields = ["Unfeasibility explanation"]
       any_feasibility_fields = ["Valuation finished"]
-      undecided_fields = feasible_fields + unfeasible_fields + any_feasibility_fields
+      undecided_fields = feasible_fields - unfeasible_fields + any_feasibility_fields
 
       visit edit_valuation_budget_budget_investment_path(budget, investment)
 
@@ -482,7 +511,8 @@ describe "Valuation budget investments" do
         expect(page).not_to have_selector("input[name='budget_investment[valuation_finished]']")
         expect(page).to have_content("Valuation finished")
         expect(page).to have_content("Feasibility: Feasible")
-        expect(page).to have_content("Feasibility explanation: Explanation is explanatory")
+        expect(page).to have_content("Feasibility explanation")
+        expect(page).to have_content("Unfeasibility explanation: Explanation is explanatory")
         expect(page).to have_content("Price (€): 999")
         expect(page).to have_content("Cost during the first year: 666")
         expect(page).to have_content("Price explanation: Democracy is not cheap")

@@ -332,4 +332,10 @@ describe Budget::Heading do
       expect(build(:budget_heading, max_ballot_lines: 0)).not_to be_valid
     end
   end
+
+  describe "price" do
+    it "can't be blank" do
+      expect(build(:budget_heading, group: group, price: nil)).not_to be_valid
+    end
+  end
 end

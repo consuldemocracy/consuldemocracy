@@ -146,6 +146,7 @@ en:
         voting_style_approval: "Approval"
         main_button_text: "Text on the button"
         main_button_url: "The button takes you to (add a link)"
+        hide_money: "Hide money amount for this budget"
       budget/translation:
         name: "Name"
       budget/investment:
@@ -168,7 +169,8 @@ en:
         selected: "Mark as selected"
         selected_true: "Selected"
         selected_false: "Not selected"
-        unfeasibility_explanation: "Feasibility explanation"
+        feasibility_explanation: "Feasibility explanation (optional)"
+        unfeasibility_explanation: "Unfeasibility explanation"
         valuation_finished: "Valuation finished"
         valuator_ids: "Groups"
         valuation_tag_list: "Tags"

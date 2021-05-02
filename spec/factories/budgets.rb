@@ -63,6 +63,10 @@ FactoryBot.define do
     trait :approval do
       voting_style { "approval" }
     end
+
+    trait :hide_money do
+      hide_money { true }
+    end
   end
 
   factory :budget_group, class: "Budget::Group" do
@@ -103,6 +107,7 @@ FactoryBot.define do
     association :author, factory: :user
     description          { "Spend money on this" }
     price                { 10 }
+    feasibility_explanation { "" }
     unfeasibility_explanation { "" }
     terms_of_service     { "1" }
     incompatible         { false }
@@ -113,6 +118,7 @@ FactoryBot.define do
 
     trait :feasible do
       feasibility { "feasible" }
+      feasibility_explanation { "set to feasible on creation" }
     end
 
     trait :unfeasible do

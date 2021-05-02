@@ -149,6 +149,7 @@ nl:
         see_price_explanation: "Uitleg van de prijs van het idee"
         project_unfeasible: "Dit idee is gemarkeerd als niet stembaar en gaat niet naar de stemronde"
         project_winner: "Gekozen idee"
+        feasibility_explanation: "Uitleg over geschiktheid idee"
         unfeasibility_explanation: "Uitleg over geschiktheid idee"
         price_explanation: "Toelichting kosten"
         votes: "Stemmen"

@@ -110,6 +110,7 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
+//= require budget_hide_money
 //= require datepicker
 //= require link_to_top
 
@@ -164,6 +165,7 @@ var initialize_modules = function() {
     App.ColumnsSelector.initialize();
   }
   App.BudgetEditAssociations.initialize();
+  App.BudgetHideMoney.initialize();
   App.Datepicker.initialize();
   App.LinkToTop.initialize();
 };

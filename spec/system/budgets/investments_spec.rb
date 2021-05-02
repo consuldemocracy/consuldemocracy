@@ -916,6 +916,19 @@ describe "Budget Investments" do
       expect(page).to have_content "Build a skyscraper"
     end
 
+    scenario "Create with single heading and hidden money" do
+      budget_hide_money = create(:budget, :hide_money)
+      group = create(:budget_group, budget: budget_hide_money)
+      create(:budget_heading, name: "Heading without money", group: group)
+
+      login_as(author)
+
+      visit new_budget_investment_path(budget_hide_money)
+
+      expect(page).to have_content "Heading without money"
+      expect(page).not_to have_content "€"
+    end
+
     scenario "Create with single group and multiple headings" do
       budget = create(:budget)
       group = create(:budget_group, name: "New group", budget: budget)
@@ -1271,6 +1284,27 @@ describe "Budget Investments" do
     expect(page).to have_content("The unfeasible explanation")
     expect(page).to have_content("This investment project has been marked as not feasible "\
                                  "and will not go to balloting phase")
+  end
+
+  scenario "Show feasible explanation only when valuation finished" do
+    investment = create(:budget_investment, :feasible, budget: budget, heading: heading,
+                        feasibility_explanation: "Local government is competent in this")
+
+    investment_2 = create(:budget_investment, :feasible, :finished, budget: budget, heading: heading,
+                          feasibility_explanation: "The feasible explanation")
+
+    user = create(:user)
+    login_as(user)
+
+    visit budget_investment_path(budget, investment)
+
+    expect(page).not_to have_content("Feasibility explanation")
+    expect(page).not_to have_content("Local government is competent in this")
+
+    visit budget_investment_path(budget, investment_2)
+
+    expect(page).to have_content("Feasibility explanation")
+    expect(page).to have_content("The feasible explanation")
   end
 
   scenario "Show (selected budget investment)" do

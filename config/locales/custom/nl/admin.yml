@@ -156,6 +156,8 @@ nl:
         duration: "Periode"
         phase: "Fase"
         phase_content: "Bewerk inhoud"
+        hide_money: "Verberg budget"
+        hide_money_help_text: "Als deze optie is aangevinkt wordt het budget, wat normaal op verschillende plekken in het begrotingsproces getoond wordt, verborgen."
       winners:
         calculate: "Tel de stemmen"
       shared:
@@ -270,6 +272,8 @@ nl:
       answers:
         images:
           add_image: "Afbeelding toevoegen"
+      flash:
+        destroy: "Peiling succesvol verwijderd."
     hidden_comments:
       index:
         filters:

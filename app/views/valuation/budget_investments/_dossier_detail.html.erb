@@ -8,6 +8,12 @@
 </p>
 <p>
   <strong>
+    <%= sanitize(Budget::Investment.human_attribute_name(:feasibility_explanation)) %>:
+  </strong>
+  <%= investment.feasibility_explanation.presence || "-" %>
+</p>
+<p>
+  <strong>
     <%= sanitize(Budget::Investment.human_attribute_name(:unfeasibility_explanation)) %>:
   </strong>
   <%= investment.unfeasibility_explanation.presence || "-" %>

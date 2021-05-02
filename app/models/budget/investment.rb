@@ -89,6 +89,7 @@ class Budget
     scope :compatible,                  -> { where(incompatible: false) }
     scope :incompatible,                -> { where(incompatible: true) }
     scope :winners,                     -> { selected.compatible.where(winner: true) }
+    scope :not_winners,                 -> { selected.compatible.where(winner: false) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago) }
     scope :sort_by_flags,               -> { order(flags_count: :desc, updated_at: :desc) }
@@ -236,7 +237,7 @@ class Budget
     end
 
     def price_required?
-      feasible? && valuation_finished?
+      feasible? && valuation_finished? && budget.show_money?
     end
 
     def unfeasible_email_pending?
@@ -337,7 +338,7 @@ class Budget
     end
 
     def should_show_price?
-      selected? && price.present? && budget.published_prices?
+      selected? && price.present? && budget.published_prices? && budget.show_money?
     end
 
     def should_show_price_explanation?
@@ -346,6 +347,10 @@ class Budget
 
     def should_show_unfeasibility_explanation?
       unfeasible? && valuation_finished? && unfeasibility_explanation.present?
+    end
+
+    def should_show_feasibility_explanation?
+      feasible? && valuation_finished? && feasibility_explanation.present?
     end
 
     def formatted_price

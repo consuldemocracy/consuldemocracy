@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200908084257) do
+ActiveRecord::Schema.define(version: 20210401100648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -274,6 +274,7 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.integer "original_heading_id"
     t.integer "cached_votes_down", default: 0
     t.integer "cached_votes_total", default: 0
+    t.text "feasibility_explanation"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id"
     t.index ["author_id"], name: "index_budget_investments_on_author_id"
     t.index ["cached_votes_down"], name: "index_budget_investments_on_cached_votes_down"
@@ -370,6 +371,7 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.boolean "published", default: true
     t.string "main_button_text"
     t.string "main_button_url"
+    t.boolean "hide_money", default: false
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|

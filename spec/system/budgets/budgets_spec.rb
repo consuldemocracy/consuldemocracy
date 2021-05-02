@@ -84,6 +84,7 @@ describe "Budgets" do
       visit root_path
 
       within("#navigation_bar") do
+        expect(page).to have_link("Participatory budgeting", href: "#")
         expect(page).to have_link(budget_1.name, href: budget_path(budget_1))
         expect(page).to have_link(budget_2.name, href: budget_path(budget_2))
         expect(page).not_to have_link(budget_3.name, href: budget_path(budget_3))
@@ -94,6 +95,7 @@ describe "Budgets" do
       visit root_path
 
       within("#navigation_bar") do
+        expect(page).to have_link("Participatory budgeting", href: "#")
         expect(page).to have_link(budget_1.name, href: budget_path(budget_1))
         expect(page).to have_link(budget_2.name, href: budget_path(budget_2))
         expect(page).to have_link(budget_3.name, href: budget_path(budget_3))
@@ -224,6 +226,34 @@ describe "Budgets" do
         expect(page).not_to have_link "#{heading.name} €1,000,000", normalize_ws: true
         expect(page).to have_content "#{heading.name} €1,000,000", normalize_ws: true
         expect(page).to have_css("div.map")
+      end
+    end
+
+    scenario "Hide money on single heading budget" do
+      budget = create(:budget, :finished, :hide_money)
+      heading = create(:budget_heading, budget: budget)
+
+      visit budgets_path
+
+      within("#budget_info") do
+        expect(page).to have_content heading.name
+        expect(page).not_to have_content "€"
+      end
+    end
+
+    scenario "Hide money on multiple headings budget" do
+      budget = create(:budget, :finished, :hide_money)
+      heading1 = create(:budget_heading, budget: budget)
+      heading2 = create(:budget_heading, budget: budget)
+      heading3 = create(:budget_heading, budget: budget)
+
+      visit budgets_path
+
+      within("#budget_info") do
+        expect(page).to have_content heading1.name
+        expect(page).to have_content heading2.name
+        expect(page).to have_content heading3.name
+        expect(page).not_to have_content "€"
       end
     end
 

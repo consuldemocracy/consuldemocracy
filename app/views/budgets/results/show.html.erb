@@ -47,10 +47,13 @@
 
     <div class="small-12 medium-9 large-10 column">
   <% end %>
-    <%= link_to t("budgets.results.show_all_link"), "#",
-                class: "js-toggle-link button hollow margin-bottom float-right-medium",
-                data: { "toggle-selector" => ".js-discarded",
-                        "toggle-text" => t("budgets.results.hide_discarded_link") } %>
+
+    <% if @investments.not_winners.any? %>
+      <%= link_to t("budgets.results.show_all_link"), "#",
+                  class: "js-toggle-link button hollow margin-bottom float-right-medium",
+                  data: { "toggle-selector" => ".js-discarded",
+                          "toggle-text" => t("budgets.results.hide_discarded_link") } %>
+    <% end %>
 
     <%= render "results_table", results_type: :compatible,
                                 title: @heading.name,

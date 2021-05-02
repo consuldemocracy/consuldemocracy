@@ -151,6 +151,7 @@ describe "Admin poll questions" do
 
     expect(page).not_to have_content(question1.title)
     expect(page).to have_content(question2.title)
+    expect(page).to have_current_path admin_poll_path(poll)
   end
 
   pending "Mark all city by default when creating a poll question from a successful proposal"
