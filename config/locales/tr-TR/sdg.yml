@@ -6,14 +6,18 @@ tr:
         title_in_two_lines: "Yoksulluğa Son"
       goal_2:
         title: "Açlığa Son"
+        title_in_two_lines: "Açlığa Son"
       goal_5:
         title: "Cinsiyet Eşitliği"
+        title_in_two_lines: "Toplumsal Cinsiyet Eşitliği"
       goal_6:
         title: "Temiz Su ve Sanitasyon"
       goal_7:
         title: "Erişilebilir ve Temiz Enerji"
       goal_8:
         title: "İnsana Yakışır İş ve Ekonomik Büyüme"
+      goal_10:
+        title: "Eşitsizliklerin Azaltılması"
       goal_11:
         title_in_two_lines: "Sürdürülebilir Şehirler ve Topluluklar"
       goal_13:
