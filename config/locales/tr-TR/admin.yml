@@ -1578,6 +1578,7 @@ tr:
       changes: "Değişiklikler listesi"
       id: "Kimlik"
       field: "Saha"
+      new_value: "Yeni Değer"
       old_value: "Eski Değer"
       edited_at: "Güncellenme tarihi"
       edited_by: "Güncelleyen"
