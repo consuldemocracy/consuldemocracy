@@ -1252,6 +1252,8 @@ tr:
           how_to_enable: 'Haritayı kullanıcılara göstermek için "Özellikler" sekmesinde "Öneriler ve bütçe yatırımları coğrafi konum belirleme" özelliğini etkinleştirmeniz gerekir.'
         dashboard:
           title: Öneriler gösterge tablosu
+        sdg:
+          title: SKH yapılandırması
       remote_census_general_name: Genel Bilgi
       remote_census_request_name: Veri Talebi
       remote_census_response_name: Yanıt Verisi
@@ -1432,6 +1434,7 @@ tr:
         budget_investments:
           amount: "Onaylanan miktar"
           winners: "Kazanan yatırım projeleri"
+          sent: "Yatırım projeleri gönderildi"
         debates: "Tartışmalar"
         polls: "Anketler"
         proposals: "Teklifler"
