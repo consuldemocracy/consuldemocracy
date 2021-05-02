@@ -134,5 +134,7 @@ tr:
       download: "Özeti İndir"
       top_comments:
         zero: "Yorum yok"
+        one: "%{count} yorum"
+        other: "Öne çıkan yorumlar"
       most_voted_comments: "En çok oylanan yorumlar"
       no_allegation: "Hiç yorum yok"
