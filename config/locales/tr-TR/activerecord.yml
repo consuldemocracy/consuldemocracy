@@ -177,6 +177,7 @@ tr:
         feasibility_undecided: "Tanımsız"
         feasibility_unfeasible: "Yapılamaz"
         incompatible: "Uyumsuz olarak işaretle"
+        milestone_tag_list: "Aşama etiketleri"
         price_explanation: "Fiyat açıklaması"
         selected: "Seçilmiş olarak işaretle"
         selected_true: "Seçilmiş"
