@@ -685,6 +685,7 @@ tr:
       goal: "SKH'ye göre"
       goal_blank: "Hedef seç"
       search: "Filtre"
+      target: "Hedefe göre"
       target_blank: "Hedef seç"
       title: "Gelişmiş arama"
       to: "Şuna"
