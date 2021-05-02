@@ -132,6 +132,7 @@ tr:
         postal_code: "Posta koduna giden yol"
         gender: "Cinsiyete giden yol"
         name: "Ada giden yol"
+        surname: "Soyada giden yol"
     map:
       latitude: "Enlem"
       latitude_description: "Harita konumunu göstermek için enlem"
