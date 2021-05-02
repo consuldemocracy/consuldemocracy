@@ -7,6 +7,7 @@ tr:
       goal_2:
         title: "Açlığa Son"
         title_in_two_lines: "Açlığa Son"
+        description: "Açlığa Son."
       goal_3:
         title: "Sağlık ve Kaliteli Yaşam"
         title_in_two_lines: "Sağlık ve Kaliteli Yaşam"
@@ -35,6 +36,7 @@ tr:
       goal_14:
         title: "Sudaki Yaşam"
       goal_15:
+        title: "Karasal Yaşam"
         title_in_two_lines: "Karasal Yaşam"
       goal_16:
         title: "Barış, Adalet ve Güçlü Kurumlar"
