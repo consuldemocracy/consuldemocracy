@@ -92,8 +92,11 @@ tr:
         notice: Yeni katılımcı bütçe başarıyla oluşturuldu!
       update:
         notice: Katılımcı bütçe başarıyla güncellendi
+      publish:
+        notice: "Katılımcı bütçe başarıyla yayınlandı"
       edit:
         title: Katılımcı bütçeyi düzenle
+        publish: "Bütçeyi yayınla"
         delete: Bütçeyi sil
         phase: Aşama
         phases_caption: "Aşamalar"
@@ -209,6 +212,7 @@ tr:
         download_current_selection: "Mevcut seçimi indir"
         no_budget_investments: "Hiç yatırım projesi yok."
         title: Yatırım projeleri
+        columns: Sütunlar
         assigned_admin: Atanmış yönetici
         no_admin_assigned: Hiç yönetici atanmamış
         no_valuators_assigned: Hiç bilirkişi atanmamış
