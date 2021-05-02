@@ -29,7 +29,9 @@ tr:
       goal_16:
         title: "Barış, Adalet ve Güçlü Kurumlar"
         title_in_two_lines: "Barış, Adalet ve Güçlü Kurumlar"
+        description: "Adil, barışçıl ve kapsayıcı toplumları destekleyin."
       goal_17:
+        title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
       help:
         title: "Sürdürülebilir Kalkınma Amaçları yardım"
