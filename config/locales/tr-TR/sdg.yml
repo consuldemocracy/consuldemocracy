@@ -7,6 +7,9 @@ tr:
       goal_2:
         title: "Açlığa Son"
         title_in_two_lines: "Açlığa Son"
+      goal_3:
+        title: "Sağlık ve Kaliteli Yaşam"
+        title_in_two_lines: "Sağlık ve Kaliteli Yaşam"
       goal_5:
         title: "Cinsiyet Eşitliği"
         title_in_two_lines: "Toplumsal Cinsiyet Eşitliği"
