@@ -51,6 +51,7 @@ tr:
         success:
           back_to_index: Anladım; ana sayfaya geri dön
           instructions_1: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
+          thank_you: Topluluğunuzu web sitesine kaydettiğiniz için teşekkür ederiz. <strong>Doğrulama bekleniyor</strong>.
           title: Kurumun / topluluğun kaydı
     passwords:
       edit:
