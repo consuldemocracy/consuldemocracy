@@ -73,6 +73,8 @@ tr:
       email_description: E-posta tanımlaması
       email_description_description: E-posta özelliğinin ayrıntılı açıklaması
       poster_short_title: Görsel
+      poster_description: Poster açıklaması
+      poster_description_description: Poster özelliğinin detaylı açıklaması
     analytics_url: "Analitikler URL'si"
     proposal_notification_minimum_interval_in_days: "Öneri yazarlarının yeni öneri bildirimleri göndermesi için minimum aralık (gün olarak)"
     proposal_notification_minimum_interval_in_days_description: "Kullanıcı önerisinin tüm destekçileri için bir bildirim gönderebileceği gün sayısı"
@@ -85,6 +87,7 @@ tr:
       facebook_login_description: "Kullanıcıların Facebook hesapları ile kayıt olmalarına izin ver"
       google_login: "Google girişi"
       google_login_description: "Kullanıcıların Google Hesapları ile kayıt olmalarına izin ver"
+      wordpress_login: "Wordpress ile oturum açma"
       featured_proposals: "Öne Çıkan öneriler"
       featured_proposals_description: "Dizin önerileri sayfasında öne çıkan önerileri gösterir"
       signature_sheets: "İmza sayfaları"
@@ -118,6 +121,7 @@ tr:
       translation_interface_description: "Kullanıcıların, mevcut tüm uygulama dillerinde içeriklerini girmelerine izin veren manuel çeviri arayüzünü görüntüler. Bu seçenek yalnızca kullanıcı başvuru formlarını etkiler ve bağımsız olarak yönetim panelinde her zaman aktif olacaktır."
       valuation_comment_notification: "Değerlendirme yorumu bildirimi"
       valuation_comment_notification_description: "Yeni bir değerlendirme yorumu oluşturulduğunda, bütçe yatırımı değerlendirme yorumlayıcısı hariç tüm ilişkili kullanıcılara bir e-posta gönderin"
+      graphql_api: "GraphQL API"
       sdg: SKH
     map:
       latitude: "Enlem"
