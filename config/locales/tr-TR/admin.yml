@@ -568,6 +568,7 @@ tr:
           back: Geri
           submit_button: Değişiklikleri kaydet
           warning: Metni düzenlediniz, değişiklikleri kalıcı olarak kaydetmek için Kaydet'e tıklamayı unutmayın.
+          markdown_changes_message: "Yaptığınız değişiklikleri kaydetmediniz. Sayfadan ayrılmak istediğinize emin misiniz?"
         form:
           launch_text_editor: Metin düzenleyicisini başlatın
           close_text_editor: Metin düzenleyiciyi kapatın
