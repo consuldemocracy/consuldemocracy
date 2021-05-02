@@ -4,6 +4,7 @@ tr:
       goal_1:
         title: "Yoksulluğa Son"
         title_in_two_lines: "Yoksulluğa Son"
+        description: "Her yerde, her şekliyle yoksulluğa son ver."
       goal_2:
         title: "Açlığa Son"
         title_in_two_lines: "Açlığa Son"
@@ -29,6 +30,9 @@ tr:
       goal_8:
         title: "İnsana Yakışır İş ve Ekonomik Büyüme"
         title_in_two_lines: "İnsana Yakışır İş ve Ekonomik Büyüme"
+      goal_9:
+        title: "Sanayi, Yenilikçilik ve Altyapı"
+        title_in_two_lines: "Sanayi, Yenilikçilik ve Altyapı"
       goal_10:
         title: "Eşitsizliklerin Azaltılması"
         title_in_two_lines: "Eşitsizliklerin Azaltılması"
@@ -41,6 +45,7 @@ tr:
         title_in_two_lines: "İklim Eylemi"
       goal_14:
         title: "Sudaki Yaşam"
+        title_in_two_lines: "Sudaki Yaşam"
       goal_15:
         title: "Karasal Yaşam"
         title_in_two_lines: "Karasal Yaşam"
