@@ -130,6 +130,7 @@ tr:
       response:
         date_of_birth: "Doğum tarihine giden yol"
         postal_code: "Posta koduna giden yol"
+        district: "İlçeye giden yol"
         gender: "Cinsiyete giden yol"
         name: "Ada giden yol"
         surname: "Soyada giden yol"
@@ -180,3 +181,6 @@ tr:
     sdg:
       process:
         debates: Tartışmalardaki ilgili SKHler
+        proposals: Tekliflerdeki ilgili SKH'ler
+        polls: Anketlerdeki ilgili SKH
+        legislation: İşbirliğine dayalı mevzuattaki ilgili SKH
