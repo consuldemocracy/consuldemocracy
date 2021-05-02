@@ -1565,15 +1565,33 @@ tr:
         card_title: Kart düzenle
         submit_card: Kart kaydet
     audits:
+      title: "Değişiklik Kayıtları"
       changes: "Değişiklikler listesi"
       id: "Kimlik"
       field: "Saha"
+      old_value: "Eski Değer"
+      edited_at: "Güncellenme tarihi"
+      edited_by: "Güncelleyen"
+      actions: "Faaliyetler"
+      empty: "Kaydedilen bir değişiklik yok"
     local_census_records:
       index:
+        title: Yerel vatandaş listesini yönet
+        create: Yeni yerel vatandaş listesi kaydı oluştur
+        no_local_census_records: Yerel vatandaş listesinde kayıt yok.
         document_type: Belge türü
         document_number: Belge numarası
         date_of_birth: Doğum tarihi
         postal_code: Posta kodu
+        import: CSV'yi içeri aktar
+      new:
+        creating: Yeni yerel vatandaş listesi kaydı oluşturuluyor
+      create:
+        notice: Yeni yerel vatandaş listesi kaydı, başarıyla oluşturuldu!
+      edit:
+        editing: Yeni yerel vatandaş listesi kaydı güncelleniyor
+      update:
+        notice: Yeni yerel vatandaş listesi kaydı, başarıyla güncellendi!
       imports:
         local_census_records:
           no_records_found: Kayıt bulunamadı.
