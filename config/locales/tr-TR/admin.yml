@@ -1604,5 +1604,7 @@ tr:
           title: Yerel vatandaş listesini yönet
           subtitle: Süreç sonuçlarını içe aktar
           import: Tekrar içe aktar
+          errored: Hatalı satırlar
+          created: Oluşturulan kayıtlar
         local_census_records:
           no_records_found: Kayıt bulunamadı.
