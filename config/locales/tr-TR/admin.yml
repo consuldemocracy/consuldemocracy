@@ -1592,6 +1592,11 @@ tr:
         editing: Yeni yerel vatandaş listesi kaydı güncelleniyor
       update:
         notice: Yeni yerel vatandaş listesi kaydı, başarıyla güncellendi!
+      destroy:
+        notice: Yerel vatandaş listesi kaydı, başarıyla silindi!
       imports:
+        new:
+          title: Yerel vatandaş listesi kayıtları
+          subtitle: CSV dosyasını içeri aktar
         local_census_records:
           no_records_found: Kayıt bulunamadı.
