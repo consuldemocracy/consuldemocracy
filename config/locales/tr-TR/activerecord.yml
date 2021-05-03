@@ -556,6 +556,10 @@ tr:
               invalid_date_range: taslak başlangıç tarihinde veya sonrasında olmalıdır
             allegations_end_date:
               invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalıdır
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: listede yer almamaktadır, izin verilen değerler Kimlik Kartı için 1, pasaport için 2 ve ikamet belgesi için 3'tür.
         proposal:
           attributes:
             tag_list:
