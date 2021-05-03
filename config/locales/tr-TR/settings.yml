@@ -88,6 +88,7 @@ tr:
       google_login: "Google girişi"
       google_login_description: "Kullanıcıların Google Hesapları ile kayıt olmalarına izin ver"
       wordpress_login: "Wordpress ile oturum açma"
+      wordpress_login_description: "Kullanıcıların Wordpress Hesapları ile kayıt olmalarına izin ver"
       featured_proposals: "Öne Çıkan öneriler"
       featured_proposals_description: "Dizin önerileri sayfasında öne çıkan önerileri gösterir"
       signature_sheets: "İmza sayfaları"
