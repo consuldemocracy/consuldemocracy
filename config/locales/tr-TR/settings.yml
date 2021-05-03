@@ -128,7 +128,9 @@ tr:
         endpoint: "Bitiş Noktası"
       request:
         structure: "Talep Yapısı"
+        document_number_description: "Belge numarasını gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için belge numarasına ihtiyaç duymuyorsa DOLDURMAYIN."
         date_of_birth: "Doğum tarihine giden yol"
+        date_of_birth_description: "Doğum tarihini gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için doğum tarihine ihtiyaç duymuyorsa DOLDURMAYIN."
         postal_code: "Posta koduna giden yol"
       response:
         date_of_birth: "Doğum tarihine giden yol"
