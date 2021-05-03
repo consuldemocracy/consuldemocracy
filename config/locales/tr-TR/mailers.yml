@@ -11,7 +11,7 @@ tr:
       manage_email_subscriptions: Bizden daha fazla e-posta almak istemiyorsanız, lütfen ayarlarınızı değiştirin
     email_verification:
       click_here_to_verify: bu bağlantı
-      instructions_2: Bu eposta ile hesabınız <b>%{document_type} %{document_number}</b> kullanılarak doğrulanacaktır. Bu bilgiler size ait değilse, lütfen linke tıklamadan bu mesajı göz ardı edin.
+      instructions_2: Bu e-posta ile hesabınız <b>%{document_type} %{document_number}</b> kullanılarak doğrulanacaktır. Bu bilgiler size ait değilse, lütfen linke tıklamadan bu mesajı göz ardı edin.
       instructions: Hesap doğrulama işlemini tamamlamak için linke tıklayın %{verification_link}.
       subject: E-postanızı onaylayın
       thanks: Çok teşekkür ederiz.
