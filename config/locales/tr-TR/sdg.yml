@@ -80,7 +80,7 @@ tr:
           other: "%{count} daha fazla hedef"
     related_list_selector:
       goal_identifier: "SKH%{code}"
-      goal_list: "Hedef listesi"
+      goal_list: "Size ait olan %{record} ile uyumlu bir veya birden fazla SKH seçebilirsiniz"
       help:
         title: "Hangi SKH'ler %{record} ile uyumlu?"
         text: "SKA yardım sayfası"
