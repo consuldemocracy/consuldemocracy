@@ -127,8 +127,11 @@ tr:
     remote_census:
       general:
         endpoint: "Bitiş Noktası"
+        endpoint_description: "Nüfus sayım servisinin mevcut olduğu ana bilgisayarın adı (wsdl)"
       request:
         structure: "Talep Yapısı"
+        document_type: "Belge türüne giden yol"
+        document_number: "Belge numarasına giden yol"
         document_number_description: "Belge numarasını gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için belge numarasına ihtiyaç duymuyorsa DOLDURMAYIN."
         date_of_birth: "Doğum tarihine giden yol"
         date_of_birth_description: "Doğum tarihini gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için doğum tarihine ihtiyaç duymuyorsa DOLDURMAYIN."
