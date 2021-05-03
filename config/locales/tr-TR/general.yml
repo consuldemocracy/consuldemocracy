@@ -630,6 +630,7 @@ tr:
       back: Oylamaya geri dön
       cant_answer_not_logged_in: "Katılmak için %{signin} veya %{signup} yapmalısınız."
       comments_tab: Yorumlar
+      cant_answer_verify: "Yanıtlamak için %{verify_link} gerekmektedir."
       verify_link: "hesabınızı doğrulayın"
       cant_answer_expired: "Bu anket tamamlandı."
       cant_answer_wrong_geozone: "Bu soru sizin bulunduğunuz bölgede uygulanabilir değil."
