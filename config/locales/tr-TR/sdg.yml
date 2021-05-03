@@ -24,9 +24,13 @@ tr:
       goal_5:
         title: "Cinsiyet Eşitliği"
         title_in_two_lines: "Toplumsal Cinsiyet Eşitliği"
-        description: "Tüm kadın ve kız çocuklarının güçlendirilmesi ve toplumsal cinsiyet eşitliğinin sağlanması."
+        description: "Tüm kadın ve kız çocuklarını güçlendirin ve toplumsal cinsiyet eşitliğini sağlayın."
+        targets:
+          target_5_1:
+            title: "Kadınlara ve kız çocuklarına karşı her yerde, her türlü ayrımcılığı ortadan kaldırın."
       goal_6:
         title: "Temiz Su ve Hijyen Önlemleri"
+        title_in_two_lines: "Temiz Su ve Sanitasyon"
       goal_7:
         title: "Erişilebilir ve Temiz Enerji"
         title_in_two_lines: "Erişilebilir ve Temiz Enerji"
