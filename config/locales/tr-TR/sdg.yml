@@ -15,6 +15,8 @@ tr:
         targets:
           target_3_1:
             title: "2030'a kadar, dünya genelinde anne ölüm oranının 100.000 canlı doğumda 70'in altına düşürülmesi."
+          target_3_6:
+            title: "2020'ye kadar, trafik kazalarından kaynaklanan toplam yaralanma ve ölüm sayısının yarıya indirilmesi."
       goal_4:
         title: "Nitelikli Eğitim"
         title_in_two_lines: "Nitelikli Eğitim"
