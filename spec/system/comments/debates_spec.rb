@@ -235,6 +235,50 @@ describe "Commenting debates" do
     expect(page).to have_content "Can't be blank"
   end
 
+  context "Delete" do
+    scenario "Without replies", :js do
+      comment = create(:comment, commentable: debate, user: user)
+
+      login_as(user)
+      visit debate_path(debate)
+
+      within("#comment_#{comment.id}") { click_link "Delete comment" }
+
+      page.driver.browser.switch_to.alert do
+        expect(page).to have_content "Are you sure? This action will delete this comment. "\
+                                     "You can't undo this action."
+      end
+
+      accept_confirm
+
+      visit debate_path(debate)
+      expect(page).not_to have_content comment.body
+      expect(comment.reload.hidden?).to be true
+    end
+
+    scenario "With replies", :js do
+      comment = create(:comment, commentable: debate, user: user)
+      create(:comment, commentable: debate, parent: comment)
+
+      login_as(user)
+      visit debate_path(debate)
+
+      within("#comment_#{comment.id}") { click_link "Delete comment" }
+
+      page.driver.browser.switch_to.alert do
+        expect(page).to have_content "Are you sure? This action will delete this comment. "\
+                                     "You can't undo this action."
+      end
+
+      accept_confirm
+
+      visit debate_path(debate)
+      within "#comment_#{comment.id}" do
+        expect(page).to have_content "This comment has been deleted"
+      end
+    end
+  end
+
   scenario "Reply", :js do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")
@@ -496,10 +540,12 @@ describe "Commenting debates" do
       within("#comment_#{comment.id}_votes") do
         within(".in_favor") do
           expect(page).to have_content "1"
+          expect(page).to have_css "a.like.voted"
         end
 
         within(".against") do
           expect(page).to have_content "1"
+          expect(page).to have_css "a.unlike.no-voted"
         end
 
         expect(page).to have_content "2 votes"
@@ -532,16 +578,19 @@ describe "Commenting debates" do
 
         within(".in_favor") do
           expect(page).to have_content "1"
+          expect(page).to have_css "a.like.voted"
         end
 
         find(".against a").click
 
         within(".in_favor") do
           expect(page).to have_content "0"
+          expect(page).to have_css "a.like.no-voted"
         end
 
         within(".against") do
           expect(page).to have_content "1"
+          expect(page).to have_css "a.unlike.voted"
         end
 
         expect(page).to have_content "1 vote"

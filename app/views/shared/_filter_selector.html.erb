@@ -1,0 +1,17 @@
+<form class="filter-selector">
+  <div class="small-12 column text-right">
+    <label for="filter_selector" class="small inline-block"><%= t("#{i18n_namespace}.filter") %></label>
+    <select class="js-location-changer inline-block"
+            data-order="<%= @current_filter %>"
+            name="filter-selector"
+            id="filter_selector"
+            title="<%= t("#{i18n_namespace}.filter") %>">
+      <% @valid_filters.each do |filter| %>
+        <option <%= "selected" if filter == @current_filter %>
+          value="<%= current_path_with_query_params(filter: filter, page: 1) %>">
+          <%= t("#{i18n_namespace}.filters.#{filter}") %>
+        </option>
+      <% end %>
+    </select>
+  </div>
+</form>

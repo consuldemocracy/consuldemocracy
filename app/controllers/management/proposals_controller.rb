@@ -56,7 +56,7 @@ class Management::ProposalsController < Management::BaseController
     def proposal_params
       attributes = [:video_url, :responsible_name, :tag_list,
                     :terms_of_service, :geozone_id,
-                    :skip_map, map_location_attributes: [:latitude, :longitude, :zoom]]
+                    map_location_attributes: [:latitude, :longitude, :zoom]]
       params.require(:proposal).permit(attributes, translation_params(Proposal))
     end
 

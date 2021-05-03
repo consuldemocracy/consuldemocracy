@@ -1,5 +1,23 @@
 <% provide :title do %><%= t("devise_views.organizations.registrations.new.title") %><% end %>
-<h2><%= t("devise_views.organizations.registrations.new.title") %></h2>
+
+<ul class="no-bullet submenu">
+  <li class="inline-block">
+    <%= link_to t("devise_views.shared.sign_in"), new_session_path(resource_name) %>
+  </li>
+  <li class="inline-block">
+    <%= link_to new_user_registration_path, class: "is-active" do %>
+      <h2><%= t("devise_views.shared.sign_up") %></h2>
+    <% end %>
+  </li>
+</ul>
+
+<div class="auth-title">
+  <h2><%= t("devise_views.organizations.registrations.new.title") %></h2>
+  <p>
+    <%= sanitize(t("devise_views.shared.not_organization",
+        link: link_to(t("devise_views.shared.not_organization_link"), new_user_registration_path))) %>
+  </p>
+</div>
 
  <%= form_for(resource, as: :user, url: organization_registration_path) do |f| %>
    <%= render "shared/errors", resource: resource %>
@@ -36,8 +54,9 @@
                                 target: "_blank")
                 ) %>
 
-      <div class="small-12 medium-6 small-centered">
-        <%= f.submit t("devise_views.organizations.registrations.new.submit"), class: "button expanded" %>
+      <div class="small-12">
+        <%= f.submit t("devise_views.organizations.registrations.new.submit"),
+                     class: "button expanded large" %>
       </div>
     </div>
   </div>

@@ -2,15 +2,25 @@
 <h2 class="sidebar-title"><%= t("proposals.index.proposals_lists") %></h2>
 
 <p>
+  <% if proposals_any?("selected") %>
+    <%= link_to t("proposals.index.selected_proposals_link"),
+                proposals_path(selected: "all"),
+                class: "small" %>
+    <br>
+  <% end %>
   <%= link_to t("proposals.index.top_link_proposals"),
               summary_proposals_path,
               class: "small" %>
   <br>
-  <%= link_to t("proposals.index.archived_proposals"),
-              proposals_path(order: "archival_date"),
-              class: "small" %>
-  <br>
-  <%= link_to t("proposals.index.retired_proposals_link"),
-              proposals_path(retired: "all"),
-              class: "small" %>
+  <% if proposals_any?("archived") %>
+    <%= link_to t("proposals.index.archived_proposals"),
+                proposals_path(order: "archival_date"),
+                class: "small" %>
+    <br>
+  <% end %>
+  <% if proposals_any?("retired") %>
+    <%= link_to t("proposals.index.retired_proposals_link"),
+                proposals_path(retired: "all"),
+                class: "small" %>
+  <% end %>
 </p>

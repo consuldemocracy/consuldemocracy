@@ -12,7 +12,9 @@ module BudgetsHelper
   def heading_name_and_price_html(heading, budget)
     tag.div do
       concat(heading.name + " ")
-      concat(tag.span(budget.formatted_heading_price(heading)))
+      if budget.show_money?
+        concat(tag.span(budget.formatted_heading_price(heading)))
+      end
     end
   end
 
@@ -23,8 +25,8 @@ module BudgetsHelper
     csv_params
   end
 
-  def budget_phases_select_options
-    Budget::Phase::PHASE_KINDS.map { |ph| [t("budgets.phase.#{ph}"), ph] }
+  def budget_phases_select_options(budget)
+    budget.phases.enabled.map(&:kind).map { |ph| [t("budgets.phase.#{ph}"), ph] }
   end
 
   def budget_currency_symbol_select_options
@@ -67,13 +69,13 @@ module BudgetsHelper
     !budget.drafting? || current_user&.administrator?
   end
 
-  def current_budget_map_locations
-    return unless current_budget.present?
+  def budget_map_locations(budget)
+    return unless budget.present?
 
-    if current_budget.publishing_prices_or_later? && current_budget.investments.selected.any?
-      investments = current_budget.investments.selected
+    if budget.publishing_prices_or_later? && budget.investments.selected.any?
+      investments = budget.investments.selected
     else
-      investments = current_budget.investments
+      investments = budget.investments
     end
 
     MapLocation.where(investment_id: investments).map(&:json_data)
@@ -121,5 +123,38 @@ module BudgetsHelper
         active: controller_name == section.to_s
       }
     end
+  end
+
+  def budget_phase_name(phase)
+    phase.name.presence || t("budgets.phase.#{phase.kind}")
+  end
+
+  def budget_new_step_phases?(step)
+    step == "phases"
+  end
+
+  def budget_new_step_group?(step)
+    step == "groups" || step == "headings" || step == "phases"
+  end
+
+  def budget_new_step_headings?(step)
+    step == "headings" || step == "phases"
+  end
+
+  def budget_single?(budget)
+    budget.groups.headings.count == 1
+  end
+
+  def class_for_form(resource)
+    unless @mode == "single" || resource.errors.any?
+      "hide"
+    end
+  end
+
+  def budget_investments_total_supports(user, budget)
+    Vote.where(votable_type: "Budget::Investment",
+               votable_id: budget.investments.map(&:id),
+               vote_flag: true,
+               voter_id: user.id).count
   end
 end

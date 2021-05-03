@@ -1,14 +1,21 @@
 <span class="total-amount">
-  <%= sanitize(ballot.amount_limit_info(heading)) %>
+  <% if @budget.approval_voting? %>
+    <%= sanitize(ballot.amount_limit_info(heading)) %>
+  <% else %>
+    <%= t("budgets.progress_bar.assigned") %>
+    <span id="amount_spent"><%= @ballot.formatted_amount_spent(@heading) %></span> /
+    <%= t("budgets.investments.header.price") %> <%= @budget.formatted_heading_price(@heading) %>
+  <% end %>
 </span>
 
-<div class="progress" role="progressbar" tabindex="0"
+<div class="progress progress-bar-indicator" role="progressbar" tabindex="0"
      aria-valuenow="<%= ballot.percentage_spent(heading) %>" aria-valuemin="0" aria-valuemax="100">
   <div class="progress-meter"
        style="width: <%= ballot.percentage_spent(heading) %>%">
   </div>
 </div>
 
-<p id="amount-spent" class="spent-amount-text" style="width: <%= ballot.percentage_spent(heading) %>%">
+<p class="progress-meter-text spent-amount-text"
+   style="width: <%= ballot.percentage_spent(heading) %>%">
   <%= render "budgets/ballot/progress_bar/#{ballot.budget.voting_style}", ballot: ballot, heading: heading %>
 </p>

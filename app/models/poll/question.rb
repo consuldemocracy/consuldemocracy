@@ -54,6 +54,10 @@ class Poll::Question < ApplicationRecord
     end
   end
 
+  def answers_with_description
+    question_answers.select { |answer| answer.description.present? }
+  end
+
   delegate :answerable_by?, to: :poll
 
   def self.answerable_by(user)

@@ -1,0 +1,39 @@
+<div id="<%= dom_id(investment) %>" class="budget-investment index clear">
+  <div class="panel <%= "with-image" if investment.image.present? %>">
+    <div class="image-container">
+      <% if investment.image.present? %>
+        <%= image_tag investment.image_url(:large), alt: investment.image.title.unicode_normalize %>
+      <% else %>
+        <%= image_tag "budget_investment_no_image.jpg", alt: investment.title %>
+      <% end %>
+    </div>
+
+    <div class="small-12 supports-and-price">
+      <% if investment.should_show_vote_count? %>
+        <div class="table-cell">
+          <span class="supports-title"><%= t("budgets.investments.investment.support_title") %></span>
+          <strong><%= investment.total_votes %></strong>
+        </div>
+      <% end %>
+
+      <% if investment.should_show_price? %>
+        <div class="table-cell">
+          <span class="price-title"><%= t("budgets.investments.investment.price_title") %></span>
+          <strong><%= investment.formatted_price %></strong>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="budget-investment-content">
+      <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
+        <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
+
+        <%= render "/budgets/investments/investment_info", investment: investment %>
+
+        <%= link_to namespaced_budget_investment_path(investment), class: "read-more" do %>
+          <small><%= t("budgets.investments.index.read_more") %></small>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

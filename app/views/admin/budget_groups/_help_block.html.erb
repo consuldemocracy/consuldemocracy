@@ -1,0 +1,5 @@
+<% if @mode == "single" %>
+  <%= render "admin/shared/help_block", i18n_namespace: "admin.budget_groups.index.single", learn_more_link: admin_budget_groups_path %>
+<% else %>
+  <%= render "admin/shared/help_block", i18n_namespace: "admin.budget_groups.index.multiple", learn_more_link: admin_budget_groups_path %>
+<% end %>

@@ -1,0 +1,41 @@
+nl:
+  pages:
+    help:
+      guide: "Deze pagina licht ieder onderdeel van het platform toe. Meer informatie over ieder onderdeel vind je door te klikken op de knoppen hieronder."
+      menu:
+        debates: "Discussies"
+        proposals: "Initiatieven"
+        budgets: "Burgerbegroting"
+        polls: "Peilingen"
+        processes: "Open plannen"
+      debates:
+        title: "Discussies"
+        description: "Bij het onderdeel %{link} deel en bespreek je je mening met anderen. Ook kun je hier een initiatief delen, dat via andere onderdelen op %{org} tot concrete acties van de gemeente kan leiden."
+        link: "discussie"
+        feature: "Je kan een discussie starten, reageren op berichten en aangeven met welke berichten je het (on)eens bent. Om dit te kunnen doen, moet je je wel eerst %{link}."
+        feature_link: "aanmelden"
+        figcaption: 'Knoppen om aan te geven of je het “Eens” of “Oneens” bent met een discussiebericht.'
+      proposals:
+        title: "Initiatieven"
+        description: "In dit onderdeel deel je je %{link} met de gemeente en kun je reageren op initiatieven van anderen. De initiatieven hebben voldoende steun nodig, voordat hierop gestemd kan worden. Als een initiatief veel stemmen krijgt, wordt het uitgevoerd door de gemeente."
+        link: "initiatief"
+        image_alt: "Knop waarmee je een initiatief kan steunen."
+        figcaption: "Knop waarmee je een initiatief kan steunen."
+      budgets:
+        description: "In het onderdeel %{link} krijgen inwoners zeggenschap over de besteding van gemeentebudgetten."
+        link: "burgerbegroting"
+        image_alt: "De fases 'steunen' en 'stemmen'"
+        figcaption: "De fases 'steunen' en 'stemmen'"
+      polls:
+        title: "Peilingen"
+        feature_1: "Om mee te kunnen doen aan een peiling moet je je %{link} en je account verifiëren."
+        feature_1_link: "aanmelden"
+      processes:
+        title: "Open plannen"
+        description: "In het onderdeel %{link} krijg je inspraak in het opstellen en aanpassen van officiële stukken. Je kunt in dit onderdeel ook je mening geven over het huidige beleid en hier ontstaan er  plannen vanuit eerdere discussies."
+        link: "plannen"
+        feature: "Om te participeren bij de open plannen moet je %{link} en je account verifiëren."
+        feature_link: "aanmelden"
+      faq:
+        description: "Lees de meestgestelde vragen. Misschien staat je oplossing hier tussen."
+        button: "Meestgestelde vragen"

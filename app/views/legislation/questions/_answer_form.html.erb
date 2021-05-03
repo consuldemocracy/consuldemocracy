@@ -7,7 +7,7 @@
           <%= f.radio_button :legislation_question_option_id, question_option.id, label: false %>
           <span class="control-indicator"></span>
           <%= question_option.value %>
-        </label>
+        </label><br>
       <% end %>
       <%= f.submit t("legislation.questions.show.answer_question"), class: "button" %>
     <% end %>

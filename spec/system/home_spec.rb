@@ -148,12 +148,16 @@ describe "Home" do
 
     visit root_path
 
-    expect(page).to have_css(".title", text: "Featured")
+    within("#welcome_cards") do
+      expect(page).to have_css(".title", text: "Featured")
+    end
   end
 
   scenario "if there are no cards, the 'featured' title will not render" do
     visit root_path
 
-    expect(page).not_to have_css(".title", text: "Featured")
+    within("#welcome_cards") do
+      expect(page).not_to have_css(".title", text: "Featured")
+    end
   end
 end

@@ -11,6 +11,10 @@ module FeedsHelper
     feed.kind == "processes"
   end
 
+  def feed_budgets?(feed)
+    feed.kind == "budgets"
+  end
+
   def feed_debates_enabled?
     Setting["homepage.widgets.feeds.debates"].present?
   end
@@ -21,6 +25,10 @@ module FeedsHelper
 
   def feed_processes_enabled?
     Setting["homepage.widgets.feeds.processes"].present?
+  end
+
+  def feed_budgets_enabled?
+    Setting["homepage.widgets.feeds.budgets"].present?
   end
 
   def feed_debates_and_proposals_enabled?

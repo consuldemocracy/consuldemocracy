@@ -22,25 +22,25 @@
         <table id="question_<%= question.id %>_results_table">
           <thead>
             <tr>
-              <%- question.question_answers.each do |answer| %>
-                <th scope="col" <%= answer.id == most_voted_answer_id ? "class=win" : "" %>>
+              <th scope="col" colspan="2"><%= question.title %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%- question.question_answers.each do |answer| %>
+              <tr>
+                <td scope="col" <%= answer.id == most_voted_answer_id ? "class=win" : "" %>>
                   <% if answer.id == most_voted_answer_id %>
                     <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
                   <% end %>
                   <%= answer.title %>
-                </th>
-              <% end %>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <%- question.question_answers.each do |answer| %>
-                <td id="answer_<%= answer.id %>_result" <%= answer.id == most_voted_answer_id ? "class=win" : "" %>>
+                </td>
+                <td id="answer_<%= answer.id %>_result"
+                    class="text-center <%= answer.id == most_voted_answer_id ? "win" : "" %>">
                   <%= answer.total_votes %>
                   (<%= answer.total_votes_percentage.round(2) %>%)
                 </td>
-              <% end %>
-            </tr>
+              </tr>
+            <% end %>
           </tbody>
         </table>
       <% end %>

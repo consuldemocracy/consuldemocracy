@@ -1,13 +1,16 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
-  <div class="panel <%= ("with-image" if feature?(:allow_images) && investment.image.present?) %>">
-
+  <div class="panel
+              <%= "with-image" if feature?(:allow_images) && investment.image.present? %>
+              <%= "supported" if voted_for?(investment_votes, investment) %>">
     <% if feature?(:allow_images) && investment.image.present? %>
     <div class="row" data-equalizer>
 
       <div class="small-12 medium-3 large-2 column text-center">
         <div data-equalizer-watch>
-          <%= image_tag investment.image_url(:thumb),
-                        alt: investment.image.title.unicode_normalize %>
+          <%= link_to namespaced_budget_investment_path(investment), id: "image" do %>
+            <%= image_tag investment.image_url(:thumb),
+                          alt: investment.image.title.unicode_normalize %>
+          <% end %>
         </div>
       </div>
 
@@ -21,30 +24,8 @@
           <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
 
-            <p class="investment-project-info">
-              <%= l investment.created_at.to_date %>
+            <%= render "/budgets/investments/investment_info", investment: investment %>
 
-              <% if investment.author.hidden? || investment.author.erased? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
-                  <%= t("budgets.investments.show.author_deleted") %>
-                </span>
-              <% else %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
-                  <%= investment.author.name %>
-                </span>
-                <% if investment.author.official? %>
-                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                  <span class="label round level-<%= investment.author.official_level %>">
-                    <%= investment.author.official_position %>
-                  </span>
-                <% end %>
-              <% end %>
-
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <%= investment.heading.name %>
-            </p>
             <div class="investment-project-description">
               <%= wysiwyg(investment.description) %>
               <div class="truncate"></div>
@@ -63,8 +44,8 @@
                <%= render "/budgets/investments/votes",
                  investment: investment,
                  investment_votes: investment_votes,
-                 vote_url: namespaced_budget_investment_vote_path(investment, value: "yes")
-               %>
+                 vote_up_url: namespaced_budget_investment_vote_path(investment, value: "yes"),
+                 vote_down_url: namespaced_budget_investment_vote_path(investment, value: "no") %>
           </div>
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"

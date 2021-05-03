@@ -52,7 +52,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       send("fill_in_#{mappable_factory_name}_form")
       expect(page).to have_css ".map_location"
-      check "#{mappable_factory_name}_skip_map"
       send("submit_#{mappable_factory_name}_form")
 
       expect(page).not_to have_css(".map_location")
@@ -68,15 +67,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       send("submit_#{mappable_factory_name}_form")
 
       expect(page).not_to have_css(".map_location")
-    end
-
-    scenario "Errors on create" do
-      do_login_for user
-      visit send(mappable_new_path, arguments)
-
-      send("submit_#{mappable_factory_name}_form")
-
-      expect(page).to have_content "Map location can't be blank"
     end
 
     describe "When restoring the page from browser history" do
@@ -173,25 +163,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       visit send(mappable_new_path, arguments)
 
       send("fill_in_#{mappable_factory_name}_form")
-      check "#{mappable_factory_name}_skip_map"
       send("submit_#{mappable_factory_name}_form")
 
       expect(page).not_to have_content "Map location can't be blank"
-    end
-
-    scenario "Toggle map", :js do
-      do_login_for user
-      visit send(mappable_new_path, arguments)
-
-      check "#{mappable_factory_name}_skip_map"
-
-      expect(page).not_to have_css(".map")
-      expect(page).not_to have_content("Remove map marker")
-
-      uncheck "#{mappable_factory_name}_skip_map"
-
-      expect(page).to have_css(".map")
-      expect(page).to have_content("Remove map marker")
     end
   end
 
@@ -238,7 +212,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       visit send(mappable_edit_path, id: mappable.id)
       click_link "Remove map marker"
-      check "#{mappable_factory_name}_skip_map"
       click_on "Save changes"
 
       expect(page).not_to have_css(".map_location")
@@ -329,7 +302,8 @@ def fill_in_proposal_form
 end
 
 def submit_proposal_form
-  check :proposal_terms_of_service
+  # Check terms of service by default
+  # check :proposal_terms_of_service
   click_button "Create proposal"
 
   if page.has_content?("Not now, go to my proposal")
@@ -345,14 +319,15 @@ def validate_latitude_longitude(mappable_factory_name)
 end
 
 def fill_in_budget_investment_form
-  page.select mappable.heading.name_scoped_by_group, from: :budget_investment_heading_id
   fill_in "Title", with: "Budget investment title"
   fill_in_ckeditor "Description", with: "Budget investment description"
-  check :budget_investment_terms_of_service
+  # Check terms of service by default
+  # check :budget_investment_terms_of_service
 end
 
 def submit_budget_investment_form
-  check :budget_investment_terms_of_service
+  # Check terms of service by default
+  # check :budget_investment_terms_of_service
   click_button "Create Investment"
 end
 

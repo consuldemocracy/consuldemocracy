@@ -1,30 +1,22 @@
 <div class="row margin-top">
-  <div class="small-12 medium-9 column">
+  <div class="small-12 column">
     <h2><%= t("budgets.index.finished_budgets") %></h2>
 
-    <div id="finished_budgets" class="budget-investments-list">
+    <div id="finished_budgets">
       <% budgets.each do |budget| %>
         <div class="budget-investment clear">
           <div class="panel past-budgets">
-            <div class="row" data-equalizer data-equalizer-on="medium">
-              <div class="small-12 medium-6 column table" data-equalizer-watch>
-                <div class="table-cell align-middle">
-                  <h3><%= budget.name %></h3>
-                </div>
+            <div class="row">
+              <div class="small-12 medium-6 large-9 column">
+                <h3><%= budget.name %></h3>
               </div>
 
-              <div class="small-12 medium-6 column table" data-equalizer-watch>
-                <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
-                  <% if can?(:read_results, budget) %>
-                    <%= link_to t("budgets.index.see_results"),
-                                budget_results_path(budget),
-                                class: "button" %>
-                  <% end %>
+              <div id="budget_<%= budget.id %>_results" class="float-right">
+                <% if can?(:read_results, budget) %>
+                  <%= link_to t("budgets.index.see_results"), budget_results_path(budget), class: "button" %>
+                <% end %>
 
-                  <%= link_to t("budgets.index.milestones"),
-                              budget_executions_path(budget),
-                              class: "button" %>
-                </div>
+                <%= link_to t("budgets.index.milestones"), budget_executions_path(budget), class: "button" %>
               </div>
             </div>
           </div>

@@ -9,20 +9,31 @@
   </span>
 
   <div class="in-favor js-in-favor">
-    <% if user_voted_for %>
-      <div class="supported callout success">
-        <%= t("budgets.investments.investment.already_supported") %>
-      </div>
-    <% elsif investment.should_show_votes? %>
-      <%= link_to vote_url,
-          class: "button button-support small expanded",
-          title: t("budgets.investments.investment.support_title"),
-          method: "post",
-          remote: (display_support_alert?(investment) ? false : true),
-          data:   (display_support_alert?(investment) ? {
-                  confirm: t("budgets.investments.investment.confirm_group", count: investment.group.max_votable_headings) } : nil),
-          "aria-hidden" => css_for_aria_hidden(reason) do %>
-        <%= t("budgets.investments.investment.give_support") %>
+    <% if investment.should_show_votes? %>
+      <% if user_voted_for %>
+        <div class="supported">
+          <div class="callout success">
+            <%= t("budgets.investments.investment.already_supported") %>
+          </div>
+          <%= link_to vote_down_url,
+              class: "button button-remove-support expanded",
+              title: t("budgets.investments.investment.remove_support"),
+              method: "post",
+              remote: true do %>
+            <%= t("budgets.investments.investment.remove_support") %>
+          <% end %>
+        </div>
+      <% else %>
+        <%= link_to vote_up_url,
+            class: "button button-support expanded",
+            title: t("budgets.investments.investment.support_title"),
+            method: "post",
+            remote: (display_support_alert?(investment) ? false : true),
+            data:   (display_support_alert?(investment) ? {
+                    confirm: t("budgets.investments.investment.confirm_group", count: investment.group.max_votable_headings) } : nil),
+            "aria-hidden" => css_for_aria_hidden(reason) do %>
+          <%= t("budgets.investments.investment.give_support") %>
+        <% end %>
       <% end %>
     <% end %>
   </div>

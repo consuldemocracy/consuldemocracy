@@ -141,11 +141,14 @@ es:
         description_balloting: "Descripción durante la fase de votación"
         description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
         description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
-        phase: "Fase"
+        phase: "Fase activa"
         currency_symbol: "Divisa"
         voting_style: "Estilo de la votación final"
-        voting_style_knapsack: Bolsa de dinero
-        voting_style_approval: Por aprobación
+        voting_style_knapsack: "Bolsa de dinero"
+        voting_style_approval: "Por aprobación"
+        main_button_text: "Texto del botón"
+        main_button_url: "El botón te lleva a (añade un enlace)"
+        hide_money: "Ocultar la cantidad de dinero para este presupuesto"
       budget/translation:
         name: "Nombre"
       budget/investment:
@@ -168,6 +171,7 @@ es:
         selected: "Marcar como seleccionado"
         selected_true: "Seleccionado"
         selected_false: "No seleccionado"
+        feasibility_explanation: "Informe de viabilidad <small>(opcional, dato público)</small>"
         unfeasibility_explanation: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
         valuation_finished: "Informe finalizado"
         valuator_ids: "Grupos"
@@ -206,7 +210,7 @@ es:
         latitude: "Latitud (opcional)"
         longitude: "Longitud (opcional)"
         name: "Nombre de la partida"
-        price: "Cantidad"
+        price: "Cantidad de dinero"
         population: "Población (opcional)"
         max_ballot_lines: "Votos permitidos"
       budget/heading/translation:
@@ -215,7 +219,10 @@ es:
         enabled: "Fase habilitada"
         ends_at: "Fecha de fin"
         starts_at: "Fecha de inicio"
+        main_button_text: "Texto del botón"
+        main_button_url: "El botón te lleva a (añade un enlace)"
       budget/phase/translation:
+        name: "Nombre"
         description: "Descripción"
         summary: "Resumen"
       comment:
@@ -502,10 +509,6 @@ es:
           attributes:
             segment_recipient:
               invalid: "El usuario del destinatario es inválido"
-        map_location:
-          attributes:
-            map:
-              invalid: El mapa no puede estar en blanco. Añade un punto al mapa o marca la casilla si no hace falta un mapa.
         poll/voter:
           attributes:
             document_number:

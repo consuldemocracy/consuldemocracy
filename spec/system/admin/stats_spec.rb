@@ -103,6 +103,9 @@ describe "Stats" do
 
         create(:budget_investment, heading: create(:budget_heading, group: group_2), voters: [create(:user)])
         create(:budget_investment, heading: heading_all_city, voters: [create(:user), create(:user)])
+        investment_retired_supports = create(:budget_investment, heading: heading_all_city)
+
+        3.times { create(:vote, votable: investment_retired_supports, vote_flag: false) }
 
         visit admin_stats_path
         click_link "Participatory Budgets"
@@ -216,6 +219,44 @@ describe "Stats" do
         end
 
         expect(page).to have_content "Participants 2"
+      end
+
+      scenario "Do not show headings from other budgets" do
+        other_heading = create(:budget_heading)
+        investment_2 = create(:budget_investment, :feasible, :selected, heading: other_heading)
+
+        create(:user, ballot_lines: [investment])
+        create(:user, ballot_lines: [investment_2])
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Final voting"
+        end
+
+        expect(page).to have_content heading.name
+        expect(page).not_to have_content other_heading.name
+      end
+
+      scenario "Do not count removed votes" do
+        create(:user, ballot_lines: [investment])
+        create(:user, ballot_lines: [investment])
+
+        Budget::Ballot::Line.last.destroy!
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Final voting"
+        end
+
+        within("#total_participants_count") do
+          expect(page).to have_content "1"
+        end
+
+        within("#user_count_#{heading.slug}") do
+          expect(page).to have_content "#{heading.name} 1"
+        end
       end
     end
   end

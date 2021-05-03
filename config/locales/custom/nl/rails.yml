@@ -1,0 +1,7 @@
+nl:
+  helpers:
+    submit:
+      update: "Bewerk %{model}"
+  time:
+    formats:
+      datetime: "%d-%m-%Y · %H:%M:%S"

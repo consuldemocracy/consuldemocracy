@@ -53,7 +53,9 @@ namespace :admin do
 
   resources :budgets do
     member do
+      patch :publish
       put :calculate_winners
+      put :switch_group
     end
 
     resources :groups, except: [:show], controller: "budget_groups" do
@@ -68,7 +70,9 @@ namespace :admin do
       resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
     end
 
-    resources :budget_phases, only: [:edit, :update]
+    resources :budget_phases, only: [:index, :edit, :update] do
+      member { patch :toggle_enable }
+    end
   end
 
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]

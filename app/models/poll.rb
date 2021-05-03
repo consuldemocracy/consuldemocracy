@@ -174,4 +174,8 @@ class Poll < ApplicationRecord
   def budget_poll?
     budget.present?
   end
+
+  def questions_with_answer_descriptions
+    questions.select { |question| question.answers_with_description.any? }
+  end
 end
