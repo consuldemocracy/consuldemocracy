@@ -1534,6 +1534,7 @@ tr:
           see_page: Sayfayı göster
         new:
           title: Yeni kişisel sayfa oluştur
+          slug_help: "URL'de bu sayfayı tanımlayan metin, örneğin <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Oluşturuldu
           status: Durum
