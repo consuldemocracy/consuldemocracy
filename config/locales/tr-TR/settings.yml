@@ -190,7 +190,7 @@ tr:
         content_types_description: "Yüklenen belgeler için izin verilen tüm içerik türlerini seçin"
     sdg:
       process:
-        debates: Tartışmalardaki ilgili SKHler
+        debates: Tartışmalardaki ilgili SKH'ler
         proposals: Tekliflerdeki ilgili SKH'ler
         polls: Anketlerdeki ilgili SKH
         polls_description: Anketlerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
