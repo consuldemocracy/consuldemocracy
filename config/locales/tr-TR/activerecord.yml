@@ -217,8 +217,8 @@ tr:
         name: "Grup ismi"
       budget/heading:
         allow_custom_content: "İçerik engellemeye izin ver"
-        latitude: "Enlem(opsiyonel)"
-        longitude: "Boylam(opsiyonel)"
+        latitude: "Enlem(isteğe bağlı)"
+        longitude: "Boylam(isteğe bağlı)"
         name: "Başlık adı"
         price: "Fiyat"
         population: "Nüfus"
