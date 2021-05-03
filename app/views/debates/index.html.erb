@@ -28,7 +28,9 @@
       </div>
     </div>
   <% else %>
-    <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
+    <%= render "shared/section_header",
+               i18n_namespace: "debates.index.section_header",
+               image: "far fa-comment-alt" %>
   <% end %>
 
   <% if feature?("user.recommendations") && @recommended_debates.present? %>
@@ -74,14 +76,15 @@
       <%= paginate @debates %>
 
       <% unless @search_terms || @advanced_search_terms %>
-        <div id="section_help" class="margin" data-magellan-target="section_help">
+        <div id="section_help" class="section-help margin" data-magellan-target="section_help">
           <p class="lead">
             <strong><%= t("debates.index.section_footer.title") %></strong>
           </p>
           <p><%= t("debates.index.section_footer.description") %></p>
           <p><%= t("debates.index.section_footer.help_text_1") %></p>
           <p><%= sanitize(t("debates.index.section_footer.help_text_2",
-                    org: link_to(setting["org_name"], new_user_registration_path))) %></p>
+                            org: link_to(Setting["org_name"],
+                                 new_user_registration_path))) %>
           </p>
         </div>
       <% end %>

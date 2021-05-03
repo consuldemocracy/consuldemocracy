@@ -1,0 +1,13 @@
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-4 small-centered column margin-top">
+    <% if budget.single_heading? %>
+      <%= link_to t("budgets.show.see_all_investments"),
+                  budget_investments_path(budget, heading_id: budget.headings.first.id, filter: @current_filter),
+                  class: "button expanded" %>
+    <% else %>
+      <%= link_to t("budgets.show.see_all_investments"),
+                  budget_groups_path(budget, filter: @current_filter),
+                  class: "button expanded" %>
+    <% end %>
+  </div>
+</div>

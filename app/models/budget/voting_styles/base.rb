@@ -9,8 +9,8 @@ class Budget::VotingStyles::Base
     self.class.name.split("::").last.underscore
   end
 
-  def change_vote_info(link:)
-    I18n.t("budgets.investments.index.sidebar.change_vote_info.#{name}", link: link)
+  def change_vote_info(options = {})
+    I18n.t("budgets.investments.index.sidebar.change_vote_info.#{name}", options)
   end
 
   def voted_info(heading)

@@ -4,9 +4,9 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
   feature_flag :budgets
 
+  before_action :load_budget
   before_action :restrict_access_to_assigned_items, only: [:show, :edit, :valuate]
   before_action :restrict_access, only: [:edit, :valuate]
-  before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :valuate]
 
   has_orders %w[oldest], only: [:show, :edit]
@@ -100,11 +100,11 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     def valuation_params
       params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation,
                                                 :feasibility, :unfeasibility_explanation,
-                                                :duration, :valuation_finished)
+                                                :duration, :valuation_finished, :feasibility_explanation)
     end
 
     def restrict_access
-      unless current_user.administrator? || current_budget.valuating?
+      unless current_user.administrator? || @budget.valuating?
         raise CanCan::AccessDenied.new(I18n.t("valuation.budget_investments.not_in_valuating_phase"))
       end
     end

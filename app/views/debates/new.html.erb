@@ -1,30 +1,25 @@
-<div class="debate-form row">
+<div class="debate-new debate-form no-margin-top row">
 
-  <div class="small-12 medium-9 column">
-    <%= back_link_to debates_path %>
+  <div class="small-12 column light expand padding">
+    <%= back_link_to debates_path, t("debates.index.section_header.title") %>
 
-    <h1><%= t("debates.new.start_new") %></h1>
-    <div data-alert class="callout primary">
-      <%= sanitize(t("debates.new.info",
-      info_link: link_to(t("debates.new.info_link"), new_proposal_path))) %>
+    <div class="header">
+      <span class="far fa-comment-alt header-icon"></span>
 
-      <% if feature?(:help_page) %>
-        <%= link_to help_path, title: t("shared.target_blank"), target: "_blank" do %>
-          <strong><%= t("debates.new.more_info") %></strong>
-        <% end %>
-      <% end %>
+      <h1 class="inline-block"><%= t("debates.new.start_new") %></h1>
     </div>
-    <%= render "form" %>
-  </div>
 
-  <div class="small-12 medium-3 column">
-    <span class="icon-debates float-right"></span>
-    <h2><%= t("debates.new.recommendations_title") %></h2>
+    <h2 class="margin-top"><%= t("debates.new.recommendations_title") %></h2>
+
     <ul class="recommendations">
       <li><%= t("debates.new.recommendation_one") %></li>
       <li><%= t("debates.new.recommendation_two") %></li>
       <li><%= t("debates.new.recommendation_three") %></li>
       <li><%= t("debates.new.recommendation_four") %></li>
     </ul>
+  </div>
+
+  <div class="small-12 column">
+    <%= render "form" %>
   </div>
 </div>

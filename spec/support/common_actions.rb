@@ -33,7 +33,8 @@ module CommonActions
     fill_in "Proposal text", with: "This is very important because..."
     fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    # Check terms of service by default
+    # check "proposal_terms_of_service"
   end
 
   def set_officing_booth(booth = nil)

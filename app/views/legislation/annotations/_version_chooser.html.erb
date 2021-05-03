@@ -1,8 +1,9 @@
-<div class="row draft-chooser">
+<div id="draft" class="row draft-chooser">
   <div class="small-12 medium-9 column">
     <h3><%= t("legislation.annotations.version_chooser.seeing_version") %></h3>
     <div class="select-box">
-      <%= form_tag go_to_version_legislation_process_draft_versions_path(process), method: :get, id: "draft_version_go_to_version" do %>
+      <%= form_tag go_to_version_legislation_process_draft_versions_path(process, anchor: "draft"),
+                   method: :get, id: "draft_version_go_to_version" do %>
         <%= select_tag "draft_version_id", options_from_collection_for_select(process.draft_versions.published, "id", "display_title", draft_version.id), "aria-label": t("legislation.draft_versions.show.select_draft_version") %>
         <%= hidden_field_tag "redirect_action", "annotations" %>
         <%= submit_tag t("legislation.draft_versions.show.select_version_submit"), class: "button" %>

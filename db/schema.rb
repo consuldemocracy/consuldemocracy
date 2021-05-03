@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200908084257) do
+ActiveRecord::Schema.define(version: 20210401100648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -272,8 +272,13 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.datetime "ignored_flag_at"
     t.integer "flags_count", default: 0
     t.integer "original_heading_id"
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_votes_total", default: 0
+    t.text "feasibility_explanation"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id"
     t.index ["author_id"], name: "index_budget_investments_on_author_id"
+    t.index ["cached_votes_down"], name: "index_budget_investments_on_cached_votes_down"
+    t.index ["cached_votes_total"], name: "index_budget_investments_on_cached_votes_total"
     t.index ["community_id"], name: "index_budget_investments_on_community_id"
     t.index ["heading_id"], name: "index_budget_investments_on_heading_id"
     t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
@@ -286,6 +291,7 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.datetime "updated_at", null: false
     t.text "description"
     t.text "summary"
+    t.string "name"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id"
     t.index ["locale"], name: "index_budget_phase_translations_on_locale"
   end
@@ -297,6 +303,8 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean "enabled", default: true
+    t.string "main_button_text"
+    t.string "main_button_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at"
     t.index ["kind"], name: "index_budget_phases_on_kind"
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id"
@@ -360,6 +368,10 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.text "description_publishing_prices"
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
+    t.boolean "published", default: true
+    t.string "main_button_text"
+    t.string "main_button_url"
+    t.boolean "hide_money", default: false
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|

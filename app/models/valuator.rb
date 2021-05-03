@@ -6,6 +6,7 @@ class Valuator < ApplicationRecord
 
   has_many :valuator_assignments, dependent: :destroy, class_name: "Budget::ValuatorAssignment"
   has_many :investments, through: :valuator_assignments, class_name: "Budget::Investment"
+  has_many :budget_valuators, dependent: :destroy
 
   validates :user_id, presence: true, uniqueness: true
 

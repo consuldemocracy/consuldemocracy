@@ -14,8 +14,15 @@ describe "Admin activity" do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        accept_confirm { click_link "Hide" }
+        click_link "Hide"
       end
+
+      page.driver.browser.switch_to.alert do
+        expect(page).to have_content "Are you sure? This action will hide this content. "\
+                                     "You can undo this action from the moderation panel."
+      end
+
+      accept_confirm
       expect(page).to have_css("#proposal_#{proposal.id}.faded")
 
       visit admin_activity_path
@@ -77,8 +84,15 @@ describe "Admin activity" do
       visit debate_path(debate)
 
       within("#debate_#{debate.id}") do
-        accept_confirm { click_link "Hide" }
+        click_link "Hide"
       end
+
+      page.driver.browser.switch_to.alert do
+        expect(page).to have_content "Are you sure? This action will hide this content. "\
+                                     "You can undo this action from the moderation panel."
+      end
+
+      accept_confirm
       expect(page).to have_css("#debate_#{debate.id}.faded")
 
       visit admin_activity_path
@@ -141,7 +155,14 @@ describe "Admin activity" do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}") do
-        accept_confirm { click_link "Hide" }
+        click_link "Hide"
+
+        page.driver.browser.switch_to.alert do
+          expect(page).to have_content "Are you sure? This action will hide this content. "\
+                                       "You can undo this action from the moderation panel."
+        end
+
+        accept_confirm
         expect(page).to have_css(".faded")
       end
 
@@ -198,16 +219,23 @@ describe "Admin activity" do
   end
 
   context "User" do
-    scenario "Shows moderation activity on users" do
+    scenario "Shows moderation activity on users", :js do
       proposal = create(:proposal)
 
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
         click_link "Hide author"
-
-        expect(page).to have_current_path(debates_path)
       end
+
+      page.driver.browser.switch_to.alert do
+        expect(page).to have_content "Are you sure? This action will hide all content created by "\
+                                     "the author and the author will be blocked and not be able to "\
+                                     "sign in. You can undo this action from the moderation panel."
+      end
+
+      accept_confirm
+      expect(page).to have_current_path(debates_path)
 
       visit admin_activity_path
 

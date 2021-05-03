@@ -7,12 +7,12 @@ describe "Budget Groups" do
   context "Load" do
     scenario "finds group using budget slug and group slug" do
       visit budget_group_path("budget_slug", "group_slug")
-      expect(page).to have_content "Select an option"
+      expect(page).to have_content "Select a heading"
     end
 
     scenario "finds group using budget id and group id" do
       visit budget_group_path(budget, group)
-      expect(page).to have_content "Select an option"
+      expect(page).to have_content "Select a heading"
     end
 
     scenario "raises an error if budget slug is not found" do

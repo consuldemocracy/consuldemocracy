@@ -1,6 +1,6 @@
 <h2 class="inline-block"><%= t("valuation.budgets.index.title") %></h2>
 
-<% if @budget.present? %>
+<% if @budgets.any? %>
   <table>
     <thead>
       <tr>
@@ -11,22 +11,24 @@
       </tr>
     </thead>
     <tbody>
-      <tr id="<%= dom_id(@budget) %>" class="budget">
-        <td>
-          <%= @budget.name %>
-        </td>
-        <td>
-          <%= t("budgets.phase.#{@budget.phase}") %>
-        </td>
-        <td>
-          <%= @investments.count %>
-        </td>
-        <td>
-          <%= link_to t("valuation.budgets.index.evaluate"),
-                      valuation_budget_budget_investments_path(budget_id: @budget.id),
-                      class: "button hollow expanded" %>
-        </td>
-      </tr>
+      <% @budgets.each do |budget| %>
+        <tr id="<%= dom_id(budget) %>" class="budget">
+          <td>
+            <%= budget.name %>
+          </td>
+          <td>
+            <%= t("budgets.phase.#{budget.phase}") %>
+          </td>
+          <td>
+            <%= @investments_count[budget.id] %>
+          </td>
+          <td>
+            <%= link_to t("valuation.budgets.index.evaluate"),
+                        valuation_budget_budget_investments_path(budget_id: budget.id),
+                        class: "button hollow expanded" %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 <% else %>

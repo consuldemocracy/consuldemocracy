@@ -1,0 +1,7 @@
+nl:
+  flash:
+    actions:
+      create:
+        proposal_notification: "Melding verzonden"
+      update:
+        proposal: "Initiatief is bijgewerkt."

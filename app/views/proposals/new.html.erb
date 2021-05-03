@@ -1,24 +1,28 @@
-<div class="proposal-form row">
+<div class="proposal-form no-margin-top row">
 
-  <div class="small-12 medium-9 column">
-    <%= back_link_to %>
+  <div class="small-12 column light expand padding">
+    <%= back_link_to proposals_path, t("proposals.index.section_header.title") %>
 
-    <h1><%= t("proposals.new.start_new") %></h1>
-    <div data-alert class="callout primary">
+    <div class="header">
+      <span class="far fa-lightbulb header-icon"></span>
+
+      <h1 class="inline-block"><%= t("proposals.new.start_new") %></h1>
+      <br>
       <%= link_to help_path(anchor: "proposals"), title: t("shared.target_blank"), target: "_blank" do %>
         <%= t("proposals.new.more_info") %>
       <% end %>
     </div>
-    <%= render "proposals/form", form_url: proposals_path %>
-  </div>
 
-  <div class="small-12 medium-3 column">
-    <span class="icon-proposals float-right"></span>
-    <h2><%= t("proposals.new.recommendations_title") %></h2>
+    <h2 class="margin-top"><%= t("proposals.new.recommendations_title") %></h2>
+
     <ul class="recommendations">
       <li><%= t("proposals.new.recommendation_one") %></li>
       <li><%= t("proposals.new.recommendation_two") %></li>
       <li><%= t("proposals.new.recommendation_three") %></li>
     </ul>
+  </div>
+
+  <div class="small-12 column">
+    <%= render "proposals/form", form_url: proposals_path %>
   </div>
 </div>

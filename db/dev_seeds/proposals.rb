@@ -37,7 +37,6 @@ section "Creating Proposals" do
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
                                 terms_of_service: "1",
                                 published_at: Time.current)
     random_locales.map do |locale|
@@ -65,7 +64,6 @@ section "Creating Archived Proposals" do
                                 description: description,
                                 tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
                                 terms_of_service: "1",
                                 created_at: months_to_archive_proposals.to_i.months.ago,
                                 published_at: months_to_archive_proposals.to_i.months.ago)
@@ -94,7 +92,6 @@ section "Creating Successful Proposals" do
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
                                 terms_of_service: "1",
                                 cached_votes_up: Setting["votes_for_proposal_success"],
                                 published_at: Time.current)
@@ -121,7 +118,6 @@ section "Creating Successful Proposals" do
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
                                 terms_of_service: "1",
                                 published_at: Time.current)
     random_locales.map do |locale|

@@ -7,13 +7,16 @@
                               title: t("shared.go_to_page") +
                                      t("layouts.header.my_activity_link") %>
   </li>
-  <li>
+  <li class="avatar">
     <%= layout_menu_link_to t("layouts.header.my_account_link"),
                               account_path,
                               controller_name == "account",
                               rel: "nofollow",
                               title: t("shared.go_to_page") +
                                      t("layouts.header.my_account_link") %>
+    <%= link_to account_path, class: "avatar-image" do %>
+      <%= avatar_image(current_user, seed: current_user.id, size: 32) %>
+    <% end %>
   </li>
   <li>
     <%= link_to t("devise_views.menu.login_items.logout"),

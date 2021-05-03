@@ -2,19 +2,21 @@
 <div class="js-participation supports ballot">
   <% if ballot.has_investment?(investment) %>
 
-    <div class="remove supported inline-block">
+    <div class="remove supported">
       <span class="icon-check-circle"
             title="<%= t("budgets.investments.investment.already_added") %>">
       </span>
-      <p class="investment-project-amount">
-        <%= investment.formatted_price %>
-      </p>
+      <% if @budget.show_money? %>
+        <p class="investment-project-amount">
+          <%= investment.formatted_price %>
+        </p>
+      <% end %>
       <% if investment.should_show_ballots? %>
         <%= link_to t("budgets.ballots.show.remove"),
                     budget_ballot_line_path(id: investment.id,
                                             budget_id: investment.budget_id,
                                             investments_ids: investment_ids),
-                    class: "delete small expanded",
+                    class: "button button-remove-support expanded",
                     method: :delete,
                     remote: true %>
       <% end %>
@@ -23,15 +25,17 @@
   <% else %>
 
     <div class="add in-favor">
-      <p class="investment-project-amount">
-        <%= investment.formatted_price %>
-      </p>
+      <% if @budget.show_money? %>
+        <p class="investment-project-amount">
+          <%= investment.formatted_price %>
+        </p>
+      <% end %>
       <% if investment.should_show_ballots? %>
         <%= link_to t("budgets.investments.investment.add"),
                     budget_ballot_lines_path(investment_id: investment.id,
                                              budget_id: investment.budget_id,
                                              investments_ids: investment_ids),
-                    class: "button button-support small expanded",
+                    class: "button button-support expanded",
                     title: t("budgets.investments.investment.support_title"),
                     method: :post,
                     remote: true %>

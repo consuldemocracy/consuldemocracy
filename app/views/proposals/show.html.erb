@@ -21,7 +21,7 @@
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= back_link_to proposals_path unless preview %>
+        <%= back_link_to proposals_path, t("proposals.index.section_header.title") unless preview %>
 
         <h1><%= @proposal.title %></h1>
         <% if @proposal.retired? %>
@@ -51,7 +51,7 @@
       </div>
 
       <% unless preview %>
-        <aside class="small-12 medium-3 column">
+        <aside class="small-12 medium-3 column proposals-sidebar">
           <% if can?(:dashboard, @proposal) %>
             <div class="sidebar-divider"></div>
             <h2><%= t("proposals.show.author") %></h2>

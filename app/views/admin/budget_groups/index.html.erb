@@ -1,48 +1,45 @@
-<%= back_link_to admin_budgets_path, t("admin.budget_groups.index.back") %>
+<% unless @mode.present? %>
+  <%= back_link_to admin_budget_path(@budget), t("admin.budget_groups.index.back") %>
+<% end %>
 
 <div class="clear"></div>
 
 <h2 class="inline-block"><%= @budget.name %></h2>
 
-<%= link_to t("admin.budget_groups.form.create"),
-            new_admin_budget_group_path,
-            class: "button float-right" %>
+<%= render "help_block" %>
 
-<% if @groups.any? %>
-  <h3><%= t("admin.budget_groups.amount", count: @groups.count) %></h3>
-  <table>
-    <thead>
-      <tr id="<%= dom_id(@budget) %>">
-        <th><%= t("admin.budget_groups.name") %></th>
-        <th><%= Budget::Group.human_attribute_name(:max_votable_headings) %></th>
-        <th><%= t("admin.budget_groups.headings_name") %></th>
-        <th><%= t("admin.budget_groups.headings_edit") %></th>
-        <th><%= t("admin.actions.actions") %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @groups.each do |group| %>
-        <tr id="<%= dom_id(group) %>">
-          <td><%= link_to group.name, edit_admin_budget_group_path(@budget, group) %></td>
-          <td><%= group.max_votable_headings %></td>
-          <td><%= group.headings.count %></td>
-          <td><%= link_to t("admin.budget_groups.headings_manage"),
-                          admin_budget_group_headings_path(@budget, group) %></td>
-          <td>
-            <%= link_to t("admin.actions.edit"),
-                        edit_admin_budget_group_path(@budget, group),
-                        class: "button hollow" %>
-            <%= link_to t("admin.actions.delete"),
-                        admin_budget_group_path(@budget, group),
-                        method: :delete,
-                        class: "button hollow alert" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <div class="callout primary clear">
-    <%= t("admin.budget_groups.no_groups") %>
+<%= render "/admin/budgets/creation_timeline", step: "groups" %>
+
+<% unless @mode == "single" %>
+  <div class="<%= "small-12 medium-6" if @mode.present? %>">
+    <%= render "groups" %>
   </div>
+<% end %>
+
+<div id="groups_form" class="<%= class_for_form(@group) %>" data-toggler=".hide">
+  <%= render "form", path: admin_budget_groups_path(@budget), action: "create" %>
+</div>
+
+<% unless @mode == "single" || @group.errors.any? %>
+  <button id="new_button" class="button add" data-toggler=".hide"
+          data-toggle="groups_form new_button cancel_button">
+    <strong><%= t("admin.budget_groups.index.new_button") %></strong>
+  </button>
+<% end %>
+
+<p id="cancel_button" class="hide" data-toggler=".hide"
+   data-toggle="groups_form new_button cancel_button">
+  <button class="delete"><%= t("links.form.cancel_button") %></button>
+</p>
+
+<% if @mode.present? && @groups.any? %>
+  <%= link_to t("admin.budget_groups.create.button.continue"),
+              admin_budget_group_headings_path(@budget, @groups.first, mode: @mode),
+              class: "button success" %>
+<% end %>
+
+<% if @groups.empty? && @mode == "multiple" %>
+  <p class="button secondary disabled">
+    <%= t("admin.budget_groups.create.button.continue") %>
+  </p>
 <% end %>

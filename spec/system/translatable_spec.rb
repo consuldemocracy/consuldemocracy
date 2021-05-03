@@ -14,7 +14,8 @@ describe "Public area translatable records" do
 
       fill_in "Debate title", with: "Who won the debate?"
       fill_in_ckeditor "Initial debate text", with: "And who will win this debate?"
-      check "debate_terms_of_service"
+      # Check terms of service by default
+      # check "debate_terms_of_service"
       click_button "Start a debate"
 
       expect(page).to have_content "Debate created successfully"
@@ -26,7 +27,8 @@ describe "Public area translatable records" do
       fill_in "Proposal title", with: "Olympic Games in Melbourne"
       fill_in "Proposal summary", with: "Full proposal for our candidature"
       fill_in_ckeditor "Proposal text", with: "2032 will make Australia famous again"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
       click_button "Create proposal"
 
       expect(page).to have_content "Proposal created successfully"
@@ -36,7 +38,8 @@ describe "Public area translatable records" do
     end
 
     scenario "Add multiple translations at once" do
-      budget = create(:budget_heading, name: "Everywhere").group.budget
+      heading = create(:budget_heading, name: "Everywhere")
+      budget = heading.group.budget
 
       visit new_budget_investment_path(budget)
 
@@ -47,8 +50,11 @@ describe "Public area translatable records" do
       fill_in "Title", with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
-      select "Everywhere", from: "budget_investment_heading_id"
-      check "budget_investment_terms_of_service"
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                     visible: false)
+
+      # Check terms of service by default
+      # check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
       expect(page).to have_content "Budget Investment created successfully"
@@ -61,14 +67,16 @@ describe "Public area translatable records" do
 
       fill_in "Proposal title", with: "Titre en Français"
       fill_in "Proposal summary", with: "Résumé en Français"
-      check "proposal_terms_of_service"
+      # Check terms of service by default
+      # check "proposal_terms_of_service"
       click_button "Create proposal"
 
       expect(page).to have_content "Proposal created successfully"
     end
 
     scenario "Add a translation for a locale with non-underscored name" do
-      budget = create(:budget_heading, name: "Everywhere").group.budget
+      heading = create(:budget_heading, name: "Everywhere")
+      budget = heading.group.budget
 
       visit new_budget_investment_path(budget)
       click_link "Remove language"
@@ -76,8 +84,11 @@ describe "Public area translatable records" do
       fill_in "Title", with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
-      select "Everywhere", from: "budget_investment_heading_id"
-      check "budget_investment_terms_of_service"
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                     visible: false)
+
+      # Check terms of service by default
+      # check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
       expect(page).to have_content "Budget Investment created successfully"
@@ -86,7 +97,8 @@ describe "Public area translatable records" do
     scenario "Add an invalid translation" do
       visit new_debate_path
 
-      check "debate_terms_of_service"
+      # Check terms of service by default
+      # check "debate_terms_of_service"
       click_button "Start a debate"
 
       expect(page).to have_css "#error_explanation"
@@ -94,13 +106,17 @@ describe "Public area translatable records" do
     end
 
     scenario "Shows errors when submiting without any active translations" do
-      budget = create(:budget_heading, name: "Everywhere").group.budget
+      heading = create(:budget_heading, name: "Everywhere")
+      budget = heading.group.budget
 
       visit new_budget_investment_path(budget)
       click_link "Remove language"
 
-      select "Everywhere", from: "budget_investment_heading_id"
-      check "budget_investment_terms_of_service"
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                     visible: false)
+
+      # Check terms of service by default
+      # check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
       expect(page).to have_css "#error_explanation"

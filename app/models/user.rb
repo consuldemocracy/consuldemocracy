@@ -166,13 +166,18 @@ class User < ApplicationRecord
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
+  def comment_votes(comments)
+    voted = votes.for_comments(comments)
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
     comment_flags.each_with_object({}) { |f, h| h[f.flaggable_id] = true }
   end
 
   def voted_in_group?(group)
-    votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
+    votes.up.for_budget_investments(Budget::Investment.where(group: group)).exists?
   end
 
   def headings_voted_within_group(group)
@@ -180,7 +185,7 @@ class User < ApplicationRecord
   end
 
   def voted_investments
-    Budget::Investment.where(id: votes.for_budget_investments.pluck(:votable_id))
+    Budget::Investment.where(id: votes.up.for_budget_investments.pluck(:votable_id))
   end
 
   def administrator?

@@ -9,7 +9,8 @@
     <% elsif user_signed_in? && proposal.votable_by?(current_user) %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
-          title: t("proposals.proposal.support_title"), method: "post", remote: true do %>
+          title: t("proposals.proposal.support_title"), method: "post", remote: true,
+          data: { confirm: t("proposals.shared.confirm_support", proposal: proposal.title) } do %>
         <%= t("proposals.proposal.support") %>
       <% end %>
     <% else %>

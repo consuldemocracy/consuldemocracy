@@ -17,11 +17,13 @@ $line-height:         rem-calc(24);
 $tiny-font-size:      rem-calc(12);
 
 $brand:             #004a83;
+$brand-secondary:   darken($brand, 10%);
 $dark:              darken($brand, 10%);
 
 $text:              #222;
 $text-medium:       #515151;
 $text-light:        #bfbfbf;
+$label:             #2f82b4;
 
 $border:            #dee0e3;
 
@@ -122,3 +124,6 @@ $pagination-radius: $global-radius;
 
 $show-header-for-stacked: true;
 
+$has-tip-cursor: cursor;
+$has-tip-border-bottom: 0;
+$tooltip-background-color: $brand;

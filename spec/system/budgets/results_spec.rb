@@ -67,6 +67,66 @@ describe "Results" do
     end
   end
 
+  scenario "Does not show price and available budget when hide money" do
+    budget.update!(voting_style: "approval", hide_money: true)
+    visit budget_path(budget)
+    click_link "See results"
+
+    expect(page).to have_content investment1.title
+    expect(page).to have_content investment2.title
+    expect(page).not_to have_content investment1.price
+    expect(page).not_to have_content investment2.price
+    expect(page).not_to have_content "Price"
+    expect(page).not_to have_content "Available budget"
+    expect(page).not_to have_content "€"
+  end
+
+  scenario "Does not have in account the price on hide money budgets" do
+    budget.update!(voting_style: "approval", hide_money: true)
+    heading.update!(price: 0)
+
+    inv1 = create(:budget_investment, :selected, heading: heading, price: 2000, ballot_lines_count: 1000)
+    inv2 = create(:budget_investment, :selected, heading: heading, price: 5000, ballot_lines_count: 1000)
+
+    Budget::Result.new(budget, heading).calculate_winners
+
+    visit budget_path(budget)
+    click_link "See results"
+
+    expect(page).to have_content inv1.title
+    expect(page).to have_content inv2.title
+    expect(page).not_to have_content inv1.price
+    expect(page).not_to have_content inv2.price
+    expect(page).not_to have_content "Price"
+    expect(page).not_to have_content "Available budget"
+    expect(page).not_to have_content "€"
+  end
+
+  scenario "Show all button only if there are discarded investments" do
+    budget.update!(voting_style: "approval", hide_money: true)
+    investment1.update!(winner: true)
+    investment2.update!(winner: true)
+    investment4.update!(winner: true)
+
+    visit budget_path(budget)
+    click_link "See results"
+
+    expect(page).to have_content investment1.title
+    expect(page).to have_content investment2.title
+    expect(page).to have_content investment4.title
+    expect(page).not_to have_link "Show all"
+
+    investment4.update!(winner: false)
+
+    visit budget_path(budget)
+    click_link "See results"
+
+    expect(page).to have_content investment1.title
+    expect(page).to have_content investment2.title
+    expect(page).to have_link "Show all"
+    expect(page).not_to have_content investment4.title
+  end
+
   scenario "Does not raise error if budget (slug or id) is not found" do
     visit budget_results_path("wrong budget")
 
@@ -82,9 +142,24 @@ describe "Results" do
   end
 
   scenario "Loads budget and heading by slug" do
+    other_heading = create(:budget_heading, group: group, price: 1000)
+    create(:budget_investment, :selected, heading: other_heading, price: 600, ballot_lines_count: 600)
+
     visit budget_results_path(budget.slug, heading_id: heading.slug)
 
+    expect(page).to have_content("By district")
     expect(page).to have_selector("a.is-active", text: heading.name)
+
+    within("#budget-investments-compatible") do
+      expect(page).to have_content investment1.title
+    end
+  end
+
+  scenario "Do not show headings sidebar on single heading budgets" do
+    visit budget_results_path(budget.slug, heading_id: heading.slug)
+
+    expect(page).not_to have_content("By district")
+    expect(page).not_to have_selector("a.is-active", text: heading.name)
 
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
