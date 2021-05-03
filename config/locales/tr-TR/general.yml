@@ -797,7 +797,7 @@ tr:
     manage:
       all: "%{subject} 'de %{action} eylemini gerçekleştirme izniniz yok."
   users:
-    signin: "Oturum Aç"
+    signin: "oturum aç"
     signup: "kayıt ol"
     verify_account: "hesabınızı doğrulayın"
     direct_messages:
