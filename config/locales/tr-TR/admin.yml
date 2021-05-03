@@ -1252,6 +1252,8 @@ tr:
           how_to_enable: 'Haritayı kullanıcılara göstermek için "Özellikler" sekmesinde "Öneriler ve bütçe yatırımları coğrafi konum belirleme" özelliğini etkinleştirmeniz gerekir.'
         dashboard:
           title: Öneriler gösterge tablosu
+        remote_census:
+          title: Uzaktan nüfus sayımı yapılandırması
         sdg:
           title: SKH yapılandırması
       remote_census_general_name: Genel Bilgi
