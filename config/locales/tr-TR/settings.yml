@@ -186,6 +186,7 @@ tr:
         proposals: Tekliflerdeki ilgili SKH'ler
         polls: Anketlerdeki ilgili SKH
         polls_description: Anketlerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
+        budgets: Katılımcı bütçelerdeki ilgili SKH
         budgets_description: Katılımcı bütçelerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
         legislation: İşbirliğine dayalı mevzuattaki ilgili SKH
         legislation_description: İşbirliğine dayalı mevzuatın Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
