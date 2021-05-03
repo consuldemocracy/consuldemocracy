@@ -127,6 +127,7 @@ tr:
       general:
         endpoint: "Bitiş Noktası"
       request:
+        structure: "Talep Yapısı"
         date_of_birth: "Doğum tarihine giden yol"
         postal_code: "Posta koduna giden yol"
       response:
