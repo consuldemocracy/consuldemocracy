@@ -46,6 +46,7 @@ tr:
         accept_terms_text_title: Pusula'nın erişim şartlarını ve koşullarını kabul ediyorum
         document_number: Belge numarası
         document_number_help_title: Yardım
+        document_number_help_text: "<strong>Kimlik Kartı</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>İkamet belgesi</strong>: X1234567P"
         document_type:
           passport: Pasaport
           residence_card: İkamet belgesi
