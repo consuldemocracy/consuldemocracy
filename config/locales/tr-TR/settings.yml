@@ -124,6 +124,8 @@ tr:
       graphql_api: "GraphQL API"
       sdg: SKH
     remote_census:
+      general:
+        endpoint: "Bitiş Noktası"
       request:
         date_of_birth: "Doğum tarihine giden yol"
         postal_code: "Posta koduna giden yol"
