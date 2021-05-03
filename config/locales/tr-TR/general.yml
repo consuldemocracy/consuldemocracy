@@ -590,6 +590,7 @@ tr:
         sent: E-posta gönderildi
     mailer:
       forward:
+        subtitle: "Desteklersen, <br>başarırız."
         support_button: Bu öneriyi destekle
         share_in: Paylaş
         hi: "Merhaba!"
