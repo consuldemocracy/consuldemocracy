@@ -8,6 +8,7 @@ es:
       empty: No existen debates en este proyecto
     show_propuesta:
       empty: No existen propuestas en este proyecto
+    show_component: "No existen %{item} en este proyecto"
     component:
       add: "Seleccionar %{item} para añadir al proyecto"
       delete: "Seleccionar %{item} para eliminar del proyecto"

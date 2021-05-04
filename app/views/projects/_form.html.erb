@@ -129,6 +129,37 @@
   </div>
   <%# ---------- Fin Proposals ---------- %>
 
+    <%# ---------- Polls ---------- %>
+  <div class="project-form-field">
+    <% if !@project_polls.empty? %>
+      <br/>
+      <%= form.label t("project.component.actual_delete", item:"Votaciones") %>
+      <p><%= t("project.component.delete", item:"votaciones") %></p>
+      <div id="participant_tags" class="tags">
+        <% @project_polls.each do |item| %>
+          <span>
+            <input type="checkbox" name="delete_poll_ids[]" value=<%= item.id %> />
+            <%= item.title %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+    <% if !@polls.empty? %>
+      <br/>
+      <%= form.label t("project.component.actual_add", item:"Votaciones") %>
+      <p><%= t("project.component.add", item:"votaciones") %></p>
+      <div id="participant_tags" class="tags">
+        <% @polls.each do |item| %>
+          <span>
+            <input type="checkbox" name="poll_ids[]" value=<%= item.id %> />
+            <%= item.title %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%# ---------- Fin Polls ---------- %>
+
   <%# ---------- Users ---------- %>
   <div class="project-form-field">
     <% if !@project_users.empty? %>

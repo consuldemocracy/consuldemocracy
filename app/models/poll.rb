@@ -18,6 +18,9 @@ class Poll < ApplicationRecord
 
   RECOUNT_DURATION = 1.week
 
+  has_many :poll_on_projects
+  has_many :projects, through: :poll_on_projects
+
   has_many :booth_assignments, class_name: "Poll::BoothAssignment"
   has_many :booths, through: :booth_assignments
   has_many :partial_results, through: :booth_assignments
