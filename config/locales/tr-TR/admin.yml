@@ -1256,6 +1256,7 @@ tr:
           title: Uzaktan nüfus sayımı yapılandırması
         sdg:
           title: SKH yapılandırması
+          how_to_enable: 'SKH ile ilgili konfigürasyon seçenekleri için, "Özellikler" sekmesinden "SKH" özelliğini aktive edilmeli.'
       remote_census_general_name: Genel Bilgi
       remote_census_request_name: Veri Talebi
       remote_census_response_name: Yanıt Verisi
