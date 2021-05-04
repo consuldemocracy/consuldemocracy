@@ -800,7 +800,6 @@ tr:
     manage:
       all: "%{subject} 'de %{action} eylemini gerçekleştirme izniniz yok."
   users:
-    login_to_comment: "Yorum yapmak için %{signin} veya %{signup} yapmalısınız."
     signin: "oturum aç"
     signup: "kayıt ol"
     verify_account: "hesabınızı doğrulayın"
