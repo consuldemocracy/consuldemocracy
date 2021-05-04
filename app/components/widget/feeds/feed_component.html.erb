@@ -5,12 +5,12 @@
 
   <% if feed.items.any? %>
     <div class="feed-content">
-      <div class="propuestas">
+      <div class="propuestas col-sm-6 col-xs-12">
         <% feed.items.each do |item| %>
           <%= render item_component_class.new(item) %>
         <% end %>
       </div>
-      <div class="banner-participa">
+      <div class="banner-participa  col-sm-6 col-xs-12">
         <a href="/proposals" target="_blank" title="Ir a todas las propuestas"><img src="/assets/banner-participa-zona-propuestas-home.png"/></a>
       </div>
     </div>
