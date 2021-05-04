@@ -5,9 +5,14 @@
 
   <% if feed.items.any? %>
     <div class="feed-content">
-      <% feed.items.each do |item| %>
-        <%= render item_component_class.new(item) %>
-      <% end %>
+      <div class="propuestas">
+        <% feed.items.each do |item| %>
+          <%= render item_component_class.new(item) %>
+        <% end %>
+      </div>
+      <div class="banner-participa">
+        Hola
+      </div>
     </div>
 
     <%= link_to t("welcome.feed.see_all.#{kind}"), see_all_path, class: "see-all" %>
