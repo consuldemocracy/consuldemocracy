@@ -124,6 +124,8 @@ tr:
       valuation_comment_notification: "Değerlendirme yorumu bildirimi"
       valuation_comment_notification_description: "Yeni bir değerlendirme yorumu oluşturulduğunda, bütçe yatırımı değerlendirme yorumlayıcısı hariç tüm ilişkili kullanıcılara bir e-posta gönderin"
       graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "E-posta bildirimleri gösterge panosu"
       sdg: SKH
       sdg_description: Yönetim menüsünde ve genel ayarlarda Sürdürülebilir Kalkınma Hedefleri bölümlerini etkinleştirin.
     remote_census:
