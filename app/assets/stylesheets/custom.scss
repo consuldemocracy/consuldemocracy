@@ -1980,3 +1980,39 @@ footer a{
     border-bottom: 1px solid #407374;
   }
 }
+
+.home-page{
+  #feed_proposals{
+    margin-left: -15px;
+    margin-right: -15px;
+    .propuestas{
+      width: 50%;
+      float: left;
+      padding: 0 15px;
+      .proposal{
+        .feed-description{
+          width: 100% !important;
+        }
+        .feed-image{
+          display: none !important;
+        }
+      }
+    }
+    .banner-participa {
+      width: 50%;
+      float: left;
+      padding: 0 15px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  #feed_proposals{
+    .propuestas{
+      width: 100%;
+    }
+    .banner-participa {
+      width: 100%;
+    }
+  }
+}
