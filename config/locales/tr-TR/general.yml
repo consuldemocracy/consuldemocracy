@@ -718,6 +718,8 @@ tr:
       proposal:
         create:
           notice: "Vatandaş önerisini takip etmeye başladınız.! <br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
+        destroy:
+          notice: "Bu vatandaş önerisini takip etmeyi bıraktınız! <br> Artık bu öneriyle ilgili bildirimleri almayacaksınız."
     print:
       print_button: Bu bilgiyi yazdır
     search: Ara
