@@ -60,6 +60,13 @@ tr:
         title: "Barış, Adalet ve Güçlü Kurumlar"
         title_in_two_lines: "Barış, Adalet ve Güçlü Kurumlar"
         description: "Adil, barışçıl ve kapsayıcı toplumları destekleyin."
+        targets:
+          target_16_7:
+            title: "Her düzeyde duyarlı, her kesimi kapsayan, katılımcı ve temsili karar almayı sağlamak."
+          target_16_8:
+            title: "Gelişmekte olan ülkelerin küresel yönetişim kurumlarına katılımını genişletmek ve güçlendirmek."
+          target_16_9:
+            title: "2030'a kadar, doğum kaydı dahil herkes için yasal kimlik sağlamak."
       goal_17:
         title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
