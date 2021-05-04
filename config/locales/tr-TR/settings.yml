@@ -68,6 +68,7 @@ tr:
       poll_description: Anketlerin tanımlaması
       poll_description_description: Anket özelliğinin ayrıntılı açıklaması
       poll_link: Ek bilgi bağlantısı
+      poll_link_description: Anket özelliğine ek bilgi bağlantısı ekleyin
       email_short_title: E-posta
       email_short_title_description: 'E-posta özelliğinin kısa açıklaması. Kullanıcıların önerilerini tanıtmak için bir e-posta göndermelerine izin verir. Bu e-postanın tüm içeriğini "/uyg/görünümler/göstergepanosu/postacı/ilet.html.erb" adresinde bulabilirsiniz'
       email_description: E-posta tanımlaması
