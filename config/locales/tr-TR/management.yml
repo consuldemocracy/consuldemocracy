@@ -130,4 +130,5 @@ tr:
         submit: Davetleri gönder
         title: Davetleri gönder
       create:
+        success: <strong>%{count} davet</strong> gönderildi.
         title: Davetleri gönder
