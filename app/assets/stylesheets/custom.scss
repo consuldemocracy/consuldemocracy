@@ -2009,12 +2009,14 @@ footer a{
 }
 
 @media (max-width: 992px) {
-  #feed_proposals{
-    .propuestas{
-      width: 100%;
-    }
-    .banner-participa {
-      width: 100%;
+  .home-page {
+    #feed_proposals {
+      .propuestas {
+        width: 100%;
+      }
+      .banner-participa {
+        width: 100%;
+      }
     }
   }
 }
