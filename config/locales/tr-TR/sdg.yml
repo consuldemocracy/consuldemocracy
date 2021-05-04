@@ -73,7 +73,7 @@ tr:
           no_local_targets: Bu amaç yerel hedefler dahilinde değildir
       title: "Sürdürülebilir Kalkınma Hedefleri"
       filter:
-        heading: "SKHye göre filtreler"
+        heading: "SKH'ye göre filtreler"
         link: "Hedefle bağlantılı tüm %{resources} görüntüle %{code}"
         more:
           one: "Bir hedef daha"
