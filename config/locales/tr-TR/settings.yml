@@ -140,10 +140,14 @@ tr:
       response:
         date_of_birth: "Doğum tarihine giden yol"
         postal_code: "Posta koduna giden yol"
+        postal_code_description: "Kullanıcının posta kodu yanıtın hangi yolundadır?"
         district: "İlçeye giden yol"
         gender: "Cinsiyete giden yol"
+        gender_description: "Kullanıcının cinsiyeti yanıtın hangi yolundadır?"
         name: "Ada giden yol"
+        name_description: "Kullanıcının adı yanıtın hangi yolundadır?"
         surname: "Soyada giden yol"
+        surname_description: "Kullanıcının soyadı yanıtın hangi yolundadır?"
     map:
       latitude: "Enlem"
       latitude_description: "Harita konumunu göstermek için enlem"
