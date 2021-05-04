@@ -169,6 +169,7 @@ tr:
     direct_message: özel mesaj
     error: hata
     errors: hatalar
+    not_saved: "bu %{resource} 'un kaydedilmesini engelledi. <br> Nasıl düzelteceğinizi öğrenmek için lütfen işaretli alanları kontrol edin:"
     policy: Gizlilik Politikası
     banner: bannerlar
     proposal: Öneri
