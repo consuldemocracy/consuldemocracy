@@ -84,6 +84,7 @@ tr:
         table_duration: "Süreç"
         table_name: Ad
         table_phase: Aşama
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Başlıklar gruplarını düzenle
         edit_budget: Bütçe düzenleme
         admin_ballots: Yönetici oyları
@@ -96,6 +97,7 @@ tr:
         notice: "Katılımcı bütçe başarıyla yayınlandı"
       edit:
         title: Katılımcı bütçeyi düzenle
+        drafting: "Katılımcı bütçe taslak halindedir, bunu sitede yalnızca yöneticiler görebilir.\nYayınlandıktan sonra tekrar taslak olarak değiştirilemez."
         publish: "Bütçeyi yayınla"
         delete: Bütçeyi sil
         phase: Aşama
