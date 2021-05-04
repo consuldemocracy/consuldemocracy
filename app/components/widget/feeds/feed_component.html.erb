@@ -8,6 +8,7 @@
       <% feed.items.each do |item| %>
         <%= render item_component_class.new(item) %>
       <% end %>
+      <h1>HOLA</h1>
     </div>
 
     <%= link_to t("welcome.feed.see_all.#{kind}"), see_all_path, class: "see-all" %>
