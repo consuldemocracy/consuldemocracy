@@ -179,13 +179,16 @@
 
     <% if !@users.empty? %>
       <br/>
+      <%# Para buscar Debates %>
+      <%= text_field_tag :user_search, params[:user_search], placeholder: "Search Users", class: "form-control", id: "users-search-form", onkeyup: "SearchFunction()" %>
+      <br/>
       <%= form.label t("project.component.actual_add", item:"Usuarios") %>
       <p><%= t("project.component.add", item:"usuarios") %></p>
 
       <div id="participant_tags" class="tags">
         <% @users.each do |user| %>
           <%# <a class="select-participants"><%= page.id%>
-          <span>
+          <span id="span_tags">
             <input type="checkbox" name="user_ids[]" value=<%= user.id %> />
             <%= user.username %>
           </span>

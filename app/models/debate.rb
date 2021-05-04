@@ -207,18 +207,4 @@ class Debate < ApplicationRecord
     orders << "recommendations" if Setting["feature.user.recommendations_on_debates"] && user&.recommended_debates
     orders
   end
-
-  def self.search(search)
-    if search
-        #debates = Debate.all.where("title ilike ?", "%#{search}%")
-        if debates.nil? || debates.empty?
-            debates = Debate.all
-        else
-            debates
-        end
-    else
-        debates = Debate.all
-    end
-    debates
-  end
 end

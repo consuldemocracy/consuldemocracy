@@ -70,7 +70,11 @@ class ProjectsController < ApplicationController
   def load_all
     @pages = SiteCustomization::Page.all
     @debates = Debate.all
-    @users = User.all
+    if params[:user_search]
+      @users = User.search(params[:user_search])
+    else
+      @users = User.all
+    end
     @proposals = Proposal.all
     @polls = Poll.all
     @project_users = []
