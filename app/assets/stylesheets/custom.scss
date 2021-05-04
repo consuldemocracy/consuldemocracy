@@ -1983,8 +1983,10 @@ footer a{
 
 .home-page{
   #feed_proposals{
-    margin-left: -15px;
-    margin-right: -15px;
+    .feed-content{
+      margin-left: -15px;
+      margin-right: -15px;
+    }
     .propuestas{
       width: 50%;
       float: left;
