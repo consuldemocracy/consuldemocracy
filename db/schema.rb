@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_04_075151) do
+ActiveRecord::Schema.define(version: 2021_05_04_091541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1104,6 +1104,15 @@ ActiveRecord::Schema.define(version: 2021_05_04_075151) do
     t.index ["question_id"], name: "index_poll_partial_results_on_question_id"
   end
 
+  create_table "poll_participants", force: :cascade do |t|
+    t.bigint "poll_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["poll_id"], name: "index_poll_participants_on_poll_id"
+    t.index ["user_id"], name: "index_poll_participants_on_user_id"
+  end
+
   create_table "poll_question_answer_translations", id: :serial, force: :cascade do |t|
     t.integer "poll_question_answer_id", null: false
     t.string "locale", null: false
@@ -1844,6 +1853,8 @@ ActiveRecord::Schema.define(version: 2021_05_04_075151) do
   add_foreign_key "poll_partial_results", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_partial_results", "poll_questions", column: "question_id"
   add_foreign_key "poll_partial_results", "users", column: "author_id"
+  add_foreign_key "poll_participants", "polls"
+  add_foreign_key "poll_participants", "users"
   add_foreign_key "poll_question_answer_videos", "poll_question_answers", column: "answer_id"
   add_foreign_key "poll_question_answers", "poll_questions", column: "question_id"
   add_foreign_key "poll_questions", "polls"

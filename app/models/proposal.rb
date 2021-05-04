@@ -101,7 +101,7 @@ class Proposal < ApplicationRecord
   scope :created_by,               ->(author) { where(author: author) }
 
 
-  #JHH: 
+  #JHH:
   def delete_participants
     ProposalParticipant.where(proposal_id: self).destroy_all
   end
