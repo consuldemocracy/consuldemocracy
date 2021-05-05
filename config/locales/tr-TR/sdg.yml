@@ -131,6 +131,9 @@ tr:
       goal_17:
         title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
+        targets:
+          target_17_19:
+            title: "2030’a kadar, gayri safi yurtiçi hasılayı tamamlayan sürdürülebilir kalkınmanın ilerletilmesine yönelik ölçümleri geliştirmek için mevcut girişimlerin yapılandırılması ve gelişmekte olan ülkelerde istatistiksel kapasite geliştirmenin desteklenmesi."
       help:
         title: "Sürdürülebilir Kalkınma Amaçları yardım"
         description: "Topluma olan katkılarınızı (tartışmalar, vatandaş önerileri ve yatırım projeleri) Sürdürülebilir Kalkınma Hedefleri 2030 Ajandası ile uyumlu hale getirebilirsiniz, bu, Sürdürülebilir Kalkınma Hedeflerinin her birine olan katkımızın genel bakışına sahip olmamızı sağlayacaktır. Aşağıda tüm amaçlar, hedefler ve yerelleştirilmiş hedefler hakkında bilgi bulabilirsiniz."
