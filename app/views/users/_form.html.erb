@@ -5,7 +5,9 @@
   <div class="field">
     <%= form.text_field :username %>
   </div>
-
+  <div class="field">
+    <%= form.collection_select :geozone_id, @geozone.order(:name), :id, :name %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
