@@ -82,9 +82,13 @@
 
         <% unless preview %>
           <aside class="small-12 medium-3 column">
-            <% if can?(:dashboard, @proposal) %>
+            <% if can?(:dashboard, @proposal) || current_administrator? %>
               <div class="sidebar-divider"></div>
-              <h2><%= t("proposals.show.author") %></h2>
+              <% if current_administrator? %>
+                <h2>ADMINISTRADOR</h2>
+              <% else %>
+                <h2><%= t("proposals.show.author") %></h2>
+              <% end %>
               <div class="show-actions-menu">
                 <%= link_to progress_proposal_dashboard_path(@proposal),
                             class: "button hollow expanded",
