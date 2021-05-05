@@ -74,6 +74,9 @@ tr:
       goal_6:
         title: "Temiz Su ve Hijyen Önlemleri"
         title_in_two_lines: "Temiz Su ve Sanitasyon"
+        targets:
+          target_6_1:
+            title: "2030’a kadar, herkesin güvenilir ve uygun fiyatlı içme suyuna evrensel ve eşit erişiminin sağlanması."
       goal_7:
         title: "Erişilebilir ve Temiz Enerji"
         title_in_two_lines: "Erişilebilir ve Temiz Enerji"
