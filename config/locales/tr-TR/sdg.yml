@@ -138,6 +138,10 @@ tr:
         title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
         targets:
+          target_17_14:
+            title: "Sürdürülebilir kalkınma için politik tutarlılığın arttırılması."
+          target_17_15:
+            title: "Yoksulluğun ortadan kaldırılması ve sürdürülebilir kalkınma için politikalar oluşturulması ve uygulanması amacıyla her bir ülkenin politik alanına ve liderliğine saygı duyulması."
           target_17_16:
             title: "Gelişmekte olan ülkeler başta olmak üzere, tüm ülkelerde Sürdürülebilir Kalkınma Hedeflerine ulaşılmasının desteklenmesi için bilgi, uzmanlık, teknoloji ve finansal kaynakları seferber eden ve paylaşan çok paydaşlı ortaklıklar ile tamamlanan sürdürülebilir kalkınma için küresel ortaklıkların iyileştirilmesi."
           target_17_17:
