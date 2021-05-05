@@ -1184,6 +1184,9 @@ tr:
           pending: Beklemede
           rejected: Reddedildi
           verified: Doğrulandı
+        hidden_count:
+          one: Ayrıca gizli kullanıcısı olan ya da hiç kullanıcısı bulunmayan <strong>bir organizasyon</strong> vardır.
+          other: Gizli kullanıcısı olan veya hiç kullanıcısı bulunmayan <strong>%{count} organizasyon</strong> vardır.
         name: İsim
         email: E-posta
         phone_number: Telefon
