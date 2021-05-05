@@ -104,6 +104,12 @@ tr:
         title: "Sürdürülebilir Şehirler ve Topluluklar"
         title_in_two_lines: "Sürdürülebilir Şehirler ve Topluluklar"
         description: "Şehirleri her kesimi kapsayan, güvenli, değişen koşullara uyumlu ve sürdürülebilir hale getirin."
+      goal_12:
+        title_in_two_lines: "Sorumlu Tüketim ve Üretim"
+        description: "Sürdürülebilir tüketim ve üretim modellerinin sağlanması."
+        targets:
+          target_12_2:
+            title: "2030'a kadar, doğal kaynakların etkin kullanımını ve sürdürülebilir yönetimi sağlamak."
       goal_13:
         title: "İklim Eylemi"
         title_in_two_lines: "İklim Eylemi"
@@ -138,6 +144,8 @@ tr:
         title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
         targets:
+          target_17_13:
+            title: "Politika koordinasyonu ve tutarlılığına dayanan küresel makroekonomik istikrarın geliştirilmesi."
           target_17_14:
             title: "Sürdürülebilir kalkınma için politik tutarlılığın arttırılması."
           target_17_15:
