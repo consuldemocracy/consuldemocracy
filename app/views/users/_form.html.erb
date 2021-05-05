@@ -6,6 +6,10 @@
     <%= form.text_field :username %>
   </div>
 
+  <div class="field">
+    <%= form.collection_select :geozone_id, Geozone.all, :id, :name %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
