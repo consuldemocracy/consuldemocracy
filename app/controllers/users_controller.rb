@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   has_filters %w[proposals participants participants_d participants_p projects debates budget_investments comments follows], only: :show
 
   #load_and_authorize_resource
-  load_and_authorize_resource except: [:edit,:update]
+  load_and_authorize_resource except: [:change,:update]
 #   skip_load_and_authorize_resource :only => :edit
   skip_authorization_check # JHH: Tener esto controlado
   helper_method :author?
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     load_filtered_activity if valid_access?
   end
 
-  def edit
+  def change
     @user = User.find_by_id(params[:id])
   end
 
@@ -155,7 +155,11 @@ class UsersController < ApplicationController
 
     def valid_access?
 #       @user = User.find_by_id(params[:id])
-      authorized_current_user? || current_user.administrator? || @user.public_activity
+      if user_signed_in?
+        authorized_current_user? || current_user.administrator? || @user.public_activity
+      else
+        return false
+      end
     end
 
     def valid_interests_access?
