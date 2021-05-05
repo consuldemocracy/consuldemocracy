@@ -122,6 +122,7 @@ tr:
       remote_translations_description: "Kullanıcıların, dillerinde içerik olmadığında çeviri isteğinde bulunmalarını sağlayan bir düğme görüntüler."
       translation_interface: "Çeviri arayüzü"
       translation_interface_description: "Kullanıcıların, mevcut tüm uygulama dillerinde içeriklerini girmelerine izin veren manuel çeviri arayüzünü görüntüler. Bu seçenek yalnızca kullanıcı başvuru formlarını etkiler ve bağımsız olarak yönetim panelinde her zaman aktif olacaktır."
+      remote_census_description: "Her kurumun uzaktan nüfus sayımına bağlantısını yapılandırmasına izin verir"
       valuation_comment_notification: "Değerlendirme yorumu bildirimi"
       valuation_comment_notification_description: "Yeni bir değerlendirme yorumu oluşturulduğunda, bütçe yatırımı değerlendirme yorumlayıcısı hariç tüm ilişkili kullanıcılara bir e-posta gönderin"
       graphql_api: "GraphQL API"
@@ -202,7 +203,9 @@ tr:
     sdg:
       process:
         debates: Tartışmalardaki ilgili SKH'ler
+        debates_description: Tartışmaların Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
         proposals: Tekliflerdeki ilgili SKH'ler
+        proposals_description: Tekliflerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
         polls: Anketlerdeki ilgili SKH
         polls_description: Anketlerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
         budgets: Katılımcı bütçelerdeki ilgili SKH
