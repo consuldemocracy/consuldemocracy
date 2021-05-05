@@ -25,6 +25,8 @@ tr:
         targets:
           target_2_1:
             title: "2030’a kadar, açlığın sona erdirilmesi ve özellikle bebekler dahil olmak üzere, yoksul ve savunmasız durumda olan herkesin bütün yıl boyunca güvenli, besleyici ve yeterli miktarda besine erişiminin güvence altına alınması."
+          target_2_2:
+            title: "2025’e kadar, 5 yaş altı çocukların büyümelerini engelleyen unsurlar konusunda üzerinde anlaşmaya varılan uluslararası hedeflerin gerçekleştirilmesi de dahil olmak üzere 2030’a kadar, kötü ve yetersiz beslenmenin tüm biçimlerinin ortadan kaldırılması; genç kızlar, hamile ve emziren kadınlar ile yaşlı insanların beslenmeyle ilgili ihtiyaçlarının ele alınması."
       goal_3:
         title: "Sağlık ve Kaliteli Yaşam"
         title_in_two_lines: "Sağlık ve Kaliteli Yaşam"
