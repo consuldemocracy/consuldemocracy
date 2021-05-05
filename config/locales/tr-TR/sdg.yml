@@ -15,7 +15,7 @@ tr:
           target_1_4:
             title: "2030’a kadar, özellikle yoksullar ve savunmasız durumdaki insanlar olmak üzere, bütün erkek ve kadınların ekonomik kaynaklara ulaşma, temel hizmetlere erişim, toprak ve diğer mülkiyet biçimlerine sahip olma ve üzerinde kontrol kurabilme, miras, doğal kaynaklar, uygun yeni teknolojiler ve mikrofinansı da kapsayan finansal hizmetler gibi konularda eşit haklara sahip olmalarının güvence altına alınması"
           target_1_5:
-            title: "2030’a kadar, yoksulların ve savunmasız durumda olan kişilerin dayanıklılık kazanmalarının sağlanması ve aşırı hava olayları ve diğer ekonomik, sosyal ve çevresel şoklar ve afetlere karşı zedelenebilirliklerinin azaltılması"
+            title: "2030’a kadar, yoksulların ve savunmasız durumda olan kişilerin dayanıklılık kazanmalarının sağlanması ve aşırı hava olayları ve diğer ekonomik, sosyal ve çevresel şoklar ve afetlere karşı kırılganlıklarının azaltılması"
           target_1_A:
             title: "Özellikle en az gelişmiş ülkeler olmak üzere, gelişmekte olan ülkelerin yoksulluğu bütün boyutlarıyla sona erdirmek adına programlar ve politikalar uygulayabilmeleri için onlara yeterli ve öngörülebilir araçlar sunmak amacıyla, gelişmiş kalkınma işbirliği aracılığıyla olanlar dahil, çeşitli kaynaklardan kaynakların önemli ölçüde seferber edilmesinin sağlanması"
           target_1_B:
@@ -33,9 +33,12 @@ tr:
             title: "2030’a kadar, tarımsal verimliliğin ve özellikle kadınlar, yerli halklar, çiftçi aileler, çobanlar ve balıkçılar olmak üzere küçük ölçekli gıda üreticilerinin toprağa, diğer verimli kaynaklara ve girdilere, bilgiye, finansal hizmetlere, piyasalara ve değer temini ve tarım dışı istihdam olanaklarına güvenli ve eşit erişiminin sağlanması aracılığıyla gelirlerinin iki katına çıkarılması."
           target_2_4:
             title: "2030’a kadar, sürdürülebilir gıda üretimi sistemlerinin güvence altına alınması ve üretimi ve üretkenliği artıran, ekosistemlerin sürdürülmesine yardımcı olan, iklim değişikliğine, aşırı hava koşullarına, kuraklığa, sele ve diğer felaketlere uyum sağlama kapasitesini güçlendiren ve toprak kalitesini devamlı olarak iyileştiren dayanıklı tarım uygulamalarının hayata geçirilmesi."
+          target_2_5:
+            title: "2020’ye kadar, tohumların, kültür bitkilerinin, çiftlik hayvanlarının ve evcilleştirilmiş hayvanların ve onlara bağlı vahşi türlerin ulusal, bölgesel ve uluslararası düzeylerde etkin bir biçimde yönetilen ve çeşitlendirilmiş tohum ve bitki bankaları aracılığıyla genetik çeşitliliğinin sürdürülmesi ve uluslararası kabul gören biçimde genetik kaynakların ve ilgili geleneksel bilginin kullanımından elde edilen kazanımlara erişimin ve bu kazanımların adil ve eşitlikçi biçimde paylaştırılmasının desteklenmesi."
       goal_3:
         title: "Sağlık ve Kaliteli Yaşam"
         title_in_two_lines: "Sağlık ve Kaliteli Yaşam"
+        description: "Sağlıklı yaşamların güvence altına alınması ve her yaştan herkes için kaliteli yaşamın teşvik edilmesi."
         targets:
           target_3_1:
             title: "2030'a kadar, dünya genelinde anne ölüm oranının 100.000 canlı doğumda 70'in altına düşürülmesi."
@@ -45,6 +48,8 @@ tr:
             title: "2030’a kadar, AIDS, tüberküloz, sıtma ve göz ardı edilen tropikal hastalık gibi salgınların sona erdirilmesi ve hepatit, su yoluyla bulaşan hastalıklar ve diğer bulaşıcı hastalıklarla mücadele edilmesi."
           target_3_4:
             title: "2030’a kadar, bulaşıcı olmayan hastalıklardan kaynaklanan prematüre bebek ölümlerinin, bu hastalıkların önlenmesi ve tedavisi yoluyla üçte bir oranında azaltılması ve zihinsel sağlığın ve refahın geliştirilmesi."
+          target_3_5:
+            title: "Uyuşturucu madde kullanımı ve alkol bağımlılığı dahil olmak üzere madde bağımlılığının önlenmesi ve tedavisinin güçlendirilmesi."
           target_3_6:
             title: "2020'ye kadar, trafik kazalarından kaynaklanan toplam yaralanma ve ölüm sayısının yarıya indirilmesi."
       goal_4:
