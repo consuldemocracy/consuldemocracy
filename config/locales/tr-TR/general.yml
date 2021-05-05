@@ -669,6 +669,7 @@ tr:
     new:
       title: "Mesaj gönder"
       submit_button: "Mesaj gönder"
+      info_about_receivers: "Bu mesaj <strong>%{count} kişiye</strong> gönderilecek ve %{proposal_page} üzerinde görülecek. <br> Mesajlar anlık olarak gönderilmez, kullanıcılar belirli aralıklarla tüm teklif bildirimlerini içeren bir e-posta alır."
       proposal_page: "öneriler sayfası"
     show:
       back: "Faaliyetlerime geri dön"
