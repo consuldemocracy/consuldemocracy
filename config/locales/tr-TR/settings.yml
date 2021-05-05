@@ -122,6 +122,7 @@ tr:
       remote_translations_description: "Kullanıcıların, dillerinde içerik olmadığında çeviri isteğinde bulunmalarını sağlayan bir düğme görüntüler."
       translation_interface: "Çeviri arayüzü"
       translation_interface_description: "Kullanıcıların, mevcut tüm uygulama dillerinde içeriklerini girmelerine izin veren manuel çeviri arayüzünü görüntüler. Bu seçenek yalnızca kullanıcı başvuru formlarını etkiler ve bağımsız olarak yönetim panelinde her zaman aktif olacaktır."
+      remote_census: "Uzaktan nüfus sayımı bağlantısını yapılandırın (SOAP)"
       remote_census_description: "Her kurumun uzaktan nüfus sayımına bağlantısını yapılandırmasına izin verir"
       valuation_comment_notification: "Değerlendirme yorumu bildirimi"
       valuation_comment_notification_description: "Yeni bir değerlendirme yorumu oluşturulduğunda, bütçe yatırımı değerlendirme yorumlayıcısı hariç tüm ilişkili kullanıcılara bir e-posta gönderin"
