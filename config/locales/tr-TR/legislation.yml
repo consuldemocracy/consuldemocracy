@@ -146,3 +146,4 @@ tr:
         other: "Öne çıkan yorumlar"
       most_voted_comments: "En çok oylanan yorumlar"
       no_allegation: "Hiç yorum yok"
+      process_empty: "Bu sürecin bir katılım fazı yoktu"
