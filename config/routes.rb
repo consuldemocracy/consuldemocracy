@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'send/index'
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-
+  resources :users, only: [:new, :create, :edit, :update]
   draw :account
   draw :admin
   draw :annotation
