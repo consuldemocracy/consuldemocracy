@@ -138,6 +138,12 @@ tr:
         title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
         targets:
+          target_17_16:
+            title: "Gelişmekte olan ülkeler başta olmak üzere, tüm ülkelerde Sürdürülebilir Kalkınma Hedeflerine ulaşılmasının desteklenmesi için bilgi, uzmanlık, teknoloji ve finansal kaynakları seferber eden ve paylaşan çok paydaşlı ortaklıklar ile tamamlanan sürdürülebilir kalkınma için küresel ortaklıkların iyileştirilmesi."
+          target_17_17:
+            title: "Ortaklıkların deneyim ve kaynak sağlama stratejilerine dayanan kamu, kamu-özel ve sivil toplum ortaklıklarının teşvik edilmesi ve desteklenmesi."
+          target_17_18:
+            title: "2020’ye kadar, gelir, cinsiyet, yaş, ırk, etnik köken, göçmen statüsü, engellilik, coğrafi konum ve ulusal bağlamlardaki ilgili diğer niteliklere göre ayrılan kaliteli, güncel ve güvenilir verilerin elde edilebilirliğini büyük ölçüde artırmak için en az gelişmiş ülkeleri ve gelişmekte olan küçük ada devletleri de dahil olmak üzere gelişmekte olan ülkelere verilen kapasite geliştirme desteğinin artırılması."
           target_17_19:
             title: "2030’a kadar, gayri safi yurtiçi hasılayı tamamlayan sürdürülebilir kalkınmanın ilerletilmesine yönelik ölçümleri geliştirmek için mevcut girişimlerin yapılandırılması ve gelişmekte olan ülkelerde istatistiksel kapasite geliştirmenin desteklenmesi."
       help:
