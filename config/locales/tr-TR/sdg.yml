@@ -188,6 +188,7 @@ tr:
       help:
         title: "Hangi SKH'ler %{record} ile uyumlu?"
         text: "SKA yardım sayfası"
+      hint: Bulmak istediğiniz özel bir amacın/hedefin kodunu okutabilir veya metni girerek aratabilirsiniz. Daha fazla bilgi almak için %{link} adresini ziyaret edebilirsiniz.
       placeholder: "Bir amaç ya da hedef kodu yazın veya açıklayın"
       remove_tag: "Kaldır"
       title: "Sürdürülebilir Kalkınma Amaçları ve Hedefleri"
