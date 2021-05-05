@@ -1,12 +1,11 @@
 <div class="row">
   <div class="small-12 medium-9 medium-centered column">
     <% if current_administrator? %>
-      <h1>Editing User</h1>
       <p>Editando el usuario con id: <%= @user.id %></p>
 
       <%= render 'form', user: @user %>
 
-      <%= link_to 'Back', admin_root_path %>
+      <%= link_to 'Volver', admin_root_path %>
     <% else %>
      <p class="text-center"><%= t("not_authorized.title") %></p>
      <%= back_link_to root_url %>

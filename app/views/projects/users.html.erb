@@ -1,0 +1,30 @@
+<div class="small-12 medium-8 medium-centered" id="users">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col"><%= t("admin.users.columns.name") %></th>
+          <th scope="col"><%= t("admin.users.columns.email") %></th>
+          <th scope="col"><%= t("admin.users.columns.document_number") %></th>
+          <th scope="col"><%= t("admin.users.columns.roles") %></th>
+          <th scope="col"><%= t("admin.users.columns.verification_level") %></th>
+          <th scope="col"><%= t("admin.shared.actions") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @projectUsers.each do |user| %>
+          <tr>
+              <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
+              <td><%= user.email %></td>
+              <td><%= user.document_number %></td>
+              <td><%= display_user_roles(user) %></td>
+              <td><%= user.user_type %></td>
+              <td>
+                <%= link_to '', edit_user_path(user), target: "_blank", class: "edit-link" %>
+                <%= link_to '', hide_in_moderation_screen_moderation_user_path(user, request.query_parameters),
+                        method: :put, class: "block-link" %>
+              </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>

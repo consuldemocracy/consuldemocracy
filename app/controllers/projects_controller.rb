@@ -141,6 +141,17 @@ class ProjectsController < ApplicationController
     end
   end
 
+  #GET/projects/1/users
+  def users
+    arr_users = []
+    @project = Project.find(params[:id])
+    @projectUsers = UserOnProject.where(project_id: params[:id])
+    @projectUsers.each do |item|
+      arr_users << item.user_id
+    end
+    @projectUsers = User.where(id: arr_users).order(id: :asc)
+  end
+
   # GET /projects/1
   def show
   end
