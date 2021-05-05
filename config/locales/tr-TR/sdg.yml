@@ -72,6 +72,13 @@ tr:
         title: "Nitelikli Eğitim"
         title_in_two_lines: "Nitelikli Eğitim"
         description: "Nitelikli Eğitim."
+        targets:
+          target_4_1:
+            title: "2030'a kadar, bütün kız ve erkek çocuklarının ücretsiz, eşitlikçi ve kaliteli ilk ve orta öğretimi tamamlamalarının ve böylece Hedef-4'teki ilgili etkili öğrenme çıktılarının elde edilmesinin sağlanması."
+          target_4_2:
+            title: "2030'a kadar, tüm kız ve erkek çocuklarının kaliteli erken çocukluk gelişimi, bakımı ve okul öncesi eğitimine erişebilmelerinin ve böylece ilköğretime hazır olmalarının sağlanması."
+          target_4_3:
+            title: "2030’a kadar bütün kadın ve erkeklerin erişilebilir ve kaliteli teknik eğitim, mesleki eğitim ve üniversiteyi de kapsayan yüksek öğretime eşit biçimde erişimlerinin sağlanması."
       goal_5:
         title: "Cinsiyet Eşitliği"
         title_in_two_lines: "Toplumsal Cinsiyet Eşitliği"
