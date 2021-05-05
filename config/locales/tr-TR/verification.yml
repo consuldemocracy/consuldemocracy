@@ -17,6 +17,9 @@ tr:
     letter:
       alert:
         unconfirmed_code: Onay kodunu henüz girmediniz
+      create:
+        flash:
+          success: Kendi <b>maksimum güvenlik kodunuzu (yalnızca son oylar için gerekli)</b>talep ettiğiniz için teşekkür ederiz. Kodunuzu birkaç gün içerisinde sistemde belirtilen adrese göndereceğiz. Eğer tercih ederseniz, kodunuzu Vatandaş Destek Ofislerinden kendiniz de teslim alabilirsiniz.
       edit:
         see_all: Önerileri gör
         title: Evrak talep edildi
