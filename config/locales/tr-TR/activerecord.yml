@@ -594,6 +594,10 @@ tr:
           attributes:
             locale:
               already_translated: Tercüme edilmiş kaynak
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "hedefi bir nokta ile devam edip numara ile bittiğinden aynı kod ile başlamalı"
       messages:
         translations_too_short: En az bir çeviri sağlamak zorunludur
         record_invalid: "Onaylama başarısız: %{errors}"
