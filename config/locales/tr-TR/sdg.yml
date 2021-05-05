@@ -8,6 +8,8 @@ tr:
         targets:
           target_1_1:
             title: "2030'a kadar, Günde 1,25 dolardan daha az gelirle geçinen insanların sayısı üzerinden ölçülen aşırı yoksulluğun her yerde herkes için ortadan kaldırılması"
+          target_1_2:
+            title: "2030’a kadar, ulusal tanımlara göre tüm boyutlarıyla yoksulluk içinde yaşayan her yaştan erkek, kadın ve çocuk oranının en az yarıya indirilmesi"
           target_1_4:
             title: "2030’a kadar, özellikle yoksullar ve savunmasız durumdaki insanlar olmak üzere, bütün erkek ve kadınların ekonomik kaynaklara ulaşma, temel hizmetlere erişim, toprak ve diğer mülkiyet biçimlerine sahip olma ve üzerinde kontrol kurabilme, miras, doğal kaynaklar, uygun yeni teknolojiler ve mikrofinansı da kapsayan finansal hizmetler gibi konularda eşit haklara sahip olmalarının güvence altına alınması"
           target_1_5:
