@@ -135,6 +135,7 @@ tr:
         endpoint: "Bitiş Noktası"
         endpoint_description: "Nüfus sayım servisinin mevcut olduğu ana bilgisayarın adı (wsdl)"
       request:
+        method_name: "Yöntem adını talep et"
         structure: "Talep Yapısı"
         document_type: "Belge türüne giden yol"
         document_type_description: "Belge türünü gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için belge türüne ihtiyaç duymuyorsa DOLDURMAYIN."
