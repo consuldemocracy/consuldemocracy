@@ -74,7 +74,7 @@ tr:
       email_description: E-posta tanımlaması
       email_description_description: E-posta özelliğinin ayrıntılı açıklaması
       poster_short_title: Görsel
-      poster_short_title_description: 'Görsel özelliğinin kısa açıklaması. Kullanıcılara, önerilerinin tanıtımını yapmaları için PDF formatında bir görsel indirmelerine izin verir. Bu görselin tüm içeriğini "/uygulama/görünümler/gösterge panosu/görsel/dizin.pdf.erb" adresinde bulabilirsiniz'
+      poster_short_title_description: 'Görsel özelliğinin kısa açıklaması. Kullanıcılara, önerilerinin tanıtımını yapmaları için PDF biçiminde bir görsel indirmelerine izin verir. Bu görselin tüm içeriğini "/uygulama/görünümler/gösterge panosu/görsel/dizin.pdf.erb" adresinde bulabilirsiniz'
       poster_description: Poster açıklaması
       poster_description_description: Poster özelliğinin detaylı açıklaması
     analytics_url: "Analitikler URL'si"
