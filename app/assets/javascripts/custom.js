@@ -6,13 +6,18 @@
 
 function SearchFunction(){
     search = document.getElementById("users-search-form");
-    console.log(search.value);
-    data = document.getElementById("span_tags");
-    console.log(data.innerText);
-    if (search.value == data.innerText) {
-        data.style.setProperty('background-color', 'red');
-    } else {
-        data.style.setProperty('background-color', 'green');
-    }
+    var searchValue = search.value;
+    var searchLower = searchValue.toLowerCase();
 
+    spanTags = document.querySelectorAll('#span_tags');
+    var i;
+    for (i = 0; i < spanTags.length; ++i) {
+      var dataValue = spanTags[i].innerText;
+      dataLower = dataValue.toLowerCase();
+      if (dataLower.includes(searchLower)) {
+        spanTags[i].style.display = '';
+      } else {
+        spanTags[i].style.display = 'none';
+      }
+    }
 }
