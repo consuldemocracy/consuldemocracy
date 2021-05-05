@@ -36,7 +36,7 @@ tr:
           target_2_5:
             title: "2020’ye kadar, tohumların, kültür bitkilerinin, çiftlik hayvanlarının ve evcilleştirilmiş hayvanların ve onlara bağlı vahşi türlerin ulusal, bölgesel ve uluslararası düzeylerde etkin bir biçimde yönetilen ve çeşitlendirilmiş tohum ve bitki bankaları aracılığıyla genetik çeşitliliğinin sürdürülmesi ve uluslararası kabul gören biçimde genetik kaynakların ve ilgili geleneksel bilginin kullanımından elde edilen kazanımlara erişimin ve bu kazanımların adil ve eşitlikçi biçimde paylaştırılmasının desteklenmesi."
           target_2_B:
-            title: "Tarımsal ihracat sübvansiyonlarının her türünün ve eş etkili mali yüklerle birlikte bütün ihracat önlemlerinin paralel olarak ortadan kaldırılması yoluyla, Doha Kalkınma Turu’na uygun olarak, dünya tarım piyasalarındaki ticari kısıtlamalar ve aksaklıkların düzeltilmesi ve önlenmesi."
+            title: "Tarımsal ihracat sübvansiyonlarının her türünün ve eş etkili mali yüklerle birlikte bütün ihracat önlemlerinin paralel olarak ortadan kaldırılması yoluyla, Doha Kalkınma Turuna uygun olarak, dünya tarım piyasalarındaki ticari kısıtlamalar ve aksaklıkların düzeltilmesi ve önlenmesi."
           target_2_C:
             title: "Gıda mamulleri piyasalarının ve türevlerinin uygun biçimde işleyişini sağlamak için önlemler alınması ve gıda fiyatlarındaki aşırı değişkenliği sınırlandırmaya yardımcı olmak için gıda rezervleri de dahil olmak üzere piyasa bilgilerine zamanında erişimin kolaylaştırılması."
       goal_3:
@@ -63,7 +63,7 @@ tr:
           target_3_9:
             title: "2030’a kadar, zararlı kimyasallardan ve hava, su ve toprak kirliliğinden kaynaklanan hastalıkların ve ölümlerin sayısının büyük ölçüde azaltılması."
           target_3_A:
-            title: "Dünya Sağlık Örgütü Tütün Kontrolü Çerçeve Sözleşmesi’nin bütün ülkelerde, uygun şekilde uygulanmasının güçlendirilmesi."
+            title: "Dünya Sağlık Örgütü Tütün Kontrolü Çerçeve Sözleşmesinin bütün ülkelerde, uygun şekilde uygulanmasının güçlendirilmesi."
           target_3_B:
             title: "Öncelikli olarak, gelişmekte olan ülkeleri etkileyen bulaşıcı olan ve bulaşıcı olmayan hastalıklar için aşı ve ilaçların geliştirilmesinin desteklenmesi, gelişmekte olan ülkelerin kamu sağlığının korunmasına yönelik esnekliklere ilişkin Fikri Mülkiyet Haklarının Ticari Niteliklerine İlişkin Anlaşma hükümlerini tamamıyla uygulayabilme hakkını onaylayan TRIPS Anlaşması ve Doha Bildirgesi gereğince, uygun fiyatlı temel ilaçlara ve aşılara erişimin sağlanması ve özellikle her kesimden bireylerin ilaçlara erişiminin sağlanması."
       goal_4:
@@ -88,6 +88,9 @@ tr:
       goal_7:
         title: "Erişilebilir ve Temiz Enerji"
         title_in_two_lines: "Erişilebilir ve Temiz Enerji"
+        targets:
+          target_7_3:
+            title: "2030’a kadar küresel enerji verimliliğini iyileştirme oranının iki katına çıkarılması."
       goal_8:
         title: "İnsana Yakışır İş ve Ekonomik Büyüme"
         title_in_two_lines: "İnsana Yakışır İş ve Ekonomik Büyüme"
@@ -115,6 +118,10 @@ tr:
         title_in_two_lines: "Barış, Adalet ve Güçlü Kurumlar"
         description: "Adil, barışçıl ve kapsayıcı toplumları destekleyin."
         targets:
+          target_16_1:
+            title: "Şiddetin tüm biçimlerinin ve şiddete bağlı ölüm oranlarının her yerde büyük ölçüde azaltılması."
+          target_16_2:
+            title: "Çocuk istismarı, sömürüsü, ticareti ve çocuklara karşı şiddet ve işkencenin her türünün sona erdirilmesi."
           target_16_7:
             title: "Her düzeyde duyarlı, her kesimi kapsayan, katılımcı ve temsili karar almayı sağlamak."
           target_16_8:
