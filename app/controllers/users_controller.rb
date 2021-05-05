@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by_id(params[:id])
+    @geozones = Geozone.all.order(Arel.sql("LOWER(name)"))
   end
 
   def update
@@ -64,7 +65,7 @@ class UsersController < ApplicationController
     def load_available_activity
       if @activity_counts[:proposals] > 0
         load_proposals
-        @current_filter = "proposals" 
+        @current_filter = "proposals"
       elsif @activity_counts[:projects] > 0
         load_projects
         @current_filter = "projects"
@@ -184,4 +185,5 @@ class UsersController < ApplicationController
         all_user_comments
       end
     end
+
 end
