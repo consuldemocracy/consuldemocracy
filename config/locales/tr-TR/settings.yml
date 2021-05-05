@@ -137,11 +137,13 @@ tr:
       request:
         structure: "Talep Yapısı"
         document_type: "Belge türüne giden yol"
+        document_type_description: "Belge türünü gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için belge türüne ihtiyaç duymuyorsa DOLDURMAYIN."
         document_number: "Belge numarasına giden yol"
         document_number_description: "Belge numarasını gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için belge numarasına ihtiyaç duymuyorsa DOLDURMAYIN."
         date_of_birth: "Doğum tarihine giden yol"
         date_of_birth_description: "Doğum tarihini gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için doğum tarihine ihtiyaç duymuyorsa DOLDURMAYIN."
         postal_code: "Posta koduna giden yol"
+        postal_code_description: "Posta Kodunu gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için Posta Koduna ihtiyaç duymuyorsa DOLDURMAYIN."
       response:
         date_of_birth: "Doğum tarihine giden yol"
         date_of_birth_description: "Kullanıcının doğum tarihi yanıtın hangi yolundadır?"
