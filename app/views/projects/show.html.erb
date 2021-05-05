@@ -9,7 +9,7 @@
           show = true
         end
       end
-    end 
+    end
   %>
 
   <% if show == true %>
@@ -19,6 +19,53 @@
           <%= @project.title %>
         </p>
 
+        <%# -- Propuestas -- %>
+        <% if !@project_proposals.empty? %>
+          <table class="margin-top">
+            <thead>
+              <tr>
+                <th scope="col"><%= t("users.show.proposals") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @project_proposals.each do |item| %>
+                <tr id="proposals_<%= item.id %>">
+                  <td>
+                    <%= link_to item.title, proposal_path(item) %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <strong>Propuesta:</strong>
+          <p><%= t("project.show_component", item:"propuestas") %></p>
+        <% end %>
+
+        <%# -- Votaciones -- %>
+        <% if !@project_polls.empty? %>
+          <table class="margin-top">
+            <thead>
+              <tr>
+                <th scope="col"><%= t("users.show.polls") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @project_polls.each do |item| %>
+                <tr id="polls_<%= item.id %>">
+                  <td>
+                    <%= link_to item.title, poll_path(item) %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <strong>Votaciones:</strong>
+          <p><%= t("project.show_component", item:"votaciones") %></p>
+        <% end %>
+
+        <%# -- Debates -- %>
         <% if !@project_debates.empty? %>
           <table class="margin-top">
             <thead>
@@ -38,10 +85,10 @@
           </table>
         <% else %>
           <strong>Debate:</strong>
-          <p><%= t("project.show_debate.empty") %></p>
+          <p><%= t("project.show_component", item:"debates") %></p>
         <% end %>
 
-
+        <%# -- Páginas -- %>
         <strong>Páginas:</strong>
         <% if @project_pages.empty? %>
           <p><%= t("project.show_page.empty") %></p>
@@ -56,8 +103,9 @@
           </div>
         <% end %>
 
-
+      <% if current_administrator? %>
         <%= link_to 'Editar', edit_project_path(@project) %> |
+      <% end %>
         <%= link_to 'Volver', projects_path %>
     </div>
   <% else %>

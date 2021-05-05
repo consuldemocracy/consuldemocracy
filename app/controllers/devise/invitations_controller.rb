@@ -121,4 +121,4 @@ class Devise::InvitationsController < DeviseController
       devise_parameter_sanitizer.permit(:invite, keys: [:username])
       #devise_parameter_sanitizer.permit(:accept_invitation, keys: [:username])
     end
-end  
+end

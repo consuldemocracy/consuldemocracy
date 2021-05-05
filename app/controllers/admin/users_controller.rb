@@ -1,15 +1,19 @@
 class Admin::UsersController < Admin::BaseController
   load_and_authorize_resource
 
-  has_filters %w[active erased only_hidden], only: :index
+  has_filters %w[active erased only_hidden projects], only: :index
 
   def index
-    @users = @users.send(@current_filter)
-    @users = @users.by_username_email_or_document_number(params[:search]) if params[:search]
-    @users = @users.page(params[:page])
-    respond_to do |format|
-      format.html
-      format.js
+    if @current_filter == 'projects'
+      @projects = Project.all
+    else
+      @users = @users.send(@current_filter)
+      @users = @users.by_username_email_or_document_number(params[:search]) if params[:search]
+      @users = @users.page(params[:page])
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   end
 

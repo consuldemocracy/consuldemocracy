@@ -1,59 +1,89 @@
 <%= link_to t("custom.add_user.title"), new_invitation_path(current_user), class: "button float-right" %>
 <%= render "shared/filter_subnav", i18n_namespace: "admin.users.index" %>
 
-<% if @users.any? %>
-  <h3><%= page_entries_info @users %></h3>
-
+<% if @current_filter == "projects" %>
   <table>
     <thead>
       <tr>
-        <% if @current_filter == "erased" %>
-          <th scope="col"><%= t("admin.users.columns.id") %></th>
-          <th scope="col"><%= t("admin.users.columns.erase_reason") %></th>
-        <% elsif @current_filter == "active" %>
           <th scope="col"><%= t("admin.users.columns.name") %></th>
-          <th scope="col"><%= t("admin.users.columns.email") %></th>
-          <th scope="col"><%= t("admin.users.columns.document_number") %></th>
-          <th scope="col"><%= t("admin.users.columns.roles") %></th>
-          <th scope="col"><%= t("admin.users.columns.verification_level") %></th>
           <th scope="col"><%= t("admin.shared.actions") %></th>
-        <% else %>
-          <th scope="col"><%= t("admin.users.columns.name") %></th>
-          <th scope="col"><%= t("admin.users.columns.email") %></th>
-          <th scope="col"><%= t("admin.shared.actions") %></th>
-        <% end %>
       </tr>
     </thead>
     <tbody>
-      <% @users.each do |user| %>
+      <% @projects.each do |project| %>
         <tr>
-          <% if @current_filter == "erased" %>
-            <td><%= link_to user.id, user_path(user), target: "_blank" %></td>
-            <td><%= user.erase_reason %></td>
-          <% elsif @current_filter == "active" %>
-            <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
-            <td><%= user.email %></td>
-            <td><%= user.document_number %></td>
-            <td><%= display_user_roles(user) %></td>
-            <td><%= user.user_type %></td>
-            <td>
-              <%= link_to '', edit_user_path(user), target: "_blank", class: "edit-link" %>
-              <%= link_to '', hide_in_moderation_screen_moderation_user_path(user, request.query_parameters),
-                      method: :put, class: "block-link" %>
-            </td>
-          <% else %>
-            <td><p><%= link_to user.name, admin_hidden_user_path(user) %></p></td>
-            <td><%= user.email %></td>
-            <td><%= render Admin::HiddenTableActionsComponent.new(user) %></td>
-          <% end %>
+          <td><%= project.title %></td>
+          <td><%= link_to 'Ver Usuarios', users_project_path(project) %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-
-  <%= paginate @users %>
 <% else %>
-  <div class="callout primary">
-    <%= t("admin.users.index.no_users") %>
-  </div>
+  <%if @users.any? %>
+    <h3><%= page_entries_info @users %></h3>
+
+    <table>
+      <thead>
+        <tr>
+          <% if @current_filter == "erased" %>
+            <th scope="col"><%= t("admin.users.columns.id") %></th>
+            <th scope="col"><%= t("admin.users.columns.erase_reason") %></th>
+          <% elsif @current_filter == "active" %>
+            <th scope="col"><%= t("admin.users.columns.name") %></th>
+            <th scope="col"><%= t("admin.users.columns.email") %></th>
+            <th scope="col"><%= t("admin.users.columns.document_number") %></th>
+            <th scope="col"><%= t("admin.users.columns.roles") %></th>
+            <th scope="col"><%= t("admin.users.columns.verification_level") %></th>
+            <th scope="col"><%= t("admin.shared.actions") %></th>
+          <% elsif @current_filter == "only_hidden" %>
+            <th scope="col"><%= t("admin.users.columns.name") %></th>
+            <th scope="col"><%= t("admin.users.columns.email") %></th>
+            <th scope="col"><%= t("admin.shared.actions") %></th>
+          <% else %>
+            <th scope="col"><%= t("admin.users.columns.name") %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @current_filter == "only_hidden" %>
+          <% @projects.each do |item| %>
+            <tr>
+              <td><%= project.title %></td>
+              <td><%= link_to 'Ver', project %></td>
+            </tr>
+          <% end %>
+        <% else %>
+          <% @users.each do |user| %>
+            <tr>
+              <% if @current_filter == "erased" %>
+                <td><%= link_to user.id, user_path(user), target: "_blank" %></td>
+                <td><%= user.erase_reason %></td>
+              <% elsif @current_filter == "active" %>
+                <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
+                <td><%= user.email %></td>
+                <td><%= user.document_number %></td>
+                <td><%= display_user_roles(user) %></td>
+                <td><%= user.user_type %></td>
+                <td>
+                  <%= link_to '', edit_user_path(user), target: "_blank", class: "edit-link" %>
+                  <%= link_to '', hide_in_moderation_screen_moderation_user_path(user, request.query_parameters),
+                          method: :put, class: "block-link" %>
+                </td>
+              <% else %>
+                <td><p><%= link_to user.name, admin_hidden_user_path(user) %></p></td>
+                <td><%= user.email %></td>
+                <td><%= render Admin::HiddenTableActionsComponent.new(user) %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @users %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.users.index.no_users") %>
+    </div>
+  <% end %>
 <% end %>

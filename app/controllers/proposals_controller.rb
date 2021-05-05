@@ -11,8 +11,19 @@ class ProposalsController < ApplicationController
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
   before_action :proposals_recommendations, only: :index, if: :current_user
-  # JHH: 
+  # JHH:
   before_action :load_participants
+  before_action :authenticate_user!
+  before_action :is_admin?, except: [:show]
+
+  def is_admin?
+    if current_user.administrator?
+      flash[:notice] = t "authorized.title"
+    else
+      redirect_to root_path
+      flash[:alert] = t "not_authorized.title"
+    end
+  end
   #Fin
 
   feature_flag :proposals

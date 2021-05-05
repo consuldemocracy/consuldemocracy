@@ -1,105 +1,148 @@
-<% preview = false unless local_assigns.has_key? :preview %>
-<% provide :title do %><%= @proposal.title %><% end %>
-<% content_for :meta_description do %><%= @proposal.summary %><% end %>
-<% provide :social_media_meta_tags do %>
-  <%= render "shared/social_media_meta_tags",
-              social_url: proposal_url(@proposal),
-              social_title: @proposal.title,
-              social_description: @proposal.summary,
-              twitter_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil),
-              og_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil) %>
-<% end %>
-<% content_for :canonical do %>
-  <%= render "shared/canonical", href: proposal_url(@proposal) %>
-<% end %>
+<% show=false
+  if user_signed_in?
+    if current_administrator?
+      show=true
+    else
+      @users_index = ProposalParticipant.where(proposal_id: @proposal.id)
+      @users_index.each do |index|
+        if index.user_id == current_user.id
+          show=true
+        end
+      end
 
-<% cache [locale_and_user_status(@proposal),
-          @proposal,
-          @proposal.author,
-          Flag.flagged?(current_user, @proposal),
-          @proposal_votes] do %>
-  <div class="proposal-show">
-    <div id="<%= dom_id(@proposal) %>" class="row">
-      <div class="small-12 medium-9 column">
-        <%= back_link_to proposals_path unless preview %>
+      arr_users = []
+      @user_on_proposal = ProposalOnProject.where(proposal_id: @proposal.id)
+      @user_on_proposal.each do |index|
+        arr_users << UserOnProject.where(project_id: index.project_id)
+      end
 
-        <h1><%= @proposal.title %></h1>
-        <% if @proposal.retired? %>
-          <div data-alert class="callout alert margin-top proposal-retired">
-            <strong>
-              <%= t("proposals.show.retired_warning") %><br>
-              <%= link_to t("proposals.show.retired_warning_link_to_explanation"),
-                          "#retired_explanation" %>
-            </strong>
-          </div>
-        <% elsif @proposal.conflictive? %>
-          <div data-alert class="callout alert margin-top">
-            <strong><%= t("proposals.show.flag") %></strong>
-          </div>
-        <% end %>
+      arr_users.each do |index|
+        index.each do |item|
+          if item.user_id == current_user.id
+            show=true
+          end
+        end
+      end
 
-        <%= render "proposals/info", proposal: @proposal %>
-        <%= render "shared/geozone", geozonable: @proposal %>
+    end
+  end
+%>
+<% if show==true %>
+  <% preview = false unless local_assigns.has_key? :preview %>
+  <% provide :title do %><%= @proposal.title %><% end %>
+  <% content_for :meta_description do %><%= @proposal.summary %><% end %>
+  <% provide :social_media_meta_tags do %>
+    <%= render "shared/social_media_meta_tags",
+                social_url: proposal_url(@proposal),
+                social_title: @proposal.title,
+                social_description: @proposal.summary,
+                twitter_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil),
+                og_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil) %>
+  <% end %>
+  <% content_for :canonical do %>
+    <%= render "shared/canonical", href: proposal_url(@proposal) %>
+  <% end %>
 
-        <% unless @proposal.selected? %>
-          <%= render "relationable/related_content", relationable: @proposal %>
-        <% end %>
+  <% cache [locale_and_user_status(@proposal),
+            @proposal,
+            @proposal.author,
+            Flag.flagged?(current_user, @proposal),
+            @proposal_votes] do %>
+    <div class="proposal-show">
+      <div id="<%= dom_id(@proposal) %>" class="row">
+        <div class="small-12 medium-9 column">
+          <%= back_link_to proposals_path unless preview %>
 
-        <div class="js-moderator-proposal-actions margin">
-          <%= render "proposals/actions", proposal: @proposal %>
-        </div>
-      </div>
-
-      <% unless preview %>
-        <aside class="small-12 medium-3 column">
-          <% if can?(:dashboard, @proposal) %>
-            <div class="sidebar-divider"></div>
-            <h2><%= t("proposals.show.author") %></h2>
-            <div class="show-actions-menu">
-              <%= link_to progress_proposal_dashboard_path(@proposal),
-                          class: "button hollow expanded",
-                          id: "proposal-dashboard-#{@proposal.id}" do %>
-                <span class="icon-edit"></span>
-                <%= t("proposals.show.dashboard_proposal_link") %>
-              <% end %>
+          <h1><%= @proposal.title %></h1>
+          <% if @proposal.retired? %>
+            <div data-alert class="callout alert margin-top proposal-retired">
+              <strong>
+                <%= t("proposals.show.retired_warning") %><br>
+                <%= link_to t("proposals.show.retired_warning_link_to_explanation"),
+                            "#retired_explanation" %>
+              </strong>
+            </div>
+          <% elsif @proposal.conflictive? %>
+            <div data-alert class="callout alert margin-top">
+              <strong><%= t("proposals.show.flag") %></strong>
             </div>
           <% end %>
 
-          <%= render "proposals/support_status", proposal: @proposal %>
+          <%= render "proposals/info", proposal: @proposal %>
+          <%= render "shared/geozone", geozonable: @proposal %>
 
-          <%= render "proposals/social_share", proposal: @proposal, share_title: t("proposals.show.share") %>
-
-          <% if current_user %>
-            <div class="sidebar-divider"></div>
-            <p class="sidebar-title"><%= t("shared.follow") %></p>
-
-            <%= render "follows/follow_button", follow: find_or_build_follow(current_user, @proposal) %>
+          <% unless @proposal.selected? %>
+            <%= render "relationable/related_content", relationable: @proposal %>
           <% end %>
 
-          <%= render "communities/access_button", community: @proposal.community %>
-        </aside>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+          <div class="js-moderator-proposal-actions margin">
+            <%= render "proposals/actions", proposal: @proposal %>
+          </div>
+        </div>
 
-<% unless preview %>
-  <div class="additional-content">
-    <div class="filter-subnav">
-      <div class="row">
-        <div class="small-12 column">
-          <%= render "proposals/filter_subnav" %>
+        <% unless preview %>
+          <aside class="small-12 medium-3 column">
+            <% if can?(:dashboard, @proposal) || current_administrator? %>
+              <div class="sidebar-divider"></div>
+              <% if current_administrator? %>
+                <h2>ADMINISTRADOR</h2>
+              <% else %>
+                <h2><%= t("proposals.show.author") %></h2>
+              <% end %>
+              <div class="show-actions-menu">
+                <%= link_to progress_proposal_dashboard_path(@proposal),
+                            class: "button hollow expanded",
+                            id: "proposal-dashboard-#{@proposal.id}" do %>
+                  <span class="icon-edit"></span>
+                  <%= t("proposals.show.dashboard_proposal_link") %>
+                <% end %>
+              </div>
+            <% end %>
+
+            <%= render "proposals/support_status", proposal: @proposal %>
+
+            <%#<%= render "proposals/social_share", proposal: @proposal, share_title: t("proposals.show.share") %>
+
+            <% if current_user %>
+              <div class="sidebar-divider"></div>
+              <p class="sidebar-title"><%= t("shared.follow") %></p>
+
+              <%= render "follows/follow_button", follow: find_or_build_follow(current_user, @proposal) %>
+            <% end %>
+
+            <%= render "communities/access_button", community: @proposal.community %>
+          </aside>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <% unless preview %>
+    <div class="additional-content">
+      <div class="filter-subnav">
+        <div class="row">
+          <div class="small-12 column">
+            <%= render "proposals/filter_subnav" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="tabs-content" data-tabs-content="proposals_tabs">
-    <div class="tabs-panel is-active" id="tab-comments">
-      <%= render "proposals/comments" %>
+    <div class="tabs-content" data-tabs-content="proposals_tabs">
+      <div class="tabs-panel is-active" id="tab-comments">
+        <%= render "proposals/comments" %>
+      </div>
+
+      <%= render "proposals/notifications" %>
+      <%= render "milestones/milestones", milestoneable: @proposal %>
     </div>
-
-    <%= render "proposals/notifications" %>
-    <%= render "milestones/milestones", milestoneable: @proposal %>
+  <% end %>
+<% else %>
+  <div class="row margin-top">
+    <div class="small-4 medium-4 large-4 medium-centered">
+      <p style="color: red";><strong> No pertenece a esta propuesta </strong></p>
+      <%= back_link_to root_url %>
+    </div>
   </div>
+
 <% end %>

@@ -38,6 +38,9 @@ class Proposal < ApplicationRecord
   has_many :proposal_participants
   has_many :users, through: :proposal_participants
 
+  has_many :proposal_on_projects
+  has_many :projects, through: :proposal_on_projects
+
   attr_accessor :participants_id
 
   after_save :save_participants
@@ -98,7 +101,7 @@ class Proposal < ApplicationRecord
   scope :created_by,               ->(author) { where(author: author) }
 
 
-  #JHH: 
+  #JHH:
   def delete_participants
     ProposalParticipant.where(proposal_id: self).destroy_all
   end

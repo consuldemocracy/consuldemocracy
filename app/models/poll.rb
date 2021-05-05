@@ -18,6 +18,17 @@ class Poll < ApplicationRecord
 
   RECOUNT_DURATION = 1.week
 
+  # new
+  has_many :poll_on_projects
+  has_many :projects, through: :poll_on_projects
+
+  has_many :poll_participants
+  has_many :polls, through: :poll_participants
+
+  attr_accessor :user_elements, :user_ids
+  attr_accessor :delete_user_elements, :delete_user_ids
+  # --
+
   has_many :booth_assignments, class_name: "Poll::BoothAssignment"
   has_many :booths, through: :booth_assignments
   has_many :partial_results, through: :booth_assignments
@@ -70,6 +81,27 @@ class Poll < ApplicationRecord
                                             poll.ends_at.end_of_day).where.not(id: poll.id)
                                             .where(related: poll.related)
   end
+
+  # new
+  def destroy_component
+    PollParticipant.where(poll_id: self.id).destroy_all
+  end
+
+  def delete_component(delete_user_elements)
+    if !delete_user_elements.nil?
+      delete_element = PollParticipant.where(poll_id: self.id)
+      delete_element.where(user_id: delete_user_elements).destroy_all
+    end
+  end
+
+  def save_component(user_elements)
+    if !user_elements.nil?
+      user_elements.each do |user_id|
+        PollParticipant.find_or_create_by(poll_id: self.id, user_id: user_id)
+      end
+    end
+  end
+  # --
 
   def title
     name

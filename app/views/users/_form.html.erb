@@ -1,13 +1,15 @@
-<%= render "shared/globalize_locales", resource: @user,resource:@geozone %>
+<%= render "shared/globalize_locales", resource: @user %>
 
 <%= form_with(model: @user, local: true) do |form| %>
 
   <div class="field">
     <%= form.text_field :username %>
   </div>
+
   <div class="field">
-    <%= form.collection_select :geozone_id, @geozone.order(:name), :id, :name %>
+    <%= form.collection_select :geozone_id, Geozone.all, :id, :name %>
   </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

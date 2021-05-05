@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_093036) do
+ActiveRecord::Schema.define(version: 2021_05_04_091541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1076,6 +1076,15 @@ ActiveRecord::Schema.define(version: 2021_04_20_093036) do
     t.index ["user_id"], name: "index_poll_officers_on_user_id"
   end
 
+  create_table "poll_on_projects", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "poll_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["poll_id"], name: "index_poll_on_projects_on_poll_id"
+    t.index ["project_id"], name: "index_poll_on_projects_on_project_id"
+  end
+
   create_table "poll_partial_results", id: :serial, force: :cascade do |t|
     t.integer "question_id"
     t.integer "author_id"
@@ -1093,6 +1102,15 @@ ActiveRecord::Schema.define(version: 2021_04_20_093036) do
     t.index ["booth_assignment_id", "date"], name: "index_poll_partial_results_on_booth_assignment_id_and_date"
     t.index ["origin"], name: "index_poll_partial_results_on_origin"
     t.index ["question_id"], name: "index_poll_partial_results_on_question_id"
+  end
+
+  create_table "poll_participants", force: :cascade do |t|
+    t.bigint "poll_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["poll_id"], name: "index_poll_participants_on_poll_id"
+    t.index ["user_id"], name: "index_poll_participants_on_user_id"
   end
 
   create_table "poll_question_answer_translations", id: :serial, force: :cascade do |t|
@@ -1275,6 +1293,15 @@ ActiveRecord::Schema.define(version: 2021_04_20_093036) do
     t.datetime "hidden_at"
     t.datetime "ignored_at"
     t.datetime "confirmed_hide_at"
+  end
+
+  create_table "proposal_on_projects", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "proposal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_proposal_on_projects_on_project_id"
+    t.index ["proposal_id"], name: "index_proposal_on_projects_on_proposal_id"
   end
 
   create_table "proposal_participants", force: :cascade do |t|
@@ -1820,10 +1847,14 @@ ActiveRecord::Schema.define(version: 2021_04_20_093036) do
   add_foreign_key "poll_answers", "poll_questions", column: "question_id"
   add_foreign_key "poll_booth_assignments", "polls"
   add_foreign_key "poll_officer_assignments", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_on_projects", "polls"
+  add_foreign_key "poll_on_projects", "projects"
   add_foreign_key "poll_partial_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_partial_results", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_partial_results", "poll_questions", column: "question_id"
   add_foreign_key "poll_partial_results", "users", column: "author_id"
+  add_foreign_key "poll_participants", "polls"
+  add_foreign_key "poll_participants", "users"
   add_foreign_key "poll_question_answer_videos", "poll_question_answers", column: "answer_id"
   add_foreign_key "poll_question_answers", "poll_questions", column: "question_id"
   add_foreign_key "poll_questions", "polls"
@@ -1833,6 +1864,8 @@ ActiveRecord::Schema.define(version: 2021_04_20_093036) do
   add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "polls", "budgets"
+  add_foreign_key "proposal_on_projects", "projects"
+  add_foreign_key "proposal_on_projects", "proposals"
   add_foreign_key "proposal_participants", "proposals"
   add_foreign_key "proposal_participants", "users"
   add_foreign_key "proposals", "communities"

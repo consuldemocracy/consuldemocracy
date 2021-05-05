@@ -21,7 +21,7 @@
           <small><%= @user.email %></small>
         <% end %>
       </h2>
-      
+
       <% if @user.public_activity || @authorized_current_user %>
         <ul class="menu simple margin-top">
           <% @valid_filters.each do |filter| %>

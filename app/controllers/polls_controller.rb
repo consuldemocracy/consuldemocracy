@@ -7,10 +7,35 @@ class PollsController < ApplicationController
   before_action :load_poll, except: [:index]
   before_action :load_active_poll, only: :index
 
+  # new
+  before_action :authenticate_user!
+  before_action :is_admin?, except: [:show]
+
+  before_action :actual_users, only: [:show]
+  # --
+
   load_and_authorize_resource
 
   has_filters %w[current expired]
   has_orders %w[most_voted newest oldest], only: :show
+
+  def is_admin?
+    if current_user.administrator?
+      flash[:notice] = t "authorized.title"
+    else
+      redirect_to root_path
+      flash[:alert] = t "not_authorized.title"
+    end
+  end
+
+  def actual_users
+    @polls_users = []
+    @users_actuales = PollParticipant.where(poll_id: @poll.id).order(user_id: :asc)
+    @users_actuales.each do |item|
+      @polls_users += User.where(id: item.user_id)
+    end
+    @polls_users
+  end
 
   def index
     @polls = Kaminari.paginate_array(

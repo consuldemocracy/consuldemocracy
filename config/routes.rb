@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'phone_contact/index'
-  get 'users/edit'
+  get 'user/:id/edit', to: 'users#change', as: 'edit_user'
   resources :projects
+  get '/projects/:id/users', to: 'projects#users', as: 'users_project'
   get 'send/index'
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
