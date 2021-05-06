@@ -362,6 +362,8 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
+    t.string "main_link_text"
+    t.string "main_link_url"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|

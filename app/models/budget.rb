@@ -27,6 +27,7 @@ class Budget < ApplicationRecord
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
   validates :voting_style, inclusion: { in: VOTING_STYLES }
+  validates :main_link_url, presence: true, if: -> { main_link_text.present? }
 
   has_many :investments, dependent: :destroy
   has_many :ballots, dependent: :destroy

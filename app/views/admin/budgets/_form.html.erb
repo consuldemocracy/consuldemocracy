@@ -12,12 +12,23 @@
       </div>
     <% end %>
 
-    <div class="small-12 medium-4 column">
-      <%= f.select :voting_style, budget_voting_styles_select_options %>
+    <div class="row expanded">
+      <div class="small-12 medium-4 column">
+        <%= f.select :voting_style, budget_voting_styles_select_options %>
+      </div>
+
+      <div class="small-12 medium-2 column end">
+        <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
+      </div>
     </div>
 
-    <div class="small-12 medium-2 column end">
-      <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
+    <div class="row expanded">
+      <div class="small-12 medium-6 column end">
+        <p class="form-label"><%= t("admin.budgets.edit.main_call_to_action") %></p>
+        <p class="help-text"> <%= t("admin.budgets.edit.main_call_to_action_description") %></p>
+        <%= f.text_field :main_link_text %>
+        <%= f.text_field :main_link_url, placeholder: t("admin.shared.example_url") %>
+      </div>
     </div>
   </fieldset>
 

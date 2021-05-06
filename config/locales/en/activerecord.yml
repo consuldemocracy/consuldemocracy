@@ -160,6 +160,8 @@ en:
         voting_style: "Final voting style"
         voting_style_knapsack: "Knapsack"
         voting_style_approval: "Approval"
+        main_link_text: "Text on the link"
+        main_link_url: "The link takes you to (add a link)"
       budget/translation:
         name: "Name"
       budget/investment:
