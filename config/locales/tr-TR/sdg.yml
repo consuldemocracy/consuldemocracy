@@ -125,6 +125,7 @@ tr:
         title_in_two_lines: "Sürdürülebilir Şehirler ve Topluluklar"
         description: "Şehirleri her kesimi kapsayan, güvenli, değişen koşullara uyumlu ve sürdürülebilir hale getirin."
       goal_12:
+        title: "Sorumlu Tüketim ve Üretim"
         title_in_two_lines: "Sorumlu Tüketim ve Üretim"
         description: "Sürdürülebilir tüketim ve üretim modellerinin sağlanması."
         targets:
@@ -147,6 +148,10 @@ tr:
         title: "Karasal Yaşam"
         title_in_two_lines: "Karasal Yaşam"
         targets:
+          target_15_4:
+            title: "2030 yılına kadar, sürdürülebilir kalkınma için gerekli olan faydaları sağlama kapasitelerini artırmak için biyolojik çeşitlilikleri de dahil olmak üzere dağ ekosistemlerinin korunmasının sağlanması."
+          target_15_5:
+            title: "Doğal yaşam alanlarının bozulmasını azaltmak için acil ve önemli adımlar atılması, biyoçeşitlilik kaybının durdurulması ve 2020’ye kadar yok olma tehlikesi altında olan türlerin korunması ve nesillerinin tükenmesinin engellenmesi."
           target_15_6:
             title: "Genetik kaynakların kullanımından kaynaklanan yararların adil ve eşitlikçi biçimde paylaşımının desteklenmesi ve bu tür kaynaklara uluslararası kabul görülen şekilde erişiminin teşvik edilmesi."
           target_15_7:
