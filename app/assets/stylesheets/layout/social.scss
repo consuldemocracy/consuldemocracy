@@ -1,0 +1,16 @@
+.social {
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    font-size: rem-calc(24);
+    margin: 0 $line-height / 2;
+    text-decoration: none;
+
+    &:hover {
+      @include brand-text;
+    }
+  }
+}
