@@ -6,7 +6,7 @@
     <%= form.text_field :username %>
   </div>
 
-  <div class="field">
+  <div class="field" disabled>
     <%= form.collection_select :geozone_id, Geozone.all, :id, :name %>
   </div>
 

@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   before_action :is_admin?, except: [:show]
   skip_authorization_check
 
-  before_action :load_components, only: [:edit, :update]
+  # before_action :load_components, only: [:edit, :update]
   before_action :load_all, only: [:new]
   before_action :actual_debates, :actual_pages, :actual_users, :actual_proposals, :actual_polls, only: [:show, :edit]
   #before_action :actual_users, :actual_proposals only: [:edit, :show]
@@ -85,7 +85,7 @@ class ProjectsController < ApplicationController
   end
 
   #Cargar los componentes a añadir en el proyecto
-  def load_components
+  def load_components(filter)
     # if params[:page_search]
     #   @pages = SiteCustomization::Page.search(params[:page_search])
     # else
@@ -116,7 +116,6 @@ class ProjectsController < ApplicationController
     @except_users.each do |item|
       arr_users << item.id
     end
-    @users = User.where.not(id: arr_users).order(id: :asc)
 
     arr_proposals = []
     @except_proposals = actual_proposals()
@@ -163,6 +162,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    load_components(@current_filter)
   end
 
   # POST /projects
@@ -224,6 +224,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:search, :title, :user_elements, :debate_elements, :page_elements, page_ids: [] , user_ids: [] , debate_ids: [], proposal_ids: [], poll_ids: [] , delete_debate_ids: [] , delete_user_ids: [] , delete_page_ids: [], delete_proposal_ids: [], delete_poll_ids: [])
+      params.require(:project).permit(:search, :title, :public, :geozone_id, :user_elements, :debate_elements, :page_elements, page_ids: [] , user_ids: [] , debate_ids: [], proposal_ids: [], poll_ids: [] , delete_debate_ids: [] , delete_user_ids: [] , delete_page_ids: [], delete_proposal_ids: [], delete_poll_ids: [])
     end
 end
