@@ -159,14 +159,6 @@ $table-header:   #ecf1f6;
     right: 12px;
   }
 
-  .menu-icon {
-
-    &::after {
-      background: #000;
-      box-shadow: 0 7px 0 #000, 0 14px 0 #000;
-    }
-  }
-
   .notifications.unread-notifications::after {
     color: $admin-color;
   }

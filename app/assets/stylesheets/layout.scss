@@ -668,15 +668,8 @@ body > header,
 }
 
 .menu-icon {
-
-  &.dark {
-
-    &:hover::after,
-    &::after {
-      background: #fff;
-      box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
-    }
-  }
+  @include hamburger($color: currentcolor, $color-hover: currentcolor);
+  color: inherit;
 }
 
 .title-bar {
