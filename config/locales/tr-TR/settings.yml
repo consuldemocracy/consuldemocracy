@@ -172,6 +172,7 @@ tr:
       zoom_description: "Harita konumunu göstermek için yakınlaştırma"
     process:
       debates: "Tartışmalar"
+      debates_description: "Vatandaşların tartışma alanı, onları ilgilendiren konuları sunabilen ve görüşlerini başkalarıyla paylaşmak isteyen herkesi hedeflemektedir"
       proposals: "Öneriler"
       proposals_description: "Vatandaşların' önerileri, komşuların ve toplulukların çevrelerinin nasıl olmasını istediklerine doğrudan karar vermeleri için yeterli destek almalarını ve vatandaşların oylarına sunmalarını sağlayan bir fırsattır"
       polls: "Anketler"
