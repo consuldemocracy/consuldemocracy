@@ -104,4 +104,22 @@ describe "Admin" do
       expect(page).to have_link "Participatory budgets"
     end
   end
+
+  describe "Menu button", :admin do
+    scenario "is not present on large screens" do
+      visit admin_root_path
+
+      expect(page).not_to have_button "Menu"
+    end
+
+    scenario "toggles the menu on small screens", :small_window do
+      visit admin_root_path
+
+      expect(page).not_to have_link "My account"
+
+      click_button "Menu"
+
+      expect(page).to have_link "My account"
+    end
+  end
 end

@@ -138,6 +138,24 @@ describe "Home" do
     end
   end
 
+  describe "Menu button" do
+    scenario "is not present on large screens" do
+      visit root_path
+
+      expect(page).not_to have_button "Menu"
+    end
+
+    scenario "toggles the menu on small screens", :small_window do
+      visit root_path
+
+      expect(page).not_to have_link "Sign in"
+
+      click_button "Menu"
+
+      expect(page).to have_link "Sign in"
+    end
+  end
+
   scenario "if there are cards, the 'featured' title will render" do
     create(:widget_card,
       title: "Card text",

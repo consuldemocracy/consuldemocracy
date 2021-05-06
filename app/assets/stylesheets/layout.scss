@@ -667,9 +667,12 @@ body > header,
   }
 }
 
+.menu-button {
+  color: inherit;
+}
+
 .menu-icon {
   @include hamburger($color: currentcolor, $color-hover: currentcolor);
-  color: inherit;
 }
 
 .title-bar {
