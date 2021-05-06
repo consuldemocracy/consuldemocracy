@@ -1,4 +1,10 @@
 .social {
+  @include grid-column;
+  text-align: right;
+
+  @include breakpoint(medium) {
+    width: 1 * 100% / 3;
+  }
 
   li {
     display: inline-block;

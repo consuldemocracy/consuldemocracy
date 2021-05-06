@@ -10,6 +10,18 @@ class Layout::SocialComponent < ApplicationComponent
         youtube: "https://www.youtube.com",
         telegram: "https://www.telegram.me",
         instragram: "https://www.instagram.com"
-      }
+      }.select { |name, _| setting["#{name}_handle"] }
+    end
+
+    def link_title(site_name)
+      t("shared.go_to_page") + link_text(site_name) + t("shared.target_blank")
+    end
+
+    def link_text(site_name)
+      t("social.#{site_name}", org: setting["org_name"])
+    end
+
+    def footer_content_block
+      content_block("footer", I18n.locale)
     end
 end
