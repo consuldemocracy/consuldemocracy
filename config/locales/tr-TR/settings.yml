@@ -129,6 +129,7 @@ tr:
       graphql_api: "GraphQL API"
       dashboard:
         notification_emails: "Gösterge paneli bildirim iletileri"
+        notification_emails_description: "Gösterge paneli bildirim e-postalarının teklif yazarlarına gönderilmesini etkinleştir"
       sdg: SKH
       sdg_description: Yönetim menüsünde ve genel ayarlarda Sürdürülebilir Kalkınma Hedefleri bölümlerini etkinleştirin.
     remote_census:
