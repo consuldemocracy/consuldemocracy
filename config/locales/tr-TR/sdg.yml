@@ -147,6 +147,10 @@ tr:
         title: "Karasal Yaşam"
         title_in_two_lines: "Karasal Yaşam"
         targets:
+          target_15_A:
+            title: "Biyoçeşitliliği ve ekosistemleri korumak ve sürdürülebilir bir biçimde kullanmak için tüm kaynaklardan elde edilen finansal kaynakların seferber edilmesi ve önemli ölçüde artırılması."
+          target_15_B:
+            title: "Sürdürülebilir orman yönetimini her düzeyde finanse etmek ve tüm kaynaklardan elde edilen önemli kaynakların seferber edilmesi, gelişmekte olan ülkelere koruma ve yeniden ağaçlandırma da dahil olmak üzere bu tür bir yönetim geliştirilmeleri için yeterli teşvik sağlanması."
           target_15_C:
             title: "Yerel toplulukların sürdürülebilir geçim kaynaklarına sahip olma kapasitelerinin artırılması da dahil olmak üzere korunan türlerin yasa dışı avlanması ve kaçakçılığının yapılmasıyla mücadele etme çabalarına yönelik küresel desteğin artırılması."
       goal_16:
