@@ -153,6 +153,8 @@ tr:
         title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
         targets:
+          target_17_1:
+            title: "Vergi ve diğer gelir tahsilleri için yurt içi kapasiteyi artırmak için gelişmekte olan ülkelere uluslararası destek sağlanması yoluyla yurt içi kaynak seferberliğinin güçlendirilmesi."
           target_17_3:
             title: "Gelişmekte olan ülkeler için çok sayıda kaynaktan sağlanan ek mali kaynakların seferber edilmesi."
           target_17_4:
