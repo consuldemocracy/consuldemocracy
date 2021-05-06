@@ -1,6 +1,6 @@
 <% show=false
 if user_signed_in?
-  if current_administrator?
+  if current_administrator? || current_user.id == @debate.author_id
     show=true
   else
     @users_index = DebateParticipant.where(debate_id: @debate.id)

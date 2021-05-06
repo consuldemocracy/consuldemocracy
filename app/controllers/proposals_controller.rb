@@ -14,7 +14,7 @@ class ProposalsController < ApplicationController
   # JHH:
   before_action :load_participants
   before_action :authenticate_user!
-  before_action :is_admin?, except: [:show]
+  before_action :is_admin?, except: [:show, :edit]
 
   def is_admin?
     if current_user.administrator?

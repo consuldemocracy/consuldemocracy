@@ -4,6 +4,7 @@ class DebatesController < ApplicationController
   include FlagActions
   include Translatable
 
+  before_action :authenticate_user!, except: [:show, :map]
   before_action :set_view, only: :index
   before_action :debates_recommendations, only: :index, if: :current_user
 
@@ -19,8 +20,7 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   # JHH:
-  before_action :authenticate_user!
-  before_action :is_admin?, except: [:show]
+  before_action :is_admin?, except: [:show, :edit]
   before_action :load_participants, :actual_people, only: [:edit,:new]
 
   def is_admin?

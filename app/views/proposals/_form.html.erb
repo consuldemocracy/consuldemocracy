@@ -1,4 +1,4 @@
-<% if current_administrator? %>
+<% if current_administrator? || current_user.id == @proposal.author_id %>
   <%= render "shared/globalize_locales", resource: @proposal %>
 
   <%= translatable_form_for(@proposal, url: form_url) do |f| %>
