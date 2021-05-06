@@ -166,13 +166,14 @@
       <br/>
       <%= form.label t("project.component.actual_delete", item:"Usuarios") %>
       <p><%= t("project.component.delete", item:"usuarios") %></p>
-      <div id="participant_tags" class="tags">
+      <div id="participant_tags" class="tags scroll">
         <% @project_users.each do |user| %>
           <%# <a class="select-participants"><%= page.id%>
           <span>
             <input type="checkbox" name="delete_user_ids[]" value=<%= user.id %> />
             <%= user.username %>
           </span>
+          <br/>
         <% end %>
       </div>
     <% end %>
@@ -185,7 +186,7 @@
       <%= form.label t("project.component.actual_add", item:"Usuarios") %>
       <p><%= t("project.component.add", item:"usuarios") %></p>
 
-      <div id="participant_tags" class="tags">
+      <div id="participant_tags" class="tags scroll">
         <% @users.each do |user| %>
           <%# <a class="select-participants"><%= page.id%>
           <span id="span_tags">

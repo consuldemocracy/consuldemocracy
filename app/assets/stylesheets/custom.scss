@@ -4,6 +4,13 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+//Form
+.scroll {
+  width: 100%;
+  height: 200px;
+  overflow: scroll;
+}
+
 //Footer
 .contact-custom {
   > p {
