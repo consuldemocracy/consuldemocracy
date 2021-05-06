@@ -1135,6 +1135,20 @@
   padding-bottom: $line-height;
   padding-top: $line-height;
 
+  .budget-title {
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &::after {
+      border-bottom: 2px solid #fff;
+      content: "";
+      margin: 0 auto;
+      padding-top: $line-height / 2;
+      display: block;
+      width: 20%;
+    }
+  }
+
   h1,
   h2,
   p,
