@@ -574,6 +574,7 @@ tr:
         title: Görsel önizlemesi
         poster_title: "Bakmaya devam etmeyiniz,"
         poster_subtitle: "bana destek verin! ;)"
+        intro_text: "<strong>Kendi vatandaşlık önerim ile%{org}</strong> 'a katılıyorum ve sadece sizin desteğinizle hayalini kurduğumuz şehri inşa edebiliriz"
         proposal_code: "Öneri kodu: %{code}"
         support: Önerimi destekle
       new:
