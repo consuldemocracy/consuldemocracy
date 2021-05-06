@@ -79,6 +79,8 @@ tr:
             title: "2030'a kadar, tüm kız ve erkek çocuklarının kaliteli erken çocukluk gelişimi, bakımı ve okul öncesi eğitimine erişebilmelerinin ve böylece ilköğretime hazır olmalarının sağlanması."
           target_4_3:
             title: "2030’a kadar bütün kadın ve erkeklerin erişilebilir ve kaliteli teknik eğitim, mesleki eğitim ve üniversiteyi de kapsayan yüksek öğretime eşit biçimde erişimlerinin sağlanması."
+          target_4_4:
+            title: "2030’a kadar, istihdam, insana yakışır işlerde çalışma ve girişimcilik hakkında teknik ve mesleki beceriler de dahil olmak üzere ilgili becerilere sahip gençlerin ve yetişkinlerin sayısının önemli ölçüde artırılması."
           target_4_6:
             title: "2030’a kadar bütün gençlerin ve hem erkek hem de kadın yetişkinlerin büyük bir kısmının okuryazar olması ve matematiksel beceriler kazanmasının garanti edilmesi."
       goal_5:
@@ -90,14 +92,19 @@ tr:
             title: "Kadınlara ve kız çocuklarına karşı her yerde, her türlü ayrımcılığı ortadan kaldırın."
           target_5_3:
             title: "Çocuk evliliği, erken yaşta ve zorla evlendirilme ve kadın sünneti gibi tüm zararlı uygulamaların ortadan kaldırılması."
+          target_5_5:
+            title: "Kadınların siyasi, ekonomik ve sosyal yaşamın her seviyesinde karar alma süreçlerine tam ve etkin biçimde katılımının ve liderlik etmeleri için eşit fırsatlar tanınmasının garanti altına alınması."
       goal_6:
         title: "Temiz Su ve Hijyen Önlemleri"
         title_in_two_lines: "Temiz Su ve Sanitasyon"
+        description: "Herkes için su ve sıhhi tesisata erişimin sağlanması."
         targets:
           target_6_1:
             title: "2030’a kadar, herkesin güvenilir ve uygun fiyatlı içme suyuna evrensel ve eşit erişiminin sağlanması."
           target_6_2:
             title: "2030’a kadar, herkesin elverişli hijyen ve sıhhi koşullara eşit biçimde erişiminin sağlanması ve kadınların, kız çocuklarının ve savunmasız durumda olanların ihtiyaçlarına özel önem göstererek kamuya açık alanlarda dışkılamanın sona erdirilmesi."
+          target_6_5:
+            title: "2030'a kadar, uygun görüldüğü hallerde sınır ötesi işbirliği de dahil olmak üzere her düzeyde entegre su kaynakları yönetimi uygulanması."
       goal_7:
         title: "Erişilebilir ve Temiz Enerji"
         title_in_two_lines: "Erişilebilir ve Temiz Enerji"
@@ -167,6 +174,8 @@ tr:
             title: "2030'a kadar, doğum kaydı dahil herkes için yasal kimlik sağlamak."
           target_16_10:
             title: "Ulusal mevzuata ve uluslararası anlaşmalara uygun olarak halkın bilgiye erişiminin sağlanması ve temel özgürlüklerin korunması."
+          target_16_A:
+            title: "Başta gelişmekte olan ülkeler olmak üzere şiddeti önlemek, terör ve suçla mücadele etmek için her düzeyde kapasitenin oluşturulması adına uluslararası işbirliği aracılığıyla ilgili ulusal kurumların güçlendirilmesi."
           target_16_B:
             title: "Sürdürülebilir kalkınma için ayrımcılık gözetmeyen yasaların ve politikaların uygulatılması ve teşvik edilmesi."
       goal_17:
