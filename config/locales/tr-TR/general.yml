@@ -577,6 +577,7 @@ tr:
         intro_text: "<strong>Kendi vatandaşlık önerim ile%{org}</strong> 'a katılıyorum ve sadece sizin desteğinizle hayalini kurduğumuz şehri inşa edebiliriz"
         proposal_code: "Öneri kodu: %{code}"
         support: Önerimi destekle
+        footer: "<strong>%{link} bağlantısını ziyaret edip bu öneriyi destekleyin</strong> Desteğinle çoğalacağız. Üzerimize düşeni yapalım. Teşekkürler!"
       new:
         title: Önerinizin görseli
       options:
