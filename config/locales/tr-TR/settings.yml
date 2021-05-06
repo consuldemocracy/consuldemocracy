@@ -161,6 +161,7 @@ tr:
         surname: "Soyada giden yol"
         surname_description: "Kullanıcının soyadı yanıtın hangi yolundadır?"
         valid: "Geçerli bir yanıtı saptama koşulu"
+        valid_description: "Geçerli bir yanıt kabul edilmesi ve kullanıcının doğrulanması için hangi yanıt yolunun bilgilendirilmesi gerekir"
     map:
       latitude: "Enlem"
       latitude_description: "Harita konumunu göstermek için enlem"
