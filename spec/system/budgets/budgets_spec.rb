@@ -30,7 +30,6 @@ describe "Budgets" do
         within(".budget-header") do
           expect(page).to have_content("PARTICIPATORY BUDGETS")
           expect(page).to have_content(budget.name)
-          expect(page).to have_content(budget.description)
           expect(page).to have_link("Help with participatory budgets")
         end
 
