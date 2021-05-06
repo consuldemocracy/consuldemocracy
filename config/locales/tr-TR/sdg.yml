@@ -148,6 +148,8 @@ tr:
         title: "Karasal Yaşam"
         title_in_two_lines: "Karasal Yaşam"
         targets:
+          target_15_2:
+            title: "2020’ye kadar, her tür ormanın sürdürülebilir yönetiminin sağlanmasının desteklenmesi, ormansızlaşmanın durdurulması, tahrip edilmiş ormanların eski haline döndürülmesi ve küresel olarak ağaçlandırma ve yeniden ormanlaştırmanın önemli ölçüde artırılması."
           target_15_3:
             title: "2030'a kadar, çölleşmeyle mücadele edilmesi, çölleşme, kuraklık ve sellerden etkilenen alanlar dahil tahrip edilmiş toprakların eski haline getirilmesi ve daha verimli arazilerin elde edilmesi."
           target_15_4:
