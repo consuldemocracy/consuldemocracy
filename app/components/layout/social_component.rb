@@ -26,6 +26,6 @@ class Layout::SocialComponent < ApplicationComponent
     end
 
     def footer_content_block
-      content_block("footer", I18n.locale)
+      content_block("footer")
     end
 end

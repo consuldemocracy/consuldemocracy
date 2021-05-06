@@ -8,6 +8,6 @@ class Layout::TopLinksComponent < ApplicationComponent
   private
 
     def top_links_content_block
-      content_block("top_links", I18n.locale)
+      content_block("top_links")
     end
 end
