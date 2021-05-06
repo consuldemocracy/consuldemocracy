@@ -118,7 +118,7 @@ class Devise::InvitationsController < DeviseController
     end
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:invite, keys: [:username])
+      devise_parameter_sanitizer.permit(:invite, keys: [:username, :geozone_id])
       #devise_parameter_sanitizer.permit(:accept_invitation, keys: [:username])
     end
 end
