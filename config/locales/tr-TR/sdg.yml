@@ -153,6 +153,8 @@ tr:
         title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
         targets:
+          target_17_11:
+            title: "Gelişmekte olan ülkelerin ihracatlarının, özellikle en az gelişmiş ülkelerin küresel ihracat payının, 2020’ye kadar iki katına çıkarılması amacıyla önemli ölçüde artırılması."
           target_17_13:
             title: "Politika koordinasyonu ve tutarlılığına dayanan küresel makroekonomik istikrarın geliştirilmesi."
           target_17_14:
@@ -166,7 +168,7 @@ tr:
           target_17_18:
             title: "2020’ye kadar, gelir, cinsiyet, yaş, ırk, etnik köken, göçmen statüsü, engellilik, coğrafi konum ve ulusal bağlamlardaki ilgili diğer niteliklere göre ayrılan kaliteli, güncel ve güvenilir verilerin elde edilebilirliğini büyük ölçüde artırmak için en az gelişmiş ülkeleri ve gelişmekte olan küçük ada devletleri de dahil olmak üzere gelişmekte olan ülkelere verilen kapasite geliştirme desteğinin artırılması."
           target_17_19:
-            title: "2030’a kadar, gayri safi yurtiçi hasılayı tamamlayan sürdürülebilir kalkınmanın ilerletilmesine yönelik ölçümleri geliştirmek için mevcut girişimlerin yapılandırılması ve gelişmekte olan ülkelerde istatistiksel kapasite geliştirmenin desteklenmesi."
+            title: "2030’a kadar, gayri safi yurt içi hasılayı tamamlayan sürdürülebilir kalkınmanın ilerletilmesine yönelik ölçümleri geliştirmek için mevcut girişimlerin yapılandırılması ve gelişmekte olan ülkelerde istatistiksel kapasite geliştirmenin desteklenmesi."
       help:
         title: "Sürdürülebilir Kalkınma Amaçları yardım"
         description: "Topluma olan katkılarınızı (tartışmalar, vatandaş önerileri ve yatırım projeleri) Sürdürülebilir Kalkınma Hedefleri 2030 Ajandası ile uyumlu hale getirebilirsiniz, bu, Sürdürülebilir Kalkınma Hedeflerinin her birine olan katkımızın genel bakışına sahip olmamızı sağlayacaktır. Aşağıda tüm amaçlar, hedefler ve yerelleştirilmiş hedefler hakkında bilgi bulabilirsiniz."
