@@ -1,51 +1,18 @@
 <div class="small-12 medium-4 column social">
   <div class="text-right">
     <ul>
-      <% if setting["twitter_handle"] %>
-        <li>
-          <%= link_to "https://twitter.com/#{setting["twitter_handle"]}", target: "_blank",
-                       title: t("shared.go_to_page") + t("social.twitter", org: setting["org_name"]) + t("shared.target_blank") do %>
-                          <span class="show-for-sr"><%= t("social.twitter", org: setting["org_name"]) %></span>
-                          <span class="icon-twitter" aria-hidden="true"></span>
-          <% end %>
-        </li>
+      <% sites.each do |name, url| %>
+        <% if setting["#{name}_handle"] %>
+          <li>
+            <%= link_to "#{url}/#{setting["#{name}_handle"]}", target: "_blank",
+              title: t("shared.go_to_page") + t("social.#{name}", org: setting["org_name"]) + t("shared.target_blank") do %>
+              <span class="show-for-sr"><%= t("social.#{name}", org: setting["org_name"]) %></span>
+              <span class="icon-<%= name %>" aria-hidden="true"></span>
+            <% end %>
+          </li>
+        <% end %>
       <% end %>
-      <% if setting["facebook_handle"] %>
-        <li>
-          <%= link_to "https://www.facebook.com/#{setting["facebook_handle"]}/", target: "_blank",
-                      title: t("shared.go_to_page") + t("social.facebook", org: setting["org_name"]) + t("shared.target_blank") do %>
-                      <span class="show-for-sr"><%= t("social.facebook", org: setting["org_name"]) %></span>
-                      <span class="icon-facebook" aria-hidden="true"></span>
-          <% end %>
-        </li>
-      <% end %>
-      <% if setting["youtube_handle"] %>
-        <li>
-          <%= link_to "https://www.youtube.com/#{setting["youtube_handle"]}", target: "_blank",
-                      title: t("shared.go_to_page") + t("social.youtube", org: setting["org_name"]) + t("shared.target_blank") do %>
-                      <span class="show-for-sr"><%= t("social.youtube", org: setting["org_name"]) %></span>
-                      <span class="icon-youtube" aria-hidden="true"></span>
-          <% end %>
-        </li>
-      <% end %>
-      <% if setting["telegram_handle"] %>
-        <li>
-          <%= link_to "https://www.telegram.me/#{setting["telegram_handle"]}", target: "_blank",
-                      title: t("shared.go_to_page") + t("social.telegram", org: setting["org_name"]) + t("shared.target_blank") do %>
-                      <span class="show-for-sr"><%= t("social.telegram", org: setting["org_name"]) %></span>
-                      <span class="icon-telegram" aria-hidden="true"></span>
-          <% end %>
-        </li>
-      <% end %>
-      <% if setting["instagram_handle"] %>
-        <li>
-          <%= link_to "https://www.instagram.com/#{setting["instagram_handle"]}", target: "_blank",
-                      title: t("shared.go_to_page") + t("social.instagram", org: setting["org_name"]) + t("shared.target_blank") do %>
-                      <span class="show-for-sr"><%= t("social.instagram", org: setting["org_name"]) %></span>
-                      <span class="icon-instagram" aria-hidden="true"></span>
-          <% end %>
-        </li>
-      <% end %>
+
       <%= raw content_block("footer", I18n.locale) %>
     </ul>
   </div>
