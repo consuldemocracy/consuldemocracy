@@ -153,6 +153,12 @@ tr:
         title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
         targets:
+          target_17_7:
+            title: "Çevreye duyarlı teknolojilerin gelişmekte olan ülkelerde, karşılıklı olarak anlaşma sağlandığı üzere, ayrıcalıklı ve öncelikli koşullar da dahil olmak üzere uygun koşullarda gelişiminin, transferinin ve yayılmasının teşvik edilmesi."
+          target_17_8:
+            title: "2017 yılına kadar, en az gelişmiş ülkeler için teknoloji bankasının ve bilim, teknoloji ve yenilikçi kapasite geliştirme sisteminin tümden faaliyete geçirilmesi ve özellikle bilgi ve iletişim teknolojileri olmak üzere etkinleştirme teknolojileri kullanımının artırılması."
+          target_17_9:
+            title: "Kuzey-Güney, Güney-Güney ve üçlü işbirliği dahil olmak üzere tüm Sürdürülebilir Kalkınma Hedeflerinin uygulanabilmesi adına ulusal planları desteklemek amacıyla gelişmekte olan ülkelerdeki etkili ve hedeflenen kapasite geliştirme uygulamaları için uluslararası destek sağlanması."
           target_17_10:
             title: "Doha Kalkınma Gündemi çerçevesinde yürütülen müzakerelerin sonuçlandırılması da dahil olmak üzere, Dünya Ticaret Örgütü bünyesinde evrensel, kurallara dayanan, açık, ayrımcı olmayan ve eşitlikçi, çok taraflı bir ticaret sisteminin desteklenmesi."
           target_17_11:
