@@ -1,6 +1,10 @@
 class Layout::SocialComponent < ApplicationComponent
   delegate :content_block, to: :helpers
 
+  def render?
+    sites.any? || footer_content_block.present?
+  end
+
   private
 
     def sites
@@ -10,7 +14,7 @@ class Layout::SocialComponent < ApplicationComponent
         youtube: "https://www.youtube.com",
         telegram: "https://www.telegram.me",
         instragram: "https://www.instagram.com"
-      }.select { |name, _| setting["#{name}_handle"] }
+      }.select { |name, _| setting["#{name}_handle"].present? }
     end
 
     def link_title(site_name)
