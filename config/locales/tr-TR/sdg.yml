@@ -147,6 +147,8 @@ tr:
         title: "Karasal Yaşam"
         title_in_two_lines: "Karasal Yaşam"
         targets:
+          target_15_6:
+            title: "Genetik kaynakların kullanımından kaynaklanan yararların adil ve eşitlikçi biçimde paylaşımının desteklenmesi ve bu tür kaynaklara uluslararası kabul görülen şekilde erişiminin teşvik edilmesi."
           target_15_7:
             title: "Koruma altındaki bitki türlerinin kaçakçılığının yapılmasını ve hayvan türlerinin yasa dışı avlanmasını sona erdirmek için acil eyleme geçilmesi ve yasa dışı vahşi yaşam ürünlerinin arz ve talebinin ele alınması."
           target_15_8:
