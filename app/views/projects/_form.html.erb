@@ -188,6 +188,7 @@
       <%= form.label t("project.component.actual_add", item:"Usuarios") %>
       <p><%= t("project.component.add", item:"usuarios") %></p>
 
+      <%= render "shared/filter_subnav", i18n_namespace: "admin.users.index" %>
       <div id="participant_tags" class="tags scroll">
         <% @users.each do |user| %>
           <%# <a class="select-participants"><%= page.id%>

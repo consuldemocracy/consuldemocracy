@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
   before_action :load_all, only: [:new]
   before_action :actual_debates, :actual_pages, :actual_users, :actual_proposals, :actual_polls, only: [:show, :edit]
   #before_action :actual_users, :actual_proposals only: [:edit, :show]
+  has_filters %w[id name], only: :edit
 
   def is_admin?
     if current_user.administrator?
@@ -115,6 +116,11 @@ class ProjectsController < ApplicationController
     @except_users = actual_users()
     @except_users.each do |item|
       arr_users << item.id
+    end
+    if filter == 'name'
+      @users = User.where.not(id: arr_users).order(username: :asc)
+    else filter == 'id'
+      @users = User.where.not(id: arr_users).order(id: :desc)
     end
 
     arr_proposals = []
