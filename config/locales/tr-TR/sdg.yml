@@ -149,6 +149,8 @@ tr:
         title_in_two_lines: "Eşitsizliklerin Azaltılması"
         description: "Ülkelerin kendi içinde ve arasında eşitsizliği azaltmak."
         targets:
+          target_10_7:
+            title: "Planlı ve iyi yönetilen göç politikalarının uygulanması aracılığıyla, insanların sistemli, güvenli, düzenli ve sorumlu bir biçimde göç etmelerinin ve hareketliliğinin kolaylaştırılması."
           target_10_A:
             title: "Dünya Ticaret Örgütü anlaşmalarına uygun olarak gelişmekte olan ülkeler, özellikle en az gelişmiş ülkeler için özel ve farklı muamele ilkesini uygulamak."
           target_10_B:
