@@ -125,9 +125,13 @@ tr:
       goal_14:
         title: "Sudaki Yaşam"
         title_in_two_lines: "Sudaki Yaşam"
+        description: "Okyanuslar, denizler ve deniz kaynaklarının sürdürülebilir kullanımı ve korunması."
       goal_15:
         title: "Karasal Yaşam"
         title_in_two_lines: "Karasal Yaşam"
+        targets:
+          target_15_C:
+            title: "Yerel toplulukların sürdürülebilir geçim kaynaklarına sahip olma kapasitelerinin artırılması da dahil olmak üzere korunan türlerin yasa dışı avlanması ve kaçakçılığının yapılmasıyla mücadele etme çabalarına yönelik küresel desteğin artırılması."
       goal_16:
         title: "Barış, Adalet ve Güçlü Kurumlar"
         title_in_two_lines: "Barış, Adalet ve Güçlü Kurumlar"
@@ -137,6 +141,10 @@ tr:
             title: "Şiddetin tüm biçimlerinin ve şiddete bağlı ölüm oranlarının her yerde büyük ölçüde azaltılması."
           target_16_2:
             title: "Çocuk istismarı, sömürüsü, ticareti ve çocuklara karşı şiddet ve işkencenin her türünün sona erdirilmesi."
+          target_16_3:
+            title: "Hukuk üstünlüğünün ulusal ve uluslararası düzeyde teşvik edilmesi ve herkes için adalete eşit biçimde erişimin garanti edilmesi."
+          target_16_4:
+            title: "2030'a kadar, yasadışı para ve silah akışlarının önemli derece azaltılması, çalınan varlıkların kurtarılması ve iade edilmesinin sağlanması ve her türlü organize suçla mücadele edilmesi."
           target_16_5:
             title: "Her türlü yolsuzluk ve rüşvetin önemli ölçüde azaltılması."
           target_16_6:
@@ -149,9 +157,12 @@ tr:
             title: "2030'a kadar, doğum kaydı dahil herkes için yasal kimlik sağlamak."
           target_16_10:
             title: "Ulusal mevzuata ve uluslararası anlaşmalara uygun olarak halkın bilgiye erişiminin sağlanması ve temel özgürlüklerin korunması."
+          target_16_B:
+            title: "Sürdürülebilir kalkınma için ayrımcılık gözetmeyen yasaların ve politikaların uygulatılması ve teşvik edilmesi."
       goal_17:
         title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
+        description: "Sürdürülebilir Kalkınma için global ortaklığın yeniden oluşturulması."
         targets:
           target_17_1:
             title: "Vergi ve diğer gelir tahsilleri için yurt içi kapasiteyi artırmak için gelişmekte olan ülkelere uluslararası destek sağlanması yoluyla yurt içi kaynak seferberliğinin güçlendirilmesi."
@@ -173,8 +184,6 @@ tr:
             title: "Doha Kalkınma Gündemi çerçevesinde yürütülen müzakerelerin sonuçlandırılması da dahil olmak üzere, Dünya Ticaret Örgütü bünyesinde evrensel, kurallara dayanan, açık, ayrımcı olmayan ve eşitlikçi, çok taraflı bir ticaret sisteminin desteklenmesi."
           target_17_11:
             title: "Gelişmekte olan ülkelerin ihracatlarının, özellikle en az gelişmiş ülkelerin küresel ihracat payının, 2020’ye kadar iki katına çıkarılması amacıyla önemli ölçüde artırılması."
-          target_17_12:
-            title: "En az gelişmiş ülkelerden ithal edilen ürünlere uygulanabilir ayrıcalıklı menşei kurallarının şeffaf ve basit olmasının sağlanması da dahil olmak üzere, Dünya Ticaret Örgütü kararlarına uygun olarak, en az gelişmiş ülkeler için gümrük vergisinden ve kotadan muaf, devamlılık arz eden bir piyasa erişimi sağlanması ve piyasa erişiminin kolaylaştırılmasına katkıda bulunulması."
           target_17_13:
             title: "Politika koordinasyonu ve tutarlılığına dayanan küresel makroekonomik istikrarın geliştirilmesi."
           target_17_14:
