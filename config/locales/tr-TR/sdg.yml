@@ -88,6 +88,8 @@ tr:
         targets:
           target_5_1:
             title: "Kadınlara ve kız çocuklarına karşı her yerde, her türlü ayrımcılığı ortadan kaldırın."
+          target_5_3:
+            title: "Çocuk evliliği, erken yaşta ve zorla evlendirilme ve kadın sünneti gibi tüm zararlı uygulamaların ortadan kaldırılması."
       goal_6:
         title: "Temiz Su ve Hijyen Önlemleri"
         title_in_two_lines: "Temiz Su ve Sanitasyon"
