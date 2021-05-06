@@ -1132,8 +1132,9 @@
 .budget-header {
   @extend %brand-background;
   margin-top: -$line-height;
+  min-height: $line-height * 25;
   padding-bottom: $line-height;
-  padding-top: $line-height;
+  padding-top: $line-height * 4;
 
   .budget-title {
     font-weight: bold;
@@ -1147,6 +1148,11 @@
       display: block;
       width: 20%;
     }
+  }
+
+  h1 {
+    font-size: rem-calc(60);
+    padding: $line-height * 2 0 $line-height;
   }
 
   h1,
@@ -1175,6 +1181,15 @@
       margin-bottom: 0;
       text-transform: uppercase;
     }
+  }
+
+  .main-link {
+    @include regular-button($color: rgba(0, 0, 0, 0.5));
+
+    font-size: 1.25rem;
+    margin-bottom: $line-height * 2;
+    min-width: 30%;
+    text-decoration: none;
   }
 }
 

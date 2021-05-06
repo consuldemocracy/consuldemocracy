@@ -21,6 +21,22 @@ describe Budgets::BudgetComponent, type: :component do
         expect(page).to have_link("Help with participatory budgets")
       end
     end
+
+    it "shows budget main link when defined" do
+      render_inline Budgets::BudgetComponent.new(budget)
+
+      within(".budget-header") do
+        expect(page).not_to have_css("a.main-link")
+      end
+
+      budget.update!(main_link_text: "Partitipate now!", main_link_url: "https://consulproject.org")
+
+      render_inline Budgets::BudgetComponent.new(budget)
+
+      within(".budget-header") do
+        expect(page).to have_css("a.main-link", text: "Participate now!", href: "https://consulproject.org")
+      end
+    end
   end
 
   describe "map" do

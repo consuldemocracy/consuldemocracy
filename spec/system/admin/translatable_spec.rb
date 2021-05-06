@@ -122,7 +122,7 @@ describe "Admin edit translatable records", :admin do
     let(:translatable) { create(:budget_investment) }
 
     context "Input field" do
-      let(:translatable) { create(:budget) }
+      let(:translatable) { create(:budget, main_link_url: "https://consulproject.org") }
 
       scenario "Shows validation erros" do
         visit edit_admin_budget_path(translatable)

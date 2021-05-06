@@ -5,19 +5,36 @@
     <%= render "shared/errors", resource: budget %>
 
     <%= f.translatable_fields do |translations_form| %>
-      <div class="small-12 medium-9 large-6 column end">
-        <%= translations_form.text_field :name,
-                                          maxlength: Budget.title_max_length,
-                                          hint: t("admin.budgets.edit.name_description") %>
+      <div class="row expanded">
+        <div class="small-12 medium-9 large-6 column end">
+          <%= translations_form.text_field :name,
+                                            maxlength: Budget.title_max_length,
+                                            hint: t("admin.budgets.edit.name_description") %>
+        </div>
+      </div>
+      <div class="row expanded">
+        <div class="small-12 medium-9 large-6 column end">
+          <p class="form-label"><%= t("admin.budgets.edit.main_call_to_action") %></p>
+          <p class="help-text"> <%= t("admin.budgets.edit.main_call_to_action_description") %></p>
+          <%= translations_form.text_field :main_link_text %>
+        </div>
       </div>
     <% end %>
 
-    <div class="small-12 medium-4 column">
-      <%= f.select :voting_style, voting_styles_select_options %>
+    <div class="row expanded">
+      <div class="small-12 medium-9 large-6 column end">
+        <%= f.text_field :main_link_url, placeholder: t("admin.shared.example_url") %>
+      </div>
     </div>
 
-    <div class="small-12 medium-2 column end">
-      <%= f.select :currency_symbol, currency_symbol_select_options %>
+    <div class="row expanded">
+      <div class="small-12 medium-4 column">
+        <%= f.select :voting_style, voting_styles_select_options %>
+      </div>
+
+      <div class="small-12 medium-2 column end">
+        <%= f.select :currency_symbol, currency_symbol_select_options %>
+      </div>
     </div>
   </fieldset>
 

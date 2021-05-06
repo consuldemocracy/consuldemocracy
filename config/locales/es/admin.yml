@@ -121,6 +121,8 @@ es:
         empty_administrators: "No hay administradores"
         empty_valuators: "No hay evaluadores"
         name_description: "Este es el nombre del presupuesto participativo usado en la cabecera y tarjetas cuando éste está activo"
+        main_call_to_action: "Enlace de acción principal (opcional)"
+        main_call_to_action_description: "Este enlace aparecerá en la cabecera de este presupuesto participativo y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
         info:
           budget_settings: "Configuración genérica del presupuesto participativo"
           phases_settings: "Configuración de las fases"
@@ -1349,6 +1351,7 @@ es:
       color_help: Formato hexadecimal
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Zonas
