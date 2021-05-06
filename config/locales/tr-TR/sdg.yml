@@ -148,10 +148,22 @@ tr:
         title: "Eşitsizliklerin Azaltılması"
         title_in_two_lines: "Eşitsizliklerin Azaltılması"
         description: "Ülkelerin kendi içinde ve arasında eşitsizliği azaltmak."
+        targets:
+          target_10_A:
+            title: "Dünya Ticaret Örgütü anlaşmalarına uygun olarak gelişmekte olan ülkeler, özellikle en az gelişmiş ülkeler için özel ve farklı muamele ilkesini uygulamak."
+          target_10_B:
+            title: "Ulusal plan ve programlarına uygun olarak, özellikle en az gelişmiş ülkelere, Afrika ülkelerine, gelişmekte olan küçük ada Devletlerine ve karayla çevrili gelişmekte olan ülkelere, doğrudan yabancı yatırım da dahil olmak üzere, resmi kalkınma yardımı ve finansal akışları teşvik etmek."
       goal_11:
         title: "Sürdürülebilir Şehirler ve Topluluklar"
         title_in_two_lines: "Sürdürülebilir Şehirler ve Topluluklar"
         description: "Şehirleri her kesimi kapsayan, güvenli, değişen koşullara uyumlu ve sürdürülebilir hale getirin."
+        targets:
+          target_11_1:
+            title: "2030'a kadar herkesin yeterli, güvenli ve uygun fiyatlı konutlara ve temel hizmetlere erişimini sağlamak ve gecekondu mahallelerini iyileştirmek."
+          target_11_3:
+            title: "2030'a kadar kapsayıcı ve sürdürülebilir kentleşmeyi ve tüm ülkelerde katılımcı, entegre ve sürdürülebilir insan yerleşimi planlama ve yönetimi için kapasiteyi geliştirmek."
+          target_11_4:
+            title: "Dünyanın kültürel ve doğal mirasını koruma ve koruma çabalarını güçlendirmek."
       goal_12:
         title: "Sorumlu Tüketim ve Üretim"
         title_in_two_lines: "Sorumlu Tüketim ve Üretim"
@@ -175,6 +187,8 @@ tr:
         targets:
           target_14_5:
             title: "2020'ye kadar, kıyı ve deniz alanlarının, ulusal ve uluslararası hukuka uygun biçimde mevcut en iyi bilimsel bilgilere dayanarak, en az %10'unun korunması."
+          target_14_6:
+            title: "2020 yılına kadar, aşırı kapasite ve aşırı avlanmaya katkıda bulunan belirli türdeki balıkçılık sübvansiyonlarının yasaklanması, yasadışı, rapor edilmemiş ve düzenlenmemiş balıkçılığa katkıda bulunan sübvansiyonların ortadan kaldırılması ve bu tür yeni sübvansiyonların uygulanmasından kaçınılması, gelişmekte olan ve en az gelişmiş ülkeler için uygun ve etkili özel ve farklı muamelenin kabul edilmesi Dünya Ticaret Örgütü balıkçılık sübvansiyonları müzakerelerinin ayrılmaz bir parçası olmalıdır."
           target_14_7:
             title: "2030'a kadar, balıkçılık, su ürünleri yetiştiriciliği ve turizmin sürdürülebilir yönetimi dahil olmak üzere, deniz kaynaklarının sürdürülebilir kullanımından Küçük Ada Gelişmekte Olan Devletlere ve en az gelişmiş ülkelere ekonomik faydaların artırılması."
           target_14_A:
