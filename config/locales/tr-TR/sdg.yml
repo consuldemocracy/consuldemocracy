@@ -148,6 +148,8 @@ tr:
         title: "Karasal Yaşam"
         title_in_two_lines: "Karasal Yaşam"
         targets:
+          target_15_3:
+            title: "2030'a kadar, çölleşmeyle mücadele edilmesi, çölleşme, kuraklık ve sellerden etkilenen alanlar dahil tahrip edilmiş toprakların eski haline getirilmesi ve daha verimli arazilerin elde edilmesi."
           target_15_4:
             title: "2030 yılına kadar, sürdürülebilir kalkınma için gerekli olan faydaları sağlama kapasitelerini artırmak için biyolojik çeşitlilikleri de dahil olmak üzere dağ ekosistemlerinin korunmasının sağlanması."
           target_15_5:
