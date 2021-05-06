@@ -770,7 +770,7 @@ tr:
         empty_newsletters: Hiç gösterilecek bülten yok
       new:
         title: Yeni bülten
-        header_footer_help_text: "Tüm e-postalar için başlık ve altbilgi aynıdır, <code>uygulama/görünümler/düzenlemeler/postacı_üstbilgi</code> ve <code>uygulama/görünümler/düzenlemeler/postacı_altbilgi</code> üzerinde düzenleyebilirsiniz.<br> Başlık resmini %{link}'te değiştirebilirsiniz."
+        header_footer_help_text: "Tüm e-postalar için başlık ve altbilgi aynıdır, <code>uygulama/görünümler/düzenlemeler/postacı_üstbilgi</code> ve <code>uygulama/görünümler/düzenlemeler/postacı_altbilgi</code> üzerinde düzenleyebilirsiniz.<br> Başlık resmini %{link} aracılığıyla değiştirebilirsiniz."
         image_link: "özel görüntüler"
       edit:
         title: Bülteni düzenle
