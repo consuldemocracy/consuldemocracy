@@ -79,6 +79,8 @@ tr:
             title: "2030'a kadar, tüm kız ve erkek çocuklarının kaliteli erken çocukluk gelişimi, bakımı ve okul öncesi eğitimine erişebilmelerinin ve böylece ilköğretime hazır olmalarının sağlanması."
           target_4_3:
             title: "2030’a kadar bütün kadın ve erkeklerin erişilebilir ve kaliteli teknik eğitim, mesleki eğitim ve üniversiteyi de kapsayan yüksek öğretime eşit biçimde erişimlerinin sağlanması."
+          target_4_6:
+            title: "2030’a kadar bütün gençlerin ve hem erkek hem de kadın yetişkinlerin büyük bir kısmının okuryazar olması ve matematiksel beceriler kazanmasının garanti edilmesi."
       goal_5:
         title: "Cinsiyet Eşitliği"
         title_in_two_lines: "Toplumsal Cinsiyet Eşitliği"
@@ -119,9 +121,15 @@ tr:
         targets:
           target_12_2:
             title: "2030'a kadar, doğal kaynakların etkin kullanımını ve sürdürülebilir yönetimi sağlamak."
+          target_12_5:
+            title: "2030'a kadar, önleme, azaltma, geri dönüşüm ve yeniden kullanım yoluyla atık oluşumununun önemli ölçüde azaltılması."
       goal_13:
         title: "İklim Eylemi"
         title_in_two_lines: "İklim Eylemi"
+        description: "İklim değişikliği ve etkileri ile mücadele konusunda acil eyleme geçilmesi."
+        targets:
+          target_13_2:
+            title: "İklim değişikliği hakkında önlemlerin ulusal politika, strateji ve planlamaya entegre edilmesi."
       goal_14:
         title: "Sudaki Yaşam"
         title_in_two_lines: "Sudaki Yaşam"
