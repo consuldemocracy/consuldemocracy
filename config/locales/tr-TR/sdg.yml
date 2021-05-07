@@ -200,6 +200,8 @@ tr:
         title_in_two_lines: "İklim Eylemi"
         description: "İklim değişikliği ve etkileri ile mücadele konusunda acil eyleme geçilmesi."
         targets:
+          target_13_1:
+            title: "Tüm ülkelerde, doğal afetlere ve iklimle ilgili tehlikelere karşı dayanıklılığın ve uyum kapasitesinin güçlendirilmesi."
           target_13_2:
             title: "İklim değişikliği hakkında önlemlerin ulusal politika, strateji ve planlamaya entegre edilmesi."
           target_13_3:
