@@ -14,6 +14,7 @@
 
   <% if show == true %>
     <div class="small-12 medium-9 medium-centered column">
+        <%= image_tag(@project.imagen.url, :class => "style_image ") if @project.imagen.exists? %>
         <p>
           <strong>Título:</strong>
           <%= @project.title %>

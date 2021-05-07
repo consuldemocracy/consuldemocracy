@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_06_113026) do
+ActiveRecord::Schema.define(version: 2021_05_07_084004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1282,6 +1282,10 @@ ActiveRecord::Schema.define(version: 2021_05_06_113026) do
     t.datetime "updated_at", null: false
     t.boolean "public"
     t.integer "geozone_id"
+    t.string "imagen_file_name"
+    t.string "imagen_content_type"
+    t.bigint "imagen_file_size"
+    t.datetime "imagen_updated_at"
   end
 
   create_table "proposal_notifications", id: :serial, force: :cascade do |t|

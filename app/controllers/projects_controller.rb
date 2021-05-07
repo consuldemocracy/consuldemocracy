@@ -230,6 +230,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:search, :title, :public, :geozone_id, :user_elements, :debate_elements, :page_elements, page_ids: [] , user_ids: [] , debate_ids: [], proposal_ids: [], poll_ids: [] , delete_debate_ids: [] , delete_user_ids: [] , delete_page_ids: [], delete_proposal_ids: [], delete_poll_ids: [])
+      params.require(:project).permit(:search, :title, :public, :geozone_id, :imagen, :user_elements, :debate_elements, :page_elements, page_ids: [] , user_ids: [] , debate_ids: [], proposal_ids: [], poll_ids: [] , delete_debate_ids: [] , delete_user_ids: [] , delete_page_ids: [], delete_proposal_ids: [], delete_poll_ids: [])
     end
 end

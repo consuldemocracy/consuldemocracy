@@ -9,7 +9,7 @@ elsif user_signed_in?
   else
     @users_index = PageParticipant.where(site_customization_pages_id: @custom_page.id)
     @users_index.each do |index|
-      if index.user_id == current_user.id 
+      if index.user_id == current_user.id
         show=true
       end
     end
@@ -19,7 +19,7 @@ elsif user_signed_in?
     @user_on_project.each do |index|
       arr_users << UserOnProject.where(project_id: index.project_id)
     end
-      
+
     arr_users.each do |index|
       index.each do |item|
         if item.user_id == current_user.id
