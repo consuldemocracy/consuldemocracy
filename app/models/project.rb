@@ -2,6 +2,11 @@ class Project < ApplicationRecord
 
     include PgSearch::Model
 
+    has_attached_file :imagen
+    validates_attachment :imagen,
+                       content_type: { content_type: /\Aimage\/.*\z/ },
+                       size: { less_than: 1.megabyte }
+
     pg_search_scope :global_search,
                     against: [:title],
                     using: { tsearch: { prefix: true } }
