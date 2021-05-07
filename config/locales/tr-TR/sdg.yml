@@ -149,6 +149,10 @@ tr:
         title_in_two_lines: "Eşitsizliklerin Azaltılması"
         description: "Ülkelerin kendi içinde ve arasında eşitsizliği azaltmak."
         targets:
+          target_10_4:
+            title: "Özellikle mali, ücret ve sosyal koruma politikaları olmak üzere politikaların benimsenmesi ve eşitliğin giderek daha fazla sağlanması."
+          target_10_5:
+            title: "Küresel finans piyasalarının ve kurumların düzenlenmesi ve denetlenmesinin geliştirilmesi ve bu tür düzenlemelerin uygulanmasının güçlendirilmesi."
           target_10_7:
             title: "Planlı ve iyi yönetilen göç politikalarının uygulanması aracılığıyla, insanların sistemli, güvenli, düzenli ve sorumlu bir biçimde göç etmelerinin ve hareketliliğinin kolaylaştırılması."
           target_10_A:
