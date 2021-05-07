@@ -140,6 +140,7 @@ tr:
         method_name: "Yöntem adını talep et"
         method_name_description: "İstek metodunun adı Şehrin Nüfus Sayımı Web Servisi tarafından kabul edildi."
         structure: "Talep Yapısı"
+        structure_description: 'Belediye il meclisinin nüfus sayımı Web servisine göndereceği talebin yapısı. Bu talebin "sabit" değerleri doldurulmalıdır. Belge Türü, Belge Numarası, Doğum Tarihi ve Posta Kodu ile ilgili değerler boş bırakılmalıdır. Geçerli bir format örneği: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
         document_type: "Belge türüne giden yol"
         document_type_description: "Belge türünü gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için belge türüne ihtiyaç duymuyorsa DOLDURMAYIN."
         document_number: "Belge numarasına giden yol"
