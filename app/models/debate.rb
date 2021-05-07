@@ -59,7 +59,6 @@ class Debate < ApplicationRecord
   before_save :calculate_hot_score, :calculate_confidence_score
 
   #JHH:
-  after_save :save_debate_participants, :delete_from_debate_participants
   after_destroy :delete_debate_participants
   #Fin
 

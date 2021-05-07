@@ -15,7 +15,8 @@ class DebatesController < ApplicationController
   has_orders ->(c) { Debate.debates_orders(c.current_user) }, only: :index
   has_orders %w[most_voted newest oldest], only: :show
 
-  load_and_authorize_resource
+  load_and_authorize_resource except: [:create]
+  skip_authorization_check
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
@@ -34,7 +35,6 @@ class DebatesController < ApplicationController
 
   # Funciones para cargar los usuarios
   def actual_users
-    @proposal = Proposal.find_by_id(params[:id])
     @project_users = []
     @users_actuales = DebateParticipant.where(debate_id: @debate.id).order(user_id: :asc)
     @users_actuales.each do |item|
@@ -57,12 +57,12 @@ class DebatesController < ApplicationController
   end
 
   def load_all(filter)
+    @project_users = []
     if filter == 'name'
       @users = User.all.order(username: :asc)
     else filter == 'id'
       @users = User.all.order(id: :desc)
     end
-    @project_users = []
   end
   # Fin
 
@@ -79,22 +79,8 @@ class DebatesController < ApplicationController
     load_components(@current_filter)
   end
 
-  def create
-    @debate = Debate.new(debate_params)
-
-      if @debate.save
-
-        user_elements = params[:user_ids]
-        @debate.save_component(user_elements)
-
-        redirect_to root_path, notice: I18n.t("flash.actions.create.debate")
-      else
-        render :new
-      end
-  end
-
   def update
-    if @project.update(project_params)
+    if @debate.update(debate_params)
 
       user_elements = params[:user_ids]
       @debate.save_component(user_elements)
@@ -140,8 +126,8 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      attributes = [:imagen, :tag_list, :terms_of_service, :related_sdg_list, delete_user_ids: [], user_ids: []]
-      params.require(:debate).permit(attributes, translation_params(Debate))
+      attributes = [:imagen, :tag_list, :terms_of_service, :related_sdg_list]
+      params.require(:debate).permit(attributes, translation_params(Debate), delete_user_ids: [], user_ids: [])
     end
 
     def resource_model

@@ -50,6 +50,8 @@ class Proposal < ApplicationRecord
   #Acceso a los usuarios
   attr_accessor :user_elements, :user_ids
   attr_accessor :delete_user_elements, :delete_user_ids
+
+  after_destroy :delete_debate_participants
   #Fin
 
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :proposals
