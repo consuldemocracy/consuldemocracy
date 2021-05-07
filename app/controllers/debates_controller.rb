@@ -89,7 +89,7 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      attributes = [:delete_debate_users_id, :debate_users_id, :tag_list, :terms_of_service, :related_sdg_list]
+      attributes = [:imagen, :delete_debate_users_id, :debate_users_id, :tag_list, :terms_of_service, :related_sdg_list]
       params.require(:debate).permit(attributes, translation_params(Debate))
     end
 

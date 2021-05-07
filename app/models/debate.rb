@@ -24,6 +24,12 @@ class Debate < ApplicationRecord
   translates :description, touch: true
   include Globalizable
 
+  # Configuración para la imagen
+  has_attached_file :imagen
+  validates_attachment :imagen,
+                     content_type: { content_type: /\Aimage\/.*\z/ },
+                     size: { less_than: 1.megabyte }
+
   #JHH: Añadimos la relaciones con los usuarios
   has_many :debate_participants
   has_many :users, through: :debate_participants

@@ -2,6 +2,7 @@ class Project < ApplicationRecord
 
     include PgSearch::Model
 
+    # Configuración para la imagen
     has_attached_file :imagen
     validates_attachment :imagen,
                        content_type: { content_type: /\Aimage\/.*\z/ },

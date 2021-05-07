@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_091302) do
+ActiveRecord::Schema.define(version: 2021_05_07_100038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -538,6 +538,10 @@ ActiveRecord::Schema.define(version: 2021_05_07_091302) do
     t.integer "geozone_id"
     t.tsvector "tsv"
     t.datetime "featured_at"
+    t.string "imagen_file_name"
+    t.string "imagen_content_type"
+    t.bigint "imagen_file_size"
+    t.datetime "imagen_updated_at"
     t.index ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at"
     t.index ["author_id"], name: "index_debates_on_author_id"
     t.index ["cached_votes_down"], name: "index_debates_on_cached_votes_down"
