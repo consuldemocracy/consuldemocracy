@@ -35,6 +35,11 @@ class Proposal < ApplicationRecord
   translation_class_delegate :retired_at
 
   #JHH: Añadimos el has many para los proposal_participants 10/03/2021
+  has_attached_file :imagen
+  validates_attachment :imagen,
+                     content_type: { content_type: /\Aimage\/.*\z/ },
+                     size: { less_than: 1.megabyte }
+
   has_many :proposal_participants
   has_many :users, through: :proposal_participants
 

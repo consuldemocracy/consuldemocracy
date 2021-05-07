@@ -122,7 +122,7 @@ class ProposalsController < ApplicationController
       # JHH: Aqui se ha añadido el "participants_id" en los parametros permitidos
       # Nota: Si se usara un arreglo directamente, hay que cambiarlo por "participants_id: []"
       attributes = [:participants_id, :video_url, :responsible_name, :tag_list, :terms_of_service,
-                    :geozone_id, :skip_map, :related_sdg_list,
+                    :geozone_id, :imagen, :skip_map, :related_sdg_list,
                     image_attributes: image_attributes,
                     documents_attributes: [:id, :title, :attachment, :cached_attachment,
                                            :user_id, :_destroy],

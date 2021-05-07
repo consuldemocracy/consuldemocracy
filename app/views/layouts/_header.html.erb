@@ -20,7 +20,7 @@
 
   <div class="row" style="max-width:100%">
     <div class="top-bar">
-      
+
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
         <%= t("application.menu") %>
@@ -28,7 +28,28 @@
 
       <h1 class="top-bar-title">
         <%= link_to root_path, accesskey: "0" do %>
-          <%= image_tag(image_path_for("innconsulportada.png"), class: "float-left absolute-main", alt: setting["org_name"]) %>
+          <%# Configuración para importar la imagen del elemento actual %>
+          <% if @project %>
+            <% if @project.imagen.exists? %>
+              <%= image_tag(@project.imagen.url) %>
+            <% else %>
+              <%= image_tag(image_path_for("innconsulportada.png"), class: "float-left absolute-main", alt: setting["org_name"]) %>
+            <% end %>
+          <% elsif @debate %>
+            <% if @debate.imagen.exists? %>
+              <%= image_tag(@debate.imagen.url) %>
+            <% else %>
+              <%= image_tag(image_path_for("innconsulportada.png"), class: "float-left absolute-main", alt: setting["org_name"]) %>
+            <% end %>
+          <% elsif @proposal %>
+            <% if @proposal.imagen.exists? %>
+              <%= image_tag(@proposal.imagen.url) %>
+            <% else %>
+              <%= image_tag(image_path_for("innconsulportada.png"), class: "float-left absolute-main", alt: setting["org_name"]) %>
+            <% end %>
+          <% else %>
+            <%= image_tag(image_path_for("innconsulportada.png"), class: "float-left absolute-main", alt: setting["org_name"]) %>
+          <% end %>
         <% end %>
       </h1>
 

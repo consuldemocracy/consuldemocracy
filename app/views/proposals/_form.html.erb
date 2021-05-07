@@ -6,6 +6,10 @@
     <%= render "shared/errors", resource: @proposal %>
 
     <div class="row column">
+      <div class="small-12 column">
+        <%= f.file_field :imagen %>
+        <p> <%= t("custom.imagen.title") %></p>
+      </div>
       <%= f.translatable_fields do |translations_form| %>
         <div class="small-12 column">
           <%= translations_form.text_field :title,
