@@ -11,11 +11,9 @@ class ProjectsController < ApplicationController
   has_filters %w[id name], only: :edit
 
   def is_admin?
-    if current_user.administrator?
-      flash[:notice] = t "authorized.title"
-    else
+    if !current_user.administrator?
       redirect_to root_path
-      flash[:alert] = t "not_authorized.title"
+      flash[:alert] = t "not_authorized.view"
     end
 
   end

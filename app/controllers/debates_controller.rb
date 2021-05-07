@@ -24,11 +24,9 @@ class DebatesController < ApplicationController
   before_action :load_participants, :actual_people, only: [:edit,:new]
 
   def is_admin?
-    if current_user.administrator?
-      flash[:notice] = t "authorized.title"
-    else
+    if !current_user.administrator?
       redirect_to root_path
-      flash[:alert] = t "not_authorized.title"
+      flash[:alert] = t "not_authorized.view"
     end
   end
 
