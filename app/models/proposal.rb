@@ -47,10 +47,9 @@ class Proposal < ApplicationRecord
   has_many :proposal_on_projects
   has_many :projects, through: :proposal_on_projects
 
-  attr_accessor :participants_id
-
-  after_save :save_participants
-  after_destroy :delete_participants
+  #Acceso a los usuarios
+  attr_accessor :user_elements, :user_ids
+  attr_accessor :delete_user_elements, :delete_user_ids
   #Fin
 
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :proposals
@@ -107,24 +106,25 @@ class Proposal < ApplicationRecord
   scope :created_by,               ->(author) { where(author: author) }
 
 
-  #JHH:
+  #Funciones para los usuarios
+    # Eliminar todos los participantes
   def delete_participants
     ProposalParticipant.where(proposal_id: self).destroy_all
   end
+    # Eliminar los participantes seleccionados
+  def delete_component(delete_user_elements)
+    if !delete_user_elements.nil?
+      delete_element = ProposalParticipant.where(proposal_id: self.id)
+      delete_element.where(user_id: delete_user_elements).destroy_all
+    end
+  end
 
-  def save_participants
-    #Convertir en un arreglo alu10,alu20 => [alu10,alu20]
-
-    return ProposalParticipant.where(proposal_id: self).destroy_all if participants_id.nil? || participants_id.empty?
-
-    participants_array = participants_id.split(",")
-
-    not_participant = ProposalParticipant.where(proposal_id:self)
-    not_participant.where.not(user_id: participants_array).destroy_all
-    #Iterarlo
-    participants_array.each do |id_participant|
-      #Crear ProposalParticipants
-      ProposalParticipant.find_or_create_by(proposal: self,user_id: id_participant)
+      # Añadir los participantes
+  def save_component(user_elements)
+    if !user_elements.nil?
+      user_elements.each do |user_id|
+        ProposalParticipant.find_or_create_by(proposal_id: self.id, user_id: user_id)
+      end
     end
   end
   #Fin

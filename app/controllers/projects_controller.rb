@@ -5,10 +5,9 @@ class ProjectsController < ApplicationController
   skip_authorization_check
 
   # before_action :load_components, only: [:edit, :update]
-  before_action :load_all, only: [:new]
   before_action :actual_debates, :actual_pages, :actual_users, :actual_proposals, :actual_polls, only: [:show, :edit]
   #before_action :actual_users, :actual_proposals only: [:edit, :show]
-  has_filters %w[id name], only: :edit
+  has_filters %w[id name], only: [:edit, :new]
 
   def is_admin?
     if !current_user.administrator?
@@ -66,13 +65,13 @@ class ProjectsController < ApplicationController
     @project_polls
   end
 
-  def load_all
+  def load_all(filter)
     @pages = SiteCustomization::Page.all
     @debates = Debate.all
-    if params[:user_search]
-      @users = User.search(params[:user_search])
-    else
-      @users = User.all
+    if filter == 'name'
+      @users = User.all.order(username: :asc)
+    else filter == 'id'
+      @users = User.all.order(id: :desc)
     end
     @proposals = Proposal.all
     @polls = Poll.all
@@ -162,6 +161,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    load_all(@current_filter)
   end
 
   # GET /projects/1/edit

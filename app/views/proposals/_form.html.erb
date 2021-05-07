@@ -7,6 +7,7 @@
 
     <div class="row column">
       <div class="small-12 column">
+        <br/>
         <%= f.file_field :imagen %>
         <p> <%= t("custom.imagen.title") %></p>
       </div>
@@ -70,22 +71,42 @@
 
         </div>
       <% end %>
-
-      <%-# ----------------------JHH: Este código añade el formulario para los añadir los users---------------------- -%>
-
       <div class="small-12 column">
-      <%= f.label :participants_id %>
-
-      <div id="participant_tags" class="tags">
-            <% @participants.each do |participant| %>
-              <a class="select-participants"><%= participant.id%>: <%=participant.email%></a>
-            <% end %>
+        <%# ---------- Users ---------- %>
+        <div class="project-form-field">
+          <%# Para buscar Debates %>
+          <%= text_field_tag '', nil, placeholder: "Search Users", class: "form-control", style: "border-radius:10px", id: "users-search-form", onkeyup: "SearchFunction()" %>
+          <% if !@project_users.empty? %>
+            <%= f.label t("project.component.actual_delete", item:"Usuarios") %>
+            <p><%= t("project.component.delete", item:"usuarios") %></p>
+            <div id="participant_tags" class="tags scroll">
+              <% @project_users.each do |user| %>
+                <%# <a class="select-participants"><%= page.id%>
+                <span id="span_tags">
+                  <input type="checkbox" name="delete_user_ids[]" value=<%= user.id %> />
+                  <%= user.username %>(<%= user.email %>)
+                </span>
+              <% end %>
+            </div>
+          <% end %>
+          <% if !@users.empty? %>
+            <br/>
+            <%= f.label t("project.component.actual_add", item:"Usuarios") %>
+            <p><%= t("project.component.add", item:"usuarios") %></p>
+            <%= render "shared/filter_subnav", i18n_namespace: "admin.users.index" %>
+            <div id="participant_tags" class="tags scroll">
+              <% @users.each do |user| %>
+                <%# <a class="select-participants"><%= page.id%>
+                <span id="span_tags">
+                  <input type="checkbox" name="user_ids[]" value=<%= user.id %> />
+                  <%= user.username %>(<%= user.email %>)
+                </span>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <%# ---------- Fin Users ---------- %>
       </div>
-      <%= f.text_field :participants_id, placeholder: t("proposals.form.participant_placeholder")%>
-      </div>
-
-      <%-# ---------------------- Fin ---------------------- -%>
-
 
       <div class="small-12 column">
         <%= f.label :tag_list, t("proposals.form.tags_label") %>

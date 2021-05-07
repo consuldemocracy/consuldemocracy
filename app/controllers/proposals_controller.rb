@@ -11,8 +11,11 @@ class ProposalsController < ApplicationController
   before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
   before_action :proposals_recommendations, only: :index, if: :current_user
-  # JHH:
-  before_action :load_participants
+
+  # Funciones y filtros para los usuarios
+  before_action :actual_users, only: [:show, :edit]
+  has_filters %w[id name], only: [:edit, :new]
+
   before_action :authenticate_user!
   before_action :is_admin?, except: [:show, :edit]
 
@@ -31,9 +34,44 @@ class ProposalsController < ApplicationController
   has_orders ->(c) { Proposal.proposals_orders(c.current_user) }, only: :index
   has_orders %w[most_voted newest oldest], only: :show
 
-  load_and_authorize_resource
+  load_and_authorize_resource except: [:edit]
+  skip_authorization_check
   helper_method :resource_model, :resource_name
   respond_to :html, :js
+
+  # Funciones para cargar los usuarios
+  def actual_users
+    @proposal = Proposal.find_by_id(params[:id])
+    @project_users = []
+    @users_actuales = ProposalParticipant.where(proposal_id: @proposal.id).order(user_id: :asc)
+    @users_actuales.each do |item|
+      @project_users += User.where(id: item.user_id)
+    end
+    @project_users
+  end
+
+  def load_components(filter)
+    arr_users = []
+    @except_users = actual_users()
+    @except_users.each do |item|
+      arr_users << item.id
+    end
+    if filter == 'name'
+      @users = User.where.not(id: arr_users).order(username: :asc)
+    else filter == 'id'
+      @users = User.where.not(id: arr_users).order(id: :desc)
+    end
+  end
+
+  def load_all(filter)
+    if filter == 'name'
+      @users = User.all.order(username: :asc)
+    else filter == 'id'
+      @users = User.all.order(id: :desc)
+    end
+    @project_users = []
+  end
+  # Fin
 
   def show
     super
@@ -46,16 +84,23 @@ class ProposalsController < ApplicationController
     end
   end
 
-  # JHH: 
-  def load_participants
-    @participants = User.all
+  def new
+    @proposal = Proposal.new
+    load_all(@current_filter)
   end
-  #Fin
+
+  def edit
+    load_components(@current_filter)
+  end
 
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
 
     if @proposal.save
+
+      user_elements = params[:user_ids]
+      @proposal.save_component(user_elements)
+
       redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
     else
       render :new
@@ -63,6 +108,21 @@ class ProposalsController < ApplicationController
   end
 
   def created; end
+
+  def update
+    if @proposal.update(proposal_params)
+
+      user_elements = params[:user_ids]
+      @proposal.save_component(user_elements)
+
+      delete_user_elements = params[:delete_user_ids]
+      @proposal.delete_component(delete_user_elements)
+
+      redirect_to proposal_path(@proposal), notice: 'Proyecto actualizado correctamente'
+    else
+      render :edit
+    end
+  end
 
   def index_customization
     discard_draft
