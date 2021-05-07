@@ -982,10 +982,6 @@ footer {
 }
 
 .auth-image {
-  background: $brand image-url("auth_bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-
   @include breakpoint(medium) {
     min-height: $line-height * 42;
   }

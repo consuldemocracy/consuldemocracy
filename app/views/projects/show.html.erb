@@ -20,6 +20,55 @@
           <%= @project.title %>
         </p>
 
+        <%# -- Páginas -- %>
+        <% if !@project_pages.empty? %>
+          <table class="margin-top">
+            <thead>
+              <tr>
+                <th scope="col"><%= t("users.show.pages") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @project_pages.each do |actual| %>
+                <tr id="page_<%= actual.id %>">
+                  <td>
+                    <%= link_to actual.title,
+                                actual.url,
+                                target: "_blank",
+                                class: "show-link" %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <strong>Páginas:</strong>
+          <p><%= t("project.show_component", item:"páginas") %></p>
+        <% end %>
+
+        <%# -- Debates -- %>
+        <% if !@project_debates.empty? %>
+          <table class="margin-top">
+            <thead>
+              <tr>
+                <th scope="col"><%= t("users.show.debates") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @project_debates.each do |debate| %>
+                <tr id="debate_<%= debate.id %>">
+                  <td>
+                    <%= link_to debate.title, debate %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <strong>Debate:</strong>
+          <p><%= t("project.show_component", item:"debates") %></p>
+        <% end %>
+
         <%# -- Propuestas -- %>
         <% if !@project_proposals.empty? %>
           <table class="margin-top">
@@ -64,44 +113,6 @@
         <% else %>
           <strong>Votaciones:</strong>
           <p><%= t("project.show_component", item:"votaciones") %></p>
-        <% end %>
-
-        <%# -- Debates -- %>
-        <% if !@project_debates.empty? %>
-          <table class="margin-top">
-            <thead>
-              <tr>
-                <th scope="col"><%= t("users.show.debates") %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @project_debates.each do |debate| %>
-                <tr id="debate_<%= debate.id %>">
-                  <td>
-                    <%= link_to debate.title, debate %>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        <% else %>
-          <strong>Debate:</strong>
-          <p><%= t("project.show_component", item:"debates") %></p>
-        <% end %>
-
-        <%# -- Páginas -- %>
-        <strong>Páginas:</strong>
-        <% if @project_pages.empty? %>
-          <p><%= t("project.show_page.empty") %></p>
-        <% else %>
-          <div id="participant_tags" class="tags">
-              <% @project_pages.each do |actual| %>
-                <%= link_to actual.title,
-                                actual.url,
-                                target: "_blank",
-                                class: "show-link" %>
-              <% end %>
-          </div>
         <% end %>
 
       <% if current_administrator? %>

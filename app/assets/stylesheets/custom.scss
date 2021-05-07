@@ -4,6 +4,13 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+//Image
+.custom-image {
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+}
+
 //Form
 .scroll {
   width: 100%;
@@ -234,7 +241,10 @@
   color: white;
 }
 
-.image_contact {
+.image-contact {
+  max-width: 240px;
+  width: 100%;
+  height: auto;
   position: absolute;
   top: 3vh;
   left: 3vw;
