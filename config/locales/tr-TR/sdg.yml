@@ -187,8 +187,12 @@ tr:
             title: "2030'a kadar, doğal kaynakların etkin kullanımını ve sürdürülebilir yönetimi sağlamak."
           target_12_5:
             title: "2030'a kadar, önleme, azaltma, geri dönüşüm ve yeniden kullanım yoluyla atık oluşumunun önemli ölçüde azaltılması."
+          target_12_7:
+            title: "Ulusal politikalar ve öncelikler gereğince sürdürülebilir kamu ihalesi uygulamalarının desteklenmesi."
           target_12_8:
             title: "2030'a kadar, dünyanın her yerindeki insanların doğa ile uyumlu, sürdürülebilir kalkınma ve yaşam tarzları için ilgili bilgilere ve farkındalığa sahip olmalarını sağlamak."
+          target_12_A:
+            title: "Gelişmekte olan ülkelerin daha sürdürülebilir tüketim ve üretim modellerine doğru ilerlemeleri için bilimsel ve teknolojik kapasitelerini güçlendirme konusunda desteklenmesi."
       goal_13:
         title: "İklim Eylemi"
         title_in_two_lines: "İklim Eylemi"
