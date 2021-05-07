@@ -7,7 +7,7 @@
   </div>
 
   <div class="field" disabled>
-    <%= form.collection_select :geozone_id, Geozone.all, :id, :name %>
+    <%= form.collection_select :geozone_id, Geozone.all.order(id: :asc), :id, :name, selected: 0%>
   </div>
 
   <div class="actions">
