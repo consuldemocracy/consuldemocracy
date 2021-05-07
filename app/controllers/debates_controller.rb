@@ -19,9 +19,11 @@ class DebatesController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
-  # JHH:
+  # Funciones y filtros para los usuarios
   before_action :is_admin?, except: [:show, :edit]
-  before_action :load_participants, :actual_people, only: [:edit,:new]
+
+  before_action :actual_users, only: [:show, :edit]
+  has_filters %w[id name], only: [:edit, :new]
 
   def is_admin?
     if !current_user.administrator?
@@ -30,29 +32,80 @@ class DebatesController < ApplicationController
     end
   end
 
-  def actual_people
-    @people = []
-    @debate_actual_participant = DebateParticipant.where(debate_id: @debate.id).order(user_id: :asc)
-    @debate_actual_participant.each do |part|
-      @people += User.where(id: part.user_id)
+  # Funciones para cargar los usuarios
+  def actual_users
+    @proposal = Proposal.find_by_id(params[:id])
+    @project_users = []
+    @users_actuales = DebateParticipant.where(debate_id: @debate.id).order(user_id: :asc)
+    @users_actuales.each do |item|
+      @project_users += User.where(id: item.user_id)
     end
-    @people
+    @project_users
   end
 
-
-
-  def load_participants
-    arr = []
-    @except = actual_people()
-    @except.each do |index|
-      arr << index.id
+  def load_components(filter)
+    arr_users = []
+    @except_users = actual_users()
+    @except_users.each do |item|
+      arr_users << item.id
     end
-    @participants = User.where.not(id: arr).order(id: :asc)
+    if filter == 'name'
+      @users = User.where.not(id: arr_users).order(username: :asc)
+    else filter == 'id'
+      @users = User.where.not(id: arr_users).order(id: :desc)
+    end
   end
-  #Fin
+
+  def load_all(filter)
+    if filter == 'name'
+      @users = User.all.order(username: :asc)
+    else filter == 'id'
+      @users = User.all.order(id: :desc)
+    end
+    @project_users = []
+  end
+  # Fin
 
   def index_customization
     @featured_debates = @debates.featured
+  end
+
+  def new
+    @debate = Debate.new
+    load_all(@current_filter)
+  end
+
+  def edit
+    load_components(@current_filter)
+  end
+
+  def create
+    @debate = Debate.new(debate_params)
+
+      if @debate.save
+
+        user_elements = params[:user_ids]
+        @debate.save_component(user_elements)
+
+        redirect_to root_path, notice: I18n.t("flash.actions.create.debate")
+      else
+        render :new
+      end
+  end
+
+  def update
+    if @project.update(project_params)
+
+      user_elements = params[:user_ids]
+      @debate.save_component(user_elements)
+
+      delete_user_elements = params[:delete_user_ids]
+      @debate.delete_component(delete_user_elements)
+
+      redirect_to @debate, notice: 'Debate actualizado correctamente.'
+    else
+      render :edit
+    end
   end
 
   def show
@@ -87,7 +140,7 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      attributes = [:imagen, :delete_debate_users_id, :debate_users_id, :tag_list, :terms_of_service, :related_sdg_list]
+      attributes = [:imagen, :tag_list, :terms_of_service, :related_sdg_list, delete_user_ids: [], user_ids: []]
       params.require(:debate).permit(attributes, translation_params(Debate))
     end
 

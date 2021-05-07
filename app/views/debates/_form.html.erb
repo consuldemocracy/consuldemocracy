@@ -38,38 +38,44 @@
                           class: "tag-autocomplete" %>
       </div>
 
-      <%-# ----------------------JHH: Este código añade el formulario para los añadir los users---------------------- -%>
+      <%# ---------- Users ---------- %>
       <div class="small-12 column">
         <div class="project-form-field">
-          <%= f.label 'Participantes con acceso al debate' %>
-          <% if @people.empty? %>
-            <p><%= t("debates.form.empty_participants") %></p>
-          <% else %>
-            <div id="participant_tags" class="tags">
-                <% @people.each do |actual| %>
-                  <a class="select-participants"><%= actual.id%>: <%=actual.email%></a>
-                <% end %>
+          <%# Para buscar Users %>
+          <%= text_field_tag '', nil, placeholder: "Search Users", class: "form-control", style: "border-radius:10px", id: "users-search-form", onkeyup: "SearchFunction()" %>
+          <% if !@project_users.empty? %>
+            <%= f.label t("project.component.actual_delete", item:"Usuarios") %>
+            <p><%= t("project.component.delete", item:"usuarios") %></p>
+            <div id="participant_tags" class="tags scroll">
+              <% @project_users.each do |user| %>
+                <%# <a class="select-participants"><%= page.id%>
+                <span id="span_tags">
+                  <input type="checkbox" name="delete_user_ids[]" value=<%= user.id %> />
+                  <%= user.username %>(<%= user.email %>)
+                </span>
+              <% end %>
             </div>
           <% end %>
 
-          <%= f.label 'Participantes disponibles para añadir' %>
-          <div id="participant_tags" class="tags">
-                <% @participants.each do |participant| %>
-                  <a class="select-participants"><%= participant.id%>: <%=participant.email%></a>
-                <% end %>
-          </div>
+          <% if !@users.empty? %>
+            <br/>
+            <%= f.label t("project.component.actual_add", item:"Usuarios") %>
+            <p><%= t("project.component.add", item:"usuarios") %></p>
 
-          <br/>
-          <%= f.text_field :debate_users_id, :label => t("debates.form.add_participants"), placeholder: t("proposals.form.participant_placeholder")%>
-          
-          <br/>
-          <% if !@people.empty? %>
-            <%= f.text_field :delete_debate_users_id, :label => t("debates.form.delete_participants"), placeholder: t("proposals.form.participant_placeholder")%>
+            <%= render "shared/filter_subnav", i18n_namespace: "admin.users.index" %>
+            <div id="participant_tags" class="tags scroll">
+              <% @users.each do |user| %>
+                <%# <a class="select-participants"><%= page.id%>
+                <span id="span_tags">
+                  <input type="checkbox" name="user_ids[]" value=<%= user.id %> />
+                  <%= user.username %>(<%= user.email %>)
+                </span>
+              <% end %>
+            </div>
           <% end %>
-          
         </div>
       </div>
-      <%-# ---------------------- Fin ---------------------- -%>
+      <%# ---------- Fin Users ---------- %>
 
       <%= render SDG::RelatedListSelectorComponent.new(f) %>
 

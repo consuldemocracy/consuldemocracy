@@ -179,14 +179,14 @@ class ProposalsController < ApplicationController
     def proposal_params
       # JHH: Aqui se ha añadido el "participants_id" en los parametros permitidos
       # Nota: Si se usara un arreglo directamente, hay que cambiarlo por "participants_id: []"
-      attributes = [:participants_id, :video_url, :responsible_name, :tag_list, :terms_of_service,
+      attributes = [:video_url, :responsible_name, :tag_list, :terms_of_service,
                     :geozone_id, :imagen, :skip_map, :related_sdg_list,
                     image_attributes: image_attributes,
                     documents_attributes: [:id, :title, :attachment, :cached_attachment,
                                            :user_id, :_destroy],
                     map_location_attributes: [:latitude, :longitude, :zoom]]
       translations_attributes = translation_params(Proposal, except: :retired_explanation)
-      params.require(:proposal).permit(attributes, translations_attributes)
+      params.require(:proposal).permit(attributes, translations_attributes, delete_user_ids: [], user_ids: [])
     end
     #Fin
 

@@ -34,7 +34,10 @@ class Debate < ApplicationRecord
   has_many :debate_participants
   has_many :users, through: :debate_participants
 
-  attr_accessor :debate_users_id, :delete_debate_users_id
+  #Acceso a los usuarios
+  attr_accessor :user_elements, :user_ids
+  attr_accessor :delete_user_elements, :delete_user_ids
+  #Fin
 
   # Se añade la relación con los proyectos
 
@@ -77,30 +80,27 @@ class Debate < ApplicationRecord
 
   attr_accessor :link_required
 
-  #JHH:
+  #Funciones para los usuarios
+    # Eliminar todos los participantes
   def delete_debate_participants
     DebateParticipant.where(debate_id: self).destroy_all
   end
-
-  def delete_from_debate_participants
-    return if delete_debate_users_id.nil? || delete_debate_users_id.empty?
-
-    delete_participants_array = delete_debate_users_id.split(",")
-
-    not_participant = DebateParticipant.where(debate_id: self)
-    not_participant.where(user_id: delete_participants_array).destroy_all
-  end
-
-  def save_debate_participants
-    return if debate_users_id.nil? || debate_users_id.empty?
-
-    debate_users_array = debate_users_id.split(",")
-
-    debate_users_array.each do |debate_user|
-      DebateParticipant.find_or_create_by(debate: self, user_id: debate_user)
+    # Eliminar los participantes seleccionados
+  def delete_component(delete_user_elements)
+    if !delete_user_elements.nil?
+      delete_element = DebateParticipant.where(debate_id: self.id)
+      delete_element.where(user_id: delete_user_elements).destroy_all
     end
   end
-  #end
+      # Añadir los participantes
+  def save_component(user_elements)
+    if !user_elements.nil?
+      user_elements.each do |user_id|
+        DebateParticipant.find_or_create_by(debate_id: self.id, user_id: user_id)
+      end
+    end
+  end
+  #Fin
 
   def url
     debate_path(self)
