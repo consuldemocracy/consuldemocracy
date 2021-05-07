@@ -149,6 +149,8 @@ tr:
         title_in_two_lines: "Eşitsizliklerin Azaltılması"
         description: "Ülkelerin kendi içinde ve arasında eşitsizliği azaltmak."
         targets:
+          target_10_3:
+            title: "Ayrımcı yasaların, politikaların ve uygulamaların sona erdirilmesi ve bu bağlamda uygun mevzuat, politikalar ve eylemlerin teşvik edilmesi ile sonuç eşitsizliklerinin azaltılması ve fırsat eşitliğinin garanti altına alınması."
           target_10_4:
             title: "Özellikle mali, ücret ve sosyal koruma politikaları olmak üzere politikaların benimsenmesi ve eşitliğin giderek daha fazla sağlanması."
           target_10_5:
