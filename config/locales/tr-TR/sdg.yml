@@ -149,6 +149,8 @@ tr:
         title_in_two_lines: "Eşitsizliklerin Azaltılması"
         description: "Ülkelerin kendi içinde ve arasında eşitsizliği azaltmak."
         targets:
+          target_10_2:
+            title: "2030'a kadar, yaşa, cinsiyete, engelliliğe, ırka, etnik kökene, soya, dine veya ekonomik ya da diğer rollere bakılmaksızın herkesin sosyal, ekonomik ve politik katılımının güçlendirilmesi ve teşvik edilmesi."
           target_10_3:
             title: "Ayrımcı yasaların, politikaların ve uygulamaların sona erdirilmesi ve bu bağlamda uygun mevzuat, politikalar ve eylemlerin teşvik edilmesi ile sonuç eşitsizliklerinin azaltılması ve fırsat eşitliğinin garanti altına alınması."
           target_10_4:
