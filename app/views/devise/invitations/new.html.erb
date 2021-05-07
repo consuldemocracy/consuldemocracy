@@ -14,7 +14,7 @@
   </div>
 
   <div class="field">
-    <%= f.collection_select :geozone_id, Geozone.all, :id, :name %>
+    <%= f.collection_select :geozone_id, Geozone.all.order(id: :asc), :id, :name, selected: 0%>
   </div>
 
   <div class="actions">
