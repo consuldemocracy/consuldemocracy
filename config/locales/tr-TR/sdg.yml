@@ -139,6 +139,8 @@ tr:
         targets:
           target_7_1:
             title: "2030’a kadar, uygun fiyatlı, güvenilir ve modern enerji hizmetlerine evrensel erişimin garanti altına alınması."
+          target_7_2:
+            title: "2030’a kadar, küresel enerji kaynakları çeşitliliği içerisinde yenilenebilir enerjinin payının büyük ölçüde artırılması."
           target_7_3:
             title: "2030’a kadar küresel enerji verimliliğini iyileştirme oranının iki katına çıkarılması."
       goal_8:
