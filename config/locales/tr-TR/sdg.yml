@@ -135,7 +135,10 @@ tr:
       goal_7:
         title: "Erişilebilir ve Temiz Enerji"
         title_in_two_lines: "Erişilebilir ve Temiz Enerji"
+        description: "Uygun fiyatlı, güvenilir, sürdürülebilir ve modern enerjiye erişiminin garanti altına alınması."
         targets:
+          target_7_1:
+            title: "2030’a kadar, uygun fiyatlı, güvenilir ve modern enerji hizmetlerine evrensel erişimin garanti altına alınması."
           target_7_3:
             title: "2030’a kadar küresel enerji verimliliğini iyileştirme oranının iki katına çıkarılması."
       goal_8:
