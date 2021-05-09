@@ -136,6 +136,8 @@ tr:
             title: "2030'a kadar, uygun görüldüğü hallerde sınır ötesi işbirliği de dahil olmak üzere her düzeyde entegre su kaynakları yönetimi uygulanması."
           target_6_6:
             title: "2020'ye kadar, dağlar, ormanlar, sulak alanlar, nehirler, akiferler ve göller dahil olmak üzere su ekosistemlerinin korunması ve eski haline getirilmesi."
+          target_6_A:
+            title: "2030’a kadar, gelişmekte olan ülkelere su hasadı, tuzdan arındırma, su verimliliği, atık su arıtma, geri dönüşüm ve tekrar kullanım teknolojileri dahil olmak üzere suyla ve sıhhi koşullarla ilgili faaliyet ve programlarda kapasite geliştirme desteğinin ve uluslararası işbirliğinin genişletilmesi."
           target_6_B:
             title: "Yerel toplulukların su ve sıhhi koşullar yönetiminin geliştirilmesine katılımlarının desteklenmesi ve güçlendirilmesi."
       goal_7:
@@ -149,6 +151,8 @@ tr:
             title: "2030’a kadar, küresel enerji kaynakları çeşitliliği içerisinde yenilenebilir enerjinin payının büyük ölçüde artırılması."
           target_7_3:
             title: "2030’a kadar küresel enerji verimliliğini iyileştirme oranının iki katına çıkarılması."
+          target_7_A:
+            title: "2030’a kadar, yenilenebilir enerji, enerji verimliliği ve gelişmiş ve daha temiz fosil yakıt teknolojisi dahil olmak üzere, temiz enerji araştırma ve teknolojisine erişimi kolaylaştırmak için uluslararası işbirliğinin geliştirilmesi ve enerji altyapısı ve temiz enerji teknolojisine yatırımın teşvik edilmesi."
       goal_8:
         title: "İnsana Yakışır İş ve Ekonomik Büyüme"
         title_in_two_lines: "İnsana Yakışır İş ve Ekonomik Büyüme"
