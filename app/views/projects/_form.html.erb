@@ -21,8 +21,12 @@
   </div>
 
   <div class="field">
-    <%= form.check_box :public, class: "small", id: "click" %>
-    <%= form.collection_select :geozone_id, Geozone.all.order(id: :asc), :id, :name, selected: 0%>
+    <span onclick="toggleSelect()">
+      <%= form.check_box :public, class: "small", id: "click" %>
+    </span>
+    <div id="hidden-select" style="display: none;">
+      <%= form.collection_select :geozone_id, Geozone.all.order(id: :asc), :id, :name, selected: 0%>
+    </div>
   </div>
 
   <%# ---------- Páginas ---------- %>

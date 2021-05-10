@@ -21,3 +21,12 @@ function SearchFunction(){
       }
     }
 }
+
+function toggleSelect() {
+  var x = document.getElementById("hidden-select");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
