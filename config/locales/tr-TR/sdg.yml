@@ -259,6 +259,8 @@ tr:
         title_in_two_lines: "Sorumlu Tüketim ve Üretim"
         description: "Sürdürülebilir tüketim ve üretim modellerinin sağlanması."
         targets:
+          target_12_1:
+            title: "Gelişmiş ülkelerin öncülük etmesiyle birlikte bütün ülkeleri harekete geçmesi akabinde, gelişmekte olan ülkelerin kalkınma ve yetkinliklerini göz önünde bulundurarak sürdürülebilir tüketim ve üretim için 10 yıllık çerçeve programının uygulanması."
           target_12_2:
             title: "2030'a kadar, doğal kaynakların etkin kullanımını ve sürdürülebilir yönetimi sağlamak."
           target_12_3:
