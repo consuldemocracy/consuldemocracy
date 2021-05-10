@@ -35,6 +35,7 @@ class DebatesController < ApplicationController
 
   # Funciones para cargar los usuarios
   def actual_users
+    @debate = Debate.find_by_id(params[:id])
     @project_users = []
     @users_actuales = DebateParticipant.where(debate_id: @debate.id).order(user_id: :asc)
     @users_actuales.each do |item|
@@ -73,6 +74,19 @@ class DebatesController < ApplicationController
   def new
     @debate = Debate.new
     load_all(@current_filter)
+  end
+
+  def create
+    @debate = Debate.new(debate_params.merge(author: current_user))
+    if @debate.save!
+
+      user_elements = params[:user_ids]
+      @debate.save_component(user_elements)
+
+      redirect_to @debate, notice: 'Debate creado correctamente.'
+    else
+      render :new
+    end
   end
 
   def edit
