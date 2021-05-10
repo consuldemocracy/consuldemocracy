@@ -191,8 +191,12 @@ tr:
         title_in_two_lines: "Sanayi, Yenilikçilik ve Altyapı"
         description: "Dayanıklı altyapı inşa edilmesi, yenilikçiliğin büyütülmesi ve sürdürülebilir sanayileşmenin teşvik edilmesi."
         targets:
+          target_9_1:
+            title: "Bölgesel ve sınır ötesi altyapısı dahil olmak üzere herkes için uygun fiyatlı ve adil bir erişime odaklanarak ekonomik kalkınmanın ve birey refahının desteklenmesi için kaliteli, güvenilir, sürdürülebilir ve dayanıklı altyapının geliştirilmesi."
           target_9_A:
             title: "Afrika ülkelerine, az gelişmiş ülkelere, denize kıyısı olmayan gelişmekte olan ülkelere ve gelişmekte olan küçük ada devletlerine gelişmiş finansal, teknolojik ve teknik desteğin sağlanması aracılığıyla, gelişmekte olan ülkelerde sürdürülebilir ve dayanıklı altyapı geliştirmenin kolaylaştırılması."
+          target_9_B:
+            title: "Sanayi çeşitliliği ve sanayi ürünlerinde değer artırımının yanı sıra, elverişli bir politika ortamı sağlamak için, gelişmekte olan ülkelerde yurt içi teknoloji gelişiminin, araştırma ve yenilikçiliğin desteklenmesi."
       goal_10:
         title: "Eşitsizliklerin Azaltılması"
         title_in_two_lines: "Eşitsizliklerin Azaltılması"
