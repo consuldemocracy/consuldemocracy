@@ -23,7 +23,7 @@ class Poll < ApplicationRecord
   has_many :projects, through: :poll_on_projects
 
   has_many :poll_participants
-  has_many :polls, through: :poll_participants
+  has_many :users, through: :poll_participants
 
   attr_accessor :user_elements, :user_ids
   attr_accessor :delete_user_elements, :delete_user_ids

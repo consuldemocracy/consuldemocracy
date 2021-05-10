@@ -7,34 +7,43 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   before_action :load_search, only: [:search_booths, :search_officers]
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
-  # new
-  before_action :load_all, only: [:new]
-  before_action :load_components, only: [:edit, :update]
-  before_action :actual_users, only: [:show, :edit, :update]
-  # --
+  # Funciones y filtros para los usuarios
+  before_action :actual_users, only: [:show, :edit]
+  has_filters %w[id name], only: [:edit, :new]
 
-  def load_all
-    @users = User.all
-    @polls_users = []
+    # Funciones para cargar los usuarios
+  def actual_users
+    @project_users = []
+    @users_actuales = PollParticipant.where(poll_id: @poll.id).order(user_id: :asc)
+    @users_actuales.each do |item|
+      @project_users += User.where(id: item.user_id)
+    end
+    @project_users
   end
 
-  def load_components
+
+  def load_components(filter)
     arr_users = []
     @except_users = actual_users()
     @except_users.each do |item|
       arr_users << item.id
     end
-    @users = User.where.not(id: arr_users).order(id: :asc)
+    if filter == 'name'
+      @users = User.where.not(id: arr_users).order(username: :asc)
+    else filter == 'id'
+      @users = User.where.not(id: arr_users).order(id: :desc)
+    end
   end
 
-  def actual_users
-    @polls_users = []
-    @users_actuales = PollParticipant.where(poll_id: @poll.id).order(user_id: :asc)
-    @users_actuales.each do |item|
-      @polls_users += User.where(id: item.user_id)
+  def load_all(filter)
+    if filter == 'name'
+      @users = User.all.order(username: :asc)
+    else filter == 'id'
+      @users = User.all.order(id: :desc)
     end
-    @polls_users
+    @project_users = []
   end
+  # Fin
 
   def index
     @polls = Poll.not_budget.created_by_admin.order(starts_at: :desc)
@@ -45,6 +54,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   end
 
   def new
+    load_all(@current_filter)
   end
 
   def create
@@ -66,6 +76,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   end
 
   def edit
+    load_components(@current_filter)
   end
 
   def update
