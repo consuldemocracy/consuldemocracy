@@ -30,38 +30,35 @@ class SiteCustomization::Page < ApplicationRecord
   has_many :page_participants
   has_many :users, through: :page_participants
 
-  after_save :save_page_participants, :delete_from_participants
-  after_destroy :delete_page_participants
+  #Acceso a los usuarios
+  attr_accessor :user_elements, :user_ids
+  attr_accessor :delete_user_elements, :delete_user_ids
 
-  attr_accessor :page_users_id, :delete_users_id
+  after_destroy :delete_participants
+  #Fin
 
-  def delete_page_participants
-    PageParticipant.where(site_customization_pages_id: self).destroy_all
-  end
-
-  def delete_from_participants
-    return if delete_users_id.nil? || delete_users_id.empty?
-
-    delete_participants_array = delete_users_id.split(",")
-
-    not_participant = PageParticipant.where(site_customization_pages_id: self)
-    not_participant.where(user_id: delete_participants_array).destroy_all
-
-  end
-
-  def save_page_participants
-    #Convertir en un arreglo alu10,alu20 => [alu10,alu20]
-
-    return if page_users_id.nil? || page_users_id.empty?
-
-    participants_array = page_users_id.split(",")
-    #Iterarlo
-    participants_array.each do |id_participant|
-      #Crear ProposalParticipants
-      PageParticipant.find_or_create_by(site_customization_pages_id: self.id, user_id: id_participant, slug: self.slug)
+  #Funciones para los usuarios
+    # Eliminar todos los participantes
+    def delete_participants
+      PageParticipant.where(site_customization_pages_id: self).destroy_all
     end
-  end
-  #fin
+      # Eliminar los participantes seleccionados
+    def delete_component(delete_user_elements)
+      if !delete_user_elements.nil?
+        delete_element = PageParticipant.where(site_customization_pages_id: self.id)
+        delete_element.where(user_id: delete_user_elements).destroy_all
+      end
+    end
+
+        # Añadir los participantes
+    def save_component(user_elements)
+      if !user_elements.nil?
+        user_elements.each do |user_id|
+          PageParticipant.find_or_create_by(site_customization_pages_id: self.id, user_id: user_id)
+        end
+      end
+    end
+    #Fin
 
   def url
     "/#{slug}"

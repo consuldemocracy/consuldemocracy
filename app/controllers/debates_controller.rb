@@ -15,7 +15,7 @@ class DebatesController < ApplicationController
   has_orders ->(c) { Debate.debates_orders(c.current_user) }, only: :index
   has_orders %w[most_voted newest oldest], only: :show
 
-  load_and_authorize_resource except: [:create]
+  load_and_authorize_resource except: [:new, :create, :edit]
   skip_authorization_check
   helper_method :resource_model, :resource_name
   respond_to :html, :js
@@ -126,8 +126,8 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      attributes = [:imagen, :tag_list, :terms_of_service, :related_sdg_list]
-      params.require(:debate).permit(attributes, translation_params(Debate), delete_user_ids: [], user_ids: [])
+      attributes = [:imagen, :tag_list, :terms_of_service, :related_sdg_list, user_ids: [], delete_user_ids: []]
+      params.require(:debate).permit(attributes, translation_params(Debate))
     end
 
     def resource_model

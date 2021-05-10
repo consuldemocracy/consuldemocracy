@@ -183,7 +183,7 @@ class ProjectsController < ApplicationController
       poll_elements = params[:poll_ids]
       @project.save_component(page_elements, debate_elements, user_elements, proposal_elements, poll_elements)
 
-      redirect_to @project, notice: 'Project was successfully created.'
+      redirect_to @project, notice: 'Proyecto creado correctamente'
     else
       render :new
     end
