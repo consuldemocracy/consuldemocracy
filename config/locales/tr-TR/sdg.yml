@@ -168,6 +168,8 @@ tr:
             title: "Yüksek katma değerli ve emek yoğun sektörler üzerine odaklanıp çeşitlendirme, teknolojik gelişim ve yenilikçilik aracılığıyla daha yüksek seviyelerde ekonomik verimlilik sağlanması."
           target_8_3:
             title: "Üretim faaliyetleri, insana yakışır istihdam yaratma, girişimcilik, yaratıcılık ve yenilikçilik gibi desteklenen kalkınma odaklı politikaların teşvik edilmesi ve finansal hizmetlere erişim aracılığıyla mikro, küçük ve orta büyüklükteki işletmelerin resmiyet kazanmalarının ve büyümelerinin teşvik edilmesi."
+          target_8_4:
+            title: "2030 yılı sonuna kadar, üretim ve tüketimde küresel kaynak yeterliliğinin devamlı biçimde artırılması ve gelişmiş ülkelerin liderlik ettiği sürdürülebilir üretim ve tüketim için 10 yıllık çerçeve programına uygun olarak ekonomik büyümeyi çevrenin bozulumundan ayrıştırmak için çaba gösterilmesi."
           target_8_5:
             title: "2030’a kadar, gençler ve engelli bireyler de dahil olmak üzere bütün kadın ve erkekler için tam, üretken istihdam ve insana yakışır işlerin kazanımının sağlanması ve eşit işe eşit ücret ilkesinin gerçekleştirilmesi."
           target_8_6:
@@ -257,6 +259,8 @@ tr:
             title: "İklim değişikliği hakkında önlemlerin ulusal politika, strateji ve planlamaya entegre edilmesi."
           target_13_3:
             title: "İklim değişikliklerinin hafifletilmesi, adaptasyonu, etkilerinin azaltılması ve erken uyarı hakkında eğitimin, farkındalık yaratmanın ve insani ve kurumsal kapasitenin geliştirilmesi."
+          target_13_B:
+            title: "Kadınlara, gençlere, yerel ve ötekileştirilen topluluklara odaklanmak da dahil olmak üzere, en az gelişmiş ülkelerde ve gelişmekte olan küçük ada devletlerinde iklim değişikliği ile ilgili etkin planlama ve yönetim adına kapasiteyi artıracak mekanizmaların desteklenmesi."
       goal_14:
         title: "Sudaki Yaşam"
         title_in_two_lines: "Sudaki Yaşam"
