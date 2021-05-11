@@ -24,7 +24,7 @@ class DebatesController < ApplicationController
   before_action :is_admin?, except: [:show, :edit]
 
   before_action :actual_users, only: [:show, :edit]
-  has_filters %w[id name], only: [:edit, :new]
+  has_filters %w[id name], except: [:show, :index]
 
   def is_admin?
     if !current_user.administrator?
@@ -85,6 +85,7 @@ class DebatesController < ApplicationController
 
       redirect_to @debate, notice: 'Debate creado correctamente.'
     else
+      load_all(@current_filter)
       render :new
     end
   end
@@ -104,6 +105,7 @@ class DebatesController < ApplicationController
 
       redirect_to @debate, notice: 'Debate actualizado correctamente.'
     else
+      load_components(@current_filter)
       render :edit
     end
   end

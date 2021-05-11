@@ -4,9 +4,15 @@
     if current_administrator?
       show = true
     else
-     @project_users.each do |index|
-        if index.id == current_user.id
-          show = true
+      if @project.public
+        if @project.geozone_id == current_user.geozone_id
+          show=true
+        end
+      else
+        @project_users.each do |index|
+          if index.id == current_user.id
+            show = true
+          end
         end
       end
     end

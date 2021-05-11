@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   # before_action :load_components, only: [:edit, :update]
   before_action :actual_debates, :actual_pages, :actual_users, :actual_proposals, :actual_polls, only: [:show, :edit]
   #before_action :actual_users, :actual_proposals only: [:edit, :show]
-  has_filters %w[id name], except: [:show]
+  has_filters %w[id name], except: [:show, :index]
 
   def is_admin?
     if !current_user.administrator?

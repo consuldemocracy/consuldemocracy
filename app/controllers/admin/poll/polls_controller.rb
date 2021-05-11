@@ -9,7 +9,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
 
   # Funciones y filtros para los usuarios
   before_action :actual_users, only: [:show, :edit]
-  has_filters %w[id name], only: [:edit, :new]
+  has_filters %w[id name], except: [:show, :index]
 
     # Funciones para cargar los usuarios
   def actual_users
@@ -71,6 +71,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
         redirect_to [:admin, @poll], notice: notice
       end
     else
+      load_all(@current_filter)
       render :new
     end
   end
@@ -90,6 +91,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
 
       redirect_to [:admin, @poll], notice: t("flash.actions.update.poll")
     else
+      load_components(@current_filter)
       render :edit
     end
   end

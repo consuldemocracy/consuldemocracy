@@ -24,8 +24,14 @@
     <span onclick="toggleSelect()">
       <%= form.check_box :public, class: "small", id: "click" %>
     </span>
-    <div id="hidden-select" style="display: none;">
-      <%= form.collection_select :geozone_id, Geozone.all.order(id: :asc), :id, :name, selected: 0%>
+    <div id="hidden-select"
+      <% if project.public %>
+        style="display: block;"
+      <%else%>
+        style="display: none;"
+      <%end%>
+    >
+      <%= form.collection_select :geozone_id, Geozone.all.order(id: :asc), :id, :name %>
     </div>
   </div>
 

@@ -4,7 +4,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
 
   # Funciones y filtros para los usuarios
   before_action :actual_users, only: [:show, :edit]
-  has_filters %w[id name], only: [:edit, :new]
+  has_filters %w[id name], except: [:show, :index]
 
     # Funciones para cargar los usuarios
   def actual_users
@@ -62,6 +62,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
       redirect_to admin_site_customization_pages_path, notice: notice
     else
       flash.now[:error] = t("admin.site_customization.pages.create.error")
+      load_all(@current_filter)
       render :new
     end
   end
@@ -79,6 +80,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
       redirect_to admin_site_customization_pages_path, notice: notice
     else
       flash.now[:error] = t("admin.site_customization.pages.update.error")
+      load_components(@current_filter)
       render :edit
     end
   end
