@@ -3,26 +3,43 @@
     if current_administrator?
       show=true
     else
-      @users_index = PollParticipant.where(poll_id: @poll.id)
-      @users_index.each do |index|
-        if index.user_id == current_user.id
-          show=true
+
+      @projects = PollOnProject.where(poll_id: @poll.id)
+      @projects.each do |item|
+        @project_unique = Project.where(id: item.project_id)
+        @project_unique.each do |item_two|
+          if item_two.public
+            if item_two.geozone_id == current_user.geozone_id
+              show=true
+            end
+          end
         end
       end
 
-      arr_users = []
-      @user_on_poll = PollOnProject.where(poll_id: @poll.id)
-      @user_on_poll.each do |index|
-        arr_users << UserOnProject.where(project_id: index.project_id)
-      end
-
-      arr_users.each do |index|
-        index.each do |item|
-          if item.user_id == current_user.id
+      if show!=true
+        @users_index = PollParticipant.where(poll_id: @poll.id)
+        @users_index.each do |index|
+          if index.user_id == current_user.id
             show=true
           end
         end
       end
+
+      if show!=true
+        arr_users = []
+        # Aquí se reusa para no acceder dos veces a la tabla PollOnProject. Comprobar fallos
+        @projects.each do |index|
+          arr_users << UserOnProject.where(project_id: index.project_id)
+        end
+        arr_users.each do |index|
+          index.each do |item|
+            if item.user_id == current_user.id
+              show=true
+            end
+          end
+        end
+      end
+
     end
   end
 %>

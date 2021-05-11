@@ -3,23 +3,39 @@ if user_signed_in?
   if current_administrator? || current_user.id == @debate.author_id
     show=true
   else
-    @users_index = DebateParticipant.where(debate_id: @debate.id)
-    @users_index.each do |index|
-      if index.user_id == current_user.id
-        show=true
+
+    @projects = DebateOnProject.where(debate_id: @debate.id)
+    @projects.each do |item|
+      @project_unique = Project.where(id: item.project_id)
+      @project_unique.each do |item_two|
+        if item_two.public
+          if item_two.geozone_id == current_user.geozone_id
+            show=true
+          end
+        end
       end
     end
 
-    arr_users = []
-    @user_on_debate = DebateOnProject.where(debate_id: @debate.id)
-    @user_on_debate.each do |index|
-      arr_users << UserOnProject.where(project_id: index.project_id)
+    if show!=true
+      @users_index = DebateParticipant.where(debate_id: @debate.id)
+      @users_index.each do |index|
+        if index.user_id == current_user.id
+          show=true
+        end
+      end
     end
 
-    arr_users.each do |index|
-      index.each do |item|
-        if item.user_id == current_user.id
-          show = true
+    if show!=true
+      arr_users = []
+      @user_on_debate = DebateOnProject.where(debate_id: @debate.id)
+      @user_on_debate.each do |index|
+        arr_users << UserOnProject.where(project_id: index.project_id)
+      end
+      arr_users.each do |index|
+        index.each do |item|
+          if item.user_id == current_user.id
+            show = true
+          end
         end
       end
     end
