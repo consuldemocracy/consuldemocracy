@@ -1,0 +1,18 @@
+<% if @projects %>
+  <table class="margin-top">
+    <thead>
+      <tr>
+        <th scope="col">Proyectos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr id="project_<%= project.id %>">
+          <td>
+            <%= link_to project.title, project %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

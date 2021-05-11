@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  has_filters %w[proposals participants participants_d participants_p projects debates budget_investments comments follows], only: :show
+  has_filters %w[proposals participants participants_d participants_p projects projects_geozone debates budget_investments comments follows], only: :show
 
   #load_and_authorize_resource
   load_and_authorize_resource except: [:change,:update]
@@ -40,6 +40,7 @@ class UsersController < ApplicationController
                           participants_d: DebateParticipant.where(user_id: @user.id).count,
                           participants_p: PageParticipant.where(user_id: @user.id).count,
                           projects: UserOnProject.where(user_id: @user.id).count,
+                          projects_geozone: Project.where(geozone_id: @user.geozone_id).count,
                           debates: (Setting["process.debates"] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting["process.budgets"] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count,
@@ -54,6 +55,7 @@ class UsersController < ApplicationController
       when "participants_d" then load_participants_d
       when "participants_p" then load_participants_p
       when "projects" then load_projects
+      when "projects_geozone" then load_projects_geozone
       when "debates" then load_debates
       when "budget_investments" then load_budget_investments
       when "comments" then load_comments
@@ -69,6 +71,9 @@ class UsersController < ApplicationController
       elsif @activity_counts[:projects] > 0
         load_projects
         @current_filter = "projects"
+      elsif @activity_counts[:projects_geozone] > 0
+        load_projects_geozone
+        @current_filter = "projects_geozone"
       elsif @activity_counts[:participants] > 0
         load_participants
         @current_filter = "participants"
@@ -102,6 +107,10 @@ class UsersController < ApplicationController
       puts "proyectos cargados"
       puts @participants_project.count
       @participants_project
+    end
+
+    def load_projects_geozone
+      @projects = Project.where(geozone_id: @user.geozone_id)
     end
 
     def load_proposals

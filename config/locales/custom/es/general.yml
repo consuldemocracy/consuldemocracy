@@ -858,6 +858,9 @@ es:
         projects:
           one: 1 Participación a Proyecto
           other: "%{count} Participaciones a Proyectos"
+        projects_geozone:
+          one: 1 Proyecto público
+          other: "%{count} Proyectos públicos"
         budget_investments:
           one: 1 Proyecto de presupuestos participativos
           other: "%{count} Proyectos de presupuestos participativos"
