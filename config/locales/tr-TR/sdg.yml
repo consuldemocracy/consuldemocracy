@@ -366,6 +366,7 @@ tr:
         title: "Barış, Adalet ve Güçlü Kurumlar"
         title_in_two_lines: "Barış, Adalet ve Güçlü Kurumlar"
         description: "Adil, barışçıl ve kapsayıcı toplumları destekleyin."
+        long_description: '<p>Çatışma, güvensizlik, zayıf kurumlar ve adalete sınırlı erişim sürdürülebilir kalkınma için büyük bir tehdit oluşturmaktadır.&nbsp;</p> <p>2018 yılında <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">savaştan, zulümden ve çatışmalardan kaçan insanların sayısı 70 milyon sınırını aşarak</a> BM Mülteci Kurumu(BMMYK) tarafından neredeyse 70 yıldır kaydedilen en yüksek sayı olmuştur.&nbsp;</p> <p>2019 yılında Birleşmiş Milletler, 47 ülkede <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 öldürülen ve 30 zorla ortadan kaybolan</a> insan hakları savunucusu, gazeteci ve sendikacıların izini sürmektedir.</p> <p>Ve dünya çapında 5 yaş altında yaklaşık <a href="https://data.unicef.org/topic/child-protection/birth-registration/">dört çocuktan birinin</a> doğumu resmi olarak hiçbir zaman kayıt altına alınmaz, bu durum onları, haklarının korunması ve adalet ve sosyal hizmetlere erişim için çok önemli olan yasal kimlik belgesinden mahrum etmektedir.</p>'
         targets:
           target_16_1:
             title: "Şiddetin tüm biçimlerinin ve şiddete bağlı ölüm oranlarının her yerde büyük ölçüde azaltılması."
