@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   # before_action :load_components, only: [:edit, :update]
   before_action :actual_debates, :actual_pages, :actual_users, :actual_proposals, :actual_polls, only: [:show, :edit]
   #before_action :actual_users, :actual_proposals only: [:edit, :show]
-  has_filters %w[id name], only: [:edit, :new]
+  has_filters %w[id name], except: [:show]
 
   def is_admin?
     if !current_user.administrator?
@@ -185,6 +185,7 @@ class ProjectsController < ApplicationController
 
       redirect_to @project, notice: 'Proyecto creado correctamente'
     else
+      load_all(@current_filter)
       render :new
     end
   end
@@ -209,6 +210,7 @@ class ProjectsController < ApplicationController
 
       redirect_to @project, notice: 'Project was successfully updated.'
     else
+      load_components(@current_filter)
       render :edit
     end
   end

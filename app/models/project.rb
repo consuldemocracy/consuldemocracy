@@ -2,6 +2,8 @@ class Project < ApplicationRecord
 
     include PgSearch::Model
 
+    validates :title, presence: true
+
     # Configuración para la imagen
     has_attached_file :imagen
     validates_attachment :imagen,

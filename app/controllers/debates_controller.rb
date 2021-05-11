@@ -78,7 +78,7 @@ class DebatesController < ApplicationController
 
   def create
     @debate = Debate.new(debate_params.merge(author: current_user))
-    if @debate.save!
+    if @debate.save
 
       user_elements = params[:user_ids]
       @debate.save_component(user_elements)
