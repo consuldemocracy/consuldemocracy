@@ -84,6 +84,7 @@ tr:
         table_duration: "Süreç"
         table_name: Ad
         table_phase: Aşama
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Başlıklar gruplarını düzenle
         edit_budget: Bütçe düzenleme
         admin_ballots: Yönetici oyları
@@ -92,8 +93,12 @@ tr:
         notice: Yeni katılımcı bütçe başarıyla oluşturuldu!
       update:
         notice: Katılımcı bütçe başarıyla güncellendi
+      publish:
+        notice: "Katılımcı bütçe başarıyla yayınlandı"
       edit:
         title: Katılımcı bütçeyi düzenle
+        drafting: "Katılımcı bütçe taslak halindedir, bunu sitede yalnızca yöneticiler görebilir.\nYayınlandıktan sonra tekrar taslak olarak değiştirilemez."
+        publish: "Bütçeyi yayınla"
         delete: Bütçeyi sil
         phase: Aşama
         phases_caption: "Aşamalar"
@@ -146,7 +151,7 @@ tr:
       form:
         create: "Yeni grup oluştur"
         edit: "Grup düzenle"
-        max_votable_headings_info: "Sadece proje secim aşama döneminde geçerli. Proje secim aşamasında kullanıcılar grup başı sadece bir bölümden secebilirler."
+        max_votable_headings_info: "Sadece proje seçim aşaması döneminde geçerlidir. Proje seçim aşamasında kullanıcılar grup başı sadece bir başlıktan seçim yapabilirler."
         submit: "Grubu kaydet"
       index:
         back: "Bütçelere geri dön"
@@ -164,6 +169,7 @@ tr:
         success_notice: "Başlık başarıyla silindi"
         unable_notice: "Yatırımlarla ilişkili olan bir Başlığı yok edemezsiniz"
       form:
+        max_ballot_lines_info: 'Bir kullanıcının "Proje Oylama" aşamasında bu başlık için oylayabileceği maksimum proje sayısı. Yalnızca onay oylaması yapılan bütçeler için.'
         population_info: "Bütçe Başlığı nüfus alanı, Bütçe sonunda, nüfusun yüzde kaçının oy kullandığı bir alanı temsil eden her Başlık için gösterilmek üzere İstatistiksel amaçlar için kullanıldı. Alan isteğe bağlıdır, eğer kullanılmazsa boş bırakabilirsiniz."
         coordinates_info: "Eğer enlem ve boylam sağlanmışsa, bu başlık için yatırımlar sayfası bir harita içerecektir. Bu harita bu koordinatlar kullanılarak ortalanacaktır."
         content_blocks_info: "Eğer içerik bloğuna izin ver seçeneği işaretliyse, bu başlıkla ilgili özel içeriği Ayarlar > Özel içerik blokları bölümünden oluşturabilirsiniz."
@@ -204,11 +210,14 @@ tr:
           min_total_supports: Minimum destek
           max_total_supports: Minimum destek
           winners: Kazananlar
+          one_filter: "Uygulanan mevcut filtreler: <b><em>%{filter}</em></b>"
+          two_filters: "Uygulanan mevcut filtreler: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtre
         download_current_selection: "Mevcut seçimi indir"
         no_budget_investments: "Hiç yatırım projesi yok."
         title: Yatırım projeleri
+        columns: Sütunlar
         assigned_admin: Atanmış yönetici
         no_admin_assigned: Hiç yönetici atanmamış
         no_valuators_assigned: Hiç bilirkişi atanmamış
@@ -564,7 +573,9 @@ tr:
           back: Geri
           submit_button: Değişiklikleri kaydet
           warning: Metni düzenlediniz, değişiklikleri kalıcı olarak kaydetmek için Kaydet'e tıklamayı unutmayın.
+          markdown_changes_message: "Yaptığınız değişiklikleri kaydetmediniz. Sayfadan ayrılmak istediğinize emin misiniz?"
         form:
+          title: 'Düzenleniyor <span class="strong">%{draft_version_title}</span> işleminden <span class="strong">%{process_title}</span>'
           launch_text_editor: Metin düzenleyicisini başlatın
           close_text_editor: Metin düzenleyiciyi kapatın
           use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
@@ -759,6 +770,7 @@ tr:
         empty_newsletters: Hiç gösterilecek bülten yok
       new:
         title: Yeni bülten
+        header_footer_help_text: "Tüm e-postalar için başlık ve alt bilgi aynıdır, <code>uygulama/görünümler/düzenlemeler/postacı_üstbilgi</code> ve <code>uygulama/görünümler/düzenlemeler/postacı_altbilgi</code> üzerinde düzenleyebilirsiniz.<br> Başlık resmini %{link} aracılığıyla değiştirebilirsiniz."
         image_link: "özel görüntüler"
       edit:
         title: Bülteni düzenle
@@ -1174,6 +1186,9 @@ tr:
           pending: Beklemede
           rejected: Reddedildi
           verified: Doğrulandı
+        hidden_count:
+          one: Ayrıca gizli kullanıcısı olan ya da hiç kullanıcısı bulunmayan <strong>bir organizasyon</strong> vardır.
+          other: Gizli kullanıcısı olan veya hiç kullanıcısı bulunmayan <strong>%{count} organizasyon</strong> vardır.
         name: İsim
         email: E-posta
         phone_number: Telefon
@@ -1247,6 +1262,12 @@ tr:
           how_to_enable: 'Haritayı kullanıcılara göstermek için "Özellikler" sekmesinde "Öneriler ve bütçe yatırımları coğrafi konum belirleme" özelliğini etkinleştirmeniz gerekir.'
         dashboard:
           title: Öneriler gösterge tablosu
+        remote_census:
+          title: Uzaktan nüfus sayımı yapılandırması
+          how_to_enable: 'Uzaktan sayımı(SOAP) yapılandırmak için "Özellikler" sekmesinden "Uzaktan sayıma(SOAP) bağlantıyı yapılandır" seçeneğini etkinleştirmelisiniz.'
+        sdg:
+          title: SKH yapılandırması
+          how_to_enable: 'SKH ile ilgili yapılandırma seçeneklerini görüntülemek için, "Özellikler" sekmesinden "SKH" özelliğini etkinleştirmelisiniz.'
       remote_census_general_name: Genel Bilgi
       remote_census_request_name: Veri Talebi
       remote_census_response_name: Yanıt Verisi
@@ -1427,9 +1448,11 @@ tr:
         budget_investments:
           amount: "Onaylanan miktar"
           winners: "Kazanan yatırım projeleri"
+          sent: "Yatırım projeleri gönderildi"
         debates: "Tartışmalar"
         polls: "Anketler"
         proposals: "Teklifler"
+        title: "Sürdürülebilir Kalkınma Hedefleri - İstatistikler"
     tags:
       create: Konu oluştur
       destroy: Konuyu yok etmek
@@ -1523,6 +1546,7 @@ tr:
           see_page: Sayfayı göster
         new:
           title: Yeni kişisel sayfa oluştur
+          slug_help: "URL'de bu sayfayı tanımlayan metin, örneğin <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Oluşturuldu
           status: Durum
@@ -1565,14 +1589,47 @@ tr:
         card_title: Kart düzenle
         submit_card: Kart kaydet
     audits:
+      title: "Değişiklik Kayıtları"
       changes: "Değişiklikler listesi"
       id: "Kimlik"
+      field: "Saha"
+      new_value: "Yeni Değer"
+      old_value: "Eski Değer"
+      edited_at: "Güncellenme tarihi"
+      edited_by: "Güncelleyen"
+      actions: "Faaliyetler"
+      empty: "Kaydedilen bir değişiklik yok"
     local_census_records:
       index:
+        title: Yerel vatandaş listesini yönet
+        create: Yeni yerel vatandaş listesi kaydı oluştur
+        no_local_census_records: Yerel vatandaş listesinde kayıt yok.
         document_type: Belge türü
         document_number: Belge numarası
         date_of_birth: Doğum tarihi
         postal_code: Posta kodu
+        import: CSV'yi içeri aktar
+      new:
+        creating: Yeni yerel vatandaş listesi kaydı oluşturuluyor
+      create:
+        notice: Yeni yerel vatandaş listesi kaydı, başarıyla oluşturuldu!
+      edit:
+        editing: Yeni yerel vatandaş listesi kaydı güncelleniyor
+      update:
+        notice: Yeni yerel vatandaş listesi kaydı, başarıyla güncellendi!
+      destroy:
+        notice: Yerel vatandaş listesi kaydı, başarıyla silindi!
       imports:
+        new:
+          title: Yerel vatandaş listesi kayıtları
+          subtitle: CSV dosyasını içeri aktar
+        create:
+          notice: Yerel vatandaş listesi kayıtlarının içe aktarımı başarıyla tamamlandı!
+        show:
+          title: Yerel vatandaş listesini yönet
+          subtitle: Süreç sonuçlarını içe aktar
+          import: Tekrar içe aktar
+          errored: Hatalı satırlar
+          created: Oluşturulan kayıtlar
         local_census_records:
           no_records_found: Kayıt bulunamadı.
