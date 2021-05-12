@@ -177,6 +177,7 @@ tr:
         feasibility_undecided: "Tanımsız"
         feasibility_unfeasible: "Yapılamaz"
         incompatible: "Uyumsuz olarak işaretle"
+        milestone_tag_list: "Aşama etiketleri"
         price_explanation: "Fiyat açıklaması"
         selected: "Seçilmiş olarak işaretle"
         selected_true: "Seçilmiş"
@@ -216,8 +217,8 @@ tr:
         name: "Grup ismi"
       budget/heading:
         allow_custom_content: "İçerik engellemeye izin ver"
-        latitude: "Enlem(opsiyonel)"
-        longitude: "Boylam(opsiyonel)"
+        latitude: "Enlem(isteğe bağlı)"
+        longitude: "Boylam(isteğe bağlı)"
         name: "Başlık adı"
         price: "Fiyat"
         population: "Nüfus"
@@ -555,6 +556,10 @@ tr:
               invalid_date_range: taslak başlangıç tarihinde veya sonrasında olmalıdır
             allegations_end_date:
               invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalıdır
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: listede yer almamaktadır, izin verilen değerler Kimlik Kartı için 1, pasaport için 2 ve ikamet belgesi için 3'tür.
         proposal:
           attributes:
             tag_list:
@@ -589,6 +594,10 @@ tr:
           attributes:
             locale:
               already_translated: Tercüme edilmiş kaynak
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "hedefi bir nokta ile devam edip numara ile bittiğinden aynı kod ile başlamalı"
       messages:
         translations_too_short: En az bir çeviri sağlamak zorunludur
         record_invalid: "Onaylama başarısız: %{errors}"
