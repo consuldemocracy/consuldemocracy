@@ -13,7 +13,9 @@
             <%= text_field_tag :subject, nil, placeholder: "Asunto" %> <br/>
             <%= label_tag :content, "Mensaje" %>
             <%= text_area_tag :content , nil, size: "25x10", placeholder: "Escriba su mensaje..." %><br/>
-            <%= check_box_tag 'terms_of_service' %> <span> He leído y acepto las condiciones de uso </span>
+            <%= check_box_tag 'terms_of_service' %> <span> He leído y acepto las <%= link_to(t("devise_views.users.registrations.new.terms_link"), page_path("conditions"),
+                                title: t("shared.target_blank"),
+                                target: "_blank")%> </span>
             <%= submit_tag "Enviar", class: "float-center success button" %>
       <% end %>
       <br/>
