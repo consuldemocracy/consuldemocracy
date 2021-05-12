@@ -1,15 +1,45 @@
-<h1>Contacto</h1>
-<br/>
-<%= form_tag send_path,method: :post do %>
-      <%= label_tag :name,"Nombre" %><br/>
-      <%= text_field_tag :name %> <br/>
-      <%= label_tag :email, "Email" %> <br/>
-      <%= text_field_tag :email %> <br/>
-      <%= label_tag :subject, "Asunto" %> <br/>
-      <%= text_field_tag :subject %> <br/>
-      <%= label_tag :content, "Mensaje" %><br/>
-      <%= text_area_tag :content , nil, size: "25x10" %><br/>
-      <%= submit_tag "Enviar", class: "float-center success button" %>
-<% end %>
-<br/>
+<div class="row">
+      <h1>Contacto</h1>
+      <br/>
+      <h2>Formulario de Contacto</h2>
+      <p>Rellena el presente formulario en su totalidad y con la máxima brevedad nos pondremos en contacto contigo para resolver tus dudas y consultas.</p>
+      <br/>
+      <%= form_tag send_path,method: :post do %>
+            <%= label_tag :name,"Nombre y apellidos" %>
+            <%= text_field_tag :name, nil, placeholder: "Nombre y apellidos" %> <br/>
+            <%= label_tag :email, "Email" %>
+            <%= text_field_tag :email, nil, placeholder: "Correo electrónico" %> <br/>
+            <%= label_tag :subject, "Asunto" %>
+            <%= text_field_tag :subject, nil, placeholder: "Asunto" %> <br/>
+            <%= label_tag :content, "Mensaje" %>
+            <%= text_area_tag :content , nil, size: "25x10", placeholder: "Escriba su mensaje..." %><br/>
+            <%= check_box_tag 'terms_of_service' %> <span> He leído y acepto las condiciones de uso </span>
+            <%= submit_tag "Enviar", class: "float-center success button" %>
+      <% end %>
+      <br/>
+</div>
+<div class="row">
+      <h2 style="margin-top: 5%; margin-bottom: 3%; color: #585858">Información de protección de datos personales</h2>
+      <ul>
+        <li style="color: #585858">
+          <span class="negrita">RESPONSABLE DE TRATAMIENTO:</span> El responsable del tratamiento de sus datos es Innovaris S.L con C.I.F B-38820452 con dirección en la calle Villalba Hervás Nº2 Planta 2º Puerta D, Código Postal 38002 y correo electrónico a este efecto en la dirección innaudit@grupoinnovaris.com
+        </li>
+        <li style="color: #585858">
+          <span class="negrita">FINALIDAD DEL TRATAMIENTO:</span> Innovaris S.L trata sus datos personales, con la finalidad de prestarle información comercial, publicidad y para el establecimiento del mantenimiento de la relación pre-contractual y contractual. Todos los datos tratados son necesarios para la correcta prestación y acceso a los servicios de Innovaris S.L y se conservarán durante el tiempo que exija en cada momento la normativa, y al menos durante cinco años.
+        </li>
+        <li style="color: #585858">
+          <span class="negrita">LEGITIMACIÓN DEL TRATAMIENTO:</span> La legitimación para el tratamiento de sus datos por parte de Innovaris S.L se basa en la ejecución de un precontrato/contrato, para remitirle la información y prestarle el servicio solicitado, no siendo posible su realización en caso contrario.
+        </li>
+        <li style="color: #585858">
+          <span class="negrita">DESTINATARIOS DE SUS DATOS:</span> No se cederán datos a terceros salvo obligación legal o en el supuesto que sea necesario para atender su solicitud o para la correcta prestación del servicio.
+        </li>
+        <li style="color: #585858">
+          <span class="negrita">DERECHOS SOBRE SUS DATOS:</span> Puede ejercitar sus derechos de acceso, rectificación, supresión, portabilidad, limitación y oposición en la dirección postal arriba especificada o en la dirección de correo innaudit@grupoinnovaris.com, adjuntando fotocopia del DNI y actuación solicitada. En caso de considerar vulnerado su derecho a la protección de datos personales, podrá interponer una reclamación ante la Agencia Española de Protección de Datos (www.agpd.es).
+        </li>
+        <li style="color: #585858">
+          <span class="negrita">PROCEDENCIA:</span> Sus datos los obtenemos cuando usted nos los facilita a través de correo electrónico o a través de cualquiera de los formularios que ponemos a su disposición.
+        </li>
+      </ul>
+</div>
+
 
