@@ -33,6 +33,9 @@ class WelcomeController < ApplicationController
   def faq_page
   end
 
+  def info
+  end
+
   def verification
     redirect_to verification_path if signed_in?
   end

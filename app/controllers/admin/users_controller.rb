@@ -1,10 +1,10 @@
 class Admin::UsersController < Admin::BaseController
   load_and_authorize_resource
 
-  has_filters %w[active erased only_hidden projects], only: :index
+  has_filters %w[active erased only_hidden proyectos], only: :index
 
   def index
-    if @current_filter == 'projects'
+    if @current_filter == 'proyectos'
       @projects = Project.all
     else
       @users = @users.send(@current_filter)
