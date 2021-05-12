@@ -2,3 +2,5 @@ es:
   custom:
     imagen:
       title: No seleccione imágenes mayores a 1 Mb
+    add_user:
+      title: Invitar usuario
