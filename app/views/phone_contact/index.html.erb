@@ -3,13 +3,13 @@
 <br/>
 <% my_time = Time.now %>
 <%= form_tag contact_path,method: :post do %>
-      <%= label_tag :name,"Nombre" %><br/>
-      <%= text_field_tag :name %> <br/>
-      <%= label_tag :phone, "Teléfono" %> <br/>
-      <%= number_field_tag :phone %> <br/>
-      <%= label_tag :country, "País" %><br/>
+      <%= label_tag :name,"Nombre" %>
+      <%= text_field_tag :name, nil, placeholder: 'Nombre y apellidos' %> <br/>
+      <%= label_tag :phone, "Teléfono" %>
+      <%= number_field_tag :phone, nil, placeholder: 'Número de teléfono' %> <br/>
+      <%= label_tag :country, "País" %>
       <%= country_select("contact_mailer", "country", selected: "ES") %> <br/><br/>
-      <%= label_tag "Preferencia horaria (Hora de Londres, Reino Unido)" %> <br/>
+      <%= label_tag "Preferencia horaria (Hora de Londres, Reino Unido)" %>
       <%= select_time(my_time, start_hour: 8, end_hour: 16) %> <br/>
       <%= submit_tag "Enviar", class: "float-center success button" %>
 <% end %>

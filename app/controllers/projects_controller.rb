@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   # before_action :load_components, only: [:edit, :update]
   before_action :actual_debates, :actual_pages, :actual_users, :actual_proposals, :actual_polls, only: [:show, :edit]
   #before_action :actual_users, :actual_proposals only: [:edit, :show]
-  has_filters %w[id name], except: [:show, :index]
+  has_filters %w[id nombre], except: [:show, :index]
 
   def is_admin?
     if !current_user.administrator?
@@ -68,7 +68,7 @@ class ProjectsController < ApplicationController
   def load_all(filter)
     @pages = SiteCustomization::Page.all
     @debates = Debate.all
-    if filter == 'name'
+    if filter == 'nombre'
       @users = User.all.order(username: :asc)
     else filter == 'id'
       @users = User.all.order(id: :desc)
@@ -114,7 +114,7 @@ class ProjectsController < ApplicationController
     @except_users.each do |item|
       arr_users << item.id
     end
-    if filter == 'name'
+    if filter == 'nombre'
       @users = User.where.not(id: arr_users).order(username: :asc)
     else filter == 'id'
       @users = User.where.not(id: arr_users).order(id: :desc)

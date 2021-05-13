@@ -7,7 +7,8 @@ class SendController < ApplicationController
 
   def create
     if params[:terms_of_service]!="1"
-      render :index, notice: 'Debe aceptar las condiciones'
+      flash[:alert]= "Acepte las condiciones"
+      render :index
     else
       @params=params
       ContactMailer.contact_send(params).deliver

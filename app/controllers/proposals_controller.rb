@@ -14,7 +14,7 @@ class ProposalsController < ApplicationController
 
   # Funciones y filtros para los usuarios
   before_action :actual_users, only: [:show, :edit]
-  has_filters %w[id name], except: [:show, :index]
+  has_filters %w[id nombre], except: [:show, :index]
 
   before_action :authenticate_user!
   before_action :is_admin?, except: [:show, :edit]
@@ -56,7 +56,7 @@ class ProposalsController < ApplicationController
     @except_users.each do |item|
       arr_users << item.id
     end
-    if filter == 'name'
+    if filter == 'nombre'
       @users = User.where.not(id: arr_users).order(username: :asc)
     else filter == 'id'
       @users = User.where.not(id: arr_users).order(id: :desc)
@@ -64,7 +64,7 @@ class ProposalsController < ApplicationController
   end
 
   def load_all(filter)
-    if filter == 'name'
+    if filter == 'nombre'
       @users = User.all.order(username: :asc)
     else filter == 'id'
       @users = User.all.order(id: :desc)

@@ -9,7 +9,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
 
   # Funciones y filtros para los usuarios
   before_action :actual_users, only: [:show, :edit]
-  has_filters %w[id name], except: [:show, :index]
+  has_filters %w[id nombre], except: [:show, :index]
 
     # Funciones para cargar los usuarios
   def actual_users
@@ -28,7 +28,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     @except_users.each do |item|
       arr_users << item.id
     end
-    if filter == 'name'
+    if filter == 'nombre'
       @users = User.where.not(id: arr_users).order(username: :asc)
     else filter == 'id'
       @users = User.where.not(id: arr_users).order(id: :desc)
@@ -36,7 +36,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   end
 
   def load_all(filter)
-    if filter == 'name'
+    if filter == 'nombre'
       @users = User.all.order(username: :asc)
     else filter == 'id'
       @users = User.all.order(id: :desc)
