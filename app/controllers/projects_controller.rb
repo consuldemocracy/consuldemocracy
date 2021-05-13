@@ -208,7 +208,7 @@ class ProjectsController < ApplicationController
       delete_poll_elements = params[:delete_poll_ids]
       @project.delete_component(delete_page_elements, delete_debate_elements, delete_user_elements, delete_proposal_elements, delete_poll_elements)
 
-      redirect_to @project, notice: 'Project was successfully updated.'
+      redirect_to @project, notice: 'Proyecto actualizado correctamente.'
     else
       load_components(@current_filter)
       render :edit
@@ -219,7 +219,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy_component
     @project.destroy
-    redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    redirect_to projects_url, notice: 'Proyecto eliminado correctamente'
   end
 
   private
