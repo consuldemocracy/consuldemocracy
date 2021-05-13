@@ -40,7 +40,7 @@ class UsersController < ApplicationController
                           participants_d: DebateParticipant.where(user_id: @user.id).count,
                           participants_p: PageParticipant.where(user_id: @user.id).count,
                           projects: UserOnProject.where(user_id: @user.id).count,
-                          projects_geozone: Project.where(geozone_id: @user.geozone_id).count,
+                          projects_geozone: Project.where(["geozone_id = ? and public = ?", @user.geozone_id, "t"]).count,
                           debates: (Setting["process.debates"] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting["process.budgets"] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count,
@@ -104,13 +104,11 @@ class UsersController < ApplicationController
       @project_participants.each do |index|
         @participants_project += Project.where(id: index.project_id)
       end
-      puts "proyectos cargados"
-      puts @participants_project.count
       @participants_project
     end
 
     def load_projects_geozone
-      @projects = Project.where(geozone_id: @user.geozone_id)
+      @projects = Project.where(["geozone_id = ? and public = ?", @user.geozone_id, "t"])
     end
 
     def load_proposals
