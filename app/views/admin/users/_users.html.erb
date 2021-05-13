@@ -65,7 +65,7 @@
                   <% if user.geozone_id != nil %>
                     <% geozone = Geozone.find(user.geozone_id) %><%= geozone.name %></td>
                   <% else %>
-                    <%= "Sin asignar" %>
+                    <%= "Sin asignar" %></td>
                   <% end %>
                 <td><%= display_user_roles(user) %></td>
                 <td><%= user.user_type %></td>

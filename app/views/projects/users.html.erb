@@ -4,7 +4,7 @@
         <tr>
           <th scope="col"><%= t("admin.users.columns.name") %></th>
           <th scope="col"><%= t("admin.users.columns.email") %></th>
-          <th scope="col"><%= t("admin.users.columns.document_number") %></th>
+          <th scope="col"><%= t("admin.users.columns.geozone_id") %></th>
           <th scope="col"><%= t("admin.users.columns.roles") %></th>
           <th scope="col"><%= t("admin.users.columns.verification_level") %></th>
           <th scope="col"><%= t("admin.shared.actions") %></th>
@@ -13,10 +13,14 @@
       <tbody>
         <% @projectUsers.each do |user| %>
           <tr>
-              <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
+              <td><%= user.name %></td>
               <td><%= user.email %></td>
-              <td><%= user.document_number %></td>
-              <td><%= display_user_roles(user) %></td>
+              <td>
+                <% if user.geozone_id != nil %>
+                  <% geozone = Geozone.find(user.geozone_id) %><%= geozone.name %></td>
+                <% else %>
+                  <%= "Sin asignar" %></td>
+                <% end %>              <td><%= display_user_roles(user) %></td>
               <td><%= user.user_type %></td>
               <td>
                 <%= link_to '', edit_user_path(user), target: "_blank", class: "edit-link" %>
