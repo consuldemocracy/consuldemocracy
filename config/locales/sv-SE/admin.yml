@@ -570,6 +570,7 @@ sv:
           back: Tillbaka
           submit_button: Spara ändringar
           warning: Du har redigerat texten, glöm inte att klicka på Spara för att spara dina ändringar.
+          markdown_changes_message: "Du har redigerat texten utan att spara den. Är du säker på att du vill lämna sidan?"
         form:
           title: 'Redigerar <span class="strong">%{draft_version_title}</span> från processen <span class="strong">%{process_title}</span>'
           launch_text_editor: Öppna textredigerare
