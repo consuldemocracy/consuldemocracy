@@ -658,7 +658,7 @@ code {
 .admin-content .select-heading {
 
   a {
-    color: $text;
+    color: inherit;
     display: block;
 
     &.is-active {

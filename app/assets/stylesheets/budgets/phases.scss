@@ -75,13 +75,13 @@
 
     a {
       background: $white;
-      color: $black;
+      color: inherit;
       height: 100%;
       padding: $line-height $line-height * 1.5;
 
       &:hover {
         background: #e6e6e6;
-        color: $black;
+        color: inherit;
       }
 
       &:focus {

@@ -218,7 +218,7 @@ a {
     }
 
     a {
-      color: $text;
+      color: inherit;
       display: inline-block;
       font-weight: bold;
       position: relative;
@@ -237,10 +237,6 @@ a {
       @include brand-text;
       border-bottom: 2px solid $brand;
       padding-bottom: rem-calc(1);
-
-      h2 a {
-        @include brand-text;
-      }
     }
 
     &:not(.is-active) {
@@ -658,7 +654,7 @@ body > header,
   padding-right: $line-height / 2;
 
   a {
-    color: #fff;
+    color: inherit;
     margin: 0 rem-calc(6);
 
     &:hover {
@@ -691,6 +687,7 @@ body > header,
 
   @include breakpoint(medium) {
     background: #fff;
+    color: $text;
     padding-bottom: 0;
   }
 
@@ -707,7 +704,7 @@ body > header,
   }
 
   a {
-    color: #fff;
+    color: inherit;
     display: inline-block;
     line-height: $line-height * 2;
     position: relative;
@@ -715,7 +712,6 @@ body > header,
     width: 100%;
 
     @include breakpoint(medium) {
-      color: $text;
       display: block;
       font-weight: bold;
       width: auto;
@@ -822,6 +818,9 @@ body > header,
 // ----------
 
 footer {
+  .logo {
+    color: inherit;
+  }
 
   .logo a {
     font-family: "Lato" !important;
@@ -843,7 +842,7 @@ footer {
   a,
   a:active,
   a:focus {
-    color: $text;
+    color: inherit;
     text-decoration: underline;
 
     &:hover {
@@ -927,6 +926,7 @@ footer {
   background: $brand image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  color: $white;
 
   @include breakpoint(medium) {
     min-height: $line-height * 42;
@@ -936,7 +936,7 @@ footer {
     margin-top: $line-height;
 
     a {
-      color: #fff;
+      color: inherit;
       display: block;
       text-align: center;
 

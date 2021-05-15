@@ -498,7 +498,7 @@
       }
 
       a {
-        color: $text;
+        color: inherit;
 
         &:hover,
         &:active,
@@ -506,7 +506,7 @@
           text-decoration: none;
 
           h3 {
-            color: $text;
+            color: inherit;
           }
 
           .anchor::before {

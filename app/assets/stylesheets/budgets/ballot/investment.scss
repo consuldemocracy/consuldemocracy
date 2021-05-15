@@ -11,7 +11,7 @@
   position: relative;
 
   a {
-    color: $text;
+    color: inherit;
   }
 
   .ballot-list-title {
@@ -42,9 +42,8 @@
   &:hover {
     @include brand-background;
 
-    a,
     span {
-      color: #fff;
+      color: inherit;
       outline: 0;
       text-decoration: none;
     }
