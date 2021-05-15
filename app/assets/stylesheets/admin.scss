@@ -478,16 +478,6 @@ code {
   font-size: $base-font-size;
 }
 
-.verified {
-  color: $check;
-
-  a {
-    border-bottom: 1px dotted $check;
-    color: $check;
-    font-size: rem-calc(12);
-  }
-}
-
 .archived {
   color: $text-medium;
   font-size: rem-calc(12);
