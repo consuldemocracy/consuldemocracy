@@ -1590,21 +1590,6 @@
 
 .polls-show-header {
   background: #fafafa;
-
-  .callout {
-
-    &.warning a {
-      color: $color-warning;
-    }
-
-    &.primary a {
-      color: $color-info;
-    }
-
-    &.alert a {
-      color: $color-alert;
-    }
-  }
 }
 
 .poll-more-info,
