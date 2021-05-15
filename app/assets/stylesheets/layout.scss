@@ -550,33 +550,6 @@ body > header,
     padding-right: rem-calc(15);
   }
 
-  .menu .menu-text {
-    padding: 0;
-
-    a {
-      color: #fff;
-      display: inline-block;
-      font-family: "Lato" !important;
-      font-size: rem-calc(24);
-      font-weight: lighter;
-      line-height: $line-height * 2;
-      padding: 0;
-
-      @include breakpoint(medium) {
-        line-height: rem-calc(80);
-        margin-top: 0;
-      }
-
-      img {
-
-        @include breakpoint(medium) {
-          margin-right: $line-height / 2;
-          margin-top: 0;
-        }
-      }
-    }
-  }
-
   .menu > li {
     display: block;
     width: 100%;

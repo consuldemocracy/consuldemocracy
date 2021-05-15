@@ -116,6 +116,7 @@ $table-header:   #ecf1f6;
   }
 
   .menu .menu-text {
+    padding: 0;
 
     h1 {
       margin-top: $line-height / 2;
@@ -133,12 +134,12 @@ $table-header:   #ecf1f6;
     }
 
     a {
-      color: #000 !important;
-      line-height: $line-height !important;
-
-      @include breakpoint(medium) {
-        line-height: $line-height !important;
-      }
+      color: #000;
+      display: inline-block;
+      font-family: "Lato" !important;
+      font-size: rem-calc(24);
+      font-weight: lighter;
+      padding: 0;
     }
   }
 
