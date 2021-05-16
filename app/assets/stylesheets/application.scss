@@ -3,6 +3,7 @@
 @import "fonts";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "leaflet";
 @import "icons";
 @import "mixins/*";
 @import "admin";
@@ -29,7 +30,6 @@
 @import "jquery-ui/autocomplete";
 @import "autocomplete_overrides";
 @import "jquery-ui/sortable";
-@import "leaflet";
 @import "sticky_overrides";
 @import "tags";
 @import "admin/**/*";
