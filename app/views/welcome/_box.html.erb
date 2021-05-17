@@ -86,7 +86,7 @@ window.onload = function() {
     const carouselImages = document.querySelector('.carousel__images');
     const carouselButtons = document.querySelectorAll('.carousel__button');
     const numberOfImages = document.querySelectorAll('#figura').length;
-    const translate_info = carousel.getBoundingClientRect();
+
     let imageIndex = 1;
     let translateX = 0;
     let intervalo;
@@ -94,6 +94,8 @@ window.onload = function() {
     carouselButtons.forEach(button => {
       button.addEventListener('click', (event) => {
         clearInterval(intervalo);
+        const figura = document.querySelector('#figura');
+        const translate_info = figura.getBoundingClientRect();
         if (event.target.id === 'previous') {
           if (imageIndex !== 1) {
             imageIndex--;
@@ -119,7 +121,8 @@ window.onload = function() {
     });
 
     function pasar() {
-        console.log("Acción");
+        const figura = document.querySelector('#figura');
+        const translate_info = figura.getBoundingClientRect();
         if (imageIndex !== numberOfImages) {
           imageIndex++;
           translateX -= translate_info.width;

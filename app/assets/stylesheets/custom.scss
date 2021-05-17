@@ -127,11 +127,25 @@
 
   &.next {
     top: 48%;
-    right: -50px;
+    right: -100px;
   }
 
   &:hover {
     opacity: 0.5;
+  }
+}
+
+@media (min-width: 955px) {
+  .carousel__button {
+    &.previous {
+      top: 48%;
+      left: -80px;
+    }
+
+    &.next {
+      top: 48%;
+      right: -100px;
+    }
   }
 }
 
@@ -159,18 +173,6 @@
         width: 500px;
         height: 200px;
       }
-    }
-  }
-
-  .carousel__button {
-    &.previous {
-      top: 48%;
-      left: -20px;
-    }
-
-    &.next {
-      top: 48%;
-      right: -20px;
     }
   }
 }
