@@ -16,7 +16,7 @@
   height: auto;
 }
 
-//Form
+//User form scroll
 .scroll {
   width: 100%;
   height: auto;
@@ -59,7 +59,6 @@
     }
   }
 }
-//Fin top links
 
 //Carrousel
 .span-center {
@@ -156,8 +155,9 @@
 
     &__images {
       #figura {
+        margin: 0px;
         width: 500px;
-        height: 250px;
+        height: 200px;
       }
     }
   }
