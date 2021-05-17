@@ -79,63 +79,63 @@
 
 <script>
 //CAROUSEL
-window.onload = function() {
-    console.log("DOM fully loaded and parsed");
-    const TIEMPO_INTERVALO_MILESIMAS_SEG = 3000;
-    const carousel = document.querySelector('.carousel');
-    const carouselImages = document.querySelector('.carousel__images');
-    const carouselButtons = document.querySelectorAll('.carousel__button');
-    const numberOfImages = document.querySelectorAll('#figura').length;
+// window.onload = function() {
+//     console.log("DOM fully loaded and parsed");
+//     const TIEMPO_INTERVALO_MILESIMAS_SEG = 3000;
+//     const carousel = document.querySelector('.carousel');
+//     const carouselImages = document.querySelector('.carousel__images');
+//     const carouselButtons = document.querySelectorAll('.carousel__button');
+//     const numberOfImages = document.querySelectorAll('#figura').length;
 
-    let imageIndex = 1;
-    let translateX = 0;
-    let intervalo;
+//     let imageIndex = 1;
+//     let translateX = 0;
+//     let intervalo;
 
-    carouselButtons.forEach(button => {
-      button.addEventListener('click', (event) => {
-        clearInterval(intervalo);
-        const figura = document.querySelector('#figura');
-        const translate_info = figura.getBoundingClientRect();
-        if (event.target.id === 'previous') {
-          if (imageIndex !== 1) {
-            imageIndex--;
-            translateX += translate_info.width;
-          } else {
-            translateX -= translate_info.width * (numberOfImages-1)
-            imageIndex = numberOfImages;
-          }
-          console.log(translateX)
-        } else {
-          if (imageIndex !== numberOfImages) {
-            imageIndex++;
-            translateX -= translate_info.width;
-          }
-          else {
-            translateX += translate_info.width * (numberOfImages-1);
-            imageIndex = 1;
-          }
-          console.log(translateX)
-        }
-        carouselImages.style.transform = `translateX(${translateX}px)`;
-      });
-    });
+//     carouselButtons.forEach(button => {
+//       button.addEventListener('click', (event) => {
+//         clearInterval(intervalo);
+//         const figura = document.querySelector('#figura');
+//         const translate_info = figura.getBoundingClientRect();
+//         if (event.target.id === 'previous') {
+//           if (imageIndex !== 1) {
+//             imageIndex--;
+//             translateX += translate_info.width;
+//           } else {
+//             translateX -= translate_info.width * (numberOfImages-1)
+//             imageIndex = numberOfImages;
+//           }
+//           console.log(translateX)
+//         } else {
+//           if (imageIndex !== numberOfImages) {
+//             imageIndex++;
+//             translateX -= translate_info.width;
+//           }
+//           else {
+//             translateX += translate_info.width * (numberOfImages-1);
+//             imageIndex = 1;
+//           }
+//           console.log(translateX)
+//         }
+//         carouselImages.style.transform = `translateX(${translateX}px)`;
+//       });
+//     });
 
-    function pasar() {
-        const figura = document.querySelector('#figura');
-        const translate_info = figura.getBoundingClientRect();
-        if (imageIndex !== numberOfImages) {
-          imageIndex++;
-          translateX -= translate_info.width;
-        }
-        else {
-          translateX += translate_info.width * (numberOfImages-1);
-          imageIndex = 1;
-        }
-        carouselImages.style.transform = `translateX(${translateX}px)`;
-    }
+//     function pasar() {
+//         const figura = document.querySelector('#figura');
+//         const translate_info = figura.getBoundingClientRect();
+//         if (imageIndex !== numberOfImages) {
+//           imageIndex++;
+//           translateX -= translate_info.width;
+//         }
+//         else {
+//           translateX += translate_info.width * (numberOfImages-1);
+//           imageIndex = 1;
+//         }
+//         carouselImages.style.transform = `translateX(${translateX}px)`;
+//     }
 
-    $(function() {
-        intervalo = setInterval(pasar, TIEMPO_INTERVALO_MILESIMAS_SEG);
-    });
-}
+//     $(function() {
+//         intervalo = setInterval(pasar, TIEMPO_INTERVALO_MILESIMAS_SEG);
+//     });
+// }
 </script>
