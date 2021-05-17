@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   resources :users, only: [:edit]
+  patch 'users/:id', to: 'users#update'
   draw :account
   draw :admin
   draw :annotation
