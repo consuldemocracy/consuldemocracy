@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   get "contact" => "phone_contact#index"
   post "contact" => "phone_contact#create"
   get "privacy_policy" => "welcome#privacy_policy"
+  get "terms_of_use" => "welcome#terms_of_use"
+  get "accessibility" => "welcome#accessibility"
 
   resources :stats, only: [:index]
   resources :images, only: [:destroy]
