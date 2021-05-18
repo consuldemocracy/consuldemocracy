@@ -82,9 +82,9 @@
     <div class="small-12 medium-12 large-12 column text-center">
       <ul class="no-bullet inline-block">
         <li class="inline-block"><%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|</li>
-        <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
-        <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
-        <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.privacy"), privacy_policy_path %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.conditions"), terms_of_use_path %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), accessibility_path %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.recognitions"), recognitions_path %>&nbsp;|</li>
         <li class="inline-block"><%= t("layouts.footer.product") %><%= image_tag(image_path_for("innovarisgrey_360.png"), size: "90x30", alt: setting["org_name"]) %></li>
       </ul>
