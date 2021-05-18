@@ -18,15 +18,7 @@ class SDG::Goals::IconComponent < ApplicationComponent
 
     def folder
       [*I18n.fallbacks[I18n.locale], "default"].find do |locale|
-        find_asset("sdg/#{locale}/goal_#{code}.png")
-      end
-    end
-
-    def find_asset(path)
-      if Rails.application.assets
-        Rails.application.assets.find_asset(path)
-      else
-        Rails.application.assets_manifest.assets[path]
+        AssetFinder.find_asset("sdg/#{locale}/goal_#{code}.png")
       end
     end
 end
