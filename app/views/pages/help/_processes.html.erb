@@ -1,4 +1,4 @@
-<%= render Pages::Help::SectionComponent.new("processes", nil) do %>
+<%= render Pages::Help::SectionComponent.new("processes") do %>
   <p>
     <% link = link_to(t("pages.help.processes.link"), legislation_processes_path) %>
     <%= sanitize(t("pages.help.processes.description", link: link)) %>

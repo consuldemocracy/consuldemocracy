@@ -1,4 +1,4 @@
-<%= render Pages::Help::SectionComponent.new("budgets", "help/budgets_#{I18n.locale}.png") do %>
+<%= render Pages::Help::SectionComponent.new("budgets") do %>
   <p>
     <%= sanitize(t("pages.help.budgets.description",
          link: link_to(t("pages.help.budgets.link"), budgets_path))) %>
