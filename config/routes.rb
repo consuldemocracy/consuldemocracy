@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   post "send" => "send#create"
   get "contact" => "phone_contact#index"
   post "contact" => "phone_contact#create"
+  get "privacy_policy" => "welcome#privacy_policy"
 
   resources :stats, only: [:index]
   resources :images, only: [:destroy]

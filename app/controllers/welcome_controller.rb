@@ -36,6 +36,15 @@ class WelcomeController < ApplicationController
   def info
   end
 
+  def privacy_policy
+  end
+
+  def accessibility
+  end
+
+  def terms_of_use
+  end
+
   def verification
     redirect_to verification_path if signed_in?
   end
