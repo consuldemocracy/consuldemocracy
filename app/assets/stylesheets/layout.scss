@@ -2497,7 +2497,7 @@ table {
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 1px solid #cf2a0e;
+    border-bottom-style: solid;
     color: #cf2a0e;
     text-decoration: none;
   }

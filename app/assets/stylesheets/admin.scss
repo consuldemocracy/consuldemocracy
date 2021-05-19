@@ -451,7 +451,7 @@ code {
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 1px dotted #fff;
+    border-bottom-color: transparent;
     color: #cf2a0e;
   }
 }
