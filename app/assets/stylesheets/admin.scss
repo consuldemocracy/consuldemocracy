@@ -581,7 +581,7 @@ code {
   background: #fafafa;
   border-bottom-left-radius: rem-calc(6);
   border-bottom-right-radius: rem-calc(6);
-  border-top: 2px solid #000;
+  border-top: 2px solid;
   font-size: $small-font-size;
   padding: $line-height / 2;
 }
