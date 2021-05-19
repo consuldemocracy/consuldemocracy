@@ -1510,36 +1510,6 @@
 // 07. Proposals successful
 // -------------------------
 
-.dark-heading {
-  background: #2d3e50;
-  color: #fff;
-
-  @include breakpoint(medium) {
-    padding-bottom: $line-height;
-  }
-
-  p {
-
-    &.title {
-      color: #ffd200;
-    }
-
-    &.title-date {
-      font-size: rem-calc(24);
-      font-weight: bold;
-    }
-  }
-
-  .info {
-    background: #314253;
-    padding-top: $line-height;
-
-    @include breakpoint(medium) {
-      border-top: rem-calc(6) solid #ffd200;
-    }
-  }
-}
-
 .successful .panel {
 
   .icon-successful {
