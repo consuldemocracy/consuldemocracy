@@ -182,14 +182,13 @@
     background: #feeaeb;
 
     &::before {
-      border: 2px solid #fb9497;
       color: #fb9497;
       content: "\74";
     }
   }
 
   &::before {
-    border: 2px solid #00cb96;
+    border: 2px solid;
     border-radius: rem-calc(40);
     color: #00cb96;
     content: "\6c";
