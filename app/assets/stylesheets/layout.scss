@@ -644,7 +644,7 @@ body > header,
   }
 
   &.is-dropdown-submenu-parent > a::after {
-    border-color: #fff transparent transparent;
+    border-top-color: currentcolor;
   }
 }
 
