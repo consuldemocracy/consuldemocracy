@@ -10,7 +10,7 @@ class Admin::Budgets::DurationComponent < ApplicationComponent
   end
 
   def duration
-    distance_of_time_in_words(durable.starts_at, durable.ends_at)
+    distance_of_time_in_words(durable.starts_at, durable.ends_at) if durable.starts_at && durable.ends_at
   end
 
   private

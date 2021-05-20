@@ -15,4 +15,13 @@ describe Admin::Budgets::IndexComponent, type: :component do
 
     expect(page.find("tr", text: "Not enabled phase")).to have_content "0/8"
   end
+
+  it "displays phase zero out of zero for budgets with no enabled phases" do
+    budget = create(:budget, name: "Without phases")
+    budget.phases.each { |phase| phase.update!(enabled: false) }
+
+    render_inline Admin::Budgets::IndexComponent.new(Budget.page(1))
+
+    expect(page.find("tr", text: "Without phases")).to have_content "0/0"
+  end
 end

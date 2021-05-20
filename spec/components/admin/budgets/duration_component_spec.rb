@@ -43,6 +43,22 @@ describe Admin::Budgets::DurationComponent, type: :component do
 
       expect(page.text).to eq "about 1 year"
     end
+
+    it "is not defined when no end date is defined" do
+      durable = double(starts_at: Time.zone.local(2015, 8, 1, 12, 0, 0), ends_at: nil)
+
+      render Admin::Budgets::DurationComponent.new(durable).duration
+
+      expect(page.text).to be_empty
+    end
+
+    it "is not defined when no start date is defined" do
+      durable = double(starts_at: nil, ends_at: Time.zone.local(2016, 9, 30, 16, 30, 00))
+
+      render Admin::Budgets::DurationComponent.new(durable).duration
+
+      expect(page.text).to be_empty
+    end
   end
 
   attr_reader :content
@@ -52,6 +68,6 @@ describe Admin::Budgets::DurationComponent, type: :component do
   end
 
   def page
-    Capybara::Node::Simple.new(content)
+    Capybara::Node::Simple.new(content.to_s)
   end
 end
