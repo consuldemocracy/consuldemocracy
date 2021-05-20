@@ -46,14 +46,15 @@ class Legislation::Process < ApplicationRecord
   validates_translation :title, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :debate_start_date, presence: true, if: :debate_end_date?
-  validates :debate_end_date, presence: true, if: :debate_start_date?
-  validates :draft_start_date, presence: true, if: :draft_end_date?
-  validates :draft_end_date, presence: true, if: :draft_start_date?
-  validates :allegations_start_date, presence: true, if: :allegations_end_date?
-  validates :allegations_end_date, presence: true, if: :allegations_start_date?
-  validates :proposals_phase_start_date, presence: true, if: :proposals_phase_end_date?
-  validates :proposals_phase_end_date, presence: true, if: :proposals_phase_start_date?
+
+  %i[draft debate proposals_phase allegations].each do |phase_name|
+    start_attribute = :"#{phase_name}_start_date"
+    end_attribute = :"#{phase_name}_end_date"
+
+    validates start_attribute, presence: true, if: :"#{end_attribute}?"
+    validates end_attribute, presence: true, if: :"#{start_attribute}?"
+  end
+
   validate :valid_date_ranges
   validates :background_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
   validates :font_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
