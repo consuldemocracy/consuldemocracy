@@ -18,6 +18,21 @@ describe Legislation::Process do
   end
 
   describe "dates validations" do
+
+    it "is invalid if draft_start_date is present but draft_end_date is not" do
+      process = build(:legislation_process, draft_start_date: Date.current, draft_end_date: "")
+
+      expect(process).to be_invalid
+      expect(process.errors.messages[:draft_end_date]).to include("can't be blank")
+    end
+
+    it "is invalid if draft_end_date is present but draft_start_date is not" do
+      process = build(:legislation_process, draft_start_date: nil, draft_end_date: Date.current)
+
+      expect(process).to be_invalid
+      expect(process.errors.messages[:draft_start_date]).to include("can't be blank")
+    end
+
     it "is invalid if debate_start_date is present but debate_end_date is not" do
       process = build(:legislation_process, debate_start_date: Date.current, debate_end_date: "")
       expect(process).to be_invalid
@@ -28,6 +43,14 @@ describe Legislation::Process do
       process = build(:legislation_process, debate_start_date: nil, debate_end_date: Date.current)
       expect(process).to be_invalid
       expect(process.errors.messages[:debate_start_date]).to include("can't be blank")
+    end
+
+    it "is invalid if proposals_phase_start_date is present but proposals_phase_end_date is not" do
+      process = build(:legislation_process, proposals_phase_start_date: Date.current,
+                      proposals_phase_end_date: "")
+
+      expect(process).to be_invalid
+      expect(process.errors.messages[:proposals_phase_end_date]).to include("can't be blank")
     end
 
     it "is invalid if allegations_start_date is present but allegations_end_date is not" do
