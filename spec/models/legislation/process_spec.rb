@@ -53,6 +53,14 @@ describe Legislation::Process do
       expect(process.errors.messages[:proposals_phase_end_date]).to include("can't be blank")
     end
 
+    it "is invalid if proposals_phase_end_date is present but proposals_phase_start_date is not" do
+      process = build(:legislation_process, proposals_phase_start_date: nil,
+                      proposals_phase_end_date: Date.current)
+
+      expect(process).to be_invalid
+      expect(process.errors.messages[:proposals_phase_start_date]).to include("can't be blank")
+    end
+
     it "is invalid if allegations_start_date is present but allegations_end_date is not" do
       process = build(:legislation_process, allegations_start_date: Date.current,
                                             allegations_end_date: "")
