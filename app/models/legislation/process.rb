@@ -48,11 +48,10 @@ class Legislation::Process < ApplicationRecord
   validates :end_date, presence: true
 
   %i[draft debate proposals_phase allegations].each do |phase_name|
-    start_attribute = :"#{phase_name}_start_date"
-    end_attribute = :"#{phase_name}_end_date"
+    enabled_attribute = :"#{phase_name.to_s.gsub("_phase", "")}_phase_enabled?"
 
-    validates start_attribute, presence: true, if: :"#{end_attribute}?"
-    validates end_attribute, presence: true, if: :"#{start_attribute}?"
+    validates :"#{phase_name}_start_date", presence: true, if: enabled_attribute
+    validates :"#{phase_name}_end_date", presence: true, if: enabled_attribute
   end
 
   validate :valid_date_ranges

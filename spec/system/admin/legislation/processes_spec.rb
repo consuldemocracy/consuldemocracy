@@ -289,6 +289,24 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_field "draft_publication_date", disabled: true
     end
 
+    scenario "Enabling comments phase with blank dates" do
+      visit edit_admin_legislation_process_path(process)
+
+      within_fieldset "Comments phase" do
+        check "Enabled"
+        fill_in "Start", with: ""
+        fill_in "End", with: ""
+      end
+
+      click_button "Save changes"
+
+      expect(page).to have_content "errors prevented this process from being saved"
+
+      within_fieldset "Comments phase" do
+        expect(page).to have_content "can't be blank"
+      end
+    end
+
     scenario "Change proposal categories" do
       visit edit_admin_legislation_process_path(process)
       within(".admin-content") { click_link "Proposals" }
