@@ -30,9 +30,9 @@ module ActionDispatch::Routing::UrlFor
       resolve = resolve_for(resource)
       resolve_options = resolve.pop
 
-      polymorphic_path([namespace, *resolve], options.merge(resolve_options))
+      polymorphic_path([namespace.to_sym, *resolve], options.merge(resolve_options))
     else
-      polymorphic_path([namespace, *resource_hierarchy_for(resource)], options)
+      polymorphic_path([namespace.to_sym, *resource_hierarchy_for(resource)], options)
     end
   end
 
