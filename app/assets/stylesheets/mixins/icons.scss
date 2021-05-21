@@ -5,7 +5,7 @@
 }
 
 %svg-icon {
-  @supports (mask-image: url()) {
+  @supports (mask-image: url()) and (--custom-property-name: custom-property-value) {
     background: currentcolor;
     content: "" !important;
     height: 1em;
@@ -1502,6 +1502,7 @@ $font-awesome-icons: (
 
   &::#{$position} {
     @extend %svg-icon;
-    mask-image: image-url("fontawesome/#{$style}/#{$icon}.svg");
+    #{"--fa-icon-#{$style}-#{$icon}"}: asset-data-url("fontawesome/#{$style}/#{$icon}.svg");
+    mask-image: var(--fa-icon-#{$style}-#{$icon});
   }
 }
