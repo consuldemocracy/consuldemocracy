@@ -1,5 +1,4 @@
 class Admin::HiddenTableActionsComponent < ApplicationComponent
-  include TableActionLink
   attr_reader :record
 
   def initialize(record)

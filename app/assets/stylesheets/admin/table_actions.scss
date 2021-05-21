@@ -6,33 +6,23 @@
   }
 
   a {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+    line-height: $global-lineheight;
+    margin-right: 1em;
     position: relative;
-
-    > :first-child {
-      @include bottom-tooltip;
-      left: $off-screen-left;
-      opacity: 0;
-      transform: translateX(-50%);
-      transition: opacity 0.3s, left 0s 0.3s;
-    }
+    text-align: center;
 
     &:hover,
     &:focus {
       color: $link-hover;
-
-      > :first-child {
-        left: 50%;
-        opacity: 1;
-        transition: opacity 0.4s 0.2s;
-      }
-    }
-
-    &:not(:focus) > :first-child:hover {
-      left: $off-screen-left;
     }
 
     &::before {
-      font-size: rem-calc(18);
+      font-size: 1.6em;
+      margin-right: 0 !important;
     }
   }
 
@@ -42,7 +32,14 @@
 
   .destroy-link {
     @include has-fa-icon(trash-alt, regular);
-    color: $alert-color;
+  }
+
+  .destroy-link,
+  .destroy-role-link,
+  .destroy-officer-link,
+  .reject-link,
+  .confirm-hide-link {
+    color: darken($alert-color, 5%);
   }
 
   .show-link,
@@ -66,17 +63,23 @@
   .destroy-officer-link,
   .reject-link {
     @include has-fa-icon(user-times, solid);
-    color: $alert-color;
   }
 
   .restore-link {
     @include has-fa-icon(undo, solid);
-    color: $warning-color;
+  }
+
+  .restore-link,
+  .investments-link {
+    color: darken($warning-color, 20%);
+
+    &::before {
+      color: $warning-color;
+    }
   }
 
   .confirm-hide-link {
     @include has-fa-icon(flag, regular);
-    color: $alert-color;
   }
 
   .verify-link {
@@ -108,7 +111,6 @@
 
   .investments-link {
     @include has-fa-icon(coins, solid);
-    color: $warning-color;
   }
 
   .groups-link,
