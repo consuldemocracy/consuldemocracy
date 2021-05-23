@@ -205,6 +205,18 @@ describe "Admin budgets", :admin do
       expect(page).to have_content("There are no budgets.")
     end
 
+    scenario "Destroy a budget without investments but with administrators and valuators" do
+      budget.administrators << Administrator.first
+      budget.valuators << create(:valuator)
+
+      visit admin_budgets_path
+      click_link "Edit budget"
+      click_link "Delete budget"
+
+      expect(page).to have_content "Budget deleted successfully"
+      expect(page).to have_content "There are no budgets."
+    end
+
     scenario "Try to destroy a budget with investments" do
       create(:budget_investment, heading: heading)
 
