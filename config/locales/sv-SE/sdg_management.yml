@@ -5,7 +5,7 @@ sv:
     header:
       title: "Globala målen, innehåll"
     homepage:
-      title: "Hemsidekonfiguration"
+      title: "Startsidekonfiguration"
       header:
         create: "Skapa sidhuvud"
         no_cards: "Det finns inget sidhuvud"
@@ -15,8 +15,12 @@ sv:
     menu:
       budget_investments: "Medborgarbudgetar"
       debates: "Debatter"
+      legislation_processes: "Lagstiftningsprocesser"
       legislation_proposals: "Lagförslag"
+      polls: "Omröstningar"
       proposals: "Förslag"
+      sdg_content: "Mål och delmål"
+      sdg_homepage: "Startsida för Globala målen"
     local_targets:
       create:
         notice: "Lokalt delmål har skapats"
@@ -39,3 +43,8 @@ sv:
         filters:
           all: "Alla"
           pending_sdg_review: "Väntande"
+          sdg_reviewed: "Markerat som granskat"
+      update:
+        notice: "%{relatable} har uppdaterats"
+      update_and_review:
+        notice: "%{relatable} har uppdaterats och markerats som granskat"
