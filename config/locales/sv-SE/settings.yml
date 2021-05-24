@@ -208,3 +208,10 @@ sv:
         max_size_description: "Högsta storlek på inskickade dokument (i MB)"
         content_types: "Accepterade innehållstyper för dokument"
         content_types_description: "Välj alla de innehållstyper som är tillåtna för inskickade dokument"
+    sdg:
+      process:
+        debates: Relaterade Globala mål i debatter
+        proposals: Relaterade Globala mål i förslag
+        polls: Relaterade Globala mål i omröstningar
+        budgets: Relaterade Globala mål i medborgarbudgetar
+        legislation: Relaterade Globala mål i medborgardialoger
