@@ -1264,6 +1264,7 @@ sv:
           how_to_enable: 'För att konfigurera fjärradressregister (SOAP) måste du aktivera "Konfigurera anslutning till fjärradressregister (SOAP)" under fliken "Funktioner".'
         sdg:
           title: Konfigurering av Globala målen
+          how_to_enable: 'För att visa konfigurationsalternativen från Globala mål för hållbar utveckling måste du aktivera "Globala målen" på fliken "Funktioner".'
       remote_census_general_name: Generell information
       remote_census_request_name: Begär data
       remote_census_response_name: Svar data
