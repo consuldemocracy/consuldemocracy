@@ -1262,6 +1262,8 @@ sv:
         remote_census:
           title: Konfiguration av fjärradressregister
           how_to_enable: 'För att konfigurera fjärradressregister (SOAP) måste du aktivera "Konfigurera anslutning till fjärradressregister (SOAP)" under fliken "Funktioner".'
+        sdg:
+          title: Konfigurering av Globala målen
       remote_census_general_name: Generell information
       remote_census_request_name: Begär data
       remote_census_response_name: Svar data
@@ -1443,6 +1445,7 @@ sv:
         debates: "Debatter"
         polls: "Omröstningar"
         proposals: "Förslag"
+        title: "Globala målen för hållbar utveckling – statistik"
     tags:
       create: Skapa inlägg
       destroy: Ta bort inlägg
