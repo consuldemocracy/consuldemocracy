@@ -7,7 +7,7 @@ sv:
     name: Namn
     email: E-post
     description: Beskrivning
-    related_sdg_list: Mål och milstolpar
+    related_sdg_list: Mål och delmål
   activerecord:
     models:
       activity:
@@ -81,7 +81,7 @@ sv:
         other: "mål"
       sdg/local_target:
         one: "lokalt delmål"
-        other: "lokala mål"
+        other: "lokala delmål"
       sdg/manager:
         one: "Globala målen-chef"
         other: "Globala målen-chefer"
