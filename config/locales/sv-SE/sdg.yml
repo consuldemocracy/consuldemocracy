@@ -4,6 +4,7 @@ sv:
       goal_1:
         title: "Avskaffa fattigdom"
         title_in_two_lines: "Avskaffa\nfattigdom"
+        description: "Eliminera alla former av fattigdom, i hela världen."
       goal_2:
         title: "Avskaffa hunger"
         title_in_two_lines: "Avskaffa\nhunger"
@@ -57,6 +58,7 @@ sv:
           other: "%{count} mål till"
     related_list_selector:
       goal_identifier: "SDG%{code}"
+      goal_list: "Du kan välja ett eller flera Globala mål som är i linje med din/ditt %{record}"
       help:
         title: "Vilka globala mål och delmål är i linje med min/mitt %{record}?"
         text: "SDG-hjälpsida"
