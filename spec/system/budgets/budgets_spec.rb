@@ -22,17 +22,6 @@ describe "Budgets" do
       let!(:heading1) { create(:budget_heading, group: group1) }
       let!(:heading2) { create(:budget_heading, group: group2) }
 
-      scenario "Show normal index with links in informing phase" do
-        budget.update!(phase: "informing")
-
-        visit budgets_path
-
-        within(".budget-subheader") do
-          expect(page).to have_content "CURRENT PHASE"
-          expect(page).to have_content "Information"
-        end
-      end
-
       scenario "Show normal index with links publishing prices" do
         budget.update!(phase: "publishing_prices")
 
@@ -136,15 +125,6 @@ describe "Budgets" do
       visit budgets_path
 
       expect(page).to have_content "There are no budgets"
-    end
-
-    scenario "Accepting" do
-      budget.update!(phase: "accepting")
-      login_as(create(:user, :level_two))
-
-      visit budgets_path
-
-      expect(page).to have_link "Create a budget investment"
     end
   end
 
@@ -281,36 +261,14 @@ describe "Budgets" do
       expect(page).not_to have_css("#budget_heading_#{heading4.id}")
     end
 
-    scenario "See results button is showed if the budget has finished for all users" do
+    scenario "See results button is showed if the budget has finished" do
       user = create(:user)
-      admin = create(:administrator)
       budget = create(:budget, :finished)
 
       login_as(user)
       visit budget_path(budget)
+
       expect(page).to have_link "See results"
-
-      logout
-
-      login_as(admin.user)
-      visit budget_path(budget)
-      expect(page).to have_link "See results"
-    end
-
-    scenario "See results button isn't showed if the budget hasn't finished for all users" do
-      user = create(:user)
-      admin = create(:administrator)
-      budget = create(:budget, :balloting)
-
-      login_as(user)
-      visit budget_path(budget)
-      expect(page).not_to have_link "See results"
-
-      logout
-
-      login_as(admin.user)
-      visit budget_path(budget)
-      expect(page).not_to have_link "See results"
     end
   end
 
@@ -325,36 +283,6 @@ describe "Budgets" do
         visit budgets_path
 
         expect(page).not_to have_content(budget.name)
-      end
-    end
-  end
-
-  context "Accepting" do
-    before do
-      budget.update(phase: "accepting")
-    end
-
-    context "Permissions" do
-      scenario "Verified user" do
-        login_as(level_two_user)
-
-        visit budget_path(budget)
-        expect(page).to have_link "Create a budget investment"
-      end
-
-      scenario "Unverified user" do
-        user = create(:user)
-        login_as(user)
-
-        visit budget_path(budget)
-
-        expect(page).to have_content "To create a new budget investment verify your account."
-      end
-
-      scenario "user not logged in" do
-        visit budget_path(budget)
-
-        expect(page).to have_content "To create a new budget investment you must sign in or sign up"
       end
     end
   end
