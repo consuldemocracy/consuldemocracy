@@ -194,11 +194,6 @@ $table-header:   #ecf1f6;
 
     &.with-button {
       line-height: $line-height * 2;
-
-      .button {
-        @include brand-text;
-        background: #fff;
-      }
     }
   }
 
