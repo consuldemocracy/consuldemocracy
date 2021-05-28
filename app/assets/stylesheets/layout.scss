@@ -345,7 +345,6 @@ a {
       font-weight: bold;
 
       &::after {
-        background: $brand;
         border-bottom: 2px solid;
         bottom: 0;
         content: "";
@@ -1834,7 +1833,6 @@ table {
   }
 
   .reply {
-    background: #fff;
     border: 1px solid $border;
     border-left: 0;
     border-right: 0;
@@ -2177,7 +2175,6 @@ table {
   .debates-inner,
   .proposals-inner,
   .budget-investments-inner {
-    background: #fff;
     max-height: rem-calc(350);
 
     @include breakpoint(small) {
