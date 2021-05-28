@@ -237,7 +237,6 @@
     background: #fff;
     border: 1px solid $border;
     border-radius: rem-calc(36);
-    color: #000;
     content: "\77";
     font-family: "icons";
     font-size: rem-calc(24);
@@ -264,7 +263,6 @@
   position: relative;
 
   &::before {
-    color: #000;
     font-family: "icons";
     font-size: rem-calc(24);
     left: 6px;
