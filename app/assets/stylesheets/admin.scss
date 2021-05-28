@@ -53,6 +53,7 @@ $table-header:   #ecf1f6;
   }
 
   .header {
+    background: transparent;
     border: 0;
   }
 
@@ -64,14 +65,9 @@ $table-header:   #ecf1f6;
     }
   }
 
-  .admin-top-bar {
-    background: #fff;
-  }
-
   .top-bar {
-    background: #fff !important;
     border-bottom: 1px solid #eee;
-    color: #000;
+    color: $text;
     height: auto;
     padding-top: $line-height / 2;
 
@@ -128,7 +124,7 @@ $table-header:   #ecf1f6;
       }
 
       small {
-        color: #000;
+        color: inherit;
         text-transform: uppercase;
       }
     }
