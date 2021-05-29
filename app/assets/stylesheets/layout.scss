@@ -1433,11 +1433,11 @@ table {
     }
 
     &:nth-child(odd) {
-      background: #fff;
+      background: $table-background;
     }
 
     &:nth-child(even) {
-      background: #fafcfb;
+      background: adjust-color($table-background, $red: -3, $green: -1, $blue: -2);
     }
   }
 

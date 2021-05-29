@@ -226,7 +226,7 @@ $table-header:   #ecf1f6;
       border: $table-border;
 
       &:hover {
-        background: #f3f6f7;
+        background: adjust-color(darken($table-background, 2%), $red: -4, $green: -1);
       }
     }
 
