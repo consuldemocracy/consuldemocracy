@@ -79,9 +79,6 @@ FactoryBot.define do
 
     trait :header do
       header { true }
-      sequence(:button_text)   { |n| "Button text #{n}" }
-      sequence(:button_url)    { |n| "Button url #{n}" }
-      alignment { "background" }
     end
 
     after :create do |widget_card|
