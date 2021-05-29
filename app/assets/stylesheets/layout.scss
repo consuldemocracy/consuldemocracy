@@ -569,7 +569,7 @@ body > header,
 
       @include breakpoint(medium) {
         @include brand-text;
-        background: #fff;
+        background: $body-background;
         text-align: center;
       }
     }
@@ -585,7 +585,7 @@ body > header,
   .menu {
 
     &.is-dropdown-submenu {
-      background: #fff;
+      background: $body-background;
       color: $text;
       margin: 0;
       margin-top: rem-calc(-12);
@@ -685,7 +685,7 @@ body > header,
 .subnavigation {
 
   @include breakpoint(medium) {
-    background: #fff;
+    background: $body-background;
     color: $text;
     padding-bottom: 0;
   }
@@ -966,7 +966,7 @@ footer {
   text-align: center;
 
   span {
-    background: #fff;
+    background: $body-background;
     box-decoration-break: clone;
     font-weight: bold;
     padding: 0 $line-height / 2;
@@ -991,7 +991,7 @@ footer {
   select {
 
     option {
-      background: #fff;
+      background: $body-background;
       color: $text;
       border: 0;
       outline: none;
@@ -1352,7 +1352,7 @@ form {
   }
 
   &::before {
-    background: #fff;
+    background: $body-background;
     color: $brand;
     content: "\4d";
     font-family: "icons" !important;
@@ -1773,7 +1773,7 @@ table {
     position: relative;
 
     .icon-letter {
-      background: #fff;
+      background: $body-background;
       color: $color-info;
       font-size: rem-calc(24);
       margin-left: -27px;
@@ -1788,7 +1788,7 @@ table {
 // ------------
 
 .comments {
-  background: #fff;
+  background: $body-background;
   background-repeat: repeat-x;
   padding-bottom: $line-height * 4;
 
@@ -2266,7 +2266,7 @@ table {
   }
 
   .recommendation {
-    background: #fff;
+    background: $body-background;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
     display: block;
     margin-bottom: $line-height / 4;
@@ -2688,9 +2688,9 @@ table {
     }
 
     span {
-      background: #fff;
+      background: $body-background;
       border-radius: rem-calc(4);
-      color: #000;
+      color: $text;
       display: inline-block;
       font-size: $small-font-size;
       font-weight: bold;

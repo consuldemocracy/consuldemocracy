@@ -234,7 +234,7 @@
   position: relative;
 
   &::before {
-    background: #fff;
+    background: $body-background;
     border: 1px solid $border;
     border-radius: rem-calc(36);
     content: "\77";
