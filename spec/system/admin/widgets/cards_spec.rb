@@ -163,7 +163,7 @@ describe "Cards", :admin do
         visit admin_site_customization_pages_path
 
         within "#site_customization_page_#{custom_page.id}" do
-          click_link "See Cards"
+          click_link "Manage cards"
         end
 
         click_link "Create card"

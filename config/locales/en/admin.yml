@@ -1593,7 +1593,7 @@ en:
           create: Create new page
           delete: Delete page
           title: Custom Pages
-          see_page: See page
+          see_page: View
         new:
           title: Create new custom page
           slug_help: "Text to identify this page on URL, for example <code>https://consulproject.org/page-slug</code>"
@@ -1603,7 +1603,7 @@ en:
           updated_at: Updated at
           title: Title
           slug: Slug
-          see_cards: See Cards
+          see_cards: Manage cards
         cards:
           cards_title: cards
           create_card: Create card
