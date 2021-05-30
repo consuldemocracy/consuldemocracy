@@ -113,7 +113,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
 
         visit path
 
-        accept_confirm { click_link "Delete milestone" }
+        accept_confirm { click_link "Delete" }
 
         expect(page).not_to have_content "Title will it remove"
       end

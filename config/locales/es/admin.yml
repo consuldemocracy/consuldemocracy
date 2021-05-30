@@ -21,8 +21,6 @@ es:
       index:
         title: Banners
         create: Crear un banner
-        edit: Editar banner
-        delete: Eliminar banner
         filters:
           all: Todos
           with_active: Activos
@@ -90,7 +88,6 @@ es:
         type_pending: "Pendiente: Aún no hay partidas"
         type_single: "Partida única"
         edit_groups: Editar grupos de partidas
-        edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
       create:
@@ -109,7 +106,6 @@ es:
         duration: "Duración"
         enabled: Habilitada
         actions: Acciones
-        edit_phase: Editar fase
         enable_phase: "Habilitar fase de %{phase}"
         active: Activa
         blank_dates: Sin fechas
@@ -354,7 +350,6 @@ es:
         table_publication_date: "Fecha de publicación"
         table_status: Estado
         table_actions: "Acciones"
-        delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
         image: "Imagen"
         show_image: "Mostrar imagen"
@@ -1206,7 +1201,6 @@ es:
         location: "Ubicación"
       booth:
         shifts: "Asignar turnos"
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
@@ -1228,7 +1222,6 @@ es:
       level_4: Nivel 4
       level_5: Nivel 5
       search:
-        edit_official: Editar cargo público
         make_official: Convertir en cargo público
         title: "Cargos Públicos: Búsqueda de usuarios"
         no_results: No se han encontrado cargos públicos.
@@ -1512,7 +1505,6 @@ es:
         title: "Objetivos de Desarrollo Sostenible - Estadísticas"
     tags:
       create: Crear tema
-      destroy: Eliminar tema
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta

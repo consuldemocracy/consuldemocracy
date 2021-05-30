@@ -1,5 +1,4 @@
 <%= render Admin::TableActionsComponent.new(budget,
-  edit_text: t("admin.budgets.index.edit_budget"),
   destroy_confirmation: t("admin.actions.confirm_delete", resource_name: t("admin.budgets.shared.resource_name"),
                                                           name: budget.name)
   ) do %>

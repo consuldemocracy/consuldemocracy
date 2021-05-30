@@ -56,7 +56,7 @@ describe "Budgets wizard, phases step", :admin do
 
       expect(page).to have_css ".creation-timeline"
 
-      within("tr", text: "Selecting projects") { click_link "Edit phase" }
+      within("tr", text: "Selecting projects") { click_link "Edit" }
       fill_in "Name", with: "Choosing projects"
       click_button "Save changes"
 
@@ -86,7 +86,7 @@ describe "Budgets wizard, phases step", :admin do
     scenario "update phase in single heading budget" do
       visit admin_budgets_wizard_budget_budget_phases_path(budget, mode: "single")
 
-      within("tr", text: "Selecting projects") { click_link "Edit phase" }
+      within("tr", text: "Selecting projects") { click_link "Edit" }
       fill_in "Name", with: "Choosing projects"
       click_button "Save changes"
 

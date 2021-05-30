@@ -107,7 +107,7 @@ describe "Budgets creation wizard", :admin do
 
     expect(page).to have_css ".budget-phases-table"
 
-    within("tr", text: "Voting projects") { click_link "Edit phase" }
+    within("tr", text: "Voting projects") { click_link "Edit" }
     fill_in "Name", with: "Custom phase name"
     uncheck "Phase enabled"
     click_button "Save changes"

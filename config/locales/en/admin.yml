@@ -21,8 +21,6 @@ en:
       index:
         title: Banners
         create: Create banner
-        edit: Edit banner
-        delete: Delete banner
         filters:
           all: All
           with_active: Active
@@ -90,7 +88,6 @@ en:
         type_pending: "Pending: No headings yet"
         type_single: "Single heading"
         edit_groups: Edit headings groups
-        edit_budget: Edit budget
         admin_ballots: Admin ballots
         no_budgets: "There are no budgets."
       create:
@@ -109,7 +106,6 @@ en:
         duration: "Duration"
         enabled: Enabled
         actions: Actions
-        edit_phase: Edit phase
         enable_phase: "Enable %{phase} phase"
         active: Active
         blank_dates: Dates are blank
@@ -354,7 +350,6 @@ en:
         table_publication_date: "Publication date"
         table_status: Status
         table_actions: "Actions"
-        delete: "Delete milestone"
         no_milestones: "Don't have defined milestones"
         image: "Image"
         show_image: "Show image"
@@ -1207,7 +1202,6 @@ en:
         location: "Location"
       booth:
         shifts: "Manage shifts"
-        edit: "Edit booth"
     officials:
       edit:
         destroy: Remove "Official" status
@@ -1229,7 +1223,6 @@ en:
       level_4: Level 4
       level_5: Level 5
       search:
-        edit_official: Edit official
         make_official: Make official
         title: "Official positions: User search"
         no_results: Official positions not found.
@@ -1513,7 +1506,6 @@ en:
         title: "Sustainable Development Goals - Stats"
     tags:
       create: Create topic
-      destroy: Delete topic
       index:
         add_tag: Add a new proposal topic
         title: Proposal topics
