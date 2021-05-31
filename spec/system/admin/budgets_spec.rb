@@ -221,7 +221,8 @@ describe "Admin budgets", :admin do
     scenario "Destroy a budget without investments" do
       visit admin_budgets_path
       click_link "Edit budget"
-      click_link "Delete budget"
+
+      accept_confirm { click_link "Delete budget" }
 
       expect(page).to have_content("Budget deleted successfully")
       expect(page).to have_content("There are no budgets.")
@@ -244,7 +245,8 @@ describe "Admin budgets", :admin do
 
       visit admin_budgets_path
       click_link "Edit budget"
-      click_link "Delete budget"
+
+      accept_confirm { click_link "Delete budget" }
 
       expect(page).to have_content("You cannot delete a budget that has associated investments")
       expect(page).to have_content("There is 1 budget")
