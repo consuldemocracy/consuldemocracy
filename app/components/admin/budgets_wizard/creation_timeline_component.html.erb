@@ -1,8 +1,7 @@
 <ol class="creation-timeline">
-  <li <%= "aria-current='step'" unless step_groups? %>>
-    <%= t("admin.budgets_wizard.creation_timeline.budget") %>
-  </li>
-  <li <%= "aria-current='step'" if step_groups? %>>
-    <%= t("admin.budgets_wizard.creation_timeline.groups") %>
-  </li>
+  <% steps.each do |step| %>
+    <li <%= "aria-current='step'" if step == current_step %>>
+      <%= t("admin.budgets_wizard.creation_timeline.#{step}") %>
+    </li>
+  <% end %>
 </ol>
