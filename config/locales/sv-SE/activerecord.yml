@@ -345,20 +345,20 @@ sv:
         title: "Titel"
       site_customization/page:
         content: Innehåll
-        created_at: Skapad
+        created_at: Skapad kl.
         subtitle: Underrubrik
         slug: URL
         status: Status
         status_draft: "Utkast"
         status_published: "Publicerad"
         title: Titel
-        updated_at: Uppdaterad
+        updated_at: Uppdaterad kl.
         more_info_flag: Visa i hjälpsidor
         print_content_flag: Skriv ut innehåll
         locale: Språk
       site_customization/page/translation:
         title: Titel
-        subtitle: Underrubrik
+        subtitle: Textremsa
         content: Innehåll
       site_customization/image:
         name: Namn
@@ -400,7 +400,7 @@ sv:
         result_publication_date: Publiceringsdatum för resultat
         background_color: Bakgrundsfärg
         font_color: Teckenfärg
-        homepage_enabled: "Hemsida aktiverad"
+        homepage_enabled: "Startsida aktiverad"
       legislation/process/translation:
         title: Processens titel
         summary: Sammanfattning
@@ -436,10 +436,10 @@ sv:
         text: Kommentar
       document:
         title: Titel
-        attachment: "Bilaga"
+        attachment: "Välj dokument"
       image:
         title: Titel
-        attachment: "Bilaga"
+        attachment: "Välj bild"
       poll/question/answer:
         title: Svar
         description: Beskrivning
@@ -452,8 +452,8 @@ sv:
       newsletter:
         segment_recipient: Mottagare
         subject: Ämne
-        from: "Från"
-        body: E-postmeddelande
+        from: "E-postadress som visas som avsändare för nyhetsbrevet"
+        body: E-postmeddelandets innehåll
       admin_notification:
         segment_recipient: Mottagare
         title: Titel
@@ -463,14 +463,14 @@ sv:
         title: Titel
         body: Text
       widget/card:
-        label: Etikett (frivilligt fält)
+        label: Etikett (valfritt)
         title: Titel
         description: Beskrivning
         link_text: Länktext
         link_url: Länk-URL
         columns: Antal kolumner
       widget/card/translation:
-        label: Etikett (frivilligt fält)
+        label: Etikett (valfritt)
         title: Titel
         description: Beskrivning
         link_text: Länktext
@@ -507,7 +507,7 @@ sv:
         document_type: Dokumenttyp
         document_number: Dokumentnummer
         date_of_birth: Födelsedatum
-        postal_code: Postkod
+        postal_code: Postnummer
     errors:
       models:
         user:
