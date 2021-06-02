@@ -3,6 +3,7 @@
 @import "fonts";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "leaflet";
 @import "icons";
 @import "mixins/*";
 @import "admin";
@@ -19,7 +20,6 @@
 @import "notification_item";
 @import "community";
 @import "stats";
-@import "custom";
 @import "c3";
 @import "annotator.min";
 @import "amsify.suggestags";
@@ -29,7 +29,6 @@
 @import "jquery-ui/autocomplete";
 @import "autocomplete_overrides";
 @import "jquery-ui/sortable";
-@import "leaflet";
 @import "sticky_overrides";
 @import "tags";
 @import "admin/**/*";
@@ -38,3 +37,6 @@
 @import "sdg_management/*";
 @import "sdg_management/**/*";
 @import "widgets/**/*";
+
+@import "custom";
+@import "custom/**/*";

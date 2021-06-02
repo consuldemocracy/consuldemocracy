@@ -2596,25 +2596,25 @@ table {
 .leaflet-bar a {
 
   &.leaflet-disabled {
-    color: #525252 !important;
+    color: #525252;
   }
 }
 
 .leaflet-container {
 
   .leaflet-control-attribution {
-    background: rgba(255, 255, 255, 0.9) !important;
+    background: rgba(255, 255, 255, 0.9);
   }
 
   a {
-    color: $link !important;
+    color: $link;
   }
 }
 
 .leaflet-bottom,
 .leaflet-pane,
 .leaflet-top {
-  z-index: 4 !important;
+  z-index: 4;
 }
 
 // 24. Homepage
