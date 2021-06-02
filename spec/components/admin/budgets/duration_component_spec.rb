@@ -12,7 +12,7 @@ describe Admin::Budgets::DurationComponent, type: :component do
 
       render dates
 
-      expect(page.text).to eq "2015-08-01 12:00:00 - 2016-09-30 16:29:59"
+      expect(page.text).to eq "2015-08-01 12:00 - 2016-09-30 16:29"
       expect(dates).to be_html_safe
     end
 
@@ -20,7 +20,7 @@ describe Admin::Budgets::DurationComponent, type: :component do
       durable = double(starts_at: Time.zone.local(2015, 8, 1, 12, 0, 0), ends_at: nil)
       render Admin::Budgets::DurationComponent.new(durable).dates
 
-      expect(page.text).to eq "2015-08-01 12:00:00 - "
+      expect(page.text).to eq "2015-08-01 12:00 - "
     end
 
     it "shows the end date when no start date is defined" do
@@ -28,7 +28,7 @@ describe Admin::Budgets::DurationComponent, type: :component do
 
       render Admin::Budgets::DurationComponent.new(durable).dates
 
-      expect(page.text).to eq "- 2016-09-30 16:29:59"
+      expect(page.text).to eq "- 2016-09-30 16:29"
     end
   end
 
