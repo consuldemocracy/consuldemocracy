@@ -72,7 +72,7 @@ sv:
         other: "funktionärer"
       poll/ballot_sheet:
         one: Valsedel
-        other: Valsedel
+        other: Valsedlar
       proposal:
         one: "Medborgarförslag"
         other: "Medborgarförslag"
@@ -143,8 +143,8 @@ sv:
         one: Länk
         other: Länkar
       local_census_record:
-        one: Lokalt adressregister
-        other: Lokala adressregister
+        one: Post i lokalt adressregister
+        other: Poster i lokalt adressregister
     attributes:
       budget:
         name: "Namn"
@@ -168,7 +168,7 @@ sv:
         description: "Beskrivning"
         external_url: "Länk till ytterligare dokumentation"
         administrator_id: "Administratör"
-        location: "Plats (frivilligt fält)"
+        location: "Ytterligare information om plats"
         organization_name: "Organisation eller grupp i vars namn du lämnar förslaget"
         image: "Förklarande bild till förslaget"
         image_title: "Bildtext"
@@ -195,10 +195,10 @@ sv:
         census_code: "Adressregisterkod (valfri)"
         html_map_coordinates: "HTML-<map>koordinater (valfri)"
       milestone:
-        status_id: "Nuvarande status för budgetförslag (frivilligt fält)"
+        status_id: "Nuvarande status (valfritt)"
         title: "Titel"
-        description: "Beskrivning (frivilligt fält om projektets status har ställts in)"
-        publication_date: "Publiceringsdatum"
+        description: "Beskrivning (valfritt om status har tilldelats)"
+        publication_date: "Datum"
       milestone/translation:
         description: "Beskrivning"
       milestone/status:
@@ -212,19 +212,19 @@ sv:
         primary: "Primär"
         secondary: "Sekundär"
       budget/group:
-        max_votable_headings: "Högst antal områden som användare kan rösta inom"
+        max_votable_headings: "Högsta antal områden där användare kan välja projekt"
       budget/group/translation:
         name: "Gruppnamn"
       budget/heading:
         allow_custom_content: "Tillåt innehållsblock"
         latitude: "Latitud (frivilligt fält)"
-        longitude: "Longitud (frivilligt fält)"
-        name: "Område"
-        price: "Kostnad"
-        population: "Befolkning"
+        longitude: "Longitud (valfritt)"
+        name: "Områdesnamn"
+        price: "Belopp"
+        population: "Befolkning (valfritt)"
         max_ballot_lines: "Tillåtna röster"
       budget/heading/translation:
-        name: "Områdes namn"
+        name: "Områdesnamn"
       budget/phase:
         enabled: "Fasen är aktiverad"
         ends_at: "Slutdatum"
@@ -254,7 +254,7 @@ sv:
         retired_reason: "Anledning att dra tillbaka förslaget"
         selected: "Markera som valda"
         terms_of_service: "Användarvillkor"
-        video_url: "Extern video URL"
+        video_url: "Extern video-URL"
       proposal/translation:
         title: "Förslagets titel"
         description: "Förslagstext"
