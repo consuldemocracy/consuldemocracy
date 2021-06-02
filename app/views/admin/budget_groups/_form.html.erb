@@ -1,8 +1,8 @@
-<%= render "shared/globalize_locales", resource: @group %>
+<%= render "shared/globalize_locales", resource: group %>
 
-<%= translatable_form_for [:admin, @budget, @group], url: path do |f| %>
+<%= translatable_form_for group, url: path do |f| %>
 
-  <%= render "shared/errors", resource: @group %>
+  <%= render "shared/errors", resource: group %>
 
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
@@ -12,11 +12,11 @@
     <% end %>
   </div>
 
-  <% if @group.persisted? %>
+  <% if group.persisted? %>
     <div class="row">
       <div class="small-12 medium-6 column">
         <%= f.select :max_votable_headings,
-                     (1..@group.headings.count),
+                     (1..group.headings.count),
                      hint: t("admin.budget_groups.form.max_votable_headings_info") %>
       </div>
     </div>
