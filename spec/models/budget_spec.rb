@@ -402,4 +402,26 @@ describe Budget do
       end
     end
   end
+
+  describe "#budget_administrators" do
+    it "destroys relation with administrators when destroying the budget" do
+      budget = create(:budget, administrators: [create(:administrator)])
+
+      budget.destroy!
+
+      expect(BudgetAdministrator.count).to be 0
+      expect(Administrator.count).to be 1
+    end
+  end
+
+  describe "#budget_valuators" do
+    it "destroys relation with valuators when destroying the budget" do
+      budget = create(:budget, valuators: [create(:valuator)])
+
+      budget.destroy!
+
+      expect(BudgetValuator.count).to be 0
+      expect(Valuator.count).to be 1
+    end
+  end
 end
