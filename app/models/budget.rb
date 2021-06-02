@@ -72,11 +72,11 @@ class Budget < ApplicationRecord
   end
 
   def starts_at
-    phases.published.first.starts_at
+    phases.published.first&.starts_at
   end
 
   def ends_at
-    phases.published.last.ends_at
+    phases.published.last&.ends_at
   end
 
   def description
