@@ -26,6 +26,14 @@ describe "Help page" do
     end
   end
 
+  scenario "renders the default image for locales with no images" do
+    Setting["feature.help_page"] = true
+
+    visit help_path(locale: :de)
+
+    within("#proposals") { expect(page).to have_css "img" }
+  end
+
   scenario "renders the SDG help page link when the feature is enabled" do
     Setting["feature.help_page"] = true
     Setting["feature.sdg"] = true
