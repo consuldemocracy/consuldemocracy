@@ -23,7 +23,7 @@ sv:
         one: "milstolpe"
         other: "milstolpar"
       milestone/status:
-        one: "Budgetförslagets status"
+        one: "Milstolpestatus"
         other: "Budgetförslagens status"
       progress_bar:
         one: "Förloppsindikator"
