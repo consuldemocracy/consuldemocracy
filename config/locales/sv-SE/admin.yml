@@ -546,7 +546,7 @@ sv:
           milestones: Följer
       homepage:
         edit:
-          title: Anpassa processens hemsida
+          title: Konfigurera processens startsida
       proposals:
         index:
           title: Titel
