@@ -5,6 +5,9 @@ sv:
         title: "Avskaffa fattigdom"
         title_in_two_lines: "Avskaffa\nfattigdom"
         description: "Eliminera alla former av fattigdom, i hela världen."
+        targets:
+          target_1_A:
+            title: "Säkerställa betydande resursmobilisering från en rad olika källor, bland annat genom stärkt utvecklingssamarbete, för att förse utvecklingsländerna, i synnerhet de minst utvecklade, med tillräckliga och förutsägbara medel för att genomföra program och riktlinjer för att eliminera all slags fattigdom"
       goal_2:
         title: "Avskaffa hunger"
         title_in_two_lines: "Avskaffa\nhunger"
