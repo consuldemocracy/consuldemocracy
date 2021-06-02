@@ -97,7 +97,7 @@ sv:
           zero: Inga kommentarer
           one: "%{count} kommentar"
           other: "%{count} kommentarer"
-        debate: Debattera
+        debate: Debatt
       show:
         answer_question: Skicka svar
         next_question: Nästa fråga
