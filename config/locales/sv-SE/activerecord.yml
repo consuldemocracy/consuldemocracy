@@ -193,7 +193,7 @@ sv:
         name: Namn
         external_code: "Extern kod (valfri)"
         census_code: "Adressregisterkod (valfri)"
-        html_map_coordinates: "HTML-<map>koordinater (valfri)"
+        html_map_coordinates: "HTML-<map>koordinater (valfritt)"
       milestone:
         status_id: "Nuvarande status (valfritt)"
         title: "Titel"
