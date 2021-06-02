@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
   def create
     if @comment.save
       CommentNotifier.new(comment: @comment).process
-      add_notification @comment
+      add_notification(@comment) unless @comment.commentable_type == "Budget::Investment"
       EvaluationCommentNotifier.new(comment: @comment).process if send_evaluation_notification?
     else
       render :new
