@@ -277,10 +277,10 @@ sv:
         official_level: "Tjänstepersonnivå"
         phone_number: "Telefonnummer"
         public_activity: "Visa min lista över aktiviteter offentligt"
-        public_interests: "Visa etiketterna för de ämnen jag följer offentligt"
+        public_interests: "Visa etiketterna för de element jag följer offentligt"
         recommended_debates: "Visa rekommenderade debatter"
         recommended_proposals: "Visa rekommenderade förslag"
-        redeemable_code: "Mottagen bekräftelsekod"
+        redeemable_code: "Bekräftelsekod mottagen via e-post"
       direct_message:
         title: "Titel"
         body: "Meddelande"
@@ -313,17 +313,17 @@ sv:
       poll/question/translation:
         title: "Fråga"
       poll/ballot_sheet:
-        data: CSV data
+        data: CSV-data
         poll_id: Omröstning
         officer_assignment_id: Tilldela funktionär
       poll/shift:
-        task: "Åtgärd"
+        task: "Uppgift"
       proposal_notification:
         body: "Meddelande"
         title: "Titel"
       signature_sheet:
         title: "Titel"
-        signable_type: "Typ av underskrifter"
+        signable_type: "Typ som kan skrivas under"
         signable_id: "Förslagets ID"
         document_numbers: "Dokumentnummer"
       sdg/goal:
