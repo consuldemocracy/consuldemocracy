@@ -131,6 +131,7 @@ sv:
         notification_emails: "Dashboard för e-postaviseringar"
         notification_emails_description: "Aktivera skickande av dashboard-aviseringar via e-post till förslagslämnare"
       sdg: Globala målen
+      sdg_description: Aktivera delarna Globala mål för hållbar utveckling i administrationsmenyn och i Globala inställningar.
     remote_census:
       general:
         endpoint: "Slutpunkt"
