@@ -116,7 +116,7 @@ sv:
     proposals:
       form:
         tags_label: "Kategorier"
-      not_verified: "Rösta på förslag %{verify_account}."
+      not_verified: "%{verify_account} för att rösta på förslag."
       process_title: Medborgardialoger
     summary:
       title: "Sammanfattning"
