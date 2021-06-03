@@ -186,6 +186,8 @@ sv:
         enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål
         name_help_text: "Detta är fasens titel som användare ser i sidhuvudet när fasen är aktiv."
         save_changes: Spara ändringar
+      index:
+        help: "Medborgarbudgetar har olika faser. Här kan du aktivera eller inaktivera faser, samt också anpassa varje enskild fas."
     budget_investments:
       index:
         heading_filter_all: Alla områden
@@ -1288,11 +1290,13 @@ sv:
         label:
           booths: "Sök röststation efter namn"
           debates: "Sök debatter med titel eller beskrivning"
+          legislation_processes: "Sök processer efter titel eller beskrivning"
           legislation_proposals: "Sök förslag efter titel eller beskrivning"
           local_census_records: "Sök efter dokumentnummer"
           organizations: "Namn, e-post eller telefonnummer"
           poll_officers: "Sök funktionär"
           poll_questions: "Sök omröstningsfrågor"
+          polls: "Sök omröstningar efter namn eller beskrivning"
           proposals: "Sök förslag efter titel, kod, beskrivning eller fråga"
           users: "Sök användare efter namn eller e-post"
         search: "Sök"
