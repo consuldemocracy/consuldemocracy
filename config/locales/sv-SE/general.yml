@@ -189,8 +189,8 @@ sv:
     document: Dokument
     topic: Ämne
     image: Bild
-    local_census_record: Lokalt adressregister
-    local_census_records/import: Importera lokala adressregister
+    local_census_record: Post i lokalt adressregister
+    local_census_records/import: Import av poster i lokalt adressregister
     site_customization/content_block: innehållsblock
     site_customization/page: sida
     sdg/local_target: lokalt delmål
