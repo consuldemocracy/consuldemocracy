@@ -4,7 +4,7 @@ class Admin::BudgetGroupsController < Admin::BaseController
   feature_flag :budgets
 
   before_action :load_budget
-  before_action :load_group, except: [:index, :new, :create]
+  before_action :load_group, only: [:edit, :update, :destroy]
 
   def index
     @groups = @budget.groups.order(:id)

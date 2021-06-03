@@ -5,7 +5,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
 
   before_action :load_budget
   before_action :load_group
-  before_action :load_heading, except: [:index, :new, :create]
+  before_action :load_heading, only: [:edit, :update, :destroy]
 
   def index
     @headings = @group.headings.order(:id)
