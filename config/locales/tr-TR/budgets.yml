@@ -18,6 +18,9 @@ tr:
             other: "Kullanılan oy sayısı: <span>%{count}</span>"
         amount_limit:
           knapsack: "Toplam bütçe <span>%{count}</span>"
+          approval:
+            one: "<span>1</span> projeye oy verebilirsiniz"
+            other: "En fazla <span>%{count}</span> projeye oy verebilirsiniz"
         no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
         remove: Oyu geri çek
         voted:

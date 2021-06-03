@@ -4,6 +4,10 @@ sv:
       goal_1:
         title: "Avskaffa fattigdom"
         title_in_two_lines: "Avskaffa\nfattigdom"
+        description: "Eliminera alla former av fattigdom, i hela världen."
+        targets:
+          target_1_A:
+            title: "Säkerställa betydande resursmobilisering från en rad olika källor, bland annat genom stärkt utvecklingssamarbete, för att förse utvecklingsländerna, i synnerhet de minst utvecklade, med tillräckliga och förutsägbara medel för att genomföra program och riktlinjer för att eliminera all slags fattigdom"
       goal_2:
         title: "Avskaffa hunger"
         title_in_two_lines: "Avskaffa\nhunger"
@@ -14,6 +18,9 @@ sv:
             title: "Öka investeringarna, bland annat genom stärkt internationellt samarbete, i infrastruktur på landsbygden, jordbruksforskning och förlängningstjänster, teknikutveckling och genbanker för växter och boskap, för att öka jordbrukets produktionskapacitet i utvecklingsländer, i synnerhet de minst utvecklade länderna."
       goal_3:
         title_in_two_lines: "God hälsa och\nvälbefinnande"
+        targets:
+          target_3_A:
+            title: "Stärka genomförandet av Världshälsoorganisationens ramkonvention om tobakskontroll i alla länder, när så är lämpligt."
       goal_4:
         title: "God utbildning"
         title_in_two_lines: "God\nutbildning"
@@ -24,6 +31,9 @@ sv:
       goal_6:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
+        targets:
+          target_6_1:
+            title: "Uppnå allmän och rättvis tillgång till säkert och överkomligt dricksvatten för alla innan 2030."
       goal_7:
         title: "Överkomlig och ren energi"
         title_in_two_lines: "Överkomlig och\nren energi"
@@ -57,6 +67,7 @@ sv:
           other: "%{count} mål till"
     related_list_selector:
       goal_identifier: "SDG%{code}"
+      goal_list: "Du kan välja ett eller flera Globala mål som är i linje med din/ditt %{record}"
       help:
         title: "Vilka globala mål och delmål är i linje med min/mitt %{record}?"
         text: "SDG-hjälpsida"
