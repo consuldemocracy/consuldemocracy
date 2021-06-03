@@ -148,17 +148,7 @@ describe "Proposals" do
       end
     end
 
-    context "On small devices" do
-      let!(:window_size) { Capybara.current_window.size }
-
-      before do
-        Capybara.current_window.resize_to(639, 479)
-      end
-
-      after do
-        Capybara.current_window.resize_to(*window_size)
-      end
-
+    context "On small devices", :small_window do
       scenario "Shows links to share on telegram and whatsapp too" do
         visit proposal_path(create(:proposal))
 
@@ -253,17 +243,7 @@ describe "Proposals" do
     end
   end
 
-  describe "Show sticky support button on mobile screens" do
-    let!(:window_size) { Capybara.current_window.size }
-
-    before do
-      Capybara.current_window.resize_to(640, 480)
-    end
-
-    after do
-      Capybara.current_window.resize_to(*window_size)
-    end
-
+  describe "Show sticky support button on small screens", :small_window do
     scenario "On a first visit" do
       proposal = create(:proposal)
       visit proposal_path(proposal)
