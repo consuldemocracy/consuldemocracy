@@ -97,7 +97,7 @@ sv:
       signature_sheets_description: "Tillåter att röster om förslag och budgetförslag i medborgarbudgetar som samlats in på plats kan läggas in via administrationspanelen"
       user:
         recommendations: "Rekommendationer"
-        recommendations_description: "Visar rekommendationer från användare på hemsidan baserat på taggarna i objekten de följer"
+        recommendations_description: "Visar rekommendationer för användare på startsidan baserat på taggarna i objekten de följer"
         skip_verification: "Hoppa över användarverifiering"
         skip_verification_description: "Detta avaktiverar verifiering av användarna och alla registrerade använder kan delta i alla processer"
         recommendations_on_debates: "Rekommenderade debatter"
