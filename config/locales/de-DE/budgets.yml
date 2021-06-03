@@ -4,7 +4,7 @@ de:
       show:
         title: Ihre Abstimmung
         amount_available:
-          knapsack: "Sie können noch <span>%{count}</span> ausgeben."
+          knapsack: "Sie können noch <span>%{count}</span> ausgeben"
           approval:
             zero: "Sie können noch <span>%{count}</span> Stimmen abgeben."
             one: "Sie können noch <span>%{count}</span> Stimmen abgeben."

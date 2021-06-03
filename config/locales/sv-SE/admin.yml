@@ -186,6 +186,8 @@ sv:
         enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål
         name_help_text: "Detta är fasens titel som användare ser i sidhuvudet när fasen är aktiv."
         save_changes: Spara ändringar
+      index:
+        help: "Medborgarbudgetar har olika faser. Här kan du aktivera eller inaktivera faser, samt också anpassa varje enskild fas."
     budget_investments:
       index:
         heading_filter_all: Alla områden
@@ -546,7 +548,7 @@ sv:
           milestones: Följer
       homepage:
         edit:
-          title: Anpassa processens hemsida
+          title: Konfigurera processens startsida
       proposals:
         index:
           title: Titel
@@ -570,6 +572,7 @@ sv:
           back: Tillbaka
           submit_button: Spara ändringar
           warning: Du har redigerat texten, glöm inte att klicka på Spara för att spara dina ändringar.
+          markdown_changes_message: "Du har redigerat texten utan att spara den. Är du säker på att du vill lämna sidan?"
         form:
           title: 'Redigerar <span class="strong">%{draft_version_title}</span> från processen <span class="strong">%{process_title}</span>'
           launch_text_editor: Öppna textredigerare
@@ -1261,6 +1264,9 @@ sv:
         remote_census:
           title: Konfiguration av fjärradressregister
           how_to_enable: 'För att konfigurera fjärradressregister (SOAP) måste du aktivera "Konfigurera anslutning till fjärradressregister (SOAP)" under fliken "Funktioner".'
+        sdg:
+          title: Konfigurering av Globala målen
+          how_to_enable: 'För att visa konfigurationsalternativen från Globala mål för hållbar utveckling måste du aktivera "Globala målen" på fliken "Funktioner".'
       remote_census_general_name: Generell information
       remote_census_request_name: Begär data
       remote_census_response_name: Svar data
@@ -1284,11 +1290,13 @@ sv:
         label:
           booths: "Sök röststation efter namn"
           debates: "Sök debatter med titel eller beskrivning"
+          legislation_processes: "Sök processer efter titel eller beskrivning"
           legislation_proposals: "Sök förslag efter titel eller beskrivning"
           local_census_records: "Sök efter dokumentnummer"
           organizations: "Namn, e-post eller telefonnummer"
           poll_officers: "Sök funktionär"
           poll_questions: "Sök omröstningsfrågor"
+          polls: "Sök omröstningar efter namn eller beskrivning"
           proposals: "Sök förslag efter titel, kod, beskrivning eller fråga"
           users: "Sök användare efter namn eller e-post"
         search: "Sök"
@@ -1442,6 +1450,7 @@ sv:
         debates: "Debatter"
         polls: "Omröstningar"
         proposals: "Förslag"
+        title: "Globala målen för hållbar utveckling – statistik"
     tags:
       create: Skapa inlägg
       destroy: Ta bort inlägg
@@ -1591,7 +1600,7 @@ sv:
     local_census_records:
       index:
         title: Hantera lokalt adressregister
-        create: Skapa nytt lokalt adressregister
+        create: Skapa ny post i lokalt adressregister
         no_local_census_records: Det finns inget lokalt adressregister.
         document_type: Dokumenttyp
         document_number: Dokumentnummer
@@ -1601,19 +1610,19 @@ sv:
       new:
         creating: Skapar nytt lokalt adressregister
       create:
-        notice: Skapade ny lokal post i adressregister!
+        notice: Skapade ny post i lokalt adressregister!
       edit:
         editing: Redigerar lokalt adressregister
       update:
-        notice: Uppdaterade lokal post i adressregistret!
+        notice: Uppdaterade post i lokalt adressregister!
       destroy:
-        notice: Tog bort lokal post i adressregistret!
+        notice: Tog bort post i lokalt adressregister!
       imports:
         new:
-          title: Lokala poster i adressregister
+          title: Poster i lokalt adressregister
           subtitle: Importera CSV fil
         create:
-          notice: Importen av lokala adressregisterposter är klar!
+          notice: Importen av poster i lokala adressregister är klar!
         show:
           title: Hantera lokalt adressregister
           subtitle: Resultat av importprocess

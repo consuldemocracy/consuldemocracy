@@ -4,6 +4,9 @@ tr:
       verification:
         residence: "İkamet"
         sms: "SMS"
+      local_census_records/import:
+        one: Yerel nüfus sayım kaydını içe aktarma
+        other: Yerel nüfus sayım kayıtlarını içe aktarma
     attributes:
       verification:
         residence:

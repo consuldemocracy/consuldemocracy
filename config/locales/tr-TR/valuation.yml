@@ -56,6 +56,8 @@ tr:
         preview: Yatırım ön izleme
       edit:
         dossier: Dosya
+        price: "Fiyat (%{currency})"
+        price_first_year: "İlk yıl içindeki maliyet(%{currency}) <small>(isteğe bağlı, veri kamuya açık değil)</small>"
         feasibility: Uygulanabilirlik
         valuation_finished_alert: "Bu raporun tamamlandığından emin misiniz? Bunu belirtmeniz halinde, raporda daha fazla değişikli yapmanız mümkün olmayacak."
         not_feasible_alert: "Uygunsuzluk raporunu içeren bir e-posta fikrin sahibine hemen gönderilecektir."

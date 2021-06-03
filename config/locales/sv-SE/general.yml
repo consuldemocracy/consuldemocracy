@@ -108,9 +108,9 @@ sv:
       recommendations:
         without_results: Det finns inga debatter som rör dina intressen
         without_interests: Följ förslag så vi kan ge dig rekommendationer
-        disable: "Rekommenderade debatter kommer sluta visas om du avaktiverar dem. Du kan aktivera funktionen igen under \"Mitt konto\""
+        disable: "Debattrekommendationer visas inte längre om du avaktiverar dem. Du kan aktivera funktionen igen under \"Mitt konto\""
         actions:
-          success: "Rekommenderade debatter har inaktiverats för kontot"
+          success: "Debattrekommendationer har nu inaktiverats för det här kontot"
           error: "Ett fel har uppstått. Var vänlig och gå till \"Mitt konto\" för att manuellt inaktivera debattrekommendationer"
       search_form:
         button: Sök
@@ -189,8 +189,8 @@ sv:
     document: Dokument
     topic: Ämne
     image: Bild
-    local_census_record: Lokalt adressregister
-    local_census_records/import: Importera lokala adressregister
+    local_census_record: Post i lokalt adressregister
+    local_census_records/import: Import av poster i lokalt adressregister
     site_customization/content_block: innehållsblock
     site_customization/page: sida
     sdg/local_target: lokalt delmål
@@ -911,7 +911,7 @@ sv:
       title: Kontoverifiering
     welcome:
       go_to_index: Visa förslag och debatter
-      start_using_consul: Gå till hemsidan
+      start_using_consul: Gå till indexsidan
       title: Delta
       user_permission_debates: Delta i debatter
       user_permission_info: Med ditt konto kan du...
