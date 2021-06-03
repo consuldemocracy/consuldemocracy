@@ -11,6 +11,7 @@ sv:
             one: "Du kan fortfarande lägga <span>%{count}</span> röst."
             other: "Du kan fortfarande lägga <span>%{count}</span> röster."
         amount_spent:
+          knapsack: "Använt belopp <span>%{count}</span>"
           approval:
             zero: "Lagda röster: <span>%{count}</span>"
             one: "Lagda röster: <span>%{count}</span>"
@@ -107,6 +108,7 @@ sv:
               one: "<strong>Du röstade för ett förslag</strong>"
               other: "<strong>Du röstade för %{count} förslag</strong>"
           change_vote_info:
+            knapsack: "Du kan %{link} när som helst fram till %{phase_end_date}. Du behöver inte spendera hela din budget."
             approval: "Du kan %{link} när som helst fram till slutet av denna fas."
           change_vote_link: "ändra din röst"
           different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
