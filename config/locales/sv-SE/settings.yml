@@ -211,7 +211,12 @@ sv:
     sdg:
       process:
         debates: Relaterade Globala mål i debatter
+        debates_description: Tillåt att debatter länkas till Globala mål för hållbar utveckling
         proposals: Relaterade Globala mål i förslag
+        proposals_description: Tillåt att förslag länkas till Globala mål för hållbar utveckling
         polls: Relaterade Globala mål i omröstningar
+        polls_description: Tillåt att omröstningar länkas till Globala mål för hållbar utveckling
         budgets: Relaterade Globala mål i medborgarbudgetar
+        budgets_description: Tillåt att medborgarbudgetar länkas till Globala mål för hållbar utveckling
         legislation: Relaterade Globala mål i medborgardialoger
+        legislation_description: Tillåt att medborgardialoger länkas till Globala mål för hållbar utveckling
