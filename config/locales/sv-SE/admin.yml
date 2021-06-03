@@ -1596,7 +1596,7 @@ sv:
     local_census_records:
       index:
         title: Hantera lokalt adressregister
-        create: Skapa nytt lokalt adressregister
+        create: Skapa ny post i lokalt adressregister
         no_local_census_records: Det finns inget lokalt adressregister.
         document_type: Dokumenttyp
         document_number: Dokumentnummer
@@ -1606,19 +1606,19 @@ sv:
       new:
         creating: Skapar nytt lokalt adressregister
       create:
-        notice: Skapade ny lokal post i adressregister!
+        notice: Skapade ny post i lokalt adressregister!
       edit:
         editing: Redigerar lokalt adressregister
       update:
-        notice: Uppdaterade lokal post i adressregistret!
+        notice: Uppdaterade post i lokalt adressregister!
       destroy:
-        notice: Tog bort lokal post i adressregistret!
+        notice: Tog bort post i lokalt adressregister!
       imports:
         new:
-          title: Lokala poster i adressregister
+          title: Poster i lokalt adressregister
           subtitle: Importera CSV fil
         create:
-          notice: Importen av lokala adressregisterposter är klar!
+          notice: Importen av poster i lokala adressregister är klar!
         show:
           title: Hantera lokalt adressregister
           subtitle: Resultat av importprocess
