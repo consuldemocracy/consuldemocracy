@@ -31,6 +31,9 @@ sv:
       goal_6:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
+        targets:
+          target_6_1:
+            title: "Uppnå allmän och rättvis tillgång till säkert och överkomligt dricksvatten för alla innan 2030."
       goal_7:
         title: "Överkomlig och ren energi"
         title_in_two_lines: "Överkomlig och\nren energi"
