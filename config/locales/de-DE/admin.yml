@@ -667,7 +667,7 @@ de:
       hidden_users: Verborgene Benutzer*innen
       administrators: Administrator*innen
       managers: Manager*innen
-      sdg_managers: SDG Managers 
+      sdg_managers: SDG Managers
       moderators: Moderator*innen
       messaging_users: Nachrichten an Benutzer*innen
       newsletters: Newsletter
@@ -1474,7 +1474,7 @@ de:
         filter: Filter
         filters:
           active: Aktiv
-          erased: Gelöscht 
+          erased: Gelöscht
       search:
         placeholder: Suche Benutzer*in nach E-Mail, Name oder Ausweis
     verifications:
