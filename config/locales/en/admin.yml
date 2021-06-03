@@ -180,6 +180,7 @@ en:
       index:
         back: "Go back to groups"
         help: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
+        title: "%{budget} / %{group} headings"
     budget_phases:
       edit:
         description_help_text: This text will appear in the header when the phase is active

@@ -180,6 +180,7 @@ es:
       index:
         back: "Volver a grupos"
         help: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
+        title: "Partidas de %{budget} / %{group}"
     budget_phases:
       edit:
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
