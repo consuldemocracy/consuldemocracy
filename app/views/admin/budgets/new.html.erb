@@ -4,4 +4,4 @@
   <h2><%= t("admin.budgets.new.title") %></h2>
 </header>
 
-<%= render "/admin/budgets/form" %>
+<%= render Admin::Budgets::FormComponent.new(@budget) %>
