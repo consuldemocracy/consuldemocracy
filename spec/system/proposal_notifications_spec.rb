@@ -14,7 +14,7 @@ describe "Proposal Notifications" do
       click_link "Message to users"
     end
 
-    click_link "Send message to proposal followers"
+    click_link "Send notification to proposal followers"
 
     fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
     fill_in "proposal_notification_body", with: "Please share it with "\
@@ -159,7 +159,7 @@ describe "Proposal Notifications" do
         click_link "Message to users"
       end
 
-      expect(page).to have_link "Send message to proposal followers"
+      expect(page).to have_link "Send notification to proposal followers"
     end
 
     scenario "Accessing form directly" do
