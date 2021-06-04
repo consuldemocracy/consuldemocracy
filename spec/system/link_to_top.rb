@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Link to top" do
-  scenario "Display if feature is enabled", :js do
+  scenario "Display if feature is enabled" do
     window_height = page.evaluate_script("window.innerHeight;")
     scroll = (window_height * 20 / 100) + 1
 

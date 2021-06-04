@@ -4,7 +4,6 @@ module Budgets
     before_action :load_budget
     authorize_resource :budget
     before_action :load_ballot
-    after_action :store_referer, only: [:show]
 
     def show
       authorize! :show, @ballot
@@ -21,10 +20,6 @@ module Budgets
       def load_ballot
         query = Budget::Ballot.where(user: current_user, budget: @budget)
         @ballot = @budget.balloting? ? query.first_or_create! : query.first_or_initialize
-      end
-
-      def store_referer
-        session[:ballot_referer] = request.referer
       end
   end
 end

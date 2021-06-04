@@ -1,25 +1,28 @@
 <%= render "shared/globalize_locales", resource: @phase %>
 
-<%= translatable_form_for [:admin, @phase.budget, @phase] do |f| %>
+<%= translatable_form_for [:admin, @phase.budget, @phase], html: { class: "budget-phases-form" } do |f| %>
 
   <%= render "shared/errors", resource: @phase %>
 
-  <%= hidden_field :budget, :mode, value: @mode %>
+  <fieldset>
+    <%= hidden_field :budget, :mode, value: @mode %>
 
-  <div class="margin-top">
-    <div class="small-12 column">
-      <p class="form-label"><%= t("admin.budget_phases.edit.duration") %></p>
-      <p class="help-text"><%= t("admin.budget_phases.edit.duration_description") %></p>
-    </div>
+    <legend aria-describedby="phase_duration_description">
+      <%= t("admin.budget_phases.edit.duration") %>
+    </legend>
 
-    <div class="small-12 medium-6 large-3 column">
+    <p class="help-text" id="phase_duration_description">
+      <%= t("admin.budget_phases.edit.duration_description") %>
+    </p>
+
+    <div class="date-field">
       <%= f.date_field :starts_at, id: "start_date" %>
     </div>
 
-    <div class="small-12 medium-6 large-3 column end">
+    <div class="date-field">
       <%= f.date_field :ends_at, id: "end_date" %>
     </div>
-  </div>
+  </fieldset>
 
   <div class="small-12 column margin">
     <%= f.check_box :enabled %>
@@ -31,9 +34,7 @@
 
   <%= f.translatable_fields do |translations_form| %>
     <div class="small-12 column">
-      <%= translations_form.label :name %>
-      <p class="help-text"><%= t("admin.budget_phases.edit.phase_name_help_text") %></p>
-      <%= translations_form.text_field :name, label: false %>
+      <%= translations_form.text_field :name, hint: t("admin.budget_phases.edit.name_help_text") %>
     </div>
 
     <div class="small-12 column">

@@ -166,10 +166,10 @@ he:
         other: "%{count} שגיאות מנעו מה%{model} להישמר"
   helpers:
     select:
-      prompt: נא לבחור
+      prompt: נא בחר
     submit:
       create: יצירת %{model}
-      submit: שמור %{model}
+      submit: שמירת %{model}
       update: עדכון %{model}
   number:
     currency:
@@ -217,7 +217,7 @@ he:
         format: "%n%"
   support:
     array:
-      last_word_connector: " ו"
+      last_word_connector: "ו, "
       two_words_connector: " ו"
       words_connector: ", "
   time:

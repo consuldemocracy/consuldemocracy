@@ -177,10 +177,10 @@ ast:
       budgets: Presupuestos participativos
       notification_item:
         new_notifications:
+          zero: "No tienes notificaciones nuevas"
           one: Tienes una nueva notificación
           other: Tienes %{count} notificaciones nuevas
         notifications: Notificaciones
-        no_notifications: "No tienes notificaciones nuevas"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -439,7 +439,6 @@ ast:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
-    whatsapp: WhatsApp
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
   stats:

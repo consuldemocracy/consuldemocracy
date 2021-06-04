@@ -1,12 +1,19 @@
 module Budgets
   class GroupsController < ApplicationController
+    include InvestmentFilters
+    include FeatureFlags
+    feature_flag :budgets
+
     before_action :load_budget
     before_action :load_group, only: :show
     authorize_resource :budget
     authorize_resource :group, class: "Budget::Group"
 
-    before_action :set_default_budget_filter, only: [:index, :show]
-    has_filters %w[not_unfeasible feasible unfeasible unselected selected winners], only: [:index, :show]
+    before_action :set_default_investment_filter, only: :show
+    has_filters investment_filters, only: [:show]
+
+    def show
+    end
 
     private
 

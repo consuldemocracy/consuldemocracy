@@ -16,13 +16,13 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
   end
 
   context "Button to request remote translation" do
-    scenario "should not be present when current locale translation exists", :js do
+    scenario "should not be present when current locale translation exists" do
       visit path
 
       expect(page).not_to have_button("Translate page")
     end
 
-    scenario "should be present when current locale translation does not exists", :js do
+    scenario "should be present when current locale translation does not exists" do
       visit path
 
       select("Español", from: "locale-switcher")
@@ -30,7 +30,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       expect(page).to have_button("Traducir página")
     end
 
-    scenario "should not be present when new current locale translation exists", :js do
+    scenario "should not be present when new current locale translation exists" do
       add_translations(resource, :es)
       visit path
       expect(page).not_to have_button("Translate page")
@@ -40,7 +40,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       expect(page).not_to have_button("Traducir página")
     end
 
-    scenario "should not be present when there are no resources to translate", :js do
+    scenario "should not be present when there are no resources to translate" do
       skip("only index_path") if show_path?(path_name)
       resource.destroy!
       visit path
@@ -51,7 +51,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     end
 
     describe "with delayed job active", :delay_jobs do
-      scenario "should not be present when an equal RemoteTranslation is enqueued", :js do
+      scenario "should not be present when an equal RemoteTranslation is enqueued" do
         create(:remote_translation, remote_translatable: resource, locale: :es)
         visit path
 
@@ -69,7 +69,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         end
       end
 
-      scenario "is not present when a resource translation exists but its comment has not tanslations", :js do
+      scenario "is not present when a resource translation exists but its comment has not tanslations" do
         add_translations(resource, :es)
         create(:comment, commentable: resource)
         visit path
@@ -88,7 +88,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         end
       end
 
-      scenario "display when exists resource translations but the comment does not have a translation", :js do
+      scenario "display when exists resource translations but the comment does not have a translation" do
         add_translations(resource, :es)
         create(:comment, commentable: resource)
         visit path
@@ -99,7 +99,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         expect(page).to have_button("Traducir página")
       end
 
-      scenario "not display when exists resource translations but his comment has tanslations", :js do
+      scenario "not display when exists resource translations but his comment has tanslations" do
         add_translations(resource, :es)
         create_comment_with_translations(resource, :es)
         visit path
@@ -114,7 +114,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     describe "should evaluate missing translations on featured_debates" do
       before { skip("only debates index path") if path_name != "debates_path" }
 
-      scenario "display when exists featured_debates without tanslations", :js do
+      scenario "display when exists featured_debates without tanslations" do
         add_translations(resource, :es)
         create_featured_debates
         visit path
@@ -129,7 +129,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     describe "should evaluate missing translations on featured_proposals" do
       before { skip("only proposals index path") if path_name != "proposals_path" }
 
-      scenario "display when exists featured_proposals without tanslations", :js do
+      scenario "display when exists featured_proposals without tanslations" do
         add_translations(resource, :es)
         create_featured_proposals
         visit path
@@ -144,7 +144,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
   context "After click remote translations button" do
     describe "with delayed jobs", :delay_jobs do
-      scenario "the remote translation button should not be present", :js do
+      scenario "the remote translation button should not be present" do
         visit path
         select("Español", from: "locale-switcher")
 
@@ -153,14 +153,14 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         expect(page).not_to have_button("Traducir página")
       end
 
-      scenario "the remote translation is pending to translate", :js do
+      scenario "the remote translation is pending to translate" do
         visit path
         select("Español", from: "locale-switcher")
 
         expect { click_button "Traducir página" }.to change { RemoteTranslation.count }.from(0).to(1)
       end
 
-      scenario "should be present enqueued notice and informative text", :js do
+      scenario "should be present enqueued notice and informative text" do
         visit path
         select("Español", from: "locale-switcher")
 
@@ -170,7 +170,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
       end
 
-      scenario "should be present only informative text when user visit page with all content enqueued", :js do
+      scenario "should be present only informative text when user visit page with all content enqueued" do
         visit path
         select("Español", from: "locale-switcher")
         click_button "Traducir página"
@@ -186,7 +186,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     end
 
     describe "without delayed jobs" do
-      scenario "the remote translation button should not be present", :js do
+      scenario "the remote translation button should not be present" do
         microsoft_translate_client_response = generate_response(resource)
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
         visit path
@@ -197,7 +197,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         expect(page).not_to have_button("Traducir página")
       end
 
-      scenario "the remote translation has been translated and destoyed", :js do
+      scenario "the remote translation has been translated and destoyed" do
         microsoft_translate_client_response = generate_response(resource)
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
         visit path
@@ -205,6 +205,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
         click_button "Traducir página"
 
+        expect(page).not_to have_button "Traducir página"
         expect(RemoteTranslation.count).to eq(0)
         expect(resource.translations.count).to eq(2)
       end

@@ -34,25 +34,25 @@ sv:
         user_permission_info: Med ditt konto kan du...
       update:
         flash:
-          success: Giltig kod. Ditt konto har verifierats
+          success: Giltig kod. Ditt konto har nu verifierats
     redirect_notices:
       already_verified: Ditt konto är redan verifierat
       email_already_sent: Vi har redan skickat ett e-postmeddelande med en bekräftelselänk. Om du inte hittar e-postmeddelandet, kan du begära ett nytt här
     residence:
       alert:
-        unconfirmed_residency: Du har inte bekräftat din adress
+        unconfirmed_residency: Du har inte bekräftat din adress än
       create:
         flash:
-          success: Din adress är bekräftad
+          success: Din bostadsadress har bekräftats
       new:
-        accept_terms_text: Jag accepterar %{terms_url} för adressregistret
-        accept_terms_text_title: Jag accepterar villkoren för tillgång till adressregistret
+        accept_terms_text: Jag godkänner %{terms_url} för adressregistret
+        accept_terms_text_title: Jag godkänner villkoren för tillgång till adressregistret
         document_number: Dokumentnummer
         document_number_help_title: Hjälp
         document_number_help_text: "<strong>Legitimation</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Övrig identitetshandling</strong>: X1234567P"
         document_type:
           passport: Pass
-          residence_card: Övrig identitetshandling
+          residence_card: Uppehållstillstånd
           spanish_id: Legitimation
         error_not_allowed_age: Du är för ung för att delta
         error_not_allowed_postal_code: Du måste vara en invånare i staden för att kunna verifieras.

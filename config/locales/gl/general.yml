@@ -222,7 +222,6 @@ gl:
       collaborative_legislation: Procesos lexislativos
       debates: Debates
       locale: "Idioma:"
-      logo: Logo de CONSUL
       management: Xestión
       moderation: Moderar
       valuation: Avaliación
@@ -236,10 +235,10 @@ gl:
       budgets: Orzamentos participativos
       notification_item:
         new_notifications:
+          zero: "Non tes notificacións novas"
           one: Tes unha nova notificación
           other: Tes %{count} notificacións novas
         notifications: Notificacións
-        no_notifications: "Non tes notificacións novas"
   notifications:
     index:
       empty_notifications: Non tes notificacións novas.
@@ -673,7 +672,6 @@ gl:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
   stats:
@@ -758,9 +756,10 @@ gl:
         debates: "Debates máis activos"
         proposals: "Propostas máis activas"
         processes: "Procesos abertos"
-      see_all_debates: Ver todos os debates
-      see_all_proposals: Ver todas as propostas
-      see_all_processes: Ver todos os procesos
+      see_all:
+        debates: Ver todos os debates
+        proposals: Ver todas as propostas
+        processes: Ver todos os procesos
       process_label: Proceso
       see_process: Ver proceso
     cards:

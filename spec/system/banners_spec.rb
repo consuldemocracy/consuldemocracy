@@ -1,25 +1,16 @@
 require "rails_helper"
 
 describe "Banner" do
-  scenario "The banner is shown correctly" do
-    create(:web_section, name: "homepage")
-    banner = create(:banner, title: "Hello",
-                      description: "Banner description",
-                      target_url:  "http://www.url.com",
-                      post_started_at: (Time.current - 4.days),
-                      post_ended_at:   (Time.current + 10.days),
-                      background_color: "#FF0000",
-                      font_color: "#FFFFFF")
-    section = WebSection.where(name: "homepage").last
-    create(:banner_section, web_section: section, banner_id: banner.id)
+  scenario "Only renders banners in the right section" do
+    create(:banner,
+           web_sections: [WebSection.find_by!(name: "homepage")],
+           description: "Banner description",
+           post_started_at: (Date.current - 4.days),
+           post_ended_at:   (Date.current + 10.days))
 
     visit root_path
 
-    within(".banner") do
-      expect(page).to have_content("Banner description")
-      expect(find("h2")[:style]).to eq("color:#{banner.font_color};")
-      expect(find("h3")[:style]).to eq("color:#{banner.font_color};")
-    end
+    within(".banner") { expect(page).to have_content("Banner description") }
 
     visit debates_path
 

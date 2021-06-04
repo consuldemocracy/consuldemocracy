@@ -8,14 +8,12 @@ describe "Public area translatable records" do
     login_as(user)
   end
 
-  context "New records", :js do
+  context "New records" do
     scenario "Add only single translation at once" do
       visit new_debate_path
 
       fill_in "Debate title", with: "Who won the debate?"
       fill_in_ckeditor "Initial debate text", with: "And who will win this debate?"
-      # Check terms of service by default
-      # check "debate_terms_of_service"
       click_button "Start a debate"
 
       expect(page).to have_content "Debate created successfully"
@@ -27,8 +25,6 @@ describe "Public area translatable records" do
       fill_in "Proposal title", with: "Olympic Games in Melbourne"
       fill_in "Proposal summary", with: "Full proposal for our candidature"
       fill_in_ckeditor "Proposal text", with: "2032 will make Australia famous again"
-      # Check terms of service by default
-      # check "proposal_terms_of_service"
       click_button "Create proposal"
 
       expect(page).to have_content "Proposal created successfully"
@@ -53,8 +49,6 @@ describe "Public area translatable records" do
       expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
                                      visible: false)
 
-      # Check terms of service by default
-      # check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
       expect(page).to have_content "Budget Investment created successfully"
@@ -67,8 +61,6 @@ describe "Public area translatable records" do
 
       fill_in "Proposal title", with: "Titre en Français"
       fill_in "Proposal summary", with: "Résumé en Français"
-      # Check terms of service by default
-      # check "proposal_terms_of_service"
       click_button "Create proposal"
 
       expect(page).to have_content "Proposal created successfully"
@@ -87,8 +79,6 @@ describe "Public area translatable records" do
       expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
                                      visible: false)
 
-      # Check terms of service by default
-      # check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
       expect(page).to have_content "Budget Investment created successfully"
@@ -97,8 +87,6 @@ describe "Public area translatable records" do
     scenario "Add an invalid translation" do
       visit new_debate_path
 
-      # Check terms of service by default
-      # check "debate_terms_of_service"
       click_button "Start a debate"
 
       expect(page).to have_css "#error_explanation"
@@ -115,8 +103,6 @@ describe "Public area translatable records" do
       expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
                                      visible: false)
 
-      # Check terms of service by default
-      # check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
       expect(page).to have_css "#error_explanation"
@@ -124,7 +110,7 @@ describe "Public area translatable records" do
     end
   end
 
-  context "Globalize javascript interface", :js do
+  context "Globalize javascript interface" do
     scenario "Highlight current locale" do
       visit new_debate_path
 
@@ -197,7 +183,7 @@ describe "Public area translatable records" do
     end
   end
 
-  context "Existing records", :js do
+  context "Existing records" do
     before { translatable.update(attributes.merge(author: user)) }
 
     let(:attributes) do

@@ -4,6 +4,10 @@ sv:
     results_enabled: "Visa resultat"
     stats_enabled: "Visa statistik"
     advanced_stats_enabled: "Visa avancerad statistik"
+    name: Namn
+    email: E-post
+    description: Beskrivning
+    related_sdg_list: Mål och milstolpar
   activerecord:
     models:
       activity:
@@ -72,6 +76,18 @@ sv:
       proposal:
         one: "Medborgarförslag"
         other: "Medborgarförslag"
+      sdg/goal:
+        one: "mål"
+        other: "mål"
+      sdg/local_target:
+        one: "lokalt delmål"
+        other: "lokala mål"
+      sdg/manager:
+        one: "Globala målen-chef"
+        other: "Globala målen-chefer"
+      sdg/target:
+        one: "delmål"
+        other: "delmål"
       site_customization/page:
         one: Anpassad sida
         other: Anpassade sidor
@@ -125,7 +141,7 @@ sv:
         other: Åtgärder
       link:
         one: Länk
-        other: Länk
+        other: Länkar
       local_census_record:
         one: Lokalt adressregister
         other: Lokala adressregister
@@ -141,6 +157,9 @@ sv:
         description_finished: "Beskrivning för när budgeten är avslutad"
         phase: "Fas"
         currency_symbol: "Valuta"
+        voting_style: "Slutgiltigt omröstningsformat"
+        voting_style_knapsack: "Ryggsäck"
+        voting_style_approval: "Godkännande"
       budget/translation:
         name: "Namn"
       budget/investment:
@@ -173,7 +192,7 @@ sv:
       geozone:
         name: Namn
         external_code: "Extern kod (valfri)"
-        census_code: "Områdeskod (valfri)"
+        census_code: "Adressregisterkod (valfri)"
         html_map_coordinates: "HTML-<map>koordinater (valfri)"
       milestone:
         status_id: "Nuvarande status för budgetförslag (frivilligt fält)"
@@ -203,6 +222,7 @@ sv:
         name: "Område"
         price: "Kostnad"
         population: "Befolkning"
+        max_ballot_lines: "Tillåtna röster"
       budget/heading/translation:
         name: "Områdes namn"
       budget/phase:
@@ -210,6 +230,7 @@ sv:
         ends_at: "Slutdatum"
         starts_at: "Startdatum"
       budget/phase/translation:
+        name: "Namn"
         description: "Beskrivning"
         summary: "Sammanfattning"
       comment:
@@ -249,7 +270,7 @@ sv:
         email_digest: "Få en sammanfattning av aviseringar om förslag"
         email_on_comment: "Meddela mig via e-post när någon kommenterar mina förslag eller debatter"
         email_on_comment_reply: "Meddela mig via e-post när någon svarar på mina kommentarer"
-        email_on_direct_message: "Få e-post om direkta meddelanden"
+        email_on_direct_message: "Få e-post om direktmeddelanden"
         newsletter: "Få relevanta uppdateringar om webbplatsen med e-post"
         official_position: "Titel"
         official_position_badge: "Visa etikett för representant för staden"
@@ -268,6 +289,7 @@ sv:
         responsible_name: "Representant för gruppen"
       poll:
         name: "Namn"
+        title: "Namn"
         starts_at: "Startdatum"
         ends_at: "Slutdatum"
         geozone_restricted: "Begränsat till område"
@@ -304,6 +326,23 @@ sv:
         signable_type: "Typ av underskrifter"
         signable_id: "Förslagets ID"
         document_numbers: "Dokumentnummer"
+      sdg/goal:
+        code: "Kod"
+        title: "Titel"
+        description: "Beskrivning"
+      sdg/local_target:
+        code: "Kod"
+        target_id: "Delmål"
+        title: "Titel"
+      sdg/local_target/translation:
+        title: "Titel"
+        description: "Beskrivning"
+      sdg/phase/kind:
+        planning: "Planering"
+        monitoring: "Övervakning"
+      sdg/target:
+        code: "Kod"
+        title: "Titel"
       site_customization/page:
         content: Innehåll
         created_at: Skapad
@@ -504,6 +543,8 @@ sv:
           attributes:
             document_number:
               not_in_census: "Finns inte i adressregistret"
+            user_id:
+              has_voted: "Användaren har redan röstat"
         legislation/process:
           attributes:
             end_date:
@@ -552,10 +593,14 @@ sv:
           attributes:
             locale:
               already_translated: Redan översatt resurs
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "måste börja med samma kod som sitt delmål, följt av en punkt, och sluta med ett tal"
       messages:
         translations_too_short: Det krävs minst en översättning
         record_invalid: "Felmeddelanden: %{errors}"
         another_poll_active: Det pågår en annan omröstning under perioden
         restrict_dependent_destroy:
-          has_one: "Inlägget kan inte raderas eftersom det hänger ihop med inlägget %{record}"
-          has_many: "Inlägget kan inte raderas eftersom det hänger ihop med inlägget %{record}"
+          has_one: "Posten kan inte raderas eftersom en underordnad %{record} finns"
+          has_many: "Posten kan inte raderas eftersom underordnade %{record} finns"

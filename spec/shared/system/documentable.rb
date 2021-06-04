@@ -1,13 +1,10 @@
 shared_examples "documentable" do |documentable_factory_name, documentable_path, documentable_path_arguments|
-  let(:administrator) { create(:user) }
   let(:user)          { create(:user) }
   let(:arguments)     { {} }
   let(:documentable)  { create(documentable_factory_name, author: user) }
   let!(:document)     { create(:document, documentable: documentable, user: documentable.author) }
 
   before do
-    create(:administrator, user: administrator)
-
     documentable_path_arguments.each do |argument_name, path_to_value|
       arguments.merge!("#{argument_name}": documentable.send(path_to_value))
     end
@@ -46,8 +43,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
         expect(page).to have_link("Delete document")
       end
 
-      scenario "Administrators cannot destroy documentables they have not authored" do
-        login_as(administrator)
+      scenario "Administrators cannot destroy documentables they have not authored", :admin do
         visit send(documentable_path, arguments)
 
         expect(page).not_to have_link("Delete document")
@@ -105,7 +101,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        click_on "Delete document"
+        accept_confirm { click_link "Delete document" }
       end
 
       expect(page).to have_content "Document was deleted successfully."
@@ -117,7 +113,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        click_on "Delete document"
+        accept_confirm { click_link "Delete document" }
       end
 
       expect(page).not_to have_content "Documents (0)"
@@ -129,7 +125,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        click_on "Delete document"
+        accept_confirm { click_link "Delete document" }
       end
 
       within "##{ActionView::RecordIdentifier.dom_id(documentable)}" do

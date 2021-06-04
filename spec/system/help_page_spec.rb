@@ -4,6 +4,7 @@ describe "Help page" do
   context "Index" do
     scenario "Help menu and page is visible if feature is enabled" do
       Setting["feature.help_page"] = true
+      Setting["org_name"] = "CONSUL"
 
       visit root_path
 
@@ -23,5 +24,28 @@ describe "Help page" do
 
       expect(page).not_to have_link "Help"
     end
+  end
+
+  scenario "renders the SDG help page link when the feature is enabled" do
+    Setting["feature.help_page"] = true
+    Setting["feature.sdg"] = true
+
+    visit root_path
+    within("#navigation_bar") do
+      click_link "Help"
+    end
+
+    expect(page).to have_link "Sustainable Development Goals help", href: sdg_help_path
+  end
+
+  scenario "does not render the SDG help page link when the feature is disabled" do
+    Setting["feature.sdg"] = nil
+
+    visit root_path
+    within("#navigation_bar") do
+      click_link "Help"
+    end
+
+    expect(page).not_to have_link "Sustainable Development Goals help"
   end
 end

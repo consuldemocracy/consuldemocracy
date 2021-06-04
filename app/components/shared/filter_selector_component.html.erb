@@ -1,0 +1,5 @@
+<%= form_tag({}, method: :get, enforce_utf8: false, class: "filter-selector") do %>
+  <%= query_parameters_tags %>
+  <%= label_tag "filter_selector_filter", t("#{i18n_namespace}.filter") %>
+  <%= select_tag "filter", options_for_select(filter_options, current_filter), id: "filter_selector_filter" %>
+<% end %>

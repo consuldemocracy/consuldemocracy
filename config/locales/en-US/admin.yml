@@ -1,14 +1,5 @@
 en-US:
   admin:
-    managers:
-      index:
-        email: Email
-    administrators:
-      index:
-        email: Email
-    moderators:
-      index:
-        email: Email
     valuators:
       index:
         email: Email

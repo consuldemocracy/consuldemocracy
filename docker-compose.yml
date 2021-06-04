@@ -5,8 +5,9 @@ services:
 
     # use the preferred version of the official Postgres image
     # see https://hub.docker.com/_/postgres/
-    image: postgres:9.4.5
-
+    image: postgres:9.6.21
+    environment:
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
     # persist the database between containers by storing it in a volume
     volumes:
       - docker-example-postgres:/var/lib/postgresql/data
@@ -37,6 +38,7 @@ services:
       - bundle:/usr/local/bundle:delegated
       - "$SSH_AUTH_SOCK:/tmp/agent.sock"
     environment:
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
       - SSH_AUTH_SOCK=/tmp/agent.sock
 volumes:
   docker-example-postgres: {}

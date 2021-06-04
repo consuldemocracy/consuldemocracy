@@ -118,3 +118,32 @@ sv:
         tags_label: "Kategorier"
       not_verified: "Rösta på förslag %{verify_account}."
       process_title: Medborgardialoger
+    summary:
+      title: "Sammanfattning"
+      votes:
+        zero: "%{count} röster"
+        one: "%{count} röst"
+        other: "%{count} röster"
+      debate_phase: "Debattfas"
+      proposals_phase: "Förslagsfas"
+      allegations_phase: "Kommentarsfas"
+      debates:
+        zero: "Inga debatter"
+        one: "%{count} debatt"
+        other: "%{count} debatter"
+      proposals:
+        zero: "Inga förslag"
+        one: "%{count} förslag"
+        other: "%{count} förslag"
+      comments:
+        zero: "Inga kommentarer"
+        one: "%{count} kommentar"
+        other: "%{count} kommentarer"
+      download: "Hämta sammanfattning"
+      top_comments:
+        zero: "Inga kommentarer"
+        one: "%{count} kommentar"
+        other: "Toppkommentarerna"
+      most_voted_comments: "Mest omröstade kommentarer"
+      no_allegation: "Det finns inga kommentarer"
+      process_empty: "Den här processen hade inte några deltagandefaser"

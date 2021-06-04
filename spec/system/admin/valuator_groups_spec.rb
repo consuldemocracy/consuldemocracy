@@ -1,12 +1,6 @@
 require "rails_helper"
 
-describe "Valuator groups" do
-  let(:admin) { create(:administrator).user }
-
-  before do
-    login_as(admin)
-  end
-
+describe "Valuator groups", :admin do
   scenario "Index" do
     group1 = create(:valuator_group)
     group2 = create(:valuator_group)
@@ -73,7 +67,7 @@ describe "Valuator groups" do
     create(:valuator_group)
 
     visit admin_valuator_groups_path
-    click_link "Delete"
+    accept_confirm { click_link "Delete" }
 
     expect(page).to have_content "Valuator group deleted successfully"
     expect(page).to have_content "There are no valuator groups"

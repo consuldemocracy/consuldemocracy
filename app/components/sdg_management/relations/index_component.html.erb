@@ -1,0 +1,35 @@
+<%= header %>
+
+<%= render SDGManagement::Relations::SearchComponent.new(label: search_label, current_filter: current_filter) %>
+<%= render "shared/filter_subnav", i18n_namespace: "sdg_management.relations.index" %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= SDG::Goal.model_name.human(count: 2).upcase_first %></th>
+      <th><%= SDG::Target.model_name.human(count: 2).upcase_first %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.title %></td>
+        <td><%= record.sdg_goal_list %></td>
+        <td><%= record.sdg_target_list %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(
+            record,
+            actions: [:edit],
+            edit_text: t("sdg_management.actions.edit"),
+            edit_path: edit_path_for(record)
+          ) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate(@records) %>

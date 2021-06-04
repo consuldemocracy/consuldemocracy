@@ -1,10 +1,6 @@
 require "rails_helper"
 
-describe "Admin geozones" do
-  before do
-    login_as(create(:administrator).user)
-  end
-
+describe "Admin geozones", :admin do
   scenario "Show list of geozones" do
     chamberi = create(:geozone, name: "Chamberí")
     retiro = create(:geozone, name: "Retiro")
@@ -18,7 +14,10 @@ describe "Admin geozones" do
   scenario "Create new geozone" do
     visit admin_root_path
 
-    within("#side_menu") { click_link "Manage geozones" }
+    within("#side_menu") do
+      click_link "Settings"
+      click_link "Manage geozones"
+    end
 
     click_link "Create geozone"
 
@@ -75,11 +74,10 @@ describe "Admin geozones" do
 
     visit admin_geozones_path
 
-    within("#geozone_#{geozone.id}") { click_link "Delete" }
+    within("#geozone_#{geozone.id}") { accept_confirm { click_link "Delete" } }
 
     expect(page).to have_content "Geozone successfully deleted"
     expect(page).not_to have_content("Delete me!")
-    expect(Geozone.where(id: geozone.id)).to be_empty
   end
 
   scenario "Delete geozone with associated element" do
@@ -88,7 +86,7 @@ describe "Admin geozones" do
 
     visit admin_geozones_path
 
-    within("#geozone_#{geozone.id}") { click_link "Delete" }
+    within("#geozone_#{geozone.id}") { accept_confirm { click_link "Delete" } }
 
     expect(page).to have_content "This geozone can't be deleted since there are elements attached to it"
 

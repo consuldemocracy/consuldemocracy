@@ -4,9 +4,6 @@ describe "Votes" do
   let!(:verified)   { create(:user, verified_at: Time.current) }
   let!(:unverified) { create(:user) }
 
-  before do
-  end
-
   describe "Debates" do
     before { login_as(verified) }
 
@@ -77,7 +74,7 @@ describe "Votes" do
         end
       end
 
-      scenario "Update", :js do
+      scenario "Update" do
         visit debate_path(create(:debate))
 
         find(".in-favor a").click
@@ -102,7 +99,7 @@ describe "Votes" do
         expect(page).to have_content "1 vote"
       end
 
-      scenario "Trying to vote multiple times", :js do
+      scenario "Trying to vote multiple times" do
         visit debate_path(create(:debate))
 
         find(".in-favor a").click
@@ -139,7 +136,7 @@ describe "Votes" do
         end
       end
 
-      scenario "Create from debate show", :js do
+      scenario "Create from debate show" do
         visit debate_path(create(:debate))
 
         find(".in-favor a").click
@@ -157,7 +154,7 @@ describe "Votes" do
         expect(page).to have_content "1 vote"
       end
 
-      scenario "Create in index", :js do
+      scenario "Create in index" do
         create(:debate)
         visit debates_path
 
@@ -214,7 +211,7 @@ describe "Votes" do
         expect(page).to have_content "No supports"
       end
 
-      scenario "Trying to vote multiple times", :js do
+      scenario "Trying to vote multiple times" do
         visit proposal_path(proposal)
 
         within(".supports") do
@@ -236,7 +233,7 @@ describe "Votes" do
         end
       end
 
-      scenario "Create from proposal show", :js do
+      scenario "Create from proposal show" do
         visit proposal_path(proposal)
 
         within(".supports") do
@@ -247,7 +244,7 @@ describe "Votes" do
         end
       end
 
-      scenario "Create in listed proposal in index", :js do
+      scenario "Create in listed proposal in index" do
         visit proposals_path
 
         within("#proposal_#{proposal.id}") do
@@ -259,7 +256,7 @@ describe "Votes" do
         expect(page).to have_current_path(proposals_path)
       end
 
-      scenario "Create in featured proposal in index", :js do
+      scenario "Create in featured proposal in index" do
         visit proposals_path
 
         within("#proposal_#{proposal.id}") do
@@ -272,7 +269,7 @@ describe "Votes" do
     end
   end
 
-  scenario "Not logged user trying to vote debates", :js do
+  scenario "Not logged user trying to vote debates" do
     debate = create(:debate)
 
     visit debates_path
@@ -282,7 +279,7 @@ describe "Votes" do
     end
   end
 
-  scenario "Not logged user trying to vote proposals", :js do
+  scenario "Not logged user trying to vote proposals" do
     proposal = create(:proposal)
 
     visit proposals_path
@@ -298,7 +295,7 @@ describe "Votes" do
     end
   end
 
-  scenario "Not logged user trying to vote comments in debates", :js do
+  scenario "Not logged user trying to vote comments in debates" do
     debate = create(:debate)
     comment = create(:comment, commentable: debate)
 
@@ -309,7 +306,7 @@ describe "Votes" do
     end
   end
 
-  scenario "Not logged user trying to vote comments in proposals", :js do
+  scenario "Not logged user trying to vote comments in proposals" do
     proposal = create(:proposal)
     comment = create(:comment, commentable: proposal)
 
@@ -320,7 +317,7 @@ describe "Votes" do
     end
   end
 
-  scenario "Anonymous user trying to vote debates", :js do
+  scenario "Anonymous user trying to vote debates" do
     user = create(:user)
     debate = create(:debate)
 
@@ -342,7 +339,7 @@ describe "Votes" do
     end
   end
 
-  scenario "Anonymous user trying to vote proposals", :js do
+  scenario "Anonymous user trying to vote proposals" do
     user = create(:user)
     proposal = create(:proposal)
 

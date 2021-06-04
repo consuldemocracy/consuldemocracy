@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin custom information texts" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin custom information texts", :admin do
   scenario "page is correctly loaded" do
     visit admin_site_customization_information_texts_path
 
@@ -17,7 +12,8 @@ describe "Admin custom information texts" do
     expect(page).to have_content "Help with participatory budgets"
 
     within("#information-texts-tabs") { click_link "Debates" }
-    expect(page).to have_content "Help about debates"
+
+    expect(page).to have_content "Edit debate"
 
     within("#information-texts-tabs") { click_link "Community" }
     expect(page).to have_content "Access the community"
@@ -56,7 +52,7 @@ describe "Admin custom information texts" do
   end
 
   context "Globalization" do
-    scenario "Add a translation", :js do
+    scenario "Add a translation" do
       key = "debates.index.section_footer.title"
 
       visit admin_site_customization_information_texts_path
@@ -75,7 +71,7 @@ describe "Admin custom information texts" do
       expect(page).not_to have_content "Aide sur les débats"
     end
 
-    scenario "Update a translation", :js do
+    scenario "Update a translation" do
       key = "proposals.show.share"
       create(:i18n_content, key: key, value_fr: "Partager la proposition")
 
@@ -94,7 +90,7 @@ describe "Admin custom information texts" do
       expect(page).not_to have_content "Partager la proposition"
     end
 
-    scenario "Remove a translation", :js do
+    scenario "Remove a translation" do
       first_key = "debates.form.debate_title"
       debate_title = create(:i18n_content, key: first_key,
                                            value_en: "Custom debate title",

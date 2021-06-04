@@ -4,6 +4,10 @@ pt-BR:
     results_enabled: "Exibir resultados"
     stats_enabled: "Exibir estatísticas"
     advanced_stats_enabled: "Exibir estatísticas avançadas"
+    name: Nome
+    email: Email
+    description: Descrição
+    related_sdg_list: Objetivos e metas
   activerecord:
     models:
       activity:
@@ -72,6 +76,18 @@ pt-BR:
       proposal:
         one: "Proposta dos cidadãos"
         other: "Propostas dos cidadãos"
+      sdg/goal:
+        one: "objetivo"
+        other: "objetivos"
+      sdg/local_target:
+        one: "meta local"
+        other: "destinos locais"
+      sdg/manager:
+        one: "Gerenciador de ODS (SDG)"
+        other: "Gerenciadores de ODS (SDG)"
+      sdg/target:
+        one: "meta"
+        other: "metas"
       site_customization/page:
         one: Página personalizada
         other: Páginas personalizadas
@@ -272,6 +288,7 @@ pt-BR:
         responsible_name: "Pessoa responsável pelo grupo"
       poll:
         name: "Nome"
+        title: "Nome"
         starts_at: "Data de início"
         ends_at: "Data de encerramento"
         geozone_restricted: "Restrito por geozona"
@@ -308,6 +325,24 @@ pt-BR:
         signable_type: "Tipo Significável"
         signable_id: "Identificação Signável"
         document_numbers: "Números de documentos"
+      sdg/goal:
+        code: "Código"
+        title: "Título"
+        description: "Descrição"
+      sdg/local_target:
+        code: "Código"
+        target_id: "Meta"
+        title: "Título"
+      sdg/local_target/translation:
+        title: "Título"
+        description: "Descrição"
+      sdg/phase/kind:
+        sensitization: "Sensibilização"
+        planning: "Planejamento"
+        monitoring: "Monitoramento"
+      sdg/target:
+        code: "Código"
+        title: "Título"
       site_customization/page:
         content: Conteúdo
         created_at: Criado em
@@ -558,6 +593,10 @@ pt-BR:
           attributes:
             locale:
               already_translated: Recurso já traduzido
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "deve começar com o mesmo código do seu destino, seguido por um ponto e terminando com um número"
       messages:
         translations_too_short: É obrigatório oferecer no mínimo uma tradução
         record_invalid: "Validação falhou: %{errors}"

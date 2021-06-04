@@ -4,6 +4,8 @@ class Legislation::Process < ApplicationRecord
   include Milestoneable
   include Imageable
   include Documentable
+  include SDG::Relatable
+  include Searchable
 
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs
@@ -120,6 +122,22 @@ class Legislation::Process < ApplicationRecord
     else
       :open
     end
+  end
+
+  def searchable_translations_definitions
+    {
+      title       => "A",
+      summary     => "C",
+      description => "D"
+    }
+  end
+
+  def searchable_values
+    searchable_globalized_values
+  end
+
+  def self.search(terms)
+    pg_search(terms)
   end
 
   private

@@ -82,8 +82,8 @@ describe "Home" do
         visit root_path
 
         expect(page).to have_selector("li[data-slide='0']")
-        expect(page).to have_selector("li[data-slide='1']", visible: false)
-        expect(page).to have_selector("li[data-slide='2']", visible: false)
+        expect(page).to have_selector("li[data-slide='1']", visible: :hidden)
+        expect(page).to have_selector("li[data-slide='2']", visible: :hidden)
       end
 
       scenario "Display recommended show when click on carousel" do
@@ -105,7 +105,7 @@ describe "Home" do
     end
   end
 
-  describe "IE alert" do
+  describe "IE alert", :no_js do
     scenario "IE visitors are presented with an alert until they close it", :page_driver do
       # Selenium API does not include page request/response inspection methods
       # so we must use Capybara::RackTest driver to set the browser's headers
@@ -115,7 +115,7 @@ describe "Home" do
       )
 
       visit root_path
-      expect(page).to have_xpath(ie_alert_box_xpath, visible: false)
+      expect(page).to have_xpath(ie_alert_box_xpath)
       expect(page.driver.request.cookies["ie_alert_closed"]).to be_nil
 
       # faking close button, since a normal find and click
@@ -123,13 +123,13 @@ describe "Home" do
       page.driver.browser.set_cookie("ie_alert_closed=true")
 
       visit root_path
-      expect(page).not_to have_xpath(ie_alert_box_xpath, visible: false)
+      expect(page).not_to have_xpath(ie_alert_box_xpath)
       expect(page.driver.request.cookies["ie_alert_closed"]).to eq("true")
     end
 
     scenario "non-IE visitors are not bothered with IE alerts", :page_driver do
       visit root_path
-      expect(page).not_to have_xpath(ie_alert_box_xpath, visible: false)
+      expect(page).not_to have_xpath(ie_alert_box_xpath)
       expect(page.driver.request.cookies["ie_alert_closed"]).to be_nil
     end
 

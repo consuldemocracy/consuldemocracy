@@ -1,9 +1,8 @@
 require "rails_helper"
 
-describe "Admin newsletter emails" do
+describe "Admin newsletter emails", :admin do
   before do
     create(:budget)
-    login_as(create(:administrator).user)
   end
 
   context "Show" do
@@ -34,13 +33,13 @@ describe "Admin newsletter emails" do
 
   context "Index" do
     scenario "Valid newsletters" do
-      3.times { create(:newsletter) }
+      newsletters = 3.times.map { create(:newsletter) }
 
       visit admin_newsletters_path
 
       expect(page).to have_css(".newsletter", count: 3)
 
-      Newsletter.find_each do |newsletter|
+      newsletters.each do |newsletter|
         segment_recipient = I18n.t("admin.segment_recipient.#{newsletter.segment_recipient}")
         within("#newsletter_#{newsletter.id}") do
           expect(page).to have_content newsletter.subject
@@ -104,7 +103,7 @@ describe "Admin newsletter emails" do
 
     visit admin_newsletters_path
     within("#newsletter_#{newsletter.id}") do
-      click_link "Delete"
+      accept_confirm { click_link "Delete" }
     end
 
     expect(page).to have_content "Newsletter deleted successfully"
@@ -129,8 +128,8 @@ describe "Admin newsletter emails" do
     expect(page).to have_content error_message
   end
 
-  context "Send newsletter", :js do
-    scenario "Sends newsletter emails", :js do
+  context "Send newsletter" do
+    scenario "Sends newsletter emails" do
       newsletter = create(:newsletter)
       visit admin_newsletter_path(newsletter)
 
@@ -139,7 +138,7 @@ describe "Admin newsletter emails" do
       expect(page).to have_content "Newsletter sent successfully"
     end
 
-    scenario "Invalid newsletter cannot be sent", :js do
+    scenario "Invalid newsletter cannot be sent" do
       invalid_newsletter = create(:newsletter)
       invalid_newsletter.update_column(:segment_recipient, "invalid_segment")
       visit admin_newsletter_path(invalid_newsletter)
@@ -148,7 +147,7 @@ describe "Admin newsletter emails" do
     end
   end
 
-  context "Counter of emails sent", :js do
+  context "Counter of emails sent" do
     scenario "Display counter" do
       newsletter = create(:newsletter, segment_recipient: "administrators")
       visit admin_newsletter_path(newsletter)

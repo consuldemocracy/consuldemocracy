@@ -38,12 +38,8 @@ sl:
         icon_alt: Participatorni proračuni ikona
         title: Participatorni proračuni
         help: Pomoč s participatornimi proračuni
-        all_phases: Poglej vse faze
       all_phases: Faze proračunskih naložb
       map: Predlogi za proračunske naložbe po geografski lokaciji
-      investment_proyects: Seznam vseh investicijskih projektov
-      unfeasible_investment_proyects: Seznam vseh neizvedljivih projektov
-      not_selected_investment_proyects: Seznam vseh investicijskih projektov za glasovanje
       finished_budgets: Končani participatorni proračuni
       see_results: Poglej rezultate
       section_footer:
@@ -76,9 +72,6 @@ sl:
           verified_only: "Za ustvarjanje nove proračunske naložbe %{verify}."
           create: "Dodaj svoj predlog!"
           not_logged_in: "Za ustvarjanje nove proračunske naložbe se moraš %{sign_in} ali %{sign_up}."
-          by_feasibility: Po izvedljivosti
-          feasible: Izvedljivi projekti
-          unfeasible: Neizvedljivi projekti
         orders:
           random: naključno
           confidence_score: najbolje ocenjeni
@@ -105,20 +98,11 @@ sl:
           zero: brez podpore
         give_support: Glasuj za predlog!
       header:
-        check_ballot: Preveri moja glasovanja
+        check_ballot: "Preveri moja glasovanja"
         change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} and start again."
         check_ballot_link: "preveri moja glasovanja"
         price: "Ta naslov ima proračun v višini"
-    progress_bar:
-      assigned: "Dodelil si: "
-      available: "Razpoložljivi proračun: "
     show:
-      group: Skupina
-      phase: Dejanska faza
-      unfeasible_title: Neizvedljive investicije
-      unfeasible: Poglej neizvedljive investicije
-      unselected_title: Investicije, ki niso bile izbrane za fazo glasovanja
-      unselected: Poglej investicije, ki niso bile izbrane za fazo glasovanja
       see_results: Poglej rezultate
     results:
       link: Rezultati

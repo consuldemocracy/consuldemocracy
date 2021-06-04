@@ -36,6 +36,7 @@
             <li class="inline-block"><span><%= g.name %></span></li>
           <% end %>
         </ul>
+        <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>
       </div>
       <div class="small-12 medium-3 column table relative" data-equalizer-watch>
         <div class="small-12 column message">

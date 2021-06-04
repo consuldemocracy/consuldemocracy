@@ -1,5 +1,5 @@
 <% if next_goal.present? %>
-  <div id="goals-section">
+  <div id="goals-section" class="goals-section">
     <h3 class="title"><%= t("dashboard.next_goal.title") %></h3>
 
     <div id="next_goal" data-toggler=".hide">
@@ -7,9 +7,9 @@
 
       <% if course.count > 1 %>
         <div class="margin small">
-          <a id="see_complete_course_link" data-toggle="complete_course next_goal">
+          <button type="button" id="see_complete_course_link" data-toggle="complete_course next_goal">
             <%= t("dashboard.next_goal.see_complete_course") %>
-          </a>
+          </button>
         </div>
       <% end %>
     </div>
@@ -19,9 +19,9 @@
         <%= render partial: "goal", collection: course %>
 
         <div class="margin small">
-          <a data-toggle="complete_course next_goal">
+          <button type="button" data-toggle="complete_course next_goal">
             <%= t("dashboard.next_goal.hide_course") %>
-          </a>
+          </button>
         </div>
       </div>
     <% end %>

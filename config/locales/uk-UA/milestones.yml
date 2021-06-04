@@ -1,0 +1,8 @@
+uk-UA:
+  milestones:
+    index:
+      no_milestones: Не мають визначених етапів
+      progress: Прогрес
+    show:
+      publication_date: "Опубліковано %{publication_date}"
+      status_changed: Статус змінено на

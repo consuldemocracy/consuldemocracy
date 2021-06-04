@@ -42,6 +42,10 @@ fr:
         other: "%{count} réponses"
       responses_show:
         zero: Aucune réponse
+      responses_collapse:
+        zero: Aucune réponse
+        one: "1 réponse (masquer)"
+        other: "%{count} réponses (réduire)"
       user_deleted: Utilisateur effacé
       votes:
         zero: Aucun vote
@@ -157,11 +161,17 @@ fr:
     direct_message: message privé
     error: erreur
     errors: erreurs
+    not_saved: "a empêché cette %{resource} d'être sauvegardée. <br>Vérifiez les champs marqués suivants pour les corriger :"
     policy: Vie privée
+    banner: bannière
     proposal: Proposition
     proposal_notification: "Notification"
     budget/investment: Projet d'investissement
+    budget/group: Budget groupé
     budget/heading: Rubrique
+    geozone: geozone
+    legislation/draft_version: brouillon
+    legislation/process: processus
     legislation/question: question
     poll/shift: Période de travail
     poll/question/answer: Réponse
@@ -171,6 +181,9 @@ fr:
     document: Document
     topic: Sujet
     image: Image
+    local_census_record: Recensement local
+    local_census_records/import: Importer les données du recensement local
+    site_customization/content_block: content block
     site_customization/page: page
   geozones:
     none: Toute la ville
@@ -180,6 +193,17 @@ fr:
       firefox: Firefox
       ie: Vous utilisez Internet Explorer. Pour une navigation plus sûre, %{chrome} ou %{firefox} sont recommandés.
       ie_title: Ce site internet n'est pas affiché de manière optimale par votre navigateur.
+    dashboard:
+      proposal_header:
+        published: Publié
+        draft: Brouillon
+        retired: Retirer
+      proposal_totals:
+        active_resources: Resource active
+        community: Voir les participants dans votre communauté
+        show_proposal: Voir la proposition
+        preview_proposal: Preview la proposition
+        current_goal: Objectif en cours
     footer:
       accessibility: Accessibilité
       conditions: Conditions légales
@@ -200,7 +224,6 @@ fr:
       collaborative_legislation: Processus législatifs
       debates: Débats
       locale: "Langue :"
-      logo: Consul logo
       management: Gestion
       moderation: Modération
       valuation: Évaluation
@@ -214,10 +237,10 @@ fr:
       budgets: Budget participatif
       notification_item:
         new_notifications:
+          zero: "Vous n'avez pas de nouvelles notifications"
           one: Vous avez une nouvelle notification
           other: Vous avez %{count} nouvelles notifications
         notifications: Notifications
-        no_notifications: "Vous n'avez pas de nouvelles notifications"
   notifications:
     index:
       empty_notifications: Vous n'avez pas de nouvelles notifications
@@ -255,17 +278,31 @@ fr:
       sign_in: S'enregistrer avec Google
       sign_up: S'enregistrer avec Google
       name: Google
+    wordpress_oauth2:
+      name: Wordpress
     twitter:
       sign_in: S'enregistrer avec Twitter
       sign_up: S'enregistrer avec Twitter
       name: Twitter
+    info:
+      sign_in: "Se connecter avec :"
+      sign_up: "S'inscrire avec :"
     or_fill: "Ou remplissez le formulaire suivant :"
   proposals:
     create:
       form:
         submit_button: Créer la proposition
+    created:
+      title: Félicitations ! Vous avez fait le premier pas.
+      motivation: "Il est important de préparer le lancement de la campagne autour de votre proposition. Les premiers jours sont décisifs."
+      motivation_2: "<strong>Si vous voulez des conseils pour préparer la publication, laissez votre brouillon de proposition et nous vous accompagnerons.</strong>"
+      publish: Non, je veux tout de même publier la proposition
+      dashboard: Oui, je veux de l'aide et je publierai plus tard
+      preview_title: Voici à quoi votre proposition ressemblera lorsque vous la publierez
     share:
+      improve_it: Améliorez votre campagne et obtenez plus de soutiens.
       dashboard: Voir plus d’information
+      message: "Je soutiens la proposition %{title} dans %{handle}. Si vous êtes intéressés, soutenez la aussi !"
     edit:
       editing: Modifier la proposition
       form:
@@ -314,6 +351,9 @@ fr:
           error: "Une erreur est survenue. Veuillez vous rendre sur la page 'Votre compte' pour désactiver manuellement les recommandations de proposition"
       retired_proposals: Propositions retirées
       retired_proposals_link: "Propositions retirées par l'auteur"
+      selected_proposals: Propositions sélectionnées
+      selected_proposals_link: Afficher les propositions sélectionnées
+      archived_proposals: Propositions archivées
       retired_links:
         all: Tous
         duplicated: Duplicata d'une autre proposition
@@ -576,7 +616,6 @@ fr:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -658,9 +697,10 @@ fr:
         debates: "Discussions les plus actives"
         proposals: "Propositions les plus actives"
         processes: "Processus ouverts"
-      see_all_debates: Voir toutes les discussions
-      see_all_proposals: Voir toutes les propositions
-      see_all_processes: Voir tous les processus
+      see_all:
+        debates: Voir toutes les discussions
+        proposals: Voir toutes les propositions
+        processes: Voir tous les processus
       process_label: Processus
       see_process: Voir processus
     cards:

@@ -70,9 +70,6 @@ sq:
         budget_investments: Menaxho projektet
         table_name: Emri
         table_phase: Fazë
-        table_investments: Investim
-        table_edit_groups: Grupet e titujve
-        table_edit_budget: Ndrysho
         edit_groups: Ndrysho grupet e titujve
         edit_budget: Ndrysho buxhetin
         no_budgets: "Nuk ka buxhet."
@@ -84,7 +81,6 @@ sq:
         title: Ndrysho buxhetin pjesëmarrës
         delete: Fshi buxhetin
         phase: Fazë
-        dates: Datat
         enabled: Aktivizuar
         actions: Veprimet
         edit_phase: Ndrysho Fazën
@@ -110,7 +106,6 @@ sq:
         submit: "Ruaj titullin"
     budget_phases:
       edit:
-        summary_help_text: Ky tekst do të informojë përdoruesit për fazën. Për ta treguar atë edhe nëse faza nuk është aktive, zgjidhni kutinë e mëposhtme
         description_help_text: Ky tekst do të shfaqet në kokë kur faza është aktive
         enabled_help_text: Kjo fazë do të jetë publike në afatet kohore të buxhetit, si dhe aktivë për çdo qëllim tjetër
         save_changes: Ruaj ndryshimet
@@ -236,8 +231,6 @@ sq:
         table_name: Emri
         table_description: Përshkrimi
         table_actions: Veprimet
-        delete: Fshi
-        edit: Ndrysho
       edit:
         title: Ndrysho statusin e investimeve
       update:
@@ -315,7 +308,6 @@ sq:
           additional_info_placeholder: Shto një informacion shtesë që e konsideron të dobishme
         index:
           create: Proces i ri
-          delete: Fshi
           title: Legjislacion
           filters:
             all: Të gjithë
@@ -433,12 +425,9 @@ sq:
     managers:
       index:
         title: Menaxherët
-        name: Emri
-        email: Email
         no_managers: Nuk ka menaxherë.
       manager:
         add: Shto
-        delete: Fshi
       search:
         title: "Menaxherët: Kërkimi i përdoruesit"
     menu:
@@ -501,25 +490,19 @@ sq:
     administrators:
       index:
         title: Administrator
-        name: Emri
-        email: Email
         id: Administrator ID
         no_administrators: Nuk ka administratorë.
       administrator:
         add: Shto
-        delete: Fshi
         restricted_removal: "Na vjen keq, nuk mund ta heqësh veten nga administratorët"
       search:
         title: "Administratorët: Kërkimi i përdoruesit"
     moderators:
       index:
         title: Moderator
-        name: Emri
-        email: Email
         no_moderators: Nuk ka moderator.
       moderator:
         add: Shto
-        delete: Fshi
       search:
         title: "Moderatorët: Kërkimi i përdoruesit"
     segment_recipient:
@@ -545,8 +528,6 @@ sq:
         sent: Dërguar
         actions: Veprimet
         draft: Drafti
-        edit: Ndrysho
-        delete: Fshi
         preview: Parapamje
         empty_newsletters: Nuk ka buletin për të treguar
       new:
@@ -580,8 +561,6 @@ sq:
         sent: Dërguar
         actions: Veprimet
         draft: Drafti
-        edit: Ndrysho
-        delete: Fshi
         preview: Parapamje
         view: Pamje
         empty_notifications: Nuk ka njoftim për të treguar
@@ -635,7 +614,6 @@ sq:
         no_group: "Asnjë grup"
       valuator:
         add: Shto tek vlerësuesit
-        delete: Fshi
       search:
         title: "Vlerësuesit: Kërkimi i përdoruesit"
       form:
@@ -671,7 +649,6 @@ sq:
         entry_name: oficer
       search:
         email_placeholder: Kërko përdoruesin me email
-        search: Kërko
         user_not_found: Përdoruesi nuk u gjet
     poll_officer_assignments:
       index:
@@ -909,8 +886,6 @@ sq:
         no_organizations: Nuk ka organizata.
         reject: Refuzuar
         rejected: Refuzuar
-        search: Kërko
-        search_placeholder: Emri, emaili ose numri i telefonit
         title: Organizim
         verified: Verifikuar
         verify: Verifiko
@@ -961,21 +936,14 @@ sq:
     shared:
       true_value: "Po"
       false_value: "Jo"
-      booths_search:
-        button: Kërko
-        placeholder: Kërko kabinat sipas emrit
-      poll_officers_search:
-        button: Kërko
-        placeholder: Kërko ofruesit e sondazhit
-      poll_questions_search:
-        button: Kërko
-        placeholder: Kërkoni pyetjet e sondazhit
-      proposal_search:
-        button: Kërko
-        placeholder: Kërkoni propozime sipas titullit, kodit, përshkrimit ose pyetjes
-      user_search:
-        button: Kërko
-        placeholder: Kërko përdoruesin sipas emrit ose email
+      search:
+        label:
+          booths: "Kërko kabinat sipas emrit"
+          organizations: "Emri, emaili ose numri i telefonit"
+          poll_officers: "Kërko ofruesit e sondazhit"
+          poll_questions: "Kërkoni pyetjet e sondazhit"
+          proposals: "Kërkoni propozime sipas titullit, kodit, përshkrimit ose pyetjes"
+          users: "Kërko përdoruesin sipas emrit ose email"
       search_results: "Kërko rezultatet"
       no_search_results: "Nuk u gjetën rezultate."
       actions: Veprimet
@@ -989,13 +957,10 @@ sq:
       author: Autor
       content: Përmbajtje
       created_at: Krijuar në
-      delete: Fshi
     geozones:
       index:
         title: Gjeozona
         create: Krijo gjeozonë
-        edit: Ndrysho
-        delete: Fshi
       geozone:
         name: Emri
         external_code: Kodi i jashtëm
@@ -1099,7 +1064,6 @@ sq:
         no_users: Nuk ka përdorues.
       search:
         placeholder: Kërko përdoruesin sipas email, emrin ose numrin e dokumentit
-        search: Kërko
     verifications:
       index:
         phone_not_given: Telefon nuk është dhënë
@@ -1172,14 +1136,9 @@ sq:
           updated_at: Përditësuar në
           title: Titull
           slug: Slug
-          cards_title: Kartat
         cards:
           create_card: Krijo kartë
           no_cards: Nuk ka karta.
-          title: Titull
-          description: Përshkrimi
-          link_text: Linku tekstit
-          link_url: Linku URL
     homepage:
       title: Kryefaqja
       description: Modulet aktive shfaqen në faqen kryesore në të njëjtën mënyrë si këtu.
@@ -1189,11 +1148,6 @@ sq:
       cards_title: Kartat
       create_card: Krijo kartë
       no_cards: Nuk ka karta.
-      cards:
-        title: Titull
-        description: Përshkrimi
-        link_text: Linku tekstit
-        link_url: Linku URL
       feeds:
         proposals: Propozime
         debates: Debate

@@ -1,6 +1,8 @@
 fr:
   documents:
     title: Documents
+    max_documents_allowed_reached: Vous avez atteint le nombre maximum de documents autorisés ! <strong>Vous devez un supprimer document pour pouvoir en ajouter de nouveau.</strong>
+    additional: Plus de documentation
     form:
       title: Documents
       title_placeholder: Ajouter un titre descriptif pour le document

@@ -72,10 +72,6 @@ ca:
         budget_investments: Gestionar projectes
         table_name: Nome
         table_phase: fase
-        table_investments: Propostes d'inversió
-        table_edit_groups: Grups de partides
-        table_edit_budget: Editar proposta
-        table_admin_ballots: Paperetes
         edit_groups: Edita grups de partides
         edit_budget: Edita pressupost
         admin_ballots: Paperetes d’administració
@@ -88,7 +84,6 @@ ca:
         title: Edita campanya de pressupostos participatius
         delete: Suprimeix el pressupost
         phase: fase
-        dates: Fechas
         enabled: activa
         actions: Accions
         edit_phase: Fase d'edició
@@ -117,7 +112,6 @@ ca:
     budget_groups:
       name: "Nome"
       headings_name: "Rúbriques"
-      headings_edit: "Edita els encapçalaments"
       headings_manage: "Gestiona els encapçalaments"
       no_groups: "No hi ha grups."
       amount:
@@ -160,7 +154,6 @@ ca:
         back: "Torneu a grups"
     budget_phases:
       edit:
-        summary_help_text: En aquest text s’informa sobre una informació específica sobre la fase. Per mostrar-la, encara que la fase no estigui activa, seleccioneu la casella de selecció següent
         description_help_text: Aquest text apareixerà a la capçalera quan la fase estigui activa
         enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, a més d’activa per a qualsevol altre propòsit
         save_changes: Guardar canvis
@@ -296,8 +289,6 @@ ca:
         table_name: Nome
         table_description: Descripció detallada
         table_actions: Accions
-        delete: Borrar
-        edit: Editar proposta
       edit:
         title: Edita l'estat de la fita
       update:
@@ -360,8 +351,6 @@ ca:
         index:
           description: "Quan els usuaris creen propostes poden accedir a un quadre de comandament de la seva proposta, on podeu proposar recursos i recomanacions per obtenir suport per a la seva idea."
           create: Crear recurs o acció
-          edit: Edita
-          delete: Suprimeix
           active: 'Sí'
           inactive: 'No'
           title: Recursos i accions
@@ -496,7 +485,6 @@ ca:
           banner_title: Colors de capçalera
         index:
           create: nou procés
-          delete: Borrar
           title: processos legislatius
           filters:
             active: Actiu
@@ -622,12 +610,9 @@ ca:
     managers:
       index:
         title: Gestors
-        name: Nome
-        email: El teu correu electrònic
         no_managers: No hi ha gestors.
       manager:
         add: Añadir como President de taula
-        delete: Borrar
       search:
         title: "Gestors: cerca d’usuaris"
     menu:
@@ -700,14 +685,10 @@ ca:
     administrators:
       index:
         title: Administradors
-        name: Nome
-        email: El teu correu electrònic
-        description: Descripció
         id: Identificador d’administrador
         no_administrators: No hi ha administradors.
       administrator:
         add: Añadir como President de taula
-        delete: Borrar
         restricted_removal: "Ho sentim, no pots eliminar-te a tu mateix de la llista"
       search:
         title: "Administradors: cerca d’usuaris"
@@ -717,12 +698,9 @@ ca:
     moderators:
       index:
         title: Moderadors
-        name: Nome
-        email: El teu correu electrònic
         no_moderators: No hi ha moderadors.
       moderator:
         add: Añadir como President de taula
-        delete: Borrar
       search:
         title: "Moderadors: cerca d’usuaris"
     segment_recipient:
@@ -749,8 +727,6 @@ ca:
         sent: data
         actions: Accions
         draft: Esborrany
-        edit: Editar proposta
-        delete: Borrar
         preview: Previsualitzar
         empty_newsletters: No hi ha butlletins per mostrar
       new:
@@ -786,8 +762,6 @@ ca:
         sent: data
         actions: Accions
         draft: Esborrany
-        edit: Editar proposta
-        delete: Borrar
         preview: Previsualitzar
         view: Veure
         empty_notifications: No hi ha notificacions a mostrar
@@ -885,7 +859,6 @@ ca:
         can_edit_dossier: "Es pot editar dossier"
       valuator:
         add: Afegir com a avaluador
-        delete: Borrar
       search:
         title: "Avaluadors: cerca d’usuaris"
       form:
@@ -923,7 +896,6 @@ ca:
         entry_name: president de taula
       search:
         email_placeholder: Buscar usuario por email
-        search: Buscar
         user_not_found: No es va trobar l'usuari
         help: "Per afegir o eliminar els agents de sondeig, utilitzeu el formulari de cerca següent."
     poll_officer_assignments:
@@ -1186,8 +1158,6 @@ ca:
         no_organizations: No hi ha organitzacions.
         reject: rebutjar
         rejected: rebutjada
-        search: Buscar
-        search_placeholder: Nom, email o telèfon
         title: Organitzacions
         verified: verificada
         verify: verificar usuari
@@ -1268,24 +1238,16 @@ ca:
     shared:
       true_value: "Sí"
       false_value: "No"
-      booths_search:
-        button: Buscar
-        placeholder: Cercar bústia per nom
-      poll_officers_search:
-        button: Buscar
-        placeholder: Cercar presidents de taula
-      poll_questions_search:
-        button: Buscar
-        placeholder: Cercar preguntes
-      proposal_search:
-        button: Buscar
-        placeholder: Cercar propostes per títol, codi, descripció o pregunta
-      debate_search:
-        button: Cerca
-        placeholder: Cerca debats per títol o descripció
-      user_search:
-        button: Buscar
-        placeholder: Cercar usuari per nom o e-mail
+      search:
+        label:
+          booths: "Cercar bústia per nom"
+          debates: "Cerca debats per títol o descripció"
+          local_census_records: "Cerca per número de document"
+          organizations: "Nom, email o telèfon"
+          poll_officers: "Cercar presidents de taula"
+          poll_questions: "Cercar preguntes"
+          proposals: "Cercar propostes per títol, codi, descripció o pregunta"
+          users: "Cercar usuari per nom o e-mail"
       search_results: "Resultats de cerca"
       no_search_results: "No s'an trobat resultats."
       actions: Accions
@@ -1299,7 +1261,6 @@ ca:
       author: Autor
       content: contingut
       created_at: creat
-      delete: Borrar
       color_help: Format hexadecimal
       show_results_and_stats: "Mostra els resultats i les estadístiques"
       results_and_stats_reminder: "En marcar aquestes caselles de selecció els resultats i / o estadístiques estaran a la disposició del públic i tots els usuaris els veuran."
@@ -1307,8 +1268,6 @@ ca:
       index:
         title: Districtes
         create: Crear un districte
-        edit: Editar proposta
-        delete: Borrar
       geozone:
         name: Nome
         external_code: codi extern
@@ -1456,7 +1415,6 @@ ca:
           erased: Esborrat
       search:
         placeholder: Cercar usuari per email, nom o DNI
-        search: Buscar
     verifications:
       index:
         phone_not_given: No ha donat el seu telèfon
@@ -1531,16 +1489,11 @@ ca:
           updated_at: Última actualització
           title: Títol
           slug: URL
-          cards_title: Targetes
           see_cards: Vegeu Targetes
         cards:
           cards_title: targetes
           create_card: Crear targeta
           no_cards: No hi ha targetes.
-          title: Títol
-          description: Descripció detallada
-          link_text: Enllaça el text
-          link_url: URL d'enllaç
           columns_help: "Amplada de la targeta en nombre de columnes. A les pantalles mòbils sempre és una amplada del 100%."
           create:
             notice: "S'ha creat la targeta correctament!"
@@ -1557,11 +1510,6 @@ ca:
       cards_title: Targetes
       create_card: Crear targeta
       no_cards: No hi ha targetes.
-      cards:
-        title: Títol
-        description: Descripció detallada
-        link_text: Enllaça el text
-        link_url: URL d'enllaç
       feeds:
         proposals: Propostes ciutadanes
         debates: Debats
@@ -1596,9 +1544,6 @@ ca:
         document_number: Número de Document
         date_of_birth: Data de naixement
         postal_code: Codi Postal
-        search:
-          placeholder: Cerca per número de document
-          search: Cerca
         import: Importa CSV
       new:
         creating: Creació d'un registre de cens local

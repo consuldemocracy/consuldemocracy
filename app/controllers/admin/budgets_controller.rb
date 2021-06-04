@@ -8,7 +8,7 @@ class Admin::BudgetsController < Admin::BaseController
   has_filters %w[all open finished], only: :index
 
   before_action :load_budget, except: [:index, :new, :create]
-  before_action :load_staff, only: [:new, :show, :edit]
+  before_action :load_staff, only: [:new, :create, :edit, :update, :show]
   before_action :set_budget_mode, only: [:new, :create, :switch_group]
   load_and_authorize_resource
 
@@ -24,9 +24,12 @@ class Admin::BudgetsController < Admin::BaseController
     render :edit
   end
 
+  def edit
+  end
+
   def publish
     @budget.publish!
-    redirect_to admin_budget_path(@budget), notice: t("admin.budgets.publish.notice")
+    redirect_to edit_admin_budget_path(@budget), notice: t("admin.budgets.publish.notice")
   end
 
   def calculate_winners
@@ -47,18 +50,16 @@ class Admin::BudgetsController < Admin::BaseController
     if @budget.update(budget_params)
       redirect_to admin_budget_path(@budget), notice: t("admin.budgets.update.notice")
     else
-      load_staff
       render :edit
     end
   end
 
   def create
-    @budget = Budget.new(budget_params)
+    @budget = Budget.new(budget_params.merge(published: false))
 
     if @budget.save
       redirect_to admin_budget_groups_path(@budget, mode: @mode), notice: t("admin.budgets.create.notice")
     else
-      load_staff
       render :new
     end
   end

@@ -233,7 +233,6 @@ da:
       collaborative_legislation: Kollaborativ lovgivning
       debates: Debatforum
       locale: "Sprog:"
-      logo: CONSUL logo
       management: Management
       moderation: Moderation
       valuation: Vurdering
@@ -247,14 +246,14 @@ da:
       budgets: Deltagerbudget
       notification_item:
         new_notifications:
+          zero: "Du har ingen nye notifikationer"
           one: Du har en ny notifikation
           other: Du har %{count} nye notifikationer
         notifications: Notifikationer
-        no_notifications: "Du har ingen nye notifikationer"
   notifications:
     index:
       empty_notifications: Du har ingen nye notifikationer.
-      mark_all_as_read: Marker alt som læst
+      mark_all_as_read: Markér alt som læst
       read: Læs
       title: Notifikationer
       unread: Ulæst
@@ -270,7 +269,7 @@ da:
           one: Nogen svarede på din kommentar til
           other: Der er %{count} nye svar til din kommentar til
       mark_as_read: Markér som læst
-      mark_as_unread: Marker som ulæst
+      mark_as_unread: Markér som ulæst
       notifiable_hidden: Ikke længere tilgængelig.
   map:
     title: "Distrikter"
@@ -700,7 +699,7 @@ da:
     check_all: Alle
     check_none: Ingen
     collective: Grupper
-    flag: Marker som upassende
+    flag: Markér som upassende
     follow: "Følg"
     following: "Følger"
     follow_entity: "Følg %{entity}"
@@ -775,7 +774,6 @@ da:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -870,9 +868,14 @@ da:
         debates: "Mest aktive debatindlæg"
         proposals: "Mest aktive forslag"
         processes: "Aktive dialoger"
-      see_all_debates: Se alle debatindlæg
-      see_all_proposals: Se alle forslag
-      see_all_processes: Se alle processer
+      see_all:
+        debates: Se alle debatindlæg
+        proposals: Se alle forslag
+        processes: Se alle processer
+      no_items:
+        debates: Der er ingen debatter lige nu
+        proposals: Der er ingen forslag lige nu
+        processes: Der er ingen åbne processer lige nu
       process_label: Proces
       see_process: Se proces
     cards:
@@ -959,3 +962,8 @@ da:
     create:
       enqueue_remote_translation: Oversættelser er blevet korrekt anmodet.
     button: Oversæt side
+  tags:
+    filter:
+      more:
+        one: "Et tag mere"
+        other: "%{count} flere tags"

@@ -1,22 +1,20 @@
 require "rails_helper"
 
-describe "Cross-Site Scripting protection", :js do
+describe "Cross-Site Scripting protection" do
   let(:attack_code) { "<script>document.body.remove()</script>" }
 
-  scenario "valuators in admin investments index" do
+  scenario "valuators in admin investments index", :admin do
     hacker = create(:user, username: attack_code)
     investment = create(:budget_investment, valuators: [create(:valuator, user: hacker)])
 
-    login_as(create(:administrator).user)
     visit admin_budget_budget_investments_path(investment.budget)
 
     expect(page.text).not_to be_empty
   end
 
-  scenario "edit banner" do
+  scenario "edit banner", :admin do
     banner = create(:banner, title: attack_code)
 
-    login_as(create(:administrator).user)
     visit edit_admin_banner_path(banner)
 
     title_id = find_field("Title")[:id]
@@ -25,10 +23,9 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
-  scenario "banner URL" do
+  scenario "banner URL", :admin do
     banner = create(:banner, title: "Banned!", target_url: "javascript:document.body.remove()")
 
-    login_as(create(:administrator).user)
     visit edit_admin_banner_path(banner)
     find(:css, "a", text: "Banned!").click
 
@@ -44,10 +41,9 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
-  scenario "hacked translations" do
+  scenario "hacked translations", :admin do
     I18nContent.create!(key: "admin.budget_investments.index.list.title", value: attack_code)
 
-    login_as(create(:administrator).user)
     visit admin_budget_budget_investments_path(create(:budget_investment).budget)
 
     expect(page.text).not_to be_empty
@@ -71,12 +67,21 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
-  scenario "languages in use" do
+  scenario "languages in use", :admin do
     I18nContent.create!(key: "shared.translations.languages_in_use", value: attack_code)
 
-    login_as(create(:administrator).user)
     visit edit_admin_budget_path(create(:budget))
     click_link "Remove language"
+
+    expect(page.text).not_to be_empty
+  end
+
+  scenario "SDG identifier", :admin do
+    Setting["feature.sdg"] = true
+    Setting["sdg.process.proposals"] = true
+    I18nContent.create!(key: "sdg.related_list_selector.goal_identifier", value: attack_code)
+
+    visit sdg_management_edit_proposal_path(create(:proposal, sdg_goals: [SDG::Goal[1]]))
 
     expect(page.text).not_to be_empty
   end

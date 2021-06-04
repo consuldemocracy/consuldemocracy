@@ -20,6 +20,8 @@
         <th class="text-center"><%= t("admin.legislation.processes.process.start_date") %></th>
         <th class="text-center"><%= t("admin.legislation.processes.process.end_date") %></th>
         <th class="text-center"><%= t("admin.legislation.processes.process.comments") %></th>
+        <th class="text-center"><%= SDG::Goal.model_name.human(count: :other).upcase_first %></th>
+        <th class="text-center"><%= SDG::Target.model_name.human(count: :other).upcase_first %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -27,18 +29,14 @@
     <tbody>
       <% @processes.each do |process| %>
         <tr id="<%= dom_id(process) %>">
-          <td class="small-12 medium-6 large-4">
-            <%= link_to process.title, edit_admin_legislation_process_path(process) %>
-          </td>
+          <td class="small-12 medium-6 large-4"><%= process.title %></td>
           <td><%= t("admin.legislation.processes.process.status_#{process.status}") %></td>
           <td class="text-center"><%= I18n.l process.start_date %></td>
           <td class="text-center"><%= I18n.l process.end_date %></td>
           <td class="text-center"><%= process.total_comments %></td>
-          <td>
-            <%= link_to t("admin.legislation.processes.index.delete"), admin_legislation_process_path(process),
-                        method: :delete,
-                        class: "button hollow alert expanded" %>
-          </td>
+          <td class="text-center"><%= process.sdg_goal_list %></td>
+          <td class="text-center"><%= process.sdg_target_list %></td>
+          <td><%= render Admin::TableActionsComponent.new(process) %></td>
         </tr>
       <% end %>
     </tbody>

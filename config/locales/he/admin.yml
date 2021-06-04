@@ -72,10 +72,6 @@ he:
         budget_investments: נהל פרויקטים
         table_name: שם
         table_phase: שלב
-        table_investments: השקעות
-        table_edit_groups: קבוצת כותרות
-        table_edit_budget: ערוך
-        table_admin_ballots: הצבעות
         edit_groups: עריכת קבוצות כותרות
         edit_budget: ערוך תקציב
         admin_ballots: הצבעת מנהל מערכת
@@ -88,7 +84,6 @@ he:
         title: ערוך תקציב השתתפותי
         delete: מחיקת התקציב
         phase: שלב
-        dates: תאריכים
         enabled: מופעל
         actions: פעולות
         edit_phase: ערוך שלב
@@ -121,7 +116,6 @@ he:
     budget_groups:
       name: "שם"
       headings_name: "כותרות"
-      headings_edit: "עריכת כותרות"
       headings_manage: "ניהול כותרות"
       no_groups: "לא נמצאו קבוצות."
       amount:
@@ -167,7 +161,6 @@ he:
         back: "חזור אל הקבוצות"
     budget_phases:
       edit:
-        summary_help_text: טקסט זה יודיע למשתמש על השלב. כדי להציג אותו גם אם השלב אינו פעיל, בחר בתיבת הסימון שבהמשך
         description_help_text: טקסט זה יופיע בכותרת כאשר השלב פעיל
         enabled_help_text: שלב זה יהיה ציבורי בציר הזמן של שלבי התקציב, וכן פעיל לכל מטרה אחרת
         save_changes: שמירת שינויים
@@ -207,7 +200,7 @@ he:
         selected: "נבחר"
         select: "בחר"
         list:
-          id: ID
+          id: מזהה
           title: כותרת
           supports: תמיכה
           admin: מנהל/ת
@@ -299,8 +292,6 @@ he:
         table_name: שם
         table_description: תיאור
         table_actions: פעולות
-        delete: מחיקה
-        edit: ערוך
       edit:
         title: עריכת סטטוס אבן הדרך
       update:
@@ -362,8 +353,6 @@ he:
         index:
           description: "כאשר משתמשים יוצרים הצעות הם יכולים לגשת למרכז השליטה של ​​ההצעה שלהם, היכן שניתן להציע משאבים והמלצות כדי לקבל תמיכה עבור הרעיון שלהם."
           create: צור משאב או פעולה
-          edit: ערוך
-          delete: מחיקה
           active: 'כן'
           inactive: 'לא'
           title: משאבים ופעולות
@@ -446,7 +435,7 @@ he:
         success_notice: "המסמך נמחק בהצלחה"
     hidden_users:
       index:
-        filter: סינון
+        filter: מסנן
         filters:
           all: כולם
           with_confirmed_hide: אושר
@@ -461,7 +450,7 @@ he:
         title: פעילות המשתמש (%{user})
     hidden_budget_investments:
       index:
-        filter: סינון
+        filter: מסנן
         filters:
           all: כולם
           with_confirmed_hide: אושר
@@ -498,11 +487,10 @@ he:
           banner_title: צבעי כותרת
         index:
           create: תהליך חדש
-          delete: מחיקה
           title: חקיקה שיתופית
           filters:
             active: פעיל
-            all: כולם
+            all: הכל
         new:
           back: חזרה
           title: צור תהליך חקיקה שיתופית חדשה
@@ -512,7 +500,7 @@ he:
           orders:
             id: מזהה
             title: כותרת
-            supports: לחיצה לתמיכה
+            supports: סה"כ תומכים
         process:
           title: תהליך
           comments: הערות
@@ -537,7 +525,7 @@ he:
           title: כותרת
           back: חזרה
           id: מזהה
-          supports: לחיצה לתמיכה
+          supports: סה"כ תומכים
         form:
           custom_categories: תחומים
           custom_categories_description: קטגוריות בהם משתמשים יכולים ליצור את ההצעה. מקסימום 160 תווים.
@@ -603,7 +591,7 @@ he:
         index:
           back: חזרה
           title: שאלות הקשורות לתהליך זה
-          create: יצירת שאלה חדשה
+          create: יצירת שאלה
           delete: מחיקה
         new:
           back: חזרה
@@ -622,12 +610,9 @@ he:
     managers:
       index:
         title: מנהלים
-        name: שם
-        email: דואר אלקטרוני
         no_managers: לא נמצאו מנהלים.
       manager:
         add: הוסף
-        delete: מחיקה
       search:
         title: "מנהלים: חיפוש משתמשים"
     menu:
@@ -677,7 +662,7 @@ he:
           proposals: "הצעות"
           polls: "סקרים"
           layouts: "פריסות"
-          mailers: "הודעה בדואר אלקטרוני"
+          mailers: "דואר אלקטרוני"
           management: "הנהלה"
           welcome: "ברוכים/ות הבאים/ות"
         buttons:
@@ -699,14 +684,10 @@ he:
     administrators:
       index:
         title: מנהלים
-        name: שם
-        email: דואר אלקטרוני
-        description: תיאור
         id: מזהה מנהל
         no_administrators: אין מנהלי מערכת.
       administrator:
         add: הוסף
-        delete: מחיקה
         restricted_removal: "מצטערים, אין באפשרותך להסיר את עצמך ממנהלי המערכת"
       search:
         title: "מנהלי מערכת: חיפוש משתמשים"
@@ -716,12 +697,9 @@ he:
     moderators:
       index:
         title: מנחים
-        name: שם
-        email: דואר אלקטרוני
         no_moderators: לא נמצאו מנחים.
       moderator:
         add: הוסף
-        delete: מחיקה
       search:
         title: "מנחים: חיפוש משתמשים"
     segment_recipient:
@@ -748,8 +726,6 @@ he:
         sent: נשלח
         actions: פעולות
         draft: טיוטה
-        edit: ערוך
-        delete: מחיקה
         preview: תצוגה מקדימה
         empty_newsletters: אין ידיעונים להצגה
       new:
@@ -786,8 +762,6 @@ he:
         sent: נשלח
         actions: פעולות
         draft: טיוטה
-        edit: ערוך
-        delete: מחיקה
         preview: תצוגה מקדימה
         view: הצג
         empty_notifications: אין התראות להצגה
@@ -885,7 +859,6 @@ he:
         can_edit_dossier: "ניתן לערוך תיק"
       valuator:
         add: הוסף למעריכים
-        delete: מחיקה
       search:
         title: "מעריכים: חיפוש משתמשים"
       form:
@@ -923,7 +896,6 @@ he:
         entry_name: נושאי משרה
       search:
         email_placeholder: חיפוש משתמש/ת לפי דואר אלקטרוני
-        search: חיפוש
         user_not_found: משתמש/ת לא נמצא/ה
         help: "בכדי להוסיף או להסיר אחראים על הסקרים, השתמש בטופס החיפוש מטה."
     poll_officer_assignments:
@@ -1171,7 +1143,7 @@ he:
       index:
         filter: סינון
         filters:
-          all: כולם
+          all: הכל
           pending: ממתין לאישור
           rejected: נדחה
           verified: אומת ואושר
@@ -1183,8 +1155,6 @@ he:
         no_organizations: לא נמצאו ארגונים.
         reject: דחה
         rejected: נדחה
-        search: חיפוש
-        search_placeholder: שם, דוא"ל או מספר טלפון
         title: ארגונים
         verified: אומת ואושר
         verify: אישור
@@ -1195,7 +1165,7 @@ he:
     proposals:
       index:
         title: הצעות
-        id: ID
+        id: מזהה
         author: מחבר/ת
         select: בחר
         selected: נבחר
@@ -1249,24 +1219,15 @@ he:
     shared:
       true_value: "כן"
       false_value: "לא"
-      booths_search:
-        button: חיפוש
-        placeholder: חיפוש דוכן לפי שם
-      poll_officers_search:
-        button: חיפוש
-        placeholder: חפש סקר לפי נושא משרה
-      poll_questions_search:
-        button: חיפוש
-        placeholder: חפש שאלות סקר
-      proposal_search:
-        button: חיפוש
-        placeholder: חיפוש הצעות לפי כותרת, קוד, תיאור או שאלה
-      debate_search:
-        button: חיפוש
-        placeholder: חיפוש דיונים על פי כותרת או תיאור
-      user_search:
-        button: חיפוש
-        placeholder: '‘חיפוש משתמש/ת לפי שם או דואר אלקטרוני’'
+      search:
+        label:
+          booths: "חיפוש דוכן לפי שם"
+          debates: "חיפוש דיונים על פי כותרת או תיאור"
+          organizations: "שם, דוא\"ל או מספר טלפון"
+          poll_officers: "חפש סקר לפי נושא משרה"
+          poll_questions: "חפש שאלות סקר"
+          proposals: "חיפוש הצעות לפי כותרת, קוד, תיאור או שאלה"
+          users: "‘חיפוש משתמש/ת לפי שם או דואר אלקטרוני’"
       search_results: "תוצאות החיפוש"
       no_search_results: "לא נמצאו תוצאות."
       actions: פעולות
@@ -1280,7 +1241,6 @@ he:
       author: מחבר/ת
       content: תוכן
       created_at: נוצרה ב
-      delete: מחיקה
       color_help: בתבנית הקסדצימאלית
       show_results_and_stats: "הצג תוצאות ונתונים סטטיסטיים"
       results_and_stats_reminder: "סימון תיבות הסימון יהפכו את התוצאות ו / או הנתונים סטטיסטיים של סקר זה, גלויים לכל משתמש."
@@ -1288,8 +1248,6 @@ he:
       index:
         title: איזור גיאוגרפי
         create: צור איזור גיאוגרפי
-        edit: ערוך
-        delete: מחיקה
       geozone:
         name: שם
         external_code: קוד חיצוני
@@ -1321,7 +1279,7 @@ he:
         document_numbers_note: "רשום את המספרים המופרדים בנקודות פסיק (;)"
         submit: יצירת דף לחתימות
       show:
-        created_at: נוצר ב
+        created_at: נוצר
         author: מחבר/ת
         verified:
           one: "יש %{count} חתימה חוקית"
@@ -1429,7 +1387,6 @@ he:
         no_users: לא נמצאו משתמשים.
       search:
         placeholder: חפש משתמש על פי דוא"ל, שם או מספר מסמך מזהה
-        search: חיפוש
     verifications:
       index:
         phone_not_given: לא ניתן מספר טלפון
@@ -1503,16 +1460,11 @@ he:
           updated_at: עודכן ב
           title: כותרת
           slug: אסימון
-          cards_title: כרטיס
           see_cards: ראה כרטיסים
         cards:
           cards_title: כרטיסים
           create_card: יצירת כרטיס
           no_cards: לא נמצאו כרטיסים.
-          title: כותרת
-          description: תיאור
-          link_text: טקסט הקישור
-          link_url: כתובת url של קישור
           columns_help: "רוחב של הכרטיס במספר עמודות. על המסכים ניידים זה תמיד ברוחב של 100%."
           create:
             notice: "כרטיס נוצר בהצלחה!"
@@ -1529,11 +1481,6 @@ he:
       cards_title: כרטיסים
       create_card: יצירת כרטיס
       no_cards: לא נמצאו כרטיסים.
-      cards:
-        title: כותרת
-        description: תיאור
-        link_text: טקסט הקישור
-        link_url: כתובת url של קישור
       feeds:
         proposals: הצעות
         debates: דיונים

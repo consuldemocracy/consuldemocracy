@@ -1,6 +1,6 @@
-<div class="expanded jumbo-budget no-margin-top padding">
+<div class="budget-header">
   <div class="row">
-    <%= back_link_to budget_path(@budget), t("budgets.ballots.show.back") %>
+    <%= back_link_to session[:ballot_referer] %>
 
     <h1 class="text-center"><%= t("budgets.ballots.show.title") %></h1>
 
@@ -40,8 +40,9 @@
         <% end %>
 
         <ul class="ballot-list">
-          <%= render partial: "budgets/ballot/investment",
-                     collection: @ballot.investments.by_group(group.id) %>
+          <%= render Budgets::Ballot::InvestmentComponent.with_collection(
+            @ballot.investments.by_group(group.id)
+          ) %>
         </ul>
       </div>
     </div>

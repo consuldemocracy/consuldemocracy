@@ -1,0 +1,41 @@
+.feeds-participation {
+
+  @include breakpoint(medium) {
+    display: flex;
+    flex-wrap: wrap;
+
+    .feed-proposals:not(:only-child) {
+      width: 2 * 100% / 3;
+    }
+
+    .feed-debates:not(:only-child) {
+      width: 1 * 100% / 3;
+    }
+
+    .feed-budgets:not(:only-child) {
+      width: 100%;
+    }
+
+    .feed-proposals,
+    .feed-debates,
+    .feed-budgets {
+      display: flex;
+      flex-direction: column;
+
+      .feed-content {
+        flex: 1;
+      }
+    }
+  }
+
+  .sdg-tag-list {
+    margin-top: $line-height / 2;
+  }
+
+  .feed-debates,
+  .feed-proposals,
+  .feed-budgets {
+    @include grid-col;
+    margin-top: $line-height;
+  }
+}

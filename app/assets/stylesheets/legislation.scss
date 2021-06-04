@@ -1,29 +1,10 @@
 // Table of Contents
 //
-// 01. Hero
-// 02. Sidebar menu
-// 03. Legislation cards
+// 01. Sidebar menu
+// 02. Legislation cards
 //
 
-// 01. Hero
-// -----------------
-.brand-heading {
-  background: $brand;
-  margin-bottom: 5rem;
-
-  .column {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-
-    h4 {
-      font-weight: 400;
-      text-align: center;
-      color: #fff;
-    }
-  }
-}
-
-// 02. Sidebar menu
+// 01. Sidebar menu
 // -----------------
 .legislation-categories {
 
@@ -55,7 +36,7 @@
   }
 }
 
-// 03. Legislation cards
+// 02. Legislation cards
 // -----------------
 .legislation {
   margin: 0 0 $line-height;
@@ -71,8 +52,13 @@
 .legislation-text {
   margin-bottom: 1rem;
 
+  > * {
+    @include grid-column-gutter;
+  }
+
   h3 a {
     color: $black;
+    margin-bottom: 1rem;
   }
 }
 

@@ -6,10 +6,9 @@ class Admin::AdministratorsController < Admin::BaseController
   end
 
   def search
-    @users = User.search(params[:name_or_email])
+    @users = User.search(params[:search])
                  .includes(:administrator)
                  .page(params[:page])
-                 .for_render
   end
 
   def create

@@ -36,7 +36,7 @@ describe "Votes" do
         end
       end
 
-      scenario "Create from investments' index", :js do
+      scenario "Create from investments' index" do
         create(:budget_investment, heading: heading)
 
         visit budget_investments_path(budget, heading_id: heading.id)
@@ -59,7 +59,7 @@ describe "Votes" do
         expect(page).to have_content "No supports"
       end
 
-      scenario "Trying to vote multiple times", :js do
+      scenario "Trying to vote multiple times" do
         visit budget_investment_path(budget, investment)
 
         within(".supports") do
@@ -70,7 +70,7 @@ describe "Votes" do
         end
       end
 
-      scenario "Create from investment show", :js do
+      scenario "Create from investment show" do
         visit budget_investment_path(budget, investment)
 
         within(".supports") do
@@ -83,7 +83,7 @@ describe "Votes" do
       end
     end
 
-    scenario "Disable voting on investments", :js do
+    scenario "Disable voting on investments" do
       budget.update!(phase: "reviewing")
       investment = create(:budget_investment, heading: heading)
 
@@ -103,7 +103,7 @@ describe "Votes" do
       end
     end
 
-    scenario "Supporting in different heading if support was removed", :js do
+    scenario "Supporting in different heading if support was removed" do
       other_heading = create(:budget_heading, group: group)
 
       investment = create(:budget_investment, heading: heading)
@@ -145,7 +145,7 @@ describe "Votes" do
         group.update(max_votable_headings: 2)
       end
 
-      scenario "From Index", :js do
+      scenario "From Index" do
         visit budget_investments_path(budget, heading_id: new_york.id)
 
         within("#budget_investment_#{new_york_investment.id}") do
@@ -186,7 +186,7 @@ describe "Votes" do
         end
       end
 
-      scenario "From show", :js do
+      scenario "From show" do
         visit budget_investment_path(budget, new_york_investment)
 
         accept_confirm { find(".in-favor a").click }
@@ -216,7 +216,7 @@ describe "Votes" do
                                          "Share it!"
       end
 
-      scenario "Confirm message shows the right text", :js do
+      scenario "Confirm message shows the right text" do
         visit budget_investments_path(budget, heading_id: new_york.id)
         find(".in-favor a").click
 
@@ -229,7 +229,7 @@ describe "Votes" do
     let(:budget) { create(:budget, :balloting, :approval) }
     before { login_as(manuela) }
 
-    scenario "Budget limit is ignored", :js do
+    scenario "Budget limit is ignored" do
       budget.phases.balloting.update!(starts_at: "01-10-2020", ends_at: "31-12-2020")
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group, max_ballot_lines: 2)
@@ -238,12 +238,12 @@ describe "Votes" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      expect(page).to have_content "You can change your vote at any time until the 2020-12-31."
+      expect(page).to have_content "You can change your vote at any time until December 31, 2020."
 
       add_to_ballot(investment1.title)
 
       expect(page).to have_content("Remove vote")
-      expect(page).to have_content("You have selected 1 project out of 2")
+      expect(page).to have_content("YOU CAN STILL CAST 1 VOTE")
 
       within(".budget-investment", text: investment2.title) do
         find("div.ballot").hover

@@ -105,7 +105,7 @@ nl:
         table_phase: "Fase"
         table_budget_type: "Budget type"
         table_budget_completed: "Afgerond"
-        table_budget_draft: "Concept"
+        table_draft: "Concept"
         table_duration: "Periode"
         table_preview: "Preview"
         edit_budget: "Bewerk begroting"
@@ -140,7 +140,6 @@ nl:
           budget_settings: "Algemene instellingen"
           heading_settings: "Instellingen rubriek"
           phases_settings: "Instellingen fases"
-          results_settings: "Instellingen voor resultaten en statistieken"
           staff_settings: "Voeg admins en beoordelaars toe"
           groups_and_headings_settings: "Instellingen voor groepen en rubrieken"
         groups_and_headings:
@@ -179,7 +178,7 @@ nl:
         image_description: "Als je een afbeelding upload zal deze te zien in de header van de burgerbegroting. Wanneer je niks upload worden de standaard kleuren gebruikt."
         main_call_to_action: "Call to action (optioneel)"
         main_call_to_action_description: "Deze knop verschijnt op de voorpagina van deze begroting. Een call to action moedigt de gebruiker aan om iets te doen, zoals een idee indienen, stemmen of meer leren over het proces."
-        phase_name_help_text: "Dit is de titel van de fase die gebruikers zullen zien in de header wanneer de fase actief is."
+        name_help_text: "Dit is de titel van de fase die gebruikers zullen zien in de header wanneer de fase actief is."
       index:
         help_block: "Een burgerbegroting bestaat uit verschillende fases. Hier kun je fases aan-en uitzetten en iedere fase aanpassen."
         button:
@@ -187,10 +186,12 @@ nl:
     budget_groups:
       index:
         new_button: "Nieuwe groep toevoegen"
-        single:
-          help_block: "Groepen organiseren rubrieken. Dit budget heeft slechts één rubriek en hier kan dezelfde naam worden gebruikt als voor  de groep. Deze naam van de rubriek  verschijnt nergens op de website. Je kunt daarom gewoon doorgaan naar de volgende stap."
-        multiple:
-          help_block: "Groepen organiseren rubrieken. Nadat een groep  is aangemaakt en deze verschillende rubrieken  bevat, kan bepaalt worden in hoeveel rubrieken een gebruiker per groep  kan stemmen."
+      single:
+        index:
+          help: "Groepen organiseren rubrieken. Dit budget heeft slechts één rubriek en hier kan dezelfde naam worden gebruikt als voor  de groep. Deze naam van de rubriek  verschijnt nergens op de website. Je kunt daarom gewoon doorgaan naar de volgende stap."
+      multiple:
+        index:
+          help: "Groepen organiseren rubrieken. Nadat een groep  is aangemaakt en deze verschillende rubrieken  bevat, kan bepaalt worden in hoeveel rubrieken een gebruiker per groep  kan stemmen."
       max_votable_headings: "Maximaal aantal rubrieken waarop een gebruiker kan stemmen"
       create:
         button:
@@ -210,9 +211,11 @@ nl:
         showing_headings_from_group: "Alle rubrieken in de groep:"
         new_button: "Nieuwe rubriek toevoegen"
         single:
-          help_block: "Rubrieken verdelen het geld van de burgerbegroting. Dit budget heeft slechts één rubriek . Daarom is vooraf al bepaalt waar het geld in deze begroting aan wordt uitgegeven."
+          index:
+            help: "Rubrieken verdelen het geld van de burgerbegroting. Dit budget heeft slechts één rubriek . Daarom is vooraf al bepaalt waar het geld in deze begroting aan wordt uitgegeven."
         multiple:
-          help_block: "Rubrieken verdelen het geld van de burgerbegroting. Hier kun je rubrieken voor de groep  toevoegen en het te besteden bedrag voor elke rubriek toewijzen."
+          index:
+            help: "Rubrieken verdelen het geld van de burgerbegroting. Hier kun je rubrieken voor de groep  toevoegen en het te besteden bedrag voor elke rubriek toewijzen."
     polls:
       index:
         title: "Alle peilingen"

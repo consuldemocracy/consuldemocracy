@@ -118,10 +118,10 @@ fr:
         other: est trop long (maximum est %{count} caractères)
       too_short:
         one: est trop court (1 caractère au minimum)
-        other: est trop long (maximum est %{count} caractères)
+        other: est trop court (%{count} caractères au minimum)
       wrong_length:
-        one: est la mauvaise longueur (soit 1 caractère)
-        other: est la longueur incorrecte (devrait être %{count} caractères)
+        one: a la mauvaise longueur (soit 1 caractère)
+        other: a la mauvaise longueur (devrait être %{count} caractères)
       other_than: doit être différent de %{count}
     template:
       body: "Des problèmes ont été trouvés avec les champs suivants :"

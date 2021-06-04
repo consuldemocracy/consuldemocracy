@@ -133,6 +133,10 @@
     p {
       font-size: $small-font-size;
     }
+
+    button {
+      @include link;
+    }
   }
 
   .icon-check {
@@ -153,6 +157,12 @@
     height: rem-calc(20);
     margin-top: $line-height / 6;
     width: rem-calc(20);
+  }
+}
+
+.proposed-actions {
+  button {
+    @include link;
   }
 }
 
@@ -285,6 +295,12 @@
   }
 }
 
+.goals-section {
+  button {
+    @include link;
+  }
+}
+
 // 05. Sidebar
 // -----------
 
@@ -320,7 +336,7 @@
   }
 
   .is-active {
-    color: $brand;
+    @include brand-text;
     position: relative;
 
     &::before {
@@ -335,7 +351,7 @@
     }
 
     a {
-      color: $brand;
+      @include brand-text;
 
       ~ a {
         color: $text;
@@ -343,7 +359,7 @@
     }
 
     [class^="icon-"] {
-      color: $brand;
+      @include brand-text;
     }
   }
 
@@ -358,7 +374,7 @@
     border-bottom: 2px solid $brand;
 
     .has-tip {
-      color: $brand;
+      @include brand-text;
       font-weight: bold;
     }
   }

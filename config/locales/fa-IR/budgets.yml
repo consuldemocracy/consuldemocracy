@@ -36,12 +36,8 @@ fa:
         icon_alt: نماد بودجه مشارکتی
         title: بودجه مشارکتی
         help: کمک در مورد بودجه مشارکتی
-        all_phases: دیدن تمام مراحل
       all_phases: مراحل بودجه سرمایه گذاری
       map: طرح های سرمایه گذاری بودجه جغرافیایی
-      investment_proyects: لیست تمام پروژه های سرمایه گذاری
-      unfeasible_investment_proyects: لیست پروژه های سرمایه گذاری غیرقابل پیش بینی
-      not_selected_investment_proyects: فهرست همه پروژه های سرمایه گذاری که برای رای گیری انتخاب نشده اند
       finished_budgets: بودجه مشارکتی به پایان رسید
       see_results: مشاهده نتایج
       section_footer:
@@ -74,9 +70,6 @@ fa:
           verified_only: "برای ایجاد یک سرمایه گذاری جدید بودجه%{verify}"
           create: "ایجاد بودجه سرمایه گذاری \n"
           not_logged_in: "برای ایجاد یک سرمایه گذاری جدید بودجه باید%{sign_in} یا %{sign_up} کنید."
-          by_feasibility: "امکان پذیری\n"
-          feasible: پروژه های قابل اجرا
-          unfeasible: پروژه های غیرقابل اجرا
         orders:
           random: "تصادفی\n"
           confidence_score: بالاترین امتیاز
@@ -108,20 +101,11 @@ fa:
           other: "%{count}پشتیبانی"
         give_support: پشتیبانی
       header:
-        check_ballot: رای من را چک کن
+        check_ballot: "رای من را چک کن"
         change_ballot: "اگر نظر شما تغییر کند، می توانید رای خود را در%{check_ballot} حذف کنید و دوباره شروع کنید."
         check_ballot_link: "رای من را چک کن"
         price: "این عنوان یک بودجه دارد"
-    progress_bar:
-      assigned: "شما اختصاص داده اید:"
-      available: "بودجه موجود"
     show:
-      group: گروه
-      phase: فاز واقعی
-      unfeasible_title: سرمایه گذاری غیر قابل پیش بینی
-      unfeasible: سرمایه گذاری های غیرقابل پیش بینی را ببینید
-      unselected_title: سرمایه گذاری هایی برای مرحله رای گیری انتخاب نشده اند
-      unselected: دیدن سرمایه گذاری هایی که برای مرحله رای گیری انتخاب نشده اند
       see_results: مشاهده نتایج
     results:
       link: نتایج

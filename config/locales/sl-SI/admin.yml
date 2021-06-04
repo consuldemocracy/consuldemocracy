@@ -60,8 +60,6 @@ sl:
         budget_investments: Oglej si proračunske naložbe
         table_name: Ime
         table_phase: Faza
-        table_investments: Naložbe
-        table_edit_budget: Uredi
         edit_groups: Uredi headings groups
         edit_budget: Uredi proračun
       create:
@@ -72,7 +70,6 @@ sl:
         title: Uredi participatorni proračun
         delete: Izbriši proračun
         phase: Faza
-        dates: Datumi
         enabled: Omogočeno
         actions: Dejanja
         edit_phase: Faza urejanja
@@ -89,7 +86,6 @@ sl:
         recalculate: Ponovno izračunaj zmagovalne naložbe.
     budget_phases:
       edit:
-        summary_help_text: To besedilo bo obvestilo uporabnika o fazi. Če ga želite prikazati tudi, če faza ni aktivna, izberite potrditveno polje spodaj.
         description_help_text: To besedilo bo prikazano v glavi, ko je faza aktivna.
         enabled_help_text: Ta faza bo javna v časovnem okviru faze proračuna, pa tudi aktivna za druge namene
         save_changes: Shrani spremembe
@@ -236,7 +232,6 @@ sl:
           additional_info_placeholder: Dodaj dodatne informacije, če se ti zdi uporabno
         index:
           create: Nov proces
-          delete: Izbriši
           title: Procesi legislacije
           filters:
             all: Vsi
@@ -336,12 +331,9 @@ sl:
     managers:
       index:
         title: Upravljalec
-        name: Ime
-        email: E-naslov
         no_managers: Ni upravljalcev.
       manager:
         add: Dodaj
-        delete: Izbriši
       search:
         title: "Upravljalci: iskanje uporabnika"
     menu:
@@ -384,24 +376,18 @@ sl:
     administrators:
       index:
         title: Administratorji
-        name: Ime
-        email: E-naslov
         no_administrators: Ni administratorjev.
       administrator:
         add: Dodaj
-        delete: Izbriši
         restricted_removal: "Ne moreš same/-ga sebe odstraniti kot administratorja/-ko."
       search:
         title: "Administratorji: Iskanje uporabnika/-ce"
     moderators:
       index:
         title: Moderatorji
-        name: Ime
-        email: E-naslov
         no_moderators: Ni moderatorjev.
       moderator:
         add: Dodaj
-        delete: Izbriši
       search:
         title: "Moderatorji: Iskanje uporabnika/-ce"
     segment_recipient:
@@ -427,8 +413,6 @@ sl:
         sent: Poslano
         actions: Dejanja
         draft: Osnutek
-        edit: Uredi
-        delete: Izbriši
         preview: Predogled
         empty_newsletters: Ni obvestilnikov, ki bi jih bilo mogoče prikazati
       new:
@@ -464,7 +448,6 @@ sl:
         no_group: "Ni skupine"
       valuator:
         add: Dodaj k cenilcem
-        delete: Izbriši
       search:
         title: "Cenilci: Išči uporabnika/-co"
       form:
@@ -500,7 +483,6 @@ sl:
         entry_name: uradnik
       search:
         email_placeholder: Išči uporabnika/-co po e-naslovu
-        search: Išči
         user_not_found: Uporabnika/-ce ni mogoče najti
     poll_officer_assignments:
       index:
@@ -736,8 +718,6 @@ sl:
         no_organizations: Ni organizacij.
         reject: Zavrni
         rejected: Zavrnjeno
-        search: Išči
-        search_placeholder: Ime, e-naslov ali telefonska številka
         title: Organizacije
         verified: Verificirane
         verify: Verificiraj
@@ -768,21 +748,14 @@ sl:
           form:
             submit: Posodobi
     shared:
-      booths_search:
-        button: Išči
-        placeholder: Išči volišče po imenu
-      poll_officers_search:
-        button: Išči
-        placeholder: Išči uradnike glasovanja
-      poll_questions_search:
-        button: Išči
-        placeholder: Išči vprašanja glasovanja
-      proposal_search:
-        button: Išči
-        placeholder: Išči predloge po naslovu, kodi, opisu ali vprašanju
-      user_search:
-        button: Išči
-        placeholder: Išči uporabnika/-co po imenu ali e-naslovu
+      search:
+        label:
+          booths: "Išči volišče po imenu"
+          organizations: "Ime, e-naslov ali telefonska številka"
+          poll_officers: "Išči uradnike glasovanja"
+          poll_questions: "Išči vprašanja glasovanja"
+          proposals: "Išči predloge po naslovu, kodi, opisu ali vprašanju"
+          users: "Išči uporabnika/-co po imenu ali e-naslovu"
       search_results: "Rezultati iskanja"
       no_search_results: "Ni rezultatov."
       actions: Dejanja
@@ -794,8 +767,6 @@ sl:
       index:
         title: Geocona
         create: Ustvari geocono
-        edit: Uredi
-        delete: Izbriši
       geozone:
         name: Ime
         external_code: Zunanja koda
@@ -892,7 +863,6 @@ sl:
         no_users: Ni uporabnikov.
       search:
         placeholder: Išči uporabnika po e-naslovu, imenu ali št. dokumenta
-        search: Išči
     verifications:
       index:
         phone_not_given: Ni podatka o telefonski številki
@@ -964,11 +934,6 @@ sl:
       cards_title: Karte
       create_card: Ustvari karto
       no_cards: Ni kart.
-      cards:
-        title: Naslov
-        description: Opis
-        link_text: Besedilo povezave
-        link_url: URL povezave
       feeds:
         proposals: Predlogi
         debates: Razprave

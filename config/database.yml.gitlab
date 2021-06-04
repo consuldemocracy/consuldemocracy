@@ -1,0 +1,11 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: postgres
+  pool: 5
+  username: consul
+  password:
+
+test:
+  <<: *default
+  database: consul_test

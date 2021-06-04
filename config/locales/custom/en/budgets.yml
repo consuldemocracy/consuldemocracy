@@ -1,8 +1,5 @@
 en:
   budgets:
-    ballots:
-      show:
-        back: "Go back to budgets"
     investments:
       investment:
         remove_support: "Remove your support"

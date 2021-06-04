@@ -1,0 +1,58 @@
+@mixin sdg-goal-list($spacing: 1ch) {
+  $min-spacing: $sdg-icon-min-width / 10;
+  $max-spacing: #{"Max(#{$min-spacing}, #{$spacing})"};
+
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: -$spacing 0 $line-height / 3 -#{$spacing};
+  margin-left: calc(-1 * #{$max-spacing});
+  margin-top: calc(-1 * #{$max-spacing});
+  width: calc(100% + #{$spacing});
+  width: calc(100% + #{$max-spacing});
+
+  > *,
+  > .tabs-title {
+    margin-bottom: 0;
+    margin-left: $spacing;
+    margin-left: $max-spacing;
+    margin-right: 0;
+    margin-top: $spacing;
+    margin-top: $max-spacing;
+  }
+
+  a:hover .sdg-goal-icon {
+    filter: brightness(90%);
+  }
+}
+
+%sdg-goal-list {
+  @include sdg-goal-list;
+}
+
+%sdg-goal-list-expanded {
+  $spacing: 0.5%;
+  @include sdg-goal-list($spacing);
+
+  label,
+  li {
+    min-width: $sdg-icon-min-width;
+    width: calc(100% / 17 - #{$spacing});
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .sdg-goal-icon {
+      width: 100%;
+    }
+
+    a:focus {
+      outline: none;
+
+      img {
+        outline: $outline-focus;
+      }
+    }
+  }
+}

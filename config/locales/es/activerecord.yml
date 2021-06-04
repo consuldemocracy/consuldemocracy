@@ -4,6 +4,10 @@ es:
     results_enabled: "Mostrar resultados"
     stats_enabled: "Mostrar estadísticas"
     advanced_stats_enabled: "Mostrar estadísticas avanzadas"
+    name: Nombre
+    email: Email
+    description: Descripción
+    related_sdg_list: Objetivos y Metas
   activerecord:
     models:
       activity:
@@ -72,6 +76,18 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
+      sdg/goal:
+        one: "objetivo"
+        other: "objetivos"
+      sdg/local_target:
+        one: "meta localizada"
+        other: "metas localizadas"
+      sdg/manager:
+        one: "gestor ODS"
+        other: "gestores ODS"
+      sdg/target:
+        one: "meta"
+        other: "metas"
       site_customization/page:
         one: Página
         other: Páginas
@@ -130,8 +146,6 @@ es:
         one: Registro del censo local
         other: Registros del censo local
     attributes:
-      administrator:
-        description: Descripción
       budget:
         name: "Nombre"
         description_accepting: "Descripción durante la fase de presentación de proyectos"
@@ -281,6 +295,7 @@ es:
         responsible_name: "Persona responsable del colectivo"
       poll:
         name: "Nombre"
+        title: "Nombre"
         starts_at: "Fecha de apertura"
         ends_at: "Fecha de cierre"
         geozone_restricted: "Restringida por zonas"
@@ -311,6 +326,24 @@ es:
         task: "Tarea"
       proposal_notification:
         body: "Mensaje"
+        title: "Título"
+      sdg/goal:
+        code: "Código"
+        title: "Título"
+        description: "Descripción"
+      sdg/local_target:
+        code: "Código"
+        target_id: "Meta"
+        title: "Título"
+      sdg/local_target/translation:
+        title: "Título"
+        description: "Descripción"
+      sdg/phase/kind:
+        sensitization: "Sensibilización"
+        planning: "Planificación"
+        monitoring: "Seguimiento"
+      sdg/target:
+        code: "Código"
         title: "Título"
       signature_sheet:
         title: "Título"
@@ -563,6 +596,10 @@ es:
           attributes:
             locale:
               already_translated: Recurso ya traducido
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "debe empezar con el código de su meta seguido de un punto y terminar con un número"
       messages:
         translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"

@@ -118,6 +118,7 @@ tr:
       translation_interface_description: "Kullanıcıların, mevcut tüm uygulama dillerinde içeriklerini girmelerine izin veren manuel çeviri arayüzünü görüntüler. Bu seçenek yalnızca kullanıcı başvuru formlarını etkiler ve bağımsız olarak yönetim panelinde her zaman aktif olacaktır."
       valuation_comment_notification: "Değerlendirme yorumu bildirimi"
       valuation_comment_notification_description: "Yeni bir değerlendirme yorumu oluşturulduğunda, bütçe yatırımı değerlendirme yorumlayıcısı hariç tüm ilişkili kullanıcılara bir e-posta gönderin"
+      sdg: SKH
     map:
       latitude: "Enlem"
       latitude_description: "Harita konumunu göstermek için enlem"

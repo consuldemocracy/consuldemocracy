@@ -4,6 +4,10 @@ ro:
     results_enabled: "Se arată rezultatele"
     stats_enabled: "Statistici"
     advanced_stats_enabled: "Statistici avansate"
+    name: Nume
+    email: Email
+    description: Descriere
+    related_sdg_list: Obiective și Ținte
   activerecord:
     models:
       activity:
@@ -94,6 +98,22 @@ ro:
         one: "Propunerea cetățeanului"
         few: "Propunerile cetățeanului"
         other: "Propunerile cetățeanului"
+      sdg/goal:
+        one: "scop"
+        few: "scopuri"
+        other: "scopuri"
+      sdg/local_target:
+        one: "țintă locală"
+        few: "ținte locale"
+        other: "ținte locale"
+      sdg/manager:
+        one: "Administrator obiective de dezvoltare durabilă"
+        few: "Administratori obiective de dezvoltare durabilă"
+        other: "Administratori obiective de dezvoltare durabilă"
+      sdg/target:
+        one: "obiectiv"
+        few: "obiective"
+        other: "obiective"
       site_customization/page:
         one: Pagină personalizate
         few: Pagini personalizate
@@ -183,6 +203,7 @@ ro:
         phase: "Etapă"
         currency_symbol: "Monedă"
         voting_style: "Votare finală"
+        voting_style_knapsack: "Votare de tip Knapsack"
         voting_style_approval: "Aprobare"
       budget/translation:
         name: "Nume"
@@ -254,6 +275,7 @@ ro:
         ends_at: "Data de sfârșit"
         starts_at: "Data de început"
       budget/phase/translation:
+        name: "Nume"
         description: "Descriere"
         summary: "Sumar"
       comment:
@@ -312,6 +334,7 @@ ro:
         responsible_name: "Persoană responsabilă pentru grup"
       poll:
         name: "Nume"
+        title: "Nume"
         starts_at: "Data de început"
         ends_at: "Data limită"
         geozone_restricted: "Limitat de locație"
@@ -348,6 +371,24 @@ ro:
         signable_type: "Tip semnnătură"
         signable_id: "Semnatar"
         document_numbers: "Numerele documentelor"
+      sdg/goal:
+        code: "Cod"
+        title: "Titlu"
+        description: "Descriere"
+      sdg/local_target:
+        code: "Cod"
+        target_id: "Obiectiv"
+        title: "Titlu"
+      sdg/local_target/translation:
+        title: "Titlu"
+        description: "Descriere"
+      sdg/phase/kind:
+        sensitization: "Sensibilizare"
+        planning: "Planificare"
+        monitoring: "Monitorizare"
+      sdg/target:
+        code: "Cod"
+        title: "Titlu"
       site_customization/page:
         content: Conținut
         created_at: Creat la
@@ -598,6 +639,10 @@ ro:
           attributes:
             locale:
               already_translated: Resursă deja tradusă
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "trebuie să înceapă cu același cod ca ținta sa, urmat de un punct și să se termine cu un număr"
       messages:
         translations_too_short: Este obligatoriu să furnizați cel puțin o traducere
         record_invalid: "Validarea a eșuat: %{errors}"

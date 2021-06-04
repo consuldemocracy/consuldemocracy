@@ -1,11 +1,8 @@
 require "rails_helper"
 
 describe "Users" do
-  before do
-    login_as_manager
-  end
-
   scenario "Create a level 3 user with email from scratch" do
+    login_as_manager
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
@@ -46,6 +43,7 @@ describe "Users" do
   end
 
   scenario "Create a level 3 user without email from scratch" do
+    login_as_manager
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
@@ -71,9 +69,11 @@ describe "Users" do
     expect(user.date_of_birth).to have_content Date.new(1980, 12, 31)
   end
 
-  scenario "Delete a level 2 user account from document verification page", :js do
+  scenario "Delete a level 2 user account from document verification page" do
     level_2_user = create(:user, :level_two, document_number: "12345678Z")
+    manager = create(:manager)
 
+    login_as_manager(manager)
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
@@ -86,12 +86,19 @@ describe "Users" do
 
     expect(page).to have_content "User account deleted."
 
-    expect(level_2_user.reload.erase_reason).to eq "Deleted by manager: manager_user_#{Manager.last.user_id}"
-
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
 
     expect(page).to have_content "no user account associated to it"
+
+    logout
+    login_as(create(:administrator).user)
+
+    visit admin_users_path(filter: "erased")
+
+    within "tr", text: level_2_user.id do
+      expect(page).to have_content "Deleted by manager: manager_user_#{manager.user_id}"
+    end
   end
 end

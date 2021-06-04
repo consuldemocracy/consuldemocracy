@@ -64,9 +64,6 @@ fa:
           finished: به پایان رسید
         table_name: نام
         table_phase: فاز
-        table_investments: سرمایه گذاری ها
-        table_edit_groups: سرفصلهای گروه
-        table_edit_budget: ویرایش
         edit_groups: ویرایش سرفصلهای گروه
         edit_budget: ویرایش بودجه
         no_budgets: "هیچ بودجه ای وجود ندارد."
@@ -78,7 +75,6 @@ fa:
         title: ویرایش بودجه مشارکتی
         delete: حذف بودجه
         phase: فاز
-        dates: تاریخ
         enabled: فعال
         actions: اقدامات
         edit_phase: ویرایش فاز
@@ -104,7 +100,6 @@ fa:
         submit: "ذخیره سرفصل"
     budget_phases:
       edit:
-        summary_help_text: این متن به کاربر در مورد فاز اطلاع می دهد. برای نشان دادن آن حتی اگر فاز فعال نیست، کادر انتخاب را در زیر انتخاب کنید
         description_help_text: هنگامی که فاز فعال است، این متن در هدر ظاهر می شود
         enabled_help_text: این مرحله در زمانبندی فازهای بودجه عمومی و همچنین برای هر هدف دیگر فعال خواهد بود
         save_changes: ذخیره تغییرات
@@ -223,8 +218,6 @@ fa:
         table_name: نام
         table_description: توضیحات
         table_actions: اقدامات
-        delete: حذف
-        edit: ویرایش
     progress_bars:
       index:
         table_id: "شناسه"
@@ -288,7 +281,6 @@ fa:
           additional_info_placeholder: افزودن اطلاعات اضافی که در نظر شما مفید است
         index:
           create: فرآیند جدید
-          delete: حذف
           title: فرآیندهای قانونی
           filters:
             all: همه
@@ -396,12 +388,9 @@ fa:
     managers:
       index:
         title: "مدیرها\n"
-        name: نام
-        email: پست الکترونیکی
         no_managers: هیچ مدیری وجود ندارد
       manager:
         add: اضافه کردن
-        delete: حذف
       search:
         title: "مدیران: جستجوی کاربر"
     menu:
@@ -454,24 +443,18 @@ fa:
     administrators:
       index:
         title: مدیران
-        name: نام
-        email: پست الکترونیکی
         no_administrators: هیچ مدیری وجود ندارد
       administrator:
         add: اضافه کردن
-        delete: حذف
         restricted_removal: "با عرض پوزش، شما نمی توانید خود را از مدیریت حذف کنید"
       search:
         title: "مدیران: جستجوی کاربر"
     moderators:
       index:
         title: سردبیرها
-        name: نام
-        email: پست الکترونیکی
         no_moderators: هیچ مدیری وجود ندارد
       moderator:
         add: اضافه کردن
-        delete: حذف
       search:
         title: "مدیران: جستجوی کاربر"
     segment_recipient:
@@ -497,8 +480,6 @@ fa:
         sent: "ارسال شد\n"
         actions: اقدامات
         draft: ' پیش نویس'
-        edit: ویرایش
-        delete: حذف
         preview: پیش نمایش
         empty_newsletters: هیچ خبرنامه برای نشان دادن وجود ندارد
       new:
@@ -523,8 +504,6 @@ fa:
         sent: "ارسال شد\n"
         actions: اقدامات
         draft: ' پیش نویس'
-        edit: ویرایش
-        delete: حذف
         preview: پیش نمایش
       show:
         send: ارسال اعلان
@@ -552,7 +531,6 @@ fa:
         no_group: "هیچ گروهی وجود ندارد"
       valuator:
         add: افزودن به ارزیابان
-        delete: حذف
       search:
         title: "ارزیابی کنندگان: جستجوی کاربر"
       form:
@@ -588,7 +566,6 @@ fa:
         entry_name: افسر
       search:
         email_placeholder: جستجوی کاربر توسط ایمیل
-        search: جستجو
         user_not_found: کاربری یافت نشد
     poll_officer_assignments:
       index:
@@ -822,8 +799,6 @@ fa:
         no_organizations: هیچ سازمانی وجود ندارد
         reject: رد
         rejected: رد شده
-        search: جستجو
-        search_placeholder: نام و ایمیل یا تلفن شماره
         title: سازمان ها
         verified: تایید
         verify: تأیید
@@ -872,21 +847,14 @@ fa:
     shared:
       true_value: "بله"
       false_value: "نه"
-      booths_search:
-        button: جستجو
-        placeholder: جستجوی غرفه با نام
-      poll_officers_search:
-        button: جستجو
-        placeholder: جستجو افسران نظرسنجی 
-      poll_questions_search:
-        button: جستجو
-        placeholder: جستجو پرسش های نظرسنجی
-      proposal_search:
-        button: جستجو
-        placeholder: پیشنهادات را با عنوان، کد، توضیحات یا سوال جستجو کنید
-      user_search:
-        button: جستجو
-        placeholder: جستجوی کاربر توسط ایمیل
+      search:
+        label:
+          booths: "جستجوی غرفه با نام"
+          organizations: "نام و ایمیل یا تلفن شماره"
+          poll_officers: "جستجو افسران نظرسنجی "
+          poll_questions: "جستجو پرسش های نظرسنجی"
+          proposals: "پیشنهادات را با عنوان، کد، توضیحات یا سوال جستجو کنید"
+          users: "جستجوی کاربر توسط ایمیل"
       search_results: "جستجو نتایج "
       no_search_results: "نتیجه ای پیدا نشد.\n"
       actions: اقدامات
@@ -898,13 +866,10 @@ fa:
       author: نویسنده
       content: محتوا
       created_at: "ایجاد شده در\n"
-      delete: حذف
     geozones:
       index:
         title: Geozone
         create: ایجاد geozone
-        edit: ویرایش
-        delete: حذف
       geozone:
         name: نام
         external_code: ویدیوهای خارجی
@@ -1007,7 +972,6 @@ fa:
         no_users: هیچ کاربری وجود ندارد.
       search:
         placeholder: جستجوی کاربر توسط ایمیل و نام یا شماره سند 
-        search: جستجو
     verifications:
       index:
         phone_not_given: تلفن داده نشده
@@ -1073,13 +1037,8 @@ fa:
           updated_at: "ایجاد شده در\n"
           title: عنوان
           slug: slug
-          cards_title: کارتها
         cards:
           create_card: ایجاد کارت
-          title: عنوان
-          description: توضیحات
-          link_text: لینک متن
-          link_url: لینک آدرس
     homepage:
       title: صفحه اصلی
       description: ماژول های فعال در صفحه اصلی به ترتیب در اینجا نمایش داده می شوند.
@@ -1089,11 +1048,6 @@ fa:
       cards_title: کارتها
       create_card: ایجاد کارت
       no_cards: بدون کارت
-      cards:
-        title: عنوان
-        description: توضیحات
-        link_text: لینک متن
-        link_url: لینک آدرس
       feeds:
         proposals: طرح های پیشنهادی
         debates: مباحثه

@@ -42,6 +42,20 @@ describe "Poll Officing" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
+  scenario "Access as SDG manager is not authorized" do
+    create(:sdg_manager, user: user)
+    login_as(user)
+    visit root_path
+
+    expect(page).not_to have_link("Polling officers")
+
+    visit officing_root_path
+
+    expect(page).not_to have_current_path(officing_root_path)
+    expect(page).to have_current_path(root_path)
+    expect(page).to have_content "You do not have permission to access this page"
+  end
+
   scenario "Access as a valuator is not authorized" do
     create(:valuator, user: user)
     login_as(user)
@@ -76,8 +90,8 @@ describe "Poll Officing" do
     login_as(user)
     visit root_path
 
-    expect(page).to have_link("Polling officers")
-    click_on "Polling officers"
+    click_link "Menu"
+    click_link "Polling officers"
 
     expect(page).to have_current_path(officing_root_path)
     expect(page).not_to have_content "You do not have permission to access this page"
@@ -89,8 +103,8 @@ describe "Poll Officing" do
     login_as(user)
     visit root_path
 
-    expect(page).to have_link("Polling officers")
-    click_on "Polling officers"
+    click_link "Menu"
+    click_link "Polling officers"
 
     expect(page).to have_current_path(officing_root_path)
     expect(page).not_to have_content "You do not have permission to access this page"
@@ -101,6 +115,8 @@ describe "Poll Officing" do
     create(:poll_officer, user: user)
     login_as(user)
     visit root_path
+
+    click_link "Menu"
 
     expect(page).to have_link("Polling officers")
     expect(page).not_to have_link("Valuation")
@@ -114,6 +130,7 @@ describe "Poll Officing" do
     login_as(user)
     visit root_path
 
+    click_link "Menu"
     click_link "Polling officers"
 
     expect(page).to have_current_path(officing_root_path)
@@ -124,7 +141,7 @@ describe "Poll Officing" do
     expect(page).not_to have_css("#moderation_menu")
   end
 
-  scenario "Officing dashboard available for multiple sessions", :js, :with_frozen_time do
+  scenario "Officing dashboard available for multiple sessions", :with_frozen_time do
     poll = create(:poll)
     booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)

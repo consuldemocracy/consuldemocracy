@@ -11,24 +11,28 @@
     </span>
   </td>
   <td>
-    <%= link_to t("admin.booth_assignments.manage.actions.unassign"),
-                admin_poll_booth_assignment_path(@poll, booth_assignment, booth_id: booth.id),
-                method: :delete,
-                remote: true,
-                title: t("admin.booth_assignments.manage.actions.unassign"),
-                class: "button hollow alert expanded",
-                data: (booth_assignment.shifts? ? { confirm: "#{t("admin.poll_booth_assignments.alert.shifts")}" } : nil) if !@poll.expired? %>
+    <% unless @poll.expired? %>
+      <%= render Admin::TableActionsComponent.new(booth_assignment,
+        actions: [:destroy],
+        destroy_text: t("admin.booth_assignments.manage.actions.unassign"),
+        destroy_confirmation: (booth_assignment.shifts? ? "#{t("admin.poll_booth_assignments.alert.shifts")}" : ""),
+        destroy_options: { remote: true }
+      ) %>
+    <% end %>
   </td>
 <% else %>
   <td>
     <span class="disabled"><%= t("admin.booth_assignments.manage.status.unassigned") %></span>
   </td>
   <td>
-    <%= link_to t("admin.booth_assignments.manage.actions.assign"),
-                admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
-                method: :post,
-                remote: true,
-                title: t("admin.booth_assignments.manage.actions.assign"),
-                class: "button hollow expanded" if !@poll.expired? %>
+    <% unless @poll.expired? %>
+      <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+        <%= actions.link_to t("admin.booth_assignments.manage.actions.assign"),
+                            admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
+                            method: :post,
+                            remote: true,
+                            class: "assign-booth-link" %>
+      <% end %>
+    <% end %>
   </td>
 <% end %>

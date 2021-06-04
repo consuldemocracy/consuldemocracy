@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin hidden comments" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin hidden comments", :admin do
   scenario "Do not show comments from blocked users" do
     comment = create(:comment, :hidden, body: "SPAM from SPAMMER")
     proposal = create(:proposal, author: comment.author)
@@ -16,11 +11,15 @@ describe "Admin hidden comments" do
     expect(page).not_to have_content("Good Proposal!")
 
     visit proposal_path(proposal)
+
     within("#proposal_#{proposal.id}") do
-      click_link "Hide author"
+      accept_confirm { click_link "Hide author" }
     end
 
+    expect(page).to have_current_path debates_path
+
     visit admin_hidden_comments_path
+
     expect(page).not_to have_content("SPAM from SPAMMER")
     expect(page).not_to have_content("Good Proposal!")
   end
@@ -68,12 +67,13 @@ describe "Admin hidden comments" do
     comment = create(:comment, :hidden, body: "Not really SPAM")
     visit admin_hidden_comments_path
 
-    click_link "Restore"
+    accept_confirm { click_link "Restore" }
 
     expect(page).not_to have_content(comment.body)
 
-    expect(comment.reload).not_to be_hidden
-    expect(comment).to be_ignored_flag
+    visit comment_path(comment)
+
+    expect(page).to have_content(comment.body)
   end
 
   scenario "Confirm hide" do
@@ -85,8 +85,6 @@ describe "Admin hidden comments" do
     expect(page).not_to have_content(comment.body)
     click_link("Confirmed")
     expect(page).to have_content(comment.body)
-
-    expect(comment.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do
@@ -130,9 +128,9 @@ describe "Admin hidden comments" do
 
     visit admin_hidden_comments_path(filter: "with_confirmed_hide", page: 2)
 
-    click_on("Restore", match: :first, exact: true)
+    accept_confirm { click_link "Restore", match: :first, exact: true }
 
-    expect(current_url).to include("filter=with_confirmed_hide")
-    expect(current_url).to include("page=2")
+    expect(page).to have_current_path(/filter=with_confirmed_hide/)
+    expect(page).to have_current_path(/page=2/)
   end
 end

@@ -1,10 +1,6 @@
 require "rails_helper"
 
-describe "Admin local census records" do
-  before do
-    login_as(create(:administrator).user)
-  end
-
+describe "Admin local census records", :admin do
   context "Index" do
     let!(:local_census_record) { create(:local_census_record) }
 
@@ -61,7 +57,7 @@ describe "Admin local census records" do
         expect(page).not_to have_content local_census_record.document_number
       end
 
-      scenario "Should show matching records by document number", :js do
+      scenario "Should show matching records by document number" do
         visit admin_local_census_records_path
 
         fill_in :search, with: "X66777888"
@@ -142,7 +138,8 @@ describe "Admin local census records" do
       visit admin_local_census_records_path
 
       expect(page).to have_content deleted_document_number
-      click_on "Delete"
+
+      accept_confirm { click_on "Delete" }
 
       expect(page).to have_content "Local census record removed successfully!"
       expect(page).not_to have_content deleted_document_number

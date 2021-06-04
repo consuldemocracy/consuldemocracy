@@ -1,0 +1,24 @@
+<p class="investment-project-info">
+  <%= l investment.created_at.to_date %>
+
+  <% if investment.author.hidden? || investment.author.erased? %>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+    <span class="author">
+      <%= t("budgets.investments.show.author_deleted") %>
+    </span>
+  <% else %>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+    <span class="author">
+      <%= investment.author.name %>
+    </span>
+    <% if investment.author.official? %>
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
+      <span class="label round level-<%= investment.author.official_level %>">
+        <%= investment.author.official_position %>
+      </span>
+    <% end %>
+  <% end %>
+
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <%= investment.heading.name %>
+</p>

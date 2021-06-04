@@ -40,19 +40,19 @@
             <% if @process.additional_info.present? %>
               <hr>
               <p class="title"><%= t("legislation.processes.header.additional_info") %></p>
-              <%= markdown @process.additional_info if @process.additional_info %>
+              <%= markdown @process.additional_info %>
             <% end %>
           </div>
 
-          <a id="read_more" class="button" data-toggler="hide"
-             data-toggle="legislation_info read_more read_less">
+          <button type="button" id="read_more" class="button" data-toggler="hide"
+                  data-toggle="legislation_info read_more read_less">
             <%= t("legislation.processes.header.more_info") %>
-          </a>
+          </button>
 
-          <a id="read_less" class="button hide" data-toggler="hide"
-             data-toggle="legislation_info read_more read_less">
+          <button type="button" id="read_less" class="button hide" data-toggler="hide"
+                  data-toggle="legislation_info read_more read_less">
             <%= t("legislation.processes.header.less_info") %>
-          </a>
+          </button>
         <% else %>
           <%= render "legislation/processes/header_full", process: @process %>
         <% end %>

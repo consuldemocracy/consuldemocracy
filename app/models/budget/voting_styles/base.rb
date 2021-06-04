@@ -9,14 +9,26 @@ class Budget::VotingStyles::Base
     self.class.name.split("::").last.underscore
   end
 
-  def change_vote_info(options = {})
-    I18n.t("budgets.investments.index.sidebar.change_vote_info.#{name}", options)
+  def change_vote_info(link:, phase_end_date:)
+    I18n.t(
+      "budgets.investments.index.sidebar.change_vote_info.#{name}",
+      link: link,
+      phase_end_date: I18n.l(budget.current_phase.ends_at.to_date, format: :long)
+    )
+  end
+
+  def amount_progress(heading)
+    I18n.t(
+      "budgets.ballots.show.amount_progress",
+      amount_spent: amount_spent_info(heading),
+      amount_limit: amount_limit_info(heading)
+    )
   end
 
   def voted_info(heading)
     I18n.t("budgets.investments.index.sidebar.voted_info.#{name}",
       count: investments(heading).count,
-      amount_spent: ballot.budget.formatted_amount(investments_price(heading)))
+      amount_spent: budget.formatted_amount(investments_price(heading)))
   end
 
   def amount_available_info(heading)
@@ -55,6 +67,10 @@ class Budget::VotingStyles::Base
   end
 
   private
+
+    def budget
+      ballot.budget
+    end
 
     def investments(heading)
       ballot.investments.by_heading(heading.id)

@@ -3,6 +3,7 @@ bg:
     ballots:
       show:
         title: Вашата бюлетина
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
           knapsack: "Все още имате <span>%{count}</span> да инвестирате."
           approval:
@@ -64,12 +65,11 @@ bg:
         icon_alt: Икона за бюджети с участие
         title: Бюджети с участие
         help: Помощ при бюджети с участие
-        all_phases: Вижте всички фази
       all_phases: Фази на бюджетните инвестиции
+      next_phase: Следваща фаза
+      prev_phase: Предишна фаза
+      current_phase: Текуща фаза
       map: Предложения за бюджетни инвестиции, разположени географски
-      investment_proyects: Списък на всички инвестиционни проекти
-      unfeasible_investment_proyects: Списък на всички неизпълними инвестиционни проекти
-      not_selected_investment_proyects: Списък на всички инвестиционни проекти, които не са избрани за гласуване
       finished_budgets: Приключили бюджети с участие
       see_results: Вижте резултатите
       section_footer:
@@ -118,9 +118,13 @@ bg:
           verified_only: "За създаване на нова бюджетна инвестиция %{verify}."
           create: "Създайте бюджетна инвестиция"
           not_logged_in: "За да създадете нова бюджетна инвестиция, трябва да %{sign_in} или %{sign_up}."
-          by_feasibility: По изпълнимост
-          feasible: Изпълними проекти
-          unfeasible: Неизпълними проекти
+        filter: "Филтриране на проекти по"
+        filters:
+          not_unfeasible: "Реализуем"
+          selected: "Избран"
+          unfeasible: "Неизпълним"
+          unselected: "Неизбран"
+          winners: "Победители"
         orders:
           random: случаен
           confidence_score: най-високо оценени
@@ -162,25 +166,12 @@ bg:
           other: "%{count} гласове за подкрепа"
         give_support: Подкрепа
       header:
-        check_ballot: Проверете и потвърдете моята бюлетина
+        check_ballot: "Проверете и потвърдете моята бюлетина"
         different_heading_assigned: "Имате активни гласове в друга рубрика: %{heading_link}"
         change_ballot: "Ако промените решението си, можете да премахнете гласовете си в %{check_ballot} и да започнете отново."
         check_ballot_link: "провери и потвърди моята бюлетина"
         price: "В тази рубрика има бюджет от"
-    progress_bar:
-      assigned: "Вие сте определили: "
-      available: "Наличен бюджет: "
-      votes:
-        zero: "Вие избрахте <strong>0</strong> проекта от <strong>%{limit}</strong>"
-        one: "Вие избрахте <strong>1</strong> проект от <strong>%{limit}</strong>"
-        other: "Вие избрахте <strong>%{count}</strong> проекта от <strong>%{limit}</strong>"
     show:
-      group: Група
-      phase: Актуална фаза
-      unfeasible_title: Невъзможни инвестиции
-      unfeasible: Вижте невъзможни инвестиции
-      unselected_title: Инвестиции, които не са избрани за фаза на гласуване
-      unselected: Вижте инвестициите, които не са избрани за фаза на гласуване
       see_results: Вижте резултатите
     results:
       link: Резултати

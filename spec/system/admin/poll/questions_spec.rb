@@ -1,10 +1,6 @@
 require "rails_helper"
 
-describe "Admin poll questions" do
-  before do
-    login_as(create(:administrator).user)
-  end
-
+describe "Admin poll questions", :admin do
   scenario "Index" do
     poll1 = create(:poll)
     poll2 = create(:poll)
@@ -19,30 +15,30 @@ describe "Admin poll questions" do
 
     within("#poll_question_#{question1.id}") do
       expect(page).to have_content(question1.title)
-      expect(page).to have_content("Edit answers")
-      expect(page).to have_content("Edit")
-      expect(page).to have_content("Delete")
+      expect(page).to have_link "Edit answers"
+      expect(page).to have_link "Edit"
+      expect(page).to have_link "Delete"
     end
 
     visit admin_poll_path(poll2)
     expect(page).to have_content(poll2.name)
 
     within("#poll_question_#{question2.id}") do
-      expect(page).to have_content(question2.title)
-      expect(page).to have_content("Edit answers")
-      expect(page).to have_content("Edit")
-      expect(page).to have_content("Delete")
+      expect(page).to have_content question2.title
+      expect(page).to have_link "Edit answers"
+      expect(page).to have_link "Edit"
+      expect(page).to have_link "Delete"
     end
 
     visit admin_poll_path(poll3)
     expect(page).to have_content(poll3.name)
 
     within("#poll_question_#{question3.id}") do
-      expect(page).to have_content(question3.title)
-      expect(page).to have_link("(See proposal)", href: proposal_path(question3.proposal))
-      expect(page).to have_content("Edit answers")
-      expect(page).to have_content("Edit")
-      expect(page).to have_content("Delete")
+      expect(page).to have_content question3.title
+      expect(page).to have_link "(See proposal)", href: proposal_path(question3.proposal)
+      expect(page).to have_link "Edit answers"
+      expect(page).to have_link "Edit"
+      expect(page).to have_link "Delete"
     end
   end
 
@@ -52,7 +48,7 @@ describe "Admin poll questions" do
     question = create(:poll_question, poll: poll)
 
     visit admin_poll_path(poll)
-    click_link question.title
+    click_link "Edit answers"
 
     expect(page).to have_content(question.title)
     expect(page).to have_content(question.author.name)
@@ -67,7 +63,7 @@ describe "Admin poll questions" do
 
     expect(page).to have_content("Create question to poll Movies")
     expect(page).to have_selector("input[id='poll_question_poll_id'][value='#{poll.id}']",
-                                   visible: false)
+                                   visible: :hidden)
     fill_in "Question", with: title
 
     click_button "Save"
@@ -146,7 +142,7 @@ describe "Admin poll questions" do
     visit admin_poll_path(poll)
 
     within("#poll_question_#{question1.id}") do
-      click_link "Delete"
+      accept_confirm { click_link "Delete" }
     end
 
     expect(page).not_to have_content(question1.title)
@@ -157,7 +153,7 @@ describe "Admin poll questions" do
   pending "Mark all city by default when creating a poll question from a successful proposal"
 
   context "Poll select box" do
-    scenario "translates the poll name in options", :js do
+    scenario "translates the poll name in options" do
       poll = create(:poll, name_en: "Name in English", name_es: "Nombre en Español")
       proposal = create(:proposal)
 
@@ -172,7 +168,7 @@ describe "Admin poll questions" do
                                   options: ["Seleccionar votación", poll.name_es])
     end
 
-    scenario "uses fallback if name is not translated to current locale", :js do
+    scenario "uses fallback if name is not translated to current locale" do
       unless globalize_french_fallbacks.first == :es
         skip("Spec only useful when French falls back to Spanish")
       end

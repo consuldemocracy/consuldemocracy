@@ -6,14 +6,10 @@ module Comments
     CommentNotifier.new(comment: comment).process
   end
 
-  def reply_to(original_user, manuela = nil)
-    manuela ||= create(:user)
+  def reply_to(comment, replier: create(:user))
+    login_as(replier)
 
-    debate  = create(:debate)
-    comment = create(:comment, commentable: debate, user: original_user)
-
-    login_as(manuela)
-    visit debate_path(debate)
+    visit polymorphic_path(comment.commentable)
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do

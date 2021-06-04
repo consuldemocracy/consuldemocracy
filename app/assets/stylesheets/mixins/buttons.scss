@@ -1,0 +1,36 @@
+%button {
+  font-size: $base-font-size;
+
+  &:focus,
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+@mixin regular-button($color: $brand) {
+  @include button($background: $color);
+  @include inverted-selection;
+  @extend %button;
+}
+
+@mixin hollow-button($color: $link) {
+  @include button($style: hollow, $background: $color);
+  @include normal-selection;
+  @extend %button;
+  margin-bottom: 0;
+}
+
+@mixin link {
+  color: $link;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: $link-hover;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: $outline-focus;
+  }
+}

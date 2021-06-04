@@ -1,6 +1,7 @@
 <span class="total-amount">
   <% if @budget.approval_voting? %>
     <%= sanitize(ballot.amount_limit_info(heading)) %>
+    <%= sanitize(ballot.amount_progress(heading)) %>
   <% else %>
     <%= t("budgets.progress_bar.assigned") %>
     <span id="amount_spent"><%= @ballot.formatted_amount_spent(@heading) %></span> /
@@ -15,7 +16,9 @@
   </div>
 </div>
 
-<p class="progress-meter-text spent-amount-text"
-   style="width: <%= ballot.percentage_spent(heading) %>%">
-  <%= render "budgets/ballot/progress_bar/#{ballot.budget.voting_style}", ballot: ballot, heading: heading %>
+<p class="progress-meter-text spent-amount-text" style="width: <%= ballot.percentage_spent(heading) %>%">
+  <span id="amount_available" class="amount-available">
+    <small><%= t("budgets.progress_bar.available") %></small>
+    <span><%= sanitize(ballot.amount_available_info(heading)) %></span>
+  </span>
 </p>

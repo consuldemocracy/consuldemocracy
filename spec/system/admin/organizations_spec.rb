@@ -36,7 +36,7 @@ describe "Admin::Organizations" do
       visit admin_organizations_path
       expect(page).to have_content("Get up, Stand up")
 
-      fill_in "term", with: "      "
+      fill_in "search", with: "      "
       click_button "Search"
 
       expect(page).to have_current_path(search_admin_organizations_path, ignore_query: true)
@@ -49,7 +49,7 @@ describe "Admin::Organizations" do
       visit search_admin_organizations_path
       expect(page).not_to have_content("Get up, Stand up")
 
-      fill_in "term", with: "Up, sta"
+      fill_in "search", with: "Up, sta"
       click_button "Search"
 
       within("#search-results") do
@@ -61,7 +61,7 @@ describe "Admin::Organizations" do
       visit search_admin_organizations_path
       expect(page).not_to have_content("Get up, Stand up")
 
-      fill_in "term", with: user.email
+      fill_in "search", with: user.email
       click_button "Search"
 
       within("#search-results") do
@@ -73,7 +73,7 @@ describe "Admin::Organizations" do
       visit search_admin_organizations_path
       expect(page).not_to have_content("Get up, Stand up")
 
-      fill_in "term", with: user.phone_number
+      fill_in "search", with: user.phone_number
       click_button "Search"
 
       within("#search-results") do
@@ -94,9 +94,12 @@ describe "Admin::Organizations" do
       click_on "Verify"
     end
     expect(page).to have_current_path(admin_organizations_path, ignore_query: true)
-    expect(page).to have_content "Verified"
 
-    expect(organization.reload.verified?).to eq(true)
+    click_link "Verified"
+
+    within "tr", text: organization.name do
+      expect(page).to have_content "Verified"
+    end
   end
 
   scenario "Verified organizations have link to reject" do
@@ -117,10 +120,10 @@ describe "Admin::Organizations" do
     expect(page).not_to have_content organization.name
 
     click_on "Rejected"
-    expect(page).to have_content "Rejected"
-    expect(page).to have_content organization.name
 
-    expect(organization.reload.rejected?).to eq(true)
+    within "tr", text: organization.name do
+      expect(page).to have_content "Rejected"
+    end
   end
 
   scenario "Rejected organizations have link to verify" do
@@ -139,9 +142,9 @@ describe "Admin::Organizations" do
     expect(page).not_to have_content organization.name
     click_on("Verified")
 
-    expect(page).to have_content organization.name
-
-    expect(organization.reload.verified?).to eq(true)
+    within "tr", text: organization.name do
+      expect(page).to have_content "Verified"
+    end
   end
 
   scenario "Current filter is properly highlighted" do
@@ -210,7 +213,7 @@ describe "Admin::Organizations" do
 
     click_on("Verify", match: :first)
 
-    expect(current_url).to include("filter=pending")
-    expect(current_url).to include("page=2")
+    expect(page).to have_current_path(/filter=pending/)
+    expect(page).to have_current_path(/page=2/)
   end
 end

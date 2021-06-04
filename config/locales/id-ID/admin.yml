@@ -72,10 +72,6 @@ id:
         budget_investments: Melihat anggaran investasi
         table_name: Nama
         table_phase: Fase
-        table_investments: Investasi
-        table_edit_groups: Judul Kelompok
-        table_edit_budget: Sunting
-        table_admin_ballots: Surat suara
         edit_groups: Edit judul grup
         edit_budget: Edit anggaran
         admin_ballots: Admin surat suara
@@ -88,7 +84,6 @@ id:
         title: Edit Partisipatif anggaran
         delete: Menghapus anggaran
         phase: Fase
-        dates: Tanggal
         enabled: Diaktifkan
         actions: Tindakan
         edit_phase: Mengedit fase
@@ -107,7 +102,6 @@ id:
     budget_groups:
       name: "Nama"
       headings_name: "Judul"
-      headings_edit: "Edit judul"
       headings_manage: "Kelola judul"
       no_groups: "Tidak ada pemilihan."
       amount:
@@ -141,7 +135,6 @@ id:
         submit: "Menyimpan judul"
     budget_phases:
       edit:
-        summary_help_text: Teks ini akan memberi informasi pengguna tentang fase. Untuk menunjukkannya meski fase sesang tidak aktif, pilih kotak centang di bawah ini
         description_help_text: Teks ini akan muncul di header disaat fase aktif
         enabled_help_text: Fase ini akan menjadi publik dalam garis waktu fase anggaran, dan juga akan aktif untuk tujuan yang lain
         save_changes: Simpan perubahan
@@ -255,8 +248,6 @@ id:
         table_name: Nama
         table_description: Deskripsi
         table_actions: Tindakan
-        delete: Hapus
-        edit: Sunting
     progress_bars:
       index:
         table_kind: "Tipe"
@@ -319,7 +310,6 @@ id:
           additional_info_placeholder: Tambahkan informasi tambahan yang anda anggap bisa bermanfaat
         index:
           create: Proses baru
-          delete: Hapus
           title: Undang-undang proses
           filters:
             all: Semua
@@ -430,12 +420,9 @@ id:
     managers:
       index:
         title: Pengelola
-        name: Nama
-        email: Email
         no_managers: Tidak ada manajer disana.
       manager:
         add: Tambahkan
-        delete: Hapus
       search:
         title: "Pengelola: Pencarian pengguna"
     menu:
@@ -487,24 +474,18 @@ id:
     administrators:
       index:
         title: Administrasi
-        name: Nama
-        email: Email
         no_administrators: Tidak ada administrator.
       administrator:
         add: Tambahkan
-        delete: Hapus
         restricted_removal: "Maaf, anda tidak dapat menghapus diri anda dari administrasi"
       search:
         title: "Administrasi: Cari pengguna"
     moderators:
       index:
         title: Moderator
-        name: Nama
-        email: Email
         no_moderators: Tidak ada moderator.
       moderator:
         add: Tambahkan
-        delete: Hapus
       search:
         title: "Moderator: pencarian Pengguna"
     segment_recipient:
@@ -516,8 +497,6 @@ id:
         sent: Terkirim
         actions: Tindakan
         draft: Konsep
-        edit: Sunting
-        delete: Hapus
         preview: Tinjauan
       show:
         send: Kirim
@@ -529,8 +508,6 @@ id:
         sent: Terkirim
         actions: Tindakan
         draft: Konsep
-        edit: Sunting
-        delete: Hapus
         preview: Tinjauan
       show:
         send: Kirim pemberitahuan
@@ -549,7 +526,6 @@ id:
         group: "Kelompok"
       valuator:
         add: Tambahkan ke penilai
-        delete: Hapus
       search:
         title: "Penilai: Pencarian pengguna"
       show:
@@ -570,7 +546,6 @@ id:
         entry_name: petugas
       search:
         email_placeholder: Cari pengguna berdasarkan surel
-        search: Cari
         user_not_found: Pengguna tidak ditemukan
     poll_officer_assignments:
       index:
@@ -797,8 +772,6 @@ id:
         no_organizations: Tidak ada organisasi disana.
         reject: Menolak
         rejected: Ditolak
-        search: Cari
-        search_placeholder: Nama, email atau nomor telepon
         title: Organisasi
         verified: Diverifikasi
         verify: Memeriksa
@@ -846,21 +819,14 @@ id:
     shared:
       true_value: "Ya"
       false_value: "Tidak"
-      booths_search:
-        button: Cari
-        placeholder: Pencarian stan dengan nama
-      poll_officers_search:
-        button: Cari
-        placeholder: Pencarian jajak pendapat petugas
-      poll_questions_search:
-        button: Cari
-        placeholder: Pencarian pertanyaan jajak pendapat
-      proposal_search:
-        button: Cari
-        placeholder: Pencarian proposal dengan judul, kode, deskripsi, atau pertanyaan
-      user_search:
-        button: Cari
-        placeholder: Pengguna pencarian berdasarkan nama atau email
+      search:
+        label:
+          booths: "Pencarian stan dengan nama"
+          organizations: "Nama, email atau nomor telepon"
+          poll_officers: "Pencarian jajak pendapat petugas"
+          poll_questions: "Pencarian pertanyaan jajak pendapat"
+          proposals: "Pencarian proposal dengan judul, kode, deskripsi, atau pertanyaan"
+          users: "Pengguna pencarian berdasarkan nama atau email"
       search_results: "Hasil pencarian"
       actions: Tindakan
       title: Judul
@@ -871,15 +837,12 @@ id:
       author: Penulis
       content: Konten
       created_at: Dibuat pada
-      delete: Hapus
       show_results_and_stats: "Lihat hasil dan status"
       results_and_stats_reminder: "Menandai kotak centang ini, hasil dan atau statistik akan tersedia untuk umum dan setiap pengguna akan melihatnya."
     geozones:
       index:
         title: Geozone
         create: Membuat geozone
-        edit: Sunting
-        delete: Hapus
       geozone:
         name: Nama
         external_code: Eksternal kode
@@ -976,7 +939,6 @@ id:
         title: Pengguna
       search:
         placeholder: Pencarian pengguna melalui email, nama, atau nomor dokumen
-        search: Cari
     verifications:
       index:
         sms_code_not_confirmed: Belum mengkonfirmasi kode sms
@@ -1037,13 +999,7 @@ id:
           updated_at: Diperbarui pada
           title: Judul
           slug: Siput
-        cards:
-          title: Judul
-          description: Deskripsi
     homepage:
-      cards:
-        title: Judul
-        description: Deskripsi
       feeds:
         proposals: Proposal
         debates: Perdebatan

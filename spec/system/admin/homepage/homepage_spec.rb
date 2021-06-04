@@ -1,15 +1,12 @@
 require "rails_helper"
 
-describe "Homepage" do
+describe "Homepage", :admin do
   before do
     Setting["homepage.widgets.feeds.proposals"] = false
     Setting["homepage.widgets.feeds.debates"] = false
     Setting["homepage.widgets.feeds.processes"] = false
     Setting["homepage.widgets.feeds.budgets"] = false
     Setting["feature.user.recommendations"] = false
-
-    admin = create(:administrator).user
-    login_as(admin)
   end
 
   let!(:proposals_feed)    { create(:widget_feed, kind: "proposals") }
@@ -24,14 +21,14 @@ describe "Homepage" do
     scenario "Admin menu links to homepage path" do
       visit new_admin_widget_card_path(header_card: true)
 
-      click_link Setting["org_name"] + " Administration"
+      click_link "#{Setting["org_name"]} Administration"
 
       expect(page).to have_current_path(admin_root_path)
     end
   end
 
   context "Feeds" do
-    scenario "Proposals", :js do
+    scenario "Proposals" do
       5.times { create(:proposal) }
 
       visit admin_homepage_path
@@ -51,7 +48,7 @@ describe "Homepage" do
       expect(page).not_to have_css("#feed_proposals.medium-8")
     end
 
-    scenario "Debates", :js do
+    scenario "Debates" do
       5.times { create(:debate) }
 
       visit admin_homepage_path
@@ -70,39 +67,7 @@ describe "Homepage" do
       expect(page).not_to have_css("#feed_debates.medium-4")
     end
 
-    scenario "Proposals and debates", :js do
-      3.times { create(:proposal) }
-      3.times { create(:debate) }
-
-      visit admin_homepage_path
-
-      within("#widget_feed_#{proposals_feed.id}") do
-        select "3", from: "widget_feed_limit"
-        click_button "Enable"
-      end
-
-      within("#widget_feed_#{debates_feed.id}") do
-        select "3", from: "widget_feed_limit"
-        click_button "Enable"
-      end
-
-      visit root_path
-
-      within("#feed_proposals") do
-        expect(page).to have_content "Featured proposals"
-        expect(page).to have_css(".proposal", count: 3)
-      end
-
-      within("#feed_debates") do
-        expect(page).to have_content "Most active debates"
-        expect(page).to have_css(".debate", count: 3)
-      end
-
-      expect(page).to have_css("#feed_proposals.small-12")
-      expect(page).to have_css("#feed_debates.small-12")
-    end
-
-    scenario "Processes", :js do
+    scenario "Processes" do
       5.times { create(:legislation_process) }
 
       visit admin_homepage_path
@@ -117,7 +82,7 @@ describe "Homepage" do
       expect(page).to have_css(".legislation-process", count: 3)
     end
 
-    scenario "Budgets", :js do
+    scenario "Budgets" do
       5.times { create(:budget) }
 
       visit admin_homepage_path
@@ -135,7 +100,7 @@ describe "Homepage" do
       end
     end
 
-    scenario "Budget phase do not show links on phase description", :js do
+    scenario "Budget phase do not show links on phase description" do
       budget = create(:budget)
 
       visit admin_homepage_path
@@ -177,7 +142,7 @@ describe "Homepage" do
     expect(page).to have_css(".card", count: 2)
 
     within("#widget_card_#{card1.id}") do
-      expect(page).to have_content("Card1 label")
+      expect(page).to have_content("CARD1 LABEL")
       expect(page).to have_content("Card1 text")
       expect(page).to have_content("Card1 description")
       expect(page).to have_content("Link1 text")
@@ -186,7 +151,7 @@ describe "Homepage" do
     end
 
     within("#widget_card_#{card2.id}") do
-      expect(page).to have_content("Card2 label")
+      expect(page).to have_content("CARD2 LABEL")
       expect(page).to have_content("Card2 text")
       expect(page).to have_content("Card2 description")
       expect(page).to have_content("Link2 text")

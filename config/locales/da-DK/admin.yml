@@ -35,6 +35,7 @@ da:
           proposals: Forslag
           budgets: Deltagerbudgetter
           help_page: Hjælp
+          sdg: Verdensmål
       edit:
         editing: Rediger banner
         form:
@@ -72,10 +73,6 @@ da:
         budget_investments: Administrer projekter
         table_name: Navn
         table_phase: Fase
-        table_investments: Projektidéer
-        table_edit_groups: Budgetområder
-        table_edit_budget: Rediger
-        table_admin_ballots: Valgsteder
         edit_groups: Rediger områder
         edit_budget: Rediger budget
         admin_ballots: Administrer valgsteder
@@ -88,7 +85,6 @@ da:
         title: Rediger deltagerbudget
         delete: Slet budget
         phase: Fase
-        dates: Datoer
         enabled: Aktiveret
         actions: Handlinger
         edit_phase: Rediger fase
@@ -117,7 +113,6 @@ da:
     budget_groups:
       name: "Navn"
       headings_name: "Områder"
-      headings_edit: "Rediger post"
       headings_manage: "Administrer post"
       no_groups: "Der er ingen grupper."
       amount:
@@ -159,7 +154,6 @@ da:
         back: "Gå tilbage til grupper"
     budget_phases:
       edit:
-        summary_help_text: Denne tekst vil informere brugeren om fasen. For at vise informationen selvom fasen ikke er aktiv, skal du sætte kryds i feltet nedenfor
         description_help_text: Teksten vil være synlig i sidehovedet (øverst på siden), når fasen er aktiv
         enabled_help_text: Fasen vil være synlig i budgettets tidslinje
         save_changes: Gem ændringer
@@ -295,8 +289,6 @@ da:
         table_name: Navn
         table_description: Beskrivelse
         table_actions: Handlinger
-        delete: Slet
-        edit: Rediger
       edit:
         title: Rediger processtatus
       update:
@@ -359,8 +351,6 @@ da:
         index:
           description: "Når brugere opretter borgerforslag, kan de tilgå dashboardet for deres forslag, hvor du kan foreslå funktioner og anbefale, hvordan de bedst muligt får opbakning til deres idéer."
           create: Opret funktion eller handling
-          edit: Rediger
-          delete: Slet
           active: 'Ja'
           inactive: 'Nej'
           title: Funktioner og handlinger
@@ -495,7 +485,6 @@ da:
           banner_title: Farve på overskrift
         index:
           create: Ny proces
-          delete: Slet
           title: Medborgerdialog
           filters:
             active: Aktive
@@ -620,12 +609,9 @@ da:
     managers:
       index:
         title: Managers
-        name: Navn
-        email: E-mail
         no_managers: Der findes ingen managere.
       manager:
         add: Tilføj
-        delete: Slet
       search:
         title: "Managers: Søg bruger"
     menu:
@@ -686,7 +672,7 @@ da:
       title_profiles: Profiler
       title_settings: Indstillinger
       title_site_customization: Sidens indhold
-      title_booths: Stemmebokse
+      title_booths: Valgsteder
       legislation: Medborgerdialog
       users: Brugere
       dashboard: Dashboard for forslag
@@ -698,14 +684,10 @@ da:
     administrators:
       index:
         title: Administratorer
-        name: Navn
-        email: E-mail
-        description: Beskrivelse
         id: Administrator ID
         no_administrators: Der er ingen administratorer.
       administrator:
         add: Tilføj
-        delete: Slet
         restricted_removal: "Beklager, men du kan ikke fjerne dig selv som administrator"
       search:
         title: "Administratorer: Søg brugere"
@@ -715,12 +697,9 @@ da:
     moderators:
       index:
         title: Moderatorer
-        name: Navn
-        email: E-mail
         no_moderators: Der er ingen moderatorer.
       moderator:
         add: Tilføj
-        delete: Slet
       search:
         title: "Moderatorer: Søg brugere"
     segment_recipient:
@@ -747,8 +726,6 @@ da:
         sent: Sendt
         actions: Handlinger
         draft: Udkast
-        edit: Rediger
-        delete: Slet
         preview: Forhåndsvisning
         empty_newsletters: Der er ingen nyhedsbreve at vise
       new:
@@ -784,8 +761,6 @@ da:
         sent: Sendt
         actions: Handlinger
         draft: Udkast
-        edit: Rediger
-        delete: Slet
         preview: Forhåndsvisning
         view: Se
         empty_notifications: Der er ingen notifikationer at vise
@@ -883,7 +858,6 @@ da:
         can_edit_dossier: "Kan redigere projektinformation"
       valuator:
         add: Føj til evaluatorer
-        delete: Slet
       search:
         title: "Evaluatorer: Søg bruger"
       form:
@@ -921,7 +895,6 @@ da:
         entry_name: valgtilforordnede
       search:
         email_placeholder: Søg bruger via e-mail
-        search: Søg
         user_not_found: Brugeren blev ikke fundet
     poll_officer_assignments:
       index:
@@ -931,18 +904,18 @@ da:
         table_email: "E-mail"
       by_officer:
         date: "Dato"
-        booth: "Stemmeboks"
+        booth: "Valgsted"
         assignments: "Arbejdsopgaver til afstemningen"
         no_assignments: "Brugeren har ingen arbejdsopgaver under denne afstemning."
     poll_shifts:
       new:
         add_shift: "Tilføj arbejdsplan"
         shift: "Opgave"
-        shifts: "Arbejdsplan for dette afstemningssted"
+        shifts: "Arbejdsplan for valgsted"
         date: "Dato"
         edit_shifts: Rediger arbejdsplan
         new_shift: "Ny arbejdsplan"
-        no_shifts: "Dette afstemningssted har ingen tilknyttet arbejdsplan"
+        no_shifts: "Dette valgsted har ingen tilknyttet arbejdsplan"
         officer: "Ledende medarbejder"
         remove_shift: "Fjern"
         search_officer_button: Søg
@@ -960,7 +933,7 @@ da:
         unable_to_destroy: "Arbejdsopgaver associeret til resultater eller optælling af stemmer kan ikke slettes"
         date_missing: "Der skal vælges en dato"
       vote_collection: Indsaml stemmer
-      recount_scrutiny: Omtælling & Eftersyn
+      recount_scrutiny: Optælling & Eftersyn
     booth_assignments:
       manage_assignments: Administrer opgaver
       manage:
@@ -1016,9 +989,9 @@ da:
         submit_button: "Opdater afstemning"
       show:
         questions_tab: Spørgsmål
-        booths_tab: Stemmebokse
+        booths_tab: Valgsteder
         officers_tab: Ledende medarbejdere
-        recounts_tab: Omtælling
+        recounts_tab: Optælling
         results_tab: Resultater
         no_questions: "Der er ingen spørgsmål til denne afstemning."
         questions_title: "Spørgsmål"
@@ -1096,12 +1069,12 @@ da:
           title: Rediger video
     recounts:
       index:
-        title: "Omtælling"
+        title: "Optællinger"
         no_recounts: "Der er ikke noget at omtælle"
         all_booths_total: "Kumulativ samlet antal stemmer fra alle valgsteder:"
-        total_final: "Endelig omtælling"
+        total_final: "Endelig optælling"
         total_system: "Stemmer (automatisk)"
-        table_booth_name: "Afstemningsområde"
+        table_booth_name: "Valgsted"
         table_total_recount: "Samlet antal stemmer (af ledende medarbejder)"
         table_system_count: "Stemmer (automatisk)"
     results:
@@ -1122,22 +1095,22 @@ da:
     booths:
       index:
         title: "Liste over aktive valgsteder"
-        no_booths: "Der er ingen aktive stemmebokse til kommende afstemninger."
-        add_booth: "Tilføj stemmeboks"
+        no_booths: "Der er ingen aktive valgsteder til de kommende afstemninger."
+        add_booth: "Tilføj valgsted"
         name: "Navn"
         location: "Lokation"
         no_location: "Ingen lokation"
       new:
-        title: "Ny stemmeboks"
-        submit_button: "Opret stemmeboks"
+        title: "Nyt valgsted"
+        submit_button: "Opret valgsted"
       edit:
-        title: "Rediger stemmeboks"
-        submit_button: "Opdater stemmeboks"
+        title: "Rediger valgsted"
+        submit_button: "Opdater valgsted"
       show:
         location: "Lokation"
       booth:
         shifts: "Administrer arbejdsfordeling"
-        edit: "Rediger stemmeboks"
+        edit: "Rediger valgsted"
     officials:
       edit:
         destroy: Fjern "Embedsmand"-status
@@ -1182,8 +1155,6 @@ da:
         no_organizations: Der er ingen organisationer.
         reject: Afvis
         rejected: Afvist
-        search: Søg
-        search_placeholder: Navn, e-mail eller telefonnummer
         title: Organisationer
         verified: Verificeret
         verify: Verificer
@@ -1250,21 +1221,14 @@ da:
     shared:
       true_value: "Ja"
       false_value: "Nej"
-      booths_search:
-        button: Søg
-        placeholder: Søg stemmeboks vis navn
-      poll_officers_search:
-        button: Søg
-        placeholder: Søg ansvarlig medarbejder
-      poll_questions_search:
-        button: Søg
-        placeholder: Søg spørgsmål til afstemning
-      proposal_search:
-        button: Søg
-        placeholder: Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål
-      user_search:
-        button: Søg
-        placeholder: Søg bruger vis navn eller e-mail
+      search:
+        label:
+          booths: "Søg stemmeboks vis navn"
+          organizations: "Navn, e-mail eller telefonnummer"
+          poll_officers: "Søg ansvarlig medarbejder"
+          poll_questions: "Søg spørgsmål til afstemning"
+          proposals: "Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål"
+          users: "Søg bruger vis navn eller e-mail"
       search_results: "Søgningsresultater"
       no_search_results: "Ingen resultater fundet."
       actions: Handlinger
@@ -1278,14 +1242,11 @@ da:
       author: Oprettet af
       content: Indhold
       created_at: Oprettet den
-      delete: Slet
       color_help: Hexadecimalt format
     geozones:
       index:
         title: Geografisk område
         create: Opret gegrafisk område
-        edit: Rediger
-        delete: Slet
       geozone:
         name: Navn
         external_code: Ekstern kode
@@ -1414,7 +1375,6 @@ da:
           erased: Slettede
       search:
         placeholder: Søg bruger via e-mail, navn eller dokumentnummer
-        search: Søg
     verifications:
       index:
         phone_not_given: Telefon ikke angivet
@@ -1488,16 +1448,11 @@ da:
           updated_at: Opdateret den
           title: Titel
           slug: Signaturlinje
-          cards_title: Informationsbokse
           see_cards: Se Informationsbokse
         cards:
           cards_title: informationsbokse
           create_card: Opret informationsboks
           no_cards: Der er ingen informationsbokse.
-          title: Titel
-          description: Beskrivelse
-          link_text: Link tekst
-          link_url: Link URL
           columns_help: "Informationsboksens bredde i antal kolonner. På mobilskærmen har den altid en bredde på 100 %."
           create:
             notice: "Informationsboksen blev oprettet!"
@@ -1514,11 +1469,6 @@ da:
       cards_title: Informationsbokse
       create_card: Opret informationsboks
       no_cards: Der er ingen informationsbokse.
-      cards:
-        title: Titel
-        description: Beskrivelse
-        link_text: Link
-        link_url: Link URL
       feeds:
         proposals: Borgerforslag
         debates: Debatforum

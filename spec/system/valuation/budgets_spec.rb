@@ -7,11 +7,6 @@ describe "Valuation budgets" do
     login_as(valuator.user)
   end
 
-  scenario "Disabled with a feature flag" do
-    Setting["process.budgets"] = nil
-    expect { visit valuation_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
   context "Index" do
     scenario "Displaying budgets in valuation phase" do
       budget1 = create(:budget, :valuating)

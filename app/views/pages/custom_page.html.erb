@@ -20,7 +20,7 @@
 
   <% if @cards.any? %>
     <div class="small-12 column">
-      <%= render "shared/cards" %>
+      <%= render "shared/cards", cards: @cards %>
     </div>
   <% end %>
 

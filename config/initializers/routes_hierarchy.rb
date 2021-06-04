@@ -16,14 +16,23 @@ module ActionDispatch::Routing::UrlFor
   end
 
   def admin_polymorphic_path(resource, options = {})
-    if %w[Budget::Group Budget::Heading Poll::Booth Poll::Officer
-          Poll::Question Poll::Question::Answer::Video].include?(resource.class.name)
+    namespaced_polymorphic_path(:admin, resource, options)
+  end
+
+  def sdg_management_polymorphic_path(resource, options = {})
+    namespaced_polymorphic_path(:sdg_management, resource, options)
+  end
+
+  def namespaced_polymorphic_path(namespace, resource, options = {})
+    if %w[Budget::Group Budget::Heading Poll::Booth Poll::BoothAssignment Poll::Officer
+          Poll::Question Poll::Question::Answer::Video Poll::Shift
+          SDG::LocalTarget].include?(resource.class.name)
       resolve = resolve_for(resource)
       resolve_options = resolve.pop
 
-      polymorphic_path([:admin, *resolve], options.merge(resolve_options))
+      polymorphic_path([namespace, *resolve], options.merge(resolve_options))
     else
-      polymorphic_path([:admin, *resource_hierarchy_for(resource)], options)
+      polymorphic_path([namespace, *resource_hierarchy_for(resource)], options)
     end
   end
 

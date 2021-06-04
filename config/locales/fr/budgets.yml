@@ -39,12 +39,8 @@ fr:
         icon_alt: Icône des budgets participatifs
         title: Budgets participatifs
         help: Aide sur les budgets participatifs
-        all_phases: Voir toutes les phases
       all_phases: Phases de l’investissement budgétaire
       map: Propositions d'investissement localisés
-      investment_proyects: Liste des projets d’investissement
-      unfeasible_investment_proyects: Liste des projets d'investissement irréalisables
-      not_selected_investment_proyects: Liste des projets d'investissement non sélectionnés pour le vote
       finished_budgets: Budgets participatifs terminés
       see_results: Voir les résultats
       section_footer:
@@ -77,9 +73,6 @@ fr:
           verified_only: "Pour créer une proposition d'investissement %{verify}."
           create: "Créer un nouveau projet"
           not_logged_in: "Pour créer une proposition d'investissement, vous devez vous %{sign_in} ou %{sign_up}."
-          by_feasibility: Par faisabilité
-          feasible: Projets faisables
-          unfeasible: Projets infaisables
         orders:
           random: aléatoire
           confidence_score: la plus votée
@@ -115,20 +108,11 @@ fr:
           other: "%{count} soutiens"
         give_support: Soutenir
       header:
-        check_ballot: Vérifier mon vote
+        check_ballot: "Vérifier mon vote"
         change_ballot: "Si vous changez d'avis, vous pouvez supprimer vos votes dans %{check_ballot} et recommencer."
         check_ballot_link: "vérifier mon vote"
         price: "Cette rubrique dispose d’un budget de"
-    progress_bar:
-      assigned: "Vous avez affecté : "
-      available: "Budget disponible : "
     show:
-      group: Groupe
-      phase: Phase actuelle
-      unfeasible_title: Investissements irréalisables
-      unfeasible: Voir les investissements irréalisables
-      unselected_title: Propositions non-sélectionnées pour la phase de vote
-      unselected: Voir les propositions non-sélectionnées pour la phase de vote
       see_results: Voir les résultats
     results:
       link: Résultats

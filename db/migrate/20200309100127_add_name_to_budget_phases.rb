@@ -1,13 +1,7 @@
 class AddNameToBudgetPhases < ActiveRecord::Migration[5.0]
   def change
-    reversible do |dir|
-      dir.up do
-        Budget::Phase.add_translation_fields! name: :string
-      end
-
-      dir.down do
-        remove_column :budget_phase_translations, :name
-      end
+    change_table :budget_phase_translations do |t|
+      t.string :name
     end
   end
 end

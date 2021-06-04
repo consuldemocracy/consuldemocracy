@@ -4,6 +4,7 @@ class Budget < ApplicationRecord
   include StatsVersionable
   include Reportable
   include Imageable
+  include SDG::Relatable
 
   translates :name, touch: true
   include Globalizable
@@ -45,8 +46,8 @@ class Budget < ApplicationRecord
 
   after_create :generate_phases
 
-  scope :drafting,  -> { where(published: false) }
   scope :published, -> { where(published: true) }
+  scope :drafting,  -> { where.not(id: published) }
   scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
@@ -73,6 +74,14 @@ class Budget < ApplicationRecord
     phases.published.order(:id)
   end
 
+  def starts_at
+    phases.published.first&.starts_at
+  end
+
+  def ends_at
+    phases.published.last&.ends_at
+  end
+
   def description
     description_for_phase(phase)
   end
@@ -94,7 +103,7 @@ class Budget < ApplicationRecord
   end
 
   def drafting?
-    published == false
+    !published?
   end
 
   def informing?
@@ -183,11 +192,7 @@ class Budget < ApplicationRecord
   end
 
   def total_headings_price
-    headings.map(&:price).inject(:+)
-  end
-
-  def translated_phase
-    I18n.t "budgets.phase.#{phase}"
+    headings.map(&:price).reduce(:+)
   end
 
   def formatted_amount(amount)

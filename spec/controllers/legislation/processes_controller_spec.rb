@@ -8,6 +8,6 @@ describe Legislation::ProcessesController do
 
     get :summary, params: { id: legislation_process, format: :xlsx }
 
-    expect(response).to be_success
+    expect(response).to be_successful
   end
 end

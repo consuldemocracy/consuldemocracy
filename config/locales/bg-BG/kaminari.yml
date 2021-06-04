@@ -19,3 +19,4 @@ bg:
       last: Последна
       next: Следваща
       previous: Предишна
+      truncate: "&hellip;"

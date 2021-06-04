@@ -7,18 +7,18 @@
     <%= t("admin.questions.index.no_questions") %>
   </div>
 <% else %>
-  <table class="fixed">
+  <table>
     <thead>
       <tr>
         <th><%= t("admin.questions.index.table_question") %></th>
         <th><%= t("admin.questions.index.table_poll") %></th>
-        <th class="small-4"><%= t("admin.actions.actions") %></th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
       <% @questions.each do |question| %>
         <tr id="<%= dom_id(question) %>">
-          <td><%= link_to question.title, admin_question_path(question) %></td>
+          <td><%= question.title %></td>
           <td>
             <% if question.poll.present? %>
               <%= question.poll.name %>
@@ -27,12 +27,10 @@
             <% end %>
           </td>
           <td>
-            <div class="small-6 column">
-              <%= link_to t("shared.edit"), edit_admin_question_path(question), class: "button hollow expanded" %>
-            </div>
-            <div class="small-6 column">
-              <%= link_to t("shared.delete"), admin_question_path(question), class: "button hollow alert expanded", method: :delete %>
-            <div class="small-6 column">
+            <%= render Admin::TableActionsComponent.new(question) do |actions| %>
+              <%= actions.link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
+                                                                      class: "answers-link" %>
+            <% end %>
           </td>
         </tr>
       <% end %>

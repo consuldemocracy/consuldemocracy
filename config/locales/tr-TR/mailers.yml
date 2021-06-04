@@ -1,8 +1,10 @@
 tr:
   mailers:
+    title: "Açık Yönetim"
     no_reply: "Bu mesaj yanıtları kabul etmeyen bir e-posta adresinden gönderildi."
     comment:
       hi: Merhaba
+      new_comment_by: <strong>%{commenter}</strong> adlı kullanıcıdan yeni yorum
       subject: Birisi sizin %{commentable} paylaşımınız hakkında yorum yaptı
       title: Yeni yorum
     config:
@@ -30,6 +32,7 @@ tr:
       unsubscribe_account: Hesabım
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
+      title: "Bu içerikle <strong>%{receiver}</strong>'a bir yeni özel mesaj gönderdiniz:"
     user_invite:
       ignore: "Eğer bu daveti talep etmemişseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
       text: "%{org}'a katılım başvurunuz için teşekkür ederiz! Saniyeler içinde katılmaya başlayabilirsiniz, aşağıdaki formu doldurmanız yeterlidir:"
@@ -40,6 +43,8 @@ tr:
     budget_investment_created:
       subject: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
       title: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
+      intro: "Merhaba <strong>%{author}</strong>,"
+      follow: "Sürecin ilerleyişi hakkında sizi bilgilendireceğiz, ayrıca siz de gelişmeleri <strong>%{link}</strong> üzerinden takip edebilirsiniz."
       follow_link: "Katılımcı Bütçeler"
       sincerely: "İçtenlikle,"
       share: "Projenizi paylaşın"
@@ -65,6 +70,7 @@ tr:
       subject: "Yeni değerlendirme yorumu"
       title: '%{investment} için yeni değerlendirme yorumu'
       hi: Merhaba
+      new_comment_by: <strong>%{commenter}</strong> kullanıcısı, bütçe yatırımına dair %{investment} yeni bir değerlendirme yorumu paylaştı
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Vatandaş öneriniz ile ilgili daha fazla haberler"

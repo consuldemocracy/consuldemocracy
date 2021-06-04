@@ -9,7 +9,7 @@
           <% if can? :show, @ballot %>
             <%= link_to t("budgets.investments.header.check_ballot"),
                         budget_ballot_path(@budget),
-                        class: "button float-right" %>
+                        class: "check-ballot button" %>
           <% end %>
         </div>
       </div>
@@ -26,7 +26,7 @@
                 <h2>
                   <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
                 </h2>
-                <div id="progress_bar" class="no-margin-top">
+                <div id="progress_bar">
                   <%= render "budgets/ballot/progress_bar", ballot: @ballot, heading: @heading %>
                 </div>
               </div>

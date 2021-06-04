@@ -55,7 +55,7 @@
         </div>
       <% end %>
 
-      <%= render("shared/advanced_search", search_path: budget_investments_path(@budget)) %>
+      <%= render Shared::AdvancedSearchComponent.new %>
 
       <% if unfeasible_or_unselected_filter %>
         <ul class="no-bullet submenu">
@@ -70,7 +70,7 @@
         <%= render("shared/order_links", i18n_namespace: "budgets.investments.index") %>
       <% end %>
 
-      <%= render "shared/filter_selector", i18n_namespace: "budgets.investments.index" %>
+      <%= render Shared::FilterSelectorComponent.new(i18n_namespace: "budgets.investments.index") %>
 
       <% if investments_default_view? %>
 
@@ -94,7 +94,7 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <div id="sidebar">
+        <div id="sidebar" class="budget-investments-sidebar">
           <%= render "/budgets/investments/sidebar" %>
         </div>
       </aside>

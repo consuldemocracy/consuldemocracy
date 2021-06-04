@@ -229,8 +229,9 @@ nl:
         other: "%{count} reacties (verbergen)"
         zero: "Geen reacties"
       user_deleted: "Deelnemer verwijderd"
-    delete_comment: "Verwijder reactie"
-    confirm_delete_comment: "Weet u het zeker? Hiermee wordt uw reactie verwijderd. Dit kan niet ongedaan worden gemaakt."
+    actions:
+      delete: "Verwijder reactie"
+      confirm_delete: "Weet u het zeker? Hiermee wordt uw reactie verwijderd. Dit kan niet ongedaan worden gemaakt."
   comments_helper:
     comments_title: "Reacties"
   users:
@@ -321,8 +322,9 @@ nl:
     organizations: "Collectieven en verenigingen kunnen niet stemmen."
   welcome:
     feed:
-      budgets_description: "Burgerbegrotingen zijn processen waarbij burgers bepalen wat er met een deel van de gemeentelijke begroting gebeurt. De gemeente onderzoekt of de meest gesteunde ideeën haalbaar zijn. In de stem fase die daarop volgt beslissen de burgers welke ideeën de gemeente gaat uitvoeren."
-      proposals_description: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van stad bepalen hoe de gemeente eruit komt te zien."
+      description:
+        proposals: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van stad bepalen hoe de gemeente eruit komt te zien."
+        budgets: "Burgerbegrotingen zijn processen waarbij burgers bepalen wat er met een deel van de gemeentelijke begroting gebeurt. De gemeente onderzoekt of de meest gesteunde ideeën haalbaar zijn. In de stem fase die daarop volgt beslissen de burgers welke ideeën de gemeente gaat uitvoeren."
       most_active:
         debates: "Actieve discussies"
         proposals: "Initiatieven"

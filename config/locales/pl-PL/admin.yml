@@ -70,9 +70,6 @@ pl:
         budget_investments: Zarządzanie projektami
         table_name: Nazwa
         table_phase: Etap
-        table_investments: Inwestycji
-        table_edit_groups: Grupy nagłówków
-        table_edit_budget: Edytuj
         edit_groups: Edytuj grupy nagłówków
         edit_budget: Edytuj budżet
         no_budgets: "Brak budżetów."
@@ -84,7 +81,6 @@ pl:
         title: Edytuj budżet partycypacyjny
         delete: Usuń budżet
         phase: Etap
-        dates: Daty
         enabled: Włączone
         actions: Akcje
         edit_phase: Edytuj etap
@@ -102,7 +98,6 @@ pl:
     budget_groups:
       name: "Nazwa"
       headings_name: "Nagłówki"
-      headings_edit: "Edytowanie nagłówków"
       headings_manage: "Zarządzanie nagłówkami"
       no_groups: "Brak grup."
       amount:
@@ -148,7 +143,6 @@ pl:
         back: "Powrót do grup"
     budget_phases:
       edit:
-        summary_help_text: Ten tekst będzie informował użytkownika o fazie. Aby wyświetlić go, nawet jeśli faza nie jest aktywna, zaznacz pole wyboru poniżej
         description_help_text: Ten tekst pojawi się w nagłówku, gdy faza jest aktywna
         enabled_help_text: Faza ta będzie publiczna na osi czasu fazy budżetowej, a także będzie aktywna do jakichkolwiek innych celów
         save_changes: Zapisz zmiany
@@ -274,8 +268,6 @@ pl:
         table_name: Nazwa
         table_description: Opis
         table_actions: Akcje
-        delete: Usuń
-        edit: Edytuj
       edit:
         title: Edytuj status inwestycji
       update:
@@ -374,7 +366,6 @@ pl:
           banner_title: Kolory nagłówków
         index:
           create: Nowy proces
-          delete: Usuń
           title: Procesy legislacyjne
           filters:
             active: Aktywne
@@ -498,12 +489,9 @@ pl:
     managers:
       index:
         title: Menedżerowie
-        name: Nazwa
-        email: E-mail
         no_managers: Brak kierowników.
       manager:
         add: Dodaj
-        delete: Usuń
       search:
         title: "Menedżerowie: wyszukiwanie użytkowników"
     menu:
@@ -568,25 +556,19 @@ pl:
     administrators:
       index:
         title: Administratorów
-        name: Nazwa
-        email: E-mail
         id: Identyfikator administratora
         no_administrators: Brak administratorów.
       administrator:
         add: Dodaj
-        delete: Usuń
         restricted_removal: "Przepraszamy, nie możesz usunąć siebie z administratorów"
       search:
         title: "Administratorzy: wyszukiwanie użytkowników"
     moderators:
       index:
         title: Moderatorzy
-        name: Nazwa
-        email: E-mail
         no_moderators: Brak moderatorów.
       moderator:
         add: Dodaj
-        delete: Usuń
       search:
         title: "Moderatorzy: Wyszukiwanie użytkownika"
     segment_recipient:
@@ -612,8 +594,6 @@ pl:
         sent: Wysłane
         actions: Akcje
         draft: Projekt
-        edit: Edytuj
-        delete: Usuń
         preview: Podgląd
         empty_newsletters: Nie ma żadnych biuletynów do pokazania
       new:
@@ -644,8 +624,6 @@ pl:
         sent: Wysłane
         actions: Akcje
         draft: Projekt
-        edit: Edytuj
-        delete: Usuń
         preview: Podgląd
         view: Widok
         empty_notifications: Brak powiadomień do wyświetlenia
@@ -736,7 +714,6 @@ pl:
         no_group: "Brak grupy"
       valuator:
         add: Dodaj do wyceniających
-        delete: Usuń
       search:
         title: "Wyceniający: wyszukiwanie użytkowników"
       form:
@@ -772,7 +749,6 @@ pl:
         entry_name: urzędnik
       search:
         email_placeholder: Wyszukaj użytkownika według adresu e-mail
-        search: Szukaj
         user_not_found: Nie znaleziono użytkownika
     poll_officer_assignments:
       index:
@@ -1026,8 +1002,6 @@ pl:
         no_organizations: Brak organizacji.
         reject: Odrzuć
         rejected: Odrzucone
-        search: Szukaj
-        search_placeholder: Nazwisko, adres e-mail lub numer telefonu
         title: Organizacji
         verified: Zweryfikowane
         verify: Weryfikuj
@@ -1083,21 +1057,14 @@ pl:
     shared:
       true_value: "Tak"
       false_value: "Nie"
-      booths_search:
-        button: Szukaj
-        placeholder: Wyszukaj stoisko według nazwy
-      poll_officers_search:
-        button: Szukaj
-        placeholder: Szukaj urzędników
-      poll_questions_search:
-        button: Szukaj
-        placeholder: Szukaj pytań wyborczych
-      proposal_search:
-        button: Szukaj
-        placeholder: Szukaj propozycji według tytułu, kodu, opisu lub pytania
-      user_search:
-        button: Szukaj
-        placeholder: Wyszukaj użytkownika według nazwy lub adresu e-mail
+      search:
+        label:
+          booths: "Wyszukaj stoisko według nazwy"
+          organizations: "Nazwisko, adres e-mail lub numer telefonu"
+          poll_officers: "Szukaj urzędników"
+          poll_questions: "Szukaj pytań wyborczych"
+          proposals: "Szukaj propozycji według tytułu, kodu, opisu lub pytania"
+          users: "Wyszukaj użytkownika według nazwy lub adresu e-mail"
       search_results: "Szukaj wyników"
       no_search_results: "Nie znaleziono wyników."
       actions: Akcje
@@ -1111,14 +1078,11 @@ pl:
       author: Autor
       content: Zawartość
       created_at: Utworzony w
-      delete: Usuń
       color_help: Format szesnastkowy
     geozones:
       index:
         title: Geostrefa
         create: Stwórz geostrefę
-        edit: Edytuj
-        delete: Usuń
       geozone:
         name: Nazwa
         external_code: Kod zewnętrzny
@@ -1219,7 +1183,6 @@ pl:
         no_users: Brak użytkowników.
       search:
         placeholder: Wyszukaj użytkownika za pomocą adresu e-mail, nazwiska lub numeru dokumentu
-        search: Szukaj
     verifications:
       index:
         phone_not_given: Telefon nie został podany
@@ -1293,16 +1256,11 @@ pl:
           updated_at: Aktualizacja w
           title: Tytuł
           slug: Ścieżka
-          cards_title: Karty
           see_cards: Zobacz karty
         cards:
           cards_title: karty
           create_card: Utwórz kartę
           no_cards: Nie ma kart.
-          title: Tytuł
-          description: Opis
-          link_text: Tekst łącza
-          link_url: Łącze URL
           columns_help: "Szerokość karty w liczbie kolumn. Na smartfonie screeny są zawsze o szerokości 100%."
           create:
             notice: "Strona utworzona pomyślnie!"
@@ -1319,11 +1277,6 @@ pl:
       cards_title: Karty
       create_card: Utwórz kartę
       no_cards: Nie ma kart.
-      cards:
-        title: Tytuł
-        description: Opis
-        link_text: Tekst łącza
-        link_url: Łącze URL
       feeds:
         proposals: Wnioski
         debates: Debaty

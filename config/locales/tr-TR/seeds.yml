@@ -8,11 +8,11 @@ tr:
       official_level_5_name: Resmi pozisyon 5
     geozones:
       north_district: Kuzey Bölgesi
-      west_district: Kuzey Bölgesi
+      west_district: Batı Bölgesi
       east_district: Doğu Bölgesi
-      central_district: Merkezî bahşı
+      central_district: Merkez İlçe
     organizations:
-      human_rights: İnsan hakları
+      human_rights: İnsan Hakları
       neighborhood_association: Mahalle Derneği
     categories:
       associations: Dernekler
@@ -49,6 +49,6 @@ tr:
     polls:
       current_poll: "Geçerli Anket"
       current_poll_geozone_restricted: "Geçerli Anket Geozone sınırlı"
-      recounting_poll: "Anket anlatırken"
-      expired_poll_without_stats: "İstatistikler ve sonuçları olmadan anket süresi"
-      expired_poll_with_stats: "İstatistikler ve sonuçları olmadan anket süresi"
+      recounting_poll: "Anket Yeniden Sayımı"
+      expired_poll_without_stats: "İstatistikler ve Sonuçlar Olmadan Süresi Dolmuş Anket"
+      expired_poll_with_stats: "İstatistikleri ve Sonuçları ile Süresi Dolmuş Anket"

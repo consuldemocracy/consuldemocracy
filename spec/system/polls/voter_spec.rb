@@ -16,7 +16,7 @@ describe "Voter" do
       create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)
     end
 
-    scenario "Voting via web - Standard", :js do
+    scenario "Voting via web - Standard" do
       user = create(:user, :level_two)
 
       login_as user
@@ -32,7 +32,7 @@ describe "Voter" do
       expect(Poll::Voter.first.origin).to eq("web")
     end
 
-    scenario "Voting via web as unverified user", :js do
+    scenario "Voting via web as unverified user" do
       user = create(:user, :incomplete_verification)
 
       login_as user
@@ -47,7 +47,7 @@ describe "Voter" do
       expect(page).not_to have_content("You have already participated in this poll. If you vote again it will be overwritten")
     end
 
-    scenario "Voting in booth", :js do
+    scenario "Voting in booth" do
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
@@ -73,7 +73,7 @@ describe "Voter" do
         expect(page).to have_content "1"
       end
 
-      within("#poll_booth_assignment_#{Poll::BoothAssignment.find_by(poll: poll, booth: booth).id}_recounts") do
+      within "tr", text: booth.name do
         expect(page).to have_content "1"
       end
     end
@@ -93,7 +93,7 @@ describe "Voter" do
         expect(page).to have_link "The person has decided not to vote at this time"
       end
 
-      scenario "Hides not to vote at this time button if already voted", :js do
+      scenario "Hides not to vote at this time button if already voted" do
         login_through_form_as_officer(officer.user)
 
         visit new_officing_residence_path
@@ -117,7 +117,7 @@ describe "Voter" do
     context "Trying to vote the same poll in booth and web" do
       let!(:user) { create(:user, :in_census) }
 
-      scenario "Trying to vote in web and then in booth", :js do
+      scenario "Trying to vote in web and then in booth" do
         login_as user
         vote_for_poll_via_web(poll, question, answer_yes.title)
         expect(Poll::Voter.count).to eq(1)
@@ -134,7 +134,7 @@ describe "Voter" do
         expect(page).to have_content "Has already participated in this poll"
       end
 
-      scenario "Trying to vote in booth and then in web", :js do
+      scenario "Trying to vote in booth and then in web" do
         login_through_form_as_officer(officer.user)
 
         vote_for_poll_via_booth
@@ -160,12 +160,12 @@ describe "Voter" do
           expect(page).to have_content "1"
         end
 
-        within("#poll_booth_assignment_#{Poll::BoothAssignment.find_by(poll: poll, booth: booth).id}_recounts") do
+        within "tr", text: booth.name do
           expect(page).to have_content "1"
         end
       end
 
-      scenario "Trying to vote in web again", :js do
+      scenario "Trying to vote in web again" do
         login_as user
         vote_for_poll_via_web(poll, question, answer_yes.title)
         expect(Poll::Voter.count).to eq(1)
@@ -193,7 +193,7 @@ describe "Voter" do
       end
     end
 
-    scenario "Voting in poll and then verifiying account", :js do
+    scenario "Voting in poll and then verifiying account" do
       user = create(:user)
 
       login_through_form_as_officer(officer.user)
@@ -228,13 +228,13 @@ describe "Voter" do
         expect(page).to have_content "1"
       end
 
-      within("#poll_booth_assignment_#{Poll::BoothAssignment.find_by(poll: poll, booth: booth).id}_recounts") do
+      within "tr", text: booth.name do
         expect(page).to have_content "1"
       end
     end
 
     context "Side menu" do
-      scenario "'Validate document' menu item with votable polls", :js do
+      scenario "'Validate document' menu item with votable polls" do
         login_through_form_as_officer(officer.user)
 
         visit new_officing_residence_path
@@ -256,7 +256,7 @@ describe "Voter" do
         end
       end
 
-      scenario "'Validate document' menu item without votable polls", :js do
+      scenario "'Validate document' menu item without votable polls" do
         create(:poll_voter, poll: poll, user: create(:user, :in_census))
 
         login_through_form_as_officer(officer.user)

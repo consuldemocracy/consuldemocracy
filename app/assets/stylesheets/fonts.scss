@@ -2,6 +2,7 @@
 //
 // 01. Source Sans Pro (https://www.google.com/fonts/specimen/Source+Sans+Pro)
 // 02. Lato (https://www.google.com/fonts/specimen/Lato)
+// 03. Oswald (https://fonts.google.com/specimen/Oswald)
 //
 
 // 01. Source Sans Pro
@@ -91,5 +92,36 @@
        font-url("lato-bold.ttf") format("truetype"),
        font-url("lato-bold.svg#latobold") format("svg");
   font-weight: bold;
+  font-style: normal;
+}
+
+// 03. Oswald
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@font-face {
+  font-family: "Oswald";
+  src: font-url("oswald/oswald-light.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: font-url("oswald/oswald-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: font-url("oswald/oswald-bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: font-url("oswald/oswald-medium.ttf") format("truetype");
+  font-weight: 500;
   font-style: normal;
 }

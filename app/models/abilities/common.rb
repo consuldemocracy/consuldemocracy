@@ -71,7 +71,7 @@ module Abilities
       can [:flag, :unflag], Budget::Investment
       cannot [:flag, :unflag], Budget::Investment, author_id: user.id
 
-      can [:create, :destroy], Follow
+      can [:create, :destroy], Follow, user_id: user.id
 
       can [:destroy], Document do |document|
         document.documentable&.author_id == user.id

@@ -4,7 +4,7 @@
 
 <%= render "/admin/budgets/creation_timeline", step: "phases" %>
 
-<%= render "phases" %>
+<%= render Admin::BudgetPhases::PhasesComponent.new(@budget) %>
 
 <% if @mode.present? %>
   <%= link_to t("admin.budget_phases.index.button.continue"),

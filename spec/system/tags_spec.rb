@@ -59,9 +59,7 @@ describe "Tags" do
 
     visit new_debate_path
     fill_in "Debate title", with: "Title"
-    fill_in "Initial debate text", with: "Description"
-    # Check terms of service by default
-    # check "debate_terms_of_service"
+    fill_in_ckeditor "Initial debate text", with: "Description"
 
     fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda"
 
@@ -79,9 +77,7 @@ describe "Tags" do
 
     visit new_debate_path
     fill_in "Debate title", with: "Title"
-    fill_in "Initial debate text", with: "Description"
-    # Check terms of service by default
-    # check "debate_terms_of_service"
+    fill_in_ckeditor "Initial debate text", with: "Description"
 
     fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 

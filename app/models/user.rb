@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_one :moderator
   has_one :valuator
   has_one :manager
+  has_one :sdg_manager, class_name: "SDG::Manager", dependent: :destroy
   has_one :poll_officer, class_name: "Poll::Officer"
   has_one :organization
   has_one :lock
@@ -89,13 +90,12 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :organization, update_only: true
 
-  attr_accessor :skip_password_validation
-  attr_accessor :use_redeemable_code
-  attr_accessor :login
+  attr_accessor :skip_password_validation, :use_redeemable_code, :login
 
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
+  scope :sdg_managers,   -> { joins(:sdg_manager) }
   scope :officials,      -> { where("official_level > 0") }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
@@ -113,8 +113,8 @@ class User < ApplicationRecord
     joins(:comments).where("comments.commentable": commentables).distinct
   end
   scope :by_username_email_or_document_number, ->(search_string) do
-    string = "%#{search_string}%"
-    where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", string, string, string)
+    search = "%#{search_string.strip}%"
+    where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", search, search, search)
   end
   scope :between_ages, ->(from, to) do
     where(
@@ -204,6 +204,10 @@ class User < ApplicationRecord
     manager.present?
   end
 
+  def sdg_manager?
+    sdg_manager.present?
+  end
+
   def poll_officer?
     poll_officer.present?
   end
@@ -242,19 +246,27 @@ class User < ApplicationRecord
   end
 
   def block
-    debates_ids = Debate.where(author_id: id).pluck(:id)
-    comments_ids = Comment.where(user_id: id).pluck(:id)
-    proposal_ids = Proposal.where(author_id: id).pluck(:id)
-    investment_ids = Budget::Investment.where(author_id: id).pluck(:id)
-    proposal_notification_ids = ProposalNotification.where(author_id: id).pluck(:id)
-
     hide
 
-    Debate.hide_all debates_ids
-    Comment.hide_all comments_ids
+    Debate.hide_all debate_ids
+    Comment.hide_all comment_ids
     Proposal.hide_all proposal_ids
-    Budget::Investment.hide_all investment_ids
-    ProposalNotification.hide_all proposal_notification_ids
+    Budget::Investment.hide_all budget_investment_ids
+    ProposalNotification.hide_all ProposalNotification.where(author_id: id).pluck(:id)
+  end
+
+  def full_restore
+    ActiveRecord::Base.transaction do
+      Debate.restore_all debates.where("hidden_at >= ?", hidden_at)
+      Comment.restore_all comments.where("hidden_at >= ?", hidden_at)
+      Proposal.restore_all proposals.where("hidden_at >= ?", hidden_at)
+      Budget::Investment.restore_all budget_investments.where("hidden_at >= ?", hidden_at)
+      ProposalNotification.restore_all(
+        ProposalNotification.only_hidden.where("hidden_at >= ?", hidden_at).where(author_id: id)
+      )
+
+      restore
+    end
   end
 
   def erase(erase_reason = nil)
@@ -303,7 +315,10 @@ class User < ApplicationRecord
   end
 
   def self.search(term)
-    term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
+    return none if term.blank?
+
+    search = term.strip
+    where("email = ? OR username ILIKE ?", search, "%#{search}%")
   end
 
   def self.username_max_length

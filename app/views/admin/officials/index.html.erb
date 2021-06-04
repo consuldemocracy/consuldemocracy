@@ -6,7 +6,7 @@
 <%= render "admin/shared/user_search", url: search_admin_officials_path %>
 
 <% if @officials.any? %>
-  <h3 class="margin"><%= page_entries_info @officials %></h3>
+  <h3><%= page_entries_info @officials %></h3>
 
   <table>
     <thead>
@@ -18,9 +18,7 @@
     <tbody>
       <% @officials.each do |official| %>
         <tr>
-          <td>
-            <%= link_to official.name, edit_admin_official_path(official) %>
-          </td>
+          <td><%= official.name %></td>
           <td>
             <span class="label level-<%= official.official_level %>">
               <%= official.official_position %>
@@ -30,8 +28,11 @@
             <%= t("admin.officials.level_#{official.official_level}") %>
           </td>
           <td>
-            <%= link_to t("admin.officials.search.edit_official"),
-                        edit_admin_official_path(official), class: "button hollow expanded" %>
+            <%= render Admin::TableActionsComponent.new(
+              actions: [:edit],
+              edit_path: edit_admin_official_path(official),
+              edit_text: t("admin.officials.search.edit_official")
+            ) %>
           </td>
         </tr>
       <% end %>

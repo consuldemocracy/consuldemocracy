@@ -28,7 +28,7 @@ class Poll::Question < ApplicationRecord
 
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 
-  scope :sort_for_list, -> { order("poll_questions.proposal_id IS NULL", :created_at) }
+  scope :sort_for_list, -> { order(Arel.sql("poll_questions.proposal_id IS NULL"), :created_at) }
   scope :for_render,    -> { includes(:author, :proposal) }
 
   def self.search(params)

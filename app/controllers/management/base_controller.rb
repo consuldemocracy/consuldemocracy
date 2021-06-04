@@ -2,7 +2,6 @@ class Management::BaseController < ActionController::Base
   include GlobalizeFallbacks
   layout "management"
   default_form_builder ConsulFormBuilder
-  protect_from_forgery with: :exception
 
   before_action :verify_manager
   before_action :set_locale
@@ -33,9 +32,10 @@ class Management::BaseController < ActionController::Base
     end
 
     def check_verified_user(alert_msg)
-      unless managed_user.level_two_or_three_verified?
-        redirect_to management_document_verifications_path, alert: alert_msg
-      end
+      return if managed_user.persisted? && managed_user.level_two_or_three_verified?
+
+      message = managed_user.persisted? ? alert_msg : t("management.sessions.need_managed_user")
+      redirect_to management_document_verifications_path, alert: message
     end
 
     def set_locale

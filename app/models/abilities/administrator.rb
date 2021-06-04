@@ -4,6 +4,7 @@ module Abilities
 
     def initialize(user)
       merge Abilities::Moderation.new(user)
+      merge Abilities::SDG::Manager.new(user)
 
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil
@@ -55,11 +56,13 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :show, :edit, :update, :create, :index, :destroy, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
+      can [:create, :read, :destroy], ::SDG::Manager
       can [:search, :index], ::User
 
       can :manage, Dashboard::Action
 
-      can [:index, :read, :new, :create, :update, :publish, :destroy, :calculate_winners, :switch_group], Budget
+      can [:index, :read, :new, :create, :update, :destroy, :calculate_winners, :switch_group], Budget
+      can :publish, Budget, id: Budget.drafting.ids
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
       can [:hide, :admin_update, :toggle_selection], Budget::Investment
@@ -86,6 +89,7 @@ module Abilities
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image
       can :manage, SiteCustomization::ContentBlock
+      can :manage, Widget::Card
 
       can :access, :ckeditor
       can :manage, Ckeditor::Picture

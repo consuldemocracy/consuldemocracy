@@ -1,3 +1,27 @@
+class WickedPdf
+  # Wicked Pdf magic breaks ViewComponent
+  # https://github.com/mileszs/wicked_pdf/pull/925
+  module PdfHelper
+    def render(*args)
+      options = args.first
+      if options.is_a?(Hash) && options.key?(:pdf)
+        render_with_wicked_pdf(options)
+      else
+        super
+      end
+    end
+
+    def render_to_string(*args)
+      options = args.first
+      if options.is_a?(Hash) && options.key?(:pdf)
+        render_to_string_with_wicked_pdf(options)
+      else
+        super
+      end
+    end
+  end
+end
+
 # WickedPDF Global Configuration
 #
 # Use this to set up shared configuration options for your entire application.

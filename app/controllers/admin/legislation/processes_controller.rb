@@ -1,6 +1,7 @@
 class Admin::Legislation::ProcessesController < Admin::Legislation::BaseController
   include Translatable
   include ImageAttributes
+  include DocumentAttributes
 
   has_filters %w[active all], only: :index
 
@@ -69,8 +70,9 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :custom_list,
         :background_color,
         :font_color,
+        :related_sdg_list,
         translation_params(::Legislation::Process),
-        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+        documents_attributes: document_attributes,
         image_attributes: image_attributes
       ]
     end

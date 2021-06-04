@@ -3,6 +3,8 @@ class ProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
   include ImageAttributes
+  include DocumentAttributes
+  include MapLocationAttributes
   include Translatable
 
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
@@ -27,8 +29,7 @@ class ProposalsController < ApplicationController
     super
     @notifications = @proposal.notifications
     @notifications = @proposal.notifications.not_moderated
-    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents)
-                                .page(params[:page]).per(5)
+    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
 
     if request.path != proposal_path(@proposal)
       redirect_to proposal_path(@proposal), status: :moved_permanently
@@ -100,11 +101,10 @@ class ProposalsController < ApplicationController
 
     def proposal_params
       attributes = [:video_url, :responsible_name, :tag_list,
-                    :terms_of_service, :geozone_id,
+                    :terms_of_service, :geozone_id, :related_sdg_list,
                     image_attributes: image_attributes,
-                    documents_attributes: [:id, :title, :attachment, :cached_attachment,
-                                           :user_id, :_destroy],
-                    map_location_attributes: [:latitude, :longitude, :zoom]]
+                    documents_attributes: document_attributes,
+                    map_location_attributes: map_location_attributes]
       translations_attributes = translation_params(Proposal, except: :retired_explanation)
       params.require(:proposal).permit(attributes, translations_attributes)
     end

@@ -5,12 +5,7 @@ describe "Polls" do
     it_behaves_like "notifiable in-app", :poll
   end
 
-  scenario "Disabled with a feature flag" do
-    Setting["process.polls"] = nil
-    expect { visit polls_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
-  context "#index" do
+  describe "Index" do
     scenario "Shows description for open polls" do
       visit polls_path
       expect(page).not_to have_content "Description for open polls"
@@ -105,7 +100,7 @@ describe "Polls" do
       expect(page).not_to have_link("Expired")
     end
 
-    scenario "Displays icon correctly", :js do
+    scenario "Displays icon correctly" do
       create_list(:poll, 3)
       create(:poll, :expired, name: "Expired poll")
 
@@ -138,7 +133,7 @@ describe "Polls" do
       expect(page).to have_content("This poll is not available on your geozone")
     end
 
-    scenario "Already participated in a poll", :js do
+    scenario "Already participated in a poll" do
       poll_with_question = create(:poll)
       question = create(:poll_question, :yes_no, poll: poll_with_question)
 
@@ -167,6 +162,19 @@ describe "Polls" do
       visit polls_path(filter: "expired")
 
       expect(page).to have_link("Poll with results", href: results_poll_path(poll.slug))
+    end
+
+    scenario "Shows SDG tags when feature is enabled" do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.polls"] = true
+
+      create(:poll, sdg_goals: [SDG::Goal[1]],
+                    sdg_targets: [SDG::Target["1.1"]])
+
+      visit polls_path
+
+      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_content "target 1.1"
     end
   end
 
@@ -199,10 +207,12 @@ describe "Polls" do
       visit poll_path(poll)
       expect(page).to have_content(poll.name)
       expect(page).to have_content(poll.summary)
-      expect(page).to have_content(poll.description)
 
       expect(page).to have_content("Question 1 #{proposal_question.title}", normalize_ws: true)
       expect(page).to have_content("Question 2 #{normal_question.title}", normalize_ws: true)
+
+      find("#poll_description_more_info").click
+      expect(page).to have_content(poll.description)
     end
 
     scenario "Do not show question number in polls with one question" do
@@ -257,7 +267,7 @@ describe "Polls" do
       end
     end
 
-    scenario "Answer images are shown", :js do
+    scenario "Answer images are shown" do
       question = create(:poll_question, :yes_no, poll: poll)
       create(:image, imageable: question.question_answers.first, title: "The yes movement")
 
@@ -266,7 +276,7 @@ describe "Polls" do
       expect(page).to have_css "img[alt='The yes movement']"
     end
 
-    scenario "Buttons to slide through images work back and forth", :js do
+    scenario "Buttons to slide through images work back and forth" do
       question = create(:poll_question, :yes_no, poll: poll)
       create(:image, imageable: question.question_answers.last, title: "The no movement")
       create(:image, imageable: question.question_answers.last, title: "No movement planning")
@@ -425,7 +435,7 @@ describe "Polls" do
       end
     end
 
-    scenario "Level 2 users answering", :js do
+    scenario "Level 2 users answering" do
       poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -443,7 +453,7 @@ describe "Polls" do
       end
     end
 
-    scenario "Level 2 users changing answer", :js do
+    scenario "Level 2 users changing answer" do
       poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -466,7 +476,7 @@ describe "Polls" do
       end
     end
 
-    scenario "Level 2 votes, signs out, signs in, votes again", :js do
+    scenario "Level 2 votes, signs out, signs in, votes again" do
       poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -502,6 +512,19 @@ describe "Polls" do
         expect(page).not_to have_link("No")
         expect(page).to have_link("Yes")
       end
+    end
+
+    scenario "Shows SDG tags when feature is enabled" do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.polls"] = true
+
+      poll = create(:poll, sdg_goals: [SDG::Goal[1]],
+                           sdg_targets: [SDG::Target["1.1"]])
+
+      visit poll_path(poll)
+
+      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_content "target 1.1"
     end
   end
 
@@ -510,7 +533,7 @@ describe "Polls" do
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
 
-    scenario "Already voted on booth cannot vote on website", :js do
+    scenario "Already voted on booth cannot vote on website" do
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth, date: Date.current)
       question = create(:poll_question, :yes_no, poll: poll)
@@ -586,11 +609,9 @@ describe "Polls" do
       expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
     end
 
-    scenario "Do not show poll results or stats to admins if disabled" do
+    scenario "Do not show poll results or stats to admins if disabled", :admin do
       poll = create(:poll, :expired, results_enabled: false, stats_enabled: false)
-      admin = create(:administrator).user
 
-      login_as admin
       visit poll_path(poll)
 
       expect(page).not_to have_content("Poll results")

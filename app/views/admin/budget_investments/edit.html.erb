@@ -52,7 +52,7 @@
 
         <div class="small-12 medium-6">
           <%= f.select(:administrator_id,
-                         @admins.collect { |a| [a.description_or_name_and_email, a.id] },
+                         @admins.map { |a| [a.description_or_name_and_email, a.id] },
                          { include_blank: t("admin.budget_investments.edit.undefined") }) %>
         </div>
       </div>

@@ -9,7 +9,7 @@
         <th class="small-2"><%= t("admin.newsletters.index.subject") %></th>
         <th><%= t("admin.newsletters.index.segment_recipient") %></th>
         <th><%= t("admin.newsletters.index.sent") %></th>
-        <th class="small-5"><%= t("admin.newsletters.index.actions") %></th>
+        <th><%= t("admin.newsletters.index.actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -29,18 +29,11 @@
           <% end %>
         </td>
         <td>
-          <div class="small-4 column">
-          <%= link_to t("admin.newsletters.index.edit"), edit_admin_newsletter_path(newsletter),
-                                                         class: "button hollow expanded" %>
-          </div>
-          <div class="small-4 column">
-          <%= link_to t("admin.newsletters.index.delete"), admin_newsletter_path(newsletter),
-                                                           method: :delete, class: "button hollow alert expanded" %>
-          </div>
-          <div class="small-4 column">
-          <%= link_to t("admin.newsletters.index.preview"), admin_newsletter_path(newsletter),
-                                                            class: "button expanded" %>
-          </div>
+          <%= render Admin::TableActionsComponent.new(newsletter) do |actions| %>
+            <%= actions.link_to t("admin.newsletters.index.preview"),
+                                admin_newsletter_path(newsletter),
+                                class: "preview-link" %>
+          <% end %>
         </td>
       </tr>
     <% end %>

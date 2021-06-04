@@ -233,7 +233,6 @@ ka:
       collaborative_legislation: ერთობლივი სამოქალაქო ინიციატივა
       debates: დებატები
       locale: "ენა:"
-      logo: CONSUL-ის ლოგო
       management: მენეჯმენტი
       moderation: მოდერაცია
       valuation: შეფასება
@@ -247,10 +246,10 @@ ka:
       budgets: მონაწილეობითი ბიუჯეტირება
       notification_item:
         new_notifications:
+          zero: "თქვენ არ გაქვთ შეტყობინება"
           one: თქვენ გაქვთ ერთი შეტყობინება
           other: თქვენ გაქვთ %{count} შეტყობინება
         notifications: შეტყობინებები
-        no_notifications: "თქვენ არ გაქვთ შეტყობინება"
   notifications:
     index:
       empty_notifications: თქვენ არ გაქვთ შეტყობინება.
@@ -778,7 +777,6 @@ ka:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -873,9 +871,10 @@ ka:
         debates: "ყველაზე აქტიური დებატები"
         proposals: "ყველაზე აქტიური ინიციატივები"
         processes: "ღია პროცესები"
-      see_all_debates: ყველა დებატის ნახვა
-      see_all_proposals: ყველა ინიციატივის ნახვა
-      see_all_processes: ყველა პროცესის ნახვა
+      see_all:
+        debates: ყველა დებატის ნახვა
+        proposals: ყველა ინიციატივის ნახვა
+        processes: ყველა პროცესის ნახვა
       process_label: პროცესი
       see_process: პროცესის ნახვა
     cards:
