@@ -104,7 +104,7 @@ describe "Proposal Notifications" do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be sent to 7 people and it will "\
+    expect(page).to have_content "This notification will be sent to 7 people and it will "\
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
                                                      anchor: "comments"))
@@ -120,7 +120,7 @@ describe "Proposal Notifications" do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be sent to 7 people and it will "\
+    expect(page).to have_content "This notification will be sent to 7 people and it will "\
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
                                                      anchor: "comments"))
@@ -135,7 +135,7 @@ describe "Proposal Notifications" do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be sent to 1 people and it will "\
+    expect(page).to have_content "This notification will be sent to 1 people and it will "\
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
                                                      anchor: "comments"))
