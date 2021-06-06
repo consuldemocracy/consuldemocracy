@@ -42,6 +42,7 @@ class Budget < ApplicationRecord
   has_one :poll
 
   after_create :generate_phases
+  accepts_nested_attributes_for :phases
 
   scope :published, -> { where(published: true) }
   scope :drafting,  -> { where.not(id: published) }

@@ -78,7 +78,9 @@ namespace :admin do
         resources :headings, only: [:index, :create, :edit, :update, :destroy]
       end
 
-      resources :phases, as: "budget_phases", only: [:index, :edit, :update]
+      resources :phases, as: "budget_phases", only: [:index, :edit, :update] do
+        collection { patch :update_all }
+      end
     end
   end
 

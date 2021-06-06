@@ -258,6 +258,11 @@ $table-header:   #ecf1f6;
     [type="submit"] ~ a {
       margin-left: $line-height / 2;
     }
+
+    [type="checkbox"] {
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
   }
 
   hr {

@@ -19,6 +19,35 @@ describe "Budgets wizard, phases step", :admin do
       expect(page).to have_css "tr", text: "Main Park"
       expect(page).to have_css ".creation-timeline"
     end
+
+    scenario "Enable and disable phases" do
+      visit admin_budgets_wizard_budget_budget_phases_path(budget)
+
+      uncheck "Enable Information phase"
+      uncheck "Enable Reviewing voting phase"
+
+      click_button "Finish"
+
+      expect(page).to have_content "Phases configured successfully"
+
+      visit edit_admin_budget_path(budget)
+
+      within "tr", text: "Information" do
+        expect(page).to have_css ".budget-phase-disabled", visible: :all
+      end
+
+      within "tr", text: "Reviewing voting" do
+        expect(page).to have_css ".budget-phase-disabled", visible: :all
+      end
+
+      within "tr", text: "Accepting projects" do
+        expect(page).to have_css ".budget-phase-enabled", visible: :all
+      end
+
+      within "tr", text: "Voting projects" do
+        expect(page).to have_css ".budget-phase-enabled", visible: :all
+      end
+    end
   end
 
   describe "Edit" do

@@ -106,6 +106,7 @@ es:
         enabled: Habilitada
         actions: Acciones
         edit_phase: Editar fase
+        enable_phase: "Habilitar fase de %{phase}"
         active: Activa
         blank_dates: Sin fechas
         administrators:
@@ -308,6 +309,8 @@ es:
       phases:
         back: "Volver a partidas"
         continue: "Finalizar"
+        update_all:
+          notice: "Fases configuradas con éxito"
     milestones:
       index:
         table_id: "ID"

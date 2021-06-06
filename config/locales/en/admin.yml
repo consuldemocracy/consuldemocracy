@@ -106,6 +106,7 @@ en:
         enabled: Enabled
         actions: Actions
         edit_phase: Edit phase
+        enable_phase: "Enable %{phase} phase"
         active: Active
         blank_dates: Dates are blank
         administrators:
@@ -308,6 +309,8 @@ en:
       phases:
         back: "Go back to headings"
         continue: "Finish"
+        update_all:
+          notice: "Phases configured successfully"
     milestones:
       index:
         table_id: "ID"
