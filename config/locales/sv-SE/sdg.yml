@@ -75,6 +75,7 @@ sv:
       title: "Globala mål och delmål för hållbar utveckling"
     targets:
       filter:
+        link: "Se alla %{resources} kopplade till delmålet %{code}"
         more:
           one: "Ett delmål till"
           other: "%{count} delmål till"
