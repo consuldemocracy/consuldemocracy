@@ -71,6 +71,7 @@ sv:
       help:
         title: "Vilka globala mål och delmål är i linje med min/mitt %{record}?"
         text: "SDG-hjälpsida"
+      placeholder: "Skriv en kod eller beskrivning för ett mål eller delmål"
       remove_tag: "Ta bort"
       title: "Globala mål och delmål för hållbar utveckling"
     targets:
