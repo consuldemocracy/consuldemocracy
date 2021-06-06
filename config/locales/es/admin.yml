@@ -67,7 +67,7 @@ es:
         no_activity: No hay actividad de moderadores.
     budgets:
       actions:
-        preview: "Previsualizar presupuesto"
+        preview: "Previsualizar"
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
@@ -76,7 +76,7 @@ es:
           all: Todos
           open: Abiertos
           finished: Terminados
-        budget_investments: Gestionar proyectos de gasto
+        budget_investments: Proyectos de gasto
         table_budget_type: "Tipo"
         table_completed: Completado
         table_draft: "Borrador"
@@ -87,8 +87,8 @@ es:
         type_multiple: "Múltiples partidas"
         type_pending: "Pendiente: Aún no hay partidas"
         type_single: "Partida única"
-        edit_groups: Editar grupos de partidas
-        admin_ballots: Gestionar urnas
+        edit_groups: Grupos de partidas
+        admin_ballots: Urnas
         no_budgets: "No hay presupuestos participativos."
       create:
         notice: '¡Presupuestos participativos creados con éxito!'
@@ -152,7 +152,7 @@ es:
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
-      headings_manage: "Gestionar partidas"
+      headings_manage: "Partidas"
       no_groups: "No hay grupos."
       amount:
         one: "Hay 1 grupo de partidas presupuestarias"

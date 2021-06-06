@@ -91,7 +91,7 @@ describe "Budgets wizard, first step", :admin do
       within("tr", text: "M30 - Summer campaign") { click_link "Edit" }
 
       expect(page).to have_content "This participatory budget is in draft mode"
-      expect(page).to have_link "Preview budget"
+      expect(page).to have_link "Preview"
       expect(page).to have_link "Publish budget"
     end
   end

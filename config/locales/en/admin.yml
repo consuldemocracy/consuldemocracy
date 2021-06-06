@@ -67,7 +67,7 @@ en:
         no_activity: There are no moderators activity.
     budgets:
       actions:
-        preview: "Preview budget"
+        preview: "Preview"
       index:
         title: Participatory budgets
         new_link: Create new budget
@@ -76,7 +76,7 @@ en:
           all: All
           open: Open
           finished: Finished
-        budget_investments: Manage projects
+        budget_investments: Investment projects
         table_budget_type: "Type"
         table_completed: Completed
         table_draft: "Draft"
@@ -87,8 +87,8 @@ en:
         type_multiple: "Multiple headings"
         type_pending: "Pending: No headings yet"
         type_single: "Single heading"
-        edit_groups: Edit headings groups
-        admin_ballots: Admin ballots
+        edit_groups: Heading groups
+        admin_ballots: Ballots
         no_budgets: "There are no budgets."
       create:
         notice: New participatory budget created successfully!
@@ -152,7 +152,7 @@ en:
     budget_groups:
       name: "Name"
       headings_name: "Headings"
-      headings_manage: "Manage headings"
+      headings_manage: "Headings"
       no_groups: "There are no groups."
       amount:
         one: "There is 1 group"
