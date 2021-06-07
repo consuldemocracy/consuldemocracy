@@ -3,14 +3,16 @@ class Admin::Budgets::FormComponent < ApplicationComponent
   include GlobalizeHelper
   include Admin::Namespace
 
-  attr_reader :budget
+  attr_reader :budget, :wizard
+  alias_method :wizard?, :wizard
   delegate :display_calculate_winners_button?,
            :calculate_winner_button_text,
            :calculate_winners_admin_budget_path,
            to: :helpers
 
-  def initialize(budget)
+  def initialize(budget, wizard: false)
     @budget = budget
+    @wizard = wizard
   end
 
   def voting_styles_select_options

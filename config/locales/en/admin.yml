@@ -306,6 +306,7 @@ en:
       budgets:
         continue: "Continue to groups"
       groups:
+        back: "Go back to edit budget"
         continue: "Continue to headings"
       headings:
         continue: "Continue to phases"

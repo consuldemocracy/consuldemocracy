@@ -73,7 +73,7 @@ namespace :admin do
   end
 
   namespace :budgets_wizard do
-    resources :budgets, only: [:create, :new] do
+    resources :budgets, only: [:create, :new, :edit, :update] do
       resources :groups, only: [:index, :create, :edit, :update, :destroy] do
         resources :headings, only: [:index, :create, :edit, :update, :destroy]
       end

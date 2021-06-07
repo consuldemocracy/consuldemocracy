@@ -11,7 +11,7 @@ describe "Budgets wizard, first step", :admin do
 
       expect(page).to have_content "New participatory budget created successfully!"
 
-      click_link "Go back to budgets"
+      click_link "Go back to edit budget"
 
       expect(page).to have_field "Name", with: "M30 - Summer campaign"
       expect(page).to have_select "Final voting style", selected: "Knapsack"
@@ -29,7 +29,7 @@ describe "Budgets wizard, first step", :admin do
 
       expect(page).to have_content "New participatory budget created successfully!"
 
-      click_link "Go back to budgets"
+      click_link "Go back to edit budget"
 
       expect(page).to have_field "Name", with: "M30 - Summer campaign"
       expect(page).to have_select "Final voting style", selected: "Approval"
@@ -81,11 +81,52 @@ describe "Budgets wizard, first step", :admin do
 
       expect(page).to have_content "New participatory budget created successfully!"
 
-      click_link "Go back to budgets"
+      within("#side_menu") { click_link "Participatory budgets" }
+      within("tr", text: "M30 - Summer campaign") { click_link "Edit budget" }
 
       expect(page).to have_content "This participatory budget is in draft mode"
       expect(page).to have_link "Preview budget"
       expect(page).to have_link "Publish budget"
+    end
+  end
+
+  describe "Edit" do
+    scenario "update budget" do
+      budget = create(:budget, name: "Budget wiht typo")
+
+      visit admin_budgets_wizard_budget_groups_path(budget)
+
+      click_link "Go back to edit budget"
+
+      expect(page).to have_content "Edit Participatory budget"
+      expect(page).to have_css ".creation-timeline"
+      expect(page).to have_field "Name", with: "Budget wiht typo"
+
+      fill_in "Name", with: "Budget without typos"
+      click_button "Continue to groups"
+
+      expect(page).to have_content "Participatory budget updated successfully"
+      expect(page).to have_content "Budget without typos"
+      expect(page).to have_css ".creation-timeline"
+      expect(page).to have_content "There are no groups"
+    end
+
+    scenario "submit the form with errors and then without errors" do
+      budget = create(:budget, name: "Budget wiht typo")
+
+      visit edit_admin_budgets_wizard_budget_path(budget)
+      fill_in "Name", with: ""
+      click_button "Continue to groups"
+
+      expect(page).to have_css "#error_explanation"
+
+      fill_in "Name", with: "Budget without typos"
+      click_button "Continue to groups"
+
+      expect(page).to have_content "Participatory budget updated successfully"
+      expect(page).to have_content "Budget without typos"
+      expect(page).to have_css ".creation-timeline"
+      expect(page).to have_content "There are no groups"
     end
   end
 end
