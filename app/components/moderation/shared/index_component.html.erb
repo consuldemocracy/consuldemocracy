@@ -21,18 +21,18 @@
   <%= submit_tag t("moderation.#{i18n_namespace}.index.block_authors"),
                  name: "block_authors",
                  class: "button hollow alert",
-                 data: { confirm: t("moderation.#{i18n_namespace}.index.confirm") } %>
+                 data: { confirm: t("moderation.actions.confirm_action", action: t("moderation.#{i18n_namespace}.index.block_authors")) } %>
 
   <div class="float-right">
     <%= submit_tag t("moderation.#{i18n_namespace}.index.hide"),
                    name: "hide_#{table_name}",
                    class: "button hollow alert",
-                   data: { confirm: t("moderation.#{i18n_namespace}.index.confirm") } %>
+                   data: { confirm: t("moderation.actions.confirm_action", action: t("moderation.#{i18n_namespace}.index.hide")) } %>
 
     <%= submit_tag t("moderation.#{i18n_namespace}.index.ignore_flags"),
                    name: "ignore_flags",
                    class: "button hollow",
-                   data: { confirm: t("moderation.#{i18n_namespace}.index.confirm") } %>
+                   data: { confirm: t("moderation.actions.confirm_action", action: t("moderation.#{i18n_namespace}.index.ignore_flags")) } %>
   </div>
 
   <%= paginate records %>
