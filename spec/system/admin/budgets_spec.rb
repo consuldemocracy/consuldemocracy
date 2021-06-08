@@ -472,6 +472,13 @@ describe "Admin budgets", :admin do
       click_link "Edit budget"
       click_link "Delete budget"
 
+      page.driver.browser.switch_to.alert do
+        expect(page).to have_content "Are you sure? This action will delete the budget '#{budget.name}' "\
+                                      "and can't be undone."
+      end
+
+      accept_confirm
+
       expect(page).to have_content "Budget deleted successfully"
       expect(page).to have_content "There are no budgets."
     end
