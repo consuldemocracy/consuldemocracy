@@ -17,6 +17,9 @@ tr:
     letter:
       alert:
         unconfirmed_code: Onay kodunu henüz girmediniz
+      create:
+        flash:
+          success: Kendi <b>maksimum güvenlik kodunuzu (yalnızca son oylar için gerekli)</b>talep ettiğiniz için teşekkür ederiz. Kodunuzu birkaç gün içerisinde sistemde belirtilen adrese göndereceğiz. Eğer tercih ederseniz, kodunuzu Vatandaş Destek Ofislerinden kendiniz de teslim alabilirsiniz.
       edit:
         see_all: Önerileri gör
         title: Evrak talep edildi
@@ -46,6 +49,7 @@ tr:
         accept_terms_text_title: Pusula'nın erişim şartlarını ve koşullarını kabul ediyorum
         document_number: Belge numarası
         document_number_help_title: Yardım
+        document_number_help_text: "<strong>Kimlik Kartı</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>İkamet belgesi</strong>: X1234567P"
         document_type:
           passport: Pasaport
           residence_card: İkamet belgesi
@@ -69,6 +73,7 @@ tr:
         title: Güvenlik kodu onayı
       new:
         phone: Kodu almak için cep telefonu numaranızı yazın
+        phone_format: "<strong><em>(Örnek: 612345678 veya +34612345678)</em></strong>"
         phone_note: Telefonunuzu yalnızca size bir kod göndermek için kullanıyoruz, asla sizinle bağlantı kurmak için kullanmıyoruz.
         phone_placeholder: "Örnek: 612345678 veya +34612345678"
         submit_button: Gönder

@@ -3,6 +3,32 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html)
 
+## [1.3.1](https://github.com/consul/consul/tree/1.3.1) (2021-06-03)
+
+[Full Changelog](https://github.com/consul/consul/compare/1.3.0...1.3.1)
+
+### Added
+
+- **Translations:** Update translations from Crowdin [\#4537](https://github.com/consul/consul/pull/4537)
+
+### Changed
+
+- **Maintenance-Deployment:** Upgrade Ruby to version 2.6.7 [\#4524](https://github.com/consul/consul/pull/4524) and [\#4535](https://github.com/consul/consul/pull/4535)
+- **Maintenance-Gems:** Bump nokogiri from 1.11.2 to 1.11.6 [\#4529](https://github.com/consul/consul/pull/4529)
+- **Maintenance-Gems:** Bump rails from 5.2.4.5 to 5.2.4.6 [\#4525](https://github.com/consul/consul/pull/4525)
+- **Maintenance-Gems:** Bump puma from 4.3.6 to 4.3.8 [\#4519](https://github.com/consul/consul/pull/4519)
+- **Maintenance-Gems:** Bump rexml from 3.2.4 to 3.2.5 [\#4500](https://github.com/consul/consul/pull/4500)
+
+### Fixed
+
+- **Accessibility:** Increase menu button touch area on small screens [\#4503](https://github.com/consul/consul/pull/4503)
+- **Admin:** Fix crash destroying budget with administrators [\#4528](https://github.com/consul/consul/pull/4528)
+- **Admin:** Fix crash with budgets with disabled current phase [\#4522](https://github.com/consul/consul/pull/4522)
+- **Legislation:** Validate process dates depending on enabled phases [\#4521](https://github.com/consul/consul/pull/4521)
+- **Maintenance:** Fix order loading custom styles [\#4515](https://github.com/consul/consul/pull/4515)
+- **Maintenance-Specs:** Fix header card factory [\#4512](https://github.com/consul/consul/pull/4512)
+- **Translations:** Fix exception using locales with no help images [\#4518](https://github.com/consul/consul/pull/4518)
+
 ## [1.3.0](https://github.com/consul/consul/tree/1.3.0) (2021-04-27)
 
 [Full Changelog](https://github.com/consul/consul/compare/1.2.0...1.3.0)

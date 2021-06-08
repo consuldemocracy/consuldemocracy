@@ -114,7 +114,7 @@ sv:
           rows:
             - 
               browser_column: IE
-              key_column: ALT + genväg sen ENTER
+              key_column: ALT + genväg, sedan ENTER
             - 
               browser_column: Firefox
               key_column: ALT + CAPS + genväg

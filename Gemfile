@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "5.2.4.5"
+gem "rails", "5.2.4.6"
 
 gem "acts-as-taggable-on", "~> 6.5.0"
 gem "acts_as_votable", "~> 0.12.1"
@@ -44,7 +44,7 @@ gem "paperclip", "~> 6.1.0"
 gem "paranoia", "~> 2.4.2"
 gem "pg", "~> 1.0.0"
 gem "pg_search", "~> 2.3.5"
-gem "puma", "~> 4.3.6"
+gem "puma", "~> 4.3.8"
 gem "recipient_interceptor", "~> 0.2.0"
 gem "redcarpet", "~> 3.5.1"
 gem "responders", "~> 3.0.1"

@@ -18,6 +18,14 @@ class Admin::Budgets::IndexComponent < ApplicationComponent
         total_phases: budget.phases.enabled.count)
     end
 
+    def current_enabled_phase_number(budget)
+      current_enabled_phase_index(budget) + 1
+    end
+
+    def current_enabled_phase_index(budget)
+      budget.phases.enabled.order(:id).pluck(:kind).index(budget.phase) || -1
+    end
+
     def dates(budget)
       Admin::Budgets::DurationComponent.new(budget).dates
     end

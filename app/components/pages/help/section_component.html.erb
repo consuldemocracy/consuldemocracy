@@ -1,0 +1,14 @@
+<div class="row section-content">
+  <div class="small-12 column" id="<%= section %>" data-magellan-target="<%= section %>">
+    <h3><%= t("pages.help.#{section}.title") %></h3>
+
+    <%= content %>
+
+    <% if image_path %>
+      <figure>
+        <%= image_tag image_path, alt: t("pages.help.#{section}.image_alt") %>
+        <figcaption><%= t("pages.help.#{section}.figcaption") %></figcaption>
+      </figure>
+    <% end %>
+  </div>
+</div>

@@ -29,7 +29,7 @@ sv:
         edit: Redigera rapport
         table_id: ID
         table_title: Titel
-        table_heading_name: Område
+        table_heading_name: Områdesnamn
         table_actions: Åtgärder
         no_investments: "Det finns inga budgetförslag."
       show:
@@ -53,11 +53,11 @@ sv:
         responsibles: Ansvariga
         assigned_admin: Ansvarig administratör
         assigned_valuators: Ansvariga bedömare
-        preview: Budgetförhandsvisning
+        preview: Investeringsförhandsvisning
       edit:
         dossier: Rapport
         price: "Kostnad (%{currency})"
-        price_first_year: "Kostnad under första året (%{currency}) <small>(ej obligatoriskt, ej publikt)</small>"
+        price_first_year: "Kostnad under första året (%{currency}) <small>(valfritt, ej offentligt)</small>"
         feasibility: Genomförbarhet
         valuation_finished_alert: "Är du säker på att du vill markera rapporten som färdig? Efter det kan du inte längre göra ändringar."
         not_feasible_alert: "Förslagslämnaren får ett e-postmeddelande om varför projektet inte är genomförbart."

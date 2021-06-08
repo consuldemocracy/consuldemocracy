@@ -98,6 +98,15 @@ RSpec.configure do |config|
     Delayed::Worker.delay_jobs = false
   end
 
+  config.before(:each, :small_window) do
+    @window_size = Capybara.current_window.size
+    Capybara.current_window.resize_to(639, 479)
+  end
+
+  config.after(:each, :small_window) do
+    Capybara.current_window.resize_to(*@window_size)
+  end
+
   config.before(:each, :remote_translations) do
     allow(RemoteTranslations::Microsoft::AvailableLocales)
       .to receive(:available_locales).and_return(I18n.available_locales.map(&:to_s))

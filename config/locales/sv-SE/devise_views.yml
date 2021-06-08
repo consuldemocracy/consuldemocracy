@@ -22,7 +22,7 @@ sv:
         change_link: Ändra mitt lösenord
         hello: Hej
         ignore_text: Ignorera det här meddelandet om du inte begärt ett nytt lösenord.
-        info_text: Du behöver använda länken för att ändra ditt lösenord.
+        info_text: Du måste använda länken för att kunna ändra ditt lösenord.
         text: "Vi har mottagit en begäran om att ändra ditt lösenord. Du kan göra det med följande länk:"
         title: Ändra ditt lösenord
       unlock_instructions:

@@ -97,7 +97,7 @@ sv:
       signature_sheets_description: "Tillåter att röster om förslag och budgetförslag i medborgarbudgetar som samlats in på plats kan läggas in via administrationspanelen"
       user:
         recommendations: "Rekommendationer"
-        recommendations_description: "Visar rekommendationer från användare på hemsidan baserat på taggarna i objekten de följer"
+        recommendations_description: "Visar rekommendationer för användare på startsidan baserat på taggarna i objekten de följer"
         skip_verification: "Hoppa över användarverifiering"
         skip_verification_description: "Detta avaktiverar verifiering av användarna och alla registrerade använder kan delta i alla processer"
         recommendations_on_debates: "Rekommenderade debatter"
@@ -131,6 +131,7 @@ sv:
         notification_emails: "Dashboard för e-postaviseringar"
         notification_emails_description: "Aktivera skickande av dashboard-aviseringar via e-post till förslagslämnare"
       sdg: Globala målen
+      sdg_description: Aktivera delarna Globala mål för hållbar utveckling i administrationsmenyn och i Globala inställningar.
     remote_census:
       general:
         endpoint: "Slutpunkt"
@@ -208,3 +209,15 @@ sv:
         max_size_description: "Högsta storlek på inskickade dokument (i MB)"
         content_types: "Accepterade innehållstyper för dokument"
         content_types_description: "Välj alla de innehållstyper som är tillåtna för inskickade dokument"
+    sdg:
+      process:
+        debates: Relaterade Globala mål i debatter
+        debates_description: Tillåt att debatter länkas till Globala mål för hållbar utveckling
+        proposals: Relaterade Globala mål i förslag
+        proposals_description: Tillåt att förslag länkas till Globala mål för hållbar utveckling
+        polls: Relaterade Globala mål i omröstningar
+        polls_description: Tillåt att omröstningar länkas till Globala mål för hållbar utveckling
+        budgets: Relaterade Globala mål i medborgarbudgetar
+        budgets_description: Tillåt att medborgarbudgetar länkas till Globala mål för hållbar utveckling
+        legislation: Relaterade Globala mål i medborgardialoger
+        legislation_description: Tillåt att medborgardialoger länkas till Globala mål för hållbar utveckling
