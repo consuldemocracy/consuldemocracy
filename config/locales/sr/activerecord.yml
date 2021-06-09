@@ -541,10 +541,6 @@ sr:
           attributes:
             segment_recipient:
               invalid: "Сегмент прималаца корисника је неважећи"
-        map_location:
-          attributes:
-            map:
-              invalid: Локација мапе не може бити празна. Поставите означиваче или изаберите поље за потврду ако геолокализација није потребна
         poll/voter:
           attributes:
             document_number:
