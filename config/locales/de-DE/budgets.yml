@@ -3,6 +3,7 @@ de:
     ballots:
       show:
         title: Ihre Abstimmung
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
           knapsack: "Sie können noch <span>%{count}</span> ausgeben"
           approval:
@@ -84,7 +85,6 @@ de:
         map_location: "Kartenposition"
         map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
         map_remove_marker: "Entfernen Sie die Kartenmarkierung"
-        map_skip_checkbox: "Dieser Ausgabenvorschlag hat keinen konkreten Standort oder ich kenne ihn nicht."
       index:
         title: Bürgerhaushalte
         unfeasible: Undurchführbare Investitionsvorschläge
@@ -117,6 +117,13 @@ de:
           verified_only: "Um ein neuen Ausgabenvorschlag zu erstellen %{verify}."
           create: "Eine Budgetinvestitionen erstellen"
           not_logged_in: "Um einen neuen Ausgabenvorschlag erstellen zu können, müssen Sie %{sign_in} oder %{sign_up}."
+        filter: "Projekte filtern nach"
+        filters:
+          not_unfeasible: "Durchführbar"
+          selected: "Ausgewählt"
+          unfeasible: "Undurchführbar"
+          unselected: "Nicht ausgewählt"
+          winners: "Bestbewertete Vorschläge"
         orders:
           random: zufällig
           confidence_score: am besten bewertet
