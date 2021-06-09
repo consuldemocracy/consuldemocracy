@@ -536,10 +536,6 @@ tr:
           attributes:
             segment_recipient:
               invalid: "Kullanıcı alıcıları bölümü geçersizdir"
-        map_location:
-          attributes:
-            map:
-              invalid: Harita konumu boş olamaz. Coğrafi konum belirleme gerekli değilse bir işaretleyici yerleştirin veya onay kutusunu işaretleyin
         poll/voter:
           attributes:
             document_number:
