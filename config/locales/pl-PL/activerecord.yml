@@ -407,10 +407,6 @@ pl:
           attributes:
             segment_recipient:
               invalid: "Segment odbiorców użytkownika jest nieprawidłowy"
-        map_location:
-          attributes:
-            map:
-              invalid: Lokalizacja na mapie nie może być pusta. Umieść znacznik lub zaznacz pole wyboru, jeśli geolokalizacja jest niepotrzebna
         poll/voter:
           attributes:
             document_number:
