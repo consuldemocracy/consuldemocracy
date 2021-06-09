@@ -496,10 +496,6 @@ oc:
           attributes:
             segment_recipient:
               invalid: "Lo segment de destinataris d’usatgièrs es pas valids"
-        map_location:
-          attributes:
-            map:
-              invalid: L'ubicacion de la mapa pòt pas èsser en blanc. Plaça un mercador o selecciona lo caleishon de seleccion s'es pas necessària la geolocalització
         poll/voter:
           attributes:
             document_number:
