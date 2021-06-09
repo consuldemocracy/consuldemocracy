@@ -107,7 +107,7 @@ sv:
         enabled: Aktiverad
         actions: Åtgärder
         edit_phase: Redigera fas
-        enable_phase: "Aktivera fasen %{phase}"
+        enable_phase: "Aktivera %{phase}-fasen"
         active: Aktiva
         blank_dates: Datumfälten är tomma
         administrators:
@@ -182,11 +182,16 @@ sv:
         edit: "Redigera område"
         submit: "Spara område"
       group_switcher:
-        currently_showing: "Visar rubriker från gruppen %{group}."
+        currently_showing: "Visar rubriker från %{group}-gruppen."
+        different_group: "Hantera rubriker från en annan grupp"
+        the_other_group: "Hantera rubriker från %{group}-gruppen."
       index:
         back: "Gå tillbaka till grupper"
+        new_button: "Lägg till ny rubrik"
+        title: "%{budget} / %{group}-rubriker"
     budget_phases:
       edit:
+        title: "Redigera fas"
         description_help_text: Den här texten visas i sidhuvudet när fasen är aktiv
         duration: "Fasens varaktighet"
         duration_description: "Den tidsperiod som den här fasen blir aktiv."
@@ -195,6 +200,7 @@ sv:
         save_changes: Spara ändringar
       index:
         help: "Medborgarbudgetar har olika faser. Här kan du aktivera eller inaktivera faser, samt också anpassa varje enskild fas."
+        title: "%{budget}-faser"
     budget_investments:
       index:
         heading_filter_all: Alla områden
@@ -290,6 +296,14 @@ sv:
         tags_placeholder: "Fyll i taggar separerade med kommatecken (,)"
         undefined: Odefinierat
       search_unfeasible: Sökningen misslyckades
+    budgets_wizard:
+      creation_timeline:
+        budget: Budget
+        groups: Grupper
+        headings: Rubriker
+        phases: Faser
+      budgets:
+        continue: "Fortsätt till grupper"
     milestones:
       index:
         table_id: "Legitimation"
