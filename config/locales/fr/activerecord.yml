@@ -413,10 +413,6 @@ fr:
           attributes:
             segment_recipient:
               invalid: "Le segment des utilisateurs destinataires est invalide"
-        map_location:
-          attributes:
-            map:
-              invalid: Un emplacement doit être défini sur la carte. Placez un marqueur ou désélectionnez la position si elle n'est pas nécessaire
         poll/voter:
           attributes:
             document_number:
