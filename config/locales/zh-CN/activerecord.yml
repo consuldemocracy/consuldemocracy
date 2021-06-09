@@ -284,10 +284,6 @@ zh-CN:
           attributes:
             segment_recipient:
               invalid: "用户收件段无效"
-        map_location:
-          attributes:
-            map:
-              invalid: 地图位置不能为空。如果不需要地理定位，请放置标记或选中复选框
         poll/voter:
           attributes:
             document_number:
