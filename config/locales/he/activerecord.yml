@@ -464,10 +464,6 @@ he:
           attributes:
             segment_recipient:
               invalid: "מקטע הנמענים אינו חוקי"
-        map_location:
-          attributes:
-            map:
-              invalid: מיקום המפה אינו יכול להיות ריק. הנח סמן או בחר את תיבת הסימון במידה והאזור הגאוגרפי אינו נחוץ
         poll/voter:
           attributes:
             document_number:
