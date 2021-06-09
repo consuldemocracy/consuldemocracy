@@ -145,10 +145,6 @@ sl:
             attachment:
               min_image_width: "Širina slike mora biti vsaj %{required_min_width}px"
               min_image_height: "Višina slike mora biti vsaj %{required_min_height}px"
-        map_location:
-          attributes:
-            map:
-              invalid: Lokacija na zemljevidu ne more biti prazna. Označite jo ali določite, da geolokalizacija ni potrebna
         poll/voter:
           attributes:
             document_number:
