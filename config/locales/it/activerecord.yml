@@ -495,10 +495,6 @@ it:
           attributes:
             segment_recipient:
               invalid: "Il segmento dei destinatari è errato"
-        map_location:
-          attributes:
-            map:
-              invalid: La posizione sulla mappa non può essere lasciata in bianco. Posiziona un segnaposto o seleziona l’apposita spunta se la geolocalizzazione non è necessaria
         poll/voter:
           attributes:
             document_number:
