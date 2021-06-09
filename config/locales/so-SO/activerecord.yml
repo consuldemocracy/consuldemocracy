@@ -300,10 +300,6 @@ so:
           attributes:
             segment_recipient:
               invalid: "Qeybta dadka qaata ee dadka isticmaala waa mid aan shaqeynin"
-        map_location:
-          attributes:
-            map:
-              invalid: Goobta khariidadu ma bannaan karto. Saar calaamad ama dooro sanduuqa sanduuqa haddii aan loo baahnayn geolocalization
         poll/voter:
           attributes:
             document_number:
