@@ -121,6 +121,8 @@ sv:
         empty_administrators: "Det finns inga administratörer"
         empty_valuators: "Det finns inga bedömare"
         name_description: "Detta är medborgarbudgetens namn som används i rubriken och på korten när den är aktiv"
+        main_call_to_action: "Huvudsaklig uppmaning (valfritt)"
+        main_call_to_action_description: "Länken kommer att visas på huvudbannern för den här medborgarbudgeten och uppmuntrar din användare att utföra en specifik åtgärd som t.ex. att skapa ett nytt förslag, rösta på befintliga eller lära sig mer om processen."
         info:
           budget_settings: "Allmänna medborgarbudgetinställningar"
           phases_settings: "Inställningar för faser"
@@ -1347,6 +1349,7 @@ sv:
       color_help: Hexadecimalt format
       show_results_and_stats: "Visa resultat och statistik"
       results_and_stats_reminder: "Genom att markera dessa rutor kommer omröstningens resultat och/eller statistik att visas för alla användare."
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Geografiska områden
