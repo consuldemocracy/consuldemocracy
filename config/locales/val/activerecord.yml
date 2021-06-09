@@ -328,10 +328,6 @@ val:
           attributes:
             segment_recipient:
               invalid: "El segment d'usuaris es invàlid"
-        map_location:
-          attributes:
-            map:
-              invalid: Localització en el mapa no pot estar en blanc. Inserta un marcador o selecciona en la check si la geolocalització no es necessaria
         poll/voter:
           attributes:
             document_number:
