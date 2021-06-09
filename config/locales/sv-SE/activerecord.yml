@@ -160,7 +160,9 @@ sv:
         voting_style: "Slutgiltigt omröstningsformat"
         voting_style_knapsack: "Ryggsäck"
         voting_style_approval: "Godkännande"
+        main_link_url: "Länken leder till (lägg till en länk)"
       budget/translation:
+        main_link_text: "Text på länken"
         name: "Namn"
       budget/investment:
         heading_id: "Område"
