@@ -541,10 +541,6 @@ hr:
           attributes:
             segment_recipient:
               invalid: "Segment korisničkih primatelja nije valjan"
-        map_location:
-          attributes:
-            map:
-              invalid: Lokacija karte ne može biti prazna. Postavite oznaku ili potvrdite okvir ako nije potrebna geolokalizacija
         poll/voter:
           attributes:
             document_number:
