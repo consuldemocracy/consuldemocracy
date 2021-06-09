@@ -21,3 +21,9 @@
     margin-top: 0;
   }
 }
+
+@mixin full-width-form {
+  .globalize-languages {
+    max-width: none;
+  }
+}

@@ -6,8 +6,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   has_filters %w[all open finished], only: :index
 
-  before_action :load_budget, except: [:index, :new, :create]
-  before_action :load_staff, only: [:new, :create, :edit, :update, :show]
+  before_action :load_budget, except: [:index]
   load_and_authorize_resource
 
   def index
@@ -16,9 +15,6 @@ class Admin::BudgetsController < Admin::BaseController
 
   def show
     render :edit
-  end
-
-  def new
   end
 
   def edit
@@ -44,15 +40,6 @@ class Admin::BudgetsController < Admin::BaseController
       redirect_to admin_budgets_path, notice: t("admin.budgets.update.notice")
     else
       render :edit
-    end
-  end
-
-  def create
-    @budget = Budget.new(budget_params.merge(published: false))
-    if @budget.save
-      redirect_to edit_admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
-    else
-      render :new
     end
   end
 
@@ -82,10 +69,5 @@ class Admin::BudgetsController < Admin::BaseController
 
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:id]
-    end
-
-    def load_staff
-      @admins = Administrator.includes(:user)
-      @valuators = Valuator.includes(:user).order(description: :asc).order("users.email ASC")
     end
 end

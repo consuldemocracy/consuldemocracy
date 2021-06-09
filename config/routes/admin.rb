@@ -51,7 +51,7 @@ namespace :admin do
     end
   end
 
-  resources :budgets do
+  resources :budgets, except: [:create, :new] do
     member do
       patch :publish
       put :calculate_winners
@@ -70,6 +70,18 @@ namespace :admin do
     end
 
     resources :budget_phases, only: [:edit, :update]
+  end
+
+  namespace :budgets_wizard do
+    resources :budgets, only: [:create, :new, :edit, :update] do
+      resources :groups, only: [:index, :create, :edit, :update, :destroy] do
+        resources :headings, only: [:index, :create, :edit, :update, :destroy]
+      end
+
+      resources :phases, as: "budget_phases", only: [:index, :edit, :update] do
+        collection { patch :update_all }
+      end
+    end
   end
 
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]

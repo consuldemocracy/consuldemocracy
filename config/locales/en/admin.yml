@@ -14,6 +14,7 @@ en:
       edit: Edit
       configure: Configure
       delete: Delete
+      confirm_delete: "Are you sure? This action will delete %{resource_name} '%{name}' and can't be undone."
     officing_booth:
       title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
@@ -106,6 +107,7 @@ en:
         enabled: Enabled
         actions: Actions
         edit_phase: Edit phase
+        enable_phase: "Enable %{phase} phase"
         active: Active
         blank_dates: Dates are blank
         administrators:
@@ -133,6 +135,8 @@ en:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
         recalculate: Recalculate Winner Investments
+      shared:
+        resource_name: "the budget"
     budget_groups:
       name: "Name"
       headings_name: "Headings"
@@ -156,6 +160,7 @@ en:
       index:
         back: "Go back to budgets"
         help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
+        new_button: "Add new group"
     budget_headings:
       no_headings: "There are no headings."
       amount:
@@ -176,11 +181,18 @@ en:
         create: "Create new heading"
         edit: "Edit heading"
         submit: "Save heading"
+      group_switcher:
+        currently_showing: "Showing headings from the %{group} group."
+        different_group: "Manage headings from a different group"
+        the_other_group: "Manage headings from the %{group} group."
       index:
         back: "Go back to groups"
         help: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
+        new_button: "Add new heading"
+        title: "%{budget} / %{group} headings"
     budget_phases:
       edit:
+        title: "Edit phase"
         description_help_text: This text will appear in the header when the phase is active
         duration: "Phase's duration"
         duration_description: "The period of time this phase will be active."
@@ -189,6 +201,7 @@ en:
         save_changes: Save changes
       index:
         help: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
+        title: "%{budget} phases"
     budget_investments:
       index:
         heading_filter_all: All headings
@@ -284,6 +297,24 @@ en:
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
       search_unfeasible: Search unfeasible
+    budgets_wizard:
+      creation_timeline:
+        budget: Budget
+        groups: Groups
+        headings: Headings
+        phases: Phases
+      budgets:
+        continue: "Continue to groups"
+      groups:
+        back: "Go back to edit budget"
+        continue: "Continue to headings"
+      headings:
+        continue: "Continue to phases"
+      phases:
+        back: "Go back to headings"
+        continue: "Finish"
+        update_all:
+          notice: "Phases configured successfully"
     milestones:
       index:
         table_id: "ID"

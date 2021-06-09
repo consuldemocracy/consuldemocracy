@@ -8,15 +8,16 @@ describe Admin::Budgets::TableActionsComponent, type: :component do
     allow(ViewComponent::Base).to receive(:test_controller).and_return("Admin::BaseController")
   end
 
-  it "renders links to edit budget, manage investments and edit groups and manage ballots" do
+  it "renders links to edit and delete budget, manage investments and edit groups and manage ballots" do
     render_inline component
 
-    expect(page).to have_css "a", count: 5
+    expect(page).to have_css "a", count: 6
     expect(page).to have_link "Manage projects", href: /investments/
     expect(page).to have_link "Edit headings groups", href: /groups/
     expect(page).to have_link "Edit budget", href: /edit/
     expect(page).to have_link "Admin ballots"
     expect(page).to have_link "Preview budget", href: /budgets/
+    expect(page).to have_link "Delete", href: /budgets/
   end
 
   it "renders link to create new poll for budgets without polls" do

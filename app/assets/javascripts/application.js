@@ -113,6 +113,7 @@
 //= require columns_selector
 //= require budget_edit_associations
 //= require datepicker
+//= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
 
@@ -166,6 +167,7 @@ var initialize_modules = function() {
   if ($("#js-columns-selector").length) {
     App.ColumnsSelector.initialize();
   }
+  App.AdminBudgetsWizardCreationStep.initialize();
   App.BudgetEditAssociations.initialize();
   App.Datepicker.initialize();
   App.SDGRelatedListSelector.initialize();

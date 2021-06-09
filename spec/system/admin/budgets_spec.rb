@@ -82,87 +82,21 @@ describe "Admin budgets", :admin do
         end
       end
     end
-  end
 
-  context "New" do
-    scenario "Create budget - Knapsack voting (default)" do
-      visit admin_budgets_path
-      click_link "Create new budget"
-
-      fill_in "Name", with: "M30 - Summer campaign"
-      select "Accepting projects", from: "budget[phase]"
-
-      click_button "Create Budget"
-
-      expect(page).to have_content "New participatory budget created successfully!"
-      expect(page).to have_field "Name", with: "M30 - Summer campaign"
-      expect(page).to have_select "Final voting style", selected: "Knapsack"
-    end
-
-    scenario "Create budget - Approval voting" do
-      admin = Administrator.first
+    scenario "Delete budget from index" do
+      create(:budget, name: "To be deleted")
 
       visit admin_budgets_path
-      click_link "Create new budget"
 
-      fill_in "Name", with: "M30 - Summer campaign"
-      select "Accepting projects", from: "budget[phase]"
-      select "Approval", from: "Final voting style"
-      click_button "Create Budget"
+      within "tr", text: "To be deleted" do
+        message = "Are you sure? This action will delete the budget 'To be deleted' and can't be undone."
 
-      expect(page).to have_content "New participatory budget created successfully!"
-      expect(page).to have_field "Name", with: "M30 - Summer campaign"
-      expect(page).to have_select "Final voting style", selected: "Approval"
+        accept_confirm(message) { click_link "Delete" }
+      end
 
-      click_link "Select administrators"
-
-      expect(page).to have_field admin.name
-    end
-
-    scenario "Name is mandatory" do
-      visit new_admin_budget_path
-      click_button "Create Budget"
-
-      expect(page).not_to have_content "New participatory budget created successfully!"
-      expect(page).to have_css(".is-invalid-label", text: "Name")
-    end
-
-    scenario "Name should be unique" do
-      create(:budget, name: "Existing Name")
-
-      visit new_admin_budget_path
-      fill_in "Name", with: "Existing Name"
-      click_button "Create Budget"
-
-      expect(page).not_to have_content "New participatory budget created successfully!"
-      expect(page).to have_css(".is-invalid-label", text: "Name")
-      expect(page).to have_css("small.form-error", text: "has already been taken")
-    end
-
-    scenario "Do not show results and stats settings on new budget" do
-      visit new_admin_budget_path
-
-      expect(page).not_to have_content "Show results and stats"
-      expect(page).not_to have_field "Show results"
-      expect(page).not_to have_field "Show stats"
-      expect(page).not_to have_field "Show advanced stats"
-    end
-  end
-
-  context "Create" do
-    scenario "A new budget is always created in draft mode" do
-      visit admin_budgets_path
-      click_link "Create new budget"
-
-      fill_in "Name", with: "M30 - Summer campaign"
-      select "Accepting projects", from: "budget[phase]"
-
-      click_button "Create Budget"
-
-      expect(page).to have_content "New participatory budget created successfully!"
-      expect(page).to have_content "This participatory budget is in draft mode"
-      expect(page).to have_link "Preview budget"
-      expect(page).to have_link "Publish budget"
+      expect(page).to have_content("Budget deleted successfully")
+      expect(page).to have_content("There are no budgets.")
+      expect(page).not_to have_content "To be deleted"
     end
   end
 
@@ -197,8 +131,7 @@ describe "Admin budgets", :admin do
     let(:heading) { create(:budget_heading, budget: budget) }
 
     scenario "Destroy a budget without investments" do
-      visit admin_budgets_path
-      click_link "Edit budget"
+      visit edit_admin_budget_path(budget)
       click_link "Delete budget"
 
       expect(page).to have_content("Budget deleted successfully")
@@ -209,8 +142,7 @@ describe "Admin budgets", :admin do
       budget.administrators << Administrator.first
       budget.valuators << create(:valuator)
 
-      visit admin_budgets_path
-      click_link "Edit budget"
+      visit edit_admin_budget_path(budget)
       click_link "Delete budget"
 
       expect(page).to have_content "Budget deleted successfully"
@@ -220,8 +152,7 @@ describe "Admin budgets", :admin do
     scenario "Try to destroy a budget with investments" do
       create(:budget_investment, heading: heading)
 
-      visit admin_budgets_path
-      click_link "Edit budget"
+      visit edit_admin_budget_path(budget)
       click_link "Delete budget"
 
       expect(page).to have_content("You cannot delete a budget that has associated investments")

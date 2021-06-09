@@ -1,4 +1,4 @@
-%button {
+@mixin base-button {
   font-size: $base-font-size;
 
   &:focus,
@@ -7,16 +7,20 @@
   }
 }
 
+%button {
+  @include base-button;
+}
+
 @mixin regular-button($color: $brand) {
   @include button($background: $color);
   @include inverted-selection;
-  @extend %button;
+  @include base-button;
 }
 
 @mixin hollow-button($color: $link) {
   @include button($style: hollow, $background: $color);
   @include normal-selection;
-  @extend %button;
+  @include base-button;
   margin-bottom: 0;
 }
 

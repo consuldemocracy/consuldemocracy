@@ -13,6 +13,7 @@ es:
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
+      confirm_delete: "¿Estás seguro? Esta acción borrará %{resource_name} '%{name}' y no se puede deshacer."
       delete: Borrar
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
@@ -106,6 +107,7 @@ es:
         enabled: Habilitada
         actions: Acciones
         edit_phase: Editar fase
+        enable_phase: "Habilitar fase de %{phase}"
         active: Activa
         blank_dates: Sin fechas
         administrators:
@@ -133,6 +135,8 @@ es:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
         recalculate: Recalcular proyectos ganadores
+      shared:
+        resource_name: "el presupuesto"
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
@@ -156,6 +160,7 @@ es:
       index:
         back: "Volver a presupuestos"
         help: "Los grupos sirven para organizar las partidas del presupuesto. Después de que un grupo sea creado y éste contenga partidas, es posible determinar el número de partidas a las que un usuario puede votar por grupo."
+        new_button: "Añadir un grupo nuevo"
     budget_headings:
       no_headings: "No hay partidas."
       amount:
@@ -176,9 +181,15 @@ es:
         create: "Crear nueva partida"
         edit: "Editar partida"
         submit: "Guardar partida"
+      group_switcher:
+        currently_showing: "Mostrando las partidas del grupo: %{group}"
+        different_group: "Ir a partidas de otro grupo"
+        the_other_group: "Ir a partidas del grupo %{group}."
       index:
         back: "Volver a grupos"
         help: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
+        new_button: "Añadir una partida nueva"
+        title: "Partidas de %{budget} / %{group}"
     budget_phases:
       edit:
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
@@ -187,8 +198,10 @@ es:
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
         name_help_text: "Este es el título de la fase que los usuarios leerán en el encabezado cuando la fase esté activa."
         save_changes: Guardar cambios
+        title: "Editar fase"
       index:
         help: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
+        title: "Fases de %{budget}"
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
@@ -284,6 +297,24 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
       search_unfeasible: Buscar inviables
+    budgets_wizard:
+      creation_timeline:
+        budget: Presupuesto
+        groups: Grupos
+        headings: Partidas
+        phases: Fases
+      budgets:
+        continue: "Continuar a grupos"
+      groups:
+        back: "Volver a editar presupuesto"
+        continue: "Continuar a partidas"
+      headings:
+        continue: "Continuar a fases"
+      phases:
+        back: "Volver a partidas"
+        continue: "Finalizar"
+        update_all:
+          notice: "Fases configuradas con éxito"
     milestones:
       index:
         table_id: "ID"
