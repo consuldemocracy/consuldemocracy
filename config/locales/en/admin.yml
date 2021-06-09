@@ -121,6 +121,7 @@ en:
         empty_administrators: "There are no administrators"
         empty_valuators: "There are no valuators"
         name_description: "This is the name of the participatory budget used on the header and cards whenever it is active"
+        image_description: "If an image is uplodaded it will be used as the banner on top of this participatory budget, otherwise the default color for budgets will be used."
         main_call_to_action: "Main call to action (optional)"
         main_call_to_action_description: "This link will appear on main banner of this participatory budget and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
         info:

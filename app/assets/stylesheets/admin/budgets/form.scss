@@ -1,5 +1,12 @@
 .admin .budgets-form {
   @include full-width-form;
+  @include direct-uploads;
+
+  .button {
+    &.upload-image {
+      margin-bottom: $line-height / 2;
+    }
+  }
 
   > fieldset {
     border-top: 4px solid $admin-border-color;

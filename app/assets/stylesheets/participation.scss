@@ -1136,6 +1136,12 @@
   padding-bottom: $line-height;
   padding-top: $line-height * 4;
 
+  &.with-background-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   .budget-title {
     font-weight: bold;
     text-transform: uppercase;
