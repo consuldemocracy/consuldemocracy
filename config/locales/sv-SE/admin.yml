@@ -14,6 +14,7 @@ sv:
       edit: Redigera
       configure: Inställningar
       delete: Ta bort
+      confirm_delete: "Är du säker? Den här åtgärden kommer att radera %{resource_name} '%{name}' och kan inte ångras."
     officing_booth:
       title: "Du är funktionär för röststationen på %{booth}. Om detta inte stämmer, fortsätt inte utan ring hjälptelefonnumret. Tack."
     banners:
@@ -106,6 +107,7 @@ sv:
         enabled: Aktiverad
         actions: Åtgärder
         edit_phase: Redigera fas
+        enable_phase: "Aktivera fasen %{phase}"
         active: Aktiva
         blank_dates: Datumfälten är tomma
         administrators:
@@ -133,6 +135,8 @@ sv:
         calculate: Beräkna vinnande budgetförslag
         calculated: Vinnare beräknas, det kan ta en stund.
         recalculate: Räkna om vinnande budgetförslag
+      shared:
+        resource_name: "budgeten"
     budget_groups:
       name: "Namn"
       headings_name: "Områden"
@@ -156,6 +160,7 @@ sv:
       index:
         back: "Gå tillbaka till budgetar"
         help: "Grupper används för att organisera områden. När en grupp har skapats och den innehåller områden går det att fastställa i hur många områden som användaren kan rösta i varje grupp."
+        new_button: "Lägg till ny grupp"
     budget_headings:
       no_headings: "Det finns inga områden."
       amount:
@@ -176,6 +181,8 @@ sv:
         create: "Skapa nytt område"
         edit: "Redigera område"
         submit: "Spara område"
+      group_switcher:
+        currently_showing: "Visar rubriker från gruppen %{group}."
       index:
         back: "Gå tillbaka till grupper"
     budget_phases:
