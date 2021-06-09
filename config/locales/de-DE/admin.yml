@@ -14,6 +14,7 @@ de:
       edit: Bearbeiten
       configure: Konfigurieren
       delete: Löschen
+      confirm_delete: "Sind Sie sicher? Diese Aktion wird %{resource_name} '%{name}' löschen und kann nicht rückgängig gemacht werden."
     officing_booth:
       title: "Sie verlassen den Raum, der sich in %{booth} befindet. Wenn dies nicht korrekt ist, fahren Sie nicht fort und rufen Sie die Hilfe-Rufnummer an. Vielen Dank."
     banners:
@@ -80,6 +81,7 @@ de:
         help: "Bürgerhaushalte ermöglichen es den Bürger: innen, Vorschläge einzubringen und zu entscheiden, wie ein Teil des Haushalts ausgegeben werden soll, wobei die Vorschläge von der Verwaltung kontrolliert und bewertet werden."
         budget_investments: Ausgabenprojekte verwalten
         table_completed: Abgeschlossen
+        table_draft: "Entwurf"
         table_duration: "Laufzeit"
         table_name: Name
         table_phase: Phase
@@ -105,6 +107,7 @@ de:
         enabled: Aktiviert
         actions: Aktionen
         edit_phase: Phase bearbeiten
+        enable_phase: "Phase %{phase} freischalten"
         active: Aktiv
         blank_dates: Das Datumfeld ist leer
         administrators:
@@ -132,6 +135,8 @@ de:
         calculate: Bestbewertete Vorschläge ermitteln
         calculated: Die bestbewerteten Vorschläge werden ermittelt. Dies kann einen Moment dauern.
         recalculate: Bestbewertete Vorschläge neu ermitteln
+      shared:
+        resource_name: "Der Bürgerhaushalt"
     budget_groups:
       name: "Name"
       headings_name: "Rubriken"
@@ -155,6 +160,7 @@ de:
       index:
         back: "Zurück zu Bürgerhaushalten"
         help: "Gruppen sind dazu gedacht, Rubriken zu organisieren. Nachdem eine Gruppe erstellt wurde und sie Rubriken enthält, kann festgelegt werden, in wie vielen Rubriken ein Benutzer pro Gruppe abstimmen kann."
+        new_button: "Neue Gruppe hinzufügen"
     budget_headings:
       no_headings: "Keine Rubriken vorhanden."
       amount:
@@ -175,10 +181,17 @@ de:
         create: "Neue Rubrik erstellen"
         edit: "Rubrik bearbeiten"
         submit: "Rubrik speichern"
+      group_switcher:
+        currently_showing: "Rubriken aus der Gruppe %{group} anzeigen."
+        different_group: "Rubriken einer anderen Gruppe verwalten"
+        the_other_group: "Rubriken aus der Gruppe %{group} verwalten."
       index:
         back: "Zurück zu Gruppen"
+        new_button: "Rubrik hinzufügen"
+        title: "%{budget} / %{group} Rubrik"
     budget_phases:
       edit:
+        title: "Phase bearbeiten"
         description_help_text: Dieser Text erscheint in der Kopfzeile, wenn die Phase aktiv ist
         duration: "Laufzeit dieser Phase"
         duration_description: "Der Zeitraum, in dem diese Phase aktiv sein wird."
@@ -187,6 +200,7 @@ de:
         save_changes: Änderungen speichern
       index:
         help: "Bürgerhaushalte haben verschiedene Phasen. Hier können Sie Phasen aktivieren oder deaktivieren und auch jede einzelne Phase individuell anpassen."
+        title: "%{budget} Phasen"
     budget_investments:
       index:
         heading_filter_all: Alle Überschriften
@@ -282,6 +296,24 @@ de:
         tags_placeholder: "Geben Sie die gewünschten Tags durch Kommas (,) getrennt ein"
         undefined: Undefiniert
       search_unfeasible: Suche undurchführbar
+    budgets_wizard:
+      creation_timeline:
+        budget: Bürgerhaushalt
+        groups: Gruppen
+        headings: Rubriken
+        phases: Phasen
+      budgets:
+        continue: "Weiter zu Gruppen"
+      groups:
+        back: "Zurück zum Bearbeiten von Bürgerhaushalten"
+        continue: "Weiter zu Rubriken"
+      headings:
+        continue: "Weiter zu Phasen"
+      phases:
+        back: "Zurück zu Rubriken"
+        continue: "Abschließen"
+        update_all:
+          notice: "Erfolgreich konfigurierte Phasen"
     milestones:
       index:
         table_id: "ID"
@@ -1408,7 +1440,7 @@ de:
         proposal_created: Bürgervorschläge
       budgets:
         no_data_before_balloting_phase: "Es gibt keine Daten, die vor der Abstimmungsphase angezeigt werden können."
-        title: "Bürgerhaushale - Beteiligung Statistik"
+        title: "Bürgerhaushalte - Beteiligungstatistik"
         supporting_phase: Unterstützungsphase
         balloting_phase: Finale Abstimmung
       budget_balloting:
