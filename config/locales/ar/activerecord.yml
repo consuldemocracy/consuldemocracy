@@ -555,10 +555,6 @@ ar:
           attributes:
             segment_recipient:
               invalid: "شريحة مستلم المستخدم غير صالحة"
-        map_location:
-          attributes:
-            map:
-              invalid: لا يمكن ان يكون موقع الخريطة فارغًا. حدد علامة أو حدد مربع الإختيار اذا لم تكن هناك حاجة لتحديد الموقع
         poll/voter:
           attributes:
             document_number:
