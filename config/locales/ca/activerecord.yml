@@ -500,10 +500,6 @@ ca:
           attributes:
             segment_recipient:
               invalid: "El segment de destinataris d’usuaris no és vàlid"
-        map_location:
-          attributes:
-            map:
-              invalid: La ubicació del mapa no pot estar en blanc. Col·loca un marcador o selecciona la casella de selecció si no és necessària la geolocalització
         poll/voter:
           attributes:
             document_number:
