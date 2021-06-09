@@ -29,6 +29,9 @@ de:
     close: Schließen
     menu: Menü
   comments:
+    actions:
+      confirm_delete: "Sind Sie sicher? Diese Aktion wird den Kommentar löschen. Das Löschen kann nicht rückgängig gemacht werden."
+      delete: "Kommentar löschen"
     comments_closed: Kommentare sind geschlossen
     verified_only: Zur Teilnahme %{verify_account}
     comment:
@@ -344,7 +347,6 @@ de:
       map_location: "Kartenposition"
       map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
       map_remove_marker: "Entfernen Sie die Kartenmarkierung"
-      map_skip_checkbox: "Dieser Vorschlag hat keinen konkreten Ort oder ich kenne ihn nicht."
     index:
       featured_proposals: Hervorgehoben
       orders:
@@ -693,7 +695,11 @@ de:
       from: "Von"
       general: "Mit dem Text"
       general_placeholder: "Text verfassen"
+      goal: "Nach SDG"
+      goal_blank: "Ziel wählen"
       search: "Filter"
+      target: "Nach Ziel"
+      target_blank: "Ziel auswählen"
       title: "Erweiterte Suche"
       to: "An"
     author_info:
