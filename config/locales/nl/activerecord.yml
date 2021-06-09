@@ -363,10 +363,6 @@ nl:
           attributes:
             segment_recipient:
               invalid: "Het onderdeel ontvangers is ongeldig"
-        map_location:
-          attributes:
-            map:
-              invalid: Locatie mag niet leeg zijn. Plaats een markering of vink aan als de locatie niet nodig is
         poll/voter:
           attributes:
             document_number:
