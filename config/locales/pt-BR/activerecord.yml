@@ -535,10 +535,6 @@ pt-BR:
           attributes:
             segment_recipient:
               invalid: "O segmento de destinatários do usuário é inválido"
-        map_location:
-          attributes:
-            map:
-              invalid: Localização no mapa não pode ser em branco. Coloque um marcador ou selecione a caixa de seleção se não houver necessidade de geolocalização
         poll/voter:
           attributes:
             document_number:
