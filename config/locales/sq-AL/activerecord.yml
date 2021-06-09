@@ -318,10 +318,6 @@ sq:
           attributes:
             segment_recipient:
               invalid: "Segmenti i marrësve të përdoruesve është i pavlefshëm"
-        map_location:
-          attributes:
-            map:
-              invalid: Vendndodhja e hartës nuk mund të jetë bosh. Vendosni një shënues ose përzgjidhni kutinë e kontrollit nëse nuk ka nevojë për gjeolokalizim
         poll/voter:
           attributes:
             document_number:
