@@ -8,8 +8,10 @@ class Budget
     translates :name, touch: true
     translates :summary, touch: true
     translates :description, touch: true
+    translates :main_link_text, touch: true
     include Globalizable
     include Sanitizable
+    include Imageable
 
     belongs_to :budget, touch: true
     belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase
@@ -19,6 +21,7 @@ class Budget
     validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validates :budget, presence: true
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: ->(*) { PHASE_KINDS }}
+    validates :main_link_url, presence: true, if: -> { main_link_text.present? }
     validate :invalid_dates_range?
     validate :prev_phase_dates_valid?
     validate :next_phase_dates_valid?

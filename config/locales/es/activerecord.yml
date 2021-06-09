@@ -231,10 +231,12 @@ es:
         enabled: "Fase habilitada"
         ends_at: "Fecha de fin"
         starts_at: "Fecha de inicio"
+        main_link_url: "El enlace te lleva a (añade un enlace)"
       budget/phase/translation:
         name: "Nombre"
         description: "Descripción"
         summary: "Resumen"
+        main_link_text: "Texto del enlace"
       comment:
         body: "Comentario"
         user: "Usuario"

@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe "Admin edit translatable records", :admin do
   before do
+    translatable.main_link_url = "https://consulproject.org" if translatable.is_a?(Budget::Phase)
     translatable.update!(attributes)
   end
 
