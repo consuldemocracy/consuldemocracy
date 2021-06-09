@@ -496,10 +496,6 @@ mk:
           attributes:
             segment_recipient:
               invalid: "Сегментот на корисници што примаат не е валиден"
-        map_location:
-          attributes:
-            map:
-              invalid: Локацијата на мапата не може да биде празна. Поставете означувач или изберете од опциите ако геолокализација не е потребна
         poll/voter:
           attributes:
             document_number:
