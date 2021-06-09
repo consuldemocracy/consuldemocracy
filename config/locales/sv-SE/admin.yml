@@ -304,6 +304,16 @@ sv:
         phases: Faser
       budgets:
         continue: "Fortsätt till grupper"
+      groups:
+        back: "Gå tillbaka för att redigera budget"
+        continue: "Fortsätt till rubriker"
+      headings:
+        continue: "Fortsätt till faser"
+      phases:
+        back: "Gå tillbaka till rubriker"
+        continue: "Avsluta"
+        update_all:
+          notice: "Faser har konfigurerats"
     milestones:
       index:
         table_id: "Legitimation"
