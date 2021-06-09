@@ -459,10 +459,6 @@ ru:
           attributes:
             segment_recipient:
               invalid: "Сегмент получателей пользователя является недействительным"
-        map_location:
-          attributes:
-            map:
-              invalid: Расположение на карте не может быть пустым. Поместите маркер или установите флажок, если геолокация не требуется
         poll/voter:
           attributes:
             document_number:
