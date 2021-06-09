@@ -338,10 +338,6 @@ id:
           attributes:
             segment_recipient:
               invalid: "Segmen penerima pengguna tidak valid"
-        map_location:
-          attributes:
-            map:
-              invalid: Peta lokas tidak boleh kosong. Tempatkan sebuah penanda atau pilih kotak centang jika geolokalisasi tidak diperlukan
         poll/voter:
           attributes:
             document_number:
