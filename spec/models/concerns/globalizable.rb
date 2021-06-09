@@ -13,6 +13,9 @@ shared_examples_for "globalizable" do |factory_name|
   let(:attribute) { required_fields.sample || fields.sample }
 
   before do
+    if factory_name == :budget
+      record.main_link_url = "https://consulproject.org"
+    end
     record.update!(attribute => "In English")
 
     I18n.with_locale(:es) do

@@ -293,6 +293,11 @@ $table-header:   #ecf1f6;
     }
   }
 
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
   .menu.simple {
     margin-bottom: $line-height / 2;
 

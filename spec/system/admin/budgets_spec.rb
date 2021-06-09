@@ -233,6 +233,21 @@ describe "Admin budgets", :admin do
       end
     end
 
+    scenario "Show CTA link in public site if added" do
+      visit edit_admin_budget_path(budget)
+
+      expect(page).to have_content("Main call to action (optional)")
+
+      fill_in "Text on the link", with: "Participate now"
+      fill_in "The link takes you to (add a link)", with: "https://consulproject.org"
+      click_button "Update Budget"
+
+      expect(page).to have_content "Participatory budget updated successfully"
+
+      visit budgets_path
+      expect(page).to have_link("Participate now", href: "https://consulproject.org")
+    end
+
     scenario "Changing name for current locale will update the slug if budget is in draft phase" do
       budget.update!(published: false, name: "Old English Name")
 

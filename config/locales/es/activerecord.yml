@@ -160,7 +160,9 @@ es:
         voting_style: "Estilo de la votación final"
         voting_style_knapsack: Bolsa de dinero
         voting_style_approval: Por aprobación
+        main_link_url: "El enlace te lleva a (añade un enlace)"
       budget/translation:
+        main_link_text: "Texto del enlace"
         name: "Nombre"
       budget/investment:
         heading_id: "Partida presupuestaria"

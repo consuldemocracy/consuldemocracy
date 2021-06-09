@@ -318,6 +318,7 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "main_link_text"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
   end
@@ -362,6 +363,7 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
+    t.string "main_link_url"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
