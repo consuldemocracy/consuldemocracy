@@ -282,10 +282,6 @@ zh-TW:
           attributes:
             segment_recipient:
               invalid: "用戶收件段無效"
-        map_location:
-          attributes:
-            map:
-              invalid: 地圖位置不能為空。 如果不需要地理定位（geolocalization），請放置標記，或選中復選框
         poll/voter:
           attributes:
             document_number:
