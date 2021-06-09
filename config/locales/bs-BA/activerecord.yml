@@ -418,10 +418,6 @@ bs:
           attributes:
             segment_recipient:
               invalid: "Segment primatelja nije ispravan"
-        map_location:
-          attributes:
-            map:
-              invalid: Mora se navesti lokacija na mapi. Stavite marker ili označite kockicu ako nije potrebno označavanje na mapi
         poll/voter:
           attributes:
             document_number:
