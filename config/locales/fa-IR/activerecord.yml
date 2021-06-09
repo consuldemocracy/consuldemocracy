@@ -307,10 +307,6 @@ fa:
           attributes:
             segment_recipient:
               invalid: "بخش دریافت کننده کاربر نامعتبر است."
-        map_location:
-          attributes:
-            map:
-              invalid: مکان نقشه نمیتواند خالی باشد یک نشانگر را قرار دهید یا اگر گزینه geolocalization مورد نیاز نیست، کادر انتخاب را انتخاب کنید.
         poll/voter:
           attributes:
             document_number:
