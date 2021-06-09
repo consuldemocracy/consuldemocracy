@@ -161,6 +161,7 @@ de:
         voting_style_knapsack: "Rucksack"
         voting_style_approval: "Freigabe"
       budget/translation:
+        main_link_text: "Linktext"
         name: "Name"
       budget/investment:
         heading_id: "Rubrik"
