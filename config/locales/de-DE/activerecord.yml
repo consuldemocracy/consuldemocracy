@@ -536,10 +536,6 @@ de:
           attributes:
             segment_recipient:
               invalid: "Das Benutzer*innensegment ist ungültig"
-        map_location:
-          attributes:
-            map:
-              invalid: Der Kartenstandort darf nicht leer sein. Platzieren Sie einen Marker oder aktivieren Sie das Kontrollkästchen, wenn eine Standorterkennung nicht möglich ist
         poll/voter:
           attributes:
             document_number:
