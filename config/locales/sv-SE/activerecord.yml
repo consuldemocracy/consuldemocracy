@@ -535,10 +535,6 @@ sv:
           attributes:
             segment_recipient:
               invalid: "Mottagardelen innehåller fel"
-        map_location:
-          attributes:
-            map:
-              invalid: Geografisk position kan inte lämnas tomt. Placera en markör eller markera kryssrutan om geografisk position inte är tillämpbar
         poll/voter:
           attributes:
             document_number:
