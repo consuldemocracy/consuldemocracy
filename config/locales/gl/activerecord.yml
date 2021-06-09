@@ -402,10 +402,6 @@ gl:
           attributes:
             segment_recipient:
               invalid: "O segmento de destinatarios é inválido"
-        map_location:
-          attributes:
-            map:
-              invalid: A localización no mapa non pode estar en branco. Podes engadir un punto ao mapa ou marcar a cela se non é necesario o mapa
         poll/voter:
           attributes:
             document_number:
