@@ -266,10 +266,6 @@ eu:
           attributes:
             segment_recipient:
               invalid: "Erabiltzaile segmentua baliogabekoa da"
-        map_location:
-          attributes:
-            map:
-              invalid: Mapa ezin da hutsik gelditu. Puntu bat gehitu mapan edo maparik ez dela behar markatu.
         poll/voter:
           attributes:
             document_number:
