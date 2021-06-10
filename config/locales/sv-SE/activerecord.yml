@@ -231,10 +231,12 @@ sv:
         enabled: "Fasen är aktiverad"
         ends_at: "Slutdatum"
         starts_at: "Startdatum"
+        main_link_url: "Länken leder till (lägg till en länk)"
       budget/phase/translation:
         name: "Namn"
         description: "Beskrivning"
         summary: "Sammanfattning"
+        main_link_text: "Text på länken"
       comment:
         body: "Kommentar"
         user: "Användare"
