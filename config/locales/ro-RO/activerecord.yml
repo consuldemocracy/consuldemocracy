@@ -205,6 +205,7 @@ ro:
         voting_style: "Votare finală"
         voting_style_knapsack: "Votare de tip Knapsack"
         voting_style_approval: "Aprobare"
+        main_link_url: "Link-ul te duce către (adaugă un link)"
       budget/translation:
         name: "Nume"
       budget/investment:
@@ -274,6 +275,7 @@ ro:
         enabled: "Etapă activată"
         ends_at: "Data de sfârșit"
         starts_at: "Data de început"
+        main_link_url: "Link-ul te duce către (adaugă un link)"
       budget/phase/translation:
         name: "Nume"
         description: "Descriere"
