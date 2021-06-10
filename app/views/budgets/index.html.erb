@@ -48,7 +48,7 @@
               </div>
             <% end %>
           <% end %>
-          
+
         <% if can?(:read_results, current_budget) %>
           <%= link_to t("budgets.show.see_results"),
                       budget_results_path(current_budget, heading_id: current_budget.headings.first),
