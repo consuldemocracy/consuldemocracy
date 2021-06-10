@@ -14,6 +14,7 @@ ro:
       edit: Editează
       configure: Configurează
       delete: Șterge
+      confirm_delete: "Sunteți sigur? Această acțiune va șterge %{resource_name} '%{name}' și nu se poate reveni."
     officing_booth:
       title: "Oficiați cabina situată la%{booth}. Dacă acest lucru nu este corect, nu continuați și apelați numărul de telefon de ajutor. Mulțumesc."
     banners:
@@ -106,6 +107,7 @@ ro:
         enabled: Activat
         actions: Acțiuni
         edit_phase: Editează etapă
+        enable_phase: "Activați etapa %{phase}"
         active: Activ
         blank_dates: Datele nu sunt completate
         administrators:
@@ -135,6 +137,8 @@ ro:
         calculate: Calculați Investițiile Câștigătoare
         calculated: Se calculează câștigătorii, poate dura un minut.
         recalculate: Recalculați Investițiile Câștigătoare
+      shared:
+        resource_name: "bugetul"
     budget_groups:
       name: "Nume"
       headings_name: "Rubrici"
@@ -159,6 +163,7 @@ ro:
       index:
         back: "Mergi înapoi la bugete"
         help: "Grupurile sunt menite să organizeze titluri. După ce un grup este creat și conține titluri, se poate stabili în câte titluri poate vota un utilizator pe grup."
+        new_button: "Adaugă un grup nou"
     budget_headings:
       no_headings: "Nu există rubrici."
       amount:
@@ -185,6 +190,7 @@ ro:
         help: "Rubricile sunt menite să împartă banii din bugetul participativ. Aici puteți adăuga titluri pentru acest grup și puteți atribui suma de bani care va fi utilizată pentru fiecare titlu."
     budget_phases:
       edit:
+        title: "Editează etapă"
         description_help_text: Acest text va apărea în antet atunci când faza este activă
         duration: "Durata etapei"
         duration_description: "Perioada de timp în care va fi activă această etapă."
@@ -288,6 +294,15 @@ ro:
         tags_placeholder: "Scrieți etichetele pe care le doriți separate prin virgule (,)"
         undefined: Nedefinit
       search_unfeasible: Căutarea este imposibilă
+    budgets_wizard:
+      creation_timeline:
+        budget: Buget
+        groups: Grupuri
+        phases: Etape
+      budgets:
+        continue: "Continuă către grupuri"
+      headings:
+        continue: "Continuă către etape"
     milestones:
       index:
         table_id: "ID"
