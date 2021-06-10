@@ -82,7 +82,9 @@ describe "SDG homepage configuration" do
       visit sdg_management_homepage_path
 
       within ".sdg-header" do
-        accept_confirm { click_button "Delete" }
+        accept_confirm("Are you sure? This action will delete \"SDG Header\" and can't be undone.") do
+          click_button "Delete"
+        end
       end
 
       expect(page).not_to have_content "SDG Header"

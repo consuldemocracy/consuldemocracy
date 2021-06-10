@@ -86,10 +86,13 @@ describe "Local Targets" do
 
   describe "Destroy" do
     scenario "Shows succesful notice when local target is destroyed successfully" do
-      create(:sdg_local_target, code: "1.1.1")
+      sdg_local_target = create(:sdg_local_target, code: "1.1.1")
       visit sdg_management_local_targets_path
 
-      accept_confirm { click_button "Delete" }
+      confirmation = "Are you sure? This action will delete "\
+        "\"#{sdg_local_target.title}\" and can't be undone."
+
+      accept_confirm(confirmation) { click_button "Delete" }
 
       expect(page).to have_content("Local target deleted successfully")
       expect(page).not_to have_content("1.1.1")

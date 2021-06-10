@@ -28,7 +28,9 @@ describe "Admin poll officers", :admin do
   end
 
   scenario "Delete" do
-    accept_confirm { click_button "Delete position" }
+    accept_confirm("Are you sure? This action will delete \"#{officer.name}\" and can't be undone.") do
+      click_button "Delete position"
+    end
 
     expect(page).not_to have_css "#officers"
   end

@@ -30,7 +30,9 @@ describe "Admin managers", :admin do
   scenario "Delete Manager" do
     visit admin_managers_path
 
-    accept_confirm { click_button "Delete" }
+    accept_confirm("Are you sure? This action will delete \"#{manager.name}\" and can't be undone.") do
+      click_button "Delete"
+    end
 
     within("#managers") do
       expect(page).not_to have_content manager.name
@@ -90,7 +92,9 @@ describe "Admin managers", :admin do
       fill_in "Search user by name or email", with: manager2.email
       click_button "Search"
 
-      accept_confirm { click_button "Delete" }
+      accept_confirm("Are you sure? This action will delete \"#{manager2.name}\" and can't be undone.") do
+        click_button "Delete"
+      end
 
       expect(page).to have_content(manager1.email)
       expect(page).not_to have_content(manager2.email)
