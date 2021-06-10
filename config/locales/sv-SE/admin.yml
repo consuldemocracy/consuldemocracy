@@ -121,6 +121,7 @@ sv:
         empty_administrators: "Det finns inga administratörer"
         empty_valuators: "Det finns inga bedömare"
         name_description: "Detta är medborgarbudgetens namn som används i rubriken och på korten när den är aktiv"
+        image_description: "Om det laddas upp en bild används den som banner ovanför denna medborgarbudget, annars används den förvalda färgen för budgetar."
         main_call_to_action: "Huvudsaklig uppmaning (valfritt)"
         main_call_to_action_description: "Länken kommer att visas på huvudbannern för den här medborgarbudgeten och uppmuntrar din användare att utföra en specifik åtgärd som t.ex. att skapa ett nytt förslag, rösta på befintliga eller lära sig mer om processen."
         info:
@@ -198,6 +199,9 @@ sv:
         duration: "Fasens varaktighet"
         duration_description: "Den tidsperiod som den här fasen blir aktiv."
         enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål
+        image_description: "Om det laddas upp en bild visas den bredvid beskrivningen av fasen."
+        main_call_to_action: "Huvudsaklig uppmaning (valfritt)"
+        main_call_to_action_description: "Länken kommer att visas på huvudbannern för den här medborgarbudgeten när denna fas aktiveras och uppmuntrar din användare att utföra en specifik åtgärd som t.ex. att skapa ett nytt förslag, rösta på befintliga eller lära sig mer om processen."
         name_help_text: "Detta är fasens titel som användare ser i sidhuvudet när fasen är aktiv."
         save_changes: Spara ändringar
       index:
