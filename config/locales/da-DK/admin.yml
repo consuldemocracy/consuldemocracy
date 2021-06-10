@@ -85,6 +85,7 @@ da:
         title: Rediger deltagerbudget
         delete: Slet budget
         phase: Fase
+        phases_caption: "Faser"
         enabled: Aktiveret
         actions: Handlinger
         edit_phase: Rediger fase
