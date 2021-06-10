@@ -47,7 +47,6 @@ end
 
 Capybara.exact = true
 Capybara.enable_aria_label = true
-Capybara.default_set_options = { clear: :backspace }
 Capybara.disable_animation = true
 
 OmniAuth.config.test_mode = true
