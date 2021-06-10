@@ -124,6 +124,7 @@ ro:
         empty_valuators: "Nu există evaluatori"
         name_description: "Acesta este numele bugetului participativ utilizat pe antet și carduri ori de câte ori este activ"
         image_description: "Dacă o imagine este încărcată, aceasta va fi folosită ca banner în partea de sus a acestui buget participativ, în caz contrar va fi utilizată culoarea implicită pentru bugete."
+        main_call_to_action_description: "Acest link va apărea pe bannerul principal al acestui buget participativ și va încuraja utilizatorul să efectueze o acțiune specifică, cum ar fi crearea unei propuneri, votarea celor existente sau să afle mai multe despre proces."
         info:
           budget_settings: "Setări generale ale bugetului participativ"
           phases_settings: "Setările fazelor"
