@@ -1,1 +1,18 @@
 de:
+  sdg_management:
+    homepage:
+      header:
+        create: "Kopfzeile erstellen"
+        no_cards: "Keine Kopfzeile vorhanden"
+        title: "Kopfzeile"
+    menu:
+      debates: "Debatten"
+      polls: "Umfragen"
+      proposals: "Vorschläge"
+      sdg_content: "Ziele und Vorgaben"
+    relations:
+      index:
+        filter: "Filter"
+        filters:
+          all: "Alle"
+          pending_sdg_review: "Ausstehend"
