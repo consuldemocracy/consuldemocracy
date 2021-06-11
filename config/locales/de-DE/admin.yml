@@ -86,6 +86,9 @@ de:
         table_name: Name
         table_phase: Phase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Mehrere Rubriken"
+        type_pending: "Offen: Noch keine Rubrik"
+        type_single: "Einzelne Rubrik"
         edit_groups: Gruppierungen von Rubriken bearbeiten
         edit_budget: Bürgerhaushalt bearbeiten
         admin_ballots: Admin Stimmzettel
@@ -305,8 +308,14 @@ de:
         continue: "Weiter zu Rubriken"
       headings:
         continue: "Weiter zu Phasen"
+      heading_mode:
+        title: "Bürgerhaushaltstyp"
       phases:
         continue: "Abschließen"
+        multiple:
+          back: "Zurück zu Rubriken"
+        single:
+          back: "Zurück zum Bearbeiten von Rubriken"
         update_all:
           notice: "Erfolgreich konfigurierte Phasen"
     milestones:
