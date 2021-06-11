@@ -78,7 +78,6 @@ sv:
           all: Alla
           open: Öppna
           finished: Avslutade
-        help: "I en medborgarbudget kan medborgare föreslå och bestämma direkt hur en del av budgeten ska användas, med institutionell övervakning och rigorös utvärdering av förslag."
         budget_investments: Hantera projekt
         table_completed: Färdiga
         table_draft: "Utkast"
@@ -132,8 +131,6 @@ sv:
         success_notice: Budgeten raderades
         unable_notice: Du kan inte ta bort en budget som har budgetförslag
         unable_notice_polls: Du kan inte ta bort en budget som har en kopplad enkät
-      new:
-        title: Ny medborgarbudget
       winners:
         calculate: Beräkna vinnande budgetförslag
         calculated: Vinnare beräknas, det kan ta en stund.
@@ -162,7 +159,6 @@ sv:
         submit: "Spara delbudget"
       index:
         back: "Gå tillbaka till budgetar"
-        help: "Grupper används för att organisera områden. När en grupp har skapats och den innehåller områden går det att fastställa i hur många områden som användaren kan rösta i varje grupp."
         new_button: "Lägg till ny grupp"
     budget_headings:
       no_headings: "Det finns inga områden."
@@ -205,7 +201,6 @@ sv:
         name_help_text: "Detta är fasens titel som användare ser i sidhuvudet när fasen är aktiv."
         save_changes: Spara ändringar
       index:
-        help: "Medborgarbudgetar har olika faser. Här kan du aktivera eller inaktivera faser, samt också anpassa varje enskild fas."
         title: "%{budget}-faser"
     budget_investments:
       index:
@@ -316,7 +311,6 @@ sv:
       headings:
         continue: "Fortsätt till faser"
       phases:
-        back: "Gå tillbaka till rubriker"
         continue: "Avsluta"
         update_all:
           notice: "Faser har konfigurerats"
