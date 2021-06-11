@@ -155,7 +155,7 @@ de:
         add: Stimme
         already_added: Sie haben diesen Ausgabenvorschlag bereits hinzugefügt
         already_supported: Sie haben diesen Ausgabenvorschlag bereits unterstützt. Jetzt teilen!
-        support_title: Unterstützen Sie dieses Projekt
+        support_title: "Unterstützen Sie dieses Projekt"
         confirm_group:
           one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
           other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
