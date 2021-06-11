@@ -71,7 +71,6 @@ hr:
         map_location: "Lokacija na mapi"
         map_location_instructions: "Pronađi lokaciju na mapi i stavi marker."
         map_remove_marker: "Ukloni marker na mapi"
-        map_skip_checkbox: "Ova investicija nema konkretnu lokaciju ili ja nisam toga svijestan."
       index:
         title: Participativno budžetiranje
         unfeasible: Neizvedive investicije za projekte
