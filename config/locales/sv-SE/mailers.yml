@@ -76,7 +76,7 @@ sv:
       subject: "Ny kommentar kring utvärdering"
       title: Ny kommentar kring utvärdering för %{investment}
       hi: Hej
-      new_comment_by: Det finns en ny kommentar kring utvärdering från <strong>%{commenter}</strong> för budgetförslaget %{investment}
+      new_comment_by: Det finns en ny utvärderingskommentar från <strong>%{commenter}</strong> om budgetinvesteringen %{investment}
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Fler nyheter om ditt medborgarförslag"
