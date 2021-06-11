@@ -78,7 +78,6 @@ tr:
           all: Tümü
           open: Açık
           finished: Bitmiş
-        help: "Katılımcı bütçeler, vatandaşların teklif vermesine ve bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesine olanak tanımakla beraber, tekliflerin kurum tarafından izlenmesine ve titiz bir şekilde değerlendirilmesine de olanak tanır."
         budget_investments: Projeleri yönetme
         table_completed: Tamamlandı
         table_draft: "Taslak"
@@ -128,8 +127,6 @@ tr:
         success_notice: Bütçe başarıyla silindi
         unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
         unable_notice_polls: İlişkili bir ankete sahip bir bütçeyi silemezsiniz
-      new:
-        title: Yeni katılımcı bütçe
       winners:
         calculate: Kazanan Yatırımları Hesapla
         calculated: Kazananlar hesaplanıyor, bu bir dakika sürebilir.
@@ -158,7 +155,6 @@ tr:
         submit: "Grubu kaydet"
       index:
         back: "Bütçelere geri dön"
-        help: "Grupların başlıkları düzenlemesi hedeflenmiştir. Grup ve içerikleri oluşturulduktan sonra, bir kullanıcının grup başına kaç başlıkta oy verebileceğini belirlemek mümkündür."
         new_button: "Yeni grup ekle"
     budget_headings:
       no_headings: "Hiç başlık yok."
@@ -185,7 +181,6 @@ tr:
         the_other_group: "%{group} grubundan başlıkları yönetin."
       index:
         back: "Gruplara geri dön"
-        help: "Başlıklar, katılımcı bütçedeki parayı ayırmak içindir. Burada, grup için başlıklar ekleyebilir ve her başlık için kullanılacak miktarı belirleyebilirsiniz."
         new_button: "Yeni başlık ekle"
         title: "%{budget} / %{group} başlıkları"
     budget_phases:
@@ -198,7 +193,6 @@ tr:
         name_help_text: "Bu, bu aşama etkin olduğunda kullanıcıların başlıkta okuyacağı başlıktır."
         save_changes: Değişiklikleri kaydet
       index:
-        help: "Katılımcı bütçelerin farklı aşamaları vardır. Burada, aşamaları etkinleştirip devre dışı bırakabilir ve her bir aşamayı özelleştirebilirsiniz."
         title: "%{budget} aşamaları"
     budget_investments:
       index:
@@ -309,7 +303,6 @@ tr:
       headings:
         continue: "Aşamalara devam et"
       phases:
-        back: "Başlıklara geri dön"
         continue: "Bitir"
         update_all:
           notice: "Aşamalar başarıyla yapılandırıldı"
