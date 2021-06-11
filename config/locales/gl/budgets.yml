@@ -59,7 +59,6 @@ gl:
         map_location: "Localización no mapa"
         map_location_instructions: "Navega polo mapa até a localización e coloca o marcador."
         map_remove_marker: "Borrar o marcador do mapa"
-        map_skip_checkbox: "Este investimento non ten unha localización concreta ou non a coñezo."
       index:
         title: Orzamentos participativos
         unfeasible: Propostas de investimento non viables
