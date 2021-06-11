@@ -161,7 +161,7 @@ describe "Admin budget groups", :admin do
 
       visit budget_group_path(budget, id: "old-english-name")
 
-      expect(page).to have_content "Select an option"
+      expect(page).to have_content "Select a heading"
 
       visit edit_admin_budget_group_path(budget, group)
 
@@ -173,7 +173,7 @@ describe "Admin budget groups", :admin do
 
       visit budget_group_path(budget, id: "new-english-name")
 
-      expect(page).to have_content "Select an option"
+      expect(page).to have_content "Select a heading"
     end
   end
 

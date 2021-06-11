@@ -65,7 +65,6 @@ describe "Budget Investments" do
         expect(page).to have_content user.document_number
       end
 
-      select "Health", from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a park in my neighborhood"
       fill_in_ckeditor "Description", with: "There is no parks here..."
       fill_in "budget_investment_location", with: "City center"
@@ -397,7 +396,7 @@ describe "Budget Investments" do
         expect(page).to have_content(low_investment.title)
       end
 
-      select "Whole city: District Nine", from: "heading_id"
+      select "District Nine", from: "heading_id"
       click_button("Search")
 
       within "#budget-investments" do

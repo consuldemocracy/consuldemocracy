@@ -1,0 +1,79 @@
+.budget-investment-new {
+  $border-width: 4px;
+
+  > * {
+    @include grid-row;
+    @include grid-column-gutter;
+  }
+
+  header {
+    @include has-fa-icon(building, regular, after);
+    align-items: center;
+    border: $border-width solid;
+    color: $brand-secondary;
+    border-bottom-right-radius: rem-calc(12);
+    border-top-right-radius: rem-calc(12);
+    display: flex;
+    margin-bottom: $line-height * 2;
+    margin-top: $line-height * 2;
+
+    @include breakpoint(large) {
+      padding-right: $line-height;
+    }
+
+    &::after {
+      display: none;
+
+      @include breakpoint(large) {
+        display: block;
+        font-size: rem-calc(100);
+        margin-left: $line-height;
+      }
+    }
+
+    h1 {
+      @include brand-background($brand-secondary);
+      @include background-till-left-of-screen;
+      @include has-fa-icon(chart-pie, solid, after);
+      align-items: center;
+      display: flex;
+      flex: 1;
+      font-size: rem-calc(36);
+      margin-bottom: 0;
+      padding: $line-height * 2 0;
+
+      @include breakpoint(large) {
+        clip-path: polygon(
+          -100vw -#{$border-width},
+          100% -#{$border-width},
+          calc(100% - #{rem-calc(20)}) 50%,
+          100% calc(100% + #{$border-width}),
+          -100vw calc(100% + #{$border-width})
+        );
+        font-size: rem-calc(44);
+      }
+
+      &::before {
+        top: -$border-width;
+        height: calc(100% + 2 * #{$border-width});
+      }
+
+      &::after {
+        display: none;
+
+        @include breakpoint(medium) {
+          display: block;
+          font-size: 2em;
+          margin-left: auto;
+          margin-right: rem-calc(60);
+        }
+      }
+
+      span span {
+        display: block;
+        font-size: 0.75em;
+        margin-top: $line-height / 2;
+      }
+    }
+  }
+}

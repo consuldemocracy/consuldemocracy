@@ -42,7 +42,7 @@ en:
         casted_offline: You have already participated offline
     groups:
       show:
-        title: Select an option
+        title: Select a heading
         unfeasible_title: Unfeasible investments
         unfeasible: See unfeasible investments
         unselected_title: Investments not selected for balloting phase
@@ -78,6 +78,8 @@ en:
       milestones: Milestones
     investments:
       form:
+        title: "Create a budget investment"
+        subtitle: "%{heading} (%{price})"
         tag_category_label: "Categories"
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags

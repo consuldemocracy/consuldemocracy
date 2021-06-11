@@ -27,3 +27,17 @@
     max-width: none;
   }
 }
+
+@mixin background-till-left-of-screen {
+  position: relative;
+
+  &::before {
+    background: inherit;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 100vw;
+  }
+}
