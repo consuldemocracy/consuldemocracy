@@ -121,6 +121,7 @@ cs:
         already_added: Tento investiční projekt jste již přidali
         already_supported: Tento návrh jste již podpořili. Sdílejte jej!
         support_title: "Podpořit tento projekt"
+        price_title: "Cena"
         supports:
           zero: Žádná podpora
         give_support: Podpořte!
