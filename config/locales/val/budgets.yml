@@ -55,7 +55,6 @@ val:
         map_location: "Ubicació en el mapa"
         map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
         map_remove_marker: "Eliminar marcador"
-        map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la conec."
       index:
         title: Pressupostos participatius
         unfeasible: Propostes d'inversió no viables
