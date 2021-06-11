@@ -52,7 +52,6 @@ fa:
         map_location: "نقشه محل"
         map_location_instructions: "نقشه محل حرکت و نشانگر محل."
         map_remove_marker: "حذف  نشانگر نقشه"
-        map_skip_checkbox: "این سرمایه گذاری مکان خاصی ندارد و من از آن آگاه نیستم."
       index:
         title: بودجه مشارکتی
         unfeasible: سرمایه گذاری غیر قابل پیش بینی
