@@ -96,7 +96,7 @@ sq:
         add: Votim
         already_added: Ju e keni shtuar tashmë këtë projekt investimi
         already_supported: Ju e keni mbështetur tashmë këtë projekt investimi. Shperndaje!
-        support_title: Mbështetni këtë projekt
+        support_title: "Mbështetni këtë projekt"
         confirm_group:
           one: "Ju mund të mbështesni vetëm investimet në %{count} rrethe .Nëse vazhdoni ju nuk mund të ndryshoni zgjedhjen e rrethit tuaj. A je i sigurt?"
           other: "Ju mund të mbështesni vetëm investimet në %{count} rrethe .Nëse vazhdoni ju nuk mund të ndryshoni zgjedhjen e rrethit tuaj. A je i sigurt?"
