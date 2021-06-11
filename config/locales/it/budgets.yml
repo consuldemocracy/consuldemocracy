@@ -69,7 +69,6 @@ it:
         map_location: "Posizione sulla mappa"
         map_location_instructions: "Scorri la mappa sino a individuare il luogo giusto e posiziona il segnaposto."
         map_remove_marker: "Rimuovi segnaposto"
-        map_skip_checkbox: "Questo investimento non ha una precisa collocazione geografica ovvero io non ne sono a conoscenza."
       index:
         title: Bilancio partecipativo
         unfeasible: Progetti di investimento irrealizzabili
