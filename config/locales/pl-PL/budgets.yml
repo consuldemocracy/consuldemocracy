@@ -98,7 +98,7 @@ pl:
         add: Głos
         already_added: Dodałeś już ten projekt inwestycyjny
         already_supported: Już wsparłeś ten projekt inwestycyjny. Udostępnij go!
-        support_title: Wesprzyj ten projekt
+        support_title: "Wesprzyj ten projekt"
         confirm_group:
           one: "Możesz wspierać jedynie inwestycje w %{count} dzielnicy. Jeśli postanowisz kontynuować, nie będzie możliwości zmiany wyboru Twojej dzielnicy. Czy jesteś pewny/a?"
           few: "Możesz wspierać tylko inwestycje w dzielnicy %{count}  Jeśli będziesz kontynuować, nie będziesz mógł/a zmienić dzielnicy. Jesteś pewny/a?  "
