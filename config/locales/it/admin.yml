@@ -103,8 +103,6 @@ it:
         success_notice: Bilancio cancellato con successo
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
         unable_notice_polls: Non puoi eliminare un budget che non ha un sondaggio associato
-      new:
-        title: Nuovo bilancio partecipativo
       winners:
         calculate: Calcolare gli investimenti del vincitore
         calculated: Stiamo calcolando i vincitori, ciò potrebbe richiedere alcuni minuti.
