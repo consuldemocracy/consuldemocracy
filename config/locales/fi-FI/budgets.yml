@@ -29,7 +29,7 @@ fi:
         author: Tekijä
       investment:
         add: Ääni
-        support_title: Tue tätä projektia
+        support_title: "Tue tätä projektia"
         supports:
           zero: Ei tukijoita
           one: 1 tukija
