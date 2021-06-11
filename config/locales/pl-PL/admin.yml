@@ -89,8 +89,6 @@ pl:
       destroy:
         success_notice: Budżet został pomyślnie usunięty
         unable_notice: Nie możesz zniszczyć budżetu, który wiąże powiązane inwestycje
-      new:
-        title: Nowy budżet partycypacyjny
       winners:
         calculate: Oblicz Inwestycje Zwycięzców
         calculated: Liczenie zwycięzców może potrwać minutę.
