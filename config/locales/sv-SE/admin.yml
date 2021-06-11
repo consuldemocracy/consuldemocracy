@@ -335,6 +335,7 @@ sv:
         single:
           description: "Skapa en process med en grupp, distrikt eller ämne. Du har en pengasäck, så att säga. Till exempel 25 000 € för distriktet, eller 10 000 € för kultur."
           link: "Skapa budget med ett enda område"
+          title: "Budget med <strong>ett enda område</strong>"
         title: "Typ av medborgarbudget"
       phases:
         continue: "Avsluta"
