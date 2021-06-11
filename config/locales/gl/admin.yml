@@ -89,8 +89,6 @@ gl:
       destroy:
         success_notice: Orzamento eliminado correctamente
         unable_notice: Non se pode eliminiar un orzamento con proxectos asociados
-      new:
-        title: Novo orzamento cidadán
       winners:
         calculate: Calcular propostas gañadoras
         calculated: Calculando gañadoras, pode tardar un minuto.
