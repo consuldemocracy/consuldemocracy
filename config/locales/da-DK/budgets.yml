@@ -85,7 +85,6 @@ da:
         map_location: "Lokation"
         map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
         map_remove_marker: "Fjern markøren"
-        map_skip_checkbox: "Denne investering har ikke en konkret lokation"
       index:
         title: Deltagerbudgetter
         unfeasible: Projekter, der ikke er mulige at gennemføre
