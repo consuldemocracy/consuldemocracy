@@ -56,7 +56,6 @@ fr:
         map_location: "Emplacement sur la carte"
         map_location_instructions: "Positionnez le marqueur à l'emplacement correspondant sur la carte."
         map_remove_marker: "Supprimer le marqueur"
-        map_skip_checkbox: "Cet investissement n'a pas d'emplacement concret, à ma connaissance."
       index:
         title: Budget participatif
         unfeasible: Propositions d'investissement irréalisables
