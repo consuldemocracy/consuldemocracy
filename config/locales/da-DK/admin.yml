@@ -105,8 +105,6 @@ da:
         success_notice: Budgettet blev slettet
         unable_notice: Du kan ikke slette et budget, der har modtaget projektidéer fra brugere
         unable_notice_polls: Du kan ikke slette et budget med et tilknyttet valgsted
-      new:
-        title: Nyt deltagerbudget
       winners:
         calculate: Beregn resultat
         calculated: Udregner vinderne, det kan tage et minut.
