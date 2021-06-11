@@ -89,8 +89,6 @@ so:
       destroy:
         success_notice: Misaaniyada sii guul ah ayaa loo tirtiray
         unable_notice: Ma jebin kartid miisaaniyad maalgelinta la xidhiidha
-      new:
-        title: Misaniyada cusub ee kaqaybqaadashada
       winners:
         calculate: Xisaabi kugulestayasha Malgelinta
         calculated: Xisaabinta kugulestayashu waxay qadaneysaa daqiiqado.
