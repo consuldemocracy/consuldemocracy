@@ -63,7 +63,6 @@ oc:
         map_location: "Ubicacion de la mapa"
         map_location_instructions: "Desplaçatz-vos a la mapa fins a l'ubicacion e metètz-i lo mercado."
         map_remove_marker: "Elimina lo mercador de mapa"
-        map_skip_checkbox: "Aquela inversion a pas una ubicacion concrèta o ne sabi pas."
       index:
         title: de Budgèts ciutadans
         unfeasible: de Proposicions d'inversion pas viabla
