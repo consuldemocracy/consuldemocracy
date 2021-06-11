@@ -128,6 +128,7 @@ de:
           random: zufällig
           confidence_score: am besten bewertet
           price: nach Preis
+        read_more: "Weiterlesen"
       share:
         message: "Ich habe einen Ausgabenvorschlag %{title} in %{handle} erstellt. Erstellen Sie auch einen Ausgabenvorschlag!"
       show:
@@ -159,6 +160,7 @@ de:
         confirm_group:
           one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
           other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
+        price_title: "Preis"
         supports:
           zero: Keine Unterstützung
           one: 1 Unterstützer*in
