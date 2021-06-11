@@ -89,8 +89,6 @@ zh-CN:
       destroy:
         success_notice: 预算已成功删除
         unable_notice: 您不能销毁具有相关投资的预算
-      new:
-        title: 新的参与性预算
       winners:
         calculate: 计算胜出者投资
         calculated: 计算胜出者中，可能需要一分钟时间。
