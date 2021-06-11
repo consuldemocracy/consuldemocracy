@@ -89,8 +89,6 @@ zh-TW:
       destroy:
         success_notice: 預算已成功刪除
         unable_notice: 您無法銷毀具有相關投資的預算
-      new:
-        title: 新的參與性預算
       winners:
         calculate: 計算勝出者投資
         calculated: 勝出者正在被計算中，可能需要一分鐘。
