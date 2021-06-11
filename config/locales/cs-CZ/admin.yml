@@ -89,8 +89,6 @@ cs:
       destroy:
         success_notice: Rozpočet byl smazán
         unable_notice: Nemůžete odstranit rozpočet, který je propojený s investicemi
-      new:
-        title: Nový participativní rozpočet
       winners:
         calculate: Vypočítat vítěznou investici
         calculated: Výpočet vítězných investic může chvíli trvat.
