@@ -8,6 +8,9 @@ describe "Budgets wizard, first step", :admin do
       click_link "Create multiple headings budget"
 
       fill_in "Name", with: "M30 - Summer campaign"
+      fill_in "Text on the link", with: "Participate now!"
+      fill_in "The link takes you to (add a link)", with: "https://consulproject.org"
+      fill_in "Name", with: "M30 - Summer campaign"
       click_button "Continue to groups"
 
       expect(page).to have_content "New participatory budget created successfully!"
