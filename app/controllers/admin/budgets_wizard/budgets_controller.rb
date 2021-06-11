@@ -37,8 +37,8 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BudgetsWizard::BaseContro
     end
 
     def allowed_params
-      valid_attributes = [:currency_symbol, :voting_style, administrator_ids: [], valuator_ids: [],
-                          image_attributes: image_attributes]
+      valid_attributes = [:currency_symbol, :voting_style, :main_link_url, administrator_ids: [],
+                          valuator_ids: [], image_attributes: image_attributes]
 
       valid_attributes + [translation_params(Budget)]
     end
