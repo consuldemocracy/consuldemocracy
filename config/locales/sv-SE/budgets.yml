@@ -78,6 +78,7 @@ sv:
       milestones: Milstolpar
     investments:
       form:
+        subtitle: "%{heading} (%{price})"
         tag_category_label: "Kategorier"
         tags_instructions: "Tagga förslaget. Du kan välja från de föreslagna kategorier eller lägga till egna"
         tags_label: Taggar
