@@ -97,7 +97,7 @@ val:
         add: Vot
         already_added: Ja has afegit aquesta proposta d'inversió
         already_supported: Ja has avalat aquest projecte d'inversió. Comparteixlo!
-        support_title: Avalar este projecte
+        support_title: "Avalar este projecte"
         confirm_group:
           one: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
           other: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
