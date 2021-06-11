@@ -85,7 +85,6 @@ tr:
         map_location: "Harita konumu"
         map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
         map_remove_marker: "Harita işaretçisini kaldır"
-        map_skip_checkbox: "Bu yatırımla ilgili somut bir yer yok veya ben farkında değilim."
       index:
         title: Katılımcı bütçeleme
         unfeasible: Uygulanabilir olmayan yatırım projeleri
