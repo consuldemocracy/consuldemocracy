@@ -54,7 +54,6 @@ eu:
         map_location: "Kokapena mapan"
         map_location_instructions: "Mapatik ibili kokalekura heldu arte eta markagailua jarri."
         map_remove_marker: "Markagailua ezabatu"
-        map_skip_checkbox: "Proposamen honek ez du kokaleku zehatzik edo ez dut ezagutzen."
       index:
         title: Partaidetzazko aurrekontuak
         unfeasible: Gastu proiektu bideragarriezinak
