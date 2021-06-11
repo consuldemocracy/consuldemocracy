@@ -92,7 +92,7 @@ sl:
         add: Glasuj
         already_added: Ta naložbeni projekt si že dodal
         already_supported: Ta naložbeni projekt si že podprl. Deli ga z drugimi!
-        support_title: Podpri ta projekt
+        support_title: "Podpri ta projekt"
         supports:
           zero: brez podpore
         give_support: Glasuj za predlog!
