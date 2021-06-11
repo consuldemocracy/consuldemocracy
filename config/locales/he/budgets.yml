@@ -57,7 +57,6 @@ he:
         map_location: "מיקום מפה"
         map_location_instructions: "נווט במפה למיקום ומקם את הסמן."
         map_remove_marker: "הסר סמן מפה"
-        map_skip_checkbox: "להשקעה זו אין מיקום מדויק או שאיני מודע למיקום."
       index:
         title: מימון השתתפותי
         unfeasible: פרויקטים להשקעה שאינם ברי ביצוע
