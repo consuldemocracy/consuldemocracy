@@ -101,7 +101,7 @@ gl:
         add: Voto
         already_added: Xa engadiches esta proposta de investimento
         already_supported: Xa apoiaches este proxecto de investimento. Compárteo!
-        support_title: Apoiar este proxecto
+        support_title: "Apoiar este proxecto"
         confirm_group:
           one: "Só pode apoiar investimentos en %{count} distrito. De continuar, non poderá cambiarse de distrito. Está seguro?"
           other: "Só pode apoiar investimentos en %{count} distritos. De continuar, non poderá cambiarse de distrito. Está seguro?"
