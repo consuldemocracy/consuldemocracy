@@ -89,8 +89,6 @@ sq:
       destroy:
         success_notice: Buxheti u fshi me sukses
         unable_notice: Ju nuk mund të shkatërroni një Buxhet që ka investime të lidhura
-      new:
-        title: Buxheti i ri pjesëmarrës
       winners:
         calculate: Llogaritni investimet e fituesit
         calculated: Fituesit duke u llogaritur, mund të marrë një minutë.
