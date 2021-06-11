@@ -78,6 +78,8 @@ de:
       milestones: Meilensteine
     investments:
       form:
+        title: "Eine Budgetinvestitionen erstellen"
+        subtitle: "%{heading} (%{price})"
         tag_category_label: "Kategorien"
         tags_instructions: "Markieren Sie den Vorschlag. Sie können einen Tag auswählen oder selbst erstellen"
         tags_label: Tags
@@ -174,6 +176,8 @@ de:
         price: "Dieser Bereich verfügt über einen Haushalt von"
     show:
       see_results: Ergebnisse anzeigen
+      see_all_investments: "Alle Budgetinvestitionen anzeigen"
+      investments_list: "Liste der Budgetinvestitionen"
     results:
       link: Ergebnisse
       page_title: "%{budget} - Ergebnisse"
