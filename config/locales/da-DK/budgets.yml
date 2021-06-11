@@ -155,7 +155,7 @@ da:
         add: Stem
         already_added: Du har allerede tilføjet projektet
         already_supported: Du har allerede støttet dette forslag. Del det!
-        support_title: Støt forslaget
+        support_title: "Støt forslaget"
         confirm_group:
           one: "Du kan kun støtte op om forslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
           other: "Du kan kun støtte op om projektidéer i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
