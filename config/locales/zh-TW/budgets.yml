@@ -94,7 +94,7 @@ zh-TW:
         add: 票
         already_added: 您已經添加了此投資項目
         already_supported: 您已經支持此投資項目。把它分享吧!
-        support_title: 支持此項目
+        support_title: "支持此項目"
         confirm_group:
           other: "您只能支持 %{count} 個區域中的投資。若你要繼續，你就不能改變你所在地區的選舉。是否確定？"
         supports:
