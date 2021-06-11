@@ -55,7 +55,6 @@ zh-CN:
         map_location: "地图位置"
         map_location_instructions: "将地图导航到该位置并放置标记。"
         map_remove_marker: "删除地图标记"
-        map_skip_checkbox: "此投资没有具体的位置或者我并不知道。"
       index:
         title: 参与性预算
         unfeasible: 不可行的投资项目
