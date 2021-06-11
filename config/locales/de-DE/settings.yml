@@ -89,6 +89,8 @@ de:
       facebook_login_description: "Anmeldung mit Facebook-Account erlauben"
       google_login: "Google login"
       google_login_description: "Anmeldung mit Google-Account erlauben"
+      wordpress_login: "Wordpress-Login"
+      wordpress_login_description: "Anmeldung mit Wordpress-Account erlauben"
       featured_proposals: "Veröffentlichte Vorschläge"
       featured_proposals_description: "Zeigt veröffentlichte Vorschläge auf der Index Vorschlags-Seite"
       signature_sheets: "Unterschriftenbögen"
