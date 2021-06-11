@@ -126,6 +126,36 @@ describe "Budgets" do
 
       expect(page).to have_content "There are no budgets"
     end
+
+    scenario "Show heading for budget with single heading" do
+      group = create(:budget_group, budget: budget, name: "Single group")
+      create(:budget_heading, group: group, name: "New heading", price: 10_000)
+
+      visit budgets_path
+
+      expect(page).not_to have_content "Single group"
+
+      within ".single-heading" do
+        expect(page).to have_content "New heading"
+        expect(page).to have_content "€10,000"
+      end
+    end
+
+    scenario "Show group and headings for budget with multiple headings" do
+      group = create(:budget_group, budget: budget, name: "New group")
+      create(:budget_heading, group: group, name: "New heading", price: 10_000)
+      create(:budget_heading, group: group, name: "Other new heading", price: 30_000)
+
+      visit budgets_path
+
+      within("#groups_and_headings") do
+        expect(page).to have_content "New group"
+        expect(page).to have_content "New heading"
+        expect(page).to have_content "€10,000"
+        expect(page).to have_content "Other new heading"
+        expect(page).to have_content "€30,000"
+      end
+    end
   end
 
   scenario "Index shows only published phases" do
@@ -269,6 +299,123 @@ describe "Budgets" do
       visit budget_path(budget)
 
       expect(page).to have_link "See results"
+    end
+
+    scenario "Show link to see all investments" do
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      create_list(:budget_investment, 3, :selected, heading: heading, price: 999)
+
+      budget.update!(phase: "informing")
+
+      visit budget_path(budget)
+      expect(page).not_to have_link "See all investments"
+
+      %w[accepting reviewing selecting valuating].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+        expect(page).to have_link "See all investments",
+                                  href: budget_investments_path(budget)
+      end
+
+      %w[publishing_prices balloting reviewing_ballots].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+        expect(page).to have_link "See all investments",
+                                  href: budget_investments_path(budget)
+      end
+
+      budget.update!(phase: "finished")
+
+      visit budget_path(budget)
+      expect(page).to have_link "See all investments",
+                                  href: budget_investments_path(budget)
+    end
+
+    scenario "Show investments list" do
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      create_list(:budget_investment, 3, :selected, heading: heading, price: 999)
+
+      %w[informing finished].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+
+        expect(page).not_to have_content "List of investments"
+        expect(page).not_to have_css ".investments-list"
+        expect(page).not_to have_css ".budget-investment"
+      end
+
+      %w[accepting reviewing selecting].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+
+        within(".investments-list") do
+          expect(page).to have_content "List of investments"
+          expect(page).not_to have_content "SUPPORTS"
+          expect(page).not_to have_content "PRICE"
+        end
+      end
+
+      budget.update!(phase: "valuating")
+
+      visit budget_path(budget)
+
+      within(".investments-list") do
+        expect(page).to have_content "List of investments"
+        expect(page).to have_content("SUPPORTS", count: 3)
+        expect(page).not_to have_content "PRICE"
+      end
+
+      %w[publishing_prices balloting reviewing_ballots].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+
+        within(".investments-list") do
+          expect(page).to have_content "List of investments"
+          expect(page).to have_content("PRICE", count: 3)
+        end
+      end
+    end
+
+    scenario "Do not show investments list when budget has multiple headings" do
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading_1 = create(:budget_heading, group: group)
+      create(:budget_heading, group: group)
+
+      create_list(:budget_investment, 3, :selected, heading: heading_1, price: 999)
+
+      %w[accepting reviewing selecting].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+
+        expect(page).not_to have_css ".investments-list"
+      end
+
+      budget.update!(phase: "valuating")
+
+      visit budget_path(budget)
+
+      expect(page).not_to have_css ".investments-list"
+
+      %w[publishing_prices balloting reviewing_ballots].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+
+        expect(page).not_to have_css ".investments-list"
+      end
     end
   end
 
