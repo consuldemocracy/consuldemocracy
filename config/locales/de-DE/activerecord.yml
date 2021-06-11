@@ -235,6 +235,7 @@ de:
         name: "Name"
         description: "Beschreibung"
         summary: "Zusammenfassung"
+        main_link_text: "Linktext"
       comment:
         body: "Kommentar"
         user: "Benutzer*in"
