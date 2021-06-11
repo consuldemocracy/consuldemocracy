@@ -93,8 +93,6 @@ id:
         success_notice: Anggaran berhasil dihapus
         unable_notice: Anda tidak bisa menghancurkan Anggaran yang telah mempunyai investasi terkait
         unable_notice_polls: Anda tidak dapat menghapus anggaran yang sudah di diskusikan
-      new:
-        title: Anggaran partisipatif baru
       winners:
         calculate: Menghitung Pemenang Investasi
         calculated: Pemenang dihitung, mungkin perlu waktu beberapa menit.
