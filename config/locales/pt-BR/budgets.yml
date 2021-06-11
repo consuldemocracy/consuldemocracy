@@ -148,6 +148,7 @@ pt-BR:
         confirm_group:
           one: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
           other: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
+        price_title: "Preço"
         supports:
           zero: Nenhum apoio
           one: 1 apoio
