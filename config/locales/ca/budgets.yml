@@ -81,7 +81,6 @@ ca:
         map_location: "Ubicació del mapa"
         map_location_instructions: "Desplaceu-vos al mapa fins a la ubicació i poseu-hi el marcador."
         map_remove_marker: "Elimina el marcador de mapa"
-        map_skip_checkbox: "Aquesta inversió no té una ubicació concreta o no en sé."
       index:
         title: Pressupostos ciutadans
         unfeasible: Propostes d'inversió no viables
