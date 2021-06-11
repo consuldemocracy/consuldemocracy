@@ -113,7 +113,7 @@ sv:
       allow_attached_documents: "Tillåt uppladdning och visning av dokument"
       allow_attached_documents_description: "Tillåter användare att skicka in dokument när de skapar förslag och budgetförslag i medborgarbudgetar"
       guides: "Instruktioner för att skapa förslag eller budgetförslag"
-      guides_description: "Visar en guide över skillnaderna mellan förslag och budgetförslag om det finns en aktiv medborgarbudget"
+      guides_description: "Visar en guide över skillnaderna mellan förslag och investeringsprojekt om det finns en aktiv medborgarbudget"
       public_stats: "Offentlig statistik"
       public_stats_description: "Visar offentlig statistik i administratörspanelen"
       help_page: "Hjälpsida"
