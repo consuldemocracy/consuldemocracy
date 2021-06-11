@@ -125,7 +125,7 @@ sv:
       remote_census: "Konfigurera anslutning till fjärradressregister (SOAP)"
       remote_census_description: "Tillåter konfiguration av anslutningen till fjärradressregistret för varje institution"
       valuation_comment_notification: "Avisering om bedömningskommentar"
-      valuation_comment_notification_description: "Skicka e-post till alla berörda användare, utom den som gör kommentaren till budgetförslaget, när en ny bedömningskommentar skapas"
+      valuation_comment_notification_description: "Skicka e-post till alla berörda användare, utom den som gör kommentaren till budgetinvesteringen, när en ny kostnadsberäkningskommentar skapas"
       graphql_api: "GraphQL API"
       dashboard:
         notification_emails: "Dashboard för e-postaviseringar"
