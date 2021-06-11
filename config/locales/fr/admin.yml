@@ -91,8 +91,6 @@ fr:
         success_notice: Le budget a été supprimé avec succès
         unable_notice: Vous ne pouvez pas détruire un budget qui a des investissements associés
         unable_notice_polls: Vous ne pouvez pas détruire un budget qui est associé à un sondage
-      new:
-        title: Nouveau budget citoyen
       winners:
         calculate: Calculer les investissements gagnant
         calculated: Le calcul des gagnants peut prendre quelques minutes.
