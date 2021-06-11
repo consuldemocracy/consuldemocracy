@@ -78,8 +78,6 @@ sl:
       destroy:
         success_notice: Proračun uspešno izbrisan
         unable_notice: Ne moreš uničiti proračuna, ki ima povezane naložbe
-      new:
-        title: Nov participatorni proračun
       winners:
         calculate: Izračunaj zmagovalne naložbe
         calculated: Kalkuliram zmagovalce, morda bo malo trajalo.
