@@ -76,8 +76,6 @@ es-PE:
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
-      new:
-        title: Nuevo presupuesto ciudadano
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
