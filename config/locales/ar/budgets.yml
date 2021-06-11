@@ -57,7 +57,6 @@ ar:
         map_location: "موقع الخريطة"
         map_location_instructions: "تنقل في الخريطة الى الموقع و ضع العلامة."
         map_remove_marker: "ازل علامة الخريطة"
-        map_skip_checkbox: "الاستثمار لا يملك موقع ملموس او لست على دراية به."
       index:
         title: الميزانية التشاركية
         unfeasible: الاستثمارات الغير مجدية
