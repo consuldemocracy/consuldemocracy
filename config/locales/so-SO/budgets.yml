@@ -96,7 +96,7 @@ so:
         add: Codeyn
         already_added: Waxaad horeyba ugu dartay mashruucan maalgashiga
         already_supported: Waxaad hore u taageertay mashruucan maalgashiga. La wadaag!
-        support_title: Tageer Mashruucaan
+        support_title: "Tageer Mashruucaan"
         confirm_group:
           one: "Waxaad kaliya ku taageeri kartaa maalgelinada%{count} degmada. Haddii aad sii wado, ma beddeli kartid doorashada degmadaada. Ma hubtaa?"
           other: "Waxaad kaliya ku taageeri kartaa maalgelinada%{count} degmada. Haddii aad sii wado, ma beddeli kartid doorashada degmadaada. Ma hubtaa?"
