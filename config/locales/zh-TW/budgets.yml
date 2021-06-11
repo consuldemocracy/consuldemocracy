@@ -55,7 +55,6 @@ zh-TW:
         map_location: "地圖位置"
         map_location_instructions: "將地圖導航到該位置，並放置標記。"
         map_remove_marker: "刪除地圖標記"
-        map_skip_checkbox: "這項投資沒有具體的位置, 或我沒有注意到。"
       index:
         title: 參與式預算編制
         unfeasible: 不可行的投資項目
