@@ -57,7 +57,6 @@ id:
         map_location: "Peta lokasi"
         map_location_instructions: "Menavigasi peta lokasi dan tempat penanda."
         map_remove_marker: "Menghapus penanda peta"
-        map_skip_checkbox: "Investasi ini tidak memiliki lokasi yang konkret atau aku tidak menyadari itu."
       index:
         title: Penganggaran partisipatif
         unfeasible: Proyek-proyek investasi tidak layak
