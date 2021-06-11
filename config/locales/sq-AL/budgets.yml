@@ -55,7 +55,6 @@ sq:
         map_location: "Vendndodhja në hartë"
         map_location_instructions: "Lundroni në hartë në vendndodhje dhe vendosni shënuesin."
         map_remove_marker: "Hiq shënuesin e hartës"
-        map_skip_checkbox: "Ky investim nuk ka një vend konkret ose nuk jam i vetëdijshëm për të."
       index:
         title: Buxhetet  pjesëmarrës
         unfeasible: Investimet e papranueshme
