@@ -127,7 +127,7 @@ hr:
         add: Glas
         already_added: Vi ste već dodali ovo investicijskom projektu
         already_supported: Vi ste već poduprli ovaj investicijksi projekt. Podijelite ga!
-        support_title: Poduprite ovaj projekt
+        support_title: "Poduprite ovaj projekt"
         confirm_group:
           one: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
           few: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
