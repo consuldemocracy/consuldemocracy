@@ -87,8 +87,6 @@ eu:
       destroy:
         success_notice: Aurrekontua ondo ezabatuta
         unable_notice: Ezin da ezabatu proiektuak elkartuta dituen aurrekonturik.
-      new:
-        title: Herri aurrekontu berria
       winners:
         calculate: Proposamen irabazleak kalkulatu
         calculated: Irabazleak kalkulatzen, minutu bat tarda dezake.
