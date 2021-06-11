@@ -78,7 +78,6 @@ ro:
           all: Tot
           open: Deschide
           finished: Terminat
-        help: "Bugetele participative permit cetățenilor să propună și să decidă direct cum să cheltuiască o parte din buget, cu monitorizare și evaluare riguroasă a propunerilor de către instituție."
         budget_investments: Administrează proiecte
         table_completed: Completat
         table_draft: "Schiță"
@@ -133,8 +132,6 @@ ro:
         success_notice: Buget șters cu succes
         unable_notice: Nu puteți șterge un buget care are investiții asociate
         unable_notice_polls: Nu puteți șterge un buget care are un sondaj asociat
-      new:
-        title: Buget participativ nou
       winners:
         calculate: Calculați Investițiile Câștigătoare
         calculated: Se calculează câștigătorii, poate dura un minut.
@@ -164,7 +161,6 @@ ro:
         submit: "Salvează grup"
       index:
         back: "Mergi înapoi la bugete"
-        help: "Grupurile sunt menite să organizeze titluri. După ce un grup este creat și conține titluri, se poate stabili în câte titluri poate vota un utilizator pe grup."
         new_button: "Adaugă un grup nou"
     budget_headings:
       no_headings: "Nu există rubrici."
@@ -189,7 +185,6 @@ ro:
         submit: "Salvează rubrică"
       index:
         back: "Înapoi la grupuri"
-        help: "Rubricile sunt menite să împartă banii din bugetul participativ. Aici puteți adăuga titluri pentru acest grup și puteți atribui suma de bani care va fi utilizată pentru fiecare titlu."
     budget_phases:
       edit:
         title: "Editează etapă"
@@ -199,8 +194,6 @@ ro:
         enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
         name_help_text: "Acesta este titlul pe care utilizatorii îl vor citi în antet de fiecare când etapa va fi activă."
         save_changes: Salvează modificări
-      index:
-        help: "Bugetele participative au faze diferite. Aici puteți activa sau dezactiva fazele și, de asemenea, personaliza fiecare fază individuală."
     budget_investments:
       index:
         heading_filter_all: Toate rubricile
