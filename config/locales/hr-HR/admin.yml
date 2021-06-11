@@ -105,8 +105,6 @@ hr:
         success_notice: Budžet je uspješno obrisan
         unable_notice: Ne možete obrisati budžet koji ima povezane investicije
         unable_notice_polls: Nemožete obrisati budžet koji ima povezane glasove
-      new:
-        title: Novi participativni budžet
       winners:
         calculate: Izračunaj Pobjedničke Investicije
         calculated: Pobjednici se izračunavaju, potrebna je minuta.
