@@ -104,8 +104,6 @@ pt-BR:
         success_notice: Orçamento excluído com sucesso
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
         unable_notice_polls: Não é possível excluir um orçamento com uma votação associada
-      new:
-        title: Novo orçamento participativo
       winners:
         calculate: Calcular os investimentos vencedores
         calculated: Vencedores sendo calculados, pode demorar um minuto.
