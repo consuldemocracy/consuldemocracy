@@ -78,6 +78,7 @@ sv:
       milestones: Milstolpar
     investments:
       form:
+        title: "Skapa en budgetinvestering"
         subtitle: "%{heading} (%{price})"
         tag_category_label: "Kategorier"
         tags_instructions: "Tagga förslaget. Du kan välja från de föreslagna kategorier eller lägga till egna"
