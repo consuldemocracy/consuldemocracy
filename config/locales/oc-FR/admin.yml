@@ -103,8 +103,6 @@ oc:
         success_notice: Lo budgèt s'es suprimit corrèctament
         unable_notice: Podètz pas suprimir un budgèt qu'aja d'inversions associadas
         unable_notice_polls: Podètz pas suprimir un budgèt qu'aja un sondatge associat
-      new:
-        title: Nòu budgèt ciutadan
       winners:
         calculate: Calculatz las inversions del ganhant
         calculated: Se calcularàn los ganhants, pòt trigar una minuta.
