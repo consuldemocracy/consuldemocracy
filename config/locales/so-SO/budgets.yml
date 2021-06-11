@@ -55,7 +55,6 @@ so:
         map_location: "Goobta Khariirada"
         map_location_instructions: "Ku dhaji khariidada meesha ay ku taallan tahay kuna calaamadee sumadeeyaha."
         map_remove_marker: "Ka saar sumadaha khariidada"
-        map_skip_checkbox: "Malgashigana meel latabn karo anigu ama anigu waxba kama ogi."
       index:
         title: Misaaniyada kaqayb qadashada
         unfeasible: Mashaariicda maalgashiga aan macquulka ahayn
