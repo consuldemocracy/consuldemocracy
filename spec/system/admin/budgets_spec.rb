@@ -30,8 +30,10 @@ describe "Admin budgets", :admin do
       budget = create(:budget, :accepting)
       visit admin_budgets_path
 
-      expect(page).to have_content budget.name
-      expect(page).to have_content "Accepting projects"
+      within "tr", text: budget.name do
+        expect(page).to have_content "Accepting projects"
+        expect(page).to have_content "Pending: No headings yet"
+      end
     end
 
     scenario "Filters by phase" do
@@ -188,7 +190,7 @@ describe "Admin budgets", :admin do
 
         visit edit_admin_budget_path(budget)
 
-        expect(page).to have_select "Phase", selected: "Selecting projects"
+        expect(page).to have_select "Active phase", selected: "Selecting projects"
 
         expect(page).to have_table "Phases", with_cols: [
           [
@@ -202,14 +204,14 @@ describe "Admin budgets", :admin do
             "Reviewing voting"
           ],
           [
-            "2015-07-15 00:00:00 - 2015-08-14 23:59:59",
-            "2015-08-15 00:00:00 - 2015-09-14 23:59:59",
-            "2015-09-15 00:00:00 - 2015-10-14 23:59:59",
-            "2015-10-15 00:00:00 - 2015-11-14 23:59:59",
-            "2015-11-15 00:00:00 - 2015-12-14 23:59:59",
-            "2015-11-15 00:00:00 - 2016-01-14 23:59:59",
-            "2016-01-15 00:00:00 - 2016-02-14 23:59:59",
-            "2016-02-15 00:00:00 - 2016-03-14 23:59:59"
+            "2015-07-15 00:00 - 2015-08-14 23:59",
+            "2015-08-15 00:00 - 2015-09-14 23:59",
+            "2015-09-15 00:00 - 2015-10-14 23:59",
+            "2015-10-15 00:00 - 2015-11-14 23:59",
+            "2015-11-15 00:00 - 2015-12-14 23:59",
+            "2015-11-15 00:00 - 2016-01-14 23:59",
+            "2016-01-15 00:00 - 2016-02-14 23:59",
+            "2016-02-15 00:00 - 2016-03-14 23:59"
           ],
           [
             "Yes",

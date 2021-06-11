@@ -78,14 +78,17 @@ en:
           all: All
           open: Open
           finished: Finished
-        help: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
         budget_investments: Manage projects
+        table_budget_type: "Type"
         table_completed: Completed
         table_draft: "Draft"
         table_duration: "Duration"
         table_name: Name
         table_phase: Phase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Multiple headings"
+        type_pending: "Pending: No headings yet"
+        type_single: "Single heading"
         edit_groups: Edit headings groups
         edit_budget: Edit budget
         admin_ballots: Admin ballots
@@ -133,7 +136,17 @@ en:
         unable_notice: You cannot delete a budget that has associated investments
         unable_notice_polls: You cannot delete a budget that has an associated poll
       new:
-        title: New participatory budget
+        title_multiple: New multiple headings budget
+        title_single: New single heading budget
+      help:
+        budgets: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
+        groups:
+          multiple: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
+          single: "Groups are meant to organize headings, since this budget will only contain one heading, the same name can be used because it will not appear anywhere. You can just continue with the next step."
+        headings:
+          multiple: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
+          single: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
+        phases: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -162,7 +175,6 @@ en:
         submit: "Save group"
       index:
         back: "Go back to budgets"
-        help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
         new_button: "Add new group"
     budget_headings:
       no_headings: "There are no headings."
@@ -190,7 +202,6 @@ en:
         the_other_group: "Manage headings from the %{group} group."
       index:
         back: "Go back to groups"
-        help: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
         new_button: "Add new heading"
         title: "%{budget} / %{group} headings"
     budget_phases:
@@ -206,7 +217,6 @@ en:
         name_help_text: "This is the title of the phase users will read on the header whenever this phase is active."
         save_changes: Save changes
       index:
-        help: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
         title: "%{budget} phases"
     budget_investments:
       index:
@@ -316,9 +326,24 @@ en:
         continue: "Continue to headings"
       headings:
         continue: "Continue to phases"
+        single:
+          back: "Go back to edit group"
+      heading_mode:
+        multiple:
+          description: "Create a process with multiple groups, districts or topics. You have something like several bags of money. For example, 25,000€ for \"North District\", 30,000€ for \"Center District\", 28,000€ for \"South District\" and the whole city. Or for several themes like sport, culture or health."
+          link: "Create multiple headings budget"
+          title: "<strong>Multiple headings</strong> budget"
+        single:
+          description: "Create a process with a group, district or topic. You have something like a bag of money. For example, 25,000€ for the district, or 10,000€ for culture."
+          link: "Create single heading budget"
+          title: "<strong>Single heading</strong> budget"
+        title: "Participatory budget type"
       phases:
-        back: "Go back to headings"
         continue: "Finish"
+        multiple:
+          back: "Go back to headings"
+        single:
+          back: "Go back to edit heading"
         update_all:
           notice: "Phases configured successfully"
     milestones:
@@ -1357,6 +1382,7 @@ en:
       example_url: "https://consulproject.org"
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
+      close_modal: Close modal
       example_url: "https://consulproject.org"
     geozones:
       index:

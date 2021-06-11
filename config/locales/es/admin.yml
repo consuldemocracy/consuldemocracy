@@ -78,14 +78,17 @@ es:
           all: Todos
           open: Abiertos
           finished: Terminados
-        help: "Los presupuestos participativos permiten que los ciudadanos propongan y decidan de manera directa cómo gastar parte del presupuesto, con un seguimiento y evaluación riguroso de las propuestas por parte de la institución."
         budget_investments: Gestionar proyectos de gasto
+        table_budget_type: "Tipo"
         table_completed: Completado
         table_draft: "Borrador"
         table_duration: "Duración"
         table_name: Nombre
         table_phase: Fase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Múltiples partidas"
+        type_pending: "Pendiente: Aún no hay partidas"
+        type_single: "Partida única"
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
@@ -133,7 +136,17 @@ es:
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
         unable_notice_polls: No se puede eliminar un presupuesto con una votación asociada
       new:
-        title: Nuevo presupuesto ciudadano
+        title_multiple: Nuevo presupuesto de múltiples partidas
+        title_single: Nuevo presupuesto de partida única
+      help:
+        budgets: "Los presupuestos participativos permiten que los ciudadanos propongan y decidan de manera directa cómo gastar parte del presupuesto, con un seguimiento y evaluación riguroso de las propuestas por parte de la institución."
+        groups:
+          multiple: "Los grupos sirven para organizar las partidas del presupuesto. Después de que un grupo sea creado y éste contenga partidas, es posible determinar el número de partidas a las que un usuario puede votar por grupo."
+          single: "Los grupos sirven para organizar las partidas del presupuesto, como este presupuesto sólo contendrá una partida, se puede usar el mismo nombre y éste no aparecerá en ninguna parte. Puedes continuar con el siguiente paso."
+        headings:
+          multiple: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
+          single: "Las partidas sirven para dividir el dinero del presupuesto participativo. Como este presupuesto solo tendrá una partida aquí podrás establecer la cantidad de dinero que se gastará en este presupuesto participativo."
+        phases: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
@@ -162,7 +175,6 @@ es:
         submit: "Guardar grupo"
       index:
         back: "Volver a presupuestos"
-        help: "Los grupos sirven para organizar las partidas del presupuesto. Después de que un grupo sea creado y éste contenga partidas, es posible determinar el número de partidas a las que un usuario puede votar por grupo."
         new_button: "Añadir un grupo nuevo"
     budget_headings:
       no_headings: "No hay partidas."
@@ -190,7 +202,6 @@ es:
         the_other_group: "Ir a partidas del grupo %{group}."
       index:
         back: "Volver a grupos"
-        help: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
         new_button: "Añadir una partida nueva"
         title: "Partidas de %{budget} / %{group}"
     budget_phases:
@@ -206,7 +217,6 @@ es:
         save_changes: Guardar cambios
         title: "Editar fase"
       index:
-        help: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
         title: "Fases de %{budget}"
     budget_investments:
       index:
@@ -316,9 +326,24 @@ es:
         continue: "Continuar a partidas"
       headings:
         continue: "Continuar a fases"
+        single:
+          back: "Volver a editar grupo"
+      heading_mode:
+        multiple:
+          description: "Crea un proceso con múltiples grupos, distritos o temas. Tienes algo como varias bolsas de dinero. Por ejemplo, 25.000€ para \"Distrito norte\", 30.000€ para \"Distrito centro\", 28.000€ para \"Distrito sur\" y toda la ciudad. O para varios temas como deporte, cultura o salud."
+          link: "Crear presupuesto de múltiples partidas"
+          title: "Presupuesto de <strong>múltiples partidas</strong>"
+        single:
+          description: "Crea un proceso con un grupo, distrito o tema. Tienes algo como una bolsa de dinero. Por ejemplo, 25.000€ para un distrito, o 10.000€ para cultura."
+          link: "Crear presupuesto de partida única"
+          title: "Presupuesto de <strong>partida única</strong>"
+        title: Tipo de presupuesto participativo
       phases:
-        back: "Volver a partidas"
         continue: "Finalizar"
+        multiple:
+          back: "Volver a partidas"
+        single:
+          back: "Volver a editar partida"
         update_all:
           notice: "Fases configuradas con éxito"
     milestones:
@@ -1356,6 +1381,7 @@ es:
       example_url: "https://consulproject.org"
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
+      close_modal: Cerrar ventana emergente
       example_url: "https://consulproject.org"
     geozones:
       index:

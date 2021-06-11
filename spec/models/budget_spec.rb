@@ -447,4 +447,43 @@ describe Budget do
       expect(Valuator.count).to be 1
     end
   end
+
+  describe "#single_heading?" do
+    it "returns false for budgets with no groups nor headings" do
+      expect(create(:budget).single_heading?).to be false
+    end
+
+    it "returns false for budgets with one group and no headings" do
+      create(:budget_group, budget: budget)
+
+      expect(budget.single_heading?).to be false
+    end
+
+    it "returns false for budgets with multiple groups and one heading" do
+      2.times { create(:budget_group, budget: budget) }
+      create(:budget_heading, group: budget.groups.last)
+
+      expect(budget.single_heading?).to be false
+    end
+
+    it "returns false for budgets with one group and multiple headings" do
+      group = create(:budget_group, budget: budget)
+      2.times { create(:budget_heading, group: group) }
+
+      expect(budget.single_heading?).to be false
+    end
+
+    it "returns false for budgets with one group and multiple headings" do
+      2.times { create(:budget_group, budget: budget) }
+      2.times { create(:budget_heading, group: budget.groups.sample) }
+
+      expect(budget.single_heading?).to be false
+    end
+
+    it "returns true for budgets with one group and one heading" do
+      create(:budget_heading, group: create(:budget_group, budget: budget))
+
+      expect(budget.single_heading?).to be true
+    end
+  end
 end

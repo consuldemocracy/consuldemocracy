@@ -7,5 +7,5 @@
   <%= link_to t("admin.budget_groups.form.create"), new_admin_budget_group_path %>
 </header>
 
-<%= render Admin::Budgets::HelpComponent.new("budget_groups") %>
+<%= render Admin::Budgets::HelpComponent.new("groups") %>
 <%= render Admin::BudgetGroups::GroupsComponent.new(@groups) %>

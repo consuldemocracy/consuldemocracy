@@ -12,7 +12,11 @@ class Admin::BudgetsWizard::Headings::CreationStepComponent < ApplicationCompone
     end
 
     def form_path
-      admin_budgets_wizard_budget_group_headings_path(heading.group.budget, heading.group)
+      if heading.persisted?
+        admin_budgets_wizard_budget_group_heading_path(heading.group.budget, heading.group, heading)
+      else
+        admin_budgets_wizard_budget_group_headings_path(heading.group.budget, heading.group)
+      end
     end
 
     def next_step_path

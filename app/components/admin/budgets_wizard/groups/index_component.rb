@@ -1,4 +1,4 @@
-class Admin::BudgetsWizard::Groups::IndexComponent < ApplicationComponent
+class Admin::BudgetsWizard::Groups::IndexComponent < Admin::BudgetsWizard::BaseComponent
   include Header
   attr_reader :groups, :new_group
 

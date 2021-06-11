@@ -13,7 +13,11 @@ class Admin::BudgetsWizard::Groups::CreationStepComponent < ApplicationComponent
     end
 
     def form_path
-      admin_budgets_wizard_budget_groups_path(budget)
+      if group.persisted?
+        admin_budgets_wizard_budget_group_path(budget, group)
+      else
+        admin_budgets_wizard_budget_groups_path(budget)
+      end
     end
 
     def next_step_path

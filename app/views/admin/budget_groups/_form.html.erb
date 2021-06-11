@@ -3,6 +3,8 @@
 
   <%= render "shared/errors", resource: group %>
 
+  <%= render Admin::BudgetsWizard::ModelFieldComponent.new %>
+
   <%= f.translatable_fields do |translations_form| %>
     <div class="small-12 medium-6 column end">
       <%= translations_form.text_field :name, maxlength: 50 %>
@@ -18,6 +20,10 @@
   <% end %>
 
   <div class="clear">
-    <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button hollow" %>
+    <% if respond_to?(:single_heading?) && single_heading? %>
+      <%= f.submit t("admin.budgets_wizard.groups.continue"), class: "button success" %>
+    <% else %>
+      <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button hollow" %>
+    <% end %>
   </div>
 <% end %>

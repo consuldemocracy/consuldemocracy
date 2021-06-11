@@ -155,7 +155,7 @@ en:
         description_balloting: "Description during Balloting phase"
         description_reviewing_ballots: "Description during Reviewing Ballots phase"
         description_finished: "Description when the budget is finished"
-        phase: "Phase"
+        phase: "Active phase"
         currency_symbol: "Currency"
         voting_style: "Final voting style"
         voting_style_knapsack: "Knapsack"

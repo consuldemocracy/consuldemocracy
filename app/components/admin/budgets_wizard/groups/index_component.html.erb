@@ -2,8 +2,10 @@
 
 <%= header %>
 
-<%= render Admin::Budgets::HelpComponent.new("budget_groups") %>
+<%= render Admin::Budgets::HelpComponent.new("groups") %>
 <%= render Admin::BudgetsWizard::CreationTimelineComponent.new("groups") %>
 
-<%= render Admin::BudgetGroups::GroupsComponent.new(groups) %>
+<% unless single_heading? %>
+  <%= render Admin::BudgetGroups::GroupsComponent.new(groups) %>
+<% end %>
 <%= render Admin::BudgetsWizard::Groups::CreationStepComponent.new(new_group, groups.first) %>

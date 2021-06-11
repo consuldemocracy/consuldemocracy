@@ -1,4 +1,4 @@
-class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
+class Admin::BudgetsWizard::BudgetsController < Admin::BudgetsWizard::BaseController
   include Translatable
   include ImageAttributes
   include FeatureFlags
@@ -44,6 +44,6 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
     end
 
     def groups_index
-      admin_budgets_wizard_budget_groups_path(@budget)
+      admin_budgets_wizard_budget_groups_path(@budget, url_params)
     end
 end
