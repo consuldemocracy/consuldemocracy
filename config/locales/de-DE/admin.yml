@@ -79,6 +79,7 @@ de:
           open: Offen
           finished: Abgeschlossen
         budget_investments: Ausgabenprojekte verwalten
+        table_budget_type: "Typ"
         table_completed: Abgeschlossen
         table_draft: "Entwurf"
         table_duration: "Laufzeit"
