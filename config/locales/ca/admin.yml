@@ -103,8 +103,6 @@ ca:
         success_notice: El pressupost s'ha suprimit correctament
         unable_notice: No podeu suprimir un pressupost que tingui inversions associades
         unable_notice_polls: No podeu suprimir un pressupost que tingui un sondeig associat
-      new:
-        title: Nou pressupost ciutadà
       winners:
         calculate: Calculeu les inversions del guanyador
         calculated: Es calcularan els guanyadors, pot trigar un minut.
