@@ -144,7 +144,7 @@ pt-BR:
         add: Voto
         already_added: Você já adicionou este projeto de investimento
         already_supported: Você já apoiou esta proposta de investimento. Compartilhe!
-        support_title: Apoiar este projeto
+        support_title: "Apoiar este projeto"
         confirm_group:
           one: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
           other: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
