@@ -79,12 +79,16 @@ tr:
           open: Açık
           finished: Bitmiş
         budget_investments: Projeleri yönetme
+        table_budget_type: "Tür"
         table_completed: Tamamlandı
         table_draft: "Taslak"
         table_duration: "Süreç"
         table_name: Ad
         table_phase: Aşama
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Çoklu başlıklar"
+        type_pending: "Beklemede: Henüz başlık yok"
+        type_single: "Tekli başlık"
         edit_groups: Başlıklar gruplarını düzenle
         edit_budget: Bütçe düzenleme
         admin_ballots: Yönetici oyları
@@ -119,6 +123,8 @@ tr:
         empty_administrators: "Hiç yönetici yok"
         empty_valuators: "Hiç bilirkişi yok"
         name_description: "Bu, etkin olduğu zaman başlıkta ve kartlarda kullanılan katılımcı bütçenin adıdır"
+        main_call_to_action: "Eylem için ana mesaj (isteğe bağlı)"
+        main_call_to_action_description: "Bu bağlantı, katılımcı bütçenin ana başlığında görünecek ve kullanıcınızı bir teklif oluşturma, mevcut tekliflere oy verme veya süreç hakkında daha fazla bilgi edinme gibi belirli bir eylemi gerçekleştirmeye teşvik edecektir."
         info:
           budget_settings: "Genel katılımcı bütçe ayarları"
           phases_settings: "Aşama ayarları"
@@ -127,6 +133,9 @@ tr:
         success_notice: Bütçe başarıyla silindi
         unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
         unable_notice_polls: İlişkili bir ankete sahip bir bütçeyi silemezsiniz
+      new:
+        title_multiple: Çoklu yeni başlık bütçesi
+        title_single: Tekli yeni başlık bütçesi
       winners:
         calculate: Kazanan Yatırımları Hesapla
         calculated: Kazananlar hesaplanıyor, bu bir dakika sürebilir.
@@ -302,8 +311,20 @@ tr:
         continue: "Başlıklara devam et"
       headings:
         continue: "Aşamalara devam et"
+        single:
+          back: "Grupları düzenlemeye geri dön"
+      heading_mode:
+        multiple:
+          link: "Çoklu başlık bütçesi oluştur"
+        single:
+          link: "Tekli başlık bütçesi oluştur"
+        title: "Katılımcı bütçe türü"
       phases:
         continue: "Bitir"
+        multiple:
+          back: "Başlıklara geri dön"
+        single:
+          back: "Başlıkları düzenlemeye geri dön"
         update_all:
           notice: "Aşamalar başarıyla yapılandırıldı"
     milestones:
@@ -1338,8 +1359,10 @@ tr:
       content: İçerik
       created_at: Oluşturuldu
       color_help: Onaltılık format
+      example_url: "https://consulproject.org"
       show_results_and_stats: "Sonuçları ve istatistikleri göster"
       results_and_stats_reminder: "Bu onay kutularını işaretleyince sonuçlar ve/veya istatistikleri herkese açık olacak ve her kullanıcı bunları görecek."
+      close_modal: Yakın model
     geozones:
       index:
         title: Coğrafi Bölge (Geozone)
