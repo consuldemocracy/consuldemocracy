@@ -89,8 +89,6 @@ val:
       destroy:
         success_notice: Pressupost eliminat correctament
         unable_notice: No pots eliminar un Pressupost amb propostes
-      new:
-        title: Nou pressupost ciutadà
       winners:
         calculate: Calcular propostes guanyadores
         calculated: Calculant guanyadores, pot tardar algún minut.
