@@ -93,8 +93,6 @@ bs:
         success_notice: Budžet uspješno obrisan
         unable_notice: Ne možete ukinuti budžet koji ima vezane investicije
         unable_notice_polls: Ne možete ukinuti budžet koji ima vezanu glasačku anketu
-      new:
-        title: Novi participativni budžet
       winners:
         calculate: Obračunaj odabrane investicije
         calculated: Obračunavaju se odabrane investicije, može potrajati.
