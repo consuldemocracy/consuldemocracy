@@ -56,7 +56,6 @@ pl:
         map_location: "Lokalizacja na mapie"
         map_location_instructions: "Przejdź na mapie do lokalizacji i umieść znacznik."
         map_remove_marker: "Usuń znacznik mapy"
-        map_skip_checkbox: "Ta inwestycja nie posiada konkretnej lokalizacji lub nie jest mi ona znana."
       index:
         title: Budżetowanie partycypacyjne
         unfeasible: Niewykonalne projekty inwestycyjne
