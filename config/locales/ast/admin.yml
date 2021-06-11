@@ -75,8 +75,6 @@ ast:
         enabled: Habilitáu
         actions: Acciones
         active: Activos
-      new:
-        title: Nuevu presupuestu ciudadanu
       winners:
         calculate: Calcular propuestes ganadores
         calculated: Calculando ganadoras, puede tardar un minutu.
