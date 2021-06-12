@@ -1352,6 +1352,7 @@ sv:
             label: "Efter mål"
         label:
           booths: "Sök röststation efter namn"
+          budget_investments: "Sök investeringar efter titel, beskrivning eller område"
           debates: "Sök debatter med titel eller beskrivning"
           legislation_processes: "Sök processer efter titel eller beskrivning"
           legislation_proposals: "Sök förslag efter titel eller beskrivning"
