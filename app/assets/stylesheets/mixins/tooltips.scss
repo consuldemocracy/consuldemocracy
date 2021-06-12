@@ -1,0 +1,13 @@
+@mixin bottom-tooltip {
+  @include tooltip;
+  line-height: $global-lineheight;
+  margin-top: $line-height / 8;
+  width: max-content;
+
+  &::before {
+    @include css-triangle($tooltip-pip-width, $tooltip-background-color, up);
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

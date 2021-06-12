@@ -1,0 +1,31 @@
+%tags {
+  margin-bottom: 0;
+  margin-left: 0;
+
+  li {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  a,
+  span {
+    @extend %tag;
+  }
+}
+
+%tag {
+  background: #ececec;
+  border-radius: rem-calc(6);
+  color: $text;
+  display: inline-block;
+  font-size: $small-font-size;
+  margin-bottom: $line-height / 3;
+  padding: $line-height / 4 $line-height / 3;
+  text-decoration: none;
+
+  &:hover {
+    background: #e0e0e0;
+    text-decoration: none;
+  }
+}
+

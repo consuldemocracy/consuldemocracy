@@ -8,6 +8,7 @@ describe "Commenting legislation questions" do
 
   scenario "Index" do
     3.times { create(:comment, commentable: legislation_annotation) }
+    comment = Comment.includes(:user).last
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
@@ -15,7 +16,6 @@ describe "Commenting legislation questions" do
 
     expect(page).to have_css(".comment", count: 4)
 
-    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
@@ -61,7 +61,7 @@ describe "Commenting legislation questions" do
     expect(page).to have_current_path(comment_path(comment))
   end
 
-  scenario "Collapsable comments", :js do
+  scenario "Collapsable comments" do
     parent_comment = legislation_annotation.comments.first
     child_comment  = create(:comment, body: "First subcomment", commentable: legislation_annotation, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: legislation_annotation, parent: child_comment)
@@ -229,7 +229,7 @@ describe "Commenting legislation questions" do
     end
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     login_as(user)
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
@@ -244,7 +244,7 @@ describe "Commenting legislation questions" do
     end
   end
 
-  scenario "Errors on create", :js do
+  scenario "Errors on create" do
     login_as(user)
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
@@ -255,7 +255,7 @@ describe "Commenting legislation questions" do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario "Reply", :js do
+  scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")
     legislation_annotation = create(:legislation_annotation, author: citizen)
@@ -277,10 +277,10 @@ describe "Commenting legislation questions" do
       expect(page).to have_content "It will be done next week."
     end
 
-    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
   end
 
-  scenario "Reply update parent comment responses count", :js do
+  scenario "Reply update parent comment responses count" do
     manuela = create(:user, :level_two, username: "Manuela")
     legislation_annotation = create(:legislation_annotation)
     comment = legislation_annotation.comments.first
@@ -299,7 +299,7 @@ describe "Commenting legislation questions" do
     end
   end
 
-  scenario "Reply show parent comments responses when hidden", :js do
+  scenario "Reply show parent comments responses when hidden" do
     manuela = create(:user, :level_two, username: "Manuela")
     legislation_annotation = create(:legislation_annotation)
     comment = legislation_annotation.comments.first
@@ -320,7 +320,7 @@ describe "Commenting legislation questions" do
     end
   end
 
-  scenario "Errors on reply", :js do
+  scenario "Errors on reply" do
     comment = legislation_annotation.comments.first
 
     login_as(user)
@@ -336,7 +336,7 @@ describe "Commenting legislation questions" do
     end
   end
 
-  scenario "N replies", :js do
+  scenario "N replies" do
     parent = create(:comment, commentable: legislation_annotation)
 
     7.times do
@@ -366,7 +366,7 @@ describe "Commenting legislation questions" do
     end
   end
 
-  scenario "Submit button is disabled after clicking", :js do
+  scenario "Submit button is disabled after clicking" do
     legislation_annotation = create(:legislation_annotation)
     login_as(user)
 
@@ -383,7 +383,7 @@ describe "Commenting legislation questions" do
   end
 
   describe "Moderators" do
-    scenario "can create comment as a moderator", :js do
+    scenario "can create comment as a moderator" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -403,7 +403,7 @@ describe "Commenting legislation questions" do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    scenario "can create reply as a moderator" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
@@ -430,7 +430,7 @@ describe "Commenting legislation questions" do
         expect(page).to have_css "img.moderator-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
     scenario "can not comment as an administrator" do
@@ -446,7 +446,7 @@ describe "Commenting legislation questions" do
   end
 
   describe "Administrators" do
-    scenario "can create comment as an administrator", :js do
+    scenario "can create comment as an administrator" do
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -466,7 +466,7 @@ describe "Commenting legislation questions" do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    scenario "can create reply as an administrator" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       admin   = create(:administrator, user: manuela)
@@ -493,13 +493,10 @@ describe "Commenting legislation questions" do
         expect(page).to have_css "img.admin-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
-    scenario "can not comment as a moderator" do
-      admin = create(:administrator)
-
-      login_as(admin.user)
+    scenario "can not comment as a moderator", :admin do
       visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                               legislation_annotation.draft_version,
                                                               legislation_annotation)
@@ -539,7 +536,7 @@ describe "Commenting legislation questions" do
       end
     end
 
-    scenario "Create", :js do
+    scenario "Create" do
       visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
                                                               annotation.draft_version,
                                                               annotation)
@@ -559,7 +556,7 @@ describe "Commenting legislation questions" do
       end
     end
 
-    scenario "Update", :js do
+    scenario "Update" do
       visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
                                                               annotation.draft_version,
                                                               annotation)
@@ -585,7 +582,7 @@ describe "Commenting legislation questions" do
       end
     end
 
-    scenario "Trying to vote multiple times", :js do
+    scenario "Trying to vote multiple times" do
       visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
                                                               annotation.draft_version,
                                                               annotation)
@@ -611,7 +608,7 @@ describe "Commenting legislation questions" do
     end
   end
 
-  describe "Merged comment threads", :js do
+  describe "Merged comment threads" do
     let!(:draft_version) { create(:legislation_draft_version, :published) }
     let!(:annotation1) do
       create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
@@ -621,6 +618,8 @@ describe "Commenting legislation questions" do
       create(:legislation_annotation, draft_version: draft_version, text: "my other annotation",
                                       ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10 }])
     end
+    let!(:comment1) { annotation1.comments.first }
+    let!(:comment2) { annotation2.comments.first }
 
     before do
       login_as user
@@ -651,15 +650,14 @@ describe "Commenting legislation questions" do
         first(:link, "0 replies").click
       end
 
-      comment = annotation1.comments.first
       click_link "Reply"
 
-      within "#js-comment-form-comment_#{comment.id}" do
+      within "#js-comment-form-comment_#{comment1.id}" do
         fill_in "Leave your comment", with: "replying in single annotation thread"
         click_button "Publish reply"
       end
 
-      within "#comment_#{comment.id}" do
+      within "#comment_#{comment1.id}" do
         expect(page).to have_content "replying in single annotation thread"
       end
 
@@ -688,17 +686,16 @@ describe "Commenting legislation questions" do
         find(".icon-expand").click
       end
 
-      comment = annotation2.comments.first
-      within("#comment_#{comment.id}") do
+      within("#comment_#{comment2.id}") do
         click_link "Reply"
       end
 
-      within "#js-comment-form-comment_#{comment.id}" do
+      within "#js-comment-form-comment_#{comment2.id}" do
         fill_in "Leave your comment", with: "replying in multiple annotation thread"
         click_button "Publish reply"
       end
 
-      within "#comment_#{comment.id}" do
+      within "#comment_#{comment2.id}" do
         expect(page).to have_content "replying in multiple annotation thread"
       end
 

@@ -1,12 +1,9 @@
 en:
   welcome:
     feed:
-      proposals_description: "Citizen proposals that gather enough suppport will go to a voting phase, so you can get all the citizens to decide how they want their city to be."
-      budgets_description: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. The most supported projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council."
       most_active:
         proposals: "Featured proposals"
         budgets: "Participatory budgets"
-      see_all_proposals: "See all"
       see_budget: "See this budget"
   debates:
     index:
@@ -32,7 +29,7 @@ en:
         archival_date: "Archived"
         recommendations: "Recommendations"
     form:
-      tags_label: "Onderwerpen/labels"
+      tags_label: "Tags"
     shared:
       confirm_support: "Are you sure? You will support the proposal \"%{proposal}\" and this action cannot be undone."
   polls:
@@ -45,6 +42,3 @@ en:
       vote_registered: "Your vote has been registered correctly."
   shared:
     expired: "Expired"
-  comments:
-    delete_comment: "Delete comment"
-    confirm_delete_comment: "Are you sure? This action will delete this comment. You can't undo this action."

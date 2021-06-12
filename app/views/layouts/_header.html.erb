@@ -18,15 +18,17 @@
     <div class="top-bar">
 
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
-        <span class="menu-icon dark" data-toggle></span>
-        <%= t("application.menu") %>
+        <button type="button" class="menu-button" data-toggle>
+          <span class="menu-icon"></span>
+          <%= t("application.menu") %>
+        </button>
       </span>
 
-      <div class="top-bar-title">
+      <h1 class="top-bar-title">
         <%= link_to root_path, accesskey: "0" do %>
-          <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: t("layouts.header.logo")) %>
+          <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: setting["org_name"]) %>
         <% end %>
-      </div>
+      </h1>
 
       <div id="responsive-menu">
         <div class="top-bar-right">

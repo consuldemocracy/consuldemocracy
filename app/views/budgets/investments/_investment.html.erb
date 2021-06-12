@@ -24,7 +24,7 @@
           <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
 
-            <%= render "/budgets/investments/investment_info", investment: investment %>
+            <%= render Budgets::Investments::InfoComponent.new(investment) %>
 
             <div class="investment-project-description">
               <%= wysiwyg(investment.description) %>
@@ -65,8 +65,7 @@
                 <%= render "/budgets/investments/ballot",
                   investment: investment,
                   investment_ids: investment_ids,
-                  ballot: ballot
-                %>
+                  ballot: ballot %>
           </div>
         <% elsif investment.should_show_price? %>
           <div id="<%= dom_id(investment) %>_price"

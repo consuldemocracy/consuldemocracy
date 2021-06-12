@@ -29,14 +29,16 @@ section "Creating Budgets" do
     name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year - 1}",
     name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year - 1}",
     currency_symbol: I18n.t("seeds.budgets.currency"),
-    phase: "finished"
+    phase: "finished",
+    published: true
   )
 
   Budget.create!(
     name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year}",
     name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year}",
     currency_symbol: I18n.t("seeds.budgets.currency"),
-    phase: "accepting"
+    phase: "accepting",
+    published: true
   )
 
   Budget.find_each do |budget|

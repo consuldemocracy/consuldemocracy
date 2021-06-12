@@ -71,7 +71,6 @@ sl:
       index:
         hidden: Blokirani
         hide: Blokiraj
-        search: Išči
         search_placeholder: e-naslov ali ime uporabnika/-ce
         title: Blokiraj uporabnike/-ce
       notice_hide: Uporabnik/-ca blokiran/-a. Vse razprave in komentarji tega uporabniškega računa so bili skriti.

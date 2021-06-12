@@ -64,12 +64,8 @@ ca:
         icon_alt: Icona dels pressupostos participatius
         title: Pressupostos participatius
         help: Ajuda amb pressupostos participatius
-        all_phases: Veure totes les fases
       all_phases: Fases de la inversió pressupostària
       map: Propostes d’inversions pressupostàries situades geogràficament
-      investment_proyects: Llista de tots els projectes d’inversió
-      unfeasible_investment_proyects: Llista de tots els projectes d'inversió inviables
-      not_selected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a les votacions
       finished_budgets: Pressupostos participatius finalitzats
       see_results: veure resultats
       section_footer:
@@ -118,9 +114,6 @@ ca:
           verified_only: "Per a crear una nova proposta d'inversió %{verify}."
           create: "Crear una inversió pressupostària"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
-          by_feasibility: Per viabilitat
-          feasible: Veure les propostes d'inversió viables
-          unfeasible: Veure les propostes d'inversió inviables
         orders:
           random: Aleatòries
           confidence_score: Més avalades
@@ -162,25 +155,12 @@ ca:
           other: "%{count} avals"
         give_support: Avalar
       header:
-        check_ballot: Revisar els meus vots
+        check_ballot: "Revisar els meus vots"
         different_heading_assigned: "Teniu vots actius en un altre títol: %{heading_link}"
         change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
         check_ballot_link: "revisar els meus vots"
         price: "Aquesta partida té un pressupost de"
-    progress_bar:
-      assigned: "Heu assignat: "
-      available: "Pressupost disponible: "
-      votes:
-        zero: "Ha seleccionat <strong>0</strong> projectes de <strong>%{limit}</strong>"
-        one: "Ha seleccionat <strong>1</strong> projecte de <strong>%{limit}</strong>"
-        other: "Ha seleccionat <strong>%{count}</strong> projectes de <strong>%{limit}</strong>"
     show:
-      group: Grup
-      phase: Fase actual
-      unfeasible_title: Propostes inviables
-      unfeasible: Veure les propostes inviables
-      unselected_title: Propostes no seleccionades per a la votació final
-      unselected: Veure les propostes no seleccionades per a la votació final
       see_results: veure resultats
     results:
       link: resultats

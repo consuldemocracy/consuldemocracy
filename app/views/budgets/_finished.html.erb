@@ -6,18 +6,14 @@
       <% budgets.each do |budget| %>
         <div class="budget-investment clear">
           <div class="panel past-budgets">
-            <div class="row">
-              <div class="small-12 medium-6 large-9 column">
-                <h3><%= budget.name %></h3>
-              </div>
+            <h3><%= budget.name %></h3>
 
-              <div id="budget_<%= budget.id %>_results" class="float-right">
-                <% if can?(:read_results, budget) %>
-                  <%= link_to t("budgets.index.see_results"), budget_results_path(budget), class: "button" %>
-                <% end %>
+            <div id="budget_<%= budget.id %>_results">
+              <% if can?(:read_results, budget) %>
+                <%= link_to t("budgets.index.see_results"), budget_results_path(budget), class: "button" %>
+              <% end %>
 
-                <%= link_to t("budgets.index.milestones"), budget_executions_path(budget), class: "button" %>
-              </div>
+              <%= link_to t("budgets.index.milestones"), budget_executions_path(budget), class: "button" %>
             </div>
           </div>
         </div>

@@ -1,0 +1,14 @@
+<div class="legislation-process card">
+  <%= link_to url_for(process) do %>
+    <figure class="figure-card">
+      <%= image_tag("welcome_process.png", alt: "") %>
+      <figcaption>
+        <span><%= t("welcome.feed.process_label") %></span><br>
+        <h3><%= process.title %></h3>
+      </figcaption>
+    </figure>
+    <p class="description small"><%= process.summary %></p>
+    <%= render SDG::TagListComponent.new(process, linkable: false) %>
+    <p class="small"><%= t("welcome.feed.see_process") %></p>
+  <% end %>
+</div>

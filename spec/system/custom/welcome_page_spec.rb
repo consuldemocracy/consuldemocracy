@@ -25,7 +25,7 @@ describe "Welcome page" do
         expect(page).to have_link href: budget_path(budget)
         expect(page).to have_content finished.name
         expect(page).to have_content finished.formatted_total_headings_price
-        expect(page).to have_content "Completed"
+        expect(page).to have_content "COMPLETED"
         expect(page).to have_content "€", count: 1
         expect(page).to have_content "#{finished.start_date.to_date}"
         expect(page).to have_content "#{finished.end_date.to_date}"

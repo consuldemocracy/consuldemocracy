@@ -18,32 +18,29 @@
         <%= t("admin.system_emails.#{system_email_title}.description") %>
       </td>
       <td>
-        <% if system_email_actions.include?("view") %>
-          <div class="small-4 column">
-            <%= link_to t("admin.shared.view"), admin_system_email_view_path(system_email_title),
-                                                class: "button hollow expanded" %>
-          </div>
-        <% end %>
-        <% if system_email_actions.include?("preview_pending") %>
-          <div class="small-4 column">
-            <%= link_to t("admin.system_emails.preview_pending.action"),
-                        admin_system_email_preview_pending_path(system_email_title),
-                        class: "button expanded" %>
-          </div>
-          <div class="small-4 column">
-            <%= link_to t("admin.system_emails.preview_pending.send_pending"),
-                        admin_system_email_send_pending_path(system_email_title),
-                        class: "button success expanded",
-                        method: :put %>
-          </div>
-        <% end %>
-        <% if system_email_actions.include?("edit_info") %>
-          <div class="small-8 column">
+        <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+          <% if system_email_actions.include?("view") %>
+            <%= actions.link_to t("admin.shared.view"),
+                                admin_system_email_view_path(system_email_title),
+                                class: "show-link" %>
+          <% end %>
+
+          <% if system_email_actions.include?("preview_pending") %>
+            <%= actions.link_to t("admin.system_emails.preview_pending.action"),
+                                admin_system_email_preview_pending_path(system_email_title),
+                                class: "preview-pending-link" %>
+            <%= actions.link_to t("admin.system_emails.preview_pending.send_pending"),
+                                admin_system_email_send_pending_path(system_email_title),
+                                class: "send-pending-link",
+                                method: :put %>
+          <% end %>
+
+          <% if system_email_actions.include?("edit_info") %>
             <p class="help-text">
               <%= t("admin.system_emails.edit_info") %><br>
               <code><%= "app/views/mailer/#{system_email_title}.html.erb" %></code>
             </p>
-          </div>
+          <% end %>
         <% end %>
       </td>
     </tr>

@@ -40,12 +40,8 @@ nl:
         icon_alt: Budgetafbeelding
         title: Participatory budgets
         help: Hulp bij burgerbegrotingen
-        all_phases: Bekijk alle fases
       all_phases: Investeringsfases
       map: Investeringen geografisch weergegeven
-      investment_proyects: Lijst van alle begrotingsvoorstellen
-      unfeasible_investment_proyects: Lijst van alle onhaalbare begrotingsvoorstellen
-      not_selected_investment_proyects: Lijst van alle begrotingsvoorstellen niet geschikt voor stemming
       finished_budgets: Afgeronde burgerbegrotingen
       see_results: Bekijk resultaten
       section_footer:
@@ -79,9 +75,6 @@ nl:
           verified_only: "%{verify} je account om een nieuw begrotingsvoorstel te doen."
           create: "Nieuw begrotingsvoorstel maken"
           not_logged_in: "Om een nieuw begrotingsvoorstel te doen moet je %{sign_in} of %{sign_up}."
-          by_feasibility: Op haalbaarheid
-          feasible: Haalbare voorstellen
-          unfeasible: Onhaalbare voorstellen
         orders:
           random: willekeurig
           confidence_score: best gescored
@@ -117,20 +110,11 @@ nl:
           other: "%{count} steunbetuigingen"
         give_support: Support
       header:
-        check_ballot: Check mijn stemmen
+        check_ballot: "Check mijn stemmen"
         change_ballot: "ALs je je bedenkt kun je je stemmen in %{check_ballot} verwijderen en opnieuw beginnen."
         check_ballot_link: "bekijk mijn stemmen"
         price: "Deze rubriek heeft een budget van"
-    progress_bar:
-      assigned: "Je hebt toegewezen: "
-      available: "Beschikbaar budget: "
     show:
-      group: Groep
-      phase: Huidige fase
-      unfeasible_title: Onhaalbare voorstellen
-      unfeasible: Bekijk de niet haalbare voorstellen
-      unselected_title: Voorstellen die niet geselecteerd zijn voor de stemfase
-      unselected: Bekijk de voorstellen die niet geselecteerd zijn voor de stemfase
       see_results: Bekijk resultaten
     results:
       link: Resultaten

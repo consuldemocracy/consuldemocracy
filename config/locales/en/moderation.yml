@@ -111,7 +111,6 @@ en:
       index:
         hidden: Blocked
         hide: Block
-        search: Search
         search_placeholder: email or name of user
         title: Block users
       notice_hide: User blocked. All of this user's debates and comments have been hidden.

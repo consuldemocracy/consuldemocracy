@@ -32,6 +32,12 @@
           <%= link_to t("layouts.header.officing"), officing_root_path %>
         </li>
       <% end %>
+
+      <% if feature?(:sdg) && (current_user.administrator? || current_user.sdg_manager?) %>
+        <li>
+          <%= link_to t("sdg_management.header.title"), sdg_management_root_path %>
+        </li>
+      <% end %>
     </ul>
   </li>
 <% end %>

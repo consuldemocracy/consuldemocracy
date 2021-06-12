@@ -30,10 +30,8 @@ describe "Poster" do
     expect(page).to have_link("Download")
   end
 
-  scenario "PDF contains the proposal details", js: true do
-    click_link "Download"
-
-    page.driver.browser.switch_to.window page.driver.browser.window_handles.last do
+  scenario "PDF contains the proposal details" do
+    within_window(window_opened_by { click_link "Download" }) do
       expect(page).to have_content(proposal.title)
       expect(page).to have_content(proposal.code)
     end

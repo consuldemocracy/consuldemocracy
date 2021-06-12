@@ -38,12 +38,8 @@ so:
         icon_alt: Misaniyadaha ka qaybgalka icon
         title: Misaaniyadaha kaqayb qadashada
         help: Kacawinta Misaniyadaha ka qayb qadshada
-        all_phases: Fiiri dhammaan wejiyada
       all_phases: Misaniyada Qaybaha malgelinnada
       map: Miisaaniyadda maaliyadeed ee 'soo jeedinta juquraafi ahaan
-      investment_proyects: Liska dhaman mashariicda Malgelinta
-      unfeasible_investment_proyects: Liiska dhammaan mashaariicda maal-gashiga ee suurtogalka ah
-      not_selected_investment_proyects: Liiska dhammaan mashaariicda maalgashiga ee aan loo dooran mudnaanta
       finished_budgets: Dhameystiray Misaniyada ka qayb qadashada
       see_results: Arag Natijada
       section_footer:
@@ -77,9 +73,6 @@ so:
           verified_only: "In la abuuro maalgalin cusub oo maaliyadeed%{verify}."
           create: "Saame misaaniyad malgashelin"
           not_logged_in: "Waa inaad samaysaa misaniyaad malgashi waana inaad%{sign_in} ama%{sign_up}."
-          by_feasibility: Iyada oo suurta gal ah
-          feasible: Mashariicda macquulka ah
-          unfeasible: Mashariicda an macquulka ahayn
         orders:
           random: kala sooc la an
           confidence_score: ugu sareeya
@@ -114,20 +107,11 @@ so:
           other: "%{count} tagerayal"
         give_support: Tageero
       header:
-        check_ballot: Huubi codkayga
+        check_ballot: "Huubi codkayga"
         change_ballot: "Haddii aad bedesho maskaxda waxaad ka saari kartaa codadkaaga%{check_ballot} oo mar kale bilow."
         check_ballot_link: "huubi codkayga"
         price: "Taani waxay ledaahay misaniyaad"
-    progress_bar:
-      assigned: "Waa lugu asteyey: "
-      available: "Misaniyada lahelikaro: "
     show:
-      group: Koox
-      phase: Wejiga dhabta ah
-      unfeasible_title: Malgashiyo an macqul ahayn
-      unfeasible: Arrag Malgashiyada an macqulka ahayn
-      unselected_title: Maalgashiyada lama doorto wajiga ballanka
-      unselected: Eeg maalgashiyada aan loo dooran muddada gaaban
       see_results: Arag Natijada
     results:
       link: Natiijoyin

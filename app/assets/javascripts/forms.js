@@ -8,8 +8,8 @@
         }
       });
     },
-    submitOnChange: function() {
-      $("body").on("change", ".js-submit-on-change", function() {
+    submitOnChange: function(selector) {
+      $("body").on("change", selector, function() {
         $(this).closest("form").submit();
         return false;
       });
@@ -69,7 +69,7 @@
     },
     initialize: function() {
       App.Forms.disableEnter();
-      App.Forms.submitOnChange();
+      App.Forms.submitOnChange(".js-submit-on-change");
       App.Forms.toggleLink();
       App.Forms.synchronizeInputs();
       App.Forms.hideOrShowFieldsAfterSelection();

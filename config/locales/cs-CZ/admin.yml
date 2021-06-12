@@ -70,9 +70,6 @@ cs:
         budget_investments: Správa projektů
         table_name: Název
         table_phase: Fáze
-        table_investments: Investice
-        table_edit_groups: Záhlaví skupiny
-        table_edit_budget: Upravit
         edit_groups: Upravit záhlaví skupiny
         edit_budget: Upravit rozpočet
         no_budgets: "Neexistují žádné rozpočty."
@@ -84,7 +81,6 @@ cs:
         title: Upravit participativní rozpočet
         delete: Odstranit rozpočet
         phase: Fáze
-        dates: Kalendářní data
         enabled: Povolit
         actions: Akce
         edit_phase: Upravit fázi
@@ -102,7 +98,6 @@ cs:
     budget_groups:
       name: "Název"
       headings_name: "Kapitoly"
-      headings_edit: "Upravit kapitoly"
       headings_manage: "Spravovat kapitoly"
       no_groups: "Neexistují žádné skupiny."
       create:
@@ -138,7 +133,6 @@ cs:
         back: "Jít zpět do skupin"
     budget_phases:
       edit:
-        summary_help_text: Text bude informovat uživatele o této fázi. Chcete-li ho zobrazit i v případě, že fáze není aktivní, zaškrtněte políčko dole
         description_help_text: Tento text bude zobrazen v záhlaví, když je fáze aktivní
         enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
         save_changes: Uložit změny
@@ -259,8 +253,6 @@ cs:
         table_name: Název
         table_description: Description
         table_actions: Akce
-        delete: Smazat
-        edit: Upravit
       edit:
         title: Edit investment status
       update:
@@ -320,8 +312,6 @@ cs:
         description: Vítejte v admin panelu portálu %{org}.
       actions:
         index:
-          edit: Upravit
-          delete: Smazat
           active: 'Ano'
           inactive: 'Ne'
           action_title: Název
@@ -416,7 +406,6 @@ cs:
           banner_title: Barvy záhlaví
         index:
           create: Nový proces
-          delete: Smazat
           title: Legislativní procesy
           filters:
             active: Aktivní
@@ -540,12 +529,9 @@ cs:
     managers:
       index:
         title: Manažeři
-        name: Název
-        email: Email
         no_managers: Nemáte žádné manažery.
       manager:
         add: Přidat
-        delete: Smazat
       search:
         title: "Manažeři: Vyhledávání uživatelů"
     menu:
@@ -612,26 +598,19 @@ cs:
     administrators:
       index:
         title: Administrátoři
-        name: Název
-        email: Email
-        description: Popis
         id: Administrátor ID
         no_administrators: Neexistují žádní administrátoři.
       administrator:
         add: Přidat
-        delete: Smazat
         restricted_removal: "Omlouváme se, nemůžete se odstranit ze skupiny administrátorů"
       search:
         title: "Administrátoři: Vyhledávání uživatelů"
     moderators:
       index:
         title: Moderátoři
-        name: Název
-        email: Email
         no_moderators: Nemáte žádné moderátory.
       moderator:
         add: Přidat
-        delete: Smazat
       search:
         title: "Moderátoři: Vyhledávání uživatelů"
     segment_recipient:
@@ -657,8 +636,6 @@ cs:
         sent: Odesláno
         actions: Akce
         draft: Pracovní verze
-        edit: Upravit
-        delete: Smazat
         preview: Náhled
         empty_newsletters: Žádné informační bulletiny k zobrazení
       new:
@@ -690,8 +667,6 @@ cs:
         sent: Odesláno
         actions: Akce
         draft: Pracovní verze
-        edit: Upravit
-        delete: Smazat
         preview: Náhled
         view: Zobrazit
         empty_notifications: Nemáte žádná oznámení
@@ -745,7 +720,6 @@ cs:
         no_group: "Žádná skupina"
       valuator:
         add: Přidat k hodnotitelům
-        delete: Smazat
       search:
         title: "Hodnotitelé: Vyhledávání uživatelů"
       form:
@@ -781,7 +755,6 @@ cs:
         entry_name: úředník
       search:
         email_placeholder: Vyhledat uživatele podle emailu
-        search: Vyhledat
         user_not_found: Uživatel nenalezen
     poll_officer_assignments:
       index:
@@ -1031,8 +1004,6 @@ cs:
         no_organizations: Nemáte žádné organizace.
         reject: Odmítnout
         rejected: Odmítnutý
-        search: Vyhledat
-        search_placeholder: Jméno, email nebo telefonní číslo
         title: Organizace
         verified: Ověřen
         verify: Ověřit
@@ -1084,23 +1055,14 @@ cs:
     shared:
       true_value: "Ano"
       false_value: "Ne"
-      booths_search:
-        button: Vyhledat
-        placeholder: Vyhledat informační stánek podle jména
-      poll_officers_search:
-        button: Vyhledat
-        placeholder: Vyhledat úředníky ankety
-      poll_questions_search:
-        button: Vyhledat
-        placeholder: Vyhledat otázky ankety
-      proposal_search:
-        button: Vyhledat
-        placeholder: Vyhledat návrhy podle názvu, kódu, popisu nebo otázky
-      debate_search:
-        button: Hledat
-      user_search:
-        button: Vyhledat
-        placeholder: Vyhledat uživatele podle jména nebo e-mailu
+      search:
+        label:
+          booths: "Vyhledat informační stánek podle jména"
+          organizations: "Jméno, email nebo telefonní číslo"
+          poll_officers: "Vyhledat úředníky ankety"
+          poll_questions: "Vyhledat otázky ankety"
+          proposals: "Vyhledat návrhy podle názvu, kódu, popisu nebo otázky"
+          users: "Vyhledat uživatele podle jména nebo e-mailu"
       search_results: "Výsledky vyhledávání"
       no_search_results: "Nebyly nalezeny žádné výsledky."
       actions: Akce
@@ -1114,7 +1076,6 @@ cs:
       author: Autor
       content: Obsah
       created_at: Vytvořeno v
-      delete: Smazat
       color_help: Hexadecimální formát
       show_results_and_stats: "Zobrazit výsledky a statistiky"
       results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
@@ -1122,8 +1083,6 @@ cs:
       index:
         title: Geozóna
         create: Vytvořit geozónu
-        edit: Upravit
-        delete: Smazat
       geozone:
         name: Název
         external_code: Externí kód
@@ -1237,7 +1196,6 @@ cs:
         no_users: Nemáte žádné uživatele.
       search:
         placeholder: Hledat uživatele pomocí e-mailu, jména nebo čísla dokladu
-        search: Vyhledat
     verifications:
       index:
         phone_not_given: Telefon není uveden
@@ -1311,16 +1269,11 @@ cs:
           updated_at: Aktualizováno dne
           title: Předmět
           slug: Slug
-          cards_title: Karty
           see_cards: Zobrazit karty
         cards:
           cards_title: karty
           create_card: Vytvořit kartu
           no_cards: Nemáte žádnou kartu.
-          title: Předmět
-          description: Description
-          link_text: Link text
-          link_url: Link URL
           columns_help: "Šířka karty v počtu sloupců. Na mobilních obrazovkách je vždy šířka 100 %."
           create:
             notice: "Karta úspěšně vytvořena!"
@@ -1337,11 +1290,6 @@ cs:
       cards_title: Karty
       create_card: Vytvořit kartu
       no_cards: Nemáte žádné karty.
-      cards:
-        title: Předmět
-        description: Description
-        link_text: Link text
-        link_url: Link URL
       feeds:
         proposals: Návrhy
         debates: Debaty

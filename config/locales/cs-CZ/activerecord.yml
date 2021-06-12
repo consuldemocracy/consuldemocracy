@@ -92,7 +92,7 @@ cs:
       budget/investment:
         heading_id: "Heading"
         title: "Předmět"
-        description: "Description"
+        description: "Popis"
         external_url: "Odkaz na další dokumenty"
         administrator_id: "Administrátor"
         location: "Lokalita (volitelné)"
@@ -160,8 +160,10 @@ cs:
         author: "Autor"
         title: "Předmět"
         question: "Otázka"
-        description: "Description"
+        description: "Popis"
         terms_of_service: "Terms of service"
+      proposal/translation:
+        retired_explanation: "Vysvětlení"
       user:
         login: "Email nebo uživatelské jméno"
         email: "Email"
@@ -172,6 +174,7 @@ cs:
         official_position: "Official position"
         official_level: "Official level"
         phone_number: "Telefon"
+        public_activity: "Udržet seznam mých aktivit veřejný"
         redeemable_code: "Verification code received via email"
       direct_message:
         title: "Předmět"
@@ -185,7 +188,7 @@ cs:
         ends_at: "Closing Date"
         geozone_restricted: "Restricted by geozone"
         summary: "Souhrn"
-        description: "Description"
+        description: "Popis"
       active_poll/translation:
         description: "Popis"
       poll/booth:
@@ -194,12 +197,12 @@ cs:
       poll/translation:
         name: "Název"
         summary: "Souhrn"
-        description: "Description"
+        description: "Popis"
       poll/question:
         poll_id: "Průzkum"
         title: "Question"
         summary: "Souhrn"
-        description: "Description"
+        description: "Popis"
         external_url: "Odkaz na další dokumenty"
       poll/question/translation:
         title: "Question"
@@ -257,7 +260,7 @@ cs:
       legislation/process:
         title: Název procesu
         summary: Souhrn
-        description: Description
+        description: Popis
         additional_info: Additional info
         start_date: Počáteční datum
         end_date: Konečné datum
@@ -277,7 +280,7 @@ cs:
       legislation/process/translation:
         title: Název procesu
         summary: Souhrn
-        description: Description
+        description: Popis
         additional_info: Additional info
         homepage: "Popis"
         milestones_summary: Souhrn
@@ -315,10 +318,10 @@ cs:
         attachment: "Attachment"
       poll/question/answer:
         title: Odpověď
-        description: Description
+        description: Popis
       poll/question/answer/translation:
         title: Answer
-        description: Description
+        description: Popis
       poll/question/answer/video:
         title: Předmět
         url: Externí video
@@ -338,14 +341,14 @@ cs:
       widget/card:
         label: Label (optional)
         title: Předmět
-        description: Description
+        description: Popis
         link_text: Link text
         link_url: Link URL
         columns: Počet sloupců
       widget/card/translation:
         label: Label (optional)
         title: Předmět
-        description: Description
+        description: Popis
         link_text: Link text
       widget/feed:
         limit: Number of items
@@ -369,7 +372,7 @@ cs:
         direct_message:
           attributes:
             max_per_day:
-              invalid: "You have reached the maximum number of private messages per day"
+              invalid: "Dosáhli jste maximálního počtu soukromých zpráv za den"
         image:
           attributes:
             attachment:

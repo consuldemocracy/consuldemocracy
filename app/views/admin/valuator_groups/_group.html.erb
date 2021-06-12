@@ -6,12 +6,6 @@
     <%= group.valuators.count %>
   </td>
   <td>
-    <%= link_to t("admin.actions.delete"),
-                admin_valuator_group_path(group),
-                method: :delete, class: "button hollow alert" %>
-
-    <%= link_to t("admin.actions.edit"),
-                edit_admin_valuator_group_path(group),
-                class: "button hollow" %>
+    <%= render Admin::TableActionsComponent.new(group) %>
   </td>
 </tr>

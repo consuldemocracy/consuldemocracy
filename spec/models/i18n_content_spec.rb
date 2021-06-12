@@ -118,4 +118,41 @@ RSpec.describe I18nContent, type: :model do
       })
     end
   end
+
+  describe ".translations_hash" do
+    let!(:content) { create(:i18n_content, key: "great", value_en: "Custom great", value_es: nil) }
+
+    it "gets the translations" do
+      expect(I18nContent.translations_hash(:en)["great"]).to eq "Custom great"
+    end
+
+    it "does not use fallbacks, so YAML files will be used instead" do
+      expect(I18nContent.translations_hash(:es)["great"]).to be nil
+    end
+
+    it "gets new translations after values are cached" do
+      expect(I18nContent.translations_hash(:en)["great"]).to eq "Custom great"
+
+      create(:i18n_content, key: "amazing", value_en: "Custom amazing")
+
+      expect(I18nContent.translations_hash(:en)["great"]).to eq "Custom great"
+      expect(I18nContent.translations_hash(:en)["amazing"]).to eq "Custom amazing"
+    end
+
+    it "gets the updated translation after values are cached" do
+      expect(I18nContent.translations_hash(:en)["great"]).to eq "Custom great"
+
+      content.update!(value_en: "New great")
+
+      expect(I18nContent.translations_hash(:en)["great"]).to eq "New great"
+    end
+
+    it "does not get removed translations after values are cached" do
+      expect(I18nContent.translations_hash(:en)["great"]).to eq "Custom great"
+
+      I18nContent.delete_all
+
+      expect(I18nContent.translations_hash(:en)["great"]).to be nil
+    end
+  end
 end

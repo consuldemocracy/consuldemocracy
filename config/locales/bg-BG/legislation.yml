@@ -54,7 +54,7 @@ bg:
           winners: Избран
       debate:
         empty_questions: Няма въпроси
-        participate: Участвайте в дебата
+        participate: Участвайте в дискусията
       index:
         filter: Филтър
         filters:
@@ -68,7 +68,7 @@ bg:
           help: Помощ относно съвместното законодателство
         section_footer:
           title: Помощ относно съвместното законодателство
-          description: Участвайте в дебатите и процесите преди одобряването на нови регламенти или стратегии. Вашето мнение ще бъде взето под внимание.
+          description: Участвайте в дискусиите и процесите преди одобряването на нови регламенти или стратегии. Вашето мнение ще бъде взето под внимание.
       phase_not_open:
         not_open: Тази фаза все още не е отворена
       phase_empty:
@@ -79,7 +79,7 @@ bg:
       shared:
         key_dates: Фази на участие
         homepage: Начална страница
-        debate_dates: Дебат
+        debate_dates: Дискусия
         draft_publication_date: Проект на публикация
         allegations_dates: Коментари
         result_publication_date: Публикуване на крайния резултат
@@ -97,7 +97,7 @@ bg:
           zero: Няма коментари
           one: "%{count} коментар"
           other: "%{count} коментари"
-        debate: Дебат
+        debate: Дискусия
       show:
         answer_question: Изпратете отговор
         next_question: Следващ въпрос
@@ -106,10 +106,10 @@ bg:
         title: Процес на съвместно законодателство
       participation:
         phase_not_open: Тази фаза не е отворена
-        organizations: Организации нямат право да участват в дебата
+        organizations: Организации нямат право да участват в дискусии
         unauthenticated: Трябва да %{signin} или %{signup}, за да участвате.
         verified_only: Само проверени потребители могат да участват, %{verify_account}.
-        debate_phase_not_open: Фазата на дебат приключи и отговорите вече не се приемат
+        debate_phase_not_open: Фазата на дискусии приключи и отговори вече не се приемат
     shared:
       share: Споделете
       share_comment: Коментирайте относно %{version_name} от черновата на процеса %{process_name}
@@ -124,13 +124,13 @@ bg:
         zero: "%{count} гласа"
         one: "%{count} глас"
         other: "%{count} гласа"
-      debate_phase: "Фаза на дебат"
+      debate_phase: "Фаза на дискусии"
       proposals_phase: "Фаза на предложенията"
       allegations_phase: "Фаза на коментари"
       debates:
-        zero: "Няма дебати"
-        one: "%{count} дебат"
-        other: "%{count} дебата"
+        zero: "Няма дискусии"
+        one: "%{count} дискусия"
+        other: "%{count} дискусии"
       proposals:
         zero: "Няма предложения"
         one: "%{count} предложение"

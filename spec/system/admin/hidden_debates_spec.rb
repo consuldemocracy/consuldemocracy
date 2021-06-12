@@ -1,27 +1,17 @@
 require "rails_helper"
 
-describe "Admin hidden debates" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
-  scenario "Disabled with a feature flag" do
-    Setting["process.debates"] = nil
-
-    expect { visit admin_hidden_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
+describe "Admin hidden debates", :admin do
   scenario "Restore" do
     debate = create(:debate, :hidden)
     visit admin_hidden_debates_path
 
-    click_link "Restore"
+    accept_confirm { click_link "Restore" }
 
     expect(page).not_to have_content(debate.title)
 
-    expect(debate.reload).not_to be_hidden
-    expect(debate).to be_ignored_flag
+    visit debate_path(debate)
+
+    expect(page).to have_content debate.title
   end
 
   scenario "Confirm hide" do
@@ -33,8 +23,6 @@ describe "Admin hidden debates" do
     expect(page).not_to have_content(debate.title)
     click_link("Confirmed")
     expect(page).to have_content(debate.title)
-
-    expect(debate.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do
@@ -82,9 +70,9 @@ describe "Admin hidden debates" do
 
     visit admin_hidden_debates_path(filter: "with_confirmed_hide", page: 2)
 
-    click_on("Restore", match: :first, exact: true)
+    accept_confirm { click_link "Restore", match: :first, exact: true }
 
-    expect(current_url).to include("filter=with_confirmed_hide")
-    expect(current_url).to include("page=2")
+    expect(page).to have_current_path(/filter=with_confirmed_hide/)
+    expect(page).to have_current_path(/page=2/)
   end
 end

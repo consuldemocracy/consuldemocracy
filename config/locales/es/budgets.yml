@@ -3,20 +3,21 @@ es:
     ballots:
       show:
         title: Mis votos
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
-          knapsack: "Te quedan <span>%{count}</span> para invertir"
+          knapsack: "Todavía disponible <span>%{count}</span>"
           approval:
             zero: "Te quedan <span>%{count}</span> votos disponibles"
             one: "Te queda <span>%{count}</span> voto disponible"
             other: "Te quedan <span>%{count}</span> votos disponibles"
         amount_spent:
-          knapsack: "Coste total <span>%{count}</span>"
+          knapsack: "Has asignado <span>%{count}</span>"
           approval:
             zero: "Votos: <span>%{count}</span>"
             one: "Votos: <span>%{count}</span>"
             other: "Votos: <span>%{count}</span>"
         amount_limit:
-          knapsack: "%{count}"
+          knapsack: "Presupuesto total <span>%{count}</span>"
           approval:
             one: "Puedes votar <span>1</span> proyecto"
             other: "Puedes votar hasta <span>%{count}</span> proyectos"
@@ -127,9 +128,6 @@ es:
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
           create: "Crear proyecto de gasto"
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
-          by_feasibility: Por viabilidad
-          feasible: Ver los proyectos viables
-          unfeasible: Ver los proyectos inviables
         filter: "Filtrando proyectos"
         filters:
           not_unfeasible: "No inviables"
@@ -191,12 +189,7 @@ es:
     progress_bar:
       assigned: "Has asignado: "
       available: "Presupuesto disponible: "
-      votes:
-        zero: "Has seleccionado <strong>0</strong> proyectos de <strong>%{limit}</strong>"
-        one: "Has seleccionado <strong>1</strong> proyecto de <strong>%{limit}</strong>"
-        other: "Has seleccionado <strong>%{count}</strong> proyectos de <strong>%{limit}</strong>"
     show:
-      phase: Fase actual
       see_results: Ver resultados
       see_all_investments: "Ver todos los proyectos"
       investments_list: "Lista de proyectos"
@@ -214,6 +207,9 @@ es:
       discarded: "Proyecto de gasto descartado: "
       incompatibles: Incompatibles
       investment_title: Título del proyecto de gasto
+      investment_proyects: "Ver lista completa de proyectos de gasto"
+      unfeasible_investment_proyects: "Ver lista de proyectos de gasto inviables"
+      not_selected_investment_proyects: "Ver lista de proyectos de gasto no seleccionados para la votación final"
     executions:
       link: "Seguimiento"
       page_title: "%{budget} - Seguimiento de proyectos"

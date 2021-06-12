@@ -16,14 +16,17 @@
 // 01. Global styles
 // -----------------
 
+$admin-border-color: #d3d9dd;
+$admin-border:   2px solid $admin-border-color;
 $admin-color:    #245b80;
-$admin-border:   #d3d9dd;
+$admin-text:     #434d54;
+
 $sidebar:        #245b80;
 $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
 $table-header:   #ecf1f6;
-$table-border:   #d3d9dd;
+$table-border:   $admin-border;
 $table-color:    #4f5860;
 
 $admin-title:    #2f82b4;
@@ -46,8 +49,8 @@ $admin-text:     #434d54;
   }
 
   h3 {
-    color: $admin-title;
     margin: $line-height 0;
+    color: $admin-title;
 
     &.inline-block {
       margin-bottom: 0;
@@ -89,6 +92,7 @@ $admin-text:     #434d54;
     border-bottom: 1px solid #eee;
     color: #000;
     height: auto;
+    padding-top: $line-height / 2;
 
     @include breakpoint(small only) {
 
@@ -125,7 +129,7 @@ $admin-text:     #434d54;
       }
     }
 
-    [class^="icon-"]:not(.icon-circle) {
+    [class^="icon-"] {
       font-size: $base-font-size;
     }
   }
@@ -161,7 +165,6 @@ $admin-text:     #434d54;
 
     @include breakpoint(medium) {
       height: auto !important;
-      padding-top: $line-height / 2;
     }
 
     a {
@@ -175,15 +178,7 @@ $admin-text:     #434d54;
     right: 12px;
   }
 
-  .menu-icon {
-
-    &::after {
-      background: #000;
-      box-shadow: 0 7px 0 #000, 0 14px 0 #000;
-    }
-  }
-
-  .notifications .icon-circle {
+  .notifications.unread-notifications::after {
     color: $admin-color;
   }
 
@@ -243,8 +238,8 @@ $admin-text:     #434d54;
       line-height: $line-height * 2;
 
       .button {
+        @include brand-text;
         background: #fff;
-        color: $brand;
       }
     }
   }
@@ -266,10 +261,24 @@ $admin-text:     #434d54;
       border: 0;
       color: $table-color;
 
+      &,
       tr {
         border: 0;
       }
+
+      th:first-of-type {
+        border-top-left-radius: rem-calc(8);
+      }
+
+      th:last-of-type {
+        border-top-right-radius: rem-calc(8);
+      }
     }
+
+    caption {
+      @include element-invisible;
+    }
+
 
     th {
       background: $table-header;
@@ -285,7 +294,7 @@ $admin-text:     #434d54;
       }
 
       label {
-        color: #fff;
+        color: $white;
       }
 
       a {
@@ -295,7 +304,7 @@ $admin-text:     #434d54;
 
     tr {
       background: #fff;
-      border: 2px solid $table-border;
+      border: $table-border;
 
       &:hover {
         background: #f3f6f7;
@@ -310,16 +319,8 @@ $admin-text:     #434d54;
       table-layout: fixed;
     }
 
-    [type="submit"] ~ a,
-    a ~ a {
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: $line-height / 2;
-
-      @include breakpoint(medium) {
-        margin-left: $line-height / 2;
-        margin-top: 0;
-      }
+    [type="submit"] ~ a {
+      margin-left: $line-height / 2;
     }
   }
 
@@ -338,20 +339,21 @@ $admin-text:     #434d54;
       font-weight: bold;
     }
 
-    [type]:not([type="submit"], [type="button"]) {
-      background: #fff !important;
+    select {
+      height: $input-height;
     }
 
+    [type]:not([type="button"], [type=checkbox], [type=file], [type=radio], [type=submit]),
     select {
-      height: $line-height * 2;
-    }
-
-    [type]:not([type="submit"], [type="button"], [type="checkbox"], [type="radio"]),
-    select {
-      border: 2px solid $admin-border;
+      background-color: $white;
+      border: $admin-border;
       border-radius: rem-calc(6);
       box-shadow: none;
       margin-bottom: $line-height * 1.5;
+    }
+
+    [type]:not([type="submit"], [type="button"]) {
+      background: #fff !important;
     }
 
     label {
@@ -719,101 +721,7 @@ code {
 // 02. Sidebar
 // -----------
 
-.admin-sidebar {
-  background: $sidebar;
-  background: linear-gradient(to bottom, #245b80 0%, #488fb5 100%);
-  border-right: 1px solid $border;
-
-  ul {
-    list-style-type: none;
-    margin-bottom: 0;
-    margin-left: 0;
-    padding: 0;
-
-    [class^="icon-"] {
-      color: #fff;
-      display: inline-block;
-      font-size: rem-calc(20);
-      line-height: $line-height;
-      text-align: center;
-      vertical-align: middle;
-      width: $line-height * 1.5;
-    }
-  }
-
-  li {
-    margin: 0;
-    outline: 0;
-
-    ul {
-      margin-left: $line-height / 1.5;
-      border-left: 1px solid $sidebar-hover;
-      padding-left: $line-height / 2;
-    }
-
-    &.is-active a {
-      background: $sidebar-hover;
-      border-left: 2px solid $sidebar-active;
-      font-weight: bold;
-    }
-
-    &[aria-expanded="true"] {
-
-      > a::after {
-        transform: rotate(180deg);
-      }
-    }
-  }
-
-  li a {
-    color: #fff;
-    display: block;
-    line-height: $line-height * 2;
-    padding-left: $line-height / 4;
-    vertical-align: top;
-
-    &:hover {
-      background: $sidebar-hover;
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-
-  .is-accordion-submenu-parent {
-
-    > a::after {
-      border: 0;
-      content: "\f078";
-      font-family: "Font Awesome 5 Free";
-      font-weight: bold;
-      height: auto;
-      position: absolute;
-      right: 24px;
-      transition: 0.25s;
-    }
-  }
-
-  .submenu {
-    border-bottom: 0;
-    margin-left: $line-height;
-
-    li:first-child {
-      padding-top: $line-height / 2;
-    }
-
-    li:last-child {
-      padding-bottom: $line-height / 2;
-    }
-
-    a {
-      font-weight: normal;
-    }
-
-    .is-active {
-      border-bottom: 0;
-    }
-  }
-}
+// See admin/menu.scss
 
 // 03. List elements
 // -----------------
@@ -1019,6 +927,17 @@ code {
   }
 }
 
+.admin-content > header {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    @include regular-button;
+    margin-left: auto;
+  }
+}
+
 .admin-content .select-geozone,
 .admin-content .select-heading {
 
@@ -1027,7 +946,7 @@ code {
     display: block;
 
     &.is-active {
-      color: $brand;
+      @include brand-text;
       font-weight: bold;
       text-decoration: underline;
     }
@@ -1159,10 +1078,6 @@ table {
       color: $text-medium;
     }
 
-    [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-      background: $white;
-    }
-
     .legislation-process-start,
     .legislation-process-end {
       @include breakpoint(medium) {
@@ -1195,7 +1110,6 @@ table {
 .legislation-questions-form {
 
   [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-    background: $white;
     margin-bottom: 0;
 
     @include breakpoint(medium) {
@@ -1319,10 +1233,6 @@ table {
     @include breakpoint(medium) {
       text-align: right;
     }
-  }
-
-  [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-    background: $white;
   }
 
   .control {
@@ -1573,42 +1483,26 @@ table {
   }
 }
 
-.budget-phase-enabled {
-  font-weight: bold;
-  padding-left: rem-calc(20);
-  position: relative;
-  text-decoration: none;
-
-  &.enabled::before,
-  &.disabled::before {
-    font-family: "icons";
-    left: 0;
-    position: absolute;
-  }
-
-  &.enabled {
-    color: $check;
-
-    &::before {
-      color: $check;
-      content: "\6c";
-    }
-  }
-
-  &.disabled {
-    color: #000;
-
-    &::before {
-      color: #000;
-      content: "\76";
-    }
-  }
-}
-
 .columns-selector {
 
   [class^="icon-"] {
     vertical-align: middle;
+  }
+
+  &[aria-expanded='false'] {
+    @include hollow-button;
+
+    + .columns-selector-wrapper {
+      display: none;
+    }
+  }
+
+  [class^="icon-"] {
+    vertical-align: middle;
+  }
+
+  &[aria-expanded='true'] {
+    @include regular-button;
   }
 }
 
@@ -1617,10 +1511,6 @@ table {
   padding: 2rem;
   border-radius: 10px;
   margin-bottom: 1rem;
-
-  &.hidden {
-    display: none;
-  }
 
   .column-selector-item {
     display: inline-block;

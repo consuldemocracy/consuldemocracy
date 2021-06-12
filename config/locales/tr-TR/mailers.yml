@@ -1,19 +1,24 @@
 tr:
   mailers:
+    title: "Açık Yönetim"
     no_reply: "Bu mesaj yanıtları kabul etmeyen bir e-posta adresinden gönderildi."
     comment:
       hi: Merhaba
+      new_comment_by: <strong>%{commenter}</strong> adlı kullanıcıdan yeni yorum
       subject: Birisi sizin %{commentable} paylaşımınız hakkında yorum yaptı
       title: Yeni yorum
     config:
       manage_email_subscriptions: Bizden daha fazla e-posta almak istemiyorsanız, lütfen ayarlarınızı değiştirin
     email_verification:
       click_here_to_verify: bu bağlantı
+      instructions_2: Bu e-posta ile hesabınız <b>%{document_type} %{document_number}</b> kullanılarak doğrulanacaktır. Bu bilgiler size ait değilse, lütfen linke tıklamadan bu mesajı göz ardı edin.
+      instructions: Hesap doğrulama işlemini tamamlamak için linke tıklayın %{verification_link}.
       subject: E-postanızı onaylayın
       thanks: Çok teşekkür ederiz.
       title: Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın
     reply:
       hi: Merhaba
+      new_reply_by: Yorumunuza <strong>%{commenter}</strong> kullanıcısı tarafından yeni bir yanıt verildi
       subject: Birisi sizin yorumunuza cevap verdi
       title: Yorumunuza yeni bir cevap geldi
     proposal_notification_digest:
@@ -23,6 +28,7 @@ tr:
       comment: Öneriye yorum yap
       unsubscribe: "Eğer öneriyle ilgili bildirim almak istemiyorsanız, %{account}'u ziyaret edin ve 'Öneri bildirimlerinin bir özetini al' seçeneğindeki onay işaretini kaldırın."
       unsubscribe_account: Hesabım
+      unfollow: "Bildirim almaya son vermek için öneri sayfasını ziyaret edip takipten çıkarın."
     direct_message_for_receiver:
       subject: "Yeni bir özel mesaj aldınız"
       reply: '%{sender}''a yanıt ver'
@@ -30,6 +36,7 @@ tr:
       unsubscribe_account: Hesabım
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
+      title: "Bu içerikle <strong>%{receiver}</strong>'a bir yeni özel mesaj gönderdiniz:"
     user_invite:
       ignore: "Eğer bu daveti talep etmemişseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
       text: "%{org}'a katılım başvurunuz için teşekkür ederiz! Saniyeler içinde katılmaya başlayabilirsiniz, aşağıdaki formu doldurmanız yeterlidir:"
@@ -40,11 +47,15 @@ tr:
     budget_investment_created:
       subject: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
       title: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
+      intro: "Merhaba <strong>%{author}</strong>,"
+      text: "<strong>%{budget}</strong> Katılımcı Bütçe uygulamasında <strong>%{investment}</strong> yatırımını oluşturduğunuz için teşekkür ederiz."
+      follow: "Sürecin ilerleyişi hakkında sizi bilgilendireceğiz, ayrıca siz de gelişmeleri <strong>%{link}</strong> üzerinden takip edebilirsiniz."
       follow_link: "Katılımcı Bütçeler"
       sincerely: "İçtenlikle,"
       share: "Projenizi paylaşın"
     budget_investment_unfeasible:
       hi: "Değerli kullanıcı,"
+      new: "Tüm bunlar için, sizi bu sürecin koşullarına uygun olan <strong>yeni bir yatırım</strong> hazırlamaya davet ediyoruz. Bunun için bağlantıyı takip ediniz: %{url}."
       new_href: "yeni yatırım projesi"
       sincerely: "İçtenlikle"
       sorry: "Verdiğimiz rahatsızlıktan dolayı özür dileriz ve değerli katılımınız için tekrar teşekkür ederiz."
@@ -65,6 +76,7 @@ tr:
       subject: "Yeni değerlendirme yorumu"
       title: '%{investment} için yeni değerlendirme yorumu'
       hi: Merhaba
+      new_comment_by: <strong>%{commenter}</strong> kullanıcısı, bütçe yatırımına dair %{investment} yeni bir değerlendirme yorumu paylaştı
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Vatandaş öneriniz ile ilgili daha fazla haberler"

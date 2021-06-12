@@ -5,7 +5,7 @@ sv:
         residence: "Adress"
         sms: "SMS"
       local_census_records/import:
-        one: Importera lokalt adressregister
+        one: Importer av poster i lokalt adressregister
         other: Importera lokala adressregister
     attributes:
       verification:
@@ -25,10 +25,10 @@ sv:
         verification_code: "Koden du fick i ett brev"
       verification/management/document:
         document_type: "Dokumenttyp:"
-        document_number: "Dokumentnummer"
+        document_number: "Identitetshandlingens nummer"
       verification/residence:
         date_of_birth: "Födelsedatum"
-        document_type: "Dokumenttyp"
+        document_type: "Typ av identitetshandling"
         postal_code: "Postnummer"
       verification/sms:
         confirmation_code: "Fyll i koden som skickats till din mobiltelefon"

@@ -43,6 +43,13 @@ describe AdminNotification do
       expect(admin_notification.link).to eq("http://www.lol.consul.dev")
     end
 
+    it "does not modify a relative link" do
+      admin_notification.link = "/proposals"
+
+      expect(admin_notification).to be_valid
+      expect(admin_notification.link).to eq("/proposals")
+    end
+
     it "does not modify a link with http://" do
       admin_notification.link = "http://lol.consul.dev"
 

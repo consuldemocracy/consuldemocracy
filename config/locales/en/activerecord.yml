@@ -4,6 +4,10 @@ en:
     results_enabled: "Show results"
     stats_enabled: "Show stats"
     advanced_stats_enabled: "Show advanced stats"
+    name: Name
+    email: Email
+    description: Description
+    related_sdg_list: Goals and Targets
   activerecord:
     models:
       activity:
@@ -72,6 +76,18 @@ en:
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
+      sdg/goal:
+        one: "goal"
+        other: "goals"
+      sdg/local_target:
+        one: "local target"
+        other: "local targets"
+      sdg/manager:
+        one: "SDG manager"
+        other: "SDG managers"
+      sdg/target:
+        one: "target"
+        other: "targets"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -279,6 +295,7 @@ en:
         responsible_name: "Person responsible for the group"
       poll:
         name: "Name"
+        title: "Name"
         starts_at: "Start Date"
         ends_at: "Closing Date"
         geozone_restricted: "Restricted by geozone"
@@ -315,6 +332,24 @@ en:
         signable_type: "Signable type"
         signable_id: "Signable ID"
         document_numbers: "Documents numbers"
+      sdg/goal:
+        code: "Code"
+        title: "Title"
+        description: "Description"
+      sdg/local_target:
+        code: "Code"
+        target_id: "Target"
+        title: "Title"
+      sdg/local_target/translation:
+        title: "Title"
+        description: "Description"
+      sdg/phase/kind:
+        sensitization: "Sensitization"
+        planning: "Planning"
+        monitoring: "Monitoring"
+      sdg/target:
+        code: "Code"
+        title: "Title"
       site_customization/page:
         content: Content
         created_at: Created at
@@ -561,6 +596,10 @@ en:
           attributes:
             locale:
               already_translated: Already translated resource
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "must start with the same code as its target followed by a dot and end with a number"
       messages:
         translations_too_short: Is mandatory to provide one translation at least
         record_invalid: "Validation failed: %{errors}"

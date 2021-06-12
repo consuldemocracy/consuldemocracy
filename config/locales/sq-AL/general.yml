@@ -196,7 +196,6 @@ sq:
       collaborative_legislation: "\nProceset e legjislacionit"
       debates: Debate
       locale: "Gjuha:"
-      logo: Logoja
       management: Menaxhimi
       moderation: Moderim
       valuation: Vlerësim
@@ -210,10 +209,10 @@ sq:
       budgets: Buxhetet  pjesëmarrës
       notification_item:
         new_notifications:
+          zero: "Ju nuk keni njoftime të reja"
           one: Ju keni një njoftim të ri
           other: Ju keni %{count} njoftim të reja
         notifications: Njoftimet
-        no_notifications: "Ju nuk keni njoftime të reja"
   notifications:
     index:
       empty_notifications: Ju nuk keni njoftime të reja
@@ -546,7 +545,6 @@ sq:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
     youtube: "YouTube %{org}"
-    whatsapp: WhatsApp
     telegram: "Telegram %{org}"
     instagram: " Instagram %{org}"
   stats:
@@ -628,9 +626,10 @@ sq:
         debates: "Debatet më aktive"
         proposals: "Propozimet më aktive"
         processes: "\nProceset e hapura"
-      see_all_debates: Shihni të gjitha debated
-      see_all_proposals: Shiko të gjitha propozimet
-      see_all_processes: Shiko të gjitha proceset
+      see_all:
+        debates: Shihni të gjitha debated
+        proposals: Shiko të gjitha propozimet
+        processes: Shiko të gjitha proceset
       process_label: Proçes
       see_process: Shihni procesin
     cards:

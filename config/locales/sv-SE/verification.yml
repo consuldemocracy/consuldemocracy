@@ -1,14 +1,14 @@
 sv:
   verification:
     alert:
-      lock: Du har nått det maximala antalet försök. Vänligen försök igen senare.
+      lock: Du har nått det maximala antalet försök. Vi ber dig försöka igen senare.
     back: Gå tillbaka till mitt konto
     email:
       create:
         alert:
           failure: Det gick inte att skicka e-postmeddelandet till ditt konto
         flash:
-          success: "Vi har skickat ett bekräftelsemeddelande till ditt konto: %{email}"
+          success: "Vi har skickat ett bekräftelsemeddelande per e-post till ditt konto: %{email}"
       show:
         alert:
           failure: Verifieringskoden är felaktig
@@ -34,34 +34,34 @@ sv:
         user_permission_info: Med ditt konto kan du...
       update:
         flash:
-          success: Giltig kod. Ditt konto har verifierats
+          success: Giltig kod. Ditt konto har nu verifierats
     redirect_notices:
       already_verified: Ditt konto är redan verifierat
       email_already_sent: Vi har redan skickat ett e-postmeddelande med en bekräftelselänk. Om du inte hittar e-postmeddelandet, kan du begära ett nytt här
     residence:
       alert:
-        unconfirmed_residency: Du har inte bekräftat din adress
+        unconfirmed_residency: Du har inte bekräftat din adress än
       create:
         flash:
-          success: Din adress är bekräftad
+          success: Din bostadsadress har bekräftats
       new:
-        accept_terms_text: Jag accepterar %{terms_url} för adressregistret
-        accept_terms_text_title: Jag accepterar villkoren för tillgång till adressregistret
+        accept_terms_text: Jag godkänner %{terms_url} för adressregistret
+        accept_terms_text_title: Jag godkänner villkoren för tillgång till adressregistret
         document_number: Dokumentnummer
         document_number_help_title: Hjälp
-        document_number_help_text: "<strong>Legitimation</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Övrig identitetshandling</strong>: X1234567P"
+        document_number_help_text: "<strong>Nationellt id-kort</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Uppehållstillstånd</strong>: X1234567P"
         document_type:
           passport: Pass
-          residence_card: Övrig identitetshandling
-          spanish_id: Legitimation
+          residence_card: Uppehållstillstånd
+          spanish_id: Nationellt id-kort
         error_not_allowed_age: Du är för ung för att delta
         error_not_allowed_postal_code: Du måste vara en invånare i staden för att kunna verifieras.
         error_verifying_census: Den adress du angett stämmer inte överens med adressregistret. Var vänlig kontrollera dina adressuppgifter genom att ringa kommunen eller besöka ett medborgarkontor.
         form_errors: gjorde att din adress inte kunde bekräftas
         postal_code_note: För att verifiera ditt konto måste du vara registrerad
         terms: användarvillkoren
-        title: Bekräfta din adress
-        verify_residence: Bekräfta din adress
+        title: Bekräfta din bostadsadress
+        verify_residence: Bekräfta din bostadsadress
     sms:
       create:
         flash:
@@ -85,13 +85,13 @@ sv:
             success: Koden är giltig. Ditt konto har verifierats
           level_two:
             success: Giltig kod
-    step_1: Adress
+    step_1: Bostadsadress
     step_2: Bekräftelsekod
     step_3: Slutgiltig verifiering
     user_permission_debates: Delta i debatter
     user_permission_info: Genom att verifiera din information kommer du kunna...
     user_permission_proposal: Skapa nya förslag
-    user_permission_support_proposal: Stödja förslag*
+    user_permission_support_proposal: Stöd förslag*
     user_permission_votes: Delta i slutomröstningar*
     verified_user:
       form:

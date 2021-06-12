@@ -1,11 +1,8 @@
 require "rails_helper"
 
 describe "User invites" do
-  before do
-    login_as_manager
-  end
-
   scenario "Send invitations" do
+    login_as_manager
     visit new_management_user_invite_path
 
     fill_in "emails", with: "john@example.com, ana@example.com, isable@example.com"

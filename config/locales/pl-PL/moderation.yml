@@ -66,7 +66,7 @@ pl:
         ignore_flags: Oznacz jako wyświetlone
         order: Uporządkuj według
         orders:
-          created_at: Ostatnie
+          created_at: Najnowsze
           flags: Najbardziej oflagowane
         title: Wnioski
     budget_investments:
@@ -85,7 +85,7 @@ pl:
         ignore_flags: Oznacz jako wyświetlone
         order: Uporządkuj według
         orders:
-          created_at: Ostatnie
+          created_at: Najnowsze
           flags: Najbardziej oflagowane
         title: Inwestycje budżetowe
     proposal_notifications:
@@ -111,7 +111,6 @@ pl:
       index:
         hidden: Zablokowany
         hide: Blokuj
-        search: Szukaj
         search_placeholder: e-mail lub nazwa użytkownika
         title: Blokuj użytkowników
       notice_hide: Użytkownik jest zablokowany. Wszystkie dyskusje i komentarze tego użytkownika zostały ukryte.

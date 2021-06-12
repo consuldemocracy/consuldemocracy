@@ -41,7 +41,7 @@ describe "Legislation" do
       end
     end
 
-    scenario "Processes are sorted by descending start date", :js do
+    scenario "Processes are sorted by descending start date" do
       create(:legislation_process, title: "Process 1", start_date: 3.days.ago)
       create(:legislation_process, title: "Process 2", start_date: 2.days.ago)
       create(:legislation_process, title: "Process 3", start_date: Date.yesterday)
@@ -58,11 +58,11 @@ describe "Legislation" do
 
       visit legislation_process_path(process)
 
-      expect(page).not_to have_content("Participation phases")
+      expect(page).not_to have_content("PARTICIPATION PHASES")
 
       visit legislation_process_path(process_debate)
 
-      expect(page).to have_content("Participation phases")
+      expect(page).to have_content("PARTICIPATION PHASES")
     end
 
     scenario "Participation phases are displayed on current locale" do
@@ -71,13 +71,13 @@ describe "Legislation" do
 
       visit legislation_process_path(process)
 
-      expect(page).to have_content("Participation phases")
+      expect(page).to have_content("PARTICIPATION PHASES")
       expect(page).to have_content("Proposals")
       expect(page).to have_content("01 Jan 2018 - 01 Dec 2018")
 
       visit legislation_process_path(process, locale: "es")
 
-      expect(page).to have_content("Fases de participación")
+      expect(page).to have_content("FASES DE PARTICIPACIÓN")
       expect(page).to have_content("Propuestas")
       expect(page).to have_content("01 ene 2018 - 01 dic 2018")
     end
@@ -97,24 +97,24 @@ describe "Legislation" do
       visit legislation_processes_path
 
       within("#legislation_process_#{process.id} .legislation-calendar") do
-        expect(page).to have_content "Debate (0) 01 May 2020 - 30 May 2020 Locked", normalize_ws: true
-        expect(page).to have_content "Draft publication 20 May 2020 Published", normalize_ws: true
-        expect(page).to have_content "Proposals (0) 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
-        expect(page).to have_content "Comments (0) 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
-        expect(page).to have_content "Final result publication 01 Jul 2020 Coming soon", normalize_ws: true
+        expect(page).to have_content ["Debate (0)", "01 May 2020 - 30 May 2020", "LOCKED"].join("\n")
+        expect(page).to have_content ["Draft publication", "20 May 2020", "PUBLISHED"].join("\n")
+        expect(page).to have_content ["Proposals (0)", "01 Jun 2020 - 30 Jun 2020", "ACTIVE"].join("\n")
+        expect(page).to have_content ["Comments (0)", "01 Jun 2020 - 05 Jun 2020", "ACTIVE"].join("\n")
+        expect(page).to have_content ["Final result publication", "01 Jul 2020", "COMING SOON"].join("\n")
       end
 
       visit legislation_process_path(process)
 
       within(".legislation-content") do
-        expect(page).to have_content "Draft publication 20 May 2020", normalize_ws: true
-        expect(page).to have_content "Final result publication 01 Jul 2020", normalize_ws: true
+        expect(page).to have_content ["DRAFT PUBLICATION", "20 May 2020"].join("\n")
+        expect(page).to have_content ["FINAL RESULT PUBLICATION", "01 Jul 2020"].join("\n")
       end
 
       within(".legislation-process-list") do
-        expect(page).to have_content "Debate (0) 01 May 2020 - 30 May 2020 Locked", normalize_ws: true
-        expect(page).to have_content "Proposals (0) 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
-        expect(page).to have_content "Comments (0) 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
+        expect(page).to have_content ["Debate (0)", "01 May 2020 - 30 May 2020", "LOCKED"].join("\n")
+        expect(page).to have_content ["Proposals (0)", "01 Jun 2020 - 30 Jun 2020", "ACTIVE"].join("\n")
+        expect(page).to have_content ["Comments (0)", "01 Jun 2020 - 05 Jun 2020", "ACTIVE"].join("\n")
       end
 
       create(:legislation_question, process: process)
@@ -128,64 +128,20 @@ describe "Legislation" do
       visit legislation_processes_path
 
       within("#legislation_process_#{process.id} .legislation-calendar") do
-        expect(page).to have_content "Debate (2) 01 May 2020 - 30 May 2020 Locked", normalize_ws: true
-        expect(page).to have_content "Proposals (2) 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
-        expect(page).to have_content "Comments (2) 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
+        expect(page).to have_content ["Debate (2)", "01 May 2020 - 30 May 2020", "LOCKED"].join("\n")
+        expect(page).to have_content ["Proposals (2)", "01 Jun 2020 - 30 Jun 2020", "ACTIVE"].join("\n")
+        expect(page).to have_content ["Comments (2)", "01 Jun 2020 - 05 Jun 2020", "ACTIVE"].join("\n")
       end
 
       visit legislation_process_path(process)
 
       within(".legislation-process-list") do
-        expect(page).to have_content "Debate (2) 01 May 2020 - 30 May 2020 Locked", normalize_ws: true
-        expect(page).to have_content "Proposals (2) 01 Jun 2020 - 30 Jun 2020 Active", normalize_ws: true
-        expect(page).to have_content "Comments (2) 01 Jun 2020 - 05 Jun 2020 Active", normalize_ws: true
+        expect(page).to have_content ["Debate (2)", "01 May 2020 - 30 May 2020", "LOCKED"].join("\n")
+        expect(page).to have_content ["Proposals (2)", "01 Jun 2020 - 30 Jun 2020", "ACTIVE"].join("\n")
+        expect(page).to have_content ["Comments (2)", "01 Jun 2020 - 05 Jun 2020", "ACTIVE"].join("\n")
       end
 
       travel_back
-    end
-
-    scenario "Participation phases do not show dates if they are blank" do
-      process = create(:legislation_process, debate_start_date: "",
-                                             debate_end_date: "",
-                                             proposals_phase_start_date: "",
-                                             proposals_phase_end_date: "",
-                                             draft_publication_date: "",
-                                             allegations_start_date: "",
-                                             allegations_end_date: "",
-                                             result_publication_date: "")
-
-      visit legislation_processes_path
-
-      within("#legislation_process_#{process.id} .legislation-calendar") do
-        expect(page).to have_content "Debate"
-        expect(page).to have_content "Draft publication"
-        expect(page).to have_content "Proposals"
-        expect(page).to have_content "Comments"
-        expect(page).to have_content "Final result publication"
-        expect(page).not_to have_content "Locked"
-        expect(page).not_to have_content "Published"
-        expect(page).not_to have_content "Active"
-        expect(page).not_to have_content "Coming soon"
-        expect(page).not_to have_content "-"
-      end
-
-      visit legislation_process_path(process)
-
-      within(".legislation-content") do
-        expect(page).to have_content "Draft publication"
-        expect(page).to have_content "Final result publication"
-      end
-
-      within(".legislation-process-list") do
-        expect(page).to have_content "Debate"
-        expect(page).to have_content "Proposals"
-        expect(page).to have_content "Comments"
-        expect(page).not_to have_content "Locked"
-        expect(page).not_to have_content "Published"
-        expect(page).not_to have_content "Active"
-        expect(page).not_to have_content "Coming soon"
-        expect(page).not_to have_content "-"
-      end
     end
 
     scenario "Filtering processes" do
@@ -233,6 +189,19 @@ describe "Legislation" do
         expect(page).to have_content("past published")
       end
     end
+
+    scenario "Show SDG tags when feature is enabled" do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.legislation"] = true
+
+      process = create(:legislation_process, sdg_goals: [SDG::Goal[1]],
+                                   sdg_targets: [SDG::Target["1.1"]])
+
+      visit legislation_process_path(process)
+
+      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_content "target 1.1"
+    end
   end
 
   context "process page" do
@@ -262,10 +231,10 @@ describe "Legislation" do
         visit legislation_process_path(process)
 
         within("aside") do
-          expect(page).to have_content("Draft publication")
-          expect(page).to have_content("10 Jan 2019")
-          expect(page).to have_content("Final result publication")
-          expect(page).to have_content("20 Jan 2019")
+          expect(page).to have_content "DRAFT PUBLICATION"
+          expect(page).to have_content "10 Jan 2019"
+          expect(page).to have_content "FINAL RESULT PUBLICATION"
+          expect(page).to have_content "20 Jan 2019"
         end
       end
 
@@ -285,9 +254,11 @@ describe "Legislation" do
 
         visit legislation_process_path(process)
 
-        expect(page).to have_content("Additional information")
-        expect(page).to have_content("Less information")
-        expect(page).to have_content("Text for additional info of the process")
+        expect(page).not_to have_content "Text for additional info of the process"
+
+        click_button "Additional information"
+
+        expect(page).to have_content "Text for additional info of the process"
       end
 
       scenario "do not show additional info button if it is empty" do
@@ -295,8 +266,8 @@ describe "Legislation" do
 
         visit legislation_process_path(process)
 
-        expect(page).not_to have_content("Additional information")
-        expect(page).not_to have_content("Less information")
+        expect(page).not_to have_button "Additional information"
+        expect(page).not_to have_button "Less information"
       end
 
       scenario "Shows another translation when the default locale isn't available" do
@@ -317,6 +288,19 @@ describe "Legislation" do
         click_link "Create a proposal"
 
         expect(page).to have_current_path new_legislation_process_proposal_path(process)
+      end
+
+      scenario "Show SDG tags when feature is enabled" do
+        Setting["feature.sdg"] = true
+        Setting["sdg.process.legislation"] = true
+
+        process = create(:legislation_process, sdg_goals: [SDG::Goal[1]],
+                                               sdg_targets: [SDG::Target["1.1"]])
+
+        visit legislation_process_path(process)
+
+        expect(page).to have_selector "img[alt='1. No Poverty']"
+        expect(page).to have_content "target 1.1"
       end
     end
 
@@ -464,16 +448,6 @@ describe "Legislation" do
         visit legislation_process_proposals_path(process)
 
         expect(page).to have_content("There are no proposals")
-      end
-
-      scenario "create proposal button redirects to register path if user is not logged in" do
-        process = create(:legislation_process, :in_proposals_phase)
-
-        visit legislation_process_proposals_path(process)
-        click_link "Create a proposal"
-
-        expect(page).to have_current_path new_user_session_path
-        expect(page).to have_content "You must sign in or register to continue"
       end
 
       include_examples "not published permissions", :legislation_process_proposals_path

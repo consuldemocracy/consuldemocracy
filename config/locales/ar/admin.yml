@@ -72,10 +72,6 @@ ar:
         budget_investments: إدارة المشاريع
         table_name: الإ سم
         table_phase: مرحلة
-        table_investments: إستثمارات
-        table_edit_groups: مجموعات العناوين
-        table_edit_budget: تعديل
-        table_admin_ballots: بطاقات الاقتراع
         edit_groups: تعديل مجموعات العناوين
         edit_budget: تعديل الميزانية
         admin_ballots: بطاقات الاقتراع الادارية
@@ -88,7 +84,6 @@ ar:
         title: تعديل الميزانية المشاركة
         delete: حذف الميزانية
         phase: مرحلة
-        dates: التواريخ
         enabled: تفعيل
         actions: الإجراءات
         edit_phase: تعديل المرحلة
@@ -125,7 +120,6 @@ ar:
     budget_groups:
       name: "الإ سم"
       headings_name: "العناوين"
-      headings_edit: "تعديل العناوين"
       headings_manage: "إدارة العناوين"
       no_groups: "لا توجد مجموعات."
       amount:
@@ -175,7 +169,6 @@ ar:
         back: "العودة إلى المجموعات"
     budget_phases:
       edit:
-        summary_help_text: هذا النص سوف يخبر المستخدم عن المرحلة. لإظهاره حتى إذا كانت المرحلة غير نشطة، حدد مربع الاختيار أدناه
         description_help_text: سيظهر هذا النص في الرأس عندما تكون المرحلة نشطة
         enabled_help_text: ستكون هذه المرحلة أحد المراحل المتاحة للعامة من بين مراحل الموازنة، إلى جانب كونها نشطة لأي غرض آخر
         save_changes: حفظ التغييرات
@@ -307,8 +300,6 @@ ar:
         table_name: الإ سم
         table_description: الوصف
         table_actions: الإجراءات
-        delete: حذف
-        edit: تعديل
       edit:
         title: تعديل حالة المعلم
       update:
@@ -370,8 +361,6 @@ ar:
         index:
           description: "عندما ينشئ المستخدمون اقتراحات ، يمكنهم الوصول إلى اللوحة الخاصة باقتراحهم ، اين يمكنك اقتراح الموارد والتوصيات للحصول على الدعم لفكرتهم."
           create: إنشاء مورد أو إجراء
-          edit: تعديل
-          delete: حذف
           active: 'نعم'
           inactive: 'لا'
           title: الموارد و الإجراءات
@@ -506,7 +495,6 @@ ar:
           banner_title: لون العنوان
         index:
           create: عملية جديدة
-          delete: حذف
           title: العمليات التشريعية
           filters:
             active: نشِط
@@ -630,12 +618,9 @@ ar:
     managers:
       index:
         title: مدراء
-        name: الإ سم
-        email: البريد الإلكتروني
         no_managers: لا يوجد مدراء.
       manager:
         add: إضافة
-        delete: حذف
       search:
         title: "المدراء: البحث عن المستخدم"
     menu:
@@ -707,14 +692,10 @@ ar:
     administrators:
       index:
         title: مدراء
-        name: الإ سم
-        email: البريد الإلكتروني
-        description: الوصف
         id: معرف المدير
         no_administrators: لا يوجد مدراء.
       administrator:
         add: إضافة
-        delete: حذف
         restricted_removal: "عذراً، لا يمكنك إزالة نفسك من المدراء"
       search:
         title: "المسؤولين: بحث عن مستخدم"
@@ -724,12 +705,9 @@ ar:
     moderators:
       index:
         title: المشرفين
-        name: الإ سم
-        email: البريد الإلكتروني
         no_moderators: لا يوجد مشرفون.
       moderator:
         add: إضافة
-        delete: حذف
       search:
         title: "المشرفون: البحث عن مستخدم"
     segment_recipient:
@@ -756,8 +734,6 @@ ar:
         sent: تم الإرسال
         actions: الإجراءات
         draft: مسودة
-        edit: تعديل
-        delete: حذف
         preview: معاينة
         empty_newsletters: لا توجد أية رسائل إخبارية للإظهار
       new:
@@ -796,8 +772,6 @@ ar:
         sent: تم الإرسال
         actions: الإجراءات
         draft: مسودة
-        edit: تعديل
-        delete: حذف
         preview: معاينة
         view: عرض
         empty_notifications: لايوجد عناصر للعرض
@@ -895,7 +869,6 @@ ar:
         can_edit_dossier: "يمكن تعديل الملف"
       valuator:
         add: أضف إلى المقيمين
-        delete: حذف
       search:
         title: "المقيمون: البحث عن مستخدم"
       form:
@@ -933,7 +906,6 @@ ar:
         entry_name: ضابط
       search:
         email_placeholder: بحث عن مستخدم عن طريق البريد الإلكتروني
-        search: بحث
         user_not_found: المستخدم غير موجود
         help: "لإضافة أو إزالة موظفي استطلاع الرأي ، الرجاء استخدام نموذج البحث أدناه."
     poll_officer_assignments:
@@ -1193,8 +1165,6 @@ ar:
         no_organizations: لا توجد منظمات.
         reject: رفض
         rejected: مرفوضة
-        search: بحث
-        search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
         title: منظمات
         verified: تم التثبت
         verify: تحقق
@@ -1259,24 +1229,15 @@ ar:
     shared:
       true_value: "نعم"
       false_value: "لا"
-      booths_search:
-        button: بحث
-        placeholder: البحث عند مكتب إقتراع وفقا للاسم
-      poll_officers_search:
-        button: بحث
-        placeholder: البحث عن ضباط الاستطلاع
-      poll_questions_search:
-        button: بحث
-        placeholder: البحث عن أسئلة الاستطلاع
-      proposal_search:
-        button: بحث
-        placeholder: البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال
-      debate_search:
-        button: بحث
-        placeholder: بحث في المناقشات حسب العنوان أو الوصف
-      user_search:
-        button: بحث
-        placeholder: بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني
+      search:
+        label:
+          booths: "البحث عند مكتب إقتراع وفقا للاسم"
+          debates: "بحث في المناقشات حسب العنوان أو الوصف"
+          organizations: "الاسم، البريد الإلكتروني أو رقم الهاتف"
+          poll_officers: "البحث عن ضباط الاستطلاع"
+          poll_questions: "البحث عن أسئلة الاستطلاع"
+          proposals: "البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال"
+          users: "بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني"
       search_results: "نتائج البحث"
       no_search_results: "لا توجد نتائج."
       actions: الإجراءات
@@ -1290,7 +1251,6 @@ ar:
       author: كاتب
       content: المحتوى
       created_at: أنشئت في
-      delete: حذف
       color_help: تنسيق Hexadecimal
       show_results_and_stats: "اظهار النتائج والإحصائيات"
       results_and_stats_reminder: "عند تحديد خانات الاختيار كنتائج و / أو إحصائيات ستكون متاحة للجميع وسيشاهدها كل مستخدم."
@@ -1298,8 +1258,6 @@ ar:
       index:
         title: رقعة جغرافية
         create: إنشاء منطقة جغرافية
-        edit: تعديل
-        delete: حذف
       geozone:
         name: الإ سم
         external_code: الرّمز الخارجي
@@ -1445,7 +1403,6 @@ ar:
         no_users: لا يوجد مستخدمين.
       search:
         placeholder: البحث عن المستخدم عبر البريد الإلكتروني أو الاسم أو رقم الوثيقة
-        search: بحث
     verifications:
       index:
         phone_not_given: الهاتف غير معطى
@@ -1519,16 +1476,11 @@ ar:
           updated_at: تم التحديث في
           title: عنوان
           slug: سبيكة
-          cards_title: بطاقات
           see_cards: رؤية البطاقات
         cards:
           cards_title: بطاقات
           create_card: إنشاء بطاقة
           no_cards: لا يوجد بطاقات.
-          title: عنوان
-          description: الوصف
-          link_text: نص الرابط
-          link_url: رابط URL
           columns_help: "عرض البطاقة في عدد الأعمدة. يكون العرض دائمًا 100٪ على شاشات المحمول."
           create:
             notice: "تم إنشاء البطاقة بنجاح!"
@@ -1545,11 +1497,6 @@ ar:
       cards_title: بطاقات
       create_card: إنشاء بطاقة
       no_cards: لا يوجد بطاقات.
-      cards:
-        title: عنوان
-        description: الوصف
-        link_text: نص الرابط
-        link_url: رابط URL
       feeds:
         proposals: إقتراحات
         debates: النقاشات

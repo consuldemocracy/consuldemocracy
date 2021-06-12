@@ -1,0 +1,50 @@
+tr:
+  sdg_management:
+    actions:
+      edit: "Amaçları ve hedefleri yönetin"
+    header:
+      title: "SKH içeriği"
+    homepage:
+      title: "Ana sayfa biçimlendirmesi"
+      header:
+        create: "Başlık oluştur"
+        no_cards: "Başlık yok"
+        title: "Başlık"
+      create_card: "Kart %{phase} oluştur"
+      no_cards: "Bu aşama için kart yok"
+    menu:
+      budget_investments: "Katılımcı bütçeleri"
+      debates: "Tartışmalar"
+      legislation_processes: "İşbirliğine dayalı mevzuat"
+      legislation_proposals: "Yasal mevzuat teklifleri"
+      polls: "Anketler"
+      proposals: "Teklifler"
+      sdg_content: "Amaçlar ve Hedefler"
+      sdg_homepage: "SKH ana sayfası"
+    local_targets:
+      create:
+        notice: "Yerel hedef başarıyla oluşturuldu"
+      destroy:
+        notice: "Yerel hedef başarıyla silindi"
+      edit:
+        title: "Yerel hedefi düzenle"
+      form:
+        code: "Kod, seçilen hedef kodla başlamalı ve ardından nokta gelmelidir"
+        description: "Bu açıklama kullanıcılara yardım olarak gösterilecektir."
+      index:
+        new: "Yerel hedef oluştur"
+      new:
+        title: "Yeni yerel hedef"
+      update:
+        notice: "Yerel hedef başarıyla güncellendi"
+    relations:
+      index:
+        filter: "Filtre"
+        filters:
+          all: "Tümü"
+          pending_sdg_review: "Beklemede"
+          sdg_reviewed: "İncelendi olarak işaretlendi"
+      update:
+        notice: "%{relatable} başarıyla güncellendi"
+      update_and_review:
+        notice: "%{relatable} başarıyla güncellendi ve incelendi olarak işaretlendi"

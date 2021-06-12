@@ -4,9 +4,11 @@
 
 <div class="clear"></div>
 
-<h2 class="inline-block"><%= "#{@budget.name} / #{@group.name}" %></h2>
+<header>
+  <h2><%= "#{@budget.name} / #{@group.name}" %></h2>
+</header>
 
-<%= render "help_block" %>
+<%= render Admin::Budgets::HelpComponent.new("budget_headings.#{@mode}") %>
 
 <%= render "/admin/budgets/creation_timeline", step: "headings" %>
 

@@ -15,11 +15,11 @@ ro:
           password: Parolă
           send_email: Trimite noua parolă prin email
           reset_email_send: Email trimis corect.
-          reseted: Parolă resetată cu succes
+          reseted: Parolă actualizată cu succes
           random: Generează parolă aleatorie
           save: Salvează parolă
-          print: Printează parolă
-          print_help: Veți avea posibilitatea să printați parola când aceasta va fi salvată.
+          print: Imprimare parolă
+          print_help: Veți avea posibilitatea să imprimați parola când aceasta va fi salvată.
     account_info:
       change_user: Schimbă utilizatorul
       document_number_label: "Numărul documentului:"
@@ -58,10 +58,10 @@ ro:
       send_email: Trimite emailul de verificare
     menu:
       create_proposal: Crează propunere
-      print_proposals: Printează propunere
+      print_proposals: Imprimare propunere
       support_proposals: Sprijină propuneri
       create_budget_investment: Crează buget de investiții
-      print_budget_investments: Printează buget de investiții
+      print_budget_investments: Imprimă buget de investiții
       support_budget_investments: Susțineți bugetul de investiții
       users: Administrarea utilizatorilor
       user_invites: Trimite invitații
@@ -75,7 +75,7 @@ ro:
       proposals_info: Crează-ți propunerea pe http://url.consul
       proposals_title: "Propuneri:"
       budget_investments_info: Participă la http://url.consul
-    print_info: Printează această informație
+    print_info: Imprimă această informație
     proposals:
       alert:
         unverified_user: Utilizatorul nu este verificat
@@ -107,6 +107,7 @@ ro:
         few: " care conțin termenii \"%{search_term}\""
         other: " care conțin termenii \"%{search_term}\""
     sessions:
+      need_managed_user: Pentru a efectua această acțiune trebuie să selectați un utilizator
       signed_out: Deconectat cu succes.
       signed_out_managed_user: Sesiunea de utilizator s-a deconectat cu succes.
     username_label: Nume de utilizator

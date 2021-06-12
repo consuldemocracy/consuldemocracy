@@ -2,8 +2,8 @@ sv:
   pages:
     conditions:
       title: Användarvillkoren
-      subtitle: Rättsligt meddelande om användarvillkor, säkerhet och skydd av personlig data för Open Government portalen
-      description: Informationssida om användarvillkor, säkerhet och skydd av personlig data.
+      subtitle: RÄTTSLIGT MEDDELANDE OM ANVÄNDARVILLKOR, SÄKERHET OCH SKYDD AV PERSONUPPGIFTER I OPEN GOVERNMENT-PORTALEN
+      description: Informationssida om användarvillkor, säkerhet och skydd av personuppgifter.
     help:
       title: "%{org} är en plattform för medborgardeltagande"
       guide: "Den här guiden förklarar de olika delarna av %{org} och hur de fungerar."
@@ -18,9 +18,9 @@ sv:
         title: "Debatter"
         description: "I %{link}-delen kan du presentera dina åsikter och diskutera frågor som rör staden. Det är också en plats för att utveckla idéer som kan tas vidare till andra delar av %{org} och leda till konkreta åtgärder från kommunen."
         link: "debatter"
-        feature: "Du kan skriva debattinlägg och kommentera och betygsätta andras inlägg med <strong>Jag håller med</strong> eller <strong>Jag håller inte med</strong>. För att göra det behöver du %{link}."
+        feature: "Du kan skriva debattinlägg och kommentera och betygsätta andras inlägg med <strong>Jag håller med</strong> eller <strong>Jag håller inte med</strong>. För att göra det måste du %{link}."
         feature_link: "registrera dig på %{org}"
-        image_alt: "Knappar för att betygsätta diskussioner"
+        image_alt: "Knappar för att betygsätta debatterna"
         figcaption: 'Knappar för "Jag håller med" och "Jag håller inte med" för att betygsätta diskussioner.'
       proposals:
         title: "Förslag"
@@ -44,6 +44,8 @@ sv:
         title: "Processer"
         description: "I %{link}-delen är medborgare med i processen för att skriva och kommentera nya dokument och handlingar som rör staden."
         link: "processer"
+        feature: "För att delta i processerna måste du %{link} och verifiera ditt konto."
+        feature_link: "registrera dig i %{org_name}"
       faq:
         title: "Har du tekniska problem?"
         description: "Läs de vanligaste frågorna och svaren."
@@ -54,6 +56,7 @@ sv:
       other:
         title: "Andra intresseområden"
         how_to_use: "Använd %{org_name} i din stad"
+        sdg: "Globala målen för hållbar utveckling, hjälp"
       how_to_use:
         text: |-
           Använd plattformen i din stad eller hjälp oss att förbättra den, den är fri programvara.
@@ -64,7 +67,7 @@ sv:
       titles:
         how_to_use: Använd det i din kommun
     privacy:
-      title: Sekretesspolicyn
+      title: Integritetspolicyn
       subtitle: "Informationssida om säkerhet"
     accessibility:
       title: Tillgänglighet
@@ -74,7 +77,7 @@ sv:
         När webbplatser designas med tillgänglighet i åtanke, kan alla användare få tillgång till innehållet på jämlika villkor, exempelvis:
       examples:
         - Erbjuda syntolkning till bilder som användare med synnedsättningar med hjälp av textläsare kan använda för att få tillgång till information.
-        - När videos har undertext kan användare med hörselskador fullt förstå dem.
+        - När videor har undertext kan användare med hörselskador fullt förstå dem.
         - Om innehållet är skrivet på ett lätt och illustrerat språk kan användare med inlärningssvårigheter bättre förstå det.
         - Om användaren har problem med rörlighet och det är svårt att använda musen kan tangentbordets alternativ hjälpa att navigera.
       keyboard_shortcuts:
@@ -111,7 +114,7 @@ sv:
           rows:
             - 
               browser_column: IE
-              key_column: ALT + genväg sen ENTER
+              key_column: ALT + genväg, sedan ENTER
             - 
               browser_column: Firefox
               key_column: ALT + CAPS + genväg
@@ -129,7 +132,7 @@ sv:
         browser_settings_table:
           description: Webbplatsens tillgängliga design tillåter användaren att välja den storlek på texten som passar hen. Detta kan göras på olika sätt beroende på vilken webbläsare som används.
           browser_header: Webbläsare
-          action_header: Åtgärd att ta
+          action_header: Åtgärd att vidta
           rows:
             - 
               browser_column: IE

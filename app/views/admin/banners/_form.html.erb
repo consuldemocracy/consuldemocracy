@@ -34,12 +34,14 @@
   </div>
 
   <div class="row">
-    <div class="small-12 column">
-      <%= f.label :sections, t("admin.banners.banner.sections_label") %>
+    <fieldset class="small-12 column">
+      <legend><%= t("admin.banners.banner.sections_label") %></legend>
       <%= f.collection_check_boxes(:web_section_ids, @banner_sections, :id, :name) do |b| %>
-        <%= b.check_box %> <%= t("admin.banners.banner.sections.#{b.text}") %><br>
+        <%= b.label do %>
+          <%= b.check_box + t("admin.banners.banner.sections.#{b.text}") %>
+        <% end %>
       <% end %>
-    </div>
+    </fieldset>
   </div>
 
   <div class="row">
@@ -77,6 +79,6 @@
   </div>
 
   <div class="row">
-    <%= render "shared/banner", banner: @banner %>
+    <%= render Shared::BannerComponent.new(@banner) %>
   </div>
 <% end %>

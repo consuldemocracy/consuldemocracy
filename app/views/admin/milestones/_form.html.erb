@@ -5,7 +5,7 @@
   <div class="row">
     <div class="small-12 medium-6 margin-bottom column">
       <%= f.select :status_id,
-            @statuses.collect { |s| [s.name, s.id] },
+            @statuses.map { |s| [s.name, s.id] },
             { include_blank: @statuses.any? ? "" : t("admin.milestones.form.no_statuses_defined") },
             { disabled: @statuses.blank? } %>
       <%= link_to t("admin.milestones.form.admin_statuses"),

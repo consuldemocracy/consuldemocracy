@@ -13,7 +13,7 @@
 
   <div class="subfooter row">
     <div class="small-12 medium-8 column">
-      <%= t("layouts.footer.copyright", version: "1.2.0", year: Time.current.year) %>
+      <%= t("layouts.footer.copyright", version: "1.3.1", year: Time.current.year) %>
       <ul class="no-bullet inline-block">
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
@@ -25,7 +25,7 @@
       <div class="text-right">
         <ul class="no-bullet">
           <% if setting["twitter_handle"] %>
-            <li class="inline-block">
+            <li>
               <%= link_to "https://twitter.com/#{setting["twitter_handle"]}", target: "_blank",
                            title: t("shared.go_to_page") + t("social.twitter", org: setting["org_name"]) + t("shared.target_blank") do %>
                               <span class="show-for-sr"><%= t("social.twitter", org: setting["org_name"]) %></span>
@@ -34,7 +34,7 @@
             </li>
           <% end %>
           <% if setting["facebook_handle"] %>
-            <li class="inline-block">
+            <li>
               <%= link_to "https://www.facebook.com/#{setting["facebook_handle"]}/", target: "_blank",
                           title: t("shared.go_to_page") + t("social.facebook", org: setting["org_name"]) + t("shared.target_blank") do %>
                           <span class="show-for-sr"><%= t("social.facebook", org: setting["org_name"]) %></span>
@@ -43,7 +43,7 @@
             </li>
           <% end %>
           <% if setting["youtube_handle"] %>
-            <li class="inline-block">
+            <li>
               <%= link_to "https://www.youtube.com/#{setting["youtube_handle"]}", target: "_blank",
                           title: t("shared.go_to_page") + t("social.youtube", org: setting["org_name"]) + t("shared.target_blank") do %>
                           <span class="show-for-sr"><%= t("social.youtube", org: setting["org_name"]) %></span>
@@ -52,7 +52,7 @@
             </li>
           <% end %>
           <% if setting["telegram_handle"] %>
-            <li class="inline-block">
+            <li>
               <%= link_to "https://www.telegram.me/#{setting["telegram_handle"]}", target: "_blank",
                           title: t("shared.go_to_page") + t("social.telegram", org: setting["org_name"]) + t("shared.target_blank") do %>
                           <span class="show-for-sr"><%= t("social.telegram", org: setting["org_name"]) %></span>
@@ -61,7 +61,7 @@
             </li>
           <% end %>
           <% if setting["instagram_handle"] %>
-            <li class="inline-block">
+            <li>
               <%= link_to "https://www.instagram.com/#{setting["instagram_handle"]}", target: "_blank",
                           title: t("shared.go_to_page") + t("social.instagram", org: setting["org_name"]) + t("shared.target_blank") do %>
                           <span class="show-for-sr"><%= t("social.instagram", org: setting["org_name"]) %></span>

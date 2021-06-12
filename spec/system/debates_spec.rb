@@ -1,11 +1,6 @@
 require "rails_helper"
 
 describe "Debates" do
-  scenario "Disabled with a feature flag" do
-    Setting["process.debates"] = nil
-    expect { visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-  end
-
   context "Concerns" do
     it_behaves_like "notifiable in-app", :debate
     it_behaves_like "relationable", Debate
@@ -93,9 +88,33 @@ describe "Debates" do
     expect(page).to have_content I18n.l(debate.created_at.to_date)
     expect(page).to have_selector(avatar(debate.author.name))
     expect(page.html).to include "<title>#{debate.title}</title>"
+  end
 
-    within(".social-share-button") do
-      expect(page.all("a").count).to be(3) # Twitter, Facebook, Telegram
+  describe "Social share buttons" do
+    context "On desktop browsers" do
+      scenario "Shows links to share on facebook and twitter" do
+        visit debate_path(create(:debate))
+
+        within(".social-share-button") do
+          expect(page.all("a").count).to be(2)
+          expect(page).to have_link "Share to Facebook"
+          expect(page).to have_link "Share to Twitter"
+        end
+      end
+    end
+
+    context "On small devices", :small_window do
+      scenario "Shows links to share on telegram and whatsapp too" do
+        visit debate_path(create(:debate))
+
+        within(".social-share-button") do
+          expect(page.all("a").count).to be(4)
+          expect(page).to have_link "Share to Facebook"
+          expect(page).to have_link "Share to Twitter"
+          expect(page).to have_link "Share to Telegram"
+          expect(page).to have_link "Share to WhatsApp"
+        end
+      end
     end
   end
 
@@ -179,15 +198,13 @@ describe "Debates" do
     expect(page).to have_content("No votes")
   end
 
-  scenario "Create" do
+  scenario "Create", :with_frozen_time do
     author = create(:user)
     login_as(author)
 
     visit new_debate_path
     fill_in "Debate title", with: "A title for a debate"
-    fill_in "Initial debate text", with: "This is very important because..."
-    # Check terms of service by default
-    # check "debate_terms_of_service"
+    fill_in_ckeditor "Initial debate text", with: "This is very important because..."
 
     click_button "Start a debate"
 
@@ -195,10 +212,10 @@ describe "Debates" do
     expect(page).to have_content "Debate created successfully."
     expect(page).to have_content "This is very important because..."
     expect(page).to have_content author.name
-    expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
+    expect(page).to have_content I18n.l(Date.current)
   end
 
-  scenario "Create with invisible_captcha honeypot field" do
+  scenario "Create with invisible_captcha honeypot field", :no_js do
     author = create(:user)
     login_as(author)
 
@@ -206,8 +223,6 @@ describe "Debates" do
     fill_in "Debate title", with: "I am a bot"
     fill_in "debate_subtitle", with: "This is a honeypot field"
     fill_in "Initial debate text", with: "This is the description"
-    # Check terms of service by default
-    # check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -224,9 +239,7 @@ describe "Debates" do
 
     visit new_debate_path
     fill_in "Debate title", with: "I am a bot"
-    fill_in "Initial debate text", with: "This is the description"
-    # Check terms of service by default
-    # check "debate_terms_of_service"
+    fill_in_ckeditor "Initial debate text", with: "This is the description"
 
     click_button "Start a debate"
 
@@ -244,15 +257,13 @@ describe "Debates" do
     expect(page).to have_content error_message
   end
 
-  scenario "JS injection is prevented but safe html is respected" do
+  scenario "JS injection is prevented but safe html is respected", :no_js do
     author = create(:user)
     login_as(author)
 
     visit new_debate_path
     fill_in "Debate title", with: "Testing an attack"
     fill_in "Initial debate text", with: "<p>This is <script>alert('an attack');</script></p>"
-    # Check terms of service by default
-    # check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -269,9 +280,7 @@ describe "Debates" do
 
     visit new_debate_path
     fill_in "Debate title", with: "Testing auto link"
-    fill_in "Initial debate text", with: "<p>This is a link www.example.org</p>"
-    # Check terms of service by default
-    # check "debate_terms_of_service"
+    fill_in_ckeditor "Initial debate text", with: "This is a link www.example.org"
 
     click_button "Start a debate"
 
@@ -280,7 +289,7 @@ describe "Debates" do
     expect(page).to have_link("www.example.org", href: "http://www.example.org")
   end
 
-  scenario "JS injection is prevented but autolinking is respected" do
+  scenario "JS injection is prevented but autolinking is respected", :no_js do
     author = create(:user)
     js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     login_as(author)
@@ -288,8 +297,6 @@ describe "Debates" do
     visit new_debate_path
     fill_in "Debate title", with: "Testing auto link"
     fill_in "Initial debate text", with: js_injection_string
-    # Check terms of service by default
-    # check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -301,7 +308,8 @@ describe "Debates" do
 
     click_link "Edit"
 
-    expect(page).to have_current_path(edit_debate_path(Debate.last))
+    expect(page).to have_css "h1", exact_text: "Edit debate"
+    expect(page).to have_field "Debate title", with: "Testing auto link"
     expect(page).not_to have_link("click me")
     expect(page.html).not_to include "<script>alert('hey')</script>"
   end
@@ -339,7 +347,7 @@ describe "Debates" do
     expect(page).to have_current_path(edit_debate_path(debate))
 
     fill_in "Debate title", with: "End child poverty"
-    fill_in "Initial debate text", with: "Let's do something to end child poverty"
+    fill_in_ckeditor "Initial debate text", with: "Let's do something to end child poverty"
 
     click_button "Save changes"
 
@@ -360,7 +368,7 @@ describe "Debates" do
   end
 
   describe "Debate index order filters" do
-    scenario "Default order is hot_score", :js do
+    scenario "Default order is hot_score" do
       best_debate = create(:debate, title: "Best")
       best_debate.update_column(:hot_score, 10)
       worst_debate = create(:debate, title: "Worst")
@@ -374,7 +382,7 @@ describe "Debates" do
       expect(medium_debate.title).to appear_before(worst_debate.title)
     end
 
-    scenario "Debates are ordered by confidence_score", :js do
+    scenario "Debates are ordered by confidence_score" do
       best_debate = create(:debate, title: "Best")
       best_debate.update_column(:confidence_score, 10)
       worst_debate = create(:debate, title: "Worst")
@@ -392,11 +400,11 @@ describe "Debates" do
         expect(medium_debate.title).to appear_before(worst_debate.title)
       end
 
-      expect(current_url).to include("order=confidence_score")
-      expect(current_url).to include("page=1")
+      expect(page).to have_current_path(/order=confidence_score/)
+      expect(page).to have_current_path(/page=1/)
     end
 
-    scenario "Debates are ordered by newest", :js do
+    scenario "Debates are ordered by newest" do
       best_debate = create(:debate, title: "Best", created_at: Time.current)
       medium_debate = create(:debate, title: "Medium", created_at: Time.current - 1.hour)
       worst_debate = create(:debate, title: "Worst", created_at: Time.current - 1.day)
@@ -411,8 +419,8 @@ describe "Debates" do
         expect(medium_debate.title).to appear_before(worst_debate.title)
       end
 
-      expect(current_url).to include("order=created_at")
-      expect(current_url).to include("page=1")
+      expect(page).to have_current_path(/order=created_at/)
+      expect(page).to have_current_path(/page=1/)
     end
 
     context "Recommendations" do
@@ -478,8 +486,8 @@ describe "Debates" do
           expect(medium_debate.title).to appear_before(worst_debate.title)
         end
 
-        expect(current_url).to include("order=recommendations")
-        expect(current_url).to include("page=1")
+        expect(page).to have_current_path(/order=recommendations/)
+        expect(page).to have_current_path(/page=1/)
       end
 
       scenario "are not shown if account setting is disabled" do
@@ -493,7 +501,7 @@ describe "Debates" do
         expect(page).not_to have_link("recommendations")
       end
 
-      scenario "are automatically disabled when dismissed from index", :js do
+      scenario "are automatically disabled when dismissed from index" do
         proposal = create(:proposal, tag_list: "Sport")
         user     = create(:user, followables: [proposal])
 
@@ -513,12 +521,9 @@ describe "Debates" do
         expect(page).not_to have_css(".recommendation", count: 3)
         expect(page).to have_content("Recommendations for debates are now disabled for this account")
 
-        user.reload
-
         visit account_path
 
         expect(find("#account_recommended_debates")).not_to be_checked
-        expect(user.recommended_debates).to be(false)
       end
     end
   end
@@ -558,330 +563,7 @@ describe "Debates" do
       end
     end
 
-    context "Advanced search" do
-      scenario "Search by text", :js do
-        debate1 = create(:debate, title: "Get Schwifty")
-        debate2 = create(:debate, title: "Schwifty Hello")
-        debate3 = create(:debate, title: "Do not show me")
-
-        visit debates_path
-
-        click_link "Advanced search"
-        fill_in "Write the text", with: "Schwifty"
-        click_button "Filter"
-
-        expect(page).to have_content("There are 2 debates")
-
-        within("#debates") do
-          expect(page).to have_content(debate1.title)
-          expect(page).to have_content(debate2.title)
-          expect(page).not_to have_content(debate3.title)
-        end
-      end
-
-      context "Search by author type" do
-        scenario "Public employee", :js do
-          ana = create :user, official_level: 1
-          john = create :user, official_level: 2
-
-          debate1 = create(:debate, author: ana)
-          debate2 = create(:debate, author: ana)
-          debate3 = create(:debate, author: john)
-
-          visit debates_path
-
-          click_link "Advanced search"
-          select Setting["official_level_1_name"], from: "advanced_search_official_level"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 debates")
-
-          within("#debates") do
-            expect(page).to have_content(debate1.title)
-            expect(page).to have_content(debate2.title)
-            expect(page).not_to have_content(debate3.title)
-          end
-        end
-
-        scenario "Municipal Organization", :js do
-          ana = create :user, official_level: 2
-          john = create :user, official_level: 3
-
-          debate1 = create(:debate, author: ana)
-          debate2 = create(:debate, author: ana)
-          debate3 = create(:debate, author: john)
-
-          visit debates_path
-
-          click_link "Advanced search"
-          select Setting["official_level_2_name"], from: "advanced_search_official_level"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 debates")
-
-          within("#debates") do
-            expect(page).to have_content(debate1.title)
-            expect(page).to have_content(debate2.title)
-            expect(page).not_to have_content(debate3.title)
-          end
-        end
-
-        scenario "General director", :js do
-          ana = create :user, official_level: 3
-          john = create :user, official_level: 4
-
-          debate1 = create(:debate, author: ana)
-          debate2 = create(:debate, author: ana)
-          debate3 = create(:debate, author: john)
-
-          visit debates_path
-
-          click_link "Advanced search"
-          select Setting["official_level_3_name"], from: "advanced_search_official_level"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 debates")
-
-          within("#debates") do
-            expect(page).to have_content(debate1.title)
-            expect(page).to have_content(debate2.title)
-            expect(page).not_to have_content(debate3.title)
-          end
-        end
-
-        scenario "City councillor", :js do
-          ana = create :user, official_level: 4
-          john = create :user, official_level: 5
-
-          debate1 = create(:debate, author: ana)
-          debate2 = create(:debate, author: ana)
-          debate3 = create(:debate, author: john)
-
-          visit debates_path
-
-          click_link "Advanced search"
-          select Setting["official_level_4_name"], from: "advanced_search_official_level"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 debates")
-
-          within("#debates") do
-            expect(page).to have_content(debate1.title)
-            expect(page).to have_content(debate2.title)
-            expect(page).not_to have_content(debate3.title)
-          end
-        end
-
-        scenario "Mayoress", :js do
-          ana = create :user, official_level: 5
-          john = create :user, official_level: 4
-
-          debate1 = create(:debate, author: ana)
-          debate2 = create(:debate, author: ana)
-          debate3 = create(:debate, author: john)
-
-          visit debates_path
-
-          click_link "Advanced search"
-          select Setting["official_level_5_name"], from: "advanced_search_official_level"
-          click_button "Filter"
-
-          expect(page).to have_content("There are 2 debates")
-
-          within("#debates") do
-            expect(page).to have_content(debate1.title)
-            expect(page).to have_content(debate2.title)
-            expect(page).not_to have_content(debate3.title)
-          end
-        end
-      end
-
-      context "Search by date" do
-        context "Predefined date ranges" do
-          scenario "Last day", :js do
-            debate1 = create(:debate, created_at: 1.minute.ago)
-            debate2 = create(:debate, created_at: 1.hour.ago)
-            debate3 = create(:debate, created_at: 2.days.ago)
-
-            visit debates_path
-
-            click_link "Advanced search"
-            select "Last 24 hours", from: "js-advanced-search-date-min"
-            click_button "Filter"
-
-            within("#debates") do
-              expect(page).to have_css(".debate", count: 2)
-
-              expect(page).to have_content(debate1.title)
-              expect(page).to have_content(debate2.title)
-              expect(page).not_to have_content(debate3.title)
-            end
-          end
-
-          scenario "Last week", :js do
-            debate1 = create(:debate, created_at: 1.day.ago)
-            debate2 = create(:debate, created_at: 5.days.ago)
-            debate3 = create(:debate, created_at: 8.days.ago)
-
-            visit debates_path
-
-            click_link "Advanced search"
-            select "Last week", from: "js-advanced-search-date-min"
-            click_button "Filter"
-
-            within("#debates") do
-              expect(page).to have_css(".debate", count: 2)
-
-              expect(page).to have_content(debate1.title)
-              expect(page).to have_content(debate2.title)
-              expect(page).not_to have_content(debate3.title)
-            end
-          end
-
-          scenario "Last month", :js do
-            debate1 = create(:debate, created_at: 10.days.ago)
-            debate2 = create(:debate, created_at: 20.days.ago)
-            debate3 = create(:debate, created_at: 33.days.ago)
-
-            visit debates_path
-
-            click_link "Advanced search"
-            select "Last month", from: "js-advanced-search-date-min"
-            click_button "Filter"
-
-            within("#debates") do
-              expect(page).to have_css(".debate", count: 2)
-
-              expect(page).to have_content(debate1.title)
-              expect(page).to have_content(debate2.title)
-              expect(page).not_to have_content(debate3.title)
-            end
-          end
-
-          scenario "Last year", :js do
-            debate1 = create(:debate, created_at: 300.days.ago)
-            debate2 = create(:debate, created_at: 350.days.ago)
-            debate3 = create(:debate, created_at: 370.days.ago)
-
-            visit debates_path
-
-            click_link "Advanced search"
-            select "Last year", from: "js-advanced-search-date-min"
-            click_button "Filter"
-
-            within("#debates") do
-              expect(page).to have_css(".debate", count: 2)
-
-              expect(page).to have_content(debate1.title)
-              expect(page).to have_content(debate2.title)
-              expect(page).not_to have_content(debate3.title)
-            end
-          end
-        end
-
-        scenario "Search by custom date range", :js do
-          debate1 = create(:debate, created_at: 2.days.ago)
-          debate2 = create(:debate, created_at: 3.days.ago)
-          debate3 = create(:debate, created_at: 9.days.ago)
-
-          visit debates_path
-
-          click_link "Advanced search"
-          select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.day.ago
-          click_button "Filter"
-
-          within("#debates") do
-            expect(page).to have_css(".debate", count: 2)
-
-            expect(page).to have_content(debate1.title)
-            expect(page).to have_content(debate2.title)
-            expect(page).not_to have_content(debate3.title)
-          end
-        end
-
-        scenario "Search by custom invalid date range", :js do
-          debate1 = create(:debate, created_at: 2.years.ago)
-          debate2 = create(:debate, created_at: 3.days.ago)
-          debate3 = create(:debate, created_at: 9.days.ago)
-
-          visit debates_path
-
-          click_link "Advanced search"
-          select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: "9"
-          fill_in "advanced_search_date_max", with: "444444444"
-          click_button "Filter"
-
-          within("#debates") do
-            expect(page).to have_css(".debate", count: 3)
-
-            expect(page).to have_content(debate1.title)
-            expect(page).to have_content(debate2.title)
-            expect(page).to have_content(debate3.title)
-          end
-        end
-
-        scenario "Search by multiple filters", :js do
-          ana  = create :user, official_level: 1
-          john = create :user, official_level: 1
-
-          create(:debate, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
-          create(:debate, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
-          create(:debate, title: "Save the forest")
-
-          visit debates_path
-
-          click_link "Advanced search"
-          fill_in "Write the text", with: "Schwifty"
-          select Setting["official_level_1_name"], from: "advanced_search_official_level"
-          select "Last 24 hours", from: "js-advanced-search-date-min"
-
-          click_button "Filter"
-
-          within("#debates") do
-            expect(page).to have_css(".debate", count: 1)
-            expect(page).to have_content "Get Schwifty"
-          end
-        end
-
-        scenario "Maintain advanced search criteria", :js do
-          visit debates_path
-          click_link "Advanced search"
-
-          fill_in "Write the text", with: "Schwifty"
-          select Setting["official_level_1_name"], from: "advanced_search_official_level"
-          select "Last 24 hours", from: "js-advanced-search-date-min"
-
-          click_button "Filter"
-
-          within "#js-advanced-search" do
-            expect(page).to have_selector("input[name='search'][value='Schwifty']")
-            expect(page).to have_select("advanced_search[official_level]", selected: Setting["official_level_1_name"])
-            expect(page).to have_select("advanced_search[date_min]", selected: "Last 24 hours")
-          end
-        end
-
-        scenario "Maintain custom date search criteria", :js do
-          visit debates_path
-          click_link "Advanced search"
-
-          select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 7.days.ago.strftime("%d/%m/%Y")
-          fill_in "advanced_search_date_max", with: 1.day.ago.strftime("%d/%m/%Y")
-          click_button "Filter"
-
-          within "#js-advanced-search" do
-            expect(page).to have_select("advanced_search[date_min]", selected: "Customized")
-            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime("%d/%m/%Y")}']")
-            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime("%d/%m/%Y")}']")
-          end
-        end
-      end
-    end
-
-    scenario "Order by relevance by default", :js do
+    scenario "Order by relevance by default" do
       create(:debate, title: "Show you got",      cached_votes_up: 10)
       create(:debate, title: "Show what you got", cached_votes_up: 1)
       create(:debate, title: "Show you got",      cached_votes_up: 100)
@@ -899,7 +581,7 @@ describe "Debates" do
       end
     end
 
-    scenario "Reorder results maintaing search", :js do
+    scenario "Reorder results maintaing search" do
       create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
       create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
       create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
@@ -1045,7 +727,7 @@ describe "Debates" do
   end
 
   context "Suggesting debates" do
-    scenario "Shows up to 5 suggestions", :js do
+    scenario "Shows up to 5 suggestions" do
       create(:debate, title: "First debate has 1 vote", cached_votes_up: 1)
       create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
       create(:debate, title: "Third debate has 3 votes", cached_votes_up: 3)
@@ -1057,84 +739,101 @@ describe "Debates" do
       login_as(create(:user))
       visit new_debate_path
       fill_in "Debate title", with: "debate"
-      # Check terms of service by default
-      # check "debate_terms_of_service"
 
       within("div.js-suggest") do
         expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
       end
     end
 
-    scenario "No found suggestions", :js do
+    scenario "No found suggestions" do
       create(:debate, title: "First debate has 10 vote", cached_votes_up: 10)
       create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
 
       login_as(create(:user))
       visit new_debate_path
       fill_in "Debate title", with: "proposal"
-      # Check terms of service by default
-      # check "debate_terms_of_service"
 
       within("div.js-suggest") do
         expect(page).not_to have_content "You are seeing"
       end
     end
+
+    describe "Don't show suggestions" do
+      let(:user) { create(:user) }
+      let(:debate) { create(:debate, title: "Debate title, has search term", author: user) }
+
+      before do
+        login_as(user)
+        visit edit_debate_path(debate)
+      end
+
+      scenario "for edit action" do
+        fill_in "Debate title", with: "search"
+
+        expect(page).not_to have_content "There is a debate with the term 'search'"
+      end
+
+      scenario "for update action" do
+        fill_in "Debate title", with: ""
+
+        click_button "Save changes"
+        fill_in "Debate title", with: "search"
+
+        expect(page).not_to have_content "There is a debate with the term 'search'"
+      end
+    end
   end
 
-  scenario "Mark/Unmark a debate as featured" do
+  scenario "Mark/Unmark a debate as featured", :admin do
     debate = create(:debate)
 
-    login_as(create(:administrator).user)
     visit debates_path
     within("#debates") do
-      expect(page).not_to have_content "Featured"
+      expect(page).not_to have_content "FEATURED"
     end
 
     click_link debate.title
-
-    click_link "Featured"
-
-    visit debates_path
+    accept_confirm { click_link "Featured" }
 
     within("#debates") do
-      expect(page).to have_content "Featured"
+      expect(page).to have_content "FEATURED"
     end
 
     within("#featured-debates") do
       expect(page).to have_content debate.title
+
+      click_link debate.title
     end
 
-    visit debate_path(debate)
-    click_link "Unmark featured"
+    accept_confirm { click_link "Unmark featured" }
 
     within("#debates") do
-      expect(page).not_to have_content "Featured"
+      expect(page).not_to have_content "FEATURED"
     end
   end
 
-  scenario "Index include featured debates" do
+  scenario "Index include featured debates", :admin do
     create(:debate, featured_at: Time.current)
     create(:debate)
 
-    login_as(create(:administrator).user)
     visit debates_path
+
     within("#debates") do
-      expect(page).to have_content("Featured")
+      expect(page).to have_content("FEATURED")
     end
   end
 
-  scenario "Index do not show featured debates if none is marked as featured" do
+  scenario "Index do not show featured debates if none is marked as featured", :admin do
     create(:debate)
     create(:debate)
 
-    login_as(create(:administrator).user)
     visit debates_path
     within("#debates") do
       expect(page).not_to have_content("Featured")
     end
   end
 
-  scenario "Mark and unmark as featured", :js do
+  scenario "Mark and unmark as featured" do
     debate = create(:debate, title: "Featured debate")
     admin = create(:administrator)
 
@@ -1175,5 +874,41 @@ describe "Debates" do
     expect(debate.reload.featured?).to be false
 
     expect(page).not_to have_selector("#featured-debates")
+  end
+
+  describe "SDG related list" do
+    let(:user) { create(:user) }
+
+    before do
+      Setting["feature.sdg"] = true
+      Setting["sdg.process.debates"] = true
+    end
+
+    scenario "create debate with sdg related list" do
+      login_as(user)
+      visit new_debate_path
+      fill_in "Debate title", with: "A title for a debate related with SDG related content"
+      fill_in_ckeditor "Initial debate text", with: "This is very important because..."
+      click_sdg_goal(1)
+
+      click_button "Start a debate"
+
+      within(".sdg-goal-tag-list") { expect(page).to have_link "1. No Poverty" }
+    end
+
+    scenario "edit debate with sdg related list" do
+      debate = create(:debate, author: user)
+      debate.sdg_goals = [SDG::Goal[1], SDG::Goal[2]]
+      login_as(user)
+      visit edit_debate_path(debate)
+
+      remove_sdg_goal_or_target_tag(1)
+      click_button "Save changes"
+
+      within(".sdg-goal-tag-list") do
+        expect(page).not_to have_link "1. No Poverty"
+        expect(page).to have_link "2. Zero Hunger"
+      end
+    end
   end
 end

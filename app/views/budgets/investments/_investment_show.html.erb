@@ -12,6 +12,7 @@
           investment.image,
           investment.author,
           Flag.flagged?(current_user, investment),
+          investment.followed_by?(current_user),
           @investment_votes] do %>
   <section class="budget-investment-show" id="<%= dom_id(investment) %>">
 

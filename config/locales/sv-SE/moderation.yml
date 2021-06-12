@@ -24,7 +24,7 @@ sv:
         title: Moderering
     debates:
       index:
-        block_authors: Blockera användare
+        block_authors: Blockera förslagslämnare
         confirm: Är du säker?
         filter: Filtrera
         filters:
@@ -36,7 +36,7 @@ sv:
           moderate: Moderera
         hide_debates: Dölj debatter
         ignore_flags: Markera som läst
-        order: Sortera efter
+        order: Sortera
         orders:
           created_at: Senaste
           flags: Mest flaggade
@@ -52,7 +52,7 @@ sv:
       users: Blockera användare
     proposals:
       index:
-        block_authors: Blockera användare
+        block_authors: Blockera förslagslämnare
         confirm: Är du säker?
         filter: Filtrera
         filters:
@@ -111,7 +111,6 @@ sv:
       index:
         hidden: Blockerad
         hide: Blockera
-        search: Sök
-        search_placeholder: e-postadress eller namn på användare
+        search_placeholder: användares e-postadress eller namn
         title: Blockera användare
-      notice_hide: Användaren blockerades. Alla användarens inlägg och kommentarer har dolts.
+      notice_hide: Användaren blockerades. Användarens alla inlägg och kommentarer har dolts.

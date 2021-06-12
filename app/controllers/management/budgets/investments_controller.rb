@@ -1,5 +1,11 @@
 class Management::Budgets::InvestmentsController < Management::BaseController
   include Translatable
+  include ImageAttributes
+  include DocumentAttributes
+  include MapLocationAttributes
+  include FeatureFlags
+  feature_flag :budgets
+
   before_action :load_budget
 
   load_resource :budget
@@ -55,7 +61,9 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
     def investment_params
       attributes = [:external_url, :heading_id, :tag_list, :organization_name, :location,
-                    map_location_attributes: [:latitude, :longitude, :zoom]]
+                    image_attributes: image_attributes,
+                    documents_attributes: document_attributes,
+                    map_location_attributes: map_location_attributes]
       params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
     end
 

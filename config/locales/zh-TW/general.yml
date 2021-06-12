@@ -191,7 +191,6 @@ zh-TW:
       collaborative_legislation: 立法進程
       debates: 辯論
       locale: "語言："
-      logo: CONSUL 商標
       management: 管理
       moderation: 審核
       valuation: 評估
@@ -205,9 +204,9 @@ zh-TW:
       budgets: 參與性預算編制
       notification_item:
         new_notifications:
+          zero: "您沒有新通知"
           other: 您有%{count} 個新通知
         notifications: 通知
-        no_notifications: "您沒有新通知"
   notifications:
     index:
       empty_notifications: 您沒有新通知。
@@ -528,7 +527,6 @@ zh-TW:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -605,9 +603,10 @@ zh-TW:
         debates: "最活躍的辯論"
         proposals: "最活躍的建議"
         processes: "開啟進程"
-      see_all_debates: 查看所有辯論
-      see_all_proposals: 查看所有建議
-      see_all_processes: 查看所有進程
+      see_all:
+        debates: 查看所有辯論
+        proposals: 查看所有建議
+        processes: 查看所有進程
       process_label: 進程
       see_process: 查看進程
     cards:

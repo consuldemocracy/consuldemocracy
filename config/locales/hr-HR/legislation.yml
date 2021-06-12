@@ -13,7 +13,7 @@ hr:
           few: "%{count} odgovore"
           other: "%{count} odgovore"
         cancel: Otkaži
-        publish_comment: Objavi komentar
+        publish_comment: Objavite komentar
       form:
         phase_not_open: Ova faza još nije otvorena
       index:
@@ -28,15 +28,15 @@ hr:
         title: Komentar
       version_chooser:
         seeing_version: Komentari za verziju
-        see_text: Pogledaj skicu teksta
+        see_text: Pogledajte nacrt teksta
     draft_versions:
       changes:
         title: Promjene
         seeing_changelog_version: Sažetak revizija promjena
-        see_text: Pogledaj skicu teksta
+        see_text: Pogledajte nacrt teksta
       show:
         loading_comments: Učitavam komentare
-        seeing_version: Gledate skicu
+        seeing_version: Gledate nacrtnu verziju
         select_draft_version: Odaberi skicu
         select_version_submit: pogledaj
         updated_at: ažurirano na %{date}
@@ -62,7 +62,7 @@ hr:
         filter: Filter
         filters:
           open: Otvoreni procesi
-          past: Prošle
+          past: Prošli
         no_open_processes: Nema otvorenih procesa
         no_past_processes: Nema prošlih procesa
         section_header:
@@ -71,7 +71,7 @@ hr:
           help: Pomoć oko javnog savjetovanja
         section_footer:
           title: Pomoć oko javnog savjetovanja
-          description: Sudjelujte u raspravama i procesima prije odobravanja novih propisa ili strategija. Vaše mišljenje će se razmotriti.
+          description: Sudjelujte u raspravama i procesima prije odobravanja novih propisa ili strategija. Vaše će se mišljenje uzeti u obzir.
       phase_not_open:
         not_open: Ova faza još uvijek nije otvorena
       phase_empty:
@@ -83,14 +83,14 @@ hr:
         key_dates: Faze sudjelovanja
         homepage: Glavna stranica
         debate_dates: Rasprave
-        draft_publication_date: Objavljivanje drafta
+        draft_publication_date: Objava nacrta
         allegations_dates: Komentari
         result_publication_date: Konačni rezultati objave
         milestones_date: Sljedeći
         proposals_dates: Prijedlozi
     questions:
       comments:
-        comment_button: Objavi odgovor
+        comment_button: Objavite odgovor
         comments_title: Otvoreni odgovori
         comments_closed: Zatvorena faza
         form:
@@ -106,17 +106,17 @@ hr:
         answer_question: Pošalji odgovor
         next_question: Sljedeće pitanje
         first_question: Prvo pitanje
-        share: Dijeli
-        title: Proces kolaborativne legislative
+        share: Podijeli
+        title: Proces javnog savjetovanja
       participation:
         phase_not_open: Ova faza još nije otvorena
         organizations: Organizacijama nije dozvoljeno sudjelovanje u raspravama
-        unauthenticated: Vi morate %{signin} ili %{signup} kako biste sudjelovali.
+        unauthenticated: '%{signin} ili %{signup} da bi sudjelovali.'
         verified_only: Samo potvrđeni korisnici mogu sudjelovati, %{verify_account}.
         debate_phase_not_open: Faza rasprava je završila i odgovori se više ne primaju
     shared:
-      share: Dijeli
-      share_comment: Komentiraj %{version_name} iz drafta procesa %{process_name}
+      share: Podijeli
+      share_comment: Komentirajte %{version_name} iz nacrta procesa %{process_name}
     proposals:
       form:
         tags_label: "Kategorije"

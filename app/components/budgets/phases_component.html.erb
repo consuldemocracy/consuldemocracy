@@ -1,0 +1,66 @@
+<section class="budget-phases">
+  <div class="row">
+    <header>
+      <h2><%= t("budgets.index.all_phases") %></h2>
+    </header>
+
+    <ul class="phases-list tabs" data-tabs id="budget_phases_tabs" data-deep-link="true">
+      <% phases.each do |phase| %>
+        <li class="phase-title tabs-title <%= "is-active current-phase-tab" if phase.current? %>">
+          <a href="#<%= phase_dom_id(phase) %>">
+            <% if phase.current? %>
+              <span class="current-phase-timeline"><%= t("budgets.index.current_phase") %></span>
+            <% end %>
+
+            <span class="phase-name"><%= phase.name %></span>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="tabs-content" data-tabs-content="budget_phases_tabs">
+      <% phases.each do |phase| %>
+        <div id="<%= phase_dom_id(phase) %>" class="tabs-panel <%= "is-active" if phase.current? %>">
+          <div class="tabs-controls">
+            <% if phase == phases.first %>
+              <span class="budget-prev-phase-disabled"></span>
+            <% else %>
+              <a href="#<%= prev_phase_dom_id(phase) %>" title="<%= t("budgets.index.prev_phase") %>"
+                 data-turbolinks="false"
+                 class="budget-prev-phase">
+                <span><%= t("budgets.index.prev_phase") %></span>
+              </a>
+            <% end %>
+
+            <% if phase == phases.last %>
+              <span class="budget-next-phase-disabled"></span>
+            <% else %>
+              <a href="#<%= next_phase_dom_id(phase) %>" title="<%= t("budgets.index.next_phase") %>"
+                 data-turbolinks="false"
+                 class="budget-next-phase">
+                <span><%= t("budgets.index.next_phase") %></span>
+              </a>
+            <% end %>
+          </div>
+
+          <div id="<%= phase.kind.parameterize %>" class="row budget-phase">
+            <div class="small-12 column <%= "medium-6" if phase.image.present? %>">
+              <h3><%= phase.name %></h3>
+              <p><%= start_date(phase) %> - <%= end_date(phase) %></p>
+              <%= auto_link_already_sanitized_html(wysiwyg(phase.description)) %>
+              <% if phase.main_button_text.present? && phase.main_button_url.present? %>
+                <%= link_to phase.main_button_text, phase.main_button_url, class: "button" %>
+              <% end %>
+            </div>
+
+            <% if phase.image.present? %>
+              <div class="small-12 medium-6 column text-center margin-top">
+                <%= image_tag phase.image.attachment.url(:large) %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

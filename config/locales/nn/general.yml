@@ -228,7 +228,6 @@ nn:
       collaborative_legislation: Deltakende lovgivning
       debates: Debatter
       locale: "Språk:"
-      logo: CONSUL logo
       management: Ledelse
       moderation: Moderering
       valuation: Vurdering
@@ -242,11 +241,11 @@ nn:
       budgets: Deltakende budsjettering
       notification_item:
         new_notifications:
+          zero: "Du har ingen nye varsler"
           zero: Du har %{count} nye varsler
           one: Du har %{count} nye varsel
           other: Du har %{count} nye varsler
         notifications: Varsler
-        no_notifications: "Du har ingen nye varsler"
   notifications:
     index:
       empty_notifications: Du har ingen nye varsler.
@@ -751,7 +750,6 @@ nn:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -847,9 +845,10 @@ nn:
         debates: "Mest aktive debattinnlegg"
         proposals: "Mest aktive forslag"
         processes: "Åpne prosesser"
-      see_all_debates: Se alle debattinnlegg
-      see_all_proposals: Se alle forslag
-      see_all_processes: Se alle prosesser
+      see_all:
+        debates: Se alle debattinnlegg
+        proposals: Se alle forslag
+        processes: Se alle prosesser
       process_label: Prosess
       see_process: Se prosess
     cards:

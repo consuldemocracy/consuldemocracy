@@ -28,7 +28,7 @@
       <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
         <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
 
-        <%= render "/budgets/investments/investment_info", investment: investment %>
+        <%= render Budgets::Investments::InfoComponent.new(investment) %>
 
         <%= link_to namespaced_budget_investment_path(investment), class: "read-more" do %>
           <small><%= t("budgets.investments.index.read_more") %></small>

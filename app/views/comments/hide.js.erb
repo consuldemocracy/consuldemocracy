@@ -1,5 +1,1 @@
-var comment_id = "<%= dom_id(@comment) %>";
-App.ModeratorComments.hide_comment(comment_id);
-
-var comments_without_children = "<%= comments_without_children_for(@comment.commentable).join(',') %>"
-App.ModeratorComments.hide_childrens(comments_without_children);
+$("#<%= dom_id(@comment) %>").replaceWith("<%= j render("comment", comment: @comment) %>");

@@ -12,6 +12,7 @@
 // 10. Proposals
 // 11. Polls
 // 12. Users
+// 13. Custom
 //
 
 // 0. Global styles
@@ -393,6 +394,7 @@ aside {
 }
 
 .wide-order-selector {
+  margin-top: 0;
 
   label {
     float: none;
@@ -414,10 +416,31 @@ aside {
   font-size: $small-font-size !important;
 }
 
+.link-to-top {
+  background: rgba(226, 226, 226, 0.5);
+  border-radius: rem-calc(6);
+  bottom: 12px;
+  display: table;
+  height: rem-calc(48);
+  position: fixed;
+  right: 24px;
+  width: rem-calc(48);
+
+  a {
+    color: $text;
+    display: table-cell;
+    font-size: rem-calc(24);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 100%;
+  }
+}
+
 // 1. Header
 // --------------------
-
-header {
+header,
+.wrapper > header {
   background: none;
   border-bottom: 0;
 }
@@ -469,6 +492,9 @@ header {
   }
 
   a {
+    display: block;
+    height: rem-calc(80);
+    width: 100%;
 
     img {
       height: 100% !important;
@@ -583,7 +609,7 @@ header {
         content: "";
         display: block;
         position: absolute;
-        right: 5px;
+        right: -7px;
         top: 20px;
       }
 
@@ -627,6 +653,25 @@ header {
   }
 }
 
+.top-bar {
+
+  .avatar {
+
+    a:not(.avatar-image) {
+      padding-left: $line-height * 2;
+
+      @include breakpoint(medium) {
+        padding-left: $line-height * 2.5;
+      }
+    }
+
+    .avatar-image {
+      position: absolute;
+      top: -8px;
+    }
+  }
+}
+
 // 2. Homepage and custom pages
 // ----------------------------
 
@@ -658,6 +703,7 @@ header {
     margin: $line-height * 2 0;
   }
 
+  h2,
   h3 {
 
     &.title {
@@ -794,7 +840,7 @@ header {
   }
 }
 
-.feed-content-list {
+.feed-content {
 
   .row {
     margin: 0 auto;
@@ -837,6 +883,20 @@ header {
 
     p {
       font-size: $base-font-size;
+    }
+  }
+}
+
+.feeds-participation {
+
+  @include breakpoint(medium) {
+
+    .feed-proposals:not(:only-child) {
+      width: 100%;
+    }
+
+    .feed-debates:not(:only-child) {
+      width: 100%;
     }
   }
 }
@@ -974,20 +1034,97 @@ footer {
 // 4. Budgets
 // --------------------
 
-.expanded {
+.budget-header {
+  background: $brand;
+  min-height: $line-height * 25;
+  padding-top: $line-height * 4;
 
-  &.budget {
-    background: $brand;
+  &:not(.button) .button {
+    background: rgba(0 , 0, 0, 0.5);
+    color: #fff;
+    min-width: 30%;
+  }
 
-    &:not(.button) .button {
-      background: rgba(0 , 0, 0, 0.5);
-      color: #fff;
-      min-width: 30%;
+  .budget-title {
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &::after {
+      border-bottom: 2px solid #fff;
+      content: "";
+      margin: 0 auto;
+      padding-top: $line-height / 2;
+      display: block;
+      width: 20%;
     }
+  }
+
+  h1 {
+    font-size: rem-calc(60);
+    padding: $line-height * 2 0 $line-height;
+  }
+
+  h1,
+  h2,
+  p,
+  a,
+  span,
+  .back,
+  .icon-angle-left,
+  .description {
+    color: #fff;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .callout {
+
+    &.primary a {
+      color: $link;
+    }
+  }
+
+  .button {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin-bottom: $line-height * 2;
+    min-width: 30%;
+    text-decoration: none;
+  }
+
+  .confirmed {
+    font-size: rem-calc(24);
+    font-weight: bold;
+  }
+
+  .info {
+    background: #6a2a72;
+
+    p {
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  &.with-background-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.groups {
+    min-height: 0;
+    padding-top: 0;
   }
 }
 
 .budget-phases {
+
+  header {
+    padding-top: $line-height;
+  }
 
   .tabs-title > a {
 
@@ -1017,11 +1154,15 @@ footer {
         border-left-color: $dark;
       }
     }
+  }
 
-    &[aria-selected="true"] {
+  .tabs-title {
 
-      &.current-phase {
+    &.current-phase-tab {
+
+      [aria-selected="true"] {
         background: $brand-secondary;
+        color: $white;
 
         &::after {
           border-left-color: $brand-secondary;
@@ -1041,6 +1182,48 @@ footer {
   img {
     margin-top: rem-calc(100);
   }
+
+  .phase-title {
+    clip-path: none;
+    min-height: rem-calc(166);
+    transform: none;
+
+    &,
+    a {
+      clip-path: none;
+    }
+
+    &:first-child {
+
+      &,
+      a {
+        clip-path: none;
+      }
+    }
+
+    &:last-child {
+
+      &,
+      a {
+        clip-path: none;
+      }
+    }
+
+    &.current-phase-tab a {
+
+      &::after {
+        border-left-color: $brand-secondary;
+      }
+
+      &:hover {
+       color: $white;
+
+        &::after {
+          border-left-color: $dark;
+        }
+      }
+    }
+  }
 }
 
 .budget-subheader {
@@ -1056,14 +1239,9 @@ footer {
   margin-right: $line-height / 2;
 
   a {
-    border: 2px solid $border;
-    border-radius: rem-calc(6);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    color: $brand;
-    font-weight: bold;
-    margin-top: $line-height / 4;
 
     span {
+      color: #000;
       font-weight: normal;
       padding-top: $line-height / 2;
     }
@@ -1071,6 +1249,24 @@ footer {
     &:hover {
       background: $light;
       transform: translateY(-6px);
+    }
+  }
+
+  .is-active a {
+    background: #f9f9f9;
+    border-radius: rem-calc(3);
+    color: $budget;
+    font-weight: bold;
+
+    &::after {
+      content: "\f058";
+      font-family: "Font Awesome 5 Free";
+      font-size: $small-font-size;
+      font-weight: bold;
+      line-height: $line-height;
+      position: absolute;
+      top: 0;
+      right: 6px;
     }
   }
 }
@@ -1170,6 +1366,45 @@ footer {
 
   .spent-amount-text::before {
     color: $brand;
+  }
+
+  .spent-amount-text {
+    left: 0;
+    margin-bottom: 0;
+    padding-top: $line-height * 1.5;
+    position: relative;
+    text-align: right;
+    transform: translate(0%, -50%);
+    white-space: nowrap;
+
+    &::before {
+      color: $brand;
+      content: "\57";
+      font-family: "icons";
+      font-size: $small-font-size;
+      line-height: 0;
+      position: absolute;
+      right: rem-calc(-8);
+    }
+  }
+
+  .total-amount {
+    font-size: $tiny-font-size;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    @include breakpoint(medium) {
+      float: right;
+    }
+
+    .amount-spent {
+      color: $brand;
+    }
+
+    .amount-spent,
+    .price {
+      font-size: $base-font-size;
+    }
   }
 }
 
@@ -2294,6 +2529,15 @@ footer {
   }
 }
 
+.poll-more-info .read-more button,
+.poll-more-info-answers .read-more button {
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}
+
 .answer-question h2 {
   font-size: rem-calc(24);
 }
@@ -2372,5 +2616,780 @@ footer {
   .submenu h2 {
     margin: 0;
     margin-bottom: $line-height / 2;
+  }
+}
+
+// 13. Custom
+// ------------------------------
+
+.budget-investment-new {
+
+  .header {
+    background: $brand-secondary;
+    border-bottom-right-radius: rem-calc(12);
+    border-top-right-radius: rem-calc(12);
+    color: #fff;
+    margin-top: $line-height * 2;
+    padding: $line-height * 2 0;
+    position: relative;
+
+    h1 {
+      font-size: rem-calc(36);
+
+      @include breakpoint(large) {
+        font-size: rem-calc(44);
+      }
+    }
+
+    &::before {
+      background: $brand-secondary;
+      border: 4px solid $brand-secondary;
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &::after {
+      background: #fff;
+      border: 4px solid $brand-secondary;
+      border-bottom-right-radius: rem-calc(12);
+      border-top-right-radius: rem-calc(12);
+      clip-path: polygon(20% 0, 100% 1%, 100% 100%, 20% 100%, 5% 50%);
+      color: $brand-secondary;
+      content: "\f1ad";
+      display: none;
+      font-family: "Font Awesome 5 Free";
+      font-size: rem-calc(100);
+      height: 100%;
+      padding-left: $line-height;
+      padding-top: $line-height;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      right: 0;
+      width: rem-calc(160);
+
+      @include breakpoint(medium) {
+        display: block;
+      }
+
+      @include breakpoint(large) {
+        padding-top: 0;
+        width: rem-calc(200);
+      }
+    }
+
+    .header-icon {
+      display: block;
+      font-size: rem-calc(36);
+      line-height: rem-calc(60);
+
+      @include breakpoint(large) {
+        font-size: rem-calc(80);
+        padding-right: rem-calc(240);
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    &.header-single-heading {
+
+      .header-icon {
+
+        @include breakpoint(large) {
+          top: 80px;
+        }
+      }
+
+      &::after {
+        padding-top: $line-height;
+      }
+    }
+  }
+}
+
+.budget-investment-index-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .budget-investment {
+    margin-bottom: 0;
+
+    &.index .read-more {
+      bottom: 0;
+      display: block;
+      float: none;
+      left: 0;
+      margin-top: 0;
+      padding-right: $line-height / 2;
+      position: absolute;
+      text-align: right;
+      width: 100%;
+    }
+  }
+
+  .column {
+    margin-bottom: $line-height / 2;
+  }
+}
+
+.budget-info,
+.budget-investment-index-list {
+
+  h2 {
+    font-size: rem-calc(20);
+    margin: $line-height / 2 0;
+  }
+}
+
+.budget-investment {
+
+  &.index {
+    height: 100%;
+
+    .panel {
+      border-radius: rem-calc(6);
+      height: 100%;
+      padding: 0;
+      position: relative;
+
+      img {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: rem-calc(6);
+        border-top-right-radius: rem-calc(6);
+        width: 100%;
+      }
+
+      .image-container {
+        height: $line-height * 10;
+      }
+
+      .button {
+        font-size: $base-font-size;
+        margin-bottom: 0;
+        min-height: $line-height * 2;
+      }
+
+      .total-supports {
+        display: none;
+      }
+    }
+
+    .budget-investment-content {
+      padding: 0 rem-calc(12);
+    }
+
+    .supports-and-price {
+      background: $light;
+      display: table;
+      table-layout: fixed;
+
+      .price-title,
+      .supports-title {
+        color: #7b7b7b;
+        display: block;
+        font-size: $small-font-size;
+        text-transform: uppercase;
+      }
+
+      .table-cell {
+        padding: $line-height / 4 $line-height / 2;
+
+        &:first-child {
+          border-right: 1px solid $border;
+          position: relative;
+        }
+      }
+    }
+
+    .read-more {
+      bottom: 0;
+      color: $brand;
+      display: block;
+      left: 0;
+      margin-top: 0;
+      padding-right: $line-height / 2;
+      position: absolute;
+      text-align: right;
+      width: 100%;
+    }
+  }
+}
+
+.supports-and-price {
+
+  .table-cell {
+
+    &:first-child {
+
+      &::after {
+        content: "\f559";
+        font-family: "Font Awesome 5 Free";
+        font-size: rem-calc(30);
+        font-weight: bold;
+        position: absolute;
+        right: 12px;
+        top: 6px;
+      }
+    }
+  }
+}
+
+.filter-selector {
+
+  label {
+    margin-right: $line-height / 2;
+    padding-top: $line-height / 2;
+  }
+
+  select {
+    width: auto;
+  }
+}
+
+.budget-header {
+
+  &.budget:not(.button) {
+    min-height: $line-height * 25;
+    padding-top: $line-height * 4;
+
+    .budget-title {
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &::after {
+        border-bottom: 2px solid #fff;
+        content: "";
+        margin: 0 auto;
+        padding-top: $line-height / 2;
+        display: block;
+        width: 20%;
+      }
+    }
+
+    h1 {
+      font-size: rem-calc(60);
+      padding: $line-height * 2 0 $line-height;
+    }
+  }
+
+  .button {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin-bottom: $line-height * 2;
+    min-width: 30%;
+    text-decoration: none;
+  }
+
+  &.with-background-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.groups {
+    min-height: 0;
+    padding-top: 0;
+  }
+}
+
+.budget-subheader {
+
+  .current-phase {
+    color: $label;
+    text-transform: uppercase;
+  }
+
+  .button {
+    margin-top: $line-height * 1.5;
+  }
+}
+
+.phase-number {
+  display: block;
+  font-size: rem-calc(36);
+  font-weight: bold;
+}
+
+.budget-phases {
+  background: $light;
+  border-top: 2px solid $border;
+  padding-bottom: $line-height * 2;
+
+  h2 {
+    font-size: $base-font-size;
+  }
+
+  h3 {
+    margin-top: $line-height;
+  }
+
+  .current-phase-timeline {
+    padding-top: rem-calc(10);
+  }
+
+  .tabs,
+  .tabs-content {
+    background: none;
+    border: 0;
+  }
+
+  .tabs-content {
+    padding-top: $line-height * 2;
+    position: relative;
+  }
+
+  .tabs-panel {
+    padding: 0;
+
+    h3 {
+      font-size: rem-calc(36);
+    }
+  }
+
+  .tabs-title {
+    margin: $line-height / 6;
+    margin-left: 0;
+    min-width: rem-calc(170);
+    position: relative;
+    text-align: center;
+
+    &::after {
+      border: 83px solid transparent;
+      border-left-color: $light;
+      border-left-width: 20px;
+      border-right-width: 0;
+      content: "";
+      left: 100%;
+      position: absolute;
+      top: 0;
+      transform: translateX(4px);
+      z-index: 1;
+    }
+
+    &:first-child {
+
+      a {
+        border-bottom-left-radius: rem-calc(6);
+        border-top-left-radius: rem-calc(6);
+      }
+    }
+
+    &:last-child {
+
+      a {
+        border-bottom-right-radius: rem-calc(6);
+        border-top-right-radius: rem-calc(6);
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .tabs-title > a {
+    background: #fff;
+    color: #000;
+    min-height: rem-calc(140);
+    padding: $line-height * 2 $line-height * 1.5;
+    padding-left: $line-height * 2;
+
+    &::after {
+      border: 83px solid transparent;
+      border-left-color: #fff;
+      border-left-width: 20px;
+      border-right-width: 0;
+      content: "";
+      height: 0;
+      left: 100%;
+      position: absolute;
+      top: 0;
+      width: 0;
+      z-index: 2;
+    }
+
+    &:hover {
+      background: #e6e6e6;
+      color: #000;
+
+      &::after {
+        border-left-color: #e6e6e6;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.current-phase {
+      background: $brand-secondary;
+      color: #fff;
+
+      &::after {
+        border-left-color: $brand-secondary;
+      }
+
+      &:hover {
+        background: $dark;
+
+        &::after {
+          border-left-color: $dark;
+        }
+      }
+    }
+
+    &[aria-selected="true"],
+    &.is-active {
+      background: $dark;
+      color: #fff;
+      font-weight: normal;
+
+      &::after {
+        background: none;
+        border-bottom: 84px solid transparent;
+        border-left-color: $dark;
+        content: "";
+        left: 100%;
+        width: 0;
+      }
+
+      &.current-phase {
+        background: $brand-secondary;
+        background: red;
+        color: #fff;
+
+        &::after {
+          border-left-color: $brand-secondary;
+        }
+      }
+    }
+  }
+
+  .tabs-title {
+
+    &:last-child a::after {
+      content: none !important;
+    }
+  }
+
+  .tabs-controls {
+
+    .budget-prev-phase,
+    .budget-prev-phase-disabled,
+    .budget-next-phase,
+    .budget-next-phase-disabled {
+
+      &::before {
+        left: 6px;
+        top: 6px;
+      }
+    }
+  }
+
+  .budget-prev-phase,
+  .budget-next-phase,
+  .budget-prev-phase-disabled,
+  .budget-next-phase-disabled {
+    position: relative;
+
+    &::before {
+      background: $brand;
+      border-radius: rem-calc(3);
+      color: #fff;
+      font-family: "Font Awesome 5 Free";
+      font-size: rem-calc(36);
+      font-weight: bold;
+      height: rem-calc(48);
+      position: absolute;
+      top: 0;
+      text-align: center;
+      width: rem-calc(48);
+    }
+  }
+
+  .budget-prev-phase-disabled,
+  .budget-next-phase-disabled {
+
+    &::before {
+      background: none;
+      color: #acb6b6;
+    }
+  }
+
+  .budget-prev-phase,
+  .budget-prev-phase-disabled {
+
+    &::before {
+      content: "\f104";
+      left: 0;
+    }
+  }
+
+  .budget-next-phase,
+  .budget-next-phase-disabled {
+
+    &::before {
+      content: "\f105";
+      left: 52px;
+    }
+  }
+
+  img {
+    margin-top: rem-calc(100);
+  }
+
+  .button {
+    margin-top: $line-height * 2;
+    padding-right: $line-height * 1.5;
+    position: relative;
+
+    &::after {
+      content: "\f054";
+      font-family: "Font Awesome 5 Free";
+      font-weight: bold;
+      position: absolute;
+      right: 12px;
+      top: 19px;
+    }
+  }
+}
+
+.single-heading {
+  margin-bottom: $line-height * 2;
+  padding-bottom: $line-height;
+  position: relative;
+
+  &::after {
+    background: $brand;
+    bottom: 0;
+    content: "";
+    height: rem-calc(6);
+    position: absolute;
+    width: 20%;
+  }
+
+  h2 {
+    font-size: rem-calc(60);
+    font-weight: normal;
+  }
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .heading-amount {
+    font-size: rem-calc(48);
+  }
+}
+
+.my-ballot {
+  float: left;
+  font-size: rem-calc(40);
+  margin-right: 12px;
+}
+
+.supports-info {
+
+  @include breakpoint(medium) {
+
+    h2 {
+      font-size: rem-calc(48);
+    }
+
+    h3 {
+      font-size: rem-calc(36);
+    }
+  }
+
+  h2,
+  h3 {
+    font-weight: normal;
+  }
+
+  .callout {
+    border: 6px solid #f4f4f4;
+    border-radius: rem-calc(12);
+    padding: $line-height;
+
+    @include breakpoint(medium) {
+      padding: $line-height * 2 0 $line-height;
+    }
+  }
+
+  .fa-thumbs-up {
+    color: $brand;
+    font-size: rem-calc(100);
+    padding: $line-height * 2 0;
+  }
+
+  .fa-angle-double-down {
+    font-size: rem-calc(24);
+  }
+
+  a {
+
+    &.keep-scrolling {
+      color: $brand;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.section-recommended {
+
+  .orbit-bullets button {
+    background-color: #ccc;
+    height: $line-height / 2;
+    width: $line-height / 2;
+
+    &.is-active {
+      background-color: $brand;
+    }
+  }
+
+  .orbit-container {
+    height: 100% !important;
+    max-height: none !important;
+
+    li {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .orbit-slide {
+    max-height: none !important;
+    position: relative;
+  }
+
+  .orbit-caption {
+    background: #eee;
+    color: $text;
+  }
+
+  .orbit-next,
+  .orbit-previous {
+    background: rgba(34, 34, 34, 0.25);
+  }
+}
+
+.sdg-related-list-selector {
+
+  .help-text,
+  .goals legend {
+    font-size: $small-font-size;
+  }
+}
+
+.sdg-goal-tag-cloud .sdg-goal-tag-list,
+.sdg-tag-list .sdg-goal-tag-list {
+
+  img {
+    border-radius: 0;
+  }
+}
+
+.debate-new,
+.proposal-form,
+.budget-investment-new {
+
+  .header {
+    background: $brand-secondary;
+    border-bottom-right-radius: rem-calc(12);
+    border-top-right-radius: rem-calc(12);
+    color: #fff;
+    margin-top: $line-height * 2;
+    padding: $line-height * 2 0;
+    position: relative;
+
+    h1 {
+      font-size: rem-calc(36);
+
+      @include breakpoint(large) {
+        font-size: rem-calc(44);
+      }
+    }
+
+    a {
+      color: #fff;
+    }
+
+    &::before {
+      background: $brand-secondary;
+      border: 4px solid $brand-secondary;
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &::after {
+      background: #fff;
+      border: 4px solid $brand-secondary;
+      border-bottom-right-radius: rem-calc(12);
+      border-top-right-radius: rem-calc(12);
+      clip-path: polygon(20% 0, 100% 1%, 100% 100%, 20% 100%, 5% 50%);
+      color: $brand-secondary;
+      content: "\f1ad";
+      display: none;
+      font-family: "Font Awesome 5 Free";
+      font-size: rem-calc(100);
+      height: 100%;
+      padding-left: $line-height;
+      padding-top: $line-height;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      right: 0;
+      width: rem-calc(160);
+
+      @include breakpoint(medium) {
+        display: block;
+      }
+
+      @include breakpoint(large) {
+        padding-top: 0;
+        width: rem-calc(200);
+      }
+    }
+
+    .header-icon {
+      display: block;
+      font-size: rem-calc(36);
+      line-height: rem-calc(60);
+
+      @include breakpoint(large) {
+        font-size: rem-calc(80);
+        padding-right: rem-calc(240);
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    &.header-single-heading {
+
+      .header-icon {
+
+        @include breakpoint(large) {
+          top: 80px;
+        }
+      }
+
+      &::after {
+        padding-top: $line-height;
+      }
+    }
   }
 }

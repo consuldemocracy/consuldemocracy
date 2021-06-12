@@ -63,9 +63,6 @@ ast:
           finished: Remataes
         table_name: Nome
         table_phase: Fase
-        table_investments: Proyectos d'inversión
-        table_edit_groups: Grupos de partíes
-        table_edit_budget: Editar propuesta
         edit_groups: Editar grupos de partíes
         edit_budget: Editar presupuestu
       create:
@@ -75,7 +72,6 @@ ast:
       edit:
         title: Editar campaña de presupuestos participativos
         phase: Fase
-        dates: Feches
         enabled: Habilitáu
         actions: Acciones
         active: Activos
@@ -185,8 +181,6 @@ ast:
         table_name: Nome
         table_description: Descripción detallada
         table_actions: Acciones
-        delete: Borrar
-        edit: Editar propuesta
     progress_bars:
       index:
         table_kind: "Tipu"
@@ -245,7 +239,6 @@ ast:
           additional_info_placeholder: Añede cualquier información adicional que pueda ser d'interés
         index:
           create: Nuevu procesu
-          delete: Borrar
           title: Procesos legislativos
           filters:
             all: Toes
@@ -351,11 +344,8 @@ ast:
     managers:
       index:
         title: Xestores
-        name: Nome
-        email: Corréu electrónicu
       manager:
         add: Añedir como Presidente de mesa
-        delete: Borrar
     menu:
       activity: Actividá de moderadores
       admin: Menú d'alministración
@@ -401,20 +391,14 @@ ast:
     administrators:
       index:
         title: Alministradores
-        name: Nome
-        email: Corréu electrónicu
       administrator:
         add: Añedir como Presidente de mesa
-        delete: Borrar
         restricted_removal: "Sentimoslo, nun puedes esaniciate a ti mesmu de la llista"
     moderators:
       index:
         title: Moderadores
-        name: Nome
-        email: Corréu electrónicu
       moderator:
         add: Añedir como Presidente de mesa
-        delete: Borrar
     segment_recipient:
       administrators: Alministradores
     newsletters:
@@ -423,8 +407,6 @@ ast:
         sent: Fecha
         actions: Acciones
         draft: Borrador
-        edit: Editar propuesta
-        delete: Borrar
         preview: Previsualizar
       show:
         send: Enviar
@@ -436,8 +418,6 @@ ast:
         sent: Fecha
         actions: Acciones
         draft: Borrador
-        edit: Editar propuesta
-        delete: Borrar
         preview: Previsualizar
       show:
         send: Enviar notificación
@@ -454,7 +434,6 @@ ast:
         group: "Grupu"
       valuator:
         add: Añedir como evaluaor
-        delete: Borrar
       show:
         description: "Descripción detallada"
         email: "Corréu electrónicu"
@@ -473,7 +452,6 @@ ast:
         entry_name: presidente de mesa
       search:
         email_placeholder: Buscar usuariu por email
-        search: Atopar
         user_not_found: Usuariu non atopáu
     poll_officer_assignments:
       index:
@@ -648,8 +626,6 @@ ast:
         status: Estáu
         reject: Rechazar
         rejected: Rechazada
-        search: Atopar
-        search_placeholder: Nombre, email o teléfono
         title: Organizaciones
         verified: Verificada
         verify: Verificar usuario
@@ -691,21 +667,14 @@ ast:
     shared:
       true_value: "Sí"
       false_value: "Non"
-      booths_search:
-        button: Atopar
-        placeholder: Buscar urna por nombre
-      poll_officers_search:
-        button: Atopar
-        placeholder: Buscar presidentes de mesa
-      poll_questions_search:
-        button: Atopar
-        placeholder: Buscar preguntas
-      proposal_search:
-        button: Atopar
-        placeholder: Buscar propuestas por título, código, descripción o pregunta
-      user_search:
-        button: Atopar
-        placeholder: Buscar usuario por nombre o email
+      search:
+        label:
+          booths: "Buscar urna por nombre"
+          organizations: "Nombre, email o teléfono"
+          poll_officers: "Buscar presidentes de mesa"
+          poll_questions: "Buscar preguntas"
+          proposals: "Buscar propuestas por título, código, descripción o pregunta"
+          users: "Buscar usuario por nombre o email"
       search_results: "Resultados de búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
@@ -716,13 +685,10 @@ ast:
       author: Autor
       content: Conteníu
       created_at: Creáu
-      delete: Borrar
     geozones:
       index:
         title: Distritos
         create: Crear un distrito
-        edit: Editar propuesta
-        delete: Borrar
       geozone:
         name: Nome
         external_code: Código externo
@@ -815,7 +781,6 @@ ast:
         title: Usuariu
       search:
         placeholder: Buscar usuario por email, nombre o DNI
-        search: Atopar
     verifications:
       index:
         phone_not_given: No ha dado su teléfono
@@ -881,13 +846,7 @@ ast:
           updated_at: Actualizáu en
           title: Títulu
           slug: Slug
-        cards:
-          title: Títulu
-          description: Descripción detallada
     homepage:
-      cards:
-        title: Títulu
-        description: Descripción detallada
       feeds:
         proposals: Propuestes
         debates: Alderique

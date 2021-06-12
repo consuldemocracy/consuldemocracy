@@ -1,0 +1,51 @@
+<% if budget.image.present? %>
+  <div class="budget-header with-background-image"
+       style="background-image: url(<%= asset_url budget.image.attachment.url(:large) %>);">
+<% else %>
+<div class="budget-header">
+<% end %>
+  <div class="row">
+    <div class="small-12 column text-center">
+      <span class="budget-title"><%= t("budgets.index.title") %></span>
+      <h1><%= budget.name %></h1>
+
+      <div class="description">
+        <%= auto_link_already_sanitized_html wysiwyg(budget.description) %>
+      </div>
+
+      <% if budget.main_button_text.present? && budget.main_button_url.present? %>
+        <%= link_to budget.main_button_text, budget.main_button_url, class: "button large" %>
+      <% end %>
+
+      <p>
+        <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<%= render Budgets::SubheaderComponent.new(budget) %>
+<%= render Budgets::PhasesComponent.new(budget) %>
+
+<div id="budget_info" class="budget-info">
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <% if budget.single_heading? %>
+        <%= render "single_heading", budget: budget %>
+      <% else %>
+        <%= render Budgets::GroupsAndHeadingsComponent.new(budget) %>
+      <% end %>
+
+      <%= render "supports_info", budget: budget %>
+
+      <% unless budget.informing? %>
+        <div class="map inline">
+          <h2><%= t("budgets.index.map") %></h2>
+          <%= render_map(nil, "budgets", false, nil, coordinates) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "investments_list", budget: budget %>

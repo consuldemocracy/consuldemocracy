@@ -29,6 +29,9 @@ es:
     close: Cerrar
     menu: Menú
   comments:
+    actions:
+      confirm_delete: "¿Estás seguro/a? Esta acción borrará este comentario. No puedes deshacer esta acción."
+      delete: "Borrar comentario"
     comments_closed: Los comentarios están cerrados
     verified_only: Para participar %{verify_account}
     comment:
@@ -190,6 +193,7 @@ es:
     local_census_records/import: la importación de registros del censo local
     site_customization/content_block: el bloque
     site_customization/page: la página
+    sdg/local_target: la meta localizada
   geozones:
     none: Toda la ciudad
   layouts:
@@ -227,7 +231,6 @@ es:
       collaborative_legislation: Legislación colaborativa
       debates: Debates
       locale: "Idioma:"
-      logo: Logo de CONSUL
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
@@ -242,8 +245,9 @@ es:
         new_notifications:
           one: Tienes una nueva notificación
           other: Tienes %{count} notificaciones nuevas
+          zero: "No tienes notificaciones nuevas"
         notifications: Notificaciones
-        no_notifications: "No tienes notificaciones nuevas"
+      sdg: "ODS"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -687,7 +691,11 @@ es:
       from: "Desde"
       general: "Con el texto"
       general_placeholder: "Escribe el texto"
+      goal: "Por ODS"
+      goal_blank: "Elige un objetivo"
       search: "Filtrar"
+      target: "Por meta"
+      target_blank: "Elige una meta"
       title: "Búsqueda avanzada"
       to: "Hasta"
     author_info:
@@ -776,7 +784,6 @@ es:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
-    whatsapp: WhatsApp
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
   stats:
@@ -871,9 +878,17 @@ es:
         debates: "Debates más activos"
         proposals: "Propuestas más activas"
         processes: "Procesos abiertos"
-      see_all_debates: Ver todos los debates
-      see_all_proposals: Ver todas las propuestas
-      see_all_processes: Ver todos los procesos
+      see_all:
+        debates: Ver todos los debates
+        proposals: Ver todas las propuestas
+        processes: Ver todos los procesos
+      no_items:
+        debates: Ahora mismo no hay debates
+        proposals: Ahora mismo no hay propuestas
+        processes: Ahora mismo no hay procesos abiertos
+      description:
+        proposals: "Las propuestas ciudadanas que reúnan suficientes apoyos pasarán a una fase de votación, para que todos los ciudadanos decidan cómo quieren que sea su ciudad."
+        budgets: "Los presupuestos participativos son procesos en los que los ciudadanos deciden directamente en qué se gasta parte del presupuesto municipal. Los proyectos más apoyados se evalúan y pasan a una votación final en la que se deciden las acciones que llevará a cabo el Ayuntamiento."
       process_label: Proceso
       see_process: Ver proceso
     cards:
@@ -960,3 +975,8 @@ es:
     create:
       enqueue_remote_translation: Se han solicitado correctamente las traducciones.
     button: Traducir página
+  tags:
+    filter:
+      more:
+        one: "Una etiqueta más"
+        other: "%{count} etiquetas más"

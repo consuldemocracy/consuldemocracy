@@ -1,0 +1,37 @@
+<%= tag.table options do %>
+  <thead>
+    <tr>
+      <th><%= t("admin.poll_officers.officer.name") %></th>
+      <th><%= t("admin.poll_officers.officer.email") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% officers.each do |officer| %>
+      <tr>
+        <td>
+          <%= officer.name %>
+        </td>
+        <td>
+          <%= officer.email %>
+        </td>
+        <td>
+          <% if officer.persisted? %>
+            <%= render Admin::TableActionsComponent.new(officer,
+              actions: [:destroy],
+              destroy_text: t("admin.poll_officers.officer.delete"),
+              destroy_options: { class: "destroy-officer-link" }
+            ) %>
+          <% else %>
+            <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+              <%= actions.link_to t("admin.poll_officers.officer.add"),
+                                  add_user_path(officer),
+                                  method: :post,
+                                  class: "create-officer-link" %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+<% end %>

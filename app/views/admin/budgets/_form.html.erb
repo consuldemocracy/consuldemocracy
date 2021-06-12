@@ -1,20 +1,19 @@
-<p class="form-section-divider"><span><%= t("admin.budgets.edit.info.budget_settings") %></span></p>
+<%= translatable_form_for [:admin, @budget], html: { class: "budgets-form" } do |f| %>
+  <fieldset>
+    <legend><%= t("admin.budgets.edit.info.budget_settings") %></legend>
+    <%= render "shared/globalize_locales", resource: @budget %>
+    <%= render "shared/errors", resource: @budget %>
 
-<%= render "shared/globalize_locales", resource: @budget %>
+    <%= f.hidden_field :published, value: false unless @budget.persisted? %>
+    <%= hidden_field :heading, :mode, value: @mode %>
 
-<%= translatable_form_for [:admin, @budget] do |f| %>
-
-  <%= render "shared/errors", resource: @budget %>
-
-  <%= f.hidden_field :published, value: false unless @budget.persisted? %>
-  <%= hidden_field :heading, :mode, value: @mode %>
-
-  <%= f.translatable_fields do |translations_form| %>
-    <div class="small-12 medium-9 large-6 column end">
-      <p class="help-text"><%= t("admin.budgets.edit.name_description") %></p>
-      <%= translations_form.text_field :name, maxlength: Budget.title_max_length %>
-    </div>
-  <% end %>
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 medium-9 large-6 column end">
+        <%= translations_form.text_field :name,
+                                          maxlength: Budget.title_max_length,
+                                          hint: t("admin.budgets.edit.name_description") %>
+      </div>
+    <% end %>
 
   <div class="small-12 medium-4 column">
     <%= f.select :voting_style, budget_voting_styles_select_options %>
@@ -37,7 +36,7 @@
         <p class="help-text"><%= t("admin.budgets.edit.image_description") %></p>
       </div>
     </div>
-  <% end %>
+  </fieldset>
 
   <div class="small-12 medium-6 column">
     <p class="form-label"><%= t("admin.budgets.edit.main_call_to_action") %></p>
@@ -57,10 +56,9 @@
     </div>
   <% end %>
 
-  <div class="clear"></div>
-  <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.staff_settings") %></span></p>
+  <fieldset>
+    <legend><%= t("admin.budgets.edit.info.staff_settings") %></legend>
 
-  <div class="clear">
     <% %w[administrators valuators].each do |staff| %>
       <div class="small-12 medium-6 large-3 column end">
         <%= link_to t("admin.budgets.edit.#{staff}", count: @budget.send(staff).count),
@@ -69,29 +67,23 @@
           data: { toggle: "#{staff}_list", texts: t("admin.budgets.edit.#{staff}") } %>
       </div>
     <% end %>
-  </div>
 
-  <%= render "/admin/budgets/association", assignable_type: "administrators", assignables: @admins, form: f %>
-  <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, form: f %>
+    <%= render "/admin/budgets/association", assignable_type: "administrators", assignables: @admins, form: f %>
+    <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, form: f %>
+  </fieldset>
 
-  <% if @budget.persisted? %>
-    <div class="clear"></div>
-    <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.phases_settings") %></span></p>
-
+  <fieldset>
+    <legend><%= t("admin.budgets.edit.info.phases_settings") %></legend>
     <div class="small-12 medium-6 column">
       <%= f.select :phase, budget_phases_select_options(@budget) %>
     </div>
-  <% end %>
 
-  <%= render "admin/budget_phases/phases" %>
+    <%= render Admin::Budgets::HelpComponent.new("budget_phases") %>
+    <%= render Admin::BudgetPhases::PhasesComponent.new(@budget) %>
+  </fieldset>
 
   <% if @budget.persisted? %>
-    <div class="clear"></div>
-    <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.results_settings") %></span></p>
-
-    <div class="small-12 column">
-      <%= render "admin/shared/show_results_fields", form: f %>
-    </div>
+    <%= render "admin/shared/show_results_fields", form: f %>
   <% end %>
 
   <div class="small-12 column">
@@ -103,6 +95,7 @@
         <%= f.submit nil, class: "button success expanded bold" %>
       <% end %>
     </div>
+  <% end %>
 
     <div class="float-right">
       <% if display_calculate_winners_button?(@budget) %>

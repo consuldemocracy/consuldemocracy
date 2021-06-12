@@ -45,6 +45,8 @@ data:
     - config/locales/%{locale}/user_groups.yml
     - config/locales/%{locale}/i18n.yml
     - config/locales/%{locale}/milestones.yml
+    - config/locales/%{locale}/sdg.yml
+    - config/locales/%{locale}/sdg_management.yml
     - config/locales/%{locale}/stats.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
@@ -222,13 +224,17 @@ ignore_unused:
   - landings.cambia_tu_ciudad.*
   - "seeds.settings.*"
   - "dashboard.polls.*.submit"
-  - "admin.budget_groups.index.*.help_block"
-  - "admin.budget_headings.index.*.help_block"
+  - "admin.budget_groups.*.index.help"
+  - "admin.budget_headings.*.index.help"
   - "admin.budget_phases.index.help_block"
   - "devise_views.shared.links.login"
   - "devise_views.shared.links.signup"
   - "devise_views.shared.links.signup_link"
   - "budgets.investments.show.code"
+  - "sdg.goals.goal_*"
+  - "sdg.*.filter.more.*"
+  - "sdg_management.relations.index.filter*"
+  - "tags.filter.more.*"
 ####
 ## Exclude these keys from the `i18n-tasks eq-base" report:
 # ignore_eq_base:

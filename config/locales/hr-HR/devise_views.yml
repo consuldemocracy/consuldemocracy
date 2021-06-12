@@ -8,7 +8,7 @@ hr:
       show:
         instructions: Potvrda računa putem e-mail adrese %{email}
         new_password_confirmation_label: Ponovi zaporku za pristup
-        new_password_label: Nova lozinka za pristup
+        new_password_label: Nova zaporka za pristup
         please_set_password: Molimo vas stvorite novu lozinku (ovo će Vam omogućiti prijavu putem gornjeg e-maila)
         submit: Potvrdi
         title: Potvrdi moj račun
@@ -22,7 +22,7 @@ hr:
         change_link: Promijeni moju lozinku
         hello: Pozdrav
         ignore_text: Ukoliko niste zatražili izmjenu lozinke, možete zanemariti ovaj e-mail.
-        info_text: Vaša lozinka se neće mijenjati ukoliko pristupite poveznici i ponovno ju unesete.
+        info_text: Vaša se zaporka neće mijenjati ukoliko ne pristupite poveznici i ne promijenite je.
         text: "Zaprimili smo zahtjev za izmjenu zaporke. Izmjenu možete napraviti na sljedećoj poveznici:"
         title: Izmijeni svoju lozinku
       unlock_instructions:
@@ -33,16 +33,16 @@ hr:
         unlock_link: Otključaj moj račun
     menu:
       login_items:
-        login: Prijavi se
-        logout: Odjavi se
-        signup: Registriraj me
+        login: Prijavite se
+        logout: Odjavite se
+        signup: Registrirajte se
     organizations:
       registrations:
         new:
           email_label: E-mail
           organization_name_label: Naziv organizacije
           password_confirmation_label: Potvrdi lozinku
-          password_label: Lozinka
+          password_label: Zaporka
           phone_number_label: Broj telefona
           responsible_name_label: Puno ime osobe odgovorne za kolektiv
           responsible_name_note: To bi bila osoba koja predstavlja udrugu / kolektiv u čije ime su predstavljeni prijedlozi
@@ -51,7 +51,7 @@ hr:
         success:
           back_to_index: Razumijem; idi natrag na glavnu stranicu
           instructions_1: "<strong>Uskoro ćemo vas kontaktirati</strong> radi potvrde vašeg zastupanja ove zajednice."
-          instructions_2: Dok se vaša <strong> e-mail adresa provjerava</strong>, poslali smo vam <strong>poveznicu za potvrdu vašeg računa</strong>.
+          instructions_2: Dok se vaša <strong> e-mail adresa provjerava</strong>, poslali smo vam <strong>poveznicu za potvrdu Vašeg računa</strong>.
           instructions_3: Kada dobijete potvrdu, možete sudjelovati kao nepotvrđena zajednica.
           thank_you: Hvala što ste registrirali vašu zajednicu na stranici. U tijeku je <strong> provjera</strong>.
           title: Registracija organizacije / kolektiva
@@ -59,8 +59,8 @@ hr:
       edit:
         change_submit: Promijeni moju lozinku
         password_confirmation_label: Potvrdi novu lozinku
-        password_label: Nova lozinka
-        title: Promijeni vašu lozinku
+        password_label: Nova zaporka
+        title: Promijenite Vašu zaporku
       new:
         email_label: E-mail
         send_submit: Pošalji upute
@@ -70,17 +70,17 @@ hr:
         login_label: Email ili korisničko ime
         password_label: Zaporka
         remember_me: Zapamti me
-        submit: Unesi
-        title: Prijavi
+        submit: Prijavite se
+        title: Prijavite se
     shared:
       links:
-        login: Unesi
-        new_confirmation: Niste primili upute za aktivaciju vašeg računa?
-        new_password: Jeste li zaboravili vašu zaporku?
+        login: Prijavite se
+        new_confirmation: Niste primili upute za aktivaciju Vašeg računa?
+        new_password: Zaboravili ste zaporku?
         new_unlock: Jeste li primili upute za otključavanje?
         signin_with_provider: Prijavi se s %{provider}
         signup: Nemate račun? %{signup_link}
-        signup_link: Prijavite se
+        signup_link: Registrirajte se
     unlocks:
       new:
         email_label: Email
@@ -108,12 +108,12 @@ hr:
           cancel: Odustani od prijave
           email_label: Email
           organization_signup: Predstavljate li organizaciju ili kolektiv? %{signup_link}
-          organization_signup_link: Prijavite se ovdje
+          organization_signup_link: Registrirajte se ovdje
           password_confirmation_label: Potvrdi zaporku
           password_label: Zaporka
-          redeemable_code: Verifikacijski kod ćete primiti putem emaila (neobavezno)
+          redeemable_code: Verifikacijski kôd ćete primiti putem emaila (neobavezno)
           submit: Registriraj se
-          terms: Registracijom prihvačate %{terms}
+          terms: Registracijom se prihvaćaju %{terms}
           terms_link: uvjeti korištenja
           terms_title: Registracijom prihvaćate uvjete korištenja
           title: Registriraj se
@@ -122,7 +122,7 @@ hr:
           username_label: Korisničko ime
           username_note: Ime koje se pojavljuje pored Vaše objave
         success:
-          back_to_index: Razumijem; idi nazad na glavnu stranicu
+          back_to_index: Razumijem; vrati se na glavnu stranicu
           instructions_1: Molimo vas, <b>provjerite vaš e-poštu</b> - poslali smo vam <b>poveznicu za potvrdu vašega računa</b>.
           instructions_2: Nakon potvrde, možete sudjelovati.
           thank_you: Hvala vam na registraciji na stranici. Sada morate <b>potvrditi vašu e-mail adresu</b>.

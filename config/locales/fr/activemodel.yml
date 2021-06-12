@@ -35,3 +35,10 @@ fr:
         year_of_birth: "Année de naissance"
       local_census_records/import:
         file: Fichier
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Le format du fichier est incorrect. Le format attendu est: %{valid_extensions}."
+              headers: "L'entête du fichier est incorrecte. L'entête doit comporter les noms suivants: %{required_headers}."

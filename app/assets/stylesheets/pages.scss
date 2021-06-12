@@ -52,7 +52,7 @@
 .more-info-content {
 
   h3 {
-    color: $brand;
+    @include brand-text;
   }
 
   .additional-info {

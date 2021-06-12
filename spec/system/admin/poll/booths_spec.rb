@@ -1,15 +1,11 @@
 require "rails_helper"
 
-describe "Admin booths" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin booths", :admin do
   scenario "Index empty" do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Booths location"
     end
 
@@ -22,6 +18,7 @@ describe "Admin booths" do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Booths location"
     end
 
@@ -42,6 +39,7 @@ describe "Admin booths" do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Manage shifts"
     end
 

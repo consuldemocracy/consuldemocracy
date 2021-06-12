@@ -7,7 +7,6 @@ module Budgets
       before_action :load_tag_cloud
       before_action :load_categories
       before_action :load_investments
-      before_action :load_ballot_referer
 
       authorize_resource :budget
       authorize_resource :ballot
@@ -65,10 +64,6 @@ module Budgets
 
         def load_categories
           @categories = Tag.category.order(:name)
-        end
-
-        def load_ballot_referer
-          @ballot_referer = session[:ballot_referer]
         end
 
         def load_map

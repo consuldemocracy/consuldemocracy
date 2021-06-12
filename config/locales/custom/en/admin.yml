@@ -1,10 +1,5 @@
 en:
   admin:
-    budgets:
-      index:
-        table_budget_draft: "Draft"
-      edit:
-        drafting: "This participatory budget is in draft mode, only administrators can see it in the public site. Once it's published it cannot be changed to draft mode again. Click on “Publish budget” to publish."
     homepage:
       feeds:
         budgets: "Budgets"

@@ -29,6 +29,9 @@ tr:
     close: Kapalı
     menu: Menü
   comments:
+    actions:
+      confirm_delete: "Emin misiniz? Bu eylem yorumu silecektir ve geri alınamaz."
+      delete: "Yorumu sil"
     comments_closed: Yorumlar kapalı
     verified_only: Katılmak için %{verify_account}
     comment:
@@ -113,6 +116,9 @@ tr:
         button: Ara
         placeholder: Tartışmalarda ara...
         title: Ara
+      search_results:
+        one: " <strong>'%{search_term}'</strong>terimini içeren"
+        other: " <strong>'%{search_term}'</strong>terimini içeren"
       select_order: Şuna göre sırala
       start_debate: Bir tartışma başlat
       title: Tartışmalar
@@ -163,12 +169,18 @@ tr:
     direct_message: özel mesaj
     error: hata
     errors: hatalar
+    not_saved: "bu %{resource} 'un kaydedilmesini engelledi. <br> Nasıl düzelteceğinizi öğrenmek için lütfen işaretli alanları kontrol edin:"
     policy: Gizlilik Politikası
+    banner: bannerlar
     proposal: Öneri
     proposal_notification: "Bildirim"
     budget/investment: Yatırım
     budget/group: Bütçe Grubu
     budget/heading: Bütçe Başlığı
+    geozone: coğrafi bölge
+    legislation/draft_version: taslak
+    legislation/process: süreç
+    legislation/question: soru
     poll/shift: Değiştir
     poll/question/answer: Cevap
     user: Hesap
@@ -177,6 +189,11 @@ tr:
     document: Belge
     topic: Konu
     image: Resim
+    local_census_record: Yerel Vatandaş Listesi Kaydı
+    local_census_records/import: Yerel Vatandaş Listesini İçe Aktar
+    site_customization/content_block: içerik bloğu
+    site_customization/page: sayfa
+    sdg/local_target: yerel hedef
   geozones:
     none: Tüm şehir
   layouts:
@@ -220,7 +237,6 @@ tr:
       collaborative_legislation: Katılımcı mevzuat
       debates: Tartışmalar
       locale: "Dil:"
-      logo: CONSUL logosu
       management: Yönetim
       moderation: Moderasyon
       valuation: Değerlendirme
@@ -234,15 +250,16 @@ tr:
       budgets: Katılımcı bütçeleme
       notification_item:
         new_notifications:
+          zero: "Yeni bildiriminiz yok"
           one: Bir yeni bildiriminiz var
           other: '%{count} yeni bildirimleriniz var'
         notifications: Bildirimler
-        no_notifications: "Yeni bildiriminiz yok"
+      sdg: "Sürdürülebilir Gelişim Hedefleri"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
       mark_all_as_read: Tümünü okundu olarak işaretle
-      read: Oku
+      read: Okunmuş
       title: Bildirimler
       unread: Okunmamış
     notification:
@@ -275,10 +292,17 @@ tr:
       sign_in: Google ile oturum aç
       sign_up: Google ile kaydol
       name: Google
+    wordpress_oauth2:
+      sign_in: Wordpress ile oturum aç
+      sign_up: Wordpress ile kayıt ol
+      name: Wordpress
     twitter:
       sign_in: Twitter ile oturum aç
       sign_up: Twitter ile kaydol
       name: Twitter
+    info:
+      sign_in: "Bununla oturum aç:"
+      sign_up: "Bununla kaydol:"
     or_fill: "Veya aşağıdaki formu doldur:"
   proposals:
     create:
@@ -287,6 +311,7 @@ tr:
     created:
       title: Tebrikler! İlk adımı attınız.
       motivation: "Önerinizin başarılı olması için iletişim stratejinizi hazırlamak önemlidir. İlk birkaç gün son derece belirleyicidir."
+      motivation_2: "<strong>Yayınlamak istediğiniz içerikle ilgili önerileri almak istiyorsanız, teklifinizi taslak olarak kaydedin, size yardımcı olalım.</strong>"
       publish: Hayır, öneriyi yayınlamak istiyorum
       dashboard: Evet, yardım istiyorum ve önerimi daha sonra yayınlayacağım
       preview_title: Önerinizi yayınladığınız zaman bu şekilde görünecektir
@@ -357,6 +382,9 @@ tr:
         button: Ara
         placeholder: Önerileri ara...
         title: Ara
+      search_results:
+        one: " <strong>'%{search_term}'</strong>terimini içeren"
+        other: " <strong>'%{search_term}'</strong>terimini içeren"
       select_order: Şuna göre sırala
       select_order_long: "Şuna göre önerileri görüntülüyorsunuz:"
       start_proposal: Bir öneri oluştur
@@ -443,6 +471,7 @@ tr:
       poster: Görsel
       recommended_actions: Önerilen eylemler
       messages: Kullanıcılara mesajlar
+      related_content: İlgili içerik
     form:
       request: Talep
     create_request:
@@ -543,9 +572,12 @@ tr:
     poster:
       index:
         title: Görsel önizlemesi
+        poster_title: "Bakmaya devam etmeyiniz,"
         poster_subtitle: "bana destek verin! ;)"
+        intro_text: "<strong>Kendi vatandaşlık önerim ile%{org}</strong> 'a katılıyorum ve sadece sizin desteğinizle hayalini kurduğumuz şehri inşa edebiliriz"
         proposal_code: "Öneri kodu: %{code}"
         support: Önerimi destekle
+        footer: "<strong>%{link} bağlantısını ziyaret edip bu öneriyi destekleyin</strong> Desteğinle çoğalacağız. Üzerimize düşeni yapalım. Teşekkürler!"
       new:
         title: Önerinizin görseli
       options:
@@ -563,10 +595,11 @@ tr:
         sent: E-posta gönderildi
     mailer:
       forward:
+        subtitle: "Desteklersen, <br>başarırız."
         support_button: Bu öneriyi destekle
         share_in: Paylaş
         hi: "Merhaba!"
-        introduction: Kıbrıs'taki günlük yaşamı önemli derecede iyileştirebilmeyi hedefleyen bir platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi teklifimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin, çünkü çok basit.
+        introduction: Nasıl bir şehirde yaşamak istediğimize karar verebileceğimiz bir platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi vatandaş önerimi oluşturdum ve şimdi de desteğinize ihtiyacım var! Ama endişelenmeyin çünkü bu çok basit.
         support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz butonu tıklamanız yeterlidir ve bunu yapmadan önce öneriyle ilgili bilgi edinebilirsiniz. Yalnızca, en fazla desteği alan öneri uygulanacak ve bunu başarmama yardım edeceğinizden eminim!"
         share: "Ve eğer bana iyilik yaparak teklifimi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, mükemmel olacak!"
   polls:
@@ -602,6 +635,7 @@ tr:
       back: Oylamaya geri dön
       cant_answer_not_logged_in: "Katılmak için %{signin} veya %{signup} yapmalısınız."
       comments_tab: Yorumlar
+      cant_answer_verify: "Yanıtlamak için %{verify_link} gerekmektedir."
       verify_link: "hesabınızı doğrulayın"
       cant_answer_expired: "Bu anket tamamlandı."
       cant_answer_wrong_geozone: "Bu soru sizin bulunduğunuz bölgede uygulanabilir değil."
@@ -637,6 +671,7 @@ tr:
     new:
       title: "Mesaj gönder"
       submit_button: "Mesaj gönder"
+      info_about_receivers: "Bu mesaj <strong>%{count} kişiye</strong> gönderilecek ve %{proposal_page} üzerinde görülecek. <br> Mesajlar anlık olarak gönderilmez, kullanıcılar belirli aralıklarla tüm teklif bildirimlerini içeren bir e-posta alır."
       proposal_page: "öneriler sayfası"
     show:
       back: "Faaliyetlerime geri dön"
@@ -661,7 +696,11 @@ tr:
       from: "Kaynak"
       general: "Metin ile"
       general_placeholder: "Metni yaz"
+      goal: "SKH'ye göre"
+      goal_blank: "Hedef seç"
       search: "Filtre"
+      target: "Hedefe göre"
+      target_blank: "Hedef seç"
       title: "Gelişmiş arama"
       to: "Şuna"
     author_info:
@@ -676,6 +715,17 @@ tr:
     follow: "Takip et"
     following: "Takip ediliyor"
     follow_entity: "Takip et %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Bu yatırım projesini takip etmeye başladınız! <br> Gelişmelerden haberdar olmanız için yapılan değişiklikleri size bildireceğiz."
+        destroy:
+          notice: "Bu yatırım projesini takip etmeyi bıraktınız! <br> Artık bu projeyle ilgili bildirim almayacaksınız."
+      proposal:
+        create:
+          notice: "Vatandaş önerisini takip etmeye başladınız.! <br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
+        destroy:
+          notice: "Bu vatandaş önerisini takip etmeyi bıraktınız! <br> Artık bu öneriyle ilgili bildirimleri almayacaksınız."
     print:
       print_button: Bu bilgiyi yazdır
     search: Ara
@@ -704,6 +754,7 @@ tr:
       districts: "İlçeler"
       districts_list: "İlçeler listesi"
       categories: "Kategoriler"
+    target_blank: " (bağlantı yeni pencerede açılacak)"
     you_are_in: "Şuradasınız"
     unflag: İşaretini Kaldır
     unfollow_entity: "Takibi bırak %{entity}"
@@ -727,11 +778,14 @@ tr:
       select_language_prompt: Dil seç
       remove_language: Dili kaldır
       add_language: Dil ekle
+      languages_in_use:
+        zero: "0 dil kullanımda"
+        one: "1 dil kullanımda"
+        other: "%{count} dil kullanımda"
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
     youtube: "YouTube %{org}"
-    whatsapp: WhatsApp
     telegram: "Telegram %{org}"
     instagram: "Instagram %{org}"
   stats:
@@ -751,6 +805,11 @@ tr:
     manage:
       all: "%{subject} 'de %{action} eylemini gerçekleştirme izniniz yok."
   users:
+    login_to_comment: "Yorum yapmak için %{signin} veya %{signup} yapmalısınız."
+    login_to_continue: "Devam etmek için %{signin} veya %{signup} yapmalısınız."
+    signin: "oturum aç"
+    signup: "kayıt ol"
+    verify_account: "hesabınızı doğrulayın"
     direct_messages:
       new:
         direct_messages_bloqued: "Bu kullanıcı doğrudan mesaj almamaya karar verdi"
@@ -799,10 +858,10 @@ tr:
       actions: Eylemler
       retired_help_text: Geri çekilen öneriler için gösterge panosu mevcut değil
   votes:
-    agree: Kabul ediyorum
+    agree: Katılıyorum
     anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
     comment_unauthenticated: Oy kullanmak için %{signin} veya %{signup} yapmalısınız.
-    disagree: Kabul etmiyorum
+    disagree: Katılmıyorum
     organizations: Organizasyonların oy kullanmalarına izin verilmez
     supports: Destekler
     verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
@@ -821,9 +880,14 @@ tr:
         debates: "En aktif tartışmalar"
         proposals: "En aktif öneriler"
         processes: "Açık işlemler"
-      see_all_debates: Tüm tartışmaları göster
-      see_all_proposals: Tüm önerileri göster
-      see_all_processes: Tüm işlemleri göster
+      see_all:
+        debates: Tüm tartışmaları göster
+        proposals: Tüm önerileri göster
+        processes: Tüm işlemleri göster
+      no_items:
+        debates: Şu anda bir tartışma bulunmamaktadır
+        proposals: Şu anda bir tasarı bulunmamaktadır
+        processes: Şu anda işleyen bir süreç bulunmamaktadır
       process_label: İşlem
       see_process: İşlemi gör
     cards:
@@ -910,3 +974,8 @@ tr:
     create:
       enqueue_remote_translation: Tercümeler doğru bir şekilde talep edildi.
     button: Sayfayı çevir
+  tags:
+    filter:
+      more:
+        one: "Bir etiket daha"
+        other: "%{count} etiket daha"

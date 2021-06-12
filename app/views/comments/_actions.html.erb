@@ -6,15 +6,13 @@
   <% if can? :hide, comment %>
     <span class="divider">&nbsp;&bull;&nbsp;</span>
     <% if is_author?(comment) %>
-      <%= link_to hide_comment_path(comment),
+      <%= link_to t("comments.actions.delete"),
+                  hide_comment_path(comment),
                   method: :put, remote: true, class: "delete-comment",
-                  data: { confirm: t("comments.confirm_delete_comment") } do %>
-        <span class="far fa-trash-alt"></span>
-        <%= t("comments.delete_comment") %>
-      <% end %>
+                  data: { confirm: t("comments.actions.confirm_delete") } %>
     <% else %>
       <%= link_to t("admin.actions.hide").capitalize, hide_moderation_comment_path(comment),
-                  method: :put, remote: true, data: { confirm: t("admin.actions.confirm_hide_content") } %>
+                  method: :put, remote: true, data: { confirm: t("admin.actions.confirm") } %>
     <% end %>
   <% end %>
 

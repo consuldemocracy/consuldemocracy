@@ -1,7 +1,7 @@
 <%= form_for(@proposal, url: form_url) do |f| %>
   <%= render "shared/errors", resource: @proposal %>
 
-  <%= f.hidden_field(:legislation_process_id, :value => params[:process_id]) %>
+  <%= f.hidden_field(:legislation_process_id, value: params[:process_id]) %>
 
   <div class="row">
     <div class="small-12 column">

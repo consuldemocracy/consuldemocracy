@@ -1,0 +1,16 @@
+<div class="drafting">
+  <% if can? :publish, budget %>
+    <div class="callout warning">
+      <strong><%= t("admin.budgets.edit.drafting") %></strong>
+    </div>
+  <% end %>
+
+  <%= link_to t("admin.budgets.actions.preview"), budget_path(budget), class: "preview-link", target: "_blank" %>
+
+  <% if can? :publish, budget %>
+    <%= link_to t("admin.budgets.edit.publish"),
+                publish_admin_budget_path(budget),
+                method: :patch, class: "publish-link",
+                data: { confirm: t("admin.actions.confirm") } %>
+  <% end %>
+</div>

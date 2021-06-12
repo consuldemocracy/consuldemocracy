@@ -1,6 +1,7 @@
 class Admin::MilestonesController < Admin::BaseController
   include Translatable
   include ImageAttributes
+  include DocumentAttributes
 
   before_action :load_milestoneable, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :load_milestone, only: [:edit, :update, :destroy]
@@ -42,10 +43,9 @@ class Admin::MilestonesController < Admin::BaseController
   private
 
     def milestone_params
-      documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
       attributes = [:publication_date, :status_id,
                     translation_params(Milestone),
-                    image_attributes: image_attributes, documents_attributes: documents_attributes]
+                    image_attributes: image_attributes, documents_attributes: document_attributes]
 
       params.require(:milestone).permit(*attributes)
     end

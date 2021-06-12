@@ -29,6 +29,9 @@ en:
     close: Close
     menu: Menu
   comments:
+    actions:
+      confirm_delete: "Are you sure? This action will delete this comment. You can't undo this action."
+      delete: "Delete comment"
     comments_closed: Comments are closed
     verified_only: To participate %{verify_account}
     comment:
@@ -187,6 +190,7 @@ en:
     local_census_records/import: Local Census Records Import
     site_customization/content_block: content block
     site_customization/page: page
+    sdg/local_target: local target
   geozones:
     none: All city
   layouts:
@@ -224,7 +228,6 @@ en:
       collaborative_legislation: Collaborative legislation
       debates: Debates
       locale: "Language:"
-      logo: CONSUL logo
       management: Management
       moderation: Moderation
       valuation: Valuation
@@ -239,8 +242,9 @@ en:
         new_notifications:
           one: You have a new notification
           other: You have %{count} new notifications
+          zero: "You don't have new notifications"
         notifications: Notifications
-        no_notifications: "You don't have new notifications"
+      sdg: "SDG"
   notifications:
     index:
       empty_notifications: You don't have new notifications.
@@ -684,7 +688,11 @@ en:
       from: "From"
       general: "With the text"
       general_placeholder: "Write the text"
+      goal: "By SDG"
+      goal_blank: "Select a goal"
       search: "Filter"
+      target: "By target"
+      target_blank: "Select a target"
       title: "Advanced search"
       to: "To"
     author_info:
@@ -773,7 +781,6 @@ en:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -868,9 +875,17 @@ en:
         debates: "Most active debates"
         proposals: "Most active proposals"
         processes: "Open processes"
-      see_all_debates: See all debates
-      see_all_proposals: See all proposals
-      see_all_processes: See all processes
+      see_all:
+        debates: See all debates
+        proposals: See all proposals
+        processes: See all processes
+      no_items:
+        debates: There are no debates right now
+        proposals: There are no proposals right now
+        processes: There are no open processes right now
+      description:
+        proposals: "Citizen proposals that gather enough suppport will go to a voting phase, so you can get all the citizens to decide how they want their city to be."
+        budgets: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. The most supported projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council."
       process_label: Process
       see_process: See process
     cards:
@@ -931,7 +946,7 @@ en:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
       text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
-      title: How I can comment this document?
+      title: How can I comment this document?
   links:
     form:
       delete_button: Delete
@@ -957,3 +972,8 @@ en:
     create:
       enqueue_remote_translation: Translations have been correctly requested.
     button: Translate page
+  tags:
+    filter:
+      more:
+        one: "One more tag"
+        other: "%{count} more tags"

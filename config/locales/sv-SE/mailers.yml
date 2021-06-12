@@ -8,31 +8,31 @@ sv:
       subject: Någon har kommenterat på ditt %{commentable}
       title: Ny kommentar
     config:
-      manage_email_subscriptions: För att sluta få e-postmeddelanden kan du ändra dina inställningar med
+      manage_email_subscriptions: För att sluta få denna e-post kan du ändra dina inställningar i
     email_verification:
       click_here_to_verify: den här länken
       instructions_2: Det här e-postmeddelandet är för att verifiera ditt konto med <b>%{document_type} %{document_number}</b>. Klicka inte på länken ovan om de inte tillhör dig.
       instructions: Du måste klicka på %{verification_link} för att slutföra verifieringen av ditt användarkonto.
       subject: Bekräfta din e-postadress
-      thanks: Tack så mycket.
-      title: Bekräfta kontot via länken nedan
+      thanks: Tack så mycket!
+      title: Bekräfta ditt konto via länken nedan
     reply:
       hi: Hej
-      new_reply_by: Det finns ett nytt svar från <strong>%{commenter}</strong> till din kommentar på
+      new_reply_by: Det finns ett nytt svar från <strong>%{commenter}</strong> på din kommentar om
       subject: Någon har svarat på din kommentar
       title: Nytt svar på din kommentar
     proposal_notification_digest:
-      info: "Här är de senaste aviseringarna från förslagslämnarna till de förslag du stödjer %{org_name}."
-      title: "Aviseringar om förslag på %{org_name}"
+      info: "Här är de senaste aviseringarna från förslagslämnarna till de förslag du stödjer i %{org_name}."
+      title: "Aviseringar om förslag i %{org_name}"
       share: Dela förslaget
       comment: Kommentera förslaget
       unsubscribe: "Gå till %{account} och avmarkera 'Få sammanfattningar av aviseringar om förslag', om du inte längre vill få aviseringar om förslag."
       unsubscribe_account: Mitt konto
       unfollow: "Sluta att få aviseringar genom att besöka förslaget och sluta att följa."
     direct_message_for_receiver:
-      subject: "Du har fått ett nytt meddelande"
+      subject: "Du har fått ett nytt privat meddelande"
       reply: Svara till %{sender}
-      unsubscribe: "Om du inte vill ha notifikationer om meddelanden, besök %{account} och klicka ur 'Skicka e-postmeddelanden om notifikationer för meddelanden'."
+      unsubscribe: "Om du inte vill få direktmeddelanden, går du till %{account} och avmarkerar 'Få e-post om direktmeddelanden'."
       unsubscribe_account: Mitt konto
     direct_message_for_sender:
       subject: "Du har skickat ett meddelande"
@@ -63,7 +63,7 @@ sv:
     budget_investment_selected:
       subject: "Ditt budgetförslag '%{code}' har valts"
       hi: "Kära användare,"
-      share: "Börja samla röster och dela i sociala medier för att ditt förslag ska kunna bli verklighet."
+      share: "Börja samla röster och dela i sociala medier för att ditt budgetförslag ska kunna bli verklighet."
       share_button: "Dela ditt budgetförslag"
       thanks: "Tack igen för att du deltar."
       sincerely: "Vänliga hälsningar"
@@ -76,14 +76,14 @@ sv:
       subject: "Ny kommentar kring utvärdering"
       title: Ny kommentar kring utvärdering för %{investment}
       hi: Hej
-      new_comment_by: Det finns en nya kommentar kring utvärdering från <strong>%{commenter}</strong> för budgetförslaget %{investment}
+      new_comment_by: Det finns en ny kommentar kring utvärdering från <strong>%{commenter}</strong> för budgetförslaget %{investment}
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Fler nyheter om ditt medborgarförslag"
       hi: "Hej %{name},"
       new_resource: "NY UPPLÅST RESURS"
       introduction: "Du skapade förslaget %{title} som ett utkast den %{created_at_day} %{created_at_month}."
-      text_1: "Du kan när som helst publicera det på denna länk: %{link_to_published}. Om du är osäker..."
+      text_1: "Du kan när som helst publicera det på denna länk: %{link_to_published}. Om du fortfarande är osäker..."
       text_2: "Fånga dagen! Lär dig mer, lägg till fler personer med samma intressen och förbered den spridning som krävs när du offentliggör förslaget."
       text_3: "Och som hjälp på traven under denna utmaning finns följande nyheter..."
       text_4: "Ta en titt på denna NYA rekommenderade ÅTGÄRD:"
@@ -95,34 +95,34 @@ sv:
       hi: "Hej %{name},"
       new_resource: "NY UPPLÅST RESURS"
       introduction: "Du publicerade förslaget %{title} den %{published_at_day} %{published_at_month}."
-      text_1: "Du har fått %{votes_count} stöd tills nu. Grattis!"
+      text_1: "Du har hittills fått %{votes_count} stöd. Grattis!"
       text_2: "Du har nu även en ny tillgänglig resurs som hjälper dig att komma vidare."
-      text_3: "Det är %{days_count} dagar tills ditt förslag får %{max_votes_count} stöd och går till omröstning. Håll humöret uppe och fortsätt jobba. Behöver du idéer?"
+      text_3: "Det är %{days_count} dagar kvar tills ditt förslag går till omröstning, med %{max_votes_count} stöd. Håll humöret uppe och fortsätt jobba. Behöver du idéer?"
       text_4: "NY REKOMMENDERAD SPRIDNINGSÅTGÄRD"
       text_5: "Det finns mer, se följande åtgärd:"
-      footer_text: "Gå in i förslagspanelen och vi berättar som alltid i detalj hur du kan använda resurserna på bästa sätt."
+      footer_text: "Gå som alltid in i förslagspanelen, så berättar vi i detalj hur du kan använda resurserna på bästa sätt."
       dashboard_button: "Fortsätt, och upptäck dem!"
     new_actions_notification_on_create:
       subject: "Ditt utkast till medborgarförslag har skapats"
       hi: "Hej %{name}!"
       introduction: "Ditt förslag %{title} har skapats."
-      text_1: "Utnyttja att ditt förslag inte är offentligt än och förbered kontakter med andra."
+      text_1: "Dra fördel av att ditt förslag inte är offentligt än och förbered kontakter med andra."
       text_2: "När allt är klart publicerar du ditt medborgarförslag från denna <a href='%{link}'>länk</a>."
       text_3: "Vi vet att det kan verka komplicerat att skapa ett fängslande förslag och få det stöd som krävs. Men vi kommer att hjälpa dig på vägen!"
       text_4: "Ditt bästa verktyg kommer att vara: panelen för medborgarförslag."
       list_1: "Besök panelen för ditt förslag varje dag för att få de tips och resurser som vi delar med dig."
       list_2: "Tipsen, åtgärderna och resurserna ger dig idéer och praktiska lösningar för att få mer stöd och en bredare gemenskap. Glöm inte dem!"
-      list_3: "När du får mer stöd låser du även upp nya och bättre resurser. Just nu har du en e-postmall som du kan skicka till alla dina kontakter, en affisch att skriva ut samt många andra funktioner och belöningar som du kommer att upptäcka. Sluta inte att öka stödet, och vi kommer att fortsätta att belöna och hjälpa dig!"
-      list_4: "Du har %{max_month} månader på dig efter att förslaget publiceras till att få %{max_votes} stöd och ditt förslag kan bli verklighet. Men de första dagarna är viktigast. Det är en utmaning. Klara!"
+      list_3: "När du får mer stöd låser du även upp nya och bättre resurser. Just nu har du en e-postmall som du kan skicka till alla dina kontakter, en affisch att skriva ut samt många andra funktioner och belöningar som du kommer att upptäcka. Fortsätt att öka stödet, så fortsätter vi att belöna och hjälpa dig!"
+      list_4: "Du har %{max_month} månader på dig efter att förslaget publiceras till att få %{max_votes} stöd och förverkliga ditt förslag. Men de första dagarna är viktigast. Det är en utmaning. Klara, färdiga..."
       text_5: "Och som en hjälp med motivationen,"
-      text_6: "här är flera resurser och en lång lista med tips som kommer att komma till dig dagligen som förberedelse inför sändningen!"
+      text_6: "här är flera resurser och en lång lista med tips som skickas till dig dagligen som förberedelse inför sändningen!"
       dashboard_button: "Fortsätt, och upptäck dem!"
     new_actions_notification_on_published:
-      subject: "Ditt medborgarförslag är redan publicerat. Sluta inte att sprida det!"
+      subject: "Ditt medborgarförslag är redan publicerat. Fortsätt att sprida det!"
       hi: "Grattis %{name}! Du har skapat förslaget %{title}."
       text_1: "Och nu är det dags för dina första 100 stöd!"
       text_2: "Varför 100?"
-      text_3: "Vår erfarenhet är att den första dagen är central. Förutom att ha energin att publicera någonting nytt så har ett nyligen publicerat förslag en viktig synlighet genom att vara bland de uppmärksammade nya förslagen."
+      text_3: "Av erfarenhet vet vi att den första dagen är central. Förutom energin som kommer av att publicera någonting nytt så har ett nyligen publicerat förslag en viktig synlighet genom att vara bland de uppmärksammade nya förslagen."
       text_4: "Få 100 stöd den första dagen, och du har en gemenskap i ryggen."
       text_5: "Det är därför vi har en utmaning att nå dit, men det går inte utan hjälp!"
       text_6: "Kom ihåg att i förslagspanelen så finns det nya tillgängliga resurser och rekommendationer kring spridning."
@@ -132,4 +132,4 @@ sv:
       text_8: "Här är en bra resurs som du kan använda!"
       text_9: "Du hittar även den nya rekommenderade spridningsåtgärden..."
       text_10: "Du har fler resurser att använda!"
-      dashboard_button: "Fortsätt, och upptäck dem!"
+      dashboard_button: "Sätt i gång och upptäck dem!"

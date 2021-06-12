@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210401100648) do
+ActiveRecord::Schema.define(version: 2021_04_01_100648) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_trgm"
   enable_extension "plpgsql"
   enable_extension "unaccent"
-  enable_extension "pg_trgm"
 
   create_table "active_poll_translations", id: :serial, force: :cascade do |t|
     t.integer "active_poll_id", null: false
@@ -368,7 +368,7 @@ ActiveRecord::Schema.define(version: 20210401100648) do
     t.text "description_publishing_prices"
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
-    t.boolean "published", default: true
+    t.boolean "published"
     t.string "main_button_text"
     t.string "main_button_url"
     t.boolean "hide_money", default: false
@@ -759,6 +759,7 @@ ActiveRecord::Schema.define(version: 20210401100648) do
     t.boolean "homepage_enabled", default: false
     t.text "background_color"
     t.text "font_color"
+    t.tsvector "tsv"
     t.index ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date"
     t.index ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date"
     t.index ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date"
@@ -1178,6 +1179,7 @@ ActiveRecord::Schema.define(version: 20210401100648) do
     t.integer "budget_id"
     t.string "related_type"
     t.integer "related_id"
+    t.tsvector "tsv"
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true
     t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id"
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
@@ -1307,6 +1309,78 @@ ActiveRecord::Schema.define(version: 20210401100648) do
     t.datetime "updated_at", null: false
     t.boolean "advanced_stats"
     t.index ["process_type", "process_id"], name: "index_reports_on_process_type_and_process_id"
+  end
+
+  create_table "sdg_goals", force: :cascade do |t|
+    t.integer "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_sdg_goals_on_code", unique: true
+  end
+
+  create_table "sdg_local_target_translations", force: :cascade do |t|
+    t.bigint "sdg_local_target_id", null: false
+    t.string "locale", null: false
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_sdg_local_target_translations_on_locale"
+    t.index ["sdg_local_target_id"], name: "index_sdg_local_target_translations_on_sdg_local_target_id"
+  end
+
+  create_table "sdg_local_targets", force: :cascade do |t|
+    t.bigint "target_id"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "goal_id"
+    t.index ["code"], name: "index_sdg_local_targets_on_code", unique: true
+    t.index ["goal_id"], name: "index_sdg_local_targets_on_goal_id"
+    t.index ["target_id"], name: "index_sdg_local_targets_on_target_id"
+  end
+
+  create_table "sdg_managers", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sdg_managers_on_user_id", unique: true
+  end
+
+  create_table "sdg_phases", force: :cascade do |t|
+    t.integer "kind", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kind"], name: "index_sdg_phases_on_kind", unique: true
+  end
+
+  create_table "sdg_relations", force: :cascade do |t|
+    t.string "related_sdg_type"
+    t.bigint "related_sdg_id"
+    t.string "relatable_type"
+    t.bigint "relatable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["relatable_type", "relatable_id"], name: "index_sdg_relations_on_relatable_type_and_relatable_id"
+    t.index ["related_sdg_id", "related_sdg_type", "relatable_id", "relatable_type"], name: "sdg_relations_unique", unique: true
+    t.index ["related_sdg_type", "related_sdg_id"], name: "index_sdg_relations_on_related_sdg_type_and_related_sdg_id"
+  end
+
+  create_table "sdg_reviews", force: :cascade do |t|
+    t.string "relatable_type"
+    t.bigint "relatable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["relatable_type", "relatable_id"], name: "index_sdg_reviews_on_relatable_type_and_relatable_id", unique: true
+  end
+
+  create_table "sdg_targets", force: :cascade do |t|
+    t.bigint "goal_id"
+    t.string "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_sdg_targets_on_code", unique: true
+    t.index ["goal_id"], name: "index_sdg_targets_on_goal_id"
   end
 
   create_table "settings", id: :serial, force: :cascade do |t|
@@ -1602,9 +1676,10 @@ ActiveRecord::Schema.define(version: 20210401100648) do
     t.boolean "header", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "site_customization_page_id"
+    t.integer "cardable_id"
     t.integer "columns", default: 4
-    t.index ["site_customization_page_id"], name: "index_widget_cards_on_site_customization_page_id"
+    t.string "cardable_type", default: "SiteCustomization::Page"
+    t.index ["cardable_id"], name: "index_widget_cards_on_cardable_id"
   end
 
   create_table "widget_feeds", id: :serial, force: :cascade do |t|
@@ -1658,6 +1733,7 @@ ActiveRecord::Schema.define(version: 20210401100648) do
   add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
+  add_foreign_key "sdg_managers", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

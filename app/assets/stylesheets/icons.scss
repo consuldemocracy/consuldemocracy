@@ -186,10 +186,6 @@
   font-weight: normal;
 }
 
-.icon-whatsapp::before {
-  content: "\f232";
-}
-
 .icon-zip::before {
   content: "\f1c6";
   font-weight: normal;
@@ -285,7 +281,6 @@
 .icon-instagram,
 .icon-telegram,
 .icon-twitter,
-.icon-whatsapp,
 .icon-youtube {
 
   &::before {

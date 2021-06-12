@@ -5,7 +5,7 @@
 <h2><%= t("admin.debates.index.title") %></h2>
 
 <% if @debates.any? %>
-  <%= render "/admin/shared/debate_search", url: admin_debates_path %>
+  <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.debates")) %>
 
   <h3 class="inline-block"><%= page_entries_info @debates %></h3>
 

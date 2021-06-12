@@ -43,5 +43,6 @@ require_relative "dev_seeds/admin_notifications"
 require_relative "dev_seeds/legislation_proposals"
 require_relative "dev_seeds/milestones"
 require_relative "dev_seeds/pages"
+require_relative "dev_seeds/sdg"
 
 log "All dev seeds created successfuly 👍"

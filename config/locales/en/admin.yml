@@ -36,12 +36,17 @@ en:
           proposals: Proposals
           budgets: Participatory budgeting
           help_page: Help page
+          sdg: SDG
+      create:
+        notice: "Banner created successfully"
       edit:
         editing: Edit banner
         form:
           submit_button: Save changes
       new:
         creating: Create banner
+      update:
+        notice: "Banner updated successfully"
     activity:
       show:
         action: Action
@@ -63,6 +68,8 @@ en:
         type: Type
         no_activity: There are no moderators activity.
     budgets:
+      actions:
+        preview: "Preview budget"
       index:
         title: Participatory budgets
         title_budget_type: Participatory budget type
@@ -78,13 +85,18 @@ en:
           all: All
           open: Open
           finished: Finished
+        help: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
         budget_investments: Manage projects
+        table_completed: Completed
+        table_draft: "Draft"
+        table_duration: "Duration"
         table_name: Name
         table_phase: Current phase
         table_budget_type: Budget Type
         table_budget_completed: Completed
         table_duration: Duration
         table_preview: Preview budget
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_budget: Edit budget
         admin_ballots: Admin ballots
         no_budgets: "There are no budgets."
@@ -99,17 +111,20 @@ en:
       update:
         notice: Participatory budget updated successfully
       publish:
-        notice: "Participaroty budget published successfully"
+        notice: "Participatory budget published successfully"
       edit:
-        title: Edit Participatory budget
+        title: "Edit Participatory budget"
         drafting: "This participatory budget is in draft mode, only administrators can see it in the public site. Once it's published it cannot be changed to draft mode again."
         preview: "Preview budget"
         publish: "Publish budget"
-        delete: Delete budget
-        phase: Phase
+        delete: "Delete budget"
+        phase: "Phase"
+        phases_caption: "Phases"
         duration: "Duration"
         enabled: "Phase enabled"
         phase_content: "Edit content"
+        actions: "Actions"
+        edit_phase: "Edit phase"
         active: Active
         blank_dates: Dates are blank
         administrators:
@@ -130,7 +145,6 @@ en:
           budget_settings: "General participatory budget settings"
           heading_settings: "Heading settings"
           phases_settings: "Phases settings"
-          results_settings: "Results and statistics settings"
           staff_settings: "Administrators and Valuators assigned to the budget"
           groups_and_headings_settings: "Groups and headings settings"
         groups_and_headings:
@@ -188,10 +202,12 @@ en:
       index:
         back: "Go back to budget"
         new_button: "Add new group"
-        single:
-          help_block: "Groups are meant to organize headings, since this budget will only contain one heading, the same name can be used because it will not appear anywhere. You can just continue with the next step."
-        multiple:
-          help_block: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
+      single:
+        index:
+          help: "Groups are meant to organize headings, since this budget will only contain one heading, the same name can be used because it will not appear anywhere. You can just continue with the next step."
+      multiple:
+        index:
+          help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
     budget_headings:
       name: Heading name
       price: Money amount
@@ -223,23 +239,27 @@ en:
         showing_headings_from_group: "Currently showing headings from the group:"
         new_button: "Add new heading"
         single:
-          help_block: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
+          index:
+            help: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
         multiple:
-          help_block: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
+          index:
+            help: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
     budget_phases:
       edit:
         title: "Edit phase"
         description_help_text: This text will appear in the header when the phase is active
+        duration: "Phase's duration"
+        duration_description: "The period of time this phase will be active."
         enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
+        name_help_text: "This is the title of the phase users will read on the header whenever this phase is active."
         save_changes: Save changes
         duration: "Phase's duration"
         duration_description: "The period of time this phase will be active."
         image_description: "If an image is uplodaded it will be used as the banner on top of this participatory budget when this phase is enabled, otherwise the default color for budgets will be used."
         main_call_to_action: "Main call to action (optional)"
         main_call_to_action_description: "This button will appear on main banner of this participatory budget when this phase is enabled and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
-        phase_name_help_text: "This is the title of the phase users will read on the header whenever this phase is active."
       index:
-        help_block: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
+        help: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
         button:
           continue: "Finalize"
     budget_investments:
@@ -374,8 +394,6 @@ en:
         table_name: Name
         table_description: Description
         table_actions: Actions
-        delete: Delete
-        edit: Edit
       edit:
         title: Edit milestone status
       update:
@@ -438,8 +456,6 @@ en:
         index:
           description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
           create: Create resource or action
-          edit: Edit
-          delete: Delete
           active: 'Yes'
           inactive: 'No'
           title: Resources and actions
@@ -575,7 +591,6 @@ en:
           banner_title: Header colors
         index:
           create: New process
-          delete: Delete
           title: Collaborative legislation
           filters:
             active: Active
@@ -702,14 +717,17 @@ en:
     managers:
       index:
         title: Managers
-        name: Name
-        email: Email
         no_managers: There are no managers.
       manager:
         add: Add
-        delete: Delete
       search:
         title: "Managers: User search"
+    sdg_managers:
+      index:
+        no_sdg_managers: There are no users.
+    sdg/managers:
+      sdg/manager:
+        add: Add
     menu:
       activity: Moderator activity
       admin: Admin menu
@@ -726,6 +744,7 @@ en:
       hidden_users: Hidden users
       administrators: Administrators
       managers: Managers
+      sdg_managers: SDG Managers
       moderators: Moderators
       messaging_users: Messages to users
       newsletters: Newsletters
@@ -780,14 +799,10 @@ en:
     administrators:
       index:
         title: Administrators
-        name: Name
-        email: Email
-        description: Description
         id: Administrator ID
         no_administrators: There are no administrators.
       administrator:
         add: Add
-        delete: Delete
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
         title: "Administrators: User search"
@@ -797,12 +812,9 @@ en:
     moderators:
       index:
         title: Moderators
-        name: Name
-        email: Email
         no_moderators: There are no moderators.
       moderator:
         add: Add
-        delete: Delete
       search:
         title: "Moderators: User search"
     segment_recipient:
@@ -829,8 +841,6 @@ en:
         sent: Sent
         actions: Actions
         draft: Draft
-        edit: Edit
-        delete: Delete
         preview: Preview
         empty_newsletters: There are no newsletters to show
       new:
@@ -866,8 +876,6 @@ en:
         sent: Sent
         actions: Actions
         draft: Draft
-        edit: Edit
-        delete: Delete
         preview: Preview
         view: View
         empty_notifications: There are no notifications to show
@@ -965,7 +973,6 @@ en:
         can_edit_dossier: "Can edit dossier"
       valuator:
         add: Add to valuators
-        delete: Delete
       search:
         title: "Valuators: User search"
       form:
@@ -1003,7 +1010,6 @@ en:
         entry_name: officer
       search:
         email_placeholder: Search user by email
-        search: Search
         user_not_found: User not found
         help: "To add or remove Poll officers use the search form below."
     poll_officer_assignments:
@@ -1268,8 +1274,6 @@ en:
         no_organizations: There are no organizations.
         reject: Reject
         rejected: Rejected
-        search: Search
-        search_placeholder: Name, email or phone number
         title: Organisations
         verified: Verified
         verify: Verify
@@ -1338,6 +1342,9 @@ en:
         remote_census:
           title: Remote Census configuration
           how_to_enable: 'To configure remote census (SOAP) you must enable "Configure connection to remote census (SOAP)" on "Features" tab.'
+        sdg:
+          title: SDG configuration
+          how_to_enable: 'To show the configuration options from Sustainable Development Goals you must enable "SDG" on "Features" tab.'
       remote_census_general_name: General Information
       remote_census_request_name: Request Data
       remote_census_response_name: Response Data
@@ -1350,24 +1357,28 @@ en:
     shared:
       true_value: "Yes"
       false_value: "No"
-      booths_search:
-        button: Search
-        placeholder: Search booth by name or location
-      poll_officers_search:
-        button: Search
-        placeholder: Search poll officers
-      poll_questions_search:
-        button: Search
-        placeholder: Search poll questions
-      proposal_search:
-        button: Search
-        placeholder: Search proposals by title, code, description or question
-      debate_search:
-        button: Search
-        placeholder: Search debates by title or description
-      user_search:
-        button: Search
-        placeholder: Search user by name or email
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "All goals"
+            label: "By goal"
+          sdg_targets:
+            all: "All targets"
+            label: "By target"
+        label:
+          booths: "Search booth by name or location"
+          budget_investments: "Search investments by title, description or heading"
+          debates: "Search debates by title or description"
+          legislation_processes: "Search processes by title or description"
+          legislation_proposals: "Search proposals by title or description"
+          local_census_records: "Search by document number"
+          organizations: "Name, email or phone number"
+          poll_officers: "Search poll officers"
+          poll_questions: "Search poll questions"
+          polls: "Search polls by name or description"
+          proposals: "Search proposals by title, code, description or question"
+          users: "Search user by name or email"
+        search: "Search"
       search_results: "Search results"
       no_search_results: "No results found."
       actions: Actions
@@ -1381,7 +1392,6 @@ en:
       author: Author
       content: Content
       created_at: Created at
-      delete: Delete
       color_help: Hexadecimal format
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
@@ -1392,8 +1402,6 @@ en:
       index:
         title: Geozone
         create: Create geozone
-        edit: Edit
-        delete: Delete
       geozone:
         name: Name
         external_code: External code
@@ -1473,6 +1481,7 @@ en:
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
         polls: Polls
+        sdg: SDG
       graph:
         debate_created: Debates
         visit: Visits
@@ -1515,6 +1524,15 @@ en:
           question_name: Question
           origin_web: Web participants
           origin_total: Total participants
+      sdg:
+        budget_investments:
+          amount: "Approved amount"
+          winners: "Winner investment projects"
+          sent: "Investment projects sent"
+        debates: "Debates"
+        polls: "Polls"
+        proposals: "Proposals"
+        title: "Sustainable Development Goals - Stats"
     tags:
       create: Create topic
       destroy: Delete topic
@@ -1541,7 +1559,6 @@ en:
           erased: Erased
       search:
         placeholder: Search user by email, name or document number
-        search: Search
     verifications:
       index:
         phone_not_given: Phone not given
@@ -1616,16 +1633,11 @@ en:
           updated_at: Updated at
           title: Title
           slug: Slug
-          cards_title: Cards
           see_cards: See Cards
         cards:
           cards_title: cards
           create_card: Create card
           no_cards: There are no cards.
-          title: Title
-          description: Description
-          link_text: Link text
-          link_url: Link URL
           columns_help: "Width of the card in number of columns. On mobile screens it's always a width of 100%."
           create:
             notice: "Card created successfully!"
@@ -1642,11 +1654,6 @@ en:
       cards_title: Cards
       create_card: Create card
       no_cards: There are no cards.
-      cards:
-        title: Title
-        description: Description
-        link_text: Link text
-        link_url: Link URL
       feeds:
         proposals: Proposals
         debates: Debates
@@ -1681,9 +1688,6 @@ en:
         document_number: Document number
         date_of_birth: Date of birth
         postal_code: Postal code
-        search:
-          placeholder: Search by document number
-          search: Search
         import: Import CSV
       new:
         creating: Creating new local census record

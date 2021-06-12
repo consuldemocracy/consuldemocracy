@@ -184,8 +184,9 @@ sl:
       poll_questions: Glasovanje
       budgets: Participatorni proračun
       notification_item:
+        new_notifications:
+          zero: "Nimaš novih obvestil"
         notifications: Obvestila
-        no_notifications: "Nimaš novih obvestil"
   notifications:
     index:
       empty_notifications: Nimaš novih obvestil.
@@ -531,9 +532,10 @@ sl:
         debates: "Najbolj aktivne razprave"
         proposals: "Najbolj aktivni predlogi"
         processes: "Odprti procesi"
-      see_all_debates: Poglej vse razprave
-      see_all_proposals: Poglej vse predloge
-      see_all_processes: Poglej vse procese
+      see_all:
+        debates: Poglej vse razprave
+        proposals: Poglej vse predloge
+        processes: Poglej vse procese
       process_label: Proces
       see_process: Poglej proces
     cards:

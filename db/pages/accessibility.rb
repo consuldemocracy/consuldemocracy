@@ -1,5 +1,4 @@
-if SiteCustomization::Page.find_by(slug: "accessibility").nil?
-  page = SiteCustomization::Page.new(slug: "accessibility", status: "published")
+def generate_content(page)
   page.title = I18n.t("pages.accessibility.title")
 
   content = ""
@@ -29,10 +28,12 @@ if SiteCustomization::Page.find_by(slug: "accessibility").nil?
                 </thead>
                 <tbody>"
   I18n.t("pages.accessibility.keyboard_shortcuts.navigation_table.rows").each do |row|
-    content << "  <tr>
+    if row.present?
+      content << "  <tr>
                     <td class='text-center'>#{row[:key_column]}</td>
                     <td>#{row[:page_column]}</td>
                   </tr>"
+    end
   end
   content << "  </tbody>
               </table>
@@ -53,10 +54,12 @@ if SiteCustomization::Page.find_by(slug: "accessibility").nil?
                 </thead>
                 <tbody>"
   I18n.t("pages.accessibility.keyboard_shortcuts.browser_table.rows").each do |row|
-    content << "  <tr>
+    if row.present?
+      content << "  <tr>
                     <td>#{row[:browser_column]}</td>
                     <td>#{row[:key_column]}</td>
                   </tr>"
+    end
   end
   content << "  </tbody>
               </table>
@@ -75,17 +78,21 @@ if SiteCustomization::Page.find_by(slug: "accessibility").nil?
                 </thead>
                 <tbody>"
   I18n.t("pages.accessibility.textsize.browser_settings_table.rows").each do |row|
-    content << "  <tr>
+    if row.present?
+      content << "  <tr>
                     <td>#{row[:browser_column]}</td>
                     <td>#{row[:action_column]}</td>
                   </tr>"
+    end
   end
   content << "  </tbody>
               </table>"
   content << "<p>#{I18n.t("pages.accessibility.textsize.browser_shortcuts_table.description")}</p>
               <ul>"
   I18n.t("pages.accessibility.textsize.browser_shortcuts_table.rows").each do |row|
-    content << "<li><strong>#{row[:shortcut_column]}</strong> #{row[:description_column]}</li>"
+    if row.present?
+      content << "<li><strong>#{row[:shortcut_column]}</strong> #{row[:description_column]}</li>"
+    end
   end
   content << "</ul>
               <h2>#{I18n.t("pages.accessibility.compatibility.title")}</h2>
@@ -93,4 +100,11 @@ if SiteCustomization::Page.find_by(slug: "accessibility").nil?
 
   page.content = content
   page.save!
+end
+
+if SiteCustomization::Page.find_by(slug: "accessibility").nil?
+  page = SiteCustomization::Page.new(slug: "accessibility", status: "published")
+  I18n.available_locales.each do |locale|
+    I18n.with_locale(locale) { generate_content(page) }
+  end
 end

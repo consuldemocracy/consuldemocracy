@@ -66,23 +66,23 @@
                   <%= wysiwyg(answer.description) %>
                 </div>
                 <% if answer.description.length > 600 %>
-                  <div class="margin">
-                    <a id="read_more_<%= answer.id %>"
-                       data-toggle="answer_description_<%= answer.id %>
-                                    read_more_<%= answer.id %>
-                                    read_less_<%= answer.id %>"
-                       data-toggler="hide"
-                       class="button primary">
+                  <div class="read-more">
+                    <button type="button" id="read_more_<%= answer.id %>"
+                            data-toggle="answer_description_<%= answer.id %>
+                                         read_more_<%= answer.id %>
+                                         read_less_<%= answer.id %>"
+                            data-toggler="hide"
+                            class="button primary">
                       <%= t("polls.show.read_more", answer: answer.title) %>
-                    </a>
-                    <a id="read_less_<%= answer.id %>"
-                       data-toggle="answer_description_<%= answer.id %>
-                                    read_more_<%= answer.id %>
-                                    read_less_<%= answer.id %>"
-                       data-toggler="hide"
-                       class="hide button primary">
+                    </button>
+                    <button type="button" id="read_less_<%= answer.id %>"
+                            data-toggle="answer_description_<%= answer.id %>
+                                         read_more_<%= answer.id %>
+                                         read_less_<%= answer.id %>"
+                            data-toggler="hide"
+                            class="hide button primary">
                       <%= t("polls.show.read_less", answer: answer.title) %>
-                    </a>
+                    </button>
                   </div>
                 <% end %>
               </div>

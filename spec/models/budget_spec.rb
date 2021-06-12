@@ -32,6 +32,36 @@ describe Budget do
         expect(Budget.valuating_or_later).to be_empty
       end
     end
+
+    describe ".drafting" do
+      it "returns unpublished budgets" do
+        undefined = create(:budget, published: nil)
+        drafting = create(:budget, published: false)
+
+        expect(Budget.drafting).to match_array([undefined, drafting])
+      end
+
+      it "does not return published budgets" do
+        create(:budget, published: true)
+
+        expect(Budget.drafting).to be_empty
+      end
+    end
+
+    describe ".published" do
+      it "does not return unpublished budgets" do
+        create(:budget, published: nil)
+        create(:budget, published: false)
+
+        expect(Budget.published).to be_empty
+      end
+
+      it "returns published budgets" do
+        published = create(:budget, published: true)
+
+        expect(Budget.published).to eq [published]
+      end
+    end
   end
 
   describe "name" do
@@ -236,6 +266,7 @@ describe Budget do
       budget.phase = "reviewing"
       expect(budget.investments_orders).to eq(["random"])
     end
+
     it "is random and price when ballotting and reviewing ballots" do
       budget.phase = "publishing_prices"
       expect(budget.investments_orders).to eq(["random", "price"])
@@ -244,6 +275,7 @@ describe Budget do
       budget.phase = "reviewing_ballots"
       expect(budget.investments_orders).to eq(["random", "price"])
     end
+
     it "is random when ballotting and reviewing ballots if hide money" do
       budget.update!(voting_style: "approval", hide_money: true)
       budget.phase = "publishing_prices"
@@ -253,7 +285,8 @@ describe Budget do
       budget.phase = "reviewing_ballots"
       expect(budget.investments_orders).to eq(["random"])
     end
-    it "is confidence_score and random in all other cases" do
+
+    it "is random and confidence_score in all other cases" do
       budget.phase = "selecting"
       expect(budget.investments_orders).to eq(["random", "confidence_score"])
       budget.phase = "valuating"
@@ -444,6 +477,28 @@ describe Budget do
 
         expect(budget.investments_preview_list.count).to be budget.investments.selected.count
       end
+    end
+  end
+
+  describe "#budget_administrators" do
+    it "destroys relation with administrators when destroying the budget" do
+      budget = create(:budget, administrators: [create(:administrator)])
+
+      budget.destroy!
+
+      expect(BudgetAdministrator.count).to be 0
+      expect(Administrator.count).to be 1
+    end
+  end
+
+  describe "#budget_valuators" do
+    it "destroys relation with valuators when destroying the budget" do
+      budget = create(:budget, valuators: [create(:valuator)])
+
+      budget.destroy!
+
+      expect(BudgetValuator.count).to be 0
+      expect(Valuator.count).to be 1
     end
   end
 end

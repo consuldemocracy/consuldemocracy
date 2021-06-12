@@ -148,12 +148,60 @@ describe "Polymorphic routes" do
       )
     end
 
+    it "routes booth assignments" do
+      poll = create(:poll)
+      assignment = create(:poll_booth_assignment, poll: poll)
+
+      expect(admin_polymorphic_path(assignment)).to eq(
+        admin_poll_booth_assignment_path(poll, assignment)
+      )
+    end
+
+    it "routes poll shifts" do
+      booth = create(:poll_booth)
+      shift = create(:poll_shift, booth: booth)
+
+      expect(admin_polymorphic_path(shift)).to eq(admin_booth_shift_path(booth, shift))
+    end
+
+    it "routes widget cards" do
+      card = create(:widget_card)
+
+      expect(admin_polymorphic_path(card)).to eq(admin_widget_card_path(card))
+    end
+
+    it "routes site customization page widget cards" do
+      page = create(:site_customization_page)
+      card = create(:widget_card, cardable: page)
+
+      expect(admin_polymorphic_path(card)).to eq admin_site_customization_page_widget_card_path(page, card)
+    end
+
     it "supports routes for actions like edit" do
       proposal = create(:proposal)
       milestone = create(:milestone, milestoneable: proposal)
 
       expect(admin_polymorphic_path(milestone, action: :edit)).to eq(
         edit_admin_proposal_milestone_path(proposal, milestone)
+      )
+    end
+  end
+
+  describe "sdg_management_polymorphic_path" do
+    include ActionDispatch::Routing::UrlFor
+
+    it "routes local targets" do
+      target = create(:sdg_local_target)
+
+      expect(sdg_management_polymorphic_path(target)).to eq sdg_management_local_target_path(target)
+    end
+
+    it "routes SDG phases widget cards" do
+      phase = SDG::Phase.sample
+      card = create(:widget_card, cardable: phase)
+
+      expect(sdg_management_polymorphic_path(card)).to eq(
+        sdg_management_sdg_phase_widget_card_path(phase, card)
       )
     end
   end

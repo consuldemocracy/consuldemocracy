@@ -1,32 +1,7 @@
-<% @feeds.each do |feed| %>
-  <% if feed_processes?(feed) %>
-    <div class="feed-content">
-      <h3 class="title"><%= t("welcome.feed.most_active.#{feed.kind}") %></h3>
-
-      <div class="row" data-equalizer data-equalize-on="medium">
-        <% feed.items.each do |item| %>
-          <div class="card small-12 medium-6 large-4 column margin-bottom end" data-equalizer-watch>
-            <%= link_to url_for(item) do %>
-              <figure class="figure-card <%= item.class.to_s.parameterize(separator: "-") %>">
-                <%= image_tag("welcome_process.png", alt: "") %>
-                <figcaption>
-                  <span><%= t("welcome.feed.process_label") %></span>
-                  <br>
-                  <h3><%= item.title %></h3>
-                </figcaption>
-              </figure>
-              <p class="description"><%= item.summary %></p>
-              <p><%= t("welcome.feed.see_process") %></p>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-
-      <div class="feeds-list">
-        <%= link_to t("welcome.feed.see_all_processes"),
-                    legislation_processes_path,
-                    class: "float-right see-all" %>
-      </div>
-    </div>
+<div class="feeds-list">
+  <% @feeds.each do |feed| %>
+    <% if feed_processes?(feed) %>
+      <%= render Widget::Feeds::FeedComponent.new(feed) %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

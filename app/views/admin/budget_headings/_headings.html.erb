@@ -33,7 +33,7 @@
           </td>
           <% unless @mode.present? %>
             <td class="text-right">
-              <%= render "headings_actions", heading: heading %>
+              <%= render Admin::TableActionsComponent.new(heading) %>
             </td>
           <% end %>
         </tr>

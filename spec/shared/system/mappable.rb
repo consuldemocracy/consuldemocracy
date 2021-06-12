@@ -12,7 +12,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   describe "At #{mappable_new_path}" do
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
-    scenario "Should not show marker by default on create #{mappable_factory_name}", :js do
+    scenario "Should not show marker by default on create #{mappable_factory_name}" do
       do_login_for user
       visit send(mappable_new_path, arguments)
 
@@ -23,7 +23,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       end
     end
 
-    scenario "Should show marker on create #{mappable_factory_name} when click on map", :js do
+    scenario "Should show marker on create #{mappable_factory_name} when click on map" do
       do_login_for user
       visit send(mappable_new_path, arguments)
 
@@ -35,7 +35,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       end
     end
 
-    scenario "Should create #{mappable_factory_name} with map", :js do
+    scenario "Should create #{mappable_factory_name} with map" do
       do_login_for user
       visit send(mappable_new_path, arguments)
 
@@ -43,10 +43,12 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       find("#new_map_location").click
       send("submit_#{mappable_factory_name}_form")
 
-      expect(page).to have_css(".map_location")
+      within ".map_location" do
+        expect(page).to have_css(".map-icon")
+      end
     end
 
-    scenario "Can not display map on #{mappable_factory_name} when not fill marker on map", :js do
+    scenario "Can not display map on #{mappable_factory_name} when not fill marker on map" do
       do_login_for user
       visit send(mappable_new_path, arguments)
 
@@ -57,7 +59,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario "Can not display map on #{mappable_factory_name} when feature.map is disabled", :js do
+    scenario "Can not display map on #{mappable_factory_name} when feature.map is disabled" do
       Setting["feature.map"] = false
       do_login_for user
       visit send(mappable_new_path, arguments)
@@ -70,7 +72,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     describe "When restoring the page from browser history" do
-      scenario "map should not be duplicated", :js do
+      before { Setting["org_name"] = "CONSUL" }
+
+      scenario "map should not be duplicated" do
         do_login_for user
         visit send(mappable_new_path, arguments)
 
@@ -91,7 +95,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
         end
       end
 
-      scenario "keeps marker and zoom defined by the user", :js do
+      scenario "keeps marker and zoom defined by the user" do
         do_login_for user
         visit send(mappable_new_path, arguments)
 
@@ -125,7 +129,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
         end
       end
 
-      scenario "shows marker at map center", :js do
+      scenario "shows marker at map center" do
         do_login_for user
         visit send(mappable_new_path, arguments)
 
@@ -158,7 +162,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       end
     end
 
-    scenario "Skip map", :js do
+    scenario "Skip map" do
       do_login_for user
       visit send(mappable_new_path, arguments)
 
@@ -172,7 +176,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   describe "At #{mappable_edit_path}" do
     before { skip } if mappable_edit_path.blank?
 
-    scenario "Should edit map on #{mappable_factory_name} and contain default values", :js do
+    scenario "Should edit map on #{mappable_factory_name} and contain default values" do
       do_login_for mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -181,7 +185,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       validate_latitude_longitude(mappable_factory_name)
     end
 
-    scenario "Should edit default values from map on #{mappable_factory_name} edit page", :js do
+    scenario "Should edit default values from map on #{mappable_factory_name} edit page" do
       do_login_for mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -194,7 +198,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_selector(".map_location[data-marker-latitude='#{mappable.map_location.latitude}']")
     end
 
-    scenario "Should edit mappable on #{mappable_factory_name} without change map", :js do
+    scenario "Should edit mappable on #{mappable_factory_name} without change map" do
       do_login_for mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -207,7 +211,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_selector(".map_location[data-marker-latitude='#{mappable.map_location.latitude}']")
     end
 
-    scenario "Can not display map on #{mappable_factory_name} edit when remove map marker", :js do
+    scenario "Can not display map on #{mappable_factory_name} edit when remove map marker" do
       do_login_for mappable.author
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -217,7 +221,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario "Can not display map on #{mappable_factory_name} edit when feature.map is disabled", :js do
+    scenario "Can not display map on #{mappable_factory_name} edit when feature.map is disabled" do
       Setting["feature.map"] = false
       do_login_for mappable.author
 
@@ -228,7 +232,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario "No errors on update", :js do
+    scenario "No errors on update" do
       skip ""
       do_login_for mappable.author
 
@@ -253,12 +257,12 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   describe "At #{mappable_show_path}" do
     before do
       set_arguments(arguments, mappable, mappable_path_arguments)
-      do_login_for(user) if management
     end
 
-    scenario "Should display map and marker on #{mappable_factory_name} show page", :js do
+    scenario "Should display map and marker on #{mappable_factory_name} show page" do
       arguments[:id] = mappable.id
 
+      do_login_for(user) if management
       visit send(mappable_show_path, arguments)
 
       within ".map_location" do
@@ -266,20 +270,22 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       end
     end
 
-    scenario "Should not display map on #{mappable_factory_name} show when marker is not defined", :js do
+    scenario "Should not display map on #{mappable_factory_name} show when marker is not defined" do
       mappable_without_map = create(mappable_factory_name.to_s.to_sym)
       set_arguments(arguments, mappable_without_map, mappable_path_arguments)
       arguments[:id] = mappable_without_map.id
 
+      do_login_for(user) if management
       visit send(mappable_show_path, arguments)
 
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario "Should not display map on #{mappable_factory_name} show page when feature.map is disable", :js do
+    scenario "Should not display map on #{mappable_factory_name} show page when feature.map is disable" do
       Setting["feature.map"] = false
       arguments[:id] = mappable.id
 
+      do_login_for(user) if management
       visit send(mappable_show_path, arguments)
 
       expect(page).not_to have_css(".map_location")
@@ -288,12 +294,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 end
 
 def do_login_for(user)
-  if management
-    login_as_manager
-    login_managed_user(user)
-  else
-    login_as(user)
-  end
+  common_do_login_for(user, management: management)
 end
 
 def fill_in_proposal_form

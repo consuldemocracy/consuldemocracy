@@ -10,7 +10,7 @@ module TranslatableFormHelper
   end
 
   def backend_translations_enabled?
-    (controller.class.parents & [Admin, Management, Valuation]).any?
+    (controller.class.parents & [Admin, Management, Valuation, SDGManagement]).any?
   end
 
   def highlight_translation_html_class

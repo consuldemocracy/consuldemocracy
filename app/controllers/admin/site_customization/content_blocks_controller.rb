@@ -77,7 +77,7 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
     if @content_block.is_a? Budget::ContentBlock
       @selected_content_block = "hcb_#{@content_block.heading_id}"
     else
-      @selected_content_block = @content_block.heading.name
+      @selected_content_block = @content_block.name
     end
     @is_heading_content_block = true
     render :edit

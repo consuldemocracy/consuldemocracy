@@ -1,9 +1,8 @@
 require "rails_helper"
 
-describe "Admin edit translatable records" do
+describe "Admin edit translatable records", :admin do
   before do
     translatable.update!(attributes)
-    login_as(create(:administrator).user)
   end
 
   let(:fields) { translatable.translated_attribute_names }
@@ -14,7 +13,7 @@ describe "Admin edit translatable records" do
     end.to_h
   end
 
-  context "Add a translation", :js do
+  context "Add a translation" do
     context "Input fields" do
       let(:translatable) { create(:budget_heading) }
       let(:path) { admin_polymorphic_path(translatable, action: :edit) }
@@ -100,7 +99,7 @@ describe "Admin edit translatable records" do
       end
     end
 
-    context "Locale with non-underscored name", :js do
+    context "Locale with non-underscored name" do
       let(:translatable) { create(:legislation_question) }
       let(:path) { edit_admin_legislation_process_question_path(translatable.process, translatable) }
 
@@ -119,7 +118,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Add an invalid translation", :js do
+  context "Add an invalid translation" do
     let(:translatable) { create(:budget_investment) }
 
     context "Input field" do
@@ -182,7 +181,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Update a translation", :js do
+  context "Update a translation" do
     context "Input fields" do
       let(:translatable) { create(:widget_card) }
       let(:path) { edit_admin_widget_card_path(translatable) }
@@ -241,7 +240,7 @@ describe "Admin edit translatable records" do
       end
     end
 
-    context "Change value of a translated field to blank", :js do
+    context "Change value of a translated field to blank" do
       let(:translatable) { create(:poll) }
       let(:path) { edit_admin_poll_path(translatable) }
 
@@ -260,7 +259,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Update a translation with invalid data", :js do
+  context "Update a translation with invalid data" do
     context "Input fields" do
       let(:translatable) { create(:banner) }
 
@@ -306,7 +305,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Update a translation not having the current locale", :js do
+  context "Update a translation not having the current locale" do
     let(:translatable) { create(:legislation_process) }
 
     before do
@@ -322,16 +321,16 @@ describe "Admin edit translatable records" do
 
       click_button "Save changes"
 
-      expect(page).not_to have_css "#error_explanation"
+      expect(page).to have_content "Process updated successfully"
 
-      visit edit_admin_legislation_process_path(translatable.reload)
+      visit edit_admin_legislation_process_path(translatable)
 
       expect_to_have_language_selected "Français"
       expect_not_to_have_language "English"
     end
   end
 
-  context "Remove a translation", :js do
+  context "Remove a translation" do
     let(:translatable) { create(:budget_group) }
     let(:path) { edit_admin_budget_group_path(translatable.budget, translatable) }
 
@@ -352,7 +351,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Remove all translations", :js do
+  context "Remove all translations" do
     let(:translatable) { create(:milestone) }
 
     scenario "Shows an error message" do
@@ -367,7 +366,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Remove a translation with invalid data", :js do
+  context "Remove a translation with invalid data" do
     let(:translatable) { create(:poll_question) }
     let(:path) { edit_admin_question_path(translatable) }
 
@@ -393,7 +392,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Current locale translation does not exist", :js do
+  context "Current locale translation does not exist" do
     context "For all translatable except ActivePoll and Budget::Phase" do
       let(:translatable) { create(:admin_notification, segment_recipient: "all_users") }
 
@@ -417,9 +416,7 @@ describe "Admin edit translatable records" do
       let(:translatable) { create(:budget).phases.last }
 
       scenario "Shows first available fallback" do
-        translatable.update!({
-                               name_fr: "Name en Français",
-                               description_fr: "Phase en Français" })
+        translatable.update!({ name_fr: "Name en Français", description_fr: "Phase en Français" })
 
         visit edit_admin_budget_budget_phase_path(translatable.budget, translatable)
 
@@ -431,7 +428,7 @@ describe "Admin edit translatable records" do
         click_button "Save changes"
 
         visit budgets_path
-        click_link "9 Name en Français"
+        click_link "Name en Français"
 
         expect(page).to have_content "Phase en Français"
       end
@@ -458,7 +455,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Globalize javascript interface", :js do
+  context "Globalize javascript interface" do
     let(:translatable) { create(:i18n_content) }
     let(:content) { translatable }
     let(:path) { admin_site_customization_information_texts_path }

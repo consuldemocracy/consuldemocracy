@@ -364,9 +364,10 @@ fa:
         debates: "فعال ترین موضوعات"
         proposals: " پیشنهادات فعال"
         processes: "فرآیندهای باز"
-      see_all_debates: مشاهده تمام بحث ها
-      see_all_proposals: دیدن همه طرحهای پیشنهادی
-      see_all_processes: دیدن تمام فرآیندها
+      see_all:
+        debates: مشاهده تمام بحث ها
+        proposals: دیدن همه طرحهای پیشنهادی
+        processes: دیدن تمام فرآیندها
       process_label: "روند\n"
       see_process: مشاهده فرآیند
     cards:

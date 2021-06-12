@@ -36,7 +36,7 @@ describe "Legislation Proposals" do
       let(:user2)    { create(:user) }
       let(:per_page) { 12 }
 
-      scenario "Each user has a different and consistent random proposals order", :js do
+      scenario "Each user has a different and consistent random proposals order" do
         first_user_proposals_order = nil
         second_user_proposals_order = nil
 
@@ -66,7 +66,7 @@ describe "Legislation Proposals" do
       end
     end
 
-    scenario "Random order maintained with pagination", :js do
+    scenario "Random order maintained with pagination" do
       login_as user
       visit legislation_process_proposals_path(process)
       first_page_proposals_order = legislation_proposals_order
@@ -86,7 +86,7 @@ describe "Legislation Proposals" do
       login_as user
       visit legislation_process_proposals_path(process, random_seed: "Spoof")
 
-      expect(page).to have_content "You're on page 1"
+      expect(page).to have_content "Random"
     end
   end
 
@@ -137,7 +137,7 @@ describe "Legislation Proposals" do
     all("[id^='legislation_proposal_']").map { |e| e[:id] }
   end
 
-  scenario "Create a legislation proposal with an image", :js do
+  scenario "Create a legislation proposal with an image" do
     create(:legislation_proposal, process: process)
 
     login_as user
@@ -147,13 +147,11 @@ describe "Legislation Proposals" do
     fill_in "Proposal title", with: "Legislation proposal with image"
     fill_in "Proposal summary", with: "Including an image on a legislation proposal"
     imageable_attach_new_file(create(:image), Rails.root.join("spec/fixtures/files/clippy.jpg"))
-    # Check terms of service by default
-    # check "legislation_proposal_terms_of_service"
     click_button "Create proposal"
 
     expect(page).to have_content "Legislation proposal with image"
     expect(page).to have_content "Including an image on a legislation proposal"
-    expect(page).to have_css("img[alt='#{Legislation::Proposal.last.image.title}']")
+    expect(page).to have_css "img[alt='clippy.jpg']"
   end
 
   scenario "Can visit a legislation proposal from image link" do
@@ -219,8 +217,34 @@ describe "Legislation Proposals" do
     visit legislation_process_proposal_path(proposal.process, proposal)
 
     within(".process-proposal") do
-      expect(page).to have_content("Collaborative legislation process")
+      expect(page).to have_content("COLLABORATIVE LEGISLATION PROCESS")
       expect(page).to have_link(process.title)
     end
+  end
+
+  scenario "Shows proposal tags as proposals filter" do
+    create(:legislation_proposal, process: process, tag_list: "Culture", title: "Open concert")
+    create(:legislation_proposal, process: process, tag_list: "Sports", title: "Baseball field")
+
+    visit legislation_process_proposals_path(process)
+
+    expect(page).to have_content "Open concert"
+    expect(page).to have_content "Baseball field"
+
+    click_link "Culture"
+
+    expect(page).not_to have_content "Baseball field"
+    expect(page).to have_content "Open concert"
+  end
+
+  scenario "Show proposal tags on show when SDG is enabled" do
+    Setting["feature.sdg"] = true
+    Setting["sdg.process.legislation"] = true
+
+    proposal = create(:legislation_proposal, process: process, tag_list: "Culture")
+
+    visit legislation_process_proposal_path(proposal.process, proposal)
+
+    expect(page).to have_link("Culture")
   end
 end

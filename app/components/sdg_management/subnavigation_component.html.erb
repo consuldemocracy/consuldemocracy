@@ -1,0 +1,13 @@
+<ul class="tabs">
+  <% sections.each do |section| %>
+    <li class="tabs-title">
+      <%= link_to_section section %>
+    </li>
+  <% end %>
+</ul>
+
+<div class="tabs-content">
+  <div class="tabs-panel is-active">
+    <%= content %>
+  </div>
+</div>

@@ -94,26 +94,26 @@ sv:
       featured_proposals: "Uppmärksammade förslag"
       featured_proposals_description: "Visar uppmärksammade förslag på indexsidan för förslag"
       signature_sheets: "Namninsamlingar"
-      signature_sheets_description: "Tillåter att röster om förslag och investeringsprojekt i medborgarbudgetar som samlats in på plats kan läggas in via administrationspanelen"
+      signature_sheets_description: "Tillåter att röster om förslag och budgetförslag i medborgarbudgetar som samlats in på plats kan läggas in via administrationspanelen"
       user:
         recommendations: "Rekommendationer"
-        recommendations_description: "Visar rekommendationer från användare på hemsidan baserat på taggarna i objekten de följer"
+        recommendations_description: "Visar rekommendationer för användare på startsidan baserat på taggarna i objekten de följer"
         skip_verification: "Hoppa över användarverifiering"
         skip_verification_description: "Detta avaktiverar verifiering av användarna och alla registrerade använder kan delta i alla processer"
         recommendations_on_debates: "Rekommenderade debatter"
         recommendations_on_debates_description: "Visar rekommendationer från användare på debattsidan baserat på taggarna i objekten som de följer"
         recommendations_on_proposals: "Rekommenderade förslag"
         recommendations_on_proposals_description: "Visar rekommendationer från användare på förslagssidan baserat på taggarna i objekten som de följer"
-      community: "Gemenskap kring medborgarförslag och budgetförslag"
-      community_description: "Aktiverar gemenskapsavsnitten i förslagen och investeringsprojekten i medborgarbudgetarna"
+      community: "Gemenskap kring förslag och budgetförslag"
+      community_description: "Aktiverar gemenskapsavsnitten i förslagen och budgetförslagen i medborgarbudgetarna"
       map: "Geografisk plats för förslag och budgetförslag"
       map_description: "Aktiverar geografiska positioner av förslag och investeringsprojekt"
       allow_images: "Tillåt uppladdning och visning av bilder"
-      allow_images_description: "Tillåter användare att skicka in bilder när de skapar förslag och investeringsprojekt i medborgarbudgetar"
+      allow_images_description: "Tillåter användare att skicka in bilder när de skapar förslag och budgetförslag i medborgarbudgetar"
       allow_attached_documents: "Tillåt uppladdning och visning av dokument"
-      allow_attached_documents_description: "Tillåter användare att skicka in dokument när de skapar förslag och investeringsprojekt i medborgarbudgetar"
-      guides: "Instruktioner för att skapa budgetförslag"
-      guides_description: "Visar en guide över skillnaderna mellan förslag och investeringsprojekt om det finns en aktiv medborgarbudget"
+      allow_attached_documents_description: "Tillåter användare att skicka in dokument när de skapar förslag och budgetförslag i medborgarbudgetar"
+      guides: "Instruktioner för att skapa förslag eller budgetförslag"
+      guides_description: "Visar en guide över skillnaderna mellan förslag och budgetförslag om det finns en aktiv medborgarbudget"
       public_stats: "Offentlig statistik"
       public_stats_description: "Visar offentlig statistik i administratörspanelen"
       help_page: "Hjälpsida"
@@ -125,20 +125,22 @@ sv:
       remote_census: "Konfigurera anslutning till fjärradressregister (SOAP)"
       remote_census_description: "Tillåter konfiguration av anslutningen till fjärradressregistret för varje institution"
       valuation_comment_notification: "Avisering om bedömningskommentar"
-      valuation_comment_notification_description: "Skicka ett e-brev till alla berörda använare, utom den som gör kommentaren till investeringsbudgeten, när en ny bedömningskommentar skapas"
+      valuation_comment_notification_description: "Skicka e-post till alla berörda användare, utom den som gör kommentaren till budgetförslaget, när en ny bedömningskommentar skapas"
       graphql_api: "GraphQL API"
       dashboard:
         notification_emails: "Dashboard för e-postaviseringar"
-        notification_emails_description: "Aktivera att skicka dashboard-aviseringar via e-post till författarna av förslaget"
+        notification_emails_description: "Aktivera skickande av dashboard-aviseringar via e-post till förslagslämnare"
+      sdg: Globala målen
+      sdg_description: Aktivera delarna Globala mål för hållbar utveckling i administrationsmenyn och i Globala inställningar.
     remote_census:
       general:
         endpoint: "Slutpunkt"
-        endpoint_description: "Namn på värden där adressregistervärden finns (wsdl)"
+        endpoint_description: "Namn på värden där adressregistertjänsten finns (wsdl)"
       request:
         method_name: "Namn på metod för begäran"
         method_name_description: "Namn på metoden för begäran till webbtjänsten för stadens adressregister."
         structure: "Struktur för begäran"
-        structure_description: 'Strukturen för begäran som tas emot från webbtjänsten för stadens adressregister. De "statiska" värdena i denna begäran bör fyllas i. Värden relaterade till identitetstyp, identitetsnummer, födelsedatum och postnummer bör vara "null". Exempel på ett giltig format: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        structure_description: 'Strukturen för begäran som skickas till webbtjänsten för stadens adressregister. De "statiska" värdena i denna begäran bör fyllas i. Värden relaterade till identitetstyp, identitetsnummer, födelsedatum och postnummer bör vara "null". Exempel på ett giltigt format: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
         document_type: "Sökväg för dokumenttyp"
         document_type_description: "Sökväg i strukturen för begäran som skickar dokumenttypen. FYLL INTE I om webbtjänsten inte kräver dokumenttypen för att verifiera en användare."
         document_number: "Sökväg för dokumentnummer"
@@ -207,3 +209,15 @@ sv:
         max_size_description: "Högsta storlek på inskickade dokument (i MB)"
         content_types: "Accepterade innehållstyper för dokument"
         content_types_description: "Välj alla de innehållstyper som är tillåtna för inskickade dokument"
+    sdg:
+      process:
+        debates: Relaterade Globala mål i debatter
+        debates_description: Tillåt att debatter länkas till Globala mål för hållbar utveckling
+        proposals: Relaterade Globala mål i förslag
+        proposals_description: Tillåt att förslag länkas till Globala mål för hållbar utveckling
+        polls: Relaterade Globala mål i omröstningar
+        polls_description: Tillåt att omröstningar länkas till Globala mål för hållbar utveckling
+        budgets: Relaterade Globala mål i medborgarbudgetar
+        budgets_description: Tillåt att medborgarbudgetar länkas till Globala mål för hållbar utveckling
+        legislation: Relaterade Globala mål i medborgardialoger
+        legislation_description: Tillåt att medborgardialoger länkas till Globala mål för hållbar utveckling

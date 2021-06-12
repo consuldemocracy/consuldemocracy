@@ -1,0 +1,62 @@
+<button class="button float-right" data-open="new_budget_reveal">
+  <strong><%= t("admin.budgets.index.new_button") %></strong>
+</button>
+
+<%= header do %>
+  <h2 class="inline-block"><%= t("admin.budgets.index.title") %></h2>
+
+  <%= render "new_budget_reveal" %>
+<% end %>
+
+<%= render Admin::Budgets::HelpComponent.new("budgets") %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
+
+<% if budgets.any? %>
+  <h3><%= page_entries_info budgets %></h3>
+
+  <table class="budgets-table">
+    <thead>
+      <tr>
+        <th><%= t("admin.budgets.index.table_name") %></th>
+        <th><%= t("admin.budgets.index.table_phase") %></th>
+        <th><%= t("admin.budgets.index.table_budget_type") %></th>
+        <th><%= t("admin.budgets.index.table_duration") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% budgets.each do |budget| %>
+        <tr id="<%= dom_id(budget) %>" class="budget">
+          <td class="<%= status_html_class(budget) %>">
+            <%= status_text(budget) %>
+            <strong><%= budget.name %></strong>
+          </td>
+          <td>
+            <%= budget.current_phase.name %>
+            <small><%= phase_progress_text(budget) %></small>
+          </td>
+          <td>
+            <% if budget.single_heading? %>
+              <%= t("admin.budgets.index.type_single") %>
+            <% else %>
+              <%= t("admin.budgets.index.type_multiple") %>
+            <% end %>
+          </td>
+          <td>
+            <%= dates(budget) %>
+            <%= duration(budget) %>
+          </td>
+          <td>
+            <%= render Admin::Budgets::TableActionsComponent.new(budget) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate budgets %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.budgets.index.no_budgets") %>
+  </div>
+<% end %>

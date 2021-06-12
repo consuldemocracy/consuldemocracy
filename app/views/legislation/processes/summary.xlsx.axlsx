@@ -1,8 +1,7 @@
 xlsx_package.workbook.add_worksheet(name: "Summary") do |sheet|
-
-styles = xlsx_package.workbook.styles
-title = styles.add_style(b:true)
-link = styles.add_style(fg_color: "0000FF", u: true)
+  styles = xlsx_package.workbook.styles
+  title = styles.add_style(b: true)
+  link = styles.add_style(fg_color: "0000FF", u: true)
 
   if @process.debate_phase.enabled? && @process.questions.any?
     sheet.add_row [t("legislation.summary.debate_phase"), t("legislation.summary.debates", count: @process.questions.count)], style: title

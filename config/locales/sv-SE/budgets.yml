@@ -3,22 +3,41 @@ sv:
     ballots:
       show:
         title: Dina röster
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Du har fortfarande <span>%{count}</span>"
+          approval:
+            zero: "Du kan fortfarande lägga <span>%{count}</span> röster."
+            one: "Du kan fortfarande lägga <span>%{count}</span> röst."
+            other: "Du kan fortfarande lägga <span>%{count}</span> röster."
+        amount_spent:
+          knapsack: "Använt belopp <span>%{count}</span>"
+          approval:
+            zero: "Lagda röster: <span>%{count}</span>"
+            one: "Lagda röster: <span>%{count}</span>"
+            other: "Lagda röster: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Du kan rösta i <span>1</span> projekt"
+            other: "Du kan rösta i <span>%{count}</span> projekt"
         no_balloted_group_yet: "Du har inte röstat i den här delen av budgeten än, rösta nu!"
         remove: Dra tillbaka din röst
         voted:
           one: "Du har röstat på <span>ett</span> budgetförslag."
           other: "Du har röstat på <span>%{count}</span> budgetförslag."
         voted_info: "Din röst är bekräftad!"
-        voted_info_2: "Men du kan ändra din röst när som helst fram till att denna fasen stängt."
+        voted_info_2: "Men du kan ändra din röst när som helst fram till att denna fas har stängts."
         zero: Du har inte röstat på några budgetförslag.
       reasons_for_not_balloting:
-        not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
+        not_logged_in: Du måste %{signin} eller %{signup} för att fortsätta.
         not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
         organization: Organisationer kan inte rösta
         not_selected: Omarkerade budgetförslag kan inte stödjas
         not_enough_money: "Du har redan använt hela din budget.<br><small>Kom ihåg att du kan %{change_ballot} när som helst</small>"
         no_ballots_allowed: Urvalsfasen är stängd
         different_heading_assigned: "Du har redan röstat inom ett annat område: %{heading_link}"
+        not_enough_available_votes: "Du har uppnått maximalt antal tillåtna röster"
         change_ballot: ändra dina röster
         casted_offline: Du har redan deltagit offline
     groups:
@@ -46,12 +65,11 @@ sv:
         icon_alt: Medborgarbudgetssymbol
         title: Medborgarbudgetar
         help: Hjälp med medborgarbudgetar
-        all_phases: Visa alla faser
       all_phases: Medborgarbudgetens faser
+      next_phase: Nästa fas
+      prev_phase: Föregående fas
+      current_phase: Nuvarande fas
       map: Geografiskt baserade budgetförslag
-      investment_proyects: Lista över budgetförslag
-      unfeasible_investment_proyects: Lista över ej genomförbara budgetförslag
-      not_selected_investment_proyects: Lista över budgetförslag som inte gått vidare till omröstning
       finished_budgets: Avslutade medborgarbudgetar
       see_results: Visa resultat
       section_footer:
@@ -71,7 +89,7 @@ sv:
       index:
         title: Medborgarbudgetar
         unfeasible: Ej genomförbara budgetförslag
-        unfeasible_text: "Projekten måste uppfylla vissa kriterier (juridiskt giltiga, genomförbara, vara inom stadens ansvarsområde, inte överskrida budgeten) för att förklaras giltiga och nå slutomröstningen. De projekt som inte uppfyller kriterierna markeras som ogiltiga och visas i följande lista, tillsammans med en förklaring av bedömningen."
+        unfeasible_text: "Budgetförslag måste uppfylla vissa kriterier (juridiskt giltiga, genomförbara, inte överskrida budgeten) för att förklaras giltiga och nå slutomröstningen. De budgetförslag som inte uppfyller kriterierna markeras som ej genomförbara och visas i följande lista, tillsammans med en förklaring av bedömningen."
         by_heading: "Budgetförslag för: %{heading}"
         search_form:
           button: Sök
@@ -82,16 +100,31 @@ sv:
           other: " som innehåller <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mina röster
+          voted_info:
+            knapsack:
+              one: "<strong>Du röstade för ett förslag med en kostnad på %{amount_spent}</strong>"
+              other: "<strong>Du röstade för %{count} förslag med en kostnad på %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Du röstade för ett förslag</strong>"
+              other: "<strong>Du röstade för %{count} förslag</strong>"
+          change_vote_info:
+            knapsack: "Du kan %{link} när som helst fram till %{phase_end_date}. Du behöver inte spendera hela din budget."
+            approval: "Du kan %{link} när som helst fram till slutet av denna fas."
+          change_vote_link: "ändra din röst"
           different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
-          check_ballot_link: "kontrollera min omröstning"
+          check_ballot_link: "skicka in min röst"
           zero: Du har inte röstat på några budgetförslag i den här delen av budgeten.
           verified_only: "För att skapa ett nytt budgetförslag måste du %{verify}."
           create: "Skapa budgetförslag"
           not_logged_in: "Om du vill skapa ett nytt budgetförslag behöver du %{sign_in} eller %{sign_up}."
-          by_feasibility: Efter genomförbarhet
-          feasible: Genomförbara projekt
-          unfeasible: Ej genomförbara projekt
+        filter: "Filtrerar projekt efter"
+        filters:
+          not_unfeasible: "Ej ogenomförbart"
+          selected: "Valda"
+          unfeasible: "Ogenomförbara"
+          unselected: "Ovalda"
+          winners: "Vinnare"
         orders:
           random: slumpvis ordning
           confidence_score: populära
@@ -121,11 +154,11 @@ sv:
       wrong_price_format: Endast heltal
       investment:
         add: Rösta
-        already_added: Du har redan skapat det här investeringsprojektet
+        already_added: Du har redan skapat det här budgetförslaget
         already_supported: Du stöder redan det här budgetförslaget. Dela det!
         support_title: Stöd projektet
         confirm_group:
-          one: "Du kan bara stödja projekt i %{count} stadsdel. Om du fortsätter kommer du inte kunna ändra valet av stadsdel. Vill du fortsätta?"
+          one: "Du kan bara stödja budgetförslag i %{count} distrikt. Om du fortsätter kommer du inte att kunna ändra valet av distrikt. Vill du fortsätta?"
           other: "Du kan bara stödja projekt i %{count} stadsdelar. Om du fortsätter kommer du inte kunna ändra valet av stadsdel. Vill du fortsätta?"
         supports:
           zero: Inget stöd
@@ -133,21 +166,12 @@ sv:
           other: "%{count} stöd"
         give_support: Stöd
       header:
-        check_ballot: Kontrollera min omröstning
+        check_ballot: "Skicka in min röst"
         different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
         change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
-        check_ballot_link: "kontrollera min röster"
+        check_ballot_link: "skicka in min röst"
         price: "Det här området har en budget på"
-    progress_bar:
-      assigned: "Du har fördelat: "
-      available: "Tillgänglig budget: "
     show:
-      group: Delbudget
-      phase: Aktuell fas
-      unfeasible_title: Ej genomförbara budgetförslag
-      unfeasible: Visa ej genomförbara budgetförslag
-      unselected_title: Budgetförslag som inte gått vidare till omröstning
-      unselected: Visa budgetförslag som inte gått vidare till omröstning
       see_results: Visa resultat
     results:
       link: Resultat
@@ -159,7 +183,7 @@ sv:
       show_all_link: Visa alla
       price: Kostnad
       amount_available: Tillgänglig budget
-      accepted: "Accepterade budgetförslag: "
+      accepted: "Godkänt budgetförslag: "
       discarded: "Avvisade budgetförslag: "
       incompatibles: Oförenliga
       investment_title: Projekttitel
@@ -170,14 +194,14 @@ sv:
       link: "Milstolpar"
       page_title: "%{budget} - Milstolpar"
       heading: "Medborgarbudgetens milstolpar"
-      heading_selection_title: "Efter stadsdel"
-      no_winner_investments: "Inga vinnande förslag i denna stadsdel"
+      heading_selection_title: "Efter distrikt"
+      no_winner_investments: "Inga vinnande förslag i detta län"
       filters:
         status:
           label: "Projektets nuvarande tillstånd"
           all: "Alla (%{count})"
         milestone_tag:
-          label: "Milstolpe tagg"
+          label: "Milstolpestagg"
           all: "Alla (%{count})"
     phases:
       errors:

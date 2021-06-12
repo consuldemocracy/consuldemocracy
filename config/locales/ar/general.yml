@@ -252,7 +252,6 @@ ar:
       collaborative_legislation: العمليات التشريعية
       debates: النقاشات
       locale: "لغة:"
-      logo: شعار CONSUL
       management: الإدارة
       moderation: الإشراف
       valuation: التقييم
@@ -266,6 +265,7 @@ ar:
       budgets: الميزانية التشاركية
       notification_item:
         new_notifications:
+          zero: "لا يوجد إشعارات جديدة"
           zero: لديك %{count} إشعارات الجديدة
           one: لديك إشعار جديد
           two: لديك %{count} إشعارات الجديدة
@@ -273,7 +273,6 @@ ar:
           many: لديك %{count} إشعارات الجديدة
           other: لديك %{count} إشعارات الجديدة
         notifications: إشعارات
-        no_notifications: "لا يوجد إشعارات جديدة"
   notifications:
     index:
       empty_notifications: لا يوجد إشعارات جديدة.
@@ -824,7 +823,6 @@ ar:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: واتساب
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -938,9 +936,10 @@ ar:
         debates: "المناقشات الأكثر نشاطا"
         proposals: "المقترحات الأكثر نشاطا"
         processes: "إجراءات مفتوحة"
-      see_all_debates: انظر جميع الحوارات
-      see_all_proposals: انظر جميع المقترحات
-      see_all_processes: انظر جميع المقترحات
+      see_all:
+        debates: انظر جميع الحوارات
+        proposals: انظر جميع المقترحات
+        processes: انظر جميع المقترحات
       process_label: عملية
       see_process: انظر الإجرائية
     cards:

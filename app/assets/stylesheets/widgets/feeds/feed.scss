@@ -1,0 +1,25 @@
+.widget-feed {
+
+  .feed-description {
+
+    p {
+      font-size: $small-font-size;
+      margin-bottom: 0;
+    }
+  }
+
+  .feed-content {
+
+    .debate,
+    .proposal,
+    .budget {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding: $line-height / 2 0;
+    }
+  }
+
+  .no-items {
+    margin-top: $line-height;
+  }
+}

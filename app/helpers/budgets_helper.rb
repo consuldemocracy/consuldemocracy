@@ -1,8 +1,4 @@
 module BudgetsHelper
-  def show_links_to_budget_investments(budget)
-    ["balloting", "reviewing_ballots", "finished"].include? budget.phase
-  end
-
   def budget_voting_styles_select_options
     Budget::VOTING_STYLES.map do |style|
       [Budget.human_attribute_name("voting_style_#{style}"), style]
@@ -66,7 +62,7 @@ module BudgetsHelper
   end
 
   def budget_published?(budget)
-    !budget.drafting? || current_user&.administrator?
+    budget.published? || current_user&.administrator?
   end
 
   def budget_map_locations(budget)
@@ -97,18 +93,6 @@ module BudgetsHelper
     current_user &&
     !current_user.voted_in_group?(investment.group) &&
     investment.group.headings.count > 1
-  end
-
-  def link_to_create_budget_poll(budget)
-    balloting_phase = budget.phases.find_by(kind: "balloting")
-
-    link_to t("admin.budgets.index.admin_ballots"),
-            admin_polls_path(poll: {
-                              name:      budget.name,
-                              budget_id: budget.id,
-                              starts_at: balloting_phase.starts_at,
-                              ends_at:   balloting_phase.ends_at }),
-            method: :post
   end
 
   def budget_subnav_items_for(budget)
