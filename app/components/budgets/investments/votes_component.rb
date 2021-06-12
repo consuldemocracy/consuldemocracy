@@ -1,0 +1,23 @@
+class Budgets::Investments::VotesComponent < ApplicationComponent
+  attr_reader :investment, :investment_votes, :vote_url
+  delegate :current_user, :voted_for?, :image_absolute_url,
+    :link_to_verify_account, :link_to_signin, :link_to_signup, to: :helpers
+
+  def initialize(investment, investment_votes:, vote_url:)
+    @investment = investment
+    @investment_votes = investment_votes
+    @vote_url = vote_url
+  end
+
+  private
+
+    def display_support_alert?
+      current_user &&
+        !current_user.voted_in_group?(investment.group) &&
+        investment.group.headings.count > 1
+    end
+
+    def css_for_aria_hidden(reason)
+      reason.present? ? "true" : ""
+    end
+end
