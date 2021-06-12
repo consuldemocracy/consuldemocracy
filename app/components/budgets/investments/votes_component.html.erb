@@ -18,7 +18,7 @@
           class: "button button-support small expanded",
           title: t("budgets.investments.investment.support_title"),
           method: "post",
-          remote: (display_support_alert? ? false : true),
+          remote: !display_support_alert?,
           data:   (display_support_alert? ? {
                   confirm: t("budgets.investments.investment.confirm_group", count: investment.group.max_votable_headings) } : nil),
           "aria-hidden" => css_for_aria_hidden(reason) do %>
