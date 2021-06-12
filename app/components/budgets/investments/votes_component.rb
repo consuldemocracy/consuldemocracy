@@ -29,6 +29,10 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
         investment.group.headings.count > 1
     end
 
+    def confirm_vote_message
+      t("budgets.investments.investment.confirm_group", count: investment.group.max_votable_headings)
+    end
+
     def css_for_aria_hidden
       reason.present? ? "true" : ""
     end

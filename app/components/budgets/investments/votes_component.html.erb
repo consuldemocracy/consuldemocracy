@@ -15,8 +15,7 @@
           title: t("budgets.investments.investment.support_title"),
           method: "post",
           remote: !display_support_alert?,
-          data:   (display_support_alert? ? {
-                  confirm: t("budgets.investments.investment.confirm_group", count: investment.group.max_votable_headings) } : nil),
+          data: ({ confirm: confirm_vote_message } if display_support_alert?),
           "aria-hidden" => css_for_aria_hidden do %>
         <%= t("budgets.investments.investment.give_support") %>
       <% end %>
