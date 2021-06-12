@@ -1122,12 +1122,14 @@ describe "Budget Investments" do
         salamanca   = create(:budget_heading, group: group)
 
         create(:budget_investment, title: "In Carabanchel", heading: carabanchel, voters: [author])
+        create(:budget_investment, title: "Unsupported in Carabanchel", heading: carabanchel)
         create(:budget_investment, title: "In Salamanca", heading: salamanca)
 
         login_as(author)
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
-        within(".budget-investment", text: "In Carabanchel") do
+        within(".budget-investment", text: "Unsupported in Carabanchel") do
+          expect(page).to have_link "Support"
           expect(page).not_to have_css(".in-favor a[data-confirm]")
         end
       end
