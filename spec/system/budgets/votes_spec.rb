@@ -42,7 +42,7 @@ describe "Votes" do
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within(".supports") do
-          find(".in-favor a").click
+          click_link "Support this project"
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. "\
