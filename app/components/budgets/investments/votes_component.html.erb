@@ -1,15 +1,11 @@
-<% reason = investment.reason_for_not_being_selectable_by(current_user) %>
-<% voting_allowed = true unless reason.presence == :not_voting_allowed %>
-<% user_voted_for = voted_for?(investment_votes, investment) %>
-
 <div class="supports js-participation">
 
-  <span class="total-supports <%= "no-button" unless voting_allowed || user_voted_for %>">
+  <span class="total-supports <%= "no-button" unless voting_allowed? || user_voted_for? %>">
     <%= t("budgets.investments.investment.supports", count: investment.total_votes) %>
   </span>
 
   <div class="in-favor">
-    <% if user_voted_for %>
+    <% if user_voted_for? %>
       <div class="supported callout success">
         <%= t("budgets.investments.investment.already_supported") %>
       </div>
@@ -21,13 +17,13 @@
           remote: !display_support_alert?,
           data:   (display_support_alert? ? {
                   confirm: t("budgets.investments.investment.confirm_group", count: investment.group.max_votable_headings) } : nil),
-          "aria-hidden" => css_for_aria_hidden(reason) do %>
+          "aria-hidden" => css_for_aria_hidden do %>
         <%= t("budgets.investments.investment.give_support") %>
       <% end %>
     <% end %>
   </div>
 
-  <% if reason.present? && !user_voted_for %>
+  <% if reason.present? && !user_voted_for? %>
     <div class="js-participation-not-allowed participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <small>
@@ -43,7 +39,7 @@
     </div>
   <% end %>
 
-  <% if user_voted_for && setting["twitter_handle"] %>
+  <% if user_voted_for? && setting["twitter_handle"] %>
     <div class="share-supported">
       <%= render "shared/social_share",
         title: investment.title,

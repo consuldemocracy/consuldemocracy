@@ -11,13 +11,25 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
 
   private
 
+    def reason
+      @reason ||= investment.reason_for_not_being_selectable_by(current_user)
+    end
+
+    def voting_allowed?
+      reason != :not_voting_allowed
+    end
+
+    def user_voted_for?
+      @user_voted_for ||= voted_for?(investment_votes, investment)
+    end
+
     def display_support_alert?
       current_user &&
         !current_user.voted_in_group?(investment.group) &&
         investment.group.headings.count > 1
     end
 
-    def css_for_aria_hidden(reason)
+    def css_for_aria_hidden
       reason.present? ? "true" : ""
     end
 end
