@@ -277,7 +277,7 @@ describe "Budget Investments" do
       expect(page).to have_content(budget_investment.title)
 
       within("#budget-investments") do
-        find("in-favor a").click
+        click_button "Support"
 
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this investment project. Share it!"
@@ -302,7 +302,7 @@ describe "Budget Investments" do
 
       expect(page).to have_css "h1", exact_text: budget_investment.title
 
-      find(".in-favor a").click
+      click_button "Support"
 
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this investment project. Share it!"
@@ -325,7 +325,7 @@ describe "Budget Investments" do
 
       expect(page).to have_css "h1", exact_text: "Default heading investment"
 
-      accept_confirm { find(".in-favor a").click }
+      accept_confirm { click_button "Support" }
 
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this investment project. Share it!"
