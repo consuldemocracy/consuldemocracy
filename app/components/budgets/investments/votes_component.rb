@@ -1,12 +1,20 @@
 class Budgets::Investments::VotesComponent < ApplicationComponent
-  attr_reader :investment, :investment_votes, :vote_url
-  delegate :current_user, :voted_for?, :image_absolute_url,
+  attr_reader :investment, :investment_votes
+  delegate :namespace, :current_user, :voted_for?, :image_absolute_url,
     :link_to_verify_account, :link_to_signin, :link_to_signup, to: :helpers
 
-  def initialize(investment, investment_votes:, vote_url:)
+  def initialize(investment, investment_votes:)
     @investment = investment
     @investment_votes = investment_votes
-    @vote_url = vote_url
+  end
+
+  def vote_path
+    case namespace
+    when "management"
+      vote_management_budget_investment_path(investment.budget, investment, value: "yes")
+    else
+      vote_budget_investment_path(investment.budget, investment, value: "yes")
+    end
   end
 
   private
