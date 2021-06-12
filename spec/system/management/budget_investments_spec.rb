@@ -284,9 +284,9 @@ describe "Budget Investments" do
       end
     end
 
-    # This test passes ok locally but fails on the last two lines in Travis
-    xscenario "Supporting budget investments on behalf of someone in show view" do
+    scenario "Supporting budget investments on behalf of someone in show view" do
       budget_investment = create(:budget_investment, budget: budget)
+      manager.user.update!(level_two_verified_at: Time.current)
 
       login_managed_user(user)
       login_as_manager(manager)
@@ -300,9 +300,36 @@ describe "Budget Investments" do
         click_link budget_investment.title
       end
 
+      expect(page).to have_css "h1", exact_text: budget_investment.title
+
       find(".js-in-favor a").click
+
       expect(page).to have_content "1 support"
-      expect(page).to have_content "You have already supported this. Share it!"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
+
+      refresh
+
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
+    end
+
+    scenario "Support investments on behalf of someone else when there are more headings" do
+      create(:budget_investment, heading: heading, title: "Default heading investment")
+      create(:budget_investment, heading: create(:budget_heading, group: group))
+
+      login_managed_user(user)
+      login_as_manager(manager)
+
+      visit management_budget_investments_path(budget)
+      click_link "Default heading investment"
+
+      expect(page).to have_css "h1", exact_text: "Default heading investment"
+
+      accept_confirm { find(".js-in-favor a").click }
+
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
+      expect(page).to have_content "CONSUL\nMANAGEMENT"
     end
 
     scenario "Should not allow unverified users to vote proposals" do
