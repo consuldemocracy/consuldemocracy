@@ -342,6 +342,7 @@ sv:
         title: "Titel"
         description: "Beskrivning"
       sdg/phase/kind:
+        sensitization: "Sensibilisering"
         planning: "Planering"
         monitoring: "Övervakning"
       sdg/target:
