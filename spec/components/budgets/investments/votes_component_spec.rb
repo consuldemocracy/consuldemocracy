@@ -16,7 +16,7 @@ describe Budgets::Investments::VotesComponent, type: :component do
         render_inline component
 
         expect(page).to have_link count: 1
-        expect(page).to have_link "Support"
+        expect(page).to have_link "Support", title: "Support this project"
         expect(page).to have_link "Support Renovate sidewalks in Main Street"
       end
 
