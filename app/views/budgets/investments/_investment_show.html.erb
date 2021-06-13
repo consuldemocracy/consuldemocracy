@@ -13,7 +13,7 @@
           investment.author,
           Flag.flagged?(current_user, investment),
           investment.followed_by?(current_user),
-          @investment_votes] do %>
+          current_user&.voted_for?(investment)] do %>
   <section class="budget-investment-show" id="<%= dom_id(investment) %>">
 
     <div class="row">
@@ -32,9 +32,7 @@
             <h2><%= t("budgets.investments.show.supports") %></h2>
             <div class="text-center">
               <div id="<%= dom_id(investment) %>_votes">
-                <%= render "/budgets/investments/votes",
-                  investment: investment,
-                  investment_votes: investment_votes %>
+                <%= render Budgets::Investments::VotesComponent.new(investment) %>
               </div>
             </div>
           <% elsif investment.should_show_vote_count? %>

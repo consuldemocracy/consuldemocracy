@@ -3,7 +3,7 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
   delegate :namespace, :current_user, :voted_for?, :image_absolute_url,
     :link_to_verify_account, :link_to_signin, :link_to_signup, to: :helpers
 
-  def initialize(investment, investment_votes:)
+  def initialize(investment, investment_votes: nil)
     @investment = investment
     @investment_votes = investment_votes
   end
@@ -28,7 +28,11 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
     end
 
     def user_voted_for?
-      @user_voted_for ||= voted_for?(investment_votes, investment)
+      @user_voted_for ||= if investment_votes
+                            voted_for?(investment_votes, investment)
+                          else
+                            current_user&.voted_for?(investment)
+                          end
     end
 
     def display_support_alert?

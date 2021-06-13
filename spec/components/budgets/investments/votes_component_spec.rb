@@ -4,7 +4,7 @@ describe Budgets::Investments::VotesComponent, type: :component do
   describe "vote link" do
     context "when investment shows votes" do
       let(:investment) { create(:budget_investment, title: "Renovate sidewalks in Main Street") }
-      let(:component) { Budgets::Investments::VotesComponent.new(investment, investment_votes: []) }
+      let(:component) { Budgets::Investments::VotesComponent.new(investment) }
 
       before { allow(investment).to receive(:should_show_votes?).and_return(true) }
 

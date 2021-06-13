@@ -38,9 +38,8 @@
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center"
                <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
-               <%= render "/budgets/investments/votes",
-                 investment: investment,
-                 investment_votes: investment_votes %>
+               <%= render Budgets::Investments::VotesComponent.new(investment,
+                 investment_votes: investment_votes) %>
           </div>
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"
