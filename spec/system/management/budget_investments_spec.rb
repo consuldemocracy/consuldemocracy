@@ -329,6 +329,7 @@ describe "Budget Investments" do
 
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this investment project. Share it!"
+      expect(page).to have_content "Investment supported successfully"
       expect(page).to have_content "CONSUL\nMANAGEMENT"
     end
 

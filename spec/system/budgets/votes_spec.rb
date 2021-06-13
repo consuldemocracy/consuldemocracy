@@ -127,6 +127,8 @@ describe "Votes" do
                                        "Share it!"
         end
 
+        expect(page).to have_content "Investment supported successfully"
+
         visit budget_investments_path(budget, heading_id: san_francisco.id)
 
         within("#budget_investment_#{san_francisco_investment.id}") do

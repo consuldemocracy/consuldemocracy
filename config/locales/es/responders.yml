@@ -14,6 +14,7 @@ es:
         proposal_notification: "Tu mensaje ha sido enviado correctamente."
         budget_investment: "Proyecto de gasto creado correctamente."
         signature_sheet: "Hoja de firmas creada correctamente"
+        support: "Proyecto de gasto apoyado correctamente"
         topic: "Tema creado correctamente."
         valuator_group: "Grupo de evaluadores creado correctamente"
       save_changes:

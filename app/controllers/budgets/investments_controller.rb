@@ -92,8 +92,13 @@ module Budgets
 
     def vote
       @investment.register_selection(current_user)
+
       respond_to do |format|
-        format.html { redirect_to budget_investments_path(heading_id: @investment.heading.id) }
+        format.html do
+          redirect_to budget_investments_path(heading_id: @investment.heading.id),
+            notice: t("flash.actions.create.support")
+        end
+
         format.js
       end
     end
