@@ -15,7 +15,6 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
   def index
     @investments = @investments.apply_filters_and_search(@budget, params).page(params[:page])
-    load_investment_votes(@investments)
   end
 
   def new
@@ -49,14 +48,9 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
   def print
     @investments = @investments.apply_filters_and_search(@budget, params).order(cached_votes_up: :desc).for_render.limit(15)
-    load_investment_votes(@investments)
   end
 
   private
-
-    def load_investment_votes(investments)
-      @investment_votes = managed_user ? managed_user.budget_investment_votes(investments) : {}
-    end
 
     def investment_params
       attributes = [:external_url, :heading_id, :tag_list, :organization_name, :location,

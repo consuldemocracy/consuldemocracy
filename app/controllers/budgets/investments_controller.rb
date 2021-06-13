@@ -47,7 +47,6 @@ module Budgets
       @investment_ids = @investments.pluck(:id)
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
 
-      load_investment_votes(@investments)
       @tag_cloud = tag_cloud
       @remote_translations = detect_remote_translations(@investments)
     end
@@ -126,10 +125,6 @@ module Budgets
 
       def resource_name
         "budget_investment"
-      end
-
-      def load_investment_votes(investments)
-        @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
 
       def investment_params

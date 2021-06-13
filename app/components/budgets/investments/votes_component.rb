@@ -1,11 +1,10 @@
 class Budgets::Investments::VotesComponent < ApplicationComponent
-  attr_reader :investment, :investment_votes
+  attr_reader :investment
   delegate :namespace, :current_user, :voted_for?, :image_absolute_url,
     :link_to_verify_account, :link_to_signin, :link_to_signup, to: :helpers
 
-  def initialize(investment, investment_votes: nil)
+  def initialize(investment)
     @investment = investment
-    @investment_votes = investment_votes
   end
 
   def vote_path
@@ -28,11 +27,8 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
     end
 
     def user_voted_for?
-      @user_voted_for ||= if investment_votes
-                            voted_for?(investment_votes, investment)
-                          else
-                            current_user&.voted_for?(investment)
-                          end
+      @user_voted_for = current_user&.voted_for?(investment) unless defined?(@user_voted_for)
+      @user_voted_for
     end
 
     def display_support_alert?
