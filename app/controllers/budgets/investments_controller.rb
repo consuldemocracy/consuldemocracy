@@ -90,19 +90,6 @@ module Budgets
       redirect_to user_path(current_user, filter: "budget_investments"), notice: t("flash.actions.destroy.budget_investment")
     end
 
-    def vote
-      @investment.register_selection(current_user)
-
-      respond_to do |format|
-        format.html do
-          redirect_to budget_investments_path(heading_id: @investment.heading.id),
-            notice: t("flash.actions.create.support")
-        end
-
-        format.js
-      end
-    end
-
     def suggest
       @resource_path_method = :namespaced_budget_investment_path
       @resource_relation    = resource_model.where(budget: @budget).apply_filters_and_search(@budget, params, @current_filter)

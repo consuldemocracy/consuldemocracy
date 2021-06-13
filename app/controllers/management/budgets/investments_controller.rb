@@ -38,19 +38,6 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   def show
   end
 
-  def vote
-    @investment.register_selection(managed_user)
-
-    respond_to do |format|
-      format.html do
-        redirect_to management_budget_investments_path(heading_id: @investment.heading.id),
-          notice: t("flash.actions.create.support")
-      end
-
-      format.js
-    end
-  end
-
   def print
     @investments = @investments.apply_filters_and_search(@budget, params).order(cached_votes_up: :desc).for_render.limit(15)
   end

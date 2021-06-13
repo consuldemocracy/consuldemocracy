@@ -10,9 +10,9 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
   def vote_path
     case namespace
     when "management"
-      vote_management_budget_investment_path(investment.budget, investment, value: "yes")
+      management_budget_investment_votes_path(investment.budget, investment)
     else
-      vote_budget_investment_path(investment.budget, investment, value: "yes")
+      budget_investment_votes_path(investment.budget, investment)
     end
   end
 
