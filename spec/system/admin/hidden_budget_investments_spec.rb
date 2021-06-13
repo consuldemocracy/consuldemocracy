@@ -31,7 +31,9 @@ describe "Admin hidden budget investments", :admin do
     investment = create(:budget_investment, :hidden, heading: heading)
     visit admin_hidden_budget_investments_path
 
-    click_link("Pending")
+    click_link "Pending"
+
+    expect(page).not_to have_link "Pending"
     expect(page).to have_content(investment.title)
 
     click_link "Confirm moderation"
