@@ -156,23 +156,24 @@ en:
       investment:
         add: Vote
         already_added: You have already added this investment project
-        already_supported: You have already supported this investment project. Share it!
         support_title: Support this project
-        support_label: "Support %{investment}"
-        confirm_group:
-          one: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
-          other: "You can only support investments in %{count} districts. If you continue you cannot change the election of your district. Are you sure?"
         supports:
           one: 1 support
           other: "%{count} supports"
           zero: No supports
-        give_support: Support
       header:
         check_ballot: "Submit my ballot"
         different_heading_assigned: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
         check_ballot_link: "submit my ballot"
         price: "Total budget"
+      votes:
+        already_supported: "You have already supported this investment project. Share it!"
+        confirm_group:
+          one: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
+          other: "You can only support investments in %{count} districts. If you continue you cannot change the election of your district. Are you sure?"
+        support: "Support"
+        support_label: "Support %{investment}"
     investments_list:
       investment:
         price: "Price"

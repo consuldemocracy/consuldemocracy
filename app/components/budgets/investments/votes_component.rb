@@ -38,10 +38,10 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
     end
 
     def confirm_vote_message
-      t("budgets.investments.investment.confirm_group", count: investment.group.max_votable_headings)
+      t("budgets.investments.votes.confirm_group", count: investment.group.max_votable_headings)
     end
 
     def support_aria_label
-      t("budgets.investments.investment.support_label", investment: investment.title)
+      t("budgets.investments.votes.support_label", investment: investment.title)
     end
 end

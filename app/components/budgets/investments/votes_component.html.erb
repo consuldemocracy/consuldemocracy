@@ -7,10 +7,10 @@
   <div class="in-favor">
     <% if user_voted_for? %>
       <div class="supported callout success">
-        <%= t("budgets.investments.investment.already_supported") %>
+        <%= t("budgets.investments.votes.already_supported") %>
       </div>
     <% elsif investment.should_show_votes? %>
-      <%= button_to t("budgets.investments.investment.give_support"), vote_path,
+      <%= button_to t("budgets.investments.votes.support"), vote_path,
           class: "button button-support small expanded",
           title: t("budgets.investments.investment.support_title"),
           method: "post",
