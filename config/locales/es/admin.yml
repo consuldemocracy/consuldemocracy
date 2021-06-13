@@ -197,7 +197,7 @@ es:
         edit: "Editar partida"
         submit: "Guardar partida"
       group_switcher:
-        currently_showing: "Mostrando las partidas del grupo: %{group}"
+        currently_showing: "Mostrando las partidas del grupo: %{group}."
         different_group: "Ir a partidas de otro grupo"
         the_other_group: "Ir a partidas del grupo %{group}."
       index:
