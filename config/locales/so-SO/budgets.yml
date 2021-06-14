@@ -95,21 +95,22 @@ so:
       investment:
         add: Codeyn
         already_added: Waxaad horeyba ugu dartay mashruucan maalgashiga
-        already_supported: Waxaad hore u taageertay mashruucan maalgashiga. La wadaag!
         support_title: Tageer Mashruucaan
-        confirm_group:
-          one: "Waxaad kaliya ku taageeri kartaa maalgelinada%{count} degmada. Haddii aad sii wado, ma beddeli kartid doorashada degmadaada. Ma hubtaa?"
-          other: "Waxaad kaliya ku taageeri kartaa maalgelinada%{count} degmada. Haddii aad sii wado, ma beddeli kartid doorashada degmadaada. Ma hubtaa?"
         supports:
           zero: Tageero la an
           one: 1 tagere
           other: "%{count} tagerayal"
-        give_support: Tageero
       header:
         check_ballot: "Huubi codkayga"
         change_ballot: "Haddii aad bedesho maskaxda waxaad ka saari kartaa codadkaaga%{check_ballot} oo mar kale bilow."
         check_ballot_link: "huubi codkayga"
         price: "Taani waxay ledaahay misaniyaad"
+      votes:
+        already_supported: "Waxaad hore u taageertay mashruucan maalgashiga. La wadaag!"
+        confirm_group:
+          one: "Waxaad kaliya ku taageeri kartaa maalgelinada%{count} degmada. Haddii aad sii wado, ma beddeli kartid doorashada degmadaada. Ma hubtaa?"
+          other: "Waxaad kaliya ku taageeri kartaa maalgelinada%{count} degmada. Haddii aad sii wado, ma beddeli kartid doorashada degmadaada. Ma hubtaa?"
+        support: "Tageero"
     show:
       see_results: Arag Natijada
     results:
