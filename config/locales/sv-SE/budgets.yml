@@ -172,6 +172,13 @@ sv:
         change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
         check_ballot_link: "skicka in min röst"
         price: "Det här området har en budget på"
+    investments_list:
+      investment:
+        price: "Pris"
+        read_more: "Läs mer"
+        supports: "Stöd"
+      see_all: "Visa alla investeringar"
+      title: "Lista över investeringar"
     show:
       see_results: Visa resultat
     results:
