@@ -130,7 +130,6 @@ sv:
           random: slumpvis ordning
           confidence_score: populära
           price: efter pris
-        read_more: "Läs mer"
       share:
         message: "Jag skapade den investering projekt %{title} i %{handle}. Skapa ett investeringsprojekt också!"
       show:
@@ -158,11 +157,10 @@ sv:
         add: Rösta
         already_added: Du har redan skapat det här budgetförslaget
         already_supported: Du stöder redan det här budgetförslaget. Dela det!
-        support_title: "Stöd projektet"
+        support_title: Stöd projektet
         confirm_group:
           one: "Du kan bara stödja budgetförslag i %{count} distrikt. Om du fortsätter kommer du inte att kunna ändra valet av distrikt. Vill du fortsätta?"
           other: "Du kan bara stödja projekt i %{count} stadsdelar. Om du fortsätter kommer du inte kunna ändra valet av stadsdel. Vill du fortsätta?"
-        price_title: "Pris"
         supports:
           zero: Inget stöd
           one: 1 stöd
@@ -176,8 +174,6 @@ sv:
         price: "Det här området har en budget på"
     show:
       see_results: Visa resultat
-      see_all_investments: "Visa alla investeringar"
-      investments_list: "Lista över investeringar"
     results:
       link: Resultat
       page_title: "%{budget} - Resultat"
