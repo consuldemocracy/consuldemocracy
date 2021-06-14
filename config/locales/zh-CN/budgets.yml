@@ -95,19 +95,20 @@ zh-CN:
       investment:
         add: 投票
         already_added: 您已经添加此投票项目
-        already_supported: 您已经支持此投票项目。请进行分享！
         support_title: 支持此项目
-        confirm_group:
-          other: "您只能支持%{count} 个区域的投资。如果您要继续，您就不能更改您地区的选举。是否确定？"
         supports:
           zero: 没有支持
           other: "%{count} 个支持"
-        give_support: 支持
       header:
         check_ballot: "查看我的选票"
         change_ballot: "如果您改变主意，您可以在%{check_ballot} 中删除投票并重新开始。"
         check_ballot_link: "查看我的选票"
         price: "此标题有一个预算"
+      votes:
+        already_supported: "您已经支持此投票项目。请进行分享！"
+        confirm_group:
+          other: "您只能支持%{count} 个区域的投资。如果您要继续，您就不能更改您地区的选举。是否确定？"
+        support: "支持"
     show:
       see_results: 查看结果
     results:
