@@ -14,6 +14,7 @@ sv:
         proposal_notification: "Ditt meddelande har skickats."
         budget_investment: "Budgetförslaget har skapats."
         signature_sheet: "Namninsamlingen har skapats"
+        support: "Du har gett investeringen ditt stöd"
         topic: "Ämnet har skapats."
         valuator_group: "Bedömningsgruppen har skapats"
       save_changes:
