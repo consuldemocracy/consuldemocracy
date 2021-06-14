@@ -74,7 +74,7 @@ ast:
       investment:
         add: Votu
         already_added: Yá añedisti esta propuesta d'inversión
-        support_title: "Sofitar esta propuesta"
+        support_title: Sofitar esta propuesta
         supports:
           one: 1 sofitu
           other: "%{count} sofitos"
