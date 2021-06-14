@@ -84,18 +84,19 @@ es-PE:
       investment:
         add: Votar
         already_added: Ya has añadido esta propuesta de inversión
-        already_supported: Ya has apoyado este proyecto de inversión. ¡Compártelo!
         support_title: Apoyar este proyecto
         supports:
           zero: Sin apoyos
           one: 1 apoyo
           other: "%{count} apoyos"
-        give_support: Apoyar
       header:
         check_ballot: "Revisar mis votos"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar mis votos"
         price: "Esta partida tiene un presupuesto de"
+      votes:
+        already_supported: "Ya has apoyado este proyecto de inversión. ¡Compártelo!"
+        support: "Apoyar"
     show:
       see_results: Ver resultados
     results:
