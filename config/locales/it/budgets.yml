@@ -114,21 +114,22 @@ it:
       investment:
         add: Votare
         already_added: Hai già aggiunto questo progetto di investimento
-        already_supported: Hai già espresso il tuo sostegno per questo progetto di investimento. Condividilo!
         support_title: Sostieni questo progetto
-        confirm_group:
-          one: "Puoi dare il tuo sostegno agli investimenti solo in %{count} distretto. Se continui non potrai cambiare la scelta in merito al tuo distretto. Sei sicuro?"
-          other: "Puoi dare il tuo sostegno agli investimenti solo in %{count} distretti. Se continui non potrai cambiare la scelta in merito al tuo distretto. Sei sicuro?"
         supports:
           zero: Nessun sostegno
           one: 1 sostegno
           other: "%{count} sostegni"
-        give_support: Sostieni
       header:
         check_ballot: "Controlla il mio voto"
         change_ballot: "Se cambi idea è possibile cancellare il tuo voto in %{check_ballot} e ricominciare da capo."
         check_ballot_link: "controlla il mio voto"
         price: "Questa sezione dispone di un budget di"
+      votes:
+        already_supported: "Hai già espresso il tuo sostegno per questo progetto di investimento. Condividilo!"
+        confirm_group:
+          one: "Puoi dare il tuo sostegno agli investimenti solo in %{count} distretto. Se continui non potrai cambiare la scelta in merito al tuo distretto. Sei sicuro?"
+          other: "Puoi dare il tuo sostegno agli investimenti solo in %{count} distretti. Se continui non potrai cambiare la scelta in merito al tuo distretto. Sei sicuro?"
+        support: "Sostieni"
     show:
       see_results: Vedi risultati
     results:
