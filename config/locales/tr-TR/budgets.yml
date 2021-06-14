@@ -172,7 +172,10 @@ tr:
         confirm_group:
           one: "Yalnızca %{count} bölgesindeki yatırımları destekleyebilirsiniz. Devam ederseniz, bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
           other: "Yalnızca %{count} bölgesindeki yatırımları destekleyebilirsiniz. Devam ederseniz, bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
+        remove_support: "Desteğini kaldır"
+        remove_support_label: "Desteğini kaldır %{investment}"
         support: "Destek"
+        support_label: "Destekle %{investment}"
     investments_list:
       investment:
         price: "Ücret"
