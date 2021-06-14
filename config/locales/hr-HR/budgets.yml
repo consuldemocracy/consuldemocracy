@@ -126,24 +126,25 @@ hr:
       investment:
         add: Glas
         already_added: Vi ste već dodali ovo investicijskom projektu
-        already_supported: Vi ste već poduprli ovaj investicijksi projekt. Podijelite ga!
         support_title: Poduprite ovaj projekt
-        confirm_group:
-          one: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
-          few: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
-          other: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
         supports:
           zero: Nema potpore
           one: 1 potpora
           few: "%{count} potpore"
           other: "%{count} potpora"
-        give_support: Potpora
       header:
         check_ballot: "Provjeri i potvrdi moj glas"
         different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
         change_ballot: "Ako izmijenite mišljenje možete ukloniti svoj glas u %{check_ballot} i započeti ponovno."
         check_ballot_link: "provjeri i potvrdi moj glas"
         price: "Ova tema ima budžet od"
+      votes:
+        already_supported: "Vi ste već poduprli ovaj investicijksi projekt. Podijelite ga!"
+        confirm_group:
+          one: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
+          few: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
+          other: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
+        support: "Potpora"
     show:
       see_results: Pogledaj rezultate
     results:
