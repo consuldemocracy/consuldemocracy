@@ -119,17 +119,18 @@ cs:
       investment:
         add: Hlasujte
         already_added: Tento investiční projekt jste již přidali
-        already_supported: Tento návrh jste již podpořili. Sdílejte jej!
         support_title: Podpořit tento projekt
         supports:
           zero: Žádná podpora
-        give_support: Podpořte!
       header:
         check_ballot: "Kontrola mého hlasování"
         different_heading_assigned: "Už jste hlasovali v jiné kapitole: %{heading_link}"
         change_ballot: "Pokud změníte názor, můžete odebrat své hlasy v %{check_ballot} a začít znovu."
         check_ballot_link: "kontrola mého hlasování"
         price: "Tato položka má rozpočet"
+      votes:
+        already_supported: "Tento návrh jste již podpořili. Sdílejte jej!"
+        support: "Podpořte!"
     show:
       see_results: Zobrazit výsledky
     results:
