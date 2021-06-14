@@ -157,7 +157,7 @@ tr:
         add: Oy
         already_added: Bu yatırım projesini daha önce eklediniz
         already_supported: Bu yatırım projesini daha önce desteklediniz. Paylaşın!
-        support_title: "Bu projeyi destekleyin"
+        support_title: Bu projeyi destekleyin
         confirm_group:
           one: "Yalnızca %{count} bölgesindeki yatırımları destekleyebilirsiniz. Devam ederseniz, bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
           other: "Yalnızca %{count} bölgesindeki yatırımları destekleyebilirsiniz. Devam ederseniz, bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
