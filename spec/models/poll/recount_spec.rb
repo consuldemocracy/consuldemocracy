@@ -58,19 +58,23 @@ describe Poll::Recount do
       expect(poll_recount.officer_assignment_id_log).to eq("")
 
       poll_recount.white_amount = 33
-      poll_recount.officer_assignment = create(:poll_officer_assignment, id: 101)
+      second_assignment = create(:poll_officer_assignment)
+      poll_recount.officer_assignment = second_assignment
       poll_recount.save!
 
       poll_recount.white_amount = 32
-      poll_recount.officer_assignment = create(:poll_officer_assignment, id: 102)
+      third_assignment = create(:poll_officer_assignment)
+      poll_recount.officer_assignment = third_assignment
       poll_recount.save!
 
       poll_recount.white_amount = 34
-      poll_recount.officer_assignment = create(:poll_officer_assignment, id: 103)
+      poll_recount.officer_assignment = create(:poll_officer_assignment)
       poll_recount.save!
 
       expect(poll_recount.white_amount_log).to eq(":0:33:32")
-      expect(poll_recount.officer_assignment_id_log).to eq(":#{officer_assignment.id}:101:102")
+      expect(poll_recount.officer_assignment_id_log).to eq(
+        ":#{officer_assignment.id}:#{second_assignment.id}:#{third_assignment.id}"
+      )
     end
 
     it "updates author_id if amount changes" do
