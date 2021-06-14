@@ -143,22 +143,23 @@ ca:
       investment:
         add: Votació
         already_added: Ja has afegit aquesta proposta d'inversió
-        already_supported: Ja heu donat suport a aquest projecte d'inversió. Comparteix-ho!
         support_title: Avalar aquesta proposta d'inversió
-        confirm_group:
-          one: "Només podeu suportar inversions a %{count} districte. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
-          other: "Només podeu suportar inversions a %{count} districtes. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
         supports:
           zero: Sense suports
           one: 1 aval
           other: "%{count} avals"
-        give_support: Avalar
       header:
         check_ballot: "Revisar els meus vots"
         different_heading_assigned: "Teniu vots actius en un altre títol: %{heading_link}"
         change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
         check_ballot_link: "revisar els meus vots"
         price: "Aquesta partida té un pressupost de"
+      votes:
+        already_supported: "Ja heu donat suport a aquest projecte d'inversió. Comparteix-ho!"
+        confirm_group:
+          one: "Només podeu suportar inversions a %{count} districte. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
+          other: "Només podeu suportar inversions a %{count} districtes. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
+        support: "Avalar"
     show:
       see_results: veure resultats
     results:
