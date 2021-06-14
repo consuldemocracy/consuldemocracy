@@ -99,7 +99,7 @@ nl:
         add: Voeg toe
         already_added: U heeft dit voorstel al toegevoegd
         already_supported: Je hebt dit begrotingsvoorstel al gesteund. Deel het!
-        support_title: "Steun dit voorstel"
+        support_title: Steun dit voorstel
         confirm_group:
           one: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
           other: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
