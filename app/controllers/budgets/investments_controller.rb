@@ -47,7 +47,6 @@ module Budgets
       @investment_ids = @investments.pluck(:id)
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
 
-      load_investment_votes(@investments)
       @tag_cloud = tag_cloud
       @remote_translations = detect_remote_translations(@investments)
     end
@@ -60,7 +59,6 @@ module Budgets
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
       @related_contents = Kaminari.paginate_array(@investment.relationed_contents).page(params[:page]).per(5)
       set_comment_flags(@comment_tree.comments)
-      load_investment_votes(@investment)
       @investment_ids = [@investment.id]
       @remote_translations = detect_remote_translations([@investment], @comment_tree.comments)
     end
@@ -92,15 +90,6 @@ module Budgets
       redirect_to user_path(current_user, filter: "budget_investments"), notice: t("flash.actions.destroy.budget_investment")
     end
 
-    def vote
-      @investment.register_selection(current_user)
-      load_investment_votes(@investment)
-      respond_to do |format|
-        format.html { redirect_to budget_investments_path(heading_id: @investment.heading.id) }
-        format.js
-      end
-    end
-
     def suggest
       @resource_path_method = :namespaced_budget_investment_path
       @resource_relation    = resource_model.where(budget: @budget).apply_filters_and_search(@budget, params, @current_filter)
@@ -128,10 +117,6 @@ module Budgets
 
       def resource_name
         "budget_investment"
-      end
-
-      def load_investment_votes(investments)
-        @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
 
       def investment_params

@@ -156,23 +156,26 @@ es:
       investment:
         add: Votar
         already_added: Ya has añadido este proyecto de gasto
-        already_supported: Ya has apoyado este proyecto de gasto. ¡Compártelo!
         support_title: Apoyar este proyecto
-        support_label: "Apoyar %{investment}"
-        confirm_group:
-          one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
-          other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
         supports:
           zero: Sin apoyos
           one: 1 apoyo
           other: "%{count} apoyos"
-        give_support: Apoyar
       header:
         check_ballot: Revisar y confirmar mis votos
         different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar y confirmar mis votos"
         price: "Presupuesto total"
+      votes:
+        already_supported: "Ya has apoyado este proyecto de gasto. ¡Compártelo!"
+        confirm_group:
+          one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
+          other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
+        remove_support: "Eliminar apoyo"
+        remove_support_label: "Eliminar tu apoyo a %{investment}"
+        support: "Apoyar"
+        support_label: "Apoyar %{investment}"
     investments_list:
       investment:
         price: "Coste"
@@ -185,7 +188,6 @@ es:
     supports_info:
       different: "Puedes apoyar tantos proyectos diferentes como quieras."
       next: "Apoya proyectos que te gustaría ver en la siguiente fase."
-      remember: "<strong>¡Recuerda!</strong> Solo puedes emitir tu apoyo <strong>una vez</strong> por cada proyecto y cada apoyo es <strong>irreversible</strong>."
       scrolling: "Sigue desplazándote para ver todas las ideas"
       share: "Puedes compartir los proyectos que has apoyado en las redes sociales y ¡atraer más atención y apoyos para ellos!"
       supported:

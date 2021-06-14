@@ -14,6 +14,7 @@ en:
         proposal_notification: "Your message has been sent correctly."
         budget_investment: "Budget Investment created successfully."
         signature_sheet: "Signature sheet created successfully"
+        support: "Investment supported successfully"
         topic: "Topic created successfully."
         valuator_group: "Valuator group created successfully"
       save_changes:

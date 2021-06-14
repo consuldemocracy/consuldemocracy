@@ -432,6 +432,42 @@ describe "Budgets" do
       expect(page).to have_content "It's time to support projects!"
       expect(page).to have_content "So far you've supported 3 projects."
     end
+
+    scenario "Show supports only if the support has not been removed" do
+      voter = create(:user, :level_two)
+      budget = create(:budget, phase: "selecting")
+      investment = create(:budget_investment, :selected, budget: budget)
+
+      login_as(voter)
+
+      visit budget_path(budget)
+
+      expect(page).to have_content "So far you've supported 0 projects."
+
+      visit budget_investment_path(budget, investment)
+
+      within("#budget_investment_#{investment.id}_votes") do
+        click_button "Support"
+
+        expect(page).to have_content "You have already supported this investment project."
+      end
+
+      visit budget_path(budget)
+
+      expect(page).to have_content "So far you've supported 1 project."
+
+      visit budget_investment_path(budget, investment)
+
+      within("#budget_investment_#{investment.id}_votes") do
+        click_button "Remove your support"
+
+        expect(page).to have_content "No supports"
+      end
+
+      visit budget_path(budget)
+
+      expect(page).to have_content "So far you've supported 0 projects."
+    end
   end
 
   context "In Drafting phase" do
