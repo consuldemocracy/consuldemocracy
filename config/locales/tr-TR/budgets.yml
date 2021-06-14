@@ -78,6 +78,8 @@ tr:
       milestones: Kilometre taşları
     investments:
       form:
+        title: "Bütçe yatırımı oluştur"
+        subtitle: "%{heading} (%{price})"
         tag_category_label: "Kategoriler"
         tags_instructions: "Bu öneriyi etiketle. Önerilen kategoriler arasından seçim yapabilir veya kendini önerinizi ekleyebilirsiniz"
         tags_label: Etiketler
