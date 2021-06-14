@@ -54,12 +54,6 @@ module BudgetsHelper
     end
   end
 
-  def display_support_alert?(investment)
-    current_user &&
-    !current_user.voted_in_group?(investment.group) &&
-    investment.group.headings.count > 1
-  end
-
   def budget_subnav_items_for(budget)
     {
       results:    t("budgets.results.link"),

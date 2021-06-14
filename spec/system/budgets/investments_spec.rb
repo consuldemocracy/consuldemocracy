@@ -1113,7 +1113,9 @@ describe "Budget Investments" do
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
         within(".budget-investment", text: "In Carabanchel") do
-          expect(page).to have_css(".in-favor a[data-confirm]")
+          expect(page).to have_button count: 1
+          expect(page).to have_button "Support"
+          expect(page).to have_css "[type='submit'][data-confirm]"
         end
       end
 
@@ -1122,13 +1124,15 @@ describe "Budget Investments" do
         salamanca   = create(:budget_heading, group: group)
 
         create(:budget_investment, title: "In Carabanchel", heading: carabanchel, voters: [author])
+        create(:budget_investment, title: "Unsupported in Carabanchel", heading: carabanchel)
         create(:budget_investment, title: "In Salamanca", heading: salamanca)
 
         login_as(author)
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
-        within(".budget-investment", text: "In Carabanchel") do
-          expect(page).not_to have_css(".in-favor a[data-confirm]")
+        within(".budget-investment", text: "Unsupported in Carabanchel") do
+          expect(page).to have_button "Support"
+          expect(page).not_to have_css "[data-confirm]"
         end
       end
 
@@ -1146,7 +1150,9 @@ describe "Budget Investments" do
         visit budget_investments_path(budget, heading_id: another_heading1.id)
 
         within(".budget-investment", text: "Another investment") do
-          expect(page).to have_css(".in-favor a[data-confirm]")
+          expect(page).to have_button count: 1
+          expect(page).to have_button "Support"
+          expect(page).to have_css "[type='submit'][data-confirm]"
         end
       end
 
@@ -1157,7 +1163,8 @@ describe "Budget Investments" do
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within("#budget_investment_#{all_city_investment.id}") do
-          expect(page).not_to have_css(".in-favor a[data-confirm]")
+          expect(page).to have_button "Support"
+          expect(page).not_to have_css "[data-confirm]"
         end
       end
     end

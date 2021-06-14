@@ -815,10 +815,18 @@
       font-size: $base-font-size;
       font-weight: bold;
 
+      &:disabled {
+        opacity: 1;
+      }
+
       &:hover {
         background: $budget-hover;
         color: #fff;
         cursor: pointer;
+      }
+
+      &:focus {
+        outline: $outline-focus;
       }
 
       &:active {
