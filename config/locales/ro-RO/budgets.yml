@@ -161,24 +161,25 @@ ro:
       investment:
         add: Vot
         already_added: Ați adăugat deja acest proiect de investiții
-        already_supported: Ați susținut deja acest proiect de investiții. Distribuiți-l!
         support_title: Sprijină acest proiect
-        confirm_group:
-          one: "Poți susține investiții în %{count} district. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
-          few: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
-          other: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
         supports:
           zero: Fără susținători
           one: 1 susținător
           few: "%{count} persoane susțin"
           other: "%{count} persoane susțin"
-        give_support: Sprijină
       header:
         check_ballot: "Verifică și confirmă votul"
         different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
         change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
         check_ballot_link: "verifică și confirmă votul"
         price: "Această rubrică are un buget de"
+      votes:
+        already_supported: "Ați susținut deja acest proiect de investiții. Distribuiți-l!"
+        confirm_group:
+          one: "Poți susține investiții în %{count} district. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+          few: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+          other: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+        support: "Sprijină"
     show:
       see_results: Vezi rezultatele
     results:
