@@ -22,7 +22,9 @@ sv:
           target_2_A:
             title: "Öka investeringarna, bland annat genom stärkt internationellt samarbete, i infrastruktur på landsbygden, jordbruksforskning och förlängningstjänster, teknikutveckling och genbanker för växter och boskap, för att öka jordbrukets produktionskapacitet i utvecklingsländer, i synnerhet de minst utvecklade länderna."
       goal_3:
+        title: "God hälsa och välbefinnande"
         title_in_two_lines: "God hälsa och\nvälbefinnande"
+        description: "Säkerställa hälsosamma liv och främja välbefinnande för alla i alla åldrar."
         targets:
           target_3_A:
             title: "Stärka genomförandet av Världshälsoorganisationens ramkonvention om tobakskontroll i alla länder, när så är lämpligt."
