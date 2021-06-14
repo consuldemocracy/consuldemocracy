@@ -35,9 +35,11 @@ sv:
       goal_5:
         title: "Jämställdhet"
         title_in_two_lines: "Jäm-\nställdhet"
+        description: "Uppnå jämställdhet och alla kvinnors och flickors egenmakt."
       goal_6:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
+        description: "Säkerställa tillgången till vatten och sanitet för alla."
         targets:
           target_6_1:
             title: "Uppnå allmän och rättvis tillgång till säkert och överkomligt dricksvatten för alla innan 2030."
@@ -48,6 +50,7 @@ sv:
       goal_10:
         title: "Minska ojämlikheter"
         title_in_two_lines: "Minska\nojämlikheter"
+        description: "Minska ojämlikheter inom och mellan länder."
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
