@@ -91,16 +91,17 @@ sl:
       investment:
         add: Glasuj
         already_added: Ta naložbeni projekt si že dodal
-        already_supported: Ta naložbeni projekt si že podprl. Deli ga z drugimi!
         support_title: Podpri ta projekt
         supports:
           zero: brez podpore
-        give_support: Glasuj za predlog!
       header:
         check_ballot: "Preveri moja glasovanja"
         change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} and start again."
         check_ballot_link: "preveri moja glasovanja"
         price: "Ta naslov ima proračun v višini"
+      votes:
+        already_supported: "Ta naložbeni projekt si že podprl. Deli ga z drugimi!"
+        support: "Glasuj za predlog!"
     show:
       see_results: Poglej rezultate
     results:
