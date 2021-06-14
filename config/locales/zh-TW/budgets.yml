@@ -93,19 +93,20 @@ zh-TW:
       investment:
         add: 票
         already_added: 您已經添加了此投資項目
-        already_supported: 您已經支持此投資項目。把它分享吧!
         support_title: 支持此項目
-        confirm_group:
-          other: "您只能支持 %{count} 個區域中的投資。若你要繼續，你就不能改變你所在地區的選舉。是否確定？"
         supports:
           zero: 沒有支持
           other: "%{count} 個支持"
-        give_support: 支持
       header:
         check_ballot: "查看我的選票"
         change_ballot: "如果您改變了主意, 您可以在 %{check_ballot} 中刪除您的投票，然後重新開始。"
         check_ballot_link: "查看我的選票"
         price: "此標題有一個預算"
+      votes:
+        already_supported: "您已經支持此投資項目。把它分享吧!"
+        confirm_group:
+          other: "您只能支持 %{count} 個區域中的投資。若你要繼續，你就不能改變你所在地區的選舉。是否確定？"
+        support: "支持"
     show:
       see_results: 查看結果
     results:
