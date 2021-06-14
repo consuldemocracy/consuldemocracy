@@ -34,7 +34,8 @@ fi:
           zero: Ei tukijoita
           one: 1 tukija
           other: "%{count} tukijaa"
-        give_support: Tue
+      votes:
+        support: "Tue"
     show:
       see_results: Näytä tulokset
     results:
