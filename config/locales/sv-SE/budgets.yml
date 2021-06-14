@@ -156,23 +156,23 @@ sv:
       investment:
         add: Rösta
         already_added: Du har redan skapat det här budgetförslaget
-        already_supported: Du stöder redan det här budgetförslaget. Dela det!
         support_title: Stöd projektet
-        support_label: "Stöd %{investment}"
-        confirm_group:
-          one: "Du kan bara stödja budgetförslag i %{count} distrikt. Om du fortsätter kommer du inte att kunna ändra valet av distrikt. Vill du fortsätta?"
-          other: "Du kan bara stödja projekt i %{count} stadsdelar. Om du fortsätter kommer du inte kunna ändra valet av stadsdel. Vill du fortsätta?"
         supports:
           zero: Inget stöd
           one: 1 stöd
           other: "%{count} stöd"
-        give_support: Stöd
       header:
         check_ballot: "Skicka in min röst"
         different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
         change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
         check_ballot_link: "skicka in min röst"
         price: "Det här området har en budget på"
+      votes:
+        already_supported: "Du stöder redan det här budgetförslaget. Dela det!"
+        confirm_group:
+          one: "Du kan bara stödja budgetförslag i %{count} distrikt. Om du fortsätter kommer du inte att kunna ändra valet av distrikt. Vill du fortsätta?"
+          other: "Du kan bara stödja projekt i %{count} stadsdelar. Om du fortsätter kommer du inte kunna ändra valet av stadsdel. Vill du fortsätta?"
+        support: "Stöd"
     investments_list:
       investment:
         price: "Pris"
@@ -185,7 +185,6 @@ sv:
     supports_info:
       different: "Du kan stödja så många olika projekt som du vill."
       next: "Stöd de projekt som du vill ska gå vidare till nästa fas."
-      remember: "<strong>Kom ihåg</strong> att du bara kan ge ditt stöd <strong>en gång</strong> per projekt och att varje stöd är <strong>oåterkalleligt</strong>."
       scrolling: "Fortsätt rulla för att se alla idéerna"
       share: "Du kan dela de projekt du har hittat i sociala medier och ge mer uppmärksamhet och stöd till dem!"
       supported:
