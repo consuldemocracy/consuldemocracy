@@ -172,6 +172,13 @@ tr:
         change_ballot: "Eğer fikrinizi değiştirirseniz oyunuzu %{check_ballot} 'dan geri çekebilirsiniz ve başka bir fikre oy verebilirsiniz."
         check_ballot_link: "oyumu kontrol et"
         price: "Bu konunun bir bütçesi var"
+    investments_list:
+      investment:
+        price: "Ücret"
+        read_more: "Daha fazla oku"
+        supports: "Yardımlar"
+      see_all: "Tüm yatırımları gör"
+      title: "Yatırımların listesi"
     show:
       see_results: Sonuçları gör
     results:
