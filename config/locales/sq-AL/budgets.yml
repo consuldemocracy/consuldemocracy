@@ -95,21 +95,22 @@ sq:
       investment:
         add: Votim
         already_added: Ju e keni shtuar tashmë këtë projekt investimi
-        already_supported: Ju e keni mbështetur tashmë këtë projekt investimi. Shperndaje!
         support_title: Mbështetni këtë projekt
-        confirm_group:
-          one: "Ju mund të mbështesni vetëm investimet në %{count} rrethe .Nëse vazhdoni ju nuk mund të ndryshoni zgjedhjen e rrethit tuaj. A je i sigurt?"
-          other: "Ju mund të mbështesni vetëm investimet në %{count} rrethe .Nëse vazhdoni ju nuk mund të ndryshoni zgjedhjen e rrethit tuaj. A je i sigurt?"
         supports:
           zero: Asnjë mbështetje
           one: 1  mbështetje
           other: "1%{count} mbështetje"
-        give_support: Suporti
       header:
         check_ballot: "Kontrolloni votimin tim"
         change_ballot: "Nëse ndryshoni mendjen tuaj, ju mund të hiqni votat tuaja në %{check_ballot} dhe të filloni përsëri."
         check_ballot_link: "Kontrolloni votimin tim"
         price: "Ky titull ka një buxhet prej"
+      votes:
+        already_supported: "Ju e keni mbështetur tashmë këtë projekt investimi. Shperndaje!"
+        confirm_group:
+          one: "Ju mund të mbështesni vetëm investimet në %{count} rrethe .Nëse vazhdoni ju nuk mund të ndryshoni zgjedhjen e rrethit tuaj. A je i sigurt?"
+          other: "Ju mund të mbështesni vetëm investimet në %{count} rrethe .Nëse vazhdoni ju nuk mund të ndryshoni zgjedhjen e rrethit tuaj. A je i sigurt?"
+        support: "Suporti"
     show:
       see_results: Shiko rezultatet
     results:
