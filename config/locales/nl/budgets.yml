@@ -98,21 +98,22 @@ nl:
       investment:
         add: Voeg toe
         already_added: U heeft dit voorstel al toegevoegd
-        already_supported: Je hebt dit begrotingsvoorstel al gesteund. Deel het!
         support_title: Steun dit voorstel
-        confirm_group:
-          one: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
-          other: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
         supports:
           zero: Geen steunbetuigingen
           one: 1 steunbetuiging
           other: "%{count} steunbetuigingen"
-        give_support: Support
       header:
         check_ballot: "Check mijn stemmen"
         change_ballot: "ALs je je bedenkt kun je je stemmen in %{check_ballot} verwijderen en opnieuw beginnen."
         check_ballot_link: "bekijk mijn stemmen"
         price: "Deze rubriek heeft een budget van"
+      votes:
+        already_supported: "Je hebt dit begrotingsvoorstel al gesteund. Deel het!"
+        confirm_group:
+          one: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
+          other: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
+        support: "Support"
     show:
       see_results: Bekijk resultaten
     results:
