@@ -115,7 +115,7 @@ oc:
         add: Votacion
         already_added: As ja apondut aquela proposicion d'inversion
         already_supported: Avètz ja sostengut a aquel projècte d'inversion. Parteja-o!
-        support_title: "Avalar aquela proposicion d'inversion"
+        support_title: Avalar aquela proposicion d'inversion
         confirm_group:
           one: "Podètz solament suportar d'inversions a %{count} districte. Se contunhatz, podètz pas cambiar l’eleccion de lo vòstre districte. Ès segur?"
           other: "Podètz solament suportar d'inversions a %{count} de districtes. Se contunhatz, podètz pas cambiar l’eleccion de lo vòstre districte. Ès segur?"
