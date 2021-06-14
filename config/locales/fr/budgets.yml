@@ -97,7 +97,7 @@ fr:
         add: Vote
         already_added: Vous avez déjà ajouté cette proposition d'investissement.
         already_supported: Vous avez déjà soutenu ce projet d'investissement. Partagez-le !
-        support_title: "Soutenir cette proposition"
+        support_title: Soutenir cette proposition
         confirm_group:
           one: "Vous pouvez seulement soutenir les propositions d'%{count} quartier. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
           other: "Vous pouvez seulement soutenir les propositions de %{count} quartiers. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
