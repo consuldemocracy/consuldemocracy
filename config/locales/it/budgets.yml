@@ -115,7 +115,7 @@ it:
         add: Votare
         already_added: Hai già aggiunto questo progetto di investimento
         already_supported: Hai già espresso il tuo sostegno per questo progetto di investimento. Condividilo!
-        support_title: "Sostieni questo progetto"
+        support_title: Sostieni questo progetto
         confirm_group:
           one: "Puoi dare il tuo sostegno agli investimenti solo in %{count} distretto. Se continui non potrai cambiare la scelta in merito al tuo distretto. Sei sicuro?"
           other: "Puoi dare il tuo sostegno agli investimenti solo in %{count} distretti. Se continui non potrai cambiare la scelta in merito al tuo distretto. Sei sicuro?"
