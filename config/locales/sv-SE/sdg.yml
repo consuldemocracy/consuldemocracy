@@ -47,6 +47,14 @@ sv:
         title: "Överkomlig och ren energi"
         title_in_two_lines: "Överkomlig och\nren energi"
         description: "Säkerställa tillgång till ekonomiskt överkomlig, tillförlitlig, hållbar och modern energi."
+      goal_8:
+        title: "Anständiga arbetsvillkor och ekonomisk tillväxt"
+        title_in_two_lines: "Anständiga arbetsvillkor och\nekonomisk tillväxt"
+        description: "Verka för allomfattande och hållbar ekonomisk tillväxt, och sysselsättning med anständiga arbetsvillkor för alla."
+      goal_9:
+        title: "Hållbar industri, innovationer och infrastruktur"
+        title_in_two_lines: "Hållbar industri, innovationer\noch infrastruktur"
+        description: "Bygga motståndskraftig infrastruktur, verka för en hållbar industrialisering samt främja innovation."
       goal_10:
         title: "Minska ojämlikheter"
         title_in_two_lines: "Minska\nojämlikheter"
