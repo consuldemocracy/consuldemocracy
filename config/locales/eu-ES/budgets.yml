@@ -92,21 +92,22 @@ eu:
       investment:
         add: Bozkatu
         already_added: Gastu proiektua gehitu duzu
-        already_supported: Gastu proiektu hau babestu duzu. Partekatu ezazu!
         support_title: Proiektu hau babestu
-        confirm_group:
-          one: "Proiektuak auzo baten soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
-          other: "Proiektuak %{count} auzotan soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
         supports:
           zero: Babes gabe
           one: babes 1
           other: "%{count} babes"
-        give_support: Babestu
       header:
         check_ballot: "Nire bozkak berrikusi"
         change_ballot: "Iritzia aldatu ezkero zure bozkak aldatu ditzakezu %{check_ballot}-(e)n eta berriz hasi zaitezke."
         check_ballot_link: "Nire bozkak berrikusi"
         price: "Sail honen aurrekontua"
+      votes:
+        already_supported: "Gastu proiektu hau babestu duzu. Partekatu ezazu!"
+        confirm_group:
+          one: "Proiektuak auzo baten soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
+          other: "Proiektuak %{count} auzotan soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
+        support: "Babestu"
     show:
       see_results: Emaitzak ikusi
     results:
