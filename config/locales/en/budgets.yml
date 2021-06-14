@@ -130,7 +130,6 @@ en:
           random: random
           confidence_score: highest rated
           price: by price
-        read_more: "Read more"
       share:
         message: "I created the investment project %{title} in %{handle}. Create an investment project too!"
       show:
@@ -162,8 +161,6 @@ en:
         confirm_group:
           one: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
           other: "You can only support investments in %{count} districts. If you continue you cannot change the election of your district. Are you sure?"
-        price_title: "Price"
-        support_title: "Supports"
         supports:
           one: 1 support
           other: "%{count} supports"
@@ -175,10 +172,15 @@ en:
         change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
         check_ballot_link: "submit my ballot"
         price: "Total budget"
+    investments_list:
+      investment:
+        price: "Price"
+        read_more: "Read more"
+        supports: "Supports"
+      see_all: "See all investments"
+      title: "List of investments"
     show:
       see_results: See results
-      see_all_investments: "See all investments"
-      investments_list: "List of investments"
     results:
       link: Results
       page_title: "%{budget} - Results"

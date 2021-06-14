@@ -8,12 +8,12 @@
   <% if investment.should_show_vote_count? || investment.should_show_price? %>
     <div class="supports-and-price">
       <% if investment.should_show_vote_count? %>
-        <span class="supports-title"><%= t("budgets.investments.investment.support_title") %></span>
+        <span class="supports-title"><%= t("budgets.investments_list.investment.supports") %></span>
         <strong><%= investment.total_votes %></strong>
       <% end %>
 
       <% if investment.should_show_price? %>
-        <span class="price-title"><%= t("budgets.investments.investment.price_title") %></span>
+        <span class="price-title"><%= t("budgets.investments_list.investment.price") %></span>
         <strong><%= investment.formatted_price %></strong>
       <% end %>
     </div>
@@ -26,7 +26,7 @@
       <%= render Budgets::Investments::InfoComponent.new(investment) %>
 
       <%= link_to namespaced_budget_investment_path(investment), class: "read-more" do %>
-        <small><%= t("budgets.investments.index.read_more") %></small>
+        <small><%= t("budgets.investments_list.investment.read_more") %></small>
       <% end %>
     <% end %>
   </div>
