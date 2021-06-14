@@ -93,7 +93,7 @@ eu:
         add: Bozkatu
         already_added: Gastu proiektua gehitu duzu
         already_supported: Gastu proiektu hau babestu duzu. Partekatu ezazu!
-        support_title: "Proiektu hau babestu"
+        support_title: Proiektu hau babestu
         confirm_group:
           one: "Proiektuak auzo baten soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
           other: "Proiektuak %{count} auzotan soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
