@@ -78,11 +78,12 @@ ast:
         supports:
           one: 1 sofitu
           other: "%{count} sofitos"
-        give_support: Sofitar
       header:
         check_ballot: "Revisar los mios votos"
         change_ballot: "Si camudes d'opinión pues borrar los tos votos en %{check_ballot} y volver principiar."
         check_ballot_link: "revisar los mios votos"
+      votes:
+        support: "Sofitar"
     show:
       see_results: Ver resultancies
     results:
