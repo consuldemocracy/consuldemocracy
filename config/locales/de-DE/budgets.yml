@@ -156,22 +156,23 @@ de:
       investment:
         add: Stimme
         already_added: Sie haben diesen Ausgabenvorschlag bereits hinzugefügt
-        already_supported: Sie haben diesen Ausgabenvorschlag bereits unterstützt. Jetzt teilen!
         support_title: Unterstützen Sie dieses Projekt
-        confirm_group:
-          one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
-          other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
         supports:
           zero: Keine Unterstützung
           one: 1 Unterstützer*in
           other: "%{count} Unterstützer*innen"
-        give_support: Unterstützung
       header:
         check_ballot: "Meine Abstimmung überprüfen"
         different_heading_assigned: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
         change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
         check_ballot_link: "Meine Abstimmungen überprüfen"
         price: "Dieser Bereich verfügt über einen Haushalt von"
+      votes:
+        already_supported: "Sie haben diesen Ausgabenvorschlag bereits unterstützt. Jetzt teilen!"
+        confirm_group:
+          one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
+          other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
+        support: "Unterstützung"
     show:
       see_results: Ergebnisse anzeigen
     results:
