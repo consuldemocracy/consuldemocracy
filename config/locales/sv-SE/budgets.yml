@@ -172,7 +172,10 @@ sv:
         confirm_group:
           one: "Du kan bara stödja budgetförslag i %{count} distrikt. Om du fortsätter kommer du inte att kunna ändra valet av distrikt. Vill du fortsätta?"
           other: "Du kan bara stödja projekt i %{count} stadsdelar. Om du fortsätter kommer du inte kunna ändra valet av stadsdel. Vill du fortsätta?"
+        remove_support: "Ta bort ditt stöd"
+        remove_support_label: "Ta bort ditt stöd för %{investment}"
         support: "Stöd"
+        support_label: "Stöd %{investment}"
     investments_list:
       investment:
         price: "Pris"
