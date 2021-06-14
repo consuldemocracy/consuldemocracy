@@ -99,7 +99,7 @@ id:
         add: Suara
         already_added: Anda telah menambahkan proyek investasi ini
         already_supported: Anda telah mendukung proyek investasi ini. Bagikan!
-        support_title: "Mendukung proyek ini"
+        support_title: Mendukung proyek ini
         confirm_group:
           other: "Anda hanya dapat mendukung investasi%{count} dalam satu judul. Jika anda ragu-ragu anda tidak dapat mengubah keputusan. Apakah anda yakin?"
         supports:
