@@ -185,6 +185,14 @@ sv:
     supports_info:
       different: "Du kan stödja så många olika projekt som du vill."
       next: "Stöd de projekt som du vill ska gå vidare till nästa fas."
+      remember: "<strong>Kom ihåg</strong> att du bara kan ge ditt stöd <strong>en gång</strong> per projekt och att varje stöd är <strong>oåterkalleligt</strong>."
+      scrolling: "Fortsätt rulla för att se alla idéerna"
+      share: "Du kan dela de projekt du har hittat i sociala medier och ge mer uppmärksamhet och stöd till dem!"
+      supported:
+        one: "Hittills har du stött <strong>1 projekt</strong>."
+        other: "Hittills har du stött <strong>%{count} projekt</strong>."
+      supported_not_logged_in: "Logga in för att börja <strong>stödja projekt</strong>."
+      time: "Det finns fortfarande tid, fram till %{phase_end_date}, för att stödja projekt."
     results:
       link: Resultat
       page_title: "%{budget} - Resultat"
