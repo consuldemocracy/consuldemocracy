@@ -182,6 +182,9 @@ sv:
       title: "Lista över investeringar"
     show:
       see_results: Visa resultat
+    supports_info:
+      different: "Du kan stödja så många olika projekt som du vill."
+      next: "Stöd de projekt som du vill ska gå vidare till nästa fas."
     results:
       link: Resultat
       page_title: "%{budget} - Resultat"
