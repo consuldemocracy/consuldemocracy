@@ -158,6 +158,7 @@ sv:
         already_added: Du har redan skapat det här budgetförslaget
         already_supported: Du stöder redan det här budgetförslaget. Dela det!
         support_title: Stöd projektet
+        support_label: "Stöd %{investment}"
         confirm_group:
           one: "Du kan bara stödja budgetförslag i %{count} distrikt. Om du fortsätter kommer du inte att kunna ändra valet av distrikt. Vill du fortsätta?"
           other: "Du kan bara stödja projekt i %{count} stadsdelar. Om du fortsätter kommer du inte kunna ändra valet av stadsdel. Vill du fortsätta?"
