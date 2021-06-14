@@ -144,7 +144,7 @@ ca:
         add: Votació
         already_added: Ja has afegit aquesta proposta d'inversió
         already_supported: Ja heu donat suport a aquest projecte d'inversió. Comparteix-ho!
-        support_title: "Avalar aquesta proposta d'inversió"
+        support_title: Avalar aquesta proposta d'inversió
         confirm_group:
           one: "Només podeu suportar inversions a %{count} districte. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
           other: "Només podeu suportar inversions a %{count} districtes. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
