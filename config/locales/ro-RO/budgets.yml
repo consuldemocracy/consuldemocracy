@@ -162,7 +162,7 @@ ro:
         add: Vot
         already_added: Ați adăugat deja acest proiect de investiții
         already_supported: Ați susținut deja acest proiect de investiții. Distribuiți-l!
-        support_title: "Sprijină acest proiect"
+        support_title: Sprijină acest proiect
         confirm_group:
           one: "Poți susține investiții în %{count} district. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
           few: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
