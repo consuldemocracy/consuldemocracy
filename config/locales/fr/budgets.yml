@@ -96,21 +96,22 @@ fr:
       investment:
         add: Vote
         already_added: Vous avez déjà ajouté cette proposition d'investissement.
-        already_supported: Vous avez déjà soutenu ce projet d'investissement. Partagez-le !
         support_title: Soutenir cette proposition
-        confirm_group:
-          one: "Vous pouvez seulement soutenir les propositions d'%{count} quartier. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
-          other: "Vous pouvez seulement soutenir les propositions de %{count} quartiers. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
         supports:
           zero: Aucun soutien
           one: 1 soutien
           other: "%{count} soutiens"
-        give_support: Soutenir
       header:
         check_ballot: "Vérifier mon vote"
         change_ballot: "Si vous changez d'avis, vous pouvez supprimer vos votes dans %{check_ballot} et recommencer."
         check_ballot_link: "vérifier mon vote"
         price: "Cette rubrique dispose d’un budget de"
+      votes:
+        already_supported: "Vous avez déjà soutenu ce projet d'investissement. Partagez-le !"
+        confirm_group:
+          one: "Vous pouvez seulement soutenir les propositions d'%{count} quartier. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
+          other: "Vous pouvez seulement soutenir les propositions de %{count} quartiers. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
+        support: "Soutenir"
     show:
       see_results: Voir les résultats
     results:
