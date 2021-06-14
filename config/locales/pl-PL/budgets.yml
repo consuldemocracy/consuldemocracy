@@ -97,25 +97,26 @@ pl:
       investment:
         add: Głos
         already_added: Dodałeś już ten projekt inwestycyjny
-        already_supported: Już wsparłeś ten projekt inwestycyjny. Udostępnij go!
         support_title: Wesprzyj ten projekt
-        confirm_group:
-          one: "Możesz wspierać jedynie inwestycje w %{count} dzielnicy. Jeśli postanowisz kontynuować, nie będzie możliwości zmiany wyboru Twojej dzielnicy. Czy jesteś pewny/a?"
-          few: "Możesz wspierać tylko inwestycje w dzielnicy %{count}  Jeśli będziesz kontynuować, nie będziesz mógł/a zmienić dzielnicy. Jesteś pewny/a?  "
-          many: "Możesz wspierać tylko inwestycje w dzielnicy %{count}  Jeśli będziesz kontynuować, nie będziesz mógł/a zmienić dzielnicy. Jesteś pewny/a?  "
-          other: "Możesz wspierać jedynie inwestycje w %{count} dzielnicy. Jeśli postanowisz kontynuować, nie będzie możliwości zmiany wyboru Twojej dzielnicy. Czy jesteś pewny/a?"
         supports:
           zero: Brak poparcia
           one: 1 popierający
           few: "%{count} popierających"
           many: "%{count} popierających"
           other: "%{count} popierających"
-        give_support: Poparcie
       header:
         check_ballot: "Sprawdź moje głosowanie"
         change_ballot: "Jeśli zmienisz zdanie, możesz usunąć swoje głosy w %{check_ballot} i zacząć od nowa."
         check_ballot_link: "sprawdź moje głosowanie"
         price: "Ten dział ma budżet w wysokości"
+      votes:
+        already_supported: "Już wsparłeś ten projekt inwestycyjny. Udostępnij go!"
+        confirm_group:
+          one: "Możesz wspierać jedynie inwestycje w %{count} dzielnicy. Jeśli postanowisz kontynuować, nie będzie możliwości zmiany wyboru Twojej dzielnicy. Czy jesteś pewny/a?"
+          few: "Możesz wspierać tylko inwestycje w dzielnicy %{count}  Jeśli będziesz kontynuować, nie będziesz mógł/a zmienić dzielnicy. Jesteś pewny/a?  "
+          many: "Możesz wspierać tylko inwestycje w dzielnicy %{count}  Jeśli będziesz kontynuować, nie będziesz mógł/a zmienić dzielnicy. Jesteś pewny/a?  "
+          other: "Możesz wspierać jedynie inwestycje w %{count} dzielnicy. Jeśli postanowisz kontynuować, nie będzie możliwości zmiany wyboru Twojej dzielnicy. Czy jesteś pewny/a?"
+        support: "Poparcie"
     show:
       see_results: Zobacz wyniki
     results:
