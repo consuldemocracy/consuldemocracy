@@ -185,6 +185,8 @@ bg:
         one: "До тук сте подкрепили  <strong> 1 проект  <strong>.\n"
         other: "До тук сте подкрепили <strong>%{count} проекта </strong>."
       supported_not_logged_in: "Влезте, за да започнете <strong> да подкрепяте проекти </strong>. "
+      time: "Все още има време до %{phase_end_date} за подкрепа на проекти."
+      title: "Време е да <strong> подкрепите </strong> проекти!"
     results:
       link: Резултати
       page_title: "%{budget} - Резултати"
