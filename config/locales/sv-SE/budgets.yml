@@ -193,6 +193,7 @@ sv:
         other: "Hittills har du stött <strong>%{count} projekt</strong>."
       supported_not_logged_in: "Logga in för att börja <strong>stödja projekt</strong>."
       time: "Det finns fortfarande tid, fram till %{phase_end_date}, för att stödja projekt."
+      title: "Det är dags att <strong>stödja</strong> projekt!"
     results:
       link: Resultat
       page_title: "%{budget} - Resultat"
