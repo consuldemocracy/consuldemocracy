@@ -96,7 +96,7 @@ zh-CN:
         add: 投票
         already_added: 您已经添加此投票项目
         already_supported: 您已经支持此投票项目。请进行分享！
-        support_title: "支持此项目"
+        support_title: 支持此项目
         confirm_group:
           other: "您只能支持%{count} 个区域的投资。如果您要继续，您就不能更改您地区的选举。是否确定？"
         supports:
