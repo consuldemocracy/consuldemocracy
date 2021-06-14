@@ -143,22 +143,23 @@ pt-BR:
       investment:
         add: Voto
         already_added: Você já adicionou este projeto de investimento
-        already_supported: Você já apoiou esta proposta de investimento. Compartilhe!
         support_title: Apoiar este projeto
-        confirm_group:
-          one: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
-          other: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
         supports:
           zero: Nenhum apoio
           one: 1 apoio
           other: "%{count} apoios"
-        give_support: Apoiar
       header:
         check_ballot: "Verificar minha cédula"
         different_heading_assigned: "Você tem votos ativos num título diferente: %{heading_link}"
         change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
         check_ballot_link: "verificar minha cédula"
         price: "Este título tem um orçamento de"
+      votes:
+        already_supported: "Você já apoiou esta proposta de investimento. Compartilhe!"
+        confirm_group:
+          one: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
+          other: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
+        support: "Apoiar"
     show:
       see_results: Exibir resultados
     results:
