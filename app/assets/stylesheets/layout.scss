@@ -1011,15 +1011,17 @@ footer {
 }
 
 .auth-divider {
-  border-bottom: 1px solid $border;
-  height: rem-calc(14);
-  margin: $line-height 0;
+  border-top: 1px solid $border;
+  margin-top: $line-height * 1.5;
   text-align: center;
 
   span {
     background: #fff;
+    box-decoration-break: clone;
     font-weight: bold;
     padding: 0 $line-height / 2;
+    position: relative;
+    top: -$line-height / 2;
   }
 }
 
