@@ -26,6 +26,8 @@ sv:
         title_in_two_lines: "God hälsa och\nvälbefinnande"
         description: "Säkerställa hälsosamma liv och främja välbefinnande för alla i alla åldrar."
         targets:
+          target_3_6:
+            title: "Till 2020 halvera antalet dödsfall och skador i trafikolyckor i världen."
           target_3_7:
             title: "Senast 2030 säkerställa att alla har tillgång till sexuell och reproduktiv hälsovård, inklusive familjeplanering, information och utbildning, och att reproduktiv hälsa integreras i nationella strategier och program."
           target_3_A:
