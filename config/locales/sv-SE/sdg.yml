@@ -55,11 +55,17 @@ sv:
           target_3_3:
             title: "Senast 2030 utrota epidemierna av aids, tuberkulos, malaria och försummade tropiska sjukdomar samt bekämpa hepatit, vattenburna sjukdomar och andra smittsamma sjukdomar."
           target_3_4:
-            title: "Till 2030 genom förebyggande insatser och behandling minska det antal människor som dör i förtid av icke smittsamma sjukdomar med en tredjedel samt främja psykisk hälsa och välbefinnande."
+            title: "Till 2030 genom förebyggande insatser och behandling minska det antal människor som dör i förtid av icke-smittsamma sjukdomar med en tredjedel samt främja psykisk hälsa och välbefinnande."
+          target_3_5:
+            title: "Stärka insatserna för att förebygga och behandla drogmissbruk, inklusive narkotikamissbruk och skadligt alkoholbruk."
           target_3_6:
             title: "Till 2020 halvera antalet dödsfall och skador i trafikolyckor i världen."
           target_3_7:
             title: "Senast 2030 säkerställa att alla har tillgång till sexuell och reproduktiv hälsovård, inklusive familjeplanering, information och utbildning, och att reproduktiv hälsa integreras i nationella strategier och program."
+          target_3_8:
+            title: "Åstadkomma allmän hälso- och sjukvård för alla, som även skyddar mot ekonomisk risk, tillgång till grundläggande hälso- och sjukvård av god kvalitet liksom tillgång till säkra, effektiva och ekonomiskt överkomliga grundläggande läkemedel och vaccin av god kvalitet."
+          target_3_9:
+            title: "Till 2030 väsentligt minska antalet döds- och sjukdomsfall till följd av skadliga kemikalier samt föroreningar och kontaminering av luft, vatten och mark."
           target_3_A:
             title: "Stärka genomförandet av Världshälsoorganisationens ramkonvention om tobakskontroll i alla länder, när så är lämpligt."
       goal_4:
