@@ -35,8 +35,14 @@ sv:
             title: "Till 2030 fördubbla jordbrukets produktivitet och inkomster för småskaliga livsmedelsproducenter, i synnerhet kvinnor, ursprungsfolk, familjejordbrukare, boskapsskötande nomader samt fiskare, bland annat genom säker och lika tillgång till mark, andra produktionsresurser och insatsvaror, kunskap, finansiella tjänster och marknader samt möjligheter till förädling och sysselsättning utanför jordbruket."
           target_2_4:
             title: "Senast 2030 uppnå hållbara system för livsmedelsproduktion samt införa motståndskraftiga jordbruksmetoder som ökar produktiviteten och produktionen, som bidrar till att upprätthålla ekosystemen, som stärker förmågan till anpassning till klimatförändringar, extrema väderförhållanden, torka, översvämning och andra katastrofer och som successivt förbättrar mark och jordkvaliteten."
+          target_2_5:
+            title: "Senast 2020 skydda den genetiska mångfalden av fröer, odlade växter, produktionsdjur och tamdjur samt deras besläktade vilda arter, bland annat med hjälp av välskötta och diversifierade frö- och växtbanker på nationell, regional och internationell nivå. Främja tillträde till, samt rimlig och rättvis fördelning av, de fördelar som uppstår vid användning av genetiska resurser och därmed förknippad traditionell kunskap, i enlighet med internationella avtal."
           target_2_A:
             title: "Öka investeringarna, bland annat genom stärkt internationellt samarbete, i infrastruktur på landsbygden, jordbruksforskning och förlängningstjänster, teknikutveckling och genbanker för växter och boskap, för att öka jordbrukets produktionskapacitet i utvecklingsländer, i synnerhet de minst utvecklade länderna."
+          target_2_B:
+            title: "Korrigera och förhindra handelsbegränsningar och snedvridningar på världsmarknaderna för jordbruksprodukter, bland annat genom att parallellt avskaffa alla former av exportsubventioner inom jordbruket liksom alla exportåtgärder med motsvarande verkan, i enlighet med mandatet för Doharundan."
+          target_2_C:
+            title: "Vidta åtgärder för att säkerställa väl fungerande marknader och derivatmarknader för jordbruksråvaror. Underlätta tillgången till aktuell marknadsinformation, inklusive om livsmedelsreserver, i syfte att bidra till att begränsa extrema svängningar i livsmedelspriser."
       goal_3:
         title: "God hälsa och välbefinnande"
         title_in_two_lines: "God hälsa och\nvälbefinnande"
