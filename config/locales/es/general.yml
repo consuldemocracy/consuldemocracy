@@ -889,6 +889,7 @@ es:
         debates: Ahora mismo no hay debates
         proposals: Ahora mismo no hay propuestas
         processes: Ahora mismo no hay procesos abiertos
+        budgets: "Ahora mismo no hay presupuestos participativos"
       description:
         proposals: "Las propuestas ciudadanas que reúnan suficientes apoyos pasarán a una fase de votación, para que todos los ciudadanos decidan cómo quieren que sea su ciudad."
         budgets: "Los presupuestos participativos son procesos en los que los ciudadanos deciden directamente en qué se gasta parte del presupuesto municipal. Los proyectos más apoyados se evalúan y pasan a una votación final en la que se deciden las acciones que llevará a cabo el Ayuntamiento."
