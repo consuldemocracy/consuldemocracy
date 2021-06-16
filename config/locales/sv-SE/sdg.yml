@@ -73,12 +73,48 @@ sv:
         title: "Ekosystem på land"
         title_in_two_lines: "Ekosystem\npå land"
         description: "Hantera skogen hållbart, bekämpa ökenspridning, stoppa och återställa landdegradering och stoppa förlusten av biologisk mångfald."
-      goal_17:
-        title_in_two_lines: "Genomförande och\nglobalt partnerskap"
-        description: "Återvitalisera det globala partnerskapet för hållbar utveckling."
+      goal_16:
         targets:
+          target_16_9:
+            title: "Senast 2030 tillhandahålla juridisk identitet för alla, inklusive födelseregistrering."
+          target_16_10:
+            title: "Säkerställa allmän tillgång till information och skydda grundläggande friheter, i enlighet med nationell lagstiftning och internationella avtal."
+          target_16_A:
+            title: "Stärka berörda nationella institutioner, bland annat genom internationellt samarbete, i syfte att bygga upp kapacitet på alla nivåer, i synnerhet i utvecklingsländerna, för att förebygga våld och bekämpa terrorism och brottslighet."
+          target_16_B:
+            title: "Verka för och genomdriva icke-diskriminerande lagstiftning och politik för en hållbar utveckling."
+      goal_17:
+        title: "Partnerskap för målen"
+        title_in_two_lines: "Partnerskap\nför målen"
+        description: "Återvitalisera det globala partnerskapet för hållbar utveckling."
+        long_description: '<p>Globala målen kan bara förverkligas genom starka globala partnerskap och samarbete.</p> <p>En framgångsrik utvecklingsagenda kräver allomfattande partnerskap — på global, regional, nationell och lokal nivå — som bygger på principer och värderingar, och en delad vision och gemensamma mål som placerar människor och planeten i centrum.</p> <p>Många länder behöver officiellt utvecklingsbistånd för att uppmuntra tillväxt och handel. Men <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">stödnivåerna sjunker</a> och givarländerna har inte levt upp till sitt åtagande att öka utvecklingsfinansieringen.</p> <p>På grund av covid-19-pandemin beräknas <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">den globala ekonomin</a> krympa kraftigt med 3 procent under 2020 och genomgå sin värsta lågkonjunktur sedan den stora depressionen.</p> <p>Starkt internationellt samarbete behövs nu mer än någonsin för att säkerställa att länderna har möjlighet att återhämta sig från pandemin, bygga en värld som är bättre än den var och uppnå Globala målen för hållbar utveckling.</p>'
+        targets:
+          target_17_1:
+            title: "Stärka den inhemska resursmobiliseringen, bland annat genom internationellt stöd till utvecklingsländerna, för att förbättra respektive lands förmåga att ta upp skatter och andra intäkter."
+          target_17_2:
+            title: "De utvecklade länderna ska fullt ut fullfölja sina åtaganden i fråga om offentligt utvecklingsbistånd, inklusive många utvecklade länders åtagande att nå målet att ge 0,7 procent av BNI till utvecklingsländer och 0,15–0,20 procent av BNI till de minst utvecklade länderna. De länder som ger offentligt utvecklingsbistånd uppmanas att överväga att fastställa ett mål om att ge minst 0,20 procent av BNI till de minst utvecklade länderna."
+          target_17_3:
+            title: "Mobilisera ytterligare finansiella resurser till utvecklingsländerna från många olika källor."
+          target_17_4:
+            title: "Bistå utvecklingsländerna att uppnå en långsiktigt hållbar skuldsättning genom en samordnad politik som syftar till att, när så är lämpligt, främja skuldfinansiering, skuldlättnad och skuldomstrukturering samt åtgärda kraftigt skuldtyngda fattiga länders utlandsskuld för att minska skuldbördan."
+          target_17_5:
+            title: "Anta och genomföra investeringsfrämjande regleringar för de minst utvecklade länderna."
+          target_17_6:
+            title: "Stärka nord–syd-samarbetet, syd–syd-samarbetet och det regionala och internationella trepartssamarbetet kring och tillgången till vetenskap, teknik och innovation samt öka kunskapsutbytet på gemensamt överenskomna villkor, inklusive genom förbättrad samordning mellan befintliga mekanismer, i synnerhet på FN-nivå, och genom en global mekanism för teknikfrämjande."
+          target_17_7:
+            title: "Främja utveckling, överföring och spridning av miljövänlig teknik till utvecklingsländerna på gynnsamma villkor, inklusive koncessions- och förmånsvillkor, på villkor som överenskommits mellan parterna."
+          target_17_8:
+            title: "Senast 2017 fullt ut operationalisera teknikbanken och mekanismen för kapacitetsuppbyggnad inom vetenskap, teknik och innovation för de minst utvecklade länderna samt öka användningen av möjliggörande teknik, i synnerhet informations- och kommunikationsteknik."
+          target_17_9:
+            title: "Öka det internationella stödet för genomförande av effektiv och riktad kapacitetsuppbyggnad i utvecklingsländerna till stöd för nationella planer för att genomföra alla Globala mål för hållbar utveckling, bland annat genom samarbete nord–syd och syd–syd samt trepartssamarbete."
+          target_17_10:
+            title: "Främja ett universellt, regelbaserat, öppet, icke-diskriminerande och rättvist multilateralt handelssystem inom ramen för Världshandelsorganisationen, bland annat genom att slutföra förhandlingarna enligt organisationens utvecklingsagenda från Doha."
+          target_17_11:
+            title: "Avsevärt öka utvecklingsländernas export, i synnerhet i syfte att fördubbla de minst utvecklade ländernas andel av den globala exporten till 2020."
           target_17_12:
             title: "Tidigt genomförande av tull- och kvotfritt marknadstillträde på varaktig grund för alla de minst utvecklade länderna, i överensstämmelse med beslut från Världshandelsorganisationen, bland annat genom att säkerställa att förmånliga ursprungsregler som gäller för import från de minst utvecklade länderna är transparenta och enkla, och bidrar till att underlätta marknadstillträde."
+          target_17_13:
+            title: "Öka den makroekonomiska stabiliteten i världen, bland annat genom politisk samordning och samstämmig politik."
           target_17_14:
             title: "Föra en mer samstämmig politik för hållbar utveckling."
           target_17_15:
