@@ -74,9 +74,23 @@ sv:
         title_in_two_lines: "Ekosystem\npå land"
         description: "Hantera skogen hållbart, bekämpa ökenspridning, stoppa och återställa landdegradering och stoppa förlusten av biologisk mångfald."
       goal_17:
+        title_in_two_lines: "Genomförande och\nglobalt partnerskap"
+        description: "Återvitalisera det globala partnerskapet för hållbar utveckling."
         targets:
           target_17_12:
             title: "Tidigt genomförande av tull- och kvotfritt marknadstillträde på varaktig grund för alla de minst utvecklade länderna, i överensstämmelse med beslut från Världshandelsorganisationen, bland annat genom att säkerställa att förmånliga ursprungsregler som gäller för import från de minst utvecklade länderna är transparenta och enkla, och bidrar till att underlätta marknadstillträde."
+          target_17_14:
+            title: "Föra en mer samstämmig politik för hållbar utveckling."
+          target_17_15:
+            title: "Respektera varje lands politiska handlingsutrymme och ledarskap att fastställa och genomföra politik för fattigdomsutrotning och hållbar utveckling."
+          target_17_16:
+            title: "Stärka det globala partnerskapet för hållbar utveckling och komplettera det med partnerskap mellan flera parter som mobiliserar och utbyter kunskap, expertis, teknik och finansiella resurser, för att bidra till att målen för hållbar utveckling nås i alla länder, i synnerhet utvecklingsländer."
+          target_17_17:
+            title: "Uppmuntra och främja effektiva offentliga och offentlig-privata partnerskap samt partnerskap inom det civila samhället som bygger på erfarenheterna från andra partnerskap och deras finansieringsstrategier."
+          target_17_18:
+            title: "Till 2020 öka stödet för kapacitetsuppbyggnad till utvecklingsländerna, inklusive de minst utvecklade länderna och små önationer under utveckling, för att avsevärt öka tillgången på aktuella och tillförlitliga uppgifter av hög kvalitet, uppdelade efter inkomst, kön, ålder, ras, etnicitet, migrationsstatus, funktionsnedsättning, geografisk plats och andra nationellt relevanta aspekter."
+          target_17_19:
+            title: "Till 2030 bygga vidare på befintliga initiativ för att utveckla mått på framsteg som görs mot hållbar utveckling som kompletterar BNP samt stödja uppbyggnad av statistisk kapacitet i utvecklingsländerna."
       help:
         title: "Globala målen för hållbar utveckling, hjälp"
         description: "Du kan anpassa dina bidrag till gemenskapen (debatter, medborgarförslag och budgetförslag) runt den hållbara 2030-agendan med hållbar utveckling som mål, så att vi får överblick över vårt bidrag till varje mål för hållbar utveckling. Nedan hittar du mer information om alla mål, deras delmål och lokala delmål."
@@ -88,6 +102,7 @@ sv:
       title: "Globala målen för hållbar utveckling"
       filter:
         heading: "Filter för Globala målen"
+        link: "Se alla %{resources} kopplade till målet %{code}"
         more:
           one: "Ett mål till"
           other: "%{count} mål till"
@@ -97,6 +112,7 @@ sv:
       help:
         title: "Vilka globala mål och delmål är i linje med min/mitt %{record}?"
         text: "SDG-hjälpsida"
+      hint: Du kan ange koden för ett visst mål/delmål eller en text för att hitta ett. Mer information finns på %{link}.
       placeholder: "Skriv en kod eller beskrivning för ett mål eller delmål"
       remove_tag: "Ta bort"
       title: "Globala mål och delmål för hållbar utveckling"
