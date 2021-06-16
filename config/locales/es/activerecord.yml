@@ -500,7 +500,7 @@ es:
         user: Ejecutado por
       link:
         label: Título
-        url: Enlace
+        url: URL
       valuator:
         description: Descripción
         valuator_group_id: Grupo de evaluación

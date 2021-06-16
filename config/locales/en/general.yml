@@ -952,8 +952,6 @@ en:
       title: Links
       note: Add the links that are of interest
       add_new_link: Add new link
-    link_fields:
-      url_placeholder: Link address
   communities:
     show:
       surveys: Surveys

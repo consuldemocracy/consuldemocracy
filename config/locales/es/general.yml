@@ -952,8 +952,6 @@ es:
       title: Enlaces
       note: Añade los enlaces que sean de interés.
       add_new_link: Añadir nuevo enlace
-    link_fields:
-      url_placeholder: Dirección del enlace
   communities:
     show:
       surveys: Encuestas
