@@ -48,6 +48,8 @@ sv:
         title_in_two_lines: "God hälsa och\nvälbefinnande"
         description: "Säkerställa hälsosamma liv och främja välbefinnande för alla i alla åldrar."
         targets:
+          target_3_1:
+            title: "Till 2030 minska mödradödligheten i världen till mindre än 70 dödsfall per 100 000 förlossningar med levande barn."
           target_3_6:
             title: "Till 2020 halvera antalet dödsfall och skador i trafikolyckor i världen."
           target_3_7:
