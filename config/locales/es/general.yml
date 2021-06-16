@@ -5,10 +5,7 @@ es:
       erase_account_link: Darme de baja
       finish_verification: Finalizar verificación
       notifications: Notificaciones
-      organization_name_label: Nombre de la organización
-      organization_responsible_name_placeholder: Representante de la asociación/colectivo
       personal: Datos personales
-      phone_number_label: Teléfono
       public_interests_my_title_list: Etiquetas de los elementos que sigues
       public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
       save_changes_submit: Guardar cambios
@@ -22,7 +19,6 @@ es:
       user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_votes: Participar en las votaciones finales*
-      username_label: Nombre de usuario
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
   application:
@@ -93,7 +89,6 @@ es:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
-      debate_title: Título del debate
       tags_instructions: Etiqueta este debate.
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
@@ -958,7 +953,6 @@ es:
       note: Añade los enlaces que sean de interés.
       add_new_link: Añadir nuevo enlace
     link_fields:
-      label_placeholder: Título del enlace
       url_placeholder: Dirección del enlace
   communities:
     show:

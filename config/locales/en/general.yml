@@ -5,10 +5,7 @@ en:
       erase_account_link: Erase my account
       finish_verification: Complete verification
       notifications: Notifications
-      organization_name_label: Name of organization
-      organization_responsible_name_placeholder: Representative of the organization/collective
       personal: Personal details
-      phone_number_label: Phone number
       public_interests_my_title_list: Tags of elements you follow
       public_interests_user_title_list: Tags of elements this user follows
       save_changes_submit: Save changes
@@ -22,7 +19,6 @@ en:
       user_permission_verify: To perform all the actions verify your account.
       user_permission_verify_info: "* Only for users on Census."
       user_permission_votes: Participate on final voting
-      username_label: Username
       verified_account: Account verified
       verify_my_account: Verify my account
   application:
@@ -93,7 +89,6 @@ en:
         submit_button: Save changes
       show_link: View debate
     form:
-      debate_title: Debate title
       tags_instructions: Tag this debate.
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
@@ -958,7 +953,6 @@ en:
       note: Add the links that are of interest
       add_new_link: Add new link
     link_fields:
-      label_placeholder: Link title
       url_placeholder: Link address
   communities:
     show:

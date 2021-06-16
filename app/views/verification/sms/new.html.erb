@@ -30,7 +30,6 @@
         <span class="inline-block"><%= sanitize(t("verification.sms.new.phone_format")) %></span>
         <p class="help-text" id="phone-text-help"><%= t("verification.sms.new.phone_note") %></p>
         <%= f.text_field :phone, label: false,
-                                 placeholder: t("verification.sms.new.phone_placeholder"),
                                  aria: { describedby: "phone-help-text" } %>
       </div>
 

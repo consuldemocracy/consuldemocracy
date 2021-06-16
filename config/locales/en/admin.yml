@@ -571,10 +571,6 @@ en:
           allegations_phase: Comments phase
           proposals_phase: Proposals phase
           use_markdown: Use Markdown to format the text
-          title_placeholder: The title of the process
-          summary_placeholder: Short summary of the description
-          description_placeholder: Add a description of the process
-          additional_info_placeholder: Add an additional information you consider useful
           homepage_description: Here you can explain the content of the process
           banner_title: Header colors
         index:
@@ -647,9 +643,7 @@ en:
             status:
               draft: You can preview as admin, no one else can see it
               published: Visible for everybody
-          title_placeholder: Write the title of the draft version
           changelog_placeholder: Add the main changes from the previous version
-          body_placeholder: Write down the draft text
         index:
           title: Draft versions
           create: Create version
@@ -680,7 +674,6 @@ en:
           submit_button: Save changes
         form:
           add_option: Add option
-          title_placeholder: Add question
           value_placeholder: Add a closed answer
           question_options: "Possible answers (optional, by default open answers)"
         index:
