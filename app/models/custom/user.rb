@@ -28,6 +28,10 @@ class User < ApplicationRecord
     !organization? && !erased?
   end
 
+  def hasNationalId?
+    return document_number.present?
+  end
+
   # Queremos evitar que podamos autenticarnos como usuarios de participacion
   # externos... que la clave es una de mentira...
   def self.find_for_database_authentication(warden_conditions)
