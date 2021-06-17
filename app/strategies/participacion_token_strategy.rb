@@ -14,8 +14,8 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
       # Tenemos una política de reemplazo un poco compleja, primero buscamos por el nationalId
       # (siempre y cuando este validado) luego por el email y luego por el participacion_id...
       # el objetivo es evitar tener duplicados con el mismo dni o email
-      if(eu.nationalId.present? && eu.validated)
-        u = User.find_by(document_number: eu.nationalId)
+      if(eu.national_id.present? && eu.validated)
+        u = User.find_by(document_number: eu.national_id)
       end
       if(u == nil)
         if (eu.email != nil)
@@ -55,9 +55,9 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
           u.organization=nil
           hasChanges = true
         end
-        if(eu.nationalId.present? && eu.validated && !u.hasNationalId?)
-          u.document_number = eu.nationalId
-          u.document_type = getDocumentType(eu.nationalId)
+        if(eu.national_id.present? && eu.validated && !u.hasNationalId?)
+          u.document_number = eu.national_id
+          u.document_type = getDocumentType(eu.national_id)
           hasChanges = true
         end
         u.save! if(hasChanges)
@@ -80,9 +80,9 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
             u.verified_at = DateTime.current
         end
 
-        if(eu.nationalId != nil)
-          u.document_number = eu.nationalId
-          u.document_type = getDocumentType(eu.nationalId)
+        if(eu.national_id != nil)
+          u.document_number = eu.national_id
+          u.document_type = getDocumentType(eu.national_id)
         end
 
         # Podemos no tener email de los usuarios que provienen del sistema externo,
