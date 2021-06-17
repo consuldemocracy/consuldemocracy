@@ -261,6 +261,28 @@ sv:
       goal_12:
         title: "Hållbar konsumtion och produktion"
         title_in_two_lines: "Hållbar konsumtion\noch produktion"
+        description: "Säkerställa hållbara konsumtions- och produktionsmönster."
+        targets:
+          target_12_1:
+            title: "Genomföra det tioåriga ramverket för hållbara konsumtions- och produktionsmönster. Alla länder vidtar åtgärder, med de utvecklade länderna i täten och med hänsyn tagen till utvecklingsländernas utveckling och förutsättningar."
+          target_12_2:
+            title: "Senast 2030 uppnå en hållbar förvaltning och ett effektivt nyttjande av naturresurser."
+          target_12_3:
+            title: "Till 2030, halvera det globala matsvinnet per person i butik- och konsumentledet, och minska matsvinnet längs hela livsmedelskedjan, även förlusterna efter skörd."
+          target_12_4:
+            title: "Senast 2020 uppnå miljövänlig hantering av kemikalier och alla typer av avfall under hela deras livscykel, i enlighet med överenskomna internationella ramverk, samt avsevärt minska utsläppen av dem i luft, vatten och mark i syfte att minimera deras negativa konsekvenser för människors hälsa och miljön."
+          target_12_5:
+            title: "Till 2030 väsentligt minska mängden avfall genom åtgärder för att förebygga, minska, återanvända och återvinna avfall."
+          target_12_6:
+            title: "Uppmuntra företag, särskilt stora och multinationella företag, att införa hållbara metoder och att integrera hållbarhetsinformation i sin rapporteringscykel."
+          target_12_7:
+            title: "Främja hållbara offentliga upphandlingsmetoder, i enlighet med respektive lands politik och prioriteringar."
+          target_12_8:
+            title: "Senast 2030 säkerställa att människor överallt har den information och medvetenhet som behövs för en hållbar utveckling och livsstilar i harmoni med naturen."
+          target_12_A:
+            title: "Stödja utvecklingsländerna att stärka sin vetenskapliga och tekniska kapacitet att utvecklas i riktning mot mer hållbara konsumtions- och produktionsmönster."
+          target_12_B:
+            title: "Utveckla och implementera verktyg för att övervaka hur en hållbar utveckling påverkar en hållbar turism på ett sätt som skapar arbetstillfällen och främjar lokal kultur och lokala produkter."
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
