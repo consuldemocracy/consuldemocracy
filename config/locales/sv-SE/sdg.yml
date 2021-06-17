@@ -236,6 +236,24 @@ sv:
       goal_11:
         title: "Hållbara städer och samhällen"
         title_in_two_lines: "Hållbara städer\noch samhällen"
+        description: "Göra städer allomfattande, säkra, motståndskraftiga och hållbara."
+        targets:
+          target_11_1:
+            title: "Senast 2030 säkerställa tillgång för alla till fullgoda, säkra och ekonomiskt överkomliga bostäder och grundläggande tjänster samt rusta upp slumområden."
+          target_11_2:
+            title: "Senast 2030 tillhandahålla tillgång till säkra, ekonomiskt överkomliga, tillgängliga och hållbara transportsystem för alla. Förbättra trafiksäkerheten, särskilt genom att bygga ut kollektivtrafiken, med särskild uppmärksamhet på behoven hos människor i utsatta situationer, kvinnor, barn, personer med funktionsnedsättning samt äldre personer."
+          target_11_3:
+            title: "Till 2030 verka för en allomfattande och hållbar urbanisering samt förbättra kapaciteten för deltagandebaserad, integrerad och hållbar planering och förvaltning av bosättningar i alla länder."
+          target_11_4:
+            title: "Stärka insatserna för att skydda och trygga världens kultur- och naturarv."
+          target_11_5:
+            title: "Till 2030 väsentligt minska antalet dödsfall och antalet människor som drabbas av katastrofer, bland annat vattenrelaterade katastrofer. Även tillse att de direkta ekonomiska förlusterna till följd av sådana katastrofer, i form av lägre global BNP, minskar väsentligt. Särskilt fokus bör ligga på att skydda de fattiga och människor i utsatta situationer."
+          target_11_6:
+            title: "Till 2030 minska städernas negativa miljöpåverkan per person, bland annat genom att ägna särskild uppmärksamhet åt luftkvalitet samt hantering av kommunalt och annat avfall."
+          target_11_7:
+            title: "Senast 2030 tillhandahålla universell tillgång till säkra, allomfattande och tillgängliga grönområden och offentliga platser, i synnerhet för kvinnor och barn, äldre personer och personer med funktionsnedsättning."
+          target_11_A:
+            title: "Främja positiva ekonomiska, sociala och miljömässiga kopplingar mellan stadsområden, stadsnära områden och landsbygdsområden genom att stärka den nationella och regionala utvecklingsplaneringen."
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
