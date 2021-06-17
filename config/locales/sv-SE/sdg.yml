@@ -283,6 +283,8 @@ sv:
             title: "Stödja utvecklingsländerna att stärka sin vetenskapliga och tekniska kapacitet att utvecklas i riktning mot mer hållbara konsumtions- och produktionsmönster."
           target_12_B:
             title: "Utveckla och implementera verktyg för att övervaka hur en hållbar utveckling påverkar en hållbar turism på ett sätt som skapar arbetstillfällen och främjar lokal kultur och lokala produkter."
+          target_12_C:
+            title: "Rationalisera ineffektiva subventioner av fossila bränslen som uppmuntrar till slösaktig konsumtion genom att undanröja snedvridningar på marknaden, i enlighet med nationella förhållanden. Detta kan till exempel omfatta att omstrukturera beskattningen och avveckla eventuella skadliga subventioner för att avspegla deras effekter på miljön. En sådan politik måste ta full hänsyn till utvecklingsländernas särskilda behov och förhållanden och minimera eventuella negativa effekter på deras utveckling på ett sätt som skyddar de fattiga och de berörda samhällena."
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
@@ -295,6 +297,10 @@ sv:
         description: "Hantera skogen hållbart, bekämpa ökenspridning, stoppa och återställa landdegradering och stoppa förlusten av biologisk mångfald."
       goal_16:
         targets:
+          target_16_5:
+            title: "Väsentligt minska alla former av korruption och mutor."
+          target_16_6:
+            title: "Bygga upp effektiva och transparenta institutioner med ansvarsutkrävande på alla nivåer."
           target_16_9:
             title: "Senast 2030 tillhandahålla juridisk identitet för alla, inklusive födelseregistrering."
           target_16_10:
