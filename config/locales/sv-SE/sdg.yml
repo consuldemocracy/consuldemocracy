@@ -288,6 +288,12 @@ sv:
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
+        description: "Vidta omedelbara åtgärder för att bekämpa klimatförändringarna och dess konsekvenser."
+        targets:
+          target_13_1:
+            title: "Stärka motståndskraften mot, och förmågan till anpassning till, klimatrelaterade faror och naturkatastrofer i alla länder."
+          target_13_2:
+            title: "Integrera klimatåtgärder i politik, strategier och planering på nationell nivå."
       goal_14:
         title: "Hav och marina resurser"
         title_in_two_lines: "Hav och\nmarina resurser"
