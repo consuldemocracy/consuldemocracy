@@ -162,6 +162,9 @@ sv:
         title: "Anständiga arbetsvillkor och ekonomisk tillväxt"
         title_in_two_lines: "Anständiga arbetsvillkor och\nekonomisk tillväxt"
         description: "Verka för allomfattande och hållbar ekonomisk tillväxt, och sysselsättning med anständiga arbetsvillkor för alla."
+        targets:
+          target_8_1:
+            title: "Upprätthålla ekonomisk tillväxt per capita i enlighet med nationella förhållanden och i synnerhet en BNP-tillväxt på minst 7 procent per år i de minst utvecklade länderna."
       goal_9:
         title: "Hållbar industri, innovationer och infrastruktur"
         title_in_two_lines: "Hållbar industri, innovationer\noch infrastruktur"
