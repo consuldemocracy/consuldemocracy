@@ -157,7 +157,7 @@ sv:
           target_7_A:
             title: "Till 2030 stärka det internationella samarbetet för att underlätta tillgång till forskning och teknik inom ren energi, inklusive förnybar energi, energieffektivitet samt avancerad och renare fossilbränslebaserad teknik, samt främja investeringar i energiinfrastruktur och ren energiteknik."
           target_7_B:
-            title: "Till 2030 bygga ut infrastrukturen och uppgradera tekniken för att leverera moderna och hållbara energitjänster till alla i utvecklingsländerna, i synnerhet de minst utvecklade länderna, små önationer under utveckling och utvecklingsländer utan kust, i enlighet med deras respektive stödprogram."
+            title: "Till 2030 bygga ut infrastrukturen och uppgradera tekniken för att leverera moderna och hållbara energitjänster till alla i utvecklingsländerna, i synnerhet de minst utvecklade länderna, små önationer under utveckling och kustlösa utvecklingsländer, i enlighet med deras respektive stödprogram."
       goal_8:
         title: "Anständiga arbetsvillkor och ekonomisk tillväxt"
         title_in_two_lines: "Anständiga arbetsvillkor och\nekonomisk tillväxt"
@@ -206,6 +206,8 @@ sv:
             title: "Främja utbyggnad av hållbar och motståndskraftig infrastruktur i utvecklingsländerna genom ökat finansiellt, teknologiskt och tekniskt stöd till afrikanska länder, de minst utvecklade länderna, kustlösa utvecklingsländer och små önationer under utveckling."
           target_9_B:
             title: "Stödja inhemsk teknikutveckling, forskning och innovation i utvecklingsländerna, bland annat genom att säkerställa en gynnsam policymiljö för exempelvis industriell diversifiering och förädling av råvaror."
+          target_9_C:
+            title: "Väsentligt öka tillgången till informations- och kommunikationsteknik samt eftersträva allmän och ekonomiskt överkomlig tillgång till internet i de minst utvecklade länderna senast 2020."
       goal_10:
         title: "Minska ojämlikheter"
         title_in_two_lines: "Minska\nojämlikheter"
