@@ -1,0 +1,88 @@
+<% if @heading.present? %>
+  <section class="no-margin-top margin-bottom">
+    <div class="expanded jumbo-budget budget-heading padding">
+
+      <div class="row">
+        <div class="small-12 column">
+          <%= back_link_to budget_path(@budget) %>
+			<% if !@already_locked %>
+				<% if can? :show, @ballot %>
+					<%= link_to t("budgets.investments.header.check_ballot"),
+							budget_ballot_path(@budget),
+							class: "button hollow float-right" %>
+				<% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row progress-votes">
+        <div class="small-12 column">
+		  <% if !@already_locked %>
+          <% if can? :show, @ballot %>
+			<% if !@already_locked %>
+				<div id="check-ballot" style="display: none;">
+				  <%= link_to t("budgets.investments.header.check_ballot"),
+							  budget_ballot_path(@budget) %>
+				</div>
+			<% end %>
+            <% if @ballot.valid_heading?(@heading) %>
+              <div class="progress-bar-nav">
+                <h2>
+                  <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                </h2>
+                <div id="progress_bar" class="no-margin-top">
+                  <%= render "budgets/ballot/progress_bar" %>
+                </div>
+              </div>
+            <% else %>
+              <h2>
+                <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+              </h2>
+              <div class="small-12 medium-9">
+                <div class="callout warning margin-top">
+                  <%= sanitize(t("budgets.investments.header.different_heading_assigned",
+                        heading_link: heading_link(@assigned_heading, @budget))) %>
+                  <br>
+                  <small>
+                    <%= sanitize(t("budgets.investments.header.change_ballot",
+                        check_ballot: link_to(t("budgets.investments.header.check_ballot_link"),
+                                      budget_ballot_path(@budget)))) %>
+                  </small>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <h2 class="margin-top">
+              <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+            </h2>
+            <h3>
+              <span class="tagline"><%= t("budgets.investments.header.price") %></span>
+              <%= @budget.formatted_heading_price(@heading) %>
+            </h3>
+          <% end %>
+		  <% else %>
+            <h2 class="margin-top">
+              <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+            </h2>
+            <h3>
+              <span class="tagline"><%= t("budgets.investments.header.price") %></span>
+              <%= @budget.formatted_heading_price(@heading) %>
+            </h3>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+<% else %>
+  <div class="expanded jumbo-budget padding no-margin-top margin-bottom">
+    <div class="row">
+      <div class="small-12 column">
+        <%= back_link_to budget_path(@budget) %>
+
+        <h2 class="margin-top">
+          <%= t("budgets.investments.index.title") %>
+        </h2>
+      </div>
+    </div>
+  </div>
+<% end %>
