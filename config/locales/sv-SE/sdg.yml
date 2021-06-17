@@ -78,6 +78,11 @@ sv:
         title: "God utbildning"
         title_in_two_lines: "God\nutbildning"
         description: "God utbildning."
+        targets:
+          target_4_1:
+            title: "Senast 2030 säkerställa att alla flickor och pojkar fullbordar avgiftsfri och likvärdig grundskole- och gymnasieutbildning av god kvalitet som leder till relevanta och ändamålsenliga kunskaper."
+          target_4_2:
+            title: "Senast 2030 säkerställa att alla flickor och pojkar har tillgång till förskola av god kvalitet som ger omvårdnad och förbereder dem för att börja grundskolan."
       goal_5:
         title: "Jämställdhet"
         title_in_two_lines: "Jäm-\nställdhet"
