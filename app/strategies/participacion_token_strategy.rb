@@ -11,14 +11,24 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
     eu = ExternalUser.get(token)
     # Deberíamos localizar el usuario por email y si no existe.. es cuando lo crearíamos
     if(eu)
-      # No podemos tener emails duplicados en consul, asi que buscamos primero por el email,
-      # si es que la cuenta externa tiene email, si no lo tiene intentamos buscar por
-      # el id de participación que ese seguro si lo tenemos; y sino creamos la cuenta
-      if(eu.email != nil)
-        u = User.find_by(email: eu.email)
-      else
-        u = User.find_by(participacion_id: eu.participacion_id)
+      # Tenemos una política de reemplazo un poco compleja, primero buscamos por el nationalId
+      # (siempre y cuando este validado) luego por el email y luego por el participacion_id...
+      # el objetivo es evitar tener duplicados con el mismo dni o email
+      if(eu.nationalId.present? && eu.validated)
+        u = User.find_by(document_number: eu.nationalId)
       end
+      if(u == nil)
+        if (eu.email != nil)
+          u = User.find_by(email: eu.email)
+        else
+          u = User.find_by(participacion_id: eu.participacion_id)
+        end
+      else
+        # Nos aseguramos de tener el mismo dato de email que el que teníamos, para
+        # evitar problemas.
+        eu.email = u.email
+      end
+
 
       if(u)
         u.participacion_id = eu.participacion_id
@@ -45,6 +55,11 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
           u.organization=nil
           hasChanges = true
         end
+        if(eu.nationalId.present? && eu.validated && !u.hasNationalId?)
+          u.document_number = eu.nationalId
+          u.document_type = getDocumentType(eu.nationalId)
+          hasChanges = true
+        end
         u.save! if(hasChanges)
       else
         u = User.new(
@@ -63,6 +78,11 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
 
         if(eu.validated)
             u.verified_at = DateTime.current
+        end
+
+        if(eu.nationalId != nil)
+          u.document_number = eu.nationalId
+          u.document_type = getDocumentType(eu.nationalId)
         end
 
         # Podemos no tener email de los usuarios que provienen del sistema externo,
@@ -90,6 +110,14 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
         responsible_name: eu.fullname
      )
    end
+
+  def getDocumentType(document)
+    # NIE
+    return "3" if document.upcase!.starts_with?('X') || document.upcase!.starts_with?('T')
+    # NIF, 7 caraceteres, 8 o 9 (dependiendo )
+    return "1" if document.length().between? 7,9
+    return "2"
+  end
 
   def token
       t = params['authToken']
