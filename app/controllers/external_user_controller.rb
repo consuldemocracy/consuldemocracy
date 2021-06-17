@@ -14,6 +14,7 @@ class ExternalUserController < ApplicationController
     end
     uuid = SecureRandom.hex
     eu = ExternalUser.new(uuid:uuid, participacion_id: params[:userId], fullname: params[:fullname],email:params[:email],validated:params[:validated],organization:params[:association])
+    eu.nationalId = params[:nationalId] if params[:nationalId].present? && params[:validated].present?
     ## Almacenamos de forma persistente... seria mejor con un IPC; pero.
     eu.save!
 
