@@ -94,6 +94,7 @@ es:
             one: "<strong>Has votado un proyecto por un valor de %{amount_spent}</strong>"
             other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
           voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+          locked_internet_info: Solo puede votar de forma presencial.
           voted_info_link: cambiar tus votos
           different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
