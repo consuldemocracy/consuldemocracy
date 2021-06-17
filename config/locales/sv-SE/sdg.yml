@@ -191,6 +191,9 @@ sv:
         title: "Hållbar industri, innovationer och infrastruktur"
         title_in_two_lines: "Hållbar industri, innovationer\noch infrastruktur"
         description: "Bygga motståndskraftig infrastruktur, verka för en hållbar industrialisering samt främja innovation."
+        targets:
+          target_9_1:
+            title: "Bygga ut tillförlitlig, hållbar och motståndskraftig infrastruktur av hög kvalitet, bland annat regional och gränsöverskridande infrastruktur, för att stödja ekonomisk utveckling och människors välbefinnande, med fokus på ekonomiskt överkomlig och rättvis tillgång för alla."
       goal_10:
         title: "Minska ojämlikheter"
         title_in_two_lines: "Minska\nojämlikheter"
