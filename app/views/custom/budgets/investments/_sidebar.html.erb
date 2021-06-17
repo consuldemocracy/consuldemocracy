@@ -12,12 +12,16 @@
   <% end %>
 <% end %>
 
-<% if @heading && can?(:show, @ballot) %>
+<% if @heading && !@already_locked && can?(:show, @ballot) %>
   <p class="callout">
     <%= sanitize(t("budgets.investments.index.sidebar.voted_info",
         link: link_to(t("budgets.investments.index.sidebar.voted_info_link"),
             budget_ballot_path(@budget)))) %>
   </p>
+ <% elsif @already_locked %> 
+	<p class="callout">
+		<%= sanitize(t("budgets.investments.index.sidebar.locked_internet_info")) %>
+	</p>
 <% end %>
 
 <% if @heading && !@heading.content_blocks.where(locale: I18n.locale).empty? %>
@@ -29,7 +33,7 @@
 <%= render "shared/tag_cloud", taggable: "budget/investment" %>
 <%= render "budgets/investments/categories" %>
 
-<% if @heading && can?(:show, @ballot) %>
+<% if @heading && !@already_locked && can?(:show, @ballot) %>
 
   <div class="sidebar-divider"></div>
 

@@ -26,7 +26,7 @@
         <%= render "/budgets/investments/author_actions", investment: investment %>
 
         <% if investment.should_show_aside? %>
-          <% if investment.should_show_votes? %>
+          <% if investment.should_show_votes? && !@already_locked %>
             <div class="sidebar-divider"></div>
             <h2><%= t("budgets.investments.show.supports") %></h2>
             <div class="text-center">
@@ -38,7 +38,7 @@
                 %>
               </div>
             </div>
-          <% elsif investment.should_show_vote_count? %>
+          <% elsif investment.should_show_vote_count? && !@already_locked  %>
             <div class="sidebar-divider"></div>
             <h2><%= t("budgets.investments.show.supports") %></h2>
             <div class="text-center">
@@ -49,7 +49,7 @@
                 </strong>
               </span>
             </div>
-          <% elsif investment.should_show_ballots? %>
+          <% elsif investment.should_show_ballots? && !@already_locked  %>
             <div class="sidebar-divider"></div>
             <h2><%= t("budgets.investments.show.votes") %></h2>
             <div class="text-center">
