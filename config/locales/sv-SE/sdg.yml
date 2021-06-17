@@ -165,6 +165,26 @@ sv:
         targets:
           target_8_1:
             title: "Upprätthålla ekonomisk tillväxt per capita i enlighet med nationella förhållanden och i synnerhet en BNP-tillväxt på minst 7 procent per år i de minst utvecklade länderna."
+          target_8_2:
+            title: "Uppnå högre ekonomisk produktivitet genom diversifiering, teknisk uppgradering och innovation, bland annat genom att fokusera på sektorer med högt förädlingsvärde och hög arbetsintensitet."
+          target_8_3:
+            title: "Främja utvecklingsinriktad politik som stödjer produktiv verksamhet, skapande av anständiga arbetstillfällen, företagande, kreativitet och innovation samt uppmuntra att mikroföretag liksom små och medelstora företag växer och blir en del av den formella ekonomin, bland annat genom tillgång till finansiella tjänster."
+          target_8_4:
+            title: "Fram till 2030 successivt förbättra den globala resurseffektiviteten i konsumtionen och produktionen samt sträva efter att bryta sambandet mellan ekonomisk tillväxt och miljöförstöring, i enlighet med det tioåriga ramverket för hållbar konsumtion och produktion, med de utvecklade länderna i täten."
+          target_8_5:
+            title: "Senast 2030 uppnå full och produktiv sysselsättning med anständiga arbetsvillkor för alla kvinnor och män, inklusive ungdomar och personer med funktionsnedsättning, samt lika lön för likvärdigt arbete."
+          target_8_6:
+            title: "Till 2020 väsentligt minska den andel ungdomar som varken arbetar, studerar eller praktiserar."
+          target_8_7:
+            title: "Vidta omedelbara och effektiva åtgärder för att avskaffa tvångsarbete, modernt slaveri och människohandel och säkerställa att de värsta formerna av barnarbete, även rekrytering och användning av barnsoldater, förbjuds och upphör. Avskaffa alla former av barnarbete senast 2025."
+          target_8_8:
+            title: "Skydda arbetstagarnas rättigheter och främja en trygg och säker arbetsmiljö för alla arbetstagare, även arbetskraftsinvandrare, i synnerhet kvinnliga migranter, och människor i otrygga anställningar."
+          target_8_9:
+            title: "Senast 2030 utarbeta och genomföra politik för hållbar turism som skapar arbetstillfällen och främjar lokal kultur och lokala produkter"
+          target_8_10:
+            title: "Stärka de inhemska finansinstitutens kapacitet att främja och utöka tillgången till bank- och försäkringstjänster samt finansiella tjänster för alla."
+          target_8_A:
+            title: "Öka det handelsrelaterade stödet (Aid for Trade) till utvecklingsländerna, i synnerhet de minst utvecklade länderna, bland annat genom det förstärkta integrerade ramverket för handelsrelaterat tekniskt bistånd till de minst utvecklade länderna (Enhanced Integrated Framework for Trade-Related Technical Assistance to Least Developed Countries)."
       goal_9:
         title: "Hållbar industri, innovationer och infrastruktur"
         title_in_two_lines: "Hållbar industri, innovationer\noch infrastruktur"
