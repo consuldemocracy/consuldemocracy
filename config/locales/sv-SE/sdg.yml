@@ -212,6 +212,17 @@ sv:
         title: "Minska ojämlikheter"
         title_in_two_lines: "Minska\nojämlikheter"
         description: "Minska ojämlikheter inom och mellan länder."
+        targets:
+          target_10_1:
+            title: "Till 2030 successivt uppnå och upprätthålla en inkomsttillväxt högre än det nationella genomsnittet för de 40 procent av befolkningen som har lägst inkomst."
+          target_10_2:
+            title: "Till 2030 möjliggöra och verka för att alla människor, oavsett ålder, kön, funktionsnedsättning, ras, etnicitet, ursprung, religion eller ekonomisk eller annan ställning, omfattas i det sociala, ekonomiska och politiska livet."
+          target_10_3:
+            title: "Säkerställa lika möjligheter och minska förekomsten av ojämlika utfall, bland annat genom att avskaffa diskriminerande lagstiftning, politik och praxis och främja lagstiftning, politik och åtgärder av lämpligt slag i detta hänseende."
+          target_10_4:
+            title: "Besluta om politik, särskilt finans-, löne- och socialskyddspolitik, och successivt uppnå ökad jämlikhet."
+          target_10_5:
+            title: "Förbättra regleringen och övervakningen av globala finansmarknader och finansinstitut samt stärka genomförandet av sådana regleringar."
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
