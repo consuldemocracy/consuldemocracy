@@ -129,6 +129,18 @@ sv:
         targets:
           target_6_1:
             title: "Senast 2030 uppnå allmän och rättvis tillgång till säkert och ekonomiskt överkomligt dricksvatten för alla."
+          target_6_2:
+            title: "Senast 2030 säkerställa att alla har tillgång till fullgod och rättvis sanitet och hygien och att ingen behöver uträtta sina behov utomhus. Särskild uppmärksamhet bör ägnas åt behoven hos kvinnor och flickor samt människor i utsatta situationer."
+          target_6_3:
+            title: "Till 2030 förbättra vattenkvaliteten genom att minska föroreningar, stoppa dumpning och minimera utsläpp av farliga kemikalier och material, halvera andelen obehandlat avloppsvatten och väsentligt öka återvinningen och en säker återanvändning globalt."
+          target_6_4:
+            title: "Till 2030 väsentligt effektivisera vattenanvändningen inom alla sektorer samt säkerställa hållbara uttag och en hållbar försörjning med sötvatten för att angripa vattenbristen och väsentligt minska det antal människor som lider av vattenbrist."
+          target_6_5:
+            title: "Senast 2030 genomföra en integrerad förvaltning av vattenresurser på alla nivåer, när så är lämpligt genom gränsöverskridande samarbete."
+          target_6_6:
+            title: "Senast 2020 skydda och återställa de vattenrelaterade ekosystemen, däribland berg, skogar, våtmarker, floder, akviferer och sjöar."
+          target_6_A:
+            title: "Till 2030 utöka det internationella samarbetet och stödet för kapacitetsuppbyggnad till utvecklingsländerna inom vatten- och sanitetsrelaterade verksamheter och program, bland annat genom teknik för vatteninsamling, avsaltning, vatteneffektivitet, rening av avloppsvatten, återvinning och återanvändning."
       goal_7:
         title: "Överkomlig och ren energi"
         title_in_two_lines: "Överkomlig och\nren energi"
