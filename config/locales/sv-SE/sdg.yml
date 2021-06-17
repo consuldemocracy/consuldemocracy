@@ -83,10 +83,31 @@ sv:
             title: "Senast 2030 säkerställa att alla flickor och pojkar fullbordar avgiftsfri och likvärdig grundskole- och gymnasieutbildning av god kvalitet som leder till relevanta och ändamålsenliga kunskaper."
           target_4_2:
             title: "Senast 2030 säkerställa att alla flickor och pojkar har tillgång till förskola av god kvalitet som ger omvårdnad och förbereder dem för att börja grundskolan."
+          target_4_3:
+            title: "Senast 2030 säkerställa att alla kvinnor och män har lika tillgång till yrkesutbildning och eftergymnasial utbildning, inklusive högskoleutbildning, av god kvalitet till en överkomlig kostnad."
+          target_4_4:
+            title: "Till 2030 väsentligen öka det antal ungdomar och vuxna som har relevanta färdigheter, däribland tekniska färdigheter och yrkeskunnande, för sysselsättning, anständigt arbete och entreprenörskap."
+          target_4_5:
+            title: "Senast 2030 avskaffa skillnaderna mellan könen inom utbildningsområdet och säkerställa lika tillgång till utbildning och yrkesutbildning på alla nivåer för utsatta personer, inklusive personer med funktionsnedsättning, ursprungsfolk och barn som lever under utsatta förhållanden."
+          target_4_6:
+            title: "Senast 2030 säkerställa att alla ungdomar och en väsentlig andel av alla vuxna – både män och kvinnor – lär sig läsa, skriva och räkna."
+          target_4_7:
+            title: "Senast 2030 säkerställa att alla studerande får de kunskaper och färdigheter som behövs för att främja en hållbar utveckling, bland annat genom utbildning för hållbar utveckling och hållbara livsstilar, mänskliga rättigheter, jämställdhet, främjande av en kultur av fred, icke-våld och globalt medborgarskap samt värdesättande av kulturell mångfald och kulturens bidrag till hållbar utveckling."
+          target_4_A:
+            title: "Bygga och förbättra utbildningsmiljöer som är anpassade för barn och personer med funktionsnedsättning, samt tar hänsyn till jämställdhetsaspekter och därmed erbjuder en trygg, fredlig, allomfattande och ändamålsenlig lärandemiljö för alla."
+          target_4_B:
+            title: "Till 2020 väsentligen öka antalet stipendier i världen som kan sökas av personer från utvecklingsländer, i synnerhet de minst utvecklade länderna, små önationer under utveckling och afrikanska länder, för studier inom högre utbildning, inklusive yrkesutbildning samt informations- och kommunikationstekniska, tekniska, ingenjörsvetenskapliga och naturvetenskapliga program, i utvecklade länder och andra utvecklingsländer."
+          target_4_C:
+            title: "Till 2030 väsentligen öka tillgången på utbildade lärare, bland annat genom internationellt samarbete kring lärarutbildning i utvecklingsländerna, särskilt de minst utvecklade länderna och små önationer under utveckling."
       goal_5:
         title: "Jämställdhet"
         title_in_two_lines: "Jäm-\nställdhet"
         description: "Uppnå jämställdhet och alla kvinnors och flickors egenmakt."
+        targets:
+          target_5_1:
+            title: "Avskaffa alla former av diskriminering av alla kvinnor och flickor överallt."
+          target_5_2:
+            title: "Avskaffa alla former av våld mot alla kvinnor och flickor i det offentliga och privata rummet, inklusive människohandel, sexuellt utnyttjande och andra typer av exploatering."
       goal_6:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
