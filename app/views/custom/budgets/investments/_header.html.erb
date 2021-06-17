@@ -5,22 +5,26 @@
       <div class="row">
         <div class="small-12 column">
           <%= back_link_to budget_path(@budget) %>
-
-          <% if can? :show, @ballot %>
-            <%= link_to t("budgets.investments.header.check_ballot"),
-                        budget_ballot_path(@budget),
-                        class: "button hollow float-right" %>
+			<% if !@already_locked %>
+				<% if can? :show, @ballot %>
+					<%= link_to t("budgets.investments.header.check_ballot"),
+							budget_ballot_path(@budget),
+							class: "button hollow float-right" %>
+				<% end %>
           <% end %>
         </div>
       </div>
 
       <div class="row progress-votes">
         <div class="small-12 column">
+		  <% if !@already_locked %>
           <% if can? :show, @ballot %>
-            <div id="check-ballot" style="display: none;">
-              <%= link_to t("budgets.investments.header.check_ballot"),
-                          budget_ballot_path(@budget) %>
-            </div>
+			<% if !@already_locked %>
+				<div id="check-ballot" style="display: none;">
+				  <%= link_to t("budgets.investments.header.check_ballot"),
+							  budget_ballot_path(@budget) %>
+				</div>
+			<% end %>
             <% if @ballot.valid_heading?(@heading) %>
               <div class="progress-bar-nav">
                 <h2>
@@ -48,6 +52,15 @@
               </div>
             <% end %>
           <% else %>
+            <h2 class="margin-top">
+              <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+            </h2>
+            <h3>
+              <span class="tagline"><%= t("budgets.investments.header.price") %></span>
+              <%= @budget.formatted_heading_price(@heading) %>
+            </h3>
+          <% end %>
+		  <% else %>
             <h2 class="margin-top">
               <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
             </h2>
