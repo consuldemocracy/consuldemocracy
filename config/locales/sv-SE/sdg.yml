@@ -108,6 +108,20 @@ sv:
             title: "Avskaffa alla former av diskriminering av alla kvinnor och flickor överallt."
           target_5_2:
             title: "Avskaffa alla former av våld mot alla kvinnor och flickor i det offentliga och privata rummet, inklusive människohandel, sexuellt utnyttjande och andra typer av exploatering."
+          target_5_3:
+            title: "Avskaffa alla skadliga sedvänjor, såsom barnäktenskap, tidiga äktenskap och tvångsäktenskap samt kvinnlig könsstympning."
+          target_5_4:
+            title: "Erkänna och värdesätta obetalt omsorgs- och hushållsarbete genom att tillhandahålla offentliga tjänster, infrastruktur och socialt skydd samt genom att främja delat ansvar inom hushållet och familjen, i enlighet med vad som är nationellt lämpligt."
+          target_5_5:
+            title: "Tillförsäkra kvinnor fullt och faktiskt deltagande och lika möjligheter till ledarskap på alla beslutsnivåer i det politiska, ekonomiska och offentliga livet."
+          target_5_6:
+            title: "Säkerställa allmän tillgång till sexuell och reproduktiv hälsa och reproduktiva rättigheter i enlighet med överenskommelserna i handlingsprogrammet från den internationella konferensen om befolkning och utveckling, Pekingplattformen samt slutdokumenten från respektive översynskonferenser."
+          target_5_A:
+            title: "Genomföra reformer för att ge kvinnor lika rätt till ekonomiska resurser, möjlighet att äga och kontrollera mark och andra former av egendom samt tillgång till finansiella tjänster, arv och naturresurser, i enlighet med nationell lagstiftning."
+          target_5_B:
+            title: "Öka användningen av möjliggörande teknik, i synnerhet informations- och kommunikationsteknik, för att främja kvinnors egenmakt."
+          target_5_C:
+            title: "Anta och stärka välgrundad politik och genomförbar lagstiftning för att främja jämställdhet och öka alla kvinnors och flickors egenmakt på alla nivåer."
       goal_6:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
