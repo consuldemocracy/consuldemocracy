@@ -36,12 +36,12 @@ describe "Admin feature flags", :admin do
 
     visit budget_path(budget)
 
-    expect(page).to have_content "Internal server error"
+    expect(page).to have_title "Forbidden"
 
     visit admin_budgets_path
 
     expect(page).to have_current_path admin_budgets_path
-    expect(page).to have_content "Internal server error"
+    expect(page).to have_title "Forbidden"
   end
 
   scenario "Enable a disabled participatory process" do
