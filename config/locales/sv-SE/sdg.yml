@@ -194,6 +194,18 @@ sv:
         targets:
           target_9_1:
             title: "Bygga ut tillförlitlig, hållbar och motståndskraftig infrastruktur av hög kvalitet, bland annat regional och gränsöverskridande infrastruktur, för att stödja ekonomisk utveckling och människors välbefinnande, med fokus på ekonomiskt överkomlig och rättvis tillgång för alla."
+          target_9_2:
+            title: "Verka för en inkluderande och hållbar industrialisering. Till 2030 avsevärt öka industrins andel av sysselsättning och BNP, i enlighet med nationella förhållanden, och fördubbla denna andel i de minst utvecklade länderna."
+          target_9_3:
+            title: "Öka tillgången för småskaliga industriföretag och andra företag, i synnerhet i utvecklingsländerna, till finansiella tjänster, bland annat överkomliga krediter, samt deras integrering i värdekedjor och marknader."
+          target_9_4:
+            title: "Till 2030 rusta upp infrastrukturen och anpassa industrin för att göra dem hållbara, med effektivare resursanvändning och fler rena och miljövänliga tekniker och industriprocesser. Alla länder vidtar åtgärder i enlighet med sina respektive förutsättningar."
+          target_9_5:
+            title: "Förbättra den vetenskapliga forskningen och industrisektorernas tekniska kapacitet i alla länder, i synnerhet utvecklingsländerna, bland annat genom att till 2030 uppmuntra innovation och väsentligt öka det antal personer som arbetar med forskning och utveckling per 1 miljon människor liksom de offentliga och privata utgifterna för forskning och utveckling."
+          target_9_A:
+            title: "Främja utbyggnad av hållbar och motståndskraftig infrastruktur i utvecklingsländerna genom ökat finansiellt, teknologiskt och tekniskt stöd till afrikanska länder, de minst utvecklade länderna, kustlösa utvecklingsländer och små önationer under utveckling."
+          target_9_B:
+            title: "Stödja inhemsk teknikutveckling, forskning och innovation i utvecklingsländerna, bland annat genom att säkerställa en gynnsam policymiljö för exempelvis industriell diversifiering och förädling av råvaror."
       goal_10:
         title: "Minska ojämlikheter"
         title_in_two_lines: "Minska\nojämlikheter"
