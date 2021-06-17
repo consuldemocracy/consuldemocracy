@@ -102,6 +102,7 @@ es:
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
           create: "Crear proyecto de gasto"
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in}."
+          ballot_not_logged_in: "Para votar debes %{sign_in}."
           by_feasibility: Por viabilidad
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables

@@ -67,6 +67,16 @@
             <% end %>
           <% end %>
 
+          <%# Incluimos el boton de firmar cuando estamos en votacion final %>
+          <% if current_budget.balloting?%>
+            <% unless current_user %>
+              <div class="callout primary margin-top">
+                <%= sanitize(t("budgets.investments.index.sidebar.ballot_not_logged_in",
+                               sign_in: link_to_signin, sign_up: link_to_signup)) %>
+              </div>
+            <% end %>
+          <% end %>
+
           <% if can?(:read_results, current_budget) %>
             <%= link_to t("budgets.show.see_results"),
                         budget_results_path(current_budget, heading_id: current_budget.headings.first),

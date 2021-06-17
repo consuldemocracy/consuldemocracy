@@ -109,4 +109,7 @@ Rails.application.configure do
 
   # targetOrigin para los pushmessage cuando se embebe como iframe
   config.participacion_push_target_origin = Rails.application.secrets.participacion_push_target_origin
+
+  # El source del iframe que tenemos
+  config.participacion_iframe_source = Rails.application.secrets.participacion_iframe_source
 end

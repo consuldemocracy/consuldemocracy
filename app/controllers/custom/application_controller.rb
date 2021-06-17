@@ -9,6 +9,19 @@ class ApplicationController < ActionController::Base
     end
   end
   private
+    # Sobrecargamos el método del ApplicationController principal, para
+    # introducir como location actual no el path, sino el request.fullpath
+    # a fin de garantizar que no se pierden los parametros de la URL
+    # de vuelta
+    # Detectado al acceder a los presupuestos de un año, al salir el botón
+    # firmar llevaba de vuelta a la página global de los presupuestos y no
+    # al del presupuesto activo
+    def set_return_url
+      if !devise_controller? && controller_name != "welcome" && is_navigational_format?
+        store_location_for(:user, request.fullpath)
+      end
+    end
+
     def check_iframe
       if params[:iframed]
         session[:iframed] = true
