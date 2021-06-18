@@ -7,7 +7,7 @@ class SDG::Goals::IconComponent < ApplicationComponent
   end
 
   def image_path
-    "sdg/#{folder}/goal_#{code}.png"
+    "sdg/#{locale}/goal_#{code}.png"
   end
 
   private
@@ -16,9 +16,9 @@ class SDG::Goals::IconComponent < ApplicationComponent
       goal.code_and_title
     end
 
-    def folder
-      [*I18n.fallbacks[I18n.locale], "default"].find do |locale|
-        AssetFinder.find_asset("sdg/#{locale}/goal_#{code}.png")
+    def locale
+      [*I18n.fallbacks[I18n.locale], "default"].find do |fallback|
+        AssetFinder.find_asset("sdg/#{fallback}/goal_#{code}.png")
       end
     end
 end
