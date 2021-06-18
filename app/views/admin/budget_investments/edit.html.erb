@@ -133,8 +133,9 @@
           title: t("admin.budget_investments.edit.compatibility") %>
       </div>
       <% end %>
-      <div class="small-12 medium-3 column float-left">
+      <div class="small-12 medium-6 column float-left">
         <h2 id="selected"><%= t("admin.budget_investments.edit.selection") %></h2>
+		<p class="help-text" id="tag-list-help-text"><%= t("admin.budget_investments.edit.selection_help") %></p>
         <%= f.check_box :selected,
           title: t("admin.budget_investments.edit.selection") %>
       </div>

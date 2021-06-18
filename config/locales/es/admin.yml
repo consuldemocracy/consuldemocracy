@@ -251,6 +251,7 @@ es:
         classification: Clasificación
         compatibility: Compatibilidad
         selection: Selección
+        selection_help: Al seleccionar el proyecto de gasto como seleccionado se mandará un correo al propietario del mismo
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
