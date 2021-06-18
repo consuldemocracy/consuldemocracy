@@ -1353,6 +1353,7 @@ de:
       example_url: "https://consulproject.org"
       show_results_and_stats: "Ergebnisse und Statistiken anzeigen"
       results_and_stats_reminder: "Durch das Markieren dieses Kontrollkästchens werden die Resultate und/oder Statistiken dieser Abstimmung öffentlich abrufbar und für alle Benutzer*innen sichtbar."
+      close_modal: Fenster schließen
     geozones:
       index:
         title: Bezirke
