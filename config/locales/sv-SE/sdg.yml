@@ -303,6 +303,14 @@ sv:
       goal_14:
         title: "Hav och marina resurser"
         title_in_two_lines: "Hav och\nmarina resurser"
+        description: "Bevara och nyttja haven och de marina resurserna på ett hållbart sätt."
+        targets:
+          target_14_1:
+            title: "Till 2025 förebygga och avsevärt minska alla slags föroreningar i havet, i synnerhet från landbaserad verksamhet, inklusive marint skräp och tillförsel av näringsämnen."
+          target_14_2:
+            title: "Senast 2020 förvalta och skydda marina och kustnära ekosystem på ett hållbart sätt för att undvika betydande negativa konsekvenser, bland annat genom att stärka deras motståndskraft, samt vidta åtgärder för att återställa dem i syfte att uppnå friska och produktiva hav."
+          target_14_3:
+            title: "Minimera och åtgärda havsförsurningens konsekvenser, bland annat genom ökat vetenskapligt samarbete på alla nivåer."
       goal_15:
         title: "Ekosystem på land"
         title_in_two_lines: "Ekosystem\npå land"
