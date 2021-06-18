@@ -329,6 +329,31 @@ sv:
         title: "Ekosystem på land"
         title_in_two_lines: "Ekosystem\npå land"
         description: "Hantera skogen hållbart, bekämpa ökenspridning, stoppa och återställa landdegradering och stoppa förlusten av biologisk mångfald."
+        targets:
+          target_15_1:
+            title: "Till 2020 bevara, återställa och hållbart använda ekosystem på land och i sötvatten och deras ekosystemtjänster, särskilt skogar, våtmarker, berg och torra områden, i enlighet med de skyldigheter som anges i internationella överenskommelser."
+          target_15_2:
+            title: "Till 2020 främja genomförandet av hållbart brukande av alla typer av skogar, stoppa avskogningen, återställa utarmade skogar och kraftigt öka nybeskogningen och återbeskogningen i hela världen."
+          target_15_3:
+            title: "Till 2030 bekämpa ökenspridning, återställa förstörd mark och jord, inklusive mark som drabbats av ökenspridning, torka och översvämningar, samt sträva efter att uppnå en värld utan nettoförstöring av mark."
+          target_15_4:
+            title: "Senast 2030 säkerställa att bevara bergsekosystemen, inklusive deras biologiska mångfald, i syfte att öka deras förmåga att producera nytta som behövs för en hållbar utveckling."
+          target_15_5:
+            title: "Vidta omedelbara och betydande åtgärder för att minska förstörelsen av naturliga livsmiljöer, hejda förlusten av biologisk mångfald och senast 2020 skydda och förebygga utrotning av hotade arter."
+          target_15_6:
+            title: "Främja en rimlig och rättvis fördelning av den nytta som uppstår vid användning av genetiska resurser samt lämpligt tillträde till sådana resurser, i enlighet med internationella avtal."
+          target_15_7:
+            title: "Vidta omedelbara åtgärder för att stoppa tjuvjakt på och handel med skyddade djur- och växtarter och inrikta åtgärderna på både utbudet av och efterfrågan på olagliga produkter från vilda djur och växter."
+          target_15_8:
+            title: "Senast 2020 införa åtgärder för att förhindra införseln av invasiva främmande arter och avsevärt minska deras påverkan på land- och vattenekosystem samt kontrollera eller utrota prioriterade arter."
+          target_15_9:
+            title: "Senast 2020 integrera ekosystemens och den biologiska mångfaldens värden i nationella och lokala planerings- och utvecklingsprocesser, strategier för fattigdomsminskning samt räkenskaper."
+          target_15_A:
+            title: "Mobilisera och väsentligt öka de finansiella resurserna från alla källor för att bevara och hållbart nyttja den biologiska mångfalden och ekosystemen."
+          target_15_B:
+            title: "Mobilisera betydande resurser från alla källor och på alla nivåer för att finansiera hållbart brukande av skogar och ge utvecklingsländerna lämpliga incitament att utveckla sådant brukande, för bland annat bevarande och återbeskogning."
+          target_15_C:
+            title: "Öka det globala stödet till insatser för att bekämpa tjuvjakt på och illegal handel med skyddade arter, bland annat genom att öka möjligheterna till en hållbar försörjning i lokalsamhällena."
       goal_16:
         targets:
           target_16_5:
