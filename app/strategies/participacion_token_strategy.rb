@@ -16,17 +16,16 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
       # el objetivo es evitar tener duplicados con el mismo dni o email
       if(eu.national_id.present? && eu.validated)
         u = User.find_by(document_number: eu.national_id)
+        Rails.logger.debug "participacion_token_strategy: Verificando el #{eu.national_id}"
+        Rails.logger.debug "El usuario localizado es  #{u}"
       end
+      # Intentamos localizar el usuario por medios alternativos.
       if(u == nil)
         if (eu.email != nil)
           u = User.find_by(email: eu.email)
         else
           u = User.find_by(participacion_id: eu.participacion_id)
         end
-      else
-        # Nos aseguramos de tener el mismo dato de email que el que teníamos, para
-        # evitar problemas.
-        eu.email = u.email
       end
 
 
