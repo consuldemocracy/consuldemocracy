@@ -112,8 +112,9 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
    end
 
   def getDocumentType(document)
+    Rails.logger.debug "getDocumentType evaluando... #{document}"
     # NIE
-    return "3" if document.upcase!.starts_with?('X') || document.upcase!.starts_with?('T')
+    return "3" if document.upcase.starts_with?('X') || document.upcase.starts_with?('Y') || document.upcase.starts_with?('Z')
     # NIF, 7 caraceteres, 8 o 9 (dependiendo )
     return "1" if document.length().between? 7,9
     return "2"
