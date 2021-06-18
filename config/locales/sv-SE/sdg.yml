@@ -355,7 +355,18 @@ sv:
           target_15_C:
             title: "Öka det globala stödet till insatser för att bekämpa tjuvjakt på och illegal handel med skyddade arter, bland annat genom att öka möjligheterna till en hållbar försörjning i lokalsamhällena."
       goal_16:
+        title: "Fred, rättvisa och starka institutioner"
+        title_in_two_lines: "Fred, rättvisa och\nstarka institutioner"
+        description: "Främja rättvisa, fredliga och inkluderande samhällen."
         targets:
+          target_16_1:
+            title: "Avsevärt minska alla former av våld och dödligt våld överallt."
+          target_16_2:
+            title: "Eliminera övergrepp, utnyttjande, människohandel och alla former av våld eller tortyr mot barn."
+          target_16_3:
+            title: "Främja rättssäkerheten på nationell och internationell nivå samt säkerställa lika tillgång till rättvisa för alla."
+          target_16_4:
+            title: "Till 2030 avsevärt minska de olagliga finansiella flödena och vapenflödena, öka möjligheterna att återvinna och återfå stulna tillgångar samt bekämpa alla former av organiserad brottslighet."
           target_16_5:
             title: "Väsentligt minska alla former av korruption och mutor."
           target_16_6:
