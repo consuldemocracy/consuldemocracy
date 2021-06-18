@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201005064927) do
+ActiveRecord::Schema.define(version: 20210617075928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -594,6 +594,7 @@ ActiveRecord::Schema.define(version: 20201005064927) do
     t.datetime "updated_at",                   null: false
     t.boolean  "organization"
     t.integer  "participacion_id"
+    t.string   "national_id"
     t.index ["uuid"], name: "index_external_users_on_uuid", unique: true, using: :btree
   end
 
