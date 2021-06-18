@@ -172,7 +172,14 @@ de:
         confirm_group:
           one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
           other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
+        remove_support: "Unterstützung zurückziehen"
+        remove_support_label: "Unterstützung für %{investment} zurückziehen"
         support: "Unterstützung"
+        support_label: "%{investment} unterstützen"
+    investments_list:
+      investment:
+        price: "Preis"
+        read_more: "Weiterlesen"
     show:
       see_results: Ergebnisse anzeigen
     results:
