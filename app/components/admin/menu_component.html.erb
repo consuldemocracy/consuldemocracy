@@ -126,4 +126,9 @@
       class: ("is-active" if dashboard?)
     ) %>
   </li>
+  <% if ::MachineLearning.enabled? %>
+    <li class="<%= "is-active" if controller_name == "machine_learning" %>">
+      <%= link_to t("admin.menu.machine_learning"), admin_machine_learning_path, class: "ml-link" %>
+    </li>
+  <% end %>
 </ul>
