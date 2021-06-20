@@ -13,11 +13,11 @@ class Images::FieldsComponent < ApplicationComponent
       f.object
     end
 
-    def image_attachment_file_name
+    def file_name
       image.attachment_file_name
     end
 
-    def render_destroy_image_link
+    def destroy_link
       if !image.persisted? && image.cached_attachment.present?
         link_to t("images.form.delete_button"),
           direct_upload_destroy_path(
@@ -34,25 +34,25 @@ class Images::FieldsComponent < ApplicationComponent
       end
     end
 
-    def render_image_attachment
+    def file_field
       klass = image.persisted? || image.cached_attachment.present? ? " hide" : ""
       f.file_field :attachment,
         label_options: { class: "button hollow #{klass}" },
-        accept: imageable_accepted_content_types_extensions,
+        accept: accepted_content_types_extensions,
         class: "js-image-attachment",
         data: {
-          url: image_direct_upload_path,
+          url: direct_upload_path,
           nested_image: true
         }
     end
 
-    def image_direct_upload_path
+    def direct_upload_path
       direct_uploads_path("direct_upload[resource_type]": imageable.class.name,
                           "direct_upload[resource_id]": imageable.id,
                           "direct_upload[resource_relation]": "image")
     end
 
-    def imageable_accepted_content_types_extensions
+    def accepted_content_types_extensions
       Setting.accepted_content_types_for("images").map do |content_type|
         if content_type == "jpg"
           ".jpg,.jpeg"

@@ -9,15 +9,15 @@
 
   <div class="small-12 column attachment-actions">
     <div class="small-9 column action-add attachment-errors document-attachment">
-      <%= render_attachment %>
+      <%= file_field %>
     </div>
     <div class="small-3 column action-remove text-right">
-      <%= render_destroy_document_link %>
+      <%= destroy_link %>
     </div>
   </div>
 
   <div class="small-6 column">
-    <p class="file-name"><%= document_attachment_file_name %></p>
+    <p class="file-name"><%= file_name %></p>
   </div>
 
   <div class="small-12 column">
