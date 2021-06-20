@@ -11,16 +11,6 @@ module ImageablesHelper
     Setting["uploads.images.content_types"]&.split(" ") || ["image/jpeg"]
   end
 
-  def imageable_accepted_content_types_extensions
-    Setting.accepted_content_types_for("images").map do |content_type|
-      if content_type == "jpg"
-        ".jpg,.jpeg"
-      else
-        ".#{content_type}"
-      end
-    end.join(",")
-  end
-
   def imageable_humanized_accepted_content_types
     Setting.accepted_content_types_for("images").join(", ")
   end

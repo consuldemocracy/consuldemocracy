@@ -5,7 +5,7 @@
 
 <div id="nested-image">
   <%= f.fields_for image_fields do |image_builder| %>
-    <%= render "images/image_fields", f: image_builder, imageable: imageable %>
+    <%= render Images::FieldsComponent.new(image_builder, imageable: imageable) %>
   <% end %>
 </div>
 
