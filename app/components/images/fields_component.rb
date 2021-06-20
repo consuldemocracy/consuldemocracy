@@ -9,11 +9,15 @@ class Images::FieldsComponent < ApplicationComponent
 
   private
 
-    def image_attachment_file_name(image)
+    def image
+      f.object
+    end
+
+    def image_attachment_file_name
       image.attachment_file_name
     end
 
-    def render_destroy_image_link(image)
+    def render_destroy_image_link
       if !image.persisted? && image.cached_attachment.present?
         link_to t("images.form.delete_button"),
           direct_upload_destroy_path(
@@ -30,7 +34,7 @@ class Images::FieldsComponent < ApplicationComponent
       end
     end
 
-    def render_image_attachment(image)
+    def render_image_attachment
       klass = image.persisted? || image.cached_attachment.present? ? " hide" : ""
       f.file_field :attachment,
         label_options: { class: "button hollow #{klass}" },
