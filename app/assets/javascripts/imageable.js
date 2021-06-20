@@ -92,7 +92,6 @@
     },
     clearFilename: function(data) {
       $(data.fileNameContainer).text("");
-      $(data.fileNameContainer).hide();
     },
     clearInputErrors: function(data) {
       $(data.errorContainer).find("small.error").remove();
@@ -105,7 +104,6 @@
     },
     setFilename: function(data, file_name) {
       $(data.fileNameContainer).text(file_name);
-      $(data.fileNameContainer).show();
     },
     setProgressBar: function(data, klass) {
       $(data.progressBar).find(".loading-bar").addClass(klass);

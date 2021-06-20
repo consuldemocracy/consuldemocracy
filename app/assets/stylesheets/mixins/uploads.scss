@@ -42,6 +42,10 @@
 
   .file-name {
     margin-top: 0;
+
+    &:empty {
+      display: none;
+    }
   }
 
   .loading-bar {
