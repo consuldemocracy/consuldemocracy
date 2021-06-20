@@ -27,7 +27,7 @@
     <div class="column">
       <%= f.date_field :publication_date %>
 
-      <%= render "images/admin_image", imageable: @milestone, f: f %>
+      <%= render "images/nested_image", imageable: @milestone, f: f %>
 
       <div class="documents">
         <%= render "documents/nested_documents", documentable: @milestone, f: f %>
