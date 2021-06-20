@@ -3,10 +3,6 @@ module DocumentsHelper
     document.attachment_file_name
   end
 
-  def document_errors_on_attachment(document)
-    document.errors[:attachment].join(", ") if document.errors.key?(:attachment)
-  end
-
   def render_destroy_document_link(builder, document)
     if !document.persisted? && document.cached_attachment.present?
       link_to t("documents.form.delete_button"),

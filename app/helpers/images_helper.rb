@@ -13,10 +13,6 @@ module ImagesHelper
     image.attachment_file_name
   end
 
-  def image_errors_on_attachment(image)
-    image.errors[:attachment].join(", ") if image.errors.key?(:attachment)
-  end
-
   def image_class(image)
     image.persisted? ? "persisted-image" : "cached-image"
   end
