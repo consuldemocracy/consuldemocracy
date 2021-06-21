@@ -33,6 +33,10 @@
   @include normal-selection;
 }
 
+html {
+  font-size: calc(0.25em + Max(0.75em, 0.75vw));
+}
+
 html,
 body {
   height: 100%;
