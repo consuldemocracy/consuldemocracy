@@ -32,10 +32,19 @@ class ParticipacionTokenStrategy < Warden::Strategies::Base
       if(u)
         u.participacion_id = eu.participacion_id
         hasChanges = false
-        if(eu.fullname[0..60] != u.username)
-          u.username = eu.fullname[0..60]
-          hasChanges = true
-        end
+        # Comentamose ste código a 21/06/2021, con el planteamiento de localizar
+        # el DNI puede haber usuarios duplicados (el que recuperamos por DNI) y el
+        # de código - u otro - al intentar setear el nombre del usuario al DNI como
+        # este ya existía se produce una violación de índice único
+        #
+        # Realmente hay un conflicto en CONSUL, el username no debería tener un
+        # índice de unicidad, como workaround temporal deshabilitamos esto. Es
+        # importante tenerlo a fin de que el usuario cuando firma vea su nombre
+        # real, pero es la opción más rápida y menos mala.
+        #if(eu.fullname[0..60] != u.username)
+        #  u.username = eu.fullname[0..60]
+        #  hasChanges = true
+        #end
         if(eu.validated && !u.level_three_verified?)
           u.verified_at = DateTime.current
           hasChanges = true
