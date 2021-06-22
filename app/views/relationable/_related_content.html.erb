@@ -11,7 +11,9 @@
     <% end %>
   </div>
 
-  <%= render "relationable/form", relationable: relationable %>
+  <% if current_user %>
+    <%= render "relationable/form", relationable: relationable %>
+  <% end %>
 
   <% if @related_contents.present? %>
     <%= render "relationable/related_list", relationable: relationable %>
