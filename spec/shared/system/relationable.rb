@@ -30,7 +30,7 @@ shared_examples "relationable" do |relationable_model_name|
 
     expect(page).not_to have_selector("#related_content")
 
-    click_on("Add related content")
+    click_button "Add related content"
 
     within("#related_content") do
       fill_in "url", with: "#{url + related1.url}"
@@ -47,7 +47,7 @@ shared_examples "relationable" do |relationable_model_name|
       expect(page).to have_content(relationable.title)
     end
 
-    click_on("Add related content")
+    click_button "Add related content"
 
     within("#related_content") do
       fill_in "url", with: "#{url + related2.url}"
@@ -63,7 +63,7 @@ shared_examples "relationable" do |relationable_model_name|
     login_as(user)
     visit relationable.url
 
-    click_on("Add related content")
+    click_button "Add related content"
 
     within("#related_content") do
       fill_in "url", with: "http://invalidurl.com"
@@ -77,7 +77,7 @@ shared_examples "relationable" do |relationable_model_name|
     login_as(user)
     visit relationable.url
 
-    click_on("Add related content")
+    click_button "Add related content"
 
     within("#related_content") do
       fill_in "url", with: url + relationable.url.to_s

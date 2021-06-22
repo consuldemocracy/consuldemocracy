@@ -5,11 +5,9 @@
       <%= t("related_content.title") %>&nbsp;<span>(<%= relationable.relationed_contents.count %>)</span>
     </h2>
     <% if current_user %>
-      <a>
-        <button type="button" data-toggle="related_content" class="add-related-content" id="add-related-content">
-          <%= t("related_content.add") %>
-        </button>
-      </a>
+      <button type="button" data-toggle="related_content" class="add-related-content" id="add-related-content">
+        <%= t("related_content.add") %>
+      </button>
     <% end %>
   </div>
 
