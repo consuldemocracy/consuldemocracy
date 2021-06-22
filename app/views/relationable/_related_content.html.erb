@@ -1,15 +1,8 @@
 <div class="related-content padding">
 
-  <div class="margin-bottom">
-    <h2 class="inline-block">
-      <%= t("related_content.title") %>&nbsp;<span>(<%= relationable.relationed_contents.count %>)</span>
-    </h2>
-    <% if current_user %>
-      <button type="button" data-toggle="related_content" class="add-related-content">
-        <%= t("related_content.add") %>
-      </button>
-    <% end %>
-  </div>
+  <h2 class="inline-block">
+    <%= t("related_content.title") %>&nbsp;<span>(<%= relationable.relationed_contents.count %>)</span>
+  </h2>
 
   <% if current_user %>
     <%= render "relationable/form", relationable: relationable %>

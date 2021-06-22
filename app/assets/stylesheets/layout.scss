@@ -2462,6 +2462,7 @@ table {
 
 .add-related-content {
   display: block;
+  margin-bottom: $line-height;
 
   @include breakpoint(medium) {
     float: right;
