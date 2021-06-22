@@ -29,8 +29,11 @@ shared_examples "relationable" do |relationable_model_name|
     visit relationable.url
 
     expect(page).not_to have_css "#related_content"
+    expect(page).to have_css ".add-related-content[aria-expanded='false']"
 
     click_button "Add related content"
+
+    expect(page).to have_css ".add-related-content[aria-expanded='true']"
 
     within("#related_content") do
       fill_in "url", with: "#{url + related1.url}"

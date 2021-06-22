@@ -2467,6 +2467,10 @@ table {
   @include breakpoint(medium) {
     float: right;
   }
+
+  &[aria-expanded="false"] + form {
+    display: none;
+  }
 }
 
 .related-content-list {
