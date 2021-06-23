@@ -4,18 +4,20 @@ class RelatedContentsController < ApplicationController
   respond_to :html, :js
 
   def create
-    if relationable_object && related_object
-      if relationable_object != related_object
-        RelatedContent.create!(parent_relationable: @relationable, child_relationable: @related, author: current_user)
+    related_content = RelatedContent.new(
+      parent_relationable: relationable_object,
+      child_relationable: related_object,
+      author: current_user
+    )
 
-        flash[:success] = t("related_content.success")
-      else
-        flash[:error] = t("related_content.error_itself")
-      end
+    if related_content.save
+      flash[:success] = t("related_content.success")
+    elsif related_content.same_parent_and_child?
+      flash[:error] = t("related_content.error_itself")
     else
       flash[:error] = t("related_content.error", url: Setting["url"])
     end
-    redirect_to polymorphic_path(@relationable)
+    redirect_to polymorphic_path(relationable_object)
   end
 
   def score_positive
@@ -40,7 +42,7 @@ class RelatedContentsController < ApplicationController
     end
 
     def relationable_object
-      @relationable = params[:relationable_klass].singularize.camelize.constantize.find_by(id: params[:relationable_id])
+      @relationable ||= params[:relationable_klass].singularize.camelize.constantize.find_by(id: params[:relationable_id])
     end
 
     def related_object
@@ -51,7 +53,7 @@ class RelatedContentsController < ApplicationController
                            .flatten.map { |i| i.to_s.singularize.camelize }.join("::")
         related_id = url.match(/\/(\d+)(?!.*\/\d)/)[1]
 
-        @related = related_klass.singularize.camelize.constantize.find_by(id: related_id)
+        related_klass.singularize.camelize.constantize.find_by(id: related_id)
       end
     rescue
       nil

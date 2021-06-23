@@ -25,6 +25,14 @@ describe RelatedContent do
     expect(new_related_content).not_to be_valid
   end
 
+  it "does not allow relating a content to itself" do
+    related_content = build(:related_content,
+                            parent_relationable: parent_relationable,
+                            child_relationable: parent_relationable)
+
+    expect(related_content).not_to be_valid
+  end
+
   describe "create_opposite_related_content" do
     let(:parent_relationable) { create(:proposal) }
     let(:child_relationable) { create(:debate) }
