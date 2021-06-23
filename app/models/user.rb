@@ -74,6 +74,7 @@ class User < ApplicationRecord
     class_name:  "Poll::Recount",
     foreign_key: :author_id,
     inverse_of:  :author
+  has_many :related_contents, foreign_key: :author_id, inverse_of: :author, dependent: nil
   has_many :topics, foreign_key: :author_id, inverse_of: :author
   belongs_to :geozone
 

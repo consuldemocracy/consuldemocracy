@@ -4,10 +4,10 @@ class RelatedContentsController < ApplicationController
   respond_to :html, :js
 
   def create
-    related_content = RelatedContent.new(
-      parent_relationable: relationable_object,
-      child_relationable: related_object,
-      author: current_user
+    related_content = current_user.related_contents.new(
+      parent_relationable_id: params[:relationable_id],
+      parent_relationable_type: params[:relationable_klass],
+      child_relationable: related_object
     )
 
     if related_content.save
@@ -17,7 +17,7 @@ class RelatedContentsController < ApplicationController
     else
       flash[:error] = t("related_content.error", url: Setting["url"])
     end
-    redirect_to polymorphic_path(relationable_object)
+    redirect_to polymorphic_path(related_content.parent_relationable)
   end
 
   def score_positive
@@ -39,10 +39,6 @@ class RelatedContentsController < ApplicationController
 
     def valid_url?
       params[:url].start_with?(Setting["url"])
-    end
-
-    def relationable_object
-      @relationable ||= params[:relationable_klass].singularize.camelize.constantize.find_by(id: params[:relationable_id])
     end
 
     def related_object

@@ -3,9 +3,10 @@ require "rails_helper"
 describe RelatedContent do
   let(:parent_relationable) { create([:proposal, :debate].sample) }
   let(:child_relationable) { create([:proposal, :debate].sample) }
+  let(:related_content) { build(:related_content) }
 
   it "is valid" do
-    expect(build(:related_content)).to be_valid
+    expect(related_content).to be_valid
   end
 
   it "allows relationables from various classes" do
@@ -31,6 +32,28 @@ describe RelatedContent do
                             child_relationable: parent_relationable)
 
     expect(related_content).not_to be_valid
+  end
+
+  it "is not valid with an invalid parent relationable type" do
+    related_content.parent_relationable_type = "NotARealModel"
+
+    expect { related_content.valid? }.to raise_exception "uninitialized constant NotARealModel"
+  end
+
+  it "is not valid with parent relationable ID of a non-existent record" do
+    related_content.parent_relationable_id = related_content.parent_relationable.class.last.id + 1
+
+    expect(related_content).not_to be_valid
+  end
+
+  it "is not valid with an invalid child relationable type" do
+    related_content.child_relationable_type = "NotARealModel"
+
+    expect { related_content.valid? }.to raise_exception "uninitialized constant NotARealModel"
+  end
+
+  it "is not valid with child relationable ID of a non-existent record" do
+    related_content.child_relationable_id = related_content.child_relationable.class.last.id + 1
   end
 
   describe "create_opposite_related_content" do
