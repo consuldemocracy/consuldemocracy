@@ -2491,21 +2491,12 @@ table {
     @include breakpoint(medium) {
 
       .score-actions {
-        display: none;
         float: right;
       }
     }
 
     &:first-child {
       border-top: 1px solid $border;
-    }
-
-    &:hover {
-      background: #f9f9f9;
-
-      .score-actions {
-        display: block;
-      }
     }
   }
 

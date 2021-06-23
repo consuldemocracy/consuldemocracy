@@ -97,9 +97,10 @@ shared_examples "relationable" do |relationable_model_name|
     visit relationable.url
 
     within("#related-content-list") do
-      find("#related-content-#{related_content.opposite_related_content.id}").hover
-      find("#score-positive-related-#{related_content.opposite_related_content.id}").click
-      expect(page).not_to have_css "#score-positive-related-#{related_content.opposite_related_content.id}"
+      click_link "Yes"
+
+      expect(page).not_to have_link "Yes"
+      expect(page).not_to have_link "No"
     end
 
     expect(related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.id).value).to eq(1)
@@ -113,9 +114,10 @@ shared_examples "relationable" do |relationable_model_name|
     visit relationable.url
 
     within("#related-content-list") do
-      find("#related-content-#{related_content.opposite_related_content.id}").hover
-      find("#score-negative-related-#{related_content.opposite_related_content.id}").click
-      expect(page).not_to have_css "#score-negative-related-#{related_content.opposite_related_content.id}"
+      click_link "No"
+
+      expect(page).not_to have_link "Yes"
+      expect(page).not_to have_link "No"
     end
 
     expect(related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.id).value).to eq(-1)
