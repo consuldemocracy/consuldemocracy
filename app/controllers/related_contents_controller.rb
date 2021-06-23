@@ -15,7 +15,7 @@ class RelatedContentsController < ApplicationController
     else
       flash[:error] = t("related_content.error", url: Setting["url"])
     end
-    redirect_to @relationable.url
+    redirect_to polymorphic_path(@relationable)
   end
 
   def score_positive
