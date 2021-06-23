@@ -2,7 +2,6 @@ ru:
   devise_views:
     confirmations:
       new:
-        email_label: Электронный адрес
         submit: Повторно отправить инструкции
         title: Повторно отправить ниструкции подтверждения
       show:
@@ -38,12 +37,7 @@ ru:
     organizations:
       registrations:
         new:
-          email_label: Электронный адрес
-          organization_name_label: Название организации
           password_confirmation_label: Подтвердить пароль
-          password_label: Пароль
-          phone_number_label: Номер телефона
-          responsible_name_label: Полное имя лица, ответственного за коллектив
           responsible_name_note: Это будет лицо, представляющее ассоциацию/коллектив, от чьего имени презставляются предложения
           submit: Регистрация
           title: Зарегистрировать организацию или коллектив
@@ -57,13 +51,10 @@ ru:
         password_label: Новый пароль
         title: Измените ваш пароль
       new:
-        email_label: Электронный адрес
         send_submit: Отправить инструкции
         title: Забыли пароль?
     sessions:
       new:
-        login_label: Электронный адрес или имя пользователя
-        password_label: Пароль
         remember_me: Запомнить меня
         submit: Войти
         title: Вход
@@ -101,12 +92,9 @@ ru:
           waiting_for: "Ожидаем подтверждение:"
         new:
           cancel: Отменить вход
-          email_label: Электронный адрес
           organization_signup: Представляете ли вы организацию или коллектив? %{signup_link}
           organization_signup_link: Зарегистрироваться здесь
           password_confirmation_label: Подтвердить пароль
-          password_label: Пароль
-          redeemable_code: Код верификации, полученный по email (не обязательно)
           submit: Зарегистрироваться
           terms: Регистрируясь, вы принимаете %{terms}
           terms_link: положения и условия пользования
@@ -114,7 +102,6 @@ ru:
           title: Регистрация
           username_is_available: Имя пользователя доступно
           username_is_not_available: Имя пользователя уже используется
-          username_label: Имя пользователя
           username_note: Имя, которое появится рядом с вашими постами
         success:
           back_to_index: Я понимаю; вернуться на главную страницу
