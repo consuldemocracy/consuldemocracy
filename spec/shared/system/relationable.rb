@@ -90,6 +90,33 @@ shared_examples "relationable" do |relationable_model_name|
     expect(page).to have_content "Link not valid. You cannot relate a content to itself"
   end
 
+  context "custom URLs" do
+    before do
+      custom_route = proc { get "/mypath/:id" => "debates#show" }
+      Rails.application.routes.send(:eval_block, custom_route)
+    end
+
+    after { Rails.application.reload_routes! }
+
+    scenario "finds relationable with custom URLs" do
+      related = create(:debate, title: "My path is the only one I've walked")
+
+      login_as(user)
+      visit relationable.url
+
+      click_button "Add related content"
+
+      within("#related_content") do
+        fill_in "Link to related content", with: "#{url}/mypath/#{related.id}"
+        click_button "Add"
+      end
+
+      within("#related-content-list") do
+        expect(page).to have_content "My path is the only one I've walked"
+      end
+    end
+  end
+
   scenario "related content can be scored positively" do
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 

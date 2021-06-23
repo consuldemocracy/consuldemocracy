@@ -7,7 +7,8 @@ class RelatedContentsController < ApplicationController
     related_content = current_user.related_contents.new(
       parent_relationable_id: params[:relationable_id],
       parent_relationable_type: params[:relationable_klass],
-      child_relationable: related_object
+      child_relationable_id: child_relationable_params[:id],
+      child_relationable_type: child_relationable_params[:type]
     )
 
     if related_content.save
@@ -41,17 +42,23 @@ class RelatedContentsController < ApplicationController
       params[:url].start_with?(Setting["url"])
     end
 
-    def related_object
-      if valid_url?
-        url = params[:url]
+    def child_relationable_params
+      @child_relationable_params ||=
+        if valid_url?
+          related_params = Rails.application.routes.recognize_path(params[:url])
 
-        related_klass = url.scan(/\/(#{RelatedContent::RELATIONABLE_MODELS.join("|")})\//)
-                           .flatten.map { |i| i.to_s.singularize.camelize }.join("::")
-        related_id = url.match(/\/(\d+)(?!.*\/\d)/)[1]
-
-        related_klass.singularize.camelize.constantize.find_by(id: related_id)
-      end
-    rescue
-      nil
+          if RelatedContent::RELATIONABLE_MODELS.include?(related_params[:controller].split("/").last)
+            {
+              id: related_params[:id],
+              type: related_params[:controller].split("/").map(&:singularize).join("/").classify
+            }
+          else
+            {}
+          end
+        else
+          {}
+        end
+    rescue ActionController::RoutingError
+      {}
     end
 end
