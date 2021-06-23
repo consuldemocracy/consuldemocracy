@@ -1,9 +1,10 @@
 <ul class="related-content-list" id="related-content-list">
   <% @related_contents.compact.each do |related| %>
-    <li id="related-content-<%= related.find_related_content(relationable).id %>">
-      <% related_content = related.find_related_content(relationable) %>
+    <% related_content = related.find_related_content(relationable) %>
+
+    <li id="related-content-<%= related_content.id %>">
       <% if current_user && related_content.author != current_user && !related_content.scored_by_user?(current_user) %>
-        <span id="<%= dom_id(related.find_related_content(relationable)) %>" class="js-score-actions score-actions">
+        <span id="<%= dom_id(related_content) %>" class="js-score-actions score-actions">
           <%= render "relationable/score", related: related_content %>
         </span>
       <% end %>
