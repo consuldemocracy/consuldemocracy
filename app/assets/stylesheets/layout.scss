@@ -2489,9 +2489,12 @@ table {
     padding: $line-height / 2;
 
     @include breakpoint(medium) {
+      display: flex;
+      justify-content: space-between;
 
-      .score-actions {
-        float: right;
+      > :first-child {
+        flex: 1;
+        margin-right: 1em;
       }
     }
 
