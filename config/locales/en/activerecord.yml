@@ -500,7 +500,7 @@ en:
         user: Executed by
       link:
         label: Title
-        url: Link
+        url: URL
       valuator:
         description: Description
         valuator_group_id: Valuator group

@@ -69,7 +69,6 @@ en:
         not_allowed: "You don't have officing shifts today"
       new:
         title: Validate document
-        document_number: "Document number (including letters)"
         submit: Validate document
         error_verifying_census: "The Census was unable to verify this document."
         form_errors: prevented the verification of this document
