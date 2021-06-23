@@ -2,7 +2,6 @@ zh-CN:
   devise_views:
     confirmations:
       new:
-        email_label: 电子邮件地址
         submit: 重新发送说明
         title: 重新发送确认说明
       show:
@@ -38,12 +37,7 @@ zh-CN:
     organizations:
       registrations:
         new:
-          email_label: 电子邮件地址
-          organization_name_label: 组织名称
           password_confirmation_label: 确认密码
-          password_label: 密码
-          phone_number_label: 电话号码
-          responsible_name_label: 集体负责人的全名
           responsible_name_note: 这将是代表协会/集体的人，所有提议都会以他的名字提出
           submit: 注册
           title: 注册为组织或集体
@@ -57,13 +51,10 @@ zh-CN:
         password_label: 新密码
         title: 更改密码
       new:
-        email_label: 电子邮件地址
         send_submit: 发送说明
         title: 忘记密码？
     sessions:
       new:
-        login_label: 电子邮件或用户名
-        password_label: 密码
         remember_me: 记住我
         submit: 进入
         title: 登录
@@ -101,12 +92,9 @@ zh-CN:
           waiting_for: "等待确认："
         new:
           cancel: 取消登录
-          email_label: 电子邮件地址
           organization_signup: 您代表一个组织或集体吗？%{signup_link}
           organization_signup_link: 在此注册
           password_confirmation_label: 确认密码
-          password_label: 密码
-          redeemable_code: 通过电子邮件接收到的验证码（可选）
           submit: 注册
           terms: 通过注册即表示您接受%{terms}
           terms_link: 使用条款和条件
@@ -114,7 +102,6 @@ zh-CN:
           title: 注册
           username_is_available: 可用用户名
           username_is_not_available: 用户名已被使用
-          username_label: 用户名
           username_note: 显示在您帖子边的名称
         success:
           back_to_index: 我明白；回到主页
