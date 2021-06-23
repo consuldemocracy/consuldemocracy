@@ -2,7 +2,6 @@ el:
   devise_views:
     confirmations:
       new:
-        email_label: E-Mail
         submit: Στείλει ξανά τις οδηγίες
         title: Στείλτε ξανά οδηγίες για επιβεβαίωση
       show:
@@ -38,12 +37,7 @@ el:
     organizations:
       registrations:
         new:
-          email_label: E-Mail
-          organization_name_label: Όνομα του οργανισμού
           password_confirmation_label: Επιβεβαίωση κωδικού πρόσβασης
-          password_label: Κωδικός πρόσβασης
-          phone_number_label: Αριθμός τηλεφώνου
-          responsible_name_label: Πλήρες όνομα του ατόμου που εκπροσωπεί την ομάδα / οργάνωση
           responsible_name_note: Αυτό θα ήταν το άτομο που εκπροσωπεί τη λέσχη ή τη συλλογική ομάδα στο όνομα του οποίου υποβάλλονται οι προτάσεις
           submit: Εγγραφή
           title: Εγγραφή ως οργανισμός ή ομάδα
@@ -57,13 +51,10 @@ el:
         password_label: Νέος κωδικός πρόσβασης
         title: Αλλαγή του κωδικού πρόσβασής σας
       new:
-        email_label: E-Mail
         send_submit: Αποστολή οδηγιών
         title: Ξεχάσατε τον κωδικό σας;
     sessions:
       new:
-        login_label: E-mail ή όνομα χρήστη
-        password_label: Κωδικός πρόσβασης
         remember_me: Να με θυμάσαι
         submit: Εισάγετε
         title: Σύνδεση
@@ -101,12 +92,9 @@ el:
           waiting_for: "Εν αναμονή της επιβεβαίωσης από:"
         new:
           cancel: Ακύρωση της σύνδεσης
-          email_label: E-Mail
           organization_signup: Εκπροσωπείτε έναν οργανισμό ή ομάδα; %{signup_link}
           organization_signup_link: Εγγραφείτε εδώ
           password_confirmation_label: Επιβεβαίωση κωδικού πρόσβασης
-          password_label: Κωδικός πρόσβασης
-          redeemable_code: Κωδικός επαλήθευσης που λάβατε μέσω email (προαιρετικό)
           submit: Εγγραφή
           terms: Με την εγγραφή σας αποδέχεστε το %{terms}
           terms_link: όροι και προϋποθέσεις χρήσης
@@ -114,7 +102,6 @@ el:
           title: Εγγραφή
           username_is_available: Διαθέσιμο το όνομα χρήστη
           username_is_not_available: Όνομα χρήστη ήδη σε χρήση
-          username_label: Όνομα χρήστη
           username_note: Όνομα που εμφανίζεται δημόσια δίπλα στις αναρτήσεις σας
         success:
           back_to_index: Καταλαβαίνω. Πίσω στην αρχική σελίδα
