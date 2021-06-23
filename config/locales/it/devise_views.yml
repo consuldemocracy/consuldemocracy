@@ -2,7 +2,6 @@ it:
   devise_views:
     confirmations:
       new:
-        email_label: Email
         submit: Inviare nuovamente le istruzioni
         title: Inviare nuovamente le istruzioni di conferma
       show:
@@ -38,12 +37,7 @@ it:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Nome dell'organizzazione
           password_confirmation_label: Ripeti la password
-          password_label: Password
-          phone_number_label: Numero di telefono
-          responsible_name_label: Nome e cognome della persona responsabile per l'associazione
           responsible_name_note: Questa sarà la persona che rappresenterà l'associazione a cui nome sono presentate le proposte
           submit: Registrarsi
           title: Registrarsi come un'organizzazione o associazione
@@ -57,13 +51,10 @@ it:
         password_label: Nuova password
         title: Cambia la password
       new:
-        email_label: Email
         send_submit: Inviare le istruzioni
         title: Password dimenticata?
     sessions:
       new:
-        login_label: Email o username
-        password_label: Password
         remember_me: Ricordami
         submit: Entrare
         title: Accedere
@@ -101,12 +92,9 @@ it:
           waiting_for: "In attesa di conferma di:"
         new:
           cancel: Annulla login
-          email_label: Email
           organization_signup: Rappresenti un'organizzazione o una associazione? %{signup_link}
           organization_signup_link: Registrati qui
           password_confirmation_label: Conferma la password
-          password_label: Password
-          redeemable_code: Codice di verifica ricevuto via e-mail (opzionale)
           submit: Registrarsi
           terms: Registrandoti accetti %{terms}
           terms_link: termini e condizioni d'uso
@@ -114,7 +102,6 @@ it:
           title: Registrarsi
           username_is_available: Nome utente disponibile
           username_is_not_available: Nome utente già in uso
-          username_label: Nome utente
           username_note: Nome che appare accanto ai tuoi post
         success:
           back_to_index: Ho capito; torna alla pagina principale
