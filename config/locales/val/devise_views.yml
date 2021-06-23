@@ -2,7 +2,6 @@ val:
   devise_views:
     confirmations:
       new:
-        email_label: Correu electrònic
         submit: Reenviar instruccions
         title: Reenviar instruccions de confirmació
       show:
@@ -38,12 +37,7 @@ val:
     organizations:
       registrations:
         new:
-          email_label: Correu electrònic
-          organization_name_label: Nom de l'organització
           password_confirmation_label: Repeteix la contrasenya anterior
-          password_label: Contrasenya
-          phone_number_label: Telèfon
-          responsible_name_label: Nom i cognoms de la persona responsable del colectiu
           responsible_name_note: Sera la persona representant de l'associació/col·lectiu en el nom del qual es presenten les propostes
           submit: Registrarse
           title: Registrar-se com organització / col·lectiu
@@ -57,13 +51,10 @@ val:
         password_label: Nova contrasenya
         title: Canvia la teua contrasenya
       new:
-        email_label: Correu electrònic
         send_submit: Enviar instruccions
         title: Has oblidat la teua contrasenya?
     sessions:
       new:
-        login_label: Email o nom d'usuari
-        password_label: Contrasenya
         remember_me: Recordam
         submit: Entrar
         title: Iniciar sessió
@@ -101,12 +92,9 @@ val:
           waiting_for: "Esperant confirmació de:"
         new:
           cancel: Cancelar login
-          email_label: Correu electrònic
           organization_signup: Representes a una organització / col·lectiu? %{signup_link}
           organization_signup_link: Regístrat ací
           password_confirmation_label: Repeteix la contrasenya anterior
-          password_label: Contrasenya
-          redeemable_code: Codi de verificació per correu electronic (opcional)
           submit: Registrarse
           terms: Al registrarte acceptes les %{terms}
           terms_link: termes i condicions d'us
@@ -114,7 +102,6 @@ val:
           title: Registrarse
           username_is_available: Nom d'usuari disponible
           username_is_not_available: Nom d'usuari ya existeix
-          username_label: Nom d'usuari
           username_note: Nom public que apareixerà en les teues publicacions
         success:
           back_to_index: Entes, tornar a la pàgina principal
