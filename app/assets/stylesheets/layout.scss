@@ -2461,11 +2461,17 @@ table {
 }
 
 .add-related-content {
+  color: $link;
+  cursor: pointer;
   display: block;
   margin-bottom: $line-height;
 
   @include breakpoint(medium) {
     float: right;
+  }
+
+  &:focus {
+    outline: $outline-focus;
   }
 
   &[aria-expanded="false"] + form {
