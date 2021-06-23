@@ -2,7 +2,6 @@ sl:
   devise_views:
     confirmations:
       new:
-        email_label: E-naslov
         submit: Ponovno pošlji navodila
         title: Ponovno pošlji potrditvena navodila
       show:
@@ -38,12 +37,7 @@ sl:
     organizations:
       registrations:
         new:
-          email_label: E-naslov
-          organization_name_label: Ime organizacije
           password_confirmation_label: Potrdi geslo
-          password_label: Geslo
-          phone_number_label: Telefonska številka
-          responsible_name_label: Polno ime odgovorne osebe
           responsible_name_note: Gre za osebo, ki predstavlja društvo, zavod oz. organizacijo, v čigar imenu so objavljeni predlogi
           submit: Registriraj se
           title: Registriraj se kot organisazacija ali kolektiv
@@ -57,13 +51,10 @@ sl:
         password_label: Novo geslo
         title: Spremeni svoje geslo
       new:
-        email_label: E-naslov
         send_submit: Pošlji navodila
         title: Pozabljeno geslo?
     sessions:
       new:
-        login_label: E-naslov ali uporabniško ime
-        password_label: Geslo
         remember_me: Zapomni si me
         submit: Vstopi
         title: Vpiši se
@@ -101,12 +92,9 @@ sl:
           waiting_for: "Čakam potrditev:"
         new:
           cancel: Prekliči prijavo
-          email_label: E-naslov
           organization_signup: Ali predstavljaš organizacijo ali kolektiv? %{signup_link}
           organization_signup_link: Registriraj se tukaj
           password_confirmation_label: Potrdi geslo
-          password_label: Geslo
-          redeemable_code: Potrditvena koda, prejeta preko e-pošte (neobvezno)
           submit: Registriraj se
           terms: Z registracijo sprejemaš %{terms}
           terms_link: Pogoji uporabe
@@ -114,7 +102,6 @@ sl:
           title: Registriraj se
           username_is_available: Uporabniško ime na voljo
           username_is_not_available: Uporabniško ime že zasedeno
-          username_label: Uporabniško ime
           username_note: Ime, ki ga prikazujemo ob tvojih objavah
         success:
           back_to_index: Razumem; vrni se na glavno stran
