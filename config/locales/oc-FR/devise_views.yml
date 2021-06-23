@@ -2,7 +2,6 @@ oc:
   devise_views:
     confirmations:
       new:
-        email_label: Lo tieu corrièr electronic
         submit: Reenviar d'instruccions
         title: Reenviar d'instruccions de confirmacion
       show:
@@ -39,12 +38,7 @@ oc:
     organizations:
       registrations:
         new:
-          email_label: Lo tieu corrièr electronic
-          organization_name_label: Nom de l'organizacion
           password_confirmation_label: Repetís la contrasenya anteriora
-          password_label: Clau
-          phone_number_label: telefòn
-          responsible_name_label: Nom e de noms de familha de la persona responsabla del collectiu
           responsible_name_note: Serà la persona en representant de l'associacion / collectiva en nom que ne presenten las proposicions
           submit: Enregistrar
           title: S'enregistrar coma organizacion / collectiva
@@ -62,13 +56,10 @@ oc:
         password_label: Nòva contrasenya
         title: Càmbia la tiá contrasenya
       new:
-        email_label: Lo tieu corrièr electronic
         send_submit: recebre d'instruccions
         title: A desbrembat la siá contrasenya?
     sessions:
       new:
-        login_label: E-mail o nom d'usatgièr
-        password_label: Clau
         remember_me: Me remembrar
         submit: Intrada
         title: Intrada
@@ -106,12 +97,9 @@ oc:
           waiting_for: "en Esperant confirmacion de:"
         new:
           cancel: Anulla la session
-          email_label: Lo tieu corrièr electronic
           organization_signup: Representas a una organizacion / collectiva? %{signup_link}
           organization_signup_link: Enregistra-te aicí
           password_confirmation_label: Repetís la contrasenya anteriora
-          password_label: Clau
-          redeemable_code: Lo tieu còdi de verificacion (s'as recebut una carta amb el)
           submit: Enregistrar
           terms: En enregistrar accèptas las %{terms}
           terms_link: de condicions d'usatge
@@ -119,7 +107,6 @@ oc:
           title: Enregistrar
           username_is_available: Nom d'usatgièr disponible
           username_is_not_available: Nom d'usatgièr ja existent
-          username_label: Nom d'usatgièr
           username_note: Nom public qu'apareisserà en las tiás publicacions
         success:
           back_to_index: Comprés, tornar a la pagina principala
