@@ -2,7 +2,6 @@ bs:
   devise_views:
     confirmations:
       new:
-        email_label: Email
         submit: Ponovo pošaljite uputstvo
         title: Ponovo pošaljite uputstvo za potvrđivanje
       show:
@@ -38,12 +37,7 @@ bs:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Naziv organizacije
           password_confirmation_label: Potvrdite lozinku
-          password_label: Lozinka
-          phone_number_label: Broj telefona
-          responsible_name_label: Puno ime i prezime osobe koja predstavlja zajednicu
           responsible_name_note: Ovo je osoba koja predstavlja udruženje/zajednicu u čije se ime podnose prijedlozi
           submit: Registrujte se
           title: Registrujte se kao organizacija ili zajednica
@@ -57,13 +51,10 @@ bs:
         password_label: Nova lozinka
         title: Promjenite svoju lozinku
       new:
-        email_label: Email
         send_submit: Pošalji uputstvo
         title: Zaboravili ste lozinku?
     sessions:
       new:
-        login_label: Email ili korisničko ime
-        password_label: Lozinka
         remember_me: Zapamti me
         submit: Uđite
         title: Prijavite se
@@ -101,12 +92,9 @@ bs:
           waiting_for: "Čekamo potvrdu za:"
         new:
           cancel: Ukini prijavu
-          email_label: Email
           organization_signup: Da li predstavljate organizaciju ili zajednicu? %{signup_link}
           organization_signup_link: Otvorite nalog ovdje
           password_confirmation_label: Potvrdi lozinku
-          password_label: Lozinka
-          redeemable_code: Verifikacioni kod primljen emailom (nije obavezno)
           submit: Registrujte se
           terms: Registracijom prihvatate (uvjete) %{terms}
           terms_link: uvjeti korištenja
@@ -114,7 +102,6 @@ bs:
           title: Registrujte se
           username_is_available: Korisničko ime se može uzeti
           username_is_not_available: Neko drugi već koristi ovo korisničko ime
-          username_label: Korisničko ime
           username_note: Ime koje je navedeno pored vaših objava
         success:
           back_to_index: Shvatam; idi nazad na početnu stranicu
