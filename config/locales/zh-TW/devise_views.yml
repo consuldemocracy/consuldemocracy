@@ -2,7 +2,6 @@ zh-TW:
   devise_views:
     confirmations:
       new:
-        email_label: 電郵
         submit: 重新發送說明
         title: 重新發送確認說明
       show:
@@ -38,12 +37,7 @@ zh-TW:
     organizations:
       registrations:
         new:
-          email_label: 電郵
-          organization_name_label: 組織名稱
           password_confirmation_label: 確認密碼
-          password_label: 密碼
-          phone_number_label: 電話號碼
-          responsible_name_label: 集體負責人的全名
           responsible_name_note: 這將是代表協會/集體的人，所有建議都會用他的名義提出
           submit: 註冊
           title: 註冊為一個組織或集體
@@ -57,13 +51,10 @@ zh-TW:
         password_label: 新密碼
         title: 更改您的密碼
       new:
-        email_label: 電郵
         send_submit: 發送說明
         title: 忘記密碼？
     sessions:
       new:
-        login_label: 電子郵件或用戶名
-        password_label: 密碼
         remember_me: 記住我
         submit: 進入
         title: 登錄
@@ -101,12 +92,9 @@ zh-TW:
           waiting_for: "等待確認："
         new:
           cancel: 取消登錄
-          email_label: 電郵
           organization_signup: 你是否代表一個組織或集體？%{signup_link}
           organization_signup_link: 在此登記
           password_confirmation_label: 確認密碼
-          password_label: 密碼
-          redeemable_code: 驗證碼通過電郵接收 (可選擇填寫)
           submit: 註冊
           terms: 註冊即表示您接受 %{terms}
           terms_link: 使用條款及條件
@@ -114,7 +102,6 @@ zh-TW:
           title: 註冊
           username_is_available: 可用的用戶名
           username_is_not_available: 用戶名已被使用
-          username_label: 用戶名
           username_note: 顯示在您的帖子旁邊的名稱
         success:
           back_to_index: 我明白；回到主頁
