@@ -2461,10 +2461,21 @@ table {
 }
 
 .add-related-content {
+  color: $link;
+  cursor: pointer;
   display: block;
+  margin-bottom: $line-height;
 
   @include breakpoint(medium) {
     float: right;
+  }
+
+  &:focus {
+    outline: $outline-focus;
+  }
+
+  &[aria-expanded="false"] + form {
+    display: none;
   }
 }
 
@@ -2478,23 +2489,17 @@ table {
     padding: $line-height / 2;
 
     @include breakpoint(medium) {
+      display: flex;
+      justify-content: space-between;
 
-      .score-actions {
-        display: none;
-        float: right;
+      > :first-child {
+        flex: 1;
+        margin-right: 1em;
       }
     }
 
     &:first-child {
       border-top: 1px solid $border;
-    }
-
-    &:hover {
-      background: #f9f9f9;
-
-      .score-actions {
-        display: block;
-      }
     }
   }
 
@@ -2524,33 +2529,16 @@ table {
   a {
     font-weight: bold;
     margin-right: $line-height;
-    padding-left: rem-calc(20);
-    position: relative;
     text-decoration: none;
 
-    &.score-positive::before,
-    &.score-negative::before {
-      font-family: "icons";
-      left: 0;
-      position: absolute;
-    }
-
     &.score-positive {
+      @include has-fa-icon(check, solid);
       color: $color-success;
-
-      &::before {
-        color: $color-success;
-        content: "\6c";
-      }
     }
 
     &.score-negative {
+      @include has-fa-icon(times, solid);
       color: $color-alert;
-
-      &::before {
-        color: $color-alert;
-        content: "\76";
-      }
     }
   }
 }
