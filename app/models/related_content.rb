@@ -6,16 +6,13 @@ class RelatedContent < ApplicationRecord
   include ActsAsParanoidAliases
 
   belongs_to :author, class_name: "User"
-  belongs_to :parent_relationable, polymorphic: true, touch: true
-  belongs_to :child_relationable, polymorphic: true, touch: true
+  belongs_to :parent_relationable, polymorphic: true, optional: false, touch: true
+  belongs_to :child_relationable, polymorphic: true, optional: false, touch: true
   has_one :opposite_related_content, class_name: self.name, foreign_key: :related_content_id
   has_many :related_content_scores
 
-  validates :parent_relationable_id, presence: true
-  validates :parent_relationable_type, presence: true
-  validates :child_relationable_id, presence: true
-  validates :child_relationable_type, presence: true
   validates :parent_relationable_id, uniqueness: { scope: [:parent_relationable_type, :child_relationable_id, :child_relationable_type] }
+  validate :different_parent_and_child
 
   after_create :create_opposite_related_content, unless: proc { opposite_related_content.present? }
   after_create :create_author_score
@@ -34,7 +31,17 @@ class RelatedContent < ApplicationRecord
     related_content_scores.exists?(user: user)
   end
 
+  def same_parent_and_child?
+    parent_relationable == child_relationable
+  end
+
   private
+
+    def different_parent_and_child
+      if same_parent_and_child?
+        errors.add(:parent_relationable, :itself)
+      end
+    end
 
     def create_opposite_related_content
       related_content = RelatedContent.create!(opposite_related_content: self, parent_relationable: child_relationable,
