@@ -48,7 +48,7 @@ module ApplicationHelper
     SiteCustomization::Image.image_path_for(filename) || filename
   end
 
-  def content_block(name, locale)
+  def content_block(name, locale = I18n.locale)
     SiteCustomization::ContentBlock.block_for(name, locale)
   end
 

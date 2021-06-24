@@ -1,6 +1,6 @@
 <div class="small-12 medium-9 column">
   <ul>
-    <%= raw content_block("subnavigation_left", I18n.locale) %>
+    <%= raw content_block("subnavigation_left") %>
 
     <% if feature?(:debates) %>
       <li>
@@ -59,6 +59,6 @@
       </li>
     <% end %>
 
-    <%= raw content_block("subnavigation_right", I18n.locale) %>
+    <%= raw content_block("subnavigation_right") %>
   </ul>
 </div>

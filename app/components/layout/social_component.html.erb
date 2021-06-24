@@ -1,0 +1,14 @@
+<div class="social">
+  <ul>
+    <% sites.each do |name, url| %>
+      <li>
+        <%= link_to "#{url}/#{setting["#{name}_handle"]}", target: "_blank", title: link_title(name) do %>
+          <span class="show-for-sr"><%= link_text(name) %></span>
+          <span class="icon-<%= name %>" aria-hidden="true"></span>
+        <% end %>
+      </li>
+    <% end %>
+
+    <%= raw footer_content_block %>
+  </ul>
+</div>
