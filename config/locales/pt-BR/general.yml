@@ -5,10 +5,7 @@ pt-BR:
       erase_account_link: Apagar minha conta
       finish_verification: Completar verificação
       notifications: Notificações
-      organization_name_label: Nome da organização
-      organization_responsible_name_placeholder: Representante de organização/coletivo
       personal: Dados pessoais
-      phone_number_label: Número de Telefone
       public_interests_my_title_list: Marcações dos elementos que você segue
       public_interests_user_title_list: Marcações dos elementos que esse usuário segue
       save_changes_submit: Salvar alterações
@@ -22,7 +19,6 @@ pt-BR:
       user_permission_verify: Para realizar todas as ações verifique sua conta.
       user_permission_verify_info: "* Somente para usuários no Censo. "
       user_permission_votes: Participar na votação final
-      username_label: Nome de usuário
       verified_account: Conta verificada
       verify_my_account: Verificar minha conta
   application:
@@ -90,7 +86,6 @@ pt-BR:
         submit_button: Salvar alterações
       show_link: Ver debate
     form:
-      debate_title: Título do debate
       tags_instructions: Marcar este debate.
       tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
     index:
@@ -344,7 +339,6 @@ pt-BR:
       map_location: "Localização do mapa"
       map_location_instructions: "Navegue no mapa até o local e fixe o marcador."
       map_remove_marker: "Remover o marcador do mapa"
-      map_skip_checkbox: "Esta proposta não tem uma localização concreta ou não a conheço."
     index:
       featured_proposals: Destacado
       orders:
@@ -954,9 +948,6 @@ pt-BR:
       title: Links
       note: Adicione links que sejam que sejam de interesse
       add_new_link: Adicionar novo link
-    link_fields:
-      label_placeholder: Título do link
-      url_placeholder: Endereço do link
   communities:
     show:
       surveys: Pesquisas
