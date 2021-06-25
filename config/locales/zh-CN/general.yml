@@ -5,10 +5,7 @@ zh-CN:
       erase_account_link: 删除我的账号
       finish_verification: 完成验证
       notifications: 通知
-      organization_name_label: 组织名称
-      organization_responsible_name_placeholder: 组织／集体的代表
       personal: 个人资料
-      phone_number_label: 电话号码
       public_interests_my_title_list: 您跟随的元素的标签
       public_interests_user_title_list: 此用户跟随的元素的标签
       save_changes_submit: 保存更改
@@ -22,7 +19,6 @@ zh-CN:
       user_permission_verify: 要执行所有操作，请验证您的账户。
       user_permission_verify_info: "＊仅适用于人口普查的用户。"
       user_permission_votes: 参与最终投票
-      username_label: 用户名
       verified_account: 已验证的帐号
       verify_my_account: 验证我的账户
   application:
@@ -78,7 +74,6 @@ zh-CN:
         submit_button: 保存更改
       show_link: 查看辩论
     form:
-      debate_title: 辩论标题
       tags_instructions: 为此辩论加标签。
       tags_placeholder: "请输入您希望使用的标签，用逗号(',') 分割"
     index:
@@ -280,7 +275,6 @@ zh-CN:
       map_location: "地图位置"
       map_location_instructions: "将地图导航到该位置并放置标记。"
       map_remove_marker: "删除地图标记"
-      map_skip_checkbox: "此提议没有具体的位置或者我没有留意到。"
     index:
       featured_proposals: 特色
       orders:
