@@ -5,10 +5,7 @@ so:
       erase_account_link: Ka tiri akoonka
       finish_verification: Xaqiijin dhamaystiran
       notifications: Ogaysiis
-      organization_name_label: Magacaga ururka
-      organization_responsible_name_placeholder: Wakiilka ururka / wadajirka
       personal: Warbixinada qofka
-      phone_number_label: Talafoon lambar
       public_interests_my_title_list: Tagyada oo ka mid ah qodobada aad raacdo
       public_interests_user_title_list: Da'da walxahan ee istimalka soo socota
       save_changes_submit: Badbaadi beddelka
@@ -22,7 +19,6 @@ so:
       user_permission_verify: Si aad u fuliso dhammaan ficilada hubi xisaabtaada.
       user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
       user_permission_votes: Kayb galka codaynta ugu danbaysa
-      username_label: Magaca Isticmaalaha
       verified_account: Xisaabi la xaqiijiyay
       verify_my_account: Hubi xisaabtayda
   application:
@@ -82,7 +78,6 @@ so:
         submit_button: Badbaadi beddelka
       show_link: Aragtida doodda
     form:
-      debate_title: Ciwaanka dooda
       tags_instructions: Taaga dooda.
       tags_placeholder: "Geli taagyada ad jeceshahay inaad isticmasho, kana kaxay qooyska(', ')"
     index:
@@ -289,7 +284,6 @@ so:
       map_location: "Goobta Khariirada"
       map_location_instructions: "Ku dhaji khariidada meesha ay ku taallan tahay kuna calaamadee sumadeeyaha."
       map_remove_marker: "Ka saar sumadaha khariidada"
-      map_skip_checkbox: "Soo jeedintaas ma laha meel la taaban karo ama aanan ogeyn."
     index:
       featured_proposals: Soobandhigiid/ Muqaal
       orders:
