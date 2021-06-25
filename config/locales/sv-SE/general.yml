@@ -5,10 +5,7 @@ sv:
       erase_account_link: Radera mitt konto
       finish_verification: Slutför verifiering
       notifications: Aviseringar
-      organization_name_label: Organisationsnamn
-      organization_responsible_name_placeholder: Representant för organisationen/gruppen
       personal: Personlig information
-      phone_number_label: Telefonnummer
       public_interests_my_title_list: Taggar för ämnen du följer
       public_interests_user_title_list: Taggar för ämnen den här användaren följer
       save_changes_submit: Spara ändringar
@@ -22,7 +19,6 @@ sv:
       user_permission_verify: Verifiera ditt konto för att få tillgång till alla funktioner.
       user_permission_verify_info: "* Endast för användare skrivna i staden."
       user_permission_votes: Delta i slutomröstningen
-      username_label: Användarnamn
       verified_account: Kontot är verifierat
       verify_my_account: Verifiera mitt konto
   application:
@@ -93,7 +89,6 @@ sv:
         submit_button: Spara ändringar
       show_link: Visa debatt
     form:
-      debate_title: Debatt-titel
       tags_instructions: Tagga debatten.
       tags_placeholder: "Skriv taggarna du vill använda, avgränsade med komma (',')"
     index:
@@ -956,9 +951,6 @@ sv:
       title: Länkar
       note: Lägg till länkar av intresse
       add_new_link: Lägg till ny länk
-    link_fields:
-      label_placeholder: Länktitel
-      url_placeholder: Länkadress
   communities:
     show:
       surveys: Enkäter
