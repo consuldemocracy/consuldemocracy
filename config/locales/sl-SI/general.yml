@@ -5,10 +5,7 @@ sl:
       erase_account_link: Izbriši moj račun
       finish_verification: Zaključi verifikacijo
       notifications: Obvestila
-      organization_name_label: Ime organizacije
-      organization_responsible_name_placeholder: Predstavnik/-ca organizacije/kolektiva
       personal: Osebni podatki
-      phone_number_label: Telefonska številka
       public_interests_my_title_list: Oznake elementov, ki jim slediš
       public_interests_user_title_list: Oznake elementov, ki jim sledi ta uporabnik
       save_changes_submit: Shrani spremembe
@@ -21,7 +18,6 @@ sl:
       user_permission_verify: Za izvedbo vseh dejanj potrdi svoj račun.
       user_permission_verify_info: "* Samo za uporabnike, ki so na popisu."
       user_permission_votes: Sodeluješ v končnem glasovanju
-      username_label: Uporabniško ime
       verified_account: Račun potrjen
       verify_my_account: Potrdi moj račun
   application:
@@ -71,7 +67,6 @@ sl:
         submit_button: Shrani spremembe
       show_link: Poglej razpravo
     form:
-      debate_title: Naslov razprave
       tags_instructions: Dodaj oznake tej razpravi.
       tags_placeholder: "Vnesi oznake, ki jih želiš uporabiti, in jih loči z vejico (',')"
     index:
@@ -248,7 +243,6 @@ sl:
       map_location: "Lokacija na zemljevidu"
       map_location_instructions: "Na zemljevidu najdi lokacijo in postavi označevalec."
       map_remove_marker: "Odstrani označevalec"
-      map_skip_checkbox: "Ta predlog nima konkretne lokacije ali je ne poznam."
     index:
       featured_proposals: Izpostavljeno
       orders:
