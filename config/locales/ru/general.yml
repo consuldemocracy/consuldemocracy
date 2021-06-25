@@ -5,10 +5,7 @@ ru:
       erase_account_link: Стереть мой аккаунт
       finish_verification: Завершить верификацию
       notifications: Уведомления
-      organization_name_label: Название орагнизации
-      organization_responsible_name_placeholder: Представитель организации/коллектива
       personal: Личные данные
-      phone_number_label: Номер телефона
       public_interests_my_title_list: Метки элементов, на которые вы подписаны
       public_interests_user_title_list: Метки элементов, на которые подписан этот пользователь
       save_changes_submit: Сохранить изменения
@@ -22,7 +19,6 @@ ru:
       user_permission_verify: Чтобы выполнить все действия, верифицируйте ваш аккаунт.
       user_permission_verify_info: "* Только для пользователей на Цензусе."
       user_permission_votes: Участвовать в финальном голосовании
-      username_label: Имя пользователя
       verified_account: Аккаунт верифицирован
       verify_my_account: Верифицировать мой аккаунт
   application:
@@ -94,7 +90,6 @@ ru:
         submit_button: Сохранить изменения
       show_link: Просмотреть дебаты
     form:
-      debate_title: Название дебатов
       tags_instructions: Пометить эти дебаты.
       tags_placeholder: "Введите метки, которые вы бы хотели использовать, разделенные запятыми (',')"
     index:
@@ -340,7 +335,6 @@ ru:
       map_location: "Местоположение на карте"
       map_location_instructions: "Перейдите на карте к местоположению и поместите маркер."
       map_remove_marker: "Удалить маркер карты"
-      map_skip_checkbox: "Это предложение не имеет конкретного места на карте, или я о нем не знаю."
     index:
       featured_proposals: Особенные
       orders:
@@ -947,9 +941,6 @@ ru:
       title: Ссылки
       note: Добавьте интересующие ссылки
       add_new_link: Добавить новую ссылку
-    link_fields:
-      label_placeholder: Название ссылки
-      url_placeholder: Адрес ссылки
   communities:
     show:
       surveys: Опросы
