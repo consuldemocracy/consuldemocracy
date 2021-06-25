@@ -362,6 +362,7 @@ sv:
         title: "Fred, rättvisa och starka institutioner"
         title_in_two_lines: "Fred, rättvisa och\nstarka institutioner"
         description: "Främja rättvisa, fredliga och inkluderande samhällen."
+        long_description: '<p>Konflikt, osäkerhet, svaga institutioner och begränsad tillgång till rättssystem är fortfarande ett stort hot mot hållbar utveckling.&nbsp;</p> <p>Antalet <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">människor på flykt från krig, förföljelse och konflikt översteg 70 miljoner</a> 2018, den högsta nivån som registrerats av FN:s flyktingkommissariat (UNHCR) på nästan 70 år.&nbsp;</p> <p>2019 konstaterade Förenta nationerna <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 mord och 30 påtvingade försvinnanden</a> av människorättsförsvarare, journalister och fackföreningsmedlemmar i 47 länder.</p> <p>Det underlåts också att registrera att runt <a href="https://data.unicef.org/topic/child-protection/birth-registration/">ett av fyra barn</a> under 5 års ålder i hela världen har fötts, vilket berövar dem de bevis på juridisk identitet som är avgörande för att skydda deras rättigheter och ge tillgång till rättssystem och sociala tjänster.</p>'
         targets:
           target_16_1:
             title: "Avsevärt minska alla former av våld och dödligt våld överallt."
