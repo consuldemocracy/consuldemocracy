@@ -5,10 +5,7 @@ da:
       erase_account_link: Slet min konto
       finish_verification: Færdiggør verificering
       notifications: Notifikationer
-      organization_name_label: Navn på organisation
-      organization_responsible_name_placeholder: Repræsentant for organisationen/gruppen
       personal: Personlige oplysninger
-      phone_number_label: Telefonnummer
       public_interests_my_title_list: Tags jeg følger
       public_interests_user_title_list: Tags denne bruger følger
       save_changes_submit: Gem ændringer
@@ -22,7 +19,6 @@ da:
       user_permission_verify: For at kunne foretage handlingerne, skal din konto være verificeret.
       user_permission_verify_info: "* Kun for brugere af Census."
       user_permission_votes: Deltage i den endelige afstemning
-      username_label: Brugernavn
       verified_account: Konto verificeret
       verify_my_account: Verificer min konto
   application:
@@ -90,7 +86,6 @@ da:
         submit_button: Gem ændringer
       show_link: Se debatindlæg
     form:
-      debate_title: Titel på debatindlæg
       tags_instructions: Tag denne debat.
       tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
     index:
@@ -339,7 +334,6 @@ da:
       map_location: "Lokation"
       map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
       map_remove_marker: "Flyt markøren"
-      map_skip_checkbox: "Dette forslag omhandler ikke en specifik lokation, eller også kender jeg ikke til den."
     index:
       featured_proposals: Vist
       orders:
@@ -945,9 +939,6 @@ da:
       title: Links
       note: Tilføj de links. der kan have interesse
       add_new_link: Tilføj nyt link
-    link_fields:
-      label_placeholder: Titel på link
-      url_placeholder: Link
   communities:
     show:
       surveys: Undersøgelser
