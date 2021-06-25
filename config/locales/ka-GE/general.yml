@@ -5,10 +5,7 @@ ka:
       erase_account_link: ჩემი ანგარიშის წაშლა
       finish_verification: ვერიფიკაციის დასრულება
       notifications: შეტყობინებები
-      organization_name_label: ორგანიზაციის დასახელება
-      organization_responsible_name_placeholder: ორგანიზაციის/ჯგუფის წარმომადგენელი
       personal: პერსონალური მონაცემები
-      phone_number_label: ტელეფონის ნომერი
       public_interests_my_title_list: იმ ელემენტების ტეგები, რომლებსაც თქვენ მიჰყვებით
       public_interests_user_title_list: იმ ელემენტების ტეგები, რომლებსაც ეს მომხმარებელი მიჰყვება
       save_changes_submit: ცვლილებების შენახვა
@@ -22,7 +19,6 @@ ka:
       user_permission_verify: ყველა ფუნქციით სარგებლობისთვის, გაიარეთ ანგარიშის გადამოწმება.
       user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
       user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
-      username_label: მომხმარებლის სახელი
       verified_account: ანგარიში გადამოწმებულია
       verify_my_account: ჩემი ანგარიშის დადასტურება
   application:
@@ -90,7 +86,6 @@ ka:
         submit_button: ცვლილებების შენახვა
       show_link: დებატის ნახვა
     form:
-      debate_title: დებატების დასახელება
       tags_instructions: დებატის მონიშვნა.
       tags_placeholder: "შეიყვანეთ ის ტეგები, რომელთა გამოყენებაც გსურთ, გამოყავით ისინი მძიმით (',')"
     index:
@@ -342,7 +337,6 @@ ka:
       map_location: "ლოკაცია რუკაზე"
       map_location_instructions: "დასვით მარკერი რუკის სასურველ პოზიციაზე."
       map_remove_marker: "მარკერის წაშლა"
-      map_skip_checkbox: "ამ ინიციატივას არ აქვს ზუსტად განსაზღვრული ლოკაცია, ან მე მის შესახებ ინფორმაციას არ ვფლობ."
     index:
       featured_proposals: გამორჩეული
       orders:
@@ -944,9 +938,6 @@ ka:
       title: ბმულები
       note: საინტერესო ბმულების დამატება
       add_new_link: ახალი ბმულის დამატება
-    link_fields:
-      label_placeholder: ბმულის დასახელება
-      url_placeholder: ბმულის მისამართი
   communities:
     show:
       surveys: გამოკითხვები
