@@ -5,10 +5,7 @@ eu:
       erase_account_link: Baja eman
       finish_verification: Egiaztapena amaitu
       notifications: Jakinarazpenak
-      organization_name_label: Erakundearen izena
-      organization_responsible_name_placeholder: Elkarte ordezkaria
       personal: Datu pertsonalak
-      phone_number_label: Telefonoa
       public_interests_my_title_list: Jarraitzen dituzun elementuen etiketak
       public_interests_user_title_list: Erabiltzaile honek jarraitzen dituen elementuen etiketak
       save_changes_submit: Aldaketak gorde
@@ -22,7 +19,6 @@ eu:
       user_permission_verify: Akzio guztiak egin ahal izateko zure kontua egiazta ezazu.
       user_permission_verify_info: "* Erroldatutako erabiltzaileak soilik."
       user_permission_votes: Azken bozkaketetan parte hartu*
-      username_label: Erabiltzaile izena
       verified_account: Egiaztatutako kontua
       verify_my_account: Nire kontua egiaztatu
   application:
@@ -82,7 +78,6 @@ eu:
         submit_button: Aldaketak gorde
       show_link: Eztabaida ikusi
     form:
-      debate_title: Eztabaidaren izenburua
       tags_instructions: Eztabaida honen etiketa.
       tags_placeholder: "Nahi dituzun etiketak koma artean idatzi behar dituzu (',')"
     index:
@@ -287,7 +282,6 @@ eu:
       map_location: "Kokapena mapan"
       map_location_instructions: "Mapatik ibili kokalekura heldu arte eta markagailua jarri."
       map_remove_marker: "Markagailua ezabatu"
-      map_skip_checkbox: "Proposamen honek ez du kokaleku zehatzik edo ez dut ezagutzen."
     index:
       featured_proposals: Nabarmenduak
       orders:
