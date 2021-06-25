@@ -5,10 +5,7 @@ sr:
       erase_account_link: Обриши мој налог
       finish_verification: Доврши потврђивање
       notifications: Обавештења
-      organization_name_label: Назив организације
-      organization_responsible_name_placeholder: Представници организације/колектива
       personal: Лични детаљи
-      phone_number_label: Број телефона
       public_interests_my_title_list: Ознаке елемената које пратите
       public_interests_user_title_list: Ознаке елемената које овај корисник прати
       save_changes_submit: Сачувајте измене
@@ -22,7 +19,6 @@ sr:
       user_permission_verify: Како бисте извели све радње потврдите ваш налог.
       user_permission_verify_info: "*Само за кориснике на Попису."
       user_permission_votes: Учествујте у завршном гласању
-      username_label: Корисничко име
       verified_account: Налог потврђен
       verify_my_account: Потврди мој налог
   application:
@@ -96,7 +92,6 @@ sr:
         submit_button: Сачувајте измене
       show_link: Видите расправу
     form:
-      debate_title: Наслов расправе
       tags_instructions: Ознака ове расправе.
       tags_placeholder: "Унесите ознаке које желите да користите, одвојене зарезима (',')"
     index:
@@ -355,7 +350,6 @@ sr:
       map_location: "Мапирајте локацију"
       map_location_instructions: "Навигујте мапу до локације и поставите маркер."
       map_remove_marker: "Уклоните маркер са мапе"
-      map_skip_checkbox: "Ова инвестиција не поседује одређену локацију или ја тога нисам свестан."
     index:
       featured_proposals: Истакнуто
       orders:
@@ -976,9 +970,6 @@ sr:
       title: Линкови
       note: Додајте линкове који су од интереса
       add_new_link: Додај нови линк
-    link_fields:
-      label_placeholder: Назив линка
-      url_placeholder: Адреса линка
   communities:
     show:
       surveys: Анкете
