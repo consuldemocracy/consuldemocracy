@@ -5,10 +5,7 @@ cs:
       erase_account_link: Smazat můj účet
       finish_verification: Dokončete ověření
       notifications: Upozornění
-      organization_name_label: Název organizace
-      organization_responsible_name_placeholder: Zástupce organizace / kolektivu
       personal: Osobní údaje
-      phone_number_label: Telefon
       public_interests_my_title_list: Štítky oblastí, které sledujete
       public_interests_user_title_list: Štítky oblastí, které tento uživatel sleduje
       save_changes_submit: Uložit změny
@@ -22,7 +19,6 @@ cs:
       user_permission_verify: Chcete-li provést všechny akce, ověřte svůj účet.
       user_permission_verify_info: "* Pouze pro uživatele ověřené datovými registry."
       user_permission_votes: Účastnit se konečného hlasování
-      username_label: Uživatelské jméno
       verified_account: Účet ověřen
       verify_my_account: Ověřit můj účet
   application:
@@ -74,7 +70,6 @@ cs:
         submit_button: Uložit změny
       show_link: Zobrazit debatu
     form:
-      debate_title: Název debaty
       tags_instructions: Oštítkujte tuto debatu.
       tags_placeholder: "Zadejte štítky, které chcete používat, oddělené čárkami (',')"
     index:
@@ -275,7 +270,6 @@ cs:
       map_location: "Lokalizace v mapě"
       map_location_instructions: "Nalezněte mapu lokality a umístěte kliknutím značku."
       map_remove_marker: "Odebrat značku"
-      map_skip_checkbox: "Tento návrh nemá konkrétní místo, nebo o něm nevím."
     index:
       featured_proposals: Označené
       orders:
