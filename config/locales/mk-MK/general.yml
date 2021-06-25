@@ -5,10 +5,7 @@ mk:
       erase_account_link: Избриши ја мојата корисничка сметка
       finish_verification: Комплетирај верификација
       notifications: Нотификации
-      organization_name_label: Име на организацијата
-      organization_responsible_name_placeholder: Претставник на организација/колектив
       personal: Лични детали
-      phone_number_label: Телефонски број
       public_interests_my_title_list: Тагови на елементи кои ги следиш
       public_interests_user_title_list: Тагови на елементи кои овој корисник ги следи
       save_changes_submit: Зачувај промени
@@ -22,7 +19,6 @@ mk:
       user_permission_verify: За да ги извршиш сите акции верифицирај го твојот профил.
       user_permission_verify_info: "* Само за корисници на Цензус."
       user_permission_votes: Учествувај во конечно гласање
-      username_label: Корисничко име
       verified_account: Верификуван профил
       verify_my_account: Потврди го мојот профил
   application:
@@ -107,7 +103,6 @@ mk:
       submit_button: Затвори предлог
     form:
       tags_instructions: "Категоризирај го овој предлог. Можеш да одбереш од предложените категории или да додатеш твои"
-      map_skip_checkbox: "Овој предлог нема конкретна локација."
     index:
       recommendations:
         without_results: Нема предлози поврзани со твоите интереси
