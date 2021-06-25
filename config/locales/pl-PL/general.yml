@@ -5,10 +5,7 @@ pl:
       erase_account_link: Usuń moje konto
       finish_verification: Zakończ weryfikację
       notifications: 'Informuj mnie drogą mailową:'
-      organization_name_label: Nazwa organizacji
-      organization_responsible_name_placeholder: Reprezentant organizacji/kolektywu
       personal: Dane osobowe
-      phone_number_label: Numer telefonu
       public_interests_my_title_list: Tagi elementów, które obserwuję
       public_interests_user_title_list: Tagi elementów, które obserwuje ten użytkownik
       save_changes_submit: Zapisz zmiany
@@ -22,7 +19,6 @@ pl:
       user_permission_verify: Aby wykonać wszystkie czynności, zweryfikuj swoje konto.
       user_permission_verify_info: "* Tylko dla użytkowników Census."
       user_permission_votes: Weź udział w głosowaniu ostatecznym
-      username_label: Nazwa użytkownika
       verified_account: Konto zweryfikowane
       verify_my_account: Zweryfikuj moje konto
   application:
@@ -90,7 +86,6 @@ pl:
         submit_button: Zapisz zmiany
       show_link: Zobacz debatę
     form:
-      debate_title: Tytuł debaty
       tags_instructions: Oznacz tę debatę.
       tags_placeholder: "Wprowadź oznaczenia, których chciałbyś użyć, rozdzielone przecinkami (',')"
     index:
@@ -308,7 +303,6 @@ pl:
       map_location: "Lokalizacja na mapie"
       map_location_instructions: "Przejdź na mapie do lokalizacji i umieść znacznik."
       map_remove_marker: "Usuń znacznik"
-      map_skip_checkbox: "Niniejszy wniosek nie ma konkretnej lokalizacji lub o niej nie wiem."
     index:
       featured_proposals: Opisany
       orders:
