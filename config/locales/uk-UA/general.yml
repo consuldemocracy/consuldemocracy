@@ -5,10 +5,7 @@ uk-UA:
       erase_account_link: Видалити мій обліковий запис
       finish_verification: Повна перевірка
       notifications: Сповіщення
-      organization_name_label: Назва організації
-      organization_responsible_name_placeholder: Представник організації/колективу
       personal: Персональні дані
-      phone_number_label: Номер телефону
       public_interests_my_title_list: Теги елементів, за якими ви стежите
       public_interests_user_title_list: Теги елементів, за якими стежить даний користувач
       save_changes_submit: Зберегти зміни
@@ -22,7 +19,6 @@ uk-UA:
       user_permission_verify: Для виконання дій підтвердьте свій обліковий запис.
       user_permission_verify_info: "* Лише для користувачів Цензусу."
       user_permission_votes: Взяти участь у підсумковому голосуванні
-      username_label: Ім'я користувача
       verified_account: Обліковий запис підтверджено
       verify_my_account: Підтвердити мій обліковий запис
   application:
@@ -102,7 +98,6 @@ uk-UA:
         submit_button: Зберегти зміни
       show_link: Переглянути обговорення
     form:
-      debate_title: Назва обговорення
       tags_instructions: Відмітити обговорення.
       tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
     index:
@@ -368,7 +363,6 @@ uk-UA:
       map_location: "Розташування мапи"
       map_location_instructions: "Знайдіть місце на мапі та розташуйте на ньому маркер."
       map_remove_marker: "Вилучити маркер"
-      map_skip_checkbox: "Для цієї пропозиції немає визначеного місця розташування або воно мені не відоме."
     index:
       featured_proposals: Рекомендовані
       orders:
@@ -1008,9 +1002,6 @@ uk-UA:
       title: Посилання
       note: Додати посилання, які можуть становити інтерес
       add_new_link: Додати нове посилання
-    link_fields:
-      label_placeholder: Назва посилання
-      url_placeholder: Адреса посилання
   communities:
     show:
       surveys: Опитування
