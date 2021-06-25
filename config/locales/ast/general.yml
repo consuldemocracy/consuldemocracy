@@ -5,10 +5,7 @@ ast:
       erase_account_link: Dame de baxa
       finish_verification: Rematar verificación
       notifications: Notificaciones
-      organization_name_label: Nome de l'organización
-      organization_responsible_name_placeholder: Representante de l'asociación/coleutivu
       personal: Datos personales
-      phone_number_label: Númberu de teléfonu
       save_changes_submit: Guardar Cambeos
       title: La mio cuenta
       user_permission_debates: Participar n'alderiques
@@ -19,7 +16,6 @@ ast:
       user_permission_verify: Pa poder realizar toles acciones, verifica la to cuenta.
       user_permission_verify_info: "* Namás usuarios empadronaos."
       user_permission_votes: Participar nes votaciones finales
-      username_label: Nome d'usuariu
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
   application:
@@ -74,7 +70,6 @@ ast:
         submit_button: Guardar Cambeos
       show_link: Ver debate
     form:
-      debate_title: Título del debate
       tags_instructions: Etiqueta este debate.
       tags_placeholder: "Escribe les etiquetes que deseyes separaes por una coma (',')"
     index:
