@@ -5,10 +5,7 @@ de:
       erase_account_link: Mein Konto löschen
       finish_verification: Verifizierung abschließen
       notifications: Benachrichtigungen
-      organization_name_label: Name der Organisation
-      organization_responsible_name_placeholder: Vertreter der Organisation/des Kollektivs
       personal: Persönliche Daten
-      phone_number_label: Telefonnummer
       public_interests_my_title_list: Tags der Themen, denen Sie folgen
       public_interests_user_title_list: Kennzeichnungen der Elemente denen dieser Benutzer folgt
       save_changes_submit: Änderungen speichern
@@ -22,7 +19,6 @@ de:
       user_permission_verify: Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren.
       user_permission_verify_info: "* Nur für in der Volkszählung registrierte Nutzer."
       user_permission_votes: An finaler Abstimmung teilnehmen
-      username_label: Benutzer*innenname
       verified_account: Konto verifiziert
       verify_my_account: Mein Konto verifizieren
   application:
@@ -93,7 +89,6 @@ de:
         submit_button: Änderungen speichern
       show_link: Diskussion anzeigen
     form:
-      debate_title: Titel der Diskussion
       tags_instructions: Diskussion markieren.
       tags_placeholder: "Trennen Sie die Tags mit einem Komma (',')"
     index:
@@ -956,9 +951,6 @@ de:
       title: Links
       note: Fügen Sie Links hinzu, die von Interesse sind
       add_new_link: Neuen Link hinzufügen
-    link_fields:
-      label_placeholder: Titel Link
-      url_placeholder: Link Adresse
   communities:
     show:
       surveys: Umfragen
