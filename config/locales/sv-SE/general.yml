@@ -926,6 +926,7 @@ sv:
     help: "Du kan lägga till länkar till %{models} i %{org}."
     submit: "Lägg till"
     error: "Länken är ogiltig. Kom ihåg att börja med %{url}."
+    error_duplicate: "Relaterat innehåll som du lägger till finns redan."
     error_itself: "Länken är inte giltig. Du kan inte länka till det egna inlägget."
     success: "Du har lagt till nytt relaterat innehåll"
     is_related: "Är det här relaterat innehåll?"
