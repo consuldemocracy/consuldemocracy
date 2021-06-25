@@ -35,6 +35,10 @@ class RelatedContent < ApplicationRecord
     parent_relationable == child_relationable
   end
 
+  def duplicate?
+    parent_relationable.relationed_contents.include?(child_relationable)
+  end
+
   private
 
     def different_parent_and_child

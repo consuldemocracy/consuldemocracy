@@ -15,6 +15,8 @@ class RelatedContentsController < ApplicationController
       flash[:success] = t("related_content.success")
     elsif related_content.same_parent_and_child?
       flash[:error] = t("related_content.error_itself")
+    elsif related_content.duplicate?
+      flash[:error] = t("related_content.error_duplicate")
     else
       flash[:error] = t("related_content.error", url: Setting["url"])
     end

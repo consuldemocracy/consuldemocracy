@@ -927,6 +927,7 @@ en:
     help: "You can add links of %{models} inside of %{org}."
     submit: "Add"
     error: "Link not valid. Remember to start with %{url}."
+    error_duplicate: "The related content you are adding already exists."
     error_itself: "Link not valid. You cannot relate a content to itself."
     success: "You added a new related content"
     is_related: "Is it related content?"
