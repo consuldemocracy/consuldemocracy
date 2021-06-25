@@ -5,10 +5,7 @@ it:
       erase_account_link: Cancella il mio account
       finish_verification: Completa la verifica
       notifications: Notifiche
-      organization_name_label: Nome dell'organizzazione
-      organization_responsible_name_placeholder: Rappresentante dell'organizzazione o collettivo
       personal: Dettagli personali
-      phone_number_label: Numero di telefono
       public_interests_my_title_list: Etichette di elementi che segui
       public_interests_user_title_list: Etichette degli elementi che segue questo utente
       save_changes_submit: Salvare le modifiche
@@ -22,7 +19,6 @@ it:
       user_permission_verify: Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza.
       user_permission_verify_info: "* Solo per gli utenti in Anagrafe."
       user_permission_votes: Partecipare al voto finale
-      username_label: Nome utente
       verified_account: Utenza verificata
       verify_my_account: Verificare la mia utenza
   application:
@@ -82,7 +78,6 @@ it:
         submit_button: Salva modifiche
       show_link: Vedi il dibattito
     form:
-      debate_title: Titolo del dibattito
       tags_instructions: Etichetta questo dibatto.
       tags_placeholder: "Inserisci i tag che desideri utilizzare, separati da virgole (',')"
     index:
@@ -287,7 +282,6 @@ it:
       map_location: "Posizione sulla mappa"
       map_location_instructions: "Scorrete la mappa sino a individuare il luogo giusto e posizionare il segnaposto."
       map_remove_marker: "Rimuovere segnaposto"
-      map_skip_checkbox: "Questo investimento non ha una precisa collocazione geografica ovvero io non ne sono a conoscenza."
     index:
       featured_proposals: In primo piano
       orders:
