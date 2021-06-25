@@ -5,10 +5,7 @@ bg:
       erase_account_link: Изтриване на профила ми
       finish_verification: Пълна проверка
       notifications: Известия
-      organization_name_label: Име на организация
-      organization_responsible_name_placeholder: Представител на организацията / колектива
       personal: Лични данни
-      phone_number_label: Телефонен номер
       public_interests_my_title_list: Тагове на елементи, които следвате
       public_interests_user_title_list: Тагове на елементи, които този потребител следва
       save_changes_submit: Запазване на промени
@@ -22,7 +19,6 @@ bg:
       user_permission_verify: За да извършите всички действия, потвърдете профила си.
       user_permission_verify_info: "* Само за потребители на преброяване."
       user_permission_votes: Участвате в окончателното гласуване
-      username_label: Потребителско име
       verified_account: Профилът е потвърден
       verify_my_account: Потвърдете профила ми
   application:
@@ -90,7 +86,6 @@ bg:
         submit_button: Запазване на промени
       show_link: Преглед на дебат
     form:
-      debate_title: Заглавие на дебат
       tags_instructions: Маркирайте с таг този дебат.
       tags_placeholder: "Въведете таговете, които искате да използвате, разделени със запетаи (',')"
     index:
@@ -344,7 +339,6 @@ bg:
       map_location: "Местоположение на картата"
       map_location_instructions: "Навигирайте картата до местоположението и поставете маркера."
       map_remove_marker: "Премахване на маркера на картата"
-      map_skip_checkbox: "Това предложение няма конкретно местоположение или не съм запознат с него."
     index:
       featured_proposals: Представено
       orders:
@@ -954,9 +948,6 @@ bg:
       title: Връзки
       note: Добавете линковете, които представляват интерес
       add_new_link: Добавете нова връзка
-    link_fields:
-      label_placeholder: Име на връзка
-      url_placeholder: Адрес на връзка
   communities:
     show:
       surveys: Анкети
