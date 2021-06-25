@@ -5,10 +5,7 @@ oc:
       erase_account_link: Esborrar lo mieu compte
       finish_verification: Finalizar verificacion
       notifications: Notificacions
-      organization_name_label: Nom de l'associacion
-      organization_responsible_name_placeholder: en Representant de l'associacion
       personal: Donadas personalas
-      phone_number_label: telefòn
       public_interests_my_title_list: Etiquetas d’elements que seguissètz
       public_interests_user_title_list: Etiquetas d’elements que seguís aquel usatgièr
       save_changes_submit: Gardar de cambiaments
@@ -22,7 +19,6 @@ oc:
       user_permission_verify: Per poder realizar totas las accions, verifica lo tieu compte.
       user_permission_verify_info: "* Solament d'usatgièrs empadronats."
       user_permission_votes: Participar a las votacions finalas*
-      username_label: Nom d'usatgièr
       verified_account: Compte verificat
       verify_my_account: Verificar lo mieu compte
   application:
@@ -90,7 +86,6 @@ oc:
         submit_button: Gardar de cambiaments
       show_link: Veire debat
     form:
-      debate_title: Títol del debat
       tags_instructions: Etiqueta aquel debat.
       tags_placeholder: "Escriu las etiquetas que desiras separadas per coma (',')"
     index:
@@ -339,7 +334,6 @@ oc:
       map_location: "Ubicacion de la mapa"
       map_location_instructions: "Desplaçatz-vos a la mapa fins a l'ubicacion e metètz-i lo mercador."
       map_remove_marker: "Elimina lo mercador de mapa"
-      map_skip_checkbox: "Aquela proposicion a pas una ubicacion concrèta ni n'ai coneissença."
     index:
       featured_proposals: Destacadas
       orders:
@@ -941,9 +935,6 @@ oc:
       title: De ligams
       note: Apondètz los ligams que sián d’interès
       add_new_link: Apond un nòu ligam
-    link_fields:
-      label_placeholder: Títol del ligam
-      url_placeholder: Adreça de ligam
   communities:
     show:
       surveys: d'Enquèstas
