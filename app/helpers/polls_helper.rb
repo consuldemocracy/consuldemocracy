@@ -1,14 +1,9 @@
 module PollsHelper
-  def poll_select_options(include_all = nil)
+  def poll_select_options
     options = @polls.map do |poll|
       [poll.name, current_path_with_query_params(poll_id: poll.id)]
     end
-    options << all_polls if include_all
     options_for_select(options, request.fullpath)
-  end
-
-  def all_polls
-    [I18n.t("polls.all"), admin_questions_path]
   end
 
   def poll_dates(poll)
