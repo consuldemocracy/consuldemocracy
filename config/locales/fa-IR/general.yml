@@ -5,10 +5,7 @@ fa:
       erase_account_link: پاک کردن حساب
       finish_verification: تایید کامل
       notifications: اطلاعیه ها
-      organization_name_label: نام سازمان
-      organization_responsible_name_placeholder: نماینده سازمان/جمعی
       personal: اطلاعات شخصی
-      phone_number_label: شماره تلفن
       save_changes_submit: ذخیره تغییرات
       recommendations: توصیه ها
       title: حساب من
@@ -20,7 +17,6 @@ fa:
       user_permission_verify: برای انجام تمام اقدامات حساب کاربری را تایید کنید.
       user_permission_verify_info: "* تنها برای کاربران در سرشماری."
       user_permission_votes: شرکت در رای گیری نهایی *
-      username_label: نام کاربری
       verified_account: حساب تایید شده
       verify_my_account: تأیید حساب کاربری
   application:
@@ -74,7 +70,6 @@ fa:
         submit_button: ذخیره تغییرات
       show_link: مشاهده بحث
     form:
-      debate_title: عنوان بحث
       tags_instructions: برچسب این بحث.
       tags_placeholder: "برچسبهایی را که میخواهید از آن استفاده کنید، با کاما ('،') جدا کنید"
     index:
