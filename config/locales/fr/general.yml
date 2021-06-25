@@ -5,10 +5,7 @@ fr:
       erase_account_link: Supprimer mon compte
       finish_verification: Finir la vérification
       notifications: Notifications
-      organization_name_label: Nom de l'organisation
-      organization_responsible_name_placeholder: Représentant de l'organisation ou du collectif
       personal: Détails personnels
-      phone_number_label: Numéro de téléphone
       public_interests_my_title_list: Étiquettes des éléments que vous suivez
       public_interests_user_title_list: Étiquettes des éléments que l'utilisateur suit
       save_changes_submit: Sauvegarder des changements
@@ -22,7 +19,6 @@ fr:
       user_permission_verify: Pour effectuer toutes les actions, vérifiez votre compte.
       user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur\nle recensement de Madrid"
       user_permission_votes: Participer au vote final
-      username_label: Nom d'utilisateur
       verified_account: Compte vérifié
       verify_my_account: Vérifier mon compte
   application:
@@ -88,7 +84,6 @@ fr:
         submit_button: Sauvegarder des changements
       show_link: Voir le débat
     form:
-      debate_title: Titre du débat
       tags_instructions: Étiquetter ce débat
       tags_placeholder: "Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')"
     index:
@@ -331,7 +326,6 @@ fr:
       map_location: "Emplacement sur la carte"
       map_location_instructions: "Positionnez le marqueur à l'emplacement correspondant sur la carte."
       map_remove_marker: "Supprimer le marqueur"
-      map_skip_checkbox: "Cette proposition n'a pas d'emplacement associé à ma connaissance."
     index:
       featured_proposals: Mis en avant
       orders:
