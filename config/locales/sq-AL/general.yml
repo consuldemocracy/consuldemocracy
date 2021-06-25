@@ -5,10 +5,7 @@ sq:
       erase_account_link: Fshi llogarinë time
       finish_verification: Verifikime të plota
       notifications: Njoftime
-      organization_name_label: Emri i organizatës
-      organization_responsible_name_placeholder: Përfaqësuesi i organizatës / kolektive
       personal: Detaje personale
-      phone_number_label: Numri i telefonit
       public_interests_my_title_list: Etiketo elementet që ti ndjek
       public_interests_user_title_list: Etiketo elementet që përdoruesi ndjek
       save_changes_submit: Ruaj ndryshimet
@@ -22,7 +19,6 @@ sq:
       user_permission_verify: Për të kryer të gjitha veprimet verifikoni llogarinë tuaj.
       user_permission_verify_info: "* Vetëm për përdoruesit e regjistruar."
       user_permission_votes: Merrni pjesë në votimin përfundimtar
-      username_label: Emer përdoruesi
       verified_account: Llogaria është verifikuar
       verify_my_account: Verifikoni llogarinë time
   application:
@@ -82,7 +78,6 @@ sq:
         submit_button: Ruaj ndryshimet
       show_link: Shiko debatin
     form:
-      debate_title: Titulli i Debatit
       tags_instructions: Etiketoni këtë debat.
       tags_placeholder: "Futni etiketimet që dëshironi të përdorni, të ndara me presje (',')"
     index:
@@ -289,7 +284,6 @@ sq:
       map_location: "Vendndodhja në hartë"
       map_location_instructions: "Lundroni në hartë në vendndodhje dhe vendosni shënuesin."
       map_remove_marker: "Hiq shënuesin e hartës"
-      map_skip_checkbox: "Ky propozim nuk ka një vend konkret ose nuk jam i vetëdijshëm për të."
     index:
       featured_proposals: Karakteristika
       orders:
