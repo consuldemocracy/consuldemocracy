@@ -5,10 +5,7 @@ val:
       erase_account_link: Eliminar el meu compte
       finish_verification: Finalitzar verificació
       notifications: Notificacions
-      organization_name_label: Nom de l'organització
-      organization_responsible_name_placeholder: Representant de l'asociació/colectiu
       personal: Dades personals
-      phone_number_label: Telèfon
       public_interests_my_title_list: Etiquetes d'elements que segueixes
       public_interests_user_title_list: Etiquetes d'elements que segueix aquest usuari
       save_changes_submit: Guardar canvis
@@ -22,7 +19,6 @@ val:
       user_permission_verify: Per a poder realitzar totes les accions verifica el teu compte.
       user_permission_verify_info: "* Sols usuaris empadronats."
       user_permission_votes: Participar en les votacions finals
-      username_label: Nom d'usuari
       verified_account: Compte verificat
       verify_my_account: Verificar el meu compte
   application:
@@ -82,7 +78,6 @@ val:
         submit_button: Guardar canvis
       show_link: Vore debat
     form:
-      debate_title: Títol del debat
       tags_instructions: Etiqueta aquest debat.
       tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
     index:
@@ -289,7 +284,6 @@ val:
       map_location: "Ubicació en el mapa"
       map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
       map_remove_marker: "Eliminar el marcador"
-      map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la coneixem."
     index:
       featured_proposals: Destacar
       orders:
