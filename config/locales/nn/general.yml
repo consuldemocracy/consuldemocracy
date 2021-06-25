@@ -5,10 +5,7 @@ nn:
       erase_account_link: Slett min konto
       finish_verification: Fullfør verifisering
       notifications: Varsler
-      organization_name_label: Navn på organisasjonen
-      organization_responsible_name_placeholder: Representant for organisasjonen/gruppen
       personal: Personlige detaljer
-      phone_number_label: Telefonnr
       public_interests_my_title_list: Tagger for emnene du følger
       public_interests_user_title_list: Tagger for emner denne brukeren følger
       save_changes_submit: Lagre endringer
@@ -22,7 +19,6 @@ nn:
       user_permission_verify: Verifiser din konto for å få tilgang til alle funksjoner.
       user_permission_verify_info: "* Kun for brukere av Census."
       user_permission_votes: Delta i endelig avstemning
-      username_label: Brukernavn
       verified_account: Konto er verifisert
       verify_my_account: Verifiser min konto
   application:
@@ -96,7 +92,6 @@ nn:
         submit_button: Lagre endringer
       show_link: Vis debatt
     form:
-      debate_title: Tittel på debatt
       tags_instructions: Tag denne debatten.
       tags_placeholder: "Skriv tag'ene du vil bruke, avgrenset med komma (',')"
     index:
@@ -333,7 +328,6 @@ nn:
       map_location: "Kartposisjon"
       map_location_instructions: "Naviger til plassen på kartet og plasser markøren."
       map_remove_marker: "Fjern kartmarkøren"
-      map_skip_checkbox: "Det finnes ingen konkret geografisk plassering for forslaget, eller jeg kjenner ikke til plasseringen."
     index:
       featured_proposals: Utvalgte
       orders:
@@ -918,9 +912,6 @@ nn:
       title: Linker
       note: Legg til linkene som er av interesse
       add_new_link: Legg til ny link
-    link_fields:
-      label_placeholder: Tittel på link
-      url_placeholder: Link
   communities:
     show:
       surveys: Undersøkelser
