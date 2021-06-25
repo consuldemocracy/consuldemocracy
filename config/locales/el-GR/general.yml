@@ -5,10 +5,7 @@ el:
       erase_account_link: Διαγράψτε το λογαριασμό μου
       finish_verification: Ολοκλήρωση επαλήθευσης
       notifications: Ειδοποιήσεις
-      organization_name_label: Όνομα οργανισμού
-      organization_responsible_name_placeholder: Εκπρόσωπος της οργάνωσης/συλλόγου
       personal: Προσωπικά στοιχεία
-      phone_number_label: Αριθμός τηλεφώνου
       public_interests_my_title_list: Ετικέτες στοιχείων που ακολουθείτε
       public_interests_user_title_list: Ετικέτες στοιχείων που ακολουθεί αυτός ο χρήστης
       save_changes_submit: Αποθηκεύστε τις αλλαγές
@@ -22,7 +19,6 @@ el:
       user_permission_verify: Για να εκτελέσετε όλες τις ενέργειες, επαληθεύστε το λογαριασμό σας.
       user_permission_verify_info: "* Μόνο για τους χρήστες που βρίσκονται στην απογραφή."
       user_permission_votes: Συμμετοχή στην τελική ψηφοφορία
-      username_label: Όνομα χρήστη
       verified_account: Ο λογαριασμός σας έχει επαληθευθεί
       verify_my_account: Επαλήθευση του λογαριασμού μου
   application:
@@ -90,7 +86,6 @@ el:
         submit_button: Αποθήκευση αλλαγών
       show_link: Προβολή συζήτησης
     form:
-      debate_title: Τίτλος συζήτησης
       tags_instructions: Προσθήκη ετικέτας σε αυτή τη συζήτηση.
       tags_placeholder: "Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (',')"
     index:
@@ -321,7 +316,6 @@ el:
       map_location: "Χάρτης τοποθεσίας"
       map_location_instructions: "Περιηγηθείτε στο χάρτη προς την τοποθεσία και τοποθετήστε το δείκτη."
       map_remove_marker: "Αφαιρέστε τον δείκτη του χάρτη"
-      map_skip_checkbox: "Η πρόταση αυτή δεν έχει μια συγκεκριμένη τοποθεσία ή δεν έχω επίγνωση για αυτήν."
     index:
       featured_proposals: Προτεινόμενα
       orders:
@@ -889,9 +883,6 @@ el:
       title: Σύνδεσμοι
       note: Προσθέστε τους συνδέσμους που σας ενδιαφέρουν
       add_new_link: Πρόσθήκη νέου συνδέσμου
-    link_fields:
-      label_placeholder: Τίτλος συνδέσμου
-      url_placeholder: Διεύθυνση συνδέσμου
   communities:
     show:
       surveys: Δημοσκοπήσεις
