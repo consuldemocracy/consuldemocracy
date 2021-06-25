@@ -5,10 +5,7 @@ nl:
       erase_account_link: Verwijder mijn account
       finish_verification: Maak verificatieproces af
       notifications: Meldingen
-      organization_name_label: Naam van de organisatie
-      organization_responsible_name_placeholder: Vertegenwoordiger van de organisatie of het collectief
       personal: Persoonlijke gegevens
-      phone_number_label: Telefoonnummer
       public_interests_my_title_list: Labels van zaken die je volgt
       public_interests_user_title_list: Termen die deze persoon volgt
       save_changes_submit: Save changes
@@ -22,7 +19,6 @@ nl:
       user_permission_verify: Verifieer uw account om alles te kunnen.
       user_permission_verify_info: "* Alleen voor gebruikers in de regio."
       user_permission_votes: Neem deel aan definitieve stemronde
-      username_label: Username
       verified_account: Account geverifiëerd
       verify_my_account: Verifieer mijn account
   application:
@@ -82,7 +78,6 @@ nl:
         submit_button: Bewaar wijzigingen
       show_link: Debat bekijken
     form:
-      debate_title: Onderwerp
       tags_instructions: Voeg termen toe.
       tags_placeholder: "Voeg de gewenste labels toe, gescheiden door een komma (',')"
     index:
@@ -290,7 +285,6 @@ nl:
       map_location: "Locatie"
       map_location_instructions: "Beweeg de kaart en wijs de locatie aan."
       map_remove_marker: "Locatie verwijderen"
-      map_skip_checkbox: "De locatie voor het voorstel is niet bekend."
     index:
       featured_proposals: Featured
       orders:
