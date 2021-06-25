@@ -5,10 +5,7 @@ gl:
       erase_account_link: Borrar a miña conta
       finish_verification: Finalizar verificación
       notifications: Notificacións
-      organization_name_label: Nome da organización
-      organization_responsible_name_placeholder: Representante da asociación/colectivo
       personal: Datos persoais
-      phone_number_label: Teléfono
       public_interests_my_title_list: Etiquetas dos elementos que seuges
       public_interests_user_title_list: Etiquetas dos elementos que segue este usuario
       save_changes_submit: Gardar cambios
@@ -22,7 +19,6 @@ gl:
       user_permission_verify: Para poder realizar todas as accións, verifica a túa conta.
       user_permission_verify_info: "* Só para persoas empadroadas."
       user_permission_votes: Participar nas votacións finais*
-      username_label: Nome de usuario/a
       verified_account: Conta verificada
       verify_my_account: Verificar a miña conta
   application:
@@ -90,7 +86,6 @@ gl:
         submit_button: Gardar so cambios
       show_link: Ver debate
     form:
-      debate_title: Título do debate
       tags_instructions: Etiqueta este debate.
       tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
     index:
@@ -323,7 +318,6 @@ gl:
       map_location: "Localización no mapa"
       map_location_instructions: "Navega polo mapa até a localización e coloca o marcador."
       map_remove_marker: "Borrar o marcador do mapa"
-      map_skip_checkbox: "Esta proposta non ten unha localización concreta ou non a coñezo."
     index:
       featured_proposals: Destacar
       orders:
