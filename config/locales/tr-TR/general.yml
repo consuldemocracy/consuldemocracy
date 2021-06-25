@@ -5,10 +5,7 @@ tr:
       erase_account_link: Hesabımı sil
       finish_verification: Doğrulamayı tamamla
       notifications: Bildirimler
-      organization_name_label: Kurumun adı
-      organization_responsible_name_placeholder: Kurum/topluluk temsilcisi
       personal: Kişisel bilgiler
-      phone_number_label: Telefon numarası
       public_interests_my_title_list: Takip ettiğiniz öğelerin etiketleri
       public_interests_user_title_list: Bu kullanıcının takip ettiği öğelerin etiketleri
       save_changes_submit: Değişiklikleri kaydet
@@ -22,7 +19,6 @@ tr:
       user_permission_verify: Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın.
       user_permission_verify_info: "* Sadece Pusula'daki kullanıcılar için."
       user_permission_votes: Son oylamaya katıl
-      username_label: Kullanıcı adı
       verified_account: Hesap doğrulandı
       verify_my_account: Hesabımı doğrula
   application:
@@ -93,7 +89,6 @@ tr:
         submit_button: Değişiklikleri kaydet
       show_link: Tartışmayı göster
     form:
-      debate_title: Tartışma başlığı
       tags_instructions: Bu tartışmayı etiketle.
       tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak yazın (',')"
     index:
@@ -347,7 +342,6 @@ tr:
       map_location: "Harita konumu"
       map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
       map_remove_marker: "Harita işaretçisini kaldır"
-      map_skip_checkbox: "Bu teklifin somut bir konumu yok veya ben farkında değilim."
     index:
       featured_proposals: Öne Çıkan
       orders:
@@ -957,9 +951,6 @@ tr:
       title: Bağlantılar
       note: İlgilendiğiniz bağlantıları ekleyin
       add_new_link: Yeni bağlantı ekle
-    link_fields:
-      label_placeholder: Bağlantı başlığı
-      url_placeholder: Bağlantı adresi
   communities:
     show:
       surveys: Anketler
