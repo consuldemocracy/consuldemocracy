@@ -17,6 +17,14 @@ describe Widget::Card do
     it "is not valid without a title" do
       expect(build(:widget_card, title: "")).not_to be_valid
     end
+
+    context "regular cards" do
+      it "is not valid without a link_url" do
+        card = build(:widget_card, header: false, link_url: nil)
+
+        expect(card).not_to be_valid
+      end
+    end
   end
 
   describe "#header" do

@@ -22,6 +22,7 @@ describe "SDG homepage configuration" do
       click_link "Create planning card"
 
       within(".translatable-fields") { fill_in "Title", with: "My planning card" }
+      fill_in "Link URL", with: "/any_path"
       click_button "Create card"
 
       within(".planning-cards") do
@@ -54,6 +55,7 @@ describe "SDG homepage configuration" do
       click_link "Create header"
 
       within(".translatable-fields") { fill_in "Title", with: "My header" }
+      fill_in "Link URL", with: "/any_path"
       click_button "Create card"
 
       within(".sdg-header") do
