@@ -5,10 +5,7 @@ ar:
       erase_account_link: مسح حسابي
       finish_verification: عملية التحقق مكتملة
       notifications: إشعارات
-      organization_name_label: اسم المنظمة
-      organization_responsible_name_placeholder: ممثل المنظمة/الوحدة
       personal: البيانات الشخصية
-      phone_number_label: رقم الهاتف
       public_interests_my_title_list: علامات للعناصر التي تتابعها
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
@@ -22,7 +19,6 @@ ar:
       user_permission_verify: لتنفيذ كافة الإجراءات يرجى التحقق من الحساب الخاص بك.
       user_permission_verify_info: "* فقط للمستخدمين في التعداد."
       user_permission_votes: المشاركة في التصويت النهائي
-      username_label: اسم المستخدم
       verified_account: تم التحقق من الحساب
       verify_my_account: التحقق من حسابي
   application:
@@ -114,7 +110,6 @@ ar:
         submit_button: حفظ التغييرات
       show_link: عرض المناقشة
     form:
-      debate_title: عنوان المناقشة
       tags_instructions: ضع علامة على هذا النقاش.
       tags_placeholder: "ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',')"
     index:
@@ -369,7 +364,6 @@ ar:
       map_location: "موقع الخريطة"
       map_location_instructions: "تنقل في الخريطة الى الموقع و ضع العلامة."
       map_remove_marker: "ازل علامة الخريطة"
-      map_skip_checkbox: "هذا المقترح لا يملك موقع ملموس أو لست على دراية به."
     index:
       featured_proposals: مميز
       orders:
@@ -1009,9 +1003,6 @@ ar:
       title: روابط
       note: أضف الروابط التي تهمك
       add_new_link: إضافة رابط جديد
-    link_fields:
-      label_placeholder: عنوان الرابط
-      url_placeholder: عنوان الرابط
   communities:
     show:
       surveys: الاستطلاعات
