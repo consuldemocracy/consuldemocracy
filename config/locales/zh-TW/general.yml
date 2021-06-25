@@ -5,10 +5,7 @@ zh-TW:
       erase_account_link: 刪除我的帳戶
       finish_verification: 完成驗證
       notifications: 通知
-      organization_name_label: 組織名稱
-      organization_responsible_name_placeholder: 組織/集體的代表人
       personal: 個人資料
-      phone_number_label: 電話號碼
       public_interests_my_title_list: 您跟蹤的元素之標籤
       public_interests_user_title_list: 此用戶跟蹤的元素之標籤
       save_changes_submit: 儲存更改
@@ -22,7 +19,6 @@ zh-TW:
       user_permission_verify: 要執行所有操作，請核實您的帳戶。
       user_permission_verify_info: "* 僅適用於人口普查的用戶。"
       user_permission_votes: 參與最終投票
-      username_label: 用戶名
       verified_account: 帳戶已被核實
       verify_my_account: 核實我的帳戶
   application:
@@ -78,7 +74,6 @@ zh-TW:
         submit_button: 儲存更改
       show_link: 查看辯論
     form:
-      debate_title: 辯論標題
       tags_instructions: 為此辯論加標籤。
       tags_placeholder: "輸入您要用的標籤，以逗號分隔 (',')"
     index:
@@ -278,7 +273,6 @@ zh-TW:
       map_location: "地圖位置"
       map_location_instructions: "將地圖導航到該位置，並放置標記。"
       map_remove_marker: "刪除地圖標記"
-      map_skip_checkbox: "這個建議沒有具體的位置，或我沒有注意到。"
     index:
       featured_proposals: 特色
       orders:
