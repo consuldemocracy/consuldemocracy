@@ -5,10 +5,7 @@ he:
       erase_account_link: מחק את החשבון שלי
       finish_verification: נא לאמת את החשבון
       notifications: התראות
-      organization_name_label: שם הארגון
-      organization_responsible_name_placeholder: נציג הארגון/ההתאגדות
       personal: פרטים אישיים
-      phone_number_label: מספר טלפון
       public_interests_my_title_list: תגיות של אלמנטים אחריהם אתה עוקב
       public_interests_user_title_list: תגיות של אלמנטים שמשתמש זה עוקב אחריהן
       save_changes_submit: שמירת שינויים
@@ -22,7 +19,6 @@ he:
       user_permission_verify: כדי לבצע את כל הפעולות, עליך לאמת את חשבונך
       user_permission_verify_info: "* רק עבור משתמשים/ות במפקד אוכלוסין."
       user_permission_votes: השתתפות בהצבעה הסופית
-      username_label: שם המשתמש/ת
       verified_account: החשבון אומת בהצלחה
       verify_my_account: אמת את החשבון שלי
   application:
@@ -102,7 +98,6 @@ he:
         submit_button: שמירת שינויים
       show_link: צפייה בדיון
     form:
-      debate_title: כותרת הדיון
       tags_instructions: סמן דיון זה.
       tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
     index:
@@ -345,7 +340,6 @@ he:
       map_location: "מיקום מפה"
       map_location_instructions: "נווט במפה למיקום ומקם את הסמן."
       map_remove_marker: "הסר סמן מפה"
-      map_skip_checkbox: "להשקעה זו אין מיקום מדויק או שאיני מודע למיקום."
     index:
       featured_proposals: מומלצים
       orders:
@@ -947,9 +941,6 @@ he:
       title: קישורים
       note: הוסף את הקישורים בעלי עניין רלוונטי
       add_new_link: הוסף קישור חדש
-    link_fields:
-      label_placeholder: כותרת הקישור
-      url_placeholder: כתובת הקישור
   communities:
     show:
       surveys: סקרים
