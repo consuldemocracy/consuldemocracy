@@ -19,31 +19,26 @@ describe "Localization" do
   scenario "Available locales appear in the locale switcher" do
     visit "/"
 
-    within(".locale-form .js-location-changer") do
-      expect(page).to have_content "Español"
-      expect(page).to have_content "English"
-    end
+    expect(page).to have_select "Language:", with_options: %w[Español English]
   end
 
   scenario "The current locale is selected" do
     visit "/"
-    expect(page).to have_select("locale-switcher", selected: "English")
+    expect(page).to have_select "Language:", selected: "English"
   end
 
   scenario "Changing the locale" do
     visit "/"
-    expect(page).to have_content("Language")
+    select "Español", from: "Language:"
 
-    select("Español", from: "locale-switcher")
-    expect(page).to have_content("Idioma")
-    expect(page).not_to have_content("Language")
-    expect(page).to have_select("locale-switcher", selected: "Español")
+    expect(page).not_to have_select "Language:"
+    expect(page).to have_select "Idioma:", selected: "Español"
   end
 
   scenario "Keeps query parameters while using protected redirects" do
     visit "/debates?order=created_at&host=evil.dev"
 
-    select("Español", from: "locale-switcher")
+    select "Español", from: "Language:"
 
     expect(current_host).to eq "http://127.0.0.1"
     expect(page).to have_current_path "/debates?locale=es&order=created_at"
@@ -83,9 +78,7 @@ describe "Localization" do
     scenario "Available locales without language translation display locale key" do
       visit "/"
 
-      within(".locale-form .js-location-changer") do
-        expect(page).to have_content "wl"
-      end
+      expect(page).to have_select "Language:", with_options: ["wl"]
     end
   end
 
