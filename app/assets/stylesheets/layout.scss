@@ -1012,7 +1012,8 @@ footer {
     margin-bottom: 0;
     margin-top: $line-height / 4;
     outline: none;
-    padding: 0 $line-height / 4;
+    padding-left: $line-height / 4;
+    padding-right: calc(#{$line-height / 4} + 1em);
     width: auto;
 
     &:focus {
