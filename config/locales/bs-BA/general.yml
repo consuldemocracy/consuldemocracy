@@ -5,10 +5,7 @@ bs:
       erase_account_link: Obriši moj profil
       finish_verification: Završi verifikaciju
       notifications: Obavijesti
-      organization_name_label: Naziv organizacije
-      organization_responsible_name_placeholder: Predstavnik organizacije/zajednice
       personal: Lični podaci
-      phone_number_label: Broj telefona
       public_interests_my_title_list: Tagovi za ono što pratim
       public_interests_user_title_list: Tagovi za ono što korisnik prati
       save_changes_submit: Spasi izmjene
@@ -22,7 +19,6 @@ bs:
       user_permission_verify: Potvrdi nalog za obavljanje svih radnji.
       user_permission_verify_info: "* Samo za korisnike popisa."
       user_permission_votes: Učestvujte u finalnom glasanju
-      username_label: Korisničko ime
       verified_account: Nalog potvrđen
       verify_my_account: Potvrdi moj nalog
   application:
@@ -86,7 +82,6 @@ bs:
         submit_button: Spasi izmjene
       show_link: Pogledaj debatu
     form:
-      debate_title: Naziv debate
       tags_instructions: Taguj debatu.
       tags_placeholder: "Unesite tagove koje želite koristiti, razdvojene zarezima (,)"
     index:
@@ -323,7 +318,6 @@ bs:
       map_location: "Lokacija mape"
       map_location_instructions: "Idite mapom do lokacije i stavite marker."
       map_remove_marker: "Uklonite marker na mapi"
-      map_skip_checkbox: "Prijedlog nema konkretnu lokaciju, ili je ja ne vidim."
     index:
       featured_proposals: Glavni prijedlozi
       orders:
@@ -893,9 +887,6 @@ bs:
       title: Linkovi
       note: Dodaj relevantne linkove
       add_new_link: Dodaj novi link
-    link_fields:
-      label_placeholder: Link za naziv
-      url_placeholder: Link za adresu
   communities:
     show:
       surveys: Ankete
