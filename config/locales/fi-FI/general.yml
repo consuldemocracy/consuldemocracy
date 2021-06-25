@@ -3,15 +3,12 @@ fi:
     show:
       erase_account_link: Poista tilini
       notifications: Ilmoitukset
-      organization_name_label: Organisaation nimi
-      phone_number_label: Puhelinnumero
       save_changes_submit: Tallenna muutokset
       recommendations: Suositukset
       title: Tilini
       user_permission_info: Tililläsi voit...
       user_permission_proposal: Luo uusia ehdotuksia
       user_permission_support_proposal: Tue ehdotuksia
-      username_label: Käyttäjätunnus
       verified_account: Tili vahvistettu
       verify_my_account: Vahvista tilini
   application:
