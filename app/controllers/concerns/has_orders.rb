@@ -1,5 +1,10 @@
 module HasOrders
   extend ActiveSupport::Concern
+  attr_reader :valid_orders, :current_order
+
+  included do
+    helper_method :valid_orders, :current_order
+  end
 
   class_methods do
     def has_orders(valid_orders, *args)
