@@ -7,12 +7,17 @@ class Shared::LinkListComponent < ApplicationComponent
   end
 
   def render?
-    links.select(&:present?).any?
+    present_links.any?
   end
 
-  def call
-    tag.ul(options) do
-      safe_join(links.select(&:present?).map do |text, url, current = false, **link_options|
+  private
+
+    def present_links
+      links.select(&:present?)
+    end
+
+    def list_items
+      present_links.map do |text, url, current = false, **link_options|
         tag.li(({ "aria-current": true } if current)) do
           if url
             link_to text, url, link_options
@@ -20,7 +25,6 @@ class Shared::LinkListComponent < ApplicationComponent
             text
           end
         end
-      end, "\n")
+      end
     end
-  end
 end

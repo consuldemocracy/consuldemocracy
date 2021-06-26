@@ -21,7 +21,7 @@ describe Shared::LinkListComponent, type: :component do
 
     expect(list).to eq '<ul class="menu">' + "\n" +
       '<li><a href="/">Home</a></li>' + "\n" +
-      '<li><a href="/info">Info</a></li>' + "\n</ul>"
+      '<li><a href="/info">Info</a></li>' + "\n</ul>\n"
   end
 
   it "accepts anchor tags" do
@@ -32,7 +32,7 @@ describe Shared::LinkListComponent, type: :component do
 
     expect(list).to eq '<ul class="menu">' + "\n" +
       '<li><a href="/">Home</a></li>' + "\n" +
-      '<li><a href="/info">Info</a></li>' + "\n</ul>"
+      '<li><a href="/info">Info</a></li>' + "\n</ul>\n"
   end
 
   it "accepts options for links" do
