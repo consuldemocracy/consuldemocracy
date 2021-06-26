@@ -6,4 +6,17 @@ class Shared::CommentsComponent < ApplicationComponent
     @record = record
     @comment_tree = comment_tree
   end
+
+  private
+
+    def cache_key
+      [
+        locale_and_user_status,
+        current_order,
+        commentable_cache_key(record),
+        comment_tree.comments,
+        comment_tree.comment_authors,
+        record.comments_count
+      ]
+    end
 end
