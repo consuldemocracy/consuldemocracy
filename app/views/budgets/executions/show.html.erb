@@ -42,29 +42,7 @@
   </div>
 
   <div class="small-12 medium-9 large-10 column">
-    <%= form_tag(budget_executions_path(@budget), method: :get) do %>
-      <div class="small-12 medium-3 column">
-        <%= label_tag :milestone_tag, t("budgets.executions.filters.milestone_tag.label") %>
-        <%= select_tag :milestone_tag,
-                      options_for_select(
-                        options_for_milestone_tags,
-                        params[:milestone_tag]
-                      ),
-                      class: "js-submit-on-change",
-                      prompt: t("budgets.executions.filters.milestone_tag.all",
-                      count: @budget.investments.winners.with_milestones.count) %>
-      </div>
-      <div class="small-12 medium-3 column">
-        <%= label_tag :status, t("budgets.executions.filters.status.label") %>
-        <%= select_tag :status,
-                      options_from_collection_for_select(@statuses,
-                      :id, lambda { |s| "#{s.name} (#{filters_select_counts(s.id)})" },
-                      params[:status]),
-                      class: "js-submit-on-change",
-                      prompt: t("budgets.executions.filters.status.all",
-                      count: @budget.investments.winners.with_milestones.count) %>
-      </div>
-    <% end %>
+    <%= render Budgets::Executions::FiltersComponent.new(@budget, @statuses) %>
 
     <% if @investments_by_heading.any? %>
       <%= render "budgets/executions/investments" %>
