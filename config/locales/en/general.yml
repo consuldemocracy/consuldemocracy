@@ -61,7 +61,6 @@ en:
       newest: Newest first
       oldest: Oldest first
       most_commented: Most commented
-    select_order: Sort by
     show:
       return_to_commentable: "Go back to "
   comments_helper:

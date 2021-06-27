@@ -3,15 +3,13 @@
     <div id="comments" class="small-12 column">
       <%= content %>
 
-      <%= render "shared/wide_order_selector", i18n_namespace: "comments" %>
-
       <% if current_user %>
         <%= render "comments/form", { commentable: record, parent_id: nil } %>
       <% else %>
-        <br>
         <%= render "shared/login_to_comment" %>
       <% end %>
 
+      <%= render "shared/order_links", i18n_namespace: "comments" %>
       <%= render "comments/comment_list", comments: comment_tree.root_comments %>
       <%= paginate comment_tree.root_comments %>
     </div>

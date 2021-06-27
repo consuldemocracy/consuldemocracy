@@ -1856,6 +1856,11 @@ table {
     }
   }
 
+  .order-links {
+    margin-bottom: $line-height;
+    margin-top: $line-height;
+  }
+
   .comment {
     line-height: $list-lineheight;
     margin: $line-height / 4 0;
