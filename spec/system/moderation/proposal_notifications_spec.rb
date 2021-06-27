@@ -118,7 +118,7 @@ describe "Moderate proposal notifications" do
 
       scenario "remembering page, filter and order" do
         stub_const("#{ModerateActions}::PER_PAGE", 2)
-        create_list(:proposal, 4)
+        create_list(:proposal_notification, 4)
 
         visit moderation_proposal_notifications_path(filter: "all", page: "2", order: "created_at")
 
