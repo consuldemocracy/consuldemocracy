@@ -12,7 +12,7 @@ en:
         headers:
           comment: Comment
           moderate: Moderate
-        hide_comments: Hide comments
+        hide: Hide comments
         ignore_flags: Mark as viewed
         order: Order
         orders:
@@ -34,7 +34,7 @@ en:
         headers:
           debate: Debate
           moderate: Moderate
-        hide_debates: Hide debates
+        hide: Hide debates
         ignore_flags: Mark as viewed
         order: Order
         orders:
@@ -62,7 +62,7 @@ en:
         headers:
           moderate: Moderate
           proposal: Proposal
-        hide_proposals: Hide proposals
+        hide: Hide proposals
         ignore_flags: Mark as viewed
         order: Order by
         orders:
@@ -81,7 +81,7 @@ en:
         headers:
           moderate: Moderate
           budget_investment: Budget investment
-        hide_budget_investments: Hide budget investments
+        hide: Hide budget investments
         ignore_flags: Mark as viewed
         order: Order by
         orders:
@@ -100,7 +100,7 @@ en:
         headers:
           moderate: Moderate
           proposal_notification: Proposal notification
-        hide_proposal_notifications: Hide proposals
+        hide: Hide proposals
         ignore_flags: Mark as viewed
         order: Order by
         orders:
