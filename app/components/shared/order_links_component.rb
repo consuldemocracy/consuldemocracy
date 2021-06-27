@@ -1,9 +1,10 @@
 class Shared::OrderLinksComponent < ApplicationComponent
-  attr_reader :i18n_namespace
+  attr_reader :i18n_namespace, :anchor
   delegate :current_path_with_query_params, :current_order, :valid_orders, to: :helpers
 
-  def initialize(i18n_namespace)
+  def initialize(i18n_namespace, anchor: nil)
     @i18n_namespace = i18n_namespace
+    @anchor = anchor
   end
 
   private
@@ -21,7 +22,7 @@ class Shared::OrderLinksComponent < ApplicationComponent
     end
 
     def link_path(order)
-      current_path_with_query_params(order: order, page: 1)
+      current_path_with_query_params(order: order, page: 1, anchor: anchor)
     end
 
     def link_text(order)

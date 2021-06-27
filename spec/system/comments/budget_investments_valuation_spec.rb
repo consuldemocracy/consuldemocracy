@@ -161,6 +161,7 @@ describe "Internal valuation comments on Budget::Investments" do
       end
 
       expect(page).to have_css(".comment", count: 2)
+      expect(page).to have_current_path(/#comments/, url: true)
     end
   end
 
