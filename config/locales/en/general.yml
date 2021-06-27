@@ -378,7 +378,6 @@ en:
       search_results:
         one: " containing the term <strong>'%{search_term}'</strong>"
         other: " containing the term <strong>'%{search_term}'</strong>"
-      select_order: Order by
       select_order_long: "You are viewing proposals according to:"
       start_proposal: Create a proposal
       title: Proposals

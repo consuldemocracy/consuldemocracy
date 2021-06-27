@@ -214,16 +214,16 @@ describe "Proposals" do
       login_as_manager
       click_link "Print proposals"
 
-      expect(page).to have_selector(".js-order-selector[data-order='confidence_score']")
+      expect(page).to have_link "highest rated", class: "is-active"
 
       within(".proposals-list") do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
         expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
-      select "newest", from: "order-selector"
+      click_link "newest"
 
-      expect(page).to have_selector(".js-order-selector[data-order='created_at']")
+      expect(page).to have_link "newest", class: "is-active"
 
       expect(page).to have_current_path(/order=created_at/)
       expect(page).to have_current_path(/page=1/)

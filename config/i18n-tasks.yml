@@ -190,7 +190,6 @@ ignore_unused:
   - "debates.index.select_order"
   - "debates.index.orders.*"
   - "debates.index.section_header.*"
-  - "proposals.index.select_order"
   - "proposals.index.orders.*"
   - "proposals.index.section_header.*"
   - "*.index.search_form.*"
