@@ -1,10 +1,8 @@
 <ul class="no-bullet submenu order-links">
   <% valid_orders.each do |order| %>
     <li class="inline-block">
-      <%= link_to current_path_with_query_params(order: order, page: 1), class: order == current_order ? "is-active" : "" do %>
-        <%= content_tag(order == current_order ? :h2 : :span) do %>
-          <%= t("#{i18n_namespace}.orders.#{order}") %>
-        <% end %>
+      <%= link_to link_path(order), class: html_class(order) do %>
+        <%= content_tag tag_name(order), link_text(order) %>
       <% end %>
     </li>
   <% end %>
