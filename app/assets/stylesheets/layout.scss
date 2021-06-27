@@ -2039,25 +2039,6 @@ table {
   opacity: 0.4;
 }
 
-.wide-order-selector {
-  float: none;
-  margin-top: 0;
-
-  @include breakpoint(medium) {
-    float: right;
-    margin-top: rem-calc(-24);
-  }
-
-  label {
-    padding-right: $line-height / 2;
-    float: none;
-
-    @include breakpoint(medium) {
-      float: right;
-    }
-  }
-}
-
 .comment-form {
   display: inline-block;
   width: 100%;

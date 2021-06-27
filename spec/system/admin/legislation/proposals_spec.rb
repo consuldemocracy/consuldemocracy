@@ -33,7 +33,7 @@ describe "Admin collaborative legislation", :admin do
       create(:legislation_proposal, title: "cccc", legislation_process_id: process.id)
 
       visit admin_legislation_process_proposals_path(process.id)
-      select "Title", from: "order-selector-participation"
+      click_link "Sort by title"
 
       within("#legislation_proposals_list") do
         within all(".legislation_proposal")[0] { expect(page).to have_content("aaaa") }
@@ -49,7 +49,7 @@ describe "Admin collaborative legislation", :admin do
       create(:legislation_proposal, cached_votes_score: 20, legislation_process_id: process.id)
 
       visit admin_legislation_process_proposals_path(process.id)
-      select "Total supports", from: "order-selector-participation"
+      click_link "Sort by total supports"
 
       within("#legislation_proposals_list") do
         within all(".legislation_proposal")[0] { expect(page).to have_content("30") }
@@ -65,7 +65,7 @@ describe "Admin collaborative legislation", :admin do
       proposal3 = create(:legislation_proposal, title: "cccc", legislation_process_id: process.id)
 
       visit admin_legislation_process_proposals_path(process.id, order: :title)
-      select "Id", from: "order-selector-participation"
+      click_link "Sort by ID"
 
       within("#legislation_proposals_list") do
         within all(".legislation_proposal")[0] { expect(page).to have_content(proposal1.id) }

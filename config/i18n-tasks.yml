@@ -157,7 +157,6 @@ ignore_unused:
   - "admin.legislation.processes.index.filter*"
   - "admin.legislation.processes.*.submit_button"
   - "admin.legislation.processes.proposals.orders.*"
-  - "admin.legislation.processes.proposals.select_order"
   - "admin.legislation.draft_versions.*.submit_button"
   - "admin.legislation.questions.*.submit_button"
   - "admin.hidden_comments.index.hidden_*"

@@ -584,11 +584,10 @@ es:
           title: Crear nuevo proceso de legislación colaborativa
           submit_button: Crear proceso
         proposals:
-          select_order: Ordenar por
           orders:
-            id: Id
-            title: Título
-            supports: Apoyos totales
+            id: "Ordenar por ID"
+            title: "Ordenar por título"
+            supports: "Ordenar por apoyos totales"
         process:
           title: Proceso
           comments: Comentarios

@@ -584,11 +584,10 @@ en:
           title: Create new collaborative legislation process
           submit_button: Create process
         proposals:
-          select_order: Sort by
           orders:
-            id: Id
-            title: Title
-            supports: Total supports
+            id: "Sort by ID"
+            title: "Sort by title"
+            supports: "Sort by total supports"
         process:
           title: Process
           comments: Comments
