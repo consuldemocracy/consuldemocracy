@@ -113,7 +113,6 @@ en:
       search_results:
         one: " containing the term <strong>'%{search_term}'</strong>"
         other: " containing the term <strong>'%{search_term}'</strong>"
-      select_order: Order by
       start_debate: Start a debate
       title: Debates
       section_header:

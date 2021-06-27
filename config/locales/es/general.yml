@@ -113,7 +113,6 @@ es:
       search_results:
         one: " que contiene <strong>'%{search_term}'</strong>"
         other: " que contienen <strong>'%{search_term}'</strong>"
-      select_order: Ordenar por
       start_debate: Empieza un debate
       title: Debates
       section_header:

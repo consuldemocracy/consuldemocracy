@@ -187,7 +187,6 @@ ignore_unused:
   - "polls.index.section_header.*"
   - "polls.index.orders.*"
   - "dashboard.recommended_actions.*"
-  - "debates.index.select_order"
   - "debates.index.orders.*"
   - "debates.index.section_header.*"
   - "proposals.index.orders.*"
