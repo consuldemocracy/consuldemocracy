@@ -14,7 +14,6 @@ es:
           moderate: Moderar
         hide: Ocultar comentarios
         ignore_flags: Marcar como revisados
-        order: Orden
         orders:
           flags: Más denunciados
           newest: Más nuevos
@@ -36,7 +35,6 @@ es:
           moderate: Moderar
         hide: Ocultar debates
         ignore_flags: Marcar como revisados
-        order: Orden
         orders:
           created_at: Más nuevos
           flags: Más denunciados
@@ -64,7 +62,6 @@ es:
           proposal: Propuesta
         hide: Ocultar Propuestas
         ignore_flags: Marcar como revisadas
-        order: Ordenar por
         orders:
           created_at: Más recientes
           flags: Más denunciadas
@@ -83,7 +80,6 @@ es:
           budget_investment: Proyecto de gasto
         hide: Ocultar proyectos de gasto
         ignore_flags: Marcar como revisados
-        order: Ordenar por
         orders:
           created_at: Más recientes
           flags: Más denunciadas
@@ -102,7 +98,6 @@ es:
           proposal_notification: Notificación de propuesta
         hide: Ocultar notificaciones
         ignore_flags: Marcar como revisadas
-        order: Ordenar por
         orders:
           created_at: Más recientes
           moderated: Moderadas

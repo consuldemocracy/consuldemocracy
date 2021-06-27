@@ -298,7 +298,8 @@ $table-header:   #ecf1f6;
     margin-bottom: 0;
   }
 
-  .menu.simple {
+  .menu.simple,
+  .order-links {
     margin-bottom: $line-height / 2;
 
     h2 {
@@ -311,6 +312,10 @@ $table-header:   #ecf1f6;
       color: $admin-color;
       font-weight: bold;
     }
+  }
+
+  .order-links {
+    margin-bottom: $line-height;
   }
 
   .tabs-panel {

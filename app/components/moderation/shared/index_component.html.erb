@@ -3,10 +3,10 @@
 <%= render "shared/filter_subnav", i18n_namespace: "moderation.#{i18n_namespace}.index" %>
 
 <h3 class="inline-block"><%= page_entries_info records %></h3>
-<div class="float-right">
-  <%= t("moderation.#{i18n_namespace}.index.order") %>
-  <%= render "shared/order_selector", i18n_namespace: "moderation.#{i18n_namespace}.index" %>
-</div>
+
+<% if records.any? %>
+  <%= render "shared/order_links", i18n_namespace: "moderation.#{i18n_namespace}.index" %>
+<% end %>
 
 <%= form_tag form_path, method: :put do %>
   <p class="float-left js-check">

@@ -14,7 +14,6 @@ en:
           moderate: Moderate
         hide: Hide comments
         ignore_flags: Mark as viewed
-        order: Order
         orders:
           flags: Most flagged
           newest: Newest
@@ -36,7 +35,6 @@ en:
           moderate: Moderate
         hide: Hide debates
         ignore_flags: Mark as viewed
-        order: Order
         orders:
           created_at: Newest
           flags: Most flagged
@@ -64,7 +62,6 @@ en:
           proposal: Proposal
         hide: Hide proposals
         ignore_flags: Mark as viewed
-        order: Order by
         orders:
           created_at: Most recent
           flags: Most flagged
@@ -83,7 +80,6 @@ en:
           budget_investment: Budget investment
         hide: Hide budget investments
         ignore_flags: Mark as viewed
-        order: Order by
         orders:
           created_at: Most recent
           flags: Most flagged
@@ -102,7 +98,6 @@ en:
           proposal_notification: Proposal notification
         hide: Hide proposals
         ignore_flags: Mark as viewed
-        order: Order by
         orders:
           created_at: Most recent
           moderated: Moderated
