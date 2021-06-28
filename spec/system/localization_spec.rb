@@ -16,17 +16,6 @@ describe "Localization" do
     expect(page).to have_text("Bienvenido a CONSUL")
   end
 
-  scenario "Available locales appear in the locale switcher" do
-    visit "/"
-
-    expect(page).to have_select "Language:", with_options: %w[Español English]
-  end
-
-  scenario "The current locale is selected" do
-    visit "/"
-    expect(page).to have_select "Language:", selected: "English"
-  end
-
   scenario "Changing the locale" do
     visit "/"
     select "Español", from: "Language:"
@@ -42,44 +31,6 @@ describe "Localization" do
 
     expect(current_host).to eq "http://127.0.0.1"
     expect(page).to have_current_path "/debates?locale=es&order=created_at"
-  end
-
-  context "Only one locale" do
-    before do
-      allow(I18n).to receive(:available_locales).and_return([:en])
-      I18n.reload!
-    end
-
-    after { I18n.reload! }
-
-    scenario "Locale switcher not present" do
-      visit "/"
-      expect(page).not_to have_content("Language")
-      expect(page).not_to have_css("div.locale")
-    end
-  end
-
-  context "Missing language names" do
-    let!(:default_enforce) { I18n.enforce_available_locales }
-    let!(:default_locales) { I18n.available_locales.dup }
-
-    before do
-      I18n.enforce_available_locales = false
-      I18n.available_locales = default_locales + [:wl]
-      I18n.locale = :wl
-    end
-
-    after do
-      I18n.enforce_available_locales = default_enforce
-      I18n.available_locales = default_locales
-      I18n.locale = I18n.default_locale
-    end
-
-    scenario "Available locales without language translation display locale key" do
-      visit "/"
-
-      expect(page).to have_select "Language:", with_options: ["wl"]
-    end
   end
 
   scenario "uses default locale when session locale has disappeared" do
