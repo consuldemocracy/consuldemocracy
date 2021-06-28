@@ -914,6 +914,7 @@ da:
     help: "Du kan tilføje links af %{models} inden for %{org}."
     submit: "Tilføj"
     error: "Linket er ikke gyldigt. Husk at begynde med %{url}."
+    error_duplicate: "Det indhold du tilføjer eksisterer allerede."
     error_itself: "Linket er ikke gyldigt. Du kan ikke relatere indholdet til sig selv."
     success: "Du har tilføjet nyt relateret indhold"
     is_related: "Er det relateret indhold?"
