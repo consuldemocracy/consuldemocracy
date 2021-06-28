@@ -1,11 +1,4 @@
 module PollsHelper
-  def poll_select_options
-    options = @polls.map do |poll|
-      [poll.name, current_path_with_query_params(poll_id: poll.id)]
-    end
-    options_for_select(options, request.fullpath)
-  end
-
   def poll_dates(poll)
     if poll.starts_at.blank? || poll.ends_at.blank?
       I18n.t("polls.no_dates")
