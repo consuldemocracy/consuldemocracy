@@ -1,6 +1,7 @@
 .advanced-search-form {
   @include grid-row-nest;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 
   @include breakpoint(large) {
     .filter {
@@ -32,13 +33,12 @@
     cursor: pointer;
     margin-top: $line-height;
     margin-bottom: $line-height;
+    max-width: max-content;
 
     @include breakpoint(medium) {
-      float: right;
+      align-self: flex-end;
       margin-bottom: 0;
       margin-top: $line-height / 4;
-      position: absolute;
-      right: 0;
     }
 
     &:focus {
