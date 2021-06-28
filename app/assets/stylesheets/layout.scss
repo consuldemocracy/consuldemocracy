@@ -636,7 +636,10 @@ body > header,
 .top-links {
   background: $dark;
   font-size: $small-font-size;
-  padding-right: $line-height / 2;
+
+  > :first-child {
+    @include grid-column-gutter;
+  }
 
   a {
     color: inherit;
