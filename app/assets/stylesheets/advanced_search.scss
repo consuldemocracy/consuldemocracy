@@ -1,7 +1,6 @@
 .advanced-search {
   color: $link;
   cursor: pointer;
-  float: left;
   margin: $line-height 0;
 
   @include breakpoint(medium) {
