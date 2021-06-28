@@ -5,7 +5,7 @@
     </label>
     <select class="js-location-changer locale-switcher inline-block" name="locale-switcher" id="locale-switcher">
       <% locales.map do |loc| %>
-        <option <%= "selected" if loc == I18n.locale %>
+        <option lang="<%= loc %>" <%= "selected" if loc == I18n.locale %>
                 value="<%= current_path_with_query_params(locale: loc) %>"><%= name_for_locale(loc) %></option>
       <% end %>
     </select>
