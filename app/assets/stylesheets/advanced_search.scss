@@ -17,6 +17,7 @@
 }
 
 .advanced-search-form {
+  @include grid-row-nest;
 
   @include breakpoint(large) {
     .filter {
