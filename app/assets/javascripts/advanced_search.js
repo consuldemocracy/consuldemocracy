@@ -14,11 +14,16 @@
       }
     },
     initialize: function() {
+      var toggle_button = $("#js-advanced-search-title");
+
+      toggle_button.removeAttr("hidden");
+
       if (App.AdvancedSearch.advanced_search_terms()) {
-        $("#js-advanced-search").show();
         App.AdvancedSearch.toggle_date_options();
+      } else {
+        $("#js-advanced-search").hide();
       }
-      $("#js-advanced-search-title").on({
+      toggle_button.on({
         click: function() {
           $(this).attr("aria-expanded", !JSON.parse($(this).attr("aria-expanded")));
           $("#js-advanced-search").slideToggle();
