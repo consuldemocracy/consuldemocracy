@@ -13,7 +13,7 @@ describe Shared::AdvancedSearchComponent, type: :component do
     it "hides the button to show the form" do
       render_inline component
 
-      expect(page).to have_button "Advanced search", visible: :hidden
+      expect(page.find("form")).to have_button "Advanced search", visible: :hidden
     end
   end
 

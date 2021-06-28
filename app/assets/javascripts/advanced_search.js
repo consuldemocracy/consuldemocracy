@@ -1,9 +1,6 @@
 (function() {
   "use strict";
   App.AdvancedSearch = {
-    advanced_search_terms: function() {
-      return $("#js-advanced-search").data("advanced-search-terms");
-    },
     toggle_date_options: function() {
       if ($("#js-advanced-search-date-min").val() === "custom") {
         $("#js-custom-date").show();
@@ -18,15 +15,15 @@
 
       toggle_button.removeAttr("hidden");
 
-      if (App.AdvancedSearch.advanced_search_terms()) {
+      if (toggle_button.attr("aria-expanded") === "true") {
         App.AdvancedSearch.toggle_date_options();
       } else {
-        $("#js-advanced-search").hide();
+        toggle_button.next().hide();
       }
       toggle_button.on({
         click: function() {
           $(this).attr("aria-expanded", !JSON.parse($(this).attr("aria-expanded")));
-          $("#js-advanced-search").slideToggle();
+          $(this).next().slideToggle();
         }
       });
       $("#js-advanced-search-date-min").on({

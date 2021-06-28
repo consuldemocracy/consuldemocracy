@@ -1,23 +1,6 @@
-.advanced-search {
-  color: $link;
-  cursor: pointer;
-  margin: $line-height 0;
-
-  @include breakpoint(medium) {
-    float: right;
-    margin-bottom: 0;
-    margin-top: $line-height / 4;
-    position: absolute;
-    right: 0;
-  }
-
-  &:focus {
-    outline: $outline-focus;
-  }
-}
-
 .advanced-search-form {
   @include grid-row-nest;
+  position: relative;
 
   @include breakpoint(large) {
     .filter {
@@ -40,6 +23,26 @@
 
     .submit {
       width: 25%;
+    }
+  }
+
+  > [aria-expanded] {
+    @include xy-gutters;
+    color: $link;
+    cursor: pointer;
+    margin-top: $line-height;
+    margin-bottom: $line-height;
+
+    @include breakpoint(medium) {
+      float: right;
+      margin-bottom: 0;
+      margin-top: $line-height / 4;
+      position: absolute;
+      right: 0;
+    }
+
+    &:focus {
+      outline: $outline-focus;
     }
   }
 

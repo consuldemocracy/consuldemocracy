@@ -1,11 +1,9 @@
-<div class="relative">
+<%= form_tag request.path, id: "advanced_search_form", class: "advanced-search-form", method: :get do %>
   <button type="button" aria-expanded="<%= advanced_search.present? %>" id="js-advanced-search-title" class="advanced-search small" hidden>
     <%= t("shared.advanced_search.title") %>
   </button>
-</div>
 
-<%= form_tag request.path, id: "advanced_search_form", class: "advanced-search-form", method: :get do %>
-  <div id="js-advanced-search" data-advanced-search-terms="<%= advanced_search.present? %>">
+  <div>
     <div class="general-search">
       <label for="search">
         <%= t("shared.advanced_search.general") %>

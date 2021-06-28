@@ -351,7 +351,7 @@ describe "Advanced search" do
 
         click_button "Filter"
 
-        within "#js-advanced-search" do
+        within ".advanced-search-form" do
           expect(page).to have_selector("input[name='search'][value='Schwifty']")
           expect(page).to have_select("advanced_search[official_level]", selected: "Official position 1")
           expect(page).to have_select("advanced_search[date_min]", selected: "Last 24 hours")
@@ -370,7 +370,7 @@ describe "Advanced search" do
 
         expect(page).to have_content("citizen proposals cannot be found")
 
-        within "#js-advanced-search" do
+        within ".advanced-search-form" do
           expect(page).to have_select("advanced_search[date_min]", selected: "Customized")
           expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime("%d/%m/%Y")}']")
           expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime("%d/%m/%Y")}']")
