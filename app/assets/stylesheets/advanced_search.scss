@@ -3,7 +3,6 @@
   cursor: pointer;
   float: left;
   margin: $line-height 0;
-  position: inherit;
 
   @include breakpoint(medium) {
     float: right;
