@@ -9,9 +9,6 @@ class Admin::Poll::Questions::FilterComponent < ApplicationComponent
   private
 
     def poll_select_options
-      options = polls.map do |poll|
-        [poll.name, current_path_with_query_params(poll_id: poll.id)]
-      end
-      options_for_select(options, request.fullpath)
+      options_from_collection_for_select(polls, :id, :name, params[:poll_id])
     end
 end
