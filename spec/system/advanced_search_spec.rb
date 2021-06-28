@@ -11,7 +11,7 @@ describe "Advanced search" do
 
     visit debates_path
 
-    click_link "Advanced search"
+    click_button "Advanced search"
     fill_in "Write the text", with: "Schwifty"
     click_button "Filter"
 
@@ -31,7 +31,7 @@ describe "Advanced search" do
 
     visit proposals_path
 
-    click_link "Advanced search"
+    click_button "Advanced search"
     fill_in "Write the text", with: "Schwifty"
     click_button "Filter"
 
@@ -51,7 +51,7 @@ describe "Advanced search" do
 
     visit budget_investments_path(budget)
 
-    click_link "Advanced search"
+    click_button "Advanced search"
     fill_in "Write the text", with: "Schwifty"
     click_button "Filter"
 
@@ -76,7 +76,7 @@ describe "Advanced search" do
 
       visit debates_path
 
-      click_link "Advanced search"
+      click_button "Advanced search"
       select "Official position 1", from: "advanced_search_official_level"
       click_button "Filter"
 
@@ -100,7 +100,7 @@ describe "Advanced search" do
 
       visit proposals_path
 
-      click_link "Advanced search"
+      click_button "Advanced search"
       select "Official position 2", from: "advanced_search_official_level"
       click_button "Filter"
 
@@ -124,7 +124,7 @@ describe "Advanced search" do
 
       visit budget_investments_path(budget)
 
-      click_link "Advanced search"
+      click_button "Advanced search"
       select "Official position 3", from: "advanced_search_official_level"
       click_button "Filter"
 
@@ -148,7 +148,7 @@ describe "Advanced search" do
 
       visit debates_path
 
-      click_link "Advanced search"
+      click_button "Advanced search"
       select "Official position 4", from: "advanced_search_official_level"
       click_button "Filter"
 
@@ -172,7 +172,7 @@ describe "Advanced search" do
 
       visit proposals_path
 
-      click_link "Advanced search"
+      click_button "Advanced search"
       select "Official position 5", from: "advanced_search_official_level"
       click_button "Filter"
 
@@ -194,7 +194,7 @@ describe "Advanced search" do
 
           visit budget_investments_path(budget)
 
-          click_link "Advanced search"
+          click_button "Advanced search"
           select "Last 24 hours", from: "js-advanced-search-date-min"
           click_button "Filter"
 
@@ -214,7 +214,7 @@ describe "Advanced search" do
 
           visit debates_path
 
-          click_link "Advanced search"
+          click_button "Advanced search"
           select "Last week", from: "js-advanced-search-date-min"
           click_button "Filter"
 
@@ -234,7 +234,7 @@ describe "Advanced search" do
 
           visit proposals_path
 
-          click_link "Advanced search"
+          click_button "Advanced search"
           select "Last month", from: "js-advanced-search-date-min"
           click_button "Filter"
 
@@ -254,7 +254,7 @@ describe "Advanced search" do
 
           visit budget_investments_path(budget)
 
-          click_link "Advanced search"
+          click_button "Advanced search"
           select "Last year", from: "js-advanced-search-date-min"
           click_button "Filter"
 
@@ -275,7 +275,7 @@ describe "Advanced search" do
 
         visit debates_path
 
-        click_link "Advanced search"
+        click_button "Advanced search"
         select "Customized", from: "js-advanced-search-date-min"
         fill_in "advanced_search_date_min", with: 7.days.ago.strftime("%d/%m/%Y")
         fill_in "advanced_search_date_max", with: 1.day.ago.strftime("%d/%m/%Y")
@@ -298,7 +298,7 @@ describe "Advanced search" do
 
         visit proposals_path
 
-        click_link "Advanced search"
+        click_button "Advanced search"
         select "Customized", from: "js-advanced-search-date-min"
         fill_in "advanced_search_date_min", with: 4000.years.ago.strftime("%d/%m/%Y")
         fill_in "advanced_search_date_max", with: "13/13/2199"
@@ -325,7 +325,7 @@ describe "Advanced search" do
 
         visit budget_investments_path(budget)
 
-        click_link "Advanced search"
+        click_button "Advanced search"
         fill_in "Write the text", with: "Schwifty"
         select "Official position 1", from: "advanced_search_official_level"
         select "Last 24 hours", from: "js-advanced-search-date-min"
@@ -343,7 +343,7 @@ describe "Advanced search" do
         Setting["official_level_1_name"] = "Official position 1"
 
         visit debates_path
-        click_link "Advanced search"
+        click_button "Advanced search"
 
         fill_in "Write the text", with: "Schwifty"
         select "Official position 1", from: "advanced_search_official_level"
@@ -360,7 +360,7 @@ describe "Advanced search" do
 
       scenario "Maintain custom date search criteria" do
         visit proposals_path
-        click_link "Advanced search"
+        click_button "Advanced search"
 
         select "Customized", from: "js-advanced-search-date-min"
         fill_in "advanced_search_date_min", with: 7.days.ago.strftime("%d/%m/%Y")
@@ -391,7 +391,7 @@ describe "Advanced search" do
         create(:budget_investment, title: "Hospital", heading: heading, sdg_goals: [SDG::Goal[3]])
 
         visit budget_investments_path(budget)
-        click_link "Advanced search"
+        click_button "Advanced search"
         select "6. Clean Water and Sanitation", from: "By SDG"
         click_button "Filter"
 
@@ -413,7 +413,7 @@ describe "Advanced search" do
         create(:debate, title: "Preschool", sdg_targets: [SDG::Target["4.2"]])
 
         visit debates_path
-        click_link "Advanced search"
+        click_button "Advanced search"
         select "4.2", from: "By target"
         click_button "Filter"
 
@@ -429,7 +429,7 @@ describe "Advanced search" do
       scenario "Dynamic target options depending on the selected goal" do
         visit proposals_path
 
-        click_link "Advanced search"
+        click_button "Advanced search"
         select "1. No Poverty", from: "By SDG"
 
         expect(page).to have_select "By target",

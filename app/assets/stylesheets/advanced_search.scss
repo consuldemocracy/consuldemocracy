@@ -1,4 +1,6 @@
 .advanced-search {
+  color: $link;
+  cursor: pointer;
   float: left;
   margin: $line-height 0;
   position: inherit;
@@ -9,6 +11,10 @@
     margin-top: $line-height / 4;
     position: absolute;
     right: 0;
+  }
+
+  &:focus {
+    outline: $outline-focus;
   }
 }
 

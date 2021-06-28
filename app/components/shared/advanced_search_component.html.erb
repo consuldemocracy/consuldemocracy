@@ -1,5 +1,7 @@
 <div class="relative">
-  <%= link_to t("shared.advanced_search.title"), "#advanced_search_form", id: "js-advanced-search-title", class: "advanced-search small" %>
+  <button type="button" aria-expanded="<%= advanced_search.present? %>" id="js-advanced-search-title" class="advanced-search small">
+    <%= t("shared.advanced_search.title") %>
+  </button>
 </div>
 
 <div class="row advanced-search-form">

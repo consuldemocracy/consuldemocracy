@@ -4,10 +4,6 @@
     advanced_search_terms: function() {
       return $("#js-advanced-search").data("advanced-search-terms");
     },
-    toggle_form: function(event) {
-      event.preventDefault();
-      $("#js-advanced-search").slideToggle();
-    },
     toggle_date_options: function() {
       if ($("#js-advanced-search-date-min").val() === "custom") {
         $("#js-custom-date").show();
@@ -23,8 +19,9 @@
         App.AdvancedSearch.toggle_date_options();
       }
       $("#js-advanced-search-title").on({
-        click: function(event) {
-          App.AdvancedSearch.toggle_form(event);
+        click: function() {
+          $(this).attr("aria-expanded", !JSON.parse($(this).attr("aria-expanded")));
+          $("#js-advanced-search").slideToggle();
         }
       });
       $("#js-advanced-search-date-min").on({
