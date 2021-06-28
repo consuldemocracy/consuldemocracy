@@ -669,6 +669,7 @@ es:
       back: "Volver a mi contenido"
   shared:
     edit: "Editar"
+    filter: "Filtrar"
     save: "Guardar"
     delete: "Borrar"
     "yes": "Si"
