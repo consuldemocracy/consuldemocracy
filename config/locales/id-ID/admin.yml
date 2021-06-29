@@ -302,10 +302,6 @@ id:
           debate_phase: Masa perdebatan
           proposals_phase: Masa proposal
           use_markdown: Menggunakan Markdown untuk format teks
-          title_placeholder: Judul didalam prosesnya
-          summary_placeholder: Ringkasan singkat dari deskripsi
-          description_placeholder: Tambahkan deskripsi prosesnya
-          additional_info_placeholder: Tambahkan informasi tambahan yang anda anggap bisa bermanfaat
         index:
           create: Proses baru
           title: Undang-undang proses
@@ -316,10 +312,9 @@ id:
           title: Buat proses legislasi kolaboratif baru
           submit_button: Buat proses
         proposals:
-          select_order: Urutkan
           orders:
-            title: Judul
-            supports: Mendukung
+            title: "Judul"
+            supports: "Mendukung"
         process:
           title: Proses
           comments: Komentar
@@ -362,9 +357,7 @@ id:
             status:
               draft: Anda dapat melihat pratinjau sebagai admin, tidak ada orang lain dapat melihat ini
               published: Terlihat untuk semua orang
-          title_placeholder: Menulis judul draft versi
           changelog_placeholder: Tambahkan perubahan utama dari versi sebelumnya
-          body_placeholder: Menulis draft teks
         index:
           title: Rancangan versi
           create: Membuat versi
