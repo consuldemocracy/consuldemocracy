@@ -231,10 +231,6 @@ ast:
           process: Procesu
           debate_phase: Fase previa
           use_markdown: Usa Markdown pa dar formatu al testu
-          title_placeholder: Escribe'l títulu del procesu
-          summary_placeholder: Resume curtiu de la descripción
-          description_placeholder: Añede una descripción del procesu
-          additional_info_placeholder: Añede cualquier información adicional que pueda ser d'interés
         index:
           create: Nuevu procesu
           title: Procesos legislativos
@@ -245,10 +241,9 @@ ast:
           title: Crear nuevu procesu de lexislación collaborativa
           submit_button: Crear procesu
         proposals:
-          select_order: Ordenar por
           orders:
-            title: Títulu
-            supports: Sofitos
+            title: "Títulu"
+            supports: "Sofitos"
         process:
           title: Procesu
           comments: Comentarios
@@ -289,9 +284,7 @@ ast:
             status:
               draft: Puedes previsualizar como almin, naide más lu pue ver
               published: Visible pa tol mundu
-          title_placeholder: Escribe'l títulu d'esta versión del borrador
           changelog_placeholder: Describe cualesquier cambíu relevante cola versión anterior
-          body_placeholder: Escribe'l testu del borrador
         index:
           title: Versiones del borrador
           create: Crear versión
