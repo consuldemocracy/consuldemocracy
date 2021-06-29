@@ -149,7 +149,6 @@
   }
 
   .percentage {
-    color: $text;
     font-size: $tiny-font-size;
     position: absolute;
     right: 6px;
@@ -180,7 +179,6 @@
   }
 
   .total-supports {
-    color: $text;
     display: block;
     font-weight: bold;
     text-align: center;
@@ -720,7 +718,6 @@
   .proposal-description,
   .investment-project-description,
   .budget-investment-description {
-    color: $text;
     font-size: rem-calc(13);
     height: rem-calc(72);
     line-height: $line-height;
@@ -741,10 +738,6 @@
     height: rem-calc(24);
     position: absolute;
     width: 100%;
-  }
-
-  p {
-    color: $text;
   }
 }
 
@@ -1235,16 +1228,6 @@
     margin-bottom: 0;
   }
 
-  h1,
-  h2,
-  h3,
-  .back,
-  .icon-angle-left,
-  p,
-  a {
-    color: $text;
-  }
-
   .tagline {
     display: block;
     font-size: $small-font-size;
@@ -1527,36 +1510,6 @@
 // 07. Proposals successful
 // -------------------------
 
-.dark-heading {
-  background: #2d3e50;
-  color: #fff;
-
-  @include breakpoint(medium) {
-    padding-bottom: $line-height;
-  }
-
-  p {
-
-    &.title {
-      color: #ffd200;
-    }
-
-    &.title-date {
-      font-size: rem-calc(24);
-      font-weight: bold;
-    }
-  }
-
-  .info {
-    background: #314253;
-    padding-top: $line-height;
-
-    @include breakpoint(medium) {
-      border-top: rem-calc(6) solid #ffd200;
-    }
-  }
-}
-
 .successful .panel {
 
   .icon-successful {
@@ -1607,21 +1560,6 @@
 
 .polls-show-header {
   background: #fafafa;
-
-  .callout {
-
-    &.warning a {
-      color: $color-warning;
-    }
-
-    &.primary a {
-      color: $color-info;
-    }
-
-    &.alert a {
-      color: $color-alert;
-    }
-  }
 }
 
 .poll-more-info,
@@ -1851,10 +1789,6 @@
 
   h3 {
     padding-top: $line-height;
-
-    a {
-      color: $text;
-    }
   }
 }
 
@@ -1894,18 +1828,6 @@
 // ---------------------------
 
 .polls-results-stats {
-
-  .sidebar {
-
-    .menu:not(.vertical) {
-      padding: 0;
-
-      li a {
-        color: $link;
-        line-height: $line-height;
-      }
-    }
-  }
 
   table {
     table-layout: fixed;

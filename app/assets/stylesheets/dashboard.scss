@@ -352,10 +352,6 @@
 
     a {
       @include brand-text;
-
-      ~ a {
-        color: $text;
-      }
     }
 
     [class^="icon-"] {
