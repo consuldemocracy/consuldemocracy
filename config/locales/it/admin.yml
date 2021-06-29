@@ -395,10 +395,6 @@ it:
           allegations_phase: Fase commenti
           proposals_phase: Fase delle proposte
           use_markdown: Usa Markdown per formattare il testo
-          title_placeholder: Il titolo del procedimento
-          summary_placeholder: Breve riassunto della descrizione
-          description_placeholder: Aggiungi una descrizione del procedimento
-          additional_info_placeholder: Aggiungi ulteriori informazioni che ritieni utili
           homepage_description: Qui puoi spiegare il contenuto del processo
           banner_title: Colori voce
         index:
@@ -412,11 +408,10 @@ it:
           title: Crea nuovo procedimento collaborativo di legislazione
           submit_button: Crea procedimento
         proposals:
-          select_order: Ordina per
           orders:
-            id: Id
-            title: Titolo
-            supports: Sostegni
+            id: "Id"
+            title: "Titolo"
+            supports: "Sostegni"
         process:
           title: Procedimento
           comments: Commenti
@@ -468,9 +463,7 @@ it:
             status:
               draft: Puoi vedere l'anteprima come amministratore, nessun altro può vederla
               published: Visibile a tutti
-          title_placeholder: Scrivi il titolo della bozza
           changelog_placeholder: Aggiungi i principali cambiamenti rispetto alla versione precedente
-          body_placeholder: Scrivi il testo in bozza
         index:
           title: Bozze
           create: Creare la versione
@@ -501,7 +494,6 @@ it:
           submit_button: Salva modifiche
         form:
           add_option: Aggiungere l'opzione
-          title_placeholder: Aggiungi quesito
           value_placeholder: Aggiungi una risposta chiusa
           question_options: "Possibile risposta (facoltativa, risposta aperta di default)"
         index:
