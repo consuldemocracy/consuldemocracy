@@ -224,10 +224,6 @@ sl:
           allegations_phase: Faza obtožb
           proposals_phase: Faza predlogov
           use_markdown: Uporabi markdown za oblikovanje besedila
-          title_placeholder: Naslov procesa
-          summary_placeholder: Kratek povzetek opisa
-          description_placeholder: Dodaj opis procesa
-          additional_info_placeholder: Dodaj dodatne informacije, če se ti zdi uporabno
         index:
           create: Nov proces
           title: Procesi legislacije
@@ -276,9 +272,7 @@ sl:
             status:
               draft: Predogled lahko vidiš kot administrator, videti ga ne more nihče drug
               published: Vidno vsem
-          title_placeholder: Vpiši naslov osnutka
           changelog_placeholder: Dodaj glavne spremembe od prejšnje verzije
-          body_placeholder: Vpiši besedilo osnutka
         index:
           title: Verzije osnutka
           create: Ustvari verzijo
@@ -308,7 +302,6 @@ sl:
           submit_button: Shrani spremembe
         form:
           add_option: Dodaj možnost
-          title_placeholder: Dodaj naslov
           value_placeholder: Dodaj zaprt odgovor
         index:
           back: Nazaj
