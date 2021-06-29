@@ -571,10 +571,6 @@ sv:
           allegations_phase: Kommentarsfas
           proposals_phase: Förslagsfas
           use_markdown: Använda Markdown för att formatera texten
-          title_placeholder: Titel på processen
-          summary_placeholder: Kort sammanfattning
-          description_placeholder: Lägg till en beskrivning av processen
-          additional_info_placeholder: Lägga till ytterligare information som du anser vara användbar
           homepage_description: Förklara innehållet i processen
           banner_title: Färger för sidhuvud
         index:
@@ -588,11 +584,10 @@ sv:
           title: Skapa en ny medborgardialog
           submit_button: Skapa process
         proposals:
-          select_order: Sortera efter
           orders:
-            id: Id
-            title: Titel
-            supports: Stöd
+            id: "Id"
+            title: "Titel"
+            supports: "Stöd"
         process:
           title: Process
           comments: Kommentarer
@@ -646,9 +641,7 @@ sv:
             status:
               draft: Du kan förhandsgranska som administratör, ingen annan kan se det
               published: Synligt för alla
-          title_placeholder: Titel på utkastet
           changelog_placeholder: Lägg till de viktigaste ändringarna från föregående version
-          body_placeholder: Text till utkastet
         index:
           title: Utkastversioner
           create: Skapa version
@@ -679,7 +672,6 @@ sv:
           submit_button: Spara ändringar
         form:
           add_option: Lägg till alternativ
-          title_placeholder: Lägg till fråga
           value_placeholder: Lägg till ett stängt svar
           question_options: "Möjliga svar (frivilligt fält, öppna svar som standard)"
         index:
