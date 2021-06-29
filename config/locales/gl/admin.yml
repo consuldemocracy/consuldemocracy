@@ -351,10 +351,6 @@ gl:
           allegations_phase: Fase de alegaciones
           proposals_phase: Fase de propostas
           use_markdown: Usar Markdown para formatear o texto
-          title_placeholder: Escribe o título do proceso
-          summary_placeholder: Resumo corto da descrición
-          description_placeholder: Engade unha descrición do proceso
-          additional_info_placeholder: Engade unha información adicional que pode ser de interese
           homepage_description: Aquí podes explicar o contido do proceso
           banner_title: Cores da cabeceira
         index:
@@ -368,11 +364,10 @@ gl:
           title: Crear un novo proceso de lexislación colaborativa
           submit_button: Crear proceso
         proposals:
-          select_order: Ordenar por
           orders:
-            id: Id
-            title: Título
-            supports: Apoios
+            id: "Id"
+            title: "Título"
+            supports: "Apoios"
         process:
           title: Proceso
           comments: Comentarios
@@ -424,9 +419,7 @@ gl:
             status:
               draft: Poderás previsualizalo en modo admin, ninguén máis o poderá ver
               published: Visible para todo o mundo
-          title_placeholder: Escrite o título desta versión do borrador
           changelog_placeholder: Describe calquera cambio relevante coa versión anterior
-          body_placeholder: Escribe o texto do borrador
         index:
           title: Versións borrador
           create: Crear versión
@@ -457,7 +450,6 @@ gl:
           submit_button: Gardar so cambios
         form:
           add_option: Engadir unha opción
-          title_placeholder: Engadir pregunta
           value_placeholder: Engadir unha resposta pechada
           question_options: "Posibles respostas (opcional, respostas abertas por defecto)"
         index:
