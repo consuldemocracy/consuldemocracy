@@ -543,10 +543,6 @@ de:
           allegations_phase: Kommentierphase
           proposals_phase: Vorschlagsphase
           use_markdown: Verwenden Sie Markdown, um den Text zu formationen
-          title_placeholder: Titel des Beteiligungsverfahrens
-          summary_placeholder: Kurze Zusammenfassung der Beschreibung
-          description_placeholder: Fügen Sie eine Beschreibung des Beteiligungsverfahrens hinzu
-          additional_info_placeholder: Fügen Sie zusätzliche Informationen hinzu, die Sie für nützlich halten
           homepage_description: Hier können Sie den Inhalt des Beteiligungsverfahrens erläutern
           banner_title: Farben Header
         index:
@@ -560,11 +556,10 @@ de:
           title: Neues kollaboratives Gesetzgebungsverfahren erstellen
           submit_button: Beteiligungsverfahren erstellen
         proposals:
-          select_order: Sortieren nach
           orders:
-            id: ID
-            title: Titel
-            supports: Unterstützung
+            id: "ID"
+            title: "Titel"
+            supports: "Unterstützung"
         process:
           title: Beteiligungsverfahren
           comments: Kommentare
@@ -618,9 +613,7 @@ de:
             status:
               draft: Als Admin können Sie eine Vorschau anzeigen lassen, die niemand sonst sehen kann
               published: Für alle sichtbar
-          title_placeholder: Titel der Entwurfsfassung
           changelog_placeholder: Beschreiben Sie alle relevanten Änderungen der vorherigen Version
-          body_placeholder: Schreiben Sie einen Entwurfstext
         index:
           title: Entwurfsfassungen
           create: Version erstellen
@@ -651,7 +644,6 @@ de:
           submit_button: Änderungen speichern
         form:
           add_option: Antwortmöglichkeit hinzufügen
-          title_placeholder: Frage hinzufügen
           value_placeholder: Geschlossene Antwort hinzufügen
           question_options: "Mögliche Antworten (optional, standardmäßig offene Antworten)"
         index:
