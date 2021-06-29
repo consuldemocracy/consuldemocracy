@@ -1,9 +1,23 @@
 require "rails_helper"
 
 describe Shared::AdvancedSearchComponent, type: :component do
-  describe "SDG filter" do
-    let(:component) { Shared::AdvancedSearchComponent.new }
+  let(:component) { Shared::AdvancedSearchComponent.new }
 
+  context "JavaScript disabled" do
+    it "renders the form" do
+      render_inline component
+
+      expect(page).to have_button "Filter"
+    end
+
+    it "hides the button to show the form" do
+      render_inline component
+
+      expect(page.find("form")).to have_button "Advanced search", visible: :hidden
+    end
+  end
+
+  describe "SDG filter" do
     before do
       Setting["feature.sdg"] = true
       Setting["sdg.process.proposals"] = true
