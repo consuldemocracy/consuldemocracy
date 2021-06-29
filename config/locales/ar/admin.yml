@@ -485,10 +485,6 @@ ar:
           allegations_phase: مرحلة التعليقات
           proposals_phase: مرحلة الاقتراحات
           use_markdown: استخدم Markdown لتنسيق النص
-          title_placeholder: عنوان العملية
-          summary_placeholder: موجز قصير للوصف
-          description_placeholder: إضافة وصف للعملية
-          additional_info_placeholder: إضافة معلومات إضافية تعتبرها مفيدة
           homepage_description: هنا يمكنك شرح محتوى العملية
           banner_title: لون العنوان
         index:
@@ -502,11 +498,10 @@ ar:
           title: قم بإنشاء عملية تشريع تشاركية جديدة
           submit_button: إنشاء عملية
         proposals:
-          select_order: فرز حسب
           orders:
-            id: Id
-            title: عنوان
-            supports: دعم
+            id: "Id"
+            title: "عنوان"
+            supports: "دعم"
         process:
           title: عملية
           comments: تعليقات
@@ -558,9 +553,7 @@ ar:
             status:
               draft: يمكنك المعاينة كمدير، لا يمكن لأي شخص آخر أن يرى ذلك
               published: مرئية للجميع
-          title_placeholder: اكتب عنوان إصدار المسودّة
           changelog_placeholder: إضافة التغييرات الرئيسية من النسخة السابقة
-          body_placeholder: كتابة نص المسودة
         index:
           title: إصدارا المسودّة
           create: إنشاء إصدار
@@ -591,7 +584,6 @@ ar:
           submit_button: حفظ التغييرات
         form:
           add_option: إضافة خيار
-          title_placeholder: إضافة سؤال
           value_placeholder: إضافة إجابة مغلقة
           question_options: "الإجابات المحتملة (اختياري، الإجابات مفتوحة مبدئيا)"
         index:
