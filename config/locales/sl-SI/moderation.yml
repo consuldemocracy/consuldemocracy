@@ -12,9 +12,8 @@ sl:
         headers:
           comment: Komentiraj
           moderate: Moderiraj
-        hide_comments: Zbriši komentarje
+        hide: Zbriši komentarje
         ignore_flags: Označi kot videne
-        order: Vrstni red
         orders:
           flags: Najbolj označeni
           newest: Najnovejši
@@ -34,9 +33,8 @@ sl:
         headers:
           debate: Razprava
           moderate: Moderiraj
-        hide_debates: Skrij razprave
+        hide: Skrij razprave
         ignore_flags: Označi kot videne
-        order: Vrstni red
         orders:
           created_at: Najnovejše
           flags: Najbolj označene
@@ -60,13 +58,15 @@ sl:
         headers:
           moderate: Moderiraj
           proposal: Predlog
-        hide_proposals: Skrij predloge
+        hide: Skrij predloge
         ignore_flags: Označi kot videne
-        order: Sortiraj po
         orders:
           created_at: Najnovejši
           flags: Najbolj označeni
         title: Predlogi
+    proposal_notifications:
+      index:
+        hide: Skrij predloge
     users:
       index:
         hidden: Blokirani
