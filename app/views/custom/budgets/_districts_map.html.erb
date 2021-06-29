@@ -5,11 +5,14 @@
           <strong><%= t("budgets.index.section_footer.help_text_6") %></strong>
         </p>
         <p><%= t("budgets.index.section_footer.help_text_7") %></p>
+       <p><%= t("budgets.index.section_footer.help_text_8") %></p>
+       <p><%= t("budgets.index.section_footer.help_text_10")%></p>
+       <p><%= t("budgets.index.section_footer.help_text_11")%></p>
 		<p>
-		    <%=  link_to 'Más Información: Reglamento de los Presupuestos Participativos.', asset_path('/docs/ReglamentoPresupuestos.pdf')  %>
+		    <%=  link_to 'Más Información: Reglamento de los Presupuestos Participativos.', asset_path('https://www.diputaciondevalladolid.es/documents/10181/2918792/Texto+Consolidado+segunda+modificaci%C3%B3n+Reglamento+Presupuestos+Participativos/a0962221-db6d-45f9-9754-2fb8bc43dd81')  %>
 		</p>
-        <p><a href="users/sign_up"><%= t("budgets.index.section_footer.help_text_9")%></a></p>
-
+        <p><a href="https://participa.diputaciondevalladolid.es/users/sign_up"><%= t("budgets.index.section_footer.help_text_9")%></a></p>
+      <p><strong><%= t("budgets.index.section_footer.help_text_12")%><strong></p>
         <div id="mapa">
           <select id="selectZonas" onchange="myFunction()" style="display:inline-block">
             <option selected> Elige un municipio</option>
@@ -475,9 +478,7 @@
             }
           }
 
-        </script>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-          <script>
+        
             function ordenarSelect(id_componente)
             {
               var selectToSort = jQuery('#' + id_componente);

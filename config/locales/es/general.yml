@@ -19,7 +19,7 @@ es:
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_title: Participación
-      user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
+      user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta. Si no te permite verificar la cuenta y consideras que esto es un error, escribe a transparenciayparticipacion@dipvalladolid.es 
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_votes: Participar en las votaciones finales*
       username_label: Nombre de usuario
@@ -915,7 +915,7 @@ es:
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
-      user_permission_verify: "Para poder realizar las siguientes acciones, verifica tu cuenta."
+      user_permission_verify: "Para poder realizar las siguientes acciones, verifica tu cuenta. Si no te permite verificar la cuenta y consideras que esto es un error, escribe a transparenciayparticipacion@dipvalladolid.es"
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*

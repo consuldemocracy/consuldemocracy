@@ -15,14 +15,17 @@
 
           <h1><%= current_budget.name %></h1>
           <div class="description">
-            <%= auto_link_already_sanitized_html wysiwyg(current_budget.description) %>
+            <p><a href="https://participa.diputaciondevalladolid.es/users/sign_up"><strong style="font-size: 34px;">¡REGÍSTRATE!</strong></a> Para poder votar las propuestas en septiembre</p>
+           <%= auto_link_already_sanitized_html wysiwyg(current_budget.description) %>
+            
           </div>
-          <p>
+          <!-- p>
             <%=  link_to 'Presupuestos Provinciales 2019 (documento descargable)', asset_path('/docs/Folleto_Presupuestos_Participativos_2019.pdf')  %>
-          </p>
-          <p>
+          </p -->
+
+          <!--<p>
             <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
-          </p>
+          </p>-->
         </div>
         <div class="small-12 medium-3 column info padding" data-equalizer-watch>
           <p>
@@ -60,7 +63,9 @@
       </div>
     </div>
   </div>
-
+<div style="display:block;width:100%;text-align:center;margin-top:15px">
+  <iframe src="https://player.vimeo.com/video/521820196?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="100%" max-width="426" height="240" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen title="V&amp;iacute;deo presentaci&amp;oacute;n Presupuestos Participativos ‐ Made with Clipchamp (1).mp4"></iframe>
+</div>
   <div id="budget_info" class="budget-info">
     <div class="row margin-top">
       <div class="small-12 column">
@@ -194,3 +199,4 @@
     </div>
   </div>
 <% end %>
+
