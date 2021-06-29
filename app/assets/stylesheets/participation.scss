@@ -393,6 +393,11 @@
       font-size: rem-calc(15);
       margin-bottom: rem-calc(15);
     }
+
+    .order-links > li {
+      font-size: inherit;
+      margin-bottom: 0;
+    }
   }
 
   .geozone {

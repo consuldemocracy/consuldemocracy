@@ -61,7 +61,6 @@ en:
       newest: Newest first
       oldest: Oldest first
       most_commented: Most commented
-    select_order: Sort by
     show:
       return_to_commentable: "Go back to "
   comments_helper:
@@ -114,7 +113,6 @@ en:
       search_results:
         one: " containing the term <strong>'%{search_term}'</strong>"
         other: " containing the term <strong>'%{search_term}'</strong>"
-      select_order: Order by
       start_debate: Start a debate
       title: Debates
       section_header:
@@ -379,7 +377,6 @@ en:
       search_results:
         one: " containing the term <strong>'%{search_term}'</strong>"
         other: " containing the term <strong>'%{search_term}'</strong>"
-      select_order: Order by
       select_order_long: "You are viewing proposals according to:"
       start_proposal: Create a proposal
       title: Proposals

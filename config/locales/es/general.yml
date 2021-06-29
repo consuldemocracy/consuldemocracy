@@ -61,7 +61,6 @@ es:
       newest: Más nuevos primero
       oldest: Más antiguos primero
       most_commented: Más comentados
-    select_order: Ordenar por
     show:
       return_to_commentable: "Volver a "
   comments_helper:
@@ -114,7 +113,6 @@ es:
       search_results:
         one: " que contiene <strong>'%{search_term}'</strong>"
         other: " que contienen <strong>'%{search_term}'</strong>"
-      select_order: Ordenar por
       start_debate: Empieza un debate
       title: Debates
       section_header:
@@ -379,7 +377,6 @@ es:
       search_results:
         one: " que contiene <strong>'%{search_term}'</strong>"
         other: " que contienen <strong>'%{search_term}'</strong>"
-      select_order: Ordenar por
       select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
       title: Propuestas ciudadanas

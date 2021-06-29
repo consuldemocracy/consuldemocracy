@@ -1856,6 +1856,11 @@ table {
     }
   }
 
+  .order-links {
+    margin-bottom: $line-height;
+    margin-top: $line-height;
+  }
+
   .comment {
     line-height: $list-lineheight;
     margin: $line-height / 4 0;
@@ -2032,25 +2037,6 @@ table {
 
 .faded {
   opacity: 0.4;
-}
-
-.wide-order-selector {
-  float: none;
-  margin-top: 0;
-
-  @include breakpoint(medium) {
-    float: right;
-    margin-top: rem-calc(-24);
-  }
-
-  label {
-    padding-right: $line-height / 2;
-    float: none;
-
-    @include breakpoint(medium) {
-      float: right;
-    }
-  }
 }
 
 .comment-form {
