@@ -334,10 +334,6 @@ val:
           allegations_phase: Fase de comentaris
           proposals_phase: Fase de propostes
           use_markdown: Usa Markdown per a formatejar el text
-          title_placeholder: Escriu el títol del procés
-          summary_placeholder: Resum curt de la descripció
-          description_placeholder: Afegeix una descripció del procés
-          additional_info_placeholder: Afegeix qualsevol informació addicional que puga ser d'interès
           homepage_description: Ací pots explicar el contingut del procés
           banner_title: Colors de capçelera
         index:
@@ -350,11 +346,10 @@ val:
           title: Crear proces de legislació col·laborativa
           submit_button: Crear procés
         proposals:
-          select_order: Ordenar per
           orders:
-            id: Id
-            title: Títol
-            supports: Avals
+            id: "Id"
+            title: "Títol"
+            supports: "Avals"
         process:
           title: Proces
           comments: Comentaris
@@ -404,9 +399,7 @@ val:
             status:
               draft: Podràs previsualitzar-com loguejat, ningú més ho podrà veure
               published: Serà visible per a tots
-          title_placeholder: Escriu el títol d'aquesta versió de l'esborrany
           changelog_placeholder: Descriu qualsevol canvi rellevant amb la versió anterior
-          body_placeholder: Escriu el text de l'esborrany
         index:
           title: Versions esborrany
           create: Crear versió
@@ -437,7 +430,6 @@ val:
           submit_button: Guardar canvis
         form:
           add_option: Afegir resposta
-          title_placeholder: Escriu un títol a la pregunta
           value_placeholder: Escriu una resposta
           question_options: "Possibles respostes (opcional, per defecte respostes obertes)"
         index:
