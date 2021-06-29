@@ -273,10 +273,6 @@ fa:
           debate_phase: فاز بحث
           proposals_phase: ' فاز طرحها'
           use_markdown: برای قالب کردن متن از Markdown استفاده کنید
-          title_placeholder: عنوان فرایند
-          summary_placeholder: خلاصه توضیحات
-          description_placeholder: اضافه کردن شرح فرآیند
-          additional_info_placeholder: افزودن اطلاعات اضافی که در نظر شما مفید است
         index:
           create: فرآیند جدید
           title: فرآیندهای قانونی
@@ -287,10 +283,9 @@ fa:
           title: ایجاد یک پروسه جدید قانون مشارکتی 
           submit_button: فرآیند را ایجاد کنید
         proposals:
-          select_order: مرتب سازی بر اساس
           orders:
-            title: عنوان
-            supports: پشتیبانی ها
+            title: "عنوان"
+            supports: "پشتیبانی ها"
         process:
           title: "روند\n"
           comments: توضیحات
@@ -333,9 +328,7 @@ fa:
             status:
               draft: شما می توانید به عنوان مدیر پیش نمایش را ببینید، کس دیگری نمیتواند آن را ببیند
               published: برای همه قابل مشاهده است
-          title_placeholder: عنوان پیش نویس را بنویسید
           changelog_placeholder: تغییرات اصلی را از نسخه قبلی اضافه کنید
-          body_placeholder: نوشتن پیش نویس متن
         index:
           title: نسخه های پیش نویس
           create: ایجاد نسخه
