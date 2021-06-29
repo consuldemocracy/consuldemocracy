@@ -12,9 +12,8 @@ el:
         headers:
           comment: Σχόλιο
           moderate: Συντονίζω
-        hide_comments: Απόκρυψη σχολίων
+        hide: Απόκρυψη σχολίων
         ignore_flags: Μαρκάρετε ως αναγνωσμένο
-        order: Παραγγελία
         orders:
           flags: Οι πιο σημαντικές
           newest: Νεότερα
@@ -34,9 +33,8 @@ el:
         headers:
           debate: Συζήτηση
           moderate: Συντονίζω
-        hide_debates: Απόκρυψη συζητήσεων
+        hide: Απόκρυψη συζητήσεων
         ignore_flags: Μαρκάρετε ως αναγνωσμένο
-        order: Παραγγελία
         orders:
           created_at: Νεότερα
           flags: Οι πιο σημαντικές
@@ -62,9 +60,8 @@ el:
         headers:
           moderate: Συντονίζω
           proposal: Πρόταση
-        hide_proposals: Απόκρυψη προτάσεων
+        hide: Απόκρυψη προτάσεων
         ignore_flags: Μαρκάρετε ως αναγνωσμένο
-        order: Ταξινόμηση κατά
         orders:
           created_at: Τα νεώτερα
           flags: Οι πιο σημαντικές
@@ -81,9 +78,8 @@ el:
         headers:
           moderate: Συντονίζω
           budget_investment: Επενδύσεις προϋπολογισμού
-        hide_budget_investments: Απόκρυψη επενδύσεων προϋπολογισμού
+        hide: Απόκρυψη επενδύσεων προϋπολογισμού
         ignore_flags: Μαρκάρετε ως αναγνωσμένο
-        order: Ταξινόμηση κατά
         orders:
           created_at: Τα νεότερα
           flags: Οι πιο σημαντικές
@@ -100,9 +96,8 @@ el:
         headers:
           moderate: Συντονίζω
           proposal_notification: Ειδοποιήσεις προτάσεων
-        hide_proposal_notifications: Απόκρυψη προτάσεων
+        hide: Απόκρυψη προτάσεων
         ignore_flags: Μαρκάρετε ως αναγνωσμένο
-        order: Ταξινόμηση κατά
         orders:
           created_at: Το πιο πρόσφατο
           moderated: Συντονισμένο
