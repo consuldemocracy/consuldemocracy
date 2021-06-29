@@ -476,10 +476,6 @@ da:
           allegations_phase: Kommentarfasen
           proposals_phase: Forslagsfasen
           use_markdown: Anvend Markdown til at formatere teksten
-          title_placeholder: Titel på proces
-          summary_placeholder: Kort resumé af beskrivelsen
-          description_placeholder: Tilføj en beskrivelse af processen
-          additional_info_placeholder: Tilføj supplerende brugbar information
           homepage_description: Her kan du forklare processens indhold
           banner_title: Farve på overskrift
         index:
@@ -493,11 +489,10 @@ da:
           title: Opret ny medborgerdialog
           submit_button: Opret proces
         proposals:
-          select_order: Sorter efter
           orders:
-            id: Id
-            title: Titel
-            supports: Samlet støtte
+            id: "Id"
+            title: "Titel"
+            supports: "Samlet støtte"
         process:
           title: Proces
           comments: Kommentarer
@@ -550,9 +545,7 @@ da:
             status:
               draft: Du kan som admin se forhåndsvisning. Ingen andre kan se den
               published: Synlig for alle
-          title_placeholder: Skriv titlen på udkastet
           changelog_placeholder: Tilføj de vigtigste ændringer fra den tidligere version
-          body_placeholder: Skriv udkast
         index:
           title: Kladdeversion
           create: Opret version
@@ -583,7 +576,6 @@ da:
           submit_button: Gem ændringer
         form:
           add_option: Tilføj valgmulighed
-          title_placeholder: Tilføj et spørgsmål
           value_placeholder: Tilføj et lukket svar
           question_options: "Mulige svar (valgfrit, åben svar som standard)"
         index:
