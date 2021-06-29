@@ -523,10 +523,6 @@ ro:
           allegations_phase: Etapa de comentarii
           proposals_phase: Etapa de propuneri
           use_markdown: Folosiți Markdown pentru a formata textul
-          title_placeholder: Titlul procesului
-          summary_placeholder: Scurt rezumat al descrierii
-          description_placeholder: Adaugă o descriere a procesului
-          additional_info_placeholder: Adăugați informații suplimentare pe care le considerați utile
           homepage_description: Aici puteți explica conținutul procesului
           banner_title: Culoarea antetului
         index:
@@ -540,11 +536,10 @@ ro:
           title: Crează unui nou proces legislativ de colaborare
           submit_button: Crează proces
         proposals:
-          select_order: Sortează după
           orders:
-            id: Id
-            title: Titlu
-            supports: Total susțineri
+            id: "Id"
+            title: "Titlu"
+            supports: "Total susțineri"
         process:
           title: Proces
           comments: Comentarii
@@ -598,9 +593,7 @@ ro:
             status:
               draft: Puteți pre-vizualiza ca administrator, nimeni altcineva nu poate vedea
               published: Vizibil pentru toată lumea
-          title_placeholder: Scrieți titlul versiunii schiță
           changelog_placeholder: Adăugați principalele modificări din versiunea anterioară
-          body_placeholder: Scrie textul pentru schiță
         index:
           title: Versiuni schiță
           create: Crează versiune
@@ -631,7 +624,6 @@ ro:
           submit_button: Salvează modificări
         form:
           add_option: Adaugă opțiune
-          title_placeholder: Adaugă întrebare
           value_placeholder: Adaugă un răspuns închis
           question_options: "Răspunsuri posibile (opțional, răspunsuri deschise implicit)"
         index:
