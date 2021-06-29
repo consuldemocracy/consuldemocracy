@@ -304,10 +304,6 @@ zh-CN:
           allegations_phase: 评论阶段
           proposals_phase: 提议阶段
           use_markdown: 使用Markdown 来格式化文本
-          title_placeholder: 进程的标题
-          summary_placeholder: 描述的简短总结
-          description_placeholder: 添加进程描述
-          additional_info_placeholder: 添加您认为有用的其他信息
         index:
           create: 新进程
           title: 立法进程
@@ -318,11 +314,10 @@ zh-CN:
           title: 创建新的合作立法过程
           submit_button: 创建进程
         proposals:
-          select_order: 排序依据
           orders:
-            id: Id
-            title: 标题
-            supports: 支持
+            id: "Id"
+            title: "标题"
+            supports: "支持"
         process:
           title: 进程
           comments: 评论
@@ -369,9 +364,7 @@ zh-CN:
             status:
               draft: 您作为管理员可以预览，其它人不能看到它
               published: 人人可见
-          title_placeholder: 编写草稿版本的标题
           changelog_placeholder: 添加早期版本中的主要更改
-          body_placeholder: 写下草稿文本
         index:
           title: 草稿版本
           create: 创建版本
@@ -402,7 +395,6 @@ zh-CN:
           submit_button: 保存更改
         form:
           add_option: 添加选项
-          title_placeholder: 添加问题
           value_placeholder: 添加已关闭的答案
           question_options: "可能的答案（可选，默认情况下打开答案）"
         index:
