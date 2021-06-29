@@ -428,10 +428,6 @@ fr:
           allegations_phase: Phase de commentaires
           proposals_phase: Phase de propositions
           use_markdown: Utilisez Markdown pour formater le text
-          title_placeholder: Le titre du processus
-          summary_placeholder: Bref résumé de la description
-          description_placeholder: Ajouter une description du processus
-          additional_info_placeholder: Ajouter n'importe quelle information supplémentaire que vous estimez utile
           homepage_description: Ici vous pouvez expliquer le contenu du processus
           banner_title: Couleurs de l'en-tête
         index:
@@ -445,11 +441,10 @@ fr:
           title: Créer un nouveau processus législatif collaboratif
           submit_button: Créer un processus
         proposals:
-          select_order: Trier par
           orders:
-            id: Id
-            title: Titre
-            supports: Soutiens
+            id: "Id"
+            title: "Titre"
+            supports: "Soutiens"
         process:
           title: Processus
           comments: Commentaires
@@ -498,9 +493,7 @@ fr:
             status:
               draft: Vous pouvez voir un aperçu en tant qu’admin, personne d’autre ne peut le voir
               published: Visible par tout le monde
-          title_placeholder: Écrire le titre du brouillon
           changelog_placeholder: Ajouter les changements de la version précédente
-          body_placeholder: Ecrivez le text du brouillon
         index:
           title: Ébauches
           create: Créer une version
@@ -531,7 +524,6 @@ fr:
           submit_button: Sauvegarder des changements
         form:
           add_option: Ajouter une option
-          title_placeholder: Ajouter une question
           value_placeholder: Ajouter une réponse
           question_options: "Réponses possibles (optionnel, réponses ouvertes par défaut)"
         index:
