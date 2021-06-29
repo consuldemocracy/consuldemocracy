@@ -166,7 +166,7 @@
 
   .button-support {
     background: $proposals;
-    color: $text;
+    color: inherit;
     display: inline-block;
     font-size: $small-font-size;
     margin-top: rem-calc(12);
@@ -223,13 +223,13 @@
   z-index: 2;
 
   p {
-    color: $color-warning !important;
+    color: inherit !important;
     margin: 0 rem-calc(12);
     text-align: left;
   }
 
   a {
-    color: $color-warning !important;
+    color: inherit !important;
     font-weight: bold;
     text-decoration: underline;
   }
@@ -623,7 +623,7 @@
     margin-top: $line-height / 2;
 
     a {
-      color: $text;
+      color: inherit;
     }
   }
 
@@ -725,10 +725,6 @@
     margin-top: 0;
     overflow: hidden;
     position: relative;
-
-    a {
-      color: $text;
-    }
   }
 
   .truncate {
@@ -1046,7 +1042,7 @@
     margin-bottom: 0;
 
     a {
-      color: $text;
+      color: inherit;
       font-size: rem-calc(24);
     }
   }
@@ -1101,7 +1097,7 @@
       padding-top: 0;
 
       a {
-        color: $color-warning;
+        color: inherit;
       }
 
       p {
@@ -1121,7 +1117,7 @@
 
     .social-share-button .ssb-icon {
       background: none;
-      color: $text;
+      color: inherit;
       height: rem-calc(33);
 
       &::before {
@@ -1174,7 +1170,7 @@
   .back,
   .icon-angle-left,
   .description {
-    color: #fff;
+    color: inherit;
   }
 
   a {
@@ -1238,7 +1234,7 @@
     font-size: $base-font-size;
 
     a {
-      color: $color-warning;
+      color: inherit;
     }
   }
 
@@ -1459,7 +1455,7 @@
   position: relative;
 
   a {
-    color: $text;
+    color: inherit;
     display: block;
 
     img {
@@ -1765,7 +1761,7 @@
     line-height: $line-height * 1.5;
 
     a {
-      color: $text;
+      color: inherit;
     }
   }
 }
