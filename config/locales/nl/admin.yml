@@ -346,10 +346,6 @@ nl:
           allegations_phase: Opmerkingenfase
           proposals_phase: Voorstelfase
           use_markdown: Gebruik Markdown om de tekst vorm te geven
-          title_placeholder: De titel van het plan
-          summary_placeholder: Korte samenvatting van de beschrijving
-          description_placeholder: Voeg een beschrijving van het plan toe
-          additional_info_placeholder: Voeg een aanvullende informatie toe
           homepage_description: Hier kun je de stappen van het proces uitleggen
           banner_title: Rubriekkleuren
         index:
@@ -363,11 +359,10 @@ nl:
           title: Nieuw plan creëren
           submit_button: Nieuw plan
         proposals:
-          select_order: Sorteer op
           orders:
-            id: Id
-            title: Title
-            supports: Steunt
+            id: "Id"
+            title: "Title"
+            supports: "Steunt"
         process:
           title: Proces
           comments: Comments
@@ -419,9 +414,7 @@ nl:
             status:
               draft: U kunt als beheerder een voorbeeld bekijken; niemand anders kan het zien
               published: Zichtbaar voor iedereen
-          title_placeholder: titel conceptversie
           changelog_placeholder: Voeg de belangrijkste wijzigingen van de vorige versie toe
-          body_placeholder: concept tekst
         index:
           title: Concept versies
           create: Nieuwe versie
@@ -452,7 +445,6 @@ nl:
           submit_button: Bewaar wijzigingen
         form:
           add_option: Voeg keuze toe
-          title_placeholder: titel
           value_placeholder: antwoord
           question_options: "Mogelijke antwoorden (optioneel, standaard open antwoorden)"
         index:
