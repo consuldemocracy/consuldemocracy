@@ -298,10 +298,6 @@ zh-TW:
           allegations_phase: 評論階段
           proposals_phase: 建議階段
           use_markdown: 使用Markdown格式化文本
-          title_placeholder: 進程的標題
-          summary_placeholder: 描述的簡短摘要
-          description_placeholder: 添加進程的描述
-          additional_info_placeholder: 添加您認為有用的額外資訊
         index:
           create: 新進程
           title: 立法進程
@@ -312,10 +308,9 @@ zh-TW:
           title: 創建新的合作立法進程
           submit_button: 創建進程
         proposals:
-          select_order: 排序依據
           orders:
-            title: 標題
-            supports: 支持
+            title: "標題"
+            supports: "支持"
         process:
           title: 進程
           comments: 評論
@@ -361,9 +356,7 @@ zh-TW:
             status:
               draft: 您作為管理員可以預覽, 其他人未能看到它
               published: 所有人都可以看見
-          title_placeholder: 編寫草稿版本的標題
           changelog_placeholder: 添加從早期版本中的主要更改
-          body_placeholder: 寫下草稿文本
         index:
           title: 草稿版本
           create: 創建版本
@@ -394,7 +387,6 @@ zh-TW:
           submit_button: 儲存更改
         form:
           add_option: 添加選項
-          title_placeholder: 添加問題
           value_placeholder: 添加一個已關閉的答案
           question_options: "可能的答案 (可選擇填寫，預設情況下打開答案)"
         index:
