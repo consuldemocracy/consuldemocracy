@@ -23,6 +23,10 @@
   .preview-link {
     @include has-fa-icon(eye, regular);
     @include hollow-button;
+
+    &::before {
+      margin-right: $font-icon-margin;
+    }
   }
 
   .publish-link {

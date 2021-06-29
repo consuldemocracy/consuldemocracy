@@ -1470,6 +1470,7 @@ table {
 
   &::before {
     font-size: rem-calc(24);
+    margin-right: $font-icon-margin;
   }
 }
 
@@ -1863,6 +1864,7 @@ table {
 
     .show-children::before,
     .collapse-children::before {
+      margin-right: $font-icon-margin;
       transform: translateY(-1px);
     }
 
@@ -1891,6 +1893,7 @@ table {
     }
 
     &::before {
+      margin-right: $font-icon-margin;
       transform: translateY(-1px);
     }
   }
@@ -2455,6 +2458,10 @@ table {
     &.score-negative {
       @include has-fa-icon(times, solid);
       color: $color-alert;
+    }
+
+    &::before {
+      margin-right: $font-icon-margin;
     }
   }
 }
