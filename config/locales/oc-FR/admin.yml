@@ -474,10 +474,6 @@ oc:
           allegations_phase: Fasa de comentaris
           proposals_phase: Fasa de proposicions
           use_markdown: Emplega Markdown per formatar lo tèxt
-          title_placeholder: Escriu lo títol del procès
-          summary_placeholder: Resumit cuert de la descripcion
-          description_placeholder: Apond una descripcion del procès
-          additional_info_placeholder: Apond quina informacion addicionala que siá que pòsca èsser d'interès
           homepage_description: Podètz aicí explicar lo contengut del procès
           banner_title: de Colors d'entèsta
         index:
@@ -491,11 +487,10 @@ oc:
           title: Crear nòu procès de legislacion col·laborativa
           submit_button: crear procès
         proposals:
-          select_order: Ordenar per
           orders:
-            id: Id
-            title: Títol
-            supports: d'Avals
+            id: "Id"
+            title: "Títol"
+            supports: "d'Avals"
         process:
           title: procès
           comments: Comentarios
@@ -548,9 +543,7 @@ oc:
             status:
               draft: Poiràs previsualitzar-coma loguejat, degun o poirà mai veire
               published: Serà visible per totes
-          title_placeholder: Escriu lo títol d'aquela version del borrolhon
           changelog_placeholder: Descriu quin cambiament considerable que siá amb la version anteriora
-          body_placeholder: Escriu lo tèxt del borrolhon
         index:
           title: de Versions del borrolhon
           create: crear version
@@ -581,7 +574,6 @@ oc:
           submit_button: Gardar de cambiaments
         form:
           add_option: + Apondre responsa barrada
-          title_placeholder: Apond una question
           value_placeholder: Escriu una responsa barrada
           question_options: "de Responsas possiblas (opcional, per defècte, responsas dubèrtas)"
         index:
