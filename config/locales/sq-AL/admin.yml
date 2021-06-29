@@ -300,10 +300,6 @@ sq:
           allegations_phase: Faza e komenteve
           proposals_phase: Faza e propozimit
           use_markdown: Përdorni Markdown për të formatuar tekstin
-          title_placeholder: Titulli i procesit
-          summary_placeholder: Përmbledhje e shkurtër e përshkrimit
-          description_placeholder: Shto një përshkrim të procesit
-          additional_info_placeholder: Shto një informacion shtesë që e konsideron të dobishme
         index:
           create: Proces i ri
           title: Legjislacion
@@ -314,11 +310,10 @@ sq:
           title: Krijo një proces të ri bashkëpunues të legjislacionit
           submit_button: Krijo procesin
         proposals:
-          select_order: Ndaj sipas
           orders:
-            id: Id
-            title: Titull
-            supports: Suporti
+            id: "Id"
+            title: "Titull"
+            supports: "Suporti"
         process:
           title: Proçes
           comments: Komentet
@@ -365,9 +360,7 @@ sq:
             status:
               draft: Ju mund të shikoni paraprakisht si admin, askush tjetër nuk mund ta shohë atë
               published: E dukshme për të gjithë
-          title_placeholder: Shkruani titullin e versionit të draftit
           changelog_placeholder: Shto ndryshimet kryesore nga versioni i mëparshëm
-          body_placeholder: Shkruani tekstin e draftit
         index:
           title: Version drafti
           create: Krijo versionin
@@ -398,7 +391,6 @@ sq:
           submit_button: Ruaj ndryshimet
         form:
           add_option: Shtoni opsionin
-          title_placeholder: Shto pyetjet
           value_placeholder: Shto një përgjigje të përafërt
           question_options: "Përgjigjet e mundshme (opsionale, sipas përgjigjeve të hapura)"
         index:
