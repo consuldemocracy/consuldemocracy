@@ -12,9 +12,8 @@ he:
         headers:
           comment: הערות
           moderate: מנחה
-        hide_comments: הסתר הערות
+        hide: הסתר הערות
         ignore_flags: סימון כמסמך שנצפה
-        order: סדר
         orders:
           flags: הנצפה ביותר
           newest: החדש ביותר
@@ -34,9 +33,8 @@ he:
         headers:
           debate: דיון
           moderate: מנחה
-        hide_debates: הסתירו את הדיון
+        hide: הסתירו את הדיון
         ignore_flags: סימון כמסמך שנצפה
-        order: הזמן
         orders:
           created_at: החדש ביותר
           flags: הנצפה ביותר
@@ -62,9 +60,8 @@ he:
         headers:
           moderate: מנחה
           proposal: הצעה
-        hide_proposals: הסתרת הצעות
+        hide: הסתרת הצעות
         ignore_flags: סימון כמסמך שנצפה
-        order: הזמנה באמצעות
         orders:
           created_at: האחרון
           flags: הנצפה ביותר
@@ -81,9 +78,8 @@ he:
         headers:
           moderate: מנחה
           budget_investment: השקעות בתקציב
-        hide_budget_investments: הסתר השקעות תקציביות
+        hide: הסתר השקעות תקציביות
         ignore_flags: סימון כמסמך שנצפה
-        order: הזמנה באמצעות
         orders:
           created_at: האחרון
           flags: הנצפה ביותר
@@ -100,9 +96,8 @@ he:
         headers:
           moderate: מנחה
           proposal_notification: התראות להצעות
-        hide_proposal_notifications: הסתרת הצעות
+        hide: הסתרת הצעות
         ignore_flags: סימון כמסמך שנצפה
-        order: הזמנה באמצעות
         orders:
           created_at: האחרון
           moderated: מונחה
