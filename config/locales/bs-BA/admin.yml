@@ -429,10 +429,6 @@ bs:
           allegations_phase: Faza za podnošenje komentara
           proposals_phase: Faza za podnošenje prijedloga
           use_markdown: Koristi obilježavanje za formatiranje teksta
-          title_placeholder: Naziv procesa
-          summary_placeholder: Kratki sažetak opisa
-          description_placeholder: Dodaj opis procesa
-          additional_info_placeholder: Dodatne informacije koje smatrate korisnim
           homepage_description: Ovdje možete objasniti sadržaj procesa
           banner_title: Boje za zaglavlje
         index:
@@ -446,11 +442,10 @@ bs:
           title: Napravi novi proces legislativne saradnje
           submit_button: Napravi proces
         proposals:
-          select_order: Poredaj po
           orders:
-            id: Identifikacioni broj
-            title: Naziv
-            supports: Ukupna podrška
+            id: "Identifikacioni broj"
+            title: "Naziv"
+            supports: "Ukupna podrška"
         process:
           title: Proces
           comments: Komentari
@@ -502,9 +497,7 @@ bs:
             status:
               draft: Omogućen vam je pregled kao administratoru, niko drugi ne može vidjeti
               published: Vidljivo svima
-          title_placeholder: Napiši naziv nacrtne verzije
           changelog_placeholder: Dodaj glavne izmjene iz prethodne verzije
-          body_placeholder: Napiši narct teksta
         index:
           title: Nacrtne verzije
           create: Kreiraj verziju
@@ -535,7 +528,6 @@ bs:
           submit_button: Spasi izmjene
         form:
           add_option: Dodaj opciju
-          title_placeholder: Dodaj pitanje
           value_placeholder: Dodaj zatvoreni odgovor
           question_options: "Mogući odgovori (nije obavezno, odgovori su po pravilu otvoreni)"
         index:
