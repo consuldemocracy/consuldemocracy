@@ -356,10 +356,6 @@ pl:
           allegations_phase: Faza Komentarzy
           proposals_phase: Etap składania wniosków
           use_markdown: Sformatuj tekst za pomocą Markdown
-          title_placeholder: Tytuł procesu
-          summary_placeholder: Krótkie podsumowanie opisu
-          description_placeholder: Dodaj opis procesu
-          additional_info_placeholder: Dodaj dodatkowe informacje, które uważasz za przydatne
           homepage_description: Tutaj można wyjaśnić kontekst procesu
           banner_title: Kolory nagłówków
         index:
@@ -373,11 +369,10 @@ pl:
           title: Stwórz nowy zbiorowy proces prawodawczy
           submit_button: Proces tworzenia
         proposals:
-          select_order: Sortuj według
           orders:
-            id: Identyfikator
-            title: Tytuł
-            supports: Wsparcie
+            id: "Identyfikator"
+            title: "Tytuł"
+            supports: "Wsparcie"
         process:
           title: Proces
           comments: Komentarze
@@ -429,9 +424,7 @@ pl:
             status:
               draft: Możesz podglądać jako administrator, nikt inny nie może tego zobaczyć
               published: Widoczny dla każdego
-          title_placeholder: Napisz tytuł wersji roboczej
           changelog_placeholder: Dodaj najważniejsze zmiany z poprzedniej wersji
-          body_placeholder: Zapisz projekt tekstu
         index:
           title: Wersji roboczych
           create: Utwórz wersję
@@ -462,7 +455,6 @@ pl:
           submit_button: Zapisz zmiany
         form:
           add_option: Dodaj opcję
-          title_placeholder: Dodaj pytanie
           value_placeholder: Dodaj zamkniętą odpowiedź
           question_options: "Możliwe odpowiedzi (opcjonalne, domyślnie otwarte odpowiedzi)"
         index:
