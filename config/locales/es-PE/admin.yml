@@ -245,10 +245,6 @@ es-PE:
           debate_phase: Fase previa
           proposals_phase: Fase de propuestas
           use_markdown: Usa Markdown para formatear el texto
-          title_placeholder: Escribe el título del proceso
-          summary_placeholder: Resumen corto de la descripción
-          description_placeholder: Añade una descripción del proceso
-          additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
         index:
           create: Nuevo proceso
           title: Procesos legislativos
@@ -259,10 +255,9 @@ es-PE:
           title: Crear nuevo proceso de legislación colaborativa
           submit_button: Crear proceso
         proposals:
-          select_order: Ordenar por
           orders:
-            title: Título
-            supports: Apoyos
+            title: "Título"
+            supports: "Apoyos"
         process:
           title: Proceso
           comments: Comentarios
@@ -305,9 +300,7 @@ es-PE:
             status:
               draft: Podrás previsualizarlo como logueado, nadie más lo podrá ver
               published: Será visible para todo el mundo
-          title_placeholder: Escribe el título de esta versión del borrador
           changelog_placeholder: Describe cualquier cambio relevante con la versión anterior
-          body_placeholder: Escribe el texto del borrador
         index:
           title: Versiones del borrador
           create: Crear versión
