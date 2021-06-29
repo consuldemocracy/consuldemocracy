@@ -477,10 +477,6 @@ pt-BR:
           allegations_phase: Fase de comentários
           proposals_phase: Fase de propostas
           use_markdown: Usar Remarcação para formatar o texto
-          title_placeholder: O título do processo
-          summary_placeholder: Breve resumo da descrição
-          description_placeholder: Adicione uma descrição do processo
-          additional_info_placeholder: Adicione informação adicional que você considera útil
           homepage_description: Aqui você pode explicar o conteúdo do processo
           banner_title: Cores do cabeçalho
         index:
@@ -494,11 +490,10 @@ pt-BR:
           title: Criar novo processo colaborativo de legislação
           submit_button: Criar processo
         proposals:
-          select_order: Organizado por
           orders:
-            id: ID
-            title: Título
-            supports: Apoios
+            id: "ID"
+            title: "Título"
+            supports: "Apoios"
         process:
           title: Processo
           comments: Comentários
@@ -552,9 +547,7 @@ pt-BR:
             status:
               draft: Você pode visualizar como admin, ninguém mais pode vê-lo
               published: Visível para todos
-          title_placeholder: Escreva o título do rascunho
           changelog_placeholder: Adicionar as principais alterações a partir da versão anterior
-          body_placeholder: Escreva o rascunho do texto
         index:
           title: Versões preliminares
           create: Criar versão
@@ -585,7 +578,6 @@ pt-BR:
           submit_button: Salvar alterações
         form:
           add_option: Adicionar opção
-          title_placeholder: Adicionar pergunta
           value_placeholder: Adicionar resposta fechada
           question_options: "Respostas possíveis (opcionais, por respostas abertas padrão)"
         index:
