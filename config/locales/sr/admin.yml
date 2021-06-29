@@ -480,10 +480,6 @@ sr:
           allegations_phase: Коментари фазе
           proposals_phase: Предлози фазе
           use_markdown: Користите функцију Маркирајте да бисте обликовали текст
-          title_placeholder: Наслов процеса
-          summary_placeholder: Кратак сажетак описа
-          description_placeholder: Додајте опис процеса
-          additional_info_placeholder: Додајте додатне информације које сматрате корисним
           homepage_description: Овде можете објаснити садржај процеса
           banner_title: Боје наслова
         index:
@@ -497,11 +493,10 @@ sr:
           title: Креирајте нови заједнички законодавни процес
           submit_button: Креирајте процес
         proposals:
-          select_order: Разврстано по
           orders:
-            id: Ид
-            title: Наслов
-            supports: Укупна подршка
+            id: "Ид"
+            title: "Наслов"
+            supports: "Укупна подршка"
         process:
           title: Процес
           comments: Коментари
@@ -555,9 +550,7 @@ sr:
             status:
               draft: Можете да прегледате као админ, нико други не може да га види
               published: Видљиво свима
-          title_placeholder: Напиши наслов нацрта
           changelog_placeholder: Додај главне измене из претходне верзије
-          body_placeholder: Напиши текст нацрта
         index:
           title: Верзије нацрта
           create: Креирај верзију
@@ -588,7 +581,6 @@ sr:
           submit_button: Сачувати измене
         form:
           add_option: Додати опцију
-          title_placeholder: Додати питање
           value_placeholder: Додати затворен одговор
           question_options: "Могући одговори (опционално, подразумевано отворени одговори)"
         index:
