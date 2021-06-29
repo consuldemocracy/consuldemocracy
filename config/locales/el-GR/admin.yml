@@ -460,10 +460,6 @@ el:
           allegations_phase: Φάση σχολίων
           proposals_phase: Φάση προτάσεων
           use_markdown: Χρησιμοποιήστε Markdown να μορφοποιήσετε το κείμενο
-          title_placeholder: Τον τίτλο της διαδικασίας
-          summary_placeholder: Σύντομη περίληψη της περιγραφής
-          description_placeholder: Προσθέσετε μια περιγραφή της διαδικασίας
-          additional_info_placeholder: Προσθέστε επιπλέον πληροφορίες που θεωρείτε χρήσιμες
           homepage_description: Εδώ μπορείτε να εξηγήσετε το περιεχόμενο της διαδικασίας
           banner_title: Χρώματα επικεφαλίδας
         index:
@@ -477,11 +473,10 @@ el:
           title: Δημιουργήστε νέα διαδικασία συνεργατικής νομοθεσίας
           submit_button: Δημιουργία διαδικασίας
         proposals:
-          select_order: Ταξινόμηση κατά
           orders:
-            id: Ταυτότητα
-            title: Τίτλος
-            supports: Συνολικές υποστηρίξεις
+            id: "Ταυτότητα"
+            title: "Τίτλος"
+            supports: "Συνολικές υποστηρίξεις"
         process:
           title: Διαδικασία
           comments: Σχόλια
@@ -533,9 +528,7 @@ el:
             status:
               draft: Μπορείτε να κάνετε προεπισκόπηση ως διαχειριστής, κανείς άλλος δεν θα μπορεί να έχει πρόσβαση
               published: Ορατό για όλους
-          title_placeholder: Γράψτε τον τίτλο της έκδοσης του προσχεδίου
           changelog_placeholder: Προσθέστε τις κύριες αλλαγές από την προηγούμενη έκδοση
-          body_placeholder: Συγγραφή προσχεδίου
         index:
           title: Εκδόσεις προσχεδίου
           create: Δημιουργία έκδοσης
@@ -566,7 +559,6 @@ el:
           submit_button: Αποθήευση αλλαγών
         form:
           add_option: Προσθήκη επιλογής
-          title_placeholder: Προσθήκη ερώτησης
           value_placeholder: Προσθήκη κλειστής απάντησης
           question_options: "Πιθανές απαντήσεις (προαιρετικό, ανοικτές απαντήσεις από προεπιλογή)"
         index:
