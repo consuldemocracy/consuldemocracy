@@ -450,10 +450,6 @@ ru:
           allegations_phase: Фаза комментирования
           proposals_phase: Фаза предложений
           use_markdown: Форматируйте текст при помощи разметки Markdown
-          title_placeholder: Заголовок процесса
-          summary_placeholder: Краткая выжимка из описания
-          description_placeholder: Добавить описание процесса
-          additional_info_placeholder: Добавить информацию, которую вы считаете полезной
           homepage_description: Здесь вы можете описать содержимое процесса
           banner_title: Цвета заголовка
         index:
@@ -467,11 +463,10 @@ ru:
           title: Создать новый совместный законотворческий процесс
           submit_button: Создать процесс
         proposals:
-          select_order: Сортировать по
           orders:
-            id: Id
-            title: Название
-            supports: Поддержки
+            id: "Id"
+            title: "Название"
+            supports: "Поддержки"
         process:
           title: Процесс
           comments: Комментарии
@@ -523,9 +518,7 @@ ru:
             status:
               draft: Вы можете предварительно просмотреть как администратор, больше никто не может это видеть
               published: Видимо для всех
-          title_placeholder: Напишите название версии черновика
           changelog_placeholder: Добавьте основные изменения из предыдущей версии
-          body_placeholder: Впишите текст черновика
         index:
           title: Предварительные варианты
           create: Создать версию
@@ -556,7 +549,6 @@ ru:
           submit_button: Сохранить изменения
         form:
           add_option: Добавить вариант
-          title_placeholder: Добавить вопрос
           value_placeholder: Добавить закрытый ответ
           question_options: "Возможные ответы (не обязательно, по умолчанию открытые ответы)"
         index:
