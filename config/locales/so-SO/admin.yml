@@ -299,10 +299,6 @@ so:
           allegations_phase: Heerarka faallooyinka
           proposals_phase: Wajiga soo jeedinada
           use_markdown: Isticmaal lambarka si aad u sameyso qoraalka
-          title_placeholder: Ciwaanka geedi socodka
-          summary_placeholder: Soo koobista kooban ee sharaxaadda
-          description_placeholder: Ku dar sharaxaad ku saabsan hannaanka
-          additional_info_placeholder: Ku dar xog dheeriya oo ad u aragto iney faido ledahay
         index:
           create: New process
           title: Nidaamka Sharciga
@@ -313,11 +309,10 @@ so:
           title: Abuur nidaam sharci oo wada shaqeyned
           submit_button: Saame Nidam
         proposals:
-          select_order: Kala saar
           orders:
-            id: Aqoonsi
-            title: Ciwaan
-            supports: Tageerayaal
+            id: "Aqoonsi"
+            title: "Ciwaan"
+            supports: "Tageerayaal"
         process:
           title: Geedisocoodka
           comments: Faalo
@@ -364,9 +359,7 @@ so:
             status:
               draft: Mamul aha baad u arki kartaa Hordhaca cid kale ma arki karto
               published: Muqal ahaan qof kasta
-          title_placeholder: Qor ciwaanka Qabyada ah
           changelog_placeholder: Ku dar Isbedelada muhimka ah ee kayiid werintii hore
-          body_placeholder: Hoos ku qor qoraalka qaya qoralka ah
         index:
           title: Weerinta qabya qoralka
           create: Saame Weerin
@@ -397,7 +390,6 @@ so:
           submit_button: Badbaadi beddelka
         form:
           add_option: Ku dar ikhyaari
-          title_placeholder: Ku dar sual
           value_placeholder: Ku dar jawaab celin
           question_options: "Su'aalaha suurtagalka ah (ikhtiyaari ah, marka ay jawaab celin furan)"
         index:
