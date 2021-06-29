@@ -229,7 +229,7 @@ fi:
           submit_button: Luo prosessi
         proposals:
           orders:
-            id: Id
+            id: "Id"
         process:
           title: Prosessi
           comments: Kommentit
