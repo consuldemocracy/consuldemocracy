@@ -497,10 +497,6 @@ bg:
           allegations_phase: Фаза на коментари
           proposals_phase: Фаза на предложенията
           use_markdown: Използвайте Markdown за форматиране на текста
-          title_placeholder: Заглавието на процеса
-          summary_placeholder: Кратко резюме на описанието
-          description_placeholder: Добавете описание на процеса
-          additional_info_placeholder: Добавете допълнителна информация, която считате за полезна
           homepage_description: Тук можете да обясните съдържанието на процеса
           banner_title: Цветове на хедъра
         index:
@@ -514,11 +510,10 @@ bg:
           title: Създаване на нов процес на съвместно законодателство
           submit_button: Създаване на процес
         proposals:
-          select_order: Сортиране по
           orders:
-            id: Идентификация
-            title: Заглавие
-            supports: Общо подкрепени
+            id: "Идентификация"
+            title: "Заглавие"
+            supports: "Общо подкрепени"
         process:
           title: Процес
           comments: Коментари
@@ -572,9 +567,7 @@ bg:
             status:
               draft: Можете да визуализирате като администратор, никой друг не може да го види
               published: Видимо за всички
-          title_placeholder: Напишете заглавието на черновата версия
           changelog_placeholder: Добавете основните промени от предишната версия
-          body_placeholder: Запишете текста на черновата
         index:
           title: Версии на черновата
           create: Създаване на версия
@@ -605,7 +598,6 @@ bg:
           submit_button: Запазване на промените
         form:
           add_option: Добавяне на опция
-          title_placeholder: Добавяне на въпрос
           value_placeholder: Добавете затворен отговор
           question_options: "Възможни отговори (незадължително, отворени отговори по подразбиране)"
         index:
