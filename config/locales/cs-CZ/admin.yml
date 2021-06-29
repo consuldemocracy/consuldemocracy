@@ -396,10 +396,6 @@ cs:
           allegations_phase: Fáze připomínkování
           proposals_phase: Fáze návrhu
           use_markdown: Pro formátování textu použijte Markdown
-          title_placeholder: Název procesu
-          summary_placeholder: Stručné shrnutí popisu
-          description_placeholder: Přidat popis procesu
-          additional_info_placeholder: Přidat doplňující ifnormace, které považujete za užitečné
           homepage_description: Zde můžete vysvětlit obsah procesu
           banner_title: Barvy záhlaví
         index:
@@ -413,11 +409,10 @@ cs:
           title: Vytvořit nový participativní legislativní proces
           submit_button: Vytvořit proces
         proposals:
-          select_order: Třídit podle
           orders:
-            id: Id
-            title: Předmět
-            supports: Podpora
+            id: "Id"
+            title: "Předmět"
+            supports: "Podpora"
         process:
           title: Proces
           comments: Komentáře
@@ -469,9 +464,7 @@ cs:
             status:
               draft: Můžete zobrazit náhled jako aministrátor, nikdo jiný to nevidí
               published: Viditelné pro každého
-          title_placeholder: Napište název pracovní verze
           changelog_placeholder: Přidat hlavní změny od předchozí verze
-          body_placeholder: Poznamenejte si návrh textu
         index:
           title: Pracovní verze
           create: Vytvořit verzi
@@ -502,7 +495,6 @@ cs:
           submit_button: Uložit změny
         form:
           add_option: Přidat možnost
-          title_placeholder: Přidat otázku
           value_placeholder: Přidat uzavřenou odpověď
           question_options: "Možné odpovědi (volitelné, standardně otevřené odpovědi)"
         index:
