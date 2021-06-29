@@ -484,10 +484,6 @@ uk-UA:
           allegations_phase: Етап коментування
           proposals_phase: Етап подання пропозицій
           use_markdown: Використовуйте Markdown, щоб відформатувати текст
-          title_placeholder: Назва процесу
-          summary_placeholder: Короткий виклад опису
-          description_placeholder: Додати опис процесу
-          additional_info_placeholder: Додати додаткову інформацію, яку ви вважаєте корисною
           homepage_description: Тут ви можете пояснити зміст процесу
           banner_title: Кольори рубрик
         index:
@@ -501,11 +497,10 @@ uk-UA:
           title: Створити новий спільний законодавчий процес
           submit_button: Створити процес
         proposals:
-          select_order: Сортувати за
           orders:
-            id: Id
-            title: Назва
-            supports: Загальна підтримка
+            id: "Id"
+            title: "Назва"
+            supports: "Загальна підтримка"
         process:
           title: Процес
           comments: Коментарі
@@ -559,9 +554,7 @@ uk-UA:
             status:
               draft: Ви можете здійснити попередній перегляд як адміністратор, ніхто інший не може бачити попередній перегляд
               published: Видимий для всіх
-          title_placeholder: Напишіть назву чорнової версії
           changelog_placeholder: Додати основні зміни з попередньої версії
-          body_placeholder: Записати чорновий текст
         index:
           title: Чорнові версії
           create: Створити версію
@@ -592,7 +585,6 @@ uk-UA:
           submit_button: Зберегти зміни
         form:
           add_option: Додати опцію
-          title_placeholder: Додати запитання
           value_placeholder: Додати закриту відповідь
           question_options: "Можливі відповіді (за бажанням; за замовчуванням - відкриті відповіді)"
         index:
