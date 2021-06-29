@@ -260,10 +260,6 @@ eu:
           allegations_phase: Idazketa fasea
           proposals_phase: Proposamen fasea
           use_markdown: Markdown erabili testua formateatzeko
-          title_placeholder: Prosezuaren izenburua idatzi ezazu
-          summary_placeholder: Azalpenaren laburpen laburra
-          description_placeholder: Prosezuaren azalpen bat gehitu
-          additional_info_placeholder: Interesgarria izan daitekeen edozein informazio gehitu ezazu
         index:
           create: Prosezu berria
           title: Partaidetzazko legegintza prosezuak
@@ -313,9 +309,7 @@ eu:
             status:
               draft: Logeatu ezkero ikus dezakezu, inork gehiagok ezin dezake ikusi
               published: Denek ikusi ahal izango dute
-          title_placeholder: Zirriborro bertsio honen izenburua idatzi ezazu
           changelog_placeholder: Aurreko bertsiorekin alderatuta dagozan aldaketa nagusiak idatz itzazu
-          body_placeholder: Zirriborroaren testua idatz ezazu
         index:
           title: Zirriborroaren bertsioak
           create: Bertsioa sortu
@@ -346,7 +340,6 @@ eu:
           submit_button: Aldaketak gorde
         form:
           add_option: Erantzun itxia gehitu
-          title_placeholder: Galderaren izenburua idatz ezazu
           value_placeholder: Erantzun itxia idatz ezazu
           question_options: "Erantzun posibleak (aukerakoa, lehenespenez erantzun irekiak)"
         index:
