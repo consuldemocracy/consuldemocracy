@@ -480,10 +480,6 @@ hr:
           allegations_phase: Faza komentara
           proposals_phase: Faza prijedloga
           use_markdown: Koristi Smanjenje kako bi formatirali tekst
-          title_placeholder: Naziv procesa
-          summary_placeholder: Kratki sažetak opisa
-          description_placeholder: Dodaj opis procesa
-          additional_info_placeholder: Dodaj dodatne informacije koje smatraš korisnima
           homepage_description: Ovdje možeš objasniti sadržaj procesa
           banner_title: Boje naslova
         index:
@@ -497,11 +493,10 @@ hr:
           title: Izradi novi poziv za javno savjetovanje
           submit_button: Stvori proces
         proposals:
-          select_order: Sortiraj po
           orders:
-            id: Id
-            title: Naziv
-            supports: Ukupne potpore
+            id: "Id"
+            title: "Naziv"
+            supports: "Ukupne potpore"
         process:
           title: Proces
           comments: Komentari
@@ -555,9 +550,7 @@ hr:
             status:
               draft: Ovo možete pregledati kao admin, nitko drugi nema uvid
               published: Vidljivo svima
-          title_placeholder: Napiši naziv nacrtne verzije
           changelog_placeholder: Dodaj glavne promejene od prošle verzije
-          body_placeholder: Zapišite tekst nacrta
         index:
           title: Verzije nacrta
           create: Stvori verziju
@@ -588,7 +581,6 @@ hr:
           submit_button: Spremi promjene
         form:
           add_option: Dodaj opciju
-          title_placeholder: Dodaj pitanje
           value_placeholder: Dodaj zatvreni odgovor
           question_options: "Mogući odgovori (opcije, zadani otvoreni odgovori)"
         index:
