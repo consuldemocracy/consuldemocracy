@@ -477,10 +477,6 @@ he:
           allegations_phase: שלב ההערות
           proposals_phase: שלב ההצעות
           use_markdown: השתמש ב- סמן למטה כדי לעצב את הטקסט
-          title_placeholder: כותרת התהליך
-          summary_placeholder: סיכום קצר של התיאור
-          description_placeholder: הוסף תיאור של התהליך
-          additional_info_placeholder: הוסף מידע נוסף שיכול להיות מועיל
           homepage_description: כאן תוכל להסביר את תוכן התהליך
           banner_title: צבעי כותרת
         index:
@@ -494,11 +490,10 @@ he:
           title: צור תהליך חקיקה שיתופית חדשה
           submit_button: יצירת תהליך
         proposals:
-          select_order: סדר לפי
           orders:
-            id: מזהה
-            title: כותרת
-            supports: סה"כ תומכים
+            id: "מזהה"
+            title: "כותרת"
+            supports: "סה\"כ תומכים"
         process:
           title: תהליך
           comments: הערות
@@ -550,9 +545,7 @@ he:
             status:
               draft: אתה יכול לצפות בתצוגה מקדימה כמנהל, אף אחד אחר לא יכול לראות את זה
               published: גלוי לכולם
-          title_placeholder: כתוב את הכותרת של גירסת הטיוטה
           changelog_placeholder: הוסף את השינויים העיקריים מהגירסה הקודמת
-          body_placeholder: כתוב את הטקסט טיוטה
         index:
           title: גירסת הטיוטה
           create: יצירת גירסה
@@ -583,7 +576,6 @@ he:
           submit_button: שמירת שינויים
         form:
           add_option: הוסף אפשרות
-          title_placeholder: הוספת שאלה
           value_placeholder: הוספת תשובה סגורה
           question_options: "תשובות אפשריות (אופציונלי, תשובות פתוחות כברירת מחדל)"
         index:
