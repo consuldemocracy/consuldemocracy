@@ -476,10 +476,6 @@ ka:
           allegations_phase: კომენტარების ფაზა
           proposals_phase: ინიციატივების ფაზა
           use_markdown: ტექსტის ფორმატირებისთვის გამოიყენეთ შემცირების ღილაკი
-          title_placeholder: პროცესის დასახელება
-          summary_placeholder: აღწერის მოკლე შინაარსი
-          description_placeholder: პროცესის აღწერის დამატება
-          additional_info_placeholder: დაამატეთ დამატებითი მნიშვნელოვანი ინფორმაცია
           homepage_description: განმარტეთ პროცესის შინაარსი
           banner_title: სათაურის ფერები
         index:
@@ -493,11 +489,10 @@ ka:
           title: ახალი საკანონმდებლო ინიციატივის პროცესის შექმნა
           submit_button: პროცესის შექმნა
         proposals:
-          select_order: დალაგება
           orders:
-            id: Id
-            title: სათაური
-            supports: მხარდამჭერთა საერთო რაოდენობა
+            id: "Id"
+            title: "სათაური"
+            supports: "მხარდამჭერთა საერთო რაოდენობა"
         process:
           title: პროცესი
           comments: კომენტარები
@@ -550,9 +545,7 @@ ka:
             status:
               draft: შეგიძლიათ წინასწარ შეხედოთ, როგორც ადმინმა. ხელმისაწვდომი იქნება მხოლოდ თქვენთვის
               published: ნახვა შეუძლია ყველას
-          title_placeholder: შეიყვანეთ პროექტის დასახელება
           changelog_placeholder: დაამატეთ ძირითადი ცვლილებები წინა ვერსიიდან
-          body_placeholder: შეიყვანეთ ტექსტის მონახაზი
         index:
           title: კანონპროექტები
           create: ვერსიის შექმნა
@@ -583,7 +576,6 @@ ka:
           submit_button: ცვლილებების შენახვა
         form:
           add_option: შესაძლო ვარიანტის დამატება
-          title_placeholder: კითხვის დამატება
           value_placeholder: დაამატეთ დახურული პასუხი
           question_options: "შესაძლო პასუხები (სურვილისამებრ, ავტომატურად მონიშნულია ღია პასუხები)"
         index:
