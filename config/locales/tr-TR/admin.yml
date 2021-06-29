@@ -552,10 +552,6 @@ tr:
           allegations_phase: Yorumlar aşaması
           proposals_phase: Öneriler aşaması
           use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
-          title_placeholder: İşlem başlığı
-          summary_placeholder: Tanımlamanın kısa özeti
-          description_placeholder: İşlemin bir tanımlamasını ekleyin
-          additional_info_placeholder: Yararlı olduğunu düşündüğünüz bir ek bilgi ekleyin
           homepage_description: Burada işlemin içeriğini açıklayabilirsiniz
           banner_title: Başlık renkleri
         index:
@@ -569,11 +565,10 @@ tr:
           title: Yeni katılımcı mevzuat süreci oluşturun
           submit_button: İşlem oluşturma
         proposals:
-          select_order: Sıralama ölçütü
           orders:
-            id: Kimlik
-            title: İsim
-            supports: Tam destek
+            id: "Kimlik"
+            title: "İsim"
+            supports: "Tam destek"
         process:
           title: İşlem
           comments: Yorumlar
@@ -627,9 +622,7 @@ tr:
             status:
               draft: Yönetici olarak önizleme yapabilirsiniz, başka kimse göremez
               published: Herkes için görünür
-          title_placeholder: Taslak sürümün başlığını yaz
           changelog_placeholder: Önceki sürümden ana değişiklikleri ekle
-          body_placeholder: Taslak metni yaz
         index:
           title: Taslak sürümler
           create: Sürüm oluştur
@@ -660,7 +653,6 @@ tr:
           submit_button: Değişiklikleri kaydet
         form:
           add_option: Seçenek ekle
-          title_placeholder: Soru ekle
           value_placeholder: Bir kapalı cevap ekle
           question_options: "Olası yanıtlar (isteğe bağlı, varsayılan açık cevaplar tarafından)"
         index:
