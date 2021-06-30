@@ -50,7 +50,6 @@ sq:
       newest: Më e reja në fillim
       oldest: Më i vjetri në fillim
       most_commented: Më të komentuarit
-    select_order: Ndaj sipas
     show:
       return_to_commentable: "Shko prapa ne "
   comments_helper:
@@ -100,7 +99,6 @@ sq:
         button: Kërko
         placeholder: Kërko debate...
         title: Kërko
-      select_order: Renditur nga
       start_debate: Filloni një debat
       title: Debate
       section_header:
@@ -314,7 +312,6 @@ sq:
         button: Kërko
         placeholder: Kërko propozimet...
         title: Kërko
-      select_order: Renditur nga
       select_order_long: "Ju shikoni propozime sipas:"
       start_proposal: Krijo propozim
       title: Propozime
