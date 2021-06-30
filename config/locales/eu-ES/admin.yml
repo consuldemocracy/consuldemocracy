@@ -18,8 +18,6 @@ eu:
       index:
         title: Bannerrak
         create: Bannerra
-        edit: Bannerra editatu
-        delete: Bannerra ezabatu
         filters:
           all: Guztiak
           with_active: Aktiboak
@@ -70,7 +68,6 @@ eu:
         table_name: Izena
         table_phase: Fasea
         edit_groups: Sail taldeak editatu
-        edit_budget: Aurrekontua editatu
       create:
         notice: Partaidetzazko aurrekontuak ondo sortuta!
       update:
@@ -81,7 +78,6 @@ eu:
         phase: Fasea
         enabled: Gaituta
         actions: Ekintzak
-        edit_phase: Editatu fasea
         active: Aktibatuta
         blank_dates: Data gabe
       destroy:
@@ -95,6 +91,7 @@ eu:
       name: "Izena"
     budget_phases:
       edit:
+        title: "Editatu fasea"
         description_help_text: Testu hau goiburuan agertuko da fasea aktibatuta dagoenenan.
         enabled_help_text: Fase hau aurrekontu faseen egutegian publikoa izango da eta beste asmo batzuentzako aktibatuta egongo da.
         save_changes: Aldaketak gorde
@@ -178,7 +175,6 @@ eu:
         table_publication_date: "Argitaratze data"
         table_status: Egoera
         table_actions: "Ekintzak"
-        delete: "Une gogoangarria ezabatu"
         no_milestones: "Ez dira une gogoangarririk zehaztu"
         image: "Irudia"
         show_image: "Irudia erakutsi"
@@ -712,7 +708,6 @@ eu:
         location: "Kokapena"
       booth:
         shifts: "Txandak esleitu"
-        edit: "Hautetsontzia editatu"
     officials:
       edit:
         destroy: '''Kargu publiko'' kondizioa ezabatu'
@@ -733,7 +728,6 @@ eu:
       level_4: 4. maila
       level_5: 5. maila
       search:
-        edit_official: Kargu publikoa editatu
         make_official: Kargu publikoan bilakatu
         title: "Kargu publikoak: Erabiltzaileen bilaketa"
         no_results: Ez da kargu publikorik bilatu.
@@ -888,7 +882,6 @@ eu:
           origin_total: Partehartzaileak guztira
     tags:
       create: Gaia sortu
-      destroy: Gaia ezabatu
       index:
         add_tag: Proposamen gai berri bat sortu
         title: Proposamen gaiak
