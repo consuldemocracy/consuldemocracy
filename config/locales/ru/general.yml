@@ -58,7 +58,6 @@ ru:
       newest: Самое свежее
       oldest: Самое давнее
       most_commented: Самое комментируемое
-    select_order: Сортировать по
     show:
       return_to_commentable: "Вернуться к "
   comments_helper:
@@ -112,7 +111,6 @@ ru:
         button: Поиск
         placeholder: Искать дебаты...
         title: Поиск
-      select_order: Сортировать по
       start_debate: Начать дебаты
       title: Обсуждения проблем
       section_header:
@@ -369,7 +367,6 @@ ru:
         button: Поиск
         placeholder: Искать предложения...
         title: Поиск
-      select_order: Упорядочить по
       select_order_long: "Вы просматриваете предложения в соответствии с:"
       start_proposal: Создать предложение
       title: Заявки
