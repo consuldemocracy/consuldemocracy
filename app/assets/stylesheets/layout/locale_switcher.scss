@@ -1,24 +1,24 @@
 .locale {
-  @include has-fa-icon(angle-down, solid, after);
   float: left;
   margin-bottom: $line-height / 4;
   margin-top: $line-height / 4;
   position: relative;
 
-  &::after {
-    color: #808080;
-    font-size: $small-font-size;
-    margin-right: 0;
-    pointer-events: none;
-    position: absolute;
-    right: 2px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
   .locale-form {
+    @include has-fa-icon(angle-down, solid, after);
     display: inline-block;
     position: relative;
+
+    &::after {
+      color: #808080;
+      font-size: $small-font-size;
+      margin-right: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
     label {
       color: #fff;
@@ -49,6 +49,33 @@
         border: 0;
         outline: none;
       }
+    }
+  }
+
+  p {
+    @include element-invisible;
+  }
+
+  ul {
+    $gap: 0.75em;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gap;
+
+    > * {
+      margin-left: $gap;
+    }
+
+    li::after {
+      content: none;
+    }
+
+    a {
+      margin-left: 0;
+    }
+
+    [aria-current] {
+      font-weight: bold;
     }
   }
 }
