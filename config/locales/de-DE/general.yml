@@ -61,7 +61,6 @@ de:
       newest: Neueste zuerst
       oldest: Älteste zuerst
       most_commented: meist kommentiert
-    select_order: Sortieren nach
     show:
       return_to_commentable: "Zurück zu"
   comments_helper:
@@ -114,7 +113,6 @@ de:
       search_results:
         one: " enthält den Begriff <strong>'%{search_term}'</strong>"
         other: " enthält den Begriff <strong>'%{search_term}'</strong>"
-      select_order: Sortieren nach
       start_debate: Starten Sie eine Diskussion
       title: Diskussionen
       section_header:
@@ -379,7 +377,6 @@ de:
       search_results:
         one: " enthält den Begriff <strong>'%{search_term}'</strong>"
         other: " enthält den Begriff <strong>'%{search_term}'</strong>"
-      select_order: Sortieren nach
       select_order_long: "Sie sehen Vorschläge nach:"
       start_proposal: Vorschlag erstellen
       title: Vorschläge
