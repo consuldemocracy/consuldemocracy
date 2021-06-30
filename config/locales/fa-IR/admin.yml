@@ -17,8 +17,6 @@ fa:
       index:
         title: آگهی ها
         create: ایجاد أگهی
-        edit: ویرایش  أگهی
-        delete: حذف  أگهی
         filters:
           all: همه
           with_active: فعال
@@ -65,7 +63,6 @@ fa:
         table_name: نام
         table_phase: فاز
         edit_groups: ویرایش سرفصلهای گروه
-        edit_budget: ویرایش بودجه
         no_budgets: "هیچ بودجه ای وجود ندارد."
       create:
         notice: بودجه مشارکتی جدید با موفقیت ایجاد شده!
@@ -77,7 +74,6 @@ fa:
         phase: فاز
         enabled: فعال
         actions: اقدامات
-        edit_phase: ویرایش فاز
         active: فعال
         blank_dates: تاریخ خالی است.
       destroy:
@@ -98,6 +94,7 @@ fa:
         submit: "ذخیره سرفصل"
     budget_phases:
       edit:
+        title: "ویرایش فاز"
         description_help_text: هنگامی که فاز فعال است، این متن در هدر ظاهر می شود
         enabled_help_text: این مرحله در زمانبندی فازهای بودجه عمومی و همچنین برای هر هدف دیگر فعال خواهد بود
         save_changes: ذخیره تغییرات
@@ -194,7 +191,6 @@ fa:
         table_publication_date: "تاریخ انتشار"
         table_status: وضعیت ها
         table_actions: "اقدامات"
-        delete: "حذف نقطه عطف"
         no_milestones: "نقاط قوت را مشخص نکرده اید"
         image: "تصویر"
         show_image: "نمایش تصویر"
@@ -749,7 +745,6 @@ fa:
         location: "محل"
       booth:
         shifts: "مدیریت تغییرات"
-        edit: "ویرایش غرفه"
     officials:
       edit:
         destroy: حذف وضعیت 'رسمی'
@@ -770,7 +765,6 @@ fa:
       level_4: سطح 4
       level_5: سطح 5
       search:
-        edit_official: ویرایش رسمی
         make_official: رسمی
         title: "موقعیت های رسمی: جستجوی کاربر"
         no_results: موقعیت های رسمی یافت نشد
@@ -946,7 +940,6 @@ fa:
           origin_total: کل شرکت کنندگان
     tags:
       create: ایجاد موضوع
-      destroy: از بین بردن موضوع
       index:
         add_tag: اضافه کردن یک  پیشنهاد جدید
         title: موضوعات پیشنهادی
