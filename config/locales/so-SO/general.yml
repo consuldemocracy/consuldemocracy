@@ -50,7 +50,6 @@ so:
       newest: Cuseybka ugu horeyey
       oldest: Ugu deda wayn ugu horynti
       most_commented: Inta badan faallooyin ah
-    select_order: Kala saar
     show:
       return_to_commentable: "Ku noqo "
   comments_helper:
@@ -100,7 +99,6 @@ so:
         button: Raadin
         placeholder: Doodaha raadinta...
         title: Raadin
-      select_order: Dalbaday
       start_debate: Biloow dooda
       title: Doodo
       section_header:
@@ -314,7 +312,6 @@ so:
         button: Raadin
         placeholder: Soo jeedinta raadinta...
         title: Raadin
-      select_order: Dalbaday
       select_order_long: "Waxaad daawaneysaa soo jeedinada sida:"
       start_proposal: Abuur soo jeedin
       title: Sojeedino
