@@ -21,8 +21,6 @@ tr:
       index:
         title: Bannerlar
         create: Banner oluştur
-        edit: Banner düzenleme
-        delete: Banner silme
         filters:
           all: Tüm
           with_active: Aktif
@@ -90,7 +88,6 @@ tr:
         type_pending: "Beklemede: Henüz başlık yok"
         type_single: "Tekli başlık"
         edit_groups: Başlıklar gruplarını düzenle
-        edit_budget: Bütçe düzenleme
         admin_ballots: Yönetici oyları
         no_budgets: "Hiç bütçe yok."
       create:
@@ -109,7 +106,6 @@ tr:
         duration: "Süreç"
         enabled: Etkinleştirildi
         actions: Aksiyon
-        edit_phase: Aşama düzenleme
         active: Aktif
         blank_dates: Tarihler boş
         administrators:
@@ -335,7 +331,6 @@ tr:
         table_publication_date: "Yayın tarihi"
         table_status: Durum
         table_actions: "Aksiyon"
-        delete: "Kilometre taşı sil"
         no_milestones: "Tanımlanmış kilometre taşları yok"
         image: "Fotoğraf"
         show_image: "Resmi göster"
@@ -1187,7 +1182,6 @@ tr:
         location: "Konum"
       booth:
         shifts: "Vardiyaları yönet"
-        edit: "Kabin düzenle"
     officials:
       edit:
         destroy: '''Yetkili'' durumunu kaldır'
@@ -1209,7 +1203,6 @@ tr:
       level_4: Seviye 4
       level_5: Seviye 5
       search:
-        edit_official: Yetkiliyi düzenle
         make_official: Yetkili yap
         title: "Resmi pozisyonlar: Kullanıcı ara"
         no_results: Resmi pozisyonlar bulunamadı.
@@ -1492,7 +1485,6 @@ tr:
         title: "Sürdürülebilir Kalkınma Hedefleri - İstatistikler"
     tags:
       create: Konu oluştur
-      destroy: Konuyu yok etmek
       index:
         add_tag: Yeni bir öneri konusu ekle
         title: Öneri konuları
