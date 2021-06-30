@@ -43,7 +43,6 @@ sl:
       newest: Novejši naprej
       oldest: Starejši naprej
       most_commented: Največ komentarjev
-    select_order: Uredi po
     show:
       return_to_commentable: "Pojdi nazaj na "
   comments_helper:
@@ -85,7 +84,6 @@ sl:
         button: Išči
         placeholder: Išči razprave...
         title: Išči
-      select_order: Uredi po
       start_debate: Začni razpravo
       title: Razprave
       section_header:
@@ -269,7 +267,6 @@ sl:
         button: Išči
         placeholder: Išči predloge...
         title: Išči
-      select_order: Razvrsti po
       select_order_long: "Predloge si ogleduješ glede na:"
       start_proposal: Ustvari predlog
       title: Predlogi
