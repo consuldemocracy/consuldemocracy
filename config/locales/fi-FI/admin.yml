@@ -15,8 +15,6 @@ fi:
       index:
         title: Bannerit
         create: Luo banneri
-        edit: Muokkaa banneria
-        delete: Poista banneri
         filters:
           all: Kaikki
           with_active: Aktiivinen
@@ -57,13 +55,11 @@ fi:
           finished: Päättynyt
         table_name: Nimi
         table_phase: Vaihe
-        edit_budget: Muokkaa budjettia
       edit:
         delete: Poista budjetti
         phase: Vaihe
         enabled: Käytössä
         actions: Toiminnot
-        edit_phase: Muokkaa vaihetta
         active: Aktiivinen
       destroy:
         success_notice: Budjetti poistettu onnistuneesti
@@ -86,6 +82,7 @@ fi:
         back: "Takaisin ryhmiin"
     budget_phases:
       edit:
+        title: "Muokkaa vaihetta"
         save_changes: Tallenna muutokset
     budget_investments:
       index:
@@ -140,7 +137,6 @@ fi:
         table_publication_date: "Julkaisupäivä"
         table_status: Tila
         table_actions: "Toiminnot"
-        delete: "Poista tavoite"
         no_milestones: "Ei määriteltyjä tavoitteita"
         image: "Kuva"
         show_image: "Näytä kuva"
@@ -501,7 +497,6 @@ fi:
           question_name: Kysymys
     tags:
       create: Luo aihe
-      destroy: Tuhoa aihe
       index:
         topic: Aihe
     users:
