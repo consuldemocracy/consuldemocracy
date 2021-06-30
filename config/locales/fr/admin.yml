@@ -18,8 +18,6 @@ fr:
       index:
         title: Bannières
         create: Créer la bannière
-        edit: Modifier la bannière
-        delete: Supprimer la bannière
         filters:
           all: Toutes
           with_active: Actif
@@ -71,7 +69,6 @@ fr:
         table_name: Nom
         table_phase: Phase
         edit_groups: Modifier les groupes de rubriques
-        edit_budget: Modifier le budget
         admin_ballots: Bulletins de l’admin
         no_budgets: "Il n'y a pas de budgets."
       create:
@@ -84,7 +81,6 @@ fr:
         phase: Phase
         enabled: Activé
         actions: Actions
-        edit_phase: Modifier la phase
         active: Actif
         blank_dates: Les dates sont vides
       destroy:
@@ -138,6 +134,7 @@ fr:
         back: "Retourner aux groupes"
     budget_phases:
       edit:
+        title: "Modifier la phase"
         description_help_text: Ce texte s’affiche dans l’en-tête lors de la phase est active
         enabled_help_text: Cette phase sera publique dans la chronologie des phases du budget, mais aussi active pour tout autre usage
         save_changes: Sauvegarder des changements
@@ -237,7 +234,6 @@ fr:
         table_title: "Titre"
         table_publication_date: "Date de publication"
         table_status: Statut
-        delete: "Supprimer le jalon"
         no_milestones: "Aucun jalon défini"
         image: "Image"
         show_image: "Afficher l'image"
@@ -987,7 +983,6 @@ fr:
         location: "Lieu"
       booth:
         shifts: "Assigner les périodes de travail"
-        edit: "Modifier le bureau de vote"
     officials:
       edit:
         destroy: Supprimer le statut de fonctionnaire
@@ -1008,7 +1003,6 @@ fr:
       level_4: Niveau 4
       level_5: Niveau 5
       search:
-        edit_official: Modifier le fonctionnaire
         make_official: Convertir en fonctionnaire
         title: "Positions de fonctionnaire: recherche utilisateur"
         no_results: Positions officielles introuvables.
@@ -1212,7 +1206,6 @@ fr:
           origin_total: Nombre total de participants
     tags:
       create: Créer un sujet
-      destroy: Supprimer le sujet
       index:
         add_tag: Ajouter un nouveau sujet de proposition
         title: Sujets de propositions
