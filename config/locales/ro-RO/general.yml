@@ -65,7 +65,6 @@ ro:
       newest: Cel mai nou
       oldest: Cel mai vechi
       most_commented: Cel mai comentat
-    select_order: Sortează după
     show:
       return_to_commentable: "Mergi înapoi la "
   comments_helper:
@@ -121,7 +120,6 @@ ro:
         one: " conține termenul <strong>'%{search_term}'</strong>"
         few: " conține termenul <strong>'%{search_term}'</strong>"
         other: " conține termenul <strong>'%{search_term}'</strong>"
-      select_order: Ordonează după
       start_debate: Începe o dezbatere
       title: Dezbateri
       section_header:
@@ -393,7 +391,6 @@ ro:
         one: " conține termenul <strong>'%{search_term}'</strong>"
         few: " conține termenii <strong>'%{search_term}'</strong>"
         other: " conține termenii <strong>'%{search_term}'</strong>"
-      select_order: Ordonează după
       select_order_long: "Vizionați propuneri conform:"
       start_proposal: Crează propunere
       title: Propuneri
