@@ -16,8 +16,6 @@ es-PE:
     banners:
       index:
         create: Crear banner
-        edit: Editar el banner
-        delete: Eliminar banner
         filters:
           all: Todas
           with_active: Activos
@@ -61,7 +59,6 @@ es-PE:
         table_name: Nombre
         table_phase: Fase
         edit_groups: Editar grupos de partidas
-        edit_budget: Editar presupuesto
       create:
         notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
       update:
@@ -168,7 +165,6 @@ es-PE:
         table_publication_date: "Fecha de publicación"
         table_status: Estado
         table_actions: "Acciones"
-        delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
         image: "Imagen"
         show_image: "Mostrar imagen"
@@ -670,7 +666,6 @@ es-PE:
         location: "Ubicación"
       booth:
         shifts: "Asignar turnos"
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
@@ -691,7 +686,6 @@ es-PE:
       level_4: Nivel 4
       level_5: Nivel 5
       search:
-        edit_official: Editar cargo público
         make_official: Convertir en cargo público
         title: "Cargos Públicos: Búsqueda de usuarios"
         no_results: No se han encontrado cargos públicos.
@@ -862,7 +856,6 @@ es-PE:
           origin_total: Participantes Totales
     tags:
       create: Crea un tema
-      destroy: Eliminar tema
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
