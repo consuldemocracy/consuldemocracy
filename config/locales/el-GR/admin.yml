@@ -20,8 +20,6 @@ el:
       index:
         title: Πανό
         create: Δημιουργία πανό
-        edit: Επεξεργασία πανό
-        delete: Διαγραφή πανό
         filters:
           all: Όλα
           with_active: Ενεργό
@@ -80,7 +78,6 @@ el:
         table_phase: Φάση
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Επεξεργασία επικεφαλίδων ομάδων
-        edit_budget: Επεξεργασία προϋπολογισμού
         admin_ballots: Ψηφοδέλτια διαχειριστών
         no_budgets: "Δεν υπάρχουν προϋπολογισμοί."
       create:
@@ -99,7 +96,6 @@ el:
         duration: "Διάρκεια"
         enabled: Ενεργοποιημένη
         actions: Ενέργειες
-        edit_phase: Επεξεργασία φάσης
         active: Ενεργό
         blank_dates: Οι ημερομηνίες είναι κενές
         administrators:
@@ -171,6 +167,7 @@ el:
         back: "Επιστροφή στις ομάδες"
     budget_phases:
       edit:
+        title: "Επεξεργασία φάσης"
         description_help_text: Αυτό το κείμενο θα εμφανίζεται στην επικεφαλίδα όταν η φάση είναι ενεργή
         duration: "Διάρκεια φάσης"
         enabled_help_text: Αυτή η φάση θα δημοσιευθεί στο χρονοδιάγραμμα των φάσεων του προϋπολογισμού, και θα είναι ενεργή για οποιονδήποτε άλλο σκοπό
@@ -272,7 +269,6 @@ el:
         table_publication_date: "Ημερομηνία δημοσίευσης"
         table_status: Κατάσταση
         table_actions: "Ενέργειες"
-        delete: "Διαγραφή ορόσημου"
         no_milestones: "Δεν υπάρχουν καθορισμένα ορόσημα"
         image: "Εικόνα"
         show_image: "Προβολή εικόνας"
@@ -1066,7 +1062,6 @@ el:
         location: "Τοποθεσία"
       booth:
         shifts: "Διαχείριση μετατοπίσεων"
-        edit: "Επεξεργαστείτε το περίπτερο"
     officials:
       edit:
         destroy: Αφαιρέστε την «Επίσημη» κατάσταση
@@ -1088,7 +1083,6 @@ el:
       level_4: Επίπεδο 4
       level_5: Επίπεδο 5
       search:
-        edit_official: Επεξεργασία επισήμου
         make_official: Φτιάξε επίσημο
         title: "Επίσημες θέσεις: Αναζήτηση χρήστη"
         no_results: Δεν βρέθηκαν επίσημες θέσεις.
@@ -1303,7 +1297,6 @@ el:
           origin_total: Σύνολο συμμετεχόντων
     tags:
       create: Δημιουργία θέματος
-      destroy: Διαγραφή θέματος
       index:
         add_tag: Προσθέστε ένα νέο θέμα πρότασης
         title: Θέματα προτάσεων
