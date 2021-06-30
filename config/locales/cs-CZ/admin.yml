@@ -18,8 +18,6 @@ cs:
       index:
         title: Bannery
         create: Vytvořit banner
-        edit: Upravit banner
-        delete: Odstranit banner
         filters:
           all: Vše
           with_active: Aktivní
@@ -71,7 +69,6 @@ cs:
         table_name: Název
         table_phase: Fáze
         edit_groups: Upravit záhlaví skupiny
-        edit_budget: Upravit rozpočet
         no_budgets: "Neexistují žádné rozpočty."
       create:
         notice: Nový participativní rozpočet byl úspěšně vytvořen!
@@ -83,7 +80,6 @@ cs:
         phase: Fáze
         enabled: Povolit
         actions: Akce
-        edit_phase: Upravit fázi
         active: Aktivní
         blank_dates: Data jsou prázdné
       destroy:
@@ -131,6 +127,7 @@ cs:
         back: "Jít zpět do skupin"
     budget_phases:
       edit:
+        title: "Upravit fázi"
         description_help_text: Tento text bude zobrazen v záhlaví, když je fáze aktivní
         enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
         save_changes: Uložit změny
@@ -226,7 +223,6 @@ cs:
         table_title: "Předmět"
         table_publication_date: "Datum publikace"
         table_actions: "Akce"
-        delete: "Odstranit milník"
         no_milestones: "Milníky nejsou definovány"
         image: "Obrázek"
         show_image: "Zobrazit obrázek"
@@ -953,7 +949,6 @@ cs:
         location: "Umístění"
       booth:
         shifts: "Správa směn"
-        edit: "Upravit informační stánek"
     officials:
       edit:
         destroy: Odebrat status 'Úředníka'
@@ -974,7 +969,6 @@ cs:
       level_4: Úroveň 4
       level_5: Úroveň 5
       search:
-        edit_official: Upravit úředníka
         make_official: Učinit úředníkem
         title: "Úřednické pozice: Vyhledávání uživatelů"
         no_results: Nebyly nalezeny žádné úřednické pozice.
@@ -1168,7 +1162,6 @@ cs:
           origin_total: Celkový počet respondentů
     tags:
       create: Vytvořit téma
-      destroy: Smazat téma
       index:
         add_tag: Přidat nové téma návrhu
         title: Témata návrhů
