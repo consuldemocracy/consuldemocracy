@@ -21,8 +21,6 @@ ro:
       index:
         title: Bannere
         create: Crează banner
-        edit: Editează banner
-        delete: Șterge banner
         filters:
           all: Toate
           with_active: Activ
@@ -87,7 +85,6 @@ ro:
         table_phase: Etapă
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Editați grupurile de rubrici
-        edit_budget: Editează buget
         admin_ballots: Gestionați buletinele de vot
         no_budgets: "Nu există bugete."
       create:
@@ -106,7 +103,6 @@ ro:
         duration: "Durata"
         enabled: Activat
         actions: Acțiuni
-        edit_phase: Editează etapă
         enable_phase: "Activați etapa %{phase}"
         active: Activ
         blank_dates: Datele nu sunt completate
@@ -307,7 +303,6 @@ ro:
         table_publication_date: "Data publicării"
         table_status: Status
         table_actions: "Acțiuni"
-        delete: "Șterge reper"
         no_milestones: "Nu aveți repere definite"
         image: "Imagine"
         show_image: "Arată imagine"
@@ -1160,7 +1155,6 @@ ro:
         location: "Locație"
       booth:
         shifts: "Administrează ture"
-        edit: "Editează cabină de vot"
     officials:
       edit:
         destroy: Eliminați statutul „oficial”
@@ -1182,7 +1176,6 @@ ro:
       level_4: Nivel 5
       level_5: Nivel 5
       search:
-        edit_official: Editează funcționar public
         make_official: Crează funcționar public
         title: "Poziții oficiale: Căutare utilizator"
         no_results: Pozițiile oficiale nu au fost găsite.
@@ -1467,7 +1460,6 @@ ro:
         title: "Obiective de dezvoltare durabilă - Statistici"
     tags:
       create: Crează subiect
-      destroy: Șterge subiect
       index:
         add_tag: Adaugă o nouă propunere de subiect
         title: Subiecte de propunere
