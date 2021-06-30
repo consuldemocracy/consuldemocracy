@@ -18,8 +18,6 @@ zh-CN:
       index:
         title: 横幅
         create: 创建横幅
-        edit: 编辑横幅
-        delete: 删除横幅
         filters:
           all: 所有
           with_active: 活跃
@@ -71,7 +69,6 @@ zh-CN:
         table_name: 名字
         table_phase: 阶段
         edit_groups: 编辑标题组
-        edit_budget: 编辑预算
         no_budgets: "没有预算。"
       create:
         notice: 新的参与性预算创建成功！
@@ -83,7 +80,6 @@ zh-CN:
         phase: 阶段
         enabled: 已启用
         actions: 行动
-        edit_phase: 编辑阶段
         active: 活跃
         blank_dates: 日期为空
       destroy:
@@ -104,6 +100,7 @@ zh-CN:
         submit: "保存标题"
     budget_phases:
       edit:
+        title: "编辑阶段"
         description_help_text: 当阶段处于活跃状态时，此文本将显示在页眉中
         enabled_help_text: 这一阶段将在预算的阶段时间内公开，并为其他目的保持活跃
         save_changes: 保存更改
@@ -201,7 +198,6 @@ zh-CN:
         table_publication_date: "出版日期"
         table_status: 状态
         table_actions: "行动"
-        delete: "删除里程碑"
         no_milestones: "没有已定义的里程碑"
         image: "图像"
         show_image: "显示图像"
@@ -840,7 +836,6 @@ zh-CN:
         location: "位置"
       booth:
         shifts: "管理轮班"
-        edit: "编辑投票亭"
     officials:
       edit:
         destroy: 删除‘官方’状态
@@ -861,7 +856,6 @@ zh-CN:
       level_4: 级别4
       level_5: 级别5
       search:
-        edit_official: 编辑官员
         make_official: 成为官员
         title: "官方职位：用户搜索"
         no_results: 未找到官方职位。
@@ -1040,7 +1034,6 @@ zh-CN:
           origin_total: 总参与人数
     tags:
       create: 创建主题
-      destroy: 销毁主题
       index:
         add_tag: 添加新的提议主题
         title: 提议主题
