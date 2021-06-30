@@ -25,6 +25,8 @@ it:
     close: Chiudere
     menu: Menu
   comments:
+    actions:
+      delete: "Elimina commento"
     comments_closed: I commenti sono chiusi
     verified_only: Per partecipare %{verify_account}
     comment:
@@ -36,6 +38,14 @@ it:
         zero: Nessuna risposta
         one: 1 risposta
         other: "%{count} risposte"
+      responses_show:
+        zero: Nessuna risposta
+        one: "1 risposta (mostra)"
+        other: "%{count} risposte (mostra)"
+      responses_collapse:
+        zero: Nessuna risposta
+        one: "1 risposta (comprimi)"
+        other: "%{count} risposte (comprimi)"
       user_deleted: Utente cancellato
       votes:
         zero: Nessun voto
@@ -99,6 +109,9 @@ it:
         button: Ricercare
         placeholder: Ricerca dibattiti...
         title: Ricercare
+      search_results:
+        one: " contenente il termine <strong>'%{search_term}'</strong>"
+        other: " contenente il termine <strong>'%{search_term}'</strong>"
       start_debate: Avvia un dibattito
       title: Dibattiti
       section_header:
@@ -148,11 +161,18 @@ it:
     direct_message: messaggio privato
     error: errore
     errors: errori
+    not_saved: "impedito il salvataggio di questa %{resource}. <br>Sei pregato di controllare i campi contrassegnati per sapere come correggerli:"
     policy: Informativa sulla privacy
+    banner: banner
     proposal: Proposta
     proposal_notification: "Notifica"
     budget/investment: Investimento
+    budget/group: Gruppo del Budget
     budget/heading: Voce di bilancio
+    geozone: geozona
+    legislation/draft_version: bozza
+    legislation/process: processo
+    legislation/question: questione
     poll/shift: Turno
     poll/question/answer: Risposta
     user: Account
@@ -161,6 +181,7 @@ it:
     document: Documento
     topic: Argomento
     image: Immagine
+    local_census_record: Registro del Censo Locale
   geozones:
     none: Tutta la città
   layouts:
