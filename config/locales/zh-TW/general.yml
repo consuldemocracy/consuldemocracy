@@ -48,7 +48,6 @@ zh-TW:
       newest: 最新排先
       oldest: 最舊排先
       most_commented: 最多評論
-    select_order: 排序依據
     show:
       return_to_commentable: "返回到 "
   comments_helper:
@@ -96,7 +95,6 @@ zh-TW:
         button: 搜尋
         placeholder: 搜尋辯論...
         title: 搜尋
-      select_order: 排序依據
       start_debate: 開始一個辯論
       title: 辯論
       section_header:
@@ -303,7 +301,6 @@ zh-TW:
         button: 搜尋
         placeholder: 搜尋建議...
         title: 搜尋
-      select_order: 排序依據
       select_order_long: "您正在查看的建議是依據："
       start_proposal: 創建一個建議
       title: 建議
