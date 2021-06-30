@@ -20,8 +20,6 @@ he:
       index:
         title: באנרים
         create: צור באנר
-        edit: ערוך באנר
-        delete: מחק באנר
         filters:
           all: כולם
           with_active: פעיל
@@ -73,7 +71,6 @@ he:
         table_name: שם
         table_phase: שלב
         edit_groups: עריכת קבוצות כותרות
-        edit_budget: ערוך תקציב
         admin_ballots: הצבעת מנהל מערכת
         no_budgets: "לא נמצאו תקציבים."
       create:
@@ -86,7 +83,6 @@ he:
         phase: שלב
         enabled: מופעל
         actions: פעולות
-        edit_phase: ערוך שלב
         active: פעיל
         blank_dates: התאריכים ריקים
         administrators:
@@ -159,6 +155,7 @@ he:
         back: "חזור אל הקבוצות"
     budget_phases:
       edit:
+        title: "ערוך שלב"
         description_help_text: טקסט זה יופיע בכותרת כאשר השלב פעיל
         enabled_help_text: שלב זה יהיה ציבורי בציר הזמן של שלבי התקציב, וכן פעיל לכל מטרה אחרת
         save_changes: שמירת שינויים
@@ -261,7 +258,6 @@ he:
         table_publication_date: "תאריך פרסום"
         table_status: מצב
         table_actions: "פעולות"
-        delete: "מחיקת אבני דרך"
         no_milestones: "לא הגדרו אבני דרך"
         image: "תמונה"
         show_image: "הצג תמונה"
@@ -1103,7 +1099,6 @@ he:
         location: "מקום"
       booth:
         shifts: "ניהול משמרות"
-        edit: "ערוך דוכן"
     officials:
       edit:
         destroy: הסר סטאטוס של נושא המשרה
@@ -1125,7 +1120,6 @@ he:
       level_4: רמה 4
       level_5: רמה 5
       search:
-        edit_official: עריכת נושא המשרה
         make_official: הפוך לנושא משרה רשמי
         title: "רמת נושא המשרה: חיפוש משתמש"
         no_results: רמת נושא המשרה לא נמצאה.
@@ -1359,7 +1353,6 @@ he:
           origin_total: סה"כ משתתפים
     tags:
       create: יצירת נושא
-      destroy: מחיקת הנושא
       index:
         add_tag: הצעה לנושא לדיון חדש
         title: נושאים לדיון
