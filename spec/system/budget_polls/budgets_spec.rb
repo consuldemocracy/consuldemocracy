@@ -8,7 +8,7 @@ describe "Admin Budgets", :admin do
 
       visit admin_budgets_path
 
-      click_link "Admin ballots"
+      click_link "Ballots"
 
       expect(page).to have_current_path(/admin\/polls\/\d+/)
       expect(page).to have_content(budget.name)
@@ -37,7 +37,7 @@ describe "Admin Budgets", :admin do
       visit admin_budgets_path
 
       within "#budget_#{budget.id}" do
-        expect(page).to have_link "Admin ballots", href: admin_poll_booth_assignments_path(poll)
+        expect(page).to have_link "Ballots", href: admin_poll_booth_assignments_path(poll)
       end
     end
   end

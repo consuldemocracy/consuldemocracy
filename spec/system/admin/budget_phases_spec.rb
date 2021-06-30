@@ -29,7 +29,7 @@ describe "Admin budget phases" do
         expect(page).to have_content "Accepting projects"
         expect(page).not_to have_content "My phase custom name"
 
-        within("tr", text: "Accepting projects") { click_link "Edit phase" }
+        within("tr", text: "Accepting projects") { click_link "Edit" }
       end
 
       expect(page).to have_css "h2", exact_text: "Edit phase - Accepting projects"

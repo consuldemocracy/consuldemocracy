@@ -37,21 +37,21 @@ describe "Admin budget groups", :admin do
         expect(page).to have_content(group1.name)
         expect(page).to have_content(group1.max_votable_headings)
         expect(page).to have_content(group1.headings.count)
-        expect(page).to have_link "Manage headings"
+        expect(page).to have_link "Headings"
       end
 
       within "#budget_group_#{group2.id}" do
         expect(page).to have_content(group2.name)
         expect(page).to have_content(group2.max_votable_headings)
         expect(page).to have_content(group2.headings.count)
-        expect(page).to have_link "Manage headings"
+        expect(page).to have_link "Headings"
       end
 
       within "#budget_group_#{group3.id}" do
         expect(page).to have_content(group3.name)
         expect(page).to have_content(group3.max_votable_headings)
         expect(page).to have_content(group3.headings.count)
-        expect(page).to have_link "Manage headings"
+        expect(page).to have_link "Headings"
       end
     end
 

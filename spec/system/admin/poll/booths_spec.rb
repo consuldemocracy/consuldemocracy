@@ -47,7 +47,7 @@ describe "Admin booths", :admin do
 
     expect(page).to have_content booth_for_current_poll.name
     expect(page).not_to have_content booth_for_expired_poll.name
-    expect(page).not_to have_link "Edit booth"
+    expect(page).not_to have_link "Edit"
   end
 
   scenario "Show" do
@@ -82,7 +82,7 @@ describe "Admin booths", :admin do
 
     within("#booth_#{booth.id}") do
       expect(page).not_to have_link "Manage shifts"
-      click_link "Edit booth"
+      click_link "Edit"
     end
 
     fill_in "poll_booth_name", with: "Next booth"

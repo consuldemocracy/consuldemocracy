@@ -27,13 +27,13 @@ describe "Budgets creation wizard", :admin do
     expect(page).to have_content "Phases configured successfully"
 
     within "tr", text: "Single heading budget" do
-      click_link "Edit headings groups"
+      click_link "Heading groups"
     end
 
     expect(page).to have_content "There is 1 group"
 
     within "tr", text: "Single heading budget" do
-      click_link "Manage headings"
+      click_link "Headings"
     end
 
     expect(page).to have_content "There is 1 heading"
@@ -107,7 +107,7 @@ describe "Budgets creation wizard", :admin do
 
     expect(page).to have_css ".budget-phases-table"
 
-    within("tr", text: "Voting projects") { click_link "Edit phase" }
+    within("tr", text: "Voting projects") { click_link "Edit" }
     fill_in "Name", with: "Custom phase name"
     uncheck "Phase enabled"
     click_button "Save changes"
@@ -124,7 +124,7 @@ describe "Budgets creation wizard", :admin do
     expect(page).to have_content "Phases configured successfully"
 
     within "tr", text: "Multiple headings budget" do
-      click_link "Edit headings groups"
+      click_link "Heading groups"
     end
 
     expect(page).to have_content "There are 2 groups"
@@ -135,7 +135,7 @@ describe "Budgets creation wizard", :admin do
     end
 
     within "tr", text: "Districts" do
-      click_link "Manage headings"
+      click_link "Headings"
     end
 
     expect(page).to have_content "There are 2 headings"
