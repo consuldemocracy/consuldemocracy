@@ -20,8 +20,6 @@ bg:
       index:
         title: Банери
         create: Създаване на банер
-        edit: Редактиране на банер
-        delete: Изтриване на банер
         filters:
           all: Всички
           with_active: Активен
@@ -80,7 +78,6 @@ bg:
         table_phase: Фаза
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Редактиране на групи заглавия
-        edit_budget: Редактиране на бюджета
         admin_ballots: Административни бюлетини
         no_budgets: "Няма бюджети."
       create:
@@ -99,7 +96,6 @@ bg:
         duration: "Продължителност"
         enabled: Активиран
         actions: Действия
-        edit_phase: Редактиране на фаза
         active: Активен
         blank_dates: Датите са празни
         administrators:
@@ -171,6 +167,7 @@ bg:
         back: "Върнете се към групите"
     budget_phases:
       edit:
+        title: "Редактиране на фаза"
         description_help_text: Този текст ще се появи в заглавката, когато фазата е активна
         duration: "Продължителност на фазата"
         duration_description: "Периодът от време, в който тази фаза ще бъде активна."
@@ -280,7 +277,6 @@ bg:
         table_publication_date: "Дата на публикуване"
         table_status: Състояние
         table_actions: "Действия"
-        delete: "Изтриване на основни етапи"
         no_milestones: "Не са дефинирани етапи"
         image: "Изображение"
         show_image: "Покажи изображение"
@@ -1132,7 +1128,6 @@ bg:
         location: "Местоположение"
       booth:
         shifts: "Управление на смените"
-        edit: "Редактиране на кабинка"
     officials:
       edit:
         destroy: Премахнете състоянието „Длъжностно лице“
@@ -1154,7 +1149,6 @@ bg:
       level_4: Ниво 4
       level_5: Ниво 5
       search:
-        edit_official: Редактиране на служебно лице
         make_official: Make official/ Направете официално
         title: "Официални позиции: Търсене на потребители"
         no_results: Официални позиции не са намерени.
@@ -1435,7 +1429,6 @@ bg:
         title: "Цели за устойчиво развитие (ЦУР) - статистика"
     tags:
       create: Създайте тема
-      destroy: Изтрийте тема
       index:
         add_tag: Добавете нова тема за предложения
         title: Теми за предложения
