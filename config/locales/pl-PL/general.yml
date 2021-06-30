@@ -54,7 +54,6 @@ pl:
       newest: Najpierw najnowsze
       oldest: Najpierw najstarsze
       most_commented: Najczęściej komentowane
-    select_order: Sortuj według
     show:
       return_to_commentable: "Wróć do "
   comments_helper:
@@ -108,7 +107,6 @@ pl:
         button: Szukaj
         placeholder: Szukaj debat...
         title: Szukaj
-      select_order: Uporządkuj według
       start_debate: Rozpocznij debatę
       title: Debaty
       section_header:
@@ -333,7 +331,6 @@ pl:
         button: Szukaj
         placeholder: Szukaj wniosków...
         title: Szukaj
-      select_order: Uporządkuj według
       select_order_long: "Przeglądasz wnioski według:"
       start_proposal: Zaproponuj swój pomysł
       title: Zrealizowane projekty
