@@ -182,6 +182,10 @@ de:
         read_more: "Weiterlesen"
     show:
       see_results: Ergebnisse anzeigen
+    supports_info:
+      supported:
+        one: "Sie haben bisher <strong>1 Projekt</strong> unterstützt."
+        other: "Sie haben bisher <strong>%{count} Projekte</strong> unterstützt."
     results:
       link: Ergebnisse
       page_title: "%{budget} - Ergebnisse"
