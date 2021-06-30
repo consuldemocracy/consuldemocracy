@@ -58,7 +58,6 @@ el:
       newest: Τα νεότερα πρώτα
       oldest: Τα παλιότερα πρώτα
       most_commented: Με τα περισσότερα σχόλια
-    select_order: Ταξινόμηση κατά
     show:
       return_to_commentable: "Πήγαινε πίσω στο "
   comments_helper:
@@ -108,7 +107,6 @@ el:
         button: Αναζήτηση
         placeholder: Αναζήτηση συζητήσεων...
         title: Αναζήτηση
-      select_order: Ταξινόμηση κατά
       start_debate: Ξεκινήστε μια συζήτηση
       title: Συζητήσεις
       section_header:
@@ -350,7 +348,6 @@ el:
         button: Αναζήτηση
         placeholder: Αναζήτηση προτάσεων...
         title: Αναζήτηση
-      select_order: Ταξινόμηση κατά
       select_order_long: "Βλέπετε τις προτάσεις σύμφωνα με:"
       start_proposal: Δημιουργία πρότασης
       title: Προτάσεις
