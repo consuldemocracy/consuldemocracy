@@ -62,7 +62,6 @@ hr:
       newest: Najnoviji prvo
       oldest: Najstariji prvo
       most_commented: Najviše komentirani
-    select_order: Sortiraj po
     show:
       return_to_commentable: "Vrati se na "
   comments_helper:
@@ -118,7 +117,6 @@ hr:
         one: " sadrži termin <strong>%{search_term}</strong>"
         few: " sadrži termine <strong>%{search_term}</strong>"
         other: " sadrži termine <strong>%{search_term}</strong>"
-      select_order: Naruči po
       start_debate: Započnite raspravu
       title: Rasprave
       section_header:
@@ -388,7 +386,6 @@ hr:
         one: " sadrži termin <strong>%{search_term}</strong>"
         few: " sadrže termin <strong>%{search_term}</strong>"
         other: " sadrže termin <strong>%{search_term}</strong>"
-      select_order: Poredaj po
       select_order_long: "Vršite pregled prijedloga po:"
       start_proposal: Izradi prijedlog
       title: Prijedlozi
