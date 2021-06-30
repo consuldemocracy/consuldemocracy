@@ -58,7 +58,6 @@ ca:
       newest: Més nous primer
       oldest: Més antics primer
       most_commented: La majoria de comentaris
-    select_order: Ordenar per
     show:
       return_to_commentable: "Tornar a "
   comments_helper:
@@ -111,7 +110,6 @@ ca:
       search_results:
         one: " que conté el terme <strong>'%{search_term}'</strong>"
         other: " que conté el terme <strong>'%{search_term}'</strong>"
-      select_order: Ordenar per
       start_debate: Comença un nou debat
       title: Debats
       section_header:
@@ -374,7 +372,6 @@ ca:
       search_results:
         one: " que conté el terme <strong>'%{search_term}'</strong>"
         other: " que conté el terme <strong>'%{search_term}'</strong>"
-      select_order: Ordenar per
       select_order_long: "Estàs veient les propostes"
       start_proposal: Crea una proposta
       title: Propostes ciutadanes
