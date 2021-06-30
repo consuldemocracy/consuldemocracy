@@ -54,6 +54,8 @@ describe RelatedContent do
 
   it "is not valid with child relationable ID of a non-existent record" do
     related_content.child_relationable_id = related_content.child_relationable.class.last.id + 1
+
+    expect(related_content).not_to be_valid
   end
 
   describe "create_opposite_related_content" do
