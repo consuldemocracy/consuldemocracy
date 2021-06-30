@@ -20,8 +20,6 @@ uk-UA:
       index:
         title: Постери
         create: Створити постер
-        edit: Редагувати постер
-        delete: Видалити постер
         filters:
           all: Усі
           with_active: Активні
@@ -73,7 +71,6 @@ uk-UA:
         table_name: Назва
         table_phase: Етап
         edit_groups: Редагувати групи розділів
-        edit_budget: Редагувати бюджет
         admin_ballots: Адмініструвати бюлетені
         no_budgets: "Бюджети відсутні."
       create:
@@ -86,7 +83,6 @@ uk-UA:
         phase: Етап
         enabled: Дозволено
         actions: Дії
-        edit_phase: Редагувати етап
         active: Активні
         blank_dates: Дати порожні
         administrators:
@@ -161,6 +157,7 @@ uk-UA:
         back: "Повернутися до груп"
     budget_phases:
       edit:
+        title: "Редагувати етап"
         description_help_text: Цей текст з'являтиметься у заголовку, якщо етап є активним
         enabled_help_text: Цей етап буде загальнодоступним на часовій шкалі етапів бюджету та активним для будь-яких інших цілей
         save_changes: Зберегти зміни
@@ -267,7 +264,6 @@ uk-UA:
         table_publication_date: "Дата публікування"
         table_status: Статус
         table_actions: "Дії"
-        delete: "Видалити віху"
         no_milestones: "Немає визначених віх"
         image: "Зображення"
         show_image: "Показати зображення"
@@ -1114,7 +1110,6 @@ uk-UA:
         location: "Розташування"
       booth:
         shifts: "Керувати змінами"
-        edit: "Редагувати кабінку"
     officials:
       edit:
         destroy: Прибрати статус "Службовець"
@@ -1136,7 +1131,6 @@ uk-UA:
       level_4: Рівень 4
       level_5: Рівень 5
       search:
-        edit_official: Редагувати службовця
         make_official: Зробити службовцем
         title: "Посади службовців: пошук користувача"
         no_results: Посад службовців не знайдено.
@@ -1400,7 +1394,6 @@ uk-UA:
           origin_total: Загалом учасників
     tags:
       create: Створити тему
-      destroy: Видалити тему
       index:
         add_tag: Додати тему нової пропозиції
         title: Теми пропозицій
