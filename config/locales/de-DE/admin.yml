@@ -21,8 +21,6 @@ de:
       index:
         title: Banner
         create: Banner erstellen
-        edit: Banner bearbeiten
-        delete: Banner löschen
         filters:
           all: Alle
           with_active: Aktiv
@@ -90,7 +88,6 @@ de:
         type_pending: "Offen: Noch keine Rubrik"
         type_single: "Einzelne Rubrik"
         edit_groups: Gruppierungen von Rubriken bearbeiten
-        edit_budget: Bürgerhaushalt bearbeiten
         admin_ballots: Admin Stimmzettel
         no_budgets: "Kein Bürgerhaushalte vorhanden."
       create:
@@ -109,7 +106,6 @@ de:
         duration: "Laufzeit"
         enabled: Aktiviert
         actions: Aktionen
-        edit_phase: Phase bearbeiten
         enable_phase: "Phase %{phase} freischalten"
         active: Aktiv
         blank_dates: Das Datumfeld ist leer
@@ -326,7 +322,6 @@ de:
         table_publication_date: "Datum der Veröffentlichung"
         table_status: Status
         table_actions: "Aktionen"
-        delete: "Meilenstein löschen"
         no_milestones: "Keine Meilensteine definiert"
         image: "Bild"
         show_image: "Bild anzeigen"
@@ -1178,7 +1173,6 @@ de:
         location: "Lage"
       booth:
         shifts: "Arbeitsschichten verwalten"
-        edit: "Wahlkabine bearbeiten"
     officials:
       edit:
         destroy: Status "Beamter/in" entfernen
@@ -1200,7 +1194,6 @@ de:
       level_4: Stufe 4
       level_5: Stufe 5
       search:
-        edit_official: Beamte*n bearbeiten
         make_official: Beamten/in erstellen
         title: "Beamte/innen: Benutzer*innensuche"
         no_results: Keine Beamten/innen gefunden.
@@ -1483,7 +1476,6 @@ de:
         title: "Ziele für nachhaltige Entwicklung - Statistiken"
     tags:
       create: Thema erstellen
-      destroy: Thema löschen
       index:
         add_tag: Neues Vorschlagsthema hinzufügen
         title: Themen der Vorschläge
