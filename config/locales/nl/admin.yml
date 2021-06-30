@@ -20,8 +20,6 @@ nl:
       index:
         title: Banners
         create: Create banner
-        edit: Edit banner
-        delete: Delete banner
         filters:
           all: All
           with_active: Active
@@ -73,7 +71,6 @@ nl:
         table_name: Name
         table_phase: Phase
         edit_groups: Edit headings groups
-        edit_budget: Edit budget
         admin_ballots: Stembiljetten
         no_budgets: "Er zijn geen budgetten."
       create:
@@ -86,7 +83,6 @@ nl:
         phase: Phase
         enabled: Actief
         actions: Activiteiten
-        edit_phase: Bewerk fase
         active: Actieve
         blank_dates: Datums zijn leeg
       destroy:
@@ -140,6 +136,7 @@ nl:
         back: "Terug naar groepen"
     budget_phases:
       edit:
+        title: "Bewerk fase"
         description_help_text: Deze tekst verschijnt in de kop wanneer de fase actief is
         enabled_help_text: Deze fase is openbaar in de tijdlijn van de budgetfasen, maar ook actief voor andere doeleinden
         save_changes: Bewaar wijzigingen
@@ -237,7 +234,6 @@ nl:
         table_description: "Beschrijving"
         table_publication_date: "Publicatiedatum"
         table_actions: "Activiteiten"
-        delete: "Verwijder mijlpaal"
         no_milestones: "Zonder gedefinieerde mijlpalen"
         image: "Afbeelding"
         show_image: "Toon afbeelding"
@@ -944,7 +940,6 @@ nl:
         location: "Location"
       booth:
         shifts: "Beheer diensten"
-        edit: "Bewerk stemhokje"
     officials:
       edit:
         destroy: Remove 'Official' status
@@ -966,7 +961,6 @@ nl:
       level_4: Level 4
       level_5: Level 5
       search:
-        edit_official: Edit official
         make_official: Make official
         title: "Official positions: User search"
         no_results: Geen officials gevonden.
@@ -1155,7 +1149,6 @@ nl:
           origin_total: Aantal deelnemers
     tags:
       create: Creeer onderwerp
-      destroy: Verwijder onderwerp
       index:
         add_tag: Add a new proposal topic
         title: Proposal topics
