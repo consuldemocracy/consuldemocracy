@@ -594,6 +594,10 @@ it:
           attributes:
             locale:
               already_translated: Risorsa già tradotta
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "deve iniziare con lo stesso codice del suo obiettivo seguito da un punto e terminante con un numero"
       messages:
         translations_too_short: È obbligatorio fornire almeno una traduzione
         record_invalid: "Verifica non riuscita: %{errors}"
