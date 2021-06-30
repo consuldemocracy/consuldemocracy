@@ -502,6 +502,7 @@ it:
       back: "Torna alle mie attività"
   shared:
     edit: "Modificare"
+    filter: "Filtro"
     save: "Salvare"
     delete: "Eliminare"
     "yes": "Sì"
