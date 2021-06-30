@@ -668,6 +668,7 @@ sv:
       back: "Gå tillbaka till min aktivitet"
   shared:
     edit: "Redigera"
+    filter: "Filtrera"
     save: "Spara"
     delete: "Ta bort"
     "yes": "Ja"
