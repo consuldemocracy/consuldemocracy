@@ -20,8 +20,6 @@ id:
       index:
         title: Spanduk
         create: Membuat spanduk
-        edit: Mengedit spanduk
-        delete: Menghapus spanduk
         filters:
           all: Semua
           with_active: Aktif
@@ -73,7 +71,6 @@ id:
         table_name: Nama
         table_phase: Fase
         edit_groups: Edit judul grup
-        edit_budget: Edit anggaran
         admin_ballots: Admin surat suara
         no_budgets: "Tidak ada anggaran."
       create:
@@ -86,7 +83,6 @@ id:
         phase: Fase
         enabled: Diaktifkan
         actions: Tindakan
-        edit_phase: Mengedit fase
         active: Aktif
         blank_dates: Tanggal kosong
       destroy:
@@ -133,6 +129,7 @@ id:
         submit: "Menyimpan judul"
     budget_phases:
       edit:
+        title: "Mengedit fase"
         description_help_text: Teks ini akan muncul di header disaat fase aktif
         enabled_help_text: Fase ini akan menjadi publik dalam garis waktu fase anggaran, dan juga akan aktif untuk tujuan yang lain
         save_changes: Simpan perubahan
@@ -224,7 +221,6 @@ id:
         table_description: "Deskripsi"
         table_publication_date: "Tanggal publikasi"
         table_actions: "Tindakan"
-        delete: "Menghapus batu peringatan"
         no_milestones: "Jangan telah ditetapkan tonggak"
         image: "Gambar"
         show_image: "Tampilkan gambar"
@@ -723,7 +719,6 @@ id:
         location: "Lokasi"
       booth:
         shifts: "Mengelola perubahan"
-        edit: "Sunting stan"
     officials:
       edit:
         destroy: Hapus status 'Resmi'
@@ -917,7 +912,6 @@ id:
           origin_total: Total peserta
     tags:
       create: Buat topik
-      destroy: Menghancurkan topik
       index:
         add_tag: Tambahkan sebuah proposal topik baru
         topic: Topik
