@@ -20,8 +20,6 @@ ca:
       index:
         title: Banners
         create: crear banner
-        edit: Edita banner
-        delete: eliminar banner
         filters:
           all: tots
           with_active: Actius
@@ -73,7 +71,6 @@ ca:
         table_name: Nome
         table_phase: fase
         edit_groups: Edita grups de partides
-        edit_budget: Edita pressupost
         admin_ballots: Paperetes d’administració
         no_budgets: "No hi ha pressupostos."
       create:
@@ -86,7 +83,6 @@ ca:
         phase: fase
         enabled: activa
         actions: Accions
-        edit_phase: Fase d'edició
         active: Actius
         blank_dates: Les dates són en blanc
         administrators:
@@ -152,6 +148,7 @@ ca:
         back: "Torneu a grups"
     budget_phases:
       edit:
+        title: "Fase d'edició"
         description_help_text: Aquest text apareixerà a la capçalera quan la fase estigui activa
         enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, a més d’activa per a qualsevol altre propòsit
         save_changes: Guardar canvis
@@ -258,7 +255,6 @@ ca:
         table_publication_date: "Data de publicació"
         table_status: Estat
         table_actions: "Accions"
-        delete: "Elimina la fita"
         no_milestones: "No heu definit fites"
         image: "Imatge"
         show_image: "Mostra la imatge"
@@ -1103,7 +1099,6 @@ ca:
         location: "Ubicació"
       booth:
         shifts: "Gestiona els torns"
-        edit: "Editar bústia"
     officials:
       edit:
         destroy: Eliminar condició de 'Càrrec Público'
@@ -1125,7 +1120,6 @@ ca:
       level_4: nivell 4
       level_5: nivell 5
       search:
-        edit_official: Edita càrrec públic
         make_official: Convertir a càrrec públic
         title: "Càrrecs Públics: Cerca d'usuaris"
         no_results: No s’han trobat posicions oficials.
@@ -1381,7 +1375,6 @@ ca:
           origin_total: Total de participants
     tags:
       create: Crea tema
-      destroy: Suprimeix el tema
       index:
         add_tag: Afegeix un nou tema de debat
         title: Temes de debat
