@@ -14,6 +14,7 @@ it:
       edit: Modificare
       configure: Configurare
       delete: Eliminare
+      confirm_delete: "Sei sicuro? Quest'azione eliminerà %{resource_name} '%{name}' e non è annullabile."
     officing_booth:
       title: "State officiando lo stand posizionato a %{booth}. Se non è corretto, non continuare e chiama il numero telefonico d'aiuto. Grazie."
     banners:
@@ -33,12 +34,17 @@ it:
           proposals: Proposte
           budgets: Bilancio partecipativo
           help_page: Guida
+          sdg: SDG
+      create:
+        notice: "Banner creato correttamente"
       edit:
         editing: Modifica banner
         form:
           submit_button: Salva modifiche
       new:
         creating: Crea banner
+      update:
+        notice: "Banner aggiornato correttamente"
     activity:
       show:
         action: Azione
@@ -60,16 +66,27 @@ it:
         type: Tipo
         no_activity: Non c’è alcuna attività dei moderatori.
     budgets:
+      actions:
+        preview: "Anteprima"
       index:
         title: Bilanci partecipativi
         new_link: Creare un nuovo bilancio
         filter: Filtra
         filters:
+          all: Tutto
           open: Aperti
           finished: Terminati
         budget_investments: Gestisci i progetti
+        table_budget_type: "Tipo"
+        table_completed: Completato
+        table_draft: "Bozza"
+        table_duration: "Durata"
         table_name: Nominativo
         table_phase: Fase
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Intestazioni multiple"
+        type_pending: "In sospeso: Ancora nessuna intestazione"
+        type_single: "Intestazione singola"
         edit_groups: Modificare i gruppi di intestazioni
         admin_ballots: Scrutini amministratore
         no_budgets: "Non ci sono bilanci."
@@ -77,12 +94,19 @@ it:
         notice: Nuovo bilancio partecipativo creato con successo!
       update:
         notice: Bilancio partecipativo aggiornato con successo
+      publish:
+        notice: "Budget partecipativo pubblicato correttamente"
       edit:
         title: Modificare il bilancio partecipativo
+        drafting: "Questo budget partecipativo è in modalità di bozza, solo gli amministratori possono vederlo nel sito pubblico. Una volta pubblicato non è più modificabile nuovamente in modalità bozza."
+        publish: "Pubblica budget"
         delete: Elimina budget
         phase: Fase
+        phases_caption: "Fasi"
+        duration: "Durata"
         enabled: Abilitato
         actions: Azioni
+        enable_phase: "Abilita la fase %{phase}"
         active: Attivo
         blank_dates: Le date risultano vuote
         administrators:
