@@ -669,6 +669,7 @@ en:
       back: "Go back to my content"
   shared:
     edit: "Edit"
+    filter: "Filter"
     save: "Save"
     delete: "Delete"
     "yes": "Yes"
