@@ -58,7 +58,6 @@ ka:
       newest: უახლესი პირველ რიგში
       oldest: უძველესი პირველ რიგში
       most_commented: ყველაზე მეტი კომენტარის მქონე
-    select_order: დალაგება
     show:
       return_to_commentable: "უკან დაბრუნება "
   comments_helper:
@@ -111,7 +110,6 @@ ka:
       search_results:
         one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
         other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
-      select_order: დალაგება
       start_debate: დებატის დაწყება
       title: დებატები
       section_header:
@@ -374,7 +372,6 @@ ka:
       search_results:
         one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
         other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
-      select_order: დალაგება
       select_order_long: "ინიციატივები ნაჩვენებია:"
       start_proposal: ახალი ინიციატივის შექმნა
       title: ინიციატივები
