@@ -58,7 +58,6 @@ bg:
       newest: Най-новите първи
       oldest: Най-старите първи
       most_commented: С най-много коментари
-    select_order: Сортиране по
     show:
       return_to_commentable: "Върнете се на "
   comments_helper:
@@ -111,7 +110,6 @@ bg:
       search_results:
         one: " съдържащи термина <strong>'%{search_term}'</strong>"
         other: " съдържащи термина <strong>'%{search_term}'</strong>"
-      select_order: Подредени по
       start_debate: Започнете дебат
       title: Дискусии
       section_header:
@@ -376,7 +374,6 @@ bg:
       search_results:
         one: " съдържащи термина <strong>'%{search_term}'</strong>"
         other: " съдържащи термина <strong>'%{search_term}'</strong>"
-      select_order: Подредени по
       select_order_long: "Разглеждате предложения според:"
       start_proposal: Създайте предложение
       title: Предложения
