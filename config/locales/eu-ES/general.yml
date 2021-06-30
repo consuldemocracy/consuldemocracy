@@ -50,7 +50,6 @@ eu:
       newest: Berrienak lehenengo
       oldest: Zaharrenak lehenengo
       most_commented: Iruzkinduenak
-    select_order: Honen arabera ordenatu
     show:
       return_to_commentable: "Itzuli iruzkinera: "
   comments_helper:
@@ -100,7 +99,6 @@ eu:
         button: Bilatu
         placeholder: Eztabaidak bilatu...
         title: Bilatu
-      select_order: Honen arabera ordenatu
       start_debate: Eztabaida bat hasi
       title: Eztabaidak
       section_header:
@@ -312,7 +310,6 @@ eu:
         button: Bilatu
         placeholder: Proposamenak bilatu...
         title: Bilatu
-      select_order: Honen arabera ordenatu
       select_order_long: "Proposamenak ikusten zabiltza"
       start_proposal: Proposamen bat sortu
       title: Proposamenak
