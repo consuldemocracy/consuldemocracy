@@ -62,7 +62,6 @@ nn:
       newest: Nyeste først
       oldest: Eldste først
       most_commented: Mest kommentert
-    select_order: Sorter etter
     show:
       return_to_commentable: "Gå tilbake til "
   comments_helper:
@@ -114,7 +113,6 @@ nn:
         button: Søk
         placeholder: Søk debatter...
         title: Søk
-      select_order: Sortere etter
       start_debate: Start en debatt
       title: Debatter
       section_header:
@@ -362,7 +360,6 @@ nn:
         button: Søk
         placeholder: Søk forslag...
         title: Søk
-      select_order: Sorter etter
       select_order_long: "Du viser forslag i henhold til:"
       start_proposal: Opprett et forslag
       title: Forslag
