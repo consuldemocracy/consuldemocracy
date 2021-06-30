@@ -61,7 +61,6 @@ sv:
       newest: Senaste först
       oldest: Äldsta först
       most_commented: Mest kommenterade
-    select_order: Sortera efter
     show:
       return_to_commentable: "Gå tillbaka till "
   comments_helper:
@@ -114,7 +113,6 @@ sv:
       search_results:
         one: " som innehåller <strong>'%{search_term}'</strong>"
         other: " som innehåller <strong>'%{search_term}'</strong>"
-      select_order: Sortera efter
       start_debate: Starta en debatt
       title: Debatter
       section_header:
@@ -379,7 +377,6 @@ sv:
       search_results:
         one: " som innehåller <strong>'%{search_term}'</strong>"
         other: " som innehåller <strong>'%{search_term}'</strong>"
-      select_order: Sortera efter
       select_order_long: "Du visar förslag enligt:"
       start_proposal: Skapa ett förslag
       title: Förslag
