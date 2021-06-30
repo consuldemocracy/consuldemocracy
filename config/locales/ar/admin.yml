@@ -20,8 +20,6 @@ ar:
       index:
         title: لافتات
         create: إنشاء لافتة
-        edit: تعديل لافتة
-        delete: حذف لافتة
         filters:
           all: الكل
           with_active: نشِط
@@ -73,7 +71,6 @@ ar:
         table_name: الإ سم
         table_phase: مرحلة
         edit_groups: تعديل مجموعات العناوين
-        edit_budget: تعديل الميزانية
         admin_ballots: بطاقات الاقتراع الادارية
         no_budgets: "لا يوجد ميزانيات."
       create:
@@ -86,7 +83,6 @@ ar:
         phase: مرحلة
         enabled: تفعيل
         actions: الإجراءات
-        edit_phase: تعديل المرحلة
         active: نشِط
         blank_dates: التواريخ فارغة
         administrators:
@@ -167,6 +163,7 @@ ar:
         back: "العودة إلى المجموعات"
     budget_phases:
       edit:
+        title: "تعديل المرحلة"
         description_help_text: سيظهر هذا النص في الرأس عندما تكون المرحلة نشطة
         enabled_help_text: ستكون هذه المرحلة أحد المراحل المتاحة للعامة من بين مراحل الموازنة، إلى جانب كونها نشطة لأي غرض آخر
         save_changes: حفظ التغييرات
@@ -269,7 +266,6 @@ ar:
         table_publication_date: "تاريخ النشر"
         table_status: حالة
         table_actions: "الإجراءات"
-        delete: "حذف معلم"
         no_milestones: "لا يوجد معالم محددة"
         image: "صورة"
         show_image: "رؤية الصورة"
@@ -1113,7 +1109,6 @@ ar:
         location: "الموقع"
       booth:
         shifts: "إدارة المناوبات"
-        edit: "تعديل مكتب الإقتراع"
     officials:
       edit:
         destroy: إزالة حالة 'رسمي'
@@ -1135,7 +1130,6 @@ ar:
       level_4: المستوى 4
       level_5: المستوى 5
       search:
-        edit_official: تعديل مسؤول
         make_official: تعيين مسؤول
         title: "المناصب الرسمية: البحث عن مستخدم"
         no_results: لم يتم العثور على مناصب رسمية.
@@ -1375,7 +1369,6 @@ ar:
           origin_total: مجموع المشاركين
     tags:
       create: إنشاء موضوع
-      destroy: حذف الموضوع
       index:
         add_tag: إضافة موضوع اقتراح جديد
         title: مواضيع المقترح
