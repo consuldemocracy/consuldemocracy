@@ -58,7 +58,6 @@ oc:
       newest: Mai nòus primièr
       oldest: Mai ancians primièr
       most_commented: La majoritat de comentaris
-    select_order: Ordenar per
     show:
       return_to_commentable: "Tornar a "
   comments_helper:
@@ -111,7 +110,6 @@ oc:
       search_results:
         one: " que conten lo tèrme <strong>'%{search_term}'</strong>"
         other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
-      select_order: Ordenar per
       start_debate: Comença un nòu debat
       title: Debats
       section_header:
@@ -371,7 +369,6 @@ oc:
       search_results:
         one: " que conten lo tèrme <strong>'%{search_term}'</strong>"
         other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
-      select_order: Ordenar per
       select_order_long: "veses las proposicions"
       start_proposal: Crèa una proposicion
       title: De proposicions ciutadanas
