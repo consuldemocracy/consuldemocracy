@@ -20,8 +20,6 @@ pt-BR:
       index:
         title: Banners
         create: Criar banner
-        edit: Editar banner
-        delete: Excluir banner
         filters:
           all: Tudo
           with_active: Ativo
@@ -74,7 +72,6 @@ pt-BR:
         table_name: Nome
         table_phase: Estágio
         edit_groups: Editar grupos de títulos
-        edit_budget: Editar orçamento
         admin_ballots: Administrar cédulas
         no_budgets: "Não há orçamentos."
       create:
@@ -87,7 +84,6 @@ pt-BR:
         phase: Estágio
         enabled: Habilitado
         actions: Ações
-        edit_phase: Editar estágio
         active: Ativo
         blank_dates: Datas estão em branco
         administrators:
@@ -154,6 +150,7 @@ pt-BR:
         back: "Voltar a grupos"
     budget_phases:
       edit:
+        title: "Editar estágio"
         description_help_text: Esse texto será exibido no cabeçalho quando a fase estiver ativa
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento, bem como ativa para qualquer outra finalidade
         save_changes: Salvar alterações
@@ -260,7 +257,6 @@ pt-BR:
         table_publication_date: "Data de publicação"
         table_status: Status
         table_actions: "Ações"
-        delete: "Deletar marco"
         no_milestones: "Não possui marcos definidos"
         image: "Imagem"
         show_image: "Mostrar imagem"
@@ -1112,7 +1108,6 @@ pt-BR:
         location: "Localização"
       booth:
         shifts: "Gerenciar turnos"
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Remover condição de 'Cargo Público'
@@ -1134,7 +1129,6 @@ pt-BR:
       level_4: Nível 4
       level_5: Nível 5
       search:
-        edit_official: Editar cargo público
         make_official: Converter em cargo público
         title: "Cargos públicos: Busca de usuários"
         no_results: Cargos públicos não encontrados.
@@ -1414,7 +1408,6 @@ pt-BR:
         title: "Objetivos de Desenvolvimento Sustentável - Estatísticas"
     tags:
       create: Criar tópico
-      destroy: Deletar tópico
       index:
         add_tag: Adicionar um novo tópico de proposta
         title: Tópicos da proposta
