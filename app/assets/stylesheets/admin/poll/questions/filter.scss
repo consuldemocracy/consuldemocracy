@@ -1,0 +1,16 @@
+.admin .poll-questions-filter {
+  $gap: 0.5em;
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gap;
+
+  > * {
+    margin-left: $gap;
+  }
+
+  [type="submit"] {
+    @include regular-button;
+    margin-left: $gap;
+  }
+}
