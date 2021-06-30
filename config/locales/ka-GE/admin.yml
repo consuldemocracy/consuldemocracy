@@ -20,8 +20,6 @@ ka:
       index:
         title: ბანერები
         create: ბანერის შექმნა
-        edit: ბანერის რედაქტირება
-        delete: ბანერის წაშლა
         filters:
           all: ყველა
           with_active: აქტიური
@@ -73,7 +71,6 @@ ka:
         table_name: სახელი
         table_phase: ფაზა
         edit_groups: სათაურების ჯგუფების რედაქტირება
-        edit_budget: ბიუჯეტის რედაქტირება
         admin_ballots: ადმინისტრაციული ბიულეტენები
         no_budgets: "ბიუჯეტები არ მოიძებნა."
       create:
@@ -86,7 +83,6 @@ ka:
         phase: ფაზა
         enabled: აქტიურია
         actions: მოქმედებები
-        edit_phase: ფაზის რედაქტირება
         active: აქტიური
         blank_dates: თარიღები არ არის შევსებული
         administrators:
@@ -153,6 +149,7 @@ ka:
         back: "ჯგუფებში დაბრუნება"
     budget_phases:
       edit:
+        title: "ფაზის რედაქტირება"
         description_help_text: ეს ტექსტი გამოჩნდება სათაურის ველში, როდესაც ფაზა აქტიურია
         enabled_help_text: ეს ფაზა საჯარო გახდება ბიუჯეტის ფაზების დროის გრაფიკზე, ამასთან, იგი აქტიური იქნება სხვა მიზნებისთვისაც
         save_changes: ცვლილებების შენახვა
@@ -259,7 +256,6 @@ ka:
         table_publication_date: "გამოქვეყნების თარიღი"
         table_status: სტატუსი
         table_actions: "მოქმედებები"
-        delete: "ეტაპის წაშლა"
         no_milestones: "ეტაპები განსაზღვრული არ არის"
         image: "ფოტოსურათი"
         show_image: "ფოტოსურათის ჩვენება"
@@ -1103,7 +1099,6 @@ ka:
         location: "მდებარეობა"
       booth:
         shifts: "ცვლის მართვა"
-        edit: "კაბინის რედაქტირება"
     officials:
       edit:
         destroy: '"ოფიციალური" სტატუსის მოხსნა'
@@ -1125,7 +1120,6 @@ ka:
       level_4: მე-4 დონე
       level_5: მე-5 დონე
       search:
-        edit_official: თანამდებობის პირის რედაქტირება
         make_official: სტატუსის მინიჭება
         title: "ოფიციალური თანამდებობა: მომხმარებლის ძებნა"
         no_results: ოფიციალური თანამდებობები არ მოიძებნა.
@@ -1375,7 +1369,6 @@ ka:
           origin_total: მონაწილეთა საერთო რაოდენობა
     tags:
       create: თემის შექმნა
-      destroy: თემის წაშლა
       index:
         add_tag: ახალი საინიციატივო თემის დამატება
         title: ინიციატივასთან დაკავშირებული თემები
