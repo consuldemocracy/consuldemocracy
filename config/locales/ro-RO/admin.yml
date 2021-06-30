@@ -79,6 +79,7 @@ ro:
           open: Deschide
           finished: Terminat
         budget_investments: Administrează proiecte
+        table_budget_type: "Tip"
         table_completed: Completat
         table_draft: "Schiță"
         table_duration: "Durata"
