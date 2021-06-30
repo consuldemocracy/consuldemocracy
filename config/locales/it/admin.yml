@@ -1025,6 +1025,7 @@ it:
         label:
           booths: "Ricercare seggio per nome"
           debates: "Cerca dibattiti per titolo o descrizione"
+          local_census_records: "Cerca per numero del documento"
           organizations: "Nominativo, numero di telefono o e-mail"
           poll_officers: "Ricercare presidenti di seggio"
           poll_questions: "Cerca quesiti oggetto di votazione"
