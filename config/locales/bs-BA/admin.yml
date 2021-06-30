@@ -20,8 +20,6 @@ bs:
       index:
         title: Baneri
         create: Napravi baner
-        edit: Edituj baner
-        delete: Obriši baner
         filters:
           all: Sve
           with_active: Aktivno
@@ -73,7 +71,6 @@ bs:
         table_name: Naziv
         table_phase: Faza
         edit_groups: Edituj poglavlja
-        edit_budget: Edituj budžet
         admin_ballots: Admin za glasačke listiće
         no_budgets: "Nema budžeta."
       create:
@@ -86,7 +83,6 @@ bs:
         phase: Faza
         enabled: Pokrenuto
         actions: Radnje
-        edit_phase: Edituj fazu
         active: Aktivno
         blank_dates: Datumi nisu navedeni
       destroy:
@@ -143,6 +139,7 @@ bs:
         back: "Idi nazad na grupe"
     budget_phases:
       edit:
+        title: "Edituj fazu"
         description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
         enabled_help_text: Ova faza će biti javna u vremenskom prikazu budžetskih faza, te će biti aktivna i u bilo koju drugu svrhu
         save_changes: Spasi izmjene
@@ -242,7 +239,6 @@ bs:
         table_description: "Opis"
         table_publication_date: "Datum objave"
         table_actions: "Radnje"
-        delete: "Obriši rok"
         no_milestones: "Nema utvrđenih rokova"
         image: "Slika"
         show_image: "Pokaži sliku"
@@ -1040,7 +1036,6 @@ bs:
         location: "Lokacija"
       booth:
         shifts: "Napravi raspored smjena"
-        edit: "Edituj podatke za kabinu"
     officials:
       edit:
         destroy: Obriši status službenika
@@ -1062,7 +1057,6 @@ bs:
       level_4: 4. stupanj
       level_5: 5. stupanj
       search:
-        edit_official: Edituj podatke za službenika
         make_official: Postavi za službenika
         title: "Službenici: traženje korisnika"
         no_results: Službenici nisu pronađeni.
@@ -1279,7 +1273,6 @@ bs:
           origin_total: Ukupno učesnika
     tags:
       create: Formuliši temu
-      destroy: Ukloni temu
       index:
         add_tag: Dodaj novu temu za prijedlog
         title: Teme za prijedlog
