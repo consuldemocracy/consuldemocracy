@@ -21,8 +21,6 @@ sv:
       index:
         title: Banners
         create: Skapa banner
-        edit: Redigera banner
-        delete: Radera banner
         filters:
           all: Alla
           with_active: Pågående
@@ -90,7 +88,6 @@ sv:
         type_pending: "Väntar: Inga områden än"
         type_single: "Ett enda område"
         edit_groups: Redigera delbudgetar
-        edit_budget: Redigera budget
         admin_ballots: Administratörs röstsedlar
         no_budgets: "Det finns inga budgetar."
       create:
@@ -109,7 +106,6 @@ sv:
         duration: "Varaktighet"
         enabled: Aktiverad
         actions: Åtgärder
-        edit_phase: Redigera fas
         enable_phase: "Aktivera %{phase}-fasen"
         active: Aktiva
         blank_dates: Datumfälten är tomma
@@ -354,7 +350,6 @@ sv:
         table_publication_date: "Publiceringsdatum"
         table_status: Status
         table_actions: "Åtgärder"
-        delete: "Ta bort milstolpe"
         no_milestones: "Har inga definierade milstolpar"
         image: "Bild"
         show_image: "Visa bild"
@@ -1206,7 +1201,6 @@ sv:
         location: "Plats"
       booth:
         shifts: "Hantera arbetspass"
-        edit: "Redigera röststation"
     officials:
       edit:
         destroy: Ta bort 'Representant för staden'-status
@@ -1228,7 +1222,6 @@ sv:
       level_4: Nivå 4
       level_5: Nivå 5
       search:
-        edit_official: Redigera representant för staden
         make_official: Gör till representant för staden
         title: "Representanter för staden: Sök användare"
         no_results: Inga representanter för staden hittades.
@@ -1511,7 +1504,6 @@ sv:
         title: "Globala målen för hållbar utveckling – statistik"
     tags:
       create: Skapa inlägg
-      destroy: Ta bort inlägg
       index:
         add_tag: Lägg till ett nytt ämne för förslag
         title: Ämnen för förslag
