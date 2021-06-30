@@ -20,8 +20,6 @@ ru:
       index:
         title: Баннеры
         create: Создать баннер
-        edit: Редактировать баннер
-        delete: Удалить баннер
         filters:
           all: Все
           with_active: Активные
@@ -73,7 +71,6 @@ ru:
         table_name: Имя
         table_phase: Этап
         edit_groups: Редактировать группы заголовков
-        edit_budget: Редактировать бюджет
         admin_ballots: Администрирование бюллетеней
         no_budgets: "Нет бюджетов."
       create:
@@ -86,7 +83,6 @@ ru:
         phase: Этап
         enabled: Включено
         actions: Действия
-        edit_phase: Редактировать фазу
         active: Активное
         blank_dates: Даты пустые
       destroy:
@@ -145,6 +141,7 @@ ru:
         back: "Вернуться к группам"
     budget_phases:
       edit:
+        title: "Редактировать фазу"
         description_help_text: Этот текст появится в заголовке, когда фаза станет активной
         enabled_help_text: Эта фала будет публичной в расписании бюджетных фаз, а также активной для любых других целей
         save_changes: Сохранить изменения
@@ -244,7 +241,6 @@ ru:
         table_publication_date: "Дата публикации"
         table_status: Статус
         table_actions: "Действия"
-        delete: "Удалить этап"
         no_milestones: "Не имеет определенных основных этапов"
         image: "Изображение"
         show_image: "Показать изображение"
@@ -1069,7 +1065,6 @@ ru:
         location: "Местоположение"
       booth:
         shifts: "Управление сменами"
-        edit: "Редактировать кабинку"
     officials:
       edit:
         destroy: Убрать статус 'Чиновник'
@@ -1091,7 +1086,6 @@ ru:
       level_4: Уровень 4
       level_5: Уровень 5
       search:
-        edit_official: Редактировать чиновника
         make_official: Сделать чиновником
         title: "Позиции чиновников: Поиск пользователя"
         no_results: Позиции чиновников не найдены.
@@ -1319,7 +1313,6 @@ ru:
           origin_total: Всего участников
     tags:
       create: Создать тему
-      destroy: Удалить тему
       index:
         add_tag: Добавить новую тему предложения
         title: Темы предложения
