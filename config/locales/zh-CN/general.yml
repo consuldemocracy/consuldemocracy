@@ -48,7 +48,6 @@ zh-CN:
       newest: 最新优先
       oldest: 最旧优先
       most_commented: 最多评论
-    select_order: 排序依据
     show:
       return_to_commentable: "返回 "
   comments_helper:
@@ -96,7 +95,6 @@ zh-CN:
         button: 搜索
         placeholder: 搜索辩论...
         title: 搜索
-      select_order: 排序依据
       start_debate: 开始辩论
       title: 辩论
       section_header:
@@ -305,7 +303,6 @@ zh-CN:
         button: 搜索
         placeholder: 搜索提议...
         title: 搜索
-      select_order: 排序依据
       select_order_long: "您正在查看的提议是依据："
       start_proposal: 创建提议
       title: 提议
