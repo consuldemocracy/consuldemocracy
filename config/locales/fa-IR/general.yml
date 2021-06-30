@@ -42,7 +42,6 @@ fa:
     form:
       comment_as_admin: نظر به عنوان مدیر
       comment_as_moderator: نظر به عنوان ناظر
-    select_order: مرتب سازی بر اساس
     show:
       return_to_commentable: "بازگشت به "
   comments_helper:
@@ -85,7 +84,6 @@ fa:
         button: جستجو
         placeholder: جستجوبحث ها ...
         title: جستجو
-      select_order: "سفارش توسط\n"
       start_debate: شروع بحث
       title: مباحثه
       section_header:
@@ -190,7 +188,6 @@ fa:
       search_form:
         button: جستجو
         title: جستجو
-      select_order: "سفارش توسط\n"
       title: طرح های پیشنهادی
       section_header:
         title: طرح های پیشنهادی
