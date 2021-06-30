@@ -1,0 +1,49 @@
+<% content_for :body_class, "home-page" %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
+
+<%= render "shared/banner" %>
+
+  <div class="row">
+    <div class="small-12 medium-12 large-12">
+      <%= image_tag "custom/portada.jpg", class: "img_portada", alt: "En mi barrio decido yo. Llega la red social municipal en la que tú tienes el mando" %>
+    </div>
+<!--
+  <iframe width="100%" height="550" src="https://www.youtube.com/embed/x1Vl1XrJFR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
+  </div>
+
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: root_url %>
+<% end %>
+
+<%= render "header", header: @header %>
+
+<main>
+  <%= render "feeds" %>
+
+  <div class="row">
+    <% if @cards.any? %>
+      <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
+        <h2 class="title"><%= t("welcome.cards.title") %></h2>
+
+        <%= render "shared/cards", cards: @cards %>
+      </div>
+    <% end %>
+
+    <% if feed_processes_enabled? %>
+      <div class="small-12 large-4 column">
+        <%= render "processes" %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+    <%= render "recommended",
+                recommended_debates: @recommended_debates,
+                recommended_proposals: @recommended_proposals %>
+  <% end %>
+</main>
