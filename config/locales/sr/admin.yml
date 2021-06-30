@@ -20,8 +20,6 @@ sr:
       index:
         title: Банери
         create: Креирајте банер
-        edit: Измените банер
-        delete: Обришите банер
         filters:
           all: Све
           with_active: Активно
@@ -73,7 +71,6 @@ sr:
         table_name: Име
         table_phase: Фаза
         edit_groups: Уреди групе наслова
-        edit_budget: Уредити буџет
         admin_ballots: Админ листићи
         no_budgets: "Нема буџета."
       create:
@@ -86,7 +83,6 @@ sr:
         phase: Фаза
         enabled: Омогућено
         actions: Радња
-        edit_phase: Уредите фазу
         active: Активно
         blank_dates: Датуми су празни
         administrators:
@@ -157,6 +153,7 @@ sr:
         back: "Вратите се групама"
     budget_phases:
       edit:
+        title: "Уредите фазу"
         description_help_text: Овај текст ће се појавити у заглављу када је фаза активна
         enabled_help_text: Ова фаза ће бити јавна у редоследу фаза буџета, као и активна у друге сврхе
         save_changes: Сачувајте измене
@@ -263,7 +260,6 @@ sr:
         table_publication_date: "Датум објављивања"
         table_status: Статус
         table_actions: "Радња"
-        delete: "Избришите прекретницу"
         no_milestones: "Нема одређених прекретница"
         image: "Слика"
         show_image: "Прикажи слику"
@@ -1109,7 +1105,6 @@ sr:
         location: "Локација"
       booth:
         shifts: "Управљај сменама"
-        edit: "Уредите гласачко место"
     officials:
       edit:
         destroy: Уклоните "Званични" статус
@@ -1131,7 +1126,6 @@ sr:
       level_4: Ниво 4
       level_5: Ниво 5
       search:
-        edit_official: Уреди званично
         make_official: Начини званично
         title: "Званична позиција: Корисничка претрага"
         no_results: Званична позиција није пронађена.
@@ -1391,7 +1385,6 @@ sr:
           origin_total: Укупно учесника
     tags:
       create: Креирајте тему
-      destroy: Обришите тему
       index:
         add_tag: Додајте нову тему предлога
         title: Теме предлога
