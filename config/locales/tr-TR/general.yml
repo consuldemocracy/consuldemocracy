@@ -61,7 +61,6 @@ tr:
       newest: Önce en yeniler
       oldest: Önce en eskiler
       most_commented: En çok yorumlanan
-    select_order: Buna göre sırala
     show:
       return_to_commentable: "Geri dön "
   comments_helper:
@@ -114,7 +113,6 @@ tr:
       search_results:
         one: " <strong>'%{search_term}'</strong>terimini içeren"
         other: " <strong>'%{search_term}'</strong>terimini içeren"
-      select_order: Şuna göre sırala
       start_debate: Bir tartışma başlat
       title: Tartışmalar
       section_header:
@@ -379,7 +377,6 @@ tr:
       search_results:
         one: " <strong>'%{search_term}'</strong>terimini içeren"
         other: " <strong>'%{search_term}'</strong>terimini içeren"
-      select_order: Şuna göre sırala
       select_order_long: "Şuna göre önerileri görüntülüyorsunuz:"
       start_proposal: Bir öneri oluştur
       title: Öneriler
@@ -926,6 +923,7 @@ tr:
     help: "Siz %{org} içinden %{models} bağlantıları ekleyebilirsiniz."
     submit: "Ekle"
     error: "Bağlantı geçerli değil. %{url} ile başlamayı unutmayın."
+    error_duplicate: "Eklemekte olduğunuz içerik zaten mevcut."
     error_itself: "Bağlantı geçerli değil. Bir içeriği kendisiyle ilişkilendiremezsiniz."
     success: "Yeni bir ilgili içerik eklediniz"
     is_related: "Bu ilgili içerik mi?"
