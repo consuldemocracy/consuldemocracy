@@ -18,8 +18,6 @@ sl:
       index:
         title: Pasice
         create: Ustvari pasico
-        edit: Uredi pasico
-        delete: Izbriši pasico
         filters:
           all: Vse
           with_active: Aktivne
@@ -61,7 +59,6 @@ sl:
         table_name: Ime
         table_phase: Faza
         edit_groups: Uredi headings groups
-        edit_budget: Uredi proračun
       create:
         notice: Nov participatorni proračun uspešno ustvarjen!
       update:
@@ -72,7 +69,6 @@ sl:
         phase: Faza
         enabled: Omogočeno
         actions: Dejanja
-        edit_phase: Faza urejanja
         active: Aktiven
         blank_dates: Datum je prazen
       destroy:
@@ -84,6 +80,7 @@ sl:
         recalculate: Ponovno izračunaj zmagovalne naložbe.
     budget_phases:
       edit:
+        title: "Faza urejanja"
         description_help_text: To besedilo bo prikazano v glavi, ko je faza aktivna.
         enabled_help_text: Ta faza bo javna v časovnem okviru faze proračuna, pa tudi aktivna za druge namene
         save_changes: Shrani spremembe
@@ -164,7 +161,6 @@ sl:
         table_description: "Opis"
         table_publication_date: "Datum objave"
         table_actions: "Dejanja"
-        delete: "Izbriši mejnik"
         no_milestones: "Nima definiranih mejnikov"
         image: "Slika"
         show_image: "Pokaži sliko"
@@ -669,7 +665,6 @@ sl:
         location: "Lokacija"
       booth:
         shifts: "Uredi izmene"
-        edit: "Uredi volišče"
     officials:
       edit:
         destroy: Odstrani 'uraden' status
@@ -690,7 +685,6 @@ sl:
       level_4: Nivo 4
       level_5: Nivo 5
       search:
-        edit_official: Uredi uradnika
         make_official: Naredi za uradnika
         title: "Uradni položaji: iskanje uporabnika/-ce"
         no_results: Ni bilo mogoče najti uradnih položajev.
@@ -837,7 +831,6 @@ sl:
           origin_total: Vsi udeleženci
     tags:
       create: Ustvari temo
-      destroy: Uniči temo
       index:
         add_tag: Dodaj novo temo predloga
         title: Teme predlogov
