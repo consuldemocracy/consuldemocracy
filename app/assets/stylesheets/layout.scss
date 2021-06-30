@@ -101,7 +101,7 @@ a {
 
 .button.hollow {
   @include normal-selection;
-  border: 1px solid $link;
+  border: 1px solid;
   color: $link;
 }
 
@@ -235,7 +235,7 @@ a {
 
     &.is-active {
       @include brand-text;
-      border-bottom: 2px solid $brand;
+      border-bottom: 2px solid;
       padding-bottom: rem-calc(1);
     }
 
@@ -272,7 +272,7 @@ a {
 
     &.is-active {
       @include brand-text;
-      border-bottom: 2px solid $brand;
+      border-bottom: 2px solid;
     }
   }
 
@@ -346,7 +346,7 @@ a {
 
       &::after {
         background: $brand;
-        border-bottom: 2px solid $brand;
+        border-bottom: 2px solid;
         bottom: 0;
         content: "";
         left: 0;
@@ -644,7 +644,7 @@ body > header,
   }
 
   &.is-dropdown-submenu-parent > a::after {
-    border-color: #fff transparent transparent;
+    border-top-color: currentcolor;
   }
 }
 
@@ -726,7 +726,7 @@ body > header,
 
       @include breakpoint(medium) {
         @include brand-text;
-        border-bottom: 2px solid $brand;
+        border-bottom: 2px solid;
       }
     }
   }
@@ -798,7 +798,7 @@ body > header,
 
   .is-active {
     @include brand-text;
-    border-bottom: 2px solid $brand;
+    border-bottom: 2px solid;
 
     &:hover {
       text-decoration: none;
@@ -2497,7 +2497,7 @@ table {
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 1px solid #cf2a0e;
+    border-bottom-style: solid;
     color: #cf2a0e;
     text-decoration: none;
   }

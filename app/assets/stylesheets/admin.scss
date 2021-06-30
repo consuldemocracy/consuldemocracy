@@ -155,10 +155,6 @@ $table-header:   #ecf1f6;
     color: $admin-color;
   }
 
-  .dropdown.menu > .is-dropdown-submenu-parent > a::after {
-    border-color: #000 transparent transparent;
-  }
-
   .fieldset {
 
     select {
@@ -295,7 +291,6 @@ $table-header:   #ecf1f6;
     }
 
     .is-active {
-      border-bottom: 2px solid $admin-color;
       color: $admin-color;
       font-weight: bold;
     }
@@ -455,7 +450,7 @@ code {
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 1px dotted #fff;
+    border-bottom-color: transparent;
     color: #cf2a0e;
   }
 }
@@ -586,7 +581,7 @@ code {
   background: #fafafa;
   border-bottom-left-radius: rem-calc(6);
   border-bottom-right-radius: rem-calc(6);
-  border-top: 2px solid #000;
+  border-top: 2px solid;
   font-size: $small-font-size;
   padding: $line-height / 2;
 }

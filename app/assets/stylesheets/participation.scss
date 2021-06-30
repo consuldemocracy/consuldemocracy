@@ -29,7 +29,7 @@
   .icon-like,
   .icon-unlike {
     background: #fff;
-    border: 2px solid $text-light;
+    border: 2px solid;
     border-radius: rem-calc(3);
     color: $text-light;
     display: inline-block;
@@ -1577,11 +1577,11 @@
   border-bottom: 1px solid #eee;
 
   .column:nth-child(odd) {
-    border-right: 2px solid $text;
+    border-right: 2px solid;
   }
 
   .answer-divider {
-    border-bottom: 2px solid $text;
+    border-bottom: 2px solid;
     border-right: 0 !important;
     margin-bottom: $line-height;
     padding-bottom: $line-height;
@@ -1776,7 +1776,7 @@
   margin: $line-height 0;
 
   span {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid;
   }
 }
 
