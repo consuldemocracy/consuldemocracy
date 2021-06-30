@@ -16,7 +16,10 @@ module CommonActions
   include Votes
 
   def select_language(language_name)
-    select language_name, from: "Language:"
+    within ".locale-switcher" do
+      click_link "English"
+      click_link language_name
+    end
   end
 
   def app_host

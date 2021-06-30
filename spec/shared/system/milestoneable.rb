@@ -36,6 +36,8 @@ shared_examples "milestoneable" do |factory_name|
 
       select_language "Español"
 
+      expect(page).to have_content "Seguimiento"
+
       find("#tab-milestones-label").click
 
       within("#tab-milestones") do

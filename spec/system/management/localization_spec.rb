@@ -13,8 +13,9 @@ describe "Localization" do
     login_as_manager
     select_language "Español"
 
-    expect(page).not_to have_select "Language:"
-    expect(page).to have_select "Idioma:", selected: "Español"
+    expect(page).not_to have_content "Language:"
+    expect(page).to have_content "Idioma:"
+    expect(page).to have_link "Español"
     expect(page).to have_content "Gestión"
   end
 end

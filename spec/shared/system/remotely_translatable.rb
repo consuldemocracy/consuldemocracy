@@ -177,7 +177,6 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         expect(page).to have_content("Se han solicitado correctamente las traducciones.")
 
         visit path
-        select "Español", from: "Idioma:"
 
         expect(page).not_to have_button "Traducir página"
         expect(page).not_to have_content("Se han solicitado correctamente las traducciones.")
