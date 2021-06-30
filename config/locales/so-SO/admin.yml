@@ -18,8 +18,6 @@ so:
       index:
         title: Xayiraad
         create: Same banner
-        edit: Bedel baneer
-        delete: Tirir banner
         filters:
           all: Dhamaan
           with_active: Firfircoon
@@ -71,7 +69,6 @@ so:
         table_name: Magac
         table_phase: Weeji
         edit_groups: Wax ka bedel Madaxyada Kooxaha
-        edit_budget: Wax ka bedel Misaaniyada
         no_budgets: "Majiiraan misaniyado."
       create:
         notice: Sameynta Misaaniyada cusub ee ka qaybqadashada waa lugu guleystay!
@@ -83,7 +80,6 @@ so:
         phase: Weeji
         enabled: Karti leh
         actions: Tilaabooyin
-        edit_phase: Wax ka bedelka marxaladda
         active: Firfircoon
         blank_dates: Tarikhuhu wa bananyihiin
       destroy:
@@ -104,6 +100,7 @@ so:
         submit: "Bad baadi ciwaanka"
     budget_phases:
       edit:
+        title: "Wax ka bedelka marxaladda"
         description_help_text: Qoraalkan ayaa ka muuqan doona madaxa marka wajiga uu firfircoon yahay
         enabled_help_text: Marxaladani waxay noqon doontaa mid guud oo ku saabsan marxaladaha miisaaniyadda, iyo sidoo kale firfircoon ujeedooyinka kale
         save_changes: Badbaadi beddelka
@@ -201,7 +198,6 @@ so:
         table_description: "Sharaxaad"
         table_publication_date: "Taariikhda daabacaadda"
         table_actions: "Tilaabooyin"
-        delete: "Tirtir hiigsiga/guleeysiga"
         no_milestones: "An lahayn yool qeexaan"
         image: "Sawiir"
         show_image: "Muuji sawir"
@@ -834,7 +830,6 @@ so:
         location: "Goobta"
       booth:
         shifts: "Maaree isbeddelka"
-        edit: "Tafatiir labadaba"
     officials:
       edit:
         destroy: Ka saar 'Aqoonsiga'
@@ -855,7 +850,6 @@ so:
       level_4: Heerka 4
       level_5: Heerka 5
       search:
-        edit_official: Tafatirida rasmiga ah
         make_official: Sameyso rasmi ah
         title: "Meelaha rasmiga ah: Raadinta qofka"
         no_results: Meelo rasmi ah oo aan la helin.
@@ -1035,7 +1029,6 @@ so:
           origin_total: Wadarta kaqayb galayasha
     tags:
       create: Abuur moowduuc
-      destroy: Burburi moowduuca
       index:
         add_tag: Kudar soojedin mowduuc cusub
         title: Moduucyo sojeedin
