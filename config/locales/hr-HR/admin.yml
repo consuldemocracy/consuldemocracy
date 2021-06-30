@@ -20,8 +20,6 @@ hr:
       index:
         title: Transparenti
         create: Stvori zastave
-        edit: Uredi transparent
-        delete: Obriši transparent
         filters:
           all: Svi
           with_active: Aktivirati
@@ -73,7 +71,6 @@ hr:
         table_name: Ime
         table_phase: Faza
         edit_groups: Uredi naslov grupa
-        edit_budget: Uredi budžet
         admin_ballots: Glasovi admina
         no_budgets: "Ne postoje budžeti."
       create:
@@ -86,7 +83,6 @@ hr:
         phase: Faza
         enabled: Omogućeno
         actions: Akcije
-        edit_phase: Uredi fazu
         active: Aktivirati
         blank_dates: Datumi su prazni
         administrators:
@@ -157,6 +153,7 @@ hr:
         back: "Vrati se na grupe"
     budget_phases:
       edit:
+        title: "Uredi fazu"
         description_help_text: Ovaj tekst će se pojavljiti u naslovu kada je ova faza aktivna
         enabled_help_text: Ova faza će biti javna u fazama budžetiranja, a tako i aktivna za ostale svrhe
         save_changes: Spremi promjene
@@ -263,7 +260,6 @@ hr:
         table_publication_date: "Datum objave"
         table_status: Stanje
         table_actions: "Akcije"
-        delete: "Obriši miljokaz"
         no_milestones: "Nemate definirane miljokaze"
         image: "Slika"
         show_image: "Pogledaj sliku"
@@ -1109,7 +1105,6 @@ hr:
         location: "Lokacija"
       booth:
         shifts: "Upravljaj smjenama"
-        edit: "Uredi glasačko mjesto"
     officials:
       edit:
         destroy: Ukloni "Službeni" status
@@ -1131,7 +1126,6 @@ hr:
       level_4: Razina 4
       level_5: Razina 5
       search:
-        edit_official: Uredi službenika
         make_official: Napravi službeno
         title: "Službene pozicije: Pretraga korisnika"
         no_results: Službena pozicija nije pronađena.
@@ -1391,7 +1385,6 @@ hr:
           origin_total: Ukupno sudionika
     tags:
       create: Stvori temu
-      destroy: Izbriši temu
       index:
         add_tag: Dodaj novu temu prijedloga
         title: Teme prijedloga
