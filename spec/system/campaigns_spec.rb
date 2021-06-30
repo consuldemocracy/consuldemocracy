@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Email campaigns", :admin do
-  let(:campaign1) { create(:campaign) }
-  let(:campaign2) { create(:campaign) }
+  let!(:campaign1) { create(:campaign) }
+  let!(:campaign2) { create(:campaign) }
 
   scenario "Track email templates" do
     3.times { visit root_path(track_id: campaign1.track_id) }
@@ -21,7 +21,7 @@ describe "Email campaigns", :admin do
 
   scenario "Do not track erroneous track_ids" do
     visit root_path(track_id: campaign1.track_id)
-    visit root_path(track_id: "999")
+    visit root_path(track_id: Campaign.last.id + 1)
 
     visit admin_stats_path
     click_link campaign1.name
