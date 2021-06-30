@@ -47,7 +47,6 @@ id:
       newest: Yang terbaru pertama
       oldest: Dahulukan yang tertua
       most_commented: Paling commented
-    select_order: Urut berdasarkan
     show:
       return_to_commentable: "Kembali ke "
   comments_helper:
@@ -91,7 +90,6 @@ id:
         button: Cari
         placeholder: Cari perdebatan...
         title: Cari
-      select_order: Dipesan oleh
       start_debate: Memulai debat
       title: Perdebatan
       section_header:
@@ -290,7 +288,6 @@ id:
         button: Cari
         placeholder: Cari proposal...
         title: Cari
-      select_order: Dipesan oleh
       select_order_long: "Anda sedang melihat proposal sesuai untuk:"
       start_proposal: Buat proposal
       title: Proposal
