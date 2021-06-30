@@ -18,8 +18,6 @@ gl:
       index:
         title: Bánners
         create: Crear anuncio
-        edit: Editar anuncio
-        delete: Borrar anuncio
         filters:
           all: Todo
           with_active: Activa
@@ -71,7 +69,6 @@ gl:
         table_name: Nome
         table_phase: Fase
         edit_groups: Editar grupos de partidas
-        edit_budget: Editar orzamento
         no_budgets: "Non hai orzamentos."
       create:
         notice: Nova campaña de orzamentos participativos creada con éxito!
@@ -83,7 +80,6 @@ gl:
         phase: Fase
         enabled: Habilitado
         actions: Accións
-        edit_phase: Editar fase
         active: Activos
         blank_dates: Sen datas
       destroy:
@@ -137,6 +133,7 @@ gl:
         back: "Volver aos grupos"
     budget_phases:
       edit:
+        title: "Editar fase"
         description_help_text: Este texto aparecerá na cabeceira cando a fase estiver activa
         enabled_help_text: Esta fase será pública no calendario de fases do orzamento e estará activa para outros propósitos
         save_changes: Gardar so cambios
@@ -234,7 +231,6 @@ gl:
         table_publication_date: "Data de publicación"
         table_status: Estado
         table_actions: "Accións"
-        delete: "Eliminar fito"
         no_milestones: "Non hai datos definidos"
         image: "Imaxe"
         show_image: "Amosar imaxe"
@@ -921,7 +917,6 @@ gl:
         location: "Localización"
       booth:
         shifts: "Asignar quendas"
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo público'
@@ -942,7 +937,6 @@ gl:
       level_4: Nivel 4
       level_5: Nivel 5
       search:
-        edit_official: Editar cargo público
         make_official: Converter en cargo público
         title: "Cargos públicos: busca de usuarios"
         no_results: Non se atopou ningún cargo público.
@@ -1124,7 +1118,6 @@ gl:
           origin_total: Participantes totais
     tags:
       create: Crea un tema
-      destroy: Borrar tema
       index:
         add_tag: Engade un novo tema de debate
         title: Temas de debate
