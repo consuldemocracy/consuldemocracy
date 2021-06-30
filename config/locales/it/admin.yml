@@ -20,8 +20,6 @@ it:
       index:
         title: Banner
         create: Crea il banner
-        edit: Modifica il banner
-        delete: Elimina il banner
         filters:
           all: Tutti
           with_active: Attivo
@@ -73,7 +71,6 @@ it:
         table_name: Nominativo
         table_phase: Fase
         edit_groups: Modificare i gruppi di intestazioni
-        edit_budget: Modifica il budget
         admin_ballots: Scrutini amministratore
         no_budgets: "Non ci sono bilanci."
       create:
@@ -86,7 +83,6 @@ it:
         phase: Fase
         enabled: Abilitato
         actions: Azioni
-        edit_phase: Modifica fase
         active: Attivo
         blank_dates: Le date risultano vuote
         administrators:
@@ -150,6 +146,7 @@ it:
         back: "Torna ai gruppi"
     budget_phases:
       edit:
+        title: "Modifica fase"
         description_help_text: Questo paragrafo apparirà nell’intestazione quando la fase risulterà attiva
         enabled_help_text: Questa fase sarà visibile a tutti nella sequenza temporale delle fasi del bilancio e risulterà attiva ad ogni altro fine
         save_changes: Salva modifiche
@@ -255,7 +252,6 @@ it:
         table_description: "Descrizione"
         table_publication_date: "Data di pubblicazione"
         table_actions: "Azioni"
-        delete: "Cancellare il traguardo-milestone"
         no_milestones: "Non ci sono traguardi-milestone definiti"
         image: "Immagine"
         show_image: "Mostra immagine"
@@ -936,7 +932,6 @@ it:
         location: "Luogo"
       booth:
         shifts: "Gestisci turni"
-        edit: "Modifica seggio"
     officials:
       edit:
         destroy: Eliminare lo stato di pubblico ufficiale
@@ -957,7 +952,6 @@ it:
       level_4: Livello 4
       level_5: Livello 5
       search:
-        edit_official: Modifica pubblico ufficiale
         make_official: Convertire in pubblico ufficiale
         title: "Pubblici ufficiali: ricerca utente"
         no_results: Incarichi da funzionario non trovati.
@@ -1140,7 +1134,6 @@ it:
           origin_total: Totale partecipanti
     tags:
       create: Crea argomento
-      destroy: Distruggi argomento
       index:
         add_tag: Aggiungi un nuovo tema di proposta
         title: Temi di proposta
