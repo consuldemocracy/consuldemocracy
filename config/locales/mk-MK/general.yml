@@ -58,7 +58,6 @@ mk:
       newest: Прво најново
       oldest: Прво најстаро
       most_commented: Најкоментирано
-    select_order: Сортирај по
     show:
       return_to_commentable: "Врати се до "
   comments_helper:
