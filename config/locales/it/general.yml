@@ -50,7 +50,6 @@ it:
       newest: Prima i più recenti
       oldest: Prima i meno recenti
       most_commented: Più commentati
-    select_order: Ordina per
     show:
       return_to_commentable: "Torna indietro a "
   comments_helper:
@@ -100,7 +99,6 @@ it:
         button: Ricercare
         placeholder: Ricerca dibattiti...
         title: Ricercare
-      select_order: Ordinare per
       start_debate: Avvia un dibattito
       title: Dibattiti
       section_header:
@@ -312,7 +310,6 @@ it:
         button: Ricercare
         placeholder: Cerca proposte...
         title: Ricercare
-      select_order: Ordinare per
       select_order_long: "Stai visualizzando le proposte in base a:"
       start_proposal: Crea una proposta
       title: Proposte
