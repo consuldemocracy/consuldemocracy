@@ -56,7 +56,6 @@ fr:
       newest: Plus récent en premier
       oldest: Plus ancien en premier
       most_commented: Plus commentés
-    select_order: Trier par
     show:
       return_to_commentable: "Revenir à"
   comments_helper:
@@ -106,7 +105,6 @@ fr:
         button: Chercher
         placeholder: Rechercher des débats...
         title: Chercher
-      select_order: Trier par
       start_debate: Commencer un débat
       title: Débats
       section_header:
@@ -359,7 +357,6 @@ fr:
         button: Chercher
         placeholder: Chercher des propositions
         title: Chercher
-      select_order: Trier par
       select_order_long: "Vous êtes en train de voir les propositions en fonction de"
       start_proposal: Créer une proposition
       title: Propositions
