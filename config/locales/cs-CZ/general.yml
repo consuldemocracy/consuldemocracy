@@ -46,7 +46,6 @@ cs:
       newest: Podle nejnovějších
       oldest: Podle nejstarších
       most_commented: Podle počtu komentářů
-    select_order: Třídit podle
     show:
       return_to_commentable: "Jít zpět na "
   comments_helper:
@@ -92,7 +91,6 @@ cs:
         button: Vyhledat
         placeholder: Prohledat debaty...
         title: Vyhledat
-      select_order: Seřadit podle
       start_debate: Zahájit debatu
       title: Debaty
       section_header:
@@ -300,7 +298,6 @@ cs:
         button: Vyhledat
         placeholder: Prohledat návrhy...
         title: Vyhledat
-      select_order: Seřadit podle
       select_order_long: "Zobrazit návrhy podle:"
       start_proposal: Vytvořit návrh
       title: Návrhy
