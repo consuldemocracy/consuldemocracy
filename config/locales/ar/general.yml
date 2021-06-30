@@ -74,7 +74,6 @@ ar:
       newest: الأحدث أولاً
       oldest: الأقدم أولاً
       most_commented: الأكثر تعليقات
-    select_order: ترتيب حسب
     show:
       return_to_commentable: "العودة إلى "
   comments_helper:
@@ -132,7 +131,6 @@ ar:
         button: بحث
         placeholder: البحث عن مناقشات...
         title: بحث
-      select_order: ترتيب حسب
       start_debate: بدء مناقشة
       title: النقاشات
       section_header:
@@ -398,7 +396,6 @@ ar:
         button: بحث
         placeholder: البحث عن مقترحات...
         title: بحث
-      select_order: ترتيب حسب
       select_order_long: "أنت تشاهد المقترحات وفقًا لـ:"
       start_proposal: إنشاء مقترح
       title: إقتراحات
