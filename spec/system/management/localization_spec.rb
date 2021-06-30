@@ -11,7 +11,7 @@ describe "Localization" do
 
   scenario "Changing the locale" do
     login_as_manager
-    select "Español", from: "Language:"
+    select_language "Español"
 
     expect(page).not_to have_select "Language:"
     expect(page).to have_select "Idioma:", selected: "Español"

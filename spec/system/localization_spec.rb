@@ -18,7 +18,7 @@ describe "Localization" do
 
   scenario "Changing the locale" do
     visit "/"
-    select "Español", from: "Language:"
+    select_language "Español"
 
     expect(page).not_to have_select "Language:"
     expect(page).to have_select "Idioma:", selected: "Español"
@@ -27,7 +27,7 @@ describe "Localization" do
   scenario "Keeps query parameters while using protected redirects" do
     visit "/debates?order=created_at&host=evil.dev"
 
-    select "Español", from: "Language:"
+    select_language "Español"
 
     expect(current_host).to eq "http://127.0.0.1"
     expect(page).to have_current_path "/debates?locale=es&order=created_at"

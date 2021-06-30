@@ -15,6 +15,10 @@ module CommonActions
   include Verifications
   include Votes
 
+  def select_language(language_name)
+    select language_name, from: "Language:"
+  end
+
   def app_host
     "#{Capybara.app_host}:#{Capybara::Server.ports.values.last}"
   end
