@@ -20,8 +20,6 @@ da:
       index:
         title: Bannere
         create: Opret banner
-        edit: Rediger banner
-        delete: Slet banner
         filters:
           all: Alle
           with_active: Aktive
@@ -74,7 +72,6 @@ da:
         table_name: Navn
         table_phase: Fase
         edit_groups: Rediger områder
-        edit_budget: Rediger budget
         admin_ballots: Administrer valgsteder
         no_budgets: "Der er ingen budgetter."
       create:
@@ -88,7 +85,6 @@ da:
         phases_caption: "Faser"
         enabled: Aktiveret
         actions: Handlinger
-        edit_phase: Rediger fase
         active: Aktiv
         blank_dates: Ingen datoer
         administrators:
@@ -153,6 +149,7 @@ da:
         back: "Gå tilbage til grupper"
     budget_phases:
       edit:
+        title: "Rediger fase"
         description_help_text: Teksten vil være synlig i sidehovedet (øverst på siden), når fasen er aktiv
         enabled_help_text: Fasen vil være synlig i budgettets tidslinje
         save_changes: Gem ændringer
@@ -259,7 +256,6 @@ da:
         table_publication_date: "Dato for offentliggørelse"
         table_status: Status
         table_actions: "Handlinger"
-        delete: "Slet proces"
         no_milestones: "Har ingen definerede milepæle"
         image: "Billede"
         show_image: "Vis billede"
@@ -1101,7 +1097,6 @@ da:
         location: "Lokation"
       booth:
         shifts: "Administrer arbejdsfordeling"
-        edit: "Rediger valgsted"
     officials:
       edit:
         destroy: Fjern "Embedsmand"-status
@@ -1123,7 +1118,6 @@ da:
       level_4: Niveau 4
       level_5: Niveau 5
       search:
-        edit_official: Rediger embedsmand
         make_official: Gør til embedsmand
         title: "Funktionærposition: Søg bruger"
         no_results: Funktionærposition ikke fundet.
@@ -1342,7 +1336,6 @@ da:
           origin_total: Samlet antal deltagere
     tags:
       create: Opret emne
-      destroy: Fjern emne
       index:
         add_tag: Tilføj et nyt emne
         title: Emner
