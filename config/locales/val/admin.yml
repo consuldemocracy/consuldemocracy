@@ -18,8 +18,6 @@ val:
       index:
         title: Banners
         create: Crear banner
-        edit: Editar banner
-        delete: Eliminar banner
         filters:
           all: Totes
           with_active: Actius
@@ -71,7 +69,6 @@ val:
         table_name: Nom
         table_phase: Fase
         edit_groups: Edita grups de partides
-        edit_budget: Edita pressupost
         no_budgets: "No hi ha pressupostos."
       create:
         notice: Nova campanya de pressupostos participatius creada amb èxit!
@@ -83,7 +80,6 @@ val:
         phase: Fase
         enabled: Activa
         actions: Accions
-        edit_phase: Edita fase
         active: Actius
         blank_dates: Les dates estan en blanc
       destroy:
@@ -137,6 +133,7 @@ val:
         back: "Tornar a grups"
     budget_phases:
       edit:
+        title: "Edita fase"
         description_help_text: Este text apareixerà en la capçalera quant la fase estiga activa
         enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, així com activa per a qualsevol altre propòsit
         save_changes: Guardar canvis
@@ -234,7 +231,6 @@ val:
         table_publication_date: "Data de publicació"
         table_status: Estat
         table_actions: "Accions"
-        delete: "Eliminar fita"
         no_milestones: "No hi ha fites definides"
         image: "Imatge"
         show_image: "Mostrar imatge"
@@ -877,7 +873,6 @@ val:
         location: "Ubicació"
       booth:
         shifts: "Asignar torns"
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Eliminar condició de 'Càrrec Públic'
@@ -898,7 +893,6 @@ val:
       level_4: Nivell 4
       level_5: Nivell 5
       search:
-        edit_official: Edita càrrec públic
         make_official: Convertir a càrrec públic
         title: "Càrrecs Públics: Cerca d'usuaris"
         no_results: No s'han trobat càrrecs públics.
@@ -1081,7 +1075,6 @@ val:
           origin_total: Participants Totals
     tags:
       create: Crea un tema
-      destroy: Eliminar tema
       index:
         add_tag: Afegeix un nou tema de debat
         title: Temes de debat
