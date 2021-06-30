@@ -44,7 +44,6 @@ ast:
       most_voted: Más votados
       newest: Más nuevos primero
       oldest: Más antiguos primero
-    select_order: Ordenar por
     show:
       return_to_commentable: "Volver a "
   comments_helper:
@@ -84,7 +83,6 @@ ast:
         button: Atopar
         placeholder: Buscar debates...
         title: Atopar
-      select_order: Ordenar por
       start_debate: Empezar un debate
       title: Alderique
       section_header:
@@ -263,7 +261,6 @@ ast:
         button: Atopar
         placeholder: Buscar propuestas...
         title: Atopar
-      select_order: Ordenar por
       select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
       title: Propuestes
