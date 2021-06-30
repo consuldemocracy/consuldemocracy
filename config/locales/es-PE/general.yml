@@ -49,7 +49,6 @@ es-PE:
       newest: Mais recente primeiro
       oldest: Mais antigo primeiro
       most_commented: Más comentados
-    select_order: Organizado por
     show:
       return_to_commentable: "Voltar para"
   comments_helper:
@@ -95,7 +94,6 @@ es-PE:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      select_order: Ordenado por
       start_debate: Empieza un debate
       section_header:
         icon_alt: Icono de Debates
@@ -287,7 +285,6 @@ es-PE:
         button: Buscar
         placeholder: Buscar propostas...
         title: Buscar
-      select_order: Ordenado por
       select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Crea una propuesta
       title: Propuestas
