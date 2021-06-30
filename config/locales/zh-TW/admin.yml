@@ -18,8 +18,6 @@ zh-TW:
       index:
         title: 橫幅
         create: 創建橫幅
-        edit: 編輯橫幅
-        delete: 刪除橫幅
         filters:
           all: 所有
           with_active: 活躍
@@ -71,7 +69,6 @@ zh-TW:
         table_name: 名字
         table_phase: 階段
         edit_groups: 編輯標題組
-        edit_budget: 編輯預算
         no_budgets: "沒有預算。"
       create:
         notice: 新的參與性預算創建成功!
@@ -83,7 +80,6 @@ zh-TW:
         phase: 階段
         enabled: 啟用
         actions: 行動
-        edit_phase: 編輯階段
         active: 活躍
         blank_dates: 日期是空白的
       destroy:
@@ -104,6 +100,7 @@ zh-TW:
         submit: "儲存標題"
     budget_phases:
       edit:
+        title: "編輯階段"
         description_help_text: 當此文本將顯示在頁眉中，則表示階段處於活躍狀態
         enabled_help_text: 這一階段將在預算的階段時間內公開, 也會為其他目的而活躍
         save_changes: 儲存更改
@@ -201,7 +198,6 @@ zh-TW:
         table_publication_date: "出版日期"
         table_status: 狀態
         table_actions: "行動"
-        delete: "刪除里程碑"
         no_milestones: "沒有已定義的里程碑"
         image: "圖像"
         show_image: "顯示圖像"
@@ -827,7 +823,6 @@ zh-TW:
         location: "位置"
       booth:
         shifts: "管理輪班"
-        edit: "編輯投票亭"
     officials:
       edit:
         destroy: 刪除 "官方" 狀態
@@ -848,7 +843,6 @@ zh-TW:
       level_4: 級別4
       level_5: 級別5
       search:
-        edit_official: 編輯官員
         make_official: 成為官員
         title: "官員職位: 用戶搜尋"
         no_results: 找不到官員職位。
@@ -1026,7 +1020,6 @@ zh-TW:
           origin_total: 參與者總數
     tags:
       create: 創建主題
-      destroy: 銷毀主題
       index:
         add_tag: 添加新的建議主題
         title: 建議主題
