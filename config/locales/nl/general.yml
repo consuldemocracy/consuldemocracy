@@ -50,7 +50,6 @@ nl:
       newest: Nieuwste boven
       oldest: Oudste boven
       most_commented: Meeste reacties
-    select_order: Sorteer op
     show:
       return_to_commentable: "Ga terug naar "
   comments_helper:
@@ -100,7 +99,6 @@ nl:
         button: Search
         placeholder: Debatten zoeken...
         title: Search
-      select_order: Order by
       start_debate: Debat starten
       title: Debatten
       section_header:
@@ -315,7 +313,6 @@ nl:
         button: Search
         placeholder: Zoek voorstellen..
         title: Search
-      select_order: Order by
       select_order_long: "U ziet de voorstellen op:"
       start_proposal: Maak een nieuw voorstel
       title: Voorstellen
