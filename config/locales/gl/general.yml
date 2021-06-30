@@ -58,7 +58,6 @@ gl:
       newest: Máis novos primeiro
       oldest: Máis antigos primeiro
       most_commented: Máis comentados
-    select_order: Ordenar por
     show:
       return_to_commentable: "Volver a"
   comments_helper:
@@ -108,7 +107,6 @@ gl:
         button: Buscar
         placeholder: Buscar debates...
         title: Procurar
-      select_order: Ordenar por
       start_debate: Comezar un debate
       title: Debates
       section_header:
@@ -352,7 +350,6 @@ gl:
         button: Procurar
         placeholder: Buscar propostas...
         title: Procurar
-      select_order: Ordenar por
       select_order_long: "Estás vendo as propostas"
       start_proposal: Crea unha proposta
       title: Propostas cidadás
