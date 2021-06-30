@@ -58,7 +58,6 @@ da:
       newest: Nyeste først
       oldest: Ældste først
       most_commented: Flest kommentarer
-    select_order: Sorter efter
     show:
       return_to_commentable: "Gå tilbage til "
   comments_helper:
@@ -111,7 +110,6 @@ da:
       search_results:
         one: " som indeholder <strong>'%{search_term}'</strong>"
         other: " som indeholder <strong>'%{search_term}'</strong>"
-      select_order: Sorter efter
       start_debate: Start en debat
       title: Debatforum
       section_header:
@@ -371,7 +369,6 @@ da:
       search_results:
         one: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
         other: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
-      select_order: Sorter efter
       select_order_long: "Forslag i henhold til:"
       start_proposal: Opret et borgerforslag
       title: Borgerforslag
