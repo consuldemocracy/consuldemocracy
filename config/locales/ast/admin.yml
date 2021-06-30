@@ -17,8 +17,6 @@ ast:
       index:
         title: Banners
         create: Crear banner
-        edit: Editar el banner
-        delete: Esaniciar banner
         filters:
           all: Toes
           with_active: Activos
@@ -64,7 +62,6 @@ ast:
         table_name: Nome
         table_phase: Fase
         edit_groups: Editar grupos de partíes
-        edit_budget: Editar presupuestu
       create:
         notice: '¡Nueva campaña de presupuestos participativos creada con ésitu!'
       update:
@@ -158,7 +155,6 @@ ast:
         table_description: "Descripción detallada"
         table_status: Estáu
         table_actions: "Acciones"
-        delete: "Esaniciar finxu"
         no_milestones: "Nun hai finxos definíos"
         image: "Imaxe"
         documents: "Documentos"
@@ -581,8 +577,6 @@ ast:
         submit_button: "Actualizar urna"
       show:
         location: "Allugamientu"
-      booth:
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Esaniciar condición de 'Cargu Públicu'
@@ -601,7 +595,6 @@ ast:
       level_4: Nivel 4
       level_5: Nivel 5
       search:
-        edit_official: Editar cargu públicu
         make_official: Convertir en cargo público
         title: "Cargos Públicos: Búsqueda de usuarios"
     organizations:
