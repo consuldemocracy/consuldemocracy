@@ -58,7 +58,6 @@ pt-BR:
       newest: Mais recente primeiro
       oldest: Mais antigo primeiro
       most_commented: Mais comentadas
-    select_order: Organizado por
     show:
       return_to_commentable: "Voltar para"
   comments_helper:
@@ -111,7 +110,6 @@ pt-BR:
       search_results:
         one: " contendo o termo <strong>'%{search_term}'</strong>"
         other: " contendo o termo <strong>'%{search_term}'</strong>"
-      select_order: Ordenado por
       start_debate: Iniciar um debate
       title: Debates
       section_header:
@@ -376,7 +374,6 @@ pt-BR:
       search_results:
         one: " contendo o termo <strong>'%{search_term}'</strong>"
         other: " contendo o termo <strong>'%{search_term}'</strong>"
-      select_order: Ordenado por
       select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Criar proposta
       title: Propostas
