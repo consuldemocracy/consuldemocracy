@@ -66,7 +66,6 @@ he:
       newest: הכי חדשות
       oldest: הכי מוקדמות
       most_commented: עם הכי הרבה תגובות
-    select_order: סדר לפי
     show:
       return_to_commentable: "חזור אל "
   comments_helper:
@@ -120,7 +119,6 @@ he:
         button: חיפוש
         placeholder: חיפוש דיונים...
         title: חיפוש
-      select_order: סדר לפי
       start_debate: פתח דיון
       title: דיונים
       section_header:
@@ -374,7 +372,6 @@ he:
         button: חיפוש
         placeholder: חיפוש הצעות ...
         title: חיפוש
-      select_order: מיין לפי
       select_order_long: "ההצעות מוצגות לך על-פי סדר:"
       start_proposal: העל/י הצעה חדשה
       title: הצעות
