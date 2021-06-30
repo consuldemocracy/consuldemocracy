@@ -18,8 +18,6 @@ sq:
       index:
         title: Banderol
         create: Krijo banderol
-        edit: Redakto banderol
-        delete: Fshi banderol
         filters:
           all: Të gjithë
           with_active: Aktiv
@@ -71,7 +69,6 @@ sq:
         table_name: Emri
         table_phase: Fazë
         edit_groups: Ndrysho grupet e titujve
-        edit_budget: Ndrysho buxhetin
         no_budgets: "Nuk ka buxhet."
       create:
         notice: Buxheti i ri pjesëmarrës u krijua me sukses!
@@ -83,7 +80,6 @@ sq:
         phase: Fazë
         enabled: Aktivizuar
         actions: Veprimet
-        edit_phase: Ndrysho Fazën
         active: Aktiv
         blank_dates: Datat janë bosh
       destroy:
@@ -104,6 +100,7 @@ sq:
         submit: "Ruaj titullin"
     budget_phases:
       edit:
+        title: "Ndrysho Fazën"
         description_help_text: Ky tekst do të shfaqet në kokë kur faza është aktive
         enabled_help_text: Kjo fazë do të jetë publike në afatet kohore të buxhetit, si dhe aktivë për çdo qëllim tjetër
         save_changes: Ruaj ndryshimet
@@ -201,7 +198,6 @@ sq:
         table_publication_date: "Data e publikimit"
         table_status: Statusi
         table_actions: "Veprimet"
-        delete: "Fshi momentet historik"
         no_milestones: "Nuk  keni pikëarritje të përcaktuara"
         image: "Imazh"
         show_image: "Trego imazhin"
@@ -835,7 +831,6 @@ sq:
         location: "Vendndodhja"
       booth:
         shifts: "Menaxho ndërrimet"
-        edit: "Ndrysho kabinën"
     officials:
       edit:
         destroy: Hiq statusin 'Zyrtar'
@@ -856,7 +851,6 @@ sq:
       level_4: Nivel 4
       level_5: Nivel 5
       search:
-        edit_official: Ndrysho zyrtar
         make_official: Bëni zyrtar
         title: "Pozicionet zyrtare: Kërkimi i përdoruesit"
         no_results: Pozitat zyrtare nuk u gjetën.
@@ -1036,7 +1030,6 @@ sq:
           origin_total: Totali i Pjesëmarrësve
     tags:
       create: Krijo një temë
-      destroy: Fshi temën
       index:
         add_tag: Shto një temë të re propozimi
         title: Temat e propozimeve
