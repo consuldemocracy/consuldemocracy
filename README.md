@@ -41,7 +41,7 @@ You can access the main website of the project at [http://consulproject.org](htt
 Prerequisites: install git, Ruby 2.6.7, CMake, pkg-config, shared-mime-info, Node.js and PostgreSQL (>=9.5).
 
 ```bash
-git clone https://github.com/consul/consul.git
+git clone https://github.com/IntendenciaCanelones/consul.git
 cd consul
 bundle install
 cp config/database.yml.example config/database.yml
