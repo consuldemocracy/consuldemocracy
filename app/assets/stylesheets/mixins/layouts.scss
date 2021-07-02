@@ -1,11 +1,12 @@
 @mixin admin-layout {
+  height: 100%;
 
   > header {
     margin-bottom: 0;
   }
 
   > .menu-and-content {
-    flex: 1;
+    flex-grow: 1;
   }
 }
 

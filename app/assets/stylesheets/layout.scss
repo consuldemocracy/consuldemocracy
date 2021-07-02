@@ -39,17 +39,21 @@ html {
 
 html,
 body {
-  height: 100%;
   margin: 0;
+}
+
+html {
+  height: 100%;
 }
 
 body {
   display: flex;
   flex-direction: column;
   font-size: $base-font-size;
+  min-height: 100%;
 
   > .wrapper {
-    flex: 1;
+    flex-grow: 1;
   }
 }
 
