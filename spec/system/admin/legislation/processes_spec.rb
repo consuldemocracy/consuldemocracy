@@ -371,6 +371,22 @@ describe "Admin collaborative legislation", :admin do
       Setting["sdg.process.legislation"] = true
     end
 
+    scenario "do not show SDG columns if disabled" do
+      process = create(:legislation_process, title: "Legislation process with SDG related content")
+      process.sdg_goals = [SDG::Goal[1], SDG::Goal[17]]
+
+      Setting["feature.sdg"] = false
+
+      visit admin_legislation_processes_path
+
+      expect(page).not_to have_content "Goals"
+      expect(page).not_to have_content "Targets"
+
+      within "tr", text: "Legislation process with SDG related content" do
+        expect(page).not_to have_content "1, 17"
+      end
+    end
+
     scenario "create Collaborative Legislation with sdg related list" do
       visit new_admin_legislation_process_path
       fill_in "Process Title", with: "Legislation process with SDG related content"
