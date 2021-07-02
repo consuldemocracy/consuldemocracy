@@ -1,5 +1,5 @@
 %font-icon {
-  display: inline-block;
+  @extend %fa-icon;
   font-family: "Font Awesome 5 Free";
   vertical-align: middle;
 }
@@ -7,7 +7,7 @@
 %svg-icon {
   @supports (mask-image: url()) {
     background: currentcolor;
-    content: "";
+    content: "" !important;
     height: 1em;
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
