@@ -22,6 +22,14 @@ describe SDG::TagListComponent do
     expect(page).to have_link "target 3.2.1"
   end
 
+  it "does not render when there are no tags" do
+    record = build(:debate, sdg_goals: [], sdg_targets: [])
+
+    render_inline SDG::TagListComponent.new(record)
+
+    expect(page.native.inner_html).to be_empty
+  end
+
   context "when linkable is false" do
     let(:component) { SDG::TagListComponent.new(debate, linkable: false) }
 

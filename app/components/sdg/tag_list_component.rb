@@ -7,6 +7,10 @@ class SDG::TagListComponent < ApplicationComponent
     @linkable = linkable
   end
 
+  def render?
+    record.sdg_goals.any? || record.sdg_targets.any?
+  end
+
   private
 
     def goals_list
