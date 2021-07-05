@@ -3,11 +3,48 @@
 //
 //  Table of Contents:
 //
-//  1. CONSUL variables
-//  2. Foundation settings overrides
-//
+//  1. Foundation settings overrides
+//  2. CONSUL variables
+//  3. Foundation overrides depending on CONSUL variables
 
-// 1. CONSUL variables
+// 1. Foundation settings overrides
+// ---------------------------------
+
+$black: #222 !default;
+$white: #fdfdfd !default;
+
+$body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important !default;
+
+$global-radius: rem-calc(3) !default;
+
+$header-styles: (
+  small: (
+    "h1": ("font-size": 34),
+    "h2": ("font-size": 24),
+    "h3": ("font-size": 20),
+    "h4": ("font-size": 18),
+    "h5": ("font-size": 16),
+    "h6": ("font-size": 14),
+  ),
+  medium: (
+    "h1": ("font-size": 44),
+    "h2": ("font-size": 34),
+    "h3": ("font-size": 24),
+    "h4": ("font-size": 19),
+    "h5": ("font-size": 16),
+    "h6": ("font-size": 13),
+  ),
+) !default;
+
+$small-font-size: rem-calc(14) !default;
+
+$abbr-underline: none !default;
+
+$orbit-bullet-diameter: 0.8rem !default;
+
+$show-header-for-stacked: true !default;
+
+// 2. CONSUL variables
 // --------------------
 
 $base-font-size:      rem-calc(17) !default;
@@ -21,7 +58,7 @@ $brand:             #004a83 !default;
 $brand-secondary:   darken($brand, 10%) !default;
 $dark:              $brand-secondary !default;
 
-$text:              #222 !default;
+$text:              $black !default;
 $text-medium:       #515151 !default;
 $text-light:        #bfbfbf !default;
 
@@ -101,40 +138,8 @@ $sdg-colors: (
   17: #19486a
 ) !default;
 
-// 2. Foundation settings overrides
-// ---------------------------------
-
-$black: #222 !default;
-$white: #fdfdfd !default;
-
-$body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important !default;
-
-$global-radius: rem-calc(3) !default;
-
-$header-styles: (
-  small: (
-    "h1": ("font-size": 34),
-    "h2": ("font-size": 24),
-    "h3": ("font-size": 20),
-    "h4": ("font-size": 18),
-    "h5": ("font-size": 16),
-    "h6": ("font-size": 14),
-  ),
-  medium: (
-    "h1": ("font-size": 44),
-    "h2": ("font-size": 34),
-    "h3": ("font-size": 24),
-    "h4": ("font-size": 19),
-    "h5": ("font-size": 16),
-    "h6": ("font-size": 13),
-  ),
-) !default;
-
-$small-font-size: rem-calc(14) !default;
-
-$abbr-underline: none !default;
-
-$closebutton-color: $text !default;
+// 3. Foundation overrides depending on CONSUL variables
+// -----------------------------------------------------
 
 $tab-background-active: $white !default;
 
@@ -142,8 +147,6 @@ $tab-item-font-size: $base-font-size !default;
 $tab-item-padding: $line-height / 2  0 !default;
 $tab-content-border: $border !default;
 
-$orbit-bullet-diameter: 0.8rem !default;
-
-$show-header-for-stacked: true !default;
+$closebutton-color: $text !default;
 
 $tooltip-background-color: $brand !default;
