@@ -275,7 +275,7 @@ sv:
         assigned_admin: Ansvarig administratör
         assigned_valuators: Ansvariga bedömare
         classification: Klassificering
-        info: "%{budget_name} - Grupp: %{group_name} - Budgetförslag: %{id}"
+        info: "%{budget_name} - Grupp: %{group_name} - Investeringsprojekt: %{id}"
         edit: Redigera
         edit_classification: Redigera klassificering
         by: Av
