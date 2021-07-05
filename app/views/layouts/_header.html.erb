@@ -12,36 +12,33 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="top-bar">
+  <div class="top-bar">
+    <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
+      <button type="button" class="menu-button" data-toggle>
+        <span class="menu-icon"></span>
+        <%= t("application.menu") %>
+      </button>
+    </span>
 
-      <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
-        <button type="button" class="menu-button" data-toggle>
-          <span class="menu-icon"></span>
-          <%= t("application.menu") %>
-        </button>
-      </span>
+    <h1 class="top-bar-title">
+      <%= link_to root_path, accesskey: "0" do %>
+        <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: setting["org_name"]) %>
+      <% end %>
+    </h1>
 
-      <h1 class="top-bar-title">
-        <%= link_to root_path, accesskey: "0" do %>
-          <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: setting["org_name"]) %>
-        <% end %>
-      </h1>
+    <div id="responsive-menu">
+      <div class="top-bar-right">
+        <ul class="menu" data-responsive-menu="medium-dropdown">
+          <%= render "shared/admin_login_items" %>
+          <%= render "layouts/notification_item" %>
+          <%= render "devise/menu/login_items" %>
+        </ul>
 
-      <div id="responsive-menu">
-        <div class="top-bar-right">
-          <ul class="menu" data-responsive-menu="medium-dropdown">
-            <%= render "shared/admin_login_items" %>
-            <%= render "layouts/notification_item" %>
-            <%= render "devise/menu/login_items" %>
-          </ul>
-
-          <div class="show-for-small-only">
-            <div class="subnavigation row">
-              <%= render "shared/subnavigation" %>
-              <div class="small-12 column">
-                <%= render "shared/top_links" %>
-              </div>
+        <div class="show-for-small-only">
+          <div class="subnavigation row">
+            <%= render "shared/subnavigation" %>
+            <div class="small-12 column">
+              <%= render "shared/top_links" %>
             </div>
           </div>
         </div>

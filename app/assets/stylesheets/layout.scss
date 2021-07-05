@@ -695,10 +695,21 @@ body > header,
 .subnavigation {
   @include full-width-background;
 
+  @include breakpoint(small only) {
+    @include grid-row-nest;
+  }
+
   @include breakpoint(medium) {
     background: $body-background;
     color: $text;
     padding-bottom: 0;
+  }
+
+  .search-form-header {
+
+    @include breakpoint(small only) {
+      padding-left: rem-calc(map-get($grid-column-gutter, small) / 2);
+    }
   }
 
   ul {
