@@ -10,7 +10,7 @@
     position: relative;
 
     &::after {
-      color: #808080;
+      color: $light-gray;
       font-size: $small-font-size;
       margin-right: 0;
       pointer-events: none;
