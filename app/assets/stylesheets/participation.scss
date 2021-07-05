@@ -1019,6 +1019,14 @@
   }
 }
 
+.search-results-summary {
+  background: $highlight;
+  margin-bottom: $line-height;
+  margin-top: -$line-height;
+  padding-bottom: $line-height;
+  padding-top: $line-height;
+}
+
 // 05. Featured
 // ------------
 
