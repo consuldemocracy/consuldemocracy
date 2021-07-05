@@ -155,7 +155,7 @@ sv:
       wrong_price_format: Endast heltal
       investment:
         add: Rösta
-        already_added: Du har redan skapat det här budgetförslaget
+        already_added: Du har redan skapat det här investeringsprojektet
         support_title: Stöd projektet
         supports:
           zero: Inget stöd
