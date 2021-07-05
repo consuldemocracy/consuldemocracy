@@ -56,6 +56,10 @@ $table-header:   #ecf1f6;
     background: #000;
     color: $white;
 
+    &::before {
+      content: none;
+    }
+
     a {
       line-height: rem-calc($line-height * 1.5);
     }

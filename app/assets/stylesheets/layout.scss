@@ -52,6 +52,13 @@ body {
   font-size: $base-font-size;
   min-height: 100%;
 
+  &.public {
+    @include breakpoint($global-width) {
+      margin-left: $body-margin;
+      margin-right: $body-margin;
+    }
+  }
+
   > .wrapper {
     flex-grow: 1;
   }
@@ -518,7 +525,16 @@ body > header,
 .public > .wrapper > header,
 .proposal-dashboard > header {
   @extend %brand-background;
-  border-bottom: 1px solid $border;
+  @include full-width-border(bottom, 1px solid $border);
+  @include full-width-background;
+}
+
+.proposal-dashboard > header {
+
+  @include breakpoint($global-width) {
+    margin-left: $body-margin;
+    margin-right: $body-margin;
+  }
 }
 
 .top-bar {
@@ -638,6 +654,7 @@ body > header,
 }
 
 .top-links {
+  @include full-width-background;
   background: $dark;
   font-size: $small-font-size;
 
@@ -676,6 +693,7 @@ body > header,
 }
 
 .subnavigation {
+  @include full-width-background;
 
   @include breakpoint(medium) {
     background: $body-background;
@@ -713,12 +731,17 @@ body > header,
       }
     }
 
+    &:focus {
+      z-index: 1;
+    }
+
     &.is-active {
       color: #fff;
 
       @include breakpoint(medium) {
         @include brand-text;
         border-bottom: 2px solid;
+        margin-bottom: 1px;
       }
     }
   }
@@ -858,6 +881,10 @@ footer {
   margin-top: $line-height * 2;
   padding-bottom: $line-height;
   padding-top: $line-height;
+
+  .public & {
+    @include full-width-background;
+  }
 }
 
 .subfooter {
@@ -2033,6 +2060,12 @@ table {
 // -----------
 
 .banner {
+  @include full-width-background;
+
+  .debates-list &::before,
+  .proposals-list &::before {
+    content: none;
+  }
 
   a > * {
     @include grid-row;
@@ -2192,8 +2225,10 @@ table {
 }
 
 .recommended-index {
+  @include full-width-background;
+  @include full-width-border(bottom, 1px solid #eee);
+  @include full-width-border(top, 1px solid #fafafa);
   background: #fafafa;
-  border-bottom: 1px solid #eee;
   margin-bottom: $line-height;
   margin-top: rem-calc(-25);
   padding: $line-height 0 $line-height / 2;

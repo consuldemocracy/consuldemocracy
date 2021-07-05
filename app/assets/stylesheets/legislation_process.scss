@@ -15,6 +15,7 @@
 // --------
 
 .legislation-hero {
+  @include full-width-background;
 
   .title {
     font-weight: bold;
@@ -30,7 +31,7 @@
 // ----------------------------------
 
 .legislation-process-list {
-  border-bottom: 1px solid $border;
+  @include full-width-border(bottom, 1px solid $border);
 }
 
 .key-dates {
@@ -111,19 +112,8 @@
     @include breakpoint(large) {
       background: none;
       border: 1px solid $border;
-      border-bottom: 0;
-
-      &::after {
-        border-bottom: 1px solid #fefefe;
-        bottom: -1px;
-        left: 0;
-        position: absolute;
-        width: 100%;
-      }
-    }
-
-    &::after {
-      content: "";
+      border-bottom-color: $body-background;
+      z-index: 1;
     }
   }
 }

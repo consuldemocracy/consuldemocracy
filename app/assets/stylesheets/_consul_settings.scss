@@ -16,6 +16,7 @@ $white: #fdfdfd !default;
 $body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important !default;
 
 $global-radius: rem-calc(3) !default;
+$global-width: rem-calc(1200) !default;
 
 $header-styles: (
   small: (
@@ -46,6 +47,9 @@ $show-header-for-stacked: true !default;
 
 // 2. CONSUL variables
 // --------------------
+
+$body-margin: calc(50vw - #{$global-width / 2}) !default;
+$full-width-margin: calc(#{$global-width / 2} - 50vw) !default;
 
 $base-font-size:      rem-calc(17) !default;
 $base-line:           rem-calc(26) !default;

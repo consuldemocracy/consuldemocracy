@@ -21,7 +21,12 @@
   }
 
   &.light {
+    @include full-width-background;
     background: #ecf0f1;
+  }
+
+  &.header-card {
+    @include full-width-background;
   }
 }
 

@@ -23,6 +23,41 @@
   }
 }
 
+@mixin full-width-cover {
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @include breakpoint($global-width) {
+    left: $full-width-margin;
+    right: $full-width-margin;
+  }
+}
+
+@mixin full-width-background {
+  position: relative;
+
+  &::before {
+    @include full-width-cover;
+    background: inherit;
+    z-index: -1;
+  }
+}
+
+@mixin full-width-border($position, $border) {
+  position: relative;
+
+  &::after {
+    @include full-width-cover;
+    border-#{$position}: $border;
+  }
+}
+
 @mixin full-width-form {
   .globalize-languages {
     max-width: none;
