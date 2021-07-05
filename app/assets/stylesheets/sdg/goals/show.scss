@@ -1,5 +1,4 @@
 .sdg-goal-show {
-  @include grid-row;
 
   > :not(.feeds-participation) {
     @include grid-column-gutter;

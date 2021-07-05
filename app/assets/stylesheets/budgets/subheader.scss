@@ -1,7 +1,7 @@
 .budget-subheader {
-  @include grid-row;
   margin-bottom: $line-height;
   margin-top: $line-height;
+  overflow: hidden;
 
   .current-phase {
     text-transform: uppercase;

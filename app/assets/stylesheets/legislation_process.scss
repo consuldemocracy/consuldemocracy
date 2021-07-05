@@ -966,7 +966,6 @@
 
 .process-summary {
   > section {
-    @include grid-row;
     margin-top: $line-height * 1.5;
     padding: 0 rem-calc(16);
   }

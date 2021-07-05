@@ -2068,7 +2068,6 @@ table {
   }
 
   a > * {
-    @include grid-row;
     padding: 0 rem-calc(16);
 
     &:empty {
