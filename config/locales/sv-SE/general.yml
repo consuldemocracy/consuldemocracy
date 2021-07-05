@@ -861,7 +861,7 @@ sv:
       not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
       not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
       organization: Organisationer kan inte rösta
-      unfeasible: Det går inte att stödja budgetförslag som inte är genomförbara
+      unfeasible: Det går inte att stödja investeringsprojekt som inte är genomförbara
       not_voting_allowed: Omröstningsfasen är avslutad
       different_heading_assigned:
         one: "Du kan bara stödja budgetförslag i %{count} distrikt. Du stödjer redan budgetförslag i %{supported_headings}."
