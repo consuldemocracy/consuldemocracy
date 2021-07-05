@@ -19,7 +19,7 @@ sv:
     budgets:
       link: "Statistik"
       page_title: "%{budget} - Deltagarstatistik"
-      total_investments: "Totala budgetförslag"
+      total_investments: "Totala investeringsprojekt"
       total_selected_investments: "Projekt i slutomröstningsfasen"
       total_unfeasible_investments: "Ej genomförbara projekt"
       by_phase: "Deltagare efter fas"
