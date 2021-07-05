@@ -473,8 +473,6 @@ a {
 
 body > header,
 .wrapper > header {
-  @extend %brand-background;
-  border-bottom: 1px solid $border;
   margin-bottom: $line-height;
 
   @include breakpoint(small down) {
@@ -515,6 +513,12 @@ body > header,
       float: right;
     }
   }
+}
+
+.public > .wrapper > header,
+.proposal-dashboard > header {
+  @extend %brand-background;
+  border-bottom: 1px solid $border;
 }
 
 .top-bar {
