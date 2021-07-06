@@ -1,12 +1,10 @@
 <header class="header">
   <div class="top-links">
-    <div class="expanded row">
-      <%= render "shared/locale_switcher" %>
+    <%= render "shared/locale_switcher" %>
 
-      <%= link_to root_path, class: "float-right" do %>
-        <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
-      <% end %>
-    </div>
+    <%= link_to root_path do %>
+      <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
+    <% end %>
   </div>
 
   <div class="expanded row admin-top-bar">

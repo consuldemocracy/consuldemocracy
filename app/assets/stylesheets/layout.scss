@@ -512,13 +512,8 @@ body > header,
   }
 
   .external-links {
-    float: none;
     padding: rem-calc(6) 0;
     text-align: center;
-
-    @include breakpoint(medium) {
-      float: right;
-    }
   }
 }
 
@@ -655,11 +650,14 @@ body > header,
 
 .top-links {
   @include full-width-background;
+  @include grid-column-gutter;
   background: $dark;
+  display: flex;
+  flex-wrap: wrap;
   font-size: $small-font-size;
 
   > :first-child {
-    @include grid-column-gutter;
+    flex-grow: 1;
   }
 
   a {
