@@ -115,7 +115,7 @@ describe "Public area translatable records" do
     scenario "Highlight new locale added" do
       visit new_proposal_path
 
-      select "Español", from: "locale-switcher"
+      select "Español", from: "Language:"
 
       expect_to_have_language_selected "Español"
     end
@@ -206,7 +206,7 @@ describe "Public area translatable records" do
 
           expect(page).to have_field "Debate title", with: "Title in English"
 
-          select "Español", from: "locale-switcher"
+          select "Español", from: "Language:"
 
           expect(page).to have_field "Título del debate", with: "Título corregido"
           expect(page).to have_ckeditor "Texto inicial del debate", with: "Texto corregido"

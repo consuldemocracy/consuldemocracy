@@ -226,7 +226,6 @@ en:
     header:
       administration_menu: Menu
       administration: Administration
-      available_locales: Available languages
       collaborative_legislation: Collaborative legislation
       debates: Debates
       locale: "Language:"
