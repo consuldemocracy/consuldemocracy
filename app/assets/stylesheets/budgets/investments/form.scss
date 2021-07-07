@@ -10,4 +10,9 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  [type="submit"] {
+    @include regular-button;
+    width: 100%;
+  }
 }
