@@ -440,6 +440,7 @@ aside {
 // 1. Header
 // --------------------
 header,
+body > header,
 .wrapper > header {
   background: none;
   border-bottom: 0;
@@ -1231,6 +1232,19 @@ footer {
   .current-phase {
     color: $label;
     text-transform: uppercase;
+  }
+}
+
+.budget-info .groups-and-headings .heading {
+
+  @include breakpoint(medium) {
+    min-width: rem-calc(160);
+    width: auto;
+  }
+
+  @include breakpoint(large) {
+    min-width: rem-calc(160);
+    width: auto;
   }
 }
 
@@ -3188,12 +3202,6 @@ footer {
   .heading-amount {
     font-size: rem-calc(48);
   }
-}
-
-.my-ballot {
-  float: left;
-  font-size: rem-calc(40);
-  margin-right: 12px;
 }
 
 .supports-info {
