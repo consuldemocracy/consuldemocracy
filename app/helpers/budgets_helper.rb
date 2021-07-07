@@ -92,7 +92,7 @@ module BudgetsHelper
   def display_support_alert?(investment)
     current_user &&
     !current_user.voted_in_group?(investment.group) &&
-    investment.group.headings.count > 1
+    investment.group.headings.count > investment.group.max_votable_headings
   end
 
   def budget_subnav_items_for(budget)
