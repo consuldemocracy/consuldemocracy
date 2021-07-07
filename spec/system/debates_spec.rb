@@ -536,7 +536,7 @@ describe "Debates" do
 
         visit debates_path
 
-        within(".expanded #search_form") do
+        within "#search_form" do
           fill_in "search", with: "Schwifty"
           click_button "Search"
         end
@@ -553,7 +553,7 @@ describe "Debates" do
       scenario "Maintain search criteria" do
         visit debates_path
 
-        within(".expanded #search_form") do
+        within "#search_form" do
           fill_in "search", with: "Schwifty"
           click_button "Search"
         end
@@ -629,7 +629,7 @@ describe "Debates" do
       create(:debate, title: "Abcdefghi")
 
       visit debates_path
-      within(".expanded #search_form") do
+      within "#search_form" do
         fill_in "search", with: "Abcdefghi"
         click_button "Search"
       end

@@ -181,7 +181,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within(".expanded #search_form") do
+      within "#search_form" do
         fill_in "search", with: "Schwifty"
         click_button "Search"
       end

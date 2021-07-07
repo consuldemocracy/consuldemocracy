@@ -1119,7 +1119,7 @@ describe "Proposals" do
 
         visit proposals_path
 
-        within(".expanded #search_form") do
+        within "#search_form" do
           fill_in "search", with: "Schwifty"
           click_button "Search"
         end
@@ -1139,7 +1139,7 @@ describe "Proposals" do
 
         visit proposals_path
 
-        within(".expanded #search_form") do
+        within "#search_form" do
           fill_in "search", with: proposal1.code
           click_button "Search"
         end
@@ -1155,7 +1155,7 @@ describe "Proposals" do
       scenario "Maintain search criteria" do
         visit proposals_path
 
-        within(".expanded #search_form") do
+        within "#search_form" do
           fill_in "search", with: "Schwifty"
           click_button "Search"
         end
@@ -1236,7 +1236,7 @@ describe "Proposals" do
       create(:proposal, title: "Abcdefghi")
 
       visit proposals_path
-      within(".expanded #search_form") do
+      within "#search_form" do
         fill_in "search", with: "Abcdefghi"
         click_button "Search"
       end

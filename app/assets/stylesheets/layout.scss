@@ -692,21 +692,18 @@ body > header,
 
 .subnavigation {
   @include full-width-background;
-
-  @include breakpoint(small only) {
-    @include grid-row-nest;
-  }
+  @include grid-column-gutter;
+  display: flex;
+  flex-direction: column;
 
   @include breakpoint(medium) {
     background: $body-background;
     color: $text;
+    flex-direction: row;
     padding-bottom: 0;
-  }
 
-  .search-form-header {
-
-    @include breakpoint(small only) {
-      padding-left: rem-calc(map-get($grid-column-gutter, small) / 2);
+    > :first-child {
+      flex-grow: 1;
     }
   }
 
@@ -788,6 +785,11 @@ body > header,
     margin-right: 0;
     width: 100%;
   }
+}
+
+.subnavigation-with-top-links {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .top-bar-right {
