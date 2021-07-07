@@ -84,7 +84,7 @@
 
   <%= render SDG::RelatedListSelectorComponent.new(f) %>
 
-  <% unless current_user.manager? %>
+  <% unless current_user.manager? || investment.persisted? %>
     <div>
       <%= f.check_box :terms_of_service,
         title: t("form.accept_terms_title"),
