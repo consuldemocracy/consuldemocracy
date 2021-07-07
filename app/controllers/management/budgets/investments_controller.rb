@@ -18,7 +18,6 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   def new
-    load_categories
   end
 
   def create
@@ -30,7 +29,6 @@ class Management::Budgets::InvestmentsController < Management::BaseController
       notice = t("flash.actions.create.notice", resource_name: Budget::Investment.model_name.human, count: 1)
       redirect_to management_budget_investment_path(@budget, @investment), notice: notice
     else
-      load_categories
       render :new
     end
   end
@@ -58,9 +56,5 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:budget_id]
-    end
-
-    def load_categories
-      @categories = Tag.category.order(:name)
     end
 end
