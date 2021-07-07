@@ -480,6 +480,7 @@ a {
 
 body > header,
 .wrapper > header {
+  @include grid-column-gutter;
   margin-bottom: $line-height;
 
   @include breakpoint(small down) {
@@ -519,9 +520,15 @@ body > header,
 
 .public > .wrapper > header,
 .proposal-dashboard > header {
-  @extend %brand-background;
   @include full-width-border(bottom, 1px solid $border);
-  @include full-width-background;
+
+  > * {
+    @include full-width-background($adjust-padding: true);
+  }
+
+  .top-bar {
+    @extend %brand-background;
+  }
 }
 
 .proposal-dashboard > header {
@@ -534,16 +541,18 @@ body > header,
 
 .top-bar {
   background-color: inherit;
-  padding-bottom: 0;
-  padding-top: 0;
+  padding: 0;
 
   @include breakpoint(medium) {
-    padding: 0;
+    justify-content: flex-start;
+
+    .top-bar-title {
+      flex-grow: 1;
+    }
   }
 
   ul {
     background: none;
-    padding-right: rem-calc(15);
   }
 
   .menu > li {
@@ -603,6 +612,7 @@ body > header,
 
   .top-bar-title {
     line-height: $line-height;
+    margin-right: 0;
 
     a img {
       height: rem-calc(48);
@@ -649,9 +659,8 @@ body > header,
 }
 
 .top-links {
-  @include full-width-background;
-  @include grid-column-gutter;
   background: $dark;
+  color: $white;
   display: flex;
   flex-wrap: wrap;
   font-size: $small-font-size;
@@ -691,8 +700,6 @@ body > header,
 }
 
 .subnavigation {
-  @include full-width-background;
-  @include grid-column-gutter;
   display: flex;
   flex-direction: column;
 
@@ -785,11 +792,6 @@ body > header,
     margin-right: 0;
     width: 100%;
   }
-}
-
-.subnavigation-with-top-links {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .top-bar-right {

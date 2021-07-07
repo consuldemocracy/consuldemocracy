@@ -31,6 +31,14 @@ $table-header:   #ecf1f6;
 .admin {
   @include admin-layout;
 
+  > header {
+    border-bottom: 1px solid #eee;
+
+    > * {
+      @include full-width-background($adjust-margin: false, $adjust-padding: true);
+    }
+  }
+
   h2 {
     font-weight: 100;
     margin-bottom: $line-height;
@@ -56,17 +64,12 @@ $table-header:   #ecf1f6;
     background: #000;
     color: $white;
 
-    &::before {
-      content: none;
-    }
-
     a {
       line-height: rem-calc($line-height * 1.5);
     }
   }
 
   .top-bar {
-    border-bottom: 1px solid #eee;
     height: auto;
     padding-top: $line-height / 2;
 
@@ -118,7 +121,6 @@ $table-header:   #ecf1f6;
       margin-bottom: 0;
 
       @include breakpoint(medium) {
-        margin-left: $line-height / 2;
         margin-top: 0;
       }
 
