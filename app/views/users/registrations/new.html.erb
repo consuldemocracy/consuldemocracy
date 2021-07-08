@@ -1,15 +1,15 @@
 <% provide :title do %><%= t("devise_views.users.registrations.new.title") %><% end %>
 <h2><%= t("devise_views.users.registrations.new.title") %></h2>
 
-<%= render "devise/omniauth_form", action: "sign_up" %>
+<!-- <%= render "devise/omniauth_form", action: "sign_up" %> -->
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "shared/errors", resource: resource %>
 
-  <p>
+ <!--  <p>
     <%= sanitize(t("devise_views.users.registrations.new.organization_signup",
         signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path))) %>
-  </p>
+  </p> -->
 
   <div class="row">
     <div class="small-12 column">
