@@ -15,14 +15,18 @@
 
 <main>
   <%= render "feeds" %>
-
+<div class="row">
+        <p>texto de prueba</p>
+      </div>
   <div class="row">
+
     <% if @cards.any? %>
       <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
         <h2 class="title"><%= t("welcome.cards.title") %></h2>
 
         <%= render "shared/cards", cards: @cards %>
       </div>
+      
     <% end %>
 
     <% if feed_processes_enabled? %>

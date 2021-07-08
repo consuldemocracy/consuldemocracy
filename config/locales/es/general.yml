@@ -238,7 +238,7 @@ es:
       my_activity_link: Mi contenido
       open_gov: Participa Cantabria
       proposals: Propuestas
-      poll_questions: Encuestas
+      poll_questions: Votaciones
       budgets: Presupuestos participativos
       notification_item:
         new_notifications:
@@ -457,7 +457,7 @@ es:
       progress: Progreso
       resources: Recursos
       community: Comunidad
-      polls: Encuestas
+      polls: Votaciones
       mailing: Correo electrónico
       poster: Póster
       recommended_actions: Acciones recomendadas
@@ -529,7 +529,7 @@ es:
       previous_notifications: Ver notificaciones anteriores
     polls:
       index:
-        title: Encuestas
+        title: Votaciones
         create: Crear encuesta
         count:
           one: Has creado %{count} encuesta.
@@ -602,7 +602,7 @@ es:
       filters:
         current: "Abiertas"
         expired: "Terminadas"
-      title: "Encuestas"
+      title: "Votaciones"
       participate_button: "Participar en esta votación"
       participate_button_expired: "Votación terminada"
       no_geozone_restricted: "Toda la ciudad"
@@ -614,11 +614,11 @@ es:
       cant_answer: "Esta votación no está disponible en tu zona"
       section_header:
         icon_alt: Icono de Votaciones
-        title: Encuestas
+        title: Votaciones
         help: Ayuda sobre las encuestas
       section_footer:
         title: Ayuda sobre las encuestas
-        description: Las encuestas ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
+        description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
       no_polls: "No hay encuestas abiertas."
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
