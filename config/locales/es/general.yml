@@ -18,7 +18,7 @@ es:
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados."
-      user_permission_votes: Participar en las encuestas finales*
+      user_permission_votes: Participar en las votaciones finales*
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
   application:
@@ -533,7 +533,7 @@ es:
         create: Crear encuesta
         count:
           one: Has creado %{count} encuesta.
-          other: Has creado %{count} encuestas.
+          other: Has creado %{count} votaciones.
         links: Enlaces
         additiontal_information: Información adicional
       new:
@@ -551,7 +551,7 @@ es:
         delete: Eliminar encuesta
         alert_notice: Esta acción eliminará la encuesta y todas sus preguntas asociadas.
         success_notice: Encuesta eliminada correctamente
-        unable_notice: No se pueden eliminar encuestas con respuestas
+        unable_notice: No se pueden eliminar votaciones con respuestas
       form:
         name: Título de la encuesta
         add_question: Añadir pregunta
@@ -615,15 +615,15 @@ es:
       section_header:
         icon_alt: Icono de Votaciones
         title: Votaciones
-        help: Ayuda sobre las encuestas
+        help: Ayuda sobre las votaciones
       section_footer:
-        title: Ayuda sobre las encuestas
+        title: Ayuda sobre las votaciones
         description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
-      no_polls: "No hay encuestas abiertas."
+      no_polls: "No hay votaciones abiertas."
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
       already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
-      back: Volver a encuestas
+      back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       comments_tab: Comentarios
       cant_answer_verify: "Por favor %{verify_link} para poder responder."
@@ -912,7 +912,7 @@ es:
       user_permission_verify: "Para poder realizar las siguientes acciones, verifica tu cuenta."
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
-      user_permission_votes: Participar en las encuestas finales*
+      user_permission_votes: Participar en las votaciones finales*
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."
