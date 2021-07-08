@@ -215,8 +215,8 @@ es:
       conditions: Condiciones de uso
       consul: aplicación CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Para asistencia técnica entra en
-      copyright: CONSUL, %{year}
+      contact_us: .
+      copyright: SUM+LAB, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
       open_source: software de código abierto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -236,7 +236,7 @@ es:
       help: Ayuda
       my_account_link: Mi cuenta
       my_activity_link: Mi contenido
-      open_gov: Gobierno abierto
+      open_gov: Participa Cantabria
       proposals: Propuestas
       poll_questions: Votaciones
       budgets: Presupuestos participativos
