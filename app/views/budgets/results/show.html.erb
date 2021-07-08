@@ -30,7 +30,7 @@
   <% if @budget.single_heading? %>
     <div class="small-12 column">
   <% else %>
-    <div class="small-12 medium-3 large-2 column">
+    <div class="small-12 medium-3 column">
       <h3 class="margin-bottom">
         <%= t("budgets.results.heading_selection_title") %>
       </h3>
@@ -45,7 +45,7 @@
       </ul>
     </div>
 
-    <div class="small-12 medium-9 large-10 column">
+    <div class="small-12 medium-9 column">
   <% end %>
 
     <% if @investments.not_winners.any? %>
