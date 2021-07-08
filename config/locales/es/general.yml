@@ -18,7 +18,7 @@ es:
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados."
-      user_permission_votes: Participar en las votaciones finales*
+      user_permission_votes: Participar en las encuestas finales*
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
   application:
@@ -226,7 +226,7 @@ es:
     header:
       administration_menu: Menú
       administration: Administración
-      collaborative_legislation: Legislación colaborativa
+      collaborative_legislation: Laboratorio de ideas
       debates: Debates
       locale: "Idioma:"
       management: Gestión
@@ -238,7 +238,7 @@ es:
       my_activity_link: Mi contenido
       open_gov: Participa Cantabria
       proposals: Propuestas
-      poll_questions: Votaciones
+      poll_questions: Encuestas
       budgets: Presupuestos participativos
       notification_item:
         new_notifications:
@@ -602,7 +602,7 @@ es:
       filters:
         current: "Abiertas"
         expired: "Terminadas"
-      title: "Votaciones"
+      title: "Encuestas"
       participate_button: "Participar en esta votación"
       participate_button_expired: "Votación terminada"
       no_geozone_restricted: "Toda la ciudad"
@@ -614,16 +614,16 @@ es:
       cant_answer: "Esta votación no está disponible en tu zona"
       section_header:
         icon_alt: Icono de Votaciones
-        title: Votaciones
-        help: Ayuda sobre las votaciones
+        title: Encuestas
+        help: Ayuda sobre las encuestas
       section_footer:
-        title: Ayuda sobre las votaciones
-        description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
-      no_polls: "No hay votaciones abiertas."
+        title: Ayuda sobre las encuestas
+        description: Las encuestas ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
+      no_polls: "No hay encuestas abiertas."
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
       already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
-      back: Volver a votaciones
+      back: Volver a encuestas
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       comments_tab: Comentarios
       cant_answer_verify: "Por favor %{verify_link} para poder responder."
@@ -912,7 +912,7 @@ es:
       user_permission_verify: "Para poder realizar las siguientes acciones, verifica tu cuenta."
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
-      user_permission_votes: Participar en las votaciones finales*
+      user_permission_votes: Participar en las encuestas finales*
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."
