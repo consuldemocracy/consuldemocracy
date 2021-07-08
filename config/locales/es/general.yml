@@ -268,10 +268,10 @@ es:
       mark_as_read: Marcar como leída
       mark_as_unread: Marcar como no leída
       notifiable_hidden: Este elemento ya no está disponible.
-  #map:
-  #  title: "Distritos"
-  #  proposal_for_district: "Crea una propuesta para tu distrito"
-  #  start_proposal: Crea una propuesta
+  map:
+    title: "Distritos"
+    proposal_for_district: "Crea una propuesta para tu distrito"
+    start_proposal: Crea una propuesta
   omniauth:
     facebook:
       sign_in: Entra con Facebook
