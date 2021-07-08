@@ -1,10 +1,9 @@
 .sdg-goals-index {
+  @include grid-column-gutter;
 
   .section-header {
 
     h1 {
-      @include grid-column-gutter;
-
       &::before {
         @extend %font-icon;
 
@@ -21,7 +20,6 @@
     $spacing: 1.5%;
 
     @include sdg-goal-list($spacing);
-    @include grid-column-gutter;
 
     margin-left: auto;
     margin-right: auto;
@@ -41,7 +39,6 @@
   }
 
   .sdg-phase {
-    @include grid-column-gutter;
 
     .cards-container {
       @include grid-row-nest;

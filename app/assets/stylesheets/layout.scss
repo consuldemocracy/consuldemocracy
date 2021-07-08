@@ -2617,6 +2617,10 @@ table {
   }
 }
 
+.home-page .feeds-participation {
+  @include grid-column-gutter;
+}
+
 .feeds-list {
 
   a {
