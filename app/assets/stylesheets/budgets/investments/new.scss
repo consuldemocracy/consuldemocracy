@@ -2,13 +2,6 @@
   $border-width: 4px;
   @include grid-column-gutter;
 
-  > :first-child:not(.print-info) {
-    @include full-width-background($adjust-padding: true);
-    background: $light;
-    margin-top: -$line-height;
-    padding-top: $line-height;
-  }
-
   h1 {
     margin-bottom: 0;
   }
@@ -16,7 +9,6 @@
   header {
     @include has-fa-icon(building, regular, after);
     align-items: center;
-    background-color: $body-background;
     border: $border-width solid;
     color: $brand-secondary;
     border-bottom-right-radius: rem-calc(12);
