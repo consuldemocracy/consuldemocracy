@@ -222,7 +222,6 @@ ca:
     header:
       administration_menu: Menú
       administration: Administrar
-      available_locales: Idiomes disponibles
       collaborative_legislation: processos legislatius
       debates: Debats
       locale: "Idioma:"
