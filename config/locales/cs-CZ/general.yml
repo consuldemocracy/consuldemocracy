@@ -180,7 +180,6 @@ cs:
     header:
       administration_menu: Správce
       administration: Administrace
-      available_locales: Dostupné jazyky
       collaborative_legislation: Legislativní procesy
       debates: Debaty
       locale: "Jazyk:"
