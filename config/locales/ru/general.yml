@@ -220,7 +220,6 @@ ru:
     header:
       administration_menu: Админ
       administration: Администрирование
-      available_locales: Доступные языки
       collaborative_legislation: Процесс законотворчества
       debates: Обсуждения проблем
       locale: "Язык:"
