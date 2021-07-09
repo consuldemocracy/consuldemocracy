@@ -186,7 +186,6 @@ nl:
     header:
       administration_menu: Beheerder
       administration: Administration
-      available_locales: Beschikbare talen
       collaborative_legislation: Wetgevingsproces
       debates: Debatten
       locale: "Taal:"
