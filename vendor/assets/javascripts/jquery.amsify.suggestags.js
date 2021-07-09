@@ -506,7 +506,11 @@ var AmsifySuggestags;
 			return listHTML;
 		},
 
-		addTag : function(value, animate=true) {
+		addTag : function(value, animate) {
+			if(animate === undefined) {
+				animate = true;
+			}
+
 			if(!value) {
                 return;
 			}
@@ -624,7 +628,11 @@ var AmsifySuggestags;
             }
 		},
 
-		removeTag: function(value, animate=true) {
+		removeTag: function(value, animate) {
+			if(animate === undefined) {
+				animate = true;
+			}
+
 			var _self = this;
 			$findTags = $(this.selectors.inputArea).find('[data-val="'+value+'"]');
 			if($findTags.length) {
