@@ -19,7 +19,7 @@
         getPopupContent, latitudeInputSelector, longitudeInputSelector, map, mapAttribution, mapCenterLatLng,
         mapCenterLatitude, mapCenterLongitude, mapTilesProvider, marker, markerIcon, markerLatitude,
         markerLongitude, moveOrPlaceMarker, openMarkerPopup, removeMarker, removeMarkerSelector,
-        updateFormfields, zoom, zoomInputSelector;
+        updateFormfields, zoom, zoomInputSelector, mapOptions;
       App.Map.cleanInvestmentCoordinates(element);
       mapTilesProvider = $(element).data("map-tiles-provider");
       mapAttribution = $(element).data("map-tiles-provider-attribution");
@@ -113,11 +113,18 @@
           }
         });
       };
+      mapOptions = function() {
+        if (L.Browser.mobile) {
+          return { dragging: false, tap: false };
+        } else {
+          return { scrollWheelZoom: false };
+        }
+      };
       getPopupContent = function(data) {
         return "<a href='/budgets/" + data.budget_id + "/investments/" + data.investment_id + "'>" + data.investment_title + "</a>";
       };
       mapCenterLatLng = new L.LatLng(mapCenterLatitude, mapCenterLongitude);
-      map = L.map(element.id).setView(mapCenterLatLng, zoom);
+      map = L.map(element.id, mapOptions()).setView(mapCenterLatLng, zoom);
       App.Map.maps.push(map);
       L.tileLayer(mapTilesProvider, {
         attribution: mapAttribution
