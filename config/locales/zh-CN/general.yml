@@ -180,7 +180,6 @@ zh-CN:
     header:
       administration_menu: 管理
       administration: 管理
-      available_locales: 可用语言
       collaborative_legislation: 立法进程
       debates: 辩论
       locale: "语言："
