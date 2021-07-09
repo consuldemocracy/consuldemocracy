@@ -185,7 +185,6 @@ sq:
     header:
       administration_menu: Admin
       administration: Administrim
-      available_locales: Gjuhët në dispozicion
       collaborative_legislation: "\nProceset e legjislacionit"
       debates: Debate
       locale: "Gjuha:"
