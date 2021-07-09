@@ -222,7 +222,6 @@ da:
     header:
       administration_menu: Admin
       administration: Administration
-      available_locales: Sprog
       collaborative_legislation: Kollaborativ lovgivning
       debates: Debatforum
       locale: "Sprog:"
