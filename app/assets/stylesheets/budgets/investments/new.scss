@@ -34,11 +34,29 @@
       @include brand-background($brand-secondary);
       @include background-till-left-of-screen;
       @include has-fa-icon(chart-pie, solid, after);
-      align-items: center;
-      display: flex;
       flex: 1;
       font-size: rem-calc(36);
       padding: $line-height * 2 0;
+
+      @include breakpoint(small) {
+        &::after {
+          display: none;
+        }
+      }
+
+      @include breakpoint(medium) {
+        padding-right: 4em;
+
+        &::after {
+          display: block;
+          font-size: 2em;
+          margin-right: rem-calc(60);
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
 
       @include breakpoint(large) {
         clip-path: polygon(
@@ -56,18 +74,7 @@
         height: calc(100% + 2 * #{$border-width});
       }
 
-      &::after {
-        display: none;
-
-        @include breakpoint(medium) {
-          display: block;
-          font-size: 2em;
-          margin-left: auto;
-          margin-right: rem-calc(60);
-        }
-      }
-
-      span span {
+      span {
         display: block;
         font-size: 0.75em;
         margin-top: $line-height / 2;

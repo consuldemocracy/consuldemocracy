@@ -3,17 +3,15 @@
 
   <header>
     <h1>
-      <span>
-        <%= t("budgets.investments.form.title") %>
+      <%= t("budgets.investments.form.title") %>
 
-        <% if @budget.single_heading? %>
-          <span>
-            <%= t("budgets.investments.form.subtitle",
-                  heading: @budget.headings.first.name,
-                  price: @budget.formatted_heading_price(@budget.headings.first)) %>
-          </span>
-        <% end %>
-      </span>
+      <% if @budget.single_heading? %>
+        <span>
+          <%= t("budgets.investments.form.subtitle",
+                heading: @budget.headings.first.name,
+                price: @budget.formatted_heading_price(@budget.headings.first)) %>
+        </span>
+      <% end %>
     </h1>
   </header>
 
