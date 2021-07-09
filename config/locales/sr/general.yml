@@ -231,7 +231,6 @@ sr:
     header:
       administration_menu: Menu
       administration: Администрација
-      available_locales: Доступни језици
       collaborative_legislation: Заједнички закон
       debates: Расправе
       locale: "Језик:"
