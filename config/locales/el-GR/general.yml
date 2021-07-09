@@ -209,7 +209,6 @@ el:
     header:
       administration_menu: Μενού
       administration: Διαχείριση
-      available_locales: Διαθέσιμες γλώσσες
       collaborative_legislation: Συνεργατική νομοθεσία
       debates: Συζητήσεις
       locale: "Γλώσσα:"
