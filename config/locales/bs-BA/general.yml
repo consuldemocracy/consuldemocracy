@@ -207,7 +207,6 @@ bs:
     header:
       administration_menu: Admin
       administration: Administracija
-      available_locales: Dostupni jezici
       collaborative_legislation: Legislativna saradnja
       debates: Debate
       locale: "Jezik:"
