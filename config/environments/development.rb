@@ -76,7 +76,7 @@ Rails.application.configure do
     config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-      :address              => 'smtp.mailgun.org',
+      :address              => 'smtp.mailgun.or',
       :port                 => 587,
       :domain               => 'sandboxf47e839bc69243709ab63f9f779d6a61.mailgun.org',
       :user_name            => 'postmaster@sandboxf47e839bc69243709ab63f9f779d6a61.mailgun.org',
