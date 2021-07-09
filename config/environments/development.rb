@@ -77,10 +77,10 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
       :address              => 'smtp.mailgun.org',
-      :port                 => 2525,
-      :domain               => 'sandbox607393a9d5a7463bbe7b302438ad8b3e.mailgun.org',
-      :user_name            => 'postmaster@sandbox607393a9d5a7463bbe7b302438ad8b3e.mailgun.org',
-      :password             => '7e6cfdff184cc753e0f3ce7d680a75e3-c4d287b4-e774f4b9',
+      :port                 => 587,
+      :domain               => 'sandboxf47e839bc69243709ab63f9f779d6a61.mailgun.org',
+      :user_name            => 'postmaster@sandboxf47e839bc69243709ab63f9f779d6a61.mailgun.org',
+      :password             => 'a6047c2d78b5eaddae6072940e68927d-c4d287b4-a10106e4',
       :authentication => :plain,
       :enable_starttls_auto => true,
       :ssl => false
