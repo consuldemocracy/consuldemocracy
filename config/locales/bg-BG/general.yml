@@ -223,7 +223,6 @@ bg:
     header:
       administration_menu: Меню
       administration: Администрация
-      available_locales: Налични езици
       collaborative_legislation: Съвместно законодателство
       debates: Дискусии
       locale: "Език:"
