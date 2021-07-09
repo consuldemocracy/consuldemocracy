@@ -240,7 +240,6 @@ uk-UA:
     header:
       administration_menu: Меню
       administration: Адміністрування
-      available_locales: Доступні мови
       collaborative_legislation: Спільна законотворчість
       debates: Обговорення
       locale: "Мова:"
