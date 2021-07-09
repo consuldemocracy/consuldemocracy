@@ -1,8 +1,7 @@
-<%= render "shared/globalize_locales", resource: proposal %>
-
 <%= translatable_form_for(proposal, url: url) do |f| %>
-
   <%= render "shared/errors", resource: proposal %>
+
+  <%= render "shared/globalize_locales", resource: proposal %>
 
   <div class="row column">
     <%= f.translatable_fields do |translations_form| %>
