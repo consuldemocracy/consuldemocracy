@@ -35,11 +35,6 @@
     @include grid-column-gutter;
   }
 
-  .sdg-related-list-selector {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   [type="submit"] {
     @include regular-button;
     font-size: map-get($button-sizes, large);
