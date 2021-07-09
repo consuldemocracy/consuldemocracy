@@ -7,7 +7,7 @@ class ProposalsController < ApplicationController
   include MapLocationAttributes
   include Translatable
 
-  before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
+  before_action :load_categories, only: [:index, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :destroy_map_location_association, only: :update
