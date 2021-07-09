@@ -241,7 +241,6 @@ ar:
     header:
       administration_menu: المدير
       administration: الإدارة
-      available_locales: اللغات المتوفرة
       collaborative_legislation: العمليات التشريعية
       debates: النقاشات
       locale: "لغة:"
