@@ -231,7 +231,6 @@ hr:
     header:
       administration_menu: Administrator
       administration: Administracija
-      available_locales: Dostupni jezici
       collaborative_legislation: Javno savjetovanje
       debates: Rasprave
       locale: "Jezik:"
