@@ -185,7 +185,6 @@ eu:
     header:
       administration_menu: Admin
       administration: Administrazioa
-      available_locales: 'Hizkuntzak:'
       collaborative_legislation: Legegintza prosezuak
       debates: Eztabaidak
       locale: "Hizkuntza:"
