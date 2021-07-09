@@ -223,7 +223,6 @@ pt-BR:
     header:
       administration_menu: Admin
       administration: Administração
-      available_locales: Idiomas disponíveis
       collaborative_legislation: Processos legislativos
       debates: Debates
       locale: "Idioma:"
