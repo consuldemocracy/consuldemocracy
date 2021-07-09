@@ -211,7 +211,6 @@ gl:
     header:
       administration_menu: Admin
       administration: Administración
-      available_locales: Idiomas dispoñibles
       collaborative_legislation: Procesos lexislativos
       debates: Debates
       locale: "Idioma:"
