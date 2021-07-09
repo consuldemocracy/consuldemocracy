@@ -235,7 +235,6 @@ ro:
     header:
       administration_menu: Meniu
       administration: Administrare
-      available_locales: Limbi disponibile
       collaborative_legislation: Legislație colaborativă
       debates: Dezbateri
       locale: "Limbă:"
