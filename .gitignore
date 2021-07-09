@@ -21,7 +21,6 @@
 /config/secrets.yml
 /config/deploy-secrets.yml
 /config/maintenance.yml
-/config/environments/*.rb
 
 /coverage
 
