@@ -633,7 +633,6 @@ describe "Budget Investments" do
 
       click_link("Edit", match: :first)
       fill_in "Title", with: "Park improvements"
-      check "budget_investment_terms_of_service"
 
       click_button "Update Investment"
 
@@ -651,7 +650,6 @@ describe "Budget Investments" do
       visit user_path(daniel, filter: "budget_investments")
       click_link("Edit", match: :first)
       fill_in "Title", with: ""
-      check "budget_investment_terms_of_service"
 
       click_button "Update Investment"
 

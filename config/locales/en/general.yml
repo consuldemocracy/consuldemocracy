@@ -774,6 +774,8 @@ en:
         zero: "0 languages in use"
         one: "1 language in use"
         other: "%{count} languages in use"
+    optional: "Optional"
+    required: "Required"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
