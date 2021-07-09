@@ -213,7 +213,6 @@ fr:
     header:
       administration_menu: Admin
       administration: Administration
-      available_locales: Langues disponibles
       collaborative_legislation: Processus législatifs
       debates: Débats
       locale: "Langue :"
