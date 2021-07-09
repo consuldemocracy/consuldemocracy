@@ -222,7 +222,6 @@ oc:
     header:
       administration_menu: Menu
       administration: Administrar
-      available_locales: d'Idiòmas disponibles
       collaborative_legislation: de procèsses legislatius
       debates: De debats
       locale: "Idiòma:"
