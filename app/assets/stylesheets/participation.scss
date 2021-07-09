@@ -530,6 +530,7 @@
   }
 
   .filter-subnav {
+    @include full-width-background;
     background: $highlight;
     margin-bottom: $line-height;
     padding-top: $line-height / 4;
@@ -900,8 +901,9 @@
 
 .help-header,
 .section-header {
+  @include full-width-background;
+  @include full-width-border(bottom, 1px solid #eee);
   background: #fafafa;
-  border-bottom: 1px solid #eee;
   margin-top: -$line-height;
   margin-bottom: $line-height;
   padding-bottom: $line-height / 2;
@@ -1019,6 +1021,15 @@
   }
 }
 
+.search-results-summary {
+  @include full-width-background;
+  background: $highlight;
+  margin-bottom: $line-height;
+  margin-top: -$line-height;
+  padding-bottom: $line-height;
+  padding-top: $line-height;
+}
+
 // 05. Featured
 // ------------
 
@@ -1133,6 +1144,7 @@
 
 .budget-header {
   @extend %brand-background;
+  @include full-width-background;
   margin-top: -$line-height;
   min-height: $line-height * 25;
   padding-bottom: $line-height;
@@ -1202,8 +1214,8 @@
 }
 
 .jumbo-budget {
+  @include full-width-border(bottom, 2px solid $border);
   background: $body-background;
-  border-bottom: 2px solid $border;
 
   &.budget-heading {
     min-height: $line-height * 10;
@@ -1434,6 +1446,7 @@
 .budgets-stats {
 
   .header {
+    @include full-width-background;
     background: $highlight;
   }
 
@@ -1554,12 +1567,12 @@
 // ----------------------
 
 .polls-show-header {
+  @include full-width-background;
   background: #fafafa;
 }
 
 .poll-more-info,
 .poll-more-info-answers {
-  border-top: 1px solid #eee;
 
   .read-more {
     margin-bottom: $line-height;
@@ -1571,9 +1584,15 @@
   }
 }
 
+.poll-more-info {
+  border-top: 1px solid #eee;
+}
+
 .poll-more-info-answers {
+  @include full-width-background;
+  @include full-width-border(top, 1px solid #eee);
+  @include full-width-border(bottom, 1px solid #eee);
   background: #fafafa;
-  border-bottom: 1px solid #eee;
 
   .column:nth-child(odd) {
     border-right: 2px solid;

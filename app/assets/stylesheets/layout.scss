@@ -52,6 +52,13 @@ body {
   font-size: $base-font-size;
   min-height: 100%;
 
+  &.public {
+    @include breakpoint($global-width) {
+      margin-left: $body-margin;
+      margin-right: $body-margin;
+    }
+  }
+
   > .wrapper {
     flex-grow: 1;
   }
@@ -473,8 +480,7 @@ a {
 
 body > header,
 .wrapper > header {
-  @extend %brand-background;
-  border-bottom: 1px solid $border;
+  @include grid-column-gutter;
   margin-bottom: $line-height;
 
   @include breakpoint(small down) {
@@ -507,28 +513,46 @@ body > header,
   }
 
   .external-links {
-    float: none;
     padding: rem-calc(6) 0;
     text-align: center;
+  }
+}
 
-    @include breakpoint(medium) {
-      float: right;
-    }
+.public > .wrapper > header,
+.proposal-dashboard > header {
+  @include full-width-border(bottom, 1px solid $border);
+
+  > * {
+    @include full-width-background($adjust-padding: true);
+  }
+
+  .top-bar {
+    @extend %brand-background;
+  }
+}
+
+.proposal-dashboard > header {
+
+  @include breakpoint($global-width) {
+    margin-left: $body-margin;
+    margin-right: $body-margin;
   }
 }
 
 .top-bar {
   background-color: inherit;
-  padding-bottom: 0;
-  padding-top: 0;
+  padding: 0;
 
   @include breakpoint(medium) {
-    padding: 0;
+    justify-content: flex-start;
+
+    .top-bar-title {
+      flex-grow: 1;
+    }
   }
 
   ul {
     background: none;
-    padding-right: rem-calc(15);
   }
 
   .menu > li {
@@ -588,6 +612,7 @@ body > header,
 
   .top-bar-title {
     line-height: $line-height;
+    margin-right: 0;
 
     a img {
       height: rem-calc(48);
@@ -635,10 +660,13 @@ body > header,
 
 .top-links {
   background: $dark;
+  color: $white;
+  display: flex;
+  flex-wrap: wrap;
   font-size: $small-font-size;
 
   > :first-child {
-    @include grid-column-gutter;
+    flex-grow: 1;
   }
 
   a {
@@ -672,11 +700,18 @@ body > header,
 }
 
 .subnavigation {
+  display: flex;
+  flex-direction: column;
 
   @include breakpoint(medium) {
     background: $body-background;
     color: $text;
+    flex-direction: row;
     padding-bottom: 0;
+
+    > :first-child {
+      flex-grow: 1;
+    }
   }
 
   ul {
@@ -709,12 +744,17 @@ body > header,
       }
     }
 
+    &:focus {
+      z-index: 1;
+    }
+
     &.is-active {
       color: #fff;
 
       @include breakpoint(medium) {
         @include brand-text;
         border-bottom: 2px solid;
+        margin-bottom: 1px;
       }
     }
   }
@@ -854,6 +894,10 @@ footer {
   margin-top: $line-height * 2;
   padding-bottom: $line-height;
   padding-top: $line-height;
+
+  .public & {
+    @include full-width-background;
+  }
 }
 
 .subfooter {
@@ -2029,9 +2073,14 @@ table {
 // -----------
 
 .banner {
+  @include full-width-background;
+
+  .debates-list &::before,
+  .proposals-list &::before {
+    content: none;
+  }
 
   a > * {
-    @include grid-row;
     padding: 0 rem-calc(16);
 
     &:empty {
@@ -2188,8 +2237,10 @@ table {
 }
 
 .recommended-index {
+  @include full-width-background;
+  @include full-width-border(bottom, 1px solid #eee);
+  @include full-width-border(top, 1px solid #fafafa);
   background: #fafafa;
-  border-bottom: 1px solid #eee;
   margin-bottom: $line-height;
   margin-top: rem-calc(-25);
   padding: $line-height 0 $line-height / 2;
@@ -2556,7 +2607,6 @@ table {
       display: inline-block;
       border-top: 4px solid $brand;
       margin-bottom: 0;
-      min-width: rem-calc(240);
       padding: $line-height / 2 0;
     }
   }
@@ -2565,6 +2615,10 @@ table {
     height: 100%;
     width: 100%;
   }
+}
+
+.home-page .feeds-participation {
+  @include grid-column-gutter;
 }
 
 .feeds-list {

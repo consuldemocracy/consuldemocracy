@@ -1,12 +1,9 @@
 .budget-phases {
+  @include grid-column-gutter;
+  @include full-width-background;
+  @include full-width-border(top, 2px solid $border);
   background: $light;
-  border-top: 2px solid $border;
   padding-bottom: $line-height * 2;
-
-  > * {
-    @include grid-column-gutter;
-    @include grid-row;
-  }
 
   h2 {
     font-size: $base-font-size;
@@ -182,10 +179,12 @@
     margin-top: $line-height;
 
     @include breakpoint(medium) {
-      @include grid-row-nest;
+      $gap: rem-calc(map-get($grid-column-gutter, "medium"));
+      display: flex;
+      margin-left: -$gap;
 
       > * {
-        @include grid-column;
+        margin-left: $gap;
         width: 50%;
       }
 

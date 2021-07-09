@@ -1,14 +1,9 @@
 .sdg-goal-show {
-  @include grid-row;
-
-  > :not(.feeds-participation) {
-    @include grid-column-gutter;
-  }
+  @include grid-column-gutter;
 
   .sdg-goal {
 
     > header {
-      @include grid-column-gutter;
       align-items: center;
       color: #fff;
       display: flex;
@@ -56,6 +51,7 @@
 
     @each $code, $color in $sdg-colors {
       &.sdg-goal-#{$code} > header {
+        @include full-width-background($adjust-padding: true);
         background-color: $color;
 
         &::after {

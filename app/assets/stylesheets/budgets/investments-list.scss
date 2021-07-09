@@ -1,5 +1,6 @@
 .investments-list {
-  @include flex-grid-row;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: $line-height;
 
   > header {
