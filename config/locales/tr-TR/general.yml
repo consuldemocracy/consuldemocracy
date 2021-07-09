@@ -226,7 +226,6 @@ tr:
     header:
       administration_menu: Menü
       administration: Yönetim
-      available_locales: Mevcut diller
       collaborative_legislation: Katılımcı mevzuat
       debates: Tartışmalar
       locale: "Dil:"
