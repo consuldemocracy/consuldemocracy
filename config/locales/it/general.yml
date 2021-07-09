@@ -206,7 +206,6 @@ it:
     header:
       administration_menu: Admin
       administration: Amministrazione
-      available_locales: Lingue disponibili
       collaborative_legislation: Procedimenti legislativi
       debates: Dibattiti
       locale: "Lingua:"
