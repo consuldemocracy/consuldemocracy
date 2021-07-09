@@ -175,7 +175,6 @@ id:
     header:
       administration_menu: Admin
       administration: Administrasi
-      available_locales: Bahasa yang tersedia
       collaborative_legislation: Undang-undang proses
       debates: Perdebatan
       locale: "Bahasa:"
