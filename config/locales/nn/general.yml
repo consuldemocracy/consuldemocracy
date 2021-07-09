@@ -217,7 +217,6 @@ nn:
     header:
       administration_menu: Meny
       administration: Administrasjon
-      available_locales: Tilgjengelige språk
       collaborative_legislation: Deltakende lovgivning
       debates: Debatter
       locale: "Språk:"
