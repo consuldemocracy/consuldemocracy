@@ -119,7 +119,6 @@ fi:
     header:
       administration_menu: Järjestelmänvalvoja
       administration: Järjestelmänvalvonta
-      available_locales: Saatavilla olevat kielet
       locale: "Kieli:"
       help: Apua
       my_account_link: Tilini
