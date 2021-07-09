@@ -196,7 +196,6 @@ pl:
     header:
       administration_menu: Administrator
       administration: Administracja
-      available_locales: Dostępne wersje językowe
       collaborative_legislation: Procesy legislacyjne
       debates: Debaty
       locale: "Język:"
