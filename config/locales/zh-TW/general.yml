@@ -180,7 +180,6 @@ zh-TW:
     header:
       administration_menu: 管理員
       administration: 管理
-      available_locales: 可用語言
       collaborative_legislation: 立法進程
       debates: 辯論
       locale: "語言："
