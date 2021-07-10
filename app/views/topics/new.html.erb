@@ -1,12 +1,9 @@
-<div class="row">
+<main class="topic-new">
+  <%= back_link_to community_path(@community) %>
 
-  <div class="small-12 medium-9 column">
-    <%= back_link_to community_path(@community) %>
-    <h1><%= t("community.topic.create") %></h1>
-    <%= render "form" %>
-  </div>
+  <h1><%= t("community.topic.create") %></h1>
 
-  <div class="small-12 medium-3 column">
+  <aside>
     <h2><%= t("community.topic.sidebar.recommendations_title") %></h2>
 
     <ul class="recommendations">
@@ -14,5 +11,7 @@
       <li><%= t("community.topic.sidebar.recommendation_two") %></li>
       <li><%= t("community.topic.sidebar.recommendation_three") %></li>
     </ul>
-  </div>
-</div>
+  </aside>
+
+  <%= render "form" %>
+</main>

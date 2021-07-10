@@ -71,7 +71,9 @@ main {
   &.debate-new,
   &.proposal-new,
   &.sdg-goals-index,
-  &.sdg-goal-show {
+  &.sdg-goal-show,
+  &.topic-edit,
+  &.topic-new {
     @include grid-column-gutter;
   }
 }
