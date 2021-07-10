@@ -3,7 +3,7 @@ module Header
 
   def header(&block)
     provide(:title) do
-      "#{t("#{namespace}.header.title")} - #{title}"
+      "#{t("#{namespace}.header.title")} - #{title} - #{setting["org_name"]}"
     end
 
     tag.header do
