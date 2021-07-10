@@ -6,71 +6,93 @@
   }
 
   header {
-    @include has-fa-icon(building, regular, after);
-    align-items: center;
-    border: $border-width solid;
-    color: $brand-secondary;
+    $icon-size: $line-height * 4;
+    $padding-right: rem-calc(20);
+    $icon-size-with-padding: $icon-size + $padding-right;
+    $polygon-size: $icon-size / 2;
+    @include background-till-left-of-screen;
+    @include brand-background($brand-secondary);
+    border: $border-width solid $brand-secondary;
     border-bottom-right-radius: rem-calc(12);
     border-top-right-radius: rem-calc(12);
-    display: flex;
     margin-top: $line-height * 2;
+    padding: $line-height * 2 0;
+    position: relative;
 
-    @include breakpoint(large) {
-      padding-right: $line-height;
+    @include breakpoint(small) {
+      &::after {
+        display: none;
+      }
     }
 
-    &::after {
-      display: none;
+    @include breakpoint(large) {
+      $rounding-error: 6px;
+      padding-right: $icon-size-with-padding;
+      background-image: linear-gradient(
+        to right,
+        #{$brand-secondary} 0,
+        #{$brand-secondary} calc(100% - #{$icon-size-with-padding} - 1px),
+        #{$body-background} calc(100% - #{$icon-size-with-padding}),
+        #{$body-background} 100%
+      );
 
-      @include breakpoint(large) {
+      &::after {
+        background: $body-background;
+        content: "";
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% calc(100% + 1px), 0 50%);
         display: block;
-        font-size: rem-calc(100);
-        margin-left: $line-height;
+        position: absolute;
+        right: calc(#{$icon-size-with-padding} - #{$rounding-error});
+        top: 0;
+        height: 100%;
+        width: $polygon-size;
       }
+    }
+
+    &::before {
+      top: -$border-width;
+      height: calc(100% + #{$border-width * 2});
     }
 
     h1 {
-      @include brand-background($brand-secondary);
-      @include background-till-left-of-screen;
+      $heading-icon-size: $icon-size * 0.85;
+      @include has-fa-icon(building, regular);
       @include has-fa-icon(chart-pie, solid, after);
-      flex: 1;
       font-size: rem-calc(36);
-      padding: $line-height * 2 0;
 
       @include breakpoint(small) {
-        &::after {
+        &::after,
+        &::before {
           display: none;
-        }
-      }
-
-      @include breakpoint(medium) {
-        padding-right: 4em;
-
-        &::after {
-          display: block;
-          font-size: 2em;
-          margin-right: rem-calc(60);
           position: absolute;
-          right: 0;
           top: 50%;
           transform: translateY(-50%);
         }
       }
 
-      @include breakpoint(large) {
-        clip-path: polygon(
-          -100vw -#{$border-width},
-          100% -#{$border-width},
-          calc(100% - #{rem-calc(20)}) 50%,
-          100% calc(100% + #{$border-width}),
-          -100vw calc(100% + #{$border-width})
-        );
-        font-size: rem-calc(44);
+      @include breakpoint(medium) {
+        padding-right: $heading-icon-size * 2.5;
+
+        &::after {
+          display: block;
+          font-size: $heading-icon-size;
+          right: $heading-icon-size;
+        }
       }
 
-      &::before {
-        top: -$border-width;
-        height: calc(100% + 2 * #{$border-width});
+      @include breakpoint(large) {
+        font-size: rem-calc(44);
+
+        &::after {
+          right: $icon-size-with-padding + $polygon-size + $heading-icon-size / 2;
+        }
+
+        &::before {
+          color: $brand-secondary;
+          display: block;
+          font-size: $icon-size;
+          right: $padding-right;
+        }
       }
 
       span {
