@@ -603,6 +603,8 @@ it:
       title: Raccomandazioni
       see_more: Visualizza ulteriori raccomandazioni
       hide: Nascondi raccomandazioni
+    optional: "Opzionale"
+    required: "Obbligatorio"
   social:
     facebook: "Facebook di %{org}"
     twitter: "Twitter di %{org}"
