@@ -66,6 +66,12 @@ body {
 
 main {
   display: block;
+
+  &.budget-investment-new,
+  &.sdg-goals-index,
+  &.sdg-goal-show {
+    @include grid-column-gutter;
+  }
 }
 
 h1,
