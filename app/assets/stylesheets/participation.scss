@@ -245,16 +245,10 @@
 // ---------------------
 
 .debate-new,
-.proposal-new,
-.budget-investment-form,
-.document-form,
-.topic-new,
-.topic-form {
+.proposal-new {
 
   .icon-debates,
-  .icon-proposals,
-  .icon-budget,
-  .icon-image {
+  .icon-proposals {
     font-size: rem-calc(50);
     line-height: $line-height;
     opacity: 0.5;
@@ -264,13 +258,8 @@
     color: $debates;
   }
 
-  .icon-proposals,
-  .icon-image {
+  .icon-proposals {
     color: $proposals;
-  }
-
-  .icon-budget {
-    color: $budget;
   }
 }
 
@@ -297,10 +286,7 @@
   }
 }
 
-.proposal-new,
-.document-form,
-.topic-form,
-.topic-new {
+.proposal-new {
 
   .recommendations li::before {
     color: $proposals;
