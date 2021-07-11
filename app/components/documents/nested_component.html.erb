@@ -1,5 +1,5 @@
-<div class="documents-list">
-  <%= f.label :documents, t("documents.form.title") %>
+<fieldset class="documents-list">
+  <legend><%= t("documents.form.title") %></legend>
   <p class="help-text"><%= note %></p>
 
   <div id="nested-documents" data-max-documents-allowed="<%= max_documents_allowed %>">
@@ -21,4 +21,4 @@
   <div id="max-documents-notice" class="max-documents-notice callout primary text-center <%= "hide" unless max_documents_allowed? %>">
     <%= sanitize(t("documents.max_documents_allowed_reached")) %>
   </div>
-</div>
+</fieldset>
