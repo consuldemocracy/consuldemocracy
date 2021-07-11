@@ -41,7 +41,7 @@
 
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
-        <%= render "/images/nested_image", imageable: budget, f: f %>
+        <%= render "/images/nested_image", f: f %>
         <p class="help-text"><%= t("admin.budgets.edit.image_description") %></p>
       </div>
     <% end %>
