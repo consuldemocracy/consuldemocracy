@@ -13,7 +13,7 @@ class Images::NestedComponent < ApplicationComponent
       f.object
     end
 
-    def imageables_note
+    def note
       t "images.form.note", accepted_content_types: imageable_humanized_accepted_content_types,
         max_file_size: imageable_max_file_size
     end
