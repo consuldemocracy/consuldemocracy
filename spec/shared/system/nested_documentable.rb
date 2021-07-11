@@ -320,7 +320,7 @@ end
 def documentable_attach_new_file(path, success = true)
   click_link "Add new document"
 
-  document = all("#new_document").last
+  document = all(".document").last
   document_input = document.find("input[type=file]", visible: :hidden)
   attach_file(document_input[:id], path, make_visible: true)
 
