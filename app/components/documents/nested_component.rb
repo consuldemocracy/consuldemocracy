@@ -23,6 +23,6 @@ class Documents::NestedComponent < ApplicationComponent
     end
 
     def max_documents_allowed?
-      documentable.documents.count >= documentable.class.max_documents_allowed
+      documentable.documents.count >= max_documents_allowed
     end
 end
