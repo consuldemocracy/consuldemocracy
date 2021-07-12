@@ -76,7 +76,6 @@
     buildData: function(data, input) {
       var wrapper;
       wrapper = $(input).closest(".direct-upload");
-      data.input = input;
       data.wrapper = wrapper;
       data.progressBar = $(wrapper).find(".progress-bar-placeholder");
       data.errorContainer = $(wrapper).find(".attachment-errors");
@@ -133,11 +132,7 @@
         },
         complete: function() {
           App.Documentable.unlockUploads();
-          if ($(data.input).data("nested-document") === true) {
-            $(data.wrapper).remove();
-          } else {
-            $(data.wrapper).find("a.remove-cached-attachment").remove();
-          }
+          $(data.wrapper).remove();
         }
       });
     },

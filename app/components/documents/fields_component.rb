@@ -39,10 +39,7 @@ class Documents::FieldsComponent < ApplicationComponent
         label_options: { class: "button hollow #{klass}" },
         accept: accepted_content_types_extensions,
         class: "js-document-attachment",
-        data: {
-          url: direct_upload_path,
-          nested_document: true
-        }
+        data: { url: direct_upload_path }
     end
 
     def direct_upload_path
