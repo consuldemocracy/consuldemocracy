@@ -136,6 +136,7 @@ ro:
           single: "Grupurile sunt făcute pentru a organiza rubricile, deoarece acest buget va conține doar o singură rubrică, același nume poate fi utilizat deoarece nu va apărea nicăieri. Puteți continua cu pasul următor."
         headings:
           multiple: "Rubricile sunt făcute să împartă banii din bugetul participativ. Aici puteți adăuga rubrici pentru acest grup și puteți atribui suma de bani care va fi folosită pentru fiecare rubrică."
+          single: "Rubricile sunt făcute să împartă banii din bugetul participativ. Deoarece acest buget va conține doar o singură rubrică, aici puteți stabili banii care vor fi cheltuiți în acest buget participativ."
         phases: "Bugetele participative au faze diferite. Aici puteți activa sau dezactiva fazele și, de asemenea, puteți personaliza fiecare fază individual."
       winners:
         calculate: Calculați Investițiile Câștigătoare
@@ -190,6 +191,8 @@ ro:
         submit: "Salvează rubrică"
       index:
         back: "Înapoi la grupuri"
+        new_button: "Adaugă rubrică nouă"
+        title: "%{budget} / %{group} rubrici"
     budget_phases:
       edit:
         title: "Editează etapă"
@@ -197,6 +200,7 @@ ro:
         duration: "Durata etapei"
         duration_description: "Perioada de timp în care va fi activă această etapă."
         enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
+        image_description: "Dacă o imagine este încărcată, ea va fi afișată lângă descrierea acestei etape."
         name_help_text: "Acesta este titlul pe care utilizatorii îl vor citi în antet de fiecare când etapa va fi activă."
         save_changes: Salvează modificări
     budget_investments:
