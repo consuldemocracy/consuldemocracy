@@ -131,6 +131,9 @@ ro:
         success_notice: Buget șters cu succes
         unable_notice: Nu puteți șterge un buget care are investiții asociate
         unable_notice_polls: Nu puteți șterge un buget care are un sondaj asociat
+      new:
+        title_multiple: Buget nou pentru mai multe rubrici
+        title_single: Buget nou pentru o singură rubrică
       help:
         groups:
           single: "Grupurile sunt făcute pentru a organiza rubricile, deoarece acest buget va conține doar o singură rubrică, același nume poate fi utilizat deoarece nu va apărea nicăieri. Puteți continua cu pasul următor."
@@ -322,6 +325,8 @@ ro:
           back: "Mergi înapoi la rubrici"
         single:
           back: "Mergi înapoi la editare rubrică"
+        update_all:
+          notice: "Etapă configurată cu succes"
     milestones:
       index:
         table_id: "ID"
