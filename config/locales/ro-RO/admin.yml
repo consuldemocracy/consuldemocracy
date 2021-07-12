@@ -84,6 +84,8 @@ ro:
         table_name: Nume
         table_phase: Etapă
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Rubrici multiple"
+        type_pending: "În așteptare: nici o rubrică"
         edit_groups: Editați grupurile de rubrici
         admin_ballots: Gestionați buletinele de vot
         no_budgets: "Nu există bugete."
@@ -129,6 +131,12 @@ ro:
         success_notice: Buget șters cu succes
         unable_notice: Nu puteți șterge un buget care are investiții asociate
         unable_notice_polls: Nu puteți șterge un buget care are un sondaj asociat
+      help:
+        groups:
+          single: "Grupurile sunt făcute pentru a organiza rubricile, deoarece acest buget va conține doar o singură rubrică, același nume poate fi utilizat deoarece nu va apărea nicăieri. Puteți continua cu pasul următor."
+        headings:
+          multiple: "Rubricile sunt făcute să împartă banii din bugetul participativ. Aici puteți adăuga rubrici pentru acest grup și puteți atribui suma de bani care va fi folosită pentru fiecare rubrică."
+        phases: "Bugetele participative au faze diferite. Aici puteți activa sau dezactiva fazele și, de asemenea, puteți personaliza fiecare fază individual."
       winners:
         calculate: Calculați Investițiile Câștigătoare
         calculated: Se calculează câștigătorii, poate dura un minut.
