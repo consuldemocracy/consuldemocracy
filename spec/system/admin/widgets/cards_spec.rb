@@ -252,11 +252,8 @@ describe "Cards", :admin do
 
   def attach_image_to_card
     click_link "Add image"
-    image_input = all(".image").last.find("input[type=file]", visible: false)
-    attach_file(
-      image_input[:id],
-      Rails.root.join("spec/fixtures/files/clippy.jpg"),
-      make_visible: true)
+    attach_file "Choose image", Rails.root.join("spec/fixtures/files/clippy.jpg")
+
     expect(page).to have_field("widget_card_image_attributes_title", with: "clippy.jpg")
   end
 end

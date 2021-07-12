@@ -10,11 +10,11 @@
   <%= render_image(image, :thumb, false) if image.attachment.exists? %>
 
   <div class="small-12 column attachment-actions">
+    <p class="file-name small-9 column"><%= file_name %></p>
+
     <div class="small-9 column action-add attachment-errors image-attachment">
       <%= file_field %>
     </div>
-
-    <p class="file-name small-9 column"><%= file_name %></p>
 
     <div class="small-3 column action-remove text-right">
       <%= destroy_link %>

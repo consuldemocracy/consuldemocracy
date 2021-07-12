@@ -45,7 +45,6 @@
           App.Documentable.setInputErrors(data);
           $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
           $(data.addAttachmentLabel).addClass("error");
-          $(data.addAttachmentLabel).show();
         },
         done: function(e, data) {
           var destroyAttachmentLink;
@@ -54,7 +53,6 @@
           App.Documentable.setProgressBar(data, "complete");
           App.Documentable.setFilename(data, data.result.filename);
           App.Documentable.clearInputErrors(data);
-          $(data.addAttachmentLabel).hide();
           destroyAttachmentLink = $(data.result.destroy_link);
           $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
           if (input.lockUpload) {

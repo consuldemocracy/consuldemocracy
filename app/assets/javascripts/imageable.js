@@ -43,7 +43,6 @@
           App.Imageable.clearPreview(data);
           $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
           $(data.addAttachmentLabel).addClass("error");
-          $(data.addAttachmentLabel).show();
         },
         done: function(e, data) {
           var destroyAttachmentLink;
@@ -52,7 +51,6 @@
           App.Imageable.setProgressBar(data, "complete");
           App.Imageable.setFilename(data, data.result.filename);
           App.Imageable.clearInputErrors(data);
-          $(data.addAttachmentLabel).hide();
           App.Imageable.setPreview(data);
           destroyAttachmentLink = $(data.result.destroy_link);
           $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);

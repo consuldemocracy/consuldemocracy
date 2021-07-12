@@ -20,13 +20,17 @@
       p {
         margin-bottom: 0;
       }
+
+      &:focus-within label {
+        outline: $outline-focus;
+      }
     }
 
     .attachment-errors {
 
       > .js-image-attachment,
       > .js-document-attachment {
-        display: none;
+        @include element-invisible;
 
         ~ .error {
           display: inline-block;
@@ -45,6 +49,11 @@
     margin-top: 0;
 
     &:empty {
+      display: none;
+    }
+
+    &:not(:empty) + .document-attachment,
+    &:not(:empty) + .image-attachment {
       display: none;
     }
   }
