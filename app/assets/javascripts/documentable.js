@@ -55,8 +55,6 @@
           App.Documentable.setFilename(data, data.result.filename);
           App.Documentable.clearInputErrors(data);
           $(data.addAttachmentLabel).hide();
-          $(data.wrapper).find(".attachment-actions").removeClass("small-12").addClass("small-6 float-right");
-          $(data.wrapper).find(".attachment-actions .action-remove").removeClass("small-3").addClass("small-12");
           destroyAttachmentLink = $(data.result.destroy_link);
           $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
           $(destroyAttachmentLink).on("click", function(event) {
@@ -135,8 +133,6 @@
         },
         complete: function() {
           App.Documentable.unlockUploads();
-          $(data.wrapper).find(".attachment-actions").addClass("small-12").removeClass("small-6 float-right");
-          $(data.wrapper).find(".attachment-actions .action-remove").addClass("small-3").removeClass("small-12");
           if ($(data.input).data("nested-document") === true) {
             $(data.wrapper).remove();
           } else {
