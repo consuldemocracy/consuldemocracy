@@ -201,8 +201,11 @@ ro:
         duration_description: "Perioada de timp în care va fi activă această etapă."
         enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
         image_description: "Dacă o imagine este încărcată, ea va fi afișată lângă descrierea acestei etape."
+        main_call_to_action_description: "Acest link va apărea pe bannerul principal al acestui buget participativ când această etapă este activă și va încuraja utilizatorul să efectueze o acțiune specifică cum ar fi crearea unei propuneri, votarea celor existente sau să afle mai multe despre proces."
         name_help_text: "Acesta este titlul pe care utilizatorii îl vor citi în antet de fiecare când etapa va fi activă."
         save_changes: Salvează modificări
+      index:
+        title: "%{budget} etape"
     budget_investments:
       index:
         heading_filter_all: Toate rubricile
@@ -302,11 +305,23 @@ ro:
       creation_timeline:
         budget: Buget
         groups: Grupuri
+        headings: Rubrici
         phases: Etape
       budgets:
         continue: "Continuă către grupuri"
+      groups:
+        back: "Mergi înapoi la editare bugete"
+        continue: "Continuă către etape"
       headings:
         continue: "Continuă către etape"
+        single:
+          back: "Înapoi la editare grup"
+      phases:
+        continue: "Terminat"
+        multiple:
+          back: "Mergi înapoi la rubrici"
+        single:
+          back: "Mergi înapoi la editare rubrică"
     milestones:
       index:
         table_id: "ID"
@@ -1330,6 +1345,7 @@ ro:
       content: Conținut
       created_at: Creat la
       color_help: Format hexadecimal
+      example_url: "https://consulproject.org"
       show_results_and_stats: "Afișează rezultate și statistici"
       results_and_stats_reminder: "Marcarea acestor căsuțe de selectare a rezultatelor și / sau statisticilor va fi disponibilă publicului și fiecare utilizator le va vedea."
     geozones:
