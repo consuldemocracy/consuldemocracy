@@ -134,11 +134,6 @@
           "_method": "delete"
         },
         complete: function() {
-          $(data.cachedAttachmentField).val("");
-          $(data.addAttachmentLabel).show();
-          App.Documentable.clearFilename(data);
-          App.Documentable.clearInputErrors(data);
-          App.Documentable.clearProgressBar(data);
           App.Documentable.unlockUploads();
           $(data.wrapper).find(".attachment-actions").addClass("small-12").removeClass("small-6 float-right");
           $(data.wrapper).find(".attachment-actions .action-remove").addClass("small-3").removeClass("small-12");

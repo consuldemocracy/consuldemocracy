@@ -8,9 +8,6 @@
       $("#nested-image").on("cocoon:after-remove", function() {
         $("#new_image_link").removeClass("hide");
       });
-      $("#nested-image").on("cocoon:before-insert", function() {
-        $(".js-image-attachment").closest(".image").remove();
-      });
       $("#nested-image").on("cocoon:after-insert", function(e, nested_image) {
         var input;
         $("#new_image_link").addClass("hide");
@@ -137,12 +134,6 @@
           "_method": "delete"
         },
         complete: function() {
-          $(data.cachedAttachmentField).val("");
-          $(data.addAttachmentLabel).show();
-          App.Imageable.clearFilename(data);
-          App.Imageable.clearInputErrors(data);
-          App.Imageable.clearProgressBar(data);
-          App.Imageable.clearPreview(data);
           $("#new_image_link").removeClass("hide");
           $(data.wrapper).find(".attachment-actions").addClass("small-12").removeClass("small-6 float-right");
           $(data.wrapper).find(".attachment-actions .action-remove").addClass("small-3").removeClass("small-12");
