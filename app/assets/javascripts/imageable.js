@@ -14,11 +14,11 @@
         input = $(nested_image).find(".js-image-attachment");
         App.Imageable.initializeDirectUploadInput(input);
       });
+      App.Imageable.initializeRemoveCachedImageLinks();
     },
     initializeDirectUploadInput: function(input) {
       var inputData;
       inputData = this.buildData([], input);
-      this.initializeRemoveCachedImageLink(input, inputData);
       $(input).fileupload({
         paramName: "attachment",
         formData: null,
@@ -56,11 +56,6 @@
           App.Imageable.setPreview(data);
           destroyAttachmentLink = $(data.result.destroy_link);
           $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
-          $(destroyAttachmentLink).on("click", function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            App.Imageable.doDeleteCachedAttachmentRequest(this.href, data);
-          });
         },
         progress: function(e, data) {
           var progress;
@@ -122,28 +117,10 @@
         data.preview = $(data.wrapper).find(".image-preview");
       }
     },
-    doDeleteCachedAttachmentRequest: function(url, data) {
-      $.ajax({
-        type: "POST",
-        url: url,
-        dataType: "json",
-        data: {
-          "_method": "delete"
-        },
-        complete: function() {
-          $("#new_image_link").removeClass("hide");
-          $(data.wrapper).remove();
-        }
-      });
-    },
-    initializeRemoveCachedImageLink: function(input, data) {
-      var remove_image_link, wrapper;
-      wrapper = $(input).closest(".direct-upload");
-      remove_image_link = $(wrapper).find("a.remove-cached-attachment");
-      $(remove_image_link).on("click", function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        App.Imageable.doDeleteCachedAttachmentRequest(this.href, data);
+    initializeRemoveCachedImageLinks: function() {
+      $("#nested-image").on("ajax:complete", "a.remove-cached-attachment", function() {
+        $("#new_image_link").removeClass("hide");
+        $(this).closest(".direct-upload").remove();
       });
     },
     removeImage: function(id) {

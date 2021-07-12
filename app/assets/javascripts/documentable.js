@@ -17,11 +17,11 @@
           App.Documentable.lockUploads();
         }
       });
+      App.Documentable.initializeRemoveCachedDocumentLinks();
     },
     initializeDirectUploadInput: function(input) {
       var inputData;
       inputData = this.buildData([], input);
-      this.initializeRemoveCachedDocumentLink(input, inputData);
       $(input).fileupload({
         paramName: "attachment",
         formData: null,
@@ -57,11 +57,6 @@
           $(data.addAttachmentLabel).hide();
           destroyAttachmentLink = $(data.result.destroy_link);
           $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
-          $(destroyAttachmentLink).on("click", function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            App.Documentable.doDeleteCachedAttachmentRequest(this.href, data);
-          });
           if (input.lockUpload) {
             App.Documentable.showNotice();
           }
@@ -76,7 +71,6 @@
     buildData: function(data, input) {
       var wrapper;
       wrapper = $(input).closest(".direct-upload");
-      data.wrapper = wrapper;
       data.progressBar = $(wrapper).find(".progress-bar-placeholder");
       data.errorContainer = $(wrapper).find(".attachment-errors");
       data.fileNameContainer = $(wrapper).find("p.file-name");
@@ -122,28 +116,10 @@
     showNotice: function() {
       $("#max-documents-notice").removeClass("hide");
     },
-    doDeleteCachedAttachmentRequest: function(url, data) {
-      $.ajax({
-        type: "POST",
-        url: url,
-        dataType: "json",
-        data: {
-          "_method": "delete"
-        },
-        complete: function() {
-          App.Documentable.unlockUploads();
-          $(data.wrapper).remove();
-        }
-      });
-    },
-    initializeRemoveCachedDocumentLink: function(input, data) {
-      var remove_document_link, wrapper;
-      wrapper = $(input).closest(".direct-upload");
-      remove_document_link = $(wrapper).find("a.remove-cached-attachment");
-      $(remove_document_link).on("click", function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        App.Documentable.doDeleteCachedAttachmentRequest(this.href, data);
+    initializeRemoveCachedDocumentLinks: function() {
+      $("#nested-documents").on("ajax:complete", "a.remove-cached-attachment", function() {
+        App.Documentable.unlockUploads();
+        $(this).closest(".direct-upload").remove();
       });
     },
     removeDocument: function(id) {
