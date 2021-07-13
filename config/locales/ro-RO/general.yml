@@ -134,8 +134,6 @@ ro:
     new:
       form:
         submit_button: Începe o dezbatere
-      info: Dacă doriți să faceți o propunere, aceasta este secțiunea greșită, introduceți %{info_link}.
-      info_link: crează o propunere nouă
       more_info: Mai multe informații
       recommendation_four: Bucurați-vă de acest spațiu, de vocile care îl umplu, este și al vostru.
       recommendation_one: Nu folosiți majuscule pentru titlul dezbaterii sau pentru propoziții întregi. Pe internet, acest lucru este considerat strigăt. Și nimănui nu-i place să-i fie strigat în față.
