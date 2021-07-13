@@ -121,8 +121,6 @@ gl:
     new:
       form:
         submit_button: Comezar un debate
-      info: Se o que queres é facer unha proposta, esta é a sección incorrecta, entra en %{info_link}.
-      info_link: crear nova proposta
       more_info: Máis información
       recommendation_four: Goza deste espazo, das voces que o enchen, tamén é teu.
       recommendation_one: Non escribas o título do debate ou frases enteiras en maiúsculas. En internet iso considérase berrar. E a ninguén lle gusta que lle berren.
