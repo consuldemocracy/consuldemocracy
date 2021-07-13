@@ -113,8 +113,6 @@ eu:
     new:
       form:
         submit_button: Eztabaida bat hasi
-      info: Proposamen bat egin nahi baduzu, atal okerrean zaude, %{info_link} linka sakatu.
-      info_link: Proposamen berria sortu
       more_info: Informazio gehiago
       recommendation_four: Espazio honetaz gozatu, betetzen duten ahotsetaz, zurea ere bada.
       recommendation_one: Ez idatzi maiuskuletan esaldi osoak edo eztabaidaren izenburua. Internetan txilioka ari zarela ematen du. Eta inori ez zaio gustatzen ohiu egin diezaioten.
