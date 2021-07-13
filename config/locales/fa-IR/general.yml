@@ -91,7 +91,6 @@ fa:
     new:
       form:
         submit_button: شروع بحث
-      info_link: ایجاد طرح های جدید
       more_info: اطلاعات بیشتر
       start_new: شروع بحث
     show:
