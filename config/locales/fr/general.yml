@@ -119,8 +119,6 @@ fr:
     new:
       form:
         submit_button: Commencer un débat
-      info: Si vous souhaitez faire une proposition, vous êtez dans la mauvaise section, entrez %{info_link}.
-      info_link: créer une nouvelle proposition
       more_info: Plus d'information
       recommendation_four: Appréciez ces espaces et les voix qui le remplissent. Tout vous appartient.
       recommendation_one: Ne pas utiliser de lettres capitales pour le titre du débat ou pour des phrases entières. Sur internet, c'est considéré comme crier. Et personne n'aime se faire crier dessus.
