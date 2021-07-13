@@ -109,8 +109,6 @@ zh-CN:
     new:
       form:
         submit_button: 开始辩论
-      info: 如果您要提出提议，这里是错误的地方，请进入%{info_link}。
-      info_link: 创建新提议
       more_info: 更多信息
       recommendation_four: 享受此空间和其中充满的声音。它也属于您。
       recommendation_one: 请不要用大写字母写辩论标题或整个句子。在因特网上，这被认为是在喊叫。没有人喜欢被吆喝。
