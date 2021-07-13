@@ -127,8 +127,6 @@ nn:
     new:
       form:
         submit_button: Start en debatt
-      info: Hvis du vil legge til et forslag, så er dette feil seksjon, gå inn på %{info_link}.
-      info_link: opprett et nytt forslag
       more_info: Mer informasjon
       recommendation_four: Dette er din plass, du skal kunne trives og sørge for at din stemme blir hørt.
       recommendation_one: Ikke bruk bare store bokstaver i debatt-titler eller i hele setninger. På internet blir dette oppfattet som roping, og ingen liker og bli ropt til.
