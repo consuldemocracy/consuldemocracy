@@ -131,8 +131,6 @@ hr:
     new:
       form:
         submit_button: Započnite raspravu
-      info: Ako želite napraviti prijedlog, onda je ova pogrešna sekcija, slijedite %{info_link}.
-      info_link: izradite novi prijedlog
       more_info: Više informacija
       recommendation_four: Uživajte na ovom mjestu, nek se i vaš glas čuje.
       recommendation_one: Ne koristite velika početna slova za naslove rasprave niti cijele rečenice. Na internetu se takav način može shvatiti kao vikanje, a nitko ne želi da se na njega viče.
