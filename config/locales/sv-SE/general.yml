@@ -127,8 +127,6 @@ sv:
     new:
       form:
         submit_button: Starta en debatt
-      info: Om du vill lägga ett förslag är detta fel plats, gå till %{info_link}.
-      info_link: skapa ett nytt förslag
       more_info: Mer information
       recommendation_four: Det här är din plats, du ska kunna trivas och göra din röst hörd här.
       recommendation_one: Använd inte versaler i debattinläggets titel eller i hela meningar i beskrivningen. På internet tolkas det som att du skriker, och ingen gillar när folk skriker på dem.
