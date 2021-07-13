@@ -1,0 +1,15 @@
+.debate-new {
+  @extend %public-form-header;
+
+  h1 {
+    @include has-fa-icon(comment-alt, regular, after);
+  }
+
+  aside {
+    margin-top: $line-height;
+  }
+
+  .recommendations li::before {
+    color: $debates;
+  }
+}

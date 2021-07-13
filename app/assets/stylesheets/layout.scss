@@ -64,6 +64,20 @@ body {
   }
 }
 
+main {
+  display: block;
+
+  &.budget-investment-new,
+  &.debate-new,
+  &.proposal-new,
+  &.sdg-goals-index,
+  &.sdg-goal-show,
+  &.topic-edit,
+  &.topic-new {
+    @include grid-column-gutter;
+  }
+}
+
 h1,
 h2,
 h3,
