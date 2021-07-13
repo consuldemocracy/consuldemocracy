@@ -117,8 +117,6 @@ bs:
     new:
       form:
         submit_button: Pokreni debatu
-      info: Na pogrešnom ste mjestu ako želite da date prijedlog. Idite na %{info_link}.
-      info_link: formuliši novi prijedlog
       more_info: Više informacija
       recommendation_four: Uživaj u ovom prostoru i različitim glasovima koji ga prožimaju, on pripada i tebi.
       recommendation_one: Ne koristite velika slova za naziv debate, ne pišite cijele rečenice velikim slovima. Na internetu se to smatra vikanjem, a niko ne voli kad se na njega viče.
