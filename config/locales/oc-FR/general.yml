@@ -124,8 +124,6 @@ oc:
     new:
       form:
         submit_button: Comença un nòu debat
-      info: Se çò que vòles es far una proposicion, aquela es la seccion incorrècta, dintra en %{info_link}.
-      info_link: crear nòva proposicion
       more_info: Mai informacion
       recommendation_four: Gaudís d'aquel espaci, de las voses qu'o emplisson, es tanben tieu.
       recommendation_one: Escrigas pas lo títol del debat o frasas entièras en majusculas. Dins internet aquò se considèra cridar. E a degun li agrada que li cridan.
