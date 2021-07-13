@@ -113,8 +113,6 @@ so:
     new:
       form:
         submit_button: Biloow dooda
-      info: Haddii aad rabto inaad soo jeediso, tani waa qayb qaldan, gali%{info_link}.
-      info_link: samee soo jeedino cusub
       more_info: Maclumaad dheraad ah
       recommendation_four: Ku raaxee meeshan iyo codadka buuxiya. Adigaa iska leh.
       recommendation_one: Ha u isticmaalin farwaweyn tartanka doodda ama jumlado dhan. Internetka, tan waxaa loo tixgeliyaa qaylo. Ma jiro qof jecel in lagu qayliyo.
