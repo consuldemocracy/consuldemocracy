@@ -124,8 +124,6 @@ da:
     new:
       form:
         submit_button: Start en debat
-      info: Hvis du ønsker at oprette et forslag, befinder du dig i den forkerte sektion, klik på %{info_link}.
-      info_link: opret et forslag
       more_info: Flere oplysninger
       recommendation_four: Tag del i debatten. Den tilhører også dig.
       recommendation_one: Anvend ikke udelukkende store bogstaver i debattitlen eller i hele sætninger. På internettet betragtes dette som råberi. Og ingen kan lide at blive råbt af.
