@@ -127,8 +127,6 @@ tr:
     new:
       form:
         submit_button: Bir tartışma başlat
-      info: Eğer bir öneride bulunmak istiyorsanız, %{info_link} 'i ziyaret ediniz.
-      info_link: yeni öneri oluştur
       more_info: Daha fazla bilgi
       recommendation_four: Bu alanı ve burada paylaşılan farklı seslerin tadını çıkarın. Bu alan size de ait.
       recommendation_one: Tartışma konusu veya cümlelerin tümü için büyük harfler kullanmayın. İnternet üzerinde, bu bağırmak olarak algılanmaktadır. Ve kimse bağrılmaktan hoşlanmaz.
