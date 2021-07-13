@@ -124,8 +124,6 @@ ca:
     new:
       form:
         submit_button: Comença un nou debat
-      info: Si el que vols és fer una proposta, aquesta és la secció incorrecta, entra en %{info_link}.
-      info_link: crear nova proposta
       more_info: Más informació
       recommendation_four: Gaudeix d'aquest espai, de les veus que ho omplen, també és teu.
       recommendation_one: No escrigues el títol del debat o frases senceres en majúscules. En internet açò es considera cridar. I a ningú li agrada que li criden.
