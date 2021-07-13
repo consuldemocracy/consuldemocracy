@@ -126,8 +126,6 @@ it:
     new:
       form:
         submit_button: Avvia un dibattito
-      info: Se vuoi presentare una proposta, questa è la sezione sbagliata, seleziona %{info_link}.
-      info_link: creare una nuova proposta
       more_info: Ulteriori informazioni
       recommendation_four: Goditi questo spazio e le voci che lo riempiono. Appartiene anche a te.
       recommendation_one: Non utilizzare lettere maiuscole per il titolo del dibattito o per frasi intere. Su internet, questo è considerato gridare. E a nessuno piace che gli si urli contro.
