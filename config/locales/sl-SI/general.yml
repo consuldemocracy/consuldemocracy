@@ -98,8 +98,6 @@ sl:
     new:
       form:
         submit_button: Začni razpravo
-      info: Če želiš dodati predlog, nisi na pravem koncu spletne strani, pojdi raje na %{info_link}.
-      info_link: ustvarjanje novega predloga
       more_info: Več informacij
       recommendation_four: Uživaj v tem prostoru in v glasovih, ki ga naseljujejo. Ta prostor pripada tudi tebi.
       recommendation_one: Ne uporabljaj velikih tiskanih črk za naslov razprave ali za pisanje celih stavkov. Na internetu to pomeni, da kričiš - in nihče ne mara, da kričijo nanj.
