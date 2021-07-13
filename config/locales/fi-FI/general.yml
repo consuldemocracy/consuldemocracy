@@ -72,7 +72,6 @@ fi:
         button: Etsi
         title: Etsi
     new:
-      info_link: luo uusi ehdotus
       more_info: Lisää tietoa
     show:
       author_deleted: Käyttäjä poistettu
