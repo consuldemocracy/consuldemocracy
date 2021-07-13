@@ -121,8 +121,6 @@ pl:
     new:
       form:
         submit_button: Rozpocznij debatę
-      info: Jeśli chcesz złożyć wniosek, jest to niewłaściwa sekcja, wejdź w %{info_link}.
-      info_link: utwórz nową propozycję
       more_info: Więcej informacji
       recommendation_four: Ciesz się tą przestrzenią oraz głosami, które ją wypełniają. To należy również do Ciebie.
       recommendation_one: Nie używaj wielkich liter do tytułu debaty lub całych zdań. W Internecie jest to uważane za krzyki. Nikt nie lubi, gdy ktoś krzyczy.
