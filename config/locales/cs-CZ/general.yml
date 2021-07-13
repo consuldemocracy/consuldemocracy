@@ -105,8 +105,6 @@ cs:
     new:
       form:
         submit_button: Zahájit debatu
-      info: Pokud chcete podat návrh, toto je nesprávná sekce, musíte zadat %{info_link}.
-      info_link: vytvořit nový návrh
       more_info: Více informací
       recommendation_four: Využite tento prostor k uplatnění svých návrhů. Je to jen na Vás.
       recommendation_one: Nepoužívejte velká písmena pro název rozpravy nebo pro celé věty. Na internetu se to považuje za křik. A nikdo nemá rád, když někdo křičí.
