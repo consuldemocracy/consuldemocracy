@@ -104,8 +104,6 @@ id:
     new:
       form:
         submit_button: Memulai debat
-      info: Jika anda ingin membuat sebuah proposal, ini adalah bagian yang salah, masukkan %{info_link}.
-      info_link: buat proposal baru
       more_info: Informasi lebih lanjut
       recommendation_four: Menikmati ruang ini dan suara-suara yang mengisi itu. Itu milik anda juga.
       recommendation_one: Jangan gunakan huruf kapital untuk judul perdebatan atau keseluruhan kalimat. Di internet, hal ini dianggap berteriak. Dan tak ada orang yang berteriak.
