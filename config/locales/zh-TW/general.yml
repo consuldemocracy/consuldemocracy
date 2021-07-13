@@ -109,8 +109,6 @@ zh-TW:
     new:
       form:
         submit_button: 開始一個辯論
-      info: 如果您想要提出建議，這是錯誤的位置，請進入%{info_link}。
-      info_link: 創建新建議
       more_info: 更多資訊
       recommendation_four: 享受這片空間和其中充滿的聲音。 這也是你的空間。
       recommendation_one: 不要用大寫字母寫辯論標題或整個句子。 在互聯網上，這是被當作為＂叫喊＂。沒有人喜歡被呼喝的。
