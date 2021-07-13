@@ -113,8 +113,6 @@ sq:
     new:
       form:
         submit_button: Filloni një debat
-      info: Nëse doni të bëni një propozim, kjo është seksioni i gabuar, hyni %{info_link}.
-      info_link: krijoni propozim të ri
       more_info: Më shumë informacion
       recommendation_four: Gëzoni këtë hapësirë dhe zërat që e mbushin atë. Ajo ju takon edhe juve.
       recommendation_one: Mos përdorni shkronja kapitale për titullin e debatit ose për dënime të plota. Në internet, kjo konsiderohet ofenduese. Dhe askush nuk i pëlqen të ofendoj.
