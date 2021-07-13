@@ -51,14 +51,7 @@
     <%= render "results_table", results_type: :compatible,
                                 title: @heading.name,
                                 heading_price: @heading.price,
-                                investments: @investments.compatible %>
-
-    <% if @investments.incompatible.present? %>
-      <%= render "results_table", results_type: :incompatible,
-                                  title: t("budgets.results.incompatibles"),
-                                  heading_price: @heading.price,
-                                  investments: @investments.incompatible %>
-    <% end %>
+                                investments: @investments %>
 
     <p>
       <%= link_to budget_path(@budget) do %>
