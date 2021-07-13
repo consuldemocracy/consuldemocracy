@@ -124,8 +124,6 @@ pt-BR:
     new:
       form:
         submit_button: Iniciar um debate
-      info: Se quiser elaborar uma proposta, esta seção é inadequada, entre %{info_link}.
-      info_link: criar nova proposta
       more_info: Mais informações
       recommendation_four: Aproveite este espaço e as vozes que o preenchem. Ele pertence a você também.
       recommendation_one: Não use letras maiúsculas para o título do debate ou para sentenças completas. Na internet, isto é considerado gritaria. Ninguém gosta de ser tratado com gritos.
