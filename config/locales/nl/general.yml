@@ -113,8 +113,6 @@ nl:
     new:
       form:
         submit_button: Debat starten
-      info: Dit is niet de juiste plek voor voorstellen; ga daarvoor naar %{info_link}.
-      info_link: nieuw voorstel
       more_info: Meer informatie
       recommendation_four: Geniet van deze ruimte, en van de stemmen die 'm vullen.
       recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
