@@ -38,13 +38,13 @@
 
     <% if feature?(:allow_images) %>
       <div class="images">
-        <%= render "images/nested_image", imageable: investment, f: f %>
+        <%= render "images/nested_image", f: f %>
       </div>
     <% end %>
 
     <% if feature?(:allow_attached_documents) %>
       <div class="documents">
-        <%= render "documents/nested_documents", documentable: investment, f: f %>
+        <%= render "documents/nested_documents", f: f %>
       </div>
     <% end %>
 

@@ -5,7 +5,7 @@
     <%= render "shared/errors", resource: @answer %>
 
     <div class="images">
-      <%= render "images/nested_image", imageable: @answer, f: f, image_fields: :images %>
+      <%= render Images::NestedComponent.new(f, image_fields: :images) %>
     </div>
 
     <%= f.submit t("admin.questions.answers.images.save_image"), class: "button success" %>

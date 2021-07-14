@@ -134,12 +134,3 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     end
   end
 end
-
-def attach_document(path, success = true)
-  attach_file :document_attachment, path, make_visible: true
-  if success
-    expect(page).to have_css ".loading-bar.complete"
-  else
-    expect(page).to have_css ".loading-bar.errors"
-  end
-end

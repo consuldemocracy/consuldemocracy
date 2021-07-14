@@ -27,10 +27,10 @@
     <div class="column">
       <%= f.date_field :publication_date %>
 
-      <%= render "images/admin_image", imageable: @milestone, f: f %>
+      <%= render "images/nested_image", f: f %>
 
       <div class="documents">
-        <%= render "documents/nested_documents", documentable: @milestone, f: f %>
+        <%= render "documents/nested_documents", f: f %>
       </div>
 
       <%= f.submit nil, class: "button success" %>
