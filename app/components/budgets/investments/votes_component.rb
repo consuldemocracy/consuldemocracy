@@ -45,7 +45,7 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
     def display_support_alert?
       current_user &&
         !current_user.voted_in_group?(investment.group) &&
-        investment.group.headings.count > 1
+        investment.group.headings.count > investment.group.max_votable_headings
     end
 
     def confirm_vote_message
