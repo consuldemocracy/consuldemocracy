@@ -24,7 +24,7 @@ set :use_sudo, false
 set :linked_files, %w[config/database.yml config/secrets.yml]
 set :linked_dirs, %w[.bundle log tmp public/system public/assets public/ckeditor_assets]
 
-set :keep_releases, 5
+set :keep_releases, 1
 
 set :local_user, ENV["USER"]
 
@@ -57,6 +57,7 @@ namespace :deploy do
     after "add_new_settings", "execute_release_tasks"
     invoke "deploy"
   end
+  
 end
 
 task :install_ruby do
