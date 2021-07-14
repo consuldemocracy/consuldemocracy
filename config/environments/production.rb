@@ -73,6 +73,7 @@ Rails.application.configure do
   if Rails.application.secrets.smtp_settings
     config.action_mailer.delivery_method = Rails.application.secrets.mailer_delivery_method || :smtp
     config.action_mailer.smtp_settings = Rails.application.secrets.smtp_settings
+    config.action_mailer.default_options = {from: 'no-reply@unican.es'}
   end
 
   # Disable locale fallbacks for I18n
