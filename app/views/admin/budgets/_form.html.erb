@@ -46,10 +46,9 @@
   </div>
 
   <% if @budget.persisted? %>
-    <div class="clear"></div>
-    <p class="form-section-divider">
-      <span><%= t("admin.budgets.edit.info.groups_and_headings_settings") %></span>
-    </p>
+    <fieldset>
+      <legend><%= t("admin.budgets.edit.info.groups_and_headings_settings") %></legend>
+    </fieldset>
 
     <div class="small-12 column">
       <%= render "groups_and_headings" %>
