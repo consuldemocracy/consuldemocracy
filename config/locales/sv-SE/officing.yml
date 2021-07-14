@@ -69,7 +69,6 @@ sv:
         not_allowed: "Du har inga arbetspass idag"
       new:
         title: Godkänn identitetshandling
-        document_number: "Identitetshandlingens nummer (inklusive bokstäver)"
         submit: Godkänn identitetshandling
         error_verifying_census: "Din identitetshandling kunde inte verifieras."
         form_errors: förhindrade godkännandet av det här dokumentet
