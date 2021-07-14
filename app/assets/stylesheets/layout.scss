@@ -625,6 +625,7 @@ body > header,
   }
 
   .top-bar-title {
+    display: flex;
     line-height: $line-height;
     margin-right: 0;
 
