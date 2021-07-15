@@ -26,7 +26,7 @@ nl:
             one: "Je kan op <span>1</span> idee stemmen"
             other: "Je kan op <span>%{count}</span> ideeën stemmen"
         amount_available:
-          knapsack: "You still have <span>%{count}</span> to invest."
+          knapsack: "Je kan nog <span>%{count}</span> uitgeven."
           approval:
             zero: "Je kan nog <span>%{count}</span> stemmen uitbrengen."
             one: "Je kan nog <span>%{count}</span> stem uitbrengen."
@@ -202,7 +202,7 @@ nl:
           all: "Alle (%{count})"
     progress_bar:
       you_have_assigned: "Je hebt"
-      assigned: "toegewezen"
+      assigned: "Uitgegeven"
       available: "Beschikbare bedrag:"
     results:
       link: "De uitslag"
@@ -217,3 +217,5 @@ nl:
       page_title: "De uitslag"
       show_all_link: "Toon alle ideeën"
       hide_discarded_link: "Verberg niet gekozen ideeën"
+      heading_selection_title: "Per gebied"
+    no_image_alt: "Groene omgeving in Haren"

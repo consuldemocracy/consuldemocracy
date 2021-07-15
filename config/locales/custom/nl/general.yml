@@ -195,6 +195,9 @@ nl:
       started: "In uitvoering"
       unfeasible: "Onhaalbaar"
       done: "Gerealiseerd"
+    share:
+      improve_it: "Voer campagne om meer steun te krijgen."
+      dashboard: "Naar campagnepagina"
   polls:
     question: "Vraag"
     index:

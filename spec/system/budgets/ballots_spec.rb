@@ -393,7 +393,7 @@ describe "Ballots" do
     expect(page).to have_content("You have voted one investment")
 
     within("#budget_investment_#{investment.id}") do
-      find(".fas.fa-times").click
+      click_link "Remove vote"
     end
 
     expect(page).to have_current_path(budget_ballot_path(budget))
@@ -420,7 +420,7 @@ describe "Ballots" do
     end
 
     within("#sidebar #budget_investment_#{investment1.id}_sidebar") do
-      find(".fas.fa-times").click
+      click_link "Remove vote"
     end
 
     expect(page).to have_css("#amount_spent", text: "€20,000")
@@ -642,7 +642,7 @@ describe "Ballots" do
       end
 
       within("#budget_investment_#{bi1.id}_sidebar") do
-        find(".fas.fa-times").click
+        click_link "Remove vote"
       end
 
       expect(page).not_to have_css "#budget_investment_#{bi1.id}_sidebar"
