@@ -25,10 +25,10 @@ section "Creating collaborative legislation" do
 
   Legislation::Process.find_each do |process|
     (1..3).each do |i|
-      process.draft_versions.create!(#title_en: "Version #{i}",
+      process.draft_versions.create!(title_en: "Version #{i}",
                                      title_es: "Versión #{i}",
-                                     #body_en: ["Draft version in English",
-                                     #          *Faker::Lorem.paragraphs].join("\n\n"),
+                                     body_en: ["Draft version in English",
+                                               *Faker::Lorem.paragraphs].join("\n\n"),
                                      body_es: ["Versión borrador en Español",
                                                *Faker::Lorem.paragraphs].join("\n\n"))
     end
