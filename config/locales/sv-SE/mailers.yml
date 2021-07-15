@@ -63,7 +63,7 @@ sv:
     budget_investment_selected:
       subject: "Ditt budgetförslag '%{code}' har valts"
       hi: "Kära användare,"
-      share: "Börja samla röster och dela i sociala medier för att ditt budgetförslag ska kunna bli verklighet."
+      share: "Börja samla röster och dela i sociala medier för att ditt investeringsprojekt ska kunna bli verklighet."
       share_button: "Dela ditt budgetförslag"
       thanks: "Tack igen för att du deltar."
       sincerely: "Vänliga hälsningar"
