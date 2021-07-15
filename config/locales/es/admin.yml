@@ -294,7 +294,7 @@ es:
           title: Selección
         winner:
           title: Ganador
-          "true": "Si"
+          "true": "Sí"
           "false": "No"
         valuator_groups: "Grupos de evaluadores"
         preview: Vista previa
