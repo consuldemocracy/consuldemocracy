@@ -104,7 +104,7 @@ sv:
         recommendations_on_debates_description: "Visar rekommendationer från användare på debattsidan baserat på taggarna i objekten som de följer"
         recommendations_on_proposals: "Rekommenderade förslag"
         recommendations_on_proposals_description: "Visar rekommendationer från användare på förslagssidan baserat på taggarna i objekten som de följer"
-      community: "Gemenskap kring förslag och budgetförslag"
+      community: "Gemenskap kring förslag och investeringar"
       community_description: "Aktiverar gemenskapsavsnitten i förslagen och investeringsprojekten i medborgarbudgetarna"
       map: "Geografisk plats för förslag och budgetförslag"
       map_description: "Aktiverar geografiska positioner av förslag och investeringsprojekt"
