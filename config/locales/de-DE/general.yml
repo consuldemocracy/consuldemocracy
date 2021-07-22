@@ -663,7 +663,11 @@ de:
   poll_questions:
     show:
       vote_answer: "Für %{answer} abstimmen"
+      vote_unanswer: "Abstimmung für %{answer} zurücknehmen"
       voted: "Sie haben für %{answer} abgestimmt"
+      multiple_answers: "Bei Fragen mit Mehrfachantworten können Sie Ihre Abstimmung wieder zurücknehmen indem Sie erneut auf die Antwort klicken."
+      question:
+        multiple: "Mehrfachantworten möglich"
   proposal_notifications:
     new:
       title: "Nachricht senden"

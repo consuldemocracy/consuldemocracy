@@ -655,7 +655,11 @@ en:
   poll_questions:
     show:
       vote_answer: "Vote %{answer}"
+      vote_unanswer: "Take back vote for %{answer}"
       voted: "You have voted %{answer}"
+      multiple_answers: "For questions with multiple answers, you can take back your vote by clicking on the answer again."
+      question:
+        multiple: "Multiple answers possible"
   proposal_notifications:
     new:
       title: "Send message"

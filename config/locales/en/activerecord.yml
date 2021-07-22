@@ -311,6 +311,7 @@ en:
       poll/question:
         poll_id: "Poll"
         title: "Question"
+        multiple: Multiple answers allowed
         summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"

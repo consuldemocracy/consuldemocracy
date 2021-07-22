@@ -31,6 +31,12 @@
         <% end %>
       <% end %>
 
+      <% if @questions.filter { |question| question.multiple }.length > 0 %>
+        <div class="callout primary">
+          <%= t("poll_questions.show.multiple_answers") %>
+        </div>
+      <% end %>
+
       <% @questions.each do |question| %>
         <%= render "polls/questions/question", question: question, token: @token %>
       <% end %>

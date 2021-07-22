@@ -16,7 +16,14 @@
     <tbody>
       <% @questions.each do |question| %>
         <tr id="<%= dom_id(question) %>">
-          <td><%= question.title %></td>
+          <td>
+            <%= question.title %>
+            <% if question.multiple %>
+              <small>
+                (<%= t("admin.questions.index.multiple") %>)
+              </small>
+            <% end %>
+          </td>
           <td>
             <% if question.poll.present? %>
               <%= question.poll.name %>

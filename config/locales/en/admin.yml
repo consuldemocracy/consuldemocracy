@@ -1099,6 +1099,7 @@ en:
     questions:
       index:
         title: "Questions"
+        multiple: Multiple answers allowed
         create: "Create question"
         no_questions: "There are no questions."
         filter_poll: Filter by Poll
@@ -1127,6 +1128,9 @@ en:
         valid_answers: Valid answers
         add_answer: Add answer
         video_url: External video
+        multiple: Multiple answers allowed?
+        multiple_yes: yes
+        multiple_no: no
         answers:
           title: Answer
           description: Description

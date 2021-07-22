@@ -19,6 +19,16 @@
       <%= link_to @question.author.name, user_path(@question.author) %>
     </p>
 
+    <p>
+      <strong><%= t("admin.questions.show.multiple") %></strong>
+      <br>
+      <% if @question.multiple %>
+        <%= t("admin.questions.show.multiple_yes") %>
+      <% else %>
+        <%= t("admin.questions.show.multiple_no") %>
+      <% end %>
+    </p>
+
     <% if @question.proposal.present? %>
       <p>
         <strong><%= t("admin.questions.show.proposal") %></strong>

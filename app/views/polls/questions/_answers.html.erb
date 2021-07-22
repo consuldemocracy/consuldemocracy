@@ -1,13 +1,22 @@
 <div class="poll-question-answers">
   <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
     <% question.question_answers.each do |answer| %>
-      <% if @answers_by_question_id[question.id] == answer.title &&
+      <% if @answers_by_question_id[question.id].include?(answer.title) &&
             (!voted_before_sign_in(question) ||
              question.poll.voted_in_booth?(current_user)) %>
-        <span class="button answered"
-              title="<%= t("poll_questions.show.voted", answer: answer.title) %>">
-          <%= answer.title %>
-        </span>
+        <% if question.multiple %>
+            <%= link_to answer.title,
+                        unanswer_question_path(question, answer: answer.title, token: token),
+                        method: :post,
+                        remote: true,
+                        title: t("poll_questions.show.vote_unanswer", answer: answer.title),
+                        class: "button take-back hollow js-question-answer" %>
+          <% else %>
+          <span class="button answered"
+                title="<%= t("poll_questions.show.voted", answer: answer.title) %>">
+            <%= answer.title %>
+          </span>
+        <% end %>
       <% else %>
         <%= link_to answer.title,
           answer_question_path(question, answer: answer.title, token: token),

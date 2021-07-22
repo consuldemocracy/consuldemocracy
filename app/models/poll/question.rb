@@ -70,6 +70,10 @@ class Poll::Question < ApplicationRecord
     question_answers.max_by(&:total_votes)&.id
   end
 
+  def most_voted_answer_votes
+    question_answers.max_by(&:total_votes)&.total_votes
+  end
+
   def possible_answers
     question_answers.joins(:translations).pluck("poll_question_answer_translations.title")
   end

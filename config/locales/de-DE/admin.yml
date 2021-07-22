@@ -1047,6 +1047,7 @@ de:
     questions:
       index:
         title: "Fragen"
+        multiple: Mehrfachantworten erlaubt
         create: "Frage erstellen"
         no_questions: "Keine Fragen vorhanden."
         filter_poll: Filtern nach Abstimmung
@@ -1075,6 +1076,9 @@ de:
         valid_answers: Gültige Antworten
         add_answer: Antwort hinzufügen
         video_url: Externes Video
+        multiple: Mehrfachantworten erlaubt?
+        multiple_yes: ja
+        multiple_no: nein
         answers:
           title: Antwort
           description: Beschreibung

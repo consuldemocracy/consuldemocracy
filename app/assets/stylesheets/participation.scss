@@ -1768,16 +1768,15 @@
       width: 100%;
     }
 
-    &.answered {
+    &.answered,
+    &.take-back {
       background: #f4f8ec;
       border: 2px solid #92ba48;
       color: $text;
       position: relative;
 
       &::after {
-        background: #92ba48;
         border-radius: rem-calc(20);
-        content: "\6c";
         color: #fff;
         font-family: "icons" !important;
         font-size: rem-calc(12);
@@ -1785,6 +1784,31 @@
         position: absolute;
         right: -6px;
         top: -6px;
+      }
+    }
+
+    &.answered {
+      &::after {
+        background: #92ba48;
+        content: "\6c";
+      }
+    }
+
+    &.take-back {
+      &:hover,
+      &:focus {
+        background: #f8ecec;
+        border-color: $color-alert;
+
+        &::after {
+          background: $color-alert;
+          content: "\74";
+        }
+      }
+
+      &::after {
+        background: #92ba48;
+        content: "\6c";
       }
     }
   }

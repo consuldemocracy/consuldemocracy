@@ -25,9 +25,14 @@ class PollsController < ApplicationController
                                                     .where.not(description: "").order(:given_order)
 
     @answers_by_question_id = {}
+
+    @questions.each do |question|
+     @answers_by_question_id[question.id] = []
+    end
+
     poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user&.id)
     poll_answers.each do |answer|
-      @answers_by_question_id[answer.question_id] = answer.answer
+      @answers_by_question_id[answer.question_id] = @answers_by_question_id.has_key?(answer.question_id) ? @answers_by_question_id[answer.question_id].push(answer.answer) : [answer.answer]
     end
 
     @commentable = @poll

@@ -6,6 +6,7 @@ resources :polls, only: [:show, :index] do
 
   resources :questions, controller: "polls/questions", shallow: true do
     post :answer, on: :member
+    post :unanswer, on: :member
   end
 end
 

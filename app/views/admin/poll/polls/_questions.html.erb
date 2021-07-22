@@ -19,6 +19,11 @@
       <tr id="<%= dom_id(question) %>">
         <td>
           <strong><%= question.title %></strong>
+          <% if question.multiple %>
+            <small>
+              (<%= t("admin.questions.index.multiple") %>)
+            </small>
+          <% end %>
           <% if question.proposal.present? %>
             <small>
               <%= link_to t("admin.polls.show.see_proposal"),

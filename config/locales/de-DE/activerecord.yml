@@ -307,6 +307,7 @@ de:
       poll/question:
         poll_id: "Abstimmung"
         title: "Frage"
+        multiple: Mehrfachantworten erlauben
         summary: "Zusammenfassung"
         description: "Beschreibung"
         external_url: "Link zu zusätzlicher Dokumentation"
