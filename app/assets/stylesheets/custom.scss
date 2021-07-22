@@ -703,6 +703,7 @@ p {
 footer {
   color: $text;
   min-height: auto !important;
+  background: #407374;
   .logo a {
     font-family: "Lato" !important;
     text-decoration: none;
@@ -753,6 +754,18 @@ footer {
   margin-top: $line-height * 2;
   min-height: $line-height * 12;
   padding-top: $line-height;
+}
+.column.cabildo{
+  p.title{
+    margin-top: 0;
+    font-size: 17px;
+    display: inline-block;
+  }
+  img{
+    max-width: 258px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
 }
 
 .subfooter {
