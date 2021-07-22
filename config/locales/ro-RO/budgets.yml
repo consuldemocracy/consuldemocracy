@@ -181,6 +181,7 @@ ro:
           one: "Poți susține investiții în %{count} district. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
           few: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
           other: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+        remove_support_label: "Șterge susținerea pentru %{investment}"
         support: "Sprijină"
     investments_list:
       investment:
@@ -190,6 +191,8 @@ ro:
       title: "Lista investițiilor"
     show:
       see_results: Vezi rezultatele
+    supports_info:
+      title: "Este timpul să <strong>susții</strong> proiectele!"
     results:
       link: Rezultate
       page_title: "%{budget} - Rezultate"
