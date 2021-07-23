@@ -1,5 +1,4 @@
 class Image < ApplicationRecord
-  include ImagesHelper
   include ImageablesHelper
 
   has_attached_file :attachment, styles: {

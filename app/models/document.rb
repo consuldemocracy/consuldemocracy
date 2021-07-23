@@ -1,5 +1,4 @@
 class Document < ApplicationRecord
-  include DocumentsHelper
   include DocumentablesHelper
   has_attached_file :attachment, url: "/system/:class/:prefix/:style/:hash.:extension",
                                  hash_data: ":class/:style/:custom_hash_data",
