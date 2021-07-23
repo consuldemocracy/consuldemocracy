@@ -20,20 +20,8 @@ class DirectUploadsController < ApplicationController
                      destroy_link: render_destroy_upload_link(@direct_upload),
                      attachment_url: @direct_upload.relation.attachment.url }
     else
-      @direct_upload.destroy_attachment
       render json: { errors: @direct_upload.errors[:attachment].join(", ") },
              status: 422
-    end
-  end
-
-  def destroy
-    @direct_upload = DirectUpload.new(direct_upload_params.merge(user: current_user))
-    @direct_upload.relation.set_attachment_from_cached_attachment
-
-    if @direct_upload.destroy_attachment
-      render json: :ok
-    else
-      render json: :error
     end
   end
 

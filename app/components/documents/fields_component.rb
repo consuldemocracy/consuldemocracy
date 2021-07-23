@@ -18,16 +18,7 @@ class Documents::FieldsComponent < ApplicationComponent
 
     def destroy_link
       if !document.persisted? && document.cached_attachment.present?
-        link_to t("documents.form.delete_button"),
-          direct_upload_destroy_path(
-            "direct_upload[resource_type]": document.documentable_type,
-            "direct_upload[resource_id]": document.documentable_id,
-            "direct_upload[resource_relation]": "documents",
-            "direct_upload[cached_attachment]": document.cached_attachment
-          ),
-          method: :delete,
-          remote: true,
-          class: "delete remove-cached-attachment"
+        link_to t("documents.form.delete_button"), "#", class: "delete remove-cached-attachment"
       else
         link_to_remove_association document.new_record? ? t("documents.form.cancel_button") : t("documents.form.delete_button"), f, class: "delete remove-document"
       end

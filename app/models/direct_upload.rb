@@ -37,10 +37,6 @@ class DirectUpload
     @relation.attachment.save
   end
 
-  def destroy_attachment
-    @relation.attachment.destroy
-  end
-
   def persisted?
     false
   end
