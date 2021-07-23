@@ -880,6 +880,8 @@ es:
         other: "Sólo puedes apoyar proyectos de gasto de %{count} barrios. Ya has apoyado en %{supported_headings}."
   welcome:
     feed:
+      image:
+        title: Ir a todas las propuestas
       most_active:
         debates: "Debates más activos"
         proposals: "Propuestas más activas"
