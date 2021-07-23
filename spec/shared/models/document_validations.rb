@@ -2,7 +2,7 @@ shared_examples "document validations" do |documentable_factory|
   include DocumentablesHelper
 
   let!(:document)               { build(:document, documentable_factory.to_sym) }
-  let!(:maxfilesize)            { max_file_size(document.documentable.class) }
+  let!(:maxfilesize)            { document.documentable.class.max_file_size }
   let!(:acceptedcontenttypes)   { accepted_content_types(document.documentable.class) }
 
   it "is valid" do
