@@ -1,6 +1,4 @@
 class Image < ApplicationRecord
-  include ImageablesHelper
-
   has_attached_file :attachment, styles: {
                                    large: "x#{Setting["uploads.images.min_height"]}",
                                    medium: "300x300#",
@@ -29,6 +27,26 @@ class Image < ApplicationRecord
   validate :validate_image_dimensions, if: -> { attachment.present? && attachment.dirty? }
 
   before_save :set_attachment_from_cached_attachment, if: -> { cached_attachment.present? }
+
+  def self.max_file_size
+    Setting["uploads.images.max_size"].to_i
+  end
+
+  def self.accepted_content_types
+    Setting["uploads.images.content_types"]&.split(" ") || ["image/jpeg"]
+  end
+
+  def self.humanized_accepted_content_types
+    Setting.accepted_content_types_for("images").join(", ")
+  end
+
+  def max_file_size
+    self.class.max_file_size
+  end
+
+  def accepted_content_types
+    self.class.accepted_content_types
+  end
 
   def set_cached_attachment_from_attachment
     self.cached_attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
@@ -77,11 +95,10 @@ class Image < ApplicationRecord
     end
 
     def validate_attachment_size
-      if imageable_class &&
-         attachment_file_size > Setting["uploads.images.max_size"].to_i.megabytes
+      if imageable_class && attachment_file_size > max_file_size.megabytes
         errors.add(:attachment, I18n.t("images.errors.messages.in_between",
                                      min: "0 Bytes",
-                                     max: "#{imageable_max_file_size} MB"))
+                                     max: "#{max_file_size} MB"))
       end
     end
 
@@ -104,7 +121,7 @@ class Image < ApplicationRecord
       if imageable_class && !attachment_of_valid_content_type?
         message = I18n.t("images.errors.messages.wrong_content_type",
                          content_type: attachment_content_type,
-                         accepted_content_types: imageable_humanized_accepted_content_types)
+                         accepted_content_types: self.class.humanized_accepted_content_types)
         errors.add(:attachment, message)
       end
     end
@@ -116,6 +133,6 @@ class Image < ApplicationRecord
     end
 
     def attachment_of_valid_content_type?
-      attachment.present? && imageable_accepted_content_types.include?(attachment_content_type)
+      attachment.present? && accepted_content_types.include?(attachment_content_type)
     end
 end

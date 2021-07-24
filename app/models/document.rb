@@ -1,5 +1,4 @@
 class Document < ApplicationRecord
-  include DocumentablesHelper
   has_attached_file :attachment, url: "/system/:class/:prefix/:style/:hash.:extension",
                                  hash_data: ":class/:style/:custom_hash_data",
                                  use_timestamp: false,
@@ -48,6 +47,10 @@ class Document < ApplicationRecord
     attachment.instance.custom_hash_data(attachment)
   end
 
+  def self.humanized_accepted_content_types
+    Setting.accepted_content_types_for("documents").join(", ")
+  end
+
   def prefix(attachment, _style)
     if attachment.instance.persisted?
       ":attachment/:id_partition"
@@ -69,6 +72,14 @@ class Document < ApplicationRecord
     attachment_content_type.split("/").last.upcase
   end
 
+  def max_file_size
+    documentable_class.max_file_size
+  end
+
+  def accepted_content_types
+    documentable_class.accepted_content_types
+  end
+
   private
 
     def documentable_class
@@ -77,20 +88,18 @@ class Document < ApplicationRecord
 
     def validate_attachment_size
       if documentable_class.present? &&
-          attachment_file_size > documentable_class.max_file_size.megabytes
+          attachment_file_size > max_file_size.megabytes
         errors.add(:attachment, I18n.t("documents.errors.messages.in_between",
                                       min: "0 Bytes",
-                                      max: "#{documentable_class.max_file_size} MB"))
+                                      max: "#{max_file_size} MB"))
       end
     end
 
     def validate_attachment_content_type
-      if documentable_class &&
-         !accepted_content_types(documentable_class).include?(attachment_content_type)
-        accepted_content_types = documentable_humanized_accepted_content_types(documentable_class)
+      if documentable_class && !accepted_content_types.include?(attachment_content_type)
         message = I18n.t("documents.errors.messages.wrong_content_type",
                          content_type: attachment_content_type,
-                         accepted_content_types: accepted_content_types)
+                         accepted_content_types: self.class.humanized_accepted_content_types)
         errors.add(:attachment, message)
       end
     end
