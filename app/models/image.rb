@@ -1,15 +1,15 @@
 class Image < ApplicationRecord
   include Attachable
 
-  has_attached_file :attachment, styles: {
-                                   large: "x#{Setting["uploads.images.min_height"]}",
-                                   medium: "300x300#",
-                                   thumb: "140x245#"
-                                 },
-                                 url: "/system/:class/:prefix/:style/:hash.:extension",
-                                 hash_data: ":class/:style",
-                                 use_timestamp: false,
-                                 hash_secret: Rails.application.secrets.secret_key_base
+  has_attachment :attachment, styles: {
+                                large: "x#{Setting["uploads.images.min_height"]}",
+                                medium: "300x300#",
+                                thumb: "140x245#"
+                              },
+                              url: "/system/:class/:prefix/:style/:hash.:extension",
+                              hash_data: ":class/:style",
+                              use_timestamp: false,
+                              hash_secret: Rails.application.secrets.secret_key_base
 
   belongs_to :user
   belongs_to :imageable, polymorphic: true, touch: true

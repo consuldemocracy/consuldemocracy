@@ -6,21 +6,23 @@ INVESTMENT_IMAGE_FILES = %w[
   olesya-grichina-218176-unsplash_713x475.jpg
   sole-d-alessandro-340443-unsplash_713x475.jpg
 ].map do |filename|
-  File.new(Rails.root.join("db",
-                           "dev_seeds",
-                           "images",
-                           "budget",
-                           "investments", filename))
+  Rails.root.join("db",
+                  "dev_seeds",
+                  "images",
+                  "budget",
+                  "investments", filename)
 end
 
 def add_image_to(imageable)
   # imageable should respond to #title & #author
-  imageable.image = Image.create!({
-    imageable: imageable,
-    title: imageable.title,
-    attachment: INVESTMENT_IMAGE_FILES.sample,
-    user: imageable.author
-  })
+  File.open(INVESTMENT_IMAGE_FILES.sample) do |file|
+    imageable.image = Image.create!({
+      imageable: imageable,
+      title: imageable.title,
+      attachment: file,
+      user: imageable.author
+    })
+  end
   imageable.save!
 end
 

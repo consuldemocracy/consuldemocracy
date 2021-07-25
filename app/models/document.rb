@@ -1,10 +1,10 @@
 class Document < ApplicationRecord
   include Attachable
 
-  has_attached_file :attachment, url: "/system/:class/:prefix/:style/:hash.:extension",
-                                 hash_data: ":class/:style/:custom_hash_data",
-                                 use_timestamp: false,
-                                 hash_secret: Rails.application.secrets.secret_key_base
+  has_attachment :attachment, url: "/system/:class/:prefix/:style/:hash.:extension",
+                              hash_data: ":class/:style/:custom_hash_data",
+                              use_timestamp: false,
+                              hash_secret: Rails.application.secrets.secret_key_base
 
   belongs_to :user
   belongs_to :documentable, polymorphic: true, touch: true
