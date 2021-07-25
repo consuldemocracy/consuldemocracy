@@ -24,6 +24,9 @@ module Consul
     # Handle custom exceptions
     config.action_dispatch.rescue_responses["FeatureFlags::FeatureDisabled"] = :forbidden
 
+    # Store files locally.
+    config.active_storage.service = :local
+
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
