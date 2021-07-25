@@ -8,6 +8,7 @@ AllCops:
   DisplayStyleGuide: true
   Exclude:
     - "db/schema.rb"
+    - "lib/ckeditor/backend/active_storage.rb"
   DisabledByDefault: true
 
 Bundler/DuplicatedGem:
