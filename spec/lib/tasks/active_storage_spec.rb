@@ -44,6 +44,26 @@ describe "active storage tasks" do
       expect(test_storage_file_paths.count).to eq 0
     end
 
+    it "does not migrate already migrated records" do
+      document = create(:document, attachment: File.new("spec/fixtures/files/clippy.pdf"))
+
+      migrated_file = test_storage_file_paths.first
+      attachment_id = document.storage_attachment.attachment.id
+      blob_id = document.storage_attachment.blob.id
+
+      run_rake_task
+      document.reload
+
+      expect(ActiveStorage::Attachment.count).to eq 1
+      expect(ActiveStorage::Blob.count).to eq 1
+      expect(document.storage_attachment.attachment.id).to eq attachment_id
+      expect(document.storage_attachment.blob.id).to eq blob_id
+
+      expect(test_storage_file_paths.count).to eq 1
+      expect(storage_file_path(document)).to eq migrated_file
+      expect(test_storage_file_paths.first).to eq migrated_file
+    end
+
     def test_storage_file_paths
       Dir.glob("#{storage_root}/**/*").select { |file_or_folder| File.file?(file_or_folder) }
     end

@@ -40,6 +40,8 @@ namespace :active_storage do
 
         model.find_each.each do |instance|
           attachments.each do |attachment|
+            next if instance.send(:"storage_#{attachment}").attached?
+
             source = instance.send(attachment).path
 
             next if source.blank?
@@ -66,6 +68,9 @@ namespace :active_storage do
 
     ActiveStorage::Attachment.find_each do |attachment|
       dest = ActiveStorage::Blob.service.path_for(attachment.blob.key)
+
+      next if File.exist?(dest)
+
       name = attachment.name.delete_prefix("storage_")
       source = attachment.record.send(name).path
 
