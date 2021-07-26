@@ -16,12 +16,12 @@ describe Budgets::SupportsInfoComponent, type: :component do
     expect(page).to have_link "Keep scrolling to see all ideas"
   end
 
-  it "when budget has multiple headings the link to see all ideas is not rendered" do
+  it "renders the link to see all ideas when there are multiple headings" do
     create_list(:budget_heading, 2, group: group)
 
     render_inline component
 
-    expect(page).not_to have_link "Keep scrolling to see all ideas"
+    expect(page).to have_link "Keep scrolling to see all ideas"
   end
 
   it "does not render anything when the budget is not selecting" do

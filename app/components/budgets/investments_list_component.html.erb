@@ -10,7 +10,7 @@
   </section>
 <% end %>
 
-<% unless budget.informing? %>
+<% if budget.single_heading? && !budget.informing? || investments.any? %>
   <div class="row margin-top">
     <div class="small-12 medium-6 large-4 small-centered column margin-top">
       <%= link_to t("budgets.investments_list.see_all"),

@@ -115,15 +115,15 @@ describe Budgets::InvestmentsListComponent, type: :component do
       end
     end
 
-    it "is not rendered for budgets with multiple headings" do
+    it "is rendered for budgets with multiple headings" do
       create(:budget_heading, budget: budget)
 
-      Budget::Phase::PHASE_KINDS.each do |phase_name|
+      (Budget::Phase::PHASE_KINDS - %w[informing finished]).each do |phase_name|
         budget.phase = phase_name
 
         render_inline Budgets::InvestmentsListComponent.new(budget)
 
-        expect(page.native.inner_html).to be_empty
+        expect(page).to have_content "List of investments"
       end
     end
   end
@@ -147,6 +147,31 @@ describe Budgets::InvestmentsListComponent, type: :component do
 
         expect(page).to have_link "See all investments",
                                   href: budget_investments_path(budget)
+      end
+    end
+
+    context "budget with multiple headings" do
+      before { create(:budget_heading, budget: budget) }
+
+      it "is not shown in the informing or finished phases" do
+        %w[informing finished].each do |phase_name|
+          budget.phase = phase_name
+
+          render_inline Budgets::InvestmentsListComponent.new(budget)
+
+          expect(page).not_to have_link "See all investments"
+        end
+      end
+
+      it "is shown in all other phases" do
+        (Budget::Phase::PHASE_KINDS - %w[informing finished]).each do |phase_name|
+          budget.phase = phase_name
+
+          render_inline Budgets::InvestmentsListComponent.new(budget)
+
+          expect(page).to have_link "See all investments",
+                                    href: budget_investments_path(budget)
+        end
       end
     end
   end

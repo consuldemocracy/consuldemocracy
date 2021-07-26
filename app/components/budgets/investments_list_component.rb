@@ -5,10 +5,6 @@ class Budgets::InvestmentsListComponent < ApplicationComponent
     @budget = budget
   end
 
-  def render?
-    budget.single_heading?
-  end
-
   def investments(limit: 9)
     case budget.phase
     when "accepting", "reviewing"
