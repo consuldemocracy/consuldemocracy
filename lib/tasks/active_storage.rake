@@ -24,6 +24,8 @@ namespace :active_storage do
 
     ActiveRecord::Base.transaction do
       models.each do |model|
+        next if model.name == "OldPassword" && !model.table_exists?
+
         attachments = model.column_names.map do |c|
           if c =~ /(.+)_file_name$/
             $1
