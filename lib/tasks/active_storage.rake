@@ -69,7 +69,7 @@ namespace :active_storage do
     ActiveStorage::Attachment.find_each do |attachment|
       dest = ActiveStorage::Blob.service.path_for(attachment.blob.key)
 
-      next if File.exist?(dest)
+      next if File.exist?(dest) || !attachment.record
 
       name = attachment.name.delete_prefix("storage_")
       source = attachment.record.send(name).path
