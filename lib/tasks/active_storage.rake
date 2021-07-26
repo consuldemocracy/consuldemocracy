@@ -5,18 +5,16 @@ namespace :active_storage do
   desc "Copy paperclip's attachment database columns to active storage"
   task migrate_from_paperclip: :environment do
     logger = ApplicationLogger.new
-    get_blob_id = "LASTVAL()"
 
-    ActiveRecord::Base.connection.raw_connection.prepare("active_storage_blob_statement", <<-SQL)
-    INSERT INTO active_storage_blobs (
-      key, filename, content_type, metadata, byte_size, checksum, created_at
-    ) VALUES ($1, $2, $3, '{}', $4, $5, $6)
-    SQL
-
-    ActiveRecord::Base.connection.raw_connection.prepare("active_storage_attachment_statement", <<-SQL)
-    INSERT INTO active_storage_attachments (
-      name, record_type, record_id, blob_id, created_at
-    ) VALUES ($1, $2, $3, #{get_blob_id}, $4)
+    ActiveRecord::Base.connection.raw_connection.prepare("active_storage_statement", <<-SQL)
+      with rows as(
+        INSERT INTO active_storage_blobs (
+          key, filename, content_type, metadata, byte_size, checksum, created_at
+        ) VALUES ($1, $2, $3, '{}', $4, $5, $6) RETURNING id
+      )
+      INSERT INTO active_storage_attachments (
+        name, record_type, record_id, blob_id, created_at
+      ) VALUES ($7, $8, $9, (SELECT id FROM rows), $10)
     SQL
 
     Rails.application.eager_load!
@@ -41,17 +39,13 @@ namespace :active_storage do
             next if instance.send(attachment).path.blank?
 
             ActiveRecord::Base.connection.raw_connection.exec_prepared(
-              "active_storage_blob_statement", [
+              "active_storage_statement", [
                 SecureRandom.uuid, # Alternatively instance.send("#{attachment}_file_name"),
                 instance.send("#{attachment}_file_name"),
                 instance.send("#{attachment}_content_type"),
                 instance.send("#{attachment}_file_size"),
                 Digest::MD5.base64digest(File.read(instance.send(attachment).path)),
-                instance.updated_at.iso8601
-              ])
-
-            ActiveRecord::Base.connection.raw_connection.exec_prepared(
-              "active_storage_attachment_statement", [
+                instance.updated_at.iso8601,
                 attachment,
                 model.name,
                 instance.id,
