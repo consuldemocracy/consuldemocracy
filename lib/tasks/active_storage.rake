@@ -46,7 +46,7 @@ namespace :active_storage do
                 instance.send("#{attachment}_file_size"),
                 Digest::MD5.base64digest(File.read(instance.send(attachment).path)),
                 instance.updated_at.iso8601,
-                attachment,
+                "storage_#{attachment}",
                 model.name,
                 instance.id,
                 instance.updated_at.iso8601
@@ -58,7 +58,7 @@ namespace :active_storage do
 
     ActiveStorage::Attachment.find_each do |attachment|
       dest = ActiveStorage::Blob.service.path_for(attachment.blob.key)
-      name = attachment.name
+      name = attachment.name.delete_prefix("storage_")
       source = attachment.record.send(name).path
 
       FileUtils.mkdir_p(File.dirname(dest))
