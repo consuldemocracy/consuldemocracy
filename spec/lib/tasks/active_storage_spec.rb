@@ -29,6 +29,21 @@ describe "active storage tasks" do
       expect(storage_file_path(document)).to eq test_storage_file_paths.first
     end
 
+    it "migrates records with deleted files ignoring the files" do
+      document = create(:document,
+                        attachment: nil,
+                        paperclip_attachment: File.new("spec/fixtures/files/clippy.pdf"))
+      FileUtils.rm(document.attachment.path)
+
+      run_rake_task
+      document.reload
+
+      expect(ActiveStorage::Attachment.count).to eq 1
+      expect(ActiveStorage::Blob.count).to eq 1
+      expect(document.storage_attachment.filename).to eq "clippy.pdf"
+      expect(test_storage_file_paths.count).to eq 0
+    end
+
     def test_storage_file_paths
       Dir.glob("#{storage_root}/**/*").select { |file_or_folder| File.file?(file_or_folder) }
     end
