@@ -61,16 +61,11 @@ namespace :active_storage do
     end
 
     ActiveStorage::Attachment.find_each do |attachment|
+      dest = ActiveStorage::Blob.service.path_for(attachment.blob.key)
       name = attachment.name
       source = attachment.record.send(name).path
 
-      dest_dir = File.join(
-        "storage",
-        attachment.blob.key.first(2),
-        attachment.blob.key.first(4).last(2))
-      dest = File.join(dest_dir, attachment.blob.key)
-
-      FileUtils.mkdir_p(dest_dir)
+      FileUtils.mkdir_p(File.dirname(dest))
       logger.info "Copying #{source} to #{dest}"
       FileUtils.cp(source, dest)
     end
