@@ -5,17 +5,21 @@ namespace :active_storage do
   desc "Copy paperclip's attachment database columns to active storage"
   task migrate_from_paperclip: :environment do
     logger = ApplicationLogger.new
+    connection = ActiveRecord::Base.connection.raw_connection
+    statement_name = "active_storage_statement"
 
-    ActiveRecord::Base.connection.raw_connection.prepare("active_storage_statement", <<-SQL)
-      with rows as(
-        INSERT INTO active_storage_blobs (
-          key, filename, content_type, metadata, byte_size, checksum, created_at
-        ) VALUES ($1, $2, $3, '{}', $4, $5, $6) RETURNING id
-      )
-      INSERT INTO active_storage_attachments (
-        name, record_type, record_id, blob_id, created_at
-      ) VALUES ($7, $8, $9, (SELECT id FROM rows), $10)
-    SQL
+    unless connection.exec("SELECT COUNT(*) FROM pg_prepared_statements WHERE name='#{statement_name}'").each_row.to_a[0][0] > 0
+      connection.prepare(statement_name, <<-SQL)
+        with rows as(
+          INSERT INTO active_storage_blobs (
+            key, filename, content_type, metadata, byte_size, checksum, created_at
+          ) VALUES ($1, $2, $3, '{}', $4, $5, $6) RETURNING id
+        )
+        INSERT INTO active_storage_attachments (
+          name, record_type, record_id, blob_id, created_at
+        ) VALUES ($7, $8, $9, (SELECT id FROM rows), $10)
+      SQL
+    end
 
     Rails.application.eager_load!
     models = ActiveRecord::Base.descendants.reject(&:abstract_class?)
@@ -38,8 +42,8 @@ namespace :active_storage do
           attachments.each do |attachment|
             next if instance.send(attachment).path.blank?
 
-            ActiveRecord::Base.connection.raw_connection.exec_prepared(
-              "active_storage_statement", [
+            connection.exec_prepared(
+              statement_name, [
                 SecureRandom.uuid, # Alternatively instance.send("#{attachment}_file_name"),
                 instance.send("#{attachment}_file_name"),
                 instance.send("#{attachment}_content_type"),
