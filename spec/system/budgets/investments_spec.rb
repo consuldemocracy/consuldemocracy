@@ -531,7 +531,7 @@ describe "Budget Investments" do
 
       fill_in "Title", with: "I am a bot"
       fill_in_ckeditor "Description", with: "This is the description"
-      check   "budget_investment_terms_of_service"
+      check "budget_investment_terms_of_service"
 
       click_button "Create Investment"
 
