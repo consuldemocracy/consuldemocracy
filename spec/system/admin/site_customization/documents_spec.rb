@@ -18,12 +18,12 @@ describe "Documents", :admin do
     1.times { create(:document) }
 
     document = Document.first
-    attachment = document.attachment
+    url = polymorphic_path(document.storage_attachment)
 
     visit admin_site_customization_documents_path
 
     expect(page).to have_content "There are 3 documents"
-    expect(page).to have_link document.title, href: attachment.url
+    expect(page).to have_link document.title, href: url
   end
 
   scenario "Index (empty)" do

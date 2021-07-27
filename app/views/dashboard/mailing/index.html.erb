@@ -9,7 +9,7 @@
     </div>
 
     <div class="margin-bottom">
-      <%= image_tag(proposal.image_url(:large).presence || "default_mailing.jpg") %>
+      <%= image_tag(proposal.image&.variant(:large).presence || "default_mailing.jpg") %>
     </div>
 
     <div class="mail-body">

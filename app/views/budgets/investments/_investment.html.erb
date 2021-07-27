@@ -5,7 +5,7 @@
     <div class="row">
 
       <div class="small-12 medium-3 large-2 column text-center">
-        <%= image_tag investment.image_url(:thumb), alt: investment.image.title.unicode_normalize %>
+        <%= image_tag investment.image.variant(:thumb), alt: investment.image.title.unicode_normalize %>
       </div>
 
       <div class="small-12 medium-6 large-7 column">

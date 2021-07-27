@@ -373,6 +373,7 @@ GEM
     mimemagic (0.3.10)
       nokogiri (~> 1)
       rake
+    mini_magick (4.11.0)
     mini_mime (1.1.0)
     mini_portile2 (2.6.1)
     minitest (5.14.4)
@@ -744,6 +745,7 @@ DEPENDENCIES
   launchy (~> 2.5.0)
   letter_opener_web (~> 1.4.0)
   mdl (~> 0.11.0)
+  mini_magick (~> 4.11.0)
   newrelic_rpm (~> 4.1.0.333)
   omniauth (~> 2.0.4)
   omniauth-facebook (~> 8.0.0)

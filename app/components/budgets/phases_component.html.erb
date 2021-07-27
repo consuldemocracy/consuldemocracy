@@ -55,7 +55,7 @@
 
           <% if phase.image.present? %>
             <div class="budget-phase-image">
-              <%= image_tag phase.image.attachment.url(:large), alt: "" %>
+              <%= image_tag phase.image.variant(:large), alt: "" %>
             </div>
           <% end %>
         </div>

@@ -279,6 +279,26 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
         expect(page).not_to have_css ".document"
       end
+
+      scenario "Same attachment URL after editing the title" do
+        do_login_for user_to_login
+
+        visit send(path, arguments)
+        documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
+        within_fieldset("Documents") { fill_in "Title", with: "Original" }
+        click_button submit_button
+
+        expect(page).to have_content documentable_success_notice
+
+        original_url = find_link("Download file")[:href]
+
+        visit send(path, arguments)
+        within_fieldset("Documents") { fill_in "Title", with: "Updated" }
+        click_button submit_button
+
+        expect(page).to have_content documentable_success_notice
+        expect(find_link("Download file")[:href]).to eq original_url
+      end
     end
 
     describe "When allow attached documents setting is disabled" do
