@@ -1,24 +1,14 @@
 class Ckeditor::Picture < Ckeditor::Asset
-  include HasAttachment
+  attr_accessor :data
+  has_one_attached :storage_data
 
-  has_attachment :data,
-                 url: "/ckeditor_assets/pictures/:id/:style_:basename.:extension",
-                 path: ":rails_root/public/ckeditor_assets/pictures/:id/:style_:basename.:extension",
-                 styles: { content: "800>", thumb: "118x100#" }
-
-  do_not_validate_attachment_file_type :data
-  validate :attachment_presence
-  validates :data, file_content_type: { allow: /^image\/.*/ }, file_size: { less_than: 2.megabytes }
+  validates :storage_data, file_content_type: { allow: /^image\/.*/ }, file_size: { less_than: 2.megabytes }
 
   def url_content
-    url(:content)
+    rails_representation_url(storage_data.variant(resize: "800>").processed, only_path: true)
   end
 
-  private
-
-    def attachment_presence
-      unless data.present?
-        errors.add(:data, I18n.t("errors.messages.blank"))
-      end
-    end
+  def url_thumb
+    rails_representation_url(storage_data.variant(resize: "118x100").processed, only_path: true)
+  end
 end
