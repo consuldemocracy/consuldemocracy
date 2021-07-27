@@ -16,7 +16,7 @@
 
       <% if header.image.present? %>
         <div class="small-12 medium-6 column">
-          <%= image_tag(header.image_url(:large),
+          <%= image_tag(header.image.variant(:large),
                         class: "margin",
                         alt: header.image.title) %>
         </div>

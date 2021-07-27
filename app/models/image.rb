@@ -11,6 +11,14 @@ class Image < ApplicationRecord
                               use_timestamp: false,
                               hash_secret: Rails.application.secrets.secret_key_base
 
+  def self.styles
+    {
+      large: { resize: "x#{Setting["uploads.images.min_height"]}" },
+      medium: { combine_options: { gravity: "center", resize: "300x300^", crop: "300x300+0+0" }},
+      thumb: { combine_options: { gravity: "center", resize: "140x245^", crop: "140x245+0+0" }}
+    }
+  end
+
   belongs_to :user
   belongs_to :imageable, polymorphic: true, touch: true
 
@@ -39,6 +47,14 @@ class Image < ApplicationRecord
 
   def accepted_content_types
     self.class.accepted_content_types
+  end
+
+  def variant(style)
+    if style
+      storage_attachment.variant(self.class.styles[style])
+    else
+      storage_attachment
+    end
   end
 
   private
