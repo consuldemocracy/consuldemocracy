@@ -24,7 +24,7 @@ class Attachable::FieldsComponent < ApplicationComponent
     end
 
     def file_name
-      attachable.storage_attachment.filename if attachable.storage_attachment.attached?
+      attachable.attachment_file_name
     end
 
     def destroy_link

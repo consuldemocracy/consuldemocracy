@@ -11,8 +11,8 @@ describe "files tasks" do
       image = build(:image)
       document = build(:document)
 
-      image.storage_attachment.blob.save!
-      document.storage_attachment.blob.save!
+      image.attachment.blob.save!
+      document.attachment.blob.save!
 
       travel_to(2.days.from_now) { run_rake_task }
 
@@ -24,8 +24,8 @@ describe "files tasks" do
       image = build(:image)
       document = build(:document)
 
-      image.storage_attachment.blob.save!
-      document.storage_attachment.blob.save!
+      image.attachment.blob.save!
+      document.attachment.blob.save!
 
       travel_to(2.minutes.from_now) { run_rake_task }
 

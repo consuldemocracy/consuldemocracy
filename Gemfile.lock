@@ -373,9 +373,6 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0704)
-    mimemagic (0.3.10)
-      nokogiri (~> 1)
-      rake
     mini_magick (4.11.0)
     mini_mime (1.1.0)
     mini_portile2 (2.6.1)
@@ -431,12 +428,6 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
-    paperclip (6.1.0)
-      activemodel (>= 4.2.0)
-      activesupport (>= 4.2.0)
-      mime-types
-      mimemagic (~> 0.3.0)
-      terrapin (~> 0.6.0)
     parallel (1.20.1)
     paranoia (2.4.3)
       activerecord (>= 4.0, < 6.2)
@@ -756,7 +747,6 @@ DEPENDENCIES
   omniauth-google-oauth2 (~> 1.0.0)
   omniauth-rails_csrf_protection (~> 1.0.0)
   omniauth-twitter (~> 1.4.0)
-  paperclip (~> 6.1.0)
   paranoia (~> 2.4.3)
   pg (~> 1.2.3)
   pg_search (~> 2.3.5)

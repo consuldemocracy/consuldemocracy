@@ -18,7 +18,7 @@ describe "Documents", :admin do
     1.times { create(:document) }
 
     document = Document.first
-    url = polymorphic_path(document.storage_attachment)
+    url = polymorphic_path(document.attachment)
 
     visit admin_site_customization_documents_path
 

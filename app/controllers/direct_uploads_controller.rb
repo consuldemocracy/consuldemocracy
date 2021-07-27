@@ -15,9 +15,9 @@ class DirectUploadsController < ApplicationController
       @direct_upload.relation.set_cached_attachment_from_attachment
 
       render json: { cached_attachment: @direct_upload.relation.cached_attachment,
-                     filename: @direct_upload.relation.storage_attachment.filename.to_s,
+                     filename: @direct_upload.relation.attachment_file_name,
                      destroy_link: render_destroy_upload_link(@direct_upload),
-                     attachment_url: polymorphic_path(@direct_upload.relation.storage_attachment) }
+                     attachment_url: polymorphic_path(@direct_upload.relation.attachment) }
     else
       render json: { errors: @direct_upload.errors[:attachment].join(", ") },
              status: :unprocessable_entity

@@ -1,16 +1,6 @@
 class Image < ApplicationRecord
   include Attachable
 
-  has_attachment :attachment, styles: {
-                                large: "x#{Setting["uploads.images.min_height"]}",
-                                medium: "300x300#",
-                                thumb: "140x245#"
-                              },
-                              url: "/system/:class/:attachment/:id_partition/:style/:hash.:extension",
-                              hash_data: ":class/:style",
-                              use_timestamp: false,
-                              hash_secret: Rails.application.secrets.secret_key_base
-
   def self.styles
     {
       large: { resize: "x#{Setting["uploads.images.min_height"]}" },
@@ -27,7 +17,7 @@ class Image < ApplicationRecord
   validates :user_id, presence: true
   validates :imageable_id, presence: true,         if: -> { persisted? }
   validates :imageable_type, presence: true,       if: -> { persisted? }
-  validate :validate_image_dimensions, if: -> { storage_attachment.attached? && storage_attachment.new_record? }
+  validate :validate_image_dimensions, if: -> { attachment.attached? && attachment.new_record? }
 
   def self.max_file_size
     Setting["uploads.images.max_size"].to_i
@@ -51,9 +41,9 @@ class Image < ApplicationRecord
 
   def variant(style)
     if style
-      storage_attachment.variant(self.class.styles[style])
+      attachment.variant(self.class.styles[style])
     else
-      storage_attachment
+      attachment
     end
   end
 
@@ -71,10 +61,10 @@ class Image < ApplicationRecord
       if accepted_content_types.include?(attachment_content_type)
         return true if imageable_class == Widget::Card
 
-        storage_attachment.analyze unless storage_attachment.analyzed?
+        attachment.analyze unless attachment.analyzed?
 
-        width = storage_attachment.metadata[:width]
-        height = storage_attachment.metadata[:height]
+        width = attachment.metadata[:width]
+        height = attachment.metadata[:height]
         min_width = Setting["uploads.images.min_width"].to_i
         min_height = Setting["uploads.images.min_height"].to_i
         errors.add(:attachment, :min_image_width, required_min_width: min_width) if width < min_width
