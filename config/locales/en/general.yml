@@ -150,6 +150,7 @@ en:
         submit_button: Save changes
   errors:
     messages:
+      allowed_file_content_types: "content type must be one of %{types}"
       user_not_found: User not found
       invalid_date_range: "Invalid date range"
   form:

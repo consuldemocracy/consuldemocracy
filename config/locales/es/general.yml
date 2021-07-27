@@ -150,6 +150,7 @@ es:
         submit_button: Guardar cambios
   errors:
     messages:
+      allowed_file_content_types: "el tipo de contenido debe ser uno de los siguientes: %{types}"
       user_not_found: Usuario no encontrado
       invalid_date_range: "El rango de fechas no es válido"
   form:
