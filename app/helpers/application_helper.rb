@@ -49,7 +49,13 @@ module ApplicationHelper
   end
 
   def image_path_for(filename)
-    SiteCustomization::Image.image_path_for(filename) || filename
+    image = SiteCustomization::Image.image_for(filename)
+
+    if image
+      polymorphic_path(image)
+    else
+      filename
+    end
   end
 
   def content_block(name, locale = I18n.locale)
