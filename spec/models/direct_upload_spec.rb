@@ -40,8 +40,8 @@ describe DirectUpload do
       direct_upload.save_attachment
 
       expect(File.exist?(direct_upload.relation.file_path)).to be true
-      expect(direct_upload.relation.storage_attachment.blob).to be_persisted
-      expect(direct_upload.relation.storage_attachment.attachment).not_to be_persisted
+      expect(direct_upload.relation.attachment.blob).to be_persisted
+      expect(direct_upload.relation.attachment.attachment).not_to be_persisted
     end
   end
 end

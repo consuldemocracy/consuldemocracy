@@ -14,9 +14,7 @@ class SiteCustomization::Image < ApplicationRecord
   has_attachment :image
 
   validates :name, presence: true, uniqueness: true, inclusion: { in: VALID_IMAGES.keys }
-  do_not_validate_attachment_file_type :image
-  validates :image, file_content_type: { allow: ["image/png", "image/jpeg"] }
-
+  validates :image, file_content_type: { allow: ["image/png", "image/jpeg"], if: -> { image.attached? }}
   validate :check_image
 
   def self.all_images
@@ -40,21 +38,21 @@ class SiteCustomization::Image < ApplicationRecord
   end
 
   def persisted_image
-    storage_image if persisted_attachment?
+    image if persisted_attachment?
   end
 
   def persisted_attachment?
-    storage_image.attachment&.persisted?
+    image.attachment&.persisted?
   end
 
   private
 
     def check_image
-      return unless image?
+      return unless image.attached?
 
-      storage_image.analyze unless storage_image.analyzed?
-      width = storage_image.metadata[:width]
-      height = storage_image.metadata[:height]
+      image.analyze unless image.analyzed?
+      width = image.metadata[:width]
+      height = image.metadata[:height]
 
       if name == "logo_header"
         errors.add(:image, :image_width, required_width: required_width) unless width <= required_width

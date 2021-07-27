@@ -1,15 +1,12 @@
 require "rails_helper"
 
 describe SiteCustomization::Image do
-  it "stores images with both Paperclip and Active Storage" do
+  it "stores images with Active Storage" do
     image = create(:site_customization_image, name: "map",
                    image: File.new("spec/fixtures/files/custom_map.jpg"))
 
-    expect(image.image).to exist
-    expect(image.image_file_name).to eq "custom_map.jpg"
-
-    expect(image.storage_image).to be_attached
-    expect(image.storage_image.filename).to eq "custom_map.jpg"
+    expect(image.image).to be_attached
+    expect(image.image.filename).to eq "custom_map.jpg"
   end
 
   describe "logo" do
