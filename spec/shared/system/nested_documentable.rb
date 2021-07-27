@@ -137,9 +137,15 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
+      click_link "Add new document"
 
-      expect_document_has_cached_attachment(0, ".pdf")
+      cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
+      expect(cached_attachment_field.value).to be_empty
+
+      attach_file "Choose document", Rails.root.join("spec/fixtures/files/empty.pdf")
+
+      expect(page).to have_css(".loading-bar.complete")
+      expect(cached_attachment_field.value).not_to be_empty
     end
 
     scenario "Should not update document cached_attachment field after invalid file upload" do
@@ -151,7 +157,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         false
       )
 
-      expect_document_has_cached_attachment(0, "")
+      cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
+      expect(cached_attachment_field.value).to be_empty
     end
 
     scenario "Should show document errors after documentable submit with
@@ -347,14 +354,6 @@ def expect_document_has_title(index, title)
 
   within document do
     expect(find("input[name$='[title]']").value).to eq title
-  end
-end
-
-def expect_document_has_cached_attachment(index, extension)
-  document = all(".document")[index]
-
-  within document do
-    expect(find("input[name$='[cached_attachment]']", visible: :hidden).value).to end_with(extension)
   end
 end
 

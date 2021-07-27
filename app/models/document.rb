@@ -1,7 +1,7 @@
 class Document < ApplicationRecord
   include Attachable
 
-  has_attachment :attachment, url: "/system/:class/:prefix/:style/:hash.:extension",
+  has_attachment :attachment, url: "/system/:class/:attachment/:id_partition/:style/:hash.:extension",
                               hash_data: ":class/:style/:custom_hash_data",
                               use_timestamp: false,
                               hash_secret: Rails.application.secrets.secret_key_base

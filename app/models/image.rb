@@ -6,7 +6,7 @@ class Image < ApplicationRecord
                                 medium: "300x300#",
                                 thumb: "140x245#"
                               },
-                              url: "/system/:class/:prefix/:style/:hash.:extension",
+                              url: "/system/:class/:attachment/:id_partition/:style/:hash.:extension",
                               hash_data: ":class/:style",
                               use_timestamp: false,
                               hash_secret: Rails.application.secrets.secret_key_base
@@ -27,7 +27,7 @@ class Image < ApplicationRecord
   validates :user_id, presence: true
   validates :imageable_id, presence: true,         if: -> { persisted? }
   validates :imageable_type, presence: true,       if: -> { persisted? }
-  validate :validate_image_dimensions, if: -> { attachment.present? && attachment.dirty? }
+  validate :validate_image_dimensions, if: -> { storage_attachment.attached? && storage_attachment.new_record? }
 
   def self.max_file_size
     Setting["uploads.images.max_size"].to_i
@@ -68,14 +68,17 @@ class Image < ApplicationRecord
     end
 
     def validate_image_dimensions
-      if attachment_of_valid_content_type?
+      if accepted_content_types.include?(attachment_content_type)
         return true if imageable_class == Widget::Card
 
-        dimensions = Paperclip::Geometry.from_file(attachment.queued_for_write[:original].path)
+        storage_attachment.analyze unless storage_attachment.analyzed?
+
+        width = storage_attachment.metadata[:width]
+        height = storage_attachment.metadata[:height]
         min_width = Setting["uploads.images.min_width"].to_i
         min_height = Setting["uploads.images.min_height"].to_i
-        errors.add(:attachment, :min_image_width, required_min_width: min_width) if dimensions.width < min_width
-        errors.add(:attachment, :min_image_height, required_min_height: min_height) if dimensions.height < min_height
+        errors.add(:attachment, :min_image_width, required_min_width: min_width) if width < min_width
+        errors.add(:attachment, :min_image_height, required_min_height: min_height) if height < min_height
       end
     end
 
@@ -92,9 +95,5 @@ class Image < ApplicationRecord
           errors.add(:title, I18n.t("errors.messages.too_long", count: title_max_length))
         end
       end
-    end
-
-    def attachment_of_valid_content_type?
-      attachment.present? && accepted_content_types.include?(attachment_content_type)
     end
 end
