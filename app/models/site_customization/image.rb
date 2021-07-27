@@ -50,14 +50,16 @@ class SiteCustomization::Image < ApplicationRecord
     def check_image
       return unless image?
 
-      dimensions = Paperclip::Geometry.from_file(image.queued_for_write[:original].path)
+      storage_image.analyze unless storage_image.analyzed?
+      width = storage_image.metadata[:width]
+      height = storage_image.metadata[:height]
 
       if name == "logo_header"
-        errors.add(:image, :image_width, required_width: required_width) unless dimensions.width <= required_width
+        errors.add(:image, :image_width, required_width: required_width) unless width <= required_width
       else
-        errors.add(:image, :image_width, required_width: required_width) unless dimensions.width == required_width
+        errors.add(:image, :image_width, required_width: required_width) unless width == required_width
       end
 
-      errors.add(:image, :image_height, required_height: required_height) unless dimensions.height == required_height
+      errors.add(:image, :image_height, required_height: required_height) unless height == required_height
     end
 end
