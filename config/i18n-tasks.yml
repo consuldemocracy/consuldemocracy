@@ -167,6 +167,7 @@ ignore_unused:
   - "admin.dashboard.administrator_tasks.index.filter*"
   - "admin.dashboard.actions.index.default.*"
   - "admin.users.index.filter*"
+  - "errors.messages.allowed_file_content_types"
   - "moderation.comments.index.filter*"
   - "moderation.comments.index.orders.*"
   - "moderation.debates.index.filter*"
