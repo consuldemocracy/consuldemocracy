@@ -28,8 +28,7 @@
 
     .attachment-errors {
 
-      > .js-image-attachment,
-      > .js-document-attachment {
+      > [type=file] {
         @include element-invisible;
 
         ~ .error {
