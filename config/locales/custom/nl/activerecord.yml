@@ -4,6 +4,7 @@ nl:
     results_enabled: "Toon resultaten"
     stats_enabled: "Toon statistieken"
     advanced_stats_enabled: "Toon geavanceerde statistieken"
+    related_sdg_list: "Goals and Targets"
   activerecord:
     models:
       budget/investment:
@@ -21,6 +22,18 @@ nl:
       local_census_record:
         one: "volkstelling"
         other: "volkstellingen"
+      sdg/goal:
+        one: "doel"
+        other: "doelen"
+      sdg/local_target:
+        one: "lokaal (sub)doel"
+        other: "lokale (sub)doelen"
+      sdg/manager:
+        one: "SDG manager"
+        other: "SDG managers"
+      sdg/target:
+        one: "(sub)doel"
+        other: "(sub)doelen"
     attributes:
       debate:
         tag_list: "Onderwerpen/labels"
@@ -124,3 +137,27 @@ nl:
       proposal_notification:
         body: "Bericht"
         title: "Titel"
+      sdg/goal:
+        code: "Code"
+        title: "Titel"
+        description: "Beschrijving"
+      sdg/local_target:
+        code: "Code"
+        target_id: "(Sub)doel"
+        title: "Titel"
+      sdg/local_target/translation:
+        title: "Titel"
+        description: "Beschrijving"
+      sdg/phase/kind:
+        sensitization: "Besef SDG's"
+        planning: "Lopende plannen"
+        monitoring: "Afgeronde plannen en updates"
+      sdg/target:
+        code: "Code"
+        title: "Titel"
+    errors:
+      models:
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "moet beginnen met dezelfde code als de gerelateerde SDG, gevolgs door een punt en eindigen met een cijfer"
