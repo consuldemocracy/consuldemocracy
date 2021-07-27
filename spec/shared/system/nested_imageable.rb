@@ -227,6 +227,17 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         expect(page).not_to have_css ".image"
         expect(page).to have_css "a#new_image_link"
       end
+
+      scenario "don't duplicate fields after removing and adding an image" do
+        create(:image, imageable: imageable)
+        do_login_for user
+
+        visit send(path, arguments)
+        click_link "Remove image"
+        click_link "Add image"
+
+        expect(page).to have_css ".image", count: 1, visible: :all
+      end
     end
   end
 end
