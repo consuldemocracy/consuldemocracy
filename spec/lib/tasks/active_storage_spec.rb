@@ -11,9 +11,10 @@ describe "active storage tasks" do
     before { FileUtils.rm_rf storage_root }
 
     it "migrates records and attachments" do
-      document = create(:document,
-                        attachment: nil,
-                        paperclip_attachment: File.new("spec/fixtures/files/clippy.pdf"))
+      document = build(:document,
+                       attachment: nil,
+                       paperclip_attachment: File.new("spec/fixtures/files/clippy.pdf"))
+      document.save(validate: false)
 
       expect(ActiveStorage::Attachment.count).to eq 0
       expect(ActiveStorage::Blob.count).to eq 0
@@ -30,9 +31,10 @@ describe "active storage tasks" do
     end
 
     it "migrates records with deleted files ignoring the files" do
-      document = create(:document,
-                        attachment: nil,
-                        paperclip_attachment: File.new("spec/fixtures/files/clippy.pdf"))
+      document = build(:document,
+                       attachment: nil,
+                       paperclip_attachment: File.new("spec/fixtures/files/clippy.pdf"))
+      document.save(validate: false)
       FileUtils.rm(document.attachment.path)
 
       run_rake_task

@@ -9,14 +9,10 @@ module Attachable
     # Paperclip do not allow to use Procs on valiations definition
     do_not_validate_attachment_file_type :attachment
     validate :attachment_presence
-    validate :validate_attachment_content_type,         if: -> { attachment.present? }
-    validate :validate_attachment_size,                 if: -> { attachment.present? }
+    validate :validate_attachment_content_type,         if: -> { storage_attachment.attached? }
+    validate :validate_attachment_size,                 if: -> { storage_attachment.attached? }
 
-    before_save :set_attachment_from_cached_attachment, if: -> { cached_attachment.present? }
-
-    Paperclip.interpolates :prefix do |attachment, style|
-      attachment.instance.prefix(attachment, style)
-    end
+    before_validation :set_attachment_from_cached_attachment, if: -> { cached_attachment.present? }
   end
 
   def association_class
@@ -26,27 +22,35 @@ module Attachable
   end
 
   def set_cached_attachment_from_attachment
-    self.cached_attachment = if filesystem_storage?
-                               attachment.path
-                             else
-                               attachment.url
-                             end
+    self.cached_attachment = storage_attachment.signed_id
   end
 
   def set_attachment_from_cached_attachment
+    self.storage_attachment = cached_attachment
+
     if filesystem_storage?
-      File.open(cached_attachment) { |file| self.attachment = file }
+      File.open(file_path) do |file|
+        self.paperclip_attachment = file
+      end
     else
-      self.attachment = URI.parse(cached_attachment).open
+      self.paperclip_attachment = URI.parse(cached_attachment).open
     end
   end
 
-  def prefix(attachment, _style)
-    if attachment.instance.persisted?
-      ":attachment/:id_partition"
+  def attachment_content_type
+    storage_attachment.blob.content_type if storage_attachment.attached?
+  end
+
+  def attachment_file_size
+    if storage_attachment.attached?
+      storage_attachment.blob.byte_size
     else
-      "cached_attachments/user/#{attachment.instance.user_id}"
+      0
     end
+  end
+
+  def file_path
+    ActiveStorage::Blob.service.path_for(storage_attachment.blob.key)
   end
 
   private
@@ -73,7 +77,7 @@ module Attachable
     end
 
     def attachment_presence
-      if attachment.blank? && cached_attachment.blank?
+      unless storage_attachment.attached?
         errors.add(:attachment, I18n.t("errors.messages.blank"))
       end
     end
