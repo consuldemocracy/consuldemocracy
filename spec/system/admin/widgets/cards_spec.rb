@@ -40,19 +40,18 @@ describe "Cards", :admin do
   end
 
   scenario "Index" do
-    3.times { create(:widget_card) }
+    cards = Array.new(3) { create(:widget_card) }
 
     visit admin_homepage_path
 
     expect(page).to have_css(".homepage-card", count: 3)
 
-    cards = Widget::Card.all
     cards.each do |card|
       expect(page).to have_content card.title
       expect(page).to have_content card.description
       expect(page).to have_content card.link_text
       expect(page).to have_content card.link_url
-      expect(page).to have_link("Show image", href: card.image_url(:large))
+      expect(page).to have_link "Show image"
     end
   end
 
