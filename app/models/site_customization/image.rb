@@ -23,11 +23,10 @@ class SiteCustomization::Image < ApplicationRecord
     end
   end
 
-  def self.image_path_for(filename)
+  def self.image_for(filename)
     image_name = filename.split(".").first
 
-    imageable = find_by(name: image_name)
-    imageable.present? && imageable.image.exists? ? imageable.image.url : nil
+    find_by(name: image_name)&.persisted_image
   end
 
   def required_width
@@ -36,6 +35,14 @@ class SiteCustomization::Image < ApplicationRecord
 
   def required_height
     VALID_IMAGES[name]&.second
+  end
+
+  def persisted_image
+    storage_image if persisted_attachment?
+  end
+
+  def persisted_attachment?
+    storage_image.attachment&.persisted?
   end
 
   private

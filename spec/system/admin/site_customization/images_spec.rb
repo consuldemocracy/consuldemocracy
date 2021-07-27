@@ -60,6 +60,17 @@ describe "Admin custom images", :admin do
     end
   end
 
+  scenario "Custom apple touch icon is replaced on front views" do
+    create(:site_customization_image,
+           name: "apple-touch-icon-200",
+           image: File.new("spec/fixtures/files/apple-touch-icon-custom-200.png"))
+
+    visit root_path
+
+    expect(page).not_to have_css("link[href*='apple-touch-icon-200']", visible: :all)
+    expect(page).to have_css("link[href*='apple-touch-icon-custom-200']", visible: :hidden)
+  end
+
   scenario "Image is replaced on admin newsletters" do
     newsletter = create(:newsletter, segment_recipient: "all_users")
 
