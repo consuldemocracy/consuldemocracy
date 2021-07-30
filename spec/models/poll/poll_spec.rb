@@ -370,6 +370,19 @@ describe Poll do
       expect(Poll.sort_for_list).to eq [poll1, poll2]
     end
 
+    it "returns polls for the user's geozone first" do
+      geozone = create(:geozone)
+      poll1 = create(:poll, geozone_restricted: true)
+      poll2 = create(:poll, geozone_restricted: true)
+      poll3 = create(:poll)
+      poll_geozone_1 = create(:poll, geozone_restricted: true, geozones: [geozone])
+      poll_geozone_2 = create(:poll, geozone_restricted: true, geozones: [geozone])
+      geozone_user = create(:user, :level_two, geozone: geozone)
+
+      expect(Poll.sort_for_list).to eq [poll3, poll1, poll2, poll_geozone_1, poll_geozone_2]
+      expect(Poll.sort_for_list(geozone_user)).to eq [poll3, poll_geozone_1, poll_geozone_2, poll1, poll2]
+    end
+
     it "returns polls earlier to start first" do
       starts_at = Time.current + 1.day
       poll1 = create(:poll, geozone_restricted: false, starts_at: starts_at - 1.hour, name: "Zzz...")

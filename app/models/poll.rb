@@ -51,9 +51,9 @@ class Poll < ApplicationRecord
   scope :not_budget, -> { where(budget_id: nil) }
   scope :created_by_admin, -> { where(related_type: nil) }
 
-  def self.sort_for_list
+  def self.sort_for_list(user = nil)
     all.sort do |poll, another_poll|
-      [poll.weight, poll.starts_at, poll.name] <=> [another_poll.weight, another_poll.starts_at, another_poll.name]
+      [poll.weight(user), poll.starts_at, poll.name] <=> [another_poll.weight(user), another_poll.starts_at, another_poll.name]
     end
   end
 
@@ -183,9 +183,13 @@ class Poll < ApplicationRecord
     pg_search(terms)
   end
 
-  def weight
+  def weight(user)
     if geozone_restricted?
-      100
+      if answerable_by?(user)
+        50
+      else
+        100
+      end
     else
       0
     end
