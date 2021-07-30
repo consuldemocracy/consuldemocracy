@@ -51,10 +51,12 @@ class Poll < ApplicationRecord
   scope :not_budget, -> { where(budget_id: nil) }
   scope :created_by_admin, -> { where(related_type: nil) }
 
-  def self.sort_for_list
+  def self.sort_for_list(user = nil)
     all.sort do |poll, another_poll|
       if poll.geozone_restricted? == another_poll.geozone_restricted?
-        [poll.starts_at, poll.name] <=> [another_poll.starts_at, another_poll.name]
+        poll_weight = poll.answerable_by?(user) ? -1 : 1
+        another_poll_weight = another_poll.answerable_by?(user) ? -1 : 1
+        [poll_weight, poll.starts_at, poll.name] <=> [another_poll_weight, another_poll.starts_at, another_poll.name]
       else
         if poll.geozone_restricted?
           1

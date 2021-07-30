@@ -526,6 +526,31 @@ describe "Polls" do
       expect(page).to have_selector "img[alt='1. No Poverty']"
       expect(page).to have_content "target 1.1"
     end
+
+    scenario "Polls with users same-geozone listed first" do
+      create(:poll, geozone_restricted: true, name: "A Poll")
+      create(:poll, geozone_restricted: true, name: "B Poll")
+      create(:poll, name: "No restricted")
+      poll_geozone_1 = create(:poll, geozone_restricted: true, name: "Geozone Poll A")
+      poll_geozone_2 = create(:poll, geozone_restricted: true, name: "Geozone Poll B")
+      poll_geozone_1.geozones << geozone
+      poll_geozone_2.geozones << geozone
+
+      visit polls_path(poll)
+
+      expect("No restricted").to appear_before("A Poll")
+      expect("A Poll").to appear_before("B Poll")
+      expect("B Poll").to appear_before("Geozone Poll A")
+      expect("Geozone Poll A").to appear_before("Geozone Poll B")
+
+      login_as(create(:user, :level_two, geozone: geozone))
+      visit polls_path(poll)
+
+      expect("No restricted").to appear_before("Geozone Poll A")
+      expect("Geozone Poll A").to appear_before("Geozone Poll B")
+      expect("Geozone Poll B").to appear_before("A Poll")
+      expect("A Poll").to appear_before("B Poll")
+    end
   end
 
   context "Booth & Website", :with_frozen_time do
