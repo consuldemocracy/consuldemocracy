@@ -37,7 +37,7 @@
           <%= poll_dates(poll) %>
 
           <ul class="margin-top">
-            <% poll.questions.each do |question| %>
+            <% poll.questions.sort_for_list.each do |question| %>
               <li><%= question.title %></li>
             <% end %>
           </ul>

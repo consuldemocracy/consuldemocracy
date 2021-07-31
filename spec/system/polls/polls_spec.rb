@@ -173,6 +173,24 @@ describe "Polls" do
       expect(page).to have_content(proposal_question.title)
     end
 
+    scenario "Questions appear by created at order" do
+      question = create(:poll_question, poll: poll, title: "First question")
+      create(:poll_question, poll: poll, title: "Second question")
+      create(:poll_question, poll: poll, title: "Third question")
+
+      question.update!(title: "First question edited")
+
+      visit polls_path
+
+      expect("First question edited").to appear_before("Second question")
+      expect("Second question").to appear_before("Third question")
+
+      visit poll_path(poll)
+
+      expect("First question edited").to appear_before("Second question")
+      expect("Second question").to appear_before("Third question")
+    end
+
     scenario "Question answers appear in the given order" do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, title: "First", question: question, given_order: 2)

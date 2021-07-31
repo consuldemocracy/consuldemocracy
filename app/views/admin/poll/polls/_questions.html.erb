@@ -15,7 +15,7 @@
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
-    <% @poll.questions.each do |question| %>
+    <% @poll.questions.sort_for_list.each do |question| %>
       <tr id="<%= dom_id(question) %>">
         <td>
           <strong><%= question.title %></strong>
