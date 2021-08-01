@@ -49,10 +49,6 @@
     margin-bottom: 0;
     margin-top: $line-height;
 
-    &:focus {
-      outline: $outline-focus;
-    }
-
     &.cancel {
       @include hollow-button($alert-color);
     }

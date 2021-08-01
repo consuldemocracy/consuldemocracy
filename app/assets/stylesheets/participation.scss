@@ -772,10 +772,6 @@
         cursor: pointer;
       }
 
-      &:focus {
-        outline: $outline-focus;
-      }
-
       &:active {
         opacity: 0.75;
       }
