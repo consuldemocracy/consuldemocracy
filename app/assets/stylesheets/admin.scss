@@ -274,6 +274,10 @@ $table-header:   #ecf1f6;
       border: $admin-border;
       border-radius: rem-calc(6);
       box-shadow: none;
+
+      &:focus {
+        border: $input-border-focus;
+      }
     }
   }
 

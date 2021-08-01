@@ -39,6 +39,7 @@
       width: auto;
 
       &:focus {
+        border: 0;
         outline: $outline-focus;
       }
 
