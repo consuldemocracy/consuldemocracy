@@ -1306,7 +1306,7 @@ sv:
             update: Kartinställningarna har uppdaterats.
           form:
             submit: Uppdatera
-          how_to_enable: 'För att visa kartan måste man aktivera "Geografisk plats för förslag och budgetförslag" på sidan "Funktioner".'
+          how_to_enable: 'För att visa kartan måste man aktivera "Geografisk plats för förslag och budgetinvesteringar" på sidan "Funktioner".'
         dashboard:
           title: Instrumentbräda för förslag
         remote_census:
@@ -1317,8 +1317,8 @@ sv:
           how_to_enable: 'För att visa konfigurationsalternativen från Globala mål för hållbar utveckling måste du aktivera "Globala målen" på fliken "Funktioner".'
       remote_census_general_name: Generell information
       remote_census_request_name: Begär data
-      remote_census_response_name: Svar data
-      setting: Funktioner
+      remote_census_response_name: Svarsdata
+      setting: Funktion
       setting_actions: Åtgärder
       setting_name: Inställning
       setting_status: Status
