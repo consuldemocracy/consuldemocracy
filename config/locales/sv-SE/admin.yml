@@ -129,7 +129,7 @@ sv:
           staff_settings: "Administratörer och bedömare som tilldelats budgeten"
       destroy:
         success_notice: Budgeten raderades
-        unable_notice: Du kan inte ta bort en budget som har budgetförslag
+        unable_notice: Du kan inte radera en budget som har budgetinvesteringar kopplade till sig
         unable_notice_polls: Du kan inte ta bort en budget som har en kopplad enkät
       new:
         title_multiple: Ny budget med flera områden
@@ -152,7 +152,7 @@ sv:
     budget_groups:
       name: "Namn"
       headings_name: "Områden"
-      headings_manage: "Hantera områden"
+      headings_manage: "Områden"
       no_groups: "Det finns inga grupper."
       amount:
         one: "Det finns en grupp"
@@ -168,7 +168,7 @@ sv:
         create: "Skapa ny grupp"
         edit: "Redigera delbudget"
         max_votable_headings_info: "Gäller bara för projekturvalsfasen. Under projektomröstningsfasen kan användare bara rösta i ett område per grupp."
-        submit: "Spara delbudget"
+        submit: "Spara grupp"
       index:
         back: "Gå tillbaka till budgetar"
         new_button: "Lägg till ny grupp"
@@ -183,10 +183,10 @@ sv:
         notice: "Området har uppdaterats"
       destroy:
         success_notice: "Området har raderats"
-        unable_notice: "Du kan inte ta bort ett område som har budgetförslag"
+        unable_notice: "Du kan inte radera ett område som har kopplade investeringar"
       form:
         max_ballot_lines_info: 'Maximalt antal projekt som en användare kan rösta om i det här området under fasen "Omröstning". Bara för budgetar som använder omröstning med godkännande.'
-        population_info: "Fältet för folkmängd inom ett område används för att föra statistik över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är frivilligt."
+        population_info: "Fältet för folkmängd inom ett budgetområde används för att i slutet av budgeten föra statistik för varje område över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är valfritt, så du kan lämna det tomt om det inte är tillämpligt."
         coordinates_info: "Om latitud och longitud anges kommer budgetsidan för detta område att innehålla en karta. Kartan centreras kring dessa koordinater."
         content_blocks_info: "Om innehållsblock är tillåtna kan du skapa anpassat innehåll som rör detta område från avsnittet Inställningar > Anpassade innehållsblock. Detta innehåll visas på investeringssidan för området."
         create: "Skapa nytt område"
@@ -224,7 +224,7 @@ sv:
         placeholder: Sök projekt
         filters:
           all: Alla
-          without_admin: Utan ansvarig administratör
+          without_admin: Utan tilldelad administratör
           without_valuator: Saknar ansvarig bedömare
           under_valuation: Under kostnadsberäkning
           valuation_finished: Kostnadsberäkning avslutad
@@ -239,11 +239,11 @@ sv:
           two_filters: "Aktiva filter: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtrera
-        download_current_selection: "Ladda ner nuvarande markering"
+        download_current_selection: "Ladda ner nuvarande urval"
         no_budget_investments: "Det finns inga budgetförslag."
         title: Budgetförslag
         columns: Kolumner
-        assigned_admin: Ansvarig administratör
+        assigned_admin: Tilldelad administratör
         no_admin_assigned: Saknar ansvarig administratör
         no_valuators_assigned: Inga ansvariga bedömare
         feasibility:
@@ -261,18 +261,18 @@ sv:
           valuation_group: Värderingsgrupp
           geozone: Område
           feasibility: Genomförbarhet
-          valuation_finished: Val. Fin.
+          valuation_finished: Bedöm. avsl.
           selected: Vald
           visible_to_valuators: Visa till bedömare
-          author_username: Skribentens användarnamn
+          author_username: Förslagslämnarens användarnamn
           incompatible: Oförenlig
           price: Pris
-          author: Skribent
+          author: Förslagslämnare
         cannot_calculate_winners: Budgeten måste vara i någon av faserna "Omröstning", "Granskning av röstning" eller "Avslutad budget" för att kunna räkna fram vinnande förslag
         see_results: "Visa resultat"
         milestone_tags_filter_all: "Alla milstolpetaggar"
       show:
-        assigned_admin: Ansvarig administratör
+        assigned_admin: Tilldelad administratör
         assigned_valuators: Ansvariga bedömare
         classification: Klassificering
         info: "%{budget_name} - Grupp: %{group_name} - Investeringsprojekt: %{id}"
