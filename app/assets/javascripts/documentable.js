@@ -115,7 +115,8 @@
       $("#max-documents-notice").removeClass("hide");
     },
     initializeRemoveCachedDocumentLinks: function() {
-      $("#nested-documents").on("ajax:complete", "a.remove-cached-attachment", function() {
+      $("#nested-documents").on("click", "a.remove-cached-attachment", function(event) {
+        event.preventDefault();
         App.Documentable.unlockUploads();
         $(this).closest(".direct-upload").remove();
       });

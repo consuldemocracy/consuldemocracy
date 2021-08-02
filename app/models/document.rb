@@ -5,7 +5,7 @@ class Document < ApplicationRecord
                                  hash_data: ":class/:style/:custom_hash_data",
                                  use_timestamp: false,
                                  hash_secret: Rails.application.secrets.secret_key_base
-  attr_accessor :cached_attachment, :remove, :original_filename
+  attr_accessor :cached_attachment
 
   belongs_to :user
   belongs_to :documentable, polymorphic: true
@@ -22,7 +22,6 @@ class Document < ApplicationRecord
   validates :documentable_type, presence: true,       if: -> { persisted? }
 
   before_save :set_attachment_from_cached_attachment, if: -> { cached_attachment.present? }
-  after_save :remove_cached_attachment,               if: -> { cached_attachment.present? }
 
   scope :admin, -> { where(admin: true) }
 
@@ -59,9 +58,7 @@ class Document < ApplicationRecord
   end
 
   def custom_hash_data(attachment)
-    original_filename = if !attachment.instance.persisted? && attachment.instance.remove
-                          attachment.instance.original_filename
-                        elsif !attachment.instance.persisted?
+    original_filename = if !attachment.instance.persisted?
                           attachment.instance.attachment_file_name
                         else
                           attachment.instance.title
@@ -103,15 +100,5 @@ class Document < ApplicationRecord
       if attachment.blank? && cached_attachment.blank?
         errors.add(:attachment, I18n.t("errors.messages.blank"))
       end
-    end
-
-    def remove_cached_attachment
-      document = Document.new(documentable: documentable,
-                              cached_attachment: cached_attachment,
-                              user: user,
-                              remove: true,
-                              original_filename: title)
-      document.set_attachment_from_cached_attachment
-      document.attachment.destroy
     end
 end

@@ -19,16 +19,7 @@ class Images::FieldsComponent < ApplicationComponent
 
     def destroy_link
       if !image.persisted? && image.cached_attachment.present?
-        link_to t("images.form.delete_button"),
-          direct_upload_destroy_path(
-            "direct_upload[resource_type]": image.imageable_type,
-            "direct_upload[resource_id]": image.imageable_id,
-            "direct_upload[resource_relation]": "image",
-            "direct_upload[cached_attachment]": image.cached_attachment
-          ),
-          method: :delete,
-          remote: true,
-          class: "delete remove-cached-attachment"
+        link_to t("images.form.delete_button"), "#", class: "delete remove-cached-attachment"
       else
         link_to_remove_association t("images.form.delete_button"), f, class: "delete remove-image"
       end
