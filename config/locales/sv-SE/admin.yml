@@ -1286,7 +1286,7 @@ sv:
         no_hidden_proposals: Det finns inga dolda aviseringar.
     settings:
       flash:
-        updated: Uppdaterad värde
+        updated: Uppdaterade värdet
       index:
         title: Konfigurationsinställningar
         general: Konfigurationsinställningar
