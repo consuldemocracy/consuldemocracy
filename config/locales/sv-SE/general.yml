@@ -641,7 +641,7 @@ sv:
         votes: "RÖSTER"
         web: "WEBB"
         mail: "MAIL"
-        booth: "RÖSTSTATION"
+        booth: "RÖSTBÅS"
         total: "TOTALT"
         valid: "Giltiga"
         white: "Blankröster"
@@ -694,7 +694,7 @@ sv:
       to: "Till"
     author_info:
       author_deleted: Användaren är borttagen
-      email_deleted: E-post raderad
+      email_deleted: E-postadress raderad
     back: Gå tillbaka
     check: Välj
     check_all: Alla
@@ -728,9 +728,9 @@ sv:
         see_all: "Visa alla"
       budget_investment:
         found:
-          one: "Det finns redan ett budgetförslag om '%{query}'. Du kan delta i det förslaget istället för att skapa ett nytt."
-          other: "Det finns redan budgetförslag om '%{query}'. Du kan delta i de förslagen istället för att skapa ett nytt."
-        message: "Du visar %{limit} av %{count} förslag som innehåller '%{query} '"
+          one: "Det finns redan en investering om '%{query}'. Du kan delta i den istället för att skapa en ny."
+          other: "Det finns redan investeringar om '%{query}'. Du kan delta i dem istället för att skapa en ny."
+        message: "Du visar %{limit} av %{count} investeringar som innehåller '%{query} '"
         see_all: "Visa alla"
       proposal:
         found:
@@ -817,7 +817,7 @@ sv:
       proposals: Förslag
       proposals_status: Status
       debates: Debatter
-      budget_investments: Budgetförslag
+      budget_investments: Budgetinvesteringar
       comments: Kommentarer
       actions: Åtgärder
       filters:
@@ -831,8 +831,8 @@ sv:
           one: 1 förslag
           other: "%{count} förslag"
         budget_investments:
-          one: 1 budgetförslag
-          other: "%{count} budgetförslag"
+          one: 1 investering
+          other: "%{count} investeringar"
         follows:
           one: 1 följare
           other: "%{count} följare"
@@ -844,7 +844,7 @@ sv:
     proposals:
       retired: "Förslag som dragits tillbaka"
       draft: Utkast
-      published: Publicerad
+      published: Publicerat
       see: "Visa förslag"
       actions: Åtgärder
       retired_help_text: Dashboard är inte tillgängligt för tillbakadragna förslag
@@ -863,8 +863,8 @@ sv:
       unfeasible: Det går inte att stödja investeringsprojekt som inte är genomförbara
       not_voting_allowed: Omröstningsfasen är avslutad
       different_heading_assigned:
-        one: "Du kan bara stödja budgetförslag i %{count} distrikt. Du stödjer redan budgetförslag i %{supported_headings}."
-        other: "Du kan bara stödja budgetförslag i %{count} stadsdelar. Du stödjer redan budgetförslag i %{supported_headings}."
+        one: "Du kan bara stödja investeringsprojekt i %{count} distrikt. Du stödjer redan investeringar i %{supported_headings}."
+        other: "Du kan bara stödja investeringsprojekt i %{count} distrikt. Du stödjer redan investeringar i %{supported_headings}."
   welcome:
     feed:
       most_active:
@@ -901,7 +901,7 @@ sv:
       question: Har du redan ett konto på %{org_name}?
       title: Kontoverifiering
     welcome:
-      go_to_index: Visa förslag och debatter
+      go_to_index: Inte nu, gå till indexsidan
       start_using_consul: Gå till indexsidan
       title: Delta
       user_permission_debates: Delta i debatter
@@ -932,7 +932,7 @@ sv:
     content_title:
       proposal: "Förslag"
       debate: "Debattera"
-      budget_investment: "Budgetförslag"
+      budget_investment: "Budgetinvestering"
   admin/widget:
     header:
       title: Administration
@@ -962,7 +962,7 @@ sv:
     all_remote_translations_enqueued_text: Om du uppdaterar sidan kan du se allt innehåll som är på ditt språk.
     create:
       enqueue_remote_translation: Översättningar har begärts.
-    button: Översätta sida
+    button: Översätt sida
   tags:
     filter:
       more:
