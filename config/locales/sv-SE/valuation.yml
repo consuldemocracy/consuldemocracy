@@ -51,8 +51,8 @@ sv:
         valuation_finished: Kostnadsberäkning avslutad
         duration: Tidsram
         responsibles: Ansvariga
-        assigned_admin: Ansvarig administratör
-        assigned_valuators: Ansvariga bedömare
+        assigned_admin: Tilldelad administratör
+        assigned_valuators: Tilldelade bedömare
         preview: Investeringsförhandsvisning
       edit:
         dossier: Rapport
@@ -65,4 +65,4 @@ sv:
       notice:
         valuate: "Uppdaterad rapport"
       valuation_comments: Kommentarer från bedömning
-      not_in_valuating_phase: Budgetförslag kan endast kostnadsberäknas när budgeten är i kostnadsberäkningsfasen
+      not_in_valuating_phase: Investeringar kan bara kostnadsberäknas när budgeten är i kostnadsberäkningsfasen
