@@ -45,8 +45,8 @@ sv:
         other: "%{count} svar (visa)"
       responses_collapse:
         zero: Inga svar
-        one: "1 svar (göm)"
-        other: "%{count} svar (göm)"
+        one: "1 svar (dölj)"
+        other: "%{count} svar (dölj)"
       user_deleted: Användaren är borttagen
       votes:
         zero: Inga röster
@@ -142,7 +142,7 @@ sv:
         other: "%{count} kommentarer"
       comments_title: Kommentarer
       edit_debate_link: Redigera
-      flag: Denna debatt har flaggats som olämpligt av flera användare.
+      flag: Denna debatt har flaggats som olämplig av flera användare.
       share: Dela
       author: Skribent
     update:
@@ -154,21 +154,21 @@ sv:
       invalid_date_range: "Felaktig datumföljd"
   form:
     accept_terms: Jag godkänner %{policy} och %{conditions}
-    accept_terms_title: Jag godkänner sekretesspolicyn och användarvillkoren
+    accept_terms_title: Jag godkänner integritetspolicyn och användarvillkoren
     conditions: Användarvillkor
     debate: Diskussion
     direct_message: privat meddelande
     error: fel
     errors: fel
     not_saved: "gjorde att %{resource} inte kunde sparas. <br>Kontrollera och rätta till de markerade fälten:"
-    policy: Sekretesspolicy
+    policy: Integritetspolicyn
     banner: banner
     proposal: Förslag
     proposal_notification: "Avisering"
     budget/investment: Budgetförslag
     budget/group: Budgetgrupp
-    budget/heading: Budgetrubrik
-    geozone: geografiska områden
+    budget/heading: Budgetområde
+    geozone: geografiskt område
     legislation/draft_version: utkast
     legislation/process: process
     legislation/question: fråga
@@ -211,7 +211,7 @@ sv:
     footer:
       accessibility: Tillgänglighet
       conditions: användarvillkoren
-      consul: CONSUL
+      consul: Programvaran CONSUL
       consul_url: https://github.com/consul/consul
       contact_us: För teknisk support gå till
       copyright: CONSUL, %{year}
@@ -220,9 +220,9 @@ sv:
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Skapa den stad du vill ha.
       participation_title: Deltagande
-      privacy: sekretesspolicyn
+      privacy: Integritetspolicy
     header:
-      administration_menu: Admin
+      administration_menu: Meny
       administration: Administration
       collaborative_legislation: Dialoger
       debates: Debatter
