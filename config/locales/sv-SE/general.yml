@@ -520,7 +520,7 @@ sv:
       participants: Deltagare
       debates: Debatter
       comments: Kommentarer
-      latest_comments: Senaste meddelande
+      latest_comments: Senaste meddelandena
     messages:
       send_notification: Skicka meddelande till de som följer förslaget
       previous_notifications: Visa tidigare aviseringar
@@ -543,7 +543,7 @@ sv:
           one: "%{count} svar"
           other: "%{count} svar"
         view_results: Se resultat
-        edit_poll: Redigera omröstning
+        edit_poll: Redigera enkät
         show_results_help: Om du markerar kryssrutan blir resultaten offentliga och alla användare kan se dem
         delete: Ta bort enkät
         alert_notice: Denna åtgärd tar bort enkäten och alla dess frågor.
@@ -565,7 +565,7 @@ sv:
         intro_text: "<strong>Jag deltar i %{org}</strong> med mitt eget medborgarförslag och det är bara med din hjälp som jag kan få det stöd som krävs för att få den stad som vi vill ha."
         proposal_code: "Förslagets kod: %{code}"
         support: Stöd mitt förslag
-        footer: "<strong>Besök %{link} och stöd detta förslag.</strong> Vi behöver vara många. Bestäm dig. Tack!"
+        footer: "<strong>Besök %{link} och stöd detta förslag.</strong> Ju fler vi är som drar vårt strå till stacken, desto bättre. Tack!"
       new:
         title: Affisch för ditt förslag
       options:
@@ -618,7 +618,7 @@ sv:
         description: Medborgaromröstningar är en deltagandeprocess där röstberättigade medborgare fattar beslut genom omröstning
       no_polls: "Det finns inga pågående omröstningar."
     show:
-      already_voted_in_booth: "Du har redan röstat i en fysisk röststation. Du kan inte rösta igen."
+      already_voted_in_booth: "Du har redan röstat i ett fysiskt röstbås. Du kan inte rösta igen."
       already_voted_in_web: "Du har redan deltagit i den här omröstningen. Om du röstar igen kommer din föregående röst att skrivas över."
       back: Tillbaka till omröstningar
       cant_answer_not_logged_in: "Du behöver %{signin} eller %{signup} för att kunna delta."
