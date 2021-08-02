@@ -488,14 +488,14 @@ sv:
       required_supports: "%{supports} stöd krävs"
       and: och
       view_resource: Se resurs
-      resource_requested: Resurser redan begärt
+      resource_requested: Resurs redan begärd
       request_resource: Begär resurs
       resource_locked: Resursen låst
     recommended_actions:
       title: Rekommenderade åtgärder
       goto_proposed_actions: Gå till rekommenderade åtgärder
       see_proposed_actions: Visa rekommenderade åtgärder
-      hide_proposed_actions: Göm rekommenderade åtgärder
+      hide_proposed_actions: Dölj rekommenderade åtgärder
       pending_title: Väntande
       show_description: Visa beskrivning
       without_pending_actions: Inga kommande rekommenderade åtgärder
