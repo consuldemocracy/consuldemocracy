@@ -344,7 +344,7 @@ sv:
           notice: "Faser har konfigurerats"
     milestones:
       index:
-        table_id: "Legitimation"
+        table_id: "ID"
         table_title: "Titel"
         table_description: "Beskrivning"
         table_publication_date: "Publiceringsdatum"
@@ -356,10 +356,10 @@ sv:
         documents: "Dokument"
         milestone: Milstolpe
         new_milestone: Skapa ny milstolpe
-        milestone_tags: Milstolpe taggar
+        milestone_tags: Milstolpestaggar
       form:
-        admin_statuses: Administrativ status för budgetförslag
-        no_statuses_defined: Det finns ingen definierad status för budgetförslag än
+        admin_statuses: Hantera status
+        no_statuses_defined: Det finns ingen definierad status än
       new:
         creating: Skapa milstolpe
       edit:
@@ -372,22 +372,22 @@ sv:
         notice: Milstolpen har tagits bort
     statuses:
       index:
-        title: Status för budgetförslag
-        empty_statuses: Det finns ingen definierad status för budgetförslag än
-        new_status: Skapa ny status för budgetförslag
+        title: Milstolpesstatus
+        empty_statuses: Det har inte skapats någon milstolpesstatus
+        new_status: Skapa ny milstolpesstatus
         table_name: Namn
         table_description: Beskrivning
         table_actions: Åtgärder
       edit:
-        title: Redigera status för budgetförslag
+        title: Redigera milstolpesstatus
       update:
-        notice: Status för budgetförslag har uppdaterats
+        notice: Milstolpesstatus har uppdaterats
       new:
-        title: Skapa status för budgetförslag
+        title: Skapa milstolpesstatus
       create:
-        notice: Status för budgetförslag har skapats
+        notice: Milstolpesstatus har skapats
       delete:
-        notice: Status för budgetförslag har tagits bort
+        notice: Milstolpesstatus har tagits bort
     progress_bars:
       manage: "Hantera förloppsindikatorer"
       index:
@@ -395,10 +395,10 @@ sv:
         no_progress_bars: "Det finns inga förloppsindikatorer"
         new_progress_bar: "Skapa ny förloppsindikator"
         primary: "Primär förloppsindikator"
-        table_id: "Legitimation"
+        table_id: "ID"
         table_kind: "Typ"
         table_title: "Titel"
-        table_percentage: "Aktuellt framsteg"
+        table_percentage: "Aktuellt förlopp"
       new:
         creating: "Skapa förloppsindikator"
       edit:
