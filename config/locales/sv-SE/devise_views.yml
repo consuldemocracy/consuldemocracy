@@ -82,7 +82,7 @@ sv:
         delete_form:
           erase_reason_label: Anledning
           info: Åtgärden kan inte ångras. Kontrollera att detta är vad du vill.
-          info_reason: Om du vill kan du skriva en anledning (frivilligt fält)
+          info_reason: Om du vill kan du skriva en anledning (valfritt)
           submit: Ta bort mitt konto
           title: Radera konto
         edit:
