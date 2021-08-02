@@ -21,7 +21,7 @@ sv:
           approval:
             one: "Du kan rösta i <span>1</span> projekt"
             other: "Du kan rösta i <span>%{count}</span> projekt"
-        no_balloted_group_yet: "Du har inte röstat i den här delen av budgeten än, rösta nu!"
+        no_balloted_group_yet: "Du har inte röstat på den här gruppen än, rösta nu!"
         remove: Dra tillbaka din röst
         voted:
           one: "Du har röstat på <span>ett</span> budgetförslag."
@@ -69,7 +69,7 @@ sv:
       next_phase: Nästa fas
       prev_phase: Föregående fas
       current_phase: Nuvarande fas
-      map: Geografiskt baserade budgetförslag
+      map: Budgetinvesteringsförslagens plats på kartan
       finished_budgets: Avslutade medborgarbudgetar
       see_results: Visa resultat
       section_footer:
@@ -90,7 +90,7 @@ sv:
       index:
         title: Medborgarbudgetar
         unfeasible: Ej genomförbara budgetförslag
-        unfeasible_text: "Budgetförslag måste uppfylla vissa kriterier (juridiskt giltiga, genomförbara, inte överskrida budgeten) för att förklaras giltiga och nå slutomröstningen. De budgetförslag som inte uppfyller kriterierna markeras som ej genomförbara och visas i följande lista, tillsammans med en förklaring av bedömningen."
+        unfeasible_text: "Investeringarna måste uppfylla vissa kriterier (vara juridiskt giltiga, genomförbara, inte överskrida budgeten) för att förklaras giltiga och nå slutomröstningen. De investeringar som inte uppfyller kriterierna markeras som ej genomförbara och visas i följande lista, tillsammans med en förklaring av bedömningen."
         by_heading: "Budgetförslag för: %{heading}"
         search_form:
           button: Sök
