@@ -234,7 +234,7 @@ sv:
       help: Hjälp
       my_account_link: Mitt konto
       my_activity_link: Min aktivitet
-      open_gov: Open Government
+      open_gov: Öppen förvaltning
       proposals: Förslag
       poll_questions: Omröstning
       budgets: Medborgarbudget
@@ -268,7 +268,7 @@ sv:
       notifiable_hidden: Den här resursen är inte längre tillgänglig.
   map:
     title: "Stadsdelar"
-    proposal_for_district: "Skriv ett förslag för din stadsdel"
+    proposal_for_district: "Skriv ett förslag för ditt distrikt"
     start_proposal: Skapa förslag
   omniauth:
     facebook:
@@ -300,8 +300,8 @@ sv:
         submit_button: Skapa förslag
     created:
       title: Grattis! Du har tagit det första steget.
-      motivation: "Det är viktigt att förbereda kampanjen om ditt förslag ska bli framgångsrikt. De första dagarna är viktiga."
-      motivation_2: "<strong>Om du vill ha råd om att förbereda publiceringen lämnar du ditt förslag som ett utkast och vi kommer att guida dig.</strong>"
+      motivation: "Det är viktigt att förbereda kampanjen om ditt förslag ska bli framgångsrikt. De första dagarna är avgörande."
+      motivation_2: "<strong>Om du vill ha råd om att förbereda publiceringen lämnar du ditt förslag som ett utkast, så ger vi dig vägledning.</strong>"
       publish: Nej, jag vill publicera medborgarförslaget
       dashboard: Ja, jag vill ha hjälp och publicera senare
       preview_title: Så här kommer ditt förslag att se ut när det publiceras
@@ -331,7 +331,7 @@ sv:
       proposal_summary_note: "(högst 200 tecken)"
       proposal_video_url_note: Lägg till en länk till YouTube eller Vimeo
       tag_category_label: "Kategorier"
-      tags_instructions: "Tagga förslaget. Du kan välja från de föreslagna kategorier eller lägga till egna"
+      tags_instructions: "Tagga förslaget. Du kan välja från föreslagna kategorier eller lägga till egna"
       tags_label: Taggar
       tags_placeholder: "Skriv taggarna du vill använda, avgränsade med komma (',')"
       map_location: "Kartposition"
@@ -348,9 +348,9 @@ sv:
         archival_date: arkiverade
         recommendations: rekommendationer
       recommendations:
-        without_results: Finns det inga förslag som rör dina intressen
+        without_results: Det finns inga förslag som rör dina intressen
         without_interests: Följ förslag så vi kan ge dig rekommendationer
-        disable: "Rekommenderade förslag kommer sluta visas om du avaktiverar dem. Du kan aktivera funktionen igen under \"Mitt konto\""
+        disable: "Rekommenderade förslag upphör att visas om du inaktiverar dem. Du kan aktivera funktionen igen under \"Mitt konto\""
         actions:
           success: "Rekommenderade förslag har inaktiverats för kontot"
           error: "Ett fel har uppstått. Var vänlig och gå till \"Mitt konto\" för att manuellt inaktivera rekommenderade förslag"
@@ -420,7 +420,7 @@ sv:
         one: 1 röst
         other: "%{count} röster"
       supports_necessary: "behöver stöd från %{number} personer"
-      total_percent: 100%
+      total_percent: 100 %
       archived: "Förslaget har arkiverats och kan inte längre stödjas."
       successful: "Förslaget har fått tillräckligt med stöd."
       selected: "Valt förslag"
@@ -444,7 +444,7 @@ sv:
       embed_video_title: "Video om %{proposal}"
       title_video_url: "Extern video"
       author: Skribent
-      draft: Förslags är ett utkast. Kan inte få stöd och visas inte i listan över förslag.
+      draft: Förslaget är ett utkast. Kan inte få stöd och visas inte i listan över förslag.
     update:
       form:
         submit_button: Spara ändringar
