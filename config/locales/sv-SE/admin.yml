@@ -550,7 +550,7 @@ sv:
           notice: 'Processen har skapats. <a href="%{link}">Klicka här för att visa den</a>'
           error: Processen kunde inte skapas
         update:
-          notice: 'Frågan har skapats. <a href="%{link}">Klicka här för att besöka den</a>'
+          notice: 'Processen har uppdaterats. <a href="%{link}">Klicka här för att visa den</a>'
           error: Processen kunde inte uppdateras
         destroy:
           notice: Processen raderades
@@ -580,9 +580,9 @@ sv:
           submit_button: Skapa process
         proposals:
           orders:
-            id: "Id"
-            title: "Titel"
-            supports: "Stöd"
+            id: "Sortera efter ID"
+            title: "Sortera efter titel"
+            supports: "Sortera efter totalt stöd"
         process:
           title: Process
           comments: Kommentarer
@@ -590,8 +590,8 @@ sv:
           start_date: Startdatum
           end_date: Slutdatum
           status_open: Öppna
-          status_closed: Avslutad
-          status_planned: Planerad
+          status_closed: Avslutade
+          status_planned: Planerade
         subnav:
           info: Information
           homepage: Startsida
@@ -607,11 +607,11 @@ sv:
           title: Titel
           back: Tillbaka
           id: Id
-          supports: Stöd
+          supports: Totalt stöd
         form:
           custom_categories: Kategorier
-          custom_categories_description: Kategorier som användare kan välja när de skapar förslaget.
-          custom_categories_placeholder: Ange taggarna som du vill använda, avgränsade med komma (',') och mellan citationstecken ("")
+          custom_categories_description: Kategorier som användare kan välja när de skapar förslaget. Max 160 tecken.
+          custom_categories_placeholder: Ange taggarna som du vill använda, avgränsade med komma (,) och omgivna av citationstecken (")
       draft_versions:
         create:
           notice: 'Utkastet har skapats. <a href="%{link}">Klicka här för att visa det</a>'
@@ -632,7 +632,7 @@ sv:
           close_text_editor: Stäng textredigerare
           use_markdown: Använd Markdown för att formatera texten
           hints:
-            final_version: Den här version kommer att publiceras som slutresultatet för processen. Den kommer inte gå att kommentera.
+            final_version: Den här versionen kommer att publiceras som slutresultatet för processen. Den kommer inte att kunna kommenteras.
             status:
               draft: Du kan förhandsgranska som administratör, ingen annan kan se det
               published: Synligt för alla
@@ -668,7 +668,7 @@ sv:
         form:
           add_option: Lägg till alternativ
           value_placeholder: Lägg till ett stängt svar
-          question_options: "Möjliga svar (frivilligt fält, öppna svar som standard)"
+          question_options: "Möjliga svar (valfritt, öppna svar som standard)"
         index:
           back: Tillbaka
           title: Frågor som är kopplade till processen
@@ -680,7 +680,7 @@ sv:
           submit_button: Skapa fråga
         table:
           title: Titel
-          question_options: Svarsalternativ
+          question_options: Alternativ för fråga
           answers_count: Antal svar
           comments_count: Antal kommentarer
         question_option_fields:
@@ -713,7 +713,7 @@ sv:
       hidden_comments: Dolda kommentarer
       hidden_debates: Dolda debatter
       hidden_proposals: Dolda förslag
-      hidden_budget_investments: Dolda budgetförslag
+      hidden_budget_investments: Dolda budgetinvesteringar
       hidden_proposal_notifications: Dolda aviseringar om förslag
       hidden_users: Dolda användare
       administrators: Administratörer
@@ -728,8 +728,8 @@ sv:
       valuators: Bedömare
       poll_officers: Funktionärer
       polls: Omröstningar
-      poll_booths: Här finns röststationerna
-      poll_booth_assignments: Tilldelning av röststation
+      poll_booths: Här finns röstbåsen
+      poll_booth_assignments: Tilldelning av röstbås
       poll_shifts: Hantera arbetspass
       officials: Representanter för staden
       organizations: Organisationer
@@ -750,7 +750,7 @@ sv:
           proposals: "Förslag"
           polls: "Omröstningar"
           layouts: "Layouter"
-          mailers: "E-post"
+          mailers: "E-postadresser"
           management: "Användarhantering"
           welcome: "Välkommen"
         buttons:
@@ -761,11 +761,11 @@ sv:
       title_profiles: Profiler
       title_settings: Inställningar
       title_site_customization: Webbplatsens innehåll
-      title_booths: Röststationer
+      title_booths: Röstbås
       legislation: Medborgardialoger
       users: Användare
-      dashboard: Instrumentbräda för förslag
-      administrator_tasks: Resurser begärt
+      dashboard: Dashboard för förslag
+      administrator_tasks: Resurser begärda
       dashboard_actions: Resurser och åtgärder
       debates: "Debatter"
       comments: "Kommentarer"
@@ -794,8 +794,8 @@ sv:
     segment_recipient:
       all_users: Alla användare
       administrators: Administratörer
-      all_proposal_authors: Förslagsförfattare (inklusive arkiverade och tillbakadragna)
-      proposal_authors: Förslagslämnarna
+      all_proposal_authors: Förslagslämnare (inklusive arkiverade och tillbakadragna)
+      proposal_authors: Förslagslämnare
       investment_authors: Förslagslämnare för den aktuella budgeten
       feasible_and_undecided_investment_authors: "Förslagslämnare till budgetförslag i den aktuella budgeten som inte överensstämmer med: [valuation finished unfesasible]"
       selected_investment_authors: Förslagslämnarna till utvalda budgetförslag i den nuvarande budgeten
@@ -1164,8 +1164,8 @@ sv:
         no_recounts: "Det finns inga röster att räkna"
         all_booths_total: "Sammanlagt antal från alla röststationer:"
         total_final: "Slutresultat"
-        total_system: "Röster (automatisk)"
-        table_booth_name: "Röststation"
+        total_system: "Röster (automatiskt)"
+        table_booth_name: "Röstbås"
         table_total_recount: "Total rösträkning (av funktionär)"
         table_system_count: "Röster (automatisk)"
     results:
