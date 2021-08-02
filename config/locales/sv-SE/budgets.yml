@@ -116,9 +116,9 @@ sv:
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
           check_ballot_link: "skicka in min röst"
           zero: Du har inte röstat på några budgetförslag i den här delen av budgeten.
-          verified_only: "För att skapa ett nytt budgetförslag måste du %{verify}."
-          create: "Skapa budgetförslag"
-          not_logged_in: "Om du vill skapa ett nytt budgetförslag behöver du %{sign_in} eller %{sign_up}."
+          verified_only: "För att skapa en ny budgetinvestering måste du %{verify}."
+          create: "Skapa en budgetinvestering"
+          not_logged_in: "Om du vill skapa en ny budgetinvestering måste du %{sign_in} eller %{sign_up}."
         filter: "Filtrerar projekt efter"
         filters:
           not_unfeasible: "Ej ogenomförbart"
@@ -151,7 +151,7 @@ sv:
         project_selected: "Det här budgetförslaget <strong>har gått vidare</strong> till omröstning."
         project_winner: "Vinnande budgetförslag"
         project_not_selected: "Det här budgetförslaget <strong>har inte gått vidare</strong> till omröstning."
-        see_price_explanation: Kostnadsförklaring
+        see_price_explanation: Se kostnadsförklaring
       wrong_price_format: Endast heltal
       investment:
         add: Rösta
@@ -207,7 +207,7 @@ sv:
       price: Kostnad
       amount_available: Tillgänglig budget
       accepted: "Godkänt budgetförslag: "
-      discarded: "Avvisade budgetförslag: "
+      discarded: "Avvisad investering: "
       incompatibles: Oförenliga
       investment_title: Projekttitel
       investment_proyects: Lista över budgetförslag
