@@ -305,7 +305,7 @@ sv:
         assigned_valuators: Bedömare
         select_heading: Välj område
         submit_button: Uppdatera
-        user_tags: Användarens taggar
+        user_tags: Taggar som tilldelas av användaren
         tags_placeholder: "Fyll i taggar separerade med kommatecken (,)"
         undefined: Odefinierat
       search_unfeasible: Sökningen misslyckades
@@ -1037,22 +1037,22 @@ sv:
           unassign: Inaktivera röststation
     poll_booth_assignments:
       alert:
-        shifts: "Röststationen har tilldelade arbetspass. Om du tar bort röststationen kommer arbetspassen också tas bort. Vill du fortsätta?"
+        shifts: "Röstbåset har tilldelade arbetspass. Om du tar bort röstbåset kommer arbetspassen också tas bort. Vill du fortsätta?"
       show:
         location: "Plats"
         officers: "Funktionärer"
         officers_list: "Lista över funktionärer för den här röststationen"
-        no_officers: "Det finns inga funktionärer för den här röststationen"
+        no_officers: "Det finns inga valarbetare för detta röstbås"
         recounts: "Rösträkning"
-        recounts_list: "Räkna rösterna för den här röststationen"
+        recounts_list: "Räkna rösterna för det här röstbåset"
         results: "Resultat"
         date: "Datum"
-        count_final: "Slutgiltig rösträkning (av funktionärer)"
+        count_final: "Slutlig omräkning (av valarbetare)"
         count_by_system: "Röster (automatiskt)"
         total_system: Totalt antal röster (automatiskt)
       index:
-        booths_title: "Lista över montrar"
-        no_booths: "Den här omröstningen har inga tilldelade röststationer."
+        booths_title: "Lista över röstbås"
+        no_booths: "Den här omröstningen har inga tilldelade röstbås."
         table_name: "Namn"
         table_location: "Plats"
     active_polls:
@@ -1063,14 +1063,14 @@ sv:
           help_text: "Denna text visas i sidhuvudet för omröstningssidan. Det kan berätta om sammanhang för de pågående omröstningarna."
     polls:
       index:
-        title: "Lista över opinionsundersökningar"
+        title: "Lista över omröstningar"
         no_polls: "Det finns inga kommande omröstningar."
         create: "Skapa omröstning"
         name: "Namn"
         dates: "Datum"
         start_date: "Startdatum"
         closing_date: "Slutdatum"
-        geozone_restricted: "Begränsade till stadsdelar"
+        geozone_restricted: "Begränsade till distrikt"
       new:
         title: "Ny omröstning"
         submit_button: "Skapa omröstning"
@@ -1083,14 +1083,14 @@ sv:
         officers_tab: Funktionärer
         recounts_tab: Rösträkning
         results_tab: Resultat
-        no_questions: "Det finns inga frågor till den här omröstningen."
+        no_questions: "Det har inte tilldelats några frågor till den här omröstningen."
         questions_title: "Lista med frågor"
         table_title: "Titel"
         edit_answers: Redigera svar
         see_proposal: "(Visa förslag)"
       flash:
         question_added: "Frågan har lagts till i omröstningen"
-        error_on_question_added: "Frågan kunde inte läggas till i omröstningen"
+        error_on_question_added: "Frågan kunde inte tilldelas den här omröstningen"
       destroy:
         alert: "Denna åtgärd tar bort omröstningen och alla dess frågor."
         success_notice: "Omröstningen har raderats"
@@ -1112,7 +1112,7 @@ sv:
       edit:
         title: "Redigera fråga"
       new:
-        title: "Skapa fråga för %{poll}"
+        title: "Skapa fråga för omröstningen %{poll}"
         title_proposal: "Skapa fråga"
       answers:
         images:
@@ -1162,11 +1162,11 @@ sv:
       index:
         title: "Rösträkning"
         no_recounts: "Det finns inga röster att räkna"
-        all_booths_total: "Sammanlagt antal från alla röststationer:"
+        all_booths_total: "Sammanlagt antal från alla röstbås:"
         total_final: "Slutresultat"
         total_system: "Röster (automatiskt)"
         table_booth_name: "Röstbås"
-        table_total_recount: "Total rösträkning (av funktionär)"
+        table_total_recount: "Total rösträkning (av valarbetare)"
         table_system_count: "Röster (automatisk)"
     results:
       index:
@@ -1179,52 +1179,52 @@ sv:
         table_answer: Svar
         table_votes: Röster
       results_by_booth:
-        booth: Röststation
+        booth: Röstbås
         results: Resultat
         see_results: Visa resultat
         title: "Resultat för röststationer"
     booths:
       index:
-        title: "Lista över aktiva röststationer"
-        no_booths: "Det finns inga aktiva röststationer för den kommande omröstningen."
-        add_booth: "Lägg till röststation"
+        title: "Lista över aktiva röstbås"
+        no_booths: "Det finns inga aktiva röstbås för den kommande omröstningen."
+        add_booth: "Lägg till röstbås"
         name: "Namn"
         location: "Plats"
         no_location: "Ingen plats"
       new:
         title: "Ny röststation"
-        submit_button: "Skapa röststation"
+        submit_button: "Skapa röstbås"
       edit:
-        title: "Redigera röststation"
-        submit_button: "Uppdatera röststation"
+        title: "Redigera röstbås"
+        submit_button: "Uppdatera röstbås"
       show:
         location: "Plats"
       booth:
         shifts: "Hantera arbetspass"
     officials:
       edit:
-        destroy: Ta bort 'Representant för staden'-status
+        destroy: Ta bort "Tjänsteman"-status
         title: "Representanter för staden: Redigera användare"
       flash:
-        official_destroyed: "Uppgifterna har sparats: användaren är inte längre en representant för staden"
-        official_updated: Uppgifter för representant för staden har sparats
+        official_destroyed: "Uppgifterna har sparats: användaren är inte längre en tjänsteman"
+        official_updated: Uppgifter för tjänsteman har sparats
       index:
         title: Representanter för staden
-        help: Användarkonton som är markerade som funktionärer får sina åtgärder på plattformen markerade. Du kan ange den etikett som ska visas bredvid användarnamnen för dessa konton från mest viktiga (nivå 1) till minst viktiga (nivå 5).
-        no_officials: Det finns inga representanter för staden.
+        help: Användarkonton som är markerade som tjänstemän får sina åtgärder på plattformen markerade. Du kan ange den etikett som ska visas bredvid användarnamnen för dessa konton från mest viktiga (nivå 1) till minst viktiga (nivå 5).
+        no_officials: Det finns inga tjänstemän.
         name: Namn
         official_position: Titel
         official_level: Nivå
-      level_0: Ej representant för staden
+      level_0: Ej tjänsteman
       level_1: Nivå 1
       level_2: Nivå 2
       level_3: Nivå 3
       level_4: Nivå 4
       level_5: Nivå 5
       search:
-        make_official: Gör till representant för staden
-        title: "Representanter för staden: Sök användare"
-        no_results: Inga representanter för staden hittades.
+        make_official: Gör till tjänsteman
+        title: "Tjänstemän: Sök användare"
+        no_results: Det hittades inga tjänstemän.
     organizations:
       index:
         filter: Filtrera
