@@ -297,7 +297,7 @@ sv:
           "true": "Ja"
           "false": "Nej"
         valuator_groups: "Bedömningsgrupper"
-        preview: Budgetförhandsvisning
+        preview: Investeringsförhandsvisning
       edit:
         classification: Klassificering
         compatibility: Kompatibilitet
