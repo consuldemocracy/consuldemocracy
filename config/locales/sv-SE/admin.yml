@@ -428,7 +428,7 @@ sv:
           with_confirmed_hide: Godkända
           without_confirmed_hide: Väntande
         hidden_debate: Dold debatt
-        hidden_proposal: Gömt förslag
+        hidden_proposal: Dolt förslag
         title: Dolda kommentarer
         no_hidden_comments: Det finns inga dolda kommentarer.
     dashboard:
@@ -471,7 +471,7 @@ sv:
       administrator_tasks:
         index:
           description: "Resurser som publiceras på dashboard för förslag kan innehålla en knapp om begäran till administratörer. Begäran från användare visas nedan."
-          title: Resurser begärt
+          title: Resurser begärda
           solve: Lösa
           no_records: Det finns inga begärda resurser
           source: Källa
@@ -542,8 +542,8 @@ sv:
           all: Alla
           with_confirmed_hide: Godkända
           without_confirmed_hide: Väntande
-        title: Dolda budgetförslag
-        no_hidden_budget_investments: Det finns inga dolda budgetförslag
+        title: Dolda budgetinvesteringar
+        no_hidden_budget_investments: Det finns inga dolda budgetinvesteringar
     legislation:
       processes:
         create:
