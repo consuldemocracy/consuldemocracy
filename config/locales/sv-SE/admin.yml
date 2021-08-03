@@ -1403,15 +1403,15 @@ sv:
         submit: Skapa namninsamling
         text_help:
           required_fields_note: "För att verifiera en användare måste ansökan ha: Legitimationshandlingens nummer"
-          date_of_birth_note: ", födelsedag (dd/mm/yyyy)"
+          date_of_birth_note: ", födelsedag (dd/mm/åååå)"
           postal_code_note: " och postnummer"
           required_fields_structure_note: "De fält som krävs för varje användare måste vara kommaseparerade och varje användare måste vara separerad av semikolon."
           example_text: "Exempel: "
       show:
-        created_at: Skapad
+        created_at: Skapad kl.
         author: Skribent
         users: Användare
-        signature_count: "Antal signaturer:"
+        signature_count: "Antal underskrifter:"
         verified:
           one: "Det finns %{count} giltig underskrift"
           other: "Det finns %{count} giltiga underskrifter"
@@ -1458,7 +1458,7 @@ sv:
         proposal_created: Medborgarförslag
       budgets:
         no_data_before_balloting_phase: "Det finns inga data att visa före röstfasen."
-        title: "Deltagarbudgetar - deltagarstatistik"
+        title: "Deltagarbudgetar – deltagarstatistik"
         supporting_phase: Stödfas
         balloting_phase: Omröstning
       budget_balloting:
@@ -1466,7 +1466,7 @@ sv:
         vote_count: Röster
         participant_count: Deltagare
         votes_per_heading: Röster per område
-        participants_per_district: Deltagare efter område
+        participants_per_district: Deltagare efter distrikt
       budget_supporting:
         title: "Statistik för stödfas"
         headings: Områden
@@ -1508,14 +1508,14 @@ sv:
         add_tag: Lägg till ett nytt ämne för förslag
         title: Ämnen för förslag
         topic: Ämne
-        help: "När en användare skapar ett förslag föreslås följande ämnen som taggar."
+        help: "När en användare skapar ett förslag föreslås följande ämnen som standardtaggar."
     users:
       columns:
         id: Legitimation
         erase_reason: Radera anledning
         name: Namn
         email: E-post
-        document_number: Dokumentnummer
+        document_number: Identitetshandlingens nummer
         roles: Roller
         verification_level: Rättighetsnivå
       index:
@@ -1526,7 +1526,7 @@ sv:
           active: Aktiva
           erased: Raderad
       search:
-        placeholder: Sök användare med e-postadress, namn eller identitetshandling
+        placeholder: Sök användare med e-postadress, namn eller identitetshandlingens nummer
     verifications:
       index:
         phone_not_given: Telefonnummer saknas
@@ -1558,10 +1558,10 @@ sv:
           body: Innehåll
           name: Namn
           names:
-            top_links: Topp länkar
-            footer: Footer
-            subnavigation_left: Kropp Navigering Vänster
-            subnavigation_right: Kropp Navigering Höger
+            top_links: Topplänkar
+            footer: Sidfot
+            subnavigation_left: Huvudnavigering vänster
+            subnavigation_right: Huvudnavigering höger
       images:
         index:
           title: Anpassade bilder
@@ -1591,7 +1591,7 @@ sv:
           create: Skapa ny sida
           delete: Ta bort sida
           title: Anpassade sidor
-          see_page: Visa sida
+          see_page: Visa
         new:
           title: Skapa ny anpassad sida
           slug_help: "Text som identifierar denna sida i en URL, till exempel <code>https://consulproject.org/page-slug</code>"
