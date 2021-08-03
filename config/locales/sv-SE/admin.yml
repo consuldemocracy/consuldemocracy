@@ -909,22 +909,22 @@ sv:
         title: "Avsändare av privatmeddelande"
         description: "Skickas till avsändaren av privatmeddelandet."
       email_verification:
-        title: "E-mejl verifiering"
+        title: "E-postverifiering"
         description: "Skickas till en ny användare för att verifiera deras konto."
       user_invite:
         title: "Inbjudan till användare"
         description: "Skickas till personen som bjudits in till att registrera ett konto."
       evaluation_comment:
         title: "Ny kommentar kring utvärdering"
-        description: "Skickas till administratörer och bedömare knutna till ett kommenterat budgetförslag"
+        description: "Skickas till administratörer och bedömare knutna till en kommenterad investering"
       edit_info: "Redigera e-brevet i"
       message_title: "Meddelandes titel"
       message_body: "Detta är ett exempel på meddelandeinnehåll."
       alert:
-        no_investments: "Det har inte skapats någon investeringsbudget. Det krävs exempeldata för att kunna förhandsvisa e-brevet."
-        no_comments: "Det har inte skapats några kommentarer. Det krävs exempeldata för att kunna förhandsvisa e-brevet."
-        no_replies: "Det har inte skapats några svar. Det krävs exempeldata för att kunna förhandsvisa e-brevet."
-        no_evaluation_comments: "Det har inte skapats några utvärderingskommentarer. Det krävs exempeldata för att kunna förhandsvisa e-brevet."
+        no_investments: "Det har inte skapats någon budgetsinvestering. Det krävs exempeldata för att kunna förhandsvisa e-postbrevet."
+        no_comments: "Det har inte skapats några kommentarer. Det krävs exempeldata för att kunna förhandsvisa e-postbrevet."
+        no_replies: "Det har inte skapats några svar. Det krävs exempeldata för att kunna förhandsvisa e-postbrevet."
+        no_evaluation_comments: "Det har inte skapats några utvärderingskommentarer. Det krävs exempeldata för att kunna förhandsvisa e-postbrevet."
     emails_download:
       index:
         title: Hämta e-postadresser
@@ -985,11 +985,11 @@ sv:
       search:
         email_placeholder: Sök användare efter e-post
         user_not_found: Användaren hittades inte
-        help: "Lägg till och ta bort funktionärer via sökfältet nedan."
+        help: "Lägg till och ta bort valarbetare via sökfältet nedan."
     poll_officer_assignments:
       index:
         officers_title: "Lista över funktionärer"
-        no_officers: "Ingen funktionär har tilldelats den här omröstningen."
+        no_officers: "Ingen valarbetare har tilldelats den här omröstningen."
         table_name: "Namn"
         table_email: "E-post"
       by_officer:
@@ -1001,11 +1001,11 @@ sv:
       new:
         add_shift: "Lägg till arbetspass"
         shift: "Uppdrag"
-        shifts: "Arbetspass för röststationen"
+        shifts: "Arbetspass för detta röstbås"
         date: "Datum"
         edit_shifts: Redigera arbetspass
         new_shift: "Nytt arbetspass"
-        no_shifts: "Röststationen har inga arbetspass"
+        no_shifts: "Röstbåset har inga arbetspass"
         officer: "Funktionär"
         remove_shift: "Ta bort"
         search_officer_button: Sök
