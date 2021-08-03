@@ -26,7 +26,6 @@ class DashboardController < Dashboard::BaseController
   end
 
   def related_content
-    @related_contents = Kaminari.paginate_array(proposal.relationed_contents).page(params[:page]).per(5)
   end
 
   private

@@ -218,6 +218,7 @@ ignore_unused:
   - landings.cambia_tu_ciudad.*
   - "seeds.settings.*"
   - "dashboard.polls.*.submit"
+  - "related_content.content_title.*"
   - "sdg.goals.goal_*"
   - "sdg.*.filter.more.*"
   - "sdg_management.relations.index.filter*"

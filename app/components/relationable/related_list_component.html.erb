@@ -1,5 +1,5 @@
 <ul class="related-content-list" id="related-content-list">
-  <% @related_contents.compact.each do |related| %>
+  <% related_contents.compact.each do |related| %>
     <% related_content = related.find_related_content(relationable) %>
 
     <li id="related-content-<%= related_content.id %>">
@@ -18,4 +18,4 @@
   <% end %>
 </ul>
 
-<%= paginate @related_contents %>
+<%= paginate related_contents %>
