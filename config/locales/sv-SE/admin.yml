@@ -308,7 +308,7 @@ sv:
         user_tags: Taggar som tilldelas av användaren
         tags_placeholder: "Fyll i taggar separerade med kommatecken (,)"
         undefined: Odefinierat
-      search_unfeasible: Sökningen misslyckades
+      search_unfeasible: Sök ogenomförbara
     budgets_wizard:
       creation_timeline:
         budget: Budget
@@ -447,7 +447,7 @@ sv:
           action_type: Typ
           required_supports: Minsta stöd som krävs
           day_offset: Minsta dagar som krävs
-          action_active: Aktiva
+          action_active: Aktiv
           order: Sortera efter
           published_proposal: Publicerat förslag
           default:
@@ -714,7 +714,7 @@ sv:
       hidden_debates: Dolda debatter
       hidden_proposals: Dolda förslag
       hidden_budget_investments: Dolda budgetinvesteringar
-      hidden_proposal_notifications: Dolda aviseringar om förslag
+      hidden_proposal_notifications: Aviseringar om dolda förslag
       hidden_users: Dolda användare
       administrators: Administratörer
       managers: Medborgarguider
@@ -773,7 +773,7 @@ sv:
     administrators:
       index:
         title: Administratörer
-        id: Administratör ID
+        id: Administratörs-ID
         no_administrators: Det finns inga administratörer.
       administrator:
         add: Lägg till
