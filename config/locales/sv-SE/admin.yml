@@ -797,9 +797,9 @@ sv:
       all_proposal_authors: Förslagslämnare (inklusive arkiverade och tillbakadragna)
       proposal_authors: Förslagslämnare
       investment_authors: Investeringens förslagslämnare i den aktuella budgeten
-      feasible_and_undecided_investment_authors: "Förslagslämnare till budgetförslag i den aktuella budgeten som inte överensstämmer med: [valuation finished unfesasible]"
-      selected_investment_authors: Förslagslämnarna till utvalda budgetförslag i den nuvarande budgeten
-      winner_investment_authors: Förslagslämnarna till till utvalda budgetförslag i den nuvarande budgeten
+      feasible_and_undecided_investment_authors: "Förslagslämnare till investering i den aktuella budgeten som inte överensstämmer med: [valuation finished unfesasible]"
+      selected_investment_authors: Investeringslämnare till utvalda investeringar i den nuvarande budgeten
+      winner_investment_authors: Investeringslämnare till vinnande investeringar i aktuell budget
       not_supported_on_current_budget: Användare som inte har stöttat budgetförslag i den nuvarande budgeten
       invalid_recipients_segment: "Mottagardelen är ogiltig"
     newsletters:
@@ -828,8 +828,8 @@ sv:
         send: Skicka
         affected_users: (%{n} påverkade användare)
         sent_emails:
-          one: 1 e-post skickad
-          other: "%{count} e-post skickade"
+          one: 1 e-postbrev skickad
+          other: "%{count} e-postbrev skickade"
         sent_at: Registrerat
         subject: Ämne
         segment_recipient: Mottagare
@@ -864,7 +864,7 @@ sv:
         send: Skicka avisering
         will_get_notified: (%{n} användare kommer att meddelas)
         got_notified: (%{n} användare meddelades)
-        sent_at: Registrerat
+        sent_at: Skickad kl.
         title: Titel
         body: Text
         link: Länk
@@ -878,23 +878,23 @@ sv:
         preview_of: Förhandsgranskning av %{name}
         pending_to_be_sent: Här är innehållet som kommer att skickas
         moderate_pending: Skicka modererad avisering
-        send_pending: Väntar på att skicka
+        send_pending: Skicka väntande
         send_pending_notification: Aviseringarna har skickats
       proposal_notification_digest:
         title: "Sammanfattande avisering om förslag"
         description: "Samlar alla aviseringar om förslag till en användare i ett meddelande för att undvika för mycket e-post."
         preview_detail: "Användare kommer endast få aviseringar från förslag de följer"
       budget_investment_created:
-        title: "Budgetförslag skapat"
-        description: "Skickas när en användare skapar ett budgetförslag."
+        title: "Budgetinvestering skapad"
+        description: "Skickas när en användare skapar en budgetinvestering."
       budget_investment_selected:
-        title: "Budgetförslag markerat"
-        description: "Skickas till författaren när dennes budgetförslag har blivit valt."
+        title: "Budgetinvestering markerad"
+        description: "Skickas till förslagslämnaren när dennes budgetinvestering har valts."
       budget_investment_unfeasible:
-        title: "Budgetförslag ogenomförbart"
-        description: "Skickas till författaren när dennes budgetförslag blivit markerat som ogenomförbart."
+        title: "Budgetinvestering ogenomförbar"
+        description: "Skickas till förslagslämnaren när dennes budgetinvestering markerats som ogenomförbar."
       budget_investment_unselected:
-        title: "Budgetförslag avmarkerat"
+        title: "Budgetinvestering avmarkerad"
         description: "Skickas till författaren när dennes budgetförslag inte gått vidare till omröstningsfasen."
       comment:
         title: "Kommentar"
