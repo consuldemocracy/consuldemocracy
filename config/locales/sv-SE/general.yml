@@ -740,7 +740,7 @@ sv:
         see_all: "Visa alla"
     tags_cloud:
       tags: Populära
-      districts: "Stadsdelar"
+      districts: "Distrikt"
       districts_list: "Lista över stadsdelar"
       categories: "Kategorier"
     target_blank: " (länken öppnas i ett nytt fönster)"
