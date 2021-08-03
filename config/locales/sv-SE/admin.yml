@@ -796,7 +796,7 @@ sv:
       administrators: Administratörer
       all_proposal_authors: Förslagslämnare (inklusive arkiverade och tillbakadragna)
       proposal_authors: Förslagslämnare
-      investment_authors: Förslagslämnare för den aktuella budgeten
+      investment_authors: Investeringens förslagslämnare i den aktuella budgeten
       feasible_and_undecided_investment_authors: "Förslagslämnare till budgetförslag i den aktuella budgeten som inte överensstämmer med: [valuation finished unfesasible]"
       selected_investment_authors: Förslagslämnarna till utvalda budgetförslag i den nuvarande budgeten
       winner_investment_authors: Förslagslämnarna till till utvalda budgetförslag i den nuvarande budgeten
