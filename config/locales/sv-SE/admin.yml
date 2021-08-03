@@ -1010,7 +1010,7 @@ sv:
         remove_shift: "Ta bort"
         search_officer_button: Sök
         search_officer_placeholder: Sök funktionär
-        search_officer_text: Sök efter en funktionär för att tilldela ett nytt arbetspass
+        search_officer_text: Sök efter en valarbetare för att tilldela ett nytt arbetspass
         select_date: "Välj dag"
         no_voting_days: "Omröstningen har avslutats"
         select_task: "Välj uppgift"
@@ -1027,7 +1027,7 @@ sv:
     booth_assignments:
       manage_assignments: Hantera uppdrag
       manage:
-        assignments_list: "Uppdrag för omröstningen '%{poll} '"
+        assignments_list: "Uppdrag för omröstningen '%{poll}'"
         status:
           assign_status: Uppdrag
           assigned: Tilldelad
