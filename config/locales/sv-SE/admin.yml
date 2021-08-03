@@ -895,7 +895,7 @@ sv:
         description: "Skickas till förslagslämnaren när dennes budgetinvestering markerats som ogenomförbar."
       budget_investment_unselected:
         title: "Budgetinvestering avmarkerad"
-        description: "Skickas till författaren när dennes budgetförslag inte gått vidare till omröstningsfasen."
+        description: "Skickas till förslagslämnaren när dennes budgetinvestering inte gått vidare till omröstningsfasen."
       comment:
         title: "Kommentar"
         description: "Skickas till författaren när den får en kommentar."
