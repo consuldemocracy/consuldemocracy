@@ -1033,8 +1033,8 @@ sv:
           assigned: Tilldelad
           unassigned: Ej tilldelad
         actions:
-          assign: Tilldela röststation
-          unassign: Inaktivera röststation
+          assign: Tilldela röstbås
+          unassign: Inaktivera röstbås
     poll_booth_assignments:
       alert:
         shifts: "Röstbåset har tilldelade arbetspass. Om du tar bort röstbåset kommer arbetspassen också tas bort. Vill du fortsätta?"
@@ -1280,7 +1280,7 @@ sv:
         filter: Filtrera
         filters:
           all: Alla
-          with_confirmed_hide: Bekräftad
+          with_confirmed_hide: Bekräftade
           without_confirmed_hide: Väntande
         title: Dolda aviseringar
         no_hidden_proposals: Det finns inga dolda aviseringar.
@@ -1361,7 +1361,7 @@ sv:
       proposal: Förslag
       author: Skribent
       content: Innehåll
-      created_at: Skapad den
+      created_at: Skapad kl.
       color_help: Hexadecimalt format
       example_url: "https://consulproject.org"
       show_results_and_stats: "Visa resultat och statistik"
@@ -1387,8 +1387,8 @@ sv:
         back: Gå tillbaka
         creating: Skapa stadsdel
       delete:
-        success: Området har tagits bort
-        error: Området kan inte raderas eftersom det finns förslag kopplade till det
+        success: Det geografiska området har tagits bort
+        error: Det här geografiska området kan inte raderas eftersom det finns förslag kopplade till det
     signature_sheets:
       author: Skribent
       created_at: Datum för skapande
@@ -1402,7 +1402,7 @@ sv:
         document_numbers_note: "Fyll i siffrorna separerade av semikolon (;)"
         submit: Skapa namninsamling
         text_help:
-          required_fields_note: "För att verifiera en användare måste ansökan ha: dokumentnummer"
+          required_fields_note: "För att verifiera en användare måste ansökan ha: Legitimationshandlingens nummer"
           date_of_birth_note: ", födelsedag (dd/mm/yyyy)"
           postal_code_note: " och postnummer"
           required_fields_structure_note: "De fält som krävs för varje användare måste vara kommaseparerade och varje användare måste vara separerad av semikolon."
