@@ -77,7 +77,7 @@ sv:
       poster_short_title_description: 'Kort beskrivning av affischfunktionen, med vilken användare kan hämta en affisch i PDF-format som stöd för sitt förslag. Du hittar allt innehåll för affischen i "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Beskrivning av affischen
       poster_description_description: Detaljerad beskrivning av affischfunktionen
-    analytics_url: "Analytiker URL"
+    analytics_url: "Analytiker-URL"
     proposal_notification_minimum_interval_in_days: "Minsta intervall (i dagar) mellan att förslagslämnare kan skicka nya aviseringar om förslag"
     proposal_notification_minimum_interval_in_days_description: "Antalet dagar som en användare kan skicka en avisering till alla som följer deras förslag"
     direct_message_max_per_day: "Högsta antalet direktmeddelanden per dag"
