@@ -1601,7 +1601,7 @@ sv:
           updated_at: Uppdaterad den
           title: Titel
           slug: URL
-          see_cards: Se kort
+          see_cards: Hantera kort
         cards:
           cards_title: kort
           create_card: Skapa kort
