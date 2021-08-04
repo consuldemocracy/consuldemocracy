@@ -39,4 +39,4 @@ sv:
       vote_by_channel: "Röster per kanal"
       web_percentage: "%{percentage} digital"
       booth_percentage: "%{percentage} röststationer"
-      letter_percentage: "%{percentage} mejl"
+      letter_percentage: "%{percentage} e-post"
