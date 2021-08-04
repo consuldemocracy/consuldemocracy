@@ -75,7 +75,6 @@ de:
         phone: Geben Sie Ihre Handynummer ein, um den Code zu erhalten
         phone_format: "<strong>-<em>(Beispiel: 612345678 oder +34612345678)</em></strong>"
         phone_note: Wir verwenden Ihre Telefonnummer ausschließlich dafür Ihnen einen Code zu schicken, niemals um Sie zu kontaktieren.
-        phone_placeholder: "Beispiel: 612345678 oder +34612345678"
         submit_button: Senden
         title: Bestätigungscode senden
       update:
