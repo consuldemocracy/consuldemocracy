@@ -828,7 +828,7 @@ sv:
         send: Skicka
         affected_users: (%{n} påverkade användare)
         sent_emails:
-          one: 1 e-postbrev skickad
+          one: 1 e-postbrev skickat
           other: "%{count} e-postbrev skickade"
         sent_at: Registrerat
         subject: Ämne
@@ -900,7 +900,7 @@ sv:
         title: "Kommentar"
         description: "Skickas till författaren när den får en kommentar."
       reply:
-        title: "Svara"
+        title: "Svar"
         description: "Skickas till den som skrivit kommentaren när den får svar."
       direct_message_for_receiver:
         title: "Mottagare av privatmeddelande"
@@ -921,7 +921,7 @@ sv:
       message_title: "Meddelandes titel"
       message_body: "Detta är ett exempel på meddelandeinnehåll."
       alert:
-        no_investments: "Det har inte skapats någon budgetsinvestering. Det krävs exempeldata för att kunna förhandsvisa e-postbrevet."
+        no_investments: "Det har inte skapats någon budgetinvestering. Det krävs exempeldata för att kunna förhandsvisa e-postbrevet."
         no_comments: "Det har inte skapats några kommentarer. Det krävs exempeldata för att kunna förhandsvisa e-postbrevet."
         no_replies: "Det har inte skapats några svar. Det krävs exempeldata för att kunna förhandsvisa e-postbrevet."
         no_evaluation_comments: "Det har inte skapats några utvärderingskommentarer. Det krävs exempeldata för att kunna förhandsvisa e-postbrevet."
@@ -1257,7 +1257,7 @@ sv:
         id: ID
         author: Skribent
         select: Välj
-        selected: Vald
+        selected: Valt
         milestones: Milstolpar
         no_proposals: Det finns inga förslag.
       show:
