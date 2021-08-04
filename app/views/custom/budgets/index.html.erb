@@ -68,7 +68,7 @@
 <iframe src="https://player.vimeo.com/video/521820196?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="100%" max-width="426" height="240" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen title="V&amp;iacute;deo presentaci&amp;oacute;n Presupuestos Participativos ‐ Made with Clipchamp (1).mp4"></iframe>  <div id="budget_info" class="budget-info">
     <div class="row margin-top">
       <!--BUSCADOR-->
-      	<style>
+ 	<style>
 		.datos{
 			display:block;
 			margin-left:auto;
@@ -590,6 +590,8 @@ DeVotacion</td></tr>
 	</div>
 </div>
 <script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+  
 
 
 	for (let step = 2; step <= document.querySelectorAll(".datos tr").length; step++) {
@@ -634,8 +636,10 @@ function myFunction() {
 			document.getElementById("textoInformativo2").style.display="none";
 		}	
 	}
-
+});
 </script>	
+
+
       <!--BUSCADOR-->
         <div id="groups_and_headings" class="groups-and-headings">
           <% current_budget.groups.each do |group| %>
