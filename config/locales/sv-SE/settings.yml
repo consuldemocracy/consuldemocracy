@@ -2,16 +2,16 @@ sv:
   settings:
     comments_body_max_length: "Maximal längd på kommentarer"
     comments_body_max_length_description: "I antal tecken"
-    official_level_1_name: "Tjänsteperson nivå 1"
-    official_level_1_name_description: "Tagg som visas för användare markerade som funktionärer på nivå 1"
-    official_level_2_name: "Tjänsteperson nivå 2"
-    official_level_2_name_description: "Tagg som visas för användare markerade som funktionärer på nivå 2"
-    official_level_3_name: "Tjänsteperson nivå 3"
-    official_level_3_name_description: "Tagg som visas för användare markerade som funktionärer på nivå 3"
-    official_level_4_name: "Tjänsteperson nivå 4"
-    official_level_4_name_description: "Tagg som visas för användare markerade som funktionärer på nivå 4"
-    official_level_5_name: "Tjänsteperson nivå 5"
-    official_level_5_name_description: "Tagg som visas för användare markerade som funktionärer på nivå 5"
+    official_level_1_name: "Nivå 1-tjänsteman"
+    official_level_1_name_description: "Tagg som visas för användare markerade som tjänsteman på nivå 1"
+    official_level_2_name: "Nivå 2-tjänsteman"
+    official_level_2_name_description: "Tagg som visas för användare markerade som tjänsteman på nivå 2"
+    official_level_3_name: "Nivå 3-tjänsteman"
+    official_level_3_name_description: "Tagg som visas för användare markerade som tjänsteman på nivå 3"
+    official_level_4_name: "Nivå 4-tjänsteman"
+    official_level_4_name_description: "Tagg som visas för användare markerade som tjänsteman på nivå 4"
+    official_level_5_name: "Nivå 5-tjänsteman"
+    official_level_5_name_description: "Tagg som visas för användare markerade som tjänsteman på nivå 5"
     max_ratio_anon_votes_on_debates: "Maximal andel anonyma röster per debatt"
     max_ratio_anon_votes_on_debates_description: "Anonyma röster kommer från registrerade användare vars konton ej är verifierade"
     max_votes_for_proposal_edit: "Gräns för antal röster efter vilket ett förslag inte längre kan redigeras"
@@ -23,10 +23,10 @@ sv:
     featured_proposals_number: "Antal uppmärksammade förslag"
     featured_proposals_number_description: "Antal uppmärksammade förslag som ska visas om funktionen Uppmärksammade förslag är aktiv"
     votes_for_proposal_success: "Antal röster som krävs för att ett förslag ska antas"
-    votes_for_proposal_success_description: "När ett förslag uppnår detta antal stöd kan det inte längre ta emot fler stöd och anses vara framgångsrik"
+    votes_for_proposal_success_description: "När ett förslag uppnår detta antal stöd kan det inte längre ta emot fler och anses ha lyckats"
     months_to_archive_proposals: "Antal månader innan förslag arkiveras"
     months_to_archive_proposals_description: "Efter detta antal månader blir förslagen arkiverade och kan inte längre ta emot stöd"
-    email_domain_for_officials: "E-postdomän för tjänstepersoner"
+    email_domain_for_officials: "E-postdomän för tjänstemän"
     email_domain_for_officials_description: "Alla användare registrerade med denna domän får sitt konto verifierat vid registrering"
     twitter_handle: "Användarnamn på Twitter"
     twitter_handle_description: "Om ifyllt visas det i sidfoten"
@@ -48,7 +48,7 @@ sv:
     related_content_score_threshold_description: "Baserat på betygen på röster i relaterat innehåll gömmer detta innehåll som användare markerat som ej relaterat"
     hot_score_period_in_days: "Period (dagar) som används av filtret 'mest aktiva'"
     hot_score_period_in_days_description: "Filtret 'mest aktiva' används i flera avsnitt och baseras på rösterna under de senaste X dagarna"
-    mailer_from_name: "Ursprunglig e-postadress"
+    mailer_from_name: "Avsändarnamn för e-post"
     mailer_from_name_description: "Detta namn visas som avsändarnamn i e-brev som skickas från programmet"
     mailer_from_address: "E-postadress för avsändare"
     mailer_from_address_description: "Denna e-postadress visas i e-brev som skickas av programmet"
@@ -64,17 +64,17 @@ sv:
       successful_proposal_id: Framgångsrikt förslag
       successful_proposal_id_description: Detta förslag används som en riktlinje för ett lyckat förslag i antal stöd och visas i diagrammet i dashboard.
       poll_short_title: Omröstningar
-      poll_short_title_description: Kort beskrivning av enkätfunktionen. Tillåter användare att skapa enkäter kring ett förslag
+      poll_short_title_description: Kort beskrivning av enkätfunktionen, med vilken användare kan skapa enkäter kring ett förslag
       poll_description: Omröstningsbeskrivning
       poll_description_description: Detaljerad beskrivning av enkätfunktionen
       poll_link: Länk till ytterligare information
       poll_link_description: Lägger till ytterligare en informationslänk om enkätfunktionen
       email_short_title: E-post
-      email_short_title_description: 'Kort beskrivning av e-mejl funktionen. Den tillåter användare att skicka ett mejl för att marknadsföra sitt förslag. Du kan hitta allt innehåll för detta mejl i "/app/views/dashboard/mailer/forward.html.erb"'
-      email_description: E-posts beskrivning
+      email_short_title_description: 'Kort beskrivning av e-postfunktionen, med vilken användare kan skicka e-post som stöd för sitt förslag. Du hittar allt innehåll för detta e-postmeddelande i "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: E-postbeskrivning
       email_description_description: Detaljerad beskrivning av e-postfunktionen
       poster_short_title: Affisch
-      poster_short_title_description: 'Kort beskrivning av affischfunktionen. Användare kan hämta en affisch i PDF-format för att marknadsföra sitt förslag. Du kan hitta allt innehåll för affischen i "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_short_title_description: 'Kort beskrivning av affischfunktionen, med vilken användare kan hämta en affisch i PDF-format som stöd för sitt förslag. Du hittar allt innehåll för affischen i "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Beskrivning av affischen
       poster_description_description: Detaljerad beskrivning av affischfunktionen
     analytics_url: "Analytiker URL"
