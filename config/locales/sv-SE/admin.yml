@@ -1652,10 +1652,10 @@ sv:
         title: Hantera lokalt adressregister
         create: Skapa ny post i lokalt adressregister
         no_local_census_records: Det finns inget lokalt adressregister.
-        document_type: Dokumenttyp
-        document_number: Dokumentnummer
+        document_type: Typ av identitetshandling
+        document_number: Identitetshandlingens nummer
         date_of_birth: Födelsedatum
-        postal_code: Postkod
+        postal_code: Postnummer
         import: Importera CSV
       new:
         creating: Skapar nytt lokalt adressregister
@@ -1670,7 +1670,7 @@ sv:
       imports:
         new:
           title: Poster i lokalt adressregister
-          subtitle: Importera CSV fil
+          subtitle: Importera CSV-fil
         create:
           notice: Importen av poster i lokala adressregister är klar!
         show:
