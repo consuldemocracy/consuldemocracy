@@ -854,7 +854,7 @@ sv:
     comment_unauthenticated: Du behöver %{signin} eller %{signup} för att rösta.
     disagree: Jag håller inte med
     organizations: Organisationer kan inte rösta
-    supports: Stöder
+    supports: Stöd
     verified_only: Endast verifierade användare kan rösta på förslag; %{verify_account}.
     budget_investments:
       not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
