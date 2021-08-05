@@ -5,7 +5,6 @@ gem "rails", "5.2.4.6"
 gem "acts-as-taggable-on", "~> 6.5.0"
 gem "acts_as_votable", "~> 0.12.1"
 gem "ahoy_matey", "~> 1.6.0"
-gem "airbrake", "~> 5.0"
 gem "ancestry", "~> 3.2.1"
 gem "audited", "~> 4.9.0"
 gem "autoprefixer-rails", "~> 8.2.0"
@@ -62,6 +61,7 @@ gem "view_component", "~> 2.19.1", require: "view_component/engine"
 gem "whenever", "~> 1.0.0", require: false
 gem "wicked_pdf", "~> 2.1.0"
 gem "wkhtmltopdf-binary", "~> 0.12.4"
+gem "airbrake", "~> 5.0"
 
 source "https://rails-assets.org" do
   gem "rails-assets-leaflet"
