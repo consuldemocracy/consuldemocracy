@@ -31,7 +31,7 @@ sv:
       participants_vote_phase: "Deltagaromröstningsfas"
       participants_every_phase: "Totalt antal deltagare"
       percent_total_participants: "% Totalt antal deltagare"
-      percent_heading_census: "% distriktets folkmängd"
+      percent_heading_census: "% av områdets adressregister"
       participatory_disclaimer: "** Antalet totala deltagare innefattar personer som har skapat, stött eller röstat om budgetförslag."
       heading_disclaimer: "*** Data om områden avser de områden där varje användare röstade, inte nödvändigtvis det område som de är registrerade i."
     polls:
