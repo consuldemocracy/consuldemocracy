@@ -1600,7 +1600,7 @@ sv:
           status: Status
           updated_at: Uppdaterad den
           title: Titel
-          slug: URL
+          slug: Titel för URL
           see_cards: Hantera kort
         cards:
           cards_title: kort
