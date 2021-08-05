@@ -267,7 +267,7 @@ sv:
       mark_as_unread: Markera som oläst
       notifiable_hidden: Den här resursen är inte längre tillgänglig.
   map:
-    title: "Stadsdelar"
+    title: "Distrikt"
     proposal_for_district: "Skriv ett förslag för ditt distrikt"
     start_proposal: Skapa förslag
   omniauth:
