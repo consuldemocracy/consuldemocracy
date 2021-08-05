@@ -515,7 +515,7 @@ sv:
       locked_resource: Resursen låst
       ideal_time: Ideal tid
     community:
-      access_community: Gå med i gemenskapen
+      access_community: Gå till gemenskapen
       latest_activity: "Senaste aktivitet i gemenskapen: %{at}"
       participants: Deltagare
       debates: Debatter
