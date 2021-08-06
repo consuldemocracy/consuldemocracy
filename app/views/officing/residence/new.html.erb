@@ -13,7 +13,11 @@
                          autocomplete: "off" %>
       </div>
 
-      <% if Setting.force_presence_date_of_birth? %>
+      <% if Setting.force_presence_postal_code? %>
+        <div class="small-12 medium-6">
+          <%= f.text_field :postal_code, aria: { describedby: "postal-code-help-text" } %>
+        </div>
+      <% elsif Setting.force_presence_date_of_birth? %>
         <div class="date-of-birth small-12 medium-6 clear">
           <%= f.date_select :date_of_birth,
                             prompt: true,
@@ -22,12 +26,6 @@
       <% else %>
         <div class="date-of-birth small-12 medium-6">
           <%= f.text_field :year_of_birth, type: "number", autocomplete: "off" %>
-        </div>
-      <% end %>
-
-      <% if Setting.force_presence_postal_code? %>
-        <div class="small-12 medium-6">
-          <%= f.text_field :postal_code, aria: { describedby: "postal-code-help-text" } %>
         </div>
       <% end %>
 

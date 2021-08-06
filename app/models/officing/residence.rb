@@ -126,14 +126,12 @@ class Officing::Residence
     def retrieve_census_data
       @census_api_response = CensusCaller.new.call(document_type,
                                                    document_number,
-                                                   year_of_birth,
                                                    postal_code)
     end
 
     def census_year_of_birth
       @census_api_response = CensusCaller.new.call(document_type,
                                                    document_number,
-                                                   date_of_birth,
                                                    postal_code)
     end
 
