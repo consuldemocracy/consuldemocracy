@@ -1108,6 +1108,10 @@
     background-size: cover;
   }
 
+  h1 {
+    padding-top: $line-height * 2;
+  }
+
   .budget-title {
     font-weight: bold;
     text-transform: uppercase;
