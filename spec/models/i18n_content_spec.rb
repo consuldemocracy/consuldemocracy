@@ -149,6 +149,16 @@ RSpec.describe I18nContent, type: :model do
       expect(I18nContent.all).to be_empty
     end
 
+    it "updates existing keys with the default translation" do
+      I18nContent.create!(key: "shared.yes", value_en: "Oh, yeah")
+
+      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Yes" }}])
+
+      expect(I18nContent.count).to eq 1
+      expect(I18nContent.first.translations.count).to eq 1
+      expect(I18nContent.first.value).to eq "Yes"
+    end
+
     it "does not store new keys for disabled translations" do
       I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Oh, yeah" }}], [:es])
 

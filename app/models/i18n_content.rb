@@ -127,8 +127,12 @@ class I18nContent < ApplicationRecord
         values.each do |key, value|
           locale = key.split("_").last
 
-          if value == I18n.t(content[:id], locale: locale) || value.match(/translation missing/)
+          if value.match(/translation missing/)
             next
+          elsif value == I18n.t(content[:id], locale: locale)
+            Globalize.with_locale(locale) do
+              I18nContent.find_by(key: content[:id])&.update!(value: value)
+            end
           else
             text = I18nContent.find_or_create_by!(key: content[:id])
             Globalize.with_locale(locale) do
