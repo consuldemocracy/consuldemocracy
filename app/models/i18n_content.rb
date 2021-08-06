@@ -118,4 +118,31 @@ class I18nContent < ApplicationRecord
       end.to_h
     end
   end
+
+  def self.update(contents, enabled_translations = I18n.available_locales)
+    contents.each do |content|
+      values = content[:values].slice(*translation_params(enabled_translations))
+
+      unless values.empty?
+        values.each do |key, value|
+          locale = key.split("_").last
+
+          if value == I18n.t(content[:id], locale: locale) || value.match(/translation missing/)
+            next
+          else
+            text = I18nContent.find_or_create_by!(key: content[:id])
+            Globalize.with_locale(locale) do
+              text.update!(value: value)
+            end
+          end
+        end
+      end
+    end
+  end
+
+  def self.translation_params(enabled_translations)
+    translated_attribute_names.product(enabled_translations).map do |attr_name, loc|
+      localized_attr_name_for(attr_name, loc)
+    end
+  end
 end
