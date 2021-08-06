@@ -17,7 +17,12 @@
           <div class="description">
             <p><a href="https://participa.diputaciondevalladolid.es/users/sign_up"><strong style="font-size: 34px;">¡REGÍSTRATE!</strong></a> Para poder votar las propuestas en septiembre</p>
            <%= auto_link_already_sanitized_html wysiwyg(current_budget.description) %>
-            
+            <table>
+              <tr><th>Proyectos viables</th><th>Proyectos inviables</th></tr>
+              <tr><td style="background-color:#DEB5D5"><a href="https://participa.diputaciondevalladolid.es/budgets/4/investments?heading_id=10">ZONA ESTE</a></td><td style="background-color:#DEB5D5"><a href="https://participa.diputaciondevalladolid.es/budgets/4/investments?filter=unfeasible&heading_id=10">ZONA ESTE</a></td></tr>
+              <tr><td style="background-color:#80CEF4"><a href="https://participa.diputaciondevalladolid.es/budgets/4/investments?heading_id=9">ZONA NORTE</a></td><td style="background-color:#80CEF4"><a href="https://participa.diputaciondevalladolid.es/budgets/4/investments?filter=unfeasible&heading_id=9">ZONA NORTE</a></td></tr>
+              <tr><td style="background-color:#95EF85"><a href="https://participa.diputaciondevalladolid.es/budgets/4/investments?heading_id=11">ZONA SUR</a></td><td style="background-color:#95EF85"><a href="https://participa.diputaciondevalladolid.es/budgets/4/investments?filter=unfeasible&heading_id=11">ZONA SUR</a></td></tr>
+            </table>
           </div>
           <!-- p>
             <%=  link_to 'Presupuestos Provinciales 2019 (documento descargable)', asset_path('/docs/Folleto_Presupuestos_Participativos_2019.pdf')  %>
