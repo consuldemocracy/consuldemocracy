@@ -313,27 +313,13 @@ describe "Budgets" do
       visit budget_path(budget)
       expect(page).not_to have_link "See all investments"
 
-      %w[accepting reviewing selecting valuating].each do |phase_name|
+      (Budget::Phase::PHASE_KINDS - ["informing"]).each do |phase_name|
         budget.update!(phase: phase_name)
 
         visit budget_path(budget)
         expect(page).to have_link "See all investments",
                                   href: budget_investments_path(budget)
       end
-
-      %w[publishing_prices balloting reviewing_ballots].each do |phase_name|
-        budget.update!(phase: phase_name)
-
-        visit budget_path(budget)
-        expect(page).to have_link "See all investments",
-                                  href: budget_investments_path(budget)
-      end
-
-      budget.update!(phase: "finished")
-
-      visit budget_path(budget)
-      expect(page).to have_link "See all investments",
-                                  href: budget_investments_path(budget)
     end
 
     scenario "Show investments list" do
