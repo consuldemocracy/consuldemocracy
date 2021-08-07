@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Budgets::InvestmentsListComponent, type: :component do
-  describe "#investments_preview_list" do
+  describe "#investments" do
     let(:budget)    { create(:budget, :accepting) }
     let(:group)     { create(:budget_group, budget: budget) }
     let(:heading)   { create(:budget_heading, group: group) }
