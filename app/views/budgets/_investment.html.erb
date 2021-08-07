@@ -4,7 +4,7 @@
       <% if investment.image.present? %>
         <%= image_tag investment.image_url(:large), alt: investment.image.title.unicode_normalize %>
       <% else %>
-        <%= image_tag "budget_investment_no_image.jpg", alt: investment.title %>
+        <%= image_tag(image_path_for("budget_investment_no_image.jpg"), alt: investment.title) %>
       <% end %>
     </div>
 

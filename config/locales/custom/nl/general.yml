@@ -484,6 +484,9 @@ nl:
     info_sign_in: "Inloggen via sociale media"
     info_sign_up: "Aanmelden via sociale media"
     or_fill: "Of vul het formulier in"
+    info:
+      sign_in: "Aanmelden met:"
+      sign_up: "Registreer met:"
   stats:
     index:
       comments: "Reacties"
