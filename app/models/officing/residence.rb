@@ -10,13 +10,10 @@ class Officing::Residence
 
   validates :document_number, presence: true
   validates :document_type, presence: true
-  # TODO: review
-  #validates :year_of_birth, presence: true
-  #validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
-  #validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
-  #validates :year_of_birth, presence: true, unless: -> { Setting.force_presence_date_of_birth? }
+  validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
+  validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
+  validates :year_of_birth, presence: true, unless: -> { Setting.force_presence_date_of_birth? }
 
-  validate :allowed_age
   validate :residence_in_madrid
 
   def initialize(attrs = {})
@@ -37,10 +34,6 @@ class Officing::Residence
         document_number:       document_number,
         document_type:         document_type,
         geozone:               geozone,
-        # TODO review
-        #date_of_birth:         response_date_of_birth.in_time_zone.to_datetime,
-        #date_of_birth:         date_of_birth.in_time_zone.to_datetime,
-        #gender:                gender,
         residence_verified_at: Time.current,
         verified_at:           Time.current,
         erased_at:             Time.current,
@@ -85,21 +78,6 @@ class Officing::Residence
     end
   end
 
-  def allowed_age
-    return if errors[:year_of_birth].any?
-    return unless @census_api_response.valid?
-
-    unless allowed_age?
-      errors.add(:year_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
-    end
-  end
-
-  def allowed_age?
-    # TODO review
-    # Age.in_years(date_of_birth) >= User.minimum_required_age
-    # Age.in_years(response_date_of_birth) >= User.minimum_required_age
-  end
-
   def geozone
     Geozone.find_by(census_code: district_code)
   end
@@ -140,7 +118,7 @@ class Officing::Residence
     end
 
     def valid_year_of_birth?
-      return true if Setting.force_presence_date_of_birth?
+      return true unless Setting.force_presence_date_of_birth?
 
       @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
     end
