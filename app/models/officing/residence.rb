@@ -10,9 +10,9 @@ class Officing::Residence
 
   validates :document_number, presence: true
   validates :document_type, presence: true
-  validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
-  validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
-  validates :year_of_birth, presence: true, unless: -> { Setting.force_presence_date_of_birth? }
+  # validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
+  # validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
+  # validates :year_of_birth, presence: true, unless: -> { Setting.force_presence_date_of_birth? }
 
   validate :residence_in_madrid
 
@@ -82,17 +82,8 @@ class Officing::Residence
     Geozone.find_by(census_code: district_code)
   end
 
-  # TODO review
   def district_code
-   # @census_api_response.district_code
-  end
-
-  def gender
-   # @census_api_response.gender
-  end
-
-  def date_of_birth
-    #@census_api_response.date_of_birth
+   @census_api_response.geozone_external_code
   end
 
   def response_date_of_birth
