@@ -105,8 +105,11 @@ function myFunction() {
 						
 			if(document.getElementById("entradaDatos").value.toLowerCase()==""){			
 				//document.querySelectorAll(".datos tr").style.display="none";
-				document.querySelectorAll(".datos tr").forEach(el => el.style.display="none");
-				
+				//document.querySelectorAll(".datos tr").forEach(el => el.style.display="none");
+				for (i = 0; i < document.querySelectorAll(".datos tr").length; ++i) {
+				  document.querySelectorAll(".datos tr")[i].style.display="none";
+				}
+        
 				document.querySelector(".datos tr:nth-child(1)").style.display="table-row";
 				document.getElementById("textoInformativo").style.display="block";
 				document.getElementById("textoInformativo2").style.display="none";			
