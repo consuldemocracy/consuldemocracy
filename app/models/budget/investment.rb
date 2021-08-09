@@ -164,10 +164,10 @@ class Budget
       results = results.winners            if params[:advanced_filters].include?("winners")
 
       ids = []
-      ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?("feasible")
-      ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?("selected")
-      ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?("undecided")
-      ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?("unfeasible")
+      ids += results.valuation_finished_feasible.ids if params[:advanced_filters].include?("feasible")
+      ids += results.where(selected: true).ids       if params[:advanced_filters].include?("selected")
+      ids += results.undecided.ids                   if params[:advanced_filters].include?("undecided")
+      ids += results.unfeasible.ids                  if params[:advanced_filters].include?("unfeasible")
       results = results.where(id: ids) if ids.any?
       results
     end
@@ -191,8 +191,8 @@ class Budget
       return results if max_per_heading <= 0
 
       ids = []
-      budget.headings.pluck(:id).each do |hid|
-        ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
+      budget.headings.ids.each do |hid|
+        ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).ids
       end
 
       results.where(id: ids)

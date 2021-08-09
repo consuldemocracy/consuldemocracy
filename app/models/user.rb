@@ -243,7 +243,7 @@ class User < ApplicationRecord
     Comment.hide_all comment_ids
     Proposal.hide_all proposal_ids
     Budget::Investment.hide_all budget_investment_ids
-    ProposalNotification.hide_all ProposalNotification.where(author_id: id).pluck(:id)
+    ProposalNotification.hide_all ProposalNotification.where(author_id: id).ids
   end
 
   def full_restore

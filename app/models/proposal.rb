@@ -114,7 +114,7 @@ class Proposal < ApplicationRecord
   end
 
   def self.not_followed_by_user(user)
-    where.not(id: followed_by_user(user).pluck(:id))
+    where.not(id: followed_by_user(user).ids)
   end
 
   def to_param

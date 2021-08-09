@@ -86,10 +86,7 @@ class Dashboard::Action < ApplicationRecord
     actions_for_today = get_actions_for_today(proposal)
     actions_for_date = get_actions_for_date(proposal, date)
 
-    actions_for_today_ids = actions_for_today.pluck(:id)
-    actions_for_date_ids = actions_for_date.pluck(:id)
-
-    actions_for_today_ids - actions_for_date_ids
+    actions_for_today.ids - actions_for_date.ids
   end
 
   private
