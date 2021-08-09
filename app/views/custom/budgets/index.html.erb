@@ -81,7 +81,10 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function(event) { 
-  
+  (function () {
+    if ( typeof NodeList.prototype.forEach === "function" ) return false;
+    NodeList.prototype.forEach = Array.prototype.forEach;
+})();
 
 
 	for (let step = 2; step <= document.querySelectorAll(".datos tr").length; step++) {
