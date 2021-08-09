@@ -205,6 +205,9 @@ Lint/UselessAssignment:
 Lint/Void:
   Enabled: true
 
+Performance/BlockGivenWithExplicitBlock:
+  Enabled: true
+
 Performance/CompareWithBlock:
   Enabled: true
 

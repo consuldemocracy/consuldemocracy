@@ -17,7 +17,7 @@ module Header
                   end
 
     tag.header do
-      safe_join([before, content_tag(heading_tag, title), (capture(&block) if block_given?)].compact)
+      safe_join([before, content_tag(heading_tag, title), (capture(&block) if block)].compact)
     end
   end
 
