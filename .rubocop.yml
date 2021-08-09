@@ -455,6 +455,9 @@ Style/Proc:
 Style/RaiseArgs:
   Enabled: true
 
+Style/RedundantCondition:
+  Enabled: true
+
 Style/RedundantFileExtensionInRequire:
   Enabled: true
 
