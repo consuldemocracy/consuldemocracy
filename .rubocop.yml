@@ -351,6 +351,9 @@ RSpec/EmptyLineAfterExampleGroup:
 RSpec/ExampleWording:
   Enabled: true
 
+RSpec/FilePath:
+  Enabled: true
+
 RSpec/Focus:
   Enabled: true
 
