@@ -54,7 +54,7 @@ class Budget::Stats
   end
 
   def total_votes
-    budget.ballots.pluck(:ballot_lines_count).reduce(0) { |sum, x| sum + x }
+    budget.ballots.pluck(:ballot_lines_count).sum
   end
 
   def total_selected_investments
@@ -72,18 +72,18 @@ class Budget::Stats
     end
 
     groups[:total] = Hash.new(0)
-    groups[:total][:total_investments_count] = groups.map { |_k, v| v[:total_investments_count] }.sum
-    groups[:total][:total_participants_support_phase] = groups.map { |_k, v| v[:total_participants_support_phase] }.sum
-    groups[:total][:total_participants_vote_phase] = groups.map { |_k, v| v[:total_participants_vote_phase] }.sum
-    groups[:total][:total_participants_every_phase] = groups.map { |_k, v| v[:total_participants_every_phase] }.sum
+    groups[:total][:total_investments_count] = groups.sum { |_k, v| v[:total_investments_count] }
+    groups[:total][:total_participants_support_phase] = groups.sum { |_k, v| v[:total_participants_support_phase] }
+    groups[:total][:total_participants_vote_phase] = groups.sum { |_k, v| v[:total_participants_vote_phase] }
+    groups[:total][:total_participants_every_phase] = groups.sum { |_k, v| v[:total_participants_every_phase] }
 
     budget.headings.each do |heading|
       groups[heading.id].merge!(calculate_heading_stats_with_totals(groups[heading.id], groups[:total], heading.population))
     end
 
-    groups[:total][:percentage_participants_support_phase] = groups.map { |_k, v| v[:percentage_participants_support_phase] }.sum
-    groups[:total][:percentage_participants_vote_phase] = groups.map { |_k, v| v[:percentage_participants_vote_phase] }.sum
-    groups[:total][:percentage_participants_every_phase] = groups.map { |_k, v| v[:percentage_participants_every_phase] }.sum
+    groups[:total][:percentage_participants_support_phase] = groups.sum { |_k, v| v[:percentage_participants_support_phase] }
+    groups[:total][:percentage_participants_vote_phase] = groups.sum { |_k, v| v[:percentage_participants_vote_phase] }
+    groups[:total][:percentage_participants_every_phase] = groups.sum { |_k, v| v[:percentage_participants_every_phase] }
 
     groups
   end
