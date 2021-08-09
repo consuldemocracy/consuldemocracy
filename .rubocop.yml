@@ -464,6 +464,9 @@ Style/RedundantFileExtensionInRequire:
 Style/RedundantFreeze:
   Enabled: true
 
+Style/RedundantInterpolation:
+  Enabled: true
+
 Style/RedundantReturn:
   Enabled: true
 

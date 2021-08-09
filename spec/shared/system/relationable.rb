@@ -36,7 +36,7 @@ shared_examples "relationable" do |relationable_model_name|
     expect(page).to have_css ".add-related-content[aria-expanded='true']"
 
     within("#related_content") do
-      fill_in "Link to related content", with: "#{url + related1.url}"
+      fill_in "Link to related content", with: "#{url}#{related1.url}"
       click_button "Add"
     end
 
@@ -53,7 +53,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_button "Add related content"
 
     within("#related_content") do
-      fill_in "Link to related content", with: "#{url + related2.url}"
+      fill_in "Link to related content", with: "#{url}#{related2.url}"
       click_button "Add"
     end
 
