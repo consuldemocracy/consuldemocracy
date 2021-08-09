@@ -316,7 +316,7 @@ describe "Advanced search" do
 
       scenario "Search by multiple filters" do
         Setting["official_level_1_name"] = "Official position 1"
-        ana  = create :user, official_level: 1
+        ana = create :user, official_level: 1
         john = create :user, official_level: 1
 
         create(:budget_investment, heading: heading, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)

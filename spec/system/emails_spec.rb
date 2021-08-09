@@ -342,9 +342,9 @@ describe "Emails" do
   end
 
   context "Budgets" do
-    let(:author)   { create(:user, :level_two) }
-    let(:budget)   { create(:budget) }
-    let!(:heading) { create(:budget_heading, name: "More hospitals", budget: budget) }
+    let(:author) { create(:user, :level_two) }
+    let(:budget) { create(:budget) }
+    before { create(:budget_heading, name: "More hospitals", budget: budget) }
 
     scenario "Investment created" do
       login_as(author)
@@ -352,7 +352,7 @@ describe "Emails" do
 
       fill_in "Title", with: "Build a hospital"
       fill_in_ckeditor "Description", with: "We have lots of people that require medical attention"
-      check   "budget_investment_terms_of_service"
+      check "budget_investment_terms_of_service"
 
       click_button "Create Investment"
       expect(page).to have_content "Investment created successfully"
