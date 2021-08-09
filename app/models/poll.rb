@@ -122,7 +122,7 @@ class Poll < ApplicationRecord
   end
 
   def self.not_voted_by(user)
-    where("polls.id not in (?)", poll_ids_voted_by(user))
+    where.not(id: poll_ids_voted_by(user))
   end
 
   def self.poll_ids_voted_by(user)

@@ -45,7 +45,7 @@ class Debate < ApplicationRecord
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago) }
-  scope :featured,                 -> { where("featured_at is not null") }
+  scope :featured,                 -> { where.not(featured_at: nil) }
   scope :public_for_api,           -> { all }
 
   # Ahoy setup
@@ -58,8 +58,7 @@ class Debate < ApplicationRecord
   end
 
   def self.recommendations(user)
-    tagged_with(user.interests, any: true)
-      .where("author_id != ?", user.id)
+    tagged_with(user.interests, any: true).where.not(author_id: user.id)
   end
 
   def searchable_translations_definitions
