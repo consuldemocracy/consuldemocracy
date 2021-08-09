@@ -172,6 +172,9 @@ Layout/TrailingWhitespace:
 Lint/AmbiguousRegexpLiteral:
   Enabled: true
 
+Lint/BooleanSymbol:
+  Enabled: true
+
 Lint/ConstantDefinitionInBlock:
   Enabled: true
 
