@@ -449,6 +449,9 @@ Style/PercentLiteralDelimiters:
 Style/Proc:
   Enabled: true
 
+Style/RaiseArgs:
+  Enabled: true
+
 Style/RedundantFileExtensionInRequire:
   Enabled: true
 
