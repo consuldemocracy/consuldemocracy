@@ -214,6 +214,9 @@ Performance/EndWith:
 Performance/StartWith:
   Enabled: true
 
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+
 Rails/CreateTableWithTimestamps:
   Enabled: true
   Exclude:

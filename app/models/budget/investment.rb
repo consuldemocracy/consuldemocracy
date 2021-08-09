@@ -112,11 +112,11 @@ class Budget
         where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id)
     end
 
-    before_create :set_original_heading_id
-    before_save :calculate_confidence_score
-    after_save :recalculate_heading_winners
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+    before_save :calculate_confidence_score
+    before_create :set_original_heading_id
+    after_save :recalculate_heading_winners
 
     def comments_count
       comments.count
