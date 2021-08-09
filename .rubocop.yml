@@ -325,6 +325,9 @@ Rails/UnknownEnv:
 Rails/Validation:
   Enabled: true
 
+Rails/WhereEquals:
+  Enabled: true
+
 Rails/WhereNot:
   Enabled: true
 

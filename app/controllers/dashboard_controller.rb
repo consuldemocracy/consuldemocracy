@@ -43,7 +43,7 @@ class DashboardController < Dashboard::BaseController
     end
 
     def set_done_and_pending_actions
-      @done_actions = proposed_actions.joins(:proposals).where("proposals.id = ?", proposal.id)
+      @done_actions = proposed_actions.joins(:proposals).where(proposals: { id: proposal.id })
       @pending_actions = proposed_actions - @done_actions
     end
 

@@ -32,10 +32,8 @@ class Comment < ApplicationRecord
   before_save :calculate_confidence_score
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }
-  scope :with_visible_author, -> { joins(:user).where("users.hidden_at IS NULL") }
-  scope :not_as_admin_or_moderator, -> do
-    where("administrator_id IS NULL").where("moderator_id IS NULL")
-  end
+  scope :with_visible_author, -> { joins(:user).where(users: { hidden_at: nil }) }
+  scope :not_as_admin_or_moderator, -> { where(administrator_id: nil).where(moderator_id: nil) }
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :public_for_api, -> do
     not_valuations

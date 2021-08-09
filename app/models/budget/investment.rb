@@ -104,12 +104,12 @@ class Budget
     scope :for_render, -> { includes(:heading) }
 
     def self.by_valuator(valuator_id)
-      where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments)
+      where(budget_valuator_assignments: { valuator_id: valuator_id }).joins(:valuator_assignments)
     end
 
     def self.by_valuator_group(valuator_group_id)
       joins(:valuator_group_assignments).
-        where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id)
+        where(budget_valuator_group_assignments: { valuator_group_id: valuator_group_id })
     end
 
     before_validation :set_responsible_name
