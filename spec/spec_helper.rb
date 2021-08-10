@@ -80,8 +80,8 @@ RSpec.configure do |config|
     sign_in(create(:administrator).user)
   end
 
-  config.before(:each, :controller, type: :component) do |example|
-    allow(ViewComponent::Base).to receive(:test_controller).and_return(example.metadata[:controller].to_s)
+  config.around(:each, :controller, type: :component) do |example|
+    with_controller_class(example.metadata[:controller]) { example.run }
   end
 
   config.before(:each, :show_exceptions) do
