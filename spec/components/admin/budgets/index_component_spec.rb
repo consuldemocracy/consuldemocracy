@@ -1,8 +1,7 @@
 require "rails_helper"
 
-describe Admin::Budgets::IndexComponent, type: :component do
+describe Admin::Budgets::IndexComponent, type: :component, controller: Admin::BudgetsController do
   before do
-    allow(ViewComponent::Base).to receive(:test_controller).and_return("Admin::BudgetsController")
     allow_any_instance_of(Admin::BudgetsController).to receive(:valid_filters).and_return(["all"])
     allow_any_instance_of(Admin::BudgetsController).to receive(:current_filter).and_return("all")
   end

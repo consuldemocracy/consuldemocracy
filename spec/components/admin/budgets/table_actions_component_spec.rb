@@ -1,12 +1,8 @@
 require "rails_helper"
 
-describe Admin::Budgets::TableActionsComponent, type: :component do
+describe Admin::Budgets::TableActionsComponent, type: :component, controller: Admin::BaseController do
   let(:budget) { create(:budget) }
   let(:component) { Admin::Budgets::TableActionsComponent.new(budget) }
-
-  before do
-    allow(ViewComponent::Base).to receive(:test_controller).and_return("Admin::BaseController")
-  end
 
   it "renders links to edit and delete budget, manage investments and edit groups and manage ballots" do
     render_inline component

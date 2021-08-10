@@ -1,14 +1,10 @@
 require "rails_helper"
 
-describe Admin::Poll::Officers::OfficersComponent, type: :component do
+describe Admin::Poll::Officers::OfficersComponent, type: :component, controller: Admin::BaseController do
   let(:existing_officer) { create(:poll_officer, name: "Old officer") }
   let(:new_officer) { build(:poll_officer, name: "New officer") }
   let(:officers) { [existing_officer, new_officer] }
   let(:component) { Admin::Poll::Officers::OfficersComponent.new(officers) }
-
-  before do
-    allow(ViewComponent::Base).to receive(:test_controller).and_return("Admin::BaseController")
-  end
 
   it "renders as many rows as officers" do
     render_inline component

@@ -80,6 +80,10 @@ RSpec.configure do |config|
     sign_in(create(:administrator).user)
   end
 
+  config.around(:each, :controller, type: :component) do |example|
+    with_controller_class(example.metadata[:controller]) { example.run }
+  end
+
   config.before(:each, :show_exceptions) do
     config = Rails.application.env_config
 
