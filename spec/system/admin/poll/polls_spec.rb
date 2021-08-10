@@ -293,7 +293,7 @@ describe "Admin polls", :admin do
 
         within("#totals") do
           within("#total_final") do
-            expect(page).to have_content("#{55555 + 63}")
+            expect(page).to have_content(55555 + 63)
           end
 
           within("#total_system") do

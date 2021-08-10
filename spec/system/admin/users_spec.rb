@@ -29,13 +29,13 @@ describe "Admin users" do
 
     visit admin_users_path
 
-    expect(page).not_to have_link("#{erased_user.id}", href: user_path(erased_user))
+    expect(page).not_to have_link(erased_user.id.to_s, href: user_path(erased_user))
     expect(page).to have_link("Erased")
 
     click_link "Erased"
 
     expect(page).to have_link("Active")
-    expect(page).to have_link("#{erased_user.id}", href: user_path(erased_user))
+    expect(page).to have_link(erased_user.id.to_s, href: user_path(erased_user))
     expect(page).to have_content "I don't like this site."
     expect(page).to have_content("Erased")
 

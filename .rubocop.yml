@@ -172,6 +172,9 @@ Layout/TrailingWhitespace:
 Lint/AmbiguousRegexpLiteral:
   Enabled: true
 
+Lint/BooleanSymbol:
+  Enabled: true
+
 Lint/ConstantDefinitionInBlock:
   Enabled: true
 
@@ -449,10 +452,19 @@ Style/PercentLiteralDelimiters:
 Style/Proc:
   Enabled: true
 
+Style/RaiseArgs:
+  Enabled: true
+
+Style/RedundantCondition:
+  Enabled: true
+
 Style/RedundantFileExtensionInRequire:
   Enabled: true
 
 Style/RedundantFreeze:
+  Enabled: true
+
+Style/RedundantInterpolation:
   Enabled: true
 
 Style/RedundantReturn:
