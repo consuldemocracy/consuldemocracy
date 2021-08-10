@@ -6,6 +6,7 @@ es:
         invalid_geozone: Solo puedes votar proyectos de tu zona.
     phase:
       accepting: Presentación de propuestas
+      publishing_prices: Propuestas viables a votación
     index:
       section_header:
         help: ¿Qué son los presupuestos participativos?
@@ -35,7 +36,7 @@ es:
         help_text_4_3_2: "Una propuesta de inversión es aquélla que supone un gasto en creación de nuevos equipamientos o infraestructuras, arreglo/modificación/mejora de las ya existentes y adquisición de bienes inventariables. Es decir, se trata de algo tangible que será beneficioso en el futuro."
         help_text_4_3_3: "Una propuesta de gasto corriente es aquella destinada a contratar personal o comprar recursos, bienes y servicios para el desarrollo de programas o actuaciones de la Diputación en la provincia."
         help_text_4_4: "¿Qué criterios deben cumplir las propuestas para pasar a la fase de votación?"
-        help_text_4_4_0: "A cada propuesta se le aplica un baremo que le otorga puntos si cumple una serie de criterios, que son los siguientes:"		
+        help_text_4_4_0: "A cada propuesta se le aplica un baremo que le otorga puntos si cumple una serie de criterios, que son los siguientes:"
         help_text_4_4_1: "Que atiendan a necesidades básicas de la población destinadas a resolver carencias o equipamientos básicos."
         help_text_4_4_2: "Que beneficien al conjunto de una zona o comarca, sin limitarse a un único municipio."
         help_text_4_4_3: "Que se trate de proyectos novedosos."
@@ -73,11 +74,11 @@ es:
         help_text_6_1 : ""
         help_text_6_2 : ""
         help_text_6_2_1 :
-        help_text_6_2_2 : 
-        help_text_6_2_3 : 
-        help_text_6_2_2_1 : 
-        help_text_6_2_2_2 : 
-        help_text_6_2_2_3 : 
+        help_text_6_2_2 :
+        help_text_6_2_3 :
+        help_text_6_2_2_1 :
+        help_text_6_2_2_2 :
+        help_text_6_2_2_3 :
         help_text_6: "¿Qué zona me corresponde?"
         help_text_7: "La provincia se divide en tres zonas:"
         help_text_8: "•	Norte: municipios al norte del Duero y al oeste del Pisuerga"
