@@ -5,10 +5,6 @@ class Budgets::InvestmentsListComponent < ApplicationComponent
     @budget = budget
   end
 
-  def render?
-    budget.single_heading?
-  end
-
   def investments(limit: 9)
     case budget.phase
     when "accepting", "reviewing"
@@ -19,6 +15,14 @@ class Budgets::InvestmentsListComponent < ApplicationComponent
       budget.investments.selected.sample(limit)
     else
       budget.investments.none
+    end
+  end
+
+  def see_all_path
+    if budget.single_heading?
+      budget_investments_path(budget)
+    else
+      budget_groups_path(budget)
     end
   end
 end

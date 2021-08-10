@@ -5,7 +5,7 @@ module Budgets
     feature_flag :budgets
 
     before_action :load_budget
-    before_action :load_group
+    before_action :load_group, only: [:show]
     authorize_resource :budget
     authorize_resource :group, class: "Budget::Group"
 
@@ -13,6 +13,9 @@ module Budgets
     has_filters investment_filters, only: [:show]
 
     def show
+    end
+
+    def index
     end
 
     private

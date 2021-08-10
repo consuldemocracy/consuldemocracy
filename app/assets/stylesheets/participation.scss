@@ -1095,8 +1095,8 @@
 // -----------
 
 .budget-header {
-  @extend %brand-background;
-  @include full-width-background;
+  @extend %budget-header;
+
   margin-top: -$line-height;
   min-height: $line-height * 25;
   padding-bottom: $line-height;
@@ -1106,6 +1106,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  h1 {
+    padding-top: $line-height * 2;
   }
 
   .budget-title {
@@ -1120,25 +1124,6 @@
       display: block;
       width: 20%;
     }
-  }
-
-  h1 {
-    font-size: rem-calc(60);
-    padding: $line-height * 2 0 $line-height;
-  }
-
-  h1,
-  h2,
-  p,
-  a,
-  .back,
-  .icon-angle-left,
-  .description {
-    color: inherit;
-  }
-
-  a {
-    text-decoration: underline;
   }
 
   .confirmed {

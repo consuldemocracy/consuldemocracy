@@ -1,0 +1,7 @@
+.budget-group-show {
+
+  > header {
+    @extend %budget-header;
+    @include grid-column-gutter;
+  }
+}

@@ -53,4 +53,16 @@ describe "Budget Groups" do
       expect(page).to have_current_path budget_path(budget)
     end
   end
+
+  context "Index" do
+    scenario "Render headings" do
+      create(:budget_heading, group: group, name: "New heading name")
+
+      visit budget_groups_path(budget)
+
+      expect(page).to have_content "Select a heading"
+      expect(page).to have_link "New heading name"
+      expect(page).to have_link "Go back", href: budget_path(budget)
+    end
+  end
 end
