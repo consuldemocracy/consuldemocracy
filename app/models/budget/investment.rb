@@ -104,19 +104,19 @@ class Budget
     scope :for_render, -> { includes(:heading) }
 
     def self.by_valuator(valuator_id)
-      where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments)
+      where(budget_valuator_assignments: { valuator_id: valuator_id }).joins(:valuator_assignments)
     end
 
     def self.by_valuator_group(valuator_group_id)
       joins(:valuator_group_assignments).
-        where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id)
+        where(budget_valuator_group_assignments: { valuator_group_id: valuator_group_id })
     end
 
-    before_create :set_original_heading_id
-    before_save :calculate_confidence_score
-    after_save :recalculate_heading_winners
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+    before_save :calculate_confidence_score
+    before_create :set_original_heading_id
+    after_save :recalculate_heading_winners
 
     def comments_count
       comments.count
@@ -164,10 +164,10 @@ class Budget
       results = results.winners            if params[:advanced_filters].include?("winners")
 
       ids = []
-      ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?("feasible")
-      ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?("selected")
-      ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?("undecided")
-      ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?("unfeasible")
+      ids += results.valuation_finished_feasible.ids if params[:advanced_filters].include?("feasible")
+      ids += results.where(selected: true).ids       if params[:advanced_filters].include?("selected")
+      ids += results.undecided.ids                   if params[:advanced_filters].include?("undecided")
+      ids += results.unfeasible.ids                  if params[:advanced_filters].include?("unfeasible")
       results = results.where(id: ids) if ids.any?
       results
     end
@@ -191,8 +191,8 @@ class Budget
       return results if max_per_heading <= 0
 
       ids = []
-      budget.headings.pluck(:id).each do |hid|
-        ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
+      budget.headings.ids.each do |hid|
+        ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).ids
       end
 
       results.where(id: ids)

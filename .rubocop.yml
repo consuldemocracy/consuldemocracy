@@ -217,6 +217,9 @@ Performance/EndWith:
 Performance/StartWith:
   Enabled: true
 
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+
 Rails/CreateTableWithTimestamps:
   Enabled: true
   Exclude:
@@ -270,6 +273,9 @@ Rails/OutputSafety:
   Exclude:
     - app/helpers/text_with_links_helper.rb
 
+Rails/PluckId:
+  Enabled: true
+
 Rails/PluralizationGrammar:
   Enabled: true
 
@@ -295,7 +301,7 @@ Rails/SaveBang:
 
 Rails/SkipsModelValidations:
   Enabled: true
-  Blacklist:
+  ForbiddenMethods:
     - update_attribute
   Exclude:
     - lib/acts_as_paranoid_aliases.rb
@@ -320,6 +326,12 @@ Rails/UnknownEnv:
     - staging
 
 Rails/Validation:
+  Enabled: true
+
+Rails/WhereEquals:
+  Enabled: true
+
+Rails/WhereNot:
   Enabled: true
 
 RSpec/AroundBlock:

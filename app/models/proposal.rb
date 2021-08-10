@@ -106,7 +106,7 @@ class Proposal < ApplicationRecord
 
   def self.recommendations(user)
     tagged_with(user.interests, any: true)
-      .where("author_id != ?", user.id)
+      .where.not(author_id: user.id)
       .unsuccessful
       .not_followed_by_user(user)
       .not_archived
@@ -114,7 +114,7 @@ class Proposal < ApplicationRecord
   end
 
   def self.not_followed_by_user(user)
-    where.not(id: followed_by_user(user).pluck(:id))
+    where.not(id: followed_by_user(user).ids)
   end
 
   def to_param

@@ -44,7 +44,7 @@ module Budgets
     def index
       @investments = investments.page(params[:page]).per(PER_PAGE).for_render
 
-      @investment_ids = @investments.pluck(:id)
+      @investment_ids = @investments.ids
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
 
       @tag_cloud = tag_cloud
