@@ -1,11 +1,7 @@
 require "rails_helper"
 
-describe Admin::TableActionsComponent, type: :component do
+describe Admin::TableActionsComponent, type: :component, controller: Admin::BaseController do
   let(:record) { create(:banner) }
-
-  before do
-    allow(ViewComponent::Base).to receive(:test_controller).and_return("Admin::BaseController")
-  end
 
   it "renders links to edit and destroy a record by default" do
     render_inline Admin::TableActionsComponent.new(record)
@@ -71,11 +67,7 @@ describe Admin::TableActionsComponent, type: :component do
   end
 
   context "different namespace" do
-    before do
-      allow(ViewComponent::Base).to receive(:test_controller).and_return("SDGManagement::BaseController")
-    end
-
-    it "generates links to different namespaces" do
+    it "generates links to different namespaces", controller: SDGManagement::BaseController do
       render_inline Admin::TableActionsComponent.new(create(:sdg_local_target))
 
       expect(page).to have_css "a", count: 2

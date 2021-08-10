@@ -80,6 +80,10 @@ RSpec.configure do |config|
     sign_in(create(:administrator).user)
   end
 
+  config.before(:each, :controller, type: :component) do |example|
+    allow(ViewComponent::Base).to receive(:test_controller).and_return(example.metadata[:controller].to_s)
+  end
+
   config.before(:each, :show_exceptions) do
     config = Rails.application.env_config
 
