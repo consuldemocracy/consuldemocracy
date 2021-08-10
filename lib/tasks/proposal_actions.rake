@@ -384,7 +384,7 @@ namespace :proposal_actions do
       5
     ]
 
-    votes_count = expected_supports.reduce(0.0) { |sum, x| sum + x }
+    votes_count = expected_supports.sum
     goal_votes = Setting["votes_for_proposal_success"].to_f
     cached_votes_up = 0
 
