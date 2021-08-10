@@ -224,6 +224,33 @@ describe "Polls" do
       expect(page).not_to have_content("Question 1")
     end
 
+    scenario "Question appear by created at order" do
+      question = create(:poll_question, poll: poll, title: "First question")
+      create(:poll_question, poll: poll, title: "Second question")
+      question_3 = create(:poll_question, poll: poll, title: "Third question")
+
+      visit polls_path
+      expect("First question").to appear_before("Second question")
+      expect("Second question").to appear_before("Third question")
+
+      visit poll_path(poll)
+
+      expect("First question").to appear_before("Second question")
+      expect("Second question").to appear_before("Third question")
+
+      question_3.update!(title: "Third question edited")
+      question.update!(title: "First question edited")
+
+      visit polls_path
+      expect("First question edited").to appear_before("Second question")
+      expect("Second question").to appear_before("Third question edited")
+
+      visit poll_path(poll)
+
+      expect("First question edited").to appear_before("Second question")
+      expect("Second question").to appear_before("Third question edited")
+    end
+
     scenario "Question answers appear in the given order" do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, title: "First", question: question, given_order: 2)
@@ -525,6 +552,31 @@ describe "Polls" do
 
       expect(page).to have_selector "img[alt='1. No Poverty']"
       expect(page).to have_content "target 1.1"
+    end
+
+    scenario "Polls with users same-geozone listed first" do
+      create(:poll, geozone_restricted: true, name: "A Poll")
+      create(:poll, geozone_restricted: true, name: "B Poll")
+      create(:poll, name: "No restricted")
+      poll_geozone_1 = create(:poll, geozone_restricted: true, name: "Geozone Poll A")
+      poll_geozone_2 = create(:poll, geozone_restricted: true, name: "Geozone Poll B")
+      poll_geozone_1.geozones << geozone
+      poll_geozone_2.geozones << geozone
+
+      visit polls_path(poll)
+
+      expect("No restricted").to appear_before("A Poll")
+      expect("A Poll").to appear_before("B Poll")
+      expect("B Poll").to appear_before("Geozone Poll A")
+      expect("Geozone Poll A").to appear_before("Geozone Poll B")
+
+      login_as(create(:user, :level_two, geozone: geozone))
+      visit polls_path(poll)
+
+      expect("No restricted").to appear_before("Geozone Poll A")
+      expect("Geozone Poll A").to appear_before("Geozone Poll B")
+      expect("Geozone Poll B").to appear_before("A Poll")
+      expect("A Poll").to appear_before("B Poll")
     end
   end
 
