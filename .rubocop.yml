@@ -538,6 +538,9 @@ Style/SingleLineMethods:
 Style/SoleNestedConditional:
   Enabled: true
 
+Style/StringChars:
+  Enabled: true
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
