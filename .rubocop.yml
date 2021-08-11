@@ -17,21 +17,6 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
-Capybara/CurrentPathExpectation:
-  Enabled: true
-
-Capybara/FeatureMethods:
-  Enabled: true
-  EnabledMethods:
-    - scenario
-    - xscenario
-
-Capybara/VisibilityMatcher:
-  Enabled: true
-
-FactoryBot/FactoryClassName:
-  Enabled: true
-
 Layout/AssignmentIndentation:
   Enabled: true
 
@@ -343,6 +328,18 @@ RSpec/AroundBlock:
 RSpec/BeforeAfterAll:
   Enabled: true
 
+RSpec/Capybara/CurrentPathExpectation:
+  Enabled: true
+
+RSpec/Capybara/FeatureMethods:
+  Enabled: true
+  EnabledMethods:
+    - scenario
+    - xscenario
+
+RSpec/Capybara/VisibilityMatcher:
+  Enabled: true
+
 RSpec/ContextMethod:
   Enabled: true
 
@@ -367,6 +364,9 @@ RSpec/EmptyLineAfterExampleGroup:
     - spec/factories/**/*
 
 RSpec/ExampleWording:
+  Enabled: true
+
+RSpec/FactoryBot/FactoryClassName:
   Enabled: true
 
 RSpec/FilePath:
