@@ -160,6 +160,9 @@ Lint/BooleanSymbol:
 Lint/ConstantDefinitionInBlock:
   Enabled: true
 
+Lint/DuplicateBranch:
+  Enabled: true
+
 Lint/DuplicateMethods:
   Enabled: true
 
