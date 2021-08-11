@@ -517,6 +517,9 @@ Style/RedundantSelf:
 Style/SafeNavigation:
   Enabled: true
 
+Style/SoleNestedConditional:
+  Enabled: true
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
