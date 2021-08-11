@@ -493,6 +493,9 @@ Style/RedundantFreeze:
 Style/RedundantInterpolation:
   Enabled: true
 
+Style/RedundantParentheses:
+  Enabled: true
+
 Style/RedundantReturn:
   Enabled: true
 
