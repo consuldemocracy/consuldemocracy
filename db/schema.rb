@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_115700) do
+ActiveRecord::Schema.define(version: 2021_08_11_195800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -155,6 +155,9 @@ ActiveRecord::Schema.define(version: 2021_05_19_115700) do
     t.integer "heading_id"
     t.index ["ballot_id", "investment_id"], name: "index_budget_ballot_lines_on_ballot_id_and_investment_id", unique: true
     t.index ["ballot_id"], name: "index_budget_ballot_lines_on_ballot_id"
+    t.index ["budget_id"], name: "index_budget_ballot_lines_on_budget_id"
+    t.index ["group_id"], name: "index_budget_ballot_lines_on_group_id"
+    t.index ["heading_id"], name: "index_budget_ballot_lines_on_heading_id"
     t.index ["investment_id"], name: "index_budget_ballot_lines_on_investment_id"
   end
 
@@ -274,8 +277,12 @@ ActiveRecord::Schema.define(version: 2021_05_19_115700) do
     t.integer "original_heading_id"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id"
     t.index ["author_id"], name: "index_budget_investments_on_author_id"
+    t.index ["budget_id"], name: "index_budget_investments_on_budget_id"
     t.index ["community_id"], name: "index_budget_investments_on_community_id"
+    t.index ["group_id"], name: "index_budget_investments_on_group_id"
     t.index ["heading_id"], name: "index_budget_investments_on_heading_id"
+    t.index ["incompatible"], name: "index_budget_investments_on_incompatible"
+    t.index ["selected"], name: "index_budget_investments_on_selected"
     t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
   end
 
@@ -424,6 +431,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_115700) do
     t.index ["cached_votes_total"], name: "index_comments_on_cached_votes_total"
     t.index ["cached_votes_up"], name: "index_comments_on_cached_votes_up"
     t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
+    t.index ["confidence_score"], name: "index_comments_on_confidence_score"
     t.index ["hidden_at"], name: "index_comments_on_hidden_at"
     t.index ["user_id"], name: "index_comments_on_user_id"
     t.index ["valuation"], name: "index_comments_on_valuation"
@@ -570,6 +578,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_115700) do
     t.string "district_code"
     t.integer "poll_officer_id"
     t.integer "year_of_birth"
+    t.index ["poll_officer_id"], name: "index_failed_census_calls_on_poll_officer_id"
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id"
   end
 
@@ -1203,6 +1212,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_115700) do
     t.integer "related_id"
     t.tsvector "tsv"
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true
+    t.index ["geozone_restricted"], name: "index_polls_on_geozone_restricted"
     t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id"
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
   end
@@ -1283,6 +1293,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_115700) do
     t.index ["geozone_id"], name: "index_proposals_on_geozone_id"
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at"
     t.index ["hot_score"], name: "index_proposals_on_hot_score"
+    t.index ["selected"], name: "index_proposals_on_selected"
     t.index ["tsv"], name: "index_proposals_on_tsv", using: :gin
   end
 
@@ -1595,7 +1606,9 @@ ActiveRecord::Schema.define(version: 2021_05_19_115700) do
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["gender"], name: "index_users_on_gender"
     t.index ["geozone_id"], name: "index_users_on_geozone_id"
     t.index ["hidden_at"], name: "index_users_on_hidden_at"
     t.index ["password_changed_at"], name: "index_users_on_password_changed_at"

@@ -208,6 +208,9 @@ Performance/Sum:
 Rails/ActiveRecordCallbacksOrder:
   Enabled: true
 
+Rails/AddColumnIndex:
+  Enabled: true
+
 Rails/CreateTableWithTimestamps:
   Enabled: true
   Exclude:
