@@ -248,6 +248,11 @@ Rails/HasManyOrHasOneDependent:
 Rails/HttpStatus:
   Enabled: true
 
+Rails/I18nLocaleAssignment:
+  Enabled: true
+  Exclude:
+    - "spec/spec_helper.rb"
+
 Rails/InverseOf:
   Enabled: true
   Exclude:
