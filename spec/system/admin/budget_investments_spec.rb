@@ -262,15 +262,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by without assigned valuator" do
-      user = create(:user)
-      valuator = create(:valuator, user: user)
-      create(:budget_investment,
-        title: "Investment without valuator",
-        budget: budget)
-      create(:budget_investment,
-        title: "Investment with valuator",
-        budget: budget,
-        valuators: [valuator])
+      create(:budget_investment, title: "Investment without valuator", budget: budget)
+      create(:budget_investment, :with_valuator, title: "Investment with valuator", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Investment without valuator")
@@ -293,14 +286,12 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by under valuation" do
-      user = create(:user)
-      valuator = create(:valuator, user: user)
       create(:budget_investment,
         :with_administrator,
+        :with_valuator,
         :open,
         title: "Investment without valuation",
-        budget: budget,
-        valuators: [valuator])
+        budget: budget)
       create(:budget_investment,
         :with_administrator,
         title: "Investment with valuation",
