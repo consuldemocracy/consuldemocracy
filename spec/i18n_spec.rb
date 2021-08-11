@@ -41,13 +41,19 @@ describe "I18n" do
       I18n.backend.store_translations(I18n.default_locale, { test_plural: keys })
       I18n.backend.store_translations(:zz, {})
 
-      I18n.enforce_available_locales = false
-      I18n.with_locale(:zz) do
-        I18n.fallbacks[:zz] << I18n.default_locale
+      default_enforce = I18n.enforce_available_locales
 
-        expect(I18n.t("test_plural", count: 0)).to eq("No comments")
-        expect(I18n.t("test_plural", count: 1)).to eq("1 comment")
-        expect(I18n.t("test_plural", count: 2)).to eq("2 comments")
+      begin
+        I18n.enforce_available_locales = false
+        I18n.with_locale(:zz) do
+          I18n.fallbacks[:zz] << I18n.default_locale
+
+          expect(I18n.t("test_plural", count: 0)).to eq("No comments")
+          expect(I18n.t("test_plural", count: 1)).to eq("1 comment")
+          expect(I18n.t("test_plural", count: 2)).to eq("2 comments")
+        end
+      ensure
+        I18n.enforce_available_locales = default_enforce
       end
     end
 
