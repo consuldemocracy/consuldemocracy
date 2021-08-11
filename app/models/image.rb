@@ -52,10 +52,10 @@ class Image < ApplicationRecord
   end
 
   def prefix(attachment, _style)
-    if !attachment.instance.persisted?
-      "cached_attachments/user/#{attachment.instance.user_id}"
-    else
+    if attachment.instance.persisted?
       ":attachment/:id_partition"
+    else
+      "cached_attachments/user/#{attachment.instance.user_id}"
     end
   end
 

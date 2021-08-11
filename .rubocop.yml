@@ -469,6 +469,9 @@ Style/MethodDefParentheses:
 Style/MutableConstant:
   Enabled: true
 
+Style/NegatedIfElseCondition:
+  Enabled: true
+
 Style/Not:
   Enabled: true
 
