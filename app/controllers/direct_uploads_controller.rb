@@ -21,7 +21,7 @@ class DirectUploadsController < ApplicationController
                      attachment_url: @direct_upload.relation.attachment.url }
     else
       render json: { errors: @direct_upload.errors[:attachment].join(", ") },
-             status: 422
+             status: :unprocessable_entity
     end
   end
 

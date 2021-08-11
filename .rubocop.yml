@@ -245,6 +245,9 @@ Rails/HasManyOrHasOneDependent:
   Enabled: true
   Severity: refactor
 
+Rails/HttpStatus:
+  Enabled: true
+
 Rails/InverseOf:
   Enabled: true
   Exclude:
