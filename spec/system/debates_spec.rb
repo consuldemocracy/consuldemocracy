@@ -321,7 +321,7 @@ describe "Debates" do
     visit edit_debate_path(debate)
     expect(page).not_to have_current_path(edit_debate_path(debate))
     expect(page).to have_current_path(root_path)
-    expect(page).to have_content "You do not have permission to carry out the action 'edit' on debate."
+    expect(page).to have_content "You do not have permission to carry out the action 'edit' on Debate."
   end
 
   scenario "Update should not be posible if debate is not editable" do
