@@ -25,8 +25,7 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   def create
     @poll = Poll.find(booth_assignment_params[:poll_id])
     @booth = Poll::Booth.find(booth_assignment_params[:booth_id])
-    @booth_assignment = ::Poll::BoothAssignment.new(poll: @poll,
-                                                    booth: @booth)
+    @booth_assignment = ::Poll::BoothAssignment.new(poll: @poll, booth: @booth)
 
     @booth_assignment.save!
 

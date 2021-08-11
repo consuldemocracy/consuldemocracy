@@ -6,9 +6,7 @@ describe "Admin budget investments", :admin do
     create(:administrator, user: create(:user, username: "Ana", email: "ana@admins.org"))
   end
 
-  it_behaves_like "admin_milestoneable",
-                  :budget_investment,
-                  "admin_polymorphic_path"
+  it_behaves_like "admin_milestoneable", :budget_investment, "admin_polymorphic_path"
 
   context "Load" do
     let!(:investment) { create(:budget_investment, budget: budget) }
@@ -240,13 +238,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by without assigned admin" do
-      create(:budget_investment,
-        title: "Investment without admin",
-        budget: budget)
-      create(:budget_investment,
-        :with_administrator,
-        title: "Investment with admin",
-        budget: budget)
+      create(:budget_investment, title: "Investment without admin", budget: budget)
+      create(:budget_investment, :with_administrator, title: "Investment with admin", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Investment without admin")
@@ -334,13 +327,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by valuation finished" do
-      create(:budget_investment,
-        title: "Investment valuation open",
-        budget: budget)
-      create(:budget_investment,
-        :finished,
-        title: "Investment valuation finished",
-        budget: budget)
+      create(:budget_investment, title: "Investment valuation open", budget: budget)
+      create(:budget_investment, :finished, title: "Investment valuation finished", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Investment valuation open")
@@ -363,14 +351,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by winners" do
-      create(:budget_investment,
-        :winner,
-        :finished,
-        title: "Investment winner",
-        budget: budget)
-      create(:budget_investment,
-        title: "Investment without winner",
-        budget: budget)
+      create(:budget_investment, :winner, :finished, title: "Investment winner", budget: budget)
+      create(:budget_investment, title: "Investment without winner", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Investment winner")

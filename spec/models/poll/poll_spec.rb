@@ -194,8 +194,7 @@ describe Poll do
       end
 
       it "returns restricted & unrestricted polls for level 2 users of the correct geozone" do
-        list = Poll.answerable_by(level2_from_geozone)
-                              .order(:geozone_restricted)
+        list = Poll.answerable_by(level2_from_geozone).order(:geozone_restricted)
         expect(list.to_a).to eq([current_poll, current_restricted_poll])
       end
     end

@@ -385,28 +385,23 @@ describe Proposal do
     let(:proposal) { create(:proposal) }
 
     it "expires cache when it has a new comment" do
-      expect { create(:comment, commentable: proposal) }
-      .to change { proposal.cache_version }
+      expect { create(:comment, commentable: proposal) }.to change { proposal.cache_version }
     end
 
     it "expires cache when it has a new vote" do
-      expect { create(:vote, votable: proposal) }
-      .to change { proposal.cache_version }
+      expect { create(:vote, votable: proposal) }.to change { proposal.cache_version }
     end
 
     it "expires cache when it has a new flag" do
-      expect { create(:flag, flaggable: proposal) }
-      .to change { proposal.reload.cache_version }
+      expect { create(:flag, flaggable: proposal) }.to change { proposal.reload.cache_version }
     end
 
     it "expires cache when it has a new tag" do
-      expect { proposal.update(tag_list: "new tag") }
-      .to change { proposal.cache_version }
+      expect { proposal.update(tag_list: "new tag") }.to change { proposal.cache_version }
     end
 
     it "expires cache when hidden" do
-      expect { proposal.hide }
-      .to change { proposal.cache_version }
+      expect { proposal.hide }.to change { proposal.cache_version }
     end
 
     it "expires cache when the author is hidden" do

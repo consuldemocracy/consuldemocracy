@@ -45,39 +45,17 @@ RSpec.describe I18nContent, type: :model do
 
   describe "#flat_hash" do
     it "uses one parameter" do
-      expect(I18nContent.flat_hash(nil)).to eq({
-        nil => nil
-      })
-
-      expect(I18nContent.flat_hash("string")).to eq({
-        nil => "string"
-      })
-
-      expect(I18nContent.flat_hash({ w: "string" })).to eq({
-        "w" => "string"
-      })
-
-      expect(I18nContent.flat_hash({ w: { p: "string" }})).to eq({
-        "w.p" => "string"
-      })
+      expect(I18nContent.flat_hash(nil)).to eq({ nil => nil })
+      expect(I18nContent.flat_hash("string")).to eq({ nil => "string" })
+      expect(I18nContent.flat_hash({ w: "string" })).to eq({ "w" => "string" })
+      expect(I18nContent.flat_hash({ w: { p: "string" }})).to eq({ "w.p" => "string" })
     end
 
     it "uses the first two parameters" do
-      expect(I18nContent.flat_hash("string", "f")).to eq({
-        "f" => "string"
-      })
-
-      expect(I18nContent.flat_hash(nil, "f")).to eq({
-        "f" => nil
-      })
-
-      expect(I18nContent.flat_hash({ w: "string" }, "f")).to eq({
-        "f.w" => "string"
-      })
-
-      expect(I18nContent.flat_hash({ w: { p: "string" }}, "f")).to eq({
-        "f.w.p" => "string"
-      })
+      expect(I18nContent.flat_hash("string", "f")).to eq({ "f" => "string" })
+      expect(I18nContent.flat_hash(nil, "f")).to eq({ "f" => nil })
+      expect(I18nContent.flat_hash({ w: "string" }, "f")).to eq({ "f.w" => "string" })
+      expect(I18nContent.flat_hash({ w: { p: "string" }}, "f")).to eq({ "f.w.p" => "string" })
     end
 
     it "uses the first and last parameters" do

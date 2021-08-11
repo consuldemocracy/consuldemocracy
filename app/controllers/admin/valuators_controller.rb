@@ -10,9 +10,7 @@ class Admin::ValuatorsController < Admin::BaseController
   end
 
   def search
-    @users = User.search(params[:search])
-                 .includes(:valuator)
-                 .page(params[:page])
+    @users = User.search(params[:search]).includes(:valuator).page(params[:page])
   end
 
   def create

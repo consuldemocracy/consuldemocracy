@@ -31,9 +31,7 @@ class Budget
 
     def store_reclassified_votes(reason)
       ballot_lines_for_investment.order(:id).each do |line|
-        attrs = { user: line.ballot.user,
-                  investment: self,
-                  reason: reason }
+        attrs = { user: line.ballot.user, investment: self, reason: reason }
         Budget::ReclassifiedVote.create!(attrs)
       end
     end

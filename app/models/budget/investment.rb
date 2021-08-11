@@ -292,8 +292,7 @@ class Budget
     end
 
     def valid_heading?(user)
-      voted_in?(heading, user) ||
-      can_vote_in_another_heading?(user)
+      voted_in?(heading, user) || can_vote_in_another_heading?(user)
     end
 
     def can_vote_in_another_heading?(user)

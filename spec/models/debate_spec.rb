@@ -355,28 +355,23 @@ describe Debate do
     let(:debate) { create(:debate) }
 
     it "expires cache when it has a new comment" do
-      expect { create(:comment, commentable: debate) }
-      .to change { debate.cache_version }
+      expect { create(:comment, commentable: debate) }.to change { debate.cache_version }
     end
 
     it "expires cache when it has a new vote" do
-      expect { create(:vote, votable: debate) }
-      .to change { debate.cache_version }
+      expect { create(:vote, votable: debate) }.to change { debate.cache_version }
     end
 
     it "expires cache when it has a new flag" do
-      expect { create(:flag, flaggable: debate) }
-      .to change { debate.reload.cache_version }
+      expect { create(:flag, flaggable: debate) }.to change { debate.reload.cache_version }
     end
 
     it "expires cache when it has a new tag" do
-      expect { debate.update(tag_list: "new tag") }
-      .to change { debate.cache_version }
+      expect { debate.update(tag_list: "new tag") }.to change { debate.cache_version }
     end
 
     it "expires cache when hidden" do
-      expect { debate.hide }
-      .to change { debate.cache_version }
+      expect { debate.hide }.to change { debate.cache_version }
     end
 
     it "expires cache when the author is hidden" do

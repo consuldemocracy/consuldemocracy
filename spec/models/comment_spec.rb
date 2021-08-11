@@ -85,13 +85,11 @@ describe Comment do
     let(:comment) { create(:comment) }
 
     it "expires cache when it has a new vote" do
-      expect { create(:vote, votable: comment) }
-      .to change { comment.cache_version }
+      expect { create(:vote, votable: comment) }.to change { comment.cache_version }
     end
 
     it "expires cache when hidden" do
-      expect { comment.hide }
-      .to change { comment.cache_version }
+      expect { comment.hide }.to change { comment.cache_version }
     end
 
     it "expires cache when the author is hidden" do

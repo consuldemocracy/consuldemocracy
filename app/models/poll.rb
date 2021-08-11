@@ -106,15 +106,13 @@ class Poll < ApplicationRecord
   end
 
   def self.votable_by(user)
-    answerable_by(user).
-    not_voted_by(user)
+    answerable_by(user).not_voted_by(user)
   end
 
   def votable_by?(user)
     return false if user_has_an_online_ballot?(user)
 
-    answerable_by?(user) &&
-    not_voted_by?(user)
+    answerable_by?(user) && not_voted_by?(user)
   end
 
   def user_has_an_online_ballot?(user)

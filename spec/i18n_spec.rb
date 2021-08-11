@@ -22,9 +22,7 @@ describe "I18n" do
     end
 
     it "returns plural rule if translation present" do
-      keys = { zero:  "No comments",
-               one:   "1 comment",
-               other: "%{count} comments" }
+      keys = { zero: "No comments", one: "1 comment", other: "%{count} comments" }
 
       I18n.backend.store_translations(:en, { test_plural: keys })
 
@@ -34,9 +32,7 @@ describe "I18n" do
     end
 
     it "returns default locale's plural rule if whole translation not present" do
-      keys = { zero:  "No comments",
-               one:   "1 comment",
-               other: "%{count} comments" }
+      keys = { zero: "No comments", one: "1 comment", other: "%{count} comments" }
 
       I18n.backend.store_translations(I18n.default_locale, { test_plural: keys })
       I18n.backend.store_translations(:zz, {})
