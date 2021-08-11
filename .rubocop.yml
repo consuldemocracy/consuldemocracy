@@ -517,6 +517,9 @@ Style/RedundantSelf:
 Style/SafeNavigation:
   Enabled: true
 
+Style/SingleLineMethods:
+  Enabled: true
+
 Style/SoleNestedConditional:
   Enabled: true
 
