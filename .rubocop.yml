@@ -469,6 +469,9 @@ Style/ClassVars:
 Style/CollectionMethods:
   Enabled: true
 
+Style/HashConversion:
+  Enabled: true
+
 Style/HashSyntax:
   Enabled: true
 
