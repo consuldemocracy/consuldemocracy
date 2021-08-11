@@ -187,6 +187,12 @@ Lint/SafeNavigationChain:
 Lint/ShadowingOuterLocalVariable:
   Enabled: true
 
+Lint/SymbolConversion:
+  Enabled: true
+  Exclude:
+    - "app/models/setting.rb"
+    - "db/dev_seeds/settings.rb"
+
 Lint/UselessAssignment:
   Enabled: true
 

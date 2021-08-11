@@ -11,7 +11,7 @@ describe "Debates" do
     it_behaves_like "remotely_translatable",
                     :debate,
                     "debate_path",
-                    { "id": "id" }
+                    { id: "id" }
     it_behaves_like "flaggable", :debate
   end
 

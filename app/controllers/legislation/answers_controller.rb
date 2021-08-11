@@ -35,9 +35,9 @@ class Legislation::AnswersController < Legislation::BaseController
     end
 
     def track_event
-      ahoy.track "legislation_answer_created".to_sym,
-                 "legislation_answer_id": @answer.id,
-                 "legislation_question_option_id": @answer.legislation_question_option_id,
-                 "legislation_question_id": @answer.legislation_question_id
+      ahoy.track :legislation_answer_created,
+                 legislation_answer_id: @answer.id,
+                 legislation_question_option_id: @answer.legislation_question_option_id,
+                 legislation_question_id: @answer.legislation_question_id
     end
 end

@@ -16,12 +16,12 @@ describe "Budget Investments" do
     it_behaves_like "remotely_translatable",
                     :budget_investment,
                     "budget_investments_path",
-                    { "budget_id": "budget_id" }
+                    { budget_id: "budget_id" }
 
     it_behaves_like "remotely_translatable",
                     :budget_investment,
                     "budget_investment_path",
-                    { "budget_id": "budget_id", "id": "id" }
+                    { budget_id: "budget_id", id: "id" }
     it_behaves_like "flaggable", :budget_investment
   end
 
@@ -1039,25 +1039,25 @@ describe "Budget Investments" do
     expect(page).not_to have_content("Local government is not competent in this matter")
   end
 
-  it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+  it_behaves_like "followable", "budget_investment", "budget_investment_path", { budget_id: "budget_id", id: "id" }
 
-  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { budget_id: "budget_id", id: "id" }
 
   it_behaves_like "nested imageable",
                   "budget_investment",
                   "new_budget_investment_path",
-                  { "budget_id": "budget_id" },
+                  { budget_id: "budget_id" },
                   "imageable_fill_new_valid_budget_investment",
                   "Create Investment",
                   "Budget Investment created successfully."
 
-  it_behaves_like "documentable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+  it_behaves_like "documentable", "budget_investment", "budget_investment_path", { budget_id: "budget_id", id: "id" }
 
   it_behaves_like "nested documentable",
                   "user",
                   "budget_investment",
                   "new_budget_investment_path",
-                  { "budget_id": "budget_id" },
+                  { budget_id: "budget_id" },
                   "documentable_fill_new_valid_budget_investment",
                   "Create Investment",
                   "Budget Investment created successfully."
@@ -1068,7 +1068,7 @@ describe "Budget Investments" do
                   "new_budget_investment_path",
                   "",
                   "budget_investment_path",
-                  { "budget_id": "budget_id" }
+                  { budget_id: "budget_id" }
 
   context "Destroy" do
     scenario "Admin cannot destroy budget investments", :admin do

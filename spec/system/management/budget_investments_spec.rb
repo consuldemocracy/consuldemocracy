@@ -11,7 +11,7 @@ describe "Budget Investments" do
                   "user",
                   "budget_investment",
                   "new_management_budget_investment_path",
-                  { "budget_id": "budget_id" },
+                  { budget_id: "budget_id" },
                   "documentable_fill_new_valid_budget_investment",
                   "Create Investment",
                   "Investment created successfully.",
@@ -20,7 +20,7 @@ describe "Budget Investments" do
   it_behaves_like "nested imageable",
                   "budget_investment",
                   "new_management_budget_investment_path",
-                  { "budget_id": "budget_id" },
+                  { budget_id: "budget_id" },
                   "imageable_fill_new_valid_budget_investment",
                   "Create Investment",
                   "Investment created successfully.",
@@ -32,7 +32,7 @@ describe "Budget Investments" do
                   "new_management_budget_investment_path",
                   "",
                   "management_budget_investment_path",
-                  { "budget_id": "budget_id" },
+                  { budget_id: "budget_id" },
                   management: true
 
   context "Load" do
