@@ -490,6 +490,9 @@ Style/Proc:
 Style/RaiseArgs:
   Enabled: true
 
+Style/RedundantArgument:
+  Enabled: true
+
 Style/RedundantCondition:
   Enabled: true
 
