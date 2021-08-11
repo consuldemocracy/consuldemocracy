@@ -13,8 +13,8 @@ class LocalCensusRecord < ApplicationRecord
   private
 
     def sanitize
-      self.document_type   = self.document_type&.strip
-      self.document_number = self.document_number&.strip
-      self.postal_code     = self.postal_code&.strip
+      self.document_type   = document_type&.strip
+      self.document_number = document_number&.strip
+      self.postal_code     = postal_code&.strip
     end
 end

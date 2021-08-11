@@ -499,6 +499,9 @@ Style/RedundantParentheses:
 Style/RedundantReturn:
   Enabled: true
 
+Style/RedundantSelf:
+  Enabled: true
+
 Style/SafeNavigation:
   Enabled: true
 

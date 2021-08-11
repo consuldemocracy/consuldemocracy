@@ -364,11 +364,11 @@ class Budget
     end
 
     def assigned_valuators
-      self.valuators.map(&:description_or_name).compact.join(", ").presence
+      valuators.map(&:description_or_name).compact.join(", ").presence
     end
 
     def assigned_valuation_groups
-      self.valuator_groups.map(&:name).compact.join(", ").presence
+      valuator_groups.map(&:name).compact.join(", ").presence
     end
 
     def self.with_milestone_status_id(status_id)
