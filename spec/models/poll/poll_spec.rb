@@ -36,8 +36,7 @@ describe Poll do
       expect(poll).not_to be_valid
     end
 
-    it "no overlapping polls for proposal polls are allowed" do
-    end
+    pending "no overlapping polls for proposal polls are allowed"
   end
 
   describe "proposal polls specific validations" do

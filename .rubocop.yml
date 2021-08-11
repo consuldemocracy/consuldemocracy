@@ -163,6 +163,9 @@ Lint/ConstantDefinitionInBlock:
 Lint/DuplicateMethods:
   Enabled: true
 
+Lint/EmptyBlock:
+  Enabled: true
+
 Lint/EmptyFile:
   Enabled: true
 

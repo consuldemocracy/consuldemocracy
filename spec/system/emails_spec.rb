@@ -316,8 +316,7 @@ describe "Emails" do
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
 
-    xscenario "Delete all Notifications included in the digest after email sent" do
-    end
+    xscenario "Delete all Notifications included in the digest after email sent"
   end
 
   context "User invites" do
