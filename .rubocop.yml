@@ -469,6 +469,9 @@ Style/HashSyntax:
 Style/IdenticalConditionalBranches:
   Enabled: true
 
+Style/IfWithBooleanLiteralBranches:
+  Enabled: true
+
 Style/MethodDefParentheses:
   Enabled: true
 
