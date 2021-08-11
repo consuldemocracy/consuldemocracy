@@ -21,7 +21,7 @@ describe "Targets" do
       goal_8_target_10 = SDG::Target["8.10"]
       goal_16 = SDG::Goal[16]
       goal_16_target_10 = SDG::Target["16.10"]
-      goal_16_target_A = SDG::Target["16.A"]
+      goal_16_target_a = SDG::Target["16.A"]
 
       visit sdg_management_targets_path
 
@@ -29,7 +29,7 @@ describe "Targets" do
       expect(goal_8_target_2.title).to appear_before(goal_8_target_10.title)
       expect(goal_8_target_10.title).to appear_before(goal_16.title)
       expect(goal_16.title).to appear_before(goal_16_target_10.title)
-      expect(goal_16_target_10.title).to appear_before(goal_16_target_A.title)
+      expect(goal_16_target_10.title).to appear_before(goal_16_target_a.title)
     end
   end
 end

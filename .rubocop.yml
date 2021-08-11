@@ -193,6 +193,9 @@ Lint/UselessAssignment:
 Lint/Void:
   Enabled: true
 
+Naming/VariableName:
+  Enabled: true
+
 Performance/BlockGivenWithExplicitBlock:
   Enabled: true
 
