@@ -181,17 +181,24 @@ ro:
           one: "Poți susține investiții în %{count} district. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
           few: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
           other: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+        remove_support: "Șterge votul"
         remove_support_label: "Șterge susținerea pentru %{investment}"
         support: "Sprijină"
+        support_label: "Votează %{investment}"
     investments_list:
       investment:
         price: "Preț"
         read_more: "Citește mai mult"
+        supports: "Suporturi"
       see_all: "Vezi toate investițiile"
       title: "Lista investițiilor"
     show:
       see_results: Vezi rezultatele
     supports_info:
+      different: "Puteți vota oricâte proiecte doriți."
+      next: "Votează proiectul pe care ți-ai dori să îl vezi în etapa următoare."
+      scrolling: "Continuați să derulați pentru a vedea toate ideile"
+      share: "Puteți împărtăși proiectele pe care le-ați susținut prin intermediul rețelelor sociale și să atrageți mai multă atenție și susținere asupra lor!"
       title: "Este timpul să <strong>susții</strong> proiectele!"
     results:
       link: Rezultate
