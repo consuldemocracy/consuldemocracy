@@ -17,12 +17,10 @@ describe Shared::AdvancedSearchComponent, type: :component do
     end
   end
 
-  describe "SDG filter" do
+  describe "SDG filter", controller: ProposalsController do
     before do
       Setting["feature.sdg"] = true
       Setting["sdg.process.proposals"] = true
-
-      allow(component).to receive(:controller_path).and_return("proposals")
     end
 
     it "does not render when the feature is disabled" do
