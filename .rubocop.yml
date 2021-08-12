@@ -29,9 +29,6 @@ Capybara/FeatureMethods:
 Capybara/VisibilityMatcher:
   Enabled: true
 
-FactoryBot/AttributeDefinedStatically:
-  Enabled: true
-
 FactoryBot/FactoryClassName:
   Enabled: true
 
