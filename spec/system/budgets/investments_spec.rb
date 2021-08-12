@@ -657,7 +657,7 @@ describe "Budget Investments" do
     end
 
     scenario "Another User can't edit budget investment", :admin do
-      message_error = "You do not have permission to carry out the action 'edit' on budget/investment"
+      message_error = "You do not have permission to carry out the action 'edit' on Investment"
       daniel = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading, author: daniel)
 
