@@ -7,7 +7,10 @@ describe Budgets::Investments::FormComponent, type: :component do
 
   before do
     allow(controller).to receive(:current_user).and_return(create(:user))
-    allow(request).to receive(:path_parameters).and_return(budget_id: budget.id)
+  end
+
+  around do |example|
+    with_request_url(new_budget_investment_path(budget)) { example.run }
   end
 
   describe "accept terms of services field" do

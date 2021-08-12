@@ -3,10 +3,8 @@ require "rails_helper"
 describe Layout::LocaleSwitcherComponent, type: :component do
   let(:component) { Layout::LocaleSwitcherComponent.new }
 
-  before do
-    allow(request).to receive(:path_parameters).and_return(
-      Rails.application.routes.recognize_path("/")
-    )
+  around do |example|
+    with_request_url("/") { example.run }
   end
 
   context "with only one language" do
