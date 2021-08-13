@@ -10,8 +10,7 @@ Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
-  config.filter_run :focus
-  config.run_all_when_everything_filtered = true
+  config.filter_run_when_matching :focus
   config.include RequestSpecHelper, type: :request
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
