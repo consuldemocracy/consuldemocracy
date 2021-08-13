@@ -237,6 +237,6 @@ def commentable?(resource)
 end
 
 def generate_response(resource)
-  field_text = Faker::Lorem.characters(10)
+  field_text = Faker::Lorem.characters(number: 10)
   resource.translated_attribute_names.map { field_text }
 end

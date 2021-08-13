@@ -391,8 +391,8 @@ namespace :proposal_actions do
     author = User.all.sample
     description = "<p>This is an example of a successful proposal with an ideal progress.</p>"
     proposal = Proposal.create!(author: author,
-                                title: Faker::Lorem.sentence(3).truncate(60),
-                                summary: Faker::Lorem.sentence(3),
+                                title: Faker::Lorem.sentence(word_count: 3).truncate(60),
+                                summary: Faker::Lorem.sentence(word_count: 3),
                                 responsible_name: Faker::Name.name,
                                 description: description,
                                 created_at: Time.current - expected_supports.length.days,
