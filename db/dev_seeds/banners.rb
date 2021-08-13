@@ -1,7 +1,7 @@
 section "Creating banners" do
   Proposal.last(3).each do |proposal|
-    title = Faker::Lorem.sentence(3)
-    description = Faker::Lorem.sentence(12)
+    title = Faker::Lorem.sentence(word_count: 3)
+    description = Faker::Lorem.sentence(word_count: 12)
     target_url = Rails.application.routes.url_helpers.proposal_path(proposal)
     banner = Banner.new(title: title,
                         description: description,

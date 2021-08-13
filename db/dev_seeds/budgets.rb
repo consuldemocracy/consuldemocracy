@@ -120,7 +120,7 @@ section "Creating Budgets" do
 end
 
 section "Creating Investments" do
-  tags = Faker::Lorem.words(10)
+  tags = Faker::Lorem.words(number: 10)
   100.times do
     heading = Budget::Heading.all.sample
 
@@ -179,7 +179,7 @@ section "Winner Investments" do
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
-      title: Faker::Lorem.sentence(3).truncate(60),
+      title: Faker::Lorem.sentence(word_count: 3).truncate(60),
       description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: "feasible",
