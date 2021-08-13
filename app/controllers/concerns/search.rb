@@ -12,6 +12,9 @@ module Search
   end
 
   def parse_advanced_search_terms
+    if params[:advanced_search].is_a? String
+      params[:advanced_search] = JSON.parse(params[:advanced_search].gsub("=>", ":"))
+    end
     @advanced_search_terms = params[:advanced_search] if params[:advanced_search].present?
     parse_search_date
   end

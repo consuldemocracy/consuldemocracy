@@ -207,6 +207,38 @@ describe "Budget Investments" do
         expect(page).not_to have_content(investment3.title)
       end
     end
+
+    scenario "Advanced search combined with filter by status" do
+      create(:budget_investment, :feasible, heading: heading, title: "Feasible environment")
+      create(:budget_investment, :feasible, heading: heading, title: "Feasible health")
+      create(:budget_investment, :unfeasible, heading: heading, title: "Unfeasible environment")
+      create(:budget_investment, :unfeasible, heading: heading, title: "Unfeasible health")
+
+      visit budget_investments_path(budget, heading: heading)
+      click_link "Advanced search"
+
+      within(".advanced-search-form") do
+        fill_in "With the text", with: "environment"
+        select "Last 24 hours", from: "By date"
+        click_button "Filter"
+      end
+
+      expect(page).to have_content "There is 1 investment containing the term 'environment'"
+      expect(page).to have_css ".budget-investment", count: 1
+      expect(page).to have_content "Feasible environment"
+      expect(page).not_to have_content "Feasible health"
+      expect(page).not_to have_content "Unfeasible environment"
+      expect(page).not_to have_content "Unfeasible health"
+
+      select "Unfeasible", from: "Filtering projects by"
+
+      expect(page).not_to have_content "Feasible environment"
+      expect(page).to have_content "There is 1 investment containing the term 'environment'"
+      expect(page).to have_css ".budget-investment", count: 1
+      expect(page).to have_content "Unfeasible environment"
+      expect(page).not_to have_content "Feasible health"
+      expect(page).not_to have_content "Unfeasible health"
+    end
   end
 
   context("Filters") do
