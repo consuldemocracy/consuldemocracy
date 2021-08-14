@@ -48,17 +48,11 @@ GEM
     acts_as_votable (0.13.1)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    ahoy_matey (1.6.0)
-      addressable
-      browser (~> 2.0)
-      geocoder
-      rack-attack (< 6)
-      railties
-      referer-parser (>= 0.3.0)
-      request_store
-      safely_block (>= 0.1.1)
-      user_agent_parser
-      uuidtools
+    ahoy_matey (3.2.0)
+      activesupport (>= 5)
+      device_detector
+      geocoder (>= 1.4.5)
+      safely_block (>= 0.2.1)
     airbrake (7.4.0)
       airbrake-ruby (~> 2.12)
     airbrake-ruby (2.12.0)
@@ -89,7 +83,6 @@ GEM
       parser (>= 2.4)
       smart_properties
     bindex (0.8.1)
-    browser (2.5.3)
     builder (3.2.4)
     bullet (6.1.4)
       activesupport (>= 3.0.0)
@@ -172,6 +165,7 @@ GEM
     delayed_job_active_record (4.1.6)
       activerecord (>= 3.0, < 6.2)
       delayed_job (>= 3.0, < 5)
+    device_detector (1.0.5)
     devise (4.8.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -222,7 +216,7 @@ GEM
       rainbow
       rubocop
       smart_properties
-    errbase (0.0.3)
+    errbase (0.2.1)
     erubi (1.10.0)
     eslintrb (2.1.0)
       execjs
@@ -269,7 +263,7 @@ GEM
       activemodel (>= 4.1, < 7.0)
       activesupport (>= 4.1, < 7.0)
       railties (>= 4.1, < 7.0)
-    geocoder (1.6.3)
+    geocoder (1.6.7)
     github_changelog_generator (1.15.2)
       activesupport
       faraday-http-cache
@@ -476,8 +470,6 @@ GEM
     rack (2.2.3)
     rack-accept (0.4.5)
       rack (>= 0.4)
-    rack-attack (5.0.1)
-      rack
     rack-proxy (0.7.0)
       rack
     rack-test (1.1.0)
@@ -519,7 +511,6 @@ GEM
     recipient_interceptor (0.3.0)
       mail
     redcarpet (3.5.1)
-    referer-parser (0.3.0)
     regexp_parser (2.1.1)
     request_store (1.5.0)
       rack (>= 1.4)
@@ -575,8 +566,8 @@ GEM
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
       sshkit (>= 1.2)
-    safely_block (0.2.0)
-      errbase
+    safely_block (0.3.0)
+      errbase (>= 0.1.1)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -664,7 +655,6 @@ GEM
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.7.0)
     uniform_notifier (1.14.2)
-    user_agent_parser (2.6.0)
     uuidtools (2.1.5)
     view_component (2.37.0)
       activesupport (>= 5.0.0, < 8.0)
@@ -702,7 +692,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 8.1.0)
   acts_as_votable (~> 0.13.1)
-  ahoy_matey (~> 1.6.0)
+  ahoy_matey (~> 3.2.0)
   airbrake (~> 7.4.0)
   ancestry (~> 4.1.0)
   audited (~> 5.0.1)
@@ -796,6 +786,7 @@ DEPENDENCIES
   turbolinks (~> 5.2.1)
   turnout (~> 2.5.0)
   uglifier (~> 4.2.0)
+  uuidtools (~> 2.1.5)
   view_component (~> 2.37.0)
   web-console (~> 3.7.0)
   webdrivers (~> 4.6.0)
