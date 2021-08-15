@@ -484,18 +484,18 @@ describe User do
 
     it "expires cache with becoming a moderator" do
       expect { create(:moderator, user: user) }
-      .to change { user.updated_at }
+      .to change { user.cache_version }
     end
 
     it "expires cache with becoming an admin" do
       expect { create(:administrator, user: user) }
-      .to change { user.updated_at }
+      .to change { user.cache_version }
     end
 
     it "expires cache with becoming a veridied organization" do
       create(:organization, user: user)
       expect { user.organization.verify }
-      .to change { user.reload.updated_at }
+      .to change { user.reload.cache_version }
     end
   end
 
