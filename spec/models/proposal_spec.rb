@@ -386,48 +386,48 @@ describe Proposal do
 
     it "expires cache when it has a new comment" do
       expect { create(:comment, commentable: proposal) }
-      .to change { proposal.updated_at }
+      .to change { proposal.cache_version }
     end
 
     it "expires cache when it has a new vote" do
       expect { create(:vote, votable: proposal) }
-      .to change { proposal.updated_at }
+      .to change { proposal.cache_version }
     end
 
     it "expires cache when it has a new flag" do
       expect { create(:flag, flaggable: proposal) }
-      .to change { proposal.reload.updated_at }
+      .to change { proposal.reload.cache_version }
     end
 
     it "expires cache when it has a new tag" do
       expect { proposal.update(tag_list: "new tag") }
-      .to change { proposal.updated_at }
+      .to change { proposal.cache_version }
     end
 
     it "expires cache when hidden" do
       expect { proposal.hide }
-      .to change { proposal.updated_at }
+      .to change { proposal.cache_version }
     end
 
     it "expires cache when the author is hidden" do
       expect { proposal.author.hide }
-      .to change { [proposal.reload.updated_at, proposal.author.updated_at] }
+      .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
     end
 
     it "expires cache when the author is erased" do
       expect { proposal.author.erase }
-      .to change { [proposal.reload.updated_at, proposal.author.updated_at] }
+      .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
     end
 
     it "expires cache when its author changes" do
       expect { proposal.author.update(username: "Eva") }
-      .to change { [proposal.reload.updated_at, proposal.author.updated_at] }
+      .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
     end
 
     it "expires cache when the author's organization get verified" do
       create(:organization, user: proposal.author)
       expect { proposal.author.organization.verify }
-      .to change { [proposal.reload.updated_at, proposal.author.updated_at] }
+      .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
     end
   end
 

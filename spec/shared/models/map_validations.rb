@@ -34,7 +34,7 @@ shared_examples "map validations" do
       mappable.save!
 
       expect { map_location.update(latitude: 12.34) }
-        .to change { mappable.reload.updated_at }
+        .to change { mappable.reload.cache_version }
     end
   end
 end

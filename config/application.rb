@@ -28,10 +28,6 @@ module Consul
     # Use local forms with `form_with`, so it works like `form_for`
     config.action_view.form_with_generates_remote_forms = false
 
-    # Keep disabling cache versioning until we verify it's compatible
-    # with `:dalli_store` and with the way we cache stats
-    config.active_record.cache_versioning = false
-
     # Keep using AES-256-CBC for message encryption in case it's used
     # in any CONSUL installations
     config.active_support.use_authenticated_message_encryption = false
