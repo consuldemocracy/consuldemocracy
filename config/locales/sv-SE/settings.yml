@@ -106,6 +106,8 @@ sv:
         recommendations_on_proposals_description: "Visar rekommendationer för användare på förslagssidan baserat på taggarna i objekten som de följer"
       community: "Gemenskap kring förslag och investeringar"
       community_description: "Aktiverar gemenskapsavsnitten i förslagen och investeringsprojekten i medborgarbudgetarna"
+      machine_learning: "AI/maskininlärning"
+      machine_learning_description: "Aktivera avsnittet AI/maskininlärning för att köra python-skript och berika innehåll automatiskt."
       map: "Geografisk plats för förslag och budgetinvesteringar"
       map_description: "Aktiverar förslags och investeringsprojekts geografiska positioner"
       allow_images: "Tillåt uppladdning och visning av bilder"
