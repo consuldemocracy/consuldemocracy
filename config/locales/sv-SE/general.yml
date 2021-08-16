@@ -963,6 +963,12 @@ sv:
     create:
       enqueue_remote_translation: Översättningar har begärts.
     button: Översätt sida
+  tags:
+    list:
+      filter:
+        more:
+          one: "En tagg till"
+          other: "%{count} taggar till"
   machine_learning:
     comments_summary: "Kommentarsammanfattning"
     info_text: "Innehåll har genererats av AI/maskininlärning"
