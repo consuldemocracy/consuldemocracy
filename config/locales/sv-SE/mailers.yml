@@ -87,7 +87,7 @@ sv:
       link: "Gå till maskininlärningspanelen"
       subject: "Maskininlärning – Innehåll har genererats"
       text: "Innehåll har genererats."
-      title: "Skriptet Maskininlärning"
+      title: "Maskininlärningsskript"
     new_actions_notification_rake_created:
       subject: "Fler nyheter om ditt medborgarförslag"
       hi: "Hej %{name},"
