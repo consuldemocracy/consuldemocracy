@@ -959,8 +959,3 @@ de:
     create:
       enqueue_remote_translation: Übersetzungen wurden korrekt angefordert.
     button: Seite übersetzen
-  tags:
-    filter:
-      more:
-        one: "Einen Tag mehr"
-        other: "%{count} mehr Tags"
