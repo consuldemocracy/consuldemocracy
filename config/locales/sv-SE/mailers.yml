@@ -80,8 +80,14 @@ sv:
       commenter_info: "%{commenter}, %{time}:"
     machine_learning_error:
       link: "Gå till panelen Maskininlärning"
-      subject: "Maskininlärning - Ett fel uppstod när skriptet kördes"
+      subject: "Maskininlärning – Ett fel uppstod när skriptet kördes"
       text: "Ett fel uppstod när skriptet Maskininlärning kördes."
+      title: "Skriptet Maskininlärning"
+    machine_learning_success:
+      link: "Gå till panelen Maskininlärning"
+      subject: "Maskininlärning – Innehåll har genererats"
+      text: "Innehåll har genererats."
+      title: "Skriptet Maskininlärning"
     new_actions_notification_rake_created:
       subject: "Fler nyheter om ditt medborgarförslag"
       hi: "Hej %{name},"
