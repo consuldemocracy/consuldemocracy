@@ -771,7 +771,7 @@ sv:
       debates: "Debatter"
       comments: "Kommentarer"
       local_census_records: Hantera lokalt adressregister
-      machine_learning: "AI / Maskininlärning"
+      machine_learning: "AI/maskininlärning"
     administrators:
       index:
         title: Administratörer
@@ -1684,8 +1684,8 @@ sv:
         local_census_records:
           no_records_found: Inga rader.
     machine_learning:
-      feature_disabled: "Den här funktionen har inaktiverats. För att använda Maskininlärning kan du aktivera den från %{link}."
+      feature_disabled: "Den här funktionen har inaktiverats. För att använda maskininlärning kan du aktivera den från %{link}."
       help:
-        title_1: "Vad är AI / Maskininlärning?"
+        title_1: "Vad är AI/maskininlärning?"
       output_files: "Utdatafiler:"
       related_content: "Relaterat innehåll"
