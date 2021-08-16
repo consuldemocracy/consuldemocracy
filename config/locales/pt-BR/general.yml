@@ -956,8 +956,3 @@ pt-BR:
     create:
       enqueue_remote_translation: As traduções foram solicitadas corretamente.
     button: Traduzir página
-  tags:
-    filter:
-      more:
-        one: "Mais uma tag"
-        other: "Mais %{count} tags"
