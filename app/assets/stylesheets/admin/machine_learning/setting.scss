@@ -1,0 +1,68 @@
+.admin .machine-learning-setting {
+
+  .card-divider {
+    background: $primary-color;
+    color: $white;
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  [aria-pressed] {
+    @include regular-button;
+    border-radius: $line-height;
+    font-weight: bold;
+    min-width: rem-calc(100);
+    position: relative;
+
+    &:focus {
+      outline: $outline-focus;
+    }
+
+    &::after {
+      background: $white;
+      border-radius: 100%;
+      content: "";
+      display: block;
+      height: 1.75em;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      width: 1.75em;
+    }
+
+    &[aria-pressed=true] {
+      background: $primary-color;
+      padding-right: 2.5em;
+      text-align: left;
+
+      &::after {
+        right: 0.5em;
+      }
+    }
+
+    &[aria-pressed=false] {
+      background: $dark-gray;
+      padding-left: 2.5em;
+      text-align: right;
+
+      &::after {
+        left: 0.5em;
+      }
+    }
+  }
+
+  dl {
+    @include callout-size(map-get($callout-sizes, small));
+  }
+
+  dt {
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+
+  * + dt {
+    margin-top: $line-height;
+  }
+}

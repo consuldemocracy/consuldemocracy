@@ -1,5 +1,6 @@
 class Budget::Investment::Exporter
   require "csv"
+  include JsonExporter
 
   def initialize(investments)
     @investments = investments
@@ -10,6 +11,10 @@ class Budget::Investment::Exporter
       csv << headers
       @investments.each { |investment| csv << csv_values(investment) }
     end
+  end
+
+  def model
+    Budget::Investment
   end
 
   private
@@ -63,5 +68,13 @@ class Budget::Investment::Exporter
       else
         I18n.t(price_string)
       end
+    end
+
+    def json_values(investment)
+      {
+        id: investment.id,
+        title: investment.title,
+        description: strip_tags(investment.description)
+      }
     end
 end

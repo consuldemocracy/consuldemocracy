@@ -8,8 +8,5 @@
     <%= render "relationable/form", relationable: relationable %>
   <% end %>
 
-  <% if @related_contents.present? %>
-    <%= render "relationable/related_list", relationable: relationable %>
-  <% end %>
-
+  <%= render Relationable::RelatedListComponent.new(relationable) %>
 </div>

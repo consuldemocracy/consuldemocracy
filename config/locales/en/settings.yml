@@ -106,6 +106,8 @@ en:
         recommendations_on_proposals_description: "Displays recommendations to users on the proposals page based on the tags of the items followed"
       community: "Community on proposals and investments"
       community_description: "Enables the community section in the proposals and investment projects of the Participatory Budgets"
+      machine_learning: "AI / Machine learning"
+      machine_learning_description: "Enable the AI / Machine Learning section to run python scripts and enrich content automatically."
       map: "Proposals and budget investments geolocation"
       map_description: "Enables geolocation of proposals and investment projects"
       allow_images: "Allow upload and show images"

@@ -168,6 +168,7 @@ var initialize_modules = function() {
     App.ColumnsSelector.initialize();
   }
   App.AdminBudgetsWizardCreationStep.initialize();
+  App.AdminMachineLearningScripts.initialize();
   App.BudgetEditAssociations.initialize();
   App.Datepicker.initialize();
   App.SDGRelatedListSelector.initialize();

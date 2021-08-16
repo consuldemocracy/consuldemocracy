@@ -78,6 +78,16 @@ en:
       hi: Hi
       new_comment_by: There is a new evaluation comment from <strong>%{commenter}</strong> to the budget investment %{investment}
       commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Visit Machine Learning panel"
+      subject: "Machine Learning - An error has occurred running the script"
+      text: "An error has occurred running the Machine Learning script."
+      title: "Machine Learning script"
+    machine_learning_success:
+      link: "Visit Machine Learning panel"
+      subject: "Machine Learning - Content has been generated successfully"
+      text: "Content has been generated successfully."
+      title: "Machine Learning script"
     new_actions_notification_rake_created:
       subject: "More news about your citizen proposal"
       hi: "Hello %{name},"
