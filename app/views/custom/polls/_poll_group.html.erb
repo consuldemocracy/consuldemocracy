@@ -70,7 +70,7 @@
           <% unless poll.expired? %>
             <p class="small text-right">
               <%= sanitize(t("polls.index.remaining",
-                              days: distance_of_time_in_words(Time.current, poll.ends_at))) %>
+                              days: distance_of_time_in_words(Time.current, poll.ends_at + 1.day))) %>
             </p>
           <% end %>
           <%= link_to poll_path(id: poll.slug || poll.id), class: "button expanded" do %>
