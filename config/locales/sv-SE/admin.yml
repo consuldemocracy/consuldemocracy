@@ -1681,3 +1681,6 @@ sv:
           created: Skapade poster
         local_census_records:
           no_records_found: Inga rader.
+    machine_learning:
+      output_files: "Utdatafiler:"
+      related_content: "Relaterat innehåll"
