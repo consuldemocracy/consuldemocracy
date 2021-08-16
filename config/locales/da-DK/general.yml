@@ -948,8 +948,3 @@ da:
     create:
       enqueue_remote_translation: Oversættelser er blevet korrekt anmodet.
     button: Oversæt side
-  tags:
-    filter:
-      more:
-        one: "Et tag mere"
-        other: "%{count} flere tags"
