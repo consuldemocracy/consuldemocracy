@@ -81,10 +81,10 @@ sv:
     machine_learning_error:
       link: "Gå till panelen Maskininlärning"
       subject: "Maskininlärning – Ett fel uppstod när skriptet kördes"
-      text: "Ett fel uppstod när skriptet Maskininlärning kördes."
-      title: "Skriptet Maskininlärning"
+      text: "Ett fel uppstod när maskininlärningsskriptet kördes."
+      title: "Maskininlärningsskript"
     machine_learning_success:
-      link: "Gå till panelen Maskininlärning"
+      link: "Gå till maskininlärningspanelen"
       subject: "Maskininlärning – Innehåll har genererats"
       text: "Innehåll har genererats."
       title: "Skriptet Maskininlärning"
