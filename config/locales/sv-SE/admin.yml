@@ -1688,5 +1688,6 @@ sv:
       help:
         title_1: "Vad är AI/maskininlärning?"
         description_1: "Traditionellt utformas datorprogram genom att fastställa precisa regler om vad programmet ska göra i varje situation, och hur det ska behandla tillgänglig information vid varje tillfälle. Det som allmänt kallas AI/maskininlärning är en typ av program för vilket det fastställs exakt vilken uppgift som ska utföras och det bedöms om uppgiften utförs bättre eller sämre. Men till skillnad från den traditionella typen upptäcker, eller lär sig, systemet metoden som är lämpligast för att utföra uppgiften."
+        title_2: "Vad gör modulen för AI/maskininlärning i CONSUL?"
       output_files: "Utdatafiler:"
       related_content: "Relaterat innehåll"
