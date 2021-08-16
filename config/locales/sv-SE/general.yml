@@ -963,8 +963,3 @@ sv:
     create:
       enqueue_remote_translation: Översättningar har begärts.
     button: Översätt sida
-  tags:
-    filter:
-      more:
-        one: "En tagg till"
-        other: "%{count} taggar till"
