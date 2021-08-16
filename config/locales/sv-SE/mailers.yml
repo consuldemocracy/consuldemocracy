@@ -78,6 +78,10 @@ sv:
       hi: Hej
       new_comment_by: Det finns en ny utvärderingskommentar från <strong>%{commenter}</strong> om budgetinvesteringen %{investment}
       commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Gå till panelen Maskininlärning"
+      subject: "Maskininlärning - Ett fel uppstod när skriptet kördes"
+      text: "Ett fel uppstod när skriptet Maskininlärning kördes."
     new_actions_notification_rake_created:
       subject: "Fler nyheter om ditt medborgarförslag"
       hi: "Hej %{name},"
