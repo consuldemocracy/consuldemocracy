@@ -963,3 +963,5 @@ sv:
     create:
       enqueue_remote_translation: Översättningar har begärts.
     button: Översätt sida
+  machine_learning:
+    info_text: "Innehåll har genererats av AI / Maskininlärning"
