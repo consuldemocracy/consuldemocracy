@@ -959,8 +959,3 @@ bg:
     create:
       enqueue_remote_translation: Преводите са заявени правилно.
     button: Превод на страница
-  tags:
-    filter:
-      more:
-        one: "Още един таг"
-        other: "%{count} повече тагове"
