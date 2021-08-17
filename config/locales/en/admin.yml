@@ -8,6 +8,7 @@ en:
       confirm_hide: Confirm moderation
       hide: Hide
       hide_author: Hide author
+      label: "%{action} %{name}"
       restore: Restore
       mark_featured: Featured
       unmark_featured: Unmark featured

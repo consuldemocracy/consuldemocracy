@@ -1,14 +1,16 @@
 require "rails_helper"
 
 describe Admin::TableActionsComponent, controller: Admin::BaseController do
-  let(:record) { create(:banner) }
+  let(:record) { create(:banner, title: "Important!") }
 
   it "renders links to edit and destroy a record by default" do
     render_inline Admin::TableActionsComponent.new(record)
 
     expect(page).to have_css "a", count: 2
-    expect(page).to have_css "a[href*='edit']", text: "Edit"
-    expect(page).to have_css "a[data-method='delete']", text: "Delete"
+    expect(page).to have_css "a[href*='edit']", exact_text: "Edit"
+    expect(page).to have_css "a[aria-label='Edit Important!']", exact_text: "Edit"
+    expect(page).to have_css "a[data-method='delete']", exact_text: "Delete"
+    expect(page).to have_css "a[aria-label='Delete Important!']", exact_text: "Delete"
   end
 
   context "actions parameter is passed" do
