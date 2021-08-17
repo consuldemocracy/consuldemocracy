@@ -60,4 +60,49 @@ describe Admin::ActionComponent do
       end
     end
   end
+
+  describe "data-confirm attribute" do
+    it "is not rendered by default" do
+      render_inline Admin::ActionComponent.new(:edit, double, path: "/")
+
+      expect(page).to have_link count: 1
+      expect(page).not_to have_css "[data-confirm]"
+    end
+
+    it "is not rendered when confirm is nil" do
+      render_inline Admin::ActionComponent.new(:edit, double, path: "/", confirm: nil)
+
+      expect(page).to have_link count: 1
+      expect(page).not_to have_css "[data-confirm]"
+    end
+
+    it "renders with the given value" do
+      render_inline Admin::ActionComponent.new(:edit, double, path: "/", confirm: "Really?")
+
+      expect(page).to have_link count: 1
+      expect(page).to have_css "[data-confirm='Really?']"
+    end
+
+    context "when confirm is true" do
+      it "uses the human name as default" do
+        record = double(human_name: "Everywhere and nowhere")
+        text = 'Are you sure? Edit "Everywhere and nowhere"'
+
+        render_inline Admin::ActionComponent.new(:edit, record, path: "/", confirm: true)
+
+        expect(page).to have_link count: 1
+        expect(page).to have_css "[data-confirm='#{text}']"
+      end
+
+      it "includes a more detailed message for the destroy action" do
+        record = double(human_name: "Participatory Budget 2015")
+        text = 'Are you sure? This action will delete "Participatory Budget 2015" and can\\\'t be undone.'
+
+        render_inline Admin::ActionComponent.new(:destroy, record, path: "/", confirm: true)
+
+        expect(page).to have_link count: 1
+        expect(page).to have_css "[data-confirm='#{text}']"
+      end
+    end
+  end
 end

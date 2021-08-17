@@ -99,7 +99,7 @@ describe "Admin budgets", :admin do
       visit admin_budgets_path
 
       within "tr", text: "To be deleted" do
-        message = "Are you sure? This action will delete the budget 'To be deleted' and can't be undone."
+        message = "Are you sure? This action will delete \"To be deleted\" and can't be undone."
 
         accept_confirm(message) { click_link "Delete" }
       end

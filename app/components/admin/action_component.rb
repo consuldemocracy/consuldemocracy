@@ -40,7 +40,11 @@ class Admin::ActionComponent < ApplicationComponent
 
     def confirmation_text
       if options[:confirm] == true
-        t("admin.actions.confirm")
+        if action == :destroy
+          t("admin.actions.confirm_delete", name: record_name)
+        else
+          t("admin.actions.confirm_action", action: text, name: record_name)
+        end
       else
         options[:confirm]
       end
