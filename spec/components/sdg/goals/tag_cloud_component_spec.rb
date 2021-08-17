@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Goals::TagCloudComponent, type: :component do
+describe SDG::Goals::TagCloudComponent do
   before do
     Setting["feature.sdg"] = true
     Setting["sdg.process.debates"] = true

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Shared::BannerComponent, type: :component do
+describe Shared::BannerComponent do
   it "renders given a banner" do
     banner = create(:banner,
                     title: "Vote now!",

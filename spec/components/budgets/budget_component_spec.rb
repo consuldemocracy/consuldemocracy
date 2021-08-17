@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Budgets::BudgetComponent, type: :component do
+describe Budgets::BudgetComponent do
   let(:budget) { create(:budget) }
   let(:heading) { create(:budget_heading, budget: budget) }
   let(:user) { create(:user) }

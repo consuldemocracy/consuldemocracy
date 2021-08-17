@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Budgets::SupportsInfoComponent, type: :component do
+describe Budgets::SupportsInfoComponent do
   let(:budget) { create(:budget, :selecting) }
   let(:group) { create(:budget_group, budget: budget) }
   let(:component) { Budgets::SupportsInfoComponent.new(budget) }

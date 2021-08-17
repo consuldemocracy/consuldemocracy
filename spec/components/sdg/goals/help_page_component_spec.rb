@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Goals::HelpPageComponent, type: :component do
+describe SDG::Goals::HelpPageComponent do
   let(:goals) { SDG::Goal.all }
   let(:component) { SDG::Goals::HelpPageComponent.new(goals) }
 

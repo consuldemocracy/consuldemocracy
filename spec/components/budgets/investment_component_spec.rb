@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Budgets::InvestmentComponent, type: :component do
+describe Budgets::InvestmentComponent do
   let(:user) { create(:user) }
 
   before do

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Layout::TopLinksComponent, type: :component do
+describe Layout::TopLinksComponent do
   describe "#render?" do
     it "renders when a content block is defined" do
       create(:site_customization_content_block, name: "top_links")

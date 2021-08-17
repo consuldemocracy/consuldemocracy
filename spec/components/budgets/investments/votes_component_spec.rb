@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Budgets::Investments::VotesComponent, type: :component do
+describe Budgets::Investments::VotesComponent do
   describe "vote link" do
     context "when investment shows votes" do
       let(:investment) { create(:budget_investment, title: "Renovate sidewalks in Main Street") }

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Budgets::InvestmentsListComponent, type: :component do
+describe Budgets::InvestmentsListComponent do
   include Rails.application.routes.url_helpers
 
   let(:budget)    { create(:budget, :accepting) }

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::RelatedListSelectorComponent, type: :component do
+describe SDG::RelatedListSelectorComponent do
   let(:debate) { create(:debate) }
   let(:form) { ConsulFormBuilder.new(:debate, debate, ActionView::Base.new, {}) }
   let(:component) { SDG::RelatedListSelectorComponent.new(form) }

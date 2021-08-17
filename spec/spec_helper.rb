@@ -20,6 +20,10 @@ RSpec.configure do |config|
   config.include(CommonActions)
   config.include(ActiveSupport::Testing::TimeHelpers)
 
+  config.define_derived_metadata(file_path: Regexp.new("/spec/components/")) do |metadata|
+    metadata[:type] = :component
+  end
+
   config.before(:suite) do
     Rails.application.load_seed
   end

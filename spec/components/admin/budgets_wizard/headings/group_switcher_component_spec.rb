@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::BudgetsWizard::Headings::GroupSwitcherComponent, type: :component do
+describe Admin::BudgetsWizard::Headings::GroupSwitcherComponent do
   it "is not rendered for budgets with one group" do
     group = create(:budget_group, budget: create(:budget))
 

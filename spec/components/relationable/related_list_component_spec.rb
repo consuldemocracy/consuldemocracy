@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Relationable::RelatedListComponent, type: :component do
+describe Relationable::RelatedListComponent do
   let(:proposal) { create(:proposal) }
   let(:user_proposal) { create(:proposal, title: "I am user related") }
   let(:machine_proposal) { create(:proposal, title: "I am machine related") }

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Budgets::Investments::FormComponent, type: :component do
+describe Budgets::Investments::FormComponent do
   include Rails.application.routes.url_helpers
 
   let(:budget) { create(:budget) }

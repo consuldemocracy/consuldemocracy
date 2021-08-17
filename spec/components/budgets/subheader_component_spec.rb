@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Budgets::SubheaderComponent, type: :component do
+describe Budgets::SubheaderComponent do
   it "shows budget current phase name" do
     allow(controller).to receive(:current_user).and_return(create(:user))
     budget = create(:budget, :informing)

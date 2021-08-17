@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe MachineLearning::CommentsSummaryComponent, type: :component do
+describe MachineLearning::CommentsSummaryComponent do
   let(:commentable) { double(summary_comment: double(body: "There's a general agreement")) }
   let(:component) { MachineLearning::CommentsSummaryComponent.new(commentable) }
 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Shared::AdvancedSearchComponent, type: :component do
+describe Shared::AdvancedSearchComponent do
   let(:component) { Shared::AdvancedSearchComponent.new }
 
   context "JavaScript disabled" do

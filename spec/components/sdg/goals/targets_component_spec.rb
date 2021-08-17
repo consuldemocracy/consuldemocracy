@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Goals::TargetsComponent, type: :component do
+describe SDG::Goals::TargetsComponent do
   let(:goal) { SDG::Goal[1] }
   let(:component) { SDG::Goals::TargetsComponent.new(goal) }
 
