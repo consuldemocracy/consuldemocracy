@@ -85,7 +85,7 @@ describe "Direct messages" do
     login_as(author)
 
     visit new_proposal_notification_path(proposal_id: proposal.id)
-    click_button "Send message"
+    click_button "Send notification"
 
     expect(page).to have_content error_message
   end
