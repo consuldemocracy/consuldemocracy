@@ -1293,3 +1293,5 @@ cs:
       imports:
         local_census_records:
           no_records_found: Nenalezeny žádné záznamy.
+    machine_learning:
+      error: "Chyba:"
