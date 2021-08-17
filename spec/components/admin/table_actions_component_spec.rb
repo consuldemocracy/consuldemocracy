@@ -37,7 +37,7 @@ describe Admin::TableActionsComponent, controller: Admin::BaseController do
   end
 
   it "allows custom URLs" do
-    render_inline Admin::TableActionsComponent.new(edit_path: "/myedit", destroy_path: "/mydestroy")
+    render_inline Admin::TableActionsComponent.new(nil, edit_path: "/myedit", destroy_path: "/mydestroy")
 
     expect(page).to have_link "Edit", href: "/myedit"
     expect(page).to have_link "Delete", href: "/mydestroy"

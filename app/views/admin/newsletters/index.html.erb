@@ -30,9 +30,7 @@
         </td>
         <td>
           <%= render Admin::TableActionsComponent.new(newsletter) do |actions| %>
-            <%= actions.link_to t("admin.newsletters.index.preview"),
-                                admin_newsletter_path(newsletter),
-                                class: "preview-link" %>
+            <%= actions.action :preview, text: t("admin.newsletters.index.preview") %>
           <% end %>
         </td>
       </tr>

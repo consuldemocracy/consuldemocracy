@@ -6,6 +6,7 @@
     <td colspan="4">&nbsp;</td>
     <td>
       <%= render Admin::TableActionsComponent.new(
+        action,
         actions: [:edit],
         edit_path: admin_settings_path(anchor: "tab-proposals"),
       ) %>
