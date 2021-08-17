@@ -19,7 +19,7 @@ describe "Proposal Notifications" do
     fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
     fill_in "proposal_notification_body", with: "Please share it with "\
                                                 "others so we can make it happen!"
-    click_button "Send message"
+    click_button "Send notification"
 
     expect(page).to have_content "Your message has been sent correctly."
     expect(page).to have_content "Thank you for supporting my proposal"
@@ -192,7 +192,7 @@ describe "Proposal Notifications" do
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
       fill_in "proposal_notification_body", with: "Please share it with "\
                                                   "others so we can make it happen!"
-      click_button "Send message"
+      click_button "Send notification"
 
       expect(page).to have_content "Your message has been sent correctly."
 
@@ -244,7 +244,7 @@ describe "Proposal Notifications" do
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
       fill_in "proposal_notification_body", with: "Please share it with "\
                                                   "others so we can make it happen!"
-      click_button "Send message"
+      click_button "Send notification"
 
       expect(page).to have_content "Your message has been sent correctly."
 
@@ -294,7 +294,7 @@ describe "Proposal Notifications" do
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
       fill_in "proposal_notification_body", with: "Please share it with "\
                                                   "others so we can make it happen!"
-      click_button "Send message"
+      click_button "Send notification"
 
       expect(page).to have_content "Your message has been sent correctly."
 
@@ -338,7 +338,7 @@ describe "Proposal Notifications" do
 
           fill_in "Title", with: "Thank you for supporting my proposal"
           fill_in "Message", with: "Please share it with others so we can make it happen!"
-          click_button "Send message"
+          click_button "Send notification"
 
           expect(page).to have_content "Your message has been sent correctly."
         end
@@ -362,7 +362,7 @@ describe "Proposal Notifications" do
     login_as(author)
 
     visit new_proposal_notification_path(proposal_id: proposal.id)
-    click_button "Send message"
+    click_button "Send notification"
 
     expect(page).to have_content error_message
   end
@@ -377,14 +377,14 @@ describe "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
       fill_in "Title", with: "Thank you for supporting my proposal"
       fill_in "Message", with: "Please share it with others so we can make it happen!"
-      click_button "Send message"
+      click_button "Send notification"
 
       expect(page).to have_content "Your message has been sent correctly."
 
       visit new_proposal_notification_path(proposal_id: proposal.id)
       fill_in "Title", with: "Thank you again for supporting my proposal"
       fill_in "Message", with: "Please share it again with others so we can make it happen!"
-      click_button "Send message"
+      click_button "Send notification"
 
       expect(page).to have_content "You have to wait a minimum of 3 days between notifications"
       expect(page).not_to have_content "Your message has been sent correctly."
@@ -399,7 +399,7 @@ describe "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
       fill_in "Title", with: "Thank you for supporting my proposal"
       fill_in "Message", with: "Please share it with others so we can make it happen!"
-      click_button "Send message"
+      click_button "Send notification"
 
       expect(page).to have_content "Your message has been sent correctly."
 
@@ -407,7 +407,7 @@ describe "Proposal Notifications" do
         visit new_proposal_notification_path(proposal_id: proposal.id)
         fill_in "Title", with: "Thank you again for supporting my proposal"
         fill_in "Message", with: "Please share it again with others so we can make it happen!"
-        click_button "Send message"
+        click_button "Send notification"
 
         expect(page).to have_content "Your message has been sent correctly."
         expect(page).not_to have_content "You have to wait a minimum of 3 days between notifications"
