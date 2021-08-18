@@ -6,6 +6,10 @@ module ApplicationHelper
     url_for(request.query_parameters.merge(query_parameters).merge(only_path: true))
   end
 
+  def rtl?
+    %i[ar fa he].include?(I18n.locale)
+  end
+
   def markdown(text)
     return text if text.blank?
 
