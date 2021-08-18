@@ -1,1 +1,5 @@
-<%= link_to text, path, html_options %>
+<% if options[:method] && options[:method] != :get %>
+  <%= button_to(path, html_options) { text } %>
+<% else %>
+  <%= link_to text, path, html_options %>
+<% end %>

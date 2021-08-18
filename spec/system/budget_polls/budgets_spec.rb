@@ -8,7 +8,7 @@ describe "Admin Budgets", :admin do
 
       visit admin_budgets_path
 
-      click_link "Ballots"
+      click_button "Ballots"
 
       expect(page).to have_current_path(/admin\/polls\/\d+/)
       expect(page).to have_content(budget.name)
@@ -24,7 +24,7 @@ describe "Admin Budgets", :admin do
       visit admin_budgets_path
       select "Français", from: "Language:"
 
-      click_link "Bulletins de l’admin"
+      click_button "Bulletins de l’admin"
 
       expect(page).to have_current_path(/admin\/polls\/\d+/)
       expect(page).to have_content("Budget pour le changement climatique")

@@ -94,9 +94,7 @@ describe "Admin dashboard actions", :admin do
     end
 
     scenario "deletes the action" do
-      page.accept_confirm do
-        click_link "Delete"
-      end
+      accept_confirm { click_button "Delete" }
 
       expect(page).not_to have_content(action.title)
     end
@@ -104,9 +102,7 @@ describe "Admin dashboard actions", :admin do
     scenario "can not delete actions that have been executed" do
       _executed_action = create(:dashboard_executed_action, action: action)
 
-      page.accept_confirm do
-        click_link "Delete"
-      end
+      accept_confirm { click_button "Delete" }
 
       expect(page).to have_content("Cannot delete record because dependent executed actions exist")
     end

@@ -16,7 +16,7 @@ describe "Local Targets" do
       expect(page).to have_title "SDG content - Local Targets"
       within("table tr", text: "Affordable food") do
         expect(page).to have_link "Edit"
-        expect(page).to have_link "Delete"
+        expect(page).to have_button "Delete"
       end
       expect(page).to have_link "Create local target"
     end
@@ -91,7 +91,7 @@ describe "Local Targets" do
       create(:sdg_local_target, code: "1.1.1")
       visit sdg_management_local_targets_path
 
-      accept_confirm { click_link "Delete" }
+      accept_confirm { click_button "Delete" }
 
       expect(page).to have_content("Local target deleted successfully")
       expect(page).not_to have_content("1.1.1")

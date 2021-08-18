@@ -59,7 +59,7 @@ describe "Admin activity" do
       visit admin_hidden_proposals_path
 
       within("#proposal_#{proposal.id}") do
-        accept_confirm { click_link "Restore" }
+        accept_confirm { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden proposals"
@@ -126,7 +126,7 @@ describe "Admin activity" do
       visit admin_hidden_debates_path
 
       within("#debate_#{debate.id}") do
-        accept_confirm { click_link "Restore" }
+        accept_confirm { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden debates"
@@ -194,7 +194,7 @@ describe "Admin activity" do
       visit admin_hidden_comments_path
 
       within("#comment_#{comment.id}") do
-        accept_confirm { click_link "Restore" }
+        accept_confirm { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden comments"
@@ -340,7 +340,7 @@ describe "Admin activity" do
       visit admin_hidden_users_path
 
       within("#user_#{user.id}") do
-        accept_confirm { click_link "Restore" }
+        accept_confirm { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden users"

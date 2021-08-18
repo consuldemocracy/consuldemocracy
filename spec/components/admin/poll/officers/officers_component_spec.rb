@@ -12,21 +12,24 @@ describe Admin::Poll::Officers::OfficersComponent, controller: Admin::BaseContro
     tbody = page.find("tbody")
 
     expect(tbody).to have_css "tr", count: 2
-    expect(tbody).to have_css "a", count: 2
+    expect(tbody).to have_button count: 2
   end
 
-  it "renders link to destroy for existing officers" do
+  it "renders button to destroy for existing officers" do
     render_inline component
     row = page.find("tr", text: "Old officer")
 
-    expect(row).to have_css "a[data-method='delete']", text: "Delete"
+    expect(row).to have_button "Delete position"
+    expect(row).to have_css "input[name='_method'][value='delete']", visible: :hidden
   end
 
-  it "renders link to add for new officers" do
+  it "renders button to add for new officers" do
     render_inline component
     row = page.find("tr", text: "New officer")
 
-    expect(row).to have_css "a[data-method='post']", text: "Add"
+    expect(row).to have_button "Add"
+    expect(row).to have_css "form[method='post']"
+    expect(row).not_to have_css "input[name='_method']", visible: :all
   end
 
   it "accepts table options" do

@@ -101,7 +101,7 @@ describe "Admin budgets", :admin do
       within "tr", text: "To be deleted" do
         message = "Are you sure? This action will delete \"To be deleted\" and can't be undone."
 
-        accept_confirm(message) { click_link "Delete" }
+        accept_confirm(message) { click_button "Delete" }
       end
 
       expect(page).to have_content("Budget deleted successfully")

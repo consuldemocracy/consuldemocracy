@@ -21,7 +21,7 @@ describe "Admin hidden users", :admin do
     user = create(:user, :hidden)
     visit admin_hidden_users_path
 
-    accept_confirm { click_link "Restore" }
+    accept_confirm { click_button "Restore" }
 
     expect(page).not_to have_content(user.username)
 
@@ -34,7 +34,7 @@ describe "Admin hidden users", :admin do
     user = create(:user, :hidden)
     visit admin_hidden_users_path
 
-    click_link "Confirm moderation"
+    click_button "Confirm moderation"
 
     expect(page).not_to have_content(user.username)
     click_link("Confirmed")
@@ -82,7 +82,7 @@ describe "Admin hidden users", :admin do
 
     visit admin_hidden_users_path(filter: "with_confirmed_hide", page: 2)
 
-    accept_confirm { click_link "Restore", match: :first, exact: true }
+    accept_confirm { click_button "Restore", match: :first, exact: true }
 
     expect(page).to have_current_path(/filter=with_confirmed_hide/)
     expect(page).to have_current_path(/page=2/)
