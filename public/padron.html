@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<script>
+		function soap() {
+			const data = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+						  "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\" >" +
+						  	"<soap12:Body>" +
+						  		"<GetDatosPadron xmlns=\"http://csm/wslib/polis\">" +
+						  			"<id>00000000T</id>" +
+						  			"<tipoId>0</tipoId>" +
+						  		"</GetDatosPadron>" +
+						  	"</soap12:Body>" +
+						  "</soap12:Envelope>";
+
+			var xhr = new XMLHttpRequest();
+			//xhr.withCredentials = true;
+
+			xhr.addEventListener("readystatechange", function () {
+			  if (this.readyState === 4) {
+			    console.log(this.responseText);
+			  }
+			});
+
+			xhr.open("POST", "http://172.16.1.80/puertodelacruz/wslib/polis/polisService.asmx");
+			xhr.setRequestHeader("Content-Type", "application/soap+xml; charset=utf-8");
+			xhr.send(data);
+
+		}
+	</script>
+	<head>
+		<title>SOAP ESTHER</title>
+	</head>
+	<body>
+	    <form name="Demo" action="" method="post">
+	        <div>
+	            <input type="button" value="Soap" onclick="soap()" />
+	        </div>
+	    </form>
+	</body>
+</html>
