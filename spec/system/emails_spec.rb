@@ -482,7 +482,7 @@ describe "Emails" do
 
       expect(page).to have_content "Newsletter created successfully"
 
-      accept_confirm { click_link "Send" }
+      accept_confirm { click_button "Send" }
 
       expect(page).to have_content "Newsletter sent successfully"
 

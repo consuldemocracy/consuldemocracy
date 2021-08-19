@@ -64,12 +64,17 @@
 
 <% if @admin_notification.draft? && @admin_notification.valid_segment_recipient? %>
   <div class="small-12 medium-6 large-3 column end">
-    <%= link_to t("admin.admin_notifications.show.send"),
-                deliver_admin_admin_notification_path(@admin_notification),
-                "data-alert": t("admin.admin_notifications.show.send_alert",
-                                n: @admin_notification.list_of_recipients_count),
-                method: :post,
-                id: "js-send-admin_notification-alert",
-                class: "button success expanded" %>
+    <%= render Admin::ActionComponent.new(
+      :deliver,
+      @admin_notification,
+      text: t("admin.admin_notifications.show.send"),
+      method: :post,
+      "data-alert": t(
+        "admin.admin_notifications.show.send_alert",
+        n: @admin_notification.list_of_recipients_count
+      ),
+      id: "js-send-admin_notification-alert",
+      class: "button success expanded",
+    ) %>
   </div>
 <% end %>
