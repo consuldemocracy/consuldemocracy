@@ -16,12 +16,7 @@ class Admin::Proposals::ToggleSelectionComponent < ApplicationComponent
     end
 
     def path
-      case proposal.class.to_s
-      when "Proposal"
-        toggle_selection_admin_proposal_path(proposal)
-      when "Legislation::Proposal"
-        toggle_selection_admin_legislation_process_proposal_path(proposal.process, proposal)
-      end
+      admin_polymorphic_path(proposal, action: :toggle_selection)
     end
 
     def options
