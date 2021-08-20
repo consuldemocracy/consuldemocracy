@@ -7,27 +7,21 @@ class Admin::Proposals::ToggleSelectionComponent < ApplicationComponent
 
   private
 
-    def text
-      if proposal.selected?
-        t("admin.proposals.index.selected")
-      else
-        t("admin.proposals.index.select")
-      end
+    def action
+      :toggle_selection
     end
 
-    def path
-      admin_polymorphic_path(proposal, action: :toggle_selection)
+    def selected?
+      proposal.selected?
     end
 
     def options
-      { remote: true, method: :patch, class: html_class }
+      {
+        "aria-label": label
+      }
     end
 
-    def html_class
-      if proposal.selected?
-        "button expanded"
-      else
-        "button hollow expanded"
-      end
+    def label
+      t("admin.actions.label", action: t("admin.actions.select"), name: proposal.title)
     end
 end
