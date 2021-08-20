@@ -15,22 +15,22 @@ describe Admin::BudgetInvestments::ToggleSelectionComponent, :admin do
       expect(page).not_to be_rendered
     end
 
-    it "renders a link to select unselected evaluated investments" do
+    it "renders a button to select unselected evaluated investments" do
       valuation_finished_investment = create(:budget_investment, :feasible, :finished, budget: budget)
 
       render_inline Admin::BudgetInvestments::ToggleSelectionComponent.new(valuation_finished_investment)
 
-      expect(page).to have_link "Select"
-      expect(page).not_to have_link "Selected"
+      expect(page).to have_button "Select"
+      expect(page).not_to have_button "Selected"
     end
 
-    it "renders a link to deselect selected investments" do
+    it "renders a button to deselect selected investments" do
       selected_investment = create(:budget_investment, :selected, budget: budget)
 
       render_inline Admin::BudgetInvestments::ToggleSelectionComponent.new(selected_investment)
 
-      expect(page).to have_link "Selected"
-      expect(page).not_to have_link "Select"
+      expect(page).to have_button "Selected"
+      expect(page).not_to have_button "Select"
     end
   end
 
@@ -58,7 +58,7 @@ describe Admin::BudgetInvestments::ToggleSelectionComponent, :admin do
       render_inline Admin::BudgetInvestments::ToggleSelectionComponent.new(selected_investment)
 
       expect(page).to have_content "Selected"
-      expect(page).not_to have_link "Selected"
+      expect(page).not_to have_button "Selected"
     end
   end
 end
