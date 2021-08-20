@@ -37,4 +37,19 @@ describe Admin::BudgetInvestmentsController, :admin do
       expect(response).not_to be_redirect
     end
   end
+
+  describe "PATCH toggle selection" do
+    it "uses the toggle_selection authorization rules" do
+      investment = create(:budget_investment)
+
+      patch :toggle_selection, xhr: true, params: {
+        id: investment,
+        budget_id: investment.budget,
+      }
+
+      expect(flash[:alert]).to eq "You do not have permission to carry out the action " \
+                                  "'toggle_selection' on Investment."
+      expect(investment).not_to be_selected
+    end
+  end
 end

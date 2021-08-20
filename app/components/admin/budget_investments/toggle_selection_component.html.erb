@@ -1,4 +1,4 @@
-<% if can?(:toggle_selection, investment) && investment.feasible? && investment.valuation_finished? %>
+<% if can?(:toggle_selection, investment) %>
   <%= link_to text, path, method: :patch, remote: true, class: html_class %>
 <% elsif selected? %>
   <%= selected_text %>
