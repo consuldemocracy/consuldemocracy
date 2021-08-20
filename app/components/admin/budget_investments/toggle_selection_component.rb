@@ -13,16 +13,12 @@ class Admin::BudgetInvestments::ToggleSelectionComponent < ApplicationComponent
       investment.budget
     end
 
-    def text
-      if selected?
-        selected_text
-      else
-        t("admin.budget_investments.index.select")
-      end
-    end
-
     def selected_text
       t("admin.budget_investments.index.selected")
+    end
+
+    def action
+      :toggle_selection
     end
 
     def path
@@ -38,11 +34,14 @@ class Admin::BudgetInvestments::ToggleSelectionComponent < ApplicationComponent
       )
     end
 
-    def html_class
-      if selected?
-        "button small expanded"
-      else
-        "button small hollow expanded"
-      end
+    def options
+      {
+        "aria-label": label,
+        path: path
+      }
+    end
+
+    def label
+      t("admin.actions.label", action: t("admin.actions.select"), name: investment.title)
     end
 end

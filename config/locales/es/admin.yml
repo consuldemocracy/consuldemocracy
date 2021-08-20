@@ -269,7 +269,6 @@ es:
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionado"
-        select: "Seleccionar"
         list:
           id: ID
           title: Título
