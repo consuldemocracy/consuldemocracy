@@ -16,6 +16,7 @@ en:
       unmark_featured: Unmark featured
       edit: Edit
       configure: Configure
+      select: Select
     officing_booth:
       title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
@@ -1294,7 +1295,6 @@ en:
         title: Proposals
         id: ID
         author: Author
-        select: Select
         selected: Selected
         milestones: Milestones
         no_proposals: There are no proposals.
