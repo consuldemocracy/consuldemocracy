@@ -1,10 +1,19 @@
 require "rails_helper"
 
 describe Admin::ActionComponent do
-  it "includes an HTML class for the action" do
-    render_inline Admin::ActionComponent.new(:edit, double, path: "/")
+  describe "HTML class" do
+    it "includes an HTML class for the action by default" do
+      render_inline Admin::ActionComponent.new(:edit, double, path: "/")
 
-    expect(page).to have_css "a.edit-link"
+      expect(page).to have_css "a.edit-link.admin-action"
+    end
+
+    it "keeps the admin-action class when the class is overwritten" do
+      render_inline Admin::ActionComponent.new(:edit, double, path: "/", class: "modify-link")
+
+      expect(page).to have_css "a.modify-link.admin-action"
+      expect(page).not_to have_css ".edit-link"
+    end
   end
 
   describe "aria-label attribute" do
@@ -103,6 +112,20 @@ describe Admin::ActionComponent do
         expect(page).to have_link count: 1
         expect(page).to have_css "[data-confirm='#{text}']"
       end
+    end
+  end
+
+  describe "data-disable-with attribute" do
+    it "is not rendered for links" do
+      render_inline Admin::ActionComponent.new(:edit, double, path: "/")
+
+      expect(page).not_to have_css "[data-disable-with]"
+    end
+
+    it "is rendered for buttons" do
+      render_inline Admin::ActionComponent.new(:hide, double, path: "/", method: :delete)
+
+      expect(page).to have_css "button[data-disable-with='Hide']"
     end
   end
 end

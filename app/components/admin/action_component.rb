@@ -10,6 +10,10 @@ class Admin::ActionComponent < ApplicationComponent
 
   private
 
+    def button?
+      options[:method] && options[:method] != :get
+    end
+
     def text
       options[:text] || t("admin.actions.#{action}")
     end
@@ -22,12 +26,15 @@ class Admin::ActionComponent < ApplicationComponent
       {
         class: html_class,
         "aria-label": label,
-        data: { confirm: confirmation_text }
-      }.merge(options.except(:"aria-label", :confirm, :path, :text))
+        data: {
+          confirm: confirmation_text,
+          disable_with: (text if button?)
+        }
+      }.merge(options.except(:"aria-label", :class, :confirm, :path, :text))
     end
 
     def html_class
-      "#{action.to_s.gsub("_", "-")}-link"
+      "admin-action #{options[:class] || "#{action.to_s.gsub("_", "-")}-link"}".strip
     end
 
     def label
