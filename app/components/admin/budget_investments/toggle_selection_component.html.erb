@@ -1,5 +1,5 @@
 <% if can?(:toggle_selection, investment) %>
-  <%= button_to text, path, method: :patch, remote: true, class: html_class %>
+  <%= render Admin::ToggleSwitchComponent.new(action, investment, pressed: selected?, **options) %>
 <% elsif selected? %>
   <%= selected_text %>
 <% end %>

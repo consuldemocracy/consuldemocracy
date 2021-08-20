@@ -20,8 +20,9 @@ describe Admin::BudgetInvestments::ToggleSelectionComponent, :admin do
 
       render_inline Admin::BudgetInvestments::ToggleSelectionComponent.new(valuation_finished_investment)
 
-      expect(page).to have_button "Select"
-      expect(page).not_to have_button "Selected"
+      expect(page).to have_button count: 1
+      expect(page).to have_button exact_text: "No"
+      expect(page).to have_css "button[aria-pressed='false']"
     end
 
     it "renders a button to deselect selected investments" do
@@ -29,8 +30,9 @@ describe Admin::BudgetInvestments::ToggleSelectionComponent, :admin do
 
       render_inline Admin::BudgetInvestments::ToggleSelectionComponent.new(selected_investment)
 
-      expect(page).to have_button "Selected"
-      expect(page).not_to have_button "Select"
+      expect(page).to have_button count: 1
+      expect(page).to have_button exact_text: "Yes"
+      expect(page).to have_css "button[aria-pressed='true']"
     end
   end
 
@@ -58,7 +60,7 @@ describe Admin::BudgetInvestments::ToggleSelectionComponent, :admin do
       render_inline Admin::BudgetInvestments::ToggleSelectionComponent.new(selected_investment)
 
       expect(page).to have_content "Selected"
-      expect(page).not_to have_button "Selected"
+      expect(page).not_to have_button
     end
   end
 end

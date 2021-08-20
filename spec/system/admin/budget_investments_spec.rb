@@ -1412,9 +1412,14 @@ describe "Admin budget investments", :admin do
 
       expect(page).to have_content "Unfeasible project"
 
-      within("#budget_investment_#{feasible_vf_bi.id}") do
-        click_button "Select"
-        expect(page).to have_button "Selected"
+      within("tr", text: "Feasible, VF project") do
+        within("[data-field=selected]") do
+          expect(page).to have_content "No"
+
+          click_button "Select Feasible, VF project"
+
+          expect(page).to have_content "Yes"
+        end
       end
 
       click_link "Advanced filters"
@@ -1424,9 +1429,10 @@ describe "Admin budget investments", :admin do
 
       expect(page).not_to have_content "Unfeasible project"
 
-      within("#budget_investment_#{feasible_vf_bi.id}") do
-        expect(page).not_to have_button "Select"
-        expect(page).to have_button "Selected"
+      within("tr", text: "Feasible, VF project") do
+        within("[data-field=selected]") do
+          expect(page).to have_content "Yes"
+        end
       end
     end
 
@@ -1439,21 +1445,26 @@ describe "Admin budget investments", :admin do
 
       expect(page).to have_content("There are 2 investments")
 
-      within("#budget_investment_#{selected_bi.id}") do
-        click_button "Selected"
+      within("tr", text: "Selected project") do
+        within("[data-field=selected]") do
+          expect(page).to have_content "Yes"
 
-        expect(page).to have_button "Select"
+          click_button "Select Selected project"
+
+          expect(page).to have_content "No"
+        end
       end
 
-      click_button("Filter")
-      expect(page).not_to have_content(selected_bi.title)
-      expect(page).to have_content("There is 1 investment")
+      click_button "Filter"
+      expect(page).not_to have_content "Selected project"
+      expect(page).to have_content "There is 1 investment"
 
       visit admin_budget_budget_investments_path(budget)
 
-      within("#budget_investment_#{selected_bi.id}") do
-        expect(page).to have_button "Select"
-        expect(page).not_to have_button "Selected"
+      within("tr", text: "Selected project") do
+        within("[data-field=selected]") do
+          expect(page).to have_content "No"
+        end
       end
     end
 
@@ -1465,10 +1476,12 @@ describe "Admin budget investments", :admin do
 
         visit admin_budget_budget_investments_path(budget)
 
-        within("#budget_investment_#{selected_bi.id}") do
-          click_button "Selected"
+        within("tr", text: "Selected project") do
+          within("[data-field=selected]") do
+            click_button "Select Selected project"
 
-          expect(page).to have_button "Select"
+            expect(page).to have_content "No"
+          end
         end
 
         click_link("Next")
@@ -1806,11 +1819,16 @@ describe "Admin budget investments", :admin do
       within("#js-columns-selector-wrapper") { uncheck "Title" }
 
       within("#budget_investment_#{investment.id}") do
-        click_button "Selected"
+        within("[data-field=selected]") do
+          expect(page).to have_content "Yes"
 
-        expect(page).to have_button "Select"
-        expect(page).not_to have_content "Don't display me, please!"
+          click_button "Select Don't display me, please!"
+
+          expect(page).to have_content "No"
+        end
       end
+
+      expect(page).not_to have_content "Don't display me, please!"
     end
 
     scenario "When restoring the page from browser history renders columns selectors only once" do

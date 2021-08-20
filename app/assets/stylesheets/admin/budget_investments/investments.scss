@@ -12,4 +12,8 @@
       font-size: $small-font-size;
     }
   }
+
+  .toggle-switch [aria-pressed] {
+    font-size: inherit;
+  }
 }
