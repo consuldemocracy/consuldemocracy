@@ -1512,7 +1512,7 @@ describe "Admin budget investments", :admin do
       click_button "Filter"
 
       within("#budget_investment_#{investment1.id}") do
-        check "budget_investment_visible_to_valuators"
+        check "budget_investment[visible_to_valuators]"
       end
 
       visit admin_budget_budget_investments_path(budget)
@@ -1521,7 +1521,7 @@ describe "Admin budget investments", :admin do
       click_button "Filter"
 
       within("#budget_investment_#{investment1.id}") do
-        expect(find("#budget_investment_visible_to_valuators")).to be_checked
+        expect(page).to have_field "budget_investment[visible_to_valuators]", checked: true
       end
     end
 
@@ -1561,7 +1561,7 @@ describe "Admin budget investments", :admin do
       click_button "Filter"
 
       within("#budget_investment_#{investment1.id}") do
-        uncheck "budget_investment_visible_to_valuators"
+        uncheck "budget_investment[visible_to_valuators]"
       end
 
       visit admin_budget_budget_investments_path(budget)
@@ -1571,7 +1571,7 @@ describe "Admin budget investments", :admin do
       click_button "Filter"
 
       within("#budget_investment_#{investment1.id}") do
-        expect(find("#budget_investment_visible_to_valuators")).not_to be_checked
+        expect(page).to have_field "budget_investment[visible_to_valuators]", checked: false
       end
     end
 
@@ -1585,14 +1585,14 @@ describe "Admin budget investments", :admin do
       within "tr", text: "Visible" do
         within "td[data-field=visible_to_valuators]" do
           expect(page).to have_text "Yes"
-          expect(page).not_to have_field "budget_investment_visible_to_valuators"
+          expect(page).not_to have_field "budget_investment[visible_to_valuators]"
         end
       end
 
       within "tr", text: "Invisible" do
         within "td[data-field=visible_to_valuators]" do
           expect(page).to have_text "No"
-          expect(page).not_to have_field "budget_investment_visible_to_valuators"
+          expect(page).not_to have_field "budget_investment[visible_to_valuators]"
         end
       end
     end
@@ -1605,20 +1605,16 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      expect(page).to have_css("#budget_investment_visible_to_valuators")
-
       click_link "Advanced filters"
       check "Under valuation"
       click_button "Filter"
 
       within("#budget_investment_#{investment1.id}") do
-        valuating_checkbox = find("#budget_investment_visible_to_valuators")
-        expect(valuating_checkbox).to be_checked
+        expect(page).to have_field "budget_investment[visible_to_valuators]", checked: true
       end
 
       within("#budget_investment_#{investment2.id}") do
-        valuating_checkbox = find("#budget_investment_visible_to_valuators")
-        expect(valuating_checkbox).not_to be_checked
+        expect(page).to have_field "budget_investment[visible_to_valuators]", checked: false
       end
     end
 
@@ -1629,7 +1625,7 @@ describe "Admin budget investments", :admin do
       visit admin_budget_budget_investments_path(budget)
 
       within("#budget_investment_#{investment1.id}") do
-        check "budget_investment_visible_to_valuators"
+        check "budget_investment[visible_to_valuators]"
       end
 
       visit edit_admin_budget_budget_investment_path(budget, investment1)
