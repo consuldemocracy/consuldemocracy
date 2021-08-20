@@ -1,6 +1,6 @@
 <%= form_for([:admin, feature]) do |f| %>
-  <%= f.hidden_field :tab, value: tab if tab %>
-  <%= f.hidden_field :value, id: dom_id(feature), value: (feature.enabled? ? "" : "active") %>
+  <%= f.hidden_field :tab, id: dom_id(feature, :tab), value: tab if tab %>
+  <%= f.hidden_field :value, id: dom_id(feature, :value), value: (feature.enabled? ? "" : "active") %>
   <%= f.submit(t("admin.settings.index.features.#{feature.enabled? ? "disable" : "enable"}"),
                class: "button expanded #{feature.enabled? ? "hollow alert" : "success"}",
                data: { confirm: t("admin.actions.confirm") }) %>

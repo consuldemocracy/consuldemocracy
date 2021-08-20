@@ -19,7 +19,7 @@ describe "Admin settings", :admin do
     visit admin_settings_path
 
     within("#edit_setting_#{setting.id}") do
-      fill_in "setting_#{setting.id}", with: "Super Users of level 1"
+      fill_in "value_setting_#{setting.id}", with: "Super Users of level 1"
       click_button "Update"
     end
 
@@ -179,7 +179,7 @@ describe "Admin settings", :admin do
         find("#remote-census-tab").click
 
         within("#edit_setting_#{remote_census_setting.id}") do
-          fill_in "setting_#{remote_census_setting.id}", with: "New value"
+          fill_in "value_setting_#{remote_census_setting.id}", with: "New value"
           click_button "Update"
         end
 
@@ -195,7 +195,7 @@ describe "Admin settings", :admin do
       find("#tab-configuration").click
 
       within("#edit_setting_#{configuration_setting.id}") do
-        fill_in "setting_#{configuration_setting.id}", with: "New value"
+        fill_in "value_setting_#{configuration_setting.id}", with: "New value"
         click_button "Update"
       end
 
@@ -215,7 +215,7 @@ describe "Admin settings", :admin do
         click_link "Map configuration"
 
         within("#edit_setting_#{map_setting.id}") do
-          fill_in "setting_#{map_setting.id}", with: "New value"
+          fill_in "value_setting_#{map_setting.id}", with: "New value"
           click_button "Update"
         end
 
@@ -231,7 +231,7 @@ describe "Admin settings", :admin do
       find("#proposals-tab").click
 
       within("#edit_setting_#{proposal_dashboard_setting.id}") do
-        fill_in "setting_#{proposal_dashboard_setting.id}", with: "New value"
+        fill_in "value_setting_#{proposal_dashboard_setting.id}", with: "New value"
         click_button "Update"
       end
 
