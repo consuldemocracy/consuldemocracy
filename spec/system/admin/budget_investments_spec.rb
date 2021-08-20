@@ -43,21 +43,6 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content("€")
     end
 
-    scenario "If budget is finished do not show 'Selected' button" do
-      finished_budget = create(:budget, :finished)
-      budget_investment = create(:budget_investment, budget: finished_budget, cached_votes_up: 77)
-
-      visit admin_budget_budget_investments_path(budget_id: finished_budget.id)
-
-      within("#budget_investment_#{budget_investment.id}") do
-        expect(page).to have_content(budget_investment.title)
-        expect(page).to have_content(budget_investment.heading.name)
-        expect(page).to have_content(budget_investment.id)
-        expect(page).to have_content(budget_investment.total_votes)
-        expect(page).not_to have_link("Selected")
-      end
-    end
-
     scenario "Display admin and valuator assignments" do
       olga = create(:user, username: "Olga")
       miriam = create(:user, username: "Miriam")
@@ -1420,56 +1405,6 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content(selected_bi.title)
       expect(page).not_to have_content(feasible_bi.title)
       expect(page).not_to have_content(feasible_vf_bi.title)
-    end
-
-    scenario "Showing the selection buttons" do
-      visit admin_budget_budget_investments_path(budget)
-
-      within("#budget_investment_#{unfeasible_bi.id}") do
-        expect(page).not_to have_link("Select")
-        expect(page).not_to have_link("Selected")
-      end
-
-      within("#budget_investment_#{feasible_bi.id}") do
-        expect(page).not_to have_link("Select")
-        expect(page).not_to have_link("Selected")
-      end
-
-      within("#budget_investment_#{feasible_vf_bi.id}") do
-        expect(page).to have_link("Select")
-        expect(page).not_to have_link("Selected")
-      end
-
-      within("#budget_investment_#{selected_bi.id}") do
-        expect(page).not_to have_link("Select")
-        expect(page).to have_link("Selected")
-      end
-    end
-
-    scenario "Show only selected text when budget is finished" do
-      budget.update!(phase: "finished")
-
-      visit admin_budget_budget_investments_path(budget)
-
-      within("#budget_investment_#{unfeasible_bi.id} [data-field=selected]") do
-        expect(page).not_to have_content("Select")
-        expect(page).not_to have_content("Selected")
-      end
-
-      within("#budget_investment_#{feasible_bi.id} [data-field=selected]") do
-        expect(page).not_to have_content("Select")
-        expect(page).not_to have_content("Selected")
-      end
-
-      within("#budget_investment_#{feasible_vf_bi.id} [data-field=selected]") do
-        expect(page).not_to have_content("Select")
-        expect(page).not_to have_content("Selected")
-      end
-
-      within("#budget_investment_#{selected_bi.id} [data-field=selected]") do
-        expect(page).not_to contain_exactly("Select")
-        expect(page).to have_content("Selected")
-      end
     end
 
     scenario "Selecting an investment" do
