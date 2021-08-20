@@ -19,7 +19,7 @@ describe "Admin collaborative legislation", :admin do
       proposal = create(:legislation_proposal, cached_votes_score: 10)
 
       visit admin_legislation_process_proposals_path(proposal.legislation_process_id)
-      click_link "Select"
+      click_button "Select"
 
       within "#legislation_proposal_#{proposal.id}" do
         expect(page).to have_content("Selected")
