@@ -47,7 +47,7 @@
           <%= f.check_box :visible_to_valuators,
                           label: false,
                           class: "js-submit-on-change",
-                          id: "budget_investment_visible_to_valuators" %>
+                          id: "budget_investment_visible_to_valuators_#{investment.id}" %>
       <% end %>
     <% else %>
       <%= investment.visible_to_valuators? ? t("shared.yes") : t("shared.no") %>
