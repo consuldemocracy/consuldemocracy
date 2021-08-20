@@ -1411,8 +1411,8 @@ describe "Admin budget investments", :admin do
       visit admin_budget_budget_investments_path(budget)
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
-        click_link("Select")
-        expect(page).to have_link("Selected")
+        click_button "Select"
+        expect(page).to have_button "Selected"
       end
 
       click_link "Advanced filters"
@@ -1421,8 +1421,8 @@ describe "Admin budget investments", :admin do
       click_button("Filter")
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
-        expect(page).not_to have_link("Select")
-        expect(page).to have_link("Selected")
+        expect(page).not_to have_button "Select"
+        expect(page).to have_button "Selected"
       end
     end
 
@@ -1436,9 +1436,9 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("There are 2 investments")
 
       within("#budget_investment_#{selected_bi.id}") do
-        click_link("Selected")
+        click_button "Selected"
 
-        expect(page).to have_link("Select")
+        expect(page).to have_button "Select"
       end
 
       click_button("Filter")
@@ -1448,8 +1448,8 @@ describe "Admin budget investments", :admin do
       visit admin_budget_budget_investments_path(budget)
 
       within("#budget_investment_#{selected_bi.id}") do
-        expect(page).to have_link("Select")
-        expect(page).not_to have_link("Selected")
+        expect(page).to have_button "Select"
+        expect(page).not_to have_button "Selected"
       end
     end
 
@@ -1462,9 +1462,9 @@ describe "Admin budget investments", :admin do
         visit admin_budget_budget_investments_path(budget)
 
         within("#budget_investment_#{selected_bi.id}") do
-          click_link("Selected")
+          click_button "Selected"
 
-          expect(page).to have_link "Select"
+          expect(page).to have_button "Select"
         end
 
         click_link("Next")
@@ -1802,9 +1802,9 @@ describe "Admin budget investments", :admin do
       within("#js-columns-selector-wrapper") { uncheck "Title" }
 
       within("#budget_investment_#{investment.id}") do
-        click_link "Selected"
+        click_button "Selected"
 
-        expect(page).to have_link "Select"
+        expect(page).to have_button "Select"
         expect(page).not_to have_content "Don't display me, please!"
       end
     end
