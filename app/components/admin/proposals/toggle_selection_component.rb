@@ -5,22 +5,34 @@ class Admin::Proposals::ToggleSelectionComponent < ApplicationComponent
     @proposal = proposal
   end
 
-  def link_to_toggle_proposal_selection
-    if proposal.selected?
-      button_text = t("admin.proposals.index.selected")
-      html_class = "button expanded"
-    else
-      button_text = t("admin.proposals.index.select")
-      html_class = "button hollow expanded"
+  private
+
+    def text
+      if proposal.selected?
+        t("admin.proposals.index.selected")
+      else
+        t("admin.proposals.index.select")
+      end
     end
 
-    case proposal.class.to_s
-    when "Proposal"
-      path = toggle_selection_admin_proposal_path(proposal)
-    when "Legislation::Proposal"
-      path = toggle_selection_admin_legislation_process_proposal_path(proposal.process, proposal)
+    def path
+      case proposal.class.to_s
+      when "Proposal"
+        toggle_selection_admin_proposal_path(proposal)
+      when "Legislation::Proposal"
+        toggle_selection_admin_legislation_process_proposal_path(proposal.process, proposal)
+      end
     end
 
-    link_to button_text, path, remote: true, method: :patch, class: html_class
-  end
+    def options
+      { remote: true, method: :patch, class: html_class }
+    end
+
+    def html_class
+      if proposal.selected?
+        "button expanded"
+      else
+        "button hollow expanded"
+      end
+    end
 end
