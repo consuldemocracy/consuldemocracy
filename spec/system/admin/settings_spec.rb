@@ -240,28 +240,22 @@ describe "Admin settings", :admin do
     end
 
     scenario "On #tab-participation-processes" do
-      process_setting = Setting.create!(key: "process.whatever")
+      Setting.create!(key: "process.whatever")
 
       visit admin_settings_path
       find("#participation-processes-tab").click
-
-      accept_alert do
-        find("#edit_setting_#{process_setting.id} .button").click
-      end
+      within("tr", text: "Whatever") { click_button "No" }
 
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("div#tab-participation-processes.is-active")
     end
 
     scenario "On #tab-feature-flags" do
-      feature_setting = Setting.create!(key: "feature.whatever")
+      Setting.create!(key: "feature.whatever")
 
       visit admin_settings_path
       find("#features-tab").click
-
-      accept_alert do
-        find("#edit_setting_#{feature_setting.id} .button").click
-      end
+      within("tr", text: "Whatever") { click_button "No" }
 
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("div#tab-feature-flags.is-active")
@@ -274,11 +268,9 @@ describe "Admin settings", :admin do
 
       visit admin_settings_path
       click_link "SDG configuration"
+      within("tr", text: "Whatever") { click_button "No" }
 
-      accept_alert do
-        within("tr", text: "Whatever") { click_button "Enable" }
-      end
-
+      expect(page).to have_content "Value updated"
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("h2", exact_text: "SDG configuration")
     end
@@ -287,32 +279,22 @@ describe "Admin settings", :admin do
   describe "Skip verification" do
     scenario "deactivate skip verification" do
       Setting["feature.user.skip_verification"] = "true"
-      setting = Setting.find_by(key: "feature.user.skip_verification")
 
       visit admin_settings_path
       find("#features-tab").click
-
-      accept_alert do
-        find("#edit_setting_#{setting.id} .button").click
-      end
+      within("tr", text: "Skip user verification") { click_button "Yes" }
 
       expect(page).to have_content "Value updated"
     end
 
     scenario "activate skip verification" do
       Setting["feature.user.skip_verification"] = nil
-      setting = Setting.find_by(key: "feature.user.skip_verification")
 
       visit admin_settings_path
       find("#features-tab").click
-
-      accept_alert do
-        find("#edit_setting_#{setting.id} .button").click
-      end
+      within("tr", text: "Skip user verification") { click_button "No" }
 
       expect(page).to have_content "Value updated"
-
-      Setting["feature.user.skip_verification"] = nil
     end
   end
 

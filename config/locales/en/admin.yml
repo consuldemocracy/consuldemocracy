@@ -1298,8 +1298,7 @@ en:
         images_and_documents: "Images and documents"
         feature_flags: Features
         features:
-          enabled: "Feature enabled"
-          disabled: "Feature disabled"
+          enabled: "Enabled"
           enable: "Enable"
           disable: "Disable"
         map:
@@ -1322,9 +1321,7 @@ en:
       remote_census_request_name: Request Data
       remote_census_response_name: Response Data
       setting: Feature
-      setting_actions: Actions
       setting_name: Setting
-      setting_status: Status
       setting_value: Value
       no_description: "No description"
     shared:

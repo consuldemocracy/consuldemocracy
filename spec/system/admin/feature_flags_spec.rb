@@ -15,18 +15,12 @@ describe "Admin feature flags", :admin do
   end
 
   scenario "Disable a participatory process", :show_exceptions do
-    setting = Setting.find_by(key: "process.budgets")
     budget = create(:budget)
 
     visit admin_settings_path
     within("#settings-tabs") { click_link "Participation processes" }
 
-    within("#edit_setting_#{setting.id}") do
-      expect(page).to have_button "Disable"
-      expect(page).not_to have_button "Enable"
-
-      accept_confirm { click_button "Disable" }
-    end
+    within("tr", text: "Participatory budgeting") { click_button "Yes" }
 
     expect(page).to have_content "Value updated"
 
@@ -46,7 +40,6 @@ describe "Admin feature flags", :admin do
 
   scenario "Enable a disabled participatory process" do
     Setting["process.budgets"] = nil
-    setting = Setting.find_by(key: "process.budgets")
 
     visit admin_root_path
 
@@ -56,13 +49,7 @@ describe "Admin feature flags", :admin do
 
     visit admin_settings_path
     within("#settings-tabs") { click_link "Participation processes" }
-
-    within("#edit_setting_#{setting.id}") do
-      expect(page).to have_button "Enable"
-      expect(page).not_to have_button "Disable"
-
-      accept_confirm { click_button "Enable" }
-    end
+    within("tr", text: "Participatory budgeting") { click_button "No" }
 
     expect(page).to have_content "Value updated"
 
@@ -72,44 +59,30 @@ describe "Admin feature flags", :admin do
   end
 
   scenario "Disable a feature" do
-    setting = Setting.find_by(key: "feature.twitter_login")
-
     visit admin_settings_path
     click_link "Features"
 
-    within("#edit_setting_#{setting.id}") do
-      expect(page).to have_button "Disable"
-      expect(page).not_to have_button "Enable"
-
-      accept_confirm { click_button "Disable" }
-    end
+    within("tr", text: "Twitter login") { click_button "Yes" }
 
     expect(page).to have_content "Value updated"
 
-    within("#edit_setting_#{setting.id}") do
-      expect(page).to have_button "Enable"
-      expect(page).not_to have_button "Disable"
+    within("tr", text: "Twitter login") do
+      expect(page).to have_button "No"
+      expect(page).not_to have_button "Yes"
     end
   end
 
   scenario "Enable a disabled feature" do
-    setting = Setting.find_by(key: "feature.map")
-
     visit admin_settings_path
     click_link "Features"
 
-    within("#edit_setting_#{setting.id}") do
-      expect(page).to have_button "Enable"
-      expect(page).not_to have_button "Disable"
-
-      accept_confirm { click_button "Enable" }
-    end
+    within("tr", text: "Proposals and budget investments geolocation") { click_button "No" }
 
     expect(page).to have_content "Value updated"
 
-    within("#edit_setting_#{setting.id}") do
-      expect(page).to have_button "Disable"
-      expect(page).not_to have_button "Enable"
+    within("tr", text: "Proposals and budget investments geolocation") do
+      expect(page).to have_button "Yes"
+      expect(page).not_to have_button "No"
     end
   end
 end

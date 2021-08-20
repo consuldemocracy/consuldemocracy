@@ -1297,8 +1297,7 @@ es:
         images_and_documents: "Imágenes y documentos"
         feature_flags: Funcionalidades
         features:
-          enabled: "Funcionalidad activada"
-          disabled: "Funcionalidad desactivada"
+          enabled: "Activada"
           enable: "Activar"
           disable: "Desactivar"
         map:
@@ -1321,9 +1320,7 @@ es:
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta
       setting: Funcionalidad
-      setting_actions: Acciones
       setting_name: Configuración
-      setting_status: Estado
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
