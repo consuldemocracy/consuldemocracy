@@ -115,6 +115,10 @@ describe Abilities::Administrator do
   it { should_not be_able_to(:admin_update, finished_investment) }
   it { should_not be_able_to(:valuate, finished_investment) }
   it { should_not be_able_to(:comment_valuation, finished_investment) }
+
+  it { should be_able_to(:toggle_selection, create(:budget_investment, :feasible, :finished)) }
+  it { should_not be_able_to(:toggle_selection, create(:budget_investment, :feasible, :open)) }
+  it { should_not be_able_to(:toggle_selection, create(:budget_investment, :unfeasible, :finished)) }
   it { should_not be_able_to(:toggle_selection, finished_investment) }
 
   it { should be_able_to(:destroy, proposal_image) }
