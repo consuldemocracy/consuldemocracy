@@ -32,7 +32,7 @@
         </td>
 
         <td class="text-right">
-          <%= render "admin/settings/featured_settings_form", feature: feature, tab: tab %>
+          <%= render Admin::Settings::FeaturedSettingsFormComponent.new(feature, tab: tab) %>
         </td>
       </tr>
     <% end %>
