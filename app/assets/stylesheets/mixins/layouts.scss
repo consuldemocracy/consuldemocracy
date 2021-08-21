@@ -25,10 +25,10 @@
 
 @mixin flex-with-gap($gap: rem-calc(map-get($grid-column-gutter, medium))) {
   display: flex;
-  margin-left: -$gap;
+  margin-#{$global-left}: -$gap;
 
   > * {
-    margin-left: $gap;
+    margin-#{$global-left}: $gap;
   }
 }
 
