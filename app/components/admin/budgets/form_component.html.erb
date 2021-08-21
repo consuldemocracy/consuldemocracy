@@ -86,12 +86,7 @@
     </div>
 
     <div class="float-right">
-      <% if display_calculate_winners_button?(budget) %>
-        <%= link_to calculate_winner_button_text(budget),
-                    calculate_winners_admin_budget_path(budget),
-                    method: :put,
-                    class: "button hollow" %>
-      <% end %>
+      <%= render Admin::Budgets::CalculateWinnersButtonComponent.new(budget) %>
 
       <% if budget.has_winning_investments? %>
         <%= link_to t("budgets.show.see_results"),

@@ -5,10 +5,6 @@ class Admin::Budgets::FormComponent < ApplicationComponent
 
   attr_reader :budget, :wizard
   alias_method :wizard?, :wizard
-  delegate :display_calculate_winners_button?,
-           :calculate_winner_button_text,
-           :calculate_winners_admin_budget_path,
-           to: :helpers
 
   def initialize(budget, wizard: false)
     @budget = budget

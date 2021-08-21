@@ -3,19 +3,7 @@
             class: "float-right small clear" %>
 
 <% if params[:advanced_filters].include?("winners") %>
-  <% if display_calculate_winners_button?(@budget) %>
-    <%= link_to calculate_winner_button_text(@budget),
-                calculate_winners_admin_budget_path(@budget),
-                method: :put,
-                class: "button hollow float-right clear" %>
-  <% else %>
-    <span class="button hollow disabled float-right clear">
-      <%= t("admin.budgets.winners.calculate") %>
-    </span>
-    <div class="callout warning clear">
-      <%= t("admin.budget_investments.index.cannot_calculate_winners") %>
-    </div>
-  <% end %>
+  <%= render Admin::Budgets::CalculateWinnersButtonComponent.new(@budget, from_investments: true) %>
 <% end %>
 
 <% if @investments.any? %>

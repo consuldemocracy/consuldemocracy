@@ -33,18 +33,6 @@ module BudgetsHelper
     budget.published? || current_user&.administrator?
   end
 
-  def display_calculate_winners_button?(budget)
-    budget.balloting_or_later?
-  end
-
-  def calculate_winner_button_text(budget)
-    if budget.investments.winners.empty?
-      t("admin.budgets.winners.calculate")
-    else
-      t("admin.budgets.winners.recalculate")
-    end
-  end
-
   def budget_subnav_items_for(budget)
     {
       results:    t("budgets.results.link"),
