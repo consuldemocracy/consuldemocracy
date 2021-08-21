@@ -1,8 +1,9 @@
 <% if display_button? %>
-  <%= link_to text,
-              calculate_winners_admin_budget_path(budget),
-              method: :put,
-              class: html_class %>
+  <%= render Admin::ActionComponent.new(
+    :calculate_winners,
+    budget,
+    text: text, method: :put, class: html_class
+  ) %>
 <% elsif from_investments %>
   <span class="button hollow disabled float-right clear">
     <%= t("admin.budgets.winners.calculate") %>

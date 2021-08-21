@@ -4,4 +4,10 @@ class Admin::Budgets::ActionsComponent < ApplicationComponent
   def initialize(budget)
     @budget = budget
   end
+
+  private
+
+    def action(action_name, **options)
+      render Admin::ActionComponent.new(action_name, budget, **options)
+    end
 end

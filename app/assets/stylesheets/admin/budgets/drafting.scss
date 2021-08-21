@@ -19,7 +19,5 @@
   .publish-link {
     @include regular-button;
     margin-bottom: 0;
-    margin-#{$global-left}: $line-height / 2;
-    margin-top: $vertical-gap;
   }
 }

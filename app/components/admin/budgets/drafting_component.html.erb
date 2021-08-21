@@ -3,8 +3,9 @@
     <strong><%= t("admin.budgets.edit.drafting") %></strong>
   </div>
 
-  <%= link_to t("admin.budgets.edit.publish"),
-              publish_admin_budget_path(budget),
-              method: :patch, class: "publish-link",
-              data: { confirm: t("admin.actions.confirm") } %>
+  <%= render Admin::ActionComponent.new(
+    :publish,
+    budget,
+    text: t("admin.budgets.edit.publish"), method: :patch, confirm: true
+  ) %>
 </div>
