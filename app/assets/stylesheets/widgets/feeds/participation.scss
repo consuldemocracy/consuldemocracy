@@ -1,8 +1,6 @@
 .feeds-participation {
-  $gap: rem-calc(map-get($grid-column-gutter, medium));
-  display: flex;
+  @include flex-with-gap;
   flex-wrap: wrap;
-  margin-left: -$gap;
 
   .feed-proposals {
     flex-basis: rem-calc(480);
@@ -17,7 +15,6 @@
   .feed-proposals,
   .feed-debates {
     display: flex;
-    margin-left: $gap;
     margin-top: $line-height;
     flex-direction: column;
 

@@ -1,13 +1,8 @@
 .admin .poll-questions-filter {
   $gap: 0.5em;
+  @include flex-with-gap($gap);
   align-items: flex-end;
-  display: flex;
   flex-wrap: wrap;
-  margin-left: -$gap;
-
-  > * {
-    margin-left: $gap;
-  }
 
   [type="submit"] {
     @include regular-button;

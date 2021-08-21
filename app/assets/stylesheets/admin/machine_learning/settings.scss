@@ -1,13 +1,10 @@
 .admin .machine-learning-settings {
 
   .settings-management {
-    $gap: rem-calc(map-get($grid-column-gutter, medium));
-    display: flex;
+    @include flex-with-gap;
     flex-wrap: wrap;
-    margin-left: -$gap;
 
     > * {
-      margin-left: $gap;
       flex-basis: calc((#{rem-calc(720)} - 100%) * 999);
       flex-grow: 1;
     }

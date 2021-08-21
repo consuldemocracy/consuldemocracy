@@ -2,14 +2,8 @@
   margin-bottom: $line-height / 2;
 
   @include breakpoint(medium) {
-    $gap: 1em;
+    @include flex-with-gap(1em);
     align-items: flex-end;
-    display: flex;
-    margin-left: -$gap;
-
-    > * {
-      margin-left: $gap;
-    }
   }
 
   select {
