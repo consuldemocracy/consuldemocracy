@@ -9,27 +9,12 @@
     margin-top: $gap;
   }
 
-  + * {
-    margin-top: $line-height;
-  }
-
-  a,
   button {
-    margin-bottom: 0;
-  }
-
-  .preview-link {
-    @include has-fa-icon(eye, regular);
-    @include hollow-button;
-    margin-left: $gap;
-    margin-top: $gap;
-
-    &::before {
-      margin-#{$global-right}: $font-icon-margin;
-    }
-  }
-
-  .delete {
     cursor: pointer;
+  }
+
+  .calculate-winners-link {
+    @include hollow-button;
+    margin-bottom: 0;
   }
 }

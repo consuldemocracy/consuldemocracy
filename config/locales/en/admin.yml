@@ -69,6 +69,7 @@ en:
         no_activity: There are no moderators activity.
     budgets:
       actions:
+        edit: "Edit budget"
         preview: "Preview"
       index:
         title: Participatory budgets
@@ -127,7 +128,6 @@ en:
         main_call_to_action_description: "This link will appear on main banner of this participatory budget and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
         info:
           budget_settings: "General participatory budget settings"
-          phases_settings: "Phases settings"
           staff_settings: "Administrators and Valuators assigned to the budget"
       destroy:
         success_notice: Budget deleted successfully

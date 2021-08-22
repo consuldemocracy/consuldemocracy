@@ -69,6 +69,7 @@ es:
         no_activity: No hay actividad de moderadores.
     budgets:
       actions:
+        edit: "Editar presupuesto"
         preview: "Previsualizar"
       index:
         title: Presupuestos participativos
@@ -127,7 +128,6 @@ es:
         main_call_to_action_description: "Este enlace aparecerá en la cabecera de este presupuesto participativo y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
         info:
           budget_settings: "Configuración genérica del presupuesto participativo"
-          phases_settings: "Configuración de las fases"
           staff_settings: "Administradores y Evaluadores asigandos al presupuesto"
       destroy:
         success_notice: Presupuesto eliminado correctamente

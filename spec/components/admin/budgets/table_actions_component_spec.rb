@@ -10,7 +10,7 @@ describe Admin::Budgets::TableActionsComponent, controller: Admin::BaseControlle
     expect(page).to have_link count: 4
     expect(page).to have_link "Investment projects", href: /investments/
     expect(page).to have_link "Heading groups", href: /groups/
-    expect(page).to have_link "Edit", href: /edit/
+    expect(page).to have_link "Edit", href: /#{budget.id}\Z/
     expect(page).to have_link "Preview", href: /budgets/
 
     expect(page).to have_button count: 2

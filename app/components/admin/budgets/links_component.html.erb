@@ -1,0 +1,11 @@
+<div class="budgets-links">
+  <% if budget.has_winning_investments? %>
+    <%= action(:results,
+               text: t("budgets.show.see_results"),
+               path: budget_results_path(budget)) %>
+  <% end %>
+
+  <%= action(:preview, text: t("admin.budgets.actions.preview"), path: budget_path(budget), target: "_blank") %>
+
+  <%= action(:edit, text: t("admin.budgets.actions.edit")) %>
+</div>

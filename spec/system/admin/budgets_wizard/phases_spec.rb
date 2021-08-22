@@ -30,7 +30,7 @@ describe "Budgets wizard, phases step", :admin do
 
       expect(page).to have_content "Phases configured successfully"
 
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
 
       within "tr", text: "Information" do
         expect(page).to have_css ".budget-phase-disabled", visible: :all

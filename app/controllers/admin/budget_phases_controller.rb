@@ -4,6 +4,6 @@ class Admin::BudgetPhasesController < Admin::BaseController
   private
 
     def phases_index
-      edit_admin_budget_path(@phase.budget)
+      admin_budget_path(@phase.budget)
     end
 end

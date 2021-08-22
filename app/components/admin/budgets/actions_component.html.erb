@@ -1,12 +1,5 @@
 <div class="budgets-actions">
   <%= render Admin::Budgets::CalculateWinnersButtonComponent.new(budget) %>
-  <% if budget.has_winning_investments? %>
-    <%= link_to t("budgets.show.see_results"),
-                budget_results_path(budget),
-                class: "button hollow" %>
-  <% end %>
-
-  <%= link_to t("admin.budgets.actions.preview"), budget_path(budget), class: "preview-link", target: "_blank" %>
 
   <%= action(:destroy,
              text: t("admin.budgets.edit.delete"),

@@ -39,6 +39,12 @@
       </div>
     </div>
 
+    <% unless wizard? %>
+      <div class="small-12 medium-6 column">
+        <%= f.select :phase, phases_select_options %>
+      </div>
+    <% end %>
+
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
         <%= render "/images/nested_image", f: f %>
@@ -64,15 +70,6 @@
   </fieldset>
 
   <% unless wizard? %>
-    <fieldset>
-      <legend><%= t("admin.budgets.edit.info.phases_settings") %></legend>
-      <div class="small-12 medium-6 column">
-        <%= f.select :phase, phases_select_options %>
-      </div>
-
-      <%= render Admin::BudgetPhases::PhasesComponent.new(budget) %>
-    </fieldset>
-
     <%= render "admin/shared/show_results_fields", form: f %>
   <% end %>
 

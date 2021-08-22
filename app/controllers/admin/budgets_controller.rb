@@ -15,7 +15,6 @@ class Admin::BudgetsController < Admin::BaseController
   end
 
   def show
-    render :edit
   end
 
   def edit
@@ -23,7 +22,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   def publish
     @budget.publish!
-    redirect_to edit_admin_budget_path(@budget), notice: t("admin.budgets.publish.notice")
+    redirect_to admin_budget_path(@budget), notice: t("admin.budgets.publish.notice")
   end
 
   def calculate_winners
@@ -38,7 +37,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   def update
     if @budget.update(budget_params)
-      redirect_to admin_budgets_path, notice: t("admin.budgets.update.notice")
+      redirect_to admin_budget_path(@budget), notice: t("admin.budgets.update.notice")
     else
       render :edit
     end

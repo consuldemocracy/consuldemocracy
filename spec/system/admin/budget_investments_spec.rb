@@ -498,10 +498,11 @@ describe "Admin budget investments", :admin do
 
       expect(page).to have_button "Calculate Winner Investments"
 
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
 
       expect(page).to have_button "Calculate Winner Investments"
 
+      click_link "Edit budget"
       select "Accepting projects", from: "Active phase"
       click_button "Update Budget"
 
@@ -518,7 +519,7 @@ describe "Admin budget investments", :admin do
                                    '"Reviewing Ballots" or "Finished budget" in order '\
                                    "to calculate winners projects"
 
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
 
       expect(page).not_to have_button "Calculate Winner Investments"
     end
