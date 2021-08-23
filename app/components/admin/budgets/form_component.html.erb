@@ -1,5 +1,5 @@
 <%= translatable_form_for [namespace, budget], html: { class: "budgets-form" } do |f| %>
-  <%= render Admin::BudgetsWizard::ModelFieldComponent.new %>
+  <%= render Admin::BudgetsWizard::ModeFieldComponent.new %>
 
   <fieldset>
     <legend><%= t("admin.budgets.edit.info.budget_settings") %></legend>
