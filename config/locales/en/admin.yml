@@ -340,8 +340,6 @@ en:
           back: "Go back to headings"
         single:
           back: "Go back to edit heading"
-        update_all:
-          notice: "Phases configured successfully"
     milestones:
       index:
         table_id: "ID"

@@ -22,9 +22,7 @@ describe "Budgets creation wizard", :admin do
 
     expect(page).to have_css ".budget-phases-table"
 
-    click_button "Finish"
-
-    expect(page).to have_content "Phases configured successfully"
+    click_link "Finish"
 
     within "tr", text: "Single heading budget" do
       click_link "Heading groups"
@@ -119,9 +117,7 @@ describe "Budgets creation wizard", :admin do
       expect(page).not_to have_content "Voting projects"
     end
 
-    click_button "Finish"
-
-    expect(page).to have_content "Phases configured successfully"
+    click_link "Finish"
 
     within "tr", text: "Multiple headings budget" do
       click_link "Heading groups"

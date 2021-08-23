@@ -25,6 +25,7 @@ class Admin::ActionComponent < ApplicationComponent
     def html_options
       {
         class: html_class,
+        id: (dom_id(record, action) if record.respond_to?(:to_key)),
         "aria-label": label,
         data: {
           confirm: confirmation_text,

@@ -340,8 +340,6 @@ es:
           back: "Volver a partidas"
         single:
           back: "Volver a editar partida"
-        update_all:
-          notice: "Fases configuradas con éxito"
     milestones:
       index:
         table_id: "ID"
