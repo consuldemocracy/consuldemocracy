@@ -21,7 +21,7 @@ class Widget::Feed < ApplicationRecord
   end
 
   def proposals
-    Proposal.sort_by_hot_score.limit(limit)
+    Proposal.published.sort_by_hot_score.limit(limit)
   end
 
   def debates
