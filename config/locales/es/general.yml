@@ -683,7 +683,6 @@ es:
       date_5: "Personalizada"
       from: "Desde"
       general: "Con el texto"
-      general_placeholder: "Escribe el texto"
       goal: "Por ODS"
       goal_blank: "Elige un objetivo"
       search: "Filtrar"

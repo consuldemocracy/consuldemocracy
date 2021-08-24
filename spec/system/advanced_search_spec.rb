@@ -12,7 +12,7 @@ describe "Advanced search" do
     visit debates_path
 
     click_button "Advanced search"
-    fill_in "Write the text", with: "Schwifty"
+    fill_in "With the text", with: "Schwifty"
     click_button "Filter"
 
     expect(page).to have_content("There are 2 debates")
@@ -32,7 +32,7 @@ describe "Advanced search" do
     visit proposals_path
 
     click_button "Advanced search"
-    fill_in "Write the text", with: "Schwifty"
+    fill_in "With the text", with: "Schwifty"
     click_button "Filter"
 
     expect(page).to have_content("There are 2 citizen proposals")
@@ -52,7 +52,7 @@ describe "Advanced search" do
     visit budget_investments_path(budget)
 
     click_button "Advanced search"
-    fill_in "Write the text", with: "Schwifty"
+    fill_in "With the text", with: "Schwifty"
     click_button "Filter"
 
     expect(page).to have_content("There are 2 investments")
@@ -204,7 +204,7 @@ describe "Advanced search" do
       visit budget_investments_path(budget)
 
       click_button "Advanced search"
-      fill_in "Write the text", with: "Schwifty"
+      fill_in "With the text", with: "Schwifty"
       select "7. Affordable and Clean Energy", from: "By SDG"
       select "Last 24 hours", from: "js-advanced-search-date-min"
 
@@ -224,7 +224,7 @@ describe "Advanced search" do
       visit debates_path
       click_button "Advanced search"
 
-      fill_in "Write the text", with: "Schwifty"
+      fill_in "With the text", with: "Schwifty"
       select "7. Affordable and Clean Energy", from: "By SDG"
       select "Last 24 hours", from: "js-advanced-search-date-min"
 
