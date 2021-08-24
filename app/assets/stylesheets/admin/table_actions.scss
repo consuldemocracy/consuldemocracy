@@ -19,6 +19,7 @@
     &:hover,
     &:focus {
       color: $link-hover;
+      text-decoration: none;
     }
 
     &::before {
@@ -77,7 +78,7 @@
   .investments-link {
     color: darken($warning-color, 20%);
 
-    &::before {
+    &:not(:hover, :focus)::before {
       color: $warning-color;
     }
   }
