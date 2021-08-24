@@ -6,12 +6,12 @@
   @include breakpoint(large) {
     .filter {
       @include grid-column;
-      width: 25%;
+      width: 33%;
     }
 
     .date-filters {
       float: left;
-      width: 25%;
+      width: 33%;
 
       .filter {
         width: 100%;
@@ -23,7 +23,7 @@
     }
 
     .submit {
-      width: 25%;
+      width: 33%;
     }
   }
 
