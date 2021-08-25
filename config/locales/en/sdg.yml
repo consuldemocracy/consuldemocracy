@@ -632,7 +632,6 @@ en:
         title: "Which SDGs and targets are aligned with my %{record}?"
         text: "SDG help page"
       hint: You can introduce the code of a specific goal/target or a text to find one. For more information visit the %{link}.
-      placeholder: "Write a goal or target code or description"
       remove_tag: "Remove"
       title: "Sustainable Development Goals and Targets"
     targets:
