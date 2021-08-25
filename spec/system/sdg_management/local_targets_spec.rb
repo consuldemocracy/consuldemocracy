@@ -40,7 +40,7 @@ describe "Local Targets" do
       visit new_sdg_management_local_target_path
 
       target = SDG::Target["1.1"]
-      select "#{target.code} #{target.title}", from: "Target"
+      select "1.1. #{target.title}", from: "Target"
       fill_in "Code", with: "1.1.1"
       fill_in "Title", with: "Local target title"
       fill_in "Description", with: "Local target description"
@@ -54,7 +54,7 @@ describe "Local Targets" do
       visit new_sdg_management_local_target_path
 
       target = SDG::Target["2.3"]
-      code_and_title = "#{target.code} #{target.title}"
+      code_and_title = "2.3. #{target.title}"
       select code_and_title, from: "Target"
       click_button "Create local target"
 

@@ -47,6 +47,14 @@ describe SDG::LocalTarget do
     expect(build(:sdg_local_target, target: nil)).not_to be_valid
   end
 
+  describe "#code_and_title" do
+    it "returns the code and the title" do
+      target = build(:sdg_local_target, code: "4.4.1", title: "Build a university")
+
+      expect(target.code_and_title).to eq "4.4.1. Build a university"
+    end
+  end
+
   describe "#set_related_goal" do
     it "before validation set related goal" do
       local_target = build(:sdg_local_target, code: "1.1.1", target: SDG::Target["1.1"], goal: nil)

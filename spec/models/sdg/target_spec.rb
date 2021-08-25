@@ -42,6 +42,14 @@ describe SDG::Target do
     end
   end
 
+  describe "#code_and_title" do
+    it "returns the code and the title" do
+      target = SDG::Target["8.A"]
+
+      expect(target.code_and_title).to start_with "8.A. Increase Aid for Trade support for developing"
+    end
+  end
+
   describe "#<=>" do
     let(:goal)   { build(:sdg_goal, code: 10) }
     let(:target) { build(:sdg_target, code: "10.19", goal: goal) }
