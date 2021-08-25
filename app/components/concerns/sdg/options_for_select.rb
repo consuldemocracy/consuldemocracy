@@ -8,6 +8,6 @@ module SDG::OptionsForSelect
   def target_options(selected_code = nil)
     targets = SDG::Target.all + SDG::LocalTarget.all
 
-    options_from_collection_for_select(targets.sort, :code, :code, selected_code)
+    options_from_collection_for_select(targets.sort, :code, :code_and_title, selected_code)
   end
 end

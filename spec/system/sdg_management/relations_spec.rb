@@ -151,6 +151,19 @@ describe "SDG Relations" do
         create(:budget_investment, title: "School", sdg_goals: [SDG::Goal[4]])
         create(:budget_investment, title: "Hospital", sdg_goals: [SDG::Goal[3]])
 
+        goal_4_targets = [
+          "4.1. Free Primary and Secondary Education",
+          "4.2. Equal Access to Quality Pre-Primary Education",
+          "4.3. Equal Access to Affordable Technical, Vocational and Higher Education",
+          "4.4. Increase the Number of People with Relevant Skills for Financial Success",
+          "4.5. Eliminate All Discrimination in Education",
+          "4.6. Universal Literacy and Numeracy",
+          "4.7. Education for Sustainable Development and Global Citizenship",
+          "4.A. Build and Upgrade Inclusive and Safe Schools",
+          "4.B. Expand Higher Education Scholarships for Developing Countries",
+          "4.C. Increase the supply of qualified teachers In Developing Countries"
+        ]
+
         visit sdg_management_budget_investments_path
         select "4. Quality Education", from: "goal_code"
         click_button "Search"
@@ -161,7 +174,7 @@ describe "SDG Relations" do
 
         expect(page).to have_select "By target",
                                     selected: "All targets",
-                                    enabled_options: ["All targets"] + %w[4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.A 4.B 4.C]
+                                    enabled_options: ["All targets"] + goal_4_targets
       end
 
       scenario "target filter" do
@@ -169,7 +182,7 @@ describe "SDG Relations" do
         create(:budget_investment, title: "Preschool", sdg_targets: [SDG::Target[4.2]])
 
         visit sdg_management_budget_investments_path
-        select "4.1", from: "target_code"
+        select "4.1. Free Primary and Secondary Education", from: "target_code"
         click_button "Search"
 
         expect(page).to have_content "School"
@@ -178,13 +191,13 @@ describe "SDG Relations" do
       end
 
       scenario "local target filter" do
-        create(:sdg_local_target, code: "4.1.1")
-        create(:sdg_local_target, code: "4.1.2")
+        create(:sdg_local_target, code: "4.1.1", title: "Improve local schools")
+        create(:sdg_local_target, code: "4.1.2", title: "Increase the teacher per student rate")
         create(:debate, title: "Rebuild local schools", sdg_local_targets: [SDG::LocalTarget["4.1.1"]])
         create(:debate, title: "Hire teachers", sdg_local_targets: [SDG::LocalTarget["4.1.2"]])
 
         visit sdg_management_debates_path
-        select "4.1.1", from: "target_code"
+        select "4.1.1. Improve local schools", from: "target_code"
         click_button "Search"
 
         expect(page).to have_content "Rebuild local schools"
@@ -212,25 +225,45 @@ describe "SDG Relations" do
       end
 
       scenario "dynamic target options depending on the selected goal" do
+        goal_1_targets = [
+          "1.1. Eradicate Extreme Poverty",
+          "1.2. Reduce Poverty by at Least 50%",
+          "1.3. Implement Social Protection Systems",
+          "1.4. Equal Rights to Ownership, Basic Services, Technology and Economic Resources",
+          "1.5. Build Resilience to Environmental, Economic and Social Disasters",
+          "1.A. Mobilize Resources to Implement Policies to End Poverty",
+          "1.B. Create pro-poor and gender-sensitive policy frameworks"
+        ]
+
+        goal_13_targets = [
+          "13.1. Strengthen resilience and Adaptive Capacity to Climate Related Disasters",
+          "13.2. Integrate Climate Change Measures into Policies and Planning",
+          "13.3. Build Knowledge and Capacity to Meet Climate Change",
+          "13.A. Implement the UN Framework Convention on Climate Change",
+          "13.B. Promote Mechanisms to Raise Capacity for Planning and Management"
+        ]
+
         visit sdg_management_polls_path
 
         select "1. No Poverty", from: "By goal"
 
         expect(page).to have_select "By target",
                                     selected: "All targets",
-                                    enabled_options: ["All targets"] + %w[1.1 1.2 1.3 1.4 1.5 1.A 1.B]
+                                    enabled_options: ["All targets"] + goal_1_targets
 
-        select "1.1", from: "By target"
+        select "1.1. Eradicate Extreme Poverty", from: "By target"
         select "13. Climate Action", from: "By goal"
 
         expect(page).to have_select "By target",
                                     selected: "All targets",
-                                    enabled_options: ["All targets"] + %w[13.1 13.2 13.3 13.A 13.B]
+                                    enabled_options: ["All targets"] + goal_13_targets
 
-        select "13.1", from: "By target"
+        select "13.3. Build Knowledge and Capacity to Meet Climate Change", from: "By target"
         select "All goals", from: "By goal"
 
-        expect(page).to have_select "By target", selected: "13.1", disabled_options: []
+        expect(page).to have_select "By target",
+                                    selected: "13.3. Build Knowledge and Capacity to Meet Climate Change",
+                                    disabled_options: []
       end
     end
   end

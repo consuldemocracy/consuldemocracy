@@ -18,6 +18,8 @@ class SDG::LocalTarget < ApplicationRecord
 
   before_validation :set_related_goal
 
+  alias_method :long_title, :title
+
   def self.[](code)
     find_by!(code: code)
   end

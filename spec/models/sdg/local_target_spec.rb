@@ -119,4 +119,12 @@ describe SDG::LocalTarget do
       expect { SDG::LocalTarget["1.1.99"] }.to raise_exception ActiveRecord::RecordNotFound
     end
   end
+
+  describe "#long_title" do
+    it "returns the title" do
+      target = build(:sdg_local_target, title: "Improve local water transport system")
+
+      expect(target.long_title).to eq "Improve local water transport system"
+    end
+  end
 end

@@ -39,8 +39,7 @@ describe "Local Targets" do
     scenario "Shows succesful notice when form is fullfilled correctly" do
       visit new_sdg_management_local_target_path
 
-      target = SDG::Target["1.1"]
-      select "1.1. #{target.title}", from: "Target"
+      select "1.1. Eradicate Extreme Poverty", from: "Target"
       fill_in "Code", with: "1.1.1"
       fill_in "Title", with: "Local target title"
       fill_in "Description", with: "Local target description"
@@ -53,8 +52,7 @@ describe "Local Targets" do
     scenario "Shows form errors when not valid" do
       visit new_sdg_management_local_target_path
 
-      target = SDG::Target["2.3"]
-      code_and_title = "2.3. #{target.title}"
+      code_and_title = "2.3. Double the Productivity and Incomes of Small-Scale Food Producers"
       select code_and_title, from: "Target"
       click_button "Create local target"
 

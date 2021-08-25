@@ -20,7 +20,7 @@ class SDG::RelatedListSelectorComponent < ApplicationComponent
     {
       tag: goal_or_target.code_and_title.gsub(",", ""),
       display_text: text_for(goal_or_target),
-      title: goal_or_target.title,
+      title: goal_or_target.long_title,
       value: goal_or_target.code
     }
   end

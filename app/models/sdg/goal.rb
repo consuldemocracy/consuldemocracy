@@ -9,6 +9,7 @@ class SDG::Goal < ApplicationRecord
   def title
     I18n.t("sdg.goals.goal_#{code}.title")
   end
+  alias_method :long_title, :title
 
   def title_in_two_lines
     I18n.t("sdg.goals.goal_#{code}.title_in_two_lines")

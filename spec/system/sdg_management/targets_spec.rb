@@ -25,11 +25,11 @@ describe "Targets" do
 
       visit sdg_management_targets_path
 
-      expect(goal_8.title).to appear_before(goal_8_target_2.title)
-      expect(goal_8_target_2.title).to appear_before(goal_8_target_10.title)
-      expect(goal_8_target_10.title).to appear_before(goal_16.title)
-      expect(goal_16.title).to appear_before(goal_16_target_10.title)
-      expect(goal_16_target_10.title).to appear_before(goal_16_target_a.title)
+      expect(goal_8.title).to appear_before(goal_8_target_2.long_title)
+      expect(goal_8_target_2.long_title).to appear_before(goal_8_target_10.long_title)
+      expect(goal_8_target_10.long_title).to appear_before(goal_16.title)
+      expect(goal_16.title).to appear_before(goal_16_target_10.long_title)
+      expect(goal_16_target_10.long_title).to appear_before(goal_16_target_a.long_title)
     end
   end
 end

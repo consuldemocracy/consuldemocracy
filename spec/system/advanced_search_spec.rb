@@ -269,6 +269,17 @@ describe "Advanced search" do
       create(:budget_investment, title: "Purifier", heading: heading, sdg_goals: [SDG::Goal[6]])
       create(:budget_investment, title: "Hospital", heading: heading, sdg_goals: [SDG::Goal[3]])
 
+      goal_6_targets = [
+        "6.1. Safe and Affordable Drinking Water",
+        "6.2. End Open Defecation and Provide Access to Sanitation and Hygiene",
+        "6.3. Improve Water Quality, Wastewater Treatment and Safe Reuse",
+        "6.4. Increase Water-Use Efficiency and Ensure Freshwater Supplies",
+        "6.5. Implement Integrated Water Resources Management",
+        "6.6. Protect and Restore Water-Related Ecosystems",
+        "6.A. Expand Water and Sanitation Support to Developing Countries",
+        "6.B. Support Local Engagement in Water and Sanitation Management"
+      ]
+
       visit budget_investments_path(budget)
       click_button "Advanced search"
       select "6. Clean Water and Sanitation", from: "By SDG"
@@ -283,7 +294,7 @@ describe "Advanced search" do
 
       expect(page).to have_select "By target",
                                   selected: "Select a target",
-                                  enabled_options: ["Select a target"] + %w[6.1 6.2 6.3 6.4 6.5 6.6 6.A 6.B]
+                                  enabled_options: ["Select a target"] + goal_6_targets
     end
 
     scenario "Search by target" do
@@ -293,7 +304,7 @@ describe "Advanced search" do
 
       visit debates_path
       click_button "Advanced search"
-      select "4.2", from: "By target"
+      select "4.2. Equal Access to Quality Pre-Primary Education", from: "By target"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 debate")
@@ -306,6 +317,24 @@ describe "Advanced search" do
     end
 
     scenario "Dynamic target options depending on the selected goal" do
+      goal_1_targets = [
+        "1.1. Eradicate Extreme Poverty",
+        "1.2. Reduce Poverty by at Least 50%",
+        "1.3. Implement Social Protection Systems",
+        "1.4. Equal Rights to Ownership, Basic Services, Technology and Economic Resources",
+        "1.5. Build Resilience to Environmental, Economic and Social Disasters",
+        "1.A. Mobilize Resources to Implement Policies to End Poverty",
+        "1.B. Create pro-poor and gender-sensitive policy frameworks"
+      ]
+
+      goal_13_targets = [
+        "13.1. Strengthen resilience and Adaptive Capacity to Climate Related Disasters",
+        "13.2. Integrate Climate Change Measures into Policies and Planning",
+        "13.3. Build Knowledge and Capacity to Meet Climate Change",
+        "13.A. Implement the UN Framework Convention on Climate Change",
+        "13.B. Promote Mechanisms to Raise Capacity for Planning and Management"
+      ]
+
       visit proposals_path
 
       click_button "Advanced search"
@@ -313,19 +342,21 @@ describe "Advanced search" do
 
       expect(page).to have_select "By target",
                                   selected: "Select a target",
-                                  enabled_options: ["Select a target"] + %w[1.1 1.2 1.3 1.4 1.5 1.A 1.B]
+                                  enabled_options: ["Select a target"] + goal_1_targets
 
-      select "1.1", from: "By target"
+      select "1.1. Eradicate Extreme Poverty", from: "By target"
       select "13. Climate Action", from: "By SDG"
 
       expect(page).to have_select "By target",
                                   selected: "Select a target",
-                                  enabled_options: ["Select a target"] + %w[13.1 13.2 13.3 13.A 13.B]
+                                  enabled_options: ["Select a target"] + goal_13_targets
 
-      select "13.1", from: "By target"
+      select "13.3. Build Knowledge and Capacity to Meet Climate Change", from: "By target"
       select "Select a goal", from: "By SDG"
 
-      expect(page).to have_select "By target", selected: "13.1", disabled_options: []
+      expect(page).to have_select "By target",
+                                  selected: "13.3. Build Knowledge and Capacity to Meet Climate Change",
+                                  disabled_options: []
     end
   end
 end
