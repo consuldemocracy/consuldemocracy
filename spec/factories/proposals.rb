@@ -137,7 +137,6 @@ FactoryBot.define do
   factory :dashboard_action, class: "Dashboard::Action" do
     title { Faker::Lorem.sentence[0..79].strip }
     description { Faker::Lorem.sentence }
-    link { nil }
     request_to_administrators { true }
     day_offset { 0 }
     required_supports { 0 }
@@ -148,10 +147,6 @@ FactoryBot.define do
 
     trait :admin_request do
       request_to_administrators { true }
-    end
-
-    trait :external_link do
-      link { Faker::Internet.url }
     end
 
     trait :inactive do
