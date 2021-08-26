@@ -44,8 +44,17 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ### Windows
 
-Pending to be completed... Contributions Welcome!
+https://www.docker.com/get-started --> select Download for Windows with default options checked, and run. Should take ~5 minutes. 
 
+If you encounter the "WSL 2 installation incomplete" error:
+
+1) Start PowerShell as Administrator
+2) run `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+3) run `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
+4) install [WSL2 Linux kernel update package for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+5) run `wsl --set-default-version 2`
+6) Restart your PC 
+7) The Docker Enginer will start up. Give it a few minutes. You now have the option of using the docker desktop app (GUI) and `docker` PowerShell/Bash commands
 ## Installation
 
 Clone the repo on your computer and enter the folder:
