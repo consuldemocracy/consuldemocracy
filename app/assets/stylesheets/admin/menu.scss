@@ -7,12 +7,19 @@
   ul {
     list-style-type: none;
     margin-bottom: 0;
-    margin-left: 0;
+    margin-#{$global-left}: 0;
     padding: 0;
   }
 
   > ul > li a {
+    display: flex;
     font-weight: bold;
+
+    &::before,
+    &::after {
+      flex: 1em 0 0;
+      margin-top: 0.1em;
+    }
 
     @mixin icon($name, $style) {
       @include has-fa-icon($name, $style);
@@ -20,15 +27,6 @@
       &::before {
         @extend %admin-menu-icon;
       }
-    }
-
-    [class^="icon-"] {
-      display: inline-block;
-      font-size: rem-calc(20);
-      line-height: $line-height;
-      text-align: center;
-      vertical-align: middle;
-      width: $line-height * 1.5;
     }
 
     &.booths-link {
@@ -142,7 +140,7 @@
   li a {
     color: inherit;
     display: block;
-    padding: $line-height / 2 $line-height / 4;
+    padding: $line-height / 2;
     vertical-align: top;
 
     &:hover {
@@ -154,15 +152,13 @@
 
   .is-accordion-submenu-parent {
 
-    > a::after {
-      border: 0;
-      content: "\f078";
-      font-family: "Font Awesome 5 Free";
-      font-weight: bold;
-      height: auto;
-      position: absolute;
-      right: 24px;
-      transition: 0.25s;
+    > a {
+      @include has-fa-icon(chevron-down, solid, after);
+
+      &::after {
+        margin-#{$global-left}: auto;
+        transition: 0.25s;
+      }
     }
   }
 

@@ -17,8 +17,7 @@
 
 %admin-menu-icon {
   font-size: rem-calc(20);
-  margin-left: rem-calc(8);
-  margin-right: rem-calc(10);
+  margin-#{$global-right}: rem-calc(10);
 }
 
 $font-awesome-icons: (
