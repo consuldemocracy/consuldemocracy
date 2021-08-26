@@ -21,6 +21,5 @@ module Measurable
     def description_min_length
       10
     end
-
   end
 end
