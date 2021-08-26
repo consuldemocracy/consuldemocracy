@@ -176,6 +176,7 @@
 
     a {
       font-weight: normal;
+      margin-#{$global-right}: 0;
     }
 
     .is-active {
