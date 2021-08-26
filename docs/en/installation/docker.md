@@ -44,7 +44,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ### Windows
 
-https://www.docker.com/get-started --> select Download for Windows with default options checked, and run. Should take ~5 minutes. 
+https://www.docker.com/get-started --> Under Docker Desktop, select Download for Windows with default options checked, and run. Should take ~5 minutes. 
 
 If you encounter the "WSL 2 installation incomplete" error:
 
