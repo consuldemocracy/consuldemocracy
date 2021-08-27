@@ -83,15 +83,8 @@ $table-header:   #ecf1f6;
 
         .submenu {
           border: 0;
-          display: block;
           margin-top: 0;
           position: initial;
-          width: 100%;
-        }
-
-        .is-active {
-          font-weight: normal;
-          text-decoration: none;
         }
 
         .is-submenu-item {
@@ -99,7 +92,7 @@ $table-header:   #ecf1f6;
         }
 
         a {
-          font-weight: normal !important;
+          font-weight: normal;
         }
       }
 
