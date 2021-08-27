@@ -81,14 +81,14 @@ $table-header:   #ecf1f6;
 
       .top-bar-right {
 
-        .submenu {
-          border: 0;
-          margin-top: 0;
-          position: initial;
+        > ul {
+          border-bottom: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
         }
 
-        .is-submenu-item {
-          padding: $line-height / 2 0;
+        .submenu {
+          position: initial;
         }
 
         a {

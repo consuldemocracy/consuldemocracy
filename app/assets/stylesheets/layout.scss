@@ -610,6 +610,17 @@ body > header,
 
   .menu {
 
+    @include breakpoint(small only) {
+      border-bottom: 1px solid $border;
+      margin-bottom: $line-height;
+      margin-top: $line-height / 2;
+      padding-bottom: $line-height;
+
+      .submenu {
+        margin-top: 0;
+      }
+    }
+
     &.is-dropdown-submenu {
       background: $body-background;
       color: $text;
