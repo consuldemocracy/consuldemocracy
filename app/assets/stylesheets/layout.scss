@@ -116,6 +116,19 @@ button,
   &:focus {
     outline: $outline-focus;
   }
+
+  &:focus-visible {
+    outline: $outline-focus;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:active,
+  &:focus:active {
+    outline: $outline-focus;
+  }
 }
 
 .button {
