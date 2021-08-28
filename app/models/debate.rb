@@ -165,7 +165,7 @@ class Debate < ApplicationRecord
   end
 
   def description_sanitized
-    real_description_length = ActionView::Base.full_sanitizer.sanitize("#{description}").squish.length
+    real_description_length = ActionView::Base.full_sanitizer.sanitize(description.to_s).squish.length
     if real_description_length < Debate.description_min_length
       errors.add(:description, :too_short, count: Debate.description_min_length)
     end
