@@ -33,7 +33,7 @@ describe "Homepage", :admin do
 
       within("#widget_feed_#{proposals_feed.id}") do
         select "1", from: "widget_feed_limit"
-        click_button "Enable"
+        click_button "No"
       end
 
       visit root_path
@@ -52,7 +52,7 @@ describe "Homepage", :admin do
       visit admin_homepage_path
       within("#widget_feed_#{debates_feed.id}") do
         select "2", from: "widget_feed_limit"
-        click_button "Enable"
+        click_button "No"
       end
 
       visit root_path
@@ -73,12 +73,12 @@ describe "Homepage", :admin do
 
       within("#widget_feed_#{proposals_feed.id}") do
         select "3", from: "widget_feed_limit"
-        click_button "Enable"
+        click_button "No"
       end
 
       within("#widget_feed_#{debates_feed.id}") do
         select "3", from: "widget_feed_limit"
-        click_button "Enable"
+        click_button "No"
       end
 
       visit root_path
@@ -100,7 +100,7 @@ describe "Homepage", :admin do
       visit admin_homepage_path
       within("#widget_feed_#{processes_feed.id}") do
         select "3", from: "widget_feed_limit"
-        click_button "Enable"
+        click_button "No"
       end
 
       visit root_path
@@ -153,8 +153,8 @@ describe "Homepage", :admin do
     create(:proposal, tag_list: "Sport")
 
     visit admin_homepage_path
-    within("#setting_#{user_recommendations.id}") do
-      click_button "Enable"
+    within("#edit_setting_#{user_recommendations.id}") do
+      click_button "No"
     end
 
     expect(page).to have_content "Value updated"

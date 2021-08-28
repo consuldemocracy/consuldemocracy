@@ -1,10 +1,12 @@
 class Admin::Settings::FeaturedSettingsFormComponent < ApplicationComponent
-  attr_reader :feature, :tab
+  attr_reader :feature, :tab, :describedby
+  alias_method :describedby?, :describedby
   delegate :enabled?, to: :feature
 
-  def initialize(feature, tab: nil)
+  def initialize(feature, tab: nil, describedby: true)
     @feature = feature
     @tab = tab
+    @describedby = describedby
   end
 
   private
@@ -20,7 +22,7 @@ class Admin::Settings::FeaturedSettingsFormComponent < ApplicationComponent
     def options
       {
         "aria-labelledby": dom_id(feature, :title),
-        "aria-describedby": dom_id(feature, :description),
+        "aria-describedby": (dom_id(feature, :description) if describedby?),
         "aria-pressed": enabled?
       }
     end

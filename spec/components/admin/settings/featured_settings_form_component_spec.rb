@@ -11,10 +11,18 @@ describe Admin::Settings::FeaturedSettingsFormComponent do
     expect(page).to have_css "button[aria-labelledby='title_setting_#{setting.id}']"
   end
 
-  it "includes an aria-describedby attribute" do
-    render_inline component
+  describe "aria-describedby attribute" do
+    it "is rendered by default" do
+      render_inline component
 
-    expect(page).to have_css "button[aria-describedby='description_setting_#{setting.id}']"
+      expect(page).to have_css "button[aria-describedby='description_setting_#{setting.id}']"
+    end
+
+    it "is not rendered when the describedby option is false" do
+      render_inline Admin::Settings::FeaturedSettingsFormComponent.new(setting, describedby: false)
+
+      expect(page).not_to have_css "[aria-describedby]"
+    end
   end
 
   describe "aria-pressed attribute" do
