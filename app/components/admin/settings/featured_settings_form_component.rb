@@ -21,9 +21,14 @@ class Admin::Settings::FeaturedSettingsFormComponent < ApplicationComponent
 
     def options
       {
+        data: { disable_with: text },
         "aria-labelledby": dom_id(feature, :title),
         "aria-describedby": (dom_id(feature, :description) if describedby?),
         "aria-pressed": enabled?
       }
+    end
+
+    def remote?
+      !%w[feature.map feature.remote_census feature.sdg].include?(feature.key)
     end
 end

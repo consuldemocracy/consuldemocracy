@@ -20,9 +20,11 @@ describe "Admin feature flags", :admin do
     visit admin_settings_path
     within("#settings-tabs") { click_link "Participation processes" }
 
-    within("tr", text: "Participatory budgeting") { click_button "Yes" }
+    within("tr", text: "Participatory budgeting") do
+      click_button "Yes"
 
-    expect(page).to have_content "Value updated"
+      expect(page).to have_button "No"
+    end
 
     within("#side_menu") do
       expect(page).not_to have_link "Participatory budgets"
@@ -49,9 +51,12 @@ describe "Admin feature flags", :admin do
 
     visit admin_settings_path
     within("#settings-tabs") { click_link "Participation processes" }
-    within("tr", text: "Participatory budgeting") { click_button "No" }
 
-    expect(page).to have_content "Value updated"
+    within("tr", text: "Participatory budgeting") do
+      click_button "No"
+
+      expect(page).to have_button "Yes"
+    end
 
     within("#side_menu") do
       expect(page).to have_link "Participatory budgets"
@@ -62,11 +67,9 @@ describe "Admin feature flags", :admin do
     visit admin_settings_path
     click_link "Features"
 
-    within("tr", text: "Twitter login") { click_button "Yes" }
-
-    expect(page).to have_content "Value updated"
-
     within("tr", text: "Twitter login") do
+      click_button "Yes"
+
       expect(page).to have_button "No"
       expect(page).not_to have_button "Yes"
     end
@@ -76,11 +79,9 @@ describe "Admin feature flags", :admin do
     visit admin_settings_path
     click_link "Features"
 
-    within("tr", text: "Proposals and budget investments geolocation") { click_button "No" }
-
-    expect(page).to have_content "Value updated"
-
     within("tr", text: "Proposals and budget investments geolocation") do
+      click_button "No"
+
       expect(page).to have_button "Yes"
       expect(page).not_to have_button "No"
     end

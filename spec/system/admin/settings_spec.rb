@@ -268,9 +268,13 @@ describe "Admin settings", :admin do
 
       visit admin_settings_path
       click_link "SDG configuration"
-      within("tr", text: "Whatever") { click_button "No" }
 
-      expect(page).to have_content "Value updated"
+      within("tr", text: "Whatever") do
+        click_button "No"
+
+        expect(page).to have_button "Yes"
+      end
+
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("h2", exact_text: "SDG configuration")
     end
@@ -282,9 +286,12 @@ describe "Admin settings", :admin do
 
       visit admin_settings_path
       find("#features-tab").click
-      within("tr", text: "Skip user verification") { click_button "Yes" }
 
-      expect(page).to have_content "Value updated"
+      within("tr", text: "Skip user verification") do
+        click_button "Yes"
+
+        expect(page).to have_button "No"
+      end
     end
 
     scenario "activate skip verification" do
@@ -292,9 +299,12 @@ describe "Admin settings", :admin do
 
       visit admin_settings_path
       find("#features-tab").click
-      within("tr", text: "Skip user verification") { click_button "No" }
 
-      expect(page).to have_content "Value updated"
+      within("tr", text: "Skip user verification") do
+        click_button "No"
+
+        expect(page).to have_button "Yes"
+      end
     end
   end
 
@@ -319,6 +329,25 @@ describe "Admin settings", :admin do
       expect(page).to have_content "To show the configuration options from " \
                                    "Sustainable Development Goals you must " \
                                    'enable "SDG" on "Features" tab.'
+    end
+
+    scenario "is enabled right after enabling the feature" do
+      Setting["feature.sdg"] = false
+      login_as(create(:administrator).user)
+
+      visit admin_settings_path
+
+      click_link "Features"
+
+      within("tr", text: "SDG") do
+        click_button "No"
+
+        expect(page).to have_button "Yes"
+      end
+
+      click_link "SDG configuration"
+
+      expect(page).to have_css "h2", exact_text: "SDG configuration"
     end
   end
 end
