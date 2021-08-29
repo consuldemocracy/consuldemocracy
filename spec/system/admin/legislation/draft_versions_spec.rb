@@ -27,7 +27,6 @@ describe "Admin legislation draft versions", :admin do
         click_link "Collaborative Legislation"
       end
 
-      click_link "All"
       within("tr", text: "An example legislation process") { click_link "Edit" }
       click_link "Drafting"
 
