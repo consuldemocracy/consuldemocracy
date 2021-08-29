@@ -105,7 +105,7 @@ class Officing::Residence
     end
 
     def residency_valid?
-      @census_api_response.valid? && valid_year_of_birth?
+      @census_api_response.valid? && valid_year_of_birth? && @census_api_response.is_citizen?
     end
 
     def valid_year_of_birth?
