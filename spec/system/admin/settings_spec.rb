@@ -14,12 +14,12 @@ describe "Admin settings", :admin do
   end
 
   scenario "Update" do
-    setting = create(:setting, key: "super.users.first")
+    create(:setting, key: "super.users.first")
 
     visit admin_settings_path
 
-    within("#edit_setting_#{setting.id}") do
-      fill_in "value_setting_#{setting.id}", with: "Super Users of level 1"
+    within "tr", text: "First" do
+      fill_in "First", with: "Super Users of level 1"
       click_button "Update"
     end
 
@@ -173,13 +173,13 @@ describe "Admin settings", :admin do
       end
 
       scenario "On #tab-remote-census-configuration" do
-        remote_census_setting = create(:setting, key: "remote_census.general.whatever")
+        create(:setting, key: "remote_census.general.whatever")
 
         visit admin_settings_path
         find("#remote-census-tab").click
 
-        within("#edit_setting_#{remote_census_setting.id}") do
-          fill_in "value_setting_#{remote_census_setting.id}", with: "New value"
+        within "tr", text: "Whatever" do
+          fill_in "Whatever", with: "New value"
           click_button "Update"
         end
 
@@ -189,13 +189,13 @@ describe "Admin settings", :admin do
     end
 
     scenario "On #tab-configuration" do
-      configuration_setting = Setting.create!(key: "whatever")
+      Setting.create!(key: "whatever")
 
       visit admin_settings_path
       find("#tab-configuration").click
 
-      within("#edit_setting_#{configuration_setting.id}") do
-        fill_in "value_setting_#{configuration_setting.id}", with: "New value"
+      within "tr", text: "Whatever" do
+        fill_in "Whatever", with: "New value"
         click_button "Update"
       end
 
@@ -209,13 +209,13 @@ describe "Admin settings", :admin do
       end
 
       scenario "On #tab-map-configuration" do
-        map_setting = Setting.create!(key: "map.whatever")
+        Setting.create!(key: "map.whatever")
 
         visit admin_settings_path
         click_link "Map configuration"
 
-        within("#edit_setting_#{map_setting.id}") do
-          fill_in "value_setting_#{map_setting.id}", with: "New value"
+        within "tr", text: "Whatever" do
+          fill_in "Whatever", with: "New value"
           click_button "Update"
         end
 
@@ -225,13 +225,13 @@ describe "Admin settings", :admin do
     end
 
     scenario "On #tab-proposals" do
-      proposal_dashboard_setting = Setting.create!(key: "proposals.whatever")
+      Setting.create!(key: "proposals.whatever")
 
       visit admin_settings_path
       find("#proposals-tab").click
 
-      within("#edit_setting_#{proposal_dashboard_setting.id}") do
-        fill_in "value_setting_#{proposal_dashboard_setting.id}", with: "New value"
+      within "tr", text: "Whatever" do
+        fill_in "Whatever", with: "New value"
         click_button "Update"
       end
 
