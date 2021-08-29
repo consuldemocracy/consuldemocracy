@@ -2,78 +2,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title><%= content_for?(:title) ? yield(:title) : default_title %></title>
-<script>
-
-document.addEventListener("DOMContentLoaded", function(event) { 
-  (function () {
-    if ( typeof NodeList.prototype.forEach === "function" ) return false;
-    NodeList.prototype.forEach = Array.prototype.forEach;
-})();
-
-
-	for (let step = 2; step <= document.querySelectorAll(".datos tr").length; step++) {
-	 if(document.querySelector(".datos tr:nth-child("+step+") td:nth-child(2)").innerText.trim()== "NORTE"){
-		document.querySelector(".datos tr:nth-child("+step+"").style.backgroundColor="#80CEF4";
-	 }else if(document.querySelector(".datos tr:nth-child("+step+") td:nth-child(2)").innerText.trim()== "SUR"){
-		document.querySelector(".datos tr:nth-child("+step+"").style.backgroundColor="#95EF85";
-	 }else if(document.querySelector(".datos tr:nth-child("+step+") td:nth-child(2)").innerText.trim()== "ESTE"){
-		document.querySelector(".datos tr:nth-child("+step+"").style.backgroundColor="#DEB5D5";
-	 }	 
-	}
-	
-	document.getElementById("entradaDatos").onkeyup = function() {myFunction()};
-	
-function myFunction() {
-var name;
-	var count=0;
-var ua = window.navigator.userAgent;
-					var msie = ua.indexOf("MSIE ");
-		
-		for (let step = 2; step <= document.querySelectorAll(".datos tr").length; step++) {		
-			name= document.querySelector(".datos tr:nth-child("+step+") td:nth-child(1)").innerText.toLowerCase();		
-						
-			if(document.getElementById("entradaDatos").value.toLowerCase()==""){			
-				//document.querySelectorAll(".datos tr").style.display="none";
-					
-          
-					if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))
-					{
-						for (let list = 2; list <= document.querySelectorAll(".datos tr").length; list++) {	
-							document.querySelectorAll(".datos tr")[list].style.display="none";
-						}
-					}
-					else  
-					{
-           
-                  $(".datos tr").css("display", "none");
-              
-						//document.querySelectorAll(".datos tr").forEach(el => el.style.display="none");	
-					}
-        
-				document.querySelector(".datos tr:nth-child(1)").style.display="table-row";
-				document.getElementById("textoInformativo").style.display="block";
-				document.getElementById("textoInformativo2").style.display="none";			
-			}else{
-			  document.getElementById("textoInformativo").style.display="none";
-			  if(name.indexOf(document.getElementById("entradaDatos").value.toLowerCase())!= "-1"){				
-				document.querySelector(".datos tr:nth-child("+step+")").style.display="table-row";
-				count++;
-			  }else{
-				document.querySelector(".datos tr:nth-child("+step+")").style.display="none";			
-			  }
-			}	
-		}
-		if(count==0 && document.getElementById("entradaDatos").value.toLowerCase()!=""){
-			document.getElementById("textoInformativo2").style.display="block";
-		}else{
-			document.getElementById("textoInformativo2").style.display="none";
-		}	
-	}
-});
-
-</script>
 <%= stylesheet_link_tag "application" %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
 <%= favicon_link_tag "favicon.ico" %>
 <%= render "layouts/disable_animations_in_tests" if Rails.env.test? %>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  (function () {
+    if ( typeof NodeList.prototype.forEach === "function" ) {
+      return false;
+    }
+    NodeList.prototype.forEach = Array.prototype.forEach;
+  })();
+
+  for (let step = 2; step <= document.querySelectorAll(".datos tr").length; step++) {
+    if(document.querySelector(".datos tr:nth-child("+step+") td:nth-child(2)").innerText.trim()== "NORTE"){
+      document.querySelector(".datos tr:nth-child("+step+"").style.backgroundColor="#80CEF4";
+    }else if(document.querySelector(".datos tr:nth-child("+step+") td:nth-child(2)").innerText.trim()== "SUR"){
+      document.querySelector(".datos tr:nth-child("+step+"").style.backgroundColor="#95EF85";
+    }else if(document.querySelector(".datos tr:nth-child("+step+") td:nth-child(2)").innerText.trim()== "ESTE"){
+      document.querySelector(".datos tr:nth-child("+step+"").style.backgroundColor="#DEB5D5";
+    }
+  }
+
+  document.getElementById("entradaDatos").onkeyup = function() {myFunction()};
+
+  function myFunction() {
+    var name;
+    var count=0;
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    for (let step = 2; step <= document.querySelectorAll(".datos tr").length; step++) {
+      name= document.querySelector(".datos tr:nth-child("+step+") td:nth-child(1)").innerText.toLowerCase();
+
+      if(document.getElementById("entradaDatos").value.toLowerCase()==""){
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+          for (let list = 2; list <= document.querySelectorAll(".datos tr").length; list++) {
+            document.querySelectorAll(".datos tr")[list].style.display="none";
+          }
+        } else {
+          document.querySelectorAll(".datos tr")[list].style.display="none";
+          //$(".datos tr").css("display", "none");
+        }
+
+        document.querySelector(".datos tr:nth-child(1)").style.display="table-row";
+        document.getElementById("textoInformativo").style.display="block";
+        document.getElementById("textoInformativo2").style.display="none";
+      } else {
+        document.getElementById("textoInformativo").style.display="none";
+        if(name.indexOf(document.getElementById("entradaDatos").value.toLowerCase())!= "-1"){
+          document.querySelector(".datos tr:nth-child("+step+")").style.display="table-row";
+          count++;
+        }else{
+          document.querySelector(".datos tr:nth-child("+step+")").style.display="none";
+        }
+      }
+    }
+    if(count==0 && document.getElementById("entradaDatos").value.toLowerCase()!=""){
+      document.getElementById("textoInformativo2").style.display="block";
+    }else{
+      document.getElementById("textoInformativo2").style.display="none";
+    }
+  }
+});
+
+</script>
+
