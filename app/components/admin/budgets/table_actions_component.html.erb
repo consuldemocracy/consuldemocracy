@@ -1,7 +1,7 @@
 <%= render actions_component do |actions| %>
   <%= actions.action(:investments,
                      text: t("admin.budgets.index.budget_investments"),
-                     path: admin_budget_budget_investments_path(budget_id: budget.id)) %>
+                     path: admin_budget_budget_investments_path(budget)) %>
   <% if budget.poll.present? %>
     <%= actions.action(:ballots,
                        text: t("admin.budgets.index.admin_ballots"),

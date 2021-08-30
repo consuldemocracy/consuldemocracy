@@ -1,40 +1,32 @@
 .admin .budgets-links {
-  $gap: $line-height;
-  @include flex-with-gap($gap);
-  align-items: baseline;
+  $vertical-gap: $line-height;
+  @include admin-action-icons;
+  @include flex-with-gap;
+  align-items: flex-start;
   flex-wrap: wrap;
-  margin-top: -$gap;
+  margin-top: -$vertical-gap;
 
   > * {
-    margin-top: $gap;
+    $min-width: $sdg-icon-min-width;
+    margin-top: $vertical-gap;
+    min-width: $min-width;
+
+    @supports (max-width: max-content) {
+      flex-basis: $min-width;
+      flex-grow: 1;
+      max-width: max-content;
+    }
   }
 
   + * {
     margin-top: $line-height;
   }
 
-  .preview-link {
-    @include has-fa-icon(eye, regular);
-    @include hollow-button;
-  }
-
-  .edit-link {
-    @include has-fa-icon(edit, regular);
-    @include hollow-button;
+  a {
+    @include icon-on-top;
   }
 
   .results-link {
-    @include hollow-button;
-  }
-
-  .edit-link,
-  .preview-link,
-  .results-link {
-    margin-left: $gap;
-    margin-top: $gap;
-
-    &::before {
-      margin-#{$global-right}: $font-icon-margin;
-    }
+    @include has-fa-icon(poll, solid);
   }
 }

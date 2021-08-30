@@ -1,5 +1,6 @@
 .admin .groups-and-headings {
   $gap: rem-calc(map-get($grid-column-gutter, medium));
+  @include admin-action-icons;
 
   > section + section {
     margin-top: $line-height * 1.5;
@@ -49,15 +50,6 @@
     .edit-link,
     .destroy-link {
       @include icon-on-top;
-    }
-
-    .edit-link {
-      @include has-fa-icon(edit, regular);
-    }
-
-    .destroy-link {
-      @include has-fa-icon(trash-alt, regular);
-      color: darken($alert-color, 5%);
     }
 
     .new-link {

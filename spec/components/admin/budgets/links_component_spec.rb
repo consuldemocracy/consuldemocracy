@@ -78,4 +78,23 @@ describe Admin::Budgets::LinksComponent, controller: Admin::BaseController do
       expect(page).not_to have_link "Preview"
     end
   end
+
+  describe "investments link" do
+    let(:budget) { create(:budget) }
+    let(:component) { Admin::Budgets::LinksComponent.new(budget) }
+
+    it "is shown for budgets with investments" do
+      create(:budget_investment, budget: budget)
+
+      render_inline component
+
+      expect(page).to have_link "Investment projects"
+    end
+
+    it "is not shown for budgets without investments" do
+      render_inline component
+
+      expect(page).not_to have_link "Investment projects"
+    end
+  end
 end

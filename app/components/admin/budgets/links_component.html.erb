@@ -1,4 +1,10 @@
 <div class="budgets-links">
+  <% if budget.investments.any? %>
+    <%= action(:investments,
+               text: t("admin.budgets.index.budget_investments"),
+               path: admin_budget_budget_investments_path(budget)) %>
+  <% end %>
+
   <% if can?(:read_results, budget) %>
     <%= action(:results, text: results_text, path: budget_results_path(budget)) %>
   <% else %>
