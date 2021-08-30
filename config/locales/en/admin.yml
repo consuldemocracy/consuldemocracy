@@ -69,6 +69,11 @@ en:
         no_activity: There are no moderators activity.
     budgets:
       actions:
+        confirm:
+          destroy: "Are you sure? This will delete the budget and all its associated groups and headings. This action cannot be undone."
+        descriptions:
+          calculate_winners: 'After calculating the results, only administrators will be able to access them. They will be public when the project reaches the "%{phase}" phase <strong>if the option "Show results" is enabled</strong> when editing the budget.'
+          destroy: "This will delete the budget and all its associated groups and headers. This action cannot be undone."
         edit: "Edit budget"
         preview: "Preview"
         preview_results: "Preview results"

@@ -4,7 +4,7 @@ describe Admin::Budgets::TableActionsComponent, controller: Admin::BaseControlle
   let(:budget) { create(:budget) }
   let(:component) { Admin::Budgets::TableActionsComponent.new(budget) }
 
-  it "renders actions to edit and delete budget, manage investments and manage ballots" do
+  it "renders actions to edit budget, manage investments and manage ballots" do
     render_inline component
 
     expect(page).to have_link count: 3
@@ -12,8 +12,7 @@ describe Admin::Budgets::TableActionsComponent, controller: Admin::BaseControlle
     expect(page).to have_link "Edit", href: /#{budget.id}\Z/
     expect(page).to have_link "Preview", href: /budgets/
 
-    expect(page).to have_button count: 2
-    expect(page).to have_css "form[action*='budgets']", exact_text: "Delete"
+    expect(page).to have_button count: 1
     expect(page).to have_button "Ballots"
   end
 

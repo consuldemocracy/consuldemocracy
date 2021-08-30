@@ -1,8 +1,8 @@
-<div class="budgets-actions">
-  <%= render Admin::Budgets::CalculateWinnersButtonComponent.new(budget) %>
-
-  <%= action(:destroy,
-             text: t("admin.budgets.edit.delete"),
-             method: :delete,
-             class: "delete") %>
-</div>
+<dl class="budgets-actions">
+  <% actions.each do |action_name, button| %>
+    <div>
+      <dt><%= button[:html] %></dt>
+      <dd id="<%= descriptor_id(action_name) %>"><%= sanitize(button[:hint]) %></dd>
+    </div>
+  <% end %>
+</dl>

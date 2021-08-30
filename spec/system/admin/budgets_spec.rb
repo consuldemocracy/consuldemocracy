@@ -92,22 +92,6 @@ describe "Admin budgets", :admin do
         end
       end
     end
-
-    scenario "Delete budget from index" do
-      create(:budget, name: "To be deleted")
-
-      visit admin_budgets_path
-
-      within "tr", text: "To be deleted" do
-        message = "Are you sure? This action will delete \"To be deleted\" and can't be undone."
-
-        accept_confirm(message) { click_button "Delete" }
-      end
-
-      expect(page).to have_content("Budget deleted successfully")
-      expect(page).to have_content("There are no budgets.")
-      expect(page).not_to have_content "To be deleted"
-    end
   end
 
   context "Publish" do
@@ -141,18 +125,10 @@ describe "Admin budgets", :admin do
 
     scenario "Destroy a budget without investments" do
       visit admin_budget_path(budget)
-      click_button "Delete budget"
 
-      expect(page).to have_content("Budget deleted successfully")
-      expect(page).to have_content("There are no budgets.")
-    end
+      message = "Are you sure? This will delete the budget and all its associated groups and headings. This action cannot be undone."
 
-    scenario "Destroy a budget without investments but with administrators and valuators" do
-      budget.administrators << Administrator.first
-      budget.valuators << create(:valuator)
-
-      visit admin_budget_path(budget)
-      click_button "Delete budget"
+      accept_confirm(message) { click_button "Delete budget" }
 
       expect(page).to have_content "Budget deleted successfully"
       expect(page).to have_content "There are no budgets."
@@ -162,20 +138,18 @@ describe "Admin budgets", :admin do
       create(:budget_investment, heading: heading)
 
       visit admin_budget_path(budget)
-      click_button "Delete budget"
 
-      expect(page).to have_content("You cannot delete a budget that has associated investments")
-      expect(page).to have_content("There is 1 budget")
+      expect(page).to have_button "Delete budget", disabled: true
+      expect(page).to have_content "You cannot delete a budget that has associated investments"
     end
 
     scenario "Try to destroy a budget with polls" do
       create(:poll, budget: budget)
 
       visit admin_budget_path(budget)
-      click_button "Delete budget"
 
-      expect(page).to have_content("You cannot delete a budget that has an associated poll")
-      expect(page).to have_content("There is 1 budget")
+      expect(page).to have_button "Delete budget", disabled: true
+      expect(page).to have_content "You cannot delete a budget that has an associated poll"
     end
   end
 

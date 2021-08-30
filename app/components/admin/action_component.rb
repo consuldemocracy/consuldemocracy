@@ -32,16 +32,25 @@ class Admin::ActionComponent < ApplicationComponent
       {
         class: html_class,
         id: (dom_id(record, action) if record.respond_to?(:to_key)),
+        "aria-describedby": describedby,
         "aria-label": label,
         data: {
           confirm: confirmation_text,
           disable_with: (text if button?)
         }
-      }.merge(options.except(:"aria-label", :class, :confirm, :path, :text))
+      }.merge(options.except(:"aria-describedby", :"aria-label", :class, :confirm, :path, :text))
     end
 
     def html_class
       "admin-action #{options[:class] || "#{action.to_s.gsub("_", "-")}-link"}".strip
+    end
+
+    def describedby
+      if options[:"aria-describedby"] == true
+        "#{dom_id(record, action)}_descriptor"
+      else
+        options[:"aria-describedby"]
+      end
     end
 
     def label

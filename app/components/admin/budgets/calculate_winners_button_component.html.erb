@@ -2,6 +2,7 @@
   <%= render Admin::ActionComponent.new(
     :calculate_winners,
     budget,
+    "aria-describedby": !from_investments || nil,
     text: text, method: :put, class: html_class
   ) %>
 <% elsif from_investments %>
