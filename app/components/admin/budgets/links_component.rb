@@ -19,4 +19,12 @@ class Admin::Budgets::LinksComponent < ApplicationComponent
         t("admin.budgets.actions.preview_results")
       end
     end
+
+    def preview_text
+      if budget.published?
+        t("admin.shared.view")
+      else
+        t("admin.budgets.actions.preview")
+      end
+    end
 end

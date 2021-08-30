@@ -1,9 +1,9 @@
 <div class="budgets-links">
   <% if can?(:read_results, budget) %>
     <%= action(:results, text: results_text, path: budget_results_path(budget)) %>
+  <% else %>
+    <%= action(:preview, text: preview_text, path: budget_path(budget)) %>
   <% end %>
-
-  <%= action(:preview, text: t("admin.budgets.actions.preview"), path: budget_path(budget), target: "_blank") %>
 
   <%= action(:edit, text: t("admin.budgets.actions.edit")) %>
 </div>

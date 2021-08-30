@@ -44,6 +44,8 @@ describe Admin::Budgets::LinksComponent, controller: Admin::BaseController do
 
         expect(page).to have_link "Preview results"
         expect(page).not_to have_link "See results"
+        expect(page).not_to have_link "View"
+        expect(page).not_to have_link "Preview"
       end
 
       it "is not shown while balloting" do
@@ -54,6 +56,26 @@ describe Admin::Budgets::LinksComponent, controller: Admin::BaseController do
         expect(page).not_to have_link "Preview results"
         expect(page).not_to have_link "See results"
       end
+    end
+  end
+
+  describe "preview/view link" do
+    it "shows a link to preview an unpublished budget" do
+      budget = create(:budget, :drafting)
+
+      render_inline Admin::Budgets::LinksComponent.new(budget)
+
+      expect(page).to have_link "Preview"
+      expect(page).not_to have_link "View"
+    end
+
+    it "shows a link to view a published budget" do
+      budget = create(:budget, :informing)
+
+      render_inline Admin::Budgets::LinksComponent.new(budget)
+
+      expect(page).to have_link "View"
+      expect(page).not_to have_link "Preview"
     end
   end
 end

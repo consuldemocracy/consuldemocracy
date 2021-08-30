@@ -115,13 +115,12 @@ describe "Admin budgets", :admin do
 
     scenario "Can preview budget before it is published" do
       visit admin_budget_path(budget)
+      click_link "Preview"
 
-      within_window(window_opened_by { click_link "Preview" }) do
-        expect(page).to have_current_path budget_path(budget)
-      end
+      expect(page).to have_current_path budget_path(budget)
     end
 
-    scenario "Can preview a budget after it is published" do
+    scenario "Can view a budget after it is published" do
       visit admin_budget_path(budget)
 
       accept_confirm { click_button "Publish budget" }
@@ -130,9 +129,9 @@ describe "Admin budgets", :admin do
       expect(page).not_to have_content "This participatory budget is in draft mode"
       expect(page).not_to have_button "Publish budget"
 
-      within_window(window_opened_by { click_link "Preview" }) do
-        expect(page).to have_current_path budget_path(budget)
-      end
+      click_link "View"
+
+      expect(page).to have_current_path budget_path(budget)
     end
   end
 
