@@ -71,6 +71,7 @@ en:
       actions:
         edit: "Edit budget"
         preview: "Preview"
+        preview_results: "Preview results"
       index:
         title: Participatory budgets
         new_link: Create new budget

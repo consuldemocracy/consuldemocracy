@@ -71,6 +71,7 @@ es:
       actions:
         edit: "Editar presupuesto"
         preview: "Previsualizar"
+        preview_results: "Previsualizar resultados"
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto

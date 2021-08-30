@@ -351,6 +351,14 @@ describe "Admin budgets", :admin do
 
       visit admin_budget_path(budget)
 
+      expect(page).not_to have_link "See results"
+
+      click_link "Edit budget"
+      select "Finished budget", from: "Active phase"
+      check "Show results"
+      click_button "Update Budget"
+
+      expect(page).to have_content "Participatory budget updated successfully"
       expect(page).to have_link "See results"
     end
 

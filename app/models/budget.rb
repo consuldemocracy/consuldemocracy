@@ -158,6 +158,10 @@ class Budget < ApplicationRecord
     current_phase&.balloting_or_later?
   end
 
+  def balloting_finished?
+    balloting_or_later? && !balloting?
+  end
+
   def single_group?
     groups.one?
   end
