@@ -65,7 +65,10 @@ $(function(){
     }
   }
 
-  document.getElementById("entradaDatos").onkeyup = function() {myFunction()};
+    var el = document.getElementById("entradaDatos");
+    if (el !== null) {
+      el.onkeyup = function() {myFunction()};
+    }
 });
 
 </script>
