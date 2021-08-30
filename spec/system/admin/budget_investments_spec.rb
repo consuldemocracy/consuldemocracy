@@ -515,9 +515,8 @@ describe "Admin budget investments", :admin do
       click_button "Filter"
 
       expect(page).not_to have_button "Calculate Winner Investments"
-      expect(page).to have_content 'The budget has to stay on phase "Balloting projects", '\
-                                   '"Reviewing Ballots" or "Finished budget" in order '\
-                                   "to calculate winners projects"
+      expect(page).to have_content 'The budget has to stay on phase "Reviewing voting" '\
+                                   "in order to calculate winners projects"
 
       visit admin_budget_path(budget)
 

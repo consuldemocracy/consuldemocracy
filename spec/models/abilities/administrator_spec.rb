@@ -78,6 +78,9 @@ describe Abilities::Administrator do
   it { should be_able_to(:create, Budget) }
   it { should be_able_to(:update, Budget) }
   it { should be_able_to(:read_results, Budget) }
+  it { should be_able_to(:calculate_winners, create(:budget, :reviewing_ballots)) }
+  it { should_not be_able_to(:calculate_winners, create(:budget, :balloting)) }
+  it { should_not be_able_to(:calculate_winners, create(:budget, :finished)) }
 
   it { should be_able_to(:create, Budget::ValuatorAssignment) }
 
