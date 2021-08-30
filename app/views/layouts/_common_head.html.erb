@@ -8,8 +8,8 @@
 <%= favicon_link_tag "favicon.ico" %>
 <%= render "layouts/disable_animations_in_tests" if Rails.env.test? %>
 <script>
-document.addEventListener("DOMContentLoaded", function(event) {
-  (function () {
+$(function(){
+  (function() {
     if ( typeof NodeList.prototype.forEach === "function" ) {
       return false;
     }
@@ -25,8 +25,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       document.querySelector(".datos tr:nth-child("+step+"").style.backgroundColor="#DEB5D5";
     }
   }
-
-  document.getElementById("entradaDatos").onkeyup = function() {myFunction()};
 
   function myFunction() {
     var name;
@@ -55,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if(name.indexOf(document.getElementById("entradaDatos").value.toLowerCase())!= "-1"){
           document.querySelector(".datos tr:nth-child("+step+")").style.display="table-row";
           count++;
-        }else{
+        } else {
           document.querySelector(".datos tr:nth-child("+step+")").style.display="none";
         }
       }
@@ -66,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       document.getElementById("textoInformativo2").style.display="none";
     }
   }
+
+  document.getElementById("entradaDatos").onkeyup = function() {myFunction()};
 });
 
 </script>
