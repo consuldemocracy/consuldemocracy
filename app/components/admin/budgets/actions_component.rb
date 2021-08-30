@@ -22,6 +22,10 @@ class Admin::Budgets::ActionsComponent < ApplicationComponent
           hint: winners_hint,
           html: winners_action
         },
+        ballots: {
+          hint: t("admin.budgets.actions.descriptions.ballots"),
+          html: ballots_action
+        },
         destroy: {
           hint: destroy_hint,
           html: destroy_action
@@ -53,6 +57,27 @@ class Admin::Budgets::ActionsComponent < ApplicationComponent
       else
         t("admin.budgets.actions.descriptions.destroy")
       end
+    end
+
+    def ballots_action
+      if budget.published? && !budget.balloting_finished? && !budget.poll.present?
+        action(:ballots,
+               text: t("admin.budgets.actions.ballots"),
+               path: create_budget_poll_path,
+               method: :post,
+               confirm: t("admin.budgets.actions.confirm.ballots"))
+      end
+    end
+
+    def create_budget_poll_path
+      balloting_phase = budget.phases.find_by(kind: "balloting")
+
+      admin_polls_path(poll: {
+        name:      budget.name,
+        budget_id: budget.id,
+        starts_at: balloting_phase.starts_at,
+        ends_at:   balloting_phase.ends_at
+      })
     end
 
     def descriptor_id(action_name)

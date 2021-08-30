@@ -69,9 +69,12 @@ es:
         no_activity: No hay actividad de moderadores.
     budgets:
       actions:
+        ballots: "Crear urnas"
         confirm:
+          ballots: "¿Seguro? Esta acción solo es necesaria si vas a utilizar urnas físicas durante la votación final. Los ciudadanos podrán votar mediante la web con o sin urnas físicas."
           destroy: "¿Seguro? Esta acción borrará el presupuesto y todos sus grupos y partidas. Esta acción no se puede deshacer."
         descriptions:
+          ballots: "Esta acción te permitirá gestionar las urnas de votación. Usa esta opción solamente si vas a utilizar urnas físicas para recoger votos durante la votación final."
           calculate_winners: 'Tras calcular los resultados, solamente los administradores tendrán acceso a los mismos. Se harán públicos cuando el presupuesto llegue a la fase "%{phase}" <strong>si se habilita la opción "Mostrar resultados"</strong> al editar el presupuesto.'
           destroy: "Esta acción borrará el presupuesto y todos sus grupos y partidas. Esta acción no se puede deshacer."
         edit: "Editar presupuesto"

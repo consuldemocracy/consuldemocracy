@@ -97,4 +97,24 @@ describe Admin::Budgets::LinksComponent, controller: Admin::BaseController do
       expect(page).not_to have_link "Investment projects"
     end
   end
+
+  describe "ballots link" do
+    let(:budget) { create(:budget) }
+    let(:component) { Admin::Budgets::LinksComponent.new(budget) }
+
+    it "is rendered for budgets with polls" do
+      budget.poll = create(:poll, budget: budget)
+      path = Rails.application.routes.url_helpers.admin_poll_booth_assignments_path(budget.poll)
+
+      render_inline component
+
+      expect(page).to have_link "Ballots", href: path
+    end
+
+    it "is not rendered for budgets without polls" do
+      render_inline component
+
+      expect(page).not_to have_link "Ballots"
+    end
+  end
 end

@@ -6,9 +6,9 @@ describe "Admin Budgets", :admin do
       budget = create(:budget)
       balloting_phase = budget.phases.balloting
 
-      visit admin_budgets_path
+      visit admin_budget_path(budget)
 
-      click_button "Ballots"
+      accept_confirm { click_button "Create booths" }
 
       expect(page).to have_current_path(/admin\/polls\/\d+/)
       expect(page).to have_content(budget.name)
@@ -17,28 +17,17 @@ describe "Admin Budgets", :admin do
     end
 
     scenario "Create poll in current locale if the budget does not have a poll associated" do
-      create(:budget,
-             name_en: "Budget for climate change",
-             name_fr: "Budget pour le changement climatique")
+      budget = create(:budget,
+                      name_en: "Budget for climate change",
+                      name_es: "Presupuesto por el cambio climático")
 
-      visit admin_budgets_path
-      select "Français", from: "Language:"
+      visit admin_budget_path(budget)
+      select "Español", from: "Language:"
 
-      click_button "Bulletins de l’admin"
+      accept_confirm { click_button "Crear urnas" }
 
       expect(page).to have_current_path(/admin\/polls\/\d+/)
-      expect(page).to have_content("Budget pour le changement climatique")
-    end
-
-    scenario "Display link to poll if the budget has a poll associated" do
-      budget = create(:budget)
-      poll = create(:poll, budget: budget)
-
-      visit admin_budgets_path
-
-      within "#budget_#{budget.id}" do
-        expect(page).to have_link "Ballots", href: admin_poll_booth_assignments_path(poll)
-      end
+      expect(page).to have_content "Presupuesto por el cambio climático"
     end
   end
 
