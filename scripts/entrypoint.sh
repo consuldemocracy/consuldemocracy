@@ -15,3 +15,6 @@ chgrp -R -h "$USER_GID" "$BUNDLE_PATH"
 
 /usr/bin/sudo -EH -u consul "$@"
 
+# Remove a potentially pre-existing server.pid for Rails.
+rm -f /var/www/consul/tmp/pids/server.pid
+
