@@ -6,7 +6,7 @@
       }
     </style>
     <!--<a href="https://participa.diputaciondevalladolid.es/budgets"> <%= image_tag(image_path_for('PresupuestoGif.gif'), class: 'mySlides w3-animate-right customizada', alt: t("layouts.slide1")) %> </a>-->
-    <a href="https://participa.diputaciondevalladolid.es/budgets"> <%= image_tag(image_path_for('VotacionSeptiembre.jpg'), class: 'mySlides w3-animate-right customizada', alt: t("layouts.slide1")) %> </a>
+    <a href="https://participa.diputaciondevalladolid.es/budgets" data-no-turbolink="true"> <%= image_tag(image_path_for('VotacionSeptiembre.jpg'), class: 'mySlides w3-animate-right customizada', alt: t("layouts.slide1")) %> </a>
 
     <!--<%= image_tag(image_path_for('slide2.jpg'), class: 'mySlides w3-animate-right', alt: t("layouts.slide2")) %>-->
     <!--<%= image_tag(image_path_for('slide3.jpg'), class: 'mySlides w3-animate-right', alt: t("layouts.slide3")) %>-->
@@ -43,12 +43,14 @@
       }
       myIndex++;
       if (myIndex > x.length) {myIndex = 1}
-      x[myIndex-1].style.display = "block";
+      var el = x[myIndex-1];
+      if(el !== null && el !== undefined) { el.style.display = "block"; }
       slideIndex = myIndex;
       for (j = 0; j < dots.length; j++) {
       dots[j].className = dots[j].className.replace(" w3-white", "");
       }
-      dots[slideIndex-1].className += " w3-white";
+var el = dots[slideIndex-1];
+if (el !== null && el !== undefined) {el.className += " w3-white"; }
       setTimeout(carousel, 10000);
   }
 
@@ -74,6 +76,7 @@
     }
     x[slideIndex-1].style.display = "block";
     myIndex = slideIndex-1;
-    dots[slideIndex-1].className += " w3-white";
+    var el = dots[slideIndex-1];
+    if (el !== null && el !== undefined) {el.className += " w3-white"; }
   }
 </script>

@@ -9,6 +9,7 @@
 <%= render "layouts/disable_animations_in_tests" if Rails.env.test? %>
 <script>
 $(function(){
+  $("a[href='/budgets']").data("no-turbolink", true);
   (function() {
     if ( typeof NodeList.prototype.forEach === "function" ) {
       return false;
@@ -41,8 +42,8 @@ $(function(){
             document.querySelectorAll(".datos tr")[list].style.display="none";
           }
         } else {
-          document.querySelectorAll(".datos tr")[list].style.display="none";
-          //$(".datos tr").css("display", "none");
+          //document.querySelectorAll(".datos tr").style.display="none";
+          $(".datos tr").css("display", "none");
         }
 
         document.querySelector(".datos tr:nth-child(1)").style.display="table-row";
