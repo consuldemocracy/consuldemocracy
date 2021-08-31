@@ -1329,8 +1329,6 @@ en:
       setting_value: Value
       no_description: "No description"
     shared:
-      true_value: "Yes"
-      false_value: "No"
       search:
         advanced_filters:
           sdg_goals:

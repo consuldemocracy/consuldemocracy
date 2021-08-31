@@ -1328,8 +1328,6 @@ es:
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
-      true_value: "Sí"
-      false_value: "No"
       search:
         advanced_filters:
           sdg_goals:

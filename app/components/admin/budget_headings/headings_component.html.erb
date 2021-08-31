@@ -7,8 +7,6 @@
         <% if budget.approval_voting? %>
           <th><%= Budget::Heading.human_attribute_name(:max_ballot_lines) %></th>
         <% end %>
-        <th><%= Budget::Heading.human_attribute_name(:population) %></th>
-        <th><%= Budget::Heading.human_attribute_name(:allow_custom_content) %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -20,10 +18,6 @@
           <% if budget.approval_voting? %>
             <td><%= heading.max_ballot_lines %></td>
           <% end %>
-          <td><%= heading.population %></td>
-          <td>
-            <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
-          </td>
           <td>
             <%= render Admin::TableActionsComponent.new(heading) %>
           </td>

@@ -27,9 +27,9 @@ describe "Admin budget headings", :admin do
     end
 
     scenario "Displaying headings" do
-      create(:budget_heading, name: "Laptops", group: group, price: 1000, allow_custom_content: true)
-      create(:budget_heading, name: "Tablets", group: group, price: 2000, population: 10000)
-      create(:budget_heading, name: "Phones", group: group, price: 3000, population: 20000)
+      create(:budget_heading, name: "Laptops", group: group, price: 1000)
+      create(:budget_heading, name: "Tablets", group: group, price: 2000)
+      create(:budget_heading, name: "Phones", group: group, price: 3000)
 
       visit admin_budget_path(budget)
 
@@ -37,23 +37,9 @@ describe "Admin budget headings", :admin do
         within "tbody" do
           expect(page).to have_selector "tr", count: 3
 
-          within "tr", text: "Laptops" do
-            expect(page).to have_content "€1,000"
-            expect(page).not_to have_content "10000"
-            expect(page).to have_content "Yes"
-          end
-
-          within "tr", text: "Tablets" do
-            expect(page).to have_content "€2,000"
-            expect(page).to have_content "10000"
-            expect(page).to have_content "No"
-          end
-
-          within "tr", text: "Phones" do
-            expect(page).to have_content "€3,000"
-            expect(page).to have_content "20000"
-            expect(page).to have_content "No"
-          end
+          within("tr", text: "Laptops") { expect(page).to have_content "€1,000" }
+          within("tr", text: "Tablets") { expect(page).to have_content "€2,000" }
+          within("tr", text: "Phones") { expect(page).to have_content "€3,000" }
         end
       end
     end
@@ -100,9 +86,12 @@ describe "Admin budget headings", :admin do
 
       within "tr", text: "All City" do
         expect(page).to have_content "€1,000"
-        expect(page).to have_content "10000"
-        expect(page).to have_content "Yes"
+
+        click_link "Edit"
       end
+
+      expect(page).to have_field "Population (optional)", with: "10000"
+      expect(page).to have_field "Allow content block", checked: true
     end
 
     scenario "Heading name is mandatory" do
