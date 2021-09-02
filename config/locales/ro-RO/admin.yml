@@ -135,6 +135,7 @@ ro:
         title_multiple: Buget nou pentru mai multe rubrici
         title_single: Buget nou pentru o singură rubrică
       help:
+        budgets: "Bugetele participative permit cetățenilor să propună și să decidă direct cum să cheltuiască o parte din buget, cu monitorizare și evaluare riguroasă a propunerilor de către instituție."
         groups:
           single: "Grupurile sunt făcute pentru a organiza rubricile, deoarece acest buget va conține doar o singură rubrică, același nume poate fi utilizat deoarece nu va apărea nicăieri. Puteți continua cu pasul următor."
         headings:
