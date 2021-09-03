@@ -5,7 +5,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @comments.each do |comment| %>
+    <% comments.each do |comment| %>
       <tr id="comment_<%= comment.id %>">
         <td>
           <%= comment_commentable_title(comment) %>
@@ -17,4 +17,4 @@
   </tbody>
 </table>
 
-<%= paginate @comments %>
+<%= paginate comments %>

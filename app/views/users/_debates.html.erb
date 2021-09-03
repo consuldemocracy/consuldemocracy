@@ -5,7 +5,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @debates.each do |debate| %>
+    <% debates.each do |debate| %>
       <tr id="debate_<%= debate.id %>">
         <td>
           <%= link_to debate.title, debate %>
@@ -15,4 +15,4 @@
   </tbody>
 </table>
 
-<%= paginate @debates %>
+<%= paginate debates %>
