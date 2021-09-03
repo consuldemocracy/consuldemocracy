@@ -1,6 +1,6 @@
 class Users::PublicActivityComponent < ApplicationComponent
   attr_reader :user
-  delegate :authorized_current_user?, :current_path_with_query_params, :valid_filters, :current_filter, to: :helpers
+  delegate :authorized_current_user?, :current_path_with_query_params, to: :helpers
 
   def initialize(user)
     @user = user
@@ -10,66 +10,56 @@ class Users::PublicActivityComponent < ApplicationComponent
     user.public_activity || authorized_current_user?
   end
 
+  def current_filter
+    if valid_filters.include?(params[:filter])
+      params[:filter]
+    else
+      valid_filters.first
+    end
+  end
+
+  def valid_filters
+    @valid_filters ||= [
+      ("proposals" if feature?(:proposals)),
+      ("debates" if feature?(:debates)),
+      ("budget_investments" if feature?(:budgets)),
+      "comments",
+      "follows"
+    ].compact.select { |filter| send(filter).any? }
+  end
+
   private
 
-    def set_activity_counts
-      @activity_counts = ActiveSupport::HashWithIndifferentAccess.new(
-                          proposals: Proposal.where(author_id: @user.id).count,
-                          debates: (Setting["process.debates"] ? Debate.where(author_id: @user.id).count : 0),
-                          budget_investments: (Setting["process.budgets"] ? Budget::Investment.where(author_id: @user.id).count : 0),
-                          comments: only_active_commentables.count,
-                          follows: @user.follows.map(&:followable).compact.count)
+    def proposals
+      Proposal.where(author_id: user.id)
     end
 
-    def load_filtered_activity
-      set_activity_counts
-      case params[:filter]
-      when "proposals" then load_proposals
-      when "debates"   then load_debates
-      when "budget_investments" then load_budget_investments
-      when "comments" then load_comments
-      when "follows" then load_follows
-      else load_available_activity
-      end
+    def debates
+      Debate.where(author_id: user.id)
     end
 
-    def load_available_activity
-      if @activity_counts[:proposals] > 0
-        load_proposals
-        @current_filter = "proposals"
-      elsif @activity_counts[:debates] > 0
-        load_debates
-        @current_filter = "debates"
-      elsif  @activity_counts[:budget_investments] > 0
-        load_budget_investments
-        @current_filter = "budget_investments"
-      elsif  @activity_counts[:comments] > 0
-        load_comments
-        @current_filter = "comments"
-      elsif  @activity_counts[:follows] > 0
-        load_follows
-        @current_filter = "follows"
-      end
+    def comments
+      only_active_commentables.includes(:commentable)
     end
 
-    def load_proposals
-      @proposals = Proposal.created_by(@user).order(created_at: :desc).page(params[:page])
+    def budget_investments
+      Budget::Investment.where(author_id: user.id)
     end
 
-    def load_debates
-      @debates = Debate.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
+    def follows
+      @follows ||= user.follows.select { |follow| follow.followable.present? }
     end
 
-    def load_comments
-      @comments = only_active_commentables.includes(:commentable).order(created_at: :desc).page(params[:page])
+    def count(filter)
+      send(filter).count
     end
 
-    def load_budget_investments
-      @budget_investments = Budget::Investment.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
+    def render_user_partial(filter)
+      render "users/#{filter}", "#{filter}": send(filter).order(created_at: :desc).page(page)
     end
 
-    def load_follows
-      @follows = @user.follows.group_by(&:followable_type)
+    def page
+      params[:page]
     end
 
     def only_active_commentables
@@ -84,6 +74,6 @@ class Users::PublicActivityComponent < ApplicationComponent
     end
 
     def all_user_comments
-      Comment.not_valuations.not_as_admin_or_moderator.where(user_id: @user.id)
+      Comment.not_valuations.not_as_admin_or_moderator.where(user_id: user.id)
     end
 end

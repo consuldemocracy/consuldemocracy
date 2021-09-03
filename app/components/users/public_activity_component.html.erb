@@ -1,33 +1,30 @@
-<% load_filtered_activity if valid_access? %>
 <% if valid_access? %>
-  <ul class="menu simple margin-top">
-    <% valid_filters.each do |filter| %>
-      <% if @activity_counts[filter] > 0 %>
+  <% if valid_filters.any? %>
+    <ul class="menu simple margin-top">
+      <% valid_filters.each do |filter| %>
         <% if current_filter == filter %>
           <li class="is-active">
-            <h2><%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %></h2>
+            <h2><%= t("users.show.filters.#{filter}", count: count(filter)) %></h2>
           </li>
         <% else %>
           <li>
-            <%= link_to t("users.show.filters.#{filter}", count: @activity_counts[filter]),
+            <%= link_to t("users.show.filters.#{filter}", count: count(filter)),
                         current_path_with_query_params(filter: filter, page: 1) %>
           </li>
         <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
 
-  <% if @activity_counts.values.inject(&:+) == 0 %>
+    <% if current_filter == "follows" %>
+      <%= render "users/following", user: user, follows: follows.group_by(&:followable_type) %>
+    <% else %>
+      <%= render_user_partial current_filter %>
+    <% end %>
+  <% else %>
     <div class="callout primary">
       <%= t("users.show.no_activity") %>
     </div>
   <% end %>
-
-  <%= render "users/following", user: user, follows: @follows if @follows.present? %>
-  <%= render "users/proposals", proposals: @proposals if @proposals.present? && feature?(:proposals) %>
-  <%= render "users/debates", debates: @debates if @debates.present? && feature?(:debates) %>
-  <%= render "users/budget_investments", budget_investments: @budget_investments if @budget_investments.present? && feature?(:budgets) %>
-  <%= render "users/comments", comments: @comments if @comments.present? %>
 <% else %>
   <div class="callout warning margin">
     <%= t("users.show.private_activity") %>

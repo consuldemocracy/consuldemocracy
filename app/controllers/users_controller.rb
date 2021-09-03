@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  has_filters %w[proposals debates budget_investments comments follows], only: :show
-
   load_and_authorize_resource
   helper_method :valid_interests_access?
   helper_method :authorized_current_user?
