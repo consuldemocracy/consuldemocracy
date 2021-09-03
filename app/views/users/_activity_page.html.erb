@@ -1,5 +1,0 @@
-<%= render "following", user: @user, follows: @follows if @follows.present? %>
-<%= render "proposals", proposals: @proposals if @proposals.present? && feature?(:proposals) %>
-<%= render "debates", debates: @debates if @debates.present? && feature?(:debates) %>
-<%= render "budget_investments", budge_investments: @budge_investments if @budge_investments.present? && feature?(:budgets) %>
-<%= render "comments", comments: @comments if @comments.present? %>
