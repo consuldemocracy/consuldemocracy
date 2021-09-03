@@ -1499,8 +1499,15 @@ footer {
 
 .budget-investment-index-list {
 
-  .budget-investment .panel img {
-    height: auto;
+  .budget-investment .panel {
+
+    h3 a {
+      word-break: break-word;
+    }
+
+    img {
+      height: auto;
+    }
   }
 }
 
