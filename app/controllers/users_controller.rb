@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   has_filters %w[proposals debates budget_investments comments follows], only: :show
 
   load_and_authorize_resource
-  helper_method :author?
   helper_method :valid_interests_access?
 
   def show
@@ -77,10 +76,6 @@ class UsersController < ApplicationController
 
     def valid_interests_access?
       @user.public_interests || authorized_current_user?
-    end
-
-    def author?(proposal)
-      proposal.author_id == current_user.id if current_user
     end
 
     def authorized_current_user?
