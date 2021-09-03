@@ -297,7 +297,12 @@ describe "Budget Investments" do
       expect(order).not_to be_empty
 
       click_link "highest rated"
+
+      expect(page).to have_css "h2", exact_text: "highest rated"
+
       click_link "random"
+
+      expect(page).to have_css "h2", exact_text: "random"
 
       visit budget_investments_path(budget, heading_id: heading.id)
       new_order = all(".budget-investment h3").map(&:text)
