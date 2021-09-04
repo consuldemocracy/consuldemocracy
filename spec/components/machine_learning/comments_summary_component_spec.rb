@@ -7,7 +7,7 @@ describe MachineLearning::CommentsSummaryComponent do
   before do
     Setting["feature.machine_learning"] = true
     Setting["machine_learning.comments_summary"] = true
-    allow(controller).to receive(:current_user).and_return(nil)
+    sign_in(nil)
   end
 
   it "is displayed when the setting is enabled" do

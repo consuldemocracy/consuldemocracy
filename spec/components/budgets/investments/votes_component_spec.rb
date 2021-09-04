@@ -9,7 +9,7 @@ describe Budgets::Investments::VotesComponent do
       before { allow(investment).to receive(:should_show_votes?).and_return(true) }
 
       it "displays a button to support the investment to identified users" do
-        allow(controller).to receive(:current_user).and_return(create(:user))
+        sign_in(create(:user))
 
         render_inline component
 
@@ -19,7 +19,7 @@ describe Budgets::Investments::VotesComponent do
       end
 
       it "disables the button to support the investment to unidentified users" do
-        allow(controller).to receive(:current_user).and_return(nil)
+        sign_in(nil)
 
         render_inline component
 
@@ -30,7 +30,7 @@ describe Budgets::Investments::VotesComponent do
       it "shows the button to remove support when users have supported the investment" do
         user = create(:user)
         user.up_votes(investment)
-        allow(controller).to receive(:current_user).and_return(user)
+        sign_in(user)
 
         render_inline component
 

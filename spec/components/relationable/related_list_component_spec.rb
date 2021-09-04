@@ -15,7 +15,7 @@ describe Relationable::RelatedListComponent do
            child_relationable: machine_proposal,
            machine_learning: true)
 
-    allow(controller).to receive(:current_user).and_return(nil)
+    sign_in(nil)
   end
 
   it "displays machine learning and user content when machine learning is enabled" do

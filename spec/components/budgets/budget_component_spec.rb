@@ -5,9 +5,7 @@ describe Budgets::BudgetComponent do
   let(:heading) { create(:budget_heading, budget: budget) }
   let(:user) { create(:user) }
 
-  before do
-    allow(controller).to receive(:current_user).and_return(user)
-  end
+  before { sign_in(user) }
 
   describe "budget header" do
     it "shows budget name and link to help" do

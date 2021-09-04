@@ -4,7 +4,7 @@ describe Budgets::SupportsInfoComponent do
   let(:budget) { create(:budget, :selecting) }
   let(:group) { create(:budget_group, budget: budget) }
   let(:component) { Budgets::SupportsInfoComponent.new(budget) }
-  before { allow(component).to receive(:current_user).and_return(nil) }
+  before { sign_in(nil) }
 
   it "renders when the budget is selecting" do
     create(:budget_heading, group: group)
@@ -42,7 +42,7 @@ describe Budgets::SupportsInfoComponent do
 
     context "logged users" do
       let(:user) { create(:user, :level_two) }
-      before { allow(component).to receive(:current_user).and_return(user) }
+      before { sign_in(user) }
 
       it "shows supported investments" do
         heading = create(:budget_heading, budget: budget)
@@ -67,14 +67,14 @@ describe Budgets::SupportsInfoComponent do
       it "does not show supports for another budget" do
         second_budget = create(:budget, phase: "selecting")
         second_component = Budgets::SupportsInfoComponent.new(second_budget)
-        allow(second_component).to receive(:current_user).and_return(user)
-
         create_list(:budget_investment, 2, :selected, budget: budget, voters: [user])
         create_list(:budget_investment, 3, :selected, budget: second_budget, voters: [user])
 
         render_inline component
 
         expect(page).to have_content "So far you've supported 2 projects."
+
+        sign_in(user)
 
         render_inline second_component
 

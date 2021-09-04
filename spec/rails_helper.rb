@@ -13,6 +13,14 @@ require "capybara/rspec"
 require "selenium/webdriver"
 require "view_component/test_helpers"
 
+module ViewComponent
+  module TestHelpers
+    def sign_in(user)
+      allow(controller).to receive(:current_user).and_return(user)
+    end
+  end
+end
+
 RSpec.configure do |config|
   config.include ViewComponent::TestHelpers, type: :component
 end

@@ -7,7 +7,7 @@ describe Budgets::InvestmentsListComponent do
   let(:group)     { create(:budget_group, budget: budget) }
   let(:heading)   { create(:budget_heading, group: group) }
 
-  before { allow(controller).to receive(:current_user).and_return(nil) }
+  before { sign_in(nil) }
 
   describe "#investments" do
     let(:component) { Budgets::InvestmentsListComponent.new(budget) }
