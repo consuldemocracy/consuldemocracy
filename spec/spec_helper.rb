@@ -83,6 +83,10 @@ RSpec.configure do |config|
     sign_in(create(:administrator).user)
   end
 
+  config.before(:each, type: :component) do
+    sign_in(nil)
+  end
+
   config.around(:each, :controller, type: :component) do |example|
     with_controller_class(example.metadata[:controller]) { example.run }
   end

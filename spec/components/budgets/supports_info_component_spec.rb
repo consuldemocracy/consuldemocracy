@@ -4,7 +4,6 @@ describe Budgets::SupportsInfoComponent do
   let(:budget) { create(:budget, :selecting) }
   let(:group) { create(:budget_group, budget: budget) }
   let(:component) { Budgets::SupportsInfoComponent.new(budget) }
-  before { sign_in(nil) }
 
   it "renders when the budget is selecting" do
     create(:budget_heading, group: group)

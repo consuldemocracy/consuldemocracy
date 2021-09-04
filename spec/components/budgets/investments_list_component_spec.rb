@@ -7,8 +7,6 @@ describe Budgets::InvestmentsListComponent do
   let(:group)     { create(:budget_group, budget: budget) }
   let(:heading)   { create(:budget_heading, group: group) }
 
-  before { sign_in(nil) }
-
   describe "#investments" do
     let(:component) { Budgets::InvestmentsListComponent.new(budget) }
 

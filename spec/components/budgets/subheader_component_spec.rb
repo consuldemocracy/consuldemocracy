@@ -53,8 +53,6 @@ describe Budgets::SubheaderComponent do
     end
 
     it "and user is not logged in shows links to sign in and sign up" do
-      sign_in(nil)
-
       render_inline Budgets::SubheaderComponent.new(budget)
 
       expect(page).to have_content "To create a new budget investment you must"

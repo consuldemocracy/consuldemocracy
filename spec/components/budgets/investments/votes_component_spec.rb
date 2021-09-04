@@ -19,8 +19,6 @@ describe Budgets::Investments::VotesComponent do
       end
 
       it "disables the button to support the investment to unidentified users" do
-        sign_in(nil)
-
         render_inline component
 
         expect(page).to have_button count: 1, disabled: :all
