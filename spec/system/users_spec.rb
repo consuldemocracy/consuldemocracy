@@ -245,8 +245,10 @@ describe "Users" do
 
       logout
 
-      visit user_path(user)
-      expect(page).to have_content("Sport")
+      visit user_path(user, filter: "follows")
+
+      expect(page).to have_css "#public_interests"
+      expect(page).to have_content "Sport"
     end
 
     scenario "Not display interests when proposal has been destroyed" do
@@ -272,22 +274,6 @@ describe "Users" do
       expect(page).not_to have_css("#public_interests")
     end
 
-    scenario "User can display public page" do
-      create(:proposal, tag_list: "Sport", followers: [user])
-
-      login_as(user)
-      visit account_path
-
-      check "account_public_interests"
-      click_button "Save changes"
-
-      logout
-
-      visit user_path(user, filter: "follows", page: "1")
-
-      expect(page).to have_css("#public_interests")
-    end
-
     scenario "Is always visible for the owner" do
       create(:proposal, tag_list: "Sport", followers: [user])
 
@@ -298,7 +284,9 @@ describe "Users" do
       click_button "Save changes"
 
       visit user_path(user, filter: "follows", page: "1")
-      expect(page).to have_css("#public_interests")
+
+      expect(page).to have_css "#public_interests"
+      expect(page).to have_content "Tags of elements you follow"
     end
 
     scenario "Is always visible for admins" do
@@ -340,16 +328,6 @@ describe "Users" do
       visit user_path(user, filter: "follows", page: "1")
 
       expect(page).to have_content("Tags of elements this user follows")
-    end
-
-    scenario "Should display custom interests title when user is visiting own user page" do
-      create(:proposal, tag_list: "Sport", followers: [user])
-
-      user.update!(public_interests: true)
-      login_as(user)
-      visit user_path(user, filter: "follows", page: "1")
-
-      expect(page).to have_content("Tags of elements you follow")
     end
   end
 
