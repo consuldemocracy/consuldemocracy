@@ -438,8 +438,8 @@ describe "Users" do
         login_as user
 
         visit user_path(user, filter: "follows")
-        click_link "Citizen proposals"
 
+        expect(page).to have_link "Citizen proposals", href: "#citizen_proposals"
         expect(page).to have_content proposal.title
       end
 
@@ -493,8 +493,8 @@ describe "Users" do
         budget_investment = create(:budget_investment, author: user, followers: [user])
 
         visit user_path(user, filter: "follows")
-        click_link "Investments"
 
+        expect(page).to have_link "Investments", href: "#investments"
         expect(page).to have_link budget_investment.title
       end
     end
