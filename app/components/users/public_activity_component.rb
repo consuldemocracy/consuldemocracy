@@ -43,7 +43,11 @@ class Users::PublicActivityComponent < ApplicationComponent
     end
 
     def comments
-      only_active_commentables.includes(:commentable)
+      Comment.not_valuations
+             .not_as_admin_or_moderator
+             .where(user_id: user.id)
+             .where.not(commentable_type: disabled_commentables)
+             .includes(:commentable)
     end
 
     def budget_investments
@@ -66,18 +70,10 @@ class Users::PublicActivityComponent < ApplicationComponent
       params[:page]
     end
 
-    def only_active_commentables
-      disabled_commentables = []
-      disabled_commentables << "Debate" unless Setting["process.debates"]
-      disabled_commentables << "Budget::Investment" unless Setting["process.budgets"]
-      if disabled_commentables.present?
-        all_user_comments.where.not(commentable_type: disabled_commentables)
-      else
-        all_user_comments
-      end
-    end
-
-    def all_user_comments
-      Comment.not_valuations.not_as_admin_or_moderator.where(user_id: user.id)
+    def disabled_commentables
+      [
+        ("Debate" unless feature?(:debates)),
+        ("Budget::Investment" unless feature?(:budgets))
+      ].compact
     end
 end
