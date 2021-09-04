@@ -247,6 +247,18 @@ describe "Debates" do
     expect(page).to have_content error_message
   end
 
+  scenario "Short description errors" do
+    login_as(create(:user))
+
+    visit new_debate_path
+    fill_in_ckeditor "Initial debate text", with: "Go!"
+    click_button "Start a debate"
+
+    within ".form-error.html-area" do
+      expect(page).to have_content "is too short"
+    end
+  end
+
   scenario "JS injection is prevented but safe html is respected", :no_js do
     author = create(:user)
     login_as(author)
