@@ -1,6 +1,6 @@
 class Users::PublicActivityComponent < ApplicationComponent
   attr_reader :user
-  delegate :authorized_current_user?, :current_path_with_query_params, to: :helpers
+  delegate :current_user, :valid_interests_access?, :current_path_with_query_params, to: :helpers
 
   def initialize(user)
     @user = user
@@ -24,11 +24,15 @@ class Users::PublicActivityComponent < ApplicationComponent
       ("debates" if feature?(:debates)),
       ("budget_investments" if feature?(:budgets)),
       "comments",
-      "follows"
+      ("follows" if valid_interests_access?(user))
     ].compact.select { |filter| send(filter).any? }
   end
 
   private
+
+    def authorized_current_user?
+      current_user == user || current_user&.moderator? || current_user&.administrator?
+    end
 
     def proposals
       Proposal.where(author_id: user.id)
