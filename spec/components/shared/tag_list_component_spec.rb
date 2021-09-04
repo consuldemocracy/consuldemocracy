@@ -9,7 +9,6 @@ describe Shared::TagListComponent do
   before do
     Setting["feature.machine_learning"] = true
     Setting["machine_learning.tags"] = true
-    sign_in(create(:administrator).user)
   end
 
   it "displays machine learning tags when machine learning is enabled" do
