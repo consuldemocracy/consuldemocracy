@@ -87,7 +87,6 @@ describe TagCloud do
     end
 
     xit "returns tags scoped by category for debates"
-    xit "returns tags scoped by geozone for debates"
 
     it "orders tags by count" do
       3.times { create(:proposal, tag_list: "participation") }
