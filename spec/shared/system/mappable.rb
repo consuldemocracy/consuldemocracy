@@ -232,17 +232,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css(".map_location")
     end
 
-    scenario "No errors on update" do
-      skip ""
-      do_login_for mappable.author, management: management
-
-      visit send(mappable_edit_path, id: mappable.id)
-      click_link "Remove map marker"
-      click_on "Save changes"
-
-      expect(page).not_to have_content "Map location can't be blank"
-    end
-
     scenario "No need to skip map on update" do
       do_login_for mappable.author, management: management
 
