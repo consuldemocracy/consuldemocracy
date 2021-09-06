@@ -255,8 +255,6 @@ describe "Emails" do
       expect(email).to have_body_text(direct_message.body)
       expect(email).to have_body_text(direct_message.receiver.name)
     end
-
-    pending "In the copy sent to the sender, display the receiver's name"
   end
 
   context "Proposal notification digest" do
