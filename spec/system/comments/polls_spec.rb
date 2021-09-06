@@ -315,8 +315,6 @@ describe "Commenting polls" do
 
   describe "Moderators" do
     scenario "can create comment as a moderator" do
-      skip "Feature not implemented yet, review soon"
-
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -335,8 +333,6 @@ describe "Commenting polls" do
     end
 
     scenario "can create reply as a moderator" do
-      skip "Feature not implemented yet, review soon"
-
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
@@ -364,8 +360,6 @@ describe "Commenting polls" do
     end
 
     scenario "can not comment as an administrator" do
-      skip "Feature not implemented yet, review soon"
-
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -377,8 +371,6 @@ describe "Commenting polls" do
 
   describe "Administrators" do
     scenario "can create comment as an administrator" do
-      skip "Feature not implemented yet, review soon"
-
       admin = create(:administrator)
 
       login_as(admin.user)
@@ -397,8 +389,6 @@ describe "Commenting polls" do
     end
 
     scenario "can create reply as an administrator" do
-      skip "Feature not implemented yet, review soon"
-
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       admin   = create(:administrator, user: manuela)
@@ -426,8 +416,6 @@ describe "Commenting polls" do
     end
 
     scenario "can not comment as a moderator", :admin do
-      skip "Feature not implemented yet, review soon"
-
       visit poll_path(poll)
 
       expect(page).not_to have_content "Comment as moderator"
