@@ -20,23 +20,21 @@ describe "Commenting polls" do
   end
 
   scenario "Show" do
-    skip "Feature not implemented yet, review soon"
-
-    parent_comment = create(:comment, commentable: poll)
-    first_child    = create(:comment, commentable: poll, parent: parent_comment)
-    second_child   = create(:comment, commentable: poll, parent: parent_comment)
+    parent_comment = create(:comment, commentable: poll, body: "Parent")
+    create(:comment, commentable: poll, parent: parent_comment, body: "First subcomment")
+    create(:comment, commentable: poll, parent: parent_comment, body: "Last subcomment")
 
     visit comment_path(parent_comment)
 
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content parent_comment.body
-    expect(page).to have_content first_child.body
-    expect(page).to have_content second_child.body
+    expect(page).to have_css ".comment", count: 3
+    expect(page).to have_content "Parent"
+    expect(page).to have_content "First subcomment"
+    expect(page).to have_content "Last subcomment"
     expect(page).to have_link "Go back to #{poll.name}", href: poll_path(poll)
 
-    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
-    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
-    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
+    within ".comment", text: "Parent" do
+      expect(page).to have_css ".comment", count: 2
+    end
   end
 
   scenario "Link to comment show" do
