@@ -207,6 +207,19 @@ describe "Cards", :admin do
         end
       end
 
+      scenario "Show image if it is present" do
+        card_1 = create(:widget_card, cardable: custom_page, title: "Card one")
+        card_2 = create(:widget_card, cardable: custom_page, title: "Card two")
+
+        card_1.update!(image: create(:image, imageable: card_1, attachment: fixture_file_upload("clippy.jpg")))
+        card_2.update!(image: nil)
+
+        visit custom_page.url
+
+        within(".card", text: "CARD ONE") { expect(page).to have_css "img" }
+        within(".card", text: "CARD TWO") { expect(page).not_to have_css "img" }
+      end
+
       scenario "Edit" do
         create(:widget_card, cardable: custom_page, title: "Original title")
 
@@ -246,8 +259,6 @@ describe "Cards", :admin do
       end
     end
   end
-
-  pending "add image expectactions"
 
   def attach_image_to_card
     click_link "Add image"
