@@ -34,9 +34,6 @@ COPY Gemfile.lock Gemfile.lock
 
 COPY Gemfile_custom Gemfile_custom
 
-# Prevent bundler warnings; ensure that the bundler version executed is >= that which created Gemfile.lock
-RUN gem install bundler
-
 # Finish establishing our Ruby environment
 RUN bundle install --full-index
 
