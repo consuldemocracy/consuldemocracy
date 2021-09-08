@@ -17,21 +17,6 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
-Capybara/CurrentPathExpectation:
-  Enabled: true
-
-Capybara/FeatureMethods:
-  Enabled: true
-  EnabledMethods:
-    - scenario
-    - xscenario
-
-Capybara/VisibilityMatcher:
-  Enabled: true
-
-FactoryBot/FactoryClassName:
-  Enabled: true
-
 Layout/AssignmentIndentation:
   Enabled: true
 
@@ -175,7 +160,13 @@ Lint/BooleanSymbol:
 Lint/ConstantDefinitionInBlock:
   Enabled: true
 
+Lint/DuplicateBranch:
+  Enabled: true
+
 Lint/DuplicateMethods:
+  Enabled: true
+
+Lint/EmptyBlock:
   Enabled: true
 
 Lint/EmptyFile:
@@ -196,10 +187,19 @@ Lint/SafeNavigationChain:
 Lint/ShadowingOuterLocalVariable:
   Enabled: true
 
+Lint/SymbolConversion:
+  Enabled: true
+  Exclude:
+    - "app/models/setting.rb"
+    - "db/dev_seeds/settings.rb"
+
 Lint/UselessAssignment:
   Enabled: true
 
 Lint/Void:
+  Enabled: true
+
+Naming/VariableName:
   Enabled: true
 
 Performance/BlockGivenWithExplicitBlock:
@@ -221,6 +221,9 @@ Performance/Sum:
   Enabled: true
 
 Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+
+Rails/AddColumnIndex:
   Enabled: true
 
 Rails/CreateTableWithTimestamps:
@@ -259,6 +262,14 @@ Rails/HasAndBelongsToMany:
 Rails/HasManyOrHasOneDependent:
   Enabled: true
   Severity: refactor
+
+Rails/HttpStatus:
+  Enabled: true
+
+Rails/I18nLocaleAssignment:
+  Enabled: true
+  Exclude:
+    - "spec/spec_helper.rb"
 
 Rails/InverseOf:
   Enabled: true
@@ -343,6 +354,18 @@ RSpec/AroundBlock:
 RSpec/BeforeAfterAll:
   Enabled: true
 
+RSpec/Capybara/CurrentPathExpectation:
+  Enabled: true
+
+RSpec/Capybara/FeatureMethods:
+  Enabled: true
+  EnabledMethods:
+    - scenario
+    - xscenario
+
+RSpec/Capybara/VisibilityMatcher:
+  Enabled: true
+
 RSpec/ContextMethod:
   Enabled: true
 
@@ -367,6 +390,9 @@ RSpec/EmptyLineAfterExampleGroup:
     - spec/factories/**/*
 
 RSpec/ExampleWording:
+  Enabled: true
+
+RSpec/FactoryBot/FactoryClassName:
   Enabled: true
 
 RSpec/FilePath:
@@ -443,16 +469,31 @@ Style/ClassVars:
 Style/CollectionMethods:
   Enabled: true
 
+Style/HashConversion:
+  Enabled: true
+
 Style/HashSyntax:
   Enabled: true
 
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
 Style/IdenticalConditionalBranches:
+  Enabled: true
+
+Style/IfWithBooleanLiteralBranches:
   Enabled: true
 
 Style/MethodDefParentheses:
   Enabled: true
 
 Style/MutableConstant:
+  Enabled: true
+
+Style/NegatedIfElseCondition:
   Enabled: true
 
 Style/Not:
@@ -470,6 +511,9 @@ Style/Proc:
 Style/RaiseArgs:
   Enabled: true
 
+Style/RedundantArgument:
+  Enabled: true
+
 Style/RedundantCondition:
   Enabled: true
 
@@ -482,10 +526,25 @@ Style/RedundantFreeze:
 Style/RedundantInterpolation:
   Enabled: true
 
+Style/RedundantParentheses:
+  Enabled: true
+
 Style/RedundantReturn:
   Enabled: true
 
+Style/RedundantSelf:
+  Enabled: true
+
 Style/SafeNavigation:
+  Enabled: true
+
+Style/SingleLineMethods:
+  Enabled: true
+
+Style/SoleNestedConditional:
+  Enabled: true
+
+Style/StringChars:
   Enabled: true
 
 Style/StringLiterals:

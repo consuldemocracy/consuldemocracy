@@ -91,8 +91,7 @@ FactoryBot.define do
     end
   end
 
-  factory :widget_feed, class: "Widget::Feed" do
-  end
+  factory :widget_feed, class: "Widget::Feed"
 
   factory :i18n_content, class: "I18nContent" do
     key { "debates.index.section_footer.description" }

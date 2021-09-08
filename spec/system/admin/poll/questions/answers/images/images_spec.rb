@@ -4,7 +4,7 @@ describe "Images", :admin do
   it_behaves_like "nested imageable",
                   "poll_question_answer",
                   "new_admin_answer_image_path",
-                  { "answer_id": "id" },
+                  { answer_id: "id" },
                   nil,
                   "Save image",
                   "Image uploaded successfully",

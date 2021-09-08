@@ -292,8 +292,7 @@ class Budget
     end
 
     def valid_heading?(user)
-      voted_in?(heading, user) ||
-      can_vote_in_another_heading?(user)
+      voted_in?(heading, user) || can_vote_in_another_heading?(user)
     end
 
     def can_vote_in_another_heading?(user)
@@ -364,11 +363,11 @@ class Budget
     end
 
     def assigned_valuators
-      self.valuators.map(&:description_or_name).compact.join(", ").presence
+      valuators.map(&:description_or_name).compact.join(", ").presence
     end
 
     def assigned_valuation_groups
-      self.valuator_groups.map(&:name).compact.join(", ").presence
+      valuator_groups.map(&:name).compact.join(", ").presence
     end
 
     def self.with_milestone_status_id(status_id)

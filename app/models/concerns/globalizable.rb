@@ -25,7 +25,7 @@ module Globalizable
       translated_attribute_names.any? { |attr| required_attribute?(attr) }
     end
 
-    if self.paranoid? && translation_class.attribute_names.include?("hidden_at")
+    if paranoid? && translation_class.attribute_names.include?("hidden_at")
       translation_class.send :acts_as_paranoid, column: :hidden_at
     end
 

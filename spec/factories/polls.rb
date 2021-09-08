@@ -214,6 +214,5 @@ FactoryBot.define do
     end
   end
 
-  factory :active_poll do
-  end
+  factory :active_poll
 end

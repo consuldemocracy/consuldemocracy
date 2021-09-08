@@ -4,11 +4,7 @@ namespace :proposal_actions do
     ProposalDashboardAction.where.not(link: nil).each do |action|
       next if action.link.blank?
 
-      Link.create!(
-        label: action.title,
-        url: action.link,
-        linkable: action
-      )
+      Link.create!(label: action.title, url: action.link, linkable: action)
     end
   end
 

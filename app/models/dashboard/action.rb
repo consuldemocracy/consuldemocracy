@@ -11,10 +11,7 @@ class Dashboard::Action < ApplicationRecord
 
   enum action_type: [:proposed_action, :resource]
 
-  validates :title,
-            presence: true,
-            allow_blank: false,
-            length: { in: 4..80 }
+  validates :title, presence: true, allow_blank: false, length: { in: 4..80 }
 
   validates :action_type, presence: true
 

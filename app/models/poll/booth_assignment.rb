@@ -12,7 +12,7 @@ class Poll
     has_many :recounts
 
     def shifts?
-      shifts.empty? ? false : true
+      !shifts.empty?
     end
 
     def unable_to_destroy?

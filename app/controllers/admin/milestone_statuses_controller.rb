@@ -13,8 +13,7 @@ class Admin::MilestoneStatusesController < Admin::BaseController
     @status = Milestone::Status.new(status_params)
 
     if @status.save
-      redirect_to admin_milestone_statuses_path,
-                  notice: t("admin.statuses.create.notice")
+      redirect_to admin_milestone_statuses_path, notice: t("admin.statuses.create.notice")
     else
       render :new
     end
@@ -25,8 +24,7 @@ class Admin::MilestoneStatusesController < Admin::BaseController
 
   def update
     if @status.update(status_params)
-      redirect_to admin_milestone_statuses_path,
-                  notice: t("admin.statuses.update.notice")
+      redirect_to admin_milestone_statuses_path, notice: t("admin.statuses.update.notice")
     else
       render :edit
     end
@@ -34,8 +32,7 @@ class Admin::MilestoneStatusesController < Admin::BaseController
 
   def destroy
     @status.destroy!
-    redirect_to admin_milestone_statuses_path,
-                notice: t("admin.statuses.delete.notice")
+    redirect_to admin_milestone_statuses_path, notice: t("admin.statuses.delete.notice")
   end
 
   private

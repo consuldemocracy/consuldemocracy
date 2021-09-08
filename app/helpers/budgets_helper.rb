@@ -1,7 +1,7 @@
 module BudgetsHelper
   def csv_params
     csv_params = params.clone.merge(format: :csv)
-    csv_params = csv_params.to_unsafe_h.map { |k, v| [k.to_sym, v] }.to_h
+    csv_params = csv_params.to_unsafe_h.transform_keys(&:to_sym)
     csv_params.delete(:page)
     csv_params
   end

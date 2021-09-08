@@ -14,8 +14,8 @@ class Budget
     include Imageable
 
     belongs_to :budget, touch: true
-    belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase
-    has_one :prev_phase, class_name: self.name, foreign_key: :next_phase_id, inverse_of: :next_phase
+    belongs_to :next_phase, class_name: name, inverse_of: :prev_phase
+    has_one :prev_phase, class_name: name, foreign_key: :next_phase_id, inverse_of: :next_phase
 
     validates_translation :name, presence: true
     validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }

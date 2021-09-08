@@ -50,18 +50,18 @@ class Document < ApplicationRecord
   end
 
   def prefix(attachment, _style)
-    if !attachment.instance.persisted?
-      "cached_attachments/user/#{attachment.instance.user_id}"
-    else
+    if attachment.instance.persisted?
       ":attachment/:id_partition"
+    else
+      "cached_attachments/user/#{attachment.instance.user_id}"
     end
   end
 
   def custom_hash_data(attachment)
-    original_filename = if !attachment.instance.persisted?
-                          attachment.instance.attachment_file_name
-                        else
+    original_filename = if attachment.instance.persisted?
                           attachment.instance.title
+                        else
+                          attachment.instance.attachment_file_name
                         end
     "#{attachment.instance.user_id}/#{original_filename}"
   end
