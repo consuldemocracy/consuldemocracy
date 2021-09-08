@@ -91,9 +91,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
     end
   end
 
-  scenario "Flagging a comment with a child does not update its children" do
-    skip "Only for comments" unless flaggable.is_a?(Comment)
-
+  scenario "Flagging a comment with a child does not update its children", if: factory_name =~ /comment/ do
     child_comment = create(:comment, commentable: flaggable.commentable, parent: flaggable)
 
     login_as(user)

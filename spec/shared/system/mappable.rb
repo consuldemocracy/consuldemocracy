@@ -173,9 +173,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
   end
 
-  describe "At #{mappable_edit_path}" do
-    before { skip } if mappable_edit_path.blank?
-
+  describe "At #{mappable_edit_path}", if: mappable_edit_path.present? do
     scenario "Should edit map on #{mappable_factory_name} and contain default values" do
       do_login_for mappable.author, management: management
 
