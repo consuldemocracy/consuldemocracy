@@ -195,14 +195,14 @@ describe "Machine learning" do
     select "proposals_summary_comments_textrank.py", from: "Select python script to execute"
 
     within "#script_descriptions" do
-      expect(page).to have_content "Proposals comments summaries - Dummy script"
+      expect(page).to have_content "Proposals comments summaries"
     end
 
     select "proposals_related_content_and_tags_nmf.py", from: "Select python script to execute"
 
     within "#script_descriptions" do
-      expect(page).to have_content "Related Proposals and Tags - Dummy script"
-      expect(page).not_to have_content "Proposals comments summaries - Dummy script"
+      expect(page).to have_content "Related Proposals and Tags"
+      expect(page).not_to have_content "Proposals comments summaries"
     end
   end
 
