@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Layout::SocialComponent, type: :component do
+describe Layout::SocialComponent do
   describe "#render?" do
     it "renders when a social setting is present" do
       Setting["twitter_handle"] = "myhandle"

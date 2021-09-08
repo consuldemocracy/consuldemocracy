@@ -20,6 +20,10 @@ RSpec.configure do |config|
   config.include(CommonActions)
   config.include(ActiveSupport::Testing::TimeHelpers)
 
+  config.define_derived_metadata(file_path: Regexp.new("/spec/components/")) do |metadata|
+    metadata[:type] = :component
+  end
+
   config.before(:suite) do
     Rails.application.load_seed
   end
@@ -77,6 +81,10 @@ RSpec.configure do |config|
 
   config.before(:each, :admin, type: :controller) do
     sign_in(create(:administrator).user)
+  end
+
+  config.before(:each, type: :component) do
+    sign_in(nil)
   end
 
   config.around(:each, :controller, type: :component) do |example|

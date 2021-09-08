@@ -1,13 +1,11 @@
 require "rails_helper"
 
-describe Budgets::InvestmentsListComponent, type: :component do
+describe Budgets::InvestmentsListComponent do
   include Rails.application.routes.url_helpers
 
   let(:budget)    { create(:budget, :accepting) }
   let(:group)     { create(:budget_group, budget: budget) }
   let(:heading)   { create(:budget_heading, group: group) }
-
-  before { allow(controller).to receive(:current_user).and_return(nil) }
 
   describe "#investments" do
     let(:component) { Budgets::InvestmentsListComponent.new(budget) }

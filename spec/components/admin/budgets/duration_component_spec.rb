@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::Budgets::DurationComponent, type: :component do
+describe Admin::Budgets::DurationComponent do
   describe "#dates" do
     it "shows both dates when both are defined" do
       durable = double(

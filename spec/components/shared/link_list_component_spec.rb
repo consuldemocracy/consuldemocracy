@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Shared::LinkListComponent, type: :component do
+describe Shared::LinkListComponent do
   it "renders nothing with an empty list" do
     render_inline Shared::LinkListComponent.new
 

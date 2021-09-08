@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Relationable::RelatedListComponent, type: :component do
+describe Relationable::RelatedListComponent do
   let(:proposal) { create(:proposal) }
   let(:user_proposal) { create(:proposal, title: "I am user related") }
   let(:machine_proposal) { create(:proposal, title: "I am machine related") }
@@ -14,8 +14,6 @@ describe Relationable::RelatedListComponent, type: :component do
     create(:related_content, parent_relationable: proposal,
            child_relationable: machine_proposal,
            machine_learning: true)
-
-    allow(controller).to receive(:current_user).and_return(nil)
   end
 
   it "displays machine learning and user content when machine learning is enabled" do

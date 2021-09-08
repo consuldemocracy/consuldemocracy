@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Layout::LocaleSwitcherComponent, type: :component do
+describe Layout::LocaleSwitcherComponent do
   let(:component) { Layout::LocaleSwitcherComponent.new }
 
   around do |example|

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Targets::PlainTagListComponent, type: :component do
+describe SDG::Targets::PlainTagListComponent do
   let(:debate) do
     create(:debate,
            sdg_targets: [SDG::Target[1.1], SDG::Target[3.2], create(:sdg_local_target, code: "3.2.1")]

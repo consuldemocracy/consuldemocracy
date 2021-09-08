@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::TagListComponent, type: :component do
+describe SDG::TagListComponent do
   let(:debate) do
     create(:debate,
             sdg_goals: [SDG::Goal[3]],

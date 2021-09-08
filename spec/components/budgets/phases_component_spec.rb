@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Budgets::PhasesComponent, type: :component do
+describe Budgets::PhasesComponent do
   let(:budget) { create(:budget) }
 
   it "shows budget current phase main link when defined" do

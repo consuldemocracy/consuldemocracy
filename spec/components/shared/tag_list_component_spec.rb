@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Shared::TagListComponent, type: :component do
+describe Shared::TagListComponent do
   let(:user_tag) { create(:tag, name: "user tag") }
   let(:ml_tag) { create(:tag, name: "machine learning tag") }
   let(:proposal) { create(:proposal, tag_list: [user_tag], ml_tag_list: [ml_tag]) }
@@ -9,7 +9,6 @@ describe Shared::TagListComponent, type: :component do
   before do
     Setting["feature.machine_learning"] = true
     Setting["machine_learning.tags"] = true
-    allow(controller).to receive(:current_user).and_return(create(:administrator).user)
   end
 
   it "displays machine learning tags when machine learning is enabled" do

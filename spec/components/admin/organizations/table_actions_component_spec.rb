@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::Organizations::TableActionsComponent, type: :component do
+describe Admin::Organizations::TableActionsComponent do
   let(:organization) { create(:organization) }
   let(:component) { Admin::Organizations::TableActionsComponent.new(organization) }
 

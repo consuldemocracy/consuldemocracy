@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Goals::PlainTagListComponent, type: :component do
+describe SDG::Goals::PlainTagListComponent do
   let(:debate) { create(:debate, sdg_goals: [SDG::Goal[1], SDG::Goal[3]]) }
   let(:component) { SDG::Goals::PlainTagListComponent.new(debate) }
 

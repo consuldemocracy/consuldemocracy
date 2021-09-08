@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::Roles::TableActionsComponent, type: :component, controller: Admin::BaseController do
+describe Admin::Roles::TableActionsComponent, controller: Admin::BaseController do
   let(:user) { create(:user) }
 
   it "renders link to add the role for new records" do

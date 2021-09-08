@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::HiddenTableActionsComponent, type: :component do
+describe Admin::HiddenTableActionsComponent do
   let(:record) { create(:user) }
   let(:component) { Admin::HiddenTableActionsComponent.new(record) }
 

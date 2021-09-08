@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Shared::FilterSelectorComponent, type: :component do
+describe Shared::FilterSelectorComponent do
   it "renders a form with a select" do
     component = Shared::FilterSelectorComponent.new(i18n_namespace: "budgets.investments.index")
     allow(component).to receive(:valid_filters).and_return(["unfeasible", "winners"])

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDGManagement::Relations::IndexComponent, type: :component, controller: SDGManagement::RelationsController do
+describe SDGManagement::Relations::IndexComponent, controller: SDGManagement::RelationsController do
   before do
     allow_any_instance_of(SDGManagement::RelationsController).to receive(:valid_filters)
       .and_return(SDGManagement::RelationsController::FILTERS)

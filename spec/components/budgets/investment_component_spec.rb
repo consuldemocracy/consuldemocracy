@@ -1,11 +1,7 @@
 require "rails_helper"
 
-describe Budgets::InvestmentComponent, type: :component do
-  let(:user) { create(:user) }
-
-  before do
-    allow(controller).to receive(:current_user).and_return(user)
-  end
+describe Budgets::InvestmentComponent do
+  before { sign_in(create(:user)) }
 
   it "shows the investment image when defined" do
     investment = create(:budget_investment, :with_image)

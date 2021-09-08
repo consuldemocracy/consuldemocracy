@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::TableActionsComponent, type: :component, controller: Admin::BaseController do
+describe Admin::TableActionsComponent, controller: Admin::BaseController do
   let(:record) { create(:banner) }
 
   it "renders links to edit and destroy a record by default" do

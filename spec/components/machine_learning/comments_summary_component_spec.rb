@@ -1,13 +1,12 @@
 require "rails_helper"
 
-describe MachineLearning::CommentsSummaryComponent, type: :component do
+describe MachineLearning::CommentsSummaryComponent do
   let(:commentable) { double(summary_comment: double(body: "There's a general agreement")) }
   let(:component) { MachineLearning::CommentsSummaryComponent.new(commentable) }
 
   before do
     Setting["feature.machine_learning"] = true
     Setting["machine_learning.comments_summary"] = true
-    allow(controller).to receive(:current_user).and_return(nil)
   end
 
   it "is displayed when the setting is enabled" do
