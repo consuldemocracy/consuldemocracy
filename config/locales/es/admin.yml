@@ -157,6 +157,7 @@ es:
         add_group: "Añadir grupo"
         add_heading: "Añadir partida"
         groups_and_headings: "Grupos y partidas"
+        headings_caption: "Partidas del grupo %{group}"
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.

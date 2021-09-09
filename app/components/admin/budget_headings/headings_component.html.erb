@@ -1,5 +1,6 @@
 <% if headings.any? %>
   <table>
+    <caption><%= t("admin.budgets.show.headings_caption", group: group.name) %></caption>
     <thead>
       <tr>
         <th><%= Budget::Heading.human_attribute_name(:name) %></th>

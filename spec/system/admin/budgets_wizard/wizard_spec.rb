@@ -70,7 +70,7 @@ describe "Budgets creation wizard", :admin do
     click_button "Create new heading"
 
     expect(page).to have_content "Heading created successfully!"
-    within("table") { expect(page).to have_content "All city" }
+    within_table("Headings in All city") { expect(page).to have_content "All city" }
     expect(page).not_to have_content "There are no headings."
 
     click_link "Manage headings from the Districts group."
@@ -82,7 +82,7 @@ describe "Budgets creation wizard", :admin do
     click_button "Create new heading"
 
     expect(page).to have_content "Heading created successfully!"
-    within("table") { expect(page).to have_content "North" }
+    within_table("Headings in Districts") { expect(page).to have_content "North" }
     expect(page).not_to have_content "There are no headings."
 
     click_button "Add new heading"
@@ -91,7 +91,7 @@ describe "Budgets creation wizard", :admin do
     click_button "Create new heading"
 
     expect(page).to have_content "Heading created successfully!"
-    within("table") { expect(page).to have_content "South" }
+    within_table("Headings in Districts") { expect(page).to have_content "South" }
 
     click_link "Continue to phases"
 
@@ -113,15 +113,15 @@ describe "Budgets creation wizard", :admin do
 
     within "section", text: "Groups and headings" do
       within "section", text: "All city" do
-        within "tbody" do
-          expect(page).to have_css "tr", count: 1
+        within_table "Headings in All city" do
+          expect(page).to have_css "tbody tr", count: 1
           expect(page).to have_content "All city"
         end
       end
 
       within "section", text: "Districts" do
-        within "tbody" do
-          expect(page).to have_css "tr", count: 2
+        within_table "Headings in Districts" do
+          expect(page).to have_css "tbody tr", count: 2
           expect(page).to have_content "North"
           expect(page).to have_content "South"
         end
