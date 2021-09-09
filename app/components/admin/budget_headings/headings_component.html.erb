@@ -28,6 +28,6 @@
   </table>
 <% else %>
   <div class="callout primary clear">
-    <%= t("admin.budget_headings.no_headings") %>
+    <%= sanitize(t("admin.budget_headings.no_headings", group: group.name)) %>
   </div>
 <% end %>

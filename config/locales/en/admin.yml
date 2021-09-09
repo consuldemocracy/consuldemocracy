@@ -185,7 +185,7 @@ en:
       index:
         new_button: "Add new group"
     budget_headings:
-      no_headings: "There are no headings."
+      no_headings: "There are no headings in the <strong>%{group}</strong> group."
       create:
         notice: "Heading created successfully!"
       update:
@@ -202,7 +202,7 @@ en:
         edit: "Edit heading"
         submit: "Save heading"
       group_switcher:
-        currently_showing: "Showing headings from the %{group} group."
+        currently_showing: "Showing headings from the <strong>%{group}</strong> group."
         different_group: "Manage headings from a different group"
         the_other_group: "Manage headings from the %{group} group."
       index:

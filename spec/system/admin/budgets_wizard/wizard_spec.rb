@@ -62,7 +62,7 @@ describe "Budgets creation wizard", :admin do
     click_link "Continue to headings"
 
     expect(page).to have_content "Showing headings from the All city group"
-    expect(page).to have_content "There are no headings."
+    expect(page).to have_content "There are no headings in the All city group."
 
     click_button "Add new heading"
     fill_in "Heading name", with: "All city"
@@ -71,10 +71,10 @@ describe "Budgets creation wizard", :admin do
 
     expect(page).to have_content "Heading created successfully!"
     within_table("Headings in All city") { expect(page).to have_content "All city" }
-    expect(page).not_to have_content "There are no headings."
+    expect(page).not_to have_content "There are no headings"
 
     click_link "Manage headings from the Districts group."
-    expect(page).to have_content "There are no headings."
+    expect(page).to have_content "There are no headings in the Districts group."
 
     click_button "Add new heading"
     fill_in "Heading name", with: "North"
@@ -83,7 +83,7 @@ describe "Budgets creation wizard", :admin do
 
     expect(page).to have_content "Heading created successfully!"
     within_table("Headings in Districts") { expect(page).to have_content "North" }
-    expect(page).not_to have_content "There are no headings."
+    expect(page).not_to have_content "There are no headings"
 
     click_button "Add new heading"
     fill_in "Heading name", with: "South"

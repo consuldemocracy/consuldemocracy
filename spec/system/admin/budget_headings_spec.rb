@@ -19,10 +19,12 @@ describe "Admin budget headings", :admin do
 
   context "List of headings in the budget page" do
     scenario "Displaying no headings for group" do
+      group.update!(name: "Universities")
+
       visit admin_budget_path(budget)
 
       within "section", text: "Groups and headings" do
-        expect(page).to have_content "There are no headings."
+        expect(page).to have_content "There are no headings in the Universities group."
       end
     end
 
