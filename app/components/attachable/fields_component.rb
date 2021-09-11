@@ -31,7 +31,15 @@ class Attachable::FieldsComponent < ApplicationComponent
       if !attachable.persisted? && attachable.cached_attachment.present?
         link_to t("#{plural_name}.form.delete_button"), "#", class: "delete remove-cached-attachment"
       else
-        link_to_remove_association attachable.new_record? ? t("documents.form.cancel_button") : t("#{plural_name}.form.delete_button"), f, class: "delete remove-#{singular_name}"
+        link_to_remove_association remove_association_text, f, class: "delete remove-#{singular_name}"
+      end
+    end
+
+    def remove_association_text
+      if attachable.new_record?
+        t("documents.form.cancel_button")
+      else
+        t("#{plural_name}.form.delete_button")
       end
     end
 
