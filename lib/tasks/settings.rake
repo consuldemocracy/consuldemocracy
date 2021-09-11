@@ -8,6 +8,5 @@ namespace :settings do
   desc "Rename existing settings"
   task rename_setting_keys: :environment do
     ApplicationLogger.new.info "Renaming existing settings"
-    Setting.rename_key from: "dashboard.emails", to: "feature.dashboard.notification_emails"
   end
 end
