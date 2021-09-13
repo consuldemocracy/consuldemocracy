@@ -172,9 +172,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-async (1.0.0)
-      activejob (>= 5.0)
-      devise (>= 4.0)
     devise-security (0.16.0)
       devise (>= 4.3.0, < 5.0)
     diff-lcs (1.4.4)
@@ -717,7 +714,6 @@ DEPENDENCIES
   database_cleaner (~> 2.0.1)
   delayed_job_active_record (~> 4.1.6)
   devise (~> 4.8.0)
-  devise-async (~> 1.0.0)
   devise-security (~> 0.16.0)
   email_spec (~> 2.2.0)
   erb_lint (~> 0.0.37)
