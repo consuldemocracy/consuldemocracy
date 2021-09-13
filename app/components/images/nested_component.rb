@@ -1,6 +1,5 @@
 class Images::NestedComponent < ApplicationComponent
   attr_reader :f, :image_fields
-  delegate :imageable_humanized_accepted_content_types, :imageable_max_file_size, to: :helpers
 
   def initialize(f, image_fields: :image)
     @f = f
@@ -14,7 +13,7 @@ class Images::NestedComponent < ApplicationComponent
     end
 
     def note
-      t "images.form.note", accepted_content_types: imageable_humanized_accepted_content_types,
-        max_file_size: imageable_max_file_size
+      t "images.form.note", accepted_content_types: Image.humanized_accepted_content_types,
+        max_file_size: Image.max_file_size
     end
 end
