@@ -7,7 +7,7 @@ class Document < ApplicationRecord
                                  hash_secret: Rails.application.secrets.secret_key_base
 
   belongs_to :user
-  belongs_to :documentable, polymorphic: true
+  belongs_to :documentable, polymorphic: true, touch: true
 
   validates :title, presence: true
   validates :user_id, presence: true
