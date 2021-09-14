@@ -156,7 +156,7 @@ en:
       show:
         add_group: "Add group"
         add_heading: "Add heading"
-        groups_and_headings: "Groups and headings"
+        groups_and_headings: "Heading groups"
         headings_caption: "Headings in %{group}"
       winners:
         calculate: Calculate Winner Investments
