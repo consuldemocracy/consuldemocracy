@@ -16,12 +16,6 @@ module InvestmentFilters
   end
 
   def investment_filters
-    [
-      "not_unfeasible",
-      "unfeasible",
-      ("unselected" if @budget.publishing_prices_or_later?),
-      ("selected" if @budget.publishing_prices_or_later?),
-      ("winners" if @budget.finished?)
-    ].compact
+    @budget.investments_filters
   end
 end

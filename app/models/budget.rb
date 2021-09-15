@@ -196,6 +196,16 @@ class Budget < ApplicationRecord
     end
   end
 
+  def investments_filters
+    [
+      "not_unfeasible",
+      "unfeasible",
+      ("unselected" if publishing_prices_or_later?),
+      ("selected" if publishing_prices_or_later?),
+      ("winners" if finished?)
+    ].compact
+  end
+
   def email_selected
     investments.selected.order(:id).each do |investment|
       Mailer.budget_investment_selected(investment).deliver_later
