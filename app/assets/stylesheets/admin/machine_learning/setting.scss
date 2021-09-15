@@ -16,10 +16,6 @@
     min-width: rem-calc(100);
     position: relative;
 
-    &:focus {
-      outline: $outline-focus;
-    }
-
     &::after {
       background: $white;
       border-radius: 100%;
