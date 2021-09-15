@@ -139,32 +139,31 @@ describe "Budget Investments" do
 
     visit budget_investments_path(budget, heading_id: heading.id)
 
-    expect(page).to have_select "Filtering projects by",
-                                options: ["Not unfeasible", "Unfeasible", "Unselected", "Selected", "Winners"]
+    expect(page).to have_content "FILTERING PROJECTS BY"
 
-    select "Unfeasible", from: "Filtering projects by"
+    click_link "Unfeasible"
 
     expect(page).to have_css ".budget-investment", count: 1
     expect(page).to have_content "Unfeasible investment"
 
-    select "Unselected", from: "Filtering projects by"
+    click_link "Unselected"
 
     expect(page).to have_css ".budget-investment", count: 2
     expect(page).to have_content "Unselected investment"
     expect(page).to have_content "Feasible investment"
 
-    select "Selected", from: "Filtering projects by"
+    click_link "Selected"
 
-    expect(page).to have_css ".budget-investment", count: 2
     expect(page).to have_content "Selected investment"
     expect(page).to have_content "Winner investment"
+    expect(page).to have_css ".budget-investment", count: 2
 
-    select "Winners", from: "Filtering projects by"
+    click_link "Winners"
 
     expect(page).to have_css ".budget-investment", count: 1
     expect(page).to have_content "Winner investment"
 
-    select "Not unfeasible", from: "Filtering projects by"
+    click_link "Not unfeasible"
 
     expect(page).to have_css ".budget-investment", count: 4
     expect(page).to have_content "Selected investment"
@@ -203,13 +202,10 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading: heading)
 
-      click_on "Advanced search"
-
-      within(".advanced-search-form") do
-        fill_in "With the text", with: "environment"
-        select "Last 24 hours", from: "By date"
-        click_button "Filter"
-      end
+      click_button "Advanced search"
+      fill_in "With the text", with: "environment"
+      select "Last 24 hours", from: "By date"
+      click_button "Filter"
 
       expect(page).to have_content "There is 1 investment containing the term 'environment'"
       expect(page).to have_css ".budget-investment", count: 1
@@ -218,7 +214,7 @@ describe "Budget Investments" do
       expect(page).not_to have_content "Unfeasible environment"
       expect(page).not_to have_content "Unfeasible health"
 
-      select "Unfeasible", from: "Filtering projects by"
+      click_link "Unfeasible"
 
       expect(page).not_to have_content "Feasible environment"
       expect(page).to have_content "There is 1 investment containing the term 'environment'"
