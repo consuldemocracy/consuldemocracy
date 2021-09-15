@@ -199,9 +199,10 @@ class Budget < ApplicationRecord
   def investments_filters
     [
       "not_unfeasible",
+      "feasible",
       "unfeasible",
-      ("unselected" if publishing_prices_or_later?),
       ("selected" if publishing_prices_or_later?),
+      ("unselected" if publishing_prices_or_later?),
       ("winners" if finished?)
     ].compact
   end

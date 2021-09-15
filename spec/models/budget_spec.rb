@@ -290,7 +290,7 @@ describe Budget do
       %w[informing accepting reviewing selecting valuating].each do |phase|
         budget.phase = phase
 
-        expect(budget.investments_filters).to eq(%w[not_unfeasible unfeasible])
+        expect(budget.investments_filters).to eq(%w[not_unfeasible feasible unfeasible])
       end
     end
 
@@ -298,14 +298,14 @@ describe Budget do
       %w[publishing_prices balloting reviewing_ballots].each do |phase|
         budget.phase = phase
 
-        expect(budget.investments_filters).to eq(%w[not_unfeasible unfeasible unselected selected])
+        expect(budget.investments_filters).to eq(%w[not_unfeasible feasible unfeasible selected unselected])
       end
     end
 
     it "returns all filters after the budget has finished" do
       budget.phase = "finished"
 
-      expect(budget.investments_filters).to eq(%w[not_unfeasible unfeasible unselected selected winners])
+      expect(budget.investments_filters).to eq(%w[not_unfeasible feasible unfeasible selected unselected winners])
     end
   end
 

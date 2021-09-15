@@ -131,6 +131,7 @@ describe "Budget Investments" do
   scenario "Index filter by status" do
     budget.update!(phase: "finished")
 
+    create(:budget_investment, heading: heading, title: "Unclassified investment")
     create(:budget_investment, :feasible, heading: heading, title: "Feasible investment")
     create(:budget_investment, :unfeasible, heading: heading, title: "Unfeasible investment")
     create(:budget_investment, :unselected, heading: heading, title: "Unselected investment")
@@ -141,34 +142,41 @@ describe "Budget Investments" do
 
     expect(page).to have_content "FILTERING PROJECTS BY"
 
-    click_link "Unfeasible"
+    click_link "Feasible"
 
     expect(page).to have_css ".budget-investment", count: 1
+    expect(page).to have_content "Feasible investment"
+
+    click_link "Unfeasible"
+
     expect(page).to have_content "Unfeasible investment"
+    expect(page).to have_css ".budget-investment", count: 1
 
     click_link "Unselected"
 
-    expect(page).to have_css ".budget-investment", count: 2
+    expect(page).to have_css ".budget-investment", count: 3
     expect(page).to have_content "Unselected investment"
+    expect(page).to have_content "Unclassified investment"
     expect(page).to have_content "Feasible investment"
 
     click_link "Selected"
 
+    expect(page).to have_css ".budget-investment", count: 2
     expect(page).to have_content "Selected investment"
     expect(page).to have_content "Winner investment"
-    expect(page).to have_css ".budget-investment", count: 2
 
     click_link "Winners"
 
     expect(page).to have_css ".budget-investment", count: 1
     expect(page).to have_content "Winner investment"
 
-    click_link "Not unfeasible"
+    click_link "Feasible or with undecided feasibility"
 
-    expect(page).to have_css ".budget-investment", count: 4
+    expect(page).to have_css ".budget-investment", count: 5
     expect(page).to have_content "Selected investment"
     expect(page).to have_content "Unselected investment"
     expect(page).to have_content "Feasible investment"
+    expect(page).to have_content "Unclassified investment"
     expect(page).to have_content "Winner investment"
   end
 
