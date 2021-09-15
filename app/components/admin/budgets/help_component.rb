@@ -6,7 +6,7 @@ class Admin::Budgets::HelpComponent < ApplicationComponent
   end
 
   def budget_mode
-    (helpers.budget_mode if helpers.respond_to?(:budget_mode)) || "multiple"
+    (helpers.budget_mode if helpers.respond_to?(:budget_mode)).presence || "multiple"
   end
 
   private
