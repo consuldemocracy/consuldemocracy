@@ -328,42 +328,6 @@ describe "Budgets" do
     let!(:budget) { create(:budget, :selecting) }
     let!(:group)  { create(:budget_group, budget: budget) }
 
-    describe "Links to unfeasible and selected" do
-      scenario "are not seen before balloting" do
-        visit budget_group_path(budget, group)
-
-        expect(page).not_to have_link "See unfeasible investments"
-        expect(page).not_to have_link "See investments not selected for balloting phase"
-      end
-
-      scenario "are not seen publishing prices" do
-        budget.update!(phase: :publishing_prices)
-
-        visit budget_group_path(budget, group)
-
-        expect(page).not_to have_link "See unfeasible investments"
-        expect(page).not_to have_link "See investments not selected for balloting phase"
-      end
-
-      scenario "are seen balloting" do
-        budget.update!(phase: :balloting)
-
-        visit budget_group_path(budget, group)
-
-        expect(page).to have_link "See unfeasible investments"
-        expect(page).to have_link "See investments not selected for balloting phase"
-      end
-
-      scenario "are seen on finished budgets" do
-        budget.update!(phase: :finished)
-
-        visit budget_group_path(budget, group)
-
-        expect(page).to have_link "See unfeasible investments"
-        expect(page).to have_link "See investments not selected for balloting phase"
-      end
-    end
-
     scenario "Take into account headings with the same name from a different budget" do
       group1 = create(:budget_group, budget: budget, name: "New York")
       heading1 = create(:budget_heading, group: group1, name: "Brooklyn")

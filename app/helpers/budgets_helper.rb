@@ -16,9 +16,7 @@ module BudgetsHelper
   end
 
   def css_for_ballot_heading(heading)
-    return "" if current_ballot.blank? || @current_filter == "unfeasible"
-
-    current_ballot.has_lines_in_heading?(heading) ? "is-active" : ""
+    current_ballot&.has_lines_in_heading?(heading) ? "is-active" : ""
   end
 
   def current_ballot

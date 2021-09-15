@@ -43,10 +43,6 @@ en:
     groups:
       show:
         title: Select a heading
-        unfeasible_title: Unfeasible investments
-        unfeasible: See unfeasible investments
-        unselected_title: Investments not selected for balloting phase
-        unselected: See investments not selected for balloting phase
     phase:
       drafting: Draft (Not visible to the public)
       informing: Information
