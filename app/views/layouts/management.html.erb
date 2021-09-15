@@ -16,16 +16,12 @@
       <div class="expanded row admin-top-bar">
         <div class="top-bar">
           <div class="top-bar-left">
-            <ul class="menu">
-              <li class="menu-text">
-                <h1>
-                  <%= link_to management_root_path do %>
-                    <%= setting["org_name"] %>
-                    <br><small><%= t("management.dashboard.index.title") %></small>
-                  <% end %>
-                </h1>
-              </li>
-            </ul>
+            <h1>
+              <%= link_to management_root_path do %>
+                <%= setting["org_name"] %>
+                <br><small><%= t("management.dashboard.index.title") %></small>
+              <% end %>
+            </h1>
           </div>
           <% if show_admin_menu?(manager_logged_in) %>
             <div id="responsive_menu">
