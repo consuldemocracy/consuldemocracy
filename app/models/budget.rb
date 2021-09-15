@@ -198,13 +198,10 @@ class Budget < ApplicationRecord
 
   def investments_filters
     [
-      "not_unfeasible",
-      "feasible",
-      "unfeasible",
-      ("selected" if publishing_prices_or_later?),
-      ("unselected" if publishing_prices_or_later?),
+      (%w[not_unfeasible feasible unfeasible] if valuating_or_later?),
+      (%w[selected unselected] if publishing_prices_or_later?),
       ("winners" if finished?)
-    ].compact
+    ].compact.flatten
   end
 
   def email_selected

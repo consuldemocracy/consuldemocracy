@@ -286,12 +286,18 @@ describe Budget do
   end
 
   describe "#investments_filters" do
-    it "returns feasibility filters before publishing prices" do
-      %w[informing accepting reviewing selecting valuating].each do |phase|
+    it "returns no filters before valuating" do
+      %w[informing accepting reviewing selecting].each do |phase|
         budget.phase = phase
 
-        expect(budget.investments_filters).to eq(%w[not_unfeasible feasible unfeasible])
+        expect(budget.investments_filters).to be_empty
       end
+    end
+
+    it "returns feasibility filters during valuation" do
+      budget.phase = "valuating"
+
+      expect(budget.investments_filters).to eq(%w[not_unfeasible feasible unfeasible])
     end
 
     it "returns feasibility and selection filters during the final voting phases" do
