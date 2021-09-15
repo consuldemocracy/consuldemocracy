@@ -9,7 +9,7 @@ module HasAttachment
       alias_method :"paperclip_#{attribute}=", :"#{attribute}="
 
       define_method :"#{attribute}=" do |file|
-        if file.is_a?(IO)
+        if file.is_a?(IO) || file.is_a?(Tempfile) && !file.is_a?(Ckeditor::Http::QqFile)
           send(:"storage_#{attribute}").attach(io: file, filename: File.basename(file.path))
         elsif file.nil?
           send(:"storage_#{attribute}").detach
