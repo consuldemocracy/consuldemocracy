@@ -18,4 +18,12 @@ class Budgets::Ballot::BallotComponent < ApplicationComponent
     def no_balloted_groups
       budget.groups.sort_by_name - ballot.groups
     end
+
+    def group_path(group)
+      if group.multiple_headings?
+        budget_group_path(budget, group)
+      else
+        budget_investments_path(budget, heading_id: group.headings.first)
+      end
+    end
 end

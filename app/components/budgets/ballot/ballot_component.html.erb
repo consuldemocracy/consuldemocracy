@@ -23,8 +23,7 @@
           <h3>
             <%= group.name %> - <%= heading.name %>
           </h3>
-          <%= link_to sanitize(ballot.amount_available_info(heading)),
-                      budget_group_path(budget, group) %>
+          <%= link_to sanitize(ballot.amount_available_info(heading)), group_path(group) %>
         </div>
         <% if ballot.has_lines_in_group?(group) %>
           <h4 class="amount-spent text-right">
@@ -52,7 +51,7 @@
           <h3>
             <%= group.name %>
           </h3>
-          <%= link_to t("budgets.ballots.show.no_balloted_group_yet"), budget_group_path(budget, group) %>
+          <%= link_to t("budgets.ballots.show.no_balloted_group_yet"), group_path(group) %>
         </div>
       </div>
     </div>
