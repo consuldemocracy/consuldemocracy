@@ -8,4 +8,14 @@ class Budgets::Ballot::BallotComponent < ApplicationComponent
   def budget
     ballot.budget
   end
+
+  private
+
+    def ballot_groups
+      ballot.groups.sort_by_name
+    end
+
+    def no_balloted_groups
+      budget.groups.sort_by_name - ballot.groups
+    end
 end
