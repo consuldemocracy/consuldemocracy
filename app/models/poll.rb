@@ -53,15 +53,7 @@ class Poll < ApplicationRecord
 
   def self.sort_for_list
     all.sort do |poll, another_poll|
-      if poll.geozone_restricted? == another_poll.geozone_restricted?
-        [poll.starts_at, poll.name] <=> [another_poll.starts_at, another_poll.name]
-      else
-        if poll.geozone_restricted?
-          1
-        else
-          -1
-        end
-      end
+      [poll.weight, poll.starts_at, poll.name] <=> [another_poll.weight, another_poll.starts_at, another_poll.name]
     end
   end
 
@@ -189,5 +181,13 @@ class Poll < ApplicationRecord
 
   def self.search(terms)
     pg_search(terms)
+  end
+
+  def weight
+    if geozone_restricted?
+      100
+    else
+      0
+    end
   end
 end
