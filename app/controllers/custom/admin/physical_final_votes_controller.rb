@@ -1,6 +1,7 @@
 class Admin::PhysicalFinalVotesController < Admin::BaseController
+  PER_PAGE = 10
   def index
-    @physical_final_votes = PhysicalFinalVote.all
+    @physical_final_votes = physical_final_votes.page(params[:page]).per(PER_PAGE)
   end
 
   def new
@@ -33,7 +34,19 @@ class Admin::PhysicalFinalVotesController < Admin::BaseController
   end
 
   private
-
+      def physical_final_votes
+		physical_final_votes = PhysicalFinalVote.scoped_filter(params, @current_filter).order_filter(params)
+		physical_final_votes = Kaminari.paginate_array(physical_final_votes) if physical_final_votes.is_a?(Array)
+		physical_final_votes
+                             #.sort_by_random(session[:random_seed])
+        #if @current_order == "random"
+        #  @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+        #                     .sort_by_random(session[:random_seed])
+        #else
+        #  @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+        #                     .send("sort_by_#{@current_order}")
+        #end
+      end
     def physical_final_vote_params
       params.require(:physical_final_vote).permit(:signable_type, :signable_id, :total_votes, :booth)
     end

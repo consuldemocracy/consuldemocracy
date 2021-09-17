@@ -93,7 +93,8 @@
     <% if feature?(:physical_final_votes) %>
       <li class="section-title" <%= "class=active" if controller_name == "physical_final_votes" %>>
         <%= link_to admin_physical_final_votes_path do %>
-          <strong><%= t("admin.menu.physical_final_votes") %></strong>
+			<span class="icon-file-text-o"></span>
+            <strong><%= t("admin.menu.physical_final_votes") %></strong>
         <% end %>
       </li>
     <% end %>
