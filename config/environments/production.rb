@@ -75,6 +75,9 @@ Rails.application.configure do
     config.action_mailer.smtp_settings = Rails.application.secrets.smtp_settings
   end
 
+  # Use AMAZON S3 as storage
+  config.active_storage.service = :s3
+
   # Disable locale fallbacks for I18n
   # (prevents using fallback locales set in application.rb).
   # config.i18n.fallbacks = false
