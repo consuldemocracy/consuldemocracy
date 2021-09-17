@@ -23,6 +23,7 @@ namespace :active_storage do
 
     Rails.application.eager_load!
     models = ActiveRecord::Base.descendants.reject(&:abstract_class?)
+    paperclip_storage = Paperclip::Attachment.default_options[:storage]
 
     ActiveRecord::Base.transaction do
       models.each do |model|
@@ -42,11 +43,19 @@ namespace :active_storage do
           attachments.each do |attachment|
             next if instance.send(:"storage_#{attachment}").attached?
 
-            source = instance.send(attachment).path
+            source = if paperclip_storage == :filesystem
+                       instance.send(attachment).path
+                     else
+                       instance.send(attachment).url
+                     end
 
-            next if source.blank?
+            next if source.blank? || source == "/images/original/missing.png"
 
-            file = File.read(source) if File.exist?(source)
+            file = if paperclip_storage == :filesystem
+                     File.read(source) if File.exist?(source)
+                   else
+                     Net::HTTP.get(URI(source))
+                   end
 
             connection.exec_prepared(
               statement_name, [
@@ -67,18 +76,23 @@ namespace :active_storage do
     end
 
     ActiveStorage::Attachment.find_each do |attachment|
-      dest = ActiveStorage::Blob.service.path_for(attachment.blob.key)
+      blob = attachment.blob
 
-      next if File.exist?(dest) || !attachment.record
+      next if blob.service.exist?(blob.key) || !attachment.record
 
       name = attachment.name.delete_prefix("storage_")
-      source = attachment.record.send(name).path
+      paperclip_attachment = attachment.record.send(name)
 
-      if source && File.exist?(source)
-        FileUtils.mkdir_p(File.dirname(dest))
-        logger.info "Copying #{source} to #{dest}"
-        FileUtils.cp(source, dest)
-      end
+      next unless paperclip_attachment.exists?
+
+      source_file = if paperclip_storage == :filesystem
+                      paperclip_attachment.path
+                    else
+                      URI.open(paperclip_attachment.url, &:read)
+                    end
+
+      logger.info "Copying #{paperclip_attachment.url} to active storage"
+      blob.service.upload(blob.key, source_file)
     end
   end
 end
