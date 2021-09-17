@@ -7,9 +7,9 @@ describe Budgets::SubheaderComponent do
 
     render_inline Budgets::SubheaderComponent.new(budget)
 
-    within(".budget-subheader") do
-      expect(page).to have_content "CURRENT PHASE"
-      expect(page).to have_content "Information"
+    page.find(".budget-subheader") do |subheader|
+      expect(subheader).to have_content "Current phase"
+      expect(subheader).to have_content "Information"
     end
   end
 

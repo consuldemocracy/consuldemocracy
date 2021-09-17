@@ -13,10 +13,10 @@ describe Budgets::BudgetComponent do
 
       render_inline Budgets::BudgetComponent.new(budget)
 
-      within(".budget-header") do
-        expect(page).to have_content("PARTICIPATORY BUDGETS")
-        expect(page).to have_content(budget.name)
-        expect(page).to have_link("Help with participatory budgets")
+      page.find(".budget-header") do |header|
+        expect(header).to have_content "Participatory budgets"
+        expect(header).to have_content budget.name
+        expect(header).to have_link "Help with participatory budgets"
       end
     end
 
