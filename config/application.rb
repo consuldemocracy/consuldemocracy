@@ -21,7 +21,7 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
-    config.load_defaults 5.2
+    config.load_defaults 6.0
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
@@ -33,6 +33,15 @@ module Consul
     # Keep using AES-256-CBC for message encryption in case it's used
     # in any CONSUL installations
     config.active_support.use_authenticated_message_encryption = false
+
+    # Keep using the classic autoloader until we decide how custom classes
+    # should work with zeitwerk
+    config.autoloader = :classic
+
+    # Use the default queue for ActiveStorage like we were doing with Rails 5.2
+    # because it will also be the default in Rails 6.1.
+    config.active_storage.queues.analysis = nil
+    config.active_storage.queues.purge    = nil
 
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
