@@ -22,7 +22,7 @@ shared_examples "document validations" do |documentable_factory|
   it "is valid for all accepted content types" do
     acceptedcontenttypes.each do |content_type|
       extension = content_type.split("/").last
-      document.attachment = File.new("spec/fixtures/files/empty.#{extension}")
+      document.attachment = File.new(file_fixture("empty.#{extension}"))
 
       expect(document).to be_valid
     end

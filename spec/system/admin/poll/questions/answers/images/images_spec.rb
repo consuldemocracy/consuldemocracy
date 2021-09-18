@@ -38,7 +38,7 @@ describe "Images", :admin do
     expect(page).not_to have_content("clippy.jpg")
 
     visit new_admin_answer_image_path(answer)
-    imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+    imageable_attach_new_file(file_fixture("clippy.jpg"))
     click_button "Save image"
 
     expect(page).to have_css("img[title='clippy.jpg']")

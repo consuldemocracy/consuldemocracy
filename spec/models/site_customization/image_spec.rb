@@ -3,7 +3,7 @@ require "rails_helper"
 describe SiteCustomization::Image do
   it "stores images with Active Storage" do
     image = create(:site_customization_image, name: "map",
-                   image: File.new("spec/fixtures/files/custom_map.jpg"))
+                   image: File.new(file_fixture("custom_map.jpg")))
 
     expect(image.image).to be_attached
     expect(image.image.filename).to eq "custom_map.jpg"
@@ -13,7 +13,7 @@ describe SiteCustomization::Image do
     it "is valid with a 260x80 image" do
       image = build(:site_customization_image,
                     name: "logo_header",
-                    image: File.new("spec/fixtures/files/logo_header-260x80.png"))
+                    image: File.new(file_fixture("logo_header-260x80.png")))
 
       expect(image).to be_valid
     end
@@ -21,7 +21,7 @@ describe SiteCustomization::Image do
     it "is valid with a 223x80 image" do
       image = build(:site_customization_image,
                     name: "logo_header",
-                    image: File.new("spec/fixtures/files/logo_header.png"))
+                    image: File.new(file_fixture("logo_header.png")))
 
       expect(image).to be_valid
     end
@@ -29,7 +29,7 @@ describe SiteCustomization::Image do
     it "is not valid with a 400x80 image" do
       image = build(:site_customization_image,
                     name: "logo_header",
-                    image: File.new("spec/fixtures/files/logo_email_custom.png"))
+                    image: File.new(file_fixture("logo_email_custom.png")))
 
       expect(image).not_to be_valid
     end
