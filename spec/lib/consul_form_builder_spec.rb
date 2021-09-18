@@ -11,7 +11,7 @@ describe ConsulFormBuilder do
     stub_const("DummyModel::OPTIONS", %w[Good Bad Ugly].freeze)
   end
 
-  let(:builder) { ConsulFormBuilder.new(:dummy, DummyModel.new, ActionView::Base.new, {}) }
+  let(:builder) { ConsulFormBuilder.new(:dummy, DummyModel.new, ApplicationController.new.view_context, {}) }
 
   describe "hints" do
     it "does not generate hints by default" do
