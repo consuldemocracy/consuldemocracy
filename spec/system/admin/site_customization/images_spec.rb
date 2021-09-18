@@ -10,7 +10,7 @@ describe "Admin custom images", :admin do
     end
 
     within("tr#image_logo_header") do
-      attach_file "site_customization_image_image", "spec/fixtures/files/logo_header.png"
+      attach_file "site_customization_image_image", file_fixture("logo_header.png")
       click_button "Update"
     end
 
@@ -22,7 +22,7 @@ describe "Admin custom images", :admin do
     visit admin_site_customization_images_path
 
     within("tr#image_map") do
-      attach_file "site_customization_image_image", "spec/fixtures/files/custom_map.jpg"
+      attach_file "site_customization_image_image", file_fixture("custom_map.jpg")
       click_button "Update"
     end
 
@@ -37,7 +37,7 @@ describe "Admin custom images", :admin do
     visit admin_site_customization_images_path
 
     within("tr#image_map") do
-      attach_file "site_customization_image_image", "spec/fixtures/files/custom_map.jpg"
+      attach_file "site_customization_image_image", file_fixture("custom_map.jpg")
       click_button "Update"
     end
 
@@ -63,7 +63,7 @@ describe "Admin custom images", :admin do
   scenario "Custom apple touch icon is replaced on front views" do
     create(:site_customization_image,
            name: "apple-touch-icon-200",
-           image: File.new("spec/fixtures/files/apple-touch-icon-custom-200.png"))
+           image: File.new(file_fixture("apple-touch-icon-custom-200.png")))
 
     visit root_path
 
@@ -77,7 +77,7 @@ describe "Admin custom images", :admin do
     visit admin_site_customization_images_path
 
     within("tr#image_logo_email") do
-      attach_file "site_customization_image_image", "spec/fixtures/files/logo_email_custom.png"
+      attach_file "site_customization_image_image", file_fixture("logo_email_custom.png")
       click_button "Update"
     end
 
@@ -92,7 +92,7 @@ describe "Admin custom images", :admin do
     visit admin_site_customization_images_path
 
     within("tr#image_social_media_icon") do
-      attach_file "site_customization_image_image", "spec/fixtures/files/logo_header.png"
+      attach_file "site_customization_image_image", file_fixture("logo_header.png")
       click_button "Update"
     end
 
@@ -104,7 +104,7 @@ describe "Admin custom images", :admin do
     visit admin_site_customization_images_path
 
     within("tr#image_social_media_icon") do
-      attach_file "site_customization_image_image", "spec/fixtures/files/social_media_icon.png"
+      attach_file "site_customization_image_image", file_fixture("social_media_icon.png")
       click_button "Update"
     end
 

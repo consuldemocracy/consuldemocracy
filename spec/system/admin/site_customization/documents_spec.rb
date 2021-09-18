@@ -54,7 +54,7 @@ describe "Documents", :admin do
   scenario "Create" do
     visit new_admin_site_customization_document_path
 
-    attach_file("document_attachment", "#{Rails.root}/spec/fixtures/files/logo.pdf")
+    attach_file("document_attachment", file_fixture("logo.pdf"))
     click_button "Upload"
 
     expect(page).to have_content "Document uploaded succesfully"

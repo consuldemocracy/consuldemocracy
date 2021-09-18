@@ -38,7 +38,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
 
       click_link "Add image"
-      attach_file "Choose image", Rails.root.join("spec/fixtures/files/clippy.jpg")
+      attach_file "Choose image", file_fixture("clippy.jpg")
 
       expect(page).to have_selector ".file-name", text: "clippy.jpg"
     end
@@ -47,7 +47,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       expect_image_has_title("clippy.jpg")
     end
@@ -59,7 +59,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_link "Add image"
       input_title = find(".image input[name$='[title]']")
       fill_in input_title[:id], with: "Title"
-      attach_file "Choose image", Rails.root.join("spec/fixtures/files/clippy.jpg")
+      attach_file "Choose image", file_fixture("clippy.jpg")
 
       if has_many_images
         expect(find("input[id$='_title']").value).to eq "Title"
@@ -72,7 +72,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       expect(page).to have_selector ".loading-bar.complete"
     end
@@ -81,7 +81,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/logo_header.png"), false)
+      imageable_attach_new_file(file_fixture("logo_header.png"), false)
 
       expect(page).to have_selector ".loading-bar.errors"
     end
@@ -95,7 +95,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
       expect(cached_attachment_field.value).to be_empty
 
-      attach_file "Choose image", Rails.root.join("spec/fixtures/files/clippy.jpg")
+      attach_file "Choose image", file_fixture("clippy.jpg")
 
       expect(page).to have_css(".loading-bar.complete")
       expect(cached_attachment_field.value).not_to be_empty
@@ -105,7 +105,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/logo_header.png"), false)
+      imageable_attach_new_file(file_fixture("logo_header.png"), false)
 
       cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
 
@@ -133,7 +133,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
       within_fieldset("Descriptive image") { fill_in "Title", with: "" }
       click_on submit_button
 
@@ -145,7 +145,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       within "#nested-image .image" do
         click_link "Remove image"
@@ -172,7 +172,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       expect(page).to have_selector ".loading-bar.complete"
 
@@ -186,7 +186,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       expect(page).to have_selector ".loading-bar.complete"
 
@@ -205,12 +205,12 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       original_src = find(:fieldset, "Descriptive image").find("img")[:src]
 
       click_link "Remove image"
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/custom_map.jpg"))
+      imageable_attach_new_file(file_fixture("custom_map.jpg"))
 
       updated_src = find(:fieldset, "Descriptive image").find("img")[:src]
 
