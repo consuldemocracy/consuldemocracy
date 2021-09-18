@@ -5,7 +5,7 @@ describe Document do
   it_behaves_like "document validations", "proposal_document"
 
   it "stores attachments with Active Storage" do
-    document = create(:document, attachment: File.new(file_fixture("clippy.pdf")))
+    document = create(:document, attachment: fixture_file_upload("clippy.pdf"))
 
     expect(document.attachment).to be_attached
     expect(document.attachment.filename).to eq "clippy.pdf"

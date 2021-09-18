@@ -1,7 +1,7 @@
 section "Creating header and cards for the homepage" do
   def create_image_attachment(type)
     {
-      attachment: File.new(Rails.root.join("db/dev_seeds/images/#{type}_background.jpg")),
+      attachment: Rack::Test::UploadedFile.new("db/dev_seeds/images/#{type}_background.jpg"),
       title: "#{type}_background.jpg",
       user: User.first
     }

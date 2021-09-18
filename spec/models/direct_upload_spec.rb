@@ -10,10 +10,10 @@ describe DirectUpload do
     end
 
     it "is not valid for different kind of combinations with invalid atttachment content types" do
-      expect(build(:direct_upload, :proposal, :documents, attachment: File.new(file_fixture("clippy.png")))).not_to be_valid
-      expect(build(:direct_upload, :proposal, :image, attachment: File.new(file_fixture("empty.pdf")))).not_to be_valid
-      expect(build(:direct_upload, :budget_investment, :documents, attachment: File.new(file_fixture("clippy.png")))).not_to be_valid
-      expect(build(:direct_upload, :budget_investment, :image, attachment: File.new(file_fixture("empty.pdf")))).not_to be_valid
+      expect(build(:direct_upload, :proposal, :documents, attachment: fixture_file_upload("clippy.png"))).not_to be_valid
+      expect(build(:direct_upload, :proposal, :image, attachment: fixture_file_upload("empty.pdf"))).not_to be_valid
+      expect(build(:direct_upload, :budget_investment, :documents, attachment: fixture_file_upload("clippy.png"))).not_to be_valid
+      expect(build(:direct_upload, :budget_investment, :image, attachment: fixture_file_upload("empty.pdf"))).not_to be_valid
     end
 
     it "is not valid without resource_type" do

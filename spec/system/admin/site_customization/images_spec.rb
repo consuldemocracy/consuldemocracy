@@ -63,7 +63,7 @@ describe "Admin custom images", :admin do
   scenario "Custom apple touch icon is replaced on front views" do
     create(:site_customization_image,
            name: "apple-touch-icon-200",
-           image: File.new(file_fixture("apple-touch-icon-custom-200.png")))
+           image: fixture_file_upload("apple-touch-icon-custom-200.png"))
 
     visit root_path
 

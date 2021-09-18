@@ -17,7 +17,7 @@ describe LocalCensusRecords::Import do
 
     context "When file extension" do
       it "is wrong it should not be valid" do
-        file = Rack::Test::UploadedFile.new(file_fixture("clippy.gif"))
+        file = fixture_file_upload("clippy.gif")
         import = build(:local_census_records_import, file: file)
 
         expect(import).not_to be_valid
@@ -25,7 +25,7 @@ describe LocalCensusRecords::Import do
 
       it "is csv it should be valid" do
         path = base_files_path << "valid.csv"
-        file = Rack::Test::UploadedFile.new(file_fixture(path))
+        file = fixture_file_upload(path)
         import = build(:local_census_records_import, file: file)
 
         expect(import).to be_valid
@@ -35,7 +35,7 @@ describe LocalCensusRecords::Import do
     context "When file headers" do
       it "are all missing it should not be valid" do
         path = base_files_path << "valid-without-headers.csv"
-        file = Rack::Test::UploadedFile.new(file_fixture(path))
+        file = fixture_file_upload(path)
         import = build(:local_census_records_import, file: file)
 
         expect(import).not_to be_valid
@@ -64,7 +64,7 @@ describe LocalCensusRecords::Import do
 
     it "Add invalid local census records to invalid_records array" do
       path = base_files_path << "invalid.csv"
-      file = Rack::Test::UploadedFile.new(file_fixture(path))
+      file = fixture_file_upload(path)
       import.file = file
 
       import.save!
