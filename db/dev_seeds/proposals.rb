@@ -12,14 +12,12 @@ end
 
 def add_image_to(imageable)
   # imageable should respond to #title & #author
-  File.open(IMAGE_FILES.sample) do |file|
-    imageable.image = Image.create!({
-      imageable: imageable,
-      title: imageable.title,
-      attachment: file,
-      user: imageable.author
-    })
-  end
+  imageable.image = Image.create!({
+    imageable: imageable,
+    title: imageable.title,
+    attachment: Rack::Test::UploadedFile.new(IMAGE_FILES.sample),
+    user: imageable.author
+  })
   imageable.save!
 end
 

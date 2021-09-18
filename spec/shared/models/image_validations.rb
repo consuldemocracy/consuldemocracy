@@ -21,7 +21,7 @@ shared_examples "image validations" do |imageable_factory|
   it "is valid for all accepted content types" do
     acceptedcontenttypes.each do |content_type|
       extension = content_type.split("/").last
-      image.attachment = File.new(file_fixture("clippy.#{extension}"))
+      image.attachment = fixture_file_upload("clippy.#{extension}")
 
       expect(image).to be_valid
     end
@@ -30,7 +30,7 @@ shared_examples "image validations" do |imageable_factory|
   it "is not valid for png and gif image content types" do
     ["gif", "png"].each do |content_type|
       extension = content_type.split("/").last
-      image.attachment = File.new(file_fixture("clippy.#{extension}"))
+      image.attachment = fixture_file_upload("clippy.#{extension}")
 
       expect(image).not_to be_valid
     end

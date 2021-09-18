@@ -5,7 +5,7 @@ describe Image do
   it_behaves_like "image validations", "proposal_image"
 
   it "stores attachments with Active Storage" do
-    image = create(:image, attachment: File.new(file_fixture("clippy.jpg")))
+    image = create(:image, attachment: fixture_file_upload("clippy.jpg"))
 
     expect(image.attachment).to be_attached
     expect(image.attachment.filename).to eq "clippy.jpg"
