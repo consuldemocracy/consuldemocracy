@@ -1130,7 +1130,7 @@ describe "Budget Investments" do
                   "new_budget_investment_path",
                   "",
                   "budget_investment_path",
-                  { budget_id: "budget_id" }
+                  mappable_path_arguments: { budget_id: "budget_id" }
 
   context "Destroy" do
     scenario "Admin cannot destroy budget investments", :admin do
