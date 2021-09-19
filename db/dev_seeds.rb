@@ -1,7 +1,4 @@
-unless Rails.env.test?
-  require "database_cleaner"
-  DatabaseCleaner.clean_with :truncation
-end
+ActiveRecord::Tasks::DatabaseTasks.truncate_all unless Rails.env.test?
 @logger = Logger.new(STDOUT)
 @logger.formatter = proc do |_severity, _datetime, _progname, msg|
                       msg unless @avoid_log
