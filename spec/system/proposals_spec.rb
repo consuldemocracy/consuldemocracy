@@ -1296,8 +1296,7 @@ describe "Proposals" do
                   "proposal",
                   "new_proposal_path",
                   "edit_proposal_path",
-                  "proposal_path",
-                  {}
+                  "proposal_path"
 
   scenario "Erased author" do
     user = create(:user)

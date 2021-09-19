@@ -1,4 +1,4 @@
-shared_examples "mappable" do |mappable_factory_name, mappable_association_name, mappable_new_path, mappable_edit_path, mappable_show_path, mappable_path_arguments, management: false|
+shared_examples "mappable" do |mappable_factory_name, mappable_association_name, mappable_new_path, mappable_edit_path, mappable_show_path, mappable_path_arguments: {}, management: false|
   let!(:user)         { create(:user, :level_two) }
   let!(:arguments)    { {} }
   let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
