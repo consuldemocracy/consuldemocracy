@@ -47,7 +47,6 @@ eu:
         not_allowed: "Gaur ez duzu mahaiburu izateko txandarik"
       new:
         title: Agiria egiaztatu
-        document_number: "Dokumentu zenbakia (letrak barne)"
         submit: Agiria egiaztatu
         error_verifying_census: "Erroldak ezin izan du agiri hau egiaztatu."
         form_errors: agiri hau egiaztatzea ekidin zuten
