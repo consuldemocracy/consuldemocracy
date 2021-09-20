@@ -70,7 +70,6 @@ fr:
       new:
         phone: Entrez votre numéro de téléphone mobile pour recevoir le code
         phone_note: Nous utiliserons uniquement votre numéro de téléphone pour vous envoyer ce code, sans jamais vous recontacter par la suite.
-        phone_placeholder: "Exemple: 612345678 or +34612345678"
         submit_button: Envoyer
         title: Envoyer le code de confirmation
       update:
