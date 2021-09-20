@@ -70,7 +70,6 @@ sl:
       new:
         phone: Vnesi svojo mobilno številko
         phone_note: Tvojo številko bomo uporabili le za pošiljanje kode, nikoli te ne bomo poklicali.
-        phone_placeholder: "Primer: 041218401 ali +38631572849"
         submit_button: Pošlji
         title: Pošlji potrditveno kodo
       update:
