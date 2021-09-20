@@ -400,6 +400,14 @@ describe Proposal do
       expect { proposal.update(tag_list: "new tag") }.to change { proposal.cache_version }
     end
 
+    it "expires cache when it has a new image" do
+      expect { create(:image, imageable: proposal) }.to change { proposal.cache_version }
+    end
+
+    it "expires cache when it has a new document" do
+      expect { create(:document, documentable: proposal) }.to change { proposal.cache_version }
+    end
+
     it "expires cache when hidden" do
       expect { proposal.hide }.to change { proposal.cache_version }
     end

@@ -12,7 +12,7 @@ class Image < ApplicationRecord
                                  hash_secret: Rails.application.secrets.secret_key_base
 
   belongs_to :user
-  belongs_to :imageable, polymorphic: true
+  belongs_to :imageable, polymorphic: true, touch: true
 
   validates :title, presence: true
   validate :validate_title_length
