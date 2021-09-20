@@ -7,8 +7,6 @@ ka:
       delete_button: სურათის წაშლა
       note: "დასაშვებია მაქსიმუმ %{max_file_size} მეგაბაიტის ზომის შემდეგი ტიპის ფოტოების ატვირთვა: %{accepted_content_types}"
       add_new_image: ფოტოსურათის დამატება
-      admin_title: "ფოტოსურათი"
-      admin_alt_text: "სურათის ალტერნატიული ტექსტი"
     actions:
       destroy:
         notice: ფოტოსურათი წარმატებით წაიშალა.
