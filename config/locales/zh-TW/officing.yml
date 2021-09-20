@@ -47,7 +47,6 @@ zh-TW:
         not_allowed: "你今天沒有辦公室輪班"
       new:
         title: 驗證文檔
-        document_number: "文檔編號 (包括字母)"
         submit: 驗證文檔
         error_verifying_census: "人口普查無法核實此文件。"
         form_errors: 阻止了對此文件的核實
