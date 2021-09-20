@@ -23,7 +23,6 @@ fi:
       edit:
         submit_button: Lähetä
       new:
-        phone_placeholder: "Esimerkki: 612345678 or +34612345678"
         submit_button: Lähetä
         title: Lähetä vahvistuskoodi
       update:
