@@ -70,7 +70,6 @@ bs:
       new:
         phone: Unesite broj mobilnog telefona kako biste dobili kod
         phone_note: Koristimo vaš broj telefona samo da bi vam poslali kod, nećemo vas kontaktirati.
-        phone_placeholder: "Primjer: 612345678 ili +34612345678"
         submit_button: Pošalji
         title: Pošalji verifikacioni kod
       update:
