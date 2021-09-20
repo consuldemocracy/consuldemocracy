@@ -46,7 +46,6 @@ sl:
         not_allowed: "Danes tukaj nimaš opravkov"
       new:
         title: Preveri dokument
-        document_number: "Številka dokumenta (vključno s črkami)"
         submit: Preveri dokument
         error_verifying_census: "Popis ni mogel verificirati tega dokumenta."
         form_errors: preprečuje verifikacijo tega dokumenta
