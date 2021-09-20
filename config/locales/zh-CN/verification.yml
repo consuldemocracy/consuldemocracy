@@ -68,7 +68,6 @@ zh-CN:
       new:
         phone: 输入您的手机号码来接收代码
         phone_note: 我们只使用您的手机向您发送代码，绝不与您联系。
-        phone_placeholder: "例如：612345678 或者 +34612345678"
         submit_button: 发送
         title: 发送确认代码
       update:
