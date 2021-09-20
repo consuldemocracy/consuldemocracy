@@ -7,8 +7,6 @@ bs:
       delete_button: Ukloni sliku
       note: "Možete učitati jednu sliku sljedećeg sadržaja: %{accepted_content_types}, do %{max_file_size} MB."
       add_new_image: Dodaj sliku
-      admin_title: "Slika"
-      admin_alt_text: "Alternativni tekst za sliku"
     actions:
       destroy:
         notice: Slika uspješno obrisana.
