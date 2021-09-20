@@ -68,7 +68,6 @@ zh-TW:
       new:
         phone: 輸入您的手機號碼以接收代碼
         phone_note: 我們只使用您的手機向您發送代碼，絕不與您聯繫。
-        phone_placeholder: "例如：612345678 或 +34612345678"
         submit_button: 發送
         title: 發送確認代碼
       update:
