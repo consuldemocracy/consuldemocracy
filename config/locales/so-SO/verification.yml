@@ -68,7 +68,6 @@ so:
       new:
         phone: Geli lamabarkaTalefoonkaga si ad u hesho koodhka
         phone_note: Waxaanu isticmaalnaa oo kaliya telefoonkaaga si aan kuu soo dirno kodhka, marnaba kula soo xiriiri.
-        phone_placeholder: "Tusaale: 6123445678 ama +34612345678"
         submit_button: Diriid
         title: Xaqiijinta koodhka diir
       update:
