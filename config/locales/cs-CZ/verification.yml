@@ -68,7 +68,6 @@ cs:
       new:
         phone: Zadejte číslo svého mobilního telefonu pro získání kódu
         phone_note: Váš telefon používáme pouze k zaslání kódu, nikdy vás nebudeme kontaktovat.
-        phone_placeholder: "Příklad: 612345678 nebo +42012345678"
         submit_button: Odeslat
         title: Poslat potvrzovací kód
       update:
