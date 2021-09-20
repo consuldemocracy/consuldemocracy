@@ -69,7 +69,6 @@ pt-BR:
         not_allowed: "Você não tem turnos como presidente hoje"
       new:
         title: Validar documento
-        document_number: "Número do documento (incluindo as letras)"
         submit: Validar documento
         error_verifying_census: "O Censo foi incapaz de verificar este documento."
         form_errors: impediu a verificação deste documento
