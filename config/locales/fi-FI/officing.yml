@@ -13,9 +13,6 @@ fi:
       index:
         table_answer: Vastaus
         table_votes: Äänet
-    residence:
-      new:
-        document_number: "Asiakirjan numero (myös kirjaimet)"
     voters:
       new:
         title: Kyselyt
