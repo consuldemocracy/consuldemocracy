@@ -47,7 +47,6 @@ gl:
         not_allowed: "Non tes quenda de presidente de mesa"
       new:
         title: Validar documento
-        document_number: "Número de documento (incluída letra)"
         submit: Validar documento
         error_verifying_census: "O Servizo de padrón non puido verificar este documento."
         form_errors: evitaron verificar este documento
