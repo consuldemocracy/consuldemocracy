@@ -70,7 +70,6 @@ gl:
       new:
         phone: Introduce o teu teléfono móbil para recibir o código
         phone_note: Só usaremos o teu número de teléfono para o envío de códigos, nunca para chamarte.
-        phone_placeholder: "Exemplo: 612345678 ou +34612345678"
         submit_button: Enviar
         title: SMS de confirmación
       update:
