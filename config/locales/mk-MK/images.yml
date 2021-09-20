@@ -7,8 +7,6 @@ mk:
       delete_button: Отстрани слика
       note: "Можете да поставите слика од следните содржински типови: %{accepted_content_types}, до големина од %{max_file_size} мегабајти."
       add_new_image: Додади слика
-      admin_title: "Слика"
-      admin_alt_text: "Алтернативен текст за сликата"
     actions:
       destroy:
         notice: Сликата беше успешно избришана.
