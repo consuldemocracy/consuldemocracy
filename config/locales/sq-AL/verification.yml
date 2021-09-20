@@ -68,7 +68,6 @@ sq:
       new:
         phone: Shkruani numrin tuaj të telefonit celular për të marrë kodin
         phone_note: Ne përdorim telefonin tuaj vetëm për t'ju dërguar një kod,jo që t'ju kontaktojmë.
-        phone_placeholder: "Shembull: 612345678 or +34612345678"
         submit_button: Dergo
         title: Dërgo kodin e konfirmimit
       update:
