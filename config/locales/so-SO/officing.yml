@@ -47,7 +47,6 @@ so:
         not_allowed: "Adigu ma haysid wax isbeddel ah maanta"
       new:
         title: Ansixinta dukumentiga
-        document_number: "Lambarka dukumentiga (oo lugu daray warqadaha)"
         submit: Ansixinta dukumentiga
         error_verifying_census: "Tirakoobku ma awoodin inuu caddeeyo dokumentigan."
         form_errors: hortaagan xaqiijinta dukumintigan
