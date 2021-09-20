@@ -47,7 +47,6 @@ val:
         not_allowed: "Hui no tens torn de president de taula"
       new:
         title: Validar document i votar
-        document_number: "Número de document (inclosa lletra)"
         submit: Validar document i votar
         error_verifying_census: "El Padró no ha pogut verificar aquest document."
         form_errors: evitaren verificar aquest document
