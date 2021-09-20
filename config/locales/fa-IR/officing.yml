@@ -46,7 +46,6 @@ fa:
         not_allowed: "شما امروز شیفت ندارید"
       new:
         title: اعتبار سند
-        document_number: "شماره سند ( حروف هم شامل میشوند)"
         submit: اعتبار سند
         error_verifying_census: "سرشماری قادر به تایید این سند نیست."
         form_errors: مانع تایید این سند شد
