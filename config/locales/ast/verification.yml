@@ -69,7 +69,6 @@ ast:
         title: SMS de confirmación
       new:
         phone: Introduce tu teléfono móvil para recibir el código
-        phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
         submit_button: Enviar
         title: SMS de confirmación
       update:
