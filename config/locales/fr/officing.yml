@@ -66,7 +66,6 @@ fr:
         not_allowed: "Vous n'avez pas de votes à superviser aujourd'hui"
       new:
         title: Valider le document
-        document_number: "Numéro du document (incluant les lettres)"
         submit: Valider le document
         error_verifying_census: "Le recensement n'a pas pu vérifier ce document."
         form_errors: a empêché la vérification de ce document
