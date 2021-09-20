@@ -69,7 +69,6 @@ nl:
         not_allowed: "You don't have officing shifts today"
       new:
         title: Valideer bestand
-        document_number: "Documentnummer (inclusief letters)"
         submit: Valideer bestand
         error_verifying_census: "The Census was unable to verify this document."
         form_errors: prevented the verification of this document
