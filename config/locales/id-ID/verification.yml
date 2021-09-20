@@ -67,7 +67,6 @@ id:
         title: Konfirmasi kode keamanan
       new:
         phone: Masukan nomor ponsel anda untuk menerima kode
-        phone_placeholder: "Contoh: 612345678 or +34612345678"
         submit_button: Kirim
         title: Kirim kode konfirmasi
       update:
