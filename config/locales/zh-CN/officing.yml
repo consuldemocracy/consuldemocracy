@@ -47,7 +47,6 @@ zh-CN:
         not_allowed: "您今天没有当值轮班"
       new:
         title: 验证文档
-        document_number: "文档编号(包括信件)"
         submit: 验证文档
         error_verifying_census: "人口普查无法核实此文档。"
         form_errors: 阻止了此文档的核实
