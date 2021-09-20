@@ -68,7 +68,6 @@ pl:
       new:
         phone: Wprowadź swój numer telefonu komórkowego, aby otrzymać kod
         phone_note: Używamy Twojego telefonu tylko do wysłania kodu, nigdy aby się z Tobą skontaktować.
-        phone_placeholder: "Przykład: 612345678 lub +34612345678"
         submit_button: Wyślij
         title: Wyślij kod potwierdzenia
       update:
