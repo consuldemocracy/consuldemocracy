@@ -47,7 +47,6 @@ pl:
         not_allowed: "Nie masz dziś uoficjalniających zmian"
       new:
         title: Uprawomocnij dokument
-        document_number: "Numer dokumentu (zawierając litery)"
         submit: Uprawomocnij dokument
         error_verifying_census: "Spis powszechny nie był w stanie zweryfikować tego dokumentu."
         form_errors: uniemożliwił weryfikację tego dokumentu
