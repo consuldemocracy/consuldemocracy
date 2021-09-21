@@ -6,6 +6,7 @@ bs:
       actions: Radnje
       confirm: Jeste sigurni?
       confirm_hide: Potvrdi moderiranje
+      delete: "Obriši"
       hide: Sakrij
       hide_author: Sakrij ime autora
       restore: Vrati
@@ -13,7 +14,6 @@ bs:
       unmark_featured: Ukloni oznaku
       edit: Edituj
       configure: Izvrši konfiguraciju
-      delete: Obriši
     officing_booth:
       title: "Zaduženi ste za kabinu koja se nalazi na %{booth}. Ako se radi o grešci, prekinite s radom i nazovite telefonski broj za pomoć. Hvala."
     banners:
