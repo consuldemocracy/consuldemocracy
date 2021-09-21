@@ -6,6 +6,7 @@ oc:
       actions: d'Accions
       confirm: '¿Estás segur?'
       confirm_hide: Confirmatz la moderacion
+      delete: "Borrar"
       hide: Amagar
       hide_author: Bloquejar l'autor
       restore: Tornar a mostrar
@@ -13,7 +14,6 @@ oc:
       unmark_featured: traire destacat
       edit: Editar proposicion
       configure: Configurar
-      delete: Borrar
     officing_booth:
       title: "Podètz oficialitzar l'estand situat a %{booth}. S'aiçò es pas corrècte, contunhatz pas e trucatz al numèro de telefòn d’ajuda. Mercés."
     banners:
