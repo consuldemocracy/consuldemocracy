@@ -6,6 +6,7 @@ val:
       actions: Accions
       confirm: Estàs segur?
       confirm_hide: Confirmar
+      delete: "Eliminar"
       hide: Amagar
       hide_author: Bloquejar a l'autor
       restore: Restaurar
@@ -13,7 +14,6 @@ val:
       unmark_featured: Llevar destacat
       edit: Editar
       configure: Configurar
-      delete: Eliminar
     banners:
       index:
         title: Banners
