@@ -6,6 +6,7 @@ es:
       actions: Acciones
       confirm: '¿Estás seguro?'
       confirm_hide: Confirmar moderación
+      delete: "Borrar"
       hide: Ocultar
       hide_author: Bloquear al autor
       restore: Volver a mostrar
@@ -13,7 +14,6 @@ es:
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
-      delete: Borrar
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
