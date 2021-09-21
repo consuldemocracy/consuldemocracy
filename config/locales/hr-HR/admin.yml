@@ -6,6 +6,7 @@ hr:
       actions: Akcije
       confirm: Jeste li sigurni?
       confirm_hide: Potvrdi izmjene
+      delete: "Obriši"
       hide: Sakrij
       hide_author: Sakrij autora
       restore: Vrati
@@ -13,7 +14,6 @@ hr:
       unmark_featured: Odznači istaknuto
       edit: Uredi
       configure: Podesi
-      delete: Obriši
     officing_booth:
       title: "Nadzirete glasačko mjesto koje se nalazi u/na %{booth}. Ako ovo nije točno, molimo vas da ne nastavljate dalje i nazovete telefonski broj za pomoć. Hvala vam."
     banners:
