@@ -6,6 +6,7 @@ pl:
       actions: Akcje
       confirm: Jesteś pewny/a?
       confirm_hide: Potwierdź moderację
+      delete: "Usuń"
       hide: Ukryj
       hide_author: Ukryj autora
       restore: Przywróć
@@ -13,7 +14,6 @@ pl:
       unmark_featured: Odznaczono funkcję
       edit: Edytuj
       configure: Skonfiguruj
-      delete: Usuń
     banners:
       index:
         title: Banery
