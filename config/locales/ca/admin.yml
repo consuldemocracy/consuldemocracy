@@ -6,6 +6,7 @@ ca:
       actions: Accions
       confirm: '¿Estás segur?'
       confirm_hide: Confirmeu la moderació
+      delete: "Borrar"
       hide: Ocultar
       hide_author: Bloquejar l'autor
       restore: Tornar a mostrar
@@ -13,7 +14,6 @@ ca:
       unmark_featured: treure destacat
       edit: Editar proposta
       configure: Configurar
-      delete: Borrar
     officing_booth:
       title: "Podeu oficialitzar l'estand situat a %{booth}. Si això no és correcte, no continueu i truqueu al número de telèfon d’ajuda. Gràcies."
     banners:
