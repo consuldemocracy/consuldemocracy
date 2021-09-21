@@ -6,6 +6,7 @@ sq:
       actions: Veprimet
       confirm: A je i sigurt?
       confirm_hide: Konfirmo moderimin
+      delete: "Fshi"
       hide: Fshih
       hide_author: Fshih autorin
       restore: Kthej
@@ -13,7 +14,6 @@ sq:
       unmark_featured: Çaktivizo karakteristikat
       edit: Ndrysho
       configure: Konfiguro
-      delete: Fshi
     banners:
       index:
         title: Banderol
