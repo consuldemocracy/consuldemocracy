@@ -6,6 +6,7 @@ eu:
       actions: Ekintzak
       confirm: Ziur zaude?
       confirm_hide: Baieztatu moderaketa
+      delete: "Ezabatu"
       hide: Ezkutatu
       hide_author: Sortzailea blokeatu
       restore: Berriz erakutsi
@@ -13,7 +14,6 @@ eu:
       unmark_featured: Nabarmendutakoa kendu
       edit: Editatu
       configure: Configurar
-      delete: Ezabatu
     banners:
       index:
         title: Bannerrak
