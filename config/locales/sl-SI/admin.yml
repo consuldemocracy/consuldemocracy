@@ -6,6 +6,7 @@ sl:
       actions: Dejanja
       confirm: Si prepričan?
       confirm_hide: Potrdi
+      delete: "Izbriši"
       hide: Skrij
       hide_author: Skrij avtorja
       restore: Obnovi
@@ -13,7 +14,6 @@ sl:
       unmark_featured: Odznači izpostavljeno
       edit: Uredi
       configure: Nastavi
-      delete: Izbriši
     banners:
       index:
         title: Pasice
