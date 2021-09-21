@@ -5,7 +5,9 @@ tr:
     actions:
       actions: Eylemler
       confirm: Emin misiniz?
+      confirm_delete: "Emin misiniz? Bu işlem %{resource_name} '%{name}' silecek ve geri alınamaz."
       confirm_hide: Moderasyonu onayla
+      delete: "Sil"
       hide: Gizle
       hide_author: Yazarı gizle
       restore: Geri getir
@@ -13,8 +15,6 @@ tr:
       unmark_featured: Öne çıkan işaretini kaldır
       edit: Düzenle
       configure: Ayarla
-      delete: Sil
-      confirm_delete: "Emin misiniz? Bu işlem %{resource_name} '%{name}' silecek ve geri alınamaz."
     officing_booth:
       title: "Siz %{booth}'ta bulunan kabini görüyorsunuz. Eğer bu doğru değilse, devam etmeyin ve yardım telefon numarasını aramayın. Teşekkürler."
     banners:
@@ -136,8 +136,6 @@ tr:
         calculate: Kazanan Yatırımları Hesapla
         calculated: Kazananlar hesaplanıyor, bu bir dakika sürebilir.
         recalculate: Kazanan Yatırımları Yeniden Hesapla
-      shared:
-        resource_name: "bütçe"
     budget_groups:
       name: "Ad"
       headings_name: "Başlıklar"
