@@ -6,6 +6,7 @@ da:
       actions: Handlinger
       confirm: Er du sikker?
       confirm_hide: Bekræft moderation
+      delete: "Slet"
       hide: Skjul
       hide_author: Skjul bruger
       restore: Gendan
@@ -13,7 +14,6 @@ da:
       unmark_featured: Fjern fremhævning
       edit: Rediger
       configure: Konfigurere
-      delete: Slet
     officing_booth:
       title: "Du er medansvarlig for valgstedet på %{booth}. Hvis det ikke er korrekt, skal du ikke fortsætte, men ringe efter hjælp på hjælpetelefonen. Tak."
     banners:
