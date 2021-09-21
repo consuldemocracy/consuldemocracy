@@ -6,6 +6,7 @@ he:
       actions: פעולות
       confirm: האם את/ה בטוח/ה?
       confirm_hide: אשר מנחה
+      delete: "מחיקה"
       hide: הסתר
       hide_author: הסתר את יוצר התוכן
       restore: שחזר
@@ -13,7 +14,6 @@ he:
       unmark_featured: לא מקודם
       edit: ערוך
       configure: קביעת תצורה
-      delete: מחיקה
     officing_booth:
       title: "אתה עובד על התא שממוקם ב %{booth}. אם זה אינו נכון, אל תמשיך ופנה לעזרה טלפונית תודה."
     banners:
