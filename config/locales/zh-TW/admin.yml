@@ -6,6 +6,7 @@ zh-TW:
       actions: 行動
       confirm: 您確定？
       confirm_hide: 確認審核
+      delete: "刪除"
       hide: 隱藏
       hide_author: 隱藏作者
       restore: 恢復
@@ -13,7 +14,6 @@ zh-TW:
       unmark_featured: 解除標記為"特色"
       edit: 編輯
       configure: 配置
-      delete: 刪除
     banners:
       index:
         title: 橫幅
