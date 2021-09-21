@@ -6,6 +6,7 @@ uk-UA:
       actions: Дії
       confirm: Ви впевнені?
       confirm_hide: Підтвердити модерацію
+      delete: "Видалити"
       hide: Приховати
       hide_author: Приховати автора
       restore: Відновити
@@ -13,7 +14,6 @@ uk-UA:
       unmark_featured: Не показувати рекомендовані
       edit: Редагувати
       configure: Налаштувати
-      delete: Видалити
     officing_booth:
       title: "Ви призначені на кабінку, розташовану в %{booth}. Якщо це не так, не продовжуйте і зателефонуйте в службу підтримки. Дякуємо."
     banners:
