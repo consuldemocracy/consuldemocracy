@@ -5,7 +5,9 @@ sv:
     actions:
       actions: Åtgärder
       confirm: Är du säker?
+      confirm_delete: "Är du säker? Den här åtgärden kommer att radera %{resource_name} '%{name}' och kan inte ångras."
       confirm_hide: Bekräfta moderering
+      delete: "Ta bort"
       hide: Dölj
       hide_author: Dölj skribent
       restore: Återställ
@@ -13,8 +15,6 @@ sv:
       unmark_featured: Ta bort markering som utvald
       edit: Redigera
       configure: Inställningar
-      delete: Ta bort
-      confirm_delete: "Är du säker? Den här åtgärden kommer att radera %{resource_name} '%{name}' och kan inte ångras."
     officing_booth:
       title: "Du är valarbetare för röstbåset på %{booth}. Om detta inte stämmer, fortsätt inte utan ring hjälptelefonnumret. Tack."
     banners:
@@ -147,8 +147,6 @@ sv:
         calculate: Beräkna vinnande budgetförslag
         calculated: Vinnare beräknas, det kan ta en stund.
         recalculate: Räkna om vinnande budgetförslag
-      shared:
-        resource_name: "budgeten"
     budget_groups:
       name: "Namn"
       headings_name: "Områden"
