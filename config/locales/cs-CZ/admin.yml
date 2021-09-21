@@ -6,6 +6,7 @@ cs:
       actions: Akce
       confirm: Jste si jisti?
       confirm_hide: Potvrdit moderování
+      delete: "Smazat"
       hide: Skrýt
       hide_author: Skrýt autora
       restore: Obnovit
@@ -13,7 +14,6 @@ cs:
       unmark_featured: Zrušit označení
       edit: Upravit
       configure: Nastavení
-      delete: Smazat
     banners:
       index:
         title: Bannery
