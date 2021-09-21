@@ -5,7 +5,9 @@ ro:
     actions:
       actions: Acțiuni
       confirm: Sunteți sigur?
+      confirm_delete: "Sunteți sigur? Această acțiune va șterge %{resource_name} '%{name}' și nu se poate reveni."
       confirm_hide: Confirmați modificarea
+      delete: "Șterge"
       hide: Ascunde
       hide_author: Ascunde autor
       restore: Restabilire
@@ -13,8 +15,6 @@ ro:
       unmark_featured: Recomandare nemarcată
       edit: Editează
       configure: Configurează
-      delete: Șterge
-      confirm_delete: "Sunteți sigur? Această acțiune va șterge %{resource_name} '%{name}' și nu se poate reveni."
     officing_booth:
       title: "Oficiați cabina situată la%{booth}. Dacă acest lucru nu este corect, nu continuați și apelați numărul de telefon de ajutor. Mulțumesc."
     banners:
@@ -146,8 +146,6 @@ ro:
         calculate: Calculați Investițiile Câștigătoare
         calculated: Se calculează câștigătorii, poate dura un minut.
         recalculate: Recalculați Investițiile Câștigătoare
-      shared:
-        resource_name: "bugetul"
     budget_groups:
       name: "Nume"
       headings_name: "Rubrici"
