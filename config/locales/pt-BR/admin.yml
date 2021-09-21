@@ -6,6 +6,7 @@ pt-BR:
       actions: Ações
       confirm: Tem certeza?
       confirm_hide: Confirmar a moderação
+      delete: "Apagar"
       hide: Ocultar
       hide_author: Esconder o autor
       restore: Restaurar
@@ -13,7 +14,6 @@ pt-BR:
       unmark_featured: Desmarcar destaques
       edit: Editar
       configure: Configurar
-      delete: Apagar
     officing_booth:
       title: "Você é responsável pela cabine localizada em %{booth}. Se isto estiver errado, não faça nada e peça ajuda por telefone. Obrigado."
     banners:
