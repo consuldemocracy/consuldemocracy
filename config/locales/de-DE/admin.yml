@@ -5,7 +5,9 @@ de:
     actions:
       actions: Aktionen
       confirm: Sind Sie sich sicher?
+      confirm_delete: "Sind Sie sicher? Diese Aktion wird %{resource_name} '%{name}' löschen und kann nicht rückgängig gemacht werden."
       confirm_hide: Moderation bestätigen
+      delete: "Löschen"
       hide: Ausblenden
       hide_author: Verfasser*in verbergen
       restore: Wiederherstellen
@@ -13,8 +15,6 @@ de:
       unmark_featured: Markierung aufheben
       edit: Bearbeiten
       configure: Konfigurieren
-      delete: Löschen
-      confirm_delete: "Sind Sie sicher? Diese Aktion wird %{resource_name} '%{name}' löschen und kann nicht rückgängig gemacht werden."
     officing_booth:
       title: "Sie verlassen den Raum, der sich in %{booth} befindet. Wenn dies nicht korrekt ist, fahren Sie nicht fort und rufen Sie die Hilfe-Rufnummer an. Vielen Dank."
     banners:
@@ -132,8 +132,6 @@ de:
         calculate: Bestbewertete Vorschläge ermitteln
         calculated: Die bestbewerteten Vorschläge werden ermittelt. Dies kann einen Moment dauern.
         recalculate: Bestbewertete Vorschläge neu ermitteln
-      shared:
-        resource_name: "Der Bürgerhaushalt"
     budget_groups:
       name: "Name"
       headings_name: "Rubriken"
