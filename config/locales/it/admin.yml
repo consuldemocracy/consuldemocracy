@@ -5,7 +5,9 @@ it:
     actions:
       actions: Azioni
       confirm: Sei sicuro?
+      confirm_delete: "Sei sicuro? Quest'azione eliminerà %{resource_name} '%{name}' e non è annullabile."
       confirm_hide: Confermare intervento di moderazione
+      delete: "Eliminare"
       hide: Nascondi
       hide_author: Nascondi l'autore
       restore: Ripristino
@@ -13,8 +15,6 @@ it:
       unmark_featured: Deselezionare 'in primo piano'
       edit: Modificare
       configure: Configurare
-      delete: Eliminare
-      confirm_delete: "Sei sicuro? Quest'azione eliminerà %{resource_name} '%{name}' e non è annullabile."
     officing_booth:
       title: "State officiando lo stand posizionato a %{booth}. Se non è corretto, non continuare e chiama il numero telefonico d'aiuto. Grazie."
     banners:
