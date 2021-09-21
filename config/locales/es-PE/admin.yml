@@ -5,6 +5,7 @@ es-PE:
     actions:
       actions: Acciones
       confirm: '¿Estás seguro?'
+      delete: "Borrar"
       hide: Ocultar
       hide_author: Bloquear al autor
       restore: Volver a mostrar
@@ -12,7 +13,6 @@ es-PE:
       unmark_featured: Quitar destacado
       edit: Editar propuesta
       configure: Configurar
-      delete: Borrar
     banners:
       index:
         create: Crear banner
