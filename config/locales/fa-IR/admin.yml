@@ -5,6 +5,7 @@ fa:
     actions:
       actions: اقدامات
       confirm: آیا مطمئن هستید؟
+      delete: "حذف"
       hide: پنهان کردن
       hide_author: پنهان کردن نویسنده
       restore: بازیابی
@@ -12,7 +13,6 @@ fa:
       unmark_featured: برداشتن علامتگذاری برجسته
       edit: ویرایش
       configure: پیکربندی
-      delete: حذف
     banners:
       index:
         title: آگهی ها
