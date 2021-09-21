@@ -6,6 +6,7 @@ id:
       actions: Tindakan
       confirm: Apakah kamu yakin?
       confirm_hide: Konfirmasi
+      delete: "Hapus"
       hide: Sembunyikan
       hide_author: Sembunyikan penulis
       restore: Mengembalikan
@@ -13,7 +14,6 @@ id:
       unmark_featured: Hapus tanda pada yang ditampilkan
       edit: Sunting
       configure: Konfigurasikan
-      delete: Hapus
     officing_booth:
       title: "Anda memimpin stan yang berlokasi di %{booth}. Jika ini tidak benar, jangan lanjutkan dan hubungi nomor telepon bantuan. Terima kasih."
     banners:
