@@ -6,6 +6,7 @@ gl:
       actions: Accións
       confirm: Estás seguro?
       confirm_hide: Confirmar moderación
+      delete: "Borrar"
       hide: Agochar
       hide_author: Bloquear o autor
       restore: Volver mostrar
@@ -13,7 +14,6 @@ gl:
       unmark_featured: Quitar destacado
       edit: Editar proposta
       configure: Configurar
-      delete: Borrar
     banners:
       index:
         title: Bánners
