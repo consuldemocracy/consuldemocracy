@@ -9,7 +9,7 @@ describe "Admin activity" do
 
   context "Proposals" do
     scenario "Shows moderation activity on proposals" do
-      proposal = create(:proposal)
+      proposal = create(:proposal, description: "<p>Description with html tag</p>")
 
       visit proposal_path(proposal)
 
@@ -24,6 +24,7 @@ describe "Admin activity" do
         expect(page).to have_content(proposal.title)
         expect(page).to have_content("Hidden")
         expect(page).to have_content(admin.user.username)
+        expect(page).to have_css("p", exact_text: "Description with html tag")
       end
     end
 
