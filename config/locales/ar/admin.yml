@@ -6,6 +6,7 @@ ar:
       actions: الإجراءات
       confirm: هل أنت متأكد؟
       confirm_hide: تأكيد
+      delete: "حذف"
       hide: إخفاء
       hide_author: إخفاء الكاتب
       restore: إسترجاع
@@ -13,7 +14,6 @@ ar:
       unmark_featured: إلغاء تحديد مميز
       edit: تعديل
       configure: تهيئة
-      delete: حذف
     officing_booth:
       title: "أنت تشغل مكتب الإقتراع الموجود في %{booth}. إذا لم يكن هذا صحيحًا، فلا تقم بالمتابعة واتصل برقم هاتف المساعدة. شكرا."
     banners:
