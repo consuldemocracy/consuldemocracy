@@ -6,6 +6,7 @@ so:
       actions: Tilaabooyin
       confirm: Mahubtaa adigu?
       confirm_hide: Xaqiijinta dhexdhexaadinta
+      delete: "Titiriid"
       hide: Qarin
       hide_author: Qoore Qarson
       restore: Socelin
@@ -13,7 +14,6 @@ so:
       unmark_featured: Muqaal an Calamad lahayn
       edit: Isbedel
       configure: Isku Hagaajin
-      delete: Titiriid
     banners:
       index:
         title: Xayiraad
