@@ -26,12 +26,12 @@
   </td>
   <td>
     <% unless @poll.expired? %>
-      <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
-        <%= actions.link_to t("admin.booth_assignments.manage.actions.assign"),
-                            admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
-                            method: :post,
-                            remote: true,
-                            class: "assign-booth-link" %>
+      <%= render Admin::TableActionsComponent.new(booth, actions: []) do |actions| %>
+        <%= actions.action(:assign_booth,
+                           text: t("admin.booth_assignments.manage.actions.assign"),
+                           path: admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
+                           method: :post,
+                           remote: true) %>
       <% end %>
     <% end %>
   </td>

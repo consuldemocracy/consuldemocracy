@@ -5,16 +5,18 @@ es:
     actions:
       actions: Acciones
       confirm: '¿Estás seguro?'
+      confirm_action: "¿Estás seguro? %{action} \"%{name}\""
+      confirm_delete: "¿Estás seguro? Esta acción borrará \"%{name}\" y no se puede deshacer."
       confirm_hide: Confirmar moderación
+      delete: Borrar
       hide: Ocultar
       hide_author: Bloquear al autor
+      label: "%{action} %{name}"
       restore: Volver a mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
-      confirm_delete: "¿Estás seguro? Esta acción borrará %{resource_name} '%{name}' y no se puede deshacer."
-      delete: Borrar
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
@@ -147,8 +149,6 @@ es:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
         recalculate: Recalcular proyectos ganadores
-      shared:
-        resource_name: "el presupuesto"
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"

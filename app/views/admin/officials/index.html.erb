@@ -27,6 +27,7 @@
           </td>
           <td>
             <%= render Admin::TableActionsComponent.new(
+              official,
               actions: [:edit],
               edit_path: edit_admin_official_path(official)
             ) %>

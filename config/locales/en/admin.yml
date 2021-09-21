@@ -5,16 +5,18 @@ en:
     actions:
       actions: Actions
       confirm: Are you sure?
+      confirm_action: "Are you sure? %{action} \"%{name}\""
+      confirm_delete: "Are you sure? This action will delete \"%{name}\" and can't be undone."
       confirm_hide: Confirm moderation
+      delete: "Delete"
       hide: Hide
       hide_author: Hide author
+      label: "%{action} %{name}"
       restore: Restore
       mark_featured: Featured
       unmark_featured: Unmark featured
       edit: Edit
       configure: Configure
-      delete: Delete
-      confirm_delete: "Are you sure? This action will delete %{resource_name} '%{name}' and can't be undone."
     officing_booth:
       title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
@@ -147,8 +149,6 @@ en:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
         recalculate: Recalculate Winner Investments
-      shared:
-        resource_name: "the budget"
     budget_groups:
       name: "Name"
       headings_name: "Headings"

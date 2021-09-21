@@ -44,6 +44,7 @@
         <td><%= raw content_block.body %></td>
         <td>
           <%= render Admin::TableActionsComponent.new(
+            content_block,
             actions: [:destroy],
             destroy_path: admin_site_customization_delete_heading_content_block_path(content_block)
           ) %>

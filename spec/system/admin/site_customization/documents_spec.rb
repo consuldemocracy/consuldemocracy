@@ -75,7 +75,7 @@ describe "Documents", :admin do
     visit admin_site_customization_documents_path
 
     within("#document_#{document.id}") do
-      accept_confirm { click_link "Delete" }
+      accept_confirm { click_button "Delete" }
     end
 
     expect(page).to have_content "Document deleted succesfully"

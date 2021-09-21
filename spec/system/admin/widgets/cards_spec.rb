@@ -110,9 +110,7 @@ describe "Cards", :admin do
     visit admin_homepage_path
 
     within("#widget_card_#{card.id}") do
-      accept_confirm do
-        click_link "Delete"
-      end
+      accept_confirm { click_button "Delete" }
     end
 
     expect(page).to have_content "Card removed successfully"
@@ -238,9 +236,7 @@ describe "Cards", :admin do
 
         expect(page).to have_content("Card title")
 
-        accept_confirm do
-          click_link "Delete"
-        end
+        accept_confirm { click_button "Delete" }
 
         expect(page).to have_current_path admin_site_customization_page_widget_cards_path(custom_page)
         expect(page).not_to have_content "Card title"

@@ -17,9 +17,9 @@
           <td><%= group.headings.count %></td>
           <td>
             <%= render Admin::TableActionsComponent.new(group) do |actions| %>
-              <%= actions.link_to t("admin.budget_groups.headings_manage"),
-                                  headings_path(actions, group),
-                                  class: "headings-link" %>
+              <%= actions.action(:headings,
+                                 text: t("admin.budget_groups.headings_manage"),
+                                 path: headings_path(group)) %>
             <% end %>
           </td>
         </tr>

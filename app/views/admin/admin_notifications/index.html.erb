@@ -31,15 +31,11 @@
         <td>
           <% if admin_notification.draft? %>
             <%= render Admin::TableActionsComponent.new(admin_notification) do |actions| %>
-              <%= actions.link_to t("admin.admin_notifications.index.preview"),
-                                  admin_admin_notification_path(admin_notification),
-                                  class: "preview-link" %>
+              <%= actions.action(:preview, text: t("admin.admin_notifications.index.preview")) %>
             <% end %>
           <% else %>
-            <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
-              <%= actions.link_to t("admin.admin_notifications.index.view"),
-                                  admin_admin_notification_path(admin_notification),
-                                  class: "show-link" %>
+            <%= render Admin::TableActionsComponent.new(admin_notification, actions: []) do |actions| %>
+              <%= actions.action(:show, text: t("admin.admin_notifications.index.view")) %>
             <% end %>
           <% end %>
         </td>

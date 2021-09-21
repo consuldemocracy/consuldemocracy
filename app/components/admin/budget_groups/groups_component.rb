@@ -1,4 +1,5 @@
 class Admin::BudgetGroups::GroupsComponent < ApplicationComponent
+  include Admin::Namespace
   attr_reader :groups
 
   def initialize(groups)
@@ -11,7 +12,7 @@ class Admin::BudgetGroups::GroupsComponent < ApplicationComponent
       @budget ||= groups.first.budget
     end
 
-    def headings_path(table_actions_component, group)
-      send("#{table_actions_component.namespace}_budget_group_headings_path", group.budget, group)
+    def headings_path(group)
+      send("#{namespace}_budget_group_headings_path", group.budget, group)
     end
 end

@@ -1,28 +1,34 @@
 .admin .table-actions {
+  align-items: flex-start;
   display: flex;
 
   > :not(:first-child) {
     margin-left: rem-calc(10);
   }
 
-  a {
+  a,
+  button {
     align-items: center;
     display: flex;
     flex-direction: column;
     font-size: 0.9em;
     line-height: $global-lineheight;
     margin-right: 1em;
-    position: relative;
     text-align: center;
 
     &:hover,
     &:focus {
       color: $link-hover;
+      text-decoration: none;
     }
 
     &::before {
       font-size: 1.6em;
     }
+  }
+
+  button {
+    cursor: pointer;
   }
 
   .edit-link {
@@ -72,7 +78,7 @@
   .investments-link {
     color: darken($warning-color, 20%);
 
-    &::before {
+    &:not(:hover, :focus)::before {
       color: $warning-color;
     }
   }
@@ -121,6 +127,7 @@
   .manage-link,
   .ballots-link {
     @include has-fa-icon(archive, solid);
+    color: $link;
   }
 
   .cards-link {

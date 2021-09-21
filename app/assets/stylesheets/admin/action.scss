@@ -1,0 +1,6 @@
+.admin .admin-action {
+
+  &[disabled] {
+    @include button-disabled;
+  }
+}

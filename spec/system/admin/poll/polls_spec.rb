@@ -119,7 +119,7 @@ describe "Admin polls", :admin do
       visit admin_polls_path
 
       within("#poll_#{poll.id}") do
-        accept_confirm { click_link "Delete" }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to have_content("Poll deleted successfully")
@@ -133,7 +133,7 @@ describe "Admin polls", :admin do
       visit admin_polls_path
 
       within(".poll", text: "Do you support CONSUL?") do
-        accept_confirm { click_link "Delete" }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to     have_content("Poll deleted successfully")
@@ -150,7 +150,7 @@ describe "Admin polls", :admin do
       visit admin_polls_path
 
       within(".poll", text: "Do you support CONSUL?") do
-        accept_confirm { click_link "Delete" }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to have_content "Poll deleted successfully"
@@ -164,7 +164,7 @@ describe "Admin polls", :admin do
       visit admin_polls_path
 
       within("#poll_#{poll.id}") do
-        accept_confirm { click_link "Delete" }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to have_content("You cannot delete a poll that has votes")

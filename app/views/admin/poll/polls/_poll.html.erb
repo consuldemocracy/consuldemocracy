@@ -10,9 +10,7 @@
     <%= render Admin::TableActionsComponent.new(poll,
       destroy_confirmation: t("admin.polls.destroy.alert")
     ) do |actions| %>
-      <%= actions.link_to t("admin.actions.configure"),
-                          admin_poll_path(poll),
-                          class: "configure-link" %>
+      <%= actions.action(:configure) %>
     <% end %>
   </td>
 </tr>

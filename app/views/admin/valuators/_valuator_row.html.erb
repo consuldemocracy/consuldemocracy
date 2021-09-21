@@ -20,9 +20,7 @@
   </td>
   <td>
     <%= render Admin::TableActionsComponent.new(valuator) do |actions| %>
-      <%= actions.link_to t("admin.shared.view"),
-        admin_valuator_path(valuator),
-        class: "show-link" %>
+      <%= actions.action(:show, text: t("admin.shared.view")) %>
     <% end %>
   </td>
 </tr>
