@@ -271,7 +271,7 @@ def imageable_attach_new_file(_imageable_factory_name, path, success = true)
 end
 
 def imageable_fill_new_valid_proposal
-  fill_in "Proposal title", with: "Proposal title"
+  fill_in_new_proposal_title with: "Proposal title"
   fill_in "Proposal summary", with: "Proposal summary"
   check :proposal_terms_of_service
 end
@@ -281,7 +281,7 @@ def imageable_fill_new_valid_budget
 end
 
 def imageable_fill_new_valid_budget_investment
-  fill_in "Title", with: "Budget investment title"
+  fill_in_new_investment_title with: "Budget investment title"
   fill_in_ckeditor "Description", with: "Budget investment description"
   check :budget_investment_terms_of_service
 end

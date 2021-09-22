@@ -65,7 +65,7 @@ describe "Budget Investments" do
         expect(page).to have_content user.document_number
       end
 
-      fill_in "Title", with: "Build a park in my neighborhood"
+      fill_in_new_investment_title with: "Build a park in my neighborhood"
       fill_in_ckeditor "Description", with: "There is no parks here..."
       fill_in "budget_investment_location", with: "City center"
       fill_in "budget_investment_organization_name", with: "T.I.A."

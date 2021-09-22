@@ -190,7 +190,7 @@ describe "Debates" do
     login_as(author)
 
     visit new_debate_path
-    fill_in "Debate title", with: "A title for a debate"
+    fill_in_new_debate_title with: "A title for a debate"
     fill_in_ckeditor "Initial debate text", with: "This is very important because..."
     check "debate_terms_of_service"
 
@@ -227,7 +227,7 @@ describe "Debates" do
     login_as(author)
 
     visit new_debate_path
-    fill_in "Debate title", with: "I am a bot"
+    fill_in_new_debate_title with: "I am a bot"
     fill_in_ckeditor "Initial debate text", with: "This is the description"
     check "debate_terms_of_service"
 
@@ -270,7 +270,7 @@ describe "Debates" do
     login_as(author)
 
     visit new_debate_path
-    fill_in "Debate title", with: "Testing auto link"
+    fill_in_new_debate_title with: "Testing auto link"
     fill_in_ckeditor "Initial debate text", with: "This is a link www.example.org"
     check "debate_terms_of_service"
 
@@ -839,7 +839,7 @@ describe "Debates" do
     scenario "create debate with sdg related list" do
       login_as(user)
       visit new_debate_path
-      fill_in "Debate title", with: "A title for a debate related with SDG related content"
+      fill_in_new_debate_title with: "A title for a debate related with SDG related content"
       fill_in_ckeditor "Initial debate text", with: "This is very important because..."
       click_sdg_goal(1)
       check "debate_terms_of_service"
