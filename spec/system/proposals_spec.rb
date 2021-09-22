@@ -335,7 +335,7 @@ describe "Proposals" do
 
     visit new_proposal_path
 
-    fill_in "Proposal title", with: "Help refugees"
+    fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
@@ -390,7 +390,7 @@ describe "Proposals" do
     login_as(author)
 
     visit new_proposal_path
-    fill_in "Proposal title", with: "I am a bot"
+    fill_in_new_proposal_title with: "I am a bot"
     fill_in "Proposal summary", with: "This is the summary"
     fill_in_ckeditor "Proposal text", with: "This is the description"
     fill_in "Full name of the person submitting the proposal", with: "Some other robot"
@@ -408,7 +408,7 @@ describe "Proposals" do
     login_as(author)
 
     visit new_proposal_path
-    fill_in "Proposal title", with: "Help refugees"
+    fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
@@ -436,7 +436,7 @@ describe "Proposals" do
 
     expect(page).not_to have_field "Full name of the person submitting the proposal"
 
-    fill_in "Proposal title", with: "Help refugees"
+    fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
     check "I agree to the Privacy Policy and the Terms and conditions of use"
@@ -487,7 +487,7 @@ describe "Proposals" do
     login_as(author)
 
     visit new_proposal_path
-    fill_in "Proposal title", with: "Testing auto link"
+    fill_in_new_proposal_title with: "Testing auto link"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is a link www.example.org"
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
@@ -565,7 +565,7 @@ describe "Proposals" do
 
       visit new_proposal_path
 
-      fill_in "Proposal title", with: "Help refugees"
+      fill_in_new_proposal_title with: "Help refugees"
       fill_in "Proposal summary", with: "In summary, what we want is..."
       fill_in_ckeditor "Proposal text", with: "This is very important because..."
       fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
@@ -1600,7 +1600,7 @@ describe "Successful proposals" do
 
       expect(page).to have_current_path(new_proposal_path)
 
-      fill_in "Proposal title", with: "Help refugees"
+      fill_in_new_proposal_title with: "Help refugees"
       fill_in "Proposal summary", with: "In summary what we want is..."
       fill_in_ckeditor "Proposal text", with: "This is very important because..."
       fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
@@ -1624,7 +1624,7 @@ describe "Successful proposals" do
     scenario "create proposal with sdg related list" do
       login_as(user)
       visit new_proposal_path
-      fill_in "Proposal title", with: "A title for a proposal related with SDG related content"
+      fill_in_new_proposal_title with: "A title for a proposal related with SDG related content"
       fill_in "Proposal summary", with: "In summary, what we want is..."
       fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
       click_sdg_goal(1)
