@@ -3,7 +3,6 @@ class DirectUploadsController < ApplicationController
   include ActionView::Helpers::UrlHelper
   before_action :authenticate_user!
 
-  load_and_authorize_resource except: :create
   skip_authorization_check only: :create
 
   helper_method :render_destroy_upload_link
