@@ -901,9 +901,6 @@ sq:
         feature_flags: Karakteristikat
         features:
           enabled: "Funksioni i aktivizuar"
-          disabled: "Funksioni i caktivizuar"
-          enable: "Aktivizuar"
-          disable: "Caktivizo"
         map:
           title: Konfigurimi i hartës
           help: Këtu mund të personalizoni mënyrën se si hartë shfaqet tek përdoruesit. Zvarrit shënuesin e hartës ose kliko kudo mbi hartën, vendosni zmadhimin e dëshiruar dhe klikoni butonin "Përditëso".
@@ -912,9 +909,7 @@ sq:
           form:
             submit: Përditëso
       setting: Karakteristikat
-      setting_actions: Veprimet
       setting_name: Opsione
-      setting_status: Statusi
       setting_value: Vlerë
       no_description: "Jo Përshkrim"
     shared:
