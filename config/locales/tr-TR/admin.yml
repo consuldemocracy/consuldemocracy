@@ -1275,9 +1275,6 @@ tr:
         feature_flags: Özellikler
         features:
           enabled: "Özellik etkinleştirildi"
-          disabled: "Özellik devre dışı"
-          enable: "Etkinleştir"
-          disable: "Devre dışı bırakma"
         map:
           title: Harita yapılandırma
           help: Burada haritanın kullanıcılara gösterilme şeklini kişiselleştirebilirsiniz. Harita işaretçisini sürükleyin veya haritanın herhangi bir yerine tıklayın, istediğiniz yakınlaştırmayı ayarlayın ve "Güncelle" düğmesine tıklayın.
@@ -1298,9 +1295,7 @@ tr:
       remote_census_request_name: Veri Talebi
       remote_census_response_name: Yanıt Verisi
       setting: Özellik
-      setting_actions: Aksiyon
       setting_name: Ayar
-      setting_status: Durum
       setting_value: Değer
       no_description: "Tanımlama yok"
     shared:
