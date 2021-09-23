@@ -735,9 +735,6 @@ es-PE:
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidad activada"
-          disabled: "Funcionalidad desactivada"
-          enable: "Activar"
-          disable: "Desactivar"
         map:
           title: Configuración del mapa
           help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
@@ -745,8 +742,6 @@ es-PE:
             update: La configuración del mapa se ha guardado correctamente.
           form:
             submit: Actualizar
-      setting_actions: Acciones
-      setting_status: Estado
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
