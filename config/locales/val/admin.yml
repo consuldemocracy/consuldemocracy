@@ -944,9 +944,6 @@ val:
         feature_flags: Funcionalitats
         features:
           enabled: "Funcionalitat activada"
-          disabled: "Funcionalitat desactivada"
-          enable: "Activa"
-          disable: "Desactivar"
         map:
           title: Configuració del mapa
           help: Ací pots personalitzar la manera en la que es mostra el mapa als usuaris. Arrastra el marcador o pulsa sobre quansevol part del mapa, ajusta el zoom i polsa el botó 'Actualitzar'.
@@ -955,9 +952,7 @@ val:
           form:
             submit: Actualitzar
       setting: Característica
-      setting_actions: Accions
       setting_name: Configuració
-      setting_status: Estat
       setting_value: Valor
       no_description: "Sense descripció"
     shared:
