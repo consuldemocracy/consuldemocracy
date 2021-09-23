@@ -1188,9 +1188,6 @@ ka:
         feature_flags: ფუნქციები
         features:
           enabled: "ფუნქცია გააქტიურებულია"
-          disabled: "ფუნქცია გამორთულია"
-          enable: "ჩართვა"
-          disable: "გამორთვა"
         map:
           title: რუკის კონფიგურაცია
           help: აქედან შეგიძლიათ რუკის კონფიგურაცია მომხმარებლებისთვის. დასვით მარკერი სასურველ ადგილას ან დააჭირეთ რუკის ნებისმიერ წერტილს, შეარჩიეთ გადიდების დიაპაზონი და დააწექით ღილაკს "განახლება".
@@ -1208,9 +1205,7 @@ ka:
       remote_census_request_name: მონაცემთა მოთხოვნა
       remote_census_response_name: პასუხად მიღებული მონაცემები
       setting: ფუნქცია
-      setting_actions: მოქმედებები
       setting_name: პარამეტრები
-      setting_status: სტატუსი
       setting_value: ღირებულება
       no_description: "აღწერა არ არის"
     shared:
