@@ -789,17 +789,12 @@ id:
         feature_flags: Fitur
         features:
           enabled: "Fitur diaktifkan"
-          disabled: "Fitur dinonaktifkan"
-          enable: "Aktifkan"
-          disable: "Nonaktifkan"
         map:
           help: Di sini anda bisa menyesuaikan cara peta untuk ditampilkan kepada pengguna. Seret penanda peta atau klik di mana saja dari peta, mengatur zoom yang diinginkan dan klik tombol "Update".
           flash:
             update: Peta konfigurasi berhasil diperbarui.
           form:
             submit: Perbarui
-      setting_actions: Tindakan
-      setting_status: Status
       setting_value: Nilai
       no_description: "Tidak ada deskripsi"
     shared:
