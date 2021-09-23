@@ -1201,9 +1201,6 @@ sr:
         feature_flags: Истакнуто
         features:
           enabled: "Омогућена функција"
-          disabled: "Онемогућена функција"
-          enable: "Омогући"
-          disable: "Онемогући"
         map:
           title: Конфигурација мапе
           help: Овде можете прилагодити начин на који се мапа приказује корисницима. Превуците означивач мапе или кликните било где преко мапе, поставите жељено зумирање и кликните на дугме "Ажурирај ".
@@ -1221,9 +1218,7 @@ sr:
       remote_census_request_name: Захтевај податке
       remote_census_response_name: Подаци о одзиву
       setting: Истакнуто
-      setting_actions: Радње
       setting_name: Подешавања
-      setting_status: Статус
       setting_value: Вредност
       no_description: "Нема описа"
     shared:
