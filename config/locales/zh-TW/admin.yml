@@ -893,9 +893,6 @@ zh-TW:
         feature_flags: 功能
         features:
           enabled: "功能已啟用"
-          disabled: "功能已禁用"
-          enable: "啟用"
-          disable: "禁用"
         map:
           title: 地圖配置
           help: 您可以在這裡自定義為用戶顯示地圖的方式。 拖動地圖標記或單擊地圖上的任意位置，設置所需的縮放並單擊“更新”按鈕。
@@ -904,9 +901,7 @@ zh-TW:
           form:
             submit: 更新
       setting: 功能
-      setting_actions: 行動
       setting_name: 設置
-      setting_status: 狀態
       setting_value: 價值
       no_description: "沒有描述"
     shared:
