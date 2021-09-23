@@ -1181,9 +1181,6 @@ he:
         feature_flags: מאפיינים
         features:
           enabled: "התכונה מופעלת"
-          disabled: "התכונה מושבתת"
-          enable: "לאפשר"
-          disable: "להשבית"
         map:
           title: תצורת מפה
           help: כאן באפשרותך להתאים אישית את הדרך שהמפה מוצגת למשתמשים. גרור סמן מפה או לחץ במקום כלשהו על המפה, להגדיר זום הרצוי ולחץ על כפתור "עדכון".
@@ -1195,9 +1192,7 @@ he:
         dashboard:
           title: לוח מחוונים להצעות
       setting: מאפיינים
-      setting_actions: פעולות
       setting_name: הגדרות
-      setting_status: סטטוס
       setting_value: ערך
       no_description: "אין תיאור"
     shared:
