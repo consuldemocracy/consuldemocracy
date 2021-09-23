@@ -907,9 +907,6 @@ zh-CN:
         feature_flags: 功能
         features:
           enabled: "功能已启用"
-          disabled: "功能已禁用"
-          enable: "启用"
-          disable: "禁用"
         map:
           title: 地图配置
           help: 在这里您可以自定义地图显示给用户的方式。拖动地图标记或者点击地图上的任意位置，设置所需的缩放，并点击“更新”按钮“。
@@ -918,9 +915,7 @@ zh-CN:
           form:
             submit: 更新
       setting: 特性
-      setting_actions: 行动
       setting_name: 设置
-      setting_status: 状态
       setting_value: 价值
       no_description: "没有描述"
     shared:
