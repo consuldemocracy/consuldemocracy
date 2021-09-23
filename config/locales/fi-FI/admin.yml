@@ -455,8 +455,6 @@ fi:
         map:
           form:
             submit: Päivitä
-      setting_actions: Toiminnot
-      setting_status: Tila
       no_description: "Ei kuvausta"
     shared:
       true_value: "Kyllä"
