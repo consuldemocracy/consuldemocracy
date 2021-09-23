@@ -1282,9 +1282,6 @@ ro:
         feature_flags: Caracteristici
         features:
           enabled: "Caracteristici activate"
-          disabled: "Caracteristici dezactivate"
-          enable: "Activează"
-          disable: "Dezactivează"
         map:
           title: Configurarea hărții
           help: Aici puteți personaliza modul în care este afișată harta utilizatorilor. Trageți marcatorul de hartă sau faceți click oriunde peste hartă, setați zoom-ul dorit și faceți click pe butonul „Actualizare”.
@@ -1305,9 +1302,7 @@ ro:
       remote_census_request_name: Solicitare date
       remote_census_response_name: Date de răspuns
       setting: Caracteristică
-      setting_actions: Acțiuni
       setting_name: Setări
-      setting_status: Status
       setting_value: Valoare
       no_description: "Nu există descriere"
     shared:
