@@ -1203,9 +1203,6 @@ pt-BR:
         feature_flags: Atributos
         features:
           enabled: "Atributo habilitado"
-          disabled: "Atributo não habilitado"
-          enable: "Habilitar"
-          disable: "Desabilitar"
         map:
           title: Configuração do mapa
           help: Aqui você pode personalizar a maneira como o mapa é exibido para os usuários. Arraste o marcador do mapa ou clique em qualquer lugar do mapa, defina o zoom desejado e clique no botão "Atualizar".
@@ -1226,9 +1223,7 @@ pt-BR:
       remote_census_request_name: Solicitação - Dados
       remote_census_response_name: Respostas - Dados
       setting: Caracteristica
-      setting_actions: Ações
       setting_name: Configuração
-      setting_status: Status
       setting_value: Valor
       no_description: "Não há descrição"
     shared:
