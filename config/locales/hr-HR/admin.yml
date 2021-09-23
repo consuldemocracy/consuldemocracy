@@ -1201,9 +1201,6 @@ hr:
         feature_flags: Značajke
         features:
           enabled: "Značajke omogućene"
-          disabled: "Značajke isključene"
-          enable: "Omogućiti"
-          disable: "Isključi"
         map:
           title: Mapa konfiguracije
           help: Ovdje možete prilagoditi način prikaza karte korisnicima. Povucite oznaku karte ili kliknite bilo gdje na karti, postavite željeno zumiranje i kliknite gumb "Ažuriraj".
@@ -1221,9 +1218,7 @@ hr:
       remote_census_request_name: Zatraži podatke
       remote_census_response_name: Podaci o odazivu
       setting: Značajka
-      setting_actions: Djelovanja
       setting_name: Postavka
-      setting_status: Status
       setting_value: Vrijednost
       no_description: "Nema opisa"
     shared:
