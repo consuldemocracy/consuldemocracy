@@ -1207,9 +1207,6 @@ uk-UA:
         feature_flags: Функції
         features:
           enabled: "Функцію ввімкнено"
-          disabled: "Функцію вимкнено"
-          enable: "Увімкнути"
-          disable: "Вимкнути"
         map:
           title: Налаштування карти
           help: Тут ви можете налаштувати спосіб відображення карти для користувачів. Перетягніть маркер карти або клацніть де-небудь над картою, встановіть бажане масштабування та натисніть кнопку «Оновити».
@@ -1227,9 +1224,7 @@ uk-UA:
       remote_census_request_name: Запит даних
       remote_census_response_name: Надання даних
       setting: Функція
-      setting_actions: Дії
       setting_name: Налаштування
-      setting_status: Статус
       setting_value: Значення
       no_description: "Опис відсутній"
     shared:
