@@ -1183,9 +1183,6 @@ da:
         feature_flags: Funktioner
         features:
           enabled: "Funktion aktiveret"
-          disabled: "Funktion deaktiveret"
-          enable: "Aktiver"
-          disable: "Deaktiver"
         map:
           title: Kortindstillinger
           help: Her kan du indstille, hvordan kortet vises til brugerne. Træk kortmarkøren eller klik på kortet, indstil den ønskede zoom og klik på knappen "Opdater".
@@ -1198,9 +1195,7 @@ da:
           title: Dashboard for forslag
       remote_census_general_name: Generel information
       setting: Funktioner
-      setting_actions: Handlinger
       setting_name: Indstillinger
-      setting_status: Status
       setting_value: Værdi
       no_description: "Ingen beskrivelse"
     shared:
