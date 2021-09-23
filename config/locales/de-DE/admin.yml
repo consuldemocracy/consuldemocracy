@@ -1266,9 +1266,6 @@ de:
         feature_flags: Funktionen
         features:
           enabled: "Funktion aktiviert"
-          disabled: "Funktion deaktiviert"
-          enable: "Aktivieren"
-          disable: "Deaktivieren"
         map:
           title: Kartenkonfiguration
           help: Hier können Sie festlegen, wie die Karte den Benutzer*innen angezeigt wird. Bewegen Sie den Marker oder klicken Sie auf einen beliebigen Teil der Karte, passen Sie den Zoom an und klicken Sie auf die Schaltfläche "Aktualisieren".
@@ -1289,9 +1286,7 @@ de:
       remote_census_request_name: Anfrage Daten
       remote_census_response_name: Antwort Daten
       setting: Funktion
-      setting_actions: Aktionen
       setting_name: Einstellung
-      setting_status: Status
       setting_value: Wert
       no_description: "Ohne Beschreibung"
     shared:
