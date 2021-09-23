@@ -160,7 +160,6 @@ ignore_unused:
   - "admin.legislation.draft_versions.*.submit_button"
   - "admin.legislation.questions.*.submit_button"
   - "admin.hidden_comments.index.hidden_*"
-  - "admin.settings.index.features.*"
   - "admin.polls.*.submit_button"
   - "admin.booths.*.submit_button"
   - "admin.admin_notifications.*.submit_button"

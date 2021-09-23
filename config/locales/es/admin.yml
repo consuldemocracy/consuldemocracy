@@ -1297,10 +1297,7 @@ es:
         images_and_documents: "Imágenes y documentos"
         feature_flags: Funcionalidades
         features:
-          enabled: "Funcionalidad activada"
-          disabled: "Funcionalidad desactivada"
-          enable: "Activar"
-          disable: "Desactivar"
+          enabled: "Activada"
         map:
           title: Configuración del mapa
           help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
@@ -1321,9 +1318,7 @@ es:
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta
       setting: Funcionalidad
-      setting_actions: Acciones
       setting_name: Configuración
-      setting_status: Estado
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
