@@ -1194,9 +1194,6 @@ ca:
         feature_flags: Funcionalitats
         features:
           enabled: "Funcionalitat activada"
-          disabled: "Funcionalitat desactivada"
-          enable: "Activa"
-          disable: "Desactivar"
         map:
           title: Configuració del mapa
           help: Aquí podeu personalitzar la manera com es mostra el mapa als usuaris. Arrossegueu el marcador del mapa o feu clic a qualsevol lloc sobre el mapa, configureu el botó desitjat i feu clic al botó"Actualitza".
@@ -1214,9 +1211,7 @@ ca:
       remote_census_request_name: Sol·licita dades
       remote_census_response_name: Dades de resposta
       setting: Característica
-      setting_actions: Accions
       setting_name: Ambientació
-      setting_status: Estat
       setting_value: valor
       no_description: "Sense descripció"
     shared:
