@@ -1055,9 +1055,6 @@ fr:
         feature_flags: Fonctionnalités
         features:
           enabled: "Fonctionnalité activée"
-          disabled: "Fonctionnalité désactivée"
-          enable: "Activer"
-          disable: "Désactiver"
         map:
           title: Configuration de la carte
           help: Vous pouvez ici modifier la manière dont la carte est affichée pour les utilisateurs. Déplacez le marqueur ou cliquez à n'importe quel endroit sur la carte, définissez le niveau de zoom et cliquez sur le bouton "Mettre à jour".
@@ -1067,9 +1064,7 @@ fr:
             submit: Mettre-à-jour
       remote_census_response_name: Données de Réponse
       setting: Fonctionnalité
-      setting_actions: Actions
       setting_name: Paramètres
-      setting_status: Statut
       setting_value: Valeur
       no_description: "Aucune description"
     shared:
