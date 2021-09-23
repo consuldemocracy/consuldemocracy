@@ -766,9 +766,6 @@ eu:
         feature_flags: Funtzionaltasunak
         features:
           enabled: "Funtzionaltasuna aktibatuta"
-          disabled: "Funtzionaltasuna aktibatu gabe"
-          enable: "Aktibatu"
-          disable: "Aktibagabetu"
         map:
           title: Mapa konfigurazioa
           help: Hemen mapa erabiltzaileei erakusten den modua pertsonalizatu dezakezu. Markatzailea arrastatu edo maparen edozein lekutan sakatu, zooma doitu eta 'Eguneratu' botoia sakatu.
