@@ -1021,9 +1021,6 @@ pl:
         feature_flags: Funkcje
         features:
           enabled: "Funkcja włączona"
-          disabled: "Funkcja wyłączona"
-          enable: "Włącz"
-          disable: "Wyłącz"
         map:
           title: Konfiguracja mapy
           help: Tutaj możesz dostosować sposób wyświetlania mapy użytkownikom. Przeciągnij znacznik mapy lub kliknij w dowolnym miejscu na mapie, ustaw żądane przybliżenie i kliknij przycisk "Aktualizuj".
@@ -1033,9 +1030,7 @@ pl:
             submit: Zaktualizuj
           how_to_enable: 'Aby pokazać mapę użytkownikom musisz włączyć opcję "Propozycje i geolokalizacja inwestycji budżetowych" w zakładce Ustawienia -> Ustawienia globalne'
       setting: Funkcja
-      setting_actions: Akcje
       setting_name: Ustawienie
-      setting_status: Status
       setting_value: Wartość
       no_description: "Brak opisu"
     shared:
