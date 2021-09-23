@@ -1020,9 +1020,6 @@ cs:
         feature_flags: Doporučené
         features:
           enabled: "Funkce povolena"
-          disabled: "Funkce je zakázaná"
-          enable: "Povolit"
-          disable: "Zakázat"
         map:
           title: Konfigurace mapy
           help: Zde můžete přizpůsobit zobrazení mapy uživatelům. Přetáhněte značku mapy nebo klikněte kdekoli na mapu, nastavte požadované zvětšení a klikněte na tlačítko "Aktualizovat".
@@ -1031,9 +1028,7 @@ cs:
           form:
             submit: Aktualizovat
       setting: Vlastnosti
-      setting_actions: Akce
       setting_name: Nastavení
-      setting_status: Status
       setting_value: Value
       no_description: "Bez popisu"
     shared:
