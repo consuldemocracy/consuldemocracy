@@ -988,9 +988,6 @@ gl:
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidade activada"
-          disabled: "Funcionalidade desactivada"
-          enable: "Activar"
-          disable: "Desactivar"
         map:
           title: Configuración do mapa
           help: Aquí podes personalizar o xeito en que os e as usuarias ven o mapa. Arrastra o marcador ou preme en calquera parte do mapa, axusta o zoom e preme o botón 'Actualizar'.
@@ -999,9 +996,7 @@ gl:
           form:
             submit: Actualizar
       setting: Característica
-      setting_actions: Accións
       setting_name: Axuste
-      setting_status: Estado
       setting_value: Valor
       no_description: "Sen descrición"
     shared:
