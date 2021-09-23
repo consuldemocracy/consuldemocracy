@@ -1183,9 +1183,6 @@ oc:
         feature_flags: de Foncionalitats
         features:
           enabled: "Foncionalitat activada"
-          disabled: "Foncionalitat desactivada"
-          enable: "Activa"
-          disable: "Desactivar"
         map:
           title: Configuracion de la mapa
           help: Podètz aicí personalizar la manièra coma se mòstra la mapa als usatgièrs. Arrossegueu Lo mercador de la mapa o faguèt clic a quin luòc que siá sus la mapa, configuratz lo boton desirat e faguèt clic al boton"Actualiza".
@@ -1203,9 +1200,7 @@ oc:
       remote_census_request_name: Sol·licita dades
       remote_census_response_name: Dades de resposta
       setting: Caracteristica
-      setting_actions: d'Accions
       setting_name: Ambientació
-      setting_status: Estat
       setting_value: valor
       no_description: "Sens descripcion"
     shared:
