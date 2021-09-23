@@ -1015,9 +1015,6 @@ nl:
         feature_flags: Features
         features:
           enabled: "Feature enabled"
-          disabled: "Feature disabled"
-          enable: "Enable"
-          disable: "Disable"
         map:
           title: Kaart instellingen
           help: Hier kunt u aanpassen hoe de kaart aan deelnemers wordt getoond. Sleep de kaartmarkering of klik ergens op de kaart, stel het gewenste zoomniveau in en klik "Pas aan".
@@ -1027,9 +1024,7 @@ nl:
             submit: Update
           how_to_enable: 'Om de kaart te tonen aan gebruikers moet "Voorstellen en begroting investeringen geolocation" zijn ingeschakeld op tabblad "Voorzieningen".'
       setting: Functie
-      setting_actions: Activiteiten
       setting_name: Instelling
-      setting_status: Status
       setting_value: Waarde
       no_description: "Geen beschrijving"
     shared:
