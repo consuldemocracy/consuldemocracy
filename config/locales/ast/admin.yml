@@ -639,14 +639,9 @@ ast:
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidad activada"
-          disabled: "Funcionalidad desactivada"
-          enable: "Activar"
-          disable: "Desactivar"
         map:
           form:
             submit: Actualizar
-      setting_actions: Acciones
-      setting_status: Estáu
       setting_value: Valor
     shared:
       true_value: "Sí"
