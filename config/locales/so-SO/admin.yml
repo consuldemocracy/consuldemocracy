@@ -900,9 +900,6 @@ so:
         feature_flags: Soobandhigiidyo / Muqaalo
         features:
           enabled: "Muujin karo"
-          disabled: "Aan Muujin karin"
-          enable: "Karti leh"
-          disable: "Hawl gaab ah"
         map:
           title: Qaybinta Khariirada
           help: Halkan waxaad ku habeyn kartaa qaabka khariidada loo soo bandhigo dadka isticmaala. Tijaabi calaamade khariidadda ama guji meel kasta oo ka mida khariidada, waxaad dhigataa mujin iyo guji badhan "Cusboneysii".
@@ -911,9 +908,7 @@ so:
           form:
             submit: Cusboneysiin
       setting: Soobandhigiid / Muqaal
-      setting_actions: Tilaabooyin
       setting_name: Dejinta
-      setting_status: Status
       setting_value: Qimaha
       no_description: "Sharaxaad la'aan"
     shared:
