@@ -1298,9 +1298,6 @@ sv:
         feature_flags: Funktioner
         features:
           enabled: "Aktiverad funktion"
-          disabled: "Inaktiverad funktion"
-          enable: "Aktivera"
-          disable: "Inaktivera"
         map:
           title: Kartinställningar
           help: Här kan du anpassa hur kartan visas för användare. Dra kartmarkören eller klicka på kartan, ställ in önskad zoom och klicka på knappen ”Uppdatera”.
@@ -1321,9 +1318,7 @@ sv:
       remote_census_request_name: Begär data
       remote_census_response_name: Svarsdata
       setting: Funktion
-      setting_actions: Åtgärder
       setting_name: Inställning
-      setting_status: Status
       setting_value: Värde
       no_description: "Ingen beskrivning"
     shared:
