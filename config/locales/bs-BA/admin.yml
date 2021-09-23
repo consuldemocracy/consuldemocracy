@@ -1111,9 +1111,6 @@ bs:
         feature_flags: Značajke
         features:
           enabled: "Značajke uključene"
-          disabled: "Značajke isključene"
-          enable: "Uključi"
-          disable: "Isključi"
         map:
           title: Konfiguracija mape
           help: Ovdje možete prilagoditi način na koji se mapa prikazuje korisnicima. Vucite marker ili kliknite bilo gdje iznad mape, podesite zumiranje i pritisnite dugme za ažuriranje podataka.
@@ -1125,9 +1122,7 @@ bs:
         dashboard:
           title: Kontrolna ploča za prijedloge
       setting: Značajka
-      setting_actions: Radnje
       setting_name: Postavke
-      setting_status: Status
       setting_value: Vrijednost
       no_description: "Nema opisa"
     shared:
