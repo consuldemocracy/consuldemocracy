@@ -1191,9 +1191,6 @@ ar:
         feature_flags: المميزات
         features:
           enabled: "تم تفعيل الميزة"
-          disabled: "تم إلغاء الميزة"
-          enable: "تفعيل"
-          disable: "تعطيل"
         map:
           title: تعديل الخريطة
           help: هنا يمكنك تخصيص طريقة عرض الخريطة للمستخدمين. اسحب محدد الخريطة أو انقر في أي مكان على الخريطة، حدد التكبير المطلوب وانقر على زر "تحديث".
@@ -1205,9 +1202,7 @@ ar:
         dashboard:
           title: لوحة القيادة الخاصة بالمقترحات
       setting: الميزة
-      setting_actions: الإجراءات
       setting_name: إعداد
-      setting_status: حالة
       setting_value: القيمة
       no_description: "بدون وصف"
     shared:
