@@ -722,9 +722,6 @@ sl:
         feature_flags: Funkcije
         features:
           enabled: "Funkcija omogočena"
-          disabled: "Funkcija onemogočena"
-          enable: "Omogoči"
-          disable: "Onemogoči"
         map:
           title: Konfiguracija zemljevida
           help: Tukaj lahko prilagodiš, kako se zemljevid prikazuje uporabnikom. Povleci označevalec zemljevida in klikni kamorkoli na zemljevid, določi povečavo in klikni gumb "Posodobi".
