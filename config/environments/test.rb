@@ -47,6 +47,9 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  # Store files in tmp folders.
+  config.active_storage.service = :test
+
   config.cache_store = :null_store
 
   config.after_initialize do

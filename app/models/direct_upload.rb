@@ -53,7 +53,7 @@ class DirectUpload
 
     def relation_attributtes
       {
-        attachment: @attachment,
+        paperclip_attachment: @attachment,
         cached_attachment: @cached_attachment,
         user: @user
       }

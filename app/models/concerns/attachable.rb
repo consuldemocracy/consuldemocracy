@@ -1,4 +1,5 @@
 module Attachable
+  include HasAttachment
   extend ActiveSupport::Concern
 
   included do
@@ -33,11 +34,11 @@ module Attachable
   end
 
   def set_attachment_from_cached_attachment
-    self.attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
-                        File.open(cached_attachment)
-                      else
-                        URI.parse(cached_attachment)
-                      end
+    if Paperclip::Attachment.default_options[:storage] == :filesystem
+      File.open(cached_attachment) { |file| self.attachment = file }
+    else
+      self.attachment = URI.open(cached_attachment)
+    end
   end
 
   def prefix(attachment, _style)
