@@ -58,7 +58,7 @@ describe "Documents", :admin do
     click_button "Upload"
 
     expect(page).to have_content "Document uploaded succesfully"
-    expect(page).to have_link "logo.pdf", href: Document.last.attachment.url
+    expect(page).to have_link "logo.pdf"
   end
 
   scenario "Errors on create" do
