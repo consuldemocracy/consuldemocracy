@@ -1128,7 +1128,12 @@ describe "Budget Investments" do
         accept_confirm { click_link("Delete") }
       end
 
+      expect(page).to have_content "Investment project deleted succesfully"
+
       visit user_path(user, tab: :budget_investments)
+
+      expect(page).to have_content "User has no public activity"
+      expect(page).not_to have_content investment1.title
     end
   end
 
