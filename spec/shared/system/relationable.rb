@@ -4,9 +4,7 @@ shared_examples "relationable" do |relationable_model_name|
   let(:related2) { create([:proposal, :debate, :budget_investment].sample) }
   let(:user) { create(:user) }
 
-  before do
-    integration_session.host = Capybara.app_host # TODO: remove after upgrading to Rails 6.1
-  end
+  before { integration_session.host = Capybara.app_host }
 
   scenario "related contents are listed" do
     create(:related_content,
