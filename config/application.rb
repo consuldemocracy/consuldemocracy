@@ -27,9 +27,6 @@ module Consul
     # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
 
-    # Use local forms with `form_with`, so it works like `form_for`
-    config.action_view.form_with_generates_remote_forms = false
-
     # Keep using AES-256-CBC for message encryption in case it's used
     # in any CONSUL DEMOCRACY installations
     config.active_support.use_authenticated_message_encryption = false
@@ -37,11 +34,6 @@ module Consul
     # Keep using the classic autoloader until we decide how custom classes
     # should work with zeitwerk
     config.autoloader = :classic
-
-    # Use the default queue for ActiveStorage like we were doing with Rails 5.2
-    # because it will also be the default in Rails 6.1.
-    config.active_storage.queues.analysis = nil
-    config.active_storage.queues.purge    = nil
 
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
