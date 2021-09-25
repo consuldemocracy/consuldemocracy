@@ -13,7 +13,7 @@
 Rails.application.config.active_storage.track_variants = true
 
 # Apply random variation to the delay when retrying failed jobs.
-# Rails.application.config.active_job.retry_jitter = 0.15
+Rails.application.config.active_job.retry_jitter = 0.15
 
 # Stop executing `after_enqueue`/`after_perform` callbacks if
 # `before_enqueue`/`before_perform` respectively halts with `throw :abort`.
