@@ -64,7 +64,7 @@ describe "Admin banners magement", :admin do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Site content"
+      click_button "Site content"
       click_link "Manage banners"
     end
 
@@ -133,7 +133,7 @@ describe "Admin banners magement", :admin do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Site content"
+      click_button "Site content"
       click_link "Manage banners"
     end
 

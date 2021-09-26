@@ -13,7 +13,7 @@ class Management::MenuComponent < ApplicationComponent
   private
 
     def user_links
-      section(t("management.menu.users"), class: "users-link") do
+      section(t("management.menu.users"), active: true, class: "users-link") do
         link_list(
           select_user_link,
           (reset_password_email_link if managed_user.email),
@@ -21,8 +21,7 @@ class Management::MenuComponent < ApplicationComponent
           create_proposal_link,
           support_proposals_link,
           (create_budget_investment_link if Setting["process.budgets"]),
-          (support_budget_investments_link  if Setting["process.budgets"]),
-          class: "is-active"
+          (support_budget_investments_link  if Setting["process.budgets"])
         )
       end
     end
@@ -157,7 +156,7 @@ class Management::MenuComponent < ApplicationComponent
       section_opener(title, **) + content.call
     end
 
-    def section_opener(title, **options)
-      link_to(title, "#", options)
+    def section_opener(title, active:, **options)
+      button_tag(title, { type: "button", disabled: "disabled", "aria-expanded": active }.merge(options))
     end
 end

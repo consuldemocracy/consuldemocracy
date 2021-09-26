@@ -10,7 +10,7 @@
     padding: 0;
   }
 
-  > ul > li a {
+  > ul > li > :first-child {
     display: flex;
     font-weight: bold;
 
@@ -124,16 +124,9 @@
       border-left: 2px solid $sidebar-active;
       font-weight: bold;
     }
-
-    &[aria-expanded="true"] {
-
-      > a::after {
-        transform: rotate(180deg);
-      }
-    }
   }
 
-  li a {
+  li > :first-child {
     color: inherit;
     display: block;
     padding: calc(#{$line-height} / 2);
@@ -146,19 +139,27 @@
     }
   }
 
-  .is-accordion-submenu-parent {
+  [aria-expanded] {
+    @include has-fa-icon(chevron-down, solid, after);
+    line-height: inherit;
+    text-align: inherit;
+    width: 100%;
 
-    > a {
-      @include has-fa-icon(chevron-down, solid, after);
+    &::after {
+      margin-#{$global-left}: auto;
+      transition: 0.25s;
+    }
 
-      &::after {
-        margin-#{$global-left}: auto;
-        transition: 0.25s;
-      }
+    &:not([disabled]) {
+      cursor: pointer;
     }
   }
 
-  .submenu {
+  [aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+
+  ul ul {
     border-bottom: 0;
     margin-left: $line-height;
 
