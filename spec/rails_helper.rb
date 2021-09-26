@@ -60,6 +60,10 @@ module Capybara
     def visit(url, ...)
       original_visit(url, ...)
 
+      unless driver.name == :rack_test
+        expect(page).to be_axe_clean.checking_only :label
+      end
+
       unless url.match?("robots.txt") || url.match?("active_storage/representations")
         expect(page).to have_css "main", count: 1
         expect(page).to have_css "#main", count: 1
