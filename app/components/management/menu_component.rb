@@ -13,7 +13,7 @@ class Management::MenuComponent < ApplicationComponent
   private
 
     def user_links
-      link_to(t("management.menu.users"), "#", class: "users-link") +
+      section(t("management.menu.users"), class: "users-link") do
         link_list(
           select_user_link,
           (reset_password_email_link if managed_user.email),
@@ -24,6 +24,7 @@ class Management::MenuComponent < ApplicationComponent
           (support_budget_investments_link  if Setting["process.budgets"]),
           class: "is-active"
         )
+      end
     end
 
     def select_user_link
@@ -150,5 +151,13 @@ class Management::MenuComponent < ApplicationComponent
 
     def user_invites?
       controller_name == "user_invites"
+    end
+
+    def section(title, **, &content)
+      section_opener(title, **) + content.call
+    end
+
+    def section_opener(title, **options)
+      link_to(title, "#", options)
     end
 end

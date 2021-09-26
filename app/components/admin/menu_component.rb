@@ -151,7 +151,7 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def booths_links
-      link_to(t("admin.menu.title_booths"), "#", class: "booths-link") +
+      section(t("admin.menu.title_booths"), class: "booths-link") do
         link_list(
           officers_link,
           booths_link,
@@ -159,6 +159,7 @@ class Admin::MenuComponent < ApplicationComponent
           shifts_link,
           id: "booths_menu", class: ("is-active" if booths?)
         )
+      end
     end
 
     def officers_link
@@ -204,7 +205,7 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def messages_links
-      link_to(t("admin.menu.messaging_users"), "#", class: "messages-link") +
+      section(t("admin.menu.messaging_users"), class: "messages-link") do
         link_list(
           newsletters_link,
           admin_notifications_link,
@@ -212,6 +213,7 @@ class Admin::MenuComponent < ApplicationComponent
           emails_download_link,
           id: "messaging_users_menu", class: ("is-active" if messages_menu_active?)
         )
+      end
     end
 
     def newsletters_link
@@ -247,7 +249,7 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def site_customization_links
-      link_to(t("admin.menu.title_site_customization"), "#", class: "site-customization-link") +
+      section(t("admin.menu.title_site_customization"), class: "site-customization-link") do
         link_list(
           homepage_link,
           pages_link,
@@ -259,6 +261,7 @@ class Admin::MenuComponent < ApplicationComponent
           class: ("is-active" if customization? &&
                                  controller.class.module_parent != Admin::Poll::Questions::Answers)
         )
+      end
     end
 
     def homepage_link
@@ -302,7 +305,7 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def moderated_content_links
-      link_to(t("admin.menu.title_moderated_content"), "#", class: "moderated-content-link") +
+      section(t("admin.menu.title_moderated_content"), class: "moderated-content-link") do
         link_list(
           (hidden_proposals_link if feature?(:proposals)),
           (hidden_debates_link if feature?(:debates)),
@@ -313,6 +316,7 @@ class Admin::MenuComponent < ApplicationComponent
           activity_link,
           class: ("is-active" if moderated_content?)
         )
+      end
     end
 
     def hidden_proposals_link
@@ -372,7 +376,7 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def profiles_links
-      link_to(t("admin.menu.title_profiles"), "#", class: "profiles-link") +
+      section(t("admin.menu.title_profiles"), class: "profiles-link") do
         link_list(
           administrators_link,
           organizations_link,
@@ -384,6 +388,7 @@ class Admin::MenuComponent < ApplicationComponent
           users_link,
           class: ("is-active" if profiles?)
         )
+      end
     end
 
     def administrators_link
@@ -452,7 +457,7 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def settings_links
-      link_to(t("admin.menu.title_settings"), "#", class: "settings-link") +
+      section(t("admin.menu.title_settings"), class: "settings-link") do
         link_list(
           settings_link,
           tenants_link,
@@ -461,6 +466,7 @@ class Admin::MenuComponent < ApplicationComponent
           local_census_records_link,
           class: ("is-active" if settings?)
         )
+      end
     end
 
     def settings_link
@@ -522,12 +528,13 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def dashboard_links
-      link_to(t("admin.menu.dashboard"), "#", class: "dashboard-link") +
+      section(t("admin.menu.dashboard"), class: "dashboard-link") do
         link_list(
           dashboard_actions_link,
           administrator_tasks_link,
           class: ("is-active" if dashboard?)
         )
+      end
     end
 
     def machine_learning_link
@@ -561,5 +568,13 @@ class Admin::MenuComponent < ApplicationComponent
         admin_sdg_managers_path,
         sdg_managers?
       ]
+    end
+
+    def section(title, **, &content)
+      section_opener(title, **) + content.call
+    end
+
+    def section_opener(title, **options)
+      link_to(title, "#", options)
     end
 end
