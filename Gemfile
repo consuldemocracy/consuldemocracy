@@ -74,6 +74,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "axe-core-rspec", "~> 4.8.2", require: false
   gem "capybara", "~> 3.40.0"
   gem "capybara-webmock", "~> 0.7.0"
   gem "email_spec", "~> 2.3.0"
