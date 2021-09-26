@@ -79,6 +79,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "axe-core-rspec", "~> 4.8.2", require: false
   gem "capybara", "~> 3.40.0"
   gem "email_spec", "~> 2.3.1"
   gem "pdf-reader", "~> 2.15.1"

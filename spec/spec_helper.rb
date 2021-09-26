@@ -1,3 +1,4 @@
+require "axe-rspec"
 require "factory_bot_rails"
 require "email_spec"
 require "devise"
