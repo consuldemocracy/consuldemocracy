@@ -1,5 +1,5 @@
 <div class="votes">
-  <% if user_signed_in? %>
+  <% if current_user %>
     <%= t("comments.comment.votes", count: comment.total_votes) %>
     &nbsp;|&nbsp;
 
@@ -36,7 +36,7 @@
       <% end %>
       <%= comment.total_dislikes %>
     </span>
-  <% elsif !user_signed_in? %>
+  <% else %>
     <div class="participation-allowed">
       <%= t("comments.comment.votes", count: comment.total_votes) %>
       &nbsp;|&nbsp;

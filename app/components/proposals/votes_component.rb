@@ -1,6 +1,6 @@
 class Proposals::VotesComponent < ApplicationComponent
   attr_reader :proposal
-  delegate :current_user, :link_to_verify_account, :user_signed_in?, to: :helpers
+  delegate :current_user, :link_to_verify_account, to: :helpers
 
   def initialize(proposal, vote_url: nil)
     @proposal = proposal

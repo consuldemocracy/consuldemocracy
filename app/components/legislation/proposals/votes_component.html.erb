@@ -2,7 +2,7 @@
 <div class="votes">
   <% if proposal.process.proposals_phase.open? %>
     <div class="in-favor inline-block">
-      <% if user_signed_in? %>
+      <% if current_user %>
         <%= link_to vote_legislation_process_proposal_path(process_id: proposal.process, id: proposal, value: "yes"),
             class: "like #{voted_classes[:in_favor]}", title: t("votes.agree"), method: "post", remote: true do %>
           <span class="icon-like">
@@ -23,7 +23,7 @@
     <span class="divider"></span>
 
     <div class="against inline-block">
-      <% if user_signed_in? %>
+      <% if current_user %>
         <%= link_to vote_legislation_process_proposal_path(process_id: proposal.process, id: proposal, value: "no"), class: "unlike #{voted_classes[:against]}", title: t("votes.disagree"), method: "post", remote: true do %>
           <span class="icon-unlike">
             <span class="show-for-sr"><%= t("votes.disagree") %></span>
@@ -45,20 +45,20 @@
     <%= t("proposals.proposal.votes", count: proposal.votes_score) %>
   </span>
 
-  <% if user_signed_in? && current_user.organization? %>
+  <% if current_user&.organization? %>
     <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <%= t("votes.organizations") %>
       </p>
     </div>
-  <% elsif user_signed_in? && !proposal.votable_by?(current_user) %>
+  <% elsif current_user && !proposal.votable_by?(current_user) %>
     <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <%= sanitize(t("legislation.proposals.not_verified",
             verify_account: link_to_verify_account)) %>
       </p>
     </div>
-  <% elsif !user_signed_in? %>
+  <% elsif !current_user %>
     <div tabindex="0">
       <%= render "shared/login_to_vote" %>
     </div>

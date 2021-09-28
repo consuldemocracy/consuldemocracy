@@ -6,7 +6,7 @@
       <div class="supported callout success">
         <%= t("proposals.proposal.already_supported") %>
       </div>
-    <% elsif user_signed_in? && proposal.votable_by?(current_user) %>
+    <% elsif current_user && proposal.votable_by?(current_user) %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
           title: t("proposals.proposal.support_title"), method: "post", remote: true do %>
@@ -19,13 +19,13 @@
     <% end %>
   </div>
 
-  <% if user_signed_in? && current_user.organization? %>
+  <% if current_user&.organization? %>
     <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <%= t("votes.organizations") %>
       </p>
     </div>
-  <% elsif user_signed_in? && !proposal.votable_by?(current_user) %>
+  <% elsif current_user && !proposal.votable_by?(current_user) %>
     <div tabindex="0">
       <div class="participation-not-allowed" style="display:none" aria-hidden="false">
         <p>
@@ -33,7 +33,7 @@
         </p>
       </div>
     </div>
-  <% elsif !user_signed_in? %>
+  <% elsif !current_user %>
     <div tabindex="0">
       <%= render "shared/login_to_vote" %>
     </div>
