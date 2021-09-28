@@ -71,11 +71,6 @@ class ProposalsController < ApplicationController
   def retire_form
   end
 
-  def vote_featured
-    @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
-    @proposal.register_vote(current_user, "yes")
-  end
-
   def summary
     @proposals = Proposal.for_summary
     @tag_cloud = tag_cloud
