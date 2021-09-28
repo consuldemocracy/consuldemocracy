@@ -1,4 +1,4 @@
-<% voted_classes = css_classes_for_vote(legislation_proposal_votes, proposal) %>
+<% voted_classes = css_classes_for_vote(proposal) %>
 <div class="votes">
   <% if proposal.process.proposals_phase.open? %>
     <div class="in-favor inline-block">
@@ -64,7 +64,7 @@
     </div>
   <% end %>
 
-  <% if voted_for?(legislation_proposal_votes, proposal) && setting["twitter_handle"] %>
+  <% if current_user&.voted_as_when_voted_for(proposal) && setting["twitter_handle"] %>
     <div class="share-supported">
       <%= render "shared/social_share",
           title: proposal.title,

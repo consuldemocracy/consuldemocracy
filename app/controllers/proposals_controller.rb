@@ -58,7 +58,6 @@ class ProposalsController < ApplicationController
   def vote
     @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
     @proposal.register_vote(current_user, "yes")
-    set_proposal_votes(@proposal)
   end
 
   def retire
@@ -75,7 +74,6 @@ class ProposalsController < ApplicationController
   def vote_featured
     @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
     @proposal.register_vote(current_user, "yes")
-    set_featured_proposal_votes(@proposal)
   end
 
   def summary
@@ -118,10 +116,6 @@ class ProposalsController < ApplicationController
       Proposal
     end
 
-    def set_featured_proposal_votes(proposals)
-      @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
-    end
-
     def discard_draft
       @resources = @resources.published
     end
@@ -156,7 +150,6 @@ class ProposalsController < ApplicationController
         @featured_proposals = Proposal.not_archived.unsuccessful
                               .sort_by_confidence_score.limit(Setting["featured_proposals_number"])
         if @featured_proposals.present?
-          set_featured_proposal_votes(@featured_proposals)
           @resources = @resources.where.not(id: @featured_proposals)
         end
       end

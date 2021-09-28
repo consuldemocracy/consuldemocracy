@@ -13,8 +13,8 @@ module VotesHelper
     end
   end
 
-  def css_classes_for_vote(votes, votable)
-    case votes[votable.id]
+  def css_classes_for_vote(votable)
+    case current_user&.voted_as_when_voted_for(votable)
     when true
       { in_favor: "voted", against: "no-voted" }
     when false
@@ -22,9 +22,5 @@ module VotesHelper
     else
       { in_favor: "", against: "" }
     end
-  end
-
-  def voted_for?(votes, votable)
-    votes[votable.id]
   end
 end

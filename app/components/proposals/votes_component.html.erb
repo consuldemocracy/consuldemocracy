@@ -2,7 +2,7 @@
   <%= render "proposals/supports", proposal: proposal %>
 
   <div class="in-favor">
-    <% if voted_for?(proposal_votes, proposal) %>
+    <% if current_user&.voted_for?(proposal) %>
       <div class="supported callout success">
         <%= t("proposals.proposal.already_supported") %>
       </div>
@@ -39,7 +39,7 @@
     </div>
   <% end %>
 
-  <% if voted_for?(proposal_votes, proposal) && setting["twitter_handle"] %>
+  <% if current_user&.voted_for?(proposal) && setting["twitter_handle"] %>
     <div class="share-supported">
       <%= render "proposals/social_share", proposal: proposal, share_title: false %>
     </div>

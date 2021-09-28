@@ -124,7 +124,6 @@ class Legislation::ProcessesController < Legislation::BaseController
     end
 
     if @process.proposals_phase.started? || current_user&.administrator?
-      legislation_proposal_votes(@proposals)
       render :proposals
     else
       render :phase_not_open

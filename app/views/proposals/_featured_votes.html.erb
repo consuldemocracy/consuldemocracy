@@ -1,6 +1,6 @@
 <div class="supports text-center">
   <div class="in-favor">
-    <% if voted_for?(@featured_proposals_votes, proposal) %>
+    <% if current_user&.voted_for?(proposal) %>
       <div class="supported">
         <%= t("proposals.proposal.already_supported") %>
       </div>
@@ -29,7 +29,7 @@
     <%= render "shared/login_to_vote" %>
   <% end %>
 
-  <% if voted_for?(@featured_proposals_votes, proposal) %>
+  <% if current_user&.voted_for?(proposal) %>
     <% if setting["twitter_handle"] %>
       <div class="share-supported">
         <%= render "shared/social_share",
