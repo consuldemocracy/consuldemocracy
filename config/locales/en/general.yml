@@ -376,7 +376,6 @@ en:
       select_order_long: "You are viewing proposals according to:"
       start_proposal: Create a proposal
       title: Proposals
-      top: Top weekly
       top_link_proposals: The most supported proposals by category
       section_header:
         icon_alt: Proposals icon
