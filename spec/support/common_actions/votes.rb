@@ -12,7 +12,7 @@ module Votes
 
   def expect_message_to_many_anonymous_votes
     expect(page).to have_content "Too many anonymous votes to admit vote"
-    expect(page).to have_selector(".in-favor a", obscured: true)
+    expect(page).to have_button "I agree", obscured: true
   end
 
   def expect_message_only_verified_can_vote_proposals

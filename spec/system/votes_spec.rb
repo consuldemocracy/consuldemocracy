@@ -19,37 +19,37 @@ describe "Votes" do
       within("#debates") do
         within("#debate_#{debate1.id}_votes") do
           within(".in-favor") do
-            expect(page).to have_css("a.voted")
-            expect(page).not_to have_css("a.no-voted")
+            expect(page).to have_css("button.voted")
+            expect(page).not_to have_css("button.no-voted")
           end
 
           within(".against") do
-            expect(page).to have_css("a.no-voted")
-            expect(page).not_to have_css("a.voted")
+            expect(page).to have_css("button.no-voted")
+            expect(page).not_to have_css("button.voted")
           end
         end
 
         within("#debate_#{debate2.id}_votes") do
           within(".in-favor") do
-            expect(page).not_to have_css("a.voted")
-            expect(page).not_to have_css("a.no-voted")
+            expect(page).not_to have_css("button.voted")
+            expect(page).not_to have_css("button.no-voted")
           end
 
           within(".against") do
-            expect(page).not_to have_css("a.no-voted")
-            expect(page).not_to have_css("a.voted")
+            expect(page).not_to have_css("button.no-voted")
+            expect(page).not_to have_css("button.voted")
           end
         end
 
         within("#debate_#{debate3.id}_votes") do
           within(".in-favor") do
-            expect(page).to have_css("a.no-voted")
-            expect(page).not_to have_css("a.voted")
+            expect(page).to have_css("button.no-voted")
+            expect(page).not_to have_css("button.voted")
           end
 
           within(".against") do
-            expect(page).to have_css("a.voted")
-            expect(page).not_to have_css("a.no-voted")
+            expect(page).to have_css("button.voted")
+            expect(page).not_to have_css("button.no-voted")
           end
         end
       end
@@ -63,37 +63,37 @@ describe "Votes" do
 
         within(".in-favor") do
           expect(page).to have_content "0%"
-          expect(page).not_to have_css("a.voted")
-          expect(page).not_to have_css("a.no-voted")
+          expect(page).not_to have_css("button.voted")
+          expect(page).not_to have_css("button.no-voted")
         end
 
         within(".against") do
           expect(page).to have_content "0%"
-          expect(page).not_to have_css("a.voted")
-          expect(page).not_to have_css("a.no-voted")
+          expect(page).not_to have_css("button.voted")
+          expect(page).not_to have_css("button.no-voted")
         end
       end
 
       scenario "Update" do
         visit debate_path(create(:debate))
 
-        find(".in-favor a").click
+        click_button "I agree"
 
         within(".in-favor") do
           expect(page).to have_content "100%"
-          expect(page).to have_css("a.voted")
+          expect(page).to have_css("button.voted")
         end
 
-        find(".against a").click
+        click_button "I disagree"
 
         within(".in-favor") do
           expect(page).to have_content "0%"
-          expect(page).to have_css("a.no-voted")
+          expect(page).to have_css("button.no-voted")
         end
 
         within(".against") do
           expect(page).to have_content "100%"
-          expect(page).to have_css("a.voted")
+          expect(page).to have_css("button.voted")
         end
 
         expect(page).to have_content "1 vote"
@@ -102,9 +102,9 @@ describe "Votes" do
       scenario "Trying to vote multiple times" do
         visit debate_path(create(:debate))
 
-        find(".in-favor a").click
+        click_button "I agree"
         expect(page).to have_content "1 vote"
-        find(".in-favor a").click
+        click_button "I agree"
         expect(page).not_to have_content "2 votes"
 
         within(".in-favor") do
@@ -127,28 +127,28 @@ describe "Votes" do
 
         within(".in-favor") do
           expect(page).to have_content "50%"
-          expect(page).to have_css("a.voted")
+          expect(page).to have_css("button.voted")
         end
 
         within(".against") do
           expect(page).to have_content "50%"
-          expect(page).to have_css("a.no-voted")
+          expect(page).to have_css("button.no-voted")
         end
       end
 
       scenario "Create from debate show" do
         visit debate_path(create(:debate))
 
-        find(".in-favor a").click
+        click_button "I agree"
 
         within(".in-favor") do
           expect(page).to have_content "100%"
-          expect(page).to have_css("a.voted")
+          expect(page).to have_css("button.voted")
         end
 
         within(".against") do
           expect(page).to have_content "0%"
-          expect(page).to have_css("a.no-voted")
+          expect(page).to have_css("button.no-voted")
         end
 
         expect(page).to have_content "1 vote"
@@ -159,16 +159,16 @@ describe "Votes" do
         visit debates_path
 
         within("#debates") do
-          find(".in-favor a").click
+          click_button "I agree"
 
           within(".in-favor") do
             expect(page).to have_content "100%"
-            expect(page).to have_css("a.voted")
+            expect(page).to have_css("button.voted")
           end
 
           within(".against") do
             expect(page).to have_content "0%"
-            expect(page).to have_css("a.no-voted")
+            expect(page).to have_css("button.no-voted")
           end
 
           expect(page).to have_content "1 vote"
