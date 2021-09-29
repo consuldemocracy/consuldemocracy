@@ -193,10 +193,10 @@ describe "Votes" do
         visit proposal_path(proposal)
 
         within(".supports") do
-          find(".in-favor a").click
-          expect(page).to have_content "1 support"
+          click_button "Support"
 
-          expect(page).not_to have_selector ".in-favor a"
+          expect(page).to have_content "1 support"
+          expect(page).not_to have_button "Support"
         end
       end
 
@@ -215,7 +215,7 @@ describe "Votes" do
         visit proposal_path(proposal)
 
         within(".supports") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this proposal. Share it!"
@@ -226,7 +226,7 @@ describe "Votes" do
         visit proposals_path
 
         within("#proposal_#{proposal.id}") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this proposal. Share it!"
@@ -238,7 +238,7 @@ describe "Votes" do
         visit proposals_path
 
         within("#proposal_#{proposal.id}") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "You have already supported this proposal. Share it!"
         end

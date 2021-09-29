@@ -4,14 +4,13 @@ describe Proposals::VotesComponent do
   let(:proposal) { create(:proposal, title: "Create a monthly transport ticket") }
   let(:component) { Proposals::VotesComponent.new(proposal) }
 
-  describe "support proposal link" do
-    it "is shown as plain text to unverified users" do
+  describe "support proposal button" do
+    it "is disabled to unverified users" do
       sign_in(create(:user))
 
       render_inline component
 
-      expect(page).to have_content "Support"
-      expect(page).not_to have_link "Support"
+      expect(page).to have_button "Support", disabled: true
     end
 
     it "is shown to verified users" do
@@ -19,9 +18,9 @@ describe Proposals::VotesComponent do
 
       render_inline component
 
-      expect(page).to have_link count: 1
-      expect(page).to have_link "Support", title: "Support this proposal"
-      expect(page).to have_link "Support Create a monthly transport ticket"
+      expect(page).to have_button count: 1
+      expect(page).to have_button "Support", title: "Support this proposal"
+      expect(page).to have_button "Support Create a monthly transport ticket"
       expect(page).not_to have_content "You have already supported this proposal. Share it!"
     end
 
@@ -31,7 +30,7 @@ describe Proposals::VotesComponent do
       render_inline component
 
       expect(page).to have_content "You have already supported this proposal. Share it!"
-      expect(page).not_to have_link "Support"
+      expect(page).not_to have_button "Support", disabled: :all
     end
   end
 
