@@ -847,9 +847,11 @@ en:
       retired_help_text: Dashboard not available for retired proposals
   votes:
     agree: I agree
+    agree_label: "I agree with %{title}"
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
     comment_unauthenticated: You must %{signin} or %{signup} to vote.
     disagree: I disagree
+    disagree_label: "I don't agree with %{title}"
     organizations: Organizations are not permitted to vote
     supports: Supports
     verified_only: Only verified users can vote on proposals; %{verify_account}.

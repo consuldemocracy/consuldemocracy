@@ -35,7 +35,9 @@ describe Legislation::Proposals::VotesComponent do
 
       expect(page).to have_link count: 2
       expect(page).to have_link "I agree", title: "I agree"
+      expect(page).to have_link "I agree with Require wearing masks at home"
       expect(page).to have_link "I disagree", title: "I disagree"
+      expect(page).to have_link "I don't agree with Require wearing masks at home"
       expect(page).not_to have_content "You must sign in or sign up to continue."
     end
   end

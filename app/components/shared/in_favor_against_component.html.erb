@@ -2,7 +2,11 @@
   <div class="in-favor inline-block">
     <% if current_user %>
       <%= link_to polymorphic_path(votable, action: :vote, value: "yes"),
-          class: "like #{voted_classes[:in_favor]}", title: t("votes.agree"), method: "post", remote: true do %>
+          class: "like #{voted_classes[:in_favor]}",
+          title: t("votes.agree"),
+          "aria-label": agree_aria_label,
+          method: "post",
+          remote: true do %>
         <span class="icon-like">
           <span class="show-for-sr"><%= t("votes.agree") %></span>
         </span>
@@ -22,7 +26,12 @@
 
   <div class="against inline-block">
     <% if current_user %>
-      <%= link_to polymorphic_path(votable, action: :vote, value: "no"), class: "unlike #{voted_classes[:against]}", title: t("votes.disagree"), method: "post", remote: true do %>
+      <%= link_to polymorphic_path(votable, action: :vote, value: "no"),
+          class: "unlike #{voted_classes[:against]}",
+          title: t("votes.disagree"),
+          "aria-label": disagree_aria_label,
+          method: "post",
+          remote: true do %>
         <span class="icon-unlike">
           <span class="show-for-sr"><%= t("votes.disagree") %></span>
         </span>

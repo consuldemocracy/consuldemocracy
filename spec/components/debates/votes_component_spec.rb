@@ -22,7 +22,9 @@ describe Debates::VotesComponent do
 
       expect(page).to have_link count: 2
       expect(page).to have_link "I agree", title: "I agree"
+      expect(page).to have_link "I agree with What about the 2030 agenda?"
       expect(page).to have_link "I disagree", title: "I disagree"
+      expect(page).to have_link "I don't agree with What about the 2030 agenda?"
       expect(page).not_to have_content "You must sign in or sign up to continue."
     end
   end

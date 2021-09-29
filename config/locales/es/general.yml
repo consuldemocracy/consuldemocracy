@@ -847,9 +847,11 @@ es:
       retired_help_text: Dashboard no disponible para propuestas retiradas
   votes:
     agree: Estoy de acuerdo
+    agree_label: "Estoy de acuerdo con %{title}"
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
     comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: No estoy de acuerdo
+    disagree_label: "No estoy de acuerdo con %{title}"
     organizations: Las organizaciones no pueden votar.
     supports: Apoyos
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
