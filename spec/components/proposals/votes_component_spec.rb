@@ -21,6 +21,7 @@ describe Proposals::VotesComponent do
 
       expect(page).to have_link count: 1
       expect(page).to have_link "Support", title: "Support this proposal"
+      expect(page).to have_link "Support Create a monthly transport ticket"
       expect(page).not_to have_content "You have already supported this proposal. Share it!"
     end
 

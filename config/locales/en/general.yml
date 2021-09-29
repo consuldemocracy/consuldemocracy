@@ -408,6 +408,7 @@ en:
         other: "%{count} comments"
         zero: No comments
       support: Support
+      support_label: "Support %{proposal}"
       support_title: Support this proposal
       supports:
         one: 1 support

@@ -408,6 +408,7 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
       support: Apoyar
+      support_label: "Apoyar %{proposal}"
       support_title: Apoyar esta propuesta
       supports:
         zero: Sin apoyos

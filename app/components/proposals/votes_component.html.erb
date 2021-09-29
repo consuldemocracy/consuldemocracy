@@ -11,7 +11,8 @@
           class: "button button-support small expanded",
           title: t("proposals.proposal.support_title"),
           method: "post",
-          remote: true %>
+          remote: true,
+          "aria-label": support_aria_label%>
     <% else %>
       <div class="button button-support small expanded">
         <%= t("proposals.proposal.support") %>
