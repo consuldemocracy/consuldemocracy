@@ -2,11 +2,11 @@
   <%= render "proposals/supports", proposal: proposal %>
 
   <div class="in-favor">
-    <% if current_user&.voted_for?(proposal) %>
+    <% if voted? %>
       <div class="supported callout success">
         <%= t("proposals.proposal.already_supported") %>
       </div>
-    <% elsif current_user && proposal.votable_by?(current_user) %>
+    <% elsif can_vote? %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
           title: t("proposals.proposal.support_title"), method: "post", remote: true do %>
@@ -19,13 +19,17 @@
     <% end %>
   </div>
 
-  <% if current_user&.organization? %>
+  <% if !current_user %>
+    <div tabindex="0">
+      <%= render "shared/login_to_vote" %>
+    </div>
+  <% elsif organization? %>
     <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <%= t("votes.organizations") %>
       </p>
     </div>
-  <% elsif current_user && !proposal.votable_by?(current_user) %>
+  <% elsif !can_vote? %>
     <div tabindex="0">
       <div class="participation-not-allowed" style="display:none" aria-hidden="false">
         <p>
@@ -33,13 +37,9 @@
         </p>
       </div>
     </div>
-  <% elsif !current_user %>
-    <div tabindex="0">
-      <%= render "shared/login_to_vote" %>
-    </div>
   <% end %>
 
-  <% if current_user&.voted_for?(proposal) && setting["twitter_handle"] %>
+  <% if voted? && setting["twitter_handle"] %>
     <div class="share-supported">
       <%= render "proposals/social_share", proposal: proposal, share_title: false %>
     </div>

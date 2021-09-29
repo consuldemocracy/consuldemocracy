@@ -5,4 +5,18 @@ class Legislation::Proposals::VotesComponent < ApplicationComponent
   def initialize(proposal)
     @proposal = proposal
   end
+
+  private
+
+    def voted_classes
+      @voted_classes ||= css_classes_for_vote(proposal)
+    end
+
+    def can_vote?
+      proposal.votable_by?(current_user)
+    end
+
+    def organization?
+      current_user&.organization?
+    end
 end

@@ -10,4 +10,18 @@ class Proposals::VotesComponent < ApplicationComponent
   def vote_url
     @vote_url || vote_proposal_path(proposal, value: "yes")
   end
+
+  private
+
+    def voted?
+      current_user&.voted_for?(proposal)
+    end
+
+    def can_vote?
+      proposal.votable_by?(current_user)
+    end
+
+    def organization?
+      current_user&.organization?
+    end
 end

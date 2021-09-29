@@ -1,6 +1,5 @@
-<% reason = investment.reason_for_not_being_ballotable_by(current_user, ballot) %>
 <div class="js-participation supports ballot">
-  <% if ballot.has_investment?(investment) %>
+  <% if voted? %>
     <div class="remove supported">
       <span class="icon-check-circle"
             title="<%= t("budgets.investments.investment.already_added") %>">
@@ -36,20 +35,14 @@
     </div>
   <% end %>
 
-  <% if reason.present? && !ballot.has_investment?(investment) %>
+  <% if reason.present? && !voted? %>
     <div class="js-participation-not-allowed participation-not-allowed" style="display:none">
-      <% my_heading = link_to(investment.heading.name,
-                      budget_investments_path(budget_id: investment.budget_id,
-                                              heading_id: investment.heading_id)) %>
-      <% change_ballot = link_to(t("budgets.ballots.reasons_for_not_balloting.change_ballot"),
-                                          budget_ballot_path(budget)) %>
-
       <p>
         <small>
           <%= sanitize(t("budgets.ballots.reasons_for_not_balloting.#{reason}",
                 verify_account: link_to_verify_account, signin: link_to_signin,
-                signup: link_to_signup, my_heading: my_heading,
-                change_ballot: change_ballot,
+                signup: link_to_signup, my_heading: link_to_my_heading,
+                change_ballot: link_to_change_ballot,
                 heading_link: heading_link(assigned_heading, budget))) %>
         </small>
       </p>

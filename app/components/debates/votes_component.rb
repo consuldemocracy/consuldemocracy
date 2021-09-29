@@ -5,4 +5,18 @@ class Debates::VotesComponent < ApplicationComponent
   def initialize(debate)
     @debate = debate
   end
+
+  private
+
+    def voted_classes
+      @voted_classes ||= css_classes_for_vote(debate)
+    end
+
+    def can_vote?
+      debate.votable_by?(current_user)
+    end
+
+    def organization?
+      current_user&.organization?
+    end
 end
