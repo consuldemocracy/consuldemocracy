@@ -7,11 +7,11 @@
         <%= t("proposals.proposal.already_supported") %>
       </div>
     <% elsif can_vote? %>
-      <%= link_to vote_url,
+      <%= link_to t("proposals.proposal.support"), vote_url,
           class: "button button-support small expanded",
-          title: t("proposals.proposal.support_title"), method: "post", remote: true do %>
-        <%= t("proposals.proposal.support") %>
-      <% end %>
+          title: t("proposals.proposal.support_title"),
+          method: "post",
+          remote: true %>
     <% else %>
       <div class="button button-support small expanded">
         <%= t("proposals.proposal.support") %>
