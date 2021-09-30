@@ -17,5 +17,6 @@ Rails.application.config.assets.precompile += %w[print.css]
 Rails.application.config.assets.precompile += %w[pdf_fonts.css]
 Rails.application.config.assets.precompile += %w[sdg/*.png]
 Rails.application.config.assets.precompile += %w[sdg/**/*.png]
+Rails.application.config.assets.precompile += %w[sdg/**/*.svg]
 
 # Loads custom images and custom fonts before app/assets/images and app/assets/fonts
