@@ -460,6 +460,7 @@ button,
     > nav {
       flex: 20%;
       min-width: $side-menu-min-width;
+      max-width: max-content;
 
       + * {
         flex: 80%;
