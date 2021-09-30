@@ -12,11 +12,9 @@
             </span>
         <% end %>
       <% else %>
-        <%= link_to new_user_session_path do %>
-          <span class="icon-like">
-            <span class="show-for-sr"><%= t("votes.agree") %></span>
-          </span>
-        <% end %>
+        <span class="icon-like">
+          <span class="show-for-sr"><%= t("votes.agree") %></span>
+        </span>
       <% end %>
       <%= comment.total_likes %>
     </span>
@@ -50,11 +48,9 @@
               </span>
           <% end %>
         <% else %>
-          <%= link_to new_user_session_path do %>
-            <span class="icon-like">
-              <span class="show-for-sr"><%= t("votes.agree") %></span>
-            </span>
-          <% end %>
+          <span class="icon-like">
+            <span class="show-for-sr"><%= t("votes.agree") %></span>
+          </span>
         <% end %>
         <%= comment.total_likes %>
       </span>
@@ -68,18 +64,18 @@
               </span>
           <% end %>
         <% else %>
-          <%= link_to new_user_session_path do %>
-            <span class="icon-unlike">
-              <span class="show-for-sr"><%= t("votes.disagree") %></span>
-            </span>
-          <% end %>
+          <span class="icon-unlike">
+            <span class="show-for-sr"><%= t("votes.disagree") %></span>
+          </span>
         <% end %>
         <%= comment.total_dislikes %>
       </span>
     </div>
 
-    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
-      <%= sanitize(t("votes.comment_unauthenticated", signin: link_to_signin, signup: link_to_signup)) %>
+    <div tabindex="0">
+      <div class="participation-not-allowed" style="display:none" aria-hidden="false">
+        <%= sanitize(t("votes.comment_unauthenticated", signin: link_to_signin, signup: link_to_signup)) %>
+      </div>
     </div>
   <% end %>
 </div>
