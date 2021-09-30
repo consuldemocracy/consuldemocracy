@@ -24,6 +24,14 @@ class Budgets::Investments::BallotComponent < ApplicationComponent
       @reason ||= investment.reason_for_not_being_ballotable_by(current_user, ballot)
     end
 
+    def vote_aria_label
+      t("budgets.investments.investment.add_label", investment: investment.title)
+    end
+
+    def remove_vote_aria_label
+      t("budgets.ballots.show.remove_label", investment: investment.title)
+    end
+
     def link_to_my_heading
       link_to(investment.heading.name,
               budget_investments_path(budget_id: investment.budget_id,
