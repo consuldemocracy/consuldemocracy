@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Budgets::Investments::BallotComponent do
-  describe "vote investment link" do
+  describe "vote investment button" do
     let(:budget) { create(:budget, :balloting) }
     let(:investment) { create(:budget_investment, :selected, title: "New Sports Center", budget: budget) }
     let(:component) do
@@ -18,7 +18,7 @@ describe Budgets::Investments::BallotComponent do
 
       render_inline component
 
-      expect(page).to have_link "Vote"
+      expect(page).to have_button "Vote", disabled: true
       expect(page).to have_content "Only verified users can vote on investments; verify your account."
     end
 
@@ -27,21 +27,21 @@ describe Budgets::Investments::BallotComponent do
 
       render_inline component
 
-      expect(page).to have_link count: 1
-      expect(page).to have_link "Vote", title: "Support this project"
-      expect(page).to have_link "Vote New Sports Center"
-      expect(page).not_to have_link "Remove vote"
+      expect(page).to have_button count: 1
+      expect(page).to have_button "Vote", title: "Support this project"
+      expect(page).to have_button "Vote New Sports Center"
+      expect(page).not_to have_button "Remove vote", disabled: :all
     end
 
-    it "is replaced with a link to remove the vote when the user has already voted" do
+    it "is replaced with a button to remove the vote when the user has already voted" do
       sign_in(create(:user, :level_two, ballot_lines: [investment]))
 
       render_inline component
 
-      expect(page).to have_link count: 1
-      expect(page).to have_link "Remove vote"
-      expect(page).to have_link "Remove your vote for New Sports Center"
-      expect(page).not_to have_link "Vote"
+      expect(page).to have_button count: 1
+      expect(page).to have_button "Remove vote"
+      expect(page).to have_button "Remove your vote for New Sports Center"
+      expect(page).not_to have_button "Vote", disabled: :all
     end
   end
 end
