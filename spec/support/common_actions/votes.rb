@@ -8,8 +8,6 @@ module Votes
     within(".participation-not-allowed") do
       expect(page).to have_content "You must sign in or sign up to vote"
     end
-
-    expect(page).not_to have_selector(".participation-allowed")
   end
 
   def expect_message_to_many_anonymous_votes
