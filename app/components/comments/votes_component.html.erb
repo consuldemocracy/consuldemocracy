@@ -3,14 +3,11 @@
   &nbsp;|&nbsp;
 
   <span class="in_favor">
-    <% if can?(:vote, comment) %>
-      <%= link_to vote_comment_path(comment, value: "yes"),
-          method: "post", remote: true, title: t("votes.agree") do %>
-          <span class="icon-like">
-            <span class="show-for-sr"><%= t("votes.agree") %></span>
-          </span>
-      <% end %>
-    <% else %>
+    <%= button_to vote_comment_path(comment, value: "yes"),
+        method: "post",
+        remote: true,
+        title: t("votes.agree"),
+        disabled: !can?(:vote, comment) do %>
       <span class="icon-like">
         <span class="show-for-sr"><%= t("votes.agree") %></span>
       </span>
@@ -19,14 +16,11 @@
   </span>
 
   <span class="against">
-    <% if can?(:vote, comment) %>
-      <%= link_to vote_comment_path(comment, value: "no"),
-          method: "post", remote: true, title: t("votes.disagree") do %>
-          <span class="icon-unlike">
-            <span class="show-for-sr"><%= t("votes.disagree") %></span>
-          </span>
-      <% end %>
-    <% else %>
+    <%= button_to vote_comment_path(comment, value: "no"),
+        method: "post",
+        remote: true,
+        title: t("votes.disagree"),
+        disabled: !can?(:vote, comment) do %>
       <span class="icon-unlike">
         <span class="show-for-sr"><%= t("votes.disagree") %></span>
       </span>

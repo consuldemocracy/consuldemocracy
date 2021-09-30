@@ -507,7 +507,7 @@ describe "Commenting topics from proposals" do
       visit community_topic_path(proposal.community, topic)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
         within(".in_favor") do
           expect(page).to have_content "1"
@@ -525,13 +525,13 @@ describe "Commenting topics from proposals" do
       visit community_topic_path(proposal.community, topic)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
         within(".in_favor") do
           expect(page).to have_content "1"
         end
 
-        find(".against a").click
+        click_button "I disagree"
 
         within(".in_favor") do
           expect(page).to have_content "0"
@@ -549,13 +549,13 @@ describe "Commenting topics from proposals" do
       visit community_topic_path(proposal.community, topic)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
         within(".in_favor") do
           expect(page).to have_content "1"
         end
 
-        find(".in_favor a").click
+        click_button "I agree"
 
         within(".in_favor") do
           expect(page).to have_content "1"
@@ -1018,7 +1018,7 @@ describe "Commenting topics from budget investments" do
       visit community_topic_path(investment.community, topic)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
         within(".in_favor") do
           expect(page).to have_content "1"
@@ -1036,13 +1036,13 @@ describe "Commenting topics from budget investments" do
       visit community_topic_path(investment.community, topic)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
         within(".in_favor") do
           expect(page).to have_content "1"
         end
 
-        find(".against a").click
+        click_button "I disagree"
 
         within(".in_favor") do
           expect(page).to have_content "0"
@@ -1060,13 +1060,13 @@ describe "Commenting topics from budget investments" do
       visit community_topic_path(investment.community, topic)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
         within(".in_favor") do
           expect(page).to have_content "1"
         end
 
-        find(".in_favor a").click
+        click_button "I agree"
 
         within(".in_favor") do
           expect(page).to have_content "1"

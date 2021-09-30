@@ -177,7 +177,7 @@ describe "Ballots" do
         end
 
         within(".budget-investment", text: "More bridges") do
-          click_link "Remove vote"
+          click_button "Remove vote"
         end
 
         within("#sidebar") do
@@ -464,7 +464,7 @@ describe "Ballots" do
         hover_over_ballot
 
         expect(page).to have_content "Only verified users can vote on investments"
-        expect(page).to have_selector(".in-favor a", obscured: true)
+        expect(page).to have_button "Vote", disabled: true, obscured: true
       end
     end
 
@@ -575,8 +575,8 @@ describe "Ballots" do
       end
 
       within("#budget_investment_#{bi1.id}") do
-        find(".remove a").click
-        expect(page).to have_css ".add a"
+        click_button "Remove vote"
+        expect(page).to have_button "Vote"
       end
 
       within("#budget_investment_#{bi2.id}") do

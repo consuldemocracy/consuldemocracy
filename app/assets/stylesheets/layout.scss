@@ -1887,7 +1887,7 @@ table {
       display: inline-block;
     }
 
-    form {
+    .comment-form form {
       margin-top: $line-height / 2;
     }
   }
@@ -2004,17 +2004,18 @@ table {
 
 .comment-votes {
 
-  a,
+  button,
+  form {
+    display: inline-block;
+  }
+
   .icon-like,
   .icon-unlike {
     color: $text-light;
-    display: inline-block;
-    vertical-align: top;
   }
 
-  a:hover {
-    color: $text-medium;
-    text-decoration: none;
+  button:hover {
+    cursor: pointer;
 
     .icon-like {
       color: $like;
