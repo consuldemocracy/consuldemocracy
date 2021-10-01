@@ -108,6 +108,11 @@
   width: 100%;
   z-index: 2;
 
+  &,
+  p {
+    font-size: $small-font-size;
+  }
+
   p {
     color: inherit !important;
     margin: 0 rem-calc(12);
@@ -959,7 +964,6 @@
 
     .participation-not-allowed {
       background: $featured;
-      font-size: $small-font-size;
       padding-top: 0;
 
       a {
