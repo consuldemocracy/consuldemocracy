@@ -14,7 +14,6 @@
     initialize: function() {
       App.Votes.hoverize("div.votes");
       App.Votes.hoverize("div.supports");
-      App.Votes.hoverize("div.debate-questions");
       App.Votes.hoverize("div.comment-footer");
     }
   };
