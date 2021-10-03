@@ -21,6 +21,9 @@
 # application errors and performance
 # gem "sentry-ruby", "insert_gem_version_here"
 
+# Rollbar is an external service which helps you monitor the application errors
+# gem "rollbar", "insert_gem_version_here"
+
 ###### Other gems ######
 #
 # Add your custom gem dependencies here
