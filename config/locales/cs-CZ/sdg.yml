@@ -1,1 +1,26 @@
 cs:
+  sdg:
+    goals:
+      goal_3:
+        targets:
+          target_3_6:
+            short_title: "Snížit počet zranění a úmrtí na silnicích"
+          target_3_7:
+            long_title: "Do roku 2030 zajistit všeobecný přístup ke službám v oblasti sexuálního a reprodukčního zdraví, včetně plánování rodiny, informací a vzdělávání, a začlenit reprodukční zdraví do národních strategií a programů."
+            short_title: "Všeobecný přístup k sexuální a reprodukční péči, plánování rodiny a vzdělávání"
+          target_3_8:
+            short_title: "Dosáhnout všeobecného zdravotního pojištění"
+          target_3_9:
+            long_title: "Do roku 2030 výrazně snížit počet úmrtí a onemocnění způsobených nebezpečnými chemickými látkami a znečištěním a kontaminací ovzduší, vody a půdy."
+            short_title: "Snížit počet onemocnění a úmrtí způsobených nebezpečnými chemickými látkami a znečištěním"
+          target_3_A:
+            long_title: "Posílit provádění Rámcové úmluvy Světové zdravotnické organizace o kontrole tabáku ve všech zemích, je-li to vhodné."
+            short_title: "Provádění Rámcové úmluvy WHO o kontrole tabáku"
+      goal_4:
+        targets:
+          target_4_1:
+            short_title: "Bezplatné základní a střední vzdělání"
+          target_4_6:
+            short_title: "Univerzální gramotnost a matematická gramotnost"
+          target_4_7:
+            long_title: "Do roku 2030 zajistit, aby všichni žáci získali znalosti a dovednosti potřebné k podpoře udržitelného rozvoje, mimo jiné prostřednictvím vzdělávání pro udržitelný rozvoj a udržitelný životní styl, lidských práv, rovnosti žen a mužů, podpory kultury míru a nenásilí, globálního občanství a ocenění kulturní rozmanitosti a přínosu kultury k udržitelnému rozvoji."
