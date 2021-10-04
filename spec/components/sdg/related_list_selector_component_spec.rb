@@ -62,7 +62,7 @@ describe SDG::RelatedListSelectorComponent do
       suggestion = component.suggestion_tag_for(SDG::Target[1.1])
 
       expect(suggestion).to eq({
-        tag: "1.1. By 2030 eradicate extreme poverty for all people everywhere currently measured as people living on less than $1.25 a day",
+        tag: "1.1. Eradicate Extreme Poverty",
         display_text: "1.1",
         title: "By 2030, eradicate extreme poverty for all people everywhere, currently measured as people living on less than $1.25 a day",
         value: "1.1"

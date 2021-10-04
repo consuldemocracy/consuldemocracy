@@ -89,6 +89,12 @@
       suggestions_input[0].id = original_input[0].id + "_suggestions";
 
       $("[for='" + original_input[0].id + "']").attr("for", suggestions_input[0].id);
+
+      suggestions_input.attr("aria-describedby", original_input.attr("aria-describedby"));
+
+      if ($(original_input).attr("placeholder") === undefined) {
+        suggestions_input.removeAttr("placeholder");
+      }
     }
   };
 }).call(this);

@@ -41,4 +41,8 @@ module SDG::Related
       end
     end
   end
+
+  def code_and_title
+    "#{code}. #{title}"
+  end
 end

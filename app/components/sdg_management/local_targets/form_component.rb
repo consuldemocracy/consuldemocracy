@@ -30,14 +30,10 @@ class SDGManagement::LocalTargets::FormComponent < ApplicationComponent
     def target_options
       grouped_targets = SDG::Goal.order(:code).map do |goal|
         [
-          code_and_title(goal),
-          goal.targets.sort.map { |target| [code_and_title(target), target.id] }
+          goal.code_and_title,
+          goal.targets.sort.map { |target| [target.code_and_title, target.id] }
         ]
       end
       grouped_options_for_select(grouped_targets, local_target.target_id)
-    end
-
-    def code_and_title(resource)
-      "#{resource.code} #{resource.title}"
     end
 end
