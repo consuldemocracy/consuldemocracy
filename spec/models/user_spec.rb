@@ -739,6 +739,12 @@ describe User do
     end
   end
 
+  describe "#public_interests" do
+    it "is false by default" do
+      expect(User.new.public_interests).to be false
+    end
+  end
+
   describe ".find_by_manager_login" do
     it "works with a low ID" do
       user = create(:user)

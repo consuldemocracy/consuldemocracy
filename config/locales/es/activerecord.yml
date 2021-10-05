@@ -281,7 +281,7 @@ es:
         official_level: "Nivel del cargo"
         phone_number: "Teléfono"
         public_activity: "Mostrar públicamente mi lista de actividades"
-        public_interests: "Mostrar públicamente las etiquetas de los elementos que sigo"
+        public_interests: "Mostrar públicamente los elementos que sigo"
         recommended_debates: "Mostrar recomendaciones en el listado de debates"
         recommended_proposals: "Mostrar recomendaciones en el listado de propuestas"
         redeemable_code: "Código de verificación por carta (opcional)"
