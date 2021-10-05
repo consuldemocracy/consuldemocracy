@@ -10,6 +10,8 @@ sv:
           target_1_1:
             long_title: "Senast 2030 avskaffa den extrema fattigdomen, som 2015 avsåg människor som lever på under 1,25 USA-dollar per dag (sedan dess justerat till 1,90 Usd), för alla människor överallt"
             short_title: "Avskaffa extrem fattigdom"
+          target_1_2:
+            long_title: "Till 2030 minst halvera den andel män, kvinnor och barn i alla åldrar som lever i någon form av fattigdom enligt nationella definitioner"
       goal_2:
         title: "Avskaffa hunger"
         title_in_two_lines: "Avskaffa\nhunger"
