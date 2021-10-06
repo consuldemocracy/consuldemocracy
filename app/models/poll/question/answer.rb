@@ -14,6 +14,14 @@ class Poll::Question::Answer < ApplicationRecord
   validates_translation :title, presence: true
   validates :given_order, presence: true, uniqueness: { scope: :question_id }
 
+  scope :with_content, -> { where.not(id: without_content) }
+  scope :without_content, -> do
+    where(description: "")
+      .left_joins(:images).where(images: { id: nil })
+      .left_joins(:documents).where(documents: { id: nil })
+      .left_joins(:videos).where(poll_question_answer_videos: { id: nil })
+  end
+
   def self.order_answers(ordered_array)
     ordered_array.each_with_index do |answer_id, order|
       find(answer_id).update_column(:given_order, (order + 1))
