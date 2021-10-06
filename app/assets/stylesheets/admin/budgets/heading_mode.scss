@@ -56,7 +56,7 @@
   p {
     font-size: $small-font-size;
     font-style: italic;
-    flex: 1;
+    flex-grow: 1;
   }
 
   a {
