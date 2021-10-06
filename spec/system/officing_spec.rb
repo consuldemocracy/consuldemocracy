@@ -8,7 +8,9 @@ describe "Poll Officing" do
     login_as(user)
     visit root_path
 
-    expect(page).not_to have_link("Polling officers")
+    expect(page).not_to have_content "Menu"
+    expect(page).not_to have_link "Polling officers"
+
     visit officing_root_path
 
     expect(page).not_to have_current_path(officing_root_path)
@@ -18,10 +20,14 @@ describe "Poll Officing" do
 
   scenario "Access as moderator is not authorized" do
     create(:moderator, user: user)
+
     login_as(user)
     visit root_path
+    click_link "Menu"
 
-    expect(page).not_to have_link("Polling officers")
+    expect(page).to have_link "Moderation"
+    expect(page).not_to have_link "Polling officers"
+
     visit officing_root_path
 
     expect(page).not_to have_current_path(officing_root_path)
@@ -31,10 +37,14 @@ describe "Poll Officing" do
 
   scenario "Access as manager is not authorized" do
     create(:manager, user: user)
+
     login_as(user)
     visit root_path
+    click_link "Menu"
 
-    expect(page).not_to have_link("Polling officers")
+    expect(page).to have_link "Management"
+    expect(page).not_to have_link "Polling officers"
+
     visit officing_root_path
 
     expect(page).not_to have_current_path(officing_root_path)
@@ -43,11 +53,15 @@ describe "Poll Officing" do
   end
 
   scenario "Access as SDG manager is not authorized" do
+    Setting["feature.sdg"] = true
     create(:sdg_manager, user: user)
+
     login_as(user)
     visit root_path
+    click_link "Menu"
 
-    expect(page).not_to have_link("Polling officers")
+    expect(page).to have_link "SDG content"
+    expect(page).not_to have_link "Polling officers"
 
     visit officing_root_path
 
@@ -58,10 +72,14 @@ describe "Poll Officing" do
 
   scenario "Access as a valuator is not authorized" do
     create(:valuator, user: user)
+
     login_as(user)
     visit root_path
+    click_link "Menu"
 
-    expect(page).not_to have_link("Polling officers")
+    expect(page).to have_link "Valuation"
+    expect(page).not_to have_link "Polling officers"
+
     visit officing_root_path
 
     expect(page).not_to have_current_path(officing_root_path)
@@ -72,10 +90,15 @@ describe "Poll Officing" do
   scenario "Access as an administrator is not authorized" do
     create(:administrator, user: user)
     create(:poll)
+
     login_as(user)
     visit root_path
 
-    expect(page).not_to have_link("Polling officers")
+    click_link "Menu"
+
+    expect(page).to have_link "Administration"
+    expect(page).not_to have_link "Polling officers"
+
     visit officing_root_path
 
     expect(page).not_to have_current_path(officing_root_path)
