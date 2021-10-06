@@ -30,7 +30,7 @@ class Debate < ApplicationRecord
 
   validates_translation :title, presence: true, length: { in: 4..Debate.title_max_length }
   validates_translation :description, presence: true
-  validate :description_sanitized
+  validate :description_length
   validates :author, presence: true
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
@@ -164,13 +164,17 @@ class Debate < ApplicationRecord
     orders
   end
 
-  def description_sanitized
+  def description_length
     real_description_length = ActionView::Base.full_sanitizer.sanitize(description.to_s).squish.length
+
     if real_description_length < Debate.description_min_length
       errors.add(:description, :too_short, count: Debate.description_min_length)
+      translation.errors.add(:description, :too_short, count: Debate.description_min_length)
     end
+
     if real_description_length > Debate.description_max_length
       errors.add(:description, :too_long, count: Debate.description_max_length)
+      translation.errors.add(:description, :too_long, count: Debate.description_max_length)
     end
   end
 end
