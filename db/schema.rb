@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_11_195800) do
+ActiveRecord::Schema.define(version: 2021_08_25_152739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -466,7 +466,6 @@ ActiveRecord::Schema.define(version: 2021_08_11_195800) do
   create_table "dashboard_actions", id: :serial, force: :cascade do |t|
     t.string "title", limit: 80
     t.text "description"
-    t.string "link"
     t.boolean "request_to_administrators", default: false
     t.integer "day_offset", default: 0
     t.integer "required_supports", default: 0
