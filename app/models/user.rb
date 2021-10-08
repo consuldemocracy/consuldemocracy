@@ -348,7 +348,7 @@ class User < ApplicationRecord
   end
 
   def send_oauth_confirmation_instructions
-    if oauth_email != email
+    if oauth_email != email || confirmed_at.nil?
       update(confirmed_at: nil)
       send_confirmation_instructions
     end

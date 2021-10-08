@@ -324,7 +324,7 @@ describe "Users" do
         expect(page).to have_field "Email", with: user.email
       end
 
-      scenario "Try to register with the username of an already existing user" do
+      scenario "Try to register with verified email and with the username of an already existing user" do
         create(:user, username: "manuela", email: "manuela@consul.dev", password: "judgementday")
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_verified_email)
 
@@ -345,6 +345,39 @@ describe "Users" do
 
         expect_to_be_signed_in
 
+        click_link "My account"
+        expect(page).to have_field "Username", with: "manuela2"
+
+        visit edit_user_registration_path
+        expect(page).to have_field "Email", with: "manuelacarmena@example.com"
+      end
+
+      scenario "Try to register with unverified email and with the username of an already existing user" do
+        create(:user, username: "manuela", email: "manuela@consul.dev", password: "judgementday")
+        OmniAuth.config.add_mock(:twitter, twitter_hash_with_email)
+
+        visit "/"
+        click_link "Register"
+        click_link "Sign up with Twitter"
+
+        expect(page).to have_current_path(finish_signup_path)
+        expect(page).to have_field "Username", with: "manuela"
+
+        click_button "Register"
+
+        expect(page).to have_current_path(do_finish_signup_path)
+
+        fill_in "Username", with: "manuela2"
+        click_button "Register"
+        confirm_email
+
+        expect(page).to have_content "Your account has been confirmed"
+
+        visit "/"
+        click_link "Sign in"
+        click_link "Sign in with Twitter"
+
+        within("#notice") { click_button "Close" }
         click_link "My account"
         expect(page).to have_field "Username", with: "manuela2"
 
