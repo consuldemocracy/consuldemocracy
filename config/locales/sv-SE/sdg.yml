@@ -16,6 +16,11 @@ sv:
           target_1_3:
             long_title: "Införa nationellt lämpliga system och åtgärder för socialt skydd för alla, inklusive grundskydd, och senast 2030 säkerställa att de omfattar en väsentlig andel av de fattiga och de utsatta"
             short_title: "Införa system för socialt skydd"
+          target_1_4:
+            long_title: "Senast 2030 säkerställa att alla män och kvinnor, i synnerhet de fattiga och de utsatta, har lika rätt till ekonomiska resurser, tillgång till grundläggande tjänster, möjlighet att äga och kontrollera mark och andra former av egendom samt tillgång till arv, naturresurser, lämplig ny teknik och finansiella tjänster, inklusive mikrokrediter"
+            short_title: "Lika rätt till ägande, grundläggande tjänster, teknik och ekonomiska resurser"
+          target_1_5:
+            long_title: "Till 2030 bygga upp motståndskraften hos de fattiga och människor i utsatta situationer och minska deras utsatthet och sårbarhet för extrema klimatrelaterade händelser och andra ekonomiska, sociala och miljömässiga chocker och katastrofer"
       goal_2:
         title: "Avskaffa hunger"
         title_in_two_lines: "Avskaffa\nhunger"
