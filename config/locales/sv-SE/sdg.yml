@@ -22,6 +22,8 @@ sv:
           target_1_5:
             long_title: "Till 2030 bygga upp motståndskraften hos de fattiga och människor i utsatta situationer och minska deras utsatthet och sårbarhet för extrema klimatrelaterade händelser och andra ekonomiska, sociala och miljömässiga chocker och katastrofer"
             short_title: "Bygga upp motståndskraft mot miljömässiga, ekonomiska och sociala katastrofer"
+          target_1_A:
+            long_title: "Säkerställa betydande resursmobilisering från en rad olika källor, bland annat genom stärkt utvecklingssamarbete, för att förse utvecklingsländerna, i synnerhet de minst utvecklade, med tillräckliga och förutsägbara medel för att genomföra program och riktlinjer för att eliminera all slags fattigdom"
       goal_2:
         title: "Avskaffa hunger"
         title_in_two_lines: "Avskaffa\nhunger"
