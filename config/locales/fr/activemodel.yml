@@ -4,6 +4,9 @@ fr:
       verification:
         residence: "Résidence"
         sms: "SMS"
+      local_census_records/import:
+        one: Importation des données du recensement local
+        other: Importations des données du recensement local
     attributes:
       verification:
         residence:
