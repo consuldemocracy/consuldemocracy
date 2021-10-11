@@ -70,6 +70,12 @@ fr:
       proposal:
         one: "Proposition citoyenne"
         other: "Propositions citoyennes"
+      sdg/manager:
+        one: "Gestionnaire ODD"
+        other: "Gestionnaires ODD"
+      sdg/target:
+        one: "objectif"
+        other: "objectifs"
       site_customization/page:
         one: Page personnalisée
         other: Pages personnalisées
@@ -118,6 +124,9 @@ fr:
       link:
         one: Lien
         other: Liens
+      local_census_record:
+        one: Donnée du recensement local
+        other: Données du recensement local
     attributes:
       budget:
         name: "Nom"
@@ -130,6 +139,7 @@ fr:
         description_finished: "Description quand le budget est finalisé"
         phase: "Phases"
         currency_symbol: "Devise"
+        voting_style: "Style du vote final"
       budget/translation:
         name: "Nom"
       budget/investment:
