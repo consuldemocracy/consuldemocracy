@@ -1073,6 +1073,8 @@ fr:
       search:
         label:
           booths: "Rechercher le bureau de vote par nom"
+          debates: "Rechercher des débats par titre ou description"
+          local_census_records: "Recherche par numéro de document"
           organizations: "Nom, courriel ou téléphone"
           poll_officers: "Rechercher le président d'un vote"
           poll_questions: "Rechercher les questions d'un vote"
