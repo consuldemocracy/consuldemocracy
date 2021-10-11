@@ -140,7 +140,11 @@ fr:
         phase: "Phases"
         currency_symbol: "Devise"
         voting_style: "Style du vote final"
+        voting_style_knapsack: "Sac à dos"
+        voting_style_approval: "Approbation"
+        main_link_url: "Le lien vous renvoie à (ajouter un lien)"
       budget/translation:
+        main_link_text: "Texte sur le lien"
         name: "Nom"
       budget/investment:
         heading_id: "Titre"
@@ -163,8 +167,12 @@ fr:
         selected_true: "Sélecté"
         selected_false: "Pas sélecté"
         unfeasibility_explanation: "Informations sur la viabilité"
+        valuation_finished: "Évaluation terminée"
+        valuator_ids: "Groupes"
+        valuation_tag_list: "Mots clés"
       budget/investment/translation:
         title: "Titre"
+        description: "Description"
       geozone:
         name: Nom
         external_code: "Code externe (optionnel)"
@@ -175,6 +183,8 @@ fr:
         title: "Titre"
         description: "Description (facultative si un statut est affecté)"
         publication_date: "Date de publication"
+      milestone/translation:
+        description: "Description"
       milestone/status:
         name: "Nom"
         description: "Description (optionnel)"
@@ -185,15 +195,30 @@ fr:
       progress_bar/kind:
         primary: "Primaire"
         secondary: "Secondaire"
+      budget/group:
+        max_votable_headings: "Nombre maxium de rubriques dans lequel un utilisateur peut sélectionner un projet"
       budget/group/translation:
         name: "Nom de groupe"
       budget/heading:
+        allow_custom_content: "Autoriser un bloc de contenu"
+        latitude: "Latitude (facultatif)"
+        longitude: "Longitude (facultatif)"
         name: "Nom du titre"
         price: "Coût"
         population: "Population"
+        max_ballot_lines: "Votes autorisés"
+      budget/heading/translation:
+        name: "Nom de la rubrique"
       budget/phase:
+        enabled: "Phase active"
         ends_at: "Date de fin"
         starts_at: "Date de commencement"
+        main_link_url: "Le lien vous renvoie à (ajouter un lien)"
+      budget/phase/translation:
+        name: "Nom"
+        description: "Description"
+        summary: "Résumé"
+        main_link_text: "Texte sur le lien"
       comment:
         body: "Commentaire"
         user: "Utilisateurs masqués"
@@ -203,11 +228,17 @@ fr:
         tag_list: "Sujets"
         terms_of_service: "Conditions d'utilisation"
         title: "Titre"
+      debate/translation:
+        title: "Titre du débat"
+        description: "Texte initial du debat"
       proposal:
         author: "Auteur"
         title: "Titre"
         question: "Question"
         description: "Description"
+        responsible_name: "Nom complet de la personne qui soumet la proposition"
+        retired_reason: "Raison pour retirer la proposition"
+        selected: "Marquer comme sélectionné"
         terms_of_service: "Conditions d'utilisation"
       proposal/translation:
         title: "Titre de la proposition"
