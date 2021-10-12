@@ -5,15 +5,20 @@ fr:
     actions:
       actions: Statut des votes
       confirm: Êtes-vous sûr(e) ?
+      confirm_action: "Êtes-vous sûr? %{action} \"%{name}\""
+      confirm_delete: "Êtes-vous sûr? Cette action supprimera \"%{name}\" et ne peut pas être annulée."
       confirm_hide: Confirmer
       delete: "Supprimer"
       hide: Cacher
       hide_author: Cacher l'auteur
+      label: "%{action} %{name}"
       restore: Restaurer
       mark_featured: Mis en avant
       unmark_featured: Retirer la mise en avant
       edit: Éditer
       configure: Configurer
+    officing_booth:
+      title: "Vous dirigez le stand situé au %{booth}. Si ce n'est pas correct, ne continuez pas et appelez le numéro de téléphone d'assistance. Merci."
     banners:
       index:
         title: Bannières
@@ -31,12 +36,17 @@ fr:
           proposals: Propositions
           budgets: Budget participatif
           help_page: Page d'aide
+          sdg: ODD
+      create:
+        notice: "Bannière créée avec succès"
       edit:
         editing: Modifier la bannière
         form:
           submit_button: Sauvegarder des changements
       new:
         creating: Créer la bannière
+      update:
+        notice: "Bannière mise à jour avec succès"
     activity:
       show:
         action: Actions
@@ -58,14 +68,18 @@ fr:
         type: Type
         no_activity: Il n’y a aucune activité de modérateurs.
     budgets:
+      actions:
+        preview: "Aperçu"
       index:
         title: Budgets participatifs
         new_link: Créer un nouveau budget
         filter: Filtre
         filters:
+          all: Tous
           open: Ouvert
           finished: Terminé
         budget_investments: Gestion de projets
+        table_budget_type: "Type"
         table_name: Nom
         table_phase: Phase
         edit_groups: Modifier les groupes de rubriques
