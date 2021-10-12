@@ -80,8 +80,15 @@ fr:
           finished: Terminé
         budget_investments: Gestion de projets
         table_budget_type: "Type"
+        table_completed: Terminé
+        table_draft: "Brouillon"
+        table_duration: "Durée"
         table_name: Nom
         table_phase: Phase
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Plusieurs rubriques"
+        type_pending: "En attente : aucune rubrique pour le moment"
+        type_single: "Rubrique unique"
         edit_groups: Modifier les groupes de rubriques
         admin_ballots: Bulletins de l’admin
         no_budgets: "Il n'y a pas de budgets."
@@ -89,8 +96,11 @@ fr:
         notice: Nouveau budget participatif créé avec succès !
       update:
         notice: Budget participatif mis-à-jour avec succès
+      publish:
+        notice: "Budget participatif mis-à-jour avec succès"
       edit:
         title: Modifier le budget participatif
+        drafting: "Ce budget participatif est en mode brouillon, seuls les administrateurs peuvent le voir dans le site public. Une fois publié, il ne peut plus être modifié en mode brouillon."
         delete: Supprimer le budget
         phase: Phase
         enabled: Activé
