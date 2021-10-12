@@ -138,6 +138,13 @@ fr:
         title_single: Nouveau budget à rubrique unique
       help:
         budgets: "Les budgets participatifs permettent aux citoyens de proposer et de décider directement comment dépenser une partie du budget, avec un suivi et une évaluation rigoureuse des propositions par l'institution."
+        groups:
+          multiple: "Les groupes sont destinés à organiser les titres. Une fois qu'un groupe est créé et qu'il contient des titres, il est possible de déterminer dans combien de titres un utilisateur peut voter par groupe."
+          single: "Les groupes sont destinés à organiser les rubriques, puisque ce budget ne contiendra qu'une seule rubrique, le même nom peut être utilisé car il n'apparaîtra nulle part. Vous pouvez simplement passer à l'étape suivante."
+        headings:
+          multiple: "Les rubriques sont destinées à répartir l'argent du budget participatif. Ici, vous pouvez ajouter des rubriques pour ce groupe et attribuer le montant d'argent qui sera utilisé pour chaque rubrique."
+          single: "Les rubriques sont destinées à répartir l'argent du budget participatif. Puisque ce budget ne contiendra qu'une seule rubrique, c'est ici que vous établissez l'argent qui sera dépensé dans ce budget participatif."
+        phases: "Les budgets participatifs ont différentes phases. Ici, vous pouvez activer ou désactiver des phases et également personnaliser chaque phase individuelle."
       winners:
         calculate: Calculer les investissements gagnant
         calculated: Le calcul des gagnants peut prendre quelques minutes.
@@ -160,9 +167,11 @@ fr:
       form:
         create: "Créer un nouveau groupe"
         edit: "Modifier le groupe"
+        max_votable_headings_info: "S'applique uniquement à la phase de sélection des projets. Pendant la phase de vote des projets, les utilisateurs ne peuvent voter que dans une rubrique par groupe."
         submit: "Sauvegarder le groupe"
       index:
         back: "Revenir aux budgets"
+        new_button: "Ajouter un nouveau groupe"
     budget_headings:
       no_headings: "Il n'y a pas de titre."
       amount:
@@ -176,11 +185,16 @@ fr:
         success_notice: "Rubrique supprimée avec succès"
         unable_notice: "Vous ne pouvez pas supprimer une rubrique qui est associé à des investissements"
       form:
+        max_ballot_lines_info: 'Nombre maximum de projets qu''un utilisateur peut voter sur cette rubrique lors de la phase « Vote des projets ». Uniquement pour les budgets utilisant le vote d''approbation.'
         population_info: "Le champ de population pour la tranche du budget est utilisé à des fins statistiques à la fin du budget pour montrer le pourcentage de votants pour chaque tranche qui représente une zone. Le champ est optionnel donc vous pouvez le laissez blanc."
         coordinates_info: "Si la latitude et la longitude sont fournies, la page d’investissements pour cette rubrique comprendra une carte. Cette carte sera centrée en utilisant ces coordonnées."
+        content_blocks_info: "Si autoriser le bloc de contenu est coché, vous pourrez créer un contenu personnalisé lié à cette rubrique à partir de la section Paramètres > Blocs de contenu personnalisés. Ce contenu apparaîtra sur la page des investissements de cette rubrique."
         create: "Créer un nouveau titre"
         edit: "Editer le titre"
         submit: "Sauvegarder la rubrique"
+      group_switcher:
+        currently_showing: "Affichage les en-têtes du groupe %{group}."
+        different_group: "Gérer les en-têtes d'un groupe différent"
       index:
         back: "Retourner aux groupes"
     budget_phases:
@@ -413,6 +427,7 @@ fr:
         id: ID
         author: Auteur
         title: Débats masqués
+        no_debates: Il n'y a pas de débats.
     documents:
       new:
         title: "Mettre en ligne un document"
