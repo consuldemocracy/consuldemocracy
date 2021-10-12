@@ -25,6 +25,9 @@ fr:
       milestone/status:
         one: "Statut d’investissement"
         other: "Statuts d’investissement"
+      progress_bar:
+        one: "Barre de progrès"
+        other: "Barres de progrès"
       comment:
         one: "Commentaire"
         other: "Commentaires"
@@ -67,9 +70,18 @@ fr:
       poll/officer:
         one: "président"
         other: "présidents"
+      poll/ballot_sheet:
+        one: Feuilles de bulletin de vote
+        other: Feuilles de bulletin de vote
       proposal:
         one: "Proposition citoyenne"
         other: "Propositions citoyennes"
+      sdg/goal:
+        one: "objectif"
+        other: "objectifs"
+      sdg/local_target:
+        one: "objectif local"
+        other: "objectifs locaux"
       sdg/manager:
         one: "Gestionnaire ODD"
         other: "Gestionnaires ODD"
@@ -85,6 +97,9 @@ fr:
       site_customization/content_block:
         one: Bloc de contenu personnalisé
         other: Blocs de contenu personnalisés
+      document:
+        one: Document
+        other: Documents
       legislation/process:
         one: "Processus"
         other: "Processus législatifs"
@@ -121,6 +136,9 @@ fr:
       dashboard/action:
         one: Tableau de bord des Propositons d'action
         other: Tableau de bord des Propositons d'actions
+      dashboard/administrator_task:
+        one: Tâche
+        other: Tâches
       link:
         one: Lien
         other: Liens
@@ -576,6 +594,10 @@ fr:
           attributes:
             locale:
               already_translated: Ressource déjà traduite
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "doit commencer par le même code que sa cible suivi d'un point et se terminer par un nombre"
       messages:
         translations_too_short: Être obligatoire de fournir au moins un translation
         record_invalid: "La validation omise : %{errors}"
