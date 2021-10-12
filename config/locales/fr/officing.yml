@@ -35,6 +35,9 @@ fr:
         created_at: Date de création
         author: Auteur
         data: Données CSV
+    booth:
+      new:
+        title: "Choisissez votre isoloir"
     results:
       flash:
         create: "Résultats sauvegardés"
@@ -78,6 +81,7 @@ fr:
         not_to_vote: La personne a décidé de ne pas voter pour le moment
       show:
         can_vote: Peut voter
+        cannot_vote: La personne ne peut pas voter car elle n'est pas inscrite dans le(s) district(s) où a lieu le vote.
         error_already_voted: a déjà participé à ce vote
         submit: Confirmer le vote
         success: "A voté !"
