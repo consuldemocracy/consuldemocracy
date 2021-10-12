@@ -428,6 +428,15 @@ fr:
         author: Auteur
         title: Débats masqués
         no_debates: Il n'y a pas de débats.
+    hidden_debates:
+      index:
+        filter: Filtre
+        filters:
+          all: Tous
+          with_confirmed_hide: Confirmé
+          without_confirmed_hide: En attente
+        title: Débats masqués
+        no_hidden_debates: Il n'y a pas de débats cachés.
     documents:
       new:
         title: "Mettre en ligne un document"
@@ -523,6 +532,9 @@ fr:
           questions: Débat
           proposals: Propositions
           milestones: Suivent
+      homepage:
+        edit:
+          title: Configurez votre page d'accueil de processus
       proposals:
         index:
           title: Titre
@@ -546,7 +558,9 @@ fr:
           back: Retour
           submit_button: Sauvegarder des changements
           warning: Vous avez modifié le texte, n’oubliez pas de cliquer sur Enregistrer pour enregistrer vos modifications.
+          markdown_changes_message: "Vous avez modifié le texte sans l'enregistrer. Confirmez-vous pour quitter la page ?"
         form:
+          title: 'Édition <span class="strong">%{draft_version_title}</span> du processus <span class="strong">%{process_title}</span>'
           launch_text_editor: Lancer l’éditeur de texte
           close_text_editor: Fermer l'éditeur de text
           use_markdown: Utilisez Markdown pour formater le texte
@@ -615,6 +629,12 @@ fr:
         add: Ajouter en tant que président
       search:
         title: "Gestionnaires : Recherche d'utilisateur"
+    sdg_managers:
+      index:
+        no_sdg_managers: Il n'y a pas aucun utilisateur.
+    sdg/managers:
+      sdg/manager:
+        add: Ajouter
     menu:
       activity: Activité des modérateurs
       admin: Menu d'administration
@@ -631,6 +651,7 @@ fr:
       hidden_users: Utilisateurs masqués
       administrators: Administrateurs
       managers: Responsables
+      sdg_managers: Gestionnaires ODD
       moderators: Modérateurs
       messaging_users: Messages aux utilisateurs
       newsletters: Bulletins d’information
@@ -649,17 +670,20 @@ fr:
       stats: Statistiques
       signature_sheets: Feuilles de signature
       site_customization:
+        documents: Documents personnalisés
         homepage: Page d’accueil
         pages: Pages personnalisées
         images: Images personnalisées
         content_blocks: Blocs de contenu personnalisés
         information_texts: Textes d’information personnalisés
         information_texts_menu:
+          basic: "Personnalisation de base"
           debates: "Débats"
           community: "Communauté"
           proposals: "Propositions"
           polls: "Votes"
           layouts: "Mise en page"
+          machine_learning: "IA / Apprentissage automatique"
           mailers: "Courriels"
           management: "Gestion"
           welcome: "Bienvenue"
@@ -677,6 +701,10 @@ fr:
       dashboard: Tableau de bord des propositions
       administrator_tasks: Ressources demandées
       dashboard_actions: Ressources et actions
+      debates: "Débats"
+      comments: "Commentaires"
+      local_census_records: Gérer le recensement local
+      machine_learning: "IA / Apprentissage automatique"
     administrators:
       index:
         title: Administrateurs
@@ -687,6 +715,8 @@ fr:
         restricted_removal: "Désolé, vous ne pouvez pas vous retirer de la liste des administrateurs"
       search:
         title: "Administrateurs : Recherche d'utilisateur"
+      form:
+        edit_title: "Modifier l'administrateur"
     moderators:
       index:
         title: Modérateurs
