@@ -125,10 +125,19 @@ fr:
         image_description: "Si une image est téléchargée, elle sera utilisée comme bannière au-dessus de ce budget participatif, sinon la couleur par défaut des budgets sera utilisée."
         main_call_to_action: "Appel à l'action principal (facultatif)"
         main_call_to_action_description: "Ce lien apparaîtra sur la bannière principale de ce budget participatif et encourage votre utilisateur à effectuer une action spécifique comme créer une proposition, voter pour les propositions existantes ou en savoir plus sur le processus."
+        info:
+          budget_settings: "Paramètres généraux du budget participatif"
+          phases_settings: "Paramètres des phases"
+          staff_settings: "Administrateurs et évaluateurs affectés au budget"
       destroy:
         success_notice: Le budget a été supprimé avec succès
         unable_notice: Vous ne pouvez pas détruire un budget qui a des investissements associés
         unable_notice_polls: Vous ne pouvez pas détruire un budget qui est associé à un sondage
+      new:
+        title_multiple: Nouveau budget rubriques multiples
+        title_single: Nouveau budget à rubrique unique
+      help:
+        budgets: "Les budgets participatifs permettent aux citoyens de proposer et de décider directement comment dépenser une partie du budget, avec un suivi et une évaluation rigoureuse des propositions par l'institution."
       winners:
         calculate: Calculer les investissements gagnant
         calculated: Le calcul des gagnants peut prendre quelques minutes.
