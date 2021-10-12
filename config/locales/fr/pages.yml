@@ -44,6 +44,8 @@ fr:
         title: "Processus"
         description: "Dans la section des %{link} , les citoyens participent à l’élaboration et la modification des réglements qui s'appliquent à la ville et peuvent donner leur avis sur les politiques municipales lors des débats préalables."
         link: "processus législatifs"
+        feature: "Pour participer aux processus, vous devez %{link} et vérifier votre compte."
+        feature_link: "s’inscrire à %{org_name}"
       faq:
         title: "Problèmes techniques ?"
         description: "Lisez la FAQ et trouvez la réponse à vos questions."
