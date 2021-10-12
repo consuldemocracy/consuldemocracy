@@ -101,12 +101,30 @@ fr:
       edit:
         title: Modifier le budget participatif
         drafting: "Ce budget participatif est en mode brouillon, seuls les administrateurs peuvent le voir dans le site public. Une fois publié, il ne peut plus être modifié en mode brouillon."
+        publish: "Publier le budget"
         delete: Supprimer le budget
         phase: Phase
+        phases_caption: "Phase"
+        duration: "Durée"
         enabled: Activé
         actions: Actions
+        enable_phase: "Activer la phase %{phase}"
         active: Actif
         blank_dates: Les dates sont vides
+        administrators:
+          zero: "Sélectionnez les administrateurs"
+          one: "1 administrateur sélectionné"
+          other: "%{count} administrateurs sélectionnés"
+        valuators:
+          zero: "Sélectionner des évaluateurs"
+          one: "1 évaluateur sélectionné"
+          other: "%{count} évaluateurs sélectionnés"
+        empty_administrators: "Il n'y a pas d'administrateurs"
+        empty_valuators: "Il n'y a pas d'évaluateurs"
+        name_description: "C'est le nom du budget participatif utilisé sur l'en-tête et les fiches chaque fois qu'il est actif"
+        image_description: "Si une image est téléchargée, elle sera utilisée comme bannière au-dessus de ce budget participatif, sinon la couleur par défaut des budgets sera utilisée."
+        main_call_to_action: "Appel à l'action principal (facultatif)"
+        main_call_to_action_description: "Ce lien apparaîtra sur la bannière principale de ce budget participatif et encourage votre utilisateur à effectuer une action spécifique comme créer une proposition, voter pour les propositions existantes ou en savoir plus sur le processus."
       destroy:
         success_notice: Le budget a été supprimé avec succès
         unable_notice: Vous ne pouvez pas détruire un budget qui a des investissements associés
