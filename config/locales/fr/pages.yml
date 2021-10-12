@@ -56,6 +56,7 @@ fr:
       other:
         title: "Autre information utile"
         how_to_use: "Utiliser %{org_name} dans votre ville"
+        sdg: "Aide Objectifs de développement durable"
       how_to_use:
         text: |-
           Utilisez-le pour votre administration locale ou aidez-nous à l'améliorer, il s'agit d'un logiciel libre.
@@ -159,6 +160,7 @@ fr:
               description_column: Diminue la taille du texte
       compatibility:
         title: Compatibilité avec les normes et la conception visuelle
+        description: 'Toutes les pages de ce site Web sont conformes aux <strong>Directives d''accessibilité</strong> ou aux principes généraux de conception accessible établis par le groupe de travail <abbr title="Web Accessibility Initiative" lang="fr">WAI</abbr> appartenant à W3C.'
     titles:
       help: "Qu'est-ce que %{org} ? - Participation citoyenne"
     verify:
