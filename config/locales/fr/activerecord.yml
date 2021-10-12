@@ -262,6 +262,10 @@ fr:
         official_position_badge: "Afficher le badge de position officielle"
         official_level: "Niveau officiel"
         phone_number: "Numéro de téléphone"
+        public_activity: "Garder publique ma liste d'activités"
+        public_interests: "Rendre publiques les étiquettes des éléments que je suis"
+        recommended_debates: "Voir les recommandations des débats"
+        recommended_proposals: "Voir les recommandations des propositions"
         redeemable_code: "Vérification du code reçu par courriel"
       direct_message:
         title: "Titre"
@@ -271,18 +275,23 @@ fr:
         responsible_name: "Personne responsable pour le groupe"
       poll:
         name: "Nom"
+        title: "Nom"
         starts_at: "Date de début"
         ends_at: "Date de fin"
         geozone_restricted: "Restreint selon la zone géographique"
         summary: "Résumé"
         description: "Description"
+      active_poll/translation:
+        description: "Description"
       poll/booth:
         name: "Nom"
+        location: "Lieu"
       poll/translation:
         name: "Nom"
         summary: "Résumé"
         description: "Description"
       poll/question:
+        poll_id: "Vote"
         title: "Question"
         summary: "Résumé"
         description: "Description"
@@ -303,6 +312,24 @@ fr:
         signable_type: "Type de signature"
         signable_id: "Identifiant de la signature"
         document_numbers: "Nombre de documents"
+      sdg/goal:
+        code: "Code"
+        title: "Titre"
+        description: "Description"
+      sdg/local_target:
+        code: "Code"
+        target_id: "Objectif"
+        title: "Titre"
+      sdg/local_target/translation:
+        title: "Titre"
+        description: "Description"
+      sdg/phase/kind:
+        sensitization: "Sensibilisation"
+        planning: "Planification"
+        monitoring: "Surveillance"
+      sdg/target:
+        code: "Code"
+        title: "Titre"
       site_customization/page:
         content: Contenu
         created_at: Créé le
