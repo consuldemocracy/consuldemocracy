@@ -336,6 +336,8 @@ fr:
         subtitle: Sous-titres
         slug: Slug
         status: Statut
+        status_draft: "Brouillon"
+        status_published: "Publié"
         title: Titre
         updated_at: Mis-à-jour le
         more_info_flag: Montrer dans la page Plus d'informations
@@ -352,13 +354,20 @@ fr:
         name: Nom
         locale: Langue
         body: Contenu
+      tag:
+        name: "Saisir le nom du sujet"
+      topic:
+        title: "Titre"
+        description: "Texte initial"
       banner:
         background_color: Couleur de l'arrière-plan
         font_color: Couleur de la police
         post_ended_at: "Poste a fini à"
         post_started_at: "Post a commencé à"
+        target_url: "Lien"
       banner/translation:
         title: "Titre"
+        description: "Description"
       legislation/process:
         title: Titre du processus
         summary: Résumé
@@ -378,17 +387,26 @@ fr:
         result_publication_date: Date de publication du résultat final
         background_color: Couleur de l'arrière-plan
         font_color: Couleur de la police
+        homepage_enabled: "Page d'accueil activée"
       legislation/process/translation:
         title: Titre du processus
         summary: Résumé
         description: Description
         additional_info: Plus d'infos
+        homepage: "Description"
         milestones_summary: Résumé
+      legislation/proposal:
+        description: "Texte de la proposition"
+        summary: "Résumé de la proposition"
+        title: "Titre de la proposition"
+        video_url: "Lien vers une vidéo externe"
       legislation/draft_version:
         title: Titre de la version
         body: Texte
         changelog: Changements
         status: Statut
+        status_draft: "Brouillon"
+        status_published: "Publié"
         final_version: Version finale
       legislation/draft_version/translation:
         title: Titre de la version
@@ -456,14 +474,27 @@ fr:
         order: Vous pouvez entrer la position où cette action sera affichée pour l'utilisateur dans la liste d'actions
         active: Actif
         action_type: Type
+        action_type_proposed_action: "Action proposée"
+        action_type_resource: "Ressource"
+        published_proposal: "Pour les propositions publiées?"
       dashboard/administrator_task:
         source: Source
         user: Exectué par
       link:
         label: Titre
         url: Lien
+      valuator:
+        description: Description
+        valuator_group_id: Groupe d’évaluateurs
+        can_comment: Peut créer des commentaires
+        can_edit_dossier: Peut éditer des dossiers
+      valuator_group:
+        name: "Nom du groupe"
       local_census_record:
+        document_type: Type de document
+        document_number: Numéro de document
         date_of_birth: Date de naissance
+        postal_code: Code postal
     errors:
       models:
         user:
@@ -495,6 +526,8 @@ fr:
           attributes:
             document_number:
               not_in_census: "Ce document n'est pas dans le recensement"
+            user_id:
+              has_voted: "L'utilisateur a déjà voté"
         legislation/process:
           attributes:
             end_date:
@@ -505,6 +538,10 @@ fr:
               invalid_date_range: doit être à la même date ou plus tard que celle de la création du brouillon
             allegations_end_date:
               invalid_date_range: doit être égal ou postérieur à la date de début des allégations
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: n'est pas inclus dans la liste, les valeurs autorisées sont 1 pour le DNI, 2 pour le passeport et 3 pour la carte de séjour.
         proposal:
           attributes:
             tag_list:
@@ -535,6 +572,10 @@ fr:
           attributes:
             valuation:
               cannot_comment_valuation: "Vous ne pouvez pas commenter une évaluation"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Ressource déjà traduite
       messages:
         translations_too_short: Être obligatoire de fournir au moins un translation
         record_invalid: "La validation omise : %{errors}"
