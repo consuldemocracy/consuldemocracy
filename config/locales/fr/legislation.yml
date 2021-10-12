@@ -50,6 +50,7 @@ fr:
       proposals:
         empty_proposals: Il n’y a pas de propositions
         filters:
+          random: Aléatoire
           winners: Sélectionné
       debate:
         empty_questions: Il n'y a pas de question
@@ -116,3 +117,33 @@ fr:
       form:
         tags_label: "Catégories"
       not_verified: "Pour voter pour les propositions, %{verify_account}."
+      process_title: Processus législatif collaboratif
+    summary:
+      title: "Résumé"
+      votes:
+        zero: "%{count} votes"
+        one: "%{count} vote"
+        other: "%{count} votes"
+      debate_phase: "Phase de débat"
+      proposals_phase: "Phase de propositions"
+      allegations_phase: "Phase de commentaires"
+      debates:
+        zero: "Aucun débat"
+        one: "%{count} débat"
+        other: "%{count} débats"
+      proposals:
+        zero: "Aucune proposition"
+        one: "%{count} proposition"
+        other: "%{count} propositions"
+      comments:
+        zero: "Aucun commentaires"
+        one: "%{count} commentaire"
+        other: "%{count} commentaires"
+      download: "Télécharger le résumé"
+      top_comments:
+        zero: "Aucun commentaires"
+        one: "%{count} commentaire"
+        other: "Meilleures Commentaires"
+      most_voted_comments: "Commentaires les plus votés"
+      no_allegation: "Il n'y a pas de commentaires"
+      process_empty: "Ce processus n'a pas eu de phases de participation"
