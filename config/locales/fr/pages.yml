@@ -18,6 +18,7 @@ fr:
         title: "Débats"
         description: "Dans la section %{link}, vous pouvez présenter et partager votre opinion avec d’autres personnes sur des sujets liés à la ville qui vous sont chers. C’est aussi un lieu pour générer des idées qui, associées aux autres sections de %{org}, pourront conduire à des actions concrètes du conseil municipal."
         link: "débats citoyens"
+        feature: "Vous pouvez ouvrir des débats, les commenter et les évaluer avec les boutons <strong>Je suis d'accord</strong> ou <strong>Je ne suis pas d’accord</strong>. Pour cela, vous devez %{link}."
         feature_link: "s’inscrire à %{org}"
         image_alt: "Boutons pour noter les débats"
         figcaption: 'Les boutons ''Je suis d''accord'' et ''Je ne suis pas d''accord'' pour noter les débats.'
@@ -26,11 +27,13 @@ fr:
         description: "Dans la section %{link}, vous pouvez faire des propositions que la mairie pourrait réaliser. Les propositions ont besoin de soutiens, et si elles atteignent un nombre suffisant, elles sont soumises à un vote public. Les propositions approuvées par ces votes citoyens sont acceptées par le conseil municipal et réalisées."
         link: "propositions citoyennes"
         image_alt: "Bouton pour supporter une proposition"
+        figcaption: 'Bouton pour "Soutenir" une proposition.'
       budgets:
         title: "Budgets participatifs"
         description: "La section %{link} permet aux citoyens de participer à la répartition du budget municipal."
         link: "budgets participatifs"
         image_alt: "Différentes phases d'un budget participatif"
+        figcaption: '"Phase de soutien" et "phase de vote" des budgets participatifs.'
       polls:
         title: "Votes"
         description: "La section %{link} est activée chaque fois qu’une proposition atteint 1% de soutiens et passe au vote ou lorsque le conseil municipal propose aux gens de se prononcer sur une mesure."
