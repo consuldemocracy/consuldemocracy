@@ -461,10 +461,35 @@ fr:
       success: La demande a été envoyée avec succès. Nous vous contacterons dans les plus brefs délais pour vous en informer.
       archived: Cette proposition est archivée et ne peut pas demander de ressources.
     progress:
+      title: Graphique
+      group_by_month: Mensuel
+      group_by_week: Hebdomadaire
+      group_by_date: Journalier
+      progress: Progrès accumulé
+      supports: Soutiens
+      success: Progrès idéal
       new_action: Nouveau
+    index:
+      title: Modification
+      edit_proposal_link: Modifier la proposition
+      publish: Proposition publiée
+      retire: Retirer la proposition
+    new_request:
+      links: Liens
+    resources:
+      available_resources: Ressources disponibles
     resource:
+      required_days: "%{days} jours requis"
+      required_supports: "%{supports} soutiens requis"
       and: et
+      view_resource: Voir les ressources
+      resource_requested: Ressource déjà demandée
+      request_resource: Demander une ressource
+      resource_locked: Ressource bloquée
     recommended_actions:
+      title: Actions recommandées
+      goto_proposed_actions: Accéder aux actions recommandées
+      see_proposed_actions: Consultez les actions recommandées
       done_title: Fini
     polls:
       poll:
