@@ -76,6 +76,13 @@ fr:
       subject: "Nouveau commentaire d'évaluation"
       title: Nouveau commentaire d'évaluation pour %{investment}
       hi: Bonjour
+      new_comment_by: Il y a un nouveau commentaire d'évaluation de <strong>%{commenter}</strong> au budget d'investissement %{investment}
+      commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Visiter le panneau Machine Learning"
+      subject: "Machine Learning - Une erreur s'est produite lors de l'exécution du script"
+      text: "Une erreur s'est produite lors de l'exécution du script Machine Learning."
+      title: "Script d'apprentissage automatique"
     new_actions_notification_rake_created:
       subject: "Plus de nouveautés à propos de votre propositions citoyenne"
       hi: "Bonjour %{name},\n"
