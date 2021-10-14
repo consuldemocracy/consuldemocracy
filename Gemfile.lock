@@ -463,7 +463,7 @@ GEM
       pronto (~> 0.11.0)
       scss_lint (~> 0.43, >= 0.43.0)
     public_suffix (4.0.6)
-    puma (4.3.8)
+    puma (4.3.10)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -759,7 +759,7 @@ DEPENDENCIES
   pronto-eslint (~> 0.11.0)
   pronto-rubocop (~> 0.11.1)
   pronto-scss (~> 0.11.0)
-  puma (~> 4.3.8)
+  puma (~> 4.3.10)
   rails (= 5.2.6)
   rails-assets-leaflet!
   rails-assets-markdown-it (~> 9.0.1)!
