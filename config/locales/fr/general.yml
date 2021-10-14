@@ -490,6 +490,8 @@ fr:
       title: Actions recommandées
       goto_proposed_actions: Accéder aux actions recommandées
       see_proposed_actions: Consultez les actions recommandées
+      hide_proposed_actions: Masquer les actions recommandées
+      pending_title: En attente
       done_title: Fini
     polls:
       poll:
@@ -503,7 +505,13 @@ fr:
         download: Télécharger
     mailer:
       forward:
+        subtitle: "Si vous me soutenez, <br>nous y parviendrons."
+        support_button: Soutenez cette proposition
+        share_in: Partager sur
         hi: "Bonjour!"
+        introduction: Je vous écris pour vous informer que je participe à %{org}, la plateforme sur laquelle nous pouvons décider quelle ville nous voulons. Et pour cela, j'ai créé ma propre proposition citoyenne et maintenant, je vais avoir besoin de votre soutien ! Mais ne vous inquiétez pas car c'est très simple.
+        support: "Il vous suffit de cliquer sur le bouton que vous verrez ci-dessous 'Soutenir cette proposition' et vous pourrez vous renseigner avant de la promouvoir. Seules les propositions qui obtiendront le maximum de soutien seront réalisées par la Mairie, et j'ai pensé que vous, je suis sûr que vous m'aidez à y parvenir !"
+        share: "Et si vous aussi vous me faites la faveur de partager ma proposition avec vos amis, votre famille et vos contacts, ce serait parfait !"
   polls:
     all: "Toutes"
     no_dates: "aucune date fixée"
@@ -521,6 +529,8 @@ fr:
       geozone_info: "Peuvent participer les personnes issues du recensement de : "
       already_answer: "Vous avez déjà participé à ce vote"
       not_logged_in: "Vous devez vous connecter ou vous inscrire pour participer"
+      unverified: "Vous devez vérifier votre compte pour participer"
+      cant_answer: "Ce sondage n'est pas disponible pour votre zone géographique"
       section_header:
         icon_alt: Icône de vote
         title: Votes
@@ -535,6 +545,7 @@ fr:
       back: Retour au vote
       cant_answer_not_logged_in: "Il est nécessaire de %{signin} ou de %{signup} pour participer."
       comments_tab: Commentaires
+      cant_answer_verify: "Vous devez %{verify_link} pour pouvoir répondre."
       verify_link: "Vérifier votre compte"
       cant_answer_expired: "Ce vote est terminé."
       cant_answer_wrong_geozone: "Cette question n'est pas disponible pour votre zone géographique."
@@ -551,6 +562,7 @@ fr:
         total_votes: "Nombre de votes"
         votes: "VOTES"
         web: "INTERNET"
+        mail: "COURRIER"
         booth: "BUREAU"
         total: "TOTAL"
         valid: "Valides"
