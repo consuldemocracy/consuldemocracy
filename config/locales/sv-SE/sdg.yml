@@ -55,6 +55,9 @@ sv:
           target_2_B:
             long_title: "Korrigera och förhindra handelsbegränsningar och snedvridningar på världsmarknaderna för jordbruksprodukter, bland annat genom att parallellt avskaffa alla former av exportsubventioner inom jordbruket liksom alla exportåtgärder med motsvarande verkan, i enlighet med mandatet för Doharundan."
             short_title: "Förhindra handelsbegränsningar, snedvridningar på marknaderna och exportsubventioner för jordbruket"
+          target_2_C:
+            long_title: "Vidta åtgärder för att säkerställa väl fungerande marknader och derivatmarknader för jordbruksråvaror. Underlätta tillgången till aktuell marknadsinformation, inklusive om livsmedelsreserver, i syfte att bidra till att begränsa extrema svängningar i livsmedelspriser."
+            short_title: "Säkerställa stabila marknader för jordbruksråvaror och tillgång till aktuell information"
       goal_3:
         title: "God hälsa och välbefinnande"
         title_in_two_lines: "God hälsa och\nvälbefinnande"
@@ -64,6 +67,8 @@ sv:
           target_3_1:
             long_title: "Till 2030 minska mödradödligheten i världen till mindre än 70 dödsfall per 100 000 förlossningar med levande barn."
             short_title: "Minska mödradödligheten"
+          target_3_2:
+            long_title: "Senast 2030 säkerställa att inga spädbarn eller barn under fem år dör av orsaker som hade kunnat förebyggas. Alla länder bör sträva efter att minska den neonatala dödligheten till högst tolv dödsfall per 1 000 levande födda och dödligheten bland barn under fem år till högst 25 dödsfall per 1 000 levande födda."
           target_3_3:
             long_title: "Senast 2030 utrota epidemierna av aids, tuberkulos, malaria och försummade tropiska sjukdomar samt bekämpa hepatit, vattenburna sjukdomar och andra smittsamma sjukdomar."
             short_title: "Bekämpa smittsamma sjukdomar"
