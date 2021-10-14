@@ -46,6 +46,9 @@ sv:
           target_2_4:
             long_title: "Senast 2030 uppnå hållbara system för livsmedelsproduktion samt införa motståndskraftiga jordbruksmetoder som ökar produktiviteten och produktionen, som bidrar till att upprätthålla ekosystemen, som stärker förmågan till anpassning till klimatförändringar, extrema väderförhållanden, torka, översvämning och andra katastrofer och som successivt förbättrar mark och jordkvaliteten."
             short_title: "Metoder för hållbar livsmedelsproduktion och motståndskraftigt jordbruk"
+          target_2_5:
+            long_title: "Senast 2020 skydda den genetiska mångfalden av fröer, odlade växter, produktionsdjur och tamdjur samt deras besläktade vilda arter, bland annat med hjälp av välskötta och diversifierade frö- och växtbanker på nationell, regional och internationell nivå. Främja tillträde till, samt rimlig och rättvis fördelning av, de fördelar som uppstår vid användning av genetiska resurser och därmed förknippad traditionell kunskap, i enlighet med internationella avtal."
+            short_title: "Skydda den genetiska mångfalden i livsmedelsproduktion"
       goal_3:
         title: "God hälsa och välbefinnande"
         title_in_two_lines: "God hälsa och\nvälbefinnande"
