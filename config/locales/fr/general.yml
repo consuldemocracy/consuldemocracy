@@ -25,6 +25,9 @@ fr:
     close: Fermer
     menu: Menu
   comments:
+    actions:
+      confirm_delete: "Êtes-vous sûr? Cette action supprimera ce commentaire. Vous ne pouvez pas annuler cette action."
+      delete: "Supprimer le commentaire"
     comments_closed: Les commentaires sont fermés
     verified_only: Pour participer, %{verify_account}
     comment:
@@ -176,6 +179,7 @@ fr:
     local_census_records/import: Importer les données du recensement local
     site_customization/content_block: content block
     site_customization/page: page
+    sdg/local_target: objectif local
   geozones:
     none: Toute la ville
   layouts:
@@ -195,6 +199,10 @@ fr:
         show_proposal: Voir la proposition
         preview_proposal: Preview la proposition
         current_goal: Objectif en cours
+        supports:
+          zero: Pas de soutiens
+          one: 1 Soutien
+          other: "Soutiens"
     footer:
       accessibility: Accessibilité
       conditions: Conditions légales
@@ -231,6 +239,7 @@ fr:
           one: Vous avez une nouvelle notification
           other: Vous avez %{count} nouvelles notifications
         notifications: Notifications
+      sdg: "ODD"
   notifications:
     index:
       empty_notifications: Vous n'avez pas de nouvelles notifications
@@ -269,6 +278,8 @@ fr:
       sign_up: S'enregistrer avec Google
       name: Google
     wordpress_oauth2:
+      sign_in: Connectez-vous avec Wordpress
+      sign_up: Inscrivez-vous avec Wordpress
       name: Wordpress
     twitter:
       sign_in: S'enregistrer avec Twitter
@@ -343,6 +354,7 @@ fr:
       selected_proposals: Propositions sélectionnées
       selected_proposals_link: Afficher les propositions sélectionnées
       archived_proposals: Propositions archivées
+      proposals_lists: Listes de propositions
       retired_links:
         all: Tous
         duplicated: Duplicata d'une autre proposition
@@ -354,6 +366,9 @@ fr:
         button: Chercher
         placeholder: Chercher des propositions
         title: Chercher
+      search_results:
+        one: " contenant le terme <strong>'%{search_term}'</strong>"
+        other: " contenant le terme <strong>'%{search_term}'</strong>"
       select_order_long: "Vous êtes en train de voir les propositions en fonction de"
       start_proposal: Créer une proposition
       title: Propositions
@@ -377,6 +392,7 @@ fr:
       start_new: Créer une nouvelle proposition
     notice:
       retired: Proposition retirée
+      published: La proposition a été publiée
     proposal:
       created: "Vous venez de créer une proposition !"
       share:
@@ -402,6 +418,7 @@ fr:
       total_percent: 100%
       archived: "Cette proposition a été archivée et ne peut recueillir de soutiens."
       successful: "Cette proposition a atteint les soutiens requis."
+      selected: "Proposition sélectionnée"
     show:
       author_deleted: Utilisateur effacé
       code: "Code de la proposition"
@@ -410,6 +427,7 @@ fr:
         one: 1 commentaire
         other: "%{count} commentaires"
       comments_tab: Commentaires
+      dashboard_proposal_link: Tableau de bord
       flag: Cette proposition a été signalée comme inappropriée par plusieurs utilisateurs
       notifications_tab: Notifications
       milestones_tab: Jalons
@@ -421,12 +439,27 @@ fr:
       embed_video_title: "Vidéo de %{proposal}"
       title_video_url: "Vidéo externe"
       author: Auteur
+      draft: Proposition en construction. Ne peut pas encore obtenir de soutiens et n'apparaît pas non plus dans la liste des propositions.
     update:
       form:
         submit_button: Sauvegarder des changements
   dashboard:
     menu:
+      my_proposal: Modifier ma proposition
+      progress: Progression
+      resources: Ressources
+      community: Communauté
+      polls: Sondages
+      mailing: E-mail
+      poster: Affiche
+      recommended_actions: Actions recommandées
       messages: Message aux utilisateurs
+      related_content: Contenu associé
+    form:
+      request: Demande
+    create_request:
+      success: La demande a été envoyée avec succès. Nous vous contacterons dans les plus brefs délais pour vous en informer.
+      archived: Cette proposition est archivée et ne peut pas demander de ressources.
     progress:
       new_action: Nouveau
     resource:
@@ -520,8 +553,6 @@ fr:
     "no": "Non"
     search_results: "Résultats de recherche"
     advanced_search:
-      author_type: "Par catégorie d'auteur"
-      author_type_blank: "Sélectionner une catégorie"
       date: "Par date"
       date_placeholder: "JJ/MM/AAAA"
       date_range_blank: "Choisir une date"
@@ -532,7 +563,6 @@ fr:
       date_5: "La période de votre choix"
       from: "Depuis"
       general: "Avec le texte"
-      general_placeholder: "Écrire le texte"
       search: "Filtre"
       title: "Recherche avancée"
       to: "Pour"
