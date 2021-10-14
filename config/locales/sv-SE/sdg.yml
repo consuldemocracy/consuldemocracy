@@ -49,6 +49,12 @@ sv:
           target_2_5:
             long_title: "Senast 2020 skydda den genetiska mångfalden av fröer, odlade växter, produktionsdjur och tamdjur samt deras besläktade vilda arter, bland annat med hjälp av välskötta och diversifierade frö- och växtbanker på nationell, regional och internationell nivå. Främja tillträde till, samt rimlig och rättvis fördelning av, de fördelar som uppstår vid användning av genetiska resurser och därmed förknippad traditionell kunskap, i enlighet med internationella avtal."
             short_title: "Skydda den genetiska mångfalden i livsmedelsproduktion"
+          target_2_A:
+            long_title: "Öka investeringarna, bland annat genom stärkt internationellt samarbete, i infrastruktur på landsbygden, forsknings- och rådgivningstjänster för jordbruket, teknikutveckling samt genbanker för växter och husdjur i syfte att öka jordbrukets produktionskapacitet i utvecklingsländerna, i synnerhet de minst utvecklade länderna."
+            short_title: "Investera i infrastruktur på landsbygden, forskning för jordbruket, teknik, samt genbanker"
+          target_2_B:
+            long_title: "Korrigera och förhindra handelsbegränsningar och snedvridningar på världsmarknaderna för jordbruksprodukter, bland annat genom att parallellt avskaffa alla former av exportsubventioner inom jordbruket liksom alla exportåtgärder med motsvarande verkan, i enlighet med mandatet för Doharundan."
+            short_title: "Förhindra handelsbegränsningar, snedvridningar på marknaderna och exportsubventioner för jordbruket"
       goal_3:
         title: "God hälsa och välbefinnande"
         title_in_two_lines: "God hälsa och\nvälbefinnande"
