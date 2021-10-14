@@ -571,6 +571,8 @@ fr:
       results:
         title: "Questions"
         most_voted_answer: "Choix le plus voté : "
+    poll_header:
+      back_to_proposal: Retour à la proposition
   poll_questions:
     show:
       vote_answer: "Voter %{answer}"
@@ -579,11 +581,13 @@ fr:
     new:
       title: "Envoyer un message"
       submit_button: "Envoyer un message"
+      info_about_receivers: "Cette notification sera envoyée à <strong>%{count} personnes</strong> et elle sera visible dans %{proposal_page}.<br> Les notifications ne sont pas envoyées immédiatement, les utilisateurs recevront périodiquement un e-mail avec toutes les notifications de proposition."
       proposal_page: "la page de la proposition"
     show:
       back: "Retour à mon activité"
   shared:
     edit: "Éditer"
+    filter: "Filtrer"
     save: "Sauvegarder"
     delete: "Supprimer"
     "yes": "Oui"
@@ -600,11 +604,16 @@ fr:
       date_5: "La période de votre choix"
       from: "Depuis"
       general: "Avec le texte"
+      goal: "Par ODD"
+      goal_blank: "Sélectionnez un objectif"
       search: "Filtre"
+      target: "Par cible"
+      target_blank: "Sélectionnez une cible"
       title: "Recherche avancée"
       to: "Pour"
     author_info:
       author_deleted: Utilisateur effacé
+      email_deleted: E-mail supprimé
     back: Revenir
     check: Sélectionner
     check_all: Toutes
@@ -614,6 +623,12 @@ fr:
     follow: "Suivre"
     following: "Suivent"
     follow_entity: "Suivre %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Vous suivez à présent cette proposition d'investissement ! <br>Nous vous tiendrons informé des changements au fur et à mesure."
+        destroy:
+          notice: "Vous ne suivez plus ce projet d'investissement ! <br> Vous ne recevrez plus de notifications liées à ce projet."
     print:
       print_button: Imprimer cette info
     search: Chercher
