@@ -11,6 +11,7 @@ fr:
       manage_email_subscriptions: Pour ne plus recevoir ces courriels, changer vos options dans
     email_verification:
       click_here_to_verify: sur ce lien
+      instructions_2: Ce courriel va vérifier votre compte avec <b>%{document_type}%{document_number}</b>. Si ce compte ne vous appartient pas, veuillez ne pas cliquer sur le lien et ignorer ce courriel.
       subject: Confirmer votre courriel
       thanks: Merci beaucoup.
       title: Confirmer votre compte en utilisant le lien suivant
