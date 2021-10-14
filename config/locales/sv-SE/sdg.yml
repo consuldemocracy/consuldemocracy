@@ -148,6 +148,10 @@ sv:
         title_in_two_lines: "Fred, rättvisa och\nstarka institutioner"
         description: "Främja rättvisa, fredliga och inkluderande samhällen."
         long_description: '<p>Konflikt, osäkerhet, svaga institutioner och begränsad tillgång till rättssystem är fortfarande ett stort hot mot hållbar utveckling.&nbsp;</p> <p>Antalet <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">människor på flykt från krig, förföljelse och konflikt översteg 70 miljoner</a> 2018, den högsta nivån som registrerats av FN:s flyktingkommissariat (UNHCR) på nästan 70 år.&nbsp;</p> <p>2019 konstaterade Förenta nationerna <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 mord och 30 påtvingade försvinnanden</a> av människorättsförsvarare, journalister och fackföreningsmedlemmar i 47 länder.</p> <p>Det underlåts också att registrera att runt <a href="https://data.unicef.org/topic/child-protection/birth-registration/">ett av fyra barn</a> under 5 års ålder i hela världen har fötts, vilket berövar dem de bevis på juridisk identitet som är avgörande för att skydda deras rättigheter och ge tillgång till rättssystem och sociala tjänster.</p>'
+        targets:
+          target_16_A:
+            long_title: "Stärka berörda nationella institutioner, bland annat genom internationellt samarbete, i syfte att bygga upp kapacitet på alla nivåer, i synnerhet i utvecklingsländerna, för att förebygga våld och bekämpa terrorism och brottslighet."
+            short_title: "Stärka nationella institutioner för att förebygga våld och bekämpa terrorism och brottslighet"
       goal_17:
         title: "Partnerskap för målen"
         title_in_two_lines: "Partnerskap\nför målen"
@@ -164,6 +168,7 @@ sv:
             short_title: "Öka tillgången till tillförlitliga uppgifter"
           target_17_19:
             long_title: "Till 2030 bygga vidare på befintliga initiativ för att utveckla mått på framsteg som görs mot hållbar utveckling som kompletterar BNP samt stödja uppbyggnad av statistisk kapacitet i utvecklingsländerna."
+            short_title: "Vidareutveckla mått på framsteg"
       help:
         title: "Globala målen för hållbar utveckling, hjälp"
         description: "Du kan anpassa dina bidrag till gemenskapen (debatter, medborgarförslag och budgetförslag) runt den hållbara 2030-agendan med hållbar utveckling som mål, så att vi får överblick över vårt bidrag till varje mål för hållbar utveckling. Nedan hittar du mer information om alla mål, deras delmål och lokala delmål."
