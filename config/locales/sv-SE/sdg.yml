@@ -82,6 +82,9 @@ sv:
           target_3_6:
             long_title: "Till 2020 halvera antalet dödsfall och skador i trafikolyckor i världen."
             short_title: "Reducera skador och dödsfall i trafikolyckor"
+          target_3_7:
+            long_title: "Senast 2030 säkerställa att alla har tillgång till sexuell och reproduktiv hälsovård, inklusive familjeplanering, information och utbildning, och att reproduktiv hälsa integreras i nationella strategier och program."
+            short_title: "Tillgång för alla till sexuell och reproduktiv vård, familjeplanering och utbildning"
       goal_4:
         title: "God utbildning"
         title_in_two_lines: "God\nutbildning"
