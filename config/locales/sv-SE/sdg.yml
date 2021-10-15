@@ -85,6 +85,15 @@ sv:
           target_3_7:
             long_title: "Senast 2030 säkerställa att alla har tillgång till sexuell och reproduktiv hälsovård, inklusive familjeplanering, information och utbildning, och att reproduktiv hälsa integreras i nationella strategier och program."
             short_title: "Tillgång för alla till sexuell och reproduktiv vård, familjeplanering och utbildning"
+          target_3_8:
+            long_title: "Åstadkomma allmän hälso- och sjukvård för alla, som även skyddar mot ekonomisk risk, tillgång till grundläggande hälso- och sjukvård av god kvalitet liksom tillgång till säkra, effektiva och ekonomiskt överkomliga grundläggande läkemedel och vaccin av god kvalitet."
+            short_title: "Åstadkomma allmän hälso- och sjukvård"
+          target_3_9:
+            long_title: "Till 2030 väsentligt minska antalet döds- och sjukdomsfall till följd av skadliga kemikalier samt föroreningar och kontaminering av luft, vatten och mark."
+            short_title: "Minska sjukdoms- och dödsfall till följd av skadliga kemikalier och föroreningar"
+          target_3_A:
+            long_title: "Stärka genomförandet av Världshälsoorganisationens ramkonvention om tobakskontroll i alla länder, när så är lämpligt."
+            short_title: "Genomföra Världshälsoorganisationens ramkonvention om tobakskontroll"
       goal_4:
         title: "God utbildning"
         title_in_two_lines: "God\nutbildning"
@@ -94,6 +103,8 @@ sv:
           target_4_1:
             long_title: "Senast 2030 säkerställa att alla flickor och pojkar fullbordar avgiftsfri och likvärdig grundskole- och gymnasieutbildning av god kvalitet som leder till relevanta och ändamålsenliga kunskaper."
             short_title: "Avgiftsfri grundskole- och gymnasieutbildning"
+          target_4_4:
+            long_title: "Till 2030 väsentligen öka det antal ungdomar och vuxna som har relevanta färdigheter, däribland tekniska färdigheter och yrkeskunnande, för sysselsättning, anständigt arbete och entreprenörskap."
       goal_5:
         title: "Jämställdhet"
         title_in_two_lines: "Jäm-\nställdhet"
