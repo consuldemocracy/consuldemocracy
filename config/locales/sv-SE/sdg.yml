@@ -100,6 +100,9 @@ sv:
           target_3_C:
             long_title: "Väsentligt stärka finansieringen av hälso- och sjukvården liksom insatserna för att rekrytera, utveckla, utbilda och behålla hälso- och sjukvårdspersonal i utvecklingsländerna, särskilt i de minst utvecklade länderna och små önationer under utveckling."
             short_title: "Stärka finansieringen av hälso- och sjukvården och stöd hälso- och sjukvårdspersonalen i utvecklingsländerna"
+          target_3_D:
+            long_title: "Stärka alla länders, i synnerhet utvecklingsländernas, kapacitet när det gäller tidig varning, riskreducering och hantering av nationella och globala hälsorisker."
+            short_title: "Förbättra system för tidig varning om globala hälsorisker"
       goal_4:
         title: "God utbildning"
         title_in_two_lines: "God\nutbildning"
