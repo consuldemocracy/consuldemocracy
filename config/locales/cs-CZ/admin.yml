@@ -1329,3 +1329,5 @@ cs:
         description_3: "Při prvním použití je nutné postupovat podle pokynů uvedených v dokumentaci CONSUL a modul správně aktivovat. Po správné aktivaci modulu se programy spouštějí na kartě \"Spustit skripty\". Před spuštěním se nám na téže kartě zobrazí odhad doby spuštění a další důležité informace. Na konci provádění můžeme na kartě \"Nastavení\" aktivovat obsah, který se bude v CONSULu zobrazovat, a také stáhnout další vygenerované soubory, které se nám mohou hodit."
         title_4: "Jak implementovat nové skripty AI / strojového učení"
         description_4: "Jako příklady použijte předchozí skripty."
+      related_content: "Související obsah"
+      tab_help: "Nápověda"
