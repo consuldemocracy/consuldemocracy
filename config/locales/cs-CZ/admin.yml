@@ -78,6 +78,7 @@ cs:
         title: Upravit participativní rozpočet
         delete: Odstranit rozpočet
         phase: Fáze
+        phases_caption: "Fáze"
         enabled: Povolit
         actions: Akce
         active: Aktivní
@@ -1122,15 +1123,25 @@ cs:
         proposal_notifications: Upozornění k návrhům
         incomplete_verifications: Neúplné ověření
         polls: Průzkum
+        sdg: SDG
       graph:
         debate_created: Debaty
         visit: Návštěvy
         level_2_user: Počet uživatelů druhé úrovně
         proposal_created: Návrhy občanů
+      budgets:
+        no_data_before_balloting_phase: "Před fází hlasování nejsou k dispozici žádné údaje."
+        title: "Participativní rozpočty - statistiky účasti"
+        supporting_phase: Fáze podpory
+        balloting_phase: Konečné hlasování
       budget_balloting:
+        title: "Statistiky konečného hlasování"
         vote_count: Hlasů
         participant_count: Účastníci
+        votes_per_heading: Hlasy pro jednotlivé položky
+        participants_per_district: Účastníci za okres
       budget_supporting:
+        title: "Statistiky podpůrné fáze"
         headings: Kapitoly
         users: Uživatelé
         vote_count: Hlasů
@@ -1155,6 +1166,15 @@ cs:
           question_name: Question
           origin_web: Respondenti z webu
           origin_total: Celkový počet respondentů
+      sdg:
+        budget_investments:
+          amount: "Schválená částka"
+          winners: "Vítězný investiční projekt"
+          sent: "Odeslané investiční projekty"
+        debates: "Debaty"
+        polls: "Průzkumy"
+        proposals: "Návrhy"
+        title: "Cíle udržitelného rozvoje - statistiky"
     tags:
       create: Vytvořit téma
       index:
@@ -1164,6 +1184,7 @@ cs:
         help: "Když uživatel vytvoří návrh, následující témata jsou navrženy jako výchozí štítky."
     users:
       columns:
+        id: ID
         name: Název
         email: Email
         document_number: Číslo dokladu
@@ -1172,6 +1193,9 @@ cs:
       index:
         title: User
         no_users: Nemáte žádné uživatele.
+        filter: Filtr
+        filters:
+          active: Aktivní
       search:
         placeholder: Hledat uživatele pomocí e-mailu, jména nebo čísla dokladu
     verifications:
@@ -1284,9 +1308,19 @@ cs:
         submit_card: Uložit kartu
     audits:
       id: "ID"
+      field: "Pole"
+      new_value: "Nová hodnota"
+      old_value: "Stará hodnota"
     local_census_records:
+      index:
+        document_type: Typ dokumentu
+        date_of_birth: Datum narození
       imports:
         local_census_records:
           no_records_found: Nenalezeny žádné záznamy.
     machine_learning:
       error: "Chyba:"
+      feature_disabled_link: "strana nastavení"
+      help:
+        description_1: "Počítačové programy se tradičně navrhují tak, že se stanoví přesná pravidla, co má program v každé situaci dělat a jak má v každém okamžiku zpracovávat dostupné informace. To, co se běžně označuje jako umělá inteligence/strojové učení, je typ programů, u nichž je přesně stanoveno, jaký úkol má být proveden a jak se vyhodnocuje, zda je úkol proveden lépe nebo hůře. Na rozdíl od prvně jmenovaného však systém objevuje nebo se učí, jaká by byla nejvhodnější metoda k provedení úkolu."
+        title_2: "Co dělá modul AI / strojového učení v systému CONSUL?"
