@@ -127,6 +127,9 @@ sv:
           target_4_6:
             long_title: "Senast 2030 säkerställa att alla ungdomar och en väsentlig andel av alla vuxna – både män och kvinnor – lär sig läsa, skriva och räkna."
             short_title: "Allmän läs- och skrivkunnighet"
+          target_4_7:
+            long_title: "Senast 2030 säkerställa att alla studerande får de kunskaper och färdigheter som behövs för att främja en hållbar utveckling, bland annat genom utbildning för hållbar utveckling och hållbara livsstilar, mänskliga rättigheter, jämställdhet, främjande av en kultur av fred, icke-våld och globalt medborgarskap samt värdesättande av kulturell mångfald och kulturens bidrag till hållbar utveckling."
+            short_title: "Utbildning för hållbar utveckling och globalt medborgarskap"
       goal_5:
         title: "Jämställdhet"
         title_in_two_lines: "Jäm-\nställdhet"
@@ -205,6 +208,15 @@ sv:
           target_17_13:
             long_title: "Öka den makroekonomiska stabiliteten i världen, bland annat genom politisk samordning och samstämmig politik."
             short_title: "Öka den makroekonomiska stabiliteten i världen"
+          target_17_14:
+            long_title: "Föra en mer samstämmig politik för hållbar utveckling."
+            short_title: "Föra en mer samstämmig politik för hållbar utveckling"
+          target_17_15:
+            long_title: "Respektera varje lands politiska handlingsutrymme och ledarskap att fastställa och genomföra politik för fattigdomsutrotning och hållbar utveckling."
+            short_title: "Respektera nationellt ledarskap inom genomförandet av politik för målen för hållbar utveckling"
+          target_17_16:
+            long_title: "Stärka det globala partnerskapet för hållbar utveckling och komplettera det med partnerskap mellan flera parter som mobiliserar och utbyter kunskap, expertis, teknik och finansiella resurser, för att bidra till att målen för hållbar utveckling nås i alla länder, i synnerhet utvecklingsländer."
+            short_title: "Stärka det globala partnerskapet för hållbar utveckling"
           target_17_17:
             long_title: "Uppmuntra och främja effektiva offentliga och offentlig-privata partnerskap samt partnerskap inom det civila samhället som bygger på erfarenheterna från andra partnerskap och deras finansieringsstrategier."
             short_title: "Uppmuntra effektiva partnerskap"
