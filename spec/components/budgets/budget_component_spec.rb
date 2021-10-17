@@ -23,16 +23,16 @@ describe Budgets::BudgetComponent do
     it "shows budget main link when defined" do
       render_inline Budgets::BudgetComponent.new(budget)
 
-      within(".budget-header") do
-        expect(page).not_to have_css("a.main-link")
+      page.find(".budget-header") do |header|
+        expect(header).not_to have_css ".main-link"
       end
 
-      budget.update!(main_link_text: "Partitipate now!", main_link_url: "https://consulproject.org")
+      budget.update!(main_link_text: "Participate now!", main_link_url: "https://consulproject.org")
 
       render_inline Budgets::BudgetComponent.new(budget)
 
-      within(".budget-header") do
-        expect(page).to have_css("a.main-link", text: "Participate now!", href: "https://consulproject.org")
+      page.find(".budget-header") do |header|
+        expect(header).to have_link "Participate now!", href: "https://consulproject.org", class: "main-link"
       end
     end
   end
