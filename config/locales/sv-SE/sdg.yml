@@ -124,6 +124,9 @@ sv:
           target_4_5:
             long_title: "Senast 2030 avskaffa skillnaderna mellan könen inom utbildningsområdet och säkerställa lika tillgång till utbildning och yrkesutbildning på alla nivåer för utsatta personer, inklusive personer med funktionsnedsättning, ursprungsfolk och barn som lever under utsatta förhållanden."
             short_title: "Eliminera all diskriminering inom utbildning"
+          target_4_6:
+            long_title: "Senast 2030 säkerställa att alla ungdomar och en väsentlig andel av alla vuxna – både män och kvinnor – lär sig läsa, skriva och räkna."
+            short_title: "Allmän läs- och skrivkunnighet"
       goal_5:
         title: "Jämställdhet"
         title_in_two_lines: "Jäm-\nställdhet"
