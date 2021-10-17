@@ -63,6 +63,7 @@ cs:
     proposals:
       successful_proposal_id: Úspěšný návrh
       poll_short_title: Průzkumy
+      poll_description: Popis hlasování
       poll_link: Odkaz na doplňující informace
       email_short_title: Email
     analytics_url: "Adresa URL služby Analytics"
@@ -100,6 +101,7 @@ cs:
       public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
       help_page: "Stránka nápovědy"
       help_page_description: 'Zobrazí nabídku Nápověda obsahující stránku s informacemi o každé povolené funkci'
+      sdg: SDG
     map:
       latitude: "Zeměpisná šířka"
       latitude_description: "Zeměpisná šířka pro zobrazení pozice na mapě"
