@@ -130,6 +130,9 @@ sv:
           target_4_7:
             long_title: "Senast 2030 säkerställa att alla studerande får de kunskaper och färdigheter som behövs för att främja en hållbar utveckling, bland annat genom utbildning för hållbar utveckling och hållbara livsstilar, mänskliga rättigheter, jämställdhet, främjande av en kultur av fred, icke-våld och globalt medborgarskap samt värdesättande av kulturell mångfald och kulturens bidrag till hållbar utveckling."
             short_title: "Utbildning för hållbar utveckling och globalt medborgarskap"
+          target_4_A:
+            long_title: "Bygga och förbättra utbildningsmiljöer som är anpassade för barn och personer med funktionsnedsättning, samt tar hänsyn till jämställdhetsaspekter och därmed erbjuder en trygg, fredlig, allomfattande och ändamålsenlig lärandemiljö för alla."
+            short_title: "Bygga och förbättra allomfattande och säkra skolor"
       goal_5:
         title: "Jämställdhet"
         title_in_two_lines: "Jäm-\nställdhet"
@@ -145,6 +148,10 @@ sv:
         title_in_two_lines: "Överkomlig och\nren energi"
         description: "Säkerställa tillgång till ekonomiskt överkomlig, tillförlitlig, hållbar och modern energi."
         long_description: '<p>Världen gör <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">framsteg vad beträffar mål 7</a>, med uppmuntrande tecken på att energi blir mer hållbar och allmänt tillgänglig. Tillgången till el i fattigare länder har börjat öka snabbare, energieffektiviteten fortsätter att förbättras och andelen förnybar energi ökar imponerande inom elsektorn.&nbsp;</p> <p>Ändå behövs mer fokuserad uppmärksamhet för att förbättra tillgången till rena och säkra matlagningsbränslen och teknik för 3 miljarder människor, för att utöka användningen av förnybar energi bortom elsektorn och för att öka elektrifieringen i Afrika söder om Sahara.</p> <p>I <a href="https://trackingsdg7.esmap.org/">Lägesrapporten om energi</a> har vi en global instrumentpanel för att registrera framsteg när det gäller tillgång till energi, energieffektivitet och förnybar energi. Den utvärderar de framsteg som varje land har gjort inom dessa tre områden och ger en ögonblicksbild av hur långt vi är från att uppnå delmålen för Globala målen för hållbar utveckling 2030.</p>'
+        targets:
+          target_7_A:
+            long_title: "Till 2030 stärka det internationella samarbetet för att underlätta tillgång till forskning och teknik inom ren energi, inklusive förnybar energi, energieffektivitet samt avancerad och renare fossilbränslebaserad teknik, samt främja investeringar i energiinfrastruktur och ren energiteknik."
+            short_title: "Främja tillgång till forskning, teknik och investeringar inom ren energi "
       goal_8:
         title: "Anständiga arbetsvillkor och ekonomisk tillväxt"
         title_in_two_lines: "Anständiga arbetsvillkor och\nekonomisk tillväxt"
