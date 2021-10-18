@@ -173,6 +173,24 @@ describe "Polls" do
       expect(page).to have_content(proposal_question.title)
     end
 
+    scenario "Questions appear by created at order" do
+      question = create(:poll_question, poll: poll, title: "First question")
+      create(:poll_question, poll: poll, title: "Second question")
+      create(:poll_question, poll: poll, title: "Third question")
+
+      question.update!(title: "First question edited")
+
+      visit polls_path
+
+      expect("First question edited").to appear_before("Second question")
+      expect("Second question").to appear_before("Third question")
+
+      visit poll_path(poll)
+
+      expect("First question edited").to appear_before("Second question")
+      expect("Second question").to appear_before("Third question")
+    end
+
     scenario "Question answers appear in the given order" do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, title: "First", question: question, given_order: 2)
@@ -419,6 +437,18 @@ describe "Polls" do
 
       expect(page).to have_selector "img[alt='1. No Poverty']"
       expect(page).to have_content "target 1.1"
+    end
+
+    scenario "Polls with users same-geozone listed first" do
+      create(:poll, geozone_restricted: true, name: "A Poll")
+      create(:poll, name: "Not restricted")
+      create(:poll, geozone_restricted: true, geozones: [geozone], name: "Geozone Poll")
+
+      login_as(create(:user, :level_two, geozone: geozone))
+      visit polls_path(poll)
+
+      expect("Not restricted").to appear_before("Geozone Poll")
+      expect("Geozone Poll").to appear_before("A Poll")
     end
   end
 
