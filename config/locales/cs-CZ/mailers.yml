@@ -108,8 +108,17 @@ cs:
       text_1: "No, zatím máte podporu %{votes_count} Gratulujeme!"
       text_2: "A tak máte k dispozici nový prostředek, který vám pomůže jít dál."
       text_4: "NOVÁ DOPORUČENÁ ROZPTYLOVÁ AKCE"
+      text_5: "Je toho ještě více, viz následující akce:"
+      footer_text: "Jako vždy vstupte do panelu pro návrhy a my vám podrobně vysvětlíme, jak tyto zdroje používat a jak z nich vytěžit maximum."
+      dashboard_button: "Jen do toho, objevte je!"
     new_actions_notification_on_create:
+      subject: "Váš návrh občanského návrhu je vytvořen"
       hi: "Ahoj %{name}!"
+      introduction: "Váš návrh %{title} byl úspěšně vytvořen."
+      text_1: "Využijte toho, že váš návrh ještě není veřejný, a připravte se na kontaktování mnoha lidí."
+      text_2: "Až budete připraveni, zveřejněte svůj občanský návrh z tohoto <a href='%{link}'>odkazu</a>."
+      text_3: "Víme, že vytvoření návrhu s háčkem a získání potřebné podpory se může zdát složité. Ale nebojte se, protože my vám pomůžeme!"
+      text_4: "Máte nástroj, který bude vaším novým nejlepším spojencem: panel Občanské návrhy."
     new_actions_notification_on_published:
       text_1: "A teď jděte pro prvních 100 podpor!"
       text_2: "Proč 100?"
