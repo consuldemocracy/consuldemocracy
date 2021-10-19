@@ -91,6 +91,7 @@ cs:
           not_logged_in: "Pro vytvoření nové položky participativního rozpočtu musíte %{sign_in} nebo%{sign_up}."
         filter: "Filtrování pprojektů podle"
         filters:
+          not_unfeasible: "Není neproveditelné"
           selected: "Vybrané"
           unfeasible: "Nerealizovatelné"
           unselected: "Nevybráno"
@@ -136,9 +137,26 @@ cs:
         price: "Tato položka má rozpočet"
       votes:
         already_supported: "Tento návrh jste již podpořili. Sdílejte jej!"
+        remove_support: "Odebrat podporu"
+        remove_support_label: "Odeberte svou podporu k %{investment}"
         support: "Podpořte!"
+        support_label: "Podpora %{investment}"
+    investments_list:
+      investment:
+        price: "Cena"
+        read_more: "Čtěte více"
+        supports: "Podporuje"
+      see_all: "Zobrazit všechny investice"
+      title: "Přehled investic"
     show:
       see_results: Zobrazit výsledky
+    supports_info:
+      different: "Můžete podpořit libovolný počet různých projektů."
+      next: "Podpořte projekty, které byste rádi viděli postoupit do další fáze."
+      scrolling: "Projděte si všechny nápady"
+      share: "Projekty, které jste podpořili, můžete sdílet prostřednictvím sociálních médií a přitáhnout k nim více pozornosti a podpory!"
+      supported_not_logged_in: "Přihlaste se a začněte <strong>podporovat projekty</strong>."
+      time: "Do %{phase_end_date} je ještě čas na podporu projektů."
     results:
       link: Výsledky
       page_title: "%{budget} - výsledky"
