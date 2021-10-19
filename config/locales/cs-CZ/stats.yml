@@ -17,6 +17,6 @@ cs:
       total_selected_investments: "Projekty v závěrečné fázi hlasování"
       total_unfeasible_investments: "Neproveditelné projekty"
       by_phase: "Účastníci podle fáze"
-      by_heading: "Účastníci podle fáze a okruhu"
+      by_heading: "Účastníci podle fáze a položky"
       total: "Celkem"
-      heading: "Okruh"
+      heading: "Položka"
