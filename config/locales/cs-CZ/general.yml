@@ -376,10 +376,14 @@ cs:
       group_by_date: Denně
     index:
       edit_proposal_link: Upravit návrh
+      publish: Zveřejnit návrh
       retire: Pozastavený návrh
     new_request:
       links: Odkazy
+    resources:
+      available_resources: Dostupné prostředky
     resource:
+      required_days: "%{days} požadovaných dnů"
       and: a
     recommended_actions:
       title: Doporučení
@@ -482,8 +486,6 @@ cs:
     "no": "Ne"
     search_results: "Výsledky vyhledávání"
     advanced_search:
-      author_type: "Podle kategorie autora"
-      author_type_blank: "Zvolte kategorii"
       date: "Podle stáří"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "Zvolte období"
@@ -494,7 +496,6 @@ cs:
       date_5: "Vlastní nastavení"
       from: "From"
       general: "Obsahující text"
-      general_placeholder: "Napište text"
       search: "Filtr"
       title: "Pokročilé vyhledávání"
       to: "do"
