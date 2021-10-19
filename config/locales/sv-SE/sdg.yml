@@ -148,6 +148,12 @@ sv:
           target_5_1:
             long_title: "Avskaffa alla former av diskriminering av alla kvinnor och flickor överallt."
             short_title: "Avskaffa diskriminering av kvinnor och flickor"
+          target_5_2:
+            long_title: "Avskaffa alla former av våld mot alla kvinnor och flickor i det offentliga och privata rummet, inklusive människohandel, sexuellt utnyttjande och andra typer av exploatering."
+            short_title: "Avskaffa allt våld mot, och exploatering av, och kvinnor och flickor"
+          target_5_3:
+            long_title: "Avskaffa alla skadliga sedvänjor, såsom barnäktenskap, tidiga äktenskap och tvångsäktenskap samt kvinnlig könsstympning."
+            short_title: "Avskaffa tvångsäktenskap och könsstympning"
       goal_6:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
