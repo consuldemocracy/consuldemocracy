@@ -49,12 +49,14 @@ cs:
         accept_terms_text_title: Přijímám podmínky přístupu k základním registrům
         document_number: Číslo dokladu
         document_number_help_title: Nápověda
+        document_number_help_text: "<strong>Číslo občanského průkazu</strong>: AJ12345678<br> <strong>Pas</strong>: AAA000001<br> <strong>řidičský průkaz</strong>: X1234567P"
         document_type:
           passport: Cestovní pas
           residence_card: Občanský průkaz
           spanish_id: Číslo OP
         error_not_allowed_age: Nemáte požadovaný věk pro účast
         error_not_allowed_postal_code: Abyste mohli být ověřeni, musíte se zaregistrovat.
+        error_verifying_census: Nepodařilo se ověřit vaše údaje. Ověřte si prosím správnost svých údajů telefonicky na městském úřadě, nebo navštivte jednu z kanceláří pro podporu občanů.
         form_errors: zabránil ověření vašeho bydliště
         postal_code_note: Chcete-li ověřit svůj účet, že musíte se registrovat
         terms: podmínky přístupu
@@ -71,6 +73,7 @@ cs:
         title: Bezpečnostní kód potvrzení
       new:
         phone: Zadejte číslo svého mobilního telefonu pro získání kódu
+        phone_format: "<strong><em>(příklad: 712345678 nebo +42012345678)</em></strong>"
         phone_note: Váš telefon používáme pouze k zaslání kódu, nikdy vás nebudeme kontaktovat.
         submit_button: Odeslat
         title: Poslat potvrzovací kód
