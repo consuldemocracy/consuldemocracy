@@ -83,9 +83,15 @@ cs:
       subject: "Strojové učení - Při spouštění skriptu došlo k chybě"
       text: "Při spouštění skriptu strojového učení došlo k chybě."
       title: "Skript strojového učení"
+    machine_learning_success:
+      link: "Navštivte panel Strojové učení"
+      subject: "Strojové učení - obsah byl úspěšně vygenerován"
+      text: "Obsah byl úspěšně vygenerován."
+      title: "Skript strojového učení"
     new_actions_notification_rake_created:
       subject: "Další novinky o vašem občanském návrhu"
       hi: "Dobrý den %{name},"
+      new_resource: "NOVÝ ODEMČENÝ PROSTŘEDEK"
       text_5: "Další akce, kterou doporučujeme, je:"
       footer_text: "Jako vždy vstupte do panelu Návrhy a my vám podrobně řekneme, jak tyto zdroje používat a jak z nich co nejlépe vytěžit."
       dashboard_button: "Jen do toho, objevte je!"
