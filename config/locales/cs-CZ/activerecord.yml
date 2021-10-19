@@ -96,6 +96,7 @@ cs:
         voting_style_approval: "Schválení"
         main_link_url: "Odkaz vede na (přidat odkaz)"
       budget/translation:
+        main_link_text: "Text na odkazu"
         name: "Název"
       budget/investment:
         heading_id: "Heading"
@@ -127,6 +128,8 @@ cs:
       geozone:
         name: Název
         external_code: "Externí kód (volitelný)"
+        census_code: "Kód sčítání (nepovinné)"
+        html_map_coordinates: "HTML <map> Souřadnice (nepovinné)"
       milestone:
         status_id: "Aktuální stav (volitelné)"
         title: "Předmět"
@@ -155,16 +158,19 @@ cs:
         name: "Název záhlaví"
         price: "Cena"
         population: "Population"
+        max_ballot_lines: "Povolené hlasy"
       budget/heading/translation:
         name: "Název záhlaví"
       budget/phase:
         enabled: "Fáze je povolena"
         ends_at: "Konečné datum"
         starts_at: "Počáteční datum"
+        main_link_url: "Odkaz vede na (přidat odkaz)"
       budget/phase/translation:
         name: "Název"
         description: "Popis"
         summary: "Souhrn"
+        main_link_text: "Text na odkazu"
       comment:
         body: "Komentář"
         user: "User"
@@ -199,6 +205,9 @@ cs:
         password_confirmation: "Potvrzení hesla"
         password: "Heslo"
         current_password: "Současné heslo"
+        email_digest: "Obdržet souhrn oznámení o návrzích"
+        email_on_comment: "Informujte mě e-mailem, když někdo okomentuje mé návrhy nebo debaty"
+        email_on_comment_reply: "Informujte mě emailem, když někdo odpoví na mé komentáře"
         official_position: "Official position"
         official_level: "Official level"
         phone_number: "Telefon"
