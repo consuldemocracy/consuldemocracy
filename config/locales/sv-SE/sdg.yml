@@ -160,6 +160,12 @@ sv:
           target_5_5:
             long_title: "Tillförsäkra kvinnor fullt och faktiskt deltagande och lika möjligheter till ledarskap på alla beslutsnivåer i det politiska, ekonomiska och offentliga livet."
             short_title: "Tillförsäkra fullt deltagande i ledarskap och beslutsfattande"
+          target_5_6:
+            long_title: "Säkerställa allmän tillgång till sexuell och reproduktiv hälsa och reproduktiva rättigheter i enlighet med överenskommelserna i handlingsprogrammet från den internationella konferensen om befolkning och utveckling, Pekingplattformen samt slutdokumenten från respektive översynskonferenser."
+            short_title: "Allmän tillgång till reproduktiv(a) hälsa och rättigheter"
+          target_5_A:
+            long_title: "Genomföra reformer för att ge kvinnor lika rätt till ekonomiska resurser, möjlighet att äga och kontrollera mark och andra former av egendom samt tillgång till finansiella tjänster, arv och naturresurser, i enlighet med nationell lagstiftning."
+            short_title: "Lika rätt till ekonomiska resurser, ägande av egendom, samt tillgång till finansiella tjänster"
       goal_6:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
