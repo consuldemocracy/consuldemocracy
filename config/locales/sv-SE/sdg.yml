@@ -157,6 +157,9 @@ sv:
           target_5_4:
             long_title: "Erkänna och värdesätta obetalt omsorgs- och hushållsarbete genom att tillhandahålla offentliga tjänster, infrastruktur och socialt skydd samt genom att främja delat ansvar inom hushållet och familjen, i enlighet med vad som är nationellt lämpligt."
             short_title: "Värdesätta obetald vård och främja delat ansvar inom hushållet"
+          target_5_5:
+            long_title: "Tillförsäkra kvinnor fullt och faktiskt deltagande och lika möjligheter till ledarskap på alla beslutsnivåer i det politiska, ekonomiska och offentliga livet."
+            short_title: "Tillförsäkra fullt deltagande i ledarskap och beslutsfattande"
       goal_6:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
@@ -237,6 +240,12 @@ sv:
           target_17_8:
             long_title: "Senast 2017 fullt ut operationalisera teknikbanken och mekanismen för kapacitetsuppbyggnad inom vetenskap, teknik och innovation för de minst utvecklade länderna samt öka användningen av möjliggörande teknik, i synnerhet informations- och kommunikationsteknik."
             short_title: "Stärka kapaciteten för vetenskap, teknik och innovation för de minst utvecklade länderna"
+          target_17_11:
+            long_title: "Avsevärt öka utvecklingsländernas export, i synnerhet i syfte att fördubbla de minst utvecklade ländernas andel av den globala exporten till 2020."
+            short_title: "Öka utvecklingsländernas export"
+          target_17_12:
+            long_title: "Tidigt genomförande av tull- och kvotfritt marknadstillträde på varaktig grund för alla de minst utvecklade länderna, i överensstämmelse med beslut från Världshandelsorganisationen, bland annat genom att säkerställa att förmånliga ursprungsregler som gäller för import från de minst utvecklade länderna är transparenta och enkla, och bidrar till att underlätta marknadstillträde."
+            short_title: "Avskaffa handelshinder för de minst utvecklade länderna"
           target_17_13:
             long_title: "Öka den makroekonomiska stabiliteten i världen, bland annat genom politisk samordning och samstämmig politik."
             short_title: "Öka den makroekonomiska stabiliteten i världen"
