@@ -54,6 +54,7 @@ cs:
       other:
         title: "Další zajímavé informace"
         how_to_use: "Použijte %{org_name} ve vašem městě"
+        sdg: "Cíle udržitelného rozvoje - nápověda"
       how_to_use:
         text: |-
           Použijte tento program ve své lokalitě, nebo nám ho pomozte zlepšit, je to svobodný software.
@@ -157,6 +158,7 @@ cs:
               description_column: Zmenšit velikost textu
       compatibility:
         title: Kompatibilita se standardy a vizuální design
+        description: 'Všechny stránky tohoto webu splňují <strong>Pokyny pro přístupnost</strong> neboli Obecné zásady přístupného designu stanovené pracovní skupinou <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> patřící pod W3C.'
     titles:
       help: "Co je %{org}? - Zapojování občanů"
     verify:
