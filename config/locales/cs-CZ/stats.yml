@@ -1,1 +1,9 @@
 cs:
+  stats:
+    title: "Data o účasti"
+    advanced: "Pokročilé statistiky"
+    total_participants: "Účastníci"
+    by_gender: "Účastníci podle pohlaví"
+    by_age: "Účastníci podle věku"
+    by_geozone: "Účastníci podle okresu"
+    men_percentage: "%{percentage} Muži"
