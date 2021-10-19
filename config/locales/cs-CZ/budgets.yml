@@ -92,7 +92,7 @@ cs:
             knapsack: "Můžete %{link} kdykoli před %{phase_end_date}. Není třeba utrácet všechny dostupné peníze."
             approval: "Můžete %{link} kdykoli až do %{phase_end_date}."
           change_vote_link: "změnit své hlasování"
-          different_heading_assigned: "Už jste hlasoval v jiné kapitole: %{heading_link}"
+          different_heading_assigned: "Už jste hlasovali v jiné položce: %{heading_link}"
           change_ballot: "Pokud změníte názor, můžete odebrat své hlasy v %{check_ballot} a začít znovu."
           check_ballot_link: "kontrola mého hlasování"
           zero: V této skupině jste nehlasovali pro žádný investiční projekt.
