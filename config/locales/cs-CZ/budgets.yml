@@ -90,6 +90,7 @@ cs:
           my_ballot: Moje hlasování
           change_vote_info:
             knapsack: "Můžete %{link} kdykoli před %{phase_end_date}. Není třeba utrácet všechny dostupné peníze."
+            approval: "Můžete %{link} kdykoli až do %{phase_end_date}."
           change_vote_link: "změnit své hlasování"
           different_heading_assigned: "Už jste hlasoval v jiné kapitole: %{heading_link}"
           change_ballot: "Pokud změníte názor, můžete odebrat své hlasy v %{check_ballot} a začít znovu."
@@ -166,6 +167,7 @@ cs:
       share: "Projekty, které jste podpořili, můžete sdílet prostřednictvím sociálních médií a přitáhnout k nim více pozornosti a podpory!"
       supported_not_logged_in: "Přihlaste se a začněte <strong>podporovat projekty</strong>."
       time: "Do %{phase_end_date} je ještě čas na podporu projektů."
+      title: "Je čas <strong>podpořit</strong> projekty!"
     results:
       link: Výsledky
       page_title: "%{budget} - výsledky"
