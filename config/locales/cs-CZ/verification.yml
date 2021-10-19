@@ -17,6 +17,9 @@ cs:
     letter:
       alert:
         unconfirmed_code: Doposud jste nezadali žádný potvrzovací kód
+      create:
+        flash:
+          success: Děkujeme, že jste si vyžádali <b>maximální bezpečnostní kód (nutný pouze pro závěrečné hlasování)</b>. Během několika dní vám jej zašleme na adresu uvedenou v údajích, které máme v souboru. Nezapomeňte prosím, že pokud si přejete, můžete si kód vyzvednout na kterémkoli úřadě pro podporu občanů.
       edit:
         see_all: Zobrazit návrhy
         title: Dopis požadován
