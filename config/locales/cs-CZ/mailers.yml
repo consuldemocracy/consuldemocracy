@@ -119,6 +119,8 @@ cs:
       text_2: "Až budete připraveni, zveřejněte svůj občanský návrh z tohoto <a href='%{link}'>odkazu</a>."
       text_3: "Víme, že vytvoření návrhu s háčkem a získání potřebné podpory se může zdát složité. Ale nebojte se, protože my vám pomůžeme!"
       text_4: "Máte nástroj, který bude vaším novým nejlepším spojencem: panel Občanské návrhy."
+      list_1: "Vstupte každý den do panelu svého návrhu a využijte tipy a zdroje, o které se s vámi podělíme."
+      list_2: "Tyto tipy, akce a zdroje vám poskytnou nápady a také praktická řešení, jak získat větší podporu a širší komunitu. Nezapomeňte na ně!"
     new_actions_notification_on_published:
       text_1: "A teď jděte pro prvních 100 podpor!"
       text_2: "Proč 100?"
