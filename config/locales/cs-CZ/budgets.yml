@@ -4,6 +4,8 @@ cs:
       show:
         title: Vaše hlasování
         amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Stále máte k dispozici <span>%{count}</span>"
         amount_limit:
           knapsack: "%{count}"
         no_balloted_group_yet: "Dosud jste o této skupině nehlasovali, hlasujte!"
