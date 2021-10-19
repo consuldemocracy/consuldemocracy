@@ -154,6 +154,9 @@ sv:
           target_5_3:
             long_title: "Avskaffa alla skadliga sedvänjor, såsom barnäktenskap, tidiga äktenskap och tvångsäktenskap samt kvinnlig könsstympning."
             short_title: "Avskaffa tvångsäktenskap och könsstympning"
+          target_5_4:
+            long_title: "Erkänna och värdesätta obetalt omsorgs- och hushållsarbete genom att tillhandahålla offentliga tjänster, infrastruktur och socialt skydd samt genom att främja delat ansvar inom hushållet och familjen, i enlighet med vad som är nationellt lämpligt."
+            short_title: "Värdesätta obetald vård och främja delat ansvar inom hushållet"
       goal_6:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
