@@ -6,10 +6,17 @@ cs:
         amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
           knapsack: "Stále máte k dispozici <span>%{count}</span>"
+          approval:
+            zero: "Stále máte možnost odevzdat <span>%{count}</span> hlasy."
+        amount_spent:
+          knapsack: "Utracená částka <span>%{count}</span>"
+          approval:
+            zero: "Odevzdaných hlasů: <span>%{count}</span>"
         amount_limit:
           knapsack: "%{count}"
         no_balloted_group_yet: "Dosud jste o této skupině nehlasovali, hlasujte!"
         remove: Odstranit hlas
+        voted_info: "Vaše hlasování je potvrzeno!"
         voted_info_2: "Hlas však můžete kdykoli změnit, dokud nebude tato fáze uzavřena."
         zero: Nehlasoval jste pro žádný investiční projekt.
       reasons_for_not_balloting:
