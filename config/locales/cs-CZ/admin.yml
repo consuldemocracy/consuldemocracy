@@ -86,6 +86,9 @@ cs:
       destroy:
         success_notice: Rozpočet byl smazán
         unable_notice: Nemůžete odstranit rozpočet, který je propojený s investicemi
+      help:
+        headings:
+          multiple: "Položky mají rozdělit peníze participativního rozpočtu. Zde můžete přidat položky pro tuto skupinu a přiřadit částku peněz, která bude použita pro každou položku."
       winners:
         calculate: Vypočítat vítěznou investici
         calculated: Výpočet vítězných investic může chvíli trvat.
@@ -219,6 +222,11 @@ cs:
         tags_placeholder: "Napište štítky které chcete a oddělte je čárkami (,)"
         undefined: Nedefinováno
       search_unfeasible: Hledat neproveditelné
+    budgets_wizard:
+      headings:
+        continue: "Pokračovat k fázím"
+      heading_mode:
+        title: "Typ participativního rozpočtu"
     milestones:
       index:
         table_title: "Předmět"
