@@ -208,10 +208,16 @@ cs:
         email_digest: "Obdržet souhrn oznámení o návrzích"
         email_on_comment: "Informujte mě e-mailem, když někdo okomentuje mé návrhy nebo debaty"
         email_on_comment_reply: "Informujte mě emailem, když někdo odpoví na mé komentáře"
+        email_on_direct_message: "Přijímání e-mailů o přímých zprávách"
+        newsletter: "Přijímání relevantních informací o webových stránkách e-mailem"
         official_position: "Official position"
+        official_position_badge: "Zobrazit odznak úřední pozice"
         official_level: "Official level"
         phone_number: "Telefon"
         public_activity: "Udržet seznam mých aktivit veřejný"
+        public_interests: "Udržet prvky, které sleduji, veřejné"
+        recommended_debates: "Zobrazit doporučení k debatám"
+        recommended_proposals: "Zobrazit doporučení k návrhům"
         redeemable_code: "Verification code received via email"
       direct_message:
         title: "Předmět"
@@ -221,6 +227,7 @@ cs:
         responsible_name: "Osoba zodpovědná za organizaci či skupinu"
       poll:
         name: "Název"
+        title: "Jméno"
         starts_at: "Start Date"
         ends_at: "Closing Date"
         geozone_restricted: "Restricted by geozone"
@@ -246,6 +253,7 @@ cs:
       poll/ballot_sheet:
         data: CSV data
         poll_id: Průzkum
+        officer_assignment_id: Přidělení úředníka
       poll/shift:
         task: "Úkol"
       proposal_notification:
@@ -256,12 +264,20 @@ cs:
         signable_type: "Signable type"
         signable_id: "Signable ID"
         document_numbers: "Documents numbers"
+      sdg/goal:
+        code: "Kód"
+        title: "Název"
+        description: "Popis"
       sdg/local_target:
+        code: "Kód"
+        target_id: "Cíl"
         title: "Nadpis"
       sdg/local_target/translation:
         title: "Nadpis"
         description: "Popis"
       sdg/phase/kind:
+        sensitization: "Senzibilizace"
+        planning: "Plánování"
         monitoring: "Monitoring"
       sdg/target:
         code: "Kód"
@@ -404,8 +420,13 @@ cs:
         short_description: Krátký popis
         description: Popis
         link: Externí odkaz
+        request_to_administrators: Zahrnout do zdroje tlačítko pro vyžádání zdroje od správců
+        day_offset: Kolik dní po vytvoření návrhu chcete, aby byl aktivován?
+        required_supports: Kolik podpory musí návrh získat, aby byl aktivován?
+        order: Můžete zadat pozici, na které se tato akce zobrazí uživateli v seznamu akcí
         active: Aktivní
         action_type: Typ
+        action_type_proposed_action: "Navrhované opatření"
       dashboard/administrator_task:
         source: Zdroj
       link:
