@@ -28,6 +28,7 @@ cs:
       comment: Připomínky k návrhu
       unsubscribe: "Pokud nechcete dostávat oznámení o návrhu, přejděte na adresu %{account} a zrušte zaškrtnutí políčka \"Příjem oznámení o návrzích\"."
       unsubscribe_account: Můj účet
+      unfollow: "Navštivte tento návrh a zrušte jeho sledování, abyste přestali dostávat oznámení."
     direct_message_for_receiver:
       subject: "Obdrželi jste novou soukromou zprávu"
       reply: Odpovědět uživateli %{sender}
@@ -72,8 +73,16 @@ cs:
       thanks: "Ještě jednou děkujeme za vaši účast."
       sincerely: "S pozdravem"
     evaluation_comment:
+      subject: "Nový komentář k hodnocení"
+      title: Nový hodnotící komentář pro %{investment}
       hi: Dobrý den
+      new_comment_by: K rozpočtové investici %{investment} přibyl nový hodnotící komentář od <strong>%{commenter}</strong>
       commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Navštivte panel Strojové učení"
+      subject: "Strojové učení - Při spouštění skriptu došlo k chybě"
+      text: "Při spouštění skriptu strojového učení došlo k chybě."
+      title: "Skript strojového učení"
     new_actions_notification_rake_created:
       subject: "Další novinky o vašem občanském návrhu"
       hi: "Dobrý den %{name},"
