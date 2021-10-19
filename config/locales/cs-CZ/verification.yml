@@ -28,6 +28,7 @@ cs:
       new:
         explanation: "Pro účast na finálním hlasování může:"
         go_to_index: Zobrazit návrhy
+        office: Ověřte na všech úřadech pro podporu občanů
         send_letter: Pošlete mi dopis s kódem
         title: Blahopřejeme!
         user_permission_info: S vaším účtem můžete...
