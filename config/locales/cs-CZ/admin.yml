@@ -870,6 +870,11 @@ cs:
       email_verification:
         title: "Ověření e-mailu"
         description: "Odesláno novému uživateli k ověření jeho účtu."
+      user_invite:
+        title: "Pozvání uživatele"
+        description: "Odesláno osobě, která byla vyzvána k registraci účtu."
+      evaluation_comment:
+        title: "Nový hodnotící komentář"
     emails_download:
       index:
         title: Stahování e-mailů
