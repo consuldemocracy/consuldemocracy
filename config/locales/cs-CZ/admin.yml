@@ -1009,6 +1009,7 @@ cs:
         title: Návrhy
         id: ID
         author: Autor
+        select: Vybrat
         milestones: Milníky
         no_proposals: Neexistují žádné návrhy.
     hidden_proposals:
@@ -1020,12 +1021,22 @@ cs:
           without_confirmed_hide: Nevyřízený
         title: Skryté návrhy
         no_hidden_proposals: Nemáte žádné skryté návrhy.
+    hidden_proposal_notifications:
+      index:
+        filters:
+          all: Vše
+          with_confirmed_hide: Potvrzeno
+          without_confirmed_hide: Nevyřízeno
+        title: Skrytá upozornění
+        no_hidden_proposals: Nemáte žádná skrytá upozornění.
     settings:
       flash:
         updated: Hodnota aktualizována
       index:
         title: Nastavení konfigurace
+        general: Nastavení konfigurace
         update_setting: Aktualizovat
+        images_and_documents: "Obrázky a dokumenty"
         feature_flags: Doporučené
         features:
           enabled: "Funkce povolena"
@@ -1036,6 +1047,8 @@ cs:
             update: Nastavení mapy bylp úspěšně aktualizováno.
           form:
             submit: Aktualizovat
+        sdg:
+          title: SDG konfigurace
       setting: Vlastnosti
       setting_name: Nastavení
       setting_value: Value
@@ -1044,6 +1057,13 @@ cs:
       true_value: "Ano"
       false_value: "Ne"
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Všechny Cíle"
+            label: "Podle Cílů"
+          sdg_targets:
+            all: "Všechny záměry"
+            label: "Podle záměru"
         label:
           booths: "Vyhledat informační stánek podle jména"
           organizations: "Jméno, email nebo telefonní číslo"
@@ -1051,6 +1071,7 @@ cs:
           poll_questions: "Vyhledat otázky ankety"
           proposals: "Vyhledat návrhy podle názvu, kódu, popisu nebo otázky"
           users: "Vyhledat uživatele podle jména nebo e-mailu"
+        search: "Hledat"
       search_results: "Výsledky vyhledávání"
       no_search_results: "Nebyly nalezeny žádné výsledky."
       actions: Akce
@@ -1065,6 +1086,7 @@ cs:
       content: Obsah
       created_at: Vytvořeno v
       color_help: Hexadecimální formát
+      example_url: "https://consulproject.org"
       show_results_and_stats: "Zobrazit výsledky a statistiky"
       results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
     geozones:
@@ -1099,6 +1121,8 @@ cs:
         title: Nové podpisové archy
         document_numbers_note: "Napište čísla oddělené čárkou (,)"
         submit: Vytvořit podpisový arch
+        text_help:
+          example_text: "Příklad: "
       show:
         created_at: Vytvořen
         author: Autor
@@ -1315,15 +1339,19 @@ cs:
         card_title: Upravit kartu
         submit_card: Uložit kartu
     audits:
+      changes: "Seznam změn"
       id: "ID"
       field: "Pole"
       new_value: "Nová hodnota"
       old_value: "Stará hodnota"
+      actions: "Akce"
     local_census_records:
       index:
         document_type: Typ dokumentu
         date_of_birth: Datum narození
       imports:
+        show:
+          created: Vytvořené záznamy
         local_census_records:
           no_records_found: Nenalezeny žádné záznamy.
     machine_learning:
