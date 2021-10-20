@@ -918,6 +918,7 @@ cs:
         abilities: "Schopnosti"
         no_description: "Bez popisu"
         no_group: "Bez skupiny"
+        no_abilities: "Bez schopností"
     valuator_groups:
       index:
         title: "Skupiny hodnotitelů"
@@ -943,6 +944,7 @@ cs:
       search:
         email_placeholder: Vyhledat uživatele podle emailu
         user_not_found: Uživatel nenalezen
+        help: "Chcete-li přidat nebo odebrat úředníky pro průzkum, použijte níže uvedený vyhledávací formulář."
     poll_officer_assignments:
       index:
         officers_title: "Seznam úředníků"
@@ -1048,6 +1050,10 @@ cs:
       flash:
         question_added: "Otázka přidána k této anketě"
         error_on_question_added: "Otázku nelze přiřadit k této anketě"
+      destroy:
+        alert: "Tato akce odstraní průzkum a všechny související otázky."
+        success_notice: "Průzkum byl úspěšně smazán"
+        unable_notice: "Nelze smazat průzkum, který má hlasy"
     questions:
       index:
         title: "Otázky"
@@ -1065,6 +1071,7 @@ cs:
       edit:
         title: "Upravit dotaz"
       new:
+        title: "Vytvořit otázku do průzkumu %{poll}"
         title_proposal: "Vytvořit otázku"
       answers:
         images:
@@ -1114,6 +1121,8 @@ cs:
       index:
         title: "Přepočítat"
         no_recounts: "Není nic k přepočítání"
+        all_booths_total: "Kumulativní součet ze všech stánků:"
+        total_final: "Konečné přepočty"
         table_booth_name: "Informační stánek"
         table_total_recount: "Celkový přepočet (úředníkem)"
         table_system_count: "Hlasů (automaticky)"
