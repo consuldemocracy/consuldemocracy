@@ -474,7 +474,12 @@ cs:
         new_link: "Přidat nový dokument"
         no_documents: "Nejsou žádné dokumenty."
         title: "Dokumenty"
+        format: "Formát"
+        size: "Velikost"
         url: "URL"
+      create:
+        success_notice: "Dokument byl úspěšně nahrán"
+        unable_notice: "Neplatný dokument"
       destroy:
         success_notice: "Dokument byl úspěšně smazán"
     hidden_users:
