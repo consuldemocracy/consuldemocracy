@@ -416,10 +416,26 @@ cs:
           default:
             email: Email
             polls: Průzkumy
+        new:
+          creating: Nová akce pro ovládací panel návrhů
+          back: Zpět na seznam
+        create:
+          notice: Akce byla úspěšně vytvořena
+        edit:
+          editing: Úprava akce pro ovládací panel návrhů
+          back: Zpět na seznam
+        delete:
+          success: Akce úspěšně odstraněna
         form:
           submit_button: Uložit
+          help_text: Zadejte 0, aby tato hodnota nebyla brána v úvahu
+          published_proposal_help_text: Zaškrtněte toto políčko, chcete-li vytvořit akci pouze pro zveřejněné návrhy
       administrator_tasks:
         index:
+          description: "Prostředky zveřejněné v ovládacím panelu návrhů mohou obsahovat tlačítko pro vyžádání u správců. Požadavky uživatelů jsou zobrazeny níže."
+          title: Požadované prostředky
+          solve: Vyřešit
+          no_records: Nejsou požadovány žádné prostředky
           source: Zdroj
           filter: Filtr
           filters:
