@@ -656,6 +656,12 @@ cs:
         add: Přidat
       search:
         title: "Manažeři: Vyhledávání uživatelů"
+    sdg_managers:
+      index:
+        no_sdg_managers: Nejsou žádní uživatelé.
+    sdg/managers:
+      sdg/manager:
+        add: Přidat
     menu:
       activity: Aktivity moderátora
       admin: Admin menu
