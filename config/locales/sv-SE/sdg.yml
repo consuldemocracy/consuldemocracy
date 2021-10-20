@@ -166,6 +166,12 @@ sv:
           target_5_A:
             long_title: "Genomföra reformer för att ge kvinnor lika rätt till ekonomiska resurser, möjlighet att äga och kontrollera mark och andra former av egendom samt tillgång till finansiella tjänster, arv och naturresurser, i enlighet med nationell lagstiftning."
             short_title: "Lika rätt till ekonomiska resurser, ägande av egendom, samt tillgång till finansiella tjänster"
+          target_5_B:
+            long_title: "Öka användningen av möjliggörande teknik, i synnerhet informations- och kommunikationsteknik, för att främja kvinnors egenmakt."
+            short_title: "Främja kvinnors egenmakt genom teknik"
+          target_5_C:
+            long_title: "Anta och stärka välgrundad politik och genomförbar lagstiftning för att främja jämställdhet och öka alla kvinnors och flickors egenmakt på alla nivåer."
+            short_title: "Anta och stärka politik och genomförbar lagstiftning för jämställdhet"
       goal_6:
         title: "Rent vatten och sanitet"
         title_in_two_lines: "Rent vatten\noch sanitet"
