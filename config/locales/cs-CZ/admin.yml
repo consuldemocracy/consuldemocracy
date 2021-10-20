@@ -843,8 +843,21 @@ cs:
         title: "Upozornění k návrhu - Přehled"
         description: "Shromažďuje všechny oznámení o návrzích pro uživatele v jedné zprávě, aby se zabránilo odesílání velkého množství e-mailů."
         preview_detail: "Uživatelé budou přijímat pouze oznámení od návrhů, které sledují"
+      budget_investment_created:
+        title: "Vytvořená rozpočtová investice"
+        description: "Odesláno, když uživatel vytvoří rozpočtovou investici."
+      budget_investment_selected:
+        title: "Vybrané rozpočtové investice"
+        description: "Odesláno autorovi, když byla vybrána jeho rozpočtová investice."
+      budget_investment_unfeasible:
+        title: "Neuskutečnitelná rozpočtová investice"
+        description: "Odesláno autorovi, pokud byla jeho rozpočtová investice označena jako nerealizovatelná."
+      budget_investment_unselected:
+        title: "Nevybraná rozpočtová investice"
+        description: "Odesláno autorovi, pokud jeho rozpočtová investice nebyla vybrána do fáze hlasování."
       comment:
         title: "Komentář"
+        description: "Odesláno autorovi, když obdrží komentář."
       reply:
         title: "Odpovědět"
     emails_download:
