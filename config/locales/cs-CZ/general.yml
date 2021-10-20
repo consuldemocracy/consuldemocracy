@@ -728,3 +728,8 @@ cs:
     nested_links:
       title: Odkazy
       add_new_link: Přidat nový odkaz
+  remote_translations:
+    button: Přeložit stránku
+  machine_learning:
+    comments_summary: "Souhrn komentářů"
+    info_text: "Obsah generovaný umělou inteligencí / strojovým učením"
