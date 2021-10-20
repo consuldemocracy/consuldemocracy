@@ -672,6 +672,7 @@ cs:
       hidden_users: Skrýt uživatele
       administrators: Administrátoři
       managers: Manažeři
+      sdg_managers: Manažeři SDG
       moderators: Moderátoři
       messaging_users: Zprávy uživatelům
       newsletters: Informační bulletiny
@@ -690,17 +691,20 @@ cs:
       stats: Statistiky
       signature_sheets: Podpisové archy
       site_customization:
+        documents: Vlastní dokumenty
         homepage: Úvodní strana
         pages: Vlastní stránky
         images: Vlastní obrázky
         content_blocks: Vlastní bloky obsahu
         information_texts: Vlastní informační texty
         information_texts_menu:
+          basic: "Základní přizpůsobení"
           debates: "Debaty"
           community: "Připojte se ke komunitě"
           proposals: "Návrhy"
           polls: "Průzkum"
           layouts: "Rozložení"
+          machine_learning: "AI / strojové učení"
           mailers: "E-maily"
           management: "Správa"
           welcome: "Vítejte"
@@ -715,8 +719,13 @@ cs:
       title_booths: Hlasovací informační stánky
       legislation: Participativní legislativní proces
       users: Uživatelé
+      dashboard: Ovládací panel návrhů
+      administrator_tasks: Požadované prostředky
+      dashboard_actions: Prostředky a akce
       debates: "Debaty"
       comments: "Komentáře"
+      local_census_records: Správa místního sčítání lidu
+      machine_learning: "AI / strojové učení"
     administrators:
       index:
         title: Administrátoři
