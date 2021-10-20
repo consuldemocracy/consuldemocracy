@@ -450,12 +450,13 @@ cs:
           proposal: Návrh
           request: Požadovaný prostředek
         update:
-          success: Úloha byla označena jako vyřešená.
+          success: Úkol byl označen jako vyřešený.
     debates:
       index:
         id: ID
         author: Autor
         title: Skryté debaty
+        no_debates: Žádné debaty neprobíhají.
     hidden_debates:
       index:
         filter: Filtr
@@ -467,9 +468,11 @@ cs:
         no_hidden_debates: Nejsou žádné skryté debaty.
     documents:
       new:
+        title: "Nahrát dokument"
         submit_button: "Nahrát"
       index:
         new_link: "Přidat nový dokument"
+        no_documents: "Nejsou žádné dokumenty."
         title: "Dokumenty"
         url: "URL"
       destroy:
