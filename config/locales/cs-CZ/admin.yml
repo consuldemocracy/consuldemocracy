@@ -85,21 +85,36 @@ cs:
         table_name: Název
         table_phase: Fáze
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Vícenásobné položky"
+        type_pending: "Čekající: Zatím žádné položky"
+        type_single: "Jednotlivé položky"
         edit_groups: Upravit záhlaví skupiny
         no_budgets: "Neexistují žádné rozpočty."
       create:
         notice: Nový participativní rozpočet byl úspěšně vytvořen!
       update:
         notice: Participativní rozpočet byl úspěšně aktualizován
+      publish:
+        notice: "Participativní rozpočet byl úspěšně zveřejněn"
       edit:
         title: Upravit participativní rozpočet
+        drafting: "Tento participativní rozpočet je v režimu návrhu, na veřejných stránkách jej mohou vidět pouze správci. Jakmile je jednou zveřejněn, nelze jej znovu přepnout do režimu návrhu."
+        publish: "Zveřejnit rozpočet"
         delete: Odstranit rozpočet
         phase: Fáze
         phases_caption: "Fáze"
+        duration: "Trvání"
         enabled: Povolit
         actions: Akce
+        enable_phase: "Povolit fázi %{phase}"
         active: Aktivní
         blank_dates: Data jsou prázdné
+        administrators:
+          zero: "Vybrat správce"
+        valuators:
+          zero: "Vybrat hodnotitele"
+        empty_administrators: "Nejsou zde žádní správci"
+        empty_valuators: "Nemáte žádné hodnotitele"
       destroy:
         success_notice: Rozpočet byl smazán
         unable_notice: Nemůžete odstranit rozpočet, který je propojený s investicemi
@@ -147,11 +162,15 @@ cs:
         submit: "Uložit hadpisy"
       index:
         back: "Jít zpět do skupin"
+        title: "%{budget} / %{group} položky"
     budget_phases:
       edit:
         title: "Upravit fázi"
         description_help_text: Tento text bude zobrazen v záhlaví, když je fáze aktivní
+        duration: "Trvání fáze"
+        duration_description: "Doba, po kterou bude tato fáze aktivní."
         enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
+        image_description: "Pokud je obrázek nahrán, zobrazí se vedle popisu této fáze."
         save_changes: Uložit změny
     budget_investments:
       index:
