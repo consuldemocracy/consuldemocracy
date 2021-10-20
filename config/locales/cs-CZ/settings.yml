@@ -74,6 +74,7 @@ cs:
       facebook_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Facebook"
       google_login: "Přihlášení Google"
       google_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Google"
+      wordpress_login: "Přihlášení do Wordpressu"
       featured_proposals: "Doporučené návrhy"
       featured_proposals_description: "Zobrazit doporučené návrhy na hlavní stránce návrhů"
       signature_sheets: "Podpisové archy"
@@ -89,6 +90,7 @@ cs:
         recommendations_on_proposals_description: "Zobrazit doporučení uživatelů na stránce návrhů na základě štítků sledovaných položek"
       community: "Komunita kolem návrhů a investic"
       community_description: "Povolit sekci komunit v návrzích a investičních projektech participativního rozpočtu"
+      machine_learning: "AI / Machine learning"
       map: "Provádět geolokaci návrhů a projektů rozpočtu"
       map_description: "Povolit geolokaci návrhů a investičních projektů"
       allow_images: "Umožnit nahrát a zobrazit obrázky"
@@ -101,6 +103,7 @@ cs:
       public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
       help_page: "Stránka nápovědy"
       help_page_description: 'Zobrazí nabídku Nápověda obsahující stránku s informacemi o každé povolené funkci'
+      graphql_api: "GraphQL API"
       sdg: SDG
     map:
       latitude: "Zeměpisná šířka"
@@ -109,8 +112,12 @@ cs:
       longitude_description: "Zeměpisná délka pro zobrazení pozice na mapě"
       zoom: "Zvětšení"
       zoom_description: "Zvětšení pro zobrazení pozice na mapě"
+    process:
+      debates: "Debaty"
     uploads:
       images:
+        min_width: "Minimální šířka obrázku"
+        min_height: "Minimální výška obrázku"
         max_size: "Maximální velikost obrázku"
         max_size_description: "Maximální povolená velikost pro nahraný obrázek (v megabajtech / MB)"
         content_types: "Přijímané typy obsahu pro obrázky"
