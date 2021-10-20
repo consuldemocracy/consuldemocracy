@@ -34,6 +34,8 @@ cs:
       moderator: Moderátor
       responses:
         zero: Žádné odezvy
+      responses_collapse:
+        zero: Žádné odezvy
       user_deleted: Uživatel smazán
       votes:
         zero: Žádné hlasy
@@ -137,11 +139,14 @@ cs:
     error: chyba
     errors: chyby
     policy: Zásady ochrany osobních údajů
+    banner: proužek
     proposal: Návrhy
     proposal_notification: "upozornění"
     budget/investment: Investice
     budget/group: Rozpočtová skupina
     budget/heading: Rozpočtová skupina
+    legislation/draft_version: návrh
+    legislation/process: proces
     poll/shift: Posun
     poll/question/answer: Answer
     user: Účet
@@ -159,7 +164,11 @@ cs:
       ie: Zjistili jsme, že prohlížíte aplikaci Internet Explorer. Pro rozšířené zkušenosti doporučujeme použít %{firefox} nebo %{chrome}.
       ie_title: Tato webová stránka není optimalizována pro váš prohlížeč
     dashboard:
+      proposal_header:
+        published: Publikováno
+        draft: Návrh
       proposal_totals:
+        show_proposal: Zobrazit návrh
         supports:
           zero: Žádná podpora
     footer:
@@ -196,6 +205,7 @@ cs:
         new_notifications:
           zero: "Nemáte žádná nová upozornění"
         notifications: Upozornění
+      sdg: "SDG"
   notifications:
     index:
       empty_notifications: Nemáte nová upozornění.
@@ -229,6 +239,8 @@ cs:
       sign_in: Přihlásit se pomocí služby Twitter
       sign_up: Přihlásit se pomocí služby Twitter
       name: Twitter
+    info:
+      sign_in: "Přihlásit se pomocí:"
     or_fill: "Nebo vyplňte následující formulář:"
   proposals:
     create:
@@ -284,6 +296,7 @@ cs:
           error: "Jejda, chyba. Přejděte na stránku 'Můj účet', abyste ručně deaktivovali doporučení pro návrhy"
       retired_proposals: Pozastavené návrhy
       retired_proposals_link: "Pozastavené návrhy tříděné podle autorů"
+      proposals_lists: Seznamy návrhů
       retired_links:
         all: Vše
         duplicated: Duplicitní
@@ -343,6 +356,7 @@ cs:
       comments:
         zero: Žádné komentáře
       comments_tab: Komentáře
+      dashboard_proposal_link: Ovládací panel
       flag: Tento návrh byl více uživateli označen jako nevhodný.
       notifications_tab: Upozornění
       milestones_tab: Milníky
@@ -374,6 +388,7 @@ cs:
       group_by_month: Měsíčně
       group_by_week: Týdně
       group_by_date: Denně
+      supports: Podpory
     index:
       edit_proposal_link: Upravit návrh
       publish: Zveřejnit návrh
@@ -391,6 +406,7 @@ cs:
       pending_title: Nevyřízený
       done_title: Hotovo
     community:
+      participants: Účastníci
       debates: Debaty
       comments: Komentáře
     polls:
@@ -410,6 +426,19 @@ cs:
         add_question: Přidat otázku
       question_fields:
         remove_question: Odstranit otázku
+        add_answer: Přidat odpověď
+      question_answer_fields:
+        remove_answer: Odebrat odpověď
+    poster:
+      options:
+        preview: Náhled
+        download: Stáhnout
+    mailing:
+      mailing_options:
+        preview: Náhled
+    mailer:
+      forward:
+        hi: "Dobrý den!"
   polls:
     all: "Vše"
     no_dates: "není přiřazené datum"
@@ -548,6 +577,10 @@ cs:
       title: Doporučení
       see_more: Další doporučení
       hide: Skrýt doporučení
+    translations:
+      select_language_prompt: Vybrat jazykovou sadu
+      remove_language: Odstranit jazykovou sadu
+      add_language: Přidat jazykovou sadu
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -603,6 +636,7 @@ cs:
       draft: Návrh
       published: Publikováno
       see: "Zobrazit návrh"
+      actions: Akce
   votes:
     agree: Souhlasím
     anonymous: Příliš mnoho anonymních hlasů k přijetí hlasování %{verify_account}.
@@ -687,3 +721,10 @@ cs:
       alt: Vyberte text, který chcete komentovat, a stiskněte tlačítko s tužkou.
       text: Chcete-li tento dokument připomínat, musíte se %{sign_in} nebo %{sign_up}. Potom vyberte text, který chcete komentovat, a stiskněte tlačítko s tužkou.
       title: Jak mohu komentovat tento dokument?
+  links:
+    form:
+      delete_button: Smazat
+      cancel_button: Zrušit
+    nested_links:
+      title: Odkazy
+      add_new_link: Přidat nový odkaz
