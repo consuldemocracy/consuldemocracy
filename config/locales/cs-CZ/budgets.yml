@@ -147,6 +147,11 @@ cs:
         price: "Tato položka má rozpočet"
       votes:
         already_supported: "Tento návrh jste již podpořili. Sdílejte jej!"
+        confirm_group:
+          one: "Lze podpořit investice pouze v %{count} městské čtvrti. Pokud budete pokračovat, nemůžete změnit hlasování ve vaší městské čtvrti. Jste si jist?"
+          few: "Lze podpořit investice pouze ve %{count} městských čtvrtích. Pokud budete pokračovat, nemůžete změnit hlasování ve vaší městské čtvrti. Jste si jist?"
+          many: "Lze podpořit investice pouze v %{count} městských čtvrtích. Pokud budete pokračovat, nemůžete změnit hlasování ve vaší městské čtvrti. Jste si jist?"
+          other: "Lze podpořit investice pouze v %{count} městských čtvrtích. Pokud budete pokračovat, nemůžete změnit hlasování ve vaší městské čtvrti. Jste si jist?"
         remove_support: "Odebrat podporu"
         remove_support_label: "Odeberte svou podporu k %{investment}"
         support: "Podpořte!"
