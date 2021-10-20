@@ -1247,6 +1247,7 @@ cs:
         title: Nastavení konfigurace
         general: Nastavení konfigurace
         update_setting: Aktualizovat
+        participation_processes: "Participační procesy"
         images_and_documents: "Obrázky a dokumenty"
         feature_flags: Doporučené
         features:
@@ -1258,6 +1259,11 @@ cs:
             update: Nastavení mapy bylp úspěšně aktualizováno.
           form:
             submit: Aktualizovat
+          how_to_enable: 'Chcete-li mapu zobrazit uživatelům, musíte na kartě "Funkce" povolit funkci "Geolokace návrhů a rozpočtových investic".'
+        dashboard:
+          title: Ovládací panel návrhů
+        remote_census:
+          title: Konfigurace vzdáleného sčítání
         sdg:
           title: SDG konfigurace
       setting: Vlastnosti
@@ -1574,6 +1580,7 @@ cs:
       error: "Chyba:"
       feature_disabled_link: "strana nastavení"
       help:
+        title_1: "Co je AI / strojové učení?"
         description_1: "Počítačové programy se tradičně navrhují tak, že se stanoví přesná pravidla, co má program v každé situaci dělat a jak má v každém okamžiku zpracovávat dostupné informace. To, co se běžně označuje jako umělá inteligence/strojové učení, je typ programů, u nichž je přesně stanoveno, jaký úkol má být proveden a jak se vyhodnocuje, zda je úkol proveden lépe nebo hůře. Na rozdíl od prvně jmenovaného však systém objevuje nebo se učí, jaká by byla nejvhodnější metoda k provedení úkolu."
         title_2: "Co dělá modul AI / strojového učení v systému CONSUL?"
         description_2: "Tento modul umožňuje implementovat v CONSULu libovolný typ programů AI/Machine Learning. Tyto programy mohou zpracovávat informace dostupné v systému CONSUL a vytvářet výsledky, které pomáhají uživatelům i správcům provádět efektivnější a inteligentnější zapojení občanů. Modul byl vyvinut tak, aby bylo možné snadno implementovat a spouštět nové programy, přičemž obecný kód CONSULu a kód těchto nových programů jsou na sobě nezávislé."
