@@ -113,7 +113,11 @@ cs:
       debate_phase: "Fáze debaty"
       proposals_phase: "Fáze návrhu"
       allegations_phase: "Fáze připomínkování"
+      debates:
+        zero: "Žádné debaty"
       proposals:
         zero: "Žádné návrhy"
       comments:
+        zero: "Žádné komentáře"
+      top_comments:
         zero: "Žádné komentáře"
