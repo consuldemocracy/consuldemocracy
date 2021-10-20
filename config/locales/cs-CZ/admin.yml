@@ -1590,6 +1590,8 @@ cs:
         description_4: "Jako příklady použijte předchozí skripty."
         description_4b: "Nové skripty by měly být umístěny ve složce <code>public/machine_learning/scripts</code>"
         description_4c: "Vstupní data, která má skript použít, se vytvoří jako soubory JSON ve složce <code>../data</code>"
+        description_4d: "Veškerý vygenerovaný výstup by měl být umístěn ve složce <code>../data</code>"
+        description_4e: "Doporučujeme vytvořit nezávislý textový soubor <code>.ini</code> s nastavením skriptu, který se bude jmenovat stejně jako skript a bude čitelný pro configparser. Tento soubor usnadní správcům změnu nastavení."
       related_content: "Související obsah"
       tab_help: "Nápověda"
       tags: "Štítky"
