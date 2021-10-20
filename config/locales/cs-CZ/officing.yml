@@ -16,6 +16,17 @@ cs:
         no_polls: V žádném aktivním hlasování nejste účastníkem závěrečného přepočítávání
         select_poll: Vyberte anketu
         add_results: Přidat výsledky
+    poll_budgets:
+      index:
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Datum vytvoření
+      new:
+        csv_data: CSV data
+        submit: Uložit
+      show:
+        created_at: Datum vytvoření
+        author: Autor
+        data: CSV data
     results:
       flash:
         create: "Výsledky byly uloženy"
