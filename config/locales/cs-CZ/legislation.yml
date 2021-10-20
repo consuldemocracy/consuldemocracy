@@ -111,3 +111,9 @@ cs:
       votes:
         zero: "%{count} hlasů"
       debate_phase: "Fáze debaty"
+      proposals_phase: "Fáze návrhu"
+      allegations_phase: "Fáze připomínkování"
+      proposals:
+        zero: "Žádné návrhy"
+      comments:
+        zero: "Žádné komentáře"
