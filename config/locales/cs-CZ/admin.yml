@@ -412,6 +412,7 @@ cs:
           day_offset: Požadované dny
           action_active: Aktivní
           order: Pořadí
+          published_proposal: Zveřejněný návrh
           default:
             email: Email
             polls: Průzkumy
