@@ -171,7 +171,12 @@ cs:
         duration_description: "Doba, po kterou bude tato fáze aktivní."
         enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
         image_description: "Pokud je obrázek nahrán, zobrazí se vedle popisu této fáze."
+        main_call_to_action: "Hlavní výzva k akci (nepovinné)"
+        main_call_to_action_description: "Tento odkaz se zobrazí na hlavním banneru tohoto participativního rozpočtu, pokud je tato fáze povolena, a vybízí uživatele k provedení konkrétní akce, jako je vytvoření návrhu, hlasování pro stávající návrhy nebo získání dalších informací o procesu."
+        name_help_text: "Toto je název fáze, který si uživatelé přečtou v záhlaví, kdykoli je tato fáze aktivní."
         save_changes: Uložit změny
+      index:
+        title: "%{budget} fáze"
     budget_investments:
       index:
         heading_filter_all: Všechny kapitoly
@@ -191,7 +196,10 @@ cs:
           undecided: Nerozhodnuté
           unfeasible: Nerealizovatelné
           min_total_supports: Minimální podpora
+          max_total_supports: Maximální podpora
           winners: Vítězové
+          one_filter: "Aktuální použité filtry: <b><em>%{filter}</em></b>"
+          two_filters: "Aktuální použité filtry: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtr
         download_current_selection: "Stáhnout aktuální výběr"
@@ -225,6 +233,7 @@ cs:
           author: Autor
         cannot_calculate_winners: Rozpočet musí zůstat na fázi "Hlasování o projektech", "Přezkoumání hlasování" nebo "Ukončený rozpočet" za účelem výpočtu vítězných projektů
         see_results: "Zobrazit výsledky"
+        milestone_tags_filter_all: "Všechny značky milníků"
       show:
         assigned_admin: Přiřazený administrátor
         assigned_valuators: Přiřazení hodnotitelé
@@ -251,6 +260,7 @@ cs:
           "true": "Ano"
           "false": "Ne"
         valuator_groups: "Skupiny hodnotitelů"
+        preview: Investiční přehled
       edit:
         classification: Klasifikace
         compatibility: Kompatibilita
@@ -264,13 +274,40 @@ cs:
       search_unfeasible: Hledat neproveditelné
     budgets_wizard:
       creation_timeline:
+        budget: Rozpočet
+        groups: Skupiny
+        headings: Položky
         phases: Fáze
+      budgets:
+        continue: "Pokračovat do skupin"
+      groups:
+        back: "Zpět na úpravu rozpočtu"
+        continue: "Pokračovat na položky"
       headings:
         continue: "Pokračovat k fázím"
+        single:
+          back: "Zpět na úpravu skupiny"
       heading_mode:
+        multiple:
+          description: "Vytvoření procesu s více skupinami, oblastmi nebo tématy. Máte něco jako několik pytlů s penězi. Například 25 000 € pro \"Severní čtvrť\", 30 000 € pro \"Střední čtvrť\", 28 000 € pro \"Jižní čtvrť\" a celé město. Nebo na několik témat, jako je sport, kultura nebo zdraví."
+          link: "Vytvořit rozpočet s více položkami"
+          title: "<strong>Vícepoložkový</strong> rozpočet"
+        single:
+          description: "Vytvořte proces se skupinou, městskou částí nebo tématem. Máte něco jako pytel peněz. Například 25 000 € pro městskou část nebo 10 000 € pro kulturu."
+          link: "Vytvořit rozpočet s jednou položkou"
+          title: "<strong>Jednopoložkov</strong> rozpočet"
         title: "Typ participativního rozpočtu"
+      phases:
+        continue: "Hotovo"
+        multiple:
+          back: "Zpět k položkám"
+        single:
+          back: "Zpět na úpravu položek"
+        update_all:
+          notice: "Fáze úspěšně nakonfigurovány"
     milestones:
       index:
+        table_id: "ID"
         table_title: "Předmět"
         table_description: "Popis"
         table_publication_date: "Datum publikace"
@@ -282,6 +319,10 @@ cs:
         documents: "Dokumenty"
         milestone: Milník
         new_milestone: Vytvořit nový milník
+        milestone_tags: Označení milníku
+      form:
+        admin_statuses: Správa stavů
+        no_statuses_defined: Zatím nejsou definovány žádné stavy
       new:
         creating: Vytvořit milník
       edit:
