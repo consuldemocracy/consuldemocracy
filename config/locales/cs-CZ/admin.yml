@@ -869,6 +869,7 @@ cs:
         description: "Odesláno odesílateli soukromé zprávy."
       email_verification:
         title: "Ověření e-mailu"
+        description: "Odesláno novému uživateli k ověření jeho účtu."
     emails_download:
       index:
         title: Stahování e-mailů
