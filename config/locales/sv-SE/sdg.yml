@@ -177,6 +177,12 @@ sv:
         title_in_two_lines: "Rent vatten\noch sanitet"
         description: "Säkerställa tillgången till vatten och sanitet för alla."
         long_description: '<p>Även om betydande framsteg har gjorts när det gäller att öka tillgången till rent dricksvatten och sanitet, saknar miljarder människor – för det mesta på landsbygden – fortfarande dessa grundläggande tjänster. Över hela världen <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">så har en av tre inte tillgång till säkert dricksvatten</a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">två av fem har inte en grundläggande handtvättanläggning</a> med tvål och vatten, och över <a href="https://news.un.org/en/story/2019/11/1051561">673 miljoner personer defekerar fortfarande utomhus</a>.</p> <p>Covid-19-pandemin har demonstrerat den kritiska betydelsen av sanitet, hygien och adekvat tillgång till rent vatten för att förebygga och tygla sjukdomar. <a href="https://www.unwater.org/water-facts/handhygiene/">Handhygien räddar liv</a>. Enligt Världshälsoorganisationen <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">är handtvätt en av de mest effektiva åtgärderna som kan vidtas</a> för att minska spridningen av patogener och förhindra infektioner, t.o.m. covid-19-viruset. Ändå saknar miljarder människor fortfarande säkert vatten och sanitet och finansieringen är otillräcklig.</p>'
+        targets:
+          target_6_1:
+            long_title: "Senast 2030 uppnå allmän och rättvis tillgång till säkert och ekonomiskt överkomligt dricksvatten för alla."
+            short_title: "Säkert och ekonomiskt överkomligt dricksvatten"
+          target_6_2:
+            long_title: "Senast 2030 säkerställa att alla har tillgång till fullgod och rättvis sanitet och hygien och att ingen behöver uträtta sina behov utomhus. Särskild uppmärksamhet bör ägnas åt behoven hos kvinnor och flickor samt människor i utsatta situationer."
       goal_7:
         title: "Överkomlig och ren energi"
         title_in_two_lines: "Överkomlig och\nren energi"
