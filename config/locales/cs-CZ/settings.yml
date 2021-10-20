@@ -103,8 +103,12 @@ cs:
       public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
       help_page: "Stránka nápovědy"
       help_page_description: 'Zobrazí nabídku Nápověda obsahující stránku s informacemi o každé povolené funkci'
+      translation_interface: "Překlad rozhraní"
       graphql_api: "GraphQL API"
       sdg: SDG
+    remote_census:
+      general:
+        endpoint: "Koncový bod"
     map:
       latitude: "Zeměpisná šířka"
       latitude_description: "Zeměpisná šířka pro zobrazení pozice na mapě"
@@ -114,6 +118,8 @@ cs:
       zoom_description: "Zvětšení pro zobrazení pozice na mapě"
     process:
       debates: "Debaty"
+      proposals: "Návrhy"
+      polls: "Průzkumy"
     uploads:
       images:
         min_width: "Minimální šířka obrázku"
