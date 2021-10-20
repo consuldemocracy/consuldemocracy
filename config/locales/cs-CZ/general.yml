@@ -651,6 +651,11 @@ cs:
       organization: Organizacím není dovoleno hlasovat
       unfeasible: Neuskutečnitelné investiční projekty nelze podpořit
       not_voting_allowed: Fáze hlasování byla ukončena.
+      different_heading_assigned:
+        one: "Můžete podpořit pouze investiční projekty v %{count} městské části. Již jste podpořili investice v %{supported_headings}."
+        few: "Můžete podpořit pouze investiční projekty v %{count} městských částích. Již jste podpořili investice v %{supported_headings}."
+        many: "Můžete podpořit pouze investiční projekty v %{count} městských částích. Již jste podpořili investice pro %{supported_headings}."
+        other: "Můžete podpořit pouze investiční projekty v %{count} městských čtvrtích. Již jste podpořili investice v %{supported_headings}."
   welcome:
     feed:
       most_active:
