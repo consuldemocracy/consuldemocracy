@@ -109,6 +109,9 @@ cs:
     remote_census:
       general:
         endpoint: "Koncový bod"
+      response:
+        district: "Cesta pro městskou část"
+        district_description: "V jaké cestě odpovědi se nachází městská část uživatele?"
     map:
       latitude: "Zeměpisná šířka"
       latitude_description: "Zeměpisná šířka pro zobrazení pozice na mapě"
