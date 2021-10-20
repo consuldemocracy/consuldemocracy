@@ -901,6 +901,7 @@ cs:
         valuator_groups: "Skupiny hodnotitelů"
         group: "Skupina"
         no_group: "Žádná skupina"
+        abilities: "Schopnosti"
         can_comment: "Lze komentovat"
       valuator:
         add: Přidat k hodnotitelům
