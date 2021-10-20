@@ -860,6 +860,15 @@ cs:
         description: "Odesláno autorovi, když obdrží komentář."
       reply:
         title: "Odpovědět"
+        description: "Odesláno autorovi komentáře po obdržení odpovědi."
+      direct_message_for_receiver:
+        title: "Příjemce soukromé zprávy"
+        description: "Odesláno příjemci soukromé zprávy."
+      direct_message_for_sender:
+        title: "Odesílatel soukromé zprávy"
+        description: "Odesláno odesílateli soukromé zprávy."
+      email_verification:
+        title: "Ověření e-mailu"
     emails_download:
       index:
         title: Stahování e-mailů
