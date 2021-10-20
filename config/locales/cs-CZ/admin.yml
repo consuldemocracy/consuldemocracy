@@ -393,6 +393,7 @@ cs:
         hidden_debate: Skryté debaty
         hidden_proposal: Skryté návrhy
         title: Skryté komentáře
+        no_hidden_comments: Nejsou žádné skryté komentáře.
     dashboard:
       index:
         back: Přejít zpět na %{org}
@@ -400,10 +401,15 @@ cs:
         description: Vítejte v admin panelu portálu %{org}.
       actions:
         index:
+          description: "Když uživatelé vytvářejí návrhy, mají přístup k ovládacímu panelu svého návrhu, kde mohou navrhnout zdroje a doporučení, aby získali podporu pro svůj nápad."
+          create: Vytvořit prostředek nebo akci
           active: 'Ano'
           inactive: 'Ne'
+          title: Prostředky a akce
           action_title: Název
           action_type: Typ
+          required_supports: Potřebné podpory
+          day_offset: Požadované dny
           action_active: Aktivní
           order: Pořadí
           default:
