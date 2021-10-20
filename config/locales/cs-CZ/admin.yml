@@ -437,13 +437,20 @@ cs:
           solve: Vyřešit
           no_records: Nejsou požadovány žádné prostředky
           source: Zdroj
+          resource: Požadované prostředky
           filter: Filtr
           filters:
             pending: Nevyřízeno
             done: Vyřešeno
+        edit:
+          back: Zpět na seznam nevyřízených úkolů
+          solving: Vyřešit nevyřešený úkol
         form:
           solve: Označit jako vyřízené
           proposal: Návrh
+          request: Požadovaný prostředek
+        update:
+          success: Úloha byla označena jako vyřešená.
     debates:
       index:
         id: ID
