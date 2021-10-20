@@ -5,15 +5,19 @@ cs:
     actions:
       actions: Akce
       confirm: Jste si jisti?
+      confirm_action: "Jste si jist? %{action} \"%{name}\""
       confirm_hide: Potvrdit moderování
       delete: "Smazat"
       hide: Skrýt
       hide_author: Skrýt autora
+      label: "%{action} %{name}"
       restore: Obnovit
       mark_featured: Označené
       unmark_featured: Zrušit označení
       edit: Upravit
       configure: Nastavení
+    officing_booth:
+      title: "Obsluhujete stánek na adrese %{booth}. Pokud to není správně, nepokračujte a zavolejte na telefonní číslo nápovědy. Děkujeme."
     banners:
       index:
         title: Bannery
@@ -32,12 +36,16 @@ cs:
           budgets: Participativní rozpočtování
           help_page: Stránka nápovědy
           sdg: SDG
+      create:
+        notice: "Reklamní proužek byl úspěšně vytvořen"
       edit:
         editing: Upravit banner
         form:
           submit_button: Uložit změny
       new:
         creating: Vytvořit banner
+      update:
+        notice: "Reklamní proužek byl úspěšně aktualizován"
     activity:
       show:
         action: Akce
@@ -73,6 +81,7 @@ cs:
         table_budget_type: "Typ"
         table_completed: Dokončeno
         table_draft: "Návrh"
+        table_duration: "Trvání"
         table_name: Název
         table_phase: Fáze
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
