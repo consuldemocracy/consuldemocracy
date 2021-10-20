@@ -736,6 +736,9 @@ cs:
         restricted_removal: "Omlouváme se, nemůžete se odstranit ze skupiny administrátorů"
       search:
         title: "Administrátoři: Vyhledávání uživatelů"
+      form:
+        edit_title: "Upravit správce"
+        updated: "Správce úspěšně upraven"
     moderators:
       index:
         title: Moderátoři
@@ -747,6 +750,7 @@ cs:
     segment_recipient:
       all_users: Všichni uživatelé
       administrators: Administrátoři
+      all_proposal_authors: Autoři návrhů (včetně archivovaných a vyřazených)
       proposal_authors: Autoři návrhů
       investment_authors: Autoři investic v aktuálním rozpočtu
       feasible_and_undecided_investment_authors: "Autoři některých investic v současném rozpočtu, kteří nejsou v souladu s: [ocenění skončilo neočekávaně]"
@@ -771,6 +775,7 @@ cs:
         empty_newsletters: Žádné informační bulletiny k zobrazení
       new:
         title: Nový informační bulletin
+        header_footer_help_text: "Záhlaví a zápatí jsou pro všechny e-maily stejné, můžete je upravit na <code>app/views/layouts/mailer_header</code> a <code>app/views/layouts/mailer_footer</code>.<br>Obrázek záhlaví můžete nahradit na %{link}."
         image_link: "vlastní obrázky"
       edit:
         title: Upravit informační bulletin
