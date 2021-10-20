@@ -1123,6 +1123,7 @@ cs:
         no_recounts: "Není nic k přepočítání"
         all_booths_total: "Kumulativní součet ze všech stánků:"
         total_final: "Konečné přepočty"
+        total_system: "Hlasy (automatické)"
         table_booth_name: "Informační stánek"
         table_total_recount: "Celkový přepočet (úředníkem)"
         table_system_count: "Hlasů (automaticky)"
@@ -1168,6 +1169,7 @@ cs:
         official_updated: Podrobnosti o úředníkovi uložené
       index:
         title: Úředníci
+        help: Uživatelské účty označené jako úřední budou mít zvýrazněné zásahy na platformě. Můžete definovat označení, které se zobrazí vedle uživatelských jmen těchto účtů, od nejdůležitějšího (úroveň 1) po nejméně důležité (úroveň 5).
         no_officials: Nemáte žádné úředníky.
         name: Název
         official_position: Official position
@@ -1211,8 +1213,15 @@ cs:
         id: ID
         author: Autor
         select: Vybrat
+        selected: Vybrané
         milestones: Milníky
         no_proposals: Neexistují žádné návrhy.
+      show:
+        create_question: Přidat tento návrh do průzkumu, o kterém se bude hlasovat
+      form:
+        update: Aktualizovat návrh
+      update:
+        notice: Návrh byl úspěšně aktualizován
     hidden_proposals:
       index:
         filter: Filtr
@@ -1224,6 +1233,7 @@ cs:
         no_hidden_proposals: Nemáte žádné skryté návrhy.
     hidden_proposal_notifications:
       index:
+        filter: Filtr
         filters:
           all: Vše
           with_confirmed_hide: Potvrzeno
