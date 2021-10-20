@@ -1,1 +1,13 @@
 cs:
+  sdg_management:
+    local_targets:
+      index:
+        new: "Vytvořit místní cíl"
+      new:
+        title: "Nový místní cíl"
+    relations:
+      index:
+        filter: "Filtr"
+        filters:
+          all: "Vše"
+          pending_sdg_review: "Nevyřízeno"
