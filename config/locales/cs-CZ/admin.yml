@@ -31,6 +31,7 @@ cs:
           proposals: Návrhy
           budgets: Participativní rozpočtování
           help_page: Stránka nápovědy
+          sdg: SDG
       edit:
         editing: Upravit banner
         form:
@@ -58,16 +59,23 @@ cs:
         type: Typ
         no_activity: Neexistují žádná aktivity moderátorů.
     budgets:
+      actions:
+        preview: "Náhled"
       index:
         title: Participativní rozpočty
         new_link: Vytvořit nový rozpočet
         filter: Filtr
         filters:
+          all: Vše
           open: Otevřené
           finished: Dokončené
         budget_investments: Správa projektů
+        table_budget_type: "Typ"
+        table_completed: Dokončeno
+        table_draft: "Návrh"
         table_name: Název
         table_phase: Fáze
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Upravit záhlaví skupiny
         no_budgets: "Neexistují žádné rozpočty."
       create:
@@ -111,6 +119,7 @@ cs:
         submit: "Uložit skupinu"
       index:
         back: "Přejít zpět do rozpočtu"
+        new_button: "Přidat novou skupinu"
     budget_headings:
       no_headings: "Neexistují žádné kapitoly."
       create:
@@ -160,6 +169,7 @@ cs:
         download_current_selection: "Stáhnout aktuální výběr"
         no_budget_investments: "Neexistují žádné investiční projekty."
         title: Investiční projekty
+        columns: Sloupce
         assigned_admin: Přiřazený administrátor
         no_admin_assigned: Administrátor není přiřazen
         no_valuators_assigned: Žádný hodnotitel není přiřazen
@@ -183,6 +193,8 @@ cs:
           visible_to_valuators: Zobrazit hodnotitelům
           author_username: Uživatelské jméno autora
           incompatible: Nekompatibilní
+          price: Cena
+          author: Autor
         cannot_calculate_winners: Rozpočet musí zůstat na fázi "Hlasování o projektech", "Přezkoumání hlasování" nebo "Ukončený rozpočet" za účelem výpočtu vítězných projektů
         see_results: "Zobrazit výsledky"
       show:
@@ -223,6 +235,8 @@ cs:
         undefined: Nedefinováno
       search_unfeasible: Hledat neproveditelné
     budgets_wizard:
+      creation_timeline:
+        phases: Fáze
       headings:
         continue: "Pokračovat k fázím"
       heading_mode:
@@ -230,6 +244,7 @@ cs:
     milestones:
       index:
         table_title: "Předmět"
+        table_description: "Popis"
         table_publication_date: "Datum publikace"
         table_actions: "Akce"
         no_milestones: "Milníky nejsou definovány"
