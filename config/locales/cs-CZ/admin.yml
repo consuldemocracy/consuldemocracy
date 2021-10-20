@@ -246,6 +246,7 @@ cs:
         table_title: "Předmět"
         table_description: "Popis"
         table_publication_date: "Datum publikace"
+        table_status: Stav
         table_actions: "Akce"
         no_milestones: "Milníky nejsou definovány"
         image: "Obrázek"
@@ -343,9 +344,11 @@ cs:
           submit_button: Uložit
       administrator_tasks:
         index:
+          source: Zdroj
           filter: Filtr
           filters:
             pending: Nevyřízeno
+            done: Vyřešeno
         form:
           solve: Označit jako vyřízené
           proposal: Návrh
@@ -364,6 +367,8 @@ cs:
         title: Skryté debaty
         no_hidden_debates: Nejsou žádné skryté debaty.
     documents:
+      new:
+        submit_button: "Nahrát"
       index:
         new_link: "Přidat nový dokument"
         title: "Dokumenty"
@@ -711,6 +716,10 @@ cs:
         title: "Upozornění k návrhu - Přehled"
         description: "Shromažďuje všechny oznámení o návrzích pro uživatele v jedné zprávě, aby se zabránilo odesílání velkého množství e-mailů."
         preview_detail: "Uživatelé budou přijímat pouze oznámení od návrhů, které sledují"
+      comment:
+        title: "Komentář"
+      reply:
+        title: "Odpovědět"
     emails_download:
       index:
         title: Stahování e-mailů
@@ -728,6 +737,7 @@ cs:
         valuator_groups: "Skupiny hodnotitelů"
         group: "Skupina"
         no_group: "Žádná skupina"
+        can_comment: "Lze komentovat"
       valuator:
         add: Přidat k hodnotitelům
       search:
@@ -1359,12 +1369,17 @@ cs:
       field: "Pole"
       new_value: "Nová hodnota"
       old_value: "Stará hodnota"
+      edited_by: "Upraveno od"
       actions: "Akce"
     local_census_records:
       index:
         document_type: Typ dokumentu
         date_of_birth: Datum narození
+        postal_code: PSČ
+        import: Import CSV
       imports:
+        new:
+          subtitle: Import CSV souboru
         show:
           created: Vytvořené záznamy
         local_census_records:
