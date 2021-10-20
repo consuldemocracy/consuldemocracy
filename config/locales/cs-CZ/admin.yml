@@ -875,6 +875,15 @@ cs:
         description: "Odesláno osobě, která byla vyzvána k registraci účtu."
       evaluation_comment:
         title: "Nový hodnotící komentář"
+        description: "Zasláno správcům a hodnotitelům v souvislosti s komentovanou investicí"
+      edit_info: "Tento e-mail můžete upravit v"
+      message_title: "Nadpis zprávy"
+      message_body: "Toto je ukázka obsahu zprávy."
+      alert:
+        no_investments: "Nejsou vytvořeny žádné rozpočtové investice. K náhledu e-mailu je zapotřebí několik údajů o příkladu."
+        no_comments: "Nejsou vytvořeny žádné komentáře. K náhledu e-mailu je zapotřebí několik údajů o příkladu."
+        no_replies: "Nebyly vytvořeny žádné odpovědi. K náhledu e-mailu je zapotřebí několik údajů o příkladu."
+        no_evaluation_comments: "Nejsou vytvořeny žádné hodnotící komentáře. K náhledu e-mailu je zapotřebí několik údajů o příkladu."
     emails_download:
       index:
         title: Stahování e-mailů
