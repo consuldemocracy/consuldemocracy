@@ -604,6 +604,7 @@ cs:
           back: Zpět
           submit_button: Uložit změny
           warning: Text jste upravili, nezapomeňte kliknout na tlačítko Uložit, aby změny byly trvale uloženy.
+          markdown_changes_message: "Upravili jste text, aniž byste ho uložili. Potvrzujete opuštění stránky?"
         form:
           launch_text_editor: Spustit textový editor
           close_text_editor: Zavřít textový editor
