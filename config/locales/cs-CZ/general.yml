@@ -475,7 +475,10 @@ cs:
     mailer:
       forward:
         subtitle: "Pokud mě podpoříte, <br>dosáhneme toho."
+        support_button: Podpořit tento návrh
+        share_in: Sdílet v
         hi: "Dobrý den!"
+        introduction: Píšu vám, abych vám oznámil, že se účastním %{org}, platformy, na které se můžeme rozhodnout, jaké město si přejeme tvořit. A za tímto účelem jsem vytvořil vlastní občanský návrh a nyní budu potřebovat vaši podporu! Ale nebojte se, protože je to velmi jednoduché.
   polls:
     all: "Vše"
     no_dates: "není přiřazené datum"
