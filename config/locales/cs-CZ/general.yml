@@ -405,6 +405,7 @@ cs:
     menu:
       my_proposal: Upravit můj návrh
       progress: Průběh
+      resources: Prostředky
       community: Komunita
       polls: Průzkumy
       mailing: E-mail
@@ -414,12 +415,20 @@ cs:
       related_content: Související obsah
     form:
       request: Požadavek
+    create_request:
+      success: Požadavek byl úspěšně odeslán. Budeme vás co nejdříve kontaktovat, abychom vás o tom informovali.
+      archived: Tento návrh je archivován a nelze na něj požadovat prostředky.
     progress:
+      title: Grafika
       group_by_month: Měsíčně
       group_by_week: Týdně
       group_by_date: Denně
+      progress: Kumulovaný pokrok
       supports: Podpory
+      success: Ideální pokrok
+      new_action: Nový
     index:
+      title: Vydání
       edit_proposal_link: Upravit návrh
       publish: Zveřejnit návrh
       retire: Pozastavený návrh
@@ -429,12 +438,22 @@ cs:
       available_resources: Dostupné prostředky
     resource:
       required_days: "%{days} požadovaných dnů"
+      required_supports: "%{supports} podpor vyžadováno"
       and: a
+      view_resource: Viz porostředky
+      resource_requested: Prostředek byl již vyžádaný
+      request_resource: Vyžádat prostředek
+      resource_locked: Prostředek zablokován
     recommended_actions:
       title: Doporučení
+      goto_proposed_actions: Přejít na doporučené akce
+      see_proposed_actions: Podívejte se na doporučené akce
       hide_proposed_actions: Skrýt doporučení
       pending_title: Nevyřízený
+      show_description: Zobrazit popis
+      without_pending_actions: Žádná doporučená opatření
       done_title: Hotovo
+      without_done_actions: Nebyla provedena žádná doporučená opatření
     next_goal:
       title: Cíl
       see_complete_course: Prohlédněte si celý kurz
@@ -481,6 +500,7 @@ cs:
         remove_answer: Odebrat odpověď
     poster:
       index:
+        title: Náhled plakátu
         poster_title: "Nehledejte dál,"
         poster_subtitle: "podpořte mě! ;)"
         intro_text: "<strong>Podílím se na %{org}</strong> s vlastním občanským návrhem a jen s vaší podporou můžeme vytvořit město, které si všichni přejeme"
@@ -509,6 +529,8 @@ cs:
         share_in: Sdílet v
         hi: "Dobrý den!"
         introduction: Píšu vám, abych vám oznámil, že se účastním %{org}, platformy, na které se můžeme rozhodnout, jaké město si přejeme tvořit. A za tímto účelem jsem vytvořil vlastní občanský návrh a nyní budu potřebovat vaši podporu! Ale nebojte se, protože je to velmi jednoduché.
+        support: "Stačí kliknout na tlačítko, které se zobrazí pod \"Podpořte tento návrh\", a můžete se informovat před jeho podporou. Pouze návrhy, které získají maximální podporu, budou městskou radou realizovány, a já si myslím, že mi k tomu určitě pomůžete!"
+        share: "A pokud mi také prokážete velkou laskavost a podělíte se o můj návrh se svými přáteli, rodinou a kontakty, bude to perfektní!"
   polls:
     all: "Vše"
     no_dates: "není přiřazené datum"
