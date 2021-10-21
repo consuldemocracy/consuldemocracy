@@ -119,5 +119,9 @@ cs:
         zero: "Žádné návrhy"
       comments:
         zero: "Žádné komentáře"
+      download: "Stáhnout shrnutí"
       top_comments:
         zero: "Žádné komentáře"
+      most_voted_comments: "Nejčastěji hlasované komentáře"
+      no_allegation: "Nejsou žádné komentáře"
+      process_empty: "Tento proces neměl žádné fáze účasti"
