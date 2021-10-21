@@ -184,6 +184,15 @@ sv:
           target_6_2:
             long_title: "Senast 2030 säkerställa att alla har tillgång till fullgod och rättvis sanitet och hygien och att ingen behöver uträtta sina behov utomhus. Särskild uppmärksamhet bör ägnas åt behoven hos kvinnor och flickor samt människor i utsatta situationer."
             short_title: "Avskaffa defekering utomhus och tillhandahålla tillgång till sanitet och hygien"
+          target_6_6:
+            long_title: "Senast 2020 skydda och återställa de vattenrelaterade ekosystemen, däribland berg, skogar, våtmarker, floder, akviferer och sjöar."
+            short_title: "Skydda och återställa vattenrelaterade ekosystem"
+          target_6_A:
+            long_title: "Till 2030 utöka det internationella samarbetet och stödet för kapacitetsuppbyggnad till utvecklingsländerna inom vatten- och sanitetsrelaterade verksamheter och program, bland annat genom teknik för vatteninsamling, avsaltning, vatteneffektivitet, rening av avloppsvatten, återvinning och återanvändning."
+            short_title: "Utöka stödet för vatten och sanitet till utvecklingsländerna"
+          target_6_B:
+            long_title: "Stödja och stärka lokalsamhällenas deltagande i arbetet med att förbättra vatten- och sanitetshanteringen."
+            short_title: "Stödja lokalt engagemang i vatten- och sanitetshantering"
       goal_7:
         title: "Överkomlig och ren energi"
         title_in_two_lines: "Överkomlig och\nren energi"
@@ -256,9 +265,18 @@ sv:
           target_17_5:
             long_title: "Anta och genomföra investeringsfrämjande regleringar för de minst utvecklade länderna."
             short_title: "Investera i de minst utvecklade länderna"
+          target_17_7:
+            long_title: "Främja utveckling, överföring och spridning av miljövänlig teknik till utvecklingsländerna på gynnsamma villkor, inklusive koncessions- och förmånsvillkor, på villkor som överenskommits mellan parterna."
+            short_title: "Främja miljövänlig teknik i utvecklingsländerna"
           target_17_8:
             long_title: "Senast 2017 fullt ut operationalisera teknikbanken och mekanismen för kapacitetsuppbyggnad inom vetenskap, teknik och innovation för de minst utvecklade länderna samt öka användningen av möjliggörande teknik, i synnerhet informations- och kommunikationsteknik."
             short_title: "Stärka kapaciteten för vetenskap, teknik och innovation för de minst utvecklade länderna"
+          target_17_9:
+            long_title: "Öka det internationella stödet för genomförande av effektiv och riktad kapacitetsuppbyggnad i utvecklingsländerna till stöd för nationella planer för att genomföra alla Globala mål för hållbar utveckling, bland annat genom samarbete nord–syd och syd–syd samt trepartssamarbete."
+            short_title: "Öka kapaciteten för Globala mål för hållbar utveckling i utvecklingsländerna "
+          target_17_10:
+            long_title: "Främja ett universellt, regelbaserat, öppet, icke-diskriminerande och rättvist multilateralt handelssystem inom ramen för Världshandelsorganisationen, bland annat genom att slutföra förhandlingarna enligt organisationens utvecklingsagenda från Doha."
+            short_title: "Främja ett universellt handelssystem inom ramen för Världshandelsorganisationen"
           target_17_11:
             long_title: "Avsevärt öka utvecklingsländernas export, i synnerhet i syfte att fördubbla de minst utvecklade ländernas andel av den globala exporten till 2020."
             short_title: "Öka utvecklingsländernas export"
