@@ -25,6 +25,9 @@ cs:
     close: Zavřít
     menu: Nabídka
   comments:
+    actions:
+      confirm_delete: "Jste si jistý? Tato akce vymaže tento komentář. Tuto akci nelze vrátit zpět."
+      delete: "Smazat komentář"
     comments_closed: Komentáře jsou uzavřeny
     verified_only: Pro zapojení %{verify_account}
     comment:
@@ -33,6 +36,8 @@ cs:
       deleted: Tento komentář byl smazán
       moderator: Moderátor
       responses:
+        zero: Žádné odezvy
+      responses_show:
         zero: Žádné odezvy
       responses_collapse:
         zero: Žádné odezvy
@@ -155,6 +160,9 @@ cs:
     document: Dokument
     topic: Téma
     image: Image
+    site_customization/content_block: obsahový blok
+    site_customization/page: stránka
+    sdg/local_target: místní cíl
   geozones:
     none: Celé město
   layouts:
@@ -167,8 +175,13 @@ cs:
       proposal_header:
         published: Publikováno
         draft: Návrh
+        retired: Vysloužilý
       proposal_totals:
+        active_resources: Aktivní prostředky
+        community: Účastníci ve vaší komunitě
         show_proposal: Zobrazit návrh
+        preview_proposal: Náhled návrhu
+        current_goal: Aktuální cíl
         supports:
           zero: Žádná podpora
     footer:
@@ -234,6 +247,7 @@ cs:
       sign_up: Přihlásit se pomocí služby Google
       name: Google
     wordpress_oauth2:
+      sign_in: Přihlášení pomocí Wordpressu
       name: Wordpress
     twitter:
       sign_in: Přihlásit se pomocí služby Twitter
