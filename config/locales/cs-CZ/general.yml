@@ -405,15 +405,29 @@ cs:
       hide_proposed_actions: Skrýt doporučení
       pending_title: Nevyřízený
       done_title: Hotovo
+    next_goal:
+      title: Cíl
+      see_complete_course: Prohlédněte si celý kurz
+      hide_course: Skrýt kurz
+    goal:
+      locked_resource: Prostředek zablokován
+      ideal_time: Ideální čas
     community:
+      access_community: Připojte se do komunity
+      latest_activity: "Poslední aktivita komunity: %{at}"
       participants: Účastníci
       debates: Debaty
       comments: Komentáře
+      latest_comments: Nejnovější vzkazy
+    messages:
+      send_notification: Odeslání oznámení sledujícím návrh
+      previous_notifications: Viz předchozí oznámení
     polls:
       index:
         title: Průzkumy
         create: Vytvořit průzkum
         links: Odkazy
+        additiontal_information: Doplňující informace
       new:
         title: Nový průzkum
         submit: Vytvořit průzkum
@@ -421,7 +435,12 @@ cs:
         submit: Aktualizovat průzkum
       poll:
         view_results: Zobrazit výsledky
+        edit_poll: Upravit průzkum
+        show_results_help: Pokud toto políčko zaškrtnete, budou výsledky veřejné a uvidí je všichni uživatelé
+        delete: Smazat průzkum
+        alert_notice: Tato akce odstraní průzkum a všechny související otázky.
         success_notice: Průzkum byl úspěšně smazán
+        unable_notice: Průzkum, který obsahuje odpovědi, nelze zničit
       form:
         add_question: Přidat otázku
       question_fields:
