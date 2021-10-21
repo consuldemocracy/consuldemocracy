@@ -456,14 +456,25 @@ cs:
         intro_text: "<strong>Podílím se na %{org}</strong> s vlastním občanským návrhem a jen s vaší podporou můžeme vytvořit město, které si všichni přejeme"
         proposal_code: "Kód návrhu: %{code}"
         support: Podpořte můj návrh
+        footer: "<strong>Navštivte %{link} a podpořte tento návrh.</strong> Čím více, tím lépe. Přispějme svým dílem. Děkujeme!"
+      new:
+        title: Plakát s vaším návrhem
       options:
         preview: Náhled
         download: Stáhnout
     mailing:
+      index:
+        title: Náhled e-mailu
+      new:
+        title: E-mailový vzor ke sdílení
       mailing_options:
+        send: Odeslat na %{address}
         preview: Náhled
+      create:
+        sent: E-mail byl odeslán
     mailer:
       forward:
+        subtitle: "Pokud mě podpoříte, <br>dosáhneme toho."
         hi: "Dobrý den!"
   polls:
     all: "Vše"
