@@ -18,6 +18,7 @@ cs:
         add_results: Přidat výsledky
     poll_budgets:
       index:
+        ballot_sheet_name: Název
         ballot_sheet_author: Autor
         ballot_sheet_creation_date: Datum vytvoření
       new:
