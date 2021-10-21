@@ -442,6 +442,7 @@ cs:
         success_notice: Průzkum byl úspěšně smazán
         unable_notice: Průzkum, který obsahuje odpovědi, nelze zničit
       form:
+        name: Název průzkumu
         add_question: Přidat otázku
       question_fields:
         remove_question: Odstranit otázku
@@ -449,6 +450,12 @@ cs:
       question_answer_fields:
         remove_answer: Odebrat odpověď
     poster:
+      index:
+        poster_title: "Nehledejte dál,"
+        poster_subtitle: "podpořte mě! ;)"
+        intro_text: "<strong>Podílím se na %{org}</strong> s vlastním občanským návrhem a jen s vaší podporou můžeme vytvořit město, které si všichni přejeme"
+        proposal_code: "Kód návrhu: %{code}"
+        support: Podpořte můj návrh
       options:
         preview: Náhled
         download: Stáhnout
