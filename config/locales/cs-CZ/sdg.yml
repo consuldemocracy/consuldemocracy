@@ -355,6 +355,15 @@ cs:
           target_11_6:
             long_title: "Do roku 2030 snížit nepříznivý dopad životního prostředí měst na jejich obyvatele, zejména zaměřením pozornosti na kvalitu ovzduší a nakládání s komunálním i jiným odpadem."
             short_title: "Snížení dopadu měst na životní prostředí"
+          target_11_7:
+            long_title: "Do roku 2030 zajistit všeobecný přístup k bezpečné, inkluzivní a přístupné městské zeleni a veřejnému prostoru, zejména pro ženy a děti, starší osoby a osoby se zdravotním postižením."
+            short_title: "Zajištění přístupu k bezpečné a inkluzivní zeleni a veřejným prostranstvím"
+          target_11_A:
+            long_title: "Podporovat pozitivní ekonomické, sociální a environmentální vazby mezi městskými, příměstskými a venkovskými oblastmi zlepšením národního a regionálního rozvojového plánování."
+            short_title: "Silné plánování národního a regionálního rozvoje"
+          target_11_B:
+            long_title: "Do roku 2020 výrazně zvýšit počet měst a obcí, které přijímají a realizují integrované politiky a plány na podporu inkluze, účinného využívání zdrojů, zmírňování a adaptace na změnu klimatu, odolnost vůči katastrofám, a vypracovat a realizovat komplexní řízení rizik katastrof na všech úrovních v souladu se Sendaiským rámcem pro DRR 2015 – 2030."
+            short_title: "Provádění politik pro začleňování, účinné využívání zdrojů a snižování rizika katastrof"
       goal_12:
         targets:
           target_12_1:
