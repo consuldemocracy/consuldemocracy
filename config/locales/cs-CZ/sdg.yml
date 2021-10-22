@@ -328,6 +328,13 @@ cs:
           target_10_B:
             long_title: "Podporovat oficiální rozvojovou pomoc (Oda) a finanční toky zahrnující přímé zahraniční investice do států, které to potřebují nejvíce, zejména nejméně rozvinuté, africké země, malé ostrovní a vnitrozemské rozvojové státy, v souladu s jejich národními plány a programy."
             short_title: "Podpora rozvojové pomoci a investic v nejméně rozvinutých zemích"
+          target_10_C:
+            long_title: "Do roku 2030 snížit náklady na převody remitencí migrantů na méně než 3 procenta a eliminovat transakční kanály s náklady vyššími než 5 procent."
+            short_title: "Snížení transakčních nákladů na převody peněz migrantů"
+      goal_11:
+        title: "Udržitelná města a obce"
+        title_in_two_lines: "Udržitelná města a obce"
+        description: "Vytvořit inkluzivní, bezpečná, odolná a udržitelná města a obce."
       goal_12:
         targets:
           target_12_1:
