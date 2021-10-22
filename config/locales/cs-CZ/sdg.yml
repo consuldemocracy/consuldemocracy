@@ -210,3 +210,7 @@ cs:
         targets:
           target_7_1:
             long_title: "Do roku 2030 zajistit všem přístup k cenově dostupným, spolehlivým a moderním energetickým službám."
+            short_title: "Všeobecný přístup k moderní energii"
+          target_7_2:
+            long_title: "Do roku 2030 podstatně zvýšit podíl energie z obnovitelných zdrojů na celosvětovém energetickém mixu."
+            short_title: "Zvýšení celosvětového podílu energie z obnovitelných zdrojů"
