@@ -335,6 +335,22 @@ cs:
         title: "Udržitelná města a obce"
         title_in_two_lines: "Udržitelná města a obce"
         description: "Vytvořit inkluzivní, bezpečná, odolná a udržitelná města a obce."
+        long_description: '<p>Svět se stále více urbanizuje. Od roku 2007 žije <a href="https://unstats.un.org/sdgs/report/2019/goal-11/">více než polovina světové populace ve městech</a> a do roku 2030 se předpokládá, že tento podíl vzroste na 60 %.&nbsp;</p> <p>Města a metropolitní oblasti jsou tahouny hospodářského růstu - přispívají přibližně 60 % světového HDP. Zároveň se však podílejí přibližně 70 procenty na celosvětových emisích uhlíku a více než 60 procenty na spotřebě zdrojů.&nbsp;</p> <p>Rychlá urbanizace má za následek rostoucí počet obyvatel chudinských čtvrtí, nedostatečnou a přetíženou infrastrukturu a služby (například sběr odpadu a vodovodní a kanalizační systémy, silnice a dopravu), zhoršující se znečištění ovzduší a neplánované rozšiřování měst.&nbsp;</p> <p><a href="https://unhabitat. org/coronavirus-bude-cestovat-neuvěřitelně-rychle-v-afrických-slumech-bez-habitatu-varoval">Dopad COVID-19</a> bude nejničivější v chudých a hustě obydlených městských oblastech, zejména pro miliardu lidí žijících v neformálních osadách a slumech po celém světě, kde přelidněnost rovněž ztěžuje dodržování doporučených opatření, jako je sociální distancování a sebeizolace. &nbsp;</p> <p>Agentura OSN pro výživu a zemědělství FAO varovala, že bez opatření, která by zajistila chudým a zranitelným obyvatelům <a href="https://news.un.org/en/story/2020/05/1063622">přístup k potravinám</a>, by v městských oblastech mohlo dojít k výraznému nárůstu hladu a úmrtí.&nbsp;</p>'
+        targets:
+          target_11_1:
+            long_title: "Do roku 2030 zajistit všem přístup k odpovídajícímu, bezpečnému a cenově dostupnému bydlení a základním službám, zlepšit podmínky bydlení ve slumech."
+            short_title: "Bezpečné a dostupné bydlení"
+          target_11_2:
+            long_title: "Do roku 2030 poskytnout všem přístup k bezpečným, finančně dostupným, snadno přístupným a udržitelným dopravním systémům zlepšit bezpečnost silničního provozu zejména rozšířením veřejné dopravy se zvláštním důrazem na potřeby lidí v těžké situaci jako ženy, děti, osoby se zdravotním postižením a starší osoby."
+            short_title: "Cenově dostupné a udržitelné dopravní systémy"
+          target_11_3:
+            long_title: "Do roku 2030 posílit inkluzivní a udržitelnou urbanizaci a kapacity pro participativní, integrované a udržitelné plánování a správu měst a obcí ve všech zemích."
+            short_title: "Inkluzivní a udržitelná urbanizace"
+          target_11_4:
+            long_title: "Zlepšit úsilí na ochranu a záchranu světového kulturního a přírodního dědictví."
+            short_title: "Ochrana světového kulturního a přírodního dědictví"
+          target_11_5:
+            long_title: "Do roku 2030 výrazně snížit počet úmrtí a dalších negativních dopadů přírodních katastrof zahrnujících pohromy spojené s vodou. Týká se to také přímých ekonomických ztrát ve vztahu ke globálnímu HDP. Zvláštní pozornost je nutné věnovat ochraně chudých a zranitelných lidí."
       goal_12:
         targets:
           target_12_1:
