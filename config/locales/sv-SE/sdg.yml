@@ -220,6 +220,9 @@ sv:
           target_7_A:
             long_title: "Till 2030 stärka det internationella samarbetet för att underlätta tillgång till forskning och teknik inom ren energi, inklusive förnybar energi, energieffektivitet samt avancerad och renare fossilbränslebaserad teknik, samt främja investeringar i energiinfrastruktur och ren energiteknik."
             short_title: "Främja tillgång till forskning, teknik och investeringar inom ren energi "
+          target_7_B:
+            long_title: "Till 2030 bygga ut infrastrukturen och uppgradera tekniken för att leverera moderna och hållbara energitjänster till alla i utvecklingsländerna, i synnerhet de minst utvecklade länderna, små önationer under utveckling och kustlösa utvecklingsländer, i enlighet med deras respektive stödprogram."
+            short_title: "Bygga ut och uppgradera energitjänster för utvecklingsländer"
       goal_8:
         title: "Anständiga arbetsvillkor och ekonomisk tillväxt"
         title_in_two_lines: "Anständiga arbetsvillkor och\nekonomisk tillväxt"
