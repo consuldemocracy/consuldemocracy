@@ -214,3 +214,12 @@ cs:
           target_7_2:
             long_title: "Do roku 2030 podstatně zvýšit podíl energie z obnovitelných zdrojů na celosvětovém energetickém mixu."
             short_title: "Zvýšení celosvětového podílu energie z obnovitelných zdrojů"
+          target_7_3:
+            long_title: "Do roku 2030 celosvětově zdvojnásobit energetickou účinnost."
+            short_title: "Dvojnásobné zvýšení energetické účinnosti"
+          target_7_A:
+            long_title: "Do roku 2030 zlepšit mezinárodní spolupráci ve zpřístupňování výzkumu a technologií čisté energie, včetně energie z obnovitelných zdrojů, energetické účinnosti a pokročilých a čistších technologií fosilních paliv; podporovat investice do energetické infrastruktury a technologií čisté energie."
+            short_title: "Podpora přístupu k výzkumu, technologiím a investicím do čisté energie "
+          target_7_B:
+            long_title: "Do roku 2030 rozšířit infrastrukturu a vylepšit technologie pro dodávky moderních a udržitelných energetických služeb pro všechny v rozvojových zemích, zejména v nejméně rozvinutých a malých ostrovních rozvojových státech."
+            short_title: "Rozšíření a modernizace energetických služeb pro rozvojové země"
