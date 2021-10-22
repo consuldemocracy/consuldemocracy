@@ -313,6 +313,21 @@ cs:
           target_10_4:
             long_title: "Přijmout politická opatření, zejména v oblasti fiskální, mzdové a v oblasti sociální ochrany a postupně dosáhnout větší rovnosti."
             short_title: "Přijmout fiskální a sociální politiku podporující rovnost"
+          target_10_5:
+            long_title: "Zlepšit regulaci a monitoring globálních finančních trhů a institucí a posílit uplatňování těchto regulací."
+            short_title: "Zlepšení regulace globálních finančních trhů a institucí"
+          target_10_6:
+            long_title: "Zajistit větší zastoupení a silnější hlas pro rozvojové státy v rozhodování v mezinárodních ekonomických a finančních institucí s cílem vytvořit efektivnější, věrohodnější, spolehlivější a legitimnější instituce."
+            short_title: "Posílené zastoupení rozvojových zemí ve finančních institucích"
+          target_10_7:
+            long_title: "Usnadňovat řízenou, bezpečnou a zodpovědnou migraci a mobilitu lidí, zahrnující uplatňování plánovaných a dobře řízených migračních politik."
+            short_title: "Odpovědné a dobře řízené migrační politiky"
+          target_10_A:
+            long_title: "Uplatňovat zásadu zvláštního a diferencovaného přístupu k rozvojovým zemím, zejména k těm nejméně rozvinutým, v souladu s dohodami Světové obchodní organizace."
+            short_title: "Zvláštní a diferencované zacházení pro rozvojové země"
+          target_10_B:
+            long_title: "Podporovat oficiální rozvojovou pomoc (Oda) a finanční toky zahrnující přímé zahraniční investice do států, které to potřebují nejvíce, zejména nejméně rozvinuté, africké země, malé ostrovní a vnitrozemské rozvojové státy, v souladu s jejich národními plány a programy."
+            short_title: "Podpora rozvojové pomoci a investic v nejméně rozvinutých zemích"
       goal_12:
         targets:
           target_12_1:
