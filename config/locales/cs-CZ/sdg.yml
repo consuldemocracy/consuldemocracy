@@ -306,6 +306,13 @@ cs:
             short_title: "Snížení příjmových nerovností"
           target_10_2:
             long_title: "Do roku 2030 posilovat a podporovat sociální, ekonomické a politické začleňování všech, bez ohledu na věk, pohlaví, zdravotní postižení, rasu, etnický původ, náboženské vyznání a ekonomické či jiné postavení."
+            short_title: "Podpora všeobecného sociálního, ekonomického a politického začlenění"
+          target_10_3:
+            long_title: "Zajistit rovné příležitosti a snížit nerovnosti, zejména odstraňováním diskriminačních zákonů, politik a postupů, a podporou vhodných právních předpisů, politik a postupů."
+            short_title: "Zajištění rovných příležitostí a ukončení diskriminace"
+          target_10_4:
+            long_title: "Přijmout politická opatření, zejména v oblasti fiskální, mzdové a v oblasti sociální ochrany a postupně dosáhnout větší rovnosti."
+            short_title: "Přijmout fiskální a sociální politiku podporující rovnost"
       goal_12:
         targets:
           target_12_1:
