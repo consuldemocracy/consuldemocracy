@@ -364,10 +364,32 @@ cs:
           target_11_B:
             long_title: "Do roku 2020 výrazně zvýšit počet měst a obcí, které přijímají a realizují integrované politiky a plány na podporu inkluze, účinného využívání zdrojů, zmírňování a adaptace na změnu klimatu, odolnost vůči katastrofám, a vypracovat a realizovat komplexní řízení rizik katastrof na všech úrovních v souladu se Sendaiským rámcem pro DRR 2015 – 2030."
             short_title: "Provádění politik pro začleňování, účinné využívání zdrojů a snižování rizika katastrof"
+          target_11_C:
+            long_title: "Podporovat nejméně rozvinuté země, mimo jiné prostřednictvím finanční a technické pomoci, při stavbě udržitelných a odolných budov s využitím místních materiálů."
+            short_title: "Podpora nejméně rozvinutých zemí v oblasti udržitelného a odolného stavebnictví"
       goal_12:
+        title: "Odpovědná výroba a spotřeba"
+        title_in_two_lines: "Odpovědná výroba a spotřeba"
+        description: "Zajistit udržitelnou spotřebu a výrobu."
+        long_description: '<p>Celosvětová spotřeba a výroba - hnací síla globální ekonomiky - se opírá o využívání přírodního prostředí a zdrojů způsobem, který má na planetu stále destruktivní dopady.&nbsp;</p> <p>Hospodářský a sociální pokrok v posledním století doprovází zhoršování životního prostředí, které ohrožuje samotné systémy, na nichž závisí náš budoucí rozvoj - ba dokonce naše přežití. &nbsp;</p> <p>Několik <a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">faktů a čísel</a>:</p> <ul> <li style="font-weight: 400">Každý rok podle odhadů třetina všech vyprodukovaných potravin - což odpovídá 1,3 miliardám tun v hodnotě přibližně 1 bilionu dolarů - skončí shnilá v popelnicích spotřebitelů a prodejců nebo se zkazí v důsledku špatných postupů při přepravě a sklizni. </li> <li style="font-weight: 400">Pokud by lidé na celém světě přešli na energeticky úsporné žárovky, svět by ročně ušetřil 120 miliard USD.</li> <li style="font-weight: 400">Pokud by světová populace do roku 2050 dosáhla 9,6 miliardy, k zajištění přírodních zdrojů potřebných k udržení současného životního stylu by bylo zapotřebí téměř tří planet. </li> </ul> <p>Pandemie COVID-19 nabízí zemím příležitost vytvořit plány obnovy, které zvrátí současné trendy a změní naše vzorce spotřeby a výroby směrem k udržitelnější budoucnosti.</p> <p><a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies">Udržitelná spotřeba a výroba</a> znamená dělat více a lépe s méně. Jde také o oddělení hospodářského růstu od zhoršování životního prostředí, zvýšení účinnosti využívání zdrojů a podporu udržitelného životního stylu.</p> <p>Udržitelná spotřeba a výroba může také významně přispět ke zmírnění chudoby a k přechodu na nízkouhlíkové a zelené hospodářství.</p>'
         targets:
           target_12_1:
             long_title: "Uplatňovat desetiletý rámec programů pro udržitelnou spotřebu a výrobu se zapojením všech států v čele s rozvinutými a s přihlédnutím k rozvoji a schopnostem států rozvojových."
             short_title: "Zavedení desetiletého rámce udržitelné spotřeby a výroby"
           target_12_2:
             long_title: "Do roku 2030 dosáhnout udržitelného hospodaření s přírodními zdroji a jejich efektivního využívání."
+            short_title: "Udržitelné řízení a využívání přírodních zdrojů"
+          target_12_3:
+            long_title: "Do roku 2030 snížit v přepočtu na hlavu na polovinu globální plýtvání potravinami na maloobchodní a spotřebitelské úrovni a snížit ztráty potravin v celém výrobním a zásobovacím procesu, včetně posklizňových ztrát."
+            short_title: "Snížit celosvětový potravinový odpad na obyvatele na polovinu"
+          target_12_4:
+            long_title: "Do roku 2020 dosáhnout k životnímu prostředí šetrného nakládání s chemickými látkami a odpady během celého jejich životního cyklu, v souladu s dohodnutými mezinárodními rámci, a výrazně snížit jejich uvolňování do ovzduší, vody a půdy tak, aby se minimalizovaly nepříznivé dopady na lidské zdraví a životní prostředí."
+            short_title: "Odpovědné nakládání s chemickými látkami a odpady"
+          target_12_5:
+            long_title: "Do roku 2030 výrazně snížit produkci odpadů s pomocí prevence, redukce, recyklace a opětovného používání."
+            short_title: "Výrazné snížení produkce odpadů"
+          target_12_6:
+            long_title: "Podporovat podniky, zejména velké a nadnárodní společnosti, aby přijaly udržitelné postupy a začlenily informace o udržitelnosti do svých pravidelných zpráv."
+            short_title: "Podporovat společnosti v zavádění udržitelných postupů a podávání zpráv o udržitelnosti"
+          target_12_7:
+            long_title: "Prosazovat udržitelné postupy v zadávání veřejných zakázek v souladu s národními politikami a prioritami."
