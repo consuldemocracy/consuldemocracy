@@ -172,3 +172,41 @@ cs:
           target_5_C:
             long_title: "Přijmout a posílit vhodné politiky a vymahatelné právní předpisy pro prosazování rovnosti žen a mužů a posilování postavení žen a dívek ve všech sférách."
             short_title: "Přijmout a posílit politiky a vymahatelné právní předpisy pro rovnost žen a mužů"
+      goal_6:
+        title: "Pitná voda, kanalizace"
+        title_in_two_lines: "Pitná voda, kanalizace"
+        description: "Zajistit všem dostupnost vody a sanitačních zařízení a udržitelné hospodaření s nimi."
+        long_description: '<p>Přestože bylo dosaženo značného pokroku ve zvyšování dostupnosti čisté pitné vody a hygienických zařízení, miliardy lidí - převážně ve venkovských oblastech - tyto základní služby stále postrádají. Na celém světě <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">jeden ze tří lidí nemá přístup k nezávadné pitné vodě</a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">dva z pěti lidí nemají k dispozici základní zařízení na mytí rukou</a> vodou a mýdlem a více než <a href="https://news.un.org/en/story/2019/11/1051561">673 milionů lidí stále praktikuje otevřenou defekaci</a>.</p> <p>Pandemie COVID-19 ukázala, jak zásadní význam mají pro prevenci a tlumení nemocí sanitace, hygiena a odpovídající přístup k čisté vodě. <a href="https://www.unwater.org/water-facts/handhygiene/">Hygiena rukou zachraňuje životy</a>. Podle Světové zdravotnické organizace je <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">mytí rukou jedním z nejúčinnějších opatření, která můžete podniknout</a> ke snížení šíření patogenů a prevenci infekcí, včetně viru COVID-19. Přesto miliardy lidí stále nemají k dispozici bezpečnou vodu a hygienické prostředky jsou nedostatečné.</p>'
+        targets:
+          target_6_1:
+            long_title: "Do roku 2030 zajistit univerzální a rovný přístup k bezpečné a cenově dostupné pitné vodě pro všechny."
+            short_title: "Bezpečná a cenově dostupná pitná voda"
+          target_6_2:
+            long_title: "Do roku 2030 zajistit spravedlivě všem odpovídající sanitační a hygienická zařízení a skoncovat s vylučováním na volných prostranstvích, se zvláštním ohledem na potřeby žen, dívek a lidí v těžké situaci."
+            short_title: "Ukončení defekace na otevřeném prostranství a zajištění přístupu k hygieně a sanitaci"
+          target_6_3:
+            long_title: "Do roku 2030 zlepšit kvalitu vody snížením jejího znečišťování, zamezením vyhazování odpadů do vody a minimalizací vypouštění nebezpečných chemických látek do vody, snížit na polovinu podíl znečistěných odpadních vod a podstatně zvýšit recyklaci a bezpečné opětovné využívání vody v celosvětovém měřítku."
+            short_title: "Zlepšení kvality vody, čištění odpadních vod a bezpečné opětovné využití"
+          target_6_4:
+            long_title: "Do roku 2030 podstatně zvýšit efektivitu využívání vody ve všech sektorech a zajistit udržitelný odběr a dodávky pitné vody tak, aby byl vyřešen nedostatek vody a podstatně se snížil počet lidí trpících jejím nedostatkem."
+            short_title: "Zvýšení efektivity využívání vody a zajištění zásob sladké vody"
+          target_6_5:
+            long_title: "Do roku 2030 zavést integrovanou správu vodních zdrojů na všech úrovních, a to i pomocí přeshraniční spolupráce tam, kde je to vhodné."
+            short_title: "Provádění integrovaného řízení vodních zdrojů"
+          target_6_6:
+            long_title: "Do roku 2020 zajistit ochranu a obnovu ekosystémů související s vodou, včetně hor, lesů, mokřad, řek, vodonosných vrstev a jezer."
+            short_title: "Ochrana a obnova ekosystémů souvisejících s vodou"
+          target_6_A:
+            long_title: "Do roku 2030 rozšířit mezinárodní spolupráci a podporu budování kapacit v rozvojových zemích v rámci programů a činností souvisejících s vodou a sanitačními zařízeními zahrnující zadržování, odsolování a efektivní využívání vody, čištění odpadních vod a využívání technologií pro recyklaci a opětovné využívání vody."
+            short_title: "Rozšíření podpory vody a hygieny v rozvojových zemích"
+          target_6_B:
+            long_title: "Podporovat a posilovat zapojení místních komunit do zlepšování správy vodních zdrojů a sanitačních zařízení."
+            short_title: "Podpora zapojení místních obyvatel do hospodaření s vodou a sanitací"
+      goal_7:
+        title: "Dostupné a čisté energie"
+        title_in_two_lines: "Dostupné a čisté energie"
+        description: "Zajistit přístup k cenově dostupným, spolehlivým, udržitelným a moderním zdrojům energie pro všechny."
+        long_description: '<p>Svět dosahuje <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">pokroku v plnění cíle č. 7</a> a objevují se povzbudivé známky toho, že energie se stává udržitelnější a dostupnější. Přístup k elektřině v chudších zemích se začal zrychlovat, energetická účinnost se stále zlepšuje a obnovitelné zdroje energie dosahují v odvětví elektrické energie působivých úspěchů.&nbsp;</p> <p>Přesto je třeba věnovat větší pozornost zlepšení přístupu k čistým a bezpečným palivům a technologiím na vaření pro 3 miliardy lidí, rozšíření využívání obnovitelných zdrojů energie mimo odvětví elektrické energie a zvýšení elektrifikace v subsaharské Africe. </p> <p>Zpráva <a href="https://trackingsdg7.esmap.org/">o pokroku v oblasti energetiky</a> poskytuje globální přehled, který zaznamenává pokrok v oblasti přístupu k energii, energetické účinnosti a obnovitelných zdrojů energie. Hodnotí pokrok, kterého jednotlivé země v těchto třech pilířích dosáhly, a poskytuje přehled o tom, jak daleko jsme od dosažení cílů udržitelného rozvoje do roku 2030.</p>'
+        targets:
+          target_7_1:
+            long_title: "Do roku 2030 zajistit všem přístup k cenově dostupným, spolehlivým a moderním energetickým službám."
