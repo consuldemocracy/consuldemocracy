@@ -44,13 +44,29 @@ cs:
           target_2_C:
             long_title: "Přijmout opatření k zajištění řádného fungování trhu potravinářských komodit a jejich derivátů a usnadnit včasný přístup k informacím o trhu, včetně informací o potravinových rezervách, s cílem přispět k omezení extrémní volatility cen potravin."
       goal_3:
+        title: "Zdraví a kvalitní život"
+        title_in_two_lines: "Zdraví a kvalitní život"
+        description: "Zajistit zdravý život a zvyšovat jeho kvalitu pro všechny v jakémkoli věku."
+        long_description: '<p>Zajistit zdravý život a podporovat dobré životní podmínky v každém věku je pro udržitelný rozvoj zásadní. V současné době čelí svět <a href="https://www.un.org/coronavirus">globální zdravotní krizi</a>, která nemá obdoby - COVID-19 šíří lidské utrpení, destabilizuje globální ekonomiku a podkopává životy miliard lidí na celém světě.&nbsp;</p> <p>Před pandemií bylo dosaženo významného pokroku v <a href="https://unstats.un.org/sdgs/report/2019/goal-03/">zlepšování zdraví milionů lidí</a>. Bylo dosaženo významných pokroků v prodlužování průměrné délky života a snižování některých běžných smrtelných onemocnění spojených s dětskou a mateřskou úmrtností. K úplnému vymýcení celé řady nemocí a řešení mnoha různých přetrvávajících i nově vznikajících zdravotních problémů je však zapotřebí dalšího úsilí. Zaměřením se na zajištění efektivnějšího financování zdravotnických systémů, zlepšení hygieny a sanitace a zlepšení přístupu k lékařům lze dosáhnout významného pokroku, který pomůže zachránit životy milionů lidí.</p> <p>Náhlé zdravotní situace, jako je COVID-19, představují celosvětové riziko a ukázaly, že je nezbytně nutné být připraven. Rozvojový program OSN upozornil na obrovské rozdíly ve <a href="https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html">schopnosti zemí vyrovnat se s krizí COVID-19 a zotavit se z ní</a>. Tato pandemie představuje přelomový okamžik pro připravenost na mimořádné zdravotní události a pro investice do kritických veřejných služeb 21. století.&nbsp;</p>'
         targets:
+          target_3_1:
+            long_title: "Do roku 2030 celosvětově snížit míru mateřské úmrtnosti na méně než 70 na 100 tisíc porodů."
+          target_3_2:
+            long_title: "Do roku 2030 zabránit úmrtím novorozenců a dětí mladších pěti let, jimž je možné předejít. Všechny země budou usilovat o snížení novorozenecké úmrtnosti na úroveň maximálně 12 úmrtí na 1000 živě narozených dětí a snížení úmrtnosti dětí mladších pěti let na úroveň 25 a méně na 1000 živě narozených dětí."
+          target_3_3:
+            long_title: "Do roku 2030 ukončit epidemii AIDS, tuberkulózy, malárie a zanedbávaných tropických nemocí a bojovat proti hepatitidě, vodou přenášeným nemocem a ostatním přenosným nemocem."
+          target_3_4:
+            long_title: "Do roku 2030 snížit pomocí prevence a léčby o třetinu předčasnou úmrtnost na nepřenosné choroby; podporovat duševní zdraví a duševní pohodu."
+          target_3_5:
+            long_title: "Posílit prevenci a léčbu užívání návykových látek, včetně užívání narkotik a škodlivého užívání alkoholu."
           target_3_6:
+            long_title: "Do roku 2020 celosvětově snížit na polovinu počet úmrtí a zranění při dopravních nehodách."
             short_title: "Snížit počet zranění a úmrtí na silnicích"
           target_3_7:
             long_title: "Do roku 2030 zajistit všeobecný přístup ke službám v oblasti sexuálního a reprodukčního zdraví, včetně plánování rodiny, informací a vzdělávání, a začlenit reprodukční zdraví do národních strategií a programů."
             short_title: "Všeobecný přístup k sexuální a reprodukční péči, plánování rodiny a vzdělávání"
           target_3_8:
+            long_title: "Docílit všeobecného zabezpečení zdraví, včetně ochrany finančních rizik, přístupu ke kvalitní základní zdravotní péči a přístupu k bezpečným, účinným, kvalitním a cenově dostupným základním léčivům a očkovacím látkám pro všechny."
             short_title: "Dosáhnout všeobecného zdravotního pojištění"
           target_3_9:
             long_title: "Do roku 2030 výrazně snížit počet úmrtí a onemocnění způsobených nebezpečnými chemickými látkami a znečištěním a kontaminací ovzduší, vody a půdy."
@@ -58,6 +74,12 @@ cs:
           target_3_A:
             long_title: "Posílit provádění Rámcové úmluvy Světové zdravotnické organizace o kontrole tabáku ve všech zemích, je-li to vhodné."
             short_title: "Provádění Rámcové úmluvy WHO o kontrole tabáku"
+          target_3_B:
+            long_title: "Podporovat výzkum a vývoj vakcín a léků na přenosné i nepřesné choroby, které primárně postihují především rozvojové země, poskytnout přístup k cenově dostupným základním lékům a vakcínám v souladu s Deklarací z Dohá o Dohodě TRIPS a veřejném zdraví, která potvrzuje právo rozvojových zemí plně využít ujednání v Dohodě o obchodních aspektech práv k duševnímu vlastnictví, pokud jde o flexibilitu v ochraně veřejného zdraví a zejména v přístupu k lékům pro všechny."
+          target_3_C:
+            long_title: "Podstatně zvýšit financování zdravotnictví a nábor, rozvoj, školení a retence pracovníků ve zdravotnictví v rozvojových zemích, zejména v těch nejméně rozvinutých a v malých ostrovních rozvojových státech."
+          target_3_D:
+            long_title: "Zvýšit kapacitu všech zemí, zejména rozvojových, pro včasné varování, snižování rizik a řízení národních a globálních zdravotních rizik."
       goal_4:
         targets:
           target_4_1:
