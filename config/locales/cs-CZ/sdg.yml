@@ -9,10 +9,13 @@ cs:
         targets:
           target_1_1:
             long_title: "Do roku 2030 odstranit extrémní chudobu všude na světě; extrémní chudoba je v současnosti definována jako život za méně než 1,25 dolaru na den"
+            short_title: "Vymýcení extrémní chudoby"
           target_1_2:
             long_title: "Do roku 2030 snížit alespoň o polovinu podíl můžu, žen a dětí všech věkových kategorií, kteří žijí v chudobě tak jak je definována v národní legislativě"
+            short_title: "Snížení chudoby nejméně o 50 %"
           target_1_3:
             long_title: "Zavést na úrovni států vhodné systémy sociální ochrany pro všechny včetně nejpotřebnějších, a do roku 2030 rozšířit jejich dosah na většinu chudých a ohrožených"
+            short_title: "Zavádění systémů sociální ochrany"
           target_1_4:
             long_title: "Do roku 2030 zajistit, aby všichni muži a ženy, zejména chudí a zranitelní, měli stejná práva v přístupu k ekonomickým zdrojům i základním službám, na vlastnictví a možnost nakládat s půdou a stejná práva na další formy vlastnictví, dědictví, přírodní zdroje, příslušné nové technologie a finanční služby, jako například mikrofinancování"
           target_1_5:
@@ -81,10 +84,26 @@ cs:
           target_3_D:
             long_title: "Zvýšit kapacitu všech zemí, zejména rozvojových, pro včasné varování, snižování rizik a řízení národních a globálních zdravotních rizik."
       goal_4:
+        title: "Kvalitní vzdělání"
+        title_in_two_lines: "Kvalitní vzdělání"
+        description: "Kvalitní vzdělání."
+        long_description: '<p>Vzdělání umožňuje vzestupnou socioekonomickou mobilitu a je klíčem k úniku z chudoby. V uplynulém desetiletí bylo dosaženo významného pokroku při zvyšování přístupu ke vzdělání a míry zápisu do škol na všech úrovních, zejména u dívek. Přesto <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth">přibližně 260 milionů dětí v roce 2018 stále nechodilo do školy</a>, což je téměř pětina celosvětové populace v této věkové skupině. A více než polovina všech dětí a dospívajících na celém světě <a href="https://unstats.un.org/sdgs/report/2019/goal-04/">nedosahuje minimálních standardů znalostí</a> ve čtení a matematice.&nbsp;</p> <p>V roce 2020, kdy se pandemie COVID-19 rozšířila po celém světě, většina zemí oznámila dočasné uzavření škol, což mělo dopad na více než 91 % studentů na celém světě. V dubnu 2020 bylo mimo školu téměř <a href="https://en.unesco.org/covid19/educationresponse">1,6 miliardy dětí a mladých lidí</a>. A téměř <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf">369 milionů dětí, které jsou závislé na školním stravování</a>, muselo hledat jiné zdroje každodenní výživy.&nbsp;</p> <p>Nikdy předtím nebylo mimo školu tolik dětí najednou, což narušilo výuku a zničilo životy zejména těch nejzranitelnějších a marginalizovaných. Celosvětová pandemie má dalekosáhlé důsledky, které mohou ohrozit těžce vydobyté úspěchy při zlepšování globálního vzdělávání.</p>'
         targets:
           target_4_1:
+            long_title: "Do roku 2030 zajistit, aby všechny dívky a chlapci ukončili bezplatné, rovnoprávné a kvalitní primární a sekundární základní vzdělání, které bude mít odpovídající a efektivní studijní výsledky."
             short_title: "Bezplatné základní a střední vzdělání"
+          target_4_2:
+            long_title: "Do roku 2030 zajistit, aby všechny dívky a chlapci měli možnost kvalitního rozvoje v raném dětství, aby měli přístup k předškolní péči a vzdělání tak, že budou připraveni pro základní vzdělávání."
+          target_4_3:
+            long_title: "Do roku 2030 zajistit rovný přístup všech žen a mužů k cenově dostupnému a kvalitnímu odbornému, učňovskému a vyššímu vzdělání, včetně univerzitního."
+          target_4_4:
+            long_title: "Do roku 2030 výrazně zvýšit počet mladých a dospělých, kteří mají příslušné dovednosti včetně technických a odborných, které budou předpokladem pro zaměstnání, důstojné pracovní zařazení a pro podnikání."
+          target_4_5:
+            long_title: "Do roku 2030 eliminovat genderové nerovnosti ve vzdělávání a zajistit rovný přístup ke všem úrovním vzdělání a odborné přípravy pro znevýhodněné – osoby se zdravotním postižením, původní obyvatelstvo či ohrožené děti."
           target_4_6:
+            long_title: "Do roku 2030 zajistit, aby všichni mladí a značná část dospělých mužů i žen dosáhli čtenářské a matematické gramotnosti."
             short_title: "Univerzální gramotnost a matematická gramotnost"
           target_4_7:
             long_title: "Do roku 2030 zajistit, aby všichni žáci získali znalosti a dovednosti potřebné k podpoře udržitelného rozvoje, mimo jiné prostřednictvím vzdělávání pro udržitelný rozvoj a udržitelný životní styl, lidských práv, rovnosti žen a mužů, podpory kultury míru a nenásilí, globálního občanství a ocenění kulturní rozmanitosti a přínosu kultury k udržitelnému rozvoji."
+          target_4_A:
+            long_title: "Vybudovat a vylepšit genderově citlivá vzdělávací zařízení, která budou vhodná pro děti i lidi se zdravotním postižením, a poskytnout bezpečné, nenásilné, inkluzivní a efektivní vzdělávací prostředí pro všechny."
