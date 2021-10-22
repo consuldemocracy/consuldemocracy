@@ -280,3 +280,28 @@ cs:
           target_9_3:
             long_title: "Zlepšit přístup malých průmyslových a jiných podniků – zejména v rozvojových zemích – k finančním službám, včetně dostupných úvěrů, a jejich začleňování do hodnotových řetězců a trhů."
             short_title: "Zlepšení přístupu k finančním službám a trhům"
+          target_9_4:
+            long_title: "Do roku 2030 zmodernizovat infrastrukturu a zdokonalit vybavení průmyslových podniků tak, aby byly udržitelné, účinněji využívaly zdroje; dále využívat více čistých a k životnímu prostředí šetrných technologií a výrobních procesů; zapojí se všechny státy s ohledem na své možnosti."
+            short_title: "Modernizace všech odvětví a infrastruktur pro udržitelnost"
+          target_9_5:
+            long_title: "Posílit vědecký výzkum, zlepšit technologickou vybavenost průmyslových odvětví ve všech zemích, zejména rozvojových, a do roku 2030 podporovat inovace a významně zvýšit počet výzkumných a vývojových pracovníků na jeden milion obyvatel a výdaje na soukromý i veřejný výzkum a vývoj."
+            short_title: "Posílení výzkumu a modernizace průmyslových technologií "
+          target_9_A:
+            long_title: "Napomáhat rozvoji udržitelné a odolné infrastruktury v rozvojových zemích prostřednictvím lepší finanční, technologické a technické podpory africkým, nejméně rozvinutým, vnitrozemským rozvojovým a malým ostrovním rozvojovým státům."
+            short_title: "Usnadnění udržitelného rozvoje infrastruktury pro rozvojové země"
+          target_9_B:
+            long_title: "Podporovat rozvoj technologií, výzkumu a inovací v rozvojových zemích, včetně zajišťování příznivého politického prostředí mimo jiné pro průmyslovou diverzifikaci a výrobu zboží s přidanou hodnotou."
+            short_title: "Podpora rozvoje domácích technologií a diverzifikace průmyslu"
+          target_9_C:
+            long_title: "Výrazně zvýšit přístup k informačním a komunikačním technologiím a usilovat o poskytování všeobecného a cenově dostupného přístupu k internetu v nejméně rozvinutých státech do roku 2020."
+            short_title: "Všeobecný přístup k informačním a komunikačním technologiím"
+      goal_10:
+        title: "Méně nerovností"
+        title_in_two_lines: "Méně nerovností"
+      goal_12:
+        targets:
+          target_12_1:
+            long_title: "Uplatňovat desetiletý rámec programů pro udržitelnou spotřebu a výrobu se zapojením všech států v čele s rozvinutými a s přihlédnutím k rozvoji a schopnostem států rozvojových."
+            short_title: "Zavedení desetiletého rámce udržitelné spotřeby a výroby"
+          target_12_2:
+            long_title: "Do roku 2030 dosáhnout udržitelného hospodaření s přírodními zdroji a jejich efektivního využívání."
