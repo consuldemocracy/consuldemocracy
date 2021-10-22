@@ -132,3 +132,37 @@ cs:
             short_title: "Vzdělávání pro udržitelný rozvoj a globální občanství"
           target_4_A:
             long_title: "Vybudovat a vylepšit genderově citlivá vzdělávací zařízení, která budou vhodná pro děti i lidi se zdravotním postižením, a poskytnout bezpečné, nenásilné, inkluzivní a efektivní vzdělávací prostředí pro všechny."
+            short_title: "Budování a modernizace inkluzivních a bezpečných škol"
+          target_4_B:
+            long_title: "Do roku 2020 výrazně na celém světě rozšířit počet stipendií pro studenty z rozvojových zemí – zejména těch nejméně rozvinutých, malých ostrovních rozvojových a afrických států – pro zápis do vysokoškolského vzdělávání, učňovské přípravy a vzdělávacích programů v informačních a komunikačních technologiích, technologických, stavebních a vědeckých oborech v rozvinutých i rozvojových státech."
+            short_title: "Rozšíření vysokoškolských stipendií pro rozvojové země"
+          target_4_C:
+            long_title: "Do roku 2030 výrazně zvýšit počty kvalifikovaných učitelů, a to i prostřednictvím mezinárodní spolupráce pro vzdělávání učitelů v rozvojových zemích, zejména těch nejméně rozvinutých, a malých ostrovních rozvojových státech."
+            short_title: "Zvýšení nabídky kvalifikovaných učitelů v rozvojových zemích"
+      goal_5:
+        title: "Rovnost mužů a žen"
+        title_in_two_lines: "Rovnost mužů a žen"
+        description: "Dosáhnout rovnosti žen a mužů a posílit postavení všech žen a dívek."
+        long_description: '<p>Rovnost žen a mužů je nejen základním lidským právem, ale také nezbytným základem mírového, prosperujícího a udržitelného světa.&nbsp;</p> <p>V posledních desetiletích došlo k <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935">pokroku</a>: Přes tyto úspěchy chodí více dívek do školy, méně dívek je nuceno uzavírat předčasné sňatky, více žen zasedá v parlamentu a ve vedoucích funkcích a zákony jsou reformovány tak, aby podporovaly rovnost žen a mužů.&nbsp;</p> <p>Přes tyto úspěchy je mnoho <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en. pdf?la=en&amp;vs=935">výzev</a>: diskriminační zákony a společenské normy jsou stále rozšířené, ženy jsou stále nedostatečně zastoupeny na všech úrovních politického vedení a 1 z 5 žen a dívek ve věku 15 až 49 let uvádí, že během 12 měsíců zažila fyzické nebo sexuální násilí ze strany intimního partnera. </p> <p>Důsledky <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf">pandemie COVID-19 by mohly zvrátit omezený pokrok</a>, kterého bylo dosaženo v oblasti rovnosti žen a mužů a práv žen.&nbsp; Epidemie koronaviru <a href="https://www.unfpa. org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf">zhoršuje stávající nerovnosti</a> pro ženy a dívky ve všech oblastech - od zdravotnictví a ekonomiky až po bezpečnost a sociální ochranu.&nbsp;</p> <p>Ženy hrají v reakci na virus nepřiměřenou roli, a to i jako zdravotníci v první linii a pečovatelé v domácnosti. Neplacená pečovatelská práce žen výrazně vzrostla v důsledku uzavření škol a zvýšených potřeb starších lidí. Ženy jsou také více zasaženy ekonomickými dopady COVID-19, protože neúměrně často pracují na nejistých pracovních trzích. Téměř 60 % žen pracuje v neformální ekonomice, což je vystavuje většímu riziku pádu do chudoby.&nbsp;</p> <p>Pandemie vedla také k prudkému nárůstu <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?la=en&amp;vs=5006">násilí na ženách a dívkách</a>. V důsledku výlukových opatření je mnoho žen uvězněno doma se svými násilníky a snaží se získat přístup ke službám, které trpí škrty a omezeními. Nové údaje ukazují, že od vypuknutí pandemie se násilí na ženách a dívkách - a zejména domácí násilí - zintenzivnilo.</p>'
+        targets:
+          target_5_1:
+            long_title: "Celosvětově skoncovat se všemi formami diskriminace žen a dívek."
+            short_title: "Ukončení diskriminace žen a dívek"
+          target_5_2:
+            long_title: "Eliminovat všechny formy násilí vůči ženám a dívkám ve veřejné i soukromé sféře, včetně obchodu s lidmi a sexuálního či jiného vykořisťování."
+            short_title: "Ukončení veškerého násilí na ženách a dívkách a jejich vykořisťování"
+          target_5_3:
+            long_title: "Odstranit všechny škodlivé praktiky jako jsou dětské, předčasné a nucené sňatky či ženská obřízka."
+            short_title: "Odstranit nucené sňatky a mrzačení pohlavních orgánů"
+          target_5_4:
+            long_title: "Uznávat a oceňovat neplacenou péči a domácí práce pomocí zajištění veřejných služeb, infrastruktury a politik sociální ochrany a prosazování sdílené odpovědnosti v rámci domácnosti a rodiny podle zvyklostí dané země."
+            short_title: "Oceňování neplacené péče a podpora sdílených domácích povinností"
+          target_5_5:
+            long_title: "Zajistit ženám rovné příležitosti a plnou a efektivní účast na rozhodování na všech úrovních v politickém, ekonomickém i veřejném životě."
+            short_title: "Zajištění plné účasti na vedení a rozhodování"
+          target_5_6:
+            long_title: "Zajistit všeobecnou dostupnost služeb sexuálního a reprodukčního zdraví a reprodukčního práva, jak bylo dohodnuto v souladu s Akčním programem Mezinárodní konference o populaci a rozvoji a Pekingskou akční platformou a závěrečnými dokumenty návazných konferencí."
+            short_title: "Všeobecný přístup k reprodukčnímu zdraví a právům"
+          target_5_A:
+            long_title: "Provést reformy, které ženám zajistí rovná práva k ekonomickým zdrojům, možnost vlastnictví a hospodaření s pozemky i dalších forem vlastnictví, přístup k finančním službám, dědictví a přírodním zdrojům v souladu s národní legislativou."
+            short_title: "Rovná práva na hospodářské zdroje, vlastnictví majetku a finanční služby"
