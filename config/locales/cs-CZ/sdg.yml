@@ -352,6 +352,9 @@ cs:
           target_11_5:
             long_title: "Do roku 2030 výrazně snížit počet úmrtí a dalších negativních dopadů přírodních katastrof zahrnujících pohromy spojené s vodou. Týká se to také přímých ekonomických ztrát ve vztahu ke globálnímu HDP. Zvláštní pozornost je nutné věnovat ochraně chudých a zranitelných lidí."
             short_title: "Snížení nepříznivých účinků přírodních katastrof"
+          target_11_6:
+            long_title: "Do roku 2030 snížit nepříznivý dopad životního prostředí měst na jejich obyvatele, zejména zaměřením pozornosti na kvalitu ovzduší a nakládání s komunálním i jiným odpadem."
+            short_title: "Snížení dopadu měst na životní prostředí"
       goal_12:
         targets:
           target_12_1:
