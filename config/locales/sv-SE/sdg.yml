@@ -235,6 +235,9 @@ sv:
           target_8_2:
             long_title: "Uppnå högre ekonomisk produktivitet genom diversifiering, teknisk uppgradering och innovation, bland annat genom att fokusera på sektorer med högt förädlingsvärde och hög arbetsintensitet."
             short_title: "Diversifiera, innovera och uppgradera för ekonomisk produktivitet"
+          target_8_3:
+            long_title: "Främja utvecklingsinriktad politik som stödjer produktiv verksamhet, skapande av anständiga arbetstillfällen, företagande, kreativitet och innovation samt uppmuntra att mikroföretag liksom små och medelstora företag växer och blir en del av den formella ekonomin, bland annat genom tillgång till finansiella tjänster."
+            short_title: "Främja politik som stödjer skapande av arbetstillfällen och växande företag"
       goal_9:
         title: "Hållbar industri, innovationer och infrastruktur"
         title_in_two_lines: "Hållbar industri, innovationer\noch infrastruktur"
@@ -288,6 +291,8 @@ sv:
         description: "Återvitalisera det globala partnerskapet för hållbar utveckling."
         long_description: '<p>Globala målen kan bara förverkligas genom starka globala partnerskap och samarbete.</p> <p>En framgångsrik utvecklingsagenda kräver allomfattande partnerskap — på global, regional, nationell och lokal nivå — som bygger på principer och värderingar, och en delad vision och gemensamma mål som placerar människor och planeten i centrum.</p> <p>Många länder behöver officiellt utvecklingsbistånd för att uppmuntra tillväxt och handel. Men <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">stödnivåerna sjunker</a> och givarländerna har inte levt upp till sitt åtagande att öka utvecklingsfinansieringen.</p> <p>På grund av covid-19-pandemin beräknas <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">den globala ekonomin</a> krympa kraftigt med 3 procent under 2020 och genomgå sin värsta lågkonjunktur sedan den stora depressionen.</p> <p>Starkt internationellt samarbete behövs nu mer än någonsin för att säkerställa att länderna har möjlighet att återhämta sig från pandemin, bygga en värld som är bättre än den var och uppnå Globala målen för hållbar utveckling.</p>'
         targets:
+          target_17_1:
+            long_title: "Stärka den inhemska resursmobiliseringen, bland annat genom internationellt stöd till utvecklingsländerna, för att förbättra respektive lands förmåga att ta upp skatter och andra intäkter."
           target_17_2:
             long_title: "De utvecklade länderna ska fullt ut fullfölja sina åtaganden i fråga om offentligt utvecklingsbistånd, inklusive många utvecklade länders åtagande att nå målet att ge 0,7 procent av BNI till utvecklingsländer och 0,15–0,20 procent av BNI till de minst utvecklade länderna. De länder som ger offentligt utvecklingsbistånd uppmanas att överväga att fastställa ett mål om att ge minst 0,20 procent av BNI till de minst utvecklade länderna."
           target_17_5:
