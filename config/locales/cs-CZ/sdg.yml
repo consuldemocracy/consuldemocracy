@@ -298,6 +298,14 @@ cs:
       goal_10:
         title: "Méně nerovností"
         title_in_two_lines: "Méně nerovností"
+        description: "Snížit nerovnost v rámci jednotlivých zemí i mezi nimi."
+        long_description: '<p>Snižování nerovností a zajištění toho, aby nikdo nezůstal pozadu, jsou nedílnou součástí dosažení cílů udržitelného rozvoje.&nbsp;</p> <p>Nerovnosti v rámci jednotlivých zemí i mezi nimi jsou stále znepokojujícím důvodem. Navzdory některým pozitivním signálům směřujícím ke snižování nerovností v některých dimenzích, jako je snižování relativní příjmové nerovnosti v některých zemích a preferenční obchodní status zvýhodňující země s nižšími příjmy, <a href="https://unstats.un.org/sdgs/report/2019/goal-10/">nerovnosti stále přetrvávají</a>.</p> <p><a href="https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020">COVID-19 prohloubil stávající nerovnosti</a>, přičemž nejhůře zasáhl nejchudší a nejzranitelnější komunity. Upozornila na ekonomické nerovnosti a křehké sociální záchranné sítě, které nechávají zranitelné komunity nést hlavní tíhu krize.&nbsp;Zároveň sociální, politické a ekonomické nerovnosti zesílily dopady pandemie.</p> <p>Na ekonomickém poli pandemie COVID-19 výrazně zvýšila globální <a href="https://www. ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">nezaměstnanost</a> a dramaticky snížila příjmy pracovníků.</p> <p>COVID-19 také ohrožuje omezený pokrok, kterého bylo v posledních desetiletích dosaženo v oblasti <a href="https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters">rovnosti pohlaví</a> a práv žen. Ve všech oblastech, od zdravotnictví po ekonomiku, od bezpečnosti po sociální ochranu, se dopady COVID-19 pro ženy a dívky zhoršují už jen z důvodu jejich pohlaví.</p> <p>Nerovnosti se prohlubují také u <a href="https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf">zranitelných skupin obyvatel</a> v zemích se slabšími zdravotnickými systémy a v zemích, které čelí stávajícím humanitárním krizím. Zvláště ohroženi jsou uprchlíci a migranti, stejně jako domorodé obyvatelstvo, starší osoby, osoby se zdravotním postižením a děti. A <a href="https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia">závistných projevů</a> zaměřených na zranitelné skupiny přibývá.</p>'
+        targets:
+          target_10_1:
+            long_title: "Do roku 2030 postupně dosáhnout a udržet růst příjmů spodních 40 procent populace na úrovni vyšší než je celostátní průměr."
+            short_title: "Snížení příjmových nerovností"
+          target_10_2:
+            long_title: "Do roku 2030 posilovat a podporovat sociální, ekonomické a politické začleňování všech, bez ohledu na věk, pohlaví, zdravotní postižení, rasu, etnický původ, náboženské vyznání a ekonomické či jiné postavení."
       goal_12:
         targets:
           target_12_1:
