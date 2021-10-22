@@ -18,12 +18,16 @@ cs:
             short_title: "Zavádění systémů sociální ochrany"
           target_1_4:
             long_title: "Do roku 2030 zajistit, aby všichni muži a ženy, zejména chudí a zranitelní, měli stejná práva v přístupu k ekonomickým zdrojům i základním službám, na vlastnictví a možnost nakládat s půdou a stejná práva na další formy vlastnictví, dědictví, přírodní zdroje, příslušné nové technologie a finanční služby, jako například mikrofinancování"
+            short_title: "Rovná práva na vlastnictví, základní služby, technologie a ekonomické zdroje"
           target_1_5:
             long_title: "Do roku 2030 posílit odolnost chudých a zranitelných a zmírnit jejich zranitelnost před extrémními klimatickými jevy a jinými ekonomickými, sociálními a environmentálními otřesy a pohromami"
+            short_title: "Budování odolnosti vůči environmentálním, ekonomickým a sociálním katastrofám"
           target_1_A:
             long_title: "Zajistit výraznou mobilizaci prostředků z různých zdrojů, mimo jiné i dokonalejší rozvojovou spoluprací, a zajistit tak přiměřené a předvídatelné prostředky pro rozvojové země – zejména nejméně rozvinuté – na zavádění programů a politik na odstranění chudoby ve všech jejích formách"
+            short_title: "Mobilizace zdrojů k provádění politik pro odstranění chudoby"
           target_1_B:
             long_title: "Vytvořit výrazné politické strategie na národní, regionální i mezinárodní úrovni, založené na genderově citlivých rozvojových strategiích na podporu chudých, které povedou ke zrychlení investic do opatření na odstranění chudoby"
+            short_title: "Vytvořit politické rámce ve prospěch chudých a s ohledem na rovnost žen a mužů"
       goal_2:
         title: "Konec hladu"
         title_in_two_lines: "Konec hladu"
@@ -32,20 +36,28 @@ cs:
         targets:
           target_2_1:
             long_title: "Do roku 2030 vymýtit hlad a zajistit přístup všem lidem, zejména chudým a ohroženým, včetně malých dětí, k bezpečné, výživné a dostačující stravě po celý rok."
+            short_title: "Všeobecný přístup k bezpečným a výživným potravinám"
           target_2_2:
             long_title: "Do roku 2030 odstranit všechny formy podvýživy a do roku 2025 dosáhnout mezinárodně dohodnutých cílů ohledně zakrnění a hubnutí dětí mladších pěti let a vyřešit výživové potřeby dospívajících dívek, těhotných a kojících žen a starších osob."
+            short_title: "Ukončení všech forem podvýživy"
           target_2_3:
             long_title: "Do roku 2030 zdvojnásobit zemědělskou produktivitu a příjmy malých zemědělců – zejména žen, původních obyvatel, rodinných farmářů, pastevců a rybářů – pomocí zajištění bezpečného a rovného přístupu k půdě, dalším výrobním zdrojům (a vstupům), znalostem, finančním službám, trhům a vytvářením příležitostí k vytváření přidané hodnoty a přístupu k zaměstnání v nezemědělském sektoru."
+            short_title: "Zdvojnásobení produktivity a příjmů drobných výrobců potravin"
           target_2_4:
             long_title: "Do roku 2030 zajistit/zavést systémy udržitelné výroby potravin a zavést odolné zemědělské postupy, které zvýší produktivitu a výrobu a pomohou zachovat ekosystémy posilující schopnosti půdy přizpůsobit se klimatické změně, extrémnímu počasí, suchu, záplavám a dalším pohromám, a které postupně zlepší kvalitu půdy."
+            short_title: "Udržitelná produkce potravin a odolné zemědělské postupy"
           target_2_5:
             long_title: "Do roku 2020 zajistit zachování genetické rozmanitosti osiv, pěstovaných plodin, hospodářských a domácích zvířat a jejich divoce žijících příbuzných druhů, mimo jiné pomocí správně spravovaných a diverzifikovaných semenných a rostlinných bank na národní, regionální i mezinárodní úrovni a zajistit přístup ke spravedlivému sdílení přínosů z využívání genetických zdrojů a tradičních poznatků, v souladu s mezinárodními dohodami."
+            short_title: "Zachování genetické rozmanitosti v produkci potravin"
           target_2_A:
             long_title: "Zvýšit investice, mimo jiné i prostřednictvím posílené mezinárodní spolupráce, do venkovské infrastruktury, zemědělského výzkumu a nadstavbových služeb, vývoje technologií a genových bank zvířat a rostlin za účelem zlepšení zemědělských výrobních kapacit v rozvojových zemích, zejména v těch nejméně rozvinutých."
+            short_title: "Investice do venkovské infrastruktury, zemědělského výzkumu, technologií a genových bank"
           target_2_B:
             long_title: "Napravit a předcházet obchodním omezením a pokřivením na světových zemědělských trzích, mimo jiné prostřednictvím souběžného odstranění všech forem dotací na vývoz a dalších opatření s obdobným účinkem, v souladu s mandátem rozvojového kola v Dauhá."
+            short_title: "Zabránit omezením zemědělského obchodu, narušením trhu a vývozním subvencím"
           target_2_C:
             long_title: "Přijmout opatření k zajištění řádného fungování trhu potravinářských komodit a jejich derivátů a usnadnit včasný přístup k informacím o trhu, včetně informací o potravinových rezervách, s cílem přispět k omezení extrémní volatility cen potravin."
+            short_title: "Zajištění stabilních trhů s potravinářskými komoditami a včasného přístupu k informacím"
       goal_3:
         title: "Zdraví a kvalitní život"
         title_in_two_lines: "Zdraví a kvalitní život"
@@ -54,14 +66,19 @@ cs:
         targets:
           target_3_1:
             long_title: "Do roku 2030 celosvětově snížit míru mateřské úmrtnosti na méně než 70 na 100 tisíc porodů."
+            short_title: "Snížení mateřské úmrtnosti"
           target_3_2:
             long_title: "Do roku 2030 zabránit úmrtím novorozenců a dětí mladších pěti let, jimž je možné předejít. Všechny země budou usilovat o snížení novorozenecké úmrtnosti na úroveň maximálně 12 úmrtí na 1000 živě narozených dětí a snížení úmrtnosti dětí mladších pěti let na úroveň 25 a méně na 1000 živě narozených dětí."
+            short_title: "Ukončení všech úmrtí do 5 let věku, kterým lze předcházet"
           target_3_3:
             long_title: "Do roku 2030 ukončit epidemii AIDS, tuberkulózy, malárie a zanedbávaných tropických nemocí a bojovat proti hepatitidě, vodou přenášeným nemocem a ostatním přenosným nemocem."
+            short_title: "Boj proti přenosným nemocem"
           target_3_4:
             long_title: "Do roku 2030 snížit pomocí prevence a léčby o třetinu předčasnou úmrtnost na nepřenosné choroby; podporovat duševní zdraví a duševní pohodu."
+            short_title: "Snížení úmrtnosti na neinfekční nemoci a podpora duševního zdraví"
           target_3_5:
             long_title: "Posílit prevenci a léčbu užívání návykových látek, včetně užívání narkotik a škodlivého užívání alkoholu."
+            short_title: "Prevence a léčba zneužívání návykových látek"
           target_3_6:
             long_title: "Do roku 2020 celosvětově snížit na polovinu počet úmrtí a zranění při dopravních nehodách."
             short_title: "Snížit počet zranění a úmrtí na silnicích"
@@ -79,10 +96,13 @@ cs:
             short_title: "Provádění Rámcové úmluvy WHO o kontrole tabáku"
           target_3_B:
             long_title: "Podporovat výzkum a vývoj vakcín a léků na přenosné i nepřesné choroby, které primárně postihují především rozvojové země, poskytnout přístup k cenově dostupným základním lékům a vakcínám v souladu s Deklarací z Dohá o Dohodě TRIPS a veřejném zdraví, která potvrzuje právo rozvojových zemí plně využít ujednání v Dohodě o obchodních aspektech práv k duševnímu vlastnictví, pokud jde o flexibilitu v ochraně veřejného zdraví a zejména v přístupu k lékům pro všechny."
+            short_title: "Podpora výzkumu, vývoje a všeobecného přístupu k cenově dostupným vakcínám a lékům"
           target_3_C:
             long_title: "Podstatně zvýšit financování zdravotnictví a nábor, rozvoj, školení a retence pracovníků ve zdravotnictví v rozvojových zemích, zejména v těch nejméně rozvinutých a v malých ostrovních rozvojových státech."
+            short_title: "Zvýšení financování zdravotnictví a podpora pracovníků ve zdravotnictví v rozvojových zemích"
           target_3_D:
             long_title: "Zvýšit kapacitu všech zemí, zejména rozvojových, pro včasné varování, snižování rizik a řízení národních a globálních zdravotních rizik."
+            short_title: "Zlepšení systémů včasného varování před globálními zdravotními riziky"
       goal_4:
         title: "Kvalitní vzdělání"
         title_in_two_lines: "Kvalitní vzdělání"
@@ -94,16 +114,21 @@ cs:
             short_title: "Bezplatné základní a střední vzdělání"
           target_4_2:
             long_title: "Do roku 2030 zajistit, aby všechny dívky a chlapci měli možnost kvalitního rozvoje v raném dětství, aby měli přístup k předškolní péči a vzdělání tak, že budou připraveni pro základní vzdělávání."
+            short_title: "Rovný přístup ke kvalitnímu předškolnímu vzdělávání"
           target_4_3:
             long_title: "Do roku 2030 zajistit rovný přístup všech žen a mužů k cenově dostupnému a kvalitnímu odbornému, učňovskému a vyššímu vzdělání, včetně univerzitního."
+            short_title: "Rovný přístup k dostupnému technickému, odbornému a vysokoškolskému vzdělávání"
           target_4_4:
             long_title: "Do roku 2030 výrazně zvýšit počet mladých a dospělých, kteří mají příslušné dovednosti včetně technických a odborných, které budou předpokladem pro zaměstnání, důstojné pracovní zařazení a pro podnikání."
+            short_title: "Zvýšení počtu lidí s příslušnými dovednostmi pro finanční úspěch"
           target_4_5:
             long_title: "Do roku 2030 eliminovat genderové nerovnosti ve vzdělávání a zajistit rovný přístup ke všem úrovním vzdělání a odborné přípravy pro znevýhodněné – osoby se zdravotním postižením, původní obyvatelstvo či ohrožené děti."
+            short_title: "Odstranit veškerou diskriminaci ve vzdělávání"
           target_4_6:
             long_title: "Do roku 2030 zajistit, aby všichni mladí a značná část dospělých mužů i žen dosáhli čtenářské a matematické gramotnosti."
             short_title: "Univerzální gramotnost a matematická gramotnost"
           target_4_7:
             long_title: "Do roku 2030 zajistit, aby všichni žáci získali znalosti a dovednosti potřebné k podpoře udržitelného rozvoje, mimo jiné prostřednictvím vzdělávání pro udržitelný rozvoj a udržitelný životní styl, lidských práv, rovnosti žen a mužů, podpory kultury míru a nenásilí, globálního občanství a ocenění kulturní rozmanitosti a přínosu kultury k udržitelnému rozvoji."
+            short_title: "Vzdělávání pro udržitelný rozvoj a globální občanství"
           target_4_A:
             long_title: "Vybudovat a vylepšit genderově citlivá vzdělávací zařízení, která budou vhodná pro děti i lidi se zdravotním postižením, a poskytnout bezpečné, nenásilné, inkluzivní a efektivní vzdělávací prostředí pro všechny."
