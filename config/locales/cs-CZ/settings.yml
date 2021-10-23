@@ -135,3 +135,7 @@ cs:
           min_length_description: "Název zadaný uživatelem při nahrávání obrázku (používá se jako atribut alt HTML)"
           max_length: "Maximální délka názvu obrázku"
           max_length_description: "Název zadaný uživatelem při nahrávání obrázku (používá se jako atribut alt HTML)"
+      documents:
+        max_amount: "Maximální počet dokumentů"
+        max_amount_description: "Maximální počet dokumentů, které lze přiložit k návrhu, investici..."
+        max_size: "Maximální velikost dokumentu"
