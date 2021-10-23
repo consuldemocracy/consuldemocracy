@@ -150,8 +150,10 @@ cs:
     budget/investment: Investice
     budget/group: Rozpočtová skupina
     budget/heading: Rozpočtová skupina
+    geozone: geozóna
     legislation/draft_version: návrh
     legislation/process: proces
+    legislation/question: otázka
     poll/shift: Posun
     poll/question/answer: Answer
     user: Účet
