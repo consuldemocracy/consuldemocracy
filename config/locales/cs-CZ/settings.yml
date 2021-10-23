@@ -130,3 +130,8 @@ cs:
         max_size: "Maximální velikost obrázku"
         max_size_description: "Maximální povolená velikost pro nahraný obrázek (v megabajtech / MB)"
         content_types: "Přijímané typy obsahu pro obrázky"
+        title:
+          min_length: "Minimální délka názvu obrázku"
+          min_length_description: "Název zadaný uživatelem při nahrávání obrázku (používá se jako atribut alt HTML)"
+          max_length: "Maximální délka názvu obrázku"
+          max_length_description: "Název zadaný uživatelem při nahrávání obrázku (používá se jako atribut alt HTML)"
