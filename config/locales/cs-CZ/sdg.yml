@@ -517,3 +517,50 @@ cs:
           target_16_2:
             long_title: "Skoncovat se zneužíváním, vykořisťováním a obchodem s lidmi a všemi formami násilí na dětech a jejich mučení."
             short_title: "Ochrana dětí před zneužíváním, vykořisťováním, obchodováním a násilím"
+          target_16_3:
+            long_title: "Podporovat svrchovanost práva na národní i mezinárodní úrovni a zajistit rovný přístup ke spravedlnosti pro všechny."
+            short_title: "Podpora právního státu a zajištění rovného přístupu ke spravedlnosti"
+          target_16_4:
+            long_title: "Do roku 2030 výrazně snížit pohyb nezákonných finančních prostředků a zbraní, usilovat o navrácení odcizeného majetku a bojovat proti všem formám organizovaného zločinu."
+            short_title: "Boj proti organizovanému zločinu a nezákonným finančním tokům a obchodu se zbraněmi"
+          target_16_5:
+            long_title: "Podstatně omezit korupci a úplatkářství ve všech formách."
+            short_title: "Podstatné omezení korupce a úplatkářství"
+          target_16_6:
+            long_title: "Vytvořit účinné, odpovědné a transparentní instituce na všech úrovních."
+            short_title: "Rozvoj účinných, odpovědných a transparentních institucí"
+          target_16_7:
+            long_title: "Zajistit odpovědné, inkluzivní, participační a zastupitelské rozhodování na všech úrovních."
+            short_title: "Zajištění odpovědného, inkluzivního a reprezentativního rozhodování"
+          target_16_8:
+            long_title: "Rozšířit a posílit zapojení rozvojových zemí do rozhodování v mezinárodních institucích."
+            short_title: "Posílení účasti na globálním řízení"
+          target_16_9:
+            long_title: "Do roku 2030 poskytnout všem právní subjektivitu, včetně registrace při narození."
+            short_title: "Poskytnutí univerzální právní identity"
+          target_16_10:
+            long_title: "Zajistit veřejnosti přístup k informacím a ochranu základních svobod, v souladu s vnitrostátními právními předpisy a mezinárodními dohodami."
+            short_title: "Zajištění přístupu veřejnosti k informacím a ochrana základních svobod"
+          target_16_A:
+            long_title: "Posílit příslušné instituce státu, mimo jiné prostřednictvím mezinárodní spolupráce, pro budování kapacit na všech úrovních pro boj proti násilí, terorismu a trestné činnosti, zejména v rozvojových státech."
+            short_title: "Posílení národních institucí pro prevenci násilí a boj proti terorismu a trestné činnosti"
+          target_16_B:
+            long_title: "Podporovat a prosazovat nediskriminační zákony a politiku udržitelného rozvoje."
+            short_title: "Podpora a prosazování nediskriminačních zákonů a politik"
+      goal_17:
+        title: "Partnerství ke splnění cílů"
+        title_in_two_lines: "Partnerství ke \nsplnění cílů"
+        description: "Oživit globální partnerství pro udržitelný rozvoj a posílit prostředky pro jeho uplatňování."
+        long_description: '<p>Cíle udržitelného rozvoje lze realizovat pouze za předpokladu silného globálního partnerství a spolupráce.</p> <p>Úspěšný rozvojový program vyžaduje inkluzivní partnerství - na globální, regionální, národní a místní úrovni - postavené na zásadách a hodnotách a na společné vizi a společných cílech, v jejichž centru stojí lidé a planeta.</p> <p>Mnoho zemí potřebuje oficiální rozvojovou pomoc na podporu růstu a obchodu. Přesto <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">úroveň pomoci klesá</a> a dárcovské země nesplnily svůj závazek navýšit financování rozvoje.</p> <p>V důsledku pandemie COVID-19 se <a href="https://www.imf. org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">předpokládá se, že světová ekonomika</a> v roce 2020 prudce poklesne, a to o 3 %, a zažije tak nejhorší recesi od dob Velké hospodářské krize.</p> <p>V současné době je více než kdy jindy zapotřebí silné mezinárodní spolupráce, která zajistí, aby země měly prostředky na zotavení z pandemie, lepší obnovu a dosažení cílů udržitelného rozvoje.</p>'
+        targets:
+          target_17_1:
+            long_title: "Posílit mobilizaci domácích zdrojů, mimo jiné prostřednictvím mezinárodní podpory rozvojovým zemím, ke zlepšení domácích kapacit pro výběr daní a dalších příjmů."
+            short_title: "Mobilizace zdrojů pro zlepšení výběru domácích příjmů "
+          target_17_2:
+            long_title: "Plně realizovat závazky rozvinutých zemí v rámci Oficiální rozvojové pomoci (ODA), včetně závazku mnoha vyspělých zemích poskytnout 0,7 procenta ODA/HND rozvojovým zemím a 0,15 až 0,20 procenta ODA/HND nejméně rozvinutým zemím; poskytovatelé ODA by měli zvážit stanovení cíle poskytnout alespoň 0,20 procenta ODA/HND nejméně rozvinutým zemím."
+            short_title: "Provádění všech závazků rozvojové pomoci"
+          target_17_3:
+            long_title: "Mobilizovat dodatečné finanční prostředky z různých zdrojů pro rozvojové státy."
+            short_title: "Mobilizace finančních zdrojů pro rozvojové země"
+          target_17_4:
+            long_title: "Pomoci rozvojovým zemím při dosahování dlouhodobé dluhové udržitelnosti prostřednictvím koordinovaných politik zaměřených na podporu financování dluhu, oddlužení a restrukturalizaci dluhu dle potřeby, a zabývat se vnějším zadlužením silně zadlužených chudých zemí, aby se snížila jejich míra zadluženosti."
