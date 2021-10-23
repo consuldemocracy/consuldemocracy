@@ -509,3 +509,11 @@ cs:
         title: "Mír, spravedlnost a silné instituce"
         title_in_two_lines: "Mír, spravedlnost a \nsilné instituce"
         description: "Podporovat mírové a inkluzivní společnosti pro udržitelný rozvoj, zajistit všem přístup ke spravedlnosti a vytvořit efektivní, odpovědné a inkluzivní instituce na všech úrovních."
+        long_description: '<p>Konflikty, nejistota, slabé instituce a omezený přístup ke spravedlnosti zůstávají velkou hrozbou pro udržitelný rozvoj.&nbsp;</p> <p>Počet <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">lidí prchajících před válkou, pronásledováním a konflikty přesáhl v roce 2018 70 milionů</a>, což je nejvyšší počet zaznamenaný Agenturou OSN pro uprchlíky (UNHCR) za téměř 70 let.&nbsp;</p> <p>V roce 2019 sledovala Organizace spojených národů <a href="https://sustainabledevelopment. un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 vražd a 30 nucených zmizení</a> obránců lidských práv, novinářů a odborářů ve 47 zemích.</p> <p>A narození přibližně <a href="https://data.unicef.org/topic/child-protection/birth-registration/">jednoho ze čtyř dětí</a> mladších pěti let na celém světě není nikdy úředně zaznamenáno, což je připravuje o doklad o právní totožnosti, který je zásadní pro ochranu jejich práv a pro přístup ke spravedlnosti a sociálním službám.</p>'
+        targets:
+          target_16_1:
+            long_title: "Výrazně snížit všechny formy násilí a související míru úmrtnosti všude na světě."
+            short_title: "Snížení násilí všude"
+          target_16_2:
+            long_title: "Skoncovat se zneužíváním, vykořisťováním a obchodem s lidmi a všemi formami násilí na dětech a jejich mučení."
+            short_title: "Ochrana dětí před zneužíváním, vykořisťováním, obchodováním a násilím"
