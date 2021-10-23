@@ -609,3 +609,28 @@ cs:
             short_title: "Zvýšení dostupnosti spolehlivých údajů"
           target_17_19:
             long_title: "Do roku 2030 stavět na stávajících iniciativách s cílem rozvinout prostředky pro měření pokroku v oblasti trvale udržitelného rozvoje, které doplní hrubý domácí produkt a podporou budování statistických kapacit rozvojových států."
+            short_title: "Další rozvoj Měření pokroku"
+      help:
+        title: "Cíle udržitelného rozvoje - nápověda"
+        description: "Své příspěvky komunitě (debaty, návrhy občanů a investiční projekty) můžete sladit s agendou udržitelného rozvoje do roku 2030, což nám umožní získat přehled o našem příspěvku k jednotlivým cílům udržitelného rozvoje. Níže se můžete seznámit se všemi cíli, jejich úkoly a lokalizovanými cíli."
+      show:
+        read_more: "Číst více o %{goal}"
+        read_less: "Číst méně o %{goal}"
+        targets:
+          no_local_targets: Tento cíl nemá žádné místní cíle
+      title: "Cíle udržitelného rozvoje"
+      filter:
+        heading: "Filtry podle SDG"
+        link: "Zobrazit všechny %{resources} související s cílem %{code}"
+        more:
+          one: "Ještě jeden cíl"
+          few: "%{count} cíle navíc"
+          many: "%{count} cílů navíc"
+          other: "%{count} cíle navíc"
+    related_list_selector:
+      goal_identifier: "SDG%{code}"
+      goal_list: "Můžete si vybrat jeden nebo více cílů udržitelného rozvoje, které odpovídají vašemu %{record}"
+      help:
+        title: "Které cíle udržitelného rozvoje jsou v souladu s mým %{record}?"
+        text: "Nápověda k SDG"
+      hint: Můžete zadat kód konkrétního cíle/úkolu nebo text k jeho nalezení. Další informace naleznete na stránce %{link}.
