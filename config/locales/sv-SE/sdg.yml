@@ -238,6 +238,18 @@ sv:
           target_8_3:
             long_title: "Främja utvecklingsinriktad politik som stödjer produktiv verksamhet, skapande av anständiga arbetstillfällen, företagande, kreativitet och innovation samt uppmuntra att mikroföretag liksom små och medelstora företag växer och blir en del av den formella ekonomin, bland annat genom tillgång till finansiella tjänster."
             short_title: "Främja politik som stödjer skapande av arbetstillfällen och växande företag"
+          target_8_4:
+            long_title: "Fram till 2030 successivt förbättra den globala resurseffektiviteten i konsumtionen och produktionen samt sträva efter att bryta sambandet mellan ekonomisk tillväxt och miljöförstöring, i enlighet med det tioåriga ramverket för hållbar konsumtion och produktion, med de utvecklade länderna i täten."
+            short_title: "Förbättra resurseffektiviteten i konsumtion och produktion"
+          target_8_5:
+            long_title: "Senast 2030 uppnå full och produktiv sysselsättning med anständiga arbetsvillkor för alla kvinnor och män, inklusive ungdomar och personer med funktionsnedsättning, samt lika lön för likvärdigt arbete."
+            short_title: "Full sysselsättning och anständiga arbetsvillkor, med lika lön"
+          target_8_6:
+            long_title: "Till 2020 väsentligt minska den andel ungdomar som varken arbetar, studerar eller praktiserar."
+            short_title: "Främja arbete, studier och praktik för ungdomar"
+          target_8_7:
+            long_title: "Vidta omedelbara och effektiva åtgärder för att avskaffa tvångsarbete, modernt slaveri och människohandel och säkerställa att de värsta formerna av barnarbete, även rekrytering och användning av barnsoldater, förbjuds och upphör. Avskaffa alla former av barnarbete senast 2025."
+            short_title: "Avskaffa modernt slaveri, människohandel och barnarbete"
       goal_9:
         title: "Hållbar industri, innovationer och infrastruktur"
         title_in_two_lines: "Hållbar industri, innovationer\noch infrastruktur"
