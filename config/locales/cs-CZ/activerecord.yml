@@ -439,6 +439,7 @@ cs:
         url: Odkaz
       valuator:
         description: Popis
+        valuator_group_id: Skupina hodnotitelů
         can_edit_dossier: Může upravovat dokumentaci
       valuator_group:
         name: "Název skupiny"
