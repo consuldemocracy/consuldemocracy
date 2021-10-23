@@ -1284,6 +1284,9 @@ cs:
           title: Konfigurace vzdáleného registru občanů
         sdg:
           title: SDG konfigurace
+      remote_census_general_name: Obecné informace
+      remote_census_request_name: Žádost o data
+      remote_census_response_name: Údaje o reakci
       setting: Vlastnosti
       setting_name: Nastavení
       setting_value: Value
@@ -1301,6 +1304,7 @@ cs:
             label: "Podle záměru"
         label:
           booths: "Vyhledat informační stánek podle jména"
+          budget_investments: "Vyhledávání investic podle názvu, popisu nebo nadpisu"
           debates: "Vyhledávání debat podle názvu nebo popisu"
           local_census_records: "Hledání podle čísla dokumentu"
           organizations: "Jméno, email nebo telefonní číslo"
