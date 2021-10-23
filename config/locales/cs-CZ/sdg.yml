@@ -480,3 +480,32 @@ cs:
             short_title: "Ukončení rozšiřování pouští a obnova znehodnocené půdy"
           target_15_4:
             long_title: "Do roku 2030 zajistit zachování horských ekosystémů, včetně jejich biodiverzity, aby se zvýšila jejich schopnost poskytovat výhody, které jsou nezbytné pro udržitelný rozvoj."
+            short_title: "Zajištění ochrany horských ekosystémů"
+          target_15_5:
+            long_title: "Přijmout neodkladná a výrazná opatření na snižování degradace přirozeného prostředí, zastavit ztrátu biodiverzity a do roku 2020 chránit a zabraňovat vyhynutí ohrožených druhů."
+            short_title: "Ochrana biologické rozmanitosti a přírodních stanovišť"
+          target_15_6:
+            long_title: "Zajistit spravedlivé rozdělování přínosů plynoucích z využívání genetických zdrojů a podporovat odpovídající přístup k těmto zdrojům."
+            short_title: "Podpora přístupu ke genetickým zdrojům a spravedlivého sdílení přínosů"
+          target_15_7:
+            long_title: "Přijmout neodkladná opatření ke skoncování s pytlačením a pašováním chráněných druhů rostlin a živočichů a řešit nabídku i poptávku po nelegálních přírodních produktech."
+            short_title: "Eliminace pytláctví a obchodování s chráněnými druhy"
+          target_15_8:
+            long_title: "Do roku 2020 zavést opatření proti zavlečení invazivních druhů do suchozemských a vodních ekosystémů a výrazně snížit jejich dopad na tyto ekosystémy, kontrolovat nebo vymýtit prioritní invazivní druhy."
+            short_title: "Prevence invazních cizích druhů na souši a ve vodních ekosystémech"
+          target_15_9:
+            long_title: "Do roku 2020 začlenit hodnoty ekosystému a biodiverzity do národního i regionálního plánování, rozvojových procesů a strategií na snižování chudoby."
+            short_title: "Integrace ekosystémů a biologické rozmanitosti do vládního plánování"
+          target_15_A:
+            long_title: "Mobilizovat a významně zvýšit finanční prostředky ze všech zdrojů na zachování a udržitelné využívání biodiverzity a ekosystémů."
+            short_title: "Zvýšení finančních zdrojů na ochranu a udržitelné využívání ekosystémů a biologické rozmanitosti"
+          target_15_B:
+            long_title: "Mobilizovat značné prostředky ze všech zdrojů na všech úrovních na financování udržitelného hospodaření s lesy a poskytnout odpovídající pobídky rozvojovým zemím na zlepšení tohoto hospodaření, včetně ochrany a obnovy lesů."
+            short_title: "Financování a motivace k udržitelnému obhospodařování lesů"
+          target_15_C:
+            long_title: "Zvýšit mezinárodní podporu boji proti pytlačení a pašování chráněných druhů, mimo jiné zvyšováním schopností místních komunit věnovat se udržitelným příležitostem k obživě."
+            short_title: "Boj proti celosvětovému pytláctví a pašování"
+      goal_16:
+        title: "Mír, spravedlnost a silné instituce"
+        title_in_two_lines: "Mír, spravedlnost a \nsilné instituce"
+        description: "Podporovat mírové a inkluzivní společnosti pro udržitelný rozvoj, zajistit všem přístup ke spravedlnosti a vytvořit efektivní, odpovědné a inkluzivní instituce na všech úrovních."
