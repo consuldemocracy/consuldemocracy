@@ -1301,6 +1301,7 @@ cs:
             label: "Podle záměru"
         label:
           booths: "Vyhledat informační stánek podle jména"
+          local_census_records: "Hledání podle čísla dokumentu"
           organizations: "Jméno, email nebo telefonní číslo"
           poll_officers: "Vyhledat úředníky ankety"
           poll_questions: "Vyhledat otázky ankety"
