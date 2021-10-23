@@ -432,14 +432,18 @@ cs:
         active: Aktivní
         action_type: Typ
         action_type_proposed_action: "Navrhované opatření"
+        action_type_resource: "Prostředek"
+        published_proposal: "Pro zveřejněné návrhy?"
       dashboard/administrator_task:
         source: Zdroj
+        user: Realizováno od
       link:
         label: Nadpis
         url: Odkaz
       valuator:
         description: Popis
         valuator_group_id: Skupina hodnotitelů
+        can_comment: Může vytvářet komentáře
         can_edit_dossier: Může upravovat dokumentaci
       valuator_group:
         name: "Název skupiny"
@@ -534,7 +538,9 @@ cs:
             code:
               invalid: "musí začínat stejným kódem jako jeho záměr, za kterým následuje tečka a končí číslem"
       messages:
+        translations_too_short: Je povinné poskytnout alespoň jeden překlad
         record_invalid: "Validation failed: %{errors}"
+        another_poll_active: Pro dané období je aktivní jiný průzkum
         restrict_dependent_destroy:
           has_one: "Cannot delete record because a dependent %{record} exists"
           has_many: "Cannot delete record because dependent %{record} exist"
