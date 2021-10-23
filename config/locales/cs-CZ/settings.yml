@@ -80,6 +80,8 @@ cs:
     analytics_url: "Adresa URL služby Analytics"
     proposal_notification_minimum_interval_in_days: "Minimální interval (ve dnech) pro autory návrhů pro zasílání oznámení o nových návrzích"
     proposal_notification_minimum_interval_in_days_description: "Počet dní, po které může uživatel posílat oznámení všem sledujícím jeho návrhu"
+    direct_message_max_per_day: "Maximální počet přímých zpráv za den"
+    direct_message_max_per_day_description: "Maximální počet přímých zpráv, které může jeden uživatel odeslat za den"
     feature:
       twitter_login: "Twutter přihlášení"
       twitter_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Twitter"
