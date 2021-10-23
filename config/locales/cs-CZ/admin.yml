@@ -1593,11 +1593,20 @@ cs:
         new:
           subtitle: Import CSV souboru
         show:
+          import: Znovu importovat
+          errored: Chybné řádky
           created: Vytvořené záznamy
         local_census_records:
           no_records_found: Nenalezeny žádné záznamy.
     machine_learning:
+      comments_summary: "Souhrn komentářů"
+      comments_summary_description: "Zobrazí automaticky generovaný souhrn komentářů ke všem položkám, které lze komentovat."
+      data_folder_content: "Obsah datové složky"
       error: "Chyba:"
+      execute_script: "Spustit skript"
+      executed_by: "Spuštěn od:"
+      executed_script: "Spuštěný skript:"
+      feature_disabled: "Tato funkce je vypnutá. Chcete-li používat funkci strojového učení, můžete ji povolit na %{link}."
       feature_disabled_link: "strana nastavení"
       help:
         title_1: "Co je AI / strojové učení?"
