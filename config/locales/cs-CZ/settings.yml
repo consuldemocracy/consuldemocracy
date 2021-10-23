@@ -126,11 +126,21 @@ cs:
       translation_interface_description: "Zobrazí rozhraní pro ruční překlad, které uživatelům umožňuje zadávat obsah ve všech dostupných jazycích aplikace. Tato možnost ovlivňuje pouze formuláře uživatelských aplikací a nezávisle na tom bude vždy aktivní v panelu správy."
       remote_census: "Konfigurace připojení ke vzdálenému registru občanů (SOAP)"
       remote_census_description: "Umožňuje konfigurovat připojení ke vzdálenému registru občanů každé instituce"
+      valuation_comment_notification: "Oznámení o připomínkách k hodnocení"
+      valuation_comment_notification_description: "Odeslat e-mail všem přidruženým uživatelům kromě komentátora ocenění do rozpočtu investic, když je vytvořen nový komentář k ocenění"
       graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "E-maily s upozorněním na ovládacím panelu"
+        notification_emails_description: "Povolit zasílání e-mailů s upozorněním na ovládací panel autorům návrhu"
       sdg: SDG
+      sdg_description: Povolit sekce Cílů udržitelného rozvoje v nabídce správy a v globálních nastaveních.
     remote_census:
       general:
         endpoint: "Koncový bod"
+        endpoint_description: "Název hostitele, kde je služba registru občanů dostupná (wsdl)"
+      request:
+        method_name: "Název metody požadavku"
+        method_name_description: "Název metody požadavku přijímaný webovou službou City Census WebService."
       response:
         district: "Cesta pro městskou část"
         district_description: "V jaké cestě odpovědi se nachází městská část uživatele?"
