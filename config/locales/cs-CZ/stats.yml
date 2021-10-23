@@ -20,4 +20,5 @@ cs:
       by_heading: "Účastníci podle fáze a položky"
       total: "Celkem"
       heading: "Položka"
+      participants_support_phase: "Fáze podpory účastníků"
       participants_every_phase: "Celkový počet účastníků"
