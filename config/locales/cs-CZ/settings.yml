@@ -74,7 +74,12 @@ cs:
       email_description: Popis e-mailu
       email_description_description: Podrobný popis funkce e-mailu
       poster_short_title: Plakát
+      poster_short_title_description: 'Stručný popis funkce plakátu. Umožňuje uživatelům stáhnout plakát ve formátu PDF a propagovat tak svůj návrh. Celý obsah tohoto plakátu najdete v souboru "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Popis plakátu
+      poster_description_description: Podrobný popis funkce plakátu
     analytics_url: "Adresa URL služby Analytics"
+    proposal_notification_minimum_interval_in_days: "Minimální interval (ve dnech) pro autory návrhů pro zasílání oznámení o nových návrzích"
+    proposal_notification_minimum_interval_in_days_description: "Počet dní, po které může uživatel posílat oznámení všem sledujícím jeho návrhu"
     feature:
       twitter_login: "Twutter přihlášení"
       twitter_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Twitter"
