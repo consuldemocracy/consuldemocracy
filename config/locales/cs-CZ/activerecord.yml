@@ -133,7 +133,7 @@ cs:
       geozone:
         name: Název
         external_code: "Externí kód (volitelný)"
-        census_code: "Kód sčítání (nepovinné)"
+        census_code: "Kód registru občanů (nepovinné)"
         html_map_coordinates: "HTML <map> Souřadnice (nepovinné)"
       milestone:
         status_id: "Aktuální stav (volitelné)"
