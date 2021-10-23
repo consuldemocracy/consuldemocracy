@@ -145,6 +145,8 @@ cs:
         document_type: "Cesta k typu dokladu"
         document_type_description: "Cesta ve struktuře požadavku, která odesílá Typ dokladu. NEVYPLŇUJTE, pokud webová služba nevyžaduje Typ dokladu k ověření uživatele."
         document_number: "Cesta k číslu dokladu"
+        date_of_birth: "Cesta k datu narození"
+        date_of_birth_description: "Cesta ve struktuře požadavku, která odesílá datum narození. NEVYPLŇUJTE, pokud webová služba nevyžaduje datum narození k ověření uživatele."
       response:
         district: "Cesta pro městskou část"
         district_description: "V jaké cestě odpovědi se nachází městská část uživatele?"
