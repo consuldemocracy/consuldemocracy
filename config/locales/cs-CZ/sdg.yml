@@ -639,3 +639,8 @@ cs:
     targets:
       filter:
         link: "Zobrazit všechny %{resources} související s cílem %{code}"
+        more:
+          one: "Ještě jeden cíl"
+          few: "ještě %{count} cíle"
+          many: "ještě %{count} cílů"
+          other: "dalších %{count} cílů"
