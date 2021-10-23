@@ -90,6 +90,7 @@ cs:
       google_login: "Přihlášení Google"
       google_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Google"
       wordpress_login: "Přihlášení do Wordpressu"
+      wordpress_login_description: "Umožnit uživatelům přihlásit se pomocí účtu Wordpress"
       featured_proposals: "Doporučené návrhy"
       featured_proposals_description: "Zobrazit doporučené návrhy na hlavní stránce návrhů"
       signature_sheets: "Podpisové archy"
@@ -106,6 +107,7 @@ cs:
       community: "Komunita kolem návrhů a investic"
       community_description: "Povolit sekci komunit v návrzích a investičních projektech participativního rozpočtu"
       machine_learning: "AI / Machine learning"
+      machine_learning_description: "Povolte sekci AI / Machine Learning pro automatické spouštění skriptů Python a obohacování obsahu."
       map: "Provádět geolokaci návrhů a projektů rozpočtu"
       map_description: "Povolit geolokaci návrhů a investičních projektů"
       allow_images: "Umožnit nahrát a zobrazit obrázky"
@@ -118,7 +120,11 @@ cs:
       public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
       help_page: "Stránka nápovědy"
       help_page_description: 'Zobrazí nabídku Nápověda obsahující stránku s informacemi o každé povolené funkci'
+      remote_translations: "Vzdálený překlad"
+      remote_translations_description: "Zobrazí tlačítko, které umožňuje uživatelům vyžádat si překlad, pokud obsah není v jejich jazyce."
       translation_interface: "Překlad rozhraní"
+      translation_interface_description: "Zobrazí rozhraní pro ruční překlad, které uživatelům umožňuje zadávat obsah ve všech dostupných jazycích aplikace. Tato možnost ovlivňuje pouze formuláře uživatelských aplikací a nezávisle na tom bude vždy aktivní v panelu správy."
+      remote_census: "Konfigurace připojení ke vzdálenému sčítání (SOAP)"
       graphql_api: "GraphQL API"
       sdg: SDG
     remote_census:
