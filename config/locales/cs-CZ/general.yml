@@ -619,6 +619,7 @@ cs:
       date_5: "Vlastní nastavení"
       from: "From"
       general: "Obsahující text"
+      goal_blank: "Vyberte cíl"
       search: "Filtr"
       target: "Podle záměru"
       target_blank: "Vybrat záměr"
