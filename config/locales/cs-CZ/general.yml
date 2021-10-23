@@ -618,6 +618,8 @@ cs:
       from: "From"
       general: "Obsahující text"
       search: "Filtr"
+      target: "Podle záměru"
+      target_blank: "Vybrat záměr"
       title: "Pokročilé vyhledávání"
       to: "do"
     author_info:
@@ -650,6 +652,7 @@ cs:
       districts: "Městské části"
       districts_list: "Seznam městských částí"
       categories: "Kategorie"
+    target_blank: " (odkaz se otevře v novém okně)"
     you_are_in: "Jste v"
     unflag: Odblokovat
     unfollow_entity: "Přestat sledovat %{entity}"
