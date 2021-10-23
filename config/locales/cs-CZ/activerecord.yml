@@ -50,6 +50,11 @@ cs:
         few: "Návrhy občanů"
         many: "Návrhy občanů"
         other: "Návrhů občanů"
+      sdg/local_target:
+        one: "místní záměr"
+        few: "místní záměry"
+        many: "místních záměrů"
+        other: "místní záměry"
       legislation/process:
         one: "Proces"
         few: "Procesy"
@@ -511,6 +516,10 @@ cs:
           attributes:
             valuation:
               cannot_comment_valuation: "You cannot comment a valuation"
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "musí začínat stejným kódem jako jeho záměr, za kterým následuje tečka a končí číslem"
       messages:
         record_invalid: "Validation failed: %{errors}"
         restrict_dependent_destroy:
