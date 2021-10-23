@@ -436,3 +436,12 @@ cs:
           target_14_1:
             long_title: "Do roku 2025 předcházet a výrazně snižovat znečištění moří, zejména znečištění, které je způsobováno činností na pevnině, včetně odpadků a znečištění z živin."
             short_title: "Snížení znečištění moří"
+          target_14_2:
+            long_title: "Do roku 2020 udržitelně spravovat a chránit mořské a pobřežní ekosystémy, aby se zabránilo výrazným negativním dopadům, mimo jiné posilováním jejich odolnosti a opatřeními na jejich obnovu s cílem zajistit zdravé a produktivní oceány."
+            short_title: "Ochrana a obnova ekosystémů"
+          target_14_3:
+            long_title: "Minimalizovat a řešit dopady okyselování oceánů, mimo jiné prohlubováním vědecké spolupráce na všech úrovních."
+            short_title: "Snížení okyselování oceánů"
+          target_14_4:
+            long_title: "Do roku 2020 dosáhnout účinné regulace rybolovu a skoncovat s nadměrným rybolovem, nezákonným, nehlášeným a neregulovaným rybolovem a nešetrnými metodami rybolovu, zavést vědecky podložené plány hospodaření s cílem obnovit populace ryb v co nejkratším možném čase přinejmenším na úroveň, která dokáže produkovat maximální udržitelný výnos podle biologických vlastností jednotlivých druhů."
+            short_title: "Udržitelný rybolov"
