@@ -634,3 +634,8 @@ cs:
         title: "Které cíle udržitelného rozvoje jsou v souladu s mým %{record}?"
         text: "Nápověda k SDG"
       hint: Můžete zadat kód konkrétního cíle/úkolu nebo text k jeho nalezení. Další informace naleznete na stránce %{link}.
+      remove_tag: "Odstranit"
+      title: "Cíle a úkoly udržitelného rozvoje"
+    targets:
+      filter:
+        link: "Zobrazit všechny %{resources} související s cílem %{code}"
