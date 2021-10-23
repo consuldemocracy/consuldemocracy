@@ -564,3 +564,27 @@ cs:
             short_title: "Mobilizace finančních zdrojů pro rozvojové země"
           target_17_4:
             long_title: "Pomoci rozvojovým zemím při dosahování dlouhodobé dluhové udržitelnosti prostřednictvím koordinovaných politik zaměřených na podporu financování dluhu, oddlužení a restrukturalizaci dluhu dle potřeby, a zabývat se vnějším zadlužením silně zadlužených chudých zemí, aby se snížila jejich míra zadluženosti."
+            short_title: "Pomoc rozvojovým zemím při dosahování udržitelnosti dluhu"
+          target_17_5:
+            long_title: "Přijmout a realizovat režimy na podporu investic pro nejméně rozvinuté státy."
+            short_title: "Investice do nejméně rozvinutých zemí"
+          target_17_6:
+            long_title: "Posílit spolupráci sever-jih, jih-jih, trojstrannou regionální a mezinárodní spolupráci v přístupu k vědě, technologiím a inovacím, a posílit sdílení znalostí za vzájemně dohodnutých podmínek, mimo jiné prostřednictvím lepší koordinace stávajících mechanismů, zejména na úrovni OSN, a prostřednictvím mechanismu mezinárodního zpřístupňování technologií."
+            short_title: "Sdílení znalostí a spolupráce pro přístup k vědě, technologiím a inovacím"
+          target_17_7:
+            long_title: "Podporovat rozvoj, transfer a rozšiřování technologií šetrných k životnímu prostředí do rozvojových zemí za výhodných podmínek, včetně koncesí a preferenčních podmínek na základě vzájemných dohod."
+            short_title: "Podpora udržitelných technologií v rozvojových zemích"
+          target_17_8:
+            long_title: "Plně zprovoznit technologickou banku a mechanismy budování vědeckých, technologických a inovačních kapacit pro nejméně rozvinuté státy do roku 2017 rozšířit používání technologií, zejména informačních a komunikačních."
+            short_title: "Posílení vědecké, technologické a inovační kapacity pro nejméně rozvinuté země"
+          target_17_9:
+            long_title: "Posílit mezinárodní podporu pro realizaci efektivního a cíleného budování kapacit v rozvojových zemích na podporu národních plánů naplňování všech cílů udržitelného rozvoje, a to i prostřednictvím spolupráce sever-jih, jih-jih a trojstranné spolupráce."
+            short_title: "Posílení kapacit SDG v rozvojových zemích "
+          target_17_10:
+            long_title: "Podporovat univerzální, standardizovaný, otevřený, nediskriminační a spravedlivý multilaterální obchodní systém pod dohledem Světové obchodní organizace (WTO), a to i prostřednictvím závěrů vyjednávání v Rozvojové agendě WTO z Dauhá."
+            short_title: "Podpora univerzálního obchodního systému v rámci WTO"
+          target_17_11:
+            long_title: "Výrazně zvýšit vývoz rozvojových zemí, zejména s cílem zdvojnásobit podíl nejméně rozvinutých států na světovém vývozu do roku 2020."
+            short_title: "Zvýšení vývozu rozvojových zemí"
+          target_17_12:
+            long_title: "Umožnit nejméně rozvinutým státům bezcelní a bezkvótový přístup na trhy v dlouhodobém měřítku, v souladu s rozhodnutími Světové obchodní organizace, mimo jiné zajištěním toho, že preferenčních pravidla původu vztahující se na dovoz z nejméně rozvinutých států jsou transparentní a jednoduchá a přispívají k usnadnění přístupu na trhy."
