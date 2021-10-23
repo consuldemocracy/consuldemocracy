@@ -62,6 +62,7 @@ cs:
     min_age_to_participate_description: "Uživatelé od tohoto věku se mohou účastnit všech procesů"
     proposals:
       successful_proposal_id: Úspěšný návrh
+      successful_proposal_id_description: Tento návrh slouží jako reference pro úspěšný návrh v množství podpory a zobrazí se v grafu ovládacího panelu.
       poll_short_title: Průzkumy
       poll_description: Popis hlasování
       poll_link: Odkaz na doplňující informace
