@@ -141,6 +141,10 @@ cs:
       request:
         method_name: "Název metody požadavku"
         method_name_description: "Název metody požadavku přijímaný webovou službou City Census WebService."
+        structure: "Struktura požadavku"
+        document_type: "Cesta k typu dokladu"
+        document_type_description: "Cesta ve struktuře požadavku, která odesílá Typ dokladu. NEVYPLŇUJTE, pokud webová služba nevyžaduje Typ dokladu k ověření uživatele."
+        document_number: "Cesta k číslu dokladu"
       response:
         district: "Cesta pro městskou část"
         district_description: "V jaké cestě odpovědi se nachází městská část uživatele?"
