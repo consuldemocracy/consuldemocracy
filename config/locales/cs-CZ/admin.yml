@@ -748,7 +748,7 @@ cs:
       dashboard_actions: Prostředky a akce
       debates: "Debaty"
       comments: "Komentáře"
-      local_census_records: Správa místního sčítání lidu
+      local_census_records: Správa místního registru občanů
       machine_learning: "AI / strojové učení"
     administrators:
       index:
@@ -1281,7 +1281,7 @@ cs:
         dashboard:
           title: Ovládací panel návrhů
         remote_census:
-          title: Konfigurace vzdáleného sčítání
+          title: Konfigurace vzdáleného registru občanů
         sdg:
           title: SDG konfigurace
       setting: Vlastnosti
