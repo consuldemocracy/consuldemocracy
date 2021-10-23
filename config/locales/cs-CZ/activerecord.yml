@@ -439,12 +439,14 @@ cs:
         url: Odkaz
       valuator:
         description: Popis
+        can_edit_dossier: Může upravovat dokumentaci
       valuator_group:
         name: "Název skupiny"
       local_census_record:
         document_type: Typ dokumentu
         document_number: Číslo dokladu
         date_of_birth: Datum narození
+        postal_code: PSČ
     errors:
       models:
         user:
@@ -476,6 +478,8 @@ cs:
           attributes:
             document_number:
               not_in_census: "Document not in census"
+            user_id:
+              has_voted: "Uživatel již hlasoval"
         legislation/process:
           attributes:
             end_date:
@@ -486,6 +490,10 @@ cs:
               invalid_date_range: musí být v datum zahájení nebo pozdější
             allegations_end_date:
               invalid_date_range: must be on or after the allegations start date
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: není v seznamu uveden, povolené hodnoty jsou 1 pro DNI, 2 pro cestovní pas a 3 pro průkaz o povolení k pobytu.
         proposal:
           attributes:
             tag_list:
@@ -516,6 +524,10 @@ cs:
           attributes:
             valuation:
               cannot_comment_valuation: "You cannot comment a valuation"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Již přeložený prostředek
         sdg/local_target:
           attributes:
             code:
