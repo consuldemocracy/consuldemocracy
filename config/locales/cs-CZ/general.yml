@@ -626,6 +626,7 @@ cs:
       to: "do"
     author_info:
       author_deleted: Uživatel
+      email_deleted: E-mail smazán
     back: Jít zpět
     check: Vybrat
     check_all: Vše
@@ -635,6 +636,17 @@ cs:
     follow: "Sledování"
     following: "Sledované"
     follow_entity: "Sledovat %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Nyní sledujete tento investiční projekt! <br> O změnách vás budeme informovat, jakmile nastanou, abyste byli v obraze."
+        destroy:
+          notice: "Přestali jste sledovat tento investiční projekt! <br> Oznámení týkající se tohoto projektu již nebudete dostávat."
+      proposal:
+        create:
+          notice: "Nyní sledujete tento občanský návrh! <br> O změnách vás budeme informovat, jakmile nastanou, abyste byli v obraze."
+        destroy:
+          notice: "Přestali jste sledovat tento občanský návrh! <br> Oznámení týkající se tohoto návrhu již nebudete dostávat."
     print:
       print_button: Vytisknout tuto informaci
     search: Vyhledat
@@ -705,6 +717,8 @@ cs:
     manage:
       all: "Nemáte oprávnění k provedení akce \"%{action}\" subjektu %{subject}."
   users:
+    login_to_comment: "Chcete-li zanechat komentář, musíte se %{signin} nebo %{signup}."
+    login_to_continue: "Chcete-li pokračovat, musíte se %{signin} nebo %{signup}."
     signin: "přihlásit se"
     signup: "odhlásit se"
     verify_account: "ověřit váš účet"
@@ -738,6 +752,7 @@ cs:
       published: Publikováno
       see: "Zobrazit návrh"
       actions: Akce
+      retired_help_text: Ovládací panel není k dispozici pro vyřazené návrhy
   votes:
     agree: Souhlasím
     anonymous: Příliš mnoho anonymních hlasů k přijetí hlasování %{verify_account}.
@@ -767,6 +782,10 @@ cs:
         debates: Zobrazit všechny debaty
         proposals: Zobrazit všechny návrhy
         processes: Zobrazit všechny procesy
+      no_items:
+        debates: Právě teď neprobíhají žádné debaty
+        proposals: V současné době nejsou k dispozici žádné návrhy
+        processes: V současné době nejsou k dispozici žádné otevřené procesy
       process_label: Proces
       see_process: Zobrazit proces
     cards:
@@ -790,6 +809,7 @@ cs:
       title: Ověření účtu
     welcome:
       go_to_index: Zobrazit návrhy a debaty
+      start_using_consul: Přejít na úvodní stránku
       title: Zapojit se
       user_permission_debates: Zapojte se do debat
       user_permission_info: S vaším účtem můžete...
@@ -810,6 +830,7 @@ cs:
     help: "Můžete přidat odkazy %{models} uvnitř %{org}."
     submit: "Přidat"
     error: "Odkaz není platný. Nezapomeňte začít %{url}."
+    error_duplicate: "Související obsah, který přidáváte, již existuje."
     error_itself: "Odkaz není platný. Nelze odkazovat na totožný obsah."
     success: "Přidali jste související informace"
     is_related: "Jsou to související informace?"
