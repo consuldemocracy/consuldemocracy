@@ -68,7 +68,12 @@ cs:
       poll_description: Popis hlasování
       poll_description_description: Podrobný popis funkce průzkumu
       poll_link: Odkaz na doplňující informace
+      poll_link_description: Přidává další informační odkaz na funkci průzkumu
       email_short_title: Email
+      email_short_title_description: 'Stručný popis funkce e-mailu. Umožňuje uživatelům odeslat e-mail na podporu jejich návrhu. Celý obsah tohoto e-mailu najdete v souboru "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: Popis e-mailu
+      email_description_description: Podrobný popis funkce e-mailu
+      poster_short_title: Plakát
     analytics_url: "Adresa URL služby Analytics"
     feature:
       twitter_login: "Twutter přihlášení"
