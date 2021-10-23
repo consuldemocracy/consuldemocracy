@@ -124,7 +124,8 @@ cs:
       remote_translations_description: "Zobrazí tlačítko, které umožňuje uživatelům vyžádat si překlad, pokud obsah není v jejich jazyce."
       translation_interface: "Překlad rozhraní"
       translation_interface_description: "Zobrazí rozhraní pro ruční překlad, které uživatelům umožňuje zadávat obsah ve všech dostupných jazycích aplikace. Tato možnost ovlivňuje pouze formuláře uživatelských aplikací a nezávisle na tom bude vždy aktivní v panelu správy."
-      remote_census: "Konfigurace připojení ke vzdálenému sčítání (SOAP)"
+      remote_census: "Konfigurace připojení ke vzdálenému registru občanů (SOAP)"
+      remote_census_description: "Umožňuje konfigurovat připojení ke vzdálenému registru občanů každé instituce"
       graphql_api: "GraphQL API"
       sdg: SDG
     remote_census:
