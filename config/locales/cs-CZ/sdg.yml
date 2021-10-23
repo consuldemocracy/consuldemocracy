@@ -424,3 +424,15 @@ cs:
           target_13_A:
             long_title: "Uvést do praxe závazek přijatý vyspělými zeměmi v Rámcové úmluvě OSN o změně klimatu a do roku 2020 společně dát k dispozici ze všech zdrojů 100 miliard ročně na řešení potřeb rozvojových zemí v souvislosti se smysluplnými opatřeními na zmírňování a transparentností při jejich zavádění a plně zprovoznit Zelený klimatický fond v co nejkratší době."
             short_title: "Provádění Rámcové úmluvy OSN o změně klimatu"
+          target_13_B:
+            long_title: "Podporovat mechanismy pro zvyšování kapacit pro efektivní plánování a řízení v oblasti změny klimatu v nejméně rozvinutých zemích, se zaměřením na ženy, mládež, místní a přehlížené komunity\n\n* S vědomím, že Rámcová úmluva OSN o změně klimatu je primárním mezinárodním, mezivládním fórem pro vyjednávání globální reakce na změnu klimatu."
+            short_title: "Podpora mechanismů pro zvyšování kapacity pro plánování a řízení"
+      goal_14:
+        title: "Život ve vodě"
+        title_in_two_lines: "Život ve \nvodě"
+        description: "Chránit a udržitelně využívat oceány, moře a mořské zdroje pro zajištění udržitelného rozvoje."
+        long_description: '<p>Oceán je hnacím motorem globálních systémů, které zajišťují obyvatelnost Země pro lidstvo. Naše dešťová voda, pitná voda, počasí, klima, pobřeží, většina našich potravin, a dokonce i kyslík ve vzduchu, který dýcháme, to vše je v konečném důsledku zajišťováno a regulováno mořem.&nbsp;</p> <p>Šetrné hospodaření s tímto <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">zásadním globálním zdrojem</a> je klíčovým prvkem udržitelné budoucnosti. V současné době však dochází k neustálému zhoršování stavu pobřežních vod v důsledku znečištění a okyselování oceánů má nepříznivý vliv na fungování ekosystémů a biologickou rozmanitost. To má negativní dopad i na drobný rybolov.&nbsp;</p> <p>Záchrana našeho oceánu musí zůstat prioritou. Biologická rozmanitost moří je pro zdraví lidí a naší planety zásadní. Je třeba účinně spravovat chráněné mořské oblasti a zajistit jim dostatek zdrojů a zavést předpisy, které omezí nadměrný rybolov, znečištění moří a okyselování oceánů.</p>'
+        targets:
+          target_14_1:
+            long_title: "Do roku 2025 předcházet a výrazně snižovat znečištění moří, zejména znečištění, které je způsobováno činností na pevnině, včetně odpadků a znečištění z živin."
+            short_title: "Snížení znečištění moří"
