@@ -9,6 +9,7 @@ cs:
     men_percentage: "%{percentage} Muži"
     women_percentage: "%{percentage} Ženy"
     age: "Věk"
+    age_range: "%{start} - %{finish} let"
     total: "Celkem"
     geozone: "Okres"
     budgets:
@@ -20,5 +21,12 @@ cs:
       by_heading: "Účastníci podle fáze a položky"
       total: "Celkem"
       heading: "Položka"
+      investments_sent: "Odeslané investiční návrhy"
       participants_support_phase: "Fáze podpory účastníků"
       participants_every_phase: "Celkový počet účastníků"
+    polls:
+      by_channel: "Účastníci podle kanálu"
+      vote_by_channel: "Typ hlasování podle kanálu"
+      web_percentage: "%{percentage} Web"
+      booth_percentage: "%{percentage} Stánky"
+      letter_percentage: "%{percentage} E-mail"
