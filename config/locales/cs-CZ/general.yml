@@ -503,6 +503,11 @@ cs:
       index:
         title: Průzkumy
         create: Vytvořit průzkum
+        count:
+          one: Vytvořili jste %{count} průzkum.
+          few: Vytvořili jste %{count} průzkumy.
+          many: Vytvořili jste %{count} průzkumů.
+          other: Vytvořili jste %{count} průzkumů.
         links: Odkazy
         additiontal_information: Doplňující informace
       new:
