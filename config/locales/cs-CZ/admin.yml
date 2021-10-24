@@ -1230,6 +1230,11 @@ cs:
           pending: Nevyřízený
           rejected: Odmítnutý
           verified: Ověřen
+        hidden_count:
+          one: Existuje také <strong>jedna organizace</strong> bez uživatelů nebo se skrytým uživatelem.
+          few: Existují <strong>%{count} organizace</strong> bez uživatelů nebo se skrytým uživatelem.
+          many: Existuje <strong>%{count} organizací</strong> bez uživatelů nebo se skrytým uživatelem.
+          other: Existuje <strong>%{count} organizací</strong> bez uživatelů nebo se skrytým uživatelem.
         name: Název
         email: Email
         phone_number: Telefonní číslo
@@ -1404,6 +1409,10 @@ cs:
         unverified_error: (Není ověřeno statistickým úřadem)
         voted:
           zero: "Z ověřených podpisů se nevytvářejí žádné hlasy."
+          one: "Z ověřených podpisů je vytvořen %{count} hlas."
+          few: "Z ověřených podpisů jsou vytvořeny %{count} hlasy."
+          many: "Z ověřených podpisů je vytvořeno %{count} hlasů."
+          other: "Z ověřených podpisů je vytvořeno %{count} hlasů."
         loading: "Stále existují podpisy, které nejsou ověřeny základními datovými registry, prosíme aktualizujte stránku za pár okamžiků"
     stats:
       show:
