@@ -55,6 +55,11 @@ cs:
         few: asi %{count} hodin
         many: asi %{count} hodin
         other: asi %{count} hodin
+      about_x_months:
+        one: asi 1 měsíc
+        few: asi %{count} měsíce
+        many: asi %{count} měsíců
+        other: asi %{count} měsíců
       half_a_minute: p
     prompts:
       day: Den
