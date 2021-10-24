@@ -174,6 +174,11 @@ cs:
       next: "Podpořte projekty, které byste rádi viděli postoupit do další fáze."
       scrolling: "Projděte si všechny nápady"
       share: "Projekty, které jste podpořili, můžete sdílet prostřednictvím sociálních médií a přitáhnout k nim více pozornosti a podpory!"
+      supported:
+        one: "Zatím jste podpořili <strong>1 projekt</strong>."
+        few: "Zatím jste podpořili <strong>%{count} projekty</strong>."
+        many: "Zatím jste podpořili <strong>%{count} projektů</strong>."
+        other: "Zatím jste podpořili <strong>%{count} projektů</strong>."
       supported_not_logged_in: "Přihlaste se a začněte <strong>podporovat projekty</strong>."
       time: "Do %{phase_end_date} je ještě čas na podporu projektů."
       title: "Je čas <strong>podpořit</strong> projekty!"
