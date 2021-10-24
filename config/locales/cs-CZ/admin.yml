@@ -1645,6 +1645,7 @@ cs:
           no_records_found: Nenalezeny žádné záznamy.
     machine_learning:
       cancel: "Cancel operation"
+      cancel_alert: "Tato akce zruší aktuální skript a je nutné jej spustit znovu."
       comments_summary: "Souhrn komentářů"
       comments_summary_description: "Zobrazí automaticky generovaný souhrn komentářů ke všem položkám, které lze komentovat."
       data_folder_content: "Obsah datové složky"
