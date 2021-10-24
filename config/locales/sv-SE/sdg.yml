@@ -250,6 +250,11 @@ sv:
           target_8_7:
             long_title: "Vidta omedelbara och effektiva åtgärder för att avskaffa tvångsarbete, modernt slaveri och människohandel och säkerställa att de värsta formerna av barnarbete, även rekrytering och användning av barnsoldater, förbjuds och upphör. Avskaffa alla former av barnarbete senast 2025."
             short_title: "Avskaffa modernt slaveri, människohandel och barnarbete"
+          target_8_8:
+            long_title: "Skydda arbetstagarnas rättigheter och främja en trygg och säker arbetsmiljö för alla arbetstagare, även arbetskraftsinvandrare, i synnerhet kvinnliga migranter, och människor i otrygga anställningar."
+            short_title: "Skydda arbetstagarnas rättigheter och främja en trygg arbetsmiljö"
+          target_8_9:
+            long_title: "Senast 2030 utarbeta och genomföra politik för hållbar turism som skapar arbetstillfällen och främjar lokal kultur och lokala produkter"
       goal_9:
         title: "Hållbar industri, innovationer och infrastruktur"
         title_in_two_lines: "Hållbar industri, innovationer\noch infrastruktur"
