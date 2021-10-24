@@ -255,6 +255,13 @@ sv:
             short_title: "Skydda arbetstagarnas rättigheter och främja en trygg arbetsmiljö"
           target_8_9:
             long_title: "Senast 2030 utarbeta och genomföra politik för hållbar turism som skapar arbetstillfällen och främjar lokal kultur och lokala produkter"
+            short_title: "Främja nyttig och hållbar turism"
+          target_8_10:
+            long_title: "Stärka de inhemska finansinstitutens kapacitet att främja och utöka tillgången till bank- och försäkringstjänster samt finansiella tjänster för alla."
+            short_title: "Allmän tillgång till bank- och försäkringstjänster samt finansiella tjänster"
+          target_8_A:
+            long_title: "Öka det handelsrelaterade stödet (Aid for Trade) till utvecklingsländerna, i synnerhet de minst utvecklade länderna, bland annat genom det förstärkta integrerade ramverket för handelsrelaterat tekniskt bistånd till de minst utvecklade länderna (Enhanced Integrated Framework for Trade-Related Technical Assistance to Least Developed Countries)."
+            short_title: "Öka det handelsrelaterade stödet (Aid for Trade)"
       goal_9:
         title: "Hållbar industri, innovationer och infrastruktur"
         title_in_two_lines: "Hållbar industri, innovationer\noch infrastruktur"
@@ -299,9 +306,15 @@ sv:
           target_16_2:
             long_title: "Eliminera övergrepp, utnyttjande, människohandel och alla former av våld eller tortyr mot barn."
             short_title: "Skydda barn mot övergrepp, utnyttjande, människohandel och våld"
+          target_16_10:
+            long_title: "Säkerställa allmän tillgång till information och skydda grundläggande friheter, i enlighet med nationell lagstiftning och internationella avtal."
+            short_title: "Säkerställa allmän tillgång till information och skydda grundläggande friheter"
           target_16_A:
             long_title: "Stärka berörda nationella institutioner, bland annat genom internationellt samarbete, i syfte att bygga upp kapacitet på alla nivåer, i synnerhet i utvecklingsländerna, för att förebygga våld och bekämpa terrorism och brottslighet."
             short_title: "Stärka nationella institutioner för att förebygga våld och bekämpa terrorism och brottslighet"
+          target_16_B:
+            long_title: "Verka för och genomdriva icke-diskriminerande lagstiftning och politik för en hållbar utveckling."
+            short_title: "Verka för och genomdriva icke-diskriminerande lagstiftning och politik"
       goal_17:
         title: "Partnerskap för målen"
         title_in_two_lines: "Partnerskap\nför målen"
