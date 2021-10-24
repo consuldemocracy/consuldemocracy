@@ -17,6 +17,7 @@ cs:
         select_poll: Vyberte anketu
         add_results: Přidat výsledky
     poll_budgets:
+      see_ballot_sheets: Viz seznam hlasovacích lístků
       index:
         ballot_sheet_name: Název
         ballot_sheet_author: Autor
