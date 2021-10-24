@@ -117,9 +117,11 @@ cs:
         empty_valuators: "Nemáte žádné hodnotitele"
         info:
           phases_settings: "Nastavení fází"
+          staff_settings: "Správci a hodnotitelé přiřazení k rozpočtu"
       destroy:
         success_notice: Rozpočet byl smazán
         unable_notice: Nemůžete odstranit rozpočet, který je propojený s investicemi
+        unable_notice_polls: Nelze odstranit rozpočet, ke kterému je připojen průzkum
       new:
         title_multiple: Nový rozpočet s více položkami
         title_single: Nový rozpočet s jednou položkou
@@ -608,6 +610,7 @@ cs:
           warning: Text jste upravili, nezapomeňte kliknout na tlačítko Uložit, aby změny byly trvale uloženy.
           markdown_changes_message: "Upravili jste text, aniž byste ho uložili. Potvrzujete opuštění stránky?"
         form:
+          title: 'Editace <span class="strong">%{draft_version_title}</span> z procesu <span class="strong">%{process_title}</span>'
           launch_text_editor: Spustit textový editor
           close_text_editor: Zavřít textový editor
           use_markdown: Pro formátování textu použijte Markdown
@@ -1284,6 +1287,7 @@ cs:
           title: Ovládací panel návrhů
         remote_census:
           title: Konfigurace vzdáleného registru občanů
+          how_to_enable: 'Chcete-li konfigurovat vzdálený registr občanů (SOAP), musíte povolit "Konfigurovat připojení ke vzdálenému registru občanů (SOAP)" na kartě "Funkce".'
         sdg:
           title: SDG konfigurace
       remote_census_general_name: Obecné informace
@@ -1601,6 +1605,7 @@ cs:
       field: "Pole"
       new_value: "Nová hodnota"
       old_value: "Stará hodnota"
+      edited_at: "Upraveno v"
       edited_by: "Upraveno od"
       actions: "Akce"
       empty: "Nejsou zaznamenány žádné změny"
