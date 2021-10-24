@@ -115,6 +115,8 @@ cs:
           zero: "Vybrat hodnotitele"
         empty_administrators: "Nejsou zde žádní správci"
         empty_valuators: "Nemáte žádné hodnotitele"
+        info:
+          phases_settings: "Nastavení fází"
       destroy:
         success_notice: Rozpočet byl smazán
         unable_notice: Nemůžete odstranit rozpočet, který je propojený s investicemi
@@ -1629,12 +1631,15 @@ cs:
         create:
           notice: Proces importu záznamů místního registru občanů proběhl úspěšně!
         show:
+          title: Správa registru občanů
+          subtitle: Výsledky procesu importu
           import: Znovu importovat
           errored: Chybné řádky
           created: Vytvořené záznamy
         local_census_records:
           no_records_found: Nenalezeny žádné záznamy.
     machine_learning:
+      cancel: "Cancel operation"
       comments_summary: "Souhrn komentářů"
       comments_summary_description: "Zobrazí automaticky generovaný souhrn komentářů ke všem položkám, které lze komentovat."
       data_folder_content: "Obsah datové složky"
