@@ -106,6 +106,7 @@ cs:
       form:
         tags_label: "Kategorie"
       not_verified: "Pro hlasování o návrzích %{verify_account}."
+      process_title: Participativní legislativní proces
     summary:
       title: "Souhrn"
       votes:
