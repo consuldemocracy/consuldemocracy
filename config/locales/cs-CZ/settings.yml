@@ -163,6 +163,9 @@ cs:
         name: "Cesta pro jméno"
         name_description: "V jaké cestě odpovědi se nachází jméno uživatele?"
         surname: "Cesta pro příjmení"
+        surname_description: "V jaké cestě odpovědi se nachází Příjmení uživatele?"
+        valid: "Podmínka pro zjištění platné odpovědi"
+        valid_description: "Jaká cesta odpovědi musí být oznámena, aby byla považována za platnou odpověď a ověřena uživatelem"
     map:
       latitude: "Zeměpisná šířka"
       latitude_description: "Zeměpisná šířka pro zobrazení pozice na mapě"
@@ -172,8 +175,10 @@ cs:
       zoom_description: "Zvětšení pro zobrazení pozice na mapě"
     process:
       debates: "Debaty"
+      debates_description: "Občanský debatní prostor je zaměřen na každého, kdo představuje záležitosti, které se jich týkají a o kterých chtějí sdílet své názory s ostatními"
       proposals: "Návrhy"
       polls: "Průzkumy"
+      budgets: "Participativní rozpočet"
     uploads:
       images:
         min_width: "Minimální šířka obrázku"
