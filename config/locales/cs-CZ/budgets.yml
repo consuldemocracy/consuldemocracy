@@ -139,6 +139,10 @@ cs:
         support_title: Podpořit tento projekt
         supports:
           zero: Žádná podpora
+          one: Jedna podpora
+          few: "%{count} podpory"
+          many: "%{count} podpor"
+          other: "%{count} podpor"
       header:
         check_ballot: "Kontrola mého hlasování"
         different_heading_assigned: "Už jste hlasovali v jiné kapitole: %{heading_link}"
