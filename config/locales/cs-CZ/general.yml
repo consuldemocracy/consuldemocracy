@@ -904,6 +904,14 @@ cs:
     create:
       enqueue_remote_translation: Překlady byly řádně vyžádány.
     button: Přeložit stránku
+  tags:
+    list:
+      filter:
+        more:
+          one: "A ještě jedna značka"
+          few: "%{count} další značky"
+          many: "%{count} dalších značek"
+          other: "%{count} dalších značek"
   machine_learning:
     comments_summary: "Souhrn komentářů"
     info_text: "Obsah generovaný umělou inteligencí / strojovým učením"
