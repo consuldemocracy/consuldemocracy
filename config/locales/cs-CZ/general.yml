@@ -595,6 +595,8 @@ cs:
       results:
         title: "Otázky"
         most_voted_answer: "Odpověď s nejvíce hlasy: "
+    poll_header:
+      back_to_proposal: Zpět k návrhu
   poll_questions:
     show:
       vote_answer: "Hlasování %{answer}"
@@ -603,11 +605,13 @@ cs:
     new:
       title: "Odeslat zprávu"
       submit_button: "Odeslat zprávu"
+      info_about_receivers: "Toto oznámení bude odesláno <strong>%{count} lidem</strong> a bude viditelné na %{proposal_page}.<br> Oznámení nejsou odesílána okamžitě, uživatelé budou pravidelně dostávat e-mail se všemi oznámeními o návrzích."
       proposal_page: "stránce návrhu"
     show:
       back: "Jít zpět na své aktivity"
   shared:
     edit: "Upravit"
+    filter: "Filtr"
     save: "Uložit"
     delete: "Smazat"
     "yes": "Ano"
@@ -624,6 +628,7 @@ cs:
       date_5: "Vlastní nastavení"
       from: "From"
       general: "Obsahující text"
+      goal: "Podle SDG"
       goal_blank: "Vyberte cíl"
       search: "Filtr"
       target: "Podle záměru"
@@ -860,8 +865,21 @@ cs:
       cancel_button: Zrušit
     nested_links:
       title: Odkazy
+      note: Přidejte odkazy, které vás zajímají
       add_new_link: Přidat nový odkaz
+  communities:
+    show:
+      surveys: Dotazníky
+      complete_survey: Vyplňte dotazník
+    subnav:
+      surveys: Dotazníky
+    poll:
+      take_part: Zúčastněte se od %{from} do %{to}
   remote_translations:
+    text: Obsah této stránky není k dispozici ve vašem jazyce
+    all_remote_translations_enqueued_text: Po krátké době obnovení stránky se vám zobrazí veškerý obsah ve vašem jazyce.
+    create:
+      enqueue_remote_translation: Překlady byly řádně vyžádány.
     button: Přeložit stránku
   machine_learning:
     comments_summary: "Souhrn komentářů"
