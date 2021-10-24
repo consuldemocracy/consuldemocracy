@@ -19,6 +19,8 @@ cs:
     poll_budgets:
       see_ballot_sheets: Viz seznam hlasovacích lístků
       index:
+        title: "%{poll_budget} - Seznam hlasovacích lístků"
+        ballot_sheet: "Hlasovací lístek %{id}"
         ballot_sheet_name: Název
         ballot_sheet_author: Autor
         ballot_sheet_creation_date: Datum vytvoření
