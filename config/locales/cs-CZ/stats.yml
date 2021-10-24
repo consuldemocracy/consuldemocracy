@@ -13,6 +13,11 @@ cs:
     age_range: "%{start} - %{finish} let"
     total: "Celkem"
     geozone: "Okres"
+    no_demographic_data:
+      one: "* U 1 účastníka nejsou k dispozici žádné demografické údaje."
+      few: "* Pro %{count} účastníky nejsou k dispozici žádné demografické údaje."
+      many: "* Pro %{count} účastníků nejsou k dispozici žádné demografické údaje."
+      other: "* Pro %{count} účastníků nejsou k dispozici žádné demografické údaje."
     budgets:
       link: "Statistiky"
       page_title: "%{budget} - Statistiky účasti"
