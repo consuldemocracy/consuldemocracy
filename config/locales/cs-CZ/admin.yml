@@ -1330,6 +1330,7 @@ cs:
       example_url: "https://consulproject.org"
       show_results_and_stats: "Zobrazit výsledky a statistiky"
       results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
+      close_modal: Zavřít modální okno
     geozones:
       index:
         title: Geozóna
@@ -1338,7 +1339,9 @@ cs:
         name: Název
         external_code: Externí kód
         census_code: Kód statistického úřadu
+        code_help: Kód odpovědi pro tuto geozónu v rozhraní API registru osob
         coordinates: Souřadnice
+        coordinates_help: Souřadnice, které vygenerují klikatelnou oblast na obrázkové mapě HTML
       edit:
         form:
           submit_button: Uložit změny
@@ -1363,6 +1366,10 @@ cs:
         document_numbers_note: "Napište čísla oddělené čárkou (,)"
         submit: Vytvořit podpisový arch
         text_help:
+          required_fields_note: "K ověření uživatele aplikace potřebuje: Číslo dokladu"
+          date_of_birth_note: ", Den narození (dd/mm/rrrr)"
+          postal_code_note: " a poštovní směrovací číslo"
+          required_fields_structure_note: "Povinná pole pro každého uživatele musí být oddělena čárkami a každý uživatel musí být oddělen středníkem."
           example_text: "Příklad: "
       show:
         created_at: Vytvořen
