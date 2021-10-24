@@ -1601,12 +1601,23 @@ cs:
       old_value: "Stará hodnota"
       edited_by: "Upraveno od"
       actions: "Akce"
+      empty: "Nejsou zaznamenány žádné změny"
     local_census_records:
       index:
+        title: Správa místního registru občanů
+        create: Vytvoření nového záznamu v místním registru občanů
+        no_local_census_records: Nejsou žádné záznamy místního registru občanů.
         document_type: Typ dokumentu
+        document_number: Číslo dokladu
         date_of_birth: Datum narození
         postal_code: PSČ
         import: Import CSV
+      new:
+        creating: Vytvoření nového záznamu v registru občanů
+      create:
+        notice: Nový záznam v místním registru občanů úspěšně vytvořen!
+      edit:
+        editing: Upravení záznamu v registru občanů
       imports:
         new:
           subtitle: Import CSV souboru
