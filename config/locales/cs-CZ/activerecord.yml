@@ -45,6 +45,11 @@ cs:
         few: "Organizace"
         many: "Organizace"
         other: "Organizace"
+      poll/ballot_sheet:
+        one: Hlasovací lístek
+        few: Hlasovací lístky
+        many: Hlasovacích lístků
+        other: Hlasovacích lístků
       proposal:
         one: "Návrh občana"
         few: "Návrhy občanů"
