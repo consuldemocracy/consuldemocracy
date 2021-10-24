@@ -273,6 +273,10 @@ sv:
         targets:
           target_9_1:
             long_title: "Bygga ut tillförlitlig, hållbar och motståndskraftig infrastruktur av hög kvalitet, bland annat regional och gränsöverskridande infrastruktur, för att stödja ekonomisk utveckling och människors välbefinnande, med fokus på ekonomiskt överkomlig och rättvis tillgång för alla."
+            short_title: "Bygga ut hållbar, motståndskraftig och allomfattande infrastruktur"
+          target_9_2:
+            long_title: "Verka för en inkluderande och hållbar industrialisering. Till 2030 avsevärt öka industrins andel av sysselsättning och BNP, i enlighet med nationella förhållanden, och fördubbla denna andel i de minst utvecklade länderna."
+            short_title: "Verka för en inkluderande och hållbar industrialisering"
       goal_10:
         title: "Minska ojämlikheter"
         title_in_two_lines: "Minska\nojämlikheter"
