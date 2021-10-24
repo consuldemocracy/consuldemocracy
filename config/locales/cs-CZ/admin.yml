@@ -118,6 +118,7 @@ cs:
         empty_administrators: "Nejsou zde žádní správci"
         empty_valuators: "Nemáte žádné hodnotitele"
         name_description: "Tento název participativního rozpočtu se používá v záhlaví a na kartách, kdykoli je aktivní"
+        image_description: "Pokud je obrázek uplodován, bude použit jako banner v horní části tohoto participativního rozpočtu, jinak bude použita výchozí barva pro rozpočty."
         main_call_to_action: "Hlavní výzva k akci (nepovinné)"
         main_call_to_action_description: "Tento odkaz se zobrazí na hlavním reklamním proužku tohoto participativního rozpočtu a vybízí uživatele k provedení konkrétní akce, jako je vytvoření návrhu, hlasování pro stávající návrhy nebo získání dalších informací o procesu."
         info:
