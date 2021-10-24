@@ -149,6 +149,8 @@ cs:
         document_number_description: "Cesta ve struktuře požadavku, která odesílá číslo dokumentu. NEVYPLŇUJTE, pokud webová služba nevyžaduje číslo dokladu k ověření uživatele."
         date_of_birth: "Cesta k datu narození"
         date_of_birth_description: "Cesta ve struktuře požadavku, která odesílá datum narození. NEVYPLŇUJTE, pokud webová služba nevyžaduje datum narození k ověření uživatele."
+        postal_code: "Cesta k PSČ"
+        postal_code_description: "Cesta ve struktuře požadavku, která odesílá poštovní směrovací číslo. NEVYPLŇUJTE, pokud webová služba nevyžaduje poštovní směrovací číslo k ověření uživatele."
       response:
         date_of_birth: "Cesta k datu narození"
         date_of_birth_description: "V jaké cestě odpovědi se nachází datum narození uživatele?"
