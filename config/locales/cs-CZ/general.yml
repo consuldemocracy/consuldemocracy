@@ -353,6 +353,11 @@ cs:
         button: Vyhledat
         placeholder: Prohledat návrhy...
         title: Vyhledat
+      search_results:
+        one: " obsahující výraz <strong>'%{search_term}'</strong>"
+        few: " obsahující výraz <strong>'%{search_term}'</strong>"
+        many: " obsahující výraz <strong>'%{search_term}'</strong>"
+        other: " obsahující výraz <strong>'%{search_term}'</strong>"
       select_order_long: "Zobrazit návrhy podle:"
       start_proposal: Vytvořit návrh
       title: Návrhy
@@ -477,6 +482,11 @@ cs:
       see_complete_course: Prohlédněte si celý kurz
       hide_course: Skrýt kurz
     goal:
+      days:
+        one: "%{count} den"
+        few: "%{count} dny"
+        many: "%{count} dnů"
+        other: "%{count} dnů"
       locked_resource: Prostředek zablokován
       ideal_time: Ideální čas
     community:
