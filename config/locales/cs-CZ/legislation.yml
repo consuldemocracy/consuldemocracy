@@ -118,11 +118,23 @@ cs:
         zero: "Žádné debaty"
       proposals:
         zero: "Žádné návrhy"
+        one: "%{count} návrh"
+        few: "%{count} návrhy"
+        many: "%{count} návrhů"
+        other: "%{count} návrhů"
       comments:
         zero: "Žádné komentáře"
+        one: "%{count} komentář"
+        few: "%{count} komentáře"
+        many: "%{count} komentářů"
+        other: "%{count} komentářů"
       download: "Stáhnout shrnutí"
       top_comments:
         zero: "Žádné komentáře"
+        one: "%{count} komentář"
+        few: "Nejlepší komentáře"
+        many: "Nejlepších komentářů"
+        other: "Nejlepší komentáře"
       most_voted_comments: "Nejčastěji hlasované komentáře"
       no_allegation: "Nejsou žádné komentáře"
       process_empty: "Tento proces neměl žádné fáze účasti"
