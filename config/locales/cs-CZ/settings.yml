@@ -210,3 +210,16 @@ cs:
         max_size: "Maximální velikost dokumentu"
         max_size_description: "Maximální povolená velikost nahraného dokumentu (v megabajtech/MB)"
         content_types: "Povolené typy dokumentů"
+        content_types_description: "Vyberte všechny typy obsahu povolené pro nahrané dokumenty"
+    sdg:
+      process:
+        debates: Související SDG v debatách
+        debates_description: Umožnit propojení debat s cíli udržitelného rozvoje
+        proposals: Související SDG v návrzích
+        proposals_description: Umožnit propojení návrhů s Cíli udržitelného rozvoje
+        polls: Související SDG v průzkumech
+        polls_description: Umožnit propojení průzkumů s Cíli udržitelného rozvoje
+        budgets: Související Cíle udržitelného rozvoje v participačních rozpočtech
+        budgets_description: Umožnit propojení participačních rozpočtů s Cíli udržitelného rozvoje
+        legislation: Související Cíle udržitelného rozvoje ve spolupracujících právních předpisech
+        legislation_description: Umožnit propojení legislativy založené na spolupráci s Cíli udržitelného rozvoje
