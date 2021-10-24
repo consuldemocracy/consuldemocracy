@@ -1375,7 +1375,10 @@ cs:
         created_at: Vytvořen
         author: Autor
         users: Uživatelé
+        signature_count: "Počet podpisů:"
         unverified_error: (Není ověřeno statistickým úřadem)
+        voted:
+          zero: "Z ověřených podpisů se nevytvářejí žádné hlasy."
         loading: "Stále existují podpisy, které nejsou ověřeny základními datovými registry, prosíme aktualizujte stránku za pár okamžiků"
     stats:
       show:
@@ -1465,6 +1468,7 @@ cs:
     users:
       columns:
         id: ID
+        erase_reason: Vymazat důvod
         name: Název
         email: Email
         document_number: Číslo dokladu
@@ -1476,6 +1480,7 @@ cs:
         filter: Filtr
         filters:
           active: Aktivní
+          erased: Vymazáno
       search:
         placeholder: Hledat uživatele pomocí e-mailu, jména nebo čísla dokladu
     verifications:
@@ -1545,6 +1550,7 @@ cs:
           see_page: Zobrazit stránku
         new:
           title: Vytvořit novou vlastní stránku
+          slug_help: "Text pro identifikaci této stránky na URL, například <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Vytvořeno v
           status: Status
@@ -1587,6 +1593,7 @@ cs:
         card_title: Upravit kartu
         submit_card: Uložit kartu
     audits:
+      title: "Protokol změn"
       changes: "Seznam změn"
       id: "ID"
       field: "Pole"
