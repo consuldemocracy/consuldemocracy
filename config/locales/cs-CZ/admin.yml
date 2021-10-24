@@ -115,6 +115,7 @@ cs:
           zero: "Vybrat hodnotitele"
         empty_administrators: "Nejsou zde žádní správci"
         empty_valuators: "Nemáte žádné hodnotitele"
+        name_description: "Tento název participativního rozpočtu se používá v záhlaví a na kartách, kdykoli je aktivní"
         main_call_to_action: "Hlavní výzva k akci (nepovinné)"
         main_call_to_action_description: "Tento odkaz se zobrazí na hlavním reklamním proužku tohoto participativního rozpočtu a vybízí uživatele k provedení konkrétní akce, jako je vytvoření návrhu, hlasování pro stávající návrhy nebo získání dalších informací o procesu."
         info:
@@ -1317,6 +1318,7 @@ cs:
           budget_investments: "Vyhledávání investic podle názvu, popisu nebo nadpisu"
           debates: "Vyhledávání debat podle názvu nebo popisu"
           legislation_processes: "Vyhledávání procesů podle názvu nebo popisu"
+          legislation_proposals: "Vyhledávání návrhů podle názvu nebo popisu"
           local_census_records: "Hledání podle čísla dokumentu"
           organizations: "Jméno, email nebo telefonní číslo"
           poll_officers: "Vyhledat úředníky ankety"
