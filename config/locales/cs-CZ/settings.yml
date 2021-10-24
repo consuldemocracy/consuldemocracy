@@ -148,8 +148,17 @@ cs:
         date_of_birth: "Cesta k datu narození"
         date_of_birth_description: "Cesta ve struktuře požadavku, která odesílá datum narození. NEVYPLŇUJTE, pokud webová služba nevyžaduje datum narození k ověření uživatele."
       response:
+        date_of_birth: "Cesta k datu narození"
+        date_of_birth_description: "V jaké cestě odpovědi se nachází datum narození uživatele?"
+        postal_code: "Cesta k PSČ"
+        postal_code_description: "V jaké cestě odpovědi se nachází poštovní směrovací číslo uživatele?"
         district: "Cesta pro městskou část"
         district_description: "V jaké cestě odpovědi se nachází městská část uživatele?"
+        gender: "Cesta pro pohlaví"
+        gender_description: "Na jaké cestě odpovědi je pohlaví uživatele?"
+        name: "Cesta pro jméno"
+        name_description: "V jaké cestě odpovědi se nachází jméno uživatele?"
+        surname: "Cesta pro příjmení"
     map:
       latitude: "Zeměpisná šířka"
       latitude_description: "Zeměpisná šířka pro zobrazení pozice na mapě"
