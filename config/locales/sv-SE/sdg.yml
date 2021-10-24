@@ -277,6 +277,15 @@ sv:
           target_9_2:
             long_title: "Verka för en inkluderande och hållbar industrialisering. Till 2030 avsevärt öka industrins andel av sysselsättning och BNP, i enlighet med nationella förhållanden, och fördubbla denna andel i de minst utvecklade länderna."
             short_title: "Verka för en inkluderande och hållbar industrialisering"
+          target_9_3:
+            long_title: "Öka tillgången för småskaliga industriföretag och andra företag, i synnerhet i utvecklingsländerna, till finansiella tjänster, bland annat överkomliga krediter, samt deras integrering i värdekedjor och marknader."
+            short_title: "Öka tillgången till finansiella tjänster och marknader"
+          target_9_4:
+            long_title: "Till 2030 rusta upp infrastrukturen och anpassa industrin för att göra dem hållbara, med effektivare resursanvändning och fler rena och miljövänliga tekniker och industriprocesser. Alla länder vidtar åtgärder i enlighet med sina respektive förutsättningar."
+            short_title: "Rusta upp alla industrier och infrastrukturer för hållbarhet"
+          target_9_5:
+            long_title: "Förbättra den vetenskapliga forskningen och industrisektorernas tekniska kapacitet i alla länder, i synnerhet utvecklingsländerna, bland annat genom att till 2030 uppmuntra innovation och väsentligt öka det antal personer som arbetar med forskning och utveckling per 1 miljon människor liksom de offentliga och privata utgifterna för forskning och utveckling."
+            short_title: "Förbättra forskningen och uppgradera industriell teknik "
       goal_10:
         title: "Minska ojämlikheter"
         title_in_two_lines: "Minska\nojämlikheter"
