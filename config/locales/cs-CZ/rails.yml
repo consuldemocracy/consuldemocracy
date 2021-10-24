@@ -50,6 +50,11 @@ cs:
       - Prosinec
   datetime:
     distance_in_words:
+      about_x_hours:
+        one: asi 1 hodina
+        few: asi %{count} hodin
+        many: asi %{count} hodin
+        other: asi %{count} hodin
       half_a_minute: p
     prompts:
       day: Den
