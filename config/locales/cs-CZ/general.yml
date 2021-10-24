@@ -143,6 +143,7 @@ cs:
     direct_message: soukromá zpráva
     error: chyba
     errors: chyby
+    not_saved: "zabránil uložení tohoto %{resource}. <br>Prosím, zkontrolujte označená pole, abyste věděli, jak je opravit:"
     policy: Zásady ochrany osobních údajů
     banner: proužek
     proposal: Návrhy
@@ -162,6 +163,8 @@ cs:
     document: Dokument
     topic: Téma
     image: Image
+    local_census_record: Záznam místního registru občanů
+    local_census_records/import: Import záznamu místního registru občanů
     site_customization/content_block: obsahový blok
     site_customization/page: stránka
     sdg/local_target: místní cíl
@@ -566,6 +569,7 @@ cs:
       back: Zpět na průzkumy
       cant_answer_not_logged_in: "Chcete-li se zapojit, musíte se %{signin} nebo %{signup}."
       comments_tab: Komentáře
+      cant_answer_verify: "Abyste mohli odpovědět, musíte %{verify_link}."
       verify_link: "ověřit váš účet"
       cant_answer_expired: "Tento průzkum byl ukončen."
       cant_answer_wrong_geozone: "Tato otázka není dostupná ve vaší čtvrti."
@@ -582,6 +586,7 @@ cs:
         total_votes: "Celkový počet odevzdaných hlasů"
         votes: "HLASŮ"
         web: "WEB"
+        mail: "E-MAIL"
         booth: "INFORMAČNÍ STÁNKY"
         total: "CELKEM"
         valid: "Platné"
