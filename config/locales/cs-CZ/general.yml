@@ -39,6 +39,10 @@ cs:
         zero: Žádné odezvy
       responses_show:
         zero: Žádné odezvy
+        one: "1 odpověď (zobrazit)"
+        few: "%{count} odpovědí (zobrazit)"
+        many: "%{count} odpovědí (zobrazit)"
+        other: "%{count} odpovědí (zobrazit)"
       responses_collapse:
         zero: Žádné odezvy
       user_deleted: Uživatel smazán
