@@ -85,6 +85,11 @@ cs:
         few: "Průzkum"
         many: "Průzkum"
         other: "Průzkum"
+      dashboard/action:
+        one: Akce na ovládacím panelu Návrhu
+        few: Akce na ovládacím panelu Návrhu
+        many: Akcí na ovládacím panelu Návrhu
+        other: Akcí na ovládacím panelu Návrhu
     attributes:
       budget:
         name: "Name"
