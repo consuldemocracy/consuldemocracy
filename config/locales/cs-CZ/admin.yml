@@ -115,7 +115,10 @@ cs:
           zero: "Vybrat hodnotitele"
         empty_administrators: "Nejsou zde žádní správci"
         empty_valuators: "Nemáte žádné hodnotitele"
+        main_call_to_action: "Hlavní výzva k akci (nepovinné)"
+        main_call_to_action_description: "Tento odkaz se zobrazí na hlavním reklamním proužku tohoto participativního rozpočtu a vybízí uživatele k provedení konkrétní akce, jako je vytvoření návrhu, hlasování pro stávající návrhy nebo získání dalších informací o procesu."
         info:
+          budget_settings: "Obecné nastavení participativního rozpočtu"
           phases_settings: "Nastavení fází"
           staff_settings: "Správci a hodnotitelé přiřazení k rozpočtu"
       destroy:
@@ -1290,6 +1293,7 @@ cs:
           how_to_enable: 'Chcete-li konfigurovat vzdálený registr občanů (SOAP), musíte povolit "Konfigurovat připojení ke vzdálenému registru občanů (SOAP)" na kartě "Funkce".'
         sdg:
           title: SDG konfigurace
+          how_to_enable: 'Chcete-li zobrazit možnosti konfigurace z Cílů udržitelného rozvoje, musíte povolit "SDG" na kartě "Funkce".'
       remote_census_general_name: Obecné informace
       remote_census_request_name: Žádost o data
       remote_census_response_name: Údaje o reakci
@@ -1312,10 +1316,12 @@ cs:
           booths: "Vyhledat informační stánek podle jména"
           budget_investments: "Vyhledávání investic podle názvu, popisu nebo nadpisu"
           debates: "Vyhledávání debat podle názvu nebo popisu"
+          legislation_processes: "Vyhledávání procesů podle názvu nebo popisu"
           local_census_records: "Hledání podle čísla dokumentu"
           organizations: "Jméno, email nebo telefonní číslo"
           poll_officers: "Vyhledat úředníky ankety"
           poll_questions: "Vyhledat otázky ankety"
+          polls: "Vyhledávání průzkumů podle názvu nebo popisu"
           proposals: "Vyhledat návrhy podle názvu, kódu, popisu nebo otázky"
           users: "Vyhledat uživatele podle jména nebo e-mailu"
         search: "Hledat"
