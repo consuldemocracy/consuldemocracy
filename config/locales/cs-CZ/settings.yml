@@ -181,6 +181,7 @@ cs:
       budgets: "Participativní rozpočet"
       budgets_description: "V rámci participativních rozpočtů občané rozhodují o tom, které projekty předložené jejich sousedy obdrží část rozpočtu"
       legislation: "Participativní legislativní proces"
+      legislation_description: "V participačních procesech mají občané možnost podílet se na přípravě a úpravě předpisů, které mají vliv na společnost, a vyjádřit se k určitým plánovaným opatřením"
     uploads:
       images:
         min_width: "Minimální šířka obrázku"
