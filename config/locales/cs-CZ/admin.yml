@@ -113,8 +113,16 @@ cs:
         blank_dates: Data jsou prázdné
         administrators:
           zero: "Vybrat správce"
+          one: "1 vybraný správce"
+          few: "%{count} vybraní správci"
+          many: "%{count} vybraných správců"
+          other: "%{count} vybraných správců"
         valuators:
           zero: "Vybrat hodnotitele"
+          one: "1 vybraný hodnotitel"
+          few: "%{count} vybraní hodnotitelé"
+          many: "%{count} vybraných hodnotitelů"
+          other: "%{count} vybraných hodnotitelů"
         empty_administrators: "Nejsou zde žádní správci"
         empty_valuators: "Nemáte žádné hodnotitele"
         name_description: "Tento název participativního rozpočtu se používá v záhlaví a na kartách, kdykoli je aktivní"
