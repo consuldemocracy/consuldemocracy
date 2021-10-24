@@ -24,6 +24,7 @@ cs:
         ballot_sheet_creation_date: Datum vytvoření
         empty_results: Pro tento průzkum zatím nejsou k dispozici žádné hlasovací lístky
       new:
+        title: "%{poll_budget} - Nový hlasovací arch"
         booth: Informační stánek
         select_booth: Vyberte informační stánek
         csv_data: CSV data
