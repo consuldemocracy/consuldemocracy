@@ -179,6 +179,8 @@ cs:
       proposals: "Návrhy"
       polls: "Průzkumy"
       budgets: "Participativní rozpočet"
+      budgets_description: "V rámci participativních rozpočtů občané rozhodují o tom, které projekty předložené jejich sousedy obdrží část rozpočtu"
+      legislation: "Participativní legislativní proces"
     uploads:
       images:
         min_width: "Minimální šířka obrázku"
