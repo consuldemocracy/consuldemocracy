@@ -45,6 +45,10 @@ cs:
         other: "%{count} odpovědí (zobrazit)"
       responses_collapse:
         zero: Žádné odezvy
+        one: "1 reakce (sbaleno)"
+        few: "%{count} reakce (sbaleno)"
+        many: "%{count} reakcí (sbaleno)"
+        other: "%{count} reakcí (sbaleno)"
       user_deleted: Uživatel smazán
       votes:
         zero: Žádné hlasy
