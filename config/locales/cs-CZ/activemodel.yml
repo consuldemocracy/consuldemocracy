@@ -4,6 +4,11 @@ cs:
       verification:
         residence: "Bydliště"
         sms: "SMS"
+      local_census_records/import:
+        one: Import záznamu místního registru občanů
+        few: Importy záznamu místního registru občanů
+        many: Importů záznamů místního registru občanů
+        other: Importů záznamů místního registru občanů
     attributes:
       verification:
         residence:
