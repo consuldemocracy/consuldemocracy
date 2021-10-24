@@ -1618,9 +1618,16 @@ cs:
         notice: Nový záznam v místním registru občanů úspěšně vytvořen!
       edit:
         editing: Upravení záznamu v registru občanů
+      update:
+        notice: Záznam místního registru občanů úspěšně aktualizován!
+      destroy:
+        notice: Záznam místního registru občanů úspěšně odstraněn!
       imports:
         new:
+          title: Záznamy místního registru občanů
           subtitle: Import CSV souboru
+        create:
+          notice: Proces importu záznamů místního registru občanů proběhl úspěšně!
         show:
           import: Znovu importovat
           errored: Chybné řádky
