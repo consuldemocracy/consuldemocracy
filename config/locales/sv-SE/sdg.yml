@@ -304,6 +304,15 @@ sv:
           target_10_1:
             long_title: "Till 2030 successivt uppnå och upprätthålla en inkomsttillväxt högre än det nationella genomsnittet för de 40 procent av befolkningen som har lägst inkomst."
             short_title: "Minska inkomstojämlikhet"
+          target_10_2:
+            long_title: "Till 2030 möjliggöra och verka för att alla människor, oavsett ålder, kön, funktionsnedsättning, ras, etnicitet, ursprung, religion eller ekonomisk eller annan ställning, omfattas i det sociala, ekonomiska och politiska livet."
+            short_title: "Verka för att alla omfattas socialt, ekonomiskt och politiskt"
+          target_10_3:
+            long_title: "Säkerställa lika möjligheter och minska förekomsten av ojämlika utfall, bland annat genom att avskaffa diskriminerande lagstiftning, politik och praxis och främja lagstiftning, politik och åtgärder av lämpligt slag i detta hänseende."
+            short_title: "Säkerställa lika möjligheter och avskaffa diskrimination"
+          target_10_4:
+            long_title: "Besluta om politik, särskilt finans-, löne- och socialskyddspolitik, och successivt uppnå ökad jämlikhet."
+            short_title: "Besluta om finans- och socialskyddspolitik som främjar jämlikhet"
       goal_11:
         title: "Hållbara städer och samhällen"
         title_in_two_lines: "Hållbara städer\noch samhällen"
