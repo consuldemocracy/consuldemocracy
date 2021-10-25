@@ -294,11 +294,16 @@ sv:
             short_title: "Stödja inhemsk teknikutveckling och industriell diversifiering"
           target_9_C:
             long_title: "Väsentligt öka tillgången till informations- och kommunikationsteknik samt eftersträva allmän och ekonomiskt överkomlig tillgång till internet i de minst utvecklade länderna senast 2020."
+            short_title: "Allmän tillgång till informations- och kommunikationsteknik"
       goal_10:
         title: "Minska ojämlikheter"
         title_in_two_lines: "Minska\nojämlikheter"
         description: "Minska ojämlikheter inom och mellan länder."
         long_description: '<p>Att minska ojämlikheten och se till att ingen glöms bort är en mycket viktig del av att uppnå målen för hållbar utveckling.&nbsp;</p> <p>Ojämlikhet i och mellan länder är en ihållande anledning till oro. Trots några positiva tecken på minskad ojämlikhet i vissa aspekter, till exempel minskade relativa inkomstskillnader i vissa länder och förmånlig handelsstatus som gynnar länder med lägre inkomst, kvarstår <a href="https://unstats.un.org/sdgs/report/2019/goal-10/">ojämlikheten</a>.</p> <p><a href="https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020">Covid-19 har fördjupat befintlig ojämlikhet</a>, eftersom de fattigaste och mest utsatta samhällena har drabbats hårdast. Detta har satt fokus på ekonomiska ojämlikheter och sköra sociala skyddsnät som låter utsatta samhällen bära det mesta av krisen.&nbsp; Samtidigt har sociala, politiska och ekonomiska ojämlikheter förstärkt pandemins effekter.</p> <p>På den ekonomiska fronten har covid-19-pandemin ökat den globala <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">arbetslösheten</a> betydligt och dramatiskt sänkt arbetarnas inkomster.</p> <p>Covid-19 riskerar också de begränsade framsteg som gjorts för <a href="https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters">jämställdhet mellan könen</a> och kvinnors rättigheter under de senaste årtiondena. På alla områden, från hälsa till ekonomi, säkerhet till socialt skydd, förvärras effekterna av covid-19 för kvinnor och flickor på grund av något så enkelt som deras kön.</p> <p>Ojämlikheten fördjupas också för <a href="https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf">utsatta befolkningar</a> i länder med svagare hälso- och sjukvårdssystem och de som står inför befintliga humanitära kriser. Flyktingar och migranter, samt ursprungsbefolkningar, äldre personer, personer med funktionsnedsättning och barn riskerar särskilt att överges. Och <a href="https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia">hetsen</a> mot utsatta grupper ökar.</p>'
+        targets:
+          target_10_1:
+            long_title: "Till 2030 successivt uppnå och upprätthålla en inkomsttillväxt högre än det nationella genomsnittet för de 40 procent av befolkningen som har lägst inkomst."
+            short_title: "Minska inkomstojämlikhet"
       goal_11:
         title: "Hållbara städer och samhällen"
         title_in_two_lines: "Hållbara städer\noch samhällen"
@@ -333,6 +338,12 @@ sv:
           target_16_2:
             long_title: "Eliminera övergrepp, utnyttjande, människohandel och alla former av våld eller tortyr mot barn."
             short_title: "Skydda barn mot övergrepp, utnyttjande, människohandel och våld"
+          target_16_7:
+            long_title: "Säkerställa ett lyhört, allomfattande, delaktigt och representativt beslutsfattande på alla nivåer."
+            short_title: "Säkerställa lyhört, allomfattande och representativt beslutsfattande"
+          target_16_9:
+            long_title: "Senast 2030 tillhandahålla juridisk identitet för alla, inklusive födelseregistrering."
+            short_title: "Tillhandahålla juridisk identitet för alla"
           target_16_10:
             long_title: "Säkerställa allmän tillgång till information och skydda grundläggande friheter, i enlighet med nationell lagstiftning och internationella avtal."
             short_title: "Säkerställa allmän tillgång till information och skydda grundläggande friheter"
