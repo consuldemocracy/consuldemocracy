@@ -95,6 +95,11 @@ cs:
         few: "záměry"
         many: "záměrů"
         other: "záměry"
+      document:
+        one: Dokument
+        few: Dokumenty
+        many: Dokumentů
+        other: Dokumenty
       legislation/process:
         one: "Proces"
         few: "Procesy"
@@ -110,11 +115,21 @@ cs:
         few: "Otázky"
         many: "Otázky"
         other: "Otázky"
+      legislation/answers:
+        one: "Odpověď"
+        few: "Odpovědi"
+        many: "Odpovědí"
+        other: "Odpovědí"
       documents:
         one: "Dokument"
         few: "Dokumenty"
         many: "Dokumenty"
         other: "Dokumenty"
+      images:
+        one: "Obrázek"
+        few: "Obrázky"
+        many: "Obrázků"
+        other: "Obrázky"
       topic:
         one: "Téma"
         few: "Obsah"
@@ -130,6 +145,16 @@ cs:
         few: Akce na ovládacím panelu Návrhu
         many: Akcí na ovládacím panelu Návrhu
         other: Akcí na ovládacím panelu Návrhu
+      dashboard/administrator_task:
+        one: Úkol
+        few: Úkoly
+        many: Úkolů
+        other: Úkoly
+      link:
+        one: Odkaz
+        few: Odkazy
+        many: Odkazů
+        other: Odkazy
       local_census_record:
         one: Záznam místního registru občanů
         few: Záznamy místního registru občanů
