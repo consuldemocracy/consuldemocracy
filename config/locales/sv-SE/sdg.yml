@@ -322,6 +322,11 @@ sv:
           target_10_7:
             long_title: "Underlätta en ordnad, säker, reglerad och ansvarsfull migration och rörlighet för personer, bland annat genom planerad och väl fungerande migrationspolitik."
             short_title: "Ansvarsfull och väl fungerande migrationspolitik"
+          target_10_A:
+            long_title: "Genomföra principen om särskild och differentierad behandling för utvecklingsländerna, i synnerhet de minst utvecklade länderna, i enlighet med Världshandelsorganisationens avtal."
+            short_title: "Särskild och differentierad behandling för utvecklingsländer"
+          target_10_B:
+            long_title: "Uppmuntra offentligt utvecklingsbistånd och finansiella flöden, inklusive utländska direktinvesteringar, till de stater där behovet är som störst, i synnerhet de minst utvecklade länderna, afrikanska länder, små önationer under utveckling samt kustlösa utvecklingsländer, i enlighet med deras nationella planer och program."
       goal_11:
         title: "Hållbara städer och samhällen"
         title_in_two_lines: "Hållbara städer\noch samhällen"
