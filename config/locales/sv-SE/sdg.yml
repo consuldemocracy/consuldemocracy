@@ -313,6 +313,8 @@ sv:
           target_10_4:
             long_title: "Besluta om politik, särskilt finans-, löne- och socialskyddspolitik, och successivt uppnå ökad jämlikhet."
             short_title: "Besluta om finans- och socialskyddspolitik som främjar jämlikhet"
+          target_10_5:
+            long_title: "Förbättra regleringen och övervakningen av globala finansmarknader och finansinstitut samt stärka genomförandet av sådana regleringar."
       goal_11:
         title: "Hållbara städer och samhällen"
         title_in_two_lines: "Hållbara städer\noch samhällen"
