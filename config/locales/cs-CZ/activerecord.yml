@@ -80,6 +80,11 @@ cs:
         few: "Návrhy občanů"
         many: "Návrhy občanů"
         other: "Návrhů občanů"
+      sdg/goal:
+        one: "cíl"
+        few: "cíle"
+        many: "cílů"
+        other: "cílů"
       sdg/local_target:
         one: "místní záměr"
         few: "místní záměry"
