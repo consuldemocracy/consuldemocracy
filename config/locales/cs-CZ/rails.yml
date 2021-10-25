@@ -71,6 +71,11 @@ cs:
         many: asi %{count} let
         other: téměř %{count} lety
       half_a_minute: p
+      less_than_x_minutes:
+        one: méně než minutou
+        few: méně než %{count} minutami
+        many: méně než %{count} minutami
+        other: méně než %{count} minutami
     prompts:
       day: Den
       hour: Hodina
