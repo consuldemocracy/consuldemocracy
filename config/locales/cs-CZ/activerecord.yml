@@ -10,11 +10,26 @@ cs:
     related_sdg_list: Cíle a záměry
   activerecord:
     models:
+      activity:
+        one: "aktivita"
+        few: "aktivity"
+        many: "aktivit"
+        other: "aktivit"
+      budget:
+        one: "Rozpočet"
+        few: "Rozpočty"
+        many: "Rozpočtů"
+        other: "Rozpočty"
       budget/investment:
         one: "Investice"
         few: "Investice"
         many: "Investice"
         other: "Investice"
+      milestone:
+        one: "milník"
+        few: "milníky"
+        many: "milníků"
+        other: "milníky"
       comment:
         one: "Komentář"
         few: "Komentáře"
@@ -70,6 +85,11 @@ cs:
         few: "místní záměry"
         many: "místních záměrů"
         other: "místní záměry"
+      sdg/target:
+        one: "záměr"
+        few: "záměry"
+        many: "záměrů"
+        other: "záměry"
       legislation/process:
         one: "Proces"
         few: "Procesy"
