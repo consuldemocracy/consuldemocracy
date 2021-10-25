@@ -315,6 +315,10 @@ sv:
             short_title: "Besluta om finans- och socialskyddspolitik som främjar jämlikhet"
           target_10_5:
             long_title: "Förbättra regleringen och övervakningen av globala finansmarknader och finansinstitut samt stärka genomförandet av sådana regleringar."
+            short_title: "Förbättrad reglering av globala finansmarknader och finansinstitut"
+          target_10_6:
+            long_title: "Säkra stärkt representation och röst till utvecklingsländer vid beslutsfattande i globala internationella ekonomiska och finansiella institutioner i syfte att göra dessa mer effektiva, trovärdiga, ansvariga och legitima."
+            short_title: "Stärkt representation för utvecklingsländer i finansiella institutioner"
       goal_11:
         title: "Hållbara städer och samhällen"
         title_in_two_lines: "Hållbara städer\noch samhällen"
