@@ -784,6 +784,12 @@ cs:
       budget_investments: Rozpočtové investice
       comments: Komentáře
       actions: Akce
+      filters:
+        comments:
+          one: 1 komentář
+          few: "%{count} komentáře"
+          many: "%{count} komentářů"
+          other: "%{count} komentářů"
       no_activity: Uživatel nemá žádnou veřejnou aktivitu
       no_private_messages: "Tento uživatel nepřijímá soukromé zprávy."
       private_activity: Uživatel se rozhodl ponechat seznam svých aktivit soukromý.
