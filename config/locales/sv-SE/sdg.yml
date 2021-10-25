@@ -321,6 +321,7 @@ sv:
             short_title: "Stärkt representation för utvecklingsländer i finansiella institutioner"
           target_10_7:
             long_title: "Underlätta en ordnad, säker, reglerad och ansvarsfull migration och rörlighet för personer, bland annat genom planerad och väl fungerande migrationspolitik."
+            short_title: "Ansvarsfull och väl fungerande migrationspolitik"
       goal_11:
         title: "Hållbara städer och samhällen"
         title_in_two_lines: "Hållbara städer\noch samhällen"
@@ -346,6 +347,9 @@ sv:
         title_in_two_lines: "Ekosystem\npå land"
         description: "Hantera skogen hållbart, bekämpa ökenspridning, stoppa och återställa landdegradering och stoppa förlusten av biologisk mångfald."
         long_description: '<p>Naturen är avgörande för vår överlevnad: naturen ger oss vårt syre, reglerar våra vädermönster, pollinerar våra grödor, producerar vår mat, vårt foder och våra fiber. Men den står under allt högre tryck. <a href="https://news.un.org/en/story/2020/04/1061082">Mänsklig aktivitet har förändrat nästan 75 procent av jordens yta</a>, och klämt in vilda djur och natur i ett allt mindre hörn av planeten.</p> <p>Omkring <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf">1 miljoner djur- och växtarter är utrotningshotade</a> – många blev det på ett par årtionden – enligt 2019 års globala bedömningsrapport om biologisk mångfald och ekosystemtjänster. Rapporten uppmanade om transformativa förändringar för att återställa och skydda naturen. Den fann att hälsan hos ekosystem som vi och alla andra arter är beroende av försämras snabbare än någonsin och påverkar&nbsp; själva grunden för våra ekonomier, vår försörjning, livsmedelssäkerhet, hälsa och livskvalitet över hela världen.&nbsp;</p> <p>Avskogning och ökenspridning – som orsakas av mänsklig aktivitet och klimatförändringar – utgör stora utmaningar för hållbar utveckling och har påverkat miljontals människors liv och försörjning. <a href="https://news.un.org/en/story/2019/05/1038291">Skogar är mycket viktiga </a>för att upprätthålla livet på jorden och spela en viktig roll i kampen mot klimatförändringar. Och investeringar i <a href="https://news.un.org/en/story/2019/09/1045802">markåterställning</a> är avgörande för att förbättra försörjningsmöjligheterna, minska sårbarheter och minska riskerna för ekonomin.</p> <p>Vår planets hälsa spelar också en viktig roll i <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">uppkomsten av zoonotiska sjukdomar</a>, d.v.s. sjukdomar som är överförbara mellan djur och människor. När vi fortsatt inkräktar på ömtåliga ekosystem får människor i allt större grad kontakt med vilda djur, vilket gör det möjligt för naturens patogener att sprida sig till boskap och människor, vilket ökar risken för sjukdomsutveckling och -förstärkning.</p>'
+        targets:
+          target_15_C:
+            long_title: "Öka det globala stödet till insatser för att bekämpa tjuvjakt på och illegal handel med skyddade arter, bland annat genom att öka möjligheterna till en hållbar försörjning i lokalsamhällena."
       goal_16:
         title: "Fred, rättvisa och starka institutioner"
         title_in_two_lines: "Fred, rättvisa och\nstarka institutioner"
