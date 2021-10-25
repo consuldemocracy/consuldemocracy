@@ -60,6 +60,16 @@ cs:
         few: asi %{count} měsíce
         many: asi %{count} měsíců
         other: asi %{count} měsíců
+      about_x_years:
+        one: asi 1 rok
+        few: asi %{count} roky
+        many: asi %{count} roků
+        other: asi %{count} let
+      almost_x_years:
+        one: téměř 1 rokem
+        few: asi %{count} roky
+        many: asi %{count} let
+        other: téměř %{count} lety
       half_a_minute: p
     prompts:
       day: Den
