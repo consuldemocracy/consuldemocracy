@@ -76,6 +76,11 @@ cs:
         few: méně než %{count} minutami
         many: méně než %{count} minutami
         other: méně než %{count} minutami
+      less_than_x_seconds:
+        one: méně než 1 sekundou
+        few: méně než %{count} sekundami
+        many: méně než %{count} sekundami
+        other: méně než %{count} sekundami
     prompts:
       day: Den
       hour: Hodina
