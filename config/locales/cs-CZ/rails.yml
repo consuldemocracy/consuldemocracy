@@ -81,6 +81,31 @@ cs:
         few: méně než %{count} sekundami
         many: méně než %{count} sekundami
         other: méně než %{count} sekundami
+      over_x_years:
+        one: více než rok
+        few: přes %{count} roky
+        many: více než %{count} let
+        other: více než %{count} let
+      x_days:
+        one: 1 den
+        few: "%{count} dny"
+        many: "%{count} dnů"
+        other: "%{count} dnů"
+      x_minutes:
+        one: 1 minuta
+        few: "%{count} minuty"
+        many: "%{count} minut"
+        other: "%{count} minut"
+      x_months:
+        one: 1 měsíc
+        few: "%{count} měsíce"
+        many: "%{count} měsíců"
+        other: "%{count} měsíci"
+      x_years:
+        one: 1 rok
+        few: "%{count} roky"
+        many: "%{count} let"
+        other: "%{count} lety"
     prompts:
       day: Den
       hour: Hodina
