@@ -286,6 +286,14 @@ sv:
           target_9_5:
             long_title: "Förbättra den vetenskapliga forskningen och industrisektorernas tekniska kapacitet i alla länder, i synnerhet utvecklingsländerna, bland annat genom att till 2030 uppmuntra innovation och väsentligt öka det antal personer som arbetar med forskning och utveckling per 1 miljon människor liksom de offentliga och privata utgifterna för forskning och utveckling."
             short_title: "Förbättra forskningen och uppgradera industriell teknik "
+          target_9_A:
+            long_title: "Främja utbyggnad av hållbar och motståndskraftig infrastruktur i utvecklingsländerna genom ökat finansiellt, teknologiskt och tekniskt stöd till afrikanska länder, de minst utvecklade länderna, kustlösa utvecklingsländer och små önationer under utveckling."
+            short_title: "Främja hållbar utveckling av infrastruktur för utvecklingsländer"
+          target_9_B:
+            long_title: "Stödja inhemsk teknikutveckling, forskning och innovation i utvecklingsländerna, bland annat genom att säkerställa en gynnsam policymiljö för exempelvis industriell diversifiering och förädling av råvaror."
+            short_title: "Stödja inhemsk teknikutveckling och industriell diversifiering"
+          target_9_C:
+            long_title: "Väsentligt öka tillgången till informations- och kommunikationsteknik samt eftersträva allmän och ekonomiskt överkomlig tillgång till internet i de minst utvecklade länderna senast 2020."
       goal_10:
         title: "Minska ojämlikheter"
         title_in_two_lines: "Minska\nojämlikheter"
