@@ -364,11 +364,18 @@ sv:
           target_11_B:
             long_title: "Till 2020 väsentligen öka det antal städer och samhällen som antar och genomför integrerade strategier och planer för delaktighet, resurseffektivitet, begränsning av och anpassning till klimatförändringarna och motståndskraft mot katastrofer samt utveckla och genomföra, i linje med Sendai-ramverket för katastrofriskreducering 2015–2030, en samlad katastrofriskhantering på alla nivåer."
             short_title: "Genomföra politik för delaktighet, resurseffektivitet och katastrofriskreducering"
+          target_11_C:
+            long_title: "Stödja de minst utvecklade länderna, bland annat genom finansiellt och tekniskt bistånd, att bygga hållbara och motståndskraftiga byggnader av lokala material."
+            short_title: "Stödja de minst utvecklade länderna att bygga hållbart och motståndskraftigt"
       goal_12:
         title: "Hållbar konsumtion och produktion"
         title_in_two_lines: "Hållbar konsumtion\noch produktion"
         description: "Säkerställa hållbara konsumtions- och produktionsmönster."
         long_description: '<p>Världsomspännande konsumtion och produktion – den globala ekonomins drivkraft – grundas på att naturen och resurserna används på ett sätt som fortsätter att ha destruktiva effekter på planeten.&nbsp;</p> <p>Ekonomiska och sociala framsteg under det senaste århundradet har åtföljts av miljöförstöring som äventyrar de system som vår framtida utveckling – själva överlevnaden – är beroende av.&nbsp;</p> <p>Ett par <a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">fakta och tal</a>:</p> <ul> <li style="font-weight: 400">Varje år hamnar uppskattningsvis en tredjedel av all producerad mat – motsvarande 1,3 miljarder ton, till ett värde av 1 biljon dollar – i soptunnorna hos konsumenter och återförsäljare och ruttnar där, eller förstörs på grund av dåliga metoder för transport och skörd.</li> <li style="font-weight: 400">Om människor över hela världen bytte till energieffektiva lampor skulle världen spara 120 miljarder US-dollar årligen.</li> <li style="font-weight: 400">Om den globala befolkningen når 9,6 miljarder år 2050 skulle det krävas motsvarande nästan tre planeter för att tillhandahålla de naturresurser som behövs för att upprätthålla den nuvarande livsstilen.</li> </ul> <p>Covid-19-pandemin ger länder en möjlighet att bygga återhämtningsplaner som vänder nuvarande trender och förändrar våra konsumtions- och produktionsmönster mot en mer hållbar framtid.</p> <p><a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies">Hållbar konsumtion och produktion</a> handlar om att göra mer, och bättre, med mindre resurser. Det handlar också om att separera ekonomisk tillväxt från miljöförstöring, öka resurseffektiviteten och främja hållbara livsstilar.</p> <p>Hållbar konsumtion och produktion kan också bidra väsentligt till fattigdomsbekämpning och övergången till koldioxidsnål och grön ekonomi.</p>'
+        targets:
+          target_12_1:
+            long_title: "Genomföra det tioåriga ramverket för hållbara konsumtions- och produktionsmönster. Alla länder vidtar åtgärder, med de utvecklade länderna i täten och med hänsyn tagen till utvecklingsländernas utveckling och förutsättningar."
+            short_title: "Genomföra det tioåriga ramverket för hållbar konsumtion och produktion"
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
