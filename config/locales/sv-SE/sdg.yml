@@ -349,6 +349,11 @@ sv:
           target_11_4:
             long_title: "Stärka insatserna för att skydda och trygga världens kultur- och naturarv."
             short_title: "Skydda världens kultur- och naturarv"
+          target_11_5:
+            long_title: "Till 2030 väsentligt minska antalet dödsfall och antalet människor som drabbas av katastrofer, bland annat vattenrelaterade katastrofer. Även tillse att de direkta ekonomiska förlusterna till följd av sådana katastrofer, i form av lägre global BNP, minskar väsentligt. Särskilt fokus bör ligga på att skydda de fattiga och människor i utsatta situationer."
+            short_title: "Minska negativa effekter till följd av naturkatastrofer"
+          target_11_6:
+            long_title: "Till 2030 minska städernas negativa miljöpåverkan per person, bland annat genom att ägna särskild uppmärksamhet åt luftkvalitet samt hantering av kommunalt och annat avfall."
       goal_12:
         title: "Hållbar konsumtion och produktion"
         title_in_two_lines: "Hållbar konsumtion\noch produktion"
