@@ -376,6 +376,9 @@ sv:
         title_in_two_lines: "Hav och\nmarina resurser"
         description: "Bevara och nyttja haven och de marina resurserna på ett hållbart sätt."
         long_description: '<p>Världens hav driver globala system som gör jorden beboelig för mänskligheten. Vårt regnvatten, dricksvatten, väder, klimat, våra kustlinjer, mycket av vår mat och till och med syret i luften vi andas, tillhandahålls och regleras slutligen av havet.&nbsp;</p> <p>Omsorgsfull förvaltning av denna <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">essentiella globala resurs</a> är en avgörande beståndsdel av en hållbar framtid. För närvarande försämras kustvatten emellertid kontinuerligt på grund av föroreningar, och försurningen av havet inverkar menligt på hur ekosystem och biologisk mångfald fungerar. Detta påverkar också småskaligt fiske negativt.&nbsp;</p> <p>Att rädda vårt hav måste förbli en prioritet. Marin biologisk mångfald är avgörande för människors hälsa och vår planet. Marina skyddsområden måste förvaltas och finansieras verkningsfullt, och regler införas för att minska överfiske, föroreningar och försurning i haven.</p>'
+        targets:
+          target_14_A:
+            long_title: "Öka den vetenskapliga kunskapen, utveckla forskningskapaciteten och överföra havsteknik, med hänsyn tagen till den mellanstatliga oceanografiska kommissionens kriterier och riktlinjer för överföring av havsteknik (Criteria and Guidelines on the Transfer of Marine Technology), i syfte att skapa friskare hav och öka den marina biologiska mångfaldens bidrag till utvecklingen i utvecklingsländerna, i synnerhet i små önationer under utveckling och de minst utvecklade länderna."
       goal_15:
         title: "Ekosystem på land"
         title_in_two_lines: "Ekosystem\npå land"
