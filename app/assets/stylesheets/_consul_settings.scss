@@ -49,7 +49,7 @@ $show-header-for-stacked: true !default;
 // --------------------
 
 $body-margin: calc(50vw - #{$global-width / 2}) !default;
-$full-width-margin: #{$global-width / 2} - 50vw !default;
+$full-width-margin: unquote("#{$global-width / 2} - 50vw") !default;
 
 $base-font-size:      rem-calc(17) !default;
 $base-line:           rem-calc(26) !default;
