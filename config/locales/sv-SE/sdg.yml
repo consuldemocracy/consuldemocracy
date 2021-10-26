@@ -328,11 +328,27 @@ sv:
           target_10_B:
             long_title: "Uppmuntra offentligt utvecklingsbistånd och finansiella flöden, inklusive utländska direktinvesteringar, till de stater där behovet är som störst, i synnerhet de minst utvecklade länderna, afrikanska länder, små önationer under utveckling samt kustlösa utvecklingsländer, i enlighet med deras nationella planer och program."
             short_title: "Uppmuntra utvecklingsbistånd och investeringar i de minst utvecklade länderna"
+          target_10_C:
+            long_title: "Senast 2030 minska transaktionskostnaderna för migranters remitteringar till mindre än 3 procent samt avskaffa remitteringskorridorer där kostnaderna överstiger 5 procent."
+            short_title: "Minska transaktionskostnader för migranters remitteringar"
       goal_11:
         title: "Hållbara städer och samhällen"
         title_in_two_lines: "Hållbara städer\noch samhällen"
         description: "Göra städer allomfattande, säkra, motståndskraftiga och hållbara."
         long_description: '<p>Världen blir alltmer urbaniserad. Sedan 2007 <a href="https://unstats.un.org/sdgs/report/2019/goal-11/">har mer än halva världens befolkning bott i städer</a>, och den andelen förväntas stiga till 60 procent till 2030.&nbsp;</p> <p>Städer och storstadsområden är kraftpaket för ekonomisk tillväxt – de bidrar med cirka 60 procent av global BNP. Men de står också för cirka 70 procent av globala koldioxidutsläpp och för över 60 procent av resursanvändningen.&nbsp;</p> <p>Snabb urbanisering resulterar i ett växande antal sluminvånare, infrastruktur och tjänster (såsom sophämtning och vatten- och sanitetssystem, vägar och transporter) som är otillräckliga och överbelastade, ökad luftförorening och otyglad stadsutbredning.&nbsp;</p> <p><a href="https://unhabitat.org/coronavirus-will-travel-incredibly-fast-in-africas-slums-un-habitat-chief-warns">Inverkan av covid-19</a> kommer att bli som mest förödande i fattiga och tätbefolkade stadsområden, särskilt för den miljard människor som bor i informella bosättningar och slumområden runt om i världen, där överbefolkningen också gör det svårt att följa rekommenderade åtgärder som social distansering och självisolering.&nbsp;</p> <p>FN:s livsmedels- och jordbruksorganisation, FAO, varnade för att hunger och dödsfall kan öka betydligt i stadsområden om det inte vidtas åtgärder för att säkerställa att fattiga och utsatta invånare har <a href="https://news.un.org/en/story/2020/05/1063622">tillgång till mat</a>.&nbsp;</p>'
+        targets:
+          target_11_1:
+            long_title: "Senast 2030 säkerställa tillgång för alla till fullgoda, säkra och ekonomiskt överkomliga bostäder och grundläggande tjänster samt rusta upp slumområden."
+            short_title: "Säkra och ekonomiskt överkomliga bostäder"
+          target_11_2:
+            long_title: "Senast 2030 tillhandahålla tillgång till säkra, ekonomiskt överkomliga, tillgängliga och hållbara transportsystem för alla. Förbättra trafiksäkerheten, särskilt genom att bygga ut kollektivtrafiken, med särskild uppmärksamhet på behoven hos människor i utsatta situationer, kvinnor, barn, personer med funktionsnedsättning samt äldre personer."
+            short_title: "Ekonomiskt överkomliga och hållbara transportsystem"
+          target_11_3:
+            long_title: "Till 2030 verka för en allomfattande och hållbar urbanisering samt förbättra kapaciteten för deltagandebaserad, integrerad och hållbar planering och förvaltning av bosättningar i alla länder."
+            short_title: "Allomfattande och hållbar urbanisering"
+          target_11_4:
+            long_title: "Stärka insatserna för att skydda och trygga världens kultur- och naturarv."
+            short_title: "Skydda världens kultur- och naturarv"
       goal_12:
         title: "Hållbar konsumtion och produktion"
         title_in_two_lines: "Hållbar konsumtion\noch produktion"
