@@ -354,6 +354,12 @@ sv:
             short_title: "Minska negativa effekter till följd av naturkatastrofer"
           target_11_6:
             long_title: "Till 2030 minska städernas negativa miljöpåverkan per person, bland annat genom att ägna särskild uppmärksamhet åt luftkvalitet samt hantering av kommunalt och annat avfall."
+            short_title: "Minska städernas miljöpåverkan"
+          target_11_7:
+            long_title: "Senast 2030 tillhandahålla universell tillgång till säkra, allomfattande och tillgängliga grönområden och offentliga platser, i synnerhet för kvinnor och barn, äldre personer och personer med funktionsnedsättning."
+            short_title: "Ge tillgång till säkra och allomfattande grönområden och offentliga platser"
+          target_11_A:
+            long_title: "Främja positiva ekonomiska, sociala och miljömässiga kopplingar mellan stadsområden, stadsnära områden och landsbygdsområden genom att stärka den nationella och regionala utvecklingsplaneringen."
       goal_12:
         title: "Hållbar konsumtion och produktion"
         title_in_two_lines: "Hållbar konsumtion\noch produktion"
