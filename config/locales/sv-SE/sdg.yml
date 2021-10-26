@@ -379,6 +379,7 @@ sv:
         targets:
           target_14_A:
             long_title: "Öka den vetenskapliga kunskapen, utveckla forskningskapaciteten och överföra havsteknik, med hänsyn tagen till den mellanstatliga oceanografiska kommissionens kriterier och riktlinjer för överföring av havsteknik (Criteria and Guidelines on the Transfer of Marine Technology), i syfte att skapa friskare hav och öka den marina biologiska mångfaldens bidrag till utvecklingen i utvecklingsländerna, i synnerhet i små önationer under utveckling och de minst utvecklade länderna."
+            short_title: "Öka vetenskaplig kunskap, forskning och teknik för friska hav"
       goal_15:
         title: "Ekosystem på land"
         title_in_two_lines: "Ekosystem\npå land"
