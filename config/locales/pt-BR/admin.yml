@@ -61,6 +61,8 @@ pt-BR:
         type: Tipo
         no_activity: Não há nenhuma atividade de moderadores.
     budgets:
+      actions:
+        edit: "Editar orçamento"
       index:
         title: Orçamentos participativos
         new_link: Criar novo orçamento
@@ -71,7 +73,6 @@ pt-BR:
         budget_investments: Gerenciar projetos
         table_name: Nome
         table_phase: Estágio
-        edit_groups: Editar grupos de títulos
         admin_ballots: Administrar cédulas
         no_budgets: "Não há orçamentos."
       create:
@@ -124,13 +125,8 @@ pt-BR:
         edit: "Editar grupo"
         max_votable_headings_info: "Aplica-se apenas à fase de seleção de projetos. Durante a fase de votação de projetos, os usuários podem apenas votar em um cabeçalho por grupo."
         submit: "Salvar grupo"
-      index:
-        back: "Voltar aos orçamentos"
     budget_headings:
       no_headings: "Não há títulos."
-      amount:
-        one: "Há 1 título"
-        other: "Há %{count} títulos"
       create:
         notice: "Título criado com sucesso!"
       update:
@@ -1227,8 +1223,6 @@ pt-BR:
       setting_value: Valor
       no_description: "Não há descrição"
     shared:
-      true_value: "Sim"
-      false_value: "Não"
       search:
         advanced_filters:
           sdg_goals:
