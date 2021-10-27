@@ -60,6 +60,8 @@ id:
         type: Tipe
         no_activity: Tidak ada aktivitas moderator.
     budgets:
+      actions:
+        edit: "Edit anggaran"
       index:
         title: Anggaran partisipasif
         new_link: Buat anggaran baru
@@ -70,7 +72,6 @@ id:
         budget_investments: Melihat anggaran investasi
         table_name: Nama
         table_phase: Fase
-        edit_groups: Edit judul grup
         admin_ballots: Admin surat suara
         no_budgets: "Tidak ada anggaran."
       create:
@@ -111,12 +112,8 @@ id:
         create: "Buat grup baru"
         edit: "Edit grup"
         submit: "Surat suara disimpan"
-      index:
-        back: "Kembali ke Anggaran"
     budget_headings:
       no_headings: "Tidak ada judul."
-      amount:
-        other: "1 judul%{count} tersedia"
       create:
         notice: "Tajuk berhasil dibuat!"
       update:
@@ -798,8 +795,6 @@ id:
       setting_value: Nilai
       no_description: "Tidak ada deskripsi"
     shared:
-      true_value: "Ya"
-      false_value: "Tidak"
       search:
         label:
           booths: "Pencarian stan dengan nama"
