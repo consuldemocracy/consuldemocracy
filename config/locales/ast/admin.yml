@@ -52,6 +52,8 @@ ast:
         title: Actividá de moderadores
         type: Tipu
     budgets:
+      actions:
+        edit: "Editar presupuestu"
       index:
         title: Presupuestu participativu
         new_link: Crear nuevu presupuestu
@@ -61,7 +63,6 @@ ast:
           finished: Remataes
         table_name: Nome
         table_phase: Fase
-        edit_groups: Editar grupos de partíes
       create:
         notice: '¡Nueva campaña de presupuestos participativos creada con ésitu!'
       update:
@@ -644,8 +645,6 @@ ast:
             submit: Actualizar
       setting_value: Valor
     shared:
-      true_value: "Sí"
-      false_value: "Non"
       search:
         label:
           booths: "Buscar urna por nombre"
