@@ -58,6 +58,8 @@ so:
         type: Noca
         no_activity: Majiraan wax qabad xeer ilaliyayasha.
     budgets:
+      actions:
+        edit: "Wax ka bedel Misaaniyada"
       index:
         title: Misaaniyadaha kaqayb qadashada
         new_link: Samee misaaniyad cusub
@@ -68,7 +70,6 @@ so:
         budget_investments: Mareynta Mashariicda
         table_name: Magac
         table_phase: Weeji
-        edit_groups: Wax ka bedel Madaxyada Kooxaha
         no_budgets: "Majiiraan misaniyado."
       create:
         notice: Sameynta Misaaniyada cusub ee ka qaybqadashada waa lugu guleystay!
@@ -912,8 +913,6 @@ so:
       setting_value: Qimaha
       no_description: "Sharaxaad la'aan"
     shared:
-      true_value: "Haa"
-      false_value: "Maya"
       search:
         label:
           booths: "Raadi labada magacba"
