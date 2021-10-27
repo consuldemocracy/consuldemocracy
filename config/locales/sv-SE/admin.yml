@@ -69,6 +69,7 @@ sv:
         no_activity: Det finns ingen moderatoraktivitet.
     budgets:
       actions:
+        edit: "Redigera budget"
         preview: "Förhandsvisa budget"
       index:
         title: Medborgarbudgetar
@@ -89,7 +90,6 @@ sv:
         type_multiple: "Flera områden"
         type_pending: "Väntar: Inga områden än"
         type_single: "Ett enda område"
-        edit_groups: Områdesgrupper
         admin_ballots: Röstsedlar
         no_budgets: "Det finns inga budgetar."
       create:
@@ -127,7 +127,6 @@ sv:
         main_call_to_action_description: "Länken kommer att visas på huvudbannern för den här medborgarbudgeten och uppmuntrar din användare att utföra en specifik åtgärd som t.ex. att skapa ett nytt förslag, rösta på befintliga eller lära sig mer om processen."
         info:
           budget_settings: "Allmänna medborgarbudgetinställningar"
-          phases_settings: "Inställningar för faser"
           staff_settings: "Administratörer och bedömare som tilldelats budgeten"
       destroy:
         success_notice: Budgeten raderades
@@ -170,13 +169,9 @@ sv:
         max_votable_headings_info: "Gäller bara för projekturvalsfasen. Under projektomröstningsfasen kan användare bara rösta i ett område per grupp."
         submit: "Spara grupp"
       index:
-        back: "Gå tillbaka till budgetar"
         new_button: "Lägg till ny grupp"
     budget_headings:
       no_headings: "Det finns inga områden."
-      amount:
-        one: "Det finns 1 område"
-        other: "Det finns %{count} områden"
       create:
         notice: "Området har skapats!"
       update:
@@ -340,8 +335,6 @@ sv:
           back: "Gå tillbaka till områden"
         single:
           back: "Gå tillbaka för att redigera område"
-        update_all:
-          notice: "Faser har konfigurerats"
     milestones:
       index:
         table_id: "ID"
@@ -1322,8 +1315,6 @@ sv:
       setting_value: Värde
       no_description: "Ingen beskrivning"
     shared:
-      true_value: "Ja"
-      false_value: "Nej"
       search:
         advanced_filters:
           sdg_goals:
