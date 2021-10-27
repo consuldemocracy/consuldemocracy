@@ -67,6 +67,7 @@ it:
         no_activity: Non c’è alcuna attività dei moderatori.
     budgets:
       actions:
+        edit: "Modifica il budget"
         preview: "Anteprima"
       index:
         title: Bilanci partecipativi
@@ -87,7 +88,6 @@ it:
         type_multiple: "Intestazioni multiple"
         type_pending: "In sospeso: Ancora nessuna intestazione"
         type_single: "Intestazione singola"
-        edit_groups: Modificare i gruppi di intestazioni
         admin_ballots: Scrutini amministratore
         no_budgets: "Non ci sono bilanci."
       create:
@@ -146,13 +146,8 @@ it:
         create: "Crea nuovo gruppo"
         edit: "Modifica gruppo"
         submit: "Salva gruppo"
-      index:
-        back: "Torna ai budget"
     budget_headings:
       no_headings: "Non ci sono voci."
-      amount:
-        one: "C'è 1 voce"
-        other: "Ci sono %{count} voci"
       create:
         notice: "Voce creata con successo!"
       update:
@@ -1038,8 +1033,6 @@ it:
       setting_value: Valore
       no_description: "Nessuna descrizione"
     shared:
-      true_value: "Sì"
-      false_value: "No"
       search:
         label:
           booths: "Ricercare seggio per nome"
