@@ -49,6 +49,8 @@ es-PE:
         title: Actividad de moderadores
         type: Tipo
     budgets:
+      actions:
+        edit: "Editar presupuesto"
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
@@ -58,7 +60,6 @@ es-PE:
           finished: Finalizadas
         table_name: Nombre
         table_phase: Fase
-        edit_groups: Editar grupos de partidas
       create:
         notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
       update:
@@ -745,7 +746,6 @@ es-PE:
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
-      true_value: "Si"
       search:
         label:
           booths: "Buscar urna por nombre"
