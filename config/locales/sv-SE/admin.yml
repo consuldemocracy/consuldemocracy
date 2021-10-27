@@ -69,6 +69,9 @@ sv:
         no_activity: Det finns ingen moderatoraktivitet.
     budgets:
       actions:
+        ballots: "Skapa röstbås"
+        confirm:
+          ballots: "Är du säker? Den här åtgärden behövs bara om du ska använda fysiska röstbås under den slutgiltiga omröstningsfasen. Medborgare kommer fortfarande att kunna rösta via webben med eller utan fysiska röstbås."
         edit: "Redigera budget"
         preview: "Förhandsvisa budget"
       index:
