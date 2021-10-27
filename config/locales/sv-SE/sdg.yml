@@ -388,6 +388,9 @@ sv:
           target_12_5:
             long_title: "Till 2030 väsentligt minska mängden avfall genom åtgärder för att förebygga, minska, återanvända och återvinna avfall."
             short_title: "Väsentligt minska mängden avfall"
+          target_12_6:
+            long_title: "Uppmuntra företag, särskilt stora och multinationella företag, att införa hållbara metoder och att integrera hållbarhetsinformation i sin rapporteringscykel."
+            short_title: "Uppmuntra företag att införa hållbara metoder och hållbarhetsrapportering"
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
