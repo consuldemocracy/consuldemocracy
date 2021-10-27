@@ -28,7 +28,6 @@
       border-top-left-radius: rem-calc(6);
       border-top-right-radius: rem-calc(6);
       height: $line-height * 10;
-      width: fit-content;
       object-fit: cover;
 
       @include breakpoint(medium only) {
