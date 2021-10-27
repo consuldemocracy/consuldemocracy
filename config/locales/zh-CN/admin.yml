@@ -58,6 +58,8 @@ zh-CN:
         type: 类型
         no_activity: 没有审核员活动。
     budgets:
+      actions:
+        edit: "编辑预算"
       index:
         title: 参与性预算
         new_link: 创建新预算
@@ -68,7 +70,6 @@ zh-CN:
         budget_investments: 管理项目
         table_name: 名字
         table_phase: 阶段
-        edit_groups: 编辑标题组
         no_budgets: "没有预算。"
       create:
         notice: 新的参与性预算创建成功！
@@ -919,8 +920,6 @@ zh-CN:
       setting_value: 价值
       no_description: "没有描述"
     shared:
-      true_value: "是"
-      false_value: "不是"
       search:
         label:
           booths: "按名字搜索投票亭"
