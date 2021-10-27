@@ -18,7 +18,7 @@ cs:
       edit: Upravit
       configure: Nastavení
     officing_booth:
-      title: "Obsluhujete stánek na adrese %{booth}. Pokud to není správně, nepokračujte a zavolejte na telefonní číslo nápovědy. Děkujeme."
+      title: "Obsluhujete hlasovací kabinu na adrese %{booth}. Pokud to není správně, nepokračujte a zavolejte na telefonní číslo nápovědy. Děkujeme."
     banners:
       index:
         title: Bannery
@@ -69,7 +69,7 @@ cs:
         no_activity: Neexistují žádná aktivity moderátorů.
     budgets:
       actions:
-        ballots: "Vytvořit informační stánky"
+        ballots: "Vytvořit hlasovací kabiny"
         confirm:
           ballots: "Jste si jistý? Tento úkon je nutný pouze v případě, že během závěrečné fáze hlasování budete používat fyzické hlasovací kabiny. Občané budou moci i nadále hlasovat prostřednictvím webu s fyzickými kabinami i bez nich."
           destroy: "Jste si jistý? Tím se odstraní rozpočet a všechny jeho přidružené skupiny a položky. Tuto akci nelze vrátit zpět."
@@ -1169,7 +1169,7 @@ cs:
       index:
         title: "Přepočítat"
         no_recounts: "Není nic k přepočítání"
-        all_booths_total: "Kumulativní součet ze všech stánků:"
+        all_booths_total: "Kumulativní součet ze všech hlasovacích kabin:"
         total_final: "Konečné přepočty"
         total_system: "Hlasy (automatické)"
         table_booth_name: "Informační stánek"
