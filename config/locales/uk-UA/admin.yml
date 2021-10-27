@@ -60,6 +60,8 @@ uk-UA:
         type: Тип
         no_activity: Посередницька діяльність відсутня.
     budgets:
+      actions:
+        edit: "Редагувати бюджет"
       index:
         title: Бюджети участі
         new_link: Створити новий бюджет
@@ -70,7 +72,6 @@ uk-UA:
         budget_investments: Управляти проектами
         table_name: Назва
         table_phase: Етап
-        edit_groups: Редагувати групи розділів
         admin_ballots: Адмініструвати бюлетені
         no_budgets: "Бюджети відсутні."
       create:
@@ -129,15 +130,8 @@ uk-UA:
         edit: "Редагувати групу"
         max_votable_headings_info: "Стосується лише етапу відбору проєктів. На етапі голосування за проєкти користувачі можуть проголосувати лише за одну рубрику в групі."
         submit: "Зберегти групу"
-      index:
-        back: "Повернутися до бюджетів"
     budget_headings:
       no_headings: "Рубрики відсутні."
-      amount:
-        one: "Є 1 заголовок"
-        few: "Є %{count} заголовки"
-        many: "Є %{count} заголовків"
-        other: "Є %{count} заголовків"
       create:
         notice: "Рубрику створено!"
       update:
@@ -1228,8 +1222,6 @@ uk-UA:
       setting_value: Значення
       no_description: "Опис відсутній"
     shared:
-      true_value: "Так"
-      false_value: "Ні"
       search:
         label:
           booths: "Шукати кабінку за назвою або розташуванням"
