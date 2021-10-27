@@ -156,6 +156,8 @@ sv:
       show:
         add_group: "Lägg till grupp"
         add_heading: "Lägg till område"
+        groups_and_headings: "Områdesgrupper"
+        headings_caption: "Områden i %{group}"
       winners:
         calculate: Beräkna vinnande budgetförslag
         calculated: Vinnare beräknas, det kan ta en stund.
