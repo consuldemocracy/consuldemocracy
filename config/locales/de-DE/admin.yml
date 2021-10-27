@@ -67,6 +67,7 @@ de:
         no_activity: Hier sind keine Moderator*innen aktiv.
     budgets:
       actions:
+        edit: "Bürgerhaushalt bearbeiten"
         preview: "Ansicht Budget"
       index:
         title: Bürgerhaushalte
@@ -87,7 +88,6 @@ de:
         type_multiple: "Mehrere Rubriken"
         type_pending: "Offen: Noch keine Rubrik"
         type_single: "Einzelne Rubrik"
-        edit_groups: Gruppierungen von Rubriken bearbeiten
         admin_ballots: Admin Stimmzettel
         no_budgets: "Kein Bürgerhaushalte vorhanden."
       create:
@@ -122,7 +122,6 @@ de:
         name_description: "Dies ist der Name des Bürgerhaushalts, der in der Kopfzeile und auf den Kacheln verwendet wird, wenn er aktiv ist"
         info:
           budget_settings: "Allgemeine Einstellungen Bürgerhaushalt"
-          phases_settings: "Einstellungen Phasen"
           staff_settings: "Administratoren und Bewerter, die dem Bürgerhaushalt zugeordnet sind"
       destroy:
         success_notice: Bürgerhaushalt erfolgreich gelöscht
@@ -153,13 +152,9 @@ de:
         max_votable_headings_info: "Gilt nur für die Phase der Projektauswahl. Während der Phase \"Projekte wählen\" können Benutzer nur in einer Rubrik pro Gruppe abstimmen."
         submit: "Gruppe speichern"
       index:
-        back: "Zurück zu Bürgerhaushalten"
         new_button: "Neue Gruppe hinzufügen"
     budget_headings:
       no_headings: "Keine Rubriken vorhanden."
-      amount:
-        one: "Es gibt 1 Rubrik"
-        other: "Es gibt %{count} Rubriken"
       create:
         notice: "Rubrik erfolgreich erstellt!"
       update:
@@ -310,8 +305,6 @@ de:
           back: "Zurück zu Rubriken"
         single:
           back: "Zurück zum Bearbeiten von Rubriken"
-        update_all:
-          notice: "Erfolgreich konfigurierte Phasen"
     milestones:
       index:
         table_id: "ID"
@@ -1290,8 +1283,6 @@ de:
       setting_value: Wert
       no_description: "Ohne Beschreibung"
     shared:
-      true_value: "Ja"
-      false_value: "Nein"
       search:
         advanced_filters:
           sdg_goals:
