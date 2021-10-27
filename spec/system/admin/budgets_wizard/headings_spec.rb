@@ -81,6 +81,11 @@ describe "Budgets wizard, headings step", :admin do
       expect(page).to have_button "Cancel"
       expect(page).not_to have_button "Add new heading"
       expect(page).not_to have_content "Continue to phases"
+
+      within ".budgets-help" do
+        expect(page).to have_content "Headings are meant"
+        expect(page).not_to have_content "{"
+      end
     end
   end
 
@@ -136,10 +141,11 @@ describe "Budgets wizard, headings step", :admin do
 
       expect(page).to have_content "Heading updated successfully"
 
-      visit admin_budget_group_headings_path(budget, group)
+      visit admin_budget_path(budget)
 
-      expect(page).to have_content "There is 1 heading"
-      within("tbody tr") { expect(page).to have_content "Heading without typos" }
+      within "section", text: "Heading groups" do
+        within("tbody tr") { expect(page).to have_content "Heading without typos" }
+      end
     end
   end
 

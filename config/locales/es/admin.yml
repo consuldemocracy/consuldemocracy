@@ -69,7 +69,17 @@ es:
         no_activity: No hay actividad de moderadores.
     budgets:
       actions:
+        ballots: "Crear urnas"
+        confirm:
+          ballots: "¿Seguro? Esta acción solo es necesaria si vas a utilizar urnas físicas durante la votación final. Los ciudadanos podrán votar mediante la web con o sin urnas físicas."
+          destroy: "¿Seguro? Esta acción borrará el presupuesto y todos sus grupos y partidas. Esta acción no se puede deshacer."
+        descriptions:
+          ballots: "Esta acción te permitirá gestionar las urnas de votación. Usa esta opción solamente si vas a utilizar urnas físicas para recoger votos durante la votación final."
+          calculate_winners: 'Tras calcular los resultados, solamente los administradores tendrán acceso a los mismos. Se harán públicos cuando el presupuesto llegue a la fase "%{phase}" <strong>si se habilita la opción "Mostrar resultados"</strong> al editar el presupuesto.'
+          destroy: "Esta acción borrará el presupuesto y todos sus grupos y partidas. Esta acción no se puede deshacer."
+        edit: "Editar presupuesto"
         preview: "Previsualizar"
+        preview_results: "Previsualizar resultados"
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
@@ -89,7 +99,6 @@ es:
         type_multiple: "Múltiples partidas"
         type_pending: "Pendiente: Aún no hay partidas"
         type_single: "Partida única"
-        edit_groups: Grupos de partidas
         admin_ballots: Urnas
         no_budgets: "No hay presupuestos participativos."
       create:
@@ -127,7 +136,6 @@ es:
         main_call_to_action_description: "Este enlace aparecerá en la cabecera de este presupuesto participativo y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
         info:
           budget_settings: "Configuración genérica del presupuesto participativo"
-          phases_settings: "Configuración de las fases"
           staff_settings: "Administradores y Evaluadores asigandos al presupuesto"
       destroy:
         success_notice: Presupuesto eliminado correctamente
@@ -145,6 +153,11 @@ es:
           multiple: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
           single: "Las partidas sirven para dividir el dinero del presupuesto participativo. Como este presupuesto solo tendrá una partida aquí podrás establecer la cantidad de dinero que se gastará en este presupuesto participativo."
         phases: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
+      show:
+        add_group: "Añadir grupo"
+        add_heading: "Añadir partida"
+        groups_and_headings: "Grupos de partidas"
+        headings_caption: "Partidas del grupo %{group}"
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
@@ -170,13 +183,9 @@ es:
         max_votable_headings_info: "Solo se aplica en la fase de apoyos. Durante la votación final un usuario solo puede votar en una partida por grupo."
         submit: "Guardar grupo"
       index:
-        back: "Volver a presupuestos"
         new_button: "Añadir un grupo nuevo"
     budget_headings:
-      no_headings: "No hay partidas."
-      amount:
-        one: "Hay 1 partida presupuestarias"
-        other: "Hay %{count} partidas presupuestarias"
+      no_headings: "El grupo <strong>%{group}</strong> no tiene ninguna partida."
       create:
         notice: "¡Partida presupuestaria creada con éxito!"
       update:
@@ -193,7 +202,7 @@ es:
         edit: "Editar partida"
         submit: "Guardar partida"
       group_switcher:
-        currently_showing: "Mostrando las partidas del grupo: %{group}."
+        currently_showing: "Mostrando las partidas del grupo <strong>%{group}</strong>."
         different_group: "Ir a partidas de otro grupo"
         the_other_group: "Ir a partidas del grupo %{group}."
       index:
@@ -268,7 +277,7 @@ es:
           incompatible: Incompatible
           price: Precio
           author: Autor
-        cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
+        cannot_calculate_winners: El presupuesto debe estar en la fase "%{phase}" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
         milestone_tags_filter_all: "Todas las etiquetas de seguimiento"
       show:
@@ -340,8 +349,6 @@ es:
           back: "Volver a partidas"
         single:
           back: "Volver a editar partida"
-        update_all:
-          notice: "Fases configuradas con éxito"
     milestones:
       index:
         table_id: "ID"
@@ -1322,8 +1329,6 @@ es:
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
-      true_value: "Sí"
-      false_value: "No"
       search:
         advanced_filters:
           sdg_goals:

@@ -179,12 +179,9 @@
     margin-top: $line-height;
 
     @include breakpoint(medium) {
-      $gap: rem-calc(map-get($grid-column-gutter, "medium"));
-      display: flex;
-      margin-left: -$gap;
+      @include flex-with-gap;
 
       > * {
-        margin-left: $gap;
         width: 50%;
       }
 

@@ -1,15 +1,13 @@
 <% if headings.any? %>
-  <h3><%= t("admin.budget_headings.amount", count: headings.count) %></h3>
   <table>
+    <caption><%= t("admin.budgets.show.headings_caption", group: group.name) %></caption>
     <thead>
-      <tr id="<%= dom_id(group) %>">
+      <tr>
         <th><%= Budget::Heading.human_attribute_name(:name) %></th>
         <th><%= Budget::Heading.human_attribute_name(:price) %></th>
         <% if budget.approval_voting? %>
           <th><%= Budget::Heading.human_attribute_name(:max_ballot_lines) %></th>
         <% end %>
-        <th><%= Budget::Heading.human_attribute_name(:population) %></th>
-        <th><%= Budget::Heading.human_attribute_name(:allow_custom_content) %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -21,10 +19,6 @@
           <% if budget.approval_voting? %>
             <td><%= heading.max_ballot_lines %></td>
           <% end %>
-          <td><%= heading.population %></td>
-          <td>
-            <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
-          </td>
           <td>
             <%= render Admin::TableActionsComponent.new(heading) %>
           </td>
@@ -34,6 +28,6 @@
   </table>
 <% else %>
   <div class="callout primary clear">
-    <%= t("admin.budget_headings.no_headings") %>
+    <%= sanitize(t("admin.budget_headings.no_headings", group: group.name)) %>
   </div>
 <% end %>

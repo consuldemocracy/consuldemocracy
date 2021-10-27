@@ -5,7 +5,5 @@
 <%= render Admin::Budgets::HelpComponent.new("phases") %>
 <%= render Admin::BudgetsWizard::CreationTimelineComponent.new("phases") %>
 
-<%= form_for budget, url: update_all_admin_budgets_wizard_budget_budget_phases_path(budget) do |f| %>
-  <%= render Admin::BudgetPhases::PhasesComponent.new(budget, form: f) %>
-  <%= f.submit t("admin.budgets_wizard.phases.continue"), class: "button success" %>
-<% end %>
+<%= render Admin::BudgetPhases::PhasesComponent.new(budget) %>
+<%= link_to t("admin.budgets_wizard.phases.continue"), admin_budget_path(budget), class: "button success" %>

@@ -23,29 +23,42 @@ describe "Budgets wizard, phases step", :admin do
     scenario "Enable and disable phases" do
       visit admin_budgets_wizard_budget_budget_phases_path(budget)
 
-      uncheck "Enable Information phase"
-      uncheck "Enable Reviewing voting phase"
-
-      click_button "Finish"
-
-      expect(page).to have_content "Phases configured successfully"
-
-      visit edit_admin_budget_path(budget)
-
       within "tr", text: "Information" do
-        expect(page).to have_css ".budget-phase-disabled", visible: :all
+        expect(page).to have_content "Yes"
+
+        click_button "Enable Information phase"
+
+        expect(page).to have_content "No"
+        expect(page).not_to have_content "Yes"
       end
 
       within "tr", text: "Reviewing voting" do
-        expect(page).to have_css ".budget-phase-disabled", visible: :all
+        expect(page).to have_content "Yes"
+
+        click_button "Enable Reviewing voting phase"
+
+        expect(page).to have_content "No"
+        expect(page).not_to have_content "Yes"
+      end
+
+      click_link "Finish"
+
+      expect(page).to have_css "section h3", exact_text: "Phases"
+
+      within "tr", text: "Information" do
+        expect(page).to have_content "No"
+      end
+
+      within "tr", text: "Reviewing voting" do
+        expect(page).to have_content "No"
       end
 
       within "tr", text: "Accepting projects" do
-        expect(page).to have_css ".budget-phase-enabled", visible: :all
+        expect(page).to have_content "Yes"
       end
 
       within "tr", text: "Voting projects" do
-        expect(page).to have_css ".budget-phase-enabled", visible: :all
+        expect(page).to have_content "Yes"
       end
     end
   end

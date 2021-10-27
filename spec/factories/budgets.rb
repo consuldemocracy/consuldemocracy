@@ -64,6 +64,10 @@ FactoryBot.define do
     trait :approval do
       voting_style { "approval" }
     end
+
+    trait :with_winner do
+      after(:create) { |budget| create(:budget_investment, :winner, budget: budget) }
+    end
   end
 
   factory :budget_group, class: "Budget::Group" do

@@ -496,12 +496,13 @@ describe "Admin budget investments", :admin do
       check "Winners"
       click_button "Filter"
 
-      expect(page).to have_link "Calculate Winner Investments"
+      expect(page).to have_button "Calculate Winner Investments"
 
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
 
-      expect(page).to have_link "Calculate Winner Investments"
+      expect(page).to have_button "Calculate Winner Investments"
 
+      click_link "Edit budget"
       select "Accepting projects", from: "Active phase"
       click_button "Update Budget"
 
@@ -513,14 +514,13 @@ describe "Admin budget investments", :admin do
       check "Winners"
       click_button "Filter"
 
-      expect(page).not_to have_link "Calculate Winner Investments"
-      expect(page).to have_content 'The budget has to stay on phase "Balloting projects", '\
-                                   '"Reviewing Ballots" or "Finished budget" in order '\
-                                   "to calculate winners projects"
+      expect(page).not_to have_button "Calculate Winner Investments"
+      expect(page).to have_content 'The budget has to stay on phase "Reviewing voting" '\
+                                   "in order to calculate winners projects"
 
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
 
-      expect(page).not_to have_link "Calculate Winner Investments"
+      expect(page).not_to have_button "Calculate Winner Investments"
     end
 
     scenario "Filtering by minimum number of votes" do

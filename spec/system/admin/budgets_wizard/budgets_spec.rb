@@ -92,7 +92,7 @@ describe "Budgets wizard, first step", :admin do
 
       expect(page).to have_content "This participatory budget is in draft mode"
       expect(page).to have_link "Preview"
-      expect(page).to have_link "Publish budget"
+      expect(page).to have_button "Publish budget"
     end
   end
 

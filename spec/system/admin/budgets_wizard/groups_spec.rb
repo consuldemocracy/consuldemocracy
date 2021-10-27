@@ -112,10 +112,11 @@ describe "Budgets wizard, groups step", :admin do
 
       expect(page).to have_content "Group updated successfully"
 
-      visit admin_budget_groups_path(budget)
+      visit admin_budget_path(budget)
 
-      expect(page).to have_content "There is 1 group"
-      within("tbody tr") { expect(page).to have_content "Group without typos" }
+      within "section", text: "Heading groups" do
+        expect(page).to have_css "h4", exact_text: "Group without typos"
+      end
     end
   end
 

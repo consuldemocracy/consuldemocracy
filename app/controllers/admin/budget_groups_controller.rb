@@ -1,11 +1,6 @@
 class Admin::BudgetGroupsController < Admin::BaseController
   include Admin::BudgetGroupsActions
 
-  before_action :load_groups, only: :index
-
-  def index
-  end
-
   def new
     @group = @budget.groups.new
   end
@@ -13,7 +8,7 @@ class Admin::BudgetGroupsController < Admin::BaseController
   private
 
     def groups_index
-      admin_budget_groups_path(@budget)
+      admin_budget_path(@budget)
     end
 
     def new_action

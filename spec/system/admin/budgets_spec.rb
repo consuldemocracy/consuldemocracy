@@ -92,47 +92,30 @@ describe "Admin budgets", :admin do
         end
       end
     end
-
-    scenario "Delete budget from index" do
-      create(:budget, name: "To be deleted")
-
-      visit admin_budgets_path
-
-      within "tr", text: "To be deleted" do
-        message = "Are you sure? This action will delete \"To be deleted\" and can't be undone."
-
-        accept_confirm(message) { click_button "Delete" }
-      end
-
-      expect(page).to have_content("Budget deleted successfully")
-      expect(page).to have_content("There are no budgets.")
-      expect(page).not_to have_content "To be deleted"
-    end
   end
 
   context "Publish" do
     let(:budget) { create(:budget, :drafting) }
 
     scenario "Can preview budget before it is published" do
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
+      click_link "Preview"
 
-      within_window(window_opened_by { click_link "Preview" }) do
-        expect(page).to have_current_path budget_path(budget)
-      end
+      expect(page).to have_current_path budget_path(budget)
     end
 
-    scenario "Can preview a budget after it is published" do
-      visit edit_admin_budget_path(budget)
+    scenario "Can view a budget after it is published" do
+      visit admin_budget_path(budget)
 
-      accept_confirm { click_link "Publish budget" }
+      accept_confirm { click_button "Publish budget" }
 
       expect(page).to have_content "Participatory budget published successfully"
       expect(page).not_to have_content "This participatory budget is in draft mode"
-      expect(page).not_to have_link "Publish budget"
+      expect(page).not_to have_button "Publish budget"
 
-      within_window(window_opened_by { click_link "Preview" }) do
-        expect(page).to have_current_path budget_path(budget)
-      end
+      click_link "View"
+
+      expect(page).to have_current_path budget_path(budget)
     end
   end
 
@@ -141,19 +124,11 @@ describe "Admin budgets", :admin do
     let(:heading) { create(:budget_heading, budget: budget) }
 
     scenario "Destroy a budget without investments" do
-      visit edit_admin_budget_path(budget)
-      click_link "Delete budget"
+      visit admin_budget_path(budget)
 
-      expect(page).to have_content("Budget deleted successfully")
-      expect(page).to have_content("There are no budgets.")
-    end
+      message = "Are you sure? This will delete the budget and all its associated groups and headings. This action cannot be undone."
 
-    scenario "Destroy a budget without investments but with administrators and valuators" do
-      budget.administrators << Administrator.first
-      budget.valuators << create(:valuator)
-
-      visit edit_admin_budget_path(budget)
-      click_link "Delete budget"
+      accept_confirm(message) { click_button "Delete budget" }
 
       expect(page).to have_content "Budget deleted successfully"
       expect(page).to have_content "There are no budgets."
@@ -162,21 +137,19 @@ describe "Admin budgets", :admin do
     scenario "Try to destroy a budget with investments" do
       create(:budget_investment, heading: heading)
 
-      visit edit_admin_budget_path(budget)
-      click_link "Delete budget"
+      visit admin_budget_path(budget)
 
-      expect(page).to have_content("You cannot delete a budget that has associated investments")
-      expect(page).to have_content("There is 1 budget")
+      expect(page).to have_button "Delete budget", disabled: true
+      expect(page).to have_content "You cannot delete a budget that has associated investments"
     end
 
     scenario "Try to destroy a budget with polls" do
       create(:poll, budget: budget)
 
-      visit edit_admin_budget_path(budget)
-      click_link "Delete budget"
+      visit admin_budget_path(budget)
 
-      expect(page).to have_content("You cannot delete a budget that has an associated poll")
-      expect(page).to have_content("There is 1 budget")
+      expect(page).to have_button "Delete budget", disabled: true
+      expect(page).to have_content "You cannot delete a budget that has an associated poll"
     end
   end
 
@@ -188,9 +161,7 @@ describe "Admin budgets", :admin do
         budget.update!(phase: "selecting")
         budget.phases.valuating.update!(enabled: false)
 
-        visit edit_admin_budget_path(budget)
-
-        expect(page).to have_select "Active phase", selected: "Selecting projects"
+        visit admin_budget_path(budget)
 
         expect(page).to have_table "Phases", with_cols: [
           [
@@ -230,6 +201,10 @@ describe "Admin budgets", :admin do
             expect(page).to have_link "Edit"
           end
         end
+
+        click_link "Edit budget"
+
+        expect(page).to have_select "Active phase", selected: "Selecting projects"
       end
     end
 
@@ -289,13 +264,16 @@ describe "Admin budgets", :admin do
 
   context "Update" do
     scenario "Update budget" do
-      visit edit_admin_budget_path(create(:budget))
+      budget = create(:budget)
+
+      visit edit_admin_budget_path(budget)
 
       fill_in "Name", with: "More trees on the streets"
       click_button "Update Budget"
 
+      expect(page).to have_content "Participatory budget updated successfully"
       expect(page).to have_content("More trees on the streets")
-      expect(page).to have_current_path(admin_budgets_path)
+      expect(page).to have_current_path(admin_budget_path(budget))
     end
 
     scenario "Deselect all selected staff" do
@@ -333,37 +311,33 @@ describe "Admin budgets", :admin do
                                                    ballot_lines_count: 2)
       selected = create(:budget_investment, :selected, heading: heading, price: 2, ballot_lines_count: 1)
 
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
+
       expect(page).not_to have_content "See results"
-      click_link "Calculate Winner Investments"
+
+      click_button "Calculate Winner Investments"
+
       expect(page).to have_content "Winners being calculated, it may take a minute."
       expect(page).to have_content winner.title
       expect(page).not_to have_content unselected.title
       expect(page).not_to have_content selected.title
 
-      visit edit_admin_budget_path(budget)
-      expect(page).to have_content "See results"
+      visit admin_budget_path(budget)
+
+      expect(page).not_to have_link "See results"
+
+      click_link "Edit budget"
+      select "Finished budget", from: "Active phase"
+      check "Show results"
+      click_button "Update Budget"
+
+      expect(page).to have_content "Participatory budget updated successfully"
+      expect(page).to have_link "See results"
     end
 
-    scenario "For a finished Budget" do
-      budget = create(:budget, :finished)
-      allow_any_instance_of(Budget).to receive(:has_winning_investments?).and_return(true)
-
-      visit edit_admin_budget_path(budget)
-
-      expect(page).to have_content "Calculate Winner Investments"
-      expect(page).to have_content "See results"
-    end
-
-    scenario "Recalculate for a finished Budget" do
-      budget = create(:budget, :finished)
+    scenario "Recalculate for a budget in reviewing ballots" do
+      budget = create(:budget, :reviewing_ballots)
       create(:budget_investment, :winner, budget: budget)
-
-      visit edit_admin_budget_path(budget)
-
-      expect(page).to have_content "Recalculate Winner Investments"
-      expect(page).to have_content "See results"
-      expect(page).not_to have_content "Calculate Winner Investments"
 
       visit admin_budget_budget_investments_path(budget)
       click_link "Advanced filters"

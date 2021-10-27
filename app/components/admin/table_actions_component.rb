@@ -29,7 +29,7 @@ class Admin::TableActionsComponent < ApplicationComponent
     end
 
     def destroy_text
-      options[:destroy_text] || t("admin.actions.delete")
+      options[:destroy_text]
     end
 
     def destroy_path

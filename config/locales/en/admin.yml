@@ -69,7 +69,17 @@ en:
         no_activity: There are no moderators activity.
     budgets:
       actions:
+        ballots: "Create booths"
+        confirm:
+          ballots: "Are you sure? This action is only necessary if you're going to use physical booths during the final voting phase. Citizens will still be able to vote via web with or without physical booths."
+          destroy: "Are you sure? This will delete the budget and all its associated groups and headings. This action cannot be undone."
+        descriptions:
+          ballots: "This will let you manage physical ballots. Only use this option if you're going to use physical booths to collect ballots during the final voting phase."
+          calculate_winners: 'After calculating the results, only administrators will be able to access them. They will be public when the project reaches the "%{phase}" phase <strong>if the option "Show results" is enabled</strong> when editing the budget.'
+          destroy: "This will delete the budget and all its associated groups and headers. This action cannot be undone."
+        edit: "Edit budget"
         preview: "Preview"
+        preview_results: "Preview results"
       index:
         title: Participatory budgets
         new_link: Create new budget
@@ -89,7 +99,6 @@ en:
         type_multiple: "Multiple headings"
         type_pending: "Pending: No headings yet"
         type_single: "Single heading"
-        edit_groups: Heading groups
         admin_ballots: Ballots
         no_budgets: "There are no budgets."
       create:
@@ -127,7 +136,6 @@ en:
         main_call_to_action_description: "This link will appear on main banner of this participatory budget and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
         info:
           budget_settings: "General participatory budget settings"
-          phases_settings: "Phases settings"
           staff_settings: "Administrators and Valuators assigned to the budget"
       destroy:
         success_notice: Budget deleted successfully
@@ -145,6 +153,11 @@ en:
           multiple: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
           single: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
         phases: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
+      show:
+        add_group: "Add group"
+        add_heading: "Add heading"
+        groups_and_headings: "Heading groups"
+        headings_caption: "Headings in %{group}"
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -170,13 +183,9 @@ en:
         max_votable_headings_info: "Only applies to the selecting projects phase. During the voting projects phase users can only vote in one heading per group."
         submit: "Save group"
       index:
-        back: "Go back to budgets"
         new_button: "Add new group"
     budget_headings:
-      no_headings: "There are no headings."
-      amount:
-        one: "There is 1 heading"
-        other: "There are %{count} headings"
+      no_headings: "There are no headings in the <strong>%{group}</strong> group."
       create:
         notice: "Heading created successfully!"
       update:
@@ -193,7 +202,7 @@ en:
         edit: "Edit heading"
         submit: "Save heading"
       group_switcher:
-        currently_showing: "Showing headings from the %{group} group."
+        currently_showing: "Showing headings from the <strong>%{group}</strong> group."
         different_group: "Manage headings from a different group"
         the_other_group: "Manage headings from the %{group} group."
       index:
@@ -268,7 +277,7 @@ en:
           incompatible: Incompatible
           price: Price
           author: Author
-        cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
+        cannot_calculate_winners: The budget has to stay on phase "%{phase}" in order to calculate winners projects
         see_results: "See results"
         milestone_tags_filter_all: "All milestone tags"
       show:
@@ -340,8 +349,6 @@ en:
           back: "Go back to headings"
         single:
           back: "Go back to edit heading"
-        update_all:
-          notice: "Phases configured successfully"
     milestones:
       index:
         table_id: "ID"
@@ -1323,8 +1330,6 @@ en:
       setting_value: Value
       no_description: "No description"
     shared:
-      true_value: "Yes"
-      false_value: "No"
       search:
         advanced_filters:
           sdg_goals:

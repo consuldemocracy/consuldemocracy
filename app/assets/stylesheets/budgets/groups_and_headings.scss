@@ -1,11 +1,10 @@
-.groups-and-headings {
+.public .groups-and-headings {
   $spacing: $line-height / 2;
 
   .headings-list {
-    display: flex;
+    @include flex-with-gap($spacing);
     flex-wrap: wrap;
     list-style: none;
-    margin-left: -$spacing;
   }
 
   .heading {
@@ -14,7 +13,6 @@
     border-radius: rem-calc(6);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     margin-bottom: $line-height / 2;
-    margin-left: $spacing;
     margin-top: $line-height / 4;
     padding: $line-height / 2;
     position: relative;

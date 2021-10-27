@@ -8,10 +8,10 @@ class Admin::BudgetHeadings::HeadingsComponent < ApplicationComponent
   private
 
     def group
-      @group ||= headings.first.group
+      @group ||= headings.proxy_association.owner
     end
 
     def budget
-      @budget ||= headings.first.budget
+      @budget ||= group.budget
     end
 end

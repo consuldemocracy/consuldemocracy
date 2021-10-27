@@ -1,5 +1,5 @@
 <%= translatable_form_for [namespace, budget], html: { class: "budgets-form" } do |f| %>
-  <%= render Admin::BudgetsWizard::ModelFieldComponent.new %>
+  <%= render Admin::BudgetsWizard::ModeFieldComponent.new %>
 
   <fieldset>
     <legend><%= t("admin.budgets.edit.info.budget_settings") %></legend>
@@ -39,6 +39,12 @@
       </div>
     </div>
 
+    <% unless wizard? %>
+      <div class="small-12 medium-6 column">
+        <%= f.select :phase, phases_select_options %>
+      </div>
+    <% end %>
+
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
         <%= render "/images/nested_image", f: f %>
@@ -64,15 +70,6 @@
   </fieldset>
 
   <% unless wizard? %>
-    <fieldset>
-      <legend><%= t("admin.budgets.edit.info.phases_settings") %></legend>
-      <div class="small-12 medium-6 column">
-        <%= f.select :phase, phases_select_options %>
-      </div>
-
-      <%= render Admin::BudgetPhases::PhasesComponent.new(budget) %>
-    </fieldset>
-
     <%= render "admin/shared/show_results_fields", form: f %>
   <% end %>
 
@@ -82,27 +79,6 @@
         <%= f.submit t("admin.budgets_wizard.budgets.continue"), class: "button success expanded" %>
       <% else %>
         <%= f.submit nil, class: "button success" %>
-      <% end %>
-    </div>
-
-    <div class="float-right">
-      <% if display_calculate_winners_button?(budget) %>
-        <%= link_to calculate_winner_button_text(budget),
-                    calculate_winners_admin_budget_path(budget),
-                    method: :put,
-                    class: "button hollow" %>
-      <% end %>
-
-      <% if budget.has_winning_investments? %>
-        <%= link_to t("budgets.show.see_results"),
-                    budget_results_path(budget),
-                    class: "button hollow margin-left" %>
-      <% end %>
-      <% if budget.persisted? %>
-        <%= link_to t("admin.budgets.edit.delete"),
-            admin_budget_path(budget),
-            method: :delete,
-            class: "delete float-right margin-left" %>
       <% end %>
     </div>
   </div>

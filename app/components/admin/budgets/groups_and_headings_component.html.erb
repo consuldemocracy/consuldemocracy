@@ -1,0 +1,26 @@
+<% budget.groups.each do |group| %>
+  <section id="<%= dom_id(group) %>" aria-labelledby="<%= dom_id(group, :header) %>">
+    <h4 id="<%= dom_id(group, :header) %>"><%= group.name %></h4>
+
+    <div class="groups-actions">
+      <%= action(:edit, group, "aria-label": true) %>
+      <%= action(:destroy, group, method: :delete, confirm: true, "aria-label": true) %>
+      <%= action(:new,
+                 group,
+                 text: t("admin.budgets.show.add_heading"),
+                 path: new_admin_budget_group_heading_path(budget, group),
+                 "aria-label": true) %>
+    </div>
+
+    <% if group.multiple_headings? %>
+      <dl>
+        <dt><%= Budget::Group.human_attribute_name(:max_votable_headings) %></dt>
+        <dd><%= group.max_votable_headings %></dd>
+      </dl>
+    <% end %>
+
+    <%= render Admin::BudgetHeadings::HeadingsComponent.new(group.headings) %>
+  </section>
+<% end %>
+
+<%= action(:new, budget, text: t("admin.budgets.show.add_group"), path: new_admin_budget_group_path(budget)) %>

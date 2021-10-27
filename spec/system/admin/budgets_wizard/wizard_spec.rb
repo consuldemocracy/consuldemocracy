@@ -22,24 +22,14 @@ describe "Budgets creation wizard", :admin do
 
     expect(page).to have_css ".budget-phases-table"
 
-    click_button "Finish"
+    click_link "Finish"
 
-    expect(page).to have_content "Phases configured successfully"
+    within "section", text: "Heading groups" do
+      expect(page).to have_content "Single heading budget"
 
-    within "tr", text: "Single heading budget" do
-      click_link "Heading groups"
-    end
-
-    expect(page).to have_content "There is 1 group"
-
-    within "tr", text: "Single heading budget" do
-      click_link "Headings"
-    end
-
-    expect(page).to have_content "There is 1 heading"
-
-    within "tbody" do
-      expect(page).to have_content "One and only heading"
+      within "tbody" do
+        expect(page).to have_content "One and only heading"
+      end
     end
   end
 
@@ -72,7 +62,7 @@ describe "Budgets creation wizard", :admin do
     click_link "Continue to headings"
 
     expect(page).to have_content "Showing headings from the All city group"
-    expect(page).to have_content "There are no headings."
+    expect(page).to have_content "There are no headings in the All city group."
 
     click_button "Add new heading"
     fill_in "Heading name", with: "All city"
@@ -80,11 +70,11 @@ describe "Budgets creation wizard", :admin do
     click_button "Create new heading"
 
     expect(page).to have_content "Heading created successfully!"
-    within("table") { expect(page).to have_content "All city" }
-    expect(page).not_to have_content "There are no headings."
+    within_table("Headings in All city") { expect(page).to have_content "All city" }
+    expect(page).not_to have_content "There are no headings"
 
     click_link "Manage headings from the Districts group."
-    expect(page).to have_content "There are no headings."
+    expect(page).to have_content "There are no headings in the Districts group."
 
     click_button "Add new heading"
     fill_in "Heading name", with: "North"
@@ -92,8 +82,8 @@ describe "Budgets creation wizard", :admin do
     click_button "Create new heading"
 
     expect(page).to have_content "Heading created successfully!"
-    within("table") { expect(page).to have_content "North" }
-    expect(page).not_to have_content "There are no headings."
+    within_table("Headings in Districts") { expect(page).to have_content "North" }
+    expect(page).not_to have_content "There are no headings"
 
     click_button "Add new heading"
     fill_in "Heading name", with: "South"
@@ -101,7 +91,7 @@ describe "Budgets creation wizard", :admin do
     click_button "Create new heading"
 
     expect(page).to have_content "Heading created successfully!"
-    within("table") { expect(page).to have_content "South" }
+    within_table("Headings in Districts") { expect(page).to have_content "South" }
 
     click_link "Continue to phases"
 
@@ -119,30 +109,23 @@ describe "Budgets creation wizard", :admin do
       expect(page).not_to have_content "Voting projects"
     end
 
-    click_button "Finish"
+    click_link "Finish"
 
-    expect(page).to have_content "Phases configured successfully"
+    within "section", text: "Heading groups" do
+      within "section", text: "All city" do
+        within_table "Headings in All city" do
+          expect(page).to have_css "tbody tr", count: 1
+          expect(page).to have_content "All city"
+        end
+      end
 
-    within "tr", text: "Multiple headings budget" do
-      click_link "Heading groups"
-    end
-
-    expect(page).to have_content "There are 2 groups"
-
-    within "tbody" do
-      expect(page).to have_content "All city"
-      expect(page).to have_content "Districts"
-    end
-
-    within "tr", text: "Districts" do
-      click_link "Headings"
-    end
-
-    expect(page).to have_content "There are 2 headings"
-
-    within "tbody" do
-      expect(page).to have_content "North"
-      expect(page).to have_content "South"
+      within "section", text: "Districts" do
+        within_table "Headings in Districts" do
+          expect(page).to have_css "tbody tr", count: 2
+          expect(page).to have_content "North"
+          expect(page).to have_content "South"
+        end
+      end
     end
   end
 end

@@ -1,136 +1,15 @@
 .admin .table-actions {
+  @include admin-action-icons;
+  @include flex-with-gap(1.6em);
   align-items: flex-start;
-  display: flex;
-
-  > :not(:first-child) {
-    margin-left: rem-calc(10);
-  }
+  padding: 0 0.5em;
 
   a,
   button {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9em;
-    line-height: $global-lineheight;
-    margin-right: 1em;
-    text-align: center;
-
-    &:hover,
-    &:focus {
-      color: $link-hover;
-      text-decoration: none;
-    }
-
-    &::before {
-      font-size: 1.6em;
-    }
+    @include icon-on-top;
   }
 
   button {
     cursor: pointer;
-  }
-
-  .edit-link {
-    @include has-fa-icon(edit, regular);
-  }
-
-  .destroy-link {
-    @include has-fa-icon(trash-alt, regular);
-  }
-
-  .destroy-link,
-  .destroy-role-link,
-  .destroy-officer-link,
-  .reject-link,
-  .confirm-hide-link {
-    color: darken($alert-color, 5%);
-  }
-
-  .show-link,
-  .preview-link {
-    @include has-fa-icon(eye, regular);
-  }
-
-  .new-link,
-  .assign-booth-link {
-    @include has-fa-icon(plus-circle, solid);
-    color: $color-success;
-  }
-
-  .create-role-link,
-  .create-officer-link {
-    @include has-fa-icon(user-plus, solid);
-    color: $color-success;
-  }
-
-  .destroy-role-link,
-  .destroy-officer-link,
-  .reject-link {
-    @include has-fa-icon(user-times, solid);
-  }
-
-  .restore-link {
-    @include has-fa-icon(undo, solid);
-  }
-
-  .restore-link,
-  .investments-link {
-    color: darken($warning-color, 20%);
-
-    &:not(:hover, :focus)::before {
-      color: $warning-color;
-    }
-  }
-
-  .confirm-hide-link {
-    @include has-fa-icon(flag, regular);
-  }
-
-  .verify-link {
-    @include has-fa-icon(user-check, solid);
-    color: $color-success;
-  }
-
-  .preview-pending-link {
-    @include has-fa-icon(search, solid);
-  }
-
-  .send-pending-link {
-    @include has-fa-icon(share-square, regular);
-    color: $color-success;
-  }
-
-  .configure-link,
-  .answers-link {
-    @include has-fa-icon(tools, solid);
-  }
-
-  .download-link {
-    @include has-fa-icon(download, solid);
-  }
-
-  .shifts-link {
-    @include has-fa-icon(clock, regular);
-  }
-
-  .investments-link {
-    @include has-fa-icon(coins, solid);
-  }
-
-  .groups-link,
-  .headings-link {
-    @include has-fa-icon(chart-pie, solid);
-    color: $color-success;
-  }
-
-  .manage-link,
-  .ballots-link {
-    @include has-fa-icon(archive, solid);
-    color: $link;
-  }
-
-  .cards-link {
-    @include has-fa-icon(images, regular);
   }
 }

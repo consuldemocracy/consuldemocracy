@@ -8,7 +8,6 @@ module Admin::BudgetHeadingsActions
 
     before_action :load_budget
     before_action :load_group
-    before_action :load_headings, only: :index
     before_action :load_heading, only: [:edit, :update, :destroy]
   end
 
@@ -49,10 +48,6 @@ module Admin::BudgetHeadingsActions
 
     def load_group
       @group = @budget.groups.find_by_slug_or_id! params[:group_id]
-    end
-
-    def load_headings
-      @headings = @group.headings.order(:id)
     end
 
     def load_heading

@@ -16,6 +16,56 @@ describe Admin::ActionComponent do
     end
   end
 
+  describe "HTML id" do
+    it "is not rendered for non-ActiveModel records" do
+      render_inline Admin::ActionComponent.new(:edit, double, path: "/")
+
+      expect(page).not_to have_css "[id]"
+    end
+
+    it "includes an id based on the model and the action by default" do
+      record = double(model_name: double(param_key: "computer"), to_key: [1])
+
+      render_inline Admin::ActionComponent.new(:edit, record, path: "/")
+
+      expect(page).to have_css "a.edit-link#edit_computer_1"
+    end
+
+    it "can be overwritten" do
+      record = double(model_name: double(param_key: "computer"), to_key: [1])
+
+      render_inline Admin::ActionComponent.new(:edit, record, path: "/", id: "my_id")
+
+      expect(page).to have_css "a.edit-link#my_id"
+      expect(page).not_to have_css "#edit_computer_1"
+    end
+  end
+
+  describe "aria-describedby attribute" do
+    it "is not rendered by default" do
+      render_inline Admin::ActionComponent.new(:edit, double, path: "/")
+
+      expect(page).to have_link count: 1
+      expect(page).not_to have_css "[aria-describedby]"
+    end
+
+    it "renders with the given value" do
+      render_inline Admin::ActionComponent.new(:edit, double, path: "/", "aria-describedby": "my_descriptor")
+
+      expect(page).to have_link count: 1
+      expect(page).to have_css "[aria-describedby='my_descriptor']"
+    end
+
+    it "renders a default value when aria-describedby is true" do
+      record = double(model_name: double(param_key: "book"), to_key: [23])
+
+      render_inline Admin::ActionComponent.new(:edit, record, path: "/", "aria-describedby": true)
+
+      expect(page).to have_link count: 1
+      expect(page).to have_css "[aria-describedby='edit_book_23_descriptor']"
+    end
+  end
+
   describe "aria-label attribute" do
     it "is not rendered by default" do
       record = double(human_name: "Stay home")

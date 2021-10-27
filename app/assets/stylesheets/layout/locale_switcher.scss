@@ -57,14 +57,8 @@
   }
 
   ul {
-    $gap: 0.75em;
-    display: flex;
+    @include flex-with-gap(0.75em);
     flex-wrap: wrap;
-    margin-left: -$gap;
-
-    > * {
-      margin-left: $gap;
-    }
 
     li::after {
       content: none;

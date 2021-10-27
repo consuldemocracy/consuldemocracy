@@ -15,7 +15,13 @@ class Admin::ActionComponent < ApplicationComponent
     end
 
     def text
-      options[:text] || t("admin.actions.#{action}")
+      action_key = if action == :destroy
+                     :delete
+                   else
+                     action
+                   end
+
+      options[:text] || t("admin.actions.#{action_key}")
     end
 
     def path
@@ -25,16 +31,26 @@ class Admin::ActionComponent < ApplicationComponent
     def html_options
       {
         class: html_class,
+        id: (dom_id(record, action) if record.respond_to?(:to_key)),
+        "aria-describedby": describedby,
         "aria-label": label,
         data: {
           confirm: confirmation_text,
           disable_with: (text if button?)
         }
-      }.merge(options.except(:"aria-label", :class, :confirm, :path, :text))
+      }.merge(options.except(:"aria-describedby", :"aria-label", :class, :confirm, :path, :text))
     end
 
     def html_class
       "admin-action #{options[:class] || "#{action.to_s.gsub("_", "-")}-link"}".strip
+    end
+
+    def describedby
+      if options[:"aria-describedby"] == true
+        "#{dom_id(record, action)}_descriptor"
+      else
+        options[:"aria-describedby"]
+      end
     end
 
     def label
