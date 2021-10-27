@@ -410,6 +410,12 @@ sv:
         targets:
           target_15_3:
             long_title: "Till 2030 bekämpa ökenspridning, återställa förstörd mark och jord, inklusive mark som drabbats av ökenspridning, torka och översvämningar, samt sträva efter att uppnå en värld utan nettoförstöring av mark."
+            short_title: "Avskaffa ökenspridning och återställa förstörd mark"
+          target_15_4:
+            long_title: "Senast 2030 säkerställa att bevara bergsekosystemen, inklusive deras biologiska mångfald, i syfte att öka deras förmåga att producera nytta som behövs för en hållbar utveckling."
+            short_title: "Säkerställa bevarande av bergens ekosystem"
+          target_15_B:
+            long_title: "Mobilisera betydande resurser från alla källor och på alla nivåer för att finansiera hållbart brukande av skogar och ge utvecklingsländerna lämpliga incitament att utveckla sådant brukande, för bland annat bevarande och återbeskogning."
           target_15_C:
             long_title: "Öka det globala stödet till insatser för att bekämpa tjuvjakt på och illegal handel med skyddade arter, bland annat genom att öka möjligheterna till en hållbar försörjning i lokalsamhällena."
             short_title: "Bekämpa tjuvjakt och smuggling globalt"
