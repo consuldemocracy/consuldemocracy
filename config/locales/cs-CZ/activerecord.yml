@@ -261,7 +261,7 @@ cs:
         population: "Population"
         max_ballot_lines: "Povolené hlasy"
       budget/heading/translation:
-        name: "Název záhlaví"
+        name: "Název rozpočtové položky"
       budget/phase:
         enabled: "Fáze je povolena"
         ends_at: "Konečné datum"
