@@ -60,6 +60,8 @@ oc:
         type: tipe
         no_activity: I a pas activitat de moderadors.
     budgets:
+      actions:
+        edit: "Edita budgèt"
       index:
         title: de Budgèts participatius
         new_link: Crear nòu budgèt
@@ -70,7 +72,6 @@ oc:
         budget_investments: Gerir de projèctes
         table_name: Nome
         table_phase: fasa
-        edit_groups: Edita de grops de partidas
         admin_ballots: de Bilhetas d’administracion
         no_budgets: "I a pas de budgèts."
       create:
@@ -122,13 +123,8 @@ oc:
         create: "Crèa un grop nòu"
         edit: "Edita lo grop"
         submit: "Plega lo grop"
-      index:
-        back: "Tornar als budgèts"
     budget_headings:
       no_headings: "I a pas cap de títol."
-      amount:
-        one: "I a 1 encapçalament"
-        other: "N’i a %{count} de títols"
       create:
         notice: "Lo encapçalament creat corrèctament!"
       update:
@@ -1204,8 +1200,6 @@ oc:
       setting_value: valor
       no_description: "Sens descripcion"
     shared:
-      true_value: "Òc"
-      false_value: "Pas"
       search:
         label:
           booths: "Cercar bóstia per nom"
