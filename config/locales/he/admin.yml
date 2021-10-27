@@ -60,6 +60,8 @@ he:
         type: סוג
         no_activity: אין פעילות מנהלים.
     budgets:
+      actions:
+        edit: "ערוך תקציב"
       index:
         title: תקציבים השתתפותיים
         new_link: צור תקציב חדש
@@ -70,7 +72,6 @@ he:
         budget_investments: נהל פרויקטים
         table_name: שם
         table_phase: שלב
-        edit_groups: עריכת קבוצות כותרות
         admin_ballots: הצבעת מנהל מערכת
         no_budgets: "לא נמצאו תקציבים."
       create:
@@ -128,15 +129,8 @@ he:
         create: "צור קבוצה חדשה"
         edit: "ערוך קבוצה"
         submit: "שמירת קבוצה"
-      index:
-        back: "לחזור לתקציבים"
     budget_headings:
       no_headings: "אין כותרות."
-      amount:
-        one: "יש כותרת 1"
-        two: "ישנן %{count} כותרות"
-        many: "ישנן %{count} כותרות"
-        other: "ישנן %{count} כותרות"
       create:
         notice: "כותרת נוצרו בהצלחה!"
       update:
@@ -1196,8 +1190,6 @@ he:
       setting_value: ערך
       no_description: "אין תיאור"
     shared:
-      true_value: "כן"
-      false_value: "לא"
       search:
         label:
           booths: "חיפוש דוכן לפי שם"
