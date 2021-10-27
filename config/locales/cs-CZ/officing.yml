@@ -27,8 +27,8 @@ cs:
         empty_results: Pro tento průzkum zatím nejsou k dispozici žádné hlasovací lístky
       new:
         title: "%{poll_budget} - Nový hlasovací arch"
-        booth: Informační stánek
-        select_booth: Vyberte informační stánek
+        booth: Hlasovací kabina
+        select_booth: Vyberte hlasovací kabinu
         csv_data: CSV data
         submit: Uložit
       show:
@@ -37,7 +37,7 @@ cs:
         data: CSV data
     booth:
       new:
-        title: "Zvolte si stánek"
+        title: "Zvolte si hlasovací kabinu"
     results:
       flash:
         create: "Výsledky byly uloženy"
