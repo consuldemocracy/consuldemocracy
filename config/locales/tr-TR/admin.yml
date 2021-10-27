@@ -67,6 +67,7 @@ tr:
         no_activity: Hiç moderatör faaliyeti yok.
     budgets:
       actions:
+        edit: "Bütçe düzenleme"
         preview: "Bütçeyi Görüntüle"
       index:
         title: Katılımcı bütçe
@@ -87,7 +88,6 @@ tr:
         type_multiple: "Çoklu başlıklar"
         type_pending: "Beklemede: Henüz başlık yok"
         type_single: "Tekli başlık"
-        edit_groups: Başlıklar gruplarını düzenle
         admin_ballots: Yönetici oyları
         no_budgets: "Hiç bütçe yok."
       create:
@@ -123,7 +123,6 @@ tr:
         main_call_to_action_description: "Bu bağlantı, katılımcı bütçenin ana başlığında görünecek ve kullanıcınızı bir teklif oluşturma, mevcut tekliflere oy verme veya süreç hakkında daha fazla bilgi edinme gibi belirli bir eylemi gerçekleştirmeye teşvik edecektir."
         info:
           budget_settings: "Genel katılımcı bütçe ayarları"
-          phases_settings: "Aşama ayarları"
           staff_settings: "Bütçeye atanan yönetici ve bilirkişiler"
       destroy:
         success_notice: Bütçe başarıyla silindi
@@ -157,13 +156,9 @@ tr:
         max_votable_headings_info: "Sadece proje seçim aşaması döneminde geçerlidir. Proje seçim aşamasında kullanıcılar grup başı sadece bir başlıktan seçim yapabilirler."
         submit: "Grubu kaydet"
       index:
-        back: "Bütçelere geri dön"
         new_button: "Yeni grup ekle"
     budget_headings:
       no_headings: "Hiç başlık yok."
-      amount:
-        one: "1 başlık var"
-        other: "%{count} başlıklar var"
       create:
         notice: "Başlık başarıyla oluşturuldu!"
       update:
@@ -319,8 +314,6 @@ tr:
           back: "Başlıklara geri dön"
         single:
           back: "Başlıkları düzenlemeye geri dön"
-        update_all:
-          notice: "Aşamalar başarıyla yapılandırıldı"
     milestones:
       index:
         table_id: "KİMLİK"
@@ -1299,8 +1292,6 @@ tr:
       setting_value: Değer
       no_description: "Tanımlama yok"
     shared:
-      true_value: "Evet"
-      false_value: "Hayır"
       search:
         advanced_filters:
           sdg_goals:
