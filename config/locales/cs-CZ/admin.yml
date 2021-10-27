@@ -151,8 +151,8 @@ cs:
       help:
         budgets: "Participativní rozpočty umožňují občanům navrhovat a přímo rozhodovat o tom, jak utratit část rozpočtu, přičemž instituce návrhy sleduje a přísně hodnotí."
         groups:
-          multiple: "Skupiny slouží k uspořádání nadpisů. Po vytvoření skupiny, která obsahuje rubriky, je možné určit, v kolika rubrikách může uživatel hlasovat."
-          single: "Skupiny jsou určeny k uspořádání nadpisů, protože tento rozpočet bude obsahovat pouze jeden nadpis, lze použít stejný název, protože se nebude nikde objevovat. Můžete pokračovat dalším krokem."
+          multiple: "Skupiny slouží k uspořádání rozpočtových položek. Po vytvoření skupiny, která obsahuje položky, je možné určit, v kolika položkách může uživatel hlasovat."
+          single: "Skupiny jsou určeny k uspořádání rozpočtových položek, protože však tento rozpočet bude obsahovat pouze jednu položku, lze použít stejný název, protože se nebude nikde objevovat. Můžete pokračovat dalším krokem."
         headings:
           multiple: "Položky mají rozdělit peníze participativního rozpočtu. Zde můžete přidat položky pro tuto skupinu a přiřadit částku peněz, která bude použita pro každou položku."
           single: "Položky jsou určeny k rozdělení peněz participativního rozpočtu. Vzhledem k tomu, že tento rozpočet bude obsahovat pouze jednu položku, je to místo, kde stanovíte peníze, které budou v tomto participativním rozpočtu vynaloženy."
@@ -1339,7 +1339,7 @@ cs:
             label: "Podle záměru"
         label:
           booths: "Vyhledat informační stánek podle jména"
-          budget_investments: "Vyhledávání investic podle názvu, popisu nebo nadpisu"
+          budget_investments: "Vyhledávání investic podle názvu, popisu nebo rozpočtové položky"
           debates: "Vyhledávání debat podle názvu nebo popisu"
           legislation_processes: "Vyhledávání procesů podle názvu nebo popisu"
           legislation_proposals: "Vyhledávání návrhů podle názvu nebo popisu"
@@ -1467,7 +1467,7 @@ cs:
         participants_per_district: Účastníci za okres
       budget_supporting:
         title: "Statistiky podpůrné fáze"
-        headings: Kapitoly
+        headings: Rozpočtové položky
         users: Uživatelé
         vote_count: Hlasů
         participant_count: Účastníků
