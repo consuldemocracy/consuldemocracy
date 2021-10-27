@@ -376,6 +376,9 @@ sv:
           target_12_1:
             long_title: "Genomföra det tioåriga ramverket för hållbara konsumtions- och produktionsmönster. Alla länder vidtar åtgärder, med de utvecklade länderna i täten och med hänsyn tagen till utvecklingsländernas utveckling och förutsättningar."
             short_title: "Genomföra det tioåriga ramverket för hållbar konsumtion och produktion"
+          target_12_2:
+            long_title: "Senast 2030 uppnå en hållbar förvaltning och ett effektivt nyttjande av naturresurser."
+            short_title: "Hållbar förvaltning och effektivt nyttjande av naturresurser"
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
@@ -405,9 +408,15 @@ sv:
         description: "Främja rättvisa, fredliga och inkluderande samhällen."
         long_description: '<p>Konflikt, osäkerhet, svaga institutioner och begränsad tillgång till rättssystem är fortfarande ett stort hot mot hållbar utveckling.&nbsp;</p> <p>Antalet <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">människor på flykt från krig, förföljelse och konflikt översteg 70 miljoner</a> 2018, den högsta nivån som registrerats av FN:s flyktingkommissariat (UNHCR) på nästan 70 år.&nbsp;</p> <p>2019 konstaterade Förenta nationerna <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 mord och 30 påtvingade försvinnanden</a> av människorättsförsvarare, journalister och fackföreningsmedlemmar i 47 länder.</p> <p>Det underlåts också att registrera att runt <a href="https://data.unicef.org/topic/child-protection/birth-registration/">ett av fyra barn</a> under 5 års ålder i hela världen har fötts, vilket berövar dem de bevis på juridisk identitet som är avgörande för att skydda deras rättigheter och ge tillgång till rättssystem och sociala tjänster.</p>'
         targets:
+          target_16_1:
+            long_title: "Avsevärt minska alla former av våld och dödligt våld överallt."
+            short_title: "Minska våld överallt"
           target_16_2:
             long_title: "Eliminera övergrepp, utnyttjande, människohandel och alla former av våld eller tortyr mot barn."
             short_title: "Skydda barn mot övergrepp, utnyttjande, människohandel och våld"
+          target_16_4:
+            long_title: "Till 2030 avsevärt minska de olagliga finansiella flödena och vapenflödena, öka möjligheterna att återvinna och återfå stulna tillgångar samt bekämpa alla former av organiserad brottslighet."
+            short_title: "Bekämpa organiserad brottslighet och olagliga finansiella flöden och vapenflöden"
           target_16_7:
             long_title: "Säkerställa ett lyhört, allomfattande, delaktigt och representativt beslutsfattande på alla nivåer."
             short_title: "Säkerställa lyhört, allomfattande och representativt beslutsfattande"
