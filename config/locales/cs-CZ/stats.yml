@@ -25,7 +25,7 @@ cs:
       total_selected_investments: "Projekty v závěrečné fázi hlasování"
       total_unfeasible_investments: "Neproveditelné projekty"
       by_phase: "Účastníci podle fáze"
-      by_heading: "Účastníci podle fáze a položky"
+      by_heading: "Účastníci podle fáze a rozpočtové položky"
       total: "Celkem"
       heading: "Položka"
       investments_sent: "Odeslané investiční návrhy"
@@ -33,7 +33,7 @@ cs:
       participants_vote_phase: "Fáze hlasování účastníků"
       participants_every_phase: "Celkový počet účastníků"
       percent_total_participants: "% Účastníků celkem"
-      percent_heading_census: "% položka regystru občanů"
+      percent_heading_census: "% položka registru občanů"
       participatory_disclaimer: "** Počty všech účastníků se týkají osob, které vytvořily, podpořily nebo hlasovaly o investičních návrzích."
       heading_disclaimer: "*** Údaje o položkách se vztahují k položce, ve které každý uživatel hlasoval, nikoli nutně k té, ve které je daná osoba zaregistrována."
     polls:
