@@ -60,6 +60,8 @@ ka:
         type: ტიპი
         no_activity: მოდერატორების აქტივობა არ მოიძებნა.
     budgets:
+      actions:
+        edit: "ბიუჯეტის რედაქტირება"
       index:
         title: მონაწილეობითი ბიუჯეტები
         new_link: ახალი ბიუჯეტის შექმნა
@@ -70,7 +72,6 @@ ka:
         budget_investments: პროექტების მართვა
         table_name: სახელი
         table_phase: ფაზა
-        edit_groups: სათაურების ჯგუფების რედაქტირება
         admin_ballots: ადმინისტრაციული ბიულეტენები
         no_budgets: "ბიუჯეტები არ მოიძებნა."
       create:
@@ -123,13 +124,8 @@ ka:
         edit: "ჯგუფის რედაქტირება"
         max_votable_headings_info: "მიესადაგება მხოლოდ პროექტების შერჩევის ფაზას. ხმის მიცემის ფაზაში მომხმარებლებს ჯგუფიდან მხოლოდ ერთი რუბრიკისთვის შეუძლიათ ხმის მიცემა."
         submit: "ჯგუფის შენახვა"
-      index:
-        back: "ბიუჯეტებში დაბრუნება"
     budget_headings:
       no_headings: "სათაურები არ მოიძებნა."
-      amount:
-        one: "მოიძებნა 1 სათაური"
-        other: "მოიძებნა %{count} სათაური"
       create:
         notice: "სათაური წარმატებით შეიქმნა!"
       update:
@@ -1209,8 +1205,6 @@ ka:
       setting_value: ღირებულება
       no_description: "აღწერა არ არის"
     shared:
-      true_value: "დიახ"
-      false_value: "არა"
       search:
         label:
           booths: "კაბინის ძებნა დასახელებით, ან ლოკაციით"
