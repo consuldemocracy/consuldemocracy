@@ -60,6 +60,8 @@ ru:
         type: Тип
         no_activity: Активность модераторов отсутствует.
     budgets:
+      actions:
+        edit: "Редактировать бюджет"
       index:
         title: Партисипаторные бюджеты
         new_link: Создать новый бюджет
@@ -70,7 +72,6 @@ ru:
         budget_investments: Управлять проектами
         table_name: Имя
         table_phase: Этап
-        edit_groups: Редактировать группы заголовков
         admin_ballots: Администрирование бюллетеней
         no_budgets: "Нет бюджетов."
       create:
@@ -114,15 +115,8 @@ ru:
         create: "Создать новую группу"
         edit: "Редактировать группу"
         submit: "Сохранить группу"
-      index:
-        back: "Вернуться к бюджетам"
     budget_headings:
       no_headings: "Заголовков нет."
-      amount:
-        one: "Есть один заголовок"
-        few: "Есть %{count} заголовков"
-        many: "Есть %{count} заголовков"
-        other: "Есть %{count} заголовков"
       create:
         notice: "Заголовок успешно создан!"
       update:
@@ -1162,8 +1156,6 @@ ru:
       setting_value: Значение
       no_description: "Нет описания"
     shared:
-      true_value: "Да"
-      false_value: "Нет"
       search:
         label:
           booths: "Искать кабинку по имени"
