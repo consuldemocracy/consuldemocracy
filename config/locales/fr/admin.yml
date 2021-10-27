@@ -69,6 +69,7 @@ fr:
         no_activity: Il n’y a aucune activité de modérateurs.
     budgets:
       actions:
+        edit: "Modifier le budget"
         preview: "Aperçu"
       index:
         title: Budgets participatifs
@@ -89,7 +90,6 @@ fr:
         type_multiple: "Plusieurs rubriques"
         type_pending: "En attente : aucune rubrique pour le moment"
         type_single: "Rubrique unique"
-        edit_groups: Modifier les groupes de rubriques
         admin_ballots: Bulletins de l’admin
         no_budgets: "Il n'y a pas de budgets."
       create:
@@ -127,7 +127,6 @@ fr:
         main_call_to_action_description: "Ce lien apparaîtra sur la bannière principale de ce budget participatif et encourage votre utilisateur à effectuer une action spécifique comme créer une proposition, voter pour les propositions existantes ou en savoir plus sur le processus."
         info:
           budget_settings: "Paramètres généraux du budget participatif"
-          phases_settings: "Paramètres des phases"
           staff_settings: "Administrateurs et évaluateurs affectés au budget"
       destroy:
         success_notice: Le budget a été supprimé avec succès
@@ -170,13 +169,9 @@ fr:
         max_votable_headings_info: "S'applique uniquement à la phase de sélection des projets. Pendant la phase de vote des projets, les utilisateurs ne peuvent voter que dans une rubrique par groupe."
         submit: "Sauvegarder le groupe"
       index:
-        back: "Revenir aux budgets"
         new_button: "Ajouter un nouveau groupe"
     budget_headings:
       no_headings: "Il n'y a pas de titre."
-      amount:
-        one: "Il y a 1 titre"
-        other: "Il y a %{count} titres"
       create:
         notice: "Rubrique créée avec succès !"
       update:
@@ -1164,8 +1159,6 @@ fr:
       setting_value: Valeur
       no_description: "Aucune description"
     shared:
-      true_value: "Oui"
-      false_value: "Non"
       search:
         label:
           booths: "Rechercher le bureau de vote par nom"
