@@ -58,6 +58,8 @@ zh-TW:
         type: 類型
         no_activity: 沒有審核員活動。
     budgets:
+      actions:
+        edit: "編輯預算"
       index:
         title: 參與性預算
         new_link: 創建新預算
@@ -68,7 +70,6 @@ zh-TW:
         budget_investments: 管理項目
         table_name: 名字
         table_phase: 階段
-        edit_groups: 編輯標題組
         no_budgets: "沒有預算。"
       create:
         notice: 新的參與性預算創建成功!
@@ -905,8 +906,6 @@ zh-TW:
       setting_value: 價值
       no_description: "沒有描述"
     shared:
-      true_value: "是"
-      false_value: "否"
       search:
         label:
           booths: "按名稱搜尋投票亭"
