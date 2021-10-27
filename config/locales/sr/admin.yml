@@ -60,6 +60,8 @@ sr:
         type: Тип
         no_activity: Не постоји активност модератора.
     budgets:
+      actions:
+        edit: "Уредити буџет"
       index:
         title: Партиципативни буџети
         new_link: Креирајте нови буџет
@@ -70,7 +72,6 @@ sr:
         budget_investments: Управљање пројектима
         table_name: Име
         table_phase: Фаза
-        edit_groups: Уреди групе наслова
         admin_ballots: Админ листићи
         no_budgets: "Нема буџета."
       create:
@@ -126,14 +127,8 @@ sr:
         edit: "Уредите групу"
         max_votable_headings_info: "Примењиво само на фазу одабира пројеката. За време фазе гласања о пројектима, корисници могу да гласају у само једном заглављу по групи."
         submit: "Сачувајте групу"
-      index:
-        back: "Вратите се на буџете"
     budget_headings:
       no_headings: "Нема наслова."
-      amount:
-        one: "Постоји 1 наслов"
-        few: "Постоји %{count} наслова"
-        other: "Постоји %{count} наслова"
       create:
         notice: "Наслов креиран успешно!"
       update:
@@ -1222,8 +1217,6 @@ sr:
       setting_value: Вредност
       no_description: "Нема описа"
     shared:
-      true_value: "Да"
-      false_value: "Не"
       search:
         label:
           booths: "Тражите гласачко место по називу или локацији"
