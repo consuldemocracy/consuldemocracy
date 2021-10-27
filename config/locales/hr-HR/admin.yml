@@ -60,6 +60,8 @@ hr:
         type: Vrsta
         no_activity: Ne postoje aktivnosti moderatora.
     budgets:
+      actions:
+        edit: "Uredi budžet"
       index:
         title: Participativni proračuni
         new_link: Stvori novi proračun
@@ -70,7 +72,6 @@ hr:
         budget_investments: Upravljaj projektima
         table_name: Ime
         table_phase: Faza
-        edit_groups: Uredi naslov grupa
         admin_ballots: Glasovi admina
         no_budgets: "Ne postoje budžeti."
       create:
@@ -126,14 +127,8 @@ hr:
         edit: "Uredi grupu"
         max_votable_headings_info: "Odnosi se samo na fazu odabira projekata. Tijekom faze glasanja o projektima korisnici će moći glasati samo za jedan naslov po skupini."
         submit: "Spremi grupu"
-      index:
-        back: "Vrati se na proračune"
     budget_headings:
       no_headings: "Ne postoje naslovi."
-      amount:
-        one: "Postoji 1 naslov"
-        few: "Postoje %{count} naslova"
-        other: "Postoje %{count} naslova"
       create:
         notice: "Naslov je uspješno stvoren!"
       update:
@@ -1222,8 +1217,6 @@ hr:
       setting_value: Vrijednost
       no_description: "Nema opisa"
     shared:
-      true_value: "Da"
-      false_value: "Ne"
       search:
         label:
           booths: "Pretraži glasačko mjesto po imenu"
