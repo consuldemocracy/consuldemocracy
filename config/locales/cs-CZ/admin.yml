@@ -74,7 +74,7 @@ cs:
           ballots: "Jste si jistý? Tento úkon je nutný pouze v případě, že během závěrečné fáze hlasování budete používat fyzické hlasovací kabiny. Občané budou moci i nadále hlasovat prostřednictvím webu s fyzickými kabinami i bez nich."
           destroy: "Jste si jistý? Tím se odstraní rozpočet a všechny jeho přidružené skupiny a položky. Tuto akci nelze vrátit zpět."
         descriptions:
-          ballots: "To vám umožní spravovat fyzické hlasovací lístky. Tuto možnost použijte pouze v případě, že se chystáte používat fyzické kabiny pro sběr hlasovacích lístků během závěrečné fáze hlasování."
+          ballots: "To vám umožní spravovat fyzické hlasovací lístky. Tuto možnost použijte pouze v případě, že se chystáte používat fyzické hlasovací kabiny pro sběr hlasovacích lístků během závěrečné fáze hlasování."
           calculate_winners: 'Po výpočtu výsledků k nim budou mít přístup pouze správci. Budou veřejné, jakmile projekt dosáhne fáze "%{phase}" <strong>pokud je při úpravě rozpočtu povolena možnost "Zobrazit výsledky"</strong>.'
           destroy: "Tím se odstraní rozpočet a všechny přidružené skupiny a položky. Tuto akci nelze vrátit zpět."
         edit: "Upravit rozpočet"
