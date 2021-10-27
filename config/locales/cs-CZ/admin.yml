@@ -160,6 +160,8 @@ cs:
       show:
         add_group: "Přidat skupinu"
         add_heading: "Přidat položku"
+        groups_and_headings: "Skupiny položek"
+        headings_caption: "Položky v %{group}"
       winners:
         calculate: Vypočítat vítěznou investici
         calculated: Výpočet vítězných investic může chvíli trvat.
@@ -179,7 +181,7 @@ cs:
       form:
         create: "Vytvořit novou skupinu"
         edit: "Upravit skupinu"
-        max_votable_headings_info: "Platí pouze pro fázi výběru projektů. Ve fázi hlasování o projektech mohou uživatelé hlasovat pouze v jedné rubrice za skupinu."
+        max_votable_headings_info: "Platí pouze pro fázi výběru projektů. Ve fázi hlasování o projektech mohou uživatelé hlasovat pouze v jedné položce za skupinu."
         submit: "Uložit skupinu"
       index:
         new_button: "Přidat novou skupinu"
@@ -193,7 +195,7 @@ cs:
         success_notice: "Kapitola byla smazána"
         unable_notice: "Nemůžete odstranit nadpis, který spojený s investicí"
       form:
-        max_ballot_lines_info: 'Maximální počet projektů, pro které může uživatel hlasovat v této rubrice ve fázi "Hlasování projektů". Pouze pro rozpočty využívající schvalovací hlasování.'
+        max_ballot_lines_info: 'Maximální počet projektů, pro které může uživatel hlasovat v této rozpočtové položce ve fázi "Hlasování projektů". Pouze pro rozpočty využívající schvalovací hlasování.'
         population_info: "Položka Populace se používá ke statistickým účelům na konci rozpočtu a ukáže pro každou kapitolu, která představuje oblast s populací, jaké procento hlasovalo. Pole je volitelně, takže jej můžete nechat prázdné, pak se nepoužije."
         coordinates_info: "Je-li k dispozici zeměpisná šířka a délka, stránka investic pro tuto kapitolu bude obsahovat mapu. Tato mapa bude vycentrována pomocí těchto souřadnic."
         content_blocks_info: "Pokud je blok obsahu povolen, budete schopni vytvářet vlastní obsah vztahující se k této kapitole ze sekce Nastavení > Vlastní bloky obsahu. Tento obsah se zobrazí na stránce investic pro tuto kapitolu."
@@ -201,8 +203,8 @@ cs:
         edit: "Upravit kapitolu"
         submit: "Uložit hadpisy"
       group_switcher:
-        currently_showing: "Zobrazení položek ze skupiny %{group}."
-        different_group: "Správa položek z jiné skupiny"
+        currently_showing: "Zobrazení rozpočtových položek ze skupiny <strong>%{group}</strong>."
+        different_group: "Správa rozpočtových položek z jiné skupiny"
         the_other_group: "Správa položek ze skupiny %{group}."
       index:
         back: "Jít zpět do skupin"
@@ -340,7 +342,7 @@ cs:
         single:
           description: "Vytvořte proces se skupinou, městskou částí nebo tématem. Máte něco jako pytel peněz. Například 25 000 € pro městskou část nebo 10 000 € pro kulturu."
           link: "Vytvořit rozpočet s jednou položkou"
-          title: "<strong>Jednopoložkov</strong> rozpočet"
+          title: "<strong>Jednopoložkový</strong> rozpočet"
         title: "Typ participativního rozpočtu"
       phases:
         continue: "Hotovo"
