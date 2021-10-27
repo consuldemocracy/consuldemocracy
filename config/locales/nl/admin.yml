@@ -60,6 +60,8 @@ nl:
         type: Type
         no_activity: Er is geen moderator activiteit.
     budgets:
+      actions:
+        edit: "Edit budget"
       index:
         title: Participatory budgets
         new_link: Create new budget
@@ -70,7 +72,6 @@ nl:
         budget_investments: Zie begrotingsvoorstellen
         table_name: Name
         table_phase: Phase
-        edit_groups: Edit headings groups
         admin_ballots: Stembiljetten
         no_budgets: "Er zijn geen budgetten."
       create:
@@ -111,13 +112,8 @@ nl:
         create: "Nieuwe groep"
         edit: "Bewerk groep"
         submit: "Sla op"
-      index:
-        back: "Ga terug naar budgetten"
     budget_headings:
       no_headings: "Er zijn geen rubrieken."
-      amount:
-        one: "Er is 1 rubriek"
-        other: "Er zijn %{count} rubrieken"
       create:
         notice: "Rubriek aangemaakt"
       update:
@@ -1028,8 +1024,6 @@ nl:
       setting_value: Waarde
       no_description: "Geen beschrijving"
     shared:
-      true_value: "Ja"
-      false_value: "Nee"
       search:
         label:
           booths: "Search booth by name"
