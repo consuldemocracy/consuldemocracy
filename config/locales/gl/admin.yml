@@ -58,6 +58,8 @@ gl:
         type: Tipo
         no_activity: Non hai actividade dos moderadores.
     budgets:
+      actions:
+        edit: "Editar orzamento"
       index:
         title: Orzamentos participativos
         new_link: Crear un novo orzamento
@@ -68,7 +70,6 @@ gl:
         budget_investments: Xestionar proxectos
         table_name: Nome
         table_phase: Fase
-        edit_groups: Editar grupos de partidas
         no_budgets: "Non hai orzamentos."
       create:
         notice: Nova campaña de orzamentos participativos creada con éxito!
@@ -108,13 +109,8 @@ gl:
         create: "Crear novo grupo"
         edit: "Editar grupo"
         submit: "Gardar grupo"
-      index:
-        back: "Volver aos orzamentos"
     budget_headings:
       no_headings: "Aínda non hai partidas creadas. Cada usuario poderá votar nunha soa partida de cada grupo."
-      amount:
-        one: "Hai 1 partida"
-        other: "Hai %{count} partidas"
       create:
         notice: "Partida creada correctamente!"
       update:
@@ -1000,8 +996,6 @@ gl:
       setting_value: Valor
       no_description: "Sen descrición"
     shared:
-      true_value: "Si"
-      false_value: "Non"
       search:
         label:
           booths: "Buscar urna por nome"
