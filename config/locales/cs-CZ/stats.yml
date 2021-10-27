@@ -40,5 +40,5 @@ cs:
       by_channel: "Účastníci podle kanálu"
       vote_by_channel: "Typ hlasování podle kanálu"
       web_percentage: "%{percentage} Web"
-      booth_percentage: "%{percentage} Stánky"
+      booth_percentage: "%{percentage} hlasovacích kabin"
       letter_percentage: "%{percentage} E-mail"
