@@ -53,6 +53,8 @@ fa:
         title: فعالیت مدیر
         type: نوع
     budgets:
+      actions:
+        edit: "ویرایش بودجه"
       index:
         title: بودجه مشارکتی
         new_link: ایجاد بودجه جدید
@@ -62,7 +64,6 @@ fa:
           finished: به پایان رسید
         table_name: نام
         table_phase: فاز
-        edit_groups: ویرایش سرفصلهای گروه
         no_budgets: "هیچ بودجه ای وجود ندارد."
       create:
         notice: بودجه مشارکتی جدید با موفقیت ایجاد شده!
@@ -825,8 +826,6 @@ fa:
       setting_value: "ارزش\n"
       no_description: "بدون توضیح\n"
     shared:
-      true_value: "بله"
-      false_value: "نه"
       search:
         label:
           booths: "جستجوی غرفه با نام"
