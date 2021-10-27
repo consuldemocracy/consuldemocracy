@@ -58,6 +58,8 @@ sq:
         type: Tipi
         no_activity: Nuk ka aktivitet të moderatorëve.
     budgets:
+      actions:
+        edit: "Ndrysho buxhetin"
       index:
         title: Buxhetet  pjesëmarrës
         new_link: Krijo buxhet të ri
@@ -68,7 +70,6 @@ sq:
         budget_investments: Menaxho projektet
         table_name: Emri
         table_phase: Fazë
-        edit_groups: Ndrysho grupet e titujve
         no_budgets: "Nuk ka buxhet."
       create:
         notice: Buxheti i ri pjesëmarrës u krijua me sukses!
@@ -913,8 +914,6 @@ sq:
       setting_value: Vlerë
       no_description: "Jo Përshkrim"
     shared:
-      true_value: "Po"
-      false_value: "Jo"
       search:
         label:
           booths: "Kërko kabinat sipas emrit"
