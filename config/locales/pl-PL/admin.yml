@@ -58,6 +58,8 @@ pl:
         type: Typ
         no_activity: Brak aktywności moderatorów.
     budgets:
+      actions:
+        edit: "Edytuj budżet"
       index:
         title: Budżety partycypacyjne
         new_link: Utwórz nowy budżet
@@ -68,7 +70,6 @@ pl:
         budget_investments: Zarządzanie projektami
         table_name: Nazwa
         table_phase: Etap
-        edit_groups: Edytuj grupy nagłówków
         no_budgets: "Brak budżetów."
       create:
         notice: Nowy budżet partycypacyjny został pomyślnie utworzony!
@@ -110,15 +111,8 @@ pl:
         create: "Stwórz nową grupę"
         edit: "Edytuj grupę"
         submit: "Zapisz grupę"
-      index:
-        back: "Wróć do budżetów"
     budget_headings:
       no_headings: "Nie ma nagłówków."
-      amount:
-        one: "Jest 1 nagłówek"
-        few: "Jest %{count} nagłówków"
-        many: "Jest %{count} nagłówków"
-        other: "Jest %{count} nagłówków"
       create:
         notice: "Pomyślnie utworzono nagłówek!"
       update:
@@ -1034,8 +1028,6 @@ pl:
       setting_value: Wartość
       no_description: "Brak opisu"
     shared:
-      true_value: "Tak"
-      false_value: "Nie"
       search:
         label:
           booths: "Wyszukaj stoisko według nazwy"
