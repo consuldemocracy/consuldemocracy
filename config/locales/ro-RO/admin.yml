@@ -67,6 +67,7 @@ ro:
         no_activity: Nu există activitate efectuată de moderatori.
     budgets:
       actions:
+        edit: "Editează buget"
         preview: "Previzualizați bugetul"
       index:
         title: Bugetele participative
@@ -86,7 +87,6 @@ ro:
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         type_multiple: "Rubrici multiple"
         type_pending: "În așteptare: nici o rubrică"
-        edit_groups: Editați grupurile de rubrici
         admin_ballots: Gestionați buletinele de vot
         no_budgets: "Nu există bugete."
       create:
@@ -125,7 +125,6 @@ ro:
         main_call_to_action_description: "Acest link va apărea pe bannerul principal al acestui buget participativ și va încuraja utilizatorul să efectueze o acțiune specifică, cum ar fi crearea unei propuneri, votarea celor existente sau să afle mai multe despre proces."
         info:
           budget_settings: "Setări generale ale bugetului participativ"
-          phases_settings: "Setările fazelor"
           staff_settings: "Administratori și evaluatori repartizați la buget"
       destroy:
         success_notice: Buget șters cu succes
@@ -168,14 +167,9 @@ ro:
         max_votable_headings_info: "Se aplică numai fazei de selectare a proiectelor. În timpul fazei de votare a proiectelor, utilizatorii pot vota doar într-o singură rubrică per grup."
         submit: "Salvează grup"
       index:
-        back: "Mergi înapoi la bugete"
         new_button: "Adaugă un grup nou"
     budget_headings:
       no_headings: "Nu există rubrici."
-      amount:
-        one: "Există 1 rubrică"
-        few: "Exista %{count} rubrici"
-        other: "Exista %{count} rubrici"
       create:
         notice: "Rubrică creată cu succes!"
       update:
@@ -324,8 +318,6 @@ ro:
           back: "Mergi înapoi la rubrici"
         single:
           back: "Mergi înapoi la editare rubrică"
-        update_all:
-          notice: "Etapă configurată cu succes"
     milestones:
       index:
         table_id: "ID"
@@ -1306,8 +1298,6 @@ ro:
       setting_value: Valoare
       no_description: "Nu există descriere"
     shared:
-      true_value: "Da"
-      false_value: "Nu"
       search:
         advanced_filters:
           sdg_goals:
