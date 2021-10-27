@@ -61,6 +61,8 @@ da:
         type: Type
         no_activity: Der er ingen moderator aktivitet.
     budgets:
+      actions:
+        edit: "Rediger budget"
       index:
         title: Deltagerbudgetter
         new_link: Opret nyt budget
@@ -71,7 +73,6 @@ da:
         budget_investments: Administrer projekter
         table_name: Navn
         table_phase: Fase
-        edit_groups: Rediger områder
         admin_ballots: Administrer valgsteder
         no_budgets: "Der er ingen budgetter."
       create:
@@ -124,13 +125,8 @@ da:
         create: "Opret ny gruppe"
         edit: "Rediger gruppe"
         submit: "Gem gruppe"
-      index:
-        back: "Gå tilbage til budgetter"
     budget_headings:
       no_headings: "Der er ingen overskrifter."
-      amount:
-        one: "Der er 1 post"
-        other: "Der er %{count} overskrifter"
       create:
         notice: "Post oprettet!"
       update:
@@ -1199,8 +1195,6 @@ da:
       setting_value: Værdi
       no_description: "Ingen beskrivelse"
     shared:
-      true_value: "Ja"
-      false_value: "Nej"
       search:
         label:
           booths: "Søg stemmeboks vis navn"
