@@ -384,6 +384,10 @@ sv:
             short_title: "Halvera det globala matsvinnet per person"
           target_12_4:
             long_title: "Senast 2020 uppnå miljövänlig hantering av kemikalier och alla typer av avfall under hela deras livscykel, i enlighet med överenskomna internationella ramverk, samt avsevärt minska utsläppen av dem i luft, vatten och mark i syfte att minimera deras negativa konsekvenser för människors hälsa och miljön."
+            short_title: "Ansvarsfull hantering av kemikalier och avfall"
+          target_12_5:
+            long_title: "Till 2030 väsentligt minska mängden avfall genom åtgärder för att förebygga, minska, återanvända och återvinna avfall."
+            short_title: "Väsentligt minska mängden avfall"
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
@@ -404,6 +408,8 @@ sv:
         description: "Hantera skogen hållbart, bekämpa ökenspridning, stoppa och återställa landdegradering och stoppa förlusten av biologisk mångfald."
         long_description: '<p>Naturen är avgörande för vår överlevnad: naturen ger oss vårt syre, reglerar våra vädermönster, pollinerar våra grödor, producerar vår mat, vårt foder och våra fiber. Men den står under allt högre tryck. <a href="https://news.un.org/en/story/2020/04/1061082">Mänsklig aktivitet har förändrat nästan 75 procent av jordens yta</a>, och klämt in vilda djur och natur i ett allt mindre hörn av planeten.</p> <p>Omkring <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf">1 miljoner djur- och växtarter är utrotningshotade</a> – många blev det på ett par årtionden – enligt 2019 års globala bedömningsrapport om biologisk mångfald och ekosystemtjänster. Rapporten uppmanade om transformativa förändringar för att återställa och skydda naturen. Den fann att hälsan hos ekosystem som vi och alla andra arter är beroende av försämras snabbare än någonsin och påverkar&nbsp; själva grunden för våra ekonomier, vår försörjning, livsmedelssäkerhet, hälsa och livskvalitet över hela världen.&nbsp;</p> <p>Avskogning och ökenspridning – som orsakas av mänsklig aktivitet och klimatförändringar – utgör stora utmaningar för hållbar utveckling och har påverkat miljontals människors liv och försörjning. <a href="https://news.un.org/en/story/2019/05/1038291">Skogar är mycket viktiga </a>för att upprätthålla livet på jorden och spela en viktig roll i kampen mot klimatförändringar. Och investeringar i <a href="https://news.un.org/en/story/2019/09/1045802">markåterställning</a> är avgörande för att förbättra försörjningsmöjligheterna, minska sårbarheter och minska riskerna för ekonomin.</p> <p>Vår planets hälsa spelar också en viktig roll i <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">uppkomsten av zoonotiska sjukdomar</a>, d.v.s. sjukdomar som är överförbara mellan djur och människor. När vi fortsatt inkräktar på ömtåliga ekosystem får människor i allt större grad kontakt med vilda djur, vilket gör det möjligt för naturens patogener att sprida sig till boskap och människor, vilket ökar risken för sjukdomsutveckling och -förstärkning.</p>'
         targets:
+          target_15_3:
+            long_title: "Till 2030 bekämpa ökenspridning, återställa förstörd mark och jord, inklusive mark som drabbats av ökenspridning, torka och översvämningar, samt sträva efter att uppnå en värld utan nettoförstöring av mark."
           target_15_C:
             long_title: "Öka det globala stödet till insatser för att bekämpa tjuvjakt på och illegal handel med skyddade arter, bland annat genom att öka möjligheterna till en hållbar försörjning i lokalsamhällena."
             short_title: "Bekämpa tjuvjakt och smuggling globalt"
