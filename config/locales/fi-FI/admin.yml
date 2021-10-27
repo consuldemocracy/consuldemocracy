@@ -47,6 +47,8 @@ fi:
           on_users: Käyttäjät
         type: Tyyppi
     budgets:
+      actions:
+        edit: "Muokkaa budjettia"
       index:
         new_link: Luo uusi budjetti
         filter: Suodatin
@@ -75,8 +77,6 @@ fi:
         create: "Luo uusi ryhmä"
         edit: "Muokkaa ryhmää"
         submit: "Tallenna ryhmä"
-      index:
-        back: "Takaisin budjetteihin"
     budget_headings:
       index:
         back: "Takaisin ryhmiin"
@@ -457,8 +457,6 @@ fi:
             submit: Päivitä
       no_description: "Ei kuvausta"
     shared:
-      true_value: "Kyllä"
-      false_value: "Ei"
       actions: Toiminnot
       description: Kuvaus
       image: Kuva
