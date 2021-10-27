@@ -69,8 +69,17 @@ cs:
         no_activity: Neexistují žádná aktivity moderátorů.
     budgets:
       actions:
+        ballots: "Vytvořit informační stánky"
+        confirm:
+          ballots: "Jste si jistý? Tento úkon je nutný pouze v případě, že během závěrečné fáze hlasování budete používat fyzické hlasovací kabiny. Občané budou moci i nadále hlasovat prostřednictvím webu s fyzickými kabinami i bez nich."
+          destroy: "Jste si jistý? Tím se odstraní rozpočet a všechny jeho přidružené skupiny a položky. Tuto akci nelze vrátit zpět."
+        descriptions:
+          ballots: "To vám umožní spravovat fyzické hlasovací lístky. Tuto možnost použijte pouze v případě, že se chystáte používat fyzické kabiny pro sběr hlasovacích lístků během závěrečné fáze hlasování."
+          calculate_winners: 'Po výpočtu výsledků k nim budou mít přístup pouze správci. Budou veřejné, jakmile projekt dosáhne fáze "%{phase}" <strong>pokud je při úpravě rozpočtu povolena možnost "Zobrazit výsledky"</strong>.'
+          destroy: "Tím se odstraní rozpočet a všechny přidružené skupiny a položky. Tuto akci nelze vrátit zpět."
         edit: "Upravit rozpočet"
         preview: "Náhled"
+        preview_results: "Náhled výsledků"
       index:
         title: Participativní rozpočty
         new_link: Vytvořit nový rozpočet
@@ -148,6 +157,9 @@ cs:
           multiple: "Položky mají rozdělit peníze participativního rozpočtu. Zde můžete přidat položky pro tuto skupinu a přiřadit částku peněz, která bude použita pro každou položku."
           single: "Položky jsou určeny k rozdělení peněz participativního rozpočtu. Vzhledem k tomu, že tento rozpočet bude obsahovat pouze jednu položku, je to místo, kde stanovíte peníze, které budou v tomto participativním rozpočtu vynaloženy."
         phases: "Participativní rozpočty mají různé fáze. Zde můžete fáze povolit nebo zakázat a také jednotlivé fáze přizpůsobit."
+      show:
+        add_group: "Přidat skupinu"
+        add_heading: "Přidat položku"
       winners:
         calculate: Vypočítat vítěznou investici
         calculated: Výpočet vítězných investic může chvíli trvat.
