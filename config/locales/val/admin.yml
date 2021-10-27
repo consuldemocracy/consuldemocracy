@@ -58,6 +58,8 @@ val:
         type: Tipus
         no_activity: No hi ha activitat dels moderadors.
     budgets:
+      actions:
+        edit: "Edita pressupost"
       index:
         title: Pressupostos participatius
         new_link: Crear nou pressupost
@@ -68,7 +70,6 @@ val:
         budget_investments: Vore propostes d'inversió
         table_name: Nom
         table_phase: Fase
-        edit_groups: Edita grups de partides
         no_budgets: "No hi ha pressupostos."
       create:
         notice: Nova campanya de pressupostos participatius creada amb èxit!
@@ -108,13 +109,8 @@ val:
         create: "Crear un nou grup"
         edit: "Editar grup"
         submit: "Guardar group"
-      index:
-        back: "Tornar a pressupostos"
     budget_headings:
       no_headings: "No hi ha partides creades encara. Cada usuari podrà votar en una sola partida de cada grup."
-      amount:
-        one: "Hi ha 1 partida"
-        other: "Hi han %{count} partides"
       create:
         notice: "Partida creada correctament!"
       update:
@@ -956,8 +952,6 @@ val:
       setting_value: Valor
       no_description: "Sense descripció"
     shared:
-      true_value: "Si"
-      false_value: "No"
       search:
         label:
           booths: "Cercar urna per nom"
