@@ -60,6 +60,8 @@ bs:
         type: Vrsta
         no_activity: Nema aktivnosti moderatora.
     budgets:
+      actions:
+        edit: "Edituj budžet"
       index:
         title: Participativni budžeti
         new_link: Kreiraj novi budžet
@@ -70,7 +72,6 @@ bs:
         budget_investments: Vodi projekte
         table_name: Naziv
         table_phase: Faza
-        edit_groups: Edituj poglavlja
         admin_ballots: Admin za glasačke listiće
         no_budgets: "Nema budžeta."
       create:
@@ -113,14 +114,8 @@ bs:
         create: "Kreiraj novu grupu"
         edit: "Edituj grupu"
         submit: "Spasi grupu"
-      index:
-        back: "Vrati se na budžete"
     budget_headings:
       no_headings: "Nema poglavlja."
-      amount:
-        one: "1 poglavlje"
-        few: "%{count} poglavlja"
-        other: "%{count} poglavlja"
       create:
         notice: "Poglavlje uspješno kreirano!"
       update:
@@ -1126,8 +1121,6 @@ bs:
       setting_value: Vrijednost
       no_description: "Nema opisa"
     shared:
-      true_value: "Da"
-      false_value: "Ne"
       search:
         label:
           booths: "Traži kabinu po nazivu"
