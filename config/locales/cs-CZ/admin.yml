@@ -69,6 +69,7 @@ cs:
         no_activity: Neexistují žádná aktivity moderátorů.
     budgets:
       actions:
+        edit: "Upravit rozpočet"
         preview: "Náhled"
       index:
         title: Participativní rozpočty
@@ -89,7 +90,6 @@ cs:
         type_multiple: "Vícenásobné položky"
         type_pending: "Čekající: Zatím žádné položky"
         type_single: "Jednotlivé položky"
-        edit_groups: Upravit záhlaví skupiny
         admin_ballots: Hlasovací lístky
         no_budgets: "Neexistují žádné rozpočty."
       create:
@@ -131,7 +131,6 @@ cs:
         main_call_to_action_description: "Tento odkaz se zobrazí na hlavním reklamním proužku tohoto participativního rozpočtu a vybízí uživatele k provedení konkrétní akce, jako je vytvoření návrhu, hlasování pro stávající návrhy nebo získání dalších informací o procesu."
         info:
           budget_settings: "Obecné nastavení participativního rozpočtu"
-          phases_settings: "Nastavení fází"
           staff_settings: "Správci a hodnotitelé přiřazení k rozpočtu"
       destroy:
         success_notice: Rozpočet byl smazán
@@ -171,7 +170,6 @@ cs:
         max_votable_headings_info: "Platí pouze pro fázi výběru projektů. Ve fázi hlasování o projektech mohou uživatelé hlasovat pouze v jedné rubrice za skupinu."
         submit: "Uložit skupinu"
       index:
-        back: "Přejít zpět do rozpočtu"
         new_button: "Přidat novou skupinu"
     budget_headings:
       no_headings: "Neexistují žádné kapitoly."
@@ -338,8 +336,6 @@ cs:
           back: "Zpět k položkám"
         single:
           back: "Zpět na úpravu položek"
-        update_all:
-          notice: "Fáze úspěšně nakonfigurovány"
     milestones:
       index:
         table_id: "ID"
@@ -1319,8 +1315,6 @@ cs:
       setting_value: Value
       no_description: "Bez popisu"
     shared:
-      true_value: "Ano"
-      false_value: "Ne"
       search:
         advanced_filters:
           sdg_goals:
