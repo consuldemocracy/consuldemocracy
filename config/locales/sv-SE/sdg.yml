@@ -379,6 +379,11 @@ sv:
           target_12_2:
             long_title: "Senast 2030 uppnå en hållbar förvaltning och ett effektivt nyttjande av naturresurser."
             short_title: "Hållbar förvaltning och effektivt nyttjande av naturresurser"
+          target_12_3:
+            long_title: "Till 2030, halvera det globala matsvinnet per person i butik- och konsumentledet, och minska matsvinnet längs hela livsmedelskedjan, även förlusterna efter skörd."
+            short_title: "Halvera det globala matsvinnet per person"
+          target_12_4:
+            long_title: "Senast 2020 uppnå miljövänlig hantering av kemikalier och alla typer av avfall under hela deras livscykel, i enlighet med överenskomna internationella ramverk, samt avsevärt minska utsläppen av dem i luft, vatten och mark i syfte att minimera deras negativa konsekvenser för människors hälsa och miljön."
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
