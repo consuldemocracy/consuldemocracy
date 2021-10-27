@@ -60,6 +60,8 @@ es:
         type: Tipo
         no_activity: No hay actividad de moderadores.
     budgets:
+      actions:
+        edit: "Editar presupuesto"
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
@@ -70,7 +72,6 @@ es:
         budget_investments: Gestionar proyectos de gasto
         table_name: Nombre
         table_phase: Fase
-        edit_groups: Editar grupos de partidas
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
       create:
@@ -123,13 +124,8 @@ es:
         edit: "Editar grupo"
         max_votable_headings_info: "Solo se aplica en la fase de apoyos. Durante la votación final un usuario solo puede votar en una partida por grupo."
         submit: "Guardar grupo"
-      index:
-        back: "Volver a presupuestos"
     budget_headings:
       no_headings: "No hay partidas."
-      amount:
-        one: "Hay 1 partida presupuestarias"
-        other: "Hay %{count} partidas presupuestarias"
       create:
         notice: "¡Partida presupuestaria creada con éxito!"
       update:
@@ -1216,8 +1212,6 @@ es:
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
-      true_value: "Sí"
-      false_value: "No"
       search:
         label:
           booths: "Buscar urna por nombre"
