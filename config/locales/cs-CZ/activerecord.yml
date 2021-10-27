@@ -30,6 +30,11 @@ cs:
         few: "milníky"
         many: "milníků"
         other: "milníky"
+      progress_bar:
+        one: "Ukazatel průběhu"
+        few: "Ukazatele průběhu"
+        many: "Ukazatele průběhu"
+        other: "Ukazatele průběhu"
       comment:
         one: "Komentář"
         few: "Komentáře"
@@ -110,11 +115,21 @@ cs:
         few: "Návrhy"
         many: "Návrhy"
         other: "Návrhy"
+      legislation/draft_versions:
+        one: "Pracovní verze"
+        few: "Pracovní verze"
+        many: "Pracovní verze"
+        other: "Pracovní verze"
       legislation/questions:
         one: "Question"
         few: "Otázky"
         many: "Otázky"
         other: "Otázky"
+      legislation/question_options:
+        one: "Možnosti otázky"
+        few: "Možnosti otázky"
+        many: "Možnosti otázky"
+        other: "Možnosti otázky"
       legislation/answers:
         one: "Odpověď"
         few: "Odpovědi"
@@ -140,6 +155,11 @@ cs:
         few: "Průzkum"
         many: "Průzkum"
         other: "Průzkum"
+      proposal_notification:
+        one: "Upozornění k návrhu"
+        few: "Upozornění k návrhům"
+        many: "Upozornění k návrhům"
+        other: "Upozornění k návrhům"
       dashboard/action:
         one: Akce na ovládacím panelu Návrhu
         few: Akce na ovládacím panelu Návrhu
