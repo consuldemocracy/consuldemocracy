@@ -57,6 +57,8 @@ eu:
         type: Mota
         no_activity: Ez dago moderatzaileen jarduerarik.
     budgets:
+      actions:
+        edit: "Aurrekontua editatu"
       index:
         title: Partaidetzazko aurrekontuak
         new_link: Aurrekontu berria sortu
@@ -67,7 +69,6 @@ eu:
         budget_investments: Gastu proiektuak kudeatu
         table_name: Izena
         table_phase: Fasea
-        edit_groups: Sail taldeak editatu
       create:
         notice: Partaidetzazko aurrekontuak ondo sortuta!
       update:
