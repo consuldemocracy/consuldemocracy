@@ -49,6 +49,8 @@ sl:
         type: Vrsta
         no_activity: Ni aktivnosti moderatorjev.
     budgets:
+      actions:
+        edit: "Uredi proračun"
       index:
         title: Participatorni proračuni
         new_link: Ustvari nov proračun
@@ -58,7 +60,6 @@ sl:
         budget_investments: Oglej si proračunske naložbe
         table_name: Ime
         table_phase: Faza
-        edit_groups: Uredi headings groups
       create:
         notice: Nov participatorni proračun uspešno ustvarjen!
       update:
