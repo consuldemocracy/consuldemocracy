@@ -60,6 +60,8 @@ ar:
         type: النوع
         no_activity: ليس هناك أي نشاط للمشرفين.
     budgets:
+      actions:
+        edit: "تعديل الميزانية"
       index:
         title: الميزانيات المشاركة
         new_link: إنشاء ميزانية جديدة
@@ -70,7 +72,6 @@ ar:
         budget_investments: إدارة المشاريع
         table_name: الإ سم
         table_phase: مرحلة
-        edit_groups: تعديل مجموعات العناوين
         admin_ballots: بطاقات الاقتراع الادارية
         no_budgets: "لا يوجد ميزانيات."
       create:
@@ -134,17 +135,8 @@ ar:
         create: "إنشاء مجموعة جديدة"
         edit: "تعديل مجموعة"
         submit: "حفظ المجموعة"
-      index:
-        back: "العودة إلى الميزانيات"
     budget_headings:
       no_headings: "لا توجد هناك عناوين."
-      amount:
-        zero: "%{count} لا توجد هناك عناوين"
-        one: "هناك عنوان %{count}"
-        two: "هناك %{count} عناوين"
-        few: "هناك %{count} عناوين"
-        many: "هناك %{count} عنوانا"
-        other: "هناك %{count} عنوانا"
       create:
         notice: "تم إنشاء العنوان بنجاح!"
       update:
@@ -1206,8 +1198,6 @@ ar:
       setting_value: القيمة
       no_description: "بدون وصف"
     shared:
-      true_value: "نعم"
-      false_value: "لا"
       search:
         label:
           booths: "البحث عند مكتب إقتراع وفقا للاسم"
