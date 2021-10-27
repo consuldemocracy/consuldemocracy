@@ -66,10 +66,10 @@ cs:
         many: "Organizace"
         other: "Organizace"
       poll/booth:
-        one: "stánek"
-        few: "stánky"
-        many: "stánků"
-        other: "stánky"
+        one: "hlasovací kabina"
+        few: "hlasovací kabiny"
+        many: "hlasovacích kabin"
+        other: "hlasovacích kabin"
       poll/officer:
         one: "úředník"
         few: "úředníci"
