@@ -72,8 +72,14 @@ sv:
         ballots: "Skapa röstbås"
         confirm:
           ballots: "Är du säker? Den här åtgärden behövs bara om du ska använda fysiska röstbås under den slutgiltiga omröstningsfasen. Medborgare kommer fortfarande att kunna rösta via webben med eller utan fysiska röstbås."
+          destroy: "Är du säker? Detta raderar budgeten och alla dess kopplade grupper och områden. Den här åtgärden kan inte ångras."
+        descriptions:
+          ballots: "Detta låter dig hantera fysiska valsedlar. Använd endast det här alternativet om du ska använda fysiska röstbås för att samla in valsedlar under den slutgiltiga omröstningsfasen."
+          calculate_winners: 'Efter att resultaten har beräknats kommer bara administratörer att ha tillgång till dem. De offentliggörs när projektet når fasen "%{phase}" <strong>om alternativet "Visa resultat" aktiverats</strong> när du redigerar budgeten.'
+          destroy: "Detta raderar budgeten och alla dess kopplade grupper och sidhuvuden. Den här åtgärden kan inte ångras."
         edit: "Redigera budget"
         preview: "Förhandsvisa budget"
+        preview_results: "Förhandsvisa resultat"
       index:
         title: Medborgarbudgetar
         new_link: Skapa ny budget
@@ -147,6 +153,9 @@ sv:
           multiple: "Områden finns för att dela upp medborgarbudgetens pengar. Här kan du lägga till områden för denna grupp och tilldela det belopp som ska användas för varje område."
           single: "Områden finns för att dela upp medborgarbudgetens pengar. Eftersom den här budgeten bara kommer att innehålla ett område är det här som du anger hur mycket pengar som ska användas i medborgarbudgeten."
         phases: "Medborgarbudgetar har olika faser. Här kan du aktivera eller inaktivera faser, samt också anpassa varje enskild fas."
+      show:
+        add_group: "Lägg till grupp"
+        add_heading: "Lägg till område"
       winners:
         calculate: Beräkna vinnande budgetförslag
         calculated: Vinnare beräknas, det kan ta en stund.
