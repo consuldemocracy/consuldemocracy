@@ -60,6 +60,8 @@ ca:
         type: tipus
         no_activity: No hi ha activitat de moderadors.
     budgets:
+      actions:
+        edit: "Edita pressupost"
       index:
         title: Pressupostos participatius
         new_link: Crear nou pressupost
@@ -70,7 +72,6 @@ ca:
         budget_investments: Gestionar projectes
         table_name: Nome
         table_phase: fase
-        edit_groups: Edita grups de partides
         admin_ballots: Paperetes d’administració
         no_budgets: "No hi ha pressupostos."
       create:
@@ -122,13 +123,8 @@ ca:
         create: "Crea un grup nou"
         edit: "Edita el grup"
         submit: "Desa el grup"
-      index:
-        back: "Tornar als pressupostos"
     budget_headings:
       no_headings: "No hi ha cap títol."
-      amount:
-        one: "Hi ha 1 encapçalament"
-        other: "N’hi ha %{count} títols"
       create:
         notice: "L'encapçalament creat correctament!"
       update:
@@ -1215,8 +1211,6 @@ ca:
       setting_value: valor
       no_description: "Sense descripció"
     shared:
-      true_value: "Sí"
-      false_value: "No"
       search:
         label:
           booths: "Cercar bústia per nom"
