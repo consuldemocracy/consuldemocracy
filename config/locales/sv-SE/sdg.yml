@@ -391,6 +391,11 @@ sv:
           target_12_6:
             long_title: "Uppmuntra företag, särskilt stora och multinationella företag, att införa hållbara metoder och att integrera hållbarhetsinformation i sin rapporteringscykel."
             short_title: "Uppmuntra företag att införa hållbara metoder och hållbarhetsrapportering"
+          target_12_7:
+            long_title: "Främja hållbara offentliga upphandlingsmetoder, i enlighet med respektive lands politik och prioriteringar."
+            short_title: "Främja hållbara offentliga upphandlingsmetoder "
+          target_12_8:
+            long_title: "Senast 2030 säkerställa att människor överallt har den information och medvetenhet som behövs för en hållbar utveckling och livsstilar i harmoni med naturen."
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
