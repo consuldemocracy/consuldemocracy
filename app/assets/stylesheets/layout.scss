@@ -2563,6 +2563,11 @@ table {
     height: $line-height * 2;
     background: $highlight;
     margin-top: rem-calc(-48);
+
+    @include breakpoint($global-width) {
+      margin-left: calc(#{$full-width-margin});
+      margin-right: calc(#{$full-width-margin});
+    }
   }
 
   .cards-container {
