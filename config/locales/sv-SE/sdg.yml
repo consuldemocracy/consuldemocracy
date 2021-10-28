@@ -396,6 +396,10 @@ sv:
             short_title: "Främja hållbara offentliga upphandlingsmetoder "
           target_12_8:
             long_title: "Senast 2030 säkerställa att människor överallt har den information och medvetenhet som behövs för en hållbar utveckling och livsstilar i harmoni med naturen."
+            short_title: "Främja universell förståelse av hållbara livsstilar"
+          target_12_A:
+            long_title: "Stödja utvecklingsländerna att stärka sin vetenskapliga och tekniska kapacitet att utvecklas i riktning mot mer hållbara konsumtions- och produktionsmönster."
+            short_title: "Stödja utvecklingsländernas vetenskapliga och tekniska kapacitet för hållbar konsumtion och produktion"
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
