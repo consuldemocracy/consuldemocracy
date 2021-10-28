@@ -169,6 +169,16 @@ es:
         placeholder: Buscar proyectos
         buttons:
           filter: Filtrar
+        booth:
+          placeholder: Buscar mesa
+        budget:
+          placeholder: Buscar presupuesto
+        table_name: Nombre
+        table_phase: Fase
+        table_physical_final_votes: Votos finales presenciales
+        table_admin_ballots: Urnas
+        physical_final_votes: Gestionar votos
+        admin_ballots: Gestionar urnas
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
@@ -642,6 +652,7 @@ es:
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
+      budgets_physical_votes: Votos Presenciales
       geozones: Gestionar zonas
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos

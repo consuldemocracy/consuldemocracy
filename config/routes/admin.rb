@@ -71,12 +71,16 @@ namespace :admin do
     end
 
     resources :budget_phases, only: [:edit, :update]
+	
+	resources :physical_final_votes, only: [:index, :new, :create, :show, :destroy]
   end
 
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
 
   resources :signature_sheets, only: [:index, :new, :create, :show]
 
+  get 'budgets_physical_votes', to: "budgets#index_physical_votes"
+	
   resources :physical_final_votes, only: [:index, :new, :create, :show, :destroy]
 
   resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do

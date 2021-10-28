@@ -4,6 +4,10 @@ class PhysicalFinalVote < ApplicationRecord
   
   SORTING_OPTIONS = { id: "id"}.freeze
   belongs_to :signable, foreign_key: 'signable_id', class_name: "Budget::Investment"	
+  
+  scope :by_booth,          ->(booth)    { where("booth ilike ?", "%#{booth}%") }
+  scope :by_budget,          ->(budget)    { joins(signable: :translations).where(signable_type: 'Budget::Investment').where("budget_investments.budget_id = ?", budget) }
+  scope :by_title_or_id,	->(title_or_id)	{joins(signable: :translations).where(signable_type: 'Budget::Investment').where("budget_investment_translations.title ilike ?", "%#{title_or_id}%").or(joins(signable: :translations).where(signable_id: title_or_id ))}
   def signable
      return unless signable_type == "Budget::Investment"
      super
@@ -15,7 +19,7 @@ class PhysicalFinalVote < ApplicationRecord
   validates :signable_type, inclusion: { in: VALID_SIGNABLES }
 
   def name
-    "#{signable.title}"
+    "#{signable.title}" + " [#{signable.id}]"
   end
 
   def signable_name
@@ -28,7 +32,7 @@ class PhysicalFinalVote < ApplicationRecord
   def self.order_filter(params)
       sorting_key = params[:sort_by]&.downcase&.to_sym
       allowed_sort_option = SORTING_OPTIONS[sorting_key]
-      direction = params[:direction] == "desc" ? "desc" : "asc"
+      direction = params[:direction] == "asc" ? "asc" : "desc"
 
       if allowed_sort_option.present?
         order("#{allowed_sort_option} #{direction}")
@@ -41,16 +45,7 @@ class PhysicalFinalVote < ApplicationRecord
     def self.sort_by_title
       all.sort_by(&:id)
     end
-  def self.search_by_title_or_id(title_or_id)
-		#with_joins = all.joins(Investment.with_translations(Globalize.fallbacks(I18n.locale)))
-      with_joins = all.joins(signable: :translations)
-	  #.includes(:signable).where(signables: {signable_type: 'Budget::Investment'})
 
-      with_joins.where(signable_type: 'Budget::Investment').where("budget_investment_translations.title ilike ?", "%#{title_or_id}%").or(with_joins.where(signable_id: title_or_id ))
-	  #.or(
-	  #with_joins.where(signable: {title: "%#{title_or_id}%"})
-	  #)
-  end
   def self.apply_filters_and_search(params, current_filter = nil)
       physical_final_votes = all
       physical_final_votes = physical_final_votes.send(current_filter)             if current_filter.present?
@@ -64,7 +59,9 @@ class PhysicalFinalVote < ApplicationRecord
     end
 	def self.scoped_filter(params, current_filter)
 	  results = all
-	  results = results.search_by_title_or_id(params[:title_or_id].strip)  if params[:title_or_id]
+	  results = results.by_booth(params[:booth].strip)  if params[:booth].present?
+	  results = results.by_title_or_id(params[:title_or_id].strip)  if params[:title_or_id].present?
+	  results = results.by_budget(params[:budget_id].strip)  if params[:budget_id].present?
 	  results = advanced_filters(params, results)                          if params[:advanced_filters].present?
 
 	  results = results.send(current_filter) if current_filter.present?

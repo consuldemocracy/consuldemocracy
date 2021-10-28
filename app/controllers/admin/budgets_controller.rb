@@ -5,12 +5,15 @@ class Admin::BudgetsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters %w[open finished], only: :index
+  has_filters %w[open finished], only: [:index, :index_physical_votes]
 
-  before_action :load_budget, except: [:index, :new, :create]
-  load_and_authorize_resource
+  before_action :load_budget, except: [:index, :new, :create, :index_physical_votes]
+  #load_and_authorize_resource
 
   def index
+    @budgets = Budget.send(@current_filter).order(created_at: :desc).page(params[:page])
+  end
+  def index_physical_votes
     @budgets = Budget.send(@current_filter).order(created_at: :desc).page(params[:page])
   end
 
