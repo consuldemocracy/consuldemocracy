@@ -636,8 +636,6 @@ el:
     "no": "Όχι"
     search_results: "Αναζήτηση αποτελεσμάτων"
     advanced_search:
-      author_type: "Κατά κατηγορία συντάκτη"
-      author_type_blank: "Επιλέξτε μια κατηγορία"
       date: "Ανά ημερομηνία"
       date_placeholder: "ΗΗ/ΜΜ/ΕΕΕΕ"
       date_range_blank: "Διάλεξε ημερομηνία"
@@ -648,7 +646,6 @@ el:
       date_5: "Προσαρμοσμένα"
       from: "Από"
       general: "Με το κείμενο"
-      general_placeholder: "Σύνταξη κειμένου"
       search: "Φίλτρο"
       title: "Προχωρημένη Αναζήτηση"
       to: "Σε"
