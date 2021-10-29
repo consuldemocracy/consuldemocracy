@@ -716,8 +716,6 @@ ar:
     "no": "لا"
     search_results: "نتائج البحث"
     advanced_search:
-      author_type: "حسب فئة المؤلف"
-      author_type_blank: "حدد فئة"
       date: "حسب التاريخ"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "اختر التاريخ"
@@ -728,7 +726,6 @@ ar:
       date_5: "حسب الطلب"
       from: "من"
       general: "مع النص"
-      general_placeholder: "اكتب النص"
       search: "ترشيح"
       title: "البحث المتقدم"
       to: "إلى"
