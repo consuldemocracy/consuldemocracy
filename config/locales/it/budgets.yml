@@ -31,10 +31,6 @@ it:
     groups:
       show:
         title: Selezionare un'opzione
-        unfeasible_title: Progetti di investimento irrealizzabili
-        unfeasible: Mostrare gli investimenti irrealizzabili
-        unselected_title: Investimenti che non sono stati selezionati per la fase di voto
-        unselected: Mostrare gli investimenti non selezionati per la fase di voto
     phase:
       drafting: Bozza (Non visibile al pubblico)
       informing: Informazione
