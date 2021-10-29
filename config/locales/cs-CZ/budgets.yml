@@ -97,6 +97,7 @@ cs:
           not_logged_in: "Pro vytvoření nové položky participativního rozpočtu musíte %{sign_in} nebo%{sign_up}."
         filter: "Filtrování pprojektů podle"
         filters:
+          feasible: "Proveditelný"
           not_unfeasible: "Není neproveditelné"
           selected: "Vybrané"
           unfeasible: "Nerealizovatelné"
