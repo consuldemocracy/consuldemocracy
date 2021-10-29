@@ -16,10 +16,6 @@ eu:
     groups:
       show:
         title: Aukera bat hautatu ezazu
-        unfeasible_title: Proiektu bideragarriezinak
-        unfeasible: Proiektu bideragarriezinak ikusi
-        unselected_title: Azken bozkaketarako aukeratu ez diran proiektuak
-        unselected: Azken bozkaketarako aukeratu ez diran proiektuak ikusi
     phase:
       drafting: Zirriborroa (Publikoarentzat ikusezina)
       informing: Informazioa
