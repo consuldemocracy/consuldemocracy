@@ -20,10 +20,6 @@ gl:
     groups:
       show:
         title: Escolle unha opción
-        unfeasible_title: Propostas inviables
-        unfeasible: Ver as propostas inviables
-        unselected_title: Propostas non seleccionadas para a votación final
-        unselected: Ver as propostas non seleccionadas para a votación final
     phase:
       drafting: Borrador (non visible para o público)
       informing: Información
