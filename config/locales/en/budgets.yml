@@ -43,10 +43,6 @@ en:
     groups:
       show:
         title: Select a heading
-        unfeasible_title: Unfeasible investments
-        unfeasible: See unfeasible investments
-        unselected_title: Investments not selected for balloting phase
-        unselected: See investments not selected for balloting phase
     phase:
       drafting: Draft (Not visible to the public)
       informing: Information
@@ -121,7 +117,8 @@ en:
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
         filter: "Filtering projects by"
         filters:
-          not_unfeasible: "Not unfeasible"
+          feasible: "Feasible"
+          not_unfeasible: "Feasible or with undecided feasibility"
           selected: "Selected"
           unfeasible: "Unfeasible"
           unselected: "Unselected"

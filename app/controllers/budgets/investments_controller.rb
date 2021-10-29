@@ -8,7 +8,6 @@ module Budgets
     include DocumentAttributes
     include MapLocationAttributes
     include Translatable
-    include InvestmentFilters
 
     PER_PAGE = 10
 
@@ -33,8 +32,7 @@ module Budgets
 
     has_orders %w[most_voted newest oldest], only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
-
-    has_filters investment_filters, only: [:index, :show, :suggest]
+    has_filters ->(c) { c.instance_variable_get(:@budget).investments_filters }, only: [:index, :show, :suggest]
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
@@ -167,6 +165,14 @@ module Budgets
         else
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
                              .send("sort_by_#{@current_order}")
+        end
+      end
+
+      def set_default_investment_filter
+        if @budget&.finished?
+          params[:filter] ||= "winners"
+        elsif @budget&.publishing_prices_or_later?
+          params[:filter] ||= "selected"
         end
       end
 

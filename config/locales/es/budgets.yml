@@ -43,10 +43,6 @@ es:
     groups:
       show:
         title: Selecciona una partida
-        unfeasible_title: Proyectos de gasto inviables
-        unfeasible: Ver proyectos inviables
-        unselected_title: Proyectos no seleccionados para la votación final
-        unselected: Ver los proyectos no seleccionados para la votación final
     phase:
       drafting: Borrador (No visible para el público)
       informing: Información
@@ -121,7 +117,8 @@ es:
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
         filter: "Filtrando proyectos"
         filters:
-          not_unfeasible: "No inviables"
+          feasible: "Viables"
+          not_unfeasible: "Viables o con viabilidad por decidir"
           selected: "Seleccionados"
           unfeasible: "Inviables"
           unselected: "No seleccionados"

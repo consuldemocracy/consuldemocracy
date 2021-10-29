@@ -70,7 +70,6 @@
 //= require advanced_search
 //= require registration_form
 //= require suggest
-//= require filter_selector
 //= require forms
 //= require valuation_budget_investment_form
 //= require embed_video
@@ -135,7 +134,6 @@ var initialize_modules = function() {
   App.RegistrationForm.initialize();
   App.Suggest.initialize();
   App.Forms.initialize();
-  App.FilterSelector.initialize();
   App.ValuationBudgetInvestmentForm.initialize();
   App.EmbedVideo.initialize();
   App.FixedBar.initialize();

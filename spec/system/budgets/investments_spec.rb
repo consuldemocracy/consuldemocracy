@@ -47,6 +47,8 @@ describe "Budget Investments" do
   end
 
   scenario "Index" do
+    budget.update!(phase: "valuating")
+
     investments = [create(:budget_investment, heading: heading),
                    create(:budget_investment, heading: heading),
                    create(:budget_investment, :feasible, heading: heading)]
@@ -131,6 +133,7 @@ describe "Budget Investments" do
   scenario "Index filter by status" do
     budget.update!(phase: "finished")
 
+    create(:budget_investment, heading: heading, title: "Unclassified investment")
     create(:budget_investment, :feasible, heading: heading, title: "Feasible investment")
     create(:budget_investment, :unfeasible, heading: heading, title: "Unfeasible investment")
     create(:budget_investment, :unselected, heading: heading, title: "Unselected investment")
@@ -139,37 +142,43 @@ describe "Budget Investments" do
 
     visit budget_investments_path(budget, heading_id: heading.id)
 
-    expect(page).to have_select "Filtering projects by",
-                                options: ["Not unfeasible", "Unfeasible", "Unselected", "Selected", "Winners"]
+    expect(page).to have_content "FILTERING PROJECTS BY"
 
-    select "Unfeasible", from: "Filtering projects by"
+    click_link "Feasible"
 
     expect(page).to have_css ".budget-investment", count: 1
+    expect(page).to have_content "Feasible investment"
+
+    click_link "Unfeasible"
+
     expect(page).to have_content "Unfeasible investment"
+    expect(page).to have_css ".budget-investment", count: 1
 
-    select "Unselected", from: "Filtering projects by"
+    click_link "Unselected"
 
-    expect(page).to have_css ".budget-investment", count: 2
+    expect(page).to have_css ".budget-investment", count: 3
     expect(page).to have_content "Unselected investment"
+    expect(page).to have_content "Unclassified investment"
     expect(page).to have_content "Feasible investment"
 
-    select "Selected", from: "Filtering projects by"
+    click_link "Selected"
 
     expect(page).to have_css ".budget-investment", count: 2
     expect(page).to have_content "Selected investment"
     expect(page).to have_content "Winner investment"
 
-    select "Winners", from: "Filtering projects by"
+    click_link "Winners"
 
     expect(page).to have_css ".budget-investment", count: 1
     expect(page).to have_content "Winner investment"
 
-    select "Not unfeasible", from: "Filtering projects by"
+    click_link "Feasible or with undecided feasibility"
 
-    expect(page).to have_css ".budget-investment", count: 4
+    expect(page).to have_css ".budget-investment", count: 5
     expect(page).to have_content "Selected investment"
     expect(page).to have_content "Unselected investment"
     expect(page).to have_content "Feasible investment"
+    expect(page).to have_content "Unclassified investment"
     expect(page).to have_content "Winner investment"
   end
 
@@ -196,6 +205,8 @@ describe "Budget Investments" do
     end
 
     scenario "Advanced search combined with filter by status" do
+      budget.update!(phase: "valuating")
+
       create(:budget_investment, :feasible, heading: heading, title: "Feasible environment")
       create(:budget_investment, :feasible, heading: heading, title: "Feasible health")
       create(:budget_investment, :unfeasible, heading: heading, title: "Unfeasible environment")
@@ -203,13 +214,10 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading: heading)
 
-      click_on "Advanced search"
-
-      within(".advanced-search-form") do
-        fill_in "With the text", with: "environment"
-        select "Last 24 hours", from: "By date"
-        click_button "Filter"
-      end
+      click_button "Advanced search"
+      fill_in "With the text", with: "environment"
+      select "Last 24 hours", from: "By date"
+      click_button "Filter"
 
       expect(page).to have_content "There is 1 investment containing the term 'environment'"
       expect(page).to have_css ".budget-investment", count: 1
@@ -218,7 +226,7 @@ describe "Budget Investments" do
       expect(page).not_to have_content "Unfeasible environment"
       expect(page).not_to have_content "Unfeasible health"
 
-      select "Unfeasible", from: "Filtering projects by"
+      click_link "Unfeasible"
 
       expect(page).not_to have_content "Feasible environment"
       expect(page).to have_content "There is 1 investment containing the term 'environment'"
@@ -231,6 +239,8 @@ describe "Budget Investments" do
 
   context("Filters") do
     scenario "by unfeasibility" do
+      budget.update!(phase: "valuating")
+
       investment1 = create(:budget_investment, :unfeasible, :finished, heading: heading)
       investment2 = create(:budget_investment, :feasible, heading: heading)
       investment3 = create(:budget_investment, heading: heading)
@@ -514,7 +524,7 @@ describe "Budget Investments" do
     end
 
     scenario "Order always is random for unfeasible and unselected investments" do
-      Budget::Phase::PHASE_KINDS.each do |phase|
+      Budget::Phase::kind_or_later("valuating").each do |phase|
         budget.update!(phase: phase)
 
         visit budget_investments_path(budget, heading_id: heading.id, filter: "unfeasible")
@@ -1448,7 +1458,7 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Highlight voted heading except with unfeasible filter" do
+    scenario "Highlight voted heading" do
       budget.update!(phase: "balloting")
       user = create(:user, :level_two)
 
@@ -1466,14 +1476,6 @@ describe "Budget Investments" do
 
       expect(page).to have_css("#budget_heading_#{heading_1.id}.is-active")
       expect(page).to have_css("#budget_heading_#{heading_2.id}")
-
-      click_link "See unfeasible investments"
-
-      within("#headings") do
-        expect(page).to have_css("#budget_heading_#{heading_1.id}")
-        expect(page).to have_css("#budget_heading_#{heading_2.id}")
-        expect(page).not_to have_css(".is-active")
-      end
     end
 
     scenario "Ballot is visible" do

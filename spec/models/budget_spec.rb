@@ -285,6 +285,36 @@ describe Budget do
     end
   end
 
+  describe "#investments_filters" do
+    it "returns no filters before valuating" do
+      %w[informing accepting reviewing selecting].each do |phase|
+        budget.phase = phase
+
+        expect(budget.investments_filters).to be_empty
+      end
+    end
+
+    it "returns feasibility filters during valuation" do
+      budget.phase = "valuating"
+
+      expect(budget.investments_filters).to eq(%w[not_unfeasible feasible unfeasible])
+    end
+
+    it "returns feasibility and selection filters during the final voting phases" do
+      %w[publishing_prices balloting reviewing_ballots].each do |phase|
+        budget.phase = phase
+
+        expect(budget.investments_filters).to eq(%w[not_unfeasible feasible unfeasible selected unselected])
+      end
+    end
+
+    it "returns all filters after the budget has finished" do
+      budget.phase = "finished"
+
+      expect(budget.investments_filters).to eq(%w[not_unfeasible feasible unfeasible selected unselected winners])
+    end
+  end
+
   describe "#has_winning_investments?" do
     it "returns true if there is a winner investment" do
       budget.investments << build(:budget_investment, :winner, price: 3, ballot_lines_count: 2)
