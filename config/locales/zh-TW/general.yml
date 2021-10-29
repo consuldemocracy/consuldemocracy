@@ -440,8 +440,6 @@ zh-TW:
     "no": "否"
     search_results: "搜尋結果"
     advanced_search:
-      author_type: "按作者類別"
-      author_type_blank: "選擇一個類別"
       date: "按日期"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "選擇一個日期"
@@ -452,7 +450,6 @@ zh-TW:
       date_5: "自定"
       from: "從"
       general: "隨著文本"
-      general_placeholder: "編寫文本"
       search: "篩選器"
       title: "進階搜尋"
       to: "到"
