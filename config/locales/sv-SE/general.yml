@@ -672,8 +672,6 @@ sv:
     "no": "Nej"
     search_results: "Sökresultat"
     advanced_search:
-      author_type: "Efter kategori av förslagslämnare"
-      author_type_blank: "Välj en kategori"
       date: "Efter datum"
       date_placeholder: "DD/MM/ÅÅÅÅ"
       date_range_blank: "Välj ett datum"
@@ -684,7 +682,6 @@ sv:
       date_5: "Anpassat"
       from: "Från"
       general: "Med texten"
-      general_placeholder: "Fyll i texten"
       goal: "Per globalt mål"
       goal_blank: "Välj ett mål"
       search: "Filtrera"
