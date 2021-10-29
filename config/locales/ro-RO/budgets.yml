@@ -47,10 +47,6 @@ ro:
     groups:
       show:
         title: Selectați o opțiune
-        unfeasible_title: Investiții imposibile
-        unfeasible: Vezi investițiile nerealizabile
-        unselected_title: Investiții neselectate pentru faza de votare
-        unselected: Vezi investițiile neselectate pentru faza de votare
     phase:
       drafting: Schiță (Nu este vizibil publicului)
       informing: Informații
