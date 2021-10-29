@@ -43,10 +43,6 @@ tr:
     groups:
       show:
         title: Bir seçenek belirleyin
-        unfeasible_title: Uygulanabilirliği olmayan yatırımlar
-        unfeasible: Uygulanabilirliği olmayan yatırımları göster
-        unselected_title: Oy aşaması için seçilmeyen yatırımlar
-        unselected: Oy aşaması için seçilmeyen yatırımları göster
     phase:
       drafting: Taslak (diğer kişiler tarafından görülemez)
       informing: Bilgi
