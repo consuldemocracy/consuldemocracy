@@ -455,8 +455,6 @@ so:
     "no": "Maya"
     search_results: "Raadi natiijada"
     advanced_search:
-      author_type: "Qeybta qoraaga"
-      author_type_blank: "Xuulo qaybta"
       date: "Taariikhda"
       date_placeholder: "M/B/S"
       date_range_blank: "Dooro taariikh"
@@ -467,7 +465,6 @@ so:
       date_5: "La isku habeeyey"
       from: "Ka"
       general: "Qoraalka"
-      general_placeholder: "Qor Qoraal"
       search: "Sifeeyee"
       title: "Raadinta sare"
       to: "Ku"
