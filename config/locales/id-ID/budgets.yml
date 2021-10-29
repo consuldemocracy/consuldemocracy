@@ -18,10 +18,6 @@ id:
     groups:
       show:
         title: Pilih sebuah pilihan
-        unfeasible_title: Investasi tidak layak
-        unfeasible: Lihat investasi tidak layak
-        unselected_title: Investasi tidak dipilih untuk pemungutan suara tahap
-        unselected: Melihat investasi yang tidak dipilih untuk pemungutan suara tahap
     phase:
       drafting: Konsep (Tidak terlihat ke publik)
       informing: Informasi
