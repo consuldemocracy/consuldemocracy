@@ -16,10 +16,6 @@ zh-CN:
     groups:
       show:
         title: 选择选项
-        unfeasible_title: 不可行的投资
-        unfeasible: 查看不可行的投资
-        unselected_title: 未被选入投票阶段的投资
-        unselected: 查看未被选入投票阶段的投资
     phase:
       drafting: 草稿（公共不可见）
       informing: 信息
