@@ -43,10 +43,6 @@ sv:
     groups:
       show:
         title: Välj ett alternativ
-        unfeasible_title: Ej genomförbara budgetförslag
-        unfeasible: Visa ej genomförbara budgetförslag
-        unselected_title: Budgetförslag som inte gått vidare till omröstning
-        unselected: Visa budgetförslag som inte gått vidare till omröstning
     phase:
       drafting: Utkast (inte synligt för allmänheten)
       informing: Information
