@@ -16,10 +16,6 @@ ast:
     groups:
       show:
         title: Escueye una opción
-        unfeasible_title: Propuestes invidables
-        unfeasible: Ver les propuestes invidables
-        unselected_title: Propuestes non escoyíes pa la votación final
-        unselected: Ver les propuestes ensin escoyer pa la votación final
     phase:
       informing: Información
       accepting: Presentación de proyeutos
