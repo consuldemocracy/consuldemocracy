@@ -24,10 +24,6 @@ oc:
     groups:
       show:
         title: Selecciona una opcion
-        unfeasible_title: de Proposicions inviables
-        unfeasible: Veire las proposicions inviables
-        unselected_title: Proposicions pas seleccionadas per la votacion finala
-        unselected: Veire las proposicions pas seleccionadas per la votacion finala
     phase:
       drafting: Borrolhon (Pas visible pel public)
       informing: informacion
