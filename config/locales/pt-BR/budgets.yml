@@ -42,10 +42,6 @@ pt-BR:
     groups:
       show:
         title: Selecione uma opção
-        unfeasible_title: Investimentos inviáveis
-        unfeasible: Ver investimentos inviáveis
-        unselected_title: Investimentos não selecionados para a fase de votação
-        unselected: Ver investimentos não selecionados para a fase de votação
     phase:
       drafting: Rascunho (não visível ao público)
       informing: Informação
