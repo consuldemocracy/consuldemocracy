@@ -18,10 +18,6 @@ nl:
     groups:
       show:
         title: Kies een mogelijkheid
-        unfeasible_title: Onhaalbare voorstellen
-        unfeasible: Bekijk onhaalbare voorstellen
-        unselected_title: Voorstellen niet geselecteerd voor de stemfase
-        unselected: Zie voorstellen niet geselecteerd voor de stemfase
     phase:
       drafting: Concept (niet publiekelijk zichtbaar)
       informing: Informatie
