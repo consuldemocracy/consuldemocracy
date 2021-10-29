@@ -62,6 +62,7 @@ pt-BR:
         no_activity: Não há nenhuma atividade de moderadores.
     budgets:
       actions:
+        ballots: "Criar urnas"
         edit: "Editar orçamento"
       index:
         title: Orçamentos participativos
@@ -101,6 +102,9 @@ pt-BR:
         success_notice: Orçamento excluído com sucesso
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
         unable_notice_polls: Não é possível excluir um orçamento com uma votação associada
+      show:
+        add_heading: "Adicionar título"
+        groups_and_headings: "Grupos de títulos"
       winners:
         calculate: Calcular os investimentos vencedores
         calculated: Vencedores sendo calculados, pode demorar um minuto.
