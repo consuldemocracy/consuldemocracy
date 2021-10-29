@@ -400,6 +400,8 @@ sv:
           target_12_A:
             long_title: "Stödja utvecklingsländerna att stärka sin vetenskapliga och tekniska kapacitet att utvecklas i riktning mot mer hållbara konsumtions- och produktionsmönster."
             short_title: "Stödja utvecklingsländernas vetenskapliga och tekniska kapacitet för hållbar konsumtion och produktion"
+          target_12_B:
+            long_title: "Utveckla och implementera verktyg för att övervaka hur en hållbar utveckling påverkar en hållbar turism på ett sätt som skapar arbetstillfällen och främjar lokal kultur och lokala produkter."
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
