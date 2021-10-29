@@ -710,8 +710,6 @@ uk-UA:
     "no": "Ні"
     search_results: "Результати пошуку"
     advanced_search:
-      author_type: "За категоріями авторів"
-      author_type_blank: "Вибрати категорію"
       date: "За датою"
       date_placeholder: "ДД/ММ/РРРР"
       date_range_blank: "Обрати дату"
@@ -722,7 +720,6 @@ uk-UA:
       date_5: "Індивідуальні"
       from: "Від"
       general: "З текстом"
-      general_placeholder: "Написати текст"
       search: "Фільтр"
       title: "Розширений пошук"
       to: "До"
