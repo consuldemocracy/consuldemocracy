@@ -668,8 +668,6 @@ pt-BR:
     "no": "Não"
     search_results: "Buscar resultados"
     advanced_search:
-      author_type: "Por categoria de autor"
-      author_type_blank: "Selecione um categoria"
       date: "Por data"
       date_placeholder: "DD/MM/AAAA"
       date_range_blank: "Escolha uma data"
@@ -680,7 +678,6 @@ pt-BR:
       date_5: "Personalizado"
       from: "De"
       general: "Com o texto"
-      general_placeholder: "Escrever o texto"
       goal: "Por ODS (SDG)"
       goal_blank: "Selecione um objetivo"
       search: "Filtro"
