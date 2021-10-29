@@ -33,10 +33,6 @@ cs:
     groups:
       show:
         title: Vyberte možnost
-        unfeasible_title: Nerealizovatelné projekty
-        unfeasible: Podívejte se na nerealizovatelné investice
-        unselected_title: Projekty, které nebyly vybrány pro fázi hlasování
-        unselected: Zobrazit projekty, které nebyly vybrány pro fázi hlasování
     phase:
       drafting: Koncept (není veřejně viditelný)
       informing: Informace
