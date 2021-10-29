@@ -117,6 +117,7 @@ sv:
           not_logged_in: "Om du vill skapa en ny budgetinvestering måste du %{sign_in} eller %{sign_up}."
         filter: "Filtrerar projekt efter"
         filters:
+          feasible: "Genomförbart"
           not_unfeasible: "Ej ogenomförbart"
           selected: "Valda"
           unfeasible: "Ogenomförbara"
