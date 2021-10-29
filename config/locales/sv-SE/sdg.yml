@@ -402,11 +402,19 @@ sv:
             short_title: "Stödja utvecklingsländernas vetenskapliga och tekniska kapacitet för hållbar konsumtion och produktion"
           target_12_B:
             long_title: "Utveckla och implementera verktyg för att övervaka hur en hållbar utveckling påverkar en hållbar turism på ett sätt som skapar arbetstillfällen och främjar lokal kultur och lokala produkter."
+            short_title: "Utveckla och implementera verktyg för att övervaka hållbar turism"
+          target_12_C:
+            long_title: "Rationalisera ineffektiva subventioner av fossila bränslen som uppmuntrar till slösaktig konsumtion genom att undanröja snedvridningar på marknaden, i enlighet med nationella förhållanden. Detta kan till exempel omfatta att omstrukturera beskattningen och avveckla eventuella skadliga subventioner för att avspegla deras effekter på miljön. En sådan politik måste ta full hänsyn till utvecklingsländernas särskilda behov och förhållanden och minimera eventuella negativa effekter på deras utveckling på ett sätt som skyddar de fattiga och de berörda samhällena."
+            short_title: "Undanröj snedvridningar på marknaden som uppmuntrar till slösaktig konsumtion"
       goal_13:
         title: "Bekämpa klimatförändringar"
         title_in_two_lines: "Bekämpa\nklimatförändringar"
         description: "Vidta omedelbara åtgärder för att bekämpa klimatförändringarna och dess konsekvenser."
         long_description: '<p>2019 var <a href="https://news.un.org/en/story/2020/03/1059061">historiens näst varmaste år</a> och utgjorde slutet på det varmaste årtiondet (2010–2019) som någonsin registrerats.&nbsp;&nbsp;</p> <p>Koldioxid (CO2) och andra <a href="https://news.un.org/en/story/2020/04/1062332">växthusgaser i atmosfären</a> steg till nya rekordnivåer 2019.&nbsp;</p> <p>Klimatförändringarna påverkar alla länder på alla kontinenter. De stör nationella ekonomier och påverkar människors liv. Vädermönster förändras, havsnivåer stiger och väderhändelser blir mer extrema.</p> <p>Även om utsläppen av växthusgaser beräknas sjunka cirka 6 procent under 2020, på grund av reseförbud och ekonomiska avmattningar till följd av covid-19-pandemin, är denna förbättring bara tillfällig. <a href="https://news.un.org/en/story/2020/04/1062332">Klimatförändringarna tog inte ledigt</a>. När den globala ekonomin börjar återhämta sig efter pandemin förväntas utsläppen återgå till högre nivåer.</p> <p>Att rädda liv och uppehällen kräver brådskande åtgärder för att tackla både pandemin och klimatkrisen.</p> <p><a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Parisavtalet</a>, som antogs 2015, syftar till att stärka den globala responsen på de hotande klimatförändringarna genom att hålla en global temperaturhöjning detta århundrade långt under 2 grader Celsius över de förindustriella nivåerna. Avtalet syftar också till att stärka ländernas förmåga att hantera klimatförändringarnas effekter genom lämpliga finansflöden, ett nytt ramverk för teknik och ett förbättrat ramverk för kapacitetsuppbyggnad.</p>'
+        targets:
+          target_13_1:
+            long_title: "Stärka motståndskraften mot, och förmågan till anpassning till, klimatrelaterade faror och naturkatastrofer i alla länder."
+            short_title: "Stärka motståndskraften mot, och förmågan till anpassning till, klimatrelaterade katastrofer"
       goal_14:
         title: "Hav och marina resurser"
         title_in_two_lines: "Hav och\nmarina resurser"
