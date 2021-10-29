@@ -16,10 +16,6 @@ es-PE:
     groups:
       show:
         title: Selecciona una opción
-        unfeasible_title: Propuestas inviables
-        unfeasible: Ver las propuestas inviables
-        unselected_title: Propuestas no seleccionadas para la votación final
-        unselected: Ver las propuestas no seleccionadas para la votación final
     phase:
       drafting: Borrador (No visible para el público)
       informing: Información
