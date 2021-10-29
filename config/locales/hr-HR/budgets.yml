@@ -32,10 +32,6 @@ hr:
     groups:
       show:
         title: Odaberite opciju
-        unfeasible_title: Neizvedive investicije
-        unfeasible: Pregledajte neizvedive investicije
-        unselected_title: Investicije nisu odabrane za glasačku fazu
-        unselected: Pregledajte investicije koje nisu odabrane za fazu glasanja
     phase:
       drafting: Nacrt (Nije vidljiv javnosti)
       informing: Informacija
