@@ -666,8 +666,6 @@ ka:
     "no": "არა"
     search_results: "ძებნის შედეგები"
     advanced_search:
-      author_type: "კატეგორიის ავტორის მიხედვით"
-      author_type_blank: "კატეგორიის შერჩევა"
       date: "თარიღის მიხედვით"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "თარიღის არჩევა"
@@ -678,7 +676,6 @@ ka:
       date_5: "პერსონალიზებული"
       from: "დან"
       general: "ტექსტით"
-      general_placeholder: "ტექსტის დაწერა"
       search: "ფილტრი"
       title: "დეტალური ძებნა"
       to: "მდე"
