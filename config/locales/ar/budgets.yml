@@ -18,10 +18,6 @@ ar:
     groups:
       show:
         title: قم بتحديد خيار
-        unfeasible_title: الاستثمارات الغير مجدية
-        unfeasible: انظر الى الاستثمارات الغير مجدية
-        unselected_title: الاستثمارات الغير محددة لمرحلة الاقتراع
-        unselected: انظر للاستثمارات الغير مجدية لمرحلة الاقتراع
     phase:
       drafting: مسودة(غير مرئي للعامة)
       informing: معلومات
