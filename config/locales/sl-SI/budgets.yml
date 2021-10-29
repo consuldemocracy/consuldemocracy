@@ -16,10 +16,6 @@ sl:
     groups:
       show:
         title: Izberi možnost
-        unfeasible_title: Neizvedljive naložbe
-        unfeasible: Poglej neizvedljive naložbe
-        unselected_title: Investicije, ki niso bile izbrane za fazo glasovanja
-        unselected: Poglej investicije, ki niso bile izbrane za fazo glasovanja
     phase:
       drafting: Osnutek (skrito javnosti)
       informing: Informiranje
