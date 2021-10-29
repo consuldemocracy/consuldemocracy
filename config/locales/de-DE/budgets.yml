@@ -43,10 +43,6 @@ de:
     groups:
       show:
         title: Wählen Sie eine Option
-        unfeasible_title: Nicht durchführbare Ausgabenvorschläge
-        unfeasible: Nicht durchführbare Investitionen anzeigen
-        unselected_title: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden
-        unselected: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
     phase:
       drafting: Entwurf (nicht für die Öffentlichkeit sichtbar)
       informing: Information
