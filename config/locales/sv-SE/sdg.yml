@@ -415,12 +415,27 @@ sv:
           target_13_1:
             long_title: "Stärka motståndskraften mot, och förmågan till anpassning till, klimatrelaterade faror och naturkatastrofer i alla länder."
             short_title: "Stärka motståndskraften mot, och förmågan till anpassning till, klimatrelaterade katastrofer"
+          target_13_2:
+            long_title: "Integrera klimatåtgärder i politik, strategier och planering på nationell nivå."
+            short_title: "Integrera klimatåtgärder i politik och planering"
+          target_13_3:
+            long_title: "Förbättra utbildningen, medvetenheten och den mänskliga och institutionella kapaciteten vad gäller begränsning av klimatförändringarna, klimatanpassning, begränsning av klimatförändringarnas konsekvenser samt tidig varning."
+            short_title: "Bygga kunskap och kapacitet för att tackla klimatförändringarna"
+          target_13_A:
+            long_title: "Fullfölja det åtagande som de utvecklade länder som är parter i Förenta Nationernas ramkonvention om klimatförändringar gjort gällande, en målsättning att till 2020 gemensamt mobilisera 100 miljarder US-dollar årligen från alla typer av källor för att tillgodose utvecklingsländernas behov vad gäller meningsfulla begränsningsåtgärder och insyn i genomförandet samt så snart som möjligt finansiera och operationalisera den gröna klimatfonden fullt ut."
+            short_title: "Genomföra Förenta Nationernas ramkonvention om klimatförändringar"
+          target_13_B:
+            long_title: "Främja mekanismer för att höja förmågan till effektiv klimatrelaterad planering och förvaltning i de minst utvecklade länderna, med särskilt fokus på kvinnor, ungdomar samt lokala och marginaliserade samhällen."
+            short_title: "Främja mekanismer för att höja förmågan till planering och förvaltning"
       goal_14:
         title: "Hav och marina resurser"
         title_in_two_lines: "Hav och\nmarina resurser"
         description: "Bevara och nyttja haven och de marina resurserna på ett hållbart sätt."
         long_description: '<p>Världens hav driver globala system som gör jorden beboelig för mänskligheten. Vårt regnvatten, dricksvatten, väder, klimat, våra kustlinjer, mycket av vår mat och till och med syret i luften vi andas, tillhandahålls och regleras slutligen av havet.&nbsp;</p> <p>Omsorgsfull förvaltning av denna <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">essentiella globala resurs</a> är en avgörande beståndsdel av en hållbar framtid. För närvarande försämras kustvatten emellertid kontinuerligt på grund av föroreningar, och försurningen av havet inverkar menligt på hur ekosystem och biologisk mångfald fungerar. Detta påverkar också småskaligt fiske negativt.&nbsp;</p> <p>Att rädda vårt hav måste förbli en prioritet. Marin biologisk mångfald är avgörande för människors hälsa och vår planet. Marina skyddsområden måste förvaltas och finansieras verkningsfullt, och regler införas för att minska överfiske, föroreningar och försurning i haven.</p>'
         targets:
+          target_14_1:
+            long_title: "Till 2025 förebygga och avsevärt minska alla slags föroreningar i havet, i synnerhet från landbaserad verksamhet, inklusive marint skräp och tillförsel av näringsämnen."
+            short_title: "Minska föroreningarna i havet"
           target_14_A:
             long_title: "Öka den vetenskapliga kunskapen, utveckla forskningskapaciteten och överföra havsteknik, med hänsyn tagen till den mellanstatliga oceanografiska kommissionens kriterier och riktlinjer för överföring av havsteknik (Criteria and Guidelines on the Transfer of Marine Technology), i syfte att skapa friskare hav och öka den marina biologiska mångfaldens bidrag till utvecklingen i utvecklingsländerna, i synnerhet i små önationer under utveckling och de minst utvecklade länderna."
             short_title: "Öka vetenskaplig kunskap, forskning och teknik för friska hav"
