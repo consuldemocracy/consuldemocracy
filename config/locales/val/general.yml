@@ -455,8 +455,6 @@ val:
     "no": "No"
     search_results: "Resultats de la cerca"
     advanced_search:
-      author_type: "Per categoria d'autor"
-      author_type_blank: "Eligeix una categoria"
       date: "Per data"
       date_placeholder: "DD/MM/AAAA"
       date_range_blank: "Eligeix una data"
@@ -467,7 +465,6 @@ val:
       date_5: "Personalitzada"
       from: "De"
       general: "Amb el text"
-      general_placeholder: "Escriu el text"
       search: "Filtre"
       title: "Cerca avançada"
       to: "Fins"
