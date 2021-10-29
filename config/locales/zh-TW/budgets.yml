@@ -16,10 +16,6 @@ zh-TW:
     groups:
       show:
         title: 選擇一個選項
-        unfeasible_title: 不可行的投資
-        unfeasible: 查看不可行的投資
-        unselected_title: 未被選入投票階段的投資
-        unselected: 查看未被選入投票階段的投資
     phase:
       drafting: 草稿 (公眾不可見)
       informing: 資訊
