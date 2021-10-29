@@ -16,10 +16,6 @@ sq:
     groups:
       show:
         title: Zgjidh një opsion
-        unfeasible_title: Investimet e papranueshme
-        unfeasible: Shih Investimet e papranueshme
-        unselected_title: Investimet që nuk janë përzgjedhur për fazën e votimit
-        unselected: Shih investimet që nuk janë përzgjedhur për fazën e votimit
     phase:
       drafting: Draft (jo i dukshëm për publikun)
       informing: Informacion
