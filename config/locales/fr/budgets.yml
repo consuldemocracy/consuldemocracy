@@ -17,10 +17,6 @@ fr:
     groups:
       show:
         title: Sélectionner une option
-        unfeasible_title: Propositions infaisables
-        unfeasible: Voir les propositions infaisables
-        unselected_title: Propositions non-sélectionnées pour la phase de vote
-        unselected: Voir les propositions non-sélectionnées pour la phase de vote
     phase:
       drafting: Brouillon (non visible du public)
       informing: Information
