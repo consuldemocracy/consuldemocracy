@@ -671,8 +671,6 @@ de:
     "no": "Nein"
     search_results: "Suchergebnisse"
     advanced_search:
-      author_type: "Nach Kategorie Verfasser*in"
-      author_type_blank: "Kategorie auswählen"
       date: "Nach Datum"
       date_placeholder: "TT/MM/JJJJ"
       date_range_blank: "Wählen Sie ein Datum"
@@ -683,7 +681,6 @@ de:
       date_5: "Angepasst"
       from: "Von"
       general: "Mit dem Text"
-      general_placeholder: "Text verfassen"
       goal: "Nach SDG"
       goal_blank: "Ziel wählen"
       search: "Filter"
