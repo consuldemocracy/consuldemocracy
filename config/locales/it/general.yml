@@ -527,8 +527,6 @@ it:
     "no": "No"
     search_results: "Risultati della ricerca"
     advanced_search:
-      author_type: "Per categoria di autore"
-      author_type_blank: "Seleziona una categoria"
       date: "Per data"
       date_placeholder: "GG/MM/AAAA"
       date_range_blank: "Scegli una data"
@@ -539,7 +537,6 @@ it:
       date_5: "Personalizzata"
       from: "Da"
       general: "Con il testo"
-      general_placeholder: "Scrivi il testo"
       search: "Filtra"
       title: "Ricerca avanzata"
       to: "A"
