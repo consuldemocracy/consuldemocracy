@@ -17,10 +17,6 @@ pl:
     groups:
       show:
         title: Wybierz opcję
-        unfeasible_title: Niewykonalne inwestycje
-        unfeasible: Zobacz niewykonalne inwestycje
-        unselected_title: Inwestycje niewybrane do fazy głosowania
-        unselected: Zobacz inwestycje niewybrane do fazy głosowania
     phase:
       drafting: Wersja robocza (niewidoczna dla pozostałych użytkowników)
       informing: Informacje
