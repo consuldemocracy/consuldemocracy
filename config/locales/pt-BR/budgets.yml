@@ -109,6 +109,8 @@ pt-BR:
           verified_only: "Para criar um novo investimento orçamentário %{verify}."
           create: "Criar um investimento orçamentário"
           not_logged_in: "Para criar um novo investimento orçamentário, você deve %{sign_in} ou %{sign_up}."
+        filters:
+          feasible: "Factível"
         orders:
           random: aleatório
           confidence_score: melhor avaliado
