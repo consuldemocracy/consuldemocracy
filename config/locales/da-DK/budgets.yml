@@ -43,10 +43,6 @@ da:
     groups:
       show:
         title: Vælg en mulighed
-        unfeasible_title: Projekter, der ikke er mulige at gennemføre
-        unfeasible: Se projekter, der ikke kan gennemføres
-        unselected_title: Projekter, der ikke er udvalgt til afstemningsfasen
-        unselected: Se projekter, der ikke er udvalgt til afstemningsfasen
     phase:
       drafting: Udkast (Ikke offentligt)
       informing: Information
