@@ -688,8 +688,6 @@ sr:
     "no": "Не"
     search_results: "Види резултате"
     advanced_search:
-      author_type: "По категорији аутора"
-      author_type_blank: "Одаберите категорију"
       date: "По датуму"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "Изаберите датум"
@@ -700,7 +698,6 @@ sr:
       date_5: "Прилагођени"
       from: "Од"
       general: "Са текстом"
-      general_placeholder: "Напишите текст"
       search: "Филтер"
       title: "Унапређена претрага"
       to: "За"
