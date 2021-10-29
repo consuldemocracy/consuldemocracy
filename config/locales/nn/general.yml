@@ -656,8 +656,6 @@ nn:
     "no": "Nei"
     search_results: "Søk i resultater"
     advanced_search:
-      author_type: "Per kategori for forslagsstillere"
-      author_type_blank: "Velg en kategori"
       date: "Etter dato"
       date_placeholder: "DD/MM/ÅÅÅÅ"
       date_range_blank: "Velg en dato"
@@ -668,7 +666,6 @@ nn:
       date_5: "Tilpasset"
       from: "Fra"
       general: "Med teksten"
-      general_placeholder: "Skriv tekst"
       search: "Filter"
       title: "Avansert søk"
       to: "Til"
