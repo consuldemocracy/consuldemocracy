@@ -42,10 +42,6 @@ ca:
     groups:
       show:
         title: Selecciona una opció
-        unfeasible_title: Propostes inviables
-        unfeasible: Veure les propostes inviables
-        unselected_title: Propostes no seleccionades per a la votació final
-        unselected: Veure les propostes no seleccionades per a la votació final
     phase:
       drafting: Esborrany (No visible per al públic)
       informing: informació
