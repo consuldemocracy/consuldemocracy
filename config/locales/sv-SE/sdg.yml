@@ -451,15 +451,30 @@ sv:
           target_14_6:
             long_title: "Senast 2020 förbjuda vissa former av fiskesubventioner som bidrar till överkapacitet och överfiske, avskaffa subventioner som bidrar till olagligt, orapporterat och oreglerat fiske och avstå från att införa nya sådana subventioner, med erkännande av att en ändamålsenlig och effektiv särskild och differentierad behandling av utvecklingsländerna och de minst utvecklade länderna bör vara en integrerad del av förhandlingarna om fiskesubventioner i Världshandelsorganisationen."
             short_title: "Avskaffa subventioner som bidrar till överfiske"
+          target_14_7:
+            long_title: "Till 2030 öka den ekonomiska nyttan för små önationer under utveckling och de minst utvecklade länderna av ett hållbart nyttjande av marina resurser, bland annat genom en hållbar förvaltning av fiske, vattenbruk och turism."
+            short_title: "Öka den ekonomiska nyttan av hållbar användning av marina resurser"
           target_14_A:
             long_title: "Öka den vetenskapliga kunskapen, utveckla forskningskapaciteten och överföra havsteknik, med hänsyn tagen till den mellanstatliga oceanografiska kommissionens kriterier och riktlinjer för överföring av havsteknik (Criteria and Guidelines on the Transfer of Marine Technology), i syfte att skapa friskare hav och öka den marina biologiska mångfaldens bidrag till utvecklingen i utvecklingsländerna, i synnerhet i små önationer under utveckling och de minst utvecklade länderna."
             short_title: "Öka vetenskaplig kunskap, forskning och teknik för friska hav"
+          target_14_B:
+            long_title: "Säkerställa tillträde till marina resurser och marknader för småskaliga icke-industriella fiskare."
+            short_title: "Stödja småskaliga fiskare"
+          target_14_C:
+            long_title: "Stärka bevarandet och hållbart nyttjande av haven och havsresurserna genom att genomföra internationell rätt, såsom den kommer till uttryck i Förenta Nationernas havsrättskonvention (UNCLOS), som utgör den rättsliga ramen för bevarande och hållbart nyttjande av hav och havsresurser, vilket erinras om i punkt 158 i slutdokumentet The Future We Want från Förenta Nationernas konferens om hållbar utveckling (Rio+20)."
+            short_title: "Genomföra och verkställa internationell havsrätt"
       goal_15:
         title: "Ekosystem på land"
         title_in_two_lines: "Ekosystem\npå land"
         description: "Hantera skogen hållbart, bekämpa ökenspridning, stoppa och återställa landdegradering och stoppa förlusten av biologisk mångfald."
         long_description: '<p>Naturen är avgörande för vår överlevnad: naturen ger oss vårt syre, reglerar våra vädermönster, pollinerar våra grödor, producerar vår mat, vårt foder och våra fiber. Men den står under allt högre tryck. <a href="https://news.un.org/en/story/2020/04/1061082">Mänsklig aktivitet har förändrat nästan 75 procent av jordens yta</a>, och klämt in vilda djur och natur i ett allt mindre hörn av planeten.</p> <p>Omkring <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf">1 miljoner djur- och växtarter är utrotningshotade</a> – många blev det på ett par årtionden – enligt 2019 års globala bedömningsrapport om biologisk mångfald och ekosystemtjänster. Rapporten uppmanade om transformativa förändringar för att återställa och skydda naturen. Den fann att hälsan hos ekosystem som vi och alla andra arter är beroende av försämras snabbare än någonsin och påverkar&nbsp; själva grunden för våra ekonomier, vår försörjning, livsmedelssäkerhet, hälsa och livskvalitet över hela världen.&nbsp;</p> <p>Avskogning och ökenspridning – som orsakas av mänsklig aktivitet och klimatförändringar – utgör stora utmaningar för hållbar utveckling och har påverkat miljontals människors liv och försörjning. <a href="https://news.un.org/en/story/2019/05/1038291">Skogar är mycket viktiga </a>för att upprätthålla livet på jorden och spela en viktig roll i kampen mot klimatförändringar. Och investeringar i <a href="https://news.un.org/en/story/2019/09/1045802">markåterställning</a> är avgörande för att förbättra försörjningsmöjligheterna, minska sårbarheter och minska riskerna för ekonomin.</p> <p>Vår planets hälsa spelar också en viktig roll i <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">uppkomsten av zoonotiska sjukdomar</a>, d.v.s. sjukdomar som är överförbara mellan djur och människor. När vi fortsatt inkräktar på ömtåliga ekosystem får människor i allt större grad kontakt med vilda djur, vilket gör det möjligt för naturens patogener att sprida sig till boskap och människor, vilket ökar risken för sjukdomsutveckling och -förstärkning.</p>'
         targets:
+          target_15_1:
+            long_title: "Till 2020 bevara, återställa och hållbart använda ekosystem på land och i sötvatten och deras ekosystemtjänster, särskilt skogar, våtmarker, berg och torra områden, i enlighet med de skyldigheter som anges i internationella överenskommelser."
+            short_title: "Bevara och återställa ekosystem på land och i sötvatten"
+          target_15_2:
+            long_title: "Till 2020 främja genomförandet av hållbart brukande av alla typer av skogar, stoppa avskogningen, återställa utarmade skogar och kraftigt öka nybeskogningen och återbeskogningen i hela världen."
+            short_title: "Stoppa avskogningen och återställa utarmade skogar"
           target_15_3:
             long_title: "Till 2030 bekämpa ökenspridning, återställa förstörd mark och jord, inklusive mark som drabbats av ökenspridning, torka och översvämningar, samt sträva efter att uppnå en värld utan nettoförstöring av mark."
             short_title: "Avskaffa ökenspridning och återställa förstörd mark"
