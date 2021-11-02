@@ -42,14 +42,12 @@ zh-TW:
       title: 用戶管理
       under_age: "您未到核實您的帳戶所需的年齡。"
       verify: 核實
-    email_label: 電郵
     date_of_birth: 出生日期
     email_verifications:
       already_verified: 此用戶帳戶已被核實。
       choose_options: "請選擇以下選項之一："
       document_found_in_census: 此文件是在人口普查中找到的，但沒有與之關聯的用戶帳戶。
       document_mismatch: "此電郵屬於已具有關聯ID的用戶：%{document_number}(%{document_type})"
-      email_placeholder: 寫下此人用於創建其帳戶的電郵
       email_sent_instructions: 為了完全核實此用戶，用戶必須點擊我們發送到上述電郵地址的鏈接。 需要此步驟以確認該地址屬於他。
       if_existing_account: 若此人已在網站中創建了用戶帳戶，
       if_no_existing_account: 若此人尚未創建帳戶
