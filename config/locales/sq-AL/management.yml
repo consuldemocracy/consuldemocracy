@@ -42,14 +42,12 @@ sq:
       title: Menaxhimi i përdoruesve
       under_age: "Ju nuk keni moshën e kërkuar për të verifikuar llogarinë tuaj."
       verify: Verifiko
-    email_label: Email
     date_of_birth: Data e lindjes
     email_verifications:
       already_verified: Kjo llogari përdoruesi është verifikuar tashmë
       choose_options: "Zgjidh një nga opsionet e mëposhtme:"
       document_found_in_census: Ky dokument është gjetur i rregjistruar, por nuk ka ndonjë llogari përdoruesi të lidhur me të.
       document_mismatch: "Kjo email i takon një përdoruesi i cili tashmë ka një id të lidhur:%{document_number}%{document_type}"
-      email_placeholder: Shkruani emailin që ky person ka përdorur për të krijuar llogarinë e tij ose të saj
       email_sent_instructions: Për të verifikuar tërësisht këtë përdorues, është e nevojshme që përdoruesi të klikojë në një lidhje që i kemi dërguar në adresën e emailit të mësipërm. Ky hap është i nevojshëm për të konfirmuar se adresa i takon atij.
       if_existing_account: Nëse personi ka tashmë një llogari përdoruesi të krijuar në faqe,
       if_no_existing_account: Nëse ky person ende nuk ka krijuar një llogari
