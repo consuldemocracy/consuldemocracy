@@ -42,14 +42,12 @@ zh-CN:
       title: 用户管理
       under_age: "您没到验证账户所要求的年龄。"
       verify: 验证
-    email_label: 电子邮件地址
     date_of_birth: 出生日期
     email_verifications:
       already_verified: 此用户账户已验证。
       choose_options: "请选择以下选项之一："
       document_found_in_census: 此文档在人口普查中找到，但是没有相关联的用户账户。
       document_mismatch: "此电子邮件属于已有关联id的用户： %{document_number}(%{document_type})"
-      email_placeholder: 写下此人用于创建他或她的账户的电子邮件
       email_sent_instructions: 为了完全验证此用户，用户必须点击我们发送给以上电子邮件地址的链接。需要这个步骤来确认这个地址是真的属于他的。
       if_existing_account: 如果此人已经在网站中创建用户账户，
       if_no_existing_account: 如果此人尚未创建账户
