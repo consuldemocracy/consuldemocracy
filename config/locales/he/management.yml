@@ -42,14 +42,12 @@ he:
       title: ' ניהול חשבון'
       under_age: "אינך בגיל המאפשר רישומך באתר"
       verify: אמת
-    email_label: דואר אלקטרוני
     date_of_birth: תאריך לידה
     email_verifications:
       already_verified: חשבון משתמש/ת זה אושר בעבר
       choose_options: "נא לבחור באחת מהאפשרויות הבאות:"
       document_found_in_census: מסמך זה נמצא בארכיון אבל הוא לא מקושר לחשבון של אף אחד/ת
       document_mismatch: "דואר אלקטרוני זה שייך למשתמש/ת מזוהה: %{document_number}(%{document_type})"
-      email_placeholder: נא להכניס את כתובת הדואר אלקטרוני בו השתמשת ליצירת החשבון 
       email_sent_instructions: כדי לזהותך בוודאות, עליך ללחוץ על קישור שנשלח לכתובת הדואר אלקטרוני שהכנסת למערכת. צעד זה נחוץ כדי לוודא שכתובת הדואר אלקטרוני שייכת לך
       if_existing_account: באם לתושב יש כבר חשבון משתמש באתר זה
       if_no_existing_account: באם התושב טרם יצר חשבון משתמש
