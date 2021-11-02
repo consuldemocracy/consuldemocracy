@@ -42,14 +42,12 @@ bs:
       title: Praćenje korisnika
       under_age: "Vaš nalog se ne može potvrditi zbog nedovoljne starosne dobi."
       verify: Potvrdi
-    email_label: Email
     date_of_birth: Datum rođenja
     email_verifications:
       already_verified: Korisnički nalog je već potvrđen.
       choose_options: "Odaberite jednu od opcija:"
       document_found_in_census: Dokument pronađen u popisu, ali nema vezanog korisničkog naloga.
       document_mismatch: "Ovaj email pripada korisniku koji je već unio broj lične isprave: %{document_number}%{document_type}"
-      email_placeholder: Navedite email adresu koju je ova osoba koristila za otvaranje svog naloga
       email_sent_instructions: Kako bi finalizirali verifikaciju ovog korisnika, morate kliknuti na link koji smo poslali na gorenavedenu email adresu. Ovo je neophodno kako bi se potvrdilo da je adresa zaista njegova.
       if_existing_account: Ako osoba već ima korisnički profil otvoren na ovoj web-stranici,
       if_no_existing_account: Ako ova osoba nije još uvijek otvorila nalog,
