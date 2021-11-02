@@ -43,14 +43,12 @@ pt-BR:
       title: Gestão de usuários
       under_age: "Você não tem a idade requerida para verificar sua conta."
       verify: Verificar
-    email_label: Email
     date_of_birth: Data de nascimento
     email_verifications:
       already_verified: Esta conta de usuário já está verificada.
       choose_options: "Por favor, escolha uma das seguintes opções:"
       document_found_in_census: Este documento foi encontrado no censo, mas não há nenhuma conta de usuário associada a ele.
       document_mismatch: "Esse email corresponde a um usuário que já tem uma identidade associadade: %{document_number}(%{document_type})"
-      email_placeholder: Escreva o email que essa pessoa usou para criar sua conta
       email_sent_instructions: Para verificar completamente esse usuário, é necessário que o usuário clique em um link que enviamos para o endereço de e-mail acima. Essa etapa é necessária para confirmar se o endereço pertence a ele ou ela.
       if_existing_account: Se a pessoa já criou uma conta no site
       if_no_existing_account: Se a pessoa ainda não criou uma conta
