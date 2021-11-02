@@ -30,14 +30,12 @@ id:
       title: Manajemen pengguna
       under_age: "Anda tidak memiliki usia yang diperlukan untuk memverifikasi akun anda."
       verify: Memeriksa
-    email_label: Email
     date_of_birth: Tanggal lahir
     email_verifications:
       already_verified: Akun pengguna ini sudah diverifikasi.
       choose_options: "Pilih salah satu dari pilihan berikut:"
       document_found_in_census: Dokumen ini ditemukan dalam sensus, namun tidak ada akun pengguna yang terkait dengannya.
       document_mismatch: "Email ini milik pengguna yang sudah memiliki id terkait: %{document_number}(%{document_type})"
-      email_placeholder: Tuliskan email yang orang ini gunakan untuk membuat akunnya
       email_sent_instructions: Untuk memverifikasi pengguna ini sepenuhnya, pengguna harus mengeklik tautan yang telah kami kirim ke alamat email di atas. Langkah ini diperlukan untuk mengkonfirmasi bahwa alamat itu miliknya.
       if_existing_account: Jika orang tersebut sudah memiliki akun pengguna yang dibuat di situs web,
       if_no_existing_account: Jika orang ini belum membuat akun
