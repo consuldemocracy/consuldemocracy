@@ -160,9 +160,9 @@ en:
         voting_style: "Final voting style"
         voting_style_knapsack: "Knapsack"
         voting_style_approval: "Approval"
-        main_link_url: "The link takes you to (add a link)"
       budget/translation:
         main_link_text: "Text on the link"
+        main_link_url: "The link takes you to (add a link)"
         name: "Name"
       budget/investment:
         heading_id: "Heading"
@@ -231,12 +231,12 @@ en:
         enabled: "Phase enabled"
         ends_at: "End date"
         starts_at: "Start date"
-        main_link_url: "The link takes you to (add a link)"
       budget/phase/translation:
         name: "Name"
         description: "Description"
         summary: "Summary"
         main_link_text: "Text on the link"
+        main_link_url: "The link takes you to (add a link)"
       comment:
         body: "Comment"
         user: "User"

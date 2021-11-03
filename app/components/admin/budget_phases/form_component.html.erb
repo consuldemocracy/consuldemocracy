@@ -49,11 +49,11 @@
       <p class="help-text"> <%= t("admin.budget_phases.edit.main_call_to_action_description") %></p>
       <%= translations_form.text_field :main_link_text %>
     </div>
-  <% end %>
 
-  <div class="small-12 column">
-    <%= f.text_field :main_link_url, placeholder: t("admin.shared.example_url") %>
-  </div>
+    <div class="small-12 column">
+      <%= translations_form.text_field :main_link_url, placeholder: t("admin.shared.example_url") %>
+    </div>
+  <% end %>
 
   <% if feature?(:allow_images) %>
     <div class="images small-12 column">
