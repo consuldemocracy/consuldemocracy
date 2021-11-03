@@ -4,13 +4,13 @@ describe Shared::LinkListComponent do
   it "renders nothing with an empty list" do
     render_inline Shared::LinkListComponent.new
 
-    expect(page.native.inner_html).to be_empty
+    expect(page).not_to be_rendered
   end
 
   it "returns nothing with a list of nil elements" do
     render_inline Shared::LinkListComponent.new(nil, nil)
 
-    expect(page.native.inner_html).to be_empty
+    expect(page).not_to be_rendered
   end
 
   it "generates a list of links" do

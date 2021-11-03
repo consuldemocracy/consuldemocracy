@@ -28,7 +28,7 @@ describe Budgets::SupportsInfoComponent do
 
     render_inline component
 
-    expect(page.native.inner_html).to be_empty
+    expect(page).not_to be_rendered
   end
 
   describe "#total_supports" do

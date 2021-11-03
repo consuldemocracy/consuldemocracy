@@ -22,7 +22,7 @@ describe MachineLearning::CommentsSummaryComponent do
 
     render_inline component
 
-    expect(page.native.inner_html).to be_empty
+    expect(page).not_to be_rendered
   end
 
   it "is not displayed when the machine learning feature is disabled" do
@@ -30,7 +30,7 @@ describe MachineLearning::CommentsSummaryComponent do
 
     render_inline component
 
-    expect(page.native.inner_html).to be_empty
+    expect(page).not_to be_rendered
   end
 
   it "is not displayed when there's no summary" do
@@ -38,6 +38,6 @@ describe MachineLearning::CommentsSummaryComponent do
 
     render_inline MachineLearning::CommentsSummaryComponent.new(commentable)
 
-    expect(page.native.inner_html).to be_empty
+    expect(page).not_to be_rendered
   end
 end

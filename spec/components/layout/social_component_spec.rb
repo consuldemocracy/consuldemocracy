@@ -33,7 +33,7 @@ describe Layout::SocialComponent do
 
       render_inline Layout::SocialComponent.new
 
-      expect(page.native.inner_html).to be_empty
+      expect(page).not_to be_rendered
     end
   end
 end

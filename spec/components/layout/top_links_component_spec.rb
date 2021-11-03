@@ -13,7 +13,7 @@ describe Layout::TopLinksComponent do
     it "does not render when no content block is defined" do
       render_inline Layout::TopLinksComponent.new
 
-      expect(page.native.inner_html).to be_empty
+      expect(page).not_to be_rendered
     end
   end
 end
