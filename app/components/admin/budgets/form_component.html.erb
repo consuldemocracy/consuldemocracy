@@ -21,9 +21,10 @@
           <%= translations_form.text_field :main_link_text %>
         </div>
       </div>
+
       <div class="row expanded">
         <div class="small-12 medium-9 large-6 column end">
-          <%= translations_form.text_field :main_link_url, placeholder: t("admin.shared.example_url") %>
+          <%= translations_form.text_field :main_link_url, hint: t("admin.shared.example_url") %>
         </div>
       </div>
     <% end %>

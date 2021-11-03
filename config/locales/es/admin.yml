@@ -1368,7 +1368,7 @@ es:
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
       close_modal: Cerrar ventana emergente
-      example_url: "https://consulproject.org"
+      example_url: "Por ejemplo, https://consulproject.org o /help"
     geozones:
       index:
         title: Zonas
