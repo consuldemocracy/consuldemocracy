@@ -1356,6 +1356,9 @@ describe "Budget Investments" do
         expect(page).to have_content investment2.title
         expect(page).to have_content "€20,000"
       end
+
+      expect(page).to have_link "Submit my ballot"
+      expect(page).to have_content "STILL AVAILABLE TO YOU €666,666"
     end
 
     scenario "Order by cost (only when balloting)" do

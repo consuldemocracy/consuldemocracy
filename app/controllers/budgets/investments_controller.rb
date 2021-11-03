@@ -135,6 +135,9 @@ module Budgets
           @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
           @assigned_heading = @ballot&.heading_for_group(@heading.group)
           load_map
+        elsif @budget.single_heading?
+          @heading = @budget.headings.first
+          load_map
         end
       end
 
