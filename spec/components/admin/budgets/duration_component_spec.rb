@@ -49,7 +49,7 @@ describe Admin::Budgets::DurationComponent do
 
       render Admin::Budgets::DurationComponent.new(durable).duration
 
-      expect(page.text).to be_empty
+      expect(page.native.inner_html).to be_empty
     end
 
     it "is not defined when no start date is defined" do
@@ -57,7 +57,7 @@ describe Admin::Budgets::DurationComponent do
 
       render Admin::Budgets::DurationComponent.new(durable).duration
 
-      expect(page.text).to be_empty
+      expect(page.native.inner_html).to be_empty
     end
   end
 
