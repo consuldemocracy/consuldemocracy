@@ -1,0 +1,164 @@
+/**
+ * = Icon boxes
+ */
+
+ .icon {
+	text-align: center;
+	display   : inline-flex;
+	@include align-items(center);
+	@include justify-content(center);
+
+	span,
+	svg {
+		font-size: $icon-size;
+	}
+
+	&.icon-xs {
+
+		span,
+		svg {
+			font-size: $icon-size-xs;
+		}
+	}
+
+	&.icon-sm {
+
+		span,
+		svg {
+			font-size: $icon-size-sm;
+		}
+	}
+
+	&.icon-md {
+
+		span,
+		svg {
+			font-size: $icon-size-md;
+		}
+	}
+
+	&.icon-lg {
+
+		span,
+		svg {
+			font-size: $icon-size-xl;
+		}
+	}
+
+	&.icon-xl {
+
+		span,
+		svg {
+			font-size: $icon-size-xxl;
+		}
+	}
+
+	&.rounded-circle {
+		.icon-bordered {
+			@include border-radius($circle-radius);
+		}
+	}
+
+	&.organic-radius {
+		.icon-bordered {
+			@include border-radius($organic-radius);
+		}
+	}
+}
+
+.shape-xs {
+	width : 10px;
+	height: 10px;
+}
+
+// Icons included in shapes
+.icon-shape {
+	width          : $icon-shape;
+	height         : $icon-shape;
+	text-align     : center;
+	display        : inline-flex;
+	align-items    : center;
+	justify-content: center;
+	@include border-radius($border-radius);
+
+	span,
+	svg {
+		font-size: $icon-size;
+	}
+
+	&.icon-sm {
+		width : $icon-shape-sm;
+		height: $icon-shape-sm;
+
+		span,
+		svg {
+			font-size: $icon-size-sm;
+		}
+	}
+
+	&.icon-md {
+		width : $icon-shape;
+		height: $icon-shape;
+
+		span,
+		svg {
+			font-size: 1.75rem;
+		}
+	}
+
+	&.icon-lg {
+		width : $icon-shape-lg;
+		height: $icon-shape-lg;
+
+		span,
+		svg {
+			font-size: $icon-size-xl;
+		}
+	}
+}
+
+.github-big-icon {
+	position: absolute;
+	right   : -35px;
+	top     : 165px;
+
+	span {
+		font-size: 800px;
+		opacity  : .1;
+	}
+}
+
+//Colors for icons
+@each $color,
+$value in $theme-colors {
+	.icon-shape-#{$color} {
+		@include icon-shape-variant($value);
+	}
+
+	.icon-#{$color} {
+		span {
+			color: $value;
+		}
+	}
+
+	.fill-#{$color} {
+		fill: $value;
+	}
+}
+
+//Index Big Icon
+.bootstrap-big-icon {
+	position : absolute;
+	opacity  : .05;
+	transform: rotate(17deg);
+
+	@include media-breakpoint-up(lg) {
+		right : -20%;
+		bottom: 6%;
+	}
+
+	@include media-breakpoint-up(xl) {
+		right : -10%;
+		bottom: 6%;
+	}
+}

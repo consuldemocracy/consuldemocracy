@@ -1,0 +1,25 @@
+/**
+ * = Shapes
+ */
+
+
+// Shape colors
+@each $color,
+$value in $theme-colors {
+    .shape-#{$color} {
+        background-color: $value;
+
+        .step-number {
+            background-color: $value;
+        }
+    }
+}
+
+.organic-radius {
+    border-radius: 63% 37% 30% 70% / 50% 45% 55% 50%;
+}
+
+.color-shape {
+    width : 7rem;
+    height: 7rem;
+}

@@ -1,0 +1,46 @@
+/**
+ * = Breadcrumbs
+ */
+
+
+.breadcrumb-transparent {
+  background: transparent;
+  padding   : 0;
+}
+
+@each $color,
+$value in $theme-colors {
+  .breadcrumb-#{$color} {
+    background: $value;
+
+    .breadcrumb-item {
+      &.active {
+        color: $white;
+      }
+    }
+
+    &.breadcrumb-transparent {
+      background: transparent;
+
+      .breadcrumb-item {
+        &.active {
+          color: $value;
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb-text-light {
+  .breadcrumb-item {
+
+    &,
+    a {
+      color: $breadcrumb-item-light-color;
+    }
+
+    &:before {
+      color: $breadcrumb-divider-light-color;
+    }
+  }
+}
