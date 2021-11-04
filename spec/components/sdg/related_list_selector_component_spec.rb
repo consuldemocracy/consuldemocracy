@@ -15,7 +15,7 @@ describe SDG::RelatedListSelectorComponent do
 
     render_inline component
 
-    expect(page).not_to have_css ".sdg-related-list-selector"
+    expect(page).not_to be_rendered
   end
 
   it "does not render when the SDG process feature is disabled" do
@@ -23,7 +23,7 @@ describe SDG::RelatedListSelectorComponent do
 
     render_inline component
 
-    expect(page).not_to have_css ".sdg-related-list-selector"
+    expect(page).not_to be_rendered
   end
 
   it "renders related_sdg_list field" do

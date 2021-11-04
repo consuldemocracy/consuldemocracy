@@ -13,8 +13,7 @@ describe Layout::LocaleSwitcherComponent do
     it "doesn't render anything" do
       render_inline component
 
-      expect(page.text).to be_empty
-      expect(page).not_to have_css ".locale"
+      expect(page).not_to be_rendered
     end
   end
 

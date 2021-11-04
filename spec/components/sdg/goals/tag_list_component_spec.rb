@@ -14,7 +14,7 @@ describe SDG::Goals::TagListComponent do
 
     render_inline component
 
-    expect(page).not_to have_css "li"
+    expect(page).not_to be_rendered
   end
 
   it "does not render when the SDG process feature is disabled" do
@@ -22,7 +22,7 @@ describe SDG::Goals::TagListComponent do
 
     render_inline component
 
-    expect(page).not_to have_css "li"
+    expect(page).not_to be_rendered
   end
 
   it "renders a list of goals" do
