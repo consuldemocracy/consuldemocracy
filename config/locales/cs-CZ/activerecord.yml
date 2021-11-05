@@ -195,7 +195,6 @@ cs:
         voting_style: "Konečný styl hlasování"
         voting_style_knapsack: "Kombinatorická optimalizace"
         voting_style_approval: "Schválení"
-        main_link_url: "Odkaz vede na (přidat odkaz)"
       budget/translation:
         main_link_text: "Text na odkazu"
         name: "Název"
@@ -266,7 +265,6 @@ cs:
         enabled: "Fáze je povolena"
         ends_at: "Konečné datum"
         starts_at: "Počáteční datum"
-        main_link_url: "Odkaz vede na (přidat odkaz)"
       budget/phase/translation:
         name: "Název"
         description: "Popis"
