@@ -12,8 +12,10 @@
   <body>
     <%= raw setting["html.per_page_code_body"] %>
     <%= render "layouts/header", with_subnavigation: true %>
+    <div class="container-xxl min-vh-100">
       <%= render "layouts/flash" %>
       <%= yield %>
+    </div>
 
     <div class="footer">
       <%= render "layouts/footer" %>

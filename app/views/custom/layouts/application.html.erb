@@ -18,7 +18,7 @@
     </div>
 
     <%= render "layouts/header", with_subnavigation: true %>
-    <div class="container-xl min-vh-100">
+    <div class="container-xxl min-vh-100">
 
       <% if request.headers["User-Agent"] =~ /MSIE/ && cookies["ie_alert_closed"] != "true" %>
         <!--[if lt IE 9]> <div data-alert class="callout primary ie-callout" data-closable> <button class="close-button ie-callout-close-js" aria-label="<%= t("application.close") %>" type="button" data-close> <span aria-hidden="true">&times;</span>
