@@ -1328,10 +1328,10 @@ tr:
       content: İçerik
       created_at: Oluşturuldu
       color_help: Onaltılık format
-      example_url: "https://consulproject.org"
       show_results_and_stats: "Sonuçları ve istatistikleri göster"
       results_and_stats_reminder: "Bu onay kutularını işaretleyince sonuçlar ve/veya istatistikleri herkese açık olacak ve her kullanıcı bunları görecek."
       close_modal: Yakın model
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Coğrafi Bölge (Geozone)
