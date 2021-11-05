@@ -160,9 +160,9 @@ es:
         voting_style: "Estilo de la votación final"
         voting_style_knapsack: Bolsa de dinero
         voting_style_approval: Por aprobación
-        main_link_url: "El enlace te lleva a (añade un enlace)"
       budget/translation:
         main_link_text: "Texto del enlace"
+        main_link_url: "El enlace te lleva a (añade un enlace)"
         name: "Nombre"
       budget/investment:
         heading_id: "Partida presupuestaria"
@@ -231,12 +231,12 @@ es:
         enabled: "Fase habilitada"
         ends_at: "Fecha de fin"
         starts_at: "Fecha de inicio"
-        main_link_url: "El enlace te lleva a (añade un enlace)"
       budget/phase/translation:
         name: "Nombre"
         description: "Descripción"
         summary: "Resumen"
         main_link_text: "Texto del enlace"
+        main_link_url: "El enlace te lleva a (añade un enlace)"
       comment:
         body: "Comentario"
         user: "Usuario"

@@ -1366,11 +1366,10 @@ en:
       content: Content
       created_at: Created at
       color_help: Hexadecimal format
-      example_url: "https://consulproject.org"
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
       close_modal: Close modal
-      example_url: "https://consulproject.org"
+      example_url: "For example, https://consulproject.org or /help"
     geozones:
       index:
         title: Geozone
