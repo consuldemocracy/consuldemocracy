@@ -1,0 +1,11 @@
+<div id="public_interests" class="public-interests">
+  <h4><%= interests_title_text(user) %></h4>
+
+  <% if user.interests.any? %>
+    <ul class="tags">
+      <% user.interests.each do |interest| %>
+        <li><span><%= interest %></span></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

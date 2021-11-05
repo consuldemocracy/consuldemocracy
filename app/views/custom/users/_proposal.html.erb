@@ -1,0 +1,31 @@
+<tr id="proposal_<%= proposal.id %>">
+  <td class="small-7">
+    <strong>
+      <%= link_to proposal.title, proposal, proposal.retired? ? { class: "retired" } : {} %>
+    </strong>
+    <br>
+    <%= proposal.summary %>
+  </td>
+  <td class="small-2 text-center">
+    <% if proposal.retired? %>
+      <span class="label alert"><%= t("users.proposals.retired") %></span>
+    <% elsif proposal.draft? %>
+      <span class="label info"><%= t("users.proposals.draft") %></span>
+    <% else %>
+      <span class="label success"><%= t("users.proposals.published") %></span>
+    <% end %>
+  </td>
+
+  <% if proposal.retired? %>
+    <td class="help-text"><%= t("users.proposals.retired_help_text") %></td>
+  <% elsif can?(:dashboard, proposal) %>
+    <td>
+      <%= link_to t("proposals.show.dashboard_proposal_link"),
+                  progress_proposal_dashboard_path(proposal), class: "button hollow expanded" %>
+    </td>
+  <% else %>
+    <td class="text-center">
+      <%= link_to t("users.proposals.see"), proposal, class: "button hollow" %>
+    </td>
+  <% end %>
+</tr>

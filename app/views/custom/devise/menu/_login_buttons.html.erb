@@ -1,0 +1,9 @@
+<% if !user_signed_in? %>
+  <div class="d-flex gap-2">
+
+    <%= link_to t("devise_views.menu.login_items.login"), new_user_session_path, rel: "nofollow", class: "btn btn-white" %>
+
+    <%= link_to t("devise_views.menu.login_items.signup"), new_user_registration_path, rel: "nofollow", class: "button", class: "btn btn-tertiary" %>
+
+  <% end %>
+</div>

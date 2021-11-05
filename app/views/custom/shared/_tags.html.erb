@@ -1,0 +1,7 @@
+
+<div class="d-flex flex-wrap align-items-center justify-content-between mt-2 mb-0">
+
+<%- limit ||= nil %>
+<%= render Shared::TagListComponent.new(taggable, limit: limit) %>
+<%= render SDG::TagListComponent.new(taggable, limit: limit) %>
+</div>

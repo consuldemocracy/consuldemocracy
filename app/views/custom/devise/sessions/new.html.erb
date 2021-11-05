@@ -1,0 +1,37 @@
+<% provide :title do %><%= t("devise_views.sessions.new.title") %>
+<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-6 col-lg-4 justify-content-center">
+
+      <div class="h2 fw-bold text-center"><%= t("devise_views.sessions.new.title") %></div>
+
+      <%= render "devise/omniauth_form", action: "sign_in" %>
+
+      <div class="fw-bold text-center">
+        <%= t("omniauth.or_fill") %></div>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+      <%= f.text_field :login, autofocus: true, class: "form-control" %>
+
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+
+      <% if devise_mapping.rememberable? -%>
+
+        <%= f.check_box :remember_me, label: t("devise_views.sessions.new.remember_me") %>
+      <% end -%>
+      <%= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name), class: "float-end" %>
+
+      <%= f.submit(t("devise_views.sessions.new.submit"), class: "w-100 btn btn-lg btn-primary") %>
+
+    <% end %>
+
+    <div class="text-center py-1">
+      <%= sanitize(t("devise_views.shared.links.signup", signup_link: link_to(t("devise_views.shared.links.signup_link"), new_user_registration_path))) %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,20 @@
+<table class="margin-top">
+  <thead>
+    <tr>
+      <th scope="col"><%= t("users.show.comments") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% comments.each do |comment| %>
+      <tr id="comment_<%= comment.id %>">
+        <td>
+          <%= comment_commentable_title(comment) %>
+          <br>
+          <%= comment.body %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate comments %>

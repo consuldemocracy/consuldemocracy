@@ -1,0 +1,11 @@
+<ul class="nav flex-column">
+    <% sites.each do |name, url| %>
+<li class="nav-item">
+     <%= link_to "#{url}/#{setting["#{name}_handle"]}", target: "_blank", title: link_title(name), class:"nav-link text-light" do %>
+          <i class="fab fa-<%= name %>" style="color:#fff;" aria-hidden="true"></i>
+          <%= link_text(name) %>
+        <% end %>
+      </li>
+    <% end %>
+
+</ul>
