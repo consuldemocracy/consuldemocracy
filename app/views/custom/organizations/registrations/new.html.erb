@@ -1,0 +1,38 @@
+<% provide :title do %><%= t("devise_views.organizations.registrations.new.title") %>
+<% end %>
+<div class="container">
+      <div class="h2 fw-bold text-center"><%= t("devise_views.organizations.registrations.new.title") %></div>
+      <div class="container-fluid justify-content-center">
+        <%= form_for(resource, as: :user, url: organization_registration_path) do |f| %>
+        <%= render "shared/errors", resource: resource %>
+
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <%= f.fields_for :organization do |fo| %>
+            <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, class: "form-control" %>
+            <%= fo.text_field :responsible_name, maxlength: Organization.responsible_name_max_length, class: "form-control" %>
+          <% end %>
+
+          <%= f.email_field :email, class: "form-control" %>
+          </div>
+          <div class="col-12 col-md-6">
+            <%= f.text_field :phone_number, class: "form-control" %>
+
+            <%= f.invisible_captcha :address, class: "form-control" %>
+
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", label: t("devise_views.organizations.registrations.new.password_confirmation_label") %>
+              </div>
+        </div>
+
+    <%= f.check_box :terms_of_service, title: t("devise_views.users.registrations.new.terms_title"), label: t("devise_views.users.registrations.new.terms", terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title:
+    t("shared.target_blank"), target: "_blank") ) %>
+
+    <%= f.submit t("devise_views.organizations.registrations.new.submit"), class: "w-100 btn btn-lg btn-primary" %>
+
+  <% end %>
+
+</div>
+</div>
+<%= render "devise/shared/links" %>
