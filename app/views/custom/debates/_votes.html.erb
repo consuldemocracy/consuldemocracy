@@ -1,6 +1,6 @@
 <% voted_classes = css_classes_for_vote(@debate_votes, debate) %>
 <div class="votes">
-  <div class="in-favor inline-block">
+
     <% if user_signed_in? %>
     <%= link_to vote_debate_path(debate, value: "yes"),
         class: "btn btn-sm btn-primary animate-hover me-2", title: t("votes.agree"), method: "post", remote: true do %>
@@ -17,21 +17,21 @@
 
     <% else %>
 
-    <button class="btn btn-sm btn-primary animate-hover me-2">
+    <button class="btn btn-sm btn-primary animate-hover me-2 participation-allowed" aria-hidden="false">
                             <span class="fas fa-arrow-up me-2 animate-up-2"></span>
                             <%= votes_percentage("likes", debate) %>
                         </button>
-                        <button class="btn btn-sm btn-danger animate-hover">
+                        <button class="btn btn-sm btn-danger animate-hover participation-allowed" aria-hidden="false">
                             <span class="fas fa-arrow-down me-2 animate-down-2"></span>
                             <%= votes_percentage("dislikes", debate) %>
                         </button>
     <% end %>
-  </div>
+
 
   <span class="fw-bold">
     <%= t("debates.debate.votes", count: debate.total_votes) %>
   </span>
-
+  
   <% if user_signed_in? && current_user.organization? %>
     <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
@@ -49,4 +49,7 @@
       <%= render "shared/login_to_vote" %>
     </div>
   <% end %>
+
+
+
 </div>

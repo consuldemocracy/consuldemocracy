@@ -209,31 +209,7 @@
   }
 }
 
-.participation-not-allowed {
-  background: $warning-bg;
-  color: $color-warning;
-  left: 0;
-  line-height: $line-height;
-  min-height: 100%;
-  padding: $line-height / 2;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 100%;
-  z-index: 2;
 
-  p {
-    color: inherit !important;
-    margin: 0 rem-calc(12);
-    text-align: left;
-  }
-
-  a {
-    color: inherit !important;
-    font-weight: bold;
-    text-decoration: underline;
-  }
-}
 
 .reply .participation-not-allowed {
   padding-right: $line-height / 2;
