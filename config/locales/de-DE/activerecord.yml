@@ -160,7 +160,6 @@ de:
         voting_style: "Finaler Abstimmungsstil"
         voting_style_knapsack: "Rucksack"
         voting_style_approval: "Freigabe"
-        main_link_url: "Der Link führt zu (Link hinzufügen)"
       budget/translation:
         main_link_text: "Linktext"
         name: "Name"
