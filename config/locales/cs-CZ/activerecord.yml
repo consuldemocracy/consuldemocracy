@@ -197,6 +197,7 @@ cs:
         voting_style_approval: "Schválení"
       budget/translation:
         main_link_text: "Text na odkazu"
+        main_link_url: "Odkaz vede na (přidat odkaz)"
         name: "Název"
       budget/investment:
         heading_id: "Heading"
@@ -270,6 +271,7 @@ cs:
         description: "Popis"
         summary: "Souhrn"
         main_link_text: "Text na odkazu"
+        main_link_url: "Odkaz vede na (přidat odkaz)"
       comment:
         body: "Komentář"
         user: "User"
