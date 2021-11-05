@@ -7,6 +7,7 @@
 @import "font-awesome/path";
 @import "font-awesome/mixins";
 @import "font-awesome/core";
+@import "font-awesome";
 @import "jquery-ui/autocomplete";
 @import "jquery-ui/datepicker";
 @import "jquery-ui/sortable";
@@ -46,6 +47,9 @@
 @import "sdg_management/*";
 @import "sdg_management/**/*";
 @import "widgets/**/*";
+
+
+@import "pixel";
 
 @import "custom";
 @import "custom/**/*";
