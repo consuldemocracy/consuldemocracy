@@ -1,0 +1,27 @@
+<% if header.present? %>
+  <div class="container-xxl p-0">
+    <div class="row">
+      <div class="col-12 col-md-6 order-2 order-md-1 justify-content-center <%= "col-12 col-md-6 order-md-2" unless header.image.present? %>">
+        <span><%= header.label %></span>
+        <h1><%= header.title %></h1>
+
+        <p class="lead"><%= header.description %></p>
+
+        <% if header.link_text.present? && header.link_url.present? %>
+          <div class="col-12 col-md-6 col-lg-4  <%= "small-centered" unless header.image.present? %>">
+            <%= link_to header.link_text, header.link_url, class: "btn btn-lg btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+
+      <% if header.image.present? %>
+        <div class="col-12 col-md-6 order-1 order-md-2">
+          <%= image_tag(header.image_url(:large),
+                        class: "img-fluid",
+                        alt: header.image.title) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="background-header"></div>
+<% end %>
