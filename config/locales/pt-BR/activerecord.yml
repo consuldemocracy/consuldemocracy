@@ -162,6 +162,7 @@ pt-BR:
         voting_style_approval: "Aprovação"
       budget/translation:
         main_link_text: "Texto no link"
+        main_link_url: "O link te leva para (adicionar link)"
         name: "Nome"
       budget/investment:
         heading_id: "Título"
@@ -235,6 +236,7 @@ pt-BR:
         description: "Descrição"
         summary: "Resumo"
         main_link_text: "Texto no link"
+        main_link_url: "O link te leva para (adicionar link)"
       comment:
         body: "Comentar"
         user: "Usuário"
