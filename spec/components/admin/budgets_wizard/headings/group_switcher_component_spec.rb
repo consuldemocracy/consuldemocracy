@@ -6,7 +6,8 @@ describe Admin::BudgetsWizard::Headings::GroupSwitcherComponent do
 
     render_inline Admin::BudgetsWizard::Headings::GroupSwitcherComponent.new(group)
 
-    expect(page).not_to be_rendered
+    expect(page.text).to be_empty
+    expect(page).not_to have_css ".budget-group-switcher"
   end
 
   it "renders a link to switch group for budgets with two groups" do

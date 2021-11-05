@@ -4,9 +4,9 @@ module LayoutsHelper
 
     if is_active
       tag.span(t("shared.you_are_in"), class: "show-for-sr") + " " +
-        link_to(text, path, options.merge(class: "is-active", title: title))
+        link_to(text, path, options.merge(class: "nav-link active", title: title))
     else
-      link_to(text, path, options.merge(title: title))
+      link_to(text, path, options.merge(class: "nav-link", title: title))
     end
   end
 end

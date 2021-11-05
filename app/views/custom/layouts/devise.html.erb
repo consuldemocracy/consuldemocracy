@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html <%= "dir=rtl" if rtl? %> lang="<%= I18n.locale %>">
+  <head>
+    <%= render "layouts/common_head", default_title: setting["org_name"] %>
+    <%= render "layouts/meta_tags" %>
+    <%= content_for :canonical %>
+    <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"), rel: "icon apple-touch-icon", sizes: "200x200", type: "image/png" %>
+    <%= content_for :social_media_meta_tags %>
+    <%= raw setting["html.per_page_code_head"] %>
+  </head>
+
+  <body>
+    <%= raw setting["html.per_page_code_body"] %>
+    <%= render "layouts/header", with_subnavigation: true %>
+      <%= render "layouts/flash" %>
+      <%= yield %>
+
+    <div class="footer">
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
+</html>

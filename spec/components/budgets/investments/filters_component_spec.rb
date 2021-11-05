@@ -16,7 +16,7 @@ describe Budgets::Investments::FiltersComponent do
 
       render_inline Budgets::Investments::FiltersComponent.new
 
-      expect(page).not_to be_rendered
+      expect(page.native.inner_html).to be_empty
     end
   end
 

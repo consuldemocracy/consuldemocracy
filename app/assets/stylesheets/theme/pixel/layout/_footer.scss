@@ -1,0 +1,114 @@
+/**
+ * = Footers
+ */
+
+.footer {
+    position: relative;
+
+    h3,
+    h5,
+    .h3,
+    .h5 {
+        font-size    : 1.15rem;
+        margin-bottom: 1.25rem;
+    }
+
+    ul {
+        margin-bottom: 0;
+        padding      : 0;
+        list-style   : none;
+
+        li {
+            display: inline-block;
+
+            a {
+                text-decoration: none;
+                position       : relative;
+                display        : block;
+            }
+
+            .btn {
+                margin: 0;
+            }
+        }
+
+        &.links-horizontal {
+            &:first-child a {
+                padding-left: 0;
+            }
+
+            &:last-child a {
+                padding-right: 0;
+            }
+
+        }
+
+        &.footer-links {
+            li {
+                display     : block;
+                margin-left : -5px;
+                margin-right: -5px;
+
+                a {
+                    padding: 5px;
+
+                    &:hover {
+                        color: inherit !important;
+                    }
+                }
+            }
+        }
+
+        &.icon-box {
+            span {
+                line-height: 1.7
+            }
+        }
+    }
+
+    .social-buttons {
+
+        a,
+        .btn {
+            margin-top   : 5px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .footer-brand {
+        font-size  : $font-size-lg;
+        font-weight: $font-weight-bold;
+
+        img,
+        svg {
+            width: 30px;
+        }
+
+        &:hover,
+        &:focus {
+            color: $black;
+        }
+
+        &.brand-sm {
+
+            img,
+            svg {
+                width: 25px;
+            }
+        }
+    }
+
+    .copyright {
+        font-size: $font-size-sm;
+    }
+
+    .pull-center {
+        display: inline-block;
+        float  : none;
+    }
+}
+
+.footer-logo-text {
+    font-size  : 1.2rem;
+    font-weight: 600 !important;
+}

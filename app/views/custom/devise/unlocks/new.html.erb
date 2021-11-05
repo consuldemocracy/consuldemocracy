@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-6 col-lg-4 justify-content-center">
+
+      <div class="h2 fw-bold text-center"><%= t("devise_views.unlocks.new.title") %></div>
+
+      <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "shared/errors", resource: resource %>
+
+        <%= f.email_field :email, autofocus: true,
+                          class: "form-control",
+                          label: t("devise_views.unlocks.new.email_label") %>
+
+
+
+<%= f.submit t("devise_views.unlocks.new.submit"), class: "bw-100 btn btn-lg btn-primary" %>
+
+
+
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+</div>

@@ -1,0 +1,42 @@
+/**
+ * = Badges
+ */
+
+//Tags 
+.wi-tags {
+    a {
+        display         : inline-block;
+        padding         : 0.125rem 0.875rem;
+        margin          : 0.25rem;
+        line-height     : 2;
+        font-size       : $font-size-sm;
+        background-color: $white;
+        border          : $border-width solid $gray-300;
+        @include border-radius($border-radius);
+
+        &:hover {
+            background-color: $primary;
+            color           : $white;
+        }
+    }
+}
+
+.pixel-pro-badge {
+    position      : relative;
+    font-size     : $font-size-sm;
+    text-transform: uppercase;
+    font-weight   : $font-weight-bold;
+    right         : -11px;
+    padding       : 4px 12px;
+    top           : -30px;
+    background    : $white;
+    @include border-radius($border-radius-sm);
+    @include box-shadow($box-shadow-sm);
+
+    @include media-breakpoint-down(sm) {
+        font-size: .7rem;
+        right    : -13px;
+        padding  : 3px 7px;
+        top      : -23px;
+    }
+}

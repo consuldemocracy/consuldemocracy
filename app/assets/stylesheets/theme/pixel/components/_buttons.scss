@@ -1,0 +1,118 @@
+/**
+ * = Buttons
+ */
+
+.btn {
+    position  : relative;
+    transition: $transition-base;
+    font-size : $btn-font-size;
+    @include border-radius($border-radius);
+
+    .btn-group &,
+    .input-group & {
+        margin-right: 0;
+        transform   : translateY(0);
+    }
+
+    .toggle-arrow {
+        transition: $transition-base;
+    }
+
+    &[aria-expanded="true"] {
+        .toggle-arrow {
+            @include transform(rotate(180deg));
+        }
+    }
+
+    &.btn-pill {
+        @include border-radius($border-radius-xl);
+    }
+
+}
+
+// Sizes
+.btn-xs {
+    padding: 0.275rem 0.5rem;
+
+    &,
+    span {
+        font-size: .775rem !important;
+    }
+}
+
+.btn-sm {
+
+    &,
+    span {
+        font-size: $font-size-sm !important;
+    }
+}
+
+.btn-md {
+
+    &,
+    span {
+        font-size: $font-size-md !important;
+    }
+}
+
+.btn-icon-only {
+    width : 2.575rem;
+    height: 2.575rem;
+
+    &a {
+        line-height: 2.5;
+    }
+
+    &.btn-xs {
+        width : 1.7rem;
+        height: 1.7rem;
+    }
+
+    &.btn-sm {
+        width : 2rem;
+        height: 2rem;
+    }
+}
+
+.spinner-border,
+.spinner-brow {
+    vertical-align: middle;
+}
+
+.btn-loading-overlay {
+    .spinner {
+        position: absolute;
+        top     : 50%;
+        left    : 50%;
+        @include transform(translate(-50%, -50%));
+        opacity: 0;
+    }
+
+    .btn-inner-text,
+    .spinner {
+        transition: $transition-base;
+    }
+
+    .btn-inner-text {
+        opacity: 1;
+    }
+
+    &.btn-loading {
+        .spinner {
+            opacity: 1;
+        }
+
+        .btn-inner-text {
+            opacity: 0;
+        }
+    }
+}
+
+// Set color of theme buttons
+@each $color,
+$value in $brand-colors {
+    .btn-#{$color} {
+        @include button-variant($value, $value);
+    }
+}

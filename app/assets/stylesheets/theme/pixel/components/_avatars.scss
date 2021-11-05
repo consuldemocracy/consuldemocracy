@@ -1,0 +1,49 @@
+/**
+ * = Avatars
+ */
+
+.avatar+.avatar-content {
+	display    : inline-block;
+	margin-left: .75rem;
+}
+
+.avatar-link {
+	img {
+		width : 4rem;
+		height: 4rem;
+	}
+}
+
+.avatar-sm {
+	width : $avatar-sm-y;
+	height: $avatar-sm-x;
+}
+
+.avatar-md {
+	width : $avatar-md-y;
+	height: $avatar-md-x;
+}
+
+.avatar-lg {
+	width : $avatar-lg-y;
+	height: $avatar-lg-x;
+}
+
+// Overlapped avatars 
+
+.avatar-group {
+	.avatar {
+		position: relative;
+		z-index : 2;
+		border  : 2px solid $card-bg;
+
+		&:hover {
+			z-index: 3;
+		}
+	}
+
+	.avatar+.avatar {
+		margin-left: -1rem;
+
+	}
+}

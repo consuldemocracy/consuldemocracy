@@ -1,0 +1,9 @@
+/**
+ * = Maps
+ */
+
+.map {
+	height: 500px;
+	width : 100%;
+	@include filter(grayscale(100%))
+}

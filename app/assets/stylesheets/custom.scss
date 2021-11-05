@@ -2,3 +2,51 @@
 //
 // You can also create SCSS files in the app/assets/stylesheets/custom/
 // folder and they will be loaded automatically.
+
+
+
+.NavHeader {
+
+  color: $white;
+
+  &:active,
+  &:hover,
+  &:focus,
+  &:focus:active {
+    color: $white;
+  }
+  }
+
+.form-select {
+      height: 2.2em;
+      background-position: 7.8em center!important;
+}
+
+.dropdown-item.active {
+
+      background-color: $brand!important;
+
+}
+
+.fa-facebook, .fa-facebook-square {
+    color: #3b5998
+}
+.fa-twitter, .fa-twitter-square {
+    color: #00aced
+}
+.fa-google {
+    color: #dd4b39
+}
+.fa-wordpress {
+    color: #00749C
+}
+
+.card-text {
+
+  display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  margin-bottom: 0;
+}

@@ -1,0 +1,57 @@
+.form-control {
+    box-shadow: none;
+
+    &.form-control-lg {
+        padding: $inpu-lg-padding-y $input-padding-x;
+    }
+}
+
+.input-group {
+    .input-group-text:focus {
+        border-color: $primary;
+        outline     : 0;
+    }
+}
+
+.focused {
+
+    .input-group {
+        .input-group-text {
+            border-color: $primary;
+            outline     : 0;
+        }
+    }
+
+    .form-control {
+        border-color    : $input-focus-border-color;
+        background-color: $input-focus-bg;
+    }
+}
+
+.form-switch {
+    padding-left: $form-switch-padding-left;
+
+    .form-check-input {
+        height: 1.275em;
+    }
+}
+
+.form-select {
+    .form-select-lg {
+        padding: $form-select-padding-y ($form-select-padding-x + $form-select-indicator-padding) $form-select-padding-y $form-select-padding-x;
+    }
+}
+
+//Add File Alternative Style
+
+.file-field input[type="file"] {
+    position      : absolute;
+    cursor        : pointer;
+    filter        : alpha(opacity=0);
+    opacity       : 0;
+    padding-bottom: 30px;
+}
+
+.file-field span {
+    cursor: pointer;
+}

@@ -1,0 +1,123 @@
+/**
+ * = Sections
+ */
+
+.section {
+    position      : relative;
+    padding-top   : $spacer * 3;
+    padding-bottom: $spacer * 3;
+}
+
+.section-header {
+    position      : relative;
+    padding-top   : $spacer * 7;
+    padding-bottom: $spacer * 3;
+}
+
+@include media-breakpoint-up(sm) {
+    .section {
+        position      : relative;
+        padding-top   : $spacer * 6;
+        padding-bottom: $spacer * 6;
+    }
+
+    .section-header {
+        position      : relative;
+        padding-top   : $spacer * 10;
+        padding-bottom: $spacer * 10;
+
+        &.section-sm {
+            padding-top   : $spacer * 4;
+            padding-bottom: $spacer * 3;
+        }
+    }
+
+    .section-xl {
+        padding-top   : $spacer * 10;
+        padding-bottom: $spacer * 10;
+    }
+
+    .section-lg {
+        padding-top   : $spacer * 8;
+        padding-bottom: $spacer * 8;
+    }
+
+    .section-sm {
+        padding-top   : $spacer * 4;
+        padding-bottom: $spacer * 4;
+    }
+}
+
+// Hero sections
+.section-hero {
+    @include media-breakpoint-up(md) {
+        height: 100vh;
+    }
+}
+
+// Pages section
+.card-box {
+    @include perspective(900px);
+    width   : 250px;
+    position: relative;
+
+    .card-component {
+        @include transform-style(preserve-3d);
+        position: relative;
+        height  : 300px;
+
+        @include media-breakpoint-up(lg) {
+            height: 450px;
+        }
+
+        &.card-component-lg {
+            height: auto;
+
+            @include media-breakpoint-up(xs) {
+                max-height: 800px;
+            }
+
+            @include media-breakpoint-up(md) {
+                max-height: 410px;
+            }
+        }
+
+        &.card-component-xs {
+            height    : auto;
+            max-height: 230px;
+        }
+
+        .front {
+            position: absolute;
+            top     : 0;
+            left    : 0;
+            width   : 100%;
+            overflow: hidden;
+            @include box-shadow($box-shadow-lg);
+            @include border-radius($border-radius);
+            @include backface-visibility(hidden);
+            @include transform(rotateY(24deg));
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .page-card {
+        @include box-shadow($box-shadow-lg);
+        @include border-radius($border-radius);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        width: 200px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: 260px;
+    }
+}

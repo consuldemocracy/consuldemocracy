@@ -1,0 +1,33 @@
+<div class="container-fluid bg-dark text-white">
+  <div class="container-xl p-3">
+    <div class="row">
+        <div class="col-12 col-md-6 order-3 order-md-1">
+          <%= link_to root_path, accesskey: "0" do %>
+            <%= image_tag(image_path_for("logo_header.png"), alt: setting["org_name"]) %>
+          <% end %>
+
+  <div class="fw-normal font-small">
+            <%= sanitize(t("layouts.footer.description",
+              open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow", class:"text-light"),
+              consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow", class:"text-light"))) %>
+            <%= t("layouts.footer.contact_us") %>
+</div>
+          <div class="fw-normal font-small">© <%= t("layouts.footer.copyright", year: Time.current.year) %></div>
+
+        </div>
+
+        <div class="col-6 col-md-3 order-1 order-md-2">
+  <%= render Layout::SocialComponent.new %>
+
+        </div>
+        <div class="col-6 col-md-3 order-2 order-md-3">
+          <ul class="nav">
+            <li class="nav-item"><%= link_to t("layouts.footer.privacy"), page_path("privacy"), class:"nav-link text-light" %></li>
+            <li class="nav-item"><%= link_to t("layouts.footer.conditions"), page_path("conditions"), class:"nav-link text-light"  %></li>
+            <li class="nav-item"><%= link_to t("layouts.footer.accessibility"), page_path("accessibility"), class:"nav-link text-light"  %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    </div>

@@ -1,0 +1,52 @@
+<% voted_classes = css_classes_for_vote(@debate_votes, debate) %>
+<div class="votes">
+  <div class="in-favor inline-block">
+    <% if user_signed_in? %>
+    <%= link_to vote_debate_path(debate, value: "yes"),
+        class: "btn btn-sm btn-primary animate-hover me-2", title: t("votes.agree"), method: "post", remote: true do %>
+
+        <span class="fas fa-arrow-up me-2 animate-up-2"></span><%= votes_percentage("likes", debate) %>
+        <% end %>
+
+
+        <%= link_to vote_debate_path(debate, value: "no"),
+            class: "btn btn-sm btn-danger animate-hover", title: t("votes.disagree"), method: "post", remote: true do %>
+
+            <span class="fas fa-arrow-down me-2 animate-down-2"></span><%= votes_percentage("dislikes", debate) %>
+            <% end %>
+
+    <% else %>
+
+    <button class="btn btn-sm btn-primary animate-hover me-2">
+                            <span class="fas fa-arrow-up me-2 animate-up-2"></span>
+                            <%= votes_percentage("likes", debate) %>
+                        </button>
+                        <button class="btn btn-sm btn-danger animate-hover">
+                            <span class="fas fa-arrow-down me-2 animate-down-2"></span>
+                            <%= votes_percentage("dislikes", debate) %>
+                        </button>
+    <% end %>
+  </div>
+
+  <span class="fw-bold">
+    <%= t("debates.debate.votes", count: debate.total_votes) %>
+  </span>
+
+  <% if user_signed_in? && current_user.organization? %>
+    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
+      <p>
+        <%= t("votes.organizations") %>
+      </p>
+    </div>
+  <% elsif user_signed_in? && !debate.votable_by?(current_user) %>
+    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
+      <p>
+        <%= sanitize(t("votes.anonymous", verify_account: link_to_verify_account)) %>
+      </p>
+    </div>
+  <% elsif !user_signed_in? %>
+    <div tabindex="0">
+      <%= render "shared/login_to_vote" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark pt-0 pb-2 pb-sm-0">
+  <div class="container-xl d-flex flex-wrap justify-content-center">
+    <%= link_to root_path, accesskey: "0" do %>
+    <%= image_tag(image_path_for("logo_header.png"), class:"navbar-brand", alt: setting["org_name"]) %>
+  <% end %>
+  <div class="collapse navbar-collapse justify-content-sm-end justify-content-center gap-3" id="navbarsExample02">
+    <div class="navbar-nav">
+      <%= render "devise/menu/login_buttons" %>
+      <%= render "shared/admin_login_items" %>
+      <%= render "layouts/notification_item" %>
+      <%= render "devise/menu/login_items" %>
+    </div>
+  </div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light pb-4">
+<div class="container-xl">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbartohide" aria-controls="navbartohide" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-nav ms-auto order-lg-2">
+    <%= render "shared/locale_switcher" %>
+  </div>
+  <div class="collapse navbar-collapse order-lg-1" id="navbartohide">
+    <ul class="navbar-nav">
+      <%= render "shared/subnavigation" %>
+    </ul>
+  </div>
+</nav>

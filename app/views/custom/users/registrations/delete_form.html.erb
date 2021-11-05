@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-6 col-lg-4 justify-content-center">
+      <div class="float-left"> <%= back_link_to %></div>
+      <div class="h2 fw-bold text-center"><%= t("devise_views.users.registrations.delete_form.title") %></div>
+      <%= form_for(resource, as: resource_name,
+                   url: users_registrations_path,
+                   html: { method: :delete }) do |f| %>
+        <%= render "shared/errors", resource: resource %>
+
+        <div data-alert class="callout alert">
+          <%= t("devise_views.users.registrations.delete_form.info") %>
+        </div>
+
+          <%= t("devise_views.users.registrations.delete_form.info_reason") %>
+
+
+        <%= f.text_field :erase_reason,
+              autofocus: true,
+              label: t("devise_views.users.registrations.delete_form.erase_reason_label"), class:"form-control" %>
+
+        <%= f.submit t("devise_views.users.registrations.delete_form.submit"), class: "bw-100 btn btn-lg btn-danger" %>
+      <% end %>
+
+
+
+  </div>
+</div>
+</div>
