@@ -5,7 +5,7 @@ class Budget < ApplicationRecord
   include Reportable
   include Imageable
 
-  translates :name, :main_link_text, touch: true
+  translates :name, :main_link_text, :main_link_url, touch: true
   include Globalizable
 
   class Translation
@@ -24,11 +24,11 @@ class Budget < ApplicationRecord
   VOTING_STYLES = %w[knapsack approval].freeze
 
   validates_translation :name, presence: true
+  validates_translation :main_link_url, presence: true, unless: -> { main_link_text.blank? }
   validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
   validates :voting_style, inclusion: { in: VOTING_STYLES }
-  validates :main_link_url, presence: true, if: -> { main_link_text.present? }
 
   has_many :investments, dependent: :destroy
   has_many :ballots, dependent: :destroy

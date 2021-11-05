@@ -355,7 +355,9 @@ describe "Admin edit translatable records", :admin do
   context "Remove all translations" do
     let(:translatable) { create(:milestone) }
 
-    scenario "Shows an error message" do
+    scenario "Shows an error message when there's a mandatory translatable field" do
+      translatable.update!(status: nil)
+
       visit admin_polymorphic_path(translatable, action: :edit)
 
       click_link "Remove language"
@@ -364,6 +366,19 @@ describe "Admin edit translatable records", :admin do
       click_button "Update milestone"
 
       expect(page).to have_content "Is mandatory to provide one translation at least"
+    end
+
+    scenario "Is successful when there isn't a mandatory translatable field" do
+      translatable.update!(status: Milestone::Status.first)
+
+      visit admin_polymorphic_path(translatable, action: :edit)
+
+      click_link "Remove language"
+      click_link "Remove language"
+
+      click_button "Update milestone"
+
+      expect(page).to have_content "Milestone updated successfully"
     end
   end
 
