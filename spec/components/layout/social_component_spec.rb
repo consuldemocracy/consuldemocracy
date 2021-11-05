@@ -33,7 +33,7 @@ describe Layout::SocialComponent do
 
       render_inline Layout::SocialComponent.new
 
-      expect(page).not_to be_rendered
+      expect(page).not_to have_css "ul"
     end
   end
 end

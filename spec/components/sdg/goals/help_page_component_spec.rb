@@ -13,7 +13,7 @@ describe SDG::Goals::HelpPageComponent do
 
     render_inline component
 
-    expect(page).not_to be_rendered
+    expect(page).not_to have_css ".sdg-help-content"
   end
 
   it "renders content when the feature is enabled" do

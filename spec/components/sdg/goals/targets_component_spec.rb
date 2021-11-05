@@ -13,7 +13,9 @@ describe SDG::Goals::TargetsComponent do
 
     render_inline component
 
-    expect(page).not_to be_rendered
+    expect(page).not_to have_css ".targets"
+    expect(page).not_to have_css "#target_tabs"
+    expect(page).not_to have_css ".tabs-content"
   end
 
   it "renders tabs panel" do

@@ -14,7 +14,7 @@ describe SDG::Goals::PlainTagListComponent do
 
     render_inline component
 
-    expect(page).not_to be_rendered
+    expect(page).not_to have_css "li"
   end
 
   it "does not render when the SDG process feature is disabled" do

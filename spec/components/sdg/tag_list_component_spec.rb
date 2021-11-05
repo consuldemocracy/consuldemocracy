@@ -27,7 +27,7 @@ describe SDG::TagListComponent do
 
     render_inline SDG::TagListComponent.new(record)
 
-    expect(page).not_to be_rendered
+    expect(page.native.inner_html).to be_empty
   end
 
   context "when linkable is false" do
