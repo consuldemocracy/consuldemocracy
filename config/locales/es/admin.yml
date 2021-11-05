@@ -163,6 +163,22 @@ es:
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
         save_changes: Guardar cambios
+    physical_final_votes:
+      index:
+        advanced_filters: Filtros avanzados
+        placeholder: Buscar proyectos
+        buttons:
+          filter: Filtrar
+        booth:
+          placeholder: Buscar mesa
+        budget:
+          placeholder: Buscar presupuesto
+        table_name: Nombre
+        table_phase: Fase
+        table_physical_final_votes: Votos finales presenciales
+        table_admin_ballots: Urnas
+        physical_final_votes: Gestionar votos
+        admin_ballots: Gestionar urnas
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
@@ -251,6 +267,7 @@ es:
         classification: Clasificación
         compatibility: Compatibilidad
         selection: Selección
+        selection_help: Al seleccionar el proyecto de gasto como seleccionado se mandará un correo al propietario del mismo
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
@@ -635,6 +652,7 @@ es:
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
+      budgets_physical_votes: Votos Presenciales
       geozones: Gestionar zonas
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos

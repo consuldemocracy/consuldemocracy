@@ -83,7 +83,7 @@
                        advanced_filters: params[:advanced_filters],
                        page: params[:page]
                      ),
-                     method: :patch,
+                     method: :put,
                      remote: true,
                      class: "button small expanded" %>
   <% elsif investment.feasible? && investment.valuation_finished? %>
@@ -99,7 +99,7 @@
                     advanced_filters: params[:advanced_filters],
                     page: params[:page]
                   ),
-                  method: :patch,
+                  method: :put,
                   remote: true,
                   class: "button small hollow expanded" %>
     <% end %>

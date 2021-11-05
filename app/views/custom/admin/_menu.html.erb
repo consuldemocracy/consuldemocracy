@@ -51,7 +51,14 @@
         <% end %>
       </li>
     <% end %>
-
+	<% if feature?(:physical_final_votes) %>
+      <li class="section-title <%= "is-active" if menu_budgets? %>">
+        <%= link_to admin_budgets_physical_votes_path do %>
+          <span class="icon-file-text-o"></span>
+          <strong><%= t("admin.menu.budgets_physical_votes") %></strong>
+        <% end %>
+      </li>
+    <% end %>
     <li class="section-title">
       <a href="#">
         <span class="icon-box"></span>
@@ -90,13 +97,6 @@
       </li>
     <% end %>
 
-    <% if feature?(:physical_final_votes) %>
-      <li class="section-title" <%= "class=active" if controller_name == "physical_final_votes" %>>
-        <%= link_to admin_physical_final_votes_path do %>
-          <strong><%= t("admin.menu.physical_final_votes") %></strong>
-        <% end %>
-      </li>
-    <% end %>
 
     <% messages_sections = %w[newsletters emails_download admin_notifications system_emails] %>
     <% messages_menu_active = messages_sections.include?(controller_name) %>
