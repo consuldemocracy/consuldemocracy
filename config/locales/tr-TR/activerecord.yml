@@ -160,7 +160,6 @@ tr:
         voting_style: "Son oylama şekli"
         voting_style_knapsack: "Sırt çantası"
         voting_style_approval: "Onay"
-        main_link_url: "Bağlantı sizi şuraya götürür: (link ekle)"
       budget/translation:
         main_link_text: "Bağlantıdaki metin"
         name: "İsim"
