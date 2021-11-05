@@ -162,6 +162,7 @@ sv:
         voting_style_approval: "Godkännande"
       budget/translation:
         main_link_text: "Text på länken"
+        main_link_url: "Länken leder till (lägg till en länk)"
         name: "Namn"
       budget/investment:
         heading_id: "Område"
@@ -235,6 +236,7 @@ sv:
         description: "Beskrivning"
         summary: "Sammanfattning"
         main_link_text: "Text på länken"
+        main_link_url: "Länken leder till (lägg till en länk)"
       comment:
         body: "Kommentar"
         user: "Användare"
