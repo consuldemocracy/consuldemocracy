@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-6 col-lg-4 justify-content-center">
+
+      <div class="h2 fw-bold text-center"><%= t("devise.password_expired.expire_password") %></div>
+
+      <%= form_for(resource, as: resource_name, url: [resource_name, :password_expired], html: { method: :put }) do |f| %>
+
+        <%= f.password_field :current_password, class: "form-control" %>
+        <%= f.password_field :password, label: t("devise.password_expired.new_password"), class: "form-control" %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+
+      <%= f.submit t("devise.password_expired.change_password"), class: "bw-100 btn btn-lg btn-primary" %>
+      <% end %>
+
+  </div>
+</div>
+</div>

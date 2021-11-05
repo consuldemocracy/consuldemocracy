@@ -1,0 +1,11 @@
+<% if user %>
+  <div id="nav-item dropdown list-unstyled text-light">
+    <%= link_to notifications_path, rel: "nofollow", title: text, class: "fas fa-bell NavHeader" do %>
+
+    <span class="<%= notification_badge_class %> top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      <%= notification_count %>
+    </span>
+    <span class="visually-hidden"><%= text %></span>
+  <% end %>
+</div>
+<% end %>

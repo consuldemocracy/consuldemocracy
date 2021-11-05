@@ -1,0 +1,30 @@
+<div class="float-right view-mode <%= @view %>">
+  <button class="button" type="button" data-toggle="view_mode">
+    <span class="show-for-sr"><%= t("shared.view_mode.title") %></span>
+  </button>
+
+  <div class="dropdown-pane" id="view_mode" data-dropdown data-hover="true" data-hover-pane="true">
+    <span class="uppercase">
+      <strong>
+        <%= t("shared.view_mode.title") %>
+      </strong>
+    </span>
+    <ul class="no-bullet">
+      <% if debates_default_view? %>
+        <li class="view-card is-active">
+          <%= t("shared.view_mode.cards") %>
+        </li>
+        <li class="view-list">
+          <%= link_to t("shared.view_mode.list"), debates_minimal_view_path %>
+        </li>
+      <% else %>
+        <li class="view-card">
+          <%= link_to t("shared.view_mode.cards"), debates_minimal_view_path %>
+        </li>
+        <li class="view-list is-active">
+          <%= t("shared.view_mode.list") %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="d-flex align-items-center p-3 my-3 rounded shadow-lg" data-magellan>
+  <%= image_tag "help/help_icon_#{image}.png", alt: t("#{i18n_namespace}.icon_alt"), class: "me-3" %>
+    <div class="h1 mb-0"><%= t("#{i18n_namespace}.title") %></div>
+
+    <div class="ms-auto">
+
+    <small><i class="fas fa-info-circle"></i> <%= link_to t("#{i18n_namespace}.help"), "#collapseHelp", 'data-bs-toggle' => "collapse"  %></small>
+  </div>
+  </div>

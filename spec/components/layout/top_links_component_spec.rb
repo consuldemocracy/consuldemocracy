@@ -13,7 +13,7 @@ describe Layout::TopLinksComponent do
     it "does not render when no content block is defined" do
       render_inline Layout::TopLinksComponent.new
 
-      expect(page).not_to be_rendered
+      expect(page).not_to have_css "ul"
     end
   end
 end

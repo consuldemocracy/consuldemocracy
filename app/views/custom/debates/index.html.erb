@@ -1,0 +1,78 @@
+<% provide :title do %><%= t("debates.index.title") %>
+<% end %>
+<% content_for :header_addon do %>
+  <%= render "shared/search_form", search_path: debates_path(page: 1), i18n_namespace: "debates.index.search_form" %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: debates_url %>
+<% end %>
+
+<div class="container-xl">
+  <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
+
+  <div class="row">
+
+    <div id="debates" class="col-12 col-md-8 order-2 order-md-1">
+      <% if @search_terms || @advanced_search_terms %>
+        <div class="alert alert-success" role="alert">
+          <% if @search_terms || @advanced_search_terms %>
+            <div class="h2"><%= t("shared.search_results") %></div>
+            <%= page_entries_info @debates %>
+            <% if !@advanced_search_terms %>
+              <%= sanitize( t("debates.index.search_results", count: @debates.size, search_term: @search_terms) ) %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <nav class="navbar rounded shadow-lg">
+<div class="row">
+<%= render "shared/order_links", i18n_namespace: "debates.index" %>
+</div>
+<div class="row">
+
+<div class="ms-auto">
+      <%= render Shared::AdvancedSearchComponent.new %>
+      <%= render "view_mode" %>
+    </div>
+  </div>
+
+  </nav>
+
+      <% if @debates.any? || current_user.blank? %>
+        <% if debates_default_view? %>
+          <%= render @debates %>
+        <% else %>
+          <% @debates.each do |debate| %>
+            <%= render "debates/debate_minimal", debate: debate %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= empty_recommended_debates_message_text(current_user) %>
+      <% end %>
+      <%= paginate @debates %>
+
+      <% unless @search_terms || @advanced_search_terms %>
+
+      </div>
+
+      <div class="col-12 col-md-4 order-1 order-md-2 ">
+
+        <aside class="margin-bottom">
+          <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
+          <%= render "shared/tag_cloud", taggable: "Debate" %>
+        </aside>
+      </div>
+
+      <div class="collapse" id="collapseHelp" data-magellan-target="section_help">
+        <div class="card card-body">
+          <strong><%= t("debates.index.section_footer.title") %></strong>
+          <%= t("debates.index.section_footer.description") %>
+          <%= t("debates.index.section_footer.help_text_1") %>
+          <%= sanitize(t("debates.index.section_footer.help_text_2", org: link_to(setting["org_name"], new_user_registration_path))) %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>

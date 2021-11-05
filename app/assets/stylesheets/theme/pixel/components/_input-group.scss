@@ -1,0 +1,17 @@
+/**
+ * = Input groups
+ */
+
+.input-group {
+	border-radius: $input-border-radius;
+	transition   : $transition-base;
+
+	.form-control {
+
+		&.is-invalid {
+			border-top-right-radius   : $border-radius;
+			border-bottom-right-radius: $border-radius;
+		}
+	}
+
+}

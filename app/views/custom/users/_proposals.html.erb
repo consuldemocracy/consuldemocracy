@@ -1,0 +1,16 @@
+<table class="margin-top">
+  <thead>
+    <tr>
+      <th scope="col"><%= t("users.show.proposals") %></th>
+      <th scope="col" class="text-center"><%= t("users.show.proposals_status") %></th>
+      <th scope="col" class="text-center"><%= t("users.proposals.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% proposals.each do |proposal| %>
+      <%= render "proposal", proposal: proposal %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate proposals %>

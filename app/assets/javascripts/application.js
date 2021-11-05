@@ -115,6 +115,8 @@
 //= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
+//= require popper
+//= require bootstrap-sprockets
 
 var initialize_modules = function() {
   "use strict";

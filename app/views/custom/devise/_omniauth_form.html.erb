@@ -1,0 +1,18 @@
+
+<% if oauth_logins.any? %>
+
+<div class="fw-bold text-center">  <%= t("omniauth.info.#{action}") %></div>
+<div class="row">
+  <ul class="nav justify-content-center list-unstyled">
+
+
+    <% oauth_logins.each do |login| %>
+
+    <a href="<%= send("user_#{login}_omniauth_authorize_path") %>" role="button" class="btn" aria-label="<%= login.to_s.delete_suffix("_oauth2") %> button" title="<%= t("omniauth.#{login}.#{action}") %>">
+        <i aria-hidden="true" class="fab fa-<%= login.to_s.delete_suffix("_oauth2") %>"></i>
+    </a>
+
+    <% end %>
+    </ul>
+  </div>
+<% end %>

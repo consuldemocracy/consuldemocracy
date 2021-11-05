@@ -1,0 +1,91 @@
+.timeline-one {
+
+    width: 100%;
+
+    .timeline-item {
+        position      : relative;
+        width         : 50%;
+        margin-left   : 50%;
+        padding-bottom: $timeline-spacer-x;
+        padding-left  : $timeline-spacer-x;
+        text-align    : left;
+
+        @include media-breakpoint-down(sm) {
+            width      : 100%;
+            margin-left: 0;
+        }
+
+        img {
+            margin-bottom: $timeline-spacer-y;
+        }
+
+        &:before {
+            content      : "";
+            position     : absolute;
+            top          : 0;
+            left         : 0;
+            width        : 16px;
+            height       : 16px;
+            margin-top   : 0.425rem;
+            margin-left  : -0.5rem;
+            border       : $timeline-border-width solid $timeline-border-color;
+            border-radius: $timeline-circle-radius;
+        }
+
+        &:after {
+            content         : "";
+            position        : absolute;
+            top             : 0;
+            left            : 0;
+            bottom          : -0.1875rem;
+            width           : $timeline-border-width;
+            margin-top      : 1.875rem;
+            margin-left     : -0.0625rem;
+            background-color: $timeline-border-color;
+        }
+
+        &:nth-child(2n+1) {
+            margin-left  : 0;
+            padding-right: $timeline-spacer-x;
+            padding-left : 0;
+            text-align   : right;
+
+            @include media-breakpoint-down(sm) {
+                padding-right: 0;
+                padding-left : $timeline-spacer-x;
+                text-align   : left;
+            }
+
+            &:before,
+            &:after {
+                right: 0;
+                left : auto;
+
+                @include media-breakpoint-down(sm) {
+                    right: auto;
+                    left : 0;
+                }
+            }
+
+            &:before {
+                margin-right: -0.5rem;
+            }
+
+            &:after {
+                margin-right: -0.0625rem;
+            }
+        }
+    }
+
+    &.dark {
+        .timeline-item {
+            &:before {
+                border: $timeline-border-width solid $timeline-border-color-dark;
+            }
+
+            &:after {
+                background-color: $timeline-border-color-dark;
+            }
+        }
+    }
+}

@@ -4,21 +4,22 @@ describe Shared::LinkListComponent do
   it "renders nothing with an empty list" do
     render_inline Shared::LinkListComponent.new
 
-    expect(page).not_to be_rendered
+    expect(page).not_to have_css "ul"
   end
 
   it "returns nothing with a list of nil elements" do
     render_inline Shared::LinkListComponent.new(nil, nil)
 
-    expect(page).not_to be_rendered
+    expect(page).not_to have_css "ul"
   end
 
   it "generates a list of links" do
     render_inline Shared::LinkListComponent.new(
       ["Home", "/"], ["Info", "/info"], class: "menu"
     )
+    list = page.find("body").native.inner_html
 
-    expect(page).to be_rendered with: '<ul class="menu">' + "\n" +
+    expect(list).to eq '<ul class="menu">' + "\n" +
       '<li><a href="/">Home</a></li>' + "\n" +
       '<li><a href="/info">Info</a></li>' + "\n</ul>\n"
   end
@@ -27,8 +28,9 @@ describe Shared::LinkListComponent do
     render_inline Shared::LinkListComponent.new(
       '<a href="/">Home</a>'.html_safe, ["Info", "/info"], class: "menu"
     )
+    list = page.find("body").native.inner_html
 
-    expect(page).to be_rendered with: '<ul class="menu">' + "\n" +
+    expect(list).to eq '<ul class="menu">' + "\n" +
       '<li><a href="/">Home</a></li>' + "\n" +
       '<li><a href="/info">Info</a></li>' + "\n</ul>\n"
   end
