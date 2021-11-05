@@ -7,7 +7,7 @@
   <%= render "shared/canonical", href: debates_url %>
 <% end %>
 
-<div class="container-xl">
+<div class="container-xxl">
   <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
 
   <div class="row">
@@ -24,18 +24,13 @@
           <% end %>
         </div>
       <% end %>
-
-      <nav class="navbar rounded shadow-lg">
-<div class="row">
-<%= render "shared/order_links", i18n_namespace: "debates.index" %>
-</div>
-<div class="row">
-
-<div class="ms-auto">
+      
       <%= render Shared::AdvancedSearchComponent.new %>
-      <%= render "view_mode" %>
-    </div>
-  </div>
+
+      <nav class="navbar shadow-lg">
+
+
+<%= render "shared/order_links", i18n_namespace: "debates.index" %>
 
   </nav>
 
@@ -59,7 +54,10 @@
       <div class="col-12 col-md-4 order-1 order-md-2 ">
 
         <aside class="margin-bottom">
-          <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
+
+          <%= link_to t("debates.index.start_debate"), new_debate_path, class: "btn btn-lg btn-primary my-2 mx-2 w-100" %>
+
+
           <%= render "shared/tag_cloud", taggable: "Debate" %>
         </aside>
       </div>
