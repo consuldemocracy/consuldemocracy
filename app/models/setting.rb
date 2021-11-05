@@ -102,6 +102,7 @@ class Setting < ApplicationRecord
         "feature.graphql_api": true,
         "feature.sdg": true,
         "feature.machine_learning": false,
+        "feature.remove_investments_supports": false,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
         "homepage.widgets.feeds.proposals": true,

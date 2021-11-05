@@ -1230,6 +1230,7 @@ describe "Budget Investments" do
     end
 
     scenario "Remove a support from show view" do
+      Setting["feature.remove_investments_supports"] = true
       investment = create(:budget_investment, budget: budget)
 
       login_as(author)
@@ -1251,6 +1252,7 @@ describe "Budget Investments" do
     end
 
     scenario "Remove a support from index view" do
+      Setting["feature.remove_investments_supports"] = true
       investment = create(:budget_investment, budget: budget)
 
       login_as(author)

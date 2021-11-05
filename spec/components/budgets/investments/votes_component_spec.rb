@@ -25,16 +25,31 @@ describe Budgets::Investments::VotesComponent do
         expect(page).to have_button "Support", disabled: true
       end
 
-      it "shows the button to remove support when users have supported the investment" do
-        user = create(:user)
-        user.up_votes(investment)
-        sign_in(user)
+      describe "button to remove support" do
+        let(:user) { create(:user) }
 
-        render_inline component
+        before do
+          user.up_votes(investment)
+          sign_in(user)
+        end
 
-        expect(page).to have_button count: 1, disabled: :all
-        expect(page).to have_button "Remove your support"
-        expect(page).to have_button "Remove your support to Renovate sidewalks in Main Street"
+        it "is shown when the setting is enabled" do
+          Setting["feature.remove_investments_supports"] = true
+
+          render_inline component
+
+          expect(page).to have_button count: 1, disabled: :all
+          expect(page).to have_button "Remove your support"
+          expect(page).to have_button "Remove your support to Renovate sidewalks in Main Street"
+        end
+
+        it "is not shown when the setting is disabled" do
+          Setting["feature.remove_investments_supports"] = false
+
+          render_inline component
+
+          expect(page).not_to have_button disabled: :all
+        end
       end
     end
   end
