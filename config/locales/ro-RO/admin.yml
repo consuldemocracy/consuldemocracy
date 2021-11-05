@@ -1334,9 +1334,9 @@ ro:
       content: Conținut
       created_at: Creat la
       color_help: Format hexadecimal
-      example_url: "https://consulproject.org"
       show_results_and_stats: "Afișează rezultate și statistici"
       results_and_stats_reminder: "Marcarea acestor căsuțe de selectare a rezultatelor și / sau statisticilor va fi disponibilă publicului și fiecare utilizator le va vedea."
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Geozonă
