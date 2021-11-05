@@ -86,8 +86,6 @@ FactoryBot.define do
       evaluator.voters.each { |voter| create(:vote, votable: proposal, voter: voter) }
       evaluator.followers.each { |follower| create(:follow, followable: proposal, user: follower) }
     end
-
-    factory :retired_proposal, traits: [:retired]
   end
 
   factory :proposal_notification do
