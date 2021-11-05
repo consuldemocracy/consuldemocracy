@@ -515,6 +515,10 @@
   @include breakpoint(medium) {
     min-height: $line-height * 15;
   }
+
+  .with-image > .row {
+    display: flex;
+  }
 }
 
 .budget-investments-list .budget-investment,
@@ -543,6 +547,7 @@
     }
 
     img {
+      height: 100%;
       max-width: 12rem;
     }
   }
