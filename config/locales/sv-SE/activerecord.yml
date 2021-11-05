@@ -160,7 +160,6 @@ sv:
         voting_style: "Slutgiltigt omröstningsformat"
         voting_style_knapsack: "Ryggsäck"
         voting_style_approval: "Godkännande"
-        main_link_url: "Länken leder till (lägg till en länk)"
       budget/translation:
         main_link_text: "Text på länken"
         name: "Namn"
@@ -231,7 +230,6 @@ sv:
         enabled: "Fasen är aktiverad"
         ends_at: "Slutdatum"
         starts_at: "Startdatum"
-        main_link_url: "Länken leder till (lägg till en länk)"
       budget/phase/translation:
         name: "Namn"
         description: "Beskrivning"
