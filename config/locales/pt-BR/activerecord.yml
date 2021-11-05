@@ -160,7 +160,6 @@ pt-BR:
         voting_style: "Estilo final de votação"
         voting_style_knapsack: "Mochila"
         voting_style_approval: "Aprovação"
-        main_link_url: "O link te leva para (adicionar link)"
       budget/translation:
         main_link_text: "Texto no link"
         name: "Nome"
@@ -231,7 +230,6 @@ pt-BR:
         enabled: "Fase habilitada"
         ends_at: "Data final"
         starts_at: "Data de início"
-        main_link_url: "O link te leva para (adicionar link)"
       budget/phase/translation:
         name: "Nome"
         description: "Descrição"
