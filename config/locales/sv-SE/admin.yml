@@ -1365,10 +1365,10 @@ sv:
       content: Innehåll
       created_at: Skapad kl.
       color_help: Hexadecimalt format
-      example_url: "https://consulproject.org"
       show_results_and_stats: "Visa resultat och statistik"
       results_and_stats_reminder: "Genom att markera dessa rutor kommer omröstningens resultat och/eller statistik att visas för alla användare."
       close_modal: Stäng läget
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Geografiska områden
