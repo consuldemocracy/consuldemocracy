@@ -1,3 +1,35 @@
 $global-text-direction: rtl;
 
 @import "application";
+
+.dropdown-menu-start {
+  --bs-position: start;
+}
+
+.dropdown-menu-start[data-bs-popper] {
+  left: auto;
+  right: 0;
+}
+
+.dropdown-menu-end {
+  --bs-position: end;
+}
+
+.dropdown-menu-end[data-bs-popper] {
+  left: 0;
+  right: auto;
+}
+
+.ms-auto {
+  margin-right: auto !important;
+  margin-left: initial !important;
+}
+
+.me-auto {
+  margin-left: auto !important;
+  margin-right: initial !important;
+}
+
+.form-select {
+      background-position: 0em center!important;
+}
