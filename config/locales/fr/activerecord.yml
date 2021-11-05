@@ -160,7 +160,6 @@ fr:
         voting_style: "Style du vote final"
         voting_style_knapsack: "Sac à dos"
         voting_style_approval: "Approbation"
-        main_link_url: "Le lien vous renvoie à (ajouter un lien)"
       budget/translation:
         main_link_text: "Texte sur le lien"
         name: "Nom"
@@ -231,7 +230,6 @@ fr:
         enabled: "Phase active"
         ends_at: "Date de fin"
         starts_at: "Date de commencement"
-        main_link_url: "Le lien vous renvoie à (ajouter un lien)"
       budget/phase/translation:
         name: "Nom"
         description: "Description"
