@@ -3,7 +3,7 @@ module Consul
     config.i18n.default_locale = :ar
     config.i18n.available_locales = [:ar, :en, :fr]
     config.i18n.fallbacks = {
-      "ar"    => "fr",
+      "ar" => "fr",
       "fr" => "en",
       "en" => "fr"
     }
