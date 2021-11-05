@@ -32,14 +32,19 @@ module Globalizable
     private
 
       def required_attribute?(attribute)
-        presence_validators = [ActiveModel::Validations::PresenceValidator,
-          ActiveRecord::Validations::PresenceValidator]
-
-        attribute_validators(attribute).any? { |validator| presence_validators.include? validator }
+        self.class.validators_on(attribute).any? do |validator|
+          validator.kind == :presence && !conditional_validator?(validator)
+        end
       end
 
-      def attribute_validators(attribute)
-        self.class.validators_on(attribute).map(&:class)
+      def conditional_validator?(validator)
+        return false unless validator.options[:unless]
+
+        if validator.options[:unless].to_proc.arity.zero?
+          instance_exec(&validator.options[:unless])
+        else
+          validator.options[:unless].to_proc.call(self)
+        end
       end
 
       def check_translations_number
