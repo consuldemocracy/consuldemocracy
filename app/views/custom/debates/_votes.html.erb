@@ -31,18 +31,15 @@
   <span class="fw-bold">
     <%= t("debates.debate.votes", count: debate.total_votes) %>
   </span>
-  
+
   <% if user_signed_in? && current_user.organization? %>
-    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
-      <p>
+  <div class="alert alert-warning participation-not-allowed" role="alert" style="display:none" aria-hidden="false">
+
         <%= t("votes.organizations") %>
-      </p>
     </div>
   <% elsif user_signed_in? && !debate.votable_by?(current_user) %>
-    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
-      <p>
+  <div class="alert alert-warning participation-not-allowed" role="alert" style="display:none" aria-hidden="false">
         <%= sanitize(t("votes.anonymous", verify_account: link_to_verify_account)) %>
-      </p>
     </div>
   <% elsif !user_signed_in? %>
     <div tabindex="0">
