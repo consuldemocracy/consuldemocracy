@@ -1,0 +1,9 @@
+<% if page.current? %>
+  <li class="page-item active">
+    <a class="page-link"><%= page %></a>
+  </li>
+<% else %>
+  <li>
+    <%= link_to page, url, { remote: remote, class: "page-link", rel: page.next? ? "next" : page.prev? ? "prev" : nil } %>
+  </li>
+<% end %>
