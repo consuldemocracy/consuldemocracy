@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark py-0">
+  <div class="container-xxl d-flex flex-wrap justify-content-center">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <div class="nav-item">
+        <%= link_to root_path, class:"nav-link text-white" do %>
+          <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
+        <% end %>
+    </div>
+    <div class="nav-item ms-auto">
+      <%= render "shared/locale_switcher" %>
+    </div>
+    </div>
+  </div>
+</nav>
+<nav class="navbar navbar-expand navbar-dark bg-dark pt-0 pb-2 pb-sm-0">
+  <div class="container-xxl d-flex flex-wrap justify-content-center">
+    <%= link_to namespaced_root_path do %>
+    <%= image_tag(image_path_for("logo_header.png"), class:"navbar-brand py-0", alt: setting["org_name"]) %>
+  <% end %>
+<div class="h3 text-white py-0"><%= namespaced_header_title %></div>
+  <div class="collapse navbar-collapse justify-content-sm-end justify-content-center gap-3" id="navbarsExample01">
+    <div class="navbar-nav">
+      <%= render "devise/menu/login_buttons" %>
+      <%= render "shared/admin_login_items" %>
+      <%= render "layouts/notification_item" %>
+      <%= render "devise/menu/login_items" %>
+    </div>
+  </div>
+</div>
+</nav>
