@@ -15,6 +15,7 @@
     <div id="debates" class="col-12 col-md-8 order-2 order-md-1">
       <% if @search_terms || @advanced_search_terms %>
         <div class="alert alert-success" role="alert">
+          <%= back_link_to %>
           <% if @search_terms || @advanced_search_terms %>
             <div class="h2"><%= t("shared.search_results") %></div>
             <%= page_entries_info @debates %>
@@ -47,7 +48,6 @@
       <% end %>
       <%= paginate @debates %>
 
-      <% unless @search_terms || @advanced_search_terms %>
 
       </div>
 
@@ -71,6 +71,5 @@
         </div>
       </div>
 
-    <% end %>
   </div>
 </div>
