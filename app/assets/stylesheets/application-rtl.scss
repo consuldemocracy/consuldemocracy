@@ -33,3 +33,11 @@ $global-text-direction: rtl;
 .form-select {
       background-position: 0em center!important;
 }
+
+.rounded-start {
+  border-bottom-right-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+
+}
