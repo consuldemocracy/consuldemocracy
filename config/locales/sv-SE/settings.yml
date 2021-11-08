@@ -132,6 +132,8 @@ sv:
       dashboard:
         notification_emails: "Dashboard för e-postaviseringar"
         notification_emails_description: "Aktivera skickande av dashboard-aviseringar via e-post till förslagslämnare"
+      remove_investments_supports: "Tillåt borttagning av stöd för budgetinvesteringar"
+      remove_investments_supports_description: "Tillåt att användare tar bort stöd för medborgarbudgetinvesteringar under projektvalsfasen."
       sdg: Globala målen
       sdg_description: Aktivera delarna Globala mål för hållbar utveckling i administrationsmenyn och i Globala inställningar.
     remote_census:
