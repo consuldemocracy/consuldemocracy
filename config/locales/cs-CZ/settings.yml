@@ -132,6 +132,8 @@ cs:
       dashboard:
         notification_emails: "E-maily s upozorněním na ovládacím panelu"
         notification_emails_description: "Povolit zasílání e-mailů s upozorněním na ovládací panel autorům návrhu"
+      remove_investments_supports: "Umožnit odstranění podpor pro rozpočtové investice"
+      remove_investments_supports_description: "Umožnit uživatelům odstranit podporu investic do participativních rozpočtů ve fázi výběru projektů."
       sdg: SDG
       sdg_description: Povolit sekce Cílů udržitelného rozvoje v nabídce správy a v globálních nastaveních.
     remote_census:
