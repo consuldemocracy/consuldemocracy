@@ -503,7 +503,6 @@
 
 .debates-list,
 .proposals-list,
-.investment-projects-list,
 .budget-investments-list {
 
   @include breakpoint(medium) {
@@ -511,7 +510,6 @@
   }
 }
 
-.investment-projects-list,
 .budget-investments-list {
 
   @include breakpoint(medium) {
