@@ -29,11 +29,9 @@
                            class: "button hollow medium" %>
           </td>
           <td class="small">
-            <% if budget.poll.present? %>
-              <%= link_to t("admin.physical_final_votes.index.admin_ballots"), admin_poll_booth_assignments_path(budget.poll) %>
-            <% else %>
-              <%= link_to_create_budget_poll(budget) %>
-            <% end %>
+		    <%= link_to t("admin.budgets.index.budget_investments"),
+                           admin_budget_budget_investments_path(budget_id: budget.id),
+                           class: "button hollow medium" %>
           </td>
         </tr>
       <% end %>

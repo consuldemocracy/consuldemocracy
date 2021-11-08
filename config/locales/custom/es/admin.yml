@@ -37,7 +37,7 @@ es:
           budget_votes: "PROYECTOS VOTADOS DEL PRESUPUESTO ACTUAL"
           budget_voters: "VOTOS DEL PRESUPUESTO ACTUAL"
     physical_final_votes:
-      name: Votos finales presenciales
+      name: Proyecto
       booth: Mesa electoral
       total_votes: Votos totales
       created_at: Creado el
@@ -54,7 +54,7 @@ es:
         new: Nuevo
         title: Votos finales presenciales
         delete: "Eliminar"
-        confirm_delete: "Confirmar acción"
+        confirm_delete: ¿Está seguro que desea borrar la votación presencial?
       show:
         total_votes: "Votos totales:"
         created_at: "Creado el "
