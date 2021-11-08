@@ -32,3 +32,5 @@ it:
       user:
         recommendations: "Raccomandazioni"
       help_page: "Guida"
+      remove_investments_supports: "Consenti di rimuovere i supporti agli investimenti del budget"
+      remove_investments_supports_description: "Consenti agli utenti di rimuovere i supporti agli investimenti di budget partecipatori durante la fase selettiva dei progetti."
