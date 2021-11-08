@@ -11,6 +11,9 @@
 
   <body>
     <%= raw setting["html.per_page_code_body"] %>
+    <div class="alert alert-warning my-0 text-center" role="alert">This open source project is currently in development.<a href="https://github.com/galouli/consul" target="_blank" class="alert-link">Visit the Github repository.</a>
+      Contributions are welcome
+    </div>
     <%= render "layouts/header", with_subnavigation: true %>
     <div class="container-xxl min-vh-100">
       <%= render "layouts/flash" %>
