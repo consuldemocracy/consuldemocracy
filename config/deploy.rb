@@ -13,7 +13,7 @@ set :application, "consul"
 set :deploy_to, deploysecret(:deploy_to)
 set :ssh_options, port: deploysecret(:ssh_port)
 
-set :repo_url, "https://github.com/CONSUL-SAGA/consul.git"
+set :repo_url, "https://github.com/Ayuntamiento-Puerto-de-la-Cruz/consul.git"
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
