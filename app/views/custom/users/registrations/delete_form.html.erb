@@ -93,7 +93,7 @@
                html: { method: :delete }) do |f| %>
     <%= render "shared/errors", resource: resource %>
 
-    <div data-alert class="callout alert">
+    <div data-alert class="alert alert-danger">
       <%= t("devise_views.users.registrations.delete_form.info") %>
     </div>
 
