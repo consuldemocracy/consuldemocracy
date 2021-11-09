@@ -514,10 +514,10 @@
 
   @include breakpoint(medium) {
     min-height: $line-height * 15;
-  }
 
-  .with-image > .row {
-    display: flex;
+    .with-image > .row {
+      display: flex;
+    }
   }
 }
 
