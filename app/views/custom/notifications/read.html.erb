@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row pt-5 pt-md-0">
+    <div class="col-12 col-lg-4 mb-3 mb-lg-0">
+      <div class="card border-gray-300 p-2">
+        <div class="card-header bg-white border-0 text-center d-flex flex-row flex-lg-column align-items-center justify-content-center px-1 px-lg-4">
+          <span class="h5 my-0 my-lg-3 me-3 me-lg-0">  <%= t("notifications.index.title") %></span>
+
+      </div>
+      <div class="card-body p-2 d-none d-lg-block">
+        <div class="list-group dashboard-menu list-group-sm">
+
+          <%= link_to account_path, class:"d-flex list-group-item border-0 list-group-item-action", rel: "nofollow", title: t("shared.go_to_page") + t("layouts.header.my_account_link") do %>
+          <%= t("layouts.header.my_account_link")%>
+          <span class="icon icon-xs ms-auto">
+            <span class="fas fa-chevron-right"></span>
+          </span>
+          <% end %>
+
+          <%= link_to user_path(current_user), class:"d-flex list-group-item border-0 list-group-item-action", rel: "nofollow", title: t("shared.go_to_page") + t("layouts.header.my_activity_link") do %>
+          <%= t("layouts.header.my_activity_link")%>
+          <span class="icon icon-xs ms-auto">
+            <span class="fas fa-chevron-right"></span>
+          </span>
+        <% end %>
+
+        <%= link_to "#", class: "d-flex list-group-item border-0 list-group-item-action active" do %>
+        <%= t("notifications.index.title") %>
+        <span class="icon icon-xs ms-auto">
+          <span class="fas fa-chevron-right"></span>
+        </span>
+      <% end %>
+
+      <%= link_to edit_user_registration_path, class: "d-flex list-group-item border-0 list-group-item-action" do %>
+      <%= t("account.show.change_credentials_link")%>
+      <span class="icon icon-xs ms-auto">
+        <span class="fas fa-chevron-right"></span>
+      </span>
+    <% end %>
+
+    <%= link_to users_registrations_delete_form_path, class: "d-flex list-group-item border-0 list-group-item-action" do %>
+    <%= t("account.show.erase_account_link")%>
+    <span class="icon icon-xs ms-auto">
+      <span class="fas fa-chevron-right"></span>
+    </span>
+  <% end %>
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-12 d-lg-none">
+<div class="card bg-white border-gray-300 mb-4 mb-lg-5">
+<div class="card-body">
+<div class="row align-items-center">
+  <div class="col-10 d-flex flex-wrap">
+    <%= link_to account_path, class:"list-group-item list-group-item-action border-0 text-center me-2", rel: "nofollow", title: t("shared.go_to_page") + t("layouts.header.my_account_link") do %>
+<%= t("account.show.title") %>
+    <% end %>
+
+    <%= link_to user_path(current_user), class:"list-group-item list-group-item-action border-0 text-center me-2", rel: "nofollow", title: t("shared.go_to_page") + t("layouts.header.my_activity_link") do %>
+    <%= t("layouts.header.my_activity_link")%>
+  <% end %>
+
+  <%= link_to "#", class: "list-group-item list-group-item-action border-0 text-center me-2 active" do %>
+  <%= t("notifications.index.title") %>
+
+<% end %>
+
+<%= link_to edit_user_registration_path, class: "list-group-item list-group-item-action border-0 text-center me-2" do %>
+<%= t("account.show.change_credentials_link")%>
+<% end %>
+
+<%= link_to users_registrations_delete_form_path, class: "list-group-item list-group-item-action border-0 text-center me-2" do %>
+<%= t("account.show.erase_account_link")%>
+
+<% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12 col-lg-8">
+<div class="row">
+<div class="col-lg-12">
+<div class="card card-body bg-white border-gray-300 mb-4">
+
+  <h2 class="h5 mb-4">
+    <%= t("notifications.index.title") %>
+</h2>
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <%= link_to t("notifications.index.unread"), notifications_path, class:"nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to t("notifications.index.read"), read_notifications_path, class:"nav-link active" %>
+  </li>
+</ul>
+
+<ul class="no-bullet clear notifications-list">
+  <%= render @notifications %>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
