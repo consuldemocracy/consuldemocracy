@@ -28,75 +28,68 @@ end
 
 section "Creating Budgets" do
   Budget.create!(
-    name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year - 1}",
-    name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year - 1}",
-    currency_symbol: I18n.t("seeds.budgets.currency"),
-    phase: "finished",
-    published: true
+    {
+      currency_symbol: I18n.t("seeds.budgets.currency"),
+      phase: "finished",
+      published: true
+    }.merge(
+      random_locales_attributes(name: -> { "#{I18n.t("seeds.budgets.budget")} #{Date.current.year - 1}" })
+    )
   )
 
   Budget.create!(
-    name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year}",
-    name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year}",
-    currency_symbol: I18n.t("seeds.budgets.currency"),
-    phase: "accepting",
-    published: true
+    {
+      currency_symbol: I18n.t("seeds.budgets.currency"),
+      phase: "accepting",
+      published: true
+    }.merge(
+      random_locales_attributes(name: -> { "#{I18n.t("seeds.budgets.budget")} #{Date.current.year}" })
+    )
   )
 
   Budget.find_each do |budget|
     budget.phases.each do |phase|
-      random_locales.map do |locale|
-        Globalize.with_locale(locale) do
-          phase.name = I18n.t("budgets.phase.#{phase.kind}")
-          phase.description = "Description for locale #{locale}"
-          phase.summary = "Summary for locale #{locale}"
-          phase.save!
-        end
-      end
+      phase.update!(random_locales_attributes(
+        name: -> { I18n.t("budgets.phase.#{phase.kind}") },
+        summary: -> { I18n.t("seeds.budgets.phases.summary", language: I18n.t("i18n.language.name")) },
+        description: -> { I18n.t("seeds.budgets.phases.description", language: I18n.t("i18n.language.name")) }
+      ))
     end
   end
 
   Budget.all.each do |budget|
     city_group = budget.groups.create!(
-      name_en: I18n.t("seeds.budgets.groups.all_city", locale: :en),
-      name_es: I18n.t("seeds.budgets.groups.all_city", locale: :es)
+      random_locales_attributes(name: -> { I18n.t("seeds.budgets.groups.all_city") })
     )
 
     city_group.headings.create!(
-      name_en: I18n.t("seeds.budgets.groups.all_city", locale: :en),
-      name_es: I18n.t("seeds.budgets.groups.all_city", locale: :es),
-      price: 1000000,
-      population: 1000000,
-      latitude: "40.416775",
-      longitude: "-3.703790"
+      {
+        price: 1000000,
+        population: 1000000,
+        latitude: "40.416775",
+        longitude: "-3.703790"
+      }.merge(
+        random_locales_attributes(name: -> { I18n.t("seeds.budgets.groups.all_city") })
+      )
     )
 
     districts_group = budget.groups.create!(
-      name_en: I18n.t("seeds.budgets.groups.districts", locale: :en),
-      name_es: I18n.t("seeds.budgets.groups.districts", locale: :es)
+      random_locales_attributes(name: -> { I18n.t("seeds.budgets.groups.districts") })
     )
 
     [
-      {
-        name_en: I18n.t("seeds.geozones.north_district", locale: :en),
-        name_es: I18n.t("seeds.geozones.north_district", locale: :es),
+      random_locales_attributes(name: -> { I18n.t("seeds.geozones.north_district") }).merge(
         population: 350000
-      },
-      {
-        name_en: I18n.t("seeds.geozones.west_district", locale: :en),
-        name_es: I18n.t("seeds.geozones.west_district", locale: :es),
-        population: 300000,
-      },
-      {
-        name_en: I18n.t("seeds.geozones.east_district", locale: :en),
-        name_es: I18n.t("seeds.geozones.east_district", locale: :es),
-        population: 200000,
-      },
-      {
-        name_en: I18n.t("seeds.geozones.central_district", locale: :en),
-        name_es: I18n.t("seeds.geozones.central_district", locale: :es),
-        population: 150000,
-      }
+      ),
+      random_locales_attributes(name: -> { I18n.t("seeds.geozones.west_district") }).merge(
+        population: 300000
+      ),
+      random_locales_attributes(name: -> { I18n.t("seeds.geozones.east_district") }).merge(
+        population: 200000
+      ),
+      random_locales_attributes(name: -> { I18n.t("seeds.geozones.central_district") }).merge(
+        population: 150000
+      )
     ].each do |heading_params|
       districts_group.headings.create!(heading_params.merge(
         price: rand(5..10) * 100000,

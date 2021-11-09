@@ -21,6 +21,16 @@ def random_locales
   [I18n.default_locale, *(I18n.available_locales & %i[en es]), *I18n.available_locales.sample(4)].uniq.take(5)
 end
 
+def random_locales_attributes(**attribute_names_with_values)
+  random_locales.each_with_object({}) do |locale, attributes|
+    I18n.with_locale(locale) do
+      attribute_names_with_values.each do |attribute_name, value_proc|
+        attributes["#{attribute_name}_#{locale.to_s.underscore}"] = value_proc.call
+      end
+    end
+  end
+end
+
 require_relative "dev_seeds/settings"
 require_relative "dev_seeds/geozones"
 require_relative "dev_seeds/users"
