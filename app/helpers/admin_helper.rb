@@ -6,6 +6,8 @@ module AdminHelper
   def namespaced_header_title
     if namespace == "moderation/budgets"
       t("moderation.header.title")
+    elsif namespace == "management"
+      t("management.dashboard.index.title")
     else
       t("#{namespace}.header.title")
     end

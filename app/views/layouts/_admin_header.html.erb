@@ -34,15 +34,17 @@
         <% end %>
       </div>
 
-      <div id="responsive_menu">
-        <div class="top-bar-right">
-          <ul class="menu" data-responsive-menu="medium-dropdown">
-            <%= render "shared/admin_login_items" %>
-            <%= render "layouts/notification_item" %>
-            <%= render "devise/menu/login_items" %>
-          </ul>
+      <% if show_admin_menu?(current_user) || namespace != "management" %>
+        <div id="responsive_menu">
+          <div class="top-bar-right">
+            <ul class="menu" data-responsive-menu="medium-dropdown">
+              <%= render "shared/admin_login_items", current_user: current_user %>
+              <%= render "layouts/notification_item", current_user: current_user %>
+              <%= render "devise/menu/login_items", current_user: current_user %>
+            </ul>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </header>
