@@ -1,0 +1,33 @@
+<% if valid_access? %>
+  <% if valid_filters.any? %>
+    <ul class="nav nav-pills">
+      <% valid_filters.each do |filter| %>
+        <% if current_filter == filter %>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <%= t("users.show.filters.#{filter}", count: count(filter)) %></a>
+
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to t("users.show.filters.#{filter}", count: count(filter)), current_path_with_query_params(filter: filter, page: 1), class:"nav-link" %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <% if current_filter == "follows" %>
+      <%= render "users/following", user: user, follows: follows.group_by(&:followable_type) %>
+    <% else %>
+      <%= render_user_partial current_filter %>
+    <% end %>
+  <% else %>
+    <div class="alert alert-primary" role="alert">
+      <%= t("users.show.no_activity") %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="alert alert-danger" role="alert">
+    <%= t("users.show.private_activity") %>
+  </div>
+<% end %>
