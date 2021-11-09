@@ -13,9 +13,13 @@
       </div>
       <div class="card-body p-2 d-none d-lg-block">
         <div class="list-group dashboard-menu list-group-sm">
-          <a class="d-flex list-group-item border-0 list-group-item-action active">
-            <%= t("account.show.title") %>
-          </a>
+          <%= link_to "#", class:"d-flex list-group-item border-0 list-group-item-action active", rel: "nofollow", title: t("shared.go_to_page") + t("layouts.header.my_account_link") do %>
+          <%= t("layouts.header.my_account_link")%>
+          <span class="icon icon-xs ms-auto">
+            <span class="fas fa-chevron-right"></span>
+          </span>
+          <% end %>
+
           <%= link_to user_path(current_user), class:"d-flex list-group-item border-0 list-group-item-action", rel: "nofollow", title: t("shared.go_to_page") + t("layouts.header.my_activity_link") do %>
           <%= t("layouts.header.my_activity_link")%>
           <span class="icon icon-xs ms-auto">
@@ -53,11 +57,14 @@
 <div class="card-body">
 <div class="row align-items-center">
   <div class="col-10 d-flex flex-wrap">
-    <a class="list-group-item list-group-item-action border-0 text-center me-2 active"><%= t("account.show.title") %>
-    </a>
+    <%= link_to "#", class:"list-group-item list-group-item-action border-0 text-center me-2 active", rel: "nofollow", title: t("shared.go_to_page") + t("layouts.header.my_account_link") do %>
+    <%= t("layouts.header.my_account_link")%>
+    <% end %>
+
     <%= link_to user_path(current_user), class:"list-group-item list-group-item-action border-0 text-center me-2", rel: "nofollow", title: t("shared.go_to_page") + t("layouts.header.my_activity_link") do %>
     <%= t("layouts.header.my_activity_link")%>
   <% end %>
+
   <%= link_to notifications_path, class: "list-group-item list-group-item-action border-0 text-center me-2" do %>
   <%= t("notifications.index.title") %>
 
@@ -166,7 +173,7 @@
 </div>
 <div class="card card-body bg-white border-gray-300 mb-4">
   <h2 class="h5 mb-4"><%= t("account.show.user_permission_title") %></h2>
-  <div class="row align-items-center">
+  <div class="row align-items-center justify-content-center">
     <%= t("account.show.user_permission_info") %>
 
     <ul class="list-unstyled">
