@@ -47,7 +47,7 @@ section "Creating Budgets" do
     budget.phases.each do |phase|
       random_locales.map do |locale|
         Globalize.with_locale(locale) do
-          phase.name = "Name for locale #{locale}"
+          phase.name = I18n.t("budgets.phase.#{phase.kind}")
           phase.description = "Description for locale #{locale}"
           phase.summary = "Summary for locale #{locale}"
           phase.save!
