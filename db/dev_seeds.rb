@@ -18,7 +18,7 @@ def log(msg)
 end
 
 def random_locales
-  [I18n.default_locale, *I18n.available_locales.sample(4)].uniq
+  [I18n.default_locale, *(I18n.available_locales & %i[en es]), *I18n.available_locales.sample(4)].uniq.take(5)
 end
 
 require_relative "dev_seeds/settings"
