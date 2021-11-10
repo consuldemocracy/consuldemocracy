@@ -16,6 +16,12 @@ nn:
           confirmation_code: "Bekreftelseskode"
         email:
           recipient: "E-post"
+      verification/letter:
+        email: "E-post"
+      verification/residence:
+        date_of_birth: "Fødselsdato"
+        document_type: "Dokumenttype"
+        postal_code: "Postnummer"
       officing/residence:
         document_type: "Dokumenttype"
         document_number: "Dokumentnummer (inkludert bokstaver)"
