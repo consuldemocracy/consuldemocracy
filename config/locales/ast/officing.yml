@@ -14,6 +14,18 @@ ast:
         no_polls: No tienes permiso para recuento final en ninguna votación reciente
         select_poll: Selecciona votación
         add_results: Añadir resultados
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nome
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Fecha de creación
+      new:
+        booth: Urna
+        select_booth: Escoyer urna
+        submit: Guardar
+      show:
+        created_at: Fecha de creación
+        author: Autor
     results:
       flash:
         create: "Datos guardados"
