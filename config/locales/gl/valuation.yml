@@ -56,6 +56,8 @@ gl:
         preview: Vista previa de investimento
       edit:
         dossier: Informe
+        price: "Investimento (%{currency})"
+        price_first_year: "Investimento durante o primeiro ano (%{currency})<small>(opcional, dato non público)</small>"
         feasibility: Viabilidade
         valuation_finished_alert: "Tes a certeza de que queres marcar este informe como completo? Se o fas, non se pode desfacer esta opción."
         not_feasible_alert: "Enviaráselle un correo inmediatamente á autoría do proxecto co informe de inviabilidade."
