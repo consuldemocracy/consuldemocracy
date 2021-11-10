@@ -83,6 +83,9 @@ ast:
         button: Atopar
         placeholder: Buscar debates...
         title: Atopar
+      search_results:
+        one: " que contien <strong>'%{search_term}'</strong>"
+        other: " que contien <strong>'%{search_term}'</strong>"
       start_debate: Empezar un debate
       title: Alderique
       section_header:
@@ -139,6 +142,11 @@ ast:
       firefox: Firefox
       ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
       ie_title: Esta web no está optimizada para tu navegador
+    dashboard:
+      proposal_header:
+        published: Publicáu
+        draft: Borrador
+        retired: Retirada
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
@@ -150,6 +158,7 @@ ast:
       participation_title: Participación
       privacy: Política de Privacidad
     header:
+      administration_menu: Menú
       administration: Alministración
       collaborative_legislation: Procesos legislativos
       debates: Alderique
@@ -207,11 +216,16 @@ ast:
       sign_in: Entra con Twitter
       sign_up: Regístrate con Twitter
       name: Twitter
+    info:
+      sign_in: "Entra con:"
+      sign_up: "Regístrate con:"
     or_fill: "O rellena el siguiente formulario:"
   proposals:
     create:
       form:
         submit_button: Crear propuesta
+    share:
+      dashboard: Ver más información
     edit:
       editing: Editar propuesta
       form:
@@ -258,6 +272,9 @@ ast:
         button: Atopar
         placeholder: Buscar propuestas...
         title: Atopar
+      search_results:
+        one: " que contien <strong>'%{search_term}'</strong>"
+        other: " que contien <strong>'%{search_term}'</strong>"
       select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
       title: Propuestes
@@ -316,6 +333,38 @@ ast:
     update:
       form:
         submit_button: Guardar Cambeos
+  dashboard:
+    menu:
+      polls: Votaciones
+    progress:
+      supports: Sofitos
+    index:
+      edit_proposal_link: Editar propuesta
+      retire: Retirar propuesta
+    recommended_actions:
+      pending_title: Pindios
+      done_title: Realizadas
+    community:
+      debates: Alderique
+      comments: Comentarios
+    polls:
+      index:
+        title: Votaciones
+        create: Crear votación
+      new:
+        title: Nueva votación
+        submit: Crear votación
+      edit:
+        submit: Actualizar votación
+    poster:
+      options:
+        preview: Previsualizar
+    mailing:
+      mailing_options:
+        preview: Previsualizar
+    mailer:
+      forward:
+        support_button: Apoyar esta propuesta
   polls:
     all: "Toes"
     no_dates: "sin fecha asignada"
@@ -339,6 +388,7 @@ ast:
     show:
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar en el debate."
       comments_tab: Comentarios
+      cant_answer_verify: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica la to cuenta"
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
@@ -360,6 +410,7 @@ ast:
       back: "Volver a mi actividad"
   shared:
     edit: "Editar propuesta"
+    filter: "Filtru"
     save: "Guardar"
     delete: "Borrar"
     "yes": "Sí"
@@ -415,6 +466,7 @@ ast:
       districts: "Distritos"
       districts_list: "Listado de distritos"
       categories: "Categoríes"
+    target_blank: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
     unflag: Deshacer denuncia
     outline:
@@ -444,6 +496,11 @@ ast:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
+    login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
+    login_to_continue: "Precises %{signin} o %{signup} pa siguir."
+    signin: "accesu"
+    signup: "rexistrate"
+    verify_account: "verifica la to cuenta"
     direct_messages:
       new:
         direct_messages_bloqued: "Este usuario ha decidido no recibir mensajes privados"
@@ -457,6 +514,7 @@ ast:
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Este propuesta ha sido eliminada
       proposals: Propuestes
+      proposals_status: Estáu
       debates: Alderique
       comments: Comentarios
       actions: Acciones
@@ -476,6 +534,10 @@ ast:
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       send_private_message: "Enviar un mensaje privado"
+    proposals:
+      draft: Borrador
+      published: Publicáu
+      actions: Acciones
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
@@ -530,3 +592,7 @@ ast:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       title: '¿Cómo puedo comentar este documento?'
+  links:
+    form:
+      delete_button: Borrar
+      cancel_button: Cancelar
