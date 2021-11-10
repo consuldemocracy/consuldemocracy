@@ -60,14 +60,18 @@ so:
     budgets:
       actions:
         edit: "Wax ka bedel Misaaniyada"
+        preview: "Hor udhaac"
       index:
         title: Misaaniyadaha kaqayb qadashada
         new_link: Samee misaaniyad cusub
         filter: Sifeeyee
         filters:
+          all: Dhamaan
           open: Furan
           finished: Dhamaday
         budget_investments: Mareynta Mashariicda
+        table_budget_type: "Noca"
+        table_draft: "Qabyo Qorid"
         table_name: Magac
         table_phase: Weeji
         no_budgets: "Majiiraan misaniyado."
@@ -86,6 +90,8 @@ so:
       destroy:
         success_notice: Misaaniyada sii guul ah ayaa loo tirtiray
         unable_notice: Ma jebin kartid miisaaniyad maalgelinta la xidhiidha
+      show:
+        add_heading: "Kudar ciwaan"
       winners:
         calculate: Xisaabi kugulestayasha Malgelinta
         calculated: Xisaabinta kugulestayashu waxay qadaneysaa daqiiqado.
@@ -95,6 +101,8 @@ so:
       form:
         edit: "Wax ka bedel kooxda"
         submit: "Bad baadi kooxda"
+      index:
+        new_button: "Kudar koox cusub"
     budget_headings:
       form:
         population_info: "Miisaaniyadda Meelaynta dadweynaha ayaa loo adeegsadaa ujeedooyinka Istatistikada dhammaadka Miisaaniyadda si ay u muujiyaan mid walba oo ka wakiil ah aag leh dadweynaha boqolkiiba inta codbixinta. Booska waa mid ikhtiyaari ah si aad uga bixi kartid madhan haddii uusan dalban."
@@ -125,6 +133,8 @@ so:
           unfeasible: An surtgak ahayn
           min_total_supports: Tageerayasha ugu yar
           winners: Guleystayasha
+          one_filter: "Seferaha hadda la isticmaalo\n<b>%{filter}</b>"
+          two_filters: "Seferaha hadda la isticmaalo<b>%{filter}%{advanced_filters}</em>"
         buttons:
           filter: Sifeeyee
         download_current_selection: "Laso deg dorashada had"
@@ -153,6 +163,8 @@ so:
           visible_to_valuators: Muuji qiimeeyayaasha
           author_username: Magaca qoragu isticmaalo
           incompatible: Aan la isku hallayn karin
+          price: Qime
+          author: Qoraa
         cannot_calculate_winners: Miisaaniyaddu waa inay ku sii jirtaa marxaladda "Mashruucyada Codsiga", "Dib u Eegista Codadka" ama "Miisaaniyadda Dhameystiran" si loo xisaabiyo mashaariicda guusha
         see_results: "Arag Natijada"
       show:
@@ -192,12 +204,17 @@ so:
         tags_placeholder: "Qoor Tagyada ad rabto inaad kasocdo qooska (,)"
         undefined: Aan la garanayn
       search_unfeasible: Raadinta aan macquul ahayn
+    budgets_wizard:
+      creation_timeline:
+        budget: Misaniyaad
+        groups: Kooxo
     milestones:
       index:
         table_id: "Aqoonsi"
         table_title: "Ciwaan"
         table_description: "Sharaxaad"
         table_publication_date: "Taariikhda daabacaadda"
+        table_status: Xaladda
         table_actions: "Tilaabooyin"
         no_milestones: "An lahayn yool qeexaan"
         image: "Sawiir"
@@ -243,15 +260,64 @@ so:
         table_title: "Ciwaan"
     comments:
       index:
+        id: "Aqoonsi"
+        content: "Mawduuc"
+        author: "Qoraa"
+        commentable_type: "Noca"
+        title: Falooyin Qarsoon
+        table_link: "Isku xirka"
+    hidden_comments:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        hidden_debate: Dood qarsoodi ah
+        hidden_proposal: Soojedin qarsoon
         title: Falooyin Qarsoon
     dashboard:
       index:
         back: Dib ugu labo ilaa %{org}
         title: Mamul
         description: Kuso dhowow gudiga Mamulka %{org}.
+      actions:
+        index:
+          active: 'Haa'
+          inactive: 'Maya'
+          action_title: Ciwaan
+          action_type: Noca
+          action_active: Firfircoon
+          order: Dalbo
+          default:
+            email: Email
+            polls: Doorashooyinka
+        form:
+          submit_button: Badbaado
+      administrator_tasks:
+        index:
+          filter: Sifeeyee
+          filters:
+            pending: Joojin
+        form:
+          proposal: Sojeedin
     debates:
       index:
+        id: Aqoonsi
+        author: Qoraa
         title: Doodo qarsoodi ah
+    hidden_debates:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        title: Doodo qarsoodi ah
+    documents:
+      index:
+        new_link: "Kudaar Dukumeenti cusub"
+        title: "Dukumentiyo"
     hidden_users:
       index:
         filter: Sifeeyee
@@ -300,6 +366,7 @@ so:
           create: New process
           title: Nidaamka Sharciga
           filters:
+            active: Firfircoon
             all: Dhamaan
         new:
           back: Labasho
@@ -314,6 +381,8 @@ so:
           title: Geedisocoodka
           comments: Faalo
           status: Status
+          start_date: Tariikhda biloowga
+          end_date: Tariikhada dhamadka
           status_open: Furan
           status_closed: Xiraan
           status_planned: Qorsheysaan
@@ -348,6 +417,7 @@ so:
           submit_button: Badbaadi beddelka
           warning: Waad Tafatirtay qoraalka, ha ilaawin inaad gujiso badbadinta si joogto ah u keydiso isbeddelada.
         form:
+          title: 'Tafa tirida<span class="strong">%{draft_version_title}</span>katimid geedi socodka<span class="strong">%{process_title}</span>'
           launch_text_editor: Biaabida Taratiridaa Qoraalka
           close_text_editor: Tafatirida Qoralka hoose
           use_markdown: Isticmaal lambarka si aad u sameyso qoraalka
@@ -416,6 +486,12 @@ so:
         add: Kudar
       search:
         title: "Mamulayasha isticmaala raadinta"
+    sdg_managers:
+      index:
+        no_sdg_managers: Majiraan isticmaalayaal.
+    sdg/managers:
+      sdg/manager:
+        add: Kudar
     menu:
       activity: Waxqabadka Xeer ilaliyaha
       admin: Mamulka Warqada qiimo
@@ -473,6 +549,8 @@ so:
       title_booths: Goobaha codeynta
       legislation: Xeerarka wada shaqeynta
       users: Isticmaalayaal
+      debates: "Doodo"
+      comments: "Faalo"
     administrators:
       index:
         title: Mamulayal
@@ -581,6 +659,10 @@ so:
         title: "Soojeedinta khafiifinta ogaysiisyada"
         description: "Wuxuu soo ururiyaa dhammaan ogeysiinta soo jeedinta ee loogu talagalay isticmaale ahaan hal farriin, si looga fogaado emails aad u badan."
         preview_detail: "Isticmaalayaasha ayaa kaliya ogaan doona ogeysiisyada soo jeedinta ay soo socdaan"
+      comment:
+        title: "Faalo"
+      reply:
+        title: "Jawab"
     emails_download:
       index:
         title: Emaylada Sodejinta
@@ -747,6 +829,8 @@ so:
         table_poll: "Dorasho"
       edit:
         title: "Tafatiir Suasha"
+      new:
+        title_proposal: "Saame sual"
       answers:
         images:
           add_image: "Sawiir kudar"
@@ -795,6 +879,7 @@ so:
       index:
         title: "Dib u Xisaabin"
         no_recounts: "Majiraan wax dib loo tirin karo"
+        total_system: "Codadka oo tomaatiga ah"
         table_booth_name: "Labadaba"
         table_total_recount: "Wadarta tirinta (sarkaal)"
         table_system_count: "Codadka oo tomaatiga ah"
@@ -862,6 +947,9 @@ so:
           pending: Joojin
           rejected: Diiday
           verified: Hubin
+        hidden_count:
+          one: Waxa sido kale<strong>hal urur</strong> an lahayn istimalayal qarsoon.
+          other: Waxa sido kale<strong%{count}>hal ururo</strong> an lahayn istimalayal qarsoon.%.
         name: Magac
         email: Email
         phone_number: Telefoon
@@ -882,6 +970,8 @@ so:
         title: Sojeedino
         id: Aqoonsi
         author: Qoraa
+        select: Dorasho
+        selected: Ladoortay
         milestones: Dhib meel loga baxo oo an lahayn dhibato wayn
     hidden_proposals:
       index:
@@ -892,11 +982,21 @@ so:
           without_confirmed_hide: Joojin
         title: Soojedino qarsoon
         no_hidden_proposals: Majiraan soojedino qarsoon.
+    hidden_proposal_notifications:
+      index:
+        filter: Sifeeyee
+        filters:
+          all: Dhamaan
+          with_confirmed_hide: Xaqiijiyey
+          without_confirmed_hide: Joojin
+        title: Ogaysiisaka Qarsodiga ah
+        no_hidden_proposals: Majiraan Ogaysiisyo Qarsoon.
     settings:
       flash:
         updated: Cusboneysii Qimaha
       index:
         title: Dejinta Qaybinta
+        general: Dejinta Qaybinta
         update_setting: Cusboneysiin
         feature_flags: Soobandhigiidyo / Muqaalo
         features:
@@ -921,6 +1021,7 @@ so:
           poll_questions: "Radinta Sualaha Dorashada"
           proposals: "Raadinta soo jeedinta adoo cinwaanka, koodhka, sharaxaadda ama su'aasha"
           users: "Raadi isticmaal adoo magacaaga ama email"
+        search: "Raadin"
       search_results: "Raadi natiijada"
       no_search_results: "Natijooyin lama helin."
       actions: Tilaabooyin
@@ -934,6 +1035,7 @@ so:
       author: Qoraa
       content: Mawduuc
       created_at: Abuuray
+      show_results_and_stats: "Muuji natijooyinka iyo xoogta"
     geozones:
       index:
         title: Dusha sare
@@ -969,6 +1071,7 @@ so:
       show:
         created_at: Abuuray
         author: Qoraa
+        users: Isticmaalayaal
         verified:
           one: "Waxa jira %{count} saxiixya ah oo saxa"
           other: "Waxa jira %{count} tiro saxiixya ah oo saxa"
@@ -998,10 +1101,21 @@ so:
           visits: Boqashooyinka
           votes: Wadarka codadka
         budgets_title: Misaaniyada kaqayb qadashada
+        participatory_budgets: Misaaniyadaha kaqayb qadashada
         direct_messages: Fariimo toosa
         proposal_notifications: Ogaysiis soo jedin
         incomplete_verifications: Caddaynta aan dhammeystirnayn
         polls: Doorashooyinka
+      graph:
+        debate_created: Doodo
+        visit: Boqashooyinka
+      budget_balloting:
+        vote_count: Codaad
+        participant_count: Kaqayb galayaal
+      budget_supporting:
+        users: Isticmaalayaal
+        vote_count: Codaad
+        participant_count: Kaqayb galayaal
       direct_messages:
         title: Fariimo toosa
         total: Wadarta guud
@@ -1021,6 +1135,10 @@ so:
           question_name: Sual
           origin_web: Websadka ka qaybgalayasha
           origin_total: Wadarta kaqayb galayasha
+      sdg:
+        debates: "Doodo"
+        polls: "Doorashooyinka"
+        proposals: "Sojeedino"
     tags:
       create: Abuur moowduuc
       index:
@@ -1030,6 +1148,7 @@ so:
         help: "Marka uu isticmaalo soojeedin, mowduucyada soo socda ayaa lagu soo jeedinayaa inay yihiin calaamadaha caadiga ah."
     users:
       columns:
+        id: Aqoonsi
         name: Magac
         email: Email
         document_number: Lambarka dukumeentiga
@@ -1038,6 +1157,9 @@ so:
       index:
         title: Istimale
         no_users: Majiraan isticmaalayaal.
+        filter: Sifeeyee
+        filters:
+          active: Firfircoon
       search:
         placeholder: Raadi isticmalaha Email ahaa, magac ama dukumeenti lambar
     verifications:
@@ -1138,3 +1260,15 @@ so:
         submit_header: Bad badi madaxa
         card_title: Tafatiir madaxa
         submit_card: Bad baadi karka
+    audits:
+      id: "Aqoonsi"
+      actions: "Tilaabooyin"
+    local_census_records:
+      index:
+        document_type: Qaybaha dukumentiga
+        document_number: Lambarka dukumeentiga
+        date_of_birth: Tarikhda Dhalashada
+    machine_learning:
+      related_content: "Mawduuca laxiriray"
+      tab_help: "Caawin"
+      tags: "Tagyada"
