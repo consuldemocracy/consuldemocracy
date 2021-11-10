@@ -37,7 +37,7 @@ module Attachable
     if filesystem_storage?
       File.open(cached_attachment) { |file| self.attachment = file }
     else
-      self.attachment = URI.open(cached_attachment)
+      self.attachment = URI.parse(cached_attachment).open
     end
   end
 

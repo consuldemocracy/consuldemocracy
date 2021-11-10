@@ -88,7 +88,7 @@ namespace :active_storage do
       source_file = if paperclip_storage == :filesystem
                       paperclip_attachment.path
                     else
-                      URI.open(paperclip_attachment.url, &:read)
+                      URI.parse(paperclip_attachment.url).open.read
                     end
 
       logger.info "Copying #{paperclip_attachment.url} to active storage"
