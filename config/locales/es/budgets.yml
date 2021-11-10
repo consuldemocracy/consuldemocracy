@@ -69,6 +69,7 @@ es:
       milestones: Seguimiento de proyectos
     investments:
       form:
+        title: "Crear proyecto de gasto"
         tag_category_label: "Categorías"
         tags_instructions: "Etiqueta este proyecto. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas
@@ -108,6 +109,11 @@ es:
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
           create: "Crear proyecto de gasto"
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
+        filters:
+          feasible: "Viable"
+          selected: "Seleccionados"
+          unfeasible: "No viables"
+          winners: "Ganadores"
         orders:
           random: Aleatorios
           confidence_score: Mejor valorados
@@ -155,6 +161,10 @@ es:
           one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
           other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
         support: "Apoyar"
+    investments_list:
+      investment:
+        price: "Coste"
+        supports: "Apoyos"
     show:
       see_results: Ver resultados
     results:
