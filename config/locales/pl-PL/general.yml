@@ -38,6 +38,10 @@ pl:
         few: "%{count} odpowiedzi"
         many: "%{count} odpowiedzi"
         other: "%{count} odpowiedzi"
+      responses_show:
+        zero: Brak odpowiedzi
+      responses_collapse:
+        zero: Brak odpowiedzi
       user_deleted: Użytkownik usunięty
       votes:
         zero: Brak głosów
@@ -107,6 +111,11 @@ pl:
         button: Szukaj
         placeholder: Szukaj debat...
         title: Szukaj
+      search_results:
+        one: " zawierające termin <strong>%{search_term}</strong>"
+        few: " zawierające termin <strong>%{search_term}</strong>"
+        many: " zawierające termin <strong>%{search_term}</strong>"
+        other: " zawierające termin <strong>%{search_term}</strong>"
       start_debate: Rozpocznij debatę
       title: Debaty
       section_header:
@@ -156,6 +165,7 @@ pl:
     direct_message: prywatna wiadomość
     error: błąd
     errors: błędy
+    not_saved: "uniemożliwił zapisanie tego %{resource}. <br>Sprawdź zaznaczone pola, aby dowiedzieć się, jak je poprawić:"
     policy: Polityka prywatności
     proposal: Wniosek
     proposal_notification: "Powiadomienie"
@@ -178,6 +188,13 @@ pl:
       firefox: Firefox
       ie: Wykryliśmy, że przeglądasz za pomocą Internet Explorera. Aby uzyskać lepsze wrażenia, zalecamy użycie% %{firefox} lub %{chrome}.
       ie_title: Ta strona internetowa nie jest zoptymalizowana pod kątem Twojej przeglądarki
+    dashboard:
+      proposal_header:
+        published: Opublikowany
+        draft: Projekt
+      proposal_totals:
+        supports:
+          zero: Brak poparcia
     footer:
       accessibility: Ułatwienia dostępu
       conditions: Regulamin
@@ -263,12 +280,16 @@ pl:
       sign_in: Zaloguj się przez Twitter
       sign_up: Zarejestruj się przez Twitter
       name: Twitter
+    info:
+      sign_in: "Zaloguj się przez:"
+      sign_up: "Zarejestruj się przez:"
     or_fill: "Lub wypełnij formularz:"
   proposals:
     create:
       form:
         submit_button: Stwórz pomysł
     share:
+      dashboard: Zobacz więcej informacji
       message: "Poparłem/am wniosek %{title} w %{handle}. Dołącz do mnie i także go poprzyj!"
     edit:
       editing: Edytuj wniosek
@@ -328,6 +349,11 @@ pl:
         button: Szukaj
         placeholder: Szukaj wniosków...
         title: Szukaj
+      search_results:
+        one: " zawierające termin <strong>%{search_term}</strong>"
+        few: " zawierające termin <strong>%{search_term}</strong>"
+        many: " zawierające termin <strong>%{search_term}</strong>"
+        other: " zawierające termin <strong>%{search_term}</strong>"
       select_order_long: "Przeglądasz wnioski według:"
       start_proposal: Zaproponuj swój pomysł
       title: Zrealizowane projekty
@@ -406,6 +432,48 @@ pl:
     update:
       form:
         submit_button: Zapisz zmiany
+  dashboard:
+    menu:
+      progress: Postęp
+      community: Społeczność
+      polls: Ankiety
+      related_content: Powiązana zawartość
+    progress:
+      supports: Wsparcie
+    index:
+      edit_proposal_link: Edytuj wniosek
+      retire: Wycofaj wniosek
+    recommended_actions:
+      pending_title: Oczekujące
+      done_title: Gotowe
+    community:
+      access_community: Uzyskaj dostęp do społeczności
+      participants: Uczestnicy
+      debates: Debaty
+      comments: Komentarze
+    polls:
+      index:
+        title: Ankiety
+        create: Utwórz sondaż
+        additiontal_information: Dodatkowe informacje
+      new:
+        title: Nowy sondaż
+        submit: Utwórz sondaż
+      edit:
+        submit: Aktualizuj sondę
+      form:
+        add_question: Dodaj pytanie
+      question_fields:
+        add_answer: Dodaj odpowiedź
+    poster:
+      options:
+        preview: Podgląd
+    mailing:
+      mailing_options:
+        preview: Podgląd
+    mailer:
+      forward:
+        support_button: Poprzyj ten wniosek
   polls:
     all: "Wszystkie"
     no_dates: "brak przypisanej daty"
@@ -439,6 +507,7 @@ pl:
       back: Wróć do głosowania
       cant_answer_not_logged_in: "%{signin} lub %{signup} aby wziąć udział."
       comments_tab: Komentarze
+      cant_answer_verify: "Aby odpowiedzieć, musisz %{verify_link}."
       verify_link: "zweryfikuj swoje konto"
       cant_answer_expired: "Ta sonda została zakończona."
       cant_answer_wrong_geozone: "To pytanie nie jest dostępne w Twojej strefie geograficznej."
@@ -476,6 +545,7 @@ pl:
       back: "Wróć do mojej aktywności"
   shared:
     edit: "Edytuj"
+    filter: "Filtruj"
     save: "Zapisz"
     delete: "Usuń"
     "yes": "Tak"
@@ -540,6 +610,7 @@ pl:
       districts: "Podział dzielnicy"
       districts_list: "Lista dzielnic"
       categories: "Kategorie"
+    target_blank: " (link otwiera się w nowym oknie)"
     you_are_in: "Jesteś w"
     unflag: Odznacz
     unfollow_entity: "Nie obserwuj %{entity}"
@@ -559,6 +630,9 @@ pl:
       title: Rekomendacje
       see_more: Zobacz więcej rekomendacji
       hide: Ukryj rekomendacje
+    translations:
+      remove_language: Usuń język
+      add_language: Dodaj język
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -582,6 +656,11 @@ pl:
     manage:
       all: "Nie masz uprawnień do wykonania akcji %{action} odnośnie %{subject}."
   users:
+    login_to_comment: "%{signin} lub %{signup} by zostawić komentarz."
+    login_to_continue: "Aby kontynuować, musisz %{signin} lub %{signup}."
+    signin: "zaloguj się"
+    signup: "zarejestruj się"
+    verify_account: "zweryfikuj swoje konto"
     direct_messages:
       new:
         direct_messages_bloqued: "Ten użytkownik postanowił nie otrzymywać wiadomości bezpośrednich"
@@ -596,6 +675,7 @@ pl:
       deleted_proposal: Ta propozycja została usunięta
       deleted_budget_investment: Ten projekt inwestycyjny został usunięty
       proposals: Zrealizowane projekty
+      proposals_status: Status
       debates: Debaty
       budget_investments: Inwestycje budżetowe
       comments: Komentarze
@@ -633,7 +713,10 @@ pl:
       delete_alert: "Czy na pewno chcesz usunąć swój projekt inwestycyjny? Tego działania nie można cofnąć"
     proposals:
       retired: "Wniosek wycofany"
+      draft: Projekt
+      published: Opublikowany
       see: "Zobacz wniosek"
+      actions: Akcje
   votes:
     agree: Zgadzam się
     anonymous: Zbyt wiele anonimowych głosów, by móc głosować %{verify_account}.
@@ -719,3 +802,7 @@ pl:
       alt: Zaznacz tekst, który chcesz skomentować i naciśnij przycisk z ołówkiem.
       text: Aby skomentować ten dokument musisz się %{sign_in} lub %{sign_up}. Zaznacz tekst, który chcesz skomentować i naciśnij przycisk z ołówkiem.
       title: Jak mogę skomentować ten dokument?
+  links:
+    form:
+      delete_button: Usuń
+      cancel_button: Anuluj
