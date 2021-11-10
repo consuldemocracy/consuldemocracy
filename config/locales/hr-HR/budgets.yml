@@ -60,6 +60,7 @@ hr:
       milestones: Ključni ciljevi
     investments:
       form:
+        title: "Stvori investicijski budžet"
         tag_category_label: "Kategorije"
         tags_instructions: "Označi ovaj prijedlog. Možeš birati iz predloženih kategorija ili dodati svoju"
         tags_label: Oznake
@@ -82,6 +83,11 @@ hr:
           other: " sadrži termine <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Moj glas
+          voted_info:
+            knapsack:
+              one: "<strong>Glasovali ste za prijedlog s iznosom %{amount_spent}</strong>"
+              few: "<strong>Vi ste glasali %{count} za prijedloga s iznosom od %{amount_spent}</strong>"
+              other: "<strong>Vi ste glasali %{count} za prijedloga s iznosom od %{amount_spent}</strong>"
           change_vote_info:
             knapsack: "Možete %{link} u bilo koje vrijeme do zatvaranja ove faze. Nema potrebe utrošiti sav dostupan novac."
           change_vote_link: "izmijeni svoj glas"
@@ -92,6 +98,11 @@ hr:
           verified_only: "Kako bi se stvorio nova investcijski budžet %{verify}."
           create: "Stvori investicijski budžet"
           not_logged_in: "%{sign_in} ili %{sign_up} da biste izradili novo proračunsko ulaganje."
+        filters:
+          feasible: "Izvodljivo"
+          selected: "Odabrano"
+          unfeasible: "Nevažeč"
+          winners: "Pobjednici"
         orders:
           random: nasumično
           confidence_score: najbolje ocijenjeni
@@ -141,6 +152,10 @@ hr:
           few: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
           other: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
         support: "Potpora"
+    investments_list:
+      investment:
+        price: "Cijena"
+        supports: "Potpore"
     show:
       see_results: Pogledaj rezultate
     results:
