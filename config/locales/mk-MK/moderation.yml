@@ -78,6 +78,28 @@ mk:
         headers:
           moderate: Модерирај
           budget_investment: Буџетски инвестиции
+        ignore_flags: Означи како прегледано
+        orders:
+          created_at: Најново
+          flags: Најобележан
+        title: Буџетски инвестиции
     proposal_notifications:
       index:
+        block_authors: Блокирај ги авторите
+        confirm: Дали сте сигурни?
+        filter: Филтрирај
+        filters:
+          all: Сите
+          pending_review: Во очекување на извештај
+          ignored: Означи како прегледано
+        headers:
+          moderate: Модерирај
+          proposal_notification: Предлог нотификација
         hide: Скриј предлози
+        ignore_flags: Означи како прегледано
+        orders:
+          created_at: Најново
+        title: Предлог нотификации
+    users:
+      index:
+        title: Блокирај корисници
