@@ -55,6 +55,36 @@ cs:
         few: "Uživatelé"
         many: "Uživatelé"
         other: "Uživatelé"
+      moderator:
+        one: "Moderátor"
+        few: "Moderátoři"
+        many: "Moderátoři"
+        other: "Moderátoři"
+      administrator:
+        one: "Administrator"
+        few: "Administrátoři"
+        many: "Administrátoři"
+        other: "Administrátoři"
+      valuator:
+        one: "Hodnotitel"
+        few: "Hodnotitel"
+        many: "Hodnotitel"
+        other: "Hodnotitel"
+      valuator_group:
+        one: "Skupina hodnotitelů"
+        few: "Skupiny hodnotitelů"
+        many: "Skupiny hodnotitelů"
+        other: "Skupiny hodnotitelů"
+      manager:
+        one: "Manažer"
+        few: "Manažeři"
+        many: "Manažeři"
+        other: "Manažeři"
+      newsletter:
+        one: "Informační bulletin"
+        few: "Informační bulletin"
+        many: "Informační bulletin"
+        other: "Informační bulletin"
       vote:
         one: "Hlas"
         few: "Hlasů"
@@ -100,6 +130,21 @@ cs:
         few: "záměry"
         many: "záměrů"
         other: "záměry"
+      site_customization/page:
+        one: Vlastní stránka
+        few: Vlastní stránky
+        many: Vlastní stránky
+        other: Vlastní stránky
+      site_customization/image:
+        one: Vlastní obrázek
+        few: Vlastní obrázky
+        many: Vlastní obrázky
+        other: Vlastní obrázky
+      site_customization/content_block:
+        one: Vlastní blok obsahu
+        few: Vlastní bloky obsahu
+        many: Vlastní bloky obsahu
+        other: Vlastní bloky obsahu
       document:
         one: Dokument
         few: Dokumenty
