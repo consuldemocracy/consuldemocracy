@@ -16,6 +16,20 @@ it:
         no_polls: Non sei incaricato degli scrutini finali in alcuna votazione attiva
         select_poll: Seleziona votazione
         add_results: Aggiungere i risultati
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nominativo
+        ballot_sheet_author: Autore
+        ballot_sheet_creation_date: Data di creazione
+      new:
+        booth: Urna
+        select_booth: Selezionare il seggio
+        csv_data: Dati CSV
+        submit: Salva
+      show:
+        created_at: Data di creazione
+        author: Autore
+        data: Dati CSV
     results:
       flash:
         create: "Risultati salvati"
