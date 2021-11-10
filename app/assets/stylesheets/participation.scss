@@ -503,7 +503,6 @@
 
 .debates-list,
 .proposals-list,
-.investment-projects-list,
 .budget-investments-list {
 
   @include breakpoint(medium) {
@@ -511,11 +510,14 @@
   }
 }
 
-.investment-projects-list,
 .budget-investments-list {
 
   @include breakpoint(medium) {
     min-height: $line-height * 15;
+
+    .with-image > .row {
+      display: flex;
+    }
   }
 }
 
@@ -545,6 +547,7 @@
     }
 
     img {
+      height: 100%;
       max-width: 12rem;
     }
   }

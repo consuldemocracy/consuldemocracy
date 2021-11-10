@@ -11,11 +11,15 @@
           <div class="callout success">
             <%= t("budgets.investments.votes.already_supported") %>
           </div>
-          <%= button_to t("budgets.investments.votes.remove_support"), remove_support_path,
-              class: "button button-remove-support expanded",
-              method: "delete",
-              remote: true,
-              "aria-label": remove_support_aria_label %>
+          <% if feature?(:remove_investments_supports) %>
+            <%= button_to remove_support_path,
+                class: "button button-remove-support expanded",
+                method: "delete",
+                remote: true,
+                "aria-label": remove_support_aria_label do %>
+              <%= t("budgets.investments.votes.remove_support") %>
+            <% end %>
+          <% end %>
         </div>
       <% else %>
         <%= button_to t("budgets.investments.votes.support"), support_path,

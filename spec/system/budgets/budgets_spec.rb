@@ -404,6 +404,7 @@ describe "Budgets" do
     end
 
     scenario "Show supports only if the support has not been removed" do
+      Setting["feature.remove_investments_supports"] = true
       voter = create(:user, :level_two)
       budget = create(:budget, phase: "selecting")
       investment = create(:budget_investment, :selected, budget: budget)
