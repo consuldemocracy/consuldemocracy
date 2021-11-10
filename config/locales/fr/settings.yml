@@ -60,6 +60,10 @@ fr:
     meta_keywords_description: 'Mots-clés <meta name="keywords">, utilisés pour améliorer le SEO'
     min_age_to_participate: Âge minimum de participation
     min_age_to_participate_description: "Les utilisateurs au dessus de cet âge peuvent participer à tous les opérations où un compte d'utilisateur vérifié est nécéssaire"
+    proposals:
+      poll_short_title: Votes
+      email_short_title: Email
+      poster_short_title: Affiche
     analytics_url: "URL d'Analyse"
     proposal_notification_minimum_interval_in_days: "Intervalle minimal (en jours) pour les auteurs de propositions visant à envoyer de nouvelles notifications de proposition"
     proposal_notification_minimum_interval_in_days_description: "Le nombre de jours où utilisateur peut envoyer une notification pour tous les supporters de leur proposition"
@@ -87,6 +91,7 @@ fr:
         recommendations_on_proposals_description: "Affiche les recommandations aux utilisateurs sur la page de débats en fonction des mots-clés des éléments suivis"
       community: "Communauté sur les propositions et les investissements"
       community_description: "Autorise à la section communauté l'accès aux propositions et aux projets d'investissement des budgets participatifs"
+      machine_learning: "IA / Apprentissage automatique"
       map: "Localisation des propositions et des projets d'investissement"
       map_description: "Permet la géolocalisation des propositions et des projets d’investissement"
       allow_images: "Permettre d'importer et d'afficher des images"
@@ -99,6 +104,7 @@ fr:
       public_stats_description: "Afficher les stats publiques dans le panneau d’Administration"
       help_page: "Page d'aide"
       help_page_description: 'Affiche un menu d’aide qui contient une page avec une section d’informations sur chaque fonctionnalité activée. Des menus et des pages personnalisées peuvent également être créées dans les sections de « Blocs de contenu personnalisé » et de « Pages personnalisées »'
+      sdg: ODD
     map:
       latitude: "Latitude"
       latitude_description: "Latitude pour afficher la position de la carte"
@@ -111,9 +117,11 @@ fr:
       debates_description: "L'espace de débat des citoyens s’adresse à tous ceux qui peuvent présenter des problèmes qui les concernent et sur lesquels ils veulent partager leurs points de vue avec les d’autres"
       proposals: "Propositions"
       polls: "Votes"
+      polls_description: "Les sondages des citoyens sont un mécanisme participatif par lequel les citoyens ayant le droit de vote peuvent prendre des décisions directes"
       budgets: "Budget participatif"
       legislation: "Législation"
     html:
+      per_page_code_head: "Code à inclure dans chaque page (<head>)"
       per_page_code_head_description: "Ce code apparaitra à l'intérieur de l'étiquette <head>. Utile pour les scripts personalisés, analytiques..."
       per_page_code_body: "Code à inclure dans chaque page (<body>)"
       per_page_code_body_description: "Ce code apparaitra à l'intérieur de l'étiquette <body>. Utile pour les scripts personalisés, analytiques..."
