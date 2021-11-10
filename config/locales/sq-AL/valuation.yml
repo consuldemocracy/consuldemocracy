@@ -54,6 +54,8 @@ sq:
         assigned_valuators: Vlerësuesit e caktuar
       edit:
         dossier: Dosje
+        price: "Cmimi %{currency}"
+        price_first_year: "Kostoja gjatë vitit të parë %{currency}<small> (opsionale, të dhënat jo publike) </ small>"
         feasibility: Fizibiliteti
         valuation_finished_alert: "Jeni i sigurt se doni ta shënoni këtë raport si të përfunduar? Nëse e bëni këtë, nuk mund të modifikohet më."
         not_feasible_alert: "Një email do të dërgohet menjëherë tek autori i projektit me raportin e parealizuar."
