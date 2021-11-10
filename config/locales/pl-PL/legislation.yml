@@ -125,3 +125,19 @@ pl:
       form:
         tags_label: "Kategorie"
       not_verified: "W przypadku propozycji głosowania %{verify_account}."
+      process_title: Wspólny proces legislacyjny
+    summary:
+      title: "Podsumowanie"
+      votes:
+        zero: "%{count} głosów"
+      debate_phase: "Faza debaty"
+      proposals_phase: "Etap składania wniosków"
+      allegations_phase: "Faza Komentarzy"
+      comments:
+        zero: "Brak komentarzy"
+        one: "%{count} komentarz"
+        few: "%{count} komentarzy"
+        many: "%{count} komentarzy"
+        other: "%{count} komentarzy"
+      top_comments:
+        zero: "Brak komentarzy"
