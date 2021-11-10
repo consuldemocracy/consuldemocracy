@@ -16,6 +16,18 @@ so:
         no_polls: Adigu maahan inaad dib u soo celisid ugu dambeyn ra'yi ururin kasta oo firfircoon
         select_poll: Xuulo doorshada
         add_results: Ku dar Natijada
+    poll_budgets:
+      index:
+        ballot_sheet_name: Magac
+        ballot_sheet_author: Qoraa
+        ballot_sheet_creation_date: Tarikh Abuurid
+      new:
+        booth: Labadaba
+        select_booth: Dooro labadaba
+        submit: Badbaado
+      show:
+        created_at: Tarikh Abuurid
+        author: Qoraa
     results:
       flash:
         create: "Kaydi natijada"
