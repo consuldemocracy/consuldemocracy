@@ -54,6 +54,8 @@ so:
         assigned_valuators: Qimeyayasha lo xilsaray
       edit:
         dossier: Koob
+        price: "Qimaha%{currency}"
+        price_first_year: "Kharashadka sanadka kowaad%{currency}<small>ikhtiyaari ah, xog aan dadweynaha ahayn</small>"
         feasibility: Suurta galnimada
         valuation_finished_alert: "Mahubta inaad rabto inaad warbixintaan kadhigtiid mid dhamaystiran Haddii aad samayso, mar dambe dib looma beddeli karo."
         not_feasible_alert: "Email ayaa isla markiiba loo diri doonaa qoraaga mashruuca iyadoo la soo gudbin doono warbixinta suurtagalnimada."
