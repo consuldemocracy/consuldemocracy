@@ -687,6 +687,7 @@ ro:
       back: "Mergi înapoi la conținutul meu"
   shared:
     edit: "Editează"
+    filter: "Filtru"
     save: "Salvează"
     delete: "Șterge"
     "yes": "Da"
@@ -988,3 +989,10 @@ ro:
     create:
       enqueue_remote_translation: Traducerea a fost solicitată corect.
     button: Tradu pagina
+  tags:
+    list:
+      filter:
+        more:
+          one: "Încă o etichetă"
+          few: "Încă %{count} etichete"
+          other: "Încă %{count} etichete"
