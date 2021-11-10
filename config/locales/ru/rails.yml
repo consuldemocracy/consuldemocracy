@@ -171,6 +171,15 @@ ru:
       submit: Сохранить %{model}
       update: Обновить %{model}
   number:
+    currency:
+      format:
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    format:
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
     human:
       decimal_units:
         units:
@@ -180,6 +189,7 @@ ru:
           thousand: Тысяча
           trillion: Триллион
       format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:
