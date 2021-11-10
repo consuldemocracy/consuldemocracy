@@ -1,4 +1,5 @@
 
+
 > :warning: This repository is a **fork** of Consul Project https://docs.consulproject.org
 > It has been customized and may not be suitable for your installation.:warning:
 >
@@ -11,7 +12,7 @@ This file is also available in [Arabic(عربي)](https://github.com/galouli/con
 >:heart: :heart: First we would like to thank the Consul Project https://consulproject.org/en/ for providing such a amazing open source platform, without it this project would have never been possible. Thank you to [the development team](https://github.com/consul/consul/graphs/contributors) and contributors for proving an updated code and **very useful documentation**:heart: :heart:
 
 This is the open source code repository of the website GALOULI https://galouli.com/, an open source Algerian citizen participation platform.
-It is a fork of the [Consul Project](https://github.com/consul/consul) with some Front End changes in order to improve the User Interface especially on mobile using [Bootstrap 5](https://getbootstrap.com/)
+It is a fork of the [Consul Project](https://github.com/consul/consul) with some Front End changes in order to improve the User Interface on mobile and Right-to-Left using [Bootstrap V5](https://getbootstrap.com/)
 
 The goals of the project are as follow :
 >#####  Open Source code
@@ -22,31 +23,41 @@ Infrastructure cost such as hosting and domain name are funded exclusively with 
 The current cost are covered until October 2023
 
 > #####  Multilanguage (In progress)
-The user interface and users published content will be available for translation in the main language : Arabic (default), Berber, French, English.
-> ##### Open source management/moderation (To be done)
+The user interface and users published content will be available for translation in the main languages : Arabic (default), Berber, French, English.
+> ##### Open source management/moderation (To do)
 
-> ##### Open source management/moderation (To be done)
+> ##### Open source management/moderation (To do)
 
-> ##### Privacy and data protection (To be done)
+> ##### Privacy and data protection (To do)
 Currently the project do not provide any protection and all data such as emails can be collected by admin users.
 The goal is develop a system to encrypt all users data and move the infrastructure to a privacy and censorship resistant provider.  
 We currently recommend the user who wish to protect their privacy to use VPN and single use emails
 
-#### Open source management/moderation ( to be done )
+> #### Open source management/moderation ( to do )
 
+# Installation
+[Prerequisites](https://docs.consulproject.org/docs/english-documentation/introduction/local_installation/prerequisites)
+[Local Installation](https://docs.consulproject.org/docs/english-documentation/introduction/local_installation)
+Replace https://github.com/consul/consul.git with https://github.com/galouli/consul.git
 
-## Contributions
+Please note that we upgraded "autoprefixer-rails" to  "~> 10.3.3.0" due to Bootstrap requirement
+To update your gemfile.lock
 
+    bundle update autoprefixer-rails
+    bundle install
+
+# Contributions
 
 ### Development
-Ruby on rails
-Bootstrap
-HTML/CSS
+[Ruby on rails](https://rubyonrails.org/)
+[Zurb Foundation](https://get.foundation/)
+[Bootstrap V5](https://getbootstrap.com/)
+[Bootstrap Template Pixel](https://demo.themesberg.com/pixel-bootstrap-5-ui-kit/)
 
 ### Graphic Design
-
+To do
 ### Management/ Moderation
-
+To do
 ### Translations
 Galouli will be available in 4 languages: Arabic ( default), Berber (Tifinagh alphabet), French and English
 Galouli being a fork on Consul we use the Crowdin original project to manage the translations
