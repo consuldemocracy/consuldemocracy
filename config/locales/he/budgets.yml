@@ -5,6 +5,12 @@ he:
         title: בחר/י אפשרות
         no_balloted_group_yet: "טרם הצבעת לקבוצה הזאת, גש להצביע!"
         remove: הסרת הצבעה
+        voted:
+          one: "הצבעת להשקעה <span>אחת</span>."
+          two: "הצבעת ל- <span>%{count}</span>השקעות."
+          many: "הצבעת ל- <span>%{count}</span>השקעות."
+          other: "הצבעת ל- <span>%{count}</span>השקעות."
+        voted_info: "ההצבעה שלך מאושרת!"
         voted_info_2: "אבל אתה יכול לשנות את ההצבעה שלך בכל עת עד שלב זה יסגר."
         zero: טרם הצבעת לפרויקט כלשהו.
       reasons_for_not_balloting:
@@ -12,7 +18,9 @@ he:
         not_verified: רק משתמשים שרישומם אומת יכולים להצביע על ההצעות; %{verify_account}.
         organization: ארגונים אינם רשאים להצביע
         not_selected: לא ניתן לתמוך/להשקיע בפרויקטים שלא נבחרו
+        not_enough_money: "כבר הקצית את התקציב הזמין.<br><small>זכור כי %{change_ballot} בכל עת</small>"
         no_ballots_allowed: שלב הבחירה נסגר
+        different_heading_assigned: "כבר הצבעת בנושאים אחרים: %{heading_link}"
         change_ballot: שנה את הצבעתך
         casted_offline: כבר השתתפת במצב לא מקוון
     groups:
@@ -46,6 +54,7 @@ he:
       milestones: אבני דרך
     investments:
       form:
+        title: "יצירת תקציב להשקעה"
         tag_category_label: "תחומים"
         tags_instructions: "תייג/י את ההצעה הזו והנושאים בהם היא עוסקת. ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך"
         tags_label: תגיות
@@ -62,14 +71,32 @@ he:
           button: חיפוש
           placeholder: חיפוש פרויקטים להשקעה...
           title: חיפוש
+        search_results:
+          one: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+          two: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+          many: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+          other: " המכיל את המונחים <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: ההצבעה שלי
+          voted_info:
+            knapsack:
+              one: "<strong>הצבעת להצעה אחת בעלות של %{amount_spent}</strong>"
+              two: "<strong>הצבעתם להצעות %{count} בעלויות של %{amount_spent}</strong>"
+              many: "<strong>הצבעתם להצעות %{count} בעלויות של %{amount_spent}</strong>"
+              other: "<strong>הצבעתם להצעות %{count} בעלויות של %{amount_spent}</strong>"
+          change_vote_link: "שנה את הצבעתך"
+          different_heading_assigned: "ישנן הצבעות פתוחות בנושאים אחרים: %{heading_link}"
           change_ballot: "אם שיניתם את דעתכם, באפשרותכם להסיר את ההצבעותכם ב- %{check_ballot} ולהתחיל שוב."
           check_ballot_link: "בדוק ואשר את ההצבעה שלי"
           zero: לא נעשתה הצבעה עבור פרויקט השקעה בקבוצה זו.
           verified_only: "ליצירת פרויקט השקעה חדש %{verify}."
           create: "יצירת תקציב להשקעה"
           not_logged_in: "כדי ליצור תקציב השקעה חדש עליך ל- %{sign_in} או ל - %{sign_up}."
+        filters:
+          feasible: "בר ביצוע"
+          selected: "נבחר"
+          unfeasible: "אינו בר ביצוע"
+          winners: "זוכים"
         orders:
           random: אקראי
           confidence_score: מדורג הגבוה ביותר
@@ -80,6 +107,9 @@ he:
         author_deleted: משתמש/ת זה/ו נמחק/ה
         price_explanation: ראה הסבר תמחור
         unfeasibility_explanation: הסבר לאי ישימות
+        code: "קוד פרויקט ההשקעה: <strong>%{code}</strong>"
+        location: "מיקום: <strong>%{location}</strong>"
+        organization_name: "מוצע בשם: <strong>%{name}</strong>"
         share: שתף
         title: פרויקט להשקעה
         supports: לחיצה לתמיכה
@@ -88,7 +118,10 @@ he:
         comments_tab: הערות
         milestones_tab: אבני דרך
         author: מחבר/ת
+        project_unfeasible: "פרויקט השקעה זה <strong> סומן כבלתי ניתן ליישום </ strong> ולא יתקדם לשלב ההצבעה."
+        project_selected: "פרויקט ההשקעה זה<strong> נבחר </ strong> לעבור לשלב ההצבעה."
         project_winner: "הפרויקט שנבחר"
+        project_not_selected: "פרויקט זה<strong> לא נבחר </ strong> לעבור לשלב ההצבעה."
         see_price_explanation: ראה הסבר תמחור
       wrong_price_format: נא לרשום סכום בשקלים שלמים
       investment:
@@ -103,6 +136,7 @@ he:
           other: "%{count} תומכים"
       header:
         check_ballot: "בדוק ואשר את ההצבעות שלי"
+        different_heading_assigned: "ישנן הצבעות פתוחות בנושאים אחרים: %{heading_link}"
         change_ballot: "אם את משנה את דעתך, באפשרותך להסיר את ההצבעות שלכם ב- %{check_ballot} ולהתחיל שוב."
         check_ballot_link: "בדוק ואשר את ההצבעה שלי"
         price: "לנושא זה יש תקציב של"
@@ -114,6 +148,10 @@ he:
           many: "ניתן לתמוך בהשקעות ברובע %{count}. אחרי לחיצה על המשך, לא ניתן לתמוך ברובע אחר. האם את/ה בטוח/ה?"
           other: "ניתן לתמוך בהשקעות ברובע %{count}. אחרי לחיצה על המשך, לא ניתן לתמוך ברובע אחר. האם את/ה בטוח/ה?"
         support: "בעד"
+    investments_list:
+      investment:
+        price: "מחיר"
+        supports: "לחיצה לתמיכה"
     show:
       see_results: ראו תוצאות
     results:
