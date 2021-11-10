@@ -62,14 +62,18 @@ es:
     budgets:
       actions:
         edit: "Editar presupuesto"
+        preview: "Previsualizar"
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
         filter: Filtro
         filters:
+          all: Todas
           open: Abiertos
           finished: Terminados
         budget_investments: Gestionar proyectos de gasto
+        table_budget_type: "Tipo"
+        table_draft: "Borrador"
         table_name: Nombre
         table_phase: Fase
         admin_ballots: Gestionar urnas
@@ -100,6 +104,8 @@ es:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
         unable_notice_polls: No se puede eliminar un presupuesto con una votación asociada
+      show:
+        add_heading: "Añadir partida"
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
@@ -124,6 +130,8 @@ es:
         edit: "Editar grupo"
         max_votable_headings_info: "Solo se aplica en la fase de apoyos. Durante la votación final un usuario solo puede votar en una partida por grupo."
         submit: "Guardar grupo"
+      index:
+        new_button: "Añadir nuevo grupo"
     budget_headings:
       no_headings: "No hay partidas."
       create:
@@ -244,6 +252,11 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
       search_unfeasible: Buscar inviables
+    budgets_wizard:
+      creation_timeline:
+        budget: Presupuesto participativo
+        groups: Grupos
+        headings: Partidas
     milestones:
       index:
         table_id: "ID"
@@ -598,6 +611,12 @@ es:
         add: Añadir como gestor
       search:
         title: "Gestores: Búsqueda de usuarios"
+    sdg_managers:
+      index:
+        no_sdg_managers: No hay usuarios.
+    sdg/managers:
+      sdg/manager:
+        add: Añadir como gestor
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
@@ -1222,6 +1241,7 @@ es:
           poll_questions: "Buscar preguntas"
           proposals: "Buscar propuestas por título, código, descripción o pregunta"
           users: "Buscar usuario por nombre o email"
+        search: "Buscar"
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
@@ -1363,6 +1383,10 @@ es:
           question_name: Pregunta
           origin_web: Participantes en Web
           origin_total: Participantes Totales
+      sdg:
+        debates: "Debates"
+        polls: "Votaciones"
+        proposals: "Propuestas ciudadanas"
     tags:
       create: Crear tema
       index:
@@ -1372,6 +1396,7 @@ es:
         help: "Cuando un usuario crea una propuesta se le sugieren como etiquetas por defecto los siguientes temas."
     users:
       columns:
+        id: ID
         erase_reason: Razón de la baja
         name: Nombre
         email: Email
@@ -1541,3 +1566,7 @@ es:
           created: Registros creados
         local_census_records:
           no_records_found: No se han encontrado registros.
+    machine_learning:
+      related_content: "Contenido relacionado"
+      tab_help: "Ayuda"
+      tags: "Etiquetas"
