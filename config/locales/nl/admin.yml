@@ -62,14 +62,18 @@ nl:
     budgets:
       actions:
         edit: "Edit budget"
+        preview: "Preview"
       index:
         title: Participatory budgets
         new_link: Create new budget
         filter: Filter
         filters:
+          all: All
           open: Open
           finished: Finished
         budget_investments: Zie begrotingsvoorstellen
+        table_budget_type: "Type"
+        table_draft: "Concept"
         table_name: Name
         table_phase: Phase
         admin_ballots: Stembiljetten
@@ -89,6 +93,8 @@ nl:
       destroy:
         success_notice: Begroting verwijderd
         unable_notice: U kunt een begroting met voorstellen niet verwijderen
+      show:
+        add_heading: "Voeg kop toe"
       winners:
         calculate: Bereken gewonnen bestemmingen
         calculated: Bestemmingen worden berekend, kan even duren.
@@ -112,6 +118,8 @@ nl:
         create: "Nieuwe groep"
         edit: "Bewerk groep"
         submit: "Sla op"
+      index:
+        new_button: "Nieuwe groep toevoegen"
     budget_headings:
       no_headings: "Er zijn geen rubrieken."
       create:
@@ -157,6 +165,8 @@ nl:
           min_total_supports: Minimale ondersteuning
           max_total_supports: Maximul aantal stemmen
           winners: Winnaars
+          one_filter: "Actieve filters: <b><em>%{filter}</em></b>"
+          two_filters: "Actieve filters: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filter
         download_current_selection: "Download huidige selectie"
@@ -186,6 +196,7 @@ nl:
           author_username: Gebruikersnaam van de auteur
           incompatible: Onverenigbaar
           price: Bedrag
+          author: Author
         cannot_calculate_winners: Het budget moet in fase blijven "Ballotage projecten", "Rekening houden met stemmingen" of "Voltooide begroting" om winnaarsprojecten te kunnen berekenen
         see_results: "Bekijk resultaten"
       show:
@@ -225,10 +236,18 @@ nl:
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Niet gedefinieerd
       search_unfeasible: Search unfeasible
+    budgets_wizard:
+      creation_timeline:
+        budget: Budget
+        groups: Groepen
+        headings: Rubrieken
     milestones:
       index:
+        table_id: "ID"
+        table_title: "Titel"
         table_description: "Beschrijving"
         table_publication_date: "Publicatiedatum"
+        table_status: Status
         table_actions: "Activiteiten"
         no_milestones: "Zonder gedefinieerde mijlpalen"
         image: "Afbeelding"
@@ -274,6 +293,9 @@ nl:
         no_progress_bars: "Er zijn geen voortgangsbalken"
         new_progress_bar: "Nieuwe voortgangsbalk maken"
         primary: "Primaire voortgangsbalk"
+        table_id: "ID"
+        table_kind: "Type"
+        table_title: "Title"
         table_percentage: "Huidige voortgang"
       new:
         creating: "Nieuwe voortgangsbalk maken"
@@ -287,11 +309,67 @@ nl:
         notice: "Voortgangsbalk bijgewerkt"
       delete:
         notice: "Voortgangsbalk verwijderd"
+    comments:
+      index:
+        id: "ID"
+        content: "Content"
+        author: "Author"
+        commentable_type: "Type"
+        title: Comments
+        table_link: "Link"
+    hidden_comments:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Bevestigd
+          without_confirmed_hide: In afwachting
+        hidden_debate: Verborgen debat
+        hidden_proposal: Verborgen voorstel
+        title: Verborgen commentaar
     dashboard:
       index:
         back: Terug naar %{org}
         title: Administration
         description: Welkom op de %{org} beheers pagina.
+      actions:
+        index:
+          active: 'Ja'
+          inactive: 'Nee'
+          action_title: Title
+          action_type: Type
+          action_active: Actieve
+          order: order
+          default:
+            email: E-mail
+            polls: Polls
+        form:
+          submit_button: Save
+      administrator_tasks:
+        index:
+          source: Bron
+          filter: Filter
+          filters:
+            pending: In afwachting
+        form:
+          proposal: Proposal
+    debates:
+      index:
+        id: ID
+        author: Author
+        title: Discussie
+    hidden_debates:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Bevestigd
+          without_confirmed_hide: In afwachting
+        title: Verborgen debatten
+    documents:
+      index:
+        new_link: "Nieuw bestand toevoegen"
+        title: "Documenten"
     hidden_users:
       index:
         filter: Filter
@@ -398,6 +476,7 @@ nl:
           submit_button: Bewaar wijzigingen
           warning: U hebt de tekst bewerkt, vergeet niet op 'Opslaan' te klikken om de wijzigingen permanent op te slaan.
         form:
+          title: 'Aanpassen van <span class="strong">%{draft_version_title}</span> van het proces <span class="strong">%{process_title}</span>'
           launch_text_editor: Open tekst editor
           close_text_editor: Sluit tekst editor
           use_markdown: Gebruik Markdown voor vormgeving
@@ -466,6 +545,12 @@ nl:
         add: Add
       search:
         title: "Managers: zoek deelnemers"
+    sdg_managers:
+      index:
+        no_sdg_managers: Er zijn geen deelnemers.
+    sdg/managers:
+      sdg/manager:
+        add: Voeg toe
     menu:
       activity: Moderator activiteit
       admin: Admin menu
@@ -525,6 +610,8 @@ nl:
       title_booths: Stemhokjes
       legislation: Plannen
       users: Deelnemer
+      debates: "Discussie"
+      comments: "Comments"
     administrators:
       index:
         title: Admins
@@ -968,6 +1055,9 @@ nl:
           pending: In afwachting
           rejected: Rejected
           verified: Verified
+        hidden_count:
+          one: Er is <strong>een organisatie</strong> zonder gebruikers of met verborgen gebruikers.
+          other: Er zijn <strong>%{count} organisaties</strong> zonder gebruikers of met verborgen gebruikers.
         name: Name
         email: E-mail
         phone_number: Telefoonnummer
@@ -988,6 +1078,8 @@ nl:
         title: Voorstellen
         id: ID
         author: Author
+        select: Select
+        selected: Geselecteerd
         milestones: Mijlpalen
         no_proposals: Er zijn geen voorstellen.
       show:
@@ -1001,11 +1093,21 @@ nl:
           without_confirmed_hide: In afwachting
         title: Verborgen voorstellen
         no_hidden_proposals: Er zijn geen verborgen voorstellen.
+    hidden_proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Bevestigd
+          without_confirmed_hide: In afwachting
+        title: Verborgen notificaties
+        no_hidden_proposals: Er is geen verborgen meldingen.
     settings:
       flash:
         updated: Value updated
       index:
         title: Configuration settings
+        general: Configuration settings
         update_setting: Update
         participation_processes: "Deelnameprocessen"
         feature_flags: Features
@@ -1032,6 +1134,7 @@ nl:
           poll_questions: "Search poll questions"
           proposals: "Zoek voorstellen op titel, code, omschrijving of vraag"
           users: "Search user by name or email'"
+        search: "Search"
       search_results: "Zoekresultaten"
       no_search_results: "No results found."
       actions: Activiteiten
@@ -1046,6 +1149,7 @@ nl:
       content: Content
       created_at: Created at
       color_help: Hexadecimale notatie
+      show_results_and_stats: "Toon resultaten en statistieken"
     geozones:
       index:
         title: Geozone
@@ -1083,6 +1187,7 @@ nl:
       show:
         created_at: Aangemaakt
         author: Author
+        users: Deelnemer
         verified:
           one: "There is %{count} valid signature"
           other: "There are %{count} valid signatures"
@@ -1112,10 +1217,23 @@ nl:
           visits: Visits
           votes: Total votes
         budgets_title: Burgerbegrotingen
+        participatory_budgets: Participatieve budgetten
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
         polls: Polls
+      graph:
+        debate_created: Discussie
+        visit: Visits
+        proposal_created: Voorstellen
+      budget_balloting:
+        vote_count: Votes
+        participant_count: deelnemers
+      budget_supporting:
+        headings: Rubrieken
+        users: Deelnemer
+        vote_count: Votes
+        participant_count: deelnemers
       direct_messages:
         title: Privéberichten
         total: Totaal
@@ -1136,6 +1254,10 @@ nl:
           question_name: Question
           origin_web: Web deelnemers
           origin_total: Aantal deelnemers
+      sdg:
+        debates: "Discussie"
+        polls: "Polls"
+        proposals: "Proposals"
     tags:
       create: Creeer onderwerp
       index:
@@ -1145,6 +1267,7 @@ nl:
         help: "Wanneer een gebruiker een voorstel maakt, worden de volgende onderwerpen voorgesteld als standaard tags."
     users:
       columns:
+        id: ID
         name: Name
         email: E-mail
         document_number: Document nummer
@@ -1153,6 +1276,9 @@ nl:
       index:
         title: Hidden users
         no_users: Er zijn geen deelnemers.
+        filter: Filter
+        filters:
+          active: Actieve
       search:
         placeholder: Zoek deelnemer per e-mail, naam of documentnummer
     verifications:
@@ -1263,3 +1389,15 @@ nl:
         submit_header: Bewaar koptekst
         card_title: Kaart bewerken
         submit_card: Kaart opslaan
+    audits:
+      id: "ID"
+      actions: "Activiteiten"
+    local_census_records:
+      index:
+        document_type: Documentsoort
+        document_number: Document nummer
+        date_of_birth: Date of birth
+    machine_learning:
+      related_content: "Gerelateerde inhoud"
+      tab_help: "Help"
+      tags: "Tags"
