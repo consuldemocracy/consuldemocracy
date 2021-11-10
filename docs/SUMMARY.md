@@ -75,7 +75,7 @@
     * [Digital Ocean](es/installation/digital_ocean.md)
     * [Heroku](es/installation/deploying-on-heroku.md)
     * [Docker](es/installation/docker.md)
-    * [Servidor local de correo](es/installation/mail_server_configuration.md)
+    * [Configuración del servidor de correo](es/installation/mail_server_configuration.md)
   * [Configuración básica](es/installation/basic_configuration.md)
   * [Documentación y guías sobre CONSUL](es/installation/documentation_and_guides.md)
 
