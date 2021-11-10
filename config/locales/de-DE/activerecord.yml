@@ -162,6 +162,7 @@ de:
         voting_style_approval: "Freigabe"
       budget/translation:
         main_link_text: "Linktext"
+        main_link_url: "Der Link führt zu (Link hinzufügen)"
         name: "Name"
       budget/investment:
         heading_id: "Rubrik"
@@ -235,6 +236,7 @@ de:
         description: "Beschreibung"
         summary: "Zusammenfassung"
         main_link_text: "Linktext"
+        main_link_url: "Der Link führt zu (Link hinzufügen)"
       comment:
         body: "Kommentar"
         user: "Benutzer*in"
