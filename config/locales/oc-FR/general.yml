@@ -285,6 +285,9 @@ oc:
       sign_in: Dintra amb Twitter
       sign_up: Enregistra-te amb Twitter
       name: Twitter
+    info:
+      sign_in: "Dintra amb:"
+      sign_up: "Enregistra-te amb:"
     or_fill: "O ramplís lo seguent formulari:"
   proposals:
     create:
@@ -657,6 +660,7 @@ oc:
       back: "Tornar a la miá activitat"
   shared:
     edit: "Editar proposicion"
+    filter: "Filtrar"
     save: "Plegar"
     delete: "Suprimís"
     "yes": "Òc"
