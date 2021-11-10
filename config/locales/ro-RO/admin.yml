@@ -136,6 +136,7 @@ ro:
       help:
         budgets: "Bugetele participative permit cetățenilor să propună și să decidă direct cum să cheltuiască o parte din buget, cu monitorizare și evaluare riguroasă a propunerilor de către instituție."
         groups:
+          multiple: "Grupurile sunt menite să organizeze titluri. După ce un grup este creat și conține titluri, se poate stabili în câte titluri poate vota un utilizator pe grup."
           single: "Grupurile sunt făcute pentru a organiza rubricile, deoarece acest buget va conține doar o singură rubrică, același nume poate fi utilizat deoarece nu va apărea nicăieri. Puteți continua cu pasul următor."
         headings:
           multiple: "Rubricile sunt făcute să împartă banii din bugetul participativ. Aici puteți adăuga rubrici pentru acest grup și puteți atribui suma de bani care va fi folosită pentru fiecare rubrică."
@@ -1654,3 +1655,7 @@ ro:
           created: Înregistrări create
         local_census_records:
           no_records_found: Nu a fost găsită nici o înregistrare.
+    machine_learning:
+      related_content: "Conținut asemănător"
+      tab_help: "Ajutor"
+      tags: "Etichete"
