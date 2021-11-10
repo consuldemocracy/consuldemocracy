@@ -665,6 +665,7 @@ de:
       back: "Zurück zu meiner Aktivität"
   shared:
     edit: "Bearbeiten"
+    filter: "Filter"
     save: "Speichern"
     delete: "Löschen"
     "yes": "Ja"
@@ -956,3 +957,9 @@ de:
     create:
       enqueue_remote_translation: Übersetzungen wurden korrekt angefordert.
     button: Seite übersetzen
+  tags:
+    list:
+      filter:
+        more:
+          one: "Einen Tag mehr"
+          other: "%{count} mehr Tags"
