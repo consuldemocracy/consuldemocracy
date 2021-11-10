@@ -117,6 +117,7 @@ de:
           not_logged_in: "Um einen neuen Ausgabenvorschlag erstellen zu können, müssen Sie %{sign_in} oder %{sign_up}."
         filter: "Projekte filtern nach"
         filters:
+          feasible: "Durchführbar"
           not_unfeasible: "Durchführbar"
           selected: "Ausgewählt"
           unfeasible: "Undurchführbar"
@@ -176,6 +177,9 @@ de:
       investment:
         price: "Preis"
         read_more: "Weiterlesen"
+        supports: "Unterstützung"
+      see_all: "Alle Budgetinvestitionen anzeigen"
+      title: "Liste der Budgetinvestitionen"
     show:
       see_results: Ergebnisse anzeigen
     supports_info:
