@@ -73,7 +73,9 @@ el:
           open: '''Ανοιξε'
           finished: Ολοκληρωμένο
         budget_investments: Διαχείριση προγραμμάτων
+        table_budget_type: "Τύπος"
         table_completed: Ολοκληρώθηκε
+        table_draft: "Προσχέδιο"
         table_duration: "Διάρκεια"
         table_name: Όνομα
         table_phase: Φάση
@@ -116,6 +118,12 @@ el:
         success_notice: Ο προϋπολογισμός διαγράφηκε επιτυχώς
         unable_notice: Δεν μπορείτε να διαγράψετε έναν προϋπολογισμό ο οποίος έχει σχετικές επενδύσεις
         unable_notice_polls: Δεν μπορείτε να διαγράψετε έναν προϋπολογισμό ο οποίος έχει σχετική δημοσκόπηση
+      help:
+        budgets: "Οι συμμετοχικού προϋπολογισμοί επιτρέπουν στους πολίτες να προτείνουν και να αποφασίζουν απευθείας για το πώς να δαπανηθεί μέρος του προϋπολογισμού, με παρακολούθηση και επιμελή αξιολόγηση από το ίδρυμα."
+        groups:
+          multiple: "Οι ομάδες προορίζονται για την οργάνωση επικεφαλίδων. Αφότου μία ομάδα έχει δημιουργηθεί και περιέχει επικεφαλίδες είναι δυνατόν να προσδιοριστεί σε πόσες επικεφαλίδες μπορεί να ψηφίσει ένας χρήστης ανά ομάδα."
+        headings:
+          multiple: "Οι επικεφαλίδες προορίζονται για τον διαμοιρασμό των χρημάτων του συμμετοχικού προϋπολογισμού. Εδώ μπορείτε να προσθέσετε επικεφαλίδες για αυτή την ομάδα και να αναθέσετε το χρηματικό ποσό που θα χρησιμοποιηθεί για κάθε κεφαλίδα."
       winners:
         calculate: Υπολογισμός νικητήριων επενδύσεων
         calculated: Υπολογισμός νικητών. Η διαδικασία θα ολοκληρωθεί σύντομα. 
@@ -187,6 +195,8 @@ el:
           min_total_supports: Ελάχιστη στήριξη
           max_total_supports: Μέγιστη στήριξη
           winners: Νικητές
+          one_filter: "Τρέχοντα εφαρμοσμένα φίλτρα: <b><em>%{filter}</em></b>"
+          two_filters: "Τρέχοντα εφαρμοσμένα φίλτρα: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Φίλτρο
         download_current_selection: "Κατεβάστε την τρέχουσα επιλογή"
@@ -216,6 +226,7 @@ el:
           author_username: Όνομα συντάκτη
           incompatible: Δεν είναι συμβατά
           price: Τιμή
+          author: Συντάκτης
         cannot_calculate_winners: Ο προϋπολογισμός πρέπει να παραμείνει στη φάση «Ψηφοφορία προγραμμάτων», «Εξέταση ψηφοδελτίων» ή «Τελικός προϋπολογισμός» προκειμένου να επιλεχθούν τα νικητήρια προγράμματα. 
         see_results: "Εμφάνιση αποτελεσμάτων"
       show:
@@ -255,6 +266,12 @@ el:
         tags_placeholder: "Γράψτε τις ετικέτες που θέλετε διαχωρίζοντας τις με κόμματα (,)"
         undefined: Δεν έχει προσδιοριστεί
       search_unfeasible: Η αναζήτηση αυτή δεν είναι εφικτή
+    budgets_wizard:
+      creation_timeline:
+        budget: Προϋπολογισμός
+        groups: Ομάδες
+        headings: Επικεφαλίδες
+        phases: Φάσεις
     milestones:
       index:
         table_id: "Ταυτότητα"
@@ -326,6 +343,21 @@ el:
         notice: "Η γραμμή προόδου διαγράφηκε επιτυχώς"
     comments:
       index:
+        id: "Ταυτότητα"
+        content: "Περιεχόμενο"
+        author: "Συντάκτης"
+        commentable_type: "Τύπος"
+        title: Κρυφά σχόλια
+        table_link: "Σύνδεσμος"
+    hidden_comments:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        hidden_debate: Κρυφή συζήτηση
+        hidden_proposal: Κρυφή πρόταση
         title: Κρυφά σχόλια
     dashboard:
       index:
@@ -387,6 +419,16 @@ el:
           success: Η ενέργεια αυτή έχει σημειωθεί ως επίλυμένη.
     debates:
       index:
+        id: Ταυτότητα
+        author: Συντάκτης
+        title: Κρυφές συζητήσεις
+    hidden_debates:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
         title: Κρυφές συζητήσεις
     documents:
       new:
@@ -510,6 +552,7 @@ el:
           submit_button: Αποθήκευση αλλαγών
           warning: Έχετε επεξεργαστεί το κείμενο, μη ξεχάσετε να πατήσετε "Αποθήκευση" για να αποθηκεύσετε μόνιμα τις αλλαγές.
         form:
+          title: 'Επεξεργασία <span class="strong">%{draft_version_title}</span> από τη διαδικασία <span class="strong">%{process_title}</span>'
           launch_text_editor: Άνοιγμα επεξεργαστή κειμένου
           close_text_editor: Κλείσιμο επεξεργαστή κειμένου
           use_markdown: Χρησιμοποιήστε το Markdown για να διαμορφώσετε το κείμενο
@@ -578,6 +621,12 @@ el:
         add: Προσθήκη
       search:
         title: "Συντονιστές: Αναζήτηση χρήστη"
+    sdg_managers:
+      index:
+        no_sdg_managers: Δεν υπάρχουν χρήστες.
+    sdg/managers:
+      sdg/manager:
+        add: Προσθήκη
     menu:
       activity: Δραστηριότητα συντονιστή
       admin: Μενού διαχειριστή
@@ -641,6 +690,8 @@ el:
       dashboard: Πίνακας εργαλείων προτάσεων
       administrator_tasks: Απαιτούνται πόροι
       dashboard_actions: Πόροι και δράσεις
+      debates: "Συζητήσεις"
+      comments: "Σχόλια"
     administrators:
       index:
         title: Διαχειριστές
@@ -779,6 +830,8 @@ el:
       user_invite:
         title: "Πρόσκληση χρήστη"
         description: "Στείλτε στο άτομο που έχει προσκληθεί να καταχωρίσει λογαριασμό."
+      evaluation_comment:
+        title: "Νέο σχόλιο αξιολόγησης"
       edit_info: "Μπορείτε να επεξεργαστείτε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου σε"
       message_title: "Τίτλος μηνύματος"
       message_body: "Αυτό είναι ένα δείγμα περιεχομένου μηνυμάτων."
@@ -1088,6 +1141,9 @@ el:
           pending: Σε εκκρεμότητα
           rejected: Απερρίφθη
           verified: Επιβεβαιωμένο
+        hidden_count:
+          one: Υπάρχει επίσης <strong>ένας οργανισμός</strong> χωρίς χρήστες ή με έναν κρυφό χρήστη.
+          other: Υπάρχουν <strong>%{count} οργανισμοί</strong> χωρίς χρήστες ή με έναν κρυφό χρήστη.
         name: Όνομα
         email: E-Mail
         phone_number: Τηλέφωνο
@@ -1108,6 +1164,8 @@ el:
         title: Προτάσεις
         id: ID
         author: Συγγραφέας
+        select: Επιλογή
+        selected: Επιλεγμένο
         milestones: Ορόσημα
         no_proposals: Δεν υπάρχουν προτάσεις.
       show:
@@ -1121,11 +1179,21 @@ el:
           without_confirmed_hide: Σε εκκρεμότητα
         title: Κρυφές προτάσεις
         no_hidden_proposals: Δεν υπάρχουν κρυφές προτάσεις.
+    hidden_proposal_notifications:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφές ειδοποιήσεις
+        no_hidden_proposals: Δεν υπάρχουν κρυφές ειδοποιήσεις.
     settings:
       flash:
         updated: Η αξία ανανεώθηκε
       index:
         title: Ρυθμίσεις διαμόρφωσης
+        general: Ρυθμίσεις διαμόρφωσης
         update_setting: Ενημέρωση
         participation_processes: "Διαδικασίες συμμετοχής"
         feature_flags: Χαρακτηριστικά
@@ -1156,6 +1224,7 @@ el:
           poll_questions: "Αναζήτηση ερωτήσεων δημοσκόπησης"
           proposals: "Αναζήτηση προτάσεων από τον τίτλο, κωδικό, περιγραφή ή ερώτηση"
           users: "Αναζήτηση χρηστών με όνομα ή ηλεκτρονικό ταχυδρομείο"
+        search: "Αναζήτηση"
       search_results: "Αναζήτηση αποτελεσμάτων"
       no_search_results: "Δεν βρέθηκαν αποτελέσματα."
       actions: Ενέργειες
@@ -1170,6 +1239,7 @@ el:
       content: Περιεχόμενο
       created_at: Δημιουργήθηκε στις
       color_help: Δεκαεξαδική μορφή
+      show_results_and_stats: "Εμφάνιση αποτελεσμάτων και στατιστικά"
     geozones:
       index:
         title: Γεωζώνη
@@ -1207,6 +1277,7 @@ el:
       show:
         created_at: Δημιουργήθηκε
         author: Συγγραφέας
+        users: Χρήστης
         verified:
           one: "Υπάρχει %{count} έγκυρη υπογραφή"
           other: "Υπάρχουν %{count} έγκυρες υπογραφές"
@@ -1241,6 +1312,7 @@ el:
         proposal_notifications: Ειδοποιήσεις προτάσεων
         incomplete_verifications: Ελλιπής επαληθεύσεις
         polls: Δημοσκοπήσεις
+        sdg: ΣΒΑ
       graph:
         debate_created: Συζητήσεις
         visit: Επισκέψεις
@@ -1282,6 +1354,10 @@ el:
           question_name: Ερώτηση
           origin_web: Οι συμμετέχοντες στο Web
           origin_total: Σύνολο συμμετεχόντων
+      sdg:
+        debates: "Συζητήσεις"
+        polls: "Δημοσκοπήσεις"
+        proposals: "Προτάσεις"
     tags:
       create: Δημιουργία θέματος
       index:
@@ -1415,3 +1491,19 @@ el:
         submit_header: Αποθήκευση επικεφαλίδας
         card_title: Επεξεργασία καρτών
         submit_card: Αποθήκευση καρτών
+    audits:
+      id: "Ταυτότητα"
+      actions: "Ενέργειες"
+    local_census_records:
+      index:
+        document_type: Τύπος εγγράφου
+        document_number: Αριθμός εγγράφου
+        date_of_birth: Ημερομηνία γέννησης
+        postal_code: Ταχυδρομικός κώδικας
+      imports:
+        new:
+          title: Τίτλος
+    machine_learning:
+      related_content: "Σχετικό περιεχόμενο"
+      tab_help: "Βοήθεια"
+      tags: "Ετικέτες"
