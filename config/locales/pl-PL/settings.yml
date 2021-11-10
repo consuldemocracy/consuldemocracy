@@ -60,6 +60,10 @@ pl:
     meta_keywords_description: 'Słowa kluczowe <meta name="keywords">, stosowane w celu poprawy SEO'
     min_age_to_participate: Minimalny wiek wymagany do wzięcia udziału
     min_age_to_participate_description: "Użytkownicy powyżej tego wieku mogą uczestniczyć we wszystkich procesach"
+    proposals:
+      poll_short_title: Ankiety
+      poll_description: Opis sondy
+      email_short_title: E-mail
     analytics_url: "Analityki adresu URL"
     proposal_notification_minimum_interval_in_days: "Minimalna liczba dni jaka musi upłynąć, zanim autor/ka wniosku może przesłać nowe powiadomienie o wniosku"
     proposal_notification_minimum_interval_in_days_description: "Minimalna liczba dni jaka musi upłynąć, zanim autor/ka wniosku wyśle powiadomienie wszystkim popierającym"
