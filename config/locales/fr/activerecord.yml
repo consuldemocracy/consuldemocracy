@@ -162,6 +162,7 @@ fr:
         voting_style_approval: "Approbation"
       budget/translation:
         main_link_text: "Texte sur le lien"
+        main_link_url: "Le lien vous renvoie à (ajouter un lien)"
         name: "Nom"
       budget/investment:
         heading_id: "Titre"
@@ -235,6 +236,7 @@ fr:
         description: "Description"
         summary: "Résumé"
         main_link_text: "Texte sur le lien"
+        main_link_url: "Le lien vous renvoie à (ajouter un lien)"
       comment:
         body: "Commentaire"
         user: "Utilisateurs masqués"
