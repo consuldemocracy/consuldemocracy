@@ -13,8 +13,12 @@
 
 <%= render "shared/header", header: @header %>
 
-<main>
+<div class="container">
+
+  <div class="row">
+
   <%= render "feeds" %>
+  </div>
 
   <div class="row">
     <% if @cards.any? %>
@@ -31,11 +35,12 @@
       </div>
     <% end %>
   </div>
+  <div class="row">
 
   <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
     <%= render "recommended",
                 recommended_debates: @recommended_debates,
                 recommended_proposals: @recommended_proposals %>
   <% end %>
-</main>
+</div>
 </div>
