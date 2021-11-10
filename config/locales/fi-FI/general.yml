@@ -25,6 +25,10 @@ fi:
         zero: Ei vastauksia
         one: 1 vastaus
         other: "%{count} vastausta"
+      responses_show:
+        zero: Ei vastauksia
+      responses_collapse:
+        zero: Ei vastauksia
       user_deleted: Käyttäjä poistettu
       votes:
         zero: Ei ääniä
@@ -108,6 +112,10 @@ fi:
     application:
       chrome: Google Chrome
       firefox: Firefox
+    dashboard:
+      proposal_totals:
+        supports:
+          zero: Ei tukijoita
     footer:
       conditions: Ehdot ja käyttöehdot
       consul_url: https://github.com/consul/consul
@@ -152,6 +160,9 @@ fi:
       sign_in: Kirjaudu sisään käyttäen Twitteriä
       sign_up: Rekisteröidy käyttäen Twitteriä
       name: Twitter
+    info:
+      sign_in: "Kirjaudu sisään käyttäen:"
+      sign_up: "Rekisteröidy käyttäen:"
     or_fill: "Tai täytä alla oleva kaavake:"
   proposals:
     create:
@@ -222,10 +233,30 @@ fi:
       form:
         submit_button: Tallenna muutokset
   dashboard:
+    menu:
+      progress: Edistyminen
+      community: Yhteisö
+      polls: Kyselyt
     progress:
       new_action: Uusi
+    index:
+      edit_proposal_link: Muokkaa ehdotusta
     resource:
       and: ja
+    recommended_actions:
+      pending_title: Vireillä
+    community:
+      comments: Kommentit
+    polls:
+      index:
+        title: Kyselyt
+        additiontal_information: Lisätiedot
+    poster:
+      options:
+        preview: Esikatselu
+    mailing:
+      mailing_options:
+        preview: Esikatselu
   polls:
     all: "Kaikki"
     index:
@@ -254,6 +285,7 @@ fi:
       submit_button: "Lähetä viesti"
   shared:
     edit: "Muokkaa"
+    filter: "Suodatin"
     save: "Tallenna"
     delete: "Poista"
     "yes": "Kyllä"
@@ -283,6 +315,7 @@ fi:
         see_all: "Näytä kaikki"
     tags_cloud:
       categories: "Kategoriat"
+    target_blank: " (linkit avautuvat uudessa ikkunassa)"
     share: Jaa
     orbit:
       next_slide: Seuraava dia
@@ -295,6 +328,10 @@ fi:
       proposals: Ehdotukset
       comments: Kommentit
   users:
+    login_to_comment: "Sinun tulee %{signin} tai %{signup} kommentoidaksesi."
+    signin: "kirjaudu"
+    signup: "rekisteröidy"
+    verify_account: "vahvista tilisi"
     direct_messages:
       new:
         submit_button: Lähetä viesti
@@ -303,11 +340,13 @@ fi:
       deleted: Poistettu
       deleted_proposal: Tämä ehdotus on poistettu
       proposals: Ehdotukset
+      proposals_status: Tila
       comments: Kommentit
       actions: Toiminnot
       send_private_message: "Lähetä yksityisviesti"
     proposals:
       see: "Näytä ehdotus"
+      actions: Toiminnot
   votes:
     agree: Hyväksyn
     disagree: En hyväksy
@@ -345,3 +384,7 @@ fi:
   annotator:
     help:
       title: Kuinka voin kommentoida tätä asiakirjaa?
+  links:
+    form:
+      delete_button: Poista
+      cancel_button: Peruuta
