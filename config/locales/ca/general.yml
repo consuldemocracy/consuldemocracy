@@ -660,6 +660,7 @@ ca:
       back: "Tornar a la meua activitat"
   shared:
     edit: "Editar proposta"
+    filter: "Filtrar"
     save: "Desar"
     delete: "Borrar"
     "yes": "Sí"
