@@ -21,6 +21,28 @@ describe UserSegments do
     end
   end
 
+  describe ".valid_segment?" do
+    it "returns true when the segment exists" do
+      expect(UserSegments.valid_segment?("all_proposal_authors")).to be true
+      expect(UserSegments.valid_segment?("investment_authors")).to be true
+      expect(UserSegments.valid_segment?("feasible_and_undecided_investment_authors")).to be true
+    end
+
+    it "accepts symbols as parameters" do
+      expect(UserSegments.valid_segment?(:selected_investment_authors)).to be true
+      expect(UserSegments.valid_segment?(:winner_investment_authors)).to be true
+      expect(UserSegments.valid_segment?(:not_supported_on_current_budget)).to be true
+    end
+
+    it "is falsey when the segment doesn't exist" do
+      expect(UserSegments.valid_segment?("imaginary_segment")).to be_falsey
+    end
+
+    it "is falsey when nil is passed" do
+      expect(UserSegments.valid_segment?(nil)).to be_falsey
+    end
+  end
+
   describe ".all_users" do
     it "returns all active users enabled" do
       active_user = create(:user)

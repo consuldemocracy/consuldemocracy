@@ -57,8 +57,16 @@ class UserSegments
     )
   end
 
+  def self.valid_segment?(segment)
+    segment && respond_to?(segment)
+  end
+
+  def self.recipients(segment)
+    send(segment)
+  end
+
   def self.user_segment_emails(segment)
-    UserSegments.send(segment).newsletter.order(:created_at).pluck(:email).compact
+    recipients(segment).newsletter.order(:created_at).pluck(:email).compact
   end
 
   private
