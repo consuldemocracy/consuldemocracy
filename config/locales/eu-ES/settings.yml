@@ -28,6 +28,9 @@ eu:
     meta_description: "Lekuaren deskribapena (SEO)"
     meta_keywords: "Hitz gakoa (SEO)"
     min_age_to_participate: Parte hartzeko gutxienezko adina
+    proposals:
+      poll_short_title: Bozkaketak
+      email_short_title: E-mail
     feature:
       twitter_login: "Registro con Twitter"
       facebook_login: "Registro con Facebook"
@@ -44,3 +47,11 @@ eu:
       allow_attached_documents: "Itsatsitako domumentuak sortzea baimendu"
       guides: "Inbertsio proiektuak edo proposamenak sortzko gidak"
       public_stats: "Estatistika publikoak"
+      help_page: "Laguntza orria"
+    process:
+      debates: "Eztabaidak"
+      proposals: "Proposamenak"
+      polls: "Bozkaketak"
+      polls_description: "Erregistratu zaitez herri proposamenak eta Udaletxeak herritarrak galdetzen dituen gaietan bozkatu ahal izateko. Udal erabakiak zuzenean erabaki ditzakezu."
+      budgets: "Partaidetzazko aurrekontuak"
+      legislation: "Partaidetzazko legeak"
