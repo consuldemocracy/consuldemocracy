@@ -4,6 +4,11 @@ cs:
       comments:
         see_all: Zobrazit vše
         see_complete: Zobrazit vše
+        comments_count:
+          one: "%{count} komentář"
+          few: "%{count} komentářů"
+          many: "%{count} komentářů"
+          other: "%{count} komentářů"
         cancel: Zrušit
         publish_comment: Zveřejnit komentář
       form:
@@ -12,6 +17,11 @@ cs:
         title: Komentáře
         comments_about: Komentáře k
         see_in_context: Zobrazit v textu
+        comments_count:
+          one: "%{count} komentář"
+          few: "%{count} komentářů"
+          many: "%{count} komentářů"
+          other: "%{count} komentářů"
       show:
         title: Komentář
       version_chooser:
@@ -86,6 +96,10 @@ cs:
       question:
         comments:
           zero: Žádné komentáře
+          one: "%{count} komentář"
+          few: "%{count} komentářů"
+          many: "%{count} komentářů"
+          other: "%{count} komentářů"
         debate: Debata
       show:
         answer_question: Odeslat odpověď
