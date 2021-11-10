@@ -54,6 +54,8 @@ zh-TW:
         assigned_valuators: 指定的評估員
       edit:
         dossier: 檔案
+        price: "價格(%{currency})"
+        price_first_year: "第一年的成本(%{currency}) <small>(可選擇填寫，數據不公開)</small>"
         feasibility: 可行性
         valuation_finished_alert: "您確定要將此報告標記為已完成嗎？ 如果您這樣做了，將無法再修改。"
         not_feasible_alert: "立即發送電郵給項目作者，並附有不可行的報告。"
