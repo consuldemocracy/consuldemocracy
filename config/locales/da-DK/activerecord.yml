@@ -229,6 +229,7 @@ da:
         ends_at: "Slutdato"
         starts_at: "Startdato"
       budget/phase/translation:
+        name: "Navn"
         description: "Beskrivelse"
         summary: "Opsummering"
       comment:
@@ -287,6 +288,7 @@ da:
         responsible_name: "Den ansvarlige for gruppen"
       poll:
         name: "Navn"
+        title: "Navn"
         starts_at: "Startdato"
         ends_at: "Slutdato"
         geozone_restricted: "Begrænset af geozone"
@@ -323,6 +325,16 @@ da:
         signable_type: "Underskriftstype"
         signable_id: "ID"
         document_numbers: "Dokumentnummer"
+      sdg/goal:
+        title: "Titel"
+        description: "Beskrivelse"
+      sdg/local_target:
+        title: "Titel"
+      sdg/local_target/translation:
+        title: "Titel"
+        description: "Beskrivelse"
+      sdg/target:
+        title: "Titel"
       site_customization/page:
         content: Indhold
         created_at: Oprettet den
@@ -519,6 +531,8 @@ da:
           attributes:
             document_number:
               not_in_census: "Findes ikke i adresseregistret"
+            user_id:
+              has_voted: "Brugeren har allerede stemt"
         legislation/process:
           attributes:
             end_date:
