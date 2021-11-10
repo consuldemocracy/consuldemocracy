@@ -62,14 +62,18 @@ ka:
     budgets:
       actions:
         edit: "ბიუჯეტის რედაქტირება"
+        preview: "ესკიზი"
       index:
         title: მონაწილეობითი ბიუჯეტები
         new_link: ახალი ბიუჯეტის შექმნა
         filter: ფილტრი
         filters:
+          all: ყველა
           open: მიმდინარე
           finished: დასრულებული
         budget_investments: პროექტების მართვა
+        table_budget_type: "ტიპი"
+        table_draft: "მონახაზი"
         table_name: სახელი
         table_phase: ფაზა
         admin_ballots: ადმინისტრაციული ბიულეტენები
@@ -244,6 +248,11 @@ ka:
         tags_placeholder: "ჩაწერეთ სასურველი ტეგები და გამოყავით ერთმანეთისგან მძიმით (,)"
         undefined: განუსაზღვრელი
       search_unfeasible: ძებნა შეუძლებელია
+    budgets_wizard:
+      creation_timeline:
+        budget: ბიუჯეტი
+        groups: ჯგუფები
+        headings: რუბრიკები
     milestones:
       index:
         table_id: "ID"
@@ -597,6 +606,12 @@ ka:
         add: დამატება
       search:
         title: "მენეჯერები: მომხმარებლის ძებნა"
+    sdg_managers:
+      index:
+        no_sdg_managers: მომხმარებლები არ მოიძებნა.
+    sdg/managers:
+      sdg/manager:
+        add: დამატება
     menu:
       activity: მოდერატორის აქტივობა
       admin: ადმინ მენიუ
@@ -1171,6 +1186,12 @@ ka:
         no_hidden_proposals: დამალული ინიციატივები არ მოიძებნა.
     hidden_proposal_notifications:
       index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმში
+        title: დამალული შეტყობინებები
         no_hidden_proposals: დამალული შეტყობინებები არ მოიძებნა.
     settings:
       flash:
@@ -1215,6 +1236,7 @@ ka:
           poll_questions: "კენჭისყრის კითხვების ძიება"
           proposals: "ინიციატივათა ძიება დასახელებით, კოდით, აღწერით ან შეკითხვით"
           users: "მომხმარებლის ძებნა სახელით ან ელ.ფოსტის მეშვეობით"
+        search: "ძებნა"
       search_results: "ძებნის შედეგები"
       no_search_results: "შედეგები არ მოიძებნა."
       actions: მოქმედებები
@@ -1356,6 +1378,10 @@ ka:
           question_name: კითხვა
           origin_web: ქსელის წევრები
           origin_total: მონაწილეთა საერთო რაოდენობა
+      sdg:
+        debates: "დებატები"
+        polls: "ხმის მიცემა"
+        proposals: "ინიციატივები"
     tags:
       create: თემის შექმნა
       index:
@@ -1535,3 +1561,7 @@ ka:
           created: შექმნილი ჩანაწერები
         local_census_records:
           no_records_found: ჩანაწერები არ მოიძებნა.
+    machine_learning:
+      related_content: "მსგავსი ინფორმაცია"
+      tab_help: "დახმარება"
+      tags: "ტეგები"
