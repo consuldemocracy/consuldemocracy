@@ -83,6 +83,9 @@ fr:
       subject: "Machine Learning - Une erreur s'est produite lors de l'exécution du script"
       text: "Une erreur s'est produite lors de l'exécution du script Machine Learning."
       title: "Script d'apprentissage automatique"
+    machine_learning_success:
+      link: "Visiter le panneau Machine Learning"
+      title: "Script d'apprentissage automatique"
     new_actions_notification_rake_created:
       subject: "Plus de nouveautés à propos de votre propositions citoyenne"
       hi: "Bonjour %{name},\n"
@@ -135,3 +138,4 @@ fr:
       text_8: "Nous vous offrons une super ressource!"
       text_9: "Vous trouverez également cette nouvelle action recommandée de diffusion..."
       text_10: "Bien sûr, vous avez accès à plus de ressources!"
+      dashboard_button: "Allez-y, découvrez les!"
