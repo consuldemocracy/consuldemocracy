@@ -35,6 +35,10 @@ zh-CN:
       responses:
         zero: 没有回复
         other: "%{count} 个回复"
+      responses_show:
+        zero: 没有回复
+      responses_collapse:
+        zero: 没有回复
       user_deleted: 已删除的用户
       votes:
         zero: 没有投票
@@ -95,6 +99,8 @@ zh-CN:
         button: 搜索
         placeholder: 搜索辩论...
         title: 搜索
+      search_results:
+        other: " 包含术语<strong>'%{search_term}'</strong>"
       start_debate: 开始辩论
       title: 辩论
       section_header:
@@ -141,6 +147,7 @@ zh-CN:
     direct_message: 私人信息
     error: 错误
     errors: 错误
+    not_saved: "阻止%{resource} 被保存。<br>请检查标记的字段来了解如何更正它们："
     policy: 隐私政策
     proposal: 提议
     proposal_notification: "通知"
@@ -162,6 +169,14 @@ zh-CN:
       firefox: Firefox
       ie: 我们检测到您正在用Internet Explorer浏览。为了加强体验，我们建议使用%{firefox} 或者%{chrome}。
       ie_title: 此网站没有对您的浏览器优化
+    dashboard:
+      proposal_header:
+        published: 已发表
+        draft: 起草
+      proposal_totals:
+        supports:
+          zero: 没有支持
+          other: "支持"
     footer:
       accessibility: 无障碍功能
       conditions: 使用条款及条件
@@ -235,12 +250,16 @@ zh-CN:
       sign_in: 用Twitter登录
       sign_up: 用Twitter注册
       name: Twitter
+    info:
+      sign_in: "登录用："
+      sign_up: "注册用："
     or_fill: "或者填写以下表格："
   proposals:
     create:
       form:
         submit_button: 创建提议
     share:
+      dashboard: 查看更多信息
       message: "我支持%{handle} 中的提议%{title}。如果您感兴趣，也请支持它！"
     edit:
       editing: 编辑提议
@@ -300,6 +319,8 @@ zh-CN:
         button: 搜索
         placeholder: 搜索提议...
         title: 搜索
+      search_results:
+        other: " 包含术语<strong>'%{search_term}'</strong>"
       select_order_long: "您正在查看的提议是依据："
       start_proposal: 创建提议
       title: 提议
@@ -366,6 +387,53 @@ zh-CN:
     update:
       form:
         submit_button: 保存更改
+  dashboard:
+    menu:
+      community: 社群
+      polls: 投票
+      related_content: 相关的内容
+    progress:
+      supports: 支持
+    index:
+      edit_proposal_link: 编辑提议
+      retire: 撤回提议
+    recommended_actions:
+      pending_title: 有待
+      done_title: 完成
+    goal:
+      days:
+        other: "%{count} 天"
+    community:
+      access_community: 访问社群
+      participants: 参与者
+      debates: 辩论
+      comments: 评论
+    polls:
+      index:
+        title: 投票
+        create: 创建投票项
+        additiontal_information: 额外信息
+      new:
+        title: 新的投票项
+        submit: 创建投票项
+      edit:
+        submit: 更新投票项
+      poll:
+        responses:
+          other: "%{count} 个回复"
+      form:
+        add_question: 添加问题
+      question_fields:
+        add_answer: 添加答案
+    poster:
+      options:
+        preview: 预览
+    mailing:
+      mailing_options:
+        preview: 预览
+    mailer:
+      forward:
+        support_button: 支持此提议
   polls:
     all: "所有"
     no_dates: "没指定日期"
@@ -399,6 +467,7 @@ zh-CN:
       back: 返回投票
       cant_answer_not_logged_in: "您必须%{signin} 或者%{signup} 才可以参与。"
       comments_tab: 评论
+      cant_answer_verify: "您必须%{verify_link} 才能回答。"
       verify_link: "验证您的账户"
       cant_answer_expired: "此投票已经结束。"
       cant_answer_wrong_geozone: "此问题在您的地理区域里不可用。"
@@ -436,6 +505,7 @@ zh-CN:
       back: "返回我的活动"
   shared:
     edit: "编辑"
+    filter: "过滤器"
     save: "保存"
     delete: "删除"
     "yes": "是"
@@ -491,6 +561,7 @@ zh-CN:
       districts: "地区"
       districts_list: "地区列表"
       categories: "类别"
+    target_blank: " （链接在新窗口打开）"
     you_are_in: "您在"
     unflag: 取消标记
     unfollow_entity: "取消跟随%{entity}"
@@ -510,6 +581,9 @@ zh-CN:
       title: 推荐
       see_more: 查看更多推荐
       hide: 隐藏推荐
+    translations:
+      remove_language: 删除语音
+      add_language: 添加语音
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -533,6 +607,11 @@ zh-CN:
     manage:
       all: "您没有权限在%{subject} 上执行此操作‘%{action}‘。"
   users:
+    login_to_comment: "您必须%{signin} 或者%{signup} 才可以留下评论。"
+    login_to_continue: "您必须%{signin} 或者%{signup} 才能继续。"
+    signin: "登录"
+    signup: "注册"
+    verify_account: "验证您的账户"
     direct_messages:
       new:
         direct_messages_bloqued: "此用户已决定不接收直接消息"
@@ -547,6 +626,7 @@ zh-CN:
       deleted_proposal: 此提议已被删除
       deleted_budget_investment: 此投资项目已被删除
       proposals: 提议
+      proposals_status: 状态
       debates: 辩论
       budget_investments: 预算投资
       comments: 评论
@@ -569,7 +649,10 @@ zh-CN:
       delete_alert: "确定要删除您的投资项目吗？此操作将无法被撤销"
     proposals:
       retired: "已撤回提议"
+      draft: 起草
+      published: 已发表
       see: "查看提议"
+      actions: 行动
   votes:
     agree: 我同意
     anonymous: 太多匿名投票而不能承认投票%{verify_account}。
@@ -654,3 +737,7 @@ zh-CN:
       alt: 选择您希望评论的文本然后按下铅笔按钮。
       text: 若要对此文档做评论，您必须%{sign_in} 或者%{sign_up}。然后选择您希望评论的文本，按下铅笔按钮。
       title: 我可以如何评论此文档？
+  links:
+    form:
+      delete_button: 删除
+      cancel_button: 取消
