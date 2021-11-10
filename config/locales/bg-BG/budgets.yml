@@ -74,6 +74,7 @@ bg:
       milestones: Основни етапи
     investments:
       form:
+        title: "Създайте бюджетна инвестиция"
         tag_category_label: "Категории"
         tags_instructions: "Маркирайте това предложение. Можете да изберете от предложените категории или да добавите своя собствена"
         tags_label: Тагове
@@ -115,6 +116,7 @@ bg:
           not_logged_in: "За да създадете нова бюджетна инвестиция, трябва да %{sign_in} или %{sign_up}."
         filter: "Филтриране на проекти по"
         filters:
+          feasible: "Изпълним"
           not_unfeasible: "Реализуем"
           selected: "Избран"
           unfeasible: "Неизпълним"
@@ -170,6 +172,10 @@ bg:
         remove_support_label: "Оттеглете подкрепата си за %{investment}"
         support: "Подкрепа"
         support_label: "Подкрепете %{investment}"
+    investments_list:
+      investment:
+        price: "Цена"
+        supports: "Гласове за подкрепа"
     show:
       see_results: Вижте резултатите
     supports_info:
