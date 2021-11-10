@@ -44,6 +44,7 @@ eu:
     menu:
       flagged_comments: Iruzkinak
       flagged_debates: Eztabaidak
+      flagged_investments: Partaidetzazko aurrekontu proiektuak
       proposals: Proposamenak
       proposal_notifications: Proposamen jakinarazpenak
       users: Erabiltzaileak blokeatu
@@ -65,6 +66,23 @@ eu:
           created_at: Berrienak
           flags: Salatuenak
         title: Proposamenak
+    budget_investments:
+      index:
+        block_authors: Egileak blokeatu
+        confirm: Ziur zaude?
+        filter: Iragazkia
+        filters:
+          all: Guztiak
+          pending_flag_review: Egiteke
+          with_ignored_flag: Berrikusitako marka du
+        headers:
+          moderate: Moderatu
+          budget_investment: Gastu proiektua
+        ignore_flags: Berrikusitzat markatu
+        orders:
+          created_at: Berrienak
+          flags: Salatuenak
+        title: Partaidetzazko aurrekontu proiektuak
     proposal_notifications:
       index:
         block_authors: Sortzaileak blokeatu
