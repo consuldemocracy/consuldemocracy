@@ -5,6 +5,10 @@ el:
         title: Το ψηφοδέλτιο σας
         no_balloted_group_yet: "Δεν έχετε ψηφίσει σε αυτήν την ομάδα ακόμα, ψηφίστε!"
         remove: Αφαίρεση ψήφου
+        voted:
+          one: "Έχετε ψηφίσει <span>μία</span> επένδυση."
+          other: "Έχετε ψηφίσει <span>%{count}</span> επενδύσεις."
+        voted_info: "Το ψηφοδέλτιό σας επιβεβαιώθηκε!"
         voted_info_2: "Μέχρις ότου κλείσει αυτή η φάση, έχετε την επιλογή να αλλάξετε την ψήφο σας όποτε το επιθυμείτε."
         zero: Δεν έχετε ψηφίσει κάποιο επενδυτικό σχέδιο.
       reasons_for_not_balloting:
@@ -12,7 +16,9 @@ el:
         not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν στις επενδύσεις; %{verify_account}.
         organization: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
         not_selected: Τα μη επιλεγμένα επενδυτικά σχέδια δεν μπορούν να υποστηριχθούν
+        not_enough_money: "Έχετε ήδη αναθέσει το διαθέσιμο προϋπολογισμό.<br><small>Σας υπενθυμίζουμε ότι μπορείτε να %{change_ballot} οποιαδήποτε στιγμή το επιυθμείτε</small>"
         no_ballots_allowed: Η φάση επιλογής είναι κλειστή
+        different_heading_assigned: "Έχετε ήδη ψηφίσει μια διαφορετική επικεφαλίδα: %{heading_link}"
         change_ballot: αλλάξτε τις ψήφους σας
         casted_offline: Έχετε ήδη συμμετάσχει όντας χωρίς σύνδεση (offline)
     groups:
@@ -46,6 +52,7 @@ el:
       milestones: Ορόσημα
     investments:
       form:
+        title: "Δημιουργία ενός προϋπολογισμού επενδύσεων"
         tag_category_label: "Κατηγορίες"
         tags_instructions: "Πρόσθεσε ετικέτα σε αυτήν την πρόταση. Μπορείτε να επιλέξετε από τις προτεινόμενες κατηγορίες ή να προσθέσετε δική σας"
         tags_label: Ετικέτες
@@ -62,14 +69,28 @@ el:
           button: Αναζήτηση
           placeholder: Αναζήτηση επενδυτικών σχεδίων...
           title: Αναζήτηση
+        search_results:
+          one: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
+          other: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Η ψηφοφορία μου
+          voted_info:
+            knapsack:
+              one: "<strong>Έχετε ψηφίσει μία πρόταση με κόστος %{amount_spent}</strong>"
+              other: "<strong>Έχετε ψηφίσει %{count} πρότασεις με κόστος %{amount_spent}</strong>"
+          change_vote_link: "Αλλαγή της ψήφου σας"
+          different_heading_assigned: "Έχετε ενεργές ψήφους σε άλλη επικεφαλίδα: %{heading_link}"
           change_ballot: "Εάν αλλάξετε γνώμη, μπορείτε να αφαιρέσετε τις ψήφους σας στο %{check_ballot} και να ξεκινήσετε πάλι."
           check_ballot_link: "Έλεγχος και επιβεβαίωση του ψηφοδέλτίου μου"
           zero: Δεν έχετε ψηφίσει κάποιο επενδυτικό έργο σε αυτήν την ομάδα.
           verified_only: "Για να δημιουργήσετε νέο προϋπολογισμό επενδύσεων %{verify}."
           create: "Δημιουργία ενός προϋπολογισμού επενδύσεων"
           not_logged_in: "Για να δημιουργήσετε νέο προϋπολογισμό επένδυσεων πρέπει πρώτα να %{sign_in} ή %{sign_up}."
+        filters:
+          feasible: "Εφικτό"
+          selected: "Επιλεγμένο"
+          unfeasible: "Ανέφικτο"
+          winners: "Νικητές"
         orders:
           random: τυχαία
           confidence_score: με την υψηλότερη βαθμολογία
@@ -80,6 +101,9 @@ el:
         author_deleted: Ο χρήστης έχει διαγραφεί
         price_explanation: Επεξήγηση τιμής
         unfeasibility_explanation: Επεξήγηση των λόγων για τους οποίους κρίθηκε ως ανέφικτη
+        code: "Κωδικός επενδυτικού έργου: <strong>%{code}</strong>"
+        location: "Τοποθεσία: <strong>%{location}</strong>"
+        organization_name: "Προτάθηκε εκ μέρους: <strong>%{name}</strong>"
         share: Μοιραστείτε το
         title: Επενδυτικό έργο
         supports: Υποστηρίξεις
@@ -88,7 +112,10 @@ el:
         comments_tab: Σχόλια
         milestones_tab: Ορόσημα
         author: Συγγραφέας
+        project_unfeasible: "Αυτό το σχέδιο επενδύσεων <strong>έχει επισημανθεί ως ανέφικτό</strong> και δεν θα προχωρήσει στη φάση ψηφοφορίας."
+        project_selected: "Αυτό το σχέδιο επενδύσεων <strong>έχει επιλεγεί</strong> για τη φάση της ψηφοφορίας."
         project_winner: "Το επενδυτικό σχέδιο που κερδίζει"
+        project_not_selected: "Αυτό το επενδυτικό σχέδιο <strong>δεν έχει επιλεγεί</strong> για τη φάση της ψηφοφορίας."
         see_price_explanation: Προβολή επεξήγησης τιμής
       wrong_price_format: Μόνο ακέραιοι αριθμοί
       investment:
@@ -101,6 +128,7 @@ el:
           other: "%{count} υποστηρίξεις"
       header:
         check_ballot: "Έλεγχος και επιβεβαίωση του ψηφοδελτίου μου"
+        different_heading_assigned: "Έχετε ενεργές ψήφους σε άλλη επικεφαλίδα: %{heading_link}"
         change_ballot: "Εάν αλλάξετε γνώμη, μπορείτε να αφαιρέσετε τις ψήφους σας στο %{check_ballot} και να ξεκινήσετε πάλι."
         check_ballot_link: "Έλεγχος και επιβεβαίωση του ψηφοδελτίου μου"
         price: "Η επικεφαλίδα αυτή έχει προϋπολογισμό της τάξεως"
@@ -110,6 +138,10 @@ el:
           one: "Μπορείτε να υποστηρίξετε επενδύσεις για την περιοχή της %{count} μόνο. Εάν συνεχίσετε, δεν θα μπορείτε να αλλάξετε την εκλογή της περιοχής σας. Είστε σίγουρος/η;"
           other: "Μπορείτε να υποστηρίξετε επενδύσεις για την περιοχή της %{count} μόνο. Εάν συνεχίσετε, δεν θα μπορείτε να αλλάξετε την εκλογή της περιοχής σας. Είστε σίγουρος/η;"
         support: "Υποστήριξη"
+    investments_list:
+      investment:
+        price: "Τιμή"
+        supports: "Υποστηρίξεις"
     show:
       see_results: Προβολή αποτελεσμάτων
     results:
