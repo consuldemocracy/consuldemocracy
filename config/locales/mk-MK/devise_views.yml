@@ -97,3 +97,8 @@ mk:
           waiting_for: "Во очекување на потврда на:"
         new:
           cancel: Откажи логирање
+          password_confirmation_label: Потврди лозинка
+          submit: Регистрирај се
+          title: Регистрирај се
+        success:
+          back_to_index: Разбирам; врати се на главната страница
