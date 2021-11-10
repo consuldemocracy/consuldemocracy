@@ -70,6 +70,7 @@ pt-BR:
       milestones: Marcos
     investments:
       form:
+        title: "Criar um investimento orçamentário"
         tag_category_label: "Categorias"
         tags_instructions: "Marque esta proposta. Você pode escolher entre as categorias propostas ou adicionar a sua própria"
         tags_label: Marcação
@@ -111,6 +112,9 @@ pt-BR:
           not_logged_in: "Para criar um novo investimento orçamentário, você deve %{sign_in} ou %{sign_up}."
         filters:
           feasible: "Factível"
+          selected: "Selecionado"
+          unfeasible: "Inviável"
+          winners: "Vencedores"
         orders:
           random: aleatório
           confidence_score: melhor avaliado
@@ -158,6 +162,10 @@ pt-BR:
           one: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
           other: "Você pode somente apoiar investimentos no distrito de %{count}. Se você continuar, não poderá alterar a eleição de seu distrito. Tem certeza?"
         support: "Apoiar"
+    investments_list:
+      investment:
+        price: "Preço"
+        supports: "Apoios"
     show:
       see_results: Exibir resultados
     results:
