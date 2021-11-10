@@ -5,6 +5,7 @@ sl:
         submit: Ponovno pošlji navodila
         title: Ponovno pošlji potrditvena navodila
       show:
+        instructions: Potrjujevanje računa z e-naslovom %{email}
         new_password_confirmation_label: Ponovno vpiši dostopno geslo
         new_password_label: Novo dostopno geslo
         please_set_password: Izberi svoje novo geslo. Omogočalo ti bo, da se vpišeš z zgornjim e-naslovom.
@@ -43,6 +44,10 @@ sl:
           title: Registriraj se kot organisazacija ali kolektiv
         success:
           back_to_index: Razumem; nazaj na glavno stran
+          instructions_1: "<b>Kmalu te bomo kontaktirali,</b> da preverimo, da v resnici predstavljaš to organizacijo oz. kolektiv."
+          instructions_2: Dokler <b>preverjamo tvoj e-naslov</b>, smo ti poslali <b>povezavo, s katero lahko potrdiš svoj račun</b>.
+          instructions_3: Ko potrdiš svoj e-naslov, lahko začneš sodelovati kot nepreverjen kolektiv.
+          thank_you: Hvala za registracijo tvoje organizacije ali kolektiva. Zdaj <b>čaka še na verifikacijo</b>.
           title: Registracija organizacije / kolektiva
     passwords:
       edit:
@@ -105,4 +110,7 @@ sl:
           username_note: Ime, ki ga prikazujemo ob tvojih objavah
         success:
           back_to_index: Razumem; vrni se na glavno stran
+          instructions_1: Prosimo, <b>preveri svojo e-pošto</b> - poslali smo ti <b>povezavo za potrditev tvojega računa</b>.
+          instructions_2: Ko potrdiš račun, lahko začneš sodelovati.
+          thank_you: Hvala za registracijo na spletnem portalu. Zdaj moraš <b>potrditi svoj e-naslov</b>.
           title: Registracija
