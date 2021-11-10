@@ -100,6 +100,11 @@ cs:
         unfeasible: Nerealizovatelná investuce
       print:
         print_button: Tisk
+      search_results:
+        one: " obsahující výraz %{search_term}'"
+        few: " obsahující výraz %{search_term}'"
+        many: " obsahující výraz %{search_term}'"
+        other: " obsahující výraz %{search_term}'"
     sessions:
       need_managed_user: Chcete-li provést tuto akci, musíte vybrat uživatele
       signed_out: Odhlášení bylo úspěšné.
