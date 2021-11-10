@@ -62,14 +62,18 @@ hr:
     budgets:
       actions:
         edit: "Uredi budžet"
+        preview: "Pregled"
       index:
         title: Participativni proračuni
         new_link: Stvori novi proračun
         filter: Filter
         filters:
+          all: Svi
           open: Otvoreno
           finished: Dovršeno
         budget_investments: Upravljaj projektima
+        table_budget_type: "Vrsta"
+        table_draft: "Draft"
         table_name: Ime
         table_phase: Faza
         admin_ballots: Glasovi admina
@@ -247,6 +251,11 @@ hr:
         tags_placeholder: "Dopiši oznake koje želiš odjeliti zarezom (,)"
         undefined: Nedefinirano
       search_unfeasible: Pretraga neizvediva
+    budgets_wizard:
+      creation_timeline:
+        budget: Budžet
+        groups: Grupe
+        headings: Naslovi
     milestones:
       index:
         table_id: "Identifikacijski broj"
@@ -601,6 +610,12 @@ hr:
         add: Dodaj
       search:
         title: "Upravitelji: Pretraga korisnika"
+    sdg_managers:
+      index:
+        no_sdg_managers: Ne postoje korisnici.
+    sdg/managers:
+      sdg/manager:
+        add: Dodaj
     menu:
       activity: Aktivnosti moderatora
       admin: Meni admina
@@ -1227,6 +1242,7 @@ hr:
           poll_questions: "Pretraga pitanja glasanja"
           proposals: "Pretraga prijedloga po naslovu, kodu, opisu ili pitanju"
           users: "Pretraži korisnika po imenu ili emailu"
+        search: "Pretraga"
       search_results: "Pretraži rezultate"
       no_search_results: "Rezultati nisu pronađeni."
       actions: Djelovanja
@@ -1371,6 +1387,10 @@ hr:
           question_name: Pitanje
           origin_web: Web sudionici
           origin_total: Ukupno sudionika
+      sdg:
+        debates: "Rasprave"
+        polls: "Ankete"
+        proposals: "Prijedlozi"
     tags:
       create: Stvori temu
       index:
@@ -1550,3 +1570,7 @@ hr:
           created: Stvoreni zapisi
         local_census_records:
           no_records_found: Zapisi nisu pronađeni.
+    machine_learning:
+      related_content: "Povezani sadržaj"
+      tab_help: "Pomoć"
+      tags: "Oznake"
