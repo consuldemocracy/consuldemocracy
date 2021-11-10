@@ -108,6 +108,9 @@ fr:
         button: Chercher
         placeholder: Rechercher des débats...
         title: Chercher
+      search_results:
+        one: " contenant le terme <strong>'%{search_term}'</strong>"
+        other: " contenant le mot <strong>'%{search_term}'</strong>"
       start_debate: Commencer un débat
       title: Débats
       section_header:
@@ -493,7 +496,24 @@ fr:
       hide_proposed_actions: Masquer les actions recommandées
       pending_title: En attente
       done_title: Fini
+    goal:
+      locked_resource: Ressource bloquée
+    community:
+      access_community: Accéder à la communauté
+      participants: Participants
+      debates: Débats
+      comments: Commentaires
     polls:
+      index:
+        title: Votes
+        create: Créer le vote
+        links: Liens
+        additiontal_information: Information supplémentaire
+      new:
+        title: Nouveau vote
+        submit: Créer le vote
+      edit:
+        submit: Mettre à jour le vote
       poll:
         view_results: Inspecter les résultats
       form:
@@ -502,7 +522,11 @@ fr:
         add_answer: Ajouter une réponse
     poster:
       options:
+        preview: Aperçu
         download: Télécharger
+    mailing:
+      mailing_options:
+        preview: Aperçu
     mailer:
       forward:
         subtitle: "Si vous me soutenez, <br>nous y parviendrons."
@@ -657,6 +681,7 @@ fr:
       districts: "Secteurs"
       districts_list: "Liste des districts"
       categories: "Catégories"
+    target_blank: " (ce lien s’ouvre dans une nouvelle fenêtre)"
     you_are_in: "Vous êtes à"
     unflag: Désignaler
     unfollow_entity: "Ne plus suivre %{entity}"
@@ -705,6 +730,11 @@ fr:
     manage:
       all: "Vous n'êtes pas autorisé(e) à effectuer l'action '%{action}' sur %{subject}."
   users:
+    login_to_comment: "Vous devez %{signin} ou %{signup} pour laisser un commentaire."
+    login_to_continue: "Il est nécessaire de %{signin} ou de %{signup} pour continuer."
+    signin: "se connecter"
+    signup: "s'inscrire"
+    verify_account: "vérifier votre compte"
     direct_messages:
       new:
         direct_messages_bloqued: "Cet utilisateur a décidé de ne pas recevoir de messages privés"
@@ -719,6 +749,7 @@ fr:
       deleted_proposal: Cette proposition a été effacée
       deleted_budget_investment: Cette proposition d'investissement a été supprimée
       proposals: Propositions
+      proposals_status: Statut
       debates: Débats
       budget_investments: Propositions d'investissement
       comments: Commentaires
@@ -746,7 +777,10 @@ fr:
       delete_alert: "Êtes-vous sûr. e de vouloir supprimer votre projet d'investissement ? Cette action est irréversible"
     proposals:
       retired: "Proposition retirée"
+      draft: Brouillon
+      published: Publié
       see: "Voir la proposition"
+      actions: Actions
   votes:
     agree: Je suis d'accord
     anonymous: Trop de votes anonymes pour accepter le vote %{verify_account}.
@@ -831,3 +865,9 @@ fr:
       alt: Sélectionnez le texte que vous souhaitez commenter et appuyez sur le bouton avec le crayon.
       text: Pour commenter ce document, il est nécessaire de %{sign_in} ou %{sign_up}. Puis, sélectionnez le texte que vous souhaitez commenter et pressez le bouton avec le crayon.
       title: Comment puis-je commenter ce document ?
+  links:
+    form:
+      delete_button: Supprimer
+      cancel_button: Annuler
+    nested_links:
+      title: Liens
