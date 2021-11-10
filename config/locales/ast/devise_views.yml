@@ -5,6 +5,7 @@ ast:
         submit: Reenviar instrucciones
         title: Reenviar instrucciones de confirmación
       show:
+        instructions: Vamos proceder a confirmar la cuenta col email <b>%{email}</b>
         new_password_confirmation_label: Repite la contraseña otra vegada
         new_password_label: Nueva contraseña d'accesu
         please_set_password: Po favor introduz la to contraseña pa la to cuenta (permitirate facer login col email d'enriba)
@@ -43,6 +44,7 @@ ast:
           title: Rexistrase como organización o coleutivu
         success:
           back_to_index: Entendío; volver a la páxina principal
+          instructions_3: Una vez confirmao, pues entamar a participar como coleutivu no verificáu.
           title: Rexistru de organización o coleutivu
     passwords:
       edit:
@@ -105,3 +107,6 @@ ast:
           username_note: Nombre público que aparecerá en tus publicaciones
         success:
           back_to_index: Entendío; volver a la páxina principal
+          instructions_1: Por favor <b>revisa tu correo electrónico</b> - te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
+          instructions_2: Una vez confirmado, podrás empezar a participar.
+          thank_you: Gracias por registrarte en la web. Ahora debes <b>confirmar tu correo</b>.
