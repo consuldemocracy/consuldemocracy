@@ -131,6 +131,13 @@ ar:
         button: بحث
         placeholder: البحث عن مناقشات...
         title: بحث
+      search_results:
+        zero: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        one: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        two: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        few: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        many: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        other: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
       start_debate: بدء مناقشة
       title: النقاشات
       section_header:
@@ -182,6 +189,7 @@ ar:
     direct_message: رسالة خاصة
     error: خطأ
     errors: أخطاء
+    not_saved: "هنا أخطاء منعت من حفظ الـ %{resource}. \n<br>\nالرجاء التحقق من الحقول المميزة وتصحيحيها:"
     policy: سياسة الخصوصية
     proposal: اقتراح
     proposal_notification: "إشعار"
@@ -316,6 +324,9 @@ ar:
       sign_in: تسجيل الدخول باستخدام Twitter
       sign_up: تسجيل باستخدام Twitter
       name: Twitter
+    info:
+      sign_in: "تسجيل الدخول باستخدام:"
+      sign_up: "تسجيل الدخول باستخدام:"
     or_fill: "أو املأ النموذج التالي:"
   proposals:
     create:
@@ -324,6 +335,7 @@ ar:
     created:
       title: تهانينا! لقد اتخذت الخطوة الأولى.
       motivation: "من المهم تحضير حملة الإطلاق لمقترحك حتى يكون ناجحًا. الأيام القليلة الأولى حاسمة."
+      motivation_2: "<strong>إذا كنت تريد توصيات للإستعداد للنشر ، فاترك مقترحك كمسودة وسنوجهك</strong>"
       publish: لا ، أريد أن أنشر الاقتراح
       dashboard: نعم ، أريد المساعدة و سأقوم بالنشر لاحقًا
       preview_title: سيظهر مقترحك بهذا الشكل عند نشره
@@ -393,6 +405,13 @@ ar:
         button: بحث
         placeholder: البحث عن مقترحات...
         title: بحث
+      search_results:
+        zero: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        one: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        two: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        few: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        many: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        other: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
       select_order_long: "أنت تشاهد المقترحات وفقًا لـ:"
       start_proposal: إنشاء مقترح
       title: إقتراحات
@@ -494,6 +513,7 @@ ar:
       poster: ملصقة
       recommended_actions: الإجراءات الموصى بها
       messages: رسالة للمستخدمين
+      related_content: محتوى ذات الصلة
     form:
       request: طلب
     create_request:
@@ -631,6 +651,7 @@ ar:
         sent: تم إرسال البريد الإلكتروني
     mailer:
       forward:
+        subtitle: "إذا قمت بدعمي، <br>فسوف نحقق ذلك."
         support_button: دعم هذا المقترح
         share_in: نشر في
         hi: "مرحبا!"
@@ -670,6 +691,7 @@ ar:
       back: العودة إلى التصويت
       cant_answer_not_logged_in: "تحتاج الى %{signin} او %{signup} للمتابعة."
       comments_tab: تعليقات
+      cant_answer_verify: "يجب عليك %{verify_link} للإجابة."
       verify_link: "تحقق من حسابك"
       cant_answer_expired: "انتهى هذا الاستطلاع."
       cant_answer_wrong_geozone: "هذا السؤال غير متوفر في منطقتك الجغرافية."
@@ -710,6 +732,7 @@ ar:
       back: "عودة"
   shared:
     edit: "تعديل"
+    filter: "ترشيح"
     save: "حفظ"
     delete: "حذف"
     "yes": "نعم"
@@ -781,6 +804,7 @@ ar:
       districts: "مقاطعات"
       districts_list: "قائمة المقاطعات"
       categories: "فئات"
+    target_blank: " (سيفتح الرابط في نافذة جديدة)"
     you_are_in: "أنت في"
     unflag: حذف بلاغ عن عدم الملاءمة
     unfollow_entity: "توقف عن متابعة %{entity}"
@@ -827,6 +851,11 @@ ar:
     manage:
       all: "ليس لديك إذن لتنفيذ عملية '%{action}' على %{subject}."
   users:
+    login_to_comment: "تحتاج الى %{signin} او %{signup} للمتابعة والتعليق."
+    login_to_continue: "تحتاج الى %{signin} او %{signup} للمتابعة."
+    signin: "تسجيل الدخول"
+    signup: "انشاء حساب"
+    verify_account: "التحقق من حسابك"
     direct_messages:
       new:
         direct_messages_bloqued: "هذا المستخدم اختار عدم تلقي رسائل مباشرة"
