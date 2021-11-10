@@ -117,3 +117,17 @@ val:
       form:
         tags_label: "Categoríes"
       not_verified: "Per a votar propostes %{verify_account}."
+      process_title: Proces de legislació col·laborativa
+    summary:
+      title: "Resumen"
+      votes:
+        zero: "%{count} vots"
+      debate_phase: "Fase prèvia"
+      proposals_phase: "Fase de propostes"
+      allegations_phase: "Fase de comentaris"
+      comments:
+        zero: "Sense comentaris"
+        one: "%{count} comentari"
+        other: "%{count} Comentaris"
+      top_comments:
+        zero: "Sense comentaris"
