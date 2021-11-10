@@ -5,6 +5,7 @@ nl:
         submit: Stuur instructies opnieuw
         title: Stuur bevestiging instructies opnieuw
       show:
+        instructions: Bevestig de account via %{email}
         new_password_confirmation_label: Herhaal wachtwoord
         new_password_label: Nieuw wachtwoord
         please_set_password: Kies een nieuw wachtwoord (voor login met email hierboven)
@@ -43,6 +44,10 @@ nl:
           title: Als organisatie of collectief aanmelden
         success:
           back_to_index: Begrepen; terug naar hoofdpagina
+          instructions_1: "<b>We nemen snel contact op</b> om te verifiëren dat u dit collectief inderdaad vertegenwoordigd."
+          instructions_2: Terwijl uw <b>email wordt geverifiëerd</b>, hebben we u een link gestuurd <b>ter bevestiging van uw account</b>.
+          instructions_3: Na bevestiging kunt us deelnemen als niet-geverifiëerd collectief.
+          thank_you: Dank voor uw aanmelding als collectief op deze site. We wachten nu op <b>verificatie</b>.
           title: Aanmelden van organisatie of collectief
     passwords:
       edit:
@@ -105,4 +110,7 @@ nl:
           username_note: De naam bij uw bijdragen
         success:
           back_to_index: Begrepen; terug naar hoofdpagina
+          instructions_1: <b>Check uw email</b> - we hebben u een <b>link ter bevestiging</b> gestuurd.
+          instructions_2: Na bevestiging kunt u deelnemen.
+          thank_you: Dank voor uw aanmelding. Uw email moet nu worden <b>bevestigd</b>.
           title: Pas email adres aan
