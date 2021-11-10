@@ -207,6 +207,7 @@ ro:
         voting_style_approval: "Aprobare"
       budget/translation:
         main_link_text: "Text pe link"
+        main_link_url: "Link-ul te duce către (adaugă un link)"
         name: "Nume"
       budget/investment:
         heading_id: "Rubrică"
@@ -280,6 +281,7 @@ ro:
         description: "Descriere"
         summary: "Sumar"
         main_link_text: "Text pe link"
+        main_link_url: "Link-ul te duce către (adaugă un link)"
       comment:
         body: "Comentariu"
         user: "Utilizator"
