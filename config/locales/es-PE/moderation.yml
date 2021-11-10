@@ -38,10 +38,12 @@ es-PE:
         orders:
           created_at: Más nuevos
           flags: Más denunciadas
+        title: Discusiones
     header:
       title: Moderar
     menu:
       flagged_comments: Comentarios
+      flagged_debates: Discusiones
       flagged_investments: Proyectos de presupuestos participativos
       proposals: Propuestas
       users: Bloquear usuarios
