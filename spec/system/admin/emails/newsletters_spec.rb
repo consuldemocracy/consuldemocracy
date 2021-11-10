@@ -162,16 +162,15 @@ describe "Admin newsletter emails", :admin do
 
   describe "Select list of users to send newsletter" do
     scenario "Custom user segments" do
-      UserSegments.segments.each do |segment|
-        segment_recipient = UserSegments.segment_name(segment)
+      segment = UserSegments.segments.sample
+      segment_recipient = UserSegments.segment_name(segment)
 
-        visit new_admin_newsletter_path
+      visit new_admin_newsletter_path
 
-        fill_in_newsletter_form(segment_recipient: segment_recipient)
-        click_button "Create Newsletter"
+      fill_in_newsletter_form(segment_recipient: segment_recipient)
+      click_button "Create Newsletter"
 
-        expect(page).to have_content segment_recipient
-      end
+      expect(page).to have_content segment_recipient
     end
 
     scenario "Geozone segments" do
