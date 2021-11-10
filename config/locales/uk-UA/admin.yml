@@ -62,14 +62,18 @@ uk-UA:
     budgets:
       actions:
         edit: "Редагувати бюджет"
+        preview: "Попередній перегляд"
       index:
         title: Бюджети участі
         new_link: Створити новий бюджет
         filter: Фільтр
         filters:
+          all: Усі
           open: Відкрити
           finished: Завершено
         budget_investments: Управляти проектами
+        table_budget_type: "Тип"
+        table_draft: "Чернетка"
         table_name: Назва
         table_phase: Етап
         admin_ballots: Адмініструвати бюлетені
@@ -250,6 +254,11 @@ uk-UA:
         tags_placeholder: "Напишіть бажані теги, розділивши їх комами (,)"
         undefined: Не визначено
       search_unfeasible: Пошук неможливий
+    budgets_wizard:
+      creation_timeline:
+        budget: Бюджет
+        groups: Групи
+        headings: Рубрики
     milestones:
       index:
         table_id: "ID"
@@ -604,6 +613,12 @@ uk-UA:
         add: Додати
       search:
         title: "Керівники: користувацький пошук"
+    sdg_managers:
+      index:
+        no_sdg_managers: Користувачів немає.
+    sdg/managers:
+      sdg/manager:
+        add: Додати
     menu:
       activity: Посередницька діяльність
       admin: Меню адміністратора
@@ -1232,6 +1247,7 @@ uk-UA:
           poll_questions: "Шукати запитання голосувань"
           proposals: "Шукати пропозиції за назвою, кодом, описом або запитанням"
           users: "Шукати користувача за ім'ям або електронною адресою"
+        search: "Пошук"
       search_results: "Результати пошуку"
       no_search_results: "Результатів не знайдено."
       actions: Дії
@@ -1379,6 +1395,10 @@ uk-UA:
           question_name: Запитання
           origin_web: Учасники в мережі
           origin_total: Загалом учасників
+      sdg:
+        debates: "Обговорення"
+        polls: "Голосування"
+        proposals: "Пропозиції"
     tags:
       create: Створити тему
       index:
@@ -1558,3 +1578,7 @@ uk-UA:
           created: Створені записи
         local_census_records:
           no_records_found: Записів не знайдено.
+    machine_learning:
+      related_content: "Пов'язаний контент"
+      tab_help: "Допомога"
+      tags: "Теги"
