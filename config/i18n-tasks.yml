@@ -81,6 +81,7 @@ search:
    - app/
    - db/pages/
    - db/dev_seeds/
+   - lib/
 
   ## Root directories for relative keys resolution.
   # relative_roots:

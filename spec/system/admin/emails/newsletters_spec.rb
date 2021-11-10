@@ -16,7 +16,7 @@ describe "Admin newsletter emails", :admin do
 
       expect(page).to have_link "Go back", href: admin_newsletters_path
       expect(page).to have_content "This is a subject"
-      expect(page).to have_content I18n.t("admin.segment_recipient.#{newsletter.segment_recipient}")
+      expect(page).to have_content "All users"
       expect(page).to have_content "no-reply@consul.dev"
       expect(page).to have_content "This is a body"
     end
@@ -40,10 +40,9 @@ describe "Admin newsletter emails", :admin do
       expect(page).to have_css(".newsletter", count: 3)
 
       newsletters.each do |newsletter|
-        segment_recipient = I18n.t("admin.segment_recipient.#{newsletter.segment_recipient}")
         within("#newsletter_#{newsletter.id}") do
           expect(page).to have_content newsletter.subject
-          expect(page).to have_content segment_recipient
+          expect(page).to have_content UserSegments.segment_name(newsletter.segment_recipient)
         end
       end
     end
@@ -162,13 +161,15 @@ describe "Admin newsletter emails", :admin do
   end
 
   scenario "Select list of users to send newsletter" do
-    UserSegments.segments.each do |user_segment|
+    UserSegments.segments.each do |segment|
+      segment_recipient = UserSegments.segment_name(segment)
+
       visit new_admin_newsletter_path
 
-      fill_in_newsletter_form(segment_recipient: I18n.t("admin.segment_recipient.#{user_segment}"))
+      fill_in_newsletter_form(segment_recipient: segment_recipient)
       click_button "Create Newsletter"
 
-      expect(page).to have_content(I18n.t("admin.segment_recipient.#{user_segment}"))
+      expect(page).to have_content segment_recipient
     end
   end
 end

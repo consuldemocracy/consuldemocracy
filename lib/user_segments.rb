@@ -11,6 +11,10 @@ class UserSegments
        not_supported_on_current_budget].freeze
   end
 
+  def self.segment_name(segment)
+    I18n.t("admin.segment_recipient.#{segment}") if segments.include?(segment.to_s)
+  end
+
   def self.all_users
     User.active.where.not(confirmed_at: nil)
   end
@@ -53,8 +57,8 @@ class UserSegments
     )
   end
 
-  def self.user_segment_emails(users_segment)
-    UserSegments.send(users_segment).newsletter.order(:created_at).pluck(:email).compact
+  def self.user_segment_emails(segment)
+    UserSegments.send(segment).newsletter.order(:created_at).pluck(:email).compact
   end
 
   private
