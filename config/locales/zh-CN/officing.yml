@@ -16,6 +16,18 @@ zh-CN:
         no_polls: 您不要在任何活跃投票的最终重新计票中当值
         select_poll: 选择投票项
         add_results: 添加结果
+    poll_budgets:
+      index:
+        ballot_sheet_name: 名字
+        ballot_sheet_author: 作者
+        ballot_sheet_creation_date: 创建日期
+      new:
+        booth: 投票亭
+        select_booth: 选择投票亭
+        submit: 保存
+      show:
+        created_at: 创建日期
+        author: 作者
     results:
       flash:
         create: "结果已保存"
