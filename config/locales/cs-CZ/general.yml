@@ -52,6 +52,10 @@ cs:
       user_deleted: Uživatel smazán
       votes:
         zero: Žádné hlasy
+        one: 1 hlas
+        few: "%{count} hlasů"
+        many: "%{count} hlasů"
+        other: "%{count} hlasů"
     form:
       comment_as_admin: Komentovat jako administrátor
       comment_as_moderator: Komentovat jako moderátor
@@ -76,8 +80,16 @@ cs:
     debate:
       comments:
         zero: Žádné komentáře
+        one: 1 komentář
+        few: "%{count} komentářů"
+        many: "%{count} komentářů"
+        other: "%{count} komentářů"
       votes:
         zero: Žádné hlasy
+        one: 1 hlas
+        few: "%{count} hlasů"
+        many: "%{count} hlasů"
+        other: "%{count} hlasů"
     edit:
       editing: Upravit debatu
       form:
@@ -136,6 +148,10 @@ cs:
       author_deleted: Uživatel
       comments:
         zero: Žádné komentáře
+        one: 1 komentář
+        few: "%{count} komentářů"
+        many: "%{count} komentářů"
+        other: "%{count} komentářů"
       comments_title: Komentáře
       edit_debate_link: Upravit
       flag: Tato diskuse byla označena několika uživateli za nevhodnou.
@@ -395,12 +411,24 @@ cs:
       already_supported: Tento návrh jste již podpořili. Sdílejte jej!
       comments:
         zero: Žádné komentáře
+        one: 1 komentář
+        few: "%{count} komentářů"
+        many: "%{count} komentářů"
+        other: "%{count} komentářů"
       support: Podpořit
       support_title: Podpořit tento návrh
       supports:
         zero: Žádná podpora
+        one: Jedna podpora
+        few: "%{count} podpořilo"
+        many: "%{count} podpořilo"
+        other: "%{count} podporovatelů"
       votes:
         zero: Žádné hlasy
+        one: 1 hlas
+        few: "%{count} hlasů"
+        many: "%{count} hlasů"
+        other: "%{count} hlasů"
       supports_necessary: "Potřebuje podporu %{number} lidí"
       total_percent: 100%
       archived: "Tento návrh byl archivován a nelze jej již podpořit."
@@ -411,6 +439,10 @@ cs:
       code: "Kód návrhu:"
       comments:
         zero: Žádné komentáře
+        one: 1 komentář
+        few: "%{count} komentářů"
+        many: "%{count} komentářů"
+        other: "%{count} komentářů"
       comments_tab: Komentáře
       dashboard_proposal_link: Ovládací panel
       flag: Tento návrh byl více uživateli označen jako nevhodný.
@@ -520,6 +552,11 @@ cs:
       edit:
         submit: Aktualizovat průzkum
       poll:
+        responses:
+          one: "%{count} reakcí"
+          few: "%{count} reakcí"
+          many: "%{count} reakcí"
+          other: "%{count} reakcí"
         view_results: Zobrazit výsledky
         edit_poll: Upravit průzkum
         show_results_help: Pokud toto políčko zaškrtnete, budou výsledky veřejné a uvidí je všichni uživatelé
