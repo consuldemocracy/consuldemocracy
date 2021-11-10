@@ -1,1 +1,19 @@
 it:
+  sdg_management:
+    homepage:
+      header:
+        create: "Crea intestazione"
+        title: "Intestazione"
+    menu:
+      budget_investments: "Bilanci partecipativi"
+      debates: "Dibattiti"
+      legislation_processes: "Processi di legislazione"
+      polls: "Votazioni"
+      proposals: "Proposte"
+      sdg_content: "Scopi e Obiettivi"
+    relations:
+      index:
+        filter: "Filtra"
+        filters:
+          all: "Tutti"
+          pending_sdg_review: "In sospeso"
