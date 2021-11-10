@@ -12,10 +12,19 @@ cs:
           knapsack: "Utracená částka <span>%{count}</span>"
           approval:
             zero: "Odevzdaných hlasů: <span>%{count}</span>"
+            one: "Odevzdaných hlasů: <span>%{count}</span>"
+            few: "Odevzdaných hlasů: <span>%{count}</span>"
+            many: "Odevzdaných hlasů: <span>%{count}</span>"
+            other: "Odevzdaných hlasů <span>%{count}</span>"
         amount_limit:
           knapsack: "%{count}"
         no_balloted_group_yet: "Dosud jste o této skupině nehlasovali, hlasujte!"
         remove: Odstranit hlas
+        voted:
+          one: "Hlasovali jste pro <span>jednu</span> investici."
+          few: "Hlasovali jste pro <span>%{count}</span>investic."
+          many: "Hlasovali jste pro <span>%{count}</span>investic."
+          other: "Hlasovali jste pro <span>%{count}</span>investic."
         voted_info: "Vaše hlasování je potvrzeno!"
         voted_info_2: "Hlas však můžete kdykoli změnit, dokud nebude tato fáze uzavřena."
         zero: Nehlasoval jste pro žádný investiční projekt.
@@ -82,6 +91,11 @@ cs:
           button: Vyhledat
           placeholder: Vyhledat investiční projekty...
           title: Vyhledat
+        search_results:
+          one: " obsahující výraz <strong> '%{search_term}' </strong>"
+          few: " obsahující výraz <strong> '%{search_term}' </strong>"
+          many: " obsahující výraz <strong> '%{search_term}' </strong>"
+          other: " obsahující výraz <strong> '%{search_term}' </strong>"
         sidebar:
           my_ballot: Moje hlasování
           change_vote_info:
