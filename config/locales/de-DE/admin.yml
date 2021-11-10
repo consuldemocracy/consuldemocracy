@@ -127,6 +127,13 @@ de:
         success_notice: Bürgerhaushalt erfolgreich gelöscht
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
         unable_notice_polls: Sie können kein Budget löschen, das eine zugehörige Abstimmung hat
+      help:
+        budgets: "Bürgerhaushalte ermöglichen es den Bürger: innen, Vorschläge einzubringen und zu entscheiden, wie ein Teil des Haushalts ausgegeben werden soll, wobei die Vorschläge von der Verwaltung kontrolliert und bewertet werden."
+        groups:
+          multiple: "Gruppen sind dazu gedacht, Rubriken zu organisieren. Nachdem eine Gruppe erstellt wurde und sie Rubriken enthält, kann festgelegt werden, in wie vielen Rubriken ein Benutzer pro Gruppe abstimmen kann."
+        phases: "Bürgerhaushalte haben verschiedene Phasen. Hier können Sie Phasen aktivieren oder deaktivieren und auch jede einzelne Phase individuell anpassen."
+      show:
+        add_heading: "Rubrik hinzufügen"
       winners:
         calculate: Bestbewertete Vorschläge ermitteln
         calculated: Die bestbewerteten Vorschläge werden ermittelt. Dies kann einen Moment dauern.
@@ -1637,3 +1644,7 @@ de:
           created: Erstellte Datensätze
         local_census_records:
           no_records_found: Keine Datensätze gefunden.
+    machine_learning:
+      related_content: "Verwandte Inhalte"
+      tab_help: "Hilfe"
+      tags: "Tags"
