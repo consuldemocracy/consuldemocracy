@@ -34,6 +34,10 @@ fa:
         zero: بدون پاسخ
         one: 1 نظر
         other: "%{count} نظر"
+      responses_show:
+        zero: بدون پاسخ
+      responses_collapse:
+        zero: بدون پاسخ
       user_deleted: کاربر حذف شد
       votes:
         zero: بدون رای
@@ -84,6 +88,9 @@ fa:
         button: جستجو
         placeholder: جستجوبحث ها ...
         title: جستجو
+      search_results:
+        one: "حاوی اصطلاح<strong>%{search_term}</strong>"
+        other: "حاوی اصطلاح<strong>%{search_term}</strong>"
       start_debate: شروع بحث
       title: مباحثه
       section_header:
@@ -128,11 +135,19 @@ fa:
   geozones:
     none: تمام شهر
   layouts:
+    dashboard:
+      proposal_header:
+        published: منتشر شده
+        draft: ' پیش نویس'
+      proposal_totals:
+        supports:
+          zero: بدون پشتیبانی 
     footer:
       accessibility: قابلیت دسترسی
       participation_title: "مشارکت\n"
       privacy: سیاست حریم خصوصی
     header:
+      administration_menu: منو
       administration: مدیر
       collaborative_legislation: فرآیندهای قانونی
       debates: مباحثه
@@ -187,6 +202,9 @@ fa:
       search_form:
         button: جستجو
         title: جستجو
+      search_results:
+        one: "حاوی اصطلاح<strong>%{search_term}</strong>"
+        other: "حاوی اصطلاح<strong>%{search_term}</strong>"
       title: طرح های پیشنهادی
       section_header:
         title: طرح های پیشنهادی
@@ -223,6 +241,38 @@ fa:
     update:
       form:
         submit_button: ذخیره تغییرات
+  dashboard:
+    menu:
+      community: جامعه
+      polls: نظر سنجی ها
+      related_content: مطالب مرتبط
+    progress:
+      supports: پشتیبانی ها
+    recommended_actions:
+      pending_title: انتظار
+    community:
+      access_community: دسترسی جامعه
+      participants: شرکت کنندگان
+      debates: مباحثه
+      comments: توضیحات
+    polls:
+      index:
+        title: نظر سنجی ها
+        create: ایجاد نظرسنجی
+        additiontal_information: اطلاعات اضافی
+      new:
+        title: نظر سنجی جدید
+        submit: ایجاد نظرسنجی
+      edit:
+        submit: ' به روز رسانی نظرسنجی'
+      question_fields:
+        add_answer: اضافه کردن پاسخ
+    poster:
+      options:
+        preview: پیش نمایش
+    mailing:
+      mailing_options:
+        preview: پیش نمایش
   polls:
     all: "همه"
     index:
@@ -248,6 +298,7 @@ fa:
       submit_button: "ارسال پیام"
   shared:
     edit: "ویرایش"
+    filter: "فیلتر"
     save: "ذخیره کردن"
     delete: "حذف"
     "yes": "بله"
@@ -280,6 +331,9 @@ fa:
       cards: کارتها
     recommended_index:
       title: توصیه ها
+    translations:
+      remove_language: حذف زبان
+      add_language: اضافه کردن زبان
   stats:
     index:
       visits: بازديد
@@ -297,6 +351,11 @@ fa:
     manage:
       all: "شما اجازه انجام عمل '%{action}' در %{subject} را نداشته باشند."
   users:
+    login_to_comment: "برای نظر دادن شما باید %{signin} یا %{signup} کنید ."
+    login_to_continue: "شما باید %{signin} یا %{signup} کنید برای ادامه دادن."
+    signin: "ورود به برنامه"
+    signup: "ثبت نام"
+    verify_account: "حساب کاربری خودراتایید کنید\n"
     direct_messages:
       new:
         submit_button: ارسال پیام
@@ -309,6 +368,7 @@ fa:
       deleted_proposal: این پیشنهاد حذف شده است
       deleted_budget_investment: این پروژه سرمایه گذاری حذف شده است
       proposals: طرح های پیشنهادی
+      proposals_status: وضعیت ها
       debates: مباحثه
       budget_investments: بودجه سرمایه گذاری ها 
       comments: توضیحات
@@ -336,7 +396,10 @@ fa:
       delete_alert: "آیا مطمئن هستید که می خواهید  پروژه سرمایه گذاری را حذف کنید؟ این دستور قابل بازگشت نیست"
     proposals:
       retired: "پیشنهاد بازنشسته"
+      draft: ' پیش نویس'
+      published: منتشر شده
       see: "دیدن پیشنهاد"
+      actions: اقدامات
   votes:
     agree: موافقم
     disagree: مخالفم
@@ -414,3 +477,7 @@ fa:
   admin/widget:
     header:
       title: مدیر
+  links:
+    form:
+      delete_button: حذف
+      cancel_button: لغو
