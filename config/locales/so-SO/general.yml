@@ -36,6 +36,10 @@ so:
         zero: Jawaab ma jirto
         one: 1 jawaab
         other: "%{count} jawaabaha"
+      responses_show:
+        zero: Jawaab ma jirto
+      responses_collapse:
+        zero: Jawaab ma jirto
       user_deleted: Isticmalaha la tirtiray
       votes:
         zero: Looma baahna codad
@@ -99,6 +103,9 @@ so:
         button: Raadin
         placeholder: Doodaha raadinta...
         title: Raadin
+      search_results:
+        one: " an ku jirin ereyga<strong>%{search_term}</strong>"
+        other: " an ku jirin ereyga<strong>%{search_term}</strong>"
       start_debate: Biloow dooda
       title: Doodo
       section_header:
@@ -146,6 +153,7 @@ so:
     direct_message: fariin Garaa
     error: khalad
     errors: khaladaad
+    not_saved: "1 qalad ayaa ka hortagey tan%{resource} in laga badbaadiyo.<br> Fadlan calaamadee beeraha calaamadeeyay si aad u ogaatid sida loo saxo:"
     policy: Qaanuunka Arrimaha Khaaska ah
     proposal: Sojeedin
     proposal_notification: "Ogaysiis"
@@ -167,6 +175,13 @@ so:
       firefox: Dab-demiska
       ie: Waxaanu ogaanay inaad adigu internetka kula socoto. Wixii khibrad dheeraad ah, waxaan ku talineynaa isticmaalka% %{firefox} ama%{chrome}.
       ie_title: Websaydaan laguma soo koobi karo barta internetka
+    dashboard:
+      proposal_header:
+        published: Sobandhigaay
+        draft: Qabyo Qorid
+      proposal_totals:
+        supports:
+          zero: Tageero la an
     footer:
       accessibility: Helitaanka
       conditions: Shuruudaha iyo xaaladaha isticmaalka
@@ -244,12 +259,16 @@ so:
       sign_in: Ku soo gal tuwiter
       sign_up: Iska diwangeli tuwitaar
       name: Tuwiitar
+    info:
+      sign_in: "Ku saxiix:"
+      sign_up: "Isku qor:"
     or_fill: "Ama buuxi foomka soo socda:"
   proposals:
     create:
       form:
         submit_button: Abuur soo jeedin
     share:
+      dashboard: Fiiri macluumaad dheeraad ah
       message: "Waxaan taageeray hindisaha%{title} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
     edit:
       editing: Tafatiir soojedinta
@@ -309,6 +328,9 @@ so:
         button: Raadin
         placeholder: Soo jeedinta raadinta...
         title: Raadin
+      search_results:
+        one: " an ku jirin ereyga<strong>%{search_term}</strong>"
+        other: " an ku jirin ereyga<strong>%{search_term}</strong>"
       select_order_long: "Waxaad daawaneysaa soo jeedinada sida:"
       start_proposal: Abuur soo jeedin
       title: Sojeedino
@@ -379,6 +401,47 @@ so:
     update:
       form:
         submit_button: Badbaadi beddelka
+  dashboard:
+    menu:
+      community: Bulsho
+      polls: Doorashooyinka
+      related_content: Mawduuca laxiriray
+    progress:
+      supports: Tageerayaal
+    index:
+      edit_proposal_link: Tafatiir soojedinta
+      retire: Soo jeedinta hawlgabka
+    recommended_actions:
+      pending_title: Joojin
+      done_title: La sameeyo
+    community:
+      access_community: Helitaanka bulshada
+      participants: Kaqayb galayaal
+      debates: Doodo
+      comments: Faalo
+    polls:
+      index:
+        title: Doorashooyinka
+        create: Saame dorshada
+        additiontal_information: Xog dheraad ah
+      new:
+        title: Dorashada Cusub
+        submit: Saame dorshada
+      edit:
+        submit: Cusboneysii dorshada
+      form:
+        add_question: Ku dar sual
+      question_fields:
+        add_answer: Kudar Jawaab
+    poster:
+      options:
+        preview: Hor udhaac
+    mailing:
+      mailing_options:
+        preview: Hor udhaac
+    mailer:
+      forward:
+        support_button: Taageeraan hindisahan
   polls:
     all: "Dhamaan"
     no_dates: "tirada taariikhda la magacaabay"
@@ -412,6 +475,7 @@ so:
       back: Dib u laabasho
       cant_answer_not_logged_in: "Waa inaad%{signin}%{signup} inaad ka qayb qaadato."
       comments_tab: Faalo
+      cant_answer_verify: "Waa inaad%%%{verify_link} xaqiijiso xiriirka si aad uga jawaabtid."
       verify_link: "hubi xisaabtaada"
       cant_answer_expired: "Ra'yiururintan ayaa dhammaatay."
       cant_answer_wrong_geozone: "Su'aashani ma ahan mid laga heli karo degaankaaga."
@@ -449,6 +513,7 @@ so:
       back: "Ku noqo hawlahayga"
   shared:
     edit: "Isbedel"
+    filter: "Sifeeyee"
     save: "Badbaado"
     delete: "Titiriid"
     "yes": "Haa"
@@ -507,6 +572,7 @@ so:
       districts: "Degmooyinka"
       districts_list: "Liiska Degmoyinka"
       categories: "Qaybaha"
+    target_blank: " (iskuxir furan daaqad cusub)"
     you_are_in: "Waad joogtaa"
     unflag: Foolxumo
     unfollow_entity: "Lama socdaan\n%{entity}"
@@ -526,6 +592,9 @@ so:
       title: Talloyin
       see_more: Eeg talooyin dheeraad ah
       hide: Qari talooyinka
+    translations:
+      remove_language: Kaasar luuqada
+      add_language: Kudar luuqad
   social:
     facebook: "%{org} faysbuug"
     twitter: "%{org} tuwiitar"
@@ -549,6 +618,11 @@ so:
     manage:
       all: "Ma haysato fasax inaad ku dhaqaaqdo ficil %{action} oo ku saabsan%{subject}."
   users:
+    login_to_comment: "Wa inaad%{signin} ama%{signup} si aad uga tagto faalo."
+    login_to_continue: "Waa inad igu %{signin} ama%{signup} si wada."
+    signin: "gelid"
+    signup: "iska diwan gelin"
+    verify_account: "hubi xisaabtaada"
     direct_messages:
       new:
         direct_messages_bloqued: "Isticmaalahan ayaa go'aansaday inaanu helin farriimo toos ah"
@@ -563,6 +637,7 @@ so:
       deleted_proposal: Soo jeedintan ayaa la tirtiray
       deleted_budget_investment: Mashruucan maalgashiga ayaa la tirtiray
       proposals: Sojeedino
+      proposals_status: Status
       debates: Doodo
       budget_investments: Misaniyada malgashiyada
       comments: Faalo
@@ -590,7 +665,10 @@ so:
       delete_alert: "Ma hubtaa inaad rabto inaad tirtirto mashruuca maalgalinta? Ficilkan lama tirtiri karo"
     proposals:
       retired: "Soo jeedinta hawlgabka"
+      draft: Qabyo Qorid
+      published: Sobandhigaay
       see: "Fiiri soo jeedinta"
+      actions: Tilaabooyin
   votes:
     agree: Wan aqbalay
     anonymous: Codad qarsoodi ah oo badan si ay u qirto codka%{verify_account}.
@@ -675,3 +753,7 @@ so:
       alt: Dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
       text: Si aad uga faalloodto dukumiinti waa inaad%{sign_in} ama%{sign_up}. Ka dibna dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
       title: Sidee ayaan faallo uga bixin karaa qoraalkan?
+  links:
+    form:
+      delete_button: Titiriid
+      cancel_button: Jooji
