@@ -131,6 +131,13 @@ tr:
       new:
         title_multiple: Çoklu yeni başlık bütçesi
         title_single: Tekli yeni başlık bütçesi
+      help:
+        budgets: "Katılımcı bütçeler, vatandaşların teklif vermesine ve bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesine olanak tanımakla beraber, tekliflerin kurum tarafından izlenmesine ve titiz bir şekilde değerlendirilmesine de olanak tanır."
+        groups:
+          multiple: "Grupların başlıkları düzenlemesi hedeflenmiştir. Grup ve içerikleri oluşturulduktan sonra, bir kullanıcının grup başına kaç başlıkta oy verebileceğini belirlemek mümkündür."
+        headings:
+          multiple: "Başlıklar, katılımcı bütçedeki parayı ayırmak içindir. Burada, grup için başlıklar ekleyebilir ve her başlık için kullanılacak miktarı belirleyebilirsiniz."
+        phases: "Katılımcı bütçelerin farklı aşamaları vardır. Burada, aşamaları etkinleştirip devre dışı bırakabilir ve her bir aşamayı özelleştirebilirsiniz."
       winners:
         calculate: Kazanan Yatırımları Hesapla
         calculated: Kazananlar hesaplanıyor, bu bir dakika sürebilir.
@@ -188,6 +195,7 @@ tr:
         duration: "Aşama süresi"
         duration_description: "Bu aşamanın aktif olacağı süre."
         enabled_help_text: Bu aşama, bütçe'nin aşamaları zaman çizelgesinde herkese açık olacak, başka herhangi bir amaç için aktif olduğu kadar aktif olacak
+        main_call_to_action: "Eylem için ana mesaj (isteğe bağlı)"
         name_help_text: "Bu, bu aşama etkin olduğunda kullanıcıların başlıkta okuyacağı başlıktır."
         save_changes: Değişiklikleri kaydet
       index:
@@ -1646,3 +1654,7 @@ tr:
           created: Oluşturulan kayıtlar
         local_census_records:
           no_records_found: Kayıt bulunamadı.
+    machine_learning:
+      related_content: "İlgili içerik"
+      tab_help: "Yardım"
+      tags: "Etiketler"
