@@ -52,6 +52,7 @@ oc:
       milestones: de Hitas
     investments:
       form:
+        title: "Crear una inversion budgetària"
         tag_category_label: "de Categorias"
         tags_instructions: "Etiqueta aquela proposicion. Pòdes escuélher entre las categorias prepausadas o introdusir las que desiras"
         tags_label: d'Etiquetas
@@ -73,6 +74,11 @@ oc:
           other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Los mieus vòts
+          voted_info:
+            knapsack:
+              one: "<strong>Avètz votat una proposicion amb un còst de %{amount_spent}</strong>"
+              other: "<strong>As votat %{count} de proposicions amb un còst de %{amount_spent}</strong>"
+          change_vote_link: "cambiar los tieus vòts"
           different_heading_assigned: "Avètz de vòts actius en un autre títol: %{heading_link}"
           change_ballot: "Se càmbias d'opinion pòdes esborrar los tieus vòts en %{check_ballot} e tornar a començar."
           check_ballot_link: "revisar los mieus vòts"
@@ -80,6 +86,11 @@ oc:
           verified_only: "Per crear una nòva proposicion d'inversion %{verify}."
           create: "Crear una inversion budgetària"
           not_logged_in: "Per crear una nòva proposicion d'inversion te cal %{sign_in} o %{sign_up}."
+        filters:
+          feasible: "Viable"
+          selected: "seleccionada"
+          unfeasible: "Pas viables"
+          winners: "Ganhants"
         orders:
           random: Aleatòries
           confidence_score: Mai avaladas
@@ -127,6 +138,10 @@ oc:
           one: "Podètz solament suportar d'inversions a %{count} districte. Se contunhatz, podètz pas cambiar l’eleccion de lo vòstre districte. Ès segur?"
           other: "Podètz solament suportar d'inversions a %{count} de districtes. Se contunhatz, podètz pas cambiar l’eleccion de lo vòstre districte. Ès segur?"
         support: "Avalar"
+    investments_list:
+      investment:
+        price: "Còst"
+        supports: "d'Avals"
     show:
       see_results: veire de resultats
     results:
