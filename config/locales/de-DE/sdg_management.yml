@@ -6,7 +6,9 @@ de:
         no_cards: "Keine Kopfzeile vorhanden"
         title: "Kopfzeile"
     menu:
+      budget_investments: "Bürgerhaushalte"
       debates: "Debatten"
+      legislation_processes: "Gesetzgebungsverfahren"
       polls: "Umfragen"
       proposals: "Vorschläge"
       sdg_content: "Ziele und Vorgaben"
