@@ -62,14 +62,18 @@ ca:
     budgets:
       actions:
         edit: "Edita pressupost"
+        preview: "Previsualitzar"
       index:
         title: Pressupostos participatius
         new_link: Crear nou pressupost
         filter: Filtrar
         filters:
+          all: tots
           open: obert
           finished: Finalitzats
         budget_investments: Gestionar projectes
+        table_budget_type: "tipus"
+        table_draft: "Esborrany"
         table_name: Nome
         table_phase: fase
         admin_ballots: Paperetes d’administració
@@ -100,6 +104,8 @@ ca:
         success_notice: El pressupost s'ha suprimit correctament
         unable_notice: No podeu suprimir un pressupost que tingui inversions associades
         unable_notice_polls: No podeu suprimir un pressupost que tingui un sondeig associat
+      show:
+        add_heading: "Afegir partida"
       winners:
         calculate: Calculeu les inversions del guanyador
         calculated: Es calcularan els guanyadors, pot trigar un minut.
@@ -123,6 +129,8 @@ ca:
         create: "Crea un grup nou"
         edit: "Edita el grup"
         submit: "Desa el grup"
+      index:
+        new_button: "Afegeix nou grup"
     budget_headings:
       no_headings: "No hi ha cap títol."
       create:
@@ -243,6 +251,11 @@ ca:
         tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
         undefined: Sense definir
       search_unfeasible: Cercar inviables
+    budgets_wizard:
+      creation_timeline:
+        budget: Pressupost participatiu
+        groups: Grups
+        headings: Rúbriques
     milestones:
       index:
         table_id: "ID"
@@ -597,6 +610,12 @@ ca:
         add: Añadir como President de taula
       search:
         title: "Gestors: cerca d’usuaris"
+    sdg_managers:
+      index:
+        no_sdg_managers: No hi ha usuaris.
+    sdg/managers:
+      sdg/manager:
+        add: Añadir como President de taula
     menu:
       activity: Activitat de moderadors
       admin: Menú d'administració
@@ -1221,6 +1240,7 @@ ca:
           poll_questions: "Cercar preguntes"
           proposals: "Cercar propostes per títol, codi, descripció o pregunta"
           users: "Cercar usuari per nom o e-mail"
+        search: "Buscar"
       search_results: "Resultats de cerca"
       no_search_results: "No s'an trobat resultats."
       actions: Accions
@@ -1362,6 +1382,10 @@ ca:
           question_name: pregunta
           origin_web: Participants web
           origin_total: Total de participants
+      sdg:
+        debates: "Debats"
+        polls: "votacions"
+        proposals: "Propostes ciutadanes"
     tags:
       create: Crea tema
       index:
@@ -1541,3 +1565,7 @@ ca:
           created: Registres creats
         local_census_records:
           no_records_found: No s’han trobat registres.
+    machine_learning:
+      related_content: "Contingut relacionat"
+      tab_help: "Ajuda"
+      tags: "Etiquetes"
