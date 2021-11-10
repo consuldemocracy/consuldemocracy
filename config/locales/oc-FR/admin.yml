@@ -62,14 +62,18 @@ oc:
     budgets:
       actions:
         edit: "Edita budgèt"
+        preview: "Previsualitzar"
       index:
         title: de Budgèts participatius
         new_link: Crear nòu budgèt
         filter: Filtrar
         filters:
+          all: totes
           open: dobèrt
           finished: Finalizats
         budget_investments: Gerir de projèctes
+        table_budget_type: "tipe"
+        table_draft: "Borrolhon"
         table_name: Nome
         table_phase: fasa
         admin_ballots: de Bilhetas d’administracion
@@ -242,6 +246,11 @@ oc:
         tags_placeholder: "Escriu las etiquetas que vòlgas separadas per comes (,)"
         undefined: Sens definir
       search_unfeasible: Cercar inviables
+    budgets_wizard:
+      creation_timeline:
+        budget: Budgèt participatiu
+        groups: de Grops
+        headings: Rúbriques
     milestones:
       index:
         table_id: "ID"
@@ -595,6 +604,12 @@ oc:
         add: Añadir como President de taula
       search:
         title: "de Gestors: cerca d’usatgièrs"
+    sdg_managers:
+      index:
+        no_sdg_managers: I a pas d'usatgièrs.
+    sdg/managers:
+      sdg/manager:
+        add: Añadir como President de taula
     menu:
       activity: Activitat de moderadors
       admin: Menu d'administracion
@@ -1167,6 +1182,13 @@ oc:
           without_confirmed_hide: Sens decidir
         title: de Proposicions amagas
         no_hidden_proposals: I a pas de proposicions amagas.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtrar
+        filters:
+          all: totes
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Sens decidir
     settings:
       flash:
         updated: Valor actualizada
@@ -1210,6 +1232,7 @@ oc:
           poll_questions: "Cercar de questions"
           proposals: "Cercar de proposicions per títol, còdi, descripcion o question"
           users: "Cercar usatgièr per nom o e-mail"
+        search: "Cercar"
       search_results: "de Resultats de cèrca"
       no_search_results: "Pas se an de trobats resultats."
       actions: d'Accions
@@ -1351,6 +1374,10 @@ oc:
           question_name: question
           origin_web: de Participants web
           origin_total: Total de participants
+      sdg:
+        debates: "Debats"
+        polls: "votacions"
+        proposals: "De proposicions ciutadanas"
     tags:
       create: Crèa tèma
       index:
@@ -1360,6 +1387,7 @@ oc:
         help: "Quand un usatgièr crèa una proposicion, los tèmas seguents se suggerisson coma etiquetas predeterminadas."
     users:
       columns:
+        id: ID
         name: Nome
         email: Lo tieu corrièr electronic
         document_number: Numèro de document
@@ -1368,6 +1396,9 @@ oc:
       index:
         title: d'usatgièrs bloquejats
         no_users: I a pas d'usatgièrs.
+        filter: Filtrar
+        filters:
+          active: Actius
       search:
         placeholder: Cercar usatgièr per email, nom o DNI
     verifications:
@@ -1524,3 +1555,7 @@ oc:
           created: Registres creats
         local_census_records:
           no_records_found: No s’han trobat registres.
+    machine_learning:
+      related_content: "Contengut ligat"
+      tab_help: "Ajuda"
+      tags: "d'Etiquetas"
