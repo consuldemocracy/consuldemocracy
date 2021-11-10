@@ -682,6 +682,7 @@ hr:
       back: "Nzad na moju aktivnost"
   shared:
     edit: "Uredi"
+    filter: "Filter"
     save: "Spremi"
     delete: "Izbriši"
     "yes": "Da"
