@@ -64,14 +64,18 @@ pt-BR:
       actions:
         ballots: "Criar urnas"
         edit: "Editar orçamento"
+        preview: "Prévia"
       index:
         title: Orçamentos participativos
         new_link: Criar novo orçamento
         filter: Filtro
         filters:
+          all: Tudo
           open: Aberto
           finished: Finalizados
         budget_investments: Gerenciar projetos
+        table_budget_type: "Tipo"
+        table_draft: "Rascunho"
         table_name: Nome
         table_phase: Estágio
         admin_ballots: Administrar cédulas
@@ -129,6 +133,8 @@ pt-BR:
         edit: "Editar grupo"
         max_votable_headings_info: "Aplica-se apenas à fase de seleção de projetos. Durante a fase de votação de projetos, os usuários podem apenas votar em um cabeçalho por grupo."
         submit: "Salvar grupo"
+      index:
+        new_button: "Adicionar novo grupo"
     budget_headings:
       no_headings: "Não há títulos."
       create:
@@ -249,6 +255,11 @@ pt-BR:
         tags_placeholder: "Escreva as marcações que deseja separadas por vírgulas (,)"
         undefined: Não definido
       search_unfeasible: Pesquisar inviáveis
+    budgets_wizard:
+      creation_timeline:
+        budget: Orçamento
+        groups: Grupos
+        headings: Títulos
     milestones:
       index:
         table_id: "ID"
@@ -1578,3 +1589,7 @@ pt-BR:
           created: Registros criados
         local_census_records:
           no_records_found: Nenhum registro encontrado.
+    machine_learning:
+      related_content: "Conteúdo relacionado"
+      tab_help: "Ajuda"
+      tags: "Marcação"
