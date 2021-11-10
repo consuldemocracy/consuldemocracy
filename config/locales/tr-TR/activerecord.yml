@@ -162,6 +162,7 @@ tr:
         voting_style_approval: "Onay"
       budget/translation:
         main_link_text: "Bağlantıdaki metin"
+        main_link_url: "Bağlantı sizi şuraya götürür: (link ekle)"
         name: "İsim"
       budget/investment:
         heading_id: "Başlık"
@@ -234,6 +235,8 @@ tr:
         name: "İsim"
         description: "Açıklama"
         summary: "Özet"
+        main_link_text: "Bağlantıdaki metin"
+        main_link_url: "Bağlantı sizi şuraya götürür: (link ekle)"
       comment:
         body: "Yorum"
         user: "Kullanıcı"
