@@ -1,1 +1,18 @@
 es:
+  sdg_management:
+    homepage:
+      header:
+        create: "Crear encabezado"
+        title: "Encabezado"
+    menu:
+      budget_investments: "Presupuestos participativos"
+      debates: "Debates"
+      legislation_processes: "Procesos legislativos"
+      polls: "Votaciones"
+      proposals: "Propuestas ciudadanas"
+    relations:
+      index:
+        filter: "Filtrar"
+        filters:
+          all: "Todas"
+          pending_sdg_review: "Sin decidir"
