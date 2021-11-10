@@ -60,14 +60,18 @@ val:
     budgets:
       actions:
         edit: "Edita pressupost"
+        preview: "Vista previa"
       index:
         title: Pressupostos participatius
         new_link: Crear nou pressupost
         filter: Filtre
         filters:
+          all: Totes
           open: Oberts
           finished: Finalitzades
         budget_investments: Vore propostes d'inversió
+        table_budget_type: "Tipus"
+        table_draft: "Esborrany"
         table_name: Nom
         table_phase: Fase
         no_budgets: "No hi ha pressupostos."
@@ -86,6 +90,8 @@ val:
       destroy:
         success_notice: Pressupost eliminat correctament
         unable_notice: No pots eliminar un Pressupost amb propostes
+      show:
+        add_heading: "Afegir partida"
       winners:
         calculate: Calcular propostes guanyadores
         calculated: Calculant guanyadores, pot tardar algún minut.
@@ -109,6 +115,8 @@ val:
         create: "Crear un nou grup"
         edit: "Editar grup"
         submit: "Guardar group"
+      index:
+        new_button: "Afegeix nou grup"
     budget_headings:
       no_headings: "No hi ha partides creades encara. Cada usuari podrà votar en una sola partida de cada grup."
       create:
@@ -153,6 +161,8 @@ val:
           unfeasible: Inviable
           min_total_supports: Avals mínims
           winners: Guanyadores
+          one_filter: "Filtres aplicats: <b><em>%{filter}</em></b>"
+          two_filters: "Filtres aplicats: <b><em>%{filter}, %{advanced_filters}}</em></b>"
         buttons:
           filter: Filtre
         download_current_selection: "Baixar la selecció actual"
@@ -181,6 +191,8 @@ val:
           visible_to_valuators: Veure a evaluadors
           author_username: Nom d'usuari de l'autor
           incompatible: Incompatible
+          price: Cost
+          author: Autor
         cannot_calculate_winners: El pressupost ha d'estar en les fases "Votació final", "Votació finalitzada" o "Resultats" per a poder calcular les propostes guanyadores
         see_results: "Vore resultats"
       show:
@@ -220,8 +232,14 @@ val:
         tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
         undefined: Sense definir
       search_unfeasible: Buscar inviables
+    budgets_wizard:
+      creation_timeline:
+        budget: Pressupost
+        groups: Grups
+        headings: Partides pressupostàries
     milestones:
       index:
+        table_id: "ID"
         table_title: "Títol"
         table_description: "Descripció"
         table_publication_date: "Data de publicació"
@@ -230,6 +248,7 @@ val:
         no_milestones: "No hi ha fites definides"
         image: "Imatge"
         show_image: "Mostrar imatge"
+        documents: "Documents"
         milestone: Seguiment
         new_milestone: Crear nova fita
       form:
@@ -266,20 +285,70 @@ val:
     progress_bars:
       index:
         title: "Barres de progrés"
+        table_id: "ID"
         table_kind: "Tipus"
         table_title: "Títol"
         table_percentage: "Progrés actual"
     comments:
       index:
+        id: "ID"
+        content: "Contingut"
+        author: "Autor"
+        commentable_type: "Tipus"
+        title: Comentaris ocults
+        table_link: "Enllaç"
+    hidden_comments:
+      index:
+        filter: Filtre
+        filters:
+          all: Totes
+          with_confirmed_hide: Confirmats
+          without_confirmed_hide: Pendents
+        hidden_debate: Debat ocults
+        hidden_proposal: Proposta oculta
         title: Comentaris ocults
     dashboard:
       index:
         back: Tornar a %{org}
         title: Administració
         description: Benvingut al panell d'administració de %{org}.
+      actions:
+        index:
+          active: 'Si'
+          inactive: 'No'
+          action_title: Títol
+          action_type: Tipus
+          action_active: Actius
+          order: Ordre
+          default:
+            email: Correu electrònic
+            polls: Votacions
+        form:
+          submit_button: Guardar
+      administrator_tasks:
+        index:
+          filter: Filtre
+          filters:
+            pending: Pendents
+        form:
+          proposal: Proposta
     debates:
       index:
+        id: ID
+        author: Autor
         title: Debats ocults
+    hidden_debates:
+      index:
+        filter: Filtre
+        filters:
+          all: Totes
+          with_confirmed_hide: Confirmats
+          without_confirmed_hide: Pendents
+        title: Debats ocults
+    documents:
+      index:
+        new_link: "Afegeix un nou document"
+        title: "Documents"
     hidden_users:
       index:
         filter: Filtre
@@ -332,6 +401,7 @@ val:
           create: Nou procés
           title: Processos legislatius
           filters:
+            active: Actius
             all: Totes
         new:
           back: Tornar
@@ -346,6 +416,8 @@ val:
           title: Proces
           comments: Comentaris
           status: Estat
+          start_date: Data d'inici del procés
+          end_date: Data de fi del procés
           status_open: Oberts
           status_closed: Tancat
           status_planned: Pròximament
@@ -383,6 +455,7 @@ val:
           submit_button: Guardar canvis
           warning: Alerta, has editat el text. Per conservar de manera permanent els canvis, no t'oblidis de fer clic a Guardar.
         form:
+          title: 'S''està editant <span class="strong">%{draft_version_title}</span> del procés <span class="strong">%{process_title}</span>'
           launch_text_editor: Llançar editor de text
           close_text_editor: Tancar editor de text
           use_markdown: Fes servir Markdown per formatar el text
@@ -451,6 +524,12 @@ val:
         add: Afegir com a moderador
       search:
         title: "Gestors: Cerca d'usuaris"
+    sdg_managers:
+      index:
+        no_sdg_managers: No hi ha usuaris.
+    sdg/managers:
+      sdg/manager:
+        add: Afegir com a Gestor
     menu:
       activity: Activitat dels Moderadors
       admin: Menú d'administració
@@ -510,6 +589,8 @@ val:
       title_booths: Cabines de vot
       legislation: Legislació col·laborativa
       users: Usuaris
+      debates: "Debats"
+      comments: "Comentaris"
     administrators:
       index:
         title: Administradors
@@ -618,6 +699,10 @@ val:
         title: "Resum de Notificacions de Propostes"
         description: "Reuneix totes les notificacions de propostes en un únic missatge, per a evitar massa emails."
         preview_detail: "Els usuaris sols rebran les notificacions d'aquelles propostes que segueixquen"
+      comment:
+        title: "Comentari"
+      reply:
+        title: "Respondre"
     emails_download:
       index:
         title: Descàrrega de emails
@@ -785,6 +870,8 @@ val:
         poll_not_assigned: "Votació sense asignar"
       edit:
         title: "Editar pregunta ciutadana"
+      new:
+        title_proposal: "Crear pregunta"
       answers:
         images:
           add_image: "Afegir imatge"
@@ -833,6 +920,7 @@ val:
       index:
         title: "Recomptes"
         no_recounts: "No hi ha res del que fer recompte"
+        total_system: "Vots (automàtic)"
         table_booth_name: "Urna"
         table_total_recount: "Recompte final (president de taula)"
         table_system_count: "Vots (automàtic)"
@@ -900,6 +988,9 @@ val:
           pending: Pendents
           rejected: Rebutjada
           verified: Verificades
+        hidden_count:
+          one: Hi ha a més <strong>una organització</strong> sense usuari o amb l'usuari bloquejat.
+          other: Hi ha <strong>%{count} organitzacions</strong> sense usuari o amb l'usuari bloquejat.
         name: Nom
         email: Correu electrònic
         phone_number: Telèfon
@@ -920,6 +1011,8 @@ val:
         title: Propostes
         id: ID
         author: Autor
+        select: Seleccionar
+        selected: Seleccionades
         milestones: Seguiments
         no_proposals: No hi han propostes.
     hidden_proposals:
@@ -931,11 +1024,21 @@ val:
           without_confirmed_hide: Pendents
         title: Propostes ocultes
         no_hidden_proposals: No hi ha propostes ocultes.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtre
+        filters:
+          all: Totes
+          with_confirmed_hide: Confirmats
+          without_confirmed_hide: Pendents
+        title: Notificacions ocultes
+        no_hidden_proposals: No hi ha notificacions ocultes.
     settings:
       flash:
         updated: Valor actualitzat
       index:
         title: Configuració global
+        general: Configuració global
         update_setting: Actualitzar
         feature_flags: Funcionalitats
         features:
@@ -961,6 +1064,7 @@ val:
           poll_questions: "Cercar preguntes"
           proposals: "Cercar propostes per títol, codi, descripció o pregunta"
           users: "Cercar usuari per nom o correu electrònic"
+        search: "Cercar"
       search_results: "Resultats de la cerca"
       no_search_results: "No s'an trobat resultats."
       actions: Accions
@@ -974,6 +1078,8 @@ val:
       author: Autor
       content: Contingut
       created_at: Creada el
+      color_help: Format hexadecimal
+      show_results_and_stats: "Mostrar resultats i estadístiques"
     geozones:
       index:
         title: Districtes
@@ -1009,6 +1115,7 @@ val:
       show:
         created_at: Creat
         author: Autor
+        users: Usuaris
         verified:
           one: "Hi ha %{count} signatura vàlida"
           other: "Hi ha %{count} signatures vàlides"
@@ -1038,10 +1145,23 @@ val:
           visits: Visites
           votes: Vots
         budgets_title: Pressupostos participatius
+        participatory_budgets: Pressupostos participatius
         direct_messages: Missatges directes
         proposal_notifications: Notificacions de propostes
         incomplete_verifications: Verificacions incompletes
         polls: Votacions
+      graph:
+        debate_created: Debats
+        visit: Visites
+        proposal_created: Propostes ciutadanes
+      budget_balloting:
+        vote_count: Vots
+        participant_count: Participants
+      budget_supporting:
+        headings: Partides pressupostàries
+        users: Usuaris
+        vote_count: Vots
+        participant_count: Participants
       direct_messages:
         title: Missatges directes
         total: Total
@@ -1062,6 +1182,10 @@ val:
           question_name: Pregunta
           origin_web: Participants en la Web
           origin_total: Participants Totals
+      sdg:
+        debates: "Debats"
+        polls: "Votacions"
+        proposals: "Propostes"
     tags:
       create: Crea un tema
       index:
@@ -1071,6 +1195,7 @@ val:
         help: "Quant un usuari crea una proposta se li suggerixen com a etiquetes per defecte els següents temes."
     users:
       columns:
+        id: ID
         name: Nom
         email: Correu electrònic
         document_number: Número de document
@@ -1079,6 +1204,9 @@ val:
       index:
         title: Usuari
         no_users: No hi ha usuaris.
+        filter: Filtre
+        filters:
+          active: Actius
       search:
         placeholder: Cercar usuari per email, nom o Dni
     verifications:
@@ -1182,3 +1310,15 @@ val:
         submit_header: Guardar capçalera
         card_title: Editar targeta
         submit_card: Guardar targeta
+    audits:
+      id: "ID"
+      actions: "Accions"
+    local_census_records:
+      index:
+        document_type: Tipus de document
+        document_number: Número de document
+        date_of_birth: Data de naixement
+    machine_learning:
+      related_content: "Contingut relacionat"
+      tab_help: "Ajuda"
+      tags: "Temes"
