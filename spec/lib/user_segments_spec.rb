@@ -5,7 +5,7 @@ describe UserSegments do
   let(:user2) { create(:user) }
   let(:user3) { create(:user) }
 
-  describe "#all_users" do
+  describe ".all_users" do
     it "returns all active users enabled" do
       active_user = create(:user)
       erased_user = create(:user, erased_at: Time.current)
@@ -15,7 +15,7 @@ describe UserSegments do
     end
   end
 
-  describe "#administrators" do
+  describe ".administrators" do
     it "returns all active administrators users" do
       active_user = create(:user)
       active_admin = create(:administrator).user
@@ -27,7 +27,7 @@ describe UserSegments do
     end
   end
 
-  describe "#all_proposal_authors" do
+  describe ".all_proposal_authors" do
     it "returns users that have created a proposal even if is archived or retired" do
       create(:proposal, author: user1)
       create(:proposal, :archived, author: user2)
@@ -49,7 +49,7 @@ describe UserSegments do
     end
   end
 
-  describe "#proposal_authors" do
+  describe ".proposal_authors" do
     it "returns users that have created a proposal" do
       create(:proposal, author: user1)
 
@@ -67,7 +67,7 @@ describe UserSegments do
     end
   end
 
-  describe "#investment_authors" do
+  describe ".investment_authors" do
     it "returns users that have created a budget investment" do
       investment = create(:budget_investment, author: user1)
       budget = create(:budget)
@@ -90,7 +90,7 @@ describe UserSegments do
     end
   end
 
-  describe "#feasible_and_undecided_investment_authors" do
+  describe ".feasible_and_undecided_investment_authors" do
     it "returns authors of a feasible or an undecided budget investment" do
       user4 = create(:user)
       user5 = create(:user)
@@ -128,7 +128,7 @@ describe UserSegments do
     end
   end
 
-  describe "#selected_investment_authors" do
+  describe ".selected_investment_authors" do
     it "returns authors of selected budget investments" do
       selected_investment = create(:budget_investment, :selected, author: user1)
       unselected_investment = create(:budget_investment, :unselected, author: user2)
@@ -153,7 +153,7 @@ describe UserSegments do
     end
   end
 
-  describe "#winner_investment_authors" do
+  describe ".winner_investment_authors" do
     it "returns authors of winner budget investments" do
       winner_investment = create(:budget_investment, :winner, author: user1)
       selected_investment = create(:budget_investment, :selected, author: user2)
@@ -178,7 +178,7 @@ describe UserSegments do
     end
   end
 
-  describe "#current_budget_investments" do
+  describe ".current_budget_investments" do
     it "only returns investments from the current budget" do
       investment1 = create(:budget_investment, author: create(:user))
       investment2 = create(:budget_investment, author: create(:user))
@@ -192,7 +192,7 @@ describe UserSegments do
     end
   end
 
-  describe "#not_supported_on_current_budget" do
+  describe ".not_supported_on_current_budget" do
     it "only returns users that haven't supported investments on current budget" do
       investment1 = create(:budget_investment)
       investment2 = create(:budget_investment)
@@ -209,7 +209,7 @@ describe UserSegments do
     end
   end
 
-  describe "#user_segment_emails" do
+  describe ".user_segment_emails" do
     it "returns list of emails sorted by user creation date" do
       create(:user, email: "first@email.com", created_at: 1.day.ago)
       create(:user, email: "last@email.com")
