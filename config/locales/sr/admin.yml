@@ -62,14 +62,18 @@ sr:
     budgets:
       actions:
         edit: "Уредити буџет"
+        preview: "Преглед"
       index:
         title: Партиципативни буџети
         new_link: Креирајте нови буџет
         filter: Филтер
         filters:
+          all: Све
           open: Отворите
           finished: Завршено
         budget_investments: Управљање пројектима
+        table_budget_type: "Тип"
+        table_draft: "Нацрт"
         table_name: Име
         table_phase: Фаза
         admin_ballots: Админ листићи
@@ -247,6 +251,11 @@ sr:
         tags_placeholder: "Напишите ознаке које желите да одвојите зарезима (,)"
         undefined: Неодређено
       search_unfeasible: Тражите неизводљиво
+    budgets_wizard:
+      creation_timeline:
+        budget: Буџет
+        groups: Групе
+        headings: Наслови
     milestones:
       index:
         table_id: "ИД"
@@ -601,6 +610,12 @@ sr:
         add: Додати
       search:
         title: "Управљачи: Корисничка претрага"
+    sdg_managers:
+      index:
+        no_sdg_managers: Нема корисника.
+    sdg/managers:
+      sdg/manager:
+        add: Додати
     menu:
       activity: Активности модератора
       admin: Административни мени
@@ -1227,6 +1242,7 @@ sr:
           poll_questions: "Тражите анктена питања"
           proposals: "Тражите предлоге по наслову, коду, опису или питању"
           users: "Тражи корисника по имену или емаилу"
+        search: "Тражите"
       search_results: "Тражите резултате"
       no_search_results: "Нема нађених резултата."
       actions: Радње
@@ -1371,6 +1387,10 @@ sr:
           question_name: Питање
           origin_web: Веб корисници
           origin_total: Укупно учесника
+      sdg:
+        debates: "Расправе"
+        polls: "Гласање"
+        proposals: "Предлози"
     tags:
       create: Креирајте тему
       index:
@@ -1550,3 +1570,7 @@ sr:
           created: Креирани записи
         local_census_records:
           no_records_found: Нема нађених записа.
+    machine_learning:
+      related_content: "Повезани садржај"
+      tab_help: "Помоћ"
+      tags: "Ознаке"
