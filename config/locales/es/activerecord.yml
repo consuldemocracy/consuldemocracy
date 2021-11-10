@@ -4,6 +4,9 @@ es:
     results_enabled: "Mostrar resultados"
     stats_enabled: "Mostrar estadísticas"
     advanced_stats_enabled: "Mostrar estadísticas avanzadas"
+    name: Nombre
+    email: Email
+    description: Descripción detallada
   activerecord:
     models:
       activity:
@@ -214,6 +217,7 @@ es:
         ends_at: "Fecha de fin"
         starts_at: "Fecha de inicio"
       budget/phase/translation:
+        name: "Nombre"
         description: "Descripción"
         summary: "Resumen"
       comment:
@@ -272,6 +276,7 @@ es:
         responsible_name: "Persona responsable del colectivo"
       poll:
         name: "Nombre"
+        title: "Nombre"
         starts_at: "Fecha de apertura"
         ends_at: "Fecha de cierre"
         geozone_restricted: "Restringida por zonas"
@@ -308,6 +313,16 @@ es:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
         document_numbers: "Números de documentos"
+      sdg/goal:
+        title: "Título"
+        description: "Descripción detallada"
+      sdg/local_target:
+        title: "Título"
+      sdg/local_target/translation:
+        title: "Título"
+        description: "Descripción detallada"
+      sdg/target:
+        title: "Título"
       site_customization/page:
         content: Contenido
         created_at: Creada
