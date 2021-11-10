@@ -180,6 +180,7 @@ it:
     topic: Argomento
     image: Immagine
     local_census_record: Registro del Censo Locale
+    sdg/local_target: obiettivo locale
   geozones:
     none: Tutta la città
   layouts:
@@ -188,6 +189,13 @@ it:
       firefox: Firefox
       ie: Abbiamo rilevato che stai navigando con Internet Explorer. Per una migliore esperienza, raccomandiamo di usare %{firefox} o %{chrome}.
       ie_title: Questo sito non è ottimizzato per il tuo browser
+    dashboard:
+      proposal_header:
+        published: Pubblicato
+        draft: Bozza
+      proposal_totals:
+        supports:
+          zero: Nessun sostegno
     footer:
       accessibility: Accessibilità
       conditions: Termini e condizioni d'uso
@@ -224,6 +232,7 @@ it:
           one: Hai una nuova notifica
           other: Hai %{count} nuove notifiche
         notifications: Notifiche
+      sdg: "SDG"
   notifications:
     index:
       empty_notifications: Non hai nuove notifiche.
@@ -265,11 +274,16 @@ it:
       sign_in: Accedi con Twitter
       sign_up: Registrati con Twitter
       name: Twitter
+    info:
+      sign_in: "Accedi con:"
+      sign_up: "Registrati con:"
     or_fill: "Oppure compila il seguente modulo:"
   proposals:
     create:
       form:
         submit_button: Creare una proposta
+    share:
+      dashboard: Visualizza ulteriori informazioni
     edit:
       editing: Modifica proposta
       form:
@@ -328,6 +342,9 @@ it:
         button: Ricercare
         placeholder: Cerca proposte...
         title: Ricercare
+      search_results:
+        one: " contenenti il termine <strong>'%{search_term}'</strong>"
+        other: " contenenti il termine <strong>'%{search_term}'</strong>"
       select_order_long: "Stai visualizzando le proposte in base a:"
       start_proposal: Crea una proposta
       title: Proposte
@@ -399,6 +416,25 @@ it:
       form:
         submit_button: Salva modifiche
   dashboard:
+    menu:
+      community: Community
+      polls: Votazioni
+      related_content: Contenuti correlati
+    progress:
+      supports: Sostegni
+    index:
+      edit_proposal_link: Modifica proposta
+      retire: Ritira proposta
+    new_request:
+      links: Link
+    recommended_actions:
+      pending_title: In sospeso
+      done_title: Fatto
+    community:
+      access_community: Accedi alla comunità
+      participants: Partecipanti
+      debates: Dibattiti
+      comments: Commenti
     messages:
       previous_notifications: Vedi notifiche precedenti
     polls:
@@ -450,6 +486,11 @@ it:
     mailing:
       index:
         title: Anteprima E-mail
+      mailing_options:
+        preview: Anteprima
+    mailer:
+      forward:
+        support_button: Sostieni questa proposta
   polls:
     all: "Tutti"
     no_dates: "nessuna data assegnata"
@@ -483,6 +524,7 @@ it:
       back: Ritorno al voto
       cant_answer_not_logged_in: "È necessario %{signin} o %{signup} per partecipare."
       comments_tab: Commenti
+      cant_answer_verify: "È necessario %{verify_link} per rispondere."
       verify_link: "verifica la tua utenza"
       cant_answer_expired: "Questa votazione è conclusa."
       cant_answer_wrong_geozone: "Questo quesito non è disponibile nella tua zona."
@@ -579,6 +621,7 @@ it:
       districts: "Distretti"
       districts_list: "Lista dei distretti"
       categories: "Categorie"
+    target_blank: " (il link si apre in una nuova finestra)"
     you_are_in: "Sei entrato"
     unflag: Rimuovi il flag
     unfollow_entity: "Non seguire più %{entity}"
@@ -598,6 +641,9 @@ it:
       title: Raccomandazioni
       see_more: Visualizza ulteriori raccomandazioni
       hide: Nascondi raccomandazioni
+    translations:
+      remove_language: Rimuovi lingua
+      add_language: Aggiungi lingua
     optional: "Opzionale"
     required: "Obbligatorio"
   social:
@@ -623,6 +669,11 @@ it:
     manage:
       all: "Non hai l’autorizzazione per eseguire l’azione '%{action}' su %{subject}."
   users:
+    login_to_comment: "È necessario %{signin} o %{signup} per lasciare un commento."
+    login_to_continue: "È necessario %{signin} o %{signup} per continuare."
+    signin: "accedere"
+    signup: "registrarsi"
+    verify_account: "verifica il tuo account"
     direct_messages:
       new:
         direct_messages_bloqued: "Questo utente ha deciso di non ricevere messaggi diretti"
@@ -637,6 +688,7 @@ it:
       deleted_proposal: Questa proposta è stata eliminata
       deleted_budget_investment: Questo progetto di investimento è stato eliminato
       proposals: Proposte
+      proposals_status: Status
       debates: Dibattiti
       budget_investments: Investimenti del bilancio
       comments: Commenti
@@ -664,7 +716,10 @@ it:
       delete_alert: "Sei sicuro di voler eliminare il tuo progetto di investimento? Questa azione non può essere annullata"
     proposals:
       retired: "Ritira proposta"
+      draft: Bozza
+      published: Pubblicato
       see: "Visualizza proposta"
+      actions: Azioni
   votes:
     agree: Sono d'accordo
     anonymous: Troppi voti anonimi per ammettere il voto %{verify_account}.
@@ -749,3 +804,21 @@ it:
       alt: Selezionare il testo che si desidera commentare e premere il pulsante con la matita.
       text: Per commentare questo documento è necessario %{sign_in} o %{sign_up}. Quindi selezionare il testo che si desidera commentare e premere il pulsante con la matita.
       title: Come posso commentare questo documento?
+  links:
+    form:
+      delete_button: Eliminare
+      cancel_button: Cancella
+    nested_links:
+      title: Link
+  communities:
+    show:
+      surveys: Sondaggi
+      complete_survey: Completa il sondaggio
+    subnav:
+      surveys: Sondaggi
+  remote_translations:
+    text: Il contenuto di questa pagina non è disponibile nella tua lingua
+    all_remote_translations_enqueued_text: In un breve periodo di tempo aggiornando la pagina potrai vedere tutto il contenuto nella tua lingua.
+    create:
+      enqueue_remote_translation: Le traduzioni sono state richieste correttamente.
+    button: Traduci pagina
