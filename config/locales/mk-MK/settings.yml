@@ -50,8 +50,12 @@ mk:
     hot_score_period_in_days_description: "Филтерот \"најактивен\" користен во различни оддели ќе биде базиран на гласови во последните Х денови"
     mailer_from_name: "Име на испраќачот на електронска порака"
     mailer_from_name_description: "Ова име ќе се појави како име на испраќачот на електронски пошти испратени од оваа апликација"
+    proposals:
+      poll_short_title: Анкети
+      email_short_title: Е-пошта
     feature:
       user:
+        recommendations: "Препораки"
         recommendations_on_proposals_description: "Покажува препораки за корисниците на страната за предлози базирани на таговите од прашањата кои се следени"
       community: "Заедница за предлози и инвестиции"
       community_description: "Го овозможува одделот заедница во предлозите и проектите за инвестиции во Партиципативните Буџети"
@@ -70,3 +74,7 @@ mk:
       remote_translations: "Превод од дистанца"
       remote_translations_description: "Прикажува копче кое им дозволува на корисниците да побараат превод кога содржината не е на нивниот јазик."
       translation_interface: "Интерфејс за превод"
+    process:
+      debates: "Дебати"
+      proposals: "Предлози"
+      polls: "Анкети"
