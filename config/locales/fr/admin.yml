@@ -144,6 +144,8 @@ fr:
           multiple: "Les rubriques sont destinées à répartir l'argent du budget participatif. Ici, vous pouvez ajouter des rubriques pour ce groupe et attribuer le montant d'argent qui sera utilisé pour chaque rubrique."
           single: "Les rubriques sont destinées à répartir l'argent du budget participatif. Puisque ce budget ne contiendra qu'une seule rubrique, c'est ici que vous établissez l'argent qui sera dépensé dans ce budget participatif."
         phases: "Les budgets participatifs ont différentes phases. Ici, vous pouvez activer ou désactiver des phases et également personnaliser chaque phase individuelle."
+      show:
+        add_heading: "Ajouter une rubrique"
       winners:
         calculate: Calculer les investissements gagnant
         calculated: Le calcul des gagnants peut prendre quelques minutes.
@@ -197,6 +199,7 @@ fr:
         title: "Modifier la phase"
         description_help_text: Ce texte s’affiche dans l’en-tête lors de la phase est active
         enabled_help_text: Cette phase sera publique dans la chronologie des phases du budget, mais aussi active pour tout autre usage
+        main_call_to_action: "Appel à l'action principal (facultatif)"
         save_changes: Sauvegarder des changements
     budget_investments:
       index:
@@ -219,6 +222,8 @@ fr:
           min_total_supports: Prise en charge minimale
           max_total_supports: Soutiens maximum
           winners: Gagnants
+          one_filter: "Filtres activés : <b><em>%{filter}</em></b>"
+          two_filters: "Filtres activés : <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtre
         download_current_selection: "Télécharger la sélection"
@@ -277,6 +282,7 @@ fr:
           "true": "Oui"
           "false": "Non"
         valuator_groups: "Groupes de l’évaluateur"
+        preview: Aperçu de l'investissement
       edit:
         classification: Classement
         compatibility: Compatibilité
@@ -288,15 +294,24 @@ fr:
         tags_placeholder: "Saisir les étiquettes souhaitées séparées par des virgules (,)"
         undefined: Indéfini
       search_unfeasible: Recherche impossible
+    budgets_wizard:
+      creation_timeline:
+        budget: Budget participatif
+        groups: Groupes
+        headings: Titres
+        phases: Phase
     milestones:
       index:
         table_id: "ID"
         table_title: "Titre"
+        table_description: "Description"
         table_publication_date: "Date de publication"
         table_status: Statut
+        table_actions: "Actions"
         no_milestones: "Aucun jalon défini"
         image: "Image"
         show_image: "Afficher l'image"
+        documents: "Documents"
         milestone: Jalon
         new_milestone: Créer nouveau jalon
       form:
@@ -356,8 +371,20 @@ fr:
     comments:
       index:
         id: "ID"
+        content: "Contenu"
         author: "Auteur"
         commentable_type: "Type"
+        title: Commentaires masqués
+        table_link: "Lien"
+    hidden_comments:
+      index:
+        filter: Filtre
+        filters:
+          all: Toutes
+          with_confirmed_hide: Confirmé
+          without_confirmed_hide: Indécis
+        hidden_debate: Débat masqué
+        hidden_proposal: Proposition masquée
         title: Commentaires masqués
     dashboard:
       index:
@@ -815,10 +842,14 @@ fr:
         description: "Envoyé à l'auteur lorque son investissement budgétaire a été selectionné."
       budget_investment_unfeasible:
         title: "Investissement budgétaire irréalisable"
+      comment:
+        title: "Commentaire"
       reply:
         title: "Répondre"
       user_invite:
         title: "Invitation d'utilisateur"
+      evaluation_comment:
+        title: "Nouveau commentaire d'évaluation"
     emails_download:
       index:
         title: Téléchargement des courriels
@@ -990,6 +1021,7 @@ fr:
         title: "Modifier la question"
       new:
         title: "Créer une question pour le sondage %{poll}"
+        title_proposal: "Créer une question"
       answers:
         images:
           add_image: "Ajouter une image"
@@ -1038,6 +1070,8 @@ fr:
       index:
         title: "Dépouillements"
         no_recounts: "Il n'y a rien à dépouiller"
+        total_final: "Dépouillement final"
+        total_system: "Votes (automatique)"
         table_booth_name: "Urne"
         table_total_recount: "Dépouillement final (par assesseur)"
         table_system_count: "Votes (automatique)"
@@ -1105,6 +1139,9 @@ fr:
           pending: Indécis
           rejected: Rejeté
           verified: Vérifié
+        hidden_count:
+          one: Il y a également <strong>une organisation</strong> sans utilisateurs ou avec un utilisateur masqué.
+          other: Il y a <strong>%{count} organisations</strong> sans utilisateurs ou avec un utilisateur masqué.
         name: Nom
         email: Email
         phone_number: Téléphone
@@ -1137,11 +1174,21 @@ fr:
           without_confirmed_hide: Indécis
         title: Propositions masquées
         no_hidden_proposals: Il n’y a aucune proposition masquée.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtre
+        filters:
+          all: Toutes
+          with_confirmed_hide: Confirmé
+          without_confirmed_hide: Indécis
+        title: Notifications masquées
+        no_hidden_proposals: Il n'y a pas de notifications masquées.
     settings:
       flash:
         updated: Valeur mise-à-jour
       index:
         title: Paramètres
+        general: Paramètres
         update_setting: Mettre-à-jour
         feature_flags: Fonctionnalités
         features:
@@ -1153,6 +1200,8 @@ fr:
             update: Configuration de la carte mise à jour avec succès.
           form:
             submit: Mettre-à-jour
+        dashboard:
+          title: Tableau de bord des propositions
       remote_census_response_name: Données de Réponse
       setting: Fonctionnalité
       setting_name: Paramètres
@@ -1160,6 +1209,9 @@ fr:
       no_description: "Aucune description"
     shared:
       search:
+        advanced_filters:
+          sdg_targets:
+            label: "Par cible"
         label:
           booths: "Rechercher le bureau de vote par nom"
           debates: "Rechercher des débats par titre ou description"
@@ -1169,6 +1221,7 @@ fr:
           poll_questions: "Rechercher les questions d'un vote"
           proposals: "Rechercher des propositions par titre, code, description ou question"
           users: "Rechercher un utilisateur par nom ou courriel"
+        search: "Chercher"
       search_results: "Résultats de recherche"
       no_search_results: "Aucun résultat trouvé."
       actions: Actions
@@ -1182,6 +1235,7 @@ fr:
       author: Auteur
       content: Contenu
       created_at: Créé le
+      show_results_and_stats: "Afficher les résultats et statistiques"
     geozones:
       index:
         title: District
@@ -1249,11 +1303,14 @@ fr:
           visits: Visites
           votes: Total des votes
         budgets_title: Budget participatif
+        participatory_budgets: Budgets participatifs
         direct_messages: Messages privés
         proposal_notifications: Notifications des propositions
         incomplete_verifications: Vérifications incomplètes
         polls: Votes
+        sdg: ODD
       graph:
+        debate_created: Débats
         visit: Visites
         level_2_user: Utilisateurs de niveau 2
         proposal_created: Propositions citoyennes
@@ -1267,6 +1324,7 @@ fr:
         participant_count: Participants
       budget_supporting:
         title: "Stats de la phase de soutien"
+        headings: Titres
         users: Utilisateurs
         vote_count: Votes
         participant_count: Participants
@@ -1290,6 +1348,10 @@ fr:
           question_name: Question
           origin_web: Participants en ligne
           origin_total: Nombre total de participants
+      sdg:
+        debates: "Débats"
+        polls: "Votes"
+        proposals: "Propositions"
     tags:
       create: Créer un sujet
       index:
@@ -1299,6 +1361,7 @@ fr:
         help: "Quand un utilisateur créé une proposition, les thèmes suivants sont proposés comme tags par défaut."
     users:
       columns:
+        id: ID
         name: Nom
         email: Email
         document_number: Numéro de document
@@ -1307,6 +1370,9 @@ fr:
       index:
         title: Utilisateurs masqués
         no_users: Il n'y a pas aucun utilisateur.
+        filter: Filtre
+        filters:
+          active: Actif
       search:
         placeholder: Rechercher un utilisateur par email, nom ou numéro de document
     verifications:
@@ -1415,6 +1481,21 @@ fr:
       id: "ID"
       new_value: "Valeur nouveau"
       old_value: "Vieux Valeur"
+      actions: "Actions"
     local_census_records:
       index:
+        title: Gérer le recensement local
+        document_type: Type de document
+        document_number: Numéro de document
         date_of_birth: Date de naissance
+        postal_code: Code postal
+      imports:
+        new:
+          title: Données du recensement local
+        show:
+          title: Gérer le recensement local
+    machine_learning:
+      related_content: "Contenu lié"
+      tab_help: "Aide"
+      tags: "Sujets"
+      title: "IA / Apprentissage automatique"
