@@ -59,6 +59,7 @@ it:
       milestones: Traguardi
     investments:
       form:
+        title: "Crea un investimento di bilancio"
         tag_category_label: "Categorie"
         tags_instructions: "Aggiungi etichette a questa proposta. Puoi scegliere tra le categorie proposte a aggiungerne di tue"
         tags_label: Etichette
@@ -75,6 +76,9 @@ it:
           button: Ricercare
           placeholder: Ricercare progetti di investimento...
           title: Ricercare
+        search_results:
+          one: " contenente il termine <strong>'%{search_term}'</strong>"
+          other: " contenente il termine <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: I miei voti
           voted_info:
@@ -84,20 +88,31 @@ it:
           change_vote_info:
             knapsack: "Puoi %{link} quando vuoi fino alla chiusura di questa fase. Non c'è bisogno di spendere tutte le monete disponibili."
           change_vote_link: "cambia il tuo voto"
+          different_heading_assigned: "Hai voti attivi in un'altra intestazione: %{heading_link}"
           change_ballot: "Se cambi idea è possibile cancellare il tuo voto in %{check_ballot} e ricominciare da capo."
           check_ballot_link: "controllare il mio voto"
           zero: Non hai ancora votato nessun progetto di investimento in questo gruppo.
           verified_only: "Per creare un nuovo budget d'investimento %{verify}."
           create: "Crea un investimento di bilancio"
           not_logged_in: "Per creare un nuovo investimento di bilancio è necessario %{sign_in} o %{sign_up}."
+        filters:
+          feasible: "Fattibile"
+          selected: "Selezionato"
+          unfeasible: "Irrealizzabile"
+          winners: "Vincitori"
         orders:
           random: casuale
           confidence_score: più apprezzati
           price: per costi
+      share:
+        message: "Ho creato il progetto di investimento %{title} in %{handle}. Crea anche tu un progetto di investimento!"
       show:
         author_deleted: Utente cancellato
         price_explanation: Informazioni sui costi
         unfeasibility_explanation: Informazioni sulla infattibilità
+        code: "Codice del progetto di investimento: <strong>%{code}</strong>"
+        location: "Ubicazione: <strong>%{location}</strong>"
+        organization_name: "Proposto per conto di: <strong>%{name}</strong>"
         share: Condividere
         title: Progetto di investimento
         supports: Sostegni
@@ -106,7 +121,10 @@ it:
         comments_tab: Commenti
         milestones_tab: Traguardi
         author: Autore
+        project_unfeasible: "Questo progetto di investimento <strong>è stato contrassegnato come irrealizzabile</strong> e non accederà alla fase di voto finale."
+        project_selected: "Il progetto di investimento <strong>è stato selezionato</strong> per la fase di voto."
         project_winner: "Progetto di investimento vincitore"
+        project_not_selected: "Questo progetto di investimento <strong>non è stato selezionato</strong> per la fase di voto finale."
       wrong_price_format: Solo numeri interi
       investment:
         add: Votare
@@ -118,6 +136,7 @@ it:
           other: "%{count} sostegni"
       header:
         check_ballot: "Controlla il mio voto"
+        different_heading_assigned: "Hai voti attivi in un'altra voce: %{heading_link}"
         change_ballot: "Se cambi idea è possibile cancellare il tuo voto in %{check_ballot} e ricominciare da capo."
         check_ballot_link: "controlla il mio voto"
         price: "Questa sezione dispone di un budget di"
@@ -127,6 +146,10 @@ it:
           one: "Puoi dare il tuo sostegno agli investimenti solo in %{count} distretto. Se continui non potrai cambiare la scelta in merito al tuo distretto. Sei sicuro?"
           other: "Puoi dare il tuo sostegno agli investimenti solo in %{count} distretti. Se continui non potrai cambiare la scelta in merito al tuo distretto. Sei sicuro?"
         support: "Sostieni"
+    investments_list:
+      investment:
+        price: "Costi"
+        supports: "Sostegni"
     show:
       see_results: Vedi risultati
     results:
@@ -150,6 +173,8 @@ it:
       heading_selection_title: "Per circoscrizione"
       filters:
         status:
+          all: "Tutto (%{count})"
+        milestone_tag:
           all: "Tutto (%{count})"
     phases:
       errors:
