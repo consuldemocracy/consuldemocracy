@@ -111,6 +111,11 @@ ru:
         button: Поиск
         placeholder: Искать дебаты...
         title: Поиск
+      search_results:
+        one: " содержащие термин <strong>'%{search_term}'</strong>"
+        few: " содержащие термин <strong>'%{search_term}'</strong>"
+        many: " содержащие термин <strong>'%{search_term}'</strong>"
+        other: " содержащие термин <strong>'%{search_term}'</strong>"
       start_debate: Начать дебаты
       title: Обсуждения проблем
       section_header:
@@ -160,6 +165,7 @@ ru:
     direct_message: личное сообщение
     error: ошибка
     errors: ошибки
+    not_saved: "предотвратил сохранение этого %{resource}. <br>Пожалуйста проверьте отмеченные поля, чтобы понять как их исправить:"
     policy: Политика конфиденциальности
     proposal: Заявка
     proposal_notification: "Уведомление"
@@ -287,6 +293,9 @@ ru:
       sign_in: Войти при помощи Twitter
       sign_up: Зарегистрироваться при помощи Twitter
       name: Twitter
+    info:
+      sign_in: "Войти при помощи:"
+      sign_up: "Зарегистрироваться при помощи:"
     or_fill: "Или заполните следующую форму:"
   proposals:
     create:
@@ -295,6 +304,7 @@ ru:
     created:
       title: Поздравляем! Вы выполнили первый шаг.
       motivation: "Чтобы выше предложение стало успешным, важно подготовить кампанию запуска. Определяющими являются первые несколько дней."
+      motivation_2: "<strong>Если вам нужны рекомендации по подготовке к публикации, то оставьте предложение в виде черновика, и мы вам поможем.</strong>"
       publish: Нет, я хочу опубликовать предложение
       dashboard: Да, мне нужна помощь, и я опубликую позже
       preview_title: Вот как будет выглядеть ваше предложение после публикации
@@ -364,6 +374,11 @@ ru:
         button: Поиск
         placeholder: Искать предложения...
         title: Поиск
+      search_results:
+        one: " содержащие термин <strong>'%{search_term}'</strong>"
+        few: " содержащие термин <strong>'%{search_term}'</strong>"
+        many: " содержащие термин <strong>'%{search_term}'</strong>"
+        other: " содержащие термин <strong>'%{search_term}'</strong>"
       select_order_long: "Вы просматриваете предложения в соответствии с:"
       start_proposal: Создать предложение
       title: Заявки
@@ -457,6 +472,7 @@ ru:
       poster: Анонс
       recommended_actions: Рекомендуемые действия
       messages: Сообщение пользователям
+      related_content: Соответствующее содержимое
     form:
       request: Запрос
     create_request:
@@ -586,6 +602,7 @@ ru:
         sent: E-mail отправлено
     mailer:
       forward:
+        subtitle: "Мы добьемся результата<br>при вашей поддержке."
         support_button: Поддержать это предложение
         share_in: Поделиться в
         hi: "Здравствуйте!"
@@ -625,6 +642,7 @@ ru:
       back: Обратно к голосованию
       cant_answer_not_logged_in: "Вы должны %{signin} или %{signup}, чтобы принять участие."
       comments_tab: Комментарии
+      cant_answer_verify: "Вы должны %{verify_link}, чтобы ответить."
       verify_link: "подтвердите ваш аккаунт"
       cant_answer_expired: "Этот опрос закончился."
       cant_answer_wrong_geozone: "Этот вопрос не доступен в вашей геозоне."
@@ -665,6 +683,7 @@ ru:
       back: "Вернуться в мою активность"
   shared:
     edit: "Редактировать"
+    filter: "Фильтр"
     save: "Сохранить"
     delete: "Удалить"
     "yes": "Да"
