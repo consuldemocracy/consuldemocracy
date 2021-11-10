@@ -70,6 +70,7 @@ ca:
       milestones: Fites
     investments:
       form:
+        title: "Crear una inversió pressupostària"
         tag_category_label: "Categories"
         tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
         tags_label: Etiquetes
@@ -109,6 +110,11 @@ ca:
           verified_only: "Per a crear una nova proposta d'inversió %{verify}."
           create: "Crear una inversió pressupostària"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
+        filters:
+          feasible: "Viable"
+          selected: "seleccionada"
+          unfeasible: "No viables"
+          winners: "Guanyadors"
         orders:
           random: Aleatòries
           confidence_score: Més avalades
@@ -156,6 +162,10 @@ ca:
           one: "Només podeu suportar inversions a %{count} districte. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
           other: "Només podeu suportar inversions a %{count} districtes. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
         support: "Avalar"
+    investments_list:
+      investment:
+        price: "Cost"
+        supports: "Avals"
     show:
       see_results: veure resultats
     results:
