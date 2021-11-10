@@ -60,14 +60,18 @@ zh-TW:
     budgets:
       actions:
         edit: "編輯預算"
+        preview: "預覽"
       index:
         title: 參與性預算
         new_link: 創建新預算
         filter: 篩選器
         filters:
+          all: 所有
           open: 開
           finished: 已完成
         budget_investments: 管理項目
+        table_budget_type: "類型"
+        table_draft: "草稿"
         table_name: 名字
         table_phase: 階段
         no_budgets: "沒有預算。"
@@ -86,6 +90,8 @@ zh-TW:
       destroy:
         success_notice: 預算已成功刪除
         unable_notice: 您無法銷毀具有相關投資的預算
+      show:
+        add_heading: "添加標題"
       winners:
         calculate: 計算勝出者投資
         calculated: 勝出者正在被計算中，可能需要一分鐘。
@@ -95,6 +101,8 @@ zh-TW:
       form:
         edit: "編輯組"
         submit: "儲存組"
+      index:
+        new_button: "添加新組"
     budget_headings:
       form:
         population_info: "預算標題 \"人口\" 欄位用於統計目的, 在預算結束時顯示每個標題, 代表一個地區與人口百分比投票率。該欄位是可選擇填寫的, 因此如果不適用, 您可以將其留空。"
@@ -125,6 +133,8 @@ zh-TW:
           unfeasible: 不可行
           min_total_supports: 最小支援
           winners: 勝出者
+          one_filter: "當前應用的篩選器:<b><em>%{filter}</em></b>"
+          two_filters: "當前應用的篩選器:<b><em>%{filter},%{advanced_filters}</em></b>"
         buttons:
           filter: 篩選器
         download_current_selection: "下載當前所選內容"
@@ -153,6 +163,8 @@ zh-TW:
           visible_to_valuators: 為評估員顯示
           author_username: 作者用戶名
           incompatible: 不相容
+          price: 價格
+          author: 作者
         cannot_calculate_winners: 預算必須留在 "投票項目", "審查選票" 或 "完成預算"的階段, 以便計算勝出者項目
         see_results: "查看結果"
       show:
@@ -192,8 +204,12 @@ zh-TW:
         tags_placeholder: "寫下你想要的標籤，用逗號 (,) 作分隔"
         undefined: 未定義
       search_unfeasible: 搜尋不可行
+    budgets_wizard:
+      creation_timeline:
+        groups: 組
     milestones:
       index:
+        table_id: "ID"
         table_title: "標題"
         table_description: "描述"
         table_publication_date: "出版日期"
@@ -238,19 +254,69 @@ zh-TW:
         notice: 投資狀態已成功刪除
     progress_bars:
       index:
+        table_id: "ID"
         table_kind: "類型"
         table_title: "標題"
     comments:
       index:
+        id: "ID"
+        content: "內容"
+        author: "作者"
+        commentable_type: "類型"
+        title: 隱藏的評論
+        table_link: "鏈接"
+    hidden_comments:
+      index:
+        filter: 篩選器
+        filters:
+          all: 所有
+          with_confirmed_hide: 確認
+          without_confirmed_hide: 有待
+        hidden_debate: 隱藏的辯論
+        hidden_proposal: 隱藏的建議
         title: 隱藏的評論
     dashboard:
       index:
         back: 返回 %{org}
         title: 管理
         description: 歡迎使用 %{org} 管理面板。
+      actions:
+        index:
+          active: '是'
+          inactive: '否'
+          action_title: 標題
+          action_type: 類型
+          action_active: 活躍
+          order: 排序
+          default:
+            email: 電郵
+            polls: 投票
+        form:
+          submit_button: 儲存
+      administrator_tasks:
+        index:
+          filter: 篩選器
+          filters:
+            pending: 有待
+        form:
+          proposal: 建議
     debates:
       index:
+        id: ID
+        author: 作者
         title: 隱藏的辯論
+    hidden_debates:
+      index:
+        filter: 篩選器
+        filters:
+          all: 所有
+          with_confirmed_hide: 確認
+          without_confirmed_hide: 有待
+        title: 隱藏的辯論
+    documents:
+      index:
+        new_link: "添加新文檔"
+        title: "文檔"
     hidden_users:
       index:
         filter: 篩選器
@@ -299,6 +365,7 @@ zh-TW:
           create: 新進程
           title: 立法進程
           filters:
+            active: 活躍
             all: 所有
         new:
           back: 返回
@@ -312,6 +379,8 @@ zh-TW:
           title: 進程
           comments: 評論
           status: 狀態
+          start_date: 開始日期
+          end_date: 結束日期
           status_open: 開
           status_closed: 關
           status_planned: 計劃
@@ -345,6 +414,7 @@ zh-TW:
           submit_button: 儲存更改
           warning: 您已經編輯了文本, 別忘記按一下 "儲存" 以永久儲存更改。
         form:
+          title: '從進程 <span class="strong">%{process_title}</span> 編輯<span class="strong">%{draft_version_title}</span>'
           launch_text_editor: 啟動文字編輯器
           close_text_editor: 關閉文字編輯器
           use_markdown: 使用Markdown格式化文本
@@ -413,6 +483,12 @@ zh-TW:
         add: 添加
       search:
         title: "經理：用戶搜索"
+    sdg_managers:
+      index:
+        no_sdg_managers: 沒有用戶。
+    sdg/managers:
+      sdg/manager:
+        add: 添加
     menu:
       activity: 審核員活動
       admin: 管理菜單
@@ -470,6 +546,8 @@ zh-TW:
       title_booths: 投票亭
       legislation: 合作立法
       users: 用戶
+      debates: "辯論"
+      comments: "評論"
     administrators:
       index:
         title: 管理員
@@ -574,6 +652,10 @@ zh-TW:
         title: "建議通知摘要"
         description: "在單個消息中收集用戶的所有建議通知，以避免過多的電子郵件。"
         preview_detail: "用戶將只收到他們所跟蹤的建議之通知"
+      comment:
+        title: "評論"
+      reply:
+        title: "回覆"
     emails_download:
       index:
         title: 電子郵件下載
@@ -740,6 +822,8 @@ zh-TW:
         table_poll: "投票"
       edit:
         title: "編輯問題"
+      new:
+        title_proposal: "創建問題"
       answers:
         images:
           add_image: "添加圖像"
@@ -788,6 +872,7 @@ zh-TW:
       index:
         title: "重新計票"
         no_recounts: "沒有什麼要重新計票"
+        total_system: "投票數 (自動)"
         table_booth_name: "投票亭"
         table_total_recount: "總重新計票 (由官員)"
         table_system_count: "投票數 (自動)"
@@ -855,6 +940,8 @@ zh-TW:
           pending: 有待
           rejected: 已拒绝
           verified: 已核實
+        hidden_count:
+          other: 有 <strong>%{count} 個組織</strong>沒有用戶，或有一名隱藏用戶。
         name: 名字
         email: 電郵
         phone_number: 電話
@@ -875,6 +962,8 @@ zh-TW:
         title: 建議
         id: ID
         author: 作者
+        select: 選擇
+        selected: 已選擇
         milestones: 里程碑
     hidden_proposals:
       index:
@@ -885,11 +974,21 @@ zh-TW:
           without_confirmed_hide: 有待
         title: 隱藏的建議
         no_hidden_proposals: 沒有隱藏的建議。
+    hidden_proposal_notifications:
+      index:
+        filter: 篩選器
+        filters:
+          all: 所有
+          with_confirmed_hide: 確認
+          without_confirmed_hide: 有待
+        title: 隱藏通知
+        no_hidden_proposals: 沒有隱藏的通知。
     settings:
       flash:
         updated: 價值已更新
       index:
         title: 配置設置
+        general: 配置設置
         update_setting: 更新
         feature_flags: 功能
         features:
@@ -914,6 +1013,7 @@ zh-TW:
           poll_questions: "搜尋投票項問題"
           proposals: "按標題，代碼，描述或問題來搜尋建議"
           users: "按名稱或電郵搜索用戶"
+        search: "搜尋"
       search_results: "搜尋結果"
       no_search_results: "未找到結果。"
       actions: 行動
@@ -927,6 +1027,7 @@ zh-TW:
       author: 作者
       content: 內容
       created_at: 創建於
+      show_results_and_stats: "顯示結果和統計資訊"
     geozones:
       index:
         title: 地理區域
@@ -962,6 +1063,7 @@ zh-TW:
       show:
         created_at: 已創建
         author: 作者
+        users: 用戶
         verified:
           other: "有 %{count} 個有效簽名"
         unverified:
@@ -989,10 +1091,22 @@ zh-TW:
           visits: 訪問
           votes: 總投票數
         budgets_title: 參與式預算編制
+        participatory_budgets: 參與性預算
         direct_messages: 直接消息
         proposal_notifications: 建議通知
         incomplete_verifications: 不完全核實
         polls: 投票
+      graph:
+        debate_created: 辯論
+        visit: 訪問
+        proposal_created: 公民提議
+      budget_balloting:
+        vote_count: 票
+        participant_count: 參與者
+      budget_supporting:
+        users: 用戶
+        vote_count: 票
+        participant_count: 參與者
       direct_messages:
         title: 直接消息
         total: 總
@@ -1012,6 +1126,10 @@ zh-TW:
           question_name: 問題
           origin_web: 網絡參與者
           origin_total: 參與者總數
+      sdg:
+        debates: "辯論"
+        polls: "投票"
+        proposals: "建議"
     tags:
       create: 創建主題
       index:
@@ -1021,6 +1139,7 @@ zh-TW:
         help: "當用戶創建建議時，將以下列主題用作默認標籤。"
     users:
       columns:
+        id: ID
         name: 名字
         email: 電郵
         document_number: 文檔編號
@@ -1029,6 +1148,9 @@ zh-TW:
       index:
         title: 用戶
         no_users: 沒有用戶。
+        filter: 篩選器
+        filters:
+          active: 活躍
       search:
         placeholder: 按電郵、姓名或文檔編號搜尋用戶
     verifications:
@@ -1105,6 +1227,7 @@ zh-TW:
           slug: Slug
         cards:
           create_card: 創建卡
+          no_cards: 沒有卡。
     homepage:
       title: 主頁
       description: 活動模組以與此處相同的順序在主頁中顯示。
@@ -1128,3 +1251,15 @@ zh-TW:
         submit_header: 儲存頁首
         card_title: 編輯卡
         submit_card: 儲存卡
+    audits:
+      id: "ID"
+      actions: "行動"
+    local_census_records:
+      index:
+        document_type: 文檔類型
+        document_number: 文檔編號
+        date_of_birth: 出生日期
+    machine_learning:
+      related_content: "相關內容"
+      tab_help: "說明"
+      tags: "標籤"
