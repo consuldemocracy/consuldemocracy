@@ -74,6 +74,7 @@ da:
       milestones: Milepæle
     investments:
       form:
+        title: "Opret din projektidé"
         tag_category_label: "Kategorier"
         tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
         tags_label: Tags
@@ -115,6 +116,7 @@ da:
           not_logged_in: "For at oprette et forslag skal du %{sign_in} eller %{sign_up}."
         filter: "Filtrer projekter efter"
         filters:
+          feasible: "Kan gennemføres"
           not_unfeasible: "Ikke umuligt"
           selected: "Udvalgte"
           unfeasible: "Kan ikke gennemføres"
@@ -167,6 +169,10 @@ da:
           one: "Du kan kun støtte op om forslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
           other: "Du kan kun støtte op om projektidéer i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
         support: "Støt"
+    investments_list:
+      investment:
+        price: "Pris"
+        supports: "Støtte"
     show:
       see_results: Se resultat
     results:
