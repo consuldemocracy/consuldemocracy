@@ -63,14 +63,18 @@ da:
     budgets:
       actions:
         edit: "Rediger budget"
+        preview: "Forhåndsvisning"
       index:
         title: Deltagerbudgetter
         new_link: Opret nyt budget
         filter: Søg
         filters:
+          all: Alle
           open: Aktive budgetter
           finished: Færdig
         budget_investments: Administrer projekter
+        table_budget_type: "Type"
+        table_draft: "Udkast"
         table_name: Navn
         table_phase: Fase
         admin_ballots: Administrer valgsteder
@@ -244,6 +248,12 @@ da:
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
         undefined: Udefineret
       search_unfeasible: Søg uigennemførlige projekter
+    budgets_wizard:
+      creation_timeline:
+        budget: Budget
+        groups: Grupper
+        headings: Områder
+        phases: Faser
     milestones:
       index:
         table_id: "ID"
@@ -597,6 +607,12 @@ da:
         add: Tilføj
       search:
         title: "Managers: Søg bruger"
+    sdg_managers:
+      index:
+        no_sdg_managers: Der er ingen brugere.
+    sdg/managers:
+      sdg/manager:
+        add: Tilføj
     menu:
       activity: Moderator aktivitet
       admin: Admin menu
@@ -1167,6 +1183,15 @@ da:
           without_confirmed_hide: Under behandling
         title: Skjulte forslag
         no_hidden_proposals: Der er ingen skjulte forslag.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtrere
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
+        title: Skjulte notifikationer
+        no_hidden_proposals: Der er ingen skjulte notifikationer.
     settings:
       flash:
         updated: Pris opdateret
@@ -1203,6 +1228,7 @@ da:
           poll_questions: "Søg spørgsmål til afstemning"
           proposals: "Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål"
           users: "Søg bruger vis navn eller e-mail"
+        search: "Søg"
       search_results: "Søgningsresultater"
       no_search_results: "Ingen resultater fundet."
       actions: Handlinger
@@ -1217,6 +1243,7 @@ da:
       content: Indhold
       created_at: Oprettet den
       color_help: Hexadecimalt format
+      show_results_and_stats: "Vis resultater og statistik"
     geozones:
       index:
         title: Geografisk område
@@ -1254,6 +1281,7 @@ da:
       show:
         created_at: Oprettet
         author: Oprettet af
+        users: Brugere
         verified:
           one: "Der er %{count} gyldig underskrift"
           other: "Der er %{count} gyldige underskrifter"
@@ -1283,11 +1311,15 @@ da:
           visits: Besøg
           votes: Sammenlagt antal stemmer
         budgets_title: Deltagerbudget
+        participatory_budgets: Deltagerbudgetter
         direct_messages: Direkte beskeder
         proposal_notifications: Underretning om forslag
         incomplete_verifications: Ufærdige verificeringer
         polls: Afstemninger
+        sdg: Verdensmål
       graph:
+        debate_created: Debatforum
+        visit: Besøg
         proposal_created: Borgerforslag
       budgets:
         supporting_phase: Støt de forslag der skal gå videre
@@ -1300,6 +1332,7 @@ da:
         participants_per_district: Deltagere pr. distrikt
       budget_supporting:
         title: "Statistik over støttefasen"
+        headings: Områder
         users: Brugere
         vote_count: Stemmer
         participant_count: Deltagere
@@ -1323,6 +1356,10 @@ da:
           question_name: Spørgsmål
           origin_web: Webdeltagere
           origin_total: Samlet antal deltagere
+      sdg:
+        debates: "Debatforum"
+        polls: "Afstemning"
+        proposals: "Forslag"
     tags:
       create: Opret emne
       index:
@@ -1415,6 +1452,7 @@ da:
           see_page: Vis side
         new:
           title: Opret ny brugerdefineret side
+          slug_help: "Tekst til at identificere siden på URL, for eksempel <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Oprettet den
           status: Status
@@ -1456,3 +1494,26 @@ da:
         submit_header: Gem topmargintekst
         card_title: Rediger informationsboks
         submit_card: Gem informationsboks
+    audits:
+      id: "ID"
+      new_value: "Ny værdi"
+      old_value: "Tidligere værdi"
+      edited_at: "Redigeret den"
+      edited_by: "Redigeret af"
+      actions: "Handlinger"
+    local_census_records:
+      index:
+        title: Administrer lokal census data
+        document_type: Dokumenttype
+        document_number: Dokumentnummer
+        date_of_birth: Fødselsdato
+        postal_code: Postnummer
+      imports:
+        new:
+          title: Lokal census data
+        show:
+          title: Administrer lokal census data
+    machine_learning:
+      related_content: "Relateret indhold"
+      tab_help: "Hjælp"
+      tags: "Tags"
