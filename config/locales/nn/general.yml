@@ -113,6 +113,10 @@ nn:
         button: Søk
         placeholder: Søk debatter...
         title: Søk
+      search_results:
+        zero: " som inneholder <strong>'%{search_term}'</strong>"
+        one: " som inneholder <strong>'%{search_term}'</strong>"
+        other: " som inneholder <strong>'%{search_term}'</strong>"
       start_debate: Start en debatt
       title: Debatter
       section_header:
@@ -161,6 +165,7 @@ nn:
     direct_message: private meldinger
     error: feil
     errors: feil
+    not_saved: "gjorde at %{resource} ikke kunne lagres. <br>Kontroller og endre de markerte feltene:"
     policy: Personvernpolicy
     proposal: Forslag
     proposal_notification: "Varsler"
@@ -280,6 +285,9 @@ nn:
       sign_in: Logg inn via Twitter
       sign_up: Registrer deg med Twitter
       name: Twitter
+    info:
+      sign_in: "Logg på med:"
+      sign_up: "Registrer deg med:"
     or_fill: "Eller fyll ut følgende skjema:"
   proposals:
     create:
@@ -288,6 +296,7 @@ nn:
     created:
       title: Gratulerer! Du har gjennomført først steg.
       motivation: "Det er viktig å forberede en introduksjonskampanje for at forslaget ditt skal bli en suksess. Det første dagene er avgjørende."
+      motivation_2: "<strong>Hvis du vil ha anbefalinger til forberedelsene før forslaget blir offentliggjort, kan du la forslaget stå som utkast, og vi vil veilede deg.</strong>"
       publish: Nei, jeg vil offentliggjøre forslaget
       dashboard: Ja, jeg ønsker hjelp, og offentligjør forslaget senere
       preview_title: Dette er hvordan forslaget ditt vil se ut når det er offentliggjort
@@ -357,6 +366,10 @@ nn:
         button: Søk
         placeholder: Søk forslag...
         title: Søk
+      search_results:
+        zero: " som inneholder <strong>'%{search_term}'</strong>"
+        one: " som inneholder <strong>'%{search_term}'</strong>"
+        other: " som inneholder <strong>'%{search_term}'</strong>"
       select_order_long: "Du viser forslag i henhold til:"
       start_proposal: Opprett et forslag
       title: Forslag
@@ -446,6 +459,7 @@ nn:
       poster: Plakat
       recommended_actions: Anbefalte handlinger
       messages: Melding til brukere
+      related_content: Relatert innhold
     form:
       request: Forespørsel
     create_request:
@@ -571,6 +585,7 @@ nn:
         sent: Eposten har blitt sendt
     mailer:
       forward:
+        subtitle: "Om du støtte meg, <br> vil vi oppnå det."
         support_button: Støtt forslag
         share_in: Del i
         hi: "Hei!"
@@ -610,6 +625,7 @@ nn:
       back: Tilbake til avstemningen
       cant_answer_not_logged_in: "Du må %{signin} eller %{signup} for å delta."
       comments_tab: Kommentarer
+      cant_answer_verify: "Du må %{verify_link} for å svare."
       verify_link: "verifiser din konto"
       cant_answer_expired: "Denne avstemningen er avsluttet."
       cant_answer_wrong_geozone: "Dette spørsmålet er ikke tilgjengelig i ditt geografiske område."
@@ -650,6 +666,7 @@ nn:
       back: "Gå tilbake til mitt innhold"
   shared:
     edit: "Rediger"
+    filter: "Filter"
     save: "Lagre"
     delete: "Slett"
     "yes": "Ja"
@@ -712,6 +729,7 @@ nn:
       districts: "Distrikter"
       districts_list: "Liste over distrikter"
       categories: "Kategorier"
+    target_blank: " (link åpnes i et nytt vindu)"
     you_are_in: "Du er inne"
     unflag: Ta bort flagg
     unfollow_entity: "Ikke lenger følg %{entity}"
@@ -754,6 +772,11 @@ nn:
     manage:
       all: "Du har ikke tillatelse til å utføre handlingen '%{action}' på %{subject}."
   users:
+    login_to_comment: "Du må %{signin} eller %{signup} for å kunne kommentere."
+    login_to_continue: "Du må %{signin} eller %{signup} for å fortsette."
+    signin: "logg inn"
+    signup: "registrer deg"
+    verify_account: "verifiser din konto"
     direct_messages:
       new:
         direct_messages_bloqued: "Denne brukeren har besluttet å ikke motta direktemeldinger"
