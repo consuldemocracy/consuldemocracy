@@ -56,6 +56,8 @@ ar:
         preview: معاينة الاستثمار
       edit:
         dossier: الملف
+        price: "السعر (%{currency})"
+        price_first_year: "التكلفة خلال أول سنة (%{currency}) <small>(بيانات اختيارية، البيانات ليست للكل)</small>"
         feasibility: الجدوى
         valuation_finished_alert: "هل أنت متأكد من أنك تريد وضع علامة نهائي لهذا التقرير؟ بعد ذلك لا يمكن تعديله."
         not_feasible_alert: "سوف يرسل بريد الكتروني للمشارك بتقرير عدم الجدوى."
