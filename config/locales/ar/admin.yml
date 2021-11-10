@@ -62,14 +62,19 @@ ar:
     budgets:
       actions:
         edit: "تعديل الميزانية"
+        preview: "معاينة"
       index:
         title: الميزانيات المشاركة
         new_link: إنشاء ميزانية جديدة
         filter: ترشيح
         filters:
+          all: الكل
           open: فتح
           finished: انتهى
         budget_investments: إدارة المشاريع
+        table_budget_type: "النوع"
+        table_draft: "مسودة"
+        table_duration: "المدة الزمنية"
         table_name: الإ سم
         table_phase: مرحلة
         admin_ballots: بطاقات الاقتراع الادارية
@@ -82,6 +87,7 @@ ar:
         title: تعديل الميزانية المشاركة
         delete: حذف الميزانية
         phase: مرحلة
+        duration: "المدة الزمنية"
         enabled: تفعيل
         actions: الإجراءات
         active: نشِط
@@ -180,6 +186,8 @@ ar:
           min_total_supports: الحد الأدنى من الدعم
           max_total_supports: الحد الأقصى من الدعم
           winners: الفائزين
+          one_filter: "الفلتر المطبق حاليا: <b><em>%{filter}</em></b>"
+          two_filters: "الفلتر المطبق حاليا: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: ترشيح
         download_current_selection: "تنزيل التحديد الحالي"
@@ -251,8 +259,14 @@ ar:
         tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
         undefined: غير معرف
       search_unfeasible: بحث غير مجد
+    budgets_wizard:
+      creation_timeline:
+        budget: ميزانية
+        groups: المجموعات
+        headings: العناوين
     milestones:
       index:
+        table_id: "ID"
         table_title: "عنوان"
         table_description: "الوصف"
         table_publication_date: "تاريخ النشر"
@@ -303,6 +317,7 @@ ar:
         no_progress_bars: "ليس هناك أية أشرطة تقدم"
         new_progress_bar: "إنشاء شريط تقدم جديد"
         primary: "شريط التقدم الرئيسي"
+        table_id: "ID"
         table_kind: "النوع"
         table_title: "عنوان"
         table_percentage: "التقدم الحالي"
@@ -533,6 +548,7 @@ ar:
           submit_button: حفظ التغييرات
           warning: لقد قمت بتحرير النص، لا تنسى أن تنقر على "حفظ" لحفظ التغييرات بشكل دائم.
         form:
+          title: 'تعديل <span class="strong">%{draft_version_title}</span> من العملية <span class="strong">%{process_title}</span>'
           launch_text_editor: تشغيل محرر النص
           close_text_editor: إغلاق محرر النص
           use_markdown: استخدم Markdown لتنسيق النص
@@ -601,6 +617,12 @@ ar:
         add: إضافة
       search:
         title: "المدراء: البحث عن المستخدم"
+    sdg_managers:
+      index:
+        no_sdg_managers: لا يوجد مستخدمين.
+    sdg/managers:
+      sdg/manager:
+        add: إضافة
     menu:
       activity: نشاط المشرف
       admin: قائمة المدير
@@ -716,6 +738,7 @@ ar:
         empty_newsletters: لا توجد أية رسائل إخبارية للإظهار
       new:
         title: رسائلة إخبارية جديدة
+        header_footer_help_text: "العنوان وذيل الصفحة متماثلان لجميع رسائل البريد الإلكتروني ، ويمكنك تعديلهما على\n<code>تطبيق/المشاهدات/تصاميم_الصفحة/عنوان البريد الالكتروني</code> و <code>تطبيق/المشاهدات/تصاميم_الصفحة/عنوان البريد الالكتروني</code>.<br>يمكنك تعويض صورة العنوان في %{link}."
         image_link: "صور مخصصة"
       edit:
         title: تعديل الرسالة الإخبارية
@@ -1133,6 +1156,13 @@ ar:
           pending: معلق
           rejected: مرفوضة
           verified: تم التثبت
+        hidden_count:
+          zero: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          one: هناك أيضا <strong>منظمة واحدة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          two: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          few: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          many: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          other: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
         name: الإ سم
         email: البريد الإلكتروني
         phone_number: الهاتف
@@ -1172,11 +1202,21 @@ ar:
           without_confirmed_hide: معلق
         title: الإقتراحات المخفية
         no_hidden_proposals: لا توجد أي إقتراحات مخفية.
+    hidden_proposal_notifications:
+      index:
+        filter: ترشيح
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: الإشعارات المخفية
+        no_hidden_proposals: لايوجد إشعارات مخفية.
     settings:
       flash:
         updated: تم تحديث القيمة
       index:
         title: ضبط الترتيبات
+        general: ضبط الترتيبات
         update_setting: تحديث
         participation_processes: "عمليات المشاركة"
         images_and_documents: "الصور والوثائق"
@@ -1207,6 +1247,7 @@ ar:
           poll_questions: "البحث عن أسئلة الاستطلاع"
           proposals: "البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال"
           users: "بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني"
+        search: "بحث"
       search_results: "نتائج البحث"
       no_search_results: "لا توجد نتائج."
       actions: الإجراءات
@@ -1260,6 +1301,7 @@ ar:
       show:
         created_at: تم الإنشاء
         author: كاتب
+        users: المستخدمين
         verified:
           zero: "هناك %{count} توقيعات صالحة"
           one: "هناك توقيع %{count} صالح"
@@ -1352,6 +1394,10 @@ ar:
           question_name: سؤال
           origin_web: المشاركون عبر ويب
           origin_total: مجموع المشاركين
+      sdg:
+        debates: "النقاشات"
+        polls: "استطلاعات"
+        proposals: "إقتراحات"
     tags:
       create: إنشاء موضوع
       index:
@@ -1361,6 +1407,7 @@ ar:
         help: "عندما ينشئ المستخدم مقترحا، تُقترح الموضوعات التالية كعلامات نموذجية."
     users:
       columns:
+        id: ID
         name: الإ سم
         email: البريد الإلكتروني
         document_number: رقم الوثيقة
@@ -1369,6 +1416,9 @@ ar:
       index:
         title: المستخدم
         no_users: لا يوجد مستخدمين.
+        filter: ترشيح
+        filters:
+          active: نشِط
       search:
         placeholder: البحث عن المستخدم عبر البريد الإلكتروني أو الاسم أو رقم الوثيقة
     verifications:
@@ -1438,6 +1488,7 @@ ar:
           see_page: رؤية الصفحة
         new:
           title: إنشاء صفحة مخصصة جديدة
+          slug_help: "نص لتعريف هذه الصفحة على عنوان URL ، على سبيل المثال <code> https://consulproject.org/page-slug</code>>"
         page:
           created_at: أنشئت في
           status: حالة
@@ -1479,3 +1530,21 @@ ar:
         submit_header: حفظ العنوان
         card_title: تحرير البطاقة
         submit_card: حفظ البطاقة
+    audits:
+      title: "تغيير السجل"
+      id: "ID"
+      field: "حقل"
+      new_value: "القيمة الجديدة"
+      old_value: "القيمة القديمة"
+      edited_at: "تم التحرير في"
+      edited_by: "تم التحرير من قبل"
+      actions: "الإجراءات"
+    local_census_records:
+      index:
+        document_type: نوع الوثيقة
+        document_number: رقم الوثيقة
+        date_of_birth: تاريخ الميلاد
+    machine_learning:
+      related_content: "محتوى ذات الصلة"
+      tab_help: "المساعدة"
+      tags: "علامات"
