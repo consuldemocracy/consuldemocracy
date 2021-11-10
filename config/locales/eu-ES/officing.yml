@@ -16,6 +16,18 @@ eu:
         no_polls: Ez duzu baimenik duela gutxi amaitutako bozkaketen azken zenbaketak ikusteko.
         select_poll: Bozkaketa aukeratu
         add_results: Emaitzak gehitu
+    poll_budgets:
+      index:
+        ballot_sheet_name: Izena
+        ballot_sheet_author: Sortzailea
+        ballot_sheet_creation_date: Sortze data
+      new:
+        booth: Hautetsontzia
+        select_booth: Hautetsontzia aukeratu
+        submit: Gorde
+      show:
+        created_at: Sortze data
+        author: Sortzailea
     results:
       flash:
         create: "Datuak gordeta"
