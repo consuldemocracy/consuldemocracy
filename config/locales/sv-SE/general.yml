@@ -640,7 +640,7 @@ sv:
         total_votes: "Totalt antal röster"
         votes: "RÖSTER"
         web: "WEBB"
-        mail: "MAIL"
+        mail: "PER POST"
         booth: "RÖSTBÅS"
         total: "TOTALT"
         valid: "Giltiga"
