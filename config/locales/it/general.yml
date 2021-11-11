@@ -587,6 +587,9 @@ it:
         support_button: Sostieni questa proposta
         share_in: Condividi su
         hi: "Ciao!"
+        introduction: 'Ti sto scrivendo per farti sapere che sto partecipando a %{org}, la piattaforma che ci permette di decidere sulla città che vogliamo. E per farlo, ho creato la mia proposta cittadina e, ora, ho bisogno del tuo supporto! Ma non preoccuparti: è molto semplice.'
+        support: "Devi solo cliccare sul pulsante seguente 'Supporta questa proposta' e puoi informarti prima di promuoverla. Solo le proposte che ricevono il massimo supporto arriveranno in Comune e ho pensato che tu potessi aiutarmi a farcela!"
+        share: "E se mi facessi anche il grande favore di condividere la mia proposta coi tuoi amici, la tua famiglia e i tuoi contatti, sarebbe perfetto!"
   polls:
     all: "Tutti"
     no_dates: "nessuna data assegnata"
@@ -637,6 +640,7 @@ it:
         total_votes: "Totale complessivo di voti dati"
         votes: "VOTI"
         web: "WEB"
+        mail: "MAIL"
         booth: "SEGGIO"
         total: "TOTALE"
         valid: "Validi"
@@ -645,6 +649,8 @@ it:
       results:
         title: "Quesiti"
         most_voted_answer: "Risposta più votata: "
+    poll_header:
+      back_to_proposal: Torna alla proposta
   poll_questions:
     show:
       vote_answer: "Voto %{answer}"
@@ -653,6 +659,7 @@ it:
     new:
       title: "Invia messaggio"
       submit_button: "Invia messaggio"
+      info_about_receivers: "Questa notifica sarà inviata a <strong>%{count} persone</strong> e sarà visibile in %{proposal_page}.<br> Le notifiche non sono inviate immediatamente, gli utenti riceveranno periodicamente un'email con le notifiche di tutte le proposte."
       proposal_page: "pagina della proposta"
     show:
       back: "Torna alle mie attività"
@@ -675,11 +682,16 @@ it:
       date_5: "Personalizzata"
       from: "Da"
       general: "Con il testo"
+      goal: "Di SDG"
+      goal_blank: "Seleziona un obiettivo"
       search: "Filtra"
+      target: "Per scopo"
+      target_blank: "Seleziona uno scopo"
       title: "Ricerca avanzata"
       to: "A"
     author_info:
       author_deleted: Utente cancellato
+      email_deleted: Email eliminata
     back: Indietro
     check: Selezionare
     check_all: Tutti
@@ -689,6 +701,17 @@ it:
     follow: "Segui"
     following: "Seguendo"
     follow_entity: "Segui %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Non stai seguendo questo progetto d'investimento! <br> Ti notificheremo delle modifiche come si verificano, così che tu sia aggiornato."
+        destroy:
+          notice: "Hai smesso di seguire questo progetto d'investimento! <br> Non riceverai più le notifiche correlate a questo progetto."
+      proposal:
+        create:
+          notice: "Stai ora seguendo questa proposta cittadina! <br> Ti notificheremo delle notifiche come si verificano, così che tu sia aggiornato."
+        destroy:
+          notice: "Hai smesso di seguire questa proposta cittadina! <br> Non riceverai più le notifiche correlate a questa proposta."
     print:
       print_button: Stampare questa informazione
     search: Ricercare
@@ -738,8 +761,13 @@ it:
       see_more: Visualizza ulteriori raccomandazioni
       hide: Nascondi raccomandazioni
     translations:
+      select_language_prompt: Scegli la lingua
       remove_language: Rimuovi lingua
       add_language: Aggiungi lingua
+      languages_in_use:
+        zero: "0 lingue in uso"
+        one: "1 lingua in uso"
+        other: "%{count} lingue in uso"
     optional: "Opzionale"
     required: "Obbligatorio"
   social:
@@ -816,6 +844,7 @@ it:
       published: Pubblicato
       see: "Visualizza proposta"
       actions: Azioni
+      retired_help_text: Pannello di controllo non disponibile per le proposte ritirate
   votes:
     agree: Sono d'accordo
     anonymous: Troppi voti anonimi per ammettere il voto %{verify_account}.
@@ -830,6 +859,9 @@ it:
       organization: Alle organizzazioni non è permesso votare
       unfeasible: I progetti di investimento irrealizzabili non possono essere sostenuti
       not_voting_allowed: La fase di votazione è chiusa
+      different_heading_assigned:
+        one: "Puoi supportare i progetti d'investimento solo in %{count} distretto. Hai già supportato investimenti in %{supported_headings}."
+        other: "Puoi supportare i progetti d'investimento solo in %{count} distretti. Hai già supportato investimenti in %{supported_headings}."
   welcome:
     feed:
       most_active:
@@ -841,6 +873,7 @@ it:
         proposals: Vedi tutte le proposte
         processes: Vedi tutti i procedimenti
       no_items:
+        debates: Non c'è alcun dibattito al momento
         proposals: Non c'è alcuna proposta al momento
         processes: Non c'è alcun processo aperto al momento
       process_label: Procedimento
