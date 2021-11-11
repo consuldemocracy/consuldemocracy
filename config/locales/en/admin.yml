@@ -76,7 +76,7 @@ en:
         descriptions:
           ballots: "This will let you manage physical ballots. Only use this option if you're going to use physical booths to collect ballots during the final voting phase."
           calculate_winners: 'After calculating the results, only administrators will be able to access them. They will be public when the project reaches the "%{phase}" phase <strong>if the option "Show results" is enabled</strong> when editing the budget.'
-          destroy: "This will delete the budget and all its associated groups and headers. This action cannot be undone."
+          destroy: "This will delete the budget and all its associated groups and headings. This action cannot be undone."
         edit: "Edit budget"
         preview: "Preview"
         preview_results: "Preview results"
