@@ -76,7 +76,7 @@ sv:
         descriptions:
           ballots: "Detta låter dig hantera fysiska valsedlar. Använd endast det här alternativet om du ska använda fysiska röstbås för att samla in valsedlar under den slutgiltiga omröstningsfasen."
           calculate_winners: 'Efter att resultaten har beräknats kommer bara administratörer att ha tillgång till dem. De offentliggörs när projektet når fasen "%{phase}" <strong>om alternativet "Visa resultat" aktiverats</strong> när du redigerar budgeten.'
-          destroy: "Detta raderar budgeten och alla dess kopplade grupper och sidhuvuden. Den här åtgärden kan inte ångras."
+          destroy: "Detta raderar budgeten och alla dess kopplade grupper och områden. Den här åtgärden kan inte ångras."
         edit: "Redigera budget"
         preview: "Förhandsvisa budget"
         preview_results: "Förhandsvisa resultat"
@@ -179,7 +179,7 @@ sv:
         unable_notice: "Du kan inte ta bort en grupp som har områden kopplade till sig"
       form:
         create: "Skapa ny grupp"
-        edit: "Redigera delbudget"
+        edit: "Redigera grupp"
         max_votable_headings_info: "Gäller bara för projekturvalsfasen. Under projektomröstningsfasen kan användare bara rösta i ett område per grupp."
         submit: "Spara grupp"
       index:
