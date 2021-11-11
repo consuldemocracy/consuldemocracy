@@ -44,6 +44,7 @@ it:
         title: "Procedimenti"
         description: "Nella sezione %{link} i cittadini partecipano alla realizzazione e all’emendamento dei regolamenti comunali e possono fornire la propria opinione sulle politiche locali in dibattiti preventivi."
         link: "processi"
+        feature: "Per partecipare ai processi, devi andare su %{link} e verificare il tuo profilo."
         feature_link: "registrarsi su %{org_name}"
       faq:
         title: "Problemi tecnici?"
@@ -55,6 +56,7 @@ it:
       other:
         title: "Altre informazioni di interesse"
         how_to_use: "Usa %{org_name} nella tua città"
+        sdg: "Aiuto sugli Obiettivi di Sviluppo Sostenibile"
       how_to_use:
         text: |-
           Usalo nella tua amministrazione locale o aiutaci a migliorarlo, è un software gratuito.
@@ -154,6 +156,11 @@ it:
               shortcut_column: CTRL e + (CMD e + su MAC)
               description_column: Aumenta le dimensioni del testo
             - 
+              shortcut_column: CTRL e - (CMD e - su MAC)
+              description_column: Riduci le dimensioni del testo
+      compatibility:
+        title: Compatibilità con gli standard e design visivo
+        description: 'Tutte le pagine di questo sito web sono conformi alle <strong>Linee Guida d''Accessibilità</strong> o ai Principi Generali di Design Accessibile, definite dal Gruppo di Lavoro <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr>, appartenente al W3C.'
     titles:
       help: "Cos’é %{org}? - Partecipazione cittadina"
     verify:
