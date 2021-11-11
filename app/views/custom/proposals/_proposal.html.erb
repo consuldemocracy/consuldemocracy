@@ -58,12 +58,10 @@
                   </div>
 
                   <div class="card-body py-4 px-0">
-
-
                        <% cache [locale_and_user_status(proposal), "index", proposal, proposal.author] do %>
                          <h3 class="h3"><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
 
-                         <div class="card-text col-10">
+                         <div class="card-text">
                            <%= proposal.summary %>
                          </div>
                         <% end %>
@@ -102,4 +100,3 @@
               </div>
             </div>
            </div>
-    
