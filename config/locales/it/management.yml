@@ -34,6 +34,7 @@ it:
         info: Qui è possibile gestire gli utenti attraverso tutte le azioni elencate nel menu a sinistra.
     document_verifications:
       already_verified: Questo account utente è già verificato.
+      has_no_account: Per poter creare un profilo, vai su %{link} e clicca su <b>"Registrati"</b> nella parte superiore sinistra dello schermo.
       link: CONSUL
       in_census_has_following_permissions: "Questo utente può partecipare con le seguenti autorizzazioni:"
       not_in_census: Questo documento non è registrato.
@@ -103,6 +104,7 @@ it:
         one: " contenenti il termine '%{search_term}'"
         other: " contenenti il termine '%{search_term}'"
     sessions:
+      need_managed_user: Per eseguire quest'azione devi selezionare un utente
       signed_out: Disconnesso correttamente.
       signed_out_managed_user: Sessione utente disconnessa correttamente.
     username_label: Nome utente
