@@ -13,7 +13,7 @@
     <div class="progress-bar bg-primary" role="progressbar" style="width: <%= progress_bar_percentage(proposal) %>%;" aria-valuenow="<%= progress_bar_percentage(proposal) %>" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
 </div>
-<span class="total-supports">
+<span class="h3 w-bold">
   <%= t("proposals.proposal.supports", count: proposal.total_votes) %>
   <span></span>
 </span>
