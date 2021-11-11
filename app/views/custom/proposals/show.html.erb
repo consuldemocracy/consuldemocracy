@@ -19,14 +19,12 @@
           Flag.flagged?(current_user, @proposal),
           @proposal.followed_by?(current_user),
           @proposal_votes] do %>
-  <div class="proposal-show">
-    <div id="<%= dom_id(@proposal) %>" class="row">
-      <div class="col-12 col-md-8">
+    <div class="row">
+    <div id="<%= dom_id(@proposal) %>" class="col-12 col-md-8 order-1">
         <%= back_link_to proposals_path unless preview %>
 
-        <h1><%= @proposal.title %></h1>
         <% if @proposal.retired? %>
-          <div data-alert class="callout alert margin-top proposal-retired">
+          <div data-alert class="alert alert-warning">
             <strong>
               <%= t("proposals.show.retired_warning") %><br>
               <%= link_to t("proposals.show.retired_warning_link_to_explanation"),
@@ -34,13 +32,13 @@
             </strong>
           </div>
         <% elsif @proposal.conflictive? %>
-          <div data-alert class="callout alert margin-top">
+          <div data-alert class="alert alert-warning">
             <strong><%= t("proposals.show.flag") %></strong>
           </div>
         <% end %>
 
         <%= render "proposals/info", proposal: @proposal %>
-        <%= render "shared/geozone", geozonable: @proposal %>
+      
 
 
 
@@ -50,7 +48,7 @@
       </div>
 
       <% unless preview %>
-        <aside class="col-12 col-md-4">
+        <div class="col-12 col-md-4 order-2">
 
           <%= render "proposals/support_status", proposal: @proposal %>
 
@@ -77,11 +75,13 @@
           <% end %>
 
           <%= render "communities/access_button", community: @proposal.community %>
-        </aside>
+        </div>
       <% end %>
-    </div>
-  </div>
 <% end %>
+</div>
+<div class="row">
+
+<div class="col-12 col-md-8 order-3">
 
 <% unless @proposal.selected? %>
   <%= render "relationable/related_content", relationable: @proposal %>
@@ -106,3 +106,5 @@
     <%= render "milestones/milestones", milestoneable: @proposal %>
   </div>
 <% end %>
+</div>
+</div>
