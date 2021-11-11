@@ -50,6 +50,7 @@ it:
       proposals:
         empty_proposals: Non ci sono proposte
         filters:
+          random: Casuale
           winners: Selezionato
       debate:
         empty_questions: Non ci sono domande
