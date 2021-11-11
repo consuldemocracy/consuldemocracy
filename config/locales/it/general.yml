@@ -26,6 +26,7 @@ it:
     menu: Menu
   comments:
     actions:
+      confirm_delete: "Sei sicuro? Quest'azione eliminerà questo commento. Non puoi annullarla."
       delete: "Elimina commento"
     comments_closed: I commenti sono chiusi
     verified_only: Per partecipare %{verify_account}
@@ -180,6 +181,9 @@ it:
     topic: Argomento
     image: Immagine
     local_census_record: Registro del Censo Locale
+    local_census_records/import: Importazione dei Registri del Censo Locale
+    site_customization/content_block: blocco di contenuto
+    site_customization/page: pagina
     sdg/local_target: obiettivo locale
   geozones:
     none: Tutta la città
@@ -193,9 +197,17 @@ it:
       proposal_header:
         published: Pubblicato
         draft: Bozza
+        retired: Ritirato
       proposal_totals:
+        active_resources: Risorse attive
+        community: Partecipanti nella tua community
+        show_proposal: Mostra la proposta
+        preview_proposal: Anteprima della proposta
+        current_goal: Obiettivo corrente
         supports:
           zero: Nessun sostegno
+          one: 1 Supporto
+          other: "Supporti"
     footer:
       accessibility: Accessibilità
       conditions: Termini e condizioni d'uso
@@ -270,6 +282,10 @@ it:
       sign_in: Accedi con Google
       sign_up: Registrati con Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Accedi con Wordpress
+      sign_up: Registrati con Wordpress
+      name: Wordpress
     twitter:
       sign_in: Accedi con Twitter
       sign_up: Registrati con Twitter
@@ -282,8 +298,17 @@ it:
     create:
       form:
         submit_button: Creare una proposta
+    created:
+      title: Congratulazioni! Hai compiuto il primo passo.
+      motivation: "È importante preparare la campagna di lancio perché la tua proposta sia di successo. I primi pochi giorni sono decisivi."
+      motivation_2: "<strong>Se desideri consigli per preparare la pubblicazione, lascia la tua proposta come una bozza e ti guideremo.</strong>"
+      publish: No, desidero pubblicare la proposta
+      dashboard: Sì, desidero aiuto e pubblicherò in seguito
+      preview_title: Questo è l'aspetto che la tua proposta avrà quando la pubblicherai
     share:
+      improve_it: Migliora la tua campagna e ricevi più supporto.
       dashboard: Visualizza ulteriori informazioni
+      message: "Ho supportato la proposta %{title} in %{handle}. Se sei interessato, supportala anche tu!"
     edit:
       editing: Modifica proposta
       form:
@@ -331,6 +356,10 @@ it:
           error: "Si è verificato un errore. Si prega di andare alla pagina “Il mio account” per disabilitare manualmente le raccomandazioni per le proposte"
       retired_proposals: Proposte ritirate
       retired_proposals_link: "Proposte ritirate dall'autore"
+      selected_proposals: Proposte selezionate
+      selected_proposals_link: Visualizza le proposte selezionate
+      archived_proposals: Proposte archiviate
+      proposals_lists: Elenchi di proposte
       retired_links:
         all: Tutti
         duplicated: Duplicazione
@@ -368,6 +397,7 @@ it:
       start_new: Creare una nuova proposta
     notice:
       retired: Proposta ritirata
+      published: La proposta è stata pubblicata
     proposal:
       created: "Hai creato una proposta!"
       share:
@@ -393,6 +423,7 @@ it:
       total_percent: 100%
       archived: "Questa proposta è stata archiviata e non può raccogliere appoggi."
       successful: "Questa proposta ha raggiunto gli appoggi richiesti."
+      selected: "Proposta selezionata"
     show:
       author_deleted: Utente cancellato
       code: "Codice proposta:"
@@ -401,6 +432,7 @@ it:
         one: 1 commento
         other: "%{count} commenti"
       comments_tab: Commenti
+      dashboard_proposal_link: Pannello di Controllo
       flag: Questa proposta è stata contrassegnata come inappropriata da diversi utenti.
       notifications_tab: Notifiche
       milestones_tab: Traguardi
@@ -412,30 +444,85 @@ it:
       embed_video_title: "Video su %{proposal}"
       title_video_url: "Video esterno"
       author: Autore
+      draft: Proposta nelle bozze. Non può ancora ricevere supporto, né appare nell'elenco delle proposte.
     update:
       form:
         submit_button: Salva modifiche
   dashboard:
     menu:
+      my_proposal: Modifica la mia proposta
+      progress: Progresso
+      resources: Risorse
       community: Community
       polls: Votazioni
+      mailing: Email
+      poster: Poster
+      recommended_actions: Azioni consigliate
+      messages: Messaggio agli utenti
       related_content: Contenuti correlati
+    form:
+      request: Richiesta
+    create_request:
+      success: La richiesta è stata inviata correttamente. Ti contatteremo appena possibile per informarti a riguardo.
+      archived: Questa proposta è archiviata e non può richiedere risorse.
     progress:
+      title: Grafica
+      group_by_month: Mensile
+      group_by_week: Settimanale
+      group_by_date: Giornaliero
+      progress: Progresso accumulato
       supports: Sostegni
+      success: Progresso ideale
+      new_action: Nuovo
     index:
+      title: Edizione
       edit_proposal_link: Modifica proposta
+      publish: Pubblica la proposta
       retire: Ritira proposta
     new_request:
       links: Link
+    resources:
+      available_resources: Risorse disponibili
+    resource:
+      required_days: "%{days} giorni necessari"
+      required_supports: "%{supports} supporti necessari"
+      and: e
+      view_resource: Visualizza la risorsa
+      resource_requested: Risorsa già richiesta
+      request_resource: Richiedi la risorsa
+      resource_locked: Risorsa bloccata
     recommended_actions:
+      title: Azioni consigliate
+      goto_proposed_actions: Vai alle azioni consigliate
+      see_proposed_actions: Da' un'occhiata alle azioni consigliate
+      hide_proposed_actions: Nascondi le azioni consigliate
       pending_title: In sospeso
+      show_description: Mostra la descrizione
+      without_pending_actions: Nessun'azione consigliata in sospeso
       done_title: Fatto
+      without_done_actions: Nessun'azione consigliata eseguita
+    next_goal:
+      title: Obiettivo
+      see_complete_course: Dai un'occhiata al corso completo
+      hide_course: Nascondi il corso
+    goal:
+      target_supports:
+        one: Ottieni %{count} supporto per la tua proposta
+        other: Ottieni %{count} supporti per la tua proposta
+      days:
+        one: "%{count} giorno"
+        other: "%{count} giorni"
+      locked_resource: Risorsa bloccata
+      ideal_time: Orario ideale
     community:
       access_community: Accedi alla comunità
+      latest_activity: "Ultima attività della community: %{at}"
       participants: Partecipanti
       debates: Dibattiti
       comments: Commenti
+      latest_comments: Ultimi messaggi
     messages:
+      send_notification: Invia notifica ai follower della proposta
       previous_notifications: Vedi notifiche precedenti
     polls:
       index:
@@ -478,6 +565,7 @@ it:
         intro_text: "<strong>Sto partecipando alla %{org}</strong> mia proposta cittadino e solo se anche tu aggiungi puoi avere il supporto necessario per rendere la città quella che noi tutti vogliamo."
         proposal_code: "Codice della proposta: %{code}"
         support: Supporta la mia proposta
+        footer: "<strong>Visita %{link} e supporta questa proposta.</strong> Più sono e meglio è. Facciamo la nostra parte. Grazie!"
       new:
         title: Poster della tua proposta
       options:
@@ -486,11 +574,19 @@ it:
     mailing:
       index:
         title: Anteprima E-mail
+      new:
+        title: Modello email da condividere
       mailing_options:
+        send: Invia a %{address}
         preview: Anteprima
+      create:
+        sent: L'email è stata inviata
     mailer:
       forward:
+        subtitle: "Se mi supporti, <br>ce la faremo."
         support_button: Sostieni questa proposta
+        share_in: Condividi su
+        hi: "Ciao!"
   polls:
     all: "Tutti"
     no_dates: "nessuna data assegnata"
@@ -744,6 +840,9 @@ it:
         debates: Vedi tutti i dibattiti
         proposals: Vedi tutte le proposte
         processes: Vedi tutti i procedimenti
+      no_items:
+        proposals: Non c'è alcuna proposta al momento
+        processes: Non c'è alcun processo aperto al momento
       process_label: Procedimento
       see_process: Vedi procedimento
     cards:
@@ -767,6 +866,7 @@ it:
       title: Verifica dell'account
     welcome:
       go_to_index: Vedi proposte e dibattiti
+      start_using_consul: Vai alla pagina dell'indice
       title: Partecipa
       user_permission_debates: Partecipare ai dibattiti
       user_permission_info: Con il tuo account puoi...
@@ -787,6 +887,7 @@ it:
     help: "È possibile aggiungere collegamenti di %{models} all'interno di %{org}."
     submit: "Aggiungi"
     error: "Link non valido. Ricordarsi di iniziare con %{url}."
+    error_duplicate: "Il contenuto correlato che stai aggiungendo esiste già."
     error_itself: "Link non valido. Non puoi correlate un contenuto a se stesso."
     success: "Hai aggiunto un nuovo contenuto correlato"
     is_related: "È un contenuto correlato?"
@@ -810,15 +911,28 @@ it:
       cancel_button: Cancella
     nested_links:
       title: Link
+      note: Aggiungi i link di tuo interesse
+      add_new_link: Aggiungi un nuovo link
   communities:
     show:
       surveys: Sondaggi
       complete_survey: Completa il sondaggio
     subnav:
       surveys: Sondaggi
+    poll:
+      take_part: Prendi parte da %{from} a %{to}
   remote_translations:
     text: Il contenuto di questa pagina non è disponibile nella tua lingua
     all_remote_translations_enqueued_text: In un breve periodo di tempo aggiornando la pagina potrai vedere tutto il contenuto nella tua lingua.
     create:
       enqueue_remote_translation: Le traduzioni sono state richieste correttamente.
     button: Traduci pagina
+  tags:
+    list:
+      filter:
+        more:
+          one: "Un altro tag"
+          other: "%{count} altri tag"
+  machine_learning:
+    comments_summary: "Riepilogo dei commenti"
+    info_text: "Contenuto generato dall'IA / Apprendimento Automatico"
