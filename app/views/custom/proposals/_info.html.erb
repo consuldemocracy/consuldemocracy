@@ -4,9 +4,8 @@
       <div class="post-meta">
         <div class="media d-flex align-items-center justify-content-between flex-wrap">
           <div class="post-group">
-            <i class="fas fa-user-edit"></i <%= render "/shared/author_info", resource: @proposal %>
+             <%= render "/shared/author_info", resource: @proposal %>
             <% if current_user %>
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <span class="js-flag-actions">
                 <%= render "shared/flag_actions", flaggable: @proposal %>
               </span>
