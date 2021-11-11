@@ -1,30 +1,29 @@
 <div class="container">
-<div class="row">
-  <h1><%= t("map.title") %></h1>
-  <div class="col-12 col-md-6">
+  <div class="row">
+    <h1><%= t("map.title") %></h1>
+    <div class="col-12 col-md-6">
       <%= image_tag(image_path_for("map.jpg"), usemap: "#map") %>
 
-    <map name="map" id="html_map">
-      <% @geozones.each do |geozone| %>
-        <area shape="poly"
-              coords="<%= geozone.html_map_coordinates %>"
-              href="<%= polymorphic_path(@resource, search: geozone.name) %>"
-              title="<%= geozone.name %>"
-              alt="<%= geozone.name %>">
-      <% end %>
-    </map>
-  </div>
-  <div class="col-12 col-md-6">
-        <ul id="geozones" class="list-inline">
-          <% @geozones.each do |geozone| %>
-            <li class="list-inline-item"><%= link_to geozone.name, proposals_path(search: geozone.name) %></li>
-          <% end %>
-        </ul>
+      <map name="map" id="html_map">
+        <% @geozones.each do |geozone| %>
+          <area shape="poly" coords="<%= geozone.html_map_coordinates %>" href="<%= polymorphic_path(@resource, search: geozone.name) %>" title="<%= geozone.name %>" alt="<%= geozone.name %>">
+        <% end %>
+      </map>
     </div>
-    <div class="col-12">
-    <h2><%= t("map.proposal_for_district") %></h2>
+    <div class="col-12 col-md-6">
+      <ul id="geozones" class="list-group list-group-horizontal d-flex flex-wrap">
+        <% @geozones.each do |geozone| %>
+          <li class="list-group-item">
+            <%= link_to geozone.name, proposals_path(search: geozone.name) %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
 
-    <%= form_for(@resource, url: new_url_path, method: :get) do |f| %>
+    <div class="col-12">
+      <h2><%= t("map.proposal_for_district") %></h2>
+
+      <%= form_for(@resource, url: new_url_path, method: :get) do |f| %>
       <div class="col-16 col-md-6">
         <%= f.select :geozone_id, geozone_select_options, include_blank: t("geozones.none") %>
 
