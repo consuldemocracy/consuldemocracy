@@ -984,10 +984,10 @@ eu:
         author: Sortzailea
         users: Erabiltzaileak
         verified:
-          one: "Baliodun firma 1 dago"
+          one: "Baliodun firma %{count} dago"
           other: "Baliodun %{count} firma daude"
         unverified:
-          one: "Baliogabeko firma 1 dago"
+          one: "Baliogabeko firma %{count} dago"
           other: "Baliogabeko %{count} firma daude"
         unverified_error: (Erroldak ez egiaztatuta)
         loading: "Oraindik erroldak firmak egiaztatzen ari da. Mesedez, orria errefresca denbora gutxi barru"
