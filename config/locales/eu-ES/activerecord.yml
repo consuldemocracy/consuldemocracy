@@ -75,7 +75,7 @@ eu:
         one: "Prozesu"
         other: "Prozesuak"
       legislation/proposal:
-        one: "proposamena"
+        one: "Proposamena"
         other: "Proposamenak"
       legislation/draft_versions:
         one: "Zirriborro bertsioa"
