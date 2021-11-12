@@ -125,6 +125,11 @@ cs:
         few: "místní záměry"
         many: "místních záměrů"
         other: "místní záměry"
+      sdg/manager:
+        one: "SDG manažer"
+        few: "SDG manažeři"
+        many: "SDG manažerů"
+        other: "SDG manažerů"
       sdg/target:
         one: "záměr"
         few: "záměry"
