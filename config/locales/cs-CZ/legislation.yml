@@ -9,6 +9,11 @@ cs:
           few: "%{count} komentářů"
           many: "%{count} komentářů"
           other: "%{count} komentářů"
+        replies_count:
+          one: "%{count} odpověď"
+          few: "%{count} odpovědi"
+          many: "%{count} odpovědí"
+          other: "%{count} odpovědí"
         cancel: Zrušit
         publish_comment: Zveřejnit komentář
       form:
