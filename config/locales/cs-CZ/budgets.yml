@@ -8,6 +8,10 @@ cs:
           knapsack: "Stále máte k dispozici <span>%{count}</span>"
           approval:
             zero: "Stále máte možnost odevzdat <span>%{count}</span> hlasy."
+            one: "Stále můžete dát <span>%{count}</span> hlas."
+            few: "Stále můžete dát <span>%{count}</span> hlasy."
+            many: "Stále můžete dát <span>%{count}</span> hlasů."
+            other: "Stále můžete dát <span>%{count}</span> hlasů."
         amount_spent:
           knapsack: "Utracená částka <span>%{count}</span>"
           approval:
@@ -18,6 +22,11 @@ cs:
             other: "Odevzdaných hlasů <span>%{count}</span>"
         amount_limit:
           knapsack: "%{count}"
+          approval:
+            one: "Hlasovat můžete pro <span>1</span> projekt"
+            few: "Hlasovat můžete až pro <span>%{count}</span> projekty"
+            many: "Hlasovat můžete až pro <span>%{count}</span> projektů"
+            other: "Hlasovat můžete až pro <span>%{count}</span> projekty"
         no_balloted_group_yet: "Dosud jste o této skupině nehlasovali, hlasujte!"
         remove: Odstranit hlas
         voted:
@@ -98,6 +107,17 @@ cs:
           other: " obsahující výraz <strong> '%{search_term}' </strong>"
         sidebar:
           my_ballot: Moje hlasování
+          voted_info:
+            knapsack:
+              one: "<strong>Odhlasovali jste jeden návrh s náklady %{amount_spent}</strong>"
+              few: "<strong>Odhlasovali jste %{count} návrhy s náklady %{amount_spent}</strong>"
+              many: "<strong>Odhlasovali jste %{count} návrhů s náklady %{amount_spent}</strong>"
+              other: "<strong>Odhlasovali jste %{count} návrhů s náklady %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Odhlasovali jste jeden návrh</strong>"
+              few: "<strong>Odhlasovali jste %{count} návrhy</strong>"
+              many: "<strong>Odhlasovali jste %{count} návrhů</strong>"
+              other: "<strong>Odhlasovali jste %{count} návrhů</strong>"
           change_vote_info:
             knapsack: "Můžete %{link} kdykoli před %{phase_end_date}. Není třeba utrácet všechny dostupné peníze."
             approval: "Můžete %{link} kdykoli až do %{phase_end_date}."
