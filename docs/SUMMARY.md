@@ -51,7 +51,6 @@
   * [Contributing](en/open_source/contributing.md)
   * [License](es/open_source/license.md)
 
-
 ## SPANISH Documentation
 
 * [Introducción](es/README.md)
@@ -73,6 +72,7 @@
     * [Instalador](es/installation/installer.md)
     * [Crear usuario](es/installation/create_deploy_user.md)
     * [Generación de claves SSH](es/installation/generating_ssh_key.md)
+    * [Instalación manual (no recomendada)](es/installation/manual_installation_production.md)
     * [Digital Ocean](es/installation/digital_ocean.md)
     * [Heroku](es/installation/deploying-on-heroku.md)
     * [Docker](es/installation/docker.md)
