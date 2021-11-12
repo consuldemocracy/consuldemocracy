@@ -12,6 +12,10 @@ cs:
       one_page:
         display_entries:
           zero: "%{entry_name} nebyl nalezen"
+          one: Existuje <strong>1 %{entry_name}</strong>
+          few: Existují <strong>%{count}%{entry_name}</strong>
+          many: Existují <strong>%{count}%{entry_name}</strong>
+          other: Existuje <strong>%{count} %{entry_name}</strong>
   views:
     pagination:
       current: Jste na stránce
